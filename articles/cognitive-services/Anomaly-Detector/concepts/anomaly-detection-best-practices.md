@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 03/26/2019
 ms.author: aahi
 ms.openlocfilehash: 766d009be3cd664d928a3c12f5fea38c26bbbdde
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64692198"
 ---
 # <a name="best-practices-for-using-the-anomaly-detector-api"></a>Рекомендации по использованию API обнаружения аномалий
@@ -94,4 +94,4 @@ API обнаружения аномалий, лучше всего работа�
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое API обнаружения аномалий?](../overview.md)
-* [Краткое руководство. Обнаруживать аномалии в данных временных рядов с помощью REST API обнаружения аномалий](../quickstarts/detect-data-anomalies-csharp.md)
+* [Краткое руководство Обнаруживать аномалии в данных временных рядов с помощью REST API обнаружения аномалий](../quickstarts/detect-data-anomalies-csharp.md)

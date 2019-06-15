@@ -6,15 +6,15 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
-ms.topic: article
+ms.topic: quickstart
 ms.date: 03/26/2019
 ms.author: aahi
-ms.openlocfilehash: 04b331f3b63ad6400b4bb8efcd053d04ac88989b
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 2a02b56c2fa0f99166cfde0f0089273ed2af4cb9
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65595839"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67073212"
 ---
 # <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-c"></a>Краткое руководство. Обнаруживать аномалии в данных временных рядов с помощью REST API обнаружения аномалий иC# 
 
@@ -33,9 +33,9 @@ ms.locfileid: "65595839"
 
 - Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet. Установка Newtonsoft.Json в виде пакета NuGet в Visual Studio:
     
-    1. Щелкните правой кнопкой мыши проект в **обозревателе решений**.
-    2. Выберите **управление пакетами NuGet**.
-    3. Поиск *Newtonsoft.Json* и установить пакет.
+    1. Щелкните правой кнопкой мыши имя проекта в **обозревателе решений**.
+    2. Выберите **Manage NuGet Packages...** (Управление пакетами NuGet...).
+    3. Найдите пакет *Newtonsoft.Json* и установите его.
 
 - Если вы используете Linux и Mac OS, это приложение может выполняться с помощью [Mono](https://www.mono-project.com/).
 

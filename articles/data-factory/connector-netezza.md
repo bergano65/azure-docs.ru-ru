@@ -3,21 +3,20 @@ title: Копирование данных из Netezza с помощью Фаб
 description: Узнайте, как копировать данные из Netezza в поддерживаемые хранилища данных-приемники с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: linda33wj
+manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-origin.date: 02/01/2019
-ms.date: 04/22/2019
-ms.author: v-jay
+ms.date: 02/01/2019
+ms.author: jingwang
 ms.openlocfilehash: 9bf90c9d3ce593ba5bf6339cd9cec31bb49f14f1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61399933"
 ---
 # <a name="copy-data-from-netezza-by-using-azure-data-factory"></a>Копирование данных из Netezza с помощью Фабрики данных Azure
@@ -50,7 +49,7 @@ ms.locfileid: "61399933"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| SecurityLevel | Уровень безопасности (SSL/TLS), который драйвер использует для подключения к хранилищу данных. Пример: `SecurityLevel=preferredSecured`. Поддерживаемые значения:<br/>- **Только незащищенное** (**onlyUnSecured**): Драйвер не использует SSL.<br/>- **Предпочтительно незащищенное (preferredUnSecured) (по умолчанию)**: Если сервер предоставляет выбор, драйвер не использует SSL. <br/>- **Предпочтительно защищенное (preferredSecured)**: Если сервер предоставляет выбор, драйвер использует SSL. <br/>- **Только защищенное (onlySecured)**: Драйвер не подключается, если SSL-подключение недоступно. | Нет |
+| SecurityLevel | Уровень безопасности (SSL/TLS), который драйвер использует для подключения к хранилищу данных. Пример: `SecurityLevel=preferredSecured`. Поддерживаемые значения:<br/>- **Только незащищенное** (**onlyUnSecured**): Драйвер не использует SSL.<br/>- **Предпочтительно незащищенное (preferredUnSecured) (по умолчанию)** : Если сервер предоставляет выбор, драйвер не использует SSL. <br/>- **Предпочтительно защищенное (preferredSecured)** : Если сервер предоставляет выбор, драйвер использует SSL. <br/>- **Только защищенное (onlySecured)** : Драйвер не подключается, если SSL-подключение недоступно. | Нет |
 | CaCertFile | Полный путь к SSL-сертификату, используемому сервером. Пример: `CaCertFile=<cert path>;`| Да, если протокол SSL включен |
 
 **Пример**

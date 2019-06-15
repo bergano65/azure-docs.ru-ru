@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/29/2019
 ms.author: magoedte
-ms.openlocfilehash: 750393e6dba17ab8ba024f9f1fbb2f9127dd81ab
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: 5faeebe799bd8cc0ba9a148508ac5b3a6d4b803a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65521706"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67120211"
 ---
 # <a name="azure-monitor-dependency-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Azure монитор зависимостей для Linux
 
@@ -74,7 +74,7 @@ ms.locfileid: "65521706"
 
 ### <a name="property-values"></a>Значения свойств
 
-| ИМЯ | Значение и пример |
+| ИМЯ | Значение/Example |
 | ---- | ---- |
 | apiVersion | 2015-01-01 |
 | publisher | Microsoft.Azure.Monitoring.DependencyAgent |
@@ -83,11 +83,11 @@ ms.locfileid: "65521706"
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 
-Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Для запуска расширения агента зависимостей виртуальной Машины Azure во время развертывания шаблона Azure Resource Manager в шаблоне Azure Resource Manager можно использовать схему JSON, описанную в предыдущем разделе. 
+Вы можете развернуть расширения виртуальной машины Azure с помощью шаблонов Azure Resource Manager. Для запуска расширения агента зависимостей виртуальной Машины Azure во время развертывания шаблона Azure Resource Manager можно использовать схему JSON, описанную в предыдущем разделе в шаблоне Azure Resource Manager.
 
-JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины или поместить в корень или на верхний уровень JSON-файла шаблона Resource Manager. Размещение JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md#child-resources). 
+JSON для расширения виртуальной машины могут быть вложенными в ресурс виртуальной машины. Или его можно поместить в корень или на верхний уровень шаблона Resource Manager в формате JSON. Размещение JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md#child-resources).
 
-В следующем примере предполагается, что расширение агента зависимостей вложено в ресурс виртуальной машины. При вложении ресурса расширения JSON помещается в объект `"resources": []` виртуальной машины.
+В следующем примере предполагается, что расширение агента зависимостей вложено в ресурс виртуальной машины. При вложении ресурса расширения JSON помещается в `"resources": []` объект виртуальной машины.
 
 
 ```json
@@ -108,7 +108,7 @@ JSON для расширения виртуальной машины можно 
 }
 ```
 
-При размещении JSON расширения в корне шаблона имя ресурса содержит ссылку на родительскую виртуальную машину, а тип отражает вложенную конфигурацию. 
+При размещении JSON расширения в корне шаблона, имя ресурса содержит ссылку на родительскую виртуальную машину. Тип отражает вложенную конфигурацию. 
 
 ```json
 {
@@ -130,7 +130,7 @@ JSON для расширения виртуальной машины можно 
 
 ## <a name="azure-cli-deployment"></a>Развертывание с помощью Azure CLI
 
-Azure CLI можно использовать для развертывания расширения виртуальной Машины агента зависимостей на существующей виртуальной машины.  
+Чтобы развернуть агент зависимостей расширения виртуальной Машины к существующей виртуальной машины можно использовать Azure CLI.  
 
 ```azurecli
 
@@ -146,7 +146,7 @@ az vm extension set \
 
 ### <a name="troubleshoot"></a>Устранение неполадок
 
-Данные о состоянии развертывания расширения можно получить на портале Azure, а также использовав Azure CLI. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду в Azure CLI.
+Данные о состоянии развертывания расширения можно получить на портале Azure, а также с помощью Azure CLI. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной Машины, выполните следующую команду с помощью Azure CLI:
 
 ```azurecli
 az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
@@ -160,4 +160,4 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 
 ### <a name="support"></a>Поддержка
 
-Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если вам нужна дополнительная помощь в любом месте в этой статье, обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Или вы можете отправить обращение за поддержкой Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**. Сведения о том, как использовать Azure поддерживают [поддержки Microsoft Azure — часто задаваемые вопросы о](https://azure.microsoft.com/support/faq/).

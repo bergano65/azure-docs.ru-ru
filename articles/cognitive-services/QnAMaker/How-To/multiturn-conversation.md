@@ -7,15 +7,16 @@ author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
+ms.subservice: qna-maker
 ms.topic: article
-ms.date: 05/20/2019
+ms.date: 06/12/2019
 ms.author: diberry
-ms.openlocfilehash: 3ca166b287858b3e42aeda1421d1733fe24c81ab
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 7c7d7c480068b754413fd2309a2251d1e3855106
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66479743"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67075175"
 ---
 # <a name="use-follow-up-prompts-to-create-multiple-turns-of-a-conversation"></a>Дальнейшие действия используйте предлагает создать несколько включает диалога
 
@@ -102,7 +103,7 @@ ms.locfileid: "66479743"
 1. В строке для `Signout`выберите **последующие строки Добавить** из **ответов** столбца.
 1. В **строке дальнейших действий (Предварительная версия)** всплывающем окне введите следующее:
 
-    |Поле|Value|
+    |Поле|Значение|
     |--|--|
     |Отображаемый текст|`Turn off the device`. Это текст, выбранный для отображения в окне результатов запроса.|
     |Только для контекста|Выбран. Этот ответ будет возвращается только в том случае, если вопрос указывает контекст.|
@@ -162,7 +163,7 @@ In the knowledge base, when a question-and-answer pair is linked to follow-up pr
 1. В **ответов** столбец для этого вопроса, выберите **последующие строки Добавить**. 
 1. **Строке дальнейших действий (Предварительная версия)** , создайте новую строку по обработке результатов, указав следующие значения: 
 
-    |Текстовое поле|Value|
+    |Текстовое поле|Значение|
     |--|--|
     |**Отображаемый текст**|`Create a Windows Account`. Это текст, выбранный для отображения в окне результатов запроса.|
     |**Только для контекста**|Выбран. Этот ответ будет возвращается только в том случае, если вопрос указывает контекст.|

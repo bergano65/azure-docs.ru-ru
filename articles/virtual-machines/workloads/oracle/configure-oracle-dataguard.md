@@ -16,10 +16,10 @@ ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
 ms.openlocfilehash: c98e59cd0e547381d6b173b3a4b91c3a3e27b3a8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60771725"
 ---
 # <a name="implement-oracle-data-guard-on-an-azure-linux-virtual-machine"></a>Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux 
@@ -46,7 +46,7 @@ Azure CLI используется для создания ресурсов Azur
 az login
 ```
 
-### <a name="create-a-resource-group"></a>Создать группу ресурсов
+### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. 
 
@@ -56,7 +56,7 @@ az login
 az group create --name myResourceGroup --location westus
 ```
 
-### <a name="create-an-availability-set"></a>Создание группы доступности
+### <a name="create-an-availability-set"></a>"Создать группу доступности"
 
 Создавать группу доступности необязательно, но мы рекомендуем это сделать. Дополнительные сведения см. в статье [Рекомендации по группам доступности Azure для виртуальных машин Windows](https://docs.microsoft.com/azure/virtual-machines/windows/infrastructure-availability-sets-guidelines).
 

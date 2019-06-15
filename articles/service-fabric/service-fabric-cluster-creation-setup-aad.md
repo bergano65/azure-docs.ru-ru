@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 02/15/2019
 ms.author: aljo
 ms.openlocfilehash: c02e38880fdf8e8f1a2229f009b343d6431af853
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62125142"
 ---
 # <a name="set-up-azure-active-directory-for-client-authentication"></a>Настройка Azure Active Directory для проверки подлинности клиента
@@ -42,7 +42,7 @@ ms.locfileid: "62125142"
 ## <a name="create-azure-ad-applications-and-assign-users-to-roles"></a>Создание приложения Azure AD и назначение ролей пользователям
 Создайте два приложения Azure AD для управления доступом к кластеру: одно веб-приложение и одно собственное приложение. Создав приложения, представляющие кластер, назначьте пользователям [роли, поддерживаемые Service Fabric](service-fabric-cluster-security-roles.md) и разрешающие доступ на чтение и администрирование.
 
-Запустите `SetupApplications.ps1` и укажите идентификатор клиента, имя кластера и URL-адрес ответа веб-приложения в качестве параметров.  Укажите также имена пользователей и пароли для пользователей.  Пример.
+Запустите `SetupApplications.ps1` и укажите идентификатор клиента, имя кластера и URL-адрес ответа веб-приложения в качестве параметров.  Укажите также имена пользователей и пароли для пользователей.  Пример:
 
 ```powershell
 $Configobj = .\SetupApplications.ps1 -TenantId '0e3d2646-78b3-4711-b8be-74a381d9890c' -ClusterName 'mysftestcluster' -WebApplicationReplyUrl 'https://mysftestcluster.eastus.cloudapp.azure.com:19080/Explorer/index.html' -AddResourceAccess
@@ -85,7 +85,7 @@ https://&lt;cluster_domain&gt;:19080/Explorer
 
 ![Диалоговое окно сертификата SFX][sfx-select-certificate-dialog]
 
-#### <a name="reason"></a>Причина
+#### <a name="reason"></a>`Reason`
 Пользователю не назначена роль в приложении кластера Azure AD. Таким образом, аутентификация Azure AD в кластере Service Fabric завершается ошибкой. Service Fabric Explorer воспользуется проверкой подлинности на основе сертификата.
 
 #### <a name="solution"></a>Решение
@@ -104,7 +104,7 @@ https://&lt;cluster_domain&gt;:19080/Explorer
 
 ![Несовпадение адреса ответа в Service Fabric Explorer][sfx-reply-address-not-match]
 
-#### <a name="reason"></a>Причина
+#### <a name="reason"></a>`Reason`
 Приложение кластера (веб-приложение), представляющее Service Fabric Explorer, пытается выполнить аутентификацию в Azure AD и в составе запроса предоставляет URL-адрес ответа для перенаправления. URL-адрес не указан в списке **URL-АДРЕС ОТВЕТА** приложения Azure AD.
 
 #### <a name="solution"></a>Решение

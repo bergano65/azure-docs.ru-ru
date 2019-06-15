@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: robinsh
 ms.openlocfilehash: e4906bf9f2aead69c315ddb7b2e3b10489378d87
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66259079"
 ---
 # <a name="tutorial-using-azure-iot-hub-message-enrichments-preview"></a>Руководство по С помощью усовершенствования сообщений центра Интернета вещей Azure (Предварительная версия)
@@ -69,7 +69,7 @@ ms.locfileid: "66259079"
 
 Ниже приведены ресурсы, созданные с помощью скрипта. **Насыщенные** означает, что ресурс для сообщения с усовершенствования. **Исходное** означает, что ресурс для сообщений, которые не добавляются.
 
-| ИМЯ | Value |
+| Name | Значение |
 |-----|-----|
 | resourceGroup | ContosoResourcesMsgEn |
 | Имя контейнера | Исходный текст  |
@@ -250,7 +250,7 @@ az iot hub route create \
 
 2. Добавьте в список для конечной точки ContosoStorageEndpointEnriched эти значения.
 
-   | ИМЯ | Value | Конечная точка (раскрывающийся список) |
+   | Name | Значение | Конечная точка (раскрывающийся список) |
    | ---- | ----- | -------------------------|
    | myIotHub | $iothubname | AzureStorageContainers > ContosoStorageEndpointEnriched |
    | Расположение устройства | $twin.tags.location | AzureStorageContainers > ContosoStorageEndpointEnriched |

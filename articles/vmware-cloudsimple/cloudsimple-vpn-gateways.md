@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 9b2630614e549181f4dd2f4e79871c4594d09201
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.openlocfilehash: c9689a468e8784eb4ec3590011e02a37d92d6b9c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66496876"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67083400"
 ---
 # <a name="vpn-gateways-overview"></a>Общие сведения о шлюзах VPN
 
@@ -52,7 +52,7 @@ VPN-подключение сайт сайт использует следующ
 | Версия IKE | IKEv1 | IKEv1 | IKEv1 |
 | Шифрование | AES 128 | AES 256 | AES 256 |
 | Хэш-алгоритм| SHA 256 | SHA 256 | SHA 1 |
-| Группа Диффи Хелмана (группа Диффи-Хелмана) | 1 | 1 | 1 |
+| Группа Диффи Хелмана (группа Диффи-Хелмана) | 2 | 2 | 2 |
 | Время существования | 28 800 сек | 28 800 сек | 28 800 сек |
 | Размер данных | 4 ГБ | 4 ГБ | 4 ГБ |
 

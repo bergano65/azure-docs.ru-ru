@@ -10,10 +10,10 @@ ms.date: 07/18/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017, mvc, devcenter
 ms.openlocfilehash: d7ce702bb726fb89780d251f31023c9490112c36
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66148793"
 ---
 # <a name="deprecated-deploy-kubernetes-cluster-for-windows-containers"></a>Развертывание кластера Kubernetes для контейнеров Windows (не рекомендуется)
@@ -183,7 +183,7 @@ iis          10.0.111.25    13.64.158.233   80/TCP         22m
 ![Изображение перехода к IIS](./media/container-service-kubernetes-windows-walkthrough/kubernetes-iis.png)  
 
 
-## <a name="delete-cluster"></a>Удалить кластер
+## <a name="delete-cluster"></a>Удаление кластера
 Чтобы удалить ненужные кластер, группу ресурсов, службу контейнеров и все связанные с ней ресурсы, выполните команду [az group delete](/cli/azure/group#az-group-delete).
 
 ```azurecli-interactive 

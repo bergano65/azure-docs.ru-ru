@@ -12,10 +12,10 @@ ms.workload: na
 ms.date: 01/30/2019
 ms.author: tomfitz
 ms.openlocfilehash: bdba294e1ee776d90b93f715e930ec26765abb7f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66129155"
 ---
 # <a name="create-resource-groups-and-resources-at-the-subscription-level"></a>Создание групп ресурсов и ресурсов на уровне подписки
@@ -213,7 +213,7 @@ New-AzDeployment `
 
 ## <a name="create-policies"></a>Создайте политики.
 
-### <a name="assign-policy"></a>Назначить политику
+### <a name="assign-policy"></a>Назначение политики
 
 В следующем примере подписке присваивается имеющееся определение политики. Предоставьте параметры в качестве объекта, если политика принимает их. Используйте пустой объект по умолчанию, если политика не принимает параметры.
 

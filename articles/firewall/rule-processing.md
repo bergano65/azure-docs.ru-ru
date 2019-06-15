@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 9/27/2018
 ms.author: victorh
 ms.openlocfilehash: 12d86793c0d75413559aad77c558c4adb7ac91af
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60193651"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64681593"
 ---
 # <a name="azure-firewall-rule-processing-logic"></a>Логика обработки правил Брандмауэра Azure
 В Брандмауэре Azure есть правила преобразования сетевых адресов (NAT), правила сети и правила приложений. Каждое из них обрабатывается в соответствии с типом.

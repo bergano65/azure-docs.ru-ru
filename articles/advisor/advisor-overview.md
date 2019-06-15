@@ -10,12 +10,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/01/2019
 ms.author: kasparks
-ms.openlocfilehash: 1a72225ce29b7a94f2fc402488f6b998cde0a0fb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2ccac3bf9a882dc021c6c969946ad9d439a7cf5d
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60467992"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67069683"
 ---
 # <a name="introduction-to-azure-advisor"></a>Общие сведения об Azure Advisor
 
@@ -61,7 +61,9 @@ ms.locfileid: "60467992"
 
 ### <a name="what-resources-does-advisor-provide-recommendations-for"></a>Для каких ресурсов Advisor предоставляет рекомендации?
 
-Помощник предоставляет рекомендации для виртуальных машин, групп доступности, шлюзов приложений, служб приложений, серверов SQL Server и кэша Redis для Azure.
+Помощник предлагает рекомендации для шлюза приложений, служб приложений группы доступности, кэш Azure, фабрики данных Azure, база данных Azure для MySQL, база данных Azure для PostgreSQL, база данных Azure для MariaDB, Azure ExpressRoute, Azure Cosmos DB, Azure public IP-адреса, хранилище данных SQL, серверов SQL Server, учетные записи хранения, профили диспетчера трафика и виртуальных машин.
+
+Помощник по Azure также включает рекомендации из [центра безопасности](https://docs.microsoft.com/azure/security-center/security-center-recommendations) в том числе рекомендации по дополнительные типы ресурсов.
 
 ### <a name="can-i-postpone-or-dismiss-a-recommendation"></a>Можно ли отложить или закрыть рекомендацию?
 

@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: routlaw
 ms.custom: seodec18
-ms.openlocfilehash: cf9356c2792781558c4403608ff5de0e3aaddb6a
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 9339d891e8fe895f598e1a2615fcfa66b053b3e0
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66254468"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67063852"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Linux Java для службы приложений Azure
 
@@ -480,9 +480,7 @@ public int getServerPort()
 
 ### <a name="jdk-versions-and-maintenance"></a>Версии JDK и обслуживание
 
-Azure поддерживает пакет Java Development Kit (JDK) [Zulu](https://www.azul.com/downloads/azure-only/zulu/), предоставляемый компанией [Azul Systems](https://www.azul.com/).
-
-Обновления для основного номера версии будут предоставляться посредством новых вариантов среды выполнения в Службе приложений Azure для Linux. Пользователи, устанавливающие более новые версии Java посредством настройки развернутой службы приложений, несут ответственность за тестирование выбранных обновлений для основного номера версии и их соответствие своим потребностям.
+Сборка OpenJDK типа Azul Zulu Enterprise — это бесплатный мультиплатформенный, готовый дистрибутив OpenJDK для Azure и Azure Stack, который поддерживается корпорацией Майкрософт и Azul Systems. Они содержат все компоненты для сборки и запуска приложений Java SE. Вы можете установить JDK по [установки Java JDK](https://aka.ms/azure-jdks).
 
 Каждый квартал в поддерживаемые пакеты JDK автоматически вносятся исправления. Это происходит в январе, апреле, июле и октябре.
 
@@ -493,18 +491,6 @@ Azure поддерживает пакет Java Development Kit (JDK) [Zulu](http
 ### <a name="deprecation-and-retirement"></a>Нерекомендуемые версии и прекращение использования
 
 Если планируется прекращение использования какой-либо поддерживаемой среды выполнения Java, то разработчики для Azure, использующие эту среду выполнения, получат соответствующее уведомление по крайней мере за шесть месяцев до прекращения использования.
-
-### <a name="local-development"></a>Локальная разработка
-
-Разработчики могут скачать выпуск Production Edition пакета Azul Zulu Enterprise JDK для локальной разработки с [сайта загрузки Azul](https://www.azul.com/downloads/azure-only/zulu/).
-
-### <a name="development-support"></a>Поддержка разработки
-
-Техническая поддержка [пакета Azul Zulu JDK](https://www.azul.com/downloads/azure-only/zulu/) при разработке для Azure или [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) предоставляется при наличии [соответствующего плана поддержки Azure](https://azure.microsoft.com/support/plans/).
-
-### <a name="runtime-support"></a>Поддержка времени выполнения
-
-Разработчики могут [сообщить о проблеме](/azure/azure-supportability/how-to-create-azure-support-request) с Azul Zulu JDK в службу поддержки Azure при наличии [соответствующего плана поддержки](https://azure.microsoft.com/support/plans/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

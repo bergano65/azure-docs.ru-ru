@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 03/15/2016
 ms.author: genli
 ms.openlocfilehash: e1b8bb3544a08b60564ceb5bd7e1666214059e09
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60743927"
 ---
 # <a name="control-routing-and-use-virtual-appliances-classic-using-the-azure-cli"></a>Управление маршрутизацией и использование виртуальных модулей (классический режим) с помощью интерфейса командной строки Azure
@@ -72,8 +72,8 @@ ms.locfileid: "60743927"
    
     Параметры
    
-   * **-l (или --location)**. Регион Azure, в котором будет создана группа безопасности сети. В нашем случае это *westus*.
-   * **-n (или --name)**. Имя новой группы безопасности сети. В данном сценарии это *NSG-FrontEnd*.
+   * **-l (или --location)** . Регион Azure, в котором будет создана группа безопасности сети. В нашем случае это *westus*.
+   * **-n (или --name)** . Имя новой группы безопасности сети. В данном сценарии это *NSG-FrontEnd*.
 3. Чтобы создать маршрут в таблице маршрутов для отправки всего трафика, предназначенного для серверной подсети (192.168.2.0/24), в виртуальную машину **FW1** (192.168.0.4), выполните следующую команду:
 
     ```azurecli
@@ -87,11 +87,11 @@ ms.locfileid: "60743927"
         info:    Setting route "RouteToBackEnd" in a route table "UDR-FrontEnd"
         info:    network route-table route set command OK
    
-    Параметры:
+    Параметры
    
-   * **-r (или --route-table-name)**. Имя таблицы маршрутов, куда будет добавлен маршрут. В данном сценарии это *UDR-FrontEnd*.
-   * **-a (или --address-prefix)**. Префикс адреса для подсети, в которую адресованы пакеты. В данном сценарии это *192.168.2.0/24*.
-   * **-t (или --next-hop-type)**. Тип объекта, куда будет отправляться трафик. Возможные значения: *VirtualAppliance*, *VirtualNetworkGateway*, *VNETLocal*, *Internet* или *None*.
+   * **-r (или --route-table-name)** . Имя таблицы маршрутов, куда будет добавлен маршрут. В данном сценарии это *UDR-FrontEnd*.
+   * **-a (или --address-prefix)** . Префикс адреса для подсети, в которую адресованы пакеты. В данном сценарии это *192.168.2.0/24*.
+   * **-t (или --next-hop-type)** . Тип объекта, куда будет отправляться трафик. Возможные значения: *VirtualAppliance*, *VirtualNetworkGateway*, *VNETLocal*, *Internet* или *None*.
    * **-p (или --next-hop-ip-address**). IP-адрес следующего прыжка. В нашем случае это *192.168.0.4*.
 4. Чтобы сопоставить созданную таблицу маршрутов с подсетью **FrontEnd**, выполните следующую команду:
 
@@ -112,9 +112,9 @@ ms.locfileid: "60743927"
         data:      Routes:
         info:    network vnet subnet route-table add command OK    
    
-    Параметры:
+    Параметры
    
-   * **-t (или --vnet-name)**. Имя виртуальной сети, в которой расположена подсеть. В нашем случае это *TestVNet*.
+   * **-t (или --vnet-name)** . Имя виртуальной сети, в которой расположена подсеть. В нашем случае это *TestVNet*.
    * **-n (или --subnet-name**). Имя подсети, куда будет добавлена таблица маршрутов. В данном сценарии это *FrontEnd*.
 
 ## <a name="create-the-udr-for-the-back-end-subnet"></a>Создание определяемого пользователем маршрута для серверной подсети

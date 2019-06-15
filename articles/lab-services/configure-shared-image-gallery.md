@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/30/2019
 ms.author: spelluru
-ms.openlocfilehash: fba969b70ae052c928f33888d3c93eb7683ae9f7
-ms.sourcegitcommit: ec7b0bf593645c0d1ef401a3350f162e02c7e9b8
+ms.openlocfilehash: de857498aeb51c9b3711c90338d983e85b61cb70
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455718"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67065433"
 ---
 # <a name="configure-a-shared-image-gallery-in-azure-devtest-labs"></a>Настройка коллекции общих образов в Azure DevTest Labs
-DevTest Labs теперь поддерживает [коллекции образов Shared](/virtual-machines/windows/shared-image-galleries.md) функции. Благодаря этой функции пользователи лаборатории могут при создании ее ресурсов использовать образы из общего расположения. Кроме того, функция позволяет создавать структуру и организацию на основе управляемых пользовательских образов виртуальных машин. Коллекция изображений общего функция поддерживает:
+DevTest Labs теперь поддерживает [коллекции образов Shared](../virtual-machines/windows/shared-image-galleries.md) функции. Благодаря этой функции пользователи лаборатории могут при создании ее ресурсов использовать образы из общего расположения. Кроме того, функция позволяет создавать структуру и организацию на основе управляемых пользовательских образов виртуальных машин. Коллекция изображений общего функция поддерживает:
 
 - Управляемая глобальная репликация образов.
 - Управление версиями и группировка образов для упрощения контроля.

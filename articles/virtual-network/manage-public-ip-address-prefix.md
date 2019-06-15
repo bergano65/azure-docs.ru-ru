@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 05/13/2019
 ms.author: anavin
 ms.openlocfilehash: 26d8ee34c735cab8f1033a9aad897ec0b1bed524
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65952684"
 ---
 # <a name="create-change-or-delete-a-public-ip-address-prefix"></a>Создание, изменение и удаление префикса общедоступного IP-адреса
@@ -49,13 +49,13 @@ ms.locfileid: "65952684"
    |---|---|---|
    |Подписка|Да|Ресурс в пределах одной и той же [подписки](../azure-glossary-cloud-terminology.md?toc=%2fazure%2fvirtual-network%2ftoc.json#subscription), с которым будет связан общедоступный IP-адрес.|
    |Группа ресурсов|Да|Ресурс в пределах одной или разных [групп ресурсов](../azure-glossary-cloud-terminology.md?toc=%2fazure%2fvirtual-network%2ftoc.json#resource-group), с которым будет связан общедоступный IP-адрес.|
-   |ИМЯ|Да|Имя должно быть уникальным в пределах выбранной группы ресурсов.|
+   |Name|Да|Имя должно быть уникальным в пределах выбранной группы ресурсов.|
    |Регион|Да|Должен существовать в том же [регионе](https://azure.microsoft.com/regions), что и общедоступные IP-адреса, которым вы будете назначать адреса из диапазона.|
    |Размер префикса|Да| Нужный размер префикса. По умолчанию это /28 или 16 IP-адресов.
 
 **Команды**
 
-|Tool|Команда|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|[az network public-ip prefix create](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-create)|
 |PowerShell|[Новый AzPublicIpPrefix](/powershell/module/az.network/new-azpublicipprefix)|
@@ -72,11 +72,11 @@ ms.locfileid: "65952684"
    |---|---|---|
    |ИМЯ|Да|Имя общедоступного IP-адреса должно быть уникальным в пределах выбранной группы ресурсов.|
    |Время ожидания простоя (в минутах)|Нет|Время (в минутах), в течение которого подключение TCP или HTTP остается открытым без привязки к клиентам при отправке запросов для проверки активности. |
-   |Метка DNS-имени|Нет|Должна быть уникальной в пределах региона Azure, в котором создается имя (для всех подписок и клиентов). Azure автоматически регистрирует имя и IP-адрес в своей DNS (вы можете подключаться к ресурсу, используя это имя). Azure добавляет подсеть по умолчанию, например *location.cloudapp.azure.com* (где location — это выбранное вами расположение), к имени, которое вы предоставили, для создания полного имени DNS. Дополнительные сведения см. в разделе [Использование Azure DNS с общедоступным IP-адресом Azure](../dns/dns-custom-domain.md?toc=%2fazure%2fvirtual-network%2ftoc.json#public-ip-address).|
+   |Метка имени DNS|Нет|Должна быть уникальной в пределах региона Azure, в котором создается имя (для всех подписок и клиентов). Azure автоматически регистрирует имя и IP-адрес в своей DNS (вы можете подключаться к ресурсу, используя это имя). Azure добавляет подсеть по умолчанию, например *location.cloudapp.azure.com* (где location — это выбранное вами расположение), к имени, которое вы предоставили, для создания полного имени DNS. Дополнительные сведения см. в разделе [Использование Azure DNS с общедоступным IP-адресом Azure](../dns/dns-custom-domain.md?toc=%2fazure%2fvirtual-network%2ftoc.json#public-ip-address).|
 
 Можно также использовать интерфейс командной строки и PS команды ниже с параметром public-ip-prefix (CLI) и параметров - PublicIpPrefix (PS), чтобы создайте общедоступный IP-адреса. 
 
-|Tool|Команда|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|[az network public-ip create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create)|
 |PowerShell|[New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress?view=azps-2.0.0)|
@@ -91,7 +91,7 @@ ms.locfileid: "65952684"
 
 **Команды**
 
-|Tool|Команда|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|Команда [az network public-ip prefix list](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-list) выводит список общедоступных IP-адресов, [az network public-ip prefix show](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-show) — отображает параметры, [az network public-ip prefix update](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-update) — обновляет, а [az network public-ip prefix delete](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-delete) — удаляет|
 |PowerShell|[Get-AzPublicIpPrefix](/powershell/module/az.network/get-azpublicipprefix) чтобы извлечь объект общедоступного IP-адреса и просмотреть его параметры, [AzPublicIpPrefix набора](/powershell/module/az.network/set-azpublicipprefix) для обновления параметров; [Remove-AzPublicIpPrefix](/powershell/module/az.network/remove-azpublicipprefix) для удаления|

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: erhopf
-ms.openlocfilehash: bd0160073898a5a83af2e7b2bba2dba007c04513
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.openlocfilehash: 5bebdd77afb9e9c77624ea4266ca217567dbf143
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66425666"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072394"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-android"></a>Краткое руководство. Запуск примера приложения Speech SDK устройства в Android
 
@@ -37,7 +37,7 @@ ms.locfileid: "66425666"
 
 * Чтобы получить [ключ подписки Azure для службы распознавания речи](get-started.md)
 
-* Если вы планируете использовать расшифровка дикторского текста для сообщений необходимо использовать [циклическая микрофон устройством](get-speech-devices-sdk.md) и служба в данный момент доступна только для «en US» и «zh-CN», в регионах, «centralus» и «eastasia». Необходимо иметь ключ речи в одном из этих регионов, для использования расшифровка дикторского текста для диалога.
+* Если вы планируете использовать расшифровка дикторского текста для сообщений необходимо использовать [циклическая микрофон устройством](get-speech-devices-sdk.md) и эта функция в данный момент доступна только для «en US» и «zh-CN», в регионах, «centralus» и «eastasia». Необходимо иметь ключ речи в одном из этих регионов, для использования расшифровка дикторского текста для диалога.
 
 * Если вы планируете использовать служб речи для определения намерения (или действия) из фразы для пользователя, нужно будет [службы Language Understanding (LUIS)](https://docs.microsoft.com/azure/cognitive-services/luis/azureibizasubscription) подписки. Дополнительные сведения о LUIS и распознавание сути высказывания, см. в разделе [распознавания речи намерения с помощью LUIS, C# ](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-recognize-intents-from-speech-csharp).
 

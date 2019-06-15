@@ -11,10 +11,10 @@ ms.date: 11/27/2018
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: b08e1489cf337360e838a3b5d5531fa2d4c0073b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60694323"
 ---
 # <a name="my-first-powershell-runbook"></a>Мой первый модуль Runbook PowerShell
@@ -50,7 +50,7 @@ ms.locfileid: "60694323"
 
 Можно либо напрямую ввести код в модуль Runbook, либо выбрать командлеты, модули Runbook и ресурсы из элемента управления "Библиотека" и добавить их к модулю Runbook с любыми связанными параметрами. В этом пошаговом руководстве вы введете код напрямую в модуль runbook.
 
-1. Сейчас модуль runbook пуст, поэтому введите *Write-Output "Hello World"*. в текст скрипта.
+1. Сейчас модуль runbook пуст, поэтому введите *Write-Output "Hello World"* . в текст скрипта.
 
    ![Hello World](media/automation-first-runbook-textual-powershell/automation-helloworld.png)  
 
@@ -84,7 +84,7 @@ ms.locfileid: "60694323"
 1. Откроется страница заданий с созданным заданием runbook. Эту область можно закрыть, но пока оставьте ее открытой, чтобы следить за ходом выполнения задания.
 1. Состояние задания отображается в поле **Сводка по заданию** и отражает состояния, которые вы наблюдали при тестировании модуля runbook.
 
-   ![Сводка по заданию](media/automation-first-runbook-textual-powershell/job-pane-status-blade-jobsummary.png)
+   ![Сводные данные задания](media/automation-first-runbook-textual-powershell/job-pane-status-blade-jobsummary.png)
 
 1. Когда в разделе **Обзор** состояние модуля runbook изменится на *Выполнено*, щелкните **Выходные данные**. Откроется область "Выходные данные" с текстом *Hello World*.
 
@@ -138,13 +138,13 @@ ms.locfileid: "60694323"
 1. Щелкните **Тестовая область**, чтобы проверить модуль runbook.
 1. Щелкните **Пуск** , чтобы начать тестирование. После его завершения на экране должны отобразиться приблизительно такие основные сведения из вашей учетной записи. Этот вывод подтверждает допустимость учетной записи запуска от имени.
 
-   ![Проверить подлинность](media/automation-first-runbook-textual-powershell/runbook-auth-output.png)
+   ![Проверка подлинности](media/automation-first-runbook-textual-powershell/runbook-auth-output.png)
 
 ## <a name="add-code-to-start-a-virtual-machine"></a>Добавление кода запуска виртуальной машины
 
 Теперь, когда модуль runbook прошел аутентификацию в подписке Azure, вы можете управлять ресурсами. Добавьте команду для запуска виртуальной машины. Вы можете выбрать любую виртуальную машину в своей подписке Azure. Имя этой машины вы пропишете в модуле runbook.
 
-1. После команды *Connect-AzureRmAccount* введите команду *Start-AzureRmVM -Name 'имя_ВМ' -ResourceGroupName 'имя_группы_ресурсов'*, указав имя виртуальной машины, которую нужно запустить, и имя ее группы ресурсов.  
+1. После команды *Connect-AzureRmAccount* введите команду *Start-AzureRmVM -Name 'имя_ВМ' -ResourceGroupName 'имя_группы_ресурсов'* , указав имя виртуальной машины, которую нужно запустить, и имя ее группы ресурсов.  
 
    ```powershell
    # Ensures you do not inherit an AzureRMContext in your runbook

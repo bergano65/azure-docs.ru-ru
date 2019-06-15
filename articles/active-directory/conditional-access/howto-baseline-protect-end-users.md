@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 104665774eee885cc2f562e9813cffcf23aa943e
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: e5b72be0dbe35cf95eed404c7c1407c53f5f2ecb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66235499"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112348"
 ---
 # <a name="baseline-policy-end-user-protection-preview"></a>Базовая политика: Защита конечных пользователей (Предварительная версия)
 
@@ -86,8 +86,8 @@ ms.locfileid: "66235499"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения можно найти в разделе
 
-* [Политики защиты базовых показателей для условного доступа](concept-baseline-protection.md)
+* [Политики защиты базовых показателей условного доступа](concept-baseline-protection.md)
 * [Пять шагов по защите инфраструктуры удостоверений](../../security/azure-ad-secure-steps.md)
-* [Что представляет собой условный доступ в Azure Active Directory?](overview.md)
+* [Что такое условный доступ в Azure Active Directory?](overview.md)

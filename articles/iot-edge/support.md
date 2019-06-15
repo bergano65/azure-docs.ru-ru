@@ -4,17 +4,17 @@ description: Узнайте, в каких операционных систем
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 05/06/2019
+ms.date: 06/12/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 1db999f5d3172734311ecc7dbec72214a1e07e91
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 178cbf930c946170834eb1f7de17e6d5bc0dda48
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65137813"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67058288"
 ---
 # <a name="azure-iot-edge-supported-systems"></a>Поддерживаемые Azure IoT Edge системы
 
@@ -57,18 +57,19 @@ Azure IoT Edge работает в большинстве операционны
 
 | Операционная система | AMD64 | ARM32v7 |
 | ---------------- | ----- | ----- |
-| Raspbian-stretch | Нет  | Yes|
-| Ubuntu Server 16.04 | Yes | Нет  |
-| Ubuntu Server 18.04 | Yes | Нет  |
-| Windows 10 IoT Корпоративная сборки 17763 | Yes | Нет  |
+| Raspbian-stretch | Нет | Да|
+| Ubuntu Server 16.04 | Да | Нет |
+| Ubuntu Server 18.04 | Да | Нет |
+| Windows 10 IoT Корпоративная сборки 17763 | Да | Нет |
+| 2019 Windows Server, сборки 17763 | Да | Нет |
+| 2019 Интернета вещей сервера для Windows, сборки 17763 | Да | Нет |
 
 Общедоступная предварительная версия
 
 | Операционная система | AMD64 | ARM32v7 |
 | ---------------- | ----- | ----- |
-| Windows 10 IoT Core сборки 17763 | Yes | Нет  |
-| 2019 Windows Server, сборки 17763 | Yes | Нет  |
-| 2019 Интернета вещей сервера для Windows, сборки 17763 | Yes | Нет  |
+| Windows 10 IoT Core сборки 17763 | Да | Нет |
+
 
 Операционные системы Windows, указанные выше приведены требования для устройств под управлением Windows в контейнеры Windows. Эта конфигурация является единственной поддерживаемой конфигурацией для рабочей среды. Установочные пакеты Azure IoT Edge для Windows на использование контейнеров Linux в Windows; Однако эта конфигурация является только для разработки и тестирования. Контейнеры Linux в Windows не поддерживаются в рабочей среде. Для этого сценария разработки подойдет любая версия Windows 10 сборки 14393 или более поздней и Windows Server 2016 или более поздней версии.
 
@@ -76,14 +77,14 @@ Azure IoT Edge работает в большинстве операционны
 
 | Операционная система | AMD64 | ARM32v7 |
 | ---------------- | ----- | ----- |
-| CentOS 7.5 | Yes | Yes |
-| Debian 8; | Yes | Yes |
-| Debian 9 | Yes | Yes |
-| RHEL 7.5 | Yes | Yes |
-| Ubuntu 18.04 | Yes | Yes |
-| Ubuntu 16.04. | Yes | Yes |
-| Wind River 8 | Yes | Нет  |
-| Yocto | Yes | Нет  |
+| CentOS 7.5 | Да | Да |
+| Debian 8; | Да | Да |
+| Debian 9 | Да | Да |
+| RHEL 7.5 | Да | Да |
+| Ubuntu 18.04 | Да | Да |
+| Ubuntu 16.04 | Да | Да |
+| Wind River 8 | Да | Нет |
+| Yocto | Да | Нет |
 
 
 ## <a name="virtual-machines"></a>Виртуальные машины

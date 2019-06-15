@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 06/29/2017
 ms.author: suchiagicha
 ms.openlocfilehash: 01430c40ec9fcf1af3a463f8f86d646d15b6dd49
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64925941"
 ---
 # <a name="diagnostics-and-performance-monitoring-for-reliable-service-remoting"></a>Диагностика и мониторинг производительности в модели Reliable Service Remoting
@@ -28,7 +28,7 @@ ms.locfileid: "64925941"
 ## <a name="performance-counters"></a>Счетчики производительности
 Среда выполнения Reliable ServiceRemoting определяет указанные ниже категории счетчиков производительности.
 
-| Category | ОПИСАНИЕ |
+| Категория | Описание |
 | --- | --- |
 | Service Fabric Service |Счетчики, относящиеся к Azure Service Fabric Service Remoting, например счетчик среднего времени, затраченного на обработку запроса. |
 | Service Fabric Service Method |Счетчики, относящиеся к методам, которые реализуются Service Fabric Remoting Service, например выявляющие частоту вызова того или иного метода службы. |
@@ -83,7 +83,7 @@ ms.locfileid: "64925941"
 
 Среда выполнения Reliable Service публикует следующие счетчики производительности, связанные с выполнением методов службы.
 
-| Имя категории | Имя счетчика | ОПИСАНИЕ |
+| Имя категории | Имя счетчика | Описание |
 | --- | --- | --- |
 | Service Fabric Service Method |Вызовов в секунду |Количество вызовов метода службы в секунду |
 | Service Fabric Service Method |Среднее время вызова (мс) |Время, затраченное на выполнение метода службы, в миллисекундах |
@@ -92,7 +92,7 @@ ms.locfileid: "64925941"
 ### <a name="service-request-processing-performance-counters"></a>Счетчики производительности обработки запросов службы
 Когда клиент вызывает метод через объект прокси службы, это приводит к отправке по сети сообщения запроса в Remoting Service. Служба обрабатывает сообщение запроса и отправляет ответ обратно клиенту. Среда выполнения Reliable ServiceRemoting публикует следующие счетчики производительности, связанные с обработкой запросов службы.
 
-| Имя категории | Имя счетчика | ОПИСАНИЕ |
+| Имя категории | Имя счетчика | Описание |
 | --- | --- | --- |
 | Service Fabric Service |Число невыполненных запросов |Число запросов, обрабатываемых в службе |
 | Service Fabric Service |Среднее время запроса (мс) |Время обработки запроса службой (мс) |

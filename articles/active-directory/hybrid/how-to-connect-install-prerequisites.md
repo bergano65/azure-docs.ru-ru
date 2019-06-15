@@ -16,12 +16,12 @@ ms.date: 05/08/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f7219578932a259f48b0109d433dcba9ff28d1f
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 1d17823c4ef4917f9f312b8f2f327e2b0395cfa3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65508047"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67109433"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure AD Connect.
@@ -48,6 +48,9 @@ ms.locfileid: "65508047"
 * Рекомендуется [включить корзину Active Directory](how-to-connect-sync-recycle-bin.md).
 
 ### <a name="azure-ad-connect-server"></a>Сервер Azure AD Connect
+>[!IMPORTANT]
+>На сервере Azure AD Connect содержит критические идентификационных данных и следует рассматривать как компонент уровня 0, как описано в статье [модель разделения администрирования Active Directory](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#ADATM_BM)
+
 * Службу Azure AD Connect нельзя установить на версии Small Business Server или Windows Server Essentials, которые предшествуют версиям 2019 года (поддерживается Windows Server Essentials 2019). Сервер должен использовать Windows Server Standard или более поздней версии.
 * Установка Azure AD Connect на контроллере домена не рекомендуется из-за по обеспечению безопасности и более строгие параметры, может препятствовать правильной установке Azure AD Connect
 * На сервере Azure AD Connect должен быть установлен полный графический интерфейс пользователя. Установка на ядро сервера **не поддерживается**.
@@ -85,7 +88,7 @@ ms.locfileid: "65508047"
   * Необходимо использовать параметры сортировки SQL без учета регистра. Их можно определить по суффиксу \_CI_ в имени. Параметры сортировки с учетом регистра, имена которых содержат суффикс \_CS_, **не поддерживаются**.
   * На один экземпляр SQL может приходиться только один модуль синхронизации. Совместное использование экземпляра SQL модулями FIM/MIM Sync, DirSync и Azure AD Sync **не поддерживается**.
 
-### <a name="accounts"></a>Учет. записи
+### <a name="accounts"></a>Учетные записи
 * Учетная запись глобального администратора Azure AD для клиента Azure AD, с которым необходима интеграция. Это должна быть **учебная или рабочая учетная запись**. **Учетную запись Майкрософт** использовать нельзя.
 * Учетная запись администратора предприятия для локальной службы Active Directory при использовании экспресс-параметров или обновлении с DirSync.
 * [Учетные записи в Active Directory](reference-connect-accounts-permissions.md) при использовании пути установки с пользовательскими параметрами или учетная запись администратора предприятия для локальной службы Active Directory.
@@ -187,7 +190,7 @@ ms.locfileid: "65508047"
 * Идентификатор сертификата должен совпадать с именем службы федерации (например sts.contoso.com).
   * Идентификатор является расширением альтернативного имени субъекта (SAN) типа dNSName. При отсутствии записей SAN имя субъекта указывается как обычное имя.  
   * В сертификате может быть несколько записей SAN, если одна из них соответствует имени службы федерации.
-  * Если вы планируете использовать присоединение Workplace Join, то необходимо дополнительное имя SAN со значением **enterpriseregistration.**, за которым следует суффикс имени участника-пользователя (UPN) вашей организации, например **enterpriseregistration.contoso.com**.
+  * Если вы планируете использовать присоединение Workplace Join, то необходимо дополнительное имя SAN со значением **enterpriseregistration.** , за которым следует суффикс имени участника-пользователя (UPN) вашей организации, например **enterpriseregistration.contoso.com**.
 * Сертификаты на основе ключей CryptoAPI следующего поколения (CNG) и поставщики хранилища ключей не поддерживаются. Это означает, что необходимо использовать сертификаты, выданные CSP (поставщиком служб шифрования), а не KSP (поставщиком хранилища ключей).
 * Поддерживаются групповые сертификаты.
 
@@ -199,7 +202,7 @@ ms.locfileid: "65508047"
 ## <a name="azure-ad-connect-supporting-components"></a>Вспомогательные компоненты Azure AD Connect
 Ниже приведен перечень компонентов, которые Azure AD Connect установит на сервере, где установлен Azure AD Connect. Этот список предназначен для базовой установки Express. Если на странице "Установить службы синхронизации" вы выбрали другой выпуск SQL Server, то SQL Express LocalDB не устанавливается локально.
 
-* Azure AD Connect Health
+* Azure AD Connect Health,
 * Программы командной строки Microsoft SQL Server 2012
 * Microsoft SQL Server 2012 Express LocalDB
 * Microsoft SQL Server 2012 Native Client

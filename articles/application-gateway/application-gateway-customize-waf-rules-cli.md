@@ -4,14 +4,13 @@ description: Эта статья содержит сведения о том, к
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-origin.date: 02/22/2019
-ms.date: 02/26/2019
-ms.author: v-junlch
+ms.date: 2/22/2019
+ms.author: victorh
 ms.openlocfilehash: 5e364c597b8c524e95297f279003462f2d16abe1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60832903"
 ---
 # <a name="customize-web-application-firewall-rules-through-the-azure-cli"></a>Настройка правил брандмауэра веб-приложения с помощью Azure CLI
@@ -26,7 +25,7 @@ ms.locfileid: "60832903"
 
 В следующем примере показано, как просмотреть группы правил:
 
-```azurecli
+```azurecli-interactive
 az network application-gateway waf-config list-rule-sets --type OWASP
 ```
 
@@ -79,7 +78,7 @@ az network application-gateway waf-config list-rule-sets --type OWASP
 
 В примере ниже показано, как просмотреть правила в указанной группе правил.
 
-```azurecli
+```azurecli-interactive
 az network application-gateway waf-config list-rule-sets --group "REQUEST-910-IP-REPUTATION"
 ```
 
@@ -118,7 +117,7 @@ az network application-gateway waf-config list-rule-sets --group "REQUEST-910-IP
 
 В следующем примере отключаются правила `910018` и `910017` в шлюзе приложений.
 
-```azurecli
+```azurecli-interactive
 az network application-gateway waf-config set --resource-group AdatumAppGatewayRG --gateway-name AdatumAppGateway --enabled true --rule-set-version 3.0 --disabled-rules 910018 910017
 ```
 
@@ -126,14 +125,14 @@ az network application-gateway waf-config set --resource-group AdatumAppGatewayR
 
 Следующий список содержит условия, вызывающие WAF заблокировать запрос в режиме предотвращения (в режиме обнаружения, они регистрируются как исключения). Они не может быть задана или отключена:
 
-- Не удалось проанализировать текст запроса приводит к запрос блокируется, если проверка тела находится в отключенном состоянии (XML, JSON, данные формы)
-- Длина данных запроса текст (с файлы не) превышает установленный предел
-- Текст (включая файлы) превышает ограничение на запрос
-- Произошла внутренняя ошибка в модуль WAF
+* Не удалось проанализировать текст запроса приводит к запрос блокируется, если проверка тела находится в отключенном состоянии (XML, JSON, данные формы)
+* Длина данных запроса текст (с файлы не) превышает установленный предел
+* Текст (включая файлы) превышает ограничение на запрос
+* Произошла внутренняя ошибка в модуль WAF
 
 Конкретных 3.x CRS:
 
-- Входящие аномалий показатель превышает порог
+* Входящие аномалий показатель превышает порог
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -143,5 +142,3 @@ az network application-gateway waf-config set --resource-group AdatumAppGatewayR
 [1]: ./media/application-gateway-customize-waf-rules-portal/figure1.png
 [2]: ./media/application-gateway-customize-waf-rules-portal/figure2.png
 [3]: ./media/application-gateway-customize-waf-rules-portal/figure3.png
-
-<!-- Update_Description: wording update -->

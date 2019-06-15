@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 04/23/2019
-ms.openlocfilehash: e1bc99cdc089050fbfa931bbbc7b9a6a316a3a75
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 8699533cd64e6b1778c5e78b8c51eb1efe518c75
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66240172"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67126210"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory
 
@@ -27,7 +27,7 @@ ms.locfileid: "66240172"
 ## <a name="enable-azure-ad-ds"></a>Включение Azure AD-DS
 
 > [!NOTE]  
-> Только администраторы клиента имеют разрешение на включение Azure AD-DS. Если хранилище кластера является хранилище Озера данных Azure (ADLS) Gen1 и Gen2, необходимо отключить многофакторную идентификацию (MFA) только для пользователей, которым потребуется доступ к кластеру с помощью Обычная проверка подлинности Kerberos. Вы можете использовать [доверенные IP-адреса](../../active-directory/authentication/howto-mfa-mfasettings.md#trusted-ips) или [условный доступ](../../active-directory/conditional-access/overview.md), чтобы отключить MFA только для определенных пользователей, когда они получают доступ к диапазону IP-адресов виртуальной сети кластера HDInsight. При использовании условного доступа убедитесь, что эта конечная точка службы AD включена в виртуальной сети HDInsight.
+> Только администраторы клиента имеют разрешение на включение Azure AD-DS. Если хранилище кластера является хранилище Озера данных Azure (ADLS) Gen1 и Gen2, необходимо отключить многофакторную идентификацию (MFA) только для пользователей, которым потребуется доступ к кластеру с помощью Обычная проверка подлинности Kerberos. Можно использовать [надежные IP-адреса](../../active-directory/authentication/howto-mfa-mfasettings.md#trusted-ips) или [условного доступа](../../active-directory/conditional-access/overview.md) для отключения многофакторной проверки Подлинности для определенных пользователей, только если они получают доступ к HDInsight кластера диапазон IP-адрес виртуальной сети. При использовании условного доступа Пожалуйста убедитесь Конечно, которые включены в конечную точку службы AD в виртуальной сети HDInsight.
 >
 > Если системой хранения данных кластера является хранилище BLOB-объектов Azure (WASB), оставьте Многофакторную идентификацию включенной.
 

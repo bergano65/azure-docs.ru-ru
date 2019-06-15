@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 05/21/2019
 ms.author: aschhab
 ms.openlocfilehash: af67b27dacf3bb86c2dd5c878a2751e027a53acb
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66003132"
 ---
 # <a name="overview-of-service-bus-dead-letter-queues"></a>Обзор очередей недоставленных сообщений служебной шины
@@ -49,7 +49,7 @@ ms.locfileid: "66003132"
 | !TopicDescription.<br />EnableFilteringMessagesBeforePublishing and SubscriptionDescription.<br />EnableDeadLetteringOnFilterEvaluationExceptions |exception.GetType().Name |exception.Message |
 | EnableDeadLetteringOnMessageExpiration |TTLExpiredException |Время жизни сообщения истекло, и оно было перемещено в очередь недоставленных. |
 | SubscriptionDescription.RequiresSession |Идентификатор сеанса имеет значение null. |Сущность, поддерживающая сеансы, не допускает использование сообщений, идентификатор сеанса которых имеет значение null. |
-| !очередь недоставленных сообщений |MaxTransferHopCountExceeded |NULL |
+| !очередь недоставленных сообщений |MaxTransferHopCountExceeded |Null |
 | Явное перемещение приложением в очередь недоставленных сообщений |Задается приложением |Задается приложением |
 
 ## <a name="exceeding-maxdeliverycount"></a>Превышено значение MaxDeliveryCount

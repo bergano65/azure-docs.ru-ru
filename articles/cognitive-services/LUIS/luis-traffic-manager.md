@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 02/08/2019
 ms.author: diberry
 ms.openlocfilehash: 31d8f54cb05bdbba7fe05249527db3dd50385087
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66123549"
 ---
 # <a name="use-microsoft-azure-traffic-manager-to-manage-endpoint-quota-across-keys"></a>Использование диспетчера трафика Microsoft Azure для распределения квоты конечной точки на несколько ключей
@@ -308,7 +308,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     Успешный ответ аналогичен успешному ответу на шаге 3.
 
 ### <a name="powershell-variables"></a>Переменные PowerShell
-В предыдущих разделах были созданы три переменные PowerShell: `$eastprofile`, `$westprofile`, `$parentprofile`. Эти переменные используются на конечном этапе настройки диспетчера трафика. Если вы решили не создавать переменные, или забыли или окне PowerShell времени ожидания, можно использовать командлет PowerShell  **[Get-AzTrafficManagerProfile](https://docs.microsoft.com/powershell/module/az.TrafficManager/Get-azTrafficManagerProfile)**, чтобы снова получить профиль и назначьте его переменная. 
+В предыдущих разделах были созданы три переменные PowerShell: `$eastprofile`, `$westprofile`, `$parentprofile`. Эти переменные используются на конечном этапе настройки диспетчера трафика. Если вы решили не создавать переменные, или забыли или окне PowerShell времени ожидания, можно использовать командлет PowerShell  **[Get-AzTrafficManagerProfile](https://docs.microsoft.com/powershell/module/az.TrafficManager/Get-azTrafficManagerProfile)** , чтобы снова получить профиль и назначьте его переменная. 
 
 Замените элементы в угловых скобках (`<>`) на соответствующие значения для каждого из трех профилей. 
 

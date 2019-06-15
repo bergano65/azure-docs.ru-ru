@@ -27,6 +27,7 @@
       items:
         - name: Использование .NET
           href: stream-live-tutorial-with-api.md
+          displayName: 'Live Events, Live Outputs, ingest'
     - name: Анализ видео
       items:
         - name: Использование .NET
@@ -122,6 +123,7 @@
           href: live-streaming-overview.md
         - name: События и выходные данные прямой трансляции
           href: live-events-outputs-concept.md
+          displayName: 'vanity, ingest'
         - name: Рекомендуемые динамические кодировщики
           href: recommended-on-premises-live-encoders.md
         - name: Использование DVR в облаке

@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 04/10/2019
 ms.author: aschhab
 ms.openlocfilehash: 7aacefde9c037fcce64d9256e35082eb04e0a2f3
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65988350"
 ---
 # <a name="how-to-use-service-bus-queues-with-nodejs-and-the-azureservice-bus-package"></a>Как использовать очереди служебной шины с Node.js и пакет azure и служебной шины
-> [!div class="op_multi_selector" title1="Programming language" title2="Node.js pacakge"]
+> [!div class="op_multi_selector" title1="Язык программирования" title2="Пакета node.js"]
 > - [(Node.js | azure-sb)](service-bus-nodejs-how-to-use-queues.md)
 > - [(Node.js | @azure/service-bus)](service-bus-nodejs-how-to-use-queues-new-package.md)
 
@@ -133,7 +133,7 @@ npm install @azure/service-bus
 [CreateReceiver](https://docs.microsoft.com/javascript/api/%40azure/service-bus/queueclient#createreceiver-receivemode-) метод принимает `ReceiveMode` которого является перечислением со значениями [ReceiveAndDelete](message-transfers-locks-settlement.md#settling-receive-operations) и [PeekLock](message-transfers-locks-settlement.md#settling-receive-operations). Не забудьте [сопоставления сообщений](message-transfers-locks-settlement.md#settling-receive-operations) при использовании `PeekLock` режиме с помощью любого из `complete()`, `abandon()`, `defer()`, или `deadletter()` методов в сообщения.
 
 > [!NOTE]
-> Вы можете управлять ресурсами служебной шины с помощью [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель шины обслуживания позволяет пользователям подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями с легкостью. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность тестировать разделом, очередей, подписок, служб ретрансляции, концентраторы уведомлений и концентраторов событий. 
+> Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. следующие ресурсы.

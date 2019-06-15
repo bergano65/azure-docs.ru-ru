@@ -12,10 +12,10 @@ ms.date: 05/22/2018
 ms.author: tdsp
 ms.custom: seodec18, previous-author=jainr, previous-ms.author=jainr
 ms.openlocfilehash: d99149f8112c19a07208523a1ee26ba1c36e5362
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62103576"
 ---
 # <a name="creating-continuous-integration-pipeline-on-azure-using-docker-kubernetes-and-python-flask-application"></a>Создание конвейера непрерывной интеграции в Azure с помощью приложения Docker, Kubernetes или Flask Python
@@ -29,7 +29,7 @@ ms.locfileid: "62103576"
 ## <a name="github-repository-with-document-and-code"></a>Код и документы репозитория GitHub
 Исходный код можно скачать с [GitHub](https://github.com/Azure/DevOps-For-AI-Apps). Более подробное руководство доступно [здесь](https://github.com/Azure/DevOps-For-AI-Apps/blob/master/Tutorial.md).
 
-## <a name="pre-requisites"></a>Технические условия
+## <a name="pre-requisites"></a>Предварительные требования
 Ниже приведены условия, необходимые для выполнения описанного конвейера CI/CD:
 * [организация Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/accounts/create-organization-msa-or-work-student);
 * [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
@@ -63,7 +63,7 @@ ms.locfileid: "62103576"
 ## <a name="next-steps"></a>Дальнейшие действия
 * Чтобы соответствовать требованиям и реализовать конвейер CI/CD для собственного приложения, обратитесь к [руководству](https://github.com/Azure/DevOps-For-AI-Apps/blob/master/Tutorial.md).
 
-## <a name="references"></a>Ссылки
+## <a name="references"></a>Справочники
 * [Командный процесс обработки и анализа данных (TDSP)](https://aka.ms/tdsp).
 * [Документация по службам машинного обучения Azure (предварительная версия)](https://docs.microsoft.com/azure/machine-learning/service/)
 * [Azure DevOps](https://www.visualstudio.com/vso/)

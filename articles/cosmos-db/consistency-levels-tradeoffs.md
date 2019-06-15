@@ -8,10 +8,10 @@ ms.date: 05/21/2019
 ms.author: rimman
 ms.reviewer: sngun
 ms.openlocfilehash: 09777a9980e4576a5d00123516e33696e845dcac
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65990220"
 ---
 # <a name="consistency-availability-and-performance-tradeoffs"></a>Компромиссы согласованности, доступности и производительности 
@@ -55,7 +55,7 @@ ms.locfileid: "65990220"
 |1|Подход с одним или несколькими источниками|Любой уровень согласованности|< 240 минут|< 1 неделя|
 |>1|Single Master|Сеанс, постоянный префикс, случайный|< 15 минут|< 15 минут|
 |>1|Single Master|Ограниченное устаревание|*K* & *T*|< 15 минут|
-|>1|Single Master|Надежный|0|< 15 минут|
+|>1|Single Master|Уровень согласованности Strong (сильная)|0|< 15 минут|
 |>1|Подход с несколькими источниками|Сеанс, постоянный префикс, случайный|< 15 минут|0|
 |>1|Подход с несколькими источниками|Ограниченное устаревание|*K* & *T*|0|
 

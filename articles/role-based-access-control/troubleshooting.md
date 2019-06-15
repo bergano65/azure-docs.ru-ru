@@ -11,16 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/13/2019
+ms.date: 06/12/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: seohack1
-ms.openlocfilehash: 5dda2eafe86d037faab6284c2af0d8026c194d11
-ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
+ms.openlocfilehash: 59ece9c37a563efba6329a30c06c1b596b1a5d57
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65921144"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67058159"
 ---
 # <a name="troubleshoot-rbac-for-azure-resources"></a>Устранение неполадок RBAC в Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "65921144"
 - Шаги по созданию пользовательской роли, см. в статье в учебниках пользовательской роли с помощью [Azure PowerShell](tutorial-custom-role-powershell.md) или [Azure CLI](tutorial-custom-role-cli.md).
 - Если не удается обновить существующую пользовательскую роль, проверьте, что вы уже вошли учетную запись пользователя, которой назначены роли, который имеет `Microsoft.Authorization/roleDefinition/write` разрешения, такие как [владельца](built-in-roles.md#owner) или [администратор доступа пользователей](built-in-roles.md#user-access-administrator).
 - Если не удается удалить пользовательскую роль и отображается сообщение об ошибке "Существуют назначения ролей, которые ссылаются на роль (код: RoleDefinitionHasAssignments)", это означает, что все еще есть назначения этой пользовательской роли. Удалите эти назначения и снова попытайтесь удалить пользовательскую роль.
-- Если при попытке создать пользовательскую роль отображается сообщение об ошибке "Превышено ограничение на определение ролей. Можно создать дополнительные определения ролей (код: RoleDefinitionLimitExceeded)» при попытке создать новую настраиваемую роль, удалить все пользовательские роли, которые не используются. Azure поддерживает до **5000** пользовательские роли в клиенте. (Для специализированного облаков, например Azure для государственных организаций, Azure для Германии и Китая компанией 21Vianet, ограничение — 2000 пользовательских ролей).
+- Если при попытке создать пользовательскую роль отображается сообщение об ошибке "Превышено ограничение на определение ролей. Можно создать дополнительные определения ролей (код: RoleDefinitionLimitExceeded)» при попытке создать новую настраиваемую роль, удалить все пользовательские роли, которые не используются. Azure поддерживает до **5000** пользовательские роли в клиенте. (Специализированные облачные службы, такие как Azure для государственных организаций, Azure для Германии и Azure для Китая от 21Vianet поддерживают до 2000 пользовательских ролей.)
 - Если отобразится сообщение об ошибке аналогичную «у клиента есть разрешение на выполнение действия «Microsoft.Authorization/roleDefinitions/write» в области «/ subscriptions / {subscriptionid}», однако связанная подписка не найден» при попытке обновить пользовательскую роль, проверка является ли один или несколько [назначаемых областей](role-definitions.md#assignablescopes) были удалены в клиенте. Если область удалена, создайте запрос в службу поддержки, так как способа самостоятельного решения этой проблемы пока не существует.
 
 ## <a name="recover-rbac-when-subscriptions-are-moved-across-tenants"></a>Восстановление RBAC при перемещении подписок между клиентами
@@ -53,6 +53,61 @@ ms.locfileid: "65921144"
 
 - Если при попытке создать ресурс появляется сообщение об ошибке разрешения "Клиент с идентификатором объекта не авторизован для выполнения действия с областью (код: AuthorizationFailed)", убедитесь, что вы вошли как пользователь, которому назначена роль с разрешением на запись для ресурса в выбранной области. Например, для управления виртуальными машинами в группе ресурсов вам должна быть назначена роль [Участник виртуальных машин](built-in-roles.md#virtual-machine-contributor) для этой группы ресурсов (или вышестоящего уровня). Список разрешений для каждой встроенной роли см. в статье [Built-in roles for Azure resources](built-in-roles.md) (Встроенные роли для ресурсов Azure).
 - Если возникает ошибка разрешения «У вас нет разрешения на создание запроса на поддержку» при попытке создать или обновить запрос в службу поддержки, проверьте, что вы уже вошли учетную запись пользователя, которой назначены роли, который имеет `Microsoft.Support/supportTickets/write` разрешение, например [Поддерживают участник-отправитель запроса](built-in-roles.md#support-request-contributor).
+
+## <a name="role-assignments-without-a-security-principal"></a>Назначения ролей без субъект безопасности
+
+Если вывести список назначений ролей с помощью Azure PowerShell, может появиться назначений с пустым `DisplayName` и `ObjectType` неизвестно. Например [Get AzRoleAssignment](/powershell/module/az.resources/get-azroleassignment) возвращает назначение ролей, аналогичную следующей:
+
+```azurepowershell
+RoleAssignmentId   : /subscriptions/11111111-1111-1111-1111-111111111111/providers/Microsoft.Authorization/roleAssignments/22222222-2222-2222-2222-222222222222
+Scope              : /subscriptions/11111111-1111-1111-1111-111111111111
+DisplayName        :
+SignInName         :
+RoleDefinitionName : Storage Blob Data Contributor
+RoleDefinitionId   : ba92f5b4-2d11-453d-a403-e96b0029c9fe
+ObjectId           : 33333333-3333-3333-3333-333333333333
+ObjectType         : Unknown
+CanDelegate        : False
+```
+
+Аналогичным образом, если вывести список назначений ролей с помощью Azure CLI, может появиться назначений с пустым `principalName`. Например [список назначений ролей az](/cli/azure/role/assignment#az-role-assignment-list) возвращает назначение ролей, аналогичную следующей:
+
+```azurecli
+{
+    "canDelegate": null,
+    "id": "/subscriptions/11111111-1111-1111-1111-111111111111/providers/Microsoft.Authorization/roleAssignments/22222222-2222-2222-2222-222222222222",
+    "name": "22222222-2222-2222-2222-222222222222",
+    "principalId": "33333333-3333-3333-3333-333333333333",
+    "principalName": "",
+    "roleDefinitionId": "/subscriptions/11111111-1111-1111-1111-111111111111/providers/Microsoft.Authorization/roleDefinitions/ba92f5b4-2d11-453d-a403-e96b0029c9fe",
+    "roleDefinitionName": "Storage Blob Data Contributor",
+    "scope": "/subscriptions/11111111-1111-1111-1111-111111111111",
+    "type": "Microsoft.Authorization/roleAssignments"
+}
+```
+
+Эти назначения ролей возникают, если назначение роли субъекту безопасности (пользователя, группы, субъекта-службы или управляемого удостоверения) и затем удалить этого участника безопасности. Эти назначения ролей не отображаются на портале Azure, и он не является проблемой, оставить их. Однако при желании можно удалить эти назначения ролей.
+
+Чтобы удалить эти назначения ролей, используйте [Remove-AzRoleAssignment](/powershell/module/az.resources/remove-azroleassignment) или [удалить назначение роли az](/cli/azure/role/assignment#az-role-assignment-delete) команды.
+
+В PowerShell при попытке удалить назначения ролей, используя идентификатор объекта и имя определения роли и более чем одно назначение ролей сопоставляет параметры, вы получите сообщение об ошибке: «Предоставленной информации не сопоставляется назначения ролей». Ниже приведен пример сообщения об ошибке:
+
+```Example
+PS C:\> Remove-AzRoleAssignment -ObjectId 33333333-3333-3333-3333-333333333333 -RoleDefinitionName "Storage Blob Data Contributor"
+
+Remove-AzRoleAssignment : The provided information does not map to a role assignment.
+At line:1 char:1
++ Remove-AzRoleAssignment -ObjectId 33333333-3333-3333-3333-333333333333 ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo          : CloseError: (:) [Remove-AzRoleAssignment], KeyNotFoundException
++ FullyQualifiedErrorId : Microsoft.Azure.Commands.Resources.RemoveAzureRoleAssignmentCommand
+```
+
+Если вы получаете это сообщение об ошибке, убедитесь, что можно также указать `-Scope` или `-ResourceGroupName` параметров.
+
+```Example
+PS C:\> Remove-AzRoleAssignment -ObjectId 33333333-3333-3333-3333-333333333333 -RoleDefinitionName "Storage Blob Data Contributor" - Scope /subscriptions/11111111-1111-1111-1111-111111111111
+```
 
 ## <a name="rbac-changes-are-not-being-detected"></a>Не удается обнаружить изменения RBAC
 
@@ -107,7 +162,7 @@ Azure Resource Manager иногда кэширует конфигурации и
 
 * Конечные точки  
 * IP-адреса  
-* Диски  
+* диски;  
 * Расширения  
 
 Элементы, требующие доступа на **запись** как к **виртуальной машине**, так и к **группе ресурсов**, в которой она находится (а также к доменному имени):  
@@ -120,7 +175,7 @@ Azure Resource Manager иногда кэширует конфигурации и
 
 ## <a name="azure-functions-and-write-access"></a>Функции Azure и доступ для записи
 
-Для некоторых компонентов решения [Функции Azure](../azure-functions/functions-overview.md) требуется доступ на запись. Например, если пользователю назначена роль читателя, он не сможет просматривать функции в пределах приложения-функции. На портале отобразится текст **(Нет доступа)**.
+Для некоторых компонентов решения [Функции Azure](../azure-functions/functions-overview.md) требуется доступ на запись. Например, если пользователю назначена роль читателя, он не сможет просматривать функции в пределах приложения-функции. На портале отобразится текст **(Нет доступа)** .
 
 ![Сообщение об отсутствии доступа в приложении-функции](./media/troubleshooting/functionapps-noaccess.png)
 

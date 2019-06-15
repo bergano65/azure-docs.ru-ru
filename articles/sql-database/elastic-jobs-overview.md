@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 12/18/2018
 ms.openlocfilehash: 62efee57f3663f1dad0446da659de16d2800bf75
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61482964"
 ---
 # <a name="create-configure-and-manage-elastic-jobs"></a>Создание, настройка и управление заданиями обработки эластичных баз данных
@@ -56,7 +56,7 @@ ms.locfileid: "61482964"
 
 ![Учетные данные заданий обработки эластичных баз данных](media/elastic-jobs-overview/job-credentials.png)
 
-## <a name="security-best-practices"></a>Рекомендации по безопасности
+## <a name="security-best-practices"></a>Рекомендации по обеспечению безопасности
 
 Несколько рекомендаций по оптимальной работе с заданиями обработки эластичных баз данных
 

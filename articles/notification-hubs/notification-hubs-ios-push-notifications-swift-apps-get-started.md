@@ -1,6 +1,6 @@
 ---
-title: Push-уведомления в приложения Swift iOS с помощью центров уведомлений Azure | Документация Майкрософт
-description: Узнайте, как отправлять Push-уведомления приложения Swift iOS, с помощью центров уведомлений Azure.
+title: Push-уведомления в приложениях Swift iOS, использовать центры уведомлений Azure | Документация Майкрософт
+description: Узнайте, как отправлять Push-уведомления в приложениях Swift iOS, использовать центры уведомлений Azure.
 services: notification-hubs
 documentationcenter: ios
 author: mikeparker104
@@ -14,96 +14,116 @@ ms.devlang: objective-c
 ms.topic: article
 ms.date: 05/21/2019
 ms.author: miparker
-ms.openlocfilehash: 64a05c6cbd412953ae10b31efc1d141c9cefd062
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: a4773ddd8114659118e89cfee57e73ddb39ff6b6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65994771"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67116680"
 ---
-# <a name="tutorial-push-notifications-to-swift-ios-apps-using-the-notification-hubs-rest-api"></a>Руководство по Push-уведомления в приложения Swift iOS с помощью API REST центров уведомлений
+# <a name="tutorial-push-notifications-to-swift-ios-apps-that-use-the-notification-hubs-rest-api"></a>Руководство по Push-уведомления в Swift iOS приложений, использующих API REST центров уведомлений
 
 > [!div class="op_single_selector"]
 > * [Objective-C](notification-hubs-ios-apple-push-notification-apns-get-started.md)
 > * [Swift](notification-hubs-ios-push-notifications-swift-apps-get-started.md)
 
-В этом руководстве, использовать центры уведомлений Azure для Push-уведомлений в приложение на базе Swift iOS с помощью [REST API](/rest/api/notificationhubs/). Вы создадите пустое приложение iOS, получающее push-уведомления с помощью [Службы push-уведомлений Apple (APNs)](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1).
+В этом руководстве можно использовать центры уведомлений Azure для Push-уведомлений в приложении на базе Swift iOS с помощью [REST API](/rest/api/notificationhubs/). Можно также создать пустое приложение iOS, получающее Push-уведомлений с помощью [Push-уведомлений Apple (APN)](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1).
 
-В этом руководстве вы выполните следующие задачи:
+В этом руководстве описываются следующие действия:
 
 > [!div class="checklist"]
-> * создание файла запроса на подпись сертификата;
-> * регистрация приложения для работы с push-уведомлениями;
-> * Создание профиля подготовки для приложения
-> * Создание концентратора уведомлений
-> * Настройка концентратора уведомлений с помощью APNS сведения
-> * подключение приложения iOS к центрам уведомлений;
-> * Тестирование решения
+> * Создайте файл запроса подписи сертификата.
+> * Запрос приложения для Push-уведомлений.
+> * Создайте профиль подготовки для приложения.
+> * Создание центра уведомлений.
+> * Настройка концентратора уведомлений с помощью APNs сведения.
+> * Подключение приложения iOS в центр уведомлений.
+> * Тестирование решения.
 
 ## <a name="prerequisites"></a>Технические условия
+
 Для работы вам потребуется следующее:
 
-- Пройдите [обзоре центров уведомлений Azure](notification-hubs-push-notification-overview.md) Если вы не знакомы со службой. 
-- Дополнительные сведения об установке и регистрации: [Управление регистрацией](notification-hubs-push-notification-registration-management.md)
-- Активный [учетной записи разработчика Apple](https://developer.apple.com) 
-- Компьютер Mac с Xcode, а также разработчиков допустимый сертификат в цепочку ключей
-- Физический iPhone устройства можно запустить и отладить с (невозможно тестировать Push-уведомления с помощью симулятора)
-- Физический iPhone устройство зарегистрировано в [портал Apple](https://developer.apple.com) и связанный с вашим сертификатом
-- [Подписки Azure](https://portal.azure.com) где можно создавать и администрировать ресурсы
+- Чтобы пройти [обзоре центров уведомлений Azure](notification-hubs-push-notification-overview.md) Если вы не знакомы со службой.
+- Дополнительные сведения о [регистрации и установки](notification-hubs-push-notification-registration-management.md).
+- Активный [учетной записи разработчика Apple](https://developer.apple.com).
+- Компьютер Mac с Xcode, а также разработчиков допустимый сертификат в цепочку ключей.
+- Физический iPhone устройства можно запускать и отлаживать, так как невозможно тестировать Push-уведомлений с помощью симулятора.
+- Физический iPhone устройство зарегистрировано в [портал Apple](https://developer.apple.com) и связанный с вашим сертификатом.
+- [Подписки Azure](https://portal.azure.com) где можно создавать и администрировать ресурсы.
 
-Оно должно быть возможно для выполнения этой процедуры для создания в этом примере первый и принципов, не имея опыта работы. Однако знание следующие основные понятия может оказаться полезной:
+Даже если у вас нет опыта работы с разработкой приложений iOS, можно для выполнения этой процедуры действия для создания в этом примере первый и принципов. Тем не менее вас приятно удивит Знакомство со следующими принципами:
 
-- Создание приложений iOS с Xcode и Swift
-- Настройка [центра уведомлений Azure](notification-hubs-ios-apple-push-notification-apns-get-started.md) для iOS
-- Знакомство с [портал разработчиков Apple](https://developer.apple.com) и [портала Azure](https://portal.azure.com)
+- Создание приложений iOS с Xcode и Swift.
+- Настройка [центра уведомлений Azure](notification-hubs-ios-apple-push-notification-apns-get-started.md) для iOS.
+- [Портал разработчиков Apple](https://developer.apple.com) и [портала Azure](https://portal.azure.com).
 
 > [!NOTE]
-> В центре уведомлений будут настроены для использования *"песочницы"* только режим проверки подлинности. Не следует использовать этот режим проверки подлинности для рабочих нагрузок.
+> В центре уведомлений будут настроены для использования **"песочницы"** только режим проверки подлинности. Не следует использовать этот режим проверки подлинности для рабочих нагрузок.
 
 [!INCLUDE [Notification Hubs Enable Apple Push Notifications](../../includes/notification-hubs-enable-apple-push-notifications.md)]
 
-## <a name="connect-your-ios-app-to-notification-hubs"></a>Подключение приложения iOS к центрам уведомлений
+## <a name="connect-your-ios-app-to-a-notification-hub"></a>Подключение приложения iOS в центр уведомлений
+
 В этом разделе вам предстоит создать приложение iOS, которое будет подключаться к центру уведомлений.  
 
 ### <a name="create-an-ios-project"></a>Создание проекта iOS
-1. В **Xcode**, создайте новый проект iOS и выберите **приложение одного представления** шаблона.
-2. При настройке параметров для нового проекта, выполните следующие действия.
-    1. Используйте тот же **название продукта** (то есть **PushDemo**) и **идентификатор организации** (то есть `com.<organization>`), используемую при **пакета Идентификатор** было задано в **портал разработчиков Apple**. 
-    2. Выберите **Team** , **идентификатор приложения** была настроена для.
-    3. Задайте **языка** для **Swift**.
-    4. Щелкните **Далее**
-3. Создайте новую папку с именем **SupportingFiles**.
-4. Создайте новый **plist** файл с именем **devsettings.plist** под **SupportingFiles** папки. Не забудьте добавить эту папку, чтобы ваши **gitignore** файл, так что он не зафиксирована, при работе с **репозитория git**. В рабочем приложении вы бы скорее всего условной настройки эти секреты в рамках автоматизированного процесса сборки. Тем не менее он не рассматривается как часть этого пошагового руководства.
-5. Обновление **devsettings.plist** включать следующие записи конфигурации (используя свои значения из **концентратора уведомлений** вам подготовить):
 
-   | Ключ                            | type                     | Value                     |               
+1. В XCode создайте новый проект iOS и выберите шаблон **Single View Application** (Приложение с одним представлением).
+
+1. При настройке параметров для нового проекта:
+
+   1. Укажите **название продукта** (PushDemo) и **идентификатор организации** (`com.<organization>`), которые использовались при установке **идентификатор пакета** на портале разработчика Apple.
+
+   1. Выберите **Team** , **идентификатор приложения** была настроена для.
+
+   1. Задайте **языка** для **Swift**.
+
+   1. Щелкните **Далее**.
+
+1. Создайте новую папку с именем **SupportingFiles**.
+
+1. Создайте новый список p-файл с именем **devsettings.plist** в **SupportingFiles** папки. Не забудьте добавить эту папку, чтобы ваши **gitignore** файл, так что он не зафиксирована, при работе с репозиторием git. В рабочем приложении вы бы скорее всего условной настройки эти секреты в рамках автоматизированного процесса сборки. Такие параметры не описаны в этом пошаговом руководстве.
+
+1. Обновление **devsettings.plist** для включения следующие записи конфигурации, используя собственные значения из центра уведомлений, которое вы подготовили:
+
+   | Ключ                            | type                     | Значение                     |
    |--------------------------------| -------------------------| --------------------------|
-   | notificationHubKey             | String                   | \<hubKey\>                |
-   | notificationHubKeyName         | String                   | \<hubKeyName\>            |
-   | notificationHubName            | String                   | \<hubName\>               |
-   | notificationHubNamespace       | String                   | \<hubNamespace\>          |
-    
-   Необходимые значения можно найти, перейдя по адресу **концентратора уведомлений** ресурса в **портала Azure**. Можно найти **notificationHubName** и **notificationHubNamespace** значения в правом верхнем углу **Essentials** сводки в  **Общие сведения о** страницы.
+   | notificationHubKey             | String                   | <hubKey>                  |
+   | notificationHubKeyName         | String                   | <hubKeyName>              |
+   | notificationHubName            | String                   | <hubName>                 |
+   | notificationHubNamespace       | String                   | <hubNamespace>            |
+
+   Необходимые значения можно найти, перейдя по адресу ресурса центра уведомлений на портале Azure. В частности **notificationHubName** и **notificationHubNamespace** значения находятся в правом верхнем углу **Essentials** сводки в **Обзор** страницы.
 
    ![Сводка Essentials концентраторов уведомлений](./media/notification-hubs-ios-push-notifications-swift-apps-get-started/hub-essentials.png)
 
-   Можно найти **notificationHubKeyName** и **notificationHubKey** значения, перейдя по адресу **политики доступа**, чтобы выбрать соответствующие **доступа Политика**. Например, `DefaultFullSharedAccessSignature`. Скопируйте из **основной строки подключения** значения начинаются с префикса `SharedAccessKeyName=` для `notificationHubKeyName` и значения начинаются с префикса `SharedAccessKey=` для `notificationHubKey`. Строка подключения должна быть в следующем формате:
-    
+   Также можно найти **notificationHubKeyName** и **notificationHubKey** значения, перейдя по адресу **политики доступа** и выбрав соответствующие  **Политика доступа**, такие как `DefaultFullSharedAccessSignature`. После этого скопируйте из **основной строки подключения** значения начинаются с префикса `SharedAccessKeyName=` для `notificationHubKeyName` и значения начинаются с префикса `SharedAccessKey=` для `notificationHubKey`.
+
+   Строка подключения должна быть в следующем формате:
+
    ```xml
    Endpoint=sb://<namespace>.servicebus.windows.net/;SharedAccessKeyName=<notificationHubKeyName>;SharedAccessKey=<notificationHubKey>
    ```
 
-   Проще говоря, вы используете *DefaultFullSharedAccessSignature* , токен можно использовать для отправки уведомлений также. Однако на практике `DefaultListenSharedAccessSignature` будет лучшим выбором для ситуаций, где вы хотите получать уведомления.       
-6. В разделе **навигатор проекта**, нажмите кнопку **имя_проекта**, затем нажмите кнопку **Общие** вкладку
-7. Найти **удостоверений**, задайте **идентификатор пакета** значение, чтобы он соответствовал той, которая использовалась для **идентификатор приложения** (из предыдущих шага) то есть `'com.<organization>.PushDemo'`
-8. Найти **подписывание**, убедитесь, что выбран соответствующий **Team** для вашей **учетной записи разработчика Apple** (тот, с которой вы создали сертификаты и профили ранее).  **Xcode** должна автоматически извлечь вниз соответствующий **профиль подготовки** на основе **идентификатор пакета**. Если вы не видите новый **профиль подготовки**, обновите профили для **удостоверение подписывания** (*Xcode > предпочтения > учетная запись > сведения о представлении*). Щелкнув **удостоверение подписывания**, выбрав **обновить** кнопки в правом нижнем углу следует загрузить профили.
-9. Выберите **возможности** вкладку и убедитесь, что **Push-уведомления** включены.
-10. Откройте ваш **AppDelegate.swift** файл для реализации *UNUserNotificationCenterDelegate* протокола и добавьте следующий код в начало класса:
-    
+   Проще говоря, укажите `DefaultFullSharedAccessSignature` , токен можно использовать для отправки уведомлений. На практике `DefaultListenSharedAccessSignature` будет лучшим выбором для ситуаций, где вы хотите получать уведомления.
+
+1. В разделе **навигатор проекта**выберите **имя_проекта** , а затем выберите **Общие** вкладки.
+
+1. Найти **удостоверений** и задайте **идентификатор пакета** значение, чтобы он соответствовал `com.<organization>.PushDemo`, что значение, используемое для **идентификатор приложения** из предыдущего шага.
+
+1. Найти **подписывание**, а затем выберите соответствующий **Team** для вашей **учетной записи разработчика Apple**. **Team** значение должна совпадать с той, под которой вы создали сертификаты и профили.
+
+1. Xcode должна автоматически извлечь вниз соответствующий **профиль подготовки** значение на основе **идентификатор пакета**. Если вы не видите новый **профиль подготовки** значений, обновите профили для **удостоверение подписывания** , выбрав **Xcode**  >  **Предпочтения** > **учетной записи** > **просмотреть сведения о**. Выберите **удостоверение подписывания**, а затем выберите **обновить** кнопки в правом нижнем загрузить профили.
+
+1. Выберите **возможности** вкладку и убедитесь, что **Push-уведомления** включены.
+
+1. Откройте ваш **AppDelegate.swift** файл для реализации **UNUserNotificationCenterDelegate** протокола и добавьте следующий код в начало класса:
+
     ```swift
     @UIApplicationMain
     class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-        
+
         ...
 
         var configValues: NSDictionary?
@@ -113,14 +133,14 @@ ms.locfileid: "65994771"
         var notificationHubKey : String?
         let tags = ["12345"]
         let genericTemplate = PushTemplate(withBody: "{\"aps\":{\"alert\":\"$(message)\"}}")
-        
+
         ...
     }
     ```
 
-    Эти члены будет использоваться в дальнейшем. *Теги* и *genericTemplate* будет использоваться как часть регистрации. Дополнительные сведения о тегах см. в разделе [тегов для регистраций](notification-hubs-tags-segment-push-message.md) и [Регистрация шаблонов](notification-hubs-templates-cross-platform-push-messages.md).
- 
-11. В этом же файле добавьте следующий код в *didFinishLaunchingWithOptions* функции:
+    Эти члены будет использоваться в дальнейшем. В частности, вы используете **теги** и **genericTemplate** члены как часть регистрации. Дополнительные сведения о тегах см. в разделе [тегов для регистраций](notification-hubs-tags-segment-push-message.md) и [Регистрация шаблонов](notification-hubs-templates-cross-platform-push-messages.md).
+
+1. В этом же файле добавьте следующий код, чтобы **didFinishLaunchingWithOptions** функции:
 
     ```swift
     if let path = Bundle.main.path(forResource: "devsettings", ofType: "plist") {
@@ -131,12 +151,12 @@ ms.locfileid: "65994771"
             self.notificationHubKey = configValues["notificationHubKey"] as? String
         }
     }
-        
+
     if #available(iOS 10.0, *){
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
             (granted, error) in
-                
+
             if (granted)
             {
                 DispatchQueue.main.async {
@@ -149,11 +169,11 @@ ms.locfileid: "65994771"
     return true
     ```
 
-    Этот код извлекает значения параметров из **devsettings.plist**, задает **AppDelegate** классов как *UNUserNotificationCenter* делегировать, запросы авторизации для Push-уведомлений, а затем вызывает *registerForRemoteNotifications*.
-    
-    Проще говоря, этот код поддерживает **iOS 10 и более поздних версий только**. С условно помощью соответствующие интерфейсы API и подходы, как это обычно делается, можно добавить поддержку более ранние версии ОС.
+    Этот код извлекает значения параметров из **devsettings.plist**, задает **AppDelegate** классов как **UNUserNotificationCenter** делегировать, запросы авторизации для Push-уведомлений, а затем вызывает **registerForRemoteNotifications**.
 
-12. В этом же файле добавьте следующие функции:
+    Проще говоря, этот код поддерживает *iOS 10 и более поздних версий*. Можно добавить поддержку для предыдущих версий операционной системы, условно используя соответствующие интерфейсы API и подходы, как это обычно делается.
+
+1. В этом же файле добавьте следующие функции:
 
     ```swift
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -168,10 +188,10 @@ ms.locfileid: "65994771"
     }
     ```
 
-    Код использует *installationId* и *pushChannel* значения для регистрации с **концентратора уведомлений**. В этом случае вы используете *UIDevice.current.identifierForVendor* на уникальное значение для идентификации устройства и последующего форматирования *deviceToken* предоставления нам нужное *pushChannel* значение. *ShowAlert* функцией является просто отображается текст сообщения для демонстрационных целей.
+    Код использует **installationId** и **pushChannel** значения для регистрации в центре уведомлений. В этом случае вы используете **UIDevice.current.identifierForVendor** для предоставления уникальное значение для идентификации устройства, а затем форматирование **deviceToken** для обеспечения нужной  **pushChannel** значение. **ShowAlert** существует функция просто для того, чтобы отобразить текст сообщения для демонстрационных целей.
 
-13. По-прежнему в **AppDelegate.swift**, добавьте *willPresent* и *didReceive* **UNUserNotificationCenterDelegate** функции Отображение оповещений при поступлении уведомления, когда приложение выполняется в переднего плана и фона, соответственно
-    
+1. По-прежнему в **AppDelegate.swift** добавьте **willPresent** и **didReceive** функции **UNUserNotificationCenterDelegate**. Эти функции отображать оповещение, когда они информирующее пользователя, приложение выполняется в основном или фоновом режиме, соответственно.
+
     ```swift
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, 
@@ -179,39 +199,41 @@ ms.locfileid: "65994771"
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         showAlert(withText: notification.request.content.body)
     }
-    
+
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, 
         didReceive response: UNNotificationResponse, 
         withCompletionHandler completionHandler: @escaping () -> Void) {
         showAlert(withText: response.notification.request.content.body)
     }
-    ```    
+    ```
 
-14. Добавьте в конец выражения print *didRegisterForRemoteNotificationsWithDeviceToken* функции, чтобы убедиться, что *installationId* и *pushChannel* выполняется присвоенные значения
-15. Создание папок (**моделей**, **служб**, и **служебные программы**) для основных компонентов, необходимо добавить в проект позже
-16. Проверьте, что построение проекта и выполняется на физическом устройстве (Push-уведомлений не может быть проверен с использованием имитатора)
+1. Добавьте в конец выражения print **didRegisterForRemoteNotificationsWithDeviceToken** функции, чтобы убедиться, что **installationId** и **pushChannel** выполняется присвоенные значения.
+
+1. Создание **моделей**, **служб**, и **служебные программы** папки для основных компонентов необходимо добавить в проект позже.
+
+1. Убедитесь, что проект выполняется сборка и запуск на физическом устройстве. Push-уведомлений нельзя протестировать с помощью симулятора.
 
 ### <a name="create-models"></a>Создание моделей
-На этом шаге вы создадите набор моделей для представления [API REST концентраторов уведомлений](/rest/api/notificationhubs/) полезных данных, а также сохранять необходимая **маркер SAS** данных.
 
+На этом шаге вы создадите набор моделей для представления [API REST концентраторов уведомлений](/rest/api/notificationhubs/) полезных данных и для хранения общего доступа URL-адреса (SAS) маркеров данных.
 
-1.  Добавьте новый файл swift для **моделей** вызывается **PushTemplate.swift**. Эта модель предоставляет объект, представляющий структуру **текст** отдельного шаблона как часть **DeviceInstallation** полезных данных:
-    
+1. Добавить новый Swift файл с именем **PushTemplate.swift** для **моделей** папки. Эта модель предоставляет объект, представляющий структуру **текст** отдельного шаблона как часть **DeviceInstallation** полезных данных.
+
     ```swift
     import Foundation
 
     struct PushTemplate : Codable {
         let body : String
-    
+
         init(withBody body : String) {
             self.body = body
         }
     }
     ```
 
-2. Добавьте новый файл swift для **моделей** папку с именем **DeviceInstallation.swift**. Этот файл определяет структуру, представляющий полезные данные для создания или обновления **установки устройств**. Добавьте в него указанный ниже код.
-    
+1. Добавить новый Swift файл с именем **DeviceInstallation.swift** для **моделей** папки. Этот файл определяет структуру, представляющий полезные данные для создания или обновления **установки устройств**. Добавьте в него указанный ниже код.
+
     ```swift
     import Foundation
 
@@ -221,7 +243,7 @@ ms.locfileid: "65994771"
         let platform : String = "apns"
         var tags : [String]
         var templates : Dictionary<String, PushTemplate>
-    
+
         init(withInstallationId installationId : String, andPushChannel pushChannel : String) {
             self.installationId = installationId
             self.pushChannel = pushChannel
@@ -231,13 +253,13 @@ ms.locfileid: "65994771"
     }
     ```
 
-3.  Добавьте новый файл swift под **моделей** вызывается **TokenData.swift**. Эта модель будет использоваться для хранения **маркер SAS** вместе с истечения срока действия
+1. Добавить новый Swift файл с именем **TokenData.swift** для **моделей** папки. Эта модель будет использоваться для хранения маркер SAS, а также срок его действия.
 
     ```swift
     import Foundation
 
     struct TokenData {
-    
+
         let token : String
         let expiration : Int
 
@@ -249,9 +271,10 @@ ms.locfileid: "65994771"
     ```
 
 ### <a name="generate-a-sas-token"></a>Создать маркер SAS
-**Концентраторы уведомлений** используется та же инфраструктура безопасности, как **служебной шины Azure**. Чтобы вызвать REST API, вам потребуется [программным способом создать маркер SAS](/rest/api/eventhub/generate-sas-token) , используемый в **авторизации** заголовок запроса.  
 
-Результирующий маркер будет иметь следующий формат: 
+Центры уведомлений используют одну инфраструктуру безопасности как служебной шины Azure. Чтобы вызвать REST API, вам потребуется [программным способом создать маркер SAS](/rest/api/eventhub/generate-sas-token) , используемый в **авторизации** заголовок запроса.  
+
+Результирующий маркер будет иметь следующий формат:
 
 ```xml
 SharedAccessSignature sig=<UrlEncodedSignature>&se=<ExpiryEpoch>&skn=<KeyName>&sr=<UrlEncodedResourceUri>
@@ -259,19 +282,22 @@ SharedAccessSignature sig=<UrlEncodedSignature>&se=<ExpiryEpoch>&skn=<KeyName>&s
 
 Сам процесс включает в себя те же действия шесть ключей:  
 
-1.  Вычисления истечения срока действия в [виде времени эпохи UNIX](https://en.wikipedia.org/wiki/Unix_time) формат (секунды, прошедшего с момента 00:00:00 UTC 1 января 1970 года)
-2.  Форматирование **ResourceUrl** (предоставляющий ресурс, который вы пытаетесь получить доступ к, то есть `'https://\<namespace\>.servicebus.windows.net/\<hubName\>'`), закодированные и в нижнем регистре
-3.  Подготовка **StringToSign**, который состоит из `'\<**UrlEncodedResourceUrl**\>\n\<**ExpiryEpoch**\>'`
-4.  Вычисления (и первые 64 символа) **подпись** с помощью **HMAC-SHA256** из **StringToSign** со значением **ключ** частью **Строку подключения** (для соответствующих **правило авторизации**)
-5.  Форматирование в кодировке base-64 **подпись** это знаком процента
-6.  Создав **маркера** в требуемом формате, используя **UrlEncodedSignature**, **ExpiryEpoch**, **KeyName**и **UrlEncodedResourceUrl** значения
+1. Вычисления истечения срока действия в [виде времени эпохи UNIX](https://en.wikipedia.org/wiki/Unix_time) формат, что означает количество секунд, истекших после полуночи UTC, 1 января 1970 года.
+1. Форматирование **ResourceUrl** , представляющий ресурс, который вы пытаетесь открыть, чтобы его процентной кодировке и в нижнем регистре. **ResourceUrl** имеет форму `'https://<namespace>.servicebus.windows.net/<hubName>'`.
+1. Подготовка **StringToSign**, который представляется в формате `'<UrlEncodedResourceUrl>\n<ExpiryEpoch>'`.
+1. Вычислений и кодировку Base64 **подпись** с помощью хэш HMAC-SHA256 **StringToSign** значение. Хэш-значение используется с **ключ** частью **строку подключения** для соответствующих **правило авторизации**.
+1. Форматирование в кодировке Base64 **подпись** это знаком процента.
+1. Создав маркер в требуемом формате, с помощью **UrlEncodedSignature**, **ExpiryEpoch**, **KeyName**, и **UrlEncodedResourceUrl** значения.
 
-См. в разделе [документации по служебной шине](../service-bus-messaging/service-bus-sas.md) полно Обзор **подписанного** и способ его использования **служебной шины Azure** и  **Концентраторы уведомлений**.
+См. в разделе [документации по служебной шине](../service-bus-messaging/service-bus-sas.md) полно Обзор подпись общего доступа и служебной шины Azure и концентраторов уведомлений его использовании.
 
-В целях этого примера Swift, вы собираетесь использовать с открытым исходным кодом Apple **CommonCrypto** библиотеки для хэширования, подписи. Так как это библиотеки, недоступна в Swift стандартных. Тем не менее это можно сделать доступными с помощью промежуточный заголовок. Чтобы добавить и настроить заголовок.
+В целях этого примера Swift, вы собираетесь использовать с открытым исходным кодом Apple **CommonCrypto** библиотеки для хэширования, подписи. Как это библиотеки, он недоступен в Swift без дополнительной настройки. Вы можете предоставить библиотеки с помощью промежуточный заголовок.
 
-1. В **Xcode**, перейдите в меню **файл**, затем **New**, затем **файл** и выберите **заголовочный файл** Назовите его *«BridgingHeader.h»*
-2. Измените файл для импорта **CommonHMAC**
+Чтобы добавить и настроить заголовок.
+
+1. В Xcode, выберите **файл** > **New** > **файл** > **файл заголовка**. Назовите файл заголовка **BridgingHeader.h**.
+
+1. Измените файл для импорта **CommonHMAC.h**:
 
     ```swift
     #import <CommonCrypto/CommonHMAC.h>
@@ -283,18 +309,26 @@ SharedAccessSignature sig=<UrlEncodedSignature>&se=<ExpiryEpoch>&skn=<KeyName>&s
     #endif /* BridgingHeader_h */
     ```
 
-3. Обновить целевой объект **параметры построения** для ссылки на заголовок. Откройте **стандартных параметров** вкладку и прокрутите вниз до **компилятор Swift** раздел. Убедитесь, что **установить заголовок Objective-C совместимости** параметру присвоено значение **Да** и введите путь к файлу заголовка мост в **мост заголовка Objective-C**   параметр, то есть `'\<ProjectName\>/BridgingHeader.h'`. Если не удается найти эти параметры, убедитесь, **все** выбрано представление (а не **основные** или **настроенная**).
-    
-   Есть много программы-оболочки для независимых производителей открытым кодом библиотеки, что может усложнить использование **CommonCrypto** более удобным. Он выходит за рамки этой статьи.
+1. Обновить целевой объект **параметры построения** для ссылки на заголовок:
 
-4. Добавьте новый файл Swift под **служебные программы** папку с именем **TokenUtility.swift** и добавьте следующий код:
+   1. Откройте **стандартных параметров** вкладку и прокрутите вниз до **компилятор Swift** раздел.
+
+   1. Убедитесь, что **установить заголовок Objective-C совместимости** параметру присваивается **Да**.
+
+   1. Введите путь к файлу `'<ProjectName>/BridgingHeader.h'` в **мост заголовка Objective-C** параметр. Это путь к нашей промежуточный заголовок.
+
+   Если не удается найти эти параметры, убедитесь, что у вас есть **все** выбрано представление вместо **основные** или **настроенная**.
+
+   Есть много программы-оболочки для независимых производителей открытым кодом библиотеки, которые могут сделать с помощью **CommonCrypto** более удобным. Тем не менее обсуждение таких библиотек выходит за рамки данной статьи.
+
+1. Добавьте новый файл Swift **TokenUtility.swift** в **служебные программы** папку и добавьте следующий код:
 
    ```swift
    import Foundation
 
    struct TokenUtility {    
         typealias Context = UnsafeMutablePointer<CCHmacContext>
-    
+
         static func getSasToken(forResourceUrl resourceUrl : String, withKeyName keyName : String, andKey key : String, andExpiryInSeconds expiryInSeconds : Int = 3600) -> TokenData {
             let expiry = (Int(NSDate().timeIntervalSince1970) + expiryInSeconds).description
             let encodedUrl = urlEncodedString(withString: resourceUrl)
@@ -304,34 +338,34 @@ SharedAccessSignature sig=<UrlEncodedSignature>&se=<ExpiryEpoch>&skn=<KeyName>&s
             let encodedSignature = urlEncodedString(withString: signature)
             let sasToken = "SharedAccessSignature sr=\(encodedUrl)&sig=\(encodedSignature)&se=\(expiry)&skn=\(keyName)"
             let tokenData = TokenData(withToken: sasToken, andTokenExpiration: expiryInSeconds)
-        
+
             return tokenData
         }
-    
+
         private static func sha256HMac(withData data : Data, andKey key : Data) -> Data {
             let context = Context.allocate(capacity: 1)
             CCHmacInit(context, CCHmacAlgorithm(kCCHmacAlgSHA256), (key as NSData).bytes, size_t((key as NSData).length))
             CCHmacUpdate(context, (data as NSData).bytes, (data as NSData).length)
             var hmac = Array<UInt8>(repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
             CCHmacFinal(context, &hmac)
-        
+
             let result = NSData(bytes: hmac, length: hmac.count)
             context.deallocate()
-        
+
             return result as Data
         }
-    
+
         private static func urlEncodedString(withString stringToConvert : String) -> String {
             var encodedString = ""
             let sourceUtf8 = (stringToConvert as NSString).utf8String
             let length = strlen(sourceUtf8)
-        
+
             let charArray: [Character] = [ ".", "-", "_", "~", "a", "z", "A", "Z", "0", "9"]
             let asUInt8Array = String(charArray).utf8.map{ Int8($0) }
-        
+
             for i in 0..<length {
                 let currentChar = sourceUtf8![i]
-            
+
                 if (currentChar == asUInt8Array[0] || currentChar == asUInt8Array[1] || currentChar == asUInt8Array[2] || currentChar == asUInt8Array[3] ||
                     (currentChar >= asUInt8Array[4] && currentChar <= asUInt8Array[5]) ||
                     (currentChar >= asUInt8Array[6] && currentChar <= asUInt8Array[7]) ||
@@ -342,37 +376,45 @@ SharedAccessSignature sig=<UrlEncodedSignature>&se=<ExpiryEpoch>&skn=<KeyName>&s
                     encodedString += String(format:"%%%02x", currentChar)
                 }
             }
-        
+
             return encodedString
         }
     }
    ```
-    
-    Эта служебная программа содержит логику, ответственными за генерирование **маркер SAS**. *GetSasToken* функция организует высокоуровневые шаги, необходимые для подготовки маркер, для которого, как описано ранее и будет вызываться службой установки в шагах этого руководства. Две другие функции вызываются *getSasToken функция*; *sha256HMac* для вычисления подписи и *urlEncodedString* для кодирования соответствующие строки URL-адреса. *UrlEncodedString* функция требовалось, так как это было невозможно получить требуемый результат с помощью встроенной *addingPercentEncoding* функции. [Пакет SDK для iOS хранилища Azure](https://github.com/Azure/azure-storage-ios/blob/master/Lib/Azure%20Storage%20Client%20Library/Azure%20Storage%20Client%20Library/AZSUtil.m) служил прекрасным примером как подходить к эти операции, хотя и в Objective-C. Дополнительные сведения о **маркеры SAS служебной шины Azure** можно найти в [документации по служебной шине](../service-bus-messaging/service-bus-sas.md). 
+
+   Эта служебная программа содержит логику, ответственными за генерирование маркер SAS.
+
+   Как описано ранее, **getSasToken** функция организует высокоуровневые шаги, необходимые для подготовки маркер. Функция будет вызываться службой установки далее в этом руководстве.
+
+   Две другие функции вызываются **getSasToken** функция: **sha256HMac** для вычисления подписи и **urlEncodedString** для кодирования связан URL-адрес Строка. **UrlEncodedString** функции является обязательным, так как оно не невозможно обеспечить требуемые выходные данные с помощью встроенной **addingPercentEncoding** функции.
+
+   [Пакет SDK для iOS хранилища Azure](https://github.com/Azure/azure-storage-ios/blob/master/Lib/Azure%20Storage%20Client%20Library/Azure%20Storage%20Client%20Library/AZSUtil.m) является отличным примером как подходить к эти операции в Objective-C. Дополнительные сведения о токенах SAS служебной шины Azure можно найти в [документации по служебной шине](../service-bus-messaging/service-bus-sas.md).
 
 ### <a name="verify-the-sas-token"></a>Проверки маркера SAS
-Прежде чем реализовать службу установки клиента, вы можете проверить, что наше приложение правильно создает **маркер SAS** вашей программе http, по выбору. В рамках этой записи, будет наше средство выбора **Postman**.
 
-Запишите *installationId* и *маркера* значения, генерируемых приложение с помощью соответствующим образом помещено печать инструкции или точки останова. 
+Прежде чем реализовать службу установки в клиенте, проверьте, что наше приложение правильно создает маркер SAS с помощью вашей программы HTTP, по выбору. Для целей данного учебника, будет наше средство выбора **Postman**.
 
-Выполните следующие действия для вызова *установок* API:
+Использовать соответствующим образом помещено инструкция print или точки останова обратите **installationId** и **маркера** значений, создаваемый приложением.
 
-1. В **Postman**, откройте новую вкладку
-2. Присвоить запросу **получить** и следующий адрес:
+Выполните следующие действия для вызова **установок** API:
+
+1. В **Postman**, откройте новую вкладку.
+
+1. Присвоить запросу **получить** и указать следующий адрес:
 
     ```xml
     https://<namespace>.servicebus.windows.net/<hubName>/installations/<installationId>?api-version=2015-01
     ```
 
-3. Настройте заголовки запроса следующим образом:
-    
-   | Ключ           | Value            |
+1. Настройте заголовки запроса следующим образом:
+
+   | Ключ           | Значение            |
    | ------------- | ---------------- |
    | Content-Type  | приложение/json |
-   | Авторизация | \<sasToken\>     |
+   | Авторизация | <sasToken>       |
    | x-ms-version  | 2015-01          |
 
-4. Щелкните **кода** кнопки (верхний правый под **Сохранить** кнопки). Запрос должен выглядеть аналогично приведенному ниже:
+1. Выберите **кода** кнопку, которая отображается в правом верхнем углу под **Сохранить** кнопки. Запрос должен выглядеть аналогично приведенному ниже:
 
     ```html
     GET /<hubName>/installations/<installationId>?api-version=2015-01 HTTP/1.1
@@ -384,14 +426,15 @@ SharedAccessSignature sig=<UrlEncodedSignature>&se=<ExpiryEpoch>&skn=<KeyName>&s
     Postman-Token: <postmanToken>
     ```
 
-5. Нажмите кнопку **отправки** кнопки
+1. Выберите **отправки** кнопки.
 
-Регистрация не существует для указанного *installationId* на этом этапе, однако это должно привести **404 не найдено** ответа вместо **401 — не санкционировано**. Этот результат должен убедитесь, что **маркер SAS** принят.
+Регистрация не существует для указанного **installationId** на этом этапе. Результатом проверки должен быть в ответ «404 не найдено», а не ответа «401 — не санкционировано». Этот результат необходимо убедиться, что маркер SAS были приняты.
 
 ### <a name="implement-the-installation-service-class"></a>Реализовать класс службы установки
+
 Затем вы реализуете наши основные оболочку вокруг [установок REST API](/rest/api/notificationhubs/create-overwrite-installation).  
 
-Добавьте новый файл Swift под **служб** папку с именем **NotificationRegistrationService.swift**, затем добавьте следующий код в этот файл:
+Добавьте Swift файл с именем **NotificationRegistrationService.swift** в разделе **служб** папку, а затем добавьте следующий код в этот файл:
 
 ```swift
 import Foundation
@@ -410,7 +453,7 @@ class NotificationRegistrationService {
     private let keyName : String
     private let key : String
     private var tokenData : TokenData? = nil
-    
+
     init(withInstallationId installationId : String,
             andPushChannel pushChannel : String,
             andHubNamespace hubNamespace : String,
@@ -425,37 +468,37 @@ class NotificationRegistrationService {
         self.key = key
         self.defaultHeaders = ["Content-Type": "application/json", "x-ms-version": apiVersion]
     }
-    
+
     func register(
         withTags tags : [String]? = nil,
         andTemplates templates : Dictionary<String, PushTemplate>? = nil,
         completeWith completion: ((_ result: Bool) -> ())? = nil) {
-        
+
         var deviceInstallation = DeviceInstallation(withInstallationId: installationId, andPushChannel: pushChannel)
-        
+
         if let tags = tags {
             deviceInstallation.tags = tags
         }
-        
+
         if let templates = templates {
             deviceInstallation.templates = templates
         }
-        
+
         if let deviceInstallationJson = encodeToJson(deviceInstallation) {
             let sasToken = getSasToken()
             let requestUrl = String.init(format: tokenizedCreateOrUpdateInstallationRequest, installationId, apiVersion)
             let apiEndpoint = "\(getBaseAddress())\(requestUrl)"
-            
+
             var request = URLRequest(url: URL(string: apiEndpoint)!)
             request.httpMethod = "PUT"
-            
+
             for (key,value) in self.defaultHeaders {
                 request.addValue(value, forHTTPHeaderField: key)
             }
-            
+
             request.addValue(sasToken, forHTTPHeaderField: "Authorization")
             request.httpBody = Data(deviceInstallationJson.utf8)
-            
+
             (self.session.dataTask(with: request) { dat, res, err in
                 if let completion = completion {
                         completion(err == nil && (res as! HTTPURLResponse).statusCode == 200)
@@ -463,11 +506,11 @@ class NotificationRegistrationService {
             }).resume()
         }
     }
-    
+
     private func getBaseAddress() -> String {
         return String.init(format: tokenizedBaseAddress, hubNamespace, hubName)
     }
-    
+
     private func getSasToken() -> String {
         if (tokenData == nil ||
             Date(timeIntervalSince1970: Double((tokenData?.expiration)!)) < Date(timeIntervalSinceNow: -(5 * 60))) {
@@ -476,7 +519,7 @@ class NotificationRegistrationService {
 
         return (tokenData?.token)!
     }
-    
+
     private func encodeToJson<T : Encodable>(_ object: T) -> String? {
         do {
             let jsonData = try jsonEncoder.encode(object)
@@ -492,27 +535,28 @@ class NotificationRegistrationService {
     }
 }
 ```
- 
-Все необходимые подробности в процессе инициализации. Теги и шаблоны при необходимости передаются в *зарегистрировать* функции являются частью **установки устройств** полезные данные JSON.  
 
-*Зарегистрировать* функция вызывает другие закрытые функции, чтобы подготовить запрос. После получения ответа, завершение называется, указывающее, является ли регистрация прошла успешно, или нет.  
+Все необходимые подробности в процессе инициализации. Теги и шаблоны при необходимости передаются в **зарегистрировать** функции являются частью **установки устройств** полезные данные JSON.  
 
-Конечную точку запрос создается путем *getBaseAddress* функцию при помощи **концентратора уведомлений** параметры **пространства имен** и **имя**предоставляются во время инициализации.  
+**Зарегистрировать** функция вызывает другие закрытые функции, чтобы подготовить запрос. После получения ответа, завершения называется и указывает, успешно ли регистрация.  
 
-*GetSasToken* функция проверяет ли в настоящее время хранимый маркер является допустимым, в противном случае он будет выполнить вызов **TokenUtility** могли создать новый и сохранить его перед возвратом значения. 
+Конечная точка запроса создается с помощью **getBaseAddress** функции. Конструкции используются параметры концентратора уведомлений *пространства имен* и *имя* , предоставленные во время инициализации.  
 
-Наконец *encodeToJson* преобразует объекты соответствующей модели в JSON для использования в качестве части текста запроса.
+**GetSasToken** функция проверяет, является ли допустимым данный момент хранимый маркер. Если маркер является недопустимым, функция вызывает **TokenUtility** для создания нового маркера и затем сохраняет его, прежде чем возвращать значение.
+
+Наконец **encodeToJson** преобразует объекты соответствующей модели в JSON для использования в качестве части текста запроса.
 
 ### <a name="invoke-the-notification-hubs-rest-api"></a>Вызвать REST API для центров уведомлений
-Последним шагом является обновление **AppDelegate** использовать **NotifiationRegistrationService** для регистрации в нашей **NotificationHub**. 
 
-1. Откройте **AppDelegate.swift** и добавьте переменную уровня класса для хранения ссылки на **NoficiationRegistrationService**:
+Последним шагом обновление **AppDelegate** использовать **NotificationRegistrationService** для регистрации в нашей **NotificationHub**.
+
+1. Откройте **AppDelegate.swift** и добавьте переменную уровня класса для хранения ссылки на **NotificationRegistrationService**:
 
     ```swift
     var registrationService : NotificationRegistrationService?
     ```
 
-2. В этом же файле обновите *didRegisterForRemoteNotificationsWithDeviceToken* функцию для инициализации **NotificationRegistrationService** с необходимыми параметрами, затем вызовите *зарегистрировать* функции.
+1. В этом же файле обновите **didRegisterForRemoteNotificationsWithDeviceToken** функцию для инициализации **NotificationRegistrationService** с необходимые параметры, а затем вызовите метод **зарегистрировать** функции.
 
     ```swift
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -527,8 +571,8 @@ class NotificationRegistrationService {
             andHubName: notificationHubName!,
             andKeyName: notificationHubKeyName!,
             andKey: notificationHubKey!)
-    
-        // Call register passing in the tags and template parameters
+
+        // Call register, passing in the tags and template parameters
         self.registrationService!.register(withTags: tags, andTemplates: ["genericTemplate" : self.genericTemplate]) { (result) in
             if !result {
                 print("Registration issue")
@@ -539,15 +583,17 @@ class NotificationRegistrationService {
     }
     ```
 
-    Проще говоря, вы собираетесь использовать несколько выражения print для обновления в окне вывода с результатом *зарегистрировать* операции. 
+    Проще говоря, вы собираетесь использовать несколько выражения print для обновления в окне вывода с результатом **зарегистрировать** операции.
 
-3. Теперь сборка и запуск приложения (на физическом устройстве). Вы должны увидеть **«Registered»** в окне вывода.
+1. Теперь сборка и запуск приложения на физическом устройстве. Вы должны увидеть «Зарегистрировано» в окне вывода.
 
 ## <a name="test-the-solution"></a>Тестирование решения
-На этом этапе наше приложение регистрируется с **NotificationHub** и оно может получать Push-уведомлений. В **Xcode**, остановите отладчик и завершение работы приложения (если она запущена). Далее предстоит проверить, **установки устройств** сведения будут должным образом и что наше приложение действительно теперь могут получать Push-уведомлений.  
+
+Наше приложение на этом этапе регистрируется с **NotificationHub** и может получать Push-уведомлений. В Xcode остановите отладчик и закрыть приложение, если он выполняется в данный момент. Затем убедитесь, что **установки устройств** сведения будут должным образом и что наше приложение теперь могут получать Push-уведомлений.  
 
 ### <a name="verify-the-device-installation"></a>Проверка установки устройства
-Теперь можно сделать тот же запрос, как это делалось ранее с помощью **Postman** для [проверки маркера SAS](#verify-the-sas-token). Предположим, что **маркер SAS** еще не истек, ответ должен включать сведения об установке, которое вы указали, такие как шаблоны и теги.  
+
+Теперь можно сделать тот же запрос, как это делалось ранее с помощью **Postman** для [проверки маркера SAS](#verify-the-sas-token). При условии, что маркер SAS еще не истек, ответ теперь должен содержать сведения об установке, которые вы указали, такие как шаблоны и теги.
 
 ```json
 {
@@ -571,45 +617,53 @@ class NotificationRegistrationService {
 ```
 
 ### <a name="send-a-test-notification-azure-portal"></a>Отправить тестовое уведомление (портал Azure)
-— Самый быстрый способ проверить, что вы теперь можете получать уведомления для перехода к **концентратора уведомлений** в **портала Azure**.
 
-1. В **портала Azure**, перейдите к **Обзор** вкладке вашей **концентратора уведомлений**
-2. Нажмите кнопку **Тестовая отправка** (верхний левый) выше **Essentials** сводки
+Чтобы перейти в центр уведомлений на портале Azure — самый быстрый способ проверить, что вы теперь можете получать уведомления:
+
+1. На портале Azure перейдите к **Обзор** вкладку в концентраторе уведомлений.
+
+1. Выберите **Тестовая отправка**, который находится над **Essentials** сводки в левом верхнем углу окна портала:
 
     ![Кнопка отправки сводки теста Essentials концентраторов уведомлений](./media/notification-hubs-ios-push-notifications-swift-apps-get-started/hub-essentials-test-send.png)
-3. Выберите **пользовательский шаблон** из списка **платформ**
-4. Введите **12345** для **Отправка к выражению тега** (вы указали этот тег в нашей установки)
-5. При необходимости измените **сообщение** в полезных данных JSON
-    
+
+1. Выберите **пользовательский шаблон** из **платформ** списка.
+
+1. Введите **12345** для **отправить в выражение тега**. Этот тег уже была задана в нашей установки.
+
+1. При необходимости изменить **сообщение** в полезных данных JSON:
+
     ![Тестовая отправка концентраторов уведомлений](./media/notification-hubs-ios-push-notifications-swift-apps-get-started/hub-test-send.png)
-6. Нажмите кнопку **отправки** и портала должно быть указано ли уведомление на устройство успешно отправлено
+
+1. Нажмите кнопку **Отправить**. Портал должно быть указано ли уведомление было успешно отправлено на устройство:
 
     ![Проверка концентраторов уведомления Отправка результатов](./media/notification-hubs-ios-push-notifications-swift-apps-get-started/hub-test-send-result.png)
 
-    Вы также увидите уведомление в **центр уведомлений** на устройстве (при условии, что приложение не выполняется на переднем плане). Щелкнув уведомление должно откройте приложение и отображать сообщение.
+    Предположим, что приложение не выполняется на переднем плане, вы также увидите уведомление в **центр уведомлений** на вашем устройстве. При нажатии уведомления следует открыть приложение и отображать сообщение.
 
     ![Получено уведомление о примере](./media/notification-hubs-ios-push-notifications-swift-apps-get-started/test-send-notification-received.png)
 
-### <a name="send-a-test-notification-postman"></a>Отправить тестовое уведомление (Postman)
-Вы можете отправлять уведомления с помощью соответствующих [REST API](/rest/api/notificationhubs/) через **Postman** как контейнер и он может быть более удобным способом для тестирования. 
+### <a name="send-a-test-notification-mail-carrier"></a>Отправить тестовое уведомление (Mail несущей)
 
-1. В **Postman**, откройте новую вкладку
-2. Присвоить запросу **POST** и введите следующий адрес:
+Вы можете отправлять уведомления с помощью [REST API](/rest/api/notificationhubs/) с помощью **Postman**, который может быть более удобным способом для тестирования.
+
+1. Откройте новую вкладку в **Postman**.
+
+1. Присвоить запросу **POST**и введите следующий адрес:
 
     ```xml
     https://<namespace>.servicebus.windows.net/<hubName>/messages/?api-version=2015-01
     ```
 
-3. Настройте заголовки запроса следующим образом:
-    
-   | Ключ                            | Value                          |
+1. Настройте заголовки запроса следующим образом:
+
+   | Ключ                            | Значение                          |
    | ------------------------------ | ------------------------------ |
    | Content-Type                   | application/json;charset=utf-8 |
-   | Авторизация                  | \<sasToken\>                   |
+   | Авторизация                  | <sasToken>                     |
    | Формат ServiceBusNotification  | шаблон                       |
    | Tags                           | 12345                        |
 
-4. Настройте запрос **текст** использовать **RAW - JSON (application.json)** с следующие полезные данные JSON:
+1. Настройте запрос **текст** использовать **RAW - JSON (application.json)** с следующие полезные данные JSON:
 
     ```json
     {
@@ -617,7 +671,7 @@ class NotificationRegistrationService {
     }
     ```
 
-5. Щелкните **кода** кнопки (верхний правый под **Сохранить** кнопки). Запрос должен выглядеть аналогично приведенному ниже:
+1. Выберите **кода** кнопку, которая находится в стадии **Сохранить** кнопку в правом верхнем углу окна. Запрос должен выглядеть аналогично приведенному ниже:
 
     ```html
     POST /<hubName>/messages/?api-version=2015-01 HTTP/1.1
@@ -634,22 +688,22 @@ class NotificationRegistrationService {
     }
     ```
 
-5. Нажмите кнопку **отправки** кнопки
+1. Выберите **отправки** кнопки.
 
 Следует получить код состояния успеха и получать уведомления на клиентском устройстве.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Теперь у вас есть основные iOS Swift приложения, подключенного к **концентратора уведомлений** через [REST API](/rest/api/notificationhubs/) и может отправлять и получать уведомления. Дополнительные сведения см. в следующих статьях: 
+Теперь у вас есть основные iOS Swift приложения, подключенного к концентратора уведомлений с помощью [REST API](/rest/api/notificationhubs/) и может отправлять и получать уведомления. Дополнительные сведения см. в следующих статьях:
 
 - [Общие сведения о центрах уведомлений Azure](notification-hubs-push-notification-overview.md)
 - [Использование интерфейса REST центров уведомлений](/rest/api/notificationhubs/)
-- [Пакет SDK для центров уведомлений для серверных операций](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)
+- [Пакет SDK для центров уведомлений для операций серверной части](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)
 - [Концентраторы уведомлений SDK на сайте GitHub](https://github.com/Azure/azure-notificationhubs)
 - [Регистрация с помощью серверной части приложения](notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification.md)
 - [Управление регистрацией](notification-hubs-push-notification-registration-management.md)
 - [Работа с тегами](notification-hubs-tags-segment-push-message.md) 
 - [Работа с пользовательскими шаблонами](notification-hubs-templates-cross-platform-push-messages.md)
-- [Управление доступом служебной шины с подписями коллективного доступа](../service-bus-messaging/service-bus-sas.md)
+- [Управление доступом служебной шины с подписями общего доступа](../service-bus-messaging/service-bus-sas.md)
 - [Программное создание маркеров SAS](/rest/api/eventhub/generate-sas-token)
 - [Apple безопасности: общие crypto](https://developer.apple.com/security/)
 - [Время начала эпохи UNIX](https://en.wikipedia.org/wiki/Unix_time)

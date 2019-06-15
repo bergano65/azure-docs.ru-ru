@@ -1,5 +1,5 @@
 ---
-title: Размеры виртуальных машин Linux в Azure, оптимизированных для GPU | Документация Майкрософт
+title: Размеры виртуальных Машин Linux Azure - ускорение вычислений | Документация Майкрософт
 description: Список различных размеров виртуальных машин Linux в Azure, оптимизированных для GPU. Сведения о количестве виртуальных ЦП, дисков данных и сетевых адаптеров, а также о пропускной способности хранилища и сети для размеров виртуальных машин этой серии.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 09/24/2018
+ms.date: 06/11/2019
 ms.author: jonbeck
-ms.openlocfilehash: 8f50f090fe38382b8bc3cb7f669ab4025d36ff76
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 3c59c73914a78374da0b8d2f9aeb18b9005e00ac
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60799428"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67070010"
 ---
 # <a name="gpu-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для GPU
 

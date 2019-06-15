@@ -6,15 +6,15 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 01/02/2019
+ms.date: 06/06/2019
 ms.author: alinast
 ms.custom: seodec18
-ms.openlocfilehash: 7208f96d99127247b51510e0c43c1733bb327dfb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b5e230f45fd5889e216f2993f58adf6940ef7679
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60921892"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072910"
 ---
 # <a name="how-to-create-user-defined-functions-in-azure-digital-twins"></a>Создание определяемых пользователем функций в Azure Digital Twins
 
@@ -67,7 +67,7 @@ YOUR_MANAGEMENT_API_URL/matchers
 }
 ```
 
-| Value | Заменить на |
+| Значение | Заменить на |
 | --- | --- |
 | YOUR_SPACE_IDENTIFIER | Регион сервера, в котором размещен ваш экземпляр |
 
@@ -107,7 +107,7 @@ function process(telemetry, executionContext) {
 --USER_DEFINED_BOUNDARY--
 ```
 
-| Value | Заменить на |
+| Значение | Заменить на |
 | --- | --- |
 | USER_DEFINED_BOUNDARY | Имя границы составного содержимого |
 | YOUR_SPACE_IDENTIFIER | Идентификатор пространства  |
@@ -212,7 +212,7 @@ function process(telemetry, executionContext) {
     YOUR_MANAGEMENT_API_URL/spaces?name=YOUR_SPACE_NAME&includes=fullpath
     ```
 
-    | Value | Заменить на |
+    | Значение | Заменить на |
     | --- | --- |
     | YOUR_SPACE_NAME | Имя необходимого пространства |
 
@@ -232,7 +232,7 @@ function process(telemetry, executionContext) {
     }
     ```
 
-    | Value | Заменить на |
+    | Значение | Заменить на |
     | --- | --- |
     | YOUR_DESIRED_ROLE_IDENTIFIER | Идентификатор необходимой роли |
     | YOUR_USER_DEFINED_FUNCTION_ID | Идентификатор необходимой определяемой пользователем функции |
