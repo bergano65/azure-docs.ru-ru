@@ -15,15 +15,15 @@ ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: 95c49eec6964984894f75ecd0a9e50c9c947683b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61257648"
 ---
 # <a name="invoke-spark-programs-from-azure-data-factory-pipelines"></a>Вызов программ Spark из конвейеров фабрики данных Azure
 
-> [!div class="op_single_selector" title1="Transformation Activities"]
+> [!div class="op_single_selector" title1="Действия преобразования"]
 > * [Действие Hive](data-factory-hive-activity.md)
 > * [Действие Pig](data-factory-pig-activity.md)
 > * [Действие MapReduce](data-factory-map-reduce.md)
@@ -123,7 +123,7 @@ ms.locfileid: "61257648"
 
     a. Укажите URI для кластера HDInsight Spark. Например, `https://<sparkclustername>.azurehdinsight.net/`.
 
-    2. Укажите имя пользователя, имеющего доступ к кластеру Spark.
+    2\. Укажите имя пользователя, имеющего доступ к кластеру Spark.
 
     c. Укажите пароль для пользователя.
 
@@ -220,7 +220,7 @@ ms.locfileid: "61257648"
 
     a. Свойству **type** присваивается значение **HDInsightSpark**.
 
-    2. Свойству **rootPath** присваивается значение **adfspark\\pyFiles**, где adfspark — контейнер больших двоичных объектов, а pyFiles — папка с файлами в этом контейнере. В этом примере хранилище BLOB-объектов связано с кластером Spark. Файл можно отправить в другую учетную запись хранения. Чтобы сделать это, создайте связанную службу хранилища, которая свяжет эту учетную запись хранения с фабрикой данных. Затем укажите имя связанной службы в качестве значения свойства **sparkJobLinkedService**. Сведения об этом и других свойствах, поддерживаемых действием Spark, см. в разделе [Свойства действия Spark](#spark-activity-properties).
+    2\. Свойству **rootPath** присваивается значение **adfspark\\pyFiles**, где adfspark — контейнер больших двоичных объектов, а pyFiles — папка с файлами в этом контейнере. В этом примере хранилище BLOB-объектов связано с кластером Spark. Файл можно отправить в другую учетную запись хранения. Чтобы сделать это, создайте связанную службу хранилища, которая свяжет эту учетную запись хранения с фабрикой данных. Затем укажите имя связанной службы в качестве значения свойства **sparkJobLinkedService**. Сведения об этом и других свойствах, поддерживаемых действием Spark, см. в разделе [Свойства действия Spark](#spark-activity-properties).
 
     c. Свойству **entryFilePath** присваивается значение **test.py**, которое является файлом Python.
 

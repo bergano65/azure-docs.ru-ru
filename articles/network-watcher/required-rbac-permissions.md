@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 05/10/2018
 ms.author: kumud
 ms.openlocfilehash: 8c8fe6125d9c638fedadc3d299ff0ac0d601fd61
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64685695"
 ---
 # <a name="role-based-access-control-permissions-required-to-use-network-watcher-capabilities"></a>Разрешения на управление доступом на основе ролей, необходимые для использования возможностей Наблюдателя за сетями
@@ -27,7 +27,7 @@ ms.locfileid: "64685695"
 
 ## <a name="network-watcher"></a>Наблюдатель за сетями
 
-| Действие                                                              | ИМЯ                                                           |
+| Действие                                                              | Name                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/read                              | Получение Наблюдателя за сетями                                          |
 | Microsoft.Network/networkWatchers/write                             | Создание или обновление Наблюдателя за сетями                             |
@@ -42,7 +42,7 @@ ms.locfileid: "64685695"
 
 ## <a name="connection-troubleshoot"></a>Устранение неполадок подключения
 
-| Действие                                                              | ИМЯ                                                           |
+| Действие                                                              | Name                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/connectivityCheck/action          | Инициирование теста на устранение неполадок подключения
 | Microsoft.Network/networkWatchers/queryTroubleshootResult/action    | Запрос результатов теста устранения неполадок подключения                |
@@ -50,7 +50,7 @@ ms.locfileid: "64685695"
 
 ## <a name="connection-monitor"></a>Монитор подключения
 
-| Действие                                                              | ИМЯ                                                           |
+| Действие                                                              | Name                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/connectionMonitors/start/action   | Запуск монитора подключения                                     |
 | Microsoft.Network/networkWatchers/connectionMonitors/stop/action    | Остановка монитора подключения                                      |
@@ -61,7 +61,7 @@ ms.locfileid: "64685695"
 
 ## <a name="packet-capture"></a>Запись пакетов
 
-| Действие                                                              | ИМЯ                                                           |
+| Действие                                                              | Name                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/packetCaptures/queryStatus/action | Запрос состояния записи пакета                           |
 | Microsoft.Network/networkWatchers/packetCaptures/stop/action        | Прекращение записи пакета                                          |
@@ -77,13 +77,13 @@ ms.locfileid: "64685695"
 
 ## <a name="next-hop"></a>Следующий прыжок
 
-| Действие                                                              | ИМЯ                                                           |
+| Действие                                                              | Name                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/nextHop/action                    | Получение следующего прыжка с виртуальной машины                                     |
 
 ## <a name="network-security-group-view"></a>Представление группы безопасности сети
 
-| Действие                                                              | ИМЯ                                                           |
+| Действие                                                              | Name                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/securityGroupView/action          | Просмотр групп безопасности                                           |
 
@@ -95,7 +95,7 @@ ms.locfileid: "64685695"
 
 ## <a name="reachability-report"></a>Отчет о возможности доступа
 
-| Действие                                                              | ИМЯ                                                           |
+| Действие                                                              | Name                                                           |
 | ---------                                                           | -------------                                                  |
 | Microsoft.Network/networkWatchers/azureReachabilityReport/action    | Получение отчета о возможности доступа Azure                               |
 

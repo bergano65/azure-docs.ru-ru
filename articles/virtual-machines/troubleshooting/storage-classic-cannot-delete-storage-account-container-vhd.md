@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 01/11/2019
 ms.author: annayak
 ms.openlocfilehash: 35f8a766c6d260e23ff854284d5b8ee047e64b42
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64926229"
 ---
 # <a name="troubleshoot-classic-storage-resource-deletion-errors"></a>Устранение ошибок при удалении классических ресурсов хранилища
@@ -99,7 +99,7 @@ ms.locfileid: "64926229"
 #### <a name="azure-powershell"></a>Azure PowerShell 
 Если пользователь решит удалить контейнер с помощью PowerShell, появится следующая ошибка. 
 
-> <span style="color:cyan">**Remove-AzureStorageBlob -Context $context -Container vhds -Blob "classicvm-os-8698.vhd"**</span>
+> <span style="color:cyan">**Remove-AzureStorageBlob -Context $context -Container vhds -Blob "classicvm-os-8698.vhd"** </span>
 > 
 > <span style="color:red">Remove-AzureStorageBlob : The remote server returned an error: (412) There is currently a lease on the blob and no lease ID was specified in the request. (Сейчас BLOB-объект находится в аренде, и в запросе не указан идентификатор аренды). Код состояния HTTP: 412 — Сообщение об ошибке HTTP: There is currently a lease on the blob and no lease ID was specified in the request. (Сейчас BLOB-объект находится в аренде, и в запросе не указан идентификатор аренды).</span>
 

@@ -10,10 +10,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 04/04/2018
 ms.author: liydu
 ms.openlocfilehash: e955d21132dda6caa137ad3b5de9d00ccf7ed1b4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61369854"
 ---
 # <a name="mxchip-iot-devkit"></a>MXChip IoT DevKit
@@ -40,7 +40,7 @@ ms.locfileid: "61369854"
 
 ## <a name="provision-azure-services"></a>Подготовка служб Azure
 
-1. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...** - , **cloud-provision**.
+1. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...**  - , **cloud-provision**.
 
 2. Ход выполнения воспроизводится на вкладке **Терминал** панели **Приветствие**.
 
@@ -59,7 +59,7 @@ ms.locfileid: "61369854"
 
 ## <a name="deploy-function-app"></a>Развертывание приложения-функции
 
-1. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...** - **cloud-deploy**.
+1. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...**  - **cloud-deploy**.
 
 2. Дождитесь, пока завершится передача кода приложения-функции (появится сообщение *function app deploys: Done* (Развертывание приложения-функции: выполнено)).
 
@@ -67,7 +67,7 @@ ms.locfileid: "61369854"
 
 1. Подключите MXChip IoT DevKit к компьютеру.
 
-2. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...** - , **config-device-connection**.
+2. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...**  - , **config-device-connection**.
 
 3. На MXChip IoT DevKit нажмите и удерживайте кнопку **A**, дополнительно нажмите кнопку **Сброс**, а затем отпустите кнопку **A**, чтобы DevKit вошел в режим настройки.
 
@@ -106,7 +106,7 @@ ms.locfileid: "61369854"
 ![Пример процедуры тестирования](media/iot-hub-arduino-iot-devkit-az3166-devkit-state/devkit-state.gif)
 
 > [!NOTE]
-> Вы можете просмотреть необработанные данные двойника устройства на портале Azure. Центр Интернета вещей —\> устройства Интернета вещей —\> *\<ваше устройство\>* -\> Двойник устройства.
+> Вы можете просмотреть необработанные данные двойника устройства на портале Azure. Центр Интернета вещей —\> устройства Интернета вещей —\> *\<ваше устройство\>*  -\> Двойник устройства.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

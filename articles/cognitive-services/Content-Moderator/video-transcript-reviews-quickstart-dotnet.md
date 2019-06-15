@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: sajagtap
 ms.openlocfilehash: fa782f687979f1d32cdf1c18bd08f6672e39adfe
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64868595"
 ---
 # <a name="create-video-transcript-reviews-using-net"></a>Создание проверок для расшифровки видео .NET
@@ -376,7 +376,7 @@ Press any key to close the application.
 
 ## <a name="navigate-to-your-video-transcript-review"></a>Переход к проверке расшифровки видео
 
-Теперь вы можете открыть созданную проверку расшифровки видео в средстве проверки Content Moderator, перейдя к экрану **Review (Проверка)**>**Video (Видео)**>**Transcript (Расшифровка)**.
+Теперь вы можете открыть созданную проверку расшифровки видео в средстве проверки Content Moderator, перейдя к экрану **Review (Проверка)** >**Video (Видео)** >**Transcript (Расшифровка)** .
 
 Здесь вы увидите следующие компоненты:
 - две строки добавленной вами расшифровки;

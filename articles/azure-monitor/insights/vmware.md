@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 05/04/2018
 ms.author: magoedte
 ms.openlocfilehash: eac6a27c3bcf64462a9f3d9a57da6df736f30c78
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61386230"
 ---
 # <a name="vmware-monitoring-deprecated-solution-in-azure-monitor"></a>Решение для мониторинга VMware (не рекомендуется) в Azure Monitor
@@ -57,14 +57,14 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
     ![vspherefwproperties](./media/vmware/vsphere3.png)  
 1. Проверьте консоль vSphere, чтобы удостовериться в правильной настройке системного журнала. Подтвердите на узле ESXI, что этот порт **1514** настроен.
 1. Скачайте и установите агент Log Analytics для Linux на сервере Linux. Дополнительные сведения см. в [документации по агенту Log Analytics для Linux](https://github.com/Microsoft/OMS-Agent-for-Linux).
-1. Установив агент Log Analytics для Linux, перейдите в каталог /etc/opt/microsoft/omsagent/sysconf/omsagent.d и скопируйте файл vmware_esxi.conf в каталог /etc/opt/microsoft/omsagent/conf/omsagent.d. Измените владельца или группу и разрешения для файла. Например: 
+1. Установив агент Log Analytics для Linux, перейдите в каталог /etc/opt/microsoft/omsagent/sysconf/omsagent.d и скопируйте файл vmware_esxi.conf в каталог /etc/opt/microsoft/omsagent/conf/omsagent.d. Измените владельца или группу и разрешения для файла. Например:
 
     ```
     sudo cp /etc/opt/microsoft/omsagent/sysconf/omsagent.d/vmware_esxi.conf /etc/opt/microsoft/omsagent/conf/omsagent.d
    sudo chown omsagent:omiusers /etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf
     ```
 1. Перезапустите агент Log Analytics для Linux, выполнив `sudo /opt/microsoft/omsagent/bin/service_control restart`.
-1. Проверьте подключение между сервером Linux и узлом ESXi, выполнив команду `nc` на узле ESXi. Например: 
+1. Проверьте подключение между сервером Linux и узлом ESXi, выполнив команду `nc` на узле ESXi. Например:
 
     ```
     [root@ESXiHost:~] nc -z 123.456.789.101 1514
@@ -197,7 +197,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 
     a. Убедитесь, что агент Log Analytics запущен, с помощью `ps -ef | grep oms`. Если это не так, запустите его, выполнив команду `sudo /opt/microsoft/omsagent/bin/service_control start`
 
-     2. Откройте файл `/etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf` .
+     2\. Откройте файл `/etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf` .
 
      c. Убедитесь, что настройки пользователей и группы допустимы. Они должны выглядеть следующим образом: `-rw-r--r-- 1 omsagent omiusers 677 Sep 20 16:46 vmware_esxi.conf`
 

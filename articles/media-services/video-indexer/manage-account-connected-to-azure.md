@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 05/15/2019
 ms.author: juliako
 ms.openlocfilehash: 37aef7c0ae06aefc69b8a72a80c8ade3951e8b0d
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65799515"
 ---
 # <a name="manage-a-video-indexer-account-connected-to-azure"></a>Управление учетной записью Индексатора видео, подключенной к Azure
@@ -56,13 +56,13 @@ ms.locfileid: "65799515"
 
 Автомасштабирование не выполняется, если количество ЕЗ меньше 1 или выше лимита по умолчанию для учетной записи Служб мультимедиа Azure. Чтобы увеличить лимит, создайте запрос на обслуживание. Сведения о квотах и ограничениях, а также о том, как отправить запрос в службу поддержки, см. в разделе [Квоты и ограничения](../../media-services/previous/media-services-quotas-and-limitations.md).
 
-![Зарегистрироваться](./media/manage-account-connected-to-azure/autoscale-reserved-units.png)
+![Регистрация](./media/manage-account-connected-to-azure/autoscale-reserved-units.png)
 
 ## <a name="errors-and-warnings"></a>Ошибки и предупреждения
 
 Если для вашей учетной записи необходима корректировка, вы увидите соответствующие ошибки и предупреждения о конфигурации учетной записи на странице **Параметры**. Сообщения содержат ссылки на точные места на портале Azure, где необходимо внести изменения. В этом разделе содержатся дополнительные сведения о сообщениях про ошибки и предупреждающих сообщениях.
 
-* Сетка событий
+* Сетка событий Azure
 
     Вам необходимо зарегистрировать поставщик ресурсов Сетки событий с помощью портала Azure. На [портале Azure](https://portal.azure.com/) последовательно выберите **Подписки** > [подписка] > **ResourceProviders** > **Microsoft.EventGrid**. Если не отображается состояние **Зарегистрировано**, щелкните **Зарегистрировать**. Регистрация займет несколько минут. 
 

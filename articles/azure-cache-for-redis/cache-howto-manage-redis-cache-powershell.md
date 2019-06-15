@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 07/13/2017
 ms.author: yegu
 ms.openlocfilehash: f7f4f9ae6a80052e06b2cafa68cb5c11dfa1333a
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62097935"
 ---
 # <a name="manage-azure-cache-for-redis-with-azure-powershell"></a>Управление кэшем Azure для Redis с использованием Azure PowerShell
@@ -84,8 +84,8 @@ ms.locfileid: "62097935"
 
 Чтобы создать кэш в облаке Azure Government, используйте одно из следующих расположений.
 
-* Вирджиния, США
-* Айова, США
+* Правительство штата Вирджиния
+* Правительство штата Айова
 
 Дополнительные сведения об облаке Azure для государственных организаций см. на странице [Microsoft Azure для государственных организаций](https://azure.microsoft.com/features/gov/) и в [руководстве для разработчиков Microsoft Azure для государственных организаций](../azure-government-developer-guide.md).
 
@@ -100,8 +100,8 @@ ms.locfileid: "62097935"
 
 Чтобы создать кэш в облаке Azure China, используйте одно из следующих расположений.
 
-* Восточный Китай
-* Северный Китай
+* Восток Китая
+* Север Китая
 
 Дополнительные сведения об облаке Azure для Китая см. на странице [AzureChinaCloud для Azure под управлением 21Vianet в Китае](http://www.windowsazure.cn/).
 
@@ -118,7 +118,7 @@ ms.locfileid: "62097935"
 Чтобы создать кэш в Microsoft Azure для Германии, используйте одно из следующих расположений.
 
 * Центральная Германия
-* Северо-Восточная Германия
+* Северо-восточная Германия
 
 Дополнительные сведения о Microsoft Azure для Германии см. [здесь](https://azure.microsoft.com/overview/clouds/germany/).
 
@@ -127,8 +127,8 @@ ms.locfileid: "62097935"
 
 | Параметр | Описание | значение по умолчанию |
 | --- | --- | --- |
-| ИМЯ |Имя кэша | |
-| Location |Расположение кэша | |
+| Name |Имя кэша | |
+| Расположение |Расположение кэша | |
 | ResourceGroupName |Имя группы ресурсов, в которой необходимо создать кэш | |
 | Размер |Размер кэша. Допустимые значения: P1, P2, P3, P4, C0, C1, C2, C3, C4, C5, C6, 250 МБ, 1 ГБ, 2,5 ГБ, 6 ГБ, 13 ГБ, 26 ГБ, 53 ГБ |1 ГБ |
 | ShardCount |Число сегментов, которые будут созданы при создании кэша уровня Premium с включенной кластеризацией. Допустимые значения: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 | |
@@ -155,7 +155,7 @@ ms.locfileid: "62097935"
 | set-max-intset-entries |Настраивает [оптимизацию памяти](https://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
 | zset-max-ziplist-entries |Настраивает [оптимизацию памяти](https://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
 | zset-max-ziplist-value |Настраивает [оптимизацию памяти](https://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
-| базы_данных |Определяет количество баз данных. Это свойство можно настроить только в момент создания кэша. |"Стандартный" и "Премиум" |
+| databases |Определяет количество баз данных. Это свойство можно настроить только в момент создания кэша. |"Стандартный" и "Премиум" |
 
 ## <a name="to-create-an-azure-cache-for-redis"></a>Создание экземпляра кэша Azure для Redis
 Новые экземпляры кэша Azure для Redis создаются с помощью командлета [New-AzRedisCache](https://docs.microsoft.com/powershell/module/az.rediscache/new-azrediscache).

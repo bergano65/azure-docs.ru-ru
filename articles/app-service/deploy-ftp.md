@@ -16,10 +16,10 @@ ms.date: 11/30/2018
 ms.author: cephalin;dariac
 ms.custom: seodec18
 ms.openlocfilehash: db8445ec2b3dd8bdefa661d7f186e720c6fada09
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62130115"
 ---
 # <a name="deploy-your-app-to-azure-app-service-using-ftps"></a>Развертывание приложения в службе приложений Azure с помощью FTP или FTPS
@@ -55,7 +55,7 @@ ms.locfileid: "62130115"
 ## <a name="deploy-files-to-azure"></a>Развертывание файлов в Azure
 
 1. Подключитесь к приложению из клиента FTP (например, [Visual Studio](https://www.visualstudio.com/vs/community/), [Cyberduck](https://cyberduck.io/) или [WinSCP](https://winscp.net/index.php)), используя полученные сведения.
-2. Скопируйте файлы и соответствующую им структуру каталогов в Azure в каталог [**/site/wwwroot**](https://github.com/projectkudu/kudu/wiki/File-structure-on-azure) (или в каталог веб-заданий **/site/wwwroot/App_Data/Jobs/**).
+2. Скопируйте файлы и соответствующую им структуру каталогов в Azure в каталог [ **/site/wwwroot**](https://github.com/projectkudu/kudu/wiki/File-structure-on-azure) (или в каталог веб-заданий **/site/wwwroot/App_Data/Jobs/** ).
 3. Перейдите по URL-адресу приложения, чтобы убедиться, что приложение работает правильно. 
 
 > [!NOTE] 

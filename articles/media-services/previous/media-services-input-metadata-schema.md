@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: fa4487b07f130947ac5da2a5dbae6776b06acbe7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61463780"
 ---
 # <a name="input-metadata"></a>Входные метаданные 
@@ -65,18 +65,18 @@ ms.locfileid: "61463780"
 > 
 
 ### <a name="child-elements"></a>Дочерние элементы
-| ИМЯ | Тип | Описание |
+| Name | Тип | Описание |
 | --- | --- | --- |
 | **Programs**<br /><br /> minOccurs="0" | |Коллекция всех [элементов Programs](media-services-input-metadata-schema.md#Programs), если файл ресурса-контейнера имеет формат MPEG-TS. |
 | **VideoTracks**<br /><br /> minOccurs="0" | |Каждый физический файл ресурса может содержать ноль или более видеодорожек, чередуемых в соответствующем формате ресурса. Этот элемент содержит коллекцию всех [элементов VideoTracks](media-services-input-metadata-schema.md#VideoTracks), которые являются частью файла ресурса. |
 | **AudioTracks**<br /><br /> minOccurs="0" | |Каждый физический файл ресурса-контейнера может содержать ноль или более звуковых дорожек, чередуемых в соответствующем формате ресурса-контейнера. Этот элемент содержит коллекцию всех [элементов AudioTracks](media-services-input-metadata-schema.md#AudioTracks), которые являются частью файла ресурса. |
-| **Metadata**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[MetadataType](media-services-input-metadata-schema.md#MetadataType) |Метаданные файла ресурса-контейнера, представленные в виде строки "ключ —значение". Пример.<br /><br /> **&lt;Metadata key="language" value="eng" /&gt;** |
+| **Metadata**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[MetadataType](media-services-input-metadata-schema.md#MetadataType) |Метаданные файла ресурса-контейнера, представленные в виде строки "ключ —значение". Пример:<br /><br /> **&lt;Metadata key="language" value="eng" /&gt;** |
 
 ## <a name="TrackType"></a> TrackType
 Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="attributes"></a>Атрибуты
-| ИМЯ | Тип | Описание |
+| Name | Тип | Описание |
 | --- | --- | --- |
 | **Id**<br /><br /> Обязательно для заполнения |**xs:int** |Отсчитываемый от нуля индекс аудио- или видеодорожки.<br /><br /> MP4-файл не обязательно должен содержать идентификатор дорожки. |
 | **Codec** |**xs:string** |Строка кодека видеодорожки. |
@@ -92,7 +92,7 @@ ms.locfileid: "61463780"
 > 
 
 ### <a name="child-elements"></a>Дочерние элементы
-| ИМЯ | Тип | Описание |
+| Name | Тип | Описание |
 | --- | --- | --- |
 | **Disposition**<br /><br /> minOccurs="0" maxOccurs="1" |[StreamDispositionType](media-services-input-metadata-schema.md#StreamDispositionType) |Содержит сведения о презентации (например, указывает, предназначена ли конкретная звуковая дорожка для людей с нарушениями зрения). |
 | **Metadata**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[MetadataType](media-services-input-metadata-schema.md#MetadataType) |Общие строки "ключ —значение", которые можно использовать для хранения различных сведений. Например, key="language" и value="eng". |
@@ -105,7 +105,7 @@ ms.locfileid: "61463780"
  Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="attributes"></a>Атрибуты
-| ИМЯ | Тип | Описание |
+| Name | Тип | Описание |
 | --- | --- | --- |
 | **SampleFormat** |**xs:string** |Формат выборки. |
 | **ChannelLayout** |**xs: string** |Структура канала. |
@@ -146,7 +146,7 @@ ms.locfileid: "61463780"
 Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="attributes"></a>Атрибуты
-| ИМЯ | Тип | Описание |
+| Name | Тип | Описание |
 | --- | --- | --- |
 | **key**<br /><br /> Обязательно для заполнения |**xs:string** |Ключ в паре "ключ — значение". |
 | **значение**<br /><br /> Обязательно для заполнения |**xs:string** |Значение в паре "ключ — значение". |
@@ -170,7 +170,7 @@ ms.locfileid: "61463780"
 Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="attributes"></a>Атрибуты
-| ИМЯ | Тип | ОПИСАНИЕ |
+| Name | Тип | ОПИСАНИЕ |
 | --- | --- | --- |
 | **По умолчанию**<br /><br /> Обязательно для заполнения |**xs: int** |Установите значение 1, чтобы указать, что это презентация по умолчанию. |
 | **Dub**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что это дубликат презентации. |
@@ -198,7 +198,7 @@ ms.locfileid: "61463780"
  Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="child-elements"></a>Дочерние элементы
-| ИМЯ | Тип | Описание |
+| Name | Тип | Описание |
 | --- | --- | --- |
 | **VideoTrack**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[VideoTrackType (наследуется из TrackType)](media-services-input-metadata-schema.md#VideoTrackType) |Содержит сведения о видеодорожках в файле ресурса-контейнера. |
 
@@ -208,7 +208,7 @@ ms.locfileid: "61463780"
  Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="elements"></a>элементы
-| ИМЯ | Тип | Описание |
+| Name | Тип | Описание |
 | --- | --- | --- |
 | **AudioTrack**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[AudioTrackType (наследуется из TrackType)](media-services-input-metadata-schema.md#AudioTrackType) |Содержит сведения о звуковых дорожках в файле ресурса-контейнера. |
 

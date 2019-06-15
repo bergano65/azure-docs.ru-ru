@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: adigan
 ms.openlocfilehash: e3004a44958d75d18d608a2fbed7ccc44a00dc93
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60642780"
 ---
-# <a name="configure-azure-backup-reports"></a>Настройка отчетов службы архивации Azure
+# <a name="configure-azure-backup-reports"></a>Настройка отчетов службы Azure Backup
 В этой статье описаны этапы, позволяющие настроить отчеты для Azure Backup с помощью хранилища Служб восстановления. Из этой статьи вы также вы узнаете, как использовать эти отчеты в Power BI. Выполнив описанные здесь действия, вы сможете сразу перейти в Power BI, чтобы просмотреть, настроить и создать отчеты.
 
 > [!IMPORTANT]
@@ -87,7 +87,7 @@ ms.locfileid: "60642780"
       ![Получение пакета содержимого](./media/backup-azure-configure-reports/content-pack-get.png)
 4. Введите имя учетной записи хранения, которая была настроена на шаге 5, и щелкните **Далее**.
 
-    ![Введите имя учетной записи хранения](./media/backup-azure-configure-reports/content-pack-storage-account-name.png)    
+    ![Ввод имени учетной записи хранения](./media/backup-azure-configure-reports/content-pack-storage-account-name.png)    
 5. Укажите метод проверки подлинности "Ключ" и введите ключ для этой учетной записи хранения. Чтобы [просмотреть или скопировать ключи учетных записей хранения](../storage/common/storage-account-manage.md#access-keys), перейдите в свою учетную запись хранения на портале Azure.
 
      ![Ввод учетной записи хранения](./media/backup-azure-configure-reports/content-pack-storage-account-key.png) <br/>

@@ -14,10 +14,10 @@ ms.date: 03/15/2019
 ms.reviewer: sdash
 ms.author: mbullwin
 ms.openlocfilehash: 70d1f54aed5e83801b1d1e249d7a412dd6d9a49a
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65964037"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
@@ -58,7 +58,7 @@ ms.locfileid: "65964037"
 
 ![Снимок экрана с интерфейсом анализа сбоев](media/app-map/failures.png)
 
-### <a name="investigate-performance"></a>Анализ работы
+### <a name="investigate-performance"></a>Исследование производительности
 
 Чтобы устранить неполадки с производительностью, нажмите кнопку **Анализ работы**.
 
@@ -66,7 +66,7 @@ ms.locfileid: "65964037"
 
 ![Снимок экрана с интерфейсом анализа производительности](media/app-map/performance.png)
 
-### <a name="go-to-details"></a>Перейти к сведениям
+### <a name="go-to-details"></a>Переход к сведениям
 
 Выберите **перейдите сведения** исследовать возможности начала до конца транзакции, которые может предложить представления вплоть до уровня стека вызова.
 

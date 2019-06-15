@@ -10,17 +10,17 @@ ms.date: 07/20/2018
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: bc9f1feff6d8d45e52c8621d1ec4b36e0a4a4a76
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61303222"
 ---
 # <a name="use-the-azure-automation-graphical-runbook-sdk"></a>Использование пакета SDK графического модуля runbook службы автоматизации Azure
 
 [Графические модули runbook](automation-graphical-authoring-intro.md) — это модули runbook, которые позволяют выполнять сложные задачи с базовым кодом Windows PowerShell или рабочего процесса PowerShell. Пакет SDK для графической разработки службы автоматизации Microsoft Azure позволяет разработчикам создавать и изменять графические модули runbook для использования со службой автоматизации Azure. В следующих фрагментах кода показан базовый поток создания графического модуля runbook из кода.
 
-## <a name="pre-requisites"></a>Технические условия
+## <a name="pre-requisites"></a>Предварительные требования
 
 Для начала импортируйте пакет `Microsoft.Azure.Automation.GraphicalRunbook.Model` в проект.
 

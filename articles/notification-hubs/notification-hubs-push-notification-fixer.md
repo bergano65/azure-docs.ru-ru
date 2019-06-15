@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/04/2019
 ms.author: jowargo
 ms.openlocfilehash: eebf9ef63a8622c4cc431322b786fdf30f6352fe
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64925821"
 ---
 # <a name="diagnose-dropped-notifications-in-azure-notification-hubs"></a>Диагностика пропущенных уведомлений в центрах уведомлений Azure
@@ -194,7 +194,7 @@ ms.locfileid: "64925821"
 
 Информацию об ошибках службы push-уведомлений можно получить с помощью свойства [Сведения о свойстве EnableTestSend]. Оно автоматически включается при отправке тестового сообщения с портала или клиентского приложения Visual Studio Это свойство позволяет просматривать подробную отладочную информацию, а также через API-интерфейсы. Сейчас его можно использовать в пакете SDK для .NET. Оно будет добавляться ко всем пакетам SDK клиента со временем.
 
-Чтобы использовать свойство `EnableTestSend` с вызовом REST, добавьте параметр строки запроса с именем *test* в конце вызова отправки. Например: 
+Чтобы использовать свойство `EnableTestSend` с вызовом REST, добавьте параметр строки запроса с именем *test* в конце вызова отправки. Например:
 
 ```text
 https://mynamespace.servicebus.windows.net/mynotificationhub/messages?api-version=2013-10&test

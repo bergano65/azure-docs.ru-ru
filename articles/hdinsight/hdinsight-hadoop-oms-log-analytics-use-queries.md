@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 11/05/2018
 ms.author: hrasheed
 ms.openlocfilehash: cbaaed3fff99778bfab1feeacdab02bf8245a85a
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64714701"
 ---
 # <a name="query-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Журналы запросов Azure Monitor для мониторинга кластеров HDInsight
@@ -77,7 +77,7 @@ ms.locfileid: "64714701"
     ![Выходные данные поиска всех ошибок](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-all-errors-output.png "Выходные данные поиска всех ошибок")
 
 4. В левой области в категории **Тип** найдите тип ошибки, который необходимо изучить подробнее, и нажмите кнопку **Применить**.  Обратите внимание, что результаты уточнены и показывают только ошибки выбранного типа.
-5. Можно получить более подробную информацию о конкретном списке ошибок, используя параметры, доступные на панели слева. Например: 
+5. Можно получить более подробную информацию о конкретном списке ошибок, используя параметры, доступные на панели слева. Пример:
 
     - чтобы просмотреть сообщения об ошибках из определенного рабочего узла, сделайте следующее:
 

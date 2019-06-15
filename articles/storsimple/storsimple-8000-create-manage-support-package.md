@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 01/09/2018
 ms.author: alkohli
 ms.openlocfilehash: dfc2d8d763a1eb64a37af73e03992f2d948a6856
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61481867"
 ---
 # <a name="create-and-manage-a-support-package-for-storsimple-8000-series"></a>Создание пакета поддержки StorSimple для устройства StorSimple серии 8000 и управление им
@@ -31,7 +31,7 @@ ms.locfileid: "61481867"
 
 ## <a name="create-a-support-package"></a>Создать пакет поддержки.
 
-В некоторых случаях необходимо вручную создать пакет поддержки с помощью Windows PowerShell для StorSimple. Пример.
+В некоторых случаях необходимо вручную создать пакет поддержки с помощью Windows PowerShell для StorSimple. Пример:
 
 * Если необходимо удалить конфиденциальную информацию из файлов журнала до их предоставления службе технической поддержки Майкрософт.
 * Если возникают сложности с отправкой пакета из-за проблем с подключением.

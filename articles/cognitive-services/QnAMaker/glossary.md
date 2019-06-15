@@ -12,10 +12,10 @@ ms.date: 02/21/2019
 ms.author: tulasim
 ms.custom: seodec18
 ms.openlocfilehash: bb3b262f3bde0599cb6dea009d0fbbeafb1c529a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61430687"
 ---
 # <a name="glossary-for-qna-maker-knowledge-base-and-service"></a>Глоссарий для службы и базы знаний QnA Maker
@@ -38,7 +38,7 @@ ms.locfileid: "61430687"
 ## <a name="query"></a>Запрос
 Запрос пользователя – вопрос, который конечный пользователь или тестировщик отправляет в базу знаний. Запрос – это несколько ключевых слов, представляющие вопрос, часто в формате естественного языка.
 
-## <a name="response"></a>Отклик
+## <a name="response"></a>Ответ
 Ответ представляет собой извлеченный из базы знаний ответ, наиболее подходящий для запроса данного пользователя.
 
 ## <a name="confidence-score"></a>Оценка достоверности

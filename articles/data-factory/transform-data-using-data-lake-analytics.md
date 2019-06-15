@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.date: 08/01/2018
 ms.author: abnarain
 ms.openlocfilehash: d5b074fcf182bcc9bf4dc17ba21215d27e13cbdd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60888441"
 ---
 # <a name="transform-data-by-running-u-sql-scripts-on-azure-data-lake-analytics"></a>Преобразование данных с помощью сценариев U-SQL в Azure Data Lake Analytics 
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](v1/data-factory-usql-activity.md)
 > * [Текущая версия](transform-data-using-data-lake-analytics.md)
 
@@ -39,7 +39,7 @@ ms.locfileid: "60888441"
 | **type**                 | Свойству type необходимо присвоить значение **AzureDataLakeAnalytics**. | Да                                      |
 | **accountName**          | Имя учетной записи аналитики озера данных Azure.  | Да                                      |
 | **dataLakeAnalyticsUri** | Универсальный код ресурса (URI) аналитики озера данных Azure.           | Нет                                       |
-| **subscriptionId**       | Идентификатор подписки Azure                    | Нет                                       |
+| **subscriptionId**       | Идентификатор подписки Azure.                    | Нет                                       |
 | **resourceGroupName**    | Имя группы ресурсов Azure                | Нет                                       |
 
 ### <a name="service-principal-authentication"></a>Проверка подлинности субъекта-службы
@@ -121,7 +121,7 @@ ms.locfileid: "60888441"
 | :------------------ | :--------------------------------------- | :------- |
 | name                | Имя действия в конвейере.     | Да      |
 | description         | Описание действия.  | Нет       |
-| тип                | Для действия U-SQL Data Lake Analytics в качестве типа действия используется **DataLakeAnalyticsU-SQL**. | Да      |
+| type                | Для действия U-SQL Data Lake Analytics в качестве типа действия используется **DataLakeAnalyticsU-SQL**. | Да      |
 | linkedServiceName   | Связанная служба Azure Data Lake Analytics. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md).  |Да       |
 | scriptPath          | Путь к папке, содержащей скрипт U-SQL В имени файла учитывается регистр. | Да      |
 | scriptLinkedService | Связанная служба, которая связывает с фабрикой данных службу **Azure Data Lake Store** или **службу хранилища Azure**, содержащую скрипт. | Да      |
@@ -176,7 +176,7 @@ OUTPUT @rs1
 }
 ```
 
-Вместо этого можно использовать динамические параметры. Пример. 
+Вместо этого можно использовать динамические параметры. Пример: 
 
 ```json
 "parameters": {

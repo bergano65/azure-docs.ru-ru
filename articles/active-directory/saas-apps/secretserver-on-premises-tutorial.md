@@ -17,10 +17,10 @@ ms.date: 04/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9167a5ed72e6fec2ca03cc97d1d41dd6cd4aaba6
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62104577"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-secret-server-on-premises"></a>Руководство по Интеграция Azure Active Directory с Secret Server (On-Premises)
@@ -73,7 +73,7 @@ ms.locfileid: "62104577"
 
     ![Кнопка "Создать приложение"][3]
 
-1. В поле поиска введите **Secret Server (On-Premises)**, выберите **Secret Server (On-Premises)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+1. В поле поиска введите **Secret Server (On-Premises)** , выберите **Secret Server (On-Premises)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
     ![Secret Server (On-Premises) в списке результатов](./media/secretserver-on-premises-tutorial/tutorial_secretserver_addfromgallery.png)
 
@@ -111,7 +111,7 @@ ms.locfileid: "62104577"
 
     a. В текстовом поле **Идентификатор** укажите пользовательское значение, например: `https://secretserveronpremises.azure`
 
-    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SecretServerURL>/SAML/AssertionConsumerService.aspx`.
+    2\. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SecretServerURL>/SAML/AssertionConsumerService.aspx`.
 
     > [!NOTE]
     > Представленный выше идентификатор сущности используется только для примера. Вы можете выбрать любое уникальное значение для представления экземпляра Secret Server в AAD. Этот идентификатор сущности следует отправить в [группу поддержки приложения Secret Server (On-Premises)](https://thycotic.force.com/support/s/), чтобы они выполнили настройки со своей стороны. Дополнительные сведения см. в [этой статье](https://thycotic.force.com/support/s/article/Configuring-SAML-in-Secret-Server).
@@ -125,7 +125,7 @@ ms.locfileid: "62104577"
     > [!NOTE] 
     > Эти значения приведены для примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Secret Server (On-Premises)](https://thycotic.force.com/support/s/).
 
-1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
+1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)** , а затем сохраните файл сертификата на компьютере.
 
     ![Ссылка для скачивания сертификата](./media/secretserver-on-premises-tutorial/tutorial_secretserver_certificate.png)
 
@@ -137,11 +137,11 @@ ms.locfileid: "62104577"
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/secretserver-on-premises-tutorial/tutorial_general_400.png)
     
-1. В разделе **Конфигурация Secret Server (On-Premises)** щелкните **Настройка Secret Server (On-Premises)**, чтобы открыть окно **Настройка входа**. Скопируйте **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
+1. В разделе **Конфигурация Secret Server (On-Premises)** щелкните **Настройка Secret Server (On-Premises)** , чтобы открыть окно **Настройка входа**. Скопируйте **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
 
     ![Конфигурация Secret Server (On-Premises)](./media/secretserver-on-premises-tutorial/tutorial_secretserver_configure.png)
 
-1. Чтобы настроить единый вход на стороне **Secret Server (On-Premises)**, нужно отправить **скачанный сертификат (Base64), URL-адрес выхода, идентификатор сущности SAML, URL-адрес службы единого входа SAML** и **идентификатор сущности SAML** [группе поддержки Secret Server (On-Premises)](https://thycotic.force.com/support/s/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **Secret Server (On-Premises)** , нужно отправить **скачанный сертификат (Base64), URL-адрес выхода, идентификатор сущности SAML, URL-адрес службы единого входа SAML** и **идентификатор сущности SAML** [группе поддержки Secret Server (On-Premises)](https://thycotic.force.com/support/s/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -191,7 +191,7 @@ ms.locfileid: "62104577"
 
     ![Назначение пользователя][201]
 
-1. В списке приложений выберите **Secret Server (On-Premises)**.
+1. В списке приложений выберите **Secret Server (On-Premises)** .
 
     ![Ссылка на Secret Server (On-Premises) в списке приложений](./media/secretserver-on-premises-tutorial/tutorial_secretserver_app.png)
 
@@ -209,7 +209,7 @@ ms.locfileid: "62104577"
 
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-### <a name="test-single-sign-on"></a>Тест единого входа
+### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 

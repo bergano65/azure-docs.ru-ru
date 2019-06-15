@@ -9,11 +9,11 @@ ms.service: iot-central
 services: iot-central
 manager: timlt
 ms.openlocfilehash: eccc4100c89c971e264b9b915cd17b9f5ce4477b
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59617452"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64405876"
 ---
 # <a name="connect-a-raspberry-pi-to-your-azure-iot-central-application-python"></a>Подключение устройства Raspberry Pi к приложению Azure IoT Central (Python)
 
@@ -94,7 +94,7 @@ ms.locfileid: "59617452"
 
 Числовые параметры
 
-| Отображаемое имя | Имя поля | Units | Число десятичных знаков | Минимальная | Максимальная | Initial |
+| `Display name` | Имя поля | Units | Число десятичных знаков | Минимальная | Максимальная | Initial |
 | ------------ | ---------- | ----- | -------------- | ------- | ------- | ------- |
 | Напряжение      | setVoltage | В | 0              | 0       | 240     | 0       |
 | Текущее значение      | setCurrent | Амперы  | 0              | 0       | 100     | 0       |
@@ -102,16 +102,16 @@ ms.locfileid: "59617452"
 
 Параметры переключения
 
-| Отображаемое имя | Имя поля | Включение текста | Отключение текста | Initial |
+| `Display name` | Имя поля | Включение текста | Отключение текста | Initial |
 | ------------ | ---------- | ------- | -------- | ------- |
 | IR           | activateIR | ВКЛ      | ВЫКЛ.      | Отключить     |
 
 ### <a name="properties"></a>properties
 
-| type            | Отображаемое имя | Имя поля | Тип данных |
+| type            | `Display name` | Имя поля | Тип данных |
 | --------------- | ------------ | ---------- | --------- |
-| Свойство устройства | Серийный номер   | dieNumber  | number    |
-| текст            | Расположение     | location   | Н/Д       |
+| Свойство устройства | Серийный номер   | dieNumber  | номер    |
+| Text            | Расположение     | location   | Н/Д       |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

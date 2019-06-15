@@ -9,10 +9,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.openlocfilehash: 9bc3e4132919e5fc5baadc78841e66efd3c34bcd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61362271"
 ---
 # <a name="how-to-start-an-azure-stream-analytics-job"></a>Как запустить задание Azure Stream Analytics
@@ -60,5 +60,5 @@ Start-AzStreamAnalyticsJob `
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство по созданию задания Stream Analytics с помощью портала Azure](stream-analytics-quick-create-portal.md)
-* [Краткое руководство. Создание задания Stream Analytics с помощью Azure PowerShell](stream-analytics-quick-create-powershell.md)
-* [Краткое руководство. по созданию задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)
+* [Краткое руководство Создание задания Stream Analytics с помощью Azure PowerShell](stream-analytics-quick-create-powershell.md)
+* [Краткое руководство по созданию задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)

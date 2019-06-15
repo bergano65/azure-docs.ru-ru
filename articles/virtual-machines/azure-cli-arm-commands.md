@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/18/2017
 ms.author: danlep
-ms.openlocfilehash: 8b76e1a168d39d2f39098754f43bae73c21c2049
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: ac1a6136eae79700c427b27c8869bc9241c62abc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60799819"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64717788"
 ---
 # <a name="azure-cli-commands-in-resource-manager-mode"></a>Команды Azure CLI в режиме Resource Manager
 В этой статье приводится синтаксис и параметры команд интерфейса командной строки (CLI) Azure, которые обычно используется для создания ресурсов Azure и управления ими в модели развертывания с помощью Azure Resource Manager. Для доступа к этим командам следует запустить CLI в режиме Resource Manager (ARM). Это не полный справочник, и ваша версия CLI может отображать немного иные команды или параметры. Общие сведения о ресурсах и группах ресурсов Azure см. в статье [Общие сведения о диспетчере ресурсов Azure](../azure-resource-manager/resource-group-overview.md).  
@@ -132,7 +132,7 @@ ms.locfileid: "60799819"
 
     config set <name> <value>
 
-**Задает для рабочего режима Azure CLI значение `arm` или `asm`**.
+**Задает для рабочего режима Azure CLI значение `arm` или `asm`** .
 
     config mode [options] <modename>
 
@@ -969,7 +969,8 @@ ms.locfileid: "60799819"
      -s, --subscription <subscription>      the subscription identifier
 
 <BR>
-    network lb address-pool delete [параметры] <группа_ресурсов> <имя_балансировщика_нагрузки> <name>
+
+    network lb address-pool delete [options] <resource-group> <lb-name> <name>
 
 Удаляет ресурс диапазона пула IP-адресов из подсистемы балансировки нагрузки.
 
@@ -1333,7 +1334,9 @@ ms.locfileid: "60799819"
     -s, --subscription <subscription>            the subscription identifier
 
 <br>
-     network public-ip list [параметры] <группа_ресурсов> Вывод списка всех общедоступных IP-ресурсов в группе ресурсов.
+
+    network public-ip list [options] <resource-group>
+Список всех общедоступных IP-ресурсов в группе ресурсов.
 
     azure network public-ip list -g myresourcegroup
 
@@ -1353,8 +1356,10 @@ ms.locfileid: "60799819"
     --json                                 use json output
     -g, --resource-group <resource-group>  the name of the resource group
     -s, --subscription <subscription>      the subscription identifier
+
 <BR>
-    network public-ip show [параметры] <группа_ресурсов> <name>
+
+    network public-ip show [options] <resource-group> <name>
 
 Отображает свойства общедоступного IP-адреса для общедоступного IP-ресурса в группе ресурсов.
 

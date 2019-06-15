@@ -11,10 +11,10 @@ ms.service: cost-management
 manager: benshy
 ms.custom: seodec18
 ms.openlocfilehash: 91dc386641c758c42f64afff387d0463d1445f1d
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65969077"
 ---
 # <a name="understanding-cloudyn-cost-management-reports"></a>Сведения об отчетах по управлению затратами Cloudyn.
@@ -72,8 +72,8 @@ ms.locfileid: "65969077"
       - категории тегов подписки для распределения затрат.
 
    Примеры могут включать в себя следующие элементы:
-   - Место возникновения затрат
-   - Отдел
+   - место возникновения затрат;
+   - Department
    - Приложение
    - Среда
    - код затрат.
@@ -112,7 +112,7 @@ ms.locfileid: "65969077"
        - Без предоплаты.
        - Частичная предоплата.
        - По запросу.
-       - Резервирование
+       - резервирование.
        - Немедленная оплата.
      - **Charge Type** (Тип платежей)
        - Выберите отрицательный или положительный тип платежей (или оба типа).
@@ -147,7 +147,7 @@ ms.locfileid: "65969077"
     - Ежедневно
     - Еженедельно
     - Ежемесячная
-    - Ежеквартально
+    - Quarterly (Ежеквартально);
     - Annual (Ежегодно).
 
 9. **Allocation rules** (Правила распределения)

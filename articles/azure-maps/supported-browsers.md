@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.openlocfilehash: 84c5dbcf5073ba8c0ae662af019cde590a9adf10
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64686651"
 ---
 # <a name="web-sdk-supported-browsers"></a>Браузеры, поддерживаемые в веб-пакетах SDK
@@ -40,7 +40,7 @@ SDK веб-карты Azure поддерживает следующие брау
 
 См. также [предназначенных для предыдущих версий браузеров](#Target-Legacy-Browsers) далее в этой статье.
 
-## <a name="mobile"></a>Мобильные приложения
+## <a name="mobile"></a>Мобильный
 
 SDK веб-карты Azure поддерживает следующие браузеры мобильных устройств:
 

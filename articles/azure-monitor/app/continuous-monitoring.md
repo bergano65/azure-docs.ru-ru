@@ -10,10 +10,10 @@ ms.service: application-insights
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 41999defb01e024773b6364f169a1ce3b1377237
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60902388"
 ---
 # <a name="add-continuous-monitoring-to-your-release-pipeline"></a>Добавление постоянного мониторинга к конвейеру выпуска
@@ -26,7 +26,7 @@ ms.locfileid: "60902388"
 
 1. Выберите существующий проект Azure DevOps Services.
 
-2. Наведите указатель мыши на элемент **Сборка и выпуск**, затем выберите **Выпуски** и щелкните **+** > **Создать определение выпуска**. Найдите здесь элементы **Мониторинг** > **Azure App Service Deployment with Continuous Monitoring** (Развертывания службы приложений Azure с постоянным мониторингом).
+2. Наведите указатель мыши на элемент **Сборка и выпуск**, затем выберите **Выпуски** и щелкните **+**  > **Создать определение выпуска**. Найдите здесь элементы **Мониторинг** > **Azure App Service Deployment with Continuous Monitoring** (Развертывания службы приложений Azure с постоянным мониторингом).
 
    ![Новый конвейер выпуска Azure DevOps Services](media/continuous-monitoring/001.png)
 
@@ -38,7 +38,7 @@ ms.locfileid: "60902388"
 
    Откроется окно настроек, в котором нужно заполнить все поля в соответствии с таблицей ниже.
 
-    | Параметр        | Value |
+    | Параметр        | Значение |
    | ------------- |:-----|
    | **Имя среды**      | Имя, описывающее среду конвейера выпуска |
    | **Подписка Azure.** | Раскрывающийся список, заполненный подписками Azure, связанными с организацией Azure DevOps Services|

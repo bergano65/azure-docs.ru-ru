@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 01/09/2018
 ms.author: hrasheed
 ms.openlocfilehash: 6af25b95aa3a38c4a2e9f3bd8147604dccae0abb
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64715147"
 ---
 # <a name="use-external-packages-with-jupyter-notebooks-in-apache-spark-clusters-on-hdinsight"></a>Использование внешних пакетов с записными книжками Jupyter в кластерах Apache Spark в HDInsight
@@ -63,11 +63,11 @@ ms.locfileid: "64715147"
    
     a. Найдите пакет в репозитории Maven. В этом руководстве мы используем [spark-csv](https://search.maven.org/#artifactdetails%7Ccom.databricks%7Cspark-csv_2.10%7C1.4.0%7Cjar).
    
-    2. В репозитории найдите значения для параметров **GroupId**, **ArtifactId** и **Version**. Убедитесь, что полученные значения соответствуют кластеру. В этом случае мы используем Scala 2.10 и пакет Spark 1.4.0, но может потребоваться выбрать другие версии, соответствующие версиям Scala или Spark в вашем кластере. Выяснить версию Scala в кластере можно, выполнив `scala.util.Properties.versionString` для ядра Jupyter Spark или при отправке Spark. Выяснить версию Spark в кластере можно, выполнив `sc.version` для элементов Jupyter Notebook.
+    2\. В репозитории найдите значения для параметров **GroupId**, **ArtifactId** и **Version**. Убедитесь, что полученные значения соответствуют кластеру. В этом случае мы используем Scala 2.10 и пакет Spark 1.4.0, но может потребоваться выбрать другие версии, соответствующие версиям Scala или Spark в вашем кластере. Выяснить версию Scala в кластере можно, выполнив `scala.util.Properties.versionString` для ядра Jupyter Spark или при отправке Spark. Выяснить версию Spark в кластере можно, выполнив `sc.version` для элементов Jupyter Notebook.
    
     ![Использование внешних пакетов с записными книжками Jupyter](./media/apache-spark-jupyter-notebook-use-external-packages/use-external-packages-with-jupyter.png "Использование внешних пакетов с записными книжками Jupyter")
    
-    c. Объедините три значения, разделив их двоеточием (**:**).
+    c. Объедините три значения, разделив их двоеточием ( **:** ).
    
         com.databricks:spark-csv_2.10:1.4.0
 

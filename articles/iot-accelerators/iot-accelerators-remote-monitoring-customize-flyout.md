@@ -3,17 +3,16 @@ title: Добавление всплывающего меню решением �
 description: В этой статье показано, как добавить всплывающий элемент на страницу в веб-интерфейс акселератора решения для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
-ms.author: v-yiso
+ms.author: dobett
 ms.service: iot-accelerators
 services: iot-accelerators
-origin.date: 10/05/2018
-ms.date: 11/26/2018
+ms.date: 10/05/2018
 ms.topic: conceptual
 ms.openlocfilehash: ccb1a7ff6abbc68f42c7632a8ba7a392b2c48794
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61447120"
 ---
 # <a name="add-a-custom-flyout-to-the-remote-monitoring-solution-accelerator-web-ui"></a>Добавление пользовательского всплывающего элемента в веб-интерфейс акселератора решения для удаленного мониторинга
@@ -50,11 +49,11 @@ ms.locfileid: "61447120"
 
 **exampleFlyout.container.js**
 
-
+[!code-javascript[Example flyout container](~/remote-monitoring-webui/src/walkthrough/components/pages/pageWithFlyout/flyouts/exampleFlyout/exampleFlyout.container.js?name=flyoutcontainer "Example flyout container")]
 
 **exampleFlyout.js**
 
-
+[!code-javascript[Example flyout](~/remote-monitoring-webui/src/walkthrough/components/pages/pageWithFlyout/flyouts/exampleFlyout/exampleFlyout.js?name=flyout "Example flyout")]
 
 Скопируйте папку **src/walkthrough/components/pages/pageWithFlyout/flyouts** в папку **src/components/pages/example**.
 

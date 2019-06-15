@@ -13,10 +13,10 @@ ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 94b35f0530dacfadb799f1d44d7a9eb666def6c9
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65891971"
 ---
 # <a name="add-google-as-an-identity-provider-for-b2b-guest-users"></a>Добавление Google в качестве поставщика удостоверений для гостевых пользователей B2B
@@ -101,7 +101,7 @@ ms.locfileid: "65891971"
 1. Перейдите на [портал Azure](https://portal.azure.com). В области слева выберите **Azure Active Directory**. 
 2. Выберите **Организационные связи**.
 3. Выберите **поставщиков удостоверений**.
-4. На **Google** , выберите в контекстном меню (**...** ), а затем выберите **удалить**. 
+4. На **Google** , выберите в контекстном меню ( **...** ), а затем выберите **удалить**. 
    
    ![Снимок экрана: параметр удаления для поставщика удостоверений в социальных сетях](media/google-federation/google-social-identity-providers.png)
 

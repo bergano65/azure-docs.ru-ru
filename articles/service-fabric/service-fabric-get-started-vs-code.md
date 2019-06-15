@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 06/29/2018
 ms.author: pepogors
 ms.openlocfilehash: f977a48338f784562ec84355aabb212e5a3dade4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60946578"
 ---
 # <a name="service-fabric-for-visual-studio-code"></a>Service Fabric для Visual Studio Code
@@ -70,7 +70,7 @@ ms.locfileid: "60946578"
 * Service Fabric: Создание приложения 
 * Service Fabric: Публикация приложения 
 * Service Fabric: Развертывание приложения 
-* Service Fabric: Удалить приложение  
+* Service Fabric: Удаление приложения  
 * Service Fabric: Создание приложения 
 * Service Fabric: Очистка приложения 
 
@@ -86,7 +86,7 @@ ms.locfileid: "60946578"
 5.  Новое приложение Service Fabric появится в рабочей области.
 6.  Откройте папку нового приложения, чтобы она стала корневой в рабочей области. Вы можете продолжить выполнение команд отсюда.
 
-### <a name="service-fabric-add-service"></a>Service Fabric: Добавить службу
+### <a name="service-fabric-add-service"></a>Service Fabric: Добавление службы
 **Service Fabric: Добавление службы** команда добавляет новую службу в существующее приложение Service Fabric. Папка приложения, в которое добавляется служба, должна быть корневым каталогом рабочей области. 
 
 1.  Выберите **Service Fabric: Добавление службы** команды.
@@ -113,7 +113,7 @@ ms.locfileid: "60946578"
 > [!NOTE]
 > Развертывание приложений Java не поддерживается на компьютерах под управлением Windows.
 
-### <a name="service-fabric-remove-application"></a>Service Fabric: Удалить приложение
+### <a name="service-fabric-remove-application"></a>Service Fabric: Удаление приложения
 **Service Fabric: Удалить приложение** команда удаляет приложение Service Fabric из кластера, что он был ранее развернут с помощью расширения VS Code. 
 
 1.  Выберите **Service Fabric: Удалить приложение** команды.

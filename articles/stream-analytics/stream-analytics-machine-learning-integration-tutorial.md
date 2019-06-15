@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: b06fec8ab726f48e1937bae4cfbdbd9842788d0a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61480814"
 ---
 # <a name="performing-sentiment-analysis-by-using-azure-stream-analytics-and-azure-machine-learning"></a>Выполнение анализа тональности с помощью Azure Stream Analytics и Машинного обучения Azure
@@ -136,7 +136,7 @@ ms.locfileid: "61480814"
 3. Заполните колонку **Хранилище BLOB-объектов** следующими значениями:
 
    
-   |Поле  |Value  |
+   |Поле  |Значение  |
    |---------|---------|
    |**Псевдоним входных данных** | Используйте имя `datainput` и выберите **Select blob storage from your subscription** (Выбрать хранилище BLOB-объектов из своей подписки).       |
    |**Учетная запись хранения**  |  выберите учетную запись хранения, созданную ранее.  |
@@ -156,7 +156,7 @@ ms.locfileid: "61480814"
 
 3. Заполните колонку **Хранилище BLOB-объектов** следующими значениями:
 
-   |Поле  |Value  |
+   |Поле  |Значение  |
    |---------|---------|
    |**Псевдоним выходных данных** | Используйте имя `datamloutput` и выберите **Select blob storage from your subscription** (Выбрать хранилище BLOB-объектов из своей подписки).       |
    |**Учетная запись хранения**  |  выберите учетную запись хранения, созданную ранее.  |
@@ -175,11 +175,11 @@ ms.locfileid: "61480814"
 
 1. У вас должны быть URL-адрес веб-службы и ключ API в скачанной ранее книге Excel.
 
-2. Перейдите к колонке задания и выберите **Функции** > **+ Добавить** > **AzureML**
+2. Перейдите к колонке задания и выберите **Функции** >  **+ Добавить** > **AzureML**
 
 3. Заполните колонку **Функция Машинного обучения Azure** следующими значениями:
 
-   |Поле  |Value  |
+   |Поле  |Значение  |
    |---------|---------|
    | **Псевдоним функции** | Используйте имя `sentiment` и выберите **Provide Azure Machine Learning function settings manually** (Указать параметры функции Машинного обучения Azure вручную). После этого введите URL-адрес и ключ.      |
    | **URL-адрес**| Вставьте URL-адрес веб-службы.|

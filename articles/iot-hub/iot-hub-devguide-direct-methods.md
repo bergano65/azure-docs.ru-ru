@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 07/17/2018
 ms.author: nberdy
 ms.openlocfilehash: d7c63ffe5a318507053f59bf3a18242ee8c327a0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61327760"
 ---
 # <a name="understand-and-invoke-direct-methods-from-iot-hub"></a>Общие сведения о прямых методах и информация о вызове этих методов из Центра Интернета вещей
@@ -94,7 +94,7 @@ curl -X POST \
 }'
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 Внутреннее приложение получает ответ, включающий в себя следующие элементы:
 
@@ -142,7 +142,7 @@ curl -X POST \
 
 Запросы метода имеют нулевой уровень качества обслуживания.
 
-#### <a name="response"></a>Отклик
+#### <a name="response"></a>Ответ
 
 Устройство отправляет ответы в `$iothub/methods/res/{status}/?$rid={request id}`, где:
 
@@ -168,7 +168,7 @@ curl -X POST \
 
 * текст сообщения AMQP с полезными данными метода в формате JSON.
 
-#### <a name="response"></a>Отклик
+#### <a name="response"></a>Ответ
 
 Устройство создает ссылку на отправку для возврата ответа метода по адресу `amqps://{hostname}:5671/devices/{deviceId}/methods/deviceBound`.
 

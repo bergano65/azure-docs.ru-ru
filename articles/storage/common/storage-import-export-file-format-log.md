@@ -9,10 +9,10 @@ ms.date: 01/23/2017
 ms.author: muralikk
 ms.subservice: common
 ms.openlocfilehash: 00e226134039d29efd744290c4bc63abd50adc89
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61478612"
 ---
 # <a name="azure-importexport-service-log-file-format"></a>Формат файла журнала службы импорта и экспорта Azure
@@ -31,10 +31,10 @@ ms.locfileid: "61478612"
   
 В следующей таблице приведены возможные варианты.  
   
-|Способ проверки подлинности|Значение параметра `ImportExportStatesPath`Element|Расположение больших двоичных объектов журналов|  
+|Метод проверки подлинности|Значение параметра `ImportExportStatesPath`Element|Расположение больших двоичных объектов журналов|  
 |---------------------------|----------------------------------------------|---------------------------|  
-|Ключ учетной записи хранения|Значение по умолчанию|Контейнер с именем `waimportexport`, который является контейнером по умолчанию. Пример.<br /><br /> `https://myaccount.blob.core.windows.net/waimportexport`|  
-|Ключ учетной записи хранения|Значение, заданное пользователем|Контейнер с именем, заданным пользователем. Пример.<br /><br /> `https://myaccount.blob.core.windows.net/mylogcontainer`|  
+|Ключ учетной записи хранения|Значение по умолчанию|Контейнер с именем `waimportexport`, который является контейнером по умолчанию. Пример:<br /><br /> `https://myaccount.blob.core.windows.net/waimportexport`|  
+|Ключ учетной записи хранения|Значение, заданное пользователем|Контейнер с именем, заданным пользователем. Пример:<br /><br /> `https://myaccount.blob.core.windows.net/mylogcontainer`|  
 |SAS контейнера|Значение по умолчанию|Виртуальный каталог с именем по умолчанию (`waimportexport`) в контейнере, указанном в SAS.<br /><br /> Например, если для задания указан SAS `https://myaccount.blob.core.windows.net/mylogcontainer?sv=2012-02-12&se=2015-05-22T06%3A54%3A55Z&sr=c&sp=wl&sig=sigvalue`, расположением журнала будет `https://myaccount.blob.core.windows.net/mylogcontainer/waimportexport`.|  
 |SAS контейнера|Значение, заданное пользователем|Виртуальный каталог с именем, заданным пользователем, в контейнере, указанном в SAS.<br /><br /> Например, если для задания указан SAS `https://myaccount.blob.core.windows.net/mylogcontainer?sv=2012-02-12&se=2015-05-22T06%3A54%3A55Z&sr=c&sp=wl&sig=sigvalue`, а указанному виртуальному каталогу присвоено имя `mylogblobs`, расположение журнала будет `https://myaccount.blob.core.windows.net/mylogcontainer/waimportexport/mylogblobs`.|  
   
@@ -111,7 +111,7 @@ properties-status ::=
 |`Blob/BlobPath`|String|URI большого двоичного объекта.|  
 |`Blob/FilePath`|String|Относительный путь к файлу на диске.|  
 |`Blob/Snapshot`|DateTime|Версия моментального снимка большого двоичного объекта (только для задания экспорта).|  
-|`Blob/Length`|Целое число |Общая длина большого двоичного объекта в байтах.|  
+|`Blob/Length`|Integer|Общая длина большого двоичного объекта в байтах.|  
 |`Blob/LastModified`|DateTime|Дата и время последнего изменения большого двоичного объекта (только для задания экспорта).|  
 |`Blob/ImportDisposition`|String|Метод обработки импорта больших двоичных объектов (только для задания импорта).|  
 |`Blob/ImportDisposition/@Status`|Атрибут, строка|Состояние метода обработки импорта.|  

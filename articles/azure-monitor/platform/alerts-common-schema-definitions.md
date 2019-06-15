@@ -9,10 +9,10 @@ ms.date: 03/14/2019
 ms.author: anantr
 ms.component: alerts
 ms.openlocfilehash: e29a1f5d1e258ab66540010dc12f9326b8fd57a2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60775752"
 ---
 # <a name="common-alert-schema-definitions"></a>Определения общей схемы оповещений
@@ -80,7 +80,7 @@ ms.locfileid: "60775752"
 |:---|:---|
 | alertId | Идентификатор GUID, который однозначно идентифицирует экземпляр предупреждения. |
 | alertRule | Имя правила генерации оповещений, создавшего экземпляр предупреждения. |
-| Уровень серьезности | Серьезность оповещения. Возможные значения: Sev0, Sev1, Sev2, Sev3, Sev4 |
+| Severity | Серьезность оповещения. Возможные значения: Sev0, Sev1, Sev2, Sev3, Sev4 |
 | signalType | Идентифицирует сигнал, на котором была определена правило генерации оповещений. Возможные значения: Метрики, журнал, журнал действий |
 | monitorCondition | Когда срабатывает оповещение, монитор условия оповещений имеет значение «Срабатывания». Если снимает соответствующее условие, вызвавшее предупреждение, условие монитора имеет значение «Разрешено».   |
 | monitoringService | Службы или мониторинга решения, создавшего оповещение. Поля для него контекст оповещения определяются службой наблюдения. |
@@ -116,7 +116,7 @@ ms.locfileid: "60775752"
 
 ## <a name="alert-context-fields"></a>Поля «Контекст предупреждения»
 
-### <a name="metric-alerts"></a>Оповещения метрики
+### <a name="metric-alerts"></a>Оповещения о метриках
 
 #### <a name="monitoringservice--platform"></a>monitoringService = «Платформы»
 

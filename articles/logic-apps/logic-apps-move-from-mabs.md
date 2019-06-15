@@ -10,10 +10,10 @@ ms.reviewer: estfan, LADocs
 ms.topic: article
 ms.date: 05/30/2017
 ms.openlocfilehash: f813cb5d8d5c442fc17f126c3a2ff6de7b0bdde1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61323108"
 ---
 # <a name="migrate-from-biztalk-services-to-azure-logic-apps"></a>Переход со служб BizTalk на Azure Logic Apps
@@ -50,7 +50,7 @@ ms.locfileid: "61323108"
 
 В службах BizTalk имеются различные виды артефактов. 
 
-## <a name="connectors"></a>Коннекторы
+## <a name="connectors"></a>Соединители
 
 Соединители в службах BizTalk помогают мостам отправлять и получать данные, включая двусторонние мосты, поддерживающие взаимодействие типа "запрос — ответ" на основе HTTP. В службе Logic Apps используется та же терминология. Она содержит более 180 соединителей, которые имеют одно назначение и подключаются к широкому ряду технологий и служб. Например, соединители доступны для облачных служб SaaS и PaaS, таких как OneDrive, Office365, Dynamics CRM и т. д., а также локальных систем через локальный шлюз данных (вместо службы адаптера BizTalk для служб BizTalk). Источники в службах BizTalk ограничены FTP, SFTP и подпиской на очереди или разделы служебной шины.
 

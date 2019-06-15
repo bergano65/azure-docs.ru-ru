@@ -10,10 +10,10 @@ ms.date: 08/26/2018
 ms.author: jjed
 ms.custom: seodec2018
 ms.openlocfilehash: d16f20e3c2dfa3d670006e44f0072a3871d41c3f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61289881"
 ---
 # <a name="get-started-with-azure-search-in-java"></a>Начало работы с Поиском Azure в Java
@@ -97,13 +97,13 @@ ms.locfileid: "61289881"
    
     ![][6]
 3. Нажмите кнопку **Применить**.
-4. Выберите **Окно** > **Параметры** > **Сервер** > **Runtime Environments** (Среды выполнения) > **Добавить...**.
+4. Выберите **Окно** > **Параметры** > **Сервер** > **Runtime Environments** (Среды выполнения) > **Добавить...** .
 5. Разверните Apache и выберите ранее установленную версию Apache Tomcat. В нашей системе мы установили версию 8.
    
     ![][7]
 6. На следующей странице укажите каталог установки Tomcat. На компьютере под управлением Windows это, скорее всего, будет C:\Program Files\Apache Software Foundation\Tomcat *версия*.
 7. Нажмите кнопку **Готово**
-8. Выберите **Окно** > **Параметры** > **Java** > **Installed JREs** (Установленные JRE) > **Добавить...**.
+8. Выберите **Окно** > **Параметры** > **Java** > **Installed JREs** (Установленные JRE) > **Добавить...** .
 9. В окне **Add JRE** (Добавить JRE) выберите **Standard VM** (Стандартная виртуальная машина).
 10. Нажмите кнопку **Далее**.
 11. В разделе "Определение JRE" в главном окне выберите **Каталог**.

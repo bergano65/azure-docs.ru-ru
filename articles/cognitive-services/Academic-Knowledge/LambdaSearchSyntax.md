@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alch
 ms.openlocfilehash: 4d4c540e00794bfdf1df265457798cc13530c828
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61337794"
 ---
 # <a name="lambda-search-syntax"></a>Синтаксис поиска с лямбда-выражениями
@@ -33,13 +33,13 @@ FollowEdge(params string[] edgeTypes)
 > [!NOTE]
 > Если не важно, каким типам границ следовать, пропустите *FollowEdge()* между двумя узлами. Запрос пропустит все возможные границы между этими двумя узлами.
 
-Можно указать действия обхода, выполняемые на узле через *VisitNode()*, что означает два варианта: остановить этот узел и вернуть текущий путь или продолжить изучение графа.  Тип перечисления *Action* определяет действия двух типов: *Action.Return* и *Action.Continue*. Можно передать такие значение перечисления непосредственно в *VisitNode()*, или объединить их с помощью побитового оператора and "&". Когда объединяются два действия, это означает, что оба действия будут выполнены. Примечание: не используйте побитовый оператор or "|" для действий. Это приведет к завершению запроса без возвращения. Пропуск *VisitNode()* между двумя вызовами *FollowEdge()* приведет к тому, что запрос безусловно будет исследовать граф после достижения узла.
+Можно указать действия обхода, выполняемые на узле через *VisitNode()* , что означает два варианта: остановить этот узел и вернуть текущий путь или продолжить изучение графа.  Тип перечисления *Action* определяет действия двух типов: *Action.Return* и *Action.Continue*. Можно передать такие значение перечисления непосредственно в *VisitNode()* , или объединить их с помощью побитового оператора and "&". Когда объединяются два действия, это означает, что оба действия будут выполнены. Примечание: не используйте побитовый оператор or "|" для действий. Это приведет к завершению запроса без возвращения. Пропуск *VisitNode()* между двумя вызовами *FollowEdge()* приведет к тому, что запрос безусловно будет исследовать граф после достижения узла.
 
 ```
 VisitNode(Action action, IEnumerable<string> select = null)
 ```
 
-Для *VisitNode()* можно также передать тип лямбда-выражения *Expression\<Func\<INode, Action\>\>*, которое принимает *INode* и возвращает его обход.
+Для *VisitNode()* можно также передать тип лямбда-выражения *Expression\<Func\<INode, Action\>\>* , которое принимает *INode* и возвращает его обход.
 
 ```
 VisitNode(Expression<Func<INode, Action>> action, IEnumerable<string> select = null)
@@ -65,11 +65,11 @@ VisitNode(Expression<Func<INode, Action>> action, IEnumerable<string> select = n
 
 ##### <a name="string-getstring-fieldname"></a>string get(string fieldName)
 
-Работает аналогично *GetField\<string\>(fieldName)*. Тем не менее не вызывает исключения, если поле не найдено. При этом возвращается пустое значение string("").
+Работает аналогично *GetField\<string\>(fieldName)* . Тем не менее не вызывает исключения, если поле не найдено. При этом возвращается пустое значение string("").
 
 ##### <a name="bool-hasstring-fieldname"></a>bool has(string fieldName)
 
-Указывает, существует ли данное свойство в текущем узле. То же, что и *ContainsField(fieldName)*.
+Указывает, существует ли данное свойство в текущем узле. То же, что и *ContainsField(fieldName)* .
 
 ##### <a name="bool-hasstring-fieldname-string-value"></a>bool has(string fieldName, string value)
 

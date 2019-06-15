@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 06/30/2017
 ms.author: stewu
 ms.openlocfilehash: a8a50db5ece242bc00a28e66e21c863388950d6f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61437640"
 ---
 # <a name="tuning-azure-data-lake-storage-gen1-for-performance"></a>Настройка Azure Data Lake Storage 1-го поколения для повышения производительности
@@ -47,7 +47,7 @@ Data Lake Storage 1-го поколения можно масштабирова�
 
 Решив проблему с узкими местами исходного оборудования и сетевого подключения, можно приступить к настройке средств приема. В следующей таблице перечислены ключевые параметры нескольких популярных средств приема и предоставлены подробные статьи по настройке производительности для них.  Дополнительные сведения о выборе подходящего средства для вашего сценария см. в [этой статье](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-data-scenarios).
 
-| Tool               | Параметры     | Дополнительные сведения                                                                 |
+| Средство               | Параметры     | Дополнительные сведения                                                                 |
 |--------------------|------------------------------------------------------|------------------------------|
 | PowerShell       | PerFileThreadCount, ConcurrentFileCount |  [Ссылка](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-get-started-powershell) |
 | AdlCopy    | Единицы измерения Azure Data Lake Analytics  |   [Ссылка](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-copy-data-azure-storage-blob#performance-considerations-for-using-adlcopy)         |

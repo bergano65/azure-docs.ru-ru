@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: magoedte
 ms.openlocfilehash: dd4efcd2f1d4cbf497ad1fde6936088513cb5fd0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60759950"
 ---
 # <a name="log-analytics-data-security"></a>Защита данных Log Analytics
@@ -75,7 +75,7 @@ ms.locfileid: "60759950"
 
 | **Тип данных** | **Поля** |
 | --- | --- |
-| Оповещение |Alert Name, Alert Description, BaseManagedEntityId, Problem ID, IsMonitorAlert, RuleId, ResolutionState, Priority, Severity, Category, Owner, ResolvedBy, TimeRaised, TimeAdded, LastModified, LastModifiedBy, LastModifiedExceptRepeatCount, TimeResolved, TimeResolutionStateLastModified, TimeResolutionStateLastModifiedInDB, RepeatCount |
+| Предупреждение |Alert Name, Alert Description, BaseManagedEntityId, Problem ID, IsMonitorAlert, RuleId, ResolutionState, Priority, Severity, Category, Owner, ResolvedBy, TimeRaised, TimeAdded, LastModified, LastModifiedBy, LastModifiedExceptRepeatCount, TimeResolved, TimeResolutionStateLastModified, TimeResolutionStateLastModifiedInDB, RepeatCount |
 | Параметр Configuration |CustomerID, AgentID, EntityID, ManagedTypeID, ManagedTypePropertyID, CurrentValue, ChangeDate |
 | Событие |EventId, EventOriginalID, BaseManagedEntityInternalId, RuleId, PublisherId, PublisherName, FullNumber, Number, Category, ChannelLevel, LoggingComputer, EventData, EventParameters, TimeGenerated, TimeAdded <br>**Примечание.** Log Analytics собирает данные событий с настраиваемыми полями при их записи в журнал событий Windows. |
 | Метаданные |BaseManagedEntityId, ObjectStatus, OrganizationalUnit, ActiveDirectoryObjectSid, PhysicalProcessors, NetworkName, IPAddress, ForestDNSName, NetbiosComputerName, VirtualMachineName, LastInventoryDate, HostServerNameIsVirtualMachine, IP Address, NetbiosDomainName, LogicalProcessors, DNSName, DisplayName, DomainDnsName, ActiveDirectorySite, PrincipalName, OffsetInMinuteFromGreenwichTime |
@@ -130,7 +130,7 @@ Azure Log Analytics соответствует следующим требова
 * [элементы управления организацией служб (SOC) 1 типа 1 и SOC 2 типа 1](https://www.microsoft.com/en-us/TrustCenter/Compliance/SOC1-and-2);
 * требования [HIPAA и HITECH](https://www.microsoft.com/en-us/TrustCenter/Compliance/hipaa) для компаний, заключивших Соглашение с бизнес-партнерами HIPAA.
 * Общие условия проектирования для Windows
-* Защищенные информационные системы корпорации Майкрософт
+* Защищенные информационные системы Майкрософт
 * как служба Azure, Log Analytics использует компоненты, которые отвечают нормативным требованиям Azure. Дополнительные сведения см. на странице [центра соответствия требованиям Майкрософт](https://www.microsoft.com/en-us/trustcenter/compliance/default.aspx).
 
 > [!NOTE]

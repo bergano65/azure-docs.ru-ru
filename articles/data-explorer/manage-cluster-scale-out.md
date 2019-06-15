@@ -8,10 +8,10 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 04/05/2019
 ms.openlocfilehash: 24bbddd28943adc929fbaea456eeae8165db290c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60758670"
 ---
 # <a name="manage-cluster-scale-out-to-accommodate-changing-demand"></a>Управление горизонтальным масштабированием кластера с учетом меняющихся потребностей
@@ -26,7 +26,7 @@ ms.locfileid: "60758670"
 
 На портале Azure перейдите к ресурсу кластера обозревателя данных. В разделе **параметры** щелкните **горизонтальное масштабирование**. На **Настройка** выберите **включить Автомасштабирование**.
 
-   ![Включить автомасштабирование](media/manage-cluster-scaling/enable-autoscale.png)
+   ![Включение автомасштабирования](media/manage-cluster-scaling/enable-autoscale.png)
 
 На приведенном ниже рисунке показан процесс из нескольких следующих шагов. Более подробное описание ниже рисунок.
 

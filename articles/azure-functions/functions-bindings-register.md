@@ -11,10 +11,10 @@ ms.topic: reference
 ms.date: 02/25/2019
 ms.author: cshoe
 ms.openlocfilehash: 53eb5fc9389d913ecacec3729a06e47a1c2bf56b
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65864549"
 ---
 # <a name="register-azure-functions-binding-extensions"></a>Регистрация расширений привязки функций Azure
@@ -31,8 +31,8 @@ ms.locfileid: "65864549"
 
 | Среда разработки |Регистрация<br/> в службе "Функции" версии 1.x  |Регистрация<br/> в службе "Функции" версии 2.x  |
 |-------------------------|------------------------------------|------------------------------------|
-|Портал Azure|Автоматически|Автоматически|
-|Языки, отличные от .NET или локальная разработка основных инструментов Azure|Автоматически|[Использование основных инструментов функций Azure и пакетов расширения](#local-development-with-azure-functions-core-tools-and-extension-bundles)|
+|Портал Azure|Автоматический|Автоматический|
+|Языки, отличные от .NET или локальная разработка основных инструментов Azure|Автоматический|[Использование основных инструментов функций Azure и пакетов расширения](#local-development-with-azure-functions-core-tools-and-extension-bundles)|
 |C#Библиотека классов, с помощью Visual Studio 2019 г.|[С помощью средств NuGet](#c-class-library-with-visual-studio-2019)|[С помощью средств NuGet](#c-class-library-with-visual-studio-2019)|
 |Библиотека классов C# с использованием Visual Studio Code|Н/Д|[С помощью .NET Core CLI](#c-class-library-with-visual-studio-code)|
 

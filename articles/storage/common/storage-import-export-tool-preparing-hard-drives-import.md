@@ -9,10 +9,10 @@ ms.date: 06/29/2017
 ms.author: muralikk
 ms.subservice: common
 ms.openlocfilehash: 777e0aac46dbffb1e491874b5889667a888aadf5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61478528"
 ---
 # <a name="preparing-hard-drives-for-an-import-job"></a>Подготовка жестких дисков к заданию импорта
@@ -113,7 +113,7 @@ H,Format,SilentMode,Encrypt,
 | FormatOption | **[Обязательный параметр]** Format &#124; AlreadyFormatted<br/><br/> **Format.** Включает форматирование всех данных на диске. <br/>**AlreadyFormatted.** Если указано это значение, средство пропускает форматирование. |
 | SilentOrPromptOnFormat | **[Обязательный параметр]** SilentMode &#124; PromptOnFormat<br/><br/>**SilentMode.** Укажите это значение, чтобы запустить средство в автоматическом режиме. <br/>**PromptOnFormat.** Если указать это значение, средство будет запрашивать подтверждение действия при каждом форматировании.<br/><br/>Если не задано, команда будет прерываться и отображать сообщение об ошибке: "Incorrect value for SilentOrPromptOnFormat: none" (Неправильное значение для свойства SilentOrPromptOnFormat: нет) |
 | Шифрование | **[Обязательный параметр]**  Encrypt &#124; AlreadyEncrypted<br/> Значение этого поля определяет, какие диски следует шифровать, а какие нет. <br/><br/>**Encrypt.** Инструмент отформатирует диск. Если для поля FormatOption задано значение Format, то в этом поле следует задать значение Encrypt. Если в этом случае задать значение AlreadyEncrypted, отобразится следующее сообщение об ошибке: When Format is specified, Encrypt must also be specified (Если задано значение Format, то также необходимо задать значение Encrypt).<br/>**AlreadyEncrypted.** Если указать это значение, инструмент расшифрует диск, используя ключ BitLocker, указанный в поле ExistingBitLockerKey. Если для поля FormatOption задано значение AlreadyFormatted, то в этом поле можно задать как значение Encrypt, так и AlreadyEncrypted. |
-| ExistingBitLockerKey | **[Обязательный параметр]**, если в поле Encryption задано значение AlreadyEncrypted<br/> Значение этого поля — ключ BitLocker, связанный с определенным диском. <br/><br/>Если в поле Encryption указано значение Encrypt, то это поле следует оставить пустым.  Если в этом случае указать ключ BitLocker, отобразится следующее сообщение об ошибке: BitLocker Key should not be specified (Не следует указывать ключ BitLocker).<br/>  **Пример**: 060456-014509-132033-080300-252615-584177-672089-411631|
+| ExistingBitLockerKey | **[Обязательный параметр]** , если в поле Encryption задано значение AlreadyEncrypted<br/> Значение этого поля — ключ BitLocker, связанный с определенным диском. <br/><br/>Если в поле Encryption указано значение Encrypt, то это поле следует оставить пустым.  Если в этом случае указать ключ BitLocker, отобразится следующее сообщение об ошибке: BitLocker Key should not be specified (Не следует указывать ключ BitLocker).<br/>  **Пример**: 060456-014509-132033-080300-252615-584177-672089-411631|
 
 ##  <a name="preparing-disk-for-import-job"></a>Подготовка диска к заданию импорта
 

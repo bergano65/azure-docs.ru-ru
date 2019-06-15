@@ -9,10 +9,10 @@ ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: cb93c29ae4cb8d365cd128c52ee726c10c94bc19
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61023580"
 ---
 # <a name="connect-with-power-bi"></a>Подключение с помощью Power BI
@@ -45,7 +45,7 @@ ms.locfileid: "61023580"
 ## <a name="connect-in-power-bi-service"></a>Подключение в Power BI (служба)
 
 1. Создайте файл Power BI Desktop с возможностью активного подключения к нужной модели на сервере.
-2. В [Power BI](https://powerbi.microsoft.com) выберите **Get Data (Получить данные)** > **Файлы**, а затем найдите и выберите PBIX-файл.
+2. В [Power BI](https://powerbi.microsoft.com) выберите **Get Data (Получить данные)**  > **Файлы**, а затем найдите и выберите PBIX-файл.
 
 ## <a name="see-also"></a>См. также
 [Подключение к службам Azure Analysis Services](analysis-services-connect.md)   

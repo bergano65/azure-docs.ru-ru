@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/01/2019
 ms.author: luisca
 ms.openlocfilehash: 149b701d4a1700787656448e2bdd0d92d2a93844
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65791522"
 ---
 #   <a name="conditional-skill"></a>Условный навыков
@@ -89,7 +89,7 @@ Microsoft.Skills.Util.ConditionalSkill
 
 | Вход   | Описание |
 |-------------|-------------|
-| условие   | Это входные данные — [вычислить поле](#evaluated-fields) , представляющий условие для вычисления. Это условие должно быть логическое значение (*true* или *false*).   <br/>  Примеры: <br/> «= true» <br/> «= $(/document/language) «fr» ==» <br/> «= $(/ / страницдокумента/ \* /Language) == $(/ документа/expectedLanguage)» <br/> |
+| condition   | Это входные данные — [вычислить поле](#evaluated-fields) , представляющий условие для вычисления. Это условие должно быть логическое значение (*true* или *false*).   <br/>  Примеры: <br/> «= true» <br/> «= $(/document/language) «fr» ==» <br/> «= $(/ / страницдокумента/ \* /Language) == $(/ документа/expectedLanguage)» <br/> |
 | whenTrue    | Это входные данные — [вычислить поле](#evaluated-fields) , представляющий значение, возвращаемое, если условие оценено как *true*. Константы строки должны возвращаться в одинарные кавычки («"и»"). <br/>Примеры значений: <br/> «= «Контракт»»<br/>«= $(/ документа/contractType)» <br/> «= $(/ документа илисущности/\*)» <br/> |
 | whenFalse   | Это входные данные — [вычислить поле](#evaluated-fields) , представляющий значение, возвращаемое, если условие оценено как *false*. <br/>Примеры значений: <br/> «= «Контракт»»<br/>«= $(/ документа/contractType)» <br/> «= $(/ документа илисущности/\*)» <br/>
 

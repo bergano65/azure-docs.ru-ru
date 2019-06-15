@@ -18,10 +18,10 @@ ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8cf8c84120f4c90d3943cfc31ffbf9aafcec0ba3
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65873920"
 ---
 # <a name="known-issues-on-internet-explorer-and-microsoft-edge-browsers-with-msaljs"></a>Известные проблемы в браузерах Internet Explorer и Microsoft Edge с MSAL.js
@@ -43,7 +43,7 @@ ms.locfileid: "65873920"
 Развертывание приложения в рабочей среде (например, в веб-приложениях Azure) обычно работает нормально, если конечный пользователь принял всплывающие окна. Мы протестировали его с помощью Internet Explorer 11.
 
 ### <a name="running-locally"></a>Выполняется локально
-Если вы хотите выполнять и отлаживать локально в приложении, в обозревателе Internet Explorer, необходимо учитывать следующие факторы (предполагается, что вы хотите запустить приложение в качестве *http://localhost:1234*):
+Если вы хотите выполнять и отлаживать локально в приложении, в обозревателе Internet Explorer, необходимо учитывать следующие факторы (предполагается, что вы хотите запустить приложение в качестве *http://localhost:1234* ):
 
 - Internet Explorer имеет механизм безопасности с именем «защищенный режим», который не позволяет MSAL.js работать правильно. Среди симптомов, после входа, страницы могут быть перенаправлены http://localhost:1234/null.
 
@@ -51,7 +51,7 @@ ms.locfileid: "65873920"
 
     1. Internet Explorer щелкните **средства** (значок шестеренки).
     1. Выберите **обозревателя** и затем **безопасности** вкладки.
-    1. Щелкните **Internet** зоны и снимите флажок **Включить защищенный режим (потребуется перезапуск Internet Explorer)**. Internet Explorer о том, что компьютер больше не будет защищен. Последовательно выберите **ОК**.
+    1. Щелкните **Internet** зоны и снимите флажок **Включить защищенный режим (потребуется перезапуск Internet Explorer)** . Internet Explorer о том, что компьютер больше не будет защищен. Последовательно выберите **ОК**.
     1. Перезапустите Internet Explorer.
     1. Выполнять и отлаживать приложения.
 

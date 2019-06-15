@@ -11,10 +11,10 @@ ms.topic: article
 ms.assetid: 5c1b1e15-3b6c-49dc-98a6-bdbe7cb75339
 ms.date: 07/21/2017
 ms.openlocfilehash: 80776f9284752e8554486cb458096ccc9319949e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61325284"
 ---
 # <a name="monitor-status-set-up-diagnostics-logging-and-turn-on-alerts-for-azure-logic-apps"></a>Мониторинг состояния, настройка ведения журнала диагностики и включение предупреждений для Azure Logic Apps
@@ -35,7 +35,7 @@ ms.locfileid: "61325284"
 
 2. Выберите приложение логики, а затем нажмите **Обзор**.
 
-   На портале Azure отобразятся журнал запусков и журнал триггеров для приложения логики. Пример.
+   На портале Azure отобразятся журнал запусков и журнал триггеров для приложения логики. Пример:
 
    ![Журнал запусков и журнал триггеров для приложения логики](media/logic-apps-monitor-your-logic-apps/overview.png)
 
@@ -49,7 +49,7 @@ ms.locfileid: "61325284"
 
 3. Чтобы просмотреть этапы выполнения определенного запуска, выберите соответствующий запуск в разделе **Журнал запусков**. 
 
-   В представлении монитора отобразится каждый этап данного запуска. Пример.
+   В представлении монитора отобразится каждый этап данного запуска. Пример:
 
    ![Действия для определенного запуска](media/logic-apps-monitor-your-logic-apps/monitor-view-updated.png)
 
@@ -59,7 +59,7 @@ ms.locfileid: "61325284"
 
    Например, можно получить **идентификатор корреляции** запуска, которой может использоваться для [REST API для Logic Apps](https://docs.microsoft.com/rest/api/logic).
 
-5. Чтобы просмотреть подробные сведения об определенном этапе, выберите этот этап. После этого можно просмотреть такие сведения для данного этапа, как входные данные, выходные данные и все ошибки. Пример.
+5. Чтобы просмотреть подробные сведения об определенном этапе, выберите этот этап. После этого можно просмотреть такие сведения для данного этапа, как входные данные, выходные данные и все ошибки. Пример:
 
    ![Сведения об этапе](media/logic-apps-monitor-your-logic-apps/monitor-view-details.png)
    
@@ -160,7 +160,7 @@ ms.locfileid: "61325284"
 * [Архивация журналов диагностики Azure в службе хранилища Azure](../azure-monitor/platform/archive-diagnostic-logs.md)
 * [Потоковая передача журналов Диагностики Azure в Центры событий Azure](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md) 
 
-После этого можно организовать мониторинг в режиме реального времени с помощью данных телеметрии и аналитики из других служб, таких как [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md) и [Power BI](../azure-monitor/platform/powerbi.md). Пример.
+После этого можно организовать мониторинг в режиме реального времени с помощью данных телеметрии и аналитики из других служб, таких как [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md) и [Power BI](../azure-monitor/platform/powerbi.md). Пример:
 
 * [Потоковая передача данных из Центров событий в Stream Analytics](../stream-analytics/stream-analytics-define-inputs.md)
 * [Анализ потоковой передачи данных с помощью Stream Analytics и создание панели мониторинга в Power BI для анализа данных в режиме реального времени](../stream-analytics/stream-analytics-power-bi-dashboard.md)

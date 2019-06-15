@@ -14,14 +14,14 @@ ms.date: 01/05/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 81b7bf7c230c66087bf286ebd9369d992e93be90
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61250585"
 ---
 # <a name="move-data-from-a-web-table-source-using-azure-data-factory"></a>Перемещение данных из источника веб-таблицы с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](data-factory-web-table-connector.md)
 > * [Версия 2 (текущая)](../connector-web-table.md)
 
@@ -101,8 +101,8 @@ ms.locfileid: "61250585"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| тип |Тип набора данных. Необходимо задать значение **WebTable** |Да |
-| путь |Относительный URL-адрес ресурса, который содержит таблицу. |№ Если путь не задан, используется только URL-адрес, указанный в определении связанной службы. |
+| type |Тип набора данных. Необходимо задать значение **WebTable** |Да |
+| path |Относительный URL-адрес ресурса, который содержит таблицу. |№ Если путь не задан, используется только URL-адрес, указанный в определении связанной службы. |
 | index |Индекс таблицы в ресурсе. Дополнительные сведения см. в разделе [Получение индекса таблицы на HTML-странице](#get-index-of-a-table-in-an-html-page). |Да |
 
 **Пример.**
@@ -289,7 +289,7 @@ ms.locfileid: "61250585"
 2. На панели инструментов щелкните **Создать запрос**, выберите **Из других источников** и щелкните **Из Интернета**.
 
     ![Меню Power Query](./media/data-factory-web-table-connector/PowerQuery-Menu.png)
-3. В диалоговом окне **Из Интернета** введите **URL-адрес**, который будет использоваться в JSON связанной службы (например, https://en.wikipedia.org/wiki/)), вместе с указанным для набора данных путем (например, AFI%27s_100_Years…100_Movies), а затем нажмите кнопку **ОК**.
+3. В диалоговом окне **Из Интернета** введите **URL-адрес**, который будет использоваться в JSON связанной службы (например, https://en.wikipedia.org/wiki/) ), вместе с указанным для набора данных путем (например, AFI%27s_100_Years…100_Movies), а затем нажмите кнопку **ОК**.
 
     ![Диалоговое окно "Из Интернета"](./media/data-factory-web-table-connector/FromWeb-DialogBox.png)
 

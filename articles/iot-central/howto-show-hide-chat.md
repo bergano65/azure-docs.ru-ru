@@ -9,13 +9,13 @@ ms.service: iot-central
 services: iot-central
 manager: philmea
 ms.openlocfilehash: a8d2b71899cdd6b7f9c8cb803732b760f3009811
-ms.sourcegitcommit: e729629331ae10097a081a03029398525f4147a4
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/25/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64513317"
 ---
-# <a name="toggle-live-chat"></a>Переключить чата в реальном времени
+# <a name="toggle-live-chat"></a>Переключение чата в реальном времени
 
 В этом практическом показано, как включить чата в реальном времени в приложении IoT Central. Чата в реальном времени можно использовать для доступа к технической поддержке.
 
@@ -32,17 +32,17 @@ ms.locfileid: "64513317"
 
 ![Форма настройки сведений об устройстве со сведениями о параметрах и свойствах](media/howto-show-hide-chat/sample-chat.png)
 
-## <a name="hide-chat"></a>Скрыть чат
+## <a name="hide-chat"></a>Скрыть чата
 
 Чтобы скрыть разговор, выберите **скрыть чата** в **помочь** панели:
 
- ![Скрыть чат](media/howto-show-hide-chat/hide-chat.png)
+ ![Скрыть чата](media/howto-show-hide-chat/hide-chat.png)
 
 ## <a name="enable-chat"></a>Разрешить чат
 
 Чтобы отобразить разговор, выберите **Показать чата** в **помочь** панели:
 
- ![Показать чат](media/howto-show-hide-chat/show-chat.png)
+ ![Показать разговор](media/howto-show-hide-chat/show-chat.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

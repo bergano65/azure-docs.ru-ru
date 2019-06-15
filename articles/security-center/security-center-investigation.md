@@ -14,15 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/29/2018
 ms.author: rkarlin
-ms.openlocfilehash: 6ba21c6eacd5b72d13706c08f0cc9883ccc91388
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 55def52d248babd439227cdcd4170c0a3ca91bb1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60704837"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64569829"
 ---
 # <a name="investigate-incidents-and-alerts-in-azure-security-center-preview"></a>Изучение инцидентов и оповещений в центре безопасности Azure (предварительная версия)
 Этот документ поможет вам использовать функцию изучения в центре безопасности Azure для изучения инцидентов и оповещений системы безопасности.
+
+> [!NOTE]
+> Возможности анализа оповещения и инциденты будет прекращена 31 июля 2019 г. Дополнительные сведения и альтернативные службы, см. в разделе [вывода из эксплуатации центра безопасности функций (июль 2019)](security-center-features-retirement-july2019.md#menu_investigate).
 
 ## <a name="what-is-investigation-in-security-center"></a>Что такое изучение в центре безопасности
 Функция изучения в центре безопасности позволяет рассматривать, определять область и отслеживать первопричину вероятного [инцидента](https://docs.microsoft.com/azure/security-center/security-center-incident).
@@ -38,7 +41,7 @@ ms.locfileid: "60704837"
 ## <a name="how-investigation-works"></a>Как работает изучение
 Изучение происходит при помощи графика, который занимает центральную область панели мониторинга изучения. График всегда ориентирован на конкретную сущность и представляет связанные с ней сущности. Сущность может быть предупреждением системы безопасности, пользователем, компьютером или инцидентом.
 
-![Карта](./media/security-center-investigation/security-center-investigation-fig1.png)
+![Сопоставление](./media/security-center-investigation/security-center-investigation-fig1.png)
 
 Пользователь может перейти от одной сущности к другой, щелкнув ее на графике. График автоматически обновляется для выбранной сущности и связанных с ней сущностей. Сущности, которые больше не являются релевантными, могут быть удалены из графика.
 
@@ -47,7 +50,7 @@ ms.locfileid: "60704837"
 
 ![Путь](./media/security-center-investigation/security-center-investigation-fig2.png)
 
-### <a name="general-information"></a>Общая информация
+### <a name="general-information"></a>Общие сведения
 Когда сущность представлена на графике, на вкладке отображаются дополнительные сведения об этой сущности. На вкладке **Сведения** представлены общие сведения о сущности из различных доступных источников.
 
 ![Общие сведения](./media/security-center-investigation/security-center-investigation-fig3.png)
@@ -68,11 +71,11 @@ ms.locfileid: "60704837"
 
 ![поиска](./media/security-center-investigation/security-center-investigation-fig5.png)
 
-### <a name="exploration"></a>Изучение
+### <a name="exploration"></a>Исследование
 
 Вкладка **Exploration** (Исследование) позволяет исследователю изучать данные, относящиеся к различным проблемам, связанным с сущностью. Например, при изучении компьютера список выполняемых на ней процессов представлен на вкладке исследования. В некоторых случаях вкладка исследования представляет данные, которые дают основание подозревать о существовании проблемы. Исследователь может изучить данные на вкладке или открыть их на экране поиска, чтобы изучить большие наборы данных и использовать расширенные параметры поиска, такие как фильтрация и экспорт в Excel.
 
-![Изучение](./media/security-center-investigation/security-center-investigation-fig6.png)
+![Исследование](./media/security-center-investigation/security-center-investigation-fig6.png)
 
 ### <a name="timeline"></a>Временная шкала
 
@@ -102,7 +105,7 @@ ms.locfileid: "60704837"
 2.  Щелкните **Оповещения системы безопасности** и выберите инцидент, который требуется изучить.
 3.  На странице инцидента нажмите кнопку **Start Investigation** (Начать анализ), после чего появится панель мониторинга **Investigation** (Исследование).
 
-    ![Оповещение](./media/security-center-investigation/security-center-investigation-fig8.png)
+    ![Предупреждение](./media/security-center-investigation/security-center-investigation-fig8.png)
 
 4. На этой панели вы можете выбрать сущность на карте, и соответствующие сведения о сущности появятся в правой части экрана.
 

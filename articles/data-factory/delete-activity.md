@@ -14,10 +14,10 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/25/2019
 ms.openlocfilehash: 00658b650cdc0b1752bb9f2f205420018c1d6edd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61346349"
 ---
 # <a name="delete-activity-in-azure-data-factory"></a>Действие Delete в Фабрике данных Azure
@@ -47,7 +47,7 @@ ms.locfileid: "61346349"
 
 ### <a name="file-system-data-stores"></a>Хранилища данных файловых систем
 
--   [Файловая система](connector-file-system.md)
+-   [Перемещение данных в локальную файловую систему или из нее с помощью фабрики данных Azure](connector-file-system.md)
 -   [FTP](connector-ftp.md)
 -   [SFTP](connector-sftp.md)
 -   [Amazon S3](connector-amazon-simple-storage-service.md)
@@ -115,12 +115,12 @@ ms.locfileid: "61346349"
 
 ### <a name="sample-log-file-of-the-delete-activity"></a>Пример файла журнала действия Delete
 
-| ИМЯ | Category | Статус | Ошибка |
+| ИМЯ | Категория | Status | Ошибка |
 |:--- |:--- |:--- |:--- |
-| Test1/yyy.JSON | Файл | Удалена |  |
-| test2/hello789.txt | Файл | Удалена |  |
-| Test2/test3/hello000.txt | Файл | Удалена |  |
-| test2/test3/zzz.json | Файл | Удалена |  |
+| Test1/yyy.JSON | Файл | Deleted |  |
+| test2/hello789.txt | Файл | Deleted |  |
+| Test2/test3/hello000.txt | Файл | Deleted |  |
+| test2/test3/zzz.json | Файл | Deleted |  |
 
 ## <a name="examples-of-using-the-delete-activity"></a>Примеры использования действия Delete
 

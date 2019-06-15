@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 9c654c65577c44b1773ff98cb1206beeb5206ba4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60761783"
 ---
 # <a name="configuring-azure-media-services-telemetry-with-rest"></a>Настройка телеметрии служб мультимедиа Azure с использованием REST
@@ -84,7 +84,7 @@ ms.locfileid: "60761783"
     Authorization: (redacted)
     Host: wamsbnp1clus001rest-hs.cloudapp.net
     
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
     HTTP/1.1 200 OK
     Cache-Control: no-cache
     Content-Length: 20
@@ -128,7 +128,7 @@ ms.locfileid: "60761783"
 > [!NOTE]
 > Не забудьте изменить «https:\//telemetryvalidationstore.table.core.windows.net» значение для вашей учетной записи хранения.
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
     HTTP/1.1 201 Created
     Cache-Control: no-cache
@@ -159,7 +159,7 @@ ms.locfileid: "60761783"
     Authorization: (redacted)
     Host: wamsbnp1clus001rest-hs.cloudapp.net
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
     
     HTTP/1.1 200 OK
     Cache-Control: no-cache
@@ -201,7 +201,7 @@ ms.locfileid: "60761783"
        ]
     }
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
     HTTP/1.1 201 Created
     Cache-Control: no-cache

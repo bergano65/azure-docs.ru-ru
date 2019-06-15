@@ -10,10 +10,10 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 06/02/2017
 ms.openlocfilehash: f0591b47ce7ba6837f300088c856c0098fb66710
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60998828"
 ---
 # <a name="b2b-errors-and-solutions-for-azure-logic-apps"></a>Ошибки B2B и их решения для Azure Logic Apps
@@ -52,7 +52,7 @@ ms.locfileid: "60998828"
 
 |   |   |  
 |---|---|
-| Описание ошибки | Содержимое запроса является неопределенным или пустым. | 
+| Описание ошибки | Содержимое запроса пустое или имеет значение Null. | 
 | Рекомендуемые действия | Получено пустое сообщение AS2 (без текста). |
 |  |  | 
 
@@ -64,7 +64,7 @@ ms.locfileid: "60998828"
 | Рекомендуемые действия | Добавьте в сообщение AS2 параметр @base64ToBinary перед отправкой партнеру. |
 |||
 
-Пример.
+Пример:
 
 ```json
 "HTTP": {
@@ -84,7 +84,7 @@ ms.locfileid: "60998828"
 | Рекомендуемые действия | Добавьте в сообщение MDN параметр @base64ToBinary перед отправкой партнеру. | 
 |||
 
-Пример.
+Пример:
 
 ```json
 "Response": {
@@ -105,7 +105,7 @@ ms.locfileid: "60998828"
 
 ## <a name="x12-and-edifact"></a>X12 и EDIFACT
 
-### <a name="leading-or-trailing-space-found"></a>Обнаружен начальный или конечный пробел.    
+### <a name="leading-or-trailing-space-found"></a>Лишний начальный или конечный пробел    
     
 |   |   | 
 |---|---|

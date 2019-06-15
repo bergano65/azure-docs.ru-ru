@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 03/28/2019
 ms.author: snehaa
 ms.openlocfilehash: 17cead93325da903161d95b315435d6e7b106dbb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61292991"
 ---
 # <a name="azure-migrate---frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Миграция Azure"
@@ -91,13 +91,13 @@ URL-адреса и порты, необходимые для "Миграция 
 - отображаемое имя виртуальной машины (в vCenter);
 - путь инвентаризации виртуальной машины (узел, кластер или папка в vCenter);
 - IP-адрес
-- MAC-адрес
+- MAC-адрес.
 - Операционная система
 - Число ядер, дисков и сетевых адаптеров.
 - Объем памяти, размеры диска.
 
 **Сведения о производительности виртуальной машины:**
-- Загрузка ЦП
+- Загрузка ЦП.
 - Использование памяти
 - Для каждого диска, подключенного к виртуальной машине:
   - пропускная способность чтения с диска;

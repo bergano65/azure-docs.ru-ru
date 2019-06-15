@@ -13,10 +13,10 @@ ms.reviewer: sahenry
 ms.custom: seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 89c76ad0739edea4c0541ace76ca2311453de71d
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65963020"
 ---
 # <a name="troubleshoot-self-service-password-reset"></a>Как устранить неполадки самостоятельного сброса пароля
@@ -255,7 +255,7 @@ ms.locfileid: "65963020"
 
 Если у вас есть общие вопросы об Azure AD и самостоятельном сбросе пароля, их можно задать участникам сообщества на [форумах Azure AD](https://social.msdn.microsoft.com/Forums/en-US/home?forum=WindowsAzureAD). В сообщество входят инженеры, менеджеры по продуктам, MVP и ИТ-специалисты.
 
-## <a name="contact-microsoft-support"></a>Обратитесь в службу поддержки Майкрософт
+## <a name="contact-microsoft-support"></a>Обратиться в службу поддержки Майкрософт
 
 Если вам не удается найти решение проблемы, специалисты группы поддержки всегда готовы помочь.
 

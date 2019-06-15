@@ -12,10 +12,10 @@ ms.date: 10/01/2018
 ms.author: panosper
 ms.custom: seodec18
 ms.openlocfilehash: 8a2c149faa0ec9d135713a123a33d7c220522496
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60995656"
 ---
 # <a name="migrate-from-the-custom-speech-service-to-the-speech-service"></a>Переход с Пользовательской службы распознавания речи на службу "Речь"
@@ -30,10 +30,10 @@ ms.locfileid: "60995656"
 
 1. Создайте ресурс в тех регионах Azure, в которых доступно приложение. Имя ресурса Azure — **Речь**. Вместо того, чтобы создавать отдельные ресурсы, вы можете использовать один ресурс Azure для следующих служб в том же регионе:
 
-    * Преобразование речи в текст.
+    * Преобразование речи в текст
     * Настройка преобразования речи в текст
     * Преобразование текста в речь
-    * Перевод речи.
+    * Перевод речи
 
 2. Загрузите [пакет SDK службы "Речь"](speech-sdk.md).
 

@@ -13,11 +13,11 @@ ms.date: 07/09/2018
 ms.author: cshoe
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: cc6ca29af1866c5d26d3b73b26121451440c4dac
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60306688"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64511796"
 ---
 # <a name="twilio-binding-for-azure-functions"></a>Привязка Twilio для службы "Функции Azure"
 
@@ -399,7 +399,7 @@ public static CreateMessageOptions Run(
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `TwilioSms`.
 
-| Свойство function.json версии 1 | Свойство function.json версии 2 | Свойство атрибута |ОПИСАНИЕ|
+| Свойство function.json версии 1 | Свойство function.json версии 2 | Свойство атрибута |Описание|
 |---------|---------|---------|----------------------|
 |**type**|**type**| Нужно задать значение `twilioSms`.|
 |**direction**|**direction**| Нужно задать значение `out`.|

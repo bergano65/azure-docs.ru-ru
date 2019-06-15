@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 11/27/2017
 ROBOTS: NOINDEX
 ms.openlocfilehash: 14aa45808f44f7ca6fe34b70ef282a99f230bf0d
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64687756"
 ---
 # <a name="develop-c-topologies-for-apache-storm-by-using-the-data-lake-tools-for-visual-studio"></a>Разработка топологий для Apache Storm на C# с помощью средств Data Lake для Visual Studio
@@ -30,7 +30,7 @@ ms.locfileid: "64687756"
 |:-----------------:|:-------------:|:---------------:|:--------------------:|
 | 3.3 |0.10.x |0.10.x.x</br>(только в HDInsight под управлением Windows) | Нет данных |
 | 3.4 | 0.10.0.x | 0.10.0.x | 3.2.8 |
-| 3,5 | 1.0.2.x | 1.0.0.x | 4.2.1 |
+| 3.5 | 1.0.2.x | 1.0.0.x | 4.2.1 |
 | 3.6 | 1.1.0.x | 1.0.0.x | 4.2.8 |
 
 > [!IMPORTANT]  
@@ -450,7 +450,7 @@ return topologyBuilder;
 
 Чтобы получить пример гибридной топологии, создайте проект и выберите **Пример гибридного решения Storm**. В примере демонстрируются следующие понятия:
 
-* **Объект spout на Java** и **объект bolt на C#**: определены в **HybridTopology_javaSpout_csharpBolt**.
+* **Объект spout на Java** и **объект bolt на C#** : определены в **HybridTopology_javaSpout_csharpBolt**.
 
     * Транзакционная версия определена в **HybridTopologyTx_javaSpout_csharpBolt**.
 
@@ -683,7 +683,7 @@ public static MyComponent Get(Context ctx, Dictionary<string, Object> parms)
 
 2. Сохраните изменения, а затем нажмите клавишу **F5** или щелкните **Отладка** > **Начать отладку**, чтобы запустить проект. Должно появится окно консоли, а также данные о состоянии журнала в ходе выполнения тестов. Когда появится надпись **Тесты завершены** , нажмите любую клавишу, чтобы закрыть окно.
 
-3. Используйте **проводник** для поиска каталога, который содержит проект, Например:  **C:\Users\<имя_пользователя>\Documents\Visual Studio 2013\Projects\WordCount\WordCount**. В этом каталоге откройте **Bin**, а затем щелкните **Отладка**. Отобразятся текстовые файлы, которые были созданы во время выполнения тестов: sentences.txt, counter.txt и splitter.txt. Откройте каждый текстовый файл и проверьте данные.
+3. Используйте **проводник** для поиска каталога, который содержит проект, Пример: **C:\Users\<имя_пользователя>\Documents\Visual Studio 2013\Projects\WordCount\WordCount**. В этом каталоге откройте **Bin**, а затем щелкните **Отладка**. Отобразятся текстовые файлы, которые были созданы во время выполнения тестов: sentences.txt, counter.txt и splitter.txt. Откройте каждый текстовый файл и проверьте данные.
 
    > [!NOTE]  
    > Строковые данные сохраняются в этих файлах как массив значений типа decimal. Например, \[[97,103,111]] в файле **splitter.txt** — это слово *and*.

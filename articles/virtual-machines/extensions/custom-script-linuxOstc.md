@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: danis
 ms.openlocfilehash: fe3803b7dc75ab13831a5e42d4b1a96f5aa894e5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60800304"
 ---
 # <a name="use-the-azure-custom-script-extension-version-1-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 1 на виртуальных машинах Linux
@@ -63,7 +63,7 @@ ms.locfileid: "60800304"
 
 Если скрипт расположен на локальном сервере, вам по-прежнему может потребоваться открыть дополнительные порты брандмауэра или группы безопасности сети.
 
-### <a name="tips-and-tricks"></a>Советы и хитрости
+### <a name="tips-and-tricks"></a>Советы и рекомендации
 
 * Высокий процент сбоев этого расширения связан с синтаксическими ошибками в скрипте. Чтобы упростить поиск точки сбоя, протестируйте запуски скрипта без ошибок и включите в скрипт дополнительные возможности ведения журнала.
 * Пишите идемпотентные скрипты, чтобы их случайные повторные запуски не приводили к изменениям системы.
@@ -121,9 +121,9 @@ ms.locfileid: "60800304"
 
 | ИМЯ | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| версия_API | 2015-06-15 | date |
+| apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.OSTCExtensions | string |
-| тип | CustomScriptForLinux | string |
+| type | CustomScriptForLinux | string |
 | typeHandlerVersion | 1.5 | int |
 | fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | массив |
 | commandToExecute (пример) | python MyPythonScript.py \<my-param1\> | string |
@@ -206,7 +206,7 @@ az vm extension set \
   --settings '{"fileUris": ["https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-linux/scripts/config-music.sh"],"commandToExecute": "./config-music.sh"}'
 ```
 
-### <a name="azure-cli-examples"></a>Примеры с использованием интерфейса командной строки Azure
+### <a name="azure-cli-examples"></a>Примеры использования интерфейса командной строки Azure
 
 #### <a name="public-configuration-with-no-script-file"></a>Открытая конфигурация без файла сценария
 

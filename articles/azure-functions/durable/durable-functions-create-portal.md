@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 10/23/2018
 ms.author: azfuncdf, glenga
 ms.openlocfilehash: 705a43f1ef35f953d1b87c7c44bbc45fcb4334be
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65872862"
 ---
 # <a name="create-durable-functions-using-the-azure-portal"></a>Создание Устойчивых функций с помощью портала Azure
@@ -38,7 +38,7 @@ ms.locfileid: "65872862"
 
 Если вы создаете устойчивые функции на JavaScript, необходимо установить [пакет npm `durable-functions`](https://www.npmjs.com/package/durable-functions).
 
-1. Выберите имя приложения-функции, а затем — **Функции платформы** и **Дополнительные инструменты (Kudu)**.
+1. Выберите имя приложения-функции, а затем — **Функции платформы** и **Дополнительные инструменты (Kudu)** .
 
    ![Выбор Функций, элемента "Функции платформы" и "Дополнительные инструменты (Kudu)"](./media/durable-functions-create-portal/function-app-platform-features-choose-kudu.png)
 

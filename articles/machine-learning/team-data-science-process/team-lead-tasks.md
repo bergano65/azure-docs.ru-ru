@@ -11,10 +11,10 @@ ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 45be3d7f865c7b72ae62efbf99dbbb4594b1846f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60812455"
 ---
 # <a name="tasks-for-the-team-lead-in-the-team-data-science-process-team"></a>Задачи руководителя команды по обработке и анализу данных команды
@@ -96,9 +96,9 @@ ms.locfileid: "60812455"
 
 - После того как проект **MyTeam** будет создан, нажмите кнопку **Перейти к проекту**, чтобы перейти на домашнюю страницу проекта. 
 
-    ![4.](./media/team-lead-tasks/team-leads-4-create-new-team-3.png)
+    ![4\.](./media/team-lead-tasks/team-leads-4-create-new-team-3.png)
 
-- Если появилось всплывающее окно **Поздравляем!**, нажмите кнопку **Добавить код** (кнопка в красном прямоугольнике). В противном случае нажмите кнопку **Код** (в желтом прямоугольнике). Откроется страница репозитория Git проекта. 
+- Если появилось всплывающее окно **Поздравляем!** , нажмите кнопку **Добавить код** (кнопка в красном прямоугольнике). В противном случае нажмите кнопку **Код** (в желтом прямоугольнике). Откроется страница репозитория Git проекта. 
 
     ![5](./media/team-lead-tasks/team-leads-5-team-project-home.png)
 

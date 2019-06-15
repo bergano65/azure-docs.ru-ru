@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 11/23/2016
 ms.author: mbullwin
 ms.openlocfilehash: 1b55a2b053b86d3260fdca201357445d2556c444
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60793971"
 ---
 # <a name="filtering-and-preprocessing-telemetry-in-the-application-insights-sdk"></a>Фильтрация и предварительная обработка данных телеметрии в пакете SDK для Application Insights
@@ -360,7 +360,7 @@ void initialize(Telemetry telemetry); }
 * Убедитесь, что полное имя типа и имя сборки указаны правильно.
 * Убедитесь, что файл applicationinsights.config находится в выходном каталоге и содержит все последние изменения.
 
-## <a name="reference-docs"></a>Справочные документы
+## <a name="reference-docs"></a>Справочная документация
 * [Обзор API](../../azure-monitor/app/api-custom-events-metrics.md)
 * [Справочник по ASP.NET](https://msdn.microsoft.com/library/dn817570.aspx)
 

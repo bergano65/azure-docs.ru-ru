@@ -11,10 +11,10 @@ ms.topic: article
 ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.openlocfilehash: 3f812c1142b5cd40169f7340163295b0f7ea6a4d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60996607"
 ---
 # <a name="handle-errors-and-exceptions-in-azure-logic-apps"></a>Обработка ошибок и исключений в Azure Logic Apps
@@ -156,7 +156,7 @@ ms.locfileid: "60996607"
 | 1 | max(0, <*minimum-interval*>) | min(interval, <*maximum-interval*>) |
 | 2 | max(interval, <*minimum-interval*>) | min(2 * interval, <*maximum-interval*>) |
 | 3 | max(2 * interval, <*minimum-interval*>) | min(4 * interval, <*maximum-interval*>) |
-| 4. | max(4 * interval, <*minimum-interval*>) | min(8 * interval, <*maximum-interval*>) |
+| 4\. | max(4 * interval, <*minimum-interval*>) | min(8 * interval, <*maximum-interval*>) |
 | .... | .... | .... | 
 |||| 
 

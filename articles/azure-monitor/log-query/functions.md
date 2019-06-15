@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 11/15/2018
 ms.author: bwren
 ms.openlocfilehash: 7eb5f090026b415e3c980116a9317594f4ca8115
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60728072"
 ---
 # <a name="using-functions-in-azure-monitor-log-queries"></a>Использование функций в запросах журнала Azure Monitor
@@ -39,7 +39,7 @@ ms.locfileid: "60728072"
 | ИМЯ           | Отображаемое имя для запроса в **обозревателе запросов**. |
 | Сохранить как        | Функция |
 | Псевдоним функции | Короткое имя функции в других запросах. Не может содержать пробелы и должно быть уникальным. |
-| Category       | Категория для организации сохраненных запросов и функций в **обозревателе запросов**. |
+| Категория       | Категория для организации сохраненных запросов и функций в **обозревателе запросов**. |
 
 > [!NOTE]
 > Функция в Azure Monitor не может содержать другую функцию.

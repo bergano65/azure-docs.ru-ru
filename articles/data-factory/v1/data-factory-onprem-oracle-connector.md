@@ -14,15 +14,15 @@ ms.date: 05/15/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 4ff7f92d1d13966be5d17f37210bef961f64faf2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61462417"
 ---
 # <a name="copy-data-to-or-from-oracle-on-premises-by-using-azure-data-factory"></a>Копирование данных в локальную базу данных Oracle и обратно с помощью Фабрики данных Azure
 
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](data-factory-onprem-oracle-connector.md)
 > * [Версия 2 (текущая)](../connector-oracle.md)
 
@@ -55,7 +55,7 @@ ms.locfileid: "61462417"
 
 Этот соединитель Oracle поддерживает две версии драйверов.
 
-- **Драйвер Microsoft для Oracle (рекомендуется)**. Начиная со шлюза управления данными версии 2.7, драйвер Microsoft для Oracle устанавливается автоматически вместе со шлюзом, поэтому не нужно устанавливать или обновлять драйвер для подключения к Oracle. Кроме того, производительность копирования при использовании этого драйвера может увеличиться. Ниже перечислены поддерживаемые версии баз данных Oracle.
+- **Драйвер Microsoft для Oracle (рекомендуется)** . Начиная со шлюза управления данными версии 2.7, драйвер Microsoft для Oracle устанавливается автоматически вместе со шлюзом, поэтому не нужно устанавливать или обновлять драйвер для подключения к Oracle. Кроме того, производительность копирования при использовании этого драйвера может увеличиться. Ниже перечислены поддерживаемые версии баз данных Oracle.
   - Oracle 12c R1 (12.1)
   - Oracle 11g R1, R2 (11.1, 11.2)
   - Oracle 10g R1, R2 (10.1, 10.2)
@@ -102,7 +102,7 @@ ms.locfileid: "61462417"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
-| тип |Для свойства **type** необходимо задать значение **OnPremisesOracle**. |Да |
+| type |Для свойства **type** необходимо задать значение **OnPremisesOracle**. |Да |
 | driverType | Укажите, какой драйвер следует использовать для копирования данных в базу данных Oracle и из нее. Допустимые значения: **Майкрософт** или **ODP** (по умолчанию). Дополнительные сведения о драйверах см. в разделе [Поддерживаемые версии и установка](#supported-versions-and-installation). | Нет |
 | connectionString | В свойстве **connectionString** указываются сведения, необходимые для подключения к экземпляру базы данных Oracle. | Да |
 | gatewayName | Имя шлюза, который используется для подключения к локальному серверу Oracle. |Да |
@@ -183,7 +183,7 @@ ms.locfileid: "61462417"
 | writeBatchTimeout |Время ожидания до выполнения операции пакетной вставки, пока не завершится срок ее действия. |**timespan**<br/><br/> Пример: 00:30:00 (30 минут) |Нет |
 | writeBatchSize |Вставляет данные в таблицу SQL, когда размер буфера достигает значения **writeBatchSize**. |Целое число (количество строк) |Нет (значение по умолчанию: 100) |
 | sqlWriterCleanupScript |Указывает запрос на выполнение действия копирования, позволяющий убедиться в том, что данные конкретного среза очищены. |Инструкция запроса. |Нет |
-| sliceIdentifierColumnName |Указывает имя столбца, в которое действие копирования добавляет автоматически созданный идентификатор среза. Значение для имени **sliceIdentifierColumnName** используется для очистки данных конкретного среза при повторном запуске. |Имя столбца с типом данных **binary(32)**. |Нет |
+| sliceIdentifierColumnName |Указывает имя столбца, в которое действие копирования добавляет автоматически созданный идентификатор среза. Значение для имени **sliceIdentifierColumnName** используется для очистки данных конкретного среза при повторном запуске. |Имя столбца с типом данных **binary(32)** . |Нет |
 
 ## <a name="json-examples-for-copying-data-to-and-from-the-oracle-database"></a>Примеры JSON для копирования данных в базу данных Oracle и обратно
 
@@ -571,7 +571,7 @@ ms.locfileid: "61462417"
     1. Откройте файл конфигурации .NET 2.0 из папки: <системный диск\>:\Windows\Microsoft.NET\Framework64\v2.0.50727\CONFIG\machine.config.
     2. Найдите **поставщика данных Oracle для .NET**, и вы сможете найти запись, как показано в следующем примере в разделе **system.data** > **DbProviderFactories**: `<add name="Oracle Data Provider for .NET" invariant="Oracle.DataAccess.Client" description="Oracle Data Provider for .NET" type="Oracle.DataAccess.Client.OracleClientFactory, Oracle.DataAccess, Version=2.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342" />`
 * Скопируйте эту запись в файл конфигурации компьютера в следующей папке .NET 4.0: <системный диск\>:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config. Затем измените версию на 4.xxx.x.x.
-* Установите файл <путь установки ODP.NET\>\11.2.0\client_1\odp.net\bin\4\Oracle.DataAccess.dll в глобальный кэш сборок (GAC), выполнив команду **gacutil /i [путь к поставщику]**.
+* Установите файл <путь установки ODP.NET\>\11.2.0\client_1\odp.net\bin\4\Oracle.DataAccess.dll в глобальный кэш сборок (GAC), выполнив команду **gacutil /i [путь к поставщику]** .
 
 ### <a name="problem-2-datetime-formatting"></a>Проблема 2. Формат даты и времени
 
@@ -601,23 +601,23 @@ ms.locfileid: "61462417"
 | BLOB |Byte[]<br/>(поддерживается только в Oracle 10g и более поздних версиях при использовании драйвера Майкрософт) |
 | CHAR |String |
 | CLOB |String |
-| ДАТА |DateTime |
-| FLOAT |десятичное число, строка (если точность больше 28) |
-| INTEGER |десятичное число, строка (если точность больше 28) |
+| DATE |DateTime |
+| FLOAT |Decimal, String (если точность больше 28) |
+| INTEGER |Decimal, String (если точность больше 28) |
 | INTERVAL YEAR TO MONTH |Int32 |
 | INTERVAL DAY TO SECOND |Интервал времени |
 | LONG |String |
 | LONG RAW |Byte[] |
 | NCHAR |String |
 | NCLOB |String |
-| NUMBER |десятичное число, строка (если точность больше 28) |
+| NUMBER |Decimal, String (если точность больше 28) |
 | NVARCHAR2 |String |
 | RAW |Byte[] |
 | ROWID |String |
 | TIMESTAMP |DateTime |
 | TIMESTAMP WITH LOCAL TIME ZONE |DateTime |
 | TIMESTAMP WITH TIME ZONE |DateTime |
-| UNSIGNED INTEGER |NUMBER |
+| UNSIGNED INTEGER |Number |
 | VARCHAR2 |String |
 | XML |String |
 

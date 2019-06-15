@@ -16,10 +16,10 @@ ms.date: 03/27/2019
 ms.author: arvinh
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8f7e2fabc86374f7fe055303d056ae8e00f33389
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65964370"
 ---
 # <a name="tutorial-configure-pingboard-for-automatic-user-provisioning"></a>Руководство по Настройка Pingboard для автоматической подготовки пользователей
@@ -72,7 +72,7 @@ ms.locfileid: "65964370"
 
     a. В поле **URL-адрес клиента** введите `https://your_domain.pingboard.com/scim/v2`, заменив ваш_домен фактическим именем домена.
 
-    2. Войдите в [Pingboard](https://pingboard.com/) с помощью учетной записи администратора.
+    2\. Войдите в [Pingboard](https://pingboard.com/) с помощью учетной записи администратора.
 
     c. Выберите **Add-Ons** > **Integrations** > **Azure Active Directory** (Надстройки > Интеграции > Azure Active Directory).
 

@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
 ms.openlocfilehash: f2781e3cc2433f73ba7ff33e5c452e29de746adf
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65956202"
 ---
 # <a name="configure-a-linux-aspnet-core-app-for-azure-app-service"></a>Настройка виртуальных машин Linux приложения ASP.NET Core для службы приложений Azure
@@ -124,7 +124,7 @@ project = <project-name>/<project-name>.csproj
 
 ### <a name="using-app-settings"></a>Используя параметры приложения
 
-В <a target="_blank" href="https://shell.azure.com">Azure Cloud Shell</a>, добавьте параметр приложения для приложения службы приложений, выполнив следующую команду интерфейса командной строки. Замените  *\<имя_приложения >*,  *\<resource-group-name >*, и  *\<имя проекта >* с соответствующими значениями .
+В <a target="_blank" href="https://shell.azure.com">Azure Cloud Shell</a>, добавьте параметр приложения для приложения службы приложений, выполнив следующую команду интерфейса командной строки. Замените  *\<имя_приложения >* ,  *\<resource-group-name >* , и  *\<имя проекта >* с соответствующими значениями .
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings PROJECT="<project-name>/<project-name>.csproj"

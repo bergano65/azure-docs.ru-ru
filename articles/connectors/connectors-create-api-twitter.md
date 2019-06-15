@@ -12,10 +12,10 @@ ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
 ms.openlocfilehash: 0fbd89202796cb4543dbecbeee605c9b87cc9d05
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62104992"
 ---
 # <a name="monitor-and-manage-twitter-by-using-azure-logic-apps"></a>Мониторинг Twitter и управление им с помощью Azure Logic Apps
@@ -59,7 +59,7 @@ ms.locfileid: "62104992"
        -или-
 
      * Между шагами, в которых вы хотите добавить действие, переместите указатель на стрелку между шагами. 
-     Выберите появившийся знак "плюс" (**+**), а затем щелкните **Добавить действие**.
+     Выберите появившийся знак "плюс" ( **+** ), а затем щелкните **Добавить действие**.
      
        В поле поиска введите twitter в качестве фильтра. 
        В списке действий выберите любое необходимое действие.
@@ -70,7 +70,7 @@ ms.locfileid: "62104992"
 
 ## <a name="examples"></a>Примеры
 
-### <a name="twitter-trigger-when-a-new-tweet-is-posted"></a>Триггер Twitter: Время публикации нового твита
+### <a name="twitter-trigger-when-a-new-tweet-is-posted"></a>Триггер Twitter: When a new tweet is posted (При публикации нового твита)
 
 Этот триггер запускает рабочий процесс приложения логики при обнаружении нового твита, например с хэштегом #Seattle. Таким образом, при обнаружении этих твитов в хранилище, такое как учетная запись Dropbox, может добавляться файл с содержимым твитов с помощью соединителя Dropbox. 
 
@@ -78,7 +78,7 @@ ms.locfileid: "62104992"
 
 **Пример Enterprise**. Этот триггер позволяет отслеживать твиты о вашей компании и передачи контента твиты в базу данных SQL.
 
-### <a name="twitter-action-post-a-tweet"></a>Действие Twitter: Опубликовать твит
+### <a name="twitter-action-post-a-tweet"></a>Действие Twitter: Post a tweet (Публикация твита)
 
 Это действие публикует твит. Однако действие можно настроить таким образом, чтобы твит имел содержимое из твитов, найденных с помощью описанного выше триггера. 
 

@@ -16,13 +16,13 @@ ms.workload: iaas-sql-server
 ms.date: 03/17/2017
 ms.author: mikeray
 ms.openlocfilehash: bddc83d55c8909412f7f935a4324a6f316a82cd7
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62129559"
 ---
-# <a name="configure-always-on-availability-groups-in-azure-virtual-machines-automatically-resource-manager"></a>Настройка группы доступности AlwaysOn в виртуальных машинах Azure автоматически: Диспетчер ресурсов
+# <a name="configure-always-on-availability-groups-in-azure-virtual-machines-automatically-resource-manager"></a>Настройка группы доступности AlwaysOn в виртуальных машинах Azure автоматически: Resource Manager
 
 В этом руководстве показано, как создать группу доступности SQL Server, в которую входят виртуальные машины Azure Resource Manager. Для настройки шаблона мы воспользуемся колонками на портале Azure. В ходе работы в сможете проверить параметры по умолчанию, ввести необходимые параметры, а затем обновить колонки на портале.
 
@@ -71,7 +71,7 @@ ms.locfileid: "62129559"
    ![Шаблон AlwaysOn](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups/17-alwaysontemplate.png)
 5. В разделе **Выберите модель развертывания** щелкните **Resource Manager**.
 
-### <a name="basics"></a>Основные сведения
+### <a name="basics"></a>Основы
 Щелкните **Базовые** и настройте указанные ниже параметры.
 
 * **Имя администратора.** Укажите здесь учетную запись пользователя с правами администратора домена, входящую в предопределенную роль системного администратора (sysadmin) для сервера SQL Server на обоих экземплярах SQL Server. В этом руководстве мы будем использовать имя **DomainAdmin**.
@@ -82,7 +82,7 @@ ms.locfileid: "62129559"
 
 На следующем снимке экрана показана заполненная колонка **Базовые**.
 
-![Основные сведения](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups/1-basics.png)
+![Основы](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups/1-basics.png)
 
 Последовательно выберите **ОК**.
 
@@ -181,7 +181,7 @@ ms.locfileid: "62129559"
 >
 >
 
-![Настройки SQL Server](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups/5-sql.png)
+![Параметры SQL Server](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups/5-sql.png)
 
 Проверьте значения параметров и щелкните **ОК**.
 

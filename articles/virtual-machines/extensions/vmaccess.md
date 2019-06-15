@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 05/10/2018
 ms.author: roiyz
 ms.openlocfilehash: 71aecc1748e70e2119b1f54c21a0f705afc5d5d0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60800058"
 ---
 # <a name="manage-administrative-users-ssh-and-check-or-repair-disks-on-linux-vms-using-the-vmaccess-extension-with-the-azure-cli"></a>Управление пользователями с правами администратора, SSH и проверка или восстановление дисков на виртуальных машинах Linux с помощью расширения VMAccess и Azure CLI
@@ -36,7 +36,7 @@ ms.locfileid: "60800058"
 
 Расширение VMAccess можно выполнять с использованием следующих дистрибутивов Linux.
 
-| Дистрибуция | Version |
+| Дистрибутив | Version |
 |---|---|
 | Ubuntu | 16.04 LTS, 14.04 LTS и 12.04 LTS |
 | Debian | Debian 7.9+, 8.2+ |

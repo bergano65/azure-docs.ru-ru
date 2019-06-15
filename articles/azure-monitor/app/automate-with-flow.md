@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 03/12/2019
 ms.author: mbullwin
 ms.openlocfilehash: 15299be83758c157bf3bc7d9fb27b50763b9148e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60903657"
 ---
 # <a name="automate-azure-application-insights-processes-with-the-connector-for-microsoft-flow"></a>Автоматизация процессов Azure Application Insights с помощью соединителя для Microsoft Flow
@@ -98,7 +98,7 @@ ms.locfileid: "60903657"
 
    a. Введите адрес электронной почты получателя.
 
-   2. Введите тему сообщения.
+   2\. Введите тему сообщения.
 
    c. Щелкните в любом месте в поле **Текст**, затем в открывшемся справа меню динамического содержимого выберите **Текст**.
 
@@ -110,7 +110,7 @@ ms.locfileid: "60903657"
 
     a. Выберите **Имя вложения**.
 
-    2. Выберите **Содержимое вложения**.
+    2\. Выберите **Содержимое вложения**.
     
     c. В поле **Является HTML** выберите значение **Да**.
 

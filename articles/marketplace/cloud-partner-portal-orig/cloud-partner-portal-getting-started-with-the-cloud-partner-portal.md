@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: pabutler
 ms.openlocfilehash: 9d2c64479f65995c0eca756b86bd0a96a752867d
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935740"
 ---
 # <a name="getting-started-with-the-cloud-partner-portal"></a>Начало работы с облачным порталом для партнеров
@@ -27,7 +27,7 @@ ms.locfileid: "64935740"
 
 При первом переходе на портал вы видите сворачиваемую панель навигации. С ее помощью можно перемещаться по пунктам меню.
 
-![Облачный портал для партнеров](./media/cloud-partner-portal-getting-started-with-the-cloud-partner-portal/cloud-partner-portal-page.png)
+![Портал Cloud Partner](./media/cloud-partner-portal-getting-started-with-the-cloud-partner-portal/cloud-partner-portal-page.png)
 
 Используйте строку меню, чтобы получить дополнительные сведения о каждом из следующих элементов:
 

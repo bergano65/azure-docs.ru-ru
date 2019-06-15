@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 09/24/2018
 ms.author: iainfou
 ms.openlocfilehash: ba0e1386d67e920f1805d244f9042044bb462ec9
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62109857"
 ---
 # <a name="use-azure-container-registry-as-a-helm-repository-for-your-application-charts"></a>Использование Реестра контейнеров Azure в качестве репозитория Helm для диаграмм приложения
@@ -30,7 +30,7 @@ ms.locfileid: "62109857"
 Чтобы выполнить действия, описанные в этой статье, необходимо выполнить следующие предварительные требования.
 
 - **Реестр контейнеров Azure.** Создайте реестр контейнеров в своей подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
-- **Клиент Helm начиная с версии 2.11.0 (не релиз-кандидат)**. Выполните команду `helm version`, чтобы узнать свою версию. Вам также потребуется сервер Helm (Tiller), инициализированный в кластере Kubernetes. При необходимости можно [создать кластер Службы Azure Kubernetes][aks-quickstart]. Дополнительные сведения о том, как установить и обновить Helm, см. [здесь][helm-install].
+- **Клиент Helm начиная с версии 2.11.0 (не релиз-кандидат)** . Выполните команду `helm version`, чтобы узнать свою версию. Вам также потребуется сервер Helm (Tiller), инициализированный в кластере Kubernetes. При необходимости можно [создать кластер Службы Azure Kubernetes][aks-quickstart]. Дополнительные сведения о том, как установить и обновить Helm, см. [здесь][helm-install].
 - **Azure CLI версии 2.0.46 или более поздней.** Выполните команду `az --version`, чтобы получить сведения о версии. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 ## <a name="add-a-repository-to-helm-client"></a>Добавление репозитория в клиент Helm

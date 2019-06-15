@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: robinsh
 ms.openlocfilehash: 0d83bdc3fd3f644013a2d2b80128839658524db9
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65864442"
 ---
 # <a name="send-messages-from-the-cloud-to-your-device-with-iot-hub-net"></a>Отправка сообщений из облака на устройство с помощью Центра Интернета вещей (.NET)
@@ -113,11 +113,11 @@ ms.locfileid: "65864442"
 
 Теперь можно написать консольное приложение .NET, которое отправляет сообщения из облака на устройство приложение для устройства.
 
-1. В текущем решении Visual Studio, щелкните правой кнопкой мыши решение и выберите Добавить > Новый проект. Выберите **Windows Desktop** и затем **консольное приложение (.NET Framework)**. Назовите проект **SendCloudToDevice** и выберите самую последнюю версию платформы .NET Framework, а затем **ОК** для создания проекта.
+1. В текущем решении Visual Studio, щелкните правой кнопкой мыши решение и выберите Добавить > Новый проект. Выберите **Windows Desktop** и затем **консольное приложение (.NET Framework)** . Назовите проект **SendCloudToDevice** и выберите самую последнюю версию платформы .NET Framework, а затем **ОК** для создания проекта.
 
    ![Создание проекта в Visual Studio](./media/iot-hub-csharp-csharp-c2d/create-identity-csharp1.png)
 
-2. В обозревателе решений щелкните правой кнопкой мыши решение и выберите пункт **Управление пакетами NuGet для решения...**.
+2. В обозревателе решений щелкните правой кнопкой мыши решение и выберите пункт **Управление пакетами NuGet для решения...** .
 
    Это действие откроет окно **Управление пакетами NuGet**.
 

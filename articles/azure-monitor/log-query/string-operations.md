@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
 ms.openlocfilehash: 4b2763629a3036551cb3d362e609c72737436f4a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61424709"
 ---
 # <a name="work-with-strings-in-azure-monitor-log-queries"></a>Работа со строками в запросах журнала Azure Monitor
@@ -98,7 +98,7 @@ countof(text, search [, kind])
 - `search` — текстовая строка или регулярное выражение, которое проверяется на вхождение в text.
 - `kind` - _normal_ | _regex_ (по умолчанию: normal).
 
-### <a name="returns"></a>Возвращает
+### <a name="returns"></a>Результаты
 
 Количество совпадений для строки поиска в контейнере. Совпадения для текстовых строк могут перекрывать друг друга, при этом для регулярных выражений — не могут.
 
@@ -140,7 +140,7 @@ extract(regex, captureGroup, text [, typeLiteral])
 - `text` — строка для поиска.
 - `typeLiteral` — необязательный литерал типа (например, typeof(long)). Если указан, то извлеченная подстрока преобразуется в этот тип.
 
-### <a name="returns"></a>Возвращает
+### <a name="returns"></a>Результаты
 Возвращается подстрока, которая сравнивалась с указанной в группе записи captureGroup, при необходимости преобразованная в тип typeLiteral.
 Если соответствия нет или не удается выполнить преобразование типа, возвращается NULL.
 

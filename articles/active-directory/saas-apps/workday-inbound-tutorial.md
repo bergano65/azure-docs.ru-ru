@@ -16,10 +16,10 @@ ms.date: 05/16/2019
 ms.author: chmutali
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 31cf1f6da515aa9b453987383e78f466c5ba4fb9
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65827297"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство по Настройка Workday для автоматической подготовки пользователей
@@ -155,7 +155,7 @@ ms.locfileid: "65827297"
 | № агентов подготовки для развертывания в локальной среде | 3 (для высокого уровня доступности и отработки отказа) |
 | № приложений подготовки пользователей Workday в AD для настройки на портале Azure | 1 |
 
-  ![Сценарий 1](./media/workday-inbound-tutorial/dep_scenario1.png)
+  ![Сценарий 1](./media/workday-inbound-tutorial/dep_scenario1.png)
 
 #### <a name="deployment-scenario-2--single-workday-tenant---multiple-child-ad-domains"></a>Сценарий развертывания № 2: один клиент Workday -> несколько дочерних доменов AD
 
@@ -166,7 +166,7 @@ ms.locfileid: "65827297"
 | № агентов подготовки для развертывания в локальной среде | 3 (для высокого уровня доступности и отработки отказа) |
 | № приложений подготовки пользователей Workday в AD для настройки на портале Azure | одно приложение на дочерний домен |
 
-  ![Сценарий 2](./media/workday-inbound-tutorial/dep_scenario2.png)
+  ![Сценарий 2](./media/workday-inbound-tutorial/dep_scenario2.png)
 
 #### <a name="deployment-scenario-3--single-workday-tenant---disjoint-ad-forests"></a>Сценарий развертывания № 3: один клиент Workday -> несвязанные леса AD
 
@@ -188,7 +188,7 @@ ms.locfileid: "65827297"
 
 * **Каких пользователей в Workday нужно подготовить в этот лес Active Directory?**
 
-  * *Пример. Пользователи, у которых атрибут "Company" Workday содержит значение "Contoso", а атрибут "Worker_Type" — "Regular"*.
+  * *Пример. Пользователи, у которых атрибут "Company" Workday содержит значение "Contoso", а атрибут "Worker_Type" — "Regular"* .
 
 * **Каким образом пользователи направляются в разные подразделения организации (OU)?**
 
@@ -311,9 +311,9 @@ ms.locfileid: "65827297"
    | ---------- | ---------- |
    | Get и Put | Worker Data: Public Worker Reports (Данные о работниках: общедоступные отчеты о работниках) |
    | Get и Put | Person Data: Work Contact Information (Данные о людях: рабочие контактные данные) |
-   | Получение | Worker Data: All Positions (Данные о работниках: все должности) |
-   | Получение | Worker Data: Current Staffing Information (Данные о работниках: сведения о текущем персонале) |
-   | Получение | Worker Data: Business Title on Worker Profile (Данные о работниках: рабочая должность в профиле работника) |
+   | Получить | Worker Data: All Positions (Данные о работниках: все должности) |
+   | Получить | Worker Data: Current Staffing Information (Данные о работниках: сведения о текущем персонале) |
+   | Получить | Worker Data: Business Title on Worker Profile (Данные о работниках: рабочая должность в профиле работника) |
    | Get и Put | Учетные записи workday |
 
 ### <a name="configuring-business-process-security-policy-permissions"></a>Настройка разрешений политики безопасности для бизнес-процессов
@@ -544,8 +544,8 @@ ms.locfileid: "65827297"
 | **PreferredNameData**  |  displayName |     |   Создание и обновление |
 | **Company**         | company   |     |  Создание и обновление |
 | **SupervisoryOrganization**  | department  |     |  Создание и обновление |
-| **ManagerReference**   | руководитель  |     |  Создание и обновление |
-| **BusinessTitle**   |  название     |     |  Создание и обновление | 
+| **ManagerReference**   | manager  |     |  Создание и обновление |
+| **BusinessTitle**   |  title     |     |  Создание и обновление | 
 | **AddressLineData**    |  streetAddress  |     |   Создание и обновление |
 | **Municipality**   |   l   |     | Создание и обновление |
 | **CountryReferenceTwoLetter**      |   co |     |   Создание и обновление |
@@ -959,11 +959,11 @@ ms.locfileid: "65827297"
 
 #### <a name="how-do-i-format-display-names-in-ad-based-on-the-users-departmentcountrycity-attributes-and-handle-regional-variances"></a>Как форматировать отображаемые имена в AD на основе атрибутов отдела, страны и города пользователя и обрабатывать региональные различия?
 
-Он часто используется для настройки *displayName* атрибут в AD, таким образом, чтобы он также предоставляет сведения об отделе и страны или региона пользователя. Например, если Иван Воронков работает в отделе маркетинга в США, можно настроить так, чтобы его значение *displayName* отображалось как *Воронков, Иван (Маркетинг-Россия)*.
+Он часто используется для настройки *displayName* атрибут в AD, таким образом, чтобы он также предоставляет сведения об отделе и страны или региона пользователя. Например, если Иван Воронков работает в отделе маркетинга в США, можно настроить так, чтобы его значение *displayName* отображалось как *Воронков, Иван (Маркетинг-Россия)* .
 
 Вот как можно обрабатывать такие требования для построения *CN* или *displayName* включать атрибуты, такие как компании, подразделения, города или страны или региона.
 
-* Каждый атрибут Workday извлекается с помощью базового выражения XPath API, которое настраивается в меню **Сопоставление атрибутов -> раздел Advanced (Дополнительно) -> Edit attribute list for Workday (Изменить список атрибутов для Workday)**. Ниже приведено выражение XPath API по умолчанию для атрибутов Workday *PreferredFirstName*, *PreferredLastName*, *Company* и *SupervisoryOrganization*.
+* Каждый атрибут Workday извлекается с помощью базового выражения XPath API, которое настраивается в меню **Сопоставление атрибутов -> раздел Advanced (Дополнительно) -> Edit attribute list for Workday (Изменить список атрибутов для Workday)** . Ниже приведено выражение XPath API по умолчанию для атрибутов Workday *PreferredFirstName*, *PreferredLastName*, *Company* и *SupervisoryOrganization*.
 
      | Атрибут Workday | Выражение XPath API |
      | ----------------- | -------------------- |
@@ -988,14 +988,14 @@ ms.locfileid: "65827297"
 
   Согласуйте с командой Workday, допустимы ли приведенные выше выражения API для конфигурации клиента Workday. При необходимости эти выражения можно отредактировать, как описано в разделе [Настройка списка атрибутов пользователя Workday](#customizing-the-list-of-workday-user-attributes).
 
-* Чтобы построить выражение справа атрибут сопоставления, определите, какой атрибут Workday «принудительно» представляет пользователя имя, имя, страны или региона и последнего отдела. Предположим, у нас есть атрибуты *PreferredFirstName*, *PreferredLastName*, *CountryReferenceTwoLetter* и *SupervisoryOrganization* соответственно. Их можно использовать, чтобы создать приведенное ниже выражение для атрибута AD *displayName* и получить отображаемое имя, например *Воронков, Иван (Маркетинг-Россия)*.
+* Чтобы построить выражение справа атрибут сопоставления, определите, какой атрибут Workday «принудительно» представляет пользователя имя, имя, страны или региона и последнего отдела. Предположим, у нас есть атрибуты *PreferredFirstName*, *PreferredLastName*, *CountryReferenceTwoLetter* и *SupervisoryOrganization* соответственно. Их можно использовать, чтобы создать приведенное ниже выражение для атрибута AD *displayName* и получить отображаемое имя, например *Воронков, Иван (Маркетинг-Россия)* .
 
     ```
      Append(Join(", ",[PreferredLastName],[PreferredFirstName]), Join(""," (",[SupervisoryOrganization],"-",[CountryReferenceTwoLetter],")"))
     ```
     Как только у вас будет правильное выражение, отредактируйте таблицу сопоставлений атрибутов и измените сопоставление атрибута *displayName*, как показано ниже.   ![Сопоставление атрибута DisplayName](./media/workday-inbound-tutorial/wd_displayname_map.png)
 
-* Расширим приведенный выше пример. Допустим, вы хотите преобразовать названия городов из Workday в сокращенные значения, а затем использовать их, чтобы создать отображаемые имена, например *Воронков, Иван (MOS)* или *Сазанова, Мария (SPT)*. Это можно сделать с использованием выражения оператора switch с атрибутом Workday *Municipality* в качестве определяющей переменной.
+* Расширим приведенный выше пример. Допустим, вы хотите преобразовать названия городов из Workday в сокращенные значения, а затем использовать их, чтобы создать отображаемые имена, например *Воронков, Иван (MOS)* или *Сазанова, Мария (SPT)* . Это можно сделать с использованием выражения оператора switch с атрибутом Workday *Municipality* в качестве определяющей переменной.
 
      ```
     Switch
@@ -1053,7 +1053,7 @@ SelectUniqueValue(
 * Войдите в систему компьютера Windows Server, где развертывается агента подготовки
 * Откройте настольное приложение **просмотра событий Windows Server**.
 * Выберите **Журналы Windows > Приложение**.
-* Используйте параметр **Фильтровать текущий журнал...**, чтобы просмотреть все события, зарегистрированные в источнике **AAD.Connect.ProvisioningAgent**, и исключить события с идентификатором 5, указав фильтр "-5", как показано ниже.
+* Используйте параметр **Фильтровать текущий журнал...** , чтобы просмотреть все события, зарегистрированные в источнике **AAD.Connect.ProvisioningAgent**, и исключить события с идентификатором 5, указав фильтр "-5", как показано ниже.
 
   ![Средство просмотра событий Windows](media/workday-inbound-tutorial/wd_event_viewer_01.png))
 
@@ -1228,7 +1228,7 @@ SelectUniqueValue(
 
 3. Запустите Workday Studio.
 
-4. На панели команд выберите **Workday > Test Web Service (Workday > Тестировать веб-службу) в параметре Tester (Тестер)**.
+4. На панели команд выберите **Workday > Test Web Service (Workday > Тестировать веб-службу) в параметре Tester (Тестер)** .
 
 5. Щелкните **External** (Внешний) и выберите WSDL-файл Human_Resources, скачанный на шаге 2.
 

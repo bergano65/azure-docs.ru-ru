@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/19/2019
 ms.author: alkohli
 ms.openlocfilehash: 71e0ebf7d7851ae65a6fba67a1695d755fd98bb1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61436500"
 ---
 # <a name="azure-data-box-blob-storage-requirements"></a>Требования к хранилищу BLOB-объектов Azure Data Box
@@ -29,7 +29,7 @@ ms.locfileid: "61436500"
 |    Хранилище файлов Azure                                   |    Поддерживаются облачные общие папки с файлами SMB              |    Не поддерживается      |
 |    Шифрование службы для неактивных данных                  |    256-битное шифрование AES                             |    256-битное шифрование AES |
 |    Тип учетной записи хранения                                 |    Учетные записи хранения общего назначения и учетные записи хранения BLOB-объектов Azure    |    Только общего назначения версии 1|
-|    Имя BLOB-объекта                                            |    1024 символов (2048 байт)                     |    880 символов (1760 байт)|
+|    Имя большого двоичного объекта                                            |    1024 символов (2048 байт)                     |    880 символов (1760 байт)|
 |    Максимальный размер блока большого двоичного объекта                              |    4,75 ТБ (100 МБ х 50 000 блоков)                   |    4,75 ТБ (100 МБ х 50 000 блоков) для Azure Data Box версии 1.8 и более поздних.|
 |    Максимальный размер страничного BLOB-объекта                               |    8 ТБ                                               |    1 ТБ                   |
 |    Размер страницы страничного BLOB-объекта                                  |    512 байт                                          |    4 КБ                   |
@@ -53,11 +53,11 @@ Azure Data Box версии 1.8 и более поздние
 
 ### <a name="azure-data-box-18-onwards"></a>Azure Data Box версии 1.8 и более поздние
 
-| Клиентская библиотека     |Поддерживаемая версия хранилища BLOB-объектов службы Data Box     | Связать   |     Спецификация конечной точки      |
+| Клиентская библиотека     |Поддерживаемая версия хранилища BLOB-объектов службы Data Box     | Ссылка   |     Спецификация конечной точки      |
 |--------------------|--------------------------------------------|--------|---------------------------------|
 |    .NET                |    9.2.0                                           |    Пакет NuGet: https://www.nuget.org/packages/WindowsAzure.Storage/9.2.0    <br>Выпуск GitHub: https://github.com/Azure/azure-storage-net/releases/tag/v9.2.0                                                                                                                                                                                               |    Файл app.config                 |
 |    Java                |    7.0.0                                           |    Пакет Maven: https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/6.1.0   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-java/releases/tag/v7.0.0                                                                                                                                                                              |    Настройка строки подключения         |
-|    Node.js             |    2.8.3                                           |    Ссылка на NPM:   https://www.npmjs.com/package/azure-storage   (Запуска: `npm install azure-storage@2.7.0`)   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-node/releases/tag/v2.8.3                                                                                                                                                                        |    Объявление экземпляра службы    |
+|    Node.js             |    2.8.3                                           |    Ссылка на NPM:   https://www.npmjs.com/package/azure-storage   (Запуска: `npm install azure-storage@2.7.0` )   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-node/releases/tag/v2.8.3                                                                                                                                                                        |    Объявление экземпляра службы    |
 |    C++                 |    5.2.0                                           |    Пакет NuGet: https://www.nuget.org/packages/wastorage.v140/5.2.0   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-cpp/releases/tag/v5.2.0                                                                                                                                                                                                     |    Настройка строки подключения         |
 |    PHP                 |    1.2.0                                           |    Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-common   <br>Большой двоичный объект: https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-blob      <br>Установка через компоновщик (дополнительные сведения см. ниже)                                                                                                             |    Настройка строки подключения         |
 |    Python              |    1.1.0                                           |    Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-python/releases/tag/v1.0.0-common <br>Большой двоичный объект: https://github.com/Azure/azure-storage-python/releases/tag/v1.1.0-blob                                                                                                                                                                          |    Объявление экземпляра службы    |

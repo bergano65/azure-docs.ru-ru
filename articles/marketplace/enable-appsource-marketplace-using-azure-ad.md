@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 09/12/2018
 ms.author: qianw211
 ms.openlocfilehash: 981d9427dc8407c7300f01c941e39ba9723d53a8
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64938085"
 ---
 # <a name="enable-an-appsource-and-marketplace-listing-by-using-azure-active-directory"></a>Включение описания в AppSource и Marketplace с помощью Azure Active Directory
@@ -35,12 +35,12 @@ ms.locfileid: "64938085"
 | **Тип предложения**    | **Требования к единому входу в Azure AD**  |  |   |  |
 | :------------------- | :-------------------|:-------------------|:-------------------|:-------------------|
 |  | Связь со мной | Пробная версия | Тестовый выпуск | "Транзакция" |
-| Виртуальная машина | Н/Д | Нет  | Нет  | Нет  |
+| Виртуальная машина | Н/Д | Нет | Нет | Нет |
 | Приложения Azure (шаблон решения)  | Н/Д | Н/Д | Н/Д | Н/Д |
-| Управляемые приложения  | Н/Д | Н/Д | Н/Д | Нет  |
-| SaaS  | Нет  | Да | Да | Yes |
-| Контейнеры  | Н/Д | Н/Д | Н/Д | Нет  |
-| Консультационные услуги  | Нет  | Н/Д | Н/Д | Н/Д |
+| Управляемые приложения  | Н/Д | Н/Д | Н/Д | Нет |
+| SaaS  | Нет | Да | Да | Да |
+| Контейнеры  | Н/Д | Н/Д | Н/Д | Нет |
+| Консультационные услуги  | Нет | Н/Д | Н/Д | Н/Д |
 
 Дополнительные сведения о технических требованиях к SaaS см. в статье [Руководство по публикации SaaS-приложений](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide).
 

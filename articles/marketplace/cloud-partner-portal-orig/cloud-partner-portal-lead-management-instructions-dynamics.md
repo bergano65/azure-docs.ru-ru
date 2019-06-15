@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: pabutler
 ms.openlocfilehash: 6fdab26bb5a4da5402a3a0a895a7c8835ef22c2f
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935802"
 ---
 # <a name="configure-lead-management-for-dynamics-crm-online"></a>Настройка управления потенциальными клиентами в Dynamics CRM Online
@@ -89,7 +89,7 @@ ms.locfileid: "64935802"
 
 17. Перейдите в раздел "Параметры безопасности" этой статьи и завершите настройку подключения для этого пользователя.
 
-### <a name="office-365"></a>Office 365
+### <a name="office-365"></a>Office 365
 
 Если вы не хотите использовать Azure Active Directory, вы можете зарегистрировать нового пользователя на *Центр администрирования Microsoft 365*. Вам нужно будет обновлять свое имя пользователя и пароль каждые 90 дней, чтобы продолжать получать данные о потенциальных клиентах.
 
@@ -139,7 +139,7 @@ ms.locfileid: "64935802"
 
 ## <a name="wrap-up"></a>Заключение
 
-Завершите настройку Dynamics CRM для управления потенциальными клиентами, добавив сведения о созданной учетной записи на портале Cloud Partner. Например: 
+Завершите настройку Dynamics CRM для управления потенциальными клиентами, добавив сведения о созданной учетной записи на портале Cloud Partner. Пример:
 
--   **Azure Active Directory** - **идентификатор приложения** (пример: *23456052-AAAA-bbbb-8662-1234df56788f*), **идентификатор каталога** (пример: *12345678-8af1-4asf-1234-12234d01db47*), и **ключ приложения** (пример: *1234ABCDEDFRZ/G/FdY0aUABCEDcqhbLn/ST122345nBc=*).
--   **Office 365** - **URL-адрес** (пример: *https://contoso.crm4.dynamics.com*), **имя пользователя** (пример: *contoso\@ Contoso.onmicrosoft.com*), и **пароль** (пример: *P\@ssw0rd*).
+-   **Azure Active Directory** - **идентификатор приложения** (пример: *23456052-AAAA-bbbb-8662-1234df56788f*), **идентификатор каталога** (пример: *12345678-8af1-4asf-1234-12234d01db47*), и **ключ приложения** (пример: *1234ABCDEDFRZ/G/FdY0aUABCEDcqhbLn/ST122345nBc=* ).
+-   **Office 365** - **URL-адрес** (пример: *https://contoso.crm4.dynamics.com* ), **имя пользователя** (пример: *contoso\@ Contoso.onmicrosoft.com*), и **пароль** (пример: *P\@ ssw0rd*).

@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 10/6/2018
 ms.author: victorh
 ms.openlocfilehash: 891adfacde6e46b1d8fe8e2f6b5fb39c90ce27a0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61296472"
 ---
 # <a name="manage-dns-records-and-record-sets-by-using-the-azure-portal"></a>Управление записями и наборами записей DNS с помощью портала Azure
@@ -50,7 +50,7 @@ ms.locfileid: "61296472"
 
 После сохранения записи значения в колонке **Зона DNS** будут соответствовать новой записи.
 
-## <a name="update-a-record"></a>Обновить запись
+## <a name="update-a-record"></a>Изменение записи
 
 При обновлении записи в существующем наборе записей доступные для изменения поля зависят от типа используемой записи.
 

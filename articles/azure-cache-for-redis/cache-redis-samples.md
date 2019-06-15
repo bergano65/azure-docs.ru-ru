@@ -12,14 +12,13 @@ ms.workload: tbd
 ms.tgt_pltfrm: cache
 ms.devlang: multiple
 ms.topic: article
-origin.date: 01/23/2017
-ms.date: 02/27/2019
-ms.author: v-junlch
+ms.date: 01/23/2017
+ms.author: yegu
 ms.openlocfilehash: 73c771ab18d1cc2944298818c1cab90eb2f277ff
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60829809"
 ---
 # <a name="azure-cache-for-redis-samples"></a>Примеры использования кэша Azure для Redis
@@ -32,14 +31,14 @@ ms.locfileid: "60829809"
 
 В этом примере показано, как:
 
-- использовать различные параметры подключения;
-- читать и записывать объекты из кэша, используя синхронные и асинхронные операции;
-- использовать команды Redis MGET/MSET для возврата значений указанных ключей;
-- выполнять операции транзакций Redis;
-- работать со списками и отсортированными наборами Redis;
-- хранить объекты .NET с помощью сериализаторов JsonConvert;
-- использовать наборы Redis для реализации тегов.
-- Работа с кластером Redis
+* использовать различные параметры подключения;
+* читать и записывать объекты из кэша, используя синхронные и асинхронные операции;
+* использовать команды Redis MGET/MSET для возврата значений указанных ключей;
+* выполнять операции транзакций Redis;
+* работать со списками и отсортированными наборами Redis;
+* хранить объекты .NET с помощью сериализаторов JsonConvert;
+* использовать наборы Redis для реализации тегов.
+* Работа с кластером Redis
 
 Дополнительные сведения см. в документации по [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) на сайте GitHub. С дополнительными сценариями использования можно ознакомиться, изучив модульные тесты [StackExchange.Redis.Tests](https://github.com/StackExchange/StackExchange.Redis/tree/master/tests).
 
@@ -53,8 +52,8 @@ ms.locfileid: "60829809"
 ## <a name="azure-cache-for-redis-customer-query-sample"></a>Пример запроса клиента кэша Azure для Redis
 Этот пример сравнивает производительность при доступе к данным из кэша и при доступе к данным из хранилища сохраняемости. Этот пример содержит два проекта.
 
-- [Демонстрация повышения производительности путем кэширования данных с помощью кэша Azure для Redis](https://github.com/rustd/RedisSamples/tree/master/RedisCacheCustomerQuerySample)
-- [Инициализация базы данных и кэша для демонстрации](https://github.com/rustd/RedisSamples/tree/master/SeedCacheForCustomerQuerySample)
+* [Демонстрация повышения производительности путем кэширования данных с помощью кэша Azure для Redis](https://github.com/rustd/RedisSamples/tree/master/RedisCacheCustomerQuerySample)
+* [Инициализация базы данных и кэша для демонстрации](https://github.com/rustd/RedisSamples/tree/master/SeedCacheForCustomerQuerySample)
 
 ## <a name="aspnet-session-state-and-output-caching"></a>Состояние сеанса ASP.NET и кэширование вывода
 Пример [Использование кэша Azure для Redis для хранения ASP.NET SessionState и OutputCache](https://github.com/rustd/RedisSamples/tree/master/SessionState_OutputCaching) показывает, как использовать кэш Azure для Redis для хранения сеанса ASP.NET и кэша вывода с использованием поставщиков SessionState и OutputCache для Redis.
@@ -70,6 +69,4 @@ ms.locfileid: "60829809"
 
 ## <a name="bandwidth-monitor"></a>Монитор пропускной способности
 Пример [Монитор пропускной способности](https://github.com/JonCole/SampleCode/tree/master/BandWidthMonitor) позволяет наблюдать за пропускной способностью, используемой на клиентском компьютере. Чтобы измерить пропускную способность, запустите пример на клиентском компьютере кэша, выполните вызовы кэша и отследите пропускную способность, передаваемую примером монитора пропускной способности.
-
-<!-- Update_Description: update metedata properties -->
 

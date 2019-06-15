@@ -12,10 +12,10 @@ ms.date: 11/09/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 2b3ec3352d6e1939b195bbba87b8a824404346ae
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61044606"
 ---
 # <a name="tasks-to-prepare-data-for-enhanced-machine-learning"></a>Задачи по подготовке данных для расширенного машинного обучения
@@ -96,7 +96,7 @@ ms.locfileid: "61044606"
 
 **Функция просмотра данных** позволяет ознакомиться с данными заблаговременно. Это поможет вам выявить те или иные проблемы с данными и применить соответствующие методы для решения этих проблем.  Важно понимать, что породило проблемы, как они могли появиться. Это поможет решить, к каким действиям по обработке данных нужно прибегнуть для устранения проблем. Подробности, которые, работая с данными, вы стремитесь получить, вы можете использовать для того, чтобы назначить обработке данных приоритет.
 
-## <a name="references"></a>Ссылки
+## <a name="references"></a>Справочники
 > *Интеллектуальный анализ данных: концепции и методы*, издание третье, Morgan Kaufmann Publishers, 2011. Цзявей Хань (Jiawei Han), Мишлин Кэмбер (Micheline Kamber) и Цзянь Пей (Jian Pei)
 > 
 > 

@@ -11,10 +11,10 @@ ms.date: 04/27/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
 ms.openlocfilehash: b94e4c6f178119d6205c302cf35a9effaf2aa885
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61083881"
 ---
 # <a name="use-azure-functions-to-manage-compute-resources-in-azure-sql-data-warehouse"></a>Управление вычислительными ресурсами в хранилище данных Azure SQL с помощью службы "Функции Azure"
@@ -53,7 +53,7 @@ ms.locfileid: "61083881"
 
    ![Выбор пункта "Интегрировать" для функции](media/manage-compute-with-azure-functions/select-integrate.png)
 
-3. В текущий момент должно отображаться значение *%ScaleDownTime%* или *%ScaleUpTime%*. Эти значения указывают на то, что расписание основано на значениях, определенных в [параметрах приложения][Application Settings]. Пока что это значение можно проигнорировать и изменить время в расписании по своему усмотрению, основываясь на следующих шагах.
+3. В текущий момент должно отображаться значение *%ScaleDownTime%* или *%ScaleUpTime%* . Эти значения указывают на то, что расписание основано на значениях, определенных в [параметрах приложения][Application Settings]. Пока что это значение можно проигнорировать и изменить время в расписании по своему усмотрению, основываясь на следующих шагах.
 
 4. В области расписания добавьте время, которое должно отражаться в выражении CRON, чтобы определить частоту увеличения масштаба хранилища данных SQL. 
 
@@ -140,7 +140,7 @@ ms.locfileid: "61083881"
 
 В этом разделе кратко показано, что необходимо для более комплексного планирования возможностей паузы, возобновления и масштабирования.
 
-### <a name="example-1"></a>Пример 1:
+### <a name="example-1"></a>Пример 1
 
 Ежедневное увеличение масштаба до значения DW600 в 8:00 и уменьшение масштаба до DW200 в 20:00.
 
@@ -149,7 +149,7 @@ ms.locfileid: "61083881"
 | Функция 1 | 0 0 8 * * *  | `var operation = {"operationType": "ScaleDw",  "ServiceLevelObjective": "DW600"}` |
 | Функция 2 | 0 0 20 * * * | `var operation = {"operationType": "ScaleDw", "ServiceLevelObjective": "DW200"}` |
 
-### <a name="example-2"></a>Пример 2: 
+### <a name="example-2"></a>Пример 2 
 
 Ежедневное увеличение масштаба в 8:00 до DW1000, однократное уменьшение до DW600 в 16:00 и уменьшение масштаба в 22:00 до DW200.
 

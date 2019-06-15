@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 12/20/2017
 ms.author: cshoe
 ms.openlocfilehash: f112bdf9eacf51852659ab49a5673b0c8bfb0e46
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61438114"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64511818"
 ---
 # <a name="microsoft-graph-bindings-for-azure-functions"></a>Привязки Microsoft Graph для службы "Функции Azure"
 
@@ -353,7 +353,7 @@ module.exports = function (context, req) {
 |**userId**|**UserId**  |Требуется, только если для свойства _identity_ задано значение `userFromId`. Идентификатор субъекта-пользователя, связанный с пользователем, ранее вошедшим в систему.|
 |**userToken**|**UserToken**|Требуется, только если для свойства _identity_ задано значение `userFromToken`. Токен, предназначенный для приложения-функции. |
 |**path**|**Путь**|Обязательное. Путь к книге Excel в OneDrive.|
-|**worksheetName**|**WorksheetName**|Лист, в котором находится таблица.|
+|**worksheetName**|**WorksheetName**|Лист, на котором находится таблица.|
 |**tableName**|**TableName**|Это имя таблицы. Если это свойство не указано, будет использоваться содержимое листа.|
 
 <a name="excel-input-code"></a>
@@ -361,7 +361,7 @@ module.exports = function (context, req) {
 
 Для этой привязки требуются следующие разрешения Azure AD:
 
-|Resource|Разрешение|
+|Ресурс|Разрешение|
 |--------|--------|
 |Microsoft Graph|Чтение файлов пользователей|
 
@@ -515,7 +515,7 @@ module.exports = function (context, req) {
 |**UserId** |**userId** |Требуется, только если для свойства _identity_ задано значение `userFromId`. Идентификатор субъекта-пользователя, связанный с пользователем, ранее вошедшим в систему.|
 |**userToken**|**UserToken**|Требуется, только если для свойства _identity_ задано значение `userFromToken`. Токен, предназначенный для приложения-функции. |
 |**path**|**Путь**|Обязательное. Путь к книге Excel в OneDrive.|
-|**worksheetName**|**WorksheetName**|Лист, в котором находится таблица.|
+|**worksheetName**|**WorksheetName**|Лист, на котором находится таблица.|
 |**tableName**|**TableName**|Это имя таблицы. Если это свойство не указано, будет использоваться содержимое листа.|
 |**updateType**|**UpdateType**|Обязательное. Тип изменения, которое требуется внести в таблицу. Может принимать одно из следующих значений:<ul><li><code>update</code> — замена содержимого таблицы в OneDrive.</li><li><code>append</code> — добавление полезных данных в конец таблицы в OneDrive путем создания новых строк.</li></ul>|
 
@@ -524,9 +524,9 @@ module.exports = function (context, req) {
 
 Для этой привязки требуются следующие разрешения Azure AD:
 
-|Resource|Разрешение|
+|Ресурс|Разрешение|
 |--------|--------|
-|Microsoft Graph|Получите полный доступ к файлам пользователя|
+|Microsoft Graph|Полный доступ к файлам пользователя|
 
 Привязка предоставляет следующие типы функций .NET:
 - string[][];
@@ -667,7 +667,7 @@ module.exports = function (context, req) {
 
 Для этой привязки требуются следующие разрешения Azure AD:
 
-|Resource|Разрешение|
+|Ресурс|Разрешение|
 |--------|--------|
 |Microsoft Graph|Чтение файлов пользователей|
 
@@ -815,9 +815,9 @@ module.exports = function (context, req) {
 
 Для этой привязки требуются следующие разрешения Azure AD:
 
-|Resource|Разрешение|
+|Ресурс|Разрешение|
 |--------|--------|
-|Microsoft Graph|Получите полный доступ к файлам пользователя|
+|Microsoft Graph|Полный доступ к файлам пользователя|
 
 Привязка предоставляет следующие типы функций .NET:
 - byte[]
@@ -965,7 +965,7 @@ module.exports = function (context, req) {
 
 Для этой привязки требуются следующие разрешения Azure AD:
 
-|Resource|Разрешение|
+|Ресурс|Разрешение|
 |--------|--------|
 |Microsoft Graph|Отправка почты от имени пользователя|
 

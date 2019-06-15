@@ -12,10 +12,10 @@ ms.date: 03/28/2018
 ms.author: glenga
 ms.custom: cc996988-fb4f-47
 ms.openlocfilehash: 92ca09040836dfc55a9d709b12a0ee01192d6bac
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65957393"
 ---
 # <a name="how-to-manage-a-function-app-in-the-azure-portal"></a>Управление приложением-функцией на портале Azure 
@@ -26,7 +26,7 @@ ms.locfileid: "65957393"
 
 ![Обзор приложения-функции на портале Azure](./media/functions-how-to-use-azure-function-app-settings/azure-function-app-main.png)
 
-Вы можете перейти к все необходимое для управления приложения-функции на странице обзора, в частности **[параметры приложения](#settings)** и **[функции платформы](#platform-features)**.
+Вы можете перейти к все необходимое для управления приложения-функции на странице обзора, в частности **[параметры приложения](#settings)** и **[функции платформы](#platform-features)** .
 
 ## <a name="settings"></a>Параметры приложения
 

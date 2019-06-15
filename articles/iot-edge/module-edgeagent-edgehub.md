@@ -10,10 +10,10 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: b6eb0c5b0d52bba3d34c9853a73b1f3e07b112a7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61322744"
 ---
 # <a name="properties-of-the-iot-edge-agent-and-iot-edge-hub-module-twins"></a>Свойства двойников модулей агента IoT Edge и центра IoT Edge
@@ -49,7 +49,7 @@ ms.locfileid: "61322744"
 | modules.{ИД_модуля}.type | Должно быть "docker". | Да |
 | modules.{Ид_модуля}.status | {"running" \| "stopped"} | Да |
 | modules.{ИД_модуля}.restartPolicy | {"never" \| "on-failed" \| "on-unhealthy" \| "always"} | Да |
-| modules.{ИД_модуля}.settings.image | URI для образа модуля. | Да |
+| modules.{ИД_модуля}.settings.image | Универсальный код ресурса (URI) для образа модуля. | Да |
 | modules.{ИД_модуля}.settings.createOptions | Переведенные в строку JSON, содержащую параметры для создания контейнера модуля. [Параметры создания Docker](https://docs.docker.com/engine/api/v1.32/#operation/ContainerCreate) | Нет |
 | modules.{ИД_модуля}.configuration.id | Идентификатор развертывания, которое развернуло этот модуль. | Центр Интернета вещей задает свойство при применении этого манифеста с помощью развертывания. Не является частью манифеста развертывания. |
 

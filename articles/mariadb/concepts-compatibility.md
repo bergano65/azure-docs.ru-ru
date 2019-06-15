@@ -7,10 +7,10 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 03/19/2019
 ms.openlocfilehash: 7a3d9a5f87a565625052fc54e3ecccc99fd928a7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61386827"
 ---
 # <a name="mariadb-drivers-and-management-tools-compatible-with-azure-database-for-mariadb"></a>MariaDB драйверы и средства управления, совместимые с базой данных Azure для MariaDB
@@ -29,7 +29,7 @@ PHP | https://secure.php.net/downloads.php | 5.5, 5.6, 7.x | 5,3 | Для под
 .NET | [MySqlConnector на GitHub](https://github.com/mysql-net/MySqlConnector) <br> [Пакет установки из Nuget](https://www.nuget.org/packages/MySqlConnector/) | Версия 0.27 и более поздние версии | Версия 0.26.5 и предыдущие версии |
 MySQL Connector/NET | [MySQL Connector/NET](https://github.com/mysql/mysql-connector-net) | 8.0, 7.0, 6.10 |  | Ошибка кодирования может привести к сбою подключения в некоторых системах Windows, не поддерживающих UTF-8.
 Node.js |  [MySQLjs на GitHub](https://github.com/mysqljs/mysql/) <br> Пакет установки из NPM:<br> Запустите команду `npm install mysql` из NPM | 2.15 | Версия 2.14.1 и предыдущие версии
-Перейти | https://github.com/go-sql-driver/mysql/releases | 1.3, 1.4 | Версия 1.2 и предыдущие версии | Используйте `allowNativePasswords=true` в строке подключения для версии 1.3. Версия 1.4 содержит исправления и `allowNativePasswords=true` больше не требуется.
+GO | https://github.com/go-sql-driver/mysql/releases | 1.3, 1.4 | Версия 1.2 и предыдущие версии | Используйте `allowNativePasswords=true` в строке подключения для версии 1.3. Версия 1.4 содержит исправления и `allowNativePasswords=true` больше не требуется.
 Python | https://pypi.python.org/pypi/mysql-connector-python | 1.2.3, 2.0, 2.1, 2.2 | Версия 1.2.2 и предыдущие версии |
 Java | https://downloads.mariadb.org/connector-java/ | 2.1, 2.0, 1.6 | Версия 1.5.5 и предыдущие версии |
 
@@ -44,7 +44,7 @@ SSL-соединение | X | X | X
 Автозавершение запроса SQL | X | X |
 Импорт и экспорт данных | X | X | X
 Экспорт в несколько форматов | X | X | X
-Резервное копирование и восстановление |  | X |
+Архивация и восстановление |  | X |
 Отображение параметров сервера | X | X | X
 Отображение клиентских подключений | X | X | X
 

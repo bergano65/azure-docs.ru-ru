@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.date: 02/07/2018
 ms.author: jingwang
 ms.openlocfilehash: e9fd818990c8a985a77c2e7eeea19bf63c440e4e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61347757"
 ---
 # <a name="copy-data-from-teradata-using-azure-data-factory"></a>Копирование данных из Teradata с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](v1/data-factory-onprem-teradata-connector.md)
 > * [Текущая версия](connector-teradata.md)
 
@@ -55,7 +55,7 @@ ms.locfileid: "61347757"
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойству type необходимо задать значение **Teradata** | Да |
-| server | Имя сервера Teradata. | Да |
+| server | Имя сервера Teradata. | Yes |
 | authenticationType | Тип проверки подлинности, используемый для подключения к базе данных Teradata.<br/>Допустимые значения: **Basic** и **Windows**. | Да |
 | username | Укажите имя пользователя для подключения к базе данных Teradata. | Да |
 | password | Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |

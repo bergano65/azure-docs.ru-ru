@@ -15,10 +15,10 @@ ms.workload: ''
 ms.date: 03/26/2018
 ms.author: robreed
 ms.openlocfilehash: 9f81e2b7537a5ecc6778baa93a1bab23dd30ff8a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61475513"
 ---
 # <a name="powershell-dsc-extension"></a>Расширение PowerShell DSC
@@ -100,14 +100,14 @@ Windows Server 2019 г., Windows Server 2016, Windows Server 2012 R2, Windows Se
 
 | ИМЯ | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| версия_API | 2018-10-01 | date |
+| apiVersion | 2018-10-01 | date |
 | publisher | Microsoft.Powershell.DSC | string |
-| тип | DSC | string |
+| type | DSC | string |
 | typeHandlerVersion | 2.77 | int |
 
 ### <a name="settings-property-values"></a>Значения свойства параметров
 
-| ИМЯ | Тип данных | Описание
+| Name | Тип данных | Описание
 | ---- | ---- | ---- |
 | settings.wmfVersion | string | Указывает версию Windows Management Framework, которую необходимо установить на виртуальной машине. Если задать для этого свойства значение latest, будет установлена последняя версия Windows Management Framework. Для этого свойства доступны только такие значения: 4.0, 5.0 и latest. Возможные значения зависят от обновлений. По умолчанию используется значение latest. |
 | settings.configuration.url | string | Указывает URL-адрес расположения, из которого можно скачать ZIP-файл конфигурации DSC. Если для доступа к предоставленному URL-адресу требуется маркер SAS, для свойства protectedSettings.configurationUrlSasToken будет необходимо задать значение маркера SAS. Это свойство обязательное, если заданы свойства settings.configuration.script и (или) settings.configuration.function.
@@ -121,7 +121,7 @@ Windows Server 2019 г., Windows Server 2016, Windows Server 2012 R2, Windows Se
 
 ### <a name="protected-settings-property-values"></a>Значения свойств защищенных параметров
 
-| ИМЯ | Тип данных | Описание
+| Name | Тип данных | Описание
 | ---- | ---- | ---- |
 | protectedSettings.configurationArguments | string | Определяет параметры, которые необходимо передать в конфигурацию DSC. Это свойство будет зашифровано. |
 | protectedSettings.configurationUrlSasToken | string | Указывает маркер SAS для доступа к URL-адресу, определенному в свойстве configuration.url. Это свойство будет зашифровано. |

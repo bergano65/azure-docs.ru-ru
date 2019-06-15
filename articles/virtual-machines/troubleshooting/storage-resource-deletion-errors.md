@@ -12,10 +12,10 @@ ms.topic: troubleshooting
 ms.date: 11/01/2018
 ms.author: genli
 ms.openlocfilehash: a1eb946d3f1b18aaa86735dedcfbaa1fd6a89621
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60922682"
 ---
 # <a name="troubleshoot-storage-resource-deletion-errors"></a>Устранение ошибок при удалении ресурсов хранилища
@@ -34,7 +34,7 @@ ms.locfileid: "60922682"
 
 Процесс удаления учетной записи хранения, контейнера или большого двоичного объекта при возникновении одной из упомянутых выше ошибок: 
 1. Определите большие двоичные объекты, подключенные к виртуальной машине.
-2. [Удалите виртуальные машины с подключенным **диском ОС.**](#step-2-delete-vm-to-detach-os-disk)
+2. [Удалите виртуальные машины с подключенным **диском ОС.** ](#step-2-delete-vm-to-detach-os-disk)
 3. [Отключите все **диски с данными** на оставшихся виртуальных машинах.](#step-3-detach-data-disk-from-the-vm)
 
 Повторите попытку удаления учетной записи хранения, контейнера или большого двоичного объекта после выполнения этих действий.

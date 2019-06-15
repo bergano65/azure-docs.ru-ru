@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 02/10/2019
 ms.author: juliako
 ms.openlocfilehash: a241f66adecbab1d0b1462f379d3765d6c1de252
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61466805"
 ---
 # <a name="upload-files-into-a-media-services-account-using-rest"></a>Передача файлов в учетную запись служб мультимедиа с помощью REST
@@ -53,7 +53,7 @@ ms.locfileid: "61466805"
 1. Выберите **Ресурсы** -> **Список URL-адресов ресурса**.
 2. Нажмите кнопку **Отправить**.
 
-    ![Отправить файл](./media/upload-files/postman-create-sas-locator.png)
+    ![Отправка файла](./media/upload-files/postman-create-sas-locator.png)
 
 Вы увидите **Ответ** с информацией о URL-адресах ресурса. Скопируйте первый URL-адрес и используйте его для отправки файла.
 

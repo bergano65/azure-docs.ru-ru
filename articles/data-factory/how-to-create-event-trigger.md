@@ -12,10 +12,10 @@ author: sharonlo101
 ms.author: shlo
 manager: craigg
 ms.openlocfilehash: 94c9c3f997143d72262c1ba3d8dbfea90d6f920c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61347727"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-in-response-to-an-event"></a>Создание триггера, запускающего конвейер в ответ на событие
@@ -70,7 +70,7 @@ ms.locfileid: "61347727"
 | **Элемент JSON** | **Описание** | **Тип** | **Допустимые значения** | **Обязательный** |
 | ---------------- | --------------- | -------- | ------------------ | ------------ |
 | **scope** | Идентификатор ресурса Azure Resource Manager учетной записи хранения. | String | Идентификатор Azure Resource Manager | Да |
-| **events** | Тип событий, вызывающих срабатывание триггера. | Массив    | Microsoft.Storage.BlobCreated, Microsoft.Storage.BlobDeleted | Да, любое сочетание этих значений. |
+| **events** | Тип событий, вызывающих срабатывание триггера. | Массив,    | Microsoft.Storage.BlobCreated, Microsoft.Storage.BlobDeleted | Да, любое сочетание этих значений. |
 | **blobPathBeginsWith** | Путь большого двоичного объекта должен начинаться с шаблона, указанного для срабатывания триггера. Например, `/records/blobs/december/` активирует только триггер для больших двоичных объектов в папке `december` контейнера `records`. | String   | | Вы должны предоставить значение хотя бы для одного из этих свойств: `blobPathBeginsWith` или `blobPathEndsWith`. |
 | **blobPathEndsWith** | Путь большого двоичного объекта должен оканчиваться шаблоном, указанным для срабатывания триггера. Например, `december/boxes.csv` активирует только триггер для больших двоичных объектов с именем `boxes` в папке `december`. | String   | | Вы должны предоставить значение хотя бы для одного из этих свойств: `blobPathBeginsWith` или `blobPathEndsWith`. |
 

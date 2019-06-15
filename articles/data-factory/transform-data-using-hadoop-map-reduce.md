@@ -12,14 +12,14 @@ author: nabhishek
 ms.author: abnarain
 manager: craigg
 ms.openlocfilehash: ccc194dd4120762a30da3ad28cdabed6faf53ba2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60611503"
 ---
 # <a name="transform-data-using-hadoop-mapreduce-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hadoop MapReduce в фабрике данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](v1/data-factory-map-reduce.md)
 > * [Текущая версия](transform-data-using-hadoop-map-reduce.md)
 
@@ -63,8 +63,8 @@ ms.locfileid: "60611503"
 | Свойство          | ОПИСАНИЕ                              | Обязательно для заполнения |
 | ----------------- | ---------------------------------------- | -------- |
 | name              | Имя действия.                     | Yes      |
-| description       | Текст, описывающий, для чего используется действие | Нет        |
-| тип              | Для действия MapReduce Activity используется тип действия HDinsightMapReduce. | Да      |
+| description       | Текст, описывающий, для чего используется действие | Нет       |
+| type              | Для действия MapReduce Activity используется тип действия HDinsightMapReduce. | Да      |
 | linkedServiceName | Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md). | Да      |
 | className         | Имя класса для выполнения.         | Да      |
 | jarLinkedService  | Ссылки на связанные службы хранилища Azure, используемые для хранения файлов Jar. Если не указать эту связанную службу, будет использоваться связанная служба хранилища Azure, определенная в связанной службе HDInsight. | Нет       |

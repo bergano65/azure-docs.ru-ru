@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 72ec3080658b98376952f72f746c1b53fdf7de77
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64704340"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Руководство разработчика хранилища ключей Azure
@@ -39,7 +39,7 @@ ms.locfileid: "64704340"
 
 Дополнительные сведения о новой функции "Ключи учетной записи хранения" см. в статье, посвященной [учетной записи хранилища ключей Azure Key Vault](key-vault-ovw-storage-keys.md).
 
-## <a name="videos"></a>Видеоролики
+## <a name="videos"></a>Видео
 
 В этом видео показано, как создать собственное хранилище ключей и использовать его в примере приложения HelloKeyVault.
 

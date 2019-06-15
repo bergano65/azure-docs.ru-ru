@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: sogup
 ms.openlocfilehash: aa953440f03137f3359276bc9e06cb0c73f0ab4a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61219292"
 ---
 # <a name="manage-azure-vm-backups"></a>Управление резервными копиями виртуальных машин Azure
@@ -74,7 +74,7 @@ ms.locfileid: "61219292"
 
    * Для переключения политики, выберите другую политику и затем выберите **Сохранить**. Новая политика будет немедленно применена к хранилищу.
 
-     ![Выберите политику архивации](./media/backup-azure-manage-vms/backup-policy-create-new.png)
+     ![Выберите политику резервного копирования](./media/backup-azure-manage-vms/backup-policy-create-new.png)
 
 ## <a name="run-an-on-demand-backup"></a>Выполнение резервного копирования по требованию
 После настройки защиты, можно запустить из резервной копии по запросу виртуальной Машины. Эти сведения не забывайте:
@@ -115,7 +115,7 @@ ms.locfileid: "61219292"
 1. На [мониторинга элемента хранилища](#view-vms-on-the-dashboard)выберите **остановить архивацию**.
 2. Выберите, следует ли сохранить или удалить данные архивации, и подтвердите свой выбор, при необходимости. Если нужно добавьте комментарий. Если вы не уверены в правильности имени элемента, наведите указатель мыши восклицательный знак, чтобы просмотреть имя.
 
-    ![Остановить защиту](./media/backup-azure-manage-vms/retain-or-delete-option.png)
+    ![остановка защиты;](./media/backup-azure-manage-vms/retain-or-delete-option.png)
 
      Уведомление позволяет узнать, что задания резервного копирования были остановлены.
 

@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 12/18/2018
 ms.openlocfilehash: 2aa98c3958f1dffeb8adbad5e91a11f397d4a9fd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61035754"
 ---
 # <a name="in-memory-sample"></a>Пример использования технологий обработки в оперативной памяти
@@ -25,7 +25,7 @@ ms.locfileid: "61035754"
 
 В этой статье вы ознакомитесь с двумя примерами по использованию OLTP в памяти и индексов сolumnstore в Базе данных SQL Azure.
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения можно найти в разделе
 - Статья [Общие сведения и сценарии использования](https://msdn.microsoft.com/library/mt774593.aspx) содержит ссылки на примеры реальных клиентов и сведения, необходимые для начала работы.
 - [In-Memory OLTP (оптимизация в памяти)](https://msdn.microsoft.com/library/dn133186.aspx)
 - [Описание индексов columnstore](https://msdn.microsoft.com/library/gg492088.aspx)
@@ -180,7 +180,7 @@ end
 
 На виртуальной машине (или в другом размещении) установите служебные программы RML, которые включают в себя ostress.exe.
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения можно найти в разделе
 - Обсуждение программы ostress.exe представлено в статье [Пример базы данных для выполняющейся в памяти OLTP](https://msdn.microsoft.com/library/mt465764.aspx).
 - Или ознакомьтесь со статьей [Пример базы данных для выполняющейся в памяти OLTP](https://msdn.microsoft.com/library/mt465764.aspx).
 - Можно также прочитать [блог об установке ostress.exe](https://blogs.msdn.com/b/psssql/archive/20../../cumulative-update-2-to-the-rml-utilities-for-microsoft-sql-server-released.aspx).

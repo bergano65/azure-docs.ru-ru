@@ -16,10 +16,10 @@ ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: banders
 ms.openlocfilehash: 8a3d1a3a6b1dce1d729942715bbe5962837ff093
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60918807"
 ---
 # <a name="export-and-view-your-top-level-subscription-information"></a>Экспорт и просмотр данных верхнего уровня из подписки
@@ -28,7 +28,7 @@ ms.locfileid: "60918807"
 [!INCLUDE [gdpr-dsr-and-stp-note](../../includes/gdpr-dsr-and-stp-note.md)]
 
 Загруженный JSON-файл содержит следующие сведения:
-- Электронная почта: адрес электронной почты, связанный с учетной записью.
+- Адрес электронной почты: адрес электронной почты, связанный с учетной записью.
 - Puid: глобальный уникальный идентификатор, связанный с учетной записью выставления счетов;
 - SubscriptionIds: список подписок в учетной записи, перечисленных за идентификаторами.
 

@@ -12,12 +12,12 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: 50cec0774729073678498922b2c58f1ca62d7d82
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8a2a2fffa9ed3a4dae3c0768291b7585be4bfc6d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60341953"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64690837"
 ---
 # <a name="configure-and-manage-azure-sql-database-security-for-geo-restore-or-failover"></a>Настройка безопасности Базы данных SQL Azure и управление ею для геовосстановления или отработки отказа
 
@@ -89,7 +89,9 @@ ms.locfileid: "60341953"
 > [!NOTE]
 > Чтобы предоставить пользователю доступ на сервер-получатель (но не на сервер-источник), измените учетную запись пользователя на сервере-источнике с помощью следующего синтаксиса.
 >
+> ```sql
 > ALTER LOGIN <login name> DISABLE
+> ```
 >
 > DISABLE не изменяет пароль, поэтому при любой необходимости можно вернуть ENABLE.
 

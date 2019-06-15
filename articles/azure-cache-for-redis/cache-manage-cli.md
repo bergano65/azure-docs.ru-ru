@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: yegu
 ms.openlocfilehash: 1d7a18f3f46cec73d70389b82eed5a85e440d340
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62119084"
 ---
 # <a name="how-to-create-and-manage-azure-cache-for-redis-using-the-azure-classic-cli"></a>Создание кэша Azure для Redis и управление им с помощью классического Azure CLI
@@ -44,10 +44,10 @@ ms.locfileid: "62119084"
 ## <a name="azure-cache-for-redis-properties"></a>Свойства кэша Azure для Redis
 При создании и обновлении экземпляров кэша Azure для Redis используются следующие свойства.
 
-| Свойство | Переключить | Описание |
+| Свойство | Параметр | Описание |
 | --- | --- | --- |
 | name |-n, --name |Имя кэша Azure для Redis. |
-| Группа ресурсов |-g, --resource-group |Имя группы ресурсов. |
+| resource group |-g, --resource-group |Имя группы ресурсов. |
 | location |-l, --location |Расположение для создания кэша. |
 | size |-z, --size |Размер кэша Azure для Redis. Допустимые значения: [C0, C1, C2, C3, C4, C5, C6, P1, P2, P3, P4] |
 | sku |-x, --sku |Номер SKU Redis. Должен иметь одно из этих значений: [Basic, Standard, Premium] |

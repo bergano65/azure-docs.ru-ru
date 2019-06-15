@@ -12,10 +12,10 @@ ms.topic: article
 tags: connectors
 ms.date: 08/24/2018
 ms.openlocfilehash: 7eecd3908883b195b52755d03e70872afe9180bb
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62105740"
 ---
 # <a name="send-emails-and-manage-mailing-lists-in-sendgrid-by-using-azure-logic-apps"></a>Отправка сообщений электронной почты и управление списками рассылки в SendGrid с помощью Azure Logic Apps
@@ -56,7 +56,7 @@ ms.locfileid: "62105740"
      -или-
 
    * Между шагами, в которых вы хотите добавить действие, переместите указатель на стрелку между шагами. 
-   Выберите появившийся знак "плюс" (**+**), а затем щелкните **Добавить действие**.
+   Выберите появившийся знак "плюс" ( **+** ), а затем щелкните **Добавить действие**.
 
 1. В поле поиска введите sendgrid в качестве условия фильтра. В списке действий выберите любое необходимое действие.
 

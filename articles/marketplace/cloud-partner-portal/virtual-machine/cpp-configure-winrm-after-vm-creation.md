@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: pabutler
 ms.openlocfilehash: 4a4248efcfda76dfd8907069e167fdfa144d0365
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64938519"
 ---
 # <a name="configure-winrm-after-virtual-machine-creation"></a>Настройка WinRM после создания виртуальной машины
@@ -26,7 +26,7 @@ ms.locfileid: "64938519"
 
 Для WinRM по протоколу HTTPS используется порт 5896, который не включен по умолчанию на предварительно настроенных виртуальных машин с Windows, предлагаемых в Azure Marketplace. Чтобы его включить, добавьте новое правило в группу безопасности сети (NSG) на [портале Azure](https://portal.azure.com) в соответствии с приведенными ниже инструкциями.  Дополнительные сведения о группах безопасности сети см. в статье [Группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview).
 
-1.  Перейдите к колонке **Виртуальные машины >**  <*имя_виртуальной_машины*>    **> Параметры/Сети**.
+1.  Перейдите к колонке **Виртуальные машины >**   <*имя_виртуальной_машины*>    **> Параметры/Сети**.
 2.  Щелкните имя группы безопасности сети (в этом примере **testvm11002**) для отображения ее свойств:
 
     ![Свойства группы безопасности сети](./media/nsg-properties.png)

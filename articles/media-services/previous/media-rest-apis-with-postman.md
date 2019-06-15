@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
 ms.openlocfilehash: 5d0b5a57f3fe587a06a102c958b17dbf2a73225c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61466711"
 ---
 # <a name="configure-postman-for-media-services-rest-api-calls"></a>Настройка Postman для вызовов REST API служб мультимедиа  
@@ -41,14 +41,14 @@ ms.locfileid: "61466711"
 2. Откройте **Postman**.
 3. В правой части экрана выберите параметр **Управление средой**.
 
-    ![Отправить файл](./media/media-services-rest-upload-files/postman-create-env.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-create-env.png)
 4. В диалоговом окне **Управление средой** нажмите кнопку **Импорт**.
 5. Найдите и выберите файл **AzureMediaServices.postman_environment.json**.
 6. Будет добавлена среда **AzureMedia**.
 7. Закройте диалоговое окно.
 8. Выберите среду **AzureMedia**.
 
-    ![Отправить файл](./media/media-services-rest-upload-files/postman-choose-env.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-choose-env.png)
 
 ## <a name="configure-the-collection"></a>Настройка коллекции
 
@@ -56,7 +56,7 @@ ms.locfileid: "61466711"
 2. Нажмите кнопку **импорта**, чтобы импортировать файл коллекции.
 3. Выберите файл **AzureMediaServicesOperations.postman_collection.json**.
 
-    ![Отправить файл](./media/media-services-rest-upload-files/postman-import-collection.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-import-collection.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

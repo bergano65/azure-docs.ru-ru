@@ -11,19 +11,19 @@ ms.service: cost-management
 manager: benshy
 ms.custom: ''
 ms.openlocfilehash: 2553d08b55aff45e52b9d8c5a64db141a668eb62
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65967110"
 ---
 # <a name="create-a-support-request-for-cloudyn"></a>Создание запроса в группу поддержки для Cloudyn
 
 Если не удается найти необходимые сведения, вы можете подать запрос в группу поддержки. Это также можно сделать в случае перебоев или ошибок в работе службы. Запрос в службу поддержки нужно подавать относительно одной проблемы. Это поможет быстро направить сведения о проблеме в нужный отдел.
 
-## <a name="open-a-support-ticket"></a>Открыть запрос в службу поддержки
+## <a name="open-a-support-ticket"></a>Открытие запроса в службу поддержки
 
-1. Войдите на портал Azure (https://portal.azure.com)).
+1. Войдите на портал Azure (https://portal.azure.com) ).
 2. В верхней панели навигации щелкните **Справка**.
 3. В меню**Справка** щелкните **Справка и поддержка**.
 4. В меню "Справка и поддержка" в разделе "Поддержка" щелкните **Новый запрос на поддержку**.

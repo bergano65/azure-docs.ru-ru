@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 10/25/2016
 ms.author: gangan
 ms.openlocfilehash: f6d9e683e1feff670c26b01a31ce977557295bff
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62129065"
 ---
 # <a name="how-to-create-an-azure-support-request"></a>Создание запроса на поддержку Azure
@@ -51,7 +51,7 @@ ms.locfileid: "62129065"
 
 ![Контекст](./media/how-to-create-azure-support-request/Incontext.png)
 
-## <a name="basics"></a>Основные сведения
+## <a name="basics"></a>Основы
 Первый шаг при отправке запроса на поддержку заключается в сборе сведений о возникшей проблеме и вашем плане поддержки.
 
 Давайте рассмотрим пример: Возникли технические трудности с виртуальной машиной и кажется, проблемы с сетевыми подключениями.
@@ -76,7 +76,7 @@ ms.locfileid: "62129065"
 ## <a name="related-help"></a>Связанные материалы
 Мы предложим решение, которое может помочь вам устранить проблему, на основе выбранных вами категории и типа проблемы.
 
-![Справка по этой теме](./media/how-to-create-azure-support-request/RelatedHelp.png)
+![Связанные материалы](./media/how-to-create-azure-support-request/RelatedHelp.png)
 
 Кроме того, исходя из текстового описания проблемы, мы предложим решения для самостоятельного устранения, вытекающие из контекста.
 

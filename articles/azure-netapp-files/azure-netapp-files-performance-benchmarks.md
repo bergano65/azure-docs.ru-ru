@@ -15,13 +15,13 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: b-juche
 ms.openlocfilehash: aca0668fc364518fe45d9fe94d089ee366b25676
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64870887"
 ---
-# <a name="performance-benchmarks-for-azure-netapp-files"></a>Показатели производительности для службы файлов Azure NetApp
+# <a name="performance-benchmarks-for-azure-netapp-files"></a>Тесты производительности для Azure NetApp Files
 
 Этой статье описываются результаты тестов производительности производительности для NetApp службы файлов Azure на уровне тома. 
 
@@ -75,7 +75,7 @@ ms.locfileid: "64870887"
 
 ![Операций ввода-вывода тестов](../media/azure-netapp-files/azure-netapp-files-io-test.png)
 
-## <a name="latency"></a>Latency
+## <a name="latency"></a>Задержка
 
 Расстояние между тестовых виртуальных машин и тома службы файлов Azure NetApp оказывает влияние на производительность операций ввода-вывода.  На представленной ниже диаграмме сравниваются операций ввода-ВЫВОДА и кривые задержки ответа для двух разных наборов виртуальных машин.  Один набор виртуальных машин приближается к службе файлов Azure NetApp и другой — дальнейшие немедленно.  Обратите внимание на то, что повышенная задержка для дальнейшего набор виртуальных машин оказывает влияние на объем операций ввода-ВЫВОДА, реализовать на данном уровне параллелизма.  В любом случае операций чтения в томе может превышать 300 000 операций ввода-ВЫВОДА, как показано ниже: 
 

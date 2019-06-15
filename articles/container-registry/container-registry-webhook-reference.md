@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 03/05/2019
 ms.author: danlep
 ms.openlocfilehash: 4c0845b9cf5194ecbd0ab813997e17e070840f44
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61331347"
 ---
 # <a name="azure-container-registry-webhook-reference"></a>Справочник по веб-перехватчику реестра контейнеров Azure
@@ -45,8 +45,8 @@ ms.locfileid: "61331347"
 |`id`|String|Идентификатор события веб-перехватчика.|
 |`timestamp`|DateTime|Время создания события веб-перехватчика.|
 |`action`|String|Действие, которое привело к созданию события веб-перехватчика.|
-|[target](#target)|Комплексный тип|Целевой объект для действия, которое привело к созданию события веб-перехватчика.|
-|[request](#request)|Комплексный тип|Запрос, который создал событие веб-перехватчика.|
+|[target](#target)|Сложный тип|Целевой объект для действия, которое привело к созданию события веб-перехватчика.|
+|[request](#request)|Сложный тип|Запрос, который создал событие веб-перехватчика.|
 
 ### <a name="target"></a>Целевой объект
 
@@ -109,7 +109,7 @@ docker push myregistry.azurecr.io/hello-world:v1
 |`id`|String|Идентификатор события веб-перехватчика.|
 |`timestamp`|DateTime|Время создания события веб-перехватчика.|
 |`action`|String|Действие, которое привело к созданию события веб-перехватчика.|
-|[target](#helm_target)|Комплексный тип|Целевой объект для действия, которое привело к созданию события веб-перехватчика.|
+|[target](#helm_target)|Сложный тип|Целевой объект для действия, которое привело к созданию события веб-перехватчика.|
 
 ### <a name="helm_target"></a>Целевой объект
 
@@ -148,7 +148,7 @@ docker push myregistry.azurecr.io/hello-world:v1
 az acr helm push wordpress-5.4.0.tgz --name MyRegistry
 ```
 
-## <a name="delete-event"></a>Удалить событие
+## <a name="delete-event"></a>Удаление события
 
 Веб-перехватчик активируется при репозиторий образов или удалении манифест. Событие не создается при удалении тега.
 
@@ -159,8 +159,8 @@ az acr helm push wordpress-5.4.0.tgz --name MyRegistry
 |`id`|String|Идентификатор события веб-перехватчика.|
 |`timestamp`|DateTime|Время создания события веб-перехватчика.|
 |`action`|String|Действие, которое привело к созданию события веб-перехватчика.|
-|[target](#delete_target)|Комплексный тип|Целевой объект для действия, которое привело к созданию события веб-перехватчика.|
-|[request](#delete_request)|Комплексный тип|Запрос, который создал событие веб-перехватчика.|
+|[target](#delete_target)|Сложный тип|Целевой объект для действия, которое привело к созданию события веб-перехватчика.|
+|[request](#delete_request)|Сложный тип|Запрос, который создал событие веб-перехватчика.|
 
 ### <a name="delete_target"></a> target
 
@@ -221,7 +221,7 @@ az acr repository delete --name MyRegistry --image MyRepository:MyTag
 |`id`|String|Идентификатор события веб-перехватчика.|
 |`timestamp`|DateTime|Время создания события веб-перехватчика.|
 |`action`|String|Действие, которое привело к созданию события веб-перехватчика.|
-|[target](#chart_delete_target)|Комплексный тип|Целевой объект для действия, которое привело к созданию события веб-перехватчика.|
+|[target](#chart_delete_target)|Сложный тип|Целевой объект для действия, которое привело к созданию события веб-перехватчика.|
 
 ### <a name="chart_delete_target"></a> target
 

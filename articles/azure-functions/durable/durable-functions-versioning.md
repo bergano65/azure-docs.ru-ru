@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 12/07/2017
 ms.author: azfuncdf
 ms.openlocfilehash: 33ca6c36cd11d53a3c50a8374181c511fd2f8c3e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60648159"
 ---
 # <a name="versioning-in-durable-functions-azure-functions"></a>Управление версиями в устойчивых функциях (Функции Azure)
@@ -133,7 +133,7 @@ public static Task Run([OrchestrationTrigger] DurableOrchestrationContext contex
 
 #### <a name="functions-2x"></a>Функции 2.x
 
-Значение по умолчанию — `DurableFunctionsHub`.
+По умолчанию используется значение `DurableFunctionsHub`.
 
 Все сущности в службе хранилища Azure именуются на основе значения конфигурации `HubName`. Задавая новое имя для центра задач, вы гарантируете, что для новой версии приложения будут созданы отдельные очереди и таблица журнала.
 

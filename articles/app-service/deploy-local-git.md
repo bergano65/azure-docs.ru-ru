@@ -15,10 +15,10 @@ ms.date: 06/05/2018
 ms.author: dariagrigoriu;cephalin
 ms.custom: seodec18
 ms.openlocfilehash: b879036dcd79901cb634fa197932e833cb22d12a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65956068"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Развертывание локального репозитория Git в службе приложений Azure
@@ -114,7 +114,7 @@ git push azure master
 
 ![](media/app-service-deploy-local-git/portal-enable.png)
 
-Нажмите кнопку **конвейеры Azure (Предварительная версия)** > **по-прежнему**.
+Нажмите кнопку **конвейеры Azure (Предварительная версия)**  > **по-прежнему**.
 
 ![](media/app-service-deploy-local-git/pipeline-builds.png)
 
@@ -172,7 +172,7 @@ git push vsts master
 
 **Причина:** эта ошибка может возникнуть, если при использовании команды `git push` не была указана ветвь или если не задано значение `push.default` в `.gitconfig`.
 
-**Решение:** выполните команду `git push` еще раз, указав главную ветвь. Например:
+**Решение:** выполните команду `git push` еще раз, указав главную ветвь. Пример:
 
 ```bash
 git push azure master
@@ -183,7 +183,7 @@ git push azure master
 
 **Причина:** эта ошибка может возникнуть при попытке принудительно отправить данные в ветвь, отличную от главной, в удаленном репозитории azure.
 
-**Решение:** выполните команду `git push` еще раз, указав главную ветвь. Например:
+**Решение:** выполните команду `git push` еще раз, указав главную ветвь. Пример:
 
 ```bash
 git push azure master

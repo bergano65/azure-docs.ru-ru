@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 03/08/2019
 ms.topic: conceptual
 ms.openlocfilehash: 5044f8b85e59911633a4ffab509efc000948144a
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65832580"
 ---
 # <a name="create-and-test-a-new-simulated-device"></a>Создание и тестирование нового имитированного устройства
@@ -32,7 +32,7 @@ ms.locfileid: "65832580"
 
 | ИМЯ                     | Значения                      |
 | ------------------------ | --------------------------- |
-| Цвет                    | Белый, красный, синий            |
+| Color                    | Белый, красный, синий            |
 | Яркость               | 0–100                    |
 | Ожидаемое время работы | Обратный отсчет, начиная с 10 000 часов |
 
@@ -40,7 +40,7 @@ ms.locfileid: "65832580"
 
 В таблице ниже приведены данные, которые система освещения потоком передает в облако.
 
-| ИМЯ   | Значения      |
+| Name   | Значения      |
 | ------ | ----------- |
 | Status | on, off |
 | температура; | Градусы по Фаренгейту |
@@ -53,7 +53,7 @@ ms.locfileid: "65832580"
 
 В таблице ниже приведены действия, поддерживаемые новым устройством.
 
-| ИМЯ        |
+| Name        |
 | ----------- |
 | Включение   |
 | Выключение  |
@@ -62,7 +62,7 @@ ms.locfileid: "65832580"
 
 В таблице ниже представлены начальные показатели устройства.
 
-| ИМЯ                     | Значения |
+| Name                     | Значения |
 | ------------------------ | -------|
 | Начальный цвет            | Белый  |
 | Начальная яркость       | 75     |
@@ -123,7 +123,7 @@ ms.locfileid: "65832580"
 
 1. Скопируйте следующие файлы в новую папку, из загруженной копии микрослужбы моделирования устройств.
 
-    | `Source` | Место назначения |
+    | source | Место назначения |
     | ------ | ----------- |
     | Services\data\devicemodels\chiller-01.json | C:\temp\devicemodels\chiller-01.json |
     | Services\data\devicemodels\scripts\chiller-01-state.js | C:\temp\devicemodels\scripts\chiller-01-state.js |

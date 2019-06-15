@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 10/23/2018
 ms.author: srrengar
 ms.openlocfilehash: 402e3dfe018c94ef068caf918b38aaad00064a49
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62118384"
 ---
 # <a name="service-fabric-linux-cluster-events-in-syslog"></a>События кластера Service Fabric под управлением Linux в системном журнале
@@ -32,10 +32,10 @@ Service Fabric предоставляет набор событий платфо
 В выпуске 6.4 был представлен SyslogConsumer для отправки событий платформы Service Fabric в системный журнал кластеров Linux. После включения события будут автоматически передаваться в системный журнал, который собирает и отправляет агент Log Analytics.
 
 Каждое событие системного журнала состоит из 4 компонентов.
-* Средство
+* Facility
 * Удостоверение
-* Сообщение
-* Уровень серьезности
+* `Message`
+* Severity
 
 SyslogConsumer записывает все события платформы с помощью средства `Local0`. Любое допустимое средство можно обновить, изменив файл конфигурации. Используемое удостоверение — `ServiceFabric`. Поле "Сообщение" содержит все событие, сериализованное в JSON, чтобы различные средства могли его запрашивать и использовать. 
 

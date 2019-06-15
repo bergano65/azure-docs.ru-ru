@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
 ms.openlocfilehash: 5a7c16e6ac565d1660fee02cb7df178344b195e7
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62122929"
 ---
 # <a name="get-started-with-azure-blob-storage-and-visual-studio-connected-services-webjob-projects"></a>Начало работы с подключенными службами хранилища больших двоичных объектов Azure и Visual Studio (проекты веб-заданий)
@@ -144,7 +144,7 @@ ms.locfileid: "62122929"
 
 Сообщением очереди для подозрительных больших двоичных объектов является объект JSON, содержащий следующие свойства:
 
-* FunctionId (в формате *{имя_веб-задания}*. Функции. *{Имя_функции}*, например: WebJob1.Functions.CopyBlob)
+* FunctionId (в формате *{имя_веб-задания}* . Функции. *{Имя_функции}* , например: WebJob1.Functions.CopyBlob)
 * BlobType (BlockBlob или PageBlob);
 * ContainerName;
 * BlobName
@@ -193,7 +193,7 @@ ms.locfileid: "62122929"
 
 Уведомления о получении большого двоичного объекта хранятся в контейнере с именем *azure-webjobs-hosts* в учетной записи хранения Azure, указанной в строке подключения AzureWebJobsStorage. Уведомление о получении большого двоичного объекта содержит следующую информацию:
 
-* Функция, вызванная для большого двоичного объекта (»*{имя_веб-задания}*. Функции. *{Имя_функции}*«, например: "WebJob1.Functions.CopyBlob")
+* Функция, вызванная для большого двоичного объекта (» *{имя_веб-задания}* . Функции. *{Имя_функции}* «, например: "WebJob1.Functions.CopyBlob")
 * имя контейнера;
 * тип большого двоичного объекта (BlockBlob или PageBlob);
 * имя большого двоичного объекта;

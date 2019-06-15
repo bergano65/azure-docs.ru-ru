@@ -10,10 +10,10 @@ ms.date: 03/19/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: e79f4b58582ab6643a7a13ffee25503060a2208c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60929267"
 ---
 # <a name="my-first-python-runbook"></a>Мой первый модуль Runbook Python
@@ -37,7 +37,7 @@ ms.locfileid: "60929267"
 - [Учетная запись службы автоматизации](automation-offering-get-started.md) , чтобы хранить модуль Runbook и выполнять проверку подлинности ресурсов Azure. Эта учетная запись должна иметь разрешение на запуск и остановку виртуальной машины.
 - Виртуальная машина Azure. Это не должна быть рабочая виртуальная машина, так как в процессе изучения этого руководства ее нужно будет остановить и запустить заново.
 
-## <a name="create-a-new-runbook"></a>Создать новый Runbook
+## <a name="create-a-new-runbook"></a>Создание модуля Runbook
 
 Для начала создайте простой модуль runbook, выводящий на экран текст *Hello World*.
 

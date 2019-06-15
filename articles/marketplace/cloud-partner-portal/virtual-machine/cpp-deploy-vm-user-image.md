@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 11/29/2018
 ms.author: pabutler
 ms.openlocfilehash: e4da523fa54a513fe77fda037aea0a5fd530250b
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64938243"
 ---
 # <a name="deploy-an-azure-vm-from-a-user-vhd"></a>Развертывание виртуальной машины Azure из виртуального жесткого диска пользователя
@@ -31,7 +31,7 @@ ms.locfileid: "64938243"
 | userStorageAccountName     | Имя учетной записи хранения                                                    |
 | sNameForPublicIP           | DNS-имя для общедоступного IP-адреса. Используются только строчные символы                                  |
 | subscriptionId             | Идентификатор подписки Azure                                                  |
-| Location                   | Стандартное географическое расположение Azure для группы ресурсов                       |
+| Расположение                   | Стандартное географическое расположение Azure для группы ресурсов                       |
 | vmName                     | Имя виртуальной машины                                                    |
 | vaultName                  | Имя хранилища ключей.                                                          |
 | vaultResourceGroup         | Группа ресурсов хранилища ключей.

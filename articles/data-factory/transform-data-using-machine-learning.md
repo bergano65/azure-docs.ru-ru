@@ -12,14 +12,14 @@ author: nabhishek
 ms.author: abnarain
 manager: craigg
 ms.openlocfilehash: aaf1d72a0c9c56e7d140fb615caf014507ebf263
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60928077"
 ---
 # <a name="create-predictive-pipelines-using-azure-machine-learning-and-azure-data-factory"></a>Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](v1/data-factory-azure-ml-batch-execution-activity.md)
 > * [Текущая версия](transform-data-using-machine-learning.md)
 
@@ -128,7 +128,7 @@ ms.locfileid: "60928077"
 | :---------------- | :--------------------------------------- | :------- |
 | name              | Имя действия в конвейере.     | Да      |
 | description       | Описание действия.  | Нет       |
-| тип              | Для действия U-SQL Data Lake Analytics в качестве типа действия используется **AzureMLBatchExecution**. | Да      |
+| type              | Для действия U-SQL Data Lake Analytics в качестве типа действия используется **AzureMLBatchExecution**. | Да      |
 | linkedServiceName | Связанные службы для связанной службы Машинного обучения Azure. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md). | Да      |
 | webServiceInputs  | Пары "ключ —значение", сопоставляющие имена входных данных веб-службы Машинного обучения Azure. Ключ должен соответствовать входным параметрам, определенным в опубликованной веб-службе Машинного обучения Azure. Значение — это пара свойств связанных служб хранилища Azure и FilePath, указывающих на расположения входных больших двоичных объектов. | Нет       |
 | webServiceOutputs | Пары "ключ —значение", сопоставляющие имена выходных данных веб-службы Машинного обучения Azure. Ключ должен соответствовать выходным параметрам, определенным в опубликованной веб-службе Машинного обучения Azure. Значением является пара свойств связанных служб хранилища Azure и FilePath, указывающих на расположения выходных больших двоичных объектов. | Нет       |

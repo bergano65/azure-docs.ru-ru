@@ -14,10 +14,10 @@ ms.date: 05/16/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 07c1a726e33eb8287634b63ef2e309483c05c3f3
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65962115"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
@@ -1213,9 +1213,9 @@ ms.locfileid: "65962115"
 > | Действие | Microsoft.Compute/locations/usages/read | Возвращает ограничения службы и текущее количество использованных вычислительных ресурсов подписки в расположении. |
 > | Действие | Microsoft.Compute/locations/vmSizes/read | Выводит список доступных размеров виртуальных машин в расположении. |
 > | Действие | Microsoft.Compute/operations/read | Выводит список операций, доступных в поставщике ресурсов Microsoft.Compute. |
-> | Действие | Microsoft.Compute/proximityPlacementGroups/delete | Удаляет группу размещения близкого взаимодействия. |
-> | Действие | Microsoft.Compute/proximityPlacementGroups/read | Получение свойств группы размещения близкого взаимодействия. |
-> | Действие | Microsoft.Compute/proximityPlacementGroups/write | Создает новую группу размещения близкого взаимодействия или обновляет существующую. |
+> | Действие | Microsoft.Compute/proximityPlacementGroups/delete | Удаление группы с учетом расположения размещения |
+> | Действие | Microsoft.Compute/proximityPlacementGroups/read | Получение свойств группы размещения с учетом расположения |
+> | Действие | Microsoft.Compute/proximityPlacementGroups/write | Создает новую группу с учетом расположения размещения или обновляет существующий |
 > | Действие | Microsoft.Compute/register/action | Регистрирует подписку в поставщике ресурсов Microsoft.Compute. |
 > | Действие | Microsoft.Compute/restorePointCollections/delete | Удаляет коллекцию точек восстановления и содержащиеся в ней точки восстановления. |
 > | Действие | Microsoft.Compute/restorePointCollections/read | Возвращает свойства коллекции точек восстановления. |
@@ -2472,8 +2472,8 @@ ms.locfileid: "65962115"
 > | Действие | Microsoft.EventHub/namespaces/ipFilterRules/delete | Удаление ресурса фильтра IP-адресов |
 > | Действие | Microsoft.EventHub/namespaces/ipFilterRules/read | Получение ресурса фильтра IP-адресов |
 > | Действие | Microsoft.EventHub/namespaces/ipFilterRules/write | Создание ресурса фильтра IP-адресов |
-> | DataAction | Microsoft.EventHub/namespaces/messages/receive/action | Получить сообщения |
-> | DataAction | Microsoft.EventHub/namespaces/messages/send/action | Отправить сообщения |
+> | DataAction | Microsoft.EventHub/namespaces/messages/receive/action | Получение сообщений |
+> | DataAction | Microsoft.EventHub/namespaces/messages/send/action | Отправка сообщений |
 > | Действие | Microsoft.EventHub/namespaces/messagingPlan/read | Получение плана обмена сообщениями для пространства имен.<br>Это нерекомендуемый API.<br>Свойства, предоставляемые через ресурс MessagingPlan, перемещены в ресурс (родительского) пространства имен в более поздних версиях API.<br>Эта операция не поддерживается для API версии 2017-04-01. |
 > | Действие | Microsoft.EventHub/namespaces/messagingPlan/write | Обновление плана обмена сообщениями для пространства имен.<br>Это нерекомендуемый API.<br>Свойства, предоставляемые через ресурс MessagingPlan, перемещены в ресурс (родительского) пространства имен в более поздних версиях API.<br>Эта операция не поддерживается для API версии 2017-04-01. |
 > | Действие | Microsoft.EventHub/namespaces/networkrulesets/delete | Удаление ресурса правила виртуальной сети |
@@ -4763,9 +4763,9 @@ ms.locfileid: "65962115"
 > | Действие | Microsoft.ServiceBus/namespaces/ipFilterRules/write | Создание ресурса фильтра IP-адресов |
 > | DataAction | Microsoft.ServiceBus/namespaces/messages/browse/action | Обзор сообщния |
 > | DataAction | Microsoft.ServiceBus/namespaces/messages/defer/action | Отложить сообщений |
-> | DataAction | Microsoft.ServiceBus/namespaces/messages/receive/action | Получить сообщения |
+> | DataAction | Microsoft.ServiceBus/namespaces/messages/receive/action | Получение сообщений |
 > | DataAction | Microsoft.ServiceBus/namespaces/messages/schedule/action | Shedule сообщения |
-> | DataAction | Microsoft.ServiceBus/namespaces/messages/send/action | Отправить сообщения |
+> | DataAction | Microsoft.ServiceBus/namespaces/messages/send/action | Отправка сообщений |
 > | DataAction | Microsoft.ServiceBus/namespaces/messages/setstate/action | Установка состояния сеанса |
 > | Действие | Microsoft.ServiceBus/namespaces/messagingPlan/read | Получение плана обмена сообщениями для пространства имен.<br>Это нерекомендуемый API.<br>Свойства, предоставляемые через ресурс MessagingPlan, перемещены в ресурс (родительского) пространства имен в более поздних версиях API.<br>Эта операция не поддерживается для API версии 2017-04-01. |
 > | Действие | Microsoft.ServiceBus/namespaces/messagingPlan/write | Обновление плана обмена сообщениями для пространства имен.<br>Это нерекомендуемый API.<br>Свойства, предоставляемые через ресурс MessagingPlan, перемещены в ресурс (родительского) пространства имен в более поздних версиях API.<br>Эта операция не поддерживается для API версии 2017-04-01. |

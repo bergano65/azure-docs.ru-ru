@@ -11,10 +11,10 @@ ms.service: cost-management
 manager: micflan
 ms.custom: ''
 ms.openlocfilehash: f4c296aeefacc9516303ad75dd8b7d67325e38ee
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65969053"
 ---
 # <a name="understand-cost-management-data"></a>Интерпретация данных службы "Управление затратами"
@@ -53,10 +53,10 @@ ms.locfileid: "65969053"
 
 | Категория  | **Название предложения** | **Идентификатор квоты** | **Номер предложения** |
 | --- | --- | --- | --- |
-| **Поставщик облачных решений (CSP)** | Microsoft Azure                                    | CSP_2015-05-01 | MS-AZR-0145P |
+| **Поставщик облачных решений (CSP)** | Microsoft Azure.                                    | CSP_2015-05-01 | MS-AZR-0145P |
 | **Поставщик облачных решений (CSP)** | Поставщик облачных решений Azure для государственных организаций                               | CSP_2015-05-01 | MS-AZR-USGOV-0145P |
 | **Поставщик облачных решений (CSP)** | Azure для Германии в CSP для Microsoft Cloud для Германии   | CSP_2015-05-01 | MS-AZR-DE-0145P |
-| **Оплата по мере использования**                 | Начальная версия Azure для учащихся | DreamSpark_2015-02-01 | MS-AZR-0144P |
+| **Оплата по мере использования**                 | Начальный набор Microsoft Azure для учащихся | DreamSpark_2015-02-01 | MS-AZR-0144P |
 | **Оплата по мере использования**                 | [Спонсорское предложение Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/) | Sponsored_2016-01-01 | MS-AZR-0036P |
 | **Планы поддержки** | Поддержка уровня "Стандартный"                    | Default_2014-09-01 | MS-AZR-0041P |
 | **Планы поддержки** | Поддержка Professional Direct         | Default_2014-09-01 | MS-AZR-0042P |

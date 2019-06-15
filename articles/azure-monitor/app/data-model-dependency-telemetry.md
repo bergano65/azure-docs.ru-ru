@@ -13,17 +13,17 @@ ms.date: 04/17/2017
 ms.reviewer: sergkanz
 ms.author: mbullwin
 ms.openlocfilehash: 3e3d6b8fdc9ac8dd28f73fecd6231e97a5645407
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60901031"
 ---
 # <a name="dependency-telemetry-application-insights-data-model"></a>Телеметрия зависимостей. Модель данных Application Insights
 
 Телеметрия зависимостей (в [Application Insights](../../azure-monitor/app/app-insights-overview.md)) представляет взаимодействие отслеживаемого компонента с удаленным, таким как SQL или конечная точка HTTP.
 
-## <a name="name"></a>ИМЯ
+## <a name="name"></a>Name
 
 Имя команды, инициированной этим вызовом зависимости. Низкое значение кратности. Примерами являются имя хранимой процедуры и шаблон пути URL-адреса.
 
@@ -43,7 +43,7 @@ ms.locfileid: "60901031"
 
 Целевой сайт вызова зависимости. Примерами являются имя сервера, адрес узла. Дополнительные сведения см. на странице [корреляции](../../azure-monitor/app/correlation.md).
 
-## <a name="duration"></a>Длительность
+## <a name="duration"></a>Duration
 
 Длительность запроса в формате: `DD.HH:MM:SS.MMMMMM`. Должно быть меньше `1000` дн.
 

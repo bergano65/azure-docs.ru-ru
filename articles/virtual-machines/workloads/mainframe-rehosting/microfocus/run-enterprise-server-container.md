@@ -9,10 +9,10 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.service: multiple
 ms.openlocfilehash: 30d99c3f4767eb50361f7074c0d508fcf309faca
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61488458"
 ---
 # <a name="run-micro-focus-enterprise-server-40-in-a-docker-container-on-azure"></a>Запуск Micro Focus Enterprise Server 4.0 в контейнере Docker в Azure
@@ -36,7 +36,7 @@ Docker добавляет переносимости и изоляции при�
 
 - В документации по [Enterprise Server и Enterprise Developer](https://www.microfocus.com/documentation/enterprise-developer/#").
 
-## <a name="create-a-vm"></a>Создание ВМ
+## <a name="create-a-vm"></a>Создание виртуальной машины
 
 1. Защиту содержимого носителя из ent\_server\_dockerfiles\_4.0\_windows.zip файл. Защитите этот файл лицензирования ES-Docker-Prod-XXXXXXXX.mflic (необходимые для создания образов Docker).
 
@@ -77,7 +77,7 @@ Docker добавляет переносимости и изоляции при�
 
 ## <a name="create-a-sandbox-directory-and-upload-the-zip-file"></a>Создайте каталог "песочницы" и отправьте ZIP-файл
 
-1.  Создайте каталог на виртуальной Машине, где можно отправить файлы демонстрационной или лицензии. Например **C:\\"песочницы"**.
+1.  Создайте каталог на виртуальной Машине, где можно отправить файлы демонстрационной или лицензии. Например **C:\\"песочницы"** .
 
 2.  Отправка **ent\_server\_dockerfiles\_4.0\_windows.zip** и **ES-Docker-Prod-XXXXXXXX.mflic** файл в каталог, который вы создали.
 
@@ -137,7 +137,7 @@ Docker добавляет переносимости и изоляции при�
        docker inspect <containerID> --format="{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}"
     ```
 
-       Пример.
+       Пример:
 
     ```   
         docker inspect 22a0fe3159d0 --format="{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}"

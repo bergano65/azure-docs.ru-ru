@@ -9,15 +9,15 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/26/2019
 ms.openlocfilehash: 827d7d9a3d584342703a84dd2a42e5cda9b3a656
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61364079"
 ---
 # <a name="read-device-to-cloud-messages-from-the-built-in-endpoint"></a>Чтение сообщений, пересылаемых с устройства в облако, из встроенной конечной точки
 
-По умолчанию сообщения направляются во встроенную конечную точку, доступную для службы (**/messages/events**), которая совместима с [Центрами событий](https://azure.microsoft.com/documentation/services/event-hubs/). Сейчас эта конечная точка предоставляется только по протоколу [AMQP](https://www.amqp.org/) на порте 5671. Центр Интернета вещей позволяет управлять встроенной конечной точкой обмена сообщениями **messages/events**, совместимой с концентраторами событий, с помощью приведенных ниже свойств.
+По умолчанию сообщения направляются во встроенную конечную точку, доступную для службы ( **/messages/events**), которая совместима с [Центрами событий](https://azure.microsoft.com/documentation/services/event-hubs/). Сейчас эта конечная точка предоставляется только по протоколу [AMQP](https://www.amqp.org/) на порте 5671. Центр Интернета вещей позволяет управлять встроенной конечной точкой обмена сообщениями **messages/events**, совместимой с концентраторами событий, с помощью приведенных ниже свойств.
 
 | Свойство            | Описание |
 | ------------------- | ----------- |
@@ -46,14 +46,14 @@ ms.locfileid: "61364079"
 
 3. **События** раздел содержит следующие значения: **Секции**, **совместимая с концентратором событий имя**, **совместимая с концентратором событий конечную точку**, **время хранения**, и **групп потребителей**.
 
-    ![Параметры раздела "Из устройства в облако"](./media/iot-hub-devguide-messages-read-builtin/eventhubcompatible.png)
+    ![Параметры отправки сообщений с устройства в облако](./media/iot-hub-devguide-messages-read-builtin/eventhubcompatible.png)
 
 На портале в поле конечной точки совместимая с концентратором событий содержит полные строки подключения концентраторов событий, которая выглядит следующим образом: **Endpoint=sb://abcd1234namespace.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=keykeykeykeykeykey=;EntityPath=iothub-ehub-abcd-1234-123456**. Если вы используете пакет SDK требует другие значения, затем они будут:
 
-| ИМЯ | Value |
+| Name | Значение |
 | ---- | ----- |
 | Конечная точка | sb://abcd1234namespace.servicebus.windows.net/ |
-| Имя узла | abcd1234namespace.servicebus.windows.net |
+| имя узла; | abcd1234namespace.servicebus.windows.net |
 | Пространство имен | abcd1234namespace |
 
 Затем можно использовать любую политику общего доступа с разрешениями **ServiceConnect**, которые позволяют подключаться к указанному концентратору событий.

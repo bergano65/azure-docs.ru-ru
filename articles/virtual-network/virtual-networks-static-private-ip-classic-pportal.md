@@ -17,10 +17,10 @@ ms.date: 02/04/2016
 ms.author: genli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 72d1c4d2ea3adf7d8751adfbb013435f8f2530f0
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62125752"
 ---
 # <a name="configure-private-ip-addresses-for-a-virtual-machine-classic-using-the-azure-portal"></a>Настройка частных IP-адресов для (классической) виртуальной машины с помощью портала Azure
@@ -61,7 +61,7 @@ ms.locfileid: "62125752"
 ## <a name="how-to-retrieve-static-private-ip-address-information-for-a-vm"></a>Как получить информацию о статическом частном IP-адресе виртуальной машины
 Чтобы просмотреть информацию о статическом частном IP-адресе виртуальной машины, созданной с помощью описанные выше действий, выполните следующее.
 
-1. На портале Azure выберите **Просмотреть все** > **Виртуальные машины (классические)** > **DNS01** > **Все параметры** > **IP-адреса** и обратите внимание на назначение IP-адресов и сам IP-адрес.
+1. На портале Azure выберите **Просмотреть все** > **Виртуальные машины (классические)**  > **DNS01** > **Все параметры** > **IP-адреса** и обратите внимание на назначение IP-адресов и сам IP-адрес.
    
     ![Создание виртуальной машины на портале Azure](./media/virtual-networks-static-ip-classic-pportal/figure06.png)
 

@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 12/05/2016
 ms.author: roiyz
 ms.openlocfilehash: f56cfeeede393dbdb9632ea4120d3a81e89f3f7c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61484053"
 ---
 # <a name="exporting-resource-groups-that-contain-vm-extensions"></a>Экспорт групп ресурсов, которые содержат расширения виртуальной машины
@@ -34,7 +34,7 @@ ms.locfileid: "61484053"
 
 Скрипт службы автоматизации поддерживает следующие расширения.
 
-| Расширение ||||
+| Добавочный номер ||||
 |---|---|---|---|
 | Резервное копирование Acronis | Агент Datadog для Windows | Исправления для ОС Linux | Моментальные снимки виртуальной машины Linux
 | Резервное копирование Acronis для Linux | Расширение Docker | Агент Puppet |
@@ -42,7 +42,7 @@ ms.locfileid: "61484053"
 | Агент BMC CTM для Linux | Dynatrace для Linux | Site 24x7 для сервера Linux |
 | Агент BMC CTM для Windows | Dynatrace для Windows | Site 24x7 для сервера Windows Server |
 | Клиент Chef | Защитник приложений HPE Security | Trend Micro DSA |
-| Настраиваемый скрипт | Защита от вредоносных программ IaaS | Trend Micro DSA для Linux |
+| Custom Script | Защита от вредоносных программ IaaS | Trend Micro DSA для Linux |
 | Расширение пользовательских сценариев | Диагностика IaaS | VM Access для Linux |
 | Custom Script для Linux | Клиент Chef для Linux | VM Access для Linux |
 | Агент Datadog для Linux | Диагностика Linux | Моментальный снимок виртуальной машины |
@@ -51,7 +51,7 @@ ms.locfileid: "61484053"
 
 Чтобы экспортировать группу ресурсов в шаблон для повторного использования, сделайте следующее.
 
-1. Войдите на портал Azure
+1. Вход на портал Azure
 2. Щелкните "Группы ресурсов" в главном меню.
 3. Выберите в списке целевую группу ресурсов.
 4. В колонке "Группа ресурсов" щелкните "Сценарий автоматизации".

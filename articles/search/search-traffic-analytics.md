@@ -10,10 +10,10 @@ ms.date: 01/25/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: c30c8bae3e76778a31cdd0695acde52b5b1c6b02
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60749620"
 ---
 # <a name="implement-search-traffic-analytics-in-azure-search"></a>Реализация аналитики поискового трафика в Поиске Azure
@@ -43,7 +43,7 @@ ms.locfileid: "60749620"
 
 ![Инструкции по аналитике поискового трафика][1]
 
-## <a name="1---select-a-resource"></a>1. Выбор ресурса
+## <a name="1---select-a-resource"></a>1\. Выбор ресурса
 
 Вам необходимо выбрать или создать ресурс Application Insights (если у вас его нет). Вы можете использовать ресурс, уже находящийся в применении, для регистрации требуемых пользовательских событий.
 
@@ -51,7 +51,7 @@ ms.locfileid: "60749620"
 
 Чтобы создать клиент телеметрии для приложения, требуется ключ инструментирования. Вы можете получить его на панели мониторинга портала Application Insights или на странице аналитики поискового трафика, выбрав нужный экземпляр.
 
-## <a name="2---add-instrumentation"></a>2. Добавление инструментирования
+## <a name="2---add-instrumentation"></a>2\. Добавление инструментирования
 
 На этом шаге выполняется инструментирование собственного приложения поиска с помощью ресурса Application Insights, созданного на предыдущем шаге. Этот процесс состоит из четырех этапов:
 
@@ -160,7 +160,7 @@ ms.locfileid: "60749620"
         Rank: <clicked document position>
     });
 
-## <a name="3---analyze-in-power-bi"></a>3. Анализ в Power BI
+## <a name="3---analyze-in-power-bi"></a>3\. Анализ в Power BI
 
 После инструментирования приложения и проверки правильности его подключения к Application Insights можно использовать стандартный шаблон, созданный службой поиска Azure для Power BI Desktop. 
 

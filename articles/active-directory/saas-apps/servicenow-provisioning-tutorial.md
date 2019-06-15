@@ -17,10 +17,10 @@ ms.date: 01/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 19b3e4cc5ba4bc0173721947bd1e1a680ca7b3a3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60869842"
 ---
 # <a name="tutorial-configure-servicenow-for-automatic-user-provisioning-with-azure-active-directory"></a>Руководство по Настройка ServiceNow для автоматической подготовки пользователей с помощью Azure Active Directory
@@ -75,13 +75,13 @@ ms.locfileid: "60869842"
 
 1. Для параметра **Режим подготовки** выберите значение **Автоматический**. 
 
-    ![Идет подготовка](./media/servicenow-provisioning-tutorial/provisioning.png)
+    ![Подготовка](./media/servicenow-provisioning-tutorial/provisioning.png)
 
 1. В разделе "Учетные данные администратора" выполните следующие действия:
    
     a. В текстовое поле **Имя экземпляра ServiceNow** введите имя экземпляра ServiceNow.
 
-    2. В текстовое поле **Имя пользователя администратора ServiceNow** введите имя пользователя администратора.
+    2\. В текстовое поле **Имя пользователя администратора ServiceNow** введите имя пользователя администратора.
 
     c. В текстовое поле **Пароль администратора ServiceNow** введите пароль администратора.
 
