@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 10/29/2018
 ms.author: mcoskun
 ms.openlocfilehash: cd40f59cfa7846911c68206c3bc1e85a770b0fcc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60723873"
 ---
 # <a name="backup-and-restore-reliable-services-and-reliable-actors"></a>Резервное копирование и восстановление Reliable Services и Reliable Actors
@@ -251,7 +251,7 @@ class MyCustomActorService : ActorService
 
 Любая транзакция, зафиксированная после вызова метода `BackupAsync`, может быть не включена в резервную копию.  После заполнения локальной папки резервного копирования с помощью платформы (то есть среда выполнения завершает локальное резервное копирование) осуществляется обратный вызов службы резервного копирования.  Этот обратный вызов отвечает за перемещение папки резервного копирования во внешнее расположение, например службу хранилища Azure.
 
-### <a name="restore"></a>Восстановление
+### <a name="restore"></a>восстановление;
 Диспетчер надежных состояний позволяет выполнять восстановление из резервной копии с помощью интерфейса API `RestoreAsync`.  
 Метод `RestoreAsync` в `RestoreContext` можно вызвать только внутри метода `OnDataLossAsync`.
 Возвращенное методом `OnDataLossAsync` логическое значение указывает, удалось ли восстановить состояние службы из внешнего источника.

@@ -19,10 +19,10 @@ ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cfc9c027806cb1a3f65e67eda771894a7250ee67
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66417651"
 ---
 # <a name="microsoft-identity-platform-protocols"></a>Протоколы платформы удостоверений Microsoft
@@ -64,7 +64,7 @@ https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token
 
 Где `{tenant}` может принимать одно из четырех значений:
 
-| Value | Описание |
+| Значение | Описание |
 | --- | --- |
 | `common` | Позволяет пользователям с личными учетными записями Майкрософт и рабочими учетными записями Azure AD выполнять вход в приложение. |
 | `organizations` | Позволяет выполнять вход в приложение только пользователям с рабочими учетными записями Azure AD. |

@@ -10,10 +10,10 @@ ms.date: 03/14/2019
 ms.author: glenga
 ms.custom: include file
 ms.openlocfilehash: d79d1bd5ec244ad4399a02c349e2504516d06ccd
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66131675"
 ---
 Параметры конфигурации для [устойчивых функций](../articles/azure-functions/durable-functions-overview.md).
@@ -49,7 +49,7 @@ ms.locfileid: "66131675"
 |---------|---------|---------|
 |hubName|DurableFunctionsHub|Альтернативные имена [центра задач](../articles/azure-functions/durable-functions-task-hubs.md) позволяют изолировать несколько приложений устойчивых функций друг от друга, даже если они используют один и тот же интерфейс хранилища.|
 |controlQueueBatchSize|32|Количество сообщений, одновременно извлекаемых из очереди управления.|
-|partitionCount |4.|Число разделов для очереди управления. Допускается целочисленное значение в диапазоне от 1 до 16.|
+|partitionCount |4\.|Число разделов для очереди управления. Допускается целочисленное значение в диапазоне от 1 до 16.|
 |controlQueueVisibilityTimeout |5 мин|Время видимости для сообщений, выведенных из очереди управления.|
 |workItemQueueVisibilityTimeout |5 мин|Время видимости для сообщений, выведенных из очереди рабочих элементов.|
 |maxConcurrentActivityFunctions |10× количество процессоров на текущем компьютере|Максимальное число функции действия, которые могут параллельно обрабатываться на одном экземпляре узла.|

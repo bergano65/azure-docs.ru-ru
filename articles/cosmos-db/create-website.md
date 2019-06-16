@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: sngun
 ms.openlocfilehash: 93cdea453050df8899abf9233991715ae237bcd4
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66257242"
 ---
 # <a name="deploy-azure-cosmos-db-and-azure-app-service-web-apps-using-an-azure-resource-manager-template"></a>Развертывание Azure Cosmos DB и веб-приложений службы приложений Azure с помощью шаблона Azure Resource Manager
@@ -69,7 +69,7 @@ ms.locfileid: "66257242"
    ![Снимок экрана пользовательского интерфейса развертывания шаблона](./media/create-website/TemplateDeployment6.png)
 7. По завершении развертывания откроется область группы ресурсов.
    ![Снимок экрана области группы ресурсов](./media/create-website/TemplateDeployment7.png)  
-8. Чтобы использовать приложение, перейдите по URL-адресу веб-приложения (в приведенном выше примере URL-адрес будет иметь вид http://mydemodocdbwebapp.azurewebsites.net)).  Вы увидите следующее веб-приложение.
+8. Чтобы использовать приложение, перейдите по URL-адресу веб-приложения (в приведенном выше примере URL-адрес будет иметь вид http://mydemodocdbwebapp.azurewebsites.net) ).  Вы увидите следующее веб-приложение.
    
    ![Пример приложения Todo](./media/create-website/image2.png)
 9. Теперь создайте несколько задач в веб-приложении и вернитесь в область группы ресурсов на портале Azure. Выберите ресурс учетной записи Azure Cosmos DB в списке ресурсов и нажмите кнопку **Обозреватель данных**.

@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 05/24/2019
 ms.author: danlep
 ms.openlocfilehash: 18ac3fcb2797b24c9d5e5f05968eed4bf8732af7
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66389452"
 ---
 # <a name="using-azure-container-registry-webhooks"></a>Использование веб-перехватчиков реестра контейнеров Azure
@@ -33,7 +33,7 @@ ms.locfileid: "66389452"
 1. Щелкните **Добавить** на панели инструментов веб-перехватчика.
 1. Заполните форму *Создать веб-перехватчик* следующими данными:
 
-| Value | Описание |
+| Значение | Описание |
 |---|---|
 | Имя веб-перехватчика | Имя, назначаемое веб-перехватчику. Он может содержать только буквы и цифры и должно быть 5 до 50 символов. |
 | Расположение | Для [геореплицированные](container-registry-geo-replication.md) реестра, укажите регион Azure реплики реестра. 

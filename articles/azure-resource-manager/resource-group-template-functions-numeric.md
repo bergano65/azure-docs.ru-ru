@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/08/2017
 ms.author: tomfitz
 ms.openlocfilehash: 5ed3a0a57dad61a5fe783790eba4cb89ce19c660
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66128650"
 ---
 # <a name="numeric-functions-for-azure-resource-manager-templates"></a>Числовые функции для шаблонов Azure Resource Manager
@@ -93,7 +93,7 @@ ms.locfileid: "66128650"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Значение |
 | ---- | ---- | ----- |
 | addResult | Int | 8 |
 
@@ -210,7 +210,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Значение |
 | ---- | ---- | ----- |
 | divResult | Int | 2 |
 
@@ -228,7 +228,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 <a id="float" />
 
-## <a name="float"></a>float;
+## <a name="float"></a>float
 `float(arg1)`
 
 Преобразует значение в число с плавающей запятой. Эта функция используется только при передаче пользовательских параметров в приложение, такое как приложение логики.
@@ -304,9 +304,9 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Значение |
 | ---- | ---- | ----- |
-| intResult | Int | 4. |
+| intResult | Int | 4\. |
 
 Развернуть этот пример шаблона с помощью Azure CLI можно так:
 
@@ -322,7 +322,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 <a id="max" />
 
-## <a name="max"></a>максимум
+## <a name="max"></a>max
 `max (arg1)`
 
 Возвращает максимальное значение из массива целых чисел или разделенный запятыми список целых чисел.
@@ -367,7 +367,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Int | 5 |
 | intOutput | Int | 5 |
@@ -386,7 +386,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 <a id="min" />
 
-## <a name="min"></a>мин
+## <a name="min"></a>Min
 `min (arg1)`
 
 Возвращает минимальное значение из массива целых чисел или разделенный запятыми список целых чисел.
@@ -431,7 +431,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Int | 0 |
 | intOutput | Int | 0 |
@@ -502,7 +502,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Значение |
 | ---- | ---- | ----- |
 | modResult | Int | 1 |
 
@@ -573,7 +573,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | mulResult | Int | 15 |
 
@@ -643,9 +643,9 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
-| subResult | Int | 4. |
+| subResult | Int | 4\. |
 
 Развернуть этот пример шаблона с помощью Azure CLI можно так:
 

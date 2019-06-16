@@ -5,15 +5,15 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: article
-ms.date: 05/31/2019
+ms.date: 06/06/2019
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 68f62a6945f3b651781414e3194104b6d2e6295c
-ms.sourcegitcommit: ec7b0bf593645c0d1ef401a3350f162e02c7e9b8
+ms.openlocfilehash: 72a91fefc26e9c0b6d5a91223119815c4fcb9551
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455811"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66808580"
 ---
 # <a name="use-the-azure-importexport-service-to-import-data-to-azure-blob-storage"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в хранилище BLOB-объектов Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "66455811"
 6.  Чтобы подготовить диск, выполните следующую команду. **В зависимости от размера данных это может занять от нескольких часов до нескольких дней.** 
 
     ```
-    ./WAImportExport.exe PrepImport /j:<journal file name> /id:session#<session number> /t:<Drive letter> /bk:<BitLocker key> /srcdir:<Drive letter>:\ /dstdir:<Container name>/ /blobtype:<BlockBlob or PageBlob> /skipwrite /enablecontentmd5 
+    ./WAImportExport.exe PrepImport /j:<journal file name> /id:session#<session number> /t:<Drive letter> /bk:<BitLocker key> /srcdir:<Drive letter>:\ /dstdir:<Container name>/ /blobtype:<BlockBlob or PageBlob> /skipwrite 
     ```
     Файл журнала создается в той же папке, где вы запустили средство. Также создаются два других файла: файл *XML* (папка, в которой выполняется средство) и файл *drive-manifest.xml* (папка, в которой хранятся данные).
     
@@ -74,7 +74,7 @@ ms.locfileid: "66455811"
     |/dstdir:     |Имя целевого контейнера в службе хранилища Azure.         |
     |/blobtype:     |Этот параметр указывает тип больших двоичных объектов для импорта данных. Для блочных BLOB-объектов, это `BlockBlob` и страничных BLOB-объектов, это `PagaBlob`.         |
     |/skipwrite:     |Параметр, который указывает, что новые данные не требуется копировать и что на диске нужно подготовить существующие данные.          |
-    |/enablecontentmd5:     |Если параметр включен, гарантирует, что MD5 вычисляется во время передачи блочных BLOB-объектов в Azure.          |
+    |/enablecontentmd5:     |Если параметр включен, гарантирует, что MD5 вычисляется и задать в качестве `Content-md5` свойство для каждого большого двоичного объекта. Используйте этот параметр только в том случае, если вы хотите использовать `Content-md5` поле после загрузки данных в Azure. <br> Этот параметр не влияет на проверку целостности данных (что происходит по умолчанию). Параметр увеличить время, необходимое для отправки данных в облако.          |
 7. Повторите предыдущий шаг для каждого диска, который необходимо отправить. Файл журнала с предоставленным именем создается при каждом запуске командной строки.
     
     > [!IMPORTANT]

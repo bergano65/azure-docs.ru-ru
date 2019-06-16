@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 12/06/2017
 ms.author: aljo
 ms.openlocfilehash: bd19aba68f8b847e8f4800d348197f9c2b1c1289
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66428234"
 ---
 # <a name="host-a-nodejs-application-on-azure-service-fabric"></a>Размещение приложения Node.js в Azure Service Fabric
@@ -52,7 +52,7 @@ ms.locfileid: "66428234"
 
 Назовите службу **MyGuestService** и задайте параметрам справа следующие значения:
 
-| Параметр                   | Value |
+| Параметр                   | Значение |
 | ------------------------- | ------ |
 | Папка пакета кода       | _&lt;папка с вашим приложением Node.js&gt;_ |
 | Поведение пакета кода     | Скопируйте содержимое папки в проект |

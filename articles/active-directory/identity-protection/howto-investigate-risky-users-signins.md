@@ -17,12 +17,12 @@ ms.devlang: na
 ms.topic: article
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 646119f223067fac5ee36574fb10273819251cce
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: 4a90195a2d0899b0a157cc67badd2f9873164987
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
-ms.locfileid: "60296050"
+ms.locfileid: "67108950"
 ---
 # <a name="how-to-investigate-risky-users-and-sign-ins"></a>Как Изучение действий пользователей и операций входа, которые могут представлять риск 
 
@@ -199,7 +199,7 @@ ms.locfileid: "60296050"
 
 - Уровень риска (реальное время)
 
-- Условный доступ
+- условный доступ;
 
 - Требуется многофакторная идентификация  
  
@@ -228,7 +228,7 @@ ms.locfileid: "60296050"
 
 - Сведения о MFA
 
-- Условный доступ
+- условный доступ;
 
 
 
@@ -257,7 +257,7 @@ ms.locfileid: "60296050"
 - Состояние риска
 - Уровень риска (агрегированный)
 - Уровень риска (реальное время)
-- Условный доступ
+- условный доступ;
 - Дата
 - Тип уровня риска
 
@@ -298,7 +298,7 @@ ms.locfileid: "60296050"
 - Низкая
 
 
-В фильтре **Условный доступ** можете выбрать:
+**Условного доступа** фильтра можно выбрать:
 
 - Все
 - Неприменимо

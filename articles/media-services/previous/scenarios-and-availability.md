@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 930420240d7b0f116f72056404e809ca94820f11
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65991428"
 ---
 # <a name="scenarios-and-availability-of-media-services-features-across-datacenters"></a>Сценарии и доступность функций служб мультимедиа в центрах обработки данных
@@ -177,7 +177,7 @@ ms.locfileid: "65991428"
 
 #### <a name="availability"></a>Доступность
 
-|ИМЯ|Status|Центры обработки данных
+|Name|Status|Центры обработки данных
 |---|---|---|
 |Стандартная|GA|Все|
 |"Премиум"|GA|Все|
@@ -196,8 +196,8 @@ AMS предлагает два кодировщика по требованию
 
 |Имя обработчика мультимедиа|Status|Центры обработки данных
 |---|---|---|
-|Media Encoder Standard|GA|Все|
-|Media Encoder Premium Workflow|GA|Все, кроме региона "Китай"|
+|Стандартный кодировщик служб мультимедиа|GA|Все|
+|Расширенный рабочий процесс кодировщика мультимедиа|GA|Все, кроме региона "Китай"|
 
 ### <a name="analytics-media-processors"></a>Обработчики мультимедиа аналитики
 
@@ -208,7 +208,7 @@ AMS предлагает два кодировщика по требованию
 |Имя обработчика мультимедиа|Status|Центры обработки данных
 |---|---|---|
 |Azure Media Face Detector|Предварительный просмотр|Все|
-|Индексатор службы мультимедиа Azure|GA|Все|
+|Azure Media Indexer|GA|Все|
 |Azure Media Motion Detector|Предварительный просмотр|Все|
 |Azure Media OCR|Предварительный просмотр|Все|
 |Azure Media Redactor|Предварительный просмотр|Все|

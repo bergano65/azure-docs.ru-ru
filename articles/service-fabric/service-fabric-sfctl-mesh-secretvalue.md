@@ -15,10 +15,10 @@ ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: 3f8e46f063d3e725e2174fd907169f3e0167586a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60836957"
 ---
 # <a name="sfctl-mesh-secretvalue"></a>sfctl mesh secretvalue
@@ -28,9 +28,9 @@ ms.locfileid: "60836957"
 
 |Команда|Описание|
 | --- | --- |
-| удалить | Удаление указанного значения именованного ресурса секрета. |
-| список | Вывод списка имен всех значений указанного ресурса секрета. |
-| показать | Получение значения заданной версии ресурса секрета. |
+| delete | Удаление указанного значения именованного ресурса секрета. |
+| list | Вывод списка имен всех значений указанного ресурса секрета. |
+| show | Получение значения заданной версии ресурса секрета. |
 
 ## <a name="sfctl-mesh-secretvalue-delete"></a>sfctl mesh secretvalue delete
 Удаление указанного значения именованного ресурса секрета.

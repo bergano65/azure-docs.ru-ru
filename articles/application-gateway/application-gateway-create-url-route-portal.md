@@ -11,10 +11,10 @@ ms.workload: infrastructure-services
 ms.date: 3/26/2018
 ms.author: victorh
 ms.openlocfilehash: 10bc4e4c440e5495afd820f588270b7990108b68
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66135314"
 ---
 # <a name="create-an-application-gateway-with-path-based-routing-rules-using-the-azure-portal"></a>Создание шлюза приложений с правилами маршрутизации на основе URL-пути при помощи портала Azure | Документация Майкрософт
@@ -61,7 +61,7 @@ ms.locfileid: "66135314"
    - *myAGSubnet* — имя подсети;
    - *10.0.0.0/24* — диапазон адресов подсети.
 
-     ![Создать виртуальную сеть](./media/application-gateway-create-url-route-portal/application-gateway-vnet.png)
+     ![Создание виртуальной сети](./media/application-gateway-create-url-route-portal/application-gateway-vnet.png)
 
 6. Нажмите кнопку **ОК**, чтобы создать виртуальную сеть и подсеть.
 7. Щелкните **Выбрать общедоступный IP-адрес**, выберите **Создать**, а затем введите имя общедоступного IP-адреса. В этом примере общедоступный IP-адрес — *myAGPublicIPAddress*. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
@@ -143,8 +143,8 @@ ms.locfileid: "66135314"
 
 1. Щелкните **Правила** и выберите **На основе пути**.
 2. Введите имя *rule2*.
-3. Введите *Images* в качестве имени первого пути. Введите путь */images/*\*. Выберите для серверного пула значение **imagesBackendPool**.
-4. Введите *Video* в качестве имени второго пути. Введите путь */video/*\*. Выберите для серверного пула значение **videoBackendPool**.
+3. Введите *Images* в качестве имени первого пути. Введите путь */images/* \*. Выберите для серверного пула значение **imagesBackendPool**.
+4. Введите *Video* в качестве имени второго пути. Введите путь */video/* \*. Выберите для серверного пула значение **videoBackendPool**.
 
     ![Создание правила на основе пути](./media/application-gateway-create-url-route-portal/application-gateway-route-rule.png)
 

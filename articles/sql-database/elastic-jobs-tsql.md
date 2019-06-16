@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: 59e0e4cf82af9851dacf3ec030575ed392571331
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61475819"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs"></a>Создание заданий эластичной базы данных и управление ими с помощью Transact-SQL (T-SQL)
@@ -178,7 +178,7 @@ CREATE TABLE [dbo].[Test]([TestId] [int] NOT NULL);',
 - $(job_execution_create_time)
 - $(target_group_name)
 
-Например, чтобы сгруппировать все результаты выполнения одного задания, используйте *$(job_execution_id)*, как показано в команде ниже.
+Например, чтобы сгруппировать все результаты выполнения одного задания, используйте *$(job_execution_id)* , как показано в команде ниже.
 
 
 ```sql
@@ -456,7 +456,7 @@ EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob'
 [  **\@включена =** ] включена  
 Указывает, включено ли задание. Типом enabled является bit, значение по умолчанию — 0 (отключено). При значении 0 задание не включено и не выполняется по заданному расписанию, однако его можно запустить вручную. При значении 1 задание выполняется по своему расписанию, а также может быть выполнено вручную.
 
-[ **\@schedule_interval_type =**] schedule_interval_type  
+[ **\@schedule_interval_type =** ] schedule_interval_type  
 Это значение указывает, когда должно выполняться задание. Типом schedule_interval_type является nvarchar(50), значение по умолчанию — Once. Допускаются следующие значения:
 - Once
 - Minutes

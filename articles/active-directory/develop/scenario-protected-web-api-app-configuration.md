@@ -16,12 +16,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e206cb29338445e30a7462bcbaf0079236e75510
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: bdd68d9ec5d0dd83df4628f39785ce255482245d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65074970"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67111156"
 ---
 # <a name="protected-web-api---code-configuration"></a>Защищенный веб-API - код конфигурации
 
@@ -145,7 +145,7 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 
 Проверяющие элементы управления описаны в следующей таблице:
 
-| Проверяющий элемент управления | ОПИСАНИЕ |
+| Проверяющий элемент управления | Описание |
 |---------|---------|
 | `ValidateAudience` | Гарантирует, что маркер является для приложения, которое проверяет токен (для me). |
 | `ValidateIssuer` | Гарантирует, что маркер был выдан доверенные STS (от кого-то, которое я доверяю). |
@@ -159,4 +159,4 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Переместить в рабочую среду](scenario-protected-web-api-production.md)
+> [Убедитесь, областей и ролей приложения в коде](scenario-protected-web-api-verification-scope-app-roles.md)

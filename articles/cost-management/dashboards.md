@@ -11,10 +11,10 @@ ms.service: cost-management
 manager: vitavor
 ms.custom: seodec18
 ms.openlocfilehash: b83368b913bf1303b49e3a56e3a15248af222cbe
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66002055"
 ---
 # <a name="view-key-cost-metrics-with-dashboards"></a>Представление ключевых метрик затрат с помощью панелей мониторинга
@@ -144,7 +144,7 @@ ms.locfileid: "66002055"
 Это мини-приложение показывает амортизацию затрат службы за последние 30 дней. Наведите указатель мыши на круговую диаграмму, чтобы увидеть значения стоимости для каждой службы.
 - Щелкните мини-приложение, чтобы открыть отчет "Анализ фактических затрат".
 
-### <a name="potential-savings"></a>Возможная экономия 
+### <a name="potential-savings"></a>Возможная экономия
 Это мини-приложение показывает рекомендации по ценообразованию экземпляра для Amazon EC2 и Amazon RDS.
 - Щелкните мини-приложение, чтобы открыть отчет "Анализ экономии". В нем перечислены расходы по типам экземпляров с потенциальной экономией.
 

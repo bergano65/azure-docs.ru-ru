@@ -1,6 +1,6 @@
 ---
 title: Интеграция локальных приложений с Cloud App Security в Azure Active Directory | Документация Майкрософт
-description: Настройка локального приложения в Azure Active Directory для работы с Microsoft Cloud App Security (MCAS). Использование управления условным доступом к приложениям MCAS для мониторинга сеансов и управления ими в режиме реального времени на основе политик условного доступа. Эти политики можно применять к локальным приложениям, использующим Application Proxy в Azure Active Directory (Azure AD).
+description: Настройка локального приложения в Azure Active Directory для работы с Microsoft Cloud App Security (MCAS). Используйте MCAS Conditional Access App Control для мониторинга и контроля сеансов в режиме реального времени, в зависимости от политики условного доступа. Эти политики можно применять к локальным приложениям, использующим Application Proxy в Azure Active Directory (Azure AD).
 author: msmimart
 manager: CelesteDG
 ms.service: active-directory
@@ -11,15 +11,15 @@ ms.date: 12/19/2018
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c614d636e572eb261ec28c55ac49fec0e2b58b2
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: a7b9b27a3b8329f906b1adfd48d28892a7edc4d1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65783600"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67108450"
 ---
 # <a name="configure-real-time-application-access-monitoring-with-microsoft-cloud-app-security-and-azure-active-directory"></a>Настройка мониторинга доступа к приложениям в режиме реального времени с помощью Microsoft Cloud App Security и Azure Active Directory
-Настройте локальное приложение в Azure Active Directory (Azure AD) для использования Microsoft Cloud App Security (MCAS) в целях мониторинга в режиме реального времени. MCAS поддерживает функцию управления условным доступом к приложениям для мониторинга сеансов и управления ими в режиме реального времени на основе политик условного доступа. Эти политики можно применять к локальным приложениям, использующим Application Proxy в Azure Active Directory (Azure AD).
+Настройте локальное приложение в Azure Active Directory (Azure AD) для использования Microsoft Cloud App Security (MCAS) в целях мониторинга в режиме реального времени. MCAS использует Conditional Access App Control для мониторинга и управления сеансами в режиме реального времени на основании политики условного доступа. Эти политики можно применять к локальным приложениям, использующим Application Proxy в Azure Active Directory (Azure AD).
 
 Ниже приведены некоторые примеры типов политик, которые можно создать с помощью MCAS.
 

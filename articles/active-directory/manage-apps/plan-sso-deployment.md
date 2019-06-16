@@ -12,12 +12,12 @@ ms.date: 05/22/2019
 ms.author: baselden
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 29569302d20e23c95b6508a5b58c7ed96e005885
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.openlocfilehash: bd8cebbd7c60715bc90412d9f53458edfee6c56d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66499254"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67108202"
 ---
 # <a name="plan-a-single-sign-on-deployment"></a>Планирование развертывания единый вход
 
@@ -146,7 +146,7 @@ Azure AD хранит большинство данных аудита в теч
 
 С помощью условного доступа вы можете автоматизировать решений по управлению доступом на основе критериев для облачных приложений.
 
-Политики условного доступа применяются после того, как пользователь прошел однофакторную аутентификацию. Таким образом условного доступа не является первой линией обороны строки для сценариев, такие как атаки типа "отказ в обслуживании" (DoS), но можно использовать сигналы, поступающие из этих событий для определения доступа к. Например уровень риска входа можно использовать расположение данного запроса и т. д. Дополнительные сведения об условном доступе см. в разделе [Обзор](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access) и [плана развертывания](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access).
+Политики условного доступа применяются после завершения первой двойной проверки подлинности. Таким образом условного доступа не является первой линией обороны строки для сценариев, такие как атаки типа "отказ в обслуживании" (DoS), но можно использовать сигналы, поступающие из этих событий для определения доступа к. Например уровень риска входа можно использовать расположение данного запроса и т. д. Дополнительные сведения об условном доступе см. в разделе [Обзор](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access) и [плана развертывания](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access).
 
 ## <a name="azure-sso-technical-requirements"></a>Технические требования Azure единого входа
 

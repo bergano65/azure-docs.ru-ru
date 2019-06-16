@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/09/2018
 ms.author: dekapur
 ms.openlocfilehash: 77b9b20f99f00ef87c4907c2890cb3a21d20ec75
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62096272"
 ---
 # <a name="upgrade-the-configuration-of-a-cluster-in-azure"></a>Обновление конфигурации кластера в Azure 
@@ -36,7 +36,7 @@ ms.locfileid: "62096272"
 Кластеры Azure можно настроить с помощью JSON-шаблона Resource Manager. Дополнительные сведения см. в статье о [параметрах конфигурации для кластеров](service-fabric-cluster-fabric-settings.md). В качестве примера ниже приведены инструкции, с помощью которых можно добавить новый параметр *MaxDiskQuotaInMB* в раздел *Diagnostics*, используя обозреватель ресурсов Azure.
 
 1. Перейдите на сайт https://resources.azure.com.
-2. Перейдите к подписке, развернув **subscriptions** -> **\<Ваша подписка>** -> **resourceGroups** -> **\<Ваша группа ресурсов >** -> **providers** -> **Microsoft.ServiceFabric** -> **clusters** -> **\<Имя вашего кластера>**
+2. Перейдите к подписке, развернув **subscriptions** ->  **\<Ваша подписка>**  -> **resourceGroups** ->  **\<Ваша группа ресурсов >**  -> **providers** -> **Microsoft.ServiceFabric** -> **clusters** ->  **\<Имя вашего кластера>**
 3. В правом верхнем углу выберите пункт **Чтение и запись**.
 4. Выберите **Изменить** и обновите элемент JSON `fabricSettings`, а затем добавьте новый элемент.
 
