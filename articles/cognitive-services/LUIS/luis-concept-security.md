@@ -9,17 +9,17 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 12/18/2018
+ms.date: 06/12/2019
 ms.author: diberry
-ms.openlocfilehash: 499854bcf6774c3e4eee350c1dd4a2204885f3b1
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: b52b0fffe9c32ab14600a3e296852faa626d794d
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65522476"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67058535"
 ---
 # <a name="authoring-and-endpoint-user-access"></a>Доступ пользователей к возможностям разработки и конечным точкам
-Доступ к возможностям разработки предоставляется владельцам и участникам совместной работы. В частных приложениях доступ к конечным точкам имеют владельцы и участники совместной работы. В общедоступных приложениях доступ к конечным точкам имеют все пользователи с учетной записью LUIS и идентификаторами общедоступных приложений. 
+Доступ к возможностям разработки предоставляется владельцам и участникам совместной работы. В частных приложениях доступ к конечным точкам имеют владельцы и участники совместной работы. Для открытого приложения, доступ к конечной точке доступен всем, что имеет свои собственные Azure [Cognitive Service](../cognitive-services-apis-create-account.md) или [LUIS](luis-how-to-azure-subscription.md#create-prediction-endpoint-runtime-resource-in-the-azure-portal) ресурсов, и имеет идентификатор общедоступному приложению. 
 
 ## <a name="access-to-authoring"></a>Доступ к возможностям разработки
 Доступ к приложению с веб-сайта [LUIS](luis-reference-regions.md#luis-website) или из [API-интерфейсов разработки](https://go.microsoft.com/fwlink/?linkid=2092087) контролируется владельцем приложения. 
@@ -34,7 +34,7 @@ ms.locfileid: "65522476"
 |Импорт версии||
 |Предоставление к приложению общего доступа|Если приложение является общедоступным, запросить его может любой пользователь с ключом разработки или ключом конечной точки.|
 |Изменение модели|
-|Опубликовать|
+|Публикация|
 |Проверка высказываний конечной точки для [активного обучения](luis-how-to-review-endpoint-utterances.md)|
 |Обучение|
 

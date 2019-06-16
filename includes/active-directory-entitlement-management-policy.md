@@ -9,10 +9,10 @@ ms.date: 05/16/2019
 ms.author: rolyon
 ms.custom: include file
 ms.openlocfilehash: 6711506c1e489dcbd50aedd36241affc3bbed80b
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66113387"
 ---
 ### <a name="policy-for-users-in-your-directory"></a>Политика: Для пользователей в каталоге
@@ -95,7 +95,7 @@ ms.locfileid: "66113387"
 
 1. В **истекло время ожидания запроса утверждения (в днях)** укажите количество времени, имеют утверждающих лиц для просмотра запроса. Если утверждающие не просматривать его с помощью количества дней тому назад, истечения срока действия запроса, и пользователю будет нужно отправить другой запрос для пакета доступ.
 
-### <a name="policy-expiration"></a>Политика: Срок действия
+### <a name="policy-expiration"></a>Политика: Окончание срока действия
 
 В разделе истечения срока действия указываются после истечения срока действия пользователя назначения доступа к пакету.
 
@@ -115,7 +115,7 @@ ms.locfileid: "66113387"
 
     ![Пакет доступа — параметры срока действия политики —](./media/active-directory-entitlement-management-policy/policy-expiration.png)
 
-### <a name="policy-enable-policy"></a>Политика: Включить политику
+### <a name="policy-enable-policy"></a>Политика: Включение политики
 
 1. Пакет access будут доступны сразу же для пользователей в политике, нажмите кнопку **Да** Чтобы включить политику.
 

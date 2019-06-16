@@ -17,22 +17,22 @@ ms.date: 04/10/2019
 ms.author: joflore
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64dd8067654246f7c9a077d027c068df820f439d
-ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
+ms.openlocfilehash: 54a1c349ae7cdd66c09db412331c344d6512ecd3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66688701"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67110598"
 ---
-# <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Практическое руководство. Планирование реализации гибридного присоединения к Azure Active Directory
+# <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Как Планирование реализации гибридного присоединения к Azure Active Directory
 
-Аналогичным образом для пользователя устройство — другим удостоверением core, который вы хотите защитить и использовать его для защиты ресурсов в любое время и из любого места. Этой цели, перенос и управление удостоверениями устройств в Azure AD, используя один из следующих методов:
+Подобно пользователю, устройство — это еще одно основное удостоверение, которое необходимо защитить, чтобы с его помощью обеспечить постоянную защиту ресурсов независимо от того, где вы находитесь. Для этого разместите удостоверения своих устройств в Azure AD и управляйте такими удостоверениями с помощью одного из следующих методов:
 
 - присоединение к Azure AD;
 - гибридное присоединение к Azure AD;
 - регистрация в Azure AD.
 
-Размещение устройств в Azure AD позволяет увеличить эффективность работы пользователей благодаря выполнению единого входа для облачных и локальных ресурсов. В то же время вы можете защитить доступ к облачным и локальным ресурсам с помощью [условного доступа](../active-directory-conditional-access-azure-portal.md).
+Размещение устройств в Azure AD позволяет увеличить эффективность работы пользователей благодаря выполнению единого входа для облачных и локальных ресурсов. В то же время вы можете защитить доступ для облачных и локальных ресурсов с помощью [условного доступа](../active-directory-conditional-access-azure-portal.md).
 
 Если вы хотите присоединиться к AD присоединенных к домену компьютеры в Azure AD в локальной среде Active Directory (AD), это можно сделать, выполнив гибридное присоединение к Azure AD. В этой статье приведены соответствующие шаги для реализации гибридного присоединения устройств к Azure AD в вашей среде. 
 
@@ -113,7 +113,7 @@ ms.locfileid: "66688701"
 
 ### <a name="managed-environment"></a>Управляемая среда
 
-Управляемой среде могут быть развернуты либо через [синхронизации хэша паролей (PHS)](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-phs) или [передать через проверку подлинности (PTA)](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-pta) с [простой единый вход](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso).
+Управляемую среду можно развернуть при помощи [синхронизации хэша паролей](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-phs) или [сквозной аутентификации](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-pta) с [единым входом](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso).
 
 В этих сценариях не требуется настраивать сервер федерации для проверки подлинности.
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.reviewer: mbullwin
 ms.author: cithomas
-ms.openlocfilehash: fd5a16334fff0319d7993fb2403a48d1777f6bce
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 0691c35661a6d185a6aa5ed3383ad600653359d3
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65955340"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67058595"
 ---
 # <a name="applicationinsightsloggerprovider-for-net-core-ilogger-logs"></a>ApplicationInsightsLoggerProvider for .NET Core ILogger logs
 
@@ -106,6 +106,9 @@ public class ValuesController : ControllerBase
 ```
 
 ### <a name="capture-ilogger-logs-from-startupcs-and-programcs-in-aspnet-core-apps"></a>Собирать журналы ILogger из Startup.cs и Program.cs в приложениях ASP.NET Core
+
+> [!NOTE]
+> В ASP.NET Core 3.0 и более поздних версиях его больше нельзя внедрить `ILogger` в Startup.cs и файл Program.cs. Дополнительные сведения см. в статье https://github.com/aspnet/Announcements/issues/353.
 
 Новый ApplicationInsightsLoggerProvider можно собирать журналы из на раннем этапе конвейера запуска приложения. Несмотря на то, что ApplicationInsightsLoggerProvider автоматически включается в Application Insights (начиная с версии 2.7.0-beta3), он не имеет ключ инструментирования, задать до более поздней версии в конвейере. Таким образом, только журналов из **контроллера**/ будут записаны другие классы. Для каждого журнала, начиная с записи **Program.cs** и **Startup.cs** , необходимо явно включить ключ инструментирования для ApplicationInsightsLoggerProvider. Кроме того *конфигурацией TelemetryConfiguration* не настроен полностью при входе в систему из **Program.cs** или **Startup.cs** сам. Поэтому эти журналы будет иметь минимальные конфигурации с InMemoryChannel ни одного образца и инициализаторы стандартной телеметрии и не процессоров.
 
@@ -450,7 +453,7 @@ ApplicationInsightsLoggerProvider собирает информацию журн
 
 Расширение Application Insights в веб-приложений Azure с помощью старого поставщика. Можно изменить правила фильтрации в *appsettings.json* файла для приложения. Чтобы воспользоваться преимуществами нового поставщика, используйте инструментирования во время сборки, создавая зависимость NuGet по SDK. В этой статье будет обновляться при расширении переключается на использование нового поставщика.
 
-### <a name="im-using-the-standalone-package-microsoftextensionsloggingapplicationinsights-and-enabling-application-insights-provider-by-calling-builderaddapplicationinsightsikey-is-there-an-option-to-get-an-instrumentation-key-from-configuration"></a>Я являюсь использованием изолированного пакета Microsoft.Extensions.Logging.ApplicationInsights и включение Application Insights поставщика путем вызова **построитель. AddApplicationInsights("ikey")**. Есть ли возможность получить ключ инструментирования из конфигурации?
+### <a name="im-using-the-standalone-package-microsoftextensionsloggingapplicationinsights-and-enabling-application-insights-provider-by-calling-builderaddapplicationinsightsikey-is-there-an-option-to-get-an-instrumentation-key-from-configuration"></a>Я являюсь использованием изолированного пакета Microsoft.Extensions.Logging.ApplicationInsights и включение Application Insights поставщика путем вызова **построитель. AddApplicationInsights("ikey")** . Есть ли возможность получить ключ инструментирования из конфигурации?
 
 
 Измените файл Program.cs и appsettings.json следующим образом:

@@ -16,12 +16,12 @@ ms.date: 04/29/2019
 ms.author: rolyon
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1be6fc2b7d6da85778524cb8986f399c341370c1
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 4b4f1563aa0437cd45c297b95a83119318a24624
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66307051"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67109589"
 ---
 # <a name="what-is-azure-ad-identity-governance"></a>Что такое функции управления удостоверениями Azure AD?
 
@@ -60,7 +60,7 @@ ms.locfileid: "66307051"
 
 Организации могут автоматизировать процессы управления жизненным циклом доступа, применив такие технологии, как [динамические группы](../users-groups-roles/groups-dynamic-membership.md) и подготовка пользователей в [приложениях SaaS](../saas-apps/tutorial-list.md) или [приложениях, интегрированных с SCIM](../manage-apps/use-scim-to-provision-users-and-groups.md).  Организации также могут выбирать, [какие гостевые пользователи получат доступ к локальным приложениям](../b2b/hybrid-cloud-to-on-premises.md).  Также эти права доступа можно регулярно проверять с помощью [проверок доступа Azure Active Directory](access-reviews-overview.md).
 
-Когда пользователь пытается получить доступ к приложениям, AAD применяет политики [условного доступа](/azure/active-directory/conditional-access/). Например, в политики условного доступа можно включить [отображение условий использования](../conditional-access/terms-of-use.md) и [получение согласия пользователя](../conditional-access/require-tou.md) на эти условия перед предоставлением доступа к приложению.
+Когда пользователь пытается получить доступ к приложениям, Azure AD применяет [условного доступа](/azure/active-directory/conditional-access/) политики. Например, политики условного доступа можно включить отображение [условия использования](../conditional-access/terms-of-use.md) и [обеспечение пользователь согласился эти термины](../conditional-access/require-tou.md) прежде чем получить доступ к приложению.
 
 ## <a name="privileged-access-lifecycle"></a>Жизненный цикл привилегированного доступа
 
@@ -68,7 +68,7 @@ ms.locfileid: "66307051"
 
 ![Жизненный цикл привилегированного доступа](./media/identity-governance-overview/privileged-access-lifecycle.png)
 
-Azure AD Privileged Identity Management (PIM) предоставляет целый ряд средств управления, предназначенных для защиты прав доступа к ресурсам в AAD, Azure и других службах Microsoft Online Services.  JIT-доступ и оповещения об изменении ролей, реализованные Azure AD PIM, в сочетании с многофакторной идентификацией и условным доступом обеспечивают комплексный набор средств управления для защиты ресурсов компании (каталог, Office 365 и ролей ресурсов Azure). Как и для других видов доступа, с помощью проверок доступа можно настроить регулярные сертификации прав доступа для всех пользователей с ролями администратора.
+Azure AD Privileged Identity Management (PIM) предоставляет целый ряд средств управления, предназначенных для защиты прав доступа к ресурсам в AAD, Azure и других службах Microsoft Online Services.  Just-in-time доступа и роли изменить оповещение возможностей, предоставляемых Azure AD PIM, помимо многофакторной проверки подлинности и условного доступа, предоставляют полный набор элементов управления для безопасного ресурсам компании (каталог, Office 365 и ролей ресурсов Azure). Как и для других видов доступа, с помощью проверок доступа можно настроить регулярные сертификации прав доступа для всех пользователей с ролями администратора.
 
 ## <a name="getting-started"></a>Приступая к работе
 

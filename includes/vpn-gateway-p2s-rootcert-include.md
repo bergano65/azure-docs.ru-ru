@@ -9,10 +9,10 @@ ms.date: 12/11/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 4c8e7e5272f180c482ca7fdd44302f49eb888b25
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66157283"
 ---
 Используйте либо корневой сертификат, созданный с помощью корпоративного решения (рекомендуется), либо создайте самозаверяющий сертификат. После создания корневого сертификата данные общедоступного сертификата (а не закрытый ключ) экспортируйте в виде CER-файла X.509 в кодировке Base64. Затем передайте данные общедоступного сертификата на сервер Azure.

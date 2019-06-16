@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/06/2018
 ms.author: tomfitz
 ms.custom: include file
-ms.openlocfilehash: 85a1579e32b4c216f234f77c76316bedeaea77b0
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: d32beb2d799a60cb9c5be061c39e4ec834da8dcf
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66119544"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66814722"
 ---
 Эта функция предоставляется в предварительной версии. Для этого нужно установить расширение предварительной версии или модуль.
 
@@ -28,11 +28,9 @@ ms.locfileid: "66119544"
 
 При локальной установке:
 
-1. Удалите Azure CLI локально.
-1. Установите [последнюю версию](/cli/azure/install-azure-cli) Azure CLI.
-1. Запустите командное окно.
+1. [Установка Azure CLI](/cli/azure/install-azure-cli). Убедитесь, что у вас есть последняя версия, путем проверки с `az --version`.
 1. Удалите предыдущие версии расширения `az extension remove -n eventgrid`.
-1. Установите расширение `az extension add -n eventgrid`.
+1. Установка `eventgrid` расширения с помощью `az extension add -n eventgrid`
 
 ### <a name="install-module-for-powershell"></a>Установка модуля для PowerShell
 

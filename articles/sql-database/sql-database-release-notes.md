@@ -10,12 +10,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: sstein
-ms.openlocfilehash: d527c4fed9c43e62d815078c049d4d8e6f8a46b7
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 04c19c9a8603fee46914eb94b50c4f97e34e9c42
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65787713"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67070216"
 ---
 # <a name="sql-database-release-notes"></a>Заметки о выпуске базы данных SQL
 
@@ -32,7 +32,6 @@ ms.locfileid: "65787713"
 | Задания обработки эластичных баз данных | Сведения см. в разделе [создания, настройки и управления масштабируемыми](elastic-jobs-overview.md). |
 | Эластичные запросы | Сведения см. в разделе [Обзор эластичных запросов](sql-database-elastic-query-overview.md). |
 | Эластичные транзакции | [Распределенные транзакции по облачным базам данных](sql-database-elastic-transactions-overview.md). |
-| Параметры сортировки экземпляра с помощью управляемых экземпляров |Сведения см. в разделе [использование PowerShell с помощью шаблона Azure Resource Manager для создания управляемого экземпляра базы данных SQL Azure](./scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md).|
 |Обратной связи (режим строк) (на уровне совместимости 150)|Сведения см. в разделе [обратную связь с выделением памяти (в режиме строки)](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#row-mode-memory-grant-feedback).|
 | Редактор запросов на портале Azure |Сведения см. в разделе [использование редактора запросов SQL на портале Azure для подключения и запроса данных](sql-database-connect-query-portal.md).|
 | Службы R, / машинное обучение с помощью отдельных баз данных и пулов эластичных баз данных |Сведения см. в разделе [служб машинного обучения в базе данных SQL Azure](https://docs.microsoft.com/sql/advanced-analytics/what-s-new-in-sql-server-machine-learning-services?view=sql-server-2017#machine-learning-services-in-azure-sql-database).|
@@ -42,11 +41,22 @@ ms.locfileid: "65787713"
 |Аналитика SQL|Сведения см. в разделе [аналитика SQL Azure](../azure-monitor/insights/azure-sql.md).|
 |Таблица компиляции переменной отложенного (при уровне совместимости 150)|Сведения см. в разделе [переменной отложенной компиляции таблицы](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#table-variable-deferred-compilation).|
 | Обнаружение угроз с помощью управляемых экземпляров |Сведения см. в разделе [Настройка обнаружения угроз для базы данных SQL управляемого экземпляра](sql-database-managed-instance-threat-detection.md).|
-| Поддержку часовых поясов для управляемых экземпляров|Дополнительные сведения см. в разделе [часовой пояс в базе данных управляемого экземпляра SQL Azure](sql-database-managed-instance-timezone.md).|
 | Прозрачное шифрование данных (TDE) с перевести собственных ключей (BYOK) с помощью управляемых экземпляров |Сведения см. в разделе [Azure прозрачного шифрования данных SQL с помощью управляемых клиентом ключей в хранилище ключей Azure: Поддержка создания собственных ключей использования](transparent-data-encryption-byok-azure-sql.md).|
 | &nbsp; |
 
-## <a name="may-2019"></a>Мая 2019 г.
+## <a name="june-2019"></a>2019 июня
+
+### <a name="service-improvements"></a>Улучшения службы
+
+| Улучшения службы | Сведения |
+| --- | --- |
+| 4 виртуальных ядер управляемого экземпляра в поколении оборудования 5-го поколения| Дополнительные сведения см. в разделе https://aka.ms/four-cores-sql-mi-update. |
+| Управляемый экземпляр — поддержка подписок с ежемесячным кредитом Azure для подписчиков Visual Studio | Дополнительные сведения см. в разделе https://aka.ms/sql-mi-visual-studio-subscribers. |
+|Больше региональные ограничения для управляемого экземпляра| Дополнительные сведения см. в разделе [ограничения региональных ресурсов](sql-database-managed-instance-resource-limits.md#regional-resource-limitations).
+| &nbsp; |
+
+
+## <a name="may-2019"></a>Май 2019 г.
 
 ### <a name="service-improvements"></a>Улучшения службы
 
@@ -54,6 +64,8 @@ ms.locfileid: "65787713"
 | --- | --- |
 |Выпущена общедоступная версия уровня служб Гипермасштабируемого| Дополнительные сведения см. в разделе [Гипермасштабируемого уровня службы для до 100 ТБ](sql-database-service-tier-hyperscale.md) и [получить высокопроизводительных масштабирования для рабочих нагрузок базы данных Azure с крупномасштабным](https://azure.microsoft.com/blog/get-high-performance-scaling-for-your-azure-database-workloads-with-hyperscale/).|
 |Уровень бессерверных вычислений, выпущена в общедоступной предварительной версии | Дополнительные сведения см. в разделе [базы данных SQL без сервера (Предварительная версия)](sql-database-serverless.md).|
+|Поддержку часовых поясов для управляемых экземпляров, выпущена общедоступная версия |Дополнительные сведения см. в разделе [часовой пояс в базе данных управляемого экземпляра SQL Azure](sql-database-managed-instance-timezone.md).|
+|Параметры сортировки экземпляра с помощью управляемых экземпляров, выпущена общедоступная версия |Сведения см. в разделе [использование PowerShell с помощью шаблона Azure Resource Manager для создания управляемого экземпляра базы данных SQL Azure](./scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md).|
 | Скорость журнала транзакций и операций ввода-ВЫВОДА целевого увеличена для баз данных, использующих модель приобретения на основе виртуальных ядер| Дополнительные сведения см. в разделе [ограничения ресурсов для отдельных баз данных, используя модель приобретения на основе виртуальных ядер](https://docs.microsoft.com/azure/sql-database/sql-database-vcore-resource-limits-single-databases) и [ограничения ресурсов для отдельных баз данных, используя модель приобретения на основе DTU](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits-single-databases).
 | &nbsp; |
 
@@ -65,7 +77,7 @@ ms.locfileid: "65787713"
 |Документация уровня бессерверных вычислений, выпущен вместе с общедоступной предварительной версии| Дополнительные сведения см. в разделе [базы данных SQL без сервера (Предварительная версия)](sql-database-serverless.md).|
 | &nbsp; |
 
-## <a name="april-2019"></a>Апреля 2019 г.
+## <a name="april-2019"></a>Апрель 2019 г.
 
 ### <a name="service-improvements"></a>Улучшения службы
 

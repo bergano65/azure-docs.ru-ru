@@ -2,7 +2,7 @@
 title: Требуется политика защиты приложений для доступа к облаку приложения с условным доступом в Azure Active Directory | Документация Майкрософт
 description: Узнайте, как требуется политика защиты приложений для доступа к облаку приложения с условным доступом в Azure Active Directory.
 services: active-directory
-keywords: условный доступ к приложениям, условный доступ посредством Azure Active Directory, безопасный доступ к ресурсам организации, политики условного доступа
+keywords: Условный доступ к приложениям, условный доступ с помощью Azure AD, безопасный доступ к ресурсам организации, политики условного доступа
 documentationcenter: ''
 author: MicrosoftGuyJFlo
 manager: daveba
@@ -18,12 +18,12 @@ ms.date: 4/4/2019
 ms.author: joflore
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2250449c0ef342332945b80cb10cb9a02885b259
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: 51d209eceec2c7172cf34dc689079e669760149e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
-ms.locfileid: "60356073"
+ms.locfileid: "67112744"
 ---
 # <a name="require-app-protection-policy-for-cloud-app-access-with-conditional-access-preview"></a>Требуется политика защиты приложений для доступа к облаку приложения с помощью условного доступа (Предварительная версия)
 
@@ -33,19 +33,19 @@ ms.locfileid: "60356073"
 
 ## <a name="overview"></a>Обзор
 
-С помощью [условного доступа Azure Active Directory (Azure AD)](overview.md) можно точно настроить доступ авторизованных пользователей к ресурсам. Например, вы можете ограничить доступ к своим облачным приложениям, предоставив его только доверенным устройствам.
+С помощью [условного доступа Azure AD](overview.md), можно точно настроить авторизованных пользователей к ресурсам. Например, вы можете ограничить доступ к своим облачным приложениям, предоставив его только доверенным устройствам.
 
 Можно использовать [политики защиты приложений Intune](https://docs.microsoft.com/intune/app-protection-policy), чтобы обеспечить безопасность данных компании. Политики защиты приложений Intune не требуют решения в системе управления мобильными устройствами. Вы можете защитить данные компании с или без регистрации устройств в решении для управления устройствами.
 
-Условный доступ Azure Active Directory ограничивает доступ к облачным приложениям для клиентских приложений, которые Intune сообщил в Azure AD в качестве получать политики защиты приложений. Например можно ограничить доступ к Exchange Online приложению Outlook, имеющего политику защиты приложений Intune.
+Active Directory условный доступ Azure ограничивает доступ к облачным приложениям для клиентских приложений, которые Intune сообщил в Azure AD в качестве получать политики защиты приложений. Например можно ограничить доступ к Exchange Online приложению Outlook, имеющего политику защиты приложений Intune.
 
 Согласно терминологии условного доступа эти клиентские приложения называются политики, защищенные с помощью *политики защиты приложений*.  
 
-![Условный доступ](./media/app-protection-based-conditional-access/05.png)
+![условный доступ;](./media/app-protection-based-conditional-access/05.png)
 
 Список защищенных политика клиентских приложений, см. в разделе [требование политики защиты приложений](technical-reference.md#approved-client-app-requirement).
 
-Вы можете объединить политики условного доступа на основе приложения защиты другие политики, такие как [политики условного доступа на основе устройств](require-managed-devices.md). Таким образом, вы можете предоставить гибкость в защите данных личных и корпоративных устройств.
+Вы можете объединить приложение защиты на основе политик условного доступа, другие политики, такие как [политики условного доступа на основе устройств](require-managed-devices.md). Таким образом, вы можете предоставить гибкость в защите данных личных и корпоративных устройств.
 
 ## <a name="benefits-of-app-protection-based-conditional-access-requirement"></a>Преимущества требование условного доступа на основе защиты приложения
 
@@ -63,7 +63,7 @@ ms.locfileid: "60356073"
 - [Требование политики защиты приложений](technical-reference.md#app-protection-policy-requirement) Технический справочник по.
 - Технический справочник по [требованию утвержденных клиентских приложений](technical-reference.md#approved-client-app-requirement).
 - Основные понятия [условного доступа в Azure Active Directory](overview.md).
-- [Настройка политики условного доступа](app-based-mfa.md).
+- Как [настроить политику условного доступа](app-based-mfa.md).
 
 
 ## <a name="prerequisites"></a>Технические условия
@@ -77,7 +77,7 @@ ms.locfileid: "60356073"
 
 ## <a name="app-protection-based-policy-for-exchange-online"></a>Политика защиты на базе приложений для Exchange Online
 
-Этот сценарий состоит из политики условного доступа на основе защиты приложения для доступа к Exchange Online.
+Этот сценарий состоит из приложения на основе защиты политику условного доступа для доступа к Exchange Online.
 
 ### <a name="scenario-playbook"></a>Обзор сценария
 
@@ -101,7 +101,7 @@ ms.locfileid: "60356073"
 
 Для политики условного доступа на этом шаге настройте следующие компоненты:
 
-![Условный доступ](./media/app-protection-based-conditional-access/01.png)
+![условный доступ;](./media/app-protection-based-conditional-access/01.png)
 
 1. Введите имя политики условного доступа.
 
@@ -109,28 +109,28 @@ ms.locfileid: "60356073"
 
 3. В **облачные приложения**выберите **Office 365 Exchange Online**.
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/07.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/07.png)
 
 4. В **условия**, Настройка **платформ устройств** и **клиентских приложений (Предварительная версия)** :
 
     a. В **платформ устройств**выберите **Android** и **iOS**.
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/03.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/03.png)
 
     2\. В **клиентских приложений (Предварительная версия)** выберите **мобильные приложения и настольные клиенты** и **современных клиентах аутентификации**.
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/91.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/91.png)
 
 5. В разделе **элементы управления доступом**выберите **требуется политика защиты приложений (Предварительная версия)** .
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/05.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/05.png)
  
 
 **Шаг 2. Настройка политики условного доступа Azure AD для Exchange Online с помощью ActiveSync (EAS)**
 
 Для политики условного доступа на этом шаге настройте следующие компоненты:
 
-![Условный доступ](./media/app-protection-based-conditional-access/06.png)
+![условный доступ;](./media/app-protection-based-conditional-access/06.png)
 
 1. Введите имя политики условного доступа.
 
@@ -139,23 +139,23 @@ ms.locfileid: "60356073"
 
 3. В **облачные приложения**выберите **Office 365 Exchange Online**.
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/07.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/07.png)
 
 4. В **условия**, Настройка **клиентских приложений (Предварительная версия)** . 
 
     a. В **клиентских приложений (Предварительная версия)** выберите **мобильные приложения и настольные клиенты** и **клиентов Exchange ActiveSync**.
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/92.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/92.png)
 
     2\. В разделе **элементы управления доступом**выберите **требуется политика защиты приложений (Предварительная версия)** .
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/05.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/05.png)
 
 
 **Шаг 3. Настройка политики защиты приложений Intune для iOS и Android клиентских приложений**
 
 
-![Условный доступ](./media/app-protection-based-conditional-access/09.png)
+![условный доступ;](./media/app-protection-based-conditional-access/09.png)
 
 Дополнительные сведения см. в разделе [защита приложений и данных с помощью Microsoft Intune](https://docs.microsoft.com/intune-classic/deploy-use/protect-apps-and-data-with-microsoft-intune).
 
@@ -163,7 +163,7 @@ ms.locfileid: "60356073"
 
 ## <a name="app-protection-based-or-compliant-device-policy-for-exchange-online"></a>Приложения политику защиты или соответствующего устройства для Exchange Online
 
-Этот сценарий состоит из политики условного доступа приложения на основе защиты или соответствующего устройства для доступа к Exchange Online.
+Этот сценарий состоит из приложения на основе защиты или соответствующего устройства политики условного доступа для доступа к Exchange Online.
 
 
 ### <a name="scenario-playbook"></a>Обзор сценария
@@ -184,7 +184,7 @@ ms.locfileid: "60356073"
 
 Для политики условного доступа на этом шаге настройте следующие компоненты:
 
-![Условный доступ](./media/app-protection-based-conditional-access/62.png)
+![условный доступ;](./media/app-protection-based-conditional-access/62.png)
 
 1. Введите имя политики условного доступа.
 
@@ -192,17 +192,17 @@ ms.locfileid: "60356073"
 
 3. В **облачные приложения**выберите **Office 365 Exchange Online**. 
 
-     ![Условный доступ](./media/app-protection-based-conditional-access/07.png)
+     ![условный доступ;](./media/app-protection-based-conditional-access/07.png)
 
 4. В **условия**, Настройка **платформ устройств** и **клиентских приложений (Предварительная версия)** . 
  
     a. В **платформ устройств**выберите **Android** и **iOS**.
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/03.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/03.png)
 
     2\. В **клиентских приложений (Предварительная версия)** выберите **мобильные приложения и настольные клиенты** и **современных клиентах аутентификации**.
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/91.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/91.png)
 
 5. В разделе **элементы управления доступом**, выберите следующие параметры:
 
@@ -212,15 +212,15 @@ ms.locfileid: "60356073"
 
    - **Требовать один из выбранных элементов управления**   
  
-     ![Условный доступ](./media/app-protection-based-conditional-access/11.png)
+     ![условный доступ;](./media/app-protection-based-conditional-access/11.png)
 
 
 
-**Шаг 2. Настройка политики условного доступа Azure AD для Exchange Online, с помощью ActiveSync**
+**Шаг 2. Настройка политики условного доступа Azure AD для Exchange Online с помощью ActiveSync**
 
 Для политики условного доступа на этом шаге настройте следующие компоненты:
 
-![Условный доступ](./media/app-protection-based-conditional-access/06.png)
+![условный доступ;](./media/app-protection-based-conditional-access/06.png)
 
 1. Введите имя политики условного доступа.
 
@@ -228,13 +228,13 @@ ms.locfileid: "60356073"
 
 3. В **облачные приложения**выберите **Office 365 Exchange Online**. 
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/07.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/07.png)
 
 4. В **условия**, Настройка **клиентских приложений (Предварительная версия)** . 
 
     В **клиентских приложений (Предварительная версия)** выберите **мобильные приложения и настольные клиенты** и **клиентов Exchange ActiveSync**.
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/92.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/92.png)
 
 5. В разделе **элементы управления доступом**, выберите следующие параметры:
 
@@ -244,14 +244,14 @@ ms.locfileid: "60356073"
 
    - **Требовать один из выбранных элементов управления**
 
-     ![Условный доступ](./media/app-protection-based-conditional-access/11.png)
+     ![условный доступ;](./media/app-protection-based-conditional-access/11.png)
 
 
 
 **Шаг 3. Настройка политики защиты приложений Intune для iOS и Android клиентских приложений**
 
 
-![Условный доступ](./media/app-protection-based-conditional-access/09.png)
+![условный доступ;](./media/app-protection-based-conditional-access/09.png)
 
 Дополнительные сведения см. в разделе [защита приложений и данных с помощью Microsoft Intune](https://docs.microsoft.com/intune-classic/deploy-use/protect-apps-and-data-with-microsoft-intune).
 
@@ -261,7 +261,7 @@ ms.locfileid: "60356073"
 
 ## <a name="app-protection-based-and-compliant-device-policy-for-exchange-online"></a>Политика защиты и соответствующее устройство приложений для Exchange Online
 
-Этот сценарий включает политику условного доступа на основе приложений защиты и соответствующее устройство для доступа к Exchange Online.
+Этот сценарий состоит из защиты-на базе приложений и соответствующее устройство политика условного доступа для доступа к Exchange Online.
 
 
 ### <a name="scenario-playbook"></a>Обзор сценария
@@ -286,7 +286,7 @@ ms.locfileid: "60356073"
 
 Для политики условного доступа на этом шаге настройте следующие компоненты:
 
-![Условный доступ](./media/app-protection-based-conditional-access/01.png)
+![условный доступ;](./media/app-protection-based-conditional-access/01.png)
 
 1. Введите имя политики условного доступа.
 
@@ -294,17 +294,17 @@ ms.locfileid: "60356073"
 
 3. В **облачные приложения**выберите **Office 365 Exchange Online**. 
 
-     ![Условный доступ](./media/app-protection-based-conditional-access/07.png)
+     ![условный доступ;](./media/app-protection-based-conditional-access/07.png)
 
 4. В **условия**, Настройка **платформ устройств** и **клиентских приложений (Предварительная версия)** . 
  
     a. В **платформ устройств**выберите **Android** и **iOS**.
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/03.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/03.png)
 
     2\. В **клиентских приложений (Предварительная версия)** выберите **мобильные приложения и настольные клиенты** и **современных клиентах аутентификации**.
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/91.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/91.png)
 
 5. В разделе **элементы управления доступом**, выберите следующие параметры:
 
@@ -314,15 +314,15 @@ ms.locfileid: "60356073"
 
    - **Требовать все выбранные элементы управления**   
  
-     ![Условный доступ](./media/app-protection-based-conditional-access/13.png)
+     ![условный доступ;](./media/app-protection-based-conditional-access/13.png)
 
 
 
-**Шаг 2. Настройка политики условного доступа Azure AD для Exchange Online, с помощью ActiveSync**
+**Шаг 2. Настройка политики условного доступа Azure AD для Exchange Online с помощью ActiveSync**
 
 Для политики условного доступа на этом шаге настройте следующие компоненты:
 
-![Условный доступ](./media/app-protection-based-conditional-access/06.png)
+![условный доступ;](./media/app-protection-based-conditional-access/06.png)
 
 1. Введите имя политики условного доступа.
 
@@ -330,13 +330,13 @@ ms.locfileid: "60356073"
 
 3. В **облачные приложения**выберите **Office 365 Exchange Online**. 
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/07.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/07.png)
 
 4. В **условия**, Настройка **клиентских приложений (Предварительная версия)** . 
 
     В **клиентских приложений (Предварительная версия)** выберите **мобильные приложения и настольные клиенты** и **клиентов Exchange ActiveSync**.
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/92.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/92.png)
 
 5. В разделе **элементы управления доступом**, выберите следующие параметры:
 
@@ -346,7 +346,7 @@ ms.locfileid: "60356073"
 
    - **Требовать все выбранные элементы управления**   
  
-     ![Условный доступ](./media/app-protection-based-conditional-access/13.png)
+     ![условный доступ;](./media/app-protection-based-conditional-access/13.png)
 
 
 
@@ -354,7 +354,7 @@ ms.locfileid: "60356073"
 **Шаг 3. Настройка политики защиты приложений Intune для iOS и Android клиентских приложений**
 
 
-![Условный доступ](./media/app-protection-based-conditional-access/09.png)
+![условный доступ;](./media/app-protection-based-conditional-access/09.png)
 
 Дополнительные сведения см. в разделе [защита приложений и данных с помощью Microsoft Intune](https://docs.microsoft.com/intune-classic/deploy-use/protect-apps-and-data-with-microsoft-intune).
 
@@ -384,7 +384,7 @@ ms.locfileid: "60356073"
 
 **Примечания**
 
-- Этот сценарий можно использовать, если требуется поддерживать обе политики приложения условного доступа на основе защиты и на основе приложений.
+- Этот сценарий можно использовать, если требуется поддерживать политики условного доступа на основе защиты и на основе приложений оба приложения.
 - В этом *или* политики, приложения с требованием политики защиты приложения будут оцениваться для доступа, прежде чем требование утвержденного клиентского приложения.
 
 ### <a name="configuration"></a>Параметр Configuration
@@ -393,7 +393,7 @@ ms.locfileid: "60356073"
 
 Для политики условного доступа на этом шаге настройте следующие компоненты:
 
-![Условный доступ](./media/app-protection-based-conditional-access/62.png)
+![условный доступ;](./media/app-protection-based-conditional-access/62.png)
 
 1. Введите имя политики условного доступа.
 
@@ -401,17 +401,17 @@ ms.locfileid: "60356073"
 
 3. В **облачные приложения**выберите **Office 365 Exchange Online**. 
 
-     ![Условный доступ](./media/app-protection-based-conditional-access/02.png)
+     ![условный доступ;](./media/app-protection-based-conditional-access/02.png)
 
 4. В **условия**, Настройка **платформ устройств** и **клиентских приложений (Предварительная версия)** . 
  
     a. В **платформ устройств**выберите **Android** и **iOS**.
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/03.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/03.png)
 
     2\. В **клиентских приложений (Предварительная версия)** выберите **мобильные приложения и настольные клиенты** и **современных клиентах аутентификации**.
 
-    ![Условный доступ](./media/app-protection-based-conditional-access/91.png)
+    ![условный доступ;](./media/app-protection-based-conditional-access/91.png)
 
 5. В разделе **элементы управления доступом**, выберите следующие параметры:
 
@@ -421,13 +421,13 @@ ms.locfileid: "60356073"
 
    - **Требовать один из выбранных элементов управления**
  
-     ![Условный доступ](./media/app-protection-based-conditional-access/12.png)
+     ![условный доступ;](./media/app-protection-based-conditional-access/12.png)
 
 
 **Шаг 2. Настройка политики защиты приложений Intune для iOS и Android клиентских приложений**
 
 
-![Условный доступ](./media/app-protection-based-conditional-access/09.png)
+![условный доступ;](./media/app-protection-based-conditional-access/09.png)
 
 Дополнительные сведения см. в разделе [защита приложений и данных с помощью Microsoft Intune](https://docs.microsoft.com/intune-classic/deploy-use/protect-apps-and-data-with-microsoft-intune).
 
@@ -436,5 +436,5 @@ ms.locfileid: "60356073"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Чтобы узнать, как настроить политику условного доступа, см. статью [Краткое руководство. Требование многофакторной идентификации (MFA) для конкретных приложений с помощью условного доступа Azure Active Directory](app-based-mfa.md).
+- Если вы хотите знать, как настроить политику условного доступа, см. в разделе [требования MFA для конкретных приложений, с помощью Azure Active Directory условного доступа](app-based-mfa.md).
 - Если вы готовы к настройке политик условного доступа для своей среды, см. в разделе [советы и рекомендации для условного доступа в Azure Active Directory](best-practices.md). 

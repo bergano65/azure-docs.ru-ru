@@ -17,11 +17,11 @@ ms.date: 07/27/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 687012e73b4b0c869b491ac1c9ea128662b23510
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60391503"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64680872"
 ---
 # <a name="sap-hana-availability-within-one-azure-region"></a>Доступность SAP HANA в пределах одного региона Azure
 В этой статье представлены несколько сценариев доступности в пределах одного региона Azure. В Azure есть множество регионов, распределенных по всему миру. Список доступных регионов см. на странице с [регионами Azure](https://azure.microsoft.com/regions/). При развертывании SAP HANA на виртуальных машинах в пределах одного региона Azure корпорация Майкрософт предлагает развернуть одну виртуальную машину с экземпляром HANA. Для повышения уровня доступности можно развернуть две виртуальные машины с двумя экземплярами HANA в [группе доступности Azure](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-availability-sets), использующей репликацию системы HANA в целях обеспечения доступности. 

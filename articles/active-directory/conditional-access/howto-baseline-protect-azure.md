@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 00ed40bef3f3cbe59825f546ffa39c3ebfb2e41f
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 24b54a3645fe97903219841dd148c0942dfcda76
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66003181"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112383"
 ---
 # <a name="baseline-policy-require-mfa-for-service-management-preview"></a>Базовая политика: Требовать многофакторную Идентификацию для управления службами (Предварительная версия)
 
@@ -40,7 +40,7 @@ ms.locfileid: "66003181"
 Connect-AzAccount
 ```
 
-При запуске этот командлет представит строку токена. Чтобы войти, скопируйте эту строку и вставьте его в [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin) в браузере. Сеанс PowerShell пройдет аутентификацию для подключения к Azure.
+При запуске этот командлет представит строку токена. Чтобы войти, скопируйте эту строку и вставьте его в [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin)  в браузере. Сеанс PowerShell пройдет аутентификацию для подключения к Azure.
 
 Для выполнения интерактивного входа в систему с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest), запустите [az login](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest#az-login) команды.
 
@@ -73,15 +73,15 @@ az login
 
 1. Войдите в **портала Azure** как глобального администратора, администратора безопасности или администратора условного доступа.
 1. Перейдите к **Azure Active Directory** > **условного доступа**.
-1. В списке политик выберите **базовая политика: Требовать многофакторную Идентификацию для управления службами (Предварительная версия)**.
+1. В списке политик выберите **базовая политика: Требовать многофакторную Идентификацию для управления службами (Предварительная версия)** .
 1. Задайте **включить политику** для **использовать политику немедленно**.
 1. Добавьте любые исключения пользователей, щелкнув **пользователей** > **Выбор исключенных пользователей** и выбора пользователей, которые должны быть исключены. Нажмите кнопку **выберите** затем **сделать**.
 1. Нажмите кнопку **Сохранить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения можно найти в разделе
 
-* [Политики защиты базовых показателей для условного доступа](concept-baseline-protection.md)
+* [Политики защиты базовых показателей условного доступа](concept-baseline-protection.md)
 * [Пять шагов по защите инфраструктуры удостоверений](../../security/azure-ad-secure-steps.md)
-* [Что представляет собой условный доступ в Azure Active Directory?](overview.md)
+* [Что такое условный доступ в Azure Active Directory?](overview.md)

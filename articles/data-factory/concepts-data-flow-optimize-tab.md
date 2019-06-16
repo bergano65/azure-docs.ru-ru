@@ -1,20 +1,19 @@
 ---
 title: Вкладка оптимизации для сопоставления потоков данных Фабрики данных Azure
-description: Оптимизация сопоставления для потоков данных Фабрики данных Azure и параметры секционирования на вкладке оптимизации
+description: Оптимизировать Azure фабрики сопоставление данных потоки данных с помощью вкладки оптимизировать параметры секции
 author: kromerm
 ms.author: makromer
-ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/31/2019
-ms.openlocfilehash: 3802a8475d8a39a2f275dbc7fcf21ce69892a117
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 372922fff600aaa12fddfeeb86ff4522eca3e602
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61262294"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67075101"
 ---
-# <a name="mapping-data-flow-transformation-optimize-tab"></a>Вкладка оптимизации сопоставления для потоков данных
+# <a name="mapping-data-flow-transformation-optimize-tab"></a>Сопоставление данных преобразование потока оптимизировать вкладку
 
 [!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
 
@@ -32,7 +31,7 @@ ms.locfileid: "61262294"
 
 <img src="media/data-flow/opt002.png" width="600">
 
-### <a name="round-robin"></a>Циклический перебор
+### <a name="round-robin"></a>Циклический перебор,
 
 Циклический перебор — это простой вариант секционирования, который автоматически равномерно распределяет данные по секциям. Циклический перебор можно использовать, если у вас нет хороших вариантов для реализации надежной и интеллектуальной стратегии секционирования. Вы можете задать количество физических секций.
 
@@ -51,3 +50,8 @@ ms.locfileid: "61262294"
 ### <a name="key"></a>Ключ
 
 Если вы хорошо понимаете кратность ваших данных, хорошим вариантом может служить секционирование по ключу. При секционировании по ключу создаются секции для каждого уникального значения в столбце. Вы не можете задать число секций, так как оно будет зависеть от количества уникальных значений в данных.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+[Руководство по настройке производительности потока данных сопоставления](concepts-data-flow-performance.md)
+[потока данных мониторинга](concepts-data-flow-monitoring.md)

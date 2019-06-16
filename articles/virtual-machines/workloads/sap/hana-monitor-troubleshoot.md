@@ -15,10 +15,10 @@ ms.date: 09/10/2018
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 15b3fb4ae483e5b0e4f930d0dc08de6d198d0e5f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61128969"
 ---
 # <a name="monitoring-and-troubleshooting-from-hana-side"></a>Мониторинг и устранение неполадок со стороны HANA
@@ -94,10 +94,10 @@ ms.locfileid: "61128969"
 См. примечание [SAP Note #2081065 – Troubleshooting SAP HANA Network](https://launchpad.support.sap.com/#/notes/2081065) (Примечание SAP № 2081065. Устранение неполадок сети SAP HANA) и выполните действия по устранению неполадок сети, приведенные в этом примечании SAP.
 
 1. Анализ времени кругового пути между сервером и клиентом.
-  О. Запустите скрипт SQL [ _HANA\_Network\_Clients_](https://launchpad.support.sap.com/#/notes/1969700)_._
+  О. Запустите скрипт SQL [ _HANA\_Network\_Clients_](https://launchpad.support.sap.com/#/notes/1969700) _._
   
 2. Выполните анализ обмена данными между узлами.
-  О. Запустите скрипт SQL [ _HANA\_Network\_Services_](https://launchpad.support.sap.com/#/notes/1969700)_._
+  О. Запустите скрипт SQL [ _HANA\_Network\_Services_](https://launchpad.support.sap.com/#/notes/1969700) _._
 
 3. Выполните команду Linux **ifconfig** (в выходных данных показано, есть ли какие-либо потери пакетов).
 4. Выполните команду Linux **tcpdump**.

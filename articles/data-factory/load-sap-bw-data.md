@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: jingwang
 ms.openlocfilehash: 4cd61db3ec0e8d88c9b1c6d6ba427b120b3f1af1
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66152421"
 ---
 # <a name="copy-data-from-sap-business-warehouse-by-using-azure-data-factory"></a>Копирование данных из SAP Business Warehouse с помощью фабрики данных Azure
@@ -29,7 +29,7 @@ ms.locfileid: "66152421"
 
 - **Фабрика данных Azure**: Если у вас ее нет, выполните действия, чтобы [создать фабрику данных](quickstart-create-data-factory-portal.md#create-a-data-factory).
 
-- **SAP BW откройте концентратор назначения (OHD) с целевой тип «В таблице базы данных»**: Для создания OHD или проверить правильность настройки вашего OHD для интеграции фабрики данных, см. в разделе [конфигураций SAP BW открыть назначение концентратора](#sap-bw-open-hub-destination-configurations) этой статьи.
+- **SAP BW откройте концентратор назначения (OHD) с целевой тип «В таблице базы данных»** : Для создания OHD или проверить правильность настройки вашего OHD для интеграции фабрики данных, см. в разделе [конфигураций SAP BW открыть назначение концентратора](#sap-bw-open-hub-destination-configurations) этой статьи.
 
 - **Пользователь SAP BW необходимы следующие разрешения**:
 

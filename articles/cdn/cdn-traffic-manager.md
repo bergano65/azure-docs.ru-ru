@@ -16,10 +16,10 @@ ms.date: 03/18/2019
 ms.author: magattus
 ms.custom: ''
 ms.openlocfilehash: 956df17c821b86d95b1d87c3c8d8197bab7a95be
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65955270"
 ---
 # <a name="set-up-failover-across-multiple-azure-cdn-endpoints-with-azure-traffic-manager"></a>Настройка отработки отказа между несколькими конечными точками Azure CDN при помощи диспетчера трафика Azure
@@ -62,13 +62,13 @@ ms.locfileid: "65955270"
 
     a. Для первой записи CNAME подключите к конечной точке CDN пользовательский домен с поддоменом cdnverify. Эта запись нужна для регистрации пользовательского домена в конечной точке CDN, которая была добавлена в диспетчер трафика Azure в шаге 2.
 
-      Например: 
+      Пример: 
 
       `cdnverify.cdndemo101.dustydogpetcare.online  CNAME  cdnverify.cdndemo101akamai.azureedge.net`  
 
-    2. Для второй записи CNAME подключите к конечной точке CDN пользовательский домен без поддомена cdnverify. Эта запись подключает пользовательский домен к диспетчеру трафика Azure. 
+    2\. Для второй записи CNAME подключите к конечной точке CDN пользовательский домен без поддомена cdnverify. Эта запись подключает пользовательский домен к диспетчеру трафика Azure. 
 
-      Например: 
+      Пример: 
       
       `cdndemo101.dustydogpetcare.online  CNAME  cdndemo101.trafficmanager.net`   
 
@@ -87,7 +87,7 @@ ms.locfileid: "65955270"
 
 3.  Вернитесь на веб-сайт поставщика домена для своего личного домена и обновите первое созданное сопоставление DNS, чтобы пользовательский домен был подключён ко второй конечной точке CDN.
                              
-    Например: 
+    Пример: 
 
     `cdnverify.cdndemo101.dustydogpetcare.online  CNAME  cdnverify.cdndemo101verizon.azureedge.net`  
 

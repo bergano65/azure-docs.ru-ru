@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 05/15/2019
-ms.openlocfilehash: 0b158a1d713e0de8f3d1b2672aed442fce66e724
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: be07e0f3438ea93312d4eb440e7e63b8f98e11b8
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65917165"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67077378"
 ---
 # <a name="what-is-the-visual-interface-for-azure-machine-learning-service"></a>Что такое визуального интерфейса для службы машинного обучения Azure? 
 
@@ -27,12 +27,12 @@ ms.locfileid: "65917165"
 + Запись артефакты [поэкспериментировать](#experiment) выполняется в рабочую область.
 + Доступ [наборы данных](#dataset).
 + Используйте [вычислительные ресурсы](#compute) в рабочей области, чтобы запустить эксперимент. 
-+ Зарегистрировать [моделей](concept-azure-machine-learning-architecture.md#model).
++ Зарегистрировать [моделей](concept-azure-machine-learning-architecture.md#models).
 + [Развертывание](#deployment) модели как веб-служб на вычислительные ресурсы в рабочей области.
 
 ![Обзор visual интерфейса](media/ui-concept-visual-interface/overview.png)
 
-## <a name="workflow"></a>Документооборот
+## <a name="workflow"></a>Рабочий процесс
 
 Визуальный интерфейс дает visual, интерактивные холст, чтобы быстро создавать, тестировать и выполнять итерацию модели. 
 
@@ -58,11 +58,11 @@ ms.locfileid: "65917165"
 
 Подробное пошаговое руководство по решения для прогнозной аналитики, см. в разделе [руководства: Прогнозирования стоимости автомобиля в визуальный интерфейс](ui-tutorial-automobile-price-train-score.md).
 
-## <a name="dataset"></a>Набор данных
+## <a name="dataset"></a>Выборка
 
 Набор данных — данные, которые будут переданы визуальный интерфейс для использования в процессе моделирования. Несколько примеров наборов данных, можно поэкспериментировать с и отправлять дополнительные наборы данных по мере необходимости.
 
-## <a name="module"></a>Модуль
+## <a name="module"></a>модуль
 
 Модуль — это алгоритм, который можно выполнять с данными. Визуальный интерфейс имеет ряд модулей, начиная с функций ввода данных для обучения, оценки и процессы проверки.
 

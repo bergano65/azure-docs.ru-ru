@@ -11,12 +11,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/17/2019
 ms.author: joelpell
-ms.openlocfilehash: f84e81a5a9e9c9cf6f477adefa0869d776f7dd71
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ec6a6ea5d00d43f6dffa3aabc367d94ebb8db198
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61487347"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67075608"
 ---
 # <a name="optimize-performance-on-the-lsv2-series-virtual-machines"></a>Оптимизация производительности на виртуальных машинах серии Lsv2
 
@@ -24,7 +24,7 @@ ms.locfileid: "61487347"
 
 Структура Lsv2 серии виртуальных машин (ВМ) максимально увеличивает процессора AMD EPYC 7551™, чтобы предоставить оптимальной между процессора, памяти, устройства NVMe и виртуальные машины. Помимо увеличения производительности оборудования, виртуальные машины серии Lsv2 предназначены для работы с учетом потребностей операционных систем Windows и Linux для повышения производительности с оборудования и программного обеспечения.
 
-Помощник по настройке программного обеспечения и оборудования привел к оптимизированной версии [Windows Server 2019 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.WindowsServer?tab=Overview), выпущенном в начале декабря 2018 года в Azure Marketplace, который поддерживает максимальную производительность на устройства NVMe в серии Lsv2 Виртуальные машины.
+Помощник по настройке программного обеспечения и оборудования привел к оптимизированной версии [Windows Server 2019 Datacenter](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsserver.windowsserver?tab=Overview), выпущенном в начале декабря 2018 года в Azure Marketplace, который поддерживает максимальную производительность на устройства NVMe в серии Lsv2 Виртуальные машины.
 
 В этой статье содержатся советы и рекомендации для обеспечения рабочих нагрузок и приложений достижения максимальной производительности, разработанные в виртуальные машины. Сведения на этой странице будет постоянно обновляться по мере добавляются другие Lsv2 оптимизированные образы Azure Marketplace.
 

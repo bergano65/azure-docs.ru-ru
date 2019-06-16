@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/26/2018
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: e10717b0fe14d2ed6ee720a2414e753bdd2474f1
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 77bbb333157f5c8cec9fa87e5f76fa4ae2678058
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64708889"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67070612"
 ---
 # <a name="analyze-twitter-data-using-apache-hive-and-apache-hadoop-on-hdinsight"></a>Анализ данных Twitter с помощью Apache Hive и Apache Hadoop в HDInsight
 
@@ -21,8 +21,6 @@ ms.locfileid: "64708889"
 
 > [!IMPORTANT]  
 > Действия, описанные в этом документе, были протестированы в HDInsight 3.6.
->
-> Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
 ## <a name="get-the-data"></a>Получение данных
 
@@ -36,10 +34,10 @@ Twitter позволяет получать данные для каждого �
 
 3. Введите **Имя**, **Описание**, **Веб-сайт**. В поле **Веб-сайт** можно использовать URL-адрес. В следующей таблице приведены некоторые примеры значений:
 
-   | Поле | Value |
+   | Поле | Значение |
    |:--- |:--- |
-   | ИМЯ |MyHDInsightApp |
-   | ОПИСАНИЕ |MyHDInsightApp |
+   | Name |MyHDInsightApp |
+   | Описание |MyHDInsightApp |
    | Веб-сайт |https:\//www.myhdinsightapp.com |
 
 4. Установите флажок **Я принимаю** и нажмите кнопку **Создать приложение Twitter**.

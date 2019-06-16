@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.date: 2/7/2019
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: 1f29a12090ca37f25ea6f5f11e870df924b334f5
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.openlocfilehash: d7c8c8e6931c3e677273fab17755031527aff978
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66497126"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67069371"
 ---
 # <a name="unified-alerting--monitoring-in-azure-monitor-replaces-classic-alerting--monitoring"></a>Унифицированные оповещения и мониторинг в Azure Monitor заменяют классические оповещения и мониторинг
 
 Azure Monitor стала единой службой мониторинга полного стека, которая теперь поддерживает единую метрику и единые оповещения в ресурсах. Дополнительные сведения см. в записях блога [о новой службе Azure Monitor](https://azure.microsoft.com/blog/new-full-stack-monitoring-capabilities-in-azure-monitor/). Новые платформы мониторинга и оповещений Azure работают быстрее, интеллектуальнее и обладают возможностью расширения в соответствии с растущим объемом облачных вычислений и философией интеллектуального облака Майкрософт. 
 
-С помощью нового Azure мониторинга и оповещений платформы на месте, мы прекратит работу мониторинга и оповещений платформа - в «классической» *просмотреть классические оповещения* раздел оповещений Azure, **будет считаться нерекомендуемой с 2019 августа в Azure общедоступный облаков**. [Облако Azure для государственных организаций](../../azure-government/documentation-government-welcome.md) останется прежним.
+С помощью нового Azure мониторинга и оповещений платформы на месте, мы прекратит работу мониторинга и оповещений платформа - в «классической» *просмотреть классические оповещения* раздел оповещений Azure, **будет считаться нерекомендуемой с 2019 августа в Azure общедоступный облаков**. [Облако Azure для государственных организаций](../../azure-government/documentation-government-welcome.md) и [Китая](https://docs.azure.cn/) не будут затронуты.
 
 > [!NOTE]
 > Даты прекращения использования для переноса классических оповещений было из-за задержки в развертывание средства миграции [расширить до 31 августа 2019](https://azure.microsoft.com/updates/azure-monitor-classic-alerts-retirement-date-extended-to-august-31st-2019/) с изначально было объявлено даты 30 июня 2019 г.

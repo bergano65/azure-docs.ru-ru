@@ -1,6 +1,6 @@
 ---
 title: 'Проектирование гибридных удостоверений: стратегия внедрения в Azure | Документация Майкрософт'
-description: С условным контролем доступа при проверке подлинности пользователя и перед предоставлением ему доступа к приложению Azure Active Directory проверяет определенные условия, которые вы можете выбрать. Если эти условия выполняются, пользователь проходит проверку подлинности, и ему дается доступ к приложению.
+description: Используя управление условным доступом Azure Active Directory проверяет определенные условия, которые вы можете выбрать при проверке подлинности пользователя и перед предоставлением ему доступа к приложению. Если эти условия выполняются, пользователь проходит проверку подлинности, и ему дается доступ к приложению.
 documentationcenter: ''
 services: active-directory
 author: billmath
@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c55dc0cbc175542d0b208bbe72566a0adb55a371
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.openlocfilehash: e662d2c6d7939756dee6eb25ca62fef171b7d6d0
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66496739"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67109335"
 ---
 # <a name="define-a-hybrid-identity-adoption-strategy"></a>Определение стратегии внедрения гибридной идентификации
 В этой статье вы определяете стратегию внедрения гибридной идентификации для гибридных решений идентификации, которая соответствует бизнес-требованиям, выработанным вами с помощью таких статей:

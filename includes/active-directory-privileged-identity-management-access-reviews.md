@@ -9,10 +9,10 @@ ms.date: 04/29/2019
 ms.author: rolyon
 ms.custom: include file
 ms.openlocfilehash: 364d4a11772e6bb72e2e258503f3cce49dc61453
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66112260"
 ---
 ## <a name="create-one-or-more-access-reviews"></a>Создайте один или несколько проверок доступа
@@ -53,7 +53,7 @@ ms.locfileid: "66112260"
     - **Выбранных пользователей** -используйте этот параметр, если вы не знаете, кому нужен доступ. С помощью этого параметра можно назначить выполнение проверки владельцу ресурса или руководителю группы.
     - **Участники (самостоятельные)** -используйте этот параметр, чтобы просмотреть свои собственные назначения ролей пользователи.
 
-### <a name="upon-completion-settings"></a>После заполнения параметров
+### <a name="upon-completion-settings"></a>Настройки после завершения
 
 1. Чтобы указать, что происходит после завершения проверки, разверните раздел **Настройки после завершения**.
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/26/2018
 ms.author: malop;kumud
-ms.openlocfilehash: 751a3a940dad74cbc8c7343ee70309736b381d5b
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: ee976f163bdb00511e2a8f85906aa59aaebbfa47
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66478866"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67056539"
 ---
 # <a name="security-groups"></a>Группы безопасности
 <a name="network-security-groups"></a>
@@ -81,6 +81,7 @@ ms.locfileid: "66478866"
 * **ServiceFabric** (только для развертываний с помощью Resource Manager). Этот тег определяет префиксы адресов для службы ServiceFabric. Значение *ServiceFabric* отвечает за разрешение или запрет трафика в службе ServiceFabric. 
 * **AzureMachineLearning** (только для Resource Manager). Этот тег определяет префиксы адресов для службы AzureMachineLearning. Значение *AzureMachineLearning* отвечает за разрешение или запрет трафика в службе AzureMachineLearning. 
 * **BatchNodeManagement** (только для Resource Manager): Этот тег определяет префиксы адресов службы Azure BatchNodeManagement. Если указать *BatchNodeManagement* для значения, трафик разрешен или запрещен из пакетной службы на вычислительных узлах.
+* **AzureBackup**(только для Resource Manager): этот тег определяет префиксы адресов службы AzureBackup. Если указано значение AzureBackup, трафик разрешен или запрещен для AzureBackup.
 
 > [!NOTE]
 > Теги службы для служб Azure обозначают используемые префиксы адресов из определенного облака. 

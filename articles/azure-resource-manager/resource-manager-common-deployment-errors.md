@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 02/15/2019
 ms.author: tomfitz
 ms.openlocfilehash: f6ebeb1d9953311ad1cb85d8ab33c83d5e92d687
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66128556"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager | Microsoft Azure
@@ -63,7 +63,7 @@ ms.locfileid: "66128556"
 | MissingRegistrationForLocation | Проверьте состояние регистрации поставщика ресурсов и поддерживаемые расположения. | [Устранение ошибок регистрации](resource-manager-register-provider-errors.md) |
 | MissingSubscriptionRegistration | Зарегистрируйте подписку в поставщике ресурсов. | [Устранение ошибок регистрации](resource-manager-register-provider-errors.md) |
 | NoRegisteredProviderFound | Проверьте состояние регистрации поставщика ресурсов. | [Устранение ошибок регистрации](resource-manager-register-provider-errors.md) |
-| Не найдено | Возможно, вы пытаетесь развернуть зависимый ресурс параллельно с родительским ресурсом. Проверьте, не нужно ли добавить зависимость. | [Устранение ошибок, связанных с зависимостями](resource-manager-not-found-errors.md) |
+| NotFound | Возможно, вы пытаетесь развернуть зависимый ресурс параллельно с родительским ресурсом. Проверьте, не нужно ли добавить зависимость. | [Устранение ошибок, связанных с зависимостями](resource-manager-not-found-errors.md) |
 | OperationNotAllowed | Развертывание пытается выполнить операцию, которая превышает квоту для подписки, группы ресурсов или региона. Если это возможно, измените развертывание, чтобы не превышать квоты. В противном случае запросите изменение квот. | [Устранение ошибок квот ресурсов](resource-manager-quota-errors.md) |
 | ParentResourceNotFound | Убедитесь, что имеется родительский ресурс, прежде чем создавать дочерние ресурсы. | [Устранение ошибок, связанных с родительскими ресурсами](resource-manager-parent-resource-errors.md) |
 | PasswordTooLong | Возможно, выбран пароль, в котором слишком много знаков, или вы преобразовали значение пароля в защищенную строку перед его передачей в качестве параметра. Если шаблон содержит параметр **защищенной строки**, не нужно преобразовывать значение в защищенную строку. Укажите значение пароля в виде текста. |  |

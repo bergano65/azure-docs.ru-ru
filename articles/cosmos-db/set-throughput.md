@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: rimman
-ms.openlocfilehash: f30155c0fbdbdd93ab4ffc3ae85ef2ad62b188c9
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: ce059e542ee7bfa67e899b4923e3410e13e4930e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66389252"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67067507"
 ---
 # <a name="provision-throughput-on-containers-and-databases"></a>Обеспечение необходимой пропускной способности для контейнеров и баз данных
 
@@ -87,7 +87,7 @@ ms.locfileid: "66389252"
 
 При использовании пакета SDK для .NET, [DocumentClient.ReadOfferAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.readofferasync?view=azure-dotnet) метод позволяет получить минимальное значение пропускной способности контейнера или базу данных. 
 
-Вы можете масштабировать подготовленной пропускной способности контейнера или базу данных в любое время. 
+Вы можете масштабировать подготовленной пропускной способности контейнера или базу данных в любое время. Когда выполняется масштабирование для увеличения пропускной способности, может занять больше времени из-за системных задач для подготовки необходимых ресурсов. Вы можете проверить состояние операции масштабирования на портале Azure либо программно с помощью пакетов SDK. При использовании пакета SDK для .net, можно получить состояние операции масштабирования с помощью `DocumentClient.ReadOfferAsync` метод.
 
 ## <a name="comparison-of-models"></a>Сравнение моделей
 

@@ -7,15 +7,15 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
-ms.topic: article
+ms.topic: tutorial
 ms.date: 05/08/2019
 ms.author: aahi
-ms.openlocfilehash: a5790b5412023f06d9f9fd1d2ff61c11db4c53f3
-ms.sourcegitcommit: f9448a4d87226362a02b14d88290ad6b1aea9d82
+ms.openlocfilehash: 7009771f2b647bb582b3d8091edce99fe901a9f1
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66807476"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67080786"
 ---
 # <a name="tutorial-anomaly-detection-on-streaming-data-using-azure-databricks"></a>Руководство по Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks
 
@@ -74,7 +74,7 @@ ms.locfileid: "66807476"
     |**Имя рабочей области**     | Укажите имя рабочей области Databricks.        |
     |**Подписка**     | Выберите подписку Azure в раскрывающемся списке.        |
     |**Группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../../../azure-resource-manager/resource-group-overview.md). |
-    |**Местоположение.**     | Выберите **восточная часть США 2** или один из доступных регионов. См. в разделе [служб Azure, доступных по регионам](https://azure.microsoft.com/regions/services/) для доступность по регионам.        |
+    |**Location**     | Выберите **восточная часть США 2** или один из доступных регионов. См. в разделе [служб Azure, доступных по регионам](https://azure.microsoft.com/regions/services/) для доступность по регионам.        |
     |**Ценовая категория**     |  Вы можете выбрать уровень **Стандартный** или **Премиум**. НЕ выбирайте **пробная версия**. Дополнительные сведения об этих ценовых категориях см. на [странице цен на Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
 
     Нажмите кнопку **Создать**.
@@ -162,9 +162,9 @@ ms.locfileid: "66807476"
 
 4. В диалоговом окне **Создать** введите следующие значения.
 
-    |Value |Описание  |
+    |Значение |Описание  |
     |---------|---------|
-    |ИМЯ     | Имя ресурса обнаружения аномалий.        |
+    |Name     | Имя ресурса обнаружения аномалий.        |
     |Подписка     | Подписки Azure ресурс будет связан.        |
     |Расположение     | Расположение Azure.        |
     |Ценовая категория     | Ценовую категорию для службы. Дополнительные сведения о ценах обнаружения аномалий, см. в разделе [странице с ценами](https://azure.microsoft.com/pricing/details/cognitive-services/anomaly-detector/).        |
@@ -670,22 +670,22 @@ adResult.show()
 +--------------------+-------+
 |2019-04-16T00:00:00Z|  false|
 +--------------------+-------+
+```
 
+Вот и все! С помощью Azure Databricks, успешно выполнили потоковую передачу данных в концентраторы событий Azure, использовали данные потока, используя соединитель концентраторов событий и затем запустите обнаружение аномалий для потоковой передачи данных практически в реальном времени.
+Несмотря на то что в этом руководстве гранулярность каждый час, всегда можно изменить степень детализации для удовлетворения потребности. 
 
-That's it! Using Azure Databricks, you have successfully streamed data into Azure Event Hubs, consumed the stream data using the Event Hubs connector, and then run anomaly detection on streaming data in near real time.
-Although in this tutorial, the granularity is hourly, you can always change the granularity to meet your need. 
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
-## Clean up resources
+После выполнения заданий из этого руководства вы можете завершить работу кластера. Чтобы сделать это, в рабочей области Azure Databricks, выберите **кластеров** в левой области. Для кластера, необходимо завершить, переместите указатель мыши на многоточие в **действия** столбец и выберите **Terminate** значок и выберите **Подтверждение**.
 
-After you have finished running the tutorial, you can terminate the cluster. To do so, in the Azure Databricks workspace, select **Clusters** from the left pane. For the cluster you want to terminate, move the cursor over the ellipsis under **Actions** column, and select the **Terminate** icon and then select **Confirm**.
+![Завершение работы кластера Databricks](../media/tutorials/terminate-databricks-cluster.png "Stop a Databricks cluster")
 
-![Stop a Databricks cluster](../media/tutorials/terminate-databricks-cluster.png "Stop a Databricks cluster")
+Если вы не завершить работу вручную кластера автоматически останавливаются, предоставляемые выбран **завершают работу после \_ \_ минут бездействия** флажок при создании кластера. В этом случае работа кластера должна завершиться автоматически, если кластер был неактивным в течение определенного времени.
 
-If you don't manually terminate the cluster it will automatically stop, provided you selected the **Terminate after \_\_ minutes of inactivity** checkbox while creating the cluster. In such a case, the cluster will automatically stop if it has been inactive for the specified time.
+## <a name="next-steps"></a>Дальнейшие действия
 
-## Next steps
-
-In this tutorial, you learned how to use Azure Databricks to stream data into Azure Event Hubs and then read the streaming data from Event Hubs in real time. Advance to the next tutorial to learn how to call the Anomaly Detector API and visualize anomalies using Power BI desktop. 
+В этом руководстве вы узнали, как с помощью Azure Databricks выполнить потоковую передачу данных в Центры событий Azure с последующим чтением данных потоковой передачи из Центров событий в реальном времени. Перейдите к следующему руководству, чтобы узнать, как для вызова API обнаружения аномалий и визуализировать аномалии, с помощью Power BI desktop. 
 
 > [!div class="nextstepaction"]
->[Batch anomaly detection with Power BI desktop](batch-anomaly-detection-powerbi.md)
+>[Обнаружение аномалий пакетной службы с помощью Power BI desktop](batch-anomaly-detection-powerbi.md)

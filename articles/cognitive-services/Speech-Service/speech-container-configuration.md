@@ -3,19 +3,19 @@ title: Настройка контейнеров речи
 titleSuffix: Azure Cognitive Services
 description: Контейнер речи
 services: cognitive-services
-author: diberry
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 05/15/2019
-ms.author: diberry
-ms.openlocfilehash: e2ed29bb61f553f68b9f9802884169361d5d983f
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.date: 06/11/2019
+ms.author: dapine
+ms.openlocfilehash: 2dd1769d2d0a940176fb51954f44859cb42f30d9
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65797929"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072439"
 ---
 # <a name="configure-speech-service-containers"></a>Настройка контейнеров службы распознавания речи
 
@@ -50,9 +50,9 @@ ms.locfileid: "65797929"
 
 * Портал Azure: **В речи** Обзор, с меткой `Endpoint`
 
-|Обязательно для заполнения| ИМЯ | Тип данных | Описание |
+|Обязательно для заполнения| Name | Тип данных | Описание |
 |--|------|-----------|-------------|
-|Да| `Billing` | Строка | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/sts/v1.0` |
+|Да| `Billing` | String | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/sts/v1.0` |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -80,8 +80,8 @@ ms.locfileid: "65797929"
 
 |Необязательно| ИМЯ | Тип данных | Описание |
 |-------|------|-----------|-------------|
-|Не разрешено| `Input` | Строка | Контейнеры речи не следует использовать.|
-|Необязательно| `Output` | Строка | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Не разрешено| `Input` | String | Контейнеры речи не следует использовать.|
+|Необязательно| `Output` | String | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 
@@ -92,7 +92,7 @@ ms.locfileid: "65797929"
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
-| Местозаполнитель | Value | Формат или пример |
+| Placeholder | Значение | Формат или пример |
 |-------------|-------|---|
 |{BILLING_KEY} | Ключ конечной точки ресурса речи. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
 |{BILLING_ENDPOINT_URI} | Количество выставленных счетов за конечную точку, включая регион.|`https://westus.api.cognitive.microsoft.com/sts/v1.0`|

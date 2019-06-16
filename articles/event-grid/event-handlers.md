@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 01/21/2019
 ms.author: spelluru
-ms.openlocfilehash: 915d1284d66438219fc9aba893512e5f6a5b02b3
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 6093e1017af2fb8c54eaf1c3192f937172567982
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66305050"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67080555"
 ---
 # <a name="event-handlers-in-azure-event-grid"></a>Обработчики событий в службе "Сетка событий Azure"
 
@@ -78,9 +78,45 @@ ms.locfileid: "66305050"
 
 Обратите внимание, что при служебной шины как обработчик находится в общедоступной предварительной версии, необходимо установить расширение CLI или PowerShell при использовании их для создания подписки на события.
 
-### <a name="using-cli"></a>Использование синтаксиса командной строки
+### <a name="install-extension-for-azure-cli"></a>Установка расширения для Azure CLI
 
-Для интерфейса командной строки Azure, в следующем примере выполняется подписка подключается и разделе сетки событий в очередь служебной шины:
+Для Azure CLI вам потребуется [расширение Сетки событий](/cli/azure/azure-cli-extensions-list).
+
+В [CloudShell](/azure/cloud-shell/quickstart):
+
+* Если вы ранее установили расширения, поместите в него `az extension update -n eventgrid`.
+* Если вы еще не установили расширение ранее, установите его с помощью `az extension add -n eventgrid`.
+
+При локальной установке:
+
+1. [Установка Azure CLI](/cli/azure/install-azure-cli). Убедитесь, что у вас есть последняя версия, путем проверки с `az --version`.
+1. Удалите предыдущие версии расширения с помощью `az extension remove -n eventgrid`.
+1. Установка `eventgrid` расширение с `az extension add -n eventgrid`.
+
+### <a name="install-module-for-powershell"></a>Установка модуля для PowerShell
+
+Для PowerShell вам потребуется [модуль AzureRM.EventGrid](https://www.powershellgallery.com/packages/AzureRM.EventGrid/0.4.1-preview).
+
+В [CloudShell](/azure/cloud-shell/quickstart-powershell):
+
+* Установка модуля с `Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery`.
+
+При локальной установке:
+
+1. Откройте консоль PowerShell от имени администратора.
+1. Установка модуля с `Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery`.
+
+Если параметр `-AllowPrerelease` недоступен, выполните следующие действия:
+
+1. Запустите `Install-Module PowerShellGet -Force`.
+1. Запустите `Update-Module PowerShellGet`.
+1. Закройте консоль PowerShell.
+1. Перезапустите PowerShell от имени администратора.
+1. Установите модуль `Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery`.
+
+### <a name="using-cli-to-add-a-service-bus-handler"></a>С помощью интерфейса командной строки для добавления обработчика служебной шины
+
+Для интерфейса командной строки Azure в следующем примере подписывается и подключается к разделу "Сетка событий" в очередь служебной шины:
 
 ```azurecli-interactive
 # If you haven't already installed the extension, do it now.

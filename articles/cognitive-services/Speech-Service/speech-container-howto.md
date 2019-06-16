@@ -3,19 +3,19 @@ title: Установить контейнеры речи
 titleSuffix: Azure Cognitive Services
 description: Установите и запустите контейнеры речи. Преобразование речи в текст позволяет расшифровывать аудиопотоки в режиме реального времени и сохранять их в текстовом формате, который ваши приложения, инструменты или устройства могут использовать или отображать. Преобразование текста в речь преобразует вводимый текст в синтезированную речь, похожую на человеческую.
 services: cognitive-services
-author: diberry
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 05/28/2019
-ms.author: diberry
-ms.openlocfilehash: 763e7bc9298eee1ab602968360bbc79a58243e5b
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.date: 06/11/2019
+ms.author: dapine
+ms.openlocfilehash: 93ae5dd00a7be929f7aa4ac8c35a30b856f0b3ad
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66752441"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072470"
 ---
 # <a name="install-and-run-speech-service-containers"></a>Установка и запуск контейнеров службы распознавания речи
 
@@ -23,7 +23,7 @@ ms.locfileid: "66752441"
 
 Контейнеры два речи — **речи в текст** и **преобразования текста в речь**. 
 
-|Функция|Функции|Последние версии|
+|Функция|Функции|Последние|
 |-|-|--|
 |Преобразование речи в текст| <li>Расшифровывает непрерывной в режиме реального времени речи или пакета, аудиозаписи в текст с промежуточными результатами.|1.1.1|
 |Преобразование текста в речь| <li>Преобразует текст в естественно звучащую речь. с помощью ввода обычного текста или языка разметки синтеза речи (SSML). |1.1.0|
@@ -71,14 +71,13 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 * Частота каждого ядра должна быть минимум 2,6 ГГц.
 
-
 Ядро и память соответствуют параметрам `--cpus` и `--memory`, которые используются как часть команды `docker run`.
 
 **Примечание**; Минимальные и рекомендуемые основаны на ограничения Docker *не* ресурсов компьютера, узел. Например, контейнеры речи в текст частей карты памяти больших языковая модель и он является _рекомендуется_ что весь файл помещается в памяти, который является Дополнительно 4 – 6 ГБ. Кроме того время первого выполнения, либо контейнера может занять больше времени, так как модели страниц в памяти.
 
 ## <a name="get-the-container-image-with-docker-pull"></a>Получение образа контейнера с помощью `docker pull`
 
-Доступны образы контейнеров для распознавания речи. 
+Доступны образы контейнеров для распознавания речи.
 
 | Контейнер | Репозиторий |
 |-----------|------------|
@@ -89,7 +88,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 ### <a name="language-locale-is-in-container-tag"></a>Языковой стандарт — в теге контейнера
 
-`latest` Тег переносит `en-us` языкового стандарта и `jessarus` голоса. 
+`latest` Тег переносит `en-us` языкового стандарта и `jessarus` голоса.
 
 #### <a name="speech-to-text-locales"></a>Преобразование речи в текст языковых стандартов
 
@@ -118,7 +117,6 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 |Корейский|`ko-kr`|
 |Португальский|`pt-br`|
 |Испанский|`es-es`<br>`es-mx`|
-
 
 #### <a name="text-to-speech-locales"></a>Языковые стандарты преобразования текста в речь
 
@@ -171,8 +169,8 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-spe
 
 После размещения контейнера на [главном компьютере](#the-host-computer) воспользуйтесь следующей процедурой для работы с ним.
 
-1. [Запустите контейнер](#run-the-container-with-docker-run) с необходимыми, но не используемыми настройками выставления счетов. Доступны дополнительные [примеры](speech-container-configuration.md#example-docker-run-commands) команды `docker run`. 
-1. [Запрос конечной точки прогнозирования контейнера](#query-the-containers-prediction-endpoint). 
+1. [Запустите контейнер](#run-the-container-with-docker-run) с необходимыми, но не используемыми настройками выставления счетов. Доступны дополнительные [примеры](speech-container-configuration.md#example-docker-run-commands) команды `docker run`.
+1. [Запрос конечной точки прогнозирования контейнера](#query-the-containers-prediction-endpoint).
 
 ## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью команды `docker run`
 
@@ -180,7 +178,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-spe
 
 **На этапе предварительной версии**, выставления счетов параметров должен быть допустимым для запуска контейнера, но не будет выставлен счет за использование.
 
-| Placeholder | Value |
+| Placeholder | Значение |
 |-------------|-------|
 |{BILLING_KEY} | Этот ключ используется для запуска контейнера, а также доступны на странице ключей речи на портале Azure.  |
 |{BILLING_ENDPOINT_URI} | Выставления счетов значение URI конечная точка доступна на странице обзора речи на портале Azure.|
@@ -194,7 +192,7 @@ docker run --rm -it -p 5000:5000 --memory 2g --cpus 1 \
 containerpreview.azurecr.io/microsoft/cognitive-services-text-to-speech \
 Eula=accept \
 Billing={BILLING_ENDPOINT_URI} \
-ApiKey={BILLING_KEY} 
+ApiKey={BILLING_KEY}
 ```
 
 ### <a name="speech-to-text"></a>Преобразование речи в текст
@@ -204,7 +202,7 @@ docker run --rm -it -p 5000:5000 --memory 2g --cpus 2 \
 containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text \
 Eula=accept \
 Billing={BILLING_ENDPOINT_URI} \
-ApiKey={BILLING_KEY} 
+ApiKey={BILLING_KEY}
 ```
 
 Эта команда:
@@ -212,7 +210,7 @@ ApiKey={BILLING_KEY}
 * Запускает контейнер речи из образа контейнера
 * Выделяет 2 ядер ЦП и 2 гигабайта (ГБ) памяти
 * предоставляет TCP-порт 5000 и выделяет псевдотелетайп для контейнера;
-* автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере. 
+* автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере.
 
 > [!IMPORTANT]
 > Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](#billing).
@@ -241,7 +239,9 @@ var config = SpeechConfig.FromSubscription("YourSubscriptionKey", "YourServiceRe
 на этот вызов с использованием конечной точки контейнера:
 
 ```C#
-var config = SpeechConfig.FromEndpoint("ws://localhost:5000/speech/recognition/dictation/cognitiveservices/v1", "YourSubscriptionKey");
+var config = SpeechConfig.FromEndpoint(
+    new Uri("ws://localhost:5000/speech/recognition/dictation/cognitiveservices/v1"),
+    "YourSubscriptionKey");
 ```
 
 #### <a name="for-python"></a>Для Python
@@ -262,9 +262,7 @@ speech_config = speechsdk.SpeechConfig(subscription=speech_key, endpoint="ws://l
 
 Контейнер предоставляет конечную точку REST API-интерфейсы, которые можно найти [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-text-to-speech) и примеры можно найти [здесь](https://azure.microsoft.com/resources/samples/cognitive-speech-tts/).
 
-
 [!INCLUDE [Validate container is running - Container's API documentation](../../../includes/cognitive-services-containers-api-documentation.md)]
-
 
 ## <a name="stop-the-container"></a>Остановка контейнера
 
@@ -272,11 +270,11 @@ speech_config = speechsdk.SpeechConfig(subscription=speech_key, endpoint="ws://l
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-При запуске контейнер использует **stdout** и **stderr** для вывода информации, полезной при устранении неполадок, которые случаются при запуске или выполнении контейнера. 
+При запуске контейнер использует **stdout** и **stderr** для вывода информации, полезной при устранении неполадок, которые случаются при запуске или выполнении контейнера.
 
 ## <a name="billing"></a>Выставление счетов
 
-Отправить контейнеры речи, выставления счетов в Azure, с помощью _речи_ ресурсов на учетную запись Azure. 
+Отправить контейнеры речи, выставления счетов в Azure, с помощью _речи_ ресурсов на учетную запись Azure.
 
 [!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 

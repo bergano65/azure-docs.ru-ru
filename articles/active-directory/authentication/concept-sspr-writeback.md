@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 749216d3fe9164857bd4abce7ba7c766e466e7d3
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 2dbf27301e738978e7f03d2423a4d23fd63c97b5
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65823299"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67113492"
 ---
 # <a name="what-is-password-writeback"></a>Что такое компонент обратной записи паролей?
 
@@ -47,7 +47,7 @@ ms.locfileid: "65823299"
 
 ## <a name="licensing-requirements-for-password-writeback"></a>Требования к лицензированию для обратной записи паролей
 
-**Самостоятельный сброс пароля, изменение и разблокировка при помощи локальной обратной записи — это возможности Azure AD уровня "Премиум"**. Дополнительные сведения о лицензировании см. на [веб-сайте с ценами на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
+**Самостоятельный сброс пароля, изменение и разблокировка при помощи локальной обратной записи — это возможности Azure AD уровня "Премиум"** . Дополнительные сведения о лицензировании см. на [веб-сайте с ценами на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 
 Чтобы использовать компонент обратной записи паролей, клиенту должна быть назначена одна из приведенных ниже лицензий:
 
@@ -152,7 +152,6 @@ ms.locfileid: "65823299"
    * все самостоятельные принудительные операции изменения пароля администратора (например, из-за окончания срока действия пароля);
    * все самостоятельные операции сброса пароля администратора, выполняемые на [портале сброса пароля](https://passwordreset.microsoftonline.com);
    * все операции сброса пароля конечного пользователя, инициируемые администратором на [портале Azure](https://portal.azure.com).
-   * Все сброса пароля конечного пользователя, инициируемые администратором [Центр администрирования Microsoft 365](https://admin.microsoft.com)
 
 ## <a name="unsupported-writeback-operations"></a>Неподдерживаемые операции обратной записи
 
@@ -162,6 +161,7 @@ ms.locfileid: "65823299"
    * Все операции сброса пароля пользователя с помощью PowerShell версии 1, PowerShell версии 2 или API Graph Azure AD.
 * **Неподдерживаемые операции администрирования:**
    * все операции сброса пароля пользователя, инициируемые администратором с помощью PowerShell версии 1, PowerShell версии 2 или API Graph Azure AD.
+   * Все сброса пароля конечного пользователя, инициируемые администратором [Центр администрирования Microsoft 365](https://admin.microsoft.com)
 
 > [!WARNING]
 > Использование флажка «Требовать смены пароля при следующем входе в систему» в средств администрирования Active Directory в локальной Active Directory — пользователи и компьютеры или Центр администрирования Active Directory не поддерживается. При изменении пароля в локальной, не устанавливайте этот параметр.

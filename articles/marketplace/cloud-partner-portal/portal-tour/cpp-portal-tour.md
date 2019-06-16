@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/08/2018
 ms.author: pabutler
 ms.openlocfilehash: b0bf7af9b81025202c2fffa2a264982c9986e10b
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64943389"
 ---
 # <a name="cloud-partner-portal-tour"></a>Знакомство с Порталом Cloud Partner
@@ -19,7 +19,7 @@ ms.locfileid: "64943389"
 В этой статье содержатся вводные сведения о [Портале Cloud Partner](https://cloudpartner.azure.com): его содержимом, механизмах навигации и функциональных возможностях.   На этом портале зарегистрированные партнеры могут создавать предложения и управлять имеющимися предложениями для [Azure Marketplace](https://azuremarketplace.microsoft.com) и [AppSource Marketplace](https://azuremarketplace.microsoft.com).  Портал Cloud Partner доступен только для зарегистрированных партнеров. Дополнительные сведения см. в статье [Регистрация в качестве издателя в облаке Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher).
 
 [![Портал Cloud Partner, отображающий страницу "Профиль"](./media/portal-window_001a.png)](./media/portal-window_001b.png#lightbox)
-<br/>   (*Щелкните изображение, чтобы увеличить его.*)
+<br/>   (*Щелкните изображение, чтобы увеличить его.* )
 
 
 ## <a name="section-contents"></a>Содержание раздела

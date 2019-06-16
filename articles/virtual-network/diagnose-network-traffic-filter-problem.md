@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 05/29/2018
 ms.author: kumud
 ms.openlocfilehash: f84e8a24e8f28cdccc987afbd1449cb17422ce0c
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64712668"
 ---
 # <a name="diagnose-a-virtual-machine-network-traffic-filter-problem"></a>Диагностика проблемы с фильтрацией трафика на виртуальной машине
@@ -73,7 +73,7 @@ ms.locfileid: "64712668"
 
 Мы просмотрели правила безопасности со стороны виртуальной машины. Но их можно просмотреть и со стороны отдельного пользователя:
 - **Сетевой интерфейс**: узнайте в [этой статье](virtual-network-network-interface.md#view-network-interface-settings), как просматривать сетевой интерфейс.
-- **Группа безопасности сети (NSG)**: подробнее о том, как просматривать сведения об NSG, см. [здесь](manage-network-security-group.md#view-details-of-a-network-security-group).
+- **Группа безопасности сети (NSG)** : подробнее о том, как просматривать сведения об NSG, см. [здесь](manage-network-security-group.md#view-details-of-a-network-security-group).
 
 ## <a name="diagnose-using-powershell"></a>Диагностика с помощью PowerShell
 
@@ -168,16 +168,16 @@ az vm show \
 
 При использовании как [портала](#diagnose-using-azure-portal) Azure, так и [PowerShell](#diagnose-using-powershell) или [Azure CLI](#diagnose-using-azure-cli) для диагностики проблемы, представленной в [сценарии](#scenario) этой статьи, решение будет одним. Нужно создать правило сетевой безопасности со следующими свойствами:
 
-| Свойство                | Value                                                                              |
+| Свойство                | Значение                                                                              |
 |---------                |---------                                                                           |
-| Источник                  | Любой                                                                                |
+| source                  | Любой                                                                                |
 | Диапазоны исходных портов      | Любой                                                                                |
 | Место назначения             | IP-адрес виртуальной машины, диапазон IP-адресов или все адреса в подсети. |
 | Диапазоны портов назначения | 80                                                                                 |
-| Protocol                | TCP                                                                                |
-| Действие                  | РАЗРЕШИТЬ                                                                              |
+| Протокол                | TCP                                                                                |
+| Действие                  | Allow                                                                              |
 | Приоритет                | 100                                                                                |
-| ИМЯ                    | Allow-HTTP-All                                                                     |
+| Name                    | Allow-HTTP-All                                                                     |
 
 Когда вы создадите правило, входящий трафик из Интернета через порт 80 будет разрешен, так как приоритет этого правила выше, чем приоритет правила безопасности по умолчанию с именем *DenyAllInBound*, запрещающего передачу трафика. Узнайте, как [создать правило безопасности](manage-network-security-group.md#create-a-security-rule). Если с сетевым интерфейсом и подсетью связаны разные группы NSG, создайте одинаковое правило в обеих NSG.
 

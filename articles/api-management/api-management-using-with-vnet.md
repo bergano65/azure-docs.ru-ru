@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 03/01/2019
 ms.author: apimpm
 ms.openlocfilehash: 73785422a7c45a12671e6cd53da89609190a8352
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66243287"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
@@ -164,7 +164,7 @@ ms.locfileid: "66243287"
 ## <a name="troubleshooting"> </a>Устранение неполадок
 * **Начальная настройка.** Если первоначальное развертывание службы управления API в подсети завершится неудачно, попробуйте сначала развернуть виртуальную машину в той же подсети. После этого подключитесь к удаленному рабочему столу на этой виртуальной машине и проверьте наличие связи хотя бы с одним экземпляром каждого из ресурсов в подписке Azure, перечисленных ниже.
     * Большой двоичный объект хранилища Azure
-    * Базы данных SQL Azure
+    * База данных SQL Azure
     * Таблица хранилища Azure
 
   > [!IMPORTANT]
