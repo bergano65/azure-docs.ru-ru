@@ -9,10 +9,10 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: d485799547644ccb3c34a8841e8b20d8a45444bf
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64707359"
 ---
 # <a name="configure-apache-hive-policies-in-hdinsight-with-enterprise-security-package"></a>Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности
@@ -74,11 +74,11 @@ ms.locfileid: "64707359"
 ## <a name="create-hive-odbc-data-source"></a>Создание источника данных Hive ODBC
 Инструкции см. в разделе [Создание источника данных Hive ODBC](../hadoop/apache-hadoop-connect-excel-hive-odbc-driver.md).  
 
- | Свойство  |ОПИСАНИЕ |
+ | Свойство  |Описание |
  | --- | --- |
  | Имя источника данных | Присвойте имя источнику данных |
  | Узел | Введите &lt;имя_кластера_HDInsight>.azurehdinsight.net. Например, myHDICluster.azurehdinsight.net |
- | Порт | Используйте **443**. (Этот порт был изменен с 563 на 443.) |
+ | Port | Используйте **443**. (Этот порт был изменен с 563 на 443.) |
  | База данных | Используйте **значение по умолчанию**. |
  | Тип сервера Hive | Выберите **Hive Server 2**. |
  | Механизм | Выберите **Служба Azure HDInsight**. |

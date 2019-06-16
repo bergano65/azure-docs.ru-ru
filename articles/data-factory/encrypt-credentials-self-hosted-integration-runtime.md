@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 01/15/2018
 ms.author: abnarain
 ms.openlocfilehash: 8e705a4430f6ccee847dc7d41ef80456a6dc4ea5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66155135"
 ---
 # <a name="encrypt-credentials-for-on-premises-data-stores-in-azure-data-factory"></a>Шифрование учетных данных для локальных хранилищ данных в фабрике данных Azure
@@ -50,7 +50,7 @@ ms.locfileid: "66155135"
 }
 ```
 
-## <a name="encrypt-credentials"></a>Зашифровать учетные данные
+## <a name="encrypt-credentials"></a>Шифрование учетных данных
 Чтобы зашифровать конфиденциальные данные в полезных данных JSON в среде выполнения интеграции в локальной, выполнить **New AzDataFactoryV2LinkedServiceEncryptedCredential**и передать полезные данные JSON. Этот командлет гарантирует, что учетные данные шифруются с помощью API защиты данных и сохраняются локально на узле локальной среда выполнения интеграции. Полезные выходные данные, на который указывает ссылка зашифрованный с использованием учетных данных можно перенаправить в другой JSON-файл (в данном случае «encryptedLinkedService.json»).
 
 ```powershell

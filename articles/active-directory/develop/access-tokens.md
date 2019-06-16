@@ -16,12 +16,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea1e47939913435b5b7040c0e6d01b1208d709d3
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 355e61fdfd9847e54a4bd13ac3b0f2d416c05812
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65962898"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67111958"
 ---
 # <a name="microsoft-identity-platform-access-tokens"></a>Маркеры доступа платформы удостоверений Microsoft
 
@@ -135,7 +135,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imk2bEdrM0ZaenhSY1ViMkMzbkVRN3N5SEps
 
 Проверки подлинности удостоверений Майкрософт можно по-разному, который может быть важен для приложения. Утверждение `amr` представляет собой массив с несколькими элементами, например `["mfa", "rsa", "pwd"]`, и используется при аутентификации с помощью пароля и приложения Authenticator.
 
-| Value | Описание |
+| Значение | Описание |
 |-----|-------------|
 | `pwd` | Проверка пароля. Это может быть пароль учетной записи Майкрософт для пользователя или секрет клиента для приложения. |
 | `rsa` | Аутентификация выполнялась путем проверки ключа RSA, например с помощью [приложения Microsoft Authenticator](https://aka.ms/AA2kvvu). Сюда входят, если проверка подлинности, выполненной самозаверяющего маркера JWT с помощью службы, принадлежащие X509 сертификата. |
@@ -204,7 +204,7 @@ https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration
 * Проверить состояние проверки подлинности клиента с помощью `appidacr` — он не должен быть равен 0, если общедоступные клиенты не могут вызывать API.
 * Проверить список прошлом `nonce` утверждений для проверки маркера не воспроизводится.
 * Убедитесь, что `tid` обозначает клиент, который имеет право вызывать этот API.
-* С помощью утверждения `acr` проверьте, прошел ли пользователь многофакторную проверку подлинности. Это требование нужно предварительно применять при помощи [условного доступа](https://docs.microsoft.com/azure/active-directory/conditional-access/overview).
+* С помощью утверждения `acr` проверьте, прошел ли пользователь многофакторную проверку подлинности. Это следует обеспечивать [условного доступа](https://docs.microsoft.com/azure/active-directory/conditional-access/overview).
 * Если вы запросили `roles` или `groups` утверждений в маркере доступа, убедитесь, что пользователь находится в группе, могут делать это действие.
   * В случае с маркерами, получаемых через неявный поток, для получения этих данных обычно нужно запрашивать [Microsoft Graph](https://developer.microsoft.com/graph/), ведь их размер часто превышает допустимый для маркера.
 
@@ -237,8 +237,8 @@ https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration
 | Пользователь выполняет SSPR | Отменен | Отменен | Остается активным | Остается активным | Остается активным |
 | Администратор сбрасывает пароль | Отменен | Отменен | Остается активным | Остается активным | Остается активным |
 | Пользователь отменяет свои маркеры обновления [с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/revoke-azureadsignedinuserallrefreshtoken) | Отменен | Отменен | Отменен | Отменен | Отменен |
-| Администратор отменяет все маркеры обновления для клиента [с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/revoke-azureaduserallrefreshtoken) | Отменен | Отменен |Отменен | Отменен | Запрещен |
-| [Единый выход](v1-protocols-openid-connect-code.md#single-sign-out) через веб-интерфейс | Запрещен | Остается активным | Отменен | Остается активным | Остается активным |
+| Администратор отменяет все маркеры обновления для клиента [с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/revoke-azureaduserallrefreshtoken) | Отменен | Отменен |Отменен | Отменен | Отменен |
+| [Единый выход](v1-protocols-openid-connect-code.md#single-sign-out) через веб-интерфейс | Отменен | Остается активным | Отменен | Остается активным | Остается активным |
 
 > [!NOTE]
 > Вход без пароля означает, что пользователь не вводит пароль, чтобы войти. Например, он может использовать лицо в Windows Hello, ключ FIDO или ПИН-код.

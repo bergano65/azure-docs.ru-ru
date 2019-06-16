@@ -16,10 +16,10 @@ ms.date: 03/13/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d12519a2bd0a5e3951d0ca9ae51a54bd728a782b
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65987897"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-land-gorilla-client"></a>Руководство по Интеграция Azure Active Directory с Land Gorilla Client
@@ -71,11 +71,11 @@ ms.locfileid: "65987897"
 
 1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
-    ![Приложения][2]
+    ![ПРИЛОЖЕНИЯ][2]
     
 1. Нажмите кнопку **Добавить** в верхней части диалогового окна.
 
-    ![Приложения][3]
+    ![ПРИЛОЖЕНИЯ][3]
 
 1. В поле поиска введите **Land Gorilla Client**.
 
@@ -125,7 +125,7 @@ ms.locfileid: "65987897"
     
     `https://www.<customer domain>.landgorilla.com`
 
-    2. В текстовое поле **URL-адрес ответа** введите URL-адрес, используя один из следующих форматов:
+    2\. В текстовое поле **URL-адрес ответа** введите URL-адрес, используя один из следующих форматов:
 
     `https://<customer domain>.landgorilla.com/simplesaml/module.php/core/authenticate.php`
 
@@ -174,7 +174,7 @@ ms.locfileid: "65987897"
 
     a. В **имя** введите **Simon б**.
 
-    2. В **имя пользователя** введите **адрес электронной почты** для Simon б.
+    2\. В **имя пользователя** введите **адрес электронной почты** для Simon б.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 

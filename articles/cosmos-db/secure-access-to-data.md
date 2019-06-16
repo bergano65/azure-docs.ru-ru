@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: rimman
 ms.openlocfilehash: 6ccb9afb528edf67b29c781217ca1de97b81e017
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65969218"
 ---
 # <a name="secure-access-to-data-in-azure-cosmos-db"></a>Защита доступа к данным в Azure Cosmos DB
@@ -178,7 +178,7 @@ DocumentClient userClient = new DocumentClient(new Uri(endpointUrl), permList);
 Чтобы добавить доступ с правами читателя учетной записи Azure Cosmos DB в пользовательскую учетную запись, владельцу подписки необходимо сделать следующее на портале Azure.
 
 1. Откройте портал Azure и выберите учетную запись Azure Cosmos DB.
-2. Щелкните вкладку **Управление доступом (IAM)**, а затем — **+ Добавить назначение ролей**.
+2. Щелкните вкладку **Управление доступом (IAM)** , а затем — **+ Добавить назначение ролей**.
 3. На вкладке **Добавить назначение ролей** в поле **Роль** выберите **Роль читателя учетных записей Cosmos DB**.
 4. В поле **Назначение доступа** выберите значение **Пользователь, группа или приложение Azure AD**.
 5. В каталоге выберите пользователя, группу или приложение, которым нужно предоставить доступ.  Каталог можно искать по отображаемому имени, адресу электронной почты или идентификатору объектов.

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: d0960c749d74903acc778c0f21d5c49f380195ae
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: c8199c960229f9cc53cf57f9da3e1f17ebd9f5c7
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66734194"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67074158"
 ---
 # <a name="status-monitor-v2-detailed-instructions"></a>Состояние монитора v2: Подробные инструкции
 
@@ -204,7 +204,7 @@ SerializationVersion           1.1.0.1
 
 ### <a name="option-2-unzip-and-import-nupkg-manually"></a>Вариант 2. Распакуйте и вручную импортировать nupkg
 Устанавливает в каталог PowerShell вручную загруженный модуль PowerShell, поэтому он будет обнаружить в сеансах PowerShell.
-Дополнительные сведения см. в разделе [Установка модуля PowerShell](https://docs.mircrosoft.com/powershell/developer/module/installing-a-powershell-module).
+Дополнительные сведения см. в разделе [Установка модуля PowerShell](https://docs.microsoft.com/powershell/developer/module/installing-a-powershell-module).
 
 При установке модуля в любой другой каталог, вручную импортировать модуль с помощью [Import-Module](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-6).
 

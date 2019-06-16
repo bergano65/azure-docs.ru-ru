@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 02/08/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: a076c924d57aadfae477a5df0d128aad8e67af60
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a45a1fbe0d7a99c970d6f8f5626c1349f9d8b1ca
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61305423"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67123695"
 ---
 # <a name="az-module-support-in-azure-automation"></a>Поддержка модулей Az в службе автоматизации Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "61305423"
 
 ## <a name="test-your-runbooks"></a>Тестирование модулей runbook
 
-Сразу после импорта модулей `Az` в учетную запись службы автоматизации можно приступать к изменению модулей runbook, чтобы вместо них использовать модуль Az. Большая часть командлетов имеют одно и то же имя за исключением того, что `AzureRM` было изменено на `Az`. Список модулей, которые не следуют данной процедуре, см. в [списке исключений](/powershell/azure/migrate-from-azurerm-to-az?view=azps-1.1.0#change-module-imports-and-cmdlet-names).
+Сразу после импорта модулей `Az` в учетную запись службы автоматизации можно приступать к изменению модулей runbook, чтобы вместо них использовать модуль Az. Большая часть командлетов имеют одно и то же имя за исключением того, что `AzureRM` было изменено на `Az`. Список модулей, которые не следуют данной процедуре, см. в [списке исключений](/powershell/azure/migrate-from-azurerm-to-az#update-cmdlets-modules-and-parameters).
 
 Одним из способов тестирования модулей runbook перед изменением модуля runbook для использования новых командлетов является использование `Enable-AzureRMAlias -Scope Process` в начале runbook. Если добавить его в модуль runbook, он может выполняться без изменений.
 

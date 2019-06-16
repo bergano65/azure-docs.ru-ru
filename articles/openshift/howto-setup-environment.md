@@ -9,12 +9,12 @@ ms.date: 05/10/2019
 ms.topic: conceptual
 ms.service: openshift
 manager: jeconnoc
-ms.openlocfilehash: f0ef421d7954aa33cf69e7de2f4902a86ed8b580
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 21ccd7b2919714610dbd51c62701c4bb32d330d6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306402"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66808832"
 ---
 # <a name="set-up-your-azure-red-hat-openshift-dev-environment"></a>Настройка среды разработки Azure Red Hat OpenShift
 
@@ -22,7 +22,7 @@ ms.locfileid: "66306402"
 
 * Приобрести Azure зарезервированные экземпляры виртуальных машин.
 * Установите версию 2.0.65 (или более поздней версии) из командной строки Azure (или используйте Azure Cloud Shell).
-* Зарегистрируйтесь для `openshiftmanagedcluster` функция и поставщики связанный ресурс.
+* Зарегистрируйтесь для `AROGA` функция и поставщики связанный ресурс.
 * Создание клиента Azure Active Directory (Azure AD).
 * Создайте объект приложения Azure AD.
 * Создание пользователя Azure AD.
@@ -55,7 +55,7 @@ az --version
 
 ## <a name="register-providers-and-features"></a>Регистрация поставщиков и компоненты
 
-`Microsoft.ContainerService openshiftmanagedcluster` Функции `Microsoft.Solutions`, и `Microsoft.Network` поставщики должны быть зарегистрированы в подписку вручную, перед развертыванием первого кластера Azure Red Hat OpenShift.
+`Microsoft.ContainerService AROGA` Функции `Microsoft.Solutions`, `Microsoft.Compute`, `Microsoft.Storage`, `Microsoft.KeyVault` и `Microsoft.Network` поставщики должны быть зарегистрированы в подписку вручную, перед развертыванием первого кластера Azure Red Hat OpenShift.
 
 Чтобы вручную зарегистрировать эти поставщики и функции, используйте приведенные ниже инструкции, из оболочки Bash, если вы уже установили интерфейс командной строки или из сеанса Azure Cloud Shell (оболочка) на портале Azure:
 
@@ -65,10 +65,10 @@ az --version
     az account set --subscription <SUBSCRIPTION ID>
     ```
 
-1. Зарегистрируйтесь для использования функции openshiftmanagedcluster Microsoft.ContainerService:
+1. Зарегистрируйтесь для использования функции Microsoft.ContainerService AROGA:
 
     ```bash
-    az feature register --namespace Microsoft.ContainerService -n openshiftmanagedcluster
+    az feature register --namespace Microsoft.ContainerService -n AROGA
     ```
 
 1. Зарегистрируйте поставщик Microsoft.Storage:

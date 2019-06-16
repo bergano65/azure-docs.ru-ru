@@ -9,10 +9,10 @@ ms.date: 04/16/2019
 ms.author: tamram
 ms.custom: include
 ms.openlocfilehash: 3076065d23d4701711c0ecb60349e77ee5c9b7c8
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66115432"
 ---
 Служба хранилища Azure поддерживает шифрование при хранении с помощью управляемых пользователем ключей или ключей, управляемых Майкрософт. Управляемые клиентом ключи позволяют создавать, поворот, отключить и отозвать элементы управления доступом.

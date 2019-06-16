@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
 ms.openlocfilehash: 637feb855c7816dfb26229c5a65a069260a58cd3
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66003095"
 ---
 # <a name="configure-a-linux-php-app-for-azure-app-service"></a>Настройка приложения Linux PHP для службы приложений Azure
@@ -151,7 +151,7 @@ if (isset($_SERVER['X-Forwarded-Proto']) && $_SERVER['X-Forwarded-Proto'] === 'h
 
 Для настройки PHP_INI_USER PHP_INI_PERDIR и PHP_INI_ALL директивы (см. в разделе [директив php.ini](https://www.php.net/manual/ini.list.php)), добавьте *.htaccess* файл в корневой каталог приложения.
 
-В *.htaccess* добавьте с помощью директивы `php_value <directive-name> <value>` синтаксис. Например:
+В *.htaccess* добавьте с помощью директивы `php_value <directive-name> <value>` синтаксис. Пример:
 
 ```
 php_value upload_max_filesize 1000M
@@ -233,7 +233,7 @@ zend_extension=/home/site/wwwroot/bin/xdebug.so
 При работающем приложении PHP работает по-разному, в службе приложений или содержит ошибки, попробуйте сделайте следующее:
 
 - [Получите доступ к потоку журнала](#access-diagnostic-logs).
-- Тестирование приложения локально в рабочем режиме. Служба приложений запускает приложения Node.js в рабочем режиме, поэтому необходимо убедиться, что проект работает надлежащим образом в рабочем режиме локально. Например:
+- Тестирование приложения локально в рабочем режиме. Служба приложений запускает приложения Node.js в рабочем режиме, поэтому необходимо убедиться, что проект работает надлежащим образом в рабочем режиме локально. Пример:
     - В зависимости от вашей *composer.json*, разные пакеты могут быть установлены для рабочий режим (`require` и `require-dev`).
     - Некоторые веб-платформы может развернуть статические файлы по-разному в рабочем режиме.
     - Некоторые веб-платформы может использовать специальные сценарии, при выполнении в рабочем режиме.

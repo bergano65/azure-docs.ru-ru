@@ -9,10 +9,10 @@ ms.date: 02/13/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: afd4836229c60ebef1536d4fa1ca4206a492e56d
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66150329"
 ---
 После создания самозаверяющего корневого сертификата экспортируйте CER-файл его открытого ключа (не закрытый ключ). В дальнейшем вы загрузите этот файл в Azure. Чтобы экспортировать CER-файл для самозаверяющего корневого сертификата, сделайте следующее:
@@ -31,7 +31,7 @@ ms.locfileid: "66150329"
    ![Выбор параметра "Файлы X.509 (.CER) в кодировке Base-64"](./media/vpn-gateway-certificates-export-public-key-include/base64.png)
 5. На странице **Имя экспортируемого файла** нажмите кнопку **Обзор**, чтобы перейти в расположение для экспорта сертификата. В поле **Имя файла**введите имя для файла сертификата. Затем щелкните **Далее**.
 
-   ![Просмотреть](./media/vpn-gateway-certificates-export-public-key-include/browse.png)
+   ![Обзор](./media/vpn-gateway-certificates-export-public-key-include/browse.png)
 6. Нажмите кнопку **Готово** , чтобы экспортировать сертификат.
 
    ![Готово](./media/vpn-gateway-certificates-export-public-key-include/finish.png)

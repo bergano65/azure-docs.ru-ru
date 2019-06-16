@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 05/06/2019
 ms.author: helohr
 ms.openlocfilehash: a58e059e800b13d01ba8e50880bd75077d4418ae
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65833970"
 ---
 # <a name="create-a-host-pool-with-powershell"></a>Создание пула узлов с помощью PowerShell
@@ -80,7 +80,7 @@ $token = (Export-RdsRegistrationInfo -TenantName <tenantname> -HostPoolName <hos
 5. Проверка подлинности с учетной записью домена, имеющей права на присоединение к домену компьютеры.
 
     >[!NOTE]
-    > Если вы присоединяете виртуальные машины в среде доменных служб Azure AD, убедитесь, что соединения пользователя домена также является членом [группы администраторов контроллера домена AAD](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started-admingroup#task-3-configure-administrative-group).
+    > Если вы присоединяете виртуальные машины к среде доменных служб Azure AD, убедитесь, что пользователь для присоединения к домену также является участником [группы администраторов контроллера домена AAD](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started-admingroup#task-3-configure-administrative-group).
 
 ## <a name="register-the-virtual-machines-to-the-windows-virtual-desktop-preview-host-pool"></a>Регистрация виртуальных машин в пул узлов Апробация виртуального рабочего стола Windows
 

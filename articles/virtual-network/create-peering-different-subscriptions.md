@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 04/09/2019
 ms.author: anavin
 ms.openlocfilehash: cf414cf08771090990775d124e27222e51f786e2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66122017"
 ---
 # <a name="create-a-virtual-network-peering---resource-manager-different-subscriptions"></a>Создание пиринга виртуальных сетей, развернутых с помощью Resource Manager в разных подписках
@@ -25,11 +25,11 @@ ms.locfileid: "66122017"
 
 Действия по созданию пиринга виртуальных сетей зависят от того, находятся ли виртуальные сети в одной или разных подписках, и того, какая [модель развертывания Azure](../azure-resource-manager/resource-manager-deployment-model.md?toc=%2fazure%2fvirtual-network%2ftoc.json) использовалась для их создания. Узнайте, как создать пиринг виртуальных сетей в других сценариях, выбрав сценарий в следующей таблице.
 
-|Модель развертывания Azure  | Подписка Azure  |
+|Модель развертывания Azure  | Подписка Azure.  |
 |--------- |---------|
 |[Обе Resource Manager](tutorial-connect-virtual-networks-portal.md) |Аналогично|
 |[Одна виртуальная сеть Resource Manager, одна классическая виртуальная сеть](create-peering-different-deployment-models.md) |Аналогично|
-|[Одна виртуальная сеть Resource Manager, одна классическая виртуальная сеть](create-peering-different-deployment-models-subscriptions.md) |Отличающиеся|
+|[Одна виртуальная сеть Resource Manager, одна классическая виртуальная сеть](create-peering-different-deployment-models-subscriptions.md) |Разные|
 
 Невозможно создать пиринг между двумя виртуальными сетями, созданными с помощью классической модели развертывания. Если вам необходимо подключить виртуальные сети, созданные с помощью классической модели развертывания, можно использовать [VPN-шлюз](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) Azure.
 

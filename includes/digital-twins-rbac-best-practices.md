@@ -9,10 +9,10 @@ ms.date: 12/28/2018
 ms.author: adgera
 ms.custom: include file
 ms.openlocfilehash: e81b8fb06240d566e46ca0b45a0910e014dee329
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66119029"
 ---
 Управление доступом на основе ролей — это стратегия обеспечения безопасности на основе наследования для управления доступом, разрешениями и ролями. Дочерние роли наследуют разрешения от родительских. Разрешения также можно назначить без наследования от родительской роли и для настройки роли по мере необходимости.

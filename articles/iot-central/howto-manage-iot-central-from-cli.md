@@ -9,10 +9,10 @@ ms.date: 02/07/2019
 ms.topic: conceptual
 manager: philmea
 ms.openlocfilehash: 9e5d842cece316bc9c53e1e8583f40a0f222b91d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66151963"
 ---
 # <a name="manage-iot-central-from-azure-cli"></a>Управление из командной строки Azure IoT Central
@@ -31,7 +31,7 @@ ms.locfileid: "66151963"
 
 ## <a name="create-an-application"></a>Создание приложения
 
-Используйте [создать приложение iotcentral az](/cli/azure/iotcentral/app#az-iotcentral-app-create) команду, чтобы создать приложение центра Интернета вещей в подписке Azure. Например:
+Используйте [создать приложение iotcentral az](/cli/azure/iotcentral/app#az-iotcentral-app-create) команду, чтобы создать приложение центра Интернета вещей в подписке Azure. Пример:
 
 ```azurecli-interactive
 # Create a resource group for the IoT Central application
@@ -84,7 +84,7 @@ az iotcentral app update --name myiotcentralapp \
 
 ## <a name="remove-an-application"></a>Удаление приложения
 
-Используйте [az iotcentral app delete](/cli/azure/iotcentral/app#az-iotcentral-app-delete) команду, чтобы удалить приложение IoT Central. Например:
+Используйте [az iotcentral app delete](/cli/azure/iotcentral/app#az-iotcentral-app-delete) команду, чтобы удалить приложение IoT Central. Пример:
 
 ```azurecli-interactive
 az iotcentral app delete --name myiotcentralapp \

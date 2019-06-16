@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
 ms.openlocfilehash: ce64047fd7490106790ea8bb1ad7963d82a87c24
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66238137"
 ---
 | Ресурс | Free | Совмещаемая блокировка | базовая; | Стандартная | Премиум (версия 2) | Isolated </th> |
@@ -33,7 +33,7 @@ ms.locfileid: "66238137"
 | [Плановое резервное копирование](../articles/app-service/manage-backup.md) | | | | Плановое резервное копирование каждые 2 часа более 12 резервных копий в день (ручные + плановые) | Плановая архивация каждый час, более 50 резервных копий в день (ручные + плановые) | Плановая архивация каждый час, более 50 резервных копий в день (ручные + плановые) |
 | [Autoscale](../articles/app-service/web-sites-scale.md) | | | |X |X |X |
 | [Веб-задания](../articles/app-service/webjobs-create.md)<sup>8</sup> |X |X |X |X |X |X |
-| [планировщика Azure](https://azure.microsoft.com/services/scheduler/)  | |X |X |X |X |X |
+| [планировщика Azure](https://azure.microsoft.com/services/scheduler/) | |X |X |X |X |X |
 | [Мониторинг конечных точек](../articles/app-service/web-sites-monitor.md) | | |X |X |X |X |
 | [Промежуточные слоты](../articles/app-service/deploy-staging-slots.md) | | | |5 |20 |20 |
 | Соглашение об уровне обслуживания | |  |99,9 % |99,95 %|99,95 %|99,95 %|  

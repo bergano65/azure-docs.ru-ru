@@ -15,10 +15,10 @@ ms.workload: infrastructure
 ms.date: 06/17/2018
 ms.author: cynthn
 ms.openlocfilehash: d1db228f4c73cc00cd32ca6ae5b86056db68f05b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66155958"
 ---
 # <a name="log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход на виртуальную машину Linux в Azure с аутентификацией Azure Active Directory (предварительная версия)
@@ -43,7 +43,7 @@ ms.locfileid: "66155958"
 
 В режиме предварительной версии этой функции сейчас поддерживаются следующие дистрибутивы Linux:
 
-| Распространение | Version |
+| Дистрибутив | Version |
 | --- | --- |
 | CentOS | CentOS 6, CentOS 7 |
 | Debian | Debian 9 |
@@ -64,7 +64,7 @@ ms.locfileid: "66155958"
 
 Чтобы установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.31 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
-## <a name="create-a-linux-virtual-machine"></a>Создать виртуальную машину Linux
+## <a name="create-a-linux-virtual-machine"></a>Создание виртуальной машины Linux
 
 Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create), а затем — виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az-vm-create), используя поддерживаемый дистрибутив в поддерживаемом регионе. В приведенном ниже примере развертывается виртуальная машина с именем *myVM*, использующая *Ubuntu 16.04 LTS*, в группе ресурсов с именем *myResourceGroup* в регионе *southcentralus*. В следующих примерах можно при необходимости указать собственную группу ресурсов и имена виртуальных машин.
 

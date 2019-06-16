@@ -11,10 +11,10 @@ ms.date: 09/20/2017
 ms.author: marsma
 ms.subservice: B2C
 ms.openlocfilehash: e1abdfa8bc47f42f7373760370588c0bc41fc1dc
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66507784"
 ---
 # <a name="azure-active-directory-b2c-configure-the-ui-with-dynamic-content-by-using-custom-policies"></a>Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики
@@ -323,7 +323,7 @@ ms.locfileid: "66507784"
 
     a. Скачайте файл *selfasserted*.
 
-    2. Скопируйте содержимое файла.
+    2\. Скопируйте содержимое файла.
 
     c. Создайте представление *selfasserted*.
 
@@ -333,7 +333,7 @@ ms.locfileid: "66507784"
 
     a. В политике расширения найдите узел `<ContentDefinition>`, который содержит `Id="api.selfasserted"`, `Id="api.localaccountsignup"` и `Id="api.localaccountpasswordreset"`.
 
-    2. Задайте для атрибута `LoadUri` универсальный код ресурса (URI) *selfasserted*.
+    2\. Задайте для атрибута `LoadUri` универсальный код ресурса (URI) *selfasserted*.
 
 3. Вернитесь к шагу 8.2 и измените код так, чтобы принимать параметры строки запроса, но на этот раз укажите функцию *selfasserted*. 
 

@@ -581,6 +581,10 @@
     - name: Безопасность
       tocHref: /azure/security/
       topicHref: /azure/security/
+      items:
+        - name: Разработка
+          tocHref: /azure/security/develop/
+          topicHref: /azure/security/develop/
     - name: Центр безопасности
       tocHref: /azure/security-center/
       topicHref: /azure/security-center/

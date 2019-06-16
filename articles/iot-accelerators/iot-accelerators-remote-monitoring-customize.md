@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 11/09/2018
 ms.topic: conceptual
 ms.openlocfilehash: aed63e332375be4f8ed939cf162545c9f366f329
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66143507"
 ---
 # <a name="customize-the-remote-monitoring-solution-accelerator"></a>Настройка акселератора решения для удаленного мониторинга
@@ -31,7 +31,7 @@ ms.locfileid: "66143507"
 
 1. Разверните **базовый** экземпляр акселератора решений с помощью CLI **PCS**. Запишите имя развертывания и учетные данные, указанные для виртуальной машины. Дополнительные сведения см. в статье [Развертывание предварительно настроенного решения для удаленного мониторинга с помощью интерфейса командной строки](iot-accelerators-remote-monitoring-deploy-cli.md).
 
-1. Включите доступ по протоколу SSH к виртуальной машине, на которой размещаются микрослужбы в вашем решении с помощью портала Azure или Azure Cloud Shell. Например: 
+1. Включите доступ по протоколу SSH к виртуальной машине, на которой размещаются микрослужбы в вашем решении с помощью портала Azure или Azure Cloud Shell. Например:
 
     ```azurecli-interactive
     az network nsg rule update --name SSH --nsg-name {your solution name}-nsg --resource-group {your solution name} --access Allow
@@ -39,7 +39,7 @@ ms.locfileid: "66143507"
 
     Включать доступ по протоколу SSH нужно только во время тестирования и разработки. Если доступ по протоколу SSH включен, [его нужно отключить после использования](../security/azure-security-network-security-best-practices.md#disable-rdpssh-access-to-virtual-machines).
 
-1. Используя портал Azure или Azure Cloud Shell, найдите имя и общедоступный IP-адрес виртуальной машины. Например: 
+1. Используя портал Azure или Azure Cloud Shell, найдите имя и общедоступный IP-адрес виртуальной машины. Например:
 
     ```azurecli-interactive
     az resource list --resource-group {your solution name} -o table

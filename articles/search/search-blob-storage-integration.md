@@ -10,17 +10,17 @@ manager: cgronlun
 ms.author: magottei
 ms.custom: seodec2018
 ms.openlocfilehash: b6bb70e4c56adb162006d2597d301c73b12d2a8a
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65540875"
 ---
 # <a name="searching-blob-storage-with-azure-search"></a>Поиск в хранилище BLOB-объектов с помощью поиска Azure
 
 Поиск различных типов содержимого в хранилище BLOB-объектов Azure может представлять собой трудную для решения задачу. Тем не менее с помощью поиска Azure можно искать и индексировать содержимое BLOB-объектов несколькими щелчками мыши. Для поиска в хранилище BLOB-объектов необходимо подготовить службу поиска Azure. Ограничения и ценовые категории службы поиска Azure можно найти на [странице цен](https://aka.ms/azspricing).
 
-## <a name="what-is-azure-search"></a>Что такое поиск Azure?
+## <a name="what-is-azure-search"></a>Что такое Поиск Azure?
 [Поиск Azure](https://aka.ms/whatisazsearch) — это служба, с помощью которой разработчики могут легко добавить полнотекстовый поиск в веб-приложения и мобильные приложения. Со службой "Поиск Azure" вам не нужно управлять инфраструктурой поиска. Служба поиска Azure предоставляется с [доступностью в 99,9 % в соответствии с Соглашением об уровне обслуживания](https://aka.ms/azuresearchsla).
 
 ## <a name="index-and-search-enterprise-document-formats"></a>Индексирование и поиск форматов корпоративных документов

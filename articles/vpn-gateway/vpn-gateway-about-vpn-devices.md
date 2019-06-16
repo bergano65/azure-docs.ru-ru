@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 05/29/2019
 ms.author: yushwang
 ms.openlocfilehash: 6535949767999e04b11106ff8a294e912a6d0fb8
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66388856"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз
@@ -158,7 +158,7 @@ ms.locfileid: "66388856"
 | 1 |GCM AES256    |GCM (AES256)      |Нет         |
 | 2 |AES256        |SHA1              |Нет         |
 | 3 |3DES          |SHA1              |Нет         |
-| 4. |AES256        |SHA256            |Нет         |
+| 4\. |AES256        |SHA256            |Нет         |
 | 5 |AES128        |SHA1              |Нет         |
 | 6 |3DES          |SHA256            |Нет         |
 
@@ -169,7 +169,7 @@ ms.locfileid: "66388856"
 | 1 |GCM AES256    |GCM (AES256)      |Нет         |
 | 2 |AES256        |SHA1              |Нет         |
 | 3 |3DES          |SHA1              |Нет         |
-| 4. |AES256        |SHA256            |Нет         |
+| 4\. |AES256        |SHA256            |Нет         |
 | 5 |AES128        |SHA1              |Нет         |
 | 6 |3DES          |SHA256            |Нет         |
 | 7 |DES           |SHA1              |Нет         |

@@ -8,12 +8,12 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 06/05/2019
 ms.author: v-adgera
-ms.openlocfilehash: 31944c08bad503c20832ea7e4e682c0063ab0f9f
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: cd67f1065f47b758f2a7e0e5be3c60169c30273e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66735035"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67116566"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -41,7 +41,7 @@ ms.locfileid: "66735035"
 
     [![Регистрация приложений для Azure Active Directory добавьте api](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png#lightbox)
 
-1. Щелкните **Манифест**, чтобы открыть манифест вашего приложения. Для *oauth2AllowImplicitFlow* задайте значение `true`.
+1. Выберите **манифеста** открыть манифест приложения для вашего приложения. Для *oauth2AllowImplicitFlow* задайте значение `true`.
 
     [![Неявный поток Azure Active Directory](media/how-to-configure-postman/implicit-flow.png)](media/how-to-configure-postman/implicit-flow.png#lightbox)
 
@@ -62,13 +62,13 @@ ms.locfileid: "66735035"
     https://login.microsoftonline.com/YOUR_AZURE_TENANT.onmicrosoft.com/oauth2/authorize?resource=0b07f429-9f4b-4714-9392-cc5e8e80c8b0
     ```
 
-    | ИМЯ  | Заменить на | Пример |
+    | Name  | Заменить на | Пример |
     |---------|---------|---------|
     | YOUR_AZURE_TENANT | Имя вашего клиента или название организации | `microsoft` |
 
 1. Последовательно выберите вкладку **Авторизация**, затем **OAuth 2.0** и **Get New Access Token** (Получить новый маркер доступа).
 
-    | Поле  | Value |
+    | Поле  | Значение |
     |---------|---------|
     | Тип предоставления разрешения | `Implicit` |
     | URL-адрес обратного вызова | `https://www.getpostman.com/oauth2/callback` |
@@ -111,7 +111,7 @@ ms.locfileid: "66735035"
    > * Необходимо указать эти заголовки для каждой части.
    > * Вы должны выбрать `multipart/mixed` или другой подходящий **Content-Type** для всего запроса.
 
-1. Наконец щелкните **Отправить**, чтобы отправить составной запрос HTTP POST.
+1. Наконец, выберите **отправки** Чтобы отправить составной запрос HTTP POST.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

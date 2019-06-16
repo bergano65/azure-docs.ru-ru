@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/05/2017
 ms.author: tomfitz
 ms.openlocfilehash: 6591a75577670f5bb50c1275af7e51e9b8328d50
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66128685"
 ---
 # <a name="comparison-functions-for-azure-resource-manager-templates"></a>Функции сравнения для шаблонов Azure Resource Manager
@@ -135,7 +135,7 @@ Resource Manager предоставляет ряд функций для вып�
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Значение |
 | ---- | ---- | ----- |
 | checkInts | Логический | Истина |
 | checkStrings | Логический | Истина |
@@ -173,7 +173,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера:
 
-| ИМЯ | type | Value |
+| Name | type | Значение |
 | ---- | ---- | ----- |
 | checkNotEquals | Логический | Истина |
 
@@ -248,7 +248,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | checkInts | Логический | False |
 | checkStrings | Логический | Истина |
@@ -324,7 +324,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Значение |
 | ---- | ---- | ----- |
 | checkInts | Логический | False |
 | checkStrings | Логический | Истина |
@@ -341,7 +341,7 @@ az group deployment create -g functionexamplegroup --template-uri https://raw.gi
 New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/greaterorequals.json 
 ```
 
-## <a name="less"></a>меньше
+## <a name="less"></a>less
 `less(arg1, arg2)`
 
 Проверяет, является ли первое значение меньшим, чем второе.
@@ -400,7 +400,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Значение |
 | ---- | ---- | ----- |
 | checkInts | Логический | Истина |
 | checkStrings | Логический | False |
@@ -476,7 +476,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Значение |
 | ---- | ---- | ----- |
 | checkInts | Логический | Истина |
 | checkStrings | Логический | False |

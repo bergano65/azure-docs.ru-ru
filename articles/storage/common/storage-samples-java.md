@@ -10,10 +10,10 @@ ms.date: 05/03/2019
 ms.author: mhopkins
 ms.subservice: common
 ms.openlocfilehash: 3d241f1905244d3a8039372262f84ba0fd25220d
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65209774"
 ---
 # <a name="azure-storage-samples-using-java"></a>Примеры для службы хранилища Azure с использованием Java
@@ -25,7 +25,7 @@ ms.locfileid: "65209774"
 <table style="font-size:90%"><thead><tr><th style="font-size:110%">Конечная точка</th><th style="font-size:110%">Сценарий</th><th style="font-size:110%">Пример кода</th></tr></thead><tbody>
 <tr>
 <td rowspan="16"><b>Большой двоичный объект</b></td>
-<td>Добавить BLOB-объект</td>
+<td>Добавление больших двоичных объектов</td>
 <td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java">Getting Started with Azure Blob Service in Java</a> (Приступая к работе со службой BLOB-объектов Azure на языке Java)</td>
 </tr>
 <tr>
@@ -160,7 +160,7 @@ ms.locfileid: "65209774"
 </tr>
 <tr>
 <td rowspan="7"><b>Таблица</b></td>
-<td>Создать таблицу</td>
+<td>Создание таблицы</td>
 <td><a href="https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableBasics.java">Getting Started with Azure Table Service in Java</a> (Приступая к работе со службой таблиц Azure на языке Java)</td>
 </tr>
 <tr>

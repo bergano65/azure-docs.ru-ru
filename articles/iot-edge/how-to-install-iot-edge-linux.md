@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: kgremban
 ms.custom: seodec18
-ms.openlocfilehash: b519ed21b4d2e0e258c48bd1dc12750176281c9e
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 86ca3080229f2a286e8aa4725fe13c40e2a38549
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65152847"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67054278"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-linux-x64"></a>Установка среды выполнения Azure IoT Edge в Linux (x64)
 
@@ -82,6 +82,18 @@ ms.locfileid: "65152847"
    ```bash
    sudo apt-get install moby-cli
    ```
+
+### <a name="verify-your-linux-kernel-for-moby-compatibility"></a>Проверьте совместимость Кита ядро Linux
+
+Многие производителям встроенных устройств поставлять образы устройств, которые содержат пользовательские ядра Linux, которые могут отсутствовать компоненты, необходимые для обеспечения совместимости среды выполнения контейнера. Если возникли проблемы при установке рекомендуемую [Кита](https://github.com/moby/moby) среду выполнения контейнера, можно скорректировать для устранения неполадок в конфигурации ядра Linux с помощью [check-config](https://raw.githubusercontent.com/moby/moby/master/contrib/check-config.sh) указанный скрипт в Официальный [репозиторий Github Кита](https://github.com/moby/moby) , выполнив следующие команды на устройстве.
+
+   ```bash
+   curl -sSL https://raw.githubusercontent.com/moby/moby/master/contrib/check-config.sh -o check-config.sh
+   chmod +x check-config.sh
+   ./check-config.sh
+   ```
+
+Это позволит обеспечить подробных выходных данных, который содержит состояние функций ядра, используемые средой выполнения Кита. Необходимо убедиться, что у всех элементов в разделе `Generally Necessary` и `Network Drivers` включены, чтобы убедиться, что ядро совместима со средой выполнения Кита.  Если вы обнаружили любые отсутствующие компоненты, можно включить их, перестроение ядро из источника и выбрав связанные модули для включения в config-файла ядра, соответствующие.  Аналогичным образом Если вы используете генератор конфигурации ядра, например defconfig или menuconfig, необходимо будет для поиска и включения соответствующих функций и перестроить ядро соответствующим образом.  После развертывания измененные ядро, запустите скрипт проверки конфигурации еще раз, чтобы убедиться, что определенный компоненты были успешно включены.
 
 ## <a name="install-the-azure-iot-edge-security-daemon"></a>Установка управляющей программы безопасности Azure IoT Edge
 
