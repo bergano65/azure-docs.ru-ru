@@ -14,12 +14,12 @@ ms.subservice: users-groups-roles
 ms.custom: it-pro
 ms.reviewer: martincoetzer; MarkMorow
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f4b61b661d9da0748bc354b8defa4e6d67a047a2
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 7e61207ea23b9b9560668b58b33e3f32f5f70ab2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64920479"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67083941"
 ---
 # <a name="securing-privileged-access-for-hybrid-and-cloud-deployments-in-azure-ad"></a>Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD
 
@@ -215,7 +215,7 @@ Azure AD PIM входит в состав Azure AD Premium P2 и EMS E5. Эти 
 
 #### <a name="configure-conditional-access-policies"></a>Настройка политик условного доступа
 
-Подготовьте политики условного доступа для локальных и облачных приложений. Если у вас есть подключенные к рабочему месту устройства, дополнительные сведения см. в статье [Настройка локального условного доступа с помощью регистрации устройств в Azure Active Directory](../active-directory-device-registration-on-premises-setup.md).
+Подготовьте политики условного доступа для локальных и облачных приложений. Если у вас есть рабочему месту устройства, получить дополнительные сведения из [Настройка локального условного доступа с помощью регистрации устройств Azure Active Directory](../active-directory-device-registration-on-premises-setup.md).
 
 
 ## <a name="stage-3-build-visibility-and-take-full-control-of-admin-activity"></a>Этап 3. Обеспечение прозрачности и полного контроля активности администратора
@@ -261,7 +261,7 @@ Azure AD PIM входит в состав Azure AD Premium P2 и EMS E5. Эти 
 
 #### <a name="determine-exposure-to-password-based-sign-in-protocols-if-using-exchange-online"></a>Определение доступа к протоколам входа на основе пароля (при использовании Exchange Online)
 
-В прошлом предполагалось, что комбинации имени пользователя и пароля были встроены в устройства, учетные записи электронной почты, телефоны и т. д. Но теперь из за опасности кибератак в облаке мы рекомендуем идентифицировать всех потенциальных пользователей, компрометирование учетных данных которых будет катастрофическим для организации, и запретить им выполнять вход в электронную почту с помощью имени пользователя и пароля, реализовав строгие требования к аутентификации и условному доступу. Вы можете заблокировать [проверки подлинности с помощью условного доступа](https://docs.microsoft.com/azure/active-directory/conditional-access/block-legacy-authentication). Ознакомьтесь со сведениями на [блокировка обычной проверки подлинности](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online) через Exchnage через Интернет. 
+В прошлом предполагалось, что комбинации имени пользователя и пароля были встроены в устройства, учетные записи электронной почты, телефоны и т. д. Но теперь из за опасности кибератак в облаке, мы рекомендуем идентифицировать всех потенциальных пользователей, если была нарушена свои учетные данные, может привести к катастрофическим последствиям для организации и исключить их из не может выполнить вход электронную почту с помощью имени пользователя / пароль, реализовав строгие требования к аутентификации и условного доступа. Вы можете заблокировать [проверки подлинности с помощью условного доступа](https://docs.microsoft.com/azure/active-directory/conditional-access/block-legacy-authentication). Ознакомьтесь со сведениями на [блокировка обычной проверки подлинности](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online) через Exchnage через Интернет. 
 
 #### <a name="complete-a-roles-review-assessment-for-office-365-roles-if-using-office-365"></a>Анализ проверки ролей для ролей Office 365 (при использовании Office 365)
 
@@ -306,7 +306,7 @@ MCAS позволяет вам анализировать файлы и уста
 
 #### <a name="configure-conditional-access"></a>Настройка условного доступа
 
-Настройте условный доступ на основе группы, расположения и конфиденциальности приложения для [приложений SaaS](https://azure.microsoft.com/overview/what-is-saas/) и подключенных приложений Azure AD. 
+Настройка условного доступа на основе группы, расположения и конфиденциальности приложения для [приложений SaaS](https://azure.microsoft.com/overview/what-is-saas/) и подключенных приложений Azure AD. 
 
 #### <a name="monitor-activity-in-connected-cloud-apps"></a>Мониторинг действий в подключенных облачных приложениях
 

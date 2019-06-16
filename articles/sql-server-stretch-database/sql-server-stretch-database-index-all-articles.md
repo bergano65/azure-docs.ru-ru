@@ -14,10 +14,10 @@ ms.author: blazem
 ms.reviewer: jroth
 manager: jroth
 ms.openlocfilehash: 81f1ac3280381ef08a1daf1fa4e041227a07aeaf
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66003023"
 ---
 # <a name="all-topics-for-azure-sql-server-stretch-database-service"></a>Все статьи о службе SQL Server Stretch Database в Azure
@@ -29,9 +29,9 @@ ms.locfileid: "66003023"
 | 1 |[Определение баз данных и таблиц для Stretch Database с помощью Помощника Stretch Database](sql-server-stretch-database-identify-databases.md) |Узнайте, как определить базы данных и таблицы, которые подходят для Stretch Database. |
 | 2 |[Ограничения для Stretch Database](sql-server-stretch-database-limitations.md) |Дополнительные сведения об ограничениях для Stretch Database. |
 | 3 |[Общие сведения о Stretch Database](sql-server-stretch-database-overview.md) |В этой статье содержатся сведения о том, как служба Stretch Database позволяет прозрачно и безопасно переносить "холодные" данные в облако Microsoft Azure. |
-| 4. |[Начало работы с запуска мастера "Включение базы данных Stretch"](sql-server-stretch-database-wizard.md) |Узнайте, как настроить базу данных для Stretch Database с помощью мастера включения растяжения базы данных. |
+| 4\. |[Начало работы с запуска мастера "Включение базы данных Stretch"](sql-server-stretch-database-wizard.md) |Узнайте, как настроить базу данных для Stretch Database с помощью мастера включения растяжения базы данных. |
 
-## <a name="enable"></a>Включить
+## <a name="enable"></a>Включение
 | &nbsp; | Название | Описание |
 | ---:|:--- |:--- |
 | 5 |[Включение Stretch Database для базы данных](sql-server-stretch-database-enable-database.md) |Узнайте, как настроить базу данных для использования со Stretch Database. |

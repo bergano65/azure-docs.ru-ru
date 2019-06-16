@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/21/2019
 ms.author: spelluru
 ms.openlocfilehash: 76a4c16afc9edef0a88ac9f2892de9738fd30289
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66305056"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Общие сведения о фильтрации событий для подписок на службу "Сетка событий Azure"
@@ -107,7 +107,7 @@ ms.locfileid: "66305056"
 
 Для событий в схеме "Сетка событий" используются следующие значения для ключа:
 
-* Id
+* Идентификатор
 * Раздел
 * Subject
 * EventType
@@ -117,7 +117,7 @@ ms.locfileid: "66305056"
 Для событий в схеме "События в облаке" используются следующие значения для ключа:
 
 * EventId
-* `Source`
+* source
 * EventType
 * EventTypeVersion;
 * дата события (например Data.key1).
@@ -128,10 +128,10 @@ ms.locfileid: "66305056"
 
 Значения могут быть такими:
 
-* number
+* номер
 * string
 * Логическое
-* array
+* массив
 
 ### <a name="limitations"></a>Ограничения
 

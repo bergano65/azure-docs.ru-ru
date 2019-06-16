@@ -9,11 +9,11 @@ ms.date: 05/15/2018
 ms.author: estfan
 ms.custom: include file
 ms.openlocfilehash: da03c5247b8ebe0a3305b08a05d661264497663f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60541149"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "67122221"
 ---
 * Если вы используете Базу данных SQL Azure, следуйте инструкциям в разделе [Подключение к базе данных](#connect-azure-sql-db). 
 
@@ -45,7 +45,7 @@ ms.locfileid: "60541149"
    <br>
    Звездочки (*) указывают на обязательные значения.
 
-   | Свойство | Value | Сведения | 
+   | Свойство | Значение | Сведения | 
    |----------|-------|---------| 
    | Имя подключения | <*my-sql-connection*> | Имя подключения. | 
    | Имя SQL Server | <*my-sql-server*> | Имя вашего сервера SQL Server. |
@@ -96,7 +96,7 @@ ms.locfileid: "60541149"
    <br>
    Звездочки (*) указывают на обязательные значения.
 
-   | Свойство | Value | Сведения | 
+   | Свойство | Значение | Сведения | 
    |----------|-------|---------| 
    | Подключаться с помощью локального шлюза данных | Выберите этот параметр SQL Server первым. | | 
    | Имя подключения | <*my-sql-connection*> | Имя подключения. | 

@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Python и API-интерфейсы REST - службы поиска Azure
 description: Создание, загрузка и отправка запросов в индекс, с помощью Python, записные книжки Jupyter и API REST службы поиска Azure.
-ms.date: 05/23/2019
+ms.date: 06/11/2019
 author: heidisteen
 manager: cgronlun
 ms.author: heidist
@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 99b4ec0be8e9fa631c5081edd42474ea89dc5dc3
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: c519cbd151ac3008593e3309930db4e9a9414e51
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66244793"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67056641"
 ---
 # <a name="quickstart-create-an-azure-search-index-using-jupyter-python-notebooks"></a>Краткое руководство. Создание индекса службы поиска Azure с помощью записных книжек Jupyter Python
 > [!div class="op_single_selector"]
@@ -88,22 +88,19 @@ ms.locfileid: "66244793"
 
    Напротив коллекции пустой индекс возвращает такой ответ: `{'@odata.context': 'https://mydemo.search.windows.net/$metadata#indexes(name)', 'value': []}`
 
-> [!Tip]
-> На это бесплатная служба вы будете ограничены трех индексов, индексаторов и источников данных. В этом кратком руководстве создается по одному экземпляру каждого. Убедитесь, что у вас достаточно места для создания новых объектов, прежде чем продолжить.
-
-## <a name="1---create-an-index"></a>1. Создание индекса
+## <a name="1---create-an-index"></a>1\. Создание индекса
 
 Если вы используете портал, индекс должен существовать в службе перед загрузкой данных. Этот шаг использует [REST API создания индекса](https://docs.microsoft.com/rest/api/searchservice/create-index) для принудительной отправки схему индекса для службы.
 
 Обязательные элементы индекса включают имя, коллекцию полей и ключ. Коллекция полей определяет структуру *документа*. Каждое поле имеет имя, тип и атрибуты, которые определяют, как используется поле (например, является ли это полнотекстового поиска для поиска, фильтрацию или отображалось в результатах поиска). В индексе, одно из полей типа `Edm.String` необходимо назначить в качестве *ключ* для идентификации документа.
 
-Этот индекс имеет имя «hotels-py» и определения полей, указанные ниже. Он является частью более крупной [индекса отелей](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/hotels/Hotels_IndexDefinition.JSON) используется в других пошаговых руководств. Мы усекаются в этом кратком руководстве для краткости.
+Этот индекс имеет имя «hotels-quickstart» и определения полей, указанные ниже. Он является частью более крупной [индекса отелей](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/hotels/Hotels_IndexDefinition.JSON) используется в других пошаговых руководств. Мы усекаются в этом кратком руководстве для краткости.
 
 1. В следующей ячейке вставьте следующий пример в ячейку, чтобы указать схему. 
 
     ```python
     index_schema = {
-       "name": "hotels-py",  
+       "name": "hotels-quickstart",  
        "fields": [
          {"name": "HotelId", "type": "Edm.String", "key": "true", "filterable": "true"},
          {"name": "HotelName", "type": "Edm.String", "searchable": "true", "filterable": "false", "sortable": "true", "facetable": "false"},
@@ -147,7 +144,7 @@ ms.locfileid: "66244793"
 
 <a name="load-documents"></a>
 
-## <a name="2---load-documents"></a>2. Загрузка документов
+## <a name="2---load-documents"></a>2\. Загрузка документов
 
 Чтобы отправить документы, используйте запрос HTTP POST к конечной точке URL-адрес вашего индекса. REST API — [Добавление, обновление и удаление документов](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents). Документы создаются из [HotelsData](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/hotels/HotelsData_toAzureSearch.JSON) на сайте GitHub.
 
@@ -236,10 +233,10 @@ ms.locfileid: "66244793"
     }
     ```   
 
-2. В другую ячейку сформулируйте запрос. Для этого запроса POST обращается к коллекции документация индекса отелей py и помещает документы, предоставляемые на предыдущем шаге.
+2. В другую ячейку сформулируйте запрос. Для этого запроса POST обращается к коллекции документация индекса отелей quickstart и помещает документы, предоставляемые на предыдущем шаге.
 
    ```python
-   url = endpoint + "indexes/hotels-py/docs/index" + api_version
+   url = endpoint + "indexes/hotels-quickstart/docs/index" + api_version
    response  = requests.post(url, headers=headers, json=documents)
    index_content = response.json()
    pprint(index_content)
@@ -249,60 +246,67 @@ ms.locfileid: "66244793"
 
     ![Отправка документов в индекс](media/search-get-started-python/load-index.png "отправлять документы в индекс")
 
-## <a name="3---search-an-index"></a>3. Поиск в индексе
+## <a name="3---search-an-index"></a>3\. Поиск в индексе
 
 Этот шаг показывает, как запросить индекс с помощью [REST API службы поиска документов](https://docs.microsoft.com/rest/api/searchservice/search-documents).
 
+1. В ячейке, укажите выражение запроса, которое выполняет пустым полем поиска (search = *), возвращения unranked списка (поиск оценка = 1.0) произвольных документов. По умолчанию службы поиска Azure возвращает 50 совпадений за раз. Как структурированных этот запрос возвращает структуру всего документа и значения. Добавление $count = true, чтобы получить количество всех документов в результатах.
 
-1. В новую ячейку Укажите выражение запроса. Следующий пример выполняет поиск терминов «hotels» и «wifi». Он также возвращает *число* документов, которые совпадают, и *выбирает* полей, включаемых в результатах поиска.
+   ```python
+   searchstring = '&search=*&$count=true'
+   ```
+
+1. В новую ячейку укажите приведенный ниже, для поиска терминов «hotels» и «wifi». Добавьте $select для указания полей, включаемых в результатах поиска.
 
    ```python
    searchstring = '&search=hotels wifi&$count=true&$select=HotelId,HotelName'
    ```
 
-2. В другую ячейку формулировки запроса. Этот запрос GET обращается к коллекции документация индекса отелей py и присоединяет запрос, который вы указали на предыдущем шаге.
+1. В другую ячейку формулировки запроса. Этот запрос GET обращается к коллекции документация индекса отелей quickstart и присоединяет запрос, который вы указали на предыдущем шаге.
 
    ```python
-   url = endpoint + "indexes/hotels-py/docs" + api_version + searchstring
+   url = endpoint + "indexes/hotels-quickstart/docs" + api_version + searchstring
    response  = requests.get(url, headers=headers, json=searchstring)
    query = response.json()
    pprint(query)
    ```
 
-3. Выполните каждый шаг. Результаты должны выглядеть аналогично приведенному ниже. 
+1. Выполните каждый шаг. Результаты должны выглядеть аналогично приведенному ниже. 
 
     ![Поиск в индексе](media/search-get-started-python/search-index.png "поиск в индексе")
 
-4. Еще несколько примеров запросов к знакомству с синтаксисом. Можно заменить фрагментом searchstring с приведенными ниже примерами и затем снова запустите запрос поиска. 
+1. Еще несколько примеров запросов к знакомству с синтаксисом. Можно заменить фрагментом searchstring с приведенными ниже примерами и затем снова запустите запрос поиска. 
 
    Применение фильтра: 
 
    ```python
-   searchstring = '&search=*&$filter=Rating gt 4&$select=HotelId,HotelName,Description'
+   searchstring = '&search=*&$filter=Rating gt 4&$select=HotelId,HotelName,Description,Rating'
    ```
 
    Выполните два лучших результатов.
 
    ```python
-   searchstring = '&search=boutique&$top=2&$select=HotelId,HotelName,Description'
+   searchstring = '&search=boutique&$top=2&$select=HotelId,HotelName,Description,Category'
    ```
 
     Упорядочить по определенному полю:
 
    ```python
-   searchstring = '&search=pool&$orderby=Address/City&$select=HotelId, HotelName, Address/City, Address/StateProvince'
+   searchstring = '&search=pool&$orderby=Address/City&$select=HotelId, HotelName, Address/City, Address/StateProvince, Tags'
    ```
 
 ## <a name="clean-up"></a>Очистка 
 
-Следует удалить индекс, если он больше не нужен. Это бесплатная служба ограничена трех индексов. Вы можете удалить все индексы, которые активно не используется, чтобы освободить место для других учебников.
+Следует удалить индекс, если он больше не нужен. Это бесплатная служба ограничена трех индексов. Следует удалить все индексы, которые активно не используется, чтобы освободить место для других учебников.
+
+Самый простой способ удалить объекты, — через портал, но так как это краткое руководство Python, следующий синтаксис такой же результат:
 
    ```python
-  url = endpoint + "indexes/hotels-py" + api_version
+  url = endpoint + "indexes/hotels-quickstart" + api_version
   response  = requests.delete(url, headers=headers)
    ```
 
-Удаление индекса можно проверить, возвращая список существующих индексов. Если отсутствует py гостиницы, то знаете, ваш запрос выполнен успешно.
+Удаление индекса можно проверить, запросив список существующих индексов. Если отсутствует гостиницы quickstart, то знаете, ваш запрос выполнен успешно.
 
 ```python
 url = endpoint + "indexes" + api_version + "&$select=name"

@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 6/1/2019
 ms.author: absha
-ms.openlocfilehash: 55c7670821ee6c6f5b924bf18b5f7ad01d4b6d51
-ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
+ms.openlocfilehash: c5cc39c2f2a7f2a79b8d6bc2bd95506ee5532a84
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66431300"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67073979"
 ---
 # <a name="application-gateway-configuration-overview"></a>Общие сведения о конфигурации шлюза приложений
 
@@ -74,6 +74,9 @@ Azure также резервирует 5 IP-адресов в каждой по
 Для SKU v2 определяемые пользователем маршруты не поддерживаются в подсети шлюза приложений. Дополнительные сведения см. в разделе [SKU шлюза приложений Azure версии 2](application-gateway-autoscaling-zone-redundant.md#differences-with-v1-sku).
 
 > [!NOTE]
+> Определяемые пользователем маршруты не поддерживаются для v2 SKU.  Если требуется, чтобы определяемые пользователем маршруты должны продолжать развертывание v1 SKU.
+
+> [!NOTE]
 > Использование определяемых пользователем маршрутов в подсети шлюза приложений приводит состояние работоспособности в [представление работоспособности серверной части](https://docs.microsoft.com/azure/application-gateway/application-gateway-diagnostics#back-end-health) отображались как «Неизвестно». Она вызывает создание журналов шлюза приложений и метрики, переход на другой. Мы рекомендуем не использовать определяемые пользователем маршруты в подсети шлюза приложений, и вы сможете просматривать, работоспособности серверной части, журналы и метрики.
 
 ## <a name="front-end-ip"></a>Внешний IP-адрес
@@ -84,7 +87,7 @@ Azure также резервирует 5 IP-адресов в каждой по
 
 Поддерживается только один общедоступный IP-адрес или 1 частный IP-адрес. Выберите внешний IP-адрес, при создании шлюза приложений.
 
-- Для общедоступного IP-адреса можно создать новый общедоступный IP-адрес, или использовать существующий общедоступный IP-адрес в том же расположении, что и шлюз приложений. Если создать новый общедоступный IP-адрес, тип IP-адреса, который выбран (статический или динамический) нельзя изменить позже. Дополнительные сведения см. в разделе [статический и динамический общедоступный IP-адрес](https://docs.microsoft.com/azure/application-gateway/application-gateway-components#static-vs-dynamic-public-ip-address).
+- Для общедоступного IP-адреса можно создать новый общедоступный IP-адрес, или использовать существующий общедоступный IP-адрес в том же расположении, что и шлюз приложений. Если создать новый общедоступный IP-адрес, тип IP-адреса, который выбран (статический или динамический) нельзя изменить позже. Дополнительные сведения см. в разделе [статический и динамический общедоступный IP-адрес](https://docs.microsoft.com/azure/application-gateway/application-gateway-components#static-versus-dynamic-public-ip-address).
 
 - Для частного IP-адреса можно указать частный IP-адрес из подсети, в котором создается шлюз приложений. Если этого не сделать, произвольные IP-адрес из подсети выбирается автоматически. Дополнительные сведения см. в разделе [Создание шлюза приложений с внутренним балансировщиком нагрузки](https://docs.microsoft.com/azure/application-gateway/application-gateway-ilb-arm).
 
@@ -124,7 +127,7 @@ Azure также резервирует 5 IP-адресов в каждой по
 
 - Если выбрано HTTP, трафик между клиентом и шлюз приложений не шифруется.
 
-- При необходимости выбрать HTTPS [завершение запросов SSL](https://docs.microsoft.com/azure/application-gateway/overview#secure-sockets-layer-ssl-terminationl) или [end-to-end SSL-шифрование](https://docs.microsoft.com/azure/application-gateway/ssl-overview). Для шифрования трафика между клиентом и шлюза приложений. И завершение SSL-соединение на шлюзе приложений. Если требуется SSL-шифрование end-to-end, необходимо выбрать HTTPS и настроить **HTTP серверной части** параметр. Это гарантирует, что трафик шифруется повторно при его передаче из серверной части шлюза приложений.
+- При необходимости выбрать HTTPS [завершение запросов SSL](https://docs.microsoft.com/azure/application-gateway/overview#secure-sockets-layer-ssltls-termination) или [end-to-end SSL-шифрование](https://docs.microsoft.com/azure/application-gateway/ssl-overview). Для шифрования трафика между клиентом и шлюза приложений. И завершение SSL-соединение на шлюзе приложений. Если требуется SSL-шифрование end-to-end, необходимо выбрать HTTPS и настроить **HTTP серверной части** параметр. Это гарантирует, что трафик шифруется повторно при его передаче из серверной части шлюза приложений.
 
 Чтобы настроить завершение запросов SSL и SSL-шифрования end-to-end, необходимо добавить сертификат в прослушиватель, чтобы включить шлюз приложений для получения симметричного ключа. Это зависит от спецификации протокола SSL. Симметричный ключ используется для шифрования и расшифровки трафика, отправляемого к шлюзу. Сертификат шлюза должен быть в формате обмена личной информацией (PFX). Этот формат позволяет экспортировать закрытый ключ, который использует шлюз для шифрования и расшифровки трафика.
 
@@ -172,7 +175,7 @@ Set-AzApplicationGateway -ApplicationGateway $gw
 
 ### <a name="rule-type"></a>Тип правила
 
-При создании правила вы выбираете между [ *основные* и *основаны на путях*](https://docs.microsoft.com/azure/application-gateway/application-gateway-components#request-routing-rule).
+При создании правила вы выбираете между [ *основные* и *основаны на путях*](https://docs.microsoft.com/azure/application-gateway/application-gateway-components#request-routing-rules).
 
 - Выберите базовую установку, если необходимо передавать все запросы на связанный прослушиватель (например, *блог<i></i>.contoso.com/\*)* в единый пул серверной части.
 - Выберите на основе пути, если вы хотите перенаправить запросы от конкретных путей URL-адрес для конкретного внутренних пулов. Шаблон пути применяется только к пути URL-адрес, а не на своих параметрах запроса.
@@ -245,7 +248,7 @@ Set-AzApplicationGateway -ApplicationGateway $gw
 Этот параметр добавляет, удаляет или обновляет заголовки запросов и ответов HTTP, во время запроса и перемещение пакетов ответа между клиентом и внутренних пулов. Можно настроить только такую возможность посредством PowerShell. Портал Azure и поддержка CLI еще не доступны. Дополнительные сведения можно найти в разделе
 
  - [Перепишите Общие сведения о заголовках HTTP](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers)
- - [Настройка переопределения заголовка HTTP](https://docs.microsoft.com/azure/application-gateway/add-http-header-rewrite-rule-powershell#specify-your-http-header-rewrite-rule-configuration)
+ - [Настройка переопределения заголовка HTTP](https://docs.microsoft.com/azure/application-gateway/add-http-header-rewrite-rule-powershell#specify-the-http-header-rewrite-rule-configuration)
 
 ## <a name="http-settings"></a>Параметры HTTP
 

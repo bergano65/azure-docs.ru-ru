@@ -10,10 +10,10 @@ ms.author: mhopkins
 ms.reviewer: seguler
 ms.subservice: common
 ms.openlocfilehash: 5f55228c80142b2a21af585cb04d16f148460af0
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65149097"
 ---
 # <a name="use-the-azure-storage-emulator-for-development-and-testing"></a>Использование эмулятора хранения Azure для разработки и тестирования
@@ -78,7 +78,7 @@ ms.locfileid: "65149097"
 Дополнительные сведения об этих командах см. в разделе [Справочник по программе командной строки эмулятора хранения](#storage-emulator-command-line-tool-reference).
 
 > [!TIP]
-> Для управления экземплярами SQL Server, включая установку LocalDB, можно использовать [Microsoft SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS). В диалоговом окне **Подключение к серверу** SMSS укажите `(localdb)\MSSQLLocalDb` в поле **Имя сервера:**, чтобы подключиться к экземпляру LocalDB.
+> Для управления экземплярами SQL Server, включая установку LocalDB, можно использовать [Microsoft SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS). В диалоговом окне **Подключение к серверу** SMSS укажите `(localdb)\MSSQLLocalDb` в поле **Имя сервера:** , чтобы подключиться к экземпляру LocalDB.
 
 ## <a name="authenticating-requests-against-the-storage-emulator"></a>Проверка подлинности запросов на эмулятор хранения
 После установки и запуска эмулятора хранения можно проверить в нем свой код. Как и в службе хранилища Azure в облаке, каждый запрос, отправляемый в эмулятор хранения, должен быть авторизован. В противном случае такой запрос будет считаться анонимным. Авторизовать запросы для эмулятора хранения можно с помощью проверки подлинности по общему ключу или с помощью подписанного URL-адреса (SAS).
@@ -168,7 +168,7 @@ http://127.0.0.1:10000/devstoreaccount1/sascontainer?sv=2012-02-12&se=2015-07-08
 ### <a name="options"></a>Параметры
 Чтобы просмотреть список параметров, в командной строке введите `/help` .
 
-| Параметр | ОПИСАНИЕ | Команда | Аргументы |
+| Параметр | Описание | Команда | Аргументы |
 | --- | --- | --- | --- |
 | **Начало** |Запускает эмулятор хранения. |`AzureStorageEmulator.exe start [-inprocess]` |*-inprocess*: запускает эмулятор в текущем процессе вместо создания нового процесса. |
 | **Остановить** |Останавливает эмулятор хранения. |`AzureStorageEmulator.exe stop` | |

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: anroth
 ms.openlocfilehash: 85abc4a50710629d3485d05115698e59a93fc96e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60995638"
 ---
 # <a name="limits-and-quotas"></a>Ограничения и квоты
@@ -27,7 +27,7 @@ ms.locfileid: "60995638"
 |-----|-----|-----|
 |Проекты|2|100|
 |Число учебных изображений на проект |5 000|100 000|
-|Число прогнозов в месяц|10 000 |Без ограничений|
+|Число прогнозов в месяц|10 000 |Не ограничено|
 |Число тегов на проект|50|500|
 |Количество итераций |10|10|
 |Min с меткой изображений на тег, классификации (рекомендуется в 50 +) |5|5|

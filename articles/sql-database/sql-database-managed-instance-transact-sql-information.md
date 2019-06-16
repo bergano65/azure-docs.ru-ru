@@ -12,12 +12,12 @@ ms.reviewer: sstein, carlrab, bonova
 manager: craigg
 ms.date: 03/13/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 5c8a15aa5198983a56a0238c1bb56f9345d07acc
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 2ca2e4e98f56f7df5e81217bcda00179f05ff69e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66258595"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67070354"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server
 
@@ -276,6 +276,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 ### <a name="sql-server-agent"></a>Агент SQL Server
 
+- Включение и отключение агента SQL Server в настоящее время не поддерживается в управляемом экземпляре. Агент SQL работает постоянно.
 - Параметры агента SQL Server доступны только для чтения. Процедура `sp_set_agent_properties` не поддерживается в управляемом экземпляре. 
 - Задания
   - Шаги задания T-SQL поддерживаются.
@@ -456,13 +457,13 @@ MSDTC и [эластичные транзакции](sql-database-elastic-transa
 - `Extended stored procedures` не поддерживаются, включая `sp_addextendedproc`  и `sp_dropextendedproc`. См. в разделе [расширенные хранимые процедуры](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/general-extended-stored-procedures-transact-sql).
 - `sp_attach_db`, `sp_attach_single_file_db` и `sp_detach_db` не поддерживаются. См. статьи [sp_attach_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-db-transact-sql), [sp_attach_single_file_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-single-file-db-transact-sql) и [sp_detach_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-detach-db-transact-sql).
 
-## <a name="Environment"></a>Ограничения Environmet
+## <a name="Environment"></a>Ограничения среды
 
 ### <a name="subnet"></a>Подсеть
 - В подсеть, зарезервированную для управляемого экземпляра не удается разместить другие ресурсы (например, виртуальные машины). Поместите эти ресурсы в других подсетях.
 - Подсеть должна иметь достаточное количество доступных [IP-адреса](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Минимальное значение — 16, хотя рекомендуется иметь по крайней мере 32 IP-адресов в подсети.
 - [Конечные точки службы не может быть связана с подсетью управляемого экземпляра](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Убедитесь, что службы конечных точек может быть отключена при создании виртуальной сети.
-- Количество и типы экземпляров, которые можно поместить в подсети имеют некоторые [ограничения и ограничения](sql-database-managed-instance-resource-limits.md#strategies-for-deploying-mixed-general-purpose-and-business-critical-instances)
+- Количество виртуальных ядер и типы экземпляров, которые можно развернуть в регионе, имеют некоторые [ограничения и ограничения](sql-database-managed-instance-resource-limits.md#regional-resource-limitations).
 - Существуют некоторые [правила безопасности, которые должны применяться в подсети](sql-database-managed-instance-connectivity-architecture.md#network-requirements).
 
 ### <a name="vnet"></a>Виртуальная сеть

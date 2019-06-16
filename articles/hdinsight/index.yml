@@ -9,7 +9,7 @@ metadata:
   ms.author: hrasheed
   ms.service: hdinsight
   ms.topic: landing-page
-  ms.date: 03/26/2019
+  ms.date: 06/13/2019
 abstract:
   description: "Узнайте, как использовать Azure HDInsight для анализа данных потоковой передачи или исторических данных. В руководствах и другой документации показано, как создавать кластеры, обрабатывать и анализировать большие данные, а также разрабатывать решения с помощью таких популярных платформ с открытым исходным кодом, как Apache Hadoop, Apache Spark, Apache Hive, Apache LLAP, Apache Kafka, Apache Storm и Microsoft Machine Learning Server.<p>Azure HDInsight\_— это управляемая комплексная служба аналитики с открытым кодом, предназначенная для предприятий. HDInsight — это облачная служба, которая обеспечивает простую, быструю и экономичную обработку больших объемов данных. HDInsight также поддерживает различные сценарии, такие как извлечение, преобразование и загрузка (ETL), хранение данных, машинное обучение и Интернет вещей.</p>"
   aside:
@@ -22,7 +22,7 @@ abstract:
     href: 'https://azure.microsoft.com/resources/videos/azure-friday-apache-kafka-on-hdinsight-ga/'
     width: 250
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Узнайте, как создать кластер HDInsight и запускать задания:'
@@ -47,7 +47,7 @@ sections:
             href: /azure/hdinsight/hbase/apache-hbase-tutorial-get-started-linux
           - image:
               src: media/index/hive_r.svg
-            text: Interactive Query
+            text: Интерактивные запросы
             href: /azure/hdinsight/interactive-query/apache-interactive-query-get-started
           - image:
               src: media/index/storm_r.svg
@@ -81,7 +81,7 @@ sections:
             html: '<p><a href="https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-intellij-tool-plugin">Средство HDInsight для IntelliJ</a></p><p><a href="https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-eclipse-tool-plugin">Средство HDInsight для Eclipse</a></p><p><a href="https://docs.microsoft.com/azure/hdinsight/hdinsight-for-vscode">Средство HDInsight для VS Code</a></p><p><a href="https://docs.microsoft.com/azure/hdinsight/hadoop/apache-hadoop-visual-studio-tools-get-started">Средство HDInsight для Visual Studio</a></p>'
           - title: Командная строка
             html: <p><a href="/powershell/module/az.hdinsight">Azure PowerShell</a></p>
-          - title: Languages
+          - title: Языки
             html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight">.NET (Hadoop)</a></p><p><a href="https://www.nuget.org/packages/Microsoft.HBase.Client/">.NET (HBase)</a></p>'
           - title: REST
             html: '<p><a href="https://docs.microsoft.com/rest/api/hdinsight/">REST API</a></p><p><a href="https://docs.microsoft.com/rest/api/hdinsightspark/">REST API (Spark)</a></p>'

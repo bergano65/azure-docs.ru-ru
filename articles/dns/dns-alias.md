@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 6/7/2019
 ms.author: victorh
-ms.openlocfilehash: ff71eb7d1386226e29b3f0846e0894a553f978e5
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.openlocfilehash: 0d52e84ba027f902cebf543ae019b5e4b53400b7
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66754236"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67059687"
 ---
 # <a name="azure-dns-alias-records-overview"></a>Обзор записей псевдонимов Azure DNS
 
@@ -53,7 +53,7 @@ ms.locfileid: "66754236"
 
 ### <a name="host-load-balanced-applications-at-the-zone-apex"></a>Размещайте приложения с балансировкой нагрузки в апексе зоны
 
-Протокол DNS предотвращает назначение записей CNAME на вершине зоны. Например, если используется домен contoso.com, можно создать записи CNAME для somelable.contoso.com, но нельзя создать запись CNAME для contoso.com.
+Протокол DNS предотвращает назначение записей CNAME на вершине зоны. Например, если используется домен contoso.com; можно создать записи CNAME для somelabel.contoso.com; но не удается создать запись CNAME для contoso.com.
 Это ограничение создает проблемы владельцам приложений, которые размещают приложения с балансировкой нагрузки за [диспетчером трафика Azure](../traffic-manager/traffic-manager-overview.md). Так как с помощью профиля диспетчера трафика требуется создание записи CNAME, невозможно получить точку в профиль диспетчера трафика из вершине зоны.
 
 Эта проблема решается с помощью записей псевдонимов. В отличие от записи CNAME псевдоним записи создаются на вершине зоны и владельцев приложений можно использовать в качестве указателя записи вершине зоны в профиле диспетчера трафика, который имеет внешние конечные точки. Владельцы приложений указывать на тот же профиль диспетчера трафика, который используется для любого домена в зоне DNS.

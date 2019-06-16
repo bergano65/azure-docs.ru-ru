@@ -11,10 +11,10 @@ ms.workload: infrastructure-services
 ms.date: 04/17/2019
 ms.author: magoedte
 ms.openlocfilehash: afa332b40884a79b5114b3b8093cd27108c39984
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65780011"
 ---
 # <a name="azure-monitor-for-containers-frequently-asked-questions"></a>Azure Monitor для контейнеров: вопросы и ответы
@@ -71,7 +71,7 @@ LogEntry : ({“Hello": "This example has multiple lines:","Docker/Moby": "will 
 
 ## <a name="how-do-i-resolve-azure-ad-errors-when-i-enable-live-logs"></a>Как устранить ошибки Azure AD, при включении оперативных журналов? 
 
-Вы можете получать следующую ошибку: **Ответ URL-адрес, указанный в запросе не совпадает с URL-адреса ответа, настроенным для приложения: "< идентификатор приложения\>"**. Решение, чтобы устранить эту проблему можно найти в статье [Просмотр контейнера журналы реальном времени с помощью Azure Monitor для контейнеров](container-insights-live-logs.md#configure-aks-with-azure-active-directory). 
+Вы можете получать следующую ошибку: **Ответ URL-адрес, указанный в запросе не совпадает с URL-адреса ответа, настроенным для приложения: "< идентификатор приложения\>"** . Решение, чтобы устранить эту проблему можно найти в статье [Просмотр контейнера журналы реальном времени с помощью Azure Monitor для контейнеров](container-insights-live-logs.md#configure-aks-with-azure-active-directory). 
 
 ## <a name="why-cant-i-upgrade-cluster-after-onboarding"></a>Почему не удается обновить кластер после подключения?
 

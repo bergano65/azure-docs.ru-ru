@@ -8,16 +8,20 @@ ms.topic: article
 ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 30882899e5be4101ae3d77f9840d8bdef567e53f
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.openlocfilehash: 8c7bb080b350742d0722cdb4e07b82a6881ba05b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66676988"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67073669"
 ---
 # <a name="accessing-the-vmware-solution-by-cloudsimple-portal-from-azure-portal"></a>Доступ к VMware решения с портала CloudSimple с портала Azure
 
 Единый вход поддерживается для доступа к порталу CloudSimple. После входа на портал Azure можно получить доступ к порталу CloudSimple без повторного входа систему. При первом доступе к порталу CloudSimple, вам будет предложено авторизовать [авторизации службы CloudSimple](#consent-to-cloudsimple-service-authorization-application) приложения.  Авторизация — это однократное действие.
+
+## <a name="before-you-begin"></a>Перед началом работы
+
+Только пользователи с builtin **владельца** и **участник** роли можно получить доступ к порталу CloudSimple.  Роли необходимо настроить в подписке.  Дополнительные сведения о проверке роли см. в разделе [просмотреть назначения ролей](https://docs.microsoft.com/azure/role-based-access-control/check-access) статьи.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 

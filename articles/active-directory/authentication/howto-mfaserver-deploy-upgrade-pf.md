@@ -11,16 +11,19 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 277001faf988e5d201a65c9e4112263f226b3db5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bcb1bf4996e381db933eac91135093a101e504bb
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60358350"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67055977"
 ---
 # <a name="upgrade-the-phonefactor-agent-to-azure-multi-factor-authentication-server"></a>Переход с агента PhoneFactor на сервер Многофакторной идентификации Azure
 
 Чтобы перейти с агента PhoneFactor версии 5.x или более ранней версии на сервер Многофакторной идентификации Azure, сначала удалите агент PhoneFactor и связанные с ним компоненты. После этого можно установить сервер Многофакторной идентификации и его компоненты.
+
+> [!IMPORTANT]
+> Начиная с 1 июля 2019 г. Корпорация Майкрософт больше не предоставляет многофакторной проверки Подлинности сервера для новых развертываний. Новых клиентов, которые хотите требовать многофакторную проверку подлинности от пользователей, их следует использовать многофакторную идентификацию Azure на основе облака. Существующие клиенты, которые активировали сервера MFA до 1 июля будет иметь возможность загрузить последнюю версию, будущие обновления и создать учетные данные активации обычным образом.
 
 ## <a name="uninstall-the-phonefactor-agent"></a>Удаление агента PhoneFactor
 

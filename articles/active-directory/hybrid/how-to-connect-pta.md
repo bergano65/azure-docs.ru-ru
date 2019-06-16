@@ -16,12 +16,12 @@ ms.date: 10/21/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e84324456aef12070cf9355fb17e132f9f99b80
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: cb5733f43a2b2800d5eb5031dddaaeb7d59aadc2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60383327"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67109418"
 ---
 # <a name="user-sign-in-with-azure-active-directory-pass-through-authentication"></a>Вход пользователей с помощью сквозной проверки подлинности Azure Active Directory
 
@@ -59,7 +59,7 @@ ms.locfileid: "60383327"
 
 - Поддерживает вход пользователей во все браузерные приложения и клиентские приложения Microsoft Office, которые используют [современную проверку подлинности](https://aka.ms/modernauthga).
 - Именем пользователя для входа может быть либо локальное имя пользователя по умолчанию (`userPrincipalName`), либо другой атрибут, настроенный в Azure AD Connect (известный как `Alternate ID`).
-- Эта функция взаимодействует с функциями [условного доступа](../active-directory-conditional-access-azure-portal.md), такими как Многофакторная Идентификация (MFA), для защиты пользователей.
+- Эта функция взаимодействует с [условного доступа](../active-directory-conditional-access-azure-portal.md) функции например многофакторной проверки подлинности (MFA) для защиты пользователей.
 - Она интегрирована с [самостоятельным управлением паролями](../authentication/active-directory-passwords-overview.md) на основе облака, включая обратную запись паролей в локальный каталог Active Directory и защиту пароля с помощью запрета часто используемых паролей.
 - Среды с несколькими лесами поддерживаются, если между лесами AD существуют отношения доверия и правильно настроена маршрутизация по суффиксу имени.
 - Это бесплатная функция, и для ее использования не требуются платные выпуски Azure AD.

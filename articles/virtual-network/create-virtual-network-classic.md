@@ -17,10 +17,10 @@ ms.date: 10/31/2018
 ms.author: genli
 ms.custom: ''
 ms.openlocfilehash: e40648ef47b108050486d43eefdb1564786c053e
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62098122"
 ---
 # <a name="create-a-virtual-network-classic-with-multiple-subnets"></a>Создание (классической) виртуальной сети с несколькими подсетями
@@ -47,8 +47,8 @@ ms.locfileid: "62098122"
 
     |Параметр|Значение|
     |---|---|
-    |ИМЯ|myVnet|
-    |Адресное пространство|10.0.0.0/16|
+    |Name|myVnet|
+    |Пространство адресов|10.0.0.0/16|
     |Имя подсети|Общедоступные|
     |Диапазон адресов подсети|10.0.0.0/24|
     |Группа ресурсов|Оставьте выбранным пункт **Создать**, а затем введите **MyResourceGroup**.|

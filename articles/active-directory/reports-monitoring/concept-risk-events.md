@@ -16,12 +16,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4afcbffa778c902c1b32979c69ca91ab0955f739
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e50cc4ca9c98cb6a8e0f19cfcf6c1f86f1949beb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64682935"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67107695"
 ---
 # <a name="azure-active-directory-risk-events"></a>События риска Azure Active Directory
 
@@ -54,7 +54,7 @@ ms.locfileid: "64682935"
 * С помощью **выпуска Azure AD Premium P2** вы можете получить самые подробные сведения обо всех основных обнаружениях. 
 * С помощью **выпуске Azure AD Premium P1**, расширенные операции обнаружения (например незнакомого вход свойства) не покрывает лицензия и появится под именем **вход в систему с обнаруженным дополнительным риском** . Кроме того уровень риска и поля сведений риска скрыты.
 
-Обнаружение событий риска само по себе является важным аспектом защиты ваших удостоверений, однако вы также можете устранять их вручную или применять автоматические ответы, настроив политики условного доступа. Дополнительные сведения см. в статье [Защита идентификации Azure Active Directory](../active-directory-identityprotection.md).
+Хотя обнаружение событий риска уже представляет важным аспектом защиты ваших удостоверений, вы также можете вручную устраните их либо реализовать автоматические ответы, настроив политики условного доступа. Дополнительные сведения см. в статье [Защита идентификации Azure Active Directory](../active-directory-identityprotection.md).
 
 ## <a name="risk-event-types"></a>Типы событий риска
 

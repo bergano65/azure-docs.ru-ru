@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c26a5007c2dcaa5d41be46f685f0f259866ca2c
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 8240a487bdb01cdbe9017ddc7cb95ce4fc0e1503
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65544061"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67052366"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>Использовать MSAL.NET выполнять вход пользователей с удостоверениями социальных сетей
 
@@ -78,7 +78,7 @@ AuthenticationResult ar = await application .AcquireToken(scopes, parentWindow)
 на:
 
 - `policy` выполняется одна из предыдущих строк (например `PolicySignUpSignIn`).
-- `GetAccountByPolicy(IEnumerable<IAccount>, string)` — Это метод, который находит учетную запись для данной политики. Например:
+- `GetAccountByPolicy(IEnumerable<IAccount>, string)` — Это метод, который находит учетную запись для данной политики. Пример:
 
   ```csharp
   private IAccount GetAccountByPolicy(IEnumerable<IAccount> accounts, string policy)
@@ -177,7 +177,7 @@ AcquireTokenByUsernamePassword(
 Кроме того, можно использовать `tid` утверждения, если вы используете [пользовательских политик B2C](https://aka.ms/ief), так как он предоставляет возможность возвращать дополнительные утверждения для приложения. Дополнительные сведения о [преобразование заявок](/azure/active-directory-b2c/claims-transformation-technical-profile)
 
 #### <a name="mitigation-for-missing-from-the-token-response"></a>Устранение рисков для «Участвовали в ответе маркера»
-Один из вариантов — использовать утверждение «name» в качестве предпочтительное имя пользователя. Процесс упоминается в этом [B2C doc](/azure/active-directory-b2c/active-directory-b2c-reference-policies#frequently-asked-questions) -> «в столбце возвращаемое утверждения выберите утверждения, необходимо возвращать в маркерах авторизации, отправляемых приложению после успешного изменения профиля. Например выберите отображаемое имя, почтовый индекс».
+Один из вариантов — использовать утверждение «name» в качестве предпочтительное имя пользователя. Процесс упоминается в этом [B2C doc](../../active-directory-b2c/active-directory-b2c-reference-policies.md) -> «в столбце возвращаемое утверждения выберите утверждения, необходимо возвращать в маркерах авторизации, отправляемых приложению после успешного изменения профиля. Например выберите отображаемое имя, почтовый индекс».
 
 ## <a name="next-steps"></a>Дальнейшие действия 
 

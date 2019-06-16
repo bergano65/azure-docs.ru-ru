@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 12/06/2018
 ms.author: shvija
 ms.openlocfilehash: d705993c7cd3816e89da21625dc5b003435b9128
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60822766"
 ---
 # <a name="automatically-scale-up-azure-event-hubs-throughput-units"></a>Автоматическое масштабирование единиц пропускной способности Центров событий Azure
@@ -49,7 +49,7 @@ ms.locfileid: "60822766"
 
 
 #### <a name="enable-at-the-time-of-creation"></a>Включение во время создания 
-Вы можете включить функцию автоматического расширения **при создании пространства имен в службе "Центры событий"**:
+Вы можете включить функцию автоматического расширения **при создании пространства имен в службе "Центры событий"** :
  
 ![Включение автоматического расширения во время создания концентратора событий](./media/event-hubs-auto-inflate/event-hubs-auto-inflate1.png)
 

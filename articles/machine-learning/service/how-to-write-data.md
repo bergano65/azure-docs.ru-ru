@@ -13,10 +13,10 @@ ms.reviewer: jmartens
 ms.date: 05/02/2019
 ms.custom: seodec18
 ms.openlocfilehash: 6206ad1a7356221bf94134e5d293c27d778cc187
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66752869"
 ---
 # <a name="write-and-configure-data--with-the-azure-machine-learning-data-prep-sdk"></a>Запись и настроить данные с помощью пакета SDK Azure Machine Learning данных подготовки
@@ -69,7 +69,7 @@ t.head(5)
 |1| 10003,0 | 99999,0 | Нет | НЕТ | НЕТ | ENSO | NaN | NaN | NaN |   
 |2| 10010,0 | 99999,0 | Нет | НЕТ | JN | ENJA | 70933,0 | –8667,0 | 90,0 |
 |3| 10013,0 | 99999,0 | Нет | НЕТ | НЕТ |      | NaN | NaN | NaN |
-|4.| 10014,0 | 99999,0 | Нет | НЕТ | НЕТ | ENSO | 59783,0 | 5350,0 |  500,0|
+|4\.| 10014,0 | 99999,0 | Нет | НЕТ | НЕТ | ENSO | 59783,0 | 5350,0 |  500,0|
 
 ### <a name="delimited-file-example"></a>Пример файла с разделителями
 
@@ -94,7 +94,7 @@ written_files.head(5)
 |1| 10003,0 | 99999,0 | ОШИБКА | НЕТ | НЕТ | ENSO |    NaN | NaN | NaN |   
 |2| 10010,0 | 99999,0 | ОШИБКА | НЕТ | JN | ENJA |    70933,0 | –8667,0 | 90,0 |
 |3| 10013,0 | 99999,0 | ОШИБКА | НЕТ | НЕТ |     | NaN | NaN | NaN |
-|4.| 10014,0 | 99999,0 | ОШИБКА | НЕТ | НЕТ | ENSO |    59783,0 | 5350,0 |  500,0|
+|4\.| 10014,0 | 99999,0 | ОШИБКА | НЕТ | НЕТ | ENSO |    59783,0 | 5350,0 |  500,0|
 
 В предыдущих выходных данных в числовых столбцах есть несколько ошибок из-за чисел, которые не были правильно проанализированы. При записи в CSV-файл эти значения NULL заменяются строкой ERROR (Ошибка) по умолчанию.
 
@@ -117,7 +117,7 @@ written_files.head(5)
 |1| 10003,0 | 99999,0 | BadData | НЕТ | НЕТ | ENSO |  NaN | NaN | NaN |   
 |2| 10010,0 | 99999,0 | BadData | НЕТ | JN | ENJA |  70933,0 | –8667,0 | 90,0 |
 |3| 10013,0 | 99999,0 | BadData | НЕТ | НЕТ |   | NaN | NaN | NaN |
-|4.| 10014,0 | 99999,0 | BadData | НЕТ | НЕТ | ENSO |  59783,0 | 5350,0 |  500,0|
+|4\.| 10014,0 | 99999,0 | BadData | НЕТ | НЕТ | ENSO |  59783,0 | 5350,0 |  500,0|
 
 ### <a name="parquet-file-example"></a>Пример файла PARQUET
 
@@ -145,7 +145,7 @@ written_parquet_files.head(5)
 |1| 10003,0 | 99999,0 | MiscreantData | НЕТ | НЕТ | ENSO | MiscreantData | MiscreantData | MiscreantData |   
 |2| 10010,0 | 99999,0 | MiscreantData | НЕТ| JN| ENJA|   70933,0|    –8667,0 |90,0|
 |3| 10013,0 | 99999,0 | MiscreantData | НЕТ| НЕТ| |   MiscreantData|    MiscreantData|    MiscreantData|
-|4.| 10014,0 | 99999,0 | MiscreantData | НЕТ| НЕТ| ENSO|   59783,0|    5350,0| 500,0|
+|4\.| 10014,0 | 99999,0 | MiscreantData | НЕТ| НЕТ| ENSO|   59783,0|    5350,0| 500,0|
 
 ## <a name="configure-data-for-automated-machine-learning-training"></a>Настройка данных для автоматических машины обучения
 

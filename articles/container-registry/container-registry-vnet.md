@@ -7,12 +7,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 04/03/2019
 ms.author: danlep
-ms.openlocfilehash: 15b67218b129b5e017e67651587c389af412d7a1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: dc08fd5cc4abbf5d16f9d49874ec2c70cace165b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60867412"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67067965"
 ---
 # <a name="restrict-access-to-an-azure-container-registry-using-an-azure-virtual-network-or-firewall-rules"></a>Ограничение доступа к реестру контейнеров Azure с помощью виртуальной сети Azure или правила брандмауэра
 
@@ -52,7 +52,7 @@ ms.locfileid: "60867412"
 
 Службы несколькими клиентами, такие как реестр контейнеров Azure, используют один набор IP-адресов для всех клиентов. Конечная точка службы назначает конечную точку для доступа к реестру. Эта конечная точка предоставляет трафика оптимального маршрута к ресурсу через магистральную сеть Azure. В каждом запросе также передаются удостоверения виртуальной сети и подсети.
 
-### <a name="firewall-rules"></a>Правила брандмауэра
+### <a name="firewall-rules"></a>Правила файрволла
 
 Для правила IP-сети, укажите разрешенные internet диапазоны адресов, с помощью нотации CIDR, например *16.17.18.0/24* или отдельные IP-адреса в том, как *16.17.18.19*. Правила IP-сети можно применять только для *открытый* Интернета IP-адреса. Диапазоны IP-адресов, зарезервированные для частных сетей (как определено в RFC 1918) запрещено использовать в правилах IP.
 
@@ -216,7 +216,7 @@ az acr network-rule add --name mycontainerregistry --subnet <subnet-resource-id>
 
 ## <a name="allow-access-from-an-ip-address"></a>Разрешить доступ с IP-адресом
 
-В этом разделе настройте реестр контейнеров, чтобы разрешить доступ из подсети в виртуальной сети Azure. Предоставляются аналогичные шаги, с помощью Azure CLI и портала Azure.
+В этом разделе настройте реестр контейнеров, чтобы разрешить доступ из конкретного IP-адреса или диапазона. Предоставляются аналогичные шаги, с помощью Azure CLI и портала Azure.
 
 ### <a name="allow-access-from-an-ip-address---cli"></a>Разрешить доступ с IP-адресом - CLI
 
@@ -326,7 +326,7 @@ Error response from daemon: login attempt to https://xxxxxxx.azurecr.io/v2/ fail
 az acr network-rule list--name mycontainerregistry 
 ```
 
-Для каждого правила, настроенного, запустите [удалить запись контроля доступа Azure network-rule] [ az-acr-network-rule-remove] команду, чтобы удалить его. Пример.
+Для каждого правила, настроенного, запустите [удалить запись контроля доступа Azure network-rule] [ az-acr-network-rule-remove] команду, чтобы удалить его. Пример:
 
 ```azurecli
 # Remove a rule that allows access for a subnet. Substitute the subnet resource ID.

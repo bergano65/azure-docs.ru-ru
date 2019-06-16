@@ -9,10 +9,10 @@ ms.date: 05/22/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 7abd0ac3d95825594dffe385bccc1672d0f71c5f
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66142560"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Источники данных, поддерживаемые в службах Azure Analysis Services
@@ -24,7 +24,7 @@ ms.locfileid: "66142560"
 |Источник данных  |В памяти  |DirectQuery  |
 |---------|---------|---------|
 |База данных SQL Azure<sup>[2](#azsqlmanaged)</sup>     |   Да      |    Да      |
-|Хранилище данных SQL Azure     |   Да      |   Да       |
+|Хранилище данных SQL Azure     |   Да      |   Да       |
 |Хранилище BLOB-объектов Azure<sup>[1](#tab1400a)</sup>     |   Да       |    Нет      |
 |Табличное хранилище Azure<sup>[1](#tab1400a)</sup>    |   Да       |    Нет      |
 |Azure Cosmos DB<sup>[1](#tab1400a)</sup>     |  Да        |  Нет        |
@@ -98,9 +98,9 @@ ms.locfileid: "66142560"
 
 **Указание поставщика**
 
-1. В разделе SSDT > **Tabular Model Explorer (Обозреватель табличных моделей)** > **Data Sources (Источники данных)** щелкните правой кнопкой подключение к источнику данных и выберите **Edit Data Source (Изменить источник данных)**.
+1. В разделе SSDT > **Tabular Model Explorer (Обозреватель табличных моделей)**  > **Data Sources (Источники данных)** щелкните правой кнопкой подключение к источнику данных и выберите **Edit Data Source (Изменить источник данных)** .
 2. В окне **Edit Connection** (Изменение подключения) щелкните **Advanced** (Дополнительно), чтобы открыть окно дополнительных свойств.
-3. В разделе **Set Advanced Properties (Настройка дополнительных свойств)** > **Providers (Поставщики)** выберите соответствующего поставщика.
+3. В разделе **Set Advanced Properties (Настройка дополнительных свойств)**  > **Providers (Поставщики)** выберите соответствующего поставщика.
 
 ## <a name="impersonation"></a>Олицетворение
 В некоторых случаях может быть необходимо указать другую учетную запись олицетворения. Учетную запись олицетворения можно указать в Visual Studio (SSDT) или SSMS.

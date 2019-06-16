@@ -17,10 +17,10 @@ ms.workload: infrastructure-services
 ms.date: 09/16/2016
 ms.author: hermannd
 ms.openlocfilehash: 413e449f005d288f66da0257f5b800733e58eb94
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60836591"
 ---
 # <a name="deploy-sap-ides-ehp7-sp3-for-sap-erp-60-on-azure"></a>Развертывание SAP IDES EHP7 SP3 для SAP ERP 6.0 в Azure
@@ -53,7 +53,7 @@ ms.locfileid: "60836591"
 
     a. **Microsoft Azure (classic)** (Microsoft Azure (классическая)) — это классическая модель развертывания. Мы не рекомендуем ее использовать.
 
-    2. **Microsoft Azure** — это новая модель развертывания с помощью диспетчера ресурсов.
+    2\. **Microsoft Azure** — это новая модель развертывания с помощью диспетчера ресурсов.
 
     ![Учетные записи CAL SAP](./media/cal-ides-erp6-ehp7-sp3-sql/s4h-pic-2a.PNG)
 
@@ -100,7 +100,7 @@ ms.locfileid: "60836591"
 
     a. Введите **имя** экземпляра.
 
-    2. Выберите **регион** Azure. Чтобы получить несколько регионов Azure на выбор, может потребоваться подписка SAP CAL.
+    2\. Выберите **регион** Azure. Чтобы получить несколько регионов Azure на выбор, может потребоваться подписка SAP CAL.
 
     c.  Введите основной **пароль** для доступа к решению, как показано ниже:
 

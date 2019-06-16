@@ -15,10 +15,10 @@ ms.workload: required
 ms.date: 5/8/2017
 ms.author: aljo
 ms.openlocfilehash: ee19be45915b3ff1253ec721f4334fead19647b8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60723609"
 ---
 # <a name="reliable-collection-object-serialization-in-azure-service-fabric"></a>Сериализация объектов надежной коллекции в Azure Service Fabric
@@ -36,17 +36,17 @@ ms.locfileid: "60723609"
 Диспетчер надежных состояний имеет встроенный сериализатор для следующих типов: 
 - Guid
 - bool
-- байт
+- byte
 - sbyte
 - byte[]
 - char
 - string
 - decimal
-- Double
+- double
 - float
 - int
 - uint
-- длинное целое число
+- long
 - ulong
 - short
 - ushort

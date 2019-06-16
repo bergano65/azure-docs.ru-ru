@@ -15,10 +15,10 @@ ms.workload: required
 ms.date: 09/20/2017
 ms.author: vturecek
 ms.openlocfilehash: f9cd6e2fee738d2d42c790b4eb7b9a876a44b01d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60772981"
 ---
 # <a name="service-remoting-in-c-with-reliable-services"></a>Удаленное взаимодействие в Reliable Services с помощью C#
@@ -211,7 +211,7 @@ string message = await helloWorldClient.HelloWorldAsync();
       </Resources>
       ```
 
-    2. Используйте приведенный ниже метод расширения, чтобы создать прослушиватель удаленного взаимодействия.
+    2\. Используйте приведенный ниже метод расширения, чтобы создать прослушиватель удаленного взаимодействия.
 
     ```csharp
     protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
@@ -333,7 +333,7 @@ string message = await helloWorldClient.HelloWorldAsync();
       </Resources>
       ```
 
-    2. Используйте приведенный ниже метод расширения, чтобы создать прослушиватель удаленного взаимодействия.
+    2\. Используйте приведенный ниже метод расширения, чтобы создать прослушиватель удаленного взаимодействия.
 
     ```csharp
     protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()

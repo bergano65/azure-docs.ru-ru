@@ -8,12 +8,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: danlep
-ms.openlocfilehash: b6e26bfa476c5c13e6e478f40c39978af61d83e7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d62dd6c65975d63a0127bb5dd1c62cd741b59ac6
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60427026"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67068000"
 ---
 # <a name="azure-container-registry-roles-and-permissions"></a>Роли и разрешения реестра контейнеров Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "60427026"
 | ---------| --------- | --------- | --------- | --------- | --------- | --------- | --------- |
 | Владелец. | X | X | X | X | X | X |  |  
 | Участник | X | X | X |  X | X | X |  |  
-| читатель. | X |  |  | X |  |  |  |
+| Читатель | X |  |  |  |  |  |  |
 | AcrPush |  |  | X | X | |  |  |  
 | AcrPull |  |  |  | X |  |  |  |  
 | AcrDelete |  |  |  |  | X |  |  |

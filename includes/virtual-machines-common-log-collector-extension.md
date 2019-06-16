@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 072864d565e2edbddd4b7df851ad0e30daf7e5fa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60387967"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "67120195"
 ---
 При диагностике неполадок в облачной службе Microsoft Azure файлы журналов служб на виртуальных машинах собираются по мере возникновения проблем. Вы можете использовать запускаемое по запросу расширение AzureVMLogCollector для однократного сбора журналов из одной или нескольких виртуальных машин облачной службы (из веб-ролей или рабочих ролей) и передачи собранных файлов в учетную запись хранения Azure. Все эти действия выполняются без удаленного входа на виртуальные машины.
 

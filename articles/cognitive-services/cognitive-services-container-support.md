@@ -3,19 +3,19 @@ title: Поддержка контейнеров
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как c помощью контейнеров Docker выполнять обработку в Cognitive Services как можно ближе к своим данным.
 services: cognitive-services
-author: diberry
+author: IEvangelist
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.topic: article
-ms.date: 05/28/2019
-ms.author: diberry
-ms.openlocfilehash: 3d09ee542b98e1c365aceaf86b051d706c7882d4
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.date: 06/11/2019
+ms.author: dapine
+ms.openlocfilehash: 8faa524d7d88f09835d26439b772b8d57c84cc73
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66304285"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67122239"
 ---
 # <a name="container-support-in-azure-cognitive-services"></a>Поддержка контейнеров в Azure Cognitive Services
 
@@ -72,17 +72,17 @@ ms.locfileid: "66304285"
 
 Кроме того, некоторые контейнеры поддерживаются в Cognitive Services [ **предложения все в одном** ](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAllInOne) ключи ресурсов. Можно создать один единый ресурс Cognitive Services в одном и использовать один и тот же ключ выставления счетов для поддерживаемых служб для следующих служб:
 
-* Компьютерное зрение
+* API Компьютерного зрения
 * Распознавание лиц
 * LUIS
-* Текстовая аналитика
+* Анализ текста
 
 ## <a name="container-availability-in-azure-cognitive-services"></a>Доступность контейнеров в Azure Cognitive Services
 
 Контейнеры Azure Cognitive Services общедоступны через подписку Azure, а образы для контейнеров Docker можно извлечь из Реестра контейнеров Microsoft или Docker Hub. Используйте команду [docker pull](https://docs.docker.com/engine/reference/commandline/pull/), чтобы скачать образ контейнера из соответствующего репозитория.
 
 > [!IMPORTANT]
-> В настоящее время необходимо выполнить процесс регистрации для доступа к со следующими контейнерами, в которых вы заполнения и отправки анкеты с вопросами о вас, вашей компании и вариант использования, для которого вы хотите реализовать контейнеры. Получив доступ и учетные данные, вы сможете извлечь образы контейнеров "Распознавание лиц" и (или) "Распознавание текста" из закрытого реестра контейнеров в Реестре контейнеров Azure.
+> В настоящее время необходимо выполнить процесс регистрации для доступа к со следующими контейнерами, в которых вы заполнения и отправки анкеты с вопросами о вас, вашей компании и вариант использования, для которого вы хотите реализовать контейнеры. Как только вы уже предоставлен доступ и предоставляются учетные данные, может извлекать образы контейнера из закрытого реестра контейнеров проводимых реестр контейнеров Azure.
 > * [Dectector аномалий](Anomaly-Detector/anomaly-detector-container-howto.md#request-access-to-the-container-registry)
 > * [Распознавание лиц](Face/face-how-to-install-containers.md)
 > * [Распознаватель формы](form-recognizer/form-recognizer-container-howto.md#request-access-to-the-container-registry)

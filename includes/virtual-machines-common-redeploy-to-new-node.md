@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 1c3996c3f40da496af0cd795d0873864667a1f19
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66160291"
 ---
 ## <a name="use-the-azure-portal"></a>Использование портала Azure
@@ -23,7 +23,7 @@ ms.locfileid: "66160291"
     ![Обновление виртуальной машины](./media/virtual-machines-common-redeploy-to-new-node/vmupdating.png)
 4. Затем **состояние** изменится на *Запуск* при загрузке виртуальной машины на новый узел Azure, как показано ниже.
    
-    ![Виртуальная машина запускается](./media/virtual-machines-common-redeploy-to-new-node/vmstarting.png)
+    ![Запуск виртуальной машины](./media/virtual-machines-common-redeploy-to-new-node/vmstarting.png)
 5. По завершении процесса загрузки **состояние** виртуальной машины снова вернется к значению *Работает*. Это значит, что повторное развертывание виртуальной машины успешно завершено:
    
     ![Выполнение виртуальной машины](./media/virtual-machines-common-redeploy-to-new-node/vmrunning.png)

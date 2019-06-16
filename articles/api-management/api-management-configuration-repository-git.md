@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 03/12/2019
 ms.author: apimpm
 ms.openlocfilehash: c371333dcc7db0b60ffa5f94d6e2d55ae500a4f6
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66241183"
 ---
 # <a name="how-to-save-and-configure-your-api-management-service-configuration-using-git"></a>Сохранение и настройка конфигурации службы управления API с помощью Git
@@ -204,19 +204,19 @@ git push
 | Параметр удостоверения | Соответствует параметру |
 | --- | --- |
 | RegistrationEnabled |Присутствие поставщика удостоверений с **именем пользователя и паролем**. |
-| UserRegistrationTerms |**Условия использования при регистрации пользователя**  |
-| UserRegistrationTermsEnabled |**Показывать условия использования на странице регистрации**  |
-| UserRegistrationTermsConsentRequired |**Требовать согласия**  |
-| RequireUserSigninEnabled |**Перенаправлять анонимных пользователей на страницу входа**  |
+| UserRegistrationTerms |**Условия использования при регистрации пользователя** |
+| UserRegistrationTermsEnabled |**Показывать условия использования на странице регистрации** |
+| UserRegistrationTermsConsentRequired |**Требовать согласия** |
+| RequireUserSigninEnabled |**Перенаправлять анонимных пользователей на страницу входа** |
 
 Следующие четыре параметра (`DelegationEnabled`, `DelegationUrl`, `DelegatedSubscriptionEnabled` и `DelegationValidationKey`) соответствуют указанным далее параметрам на вкладке **Делегирование** в разделе **Безопасность**.
 
 | Параметр делегирования | Соответствует параметру |
 | --- | --- |
 | DelegationEnabled |Флажок **Делегировать вход и регистрацию** |
-| DelegationUrl |**URL-адрес конечной точки делегирования**  |
-| DelegatedSubscriptionEnabled |**Делегировать подписку на продукт**  |
-| DelegationValidationKey |**Делегировать ключ проверки**  |
+| DelegationUrl |**URL-адрес конечной точки делегирования** |
+| DelegatedSubscriptionEnabled |**Делегировать подписку на продукт** |
+| DelegationValidationKey |**Делегировать ключ проверки** |
 
 Последний параметр `$ref-policy`соответствует глобальному файлу правил политики для экземпляра службы.
 
@@ -260,7 +260,7 @@ git push
 * `<template name>\body.html` — это текст сообщения электронной почты.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Сведения о других способах управления экземпляром службы см. в приведенных ниже статьях. 
+Сведения о других способах управления экземпляром службы см. в приведенных ниже статьях.
 
 * Управление экземпляром службы с помощью следующих командлетов PowerShell
   * [Справочник по командлетам PowerShell для развертывания службы](https://docs.microsoft.com/powershell/module/wds)

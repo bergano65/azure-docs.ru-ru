@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e792551f4cac857f56454c67d527e01cb9c4281
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: b481030c5d2d8e7d5e7061cdf256a202e08d6cbf
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66113124"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67108789"
 ---
 # <a name="vulnerabilities-detected-by-azure-active-directory-identity-protection"></a>Уязвимости, обнаруживаемые защитой идентификации Azure Active Directory
 
@@ -33,11 +33,11 @@ ms.locfileid: "66113124"
 Многофакторная Идентификация Azure предоставляет дополнительный уровень безопасности для проверки подлинности пользователя. Она помогает защитить доступ к данным и приложениям, при этом не усложняя процесс входа пользователя в систему. Многофакторная Идентификация Azure предоставляет удобные проверки вариантах, например:
 
 * Телефонный звонок
-* SMS
-* Уведомление мобильного приложения
+* Текстовое сообщение
+* Уведомление от мобильного приложения
 * Код проверки OTP
 
-Мы рекомендуем настроить обязательную проверку с помощью Многофакторной идентификации Azure при входе пользователей. Multi-Factor Authentication играет основную роль в основанных на рисках политиках условного доступа в защите идентификации.
+Мы рекомендуем настроить обязательную проверку с помощью Многофакторной идентификации Azure при входе пользователей. Многофакторная проверка подлинности играет ключевую роль в рисках политиках условного доступа с помощью защиты идентификации.
 
 Дополнительные сведения см. в статье [Что такое Многофакторная идентификация Azure?](../authentication/multi-factor-authentication.md)
 
@@ -51,7 +51,7 @@ ms.locfileid: "66113124"
 
 Дополнительные сведения см. в статье [Cloud Discovery](/cloud-app-security/set-up-cloud-discovery).
 
-## <a name="security-alerts-from-privileged-identity-management"></a>Предупреждения системы безопасности из службы управления привилегированными пользователями
+## <a name="security-alerts-from-privileged-identity-management"></a>Оповещения системы безопасности в рамках управления привилегированными пользователями
 
 Эта уязвимость способствует обнаружению и устранению оповещений о привилегированных удостоверениях в организации.  
 

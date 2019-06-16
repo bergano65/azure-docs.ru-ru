@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: fe8f97368531ed572083834256d84cd1ed6dd8a1
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: c3ef5362c4d97b8d805212f9cf813c7bc9c8c18c
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64687226"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67059445"
 ---
 # <a name="add-custom-apache-hive-libraries-when-creating-your-hdinsight-cluster"></a>Добавление пользовательских библиотек Apache Hive при создании кластера HDInsight
 
@@ -39,9 +39,6 @@ ms.locfileid: "64687226"
 
 Для **кластеров под управлением Windows**: [https://hdiconfigactions.blob.core.windows.net/setupcustomhivelibsv01/setup-customhivelibs-v01.ps1](https://hdiconfigactions.blob.core.windows.net/setupcustomhivelibsv01/setup-customhivelibs-v01.ps1)
 
-> [!IMPORTANT]  
-> Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
-
 **Требования**
 
 * Скрипты необходимо применять к **головным узлам** и **рабочим узлам**.
@@ -50,7 +47,7 @@ ms.locfileid: "64687226"
 
 * Учетная запись хранилища, содержащая библиотеку JAR-файлов, **должна** быть связана с кластером HDInsight во время создания. Это должна быть учетная запись хранения по умолчанию или учетная запись, добавленная с помощью колонки __Необязательная настройка__.
 
-* Путь WASB к контейнеру необходимо указать в виде параметра для действия сценария. Например, если JAR-файлы хранятся в контейнере с именем **libs** на учетную запись хранения с именем **mystorage**, нужно указать параметр **wasb://libs\@ mystorage.BLOB.Core.Windows.NET/**.
+* Путь WASB к контейнеру необходимо указать в виде параметра для действия сценария. Например, если JAR-файлы хранятся в контейнере с именем **libs** на учетную запись хранения с именем **mystorage**, нужно указать параметр **wasb://libs\@ mystorage.BLOB.Core.Windows.NET/** .
 
   > [!NOTE]  
   > В этом документе предполагается, что вы уже создали учетную запись хранения и контейнер BLOB-объектов, а также отправили в него файлы.
@@ -78,7 +75,7 @@ ms.locfileid: "64687226"
 
    * **ZOOKEEPER:** Оставьте это поле пустым.
 
-   * **Параметры:** введите адрес WASB к контейнеру и учетной записи хранения, содержащий JAR-файлы Например **wasb://libs\@mystorage.blob.core.windows.net/**.
+   * **Параметры:** введите адрес WASB к контейнеру и учетной записи хранения, содержащий JAR-файлы Например **wasb://libs\@mystorage.blob.core.windows.net/** .
 
 3. В нижней части раздела **Действия скрипта** нажмите кнопку **Выбрать**, чтобы сохранить конфигурацию.
 

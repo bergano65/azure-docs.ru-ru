@@ -10,10 +10,10 @@ ms.author: mhopkins
 ms.reviewer: yzheng
 ms.subservice: common
 ms.openlocfilehash: ce2559f62d29c7b062cfd1ad1dcb61146adfd91c
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66001754"
 ---
 # <a name="manage-the-azure-blob-storage-lifecycle"></a>Управление жизненным циклом хранилища BLOB-объектов Azure
@@ -37,7 +37,7 @@ ms.locfileid: "66001754"
 
 Компонент управления жизненным циклом предоставляется бесплатно. Клиенты оплачивают только обычную стоимость вызовов API [Отображение BLOB-объектов](https://docs.microsoft.com/rest/api/storageservices/list-blobs) и [Установка уровня BLOB-объектов](https://docs.microsoft.com/rest/api/storageservices/set-blob-tier). Операция удаления предоставляется бесплатно. Дополнительные сведения см. на странице [цен на блочные BLOB-объекты](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
-## <a name="regional-availability"></a>Доступность в регионах
+## <a name="regional-availability"></a>Доступность по регионам
 
 Компонент управления жизненным циклом доступна во всех глобальных регионах Azure.
 
@@ -251,7 +251,7 @@ $policy = Set-AzStorageAccountManagementPolicy -ResourceGroupName $rgname -Stora
 
 Доступны следующие фильтры:
 
-| Имя фильтра | Тип фильтра | Примечания | Обязательно |
+| Имя фильтра | Тип фильтра | Примечания | Обязательный |
 |-------------|-------------|-------|-------------|
 | blobTypes   | Массив предустановленных значений перечисления. | В текущем выпуске поддерживается `blockBlob`. | Да |
 | prefixMatch | Массив строк, по которым выполняется сопоставление префиксов. Каждое правило можно определить до 10 префиксы. Строка префикса должно начинаться с имени контейнера. Например, если вы хотите обеспечить поиск всех больших двоичных объектов в `https://myaccount.blob.core.windows.net/container1/foo/...` для правила, — prefixMatch `container1/foo`. | Если вы не определили prefixMatch, правило применяется для всех больших двоичных объектов в учетной записи хранения.  | Нет |
@@ -266,7 +266,7 @@ $policy = Set-AzStorageAccountManagementPolicy -ResourceGroupName $rgname -Stora
 |---------------|---------------------------------------------|---------------|
 | tierToCool    | Поддержка BLOB-объектов, размещенных на горячем уровне доступа         | Не поддерживается |
 | tierToArchive | Поддержка BLOB-объектов, размещенных на горячем или холодном уровне доступа | Не поддерживается |
-| удалить        | Поддерживаются                                   | Поддерживаются     |
+| delete        | Поддерживаются                                   | Поддерживаются     |
 
 >[!NOTE]
 >Если для одного BLOB-объекта определено более одного действия, управление жизненным циклом применяет к нему более дешевое из этих действий. Например, действие `delete` дешевле, чем действие `tierToArchive`; а действие `tierToArchive` дешевле, чем действие `tierToCool`.

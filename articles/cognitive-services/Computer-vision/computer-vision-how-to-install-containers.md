@@ -3,20 +3,20 @@ title: Установка и запуск контейнеров — API ком
 titlesuffix: Azure Cognitive Services
 description: В этом пошаговом руководстве показано, как скачивать, устанавливать и выполнять контейнеры компьютерного зрения.
 services: cognitive-services
-author: diberry
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: article
-ms.date: 05/28/2019
-ms.author: diberry
+ms.date: 06/10/2019
+ms.author: IEvangelist
 ms.custom: seodec18
-ms.openlocfilehash: 10e5060c06e1ebc591c7245ae588b5352a3328ca
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 49e3af546ffcf5be47c73bfe633223a4d968d887
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66302818"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67060926"
 ---
 # <a name="install-and-run-recognize-text-containers"></a>Установка и запуск контейнеров распознавания текста
 
@@ -50,7 +50,7 @@ ms.locfileid: "66302818"
 
 В следующей таблице описаны минимальное и рекомендуемое число ядер ЦП и памяти для каждого контейнера Распознавания текста.
 
-| Контейнер | Минимум | Рекомендуется |ТРАНЗАКЦИЙ В СЕКУНДУ<br>(Минимум, максимум)|
+| Контейнер | Минимальная | Рекомендуется |ТРАНЗАКЦИЙ В СЕКУНДУ<br>(Минимум, максимум)|
 |-----------|---------|-------------|--|
 |Распознавание текста|1 ядро, 8 ГБ памяти, 0,5 TPS|2 ядра, 8 ГБ памяти, 1 TPS|0.5, 1|
 
@@ -89,7 +89,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-recognize-t
 
 Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. В команде используются следующие параметры:
 
-| Местозаполнитель | Value |
+| Placeholder | Значение |
 |-------------|-------|
 |{BILLING_KEY} | Этот ключ используется для запуска контейнера, а также доступна в Azure `Cognitive Services` страницы "ключи".  |
 |{BILLING_ENDPOINT_URI} | Значение URI конечной точки выставления счетов. Ниже приведен пример: `https://westus.api.cognitive.microsoft.com/vision/v2.0`|

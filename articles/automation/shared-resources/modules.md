@@ -6,19 +6,19 @@ ms.service: automation
 ms.subservice: shared-resources
 author: georgewallace
 ms.author: gwallace
-ms.date: 03/13/2019
+ms.date: 06/05/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: fa7f5d3fb38eb1dbca51dec9b73dca3c998436aa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 54ebe7df9523a863ae14bc55c6ae4c9635468755
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60500401"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67063465"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Управление модули в службе автоматизации Azure
 
-Служба автоматизации Azure предоставляет возможность импортировать модули PowerShell в учетной записи службы автоматизации для использования модулей Runbook на основе PowerShell. Эти модули могут быть пользовательскими модулями, которые вы создали, из коллекции PowerShell, или модули AzureRM и Az для Azure.
+Служба автоматизации Azure предоставляет возможность импортировать модули PowerShell в учетной записи службы автоматизации для использования модулей Runbook на основе PowerShell. Эти модули могут быть пользовательскими модулями, которые вы создали, из коллекции PowerShell, или модули AzureRM и Az для Azure. При создании учетной записи службы автоматизации некоторые модули импортируются по умолчанию.
 
 ## <a name="import-modules"></a>Импорт модулей
 
@@ -51,11 +51,27 @@ New-AzureRmAutomationModule -Name <ModuleName> -ContentLinkUri <ModuleUri> -Reso
 
 ![Импорт коллекции PowerShell с портала Azure](../media/modules/gallery-azure-portal.png)
 
+## <a name="delete-modules"></a>Удалить модули
+
+При наличии проблем с модулем, или вам необходимо выполнить откат к предыдущей версии модуля, его можно удалить из учетной записи службы автоматизации. Не удается удалить исходную версию [по умолчанию модули](#default-modules) , импортируются при создании учетной записи службы автоматизации. Если удалить модуль является более новой версии одного из [по умолчанию модули](#default-modules) установлен, он будет отката к версии, которая была установлена с помощью учетной записи службы автоматизации. В противном случае любой модуль, который был удален из вашей учетной записи службы автоматизации будут удалены.
+
+### <a name="azure-portal"></a>Портал Azure
+
+На портале Azure, перейдите к учетной записи службы автоматизации и выберите **модули** под **общие ресурсы**. Выберите модуль, который требуется удалить. На **модуль** страницы, clcick **удалить**. Если этот модуль является одним из [по умолчанию модули](#default-modules) его будет откатить обратно до версии, которая была текущей, при создании учетной записи службы автоматизации.
+
+### <a name="powershell"></a>PowerShell
+
+Чтобы удалить модуль с помощью PowerShell, выполните следующую команду:
+
+```azurepowershell-interactive
+Remove-AzureRmAutomationModule -Name <moduleName> -AutomationAccountName <automationAccountName> -ResourceGroupName <resourceGroupName>
+```
+
 ## <a name="internal-cmdlets"></a>Внутренняя командлетов
 
 Ниже приведен список командлетов во внутреннем `Orchestrator.AssetManagement.Cmdlets` модуль, который импортируется в каждой учетной записи службы автоматизации. Эти командлеты доступны в модулях Runbook и конфигурациях DSC и позволяют взаимодействовать с ресурсами в учетной записи службы автоматизации. Кроме того, внутренняя командлеты, которые позволяют получать секреты из зашифрованы **переменной** значения, **учетные данные**и зашифрованные **подключения** поля. Командлеты Azure PowerShell не удалось извлечь эти секреты. Эти командлеты не требуется явно подключиться к Azure, при их использовании. Это полезно для сценариев, где имеется подключение, например Run As Account, необходимо использовать для проверки подлинности в Azure.
 
-|Name|ОПИСАНИЕ|
+|Name|Описание|
 |---|---|
 |Get-AutomationCertificate|`Get-AutomationCertificate [-Name] <string> [<CommonParameters>]`|
 |Get-AutomationConnection|`Get-AutomationConnection [-Name] <string> [-DoNotDecrypt] [<CommonParameters>]` |
@@ -209,6 +225,37 @@ New-AzureRmAutomationModule -Name <ModuleName> -ContentLinkUri <ModuleUri> -Reso
 * Модуль должен полностью находиться в пакете с поддержкой xcopy. При необходимости выполнения модулей Runbook, модули службы автоматизации Azure распространяются среди песочницы службы автоматизации. Модули должны работать независимо от узла, на котором они запущены. Вы должны иметь возможность заархивировать и переместить пакет модуля и заставить его работать как обычно при импорте в среду PowerShell другого узла. Чтобы это произошло, модуль не должен зависеть от каких-либо файлов вне папки модуля. Эта папка архивируется при импорте модуля в службу автоматизации Azure. Модуль также не должен зависеть от каких-либо уникальных параметров реестра на узле, например от параметров, заданных при установке продукта. Все файлы в модуле должен иметь путь не более 140 символов. Все пути, больше 140 знаков приведет к проблемам, импорт модуля runbook. При несоблюдении этой рекомендации модуль нельзя использовать в службе автоматизации Azure.  
 
 * Если вы ссылаетесь на [модули Azure Powershell Az](/powershell/azure/new-azureps-module-az?view=azps-1.1.0) в своем модуле, убедитесь, что вы также не ссылаетесь на `AzureRM`. Модуль `Az` нельзя использовать в сочетании с модулями `AzureRM`. `Az` поддерживается в модулях Runbook, но по умолчанию не импортируется. Чтобы узнать о модулях `Az` и соображениях, которые необходимо учитывать, ознакомьтесь со статьей [Поддержка модулей Az в службе автоматизации Azure](../az-modules.md).
+
+## <a name="default-modules"></a>По умолчанию модули
+
+Ниже перечислены модули, которые импортируются по умолчанию при создании учетной записи службы автоматизации. Модули, перечисленные ниже, могут иметь более новых версиях их импорта, но исходная версия не может быть удален из вашей учетной записи службы автоматизации даже в случае удаления их более новые версии.
+
+|Имя модуля|Version|
+|---|---|
+| AuditPolicyDsc | 1.1.0.0 |
+| Таблицы Azure | 1.0.3 |
+| Azure.Storage; | 1.0.3 |
+| AzureRM.Automation | 1.0.3 |
+| AzureRM.Compute | 1.2.1 |
+| AzureRM.Profile | 1.0.3 |
+| AzureRM.Resources | 1.0.3 |
+| AzureRM.Sql | 1.0.3 |
+| AzureRM.Storage | 1.0.3 |
+| ComputerManagementDsc | 5.0.0.0 |
+| GPRegistryPolicyParser | 0,2 |
+| Microsoft.PowerShell.Core | 0 |
+| Microsoft.PowerShell.Diagnostics |  |
+| Microsoft.PowerShell.Management |  |
+| Microsoft.PowerShell.Security |  |
+| Microsoft.PowerShell.Utility |  |
+| Microsoft.WSMan.Management |  |
+| Orchestrator.AssetManagement.Cmdlets | 1 |
+| PSDscResources | 2.9.0.0 |
+| SecurityPolicyDsc | 2.1.0.0 |
+| StateConfigCompositeResources | 1 |
+| xDSCDomainjoin | 1,1 |
+| xPowerShellExecutionPolicy | 1.1.0.0 |
+| xRemoteDesktopAdmin | 1.1.0.0 |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

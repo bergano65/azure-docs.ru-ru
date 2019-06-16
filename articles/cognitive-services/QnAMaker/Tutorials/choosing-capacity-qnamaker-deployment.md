@@ -12,11 +12,11 @@ ms.date: 01/24/2019
 ms.author: tulasim
 ms.custom: seodec18
 ms.openlocfilehash: a332d263526bb6507e7394c205caa1c4d1f9e3e6
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55873586"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "60613273"
 ---
 # <a name="choosing-capacity-for-your-qna-maker-deployment"></a>Выбор емкости для развертывания QnA Maker
 
@@ -47,7 +47,7 @@ ms.locfileid: "55873586"
 
 См. дополнительные сведения об [обновлении службы QnA Maker](../How-To/upgrade-qnamaker-service.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Upgrade your QnA Maker service](../How-To/upgrade-qnamaker-service.md) (Обновление службы QnA Maker)
