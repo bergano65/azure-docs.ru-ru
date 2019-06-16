@@ -215,7 +215,7 @@
       items:
         - name: "Настройка аутентификации Azure\_AD"
           href: ../sql-database/sql-database-aad-authentication-configure.md?toc=/azure/sql-data-warehouse/toc.json
-        - name: Условный доступ
+        - name: условный доступ;
           href: ../sql-database/sql-database-conditional-access.md?toc=/azure/sql-data-warehouse/toc.json
         - name: Создание правил виртуальной сети с помощью PowerShell
           href: ../sql-database/sql-database-vnet-service-endpoint-rule-powershell.md?toc=/azure/sql-data-warehouse/toc.json
