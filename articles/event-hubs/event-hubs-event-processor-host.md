@@ -15,10 +15,10 @@ ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
 ms.openlocfilehash: 26f0abb48ba268f79167ed5d00e4f96d8b5e5998
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60821875"
 ---
 # <a name="receive-events-from-azure-event-hubs-using-event-processor-host"></a>Получение событий от Центров событий Azure с помощью узла обработчика событий
@@ -121,7 +121,7 @@ public class SimpleEventProcessor : IEventProcessor
 
 Здесь каждый узел приобретает право владения секцией в течении определенного периода времени (длительность аренды). Если узел выйдет из строя (виртуальная машина завершит работу), значит истекает срок действия аренды. Попробуйте другие узлы для получения права владения секцией и один из узлов получит это право. Этот процесс повторно назначает аренду секции с новым владельцем. Таким образом, только один читатель может считывать данные из любой заданной секции в группе потребителей.
 
-## <a name="receive-messages"></a>Получить сообщения
+## <a name="receive-messages"></a>Получение сообщений
 
 Каждый вызов [ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processeventsasync) обеспечивает сбор событий. Пользователь управляет событиями самостоятельно. Если вы хотите убедиться, что узел обработчика обрабатывает каждое сообщение по крайней мере один раз, необходимо написать собственный код выполнения повторных попыток. Но учитывайте при этом возможность получения поврежденных сообщений.
 

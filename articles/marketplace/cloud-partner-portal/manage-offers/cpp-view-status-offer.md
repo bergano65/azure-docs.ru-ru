@@ -7,18 +7,18 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: pabutler
-ms.openlocfilehash: b8113552edf9dd2f886b5752b2ebc69afc0fda08
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: fff89dd8a17aaf6d45462edeaa22f1d2efc8d02b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64942388"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67064304"
 ---
 # <a name="view-the-publishing-status-of-azure-marketplace-and-appsource-offers"></a>Просмотр состояния публикации предложений в Azure Marketplace и AppSource
 
 После создания предложения, в особенности во время публикации, вы можете просмотреть состояние предложения на Портале Cloud Partner.  Общее состояние публикации доступно на страницах портала [**Все предложения**](../portal-tour/cpp-all-offers-page.md) и [**Утверждения**](../portal-tour/cpp-approvals-page.md).  Для каждого предложения должен отображаться один из следующих индикаторов состояния.  
 
-|            Статус              |   ОПИСАНИЕ                                                           |
+|            Status              |   Описание                                                           |
 |            ------              |   -----------                                                           |
 | **-**                          | Предложение создано, но процесс публикации еще не начался.            |
 | **Publish in progress** (Публикация выполняется)        | Предложение проходит процесс публикации.   |
@@ -39,7 +39,7 @@ ms.locfileid: "64942388"
 
 ![Ошибка на вкладке состояния службы консультирования](./media/consulting-service-error.png)
 
-В последнем примере состояния приложения Azure показана критическая проблема, обнаруженная при проверке корпорацией Майкрософт.  На этой вкладке содержится активная ссылка на элемент VSTS, содержащий подробные сведения об этой проблеме проверки.  Дополнительную информацию см. в статье [Publish Azure Marketplace and AppSource offers](cpp-publish-offer.md) (Публикация предложений Azure Marketplace и AppSource).
+В последнем примере состояния приложения Azure показана критическая проблема, обнаруженная при проверке корпорацией Майкрософт.  Он содержит "Горячий" ссылка на элемент DevOps в Azure, с подробными сведениями об этой проблеме проверки.  Дополнительную информацию см. в статье [Publish Azure Marketplace and AppSource offers](cpp-publish-offer.md) (Публикация предложений Azure Marketplace и AppSource).
 
 ![Вкладка состояния приложения Azure с проблемой проверки](../azure-applications/media/status-tab-ms-review.png)
 

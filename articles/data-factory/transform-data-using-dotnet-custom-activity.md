@@ -11,16 +11,16 @@ ms.date: 11/26/2018
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: ea409d6705d0146e9cb32ba11e6b785cf527739c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8076ae81b111aa6b524b7e286ed15ca0661d748b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66165968"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67062112"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
 
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](v1/data-factory-use-custom-activities.md)
 > * [Текущая версия](transform-data-using-dotnet-custom-activity.md)
 
@@ -67,7 +67,7 @@ ms.locfileid: "66165968"
 
  Дополнительные сведения о связанной пакетной службе Azure см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md).
 
-## <a name="custom-activity"></a>Пользовательская операция
+## <a name="custom-activity"></a>Настраиваемое действие
 
 В следующем фрагменте кода JSON определяется конвейер с простым настраиваемым действием. Определение действия содержит ссылку на связанную пакетную службу Azure.
 
@@ -104,7 +104,7 @@ ms.locfileid: "66165968"
 | :-------------------- | :--------------------------------------- | :------- |
 | name                  | Имя действия в конвейере.     | Да      |
 | description           | Описание действия.  | Нет       |
-| тип                  | Для пользовательского действия используется тип действия **Custom**. | Да      |
+| type                  | Для пользовательского действия используется тип действия **Custom**. | Да      |
 | linkedServiceName     | Связанная служба пакетной службы Azure. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md).  | Да      |
 | command               | Команда для выполнения пользовательского приложения. Если приложение уже находится в узле пула пакетной службы Azure, resourceLinkedService и folderPath могут быть пропущены. Например, можно указать команду `cmd /c dir`, которая изначально поддерживается узлом пула пакетной службы Windows. | Да      |
 | resourceLinkedService | Связанная служба хранилища Azure учетной записи хранения, в которой хранится пользовательское приложение. | Нет&#42;       |
@@ -301,7 +301,7 @@ Activity Error section:
 Если вы хотите использовать содержимое stdout.txt в последующих действиях, путь к файлу stdout.txt можно получить в значении выражения "\@activity('MyCustomActivity').output.outputs[0]".
 
 > [!IMPORTANT]
-> - Свойства activity.json, linkedServices.json и datasets.json хранятся в папке среды выполнения пакетной задачи. Для этого примера файлы activity.json, linkedServices.json и datasets.json хранятся по адресу https://adfv2storage.blob.core.windows.net/adfjobs/\<GUID>/runtime/. При необходимости их следует очищать отдельно.
+> - Свойства activity.json, linkedServices.json и datasets.json хранятся в папке среды выполнения пакетной задачи. Для этого примера файлы activity.json, linkedServices.json и datasets.json хранятся в `"https://adfv2storage.blob.core.windows.net/adfjobs/\<GUID>/runtime/"` пути. При необходимости их следует очищать отдельно.
 > - Если связанные службы используют локальную среду выполнения интеграции, конфиденциальная информация, например ключи и пароли, шифруется локальной средой выполнения интеграции. Это гарантирует, что учетные данные останутся в пределах частных сетевых сред клиентов. Некоторые поля с конфиденциальными данными, на которые таким образом ссылается пользовательский код приложения, могут отсутствовать. При необходимости в extendedProperties используйте SecureString, а не ссылку на связанную службу.
 
 ## <a name="pass-outputs-to-another-activity"></a>Передача выходных данных в другое действие
@@ -310,7 +310,7 @@ Activity Error section:
 
 ## <a name="retrieve-securestring-outputs"></a>Получение выходных данные SecureString
 
-Значения свойств, обозначенные как тип *SecureString*, как показано в некоторых примерах в этой статье, замаскированы на вкладке "Мониторинг" в пользовательском интерфейсе "Data Factory".  Однако при фактическом выполнении конвейера свойство *SecureString* сериализуется как JSON в файле `activity.json` в виде обычного текста. Например:
+Значения свойств, обозначенные как тип *SecureString*, как показано в некоторых примерах в этой статье, замаскированы на вкладке "Мониторинг" в пользовательском интерфейсе "Data Factory".  Однако при фактическом выполнении конвейера свойство *SecureString* сериализуется как JSON в файле `activity.json` в виде обычного текста. Пример:
 
 ```json
 "extendedProperties": {

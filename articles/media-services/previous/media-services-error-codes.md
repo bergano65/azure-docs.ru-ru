@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: f3c362730e7908e88b363659b7fa580b6f2cddf1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61217239"
 ---
 # <a name="azure-media-services-error-codes"></a>Коды ошибок служб мультимедиа Azure
@@ -51,7 +51,7 @@ ms.locfileid: "61217239"
   * Истек срок действия маркера. 
   * Маркер содержит недопустимую подпись.
 
-## <a name="403-forbidden"></a>403. Запрещено
+## <a name="403-forbidden"></a>403\. Запрещено
 Запрос запрещен по одной из следующих причин:
 
 * Не удалось найти учетную запись служб мультимедиа, или она удалена.
@@ -74,7 +74,7 @@ ms.locfileid: "61217239"
 * Предпринята попытка получить несуществующую сущность.
 * Предпринята попытка указать учетную запись хранения, не связанную с учетной записью служб мультимедиа.  
 
-## <a name="409-conflict"></a>409. Конфликт
+## <a name="409-conflict"></a>409\. Конфликт
 Запрос запрещен по одной из следующих причин:
 
 * В нескольких сущностях assetFile в asset указано имя.

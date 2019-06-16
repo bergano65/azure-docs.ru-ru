@@ -11,22 +11,22 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/13/2019
+ms.date: 06/07/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 25f0258b9e6b11e505bd48222dfbca176f963a5e
-ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
+ms.openlocfilehash: d88462f705a89d02ab69700d0c15669deb44da98
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65921041"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67058201"
 ---
 # <a name="custom-roles-for-azure-resources"></a>Пользовательские роли для ресурсов Azure
 
 Если [встроенные роли для ресурсов Azure](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. Пользовательские роли, так же как и встроенные, можно назначать пользователям, группам и субъектам-службам в рамках подписки, группы ресурсов или области ресурсов.
 
-Настраиваемые роли хранятся в каталоге Azure Active Directory (Azure AD) и могут использоваться несколькими подписками. Каждый каталог можно использовать до **5000** пользовательских ролей. (Для специализированного облаков, например Azure для государственных организаций, Azure для Германии и Китая компанией 21Vianet, ограничение — 2000 пользовательских ролей). Настраиваемые роли можно создавать с помощью Azure PowerShell, Azure CLI и интерфейса REST API.
+Настраиваемые роли хранятся в каталоге Azure Active Directory (Azure AD) и могут использоваться несколькими подписками. Каждый каталог можно использовать до **5000** пользовательских ролей. (Специализированные облачные службы, такие как Azure для государственных организаций, Azure для Германии и Azure для Китая от 21Vianet поддерживают до 2000 пользовательских ролей.) Настраиваемые роли можно создавать с помощью Azure PowerShell, Azure CLI и интерфейса REST API.
 
 ## <a name="custom-role-example"></a>Пример пользовательской роли
 
@@ -100,7 +100,7 @@ ms.locfileid: "65921041"
 | `NotActions` | Нет | String[] | Массив строк, указывающий операции управления, которые исключаются из разрешенных `Actions`. Дополнительные сведения см. в разделе [NotActions](role-definitions.md#notactions). |
 | `DataActions` | Нет | String[] | Массив строк, указывающий операции с данными, которые роль разрешает выполнять с вашими данными внутри этого объекта. Дополнительные сведения см. в разделе [DataActions (предварительная версия)](role-definitions.md#dataactions-preview). |
 | `NotDataActions` | Нет | String[] | Массив строк, указывающий операции с данными, которые исключаются из разрешенных `DataActions`. Дополнительные сведения см. в разделе [NotDataActions (предварительная версия)](role-definitions.md#notdataactions-preview). |
-| `AssignableScopes` | Да | String[] | Массив строк, который указывает области, в которых пользовательская роль может быть назначена. Сейчас для него нельзя задать корневую область (`"/"`) или область группы управления. Дополнительные сведения см. в разделе [AssignableScopes](role-definitions.md#assignablescopes) и [Пользовательское определение и назначение роли RBAC](../governance/management-groups/index.md#custom-rbac-role-definition-and-assignment). |
+| `AssignableScopes` | Да | String[] | Массив строк, который указывает области, в которых пользовательская роль может быть назначена. Для пользовательских ролей, в настоящее время невозможно задать `AssignableScopes` для корневой области (`"/"`) или область группы управления. Дополнительные сведения см. в разделе [AssignableScopes](role-definitions.md#assignablescopes) и [Пользовательское определение и назначение роли RBAC](../governance/management-groups/index.md#custom-rbac-role-definition-and-assignment). |
 
 ## <a name="who-can-create-delete-update-or-view-a-custom-role"></a>Кто может создавать, удалять, обновлять или просматривать пользовательскую роль
 
@@ -109,7 +109,7 @@ ms.locfileid: "65921041"
 | Задача | Операция | Описание |
 | --- | --- | --- |
 | Создание или удаление пользовательской роли | `Microsoft.Authorization/ roleDefinitions/write` | Пользователи с разрешением на эту операцию для всех `AssignableScopes` пользовательской роли могут создавать (или удалять) пользовательские роли для использования в этих областях. Например, [владельцы](built-in-roles.md#owner) или [администраторы доступа пользователей](built-in-roles.md#user-access-administrator) подписок, групп ресурсов и ресурсов. |
-| Обновление настраиваемой роли | `Microsoft.Authorization/ roleDefinitions/write` | Пользователи с разрешением на эту операцию для всех `AssignableScopes` пользовательской роли могут обновлять пользовательские роли в этих областях. Например, [владельцы](built-in-roles.md#owner) или [администраторы доступа пользователей](built-in-roles.md#user-access-administrator) подписок, групп ресурсов и ресурсов. |
+| Обновление пользовательской роли | `Microsoft.Authorization/ roleDefinitions/write` | Пользователи с разрешением на эту операцию для всех `AssignableScopes` пользовательской роли могут обновлять пользовательские роли в этих областях. Например, [владельцы](built-in-roles.md#owner) или [администраторы доступа пользователей](built-in-roles.md#user-access-administrator) подписок, групп ресурсов и ресурсов. |
 | Просмотр пользовательской роли | `Microsoft.Authorization/ roleDefinitions/read` | Пользователи с разрешением на эту операцию в определенной области могут просматривать пользовательские роли, которые доступны для назначения в этой области. Все встроенные роли обеспечивают доступность пользовательских ролей для назначения. |
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/14/2019
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 18dc3e224df18c900653e4549badcdd93f0df6ec
-ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
-ms.translationtype: MT
+ms.openlocfilehash: bf58256b05c6c1260078c0dba547295e08328ef5
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66688027"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67073682"
 ---
 # <a name="configure-optimize-and-troubleshoot-azcopy"></a>Настроить, оптимизировать и устранение неполадок с AzCopy
 
@@ -32,7 +32,7 @@ AzCopy — программа командной строки, который м
 
 | Операционная система | Команда  |
 |--------|-----------|
-| **Windows** | `set https_proxy=<proxy IP>:<proxy port>` |
+| **Windows** | В командной строке, используйте: `set https_proxy=<proxy IP>:<proxy port>`<br> В PowerShell, введите команду: `$env:https_proxy=<proxy IP>:<proxy port>`|
 | **Linux** | `export https_proxy=<proxy IP>:<proxy port>` |
 | **MacOS** | `export https_proxy=<proxy IP>:<proxy port>` |
 

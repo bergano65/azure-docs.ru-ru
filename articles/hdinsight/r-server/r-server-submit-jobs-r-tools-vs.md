@@ -9,10 +9,10 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.openlocfilehash: 8f1ed582b7abf43afd38ca5c358aa7e179bfecb3
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64702276"
 ---
 # <a name="submit-jobs-from-r-tools-for-visual-studio"></a>Отправка заданий из расширения "Инструменты R для Visual Studio"
@@ -65,7 +65,7 @@ ms.locfileid: "64702276"
 
 С помощью Microsoft ML Server или Microsoft R Client с компьютера Windows, где установлена программа PuTTY, вы можете создать контекст вычисления, который будет запускать распределенные функции `RevoScaleR` из вашего локального клиента к вашему кластеру HDInsight. Используйте `RxSpark`, чтобы создать контекст вычисления, указав свое имя пользователя, граничный узел кластера Apache Hadoop, ключи SSH и т. д.
 
-1. Чтобы найти имя вашего граничного узла, откройте панель кластера HDInsight для Служб машинного обучения в Azure, а затем в верхнем меню в области "Обзор" выберите **Secure Shell (SSH)**.
+1. Чтобы найти имя вашего граничного узла, откройте панель кластера HDInsight для Служб машинного обучения в Azure, а затем в верхнем меню в области "Обзор" выберите **Secure Shell (SSH)** .
 
     ![Безопасная оболочка (SSH)](./media/r-server-submit-jobs-r-tools-vs/ssh.png)
 
@@ -119,7 +119,7 @@ ms.locfileid: "64702276"
 
     1. На панели кластера HDInsight для Служб машинного обучения в Azure в меню слева выберите **Учетные записи хранения**.
 
-        ![учетные записи хранения;](./media/r-server-submit-jobs-r-tools-vs/storage-accounts.png)
+        ![Учетные записи хранения](./media/r-server-submit-jobs-r-tools-vs/storage-accounts.png)
 
     2. Выберите учетную запись хранения по умолчанию для своего кластера, записав имя контейнера и каталога.
 

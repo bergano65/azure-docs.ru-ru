@@ -15,10 +15,10 @@ ms.workload: required
 ms.date: 11/03/2017
 ms.author: bharatn
 ms.openlocfilehash: 6ce6f1f6559b43a64fb7edd0773a20f8ee0cf8a3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60837969"
 ---
 # <a name="reverse-proxy-in-azure-service-fabric"></a>Обратный прокси-сервер в Azure Service Fabric
@@ -77,7 +77,7 @@ http(s)://<Cluster FQDN | internal IP>:Port/<ServiceInstanceName>/<Suffix path>?
 * **http(s).** Обратный прокси-сервер можно настроить для приема трафика HTTP или HTTPS. После настройки обратного прокси-сервера для прослушивания по протоколу HTTPS ознакомьтесь со сведениями о переадресации HTTPS в статье [Подключение к безопасной службе с помощью обратного прокси-сервера](service-fabric-reverseproxy-configure-secure-communication.md).
 * **Cluster fully qualified domain name (FQDN) | internal IP.** Для внешних клиентов обратный прокси-сервер можно настроить таким образом, чтобы он был доступен через домен кластера (например, mycluster.eastus.cloudapp.azure.com). По умолчанию обратный прокси-сервер выполняется на каждом узле. Для внутреннего трафика он может быть доступен на узле localhost или по IP-адресу любого внутреннего узла (например, 10.0.0.1).
 * **Port.** Порт, например 19081, указанный для обратного прокси-сервера.
-* **ServiceInstanceName.** Полное имя развернутого экземпляра службы, к которому вы пытаетесь получить доступ, без использования схемы fabric:/. Например, чтобы подключиться к службе *fabric:/myapp/myservice/*, используется имя *myapp/myservice*.
+* **ServiceInstanceName.** Полное имя развернутого экземпляра службы, к которому вы пытаетесь получить доступ, без использования схемы fabric:/. Например, чтобы подключиться к службе *fabric:/myapp/myservice/* , используется имя *myapp/myservice*.
 
     В имени экземпляра службы учитывается регистр. Использование символов разного регистра в имени экземпляра службы в URL-адресе приводит к сбою запросов с ошибкой "404 (не найдено)".
 * **Suffix path.** Фактический URL-адрес службы, к которой вы подключаетесь, например *myapi/values/add/3*.

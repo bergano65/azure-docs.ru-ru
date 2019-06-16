@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/15/2017
 ms.author: yegu
-ms.openlocfilehash: f8c95b2981933764bc8d6dcf8bf57e9ab40ef53b
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.openlocfilehash: 4f97f6925c482cb282324dcc1c97bbfe2a701643
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66752060"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67074210"
 ---
 # <a name="how-to-configure-virtual-network-support-for-a-premium-azure-cache-for-redis"></a>Настройка поддержки виртуальной сети для кэша Azure для Redis ценовой категории "Премиум"
 Кэш Azure для Redis предлагает разные варианты кэша, которые позволяют выбирать размер и функции кэша, включая функции ценовой категории "Премиум", такие как кластеризация, постоянное хранение данных и поддержка виртуальной сети. Виртуальная сеть — это частная сеть в облаке. Если экземпляр кэша Azure для Redis настроен в виртуальной сети, он не является общедоступным, а доступен только для виртуальных машин и приложений в этой виртуальной сети. В этой статье описана настройка поддержки виртуальных сетей для экземпляра кэша Azure для Redis ценовой категории "Премиум".
@@ -131,7 +131,7 @@ ms.locfileid: "66752060"
 
 | Порты | Направление | Транспортный протокол | Назначение | Локальный IP-адрес | Удаленный IP-адрес |
 | --- | --- | --- | --- | --- | --- |
-| 6379, 6380 |Входящий трафик |TCP |Обмен данными между клиентом и Redis, балансировка нагрузки Azure | (Подсеть Redis) | (Подсеть Redis), виртуальная сеть, Azure Load Balancer |
+| 6379, 6380 |Входящий трафик |TCP |Обмен данными между клиентом и Redis, балансировка нагрузки Azure | (Подсеть Redis) | (Подсеть redis), виртуальная сеть, Azure Load Balancer <sup>2</sup> |
 | 8443 |Входящий трафик |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
 | 8500 |Входящий трафик |TCP/UDP |Балансировка нагрузки Azure | (Подсеть Redis) |Azure Load Balancer |
 | 10221-10231 |Входящий трафик |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) Azure Load Balancer |
@@ -139,6 +139,8 @@ ms.locfileid: "66752060"
 | 15000-15999 |Входящий трафик |TCP |Обмен данными между клиентом и кластерами Redis, балансировка нагрузки Azure | (Подсеть Redis) |Виртуальная сеть, Azure Load Balancer |
 | 16001 |Входящий трафик |TCP/UDP |Балансировка нагрузки Azure | (Подсеть Redis) |Azure Load Balancer |
 | 20226 |Входящий трафик |TCP |Внутренний обмен данными для Redis | (Подсеть Redis) |(Подсеть Redis) |
+
+<sup>2</sup> можно использовать этот тег «AzureLoadBalancer» (Resource Manager) (или «AZURE_LOADBALANCER» для классических развертываний), для создания правила группы безопасности сети.
 
 #### <a name="additional-vnet-network-connectivity-requirements"></a>Дополнительные требования к подключению к виртуальной сети
 

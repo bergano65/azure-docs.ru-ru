@@ -1,19 +1,19 @@
 ---
-title: Настройка оповещений о работоспособности служб Azure для PagerDuty | Документация Майкрософт
+title: Отправка оповещений о работоспособности служб Azure с помощью веб-перехватчиков PagerDuty
 description: Передача в экземпляр PagerDuty персонализированных уведомлений о событиях работоспособности служб.
 author: stephbaron
 ms.author: stbaron
 ms.topic: article
 ms.service: service-health
-ms.date: 11/14/2017
-ms.openlocfilehash: b78c155fb2f3a13c27f4ff71c4dd37df2dbd2f36
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 06/10/2019
+ms.openlocfilehash: ab3bcffb6453b284c3c8bb0d0373c7155fe8ef23
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60621020"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67067153"
 ---
-# <a name="configure-service-health-alerts-with-pagerduty"></a>Настройка оповещений о работоспособности служб для PagerDuty
+# <a name="send-azure-service-health-alerts-with-pagerduty-using-webhooks"></a>Отправка оповещений о работоспособности служб Azure с помощью веб-перехватчиков PagerDuty
 
 В этой статье показано, как с помощью веб-перехватчика настроить в PagerDuty уведомления о работоспособности служб Azure. Используя настраиваемый тип интеграции Microsoft Azure в [PagerDuty](https://www.pagerduty.com/), можно без особых усилий добавить оповещения о работоспособности служб в новые или существующие службы PagerDuty.
 
@@ -28,9 +28,9 @@ ms.locfileid: "60621020"
 
 1.  В разделе **Integration Settings** (Параметры интеграции) выберите следующее:
 
-    a. **Тип интеграции**: Microsoft Azure
+    a. **Тип интеграции**: Microsoft Azure.
 
-    2. **Имя интеграции**: \<имя\>
+    2\. **Имя интеграции**: \<имя\>
 
     ![Раздел параметров интеграции в PagerDuty](./media/webhook-alerts/pagerduty-integration-settings.png)
 
@@ -48,7 +48,7 @@ ms.locfileid: "60621020"
 
     a. **Тип действия:** *webhook*
 
-    2. **Подробности:** **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
+    2\. **Подробности:** **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
 
     c. **Имя:** имя, псевдоним или идентификатор веб-перехватчика.
 
@@ -65,7 +65,7 @@ ms.locfileid: "60621020"
 
     a. **Тип действия:** *webhook*
 
-    2. **Подробности:** **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
+    2\. **Подробности:** **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
 
     c. **Имя:** имя, псевдоним или идентификатор веб-перехватчика.
 

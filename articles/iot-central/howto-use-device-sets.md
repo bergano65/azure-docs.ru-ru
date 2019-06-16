@@ -3,17 +3,17 @@ title: Использование наборов устройств в прил�
 description: Вы узнаете, как оператор может использовать наборы устройств в приложении Azure IoT Central.
 author: ellenfosborne
 ms.author: elfarber
-ms.date: 02/05/2019
+ms.date: 06/09/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpfr
-ms.openlocfilehash: a28cf68eb449b563d93a139b830752748c448dd6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 68599a539b3d79b759142d2178aa753f895ea37f
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60517356"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67052939"
 ---
 # <a name="use-device-sets-in-your-azure-iot-central-application"></a>Использование наборов устройств в приложении Azure IoT Central
 
@@ -117,7 +117,7 @@ ms.locfileid: "60517356"
 
 1. Нажмите кнопку **ОК**.
 
-## <a name="analytics"></a>Analytics
+## <a name="analytics"></a>Аналитика
 
 Аналитика в наборах устройств совпадает с основной вкладкой аналитики в меню навигации слева. Дополнительные сведения об аналитике см. в статье о [создании аналитики](howto-use-device-sets.md).
 

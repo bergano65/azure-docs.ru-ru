@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.reviewer: sgilley
 ms.date: 04/19/2019
 ms.custom: seodec18
-ms.openlocfilehash: 98f7dc2e295c0c994db9a0189814b0ef2a19b758
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 689d7dcd57c513479c7bc08a45094670242ef6a5
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66153600"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67075032"
 ---
 # <a name="train-models-with-azure-machine-learning-using-estimator"></a>Обучение моделей с помощью оценщика Машинного обучения Azure
 
@@ -66,7 +66,7 @@ sk_est = Estimator(source_directory='./my-sklearn-proj',
 
 У конструктора есть другой параметр с именем `pip_packages`. Его можно использовать для всех необходимых пакетов pip.
 
-Теперь, когда вы создали объект `Estimator`, можно выполнить задание обучения в удаленной вычислительной среде посредством вызова функции `submit` в объекте `experiment` [Эксперимента](concept-azure-machine-learning-architecture.md#experiment). 
+Теперь, когда вы создали объект `Estimator`, можно выполнить задание обучения в удаленной вычислительной среде посредством вызова функции `submit` в объекте `experiment` [Эксперимента](concept-azure-machine-learning-architecture.md#experiments). 
 
 ```Python
 run = experiment.submit(sk_est)
@@ -125,13 +125,13 @@ print(run.get_portal_url())
 При запуске обучения, выполните, где исходный каталог является локальный репозиторий Git, сведения о хранилище хранятся в журнале выполнения. Например текущих Идентификаторов фиксаций репозитория, регистрируется как часть журнала.
 
 ## <a name="examples"></a>Примеры
-Записная книжка с основным сведениями о шаблоне оценщика:
+Записную книжку, описываются основные принципы шаблон механизм оценки см. в разделе:
 * [how-to-use-azureml/training-with-deep-learning/how-to-use-estimator](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/how-to-use-estimator/how-to-use-estimator.ipynb)
 
-Записная книжка для обучения модели scikit-learn с помощью оценщика:
+Для записной книжки, которая обучает scikit-Дополнительные сведения о модели с помощью механизма оценки, см. в разделе:
 * [tutorials/img-classification-part1-training.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/img-classification-part1-training.ipynb)
 
-Записные книжки для обучения моделей с помощью специальных оценщиков платформы глубокого обучения:
+Записные книжки в обучении моделей с помощью определенного совместном глубокого обучения платформы см. в разделе:
 * [how-to-use-azureml/training-with-deep-learning](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning)
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]

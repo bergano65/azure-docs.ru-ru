@@ -11,10 +11,10 @@ ms.service: logic-apps
 ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.openlocfilehash: e525e5584e4835b0f2b73203c818c3f799b77cf5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61004590"
 ---
 # <a name="create-variables-for-saving-and-managing-values-in-azure-logic-apps"></a>Создание переменных для сохранения значений и управления ими в Azure Logic Apps
@@ -79,7 +79,7 @@ ms.locfileid: "61004590"
    | Value | Нет | <*start-value*> | Начальное значение для переменной <p><p>**Совет**. Указывать это значение необязательно, но рекомендуем сделать это, чтобы всегда знать начальное значение переменной. | 
    ||||| 
 
-   ![Инициализировать переменную](./media/logic-apps-create-variables-store-values/initialize-variable.png)
+   ![Инициализация переменной](./media/logic-apps-create-variables-store-values/initialize-variable.png)
 
 5. Теперь продолжайте добавлять нужные действия. Завершив работу, нажмите кнопку **Сохранить** на панели инструментов конструктора.
 
@@ -182,7 +182,7 @@ ms.locfileid: "61004590"
 Чтобы получить содержимое переменной или сослаться на него, вы также можете использовать [функцию variables()](../logic-apps/workflow-definition-language-functions-reference.md#variables) в конструкторе приложений логики и редакторе кода.
 Ссылаясь на переменную, используйте в качестве токена ее имя, а не имя действия. 
 
-Например, это выражение получает элементы из массива, [созданного ранее в этой статье](#append-value), с помощью функции **variables()**. Функция **string()** возвращает содержимое переменной в строковом формате: `"1, 2, 3, red"`
+Например, это выражение получает элементы из массива, [созданного ранее в этой статье](#append-value), с помощью функции **variables()** . Функция **string()** возвращает содержимое переменной в строковом формате: `"1, 2, 3, red"`
 
 ```json
 @{string(variables('myArrayVariable'))}
@@ -214,7 +214,7 @@ ms.locfileid: "61004590"
    | Value | Нет | <*increment-value*> | Значение, используемое для увеличения переменной. По умолчанию значение равно единице. <p><p>**Совет**. Указывать это значение необязательно, но рекомендуем сделать это, чтобы всегда знать конкретное значение, на которое увеличивается переменная. | 
    |||| 
 
-   Пример. 
+   Пример: 
    
    ![Пример увеличения переменной](./media/logic-apps-create-variables-store-values/increment-variable-action-information.png)
 
@@ -256,7 +256,7 @@ ms.locfileid: "61004590"
 
    ![Добавление действия "Инициализировать переменную"](./media/logic-apps-create-variables-store-values/initialize-variable.png)
 
-4. Для циклического перебора вложений добавьте цикл *for each*, выбрав **Новый шаг** > **Дополнительно** > **Добавить оператор "для каждого"**.
+4. Для циклического перебора вложений добавьте цикл *for each*, выбрав **Новый шаг** > **Дополнительно** > **Добавить оператор "для каждого"** .
 
    ![Добавление цикла "for each"](./media/logic-apps-create-variables-store-values/add-loop.png)
 

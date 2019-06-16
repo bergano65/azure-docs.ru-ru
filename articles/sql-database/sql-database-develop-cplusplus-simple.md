@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 12/12/2018
 ms.openlocfilehash: 00a3904bd78f3bb76266c726af28582770b23921
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60724092"
 ---
 # <a name="connect-to-sql-database-using-c-and-c"></a>Подключение к базе данных SQL с помощью C и C++
@@ -51,7 +51,7 @@ ms.locfileid: "60724092"
 
 ![ODBCConnectionStringProps](./media/sql-database-develop-cplusplus-simple/dbconnection.png)
 
-Скопируйте содержимое строки **ODBC (включает Node.js) [проверка подлинности SQL]**. Оно будет использоваться позже для подключения из интерпретатора командной строки ODBC C++. Эта строка содержит такие сведения, как драйвер, сервер и другие параметры подключения к базе данных.
+Скопируйте содержимое строки **ODBC (включает Node.js) [проверка подлинности SQL]** . Оно будет использоваться позже для подключения из интерпретатора командной строки ODBC C++. Эта строка содержит такие сведения, как драйвер, сервер и другие параметры подключения к базе данных.
 
 ## <a id="Firewall"></a>Шаг 3.  Добавление IP-адреса в брандмауэр
 Перейдите к разделу брандмауэра, где указан сервер базы данных, и добавьте IP-адрес клиента с помощью [этих действий](sql-database-configure-firewall-settings.md), чтобы установить подключение.

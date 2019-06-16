@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 693abccd7e54a1dfef92cd57a715ac96bfd56a8c
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 53571fdd7c5a93fef4df0832253542a5a6dfbec5
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66234000"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67058539"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -36,24 +36,26 @@ ms.locfileid: "66234000"
 
 ## <a name="error-failed-to-create-azure-dev-spaces-controller"></a>Ошибка создания контроллера Azure Dev Spaces
 
+### <a name="reason"></a>`Reason`
 Вы можете увидеть эту ошибку, если что-то пойдет не так с созданием контроллера. Если это временная ошибка, ее можно устранить, удалив контроллер, а затем повторно создав его.
 
-### <a name="try"></a>Попробуйте выполнить следующее.
+### <a name="try"></a>Попытка
 
-Чтобы удалить контроллер, используйте интерфейс командной строки Azure Dev Spaces. Это невозможно сделать в Visual Studio или Cloud Shell. Чтобы установить CLI AZDS, сначала установите Azure CLI, а затем выполните эту команду:
+Удаление контроллера:
+
+```bash
+azds remove -g <resource group name> -n <cluster name>
+```
+
+Необходимо использовать пробелы разработки Azure CLI для удаления контроллера. Удаление контроллера из Visual Studio невозможна. Также невозможно установить пробелы разработки Azure CLI в Azure Cloud Shell, не удается удалить контроллер из Azure Cloud Shell.
+
+Если у вас установлен Azure Dev пробелы CLI, можно сначала установить его с помощью следующей команды и удалить контроллер:
 
 ```cmd
 az aks use-dev-spaces -g <resource group name> -n <cluster name>
 ```
 
-Чтобы удалить контроллер, выполните эту команду:
-
-```cmd
-azds remove -g <resource group name> -n <cluster name>
-```
-
-Чтобы повторно создать контроллер, можно использовать CLI или Visual Studio. Следуйте инструкциям в руководствах, если вы ранее не выполняли эти задачи.
-
+Чтобы повторно создать контроллер, можно использовать CLI или Visual Studio. См. в разделе [группы разработки](quickstart-team-development.md) или [разработка с помощью .NET Core](quickstart-netcore-visualstudio.md) краткие руководства, примеры.
 
 ## <a name="error-service-cannot-be-started"></a>Ошибка Service cannot be started (Запуск службы невозможен).
 
@@ -408,4 +410,7 @@ azds controller create --name my-controller --target-name MyAKS --resource-group
 ## <a name="enabling-dev-spaces-failing-when-windows-node-pools-are-added-to-an-aks-cluster"></a>Включение пробелы разработки сбой при добавлении пулы узлов Windows в кластере AKS
 
 ### <a name="reason"></a>`Reason`
-В настоящее время пробелы разработки Azure должен работать на Linux модулей и только узлы. В настоящее время невозможно включить Azure Dev пробелы в кластере AKS с помощью пул узлов Windows.
+В настоящее время пробелы разработки Azure должен работать на Linux модулей и только узлы. При наличии кластера AKS с пулом узла Windows, необходимо убедиться, что модули Azure Dev пробелы только по расписанию на узлах Linux. Если пробелы разработки Azure pod запланирована на узле Windows, которой не запустится, и включение разработки пробелы не удастся.
+
+### <a name="try"></a>Попытка
+[Добавление нарушить проверку](../aks/operator-best-practices-advanced-scheduler.md#provide-dedicated-nodes-using-taints-and-tolerations) к кластеру AKS, чтобы обеспечить Linux модулей не запланированы для запуска на узле Windows.

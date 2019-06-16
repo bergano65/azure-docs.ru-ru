@@ -6,14 +6,14 @@ manager: timlt
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.topic: conceptual
-ms.date: 03/08/2019
+ms.date: 06/10/2019
 ms.author: dobett
-ms.openlocfilehash: 25812e10b4c2b90aa4f40c38610c30a26ab11d9d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2a11640959a8c7fdd0d238aba92698eb47934969
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61450013"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67080446"
 ---
 # <a name="what-is-connected-factory-iot-solution-accelerator"></a>Общие сведения об акселераторе решений IoT для подключенной фабрики
 
@@ -34,7 +34,7 @@ ms.locfileid: "61450013"
 ## <a name="remote-management"></a>Удаленное управление
 
 - Настройка ресурсов OPC UA с помощью облачной панели мониторинга (вызов методов, чтение и запись данных).
-- Публикация и отмена публикации данных телеметрии, получаемых от ресурсов OPC UA, через облачную панель мониторинга.
+- Публикация и отмена публикации данных телеметрии, получаемых от активов OPC UA через облачную панель мониторинга.
 
 ## <a name="cloud-dashboard"></a>Облачная панель мониторинга
 
@@ -65,7 +65,4 @@ ms.locfileid: "61450013"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о предварительно настроенном решении подключенной фабрики см. в следующих статьях:
-
-* [Пошаговое руководство по работе с предварительно настроенным решением подключенной фабрики](iot-accelerators-connected-factory-sample-walkthrough.md)
-* [Развертывание шлюза Edge для предварительно настроенного решения подключенной фабрики в ОС Windows или Linux]( iot-accelerators-connected-factory-gateway-deployment.md)
+Дополнительные сведения о Connected Factory solution accelerator, см. в разделе быстрого запуска [попробуйте Облачное решение для управления промышленных устройств Интернета вещей](quickstart-connected-factory-deploy.md).

@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: troubleshooting
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 05/24/2019
+ms.date: 06/10/2019
 ms.author: aljo
-ms.openlocfilehash: 606b14fba093b6ec8039c646a49bc3bf7d24eb51
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: 8a548bce6da8b3bae004b0be4f6e8f09c9894025
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66296784"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67060345"
 ---
 # <a name="supported-service-fabric-versions"></a>Поддерживаемые версии Service Fabric
 
@@ -46,7 +46,8 @@ ms.locfileid: "66296784"
 | 6.1.* | 5.7.221.* |Не выше версии 3.0 |15 июля 2018 г.      |
 | 6.2.* | 6.0.232.* |Не выше версии 3.1 |26 октября 2018 г.   |
 | 6.3.* | 6.1.480.* |Не выше версии 3.2. |31 марта 2019 г.  |
-| 6.4.* | 6.2.301.* |Версия 3.3 или более ранняя |Текущая версия, поэтому нет даты окончания |
+| 6.4.* | 6.2.301.* |Версия 3.3 или более ранняя |15 сентября 2019 г. |
+| 6.5.* | 6.4.617.* |Меньше или равно версии 3.4 |Текущая версия, поэтому нет даты окончания |
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 
@@ -103,3 +104,4 @@ ms.locfileid: "66296784"
 | 6.4 CU5 | 6.4.654.9590 | 6.4.649.1 |
 | 6.4 CU6 | 6.4.658.9590 | Нет данных |
 | 6.4 НАКОПИТЕЛЬНЫМ ПАКЕТОМ ОБНОВЛЕНИЯ 7 | 6.4.664.9590 | 6.4.661.1 |
+| 6.5 RTO | 6.5.639.9590 | 6.5.435.1 |

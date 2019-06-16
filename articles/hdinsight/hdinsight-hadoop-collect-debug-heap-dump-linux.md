@@ -8,21 +8,18 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: hrasheed
-ms.openlocfilehash: a1b816656e019a214e8c0dc72b79575c49d99e68
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 62c9dcc039c68b0b6c8b8bf29ed9f13f88936723
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64719604"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67059504"
 ---
 # <a name="enable-heap-dumps-for-apache-hadoop-services-on-linux-based-hdinsight"></a>Включение дампов кучи для служб Apache Hadoop в HDInsight под управлением Linux
 
 [!INCLUDE [heapdump-selector](../../includes/hdinsight-selector-heap-dump.md)]
 
 Дампы кучи содержат снимок памяти приложения, включая значения переменных на момент создания дампа. Поэтому они полезны для диагностики проблем, возникающих во время выполнения.
-
-> [!IMPORTANT]  
-> Шаги, описанные в этом документе, можно применять только к кластерам HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
 ## <a name="whichServices"></a>Службы
 
@@ -69,7 +66,7 @@ ms.locfileid: "64719604"
 
 Например, с помощью `-XX:HeapDumpPath=/tmp` задается место для сохранения дампов в каталоге /tmp.
 
-### <a name="scripts"></a>Сценарии
+### <a name="scripts"></a>Скрипты
 
 Вы можете также запустить сценарий при возникновении ошибки **OutOfMemoryError** . Например, можно запустить уведомление, благодаря которому можно будет узнать, что произошла ошибка. При возникновении ошибки __OutOfMemoryError__ используйте следующий параметр для запуска сценария:
 
@@ -95,7 +92,7 @@ ms.locfileid: "64719604"
 
     ![Сеть Ambari с выбранной вкладкой конфигурации HDFS](./media/hdinsight-hadoop-heap-dump-linux/serviceconfig.png)
 
-3. Используя запись **Фильтр...**, введите **параметры**. Отобразятся только те элементы, в которых есть этот текст.
+3. Используя запись **Фильтр...** , введите **параметры**. Отобразятся только те элементы, в которых есть этот текст.
 
     ![Фильтрованный список](./media/hdinsight-hadoop-heap-dump-linux/filter.png)
 

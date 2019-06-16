@@ -14,10 +14,10 @@ ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
 ms.openlocfilehash: 4eb881992b7e40e0a9d67bd2cee94f1f09958e9e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60826093"
 ---
 # <a name="move-data-between-on-premises-sources-and-the-cloud-with-data-management-gateway"></a>Перемещение данных между локальными источниками и облаком с помощью шлюза управления данными
@@ -79,7 +79,7 @@ ms.locfileid: "60826093"
 
    ![Домашняя страница фабрики данных](./media/data-factory-move-data-between-onprem-and-cloud/OnPremDataFactoryHomePage.png)
 
-## <a name="create-gateway"></a>Создать шлюз
+## <a name="create-gateway"></a>Создание шлюза
 1. На странице **Фабрика данных** щелкните плитку **Создать и развернуть**, чтобы запустить **редактор** для фабрики данных.
 
     ![Плитка "Создание и развертывание"](./media/data-factory-move-data-between-onprem-and-cloud/author-deploy-tile.png)
@@ -362,7 +362,7 @@ ms.locfileid: "60826093"
    * В **typeProperties** разделе **SqlSource** указывается как **типа источника** и **BlobSink** указывается как **типа приемника**.
    * Для свойства **sqlReaderQuery** типа **SqlSource** задан тип SQL-запроса `select * from emp`.
 
-   Даты начала и окончания должны быть в [формате ISO](https://en.wikipedia.org/wiki/ISO_8601). Пример. 2014-10-14T16:32:41Z. Время **окончания** указывать не обязательно, однако в этом примере мы будем его использовать.
+   Даты начала и окончания должны быть в [формате ISO](https://en.wikipedia.org/wiki/ISO_8601). Пример: 2014-10-14T16:32:41Z. Время **окончания** указывать не обязательно, однако в этом примере мы будем его использовать.
 
    Если не указать значение свойства **end**, оно вычисляется по формуле "**время начала + 48 часов**". Чтобы запустить конвейер в течение неопределенного срока, укажите значение **9/9/9999** в качестве значения свойства **end**.
 
@@ -409,7 +409,7 @@ ms.locfileid: "60826093"
 8. (Необязательно.) Щелкните **Конвейеры**, а затем — **ADFTutorialOnPremDF** и просмотрите параметры входных таблиц (**Использовано**) или выходных наборов данных (**Выполнено**).
 9. Используйте инструменты, такие как [обозреватель хранилищ Microsoft](https://storageexplorer.com/), чтобы проверить, создается ли файл или большой двоичный объект каждый час.
 
-   ![Обозреватель хранилища Azure](./media/data-factory-move-data-between-onprem-and-cloud/OnPremAzureStorageExplorer.png)
+   ![Обозреватель службы хранилища Azure](./media/data-factory-move-data-between-onprem-and-cloud/OnPremAzureStorageExplorer.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Все дополнительные сведения о шлюзе управления данными см. в статье [Шлюз управления данными](data-factory-data-management-gateway.md).

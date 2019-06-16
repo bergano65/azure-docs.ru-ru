@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/01/2018
 ms.author: kgremban
 ms.custom: include file
-ms.openlocfilehash: 65c5f4c79bfb68804e7a876dc14fb6feda04655e
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: bad21019607c99964caa1712e50231705689aad2
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66146362"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67055313"
 ---
 >[!NOTE]
->Функции, описанные в этой статье, доступны только на стандартном уровне Центра Интернета вещей. Дополнительные сведения о базовом и стандартном уровнях см. в статье о [выборе нужного уровня Центра Интернета вещей](../articles/iot-hub/iot-hub-scaling.md).
+>Функции, описанные в этой статье, доступны только в центр Интернета вещей уровня "стандартный". Дополнительные сведения о базовом и стандартном уровнях центра Интернета вещей, см. в разделе [выборе нужного уровня центра Интернета вещей](../articles/iot-hub/iot-hub-scaling.md).

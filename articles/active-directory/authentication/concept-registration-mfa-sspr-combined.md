@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 572f8694d31728a3ca570f6ddb60475e13d71e80
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: f2d1a5a342bfe4527c15a0721a8f852a269bef67
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66235591"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67113521"
 ---
 # <a name="combined-security-information-registration-preview"></a>Объединенный безопасности сведения о регистрации (Предварительная версия)
 
@@ -49,7 +49,7 @@ Azure AD в сочетании сведения о безопасности, ч�
 | Microsoft Authenticator | Да (не более 5) | Нет | Да |
 | Другое приложение authenticator | Да (не более 5) | Нет | Да |
 | маркер оборудования | Нет | Нет | Да |
-| Phone | Да | Да | Да |
+| Номер телефона | Да | Да | Да |
 | Дополнительный телефон | Да | Да | Да |
 | Рабочий телефон | Нет | Нет | Нет |
 | Email | Да | Да | Да |

@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 12/06/2018
 ms.author: spelluru
 ms.openlocfilehash: ccb2fa7b0805b332957513c52c0c1051d068d2cc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60821663"
 ---
 # <a name="use-firewall-rules"></a>Использование правил брандмауэра
@@ -54,7 +54,7 @@ ms.locfileid: "60821663"
 > - Обозреватель данных Azure
 >
 > В виртуальной сети должны присутствовать следующие службы Майкрософт:
-> - Веб-приложения Azure
+> - Веб-приложения Azure.
 > - Функции Azure
 
 ### <a name="creating-a-firewall-rule-with-azure-resource-manager-templates"></a>Создание правила брандмауэра с использованием шаблонов Azure Resource Manager
@@ -76,7 +76,7 @@ ms.locfileid: "60821663"
 > ```json
 > "defaultAction": "Allow"
 > ```
-> до
+> значение
 > ```json
 > "defaultAction": "Deny"
 > ```
@@ -149,7 +149,7 @@ ms.locfileid: "60821663"
 
 Инструкции по ограничению доступа к Центрам событий из виртуальных сетей Azure, см. по следующей ссылке:
 
-- [Конечные точки служб виртуальной сети для Центров событий][lnk-vnet]
+- [Конечные точки служб для виртуальной сети для Центров событий][lnk-vnet]
 
 <!-- Links -->
 
