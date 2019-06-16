@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7bb07fa00babb00d1b2af03f89ae6857cb79f5f
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: fa7b5c82f0b057e2eb029b9cc632d8da02206678
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782870"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67108392"
 ---
 # <a name="security-considerations-for-accessing-apps-remotely-with-azure-ad-application-proxy"></a>Вопросы безопасности при удаленном доступе к приложениям через прокси приложения Azure AD
 
@@ -43,13 +43,13 @@ ms.locfileid: "65782870"
 
 Если выбрать сквозной режим для предварительной аутентификации, это преимущество будет отсутствовать. 
 
-### <a name="conditional-access"></a>Условный доступ
+### <a name="conditional-access"></a>условный доступ;
 
 Примените расширенные параметры политики, прежде чем устанавливать подключения к сети.
 
-Благодаря [условному доступу](../conditional-access/overview.md) можно определить ограничения в отношении трафика, который может передаваться к внутренним приложениям. Вы можете создать политики, ограничивающие вход на основе расположения, надежности аутентификации и профиля риска пользователя.
+С помощью [условного доступа](../conditional-access/overview.md), можно определить ограничения в отношении трафика является может получить доступ к серверной части приложения. Вы можете создать политики, ограничивающие вход на основе расположения, надежности аутентификации и профиля риска пользователя.
 
-С помощью условного доступа можно также настроить политики Многофакторной идентификации, добавив еще один уровень безопасности при проверке подлинности пользователей. Кроме того, ваши приложения также можно направить в Microsoft Cloud App Security с помощью условного доступа Azure AD, чтобы предоставить мониторинг и контроль в реальном времени и элементы управления, или с помощью [политики доступа](https://docs.microsoft.com/cloud-app-security/access-policy-aad) и [политики сеансов](https://docs.microsoft.com/cloud-app-security/session-policy-aad).
+Условный доступ также можно настроить политики многофакторной проверки подлинности, добавив еще один уровень безопасности, проверке подлинности пользователей. Кроме того, приложения могут также направляться Microsoft Cloud App Security с помощью условного доступа Azure AD для обеспечения мониторинга в реальном времени и элементы управления, с помощью [доступа](https://docs.microsoft.com/cloud-app-security/access-policy-aad) и [сеанса](https://docs.microsoft.com/cloud-app-security/session-policy-aad) политики
 
 ### <a name="traffic-termination"></a>Завершение трафика
 

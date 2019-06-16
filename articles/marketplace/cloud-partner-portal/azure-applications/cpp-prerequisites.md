@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: pabutler
 ms.openlocfilehash: 64039234a3863332ca19b915fb59a5271625d695
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66258187"
 ---
 # <a name="azure-application-prerequisites"></a>Необходимые условия для приложения Azure
@@ -26,7 +26,7 @@ ms.locfileid: "66258187"
 Технические требования включают следующие пункты.
 
 *   Дополнительные сведения о шаблонах Azure Resource Manager см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates). В этой статье описана структура шаблона Azure Resource Manager. Статья содержит информацию о разных разделах шаблона и свойствах, которые доступны в этих разделах. Шаблон состоит из JSON и выражений, на основе которых можно создавать значения для развертывания. 
-* Шаблоны быстрого запуска Azure.<br> Дополнительные сведения можно найти в разделе 
+* Шаблоны быстрого запуска Azure.<br> Дополнительные сведения можно найти в разделе
 
   * [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/). Развертывайте ресурсы Azure из Azure Resource Manager с помощью созданных сообществом шаблонов, которые позволяют выполнять больший объем работы. Диспетчер ресурсов Azure позволяет подготавливать приложения с помощью декларативного шаблона. В одном шаблоне можно развернуть несколько служб наряду с компонентами, от которых зависит их работа. Один шаблон используется для развертывания приложения на каждом этапе его жизненного цикла.
   * [GitHub. Шаблоны быстрого запуска Azure Resource Manager](https://github.com/azure/azure-quickstart-templates). Этот репозиторий содержит все доступные на данный момент шаблоны Azure Resource Manager, предоставленные сообществом. Индекс для поиска шаблона поддерживается на https://azure.microsoft.com/documentation/templates/.

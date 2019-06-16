@@ -15,10 +15,10 @@ ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: a5037c535737946a50d8af6fa60d0815120276d9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60837330"
 ---
 # <a name="sfctl-container"></a>Контейнер sfctl
@@ -29,7 +29,7 @@ ms.locfileid: "60837330"
 |Команда|Описание|
 | --- | --- |
 | invoke-api | Вызывает API контейнера, развернутого на узле Service Fabric для указанного пакета кода. |
-| журналы | Возвращает журналы контейнера, развернутого на узле Service Fabric для указанного пакета кода. |
+| logs | Возвращает журналы контейнера, развернутого на узле Service Fabric для указанного пакета кода. |
 
 ## <a name="sfctl-container-invoke-api"></a>sfctl container invoke-api
 Вызывает API контейнера, развернутого на узле Service Fabric для указанного пакета кода.

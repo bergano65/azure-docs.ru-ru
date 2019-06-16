@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/13/2019
 ms.author: tyfox
 ms.openlocfilehash: 7c12831c43762ddc776e8d5701f002be97992cbc
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
-ms.translationtype: MT
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65859966"
 ---
 # <a name="manage-azure-hdinsight-clusters-using-azure-cli"></a>Управление кластерами Azure HDInsight, с помощью интерфейса командной строки Azure
@@ -25,13 +25,13 @@ ms.locfileid: "65859966"
 
 ## <a name="prerequisites"></a>Технические условия
 
-* Azure CLI. Если вы еще не установили Azure CLI, см. в разделе [установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) для действия.
+* Azure CLI. Если вы еще не установили Azure CLI, обратитесь к статье [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
-* Кластер Apache Hadoop в HDInsight. См. в разделе [начало работы с HDInsight на платформе Linux](hadoop/apache-hadoop-linux-tutorial-get-started.md).
+* Кластер Apache Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
 ## <a name="connect-to-azure"></a>Подключение к Azure
 
-Войдите в свою подписку Azure. Если вы планируете использовать Azure Cloud Shell, а затем просто выберите **попробовать** в правом верхнем углу блока кода. В противном случае введите следующую команду:
+Войдите в свою подписку Azure. Если вы планируете использовать Azure Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. В противном случае введите следующую команду:
 
 ```azurecli-interactive
 az login

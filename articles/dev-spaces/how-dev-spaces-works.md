@@ -11,10 +11,10 @@ ms.topic: conceptual
 description: Описывает процессы пробелы разработки Azure, power и как они настроены в файле конфигурации azds.yaml
 keywords: azds.yaml, пробелы разработки Azure, разработки пробелы, Docker, Kubernetes, Azure, AKS, служба Azure Kubernetes, контейнеры
 ms.openlocfilehash: e437a53d640bbdad3cdeeba8fd73e1f9ffef4023
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66399833"
 ---
 # <a name="how-azure-dev-spaces-works-and-is-configured"></a>Как работает Azure Dev пробелы и является настроен

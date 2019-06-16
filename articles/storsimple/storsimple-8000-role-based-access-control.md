@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 10/11/2017
 ms.author: alkohli
 ms.openlocfilehash: a79753a897a62e194a759c23a9c0acc45c5f36c1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66159124"
 ---
 # <a name="role-based-access-control-for-storsimple"></a>Управление доступом на основе ролей для StorSimple
@@ -165,7 +165,7 @@ AssignableScopes : {/subscriptions/<subscription_ID>/}
 
 Вы можете предоставить доступ в рамках ресурса, группы ресурсов или подписки, которые входят в область назначения роли. При предоставлении доступа учитывайте, что права доступа, предоставленные в родительском узле, наследуются дочерним узлом. Дополнительные сведения см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../role-based-access-control/overview.md).
 
-1. Перейдите на вкладку **Управление доступом (IAM)**. В колонке "Управление доступом" щелкните **+ Добавить**.
+1. Перейдите на вкладку **Управление доступом (IAM)** . В колонке "Управление доступом" щелкните **+ Добавить**.
 
     ![Добавление прав доступа к роли RBAC](./media/storsimple-8000-role-based-access-control/rbac-add-role.png)
 

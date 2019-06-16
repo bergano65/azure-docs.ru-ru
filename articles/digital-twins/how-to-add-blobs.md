@@ -10,10 +10,10 @@ ms.date: 06/05/2019
 ms.author: v-adgera
 ms.custom: seodec18
 ms.openlocfilehash: 9490772226ecdb90cdd2e0b98fe8336b91db6044
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66754503"
 ---
 # <a name="add-blobs-to-objects-in-azure-digital-twins"></a>Добавление больших двоичных объектов к объектам в Azure Digital Twins
@@ -56,9 +56,9 @@ Azure Digital Twins поддерживает присоединение боль
 | **parentId** | String | Родительская сущность, с которой связывается большой двоичный объект (пространства, устройства или пользователи) |
 | **name** |String | Понятное имя большого двоичного объекта |
 | **type** | String | Нельзя использовать типы большого двоичного объекта *type* и *typeId*.  |
-| **typeId** | Целое число | Нельзя использовать идентификатор типов большого двоичного объекта *type* и *typeId*. |
+| **typeId** | Integer | Нельзя использовать идентификатор типов большого двоичного объекта *type* и *typeId*. |
 | **subtype** | String | Нельзя использовать подтипы большого двоичного объекта *subtype* и *subtypeId*. |
-| **subtypeId** | Целое число | Нельзя использовать идентификатор подтипа большого двоичного объекта *subtype* и *subtypeId*. |
+| **subtypeId** | Integer | Нельзя использовать идентификатор подтипа большого двоичного объекта *subtype* и *subtypeId*. |
 | **description** | String | Настраиваемое описание большого двоичного объекта |
 | **sharing** | String | Можно ли предоставить большой двоичный объект для общего доступа — перечисление [`None`, `Tree`, `Global`] |
 
@@ -114,9 +114,9 @@ Azure Digital Twins поддерживает присоединение боль
 | **name** |String | Понятное имя большого двоичного объекта |
 | **parentId** | String | Родительская сущность, с которой связывается большой двоичный объект (пространства, устройства или пользователи) |
 | **type** | String | Нельзя использовать типы большого двоичного объекта *type* и *typeId*.  |
-| **typeId** | Целое число | Нельзя использовать идентификатор типов большого двоичного объекта *type* и *typeId*. |
+| **typeId** | Integer | Нельзя использовать идентификатор типов большого двоичного объекта *type* и *typeId*. |
 | **subtype** | String | Нельзя использовать подтипы большого двоичного объекта *subtype* и *subtypeId*. |
-| **subtypeId** | Целое число | Нельзя использовать идентификатор подтипа большого двоичного объекта *subtype* и *subtypeId*. |
+| **subtypeId** | Integer | Нельзя использовать идентификатор подтипа большого двоичного объекта *subtype* и *subtypeId*. |
 | **sharing** | String | Можно ли предоставить большой двоичный объект для общего доступа — перечисление [`None`, `Tree`, `Global`] |
 | **description** | String | Настраиваемое описание большого двоичного объекта |
 | **contentInfos** | Массив, | Указывает неструктурированную информацию о метаданных, включая версию |
@@ -159,7 +159,7 @@ This is my blob content. In this case, some text, but I could also be uploading 
 --USER_DEFINED_BOUNDARY--
 ```
 
-| Value | Заменить на |
+| Значение | Заменить на |
 | --- | --- |
 | USER_DEFINED_BOUNDARY | Имя границы составного содержимого |
 
@@ -195,7 +195,7 @@ curl
  -F "text=PATH_TO_FILE;type=text/plain"
 ```
 
-| Value | Заменить на |
+| Значение | Заменить на |
 | --- | --- |
 | YOUR_TOKEN | Допустимый маркер OAuth 2.0 |
 | YOUR_SPACE_ID | Идентификатор пространства для связи с большим двоичным объектом |

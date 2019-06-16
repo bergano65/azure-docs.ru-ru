@@ -13,10 +13,10 @@ ms.date: 01/03/2019
 ms.author: tomfitz
 ms.custom: seodec18
 ms.openlocfilehash: d8fa8b216ca6044adefe1398b58f5d14630540e0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66137165"
 ---
 # <a name="guidance-on-deploying-web-apps-by-using-azure-resource-manager-templates"></a>Руководство по развертыванию веб-приложений с помощью шаблонов Azure Resource Manager
@@ -131,7 +131,7 @@ Set-AzKeyVaultAccessPolicy `
 
 В хранилище Key Vault выберите **Сертификаты** и нажмите **Создать или импортировать**, чтобы отправить сертификат.
 
-![Импортировать сертификат](media/web-sites-rm-template-guidance/import-certificate.png)
+![Импорт сертификата](media/web-sites-rm-template-guidance/import-certificate.png)
 
 В шаблоне укажите имя сертификата для `keyVaultSecretName`.
 

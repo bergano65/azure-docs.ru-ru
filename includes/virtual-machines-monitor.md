@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 01/27/2019
 ms.author: cynthn
 ms.openlocfilehash: ac400c86af8236ff5d67b8b6fbf99f6f4b1d36c9
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66158238"
 ---
 Работу виртуальных машин можно отслеживать с помощью сбора, просмотра и анализа данных диагностики и журнала. Для простого [мониторинга](../articles/azure-monitor/overview.md) виртуальной машины вы можете воспользоваться экраном обзора на портале Azure. При помощи [расширений](../articles/virtual-machines/windows/extensions-features.md) можно настроить на виртуальных машинах диагностику для сбора дополнительных данных метрик. Кроме того, вы можете использовать дополнительные возможности мониторинга, такие как [Application Insights](../articles/azure-monitor/app/app-insights-overview.md) и [Log Analytics](../articles/azure-monitor/log-query/log-query-overview.md).
@@ -37,7 +37,7 @@ ms.locfileid: "66158238"
 
 [Служба работоспособности служб Azure](../articles/service-health/service-health-overview.md) предоставляет персонализированные инструкции и поддержку при возникновении проблем в работе служб Azure, а также помогает подготовиться к предстоящему плановому обслуживанию. Служба работоспособности служб Azure отправляет пользователям и рабочим группам настраиваемые целевые уведомления.
 
-## <a name="azure-resource-health"></a>Работоспособность ресурсов Azure
+## <a name="azure-resource-health"></a>Служба работоспособности ресурса Azure
 
 Служба [Работоспособность ресурсов Azure](../articles/service-health/resource-health-overview.md) поможет выполнить диагностику и получить необходимую поддержку, если неполадки Azure влияют на ресурсы. Она представляет сведения о текущем состоянии работоспособности ресурсов и о состоянии работоспособности ресурсов за прошедший период, а также помогает устранить проблемы. Служба работоспособности ресурсов обеспечивает поддержку, если вам необходима помощь в решении проблемы со службой Azure.
 

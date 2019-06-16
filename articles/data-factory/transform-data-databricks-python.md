@@ -13,10 +13,10 @@ ms.author: gamal
 ms.reviewer: maghan
 manager: craigg
 ms.openlocfilehash: 3ab3ec5380fbc90dffd4f258073ad8b477e2318a
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66002846"
 ---
 # <a name="transform-data-by-running-a-python-activity-in-azure-databricks"></a>Преобразование данных с помощью выполнения действий Python в Azure Databricks
@@ -66,7 +66,7 @@ ms.locfileid: "66002846"
 |---|---|---|
 |name|Имя действия в конвейере.|Да|
 |description|Описание действия.|Нет|
-|тип|Тип действия Python в Databricks — DatabricksSparkPython.|Да|
+|type|Тип действия Python в Databricks — DatabricksSparkPython.|Да|
 |linkedServiceName|Имя связанной службы Databricks, в которой выполняется действие Python. Дополнительные сведения об этой связанной службе см. в статье  [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md) .|Да|
 |pythonFile|URI файла Python, который будет выполнен. Поддерживаются только пути DBFS.|Да|
 |parameters|Параметры командной строки, которые будут переданы в файл Python. Массив строк.|Нет|

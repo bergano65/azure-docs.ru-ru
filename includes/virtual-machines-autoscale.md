@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 3c008e77116a9b42a2ea137069529c5e241adddd
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 8d10c3edcf64ccc66b0599d064e91270a4ad8202
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66160077"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66814826"
 ---
 Вы можете легко [автоматически масштабировать](../articles/azure-monitor/platform/autoscale-best-practices.md) свои [виртуальные машины](../articles/virtual-machines/windows/overview.md) при использовании [масштабируемых наборов виртуальных машин](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) и [функции автоматического масштабирования Azure Monitor](../articles/azure-monitor/platform/autoscale-overview.md). Для автоматического масштабирования виртуальные машины должны входить в масштабируемый набор. Эта статья поможет вам лучше понять, как выполнять горизонтальное и вертикальное масштабирование виртуальных машин автоматически и вручную.
 
@@ -31,9 +31,9 @@ ms.locfileid: "66160077"
 
 Вы можете включить автомасштабирование, когда создаете масштабируемый набор с помощью [Azure PowerShell](../articles/azure-monitor/platform/powershell-quickstart-samples.md#create-and-manage-autoscale-settings) или [Azure CLI](https://docs.microsoft.com/cli/azure/monitor/autoscale-settings). Его можно включить и после создания масштабируемого набора. Вы можете создать масштабируемый набор, установить расширение и настроить автомасштабирование, воспользовавшись [шаблоном Azure Resource Manager](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md). На портале Azure можно включить автомасштабирование в Azure Monitor или в параметрах масштабируемого набора.
 
-![Включить автомасштабирование](./media/virtual-machines-autoscale/virtual-machines-autoscale-enable.png)
+![Включение автомасштабирования](./media/virtual-machines-autoscale/virtual-machines-autoscale-enable.png)
  
-### <a name="metrics"></a>Метрики
+### <a name="metrics"></a>metrics
 
 Функция автоматического масштабирования Azure Monitor позволяет масштабировать определенное число работающих виртуальных машин (как увеличивать, так и уменьшать) в зависимости от [метрик](../articles/azure-monitor/platform/autoscale-common-metrics.md). По умолчанию виртуальные машины предоставляют базовые метрики на уровне узла для использования диска, сети и ЦП. Когда вы настраиваете сбор данных диагностики с помощью расширения, становятся доступными дополнительные счетчики производительности гостевых операционных системы для диска, ЦП и памяти.
 

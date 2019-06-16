@@ -13,10 +13,10 @@ ms.reviewer: jmartens
 ms.date: 02/22/2019
 ms.custom: seodec18
 ms.openlocfilehash: fef3281f1f4e727b58878439e3f6456fee3b6241
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66752932"
 ---
 # <a name="load-and-read-data-with-the-azure-machine-learning-data-prep-sdk"></a>Загрузить и считывание данных с помощью пакета SDK Azure Machine Learning данных подготовки
@@ -163,7 +163,7 @@ dflow.head(5)
 |1|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет| |
 |2|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет| |
 |3|RANK;|Название|Студия|Весь мир|Эта страна / %|Column1|Другие страны / %|Column2|Год ^| |
-|4.|1|Аватар|Фокс|2788|760,5|0,273|2027,5|0,727|2009^|5|
+|4\.|1|Аватар|Фокс|2788|760,5|0,273|2027,5|0,727|2009^|5|
 
 Эти выходные данные показывают, что данные на втором листе содержат три пустых строки перед заголовками. Функция `read_excel()` принимает необязательные параметры для пропуска строк и использование заголовков. Запустите следующий код, который пропускает первые три строки и использует четвертую для получения заголовков.
 
@@ -228,7 +228,7 @@ dflow = dprep.read_sql(ds, "SELECT top 100 * FROM [SalesLT].[Product]")
 dflow.head(5)
 ```
 
-| |ProductID|ИМЯ|ProductNumber|Color|StandardCost|ListPrice|Размер|Вес|ProductCategoryID|ProductModelID|SellStartDate|SellEndDate|DiscontinuedDate|ThumbNailPhoto|ThumbnailPhotoFileName|rowguid|ModifiedDate| |
+| |ProductID|Name|ProductNumber|Color|StandardCost|ListPrice|Размер|Вес|ProductCategoryID|ProductModelID|SellStartDate|SellEndDate|DiscontinuedDate|ThumbNailPhoto|ThumbnailPhotoFileName|rowguid|ModifiedDate| |
 |-|---------|----|-------------|-----|------------|---------|----|------|-----------------|--------------|-------------|-----------|----------------|--------------|----------------------|-------|------------|-|
 |0|680|HL Road Frame - Black, 58|FR-R92B-58|Черный|1059.3100|1431.50|58|1016.04|18|6|2002-06-01 00:00:00+00:00|Нет|Нет|b'GIF89aP\x001\x00\xf7\x00\x00\x00\x00\x00\x80...|no_image_available_small.gif|43dd68d6-14a4-461f-9069-55309d90ea7e|2008-03-11 |0:01:36.827000+00:00|
 |1|706|HL Road Frame - Red, 58|FR-R92R-58|Красный|1059.3100|1431.50|58|1016.04|18|6|2002-06-01 00:00:00+00:00|Нет|Нет|b'GIF89aP\x001\x00\xf7\x00\x00\x00\x00\x00\x80...|no_image_available_small.gif|9540ff17-2712-4c90-a3d1-8ce5568b2462|2008-03-11 |10:01:36.827000+00:00|
@@ -312,7 +312,7 @@ dflow.to_pandas_dataframe().head()
 |1|1011871|Stearns Homestead Farmers' Market|http://Stearnshomestead.com |6975 Ridge Road|Парма|Кайахога|
 |2|1011878|100 Mile Market|https://www.pfcmarkets.com |507 Harrison St|Каламазу|Каламазу|
 |3|1009364|106 S. Main Street Farmers Market|http://thetownofsixmile.wordpress.com/ |106 S. Main Street|Сикс Майл|||
-|4.|1010691|10th Steet Community Farmers Market|https://agrimissouri.com/... |10th Street and Poplar|Ламар|Бартон|
+|4\.|1010691|10th Steet Community Farmers Market|https://agrimissouri.com/... |10th Street and Poplar|Ламар|Бартон|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -16,12 +16,12 @@ ms.workload: iaas-sql-server
 ms.date: 03/07/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 4893076da47528cb6765efc32f46e76819a915b1
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 4f0d681c93ab7ac7fef941892a95282a2fd59b89
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65793821"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67075734"
 ---
 # <a name="automated-patching-for-sql-server-in-azure-virtual-machines-resource-manager"></a>Автоматическая установка исправлений SQL Server на виртуальных машинах Azure (Resource Manager)
 > [!div class="op_single_selector"]
@@ -73,7 +73,7 @@ ms.locfileid: "65793821"
 | **Расписание обслуживания** |Каждый день, понедельник, вторник, среда, четверг, пятница, суббота, воскресенье |Расписание для скачивания и установки обновлений Windows, SQL Server и обновлений Майкрософт для виртуальной машины. |
 | **Время начала обслуживания** |0–24 |Локальное время начала обновления виртуальной машины. |
 | **Длительность периода обслуживания** |30–180 |Допустимое количество минут для скачивания и установки обновлений. |
-| **Категория исправления** |Важно | Категория обновлений ОС Windows, которые будут скачаны и установлены.|
+| **Категория исправления** |Важно! | Категория обновлений ОС Windows, которые будут скачаны и установлены.|
 
 ## <a name="configuration-in-the-portal"></a>Настройка на портале
 Для настройки автоматизированной установки исправлений во время подготовки виртуальных машин или для существующих виртуальных машин можно использовать портал Azure.
@@ -81,20 +81,20 @@ ms.locfileid: "65793821"
 ### <a name="new-vms"></a>Новые виртуальные машины
 При создании новой виртуальной машины SQL Server с моделью развертывания с помощью Resource Manager настройте автоматизированную установку исправлений, используя портал Azure.
 
-В колонке **Параметры SQL Server** выберите **Автоматизированное исправление**. Колонка **Автоматическая установка исправлений SQL** показана на следующем снимке экрана портала Azure.
+В **параметры SQL Server** выберите **изменение конфигурации** под **автоматизированное исправление**. Колонка **Автоматическая установка исправлений SQL** показана на следующем снимке экрана портала Azure.
 
 ![Автоматизированная установка исправлений SQL на портале Azure](./media/virtual-machines-windows-sql-automated-patching/azure-sql-arm-patching.png)
 
 Для контекста обратитесь к полному описанию в разделе [Подготовка виртуальной машины SQL Server в Azure](virtual-machines-windows-portal-sql-server-provision.md).
 
 ### <a name="existing-vms"></a>Существующие виртуальные машины
-Выберите существующую виртуальную машину SQL Server. Затем в колонке **Параметры** выберите раздел **Конфигурация SQL Server**.
+
+[!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
+
+Для существующих виртуальных машин SQL Server, откройте ваш [ресурсов виртуальных машин SQL](virtual-machines-windows-sql-manage-portal.md#access-sql-virtual-machine-resource) и выберите **исправление** под **параметры**. 
 
 ![Автоматизированная установка исправлений SQL для существующих виртуальных машин](./media/virtual-machines-windows-sql-automated-patching/azure-sql-rm-patching-existing-vms.png)
 
-В колонке **Конфигурация SQL Server** нажмите кнопку **Изменить** в разделе "Автоматизированное исправление".
-
-![Настройка автоматизированной установки исправлений SQL для существующих виртуальных машин](./media/virtual-machines-windows-sql-automated-patching/azure-sql-rm-patching-configuration.png)
 
 По завершении нажмите кнопку **ОК** в нижней части колонки **Конфигурация SQL Server**, чтобы сохранить изменения.
 
@@ -108,8 +108,7 @@ ms.locfileid: "65793821"
     $vmname = "vmname"
     $resourcegroupname = "resourcegroupname"
     $aps = New-AzVMSqlServerAutoPatchingConfig -Enable -DayOfWeek "Thursday" -MaintenanceWindowStartingHour 11 -MaintenanceWindowDuration 120  -PatchCategory "Important"
-
-    Set-AzVMSqlServerExtension -AutoPatchingSettings $aps -VMName $vmname -ResourceGroupName $resourcegroupname
+s Set AzVMSqlServerExtension - AutoPatchingSettings $aps - VMName $vmname - ResourceGroupName $resourcegroupname
 
 > [!IMPORTANT]
 > Если расширение не установлено, при его установке перезапускается служба SQL Server.

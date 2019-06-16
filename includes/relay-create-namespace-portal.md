@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: clemensv
 ms.openlocfilehash: bbcf38ab54632144920b729f433c222f426d96dc
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66111543"
 ---
 1. Войдите на [портал Azure][Azure portal].
@@ -18,7 +18,7 @@ ms.locfileid: "66111543"
 5. В поле [Группа ресурсов](../articles/azure-resource-manager/manage-resource-groups-portal.md) выберите существующую группу ресурсов, в которую будет включено это пространство имен, или создайте новую.  
 6. В поле **Расположение** выберите страну или регион для размещения пространства имен.
    
-    ![Создать пространство имен][create-namespace]
+    ![Создание пространства имен][create-namespace]
 7. Нажмите кнопку **Создать**. Система создаст пространство имен и включит его. Через несколько минут система подготовит к работе ресурсы для вашей учетной записи.
 
 ### <a name="get-management-credentials"></a>Получение учетных данных управления

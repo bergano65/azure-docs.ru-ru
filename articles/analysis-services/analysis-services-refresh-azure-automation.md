@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/26/2019
 ms.author: chlound
 ms.openlocfilehash: 4cae93cff594ad561973f8029ea7335dc4c60263
-ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66357000"
 ---
 # <a name="refresh-with-azure-automation"></a>Обновление с помощью службы автоматизации Azure
@@ -145,7 +145,7 @@ ms.locfileid: "66357000"
 **Текст** — это документ JSON, которое должно содержать следующие свойства:
 
 
-|Свойство  |Value  |
+|Свойство  |Значение  |
 |---------|---------|
 |**AnalysisServicesDatabase**     |Имя базы данных Azure Analysis Services <br/> Пример: AdventureWorksDB         |
 |**AnalysisServicesServer**     |Имя сервера Azure Analysis Services. <br/> Пример: https:\//westus.asazure.windows.net/servers/myserver/models/AdventureWorks/         |

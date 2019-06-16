@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 02/25/2019
 ms.author: srrengar
 ms.openlocfilehash: 0db341a9e36d61761321821de5631a564adea050
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66428167"
 ---
 # <a name="report-and-check-service-health"></a>Проверка работоспособности службы и оповещение о проблемах
@@ -74,7 +74,7 @@ ms.locfileid: "66428167"
     using System.Fabric.Health;
     ```
    
-    2. Добавьте приведенный ниже код после вызова `myDictionary.TryGetValueAsync` .
+    2\. Добавьте приведенный ниже код после вызова `myDictionary.TryGetValueAsync` .
    
     ```csharp
     if (!result.HasValue)
@@ -102,7 +102,7 @@ ms.locfileid: "66428167"
     var fabricClient = new FabricClient(new FabricClientSettings() { HealthReportSendInterval = TimeSpan.FromSeconds(0) });
     ```
    
-    2. Добавьте приведенный ниже код после вызова `myDictionary.TryGetValueAsync` .
+    2\. Добавьте приведенный ниже код после вызова `myDictionary.TryGetValueAsync` .
    
     ```csharp
     if (!result.HasValue)

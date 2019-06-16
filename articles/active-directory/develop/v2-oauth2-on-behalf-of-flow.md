@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce0c1c4dcf7e4ff0c82157af83aa15544cf092e2
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 1bdd91f8ee1228febe71244530a63fe992df56d9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65544751"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67110846"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-on-behalf-of-flow"></a>Платформа Microsoft identity и flow OAuth 2.0 On-Behalf-Of
 
@@ -163,7 +163,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 
 ### <a name="error-response-example"></a>Пример ответа с сообщением об ошибке
 
-Сообщение об ошибке возвращается конечной точкой маркера при попытке получить маркер доступа для нисходящего API в том случае, если для нисходящего API настроена политика условного доступа, например многофакторная проверка подлинности. Служба среднего уровня должна передать эту ошибку в клиентское приложение, чтобы пользователь мог выполнить необходимые действия для соблюдения политики условного доступа.
+Сообщение об ошибке возвращается конечной точкой токена, при попытке получить маркер доступа для API нижнего уровня, если API нижнего уровня настроена политика условного доступа (такие как многофакторная проверка подлинности), заданная в его. Служба среднего уровня должна передать эту ошибку в клиентское приложение, чтобы клиентское приложение может обеспечивать взаимодействие с пользователем в соответствии с политикой условного доступа.
 
 ```
 {

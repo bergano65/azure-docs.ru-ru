@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/03/2016
 ms.author: estfan
 ms.openlocfilehash: fe726986b3f93ab3bb447b8973727a658ac1c706
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66149310"
 ---
 ### <a name="prerequisites"></a>Технические условия
@@ -18,7 +18,7 @@ ms.locfileid: "66149310"
 
 Ниже приведены инструкции по авторизации приложения логики для подключения к учетной записи GoogleDrive.  
 
-1. Чтобы создать подключение к GoogleDrive, в конструкторе приложений логики в раскрывающемся списке выберите параметр **Показать API, управляемые Майкрософт**, а затем введите в поле поиска *GoogleDrive*. Выберите триггер или действие, которые хотите использовать:   
+1. Чтобы создать подключение к GoogleDrive, в конструкторе приложений логики в раскрывающемся списке выберите параметр **Показать API, управляемые Майкрософт**, а затем введите в поле поиска *GoogleDrive*. Выберите триггер или действие, которые хотите использовать:  
    ![Этап создания подключения GoogleDrive](./media/connectors-create-api-googledrive/googledrive-1.png)  
 2. Если вы ранее не создавали подключения к GoogleDrive, вам будет предложено ввести учетные данные GoogleDrive. Эти учетные данные будут использоваться для авторизации приложения логики, чтобы оно могло подключиться и получить доступ к данным вашей учетной записи GoogleDrive.  
    ![Этап создания подключения GoogleDrive](./media/connectors-create-api-googledrive/googledrive-2.png)  
@@ -28,6 +28,6 @@ ms.locfileid: "66149310"
    ![Этап создания подключения GoogleDrive](./media/connectors-create-api-googledrive/googledrive-4.png)
 5. Разрешите подключение к GoogleDrive.  
    ![Этап создания подключения GoogleDrive](./media/connectors-create-api-googledrive/googledrive-5.png)  
-6. Подключение создано, и теперь вы можете перейти к другим действиям в приложении логики:   
+6. Подключение создано, и теперь вы можете перейти к другим действиям в приложении логики:  
    ![Этап создания подключения GoogleDrive](./media/connectors-create-api-googledrive/googledrive-6.png)  
 

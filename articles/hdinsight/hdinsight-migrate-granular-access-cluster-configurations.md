@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 06/03/2019
 ms.openlocfilehash: 1ec4786291d6e2e5be6785e52cf3ab5bb5bbc690
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66754540"
 ---
 # <a name="migrate-to-granular-role-based-access-for-cluster-configurations"></a>Переход на детализированный доступ на основе ролей для конфигураций кластера
@@ -148,7 +148,7 @@ ms.locfileid: "66754540"
 Обновление до [Az PowerShell версии 2.0.0](https://www.powershellgallery.com/packages/Az) или более поздней версии, чтобы избежать прерывания работы.  Если вы используете метод затронуты этими изменениями, могут потребоваться изменения минимальный требуемый код.
 - `Grant-AzHDInsightHttpServicesAccess` Теперь считается устаревшим и будет заменен новой `Set-AzHDInsightGatewayCredential` командлета.
 - `Get-AzHDInsightJobOutput` был обновлен для поддержки детализированный доступ на основе ролей для ключа хранилища.
-    - Пользователи, имеющие оператор кластера HDInsight, владельца или участника роли не затрагиваются.
+    - На пользователей с ролями оператора, участника или владельца кластера HDInsight это не повлияет.
     - Только роль читателя пользователям нужно будет указать `DefaultStorageAccountKey` параметр явным образом.
 - `Revoke-AzHDInsightHttpServicesAccess` Теперь считается устаревшим. HTTP теперь всегда включена, поэтому этот командлет больше не используется.
  См. в разделе [az. Руководство по миграции HDInsight](https://github.com/Azure/azure-powershell/blob/master/documentation/migration-guides/Az.2.0.0-migration-guide.md#azhdinsight) для получения дополнительных сведений.

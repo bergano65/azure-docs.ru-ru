@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 02274bacb66a33ef54e07bc8113d7db46d4d5296
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66172215"
 ---
 #### <a name="to-add-a-storsimple-backup-policy"></a>Добавление политики резервного копирования StorSimple
@@ -17,7 +17,7 @@ ms.locfileid: "66172215"
 
 2. В колонке **Политика архивации** на панели команд щелкните **Добавить политику**.
    
-    ![Добавить политику архивации](./media/storsimple-8000-add-backup-policy-u2/addbupol1.png)
+    ![Добавить политику резервного копирования](./media/storsimple-8000-add-backup-policy-u2/addbupol1.png)
 
 3. В колонке **Создать политику архивации** выполните следующие действия:
    
@@ -31,7 +31,7 @@ ms.locfileid: "66172215"
 
    4. Чтобы определить расписание для этой политики архивации, щелкните **Первое расписание**, а затем измените следующие параметры:
 
-       ![Добавить политику архивации](./media/storsimple-8000-add-backup-policy-u2/addbupol3.png)
+       ![Добавить политику резервного копирования](./media/storsimple-8000-add-backup-policy-u2/addbupol3.png)
 
        1. В качестве **типа моментального снимка** выберите **Облако** или **Локально**.
 
@@ -45,9 +45,9 @@ ms.locfileid: "66172215"
 
    5. Нажмите кнопку **Создать**, чтобы создать политику архивации.
 
-       ![Добавить политику архивации](./media/storsimple-8000-add-backup-policy-u2/addbupol4.png)
+       ![Добавить политику резервного копирования](./media/storsimple-8000-add-backup-policy-u2/addbupol4.png)
    
    6. Вы получите уведомление, когда политика архивации будет создана. Добавленная политика появится в таблице в колонке **Политика архивации**.
 
-       ![Добавить политику архивации](./media/storsimple-8000-add-backup-policy-u2/addbupol7.png)
+       ![Добавить политику резервного копирования](./media/storsimple-8000-add-backup-policy-u2/addbupol7.png)
 

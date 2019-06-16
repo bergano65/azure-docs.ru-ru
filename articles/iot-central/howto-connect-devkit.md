@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: philmea
 ms.openlocfilehash: 130ca6bc946d44d80cddba5486d405bfb15523cb
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66235885"
 ---
 # <a name="connect-an-mxchip-iot-devkit-device-to-your-azure-iot-central-application"></a>Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central
@@ -208,7 +208,7 @@ git clone https://github.com/Azure/iot-central-firmware
 | gyroscopeZ     | милиградусов/с   | –2000   | 2000    | 0              |
 
 #### <a name="states"></a>Состояния 
-| ИМЯ          | `Display name`   | ОБЫЧНЫЙ РЕЖИМ | ВНИМАНИЕ! | ОПАСНОСТЬ! | 
+| Name          | `Display name`   | ОБЫЧНЫЙ РЕЖИМ | ВНИМАНИЕ! | ОПАСНОСТЬ! | 
 | ------------- | -------------- | ------ | ------- | ------ | 
 | DeviceState   | Состояние устройства   | Зеленый  | Оранжевый  | Красный    | 
 
@@ -237,7 +237,7 @@ git clone https://github.com/Azure/iot-central-firmware
 
 | type            | `Display name` | Имя поля | Тип данных |
 | --------------- | ------------ | ---------- | --------- |
-| Свойство устройства | Серийный номер   | dieNumber  | number    |
+| Свойство устройства | Серийный номер   | dieNumber  | номер    |
 | Свойство устройства | Расположение устройства   | location  | location    |
 | Text            | Произведено в     | manufacturedIn   | Н/Д       |
 
@@ -245,8 +245,8 @@ git clone https://github.com/Azure/iot-central-firmware
 
 | `Display name` | Имя поля | Тип возвращаемого значения | Отображаемое имя поля ввода | Имя поля ввода | Тип поля ввода |
 | ------------ | ---------- | ----------- | ------------------------ | ---------------- | ---------------- |
-| echo         | echo (вывод на экран)       | text        | отображаемое значение         | displayedValue   | text             |
-| Обратный отсчет    | Обратный отсчет  | number      | Отсчет от               | countFrom        | number           |
+| echo         | echo (вывод на экран)       | Text        | отображаемое значение         | displayedValue   | Text             |
+| Обратный отсчет    | Обратный отсчет  | номер      | Отсчет от               | countFrom        | номер           |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

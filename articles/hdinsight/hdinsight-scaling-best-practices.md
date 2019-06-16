@@ -6,13 +6,13 @@ ms.author: ashish
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 06/03/2019
-ms.openlocfilehash: eb68421c4f62d94eedf266a0c34a0e276eacc4a6
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.date: 06/10/2019
+ms.openlocfilehash: b85277a4238351b6448c2cf29676ae3d8c118385
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66479282"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67077205"
 ---
 # <a name="scale-hdinsight-clusters"></a>Масштабирование кластеров HDInsight
 
@@ -21,6 +21,9 @@ HDInsight обеспечивает гибкость, предоставляя в
 При наличии периодических пакетной обработки, кластер HDInsight можно увеличить масштаб за несколько минут до этой операции, чтобы кластер имеет достаточный объем памяти и ресурсов процессора.  Позже после обработки, когда кластер HDInsight не требует интенсивного использования, можно уменьшить его масштаб для меньшего количества рабочих узлов.
 
 Масштабирование кластера вручную с помощью одного из методов, описанных ниже, также можно использовать [автомасштабирования](hdinsight-autoscale-clusters.md) параметры, чтобы система могла автоматически увеличивать или уменьшать в ответ на ЦП, памяти и других метрик.
+
+> [!NOTE]  
+> Поддерживаются только кластеры HDInsight версии 3.1.3 или более поздней. Если вы не знаете версию кластера, см. страницу «Свойства».
 
 ## <a name="utilities-to-scale-clusters"></a>Служебные программы, масштабирование кластеров
 
@@ -47,6 +50,50 @@ HDInsight обеспечивает гибкость, предоставляя в
 Когда вы **добавить** узлов в работающий кластер HDInsight (вертикальное масштабирование), все ожидающие или выполняемые задания не будут затронуты. Во время масштабирования можно безопасно передать новые задания. Если какой-либо причине произошел сбой операции масштабирования, чтобы оставить в нерабочем состоянии кластера будет обрабатываться сбоя.
 
 Если вы **удалить** узлов (вниз), любые ожидающие или выполняемые задания будет ошибкой после завершения операции масштабирования. Это происходит из-за некоторые службы, перезапуск во время масштабирования. Кроме того, есть риск, кластер можно получить заблокированной в безопасном режиме во время операции масштабирования вручную.
+
+Ниже представлены возможности, связанные с изменением количества узлов данных в кластере каждого типа, поддерживаемого в HDInsight:
+
+* Apache Hadoop
+
+    Вы можете легко увеличить количество рабочих узлов в работающем кластере Hadoop. Это не помешает обработке заданий в состоянии ожидания и выполнения. В ходе выполнения операции можно также отправлять новые задания. Сбои операции масштабирования обрабатываются корректно, поэтому кластер всегда пребывает в функциональном состоянии.
+
+    Если уменьшить масштаб кластера Hadoop, сократив количество узлов данных, некоторые службы в нем будут перезапущены. Это приведет к сбою всех выполняющихся и ожидающих заданий при завершении операции масштабирования. Однако после завершения операции вы можете повторно отправить задания.
+
+* Apache HBase
+
+    Вы можете с легкостью добавлять и удалять узлы данных в работающем кластере HBase. Балансировка региональных серверов выполняется автоматически в течение нескольких минут после завершения операции масштабирования. Но их также можно сбалансировать вручную, выполнив вход в головной узел кластера и выполнив следующие команды в окне командной строки:
+
+    ```bash
+    pushd %HBASE_HOME%\bin
+    hbase shell
+    balancer
+    ```
+
+    Дополнительные сведения об использовании оболочки HBase см. в статье [Начало работы с примером Apache HBase в HDInsight](hbase/apache-hbase-tutorial-get-started-linux.md).
+
+* Apache Storm
+
+    Вы можете с легкостью добавлять и удалять узлы данных в работающем кластере Storm. Но после успешного завершения операции масштабирования потребуется повторная балансировка топологии.
+
+    Повторную балансировку можно выполнить двумя способами:
+
+  * с помощью веб-интерфейса Storm;
+  * с помощью программы командной строки.
+
+    Дополнительные сведения см. в [документации по Apache Storm](https://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html).
+
+    В кластере HDInsight доступен веб-интерфейс Storm.
+
+    ![HDInsight, Storm, масштабирование, перераспределение](./media/hdinsight-scaling-best-practices/hdinsight-portal-scale-cluster-storm-rebalance.png)
+
+    Ниже приведен пример команды CLI для повторной балансировки топологии Storm:
+
+    ```cli
+    ## Reconfigure the topology "mytopology" to use 5 worker processes,
+    ## the spout "blue-spout" to use 3 executors, and
+    ## the bolt "yellow-bolt" to use 10 executors
+    $ storm rebalance mytopology -n 5 -e blue-spout=3 -e yellow-bolt=10
+    ```
 
 ## <a name="how-to-safely-scale-down-a-cluster"></a>Как безопасно увеличение или уменьшение масштаба кластера
 
@@ -140,13 +187,13 @@ org.apache.http.conn.HttpHostConnectException: Connect to hn0-clustername.server
 1. Остановите службы Hive и убедитесь, что выполнены все задания и запросы.
 2. Список содержимого каталога рабочей зоны, определенный выше, `hdfs://mycluster/tmp/hive/` для просмотра, если он содержит все файлы:
 
-    ```
+    ```bash
     hadoop fs -ls -R hdfs://mycluster/tmp/hive/hive
     ```
 
     Ниже приведен пример выходных данных при наличии файлов:
 
-    ```
+    ```output
     sshuser@hn0-scalin:~$ hadoop fs -ls -R hdfs://mycluster/tmp/hive/hive
     drwx------   - hive hdfs          0 2017-07-06 13:40 hdfs://mycluster/tmp/hive/hive/4f3f4253-e6d0-42ac-88bc-90f0ea03602c
     drwx------   - hive hdfs          0 2017-07-06 13:40 hdfs://mycluster/tmp/hive/hive/4f3f4253-e6d0-42ac-88bc-90f0ea03602c/_tmp_space.db
@@ -160,7 +207,7 @@ org.apache.http.conn.HttpHostConnectException: Connect to hn0-clustername.server
 
     Пример командной строки для удаления файлов из HDFS:
 
-    ```
+    ```bash
     hadoop fs -rm -r -skipTrash hdfs://mycluster/tmp/hive/
     ```
 
@@ -173,7 +220,6 @@ org.apache.http.conn.HttpHostConnectException: Connect to hn0-clustername.server
 #### <a name="run-the-command-to-leave-safe-mode"></a>Выполнение команды для отключения безопасного режима
 
 Последний вариант — выполнить команду оставьте безопасный режим. Если вы знаете, что причина безопасный режим HDFS заключается в том, из-за недостаточного репликации файлов Hive, можно выполнить следующую команду, чтобы отключить безопасный режим:
-
 
 ```bash
 hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode leave
@@ -201,4 +247,3 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode leave
 
 * [Автоматическое масштабирование кластеров Azure HDInsight](hdinsight-autoscale-clusters.md)
 * [Введение в Azure HDInsight](hadoop/apache-hadoop-introduction.md)
-* [Масштабирование кластеров](hdinsight-administer-use-portal-linux.md#scale-clusters)

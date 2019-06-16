@@ -9,10 +9,10 @@ ms.date: 07/19/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 0913e1877c63ed1a8e960676be02a12b45a34a7d
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66240097"
 ---
 # <a name="deploy-azure-file-sync"></a>Развертывание Синхронизации файлов Azure
@@ -21,7 +21,7 @@ ms.locfileid: "66240097"
 Перед выполнением шагов, описанных в этом руководстве, настоятельно рекомендуем ознакомиться со статьями [Планирование развертывания службы файлов Azure](storage-files-planning.md) и [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md).
 
 ## <a name="prerequisites"></a>Технические условия
-* Файловый ресурс Azure в том же регионе, что вы хотите развернуть службу синхронизации файлов Azure. Дополнительные сведения можно найти в разделе 
+* Файловый ресурс Azure в том же регионе, что вы хотите развернуть службу синхронизации файлов Azure. Дополнительные сведения можно найти в разделе
     - [Доступность по регионам](storage-sync-files-planning.md#region-availability). Здесь представлены сведения о регионах службы синхронизации файлов Azure.
     - [Создание общей папки в хранилище файлов Azure](storage-how-to-create-file-share.md). Здесь содержатся пошаговые инструкции по созданию общего файлового ресурса.
 * По крайней мере один поддерживаемый экземпляр Windows Server или кластер Windows Server для синхронизации со службой синхронизации файлов Azure. Дополнительные сведения о поддерживаемых версиях Windows Server см. в разделе [Взаимодействие службы синхронизации файлов Azure](storage-sync-files-planning.md#azure-file-sync-system-requirements-and-interoperability).

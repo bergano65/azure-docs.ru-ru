@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: cherylmc
 ms.openlocfilehash: b590dabbe4b2c6526f2c602aeed64667348eefa9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66113939"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Создание и установка файлов конфигурации VPN-клиента для настройки подключений типа "точка — сеть" с использованием собственной аутентификации Azure на основе сертификата
@@ -90,7 +90,7 @@ ms.locfileid: "66113939"
     >
   
 2. Убедитесь, что вы установили сертификат клиента, выданный с использованием корневого сертификата, который вы передали в Azure при настройке параметров подключения типа "точка — сеть". Это не сертификат VPNServerRoot, который вы установили на предыдущем шаге. Этот сертификат клиента требуется для аутентификации. Дополнительную информацию о создании сертификатов см. в разделе [Настройка подключения "точка — сеть" к виртуальной сети с использованием собственной аутентификации Azure на основе сертификата и портала Azure](vpn-gateway-howto-point-to-site-resource-manager-portal.md#generatecert). Инструкции по установке сертификата клиента см. в разделе [Установка сертификата клиента для аутентификации Azure на основе сертификата при подключениях типа "точка — сеть"](point-to-site-how-to-vpn-client-install-azure-cert.md).
-3. Откройте диалоговое окно **Network** (Сеть) и в разделе **Network Preferences** (Параметры сети) щелкните **+**, чтобы создать профиль подключения типа "точка — сеть" между VPN-клиентом и виртуальной сетью Azure.
+3. Откройте диалоговое окно **Network** (Сеть) и в разделе **Network Preferences** (Параметры сети) щелкните **+** , чтобы создать профиль подключения типа "точка — сеть" между VPN-клиентом и виртуальной сетью Azure.
 
    Установите следующие значения: для параметра **Interface** (Интерфейс) — VPN, для **VPN Type** (Тип VPN) — IKEv2. Укажите имя профиля в поле **Service Name** (Имя службы), а затем нажмите кнопку **Create** (Создать), чтобы создать профиль подключения VPN-клиента.
 
@@ -109,7 +109,7 @@ ms.locfileid: "66113939"
    ![identity](./media/point-to-site-vpn-client-configuration-azure-cert/identity.png)
 8. В поле **Local ID** (Локальный идентификатор) укажите имя сертификата (из шага 6). В нашем примере это ikev2Client.com. Щелкните **Apply** (Применить), чтобы сохранить изменения.
 
-   ![применить](./media/point-to-site-vpn-client-configuration-azure-cert/applyconnect.png)
+   ![apply](./media/point-to-site-vpn-client-configuration-azure-cert/applyconnect.png)
 9. В диалоговом окне **Network** (Сеть) щелкните **Apply** (Применить), чтобы сохранить все изменения. Затем щелкните **Connect** (Подключиться), чтобы установить подключение типа "точка — сеть" к виртуальной сети Azure.
 
 ## <a name="linuxgui"></a>Linux (графический пользовательский интерфейс strongSwan)

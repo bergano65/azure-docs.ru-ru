@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 51e1fd18b52d7e215ba43be540156199fb41778e
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66155898"
 ---
 #### <a name="to-attach-the-sas-cables"></a>Чтобы присоединить кабели SAS:
@@ -48,7 +48,7 @@ ms.locfileid: "66155898"
       | 1 |Контроллер 0 |
       | 2 |Контроллер 1 |
       | 3 |Контроллер EBOD 0 |
-      | 4. |Контроллер EBOD 1 |
+      | 4\. |Контроллер EBOD 1 |
       | 5, 6 |Порты SAS на основном корпусе (с меткой EBOD) |
       | 7, 8 |Порты SAS на корпусе EBOD (порт A) |
 

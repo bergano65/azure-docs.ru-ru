@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: maxluk
-ms.openlocfilehash: 57a3ea73783af1edaee069bf2770d5c58f81772a
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.openlocfilehash: 94cc41890778e842cb2e4bd6e06b90361cbef1cd
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66496106"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67066459"
 ---
 # <a name="use-azure-toolkit-for-intellij-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for IntelliJ
 
@@ -80,7 +80,7 @@ ms.locfileid: "66496106"
 
    a. В строке меню выберите **File** (Файл) > **Project Structure...** (Структура проекта…).
 
-   2. В окне **структуры проекта** щелкните **Artifacts** (Артефакты).  
+   2\. В окне **структуры проекта** щелкните **Artifacts** (Артефакты).  
 
    c. После просмотра артефакта щелкните **Cancel** (Отменить).
 
@@ -90,7 +90,7 @@ ms.locfileid: "66496106"
 
     a. В иерархии проекта перейдите к **myApp** > **src** > **main** > **scala**.  
 
-    2. Щелкните правой кнопкой мыши папку **scala**, а затем выберите **New** (Новый) > **Scala Class** (Класс Scala).
+    2\. Щелкните правой кнопкой мыши папку **scala**, а затем выберите **New** (Новый) > **Scala Class** (Класс Scala).
 
    ![Команды для создания класса Scala в проекте](./media/apache-spark-intellij-tool-plugin/hdi-spark-scala-code.png)
 
@@ -175,7 +175,7 @@ ms.locfileid: "66496106"
 
     * **Кластер HDInsight**  
   
-        |Свойство |Value |
+        |Свойство |Значение |
         |----|----|
         |Link Resource Type (Связать тип ресурса)|Из раскрывающегося списка выберите **HDInsight Cluster** (Кластер HDInsight).|
         |Cluster Name/URL (Имя или URL-адрес кластера)| Введите имя кластера.|
@@ -183,11 +183,11 @@ ms.locfileid: "66496106"
         |Имя пользователя| Введите имя пользователя кластера. Значение по умолчанию — admin.|
         |Пароль| Введите пароль для этого имени пользователя.|
     
-        ![связать диалоговое окно для кластера Hdinsight](./media/apache-spark-intellij-tool-plugin/link-hdinsight-cluster-dialog.png)
+        ![связать диалоговое окно для кластера HdInsight](./media/apache-spark-intellij-tool-plugin/link-hdinsight-cluster-dialog.png)
 
     * **Livy Service** (Служба Livy)  
   
-        |Свойство |Value |
+        |Свойство |Значение |
         |----|----|
         |Link Resource Type (Связать тип ресурса)|Из раскрывающегося списка выберите **Livy Service** (Служба Livy).|
         |Livy Endpoint (Конечная точка Livy)| Введите конечную точку Livy|
@@ -218,7 +218,7 @@ ms.locfileid: "66496106"
 
 3. В окне **Edit configuration** (Изменить конфигурацию) укажите следующие значения, а затем щелкните **ОК**.
 
-    |Свойство |Value |
+    |Свойство |Значение |
     |----|----|
     |Spark clusters (Linux only) (Кластеры Spark (только для Linux))|Выберите кластер HDInsight Spark, в котором вы хотите запустить приложение.|
     |Select an Artifact to submit (Выбор артефакта для запуска)|Оставьте параметр по умолчанию.|
@@ -298,7 +298,7 @@ ms.locfileid: "66496106"
 
 4. Укажите следующие значения, а затем нажмите кнопку **OK**.
 
-    |Свойство |Value |
+    |Свойство |Значение |
     |----|----|
     |Job main class (Основной класс задания)|В выбранном файле основной класс является значением по умолчанию. Класс можно изменить, выбрав кнопку с многоточием ( **...** ) и другой класс.|
     |Переменные среды|Убедитесь в правильности имени HADOOP_HOME.|
@@ -332,7 +332,7 @@ ms.locfileid: "66496106"
 
 4. Укажите следующие значения, а затем нажмите кнопку **OK**.
 
-    |Свойство |Value |
+    |Свойство |Значение |
     |----|----|
     |Spark clusters (Linux only) (Кластеры Spark (только для Linux))|Выберите кластер HDInsight Spark, в котором вы хотите запустить приложение.|
     |Main class name (Имя основного класса)|В выбранном файле основной класс является значением по умолчанию. Класс можно изменить, выбрав кнопку с многоточием ( **...** ) и другой класс.|
@@ -457,12 +457,12 @@ ms.locfileid: "66496106"
 
 ![IntelliJ получает сообщение об ошибке, если кластер занят](./media/apache-spark-intellij-tool-plugin/intellij-interactive-cluster-busy-submit.png)
 
-## <a name="feedback-and-known-issues"></a>Отзывы и известные проблемы
+## <a name="known-issues"></a>Известные проблемы
+
 Сейчас просмотр выходных данных Spark напрямую не поддерживается.
 
-С любыми отзывами и предложениями, а также в случае возникновения проблем при работе с этим подключаемым модулем вы можете отправить сообщение по электронному адресу hdivstool@microsoft.com.
-
 ## <a name="seealso"></a>Дальнейшие действия
+
 * [Apache Spark в Azure HDInsight](apache-spark-overview.md)
 
 ### <a name="demo"></a>Демонстрация
@@ -482,8 +482,7 @@ ms.locfileid: "66496106"
 ### <a name="tools-and-extensions"></a>Средства и расширения
 * [Удаленная отладка приложений Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 * [Удаленная или локальная отладка приложений Spark в кластере HDInsight с помощью Azure Toolkit for IntelliJ через SSH](apache-spark-intellij-tool-debug-remotely-through-ssh.md)
-* [Использование инструментов HDInsight для IntelliJ с песочницей Hortonworks](../hadoop/hdinsight-tools-for-intellij-with-hortonworks-sandbox.md)
-* [Использование средств HDInsight в Azure Toolkit for Eclipse для создания приложений Apache Spark](apache-spark-eclipse-tool-plugin.md)
+* [Создание приложений Spark для кластера HDInsight с помощью Azure Toolkit for Eclipse](apache-spark-eclipse-tool-plugin.md)
 * [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
 * [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)

@@ -11,10 +11,10 @@ ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: bahariri
 ms.openlocfilehash: 8bf381e7c66e06bbaa140ed865f0f7c9b4f001af
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60821695"
 ---
 # <a name="use-azure-event-hubs-from-apache-kafka-applications"></a>Использование Центров событий Azure из приложений Apache Kafka
@@ -30,9 +30,9 @@ ms.locfileid: "60821695"
 
 | Понятия Kafka | Понятия Центров событий|
 | --- | --- |
-| Кластер | Пространство имен |
+| HDInsight | Пространство имен |
 | Раздел | Концентратор событий |
-| Раздел | Раздел|
+| Секция | Секция|
 | Группа потребителей | Группа потребителей |
 | Offset | Offset|
 
@@ -55,7 +55,7 @@ ms.locfileid: "60821695"
 Ниже приведен список функций Kafka, которые еще не поддерживаются:
 
 *   идемпотентный производитель;
-*   Транзакция
+*   транзакция:
 *   Сжатие
 *   хранение на основе размера;
 *   сжатие журнала;
