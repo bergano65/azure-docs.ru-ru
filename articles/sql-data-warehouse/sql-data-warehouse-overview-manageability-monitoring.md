@@ -2,20 +2,19 @@
 title: Общие сведения об управляемости и мониторинге Хранилища данных SQL | Документация Майкрософт
 description: 'Общие сведения об управляемости и мониторинге: использование ресурсов, ведение журналов и действия запросов, рекомендации и защита данных (резервное копирование и восстановление).'
 services: sql-data-warehouse
-author: WenJason
-manager: digimobile
+author: kevinvngo
+manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: manage
-origin.date: 08/27/2018
-ms.date: 04/01/2019
-ms.author: v-jay
+ms.date: 08/27/2018
+ms.author: kevin
 ms.reviewer: igorstan
 ms.openlocfilehash: e9fb06b8ba34566689f769ca9a69328eee37e3c1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60747580"
 ---
 # <a name="manageability-and-monitoring-with-azure-sql-data-warehouse"></a>Управляемость и мониторинг в Хранилище данных SQL Azure

@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako;
 ms.openlocfilehash: 1fe003ae13bc5f195932f4f140e17c4dc2791959
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61247400"
 ---
 # <a name="redact-faces-with-azure-media-analytics"></a>Скрытие лиц с помощью аналитики мультимедиа Azure 
@@ -34,7 +34,7 @@ ms.locfileid: "61247400"
 ### <a name="combined-mode"></a>Объединенный режим
 В результате вы получаете MP4-файл с автоматическим скрытием, который не нужно править вручную.
 
-| Stage | Имя файла | Примечания |
+| Этап | Имя файла | Примечания |
 | --- | --- | --- |
 | Входной ресурс-контейнер |foo.bar |Видео в формате WMV, MOV или MP4 |
 | Входная конфигурация |Конфигурация задания (предустановка) |{'version':'1.0', 'options': {'mode':'combined'}} |
@@ -49,7 +49,7 @@ ms.locfileid: "61247400"
 ### <a name="analyze-mode"></a>Режим анализа
 В режиме **анализа** двухэтапный рабочий процесс принимает входное видео и создает JSON-файл с регистрацией расположения лиц, а также изображения всех обнаруженных лиц в формате JPG.
 
-| Stage | Имя файла | Примечания |
+| Этап | Имя файла | Примечания |
 | --- | --- | --- |
 | Входной ресурс-контейнер |foo.bar |Видео в формате WMV, MPV или MP4 |
 | Входная конфигурация |Конфигурация задания (предустановка) |{'version':'1.0', 'options': {'mode':'analyze'}} |
@@ -157,9 +157,9 @@ ms.locfileid: "61247400"
 
 ![Высокая](./media/media-services-face-redaction/blur3.png)
 
-#### <a name="box"></a>Рамка
+#### <a name="box"></a>Box
 
-![Рамка](./media/media-services-face-redaction/blur4.png)
+![Box](./media/media-services-face-redaction/blur4.png)
 
 #### <a name="black"></a>Черный
 

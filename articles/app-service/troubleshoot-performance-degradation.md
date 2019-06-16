@@ -18,10 +18,10 @@ ms.date: 08/03/2016
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: 2d17991854f13f889c4e8c3a8c6f18e933655546
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62128455"
 ---
 # <a name="troubleshoot-slow-app-performance-issues-in-azure-app-service"></a>Устранение причин низкой производительности приложения в Службе приложений Azure
@@ -60,15 +60,15 @@ Microsoft Azure информирует о каждом случае прерыв
 
 Некоторые из этих метрик помогут вам отслеживать работу приложения, например:
 
-* Средний рабочий набор памяти
+* средний размер рабочего набора памяти;
 * Среднее время ответа
 * время ЦП;
-* Рабочий набор памяти
+* рабочий набор памяти;
 * Requests
 
 ![Мониторинг производительности приложения](./media/app-service-web-troubleshoot-performance-degradation/1-monitor-metrics.png)
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения можно найти в разделе
 
 * [Мониторинг приложений в Службе приложений Azure](web-sites-monitor.md)
 * [Создание оповещений для служб Azure с помощью портала Azure](../monitoring-and-diagnostics/insights-receive-alert-notifications.md)
@@ -136,7 +136,7 @@ Application Insights Profiler предоставляет статистику п
 #### <a name="use-the-kudu-debug-console"></a>Использование консоли отладки Kudu
 Служба приложений оснащена консолью отладки, с помощью которой вы можете получать сведения о среде, используя функции отладки, изучения, передачи файлов и конечных точек JSON. Она называется *консоль Kudu* или *панель мониторинга SCM* приложения.
 
-Вы можете открыть эту панель по ссылке **https://&lt;имя приложения>.scm.azurewebsites.net/**.
+Вы можете открыть эту панель по ссылке **https://&lt;имя приложения>.scm.azurewebsites.net/** .
 
 Вот некоторые возможности консоли Kudu:
 

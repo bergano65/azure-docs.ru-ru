@@ -10,10 +10,10 @@ ms.assetid: a0e045f1-73d6-427f-868d-7b55c10f811b
 ms.topic: conceptual
 ms.date: 12/05/2016
 ms.openlocfilehash: 8b2f16f45be1d095e9be8042611de328af36f064
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60813436"
 ---
 # <a name="manage-azure-data-lake-analytics-using-the-azure-portal"></a>Управление Azure Data Lake Analytics с помощью портала Azure
@@ -111,7 +111,7 @@ Data Lake Analytics позволяет дополнительно блокиро
 ### <a name="add-users-or-security-groups-to-a-data-lake-analytics-account"></a>Добавление пользователей или групп безопасности к учетной записи Data Lake Analytics
 
 1. На портале Azure выберите свою учетную запись Data Lake Analytics.
-2. Выберите **Управление доступом (IAM)** > **Добавить назначение роли**.
+2. Выберите **Управление доступом (IAM)**  > **Добавить назначение роли**.
 3. Выберите роль.
 4. Добавьте пользователя.
 5. Последовательно выберите **ОК**.

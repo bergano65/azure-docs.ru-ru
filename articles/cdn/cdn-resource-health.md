@@ -15,11 +15,11 @@ ms.workload: integration
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: ad4bf7ae97a08f89b9d82e1d4e025a5bd5d47fc1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60324716"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64696172"
 ---
 # <a name="monitor-the-health-of-azure-cdn-resources"></a>Отслеживание работоспособности ресурсов Azure CDN
   
@@ -51,7 +51,7 @@ ms.locfileid: "60324716"
 
 Состояния, связанные с работоспособностью ресурсов Azure CDN, перечислены ниже.
 
-|Сообщение | Рекомендуемое действие |
+|`Message` | Рекомендуемое действие |
 |---|---|
 |Возможно, вы остановили, удалили или неправильно настроили одну конечную точку CDN или несколько. | Возможно, вы остановили, удалили или неправильно настроили одну конечную точку CDN или несколько.|
 |К сожалению, служба управления CDN сейчас недоступна. | Обновления состояния см. здесь позже. Если проблему не удается устранить спустя ожидаемый период времени, обратитесь в службу поддержки.|

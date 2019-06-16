@@ -18,10 +18,10 @@ ms.date: 07/06/2016
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: 5edd3e51e83b5ab324d1e110a1882b20d935a9b5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60833073"
 ---
 # <a name="troubleshoot-http-errors-of-502-bad-gateway-and-503-service-unavailable-in-azure-app-service"></a>Устранение ошибок HTTP "502 — недопустимый шлюз" и "503 — служба недоступна" в Службе приложений Azure
@@ -59,15 +59,15 @@ Microsoft Azure информирует о каждом случае прерыв
 
 Некоторые из этих метрик помогут вам отслеживать работу приложения, например,
 
-* Средний рабочий набор памяти
+* средний размер рабочего набора памяти;
 * Среднее время ответа
 * время ЦП;
-* Рабочий набор памяти
+* рабочий набор памяти;
 * Requests
 
 ![Мониторинг приложения для устранения ошибок HTTP "502 — недопустимый шлюз" и "503 — служба недоступна"](./media/app-service-web-troubleshoot-HTTP-502-503/1-monitor-metrics.png)
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения можно найти в разделе
 
 * [Мониторинг приложений в Службе приложений Azure](web-sites-monitor.md)
 * [Создание оповещений для служб Azure с помощью портала Azure](../monitoring-and-diagnostics/insights-receive-alert-notifications.md)
@@ -83,7 +83,7 @@ Microsoft Azure информирует о каждом случае прерыв
 #### <a name="use-the-kudu-debug-console"></a>Использование консоли отладки Kudu
 Служба приложений оснащена консолью отладки, с помощью которой вы можете получать сведения о среде, используя функции отладки, изучения, передачи файлов и конечных точек JSON. Она называется *консоль Kudu* или *панель SCM* приложения.
 
-Вы можете открыть эту панель по ссылке **https://&lt;имя приложения>.scm.azurewebsites.net/**.
+Вы можете открыть эту панель по ссылке **https://&lt;имя приложения>.scm.azurewebsites.net/** .
 
 Вот некоторые возможности консоли Kudu:
 
