@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.author: rajanaki
 ms.openlocfilehash: 1d36145b2a38c0f1106b4468eab226996e270ae1
-ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65922186"
 ---
 # <a name="automatic-update-of-the-mobility-service-in-azure-to-azure-replication"></a>Автоматическое обновление службы Mobility Service в репликации из Azure в Azure
@@ -49,7 +49,7 @@ Azure Site Recovery использует месячную периодичнос
 
 При включении репликации для виртуальной Машины либо начиная [в представлении виртуальной Машины](azure-to-azure-quickstart.md) или [из хранилища служб восстановления](azure-to-azure-how-to-enable-replication.md), можно либо разрешить Site Recovery, чтобы управлять обновлениями для расширения Site Recovery или управлять им вручную.
 
-![Параметры расширений](./media/azure-to-azure-autoupdate/enable-rep.png)
+![Параметры модуля](./media/azure-to-azure-autoupdate/enable-rep.png)
 
 ### <a name="toggle-the-extension-update-settings-inside-the-vault"></a>Переключение параметров обновления для расширения внутри хранилища
 
@@ -520,7 +520,7 @@ Write-Tracing -Level Succeeded -Message ("Modify cloud pairing completed.") -Dis
 
 Если вы не включали автоматическое обновление, см. в разделе следующих распространенных ошибок и рекомендуемые действия:
 
-- **Ошибка**: У вас нет разрешений для создания учетной записи запуска от имени Azure (субъекта-службы) и предоставления роли участника субъекту-службе.
+- **Ошибка**: "У вас нет разрешений для создания учетной записи запуска от имени Azure (субъекта-службы) и предоставления роли участника субъекту-службе".
 
    **Рекомендуемое действие**: Убедитесь, что назначенный учетной записи вошедшего в систему в качестве участника и повторите попытку. См. в разделе "необходимые разрешения" в [использовать портал для создания приложения и субъекта-службы с доступом к ресурсам Azure AD](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) Дополнительные сведения о назначении разрешений.
  

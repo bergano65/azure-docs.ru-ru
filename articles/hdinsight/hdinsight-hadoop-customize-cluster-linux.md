@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/02/2019
 ms.openlocfilehash: 03fcbb0216d85e337b4161aa24ceeb7d3a2bdebe
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66479458"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров Azure HDInsight с помощью действий сценария
@@ -143,7 +143,7 @@ ms.locfileid: "66479458"
 
 В HDInsight доступны скрипты для установки следующих компонентов в кластерах HDInsight.
 
-| Name | Скрипт |
+| ИМЯ | Скрипт |
 | --- | --- |
 | добавление учетной записи хранения Azure; |`https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh`. Ознакомьтесь со статьей [Добавление дополнительных учетных записей хранения в HDInsight](hdinsight-hadoop-add-storage.md). |
 | установка Hue; |`https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh`. Ознакомьтесь со статьей [Установка и использование Hue на кластерах HDInsight Hadoop](hdinsight-hadoop-hue-linux.md). |
@@ -171,10 +171,10 @@ ms.locfileid: "66479458"
 
     В приведенной ниже таблице описываются элементы формы.
 
-    | Свойство | Value |
+    | Свойство | Значение |
     | --- | --- |
     | Выберите скрипт | Чтобы использовать собственный скрипт, выберите __Настраиваемый__. В противном случае выберите один из предоставленных скриптов. |
-    | ИМЯ |Укажите имя для действия сценария. |
+    | Name |Укажите имя для действия сценария. |
     | URI bash-скрипта |Укажите URI сценария. |
     | Головной, рабочий или Zookeeper |Укажите узлы, на которых выполняется сценарий: **головной**, **рабочий** или **ZooKeeper**. |
     | Параметры |Укажите параметры, если они требуются для сценария. |
@@ -253,10 +253,10 @@ ms.locfileid: "66479458"
 
     В приведенной ниже таблице описываются элементы формы.
 
-    | Свойство | Value |
+    | Свойство | Значение |
     | --- | --- |
     | Выберите скрипт | Чтобы использовать собственный скрипт, выберите __Настраиваемый__. В противном случае выберите предоставленный скрипт. |
-    | Name |Укажите имя для действия сценария. |
+    | ИМЯ |Укажите имя для действия сценария. |
     | URI bash-скрипта |Укажите URI сценария. |
     | Головной, рабочий или Zookeeper |Укажите узлы, на которых выполняется сценарий: **головной**, **рабочий** или **ZooKeeper**. |
     | Параметры |Укажите параметры, если они требуются для сценария. |

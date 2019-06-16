@@ -11,10 +11,10 @@ ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
 ms.openlocfilehash: d82785a0f833afb6a9c675fc7022ed19e96c7fc0
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66511317"
 ---
 # <a name="contentdefinitions"></a>ContentDefinitions
@@ -79,7 +79,7 @@ ms.locfileid: "66511317"
 
 Элемент **DataUri** используется для указания идентификатора страницы. В Azure AD B2C идентификатор страницы используется для загрузки и запуска элементов пользовательского интерфейса и JavaScript на стороне клиента. Формат значения — `urn:com:microsoft:aad:b2c:elements:page-name:version`.  В следующей таблице перечислены идентификаторы страниц, которые можно использовать.
 
-| Value |   Описание |
+| Значение |   Описание |
 | ----- | ----------- |
 | `urn:com:microsoft:aad:b2c:elements:globalexception:1.1.0` | Отображает страницу ошибки при обнаружении исключения или ошибки. |
 | `urn:com:microsoft:aad:b2c:elements:idpselection:1.0.0` | Отображает список поставщиков удостоверений, которые пользователи могут выбирать во время входа. | 

@@ -11,10 +11,10 @@ ms.date: 04/25/2017
 ms.author: marsma
 ms.subservice: B2C
 ms.openlocfilehash: 7053f5b0211878d2f0b9d810fc3f4c0b9361e6f7
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66509603"
 ---
 # <a name="customize-the-ui-of-a-user-journey-with-custom-policies"></a>Настройка пользовательского интерфейса с помощью настраиваемых политик
@@ -107,7 +107,7 @@ Azure AD B2C позволяет настраивать внешний вид и 
 1.  С помощью проводника Windows перейдите в папку *B2C-AzureBlobStorage-Client-master*, расположенную в папке *UI-Customization-Pack*, созданной при работе с предыдущим разделом.
 2.  Запустите файл *B2CAzureStorageClient.exe*. Эта программа загружает все файлы в каталог, указанный в вашей учетной записи хранения, и обеспечивает доступ к этим файлам с помощью CORS.
 3.  При появлении запроса укажите:  Имя учетной записи хранения *storageAccountName*, например *contoso369b2c*.
-    2.  Первичный ключ доступа хранилища BLOB-объектов Azure *key1*, например *contoso369b2c*.
+    2\.  Первичный ключ доступа хранилища BLOB-объектов Azure *key1*, например *contoso369b2c*.
     c.  Имя контейнера хранилища BLOB-объектов *containerName*, например *b2c*.
     d.  Путь к примерам файлов *Starter-Pack*, например *..\B2CTemplates\wingtiptoys*.
 

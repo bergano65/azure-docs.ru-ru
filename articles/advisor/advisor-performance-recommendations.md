@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 01/29/2019
 ms.author: kasparks
 ms.openlocfilehash: 8fdae1e12e56dcbcb56941726b0c089ad59b8fc8
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66254650"
 ---
 # <a name="improve-performance-of-azure-applications-with-azure-advisor"></a>Повышение производительности приложений Azure с использованием Помощника по Azure
@@ -106,7 +106,7 @@ Azure Advisor объединяет практические рекомендац
 
 Помощник по Azure определит контейнеров Cosmos DB, используется политика индексирования по умолчанию, но преимущество от использования пользовательской политикой индексации, основанных на шаблоне рабочей нагрузки. Политика индексирования по умолчанию индексирует все свойства, но использование пользовательской политикой индексации с явной включенные или исключенные пути, используемые в фильтрах запросов может снизить RUs и объем хранилища для индексирования. [Дополнительные сведения об изменении политик индекса](https://aka.ms/cosmosdb/modify-index-policy)
 
-## <a name="configure-your-azure-cosmos-db-query-page-size-maxitemcount-to--1"></a>Настроить размер страницы запроса Azure Cosmos DB (MaxItemCount)-1 
+## <a name="configure-your-azure-cosmos-db-query-page-size-maxitemcount-to--1"></a>Установите для размера страницы запроса Azure Cosmos DB (MaxItemCount) значение -1 
 
 Помощник по Azure определит контейнеров Azure Cosmos DB, которые используют размер страницы запроса 100 и рекомендуем использовать размер страницы-1 для позволяет ускорить проверку. [Дополнительные сведения о максимальное число элементов](https://aka.ms/cosmosdb/sql-api-query-metrics-max-item-count)
 

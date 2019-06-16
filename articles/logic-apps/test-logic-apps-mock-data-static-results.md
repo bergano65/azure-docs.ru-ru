@@ -10,10 +10,10 @@ ms.reviewer: estfan, LADocs
 ms.topic: article
 ms.date: 05/13/2019
 ms.openlocfilehash: 45eeb20e5c572ddd98244b2e751322fcce1d4b76
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65597199"
 ---
 # <a name="test-logic-apps-with-mock-data-by-setting-up-static-results"></a>Тестирование приложений логики с помощью фиктивных данных, настроив статический результатов
@@ -38,7 +38,7 @@ ms.locfileid: "65597199"
 
 1. Действие, где вы хотите настроить статический результаты выполните следующие действия. 
 
-   1. В правом верхнем углу действия, нажмите кнопку с многоточием (*...* ) и выберите **статический результат**, например:
+   1. В правом верхнем углу действия, нажмите кнопку с многоточием ( *...* ) и выберите **статический результат**, например:
 
       ![Выберите «Статический результат» > «Включить статический результат»](./media/test-logic-apps-mock-data-static-results/select-static-result.png)
 

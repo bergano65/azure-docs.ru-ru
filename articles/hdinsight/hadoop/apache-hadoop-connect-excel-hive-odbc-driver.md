@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: hrasheed
 ms.openlocfilehash: fcb9171d2285efab0f65e6ab424908bc42c0ea2f
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66391886"
 ---
 # <a name="connect-excel-to-apache-hadoop-in-azure-hdinsight-with-the-microsoft-hive-odbc-driver"></a>Подключение Excel к Apache Hadoop с помощью драйвера Microsoft Hive ODBC в Azure HDInsight
@@ -50,7 +50,7 @@ ms.locfileid: "66391886"
    | Свойство | Описание |
    | --- | --- |
    |  Имя источника данных |Присвойте имя источнику данных |
-   |  Узлы |Укажите `HDInsightClusterName.azurehdinsight.net`. Например: `myHDICluster.azurehdinsight.net`  |
+   |  Узлы |Укажите `HDInsightClusterName.azurehdinsight.net`. Например: `myHDICluster.azurehdinsight.net` |
    |  Port |Используйте **443**. (Этот порт был изменен с 563 на 443.) |
    |  База данных |Используйте **значение по умолчанию**. |
    |  Механизм |Выберите **службы Windows Azure HDInsight** |

@@ -12,10 +12,10 @@ ms.date: 11/24/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: f9da031fd4b35c2fa9126f545eecacf6143b18a1
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66478854"
 ---
 # <a name="the-team-data-science-process-in-action-using-sql-data-warehouse"></a>Процесс обработки и анализа данных группы на практике: использование хранилища данных SQL
@@ -435,7 +435,7 @@ ms.locfileid: "66478854"
 | 2 |6198803 |
 | 3 |1932223 |
 | 0 |82264625 |
-| 4. |85765 |
+| 4\. |85765 |
 
 ### <a name="exploration-compute-and-compare-trip-distance"></a>Изучение. Вычисление и сравнение расстояния поездок
 В этом примере значения долготы и широты начальных и конечных пунктов поездок преобразуются в географические точки SQL, вычисляется расстояние поездки по разности географических точек и возвращается случайная выборка результатов для сравнения. В примере результаты ограничиваются только допустимыми координатами с помощью запроса оценки качества данных, описанного ранее.

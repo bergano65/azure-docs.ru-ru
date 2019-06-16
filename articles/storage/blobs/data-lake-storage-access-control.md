@@ -10,10 +10,10 @@ ms.date: 04/23/2019
 ms.author: normesta
 ms.reviewer: jamesbak
 ms.openlocfilehash: 72a72e385217178cb6afee237cc3a3e5c5d1248b
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66751636"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen2"></a>Управление доступом в Azure Data Lake Storage 2-го поколения
@@ -101,7 +101,7 @@ Azure Data Lake хранения 2-го поколения поддержива�
 |--------------|------------|------------------------|
 | 7            | `RWX`        | чтение, запись и выполнение |
 | 5            | `R-X`        | Чтение + выполнение         |
-| 4.            | `R--`        | Чтение                   |
+| 4\.            | `R--`        | Чтение                   |
 | 0            | `---`        | Нет разрешений         |
 
 #### <a name="permissions-inheritance"></a>Наследование разрешений

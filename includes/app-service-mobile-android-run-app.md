@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 05/09/2019
 ms.author: crdun
 ms.openlocfilehash: 63c54f8af91b6b4a76ba49d5e6fc7b3cda9f5b98
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66240317"
 ---
 1. Откройте проект при помощи **Android Studio**, выберите **Import project (Eclipse ADT, Gradle, etc.)** (Импорт проекта (Eclipse ADT, Gradle и т. д.)). Обязательно используйте эту функцию импорта, чтобы избежать ошибок JDK.

@@ -8,10 +8,10 @@ ms.author: babanisa
 ms.topic: conceptual
 ms.date: 01/08/2019
 ms.openlocfilehash: 61821caa2450096bdbdde3461316ad21a82f6f18
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66304303"
 ---
 # <a name="understand-event-domains-for-managing-event-grid-topics"></a>Общие сведения о доменах событий, используемых для управления разделами службы "Сетка событий Azure"
@@ -101,7 +101,7 @@ RBAC в доменах событий работает так же, как [уп
 
 - 100 000 разделов на домен событий 
 - 100 основных доменов событий каждой подписки Azure 
-- 500 подписки на события на раздел в домене событий
+- 500 подписок на события на каждый раздел в домене событий;
 - 50 подписок область домена 
 - 5 000 событий в секунду приема (в домен)
 
