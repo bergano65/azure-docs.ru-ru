@@ -17,10 +17,10 @@ ms.workload: infrastructure-services
 ms.date: 09/15/2016
 ms.author: hermannd
 ms.openlocfilehash: c59fcf43cb4767f1d95d769dfce4d5c8755e45ee
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60836863"
 ---
 # <a name="deploy-sap-s4hana-or-bw4hana-on-azure"></a>Развертывание SAP S/4HANA или BW/4HANA в Azure
@@ -56,7 +56,7 @@ ms.locfileid: "60836863"
 
     a. **Microsoft Azure (classic)** (Microsoft Azure (классическая)) — это классическая модель развертывания. Мы не рекомендуем ее использовать.
 
-    2. **Microsoft Azure** — это новая модель развертывания с помощью Resource Manager.
+    2\. **Microsoft Azure** — это новая модель развертывания с помощью Resource Manager.
 
     c. **Windows Azure operated by 21Vianet** (Windows Azure, управляемый 21Vianet) — это вариант для Китая, который использует классическую модель развертывания.
 
@@ -114,13 +114,13 @@ ms.locfileid: "60836863"
 
     a. Выберите учетную запись SAP CAL. (Используйте учетную запись, которая связана с моделью развертывания Resource Manager.)
 
-    2. Введите **имя** экземпляра.
+    2\. Введите **имя** экземпляра.
 
     c. Выберите **регион** Azure. SAP CAL предложит регион. Если необходим другой регион Azure и у вас нет подписки SAP CAL, необходимо заказать подписку CAL с SAP.
 
     d. Введите главный **пароль** для решения длиной восемь или девять знаков. Пароль используется администраторами различных компонентов.
 
-   ![Базовый режим SAP CAL: Создать экземпляр](./media/cal-s4h/s4h-pic10a.png)
+   ![Базовый режим SAP CAL: создание экземпляра](./media/cal-s4h/s4h-pic10a.png)
 
 1. Щелкните **Создать** и в появившемся диалоговом окне щелкните **ОК**.
 

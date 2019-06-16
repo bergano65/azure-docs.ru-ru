@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: 69e51f23980aa1d4225f2e5062470f94e5ca9008
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.openlocfilehash: 4888ea8473c50b8774add7a930612c585fc9cbde
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66753785"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67074346"
 ---
 # <a name="azure-service-fabric-security"></a>Безопасность Azure Service Fabric 
 
@@ -205,7 +205,13 @@ cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBS
 [Мы рекомендуем реализовать на стандартный конфигурацию, которая широко известные и хорошо протестированных, такие как базовые показатели системы безопасности Майкрософт, в отличие от самостоятельного создания базовых показателей](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines); параметр для подготовки этих на виртуальной машине Масштабируемые наборы заключается в использовании обработчика расширения Desired State Configuration (DSC) Azure, чтобы настроить виртуальные машины, так как они работают в оперативном режиме, поэтому они выполняются производственного программного обеспечения.
 
 ## <a name="azure-firewall"></a>Брандмауэр Azure
-[Брандмауэр Azure — это служба безопасности управляемой, облачной сети, которая защищает ваши ресурсы виртуальной сети Azure. Это полностью отслеживает состояние как встроенные функции высокой доступности и масштабируемости ограничено облачной службы. ](https://docs.microsoft.com/azure/firewall/overview); это дает возможность ограничить исходящий трафик HTTP/S, заданный список полные доменные имена (FQDN), включая подстановочные знаки. Эта функция не требует завершения SSL-запросов. Его рекомендуется использовать [FQDN брандмауэра Azure теги](https://docs.microsoft.com/azure/firewall/fqdn-tags) для обновлений Windows, а также поддерживать сетевой трафик к центру обновления Майкрософт Windows конечные точки могут передаваться через брандмауэр. [Развертывание брандмауэра Azure, с помощью шаблона](https://docs.microsoft.com/azure/firewall/deploy-template) представлен пример определения шаблона Microsoft.Network/azureFirewalls ресурсов. Два правила брандмауэра, общие для приложений Service Fabric является предоставление вашей сети кластеров для взаимодействия с * download.microsoft.com, и * servicefabric.azure.com; для извлечения, обновления Windows и код расширения Service Fabric вычислений виртуальной машины.
+[Брандмауэр Azure — это служба безопасности управляемой, облачной сети, которая защищает ваши ресурсы виртуальной сети Azure. Это полностью отслеживает состояние как встроенные функции высокой доступности и масштабируемости ограничено облачной службы. ](https://docs.microsoft.com/azure/firewall/overview); это дает возможность ограничить исходящий трафик HTTP/S, заданный список полные доменные имена (FQDN), включая подстановочные знаки. Эта функция не требует завершения SSL-запросов. Его рекомендуется использовать [FQDN брандмауэра Azure теги](https://docs.microsoft.com/azure/firewall/fqdn-tags) для обновлений Windows, а также поддерживать сетевой трафик к центру обновления Майкрософт Windows конечные точки могут передаваться через брандмауэр. [Развертывание брандмауэра Azure, с помощью шаблона](https://docs.microsoft.com/azure/firewall/deploy-template) представлен пример определения шаблона Microsoft.Network/azureFirewalls ресурсов. Правила брандмауэра, общие для приложений Service Fabric является предоставление для виртуальной сети кластеры следующие:
+
+- *Download.Microsoft.com
+- *servicefabric.azure.com
+- *.core.windows.net
+
+Эти правила брандмауэра дополняют разрешенных исходящих группах безопасности сети, которая включает в себя ServiceFabric и хранилища, как разрешенных целевых объектов из виртуальной сети.
 
 ## <a name="tls-12"></a>TLS 1.2
 [ШЛЮЗА СЛУЖБ ТЕРМИНАЛОВ](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides/blob/master/Security/TLS%20Configuration.md)
@@ -243,6 +249,18 @@ cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBS
 
 > [!NOTE]
 > Если вы не используете Защитник Windows, обратитесь к документации по работе с антивредоносным ПО, чтобы ознакомиться с правилами настройки. Защитник Windows не поддерживается в Linux.
+
+## <a name="platform-isolation"></a>Платформа изоляции
+По умолчанию приложения Service Fabric имеют доступ к среде выполнения Service Fabric, которая проявляется в различных формах: [переменные среды](service-fabric-environment-variables-reference.md) указывает на пути к файлам на узле, соответствующее приложение и Структура файлов, конечной межпроцессного взаимодействия, которая принимает запросы от приложения и клиента сертификата которого Fabric ожидает, что приложению использовать для проверки подлинности. На случай, служба размещает сам ненадежного кода, рекомендуется отключить доступ к среде выполнения SF - Если это не требуется явным образом. Удаляется доступ к среде выполнения, используя следующее объявление в разделе "политики" манифеста приложения: 
+
+```xml
+<ServiceManifestImport>
+    <Policies>
+        <ServiceFabricRuntimeAccessPolicy RemoveServiceFabricRuntimeAccess="true"/>
+    </Policies>
+</ServiceManifestImport>
+
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

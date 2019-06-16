@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 337f2a31d60d54b47c692b06b5d63c28c0964061
-ms.sourcegitcommit: 2c09af866f6cc3b2169e84100daea0aac9fc7fd0
+ms.openlocfilehash: 5092872433529f11f699aa8a0c5e87d110cb59f7
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64876222"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67077427"
 ---
 # <a name="using-azure-cdn-with-cors"></a>Использование Azure CDN с CORS
 ## <a name="what-is-cors"></a>Что такое CORS?
@@ -36,7 +36,7 @@ CORS (общий доступ к ресурсам независимо от ис
 
 2. Сервер может отправить в ответ следующее:
 
-   * Ответ с заголовком **Access-Control-Allow-Origin**, который указывает, какие исходные сайты разрешены. Например: 
+   * Ответ с заголовком **Access-Control-Allow-Origin**, который указывает, какие исходные сайты разрешены. Пример:
 
      `Access-Control-Allow-Origin: https://www.contoso.com`
 
@@ -85,7 +85,7 @@ CORS в Azure CDN будет работать автоматически без 
 ![Пример правил с регулярным выражением](./media/cdn-cors/cdn-cors-regex.png)
 
 #### <a name="request-header-rule-for-each-origin"></a>Правило заголовка запроса для каждого источника.
-Вместо регулярных выражений можно создать отдельное правило для каждого источника, который вы хотите разрешить, с помощью **условия соответствия** [подстановочного знака в заголовке запроса](/previous-versions/azure/mt757336(v=azure.100)#Anchor_1). Как и регулярное выражение, заголовки CORS задаются только обработчиком правил. 
+Вместо регулярных выражений можно создать отдельное правило для каждого источника, который вы хотите разрешить, с помощью **условия соответствия** [подстановочного знака в заголовке запроса](/previous-versions/azure/mt757336(v=azure.100)#match-conditions). Как и регулярное выражение, заголовки CORS задаются только обработчиком правил. 
 
 ![Пример правил без регулярного выражения](./media/cdn-cors/cdn-cors-no-regex.png)
 

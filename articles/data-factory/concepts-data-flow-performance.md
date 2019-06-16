@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.author: makromer
 ms.service: data-factory
 ms.date: 05/16/2019
-ms.openlocfilehash: 46be01c57be0e4f5fa74f8e8b0d91db3d78f441c
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: d4acc620fb2a4c41615c745516e5ccfafd59d848
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66480414"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67057953"
 ---
 # <a name="mapping-data-flows-performance-and-tuning-guide"></a>Сопоставление производительность потоков данных и руководство по настройке
 
@@ -41,7 +41,7 @@ Azure фабрики сопоставление данных потоки дан
 
 ## <a name="optimizing-for-azure-sql-database-and-azure-sql-data-warehouse"></a>Оптимизация для базы данных Azure SQL и хранилище данных Azure SQL
 
-![Исходной части](media/data-flow/sourcepart2.png "исходной части")
+![Исходной части](media/data-flow/sourcepart3.png "исходной части")
 
 ### <a name="partition-your-source-data"></a>Секции исходными данными
 
@@ -122,8 +122,8 @@ Azure фабрики сопоставление данных потоки дан
 * Избежание вычислительных ресурсов узла, можно оставить значения по умолчанию или явной схемы секционирования в ADF. он оптимизирует производительность, и добавьте в неё последующие действия копирования в конвейере, которая объединяет все части файлов из папки выходных данных в один новый файл. По существу эта методика отделяет действия для преобразования из слияние файлов и тот же результат, как и настройка «результаты в один файл».
 
 ## <a name="next-steps"></a>Дальнейшие действия
-См. в других статьях, поток данных:
+См. другие потока данных статьи, относящиеся к производительности:
 
-- [Общие сведения о потоковых данных](concepts-data-flow-overview.md)
+- [Вкладка оптимизация потока данных](concepts-data-flow-optimize-tab.md)
 - [Действие потока данных](control-flow-execute-data-flow-activity.md)
 - [Мониторинг производительности потока данных](concepts-data-flow-monitoring.md)

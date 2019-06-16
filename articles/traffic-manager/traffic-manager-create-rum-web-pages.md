@@ -3,7 +3,7 @@ title: Измерения на стороне пользователей в ди
 description: Настройка веб-страниц для отправки измерений на стороне пользователей в диспетчер трафика
 services: traffic-manager
 documentationcenter: traffic-manager
-author: KumudD
+author: asudbring
 manager: twooley
 ms.service: traffic-manager
 ms.devlang: na
@@ -11,14 +11,14 @@ ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 03/16/2018
-ms.author: kumud
+ms.author: allensu
 ms.custom: ''
-ms.openlocfilehash: d6b669f5baae13f9fb57c5c58060e70a8f871e17
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2d044457df80f16a6e8073e7f3253a611f74d8a8
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60884110"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071218"
 ---
 # <a name="how-to-send-real-user-measurements-to-azure-traffic-manager-using-web-pages"></a>Как отправить измерения на стороне пользователей в диспетчер трафика Azure с использованием веб-страниц
 
@@ -26,7 +26,7 @@ ms.locfileid: "60884110"
 
 ## <a name="obtain-a-real-user-measurements-key"></a>Получение ключа измерений на стороне пользователей
 
-Измерения, которые вы принимаете и отправляете в диспетчер трафика из клиентского приложения, идентифицируются службой с помощью уникальной строки, называемой **ключом измерений на стороне пользователей (RUM)**. Ключ RUM можно получить с помощью портала Azure, REST API, PowerShell или Azure CLI.
+Измерения, которые вы принимаете и отправляете в диспетчер трафика из клиентского приложения, идентифицируются службой с помощью уникальной строки, называемой **ключом измерений на стороне пользователей (RUM)** . Ключ RUM можно получить с помощью портала Azure, REST API, PowerShell или Azure CLI.
 
 Чтобы получить ключ RUM с помощью портала Azure, сделайте следующее:
 1. В браузере войдите на портал Azure. Если у вас еще нет учетной записи, вы можете зарегистрироваться для получения бесплатной пробной версии на один месяц.

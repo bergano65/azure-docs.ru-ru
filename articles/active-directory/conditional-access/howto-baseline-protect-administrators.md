@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1ce48126c3e8867ac7f2696d8cf7db992a9a60a
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 4f8b7f281ad5ed8424110696544ffdb49e50ce59
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66003286"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112438"
 ---
 # <a name="baseline-policy-require-mfa-for-admins"></a>Базовая политика: Обязательная многофакторная проверка подлинности для администраторов
 
@@ -74,8 +74,8 @@ ms.locfileid: "66003286"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения можно найти в разделе
 
-* [Политики защиты базовых показателей для условного доступа](concept-baseline-protection.md)
+* [Политики защиты базовых показателей условного доступа](concept-baseline-protection.md)
 * [Пять шагов по защите инфраструктуры удостоверений](../../security/azure-ad-secure-steps.md)
-* [Что представляет собой условный доступ в Azure Active Directory?](overview.md)
+* [Что такое условный доступ в Azure Active Directory?](overview.md)

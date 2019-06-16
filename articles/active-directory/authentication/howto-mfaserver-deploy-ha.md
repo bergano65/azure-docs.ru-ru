@@ -11,16 +11,19 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ddf0885ce7615e06b78eccbd6424e63cc6103c2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 43154e428c3208f5d990688554407777d09f2f1b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60358759"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67056027"
 ---
 # <a name="configure-azure-multi-factor-authentication-server-for-high-availability"></a>Настройка сервера Многофакторной идентификации Azure для обеспечения высокой доступности
 
 Чтобы обеспечить высокую доступность с развертыванием сервера MFA Azure, необходимо развернуть несколько серверов MFA. В этой статье приведены сведения о структуре с балансировкой нагрузки, позволяющей достичь целевых показателей высокой доступности в развертывании сервера MFA Azure.
+
+> [!IMPORTANT]
+> Начиная с 1 июля 2019 г. Корпорация Майкрософт больше не предоставляет многофакторной проверки Подлинности сервера для новых развертываний. Новых клиентов, которые хотите требовать многофакторную проверку подлинности от пользователей, их следует использовать многофакторную идентификацию Azure на основе облака. Существующие клиенты, которые активировали сервера MFA до 1 июля будет иметь возможность загрузить последнюю версию, будущие обновления и создать учетные данные активации обычным образом.
 
 ## <a name="mfa-server-overview"></a>Обзор сервера MFA
 

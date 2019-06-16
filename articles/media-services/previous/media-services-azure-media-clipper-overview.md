@@ -10,10 +10,10 @@ ms.date: 03/14/2019
 ms.topic: article
 ms.service: media-services
 ms.openlocfilehash: 35f1f359b44af00000ccd9047673b80ca541d376
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61243882"
 ---
 # <a name="create-clips-with-azure-media-clipper"></a>Создание клипов с помощью Azure Media Clipper 
@@ -53,7 +53,7 @@ Azure Media Clipper позволяет делать следующее:
 
 ## <a name="language-support"></a>Поддержка языков
 Мини-приложение Clipper доступно на следующих 18 языках:
-- Китайский (упрощенный)
+- Китайский (упрощенное письмо)
 - Китайский (традиционное письмо)
 - Чешский
 - Нидерландский, фламандский

@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/09/2019
 ms.author: crdun
-ms.openlocfilehash: b0719f6ac2f99f9e665b1265665752dd53ccbaf0
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: b47e498754bad6917efca5b7f19f8ebce9cf0330
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66242663"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67062220"
 ---
 # <a name="create-a-xamarinforms-app-with-azure"></a>Создание приложения Xamarin.Forms в Azure
 
@@ -48,19 +48,7 @@ ms.locfileid: "66242663"
 
 Инструменты Visual Studio для Xamarin необходимы, чтобы открыть решение, как описано в [инструкциях по установке Xamarin][Install Xamarin]. Если эти инструменты уже установлены, сделайте следующее, чтобы скачать и открыть решение:
 
-### <a name="visual-studio"></a>Visual Studio
-
-1. Перейдите на [портал Azure](https://portal.azure.com/).
-
-2. В колонке параметров мобильного приложения щелкните **Быстрый запуск** (в разделе "Развертывание") > **Xamarin.Forms**. На этапе 3 выберите **Создать приложение** (если вы еще не сделали этого).  Затем нажмите кнопку **Загрузить** .
-
-   После этого будет скачан проект, содержащий клиентское приложение, подключенное к вашему мобильному приложению. Сохраните сжатый файл проекта на локальном компьютере и запомните путь к нему.
-
-3. Извлеките Скачанный проект и откройте его в Visual Studio.
-
-4. Приведенные ниже инструкции позволяют запустить проект Android или Windows, а если в сети есть доступный компьютер Mac, то и проект iOS.
-
-### <a name="visual-studio-for-mac"></a>Visual Studio для Mac
+### <a name="visual-studio-windows-and-mac"></a>Visual Studio (Windows и Mac)
 
 1. Перейдите к [портала Azure](https://portal.azure.com/) и перейдите к мобильное приложение, которое вы создали. На `Overview` колонке найдите URL-адрес, который является общедоступной конечной точки для мобильного приложения. Пример - sitename для моей имя приложения «test123» будет https://test123.azurewebsites.net.
 

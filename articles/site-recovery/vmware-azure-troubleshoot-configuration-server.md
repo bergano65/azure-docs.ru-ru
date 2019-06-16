@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 02/13/2019
 ms.author: ramamill
 ms.openlocfilehash: f08d7bb2087ef4f30b325b3796a13e387ccdea22
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60725573"
 ---
 # <a name="troubleshoot-configuration-server-issues"></a>Устранение неполадок, связанных с сервером конфигурации
@@ -49,7 +49,7 @@ ms.locfileid: "60725573"
     4. После устранения проблем следуйте инструкциям в разделе [Регистрация исходного компьютера на сервере конфигурации](vmware-azure-troubleshoot-configuration-server.md#register-source-machine-with-configuration-server), чтобы повторить попытку регистрации.
 
 7. В среде Linux, если значение платформы в <INSTALLATION_DIR\>/etc/drscout.conf повреждено, регистрация завершается сбоем. Чтобы определить эту проблему, откройте файл /var/log/ua_install.log. Выполните поиск строки **Aborting configuration as VM_PLATFORM value is either null or it is not VmWare/Azure** (Прерывание конфигурации, так как значением VM_PLATFORM является NULL, не VmWare или не Azure). Платформа должна иметь значение **VmWare** или **Azure**. Если поврежден файл drscout.conf, мы рекомендуем [удалить агент мобильности](vmware-physical-manage-mobility-service.md#uninstall-mobility-service), а затем установить его заново. Если не удалось удалить объекты, выполните следующие действия:. Откройте файл Installation_Directory/uninstall.sh и закомментируйте вызов функции **StopServices**.
-    2. Откройте файл Installation_Directory/Vx/bin/uninstall.sh и закомментируйте вызов функции **stop_services**.
+    2\. Откройте файл Installation_Directory/Vx/bin/uninstall.sh и закомментируйте вызов функции **stop_services**.
     c. Откройте файл Installation_Directory/Fx/uninstall и закомментируйте весь раздел, который пытается остановить службу Fx.
     d. [Удалите](vmware-physical-manage-mobility-service.md#uninstall-mobility-service) агент мобильности. После успешного удаления перезагрузите систему и попробуйте установить агент мобильности.
 
@@ -191,7 +191,7 @@ ms.locfileid: "60725573"
 Чтобы устранить эту проблему, войдите на портал Azure и выполните одно из следующих действий.
 
 - Запросите роль разработчика приложения в AAD. Дополнительные сведения о роли разработчика приложения см. в статье [Разрешения роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md).
-- Убедитесь, что в AAD параметр **User can create application** (Пользователь может создавать приложение) имеет значение *true*. Дополнительные сведения см. в разделе [Практическое руководство. Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions).
+- Убедитесь, что в AAD параметр **User can create application** (Пользователь может создавать приложение) имеет значение *true*. Дополнительные сведения см. в статье [Правила Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions).
 
 ## <a name="process-servermaster-target-are-unable-to-communicate-with-the-configuration-server"></a>Сервер обработки и главный целевой объект не могут обмениваться данными с сервером конфигурации 
 

@@ -12,20 +12,20 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
-ms.date: 02/21/2019
+ms.date: 06/06/2019
 ms.author: cynthn
-ms.openlocfilehash: 98bc10377dff8f06cd02d4a384ca14b364a73e74
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 167370a4eebded3dba898ed47dede7a36900d976
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60713777"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66808216"
 ---
 # <a name="workloads-on-azure-virtual-machines"></a>Рабочие нагрузки на виртуальных машинах Azure
 
 Виртуальные машины в Azure может поддерживать множество рабочих нагрузок. Каждая рабочая нагрузка может специализированные рекомендации по оптимальной модели для развертывания на виртуальных машинах в Azure. Вот некоторые из рекомендаций, которую мы можем предложить для специализированных рабочих нагрузок.
 
-
+- [Высокопроизводительные вычисления](https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/) в Azure использует ЦП или GPU оптимизирован виртуальных машин для решения задач сложных, ресурсоемких вычислений. 
 - [SAP](./sap/get-started.md) в Azure можно запускать критически важные рабочие нагрузки SAP и сценариев на платформе масштабируемой, совместимых и проверенные многими компаниями.
 - [Oracle](./oracle/oracle-considerations.md) поддерживает выпуски Oracle DB 12.1 Standard и Enterprise в Azure в образах виртуальных машин на базе Oracle Linux. 
 - [Повторное размещение больших ЭВМ](./mainframe-rehosting/overview.md) 

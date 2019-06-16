@@ -8,21 +8,16 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/22/2018
-ms.openlocfilehash: 8b27ad34bdc6fcbd7a1eb46515fbf33c96d02528
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: c8b05886ae338bb73b0f4ddce4d02a1f1a926a45
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64682895"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67078241"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-azure-hdinsight"></a>Развертывание и администрирование топологий Apache Storm в Azure HDInsight 
 
 С помощью этого документа вы ознакомитесь с основами управления и мониторинга топологий [Apache Storm](https://storm.apache.org/), работающих в Storm в кластерах HDInsight.
-
-> [!IMPORTANT]  
-> Для выполнения действий, описанных в этой статье, вам потребуется Storm под управлением Linux в кластере HDInsight. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement). 
->
-
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -82,7 +77,7 @@ ms.locfileid: "64682895"
     Эта команда запускает пример топологии WordCount в кластере. Эта топология произвольно создает предложения, а затем подсчитывает число вхождений каждого слова в предложениях.
 
    > [!NOTE]  
-   > При отправке топологии в кластер необходимо сначала скопировать jar-файл, содержащий кластер, а затем воспользоваться командой `storm`. Чтобы скопировать файл в кластер, можно использовать команду `scp`. Например `scp FILENAME.jar USERNAME@CLUSTERNAME-ssh.azurehdinsight.net:FILENAME.jar`.
+   > При отправке топологии в кластер необходимо сначала скопировать jar-файл, содержащий кластер, а затем воспользоваться командой `storm`. Чтобы скопировать файл в кластер, можно использовать команду `scp`. Например: `scp FILENAME.jar USERNAME@CLUSTERNAME-ssh.azurehdinsight.net:FILENAME.jar`
    >
    > Пример WordCount и другие начальные примеры использования Storm уже включены в ваш кластер в `/usr/hdp/current/storm-client/contrib/storm-starter/`.
 
@@ -159,7 +154,7 @@ ms.locfileid: "64682895"
 
 ## <a name="monitor-and-manage-storm-ui"></a>Отслеживание и управление: Пользовательский интерфейс Storm
 
-Пользовательский интерфейс Storm предоставляет веб-интерфейс для работы с запущенными топологиями и включен в состав кластера HDInsight. Чтобы открыть пользовательский интерфейс Storm, в веб-браузере перейдите по адресу **https://CLUSTERNAME.azurehdinsight.net/stormui**, где **CLUSTERNAME** — это имя вашего кластера.
+Пользовательский интерфейс Storm предоставляет веб-интерфейс для работы с запущенными топологиями и включен в состав кластера HDInsight. Чтобы открыть пользовательский интерфейс Storm, в веб-браузере перейдите по адресу **https://CLUSTERNAME.azurehdinsight.net/stormui** , где **CLUSTERNAME** — это имя вашего кластера.
 
 > [!NOTE]  
 > При появлении соответствующего запроса введите имя пользователя и пароль администратора кластера (admin), которые использовались при создании кластера.
@@ -213,7 +208,7 @@ ms.locfileid: "64682895"
 
 ### <a name="base-uri"></a>Базовый универсальный код ресурса
 
-Базовый URI для REST API в кластерах HDInsight под управлением Linux доступен на головном узле по адресу **https:\//HEADNODEFQDN:8744/api/v1/**. Доменное имя головного узла формируется при создании кластера и не является статическим.
+Базовый URI для REST API в кластерах HDInsight под управлением Linux доступен на головном узле по адресу **https:\//HEADNODEFQDN:8744/api/v1/** . Доменное имя головного узла формируется при создании кластера и не является статическим.
 
 Полное доменное имя (FQDN) головного узла кластера можно получить несколькими способами.
 

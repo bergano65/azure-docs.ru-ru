@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 07/27/2018
 ms.author: labattul
 ms.openlocfilehash: c5cb840035c5d0d5694982324c7237c58001e689
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60731606"
 ---
 # <a name="set-up-dpdk-in-a-linux-virtual-machine"></a>Настройка DPDK в виртуальной машине Linux
@@ -33,7 +33,7 @@ DPDK может работать на виртуальных машинах Azur
 
 ## <a name="benefit"></a>Преимущество
 
-**Выше пакетов в секунду (PPS)**: Обход ядра и перехват управления пакетов в пространстве пользователя уменьшает счетчик цикла, устраняя переключений контекста. Благодаря этому также повышается скорость обработки пакетов в секунду на виртуальных машинах Linux в Azure.
+**Выше пакетов в секунду (PPS)** : Обход ядра и перехват управления пакетов в пространстве пользователя уменьшает счетчик цикла, устраняя переключений контекста. Благодаря этому также повышается скорость обработки пакетов в секунду на виртуальных машинах Linux в Azure.
 
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
@@ -152,7 +152,7 @@ zypper \
 
 Чтобы запустить *testpmd* в режиме root, выполните сначала команду `sudo`.
 
-### <a name="basic-sanity-check-failsafe-adapter-initialization"></a>Basic: Проверка исправности, failsafe инициализации адаптера
+### <a name="basic-sanity-check-failsafe-adapter-initialization"></a>Базовый уровень: Проверка исправности, failsafe инициализации адаптера
 
 1. Выполните следующие команды, чтобы запустить приложение testpmdс с одним портом:
 
@@ -180,7 +180,7 @@ zypper \
 
 Предыдущие команды запускают *testpmd* в интерактивном режиме, что и рекомендуется, чтобы попробовать выполнить команды testpmd.
 
-### <a name="basic-single-sendersingle-receiver"></a>Basic: Единый отправителя и одним получателем
+### <a name="basic-single-sendersingle-receiver"></a>Базовый уровень: Единый отправителя и одним получателем
 
 Следующие команды периодически выводят статистику пакетов в секунду:
 
@@ -252,7 +252,7 @@ zypper \
 
 При выполнении предыдущих команд в виртуальной машине измените адреса *IP_SRC_ADDR* и *IP_DST_ADDR* в `app/test-pmd/txonly.c`, чтобы они соответствовали фактическому IP-адресу виртуальных машин перед сборкой. В противном случае пакеты будут удалены, прежде чем они достигнут сервера пересылки. Третий компьютер не сможет получить отправленный трафик, потому что сервер пересылки *testpmd* не изменяет адреса уровня 3, если вы не внесли изменения в код.
 
-## <a name="references"></a>Ссылки
+## <a name="references"></a>Справочники
 
 * [Параметры командной строки EAL](https://dpdk.org/doc/guides/testpmd_app_ug/run_app.html#eal-command-line-options)
 * [Параметры командной строки testpmd](https://dpdk.org/doc/guides/testpmd_app_ug/run_app.html#testpmd-command-line-options)

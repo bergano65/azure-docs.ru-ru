@@ -3,7 +3,7 @@ title: Как работает диспетчер трафика | Докуме�
 description: Из этой статьи вы узнаете, как маршрутизация в диспетчере трафика помогает обеспечить высокую производительность и доступность ваших веб-приложений.
 services: traffic-manager
 documentationcenter: ''
-author: KumudD
+author: asudbring
 manager: twooley
 ms.service: traffic-manager
 ms.devlang: na
@@ -11,13 +11,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/05/2019
-ms.author: kumud
-ms.openlocfilehash: 52469cb2735b2270815191ec0815daee350882a4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: allensu
+ms.openlocfilehash: a74af002dfdad5df9640be4b5fdd7f657b183bd4
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60330318"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071191"
 ---
 # <a name="how-traffic-manager-works"></a>Как работает диспетчер трафика
 

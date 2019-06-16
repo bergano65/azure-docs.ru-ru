@@ -9,18 +9,18 @@ ms.custom: mvc
 ms.service: iot-accelerators
 services: iot-accelerators
 manager: philmea
-ms.openlocfilehash: 1e3ec677f2c3ce2a7f942c47269fe1f70885ac02
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 01349dbc5fe98fd69ce7219ef6f2029d7bb815d0
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65466472"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67067910"
 ---
 # <a name="introduction-to-the-azure-iot-reference-architecture"></a>Общие сведения об эталонной архитектуре Интернета вещей Azure
 
 В этой статье описывается [эталонная архитектура Интернета вещей Azure](https://aka.ms/iotrefarchitecture) и приводятся примеры того, как [акселераторы решений Интернета вещей Azure](about-iot-accelerators.md) следуют ее рекомендациям.
 
-Акселераторы решений [удаленного мониторинга](iot-accelerators-remote-monitoring-sample-walkthrough.md) и [подключенной фабрики](iot-accelerators-connected-factory-sample-walkthrough.md) с открытым исходным кодом соответствуют многим рекомендациям эталонной архитектуры. Вы можете использовать акселератор решений либо в качестве отправной точки для своего собственного решения Интернета вещей, либо в качестве инструментов обучения.
+Акселераторы решений [удаленного мониторинга](iot-accelerators-remote-monitoring-sample-walkthrough.md) и [подключенной фабрики](iot-accelerators-connected-factory-features.md) с открытым исходным кодом соответствуют многим рекомендациям эталонной архитектуры. Вы можете использовать акселератор решений либо в качестве отправной точки для своего собственного решения Интернета вещей, либо в качестве инструментов обучения.
 
 ## <a name="overview"></a>Обзор
 
@@ -42,7 +42,7 @@ ms.locfileid: "65466472"
 
 В следующих разделах описывается, как компоненты акселератора решения для удаленного мониторинга сопоставляются основным подсистемам.
 
-### <a name="iot-devices"></a>Устройства Интернета вещей
+### <a name="iot-devices"></a>устройства Интернета вещей.
 
 Решение Интернета вещей должно обеспечивать безопасную, эффективную и надежную связь между практически любым типом устройства и облачным шлюзом. Устройства — это бизнес-ресурсы, которые варьируются от простых датчиков температуры к сложным производственным линиям с сотнями компонентов и датчиков.
 
