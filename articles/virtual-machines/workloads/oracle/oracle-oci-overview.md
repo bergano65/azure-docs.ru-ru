@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 06/04/2019
 ms.author: rogirdh
 ms.custom: ''
-ms.openlocfilehash: 711fce9627537e68171c3b170121900d6b14ca1e
-ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
+ms.openlocfilehash: 8827feaf1d541edc7c0b54d8af951ddab79c5aaa
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66743655"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66808624"
 ---
 # <a name="oracle-application-solutions-integrating-microsoft-azure-and-oracle-cloud-infrastructure-preview"></a>Решения Oracle приложений, интеграции Microsoft Azure и Oracle облачной инфраструктуры (Предварительная версия)
 
@@ -45,7 +45,7 @@ ms.locfileid: "66743655"
 * Приложения для розничной торговли Oracle
 * Управление финансами Hyperion Oracle
 
-На следующей диаграмме показан общий обзор подключенном решении. Для простоты на схеме показаны только уровня приложений и уровня данных. В зависимости от приложения architecutre решение может содержать дополнительные уровни, например веб-уровня в Azure. Дополнительные сведения приведены в следующем разделе.
+На следующей диаграмме показан общий обзор подключенном решении. Для простоты на схеме показаны только уровня приложений и уровня данных. В зависимости от архитектуры приложения решение может содержать дополнительные уровни, например веб-уровня в Azure. Дополнительные сведения приведены в следующем разделе.
 
 ![Общие сведения о решении Azure OCI](media/oracle-oci-overview/crosscloud.png)
 

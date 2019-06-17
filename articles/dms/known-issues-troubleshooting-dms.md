@@ -12,10 +12,10 @@ ms.custom: mvc
 ms.topic: article
 ms.date: 05/22/2019
 ms.openlocfilehash: 5a7c6c4553f46e8a7308995e05d6c06c0eb10f27
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66002215"
 ---
 # <a name="troubleshoot-common-azure-database-migration-service-issues-and-errors"></a>Устранение распространенных ошибок и проблем Azure Database Migration Service
@@ -96,7 +96,7 @@ ms.locfileid: "66002215"
 
 | Причина:         | Способы устранения:    |
 | ------------- | ------------- |
-| Эта ошибка возникает при сбое миграции из-за времени ожидания блокировки ожидания во время миграции. | Попробуйте увеличить значение параметра сервера **«innodb_lock_wait_timeout»**. Наибольшее допустимое значение равно 1073741824. |
+| Эта ошибка возникает при сбое миграции из-за времени ожидания блокировки ожидания во время миграции. | Попробуйте увеличить значение параметра сервера **«innodb_lock_wait_timeout»** . Наибольшее допустимое значение равно 1073741824. |
 
 ## <a name="error-connecting-to-source-sql-server-when-using-dynamic-port-or-named-instance"></a>Ошибка при подключении к исходному серверу SQL Server, при использовании динамического порта или именованный экземпляр
 
