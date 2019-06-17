@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 11/07/2018
 ms.openlocfilehash: b1b281c7beac6b6cb48834e636edff818f89bf12
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66304142"
 ---
 # <a name="deploy-and-explore-a-standalone-single-tenant-application-that-uses-azure-sql-database"></a>Развертывание и изучение отдельного однотенантного приложения, в котором используется база данных SQL Azure
@@ -76,16 +76,16 @@ ms.locfileid: "66304142"
 
 1. Откройте страницы событий для каждого из трех клиентов в отдельных вкладках браузера:
 
-   - http://events.contosoconcerthall.&lt;user&gt;.trafficmanager.net
-   - http://events.dogwooddojo.&lt;user&gt;.trafficmanager.net
-   - http://events.fabrikamjazzclub.&lt;user&gt;.trafficmanager.net
+   - http://events.contosoconcerthall.&lt ;user&gt;.trafficmanager.net
+   - http://events.dogwooddojo.&lt ;user&gt;.trafficmanager.net
+   - http://events.fabrikamjazzclub.&lt ;user&gt;.trafficmanager.net
 
      (В каждом URL-адресе замените слово &lt;user&gt; (пользователь) соответствующим значением для вашего развертывания.)
 
    ![События](./media/saas-standaloneapp-get-started-deploy/fabrikam.png)
 
 Чтобы управлять распределением входящего трафика, приложение использует [*диспетчер трафика Azure*](../traffic-manager/traffic-manager-overview.md). Каждый экземпляр приложения для конкретного клиента имеет свой URL-адрес, частью которого является имя этого клиента. Также URL-адрес клиента содержит назначенный вам идентификатор **пользователя**. Все эти URL-адреса имеют следующий формат:
-- http://events.&lt;venuename&gt;.&lt;user&gt;.trafficmanager.net
+- http://events.&lt ;venuename&gt;.&lt; user&gt;.trafficmanager.net
 
 **Расположение** базы данных для каждого клиента указано в параметрах соответствующего приложения.
 

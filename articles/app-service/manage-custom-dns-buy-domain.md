@@ -16,10 +16,10 @@ ms.date: 11/24/2017
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: 4b26446845d004b4dd92807c0b5ec0ada9ed181f
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66475217"
 ---
 # <a name="buy-a-custom-domain-name-for-azure-app-service"></a>Приобретение личного доменного имени в Службе приложений Azure
@@ -147,7 +147,7 @@ ms.locfileid: "66475217"
 ![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-hostnames-added.png)
 
 > [!NOTE]
-> Объект **Secure Примечание** метка личного домена означает, что он еще не привязан к SSL-сертификат, и получите любой HTTPS-запрос из браузера личного домена, ошибка или предупреждение, в зависимости от браузера. Чтобы настроить привязку SSL, см. в разделе [приобретение и Настройка SSL-сертификат для службы приложений Azure](web-sites-purchase-ssl-web-site.md).
+> Метка **Не защищено** у личного домена означает, что он еще не привязан к SSL-сертификату, и HTTPS-запросы из браузера к нему будут возвращать ошибку или предупреждение, в зависимости от браузера. Чтобы настроить привязку SSL, см. в разделе [приобретение и Настройка SSL-сертификат для службы приложений Azure](web-sites-purchase-ssl-web-site.md).
 >
 
 Чтобы проверить имена узлов, перейдите по указанным именам узлов в браузере. В примере на предыдущем снимке экрана попробуйте перейти к _kontoso.net_ и _www\.kontoso.net_.

@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 05/24/2019
 ms.author: jingwang
 ms.openlocfilehash: 3a7cc1ac3940104993e6643e92da923ad1c6a14a
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66248795"
 ---
 | Категория | Хранилище данных | Поддерживаются в качестве [действие копирования](../articles/data-factory/copy-activity-overview.md) источника | Поддерживаются в качестве [действие копирования](../articles/data-factory/copy-activity-overview.md) приемника | Поддерживается [Azure IR](../articles/data-factory/concepts-integration-runtime.md#azure-integration-runtime) | Поддерживается [локальной IR](../articles/data-factory/concepts-integration-runtime.md#self-hosted-integration-runtime) | Поддерживаемые [потока данных](../articles/data-factory/concepts-data-flow-overview.md)

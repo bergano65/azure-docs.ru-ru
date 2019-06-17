@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: cynthn
 ms.openlocfilehash: c2ed33aea77b5478e8d17f6bd0213ef3e778b806
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66125212"
 ---
 ## <a name="transfer-local-files-to-cloud-shell"></a>Передача локальных файлов в Cloud Shell
@@ -21,7 +21,7 @@ ms.locfileid: "66125212"
 2. Выберите целевой файл.
 3. Нажмите кнопку **Скачать**.
 
-### <a name="upload-files"></a>Отправить файлы
+### <a name="upload-files"></a>Upload files
 
 ![Локальные файлы для передачи](../articles/cloud-shell/media/persisting-shell-storage/upload.png)
 1. Перейдите к подключенному файловому ресурсу.

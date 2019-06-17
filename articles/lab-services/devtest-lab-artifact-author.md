@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 05/30/2019
 ms.author: spelluru
 ms.openlocfilehash: 69b83590fb9b25c68d231b732b985ba633bb6884
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66399198"
 ---
 # <a name="create-custom-artifacts-for-your-devtest-labs-virtual-machine"></a>Создание пользовательских артефактов для виртуальной машины DevTest Labs
@@ -78,7 +78,7 @@ ms.locfileid: "66399198"
 
 | Имя элемента | Обязательный? | Описание |
 | --- | --- | --- |
-| type |Да |Тип значения параметра. Ниже приведен список допустимых типов. |
+| тип |Да |Тип значения параметра. Ниже приведен список допустимых типов. |
 | displayName |Да |Имя параметра, отображаемое для пользователя в лаборатории. |
 | description |Да |Описание параметра, отображаемого в лаборатории. |
 

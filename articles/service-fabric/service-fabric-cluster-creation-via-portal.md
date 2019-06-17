@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 09/06/2018
 ms.author: aljo
 ms.openlocfilehash: 02312a19c687908b0e1c0e6417dc6b0a9df23912
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62125091"
 ---
 # <a name="create-a-service-fabric-cluster-in-azure-using-the-azure-portal"></a>Создание кластера Service Fabric в Azure с помощью портала Azure
@@ -89,7 +89,7 @@ ms.locfileid: "62125091"
 
 В колонке **Создание кластера Service Fabric** необходимо выполнить четыре шага:
 
-### <a name="1-basics"></a>1. Основные сведения
+### <a name="1-basics"></a>1. Основы
 ![Снимок экрана создания новой группы ресурсов.][CreateRG]
 
 В колонке "Основные сведения" требуется указать основные сведения для кластера.

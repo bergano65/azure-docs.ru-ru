@@ -9,10 +9,10 @@ ms.date: 09/15/2018
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: a7c696870e22e1692ca5ed778e47f8e4cc00615a
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66160763"
 ---
 ## <a name="set-up-the-development-environment"></a>Настройка среды разработки
@@ -25,7 +25,7 @@ ms.locfileid: "66160763"
 
 1. В главном меню выберите **Файл** > **Создать** > **Проект**.
 
-1. В диалоговом окне **Новый проект** выберите **Веб** > **Веб-приложение ASP.NET (.NET Framework)**. В поле **Имя** введите **StorageAspNet**. Нажмите кнопку **ОК**.
+1. В диалоговом окне **Новый проект** выберите **Веб** > **Веб-приложение ASP.NET (.NET Framework)** . В поле **Имя** введите **StorageAspNet**. Нажмите кнопку **ОК**.
 
     ![Снимок экрана: диалоговое окно нового проекта](./media/vs-storage-aspnet-getting-started-setup-dev-env/vs-storage-aspnet-getting-started-setup-dev-env-1.png)
 

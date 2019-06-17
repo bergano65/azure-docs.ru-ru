@@ -11,10 +11,10 @@ ms.workload: infrastructure-services
 ms.date: 01/26/2018
 ms.author: victorh
 ms.openlocfilehash: 85113a5007a171459b831684f584773ba4328b94
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62122420"
 ---
 # <a name="create-an-application-gateway-with-multiple-site-hosting-using-the-azure-portal"></a>Создание шлюза приложений с несколькими сайтами с помощью портала Azure
@@ -59,7 +59,7 @@ ms.locfileid: "62122420"
    - *myAGSubnet* — имя подсети;
    - *10.0.0.0/24* — диапазон адресов подсети.
 
-     ![Создать виртуальную сеть](./media/application-gateway-create-multisite-portal/application-gateway-vnet.png)
+     ![Создание виртуальной сети](./media/application-gateway-create-multisite-portal/application-gateway-vnet.png)
 
 6. Нажмите кнопку **ОК**, чтобы создать виртуальную сеть и подсеть.
 7. Щелкните **Выбрать общедоступный IP-адрес**, выберите **Создать**, а затем введите имя общедоступного IP-адреса. В этом примере общедоступный IP-адрес — *myAGPublicIPAddress*. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.

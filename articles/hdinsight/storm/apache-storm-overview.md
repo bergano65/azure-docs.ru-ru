@@ -6,21 +6,19 @@ ms.reviewer: jasonh
 keywords: варианты использования apache storm, кластер storm, сведения об apache storm
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
-ms.topic: conceptual
-ms.date: 05/24/2019
+ms.topic: overview
+ms.date: 06/12/2019
 ms.author: hrasheed
-ms.openlocfilehash: 42aaa91906319133fd2864cd836447fcf3ca3a07
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
-ms.translationtype: MT
+ms.openlocfilehash: 97083142066e59acbefe60181743e5aa32541bac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66257778"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67115827"
 ---
 # <a name="what-is-apache-storm-on-azure-hdinsight"></a>Основные сведения об Apache Storm в Azure HDInsight
 
 [Apache Storm](https://storm.apache.org/) — это распределенная отказоустойчивая вычислительная система с открытым исходным кодом. Ее можно использовать для обработки потоков данных в реальном времени с помощью [Apache Hadoop](https://hadoop.apache.org/). Решения Storm могут также обеспечить гарантированную обработку данных и возможность воспроизвести те данные, которые не прошли удачную обработку в первый раз.
-
-[!INCLUDE [hdinsight-price-change](../../../includes/hdinsight-enhancements.md)]
 
 ## <a name="why-use-apache-storm-on-hdinsight"></a>Преимущества использования Apache Storm в HDInsight
 
@@ -38,8 +36,7 @@ ms.locfileid: "66257778"
 
 * **Динамическое масштабирование**. Вы можете добавить или удалить рабочие узлы, не влияя на выполняющиеся топологии Storm.
 
-    > [!NOTE]  
-    > Чтобы использовать новые узлы, добавленные с помощью операций масштабирования, нужно деактивировать и повторно активировать выполняющиеся топологии.
+    * Чтобы использовать новые узлы, добавленные с помощью операций масштабирования, нужно деактивировать и повторно активировать выполняющиеся топологии.
 
 * **Создание конвейеров потоковой передачи с помощью нескольких служб Azure**. Storm в HDInsight интегрируется с другими службами Azure, такими как Центры событий, база данных SQL, служба хранилища Azure и Azure Data Lake Storage.
 
@@ -149,7 +146,9 @@ Apache Storm может обеспечить различные уровни г�
 
 В приведенном ниже примере Java используется fieldsGrouping для перенаправления кортежей из компонентов "1", "2" и "3" в элемент bolt MyJoiner.
 
-    builder.setBolt("join", new MyJoiner(), parallelism) .fieldsGrouping("1", new Fields("joinfield1", "joinfield2")) .fieldsGrouping("2", new Fields("joinfield1", "joinfield2")) .fieldsGrouping("3", new Fields("joinfield1", "joinfield2"));
+```java
+builder.setBolt("join", new MyJoiner(), parallelism) .fieldsGrouping("1", new Fields("joinfield1", "joinfield2")) .fieldsGrouping("2", new Fields("joinfield1", "joinfield2")) .fieldsGrouping("3", new Fields("joinfield1", "joinfield2"));
+```
 
 ### <a name="batches"></a>Пакеты
 

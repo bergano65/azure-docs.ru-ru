@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 04/15/2019
 ms.author: alkohli
 ms.openlocfilehash: e02c0b86cd542b3ea12914e35a6577cf4e9b43d8
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66161320"
 ---
 Кроме того, вы можете просматривать метрики для мониторинга производительности устройства и при необходимости устранять с их помощью неполадки.
@@ -17,7 +17,7 @@ ms.locfileid: "66161320"
 
 1. На портале Azure откройте раздел **Мониторинг > Метрики** для нужного ресурса и щелкните **Добавить метрику**.
 
-    ![Добавить метрику](media/data-box-edge-gateway-view-metrics/view-metrics-1.png)
+    ![Добавление метрики](media/data-box-edge-gateway-view-metrics/view-metrics-1.png)
 
 2. Ресурс указывается автоматически.  
 

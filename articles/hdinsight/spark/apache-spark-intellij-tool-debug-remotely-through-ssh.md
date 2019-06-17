@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 11/25/2017
-ms.openlocfilehash: ef2507a15579ea3d145bfe37df281e2c044d181c
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 7554f0739626520153196472a790ab672a932331
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64722323"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67066218"
 ---
 # <a name="debug-apache-spark-applications-locally-or-remotely-on-an-hdinsight-cluster-with-azure-toolkit-for-intellij-through-ssh"></a>Удаленная или локальная отладка приложений Apache Spark в кластере HDInsight с помощью набора средств Azure для IntelliJ через SSH
 
@@ -32,7 +32,7 @@ ms.locfileid: "64722323"
 
    a. Выберите **Azure Spark/HDInsight**. 
 
-   2. Выберите шаблон Java или Scala (на свой выбор). Выберите один из следующих вариантов:
+   2\. Выберите шаблон Java или Scala (на свой выбор). Выберите один из следующих вариантов:
 
    - **Проект Spark (Java)**
 
@@ -60,9 +60,9 @@ ms.locfileid: "64722323"
 
    a. Введите имя и расположение проекта.
 
-   2. Из раскрывающегося списка **Project SDK** (Пакет SDK проекта) выберите **Java 1.8** для кластера **Spark 2.x** или **Java 1.7** для кластера **Spark 1.x**.
+   2\. Из раскрывающегося списка **Project SDK** (Пакет SDK проекта) выберите **Java 1.8** для кластера **Spark 2.x** или **Java 1.7** для кластера **Spark 1.x**.
 
-   c. В раскрывающемся списке **Spark version** (Версия Spark) мастер создания проекта Scala интегрирует правильную версию пакета SDK для Spark и пакета SDK для Scala. Если версия кластера Spark ниже 2.0, выберите **Spark 1.x**. В противном случае выберите **Spark 2.x.** В этом примере используется **Spark 2.0.2 (Scala 2.11.8)**.
+   c. В раскрывающемся списке **Spark version** (Версия Spark) мастер создания проекта Scala интегрирует правильную версию пакета SDK для Spark и пакета SDK для Scala. Если версия кластера Spark ниже 2.0, выберите **Spark 1.x**. В противном случае выберите **Spark 2.x.** В этом примере используется **Spark 2.0.2 (Scala 2.11.8)** .
 
    d. Выберите **Готово**.
 
@@ -74,8 +74,8 @@ ms.locfileid: "64722323"
 Чтобы устранить эту ошибку, [скачайте этот исполняемый файл](https://public-repo-1.hortonworks.com/hdp-win-alpha/winutils.exe), например в папку **C:\WinUtils\bin**. После этого добавьте переменную среды **HADOOP_HOME** и присвойте ей значение **C\WinUtils**.
 
 ### <a name="scenario-2-perform-local-run"></a>Сценарий 2. Выполнение локального запуска
-1. Откройте скрипт **SparkCore_wasbloTest**, щелкните правой кнопкой мыши редактор скриптов и выберите параметр **Run '[Spark Job]XXX'**, чтобы выполнить локальный запуск.
-1. По завершении локального выполнения выходной файл сохраняется в текущий обозреватель проектов: **данные** > **__по умолчанию__**.
+1. Откройте скрипт **SparkCore_wasbloTest**, щелкните правой кнопкой мыши редактор скриптов и выберите параметр **Run '[Spark Job]XXX'** , чтобы выполнить локальный запуск.
+1. По завершении локального выполнения выходной файл сохраняется в текущий обозреватель проектов: **данные** >  **__по умолчанию__** .
 
     ![Результаты локального запуска](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/local-run-result.png)
 1. С помощью наших средств при локальном запуске и локальной отладке по умолчанию настраивается конфигурацию локального запуска. Открыть конфигурацию **[Spark в HDInsight] XXX** в правом верхнем углу можно увидеть **[Spark в HDInsight] XXX** уже созданы в **Apache Spark в HDInsight**. Откройте вкладку **Locally Run** (Локальный запуск).
@@ -84,7 +84,7 @@ ms.locfileid: "64722323"
     - [Переменные среды](#prerequisite-for-windows). Если вы уже задали переменную среды **HADOOP_HOME** для **C:\WinUtils**, она определяется автоматически и добавлять ее вручную не нужно.
     - [Расположение WinUtils.exe](#prerequisite-for-windows). Если вы не задали переменную среды, найдите расположение, нажав соответствующую кнопку.
     - Просто выберите один из вариантов (в MacOS и Linux в этом нет необходимости).
-1. Кроме того, вы можете вручную задать конфигурацию перед локальным запуском и локальной отладкой. На предыдущем снимке экрана щелкните знак плюса (**+**). Затем выберите **Apache Spark в HDInsight** параметр. Укажите **имя** и **имя класса Main**, чтобы сохранить их, а затем нажмите кнопку локального запуска.
+1. Кроме того, вы можете вручную задать конфигурацию перед локальным запуском и локальной отладкой. На предыдущем снимке экрана щелкните знак плюса ( **+** ). Затем выберите **Apache Spark в HDInsight** параметр. Укажите **имя** и **имя класса Main**, чтобы сохранить их, а затем нажмите кнопку локального запуска.
 
 ### <a name="scenario-3-perform-local-debugging"></a>Сценарий 3. Локальная отладка
 1. Откройте скрипт **SparkCore_wasbloTest** и задайте точки останова.
@@ -99,10 +99,10 @@ ms.locfileid: "64722323"
 
    ![Меню Edit Configurations (Изменение конфигураций)](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-edit-configurations.png) 
 
-1. В диалоговом окне **Run/Debug Configurations** (Конфигурации выполнения и отладки) щелкните знак "плюс" (**+**). Затем выберите **Apache Spark в HDInsight** параметр.
+1. В диалоговом окне **Run/Debug Configurations** (Конфигурации выполнения и отладки) щелкните знак "плюс" ( **+** ). Затем выберите **Apache Spark в HDInsight** параметр.
 
    ![Добавление новой конфигурации](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-add-new-Configuration.png)
-1. Откройте вкладку **Remotely Run in Cluster** (Удаленный запуск в кластере). Введите сведения в полях **Name** (Имя), **Spark cluster** (Кластер Spark) и **Main class name** (Имя основного класса). Нажмите кнопку **Расширенная конфигурация (Удаленная отладка)**. Наши средства поддерживают отладку с **исполнителями**. Для параметра **numExectors** по умолчанию устанавливается значение 5. Лучше не указывать значение больше 3.
+1. Откройте вкладку **Remotely Run in Cluster** (Удаленный запуск в кластере). Введите сведения в полях **Name** (Имя), **Spark cluster** (Кластер Spark) и **Main class name** (Имя основного класса). Нажмите кнопку **Расширенная конфигурация (Удаленная отладка)** . Наши средства поддерживают отладку с **исполнителями**. Для параметра **numExectors** по умолчанию устанавливается значение 5. Лучше не указывать значение больше 3.
 
    ![Запуск конфигураций отладки](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-run-debug-configurations.png)
 
@@ -173,8 +173,7 @@ ms.locfileid: "64722323"
 
 ### <a name="tools-and-extensions"></a>Средства и расширения
 * [Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin.md)
-* [Удаленная отладка приложений Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
-* [Использование инструментов HDInsight для IntelliJ с песочницей Hortonworks](../hadoop/hdinsight-tools-for-intellij-with-hortonworks-sandbox.md)
+* [Удаленная отладка приложений Apache Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 * [Использование средств HDInsight в Azure Toolkit for Eclipse для создания приложений Apache Spark](../hdinsight-apache-spark-eclipse-tool-plugin.md)
 * [Использование записных книжек Apache Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
 * [Ядра, доступные для записной книжки Jupyter в кластере Apache Spark в HDInsight](apache-spark-jupyter-notebook-kernels.md)

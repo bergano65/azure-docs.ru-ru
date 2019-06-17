@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
 ms.openlocfilehash: 38d8bdfcba48d2080b434ebec192b41f3663ae6a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60831798"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs Azure для фоновой обработки на основе событий
@@ -130,7 +130,7 @@ static void Main()
 
 В версии 3. *x*, ограничение числа подключений по умолчанию использует бесконечный подключений. Если по некоторым причинам вам нужно изменить это ограничение, можно использовать [ `MaxConnectionsPerServer` ](/dotnet/api/system.net.http.winhttphandler.maxconnectionsperserver) свойство [ `WinHttpHandler` ](/dotnet/api/system.net.http.winhttphandler) класса.
 
-В версии 2. *x*, контролировать количество одновременных подключений к узлу с помощью [ServicePointManager.DefaultConnectionLimit](/dotnet/api/system.net.servicepointmanager.defaultconnectionlimit#System_Net_ServicePointManager_DefaultConnectionLimit) API. 2. *x*, следует увеличить это значение по умолчанию, равное 2 перед запуском узла веб-заданий.
+В версии 2. *x*, контролировать количество одновременных подключений к узлу с помощью [ServicePointManager.DefaultConnectionLimit](/dotnet/api/system.net.servicepointmanager.defaultconnectionlimit#System_Net_ServicePointManager_DefaultConnectionLimit) API. 2\. *x*, следует увеличить это значение по умолчанию, равное 2 перед запуском узла веб-заданий.
 
 Все исходящие HTTP-запросы, сделанные из функции с помощью `HttpClient` проходить через `ServicePointManager`. После достижения значения, заданного `DefaultConnectionLimit`, `ServicePointManager` запускает постановка в очередь запросов перед их отправкой. Предположим, что для ограничения `DefaultConnectionLimit` установлено значение 2 и код включает 1000 HTTP-запросов. Первоначально в ОС разрешено только два запроса. Остальные 998 поставлены в очередь, пока не появится место для них. Это значит, ваши `HttpClient` может истечь, поскольку были внесены запроса, но запрос никогда не был отправлен в ОС на конечный сервер. Таким образом, вы можете столкнуться с поведением, которое не имеет смысла: локальному клиенту `HttpClient` потребуется 10 секунд, чтобы выполнить запрос, но служба будет возвращать каждый запрос за 200 мс. 
 
@@ -839,7 +839,7 @@ public static void RemoveItem([QueueTrigger("remove-item")] string message)
 |Отладка       | 1 |
 |Информация | 2 |
 |Предупреждение     | 3 |
-|Ошибка       | 4. |
+|Ошибка       | 4\. |
 |критические ошибки.    | 5 |
 |Нет        | 6 |
 

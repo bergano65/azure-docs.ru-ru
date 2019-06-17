@@ -9,17 +9,17 @@ ms.date: 02/21/2018
 ms.author: nzthiago
 ms.custom: include file
 ms.openlocfilehash: ffb29fc76313e8870b52cb0a63936da7853ea6ce
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66131345"
 ---
 ## <a name="timeout"></a>Время ожидания функции приложения 
 
 Продолжительность времени ожидания приложения-функции определяется по свойству functionTimeout в [host.json](../articles/azure-functions/functions-host-json.md#functiontimeout) файл проекта. Следующая таблица показывает значения по умолчанию и максимальное в минутах для обоих планов и в обеих версиях среды выполнения:
 
-| План | Версия среды выполнения | значение по умолчанию | Максимум |
+| План | Версия среды выполнения | значение по умолчанию | Максимальная |
 |------|---------|---------|---------|
 | Потребление | 1.x | 5 | 10 |
 | Потребление | 2.x | 5 | 10 |

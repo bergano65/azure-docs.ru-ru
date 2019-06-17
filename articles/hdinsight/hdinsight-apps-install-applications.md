@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: hrasheed
 ms.openlocfilehash: b916cbf690544d5887569e052a0456ca952140c8
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65409536"
 ---
 # <a name="install-third-party-apache-hadoop-applications-on-azure-hdinsight"></a>Установка сторонних приложений Apache Hadoop в Azure HDInsight
@@ -26,7 +26,7 @@ ms.locfileid: "65409536"
 |Приложение |Типы кластера | Описание |
 |---|---|---|
 |[AtScale Intelligence Platform](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/atscale.atscale) |Hadoop |AtScale включает кластера HDInsight в горизонтально масштабируемый сервер OLAP, позволяя запроса миллиарды строк данных в интерактивном режиме с помощью средств бизнес-Аналитики, вы уже знаете, владельцем и предпочитаете, — из Microsoft Excel, Power BI, Tableau Software для QlikView. |
-|[CDAP для HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/cask.cdap-for-hdinsight) |Hbase |CDAP является первая унифицированная Интеграционная платформа для больших объемов данных, ускорения значение времени для Hadoop и позволяет ИТ для предоставления данных самообслуживания. Открытым исходным кодом и расширяемой, CDAP удаляет препятствий для инноваций. Требования: 4 региона узлов, min D3 v2. |
+|[CDAP для HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/cask.cdap-for-hdinsight) |HBase |CDAP является первая унифицированная Интеграционная платформа для больших объемов данных, ускорения значение времени для Hadoop и позволяет ИТ для предоставления данных самообслуживания. Открытым исходным кодом и расширяемой, CDAP удаляет препятствий для инноваций. Требования: 4 региона узлов, min D3 v2. |
 |[Datameer](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/datameer.datameer) |Hadoop |Datameer масштабируемая платформа самообслуживания для подготовки, исследование и данные для аналитики, управляющие ускоряет превращение сложных несколькими источниками данных в ценные сведения корпоративного уровня, предоставления быстрее и эффективнее, insights в масштабе предприятия. |
 |[Dataiku DSS в HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/dataiku.dss-on-hdi) |Hadoop, Spark |Dataiku DSS в корпоративной платформы обработки и анализа данных, позволяющий данных по обработке и анализу данных совместно работать для разработки и выполнения новых данных продуктов и служб более эффективно, превратив необработанные данные в эффективные прогнозы. |
 |[Приложение WANdisco Fusion HDI App](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/wandisco.fusion-hdi-app) |Hadoop, Spark, HBase, Storm, Kafka |Поддержание соответствия в распределенной среде данных является сложной задачей операции данных. Приложение WANdisco Fusion, это платформа корпоративного класса программного обеспечения, решает эту проблему, позволяя согласованности неструктурированных данных в любой среде. |
@@ -83,7 +83,7 @@ ms.locfileid: "65409536"
 
     |Свойство | Описание |
     |---|---|
-    |Имя приложения |Имя приложения. |
+    |Имя приложения. |Имя приложения. |
     |Status |Состояние приложения. |
     |Веб-страница |URL-адрес веб-приложения, развернутого на граничном узле. В качестве учетных данных используются учетные данные пользователя HTTP, настроенные для кластера. |
     |Конечная точка SSH |К граничному узлу можно подключиться с помощью SSH. В качестве учетных данных SSH используются учетные данные пользователя SSH, настроенные для кластера. См. дополнительные сведения об [использовании SSH в HDInsight](hdinsight-hadoop-linux-use-ssh-unix.md). |

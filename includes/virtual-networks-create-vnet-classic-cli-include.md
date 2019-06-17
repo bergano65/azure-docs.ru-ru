@@ -9,10 +9,10 @@ ms.date: 04/13/2018
 ms.author: genli
 ms.custom: include file
 ms.openlocfilehash: cd686e1bf62bbd7f37f61ced767e92918edf919c
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66116913"
 ---
 ## <a name="how-to-create-a-classic-vnet-using-azure-cli"></a>Создание классической виртуальной сети с помощью интерфейса командной строки Azure
@@ -32,12 +32,12 @@ ms.locfileid: "66116913"
             info:    network vnet create command OK
    
    * **--vnet**. Имя виртуальной сети, которую нужно будет создать. В нашем сценарии это *TestVNet*.
-   * **-e (или --address-space)**. Адресное пространство виртуальной сети. В нашем сценарии это *192.168.0.0*.
-   * **-i (или -cidr)**. Маска подсети в формате CIDR. В нашем сценарии это *16*.
+   * **-e (или --address-space)** . Адресное пространство виртуальной сети. В нашем сценарии это *192.168.0.0*.
+   * **-i (или -cidr)** . Маска подсети в формате CIDR. В нашем сценарии это *16*.
    * **-n (или --subnet-name**). Имя первой подсети. В нашем сценарии это *FrontEnd*.
-   * **-p (или --subnet-start-ip)**. Начальный IP-адрес для подсети или адресное пространство подсети. В нашем сценарии это *192.168.1.0*.
-   * **-r (или --subnet-cidr)**. Маска подсети в формате CIDR для подсети. В нашем сценарии это *24*.
-   * **-l (или --location)**. Регион Azure, в котором создается виртуальная сеть. В нашем сценарии это *Central US*.
+   * **-p (или --subnet-start-ip)** . Начальный IP-адрес для подсети или адресное пространство подсети. В нашем сценарии это *192.168.1.0*.
+   * **-r (или --subnet-cidr)** . Маска подсети в формате CIDR для подсети. В нашем сценарии это *24*.
+   * **-l (или --location)** . Регион Azure, в котором создается виртуальная сеть. В нашем сценарии это *Central US*.
 3. Чтобы создать подсеть, выполните команду **azure network vnet subnet create**:
    
             azure network vnet subnet create -t TestVNet -n BackEnd -a 192.168.2.0/24
@@ -55,8 +55,8 @@ ms.locfileid: "66116913"
             info:    network vnet subnet create command OK
    
    * **-t (или --vnet-name**. Имя виртуальной сети, в которой будет создана подсеть. В нашем сценарии это *TestVNet*.
-   * **-n (или --name)**. Имя новой подсети. В нашем сценарии это *BackEnd*.
-   * **-a (или --address-prefix)**. Блок подсети CIDR. В нашем сценарии это *192.168.2.0/24*.
+   * **-n (или --name)** . Имя новой подсети. В нашем сценарии это *BackEnd*.
+   * **-a (или --address-prefix)** . Блок подсети CIDR. В нашем сценарии это *192.168.2.0/24*.
 4. Чтобы просмотреть свойства новой виртуальной сети, выполните команду **azure network vnet show**:
    
             azure network vnet show

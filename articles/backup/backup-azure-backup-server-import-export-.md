@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 5/8/2018
 ms.author: saurse
 ms.openlocfilehash: 18f84062bcaf2766ee0abd5248f876c3d8acef3f
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66304024"
 ---
 # <a name="offline-backup-workflow-for-dpm-and-azure-backup-server"></a>Автономное резервное копирование для DPM и Azure Backup Server
@@ -69,7 +69,7 @@ ms.locfileid: "66304024"
 
     ![Экран импорта](./media/backup-azure-backup-import-export/offlineBackupscreenInputs.png)
 
-    Соответствующая страница на сервере System Center Data Protection Manager выглядит так:  <br/>
+    Соответствующая страница на сервере System Center Data Protection Manager выглядит так: <br/>
     ![Экран импорта Azure Backup Server и SC DPM](./media/backup-azure-backup-import-export/dpmoffline.png)
 
     Ниже приведено описание входных данных.

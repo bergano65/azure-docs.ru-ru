@@ -16,12 +16,12 @@ ms.date: 05/07/2019
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev
-ms.openlocfilehash: 0d44e5d9f0d1ed893a16c318e3cfa0ee1bfc123b
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 0acef783b4877b5b1787f142aec6cc3588293f83
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65823351"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67111461"
 ---
 # <a name="microsoft-identity-platform-integration-checklist"></a>Контрольный список для интеграции платформы удостоверений Microsoft
 
@@ -33,7 +33,7 @@ ms.locfileid: "65823351"
 
 Используйте следующий контрольный список, чтобы убедиться, что приложение эффективно интегрирован с [платформы удостоверений Microsoft](https://docs.microsoft.com/azure/active-directory/develop/).
 
-### <a name="basics"></a>Основные сведения
+### <a name="basics"></a>Основы
 
 |   |   |
 |---|---|

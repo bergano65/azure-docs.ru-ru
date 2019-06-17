@@ -8,10 +8,10 @@ ms.date: 04/08/2019
 ms.topic: conceptual
 ms.author: sutalasi
 ms.openlocfilehash: 5490149f199c2d7887716ceae3f035527ad33961
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66170041"
 ---
 # <a name="set-up-disaster-recovery-of-vmware-vms-to-azure-with-powershell"></a>Настройка аварийного восстановления виртуальных машин VMware в Azure с помощью PowerShell
@@ -105,7 +105,7 @@ Select-AzSubscription -SubscriptionName "ASR Test Subscription"
 Задайте контекст хранилища с помощью командлета Set-ASRVaultContext. После этого последующие операции Azure Site Recovery в сеансе PowerShell будут выполняться в контексте выбранного хранилища.
 
 > [!TIP]
-> Модуль PowerShell для Azure Site Recovery (модуль Az.RecoveryServices) поставляется с удобными псевдонимами для большинства командлетов. Командлеты в модуле имеют вид  *\<операция >-**AzRecoveryServicesAsr**\<объекта >* и поддерживают эквивалентные псевдонимы вида  *\< Операция >-**ASR**\<объекта >*. В этой статье для более удобного чтения используется псевдонимы командлетов.
+> Модуль PowerShell для Azure Site Recovery (модуль Az.RecoveryServices) поставляется с удобными псевдонимами для большинства командлетов. Командлеты в модуле имеют вид  *\<операция >-**AzRecoveryServicesAsr**\<объекта >* и поддерживают эквивалентные псевдонимы вида  *\< Операция >-**ASR**\<объекта >* . В этой статье для более удобного чтения используется псевдонимы командлетов.
 
 В следующем примере данные хранилища из переменной $vault используется для указания контекста хранилища для сеанса PowerShell.
 
@@ -118,7 +118,7 @@ Select-AzSubscription -SubscriptionName "ASR Test Subscription"
    VMwareDRToAzurePs VMwareDRToAzurePs Microsoft.RecoveryServices vaults
    ```
 
-В качестве альтернативы в командлет Set-ASRVaultContext то также применять командлет Import-AzRecoveryServicesAsrVaultSettingsFile задать контекст хранилища. Укажите путь, по которому расположен файл ключа регистрации хранилища как параметр - path в командлет Import-AzRecoveryServicesAsrVaultSettingsFile. Например:
+В качестве альтернативы в командлет Set-ASRVaultContext то также применять командлет Import-AzRecoveryServicesAsrVaultSettingsFile задать контекст хранилища. Укажите путь, по которому расположен файл ключа регистрации хранилища как параметр - path в командлет Import-AzRecoveryServicesAsrVaultSettingsFile. Пример:
 
    ```azurepowershell
    Get-AzRecoveryServicesVaultSettingsFile -SiteRecovery -Vault $Vault -Path "C:\Work\"
@@ -339,7 +339,7 @@ $ReplicationStdStorageAccount= New-AzStorageAccount -ResourceGroupName "VMwareDR
 
 * Защищаемый элемент, который требуется реплицировать.
 * Учетная запись хранения для репликации виртуальной машины. Кроме того, требуется хранилище журналов для защиты виртуальных машин в учетной записи хранения уровня "Премиум".
-* Сервер обработки для репликации. Список доступных серверов обработки должен быть получен и сохранен в переменных ***$ProcessServers[0]*** *(ScaleOut-ProcessServer)* и ***$ProcessServers[1]*** *(ConfigurationServer)*.
+* Сервер обработки для репликации. Список доступных серверов обработки должен быть получен и сохранен в переменных ***$ProcessServers[0]*** *(ScaleOut-ProcessServer)* и ***$ProcessServers[1]*** *(ConfigurationServer)* .
 * Учетная запись, используемая для принудительной установки программного обеспечения Mobility Service на компьютерах. Список доступных учетных записей должен быть получен и сохранен в переменной ***$AccountHandles***.
 * Сопоставление контейнера защиты для политики репликации, используемой для репликации.
 * Группа ресурсов, в которой должны создаваться виртуальные машины при отработке отказа.
@@ -348,7 +348,7 @@ $ReplicationStdStorageAccount= New-AzStorageAccount -ResourceGroupName "VMwareDR
 Теперь реплицируйте следующие виртуальные машины, используя параметры, заданные в этой таблице.
 
 
-|Виртуальная машина  |Сервер обработки        |Учетная запись хранения              |Учетная запись хранения журналов  |Политика           |Учетная запись для установки службы Mobility Service|Группа целевых ресурсов  | Целевая виртуальная сеть  |Целевая подсеть  |
+|Виртуальная машина.  |Сервер обработки        |Учетная запись хранения              |Учетная запись хранения журналов  |Политика           |Учетная запись для установки службы Mobility Service|Целевая группа ресурсов  | Целевая виртуальная сеть  |Целевая подсеть  |
 |-----------------|----------------------|-----------------------------|---------------------|-----------------|-----------------------------------------|-----------------------|-------------------------|---------------|
 |Win2K12VM1       |ScaleOut-ProcessServer|premiumstorageaccount1       |logstorageaccount1   |ReplicationPolicy|WindowsAccount                           |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |
 |CentOSVM1       |ConfigurationServer   |replicationstdstorageaccount1| Н/Д                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   

@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: jroth
 ms.openlocfilehash: 297317ff33d88d6390220980ef35f2538579e310
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66165520"
 ---
 ### <a name="open-tcp-ports-in-the-windows-firewall-for-the-default-instance-of-the-database-engine"></a>Откройте TCP-порты в брандмауэре Windows для экземпляра ядра СУБД по умолчанию
@@ -55,9 +55,9 @@ ms.locfileid: "66165520"
 1. При установленном подключении к виртуальной машине на начальной странице введите **SQL Server Management Studio** и щелкните выбранный значок.
    
     При первом открытии Management Studio необходимо создать среду пользователей Management Studio. Это может занять несколько минут.
-2. Management Studio отображает диалоговое окно **Подключение к серверу** . В поле **Имя сервера** введите имя виртуальной машины для подключения к ядру СУБД с помощью обозревателя объектов (вместо имени виртуальной машины можно также использовать **(local)**, а вместо **имени сервера** — одну точку). Выберите **проверки подлинности Windows**, а также оставить ***your_VM_name\your_local_administrator*** в **имя пользователя** поле. Щелкните **Подключить**.
+2. Management Studio отображает диалоговое окно **Подключение к серверу** . В поле **Имя сервера** введите имя виртуальной машины для подключения к ядру СУБД с помощью обозревателя объектов (вместо имени виртуальной машины можно также использовать **(local)** , а вместо **имени сервера** — одну точку). Выберите **проверки подлинности Windows**, а также оставить ***your_VM_name\your_local_administrator*** в **имя пользователя** поле. Щелкните **Подключить**.
    
-    ![Подключиться к серверу](./media/virtual-machines-sql-server-connection-steps/19Connect-to-Server.png)
+    ![Подключение к серверу](./media/virtual-machines-sql-server-connection-steps/19Connect-to-Server.png)
 3. В обозревателе объектов SQL Server Management Studio щелкните правой кнопкой мыши имя экземпляра SQL Server (имя виртуальной машины) и нажмите **Свойства**.
    
     ![Свойства сервера](./media/virtual-machines-sql-server-connection-steps/20Server-Properties.png)
@@ -67,14 +67,14 @@ ms.locfileid: "66165520"
 5. В диалоговом окне SQL Server Management Studio щелкните **ОК** для подтверждения необходимости перезапуска SQL Server.
 6. В обозревателе объектов щелкните сервер правой кнопкой мыши и выберите **Перезагрузить**. (Если выполняется агент SQL Server, его также нужно перезапустить).
    
-    ![Перезапустить](./media/virtual-machines-sql-server-connection-steps/22Restart2.png)
+    ![Перезагрузить](./media/virtual-machines-sql-server-connection-steps/22Restart2.png)
 7. В диалоговом окне SQL Server Management Studio щелкните **Да** для подтверждения перезапуска SQL Server.
 
 ### <a name="create-sql-server-authentication-logins"></a>Создание учетных записей проверки подлинности SQL Server
 Чтобы подключиться к компоненту Database Engine с другого компьютера, необходимо создать как минимум одну учетную запись проверки подлинности SQL Server.
 
 1. В обозревателе объектов SQL Server Management Studio разверните папку экземпляра сервера, на котором требуется создать новую учетную запись.
-2. Щелкните правой кнопкой мыши папку **Безопасность**, выберите **Создать** и **Имя входа...**.
+2. Щелкните правой кнопкой мыши папку **Безопасность**, выберите **Создать** и **Имя входа...** .
    
     ![Новая учетная запись](./media/virtual-machines-sql-server-connection-steps/23New-Login.png)
 3. В диалоговом окне **Создание имени входа** на странице **Общие** введите имя нового пользователя в поле **Имя входа**.

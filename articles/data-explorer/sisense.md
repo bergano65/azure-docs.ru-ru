@@ -8,10 +8,10 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 5/29/2019
 ms.openlocfilehash: f0840b90e1036c23fa58d94515bfeb035299c07f
-ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66358188"
 ---
 # <a name="visualize-data-from-azure-data-explorer-in-sisense"></a>Визуализация данных с помощью обозревателя данных Azure в Sisense
@@ -32,7 +32,7 @@ Sisense — это платформа аналитики бизнес-анали
 
 1. Скачайте и скопируйте последние версии следующих JAR-файлов для *... \Sisense\DataConnectors\jdbcdrivers\adx* 
 
-    * 1.1.jar активации
+    * 1\.1.jar активации
     * adal4j 1.6.0.jar
     * Commons кодек 1.10.jar
     * Commons-collections4-4.1.jar
@@ -41,7 +41,7 @@ Sisense — это платформа аналитики бизнес-анали
     * jcip заметок-1.0-1.jar
     * JSON смарт 1.3.1.jar
     * lang тега 1.4.4.jar
-    * 1.4.7.jar электронной почты
+    * 1\.4.7.jar электронной почты
     * mssql-jdbc-7.2.1.jre8.jar
     * nimbus-jose-jwt-7.0.1.jar
     * oauth2-oidc-sdk-5.24.1.jar

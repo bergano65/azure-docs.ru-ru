@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.author: alkohli
 ms.openlocfilehash: a9daf1d59b03d283be999aaab559c6d60f6405dd
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65953123"
 ---
 # <a name="manage-compute-on-your-azure-data-box-edge"></a>Управление вычислениями в Azure Data Box Edge
@@ -68,7 +68,7 @@ ms.locfileid: "65953123"
 
 1. В списке триггеров выберите тот, который нужно удалить.
 
-    ![Выбрать триггер](media/data-box-edge-manage-compute/add-trigger-1.png)
+    ![Выбор триггера](media/data-box-edge-manage-compute/add-trigger-1.png)
 
 2. Щелкните правой кнопкой мыши и выберите **Удалить**.
 
@@ -76,7 +76,7 @@ ms.locfileid: "65953123"
 
 3. При появлении запроса на подтверждение нажмите кнопку **Да**.
 
-    ![Подтвердите удаление](media/data-box-edge-manage-compute/add-trigger-1.png)
+    ![Подтверждение удаления](media/data-box-edge-manage-compute/add-trigger-1.png)
 
 Список триггеров также будет обновлен с учетом удаления.
 

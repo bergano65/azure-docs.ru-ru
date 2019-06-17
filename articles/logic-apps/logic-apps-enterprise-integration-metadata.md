@@ -11,10 +11,10 @@ ms.topic: article
 ms.assetid: bb7d9432-b697-44db-aa88-bd16ddfad23f
 ms.date: 01/17/2019
 ms.openlocfilehash: 5ebdf45bec4e7cfceb75354af40c7a21c22c6eef
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60846207"
 ---
 # <a name="manage-artifact-metadata-in-integration-accounts-with-azure-logic-apps-and-enterprise-integration-pack"></a>Управление метаданными артефактов в учетных записях интеграции с помощью Azure Logic Apps и Пакета интеграции Enterprise
@@ -93,7 +93,7 @@ ms.locfileid: "60846207"
       | **Текст** | Нет | <*body-content*> | Любое другое содержимое, которое необходимо передать с помощью свойства `body` действия HTTP. В этом примере значения `properties` артефакта передаются в действие HTTP: <p>1. Щелкните внутри свойства **Текст**, чтобы отобразился список динамического содержимого. Если свойства не отображаются, выберите **Показать больше**. <br>2. В разделе **Поиск артефакта учетной записи интеграции** из списка динамического содержимого выберите **Свойства**. | 
       |||| 
 
-      Пример.
+      Пример:
 
       ![Указание значений и выражений для действия HTTP](media/logic-apps-enterprise-integration-metadata/add-http-action-values.png)
 

@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4cc742a6b1a7f3fc78e8639206e06c2937f00c30
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: bae13de156d502cdd731005d460641ca452448d5
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65956917"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67108673"
 ---
 # <a name="working-with-custom-domains-in-azure-ad-application-proxy"></a>Работа с пользовательскими доменами в прокси приложения Azure AD
 
@@ -87,7 +87,7 @@ ms.locfileid: "65956917"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Включите единый вход](application-proxy-configure-single-sign-on-with-kcd.md) в опубликованные приложения с помощью аутентификации Azure AD.
-* [Включите условный доступ](application-proxy-integrate-with-sharepoint-server.md) к опубликованным приложениям.
+* [Включить условный доступ](application-proxy-integrate-with-sharepoint-server.md) к опубликованным приложениям.
 * [Добавление имени личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md)
 
 

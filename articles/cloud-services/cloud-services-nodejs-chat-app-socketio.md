@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 08/17/2017
 ms.author: jeconnoc
 ms.openlocfilehash: cd0bceae770182e778410d8065d34dfeed055acc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61433201"
 ---
 # <a name="build-a-nodejs-chat-application-with-socketio-on-an-azure-cloud-service"></a>Создание приложения чата Node.js с помощью Socket.IO в облачной службе Azure
@@ -74,7 +74,7 @@ Socket.IO обеспечивает связь в режиме реального
 Прежде чем тестировать приложение в эмуляторе Azure, необходимо внести небольшие изменения. Выполните следующие действия над файлом server.js:
 
 1. Откройте файл **server.js** в Visual Studio или в любом текстовом редакторе.
-2. Найдите раздел **Зависимости модуля** в начале файла server.js и измените строку **sio = require('..//..//lib//socket.io')** на **sio = require('socket.io')**, как показано ниже.
+2. Найдите раздел **Зависимости модуля** в начале файла server.js и измените строку **sio = require('..//..//lib//socket.io')** на **sio = require('socket.io')** , как показано ниже.
    
        var express = require('express')
          , stylus = require('stylus')
@@ -109,11 +109,11 @@ Socket.IO обеспечивает связь в режиме реального
        PS C:\node\chatapp\WorkerRole1> Start-AzureEmulator -Launch
    
    > [!NOTE]
-   > При возникновении проблем с запуском эмулятора, например.: Start-AzureEmulator: Произошла непредвиденная ошибка.  Сведения: Произошла непредвиденная ошибка Коммуникационный объект System.ServiceModel.Channels.ServiceChannel нельзя применить для обмена данными, так как он находится в состоянии Faulted.
+   > При возникновении проблем с запуском эмулятора, например.: Start-AzureEmulator: Произошла непредвиденная ошибка.  Сведения. Произошла непредвиденная ошибка Коммуникационный объект System.ServiceModel.Channels.ServiceChannel нельзя применить для обмена данными, так как он находится в состоянии Faulted.
    > 
    > Переустановите azureauthoringtools версии 2.7.1 и azurecomputeemulator версии 2.7 - убедитесь, что версии совпадают.
 
-2. Откройте веб-браузер и перейдите по адресу **http://127.0.0.1**.
+2. Откройте веб-браузер и перейдите по адресу **http://127.0.0.1** .
 3. В открывшемся окне браузера введите псевдоним, а затем нажмите клавишу ВВОД.
    Это все, что вам потребуется для отправки сообщений в качестве конкретного псевдонима. Чтобы проверить многопользовательскую функциональность, откройте дополнительные окна браузера, используя тот же URL-адрес, и введите разные псевдонимы.
    
@@ -121,7 +121,7 @@ Socket.IO обеспечивает связь в режиме реального
 4. После проверки приложения остановите эмулятор, выполнив следующую команду:
    
        PS C:\node\chatapp\WorkerRole1> Stop-AzureEmulator
-5. Чтобы развернуть приложение в Azure, воспользуйтесь командлетом **Publish-AzureServiceProject** . Пример.
+5. Чтобы развернуть приложение в Azure, воспользуйтесь командлетом **Publish-AzureServiceProject** . Пример:
    
        PS C:\node\chatapp\WorkerRole1> Publish-AzureServiceProject -ServiceName mychatapp -Location "East US" -Launch
    

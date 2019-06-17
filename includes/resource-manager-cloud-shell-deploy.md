@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 01/30/2019
 ms.author: tomfitz
 ms.openlocfilehash: 7c081b3bc5f9e6273f680b24897f9aced4999afa
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66129028"
 ---
 ## <a name="deploy-template-from-cloud-shell"></a>Развертывание шаблона из Cloud Shell
@@ -19,11 +19,11 @@ ms.locfileid: "66129028"
 
 1. Выберите свою группу ресурсов Cloud Shell. Шаблон имени — `cloud-shell-storage-<region>`.
 
-   ![Выбрать группу ресурсов](./media/resource-manager-cloud-shell-deploy/select-cs-resource-group.png)
+   ![Выбор группы ресурсов](./media/resource-manager-cloud-shell-deploy/select-cs-resource-group.png)
 
 1. Выберите учетную запись хранения для Cloud Shell.
 
-   ![Выберите учетную запись хранения](./media/resource-manager-cloud-shell-deploy/select-storage.png)
+   ![Выбор учетной записи хранения](./media/resource-manager-cloud-shell-deploy/select-storage.png)
 
 1. Выберите **Большие двоичные объекты**.
 
@@ -47,7 +47,7 @@ ms.locfileid: "66129028"
 
 1. Найдите и отправьте свой шаблон.
 
-   ![Отправить файл](./media/resource-manager-cloud-shell-deploy/find-and-upload-template.png)
+   ![Отправка файла](./media/resource-manager-cloud-shell-deploy/find-and-upload-template.png)
 
 1. После отправки выберите шаблон.
 
@@ -55,7 +55,7 @@ ms.locfileid: "66129028"
 
 1. Скопируйте URL-адрес.
 
-   ![Копировать URL-адрес](./media/resource-manager-cloud-shell-deploy/copy-url.png)
+   ![Копирование URL-адреса](./media/resource-manager-cloud-shell-deploy/copy-url.png)
 
 1. Откройте командную строку.
 

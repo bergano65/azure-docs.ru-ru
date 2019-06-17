@@ -10,10 +10,10 @@ manager: cgronlun
 author: HeidiSteen
 ms.custom: seodec2018
 ms.openlocfilehash: f76d944f614f07a4428d4e4100f6a08a375d96dc
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65795795"
 ---
 # <a name="analyzers-for-text-processing-in-azure-search"></a>Анализаторы для обработки текста в службе "Поиск Azure"
@@ -58,7 +58,7 @@ ms.locfileid: "65795795"
 
 Назначение свойств **analyzer** или **indexAnalyzer** полю, которое уже физически создано, запрещено. Если что-то из этого вам не понятно, просмотрите приведенную ниже таблицу, чтобы определить, какие действия следует пересмотреть и почему.
  
- | Сценарий | Воздействие | Действия |
+ | Сценарий | Влияние | Действия |
  |----------|--------|-------|
  | Добавление нового поля | минимальный | Если поле еще не существует в схеме, то редакция поля не требуется, так как поле еще физически не присутствует в вашем индексе. Вы можете использовать запрос [Update Index](https://docs.microsoft.com/rest/api/searchservice/update-index), чтобы добавить новое поле к имеющемуся индексу, запрос [mergeOrUpload](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents), чтобы заполнить его.|
  | Добавьте атрибуты **analyzer** или **indexAnalyzer** в имеющееся индексированное поле. | [перестроение](search-howto-reindex.md) | Инвертированный индекс для этого поля нужно воссоздать с нуля, а содержимое для этих полей нужно повторно проиндексировать. <br/> <br/>Для разрабатываемых индексов [удалите](https://docs.microsoft.com/rest/api/searchservice/delete-index) и [создайте](https://docs.microsoft.com/rest/api/searchservice/create-index) индекс, чтобы выбрать новое определение поля. <br/> <br/>Для индексов в рабочей среде перестроение можно отложить, создав другое поле, чтобы указать измененное определение и начать использовать его. Для внедрения нового поля используется запрос [Update Index](https://docs.microsoft.com/rest/api/searchservice/update-index), а запрос [mergeOrUpload](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents) позволяет заполнить его. Позже в рамках планового обслуживания индекса можно очистить его, чтобы удалить устаревшие поля. |

@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
 ms.openlocfilehash: 1ab404b838af65dcb75395dfeee1ca0553e497a1
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66122527"
 ---
 ## <a name="specifying-structure-definition-for-rectangular-datasets"></a>Указание определения структуры для прямоугольных наборов данных
@@ -19,7 +19,7 @@ ms.locfileid: "66122527"
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
 | name |Имя столбца. |Да |
-| тип |Тип данных столбца. Для получения дополнительных сведений о том, когда следует указывать информацию о типе, см. раздел преобразований типов. |Нет |
+| type |Тип данных столбца. Для получения дополнительных сведений о том, когда следует указывать информацию о типе, см. раздел преобразований типов. |Нет |
 | culture |Язык и региональные параметры на основе .NET, используемые при указании типа, если это тип .NET Datetime или Datetimeoffset. Значение по умолчанию — en-us. |Нет |
 | свойства |Строка формата, используемая при указании типа, если это тип .NET Datetime или Datetimeoffset. |Нет |
 
@@ -58,7 +58,7 @@ ms.locfileid: "66122527"
 * Guid
 * Datetime
 * Datetimeoffset
-* Timespan 
+* Временной диапазон 
 
 Чтобы упростить разбор пользовательской строки Datetime, для типов Datetime и Datetimeoffset можно при необходимости указать также строки culture и format. См. пример преобразования типа ниже.
 

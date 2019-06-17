@@ -13,15 +13,15 @@ ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: jingwang
 ms.openlocfilehash: eca5e4cc96996c35e7c2181746cdb3de2e5a602c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61259523"
 ---
 # <a name="copy-data-to-or-from-azure-cosmos-db-sql-api-by-using-azure-data-factory"></a>Копирование данных в базу данных Azure Cosmos DB (API SQL) или из нее с помощью Фабрики данных Azure
 
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](v1/data-factory-azure-documentdb-connector.md)
 > * [Текущая версия](connector-azure-cosmos-db.md)
 
@@ -169,7 +169,7 @@ ms.locfileid: "61259523"
 |:--- |:--- |:--- |
 | type | Свойство **type** источника действия копирования должно иметь значение **DocumentDbCollectionSource**. |Да |
 | query |Укажите запрос Azure Cosmos DB для чтения данных.<br/><br/>Пример:<br /> `SELECT c.BusinessEntityID, c.Name.First AS FirstName, c.Name.Middle AS MiddleName, c.Name.Last AS LastName, c.Suffix, c.EmailPromotion FROM c WHERE c.ModifiedDate > \"2009-01-01T00:00:00\"` |Нет <br/><br/>Если не указано, то выполняется инструкция SQL `select <columns defined in structure> from mycollection`. |
-| nestingSeparator |Специальный знак, обозначающий, что документ является вложенным, и определяющий, как преобразовать результирующий набор в плоскую структуру.<br/><br/>Например, если запрос Azure Cosmos DB возвращает вложенный результат `"Name": {"First": "John"}`, действие копирования идентифицирует имя колонки как `Name.First` со значением "John", в котором **nestedSeparator** является точкой (**.** ) |Нет<br />Значение по умолчанию — **.** (точка). |
+| nestingSeparator |Специальный знак, обозначающий, что документ является вложенным, и определяющий, как преобразовать результирующий набор в плоскую структуру.<br/><br/>Например, если запрос Azure Cosmos DB возвращает вложенный результат `"Name": {"First": "John"}`, действие копирования идентифицирует имя колонки как `Name.First` со значением "John", в котором **nestedSeparator** является точкой ( **.** ) |Нет<br />Значение по умолчанию — **.** (точка). |
 
 **Пример**
 
@@ -214,7 +214,7 @@ ms.locfileid: "61259523"
 | type | Свойство **type** приемника действия копирования должно иметь значение **DocumentDbCollectionSink**. |Да |
 | writeBehavior |Описывает способ записи данных в Azure Cosmos DB. Допустимые значения: **insert** и **upsert**.<br/><br/>Поведение **upsert** — замена документа, если документ с таким идентификатором уже существует. В противном выполняется вставка документа.<br /><br />**Примечание**. Фабрика данных автоматически создает идентификатор для документа, если идентификатор не указан в исходном документе или с помощью сопоставления столбцов. Это означает, что для правильной работы **upsert** у документа должен быть идентификатор. |Нет<br />(По умолчанию используется **insert**.) |
 | writeBatchSize | Фабрика данных использует [библиотеку массового исполнителя Azure Cosmos DB](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started) для записи данных в Azure Cosmos DB. Свойство **writeBatchSize** определяет размер документов, которые ADF передает в библиотеку. Вы можете увеличить значение **writeBatchSize** для повышения производительности или уменьшить значение, если документ большого размера. См. рекомендации ниже. |Нет<br />(Значение по умолчанию — **10 000**.) |
-| nestingSeparator |Специальный знак в имени **исходного** столбца, который указывает, что нужен вложенный документ. <br/><br/>Например, `Name.First` в выходной структуре набора данных создает приведенную ниже структуру JSON в документе Azure Cosmos DB, в которой **nestedSeparator** является точкой (**.** ) `"Name": {"First": "[value maps to this column from source]"}`  |Нет<br />Значение по умолчанию — **.** (точка). |
+| nestingSeparator |Специальный знак в имени **исходного** столбца, который указывает, что нужен вложенный документ. <br/><br/>Например, `Name.First` в выходной структуре набора данных создает приведенную ниже структуру JSON в документе Azure Cosmos DB, в которой **nestedSeparator** является точкой ( **.** ) `"Name": {"First": "[value maps to this column from source]"}`  |Нет<br />Значение по умолчанию — **.** (точка). |
 
 >[!TIP]
 >В Cosmos DB размер одного запроса не должен превышать 2 МБ. Формула выглядит так: размер запроса = размера одного документа * размер пакета для записи. Если появится ошибка **Запрос слишком большой**, **уменьшите значение `writeBatchSize`** в конфигурации приемника действия копирования.

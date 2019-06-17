@@ -12,10 +12,10 @@ ms.date: 05/21/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.openlocfilehash: c3088ae777fe1a64be218105d36fdb9e01d7b798
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66172240"
 ---
 # <a name="debug-application-proxy-connector-issues"></a>Отладка проблем соединителя прокси приложения 
@@ -45,7 +45,7 @@ ms.locfileid: "66172240"
 |1 | Найти группу соединителей, которые назначены для приложения | Возможно, вы установили соединитель на нескольких серверах, в этом случае следует соединители [назначенные группы соединителей](application-proxy-connector-groups.md#assign-applications-to-your-connector-groups). Дополнительные сведения о группах соединителей см. в статье [Публикация приложений в отдельных сетях и расположениях с помощью групп соединителей](application-proxy-connector-groups.md). |
 |2 | Установка соединителя и назначить группу | Если вы не установили соединитель, см. в разделе [Установка и регистрация соединителя](application-proxy-add-on-premises-application.md#install-and-register-a-connector).<br></br>Если соединитель не назначены в группу, см. в разделе [назначения соединителя в группу](application-proxy-connector-groups.md#create-connector-groups).<br></br>Если приложение не назначено группе соединителей, см. в разделе [назначение приложения группе соединителей](application-proxy-connector-groups.md#assign-applications-to-your-connector-groups).|
 |3 | Выполнение теста порт на сервере соединителя | На сервере соединителя, выполните тест порт с помощью [telnet](https://docs.microsoft.com/windows-server/administration/windows-commands/telnet) или других портов тестирование средства для проверки, если открыты порты 443 и 80.|
-|4. | Настроить домены и порты | [Убедитесь, что домены и порты настроены правильно](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) для правильной работы соединителя, существуют некоторые, которые должны быть открыты порты и URL-адреса, сервер должен иметь возможность доступа к. |
+|4\. | Настроить домены и порты | [Убедитесь, что домены и порты настроены правильно](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) для правильной работы соединителя, существуют некоторые, которые должны быть открыты порты и URL-адреса, сервер должен иметь возможность доступа к. |
 |5 | Проверьте использование внутренних прокси-сервера | Установите этот флажок, чтобы узнать, соединители с помощью серверной части прокси-серверы или обойти их. Дополнительные сведения см. в разделе [устранения неполадок соединителя прокси-сервера и службы проблемы с подключением](application-proxy-configure-connectors-with-proxy-servers.md#troubleshoot-connector-proxy-problems-and-service-connectivity-issues). |
 |6 | Обновление соединителя и обновления для использования прокси-сервер серверной части | Если используется прокси-сервер серверной части, необходимо убедиться, что соединитель использует тот же прокси. Дополнительные сведения об устранении неполадок и Настройка соединителей для работы с прокси-серверами, см. в разделе [работа с имеющимися локальными прокси-серверы](application-proxy-configure-connectors-with-proxy-servers.md). |
 |7 | Загрузить внутренний URL-адрес приложения, на сервере соединителя | На сервере соединителя Загрузите внутренний URL-адрес приложения. |

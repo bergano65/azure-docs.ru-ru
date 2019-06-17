@@ -13,10 +13,10 @@ ms.workload: NA
 ms.date: 07/31/2018
 ms.author: saysa
 ms.openlocfilehash: 3b1e6f769d5c65065d95ac96c4ab4ed10702e5cf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61038846"
 ---
 # <a name="use-jenkins-to-build-and-deploy-your-linux-applications"></a>Создание и развертывание приложений Linux с помощью Jenkins
@@ -220,7 +220,7 @@ Jenkins можно настроить внутри или за пределам�
 
    a. На странице репозитория GitHub выберите **Settings** (Параметры)  >  **Integrations and Services** (Интеграция и службы).
 
-   2. Выберите **Add Service** (Добавить службу), введите **Jenkins** и выберите **Jenkins-Github plugin** (Модуль Jenkins-Github).
+   2\. Выберите **Add Service** (Добавить службу), введите **Jenkins** и выберите **Jenkins-Github plugin** (Модуль Jenkins-Github).
 
    c. Введите URL-адрес webhook для Jenkins (по умолчанию это должен быть `http://<PublicIPorFQDN>:8081/github-webhook/`). **Добавьте или обновите службу**.
 
@@ -259,7 +259,7 @@ Jenkins можно настроить внутри или за пределам�
         openssl pkcs12 -in clustercert.pfx -out clustercert.pem -nodes -passin pass:
         ``` 
 
-        Если PFX-файл защищен паролем, укажите его в параметре `-passin`. Пример.
+        Если PFX-файл защищен паролем, укажите его в параметре `-passin`. Пример:
 
         ```sh
         openssl pkcs12 -in clustercert.pfx -out clustercert.pem -nodes -passin pass:MyPassword1234!

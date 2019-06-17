@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 01/30/2019
+ms.date: 06/11/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: fa79f519c8f3eb8baeaab04870f22a1cfefa59ab
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1792cf2359caef3211b4ce1ac86928eeb85d682b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61431351"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67053163"
 ---
 # <a name="use-bot-with-qna-maker-and-luis-to-distribute-your-knowledge-base"></a>Использование бота с QnA Maker и LUIS для распределения базы знаний
 По мере роста базы знаний QnA Maker становится трудно поддерживать ее как единый монолитный набор, поэтому базу знаний необходимо разделить на маленькие логические блоки.
@@ -27,7 +27,7 @@ ms.locfileid: "61431351"
 
 ## <a name="architecture"></a>Архитектура
 
-![Архитектура API распознавания речи службы QnA Maker](../media/qnamaker-tutorials-qna-luis/qnamaker-luis-architecture.PNG)
+![QnA Maker с архитектурой Language Understanding](../media/qnamaker-tutorials-qna-luis/qnamaker-luis-architecture.PNG)
 
 В вышеприведенном сценарии показано, что из модели API распознавания речи (LUIS) сначала QnA Maker получает намерение входящего вопроса, а затем использует его, чтобы направить в правильную базу знаний QnA Maker.
 
@@ -51,7 +51,7 @@ ms.locfileid: "61431351"
 
 ## <a name="web-app-bot"></a>Бот веб-приложения
 
-1. [Создайте бот веб-приложения](https://docs.microsoft.com/azure/cognitive-services/luis/luis-csharp-tutorial-build-bot-framework-sample) с помощью шаблона LUIS. Выберите пакет SDK версии 3.x и C# в качестве языка программирования.
+1. [Создание программы-робота, «Basic» веб-приложение](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart?view=azure-bot-service-4.0) включающее приложением LUIS автоматически. Выберите пакет SDK 4.x и C# языка программирования.
 
 1. После создания бота веб-приложения выберите его на портале Azure.
 1. Выберите **Параметры приложения** на странице навигации службы бота веб-приложения, затем прокрутите вниз до раздела с доступными параметрами **Параметры приложения**.

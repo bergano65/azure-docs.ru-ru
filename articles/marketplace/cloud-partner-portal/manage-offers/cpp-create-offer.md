@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: pabutler
 ms.openlocfilehash: cc0d8e68578500d4fa5f1b167790d60c8f7c5067
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64942148"
 ---
 # <a name="create-azure-marketplace-and-appsource-offers"></a>Создание предложений Azure Marketplace и AppSource
@@ -36,7 +36,7 @@ ms.locfileid: "64942148"
 | **Отменить** | Отменяет последние изменения ввода данных (с момента последнего сохранения).             |
 | **Сравнить** | Сравнивает состояние текущего предложения с опубликованным.  Доступна только после успешной публикации предложения.  |
 | **Опубликовать** | Начинает процесс публикации предложения.                       |
-| **Удалить**  | Удаляет созданное, но не опубликованное предложение. |
+| **Удаление**  | Удаляет созданное, но не опубликованное предложение. |
 |   |   |
 
 

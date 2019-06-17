@@ -13,12 +13,12 @@ ms.topic: reference
 ms.date: 09/08/2018
 ms.author: cshoe
 ms.custom: ''
-ms.openlocfilehash: 3b4ed6d1ba83e2adb96bcfac986381dccbbef56f
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: 0a202621a9da031815ebbff3b121ea7f5e1eccfe
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65416187"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67062182"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Триггеры таймера для службы "Функции Azure" 
 
@@ -45,8 +45,9 @@ ms.locfileid: "65416187"
 * [C#](#c-example)
 * [Скрипт C# (CSX)](#c-script-example)
 * [F#](#f-example)
-* [JavaScript](#javascript-example)
 * [Java](#java-example)
+* [JavaScript](#javascript-example)
+* [Python](#python-example)
 
 ### <a name="c-example"></a>Пример C#
 
@@ -117,6 +118,21 @@ let Run(myTimer: TimerInfo, log: ILogger ) =
     log.LogInformation(sprintf "F# function executed at %s!" now)
 ```
 
+### <a name="java-example"></a>Пример Java
+
+Следующий пример функции активируется и выполняется каждые пять минут. Аннотация `@TimerTrigger` для функции определяет расписание, используя тот же формат строки, что и [выражения CRON](https://en.wikipedia.org/wiki/Cron#CRON_expression).
+
+```java
+@FunctionName("keepAlive")
+public void keepAlive(
+  @TimerTrigger(name = "keepAliveTrigger", schedule = "0 *&#47;5 * * * *") String timerInfo,
+      ExecutionContext context
+ ) {
+     // timeInfo is a JSON string, you can deserialize it to an object using your favorite JSON library
+     context.getLogger().info("Timer is triggered: " + timerInfo);
+}
+```
+
 ### <a name="javascript-example"></a>Пример JavaScript
 
 В следующем примере показаны привязка триггера таймера в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует эту привязку. Эта функция выполняет запись в журнал, указывая, когда ее вызов выполняется из-за пропущенного запуска по расписанию. Объект [объекта таймера](#usage) передается в функцию.
@@ -148,19 +164,37 @@ module.exports = function (context, myTimer) {
 };
 ```
 
-### <a name="java-example"></a>Пример Java
+### <a name="python-example"></a>Пример на Python
 
-Следующий пример функции активируется и выполняется каждые пять минут. Аннотация `@TimerTrigger` для функции определяет расписание, используя тот же формат строки, что и [выражения CRON](https://en.wikipedia.org/wiki/Cron#CRON_expression).
+В следующем примере используется привязка, конфигурация которого описан в триггера таймера *function.json* файла. Фактический [функции Python](functions-reference-python.md) , использует привязку описан  *__init__.py* файла. Объект, переданный функции имеет тип [azure.functions.TimerRequest объект](/python/api/azure-functions/azure.functions.timerrequest). Функции логики записывает в журналы, указывающее, является ли текущий вызов из-за пропущенного запуска по расписанию. 
 
-```java
-@FunctionName("keepAlive")
-public void keepAlive(
-  @TimerTrigger(name = "keepAliveTrigger", schedule = "0 *&#47;5 * * * *") String timerInfo,
-      ExecutionContext context
- ) {
-     // timeInfo is a JSON string, you can deserialize it to an object using your favorite JSON library
-     context.getLogger().info("Timer is triggered: " + timerInfo);
+Данные привязки в файле *function.json*:
+
+```json
+{
+    "name": "mytimer",
+    "type": "timerTrigger",
+    "direction": "in",
+    "schedule": "0 */5 * * * *"
 }
+```
+
+Ниже приведен код Python.
+
+```python
+import datetime
+import logging
+
+import azure.functions as func
+
+def main(mytimer: func.TimerRequest) -> None:
+    utc_timestamp = datetime.datetime.utcnow().replace(
+        tzinfo=datetime.timezone.utc).isoformat()
+
+    if mytimer.past_due:
+        logging.info('The timer is past due!')
+
+    logging.info('Python timer trigger function ran at %s', utc_timestamp)
 ```
 
 ## <a name="attributes"></a>Атрибуты
@@ -190,7 +224,7 @@ public static void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, ILogger
 |**type** | Недоступно | Этому свойству необходимо присвоить значение "timerTrigger". Это свойство задается автоматически при создании триггера на портале Azure.|
 |**direction** | Недоступно | Для этого свойства необходимо задать значение "in". Это свойство задается автоматически при создании триггера на портале Azure. |
 |**name** | Недоступно | Имя переменной, представляющей объект таймера в коде функции. | 
-|**schedule**|**ScheduleExpression**|Значение [выражения CRON](#cron-expressions) или [TimeSpan](#timespan). `TimeSpan` можно использовать только для приложения-функции, которая работает в плане службы приложений. Вы можете поместить выражение расписания в параметр приложения и присвоить этому свойству имя параметра приложения, заключенное в знаки **%**, например: "%ScheduleAppSetting%". |
+|**schedule**|**ScheduleExpression**|Значение [выражения CRON](#cron-expressions) или [TimeSpan](#timespan). `TimeSpan` можно использовать только для приложения-функции, которая работает в плане службы приложений. Вы можете поместить выражение расписания в параметр приложения и присвоить этому свойству имя параметра приложения, заключенное в знаки **%** , например: "%ScheduleAppSetting%". |
 |**runOnStartup**|**RunOnStartup**|Если настроено значение `true`, функция вызывается при запуске среды выполнения. Например, среда выполнения запускается, когда приложение-функция выходит из спящего режима (в который она перешла из-за отсутствия активности), когда приложение-функция перезапускается из-за изменения функции или когда приложение-функция масштабируется. Поэтому **runOnStartup** редко следует задавать `true`, если стоит делать это вообще, — особенно в рабочей среде. |
 |**useMonitor**|**UseMonitor**|Установите значение `true` или`false`, чтобы указать, следует ли отслеживать расписание. При мониторинге расписания его экземпляры сохраняются, чтобы обеспечить его корректную обработку даже при перезапуске экземпляров приложения-функции. Если значение явно не задано, то по умолчанию используется `true` для расписаний с интервалом повторения более чем 1 минута. Для расписаний, выполняющихся чаще одного раза в минуту, значением по умолчанию является `false`.
 

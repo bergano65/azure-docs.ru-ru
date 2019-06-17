@@ -14,10 +14,10 @@ ms.date: 04/10/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: c97793dc28b4ef097d8baa34678aeb92bf123809
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61473507"
 ---
 # <a name="overview-of-sql-server-on-azure-virtual-machines-linux"></a>Обзор SQL Server на виртуальных машинах Azure (Linux)
@@ -50,11 +50,11 @@ SQL Server на виртуальных машинах Azure позволяет �
 
 При настройке SQL Server в Linux установите пакет ядра СУБД, а затем некоторые дополнительные пакеты, в зависимости от ваших целей. Образы виртуальных машин Linux для SQL Server автоматически устанавливают большинство пакетов. В следующей таблице показаны установленные пакеты для каждого дистрибутива.
 
-| Дистрибуция | [Ядро СУБД](https://docs.microsoft.com/sql/linux/sql-server-linux-setup) | [Инструменты](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-tools) | [Агент SQL Server](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-sql-agent) | [Полнотекстовый поиск](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-full-text-search) | [SSIS](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-ssis) | [Надстройка для обеспечения высокого уровня доступности](https://docs.microsoft.com/sql/linux/sql-server-linux-business-continuity-dr) |
+| Дистрибутив | [Ядро СУБД](https://docs.microsoft.com/sql/linux/sql-server-linux-setup) | [Инструменты](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-tools) | [Агент SQL Server](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-sql-agent) | [Полнотекстовый поиск](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-full-text-search) | [SSIS](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-ssis) | [Надстройка для обеспечения высокого уровня доступности](https://docs.microsoft.com/sql/linux/sql-server-linux-business-continuity-dr) |
 |---|---|---|---|---|---|---|
-| RHEL | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![нет](./media/sql-server-linux-virtual-machines-overview/no.png) |
-| SLES | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![нет](./media/sql-server-linux-virtual-machines-overview/no.png) | ![нет](./media/sql-server-linux-virtual-machines-overview/no.png) |
-| Ubuntu | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![да](./media/sql-server-linux-virtual-machines-overview/yes.png) |
+| RHEL | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Нет](./media/sql-server-linux-virtual-machines-overview/no.png) |
+| SLES | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Нет](./media/sql-server-linux-virtual-machines-overview/no.png) | ![Нет](./media/sql-server-linux-virtual-machines-overview/no.png) |
+| Ubuntu | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Да](./media/sql-server-linux-virtual-machines-overview/yes.png) |
 
 ## <a name="related-products-and-services"></a>Связанные продукты и услуги
 

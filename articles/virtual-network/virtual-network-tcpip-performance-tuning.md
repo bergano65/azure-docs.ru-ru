@@ -29,10 +29,10 @@ ms.author:
 - btalb
 - prachank
 ms.openlocfilehash: ad1a5b69e4ec7b44c0e61a5ddd2c06633464d31a
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66234996"
 ---
 # <a name="tcpip-performance-tuning-for-azure-vms"></a>TCP/IP Настройка производительности для виртуальных машин Azure
@@ -238,7 +238,7 @@ Set-NetTCPSetting
 |-|-|-|-|
 |**/ Scannow**|**Коэффициент масштабирования**|**Коэффициент масштабирования**|**Для формулы<br/>вычислить максимальный размер окна**|
 |Отключено|Нет|Нет|Размер окна|
-|С ограниченным доступом|4.|2^4|Размер окна * (2 ^ 4)|
+|С ограниченным доступом|4\.|2^4|Размер окна * (2 ^ 4)|
 |Ограничен|2|2^2|Размер окна * (2 ^ 2)|
 |В обычном режиме|8|2^8|Размер окна * (2 ^ 8)|
 |Экспериментальная возможность|14|2^14|Размер окна * (2 ^ 14)|

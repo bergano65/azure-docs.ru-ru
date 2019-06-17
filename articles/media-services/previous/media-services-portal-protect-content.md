@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 65e5b5502b7d63d89845781487443f539a708816
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64866963"
 ---
 # <a name="configure-content-protection-policies-by-using-the-azure-portal"></a>Настройка политик защиты содержимого с помощью портала Azure
@@ -107,7 +107,7 @@ ms.locfileid: "64866963"
 
     a. **PlayReady and Widevine with MPEG-DASH** (PlayReady и Widevine с MPEG-DASH): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine.
 
-    2. **PlayReady and Widevine with MPEG-DASH + FairPlay with HLS** (PlayReady и Widevine с MPEG-DASH + FairPlay с HLS): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine. Этот параметр также шифрует потоки HLS, используя FairPlay.
+    2\. **PlayReady and Widevine with MPEG-DASH + FairPlay with HLS** (PlayReady и Widevine с MPEG-DASH + FairPlay с HLS): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine. Этот параметр также шифрует потоки HLS, используя FairPlay.
 
     c. **PlayReady only with Smooth Streaming, HLS and MPEG-DASH** (PlayReady только с Smooth Streaming, HLS и MPEG-DASH): динамически шифрует потоки Smooth Streaming, HLS и MPEG-DASH, используя систему DRM PlayReady.
 

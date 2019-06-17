@@ -9,10 +9,10 @@ ms.date: 5/30/2019
 ms.author: jingwang
 ms.custom: include file
 ms.openlocfilehash: ac0747dcff4e74363a58dc9aaf6da4dbd4c6a1c7
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66427609"
 ---
 Фабрика данных Azure является мультитенантной службой, имеет следующие ограничения по умолчанию в месте, чтобы убедиться в том, что подписки клиентов защищены от рабочих нагрузок друг друга. Чтобы увеличить значения ограничений, вплоть до максимального значения для вашей подписки, обратитесь в службу поддержки.

@@ -16,10 +16,10 @@ ms.date: 11/10/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ab0a5b021048f0f684473d3f54bbeadf870cd007
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66112798"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-a-vm-using-the-azure-portal"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине с помощью портала Azure
@@ -61,7 +61,7 @@ ms.locfileid: "66112798"
 
 2. Перейдите к нужной виртуальной машине и выберите **Удостоверение**.
 
-3. На вкладке **Назначено системой** в области **Состояние** нажмите кнопку **Вкл.**, а затем — **Сохранить**.
+3. На вкладке **Назначено системой** в области **Состояние** нажмите кнопку **Вкл.** , а затем — **Сохранить**.
 
    ![Снимок экрана страницы "Конфигурация"](./media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade.png)  
 
@@ -75,7 +75,7 @@ ms.locfileid: "66112798"
 
 2. Перейдите к нужной виртуальной машине и выберите **Удостоверение**.
 
-3. На вкладке **Назначено системой** в области **Состояние** нажмите кнопку **Выкл.**, а затем — **Сохранить**.
+3. На вкладке **Назначено системой** в области **Состояние** нажмите кнопку **Выкл.** , а затем — **Сохранить**.
 
    ![Снимок экрана страницы "Конфигурация"](./media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade-disable.png)
 
