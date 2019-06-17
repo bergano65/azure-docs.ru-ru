@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/30/2019
 ms.custom: seodec18
 ms.openlocfilehash: f0e1a79073596dcabfacb7163e12b33bb582b7c3
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66238916"
 ---
 # <a name="shape-events-with-azure-time-series-insights-preview"></a>Формирование событий с помощью предварительной версии службы "Аналитика временных рядов Azure"
@@ -110,7 +110,7 @@ ms.locfileid: "66238916"
 
 Предварительная версия службы "Аналитика временных рядов" объединяет таблицу (после преобразования в плоскую структуру) во время запроса. В таблице содержатся дополнительные столбцы, такие как **Тип**. В следующем примере показано, как можно [фигуры](./time-series-insights-send-events.md#json) данные телеметрии.
 
-| deviceId  | type | L1 | L2 |  timestamp | series.Flow Rate ft3/s | series.Engine Oil Pressure psi |
+| deviceId  | type | L1 | L2 | timestamp | series.Flow Rate ft3/s | series.Engine Oil Pressure psi |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 | `FXXX` | Default_Type | Имитирующее устройство | Система аккумулятора | 2018-01-17T01:17:00Z |   1.0172575712203979 |    34.7 |
 | `FXXX` | Default_Type | Имитирующее устройство |   Система аккумулятора |    2018-01-17T01:17:00Z | 2.445906400680542 |  49.2 |

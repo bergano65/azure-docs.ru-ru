@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 09/21/2018
 ms.author: roiyz
 ms.openlocfilehash: 6bd3ea4e664523fe8014be40c51d573ed5158ecf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60800264"
 ---
 # <a name="chef-vm-extension-for-linux-and-windows"></a>Расширение Chef виртуальной машины для Linux и Windows
@@ -68,11 +68,11 @@ Chef работает во всех [операционных системах, 
 
 ### <a name="core-property-values"></a>Значения свойств ядра
 
-| ИМЯ | Значение и пример | Тип данных
+| Name | Значение и пример | Тип данных
 | ---- | ---- | ---- 
-| версия_API | `2017-12-01` | Строка (дата) |
+| apiVersion | `2017-12-01` | Строка (дата) |
 | publisher | `Chef.Bootstrap.WindowsAzure` | string |
-| тип | `LinuxChefClient` (Linux), `ChefClient` (Windows) | string |
+| type | `LinuxChefClient` (Linux), `ChefClient` (Windows) | string |
 | typeHandlerVersion | `1210.12` | Строка (двойная) |
 
 ### <a name="settings"></a>Параметры
@@ -139,7 +139,7 @@ az vm extension list --resource-group myResourceGroup --vm-name myExistingVM -o 
 /var/lib/waagent/Chef.Bootstrap.WindowsAzure.LinuxChefClient
 ```
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 ```powershell
 C:\Packages\Plugins\Chef.Bootstrap.WindowsAzure.ChefClient\

@@ -16,10 +16,10 @@ ms.date: 06/20/2017
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: fdc2cd8f2218d50aa49d6b4eab2800eb6c92d9c9
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62118117"
 ---
 # <a name="create-an-automatic-scaling-formula-for-scaling-compute-nodes-in-a-batch-pool"></a>Создание формулы автоматического масштабирования для масштабирования вычислительных узлов в пуле пакетной службы
@@ -123,7 +123,7 @@ $TargetDedicatedNodes=min(maxNumberofVMs, pendingTaskSamples);
 ## <a name="types"></a>Типы
 В формуле поддерживаются следующие типы:
 
-* Double
+* double
 * doubleVec
 * doubleVecList
 * string
@@ -154,22 +154,22 @@ $TargetDedicatedNodes=min(maxNumberofVMs, pendingTaskSamples);
 
 | Операция | Поддерживаемые операторы | Тип результата |
 | --- | --- | --- |
-| double *оператор* double |+, -, *, / |Double |
+| double *оператор* double |+, -, *, / |double |
 | double *оператор* timeinterval |* |timeInterval |
 | doubleVec *оператор* double |+, -, *, / |doubleVec |
 | doubleVec *оператор* doubleVec |+, -, *, / |doubleVec |
 | timeinterval *оператор* double |*, / |timeInterval |
 | timeinterval *оператор* timeinterval |+, - |timeInterval |
-| timeinterval *оператор* timestamp |+ | timestamp |
-| timestamp *оператор* timeinterval |+ | timestamp |
+| timeinterval *оператор* timestamp |+ |timestamp |
+| timestamp *оператор* timeinterval |+ |timestamp |
 | timestamp *оператор* timestamp |- |timeInterval |
-| *оператор*double |-, ! |Double |
+| *оператор*double |-, ! |double |
 | *оператор*timeInterval |- |timeInterval |
-| double *оператор* double |<, <=, ==, >=, >, != |Double |
-| string *оператор* string |<, <=, ==, >=, >, != |Double |
-| timestamp *оператор* timestamp |<, <=, ==, >=, >, != |Double |
-| timeinterval *оператор* timeinterval |<, <=, ==, >=, >, != |Double |
-| double *оператор* double |&&, &#124;&#124; |Double |
+| double *оператор* double |<, <=, ==, >=, >, != |double |
+| string *оператор* string |<, <=, ==, >=, >, != |double |
+| timestamp *оператор* timestamp |<, <=, ==, >=, >, != |double |
+| timeinterval *оператор* timeinterval |<, <=, ==, >=, >, != |double |
+| double *оператор* double |&&, &#124;&#124; |double |
 
 При тестировании double с тернарным оператором (`double ? statement1 : statement2`) ненулевое значение равно **true**, а нулевое — **false**.
 
@@ -178,27 +178,27 @@ $TargetDedicatedNodes=min(maxNumberofVMs, pendingTaskSamples);
 
 | Функция | Тип возвращаемого значения | Описание |
 | --- | --- | --- |
-| avg(doubleVecList) |Double |Среднее значение для всех значений в doubleVecList. |
-| len(doubleVecList) |Double |Возвращает длину вектора, созданного из doubleVecList. |
-| lg(double) |Double |Возвращает логарифм double по основанию 2. |
+| avg(doubleVecList) |double |Среднее значение для всех значений в doubleVecList. |
+| len(doubleVecList) |double |Возвращает длину вектора, созданного из doubleVecList. |
+| lg(double) |double |Возвращает логарифм double по основанию 2. |
 | lg(doubleVecList) |doubleVec |Возвращает покомпонентный логарифм по основанию 2 от значения doubleVecList. В качестве параметра необходимо явно передать vec(double). В противном случае предполагается использование версии lg(double). |
-| ln(double) |Double |Возвращает натуральный логарифм double. |
+| ln(double) |double |Возвращает натуральный логарифм double. |
 | ln(doubleVecList) |doubleVec |Возвращает покомпонентный логарифм по основанию 2 от значения doubleVecList. В качестве параметра необходимо явно передать vec(double). В противном случае предполагается использование версии lg(double). |
-| log(double) |Double |Возвращает логарифм double по основанию 10. |
+| log(double) |double |Возвращает логарифм double по основанию 10. |
 | log(doubleVecList) |doubleVec |Возвращает покомпонентный логарифм по основанию 10 от значения doubleVecList. В качестве одного параметра double необходимо явно передать vec(double). В противном случае предполагается использование версии log(double). |
-| max(doubleVecList) |Double |Возвращает максимальное значение в doubleVecList. |
-| min(doubleVecList) |Double |Возвращает минимальное значение в doubleVecList. |
-| norm(doubleVecList) |Double |Возвращает 2-норму вектора, созданного из doubleVecList. |
-| percentile(doubleVec v, double p) |Double |Возвращает элемент процентиля вектора v. |
-| rand() |Double |Возвращает случайное значение от 0,0 до 1,0. |
-| range(doubleVecList) |Double |Возвращает разницу между минимальным и максимальным значениями в doubleVecList. |
-| std(doubleVecList) |Double |Возвращает среднеквадратичное отклонение выборки для значений в doubleVecList. |
+| max(doubleVecList) |double |Возвращает максимальное значение в doubleVecList. |
+| min(doubleVecList) |double |Возвращает минимальное значение в doubleVecList. |
+| norm(doubleVecList) |double |Возвращает 2-норму вектора, созданного из doubleVecList. |
+| percentile(doubleVec v, double p) |double |Возвращает элемент процентиля вектора v. |
+| rand() |double |Возвращает случайное значение от 0,0 до 1,0. |
+| range(doubleVecList) |double |Возвращает разницу между минимальным и максимальным значениями в doubleVecList. |
+| std(doubleVecList) |double |Возвращает среднеквадратичное отклонение выборки для значений в doubleVecList. |
 | stop() | |Останавливает вычисление выражения автоматического масштабирования. |
-| sum(doubleVecList) |Double |Возвращает сумму всех компонентов doubleVecList. |
-| time(string dateTime="") | timestamp |Возвращает отметку времени для текущего времени, если параметр не передан, и отметку времени для строки dateTime, если параметр передан. Поддерживаемые форматы даты и времени: W3C-DTF и RFC 1123. |
-| val(doubleVec v, double i) |Double |Возвращает значение элемента с индексом i в векторе v с начальным индексом 0. |
+| sum(doubleVecList) |double |Возвращает сумму всех компонентов doubleVecList. |
+| time(string dateTime="") |timestamp |Возвращает отметку времени для текущего времени, если параметр не передан, и отметку времени для строки dateTime, если параметр передан. Поддерживаемые форматы даты и времени: W3C-DTF и RFC 1123. |
+| val(doubleVec v, double i) |double |Возвращает значение элемента с индексом i в векторе v с начальным индексом 0. |
 
-Некоторые функции, описанные в предыдущей таблице, могут принимать список в качестве аргумента. Список значений, разделенных запятыми, — это любая комбинация типов *double* и *doubleVec*. Пример.
+Некоторые функции, описанные в предыдущей таблице, могут принимать список в качестве аргумента. Список значений, разделенных запятыми, — это любая комбинация типов *double* и *doubleVec*. Пример:
 
 `doubleVecList := ( (double | doubleVec)+(, (double | doubleVec) )* )?`
 
@@ -217,7 +217,7 @@ $CPUPercent.GetSample(TimeInterval_Minute * 5)
 | GetSamplePeriod() |Возвращает период выборок, которые были получены в историческом наборе данных выборок. |
 | Count() |Возвращает общее количество выборок в журнале метрик. |
 | HistoryBeginTime() |Возвращает метку времени самой старой доступной выборки данных метрики. |
-| GetSamplePercent() |Возвращает процент выборок, которые доступны для заданного интервала времени. Пример.<br/><br/>`doubleVec GetSamplePercent( (timestamp or timeinterval) startTime [, (timestamp or timeinterval) endTime] )`<br/><br/>Так как метод `GetSample` завершается сбоем, то если процент возвращаемых выборок меньше указанного в параметре `samplePercent`, можно сначала воспользоваться методом `GetSamplePercent` для проверки. Затем при недостаточном количестве выборок можно выполнить другое действие без прерывания оценки автоматического масштабирования. |
+| GetSamplePercent() |Возвращает процент выборок, которые доступны для заданного интервала времени. Пример:<br/><br/>`doubleVec GetSamplePercent( (timestamp or timeinterval) startTime [, (timestamp or timeinterval) endTime] )`<br/><br/>Так как метод `GetSample` завершается сбоем, то если процент возвращаемых выборок меньше указанного в параметре `samplePercent`, можно сначала воспользоваться методом `GetSamplePercent` для проверки. Затем при недостаточном количестве выборок можно выполнить другое действие без прерывания оценки автоматического масштабирования. |
 
 ### <a name="samples-sample-percentage-and-the-getsample-method"></a>Выборки, процент выборок и метод *GetSample()*
 Основной операцией формулы автоматического масштабирования является получение данных метрик для задач и ресурсов и изменение размера пула на основе этих данных. Поэтому важно иметь четкое представление о том, как формулы автоматического масштабирования взаимодействуют с данными метрик (выборками).
@@ -242,7 +242,7 @@ $CPUPercent.GetSample(TimeInterval_Minute * 5)
 $runningTasksSample = $RunningTasks.GetSample(1 * TimeInterval_Minute, 6 * TimeInterval_Minute);
 ```
 
-Когда пакетная служба вычисляет приведенную выше строку, она возвращает диапазон выборок в виде вектора значений. Пример.
+Когда пакетная служба вычисляет приведенную выше строку, она возвращает диапазон выборок в виде вектора значений. Пример:
 
 ```
 $runningTasksSample=[1,1,1,1,1,1,1,1,1,1];
@@ -263,7 +263,7 @@ $runningTasksSample = $RunningTasks.GetSample(60 * TimeInterval_Second, 120 * Ti
 >
 >
 
-## <a name="metrics"></a>Метрики
+## <a name="metrics"></a>metrics
 При определении формулы можно использовать метрики ресурсов и задач. Целевое количество выделенных узлов в пуле определяется на основе данных метрики, которые были получены и оценены. Дополнительные сведения о каждой метрике см. в разделе [Переменные](#variables) выше.
 
 <table>
@@ -398,7 +398,7 @@ await pool.CommitAsync();
 
 ## <a name="enable-autoscaling-on-an-existing-pool"></a>Включение автомасштабирования в имеющемся пуле
 
-Каждый пакет SDK пакетной службы предоставляет способ включения автомасштабирования. Пример.
+Каждый пакет SDK пакетной службы предоставляет способ включения автомасштабирования. Пример:
 
 * [BatchClient.PoolOperations.EnableAutoScaleAsync][net_enableautoscaleasync] (библиотека .NET пакетной службы)
 * [Включение автомасштабирования пула][rest_enableautoscale] (REST API)
@@ -579,7 +579,7 @@ Error:
 ## <a name="example-autoscale-formulas"></a>Примеры формул автомасштабирования
 Давайте рассмотрим некоторые формулы, которые демонстрируют различные способы настройки количества вычислительных ресурсов в пуле.
 
-### <a name="example-1-time-based-adjustment"></a>Пример 1: Изменение с учетом времени
+### <a name="example-1-time-based-adjustment"></a>Пример 1 Изменение с учетом времени
 Предположим, вы хотите изменять размер пула в зависимости от дня недели и времени дня. В этом примере показано, как уменьшать и увеличивать количество узлов в пуле соответствующим образом.
 
 Формула сначала получает значение текущего времени. В рабочие дни (1–5) и часы (8:00–18:00) целевой размер пула равен 20 узлам. В противном случае он равен 10 узлам.
@@ -592,7 +592,7 @@ $isWorkingWeekdayHour = $workHours && $isWeekday;
 $TargetDedicatedNodes = $isWorkingWeekdayHour ? 20:10;
 ```
 
-### <a name="example-2-task-based-adjustment"></a>Пример 2: Изменение с учетом задачи
+### <a name="example-2-task-based-adjustment"></a>Пример 2 Изменение с учетом задачи
 В этом примере размер пула настраивается в зависимости от количества задач в очереди. В строках формул допускаются как комментарии, так и разрывы строк.
 
 ```csharp

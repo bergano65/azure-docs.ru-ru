@@ -11,10 +11,10 @@ ms.date: 05/10/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.openlocfilehash: de5649498dddcec8c65f2cfca6dcb39fa20a9267
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66242247"
 ---
 # <a name="designing-a-polybase-data-loading-strategy-for-azure-sql-data-warehouse"></a>Проектирование стратегии загрузки данных PolyBase для Хранилища данных SQL Azure
@@ -58,10 +58,10 @@ PolyBase загружает данные из текстовых файлов с
 |          int          |                             int                              |
 |        bigint         |                            bigint                            |
 |        Логическое        |                             bit                              |
-|        Double         |                            float;                             |
-|         float;         |                             real                             |
-|        Double         |                            money                             |
-|        Double         |                          smallmoney                          |
+|        double         |                            float                             |
+|         float         |                             real                             |
+|        double         |                            money                             |
+|        double         |                          smallmoney                          |
 |        string         |                            nchar                             |
 |        string         |                           nvarchar                           |
 |        string         |                             char                             |

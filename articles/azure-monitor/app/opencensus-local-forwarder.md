@@ -13,10 +13,10 @@ ms.date: 09/18/2018
 ms.reviewer: nimolnar
 ms.author: mbullwin
 ms.openlocfilehash: a7efe663a75fa29a31e7157c5eab24c2973a3758
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60699348"
 ---
 # <a name="local-forwarder-preview"></a>Локальный сервер пересылки (Предварительная версия)
@@ -27,7 +27,7 @@ ms.locfileid: "60699348"
 
 Локальный сервер пересылки является [проектом с открытым кодом на GitHub](https://github.com/Microsoft/ApplicationInsights-LocalForwarder/releases). Есть много способов запуска локального сервера пересылки на нескольких платформах.
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 #### <a name="windows-service"></a>Служба Windows
 
@@ -35,7 +35,7 @@ ms.locfileid: "60699348"
 
 > [!NOTE]
 > Для службы локального сервера пересылки требуется как минимум .NET Framework 4.7. При отсутствии .NET Framework 4.7 служба установится, но не запустится. Чтобы получить доступ к последней версии платформы .NET Framework, **[откройте страницу загрузки .NET Framework](
-https://www.microsoft.com/net/download/dotnet-framework-runtime/net472?utm_source=getdotnet&utm_medium=referral)**.
+https://www.microsoft.com/net/download/dotnet-framework-runtime/net472?utm_source=getdotnet&utm_medium=referral)** .
 
 1. Скачайте файл LF.WindowsServiceHost.zip со [страницы выпуска локального сервера пересылки](https://github.com/Microsoft/ApplicationInsights-LocalForwarder/releases) на сайте GitHub.
 
@@ -146,7 +146,7 @@ systemctl enable localforwarder
 systemctl start localforwarder
 ```
 
-* Отслеживайте службу, проверяя файлы **.log* в каталоге /home/SAMPLE_USER/LOCALFORWARDER_DIR.
+* Отслеживайте службу, проверяя файлы * *.log* в каталоге /home/SAMPLE_USER/LOCALFORWARDER_DIR.
 
 ### <a name="mac"></a>Mac
 Локальный сервер пересылки может работать под управлением macOS, но сейчас это не поддерживается официально.
@@ -177,7 +177,7 @@ host.Stop();
 
 ## <a name="monitoring-local-forwarder"></a>Мониторинг локального сервера пересылки
 
-Трассировки записываются в файловую систему рядом с исполняемым файлом, который запускает локальный сервер пересылки (это файлы **.log*). Можно разместить файл с именем *NLog.config* рядом с исполняемым файлом, чтобы указать собственную конфигурацию вместо заданной по умолчанию. Описание формата см. в [документации](https://github.com/NLog/NLog/wiki/Configuration-file#configuration-file-format).
+Трассировки записываются в файловую систему рядом с исполняемым файлом, который запускает локальный сервер пересылки (это файлы * *.log*). Можно разместить файл с именем *NLog.config* рядом с исполняемым файлом, чтобы указать собственную конфигурацию вместо заданной по умолчанию. Описание формата см. в [документации](https://github.com/NLog/NLog/wiki/Configuration-file#configuration-file-format).
 
 Если файл конфигурации не указан (что является настройкой по умолчанию), локальный сервер пересылки будет использовать конфигурацию по умолчанию, которую можно найти [здесь](https://github.com/Microsoft/ApplicationInsights-LocalForwarder/blob/master/src/Common/NLog.config).
 

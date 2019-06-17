@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: ambapat
-ms.openlocfilehash: a88451403f242c39212c80e3c7425a901c6819cc
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 67925f2123f2a4f2524002eb075754c38fad4b42
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64725284"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67118987"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Безопасный доступ к хранилищу ключей
 
@@ -53,7 +53,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 | Плоскость&nbsp;доступа | Конечные точки доступа | Операции | Механизм&nbsp;управление доступом |
 | --- | --- | --- | --- |
-| Плоскость управления | **Глобально:**<br> management.azure.com:443<br><br> **Azure China 21Vianet:**<br> management.chinacloudapi.cn:443<br><br> **Azure для правительства США:**<br> management.usgovcloudapi.net:443<br><br> **Azure для Германии:**<br>  management.microsoftazure.de:443 | Создание, чтение, изменение и удаление хранилищ ключей<br><br>Настройка политик доступа Key Vault<br><br>Настройка тегов Key Vault | RBAC Azure Resource Manager |
+| Плоскость управления | **Глобально:**<br> management.azure.com:443<br><br> **Azure China 21Vianet:**<br> management.chinacloudapi.cn:443<br><br> **Azure для правительства США:**<br> management.usgovcloudapi.net:443<br><br> **Azure для Германии:**<br> management.microsoftazure.de:443 | Создание, чтение, изменение и удаление хранилищ ключей<br><br>Настройка политик доступа Key Vault<br><br>Настройка тегов Key Vault | RBAC Azure Resource Manager |
 | Плоскость данных | **Глобально:**<br> &lt;vault-name&gt;.vault.azure.net:443<br><br> **Azure China 21Vianet:**<br> &lt;vault-name&gt;.vault.azure.cn:443<br><br> **Azure для правительства США:**<br> &lt;vault-name&gt;.vault.usgovcloudapi.net:443<br><br> **Azure для Германии:**<br> &lt;vault-name&gt;.vault.microsoftazure.de:443 | Для ключей: расшифровка, шифрование,<br> распаковка, упаковка, проверка, подписывание,<br> получение, перечисление, обновление, создание,<br> импорт, удаление, резервное копирование, восстановление<br><br> Для секретов: получение, перечисление, настройка, удаление | Политика доступа к Key Vault |
 
 ## <a name="management-plane-and-rbac"></a>Плоскость управления и RBAC

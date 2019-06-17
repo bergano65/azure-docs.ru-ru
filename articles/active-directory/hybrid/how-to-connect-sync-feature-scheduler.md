@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 309adfbebd4f4b615ac1f4061823ca01f3d3ee15
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65139288"
 ---
 # <a name="azure-ad-connect-sync-scheduler"></a>Синхронизация Azure AD Connect: Планировщик
@@ -72,7 +72,7 @@ ms.locfileid: "65139288"
 
 ### <a name="customizedsynccycleinterval"></a>CustomizedSyncCycleInterval
 Синтаксис: `Set-ADSyncScheduler -CustomizedSyncCycleInterval d.HH:mm:ss`  
- d — дни, HH — часы, mm — минуты, ss — секунды.
+d — дни, HH — часы, mm — минуты, ss — секунды.
 
 Пример: `Set-ADSyncScheduler -CustomizedSyncCycleInterval 03:00:00`  
 Планировщик будет запускаться каждые 3 часа.
@@ -199,7 +199,7 @@ Get-ADSyncConnectorRunStatus
 ```
 
 ![Состояние выполнения соединителя](./media/how-to-connect-sync-feature-scheduler/getconnectorrunstatus.png)  
- На рисунке выше первая строка — из состояния, в котором модуль синхронизации бездействует. Вторая строка — из состояния, в котором соединитель Azure AD выполняется.
+На рисунке выше первая строка — из состояния, в котором модуль синхронизации бездействует. Вторая строка — из состояния, в котором соединитель Azure AD выполняется.
 
 ## <a name="scheduler-and-installation-wizard"></a>Планировщик и мастер установки
 При запуске мастера установки планировщик приостанавливается. Это связано с тем, что вы можете внести изменения в конфигурацию, а во время активной работы модуля синхронизации их нельзя будет применить. Пока мастер установки открыт, модуль синхронизации не выполняет никаких действий по синхронизации.

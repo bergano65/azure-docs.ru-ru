@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b40fc631e84336b684f981a2fef1515a1febec0
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: df4f06528d0dd261dd92ab84b07bb705e23f7fd6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65811907"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67113070"
 ---
 # <a name="azure-active-directory-b2b-collaboration-faqs"></a>Часто задаваемые вопросы о службе совместной работы Azure Active Directory B2B
 
@@ -58,12 +58,12 @@ ms.locfileid: "65811907"
 
 ### <a name="can-i-block-access-to-the-azure-portal-for-guest-users"></a>Можно ли заблокировать доступ к порталу Azure для гостевых пользователей?
 Да! Но будьте осторожны при настройке этой политики, чтобы случайно не заблокировать доступ для участников и администраторов.
-Чтобы заблокировать доступ к [порталу Azure](https://portal.azure.com) для гостевых пользователей, используйте политику условного доступа в API классической модели развертывания Microsoft Azure.
+Чтобы заблокировать доступ гостевых пользователей к [портала Azure](https://portal.azure.com), используйте политику условного доступа в Windows Azure API классической модели развертывания:
 1. Измените группу **Все пользователи** таким образом, чтобы в нее входили только участники.
    ![Снимок экрана, показывающий группы все пользователи, которых UserType не равно гостя](media/faq/modify-all-users-group.png)
 2. Создайте динамическую группу, в которую входят гостевые пользователи.
    ![Снимок экрана: группу всех гостевых пользователей](media/faq/group-with-guest-users.png)
-3. Настройте политику условного доступа, блокирующую доступ гостевых пользователей к порталу, как показано в следующем видео.
+3. Настройте политику условного доступа гостевых пользователей из доступ к порталу, как показано в следующем видео:
   
    > [!VIDEO https://channel9.msdn.com/Blogs/Azure/b2b-block-guest-user/Player] 
 
@@ -111,7 +111,7 @@ Azure AD имеет единые требования в отношении фи
 Все Azure AD приложения, интегрированные с может поддерживать гостевых пользователей Azure B2B, но они должны использовать конечную точку Настройка в качестве клиента для проверки подлинности пользователей-гостей. Кроме того, может потребоваться [настроить утверждения](claims-mapping.md) в токене SAML, который создается, когда гостевой пользователь проходит проверку подлинности в приложении. 
 
 ### <a name="can-we-force-multi-factor-authentication-for-b2b-guest-users-if-our-partners-dont-have-multi-factor-authentication"></a>Можно ли принудительно выполнять Многофакторную идентификацию для гостевых пользователей B2B, если эта функция не включена у партнеров?
-Да. Дополнительные сведения см. в статье [Условный доступ пользователей в службе совместной работы B2B](conditional-access.md).
+Да. Дополнительные сведения см. в разделе [условный доступ для пользователей службы совместной работы B2B](conditional-access.md).
 
 ### <a name="in-sharepoint-you-can-define-an-allow-or-deny-list-for-external-users-can-we-do-this-in-azure"></a>С помощью SharePoint можно определить список разрешений и запретов для внешних пользователей. Возможно ли это сделать в Azure?
 Да. Служба совместной работы Azure AD B2B поддерживает списки разрешений и запретов. 

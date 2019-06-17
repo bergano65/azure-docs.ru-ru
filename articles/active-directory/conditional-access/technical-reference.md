@@ -1,6 +1,6 @@
 ---
-title: Справочник по параметрам условного доступа в Azure Active Directory | Документация Майкрософт
-description: Эта статья содержит обзор поддерживаемых параметров в политике условного доступа Azure Active Directory.
+title: Azure Справочник по параметрам условного доступа Active Directory | Документация Майкрософт
+description: Обзор поддерживаемых параметров в политике Azure Active Directory условного доступа.
 services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
@@ -11,18 +11,18 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fae09b5aeed05dfb09f2b998de805ef0607e7f39
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 5919eebccad8d7f9e048ae07be296eaaaf8428eb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65823548"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112105"
 ---
-# <a name="azure-active-directory-conditional-access-settings-reference"></a>Справочник по параметрам условного доступа в Azure Active Directory
+# <a name="azure-active-directory-conditional-access-settings-reference"></a>Справочник по параметрам Azure Active Directory условного доступа
 
-Благодаря [условному доступу Azure Active Directory (Azure AD)](../active-directory-conditional-access-azure-portal.md) можно контролировать доступ авторизованных пользователей к своим ресурсам.
+Можно использовать [условного доступа Azure Active Directory (Azure AD)](../active-directory-conditional-access-azure-portal.md) для управления авторизованных пользователей к своим ресурсам.
 
-Эта статья содержит информацию о поддержке следующих параметров конфигурации в политике условного доступа:
+В этой статье предоставляются сведения о поддержке для следующих параметров конфигурации в политике условного доступа:
 
 - назначения облачных приложений;
 - условие платформы устройства;
@@ -33,7 +33,7 @@ ms.locfileid: "65823548"
 
 ## <a name="cloud-apps-assignments"></a>Назначения облачных приложений
 
-С помощью политик условного доступа можно управлять доступом пользователей к [облачным приложениям](conditions.md#cloud-apps-and-actions). При настройке политики условного доступа необходимо выбрать как минимум одно облачное приложение, к которому она применяется. 
+С помощью политик условного доступа можно управлять доступом пользователей к [облачные приложения](conditions.md#cloud-apps-and-actions). При настройке политики условного доступа необходимо выбрать хотя бы одно Облачное приложение. 
 
 ![Выбор облачных приложений для политики](./media/technical-reference/09.png)
 
@@ -41,7 +41,7 @@ ms.locfileid: "65823548"
 
 Политики условного доступа можно назначить для следующих облачных приложений от корпорации Майкрософт:
 
-- Azure Analysis Services
+- Службы Azure Analysis Services
 - Azure DevOps
 - База данных SQL Azure и хранилище данных — [Подробнее](https://docs.microsoft.com/azure/sql-database/sql-database-conditional-access)
 - Dynamics CRM Online
@@ -61,8 +61,8 @@ ms.locfileid: "65823548"
 - Microsoft PowerApps
 - Microsoft Search в Bing
 - Microsoft StaffHub
-- Microsoft Stream
-- Microsoft Teams
+- Microsoft Stream;
+- Microsoft Teams
 - Office 365 Exchange Online
 - Office 365 SharePoint Online
 - Office 365 Yammer
@@ -77,7 +77,7 @@ ms.locfileid: "65823548"
 
 ### <a name="other-applications"></a>Другие приложения
 
-Помимо облачных приложений Майкрософт, политику условного доступа можно назначить для следующих типов облачных приложений:
+Помимо облачных приложений Майкрософт можно назначить политику условного доступа для следующих типов облачных приложений:
 
 - приложения, подключенные к Azure AD;
 - предварительно интегрированное федеративное приложение SaaS;
@@ -87,19 +87,19 @@ ms.locfileid: "65823548"
 
 ## <a name="device-platform-condition"></a>условие платформы устройства;
 
-В политике условного доступа можно настроить условие платформы устройства для привязки политики к клиентской операционной системе. Условный доступ Azure AD поддерживает следующие платформы устройств:
+В политике условного доступа можно настроить условие платформы устройства для привязки политики к операционной системе на клиентском компьютере. Условный доступ Azure AD поддерживает следующие платформы устройств:
 
 - Android
 - iOS
 - Windows Phone
--  Windows
+- Windows
 - macOS
 
 ![Привязка политики доступа к клиентской ОС](./media/technical-reference/41.png)
 
 ## <a name="client-apps-condition"></a>Условие клиентских приложений
 
-В политике условного доступа можно настроить условие [Клиентские приложения](conditions.md#client-apps), чтобы привязать ее к клиентскому приложению, которое инициировало попытку доступа. Условие клиентских приложений можно задать, чтобы предоставить или заблокировать доступ, если была предпринята попытка доступа из приведенных ниже типов клиентских приложений:
+В политике условного доступа можно настроить [клиентских приложений](conditions.md#client-apps) условие для привязки политики в клиентское приложение, которое инициировало попытку доступа. Условие клиентских приложений можно задать, чтобы предоставить или заблокировать доступ, если была предпринята попытка доступа из приведенных ниже типов клиентских приложений:
 
 - "Обзор"
 - мобильные и классические приложения.
@@ -108,7 +108,7 @@ ms.locfileid: "65823548"
 
 ### <a name="supported-browsers"></a>Поддерживаемые браузеры
 
-В политике условного доступа можно выбрать параметр **Браузеры**, чтобы в качестве клиентского приложения указать браузеры.
+В политике условного доступа можно выбрать **браузеры** как клиентское приложение.
 
 ![Управление доступом поддерживаемых браузеров](./media/technical-reference/05.png)
 
@@ -140,8 +140,8 @@ ms.locfileid: "65823548"
 
 |    |    |
 | --- | --- |
-| `Path` | HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist |
-| ИМЯ | 1 |
+| Путь | HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist |
+| Name | 1 |
 | type | REG_SZ (String) |
 | Данные | ppnbnpeolgkicgegkbkbjmhlideopiji; https://clients2.google.com/service/update2/crx |
 
@@ -149,8 +149,8 @@ ms.locfileid: "65823548"
 
 |    |    |
 | --- | --- |
-| `Path` | HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls |
-| ИМЯ | 1 |
+| Путь | HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls |
+| Name | 1 |
 | type | REG_SZ (String) |
 | Данные | {"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}} |
 
@@ -158,7 +158,7 @@ ms.locfileid: "65823548"
 
 ### <a name="supported-mobile-applications-and-desktop-clients"></a>Поддерживаемые мобильные приложения и классические клиенты
 
-В политике условного доступа можно выбрать параметр **Мобильные приложения и настольные клиенты**, чтобы в качестве клиентского приложения указать мобильные приложения и классические клиенты.
+В политике условного доступа можно выбрать **мобильные приложения и настольные клиенты** как клиентское приложение.
 
 ![Управление доступом поддерживаемых мобильных приложений или классических клиентов](./media/technical-reference/06.png)
 
@@ -169,7 +169,7 @@ ms.locfileid: "65823548"
 | Приложение Dynamics CRM | Dynamics CRM | Windows 10, Windows 8.1, iOS и Android |
 | Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Office 365 Exchange Online | Windows 10 |
 | MFA и политика расположения для приложений Политики на основе устройств не поддерживаются.| Все службы приложения "Мои приложения"| Android и iOS |
-| Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент. | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
+| Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент. | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
 | Приложения Office 2016, Office 2013 (с современной проверкой подлинности), клиент синхронизации OneDrive (см. [заметки](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)) | Office 365 SharePoint Online | Windows 8.1, Windows 7 |
 | Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), клиент синхронизации OneDrive (см. [заметки](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)); поддержка групп Office и SharePoint ожидается в будущем | Office 365 SharePoint Online | Windows 10 |
 | Office 2016 (только Word, Excel, PowerPoint, OneNote). Поддержку OneDrive для бизнеса планируется реализовать в будущем.| Office 365 SharePoint Online| macOS|
@@ -200,7 +200,7 @@ ms.locfileid: "65823548"
 
 Этот параметр применяется к следующим клиентским приложениям.
 
-- Microsoft Azure Information Protection
+- Microsoft Azure Information Protection.
 - Microsoft Bookings
 - Microsoft Edge
 - Microsoft Excel
@@ -219,8 +219,8 @@ ms.locfileid: "65823548"
 - Microsoft SharePoint
 - Microsoft Skype для бизнеса;
 - Microsoft StaffHub
-- Microsoft Stream
-- Microsoft Teams
+- Microsoft Stream;
+- Microsoft Teams
 - Microsoft To-Do
 - Microsoft Visio;
 - Microsoft Word
@@ -251,8 +251,8 @@ ms.locfileid: "65823548"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Общие сведения об условном доступе см. в статье [Условный доступ в Azure Active Directory](../active-directory-conditional-access-azure-portal.md)
-- Если вы готовы к настройке политик условного доступа для своей среды, прочитайте статью [Рекомендации по работе с условным доступом в Azure Active Directory](best-practices.md).
+- Общие сведения об условном доступе см. в разделе [что такое условный доступ в Azure Active Directory?](../active-directory-conditional-access-azure-portal.md)
+- Если вы готовы к настройке политик условного доступа в вашей среде, см. в разделе [рекомендации для условного доступа в Azure Active Directory](best-practices.md).
 
 <!--Image references-->
 [1]: ./media/technical-reference/01.png

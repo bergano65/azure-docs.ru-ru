@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 10/03/2018
 ms.author: magoedte
 ms.openlocfilehash: b7968de8ad4357241eb8d86d51e991f4bbab959d
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65601572"
 ---
 # <a name="wire-data-20-preview-solution-in-azure-monitor"></a>Решение Wire Data 2.0 (Предварительная версия) в Azure Monitor
@@ -63,7 +63,7 @@ Wire data — это объединенные сетевые данные и д�
 | Агенты Windows | Yes | Решение "Данные передачи" анализирует и собирает данные из компьютеров агентов Windows. <br><br> Кроме [агента Log Analytics для Windows](../../azure-monitor/platform/agent-windows.md) агентам Windows требуется Microsoft Dependency Agent. Полный список версий операционных систем см. в разделе [Поддерживаемые операционные системы](../../azure-monitor/insights/service-map-configure.md#supported-windows-operating-systems). |
 | Агенты Linux | Yes | Решение "Данные передачи" анализирует и собирает данные из компьютеров агентов Linux.<br><br> Кроме [агента Log Analytics для Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) агентам Linux требуется Microsoft Dependency Agent. Полный список версий операционных систем см. в разделе [Поддерживаемые операционные системы](../../azure-monitor/insights/service-map-configure.md#supported-linux-operating-systems). |
 | Группа управления System Center Operations Manager | Yes | Решение "Данные передачи" анализирует и собирает данные из агентов Windows и Linux в подключенной [группе управления System Center Operations Manager](../../azure-monitor/platform/om-agents.md). <br><br> Прямое подключение из агента System Center Operations Manager к Azure Monitor является обязательным. |
-| Учетная запись хранения Azure. | Нет  | Решение "Данные передачи" собирает данные из компьютеров агента, поэтому данные из службы хранилища Azure не собираются. |
+| Учетная запись хранения Azure. | Нет | Решение "Данные передачи" собирает данные из компьютеров агента, поэтому данные из службы хранилища Azure не собираются. |
 
 В Windows Microsoft Monitoring Agent (MMA), System Center Operations Manager и Azure Monitor используется для сбора и отправки данных. В зависимости от контекста этот агент называется агентом System Center Operations Manager, агентом Log Analytics, MMA или Direct Agent. System Center Operations Manager и Azure Monitor предоставляют немного разные версии MMA. Каждый этих версий можно отчеты в System Center Operations Manager, Azure Monitor или к обоим.
 
@@ -162,7 +162,7 @@ Wire data — это объединенные сетевые данные и д�
 
 | Файл | ОС | Version (версия) | SHA-256 |
 |:--|:--|:--|:--|
-| [InstallDependencyAgent-Windows.exe](https://aka.ms/dependencyagentwindows) |  Windows | 9.7.4 | A111B92AB6CF28EB68B696C60FE51F980BFDFF78C36A900575E17083972989E0 |
+| [InstallDependencyAgent-Windows.exe](https://aka.ms/dependencyagentwindows) | Windows | 9.7.4 | A111B92AB6CF28EB68B696C60FE51F980BFDFF78C36A900575E17083972989E0 |
 | [InstallDependencyAgent-Linux64.bin](https://aka.ms/dependencyagentlinux) | Linux | 9.7.4 | AB58F3DB8B1C3DEE7512690E5A65F1DFC41B43831543B5C040FCCE8390F2282C |
 
 

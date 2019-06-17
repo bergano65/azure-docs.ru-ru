@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 10/19/2018
 ms.author: pabutler
 ms.openlocfilehash: 3d38efadfb8ad13d072056ef851be99d9540ad4b
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64938433"
 ---
 # <a name="configure-the-azure-hosted-vm"></a>Настройка размещенной в Azure виртуальной машины
@@ -59,7 +59,7 @@ ms.locfileid: "64938433"
 
 Все образы в Azure Marketplace должны быть доступны для повторного использования в первоначальном виде. Чтобы достичь этой возможности повторного использования, виртуальный жесткий диск для операционной системы необходимо *обобщить*. Эта операция удаляет с виртуальной машины все идентификаторы, относящиеся к определенному экземпляру, и программные драйверы.
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 Диски операционной системы Windows обобщаются с помощью [средства sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview). Если вы позднее обновите операционную систему или измените ее конфигурацию, снова запустите sysprep. 
 

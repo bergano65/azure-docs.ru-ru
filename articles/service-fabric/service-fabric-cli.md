@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: d5b6f183a59e3f47aa5867b5e09e06541a6a67db
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60803243"
 ---
 # <a name="azure-service-fabric-cli"></a>Интерфейс командной строки Azure Service Fabric
@@ -54,7 +54,7 @@ pip install -I sfctl==1.1.0
 
 Существует много способов установки pip и Python на вашей платформе. Ниже приведены действия для быстрой установки Python 3 и pip, которые подходят для большинства операционных систем.
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 Для Windows 10, Windows Server 2016 и Windows Server 2012 R2 используйте стандартные официальные инструкции по установке. Установщик Python также по умолчанию устанавливает pip.
 
@@ -127,7 +127,7 @@ sudo pip3 install sfctl
 Чтобы протестировать установку, выполните действия из раздела **Подсистема Ubuntu и Windows для Linux**.
 
 <a name = "cli-mac"></a>
-### <a name="macos"></a>macOS
+### <a name="macos"></a>MacOS
 
 Для MacOS мы рекомендуем использовать [диспетчер пакетов HomeBrew](https://brew.sh). Если диспетчер HomeBrew еще не установлен, установите его, выполнив следующую команду:
 

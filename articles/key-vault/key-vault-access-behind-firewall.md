@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: ambapat
 ms.openlocfilehash: bc6315f5ab264108369410b73a667fa1e07e1e44
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64689958"
 ---
 # <a name="access-azure-key-vault-behind-a-firewall"></a>Доступ к хранилищу ключей Azure из-за брандмауэра
@@ -38,8 +38,8 @@ ms.locfileid: "64689958"
 
 | Тип субъекта | Конечная точка и порт |
 | --- | --- |
-| Пользователь, использующий учетную запись Майкрософт<br> (например, user@hotmail.com) |**Глобально:**<br> login.microsoftonline.com:443<br><br> **Azure для Китая:**<br> login.chinacloudapi.cn:443<br><br>**Azure для правительства США:**<br> login.microsoftonline.us:443<br><br>**Azure для Германии:**<br>  login.microsoftonline.de:443<br><br> и <br>login.live.com:443 |
-| Пользователь или субъект-служба, использующие рабочую или учебную учетную запись с помощью Azure AD (например, user@contoso.com) |**Глобально:**<br> login.microsoftonline.com:443<br><br> **Azure для Китая:**<br> login.chinacloudapi.cn:443<br><br>**Azure для правительства США:**<br> login.microsoftonline.us:443<br><br>**Azure для Германии:**<br>  login.microsoftonline.de:443 |
+| Пользователь, использующий учетную запись Майкрософт<br> (например, user@hotmail.com) |**Глобально:**<br> login.microsoftonline.com:443<br><br> **Azure для Китая:**<br> login.chinacloudapi.cn:443<br><br>**Azure для правительства США:**<br> login.microsoftonline.us:443<br><br>**Azure для Германии:**<br> login.microsoftonline.de:443<br><br> и <br>login.live.com:443 |
+| Пользователь или субъект-служба, использующие рабочую или учебную учетную запись с помощью Azure AD (например, user@contoso.com) |**Глобально:**<br> login.microsoftonline.com:443<br><br> **Azure для Китая:**<br> login.chinacloudapi.cn:443<br><br>**Azure для правительства США:**<br> login.microsoftonline.us:443<br><br>**Azure для Германии:**<br> login.microsoftonline.de:443 |
 | Пользователь или субъект-служба, использующие рабочую или учебную учетную запись, а также службы федерации Active Directory (AD FS) или другую федеративную конечную точку (например, user@contoso.com) |Все конечные точки для рабочей или учебной учетной записи, а также службы федерации Active Directory или другие федеративные конечные точки |
 
 Есть и другие возможные сложные сценарии. Дополнительные сведения см. в статьях [Сценарии аутентификации в Azure Active Directory](../active-directory/develop/authentication-scenarios.md), [Интеграция приложений с Azure Active Directory](../active-directory/develop/active-directory-how-to-integrate.md) и [Руководство разработчика по Azure Active Directory](https://msdn.microsoft.com/library/azure/dn151124.aspx).  
@@ -50,12 +50,12 @@ ms.locfileid: "64689958"
 
 | Тип операции | Конечная точка и порт |
 | --- | --- |
-| Операции уровня управления хранилищем ключей<br>  с использованием Azure Resource Manager |**Глобально:**<br> management.azure.com:443<br><br> **Azure для Китая:**<br> management.chinacloudapi.cn:443<br><br> **Azure для правительства США:**<br> management.usgovcloudapi.net:443<br><br> **Azure для Германии:**<br>  management.microsoftazure.de:443 |
-| API Graph Azure Active Directory |**Глобально:**<br> graph.windows.net:443<br><br> **Azure для Китая:**<br> graph.chinacloudapi.cn:443<br><br> **Azure для правительства США:**<br> graph.windows.net:443<br><br> **Azure для Германии:**<br>  graph.cloudapi.de:443 |
+| Операции уровня управления хранилищем ключей<br> с использованием Azure Resource Manager |**Глобально:**<br> management.azure.com:443<br><br> **Azure для Китая:**<br> management.chinacloudapi.cn:443<br><br> **Azure для правительства США:**<br> management.usgovcloudapi.net:443<br><br> **Azure для Германии:**<br> management.microsoftazure.de:443 |
+| API Graph Azure Active Directory |**Глобально:**<br> graph.windows.net:443<br><br> **Azure для Китая:**<br> graph.chinacloudapi.cn:443<br><br> **Azure для правительства США:**<br> graph.windows.net:443<br><br> **Azure для Германии:**<br> graph.cloudapi.de:443 |
 
 ## <a name="key-vault-operations"></a>Операции с хранилищем ключей
 
-Для полного управления объектами хранилища ключей (ключами и секретами) и криптографическими операциями клиенту хранилища ключей требуется доступ к конечной точке. DNS-суффикс конечной точки отличается в зависимости от расположения хранилища ключей. Конечная точка хранилища ключей имеет формат — *<имя_хранилища>*.*<DNS-суффикс_конкретного_региона>*, как описано в таблице ниже.  
+Для полного управления объектами хранилища ключей (ключами и секретами) и криптографическими операциями клиенту хранилища ключей требуется доступ к конечной точке. DNS-суффикс конечной точки отличается в зависимости от расположения хранилища ключей. Конечная точка хранилища ключей имеет формат — *<имя_хранилища>* . *<DNS-суффикс_конкретного_региона>* , как описано в таблице ниже.  
 
 | Тип операции | Конечная точка и порт |
 | --- | --- |

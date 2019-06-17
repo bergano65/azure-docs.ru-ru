@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 10/28/2018
 ms.author: glenga
 ms.openlocfilehash: 19a5fe4c087d477ff15d2237a36d1c4ecaa0e070
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65908192"
 ---
 # <a name="use-azure-functions-to-connect-to-an-azure-sql-database"></a>Подключение к базе данных SQL Azure с помощью Функций Azure
@@ -139,6 +139,6 @@ ms.locfileid: "65908192"
 Дополнительные сведения о Функциях см. в следующих статьях:
 
 + [Справочник разработчика по функциям Azure](functions-reference.md)  
-   Справочник программиста по созданию функций, а также определению триггеров и привязок.
+  Справочник программиста по созданию функций, а также определению триггеров и привязок.
 + [Testing Azure Functions](functions-test-a-function.md)  
-   (Тестирование функций Azure) Описание различных средств и методов тестирования функций.  
+  (Тестирование функций Azure) Описание различных средств и методов тестирования функций.  

@@ -10,10 +10,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 03/19/2018
 ms.author: liydu
 ms.openlocfilehash: a620b592a33f9de11de53d623d257f203da2157b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61370362"
 ---
 # <a name="door-monitor"></a>Мониторинг двери          
@@ -154,7 +154,7 @@ ms.locfileid: "61370362"
 
 Затем загрузите код для устройства.
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
 1. Нажмите `Ctrl+P`, чтобы запустить задачу `task device-upload`.
 

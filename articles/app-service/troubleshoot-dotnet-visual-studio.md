@@ -16,10 +16,10 @@ ms.date: 08/29/2016
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: cbf6a44f1a3210906ec7ab0d04eecb997bc2c470
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65412816"
 ---
 # <a name="troubleshoot-an-app-in-azure-app-service-using-visual-studio"></a>Устранение неполадок приложения в Cлужбе приложений Azure с помощью Visual Studio
@@ -264,7 +264,7 @@ public ActionResult About()
 * **Подробные журналы сообщений об ошибках**<br/>
   Веб-сервер создает страницу HTML с некоторой дополнительной информацией об ошибочных HTTP-запросах (это запросы, которые приводят к появлению кода состояния 400 и выше).
 * **Журналы трассировки неудачно завершенных запросов**<br/>
-   Веб-сервер создает XML-файл с подробными сведениями трассировки ошибочных HTTP-запросов. Веб-сервер также предоставляет XSL-файл для форматирования XML-кода в браузере.
+  Веб-сервер создает XML-файл с подробными сведениями трассировки ошибочных HTTP-запросов. Веб-сервер также предоставляет XSL-файл для форматирования XML-кода в браузере.
 
 Ведение журнала влияет на производительность приложения, поэтому Azure предоставляет возможность при необходимости включить или отключить каждый тип журнала. Для журналов приложений можно указать, что следует писать только журналы с уровнем серьезности выше заданного. При создании нового приложения ведение журналов по умолчанию отключено.
 
@@ -649,9 +649,9 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 В Интернете отсутствуют обновленные и подробные вводные данные по трассировке ASP.NET. Лучшее, что можно сделать, это начать со старых вводных материалов, написанных для Web Forms, так как тогда MVC еще не существовало. А также дополнить эти сведения новыми постами из блогов, посвященных тем или иным конкретным вопросам. Можно также продуктивно начать изучение со следующих ресурсов:
 
 * [Мониторинг и телеметрия (создание реальных облачных приложений в Azure)](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry).<br>
-   Глава электронной книги с рекомендациями по трассировке в облачных приложениях Azure.
+  Глава электронной книги с рекомендациями по трассировке в облачных приложениях Azure.
 * [Трассировка ASP.NET](/previous-versions/dotnet/articles/ms972204(v=msdn.10))<br/>
-   Старый, но по-прежнему хороший ресурс для введения в тему.
+  Старый, но по-прежнему хороший ресурс для введения в тему.
 * [Прослушиватели трассировки](/dotnet/framework/debug-trace-profile/trace-listeners)<br/>
   Сведения о прослушивателях трассировки, но без упоминания [WebPageTraceListener](/dotnet/api/system.web.webpagetracelistener).
 * [Пошаговое руководство: интеграция трассировки ASP.NET с трассировкой System.Diagnostics](/previous-versions/b0ectfxd(v=vs.140))<br/>
@@ -672,9 +672,9 @@ catch (Exception ex)
 ```
 
 * [Потоковая передача диагностических журналов трассировки из командной строки Azure (включая Glimpse!)](https://www.hanselman.com/blog/StreamingDiagnosticsTraceLoggingFromTheAzureCommandLinePlusGlimpse.aspx)<br/>
-   Как использовать командную строку, чтобы сделать все, что показано в этом руководстве на примере Visual Studio. [Glimpse](https://www.hanselman.com/blog/IfYoureNotUsingGlimpseWithASPNETForDebuggingAndProfilingYoureMissingOut.aspx) – это средство для отладки приложений ASP.NET.
+  Как использовать командную строку, чтобы сделать все, что показано в этом руководстве на примере Visual Studio. [Glimpse](https://www.hanselman.com/blog/IfYoureNotUsingGlimpseWithASPNETForDebuggingAndProfilingYoureMissingOut.aspx) – это средство для отладки приложений ASP.NET.
 * [Использование функций диагностики и ведения журнала для веб-приложений с Дэвидом Эббо (David Ebbo)](https://azure.microsoft.com/documentation/videos/azure-web-site-logging-and-diagnostics/) и [Потоковая передача журналов из веб-приложений с Дэвидом Эббо (David Ebbo)](https://azure.microsoft.com/documentation/videos/log-streaming-with-azure-web-sites/)<br>
-   Авторы видео: Скотт Хансельман (Scott Hanselman) и Дэвид Эббо (David Ebbo).
+  Авторы видео: Скотт Хансельман (Scott Hanselman) и Дэвид Эббо (David Ebbo).
 
 Для ведения журнала ошибок вместо написания своего кода трассировки можно использовать платформу ведения журналов с открытым кодом, например [ELMAH](https://nuget.org/packages/elmah/). Дополнительные сведения см. в [записях блога Скотта Хансельмана (Scott Hanselman), посвященных ELMAH](https://www.hanselman.com/blog/NuGetPackageOfTheWeek7ELMAHErrorLoggingModulesAndHandlersWithSQLServerCompact.aspx).
 
@@ -686,7 +686,7 @@ catch (Exception ex)
 * [LogParser](https://www.microsoft.com/download/details.aspx?id=24659)<br/>
   Инструмент для просмотра данных в журналах веб-сервера (*LOG* -файлов).
 * [Устранение проблем с производительностью IIS и приложений с помощью LogParser ошибок](https://www.iis.net/learn/troubleshoot/performance-issues/troubleshooting-iis-performance-issues-or-application-errors-using-logparser)<br/>
-   Введение в средство LogParser, которое можно использовать для анализа журналов веб-сервера.
+  Введение в средство LogParser, которое можно использовать для анализа журналов веб-сервера.
 * [Записи блога Роберта Мак-Мюррея (Robert McMurray), посвященные использованию LogParser](https://blogs.msdn.com/b/robert_mcmurray/archive/tags/logparser/)<br/>
 * [Код состояния HTTP в IIS 7.0, IIS 7.5 и IIS 8.0](https://support.microsoft.com/kb/943891)
 

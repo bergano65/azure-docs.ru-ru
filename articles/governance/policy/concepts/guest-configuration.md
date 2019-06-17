@@ -9,10 +9,10 @@ ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
 ms.openlocfilehash: c98229a28f31ff715f252dc3915ca690e99245ff
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
-ms.translationtype: MT
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65979511"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Общие сведения о гостевой конфигурации службы "Политика Azure"
@@ -58,7 +58,7 @@ Register-AzResourceProvider -ProviderNamespace 'Microsoft.GuestConfiguration'
 
 |Операционная система|Инструмент проверки|Примечания|
 |-|-|-|
-| Windows|[Конфигурация требуемого состояния Майкрософт](/powershell/dsc) версии 2| |
+|Windows|[Конфигурация требуемого состояния Майкрософт](/powershell/dsc) версии 2| |
 |Linux|[Chef InSpec](https://www.chef.io/inspec/)| Ruby и Python устанавливаются с помощью расширения гостевой конфигурации. |
 
 ### <a name="validation-frequency"></a>Частота проверки
@@ -69,12 +69,12 @@ Register-AzResourceProvider -ProviderNamespace 'Microsoft.GuestConfiguration'
 
 В следующей таблице перечислены операционные системы, поддерживаемые в образах Azure:
 
-|Издатель|ИМЯ|Версии|
+|Издатель|Name|Версии|
 |-|-|-|
-|Канонический|Сервер Ubuntu|14.04, 16.04, 18.04|
+|Canonical|Сервер Ubuntu|14.04, 16.04, 18.04|
 |Credativ|Debian|8, 9|
-|Microsoft|Windows Server|2012 Datacenter, Datacenter 2012 R2, 2016 Datacenter, Datacenter 2019 г.|
-|Microsoft|Клиент Windows|Windows 10|
+|Майкрософт|Windows Server|2012 Datacenter, Datacenter 2012 R2, 2016 Datacenter, Datacenter 2019 г.|
+|Майкрософт|Клиент Windows|Windows 10|
 |OpenLogic|CentOS|7.3, 7.4, 7.5|
 |Red Hat|Red Hat Enterprise Linux.|7.4, 7.5|
 |SUSE|SLES|12 с пакетом обновления 3|
@@ -143,4 +143,4 @@ Linux: `/var/lib/waagent/Microsoft.GuestConfiguration.ConfigurationforLinux-<ver
 - Понять, как [программное создание политик](../how-to/programmatically-create.md).
 - Узнайте, как [получить данные о соответствии](../how-to/getting-compliance-data.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](../how-to/remediate-resources.md).
-- Просмотрите, какие группы управления — с [упорядочение ресурсов с помощью групп управления Azure](../../management-groups/index.md).
+- Дополнительные сведения о группе управления см. в статье [Упорядочивание ресурсов с помощью групп управления Azure](../../management-groups/index.md).

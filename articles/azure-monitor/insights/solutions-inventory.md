@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 06/26/2018
 ms.author: bwren
 ms.openlocfilehash: 9398815ea75c0eacd99a6e40c569254fac671cbb
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66234021"
 ---
 # <a name="inventory-and-data-collection-details-for-monitoring-solutions-in-azure"></a>Сведения о сборе инвентаризации и данных для мониторинга решений в Azure
@@ -45,36 +45,36 @@ ms.locfileid: "66234021"
 | **Решение для мониторинга** | **Платформа** | **Microsoft Monitoring Agent** | **Агент Operations Manager** | **Служба хранилища Azure** | **Нужен ли Operations Manager?** | **Данные агента Operations Manager отправляются через группу управления** | **Частота сбора** |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | [Аналитический журнал действий](../platform/activity-log-collect.md) | Таблицы Azure | | | | | | при уведомлении |
-| [Оценка AD](ad-assessment.md) | Windows |&#8226; |&#8226; | | |&#8226; |7 дней |
-| [Состояние репликации AD](ad-replication-status.md) | Windows |&#8226; |&#8226; | | |&#8226; |5 дней |
+| [Оценка AD](ad-assessment.md) |Windows |&#8226; |&#8226; | | |&#8226; |7 дней |
+| [Состояние репликации AD](ad-replication-status.md) |Windows |&#8226; |&#8226; | | |&#8226; |5 дней |
 | [Работоспособность агентов](solution-agenthealth.md) | Windows и Linux | &#8226; | &#8226; | | | &#8226; | 1 минута |
 | [Управление оповещениями](../platform/alert-management-solution.md) (Nagios) |Linux |&#8226; | | | | |При получении |
 | [Управление оповещениями](../platform/alert-management-solution.md) (Zabbix) |Linux |&#8226; | | | | |1 минута |
-| [Управление оповещениями](../platform/alert-management-solution.md) (Operations Manager) | Windows | |&#8226; | |&#8226; |&#8226; |3 минуты |
+| [Управление оповещениями](../platform/alert-management-solution.md) (Operations Manager) |Windows | |&#8226; | |&#8226; |&#8226; |3 минуты |
 | [Azure Site Recovery](../../site-recovery/site-recovery-overview.md) | Таблицы Azure | | | | | | Недоступно |
 | [Соединитель Application Insights (не рекомендуется)](../platform/app-insights-connector.md) | Таблицы Azure | | | |  |  | при уведомлении |
-| [Гибридная рабочая роль службы автоматизации](../../automation/automation-hybrid-runbook-worker.md) |  Windows | &#8226; | &#8226; |  |  |  | Недоступно |
+| [Гибридная рабочая роль службы автоматизации](../../automation/automation-hybrid-runbook-worker.md) | Windows | &#8226; | &#8226; |  |  |  | Недоступно |
 | [Анализ шлюзов приложений Azure](azure-networking-analytics.md) | Таблицы Azure |  |  |  |  |  | при уведомлении |
 | **Решение для мониторинга** | **Платформа** | **Microsoft Monitoring Agent** | **Агент Operations Manager** | **Служба хранилища Azure** | **Нужен ли Operations Manager?** | **Данные агента Operations Manager отправляются через группу управления** | **Частота сбора** |
 | [Аналитика групп безопасности сетей Azure (не рекомендуется)](azure-networking-analytics.md) | Таблицы Azure |  |  |  |  |  | при уведомлении |
-| [Службы анализа SQL Azure (предварительная версия)](azure-sql.md) |  Windows | | | | | | 1 минута |
+| [Службы анализа SQL Azure (предварительная версия)](azure-sql.md) | Windows | | | | | | 1 минута |
 | [Архивация](https://azure.microsoft.com/resources/templates/101-backup-oms-monitoring/) | Таблицы Azure |  |  |  |  |  | при уведомлении |
-| [Емкость и производительность (предварительная версия)](capacity-performance.md) | Windows |&#8226; |&#8226; | | |&#8226; |При получении |
-| [Отслеживание изменений](../../automation/change-tracking.md) | Windows |&#8226; |&#8226; | | |&#8226; |[зависит от](../../automation/change-tracking.md#change-tracking-data-collection-details) |
+| [Емкость и производительность (предварительная версия)](capacity-performance.md) |Windows |&#8226; |&#8226; | | |&#8226; |При получении |
+| [Отслеживание изменений](../../automation/change-tracking.md) |Windows |&#8226; |&#8226; | | |&#8226; |[зависит от](../../automation/change-tracking.md#change-tracking-data-collection-details) |
 | [Отслеживание изменений](../../automation/change-tracking.md) |Linux |&#8226; | | | | |[зависит от](../../automation/change-tracking.md#change-tracking-data-collection-details) |
 | [Контейнеры](containers.md) | Windows и Linux | &#8226; | &#8226; |  |  |  | 3 минуты |
-| [Анализ хранилища ключей](azure-key-vault.md) | Windows | | | | | |при уведомлении |
-| [Оценка вредоносных программ](../../security-center/security-center-install-endpoint-protection.md) | Windows |&#8226; |&#8226; | | |&#8226; |Ежечасно |
-| [Монитор производительности сети](network-performance-monitor.md) |  Windows | &#8226; | &#8226; |  |  |  | Подтверждения TCP выполняются каждые 5 секунд, данные отправляются каждые 3 минуты |
-| [Аналитика Office 365 (предварительная версия)](solution-office-365.md) | Windows | | | | | |при уведомлении |
+| [Анализ хранилища ключей](azure-key-vault.md) |Windows | | | | | |при уведомлении |
+| [Оценка вредоносных программ](../../security-center/security-center-install-endpoint-protection.md) |Windows |&#8226; |&#8226; | | |&#8226; |Ежечасно |
+| [Монитор производительности сети](network-performance-monitor.md) | Windows | &#8226; | &#8226; |  |  |  | Подтверждения TCP выполняются каждые 5 секунд, данные отправляются каждые 3 минуты |
+| [Аналитика Office 365 (предварительная версия)](solution-office-365.md) |Windows | | | | | |при уведомлении |
 | **Решение для мониторинга** | **Платформа** | **Microsoft Monitoring Agent** | **Агент Operations Manager** | **Служба хранилища Azure** | **Нужен ли Operations Manager?** | **Данные агента Operations Manager отправляются через группу управления** | **Частота сбора** |
-| [Анализ Service Fabric](../../service-fabric/service-fabric-diagnostics-oms-setup.md) | Windows | | |&#8226; | | |5 мин |
+| [Анализ Service Fabric](../../service-fabric/service-fabric-diagnostics-oms-setup.md) |Windows | | |&#8226; | | |5 мин |
 | [Схема услуги](service-map.md) | Windows и Linux | &#8226; | &#8226; |  |  |  | 15 секунд |
-| [Оценка SQL](sql-assessment.md) | Windows |&#8226; |&#8226; | | |&#8226; |7 дней |
-| [SurfaceHub](surface-hubs.md) | Windows |&#8226; | | | | |При получении |
-| [Оценка System Center Operations Manager (предварительная версия)](scom-assessment.md) |  Windows | &#8226; | &#8226; |  |  | &#8226; | 7 дней |
-| [Управление обновлениями](../../automation/automation-update-management.md) |  Windows |&#8226; |&#8226; | | |&#8226; |не меньше 2 раз в день и через 15 минут после установки обновления |
-| [Готовность к обновлению](https://docs.microsoft.com/windows/deployment/upgrade/upgrade-readiness-get-started) |  Windows | &#8226; |  |  |  |  | 2 дня |
+| [Оценка SQL](sql-assessment.md) |Windows |&#8226; |&#8226; | | |&#8226; |7 дней |
+| [SurfaceHub](surface-hubs.md) |Windows |&#8226; | | | | |При получении |
+| [Оценка System Center Operations Manager (предварительная версия)](scom-assessment.md) | Windows | &#8226; | &#8226; |  |  | &#8226; | 7 дней |
+| [Управление обновлениями](../../automation/automation-update-management.md) | Windows |&#8226; |&#8226; | | |&#8226; |не меньше 2 раз в день и через 15 минут после установки обновления |
+| [Готовность к обновлению](https://docs.microsoft.com/windows/deployment/upgrade/upgrade-readiness-get-started) | Windows | &#8226; |  |  |  |  | 2 дня |
 | [Мониторинг VMware (не рекомендуется)](vmware.md) | Linux | &#8226; |  |  |  |  | 3 минуты |
 | [Wire Data 2.0 (предварительная версия)](wire-data.md) |Windows (2012 R2/8.1 или более поздней версии) |&#8226; |&#8226; | | | | 1 минута |
 

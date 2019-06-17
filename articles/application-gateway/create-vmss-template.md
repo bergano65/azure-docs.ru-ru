@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 07/31/2017
 ms.author: victorh
 ms.openlocfilehash: 7ff6db5acb150207f975931155386a308c48888b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66134114"
 ---
 # <a name="create-an-application-gateway-by-using-the-azure-resource-manager-template"></a>Создание шлюза приложений с помощью шаблона диспетчера ресурсов Azure
@@ -167,9 +167,9 @@ ms.locfileid: "66134114"
     az group create --location westus --name appgatewayRG
     ```
     
-    **-n (или --name)**. Имя для новой группы ресурсов. В нашем примере это *appgatewayRG*.
+    **-n (или --name)** . Имя для новой группы ресурсов. В нашем примере это *appgatewayRG*.
     
-    **-l (или --location)**. Регион Azure, в котором создается группа ресурсов. В нашем примере это *westus*.
+    **-l (или --location)** . Регион Azure, в котором создается группа ресурсов. В нашем примере это *westus*.
 
 1. Выполните командлет `az group deployment create`, чтобы развернуть новую виртуальную сеть с помощью шаблона и файлов параметров, которые вы скачали и изменили на предыдущем шаге. В списке, который откроется после выполнения команды, будут указаны используемые параметры.
 
@@ -205,7 +205,7 @@ cert=$( base64 <certificate path and name>.pfx )
 echo $cert
 ```
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 ```powershell
 [System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("<certificate path and name>.pfx"))
 ```

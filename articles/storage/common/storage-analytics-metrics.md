@@ -10,10 +10,10 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.openlocfilehash: f0dfed10190685c1d51822b8bec2b3c80cea7bb2
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65153942"
 ---
 # <a name="azure-storage-analytics-metrics-classic"></a>Метрики аналитики хранилища Azure (Классическая модель)
@@ -141,7 +141,7 @@ queueClient.SetServiceProperties(serviceProperties);
 ||||  
 |-|-|-|  
 |**Метрики**|**Имена таблиц**|**Примечания**|  
-|Часовые метрики|$MetricsHourPrimaryTransactionsBlob<br /><br /> $MetricsHourPrimaryTransactionsTable<br /><br /> $MetricsHourPrimaryTransactionsQueue<br /><br /> $MetricsHourPrimaryTransactionsFile|В версиях до 2013-08-15 эти таблицы носили:<br /><br /> $MetricsTransactionsBlob <br /><br /> $MetricsTransactionsTable<br /><br />  $MetricsTransactionsQueue<br /><br /> Метрики для службы файлов которые доступны начиная с версии 2015-04-05.|  
+|Часовые метрики|$MetricsHourPrimaryTransactionsBlob<br /><br /> $MetricsHourPrimaryTransactionsTable<br /><br /> $MetricsHourPrimaryTransactionsQueue<br /><br /> $MetricsHourPrimaryTransactionsFile|В версиях до 2013-08-15 эти таблицы носили:<br /><br /> $MetricsTransactionsBlob<br /><br /> $MetricsTransactionsTable<br /><br /> $MetricsTransactionsQueue<br /><br /> Метрики для службы файлов которые доступны начиная с версии 2015-04-05.|  
 |Минутные метрики|$MetricsMinutePrimaryTransactionsBlob<br /><br /> $MetricsMinutePrimaryTransactionsTable<br /><br /> $MetricsMinutePrimaryTransactionsQueue<br /><br /> $MetricsMinutePrimaryTransactionsFile|Можно включить только с помощью PowerShell или программно.<br /><br /> Метрики для службы файлов которые доступны начиная с версии 2015-04-05.|  
 |Capacity|$MetricsCapacityBlob|Только служба BLOB-объектов.|  
 

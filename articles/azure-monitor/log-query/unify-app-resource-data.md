@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: magoedte
 ms.openlocfilehash: 3f3de81197b05d4f025a3fd8638cffe4b07cecad
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61424659"
 ---
 # <a name="unify-multiple-azure-monitor-application-insights-resources"></a>Объединение нескольких ресурсов Azure Monitor Application Insights 
@@ -104,13 +104,13 @@ applicationsScoping //this brings data from Application Insights resources
 | ApplicationTypeVersion | application_Version |
 | AvailabilityCount | itemCount |
 | AvailabilityDuration | длительность |
-| AvailabilityMessage | Message |
+| AvailabilityMessage | message |
 | AvailabilityRunLocation | location |
-| AvailabilityTestId | идентификатор |
+| AvailabilityTestId | id |
 | AvailabilityTestName | name |
-| AvailabilityTimestamp |  timestamp |
+| AvailabilityTimestamp | timestamp |
 | "Обзор" | client_browser |
-| Город | client_city |
+| City | client_city |
 | ClientIP | client_IP |
 | Computer | cloud_RoleInstance | 
 | Страна | client_CountryOrRegion | 
@@ -121,8 +121,8 @@ applicationsScoping //this brings data from Application Insights resources
 | DeviceType | client_Type | 
 | ExceptionCount | itemCount | 
 | ExceptionHandledAt | handledAt |
-| ExceptionMessage | Message | 
-| ExceptionType | тип |
+| ExceptionMessage | message | 
+| ExceptionType | type |
 | OperationID | operation_id |
 | OperationName | operation_Name | 
 | ОС | client_OS | 
@@ -132,7 +132,7 @@ applicationsScoping //this brings data from Application Insights resources
 | ParentOperationID | operation_Id | 
 | RequestCount | itemCount | 
 | RequestDuration | длительность | 
-| RequestID | идентификатор | 
+| RequestID | id | 
 | RequestName | name | 
 | RequestSuccess | Успешное завершение | 
 | ResponseCode | resultCode | 
@@ -140,7 +140,7 @@ applicationsScoping //this brings data from Application Insights resources
 | RoleInstance | cloud_RoleInstance |
 | SessionId | session_Id | 
 | SourceSystem | operation_SyntheticSource |
-| TelemetryTYpe | тип |
+| TelemetryTYpe | type |
 | URL-адрес | _url |
 | UserAccountId | user_AccountId |
 

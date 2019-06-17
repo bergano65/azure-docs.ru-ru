@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: cbabdde2dd5df2ca40ee45fe0f7b0437f095673b
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 84e8eedfb206e28f245128a4e30aba44e96277ab
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65020381"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072416"
 ---
 # <a name="what-is-text-to-speech"></a>Что такое преобразования текста в речь?
 
@@ -46,14 +46,14 @@ ms.locfileid: "65020381"
 
 В этой таблице перечислены основные функции для преобразования текста в речь.
 
-| Вариант использования  | SDK | REST |
+| Вариант использования | SDK | REST |
 |----------|-----|------|
-| Преобразования текста в речь. | Yes | Yes |
-| Передача наборов данных для адаптации голоса. | Нет  | Да\* |
-| Создание и управление ими голосовых моделей шрифта. | Нет  | Да\* |
-| Создание и управление ими голоса шрифта развертываний. | Нет  | Да\* |
-| Создание и управление ими голоса шрифта тестов. | Нет  | Да\* |
-| Управление подписками. | Нет  | Да\* |
+| Преобразования текста в речь. | Да | Да |
+| Передача наборов данных для адаптации голоса. | Нет | Да\* |
+| Создание и управление ими голосовых моделей шрифта. | Нет | Да\* |
+| Создание и управление ими голоса шрифта развертываний. | Нет | Да\* |
+| Создание и управление ими голоса шрифта тестов. | Нет | Да\* |
+| Управление подписками. | Нет | Да\* |
 
 \* *Эти службы доступны cris.ai конечной точки. См. в разделе [Swagger ссылку](https://westus.cris.ai/swagger/ui/index). Эти пользовательские голосовые модели обучения и API-интерфейсов управления реализовать регулирование, что запросов 25 в течение 5 секунд, тогда как синтеза речи сам интерфейс API реализует регулирования, разрешает 200 запросов в секунду с наивысшим приоритетом. Если регулирование, вы будете получать уведомления через заголовки сообщений.*
 
@@ -65,8 +65,8 @@ ms.locfileid: "65020381"
 
 | Краткое руководство (SDK) | платформа | Справочник по API |
 |------------|----------|---------------|
-| [C#, .NET framework](quickstart-text-to-speech-dotnet-windows.md) |  Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [C++](quickstart-text-to-speech-cpp-windows.md) |  Windows | [Обзор](https://aka.ms/csspeech/cppref) |
+| [C#, .NET framework](quickstart-text-to-speech-dotnet-windows.md) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C++](quickstart-text-to-speech-cpp-windows.md) | Windows | [Обзор](https://aka.ms/csspeech/cppref) |
 | [C++](quickstart-text-to-speech-cpp-linux.md) | Linux | [Обзор](https://aka.ms/csspeech/cppref) |
 
 ### <a name="rest-quickstarts"></a>Примеры использования REST

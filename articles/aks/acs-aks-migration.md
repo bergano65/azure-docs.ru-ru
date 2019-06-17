@@ -10,10 +10,10 @@ ms.date: 06/13/2018
 ms.author: nobun
 ms.custom: mvc
 ms.openlocfilehash: dcee8da943603fb0978caf9992be76347ca197d6
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65977713"
 ---
 # <a name="migrate-from-azure-container-service-acs-to-azure-kubernetes-service-aks"></a>Перенос из службы контейнеров Azure (ACS) в службе Azure Kubernetes (AKS)
@@ -48,10 +48,10 @@ ACS и AKS различаются несколько ключевых облас
 
 Пример:
 
-| ИМЯ | Количество | Размер виртуальной машины | Операционная система |
+| Name | Количество | Размер виртуальной машины | Операционная система |
 | --- | --- | --- | --- |
 | agentpool0 | 3 | Standard_D8_v2 | Linux |
-| agentpool1 | 1 | Standard_D2_v2 |  Windows |
+| agentpool1 | 1 | Standard_D2_v2 | Windows |
 
 Так как дополнительные виртуальные машины будут развернуты в рамках подписки во время миграции, следует убедиться, что квоты и ограничения достаточны для этих ресурсов. 
 

@@ -13,12 +13,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: glenga
-ms.openlocfilehash: 5d028768c062ef7df74d48f83ccc4e27a506f1ac
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 283487eeb0f1f85940da4db8c932602e1b45efd3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60737063"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64695808"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"
 
@@ -37,7 +37,7 @@ ms.locfileid: "60737063"
 
 При развертывании функции Azure обычно состоит из этих ресурсов:
 
-| Resource                                                                           | Требование | Синтаксис и свойства ссылки                                                         |   |
+| Ресурс                                                                           | Требование | Синтаксис и свойства ссылки                                                         |   |
 |------------------------------------------------------------------------------------|-------------|-----------------------------------------------------------------------------------------|---|
 | Приложение-функция.                                                                     | Обязательно для заполнения    | [Microsoft.Web/sites](/azure/templates/microsoft.web/sites)                             |   |
 | [Учетная запись хранения Azure.](../storage/index.yml)                                   | Обязательно для заполнения    | [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |   |
@@ -125,7 +125,7 @@ ms.locfileid: "60737063"
 * [План "премиум"](#premium) (в предварительной версии)
 * [План обслуживания приложения](#app-service-plan)
 
-### <a name="function-app"></a>Приложение функций
+### <a name="function-app"></a>Приложение-функция
 
 Ресурс приложения-функции определяется с помощью ресурса типа **Microsoft.Web/sites** и вид **functionapp**:
 
@@ -216,7 +216,7 @@ ms.locfileid: "60737063"
 
 ### <a name="create-a-function-app"></a>Создание приложения-функции
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
 В Windows, плана потребления следует выполнить две дополнительные настройки в конфигурации сайта: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` и `WEBSITE_CONTENTSHARE`. Эти свойства настраивают учетную запись хранения и путь к файлам кода приложения-функции и конфигурации.
 
@@ -663,6 +663,27 @@ ms.locfileid: "60737063"
 ```html
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/<url-encoded-path-to-azuredeploy-json>" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"></a>
 ```
+
+### <a name="deploy-using-powershell"></a>Развертывание с помощью PowerShell
+
+Следующие команды PowerShell, создайте группу ресурсов и развернуть шаблон, создайте приложение-функцию с его необходимые ресурсы. Чтобы запустить локально, необходимо иметь [Azure PowerShell](/powershell/azure/install-az-ps) установлен. Запустите [ `Connect-AzAccount` ](/powershell/module/az.accounts/connect-azaccount) для входа.
+
+```powershell
+# Register Resource Providers if they're not already registered
+Register-AzResourceProvider -ProviderNamespace "microsoft.web"
+Register-AzResourceProvider -ProviderNamespace "microsoft.storage"
+
+# Create a resource group for the function app
+New-AzResourceGroup -Name "MyResourceGroup" -Location 'West Europe'
+
+# Create the parameters for the file, which for this template is the function app name.
+$TemplateParams = @{"appName" = "<function-app-name>"}
+
+# Deploy the template
+New-AzResourceGroupDeployment -ResourceGroupName "MyResourceGroup" -TemplateFile template.json -TemplateParameterObject $TemplateParams -Verbose
+```
+
+Чтобы протестировать это развертывание, можно использовать [шаблона такого рода](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-function-app-create-dynamic/azuredeploy.json) , создает приложение-функцию на Windows в плане потребления. Замените `<function-app-name>` с уникальным именем для приложения-функции.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

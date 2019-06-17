@@ -12,10 +12,10 @@ ms.date: 05/16/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: bac897178c8220abe72a92a5cf14fc4767cdd3bf
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66755059"
 ---
 # <a name="monitor-resource-consumption-and-query-activity-in-azure-search"></a>Мониторинг использования ресурсов и обработки запросов в Поиске Azure
@@ -145,7 +145,7 @@ resourceId=/subscriptions/<subscriptionID>/resourcegroups/<resourceGroupName>/pr
 | minimum |int |37 |Минимальное количество необработанных выборок в течение интервала времени метрики |
 | maximum |int |78 |Максимальное количество необработанных выборок в течение интервала времени метрики |
 | total |int |258 |Общее количество необработанных выборок в течение интервала времени метрики |
-| count |int |4. |Количество необработанных выборок, использованных для создания метрики |
+| count |int |4\. |Количество необработанных выборок, использованных для создания метрики |
 | timegrain |строка |"PT1M" |Интервал времени в формате метрики ISO 8601 |
 
 Все метрики передают данные с интервалом в одну минуту. Каждая метрика отражает минимальное, максимальное и среднее значения за минуту.

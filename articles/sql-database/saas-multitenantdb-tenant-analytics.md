@@ -13,10 +13,10 @@ ms.reviewer: anjangsh,billgib,genemi
 manager: craigg
 ms.date: 09/19/2018
 ms.openlocfilehash: 4bf97c0c447bfabc1454959d457bbd50f3490299
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66242803"
 ---
 # <a name="cross-tenant-analytics-using-extracted-data---multi-tenant-app"></a>Получение межклиентской аналитики на основе извлеченных с мультитенантного приложения данных
@@ -170,7 +170,7 @@ ms.locfileid: "66242803"
 Выполните шаги ниже, чтобы подключиться к Power BI, а также импортировать созданные ранее представления:
 
 1. Запустите Power BI Desktop.
-2. На вкладке "Главная" выберите **Получение данных**, а затем выберите **Дополнительно…** .  в меню.
+2. На вкладке "Главная" выберите **Получение данных**, а затем выберите **Дополнительно…** . в меню.
 3. В окне **получения данных** выберите базу данных SQL Azure.
 4. В окне входа в базу данных введите имя сервера (catalog-mt-\<Пользователь\>.database.windows.net). Выберите **Импорт** для **режима подключения к данным**, а затем нажмите кнопку "ОК". 
 

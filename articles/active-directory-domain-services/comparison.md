@@ -16,10 +16,10 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: mstephen
 ms.openlocfilehash: 17bb8eb910990e0e9da65491f8dd7361398479a5
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66246469"
 ---
 # <a name="how-to-decide-if-azure-ad-domain-services-is-right-for-your-use-case"></a>Как определить, подходят ли вам доменные службы Azure AD
@@ -40,7 +40,7 @@ ms.locfileid: "66246469"
 | --- |:---:|:---:|
 | [**Управляемая служба**](comparison.md#managed-service) |**&#x2713;** |**&#x2715;** |
 | [**Защищенные развернутые службы**](comparison.md#secure-deployments) |**&#x2713;** |Администратор должен обеспечить безопасное развертывание. |
-| [**Сервер DNS**](comparison.md#dns-server) | **&#x2713;** (управляемая служба) |**&#x2713;** |
+| [**Сервер DNS**](comparison.md#dns-server) |**&#x2713;** (управляемая служба) |**&#x2713;** |
 | [**Domain or Enterprise administrator privileges**](comparison.md#domain-or-enterprise-administrator-privileges) |**&#x2715;** |**&#x2713;** |
 | [**Присоединение к домену**](comparison.md#domain-join) |**&#x2713;** |**&#x2713;** |
 | [**Аутентификация в домене с помощью NTLM и Kerberos**](comparison.md#domain-authentication-using-ntlm-and-kerberos) |**&#x2713;** |**&#x2713;** |

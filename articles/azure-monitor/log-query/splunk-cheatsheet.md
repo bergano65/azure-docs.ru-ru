@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 08/21/2018
 ms.author: bwren
 ms.openlocfilehash: fb637197139001c67a4cfa773f897e6701dc1e9c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61425140"
 ---
 # <a name="splunk-to-azure-monitor-log-query"></a>Запрос журнала в Splunk и Azure Monitor
@@ -55,7 +55,7 @@ ms.locfileid: "61425140"
 | substr | substring() | (1)<br>Обратите внимание, что Splunk использует индексы, отсчитываемые с единицы, В Azure Monitor используются индексы, отсчитываемые с нуля. |
 | tolower |  tolower() | (1) |
 | toupper | toupper() | (1) |
-| match | соответствует regex |   (2)  |
+| match | соответствует regex |  (2)  |
 | regex | соответствует regex | В Splunk `regex` является оператором. В Azure Monitor это оператор отношения. |
 | searchmatch | == | В Splunk `searchmatch` позволяет выполнять поиск конкретных строк.
 | random | rand()<br>rand(n) | Функция Splunk возвращает число от 0 до 2<sup>31</sup>-1. Azure Monitor возвращает число от 0,0 до 1,0 или от 0 до n–1 (если указан параметр).
@@ -70,7 +70,7 @@ ms.locfileid: "61425140"
 В следующих разделах приведены примеры использования различных операторов в Splunk и Azure Monitor.
 
 > [!NOTE]
-> В следующем примере поле Splunk _rule_ сопоставляется с таблицей в Azure Monitor, а метка времени по умолчанию в Splunk — со столбцом Log Analytics _ingestion_time()_.
+> В следующем примере поле Splunk _rule_ сопоставляется с таблицей в Azure Monitor, а метка времени по умолчанию в Splunk — со столбцом Log Analytics _ingestion_time()_ .
 
 ### <a name="search"></a>поиска
 В Splunk можно опустить ключевое слово `search` и указать строку без кавычек. В Azure Monitor каждый запрос должен начинаться с `find`, имя столбца должно быть строкой без кавычек, а значение подстановки — строкой в кавычках. 

@@ -11,10 +11,10 @@ ms.author: tamram
 ms.reviewer: seguler
 ms.subservice: common
 ms.openlocfilehash: 8e09e2c33359c94275d9819b335544d15d4c7d78
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65790091"
 ---
 # <a name="transfer-data-with-the-microsoft-azure-storage-data-movement-library"></a>Передача данных с использованием библиотеки перемещения данных службы хранилища Microsoft Azure
@@ -36,7 +36,7 @@ ms.locfileid: "65790091"
 **Необходимые компоненты:**
 
 * [Visual Studio Code](https://code.visualstudio.com/)
-*  [учетная запись хранения Azure](storage-quickstart-create-account.md)
+* [учетная запись хранения Azure](storage-quickstart-create-account.md)
 
 > [!NOTE]
 > Для работы с этим руководством предполагается, что у вас есть общее представление о [службе хранилища Azure](https://azure.microsoft.com/services/storage/). Если вы еще не работали со службой хранилища Azure, ознакомьтесь со статьей [Введение в хранилище Microsoft Azure](storage-introduction.md). Что еще более важно, для использования библиотеки перемещения данных потребуется [создать учетную запись хранения](storage-quickstart-create-account.md).

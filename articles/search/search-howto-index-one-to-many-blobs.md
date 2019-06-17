@@ -11,10 +11,10 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seofeb2018
 ms.openlocfilehash: 628ced069c9d32c6e874c2e36a1e3b752c476003
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65024652"
 ---
 # <a name="indexing-blobs-producing-multiple-search-documents"></a>Индексирование BLOB-объектов, создания нескольких документов поиска
@@ -61,7 +61,7 @@ _Blob2.JSON_
 
 Эта конфигурация приведет к в индекс поиска Azure, содержащий следующие сведения (сокращены для краткости код в кодировке base64)
 
-| id | Температура | pressure |  timestamp |
+| id | Температура | pressure | timestamp |
 |----|-------------|----------|-----------|
 | aHR0... YjEuanNvbjsx | 100 | 100 | 2019-02-13T00:00:00Z |
 | aHR0... YjEuanNvbjsy | 33 | 30 | 2019-02-14T00:00:00Z |

@@ -18,10 +18,10 @@ ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: ae3d1b36b89bb1bce1ff384bfa12a1bf643614fd
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65408775"
 ---
 # <a name="prepare-the-azure-infrastructure-for-sap-ha-by-using-a-windows-failover-cluster-and-shared-disk-for-sap-ascsscs"></a>Подготовка инфраструктуры Azure для SAP высокого уровня доступности с помощью отказоустойчивого кластера Windows и общего диска для SAP ASCS/SC
@@ -160,7 +160,7 @@ ms.locfileid: "65408775"
 [virtual-machines-manage-availability]:../../virtual-machines-windows-manage-availability.md
 
 
-> ![ Windows][Logo_Windows]  Windows
+> ![Windows][Logo_Windows] Windows
 >
 
 В этой статье описаны действия для подготовки инфраструктуры Azure к установке и настройке системы SAP высокого уровня доступности в отказоустойчивом кластере Windows, используя *общий диск кластера* для кластеризации экземпляра SAP ASCS.
@@ -204,7 +204,7 @@ _**Рис. 1.** Настройка параметров Azure Resource Manager 
     * \<SID_системы_SAP\>-nic-ascs-\<Номер\>
     * \<SID_системы_SAP\>-nic-db-\<Номер\>
 
-  * **Учетные записи хранения (только неуправляемые диски)**.
+  * **Учетные записи хранения (только неуправляемые диски)** .
 
   * **Группы доступности** для:
     * виртуальные машины сервера приложений SAP: \<SAPSystemSID\>-avset-di;
@@ -551,22 +551,22 @@ Azure Load Balancer имеет внутренний балансировщик �
 
 Чтобы добавить записи реестра на обоих узлах кластера экземпляра SAP ASCS/SCS, сначала добавьте эти записи реестра Windows на обоих узлах кластера Windows для SAP ASCS/SCS.
 
-| `Path` | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
+| Путь | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
 | --- | --- |
 | Имя переменной |`KeepAliveTime` |
 | Тип переменной |REG_DWORD (десятичное) |
-| Value |120000 |
+| Значение |120000 |
 | Ссылка на документацию |[https://technet.microsoft.com/library/cc957549.aspx](https://technet.microsoft.com/library/cc957549.aspx) |
 
 **Таблица 3.** Изменение первого параметра TCP/IP
 
 Затем добавьте следующую запись реестра Windows на обоих узлах кластера Windows для SAP ASCS/SCS:
 
-| `Path` | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
+| Путь | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
 | --- | --- |
 | Имя переменной |`KeepAliveInterval` |
 | Тип переменной |REG_DWORD (десятичное) |
-| Value |120000 |
+| Значение |120000 |
 | Ссылка на документацию |[https://technet.microsoft.com/library/cc957548.aspx](https://technet.microsoft.com/library/cc957548.aspx) |
 
 **Таблица 4.** Изменение второго параметра TCP/IP
