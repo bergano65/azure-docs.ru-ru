@@ -155,9 +155,9 @@ ms.locfileid: "67051699"
 | KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | string |
 | KeyEncryptionKeyURL | url | string |
 | KeyVaultURL | url | string |
-| (необязательно) Парольная фраза | password | string | 
+| (необязательно) Passphrase | password | string | 
 | SequenceVersion | uniqueidentifier | string |
-| VolumeType | ОС, данные, все | string |
+| VolumeType | OS, Data, All | string |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 Пример шаблона развертывания см. в руководстве по [созданию зашифрованной виртуальной машины Windows из образа коллекции](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-create-new-vm-gallery-image).
