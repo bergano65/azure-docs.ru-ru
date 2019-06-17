@@ -1,21 +1,20 @@
 ---
-author: genlin
-ms.service: virtual-network
+author: sptramer
 ms.topic: include
-ms.date: 11/09/2018
-ms.author: genli
-ms.openlocfilehash: 147eb5321853706b59fac7d3d49a761a251987fa
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.date: 05/31/2019
+ms.author: sttramer
+ms.openlocfilehash: 4152d2da91d70533801304c15345600bd625b9a6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66170902"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66814895"
 ---
 ## <a name="prerequisite-install-the-azure-cli"></a>Предварительные требования: Установка Azure CLI
-Для выполнения действий, описанных в этой статье, требуется [установить интерфейс командной строки Azure для Mac, Linux и Windows (Azure CLI)](../articles/cli-install-nodejs.md), а также [выполнить вход в Azure](/cli/azure/authenticate-azure-cli). 
+
+Для выполнения шагов в этой статье [установите Azure CLI](/cli/azure/install-azure-cli) и [войти в Azure](/cli/azure/authenticate-azure-cli). 
 
 > [!NOTE]
-> Если у вас нет учетной записи Azure, то вам потребуется получить ее. Зарегистрируйтесь, чтобы получить [бесплатную пробную версию](../articles/active-directory/fundamentals/sign-up-organization.md). Кроме того, для точного следования описанной процедуре требуется установить [jq](https://stedolan.github.io/jq/) либо другую библиотеку или средство синтаксического анализа JSON.
-> 
-> 
+> Если у вас нет учетной записи Azure, то вам потребуется получить ее. Зарегистрируйтесь в службе [бесплатную пробную](../articles/active-directory/fundamentals/sign-up-organization.md).
+> Кроме того, для выполнения этой процедуры вы должны иметь либо [jq](https://stedolan.github.io/jq/) или некоторые другие установлена библиотека или средство синтаксического анализа JSON.
 

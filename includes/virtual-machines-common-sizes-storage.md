@@ -9,10 +9,10 @@ ms.date: 04/17/2019
 ms.author: azcspmt;jonbeck;cynthn
 ms.custom: include file
 ms.openlocfilehash: de998265188b1482be22225bba3c6ab3d58e562b
-ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66755615"
 ---
 ВМ с размерами, оптимизированная для операций в хранилище, обеспечивает высокую пропускную способность и количество операций ввода-вывода. Это идеальный вариант для работы с большими данными, с базами данных SQL и NoSQL, системами хранения данных и большими транзакционными базами данных.  Примеры включают Cassandra, MongoDB, Cloudera и Redis. Эта статья содержит сведения о количестве виртуальных ЦП, дисков данных и сетевых адаптеров, а также о пропускной способности локального хранилища и сети для каждого оптимизированного размера.

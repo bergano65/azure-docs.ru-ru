@@ -11,16 +11,16 @@ author: rastala
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 04/05/2019
-ms.openlocfilehash: c0c1c1353b12944fa913dfb0789192917b99f234
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a93492b8ea97500fe3c761f3ac0c49f8c1342d09
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60819208"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67074954"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Запуск, отслеживать и отменять учебных запусков в Python
 
-[Azure Machine Learning и пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) предоставляет различные методы для мониторинга, организации и управления запусках для обучения и службы "Экспериментирование".
+[Azure Machine Learning и пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) и [Machine Learning CLI](reference-azure-machine-learning-cli.md) предоставляющие разные методы для мониторинга, организации и управления запусках для обучения и службы "Экспериментирование".
 
 В этой статье показаны примеры следующие задачи:
 
@@ -45,7 +45,11 @@ ms.locfileid: "60819208"
     print(azureml.core.VERSION)
     ```
 
+* [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) и [расширение CLI для службы машинного обучения Azure](reference-azure-machine-learning-cli.md).
+
 ## <a name="start-a-run-and-its-logging-process"></a>Запуск выполнения и его процесса ведения журнала
+
+### <a name="using-the-sdk"></a>Использование пакета SDK
 
 Настройка эксперимента, импортировав [рабочей области](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py), [поэкспериментировать](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment?view=azure-ml-py), [запуска](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py), и [ScriptRunConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py) классы из [azureml.core](https://docs.microsoft.com/python/api/azureml-core/azureml.core?view=azure-ml-py) пакета.
 
@@ -66,7 +70,44 @@ notebook_run = exp.start_logging()
 notebook_run.log(name="message", value="Hello from run!")
 ```
 
+### <a name="using-the-cli"></a>Использование интерфейса командной строки
+
+Чтобы запустить выполнение эксперимента, используйте следующие действия:
+
+1. Из оболочки командной строки или используйте Azure CLI для аутентификации в подписке Azure:
+
+    ```azurecli-interactive
+    az login
+    ```
+
+1. Присоединение конфигурации рабочей области в папку со сценарием обучения. Замените `myworkspace` с рабочей областью службы машинного обучения Azure. Замените `myresourcegroup` с группой ресурсов Azure, которая содержит рабочую область:
+
+    ```azurecli-interactive
+    az ml folder attach -w myworkspace -g myresourcegroup
+    ```
+
+    Эта команда создает `.azureml` подкаталог, который содержит файлы примеров runconfig и conda среды. Он также содержит `config.json` файл, который используется для связи с рабочей областью машинного обучения Azure.
+
+    Дополнительные сведения см. в разделе [присоединить az ml папку](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/folder?view=azure-cli-latest#ext-azure-cli-ml-az-ml-folder-attach).
+
+2. Для запуска, используйте следующую команду. При использовании этой команды, укажите имя файла runconfig (текста до \*.runconfig, если вы ищете систему) для параметра - c.
+
+    ```azurecli-interactive
+    az ml run submit-script -c sklearn -e testexperiment train.py
+    ```
+
+    > [!TIP]
+    > `az ml folder attach` Команда созданная `.azureml` подкаталог, который содержит два файла runconfig в примере. 
+    >
+    > Если у вас есть скрипт Python, который создает объект конфигурации при запуске программными средствами, можно использовать [RunConfig.save()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py#save-path-none--name-none--separate-environment-yaml-false-) сохранить объект как runconfig-файл.
+    >
+    > Дополнительные примеры runconfig файлов, см. в разделе [ https://github.com/MicrosoftDocs/pipelines-azureml/tree/master/.azureml ](https://github.com/MicrosoftDocs/pipelines-azureml/tree/master/.azureml).
+
+    Дополнительные сведения см. в разделе [az ml запуска отправить сценарий](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/run?view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-submit-script).
+
 ## <a name="monitor-the-status-of-a-run"></a>Отслеживать состояние выполнения
+
+### <a name="using-the-sdk"></a>Использование пакета SDK
 
 Получить состояние выполнения с [ `get_status()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#get-status--) метод.
 
@@ -97,9 +138,35 @@ with exp.start_logging() as notebook_run:
 print("Has it completed?",notebook_run.get_status())
 ```
 
+### <a name="using-the-cli"></a>Использование интерфейса командной строки
+
+1. Чтобы просмотреть список выполнений эксперимента, используйте следующую команду. Замените `experiment` с именем эксперимента:
+
+    ```azurecli-interactive
+    az ml run list --experiment-name experiment
+    ```
+
+    Эта команда возвращает документ JSON, который выводит сведения о выполнении для этого эксперимента.
+
+    Дополнительные сведения см. в разделе [az ml поэкспериментировать списка](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/experiment?view=azure-cli-latest#ext-azure-cli-ml-az-ml-experiment-list).
+
+2. Чтобы просмотреть сведения о определенной операции выполнения, используйте следующую команду. Замените `runid` с Идентификатором выполнения:
+
+    ```azurecli-interactive
+    az ml run show -r runid
+    ```
+
+    Эта команда возвращает документ JSON, который выводит сведения о запуске.
+
+    Дополнительные сведения см. в разделе [az ml запуска отображаются](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/run?view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-show).
+
 ## <a name="cancel-or-fail-runs"></a>Отмена или вызвать сбой запуски
 
- Если вы Обратите внимание, что ошибка или выполнение занимает слишком много времени, чтобы завершить работу, использовать [ `cancel()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#cancel--) метод, чтобы остановить выполнение программы до его завершения и пометить его как отмененные.
+Если вы заметили ошибку или запуска выполняется слишком долго для завершения, можно отменить выполнение.
+
+### <a name="using-the-sdk"></a>Использование пакета SDK
+
+Для отмены выполнения, с помощью пакета SDK, используйте [ `cancel()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#cancel--) метод:
 
 ```Python
 run_config = ScriptRunConfig(source_directory='.', script='hello_with_delay.py')
@@ -120,9 +187,22 @@ local_script_run.fail()
 print(local_script_run.get_status())
 ```
 
+### <a name="using-the-cli"></a>Использование интерфейса командной строки
+
+Чтобы отменить выполнение с помощью интерфейса командной строки, используйте следующую команду. Замените `runid` с Идентификатором выполнения
+
+```azurecli-interactive
+az ml run cancel -r runid
+```
+
+Дополнительные сведения см. в разделе [az ml запуска Отмена](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/run?view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-cancel).
+
 ## <a name="create-child-runs"></a>Создание дочерних запуски
 
 Создание дочерних запуски для группировки связанных запусков, например, для различных итераций, настройки гиперпараметров.
+
+> [!NOTE]
+> Запуски дочерних могут создаваться только с помощью пакета SDK.
 
 Данный пример кода использует `hello_with_children.py` скрипт для создания пакета из пяти запусков дочерний в отправленных выполнении с помощью [ `child_run()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#child-run-name-none--run-id-none--outputs-none-) метод:
 
@@ -157,6 +237,8 @@ list(parent_run.get_children())
 
 ### <a name="add-properties-and-tags"></a>Добавить свойства и теги
 
+#### <a name="using-the-sdk"></a>Использование пакета SDK
+
 Чтобы добавить метаданным с возможностью поиска работы, используйте [ `add_properties()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#add-properties-properties-) метод. Например, следующий код добавляет `"author"` свойство к запуску:
 
 ```Python
@@ -190,14 +272,44 @@ local_script_run.tag("worth another look")
 print(local_script_run.get_tags())
 ```
 
+#### <a name="using-the-cli"></a>Использование интерфейса командной строки
+
+> [!NOTE]
+> С помощью интерфейса командной строки, можно только добавить или обновить теги.
+
+Чтобы добавить или обновить тег, используйте следующую команду:
+
+```azurecli-interactive
+az ml run update -r runid --add-tag quality='fantastic run'
+```
+
+Дополнительные сведения см. в разделе [az ml запустите Центр обновления](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/run?view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-update).
+
 ### <a name="query-properties-and-tags"></a>Запрос свойств и тегов
 
 Вы можете запрос выполняет в эксперимент, чтобы получить список запусков, соответствующих определенных свойств и тегов.
+
+#### <a name="using-the-sdk"></a>Использование пакета SDK
 
 ```Python
 list(exp.get_runs(properties={"author":"azureml-user"},tags={"quality":"fantastic run"}))
 list(exp.get_runs(properties={"author":"azureml-user"},tags="worth another look"))
 ```
+
+#### <a name="using-the-cli"></a>Использование интерфейса командной строки
+
+Azure CLI поддерживает [JMESPath](http://jmespath.org) запросы, которые можно использовать для фильтрации запуски в зависимости от свойства и теги. Чтобы использовать запроса JMESPath с Azure CLI, укажите его, используя `--query` параметра. Ниже приведены примеры основных запросов, с помощью свойств и тегов.
+
+```azurecli-interactive
+# list runs where the author property = 'azureml-user'
+az ml run list --experiment-name experiment [?properties.author=='azureml-user']
+# list runs where the tag contains a key that starts with 'worth another look'
+az ml run list --experiment-name experiment [?tags.keys(@)[?starts_with(@, 'worth another look')]]
+# list runs where the author property = 'azureml-user' and the 'quality' tag starts with 'fantastic run'
+az ml run list --experiment-name experiment [?properties.author=='azureml-user' && tags.quality=='fantastic run']
+```
+
+Дополнительные сведения о запросах результатов Azure CLI, см. в разделе [выходные данные команды интерфейса командной строки Azure запрос](https://docs.microsoft.com/cli/azure/query-azure-cli?view=azure-cli-latest).
 
 ## <a name="example-notebooks"></a>Примеры записных книжек
 
