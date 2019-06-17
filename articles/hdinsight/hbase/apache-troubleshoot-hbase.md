@@ -8,10 +8,10 @@ ms.custom: hdinsightactive, seodec18
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.openlocfilehash: 6ba17a3839390ed5fe503a6fe57b63d8fb119138
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64713497"
 ---
 # <a name="troubleshoot-apache-hbase-by-using-azure-hdinsight"></a>Устранение неполадок в Apache HBase с помощью Azure HDInsight
@@ -219,7 +219,7 @@ mkdir: Cannot create directory /temp. Name node is in safe mode.
    ```
 
    > [!Note] 
-   > IP-адрес активного узла ZooKeeper можно получить из пользовательского интерфейса Ambari. Последовательно выберите **HBase** > **Quick Links** (Быстрые ссылки) > **ZK\* (Активно)** > **Zookeeper Info** (Сведения о Zookeeper). 
+   > IP-адрес активного узла ZooKeeper можно получить из пользовательского интерфейса Ambari. Последовательно выберите **HBase** > **Quick Links** (Быстрые ссылки) > **ZK\* (Активно)**  > **Zookeeper Info** (Сведения о Zookeeper). 
 
 3. Если sqlline.py подключается к Phoenix и время ожидания не истекает, выполните следующую команду, чтобы проверить доступность и работоспособность Phoenix:
 
@@ -277,7 +277,7 @@ mkdir: Cannot create directory /temp. Name node is in safe mode.
 
 Проверьте стек вызовов и попытайтесь определить папку, которая может быть причиной проблемы (например, это может быть папка WAL или папка .tmp). Затем в Cloud Explorer или с помощью команд HDFS попытайтесь найти файл с ошибкой. Обычно это файл \*-renamePending.json. (Файл \*-renamePending.json является файлом журнала, который используется для реализации атомарной операции переименования в драйвере WASB. Из-за ошибок в реализации такие файлы могут оставаться в случае сбоя процесса и т. д.) Принудительно удалите этот файл в Cloud Explorer или с помощью команд HDFS. 
 
-В этом расположении в некоторых случаях может иметься временный файл с именем наподобие *$$$.$$$*. Чтобы увидеть этот файл, необходимо использовать команду `ls` HDFS. Этот файл не отображается в Cloud Explorer. Чтобы удалить этот файл, используйте команду HDFS `hdfs dfs -rm /\<path>\/\$\$\$.\$\$\$`.  
+В этом расположении в некоторых случаях может иметься временный файл с именем наподобие *$$$.$$$* . Чтобы увидеть этот файл, необходимо использовать команду `ls` HDFS. Этот файл не отображается в Cloud Explorer. Чтобы удалить этот файл, используйте команду HDFS `hdfs dfs -rm /\<path>\/\$\$\$.\$\$\$`.  
 
 После выполнения этих команд HMaster должен сразу запуститься. 
 
@@ -311,7 +311,7 @@ mkdir: Cannot create directory /temp. Name node is in safe mode.
    hbase hbck -ignorePreCheckPermission -fixAssignments 
    ```
 
-### <a name="additional-reading"></a>Дополнительные материалы
+### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 [Не удается обработать таблицу HBase](https://stackoverflow.com/questions/4794092/unable-to-access-hbase-table).
 
