@@ -113,11 +113,11 @@ ms.locfileid: "64725247"
 | publisher | Microsoft.Compute.Extensions | string |
 | type | CustomScript | string |
 | typeHandlerVersion | 2.0 | int |
-| fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | массив |
+| fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | array |
 | commandToExecute (пример) | Python MyPythonScript.py \<Мои param1 > | string |
 | script | IyEvYmluL3NoCmVjaG8gIlVwZGF0aW5nIHBhY2thZ2VzIC4uLiIKYXB0IHVwZGF0ZQphcHQgdXBncmFkZSAteQo= | string |
-| skipDos2Unix (например) | false | Логическое |
-| метка времени (например) | 123456789 | 32-битное целое число |
+| skipDos2Unix (например) | false | boolean |
+| timestamp (например) | 123456789 | 32-битное целое число |
 | storageAccountName (пример) | examplestorageacct | string |
 | storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | string |
 
