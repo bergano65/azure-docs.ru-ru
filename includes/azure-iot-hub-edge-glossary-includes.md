@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: dobett
 ms.openlocfilehash: c95bca125ea70cf32acad0d5ea67c3ad195ed704
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66146571"
 ---
 ## <a name="automatic-device-management"></a>Автоматическое управление устройствами
@@ -20,7 +20,7 @@ Azure IoT Edge обеспечивает развертывание ориент�
 ## <a name="iot-edge-agent"></a>Агент IoT Edge
 Часть среды выполнения IoT Edge, отвечающая за развертывание модулей и их мониторинг.
 
-## <a name="iot-edge-device"></a>Устройство IoT Edge
+## <a name="iot-edge-device"></a>Устройства IoT Edge
 Устройства IoT Edge, на которых установлена среда выполнения IoT Edge и которые помечены как **устройства IoT Edge** в сведениях об устройстве. Сведения см. в статье [Развертывание Azure IoT Edge на имитированном устройстве в Linux (предварительная версия)](https://docs.microsoft.com/azure/iot-edge/tutorial-simulate-device-linux).
 
 ## <a name="iot-edge-automatic-deployment"></a>Автоматическое развертывание IoT Edge

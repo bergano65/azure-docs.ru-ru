@@ -16,10 +16,10 @@ ms.workload: billing
 ms.date: 04/25/2017
 ms.author: erikre
 ms.openlocfilehash: 5722e05e5a5e3a57b4d12b70b14f8674364f824b
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66244815"
 ---
 # <a name="overview-of-reporting-apis-for-enterprise-customers"></a>Обзор API- интерфейсов отчетов для корпоративных клиентов
@@ -29,7 +29,7 @@ ms.locfileid: "66244815"
 * **Создание или получение ключа API.** Войдите на корпоративный портал и последовательно выберите "Отчеты" > "Скачать сведения об использовании" > API Access Key (Ключ доступа к API), чтобы создать или получить ключ API.
 * **Передача ключей в API**. Для аутентификации и авторизации необходимо передать ключ API для каждого вызова. В заголовки HTTP необходимо добавить следующее свойство:
 
-|Ключ заголовка запроса | Value|
+|Ключ заголовка запроса | Значение|
 |-|-|
 |Авторизация| Укажите значение в следующем формате: **bearer {API_KEY}** <br/> Пример: bearer eyr....09| 
 

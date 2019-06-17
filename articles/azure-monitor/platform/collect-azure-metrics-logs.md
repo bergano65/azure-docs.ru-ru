@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 04/12/2017
 ms.author: magoedte
 ms.openlocfilehash: d086b6f844deb06d98edec8d8ec0f5670d84f066
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66129717"
 ---
 # <a name="collect-azure-service-logs-and-metrics-into-log-analytics-workspace-in-azure-monitor"></a>Сбор журналов службы Azure и метрик в рабочей области Log Analytics в Azure Monitor
@@ -30,9 +30,9 @@ ms.locfileid: "66129717"
 4. Сценарии для сбора и публикации данных в рабочей области Log Analytics в Azure Monitor (пробелы в следующей таблице, а также для служб, которые не перечислены)
 
 
-| Service                 | Тип ресурса                           | Журналы        | Метрики     | Решение |
+| Service                 | Тип ресурса                           | Журналы        | metrics     | Решение |
 | --- | --- | --- | --- | --- |
-| Шлюзы приложения    | Microsoft.Network/applicationGateways   | Диагностика | Диагностика | [Анализ шлюзов приложений Azure](../insights/azure-networking-analytics.md#azure-application-gateway-analytics-solution-in-azure-monitor) |
+| Шлюзы приложений    | Microsoft.Network/applicationGateways   | Диагностика | Диагностика | [Анализ шлюзов приложений Azure](../insights/azure-networking-analytics.md#azure-application-gateway-analytics-solution-in-azure-monitor) |
 | Application Insights    |                                         | Соединитель   | Соединитель   | [Соединитель Application Insights](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/) (предварительная версия) |
 | Учетные записи службы автоматизации     | Microsoft.Automation/AutomationAccounts | Диагностика |             | [Дополнительные сведения](../../automation/automation-manage-send-joblogs-log-analytics.md)|
 | Учетные записи пакетной службы          | Microsoft.Batch/batchAccounts           | Диагностика | Диагностика | |

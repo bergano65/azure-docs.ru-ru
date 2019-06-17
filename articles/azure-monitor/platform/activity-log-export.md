@@ -9,10 +9,10 @@ ms.date: 05/20/2019
 ms.author: bwren
 ms.subservice: logs
 ms.openlocfilehash: acf2526e79519e610614dc5217efbfe5e327b90f
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66248149"
 ---
 # <a name="export-azure-activity-log-to-storage-or-azure-event-hubs"></a>Экспорт журнала действий Azure для хранения или концентраторы событий Azure
@@ -113,10 +113,10 @@ ms.locfileid: "66248149"
     | --- | --- | --- |
     | Name |Yes |Имя профиля журнала. |
     | StorageAccountId |Нет |Идентификатор ресурса учетной записи хранения, где следует сохранить журнал действий. |
-    | serviceBusRuleId |Нет  |Идентификатор правила служебной шины для пространства имен служебной шины, в котором вы сможете создать концентраторы событий. Это строка в формате: `{service bus resource ID}/authorizationrules/{key name}`. |
+    | serviceBusRuleId |Нет |Идентификатор правила служебной шины для пространства имен служебной шины, в котором вы сможете создать концентраторы событий. Это строка в формате: `{service bus resource ID}/authorizationrules/{key name}`. |
     | Расположение |Yes |Разделенный запятыми список регионов, для которых будут собираться события журнала действий. |
     | RetentionInDays |Да |Число дней, для которых будут храниться события в учетной записи, от 1 до 2147483647. Нулевое значение означает, что журналы хранятся неограниченно долго. |
-    | Категория |Нет  |Разделенный запятыми список категорий событий, которые будут собираться. Возможные значения: _записи_, _удалить_, и _действие_. |
+    | Категория |Нет |Разделенный запятыми список категорий событий, которые будут собираться. Возможные значения: _записи_, _удалить_, и _действие_. |
 
 ### <a name="example-script"></a>Пример сценария
 Ниже приведен пример сценария PowerShell для создания профиля журнала, который записывает журнал действий в оба хранилища учетной записи и концентратор событий.
@@ -152,7 +152,7 @@ ms.locfileid: "66248149"
    az monitor log-profiles create --name "default" --location null --locations "global" "eastus" "westus" --categories "Delete" "Write" "Action"  --enabled false --days 0 --service-bus-rule-id "/subscriptions/<YOUR SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventHub/namespaces/<EVENT HUB NAME SPACE>/authorizationrules/RootManageSharedAccessKey"
    ```
 
-    | Свойство | Обязательно для заполнения | Описание |
+    | Свойство | Обязательно для заполнения | ОПИСАНИЕ |
     | --- | --- | --- |
     | name |Да |Имя профиля журнала. |
     | storage-account-id |Да |Идентификатор ресурса для учетной записи хранения, в которую будут сохранены журналы действий. |

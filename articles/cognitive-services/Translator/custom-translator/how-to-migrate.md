@@ -10,10 +10,10 @@ ms.date: 02/21/2019
 ms.author: v-pawal
 ms.topic: conceptual
 ms.openlocfilehash: 901b5312d216c241331b90a6b61d263437ab5c70
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66389301"
 ---
 # <a name="migrate-hub-workspace-and-projects-to-custom-translator"></a>Перенос рабочей области и проектов центра в Custom Translator
@@ -82,7 +82,7 @@ ms.locfileid: "66389301"
 
     a. Deployed Trainings only (Только развернутые обучения). Этот вариант переносит только развернутые учебные системы и связанные с ними документы.
 
-    2. All Successful Trainings (Все успешные обучения). Этот вариант переносит все успешные обучения и связанные с ними документы.
+    2\. All Successful Trainings (Все успешные обучения). Этот вариант переносит все успешные обучения и связанные с ними документы.
 
     c. Введите идентификатор рабочей области назначения в Custom Translator.
 

@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 2abfa29671bd804ee75194ef621fe07f06c015e9
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66118137"
 ---
 #### <a name="to-create-a-volume"></a>Создание тома
@@ -47,7 +47,7 @@ ms.locfileid: "66118137"
 
       1. Нажмите кнопку **Создать**. Создан том с указанными настройками.
 
-         ![Щелкните Создать. ](./media/storsimple-8000-create-volume-u2/step5createvol3.png)
+         ![Щелкните Создать.](./media/storsimple-8000-create-volume-u2/step5createvol3.png)
 
          > [!NOTE]
          > Имейте в виду, что том, созданный здесь, не защищен. Вам необходимо создать и связать политики резервного копирования с этим томом, чтобы выполнить архивацию по расписанию. 

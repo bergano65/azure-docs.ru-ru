@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: a4c9ec133b3686a92cec7e7c8d4552c1302e3074
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66158531"
 ---
 Чтобы использовать интерфейс командной строки Azure (CLI) с командами и шаблонами Resource Manager для развертывания ресурсов Azure и рабочих нагрузок с помощью групп ресурсов, вам потребуется учетная запись Azure. Если у вас нет учетной записи, бесплатную пробную версию Azure можно получить [здесь](https://azure.microsoft.com/pricing/free-trial/).
@@ -35,7 +35,7 @@ ms.locfileid: "66158531"
 | Создание самой простой виртуальной машины |`azure vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username> <admin-password>`<br/><br/>(Получите `image-urn` из команды `azure vm image list`. Примеры см. в [этой статье](../articles/virtual-machines/linux/cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).) |
 | Создание виртуальной машины Linux |`azure  vm create [options] <resource-group> <name> <location> -y "Linux"` |
 | Создание виртуальной машины Windows |`azure  vm create [options] <resource-group> <name> <location> -y "Windows"` |
-| Список виртуальных машин |`azure  vm list [options]` |
+| Вывод списка виртуальных машин |`azure  vm list [options]` |
 | Получение информации о виртуальной машине |`azure  vm show [options] <resource_group> <name>` |
 | Запуск виртуальной машины |`azure vm start [options] <resource_group> <name>` |
 | Остановка виртуальной машины |`azure vm stop [options] <resource_group> <name>` |
