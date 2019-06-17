@@ -9,10 +9,10 @@ ms.reviewer: jasonwhowell
 ms.topic: conceptual
 ms.date: 03/01/2017
 ms.openlocfilehash: 14908225e78b79cb748e712ae23643ddde4a4242
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60813494"
 ---
 # <a name="run-and-test-u-sql-with-azure-data-lake-u-sql-sdk"></a>Выполнение и тестирование U-SQL с помощью пакета SDK Azure Data Lake для U-SQL
@@ -344,7 +344,7 @@ public LocalRunHelper([System.IO.TextWriter messageOutput = null])
 |CodeBehindReferences|string|Если сценарий содержит дополнительные ссылки на код программной части, укажите эти пути, разделенные точкой с запятой ";".|
 |CppSdkDir|string|Каталог пакета CppSDK.|
 |CurrentDir|string|Текущий каталог.|
-|Корневой путь к данным|string|Путь к корневой папке данных.|
+|DataRoot|string|Путь к корневой папке данных.|
 |DebuggerMailPath|string|Путь к почтовому слоту отладчика.|
 |GenerateUdoRedirect|bool|Указывает, нужно ли создавать конфигурацию, переопределяющую пути перенаправления для загрузки сборки|
 |HasCodeBehind|bool|Позволяет указать, содержит ли сценарий код программной части.|

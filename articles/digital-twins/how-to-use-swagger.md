@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 06/03/2019
 ms.author: v-adgera
 ms.custom: seodec18
-ms.openlocfilehash: 842c35a1575c7bcf6f547fb04d5680178b3bee78
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.openlocfilehash: c402b82b91b02f8d9619c851d09c689fd103c9fe
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66730360"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67116434"
 ---
 # <a name="azure-digital-twins-swagger-reference-documentation"></a>Справочная документация о Swagger с Azure Digital Twins
 
@@ -104,7 +104,7 @@ Swagger также предоставляет полный обзор всех �
     ```plaintext
     https://YOUR_SWAGGER_URL/ui/oauth2-redirect-html
     ```
-    | ИМЯ  | Заменить на | Пример |
+    | Name  | Заменить на | Пример |
     |---------|---------|---------|
     | YOUR_SWAGGER_URL | URL-адрес документации по REST API управления, найти на портале  | `https://yourDigitalTwinsName.yourLocation.azuresmartspaces.net/management/swagger` |
 
@@ -112,7 +112,7 @@ Swagger также предоставляет полный обзор всех �
 
     ![API добавления регистраций приложений в Azure AD](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)
 
-4. Настройте манифест приложения, чтобы разрешить неявный поток OAuth 2.0. Щелкните **Манифест**, чтобы открыть манифест вашего приложения. Для *oauth2AllowImplicitFlow* задайте значение `true`.
+4. Настройте манифест приложения, чтобы разрешить неявный поток OAuth 2.0. Выберите **манифеста** открыть манифест приложения для вашего приложения. Для *oauth2AllowImplicitFlow* задайте значение `true`.
 
     ![Поток неявного предоставления разрешений Azure AD](../../includes/media/digital-twins-permissions/aad-app-allow-implicit-flow.png)
 
@@ -120,9 +120,9 @@ Swagger также предоставляет полный обзор всех �
 
 После завершения регистрации Azure Active Directory:
 
-6. Нажмите кнопку **Authorize** кнопки на странице swagger.
+6. Выберите **Authorize** кнопки на странице swagger.
 
-    [![Нажмите кнопку Swagger кнопка "Авторизовать"](media/how-to-use-swagger/swagger-select-authorize-btn.png)](media/how-to-use-swagger/swagger-select-authorize-btn.png#lightbox)
+    [![Кнопка "Авторизовать" выберите Swagger](media/how-to-use-swagger/swagger-select-authorize-btn.png)](media/how-to-use-swagger/swagger-select-authorize-btn.png#lightbox)
 
 7. Вставьте идентификатор приложения в **client_id** поля.
 

@@ -15,10 +15,10 @@ ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: dc3dd06b5feac1f66598cd65fa79f447a1bbd9be
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60837510"
 ---
 # <a name="sfctl-chaos-schedule"></a>Расписание sfctl chaos
@@ -29,7 +29,7 @@ ms.locfileid: "60837510"
 |Команда|Описание|
 | --- | --- |
 | get | Получение расписания Chaos, определяющего, когда и как выполнять Chaos. |
-| набора | Настройка используемого Chaos расписания. |
+| set | Настройка используемого Chaos расписания. |
 
 ## <a name="sfctl-chaos-schedule-get"></a>sfctl chaos schedule get
 Получение расписания Chaos, определяющего, когда и как выполнять Chaos.

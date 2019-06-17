@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/28/2017
-ms.openlocfilehash: 30d52f1ac6a68a3202de59a0b4cab8edfb7ed042
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 28f154c4bd8bb1675eac509bd9d6dab9bb6af026
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64701082"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67066230"
 ---
 # <a name="use-azure-toolkit-for-intellij-to-debug-apache-spark-applications-remotely-in-hdinsight-through-vpn"></a>Удаленная отладка приложений Apache Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ
 
@@ -63,7 +63,7 @@ ms.locfileid: "64701082"
 
    a. Откройте Блокнот с повышенным уровнем разрешений. В меню **Файл** выберите **Открыть** и найдите папку с файлом hosts. На компьютере Windows это папка **C:\Windows\System32\Drivers\etc\hosts**.
 
-   2. Добавьте в файл **hosts** следующие данные.
+   2\. Добавьте в файл **hosts** следующие данные.
 
            # For headnode0
            192.xxx.xx.xx hn0-nitinp
@@ -87,14 +87,14 @@ ms.locfileid: "64701082"
 
     a. Выберите **HDInsight** > **Spark on HDInsight (Scala)** (Spark в HDInsight (Scala)).
 
-    2. Щелкните **Далее**.
+    2\. Щелкните **Далее**.
 1. В следующем диалоговом окне **New Project** (Новый проект) выполните приведенные ниже действия, после чего щелкните **Finish** (Готово).
 
     - Введите имя и расположение проекта.
 
     - В раскрывающемся списке для параметра **Project SDK** (Пакет SDK проекта) выберите **Java 1.8** для кластера Spark 2.x или **Java 1.7** для кластера Spark 1.x.
 
-    - В раскрывающемся списке **Spark version** (Версия Spark) мастер создания проекта Scala интегрирует правильную версию пакета SDK для Spark и пакета SDK для Scala. Если версия кластера Spark ниже 2.0, выберите **Spark 1.x**. В противном случае выберите **Spark 2.x**. В этом примере используется **Spark 2.0.2 (Scala 2.11.8)**.
+    - В раскрывающемся списке **Spark version** (Версия Spark) мастер создания проекта Scala интегрирует правильную версию пакета SDK для Spark и пакета SDK для Scala. Если версия кластера Spark ниже 2.0, выберите **Spark 1.x**. В противном случае выберите **Spark 2.x**. В этом примере используется **Spark 2.0.2 (Scala 2.11.8)** .
   
    ![Выбор версии пакета SDK и Spark](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/hdi-scala-project-details.png)
   
@@ -102,7 +102,7 @@ ms.locfileid: "64701082"
 
     a. В меню **File** (Файл) выберите **Project Structure** (Структура проекта).
 
-    2. В диалоговом окне **Project Structure** (Структура проекта) щелкните **артефакты**, чтобы просмотреть созданный по умолчанию артефакт. Вы также можете создать собственный артефакт, щелкнув значок "плюс" (**+**).
+    2\. В диалоговом окне **Project Structure** (Структура проекта) щелкните **артефакты**, чтобы просмотреть созданный по умолчанию артефакт. Вы также можете создать собственный артефакт, щелкнув значок "плюс" ( **+** ).
 
    ![Создание JAR-файла](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/default-artifact.png)
 
@@ -111,7 +111,7 @@ ms.locfileid: "64701082"
 
     a. Щелкните правой кнопкой мыши имя проекта в дереве проектов и выберите **Open Module Settings** (Открыть параметры модуля). 
 
-    2. В диалоговом окне **Project Structure** (Структура проекта) выберите **Libraries** (Библиотеки), щелкните символ (**+**), а затем выберите **From Maven** (Из Maven).
+    2\. В диалоговом окне **Project Structure** (Структура проекта) выберите **Libraries** (Библиотеки), щелкните символ ( **+** ), а затем выберите **From Maven** (Из Maven).
 
     ![Добавление библиотеки](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/add-library.png)
 
@@ -137,7 +137,7 @@ ms.locfileid: "64701082"
                  <name>fs.azure.account.key.hdistoragecentral.blob.core.windows.net</name>
                  <value>access-key-associated-with-the-account</value>
            </property>
-   2. Удалите из файла `core-site.xml` указанные ниже записи.
+   2\. Удалите из файла `core-site.xml` указанные ниже записи.
 
            <property>
                  <name>fs.azure.account.keyprovider.hdistoragecentral.blob.core.windows.net</name>
@@ -241,7 +241,7 @@ ms.locfileid: "64701082"
 1. Когда выполнение программы достигнет точки останова, на нижней панели отобразится вкладка **Debugger** (Отладчик).
 
     ![Просмотр вкладки "Debugger" (Отладчик)](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-add-watch.png)
-1. Чтобы добавить контрольное значение, щелкните значок (**+**).
+1. Чтобы добавить контрольное значение, щелкните значок ( **+** ).
 
     ![Щелчок значка "+"](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/debug-add-watch-variable.png)
 
@@ -277,8 +277,7 @@ ms.locfileid: "64701082"
 ### <a name="tools-and-extensions"></a>Средства и расширения
 * [Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin.md)
 * [Удаленная или локальная отладка приложений Spark в кластере HDInsight с помощью Azure Toolkit for IntelliJ через SSH](apache-spark-intellij-tool-debug-remotely-through-ssh.md)
-* [Использование инструментов HDInsight для IntelliJ с песочницей Hortonworks](../hadoop/hdinsight-tools-for-intellij-with-hortonworks-sandbox.md)
-* [Использование средств HDInsight в Azure Toolkit for Eclipse для создания приложений Apache Spark](../hdinsight-apache-spark-eclipse-tool-plugin.md)
+* [Создание приложений Spark для кластера HDInsight с помощью Azure Toolkit for Eclipse](../hdinsight-apache-spark-eclipse-tool-plugin.md)
 * [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
 * [Ядра для записной книжки Jupyter в кластерах Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)

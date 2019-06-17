@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 11ebaec75b1220f39fe059ea7825cdccafda2f5d
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66735621"
 ---
 # <a name="azure-maps-mobility-coverage"></a>Azure Maps Mobility покрытия
@@ -47,7 +47,7 @@ Azure Maps [службы Mobility service](https://aka.ms/AzureMapsMobilityServi
 | Пуэрто-Рико | Сан-Хуан |
 | Уругвай | Монтевидео, Punta del Este |
 | Соединенные Штаты Америки | <p>Олбани (штат Нью-ЙОРК), Альбукерке (НМ), Anchorage (AK), Neenah Appleton Oshkosh (рабочие Элементы), Asheville (NC), (OH) Афины, Атланте (GA), Остин (штат Техас), Bakersfield (ЦС), Baltimore), Bellevue (WA), район Berkshire (MA), Бирмингеме (п.), Блумингтон (IN), Буаз (ID), (Бостон MA), район Бреварда Боулдер (CO) (Флорида), Буффало (штат Нью-ЙОРК), крутой холм (MT), Мыса Cod), центр округа (АП), Шампейн Урбана (IL), Charleston (SC), Charleston (WV), Шарлотты (NC), Charlottesville (VA), Чаттануге (TN), Cheyenne (WY), (IL) Чикаго, Цинциннати (OH), Округа (en) (Флорида), Кливленде (OH), Coachella Долина (ЦС), Колорадо-Спрингс (CO), Колумбия (TN), Columbus (OH), праздник тела Христова (штат Техас), Dallas/д, стоит (штат Техас), Dayton (OH), Делавэр, Денвер (CO), Moines Des (IA), Детройт (MI), Дулуте (MN), Paso El (штат Техас), Евгений (OR ), Fairbanks (AK), Fargo (ND), Fayetteville (NC), Flagstaff (AZ), Flint (MI) Форт Коллинз (CO), Форт-Уэйн (IN), города Фресно (ЦС), Гейнсвиль (Флорида), Grand вилок (ND), Grand Rapids (MI), зеленый Bay (рабочие Элементы), Greensboro (NC), Greenville (SC), Gunnison (CO), дороги Hampton (VA ), Hanford (ЦС), Hartford (CT), Hernando района (Флорида), Гонолулу (HI), Хьюстон (штат Техас), Humboldt района (ЦС), Хантсвилл (п.), Индианаполис (IN), Итака (штат Нью-ЙОРК), Джексона (мс), Jackson (TN), Джэксонвилль - Район Сент-Джонс (Флорида), Город Джонсон (TN) Jonesboro (AR) Joplin (MO), Juneau (AK), Kalamazoo (MI), Канзас Город (MO), Kauai (HI), Ketchum (ID), Ноксвилл (TN), Lafayette (IN), Ланкастерском (АП), Lansing (MI), Лас-Вегасе (штат Невада), Лоуренс (KS), район Lee (Флорида), Lexington (ключом), Линкольн округа (или), младшей рок (AR), Лос-Анджелес ( ЦС), Луисвилл (ключом), Madison (рабочие Элементы), McAllen (штат Техас), Мемфисе (TN), Майами (Флорида), Milwaukee/Waukesha (рабочие Элементы), Миннеаполис св (MN), Missoula (MT), Modesto (США), Moline (IL), Округ Монро (АП), кривых Монтгомери (п.), Morgantown (WV), Нэшвилле (TN), Navajo страны), Новый не использовали (CT), Новый Орлеан (LA), НЬЮ Джерси), Ocala (Флорида), район Okaloosa (Флорида), Город Оклахома (ОК), Omaha (NE), Орландо (Флорида), Панама Город (Флорида), Pensacola (Флорида), Peoria (IL), Филадельфия (АП), Phoenix (AZ), Питтсбург (АП), Портленде (ME), Портленде (OR), Racine (рабочие Элементы), Роли (NC), Redding (ЦС), Reno & Tahoe Озера (штат Невада), Roanoke Долина (VA - Lynchburg), Рочестер (Нью-ЙОРК), роки Mountain национальный парк), мошеннических Долина (OR), Roseburg (OR), Roseville (ЦС), Сакраменто (ЦС), Salem (OR), Солт-Лейк-Сити (ИП), Сан-Антонио (Техас), Сан-Диего) ЦС), San Luis Obispo (ЦС), РФ (ЦС), Санта-ФЕ (НМ), Sarasota (Флорида), Savannah (GA), Seacoast регион (центр Уведомлений), Bellevue Сиэтл Tacoma (WA), но Bay область (ЦС), Город Sioux (IA), за использованные Sioux (SD), Sitka (AK), Spokane (WA), Спрингфилда (IL), Спрингфилда (запоминающих устройств), Джордж ST. (ИП), Сент-Луис (MO), Stockton (ЦС), Сиракьюс Utica (штат Нью-ЙОРК), Таллахасси (Флорида), Тампа St. Петербург (Флорида), Terre Haute (IN), Толидо (OH), Topeka (KS), Город перекрестной (MI), Tucson (AZ), Tulsa (ОК), вермонтской, Victorville (ЦС), район Volusia (Флорида), Waco (Техас), Вашингтон (DC), Waterbury (CT), Уичито (KS), Wilmington (NC), Yakima (WA), район York (АП), район Yuma (AZ)</p>|
-| + США Виргинские о-ва | Данные учреждений Виргинские о-ва * |
+| \+ США Виргинские о-ва | Данные учреждений Виргинские о-ва * |
 
 
 ## <a name="asia-pacific"></a>Азиатско-Тихоокеанский регион
@@ -90,8 +90,8 @@ Azure Maps [службы Mobility service](https://aka.ms/AzureMapsMobilityServi
 | Эстония   | Эстония * |   
 | Финляндия   | Hämeenlinna, Хельсинки, Joensuu, Jyväskylä, Kajaani, Kouvola - Lappeenranta Kotka Kuopio, Mikkeli, Oulu, Seinäjoki, Tampere, Turku, Vaasa|
 | Франция    | <p>Amberieu-en-Bugey, Amiens, Angers, Annecy, Annonay, Arras, Aubenas, Bayonne, Besançon, Blois, Bordeaux, Boulogne sur об, Brest, Briançon, Канны, Châlons-en шампанское, Chartres, Clermont-Ferrand, Colmar, Dax, Dijon, Grenoble, Haguenau, ла Rochelle, Le Mans группы связанных элементов, Lille, Lorient, Lyon, компьютерах Mac, Марселе & Provence, Metz, Millau, мес-де Marsan, сертифицированные центры обслуживания, Mulhouse, Юлия Nantes, неплохо, Нормандии Nimes,., Nyons, Париж, Poitiers, Privas, Quimper, Rennes, Malo Санкт-Петербург, Санкт Étienne, Saint-Nazaire, Saintes, Sarrebourg, Sete, Strasbourg, Tarbes, Toulouse, Обзор</P> | 
-| + Французская Гвиана | Кайенна |
-| + Новая Каледония | Nouméa  |
+| \+ Французская Гвиана | Кайенна |
+| \+ Новая Каледония | Nouméa  |
 | Джорджия | Тбилиси | 
 | Германия | <p>Берлин, Бранденбурга, Bremen & Niedersachsen, Кельне, Eisenach, Франкфурт, Германия, Karlsruhe, Mainz, München - Titisee регион, Штутгартский, Мюнхен, регион Rhein Neckar Rhein Ruhr-Neustadt, Ulm</P> | 
 | Греция | <p>Афины, Arta, Amorgos, Chania, Corfu, Chios Kos, Heraklion, Ioannina, Kavala, Kalamata, Komotini, Kos, Larissa, Meganisi, Mykonos, Patra, Rethimno, Роудз, Santorini, Serres, Syros, Tinos, Thessaloniki, Veria, Volos, Xanthi </P> |

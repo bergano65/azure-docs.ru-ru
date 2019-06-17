@@ -3,20 +3,20 @@ title: контейнеры Docker;
 titleSuffix: Language Understanding - Azure Cognitive Services
 description: Контейнер LUIS загружает обученное или опубликованное приложение в контейнер Docker и предоставляет доступ к прогнозам запросов из конечных точек API контейнера.
 services: cognitive-services
-author: diberry
+author: IEvangelist
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 05/28/2019
-ms.author: diberry
-ms.openlocfilehash: 02ac7b91622a3c8fe877ea9bcbc7224a67eb0ae5
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.date: 06/11/2019
+ms.author: dapine
+ms.openlocfilehash: 68ff6a156e0d159816b184452f1f945cbce65216
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306628"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67052023"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
@@ -53,7 +53,7 @@ ms.locfileid: "66306628"
 
 Этот контейнер поддерживает минимальные и рекомендуемые значения для параметров:
 
-|Контейнер| Минимум | Рекомендуется | ТРАНЗАКЦИЙ В СЕКУНДУ<br>(Минимум, максимум)|
+|Контейнер| Минимальная | Рекомендуется | ТРАНЗАКЦИЙ В СЕКУНДУ<br>(Минимум, максимум)|
 |-----------|---------|-------------|--|
 |LUIS|1 ядро, 2 ГБ памяти|1 ядро, 4 ГБ памяти|20,40|
 
@@ -109,8 +109,8 @@ docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 |Тип пакета|Запрос API конечной точки|Запрос доступности|Формат имени файла пакета|
 |--|--|--|--|
 |Обучение пройдено|Get, Post|Только контейнер|`{APPLICATION_ID}_v{APPLICATION_VERSION}.gz`|
-|Промежуточное хранение|Get, Post|Azure и контейнер|`{APPLICATION_ID}_STAGING.gz`|
-|Рабочая среда|Get, Post|Azure и контейнер|`{APPLICATION_ID}_PRODUCTION.gz`|
+|Промежуточная|Get, Post|Azure и контейнер|`{APPLICATION_ID}_STAGING.gz`|
+|Производство|Get, Post|Azure и контейнер|`{APPLICATION_ID}_PRODUCTION.gz`|
 
 > [!IMPORTANT]
 > Не переименовать, alter, перезаписать или распаковка файлов пакета LUIS.
@@ -168,7 +168,7 @@ Host: {AZURE_REGION}.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 ```
 
-| Местозаполнитель | Value |
+| Placeholder | Значение |
 |-------------|-------|
 |{APPLICATION_ID} | Идентификатор опубликованного приложения LUIS. |
 |{APPLICATION_ENVIRONMENT} | Среда опубликованного приложения LUIS. Используйте одно из следующих значений:<br/>```PRODUCTION```<br/>```STAGING``` |
@@ -196,7 +196,7 @@ Host: {AZURE_REGION}.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 ```
 
-| Местозаполнитель | Value |
+| Placeholder | Значение |
 |-------------|-------|
 |{APPLICATION_ID} | Идентификатор обученного приложения LUIS. |
 |{APPLICATION_VERSION} | Версия обученного приложения LUIS. |
@@ -218,7 +218,7 @@ https://{AZURE_REGION}.api.cognitive.microsoft.com/luis/api/v2.0/package/{APPLIC
 
 Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. В команде используются следующие параметры:
 
-| Местозаполнитель | Value |
+| Placeholder | Значение |
 |-------------|-------|
 |{ENDPOINT_KEY} | Этот ключ используется для запуска контейнера. Не используйте ключ starter. |
 |{BILLING_ENDPOINT} | На портале Azure доступен выставления счетов значение конечной точки `Cognitive Services` странице "Обзор". Необходимо добавить `luis/v2.0` маршрутизации URI конечной точки, как показано в следующем примере: `https://westus.api.cognitive.microsoft.com/luis/v2.0`.|
@@ -270,7 +270,7 @@ ApiKey={ENDPOINT_KEY}
 
 Используйте узел `https://localhost:5000` для API контейнера. 
 
-|Тип пакета|Метод|Маршрут|Параметры запроса|
+|Тип пакета|Метод|Маршрутизация|Параметры запроса|
 |--|--|--|--|
 |Опубликовано|[Get](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee78), [Post](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee79)|/luis/v2.0/apps/{appId}?|q={q}<br>&staging<br>[&timezoneOffset]<br>[&verbose]<br>[&log]<br>|
 |Обучение пройдено|Get, Post|/luis/v2.0/apps/{appId}/versions/{versionId}?|q={q}<br>[&timezoneOffset]<br>[&verbose]<br>[&log]|
@@ -366,7 +366,7 @@ curl -X GET \
 |Неподдерживаемые сущности для всех языков и региональных параметров|Предварительно созданная сущность [KeyPhrase](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-keyphrase) для всех языков и региональных параметров|
 |Неподдерживаемые сущности для языка и региональных параметров "Английский (en-US)"|Предварительно созданные сущности [GeographyV2](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-geographyv2)|
 |Подготовка речи|Внешние зависимости не поддерживаются в контейнере.|
-|Анализ тональности|Внешние зависимости не поддерживаются в контейнере.|
+|Анализ мнений|Внешние зависимости не поддерживаются в контейнере.|
 
 <!--blogs/samples/video coures -->
 

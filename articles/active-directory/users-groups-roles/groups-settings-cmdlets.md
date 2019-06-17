@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c9b07e7524488d0336a55af6e1d5f36af59a870
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.openlocfilehash: c5ccc4ef6c095eacd29590504d46756ead856574
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66729821"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67058621"
 ---
 # <a name="azure-active-directory-cmdlets-for-configuring-group-settings"></a>Настройка параметров групп с помощью командлетов Azure Active Directory
 Эта статья содержит инструкции по использованию командлетов PowerShell в Azure Active Directory (Azure AD) для создания и изменения групп. Это содержимое относится только к группам Office 365, также известным как единые группы. 
@@ -78,7 +78,7 @@ ms.locfileid: "66729821"
    ```
 6. Дополнительные значения, с помощью:
 
-  ```powershell
+   ```powershell
    $Setting.Values
    ```  
 ## <a name="update-settings-at-the-directory-level"></a>Обновление параметров на уровне каталога
@@ -86,7 +86,7 @@ ms.locfileid: "66729821"
 
 Чтобы удалить значение UsageGuideLinesUrl, измените URL-адрес на пустую строку, используя описанный выше шаг 4.
 
- ```powershell
+   ```powershell
    $Setting["UsageGuidelinesUrl"] = ""
    ```  
 Выполните шаг 5, чтобы задать новое значение.
@@ -112,7 +112,7 @@ ms.locfileid: "66729821"
 
 ## <a name="example-configure-guest-policy-for-groups-at-the-directory-level"></a>Пример: Настройка политики гостя для групп на уровне каталога
 1. Получите все шаблоны параметр:
-  ```powershell
+   ```powershell
    Get-AzureADDirectorySettingTemplate
    ```
 2. Чтобы настроить политику гостя для групп на уровне каталога, требуется шаблон Group.Unified
@@ -135,7 +135,7 @@ ms.locfileid: "66729821"
    ```
 6. Дополнительные значения, с помощью:
 
-  ```powershell
+   ```powershell
    $Setting.Values
    ```   
 
@@ -143,9 +143,9 @@ ms.locfileid: "66729821"
 
 Если вам известно имя параметра, которое необходимо получить, можно использовать приведенный ниже командлет. В этом примере показано получение значения для параметра с именем UsageGuidelinesUrl. 
 
-  ```powershell
-  (Get-AzureADDirectorySetting).Values | Where-Object -Property Name -Value UsageGuidelinesUrl -EQ
-  ```
+   ```powershell
+   (Get-AzureADDirectorySetting).Values | Where-Object -Property Name -Value UsageGuidelinesUrl -EQ
+   ```
 Далее приведены действия, необходимые для чтения параметров на уровне каталога, применимые ко всем группам Office в каталоге.
 
 1. Чтение всех существующих параметров каталога:
@@ -188,11 +188,11 @@ ms.locfileid: "66729821"
 
 ## <a name="remove-settings-at-the-directory-level"></a>Удаление параметров на уровне каталога
 Далее приведено действие, необходимое для удаления параметров на уровне каталога, применимое ко всем группам Office в каталоге.
-  ```powershell
-  Remove-AzureADDirectorySetting –Id c391b57d-5783-4c53-9236-cefb5c6ef323c
-  ```
+   ```powershell
+   Remove-AzureADDirectorySetting –Id c391b57d-5783-4c53-9236-cefb5c6ef323c
+   ```
 
-## <a name="update-settings-for-a-specific-group"></a>Обновление параметров определенной группы
+## <a name="create-settings-for-a-specific-group"></a>Создание параметров для конкретной группы
 
 1. Найдите шаблон параметров Groups.Unified.Guest.
    ```powershell
@@ -219,13 +219,49 @@ ms.locfileid: "66729821"
    ```powershell
    $SettingCopy["AllowToAddGuests"]=$False
    ```
-5. Создайте параметр для требуемой группы в каталоге.
+5. Получите идентификатор группы, необходимо применить этот параметр, чтобы:
    ```powershell
-   New-AzureADObjectSetting -TargetType Groups -TargetObjectId ab6a3887-776a-4db7-9da4-ea2b0d63c504 -DirectorySetting $SettingCopy
+   $groupID= (Get-AzureADGroup -SearchString "YourGroupName").ObjectId
    ```
-6. Чтобы проверить параметры, выполните следующую команду:
+6. Создайте параметр для требуемой группы в каталоге.
    ```powershell
-   Get-AzureADObjectSetting -TargetObjectId ab6a3887-776a-4db7-9da4-ea2b0d63c504 -TargetType Groups | fl Values
+   New-AzureADObjectSetting -TargetType Groups -TargetObjectId $groupID -DirectorySetting $SettingCopy
+   ```
+7. Чтобы проверить параметры, выполните следующую команду:
+   ```powershell
+   Get-AzureADObjectSetting -TargetObjectId $groupID -TargetType Groups | fl Values
+   ```
+
+## <a name="update-settings-for-a-specific-group"></a>Обновление параметров определенной группы
+1. Получите идентификатор группы, параметр которого вы хотите обновить:
+   ```powershell
+   $groupID= (Get-AzureADGroup -SearchString "YourGroupName").ObjectId
+   ```
+2. Получить параметр группы:
+   ```powershell
+   $Setting = Get-AzureADObjectSetting -TargetObjectId $groupID -TargetType Groups
+   ```
+3. Обновить параметры группы, как вам требуется, например
+   ```powershell
+   $Setting["AllowToAddGuests"] = $True
+   ```
+4. Затем получите идентификатор параметра для этой конкретной группы:
+   ```powershell
+   Get-AzureADObjectSetting -TargetObjectId $groupID -TargetType Groups
+   ```
+   Вы получите ответ следующего вида:
+   ```powershell
+   Id                                   DisplayName            TemplateId                             Values
+   --                                   -----------            -----------                            ----------
+   2dbee4ca-c3b6-4f0d-9610-d15569639e1a Group.Unified.Guest    08d542b9-071f-4e16-94b0-74abb372e3d9   {class SettingValue {...
+   ```
+5. Затем можно задать новое значение для этого параметра:
+   ```powershell
+   Set-AzureADObjectSetting -TargetType Groups -TargetObjectId $groupID -Id 2dbee4ca-c3b6-4f0d-9610-d15569639e1a -DirectorySetting $Setting
+   ```
+6. Можно прочитать значение параметра, чтобы убедиться в том, что он был обновлен правильно:
+   ```powershell
+   Get-AzureADObjectSetting -TargetObjectId $groupID -TargetType Groups | fl Values
    ```
 
 ## <a name="cmdlet-syntax-reference"></a>Справочник по синтаксису командлетов

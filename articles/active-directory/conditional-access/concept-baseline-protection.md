@@ -1,5 +1,5 @@
 ---
-title: Политики защиты базовых показателей для условного доступа — Azure Active Directory
+title: Политики условного доступа базовой защиты — Azure Active Directory
 description: Базовая политика условного доступа для защиты организации от таких распространенных атак
 services: active-directory
 ms.service: active-directory
@@ -11,22 +11,22 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca062f4024bb5b0946812e00c8ccc1254b56d333
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 39a591a335d022ef7b2b99fdec930ddf0496cd47
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66003301"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112588"
 ---
 # <a name="what-are-baseline-policies"></a>Что такое политики базовых показателей?
 
 Базовая политика — это набор стандартных политик, которые позволяют защищать компании от многих распространенных атак. Этих распространенных атак может включать пароль Распылитель, воспроизведения и фишинга. Базовая политика доступны во всех выпусках Azure AD. Майкрософт обеспечение эти политики защиты базовых показателей доступности для всех поскольку атак на основе удостоверений были развертывают за последние несколько лет. Эти четыре политики призвано обеспечить минимальный уровень безопасности включены не все организации дополнительной платы.  
 
-Управление политиками пользовательского условного доступа требуется лицензия Azure AD Premium.
+Управление настраиваемые политики условного доступа требуется лицензия Azure AD Premium.
 
 ## <a name="baseline-policies"></a>Базовые политики
 
-![Базовая политика условного доступа на портале Azure](./media/concept-baseline-protection/conditional-access-baseline-policies.png)
+![Базовые политики условного доступа на портале Azure](./media/concept-baseline-protection/conditional-access-baseline-policies.png)
 
 Существует четыре базовых показателей политики, которые организации могут включить:
 
@@ -92,10 +92,10 @@ ms.locfileid: "66003301"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения можно найти в разделе
 
 * [Пять шагов по защите инфраструктуры удостоверений](../../security/azure-ad-secure-steps.md)
-* [Что представляет собой условный доступ в Azure Active Directory?](overview.md)
+* [Что такое условный доступ в Azure Active Directory?](overview.md)
 * [Требовать многофакторную Идентификацию для администраторов](howto-baseline-protect-administrators.md)
 * [Защита конечных пользователей (Предварительная версия)](howto-baseline-protect-end-users.md)
 * [Блок проверки подлинности (Предварительная версия)](howto-baseline-protect-legacy-auth.md)

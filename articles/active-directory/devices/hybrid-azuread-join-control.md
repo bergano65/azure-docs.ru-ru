@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cd5b388f92a875fb2635037a6eae3ff3b6a95793
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66513286"
 ---
 # <a name="controlled-validation-of-hybrid-azure-ad-join"></a>Контролируемая проверка гибридного присоединения к Azure AD
@@ -83,11 +83,11 @@ ms.locfileid: "66513286"
 
 ## <a name="controlled-validation-of-hybrid-azure-ad-join-on-windows-down-level-devices"></a>Контролируемая проверка из гибридное присоединение к Azure AD на устройства Windows нижнего уровня
 
-Чтобы зарегистрировать устройства Windows нижнего уровня, необходимо установить организаций [Microsoft Workplace Join для компьютеров Windows 10](https://www.microsoft.com/download/details.aspx?id=53554) доступны в центре загрузки Майкрософт.
+Чтобы зарегистрировать устройства Windows нижнего уровня, необходимо установить в организации [Microsoft Workplace Join для компьютеров, на которых не используется Windows 10](https://www.microsoft.com/download/details.aspx?id=53554). Это средство доступно в Центре загрузки Майкрософт.
 
-Можно развернуть пакет с помощью системы распространения программного обеспечения, таких как [System Center Configuration Manager](https://www.microsoft.com/cloud-platform/system-center-configuration-manager). Этот пакет поддерживает параметры стандартной автоматической установки с использованием параметра quiet. В текущей ветви System Center Configuration Manager доступны дополнительные преимущества предыдущих версий, такие как возможность отслеживать ход регистрации.
+Развернуть пакет можно с помощью системы распространения программного обеспечения, например  [System Center Configuration Manager](https://www.microsoft.com/cloud-platform/system-center-configuration-manager). Этот пакет поддерживает параметры стандартной автоматической установки с использованием параметра quiet. В текущей ветви System Center Configuration Manager доступны дополнительные преимущества предыдущих версий, такие как возможность отслеживать ход регистрации.
 
-Установщик создает запланированной задачи в системе, которая выполняется в контексте пользователя. Задача запускается в момент входа пользователя в систему Windows. Эта задача автоматически присоединяет устройство к Azure AD, используя учетные данные пользователя, после аутентификации с помощью Azure AD.
+Установщик создает в системе запланированную задачу, которая выполняется в контексте пользователя. Задача запускается в момент входа пользователя в систему Windows. Эта задача автоматически присоединяет устройство к Azure AD, используя учетные данные пользователя, после аутентификации с помощью Azure AD.
 
 Управление регистрацией устройств, следует развернуть пакет установщика Windows в выбранную группу устройств Windows нижнего уровня.
 

@@ -14,10 +14,10 @@ ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: 5b70edd4f65538b52c70881258bc500a34b04d80
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60826753"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-monitoring-and-management-app"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью приложения для мониторинга и управления
@@ -160,7 +160,7 @@ ms.locfileid: "60826753"
 
 <table>
 <tr>
-    <th align="left">Статус</th><th align="left">Подсостояние</th><th align="left">Описание</th>
+    <th align="left">Status</th><th align="left">Подсостояние</th><th align="left">Описание</th>
 </tr>
 <tr>
     <td rowspan="8">Waiting</td><td>ScheduleTime</td><td>Время выполнения окна действий еще не наступило.</td>
@@ -188,7 +188,7 @@ ms.locfileid: "60826753"
 </tr>
 <tr>
 <tr>
-<td rowspan="2">Выполняется</td><td>Выполняется проверка</td><td>Проверка выполняется.</td>
+<td rowspan="2">InProgress</td><td>Validating</td><td>Проверка выполняется.</td>
 </tr>
 <td>-</td>
 <td>Выполняется обработка окна действия.</td>
@@ -197,18 +197,18 @@ ms.locfileid: "60826753"
 <td rowspan="4">Сбой</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
 </tr>
 <tr>
-<td>Отменено</td><td>Окно действий отменено пользователем.</td>
+<td>Canceled</td><td>Окно действий отменено пользователем.</td>
 </tr>
 <tr>
-<td>Проверка</td><td>Проверка не пройдена.</td>
+<td>Проверка</td><td>Сбой проверки.</td>
 </tr>
 <tr>
 <td>-</td><td>Не удалось создать или проверить окно действий.</td>
 </tr>
-<td>Готово</td><td>-</td><td>Окно действия готово к использованию.</td>
+<td>Ready</td><td>-</td><td>Окно действия готово к использованию.</td>
 </tr>
 <tr>
-<td>Пропущен</td><td>-</td><td>Окно действий не обработано.</td>
+<td>Skipped</td><td>-</td><td>Окно действий не обработано.</td>
 </tr>
 <tr>
 <td>Нет</td><td>-</td><td>Окно действий, которое ранее существовало с другим состоянием, но было сброшено.</td>

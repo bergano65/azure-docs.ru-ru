@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: e5ab6651503766844b2aeef1849bffff9cf4d7bb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f8087afc541dba41d23eacd2dd0f50e8f0180af1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60835519"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66808406"
 ---
 # <a name="operating-system-functionality-on-azure-app-service"></a>Функциональные возможности операционной системы для службы приложений Azure
 В этой статье описываются базовые функциональные возможности операционной системы, доступные для всех приложений в [Службе приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714). Данные функциональные возможности включают в себя доступ к файлам, сети и реестру, а также диагностику и журналы событий. 
@@ -61,11 +61,11 @@ ms.locfileid: "60835519"
 - Диск, содержащий CSPKG-файлы пакета Azure, используемые исключительно службой приложений (и недоступные для клиентов)
 - "Пользовательский" диск (диск C:\), размер которого зависит от размера виртуальной машины. 
 
-Важно отслеживать использование диска по мере роста приложения. Если будет достигнута квота использования диска, это отрицательно повлияет на приложение. Пример. 
+Важно отслеживать использование диска по мере роста приложения. Если будет достигнута квота использования диска, это отрицательно повлияет на приложение. Пример: 
 
 - В приложении может появиться сообщение об ошибке, уведомляющее о том, что на диске недостаточно места.
 - При обзоре консоли Kudu могут отображаться ошибки диска.
-- Развертывание из VSTS или Visual Studio может завершиться сбоем с сообщением `ERROR_NOT_ENOUGH_DISK_SPACE: Web deployment task failed. (Web Deploy detected insufficient space on disk)`.
+- Развертывание с помощью DevOps в Azure или Visual Studio может произойти сбой с `ERROR_NOT_ENOUGH_DISK_SPACE: Web deployment task failed. (Web Deploy detected insufficient space on disk)`.
 - Производительность приложения может снизиться.
 
 <a id="NetworkDrives"></a>

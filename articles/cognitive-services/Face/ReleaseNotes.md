@@ -8,18 +8,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: conceptual
-ms.date: 04/28/2019
+ms.date: 06/06/2019
 ms.author: yluiu
-ms.openlocfilehash: 63f705061db7c89a80578e741d02ab8f8b1041c2
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: a7667f94d3f4dea2901c4b4b0e2b2c893b9f535e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64917100"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67074093"
 ---
 # <a name="face-api-release-notes"></a>Заметки о выпуске для API распознавания лиц
 
 Эта статья относится к службе API распознавания лиц версии 1.0.
+
+### <a name="release-changes-in-june-2019"></a>Изменения выпуска в июне 2019 г.
+
+* Добавить новую модель обнаружения лиц с повышенную точность на небольших, вид сбоку, перекрыто и становится нечетким лиц. Используйте его с помощью [лиц — обнаруживать](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), [FaceList — добавление распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395250), [LargeFaceList — добавление распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/5a158c10d2de3616c086f2d3), [Person каждой группе людей — добавление распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b) и [LargePersonGroup лицо — добавление распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/599adf2a3a7b9412a4d53f42) , указав новое имя модели обнаружения лиц `detection_02` в `detectionModel` параметра. Дополнительные сведения в [способы указания модели обнаружения](Face-API-How-to-Topics/specify-detection-model.md).
 
 ### <a name="release-changes-in-april-2019"></a>Изменения выпуска в апреля 2019 г.
 

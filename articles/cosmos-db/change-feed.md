@@ -9,10 +9,10 @@ ms.date: 05/20/2019
 ms.reviewer: sngun
 ms.custom: seodec18
 ms.openlocfilehash: 51a554586c67842ead40cd4a1bfaaa51bbdd8a18
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65954398"
 ---
 # <a name="change-feed-in-azure-cosmos-db---overview"></a>Канал изменений в Azure Cosmos DB. Обзор
@@ -35,10 +35,10 @@ Azure Cosmos DB используется для приложений Интер�
 
 | **Клиентские драйверы**; | **Интерфейс командной строки Azure** | **API SQL**; | **API Cassandra**; | **API Azure Cosmos DB для MongoDB** | **API Gremlin**;|**API таблицы**; |
 | --- | --- | --- | --- | --- | --- | --- |
-| .NET | Нет данных | Да | Нет  | Нет | Да | Нет |
-|Java|Нет данных|Да|Нет |Нет|Да|Нет|
-|Python|Нет данных|Да|Нет |Нет|Да|Нет|
-|Node/JS|Нет данных|Да|Нет |Нет|Да|Нет|
+| .NET | Нет данных | Да | Нет | Нет | Да | Нет |
+|Java|Нет данных|Да|Нет|Нет|Да|Нет|
+|Python|Нет данных|Да|Нет|Нет|Да|Нет|
+|Node/JS|Нет данных|Да|Нет|Нет|Да|Нет|
 
 ## <a name="change-feed-and-different-operations"></a>Канал изменений и разные операции
 

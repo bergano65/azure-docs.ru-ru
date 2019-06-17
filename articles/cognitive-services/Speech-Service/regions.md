@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/12/2019
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: 83cea56cecf9792c829e062965fe39b63201af3e
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 518f1048224a97943756c5b51b83cd509f82e11e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65020665"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072495"
 ---
 # <a name="speech-service-supported-regions"></a>Поддерживаемые регионы для службы "Речь"
 
@@ -24,7 +24,7 @@ ms.locfileid: "65020665"
 
 Вам нужно использовать конечную точку, которая соответствует региону для вашей подписки.
 
-## <a name="speech-sdk"></a>Пакет SDK для распознавания речи
+## <a name="speech-sdk"></a>Пакет SDK для службы "Речь"
 
 В [пакете SDK для службы "Речь"](speech-sdk.md) регионы указанны в виде строки (например, в качестве параметра `SpeechConfig.FromSubscription` в пакете SDK службы "Речь" для C#).
 
@@ -78,14 +78,14 @@ Speech SDK доступна в этих регионах для **распозн
 
 Служба "Речь" также предоставляет конечные точки REST для запросов распознавания речи в текст и преобразования текста в речь.
 
-### <a name="speech-to-text"></a>Преобразование речи в текст.
+### <a name="speech-to-text"></a>Преобразование речи в текст
 
-Дополнительные сведения о преобразовании речи в текст см. в документации по [REST API](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis).
+Для преобразования речи в текст справочную документацию см. в разделе [REST API распознавания речи в текст](rest-speech-to-text.md).
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-endpoints-speech-to-text.md)]
 
 ### <a name="text-to-speech"></a>Преобразование текста в речь
 
-Дополнительные сведения о преобразовании текста в речь см. в документации по [REST API](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis).
+Для преобразования текста в речь справочную документацию см. в разделе [REST API преобразования текста в речь](rest-text-to-speech.md).
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-endpoints-text-to-speech.md)]

@@ -15,17 +15,17 @@ ms.workload: NA
 ms.date: 12/07/2017
 ms.author: atsenthi
 ms.openlocfilehash: e5371cd3ea9de1993f0f824325f6cbf1e25343d4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60773049"
 ---
 # <a name="your-service-fabric-application-and-next-steps"></a>Ваше приложение Service Fabric и дальнейшие действия
 Ваше приложение Azure Service Fabric создано. В этой статье описываются некоторые руководства, с которыми вам необходимо ознакомиться, состав проекта, а также приведены некоторые дополнительные сведения, которые будут вам интересны, и возможные дальнейшие действия.
 
 ## <a name="get-started-with-tutorials-walk-throughs-and-samples"></a>Приступая к работе со статьями, пошаговыми руководствами и примерами
-Готовы приступить?  
+Готовы начать работу?  
 
 Ознакомьтесь с руководством по работе с приложением .NET. Узнайте, как [создать приложение](service-fabric-tutorial-create-dotnet-app.md) с интерфейсной частью ASP.NET Core и серверной службой с отслеживанием состояния, [развернуть его](service-fabric-tutorial-deploy-app-to-party-cluster.md) в кластер, [настроить непрерывную интеграцию и поставку](service-fabric-tutorial-deploy-app-with-cicd-vsts.md), а также [мониторинг и диагностику](service-fabric-tutorial-monitoring-aspnet.md).
 

@@ -8,12 +8,12 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.author: alinast
-ms.openlocfilehash: b7ace0718ea0fad0b746a40c90acff487ae314d5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7dfda00aca403f7f95f0c56d1db28c3c609bebd2
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60926293"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67080655"
 ---
 # <a name="routing-events-and-messages"></a>Маршрутизация событий и сообщений
 
@@ -21,7 +21,7 @@ ms.locfileid: "60926293"
 
 ## <a name="route-types"></a>Типы маршрутов  
 
-Azure Digital Twins предлагает два метода интеграции событий Интернета вещей в другие службы Azure или бизнес-приложения:
+Azure цифровой двойниками предлагает два способа для подключения событий Интернета вещей с другими службами Azure или бизнес-приложений.
 
 * **Маршрутизация событий Azure Digital Twins.** Объект пространственного графа, который изменяет полученные данные телеметрии, или определяемая пользователем функция, которая создает уведомление на основе предварительно определенных условий, может создать события Azure Digital Twins. Пользователи могут отправлять эти события в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/), [разделы служебной шины Azure](https://azure.microsoft.com/services/service-bus/) или [Сетку событий Azure](https://azure.microsoft.com/services/event-grid/) для дальнейшей обработки.
 
@@ -55,7 +55,7 @@ Digital Twins в настоящее время поддерживает след
 
 |             | DeviceMessages | TopologyOperation | SpaceChange | SensorChange | UdfCustom |
 | ----------- | -------------- | ----------------- | ----------- | ------------ | --------- |
-| EventHub|     X          |         X         |     X       |      X       |   X       |
+| концентратор событий.|     X          |         X         |     X       |      X       |   X       |
 | Служебная шина|              |         X         |     X       |      X       |   X       |
 | Сетка событий|               |         X         |     X       |      X       |   X       |
 

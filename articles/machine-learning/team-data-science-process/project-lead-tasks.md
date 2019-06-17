@@ -11,10 +11,10 @@ ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 00b1b58a39724951f2d5e4e688df8eb178654bbb
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65952839"
 ---
 # <a name="tasks-for-the-project-lead-in-the-team-data-science-process"></a>Задачи руководителя проекта — процесс обработки и анализа данных группы
@@ -69,7 +69,7 @@ ms.locfileid: "65952839"
 
 - Щелкните **Совместная работа над кодом**, чтобы перейти на домашнюю страницу Git проекта.  
 
-    ![4.](./media/project-lead-tasks/project-leads-4-create-project-repo-3.png)
+    ![4\.](./media/project-lead-tasks/project-leads-4-create-project-repo-3.png)
 
 - Щелкните стрелку вниз в верхнем левом углу и выберите **+ New repository** (+ Новый репозиторий). 
     

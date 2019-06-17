@@ -7,13 +7,13 @@ ms.author: hrasheed
 ms.reviewer: omidm
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 05/29/2019
-ms.openlocfilehash: 168a73ced039b9bced9a6aae6a138468b345b19d
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.date: 06/11/2019
+ms.openlocfilehash: 46eb90d2ec9902a9b5b7830063d0a6164ae948dd
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66391686"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67061123"
 ---
 # <a name="use-enterprise-security-package-in-hdinsight"></a>Корпоративный пакет безопасности для HDInsight
 
@@ -63,9 +63,9 @@ HDInsight в настоящее время поддерживает только
 
 Если используется федерация и хэши паролей синхронизируются правильно, но вы получаете сбой при аутентификации, проверьте, включена ли проверка пароля в облаке субъекта-службы PowerShell. Если нет, вы должны установить [Политику обнаружения домашней области (HRD)](../../active-directory/manage-apps/configure-authentication-for-federated-users-portal.md) для вашего клиента Azure AD. Чтобы проверить и установить политику HRD, выполните следующие действия.
 
-1. Установите модуль Azure AD PowerShell.
+1. Установите предварительную версию [модуля Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2).
 
-   ```
+   ```powershell
    Install-Module AzureADPreview
    ```
 
@@ -73,22 +73,36 @@ HDInsight в настоящее время поддерживает только
 
 3. Проверьте, была ли уже создана субъект-служба Microsoft Azure PowerShell.
 
-   ```
-   $powershellSPN = Get-AzureADServicePrincipal -SearchString "Microsoft Azure Powershell"
+   ```powershell
+   Get-AzureADServicePrincipal -SearchString "Microsoft Azure Powershell"
    ```
 
-4. Если нет (т. е. если `($powershellSPN -eq $null)`), то создайте субъект-службу.
+4. Если он не существует, создайте субъект-службу.
 
-   ```
+   ```powershell
    $powershellSPN = New-AzureADServicePrincipal -AppId 1950a258-227b-4e31-a9cf-717495945fc2
    ```
 
 5. Создайте и примените политику к этому субъекту-службе.
 
-   ```
-   $policy = New-AzureADPolicy -Definition @("{`"HomeRealmDiscoveryPolicy`":{`"AllowCloudPasswordValidation`":true}}") -DisplayName EnableDirectAuth -Type HomeRealmDiscoveryPolicy
+   ```powershell
+    # Determine whether policy exists
+    Get-AzureADPolicy | Where {$_.DisplayName -eq "EnableDirectAuth"}
 
-   Add-AzureADServicePrincipalPolicy -Id $powershellSPN.ObjectId -refObjectID $policy.ID
+    # Create if not exists
+    $policy = New-AzureADPolicy `
+        -Definition @('{"HomeRealmDiscoveryPolicy":{"AllowCloudPasswordValidation":true}}') `
+        -DisplayName "EnableDirectAuth" `
+        -Type "HomeRealmDiscoveryPolicy"
+
+    # Determine whether a policy for the service principal exist
+    Get-AzureADServicePrincipalPolicy `
+        -Id $powershellSPN.ObjectId
+    
+    # Add a service principal policy if not exist
+    Add-AzureADServicePrincipalPolicy `
+        -Id $powershellSPN.ObjectId `
+        -refObjectID $policy.ID
    ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

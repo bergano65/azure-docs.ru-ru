@@ -7,10 +7,10 @@ ms.topic: reference
 ms.date: 05/21/2019
 ms.author: tomfitz
 ms.openlocfilehash: dcad4b988f37d46a0b843fbf905e18011bc4e313
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65990754"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Функции для работы с ресурсами в шаблонах Azure Resource Manager
@@ -326,7 +326,7 @@ ms.locfileid: "65990754"
 | Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
 | имя_ресурса или идентификатор_ресурса |Да |string |Имя или уникальный идентификатор ресурса. |
-| версия_API |Нет |string |Версия API для указанного ресурса. Если ресурс не предоставляется в рамках того же шаблона, необходимо включить этот параметр. Как правило, указывается в формате **гггг-мм-дд**. |
+| apiVersion |Нет |string |Версия API для указанного ресурса. Если ресурс не предоставляется в рамках того же шаблона, необходимо включить этот параметр. Как правило, указывается в формате **гггг-мм-дд**. |
 | Full |Нет |string |Значение, указывающее, следует ли возвращать полный объект ресурса. Если вы не укажете `'Full'`, возвращается только объект свойств ресурса. Полный объект включает такие значения, как идентификатор ресурса и расположение. |
 
 ### <a name="return-value"></a>Возвращаемое значение
@@ -712,7 +712,7 @@ ms.locfileid: "65990754"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Значение |
 | ---- | ---- | ----- |
 | sameRGOutput | String | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
 | differentRGOutput | String | /subscriptions/{ИД_текущей_подписки}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |

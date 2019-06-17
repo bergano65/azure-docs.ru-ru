@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/02/2018
 ms.author: hrasheed
-ms.openlocfilehash: acf121c2954b3f324682578dd3ab2b4d8b1f63f2
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: d771d91feaba942b88a0ddb68f0d997fad4a981e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64707351"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67059415"
 ---
 # <a name="create-apache-hadoop-clusters-using-the-azure-rest-api"></a>Создание кластеров Apache Hadoop с помощью REST API Azure
 
@@ -22,9 +22,6 @@ ms.locfileid: "64707351"
 Узнайте, как создавать кластеры HDInsight с помощью шаблонов Azure Resource Manager и Azure REST API.
 
 Azure REST API позволяет управлять службами, размещенными на платформе Azure, в том числе создавать ресурсы, например кластеры HDInsight.
-
-> [!IMPORTANT]  
-> Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
 > [!NOTE]  
 > В приведенных в этом документе инструкциях для связи с Azure REST API используется служебная программа [curl (https://curl.haxx.se/)](https://curl.haxx.se/).
@@ -215,7 +212,7 @@ Azure REST API позволяет управлять службами, разм�
 >
 > Дополнительные сведения о размерах узлов и их стоимости см. на странице с [ценами на HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/).
 
-## <a name="log-in-to-your-azure-subscription"></a>Вход в подписку Azure
+## <a name="sign-in-to-your-azure-subscription"></a>Войдите в свою подписку Azure.
 
 Выполните действия, описанные в статье [Приступая к работе с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2), и подключитесь к подписке, используя команду `az login`.
 

@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 08/16/2018
 ms.author: shvija
 ms.openlocfilehash: f56882d2d73c85434c6f81972a06e5ea9ccdff99
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60822049"
 ---
 # <a name="event-hubs-net-framework-api-overview"></a>Обзор API Центров событий для платформы .NET Framework
@@ -35,7 +35,7 @@ ehd.PartitionCount = SampleManager.numPartitions;
 await namespaceManager.CreateEventHubAsync(ehd);
 ```
 
-### <a name="update"></a>Обновить
+### <a name="update"></a>Блокировка изменений
 
 ```csharp
 var ehd = await namespaceManager.GetEventHubAsync(eventHubName);
@@ -48,7 +48,7 @@ ehd.Authorization.Add(new SharedAccessAuthorizationRule(ruleName, ruleKey, new A
 await namespaceManager.UpdateEventHubAsync(ehd);
 ```
 
-### <a name="delete"></a>Удалить
+### <a name="delete"></a>Delete (Удалить)
 
 ```csharp
 await namespaceManager.DeleteEventHubAsync("event hub name");

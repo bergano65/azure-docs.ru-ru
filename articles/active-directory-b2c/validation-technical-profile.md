@@ -11,10 +11,10 @@ ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
 ms.openlocfilehash: 3f20c3c6d6821b5a8bbdb74101095431f6f7f18f
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66511909"
 ---
 # <a name="define-a-validation-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля проверки в пользовательской политике в Azure Active Directory B2C
@@ -72,7 +72,7 @@ ms.locfileid: "66511909"
 
 | Элемент | Вхождения | Описание |
 | ------- | ----------- | ----------- |
-| Value | 1:n | Данные, используемые при проверке. Если тип этой проверки равен `ClaimsExist`, то это поле задает ClaimTypeReferenceId для запроса. Если тип проверки равен `ClaimEquals`, то это поле задает ClaimTypeReferenceId для запроса. А другой элемент значения содержит значение, для которого необходимо выполнить проверку.|
+| Значение | 1:n | Данные, используемые при проверке. Если тип этой проверки равен `ClaimsExist`, то это поле задает ClaimTypeReferenceId для запроса. Если тип проверки равен `ClaimEquals`, то это поле задает ClaimTypeReferenceId для запроса. А другой элемент значения содержит значение, для которого необходимо выполнить проверку.|
 | Действие | 1:1 | Действие, которое требуется выполнить, если в результате проверки предварительного условия в рамках шага оркестрации получено значение true. Значение **Action** установлено в `SkipThisValidationTechnicalProfile`. Указывает, что не следует выполнять связанный технический профиль проверки. |
 
 ### <a name="example"></a>Пример

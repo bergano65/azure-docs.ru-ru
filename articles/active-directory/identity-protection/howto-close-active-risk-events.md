@@ -17,14 +17,14 @@ ms.date: 09/24/2018
 ms.author: joflore
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e003aec8fa5aeab587fa07acdae3a13b370a535
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 55c56674b04c4359fba741d10176fc91e3a991eb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60453505"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67109030"
 ---
-# <a name="how-to-close-active-risk-events"></a>Практическое руководство. Закрытие активных событий риска
+# <a name="how-to-close-active-risk-events"></a>Как Закрытие активных событий риска
 
 С помощью [событий риска](../reports-monitoring/concept-risk-events.md) Azure Active Directory обнаруживает индикаторы потенциально скомпрометированных учетных записей пользователей. Администраторам нужно закрывать все события риска, чтобы затронутые пользователи больше не подвергались риску.
 
@@ -48,7 +48,7 @@ ms.locfileid: "60453505"
 
 ## <a name="require-password-reset-with-a-user-risk-policy"></a>Требование сброса пароля с помощью политики риска для пользователя
 
-Настроив [политику условного доступа риска для пользователя](howto-user-risk-policy.md), можно настроить требование менять пароль, если был автоматически обнаружен определенный уровень риска для пользователя. 
+Настроив [риск пользователя политики условного доступа](howto-user-risk-policy.md), может потребовать изменения пароля, если уровень риска для указанного пользователя обнаружена автоматически. 
 
 ![Сброс пароля](./media/howto-close-active-risk-events/13.png)
 

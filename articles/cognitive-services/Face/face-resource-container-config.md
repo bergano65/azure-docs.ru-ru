@@ -3,20 +3,20 @@ title: Настройка контейнеров
 titlesuffix: Face - Azure Cognitive Services
 description: Параметры конфигурации контейнеров.
 services: cognitive-services
-author: diberry
+author: IEvangelist
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: conceptual
-ms.date: 04/16/2019
-ms.author: diberry
-ms.openlocfilehash: 4152cf90d9de2eda15a798fbf6b5b4aa4f5646f7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 06/10/2019
+ms.author: dapine
+ms.openlocfilehash: d30c2218fe20d6b760f379caf52ca0bf97e1c750
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60815413"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071499"
 ---
 # <a name="configure-face-docker-containers"></a>Настройка контейнеров Docker распознавания лиц
 
@@ -51,7 +51,7 @@ ms.locfileid: "60815413"
 
 Не забудьте добавить _лиц_ маршрутизации URI конечной точки, как показано в примере. 
 
-|Обязательно для заполнения| ИМЯ | Тип данных | ОПИСАНИЕ |
+|Обязательно для заполнения| Name | Тип данных | Описание |
 |--|------|-----------|-------------|
 |Да| `Billing` | String | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/face/v1.0` |
 
@@ -61,7 +61,7 @@ ms.locfileid: "60815413"
 
 В разделе `CloudAI` представлены специальные параметры, уникальные для вашего контейнера. Для контейнера распознавания лиц в разделе `CloudAI` поддерживаются следующие параметры и объекты:
 
-| ИМЯ | Тип данных | ОПИСАНИЕ |
+| Name | Тип данных | Описание |
 |------|-----------|-------------|
 | `Storage` | Object | Сценарий хранения, используемый контейнером распознавания лиц. Дополнительные сведения о сценариях хранения и соответствующих параметрах объекта `Storage` см. в разделе [Параметры сценариев хранения](#storage-scenario-settings) |
 
@@ -122,7 +122,7 @@ ms.locfileid: "60815413"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того, расположение подключения на [главном компьютере](face-how-to-install-containers.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположением подключения к узлу. 
 
-|Необязательно| ИМЯ | Тип данных | ОПИСАНИЕ |
+|Необязательно| ИМЯ | Тип данных | Описание |
 |-------|------|-----------|-------------|
 |Не разрешено| `Input` | String | Контейнеры распознавания лиц не используют этот элемент.|
 |Необязательно| `Output` | String | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
@@ -136,7 +136,7 @@ ms.locfileid: "60815413"
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
-| Placeholder | Value | Формат или пример |
+| Placeholder | Значение | Формат или пример |
 |-------------|-------|---|
 |{BILLING_KEY} | Ключ конечной точки ресурса Cognitive Services. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
 |{BILLING_ENDPOINT_URI} | Выставления счетов значение конечной точки, включая области и маршрутизации лиц.|`https://westcentralus.api.cognitive.microsoft.com/face/v1.0`|

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/23/2019
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: b18c4c039b615c7c88268b6e668df9f7fec9fabf
-ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
+ms.openlocfilehash: 414573a90e5a7b7de845b65e6e88715a26024f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66687924"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67125785"
 ---
 # <a name="copy-data-from-amazon-s3-buckets-by-using-azcopy"></a>Копирование данных из Amazon S3 сегментов с помощью AzCopy
 
@@ -49,6 +49,9 @@ AzCopy — программа командной строки, который м
 ## <a name="copy-objects-directories-and-buckets"></a>Копировать объекты, каталоги и контейнеры
 
 AzCopy использует [поместить блок из URL-адрес](https://docs.microsoft.com/rest/api/storageservices/put-block-from-url) API, поэтому данные копируются напрямую между AWS S3 и серверов хранилища. Эти операции копирования не использовать пропускную способность сети компьютера.
+
+> [!IMPORTANT]
+> Эта функция в настоящее время находится на стадии предварительной версии. Если вы решите удалить данные из вашей контейнеров S3 после операции копирования, обязательно убедитесь, что данные скопированы надлежащим образом для вашей учетной записи хранения, перед удалением данных.
 
 ### <a name="copy-an-object"></a>Копирование объекта
 

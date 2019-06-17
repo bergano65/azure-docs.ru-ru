@@ -7,10 +7,10 @@ ms.topic: reference
 ms.date: 04/25/2019
 ms.author: tomfitz
 ms.openlocfilehash: 54493efdc0bffcbb4654b65676554f6707716968
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65235575"
 ---
 # <a name="resource-providers-for-azure-services"></a>Поставщики ресурсов для служб Azure
@@ -113,7 +113,7 @@ ms.locfileid: "65235575"
 | Microsoft.MarketplaceOrdering | core |
 | Microsoft.Media | [Службы мультимедиа](../media-services/index.yml) |
 | Microsoft.Migrate | ["Миграция Azure"](../migrate/migrate-overview.md) |
-| Microsoft.MixedReality | [Azure пространственных привязки](/azure/spatial-anchors/) |
+| Microsoft.MixedReality | [Пространственные привязки Azure.](/azure/spatial-anchors/) |
 | Microsoft.NetApp | [Azure NetApp Files](../azure-netapp-files/index.yml) |
 | Microsoft.Network. | [Виртуальная сеть](../virtual-network/index.yml)<br />[Балансировщик нагрузки](../load-balancer/index.yml)<br />[Шлюз приложений](../application-gateway/index.yml)<br />[Azure DNS](../dns/index.yml)<br />[ExpressRoute](../expressroute/index.yml)<br />[VPN Gateway](../vpn-gateway/index.yml)<br />[Диспетчер трафика](../traffic-manager/index.yml)<br />[Наблюдатель за сетями](../network-watcher/index.yml)<br />[Брандмауэр Azure](../firewall/index.yml)<br />[Служба Azure двери](../frontdoor/index.yml) |
 | Microsoft.NotificationHubs | [Центры уведомлений](../notification-hubs/index.yml) |

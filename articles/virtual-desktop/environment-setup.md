@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/12/2019
 ms.author: helohr
 ms.openlocfilehash: 6aa6c7326759e480235df5fe9d4b0878cd11024d
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65142386"
 ---
 # <a name="windows-virtual-desktop-preview-environment"></a>Обзор виртуального рабочего стола Windows среды
@@ -63,5 +63,5 @@ ms.locfileid: "65142386"
 
 Чтобы узнать, как подключиться к виртуальному рабочему столу Windows, см. в следующих статьях:
 
-- [Подключение из Windows 10 или Windows 7](connect-windows-7-and-10.md)
-- [Подключение из веб-браузер](connect-web.md)
+- [Подключение из Windows 10 или Windows 7](connect-windows-7-and-10.md)
+- [Подключение из веб-браузера](connect-web.md)

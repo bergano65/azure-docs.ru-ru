@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 149452bd7d43ce46f320b9bae63a6f9cd48d98d4
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.openlocfilehash: e1583ccf04b68f81a71bd2f63779680427ce3362
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66730702"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67068784"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS
 
@@ -33,7 +33,7 @@ ms.locfileid: "66730702"
 
 ## <a name="which-virtual-machine-tiers-does-azure-disk-encryption-support"></a>Какие уровни виртуальных машин поддерживает шифрование дисков Azure?
 
-Шифрование дисков Azure доступно на виртуальных машинах уровня "Стандартный", включая виртуальные машины IaaS серии [A, D, DS, G, GS и F](https://azure.microsoft.com/pricing/details/virtual-machines/). Эта возможность также доступна для виртуальных машин с хранилищем класса Рremium. На виртуальных машинах уровня "Базовый" она недоступна.
+Шифрование дисков Azure доступно на виртуальных машинах уровня "стандартный", включая [A, D, DS, E, G, GS и F](https://azure.microsoft.com/pricing/details/virtual-machines/) виртуальные машины IaaS серий. Эта возможность также доступна для виртуальных машин с хранилищем класса Рremium. На виртуальных машинах уровня "Базовый" она недоступна.
 
 ## <a name="bkmk_LinuxOSSupport"></a> Какие дистрибутивы Linux поддерживает шифрование дисков Azure?
 
@@ -121,7 +121,9 @@ Server дистрибутивы Linux не поддерживается в Azure
 Для настройки шифрования дисков Azure используйте последнюю версию пакета SDK для Azure PowerShell. Скачайте последнюю версию [Azure PowerShell](https://github.com/Azure/azure-powershell/releases). Шифрование дисков Azure *не* поддерживается в пакете SDK для Azure версии 1.1.0.
 
 > [!NOTE]
-> Расширение предварительной версии шифрования дисков Azure для Linux считается устаревшим. Дополнительные сведения см. в записи блога [Deprecating Azure disk encryption preview extension for Linux IaaS VMs](https://blogs.msdn.microsoft.com/azuresecurity/2017/07/12/deprecating-azure-disk-encryption-preview-extension-for-linux-iaas-vms/) (Объявлено неподдерживаемым расширение предварительной версии шифрования дисков Azure для виртуальных машин IaaS Linux).
+> Расширение предварительной версии шифрования диска Linux Azure «Microsoft.OSTCExtension.AzureDiskEncryptionForLinux» является устаревшим. Это расширение было опубликовано для предварительной версии шифрования дисков Azure. Не следует использовать предварительную версию расширения в тестирование или производственного развертывания.
+
+> Для сценариев развертывания как Azure Resource Manager (ARM), где нет необходимости для развертывания расширения шифрования дисков Azure для виртуальной Машины Linux включить шифрование на виртуальной Машине IaaS Linux, необходимо использовать расширения производства поддерживается шифрование дисков Azure» Microsoft.Azure.Security.AzureDiskEncryptionForLinux».
 
 ## <a name="can-i-apply-azure-disk-encryption-on-my-custom-linux-image"></a>Можно ли применять шифрование дисков Azure в пользовательском образе Linux?
 

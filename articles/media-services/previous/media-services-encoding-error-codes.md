@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 82a8eecb4fb211117000c94c51644ce1fd27916d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 5c038f0be31acea52c2ef07d43f0dbaf3434a371
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61463915"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64709523"
 ---
 # <a name="encoding-error-codes"></a>Коды ошибок кодирования
 
@@ -30,7 +30,7 @@ ms.locfileid: "61463915"
 | Unknown |Неизвестная ошибка при выполнении задачи |
 | ErrorDownloadingInputAssetMalformedContent |Категория ошибок, охватывающая ошибки загрузки входного ресурса, такие как некорректное имя файлов, файлы нулевой длины, неправильное форматирование и т. д. |
 | ErrorDownloadingInputAssetServiceFailure |Категория ошибок, охватывающая проблемы на стороне службы, например проблемы с сетью или хранилищем во время загрузки. |
-| ErrorParsingConfiguration |Категория ошибок, в которых задача <see cref="MediaTask.PrivateData"/> (конфигурация) является недопустимой, например: конфигурация не является допустимой конфигурацией системы или содержит недопустимый XML. |
+| ErrorParsingConfiguration |Категория ошибок, где задач \<см. в разделе cref="MediaTask.PrivateData"/ > (конфигурация) является недопустимым, например конфигурации не является допустимым системы или содержит недопустимый XML-код. |
 | ErrorExecutingTaskMalformedContent |Категория ошибок, возникающих во время выполнения задачи, которые могут быть вызваны проблемами во входных файлах мультимедиа. |
 | ErrorExecutingTaskUnsupportedFormat |Категория ошибок, в которой обработчик мультимедиа не может обработать представленные файлы — формат мультимедиа не поддерживается или не соответствует конфигурации. Например, при попытке получить только звук из ресурса, который содержит видео. |
 | ErrorProcessingTask |Категория других ошибок обработчика мультимедиа, возникших во время обработки задачи, которые не связаны с содержимым. |
