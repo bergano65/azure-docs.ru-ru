@@ -14,12 +14,12 @@ ms.subservice: report-monitor
 ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 6ae14ec152975717af5d55780bcc39aa87c4b01a
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 6d461725d0d4c86ee7aa5b450d42c01ca77ffb16
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65406600"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67107678"
 ---
 # <a name="how-to-use-azure-monitor-workbooks-for-azure-active-directory-reports"></a>Как использовать Azure Monitor книг отчетов Azure Active Directory
 
@@ -76,7 +76,7 @@ ms.locfileid: "65406600"
 
 - Успешно
 
-- Ожидается действие пользователя
+- Действие ожидающих пользователей
 
 - Сбой
 
@@ -146,7 +146,7 @@ ms.locfileid: "65406600"
 
 - Пользователи
 
-![Входы в систему с помощью условного доступа](./media/howto-use-azure-monitor-workbooks/49.png)
+![Операции входа в систему с использованием условного доступа](./media/howto-use-azure-monitor-workbooks/49.png)
 
 
 Для отключенного входы в систему вы получаете декомпозиция по состоянию условного доступа.
@@ -168,7 +168,7 @@ ms.locfileid: "65406600"
 
 - Требовать многофакторную идентификацию
  
-- Требовать условия использования
+- Обязательное применение условий использования
 
 - Требовать заявление о конфиденциальности
 
@@ -199,7 +199,7 @@ ms.locfileid: "65406600"
 
 - Вход в систему
 - Политики условного доступа
-- Устаревший механизм проверки подлинности 
+- Устаревшие способы аутентификации 
 
 
 Для доступа к входами условного доступа к данным, в **Устранение** выберите **входы в систему с использованием проверки подлинности для прежних версий**. 

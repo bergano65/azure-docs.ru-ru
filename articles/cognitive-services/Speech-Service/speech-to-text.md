@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 7596670e794c090b04f81cf6b235a4bc54c1f3c4
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: fcb09720d188150736dbe7da0c925f5762ff6a10
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65800104"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072318"
 ---
 # <a name="what-is-speech-to-text"></a>Что такое речи в текст
 
 Речи в текст из служб речи Azure, также известный как речи в текст, позволяет в режиме реального времени транскрипцию аудиопотоков в текст, который может использовать приложения, средства или устройств, отображения и действий качестве входных данных команды. Эта служба основана на технологии распознавания, корпорация Майкрософт использует для продуктов Cortana и Office и без проблем работает с преобразования и преобразования текста в речь.  Полный список доступных языков речи в текст, см. в разделе [поддерживаемые языки](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#speech-to-text).
 
-По умолчанию служба распознавания речи в текст использует универсальной языковую модель. Эта модель была обучена с использованием данных, принадлежащих корпорации Майкрософт и будет развернут в облаке. Он является оптимальным выбором для общения и сценарии диктовки. Если вы используете преобразование речи в текст для распознавания и расшифровки в уникальной среде, вы можете создавать и обучать пользовательские акустические, языковые модели и модели произношения для учета окружающих помех или отраслевого словаря. 
+По умолчанию служба распознавания речи в текст использует универсальной языковую модель. Эта модель была обучена с использованием данных, принадлежащих корпорации Майкрософт и развертывается в облаке. Он является оптимальным выбором для общения и сценарии диктовки. Если вы используете преобразование речи в текст для распознавания и расшифровки в уникальной среде, вы можете создавать и обучать пользовательские акустические, языковые модели и модели произношения для учета окружающих помех или отраслевого словаря. 
 
 Можно легко запись звука с микрофона, прочитанных из потока или доступ к звуковые файлы из хранилища с помощью Speech SDK и REST API. Speech SDK поддерживает WAV/PCM 16-разрядная версия, кГц, 16 и 8 кГц, звук один канал для распознавания речи. Дополнительные форматы аудио поддерживаются с помощью [конечной точки REST речи в текст](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) или [пакетная служба транскрибирования](https://docs.microsoft.com/azure/cognitive-services/speech-service/batch-transcription#supported-formats).
 
@@ -30,7 +30,7 @@ ms.locfileid: "65800104"
 
 Ниже приведены возможности, доступные через Speech SDK и REST API:
 
-| Вариант использования  | SDK | REST |
+| Вариант использования | SDK | REST |
 |----------|-----|------|
 | Транскрипция короткие фразы (< 15 секунд). Поддерживает только расшифровка дикторского текста для окончательного результата. | Да | Да |
 | Непрерывная транскрипцию long фразы и потоковой передачи аудио (> 15 секунд). Поддерживает транскрипцию промежуточный и конечный результаты. | Да | Нет |
@@ -49,15 +49,15 @@ ms.locfileid: "65800104"
 
 Мы предлагаем руководства на большинстве популярных языках программирования, каждый из которых позволяет получить рабочий код менее чем за 10 минут. Эта таблица содержит полный список Speech SDK кратких руководств, упорядоченных по языка.
 
-| Быстрый старт | платформа | Справочник по API |
+| Краткое руководство | платформа | Справочник по API |
 |------------|----------|---------------|
-| [C#, .NET Core](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-dotnetcore-windows) |  Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [C#, .NET framework](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-dotnet-windows) |  Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [C#, УНИВЕРСАЛЬНОЙ ПЛАТФОРМЫ WINDOWS](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-uwp) |  Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
-| [C++](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-cpp-windows) |  Windows | [Обзор](https://aka.ms/csspeech/cppref)|
+| [C#, .NET Core](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-dotnetcore-windows) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C#, .NET framework](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-dotnet-windows) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C#, УНИВЕРСАЛЬНОЙ ПЛАТФОРМЫ WINDOWS](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-csharp-uwp) | Windows | [Обзор](https://aka.ms/csspeech/csharpref) |
+| [C++](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-cpp-windows) | Windows | [Обзор](https://aka.ms/csspeech/cppref)|
 | [C++](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-cpp-linux) | Linux | [Обзор](https://aka.ms/csspeech/cppref) |
 | [Java](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-java-android) | Android | [Обзор](https://aka.ms/csspeech/javaref) |
-| [Java](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-java-jre) | Windows, Linux | [Обзор](https://aka.ms/csspeech/javaref) |
+| [Java](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-java-jre) | Windows, Linux, macOS | [Обзор](https://aka.ms/csspeech/javaref) |
 | [JavaScript в браузере](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-js-browser) | Веб-браузер, Windows, Linux, macOS | [Обзор](https://aka.ms/AA434tv) |
 | [JavaScript, Node.js](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-js-node) | Windows, Linux, macOS | [Обзор](https://aka.ms/AA434tv) |
 | [Objective-C](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstart-objectivec-ios) | iOS | [Обзор](https://aka.ms/csspeech/objectivecref) |

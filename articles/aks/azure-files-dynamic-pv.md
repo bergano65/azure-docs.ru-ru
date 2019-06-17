@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 03/01/2019
 ms.author: iainfou
-ms.openlocfilehash: 9771c110e277d67bee329fe62434b18a01189476
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: ed9be9f3ecc7a14a0aa0210ee34f9323126be085
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "65072223"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67061099"
 ---
 # <a name="dynamically-create-and-use-a-persistent-volume-with-azure-files-in-azure-kubernetes-service-aks"></a>Динамическое создание и использование постоянного тома с файлами Azure в службе Azure Kubernetes (AKS)
 
@@ -35,7 +35,7 @@ ms.locfileid: "65072223"
 * *Standard_RAGRS* — геоизбыточное хранилище с доступом на чтение ценовой категории "Стандартный" (RA-GRS);
 
 > [!NOTE]
-> Сейчас служба файлов Azure поддерживает только хранилище ценовой категории "Стандартный". Вы не сможете подготовить том, если используете хранилище ценовой категории "Премиум".
+> Файлы Azure поддерживают хранилище класса premium в кластерах AKS, под управлением Kubernetes 1,13 или более поздней версии.
 
 Дополнительные сведения о классах хранения Kubernetes для файлов Azure см. в разделе о [классах хранения Kubernetes][kubernetes-storage-classes].
 
@@ -198,7 +198,7 @@ Volumes:
 
 Значения по умолчанию *fileMode* and *dirMode* различаются между версиями Kubernetes, как описано в следующей таблице.
 
-| version | value |
+| версия | value |
 | ---- | ---- |
 | v1.6.x, v1.7.x | 0777 |
 | v1.8.0-v1.8.5 | 0700 |

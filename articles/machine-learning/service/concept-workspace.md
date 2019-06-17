@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 05/21/2019
-ms.openlocfilehash: 3ecdf62cfed7d70873f3dc752bfacd134e367a90
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 2f3d9eeca1404fcae121ae5fead222cbde4037b1
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66388956"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67059262"
 ---
 # <a name="what-is-an-azure-machine-learning-service-workspace"></a>Что такое служба рабочей областью машинного обучения Azure?
 
@@ -32,16 +32,16 @@ ms.locfileid: "66388956"
 
 + Рабочая область может содержать [виртуальных машин записной книжки](quickstart-run-cloud-notebook.md), облачные ресурсы настроена среда Python, необходимые для выполнения машинного обучения Azure.
 + [Роли пользователей](how-to-assign-roles.md) позволяют совместно использовать рабочую область с другим пользователям, группам или проектов.
-+ [Целевые объекты вычислений](concept-azure-machine-learning-architecture.md#compute-target) используются для выполнения экспериментов.
++ [Целевые объекты вычислений](concept-azure-machine-learning-architecture.md#compute-targets) используются для выполнения экспериментов.
 + При создании рабочей области [связанные с ним ресурсы](#resources) также создаются автоматически.
-+ [Эксперименты](concept-azure-machine-learning-architecture.md#experiment) являются учебных запусков, которые можно использовать для создания моделей.  Можно создавать и запускать эксперименты с
++ [Эксперименты](concept-azure-machine-learning-architecture.md#experiments) являются учебных запусков, которые можно использовать для создания моделей.  Можно создавать и запускать эксперименты с
     + [Машинного обучения Azure SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
     + [Автоматической экспериментов машинного обучения (Предварительная версия)](how-to-create-portal-experiments.md) на портале Azure.
     + [Визуальный интерфейс (Предварительная версия)](ui-concept-visual-interface.md).
-+ [Конвейеры](concept-azure-machine-learning-architecture.md#pipeline) — это повторно используемые рабочие процессы для обучения и повторного обучения модели.
-+ [Наборы данных](concept-azure-machine-learning-architecture.md#dataset) помощь в управлении данными, используемыми для создания модели обучения и конвейера.
-+ Когда вы хотите развернуть модель, создать [зарегистрированной модели](concept-azure-machine-learning-architecture.md#model-registry).
-+ Использовать для создания для зарегистрированной модели и скрипт оценки [развертывания](concept-azure-machine-learning-architecture.md#image-registry).
++ [Конвейеры](concept-azure-machine-learning-architecture.md#ml-pipelines) — это повторно используемые рабочие процессы для обучения и повторного обучения модели.
++ [Наборы данных](concept-azure-machine-learning-architecture.md#datasets-and-datastores) помощь в управлении данными, используемыми для создания модели обучения и конвейера.
++ Когда модель, которую вы хотите развернуть, создании зарегистрированной модели.
++ Использовать для создания для зарегистрированной модели и скрипт оценки [развертывания](concept-azure-machine-learning-architecture.md#deployment).
 
 ## <a name="tools-for-workspace-interaction"></a>Средства для взаимодействия с рабочей области
 

@@ -12,12 +12,12 @@ ms.author: craigg
 ms.reviewer: ''
 manager: craigg
 ms.date: 02/12/2019
-ms.openlocfilehash: e1cd0d8462c31c8b843f7962f923accc6b63ae00
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a6e0adc6b4abbb58504b6f56c8def72440ad370d
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61414375"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67061397"
 ---
 # <a name="connect-excel-to-a-single-database-in-azure-sql-database-and-create-a-report"></a>Подключение Excel к отдельной базе данных в базе данных SQL Azure и создание отчета
 
@@ -37,9 +37,9 @@ ms.locfileid: "61414375"
    ![Выберите источник данных: подключите Excel к базе данных SQL.](./media/sql-database-connect-excel/excel_data_source.png)
 
    Откроется мастер подключения данных.
-3. В диалоговом окне **Подключение к серверу баз данных** введите **имя сервера** базы данных SQL, к которому нужно подключиться, в формате <*имя_сервера*>**.database.windows.net**. Пример: **msftestserver.database.windows.net**. При необходимости введите имя базы данных. Нажмите кнопку **ОК**, чтобы открыть окно учетных данных. 
+3. В диалоговом окне **Подключение к серверу баз данных** введите **имя сервера** базы данных SQL, к которому нужно подключиться, в формате <*имя_сервера*> **.database.windows.net**. Пример: **msftestserver.database.windows.net**. При необходимости введите имя базы данных. Нажмите кнопку **ОК**, чтобы открыть окно учетных данных. 
 
-   ![server-name.png](media/sql-database-connect-excel/server-name.png)
+   ![Подключение к базе данных сервера диалоговое окно](media/sql-database-connect-excel/server-name.png)
 
 4. В диалоговом окне **База данных SQL Server** выберите слева пункт **База данных**, а затем введите **имя пользователя** и **пароль** для сервера Базы данных SQL, к которому нужно подключиться. Нажмите кнопку **Подключиться**, чтобы открыть **навигатор**. 
 
@@ -68,7 +68,7 @@ ms.locfileid: "61414375"
 
 > [!TIP]
 > Если нужно подключить другие книги и листы Excel к базе данных, на вкладке **Данные** нажмите кнопку **Последние источники**, чтобы открыть диалоговое окно **Последние источники**. Выберите в списке ранее созданное подключение и нажмите кнопку **Открыть**.
-> ![Последние подключения](media/sql-database-connect-excel/recent-connections.png)
+> ![Последние источники-диалоговое окно](media/sql-database-connect-excel/recent-connections.png)
 
 ## <a name="create-a-permanent-connection-using-odc-file"></a>Создание постоянного подключения с помощью файла ODC
 
@@ -78,7 +78,7 @@ ms.locfileid: "61414375"
    1. Нажмите кнопку **Найти другие**, чтобы открыть диалоговое окно **Выбор источника данных**.   
    2. Выберите файл **+Новое подключение к SQL-серверу.odc** и нажмите кнопку **Открыть**, чтобы запустить **мастер подключения к данным**.
 
-      ![Новое подключение](media/sql-database-connect-excel/new-connection.png)
+      ![Новое диалоговое окно подключения](media/sql-database-connect-excel/new-connection.png)
 
 2. В **мастере подключения к данным** введите имя сервера и учетные данные для базы данных SQL. Щелкните **Далее**. 
    1. В раскрывающемся списке выберите нужную базу данных. 

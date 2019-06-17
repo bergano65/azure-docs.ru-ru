@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b69dca5abddd56b29abf3e482e51b3d2a41612e7
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 81b7030d0f45222a1641e34b341885d2ecc051e3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65864465"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67107653"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях входа на портале Azure Active Directory
 
@@ -86,7 +86,7 @@ ms.locfileid: "65864465"
 ![Действие входа](./media/concept-sign-ins/03.png "Действие входа")
 
 > [!NOTE]
-> Теперь клиенты могут устранять неполадки политик условного доступа с помощью отчета о всех операциях входа. Выбрав вкладку **Условный доступ** для записи о входе, клиенты могут просмотреть состояние условного доступа и получить подробные сведения о политиках, применяемых ко входу в систему, и результат каждой политики.
+> Клиенты теперь можно Устранение неполадок с политиками условного доступа через все отчеты. Щелкнув **условного доступа** вкладку для записи входа в систему, клиентам можно просмотреть состояние условного доступа и углубиться в сведения о политиках, применяется для входа в систему и результат для каждой политики.
 > Дополнительные сведения см. в разделе [Часто задаваемые вопросы об отчетах Azure Active Directory](reports-faq.md#conditional-access).
 
 ![Действие входа](./media/concept-sign-ins/ConditionalAccess.png "Действие входа")

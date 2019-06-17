@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2018
 ms.author: ericrad
 ms.openlocfilehash: 0831f08eaa3e8e6f6a0d3f68bc50cd927167b7ba
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65507928"
 ---
 # <a name="azure-metadata-service-scheduled-events-for-linux-vms"></a>Служба метаданных Azure: подслужба "Запланированные события" для виртуальных машин Linux
@@ -142,8 +142,8 @@ curl -H Metadata:true http://169.254.169.254/metadata/scheduledevents?api-versio
 |EventType  | Минимальное время уведомления |
 | - | - |
 | Freeze| 15 минут |
-| Перезагрузить | 15 минут |
-| Повторить развертывание | 10 минут |
+| Reboot | 15 минут |
+| Повторное развертывание | 10 минут |
 | Прерывание | 30 секунд |
 
 ### <a name="start-an-event"></a>Запуск события 

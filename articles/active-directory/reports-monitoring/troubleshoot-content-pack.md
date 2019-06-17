@@ -13,16 +13,16 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 11/13/2018
+ms.date: 06/07/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78676ac2f2dcff74a27e0260a5d83e924f7c246f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6ee49ae56122fe596a4490914677d91d2f0348f6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60284960"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66807527"
 ---
 # <a name="troubleshooting-azure-active-directory-activity-logs-content-pack-errors"></a>Устранение ошибок пакетов содержимого, зарегистрированных в журналах действий Azure Active Directory 
 
@@ -47,7 +47,7 @@ ms.locfileid: "60284960"
 | Причина: | Как устранить |
 | ---   | ---        |
 | Сбои обновления могут возникнуть, если учетные данные пользователей, подключающихся к пакету содержимого, были сброшены, но не обновлены в параметрах подключения пакета содержимого. | В Power BI найдите набор данных, соответствующий панели мониторинга журналов действий Azure Active Directory (**журналы действий Azure Active Directory**), выберите "Запланировать обновление" и введите учетные данные AAD. |
-| Обновление может завершиться сбоем из-за проблем с данными в базовом пакете содержимого. | [Отправьте запрос в службу поддержки](../fundamentals/active-directory-troubleshooting-support-howto.md).|
+| Обновление может завершиться ошибкой из-за больших наборов данных. | В настоящее время пакета содержимого Azure AD с помощью Power BI может поддерживать только небольшие наборы данных (меньше 500,00 строк) из-за некоторых ограничений по времени ожидания в службе Power BI. При возникновении ошибки регулирования или при сбое обновления из-за проблемы с временем ожидания, возможно, вы пытаетесь получить большой набор данных. Сократите период времени, в запросе и повторите попытку.|
  
  
 ## <a name="failed-to-update-data-source-credentials"></a>"Не удалось обновить учетные данные источников данных" 

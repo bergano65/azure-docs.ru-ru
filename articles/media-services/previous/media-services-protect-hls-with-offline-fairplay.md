@@ -15,15 +15,15 @@ ms.topic: article
 ms.date: 04/16/2019
 ms.author: willzhan, dwgeo
 ms.openlocfilehash: bc939011f87f03ef1de7e728fc52fc0c9887dd31
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935401"
 ---
 # <a name="offline-fairplay-streaming-for-ios"></a>Потоковая передача FairPlay в автономном режиме для iOS 
 
-> [!div class="op_single_selector" title1="Select the version of Media Services that you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию служб мультимедиа, в которых используется:"]
 > * [Версия 3](../latest/offline-fairplay-for-ios.md)
 > * [Версия 2](media-services-protect-hls-with-offline-fairplay.md)
 
@@ -207,7 +207,7 @@ func requestApplicationCertificate() throws -> Data {
 - **Почему после добавления audio-only=false в автономном режиме по-прежнему воспроизводится аудио без видео?** Содержимое может быть кэшировано в зависимости от структуры ключа кэша сети доставки содержимого (CDN). Очистите кэш.
 - **Режим автономной работы FPS также поддерживается на iOS 11 в дополнение к iOS 10?** Да. Автономный режим FPS поддерживается в iOS 10 и в iOS 11.
 - **Почему я не могу найти документ автономного воспроизведения с помощью потоковой передачи FairPlay и HTTP Live Streaming в пакете SDK сервера FPS?** Начиная с 4-й версии пакета SDK сервера FPS, этот документ был объединен с руководством по потоковому программированию FairPlay.
-- **Что означает последний параметр в следующем API для автономного режима FPS?**
+- **Что означает последний параметр в следующем API для автономного режима FPS?** 
 `Microsoft.WindowsAzure.MediaServices.Client.FairPlay.FairPlayConfiguration.CreateSerializedFairPlayOptionConfiguration(objX509Certificate2, pfxPassword, pfxPasswordId, askId, iv, RentalAndLeaseKeyType.PersistentUnlimited, 0x9999);`
 
     Документацию по этому API см. в статье [FairPlayConfiguration.CreateSerializedFairPlayOptionConfiguration Method](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.mediaservices.client.FairPlay.FairPlayconfiguration.createserializedFairPlayoptionconfiguration?view=azure-dotnet) (Метод FairPlayConfiguration.CreateSerializedFairPlayOptionConfiguration). Параметр представляет продолжительность автономной аренды с часом в качестве единицы измерения.

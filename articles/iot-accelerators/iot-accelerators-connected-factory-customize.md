@@ -9,12 +9,12 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: dobett
-ms.openlocfilehash: 7d4e95d066e191e1d5b6d083ede65843dbe73f31
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6062f8b3992732e0e0f9bbdae9549e69c393f4ff
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61450438"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67080484"
 ---
 # <a name="customize-how-the-connected-factory-solution-displays-data-from-your-opc-ua-servers"></a>Настройка отображения данных с серверов OPC UA в решении "Подключенная фабрика"
 
@@ -39,7 +39,7 @@ ms.locfileid: "61450438"
 
 ## <a name="data-sources"></a>Источники данных
 
-В решении "Подключенная фабрика" отображаются данные с серверов OPC UA, подключенных к решению. Установка по умолчанию содержит несколько серверов OPC UA, на которых запущено моделирование фабрики. В решение можно добавить собственные серверы OPC UA, [подключенные через шлюз][lnk-connect-cf].
+В решении "Подключенная фабрика" отображаются данные с серверов OPC UA, подключенных к решению. Установка по умолчанию содержит несколько серверов OPC UA, на которых запущено моделирование фабрики. Можно добавить собственные серверы OPC UA, [подключиться через шлюз] [lnk-connect-cf] в решение.
 
 На панели мониторинга можно просмотреть элементы данных, передаваемых подключенным сервером OPC UA в решение:
 
@@ -79,8 +79,6 @@ ms.locfileid: "61450438"
 
 Дополнительные сведения об акселераторе решения "Подключенная фабрика" см. в следующих статьях:
 
-* [Connected Factory solution accelerator walkthrough][lnk-rm-walkthrough] (Пошаговое руководство по работе с акселератором решения "Подключенная фабрика")
-* [Развертывание шлюза для решения "Подключенная фабрика"][lnk-connect-cf]
 * [Разрешения на сайте azureiotsolutions.com][lnk-permissions]
 * [Подключенная фабрика: вопросы и ответы](iot-accelerators-faq-cf.md)
 * [Часто задаваемые вопросы об IoT Suite][lnk-faq]
@@ -93,7 +91,5 @@ ms.locfileid: "61450438"
 [img-published]: ./media/iot-accelerators-connected-factory-customize/published.png
 
 
-[lnk-rm-walkthrough]:iot-accelerators-connected-factory-sample-walkthrough.md
-[lnk-connect-cf]:iot-accelerators-connected-factory-gateway-deployment.md
 [lnk-permissions]: iot-accelerators-permissions.md
 [lnk-faq]: iot-accelerators-faq.md

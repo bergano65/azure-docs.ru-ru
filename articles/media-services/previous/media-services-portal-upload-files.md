@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: juliako
 ms.openlocfilehash: 3ebeb3c601dd3f734265d49d60728056561928be
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61127819"
 ---
 # <a name="upload-files-to-a-media-services-account-in-the-azure-portal"></a>Отправка файлов в учетную запись служб мультимедиа на портале Azure 
@@ -38,11 +38,11 @@ ms.locfileid: "61127819"
 
 Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. на странице с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/). 
 
-## <a name="upload-files"></a>Загрузка файлов
+## <a name="upload-files"></a>Upload files
 1. Выберите учетную запись служб мультимедиа Azure на [портале Azure](https://portal.azure.com/).
 2. Установите флажок **Параметры** > **Ресурсы-контейнеры**. Затем нажмите кнопку **Отправить**.
    
-    ![Загрузка файлов](./media/media-services-portal-vod-get-started/media-services-upload.png)
+    ![Upload files](./media/media-services-portal-vod-get-started/media-services-upload.png)
    
     Появится окно **загрузки видеоресурса** .
    

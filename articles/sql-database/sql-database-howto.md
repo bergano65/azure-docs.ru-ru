@@ -12,12 +12,12 @@ ms.author: jovanpop
 ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 7db9c6400ac7d235153a59965e34e30d9b809a81
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: cd2406bb4825ac295a6f9a3a18ba466cdc20c55d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60338813"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67120857"
 ---
 # <a name="how-to-use-azure-sql-database"></a>Использование Базы данных SQL Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "60338813"
 
 ## <a name="load-data"></a>Загрузка данных
 
-- [Копирование отдельной или находящейся в пуле базы данных в Azure](sql-database-copy.md)
+- [Копирование отдельной базы данных или базы данных в пуле в Azure](sql-database-copy.md)
 - [Импорт базы данных из BACPAC-файла](sql-database-import.md)
 - [Экспорт базы данных в BACPAC-файл](sql-database-export.md)
 - [Загрузка данных с помощью BCP](sql-database-load-from-csv-with-bcp.md)

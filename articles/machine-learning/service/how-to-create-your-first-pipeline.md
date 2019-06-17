@@ -11,12 +11,12 @@ ms.author: sanpil
 author: sanpil
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 15fa9095b8169dc1545c796421be91e89652e1c1
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: c87685673052d2cfbc961d3bb717c9cd274872af
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66165879"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67059244"
 ---
 # <a name="create-and-run-a-machine-learning-pipeline-by-using-azure-machine-learning-sdk"></a>Создание и запуск конвейера машинного обучения с помощью пакета SDK для машинного обучения Azure
 
@@ -53,7 +53,7 @@ ms.locfileid: "66165879"
 
 * Настройте объект `DataReference`, чтобы указать данные, которые хранятся или доступны в хранилище данных.
 
-* Настройте [целевые объекты вычислений](concept-azure-machine-learning-architecture.md#compute-target) для выполнения шагов вашего конвейера.
+* Настройте [целевые объекты вычислений](concept-azure-machine-learning-architecture.md#compute-targets) для выполнения шагов вашего конвейера.
 
 ### <a name="set-up-a-datastore"></a>Настройка хранилища данных
 Хранилище данных содержит данные, которые использует конвейер. У каждой рабочей области есть хранилище данных по умолчанию. Вы можете зарегистрировать дополнительные хранилища данных. 
@@ -296,7 +296,7 @@ pipeline1 = Pipeline(workspace=ws, steps=steps)
 > [!IMPORTANT]
 > Чтобы заблокировать развертывание файлов, включаемого в моментальном снимке, создайте [.gitignore](https://git-scm.com/docs/gitignore) или `.amlignore` в каталоге и добавьте файлы к нему. `.amlignore` Файл использует тот же синтаксис и шаблоны как [.gitignore](https://git-scm.com/docs/gitignore) файла. Если существуют оба файла, `.amlignore` файл имеет приоритет.
 >
-> Дополнительные сведения см. в разделе о [моментальных снимках](concept-azure-machine-learning-architecture.md#snapshot).
+> Дополнительные сведения см. в разделе о [моментальных снимках](concept-azure-machine-learning-architecture.md#snapshots).
 
 ```python
 # Submit the pipeline to be run

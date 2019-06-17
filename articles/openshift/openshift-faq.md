@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.service: container-service
 ms.topic: article
 ms.date: 05/08/2019
-ms.openlocfilehash: 2001b849e9c43d552889475ca237c52b141f3f04
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 32eb2c47ed46aed8e2e3755a83437a21391295c5
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306263"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67122961"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Azure Red Hat OpenShift часто задаваемые вопросы
 
@@ -49,9 +49,13 @@ ms.locfileid: "66306263"
 
 По умолчанию есть шифрование в неактивном состоянии. Платформа службы хранилища Azure автоматически шифрует данные перед их сохранением и расшифровывает данные перед извлечением. См. в разделе [шифрование службы хранилища Azure для неактивных данных](https://docs.microsoft.com/azure/storage/common/storage-service-encryption) подробные сведения.
 
-## <a name="can-i-use-prometheusgrafana-to-monitor-containers-and-manage-capacity"></a>Можно ли использовать Prometheus или Grafana для мониторинга контейнеров и управление емкостью
+## <a name="can-i-use-prometheusgrafana-to-monitor-my-applications"></a>Можно ли использовать Prometheus или Grafana для мониторинга моих приложений?
 
-Нет, не в настоящее время.
+Да, можно развернуть Prometheus в приложения пространство имен и монитор в пространстве имен.
+
+## <a name="can-i-use-prometheusgrafana-to-monitor-metrics-related-to-cluster-health-and-capacity"></a>Можно ли использовать Prometheus или Grafana для мониторинга метрики, связанные с работоспособности кластера и емкость?
+
+Нет, не в настоящий момент.
 
 ## <a name="is-the-docker-registry-available-externally-so-i-can-use-tools-such-as-jenkins"></a>Доступен в реестр Docker извне, поэтому я могу использовать средства, такие как Jenkins?
 
@@ -80,3 +84,7 @@ ms.locfileid: "66306263"
 ## <a name="is-open-service-broker-for-azure-osba-supported"></a>— Открытый компонент Service Broker для Azure (OSBA) поддерживается?
 
 Да. OSBA можно использовать с Azure Red Hat OpenShift. См. в разделе [открытый компонент Service Broker для Azure](https://github.com/Azure/open-service-broker-azure#openshift-project-template) Дополнительные сведения.
+
+## <a name="i-am-trying-to-peer-into-a-virtual-network-in-a-different-subscription-but-getting-failed-to-get-vnet-cidr-error"></a>Пытается установить пиринг в виртуальной сети в другую подписку, но получение `Failed to get vnet CIDR` ошибки.
+
+В подписке, которая содержит виртуальную сеть, убедитесь, что регистрация `Microsoft.ContainerService` поставщика с `az provider register -n Microsoft.ContainerService --wait` 

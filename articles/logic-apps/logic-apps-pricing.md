@@ -10,12 +10,12 @@ ms.reviewer: estfan, LADocs
 ms.assetid: f8f528f5-51c5-4006-b571-54ef74532f32
 ms.topic: article
 ms.date: 05/22/2019
-ms.openlocfilehash: 20e84482b31c4da991f3fdc9c7bbf6ee0e7f902a
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: 776f79d7f32cf23943ecab4133e055993d30c7cd
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66299104"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67075061"
 ---
 # <a name="pricing-model-for-azure-logic-apps"></a>Модель ценообразования для Azure Logic Apps
 
@@ -89,7 +89,7 @@ ms.locfileid: "66299104"
 
 ## <a name="integration-accounts"></a>Учетные записи службы интеграции
 
-Подписки с тарификацией применяется к [учетные записи интеграции](logic-apps-enterprise-integration-create-integration-account.md) которых можно исследовать, разрабатывать и тестировать [B2B и EDI](logic-apps-enterprise-integration-b2b.md) и [обработки XML](logic-apps-enterprise-integration-xml.md) возможности в Azure Logic Apps на нет Дополнительные затраты.
+Фиксированный модель ценообразования применяется к [учетные записи интеграции](logic-apps-enterprise-integration-create-integration-account.md) которых можно исследовать, разрабатывать и тестировать [B2B и EDI](logic-apps-enterprise-integration-b2b.md) и [обработки XML](logic-apps-enterprise-integration-xml.md) возможности в Azure Logic Apps на нет Дополнительные затраты.
 В каждом регионе Azure, можно иметь одну учетную запись интеграции. Каждая учетная запись интеграции может хранить не более определенного [числа артефактов](../logic-apps/logic-apps-limits-and-config.md), например торговых партнеров, соглашений, карт, схем, сборок, сертификатов и конфигураций пакетов.
 
 Azure Logic Apps предоставляет Free, Basic и Standard учетные записи интеграции. На уровнях Basic и Standard, поддерживаются соглашением с Logic Apps уровня обслуживания (SLA), уровень "бесплатный" не поддерживается соглашением об уровне ОБСЛУЖИВАНИЯ и имеет ограничения на пропускную способность и использование.

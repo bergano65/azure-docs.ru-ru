@@ -9,12 +9,12 @@ ms.author: robreed
 manager: carmonm
 ms.topic: conceptual
 ms.date: 08/08/2018
-ms.openlocfilehash: 582533d23757de748b9cc7d40e45acc00240d384
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: 83a65be50a3cec9cea47682ab5e207bd4ad9e984
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60599725"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072559"
 ---
 # <a name="configure-servers-to-a-desired-state-and-manage-drift"></a>Настройка требуемого состояния серверов и управление смещением
 
@@ -145,6 +145,27 @@ $reports = Get-AzureRmAutomationDscNodeReport -ResourceGroupName 'MyResourceGrou
 # Display the most recent report
 $reports[0]
 ```
+
+## <a name="removing-nodes-from-service"></a>Удаление узлов из службы
+
+При добавлении узла в конфигурации состояния службы автоматизации Azure для регистрации в конфигурации службы и по запросу и необходимые модули, для настройки компьютера задаются параметры локального диспетчера конфигураций.
+Если вы решили удалить узел из службы, это можно сделать с помощью портала Azure или командлетов Az.
+
+> [!NOTE]
+> Отмена регистрации узла в службе только задает параметры локального диспетчера конфигураций, поэтому узел больше не подключается к службе.
+> Это не влияет на конфигурацию, применяемое к узлу.
+> Чтобы удалить текущую конфигурацию, используйте [PowerShell](https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument?view=powershell-5.1) или удалить локальный файл конфигурации (это параметр только для узлов Linux).
+
+### <a name="azure-portal"></a>Портал Azure
+
+Из службы автоматизации Azure, щелкните **конфигурации состояния (DSC)** в оглавлении.
+Далее щелкните **узлы** для просмотра списка узлов, зарегистрированных в службе.
+Щелкните имя узла, который вы хотите удалить.
+В отобразившемся представлении узла, щелкните **Unregister**.
+
+### <a name="powershell"></a>PowerShell
+
+Чтобы отменить регистрацию узла из службы настройки состояния службы автоматизации Azure с помощью PowerShell, следуя инструкциям в документации по командлету [Unregister-AzAutomationDscNode](https://docs.microsoft.com/en-us/powershell/module/az.automation/unregister-azautomationdscnode?view=azps-2.0.0).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

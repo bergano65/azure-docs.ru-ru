@@ -4,14 +4,14 @@ description: Перемещайте ресурсы в новую группу р
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 05/17/2019
+ms.date: 06/13/2019
 ms.author: tomfitz
-ms.openlocfilehash: 046b8e75be0247f335bcf1d29117f5900b70aeb6
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: bb7715a7eaa2cb499ed80b78130571f315ef0c95
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66477257"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67083537"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -88,7 +88,6 @@ ms.locfileid: "66477257"
 * Logic Apps
 * Машинное обучение. Веб-службы Студии машинного обучения Microsoft Azure можно переместить в группу ресурсов, размещенную в той же подписке, но не в другую подписку. Другие ресурсы машинного обучения можно перемещать между подписками.
 * Управляемые диски — управляемые диски в зонах доступности нельзя переместить в другую подписку
-* Управляемое удостоверение, назначаемое пользователем
 * Службы мультимедиа
 * Монитор — убедитесь, что переход на новую подписку не превышает [квоты для подписки](../azure-subscription-service-limits.md#monitor-limits).
 * Центры уведомлений
@@ -141,6 +140,7 @@ ms.locfileid: "66477257"
 * ExpressRoute
 * Службы лабораторий — Labs аудитории нельзя переместить в новую группу ресурсов или подписку. DevTest Labs можно переместить в новую группу ресурсов в той же подписке, но не для всех подписок.
 * Управляемые приложения
+* Управляемое удостоверение, назначаемое пользователем
 * Microsoft Genomics
 * Безопасность
 * Site Recovery
