@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/31/2018
 ms.author: jomolesk
 ms.openlocfilehash: f9773c3b372ab22cbcd99828e147d23c185c4eb6
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62127333"
 ---
 # <a name="azure-security-and-compliance-blueprint---paas-web-application-for-nist-special-publication-800-171"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение PaaS для специальной публикации NIST 800-171
@@ -58,15 +58,15 @@ Application Insights предоставляет управления произ�
 - Среда службы приложений версии 2
 - Служба автоматизации Azure
 - Azure DNS
-- Хранилище Azure Key Vault
-- Балансировщик нагрузки Azure
+- Хранилище ключей Azure
+- Azure Load Balancer
 - Azure Monitor (журналы)
 - Azure Resource Manager
 - Центр безопасности Azure
 - База данных SQL Azure
 - Хранилище Azure
 - Служба автоматизации Azure
-- Веб-приложения Azure
+- Веб-приложения Azure.
 
 ## <a name="deployment-architecture"></a>Архитектура развертывания
 В следующем разделе подробно описываются компоненты развертывания и реализации.

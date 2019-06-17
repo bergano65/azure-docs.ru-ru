@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 06/05/2019
 ms.openlocfilehash: 3e1597def26c09378d3917ad2d49163ef17732f8
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66732866"
 ---
 # <a name="limitations-in-azure-database-for-postgresql---single-server"></a>Ограничения в базе данных Azure для PostgreSQL — один сервер
@@ -25,13 +25,13 @@ ms.locfileid: "66732866"
 |базовая;| 1| 50 |
 |базовая;| 2| 100 |
 |Общего назначения| 2| 150|
-|Общего назначения| 4.| 250|
+|Общего назначения| 4\.| 250|
 |Общего назначения| 8| 480|
 |Общего назначения| 16| 950|
 |Общего назначения| 32| 1500|
 |Общего назначения| 64| 1900|
 |С оптимизацией для операций в памяти| 2| 300|
-|С оптимизацией для операций в памяти| 4.| 500|
+|С оптимизацией для операций в памяти| 4\.| 500|
 |С оптимизацией для операций в памяти| 8| 960|
 |С оптимизацией для операций в памяти| 16| 1900|
 |С оптимизацией для операций в памяти| 32| 1900|

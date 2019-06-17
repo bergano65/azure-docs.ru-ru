@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: hrasheed
 ms.openlocfilehash: 0a278cd98b0dd6c6d8f0fe9bfee81e5bafd4f543
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65597673"
 ---
 # <a name="create-hdinsight-clusters-using-the-azure-cli"></a>Создание кластеров HDInsight с помощью интерфейса командной строки Azure
@@ -27,13 +27,13 @@ ms.locfileid: "65597673"
 
 ## <a name="prerequisites"></a>Технические условия
 
-Azure CLI. Если вы еще не установили Azure CLI, см. в разделе [установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) для действия.
+Azure CLI. Если вы еще не установили Azure CLI, обратитесь к статье [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="create-a-cluster"></a>Создание кластера
 
-1. Войдите в подписку Azure. Если вы планируете использовать Azure Cloud Shell, а затем просто выберите **попробовать** в правом верхнем углу блока кода. В противном случае введите следующую команду:
+1. Войдите в подписку Azure. Если вы планируете использовать Azure Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. В противном случае введите следующую команду:
 
     ```azurecli-interactive
     az login
@@ -42,7 +42,7 @@ Azure CLI. Если вы еще не установили Azure CLI, см. в р
     # az account set --subscription "SUBSCRIPTIONID"
     ```
 
-2. Задать переменные среды. Использование переменных в этой статье, основанный на Bash. Незначительные изменения необходимы для других сред. См. в разделе [az-hdinsight-create](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) полный список возможных параметров для создания кластера.
+2. Задайте переменные среды. Использование переменных в этой статье, основанный на Bash. В случае других сред потребуются минимальные изменения. См. в разделе [az-hdinsight-create](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) полный список возможных параметров для создания кластера.
 
     |Параметр | Описание |
     |---|---|
@@ -138,7 +138,7 @@ Azure CLI. Если вы еще не установили Azure CLI, см. в р
 
 После завершения работы с этой статьей кластер можно удалить. В случае с HDInsight ваши данные хранятся в службе хранилища Azure, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Поскольку стоимость кластера во много раз превышает стоимость хранилища, экономически целесообразно удалять неиспользуемые кластеры.
 
-Введите все или некоторые следующие команды, чтобы удалить ресурсы:
+Введите все следующие команды или некоторые из них, чтобы удалить ресурсы:
 
 ```azurecli-interactive
 # Remove cluster

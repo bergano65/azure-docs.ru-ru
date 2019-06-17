@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/30/2019
 ms.openlocfilehash: d114a1e62ae0d28e7d4a3ad453d5d7bd3e1d5b7a
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66427693"
 ---
 # <a name="use-azure-hdinsight-tools-for-visual-studio-code"></a>Использование средств Azure HDInsight для Visual Studio Code
@@ -319,7 +319,7 @@ ms.locfileid: "66427693"
     | executorCores | Число ядер для каждого исполнителя | int |
     | numExecutors | Количество исполнителей для запуска в этом сеансе | int |
     | archives | Архивы для использования в этом сеансе | Список строк |
-    | queue | Имя очереди YARN для отправки | string |
+    | очередь | Имя очереди YARN для отправки | string |
     | name | Имя этого сеанса | string |
     | conf | Свойства конфигурации Spark. | Сопоставление key=val |
 
@@ -332,7 +332,7 @@ ms.locfileid: "66427693"
     | appId | Идентификатор приложения для этого сеанса |  String |
     | appInfo | Информация о приложении | Сопоставление key=val |
     | log | Строки журнала | Список строк |
-    | state |   Состояние пакета | string |
+    | состояние |   Состояние пакета | string |
 
 >[!NOTE]
 >При отправке скрипта присвоенная конфигурация Livy отобразится в области выходных данных.

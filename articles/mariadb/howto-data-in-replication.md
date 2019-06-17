@@ -6,16 +6,16 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 3897c402e45962836880ccebbeb252d189188d3c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 39c5efee0958fdfc8fa647f5acaf929f559f7bf7
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61038608"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67065650"
 ---
 # <a name="how-to-configure-azure-database-for-mariadb-data-in-replication"></a>Настройка базы данных Azure для MariaDB для репликации входных данных
 
-Из этой статьи вы узнаете о том, как настроить репликацию входных данных в базе данных Azure для MariaDB, настроив главный сервер и сервер-реплику. Репликация входных данных позволяет синхронизировать данные работающего локально главного сервера MariaDB на виртуальных машинах или в службах баз данных, размещенных другими облачными поставщиками, в реплику в службе "База данных Azure для MariaDB". 
+Из этой статьи вы узнаете о том, как настроить репликацию входных данных в базе данных Azure для MariaDB, настроив главный сервер и сервер-реплику. Репликация входных данных позволяет синхронизировать данные работающего локально главного сервера MariaDB на виртуальных машинах или в службах баз данных, размещенных другими облачными поставщиками, в реплику в службе "База данных Azure для MariaDB". Мы recommanded настройки репликации данных с помощью [глобальный идентификатор транзакции](https://mariadb.com/kb/en/library/gtid/) при использовании главного сервера версии 10.2 или более поздней версии.
 
 В этой статье предполагается, что у вас имеется хотя бы небольшой опыт работы с серверами и базами данных MariaDB.
 
@@ -116,7 +116,16 @@ ms.locfileid: "61038608"
    Результаты должны выглядеть так, как показано ниже. Не забудьте записать имя двоичного файла, так как оно будет использоваться на последующих этапах.
 
    ![Результаты состояния основного сервера](./media/howto-data-in-replication/masterstatus.png)
+   
+6. Получите GTID позицию (необязательно, необходимые для репликации с GTID)
+
+   Запустите функцию [ `BINLOG_GTID_POS` ](https://mariadb.com/kb/en/library/binlog_gtid_pos/) команду, чтобы получить позицию GTID имя файла соответствует binlog и смещение.
+  
+    ```sql
+    select BINLOG_GTID_POS('<binlog file name>', <binlog offset>);
+    ```
  
+
 ## <a name="dump-and-restore-master-server"></a>Выгрузка и восстановление главного сервера
 
 1. Выгрузите все базы данных с главного сервера.
@@ -142,10 +151,16 @@ ms.locfileid: "61038608"
 
    Все функции репликации входных данных выполняются хранимыми процедурами. Все процедуры можно найти в статье о [хранимых процедурах репликации входных данных](reference-data-in-stored-procedures.md). Хранимые процедуры можно выполнять в оболочке MySQL или MySQL Workbench.
 
-   Чтобы создать связь между двумя серверами и начать репликацию, войдите на целевой сервер-реплику в базе данных Azure для MariaDB и задайте внешний экземпляр в качестве главного сервера. Это делается с помощью хранимой процедуры `mysql.az_replication_change_master` на сервере базы данных Azure для MariaDB.
+   Чтобы создать связь между двумя серверами и начать репликацию, войдите на целевой сервер-реплику в базе данных Azure для MariaDB и задайте внешний экземпляр в качестве главного сервера. Это делается с помощью `mysql.az_replication_change_master` или `mysql.az_replication_change_master_with_gtid` хранимой процедуры для базы данных Azure для MariaDB сервера.
 
    ```sql
    CALL mysql.az_replication_change_master('<master_host>', '<master_user>', '<master_password>', 3306, '<master_log_file>', <master_log_pos>, '<master_ssl_ca>');
+   ```
+   
+   или
+   
+   ```sql
+   CALL mysql.az_replication_change_master_with_gtid('<master_host>', '<master_user>', '<master_password>', 3306, '<master_gtid_pos>', '<master_ssl_ca>');
    ```
 
    - master_host: имя узла главного сервера.
@@ -153,6 +168,7 @@ ms.locfileid: "61038608"
    - master_password: пароль для главного сервера.
    - master_log_file: имя файла двоичного журнала из выполняемой команды `show master status`.
    - master_log_pos: позиция в двоичном журнале из выполняемой команды `show master status`.
+   - master_gtid_pos: Позиция GTID запуск `select BINLOG_GTID_POS('<binlog file name>', <binlog offset>);`
    - master_ssl_ca: контекст сертификата ЦС. Если протокол SSL не используется, передайте пустую строку.
        - Этот параметр рекомендуется передавать в виде переменной. См. следующие примеры для получения дополнительных сведений.
 
@@ -199,9 +215,13 @@ ms.locfileid: "61038608"
 
    Если `Slave_IO_Running` и `Slave_SQL_Running` имеют состояние "yes" (да) и значение `Seconds_Behind_Master`, равное "0", репликация выполняется правильно. `Seconds_Behind_Master` указывает величину задержки на реплике. Если значение не равно "0", это означает, что реплика обрабатывает обновления. 
 
+4. Обновления соответствуют переменных сервера, чтобы вносить в данные репликации более безопасно (требуется только для репликации без GTID)
+    
+    Из-за ограничений собственная репликация MariaDB, необходимо установить [ `sync_master_info` ](https://mariadb.com/kb/en/library/replication-and-binary-log-system-variables/#sync_master_info) и [ `sync_relay_log_info` ](https://mariadb.com/kb/en/library/replication-and-binary-log-system-variables/#sync_relay_log_info) переменных на репликацию без GTID сценария. Мы recommand проверьте подчиненного сервера `sync_master_info` и `sync_relay_log_info` переменные и измените их ot `1` чтобы убедитесь, что репликация данных в стабильной.
+    
 ## <a name="other-stored-procedures"></a>Другие хранимые процедуры
 
-### <a name="stop-replication"></a>Остановить репликацию
+### <a name="stop-replication"></a>Остановка репликации
 
 Чтобы остановить репликацию между главным сервером и сервером-репликой, используйте следующую хранимую процедуру:
 

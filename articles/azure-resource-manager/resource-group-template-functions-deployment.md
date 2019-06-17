@@ -13,10 +13,10 @@ ms.workload: na
 ms.date: 01/03/2019
 ms.author: tomfitz
 ms.openlocfilehash: c5bd40741ec0fe047f98b4b4431819d90e188385
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66128664"
 ---
 # <a name="deployment-functions-for-azure-resource-manager-templates"></a>Функции развертывания для шаблонов Azure Resource Manager 
@@ -252,7 +252,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Значение |
 | ---- | ---- | ----- |
 | stringOutput | String | вариант 1 |
 | intOutput | Int | 1 |
@@ -355,7 +355,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | exampleOutput1 | String | myVariable |
 | exampleOutput2 | Массив, | [1, 2, 3, 4] |

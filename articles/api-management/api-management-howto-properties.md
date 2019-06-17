@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/25/2018
 ms.author: apimpm
 ms.openlocfilehash: 9e1b1953520c5502668fbbae70a37a140253b035
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66241689"
 ---
 # <a name="how-to-use-named-values-in-azure-api-management-policies"></a>Использование именованных значений в политиках управления API Azure
@@ -36,7 +36,7 @@ ms.locfileid: "66241689"
 
 Значения свойств могут содержать строковые литералы и [выражения политики](/azure/api-management/api-management-policy-expressions). Например, значение `ExpressionProperty` является выражением политики, которое возвращает строку, содержащую текущую дату и время. Свойство `ContosoHeaderValue` помечено как секрет, поэтому его значение не отображается.
 
-| ИМЯ | Value | Секрет | Tags |
+| Name | Значение | Секрет | Tags |
 | --- | --- | --- | --- |
 | ContosoHeader |TrackingId |False |Contoso |
 | ContosoHeaderValue |•••••••••••••••••••••• |Истина |Contoso |

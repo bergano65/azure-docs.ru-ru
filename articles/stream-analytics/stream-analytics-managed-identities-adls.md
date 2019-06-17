@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.custom: seodec18
 ms.openlocfilehash: 695591fedfacb34742335a6e9d6ca32a9c77eb7e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66148555"
 ---
 # <a name="authenticate-stream-analytics-to-azure-data-lake-storage-gen1-using-managed-identities"></a>Проверка подлинности Stream Analytics для Gen1 хранилища Озера данных Azure с помощью управляемых удостоверений
@@ -180,7 +180,7 @@ Azure Stream Analytics поддерживает аутентификацию с 
 
 1. **Доступ несколькими клиентами**: Субъекта-службы, созданные для данного задания Stream Analytics будет находиться в клиенте Azure Active Directory, на котором был создан задания и не может использоваться для ресурсов, который находится на другом клиенте Azure Active Directory. Таким образом MSI можно использовать только в ADLS Gen 1 ресурсы, которые находятся в том же клиенте Azure Active Directory задания Azure Stream Analytics. 
 
-2. **[Назначить удостоверение пользователя](../active-directory/managed-identities-azure-resources/overview.md)**: не поддерживается. Это означает, что пользователь не может перейти в свои собственные субъекта-службы для использования их заданием Stream Analytics. Для создания субъекта-службы Azure Stream Analytics.
+2. **[Назначить удостоверение пользователя](../active-directory/managed-identities-azure-resources/overview.md)** : не поддерживается. Это означает, что пользователь не может перейти в свои собственные субъекта-службы для использования их заданием Stream Analytics. Для создания субъекта-службы Azure Stream Analytics.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

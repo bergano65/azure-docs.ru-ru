@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 08/23/2018
 ms.author: crdun
 ms.openlocfilehash: ff7ba04271c150018f2c55b62e40542a686608cf
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66140879"
 ---
 ## <a name="create-client"></a>Создание подключения клиента
@@ -168,7 +168,7 @@ table
     }, failure);
 ```
 
-### <a name="deleting"></a>Практическое руководство. Удалить данные
+### <a name="deleting"></a>Практическое руководство. Удаление данных
 Для удаления записи вызовите метод `.del()`.  В ссылке на объект укажите идентификатор:
 
 ```javascript

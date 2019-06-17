@@ -15,10 +15,10 @@ ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5a0e0508babdd9ae703e38d58b079ab5fa16f68c
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66397882"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
@@ -40,7 +40,7 @@ ms.locfileid: "66397882"
 
 * Свойство
 * Оператор
-* Value
+* Значение
 
 Чтобы избежать синтаксических ошибок, следует соблюдать определенный порядок частей в этом выражении.
 
@@ -86,7 +86,7 @@ user.department -eq "Sales"
 | facsimileTelephoneNumber |Любое строковое значение или *null*. |(user.facsimileTelephoneNumber -eq "value") |
 | givenName |Любое строковое значение или *null*. |(user.givenName -eq "value") |
 | jobTitle |Любое строковое значение или *null*. |(user.jobTitle -eq "value") |
-| mail |Любое строковое значение или *null* (SMTP-адрес пользователя). |(user.mail -eq "value") |
+| почта |Любое строковое значение или *null* (SMTP-адрес пользователя). |(user.mail -eq "value") |
 | mailNickName |Любое строковое значение (псевдоним электронной почты пользователя) |(user.mailNickName -eq "value") |
 | mobile |Любое строковое значение или *null*. |(user.mobile -eq "value") |
 | objectId |GUID объекта пользователя. |(user.objectId -eq "11111111-1111-1111-1111-111111111111") |
@@ -96,7 +96,7 @@ user.department -eq "Sales"
 | postalCode |Любое строковое значение или *null*. |(user.postalCode -eq "value") |
 | preferredLanguage |Код ISO 639-1. |(user.preferredLanguage -eq "en-US") |
 | sipProxyAddress |Любое строковое значение или *null*. |(user.sipProxyAddress -eq "value") |
-| state |Любое строковое значение или *null*. |(user.state -eq "value") |
+| состояние |Любое строковое значение или *null*. |(user.state -eq "value") |
 | streetAddress |Любое строковое значение или *null*. |(user.streetAddress -eq "value") |
 | surname |Любое строковое значение или *null*. |(user.surname -eq "value") |
 | TelephoneNumber |Любое строковое значение или *null*. |(user.telephoneNumber -eq "value") |

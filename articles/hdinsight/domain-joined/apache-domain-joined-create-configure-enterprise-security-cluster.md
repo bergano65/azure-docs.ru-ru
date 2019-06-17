@@ -9,10 +9,10 @@ ms.reviewer: jasonh
 ms.topic: howto
 ms.date: 05/09/2019
 ms.openlocfilehash: 5b5b83fe0028e43ca35bf883b29cb71bad6ca2c8
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66253696"
 ---
 # <a name="create-and-configure-enterprise-security-package-clusters-in-azure-hdinsight"></a>Создать и настроить кластеры пакет безопасности предприятия в Azure HDInsight
@@ -302,16 +302,16 @@ New-SelfSignedCertificate -Subject hdifabrikam.com `
     1. В разделе **параметры** щелкните **правила безопасности для входящего трафика** > **добавить**.
     1. На **добавить правило безопасности для входящего трафика** экрана, введите следующие свойства и нажмите кнопку **добавить**:
 
-        | Свойство | Value |
+        | Свойство | Значение |
         |---|---|
-        | `Source` | Любой |
+        | source | Любой |
         | Диапазоны исходных портов | * |
         | Место назначения | Любой |
         | Диапазон портов назначения | 636 |
         | Протокол | Любой |
         | Действие | Allow |
         | Приоритет | <Desired Number> |
-        | ИМЯ | Port_LDAP_636 |
+        | Name | Port_LDAP_636 |
 
     ![правило безопасности для входящего трафика](./media/apache-domain-joined-create-configure-enterprise-security-cluster/add-inbound-security-rule.png)
 

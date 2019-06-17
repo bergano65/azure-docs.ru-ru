@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 05/30/2019
 ms.author: raynew
 ms.openlocfilehash: d2f7f83654f397cc6b93adbbebc25193155bcedb
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66399377"
 ---
 # <a name="prepare-network-mapping-for-hyper-v-vm-disaster-recovery-to-azure"></a>Подготовка сетевого сопоставления для аварийного восстановления виртуальных машин Hyper-V в Azure
@@ -54,7 +54,7 @@ ms.locfileid: "66399377"
 
 Следующий пример иллюстрирует этот механизм. Рассмотрим организацию с двумя филиалами в Нью-Йорке и Чикаго.
 
-**Местоположение.** | **Сервер VMM** | **Сети виртуальных машин** | **Сопоставление**
+**Location** | **Сервер VMM** | **Сети виртуальных машин** | **Сопоставление**
 ---|---|---|---
 Нью-Йорк | VMM-NewYork| VMNetwork1-NewYork | Сопоставляется с VMNetwork1-Chicago
  |  | VMNetwork2-NewYork | Не сопоставлена
@@ -79,7 +79,7 @@ SilverCloud2 | <p>Нет данных</p><p></p> | <p>LogicalNetwork1-NewYork</p
 
 ### <a name="logical-and-vm-network-settings"></a>Параметры логической сети и сети виртуальных машин
 
-**Местоположение.** | **Логические сети** | **Связанная сеть виртуальных машин**
+**Location** | **Логические сети** | **Связанная сеть виртуальных машин**
 ---|---|---
 Нью-Йорк | LogicalNetwork1-NewYork | VMNetwork1-NewYork
 Чикаго | LogicalNetwork1-Chicago | VMNetwork1-Chicago

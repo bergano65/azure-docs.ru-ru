@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 ms.openlocfilehash: 52f96b8fc2a1288c652169817a3a73d7b26caac9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66153474"
 ---
 # <a name="if-condition-activity-in-azure-data-factory"></a>Действие условия If в фабрике данных Azure
@@ -67,7 +67,7 @@ ms.locfileid: "66153474"
 Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения
 -------- | ----------- | -------------- | --------
 name | Имя действия условия If. | String | Да
-тип | Для этого свойства необходимо задать значение **IfCondition**. | String | Да
+type | Для этого свойства необходимо задать значение **IfCondition**. | String | Да
 expression | Выражение, для которого возвращается значение true или false. | Выражение с типом результата "логический" | Да
 ifTrueActivities | Набор действий, которые выполняются, если выражение получает значение `true`. | Массив, | Да
 ifFalseActivities | Набор действий, которые выполняются, если выражение получает значение `false`. | Массив, | Да

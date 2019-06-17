@@ -9,10 +9,10 @@ ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: cacd5510147ce997efec922f4b4656956a098d88
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
-ms.translationtype: MT
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66676943"
 ---
 # <a name="register-the-microsoftvmwarecloudsimple-resource-provider-on-your-azure-subscription"></a>Регистрация поставщика ресурсов Microsoft.VMwareCloudSimple в вашей подписке Azure

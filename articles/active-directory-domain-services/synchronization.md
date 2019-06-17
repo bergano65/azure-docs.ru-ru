@@ -16,10 +16,10 @@ ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: mstephen
 ms.openlocfilehash: 295a991e610e76971413a2abdba1e2fcc5f9eba6
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66246694"
 ---
 # <a name="synchronization-in-an-azure-ad-domain-services-managed-domain"></a>Синхронизация в управляемом домене доменных служб Azure AD
@@ -60,7 +60,7 @@ ms.locfileid: "66246694"
 ## <a name="how-specific-attributes-are-synchronized-to-your-managed-domain"></a>Синхронизация определенных атрибутов с управляемым доменом
 В следующей таблице перечислены некоторые распространенные атрибуты, а также описывается, как они синхронизируются с управляемым доменом.
 
-| Атрибут в управляемом домене | `Source` | Примечания |
+| Атрибут в управляемом домене | source | Примечания |
 |:--- |:--- |:--- |
 | Имя участника-пользователя (UPN) |Атрибут UPN пользователя в клиенте Azure AD |Атрибут UPN из клиента Azure AD синхронизируется с управляемым доменом "как есть". Поэтому самый надежный способ входа в управляемый домен — это с помощью имени участника-пользователя. |
 | SAMAccountName |Атрибут mailNickname пользователя в клиенте Azure AD или автоматически созданный атрибут |Атрибут SAMAccountName формируется из атрибута mailNickname в клиенте Azure AD. Если несколько учетных записей пользователей имеют одинаковый атрибут mailNickname, то SAMAccountName создается автоматически. Если длина атрибута mailNickname пользователя или префикс имени участника-пользователя превышает 20 знаков, то SAMAccountName создается автоматически, чтобы не превышать ограничение в 20 знаков, установленное для атрибутов SAMAccountName. |
@@ -84,7 +84,7 @@ ms.locfileid: "66246694"
 | facsimileTelephoneNumber |facsimileTelephoneNumber |
 | givenName |givenName |
 | jobTitle |title |
-| mail |mail |
+| почта |почта |
 | mailNickname |msDS-AzureADMailNickname |
 | mailNickname |SAMAccountName (в некоторых случаях создается автоматически) |
 | mobile |mobile |
@@ -94,7 +94,7 @@ ms.locfileid: "66246694"
 | physicalDeliveryOfficeName |physicalDeliveryOfficeName |
 | postalCode |postalCode |
 | preferredLanguage |preferredLanguage |
-| state |st |
+| состояние |st |
 | streetAddress |streetAddress |
 | surname |sn |
 | TelephoneNumber |TelephoneNumber |
@@ -107,7 +107,7 @@ ms.locfileid: "66246694"
 |:--- |:--- |
 | displayName |displayName |
 | displayName |SAMAccountName (в некоторых случаях создается автоматически) |
-| mail |mail |
+| почта |почта |
 | mailNickname |msDS-AzureADMailNickname |
 | objectid |msDS-AzureADObjectId |
 | onPremiseSecurityIdentifier |sidHistory |

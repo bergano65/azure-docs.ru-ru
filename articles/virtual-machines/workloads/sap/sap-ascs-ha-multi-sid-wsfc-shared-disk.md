@@ -18,10 +18,10 @@ ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: dbc21922be66c793e76882cbd145f19681684252
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66143265"
 ---
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
@@ -206,7 +206,7 @@ ms.locfileid: "66143265"
 
 # <a name="sap-ascsscs-instance-multi-sid-high-availability-with-windows-server-failover-clustering-and-shared-disk-on-azure"></a>Обеспечение высокого уровня доступности с несколькими идентификаторами безопасности для экземпляра SAP ASCS/SCS с помощью отказоустойчивой кластеризации Windows Server и общего диска в Azure
 
-> ![ Windows][Logo_Windows]  Windows
+> ![Windows][Logo_Windows] Windows
 >
 
 В сентябре 2016 г. корпорация Майкрософт выпустила функцию, которая дает возможность управлять несколькими виртуальными IP-адресами с помощью [внутренней подсистемы балансировки нагрузки Azure][load-balancer-multivip-overview]. Эта функция уже существует во внешней подсистеме балансировки нагрузки Azure. 
@@ -255,7 +255,7 @@ ms.locfileid: "66143265"
 
 Для подготовки инфраструктуры можно установить дополнительный экземпляр SAP ASCS/SCS со следующими параметрами.
 
-| Имя параметра | Value |
+| Имя параметра | Значение |
 | --- | --- |
 | ИД безопасности SAP ASCS/SCS |pr1-lb-ascs |
 | Внутренний балансировщик нагрузки экземпляра СУБД SAP | PR5 |

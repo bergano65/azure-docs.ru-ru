@@ -11,10 +11,10 @@ ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
 ms.openlocfilehash: 9a026d205d3ab855ecbb51048e7464df6fb4a094
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66510753"
 ---
 # <a name="json-claims-transformations"></a>Преобразования утверждений JSON
@@ -121,7 +121,7 @@ ms.locfileid: "66510753"
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputJson | string | Параметр ClaimTypes, используемый в преобразовании утверждений для получения утверждения. |
 | InputParameter | claimToExtract | string | Имя извлекаемого элемента JSON. |
-| OutputClaim | extractedClaim | длинное целое число | Параметр ClaimType, который создается после вызова ClaimsTransformation (значение элемента указано во входных параметрах _claimToExtract_). |
+| OutputClaim | extractedClaim | long | Параметр ClaimType, который создается после вызова ClaimsTransformation (значение элемента указано во входных параметрах _claimToExtract_). |
 
 В следующем примере в процессе преобразования утверждений из данных JSON извлекается элемент `id`.
 

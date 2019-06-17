@@ -11,10 +11,10 @@ author: mesameki
 ms.reviewer: larryfr
 ms.date: 05/30/2019
 ms.openlocfilehash: 4f1dd0bfc0637c6681b513860a63df2b8c35fe5e
-ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66430855"
 ---
 # <a name="model-interpretability-with-azure-machine-learning-service"></a>Interpretability модели со службой машинного обучения Azure
@@ -129,7 +129,7 @@ __Meta explainers__ автоматически выбрать подходящи
     explainer = TabularExplainer(model, x_train, features=breast_cancer_data.feature_names, classes=classes)
     ```
 
-    или диспетчер конфигурации служб
+    или
 
     ```python
     from azureml.explain.model.mimic.mimic_explainer import MimicExplainer
@@ -161,7 +161,7 @@ __Meta explainers__ автоматически выбрать подходящи
     sorted_local_importance_values = local_explanation.get_ranked_local_values()
     ```
 
-    или диспетчер конфигурации служб
+    или
 
     ```python
     # explain the first five data points in the test set

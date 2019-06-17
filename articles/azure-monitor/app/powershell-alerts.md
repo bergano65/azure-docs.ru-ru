@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 10/31/2016
 ms.author: mbullwin
 ms.openlocfilehash: 5dfbc6fa18b5d1b5b3058db14eb1232be27a0c40
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66130981"
 ---
 # <a name="use-powershell-to-set-alerts-in-application-insights"></a>Настройка оповещений в Application Insights с помощью PowerShell
@@ -116,10 +116,10 @@ GUID — это идентификатор подписки (не ключ ин�
 | `performanceCounter.request_execution_time.value` |Время выполнения запроса ASP.NET |Время выполнения самого последнего запроса. |
 | `performanceCounter.requests_in_application_queue.value` |Число запросов ASP.NET в очереди выполнения |Длина очереди запросов приложений. |
 | `performanceCounter.requests_per_sec.value` |Частота запросов ASP.NET |Частота всех запросов из ASP.NET к приложению в секунду. |
-| `remoteDependencyFailed.durationMetric.count` |Сбои зависимостей |Количество неудачных вызовов внешних ресурсов серверным приложением. |
+| `remoteDependencyFailed.durationMetric.count` |Ошибки зависимости |Количество неудачных вызовов внешних ресурсов серверным приложением. |
 | `request.duration` |Время ответа от сервера |Время с момента получения HTTP-запроса до завершения отправки ответа. |
 | `request.rate` |Частота запросов |Частота всех запросов к приложению в секунду. |
-| `requestFailed.count` |Неудачные запросы |Число HTTP-запросов, приведших к отображению кода ответа >= 400. |
+| `requestFailed.count` |Failed requests (Неудачные запросы) |Число HTTP-запросов, приведших к отображению кода ответа >= 400. |
 | `view.count` |Просмотры страниц |Количество клиентских запросов пользователя для веб-страницы. Искусственный трафик отфильтровывается. |
 | {имя пользовательской метрики} |{имя метрики} |Значение метрики, переданное [TrackMetric](../../azure-monitor/app/api-custom-events-metrics.md#trackmetric) или в [параметре измерения вызова отслеживания](../../azure-monitor/app/api-custom-events-metrics.md#properties). |
 
@@ -127,7 +127,7 @@ GUID — это идентификатор подписки (не ключ ин�
 
 | Группа метрик | Модуль сборщика |
 | --- | --- |
-| basicExceptionBrowser,<br/>clientPerformance,<br/>просмотреть |[Browser JavaScript](../../azure-monitor/app/javascript.md) |
+| basicExceptionBrowser,<br/>clientPerformance,<br/>view |[Browser JavaScript](../../azure-monitor/app/javascript.md) |
 | performanceCounter |[Производительность](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
 | remoteDependencyFailed |[Dependency](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
 | request,<br/>requestFailed |[Server request](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |

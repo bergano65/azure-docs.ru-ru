@@ -10,10 +10,10 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.openlocfilehash: ccafa3431e12b036346c4fd654b2978dc9021471
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65912372"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure
@@ -467,7 +467,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 ### <a name="the-client-is-receiving-403-messages"></a>Клиент получает сообщения «HTTP 403 (запрещено)»
 Если в клиентском приложении происходят ошибки HTTP 403 (Запрещено), наиболее вероятная причина заключается в использовании клиентом подписанного URL-адреса (SAS) с истекшим сроком действия при отправке запроса к хранилищу (хотя возможны и другие причины: рассинхронизация по времени, недействительные ключи и пустые заголовки). Если причина в просроченном ключе SAS, в журнале хранилища на стороне сервера не будет никаких записей об этом. В приведенной ниже таблице показан пример этой неполадки в журнале на стороне клиента, созданном клиентской библиотекой хранилища.
 
-| `Source` | Уровень детализации | Уровень детализации | Идентификатор запроса клиента | Operation Text |
+| source | Уровень детализации | Verbosity | Идентификатор запроса клиента | Operation Text |
 | --- | --- | --- | --- | --- |
 | Microsoft.Azure.Storage |Информация |3 |85d077ab -… |Начинается выполнение операции с расположением «Основное» в режиме расположения PrimaryOnly. |
 | Microsoft.Azure.Storage |Информация |3 |85d077ab -… |Отправка синхронного запроса к <https://domemaildist.blob.core.windows.netazureimblobcontainer/blobCreatedViaSAS.txt?sv=2014-02-14&sr=c&si=mypolicy&sig=OFnd4Rd7z01fIvh%2BmcR6zbudIH2F5Ikm%2FyhNYZEmJNQ%3D&api-version=2014-02-14> |
@@ -505,7 +505,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 
 В приведенном ниже журнале, сгенерированном клиентской библиотекой хранилища, показана проблема, связанная с тем, что клиент не может найти контейнер для создаваемого BLOB-объекта. Журнал содержит подробные данные о таких операциях хранилища:
 
-| Идентификатор запроса | Операция |
+| Request ID (ИД запроса) | Операция |
 | --- | --- |
 | 07b26a5d-... |**DeleteIfExists** для удаления контейнера BLOB-объектов. Обратите внимание, что эта операция включает в себя запрос **HEAD** , который проверяет существование контейнера. |
 | e2d06d78-… |**CreateIfNotExists** для создания контейнера BLOB-объектов. Обратите внимание: эта операция включает в себя запрос **HEAD** для проверки существования контейнера. **HEAD** возвращает сообщение 404, но работа не прерывается. |
@@ -521,7 +521,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 | 07b26a5d-... |Response received. Status code = 200, Request ID = eeead849-...Content-MD5 = , ETag =    &quot;0x8D14D2DC63D059B&quot;. |
 | 07b26a5d-... |Response headers were processed successfully, proceeding with the rest of the operation (Заголовки ответа успешно обработаны, продолжается выполнение операции). |
 | 07b26a5d-... |Downloading response body (Загружается тело ответа). |
-| 07b26a5d-... |Операция завершена успешно. |
+| 07b26a5d-... |Operation completed successfully (Операция выполнена успешно). |
 | 07b26a5d-... |Отправка синхронного запроса к https://domemaildist.blob.core.windows.net/azuremmblobcontainer. |
 | 07b26a5d-... |StringToSign = DELETE............x-ms-client-request-id:07b26a5d-....x-ms-date:Tue, 03 Jun 2014 10:33:12    GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container. |
 | 07b26a5d-... |Waiting for response (Ожидание ответа). |
@@ -539,7 +539,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 | e2d06d78-... |Response received. Status code = 404, Request ID = 353ae3bc-..., Content-MD5 = , ETag = . (Ответ получен. Код состояния = 404, ИД запроса = 353ae3bc-..., Content-MD5 = , ETag = .) |
 | e2d06d78-... |Response headers were processed successfully, proceeding with the rest of the operation (Заголовки ответа успешно обработаны, продолжается выполнение операции). |
 | e2d06d78-... |Downloading response body (Загружается тело ответа). |
-| e2d06d78-... |Операция завершена успешно. |
+| e2d06d78-... |Operation completed successfully (Операция выполнена успешно). |
 | e2d06d78-... |Отправка асинхронного запроса к https://domemaildist.blob.core.windows.net/azuremmblobcontainer. |
 | e2d06d78-... |StringToSign = PUT...0.........x-ms-client-request-id:e2d06d78-....x-ms-date:Tue, 03 Jun 2014 10:33:12 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container. |
 | e2d06d78-... |Waiting for response (Ожидание ответа). |
@@ -561,7 +561,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 
 В этой таблице показан пример сообщения журнала на стороне сервера из файла журнала хранилища:
 
-| ИМЯ | Value |
+| Name | Значение |
 | --- | --- |
 | Request start time (Время начала запроса) | 2014-05-30T06:17:48.4473697Z |
 | Operation type (Тип операции)     | GetBlobProperties            |
@@ -569,7 +569,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 | HTTP status code (Код состояния HTTP)   | 404                          |
 | Authentication type (Тип проверки подлинности)| SAS                          |
 | Service type (Тип службы)       | BLOB-объект                         |
-| URL-адрес запроса        | https://domemaildist.blob.core.windows.net/azureimblobcontainer/blobCreatedViaSAS.txt |
+| Request URL (URL-адрес запроса)        | https://domemaildist.blob.core.windows.net/azureimblobcontainer/blobCreatedViaSAS.txt |
 | &nbsp;                 |   ?sv=2014-02-14&sr=c&si=mypolicy&sig=XXXXX&;api-version=2014-02-14 |
 | Request ID header (Заголовок идентификатора запроса)  | a1f348d5-8032-4912-93ef-b393e5252a3b |
 | Идентификатор запроса клиента  | 2d064953-8436-4ee0-aa0c-65cb874f7929 |

@@ -7,15 +7,15 @@ services: search
 ms.service: search
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 05/02/2019
+ms.date: 06/13/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 6e627de5b22a67051961e70bab56b2d931129281
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 73f0dc98d7d2c3e7aa77f6414cbd58e58599eae7
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66244801"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67068826"
 ---
 # <a name="how-to-work-with-search-results-in-azure-search"></a>Как работать с результатами поиска в службе "Поиск Azure"
 В данной статье приводятся рекомендации по реализации стандартных элементов страницы результатов поиска, например, общего подсчета, извлечения документа, порядка сортировки и навигации. Связанные со страницей параметры, добавляющие данные или информацию к результатам поиска, задаются в запросах [поиска в документе](https://docs.microsoft.com/rest/api/searchservice/Search-Documents), отправляемых службе "Поиск Azure". 
@@ -29,44 +29,47 @@ ms.locfileid: "66244801"
 >
 
 ## <a name="total-hits-and-page-counts"></a>Общее количество совпадений и страниц
+
 Практически для всех страниц поиска основным является отображение общего количества результатов запроса с последующим их выводом более мелкими порциями.
 
 ![][1]
 
-В поиске Azure используйте параметры `$count`, `$top` и `$skip` для вывода этих значений. В следующем примере показан пример запроса для общего количества совпадений, в индексе onlineCatalog, возвращаемого как `@OData.count`.
+В поиске Azure используйте параметры `$count`, `$top` и `$skip` для вывода этих значений. В следующем примере показан образец запроса для всего попаданий в индексе, который называется «-каталог в сети», возвращаются в виде `@odata.count`:
 
-        GET /indexes/onlineCatalog/docs?$count=true
+    GET /indexes/online-catalog/docs?$count=true
 
 Получать документы группами по 15, а также показывать общее количество совпадений, начиная с первой страницы:
 
-        GET /indexes/onlineCatalog/docs?search=*$top=15&$skip=0&$count=true
+    GET /indexes/online-catalog/docs?search=*$top=15&$skip=0&$count=true
 
 Разбивка результатов на страницы требует наличия как `$top`, так и `$skip`, где `$top` показывает количество выводимых элементов на странице, а `$skip` — количество элементов, которые нужно пропустить. В следующем примере на каждой странице отображаются очередные 15 элементов, на что указывает пошаговое увеличение параметра `$skip` .
 
-        GET /indexes/onlineCatalog/docs?search=*$top=15&$skip=0&$count=true
+    GET /indexes/online-catalog/docs?search=*$top=15&$skip=0&$count=true
 
-        GET /indexes/onlineCatalog/docs?search=*$top=15&$skip=15&$count=true
+    GET /indexes/online-catalog/docs?search=*$top=15&$skip=15&$count=true
 
-        GET /indexes/onlineCatalog/docs?search=*$top=15&$skip=30&$count=true
+    GET /indexes/online-catalog/docs?search=*$top=15&$skip=30&$count=true
 
 ## <a name="layout"></a>Макет
+
 На странице результатов поиска может потребоваться отобразить эскиз страницы, подмножество полей и ссылку на страницу полной версии продукта.
 
  ![][2]
 
-Для реализации данного интерфейса в Поиске Azure используйте `$select` и команду поиска.
+В службе поиска Azure используется `$select` и [запроса API поиска](https://docs.microsoft.com/rest/api/searchservice/search-documents) для реализации данного интерфейса.
 
 Чтобы получить подмножество полей для мозаичного макета:
 
-        GET /indexes/ onlineCatalog/docs?search=*&$select=productName,imageFile,description,price,rating 
+    GET /indexes/online-catalog/docs?search=*&$select=productName,imageFile,description,price,rating
 
 Непосредственный поиск в изображениях и файлах мультимедиа невозможен. Для уменьшения расходов они должны сохраняться на другой платформе хранения, такой как хранилище BLOB-объектов Azure. В индексе и документах определите поле, в котором содержится URL-адрес внешнего контента. Затем можно использовать это поле как ссылку на изображение. URL-адрес изображения должен находиться в документе.
 
-Чтобы получить страницу описания продукта для события **onClick** , используйте [Поиск документа](https://docs.microsoft.com/rest/api/searchservice/Lookup-Document) для передачи ключа документа, который нужно получить. Тип данных ключа — `Edm.String`. В данном примере это *246810*. 
+Чтобы получить страницу описания продукта для события **onClick** , используйте [Поиск документа](https://docs.microsoft.com/rest/api/searchservice/Lookup-Document) для передачи ключа документа, который нужно получить. Тип данных ключа — `Edm.String`. В данном примере это *246810*.
 
-        GET /indexes/onlineCatalog/docs/246810
+    GET /indexes/online-catalog/docs/246810
 
 ## <a name="sort-by-relevance-rating-or-price"></a>Сортировка по соответствию, оценке или цене
+
 Порядок сортировки по соответствию часто задан по умолчанию, но обычно альтернативные порядки сортировки подготавливаются заранее, чтобы клиенты могли быстро реорганизовать имеющиеся результаты в другом порядке приоритетности.
 
  ![][3]
@@ -84,31 +87,33 @@ ms.locfileid: "66244801"
  ![][5]
 
 > [!NOTE]
-> В то время как оценка по умолчанию является достаточной для многих сценариев, рекомендуется, чтобы соответствие основывалось на пользовательском профиле оценки. Пользовательский профиль оценки предоставляет способ повышения приоритета элементов, имеющих большее значение для бизнеса. Дополнительную информацию см. в статье [Добавление профилей повышения в индекс службы "Поиск Azure"](index-add-scoring-profiles.md). 
-> 
-> 
+> В то время как оценка по умолчанию является достаточной для многих сценариев, рекомендуется, чтобы соответствие основывалось на пользовательском профиле оценки. Пользовательский профиль оценки предоставляет способ повышения приоритета элементов, имеющих большее значение для бизнеса. Дополнительную информацию см. в статье [Добавление профилей повышения в индекс службы "Поиск Azure"](index-add-scoring-profiles.md).
+>
 
 ## <a name="faceted-navigation"></a>Фасетная навигация
+
 Навигация поиска обычно находится на странице результатов, часто сбоку или вверху страницы. В Поиске Azure фасетная навигация обеспечивает самостоятельный поиск на основе предварительно заданных фильтров. Дополнительные сведения см. в статье [Как реализовать фасетную навигацию в службе поиска Azure](search-faceted-navigation.md).
 
 ## <a name="filters-at-the-page-level"></a>Фильтры на уровне страницы
-Если схема решения предусматривает специальные поисковые страницы для содержимого определенных типов (например, приложение для розничной торговли в Интернете с перечнем отделов в верхней части страницы), вы можете вставить [выражение фильтра](search-filters.md) наряду с событием **onClick**, чтобы затем открыть страницу в состоянии после первичного фильтра. 
+
+Если проекту решения страниц выделенной службы поиска для определенных типов содержимого (например, Интернет-магазина приложения отделов в верхней части страницы), можно вставить [критерий фильтра](search-filters.md) вместе с **onClick** событие, чтобы открыть страницу в отфильтрованное состоянии.
 
 Можно отправлять фильтр с выражением поиска или без него. Например, следующий запрос осуществляет фильтрацию по имени бренда, выводя только те документы, которые соответствуют ему.
 
-        GET /indexes/onlineCatalog/docs?$filter=brandname eq ‘Microsoft’ and category eq ‘Games’
+    GET /indexes/online-catalog/docs?$filter=brandname eq 'Microsoft' and category eq 'Games'
 
 Дополнительные сведения о выражениях `$filter` см. в статье [Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) (Поиск документов (REST API службы поиска Azure)).
 
 ## <a name="see-also"></a>См. также
-* [REST API службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice)
-* [Операции с индексами](https://docs.microsoft.com/rest/api/searchservice/Index-operations)
-* [Операции с документом.](https://docs.microsoft.com/rest/api/searchservice/Document-operations)
-* [Фасетная навигация в службе поиска Azure](search-faceted-navigation.md)
+
+- [REST API службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice)
+- [Операции с индексами](https://docs.microsoft.com/rest/api/searchservice/Index-operations)
+- [Операции с документом.](https://docs.microsoft.com/rest/api/searchservice/Document-operations)
+- [Фасетная навигация в службе поиска Azure](search-faceted-navigation.md)
 
 <!--Image references-->
 [1]: ./media/search-pagination-page-layout/Pages-1-Viewing1ofNResults.PNG
 [2]: ./media/search-pagination-page-layout/Pages-2-Tiled.PNG
 [3]: ./media/search-pagination-page-layout/Pages-3-SortBy.png
 [4]: ./media/search-pagination-page-layout/Pages-4-SortbyRelevance.png
-[5]: ./media/search-pagination-page-layout/Pages-5-BuildSort.png 
+[5]: ./media/search-pagination-page-layout/Pages-5-BuildSort.png

@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 05/21/2019
 ms.author: alkohli
 ms.openlocfilehash: 036e99a193d539bdcb204b5b062de261c30dffc5
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66244633"
 ---
 Этот раздел описывает ограничения для службы хранилища Azure и требуемые соглашения об именовании для файлов Azure, блочных BLOB-объектов Azure и страничных BLOB-объектов Azure применительно к службе Data Box. Тщательно изучите ограничения хранилища и следуйте всем рекомендациям.

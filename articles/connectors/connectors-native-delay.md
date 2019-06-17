@@ -11,10 +11,10 @@ tags: connectors
 ms.topic: conceptual
 ms.date: 05/25/2019
 ms.openlocfilehash: 27475fb3f086dbc5166a473e9d657d2dab723938
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66297634"
 ---
 # <a name="delay-running-the-next-action-in-azure-logic-apps"></a>Задержка при выполнении следующего действия в Azure Logic Apps
@@ -55,7 +55,7 @@ ms.locfileid: "66297634"
 
    | Свойство | Имя JSON | Обязательно для заполнения | type | Описание |
    |----------|-----------|----------|------|-------------|
-   | Количество | count | Да | Целое число  | Число единиц времени для задержки |
+   | Количество | count | Да | Integer | Число единиц времени для задержки |
    | Единица измерения | unit | Да | String | Единица измерения времени, например: `Second`, `Minute`, `Hour`, `Day`, `Week`, или `Month` |
    ||||||
 
@@ -81,7 +81,7 @@ ms.locfileid: "66297634"
 
    | Свойство | Имя JSON | Обязательно для заполнения | type | Описание |
    |----------|-----------|----------|------|-------------|
-   | Timestamp |  timestamp | Да | String | Дата и время окончания для возобновления рабочего процесса, используя следующий формат: <p>ГГГГ-мм-: ссZ <p>Например, вы 18 сентября 2017 г. в 14:00, укажите «2017-09-18T14:00:00Z». <p>**Примечание.** Этот формат времени должны соответствовать [спецификации даты и времени ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) в [формат времени UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time), но без [смещения от UTC](https://en.wikipedia.org/wiki/UTC_offset). Без часового пояса необходимо добавить буква «Z» в конце без пробелов. Эта буква Z ссылается на соответствующее [судовое время](https://en.wikipedia.org/wiki/Nautical_time). |
+   | Timestamp | timestamp | Да | String | Дата и время окончания для возобновления рабочего процесса, используя следующий формат: <p>ГГГГ-мм-: ссZ <p>Например, вы 18 сентября 2017 г. в 14:00, укажите «2017-09-18T14:00:00Z». <p>**Примечание.** Этот формат времени должны соответствовать [спецификации даты и времени ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) в [формат времени UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time), но без [смещения от UTC](https://en.wikipedia.org/wiki/UTC_offset). Без часового пояса необходимо добавить буква «Z» в конце без пробелов. Эта буква Z ссылается на соответствующее [судовое время](https://en.wikipedia.org/wiki/Nautical_time). |
    ||||||
 
 1. Добавьте любые другие действия, которые вы хотите запустить в рабочем процессе.

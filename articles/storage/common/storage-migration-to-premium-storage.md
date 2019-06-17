@@ -10,10 +10,10 @@ ms.author: rogarana
 ms.reviewer: yuemlu
 ms.subservice: common
 ms.openlocfilehash: 5cfb96bd3115c8f3116a28926e93df89dff54351
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65153768"
 ---
 # <a name="migrating-to-azure-premium-storage-unmanaged-disks"></a>Перенос в хранилище Azure класса Premium (использующее неуправляемые диски)
@@ -161,7 +161,7 @@ ms.locfileid: "65153768"
 #### <a name="copy-vhd-with-azcopy-or-powershell"></a>Шаг 3. Копирование VHD с помощью AzCopy или PowerShell
 Чтобы скопировать VHD с помощью одного из этих средств, вам понадобится путь контейнера и ключ учетной записи хранения (выберите **Портал Azure** > **Хранилище**, чтобы узнать их). URL-адрес будет иметь следующий вид контейнера «https:\//myaccount.blob.core.windows.net/mycontainer/».
 
-##### <a name="option-1-copy-a-vhd-with-azcopy-asynchronous-copy"></a>Вариант 1: Копирование VHD с помощью AzCopy (асинхронное копирование)
+##### <a name="option-1-copy-a-vhd-with-azcopy-asynchronous-copy"></a>Вариант 1. Копирование VHD с помощью AzCopy (асинхронное копирование)
 Средство AzCopy позволяет легко передать VHD через Интернет. В зависимости от размера виртуальных жестких дисков это может занять определенное время. Не забывайте проверять ограничения для исходящих и входящих данных учетной записи хранения при использовании этого параметра. Дополнительные сведения см. в статье [Целевые показатели производительности и масштабируемости службы хранилища Azure](storage-scalability-targets.md).
 
 1. Загрузите и установите AzCopy для Windows здесь: [последняя версия AzCopy](https://aka.ms/downloadazcopy).
@@ -180,11 +180,11 @@ ms.locfileid: "65153768"
 
     Ниже приведено описание параметров, используемых в команде AzCopy.
 
-   * **/Source: *&lt;source&gt;:*** месторасположение папки или URL-адрес контейнера с виртуальным жестким диском.
-   * **/SourceKey: *&lt;source-account-key&gt;:*** ключ исходной учетной записи хранения.
-   * **/Dest: *&lt;destination&gt;:*** URL-адрес контейнера хранилища для копирования виртуального жесткого диска.
-   * **/DestKey: *&lt;dest-account-key&gt;:*** ключ целевой учетной записи хранения.
-   * **/Pattern: *&lt;file-name&gt;:*** имя файла копируемого виртуального жесткого диска.
+   * **/Source: *&lt;source&gt;:* ** месторасположение папки или URL-адрес контейнера с виртуальным жестким диском.
+   * **/SourceKey: *&lt;source-account-key&gt;:* ** ключ исходной учетной записи хранения.
+   * **/Dest: *&lt;destination&gt;:* ** URL-адрес контейнера хранилища для копирования виртуального жесткого диска.
+   * **/DestKey: *&lt;dest-account-key&gt;:* ** ключ целевой учетной записи хранения.
+   * **/Pattern: *&lt;file-name&gt;:* ** имя файла копируемого виртуального жесткого диска.
 
 Дополнительные сведения об использовании средства AzCopy см. в статье [Передача данных с помощью служебной программы командной строки AzCopy](storage-use-azcopy.md).
 
@@ -192,7 +192,7 @@ ms.locfileid: "65153768"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Вы также можете скопировать файл VHD с помощью командлета PowerShell Start-AzStorageBlobCopy. Используйте следующую команду в Azure PowerShell, чтобы скопировать виртуальный жесткий диск:  Замените значения в угловых скобках <> соответствующими значениями из исходной и целевой учетной записи хранения. Чтобы использовать эту команду, в целевой учетной записи хранения должен быть контейнер с именем vhds. Если контейнер не существует, создайте его, прежде чем выполнять команду.
+Вы также можете скопировать файл VHD с помощью командлета PowerShell Start-AzStorageBlobCopy. Используйте следующую команду в Azure PowerShell, чтобы скопировать виртуальный жесткий диск: Замените значения в угловых скобках <> соответствующими значениями из исходной и целевой учетной записи хранения. Чтобы использовать эту команду, в целевой учетной записи хранения должен быть контейнер с именем vhds. Если контейнер не существует, создайте его, прежде чем выполнять команду.
 
 ```powershell
 $sourceBlobUri = <source-vhd-uri>
@@ -250,7 +250,7 @@ C:\PS> Start-AzStorageBlobCopy -srcUri $sourceBlobUri -SrcContext $sourceContext
 #### <a name="step-3-upload-the-vhd-to-azure-storage"></a>Шаг 3. Загрузка VHD в службу хранилища Azure
 Теперь, когда VHD расположен в локальном каталоге, с помощью AzCopy или Azure PowerShell VHD-файл можно передать в службу хранилища Azure. Это можно сделать двумя способами.
 
-##### <a name="option-1-using-azure-powershell-add-azurevhd-to-upload-the-vhd-file"></a>Вариант 1: Передача VHD-файла с помощью командлета Azure PowerShell Add-AzureVhd
+##### <a name="option-1-using-azure-powershell-add-azurevhd-to-upload-the-vhd-file"></a>Вариант 1. Передача VHD-файла с помощью командлета Azure PowerShell Add-AzureVhd
 
 ```powershell
 Add-AzureVhd [-Destination] <Uri> [-LocalFilePath] <FileInfo>
@@ -277,12 +277,12 @@ Add-AzureVhd [-Destination] <Uri> [-LocalFilePath] <FileInfo>
 
     Ниже приведено описание параметров, используемых в команде AzCopy.
 
-   * **/Source: *&lt;source&gt;:*** месторасположение папки или URL-адрес контейнера с виртуальным жестким диском.
-   * **/SourceKey: *&lt;source-account-key&gt;:*** ключ исходной учетной записи хранения.
-   * **/Dest: *&lt;destination&gt;:*** URL-адрес контейнера хранилища для копирования виртуального жесткого диска.
-   * **/DestKey: *&lt;dest-account-key&gt;:*** ключ целевой учетной записи хранения.
+   * **/Source: *&lt;source&gt;:* ** месторасположение папки или URL-адрес контейнера с виртуальным жестким диском.
+   * **/SourceKey: *&lt;source-account-key&gt;:* ** ключ исходной учетной записи хранения.
+   * **/Dest: *&lt;destination&gt;:* ** URL-адрес контейнера хранилища для копирования виртуального жесткого диска.
+   * **/DestKey: *&lt;dest-account-key&gt;:* ** ключ целевой учетной записи хранения.
    * **/BlobType: page:** указывает, что местом назначения является страничный BLOB-объект.
-   * **/Pattern: *&lt;file-name&gt;:*** имя файла копируемого виртуального жесткого диска.
+   * **/Pattern: *&lt;file-name&gt;:* ** имя файла копируемого виртуального жесткого диска.
 
 Дополнительные сведения об использовании средства AzCopy см. в статье [Передача данных с помощью служебной программы командной строки AzCopy](storage-use-azcopy.md).
 
