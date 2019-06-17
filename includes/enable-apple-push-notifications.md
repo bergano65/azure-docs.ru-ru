@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/25/2018
 ms.author: crdun
 ms.openlocfilehash: 687a1963ca34f2b053b479ff92f7ccdcd80b5588
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66140131"
 ---
 * [Зарегистрируйте идентификатор для своего приложения.](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html#//apple_ref/doc/uid/TP40012582-CH30-SW991) Создайте явный идентификатор приложения (не подстановочный знак идентификатора приложения), а для параметра **ИД пакета** используйте тот же идентификатор пакета, что и в проекте быстрого запуска Xcode. Также необходимо выбрать параметр **Push-уведомления**. 
