@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: jroth
 ms.openlocfilehash: d4e8d99cd7c67136f359772664eb017c6207e6e4
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66165519"
 ---
 ### <a name="create-a-tcp-endpoint-for-the-virtual-machine"></a>Создайте конечную точку TCP для виртуальной машины
@@ -19,7 +19,7 @@ ms.locfileid: "66165519"
 > 
 > 
 
-1. На портале Azure выберите **Виртуальные машины (классика)**.
+1. На портале Azure выберите **Виртуальные машины (классика)** .
 2. Затем выберите виртуальную машину SQL Server.
 3. Выберите **Конечные точки**, а затем в верхней части колонки "Конечные точки" нажмите кнопку **Добавить**.
    

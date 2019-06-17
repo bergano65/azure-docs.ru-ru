@@ -6,14 +6,14 @@ author: hrasheed-msft
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 03/05/2019
+ms.date: 06/06/2019
 ms.author: hrasheed
-ms.openlocfilehash: 5e9cd4c2a14f94c39c7058f45bf727df8198c053
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 489685485af4e3c8868f7e0281d2f81464a166f6
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64691300"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67066174"
 ---
 # <a name="install-jupyter-notebook-on-your-computer-and-connect-to-apache-spark-on-hdinsight"></a>Установка записной книжки Jupyter на компьютере и ее подключение к Apache Spark в HDInsight
 
@@ -28,48 +28,69 @@ ms.locfileid: "64691300"
 
 Дополнительные сведения о пользовательских ядрах и волшебных командах Spark, доступных для записных книжек Jupyter в кластере HDInsight, см. в статье [Ядра, доступные для использования записными книжками Jupyter с кластерами Apache Spark в HDInsight на платформе Linux](apache-spark-jupyter-notebook-kernels.md).
 
-> [!IMPORTANT]  
-> Действия, описанные в статье только потом перейти к Spark версии 2.1.0.
-
 ## <a name="prerequisites"></a>Технические условия
+
 Указанные здесь предварительные требования относятся не к установке Jupyter. Они относятся к подключению записной книжки Jupyter к кластеру HDInsight после установки записной книжки.
 
-* Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
-* Кластер Apache Spark (версии 2.1.0 или более ранней версии) в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
-
-
+* Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
 
 ## <a name="install-jupyter-notebook-on-your-computer"></a>Установка записной книжки Jupyter на компьютер
 
-Перед установкой записных книжек Jupyter необходимо установить Python. Python и Jupyter доступны в составе [дистрибутива Anaconda](https://www.anaconda.com/download/). При установке Anaconda устанавливается дистрибутив Python. После установки Anaconda выполните соответствующие команды для установки Jupyter.
+Перед установкой записных книжек Jupyter необходимо установить Python. [Дистрибутив Anaconda](https://www.anaconda.com/download/) установит, Python и записной книжки Jupyter.
 
-1. Скачайте [установщик Anaconda](https://www.anaconda.com/download/) для своей платформы и запустите программу установки. В мастере установки укажите параметр для добавления Anaconda в переменную PATH.
+Скачайте [установщик Anaconda](https://www.anaconda.com/download/) для своей платформы и запустите программу установки. В мастере установки укажите параметр для добавления Anaconda в переменную PATH.  Кроме того, см. в разделе [здесь](https://jupyter.readthedocs.io/en/latest/install.html).
 
-2. Выполните следующую команду для установки Jupyter.
+## <a name="install-spark-magic"></a>Установка волшебной команды Spark
 
-        conda install jupyter
+1. Введите одно из приведенных ниже команд, чтобы установить волшебной команды Spark. Кроме того, см. в разделе [документации по sparkmagic](https://github.com/jupyter-incubator/sparkmagic#installation).
 
-    Дополнительные сведения об установке Jupyter см. [здесь](https://jupyter.readthedocs.io/en/latest/install.html).
+    |Cluster version | Команда установки |
+    |---|---|
+    |V3.6 и версии 3.5 |`pip install sparkmagic==0.12.7`|
+    |версии 3.4|`pip install sparkmagic==0.2.3`|
 
-## <a name="install-the-kernels-and-spark-magic"></a>Установка ядер и волшебной команды Spark
+1. Убедитесь, `ipywidgets` установлена правильно, выполнив следующую команду:
 
-Инструкции по установке волшебной команды Spark, а также ядер PySpark и Spark, см. в [документации по sparkmagic](https://github.com/jupyter-incubator/sparkmagic#installation) на сайте GitHub. Чтобы начать использовать волшебную команду Spark, ее сначала нужно установить. Это — первый шаг, описанный в документации. Замените этот шаг в ссылке выше приведенными ниже командами с учетом версии кластера HDInsight, к которому вы подключитесь. После этого выполните остальные шаги в соответствии с документацией по волшебной команде Spark. Для установки разных ядер необходимо выполнить шаг 3 из раздела инструкций по установке волшебной команды Spark.
+    ```cmd
+    jupyter nbextension enable --py --sys-prefix widgetsnbextension
+    ```
 
-* Для кластеров версий 3.5 и 3.6 установите sparkmagic версии 0.11.2, выполнив команду `pip install sparkmagic==0.11.2`
+## <a name="install-pyspark-and-spark-kernels"></a>Установите ядра PySpark и Spark
 
-* Для кластеров версии 3.4 установите sparkmagic версии 0.2.3, выполнив команду `pip install sparkmagic==0.2.3`
+1. Указать расположение `sparkmagic` устанавливается с помощью следующей команды:
+
+    ```cmd
+    pip show sparkmagic
+    ```
+
+    В расположении с приведенной выше команде измените рабочий каталог.
+
+1. Из нового рабочего каталога введите один или несколько из приведенных ниже команд, чтобы установить нужные kernel(s):
+
+    |Kernel (Ядро) | Команда |
+    |---|---|
+    |Spark|`jupyter-kernelspec install sparkmagic/kernels/sparkkernel`|
+    |SparkR|`jupyter-kernelspec install sparkmagic/kernels/sparkrkernel`|
+    |PySpark|`jupyter-kernelspec install sparkmagic/kernels/pysparkkernel`|
+    |PySpark3|`jupyter-kernelspec install sparkmagic/kernels/pyspark3kernel`|
+
+1. Необязательный элемент. Введите следующую команду, чтобы включить расширение сервера:
+
+    ```cmd
+    jupyter serverextension enable --py sparkmagic
+    ```
 
 ## <a name="configure-spark-magic-to-connect-to-hdinsight-spark-cluster"></a>Настройка волшебной команды Spark для подключения к кластеру HDInsight Spark
 
-В этом разделе вы настроите волшебной команды Spark, установленную ранее для подключения к кластеру Apache Spark, необходимо уже созданный в Azure HDInsight.
+В этом разделе вы настроите волшебной команды Spark, установленную ранее для подключения к кластеру Apache Spark.
 
 1. Запустите оболочку Python с помощью следующей команды:
 
-    ```
+    ```cmd
     python
     ```
 
-2. Сведения о конфигурации Jupyter обычно хранятся в домашнем каталоге пользователей. Введите следующую команду, чтобы определить в домашнем каталоге и создайте папку под названием **.sparkmagic**.  Выводятся полный путь.
+2. Сведения о конфигурации Jupyter обычно хранятся в домашнем каталоге пользователей. Введите следующую команду, чтобы определить домашний каталог и создайте папку с именем **.sparkmagic**.  Выводятся полный путь.
 
     ```python
     import os
@@ -100,14 +121,15 @@ ms.locfileid: "64691300"
       "heartbeat_retry_seconds": 1
     }
     ```
+
 4. Внесите следующие изменения в файл:
 
     |Значение шаблона | Новое значение |
     |---|---|
-    |{USERNAME}|Входа в кластер, по умолчанию — admin.|
+    |{USERNAME}|Входа в кластер, значение по умолчанию — `admin`.|
     |{CLUSTERDNSNAME}|Имя кластера|
     |{BASE64ENCODEDPASSWORD}|Пароль для фактический пароль в кодировке base64.  Вы можете создать пароль base64 в [ https://www.url-encode-decode.com/base64-encode-decode/ ](https://www.url-encode-decode.com/base64-encode-decode/).|
-    |`"livy_server_heartbeat_timeout_seconds": 60`|Если с помощью `sparkmagic 0.11.23` (кластеры версии 3.5 и 3.6).  При использовании `sparkmagic 0.2.3` (кластеры версии 3.4), замените `"should_heartbeat": true`.|
+    |`"livy_server_heartbeat_timeout_seconds": 60`|Если с помощью `sparkmagic 0.12.7` (кластеры версии 3.5 и 3.6).  При использовании `sparkmagic 0.2.3` (кластеры версии 3.4), замените `"should_heartbeat": true`.|
 
     Вы увидите в полном примере файл [примере файла config.json](https://github.com/jupyter-incubator/sparkmagic/blob/master/sparkmagic/example_config.json).
 
@@ -116,7 +138,9 @@ ms.locfileid: "64691300"
 
 5. Запустите Jupyter. Выполните следующую команду из командной строки.
 
-        jupyter notebook
+    ```cmd
+    jupyter notebook
+    ```
 
 6. Убедитесь, что можно использовать волшебную команду Spark с ядрами. Выполните следующие действия.
 
@@ -127,7 +151,7 @@ ms.locfileid: "64691300"
     > [!IMPORTANT]  
     > После выбора **New** просмотрите оболочке наличие ошибок.  Если появится сообщение об ошибке `TypeError: __init__() got an unexpected keyword argument 'io_loop'` может возникнуть известная проблема с определенными версиями торнадо.  Если это так, остановите ядра и понизьте торнадо установку с помощью следующей команды: `pip install tornado==4.5.3`.
 
-    2. Запустите следующий фрагмент кода.
+    2\. Запустите следующий фрагмент кода.
 
     ```sql
     %%sql
@@ -151,26 +175,8 @@ ms.locfileid: "64691300"
 > [!WARNING]  
 > Если Jupyter установлен на локальном компьютере, несколько пользователей могут одновременно запустить одну и ту же записную книжку в одном кластере Spark. В такой ситуации создаются несколько сеансов Livy. Если вы столкнетесь с проблемами и начнете их отладку, вам будет сложно определить, какой сеанс Livy какому пользователю принадлежит.  
 
-## <a name="seealso"></a>Дополнительные материалы
-* [Apache Spark в Azure HDInsight](apache-spark-overview.md)
+## <a name="next-steps"></a>Дальнейшие действия
 
-### <a name="scenarios"></a>Сценарии
+* [Apache Spark в Azure HDInsight](apache-spark-overview.md)
 * [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](apache-spark-use-bi-tools.md)
 * [Использование Apache Spark MLlib для Создание приложения машинного обучения Apache Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
-* [Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных](apache-spark-machine-learning-mllib-ipython.md)
-* [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
-
-### <a name="create-and-run-applications"></a>Создание и запуск приложений
-* [Создание автономного приложения с использованием Scala](apache-spark-create-standalone-application.md)
-* [Удаленный запуск заданий с помощью Apache Livy в кластере Apache Spark](apache-spark-livy-rest-interface.md)
-
-### <a name="tools-and-extensions"></a>Средства и расширения
-* [Использование подключаемого модуля средств HDInsight для IntelliJ IDEA для создания и отправки приложений Spark Scala](apache-spark-intellij-tool-plugin.md)
-* [Удаленная отладка приложений Apache Spark с помощью подключаемого модуля средств HDInsight для IntelliJ IDEA](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
-* [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
-* [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
-* [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)
-
-### <a name="manage-resources"></a>Управление ресурсами
-* [Управление ресурсами кластера Apache Spark в Azure HDInsight](apache-spark-resource-manager.md)
-* [Отслеживание и отладка заданий в кластере Apache Spark в HDInsight на платформе Linux](apache-spark-job-debugging.md)

@@ -10,10 +10,10 @@ ms.date: 02/21/2019
 ms.author: v-pawal
 ms.topic: conceptual
 ms.openlocfilehash: 456860c74810a692b4839e4204ec0b78d5620864
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66383008"
 ---
 # <a name="create-a-project"></a>Создание проекта
@@ -32,7 +32,7 @@ ms.locfileid: "66383008"
 
     a.  "Project name (required)" (Имя проекта (обязательно)). Присвойте проекту понятное уникальное имя. В названии не нужно упоминать языки.
 
-    2.  Описание: Краткие сведения о проекте. Это описание не влияет на поведение Custom Translator или конечной пользовательской системы, но может помочь отличать этот проект от других.
+    2\.  Описание: Краткие сведения о проекте. Это описание не влияет на поведение Custom Translator или конечной пользовательской системы, но может помочь отличать этот проект от других.
 
     c.  "Language pair" (Языковая пара) (обязательно). Выберите исходный и целевой языки для перевода.
 

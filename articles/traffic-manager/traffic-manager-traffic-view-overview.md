@@ -3,21 +3,21 @@ title: Представление трафика в диспетчере тра�
 description: Обзор представления трафика в диспетчере трафика
 services: traffic-manager
 documentationcenter: traffic-manager
-author: KumudD
+author: asudbring
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 03/16/2018
-ms.author: kumud
+ms.author: allensu
 ms.custom: ''
-ms.openlocfilehash: 70ac4319e2ea0081f7805c2fb936af1310d57d8f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5a34cf3e41e04367b1cf38015861518fb74dd3f7
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60771606"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67070953"
 ---
 # <a name="traffic-manager-traffic-view"></a>Представление трафика в диспетчере трафика
 

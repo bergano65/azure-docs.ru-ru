@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: milanga;juliako;johndeu
 ms.openlocfilehash: ceaf4d3db71d99c3e87157f9847312fdf4000026
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65991790"
 ---
 # <a name="media-analytics-on-the-media-services-platform"></a>Медиа-аналитика на платформе служб мультимедиа 
@@ -64,7 +64,7 @@ Azure Content Moderator позволяет использовать машинн
 
 ### <a name="mp-names"></a>Названия обработчиков мультимедиа
 * Azure Media Indexer 2 (предварительная версия)
-* Индексатор службы мультимедиа Azure
+* Azure Media Indexer
 * Azure Media Face Detector
 * Azure Media Motion Detector
 * Azure Media Video Thumbnails

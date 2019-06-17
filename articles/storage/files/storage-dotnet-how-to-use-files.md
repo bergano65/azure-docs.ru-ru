@@ -10,10 +10,10 @@ ms.date: 11/22/2017
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 38bafdb4753b41a9c8acd599e6b7215e1777c6cd
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65779463"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Разработка для службы файлов Azure с помощью .NET
@@ -46,8 +46,8 @@ API | Сценарии использования | Примечания
 В Visual Studio создайте новое консольное приложение Windows. Ниже показано, как создать консольное приложение в Visual Studio 2017. Эти инструкции применимы и в других версиях Visual Studio.
 
 1. Выберите **Файл** > **Создать** > **Проект**.
-2. Выберите **Установлено** > **Шаблоны** > **Visual C#** > **Классический рабочий стол Windows**.
-3. Выберите **Консольное приложение (.NET Framework)**.
+2. Выберите **Установлено** > **Шаблоны** > **Visual C#**  > **Классический рабочий стол Windows**.
+3. Выберите **Консольное приложение (.NET Framework)** .
 4. Введите имя приложения в поле **Имя**.
 5. Нажмите кнопку **ОК**.
 

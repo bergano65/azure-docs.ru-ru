@@ -1,21 +1,21 @@
 ---
-title: Настройка журналов сервера в базе данных Azure для MariaDB и получение к ним доступа с помощью Azure CLI
-description: В этой статье описывается, как настроить журналы сервера для базы данных Azure для MariaDB и получить к ним доступ с помощью портала Azure.
+title: Настройка и доступ к журналам сервера для базы данных Azure для MariaDB на портале Azure
+description: В этой статье описывается, как настроить и получить доступ к журналам сервера в базе данных Azure для MariaDB с портала Azure.
 author: rachel-msft
 ms.author: raagyema
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: 4ff2fbd5976a8e203bbc43a87b31ddb1bed63402
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 06/11/2019
+ms.openlocfilehash: 3dbf7064e409230916668e62ef861c0ce149fdbb
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61040691"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67065639"
 ---
 # <a name="configure-and-access-server-logs-in-the-azure-portal"></a>Настройка журналов сервера и получение к ним доступа с помощью портала Azure
 
-Чтобы настроить [журналы сервера в базе данных Azure для MariaDB](concepts-server-logs.md), получить их список и скачать их, можно воспользоваться порталом Azure.
+Настройка, просмотреть и скачать можно [база данных Azure для MariaDB журналы медленных запросов](concepts-server-logs.md) на портале Azure.
 
 ## <a name="prerequisites"></a>Технические условия
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
@@ -42,7 +42,7 @@ ms.locfileid: "61040691"
 6. Вернитесь к списку журналов, нажав **кнопку закрытия** (значок "X") на странице **Параметры сервера**.
 
 ## <a name="view-list-and-download-logs"></a>Просмотр списка журналов и их скачивание
-После того, как начнется ведение журнала, вы сможете просмотреть список доступных журналов и скачать отдельные файлы журналов в области "Журналы сервера". 
+После начала ведения журнала можно просмотреть список доступных медленных запросов журналов и скачать отдельные файлы журналов на панель журналов сервера. 
 
 1. Перейдите на портал Azure.
 
@@ -62,7 +62,7 @@ ms.locfileid: "61040691"
    ![Щелчок значка "Скачать"](./media/howto-configure-server-logs-portal/5-download.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Узнайте больше о [журналах сервера](concepts-server-logs.md) в базе данных Azure для MariaDB.
+- Дополнительные сведения о [медленно журналы запросов](concepts-server-logs.md) в базе данных Azure для MariaDB.
 - Дополнительные сведения об определениях параметров и ведении журналов см. в документации MariaDB по [журналам](https://mariadb.com/kb/en/library/slow-query-log-overview/).
 
-<!-- - See [Access Server Logs in CLI](howto-configure-server-logs-in-cli.md) to learn how to download logs programmatically. -->
+<!--- See [Access Server Logs in CLI](howto-configure-server-logs-in-cli.md) to learn how to download logs programmatically. -->

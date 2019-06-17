@@ -9,20 +9,20 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 05/30/2019
+ms.date: 06/11/2019
 ms.author: diberry
-ms.openlocfilehash: 56ceb48be9d5cc9d1cdceed7505e2e3e918a7286
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: 6dbaa24df8b2917dd3f68d3851ca4662554ad00a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66399658"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67053268"
 ---
 # <a name="add-luis-results-to-application-insights-with-a-bot-in-c"></a>Добавление результатов LUIS в Application Insights с помощью бота на C#
 
 В этом учебнике приведена процедура добавления данных ответа LUIS в хранилище данных телеметрии [Application Insights](https://azure.microsoft.com/services/application-insights/). Получив эти данные, можно выполнить запрос Kusto языка или Power BI для анализа, статистической обработки и создавать отчеты о намерения и сущности utterance в режиме реального времени. Этот анализ помогает определить, следует ли добавлять или изменять намерения и сущности приложения LUIS.
 
-Бот создается с помощью Bot Framework 3.x и бота веб-приложения Azure. Объект [Bot Framework 4.x с руководством LUIS](luis-csharp-tutorial-bf-v4.md) также доступна.
+Бот создается с помощью Bot Framework 4.x и программ-роботов Azure Web app. Объект [Bot Framework 4.x с руководством LUIS](luis-csharp-tutorial-bf-v4.md) также доступна.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -33,7 +33,7 @@ ms.locfileid: "66399658"
 
 ## <a name="prerequisites"></a>Технические условия
 
-* Бот веб-приложения LUIS из **[предыдущего руководства](luis-csharp-tutorial-build-bot-framework-sample.md)** с включенным компонентом Application Insights.
+* LUIS web app программы-робота из **tutorial](luis-csharp-tutorial-bf-v4.md)** с помощью Application Insights включена.
 * [Visual Studio 2017](https://www.visualstudio.com/downloads/), локально установленная на компьютере.
 
 > [!Tip]
@@ -43,7 +43,7 @@ ms.locfileid: "66399658"
 
 ## <a name="review-luis-web-app-bot"></a>Проверка бота веб-приложения LUIS
 
-Предполагается, что у вас есть код, который выглядит следующим образом, или вы выполнили процедуру в [другом учебнике](luis-csharp-tutorial-build-bot-framework-sample.md):
+Предполагается, что у вас есть код, который выглядит следующим образом, или вы выполнили процедуру в [другом учебнике](luis-csharp-tutorial-bf-v4.md):
 
    [!code-csharp[Web app bot with LUIS](~/samples-luis/documentation-samples/tutorial-web-app-bot/csharp/BasicLuisDialog.cs "Web app bot with LUIS")]
 

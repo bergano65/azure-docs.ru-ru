@@ -5,15 +5,15 @@ services: networking
 author: anavinahar
 ms.service: networking
 ms.topic: include
-ms.date: 05/15/2019
+ms.date: 06/13/2019
 ms.author: anavin
 ms.custom: include file
-ms.openlocfilehash: cb586be1a139b331c259a1197cc62e7ca4f25666
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 813c8e92907a60046c2e53f97d4dd05125076241
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66238213"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67133473"
 ---
 <a name="virtual-networking-limits-classic"></a>Следующие ограничения применяются только для сетевых ресурсов, управляемых с помощью **классической** модели развертывания на подписку. Узнайте, как [просмотреть текущие данные об использовании ресурсов в соответствии с ограничениями подписки](../articles/networking/check-usage-against-limits.md).
 
@@ -81,7 +81,7 @@ ms.locfileid: "66238213"
 | Правил на ресурс, уровень "Базовый" | 250 |
 | Правил на ресурс, уровень "Стандартный" | 1,500 | 
 | Правил на IP-конфигурацию | 299 |
-| Правил на сетевой адаптер | 500 |
+| Правил на сетевой адаптер | 300 |
 | Интерфейсные IP-конфигурации, Basic | 200 |
 | Интерфейсные IP-конфигурации, Standard | 600 |
 | Серверный пул, Basic | 100 и одну группу доступности |

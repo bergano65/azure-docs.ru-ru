@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/30/2019
 ms.author: raynew
 ms.openlocfilehash: 50e1cb95249f0108430e978ae3ffe23b6edc778d
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66418380"
 ---
 # <a name="whats-new-in-site-recovery"></a>Новые возможности в Site Recovery
@@ -70,7 +70,7 @@ ms.locfileid: "66418380"
 --- | ---
 **Сетевое сопоставление** | Для аварийного восстановления виртуальных Машин Azure теперь можно использовать все доступные целевые сети, при включении репликации. 
 **Стандартный SSD** | Теперь можно настроить аварийное восстановление для виртуальных машин Azure с помощью [дисков Standard SSD](https://docs.microsoft.com/azure/virtual-machines/windows/disks-standard-ssd).
-**Дисковые пространства** | Можно настроить аварийное восстановление для приложений, запущенных в приложениях виртуальной Машины Azure с помощью [Storage Spaces Direct](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview) для обеспечения высокой доступности.  С помощью дисковых пространств (S2D) вместе с Site Recovery обеспечивает комплексную защиту рабочих нагрузок виртуальных Машин Azure. S2D позволяет размещать гостевой кластер в Azure. Это особенно полезно в тех случаях, когда виртуальная машина размещает критически важное приложение, например SAP ASCS слоя, SQL Server или масштабируемого файлового сервера.
+**Локальные дисковые пространства** | Можно настроить аварийное восстановление для приложений, запущенных в приложениях виртуальной Машины Azure с помощью [Storage Spaces Direct](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview) для обеспечения высокой доступности.  С помощью дисковых пространств (S2D) вместе с Site Recovery обеспечивает комплексную защиту рабочих нагрузок виртуальных Машин Azure. S2D позволяет размещать гостевой кластер в Azure. Это особенно полезно в тех случаях, когда виртуальная машина размещает критически важное приложение, например SAP ASCS слоя, SQL Server или масштабируемого файлового сервера.
 
 
 #### <a name="vmwarephysical-server-disaster-recovery"></a>VMware или физический сервер аварийного восстановления
@@ -106,7 +106,7 @@ ms.locfileid: "66418380"
 **Возможность** | **Сведения**
 --- | ---
 **Поддержка Linux** | Добавлена поддержка для рабочей станции RedHat 6 и 7 и новые версии ядра Ubuntu, Debian и SUSE.
-**Дисковые пространства** | Site Recovery поддерживает виртуальные машины Azure с помощью дисковых пространств (S2D).
+**Локальные дисковые пространства** | Site Recovery поддерживает виртуальные машины Azure с помощью дисковых пространств (S2D).
 
 #### <a name="vmware-vmsphysical-servers-replication"></a>Репликация виртуальных машин VMware или физических серверов 
 **Возможность** | **Сведения**

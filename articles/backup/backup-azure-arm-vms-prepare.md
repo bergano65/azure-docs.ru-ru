@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: raynew
-ms.openlocfilehash: bac61342f39821b6181a6a0e61bf0b11fb311007
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 06a7623fed0205d927fca9406469737faeda3a4b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66239340"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67076793"
 ---
 # <a name="back-up-azure-vms-in-a-recovery-services-vault"></a>Резервное копирование виртуальных машин Azure в хранилище Служб восстановления
 
@@ -70,6 +70,9 @@ ms.locfileid: "66239340"
  После создания хранилище появится в списке хранилищ служб восстановления. Если вы не видите хранилища, выберите **Обновить**.
 
 ![Список хранилищ службы архивации](./media/backup-azure-arm-vms-prepare/rs-list-of-vaults.png)
+
+> [!NOTE]
+> Служба Azure Backup создает отдельную группу ресурсов (отличное от группы ресурсов виртуальной Машины) для хранения моментального снимка с формат именования **AzureBackupRG_geography_number** (пример: AzureBackupRG_northeurope_1). Данные в этой группе ресурсов, которые будут храниться в течение дня, как указано в *сохранить моментальный снимок мгновенного восстановления* разделе политики резервного копирования виртуальных машин Azure.  Применения блокировки к этой группе ресурсов может привести к сбоям резервного копирования.
 
 ### <a name="modify-storage-replication"></a>Изменение репликации хранилища
 

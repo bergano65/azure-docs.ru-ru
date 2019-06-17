@@ -1,8 +1,8 @@
 ---
-title: Каковы зависимости служб в условном доступе Azure Active Directory? | Документация Майкрософт
-description: Узнайте, как активировать политику с помощью условий условного доступа Azure Active Directory.
+title: Каковы зависимости служб в Azure Active Directory условного доступа? | Документация Майкрософт
+description: Сведения об использовании условий в Azure Active Directory условного доступа для активации политики.
 services: active-directory
-keywords: условный доступ к приложениям, условный доступ посредством Azure Active Directory, безопасный доступ к ресурсам организации, политики условного доступа
+keywords: Условный доступ к приложениям, условный доступ с помощью Azure AD, безопасный доступ к ресурсам организации, политики условного доступа
 documentationcenter: ''
 author: MicrosoftGuyJFlo
 manager: daveba
@@ -18,14 +18,14 @@ ms.date: 03/18/2019
 ms.author: joflore
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f727fc7133ebc9ee124e63253e8a266862b0d908
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 54e5de5fdb03cfaff4d4ed53da94b512f30db58a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60354382"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112098"
 ---
-# <a name="what-are-service-dependencies-in-azure-active-directory-conditional-access"></a>Каковы зависимости служб в условном доступе Azure Active Directory? 
+# <a name="what-are-service-dependencies-in-azure-active-directory-conditional-access"></a>Каковы зависимости служб в Azure Active Directory условного доступа? 
 
 
 С помощью политик условного доступа можно указать требований доступа к веб-сайтов и служб. Например, требования к доступу можно включить требование многофакторной идентификации (MFA) или [управляемые устройства](require-managed-devices.md). 
@@ -79,4 +79,4 @@ ms.locfileid: "60354382"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения о реализации условного доступа см.в статье [Практическое руководство. Планирование развертывания с условным доступом в Azure Active Directory](plan-conditional-access.md).
+Чтобы узнать, как реализация условного доступа в вашей среде, см. в разделе [спланировать развертывание условного доступа в Azure Active Directory](plan-conditional-access.md).

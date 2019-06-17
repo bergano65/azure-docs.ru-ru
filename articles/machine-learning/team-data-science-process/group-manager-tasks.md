@@ -11,10 +11,10 @@ ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 85a4aca0c4b80eaab1f43bcbec33dc9cf37aa655
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65950103"
 ---
 # <a name="tasks-for-a-group-manager-on-a-data-science-team-project"></a>Задачи диспетчера группы в проекте обработки и анализа данных команды
@@ -86,12 +86,12 @@ ms.locfileid: "65950103"
 Введите для создаваемой Azure DevOps Services следующие сведения в мастере **создания учетной записи**.
 
 - **URL-адрес сервера**. Вместо строки *mysamplegroup* укажите *имя сервера*. URL-адрес сервера будет сформирован так: *https://\<имя_сервера\>.visualstudio.com*.
-- **Управление кодом с помощью:** Выберите **_Git_**.
+- **Управление кодом с помощью:** Выберите **_Git_** .
 - **Имя проекта:** Введите *GroupCommon*.
 - **Организуйте работу с помощью следующих средств:** Выберите *Agile*.
 - **Проекты будут размещены в:** Выберите географическое расположение. В нашем примере это *центрально-южная часть США*.
 
-![4.](./media/group-manager-tasks/fill-in-account-information.png)
+![4\.](./media/group-manager-tasks/fill-in-account-information.png)
 
 > [!NOTE] 
 > Если после нажатия кнопки **Создать учетную запись** вы увидите следующее всплывающее окно, выберите действие **Изменить сведения**, чтобы отобразить все поля по порядку.
@@ -146,7 +146,7 @@ ms.locfileid: "65950103"
 
   ![11](./media/group-manager-tasks/rename-groupcommon-repo-4.png)
 
-- Щелкните многоточие (**...**) справа от репозитория **GroupCommon** на левой панели, а затем выберите **Переименовать репозиторий**.
+- Щелкните многоточие ( **...** ) справа от репозитория **GroupCommon** на левой панели, а затем выберите **Переименовать репозиторий**.
 
   ![12](./media/group-manager-tasks/rename-groupcommon-repo-5.png)
 

@@ -14,10 +14,10 @@ ms.date: 01/22/2019
 ms.reviewer: sdash
 ms.author: lagayhar
 ms.openlocfilehash: 76bbcd6fa400111514ec3496005a28ec28ae6ab7
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65977899"
 ---
 # <a name="monitor-availability-and-responsiveness-of-any-web-site"></a>Наблюдение за доступностью и скоростью реагирования веб-сайта
@@ -71,7 +71,7 @@ ms.locfileid: "65977899"
 
 * **Пороговое значение для расположения оповещения.** Мы рекомендуем как минимум 3 из 5 расположений. Оптимальное отношение между пороговым значением предупреждения расположения и числом тестовых местоположений: **пороговое значение для предупреждения расположения** = **количество расположений тестирования** —2 с как минимум пятью расположениями тестирования.
 
-## <a name="multi-step-web-tests"></a>Веб-тесты из нескольких шагов
+## <a name="multi-step-web-tests"></a>Многошаговые веб-тесты
 Вы можете отслеживать сценарий, который содержит последовательность URL-адресов. Например, в случае наблюдения за интернет-магазином вы можете проверить, что добавление товаров в корзину работает исправно.
 
 > [!NOTE]
@@ -176,7 +176,7 @@ ms.locfileid: "65977899"
 При обслуживании службы может потребоваться отключить тесты доступности или правила оповещения, связанные с ними.
 
 ![Отключить веб-теста](./media/monitor-web-app-availability/6disable.png)  
-![Изменить тест](./media/monitor-web-app-availability/8edittest.png)
+![Измените тест](./media/monitor-web-app-availability/8edittest.png)
 
 ## <a name="failures"></a>При возникновении сбоев
 Щелкните красную точку.

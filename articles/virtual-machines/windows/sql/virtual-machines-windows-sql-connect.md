@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 12/12/2017
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: a33525e44b2e294b7ce85c7081864dbef0856588
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 70e478ac70b7ab53f1357394f3a3cb0d92f41f00
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62130816"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67075788"
 ---
 # <a name="connect-to-a-sql-server-virtual-machine-on-azure"></a>Подключение к виртуальной машине SQL Server в Azure
 
@@ -94,13 +94,15 @@ Server=mysqlvm;Integrated Security=true
 
 ## <a id="change"></a> Изменение параметров подключения к SQL
 
+[!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
+
 Можно изменить параметры подключения для вашей виртуальной машины SQL Server на портале Azure.
 
-1. На портале Azure выберите **Виртуальные машины**.
+1. На портале Azure выберите **виртуальные машины SQL**.
 
 2. Выберите виртуальную машину SQL Server.
 
-3. В разделе **Параметры** щелкните **Конфигурация SQL Server**.
+3. В разделе **параметры**выберите **безопасности**.
 
 4. Измените **уровень подключения SQL**, выбрав необходимый параметр. Эту область можно при необходимости использовать, чтобы изменить порт SQL Server или параметры аутентификации SQL.
 

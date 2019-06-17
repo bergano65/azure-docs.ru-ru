@@ -11,10 +11,10 @@ ms.topic: article
 ms.assetid: 85928ec6-d7cb-488e-926e-2e5db89508ee
 ms.date: 10/18/2016
 ms.openlocfilehash: 624539557b0bf57e9d919a3a46337f1cf93a4f07
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62128606"
 ---
 # <a name="create-azure-resource-manager-templates-for-deploying-logic-apps"></a>Создание шаблонов Azure Resource Manager для развертывания приложений логики
@@ -79,7 +79,7 @@ Azure Logic Apps предоставляет [шаблон Azure Resource Manager
 
 * Определение рабочего процесса приложения логики имеет свой собственный [ `parameters` разделе](../logic-apps/logic-apps-workflow-definition-language.md#parameters) где можно определить все параметры, которые использует ваше приложение логики для приема входных данных во время развертывания.
 
-* Шаблон Resource Manager имеет свой собственный [ `parameters` разделе](../azure-resource-manager/resource-group-authoring-templates.md#parameters), отдельно от приложения логики `parameters` раздел. Пример.
+* Шаблон Resource Manager имеет свой собственный [ `parameters` разделе](../azure-resource-manager/resource-group-authoring-templates.md#parameters), отдельно от приложения логики `parameters` раздел. Пример:
 
   [!INCLUDE [logic-deploy-parameters](../../includes/app-service-logic-deploy-parameters.md)]
 
@@ -182,7 +182,7 @@ Azure Logic Apps предоставляет [шаблон Azure Resource Manager
 
 4. В диалоговом окне **Добавление ресурса** найдите и выберите **Приложение логики**. Присвойте имя приложению логики и выберите **Добавить**.
 
-   ![Добавить ресурс](./media/logic-apps-create-deploy-template/addresource.png)
+   ![Добавление ресурса](./media/logic-apps-create-deploy-template/addresource.png)
 
 ## <a name="get-support"></a>Получение поддержки
 

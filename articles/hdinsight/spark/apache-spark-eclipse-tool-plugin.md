@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/30/2017
 ms.author: hrasheed
-ms.openlocfilehash: 1ae585322316a9c215fc32cc2f8ffba2f332ff61
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: cd5839520a5b85f31cbe677ad6691a3d6bacd0b0
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64704868"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67066371"
 ---
 # <a name="use-azure-toolkit-for-eclipse-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for Eclipse
 
@@ -138,7 +138,7 @@ ms.locfileid: "64704868"
 1. Запустите приложение в кластере HDInsight Spark.
    
    a. В обозревателе пакетов щелкните имя проекта правой кнопкой мыши и выберите пункт **Submit Spark Application to HDInsight** (Отправить приложение Spark в HDInsight).        
-   2. В диалоговом окне **Spark Submission** (Отправка в Spark) введите следующие значения и нажмите кнопку **Submit** (Отправить).
+   2\. В диалоговом окне **Spark Submission** (Отправка в Spark) введите следующие значения и нажмите кнопку **Submit** (Отправить).
       
    * В поле **Cluster Name**(Имя кластера) выберите кластер HDInsight Spark, в котором вы хотите запустить приложение.
    * Выберите артефакт из проекта Eclipse или с жесткого диска. Значение по умолчанию зависит от элемента, который вы щелкнете правой кнопкой мыши в обозревателе пакетов.
@@ -226,6 +226,60 @@ ms.locfileid: "64704868"
    
    ![Результат локального запуска приложения Spark](./media/apache-spark-eclipse-tool-plugin/hdi-spark-app-local-run-result.png)
 
+## <a name="reader-only-role"></a>Роль только для чтения
+Когда пользователи отправки задания в кластер с разрешением роли только для чтения, Ambari учетные данные не требуется.
+
+### <a name="link-cluster-from-context-menu"></a>Кластер ссылку в контекстном меню
+
+1. Вход с учетной записью, роли только для чтения.
+       
+2. Из **Azure Explorer**, разверните **HDInsight** Чтобы просмотреть кластеры HDInsight в подписке. Кластеры помечены **«Роли: Читатель»** только иметь разрешение роли только для чтения.
+
+    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-6.png)
+
+3. Правой кнопкой мыши щелкните кластер, с разрешением роли только для чтения. Выберите **связать этот кластер** из контекстного меню для связывания кластера. Введите имя пользователя Ambari и пароль.
+
+    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-7.png)
+
+4. Если кластер связан успешно, будет обновляться HDInsight.
+   Этап кластера будет становятся связанными.
+  
+    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-8.png)
+
+
+
+### <a name="link-cluster-by-expanding-jobs-node"></a>Связь кластера, развернув узел "задания"
+
+1. Нажмите кнопку **заданий** узел, **кластера задания отказано в доступе** всплывающее окно.
+   
+2. Нажмите кнопку **связать этот кластер** для связывания кластера.
+   
+    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-9.png)
+
+### <a name="link-cluster-from-spark-submission-window"></a>Кластера ссылку на окно отправки Spark
+
+1. Создайте проект HDInsight.
+
+2. Щелкните правой кнопкой мыши пакет. Затем выберите **отправить приложение Spark в HDInsight**.
+   
+   ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-11.png)
+
+3. Выберите кластер, которая имеет разрешение роли только для чтения для **имя кластера**. Предупреждающее сообщение показано. Можно щелкнуть **связать этот кластер** для связывания кластера.
+   
+   ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-15.png)
+   
+### <a name="view-storage-accounts"></a>Просмотреть учетные записи хранения
+
+* Для кластеров с разрешением роли только для чтения, нажмите кнопку **учетные записи хранения** узел, **отказано в доступе хранилища** всплывающее окно. 
+     
+   ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-13.png)
+
+   ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-12.png)
+
+* Для связанного кластеров щелкните **учетные записи хранения** узел, **отказано в доступе хранилища** всплывающее окно. 
+     
+   ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-14.png)
+
 ## <a name="known-problems"></a>Известные проблемы
 Рекомендуем при связывании кластера указать учетные данные хранилища.
 
@@ -236,9 +290,6 @@ ms.locfileid: "64704868"
 ![Eclipse получает сообщение об ошибке, если кластер занят](./media/apache-spark-eclipse-tool-plugin/eclipse-interactive-cluster-busy-upload.png)
 
 ![Eclipse получает сообщение об ошибке, если кластер занят](./media/apache-spark-eclipse-tool-plugin/eclipse-interactive-cluster-busy-submit.png)
-
-## <a name="feedback"></a>Отзыв
-С любыми отзывами, а также в случае возникновения проблем при работе с этим инструментом обращайтесь по электронному адресу hdivstool@microsoft.com.
 
 ## <a name="seealso"></a>Дополнительные материалы
 * [Apache Spark в Azure HDInsight](apache-spark-overview.md)
@@ -256,9 +307,8 @@ ms.locfileid: "64704868"
 ### <a name="tools-and-extensions"></a>Средства и расширения
 * [Создание приложений Spark для кластера HDInsight с помощью набора средств Azure для IntelliJ](apache-spark-intellij-tool-plugin.md)
 * [Удаленная отладка приложений Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](../hdinsight-apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
-* [Удаленная или локальная отладка приложений Spark в кластере HDInsight с помощью Azure Toolkit for IntelliJ через SSH](../hdinsight-apache-spark-intellij-tool-debug-remotely-through-ssh.md)
-* [Использование инструментов HDInsight для IntelliJ с песочницей Hortonworks](../hadoop/hdinsight-tools-for-intellij-with-hortonworks-sandbox.md)
-* [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
+* [Удаленная отладка приложений Apache Spark в HDInsight через SSH с помощью Azure Toolkit for IntelliJ](../hdinsight-apache-spark-intellij-tool-debug-remotely-through-ssh.md)
+* [Использование записных книжек Apache Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
 * [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](apache-spark-jupyter-notebook-install-locally.md)

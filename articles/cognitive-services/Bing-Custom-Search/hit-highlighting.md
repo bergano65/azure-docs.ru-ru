@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: maheshb
 ms.openlocfilehash: bf87db232484a8ba4fa1e3b8e4de921f152e2345
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62110124"
 ---
 # <a name="using-decoration-markers-to-highlight-text"></a>Использование маркеров оформления для выделения текста
@@ -31,7 +31,7 @@ Bing предоставляет возможность использовать 
   
 Если для `textDecorations` задано значение **true**, Bing может содержать следующие маркеры в отображаемых строках ответов. Если нет эквивалента в HTML, ячейка таблицы HTML будет пустой.
 
-|Unicode|HTML|ОПИСАНИЕ
+|Unicode|HTML|Описание
 |-|-|-
 |U+E000|\<b>|Помечает начало термина запроса (выделение совпадений)
 |U+E001|\</b>|Помечает окончание термина запроса

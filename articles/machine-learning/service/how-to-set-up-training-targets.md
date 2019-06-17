@@ -9,18 +9,18 @@ ms.reviewer: sgilley
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.date: 01/07/2019
+ms.date: 06/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: a815ec4ac97f8476403f773aeedb19ff84092b03
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.openlocfilehash: 0b35ef5ca3aaa7ad4169f99e2830ebea76d2759e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66752970"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67074948"
 ---
 # <a name="set-up-compute-targets-for-model-training"></a>Настройка целевых объектов вычислений для обучения моделей 
 
-С помощью Службы машинного обучения Azure вы можете обучать модель, используя разные вычислительные ресурсы или среды, которые вместе называются [__целевыми объектами вычислений__](concept-azure-machine-learning-architecture.md#compute-target). Они могут быть локальными или облачными, например Вычислительная среда машинного обучения Azure, Azure HDInsight или удаленная виртуальная машина.  Можно также создать целевые объекты вычислений для развертывания моделей, как описано в статье [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md).
+С помощью Службы машинного обучения Azure вы можете обучать модель, используя разные вычислительные ресурсы или среды, которые вместе называются [__целевыми объектами вычислений__](concept-azure-machine-learning-architecture.md#compute-targets). Они могут быть локальными или облачными, например Вычислительная среда машинного обучения Azure, Azure HDInsight или удаленная виртуальная машина.  Можно также создать целевые объекты вычислений для развертывания моделей, как описано в статье [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md).
 
 Можно создать и управлять ими с помощью Azure Machine Learning SDK, портал Azure, Azure CLI или Azure Machine Learning VS Code расширение целевого объекта вычислений. Если у вас есть целевые объекты вычислений, созданные другой службой (например, кластером HDInsight), вы можете подключить их к своей рабочей области Службы машинного обучения Azure.
  
@@ -31,7 +31,7 @@ ms.locfileid: "66752970"
 
 
 >[!NOTE]
-> Код в этой статье был протестирован с помощью Azure Machine Learning SDK версии 1.0.39.
+> Код в этой статье протестирован с помощью пакета SDK для Машинного обучения Azure версии 1.0.39.
 
 ## <a name="compute-targets-for-training"></a>Целевые объекты вычислений для обучения
 
@@ -75,7 +75,7 @@ ms.locfileid: "66752970"
 
 [!code-python[](~/aml-sdk-samples/ignore/doc-qa/how-to-set-up-training-targets/runconfig.py?name=run_user_managed)]
   
-## <a name="set-up-compute-targets-with-python"></a>Настройка целевых объектов вычислений с помощью Python
+## <a name="set-up-in-python"></a>В Python
 
 Чтобы настроить эти целевые объекты вычислений, используйте следующие разделы.
 
@@ -271,7 +271,7 @@ except ComputeTargetException:
 print("Using Batch compute:{}".format(batch_compute.cluster_resource_id))
 ```
 
-## <a name="set-up-compute-in-the-azure-portal"></a>Настройка вычислительной среды на портале Azure
+## <a name="set-up-in-azure-portal"></a>Настройка на портале Azure
 
 Вы можете получить доступ к целевым объектам вычислений, связанным с вашей рабочей областью, на портале Azure.  Вы можете использовать портал для таких целей.
 
@@ -357,7 +357,7 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 1. Выберите __Подключить__. 
 1. Чтобы просмотреть состояние операции подключения, выберите целевой объект вычислений из списка.
 
-## <a name="set-up-compute-with-the-cli"></a>Настройка вычислительной среды с помощью интерфейса командной строки
+## <a name="set-up-with-cli"></a>Настройка с помощью интерфейса командной строки
 
 Чтобы получить доступ к целевым объектам вычислений, которые связаны с вашим рабочим пространством, используйте [расширение CLI](reference-azure-machine-learning-cli.md) для Службы машинного обучения Azure.  Вы можете использовать Azure CLI для таких целей.
 
@@ -367,7 +367,7 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 
 Дополнительные сведения см. в разделе [Управление ресурсами](reference-azure-machine-learning-cli.md#resource-management).
 
-## <a name="set-up-compute-with-vs-code"></a>Настройка вычислительных ресурсов с помощью VS Code
+## <a name="set-up-with-vs-code"></a>Настройка с помощью VS Code
 
 Можно получить доступ к, создание и управление целевые объекты вычисления, связанные с вашей рабочей области с помощью [расширение VS Code](how-to-vscode-tools.md#create-and-manage-compute-targets) для службы машинного обучения Azure.
 
@@ -384,7 +384,7 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 >
 > Чтобы заблокировать развертывание файлов, включаемого в моментальном снимке, создайте [.gitignore](https://git-scm.com/docs/gitignore) или `.amlignore` в каталоге и добавьте файлы к нему. `.amlignore` Файл использует тот же синтаксис и шаблоны как [.gitignore](https://git-scm.com/docs/gitignore) файла. Если существуют оба файла, `.amlignore` файл имеет приоритет.
 > 
-> Дополнительные сведения см. в разделе о [моментальных снимках](concept-azure-machine-learning-architecture.md#snapshot).
+> Дополнительные сведения см. в разделе о [моментальных снимках](concept-azure-machine-learning-architecture.md#snapshots).
 
 ### <a name="create-an-experiment"></a>Создание эксперимента
 

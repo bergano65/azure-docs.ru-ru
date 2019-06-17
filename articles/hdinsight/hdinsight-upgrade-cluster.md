@@ -7,12 +7,12 @@ ms.author: omidm
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/04/2017
-ms.openlocfilehash: b5048266fe17bc16fba8228f7cc17d0ee9f3bc0b
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 4d391c095495a3d0e34a2111d7b4564e6f4f2b8d
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64714780"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071991"
 ---
 # <a name="upgrade-hdinsight-cluster-to-a-newer-version"></a>Обновление кластера HDInsight до более новой версии
 Чтобы воспользоваться преимуществами новых возможностей HDInsight, мы рекомендуем обновить кластеры HDInsight до последней версии. Выполните следующие инструкции, чтобы обновить версию кластера HDInsight.
@@ -27,9 +27,8 @@ ms.locfileid: "64714780"
 
 1. Ознакомьтесь со всеми разделами этого документа. Там описаны изменения, которые могут потребоваться при обновлении кластера HDInsight.
 2. Создайте кластер как среду тестирования и контроля качества. См. дополнительные сведения о [создании кластеров под управлением Linux в HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
-3. Скопируйте в новую среду существующие задания, источники данных и приемники. См. дополнительные сведения о [копировании данных в среду тестирования](hdinsight-migrate-from-windows-to-linux.md#copy-data-to-the-test-environment).
+3. Скопируйте в новую среду существующие задания, источники данных и приемники.
 4. Выполните проверочное тестирование, чтобы убедиться, что задания должным образом работают новом кластере.
-
 
 Убедившись, что все работает правильно, запланируйте время простоя для миграции. Во время этого простоя выполните следующие действия.
 

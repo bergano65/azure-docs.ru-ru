@@ -11,10 +11,10 @@ ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
 ms.openlocfilehash: d2e6ad9aa9692efa4ea5633dff78b262bb1917be
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66512032"
 ---
 # <a name="userjourneys"></a>UserJourneys
@@ -99,7 +99,7 @@ ms.locfileid: "66512032"
 
 | Элемент | Вхождения | Описание |
 | ------- | ----------- | ----------- |
-| Value | 1:n | Атрибут ClaimTypeReferenceId, для которого необходимо выполнить запрос. Другой элемент значения содержит значение, для которого необходимо выполнить проверку.</li></ul>|
+| Значение | 1:n | Атрибут ClaimTypeReferenceId, для которого необходимо выполнить запрос. Другой элемент значения содержит значение, для которого необходимо выполнить проверку.</li></ul>|
 | Действие | 1:1 | Действие, которое требуется выполнить, если в результате проверки предварительного условия в рамках шага оркестрации получено значение true. Если для `Action` присвоено значение `SkipThisOrchestrationStep`, не нужно выполнять сопоставленный элемент `OrchestrationStep`. | 
 
 #### <a name="preconditions-examples"></a>Примеры предварительных условий

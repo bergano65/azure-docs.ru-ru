@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/19/2018
 ms.author: snmuvva
 ms.subservice: alerts
-ms.openlocfilehash: b5a13254fc9dfd58db83a1bc8b9dd071cfbbdab2
-ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
+ms.openlocfilehash: 9d872a6d753a206dcfb03761e50e5854db4f146e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66015593"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071591"
 ---
 # <a name="understand-how-the-migration-tool-works"></a>Понять, как работает средство миграции
 
@@ -55,10 +55,11 @@ ms.locfileid: "66015593"
 - PercentTimeoutError
 - AnonymousThrottlingError
 - SASThrottlingError
+- ThrottlingError
 
 На основе классического оповещения, правила на основе метрик процента, должны быть перенесены [сопоставление между метрик хранилища старые и новые](https://docs.microsoft.com/azure/storage/common/storage-metrics-migration#metrics-mapping-between-old-metrics-and-new-metrics). Пороговые значения, необходимо соответствующим образом изменить, так как новый доступных метрик является абсолютным.
 
-Классические правила генерации оповещений на AnonymousThrottlingError и SASThrottlingError должен быть разделен на две новые оповещения, так как не объединенный показатель, который предоставляет те же функциональные возможности. Пороговые значения, необходимо соответствующим образом адаптировать.
+Классические правила генерации оповещений на AnonymousThrottlingError, SASThrottlingError и ThrottlingError должен быть разделен на две новые оповещения, так как не объединенный показатель, который предоставляет те же функциональные возможности. Пороговые значения, необходимо соответствующим образом адаптировать.
 
 ## <a name="rollout-phases"></a>Этапы развертывания
 
@@ -106,7 +107,7 @@ ms.locfileid: "66015593"
 
 После того как вы [активировать миграции](alerts-using-migration-tool.md), вы получите по электронной почте на адреса, указанный для уведомления о том, что миграция завершена, или если от вас требуется никаких действий. В этом разделе описываются некоторые общие проблемы и способы их устранения.
 
-### <a name="validation-failed"></a>Проверка не пройдена
+### <a name="validation-failed"></a>Сбой проверки
 
 Из-за некоторых последние изменения в классическом правила генерации оповещений в подписке невозможно перенести подписку. Эта проблема является временным. Миграцию можно перезапустить после состояния миграции перемещает **готов к миграции** через несколько дней.
 

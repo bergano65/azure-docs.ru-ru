@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 10/12/2018
 ms.author: jonbeck
-ms.openlocfilehash: 32b0f467f11cf8cb0a04657006cb5a86b11e27e9
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.openlocfilehash: 003a14174ff65bab253f27a458d4f3e2c0a1a6db
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66755160"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67070000"
 ---
 # <a name="high-performance-compute-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для высокопроизводительных вычислений
 
@@ -72,7 +72,7 @@ Azure Marketplace состоит из многих дистрибутивов Li
 
   [!INCLUDE [virtual-machines-common-ubuntu-rdma](../../../includes/virtual-machines-common-ubuntu-rdma.md)]  
 
-  Дополнительные сведения о включении InfiniBand, Настройка MPI, см. в разделе [включить InfiniBand](https://docs.microsoft.com/azure/virtual-machines/workloads/hpc/enable-infiniband-with-sriov).
+  Дополнительные сведения о включении InfiniBand, Настройка MPI, см. в разделе [включить InfiniBand](../workloads/hpc/enable-infiniband.md).
 
 
 ### <a name="cluster-configuration-options"></a>Параметры конфигурации кластера
@@ -107,5 +107,5 @@ Azure предоставляет несколько вариантов для с
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о том, как настроить, оптимизировать и масштабировать [рабочих нагрузок HPC](https://docs.microsoft.com/azure/virtual-machines/workloads/hpc) в Azure.
+- Дополнительные сведения о том, как настроить, оптимизировать и масштабировать [рабочих нагрузок HPC](../workloads/hpc/configure.md) в Azure.
 - Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.

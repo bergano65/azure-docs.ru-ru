@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: dacurwin
-ms.openlocfilehash: 1ac3cdecc79cafb9ea2697cca3c87b2ebe083d40
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 56dc87b1cdf36d761c46133004a05f8fa225a091
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66254866"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66808294"
 ---
 # <a name="common-questions-about-backing-up-files-and-folders"></a>Часто задаваемые вопросы о резервном копировании файлов и папок 
 
@@ -83,11 +83,11 @@ ms.locfileid: "66254866"
 - Если вам нужно восстановить данные, резервное копирование из хранилища со старым именем сервера, используйте параметр для восстановления в альтернативное расположение в мастер восстановления данных. [Узнайте больше](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine). 
 
 ### <a name="what-is-the-maximum-file-path-length-for-backup"></a>Какова максимальная длина пути для резервного копирования?
-Агент служб восстановления Microsoft AZURE использует NTFS и использует Указание длины filepath, ограничена из-за [Windows API](/windows/desktop/FileIO/naming-a-file#fully_qualified_vs._relative_paths). Если файлы, которые вы хотите защитить превышает допустимое значение, резервное копирование родительской папки или диска.  
+Агент служб восстановления Microsoft AZURE использует NTFS и использует Указание длины filepath, ограничена из-за [Windows API](/windows/desktop/FileIO/naming-a-file#fully-qualified-vs-relative-paths). Если файлы, которые вы хотите защитить превышает допустимое значение, резервное копирование родительской папки или диска.  
 
 ### <a name="what-characters-are-allowed-in-file-paths"></a>Какие символы разрешены в путях к файлам?
 
-Агент служб восстановления Microsoft AZURE использует NTFS и позволяет [символы, которые поддерживаются](/windows/desktop/FileIO/naming-a-file#naming_conventions) в файле имена и пути.
+Агент служб восстановления Microsoft AZURE использует NTFS и позволяет [символы, которые поддерживаются](/windows/desktop/FileIO/naming-a-file#naming-conventions) в файле имена и пути.
 
 ### <a name="the-warning-azure-backups-have-not-been-configured-for-this-server-appears"></a>Появится предупреждение «Служба архивации Azure не были настроены для этого сервера».
 Это предупреждение может отображаться, несмотря на то, что вы настроили политику резервного копирования, когда параметры расписания резервного копирования, хранящихся на локальном сервере не так же, как параметры, хранящиеся в хранилище службы архивации.
@@ -112,7 +112,7 @@ ms.locfileid: "66254866"
 2. Не перемещайте файлы. Вместо этого скопируйте папку пространства кэша на другой диск, на котором достаточно свободного места.
 3. Обновите следующие записи реестра, указав путь для новой папки кэша.<br/>
 
-    | Путь к элементу реестра | Ключ реестра | Value |
+    | Путь к элементу реестра | Ключ реестра | Значение |
     | --- | --- | --- |
     | `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config` |ScratchLocation |*Новое расположение папки кэша* |
     | `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config\CloudBackupProvider` |ScratchLocation |*Новое расположение папки кэша* |

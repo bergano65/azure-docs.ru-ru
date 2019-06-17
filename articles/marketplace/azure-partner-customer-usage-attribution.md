@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 11/17/2018
 ms.author: yijenj
-ms.openlocfilehash: 09ce4cdc6ab4556f0ba68507bb23d09e02ae0357
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: 45d575488db8d740069fba961203842899024747
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66296816"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66807182"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Определение потребления услуг Azure клиентами партнеров
 
@@ -267,11 +267,13 @@ foreach ($deployment in $deployments){
 
 ## <a name="get-support"></a>Получение поддержки
 
-Если возникнут проблемы с отчетом или входа в центр партнеров, создайте запрос в службу поддержки в центре партнеров службу поддержки здесь: [https://partner.microsoft.com/en-US/support](https://partner.microsoft.com/support)
+Существуют два каналы поддержки в зависимости от проблем, с которыми вы столкнулись.
+
+Если возникли затруднения в центре партнеров, таких как просмотр отчета об использовании однозначного соответствия примитивов клиента или выполнить вход, создайте запрос в службу поддержки в центре партнеров службу поддержки здесь: [https://partner.microsoft.com/en-US/support](https://partner.microsoft.com/support)
 
 ![](./media/marketplace-publishers-guide/partner-center-log-in-support.png)
 
-Если вам нужна помощь для адаптации Marketplace и/или однозначного соответствия примитивов использования клиента, выполните следующие действия.
+Если вам нужна помощь для однозначного соответствия примитивов использования адаптации Marketplace и/или клиента в целом, например настройке однозначного соответствия примитивов использования клиента, выполните следующие действия:
 
 1. Перейдите на [страницу службы поддержки](https://go.microsoft.com/fwlink/?linkid=844975).
 

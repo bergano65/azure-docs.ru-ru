@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: diberry
 ms.openlocfilehash: 0648dd9bc93097d3c2433943f983b5e9d22f0279
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66473503"
 ---
 # <a name="alter-utterance-data-before-or-during-prediction"></a>Изменение данных высказываний до или во время прогнозирования
@@ -30,7 +30,7 @@ LUIS предоставляет способы управления высказ
 
 Чтобы исправления орфографических ошибок вступили в силу, конечной точке требуется два параметра.
 
-|Параметр|Value|
+|Параметр|Значение|
 |--|--|
 |`spellCheck`|Логическое|
 |`bing-spell-check-subscription-key`|Ключ конечной точки [API проверки орфографии Bing версии 7](https://azure.microsoft.com/services/cognitive-services/spell-check/)|
@@ -58,7 +58,7 @@ API проверки орфографии Bing, используемый в LUIS
 ### <a name="endpoint-querystring-parameter"></a>Параметр QueryString конечной точки
 Часовой пояс исправляется путем добавления часового пояса пользователя к [конечной точке](https://go.microsoft.com/fwlink/?linkid=2092356) с помощью параметра `timezoneOffset`. Чтобы изменить время, значение `timezoneOffset` должно быть положительным или отрицательным числом в минутах.  
 
-|Параметр|Value|
+|Параметр|Значение|
 |--|--|
 |`timezoneOffset`|положительное или отрицательное число в минутах|
 

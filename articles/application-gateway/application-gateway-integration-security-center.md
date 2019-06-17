@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 06/07/2017
 ms.author: victorh
 ms.openlocfilehash: 10f115b64f0bd3f7e557da2bedbf3327d0ef483d
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62122301"
 ---
 # <a name="overview-of-integration-between-application-gateway-and-azure-security-center"></a>Общие сведения об интеграции шлюза приложений с центром безопасности Azure
@@ -38,7 +38,7 @@ ms.locfileid: "62122301"
 
 Выберите **Все службы** > **Безопасность+идентификация** > **Центр безопасности**, а затем в области **Центр безопасности — Обзор** щелкните **Приложения**. Таблица в области **Центр безопасности — Приложения** содержит список приложений, обнаруженных центром безопасности в вашей подписке.
 
-![— веб-приложения][3]
+![Веб-приложения][3]
 
 Если щелкнуть веб-приложение с критической ошибкой, откроется страница **Состояние защиты приложения**. На рисунке ниже показан пример веб-приложение, незащищенного брандмауэром веб-приложения. 
 

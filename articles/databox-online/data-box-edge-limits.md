@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/22/2019
 ms.author: alkohli
 ms.openlocfilehash: b454b563cdb870ca8f07a45b796dc6b1e272502d
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64924598"
 ---
 # <a name="azure-data-box-edge-limits"></a>Ограничения поля данных Microsoft Edge
@@ -27,7 +27,7 @@ ms.locfileid: "64924598"
 
 В следующей таблице описаны ограничения для устройства Data Box Edge.
 
-| ОПИСАНИЕ | Value |
+| Описание | Значение |
 |---|---|
 |№ файлов на каждом устройстве |100 млн |
 |№ общих папок на каждом устройстве |24 |

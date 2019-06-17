@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 6/29/2017
 ms.author: mcoskun
 ms.openlocfilehash: a3df5f28475b03f1799dc1e245c3a7e904b49cb3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60772930"
 ---
 # <a name="reliable-services-notifications"></a>Уведомления Reliable Services
@@ -34,7 +34,7 @@ ms.locfileid: "60772930"
 ## <a name="reliable-state-manager-notifications"></a>Уведомления диспетчера надежных состояний
 Диспетчер надежных состояний предоставляет уведомления для следующих событий:
 
-* Транзакция
+* транзакция:
   * Фиксация
 * Диспетчер состояний:
   * перестроение;
@@ -112,7 +112,7 @@ public void OnStateManagerChangedHandler(object sender, NotifyStateManagerChange
 * Повторная сборка. Вызывается, когда **ReliableDictionary** был восстановлен свое состояние из восстановленного или скопированного локального состояния или резервной копии.
 * Очистить: Вызывается, когда состояние **ReliableDictionary** был очищен через **ClearAsync** метод.
 * Добавьте следующие пакеты: Вызывается, когда элемент был добавлен **ReliableDictionary**.
-* Обновить: Вызывается, когда элемент в **IReliableDictionary** был обновлен.
+* Обновление: Вызывается, когда элемент в **IReliableDictionary** был обновлен.
 * Удалить: Вызывается, когда элемент в **IReliableDictionary** был удален.
 
 Для получения уведомлений надежного словаря нужно выполнить регистрацию обработчика событий **DictionaryChanged** для **IReliableDictionary**. Чаще всего для регистрации этих обработчиков событий используется уведомление о добавлении **ReliableStateManager.StateManagerChanged** .

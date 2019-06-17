@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 01/08/2018
+ms.date: 01/08/2019
 ms.author: mbullwin
-ms.openlocfilehash: 12025dfb93bbcfc86ae301f8fb63e7ac74697cf2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4f8fd0b317c17f142664d22291c23442dd49f970
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60898922"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67053294"
 ---
 # <a name="application-insights-export-data-model"></a>Экспорт модели данных Application Insights
 В этой таблице перечислены свойства телеметрии, отправляемой из различных пакетов SDK для [Application Insights](../../azure-monitor/app/app-insights-overview.md) на портал.
@@ -163,7 +163,7 @@ ms.locfileid: "60898922"
 
 | Путь | type | Примечания |
 | --- | --- | --- |
-| event [0] count |integer |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
+| event [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | event [0] name |string |Имя события.  Максимальная длина: 250 |
 | event [0] url |string | |
 | event [0] urlData.base |string | |
@@ -175,7 +175,7 @@ ms.locfileid: "60898922"
 | Путь | type | Примечания |
 | --- | --- | --- |
 | basicException [0] assembly |string | |
-| basicException [0] count |integer |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
+| basicException [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | basicException [0] exceptionGroup |string | |
 | basicException [0] exceptionType |string | |
 | basicException [0] failedUserCodeMethod |string | |
@@ -192,8 +192,8 @@ ms.locfileid: "60898922"
 | basicException [0] outerId |string | |
 | basicException [0] parsedStack [0] assembly |string | |
 | basicException [0] parsedStack [0] fileName |string | |
-| basicException [0] parsedStack [0] level |integer | |
-| basicException [0] parsedStack [0] line |integer | |
+| basicException [0] parsedStack [0] level |целое число | |
+| basicException [0] parsedStack [0] line |целое число | |
 | basicException [0] parsedStack [0] method |string | |
 | basicException [0] stack |string |Максимальная длина: 10 000 |
 | basicException [0] typeName |string | |
@@ -216,7 +216,7 @@ ms.locfileid: "60898922"
 | remoteDependency [0] async |Логическое | |
 | remoteDependency [0] baseName |string | |
 | remoteDependency [0] commandName |string |Например, home/index |
-| remoteDependency [0] count |integer |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
+| remoteDependency [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | remoteDependency [0] dependencyTypeName |string |HTTP, SQL, … |
 | remoteDependency [0] durationMetric.value |номер |Время от вызова до завершения отклика зависимостью. |
 | remoteDependency [0] id |string | |
@@ -234,11 +234,11 @@ ms.locfileid: "60898922"
 
 | Путь | type | Примечания |
 | --- | --- | --- |
-| request [0] count |integer |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Пример. 4 =&gt; 25%. |
+| request [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Пример: 4 =&gt; 25%. |
 | request [0] durationMetric.value |номер |Время от поступления запроса до отклика. 1e7 = 1 с. |
 | request [0] id |string |Идентификатор операции |
 | request [0] name |string |GET или POST + базовый URL-адрес.  Максимальная длина: 250 |
-| request [0] responseCode |integer |HTTP-отклик, отправленный клиенту. |
+| request [0] responseCode |целое число |HTTP-отклик, отправленный клиенту. |
 | request [0] success |Логическое |Значение по умолчанию == (responseCode &lt; 400) |
 | request [0] url |string |Не включая узел. |
 | request [0] urlData.base |string | |
@@ -252,12 +252,12 @@ ms.locfileid: "60898922"
 
 | Путь | type | Примечания |
 | --- | --- | --- |
-| clientPerformance [0] clientProcess.value |integer |Время от завершения получения HTML до отображения страницы. |
+| clientPerformance [0] clientProcess.value |целое число |Время от завершения получения HTML до отображения страницы. |
 | clientPerformance [0] name |string | |
 | clientPerformance [0] networkConnection.value |целое число |Время, необходимое для установки подключения к сети. |
-| clientPerformance [0] receiveRequest.value |integer |Время от завершения отправки запроса до получения HTML в отклике. |
-| clientPerformance [0] sendRequest.value |integer |Время на отправку HTTP-запроса. |
-| clientPerformance [0] total.value |integer |Время от запуска отправки запроса до отображения страницы. |
+| clientPerformance [0] receiveRequest.value |целое число |Время от завершения отправки запроса до получения HTML в отклике. |
+| clientPerformance [0] sendRequest.value |целое число |Время на отправку HTTP-запроса. |
+| clientPerformance [0] total.value |целое число |Время от запуска отправки запроса до отображения страницы. |
 | clientPerformance [0] url |string |URL-адрес запроса. |
 | clientPerformance [0] urlData.base |string | |
 | clientPerformance [0] urlData.hashTag |string | |
@@ -269,8 +269,8 @@ ms.locfileid: "60898922"
 
 | Путь | type | Примечания |
 | --- | --- | --- |
-| view [0] count |integer |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 =&gt; 25 %. |
-| view [0] durationMetric.value |integer |При необходимости значение можно указать в методе trackPageView() или с помощью метода start/stopTrackPage(). Не совпадает со значениями clientPerformance. |
+| view [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 =&gt; 25 %. |
+| view [0] durationMetric.value |целое число |При необходимости значение можно указать в методе trackPageView() или с помощью метода start/stopTrackPage(). Не совпадает со значениями clientPerformance. |
 | view [0] name |string |Заголовок страницы.  Максимальная длина: 250 |
 | view [0] url |string | |
 | view [0] urlData.base |string | |
@@ -284,9 +284,9 @@ ms.locfileid: "60898922"
 | --- | --- | --- |
 | availability [0] availabilityMetric.name |string |Доступность |
 | availability [0] availabilityMetric.value |номер |1,0 или 0,0. |
-| availability [0] count |integer |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
+| availability [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | availability [0] dataSizeMetric.name |string | |
-| availability [0] dataSizeMetric.value |integer | |
+| availability [0] dataSizeMetric.value |целое число | |
 | availability [0] durationMetric.name |string | |
 | availability [0] durationMetric.value |номер |Продолжительность теста. 1e7 = 1 с. |
 | availability [0] message |string |Диагностика сбоя. |
@@ -296,12 +296,12 @@ ms.locfileid: "60898922"
 | availability [0] testRunId |string | |
 | availability [0] testTimestamp |string | |
 
-## <a name="metrics"></a>Метрики
+## <a name="metrics"></a>metrics
 Создатель: TrackMetric().
 
 Значение метрики можно найти в context.custom.metrics[0].
 
-Пример.
+Пример:
 
     {
      "metric": [ ],
@@ -327,7 +327,7 @@ ms.locfileid: "60898922"
     }
 
 ## <a name="about-metric-values"></a>О значениях метрик
-Значения метрик (как в отчетах, так и в других элементах) сообщаются в рамках стандартной структуры объекта. Пример.
+Значения метрик (как в отчетах, так и в других элементах) сообщаются в рамках стандартной структуры объекта. Пример:
 
       "durationMetric": {
         "name": "contoso.org",

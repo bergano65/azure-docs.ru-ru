@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/22/2019
 ms.author: alkohli
 ms.openlocfilehash: f7b762d5502986c306de240519688aa639f58445
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60756893"
 ---
 # <a name="use-the-azure-portal-to-manage-bandwidth-schedules-on-your-azure-data-box-edge"></a>Управление расписаниями пропускной способности в Azure Data Box Edge с помощью портала Azure  
@@ -52,7 +52,7 @@ ms.locfileid: "60756893"
 
     ![Обновленный список расписаний пропускной способности](media/data-box-edge-manage-bandwidth-schedules/add-schedule-3.png)
 
-## <a name="edit-schedule"></a>Изменить расписание
+## <a name="edit-schedule"></a>Изменение расписания
 
 Выполните следующие действия, чтобы изменить расписание пропускной способности.
 

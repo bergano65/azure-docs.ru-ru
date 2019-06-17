@@ -1,25 +1,25 @@
 ---
 title: Журналы сервера в службе "База данных Azure для MySQL"
-description: Описание журналов, доступных в базе данных Azure для MySQL, и параметров для управления уровнями ведения журнала.
+description: Описывает журналы медленных запросов, доступных в базе данных Azure для MySQL и параметров для управления уровнями ведения журнала.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 02/28/2019
-ms.openlocfilehash: c5087a038e31c4819ef1ef173bb32faa41e04c97
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/29/2019
+ms.openlocfilehash: 1a8956d40ef30e8d52fbdded3448019e14ab16a5
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60525839"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67062406"
 ---
-# <a name="server-logs-in-azure-database-for-mysql"></a>Журналы сервера в базе данных Azure для MySQL
-В базе данных Azure для MySQL пользователям доступен журнал медленных запросов. Доступ к журналам транзакций не поддерживается. Журнал медленных запросов можно использовать для выявления проблем с производительностью при устранении неполадок. 
+# <a name="slow-query-logs-in-azure-database-for-mysql"></a>Журналы медленных запросов в в базе данных Azure для MySQL
+В базе данных Azure для MySQL пользователям доступен журнал медленных запросов. Доступ к журналам транзакций не поддерживается. Журнал медленных запросов можно использовать для выявления проблем с производительностью при устранении неполадок.
 
 Дополнительные сведения о журнале медленных запросов MySQL см. в [этом разделе справочного руководства по MySQL](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html).
 
-## <a name="access-server-logs"></a>Доступ к журналам сервера
-Чтобы просмотреть и скачать журналы сервера в базе данных Azure для MySQL, можно воспользоваться порталом Azure или Azure CLI.
+## <a name="access-slow-query-logs"></a>Доступ к журналам медленных запросов
+Просмотреть и скачать базы данных Azure для журналов медленных запросов MySQL, с помощью портала Azure и Azure CLI можно.
 
 На портале Azure выберите нужный сервер базы данных Azure для MySQL. В разделе **Мониторинг** найдите страницу **Журналы сервера**.
 
@@ -30,8 +30,7 @@ ms.locfileid: "60525839"
 
 Новый файл журнала создается каждые 24 часа или при достижении размера файла 7 ГБ.
 
-
-## <a name="configure-logging"></a>Настройка журнала 
+## <a name="configure-slow-query-logging"></a>Настроить ведение журнала медленных запросов 
 Журнал медленных запросов по умолчанию отключен. Чтобы включить его, установите для параметра slow_query_log значение "ON" (Включено).
 
 Вы можете настроить еще несколько параметров.
@@ -73,10 +72,10 @@ ms.locfileid: "60525839"
 | `rows_sent_s` | Количество отправленных строк. |
 | `rows_examined_s` | Число проверенных строк. |
 | `last_insert_id_s` | [last_insert_id](https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_last-insert-id) |
-| `insert_id_s` | Идентификатор для вставки. |
+| `insert_id_s` | Вставьте идентификатор |
 | `sql_text_s` | Полный запрос. |
-| `server_id_s` | Идентификатор сервера. |
-| `thread_id_s` | Идентификатор потока. |
+| `server_id_s` | Идентификатор сервера |
+| `thread_id_s` | Идентификатор потока |
 | `\_ResourceId` | Универсальный код ресурса (URI) |
 
 ## <a name="next-steps"></a>Следующие шаги
