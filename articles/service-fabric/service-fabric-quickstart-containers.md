@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 01/31/2019
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: 03f2f6bb572c46a1683d73ba42f435eca59829e5
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.openlocfilehash: 4795952faa91d62b76f267795660db5ab4075e79
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66428098"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734497"
 ---
 # <a name="quickstart-deploy-windows-containers-to-service-fabric"></a>Краткое руководство. Развертывание контейнеров Windows в Service Fabric
 
@@ -57,7 +57,7 @@ Azure Service Fabric — это платформа распределенных 
 
 Выберите **Контейнер** в шаблонах **размещенных контейнеров и приложений**.
 
-В поле **Имя образа** введите mcr.microsoft.com/windows/servercore/iis:windowservercore-ltsc2016. Это [базовый образ Windows Server Core Server и IIS](https://hub.docker.com/r/microsoft-windows-servercore-iis).
+В поле **Имя образа** введите mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2016. Это [базовый образ Windows Server Core Server и IIS](https://hub.docker.com/_/microsoft-windows-servercore-iis).
 
 Настройте сопоставление порта контейнера с портом узла, чтобы входящие запросы к службе через порт 80 сопоставлялись с портом 80 в контейнере.  Укажите **порт контейнера** (80) и **узла** (80).  
 
@@ -77,14 +77,14 @@ Azure Service Fabric — это платформа распределенных 
     <ContainerHostPolicies CodePackageRef="Code"> 
       <ImageOverrides> 
         ...
-          <Image Name="mcr.microsoft.com/windows/servercore/iis:windowservercore-1803" /> 
-          <Image Name= "mcr.microsoft.com/windows/servercore/iis:windowservercore-ltsc2016" Os="14393" /> 
-          <Image Name="mcr.microsoft.com/windows/servercore/iis:windowservercore-1709" Os="16299" /> 
+          <Image Name="mcr.microsoft.com/windows/servercore/iis:windowsservercore-1803" /> 
+          <Image Name= "mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2016" Os="14393" /> 
+          <Image Name="mcr.microsoft.com/windows/servercore/iis:windowsservercore-1709" Os="16299" /> 
       </ImageOverrides> 
     </ContainerHostPolicies> 
 ```
 
-Манифест служб продолжает указывать только один образ для наносервера, `mcr.microsoft.com/windows/servercore/iis:windowservercore-ltsc2016`.
+Манифест служб продолжает указывать только один образ для наносервера, `mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2016`.
 
 Кроме того, в файле *ApplicationManifest.xml* измените значение параметра **PasswordEncrypted** на **false**. Учетная запись и пароль не указаны для образа общедоступного контейнера, находящегося в центре Docker, поэтому мы отключили возможность шифрования, так как шифрование пустого пароля приведет к возникновению ошибки сборки.
 

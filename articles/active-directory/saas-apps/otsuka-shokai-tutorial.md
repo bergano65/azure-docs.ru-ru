@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 05/31/2019
+ms.date: 06/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0411e1ab76d010eae26142d681dc157a1eb776a8
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: bec4cb17f2d25cd00ef115a78736c95eaf26d95f
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66481940"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66752462"
 ---
 # <a name="tutorial-integrate-otsuka-shokai-with-azure-active-directory"></a>Руководство по Интеграция Otsuka Shokai с Azure Active Directory
 
@@ -79,14 +79,7 @@ ms.locfileid: "66481940"
 
    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-1. На странице **Настройка единого входа с помощью SAML** выполните следующие действия.
-
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.otsuka-shokai.co.jp/S000000100`.
-
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SUBDOMAIN>.otsuka-shokai.co.jp/ResponseOffice365`.
-
-    > [!NOTE]
-    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу технической поддержки клиентов Otsuka Shokai](mailto:Tatsuya.Satoh@otsuka-shokai.co.jp). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+1. На странице **Настройка единого входа с помощью SAML** приложение предварительно настроено и ему заданы требуемые URL-адреса. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить**.
 
 1. Приложение Otsuka Shokai ожидает проверочные утверждения SAML в определенном формате. Поэтому в вашу конфигурацию атрибутов токена SAML следует добавить сопоставления настраиваемых атрибутов. На следующем снимке экрана показан список атрибутов по умолчанию, когда  **nameidentifier**  сопоставляется с  **user.userprincipalname**. Приложение Otsuka Shokai ожидает, что **nameidentifier** будет сопоставляться с **user.objectid**. Поэтому необходимо изменить сопоставление атрибутов. Для этого щелкните значок **Изменить** .
 
@@ -139,7 +132,7 @@ ms.locfileid: "66481940"
 1. В верхней части экрана выберите **Новый пользователь**.
 1. В разделе **Свойства пользователя** выполните следующие действия.
    1. В поле **Имя** введите `B. Simon`.  
-   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `BrittaSimon@contoso.com`.
+   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
    1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
    1. Нажмите кнопку **Создать**.
 
@@ -163,7 +156,7 @@ ms.locfileid: "66481940"
 
 ### <a name="create-otsuka-shokai-test-user"></a>Создание тестового пользователя Otsuka Shokai
 
-Из этого раздела вы узнаете, как создать пользователя Britta Simon в приложении Otsuka Shokai. Обратитесь в  [службу технической поддержки Otsuka Shokai](mailto:Tatsuya.Satoh@otsuka-shokai.co.jp), чтобы добавить пользователей на платформу Otsuka Shokai. Перед использованием единого входа необходимо создать и активировать пользователей.
+Из этого раздела вы узнаете, как создать пользователя B. Simon в приложении Otsuka Shokai. Обратитесь в  [службу технической поддержки Otsuka Shokai](mailto:Tatsuya.Satoh@otsuka-shokai.co.jp), чтобы добавить пользователей на платформу Otsuka Shokai. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-sso"></a>Проверка единого входа
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae4b57d86461526b285e77aa408373b5d7f5aedf
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.openlocfilehash: 600d6b9f1eb8d8073e1658dd5b8196a3d8137e42
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66513367"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66733717"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для федеративных доменов
 
@@ -71,7 +71,7 @@ ms.locfileid: "66513367"
 
 Начиная с Windows 10 версии 1803, если происходит сбой мгновенного гибридного присоединения к Azure AD для федеративной среды с использованием AD FS, мы применяем Azure AD Connect для синхронизации объекта-компьютера в Azure AD. Затем с его помощью завершается регистрация устройств для такого гибридного присоединения. Проверьте, синхронизированы ли в Azure AD Connect объекты-компьютеры гибридных устройств, которые нужно присоединить к Azure AD. Если объекты-компьютеры принадлежат конкретным подразделениям (OU), эти подразделения также нужно настроить для синхронизации в Azure AD Connect. Дополнительные сведения о том, как синхронизировать объекты-компьютеры с помощью Azure AD Connect, см. в статье о [настройке фильтрации с помощью Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-configure-filtering#organizational-unitbased-filtering).
 
-Если вашей организации требуется доступ к Интернету через исходящий прокси-сервер, корпорация Майкрософт рекомендует [реализовать автоматическое обнаружение веб-прокси (WPAD)](https://docs.microsoft.com/previous-versions/tn-archive/cc995261(v%3dtechnet.10)), чтобы обеспечить регистрацию устройств в Azure AD на компьютерах Windows 10. Если у вас возникли проблемы с настройкой и администрированием WPAD, перейдите к статье об [устранении неполадок с автоматическим обнаружением]https://docs.microsoft.com/previous-versions/tn-archive/cc302643(v=technet.10). 
+Если вашей организации требуется доступ к Интернету через исходящий прокси-сервер, корпорация Майкрософт рекомендует [реализовать автоматическое обнаружение веб-прокси (WPAD)](https://docs.microsoft.com/previous-versions/tn-archive/cc995261(v%3dtechnet.10)), чтобы обеспечить регистрацию устройств в Azure AD на компьютерах Windows 10. Если у вас возникли проблемы с настройкой и администрированием WPAD, перейдите к статье об [устранении неполадок с автоматическим обнаружением](https://docs.microsoft.com/previous-versions/tn-archive/cc302643(v=technet.10)). 
 
 Если вы не используете WPAD и вам требуется настроить параметры прокси-сервера на компьютере, в Windows 10, начиная с версии 1709, для этого нужно [настроить параметры WinHTTP с использованием объекта групповой политики (GPO)](https://blogs.technet.microsoft.com/netgeeks/2018/06/19/winhttp-proxy-settings-deployed-by-gpo/).
 
@@ -165,7 +165,7 @@ ms.locfileid: "66513367"
 
 Командлет **Get-MSolDevice** можно использовать, чтобы получить сведения о службе.
 
-- Объект с **идентификатором устройства**, который совпадает с идентификатором в клиенте Windows, должен существовать.
+- Должен существовать объект с **идентификатором устройства**, который совпадает с идентификатором в клиенте Windows.
 - Значением **DeviceTrustType** должно быть **Присоединено к домену**. Это эквивалентно состоянию **Гибридные устройства, присоединенные к Azure AD** на странице "Устройства" на портале Azure AD.
 - Для устройств, которые используются при условном доступе, значением **Включено** должно быть **True**, а значением **DeviceTrustLevel** — **Управляемый**.
 

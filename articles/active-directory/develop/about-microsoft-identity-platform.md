@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: agirling, saeeda, benv
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ead81dfec5c98e810abfe4b88accb9aa9092fc90
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 58136aba278097e9778cc1361ed77a4512e3d51b
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66472719"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66751916"
 ---
 # <a name="evolution-of-microsoft-identity-platform"></a>Развитие платформы удостоверений Майкрософт
 
@@ -58,7 +58,7 @@ ms.locfileid: "66472719"
 
 ### <a name="msal-libraries"></a>Библиотеки MSAL
 
-С помощью библиотеки MSAL вы можете создавать приложения, которые выполняют аутентификацию всех удостоверений Майкрософт. Библиотеки MSAL на .NET являются общедоступными. Библиотеки MSAL для JavaScript, iOS и Android находятся в режиме предварительной версии. Их можно использовать в рабочей среде. Мы предоставляем для предварительной версии библиотек MSAL тот же уровень поддержки, что и для общедоступных версий MSAL и ADAL.
+С помощью библиотеки MSAL вы можете создавать приложения, которые выполняют аутентификацию всех удостоверений Майкрософт. Библиотеки MSAL на .NET и JavaScript являются общедоступными. Библиотеки MSAL для iOS и Android находятся в режиме предварительной версии. Их можно использовать в рабочей среде. Мы предоставляем для предварительной версии библиотек MSAL тот же уровень поддержки, что и для общедоступных версий MSAL и ADAL.
 
 Вы также можете использовать библиотеки MSAL для интеграции приложения с Azure AD B2C.
 

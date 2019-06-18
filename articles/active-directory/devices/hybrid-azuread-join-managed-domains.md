@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: efa653ecf306f5ac5eefaddd61d98e81f919876d
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.openlocfilehash: 6f9daeb5e0de9c53f16efff46e02015acfa7c521
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66513307"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734606"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для управляемых доменов
 
@@ -65,7 +65,7 @@ ms.locfileid: "66513307"
 - `https://device.login.microsoftonline.com`
 - [https://autologon.microsoftazuread-sso.com](`https://autologon.microsoftazuread-sso.com`)(если вы используете или планируете использовать простой единый вход).
 
-Если вашей организации требуется доступ к Интернету через исходящий прокси-сервер, корпорация Майкрософт рекомендует [реализовать автоматическое обнаружение веб-прокси (WPAD)](https://docs.microsoft.com/previous-versions/tn-archive/cc995261(v%3dtechnet.10)), чтобы обеспечить регистрацию устройств в Azure AD на компьютерах Windows 10. Если у вас возникли проблемы с настройкой и администрированием WPAD, перейдите к статье об [устранении неполадок с автоматическим обнаружением]https://docs.microsoft.com/previous-versions/tn-archive/cc302643(v=technet.10). 
+Если вашей организации требуется доступ к Интернету через исходящий прокси-сервер, корпорация Майкрософт рекомендует [реализовать автоматическое обнаружение веб-прокси (WPAD)](https://docs.microsoft.com/previous-versions/tn-archive/cc995261(v%3dtechnet.10)), чтобы обеспечить регистрацию устройств в Azure AD на компьютерах Windows 10. Если у вас возникли проблемы с настройкой и администрированием WPAD, перейдите к статье об [устранении неполадок с автоматическим обнаружением](https://docs.microsoft.com/previous-versions/tn-archive/cc302643(v=technet.10)). 
 
 Если вы не используете WPAD и вам требуется настроить параметры прокси-сервера на компьютере, в Windows 10, начиная с версии 1709, для этого нужно [настроить параметры WinHTTP с использованием объекта групповой политики (GPO)](https://blogs.technet.microsoft.com/netgeeks/2018/06/19/winhttp-proxy-settings-deployed-by-gpo/).
 

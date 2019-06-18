@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: overview
 ms.date: 04/12/2019
 ms.author: erhopf
-ms.openlocfilehash: 29fcbd058651c428b488f5ce1c767105cb7921a6
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.openlocfilehash: 6cf3ab6480900aa763598120e6ff7e308f5044e1
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59580990"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66743206"
 ---
 # <a name="swagger-documentation"></a>Документация по Swagger
 
@@ -26,7 +26,7 @@ ms.locfileid: "59580990"
 
 ## <a name="generating-code-from-the-swagger-specification"></a>Создание кода из спецификации Swagger
 
-[Спецификация Swager](https://cris.ai/swagger/ui/index) содержит возможности, которые позволяют быстро протестировать различные пути. Тем не менее иногда желательно сгенерировать код для всех путей, создав единую библиотеку вызовов, на основе которой потом можно будет создавать решения. Давайте рассмотрим процесс создания библиотеки Python.
+[Спецификация Swagger](https://cris.ai/swagger/ui/index) содержит возможности, которые позволяют быстро протестировать различные пути. Тем не менее иногда желательно сгенерировать код для всех путей, создав единую библиотеку вызовов, на основе которой потом можно будет создавать решения. Давайте рассмотрим процесс создания библиотеки Python.
 
 Необходимо настроить для Swagger тот же регион, что у вашей подписки службы распознавания речи. Узнать, какой регион используется, можно в ресурсе службы распознавания речи на портале Azure. Полный список поддерживаемых регионов см. в разделе [Регионы](regions.md).
 

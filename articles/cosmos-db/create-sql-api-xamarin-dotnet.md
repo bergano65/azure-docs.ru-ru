@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 05/30/2018
 ms.author: masoucou
-ms.openlocfilehash: a17461a90a19d775b8c7cac86d0bc6e9a18856bd
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: e0d439edc35e70bc8ac477cf56a6bc25e41df083
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65860879"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754725"
 ---
 # <a name="quickstart-build-a-todo-app-with-xamarin-using-azure-cosmos-db-sql-api-account"></a>Краткое руководство. Создание приложения со списком дел с помощью Xamarin и API SQL для Azure Cosmos DB | Документация Майкрософт
 
@@ -48,7 +48,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 [!INCLUDE [cosmos-db-create-dbaccount](../../includes/cosmos-db-create-dbaccount.md)]
 
-## <a name="add-a-collection"></a>Добавление коллекции
+## <a name="add-a-container"></a>Добавление контейнера
 
 [!INCLUDE [cosmos-db-create-collection](../../includes/cosmos-db-create-collection.md)]
 
@@ -245,7 +245,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы узнали, как создать учетную запись Azure Cosmos DB, коллекцию с помощью обозревателя данных, а также как создать и развернуть приложение Xamarin. Теперь можно импортировать дополнительные данные в учетную запись Azure Cosmos DB.
+В этом кратком руководстве было показано, как создать учетную запись Azure Cosmos и контейнер с помощью обозревателя данных, а также выполнить сборку и развертывание приложения Xamarin. Теперь вы можете импортировать дополнительные данные в учетную запись Azure Cosmos.
 
 > [!div class="nextstepaction"]
 > [Импорт данных в DocumentDB с помощью средства миграции базы данных](import-data.md)

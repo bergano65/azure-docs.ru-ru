@@ -8,22 +8,22 @@ ms.topic: include
 ms.date: 01/28/2019
 ms.author: juliako
 ms.custom: include file
-ms.openlocfilehash: 8439da94c770bee313a1ae1d1da5df30683cd2ad
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: db431d7815cfcc006563bd6da438154ef77ae6e2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66155709"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66814779"
 ---
 ## <a name="cli-shell"></a>Оболочка CLI
 
 Для выполнения команд CLI мы рекомендуем использовать [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest). **Cloud Shell** — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. В Cloud Shell предварительно установлены и настроены общие инструменты Azure для использования с вашей учетной записью. Она предоставляет гибкие возможности при выборе оболочки, соответствующей вашим методам работы. Пользователи Linux могут использовать Bash, а пользователи Windows — PowerShell.
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). 
+Установить CLI также можно локально. Инструкции для своей платформы см. в статье [Установка Azure CLII](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
-### <a name="login"></a>Вход
+### <a name="sign-in"></a>Вход
 
-Чтобы приступить к использованию оболочки CLI (в облаке или локально), запустите `az login` для создания соединения с Azure.
+Чтобы использовать локальный экземпляр CLI, необходимо выполнить вход в Azure. Этот шаг не является обязательным для Azure Cloud Shell. Выполните вход с помощью команды `az login`.
 
 Если CLI сможет запустить браузер по умолчанию, он откроет в браузере страницу входа. В противном случае вам потребуется открыть страницу браузера и выполнить инструкции в командной строке, чтобы ввести код авторизации после перехода по адресу https://aka.ms/devicelogin в браузере.
 

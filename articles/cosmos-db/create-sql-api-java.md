@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 05/21/2019
 ms.author: sngun
-ms.openlocfilehash: cb4ad20067783d8d6bd649710950fea51a22a454
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.openlocfilehash: c97b974919c5aec4c902867604d207cda11e8594
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65979141"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754296"
 ---
 # <a name="quickstart-build-a-java-application-using-azure-cosmos-db-sql-api-account"></a>Краткое руководство. Создание веб-приложения Java с использованием учетной записи API SQL для Azure Cosmos DB
 
@@ -26,7 +26,7 @@ ms.locfileid: "65979141"
 > * [Python](create-sql-api-python.md)
 > * [Xamarin](create-sql-api-xamarin-dotnet.md)
 
-В этом кратком руководстве вы узнаете, как создавать ресурсы учетной записи [API SQL](sql-api-introduction.md) для Azure Cosmos DB и управлять bvb с помощью приложения Java. Сначала создайте учетную запись API SQL для Azure Cosmos DB с помощью портала Azure, затем создайте приложение Java с использованием [пакета SDK Java для SQL](sql-api-sdk-async-java.md) и добавьте ресурсы в учетную запись Cosmos DB с помощью приложения Java. Указания в этом руководстве применимы к любой операционной системе, с которой может работать Java. Выполнив инструкции в этом руководстве, вы узнаете, как создавать и изменять базы данных и коллекции Cosmos DB с помощью пользовательского интерфейса или программных средств (по вашему выбору).
+В этом кратком руководстве вы узнаете, как создавать ресурсы учетной записи [API SQL](sql-api-introduction.md) для Azure Cosmos DB и управлять bvb с помощью приложения Java. Сначала создайте учетную запись API SQL для Azure Cosmos DB с помощью портала Azure, затем создайте приложение Java с использованием [пакета SDK Java для SQL](sql-api-sdk-async-java.md) и добавьте ресурсы в учетную запись Cosmos DB с помощью приложения Java. Указания в этом руководстве применимы к любой операционной системе, с которой может работать Java. Выполнив инструкции из этого руководства, вы узнаете, как создавать и изменять базы данных и контейнеры Cosmos DB с помощью пользовательского интерфейса или программных средств (по вашему выбору).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -48,7 +48,7 @@ ms.locfileid: "65979141"
 
 [!INCLUDE [cosmos-db-create-dbaccount](../../includes/cosmos-db-create-dbaccount.md)]
 
-## <a name="add-a-collection"></a>Добавление коллекции
+## <a name="add-a-container"></a>Добавление контейнера
 
 [!INCLUDE [cosmos-db-create-collection](../../includes/cosmos-db-create-collection.md)]
 
@@ -75,7 +75,7 @@ ms.locfileid: "65979141"
 
 Этот шаг не является обязательным. Если вы хотите узнать, как создать в коде ресурсы базы данных, изучите приведенные ниже фрагменты кода. Вы можете сразу перейти к [запуску приложения](#run-the-app). 
 
-* Инициализация `AsyncDocumentClient`. [AsyncDocumentClient](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb.rx.asyncdocumentclient) является логическим представлением службы баз данных Azure Cosmos DB на стороне клиента. Этот клиент позволяет настраивать и выполнять запросы к службе.
+* Инициализация `AsyncDocumentClient`. [AsyncDocumentClient](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb.rx.asyncdocumentclient) является логическим представлением службы баз данных Azure Cosmos на стороне клиента. Этот клиент позволяет настраивать и выполнять запросы к службе.
 
     ```java
     client = new AsyncDocumentClient.Builder()
@@ -204,7 +204,7 @@ ms.locfileid: "65979141"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы узнали, как создать учетную запись Azure Cosmos DB, базу данных документов и коллекцию с помощью обозревателя данных, а также как запустить приложение, чтобы эти операции выполнялись программой. Теперь вы можете импортировать дополнительные данные в коллекцию Azure Cosmos DB. 
+В этом кратком руководстве было показано, как создать учетную запись Azure Cosmos, базу данных документов и контейнер с помощью обозревателя данных и как запустить приложение, чтобы эти операции выполнялись программно. Теперь вы можете импортировать дополнительные данные в контейнер Azure Cosmos. 
 
 > [!div class="nextstepaction"]
 > [Импорт данных в DocumentDB с помощью средства миграции базы данных](import-data.md)

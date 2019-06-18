@@ -9,12 +9,12 @@ ms.date: 05/28/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 79f3b125a4cb88b3555cf13aa4d4bc5c430df166
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 49f853341edab7c7dc92f72472b81f7fb22c0ad8
+ms.sourcegitcommit: f9448a4d87226362a02b14d88290ad6b1aea9d82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66303888"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66808753"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство по Разработка модулей IoT Edge на языке C для устройств с Windows
 
@@ -49,7 +49,7 @@ ms.locfileid: "66303888"
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) ценовой категории "Бесплатный" или "Стандартный" в Azure.
 * [Устройство с Windows, на котором выполняется Azure IoT Edge](quickstart.md).
 * реестр контейнеров, например [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/);
-* [Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/install-visual-studio) с настроенным расширением [Azure IoT Edge Tools](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools).
+* Настроенная среда [Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/install-visual-studio) с расширением [Azure IoT Edge Tools](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools).
 * Приложение [Docker CE](https://docs.docker.com/install/), настроенное для запуска контейнеров Windows.
 * Пакет SDK Azure IoT для C. 
 
@@ -70,7 +70,7 @@ ms.locfileid: "66303888"
 
    ![Создание проекта Azure IoT Edge](./media/tutorial-c-module-windows/new-project.png)
 
-3. В окне настроек проекта присвойте проекту и решению какое-то описательное имя, например **CTutorialApp**. Щелкните **Создать**, чтобы создать проект. 
+3. В окне настроек проекта присвойте проекту и решению описательное имя, например **CTutorialApp**. Щелкните **Создать**, чтобы создать проект. 
 
    ![Настройка нового проекта Azure IoT Edge](./media/tutorial-c-module-windows/configure-project.png)
 
@@ -104,29 +104,33 @@ ms.locfileid: "66303888"
        "address": "<registry name>.azurecr.io"
      }
    }
+   ```
 
-4. Save the deployment.template.json file. 
+4. Сохраните файл deployment.template.json. 
 
-### Update the module with custom code
+### <a name="update-the-module-with-custom-code"></a>Обновление модуля с помощью пользовательского кода
 
-The default module code receives messages on an input queue and passes them along through an output queue. Let's add some additional code so that the module processes the messages at the edge before forwarding them to IoT Hub. Update the module so that it analyzes the temperature data in each message, and only sends the message to IoT Hub if the temperature exceeds a certain threshold. 
+Код стандартного модуля получает сообщения из очереди входящих сообщений и передает их через очередь исходящих сообщений. Давайте добавим еще немного кода, чтобы модуль обрабатывал сообщения на границе до передачи в Центр Интернета вещей. Обновите модуль таким образом, чтобы он анализировал данные о температуре, получаемые в каждом сообщении, и отправлял в Центр Интернета вещей только сообщения со сведениями о том, что температура превышает определенный порог. 
 
 
-1. The data from the sensor in this scenario comes in JSON format. To filter messages in JSON format, import a JSON library for C. This tutorial uses Parson.
+1. Данные с датчиков в этом сценарии поступают в формате JSON. Для фильтрации сообщений в формате JSON импортируйте библиотеку JSON для модуля C. Это руководство использует Parson.
 
-   1. Download the [Parson GitHub repository](https://github.com/kgabis/parson). Copy the **parson.c** and **parson.h** files into the **CModule** project.
+   1. Скачайте [репозиторий GitHub для Parson](https://github.com/kgabis/parson). Скопируйте файлы **parson.c** и **parson.h** в проект **CModule**.
 
-   2. In Visual Studio, open the **CMakeLists.txt** file from the CModule project folder. At the top of the file, import the Parson files as a library called **my_parson**.
+   2. В Visual Studio откройте файл **CMakeLists.txt** из папки проекта CModule. В верхней части файла импортируйте файлы Parson в качестве библиотеки, называемой **my_parson**.
 
       ```
-      add_library(my_parson        parson.c        parson.h    )
+      add_library(my_parson
+          parson.c
+          parson.h
+      )
       ```
 
-   3. Add **my_parson** to the list of libraries in the **target_link_libraries** section of the CMakeLists.txt file.
+   3. Добавьте **my_parson** в список библиотек в разделе **target_link_libraries** файла CMakeLists.txt.
 
-   4. Save the **CMakeLists.txt** file.
+   4. Сохраните файл **CMakeLists.txt**.
 
-   5. Open **CModule** > **main.c**. At the bottom of the list of include statements, add a new one to include `parson.h` for JSON support:
+   5. Откройте **CModule** > **main.c**. В нижней части списка содержатся операторы. Добавьте новый, чтобы включить `parson.h` для поддержки JSON:
 
       ```c
       #include "parson.h"

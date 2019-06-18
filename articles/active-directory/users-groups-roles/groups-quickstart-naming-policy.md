@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0e600204479bc54a590df6bf1bbcd634eaac7fc
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: b17ef24d753041934f68f3daee950aaa0bec46ba
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65605641"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734751"
 ---
 # <a name="quickstart-naming-policy-for-groups-in-azure-active-directory"></a>Краткое руководство. Политика именования для групп в Azure Active Directory
 
@@ -31,12 +31,12 @@ ms.locfileid: "65605641"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="configure-the-group-naming-policy-for-a-tenant-using-azure-portal-preview"></a>Настройка политики именования групп для клиента с помощью портала Azure (предварительная версия)
+## <a name="configure-the-group-naming-policy-for-a-tenant-using-azure-portal"></a>Настройка политики именования групп для клиента с помощью портала Azure
 
 1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com) с учетной записью администратора пользователей.
 1. Чтобы открыть страницу политики именования, выберите **Группы**, а затем — **Политика именования**.
 
-    ![Открытие страницы "Политика именования" в центре администрирования](./media/groups-naming-policy/policy-preview.png)
+    ![Открытие страницы "Политика именования" в центре администрирования](./media/groups-naming-policy/policy.png)
 
 ### <a name="view-or-edit-the-prefix-suffix-naming-policy"></a>Просмотр или изменение политики добавления префикса или суффикса
 
@@ -49,7 +49,7 @@ ms.locfileid: "65605641"
 
 1. На странице **Политика именования** выберите **Заблокированные слова**.
 
-    ![Изменение и передача списка запрещенных слов для политики именования](./media/groups-naming-policy/blockedwords-preview.png)
+    ![Изменение и передача списка запрещенных слов для политики именования](./media/groups-naming-policy/blockedwords.png)
 
 1. Для просмотра или изменения текущего списка настраиваемых запрещенных слов выберите **Загрузить**.
 1. Передайте новый список настраиваемых запрещенных слов, щелкнув значок файла.
@@ -59,7 +59,7 @@ ms.locfileid: "65605641"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-### <a name="remove-the-naming-policy-using-azure-portal-preview"></a>Удаление политики именования с помощью портала Azure (предварительная версия)
+### <a name="remove-the-naming-policy-using-azure-portal"></a>Удаление политики именования с помощью портала Azure
 
 1. На странице **Политика именования** выберите **Удалить политику**.
 1. После подтверждения удаления, политика именования, в том числе все политики добавления префикса или суффикса и настраиваемые запрещенные слова, будут удалены.
