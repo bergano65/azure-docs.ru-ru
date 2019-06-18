@@ -9,11 +9,11 @@ ms.date: 09/18/2018
 ms.author: dacoulte
 ms.custom: include file
 ms.openlocfilehash: f189843e865863d9b4088363e691ebc42ad9f2a9
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66155465"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185433"
 ---
 ### <a name="network-interfaces"></a>Сетевые интерфейсы
 

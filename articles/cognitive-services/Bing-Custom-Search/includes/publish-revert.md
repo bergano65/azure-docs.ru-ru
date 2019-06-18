@@ -1,10 +1,10 @@
 ---
 ms.openlocfilehash: 7987e8a7a9db06608f663b6ae414788ba8330f65
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66124997"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185618"
 ---
 ## <a name="publish-or-revert"></a>Публикация или отмена
 Изменения, которые вы вносите в экземпляр службы пользовательского поиска, выполняются на вкладке **Конфигурация**, поэтому вы можете проверить свои изменения. Когда вы уже внесли изменения и готовы к публикации, нажмите кнопку **Опубликовать**. Изменения не отражаются на рабочих конечных точках, пока не выполнена публикация.
