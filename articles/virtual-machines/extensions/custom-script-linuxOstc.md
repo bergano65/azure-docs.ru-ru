@@ -125,9 +125,9 @@ ms.locfileid: "60800304"
 | publisher | Microsoft.OSTCExtensions | string |
 | type | CustomScriptForLinux | string |
 | typeHandlerVersion | 1.5 | int |
-| fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | массив |
+| fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | array |
 | commandToExecute (пример) | python MyPythonScript.py \<my-param1\> | string |
-| enableInternalDNSCheck | Да | Логическое |
+| enableInternalDNSCheck | true | boolean |
 | storageAccountName (пример) | examplestorageacct | string |
 | storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | string |
 
