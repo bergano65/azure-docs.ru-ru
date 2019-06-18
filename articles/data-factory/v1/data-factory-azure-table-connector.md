@@ -14,14 +14,14 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: aed341c50332b424a1149c129629cd451a4e5133
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66146927"
 ---
 # <a name="move-data-to-and-from-azure-table-using-azure-data-factory"></a>Перемещение данных в таблицу SQL Azure и из нее с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](data-factory-azure-table-connector.md)
 > * [Версия 2 (текущая)](../connector-azure-table-storage.md)
 
@@ -83,7 +83,7 @@ ms.locfileid: "66146927"
 | Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | azureTableSourceQuery |Используйте пользовательский запрос для чтения данных. |Строка запроса таблицы Azure. Примеры приведены в следующем разделе. |№ Если tableName указывается без azureTableSourceQuery, все записи из таблицы копируются в целевое расположение. Если azureTableSourceQuery указывается, записи из таблицы, удовлетворяющие запросу, копируются в целевое расположение. |
-| azureTableSourceIgnoreTableNotFound |Указывает, игнорируются ли исключения таблицы. |TRUE<br/>FALSE |Нет  |
+| azureTableSourceIgnoreTableNotFound |Указывает, игнорируются ли исключения таблицы. |TRUE<br/>FALSE |Нет |
 
 ### <a name="azuretablesourcequery-examples"></a>Примеры azureTableSourceQuery
 Если столбец таблицы Azure имеет тип строки:
@@ -102,10 +102,10 @@ azureTableSourceQuery": "$$Text.Format('PartitionKey ge \\'{0:yyyyMMddHH00_0000}
 
 | Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
-| azureTableDefaultPartitionKeyValue |Значение ключа раздела по умолчанию, которое может использоваться приемником. |Строковое значение. |Нет  |
-| azureTablePartitionKeyName |Укажите имя столбца, значения которого используются в качестве ключей секций. Если не указано, в качестве ключа раздела используется AzureTableDefaultPartitionKeyValue. |Имя столбца. |Нет  |
-| azureTableRowKeyName |Укажите имя столбца, значения которого используются в качестве ключа строки. Если имя не указано, используйте для каждой строки идентификатор GUID. |Имя столбца. |Нет  |
-| azureTableInsertType |Режим для вставки данных в таблицу Azure.<br/><br/>Это свойство контролирует, будут ли заменены или объединены значения в существующих строках в выходной таблице с совпадающими ключами секций и строк. <br/><br/>Чтобы узнать о действии этих параметров (merge и replace), ознакомьтесь со статьями [Insert or Merge Entity](https://msdn.microsoft.com/library/azure/hh452241.aspx) (Вставка или слияние сущностей) и [Insert or Replace Entity](https://msdn.microsoft.com/library/azure/hh452242.aspx) (Вставка или замена сущности). <br/><br>  Этот параметр применяется на уровне строки, а не таблицы, и ни один из параметров не приводит к удалению строк в выходной таблице, которые отсутствуют во входных данных. |merge (по умолчанию)<br/>replace |Нет  |
+| azureTableDefaultPartitionKeyValue |Значение ключа раздела по умолчанию, которое может использоваться приемником. |Строковое значение. |Нет |
+| azureTablePartitionKeyName |Укажите имя столбца, значения которого используются в качестве ключей секций. Если не указано, в качестве ключа раздела используется AzureTableDefaultPartitionKeyValue. |Имя столбца. |Нет |
+| azureTableRowKeyName |Укажите имя столбца, значения которого используются в качестве ключа строки. Если имя не указано, используйте для каждой строки идентификатор GUID. |Имя столбца. |Нет |
+| azureTableInsertType |Режим для вставки данных в таблицу Azure.<br/><br/>Это свойство контролирует, будут ли заменены или объединены значения в существующих строках в выходной таблице с совпадающими ключами секций и строк. <br/><br/>Чтобы узнать о действии этих параметров (merge и replace), ознакомьтесь со статьями [Insert or Merge Entity](https://msdn.microsoft.com/library/azure/hh452241.aspx) (Вставка или слияние сущностей) и [Insert or Replace Entity](https://msdn.microsoft.com/library/azure/hh452242.aspx) (Вставка или замена сущности). <br/><br> Этот параметр применяется на уровне строки, а не таблицы, и ни один из параметров не приводит к удалению строк в выходной таблице, которые отсутствуют во входных данных. |merge (по умолчанию)<br/>replace |Нет |
 | writeBatchSize |Вставка данных в таблицу Azure при достижении writeBatchSize или writeBatchTimeout. |Целое число (количество строк) |Нет (по умолчанию 10 000) |
 | writeBatchTimeout |Вставка данных в таблицу Azure при достижении writeBatchSize или writeBatchTimeout |Интервал времени<br/><br/>Пример: "00:20:00" (20 минут) |Нет (по умолчанию используется время ожидания, стандартное для клиента хранения — 90 секунд) |
 
@@ -310,7 +310,7 @@ DivisionID указывается в качестве ключа секции.
 
 В этом примере данные временного ряда каждый час копируются из большого двоичного объекта Azure в таблицу Azure. Используемые в этих примерах свойства JSON описаны в разделах, следующих за примерами.
 
-**Связанная служба хранилища Azure (для таблиц и больших двоичных объектов Azure)**:
+**Связанная служба хранилища Azure (для таблиц и больших двоичных объектов Azure)** :
 
 ```JSON
 {

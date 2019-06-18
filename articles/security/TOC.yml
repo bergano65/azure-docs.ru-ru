@@ -54,8 +54,14 @@
               href: azure-security-disk-encryption-overview.md
             - name: Краткие руководства
               items:
-                - name: Шифрование виртуальных машин с помощью Azure PowerShell
-                  href: quick-encrypt-vm-powershell.md
+                - name: "Шифрование виртуальной машины Linux с помощью Azure\_CLI"
+                  href: azure-disk-encryption-linux-cli-quickstart.md
+                - name: Шифрование виртуальной машины Linux с помощью Azure PowerShell
+                  href: azure-disk-encryption-linux-powershell-quickstart.md
+                - name: "Шифрование виртуальной машины Windows с помощью Azure\_CLI"
+                  href: azure-disk-encryption-windows-cli-quickstart.md
+                - name: Шифрование виртуальной машины Windows с помощью Azure PowerShell
+                  href: azure-disk-encryption-windows-powershell-quickstart.md
             - name: Дисковое шифрование Azure
               items:
                 - name: Предварительные требования для шифрования дисков

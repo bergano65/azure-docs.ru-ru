@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
 ms.openlocfilehash: 4b75b2cbd629204e7edbf1196eec9b03cb7a6736
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64943163"
 ---
 <a name="web-analytics"></a>Веб-аналитика
@@ -54,7 +54,7 @@ ms.locfileid: "64943163"
 
 Вы можете выбрать комбинацию из нескольких идентификаторов кампаний для дальнейшего определения нескольких источников, создающих трафик для кампании, например, откуда пришел клиент (электронная почта, блог, источник в социальных сетях и т. д.).
 
-Например: 
+Пример:
 
 1. Ссылка на информационный бюллетень: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign&src=newsletter>
 2. Ссылка на LinkedIn: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign&src=LinkedIn>
@@ -63,7 +63,7 @@ ms.locfileid: "64943163"
 
 Может существовать сценарий, когда в ваших кампаниях есть промежуточная страница, на которую вы направляете трафик и которая затем отправляет клиентов в marketplace. Важно передать начальные идентификаторы кампании в конечный URL-адрес, который вы отправляете в marketplace.
 
-Вот пример: 
+Вот пример:
 
 1. Маркетинговый сотрудник покупает рекламу в Google для привлечения трафика на целевую страницу ​​компании <https://contoso.com>. Эта целевая страница содержит ссылку на \"пробную версию продукта\", которая ведет на <https://appsource.com>.
 2. Пользователь щелкает объявление и попадает на целевую страницу компании.
@@ -71,7 +71,7 @@ ms.locfileid: "64943163"
     2.  URL-адрес целевой страницы = <https://contoso.com/?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName>
 3. Пользователь щелкает ссылку \"пробной версии продукта\" и переходит в AppSource.
     1. URL-адрес реферрала = <https://contoso.com/?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName>
-    2. URL-адрес целевой страницы (**убедитесь, что этот URL-адрес содержит utm\_campaign и utm\_source**) = [https://appsource.microsoft.com/en-us/product/dynamics-365/contoso.offername?**utmutm\_campaign=MyCampaignAdName&utm\_source=MySourceAdName**](https://appsource.microsoft.com/en-us/product/dynamics-365/contoso.offername?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName)
+    2. URL-адрес целевой страницы (**убедитесь, что этот URL-адрес содержит utm\_campaign и utm\_source**) = [https://appsource.microsoft.com/en-us/product/dynamics-365/contoso.offername?**utmutm\_ campaign=MyCampaignAdName&utm\_ source=MySourceAdName**](https://appsource.microsoft.com/en-us/product/dynamics-365/contoso.offername?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName)
 
 <a name="how-to-evaluate-the-success-of-a-campaign"></a>Как оценить успех кампании
 -----------------------------------------

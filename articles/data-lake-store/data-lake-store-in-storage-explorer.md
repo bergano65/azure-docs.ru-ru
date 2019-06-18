@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 02/05/2018
 ms.author: jejiang
 ms.openlocfilehash: 18ef1f182611a9c8fbf24cd08026633f5449bbe9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60613621"
 ---
 # <a name="manage-azure-data-lake-storage-gen1-resources-by-using-storage-explorer"></a>Управление ресурсами Azure Data Lake Storage 1-го поколения с помощью обозревателя службы хранилища
@@ -110,7 +110,7 @@ ms.locfileid: "60613621"
 
 С помощью элементов ниже показано, как управлять ресурсами в учетной записи Data Lake Storage 1-го поколения. Следуйте приведенным ниже инструкциям, чтобы выполнить необходимую задачу.
 
-### <a name="upload-files"></a>Загрузка файлов
+### <a name="upload-files"></a>Upload files
 
 1. На панели инструментов в главной области нажмите кнопку **Отправить**, а затем в раскрывающемся меню выберите **Отправить файлы**.
 

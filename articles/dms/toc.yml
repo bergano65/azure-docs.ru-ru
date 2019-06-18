@@ -4,11 +4,11 @@
   items:
     - name: Что такое служба Database Migration Service (DMS)?
       href: dms-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: "Создание службы\_— портал"
       href: quickstart-create-data-migration-service-portal.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Миграция из SQL Server в Базу данных SQL Azure в автономном режиме
       href: tutorial-sql-server-to-azure-sql.md
@@ -42,8 +42,10 @@
       href: howto-sql-server-to-azure-sql-mi-powershell.md
     - name: Мониторинг действия миграции
       href: how-to-monitor-migration-activity.md
-    - name: Перенос пакетов служб SSI в Azure
+    - name: Перенос пакетов SSIS в Базу данных SQL Azure
       href: how-to-migrate-ssis-packages.md
+    - name: Перенос пакетов SSIS в управляемый экземпляр Базы данных SQL Azure
+      href: how-to-migrate-ssis-packages-managed-instance.md
 - name: Ресурсы
   items:
     - name: Состояние сценария миграции базы данных
@@ -62,7 +64,7 @@
           href: known-issues-azure-mysql-online.md
         - name: Известные проблемы при миграции в Базу данных Azure для PostgreSQL
           href: known-issues-azure-postgresql-online.md
-    - name: Видеоролики
+    - name: Видео
       items:
         - name: Работа с руководством по переносу баз данных
           href: 'https://azure.microsoft.com/resources/videos/how-to-use-the-azure-database-migration-guide/'
@@ -84,7 +86,7 @@
       items:
         - name: Доступные службы и средства для сценариев переноса данных
           href: dms-tools-matrix.md
-        - name: Руководство по переносу баз данных
+        - name: Руководство по миграции баз данных
           href: 'https://aka.ms/datamigration'
         - name: Помощник по миграции данных
           href: 'https://aka.ms/dma'

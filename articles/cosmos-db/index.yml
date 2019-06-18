@@ -48,17 +48,32 @@ sections:
             image:
               src: media/index/mongodb-api.svg
             title: "API Azure Cosmos\_DB для MongoDB"
-          - href: /azure/cosmos-db/table-introduction/
-            html: "<p>Чтобы перенести данные из хранилища таблиц Azure в табличное предложение Azure Cosmos\_DB уровня \"Премиум\", используйте API таблиц.</p>"
-            image:
-              src: media/index/table-api.svg
-            title: API таблиц
           - href: /azure/cosmos-db/cassandra-introduction/
             html: "<p>При переносе данных из Cassandra в полностью управляемую службу Azure Cosmos\_DB используйте API Cassandra.</p>"
             image:
               src: media/index/cassandra-api.png
             title: API Cassandra
-  - title: 5-минутные руководства по началу работы
+          - href: /azure/cosmos-db/table-introduction/
+            html: "<p>Чтобы перенести данные из хранилища таблиц Azure в табличное предложение Azure Cosmos\_DB уровня \"Премиум\", используйте API таблиц.</p>"
+            image:
+              src: media/index/table-api.svg
+            title: API таблиц
+          - href: /azure/cosmos-db/spark-api-introduction/
+            html: '<p>Анализ данных, хранящихся в учетной записи Azure Cosmos, с помощью встроенной поддержки для Apache Spark. </p>'
+            image:
+              src: media/index/spark-logo.png
+            title: Встроенная аналитика с помощью Apache Spark
+          - href: /azure/cosmos-db/change-feed/
+            html: "<p>Выполняйте анализ в режиме реального времени с использованием канала изменений, считывая отсортированный список документов в контейнере Azure Cosmos\_DB в том порядке, в котором они были изменены. </p>"
+            image:
+              src: media/index/change-feed-logo.png
+            title: Канал изменений
+          - href: /azure/cosmos-db/etcd-api-introduction/
+            html: "<p> API etcd позволяет использовать Azure Cosmos\_DB в качестве хранилища баз данных для Azure Kubernetes.</p>"
+            image:
+              src: media/index/etcd-logo.png
+            title: API etcd
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: "Сведения об использовании Azure Cosmos\_DB для создания глобально распределенной базы данных см. в одном из кратких руководств по многомодельным API-интерфейсам:"

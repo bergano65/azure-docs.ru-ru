@@ -50,6 +50,10 @@
       items:
         - name: Основные понятия DevTest Labs
           href: devtest-lab-concepts.md
+        - name: Рекомендации по разработке распределенной и совместной разработки
+          href: best-practices-distributive-collaborative-development-environment.md
+        - name: Интеграция с Azure DevOps
+          href: devtest-lab-dev-ops.md
         - name: Сценарии
           items:
             - name: Распространенные сценарии использования DevTest Labs
@@ -92,6 +96,8 @@
               href: classroom-labs/how-to-use-shared-image-gallery.md
             - name: Включение соединения с удаленным рабочим столом для Linux
               href: classroom-labs/how-to-enable-remote-desktop-linux.md
+            - name: Установка или сброс паролей для виртуальных машин
+              href: classroom-labs/how-to-set-virtual-machine-passwords.md
     - name: DevTest Labs
       items:
         - name: Определение группы ресурсов для виртуальных машин лаборатории
@@ -106,6 +112,8 @@
           href: personal-data-delete-export.md
         - name: Импорт виртуальных машин между лабораториями
           href: import-virtual-machines-from-another-lab.md
+        - name: Настройка лаборатории для использования шлюза удаленных рабочих столов
+          href: configure-lab-remote-desktop-gateway.md
         - name: Создание фабрики образов
           href: image-factory-create.md
           items:

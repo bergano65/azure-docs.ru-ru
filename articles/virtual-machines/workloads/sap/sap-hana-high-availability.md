@@ -14,10 +14,10 @@ ms.workload: infrastructure
 ms.date: 03/15/2019
 ms.author: sedusch
 ms.openlocfilehash: 3d59fc48f1f6f6931ca18e09a420fdbccc7d53dc
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64922287"
 ---
 # <a name="high-availability-of-sap-hana-on-azure-vms-on-suse-linux-enterprise-server"></a>Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server
@@ -26,17 +26,17 @@ ms.locfileid: "64922287"
 [deployment-guide]:deployment-guide.md
 [planning-guide]:planning-guide.md
 
-[2205917]:https://launchpad.support.sap.com/#/notes/2205917
-[1944799]:https://launchpad.support.sap.com/#/notes/1944799
-[1928533]:https://launchpad.support.sap.com/#/notes/1928533
-[2015553]:https://launchpad.support.sap.com/#/notes/2015553
-[2178632]:https://launchpad.support.sap.com/#/notes/2178632
-[2191498]:https://launchpad.support.sap.com/#/notes/2191498
-[2243692]:https://launchpad.support.sap.com/#/notes/2243692
-[1984787]:https://launchpad.support.sap.com/#/notes/1984787
-[1999351]:https://launchpad.support.sap.com/#/notes/1999351
+[2205917]: https://launchpad.support.sap.com/#/notes/2205917
+[1944799]: https://launchpad.support.sap.com/#/notes/1944799
+[1928533]: https://launchpad.support.sap.com/#/notes/1928533
+[2015553]: https://launchpad.support.sap.com/#/notes/2015553
+[2178632]: https://launchpad.support.sap.com/#/notes/2178632
+[2191498]: https://launchpad.support.sap.com/#/notes/2191498
+[2243692]: https://launchpad.support.sap.com/#/notes/2243692
+[1984787]: https://launchpad.support.sap.com/#/notes/1984787
+[1999351]: https://launchpad.support.sap.com/#/notes/1999351
 [2388694]:https://launchpad.support.sap.com/#/notes/2388694
-[401162]:https://launchpad.support.sap.com/#/notes/401162
+[401162]: https://launchpad.support.sap.com/#/notes/401162
 
 [hana-ha-guide-replication]:sap-hana-high-availability.md#14c19f65-b5aa-4856-9594-b81c7e4df73d
 [hana-ha-guide-shared-storage]:sap-hana-high-availability.md#498de331-fa04-490b-997c-b078de457c9d
@@ -113,7 +113,7 @@ ms.locfileid: "64922287"
     - **Доступность системы**: Выберите **высокую доступность**.
     - **Имя пользователя и пароль администратора**. Пользователь будет создан, можно использовать для входа на компьютер.
     - **Новая или имеющаяся подсеть**: определяет, следует ли создать виртуальную сеть и подсеть или использовать имеющуюся подсеть. Если у вас уже есть виртуальная сеть, подключенная к локальной сети, выберите вариант **Existing** (Существующая).
-    - **Идентификатор подсети**: Чтобы развернуть виртуальную машину в имеющейся виртуальной сети с определенной подсетью, необходимо указать идентификатор этой определенной подсети. Идентификатор обычно имеет формат **/subscriptions/\<идентификатор_подписки>/resourceGroups/\<имя_группы_ресурсов>/providers/Microsoft.Network/virtualNetworks/\<имя_виртуальной_сети>/subnets/\<имя_подсети>**.
+    - **Идентификатор подсети**: Чтобы развернуть виртуальную машину в имеющейся виртуальной сети с определенной подсетью, необходимо указать идентификатор этой определенной подсети. Идентификатор обычно имеет формат **/subscriptions/\<идентификатор_подписки>/resourceGroups/\<имя_группы_ресурсов>/providers/Microsoft.Network/virtualNetworks/\<имя_виртуальной_сети>/subnets/\<имя_подсети>** .
 
 ### <a name="manual-deployment"></a>Развертывание вручную
 
@@ -204,11 +204,11 @@ ms.locfileid: "64922287"
 ## <a name="install-sap-hana"></a>Установка SAP HANA
 
 Во всех действиях этого раздела используются следующие префиксы.
-- **[A]**: шаг применяется ко всем узлам.
-- **[1]**: шаг применяется только к узлу 1.
-- **[2]**: шаг применяется к узлу 2 только в кластере Pacemaker.
+- **[A]** : шаг применяется ко всем узлам.
+- **[1]** : шаг применяется только к узлу 1.
+- **[2]** : шаг применяется к узлу 2 только в кластере Pacemaker.
 
-1. **[A]** Настройте разметку диска: **диспетчер логических томов (LVM)**.
+1. **[A]** Настройте разметку диска: **диспетчер логических томов (LVM)** .
 
    Мы рекомендуем использовать диспетчер логических томов для всех томов, предназначенных для хранения данных и файлов журнала. В приведенном ниже примере предполагается, что к виртуальным машинам подключены четыре диска данных, на которых созданы два тома.
 
@@ -345,7 +345,7 @@ ms.locfileid: "64922287"
    * "Restart system after machine reboot?" [нет]. Нажмите клавишу ВВОД.
    * "Do you want to continue? (y/n)" (Вы действительно хотите продолжить? (Да/нет)). Проверьте сводку. Для продолжения введите **y**.
 
-1. **[A]**. Обновите агент узла SAP.
+1. **[A]** . Обновите агент узла SAP.
 
    Скачайте последний архив агента узла SAP с сайта [SAP Softwarecenter][sap-swcenter] и выполните следующую команду, чтобы обновить агент. Замените путь к архиву, чтобы он указывал на скачанный файл.
 
@@ -356,9 +356,9 @@ ms.locfileid: "64922287"
 
 Во всех действиях этого раздела используются следующие префиксы.
 
-* **[A]**: шаг применяется ко всем узлам.
-* **[1]**: шаг применяется только к узлу 1.
-* **[2]**: шаг применяется к узлу 2 только в кластере Pacemaker.
+* **[A]** : шаг применяется ко всем узлам.
+* **[1]** : шаг применяется только к узлу 1.
+* **[2]** : шаг применяется к узлу 2 только в кластере Pacemaker.
 
 1. **[1]** Создайте базу данных клиента.
 
@@ -401,9 +401,9 @@ ms.locfileid: "64922287"
 
 Во всех действиях этого раздела используются следующие префиксы.
 
-* **[A]**: шаг применяется ко всем узлам.
-* **[1]**: шаг применяется только к узлу 1.
-* **[2]**: шаг применяется к узлу 2 только в кластере Pacemaker.
+* **[A]** : шаг применяется ко всем узлам.
+* **[1]** : шаг применяется только к узлу 1.
+* **[2]** : шаг применяется к узлу 2 только в кластере Pacemaker.
 
 1. **[1]** Создайте обязательных пользователей.
 

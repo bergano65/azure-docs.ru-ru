@@ -7,7 +7,7 @@ author: msjuergent
 manager: patfilot
 editor: ''
 tags: azure-resource-manager
-keywords: SAP
+keywords: Протокол SAP
 ms.service: virtual-machines-linux
 ms.devlang: NA
 ms.topic: article
@@ -16,21 +16,21 @@ ms.workload: infrastructure
 ms.date: 04/10/2019
 ms.author: juergent
 ms.openlocfilehash: a74dd1a932cac41081786f76938a5b35de62d878
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64689714"
 ---
-[1928533]:https://launchpad.support.sap.com/#/notes/1928533
-[2015553]:https://launchpad.support.sap.com/#/notes/2015553
-[2178632]:https://launchpad.support.sap.com/#/notes/2178632
-[2191498]:https://launchpad.support.sap.com/#/notes/2191498
-[2243692]:https://launchpad.support.sap.com/#/notes/2243692
-[1984787]:https://launchpad.support.sap.com/#/notes/1984787
-[1999351]:https://launchpad.support.sap.com/#/notes/1999351
-[2233094]:https://launchpad.support.sap.com/#/notes/2233094
-[1612105]:https://launchpad.support.sap.com/#/notes/1612105
+[1928533]: https://launchpad.support.sap.com/#/notes/1928533
+[2015553]: https://launchpad.support.sap.com/#/notes/2015553
+[2178632]: https://launchpad.support.sap.com/#/notes/2178632
+[2191498]: https://launchpad.support.sap.com/#/notes/2191498
+[2243692]: https://launchpad.support.sap.com/#/notes/2243692
+[1984787]: https://launchpad.support.sap.com/#/notes/1984787
+[1999351]: https://launchpad.support.sap.com/#/notes/1999351
+[2233094]: https://launchpad.support.sap.com/#/notes/2233094
+[1612105]: https://launchpad.support.sap.com/#/notes/1612105
 
 [sles-for-sap-bp]:https://www.suse.com/documentation/sles-for-sap-12/
 [db2-hadr-11.1]:https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.admin.ha.doc/doc/c0011267.html
@@ -61,7 +61,7 @@ IBM Db2 для Linux, UNIX и Windows (LUW) в [высокий уровень д
 
 Перед началом установки см. в следующих примечаниях SAP и документацию.
 
-| Примечание к SAP | ОПИСАНИЕ |
+| Примечание к SAP | Описание |
 | --- | --- |
 | [1928533] | Приложения SAP в Azure: поддерживаемые продукты и типы виртуальных машин Azure |
 | [2015553] | SAP в Azure: необходимые компоненты для поддержки |
@@ -337,9 +337,9 @@ Execute command as db2&lt;sid&gt; db2pd -hadr -db &lt;SID&gt;
 
 Следующие элементы с префиксами::
 
-- **[A]**: Применяется ко всем узлам
-- **[1]**: Применяется только к узлу 1 
-- **[2]**: Применяется только к узлу 2
+- **[A]** : Применяется ко всем узлам
+- **[1]** : Применяется только к узлу 1 
+- **[2]** : Применяется только к узлу 2
 
 **[A]**  Необходимые условия для Pacemaker конфигурации:
 1. Завершите работу обоих серверов баз данных с db2 пользователя\<sid > с db2stop.
@@ -423,7 +423,7 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
    a. На портале Azure, подсистему балансировки нагрузки Azure, выберите **внешних IP-адресов**, а затем выберите **добавить**.
 
-   2. Введите имя нового пула IP-адрес внешнего интерфейса (например, **соединителя Db2**).
+   2\. Введите имя нового пула IP-адрес внешнего интерфейса (например, **соединителя Db2**).
 
    c. Задайте **назначения** для **статический**и введите IP-адрес **виртуальных IP-** в начале.
 
@@ -435,7 +435,7 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
    a. На портале Azure, подсистему балансировки нагрузки Azure, выберите **серверные пулы**, а затем выберите **добавить**.
 
-   2. Введите имя нового пула серверной части (например, **Db2-backend**).
+   2\. Введите имя нового пула серверной части (например, **Db2-backend**).
 
    c. Щелкните **Добавить виртуальную машину**.
 
@@ -449,7 +449,7 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
    a. На портале Azure, подсистему балансировки нагрузки Azure, выберите **пробы работоспособности**и выберите **добавить**.
 
-   2. Введите имя новой пробы работоспособности (например, **Db2-hp**).
+   2\. Введите имя новой пробы работоспособности (например, **Db2-hp**).
 
    c. Выберите **TCP** как протокол и порт **62500**. Сохранить **интервал** значение **5**и сохранить **порог состояния неработоспособности** значение **2**.
 
@@ -459,7 +459,7 @@ sudo crm configure property maintenance-mode=false</pre></code>
 
    a. На портале Azure, подсистему балансировки нагрузки Azure, выберите **правила балансировки нагрузки**, а затем выберите **добавить**.
 
-   2. Введите имя нового правила балансировки нагрузки (например, **Db2 SID**).
+   2\. Введите имя нового правила балансировки нагрузки (например, **Db2 SID**).
 
    c. Выберите интерфейсный IP-адрес, внутренний пул и пробу работоспособности, который был создан ранее (например, **Db2-frontend**).
 
@@ -514,7 +514,7 @@ j2ee/dbhost = db-virt-hostname
 
 Рекомендуется выполнить настройку общей папке NFS, в которую записываются журналы с обоих узлов. В общий ресурс NFS должен обладать высокой доступностью. 
 
-Можно использовать существующие общие папки NFS высокой доступности для транспортов или каталог профиля. Дополнительные сведения можно найти в разделе 
+Можно использовать существующие общие папки NFS высокой доступности для транспортов или каталог профиля. Дополнительные сведения можно найти в разделе
 
 - [Обеспечение высокого уровня доступности NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server][nfs-ha] 
 - [Высокий уровень доступности для SAP NetWeaver на виртуальных машинах Azure в SUSE Linux Enterprise Server с файлами NetApp Azure для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files)
@@ -595,8 +595,8 @@ crm resource clear msl_<b>Db2_db2ptr_PTR</b>
 </code></pre>
 
 - **перенос ресурсов CRM \<res_name > <host>:** Устанавливаются ограничения расположения и может вызвать проблемы с перенаправление
-- **Очистка ресурсов CRM \<res_name >**: Удаляет ограничения расположения
-- **Очистка ресурсов CRM \<res_name >**: Удаляет все ошибки ресурса
+- **Очистка ресурсов CRM \<res_name >** : Удаляет ограничения расположения
+- **Очистка ресурсов CRM \<res_name >** : Удаляет все ошибки ресурса
 
 ### <a name="test-the-fencing-agent"></a>Проверить конфигурацию агента ограждения
 

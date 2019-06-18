@@ -8,10 +8,10 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 06/03/2019
 ms.openlocfilehash: 85c8cc81b3c61e2faf65bf8a06c69ca7f2b906c9
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66497322"
 ---
 # <a name="create-an-azure-data-explorer-cluster-and-database-by-using-powershell"></a>Создание кластера и базы данных Azure Data Explorer с помощью PowerShell
@@ -92,7 +92,7 @@ Azure Data Explorer — это быстрая и полностью управ�
    |**Параметр** | **Рекомендуемое значение** | **Описание поля**|
    |---|---|---|
    | ClusterName | *mykustocluster* | Имя кластера, в котором необходимо создать базу данных.|
-   | Name | *mykustodatabase* | Имя базы данных.|
+   | ИМЯ | *mykustodatabase* | Имя базы данных.|
    | ResourceGroupName | *testrg* | Имя группы ресурсов, в которой будет создан кластер. |
    | SoftDeletePeriod | *3650:00:00:00* | Время, на протяжении которого данные будут храниться таким образом, чтобы они были доступны для запроса. |
    | HotCachePeriod | *3650:00:00:00* | Время, на протяжении которого данные будут храниться в кэше. |

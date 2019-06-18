@@ -17,10 +17,10 @@ ms.date: 12/14/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 5182b621779cf31f3c7da99674ab24fe6efe702d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60835266"
 ---
 # <a name="azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Развертывание СУБД на Виртуальных машинах Azure для рабочей нагрузки SAP
@@ -30,7 +30,7 @@ ms.locfileid: "60835266"
 [826037]:https://launchpad.support.sap.com/#/notes/826037
 [965908]:https://launchpad.support.sap.com/#/notes/965908
 [1031096]:https://launchpad.support.sap.com/#/notes/1031096
-[1114181]:https://launchpad.support.sap.com/#/notes/1114181
+[1114181]: https://launchpad.support.sap.com/#/notes/1114181
 [1139904]:https://launchpad.support.sap.com/#/notes/1139904
 [1173395]:https://launchpad.support.sap.com/#/notes/1173395
 [1245200]:https://launchpad.support.sap.com/#/notes/1245200
@@ -39,7 +39,7 @@ ms.locfileid: "60835266"
 [1585981]:https://launchpad.support.sap.com/#/notes/1585981
 [1588316]:https://launchpad.support.sap.com/#/notes/1588316
 [1590719]:https://launchpad.support.sap.com/#/notes/1590719
-[1597355]:https://launchpad.support.sap.com/#/notes/1597355
+[1597355]: https://launchpad.support.sap.com/#/notes/1597355
 [1605680]:https://launchpad.support.sap.com/#/notes/1605680
 [1619720]:https://launchpad.support.sap.com/#/notes/1619720
 [1619726]:https://launchpad.support.sap.com/#/notes/1619726
@@ -55,23 +55,23 @@ ms.locfileid: "60835266"
 [1882376]:https://launchpad.support.sap.com/#/notes/1882376
 [1909114]:https://launchpad.support.sap.com/#/notes/1909114
 [1922555]:https://launchpad.support.sap.com/#/notes/1922555
-[1928533]:https://launchpad.support.sap.com/#/notes/1928533
+[1928533]: https://launchpad.support.sap.com/#/notes/1928533
 [1941500]:https://launchpad.support.sap.com/#/notes/1941500
 [1956005]:https://launchpad.support.sap.com/#/notes/1956005
 [1973241]:https://launchpad.support.sap.com/#/notes/1973241
 [1984787]:https://launchpad.support.sap.com/#/notes/1984787
-[1999351]:https://launchpad.support.sap.com/#/notes/1999351
+[1999351]: https://launchpad.support.sap.com/#/notes/1999351
 [2002167]:https://launchpad.support.sap.com/#/notes/2002167
-[2015553]:https://launchpad.support.sap.com/#/notes/2015553
-[2039619]:https://launchpad.support.sap.com/#/notes/2039619
-[2069760]:https://launchpad.support.sap.com/#/notes/2069760
+[2015553]: https://launchpad.support.sap.com/#/notes/2015553
+[2039619]: https://launchpad.support.sap.com/#/notes/2039619
+[2069760]: https://launchpad.support.sap.com/#/notes/2069760
 [2121797]:https://launchpad.support.sap.com/#/notes/2121797
 [2134316]:https://launchpad.support.sap.com/#/notes/2134316
-[2171857]:https://launchpad.support.sap.com/#/notes/2171857
-[2178632]:https://launchpad.support.sap.com/#/notes/2178632
-[2191498]:https://launchpad.support.sap.com/#/notes/2191498
+[2171857]: https://launchpad.support.sap.com/#/notes/2171857
+[2178632]: https://launchpad.support.sap.com/#/notes/2178632
+[2191498]: https://launchpad.support.sap.com/#/notes/2191498
 [2233094]:https://launchpad.support.sap.com/#/notes/2233094
-[2243692]:https://launchpad.support.sap.com/#/notes/2243692
+[2243692]: https://launchpad.support.sap.com/#/notes/2243692
 
 [azure-cli]:../../../cli-install-nodejs.md
 [azure-portal]:https://portal.azure.com
@@ -358,7 +358,7 @@ Windows и Oracle Linux являются единственными операц
 
 Мы настоятельно рекомендуем использовать [Управляемые диски Azure](https://docs.microsoft.com/azure/storage/storage-managed-disks-overview), а для развертываний Oracle Database — [диски SSD ценовой категории "Премиум"](../../windows/disks-types.md).
 
-Сетевые диски и удаленные общие ресурсы, включая файловые службы Azure, не поддерживаются для файлов Oracle Database. Дополнительные сведения можно найти в разделе 
+Сетевые диски и удаленные общие ресурсы, включая файловые службы Azure, не поддерживаются для файлов Oracle Database. Дополнительные сведения можно найти в разделе
 
 - [Введение в службы файлов Microsoft Azure](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 
@@ -373,7 +373,7 @@ Windows и Oracle Linux являются единственными операц
 
 Минимальная конфигурация выглядит следующим образом. 
 
-| Компонент | Диски | Caching | Пул хранилищ |
+| Компонент | Диск | Caching | Пул хранилищ |
 | --- | ---| --- | --- |
 | \oracle\<SID>\origlogaA & mirrlogB | "Премиум" | Нет | Не требуется. |
 | \oracle\<SID>\origlogaB & mirrlogA | "Премиум" | Нет | Не требуется. |
@@ -386,7 +386,7 @@ Windows и Oracle Linux являются единственными операц
 
 Конфигурация производительности выглядит следующим образом.
 
-| Компонент | Диски | Caching | Пул хранилищ |
+| Компонент | Диск | Caching | Пул хранилищ |
 | --- | ---| --- | --- |
 | \oracle\<SID>\origlogaA | "Премиум" | Нет | Можно использовать  |
 | \oracle\<SID>\origlogaB | "Премиум" | Нет | Можно использовать |
@@ -419,7 +419,7 @@ Windows и Oracle Linux являются единственными операц
 
 Дополнительные сведения об аспектах аварийного восстановления баз данных Oracle в Azure см. в статье [Аварийное восстановление базы данных Oracle Database 12c в среде Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/oracle-disaster-recovery).
 
-### <a name="accelerated-networking"></a>Ускоренная сеть
+### <a name="accelerated-networking"></a>Ускорение работы в сети
 Для развертываний Oracle в Windows мы настоятельно рекомендуем использовать ускорение работы в сети, как описано в [этой статье](https://azure.microsoft.com/blog/maximize-your-vm-s-performance-with-accelerated-networking-now-generally-available-for-both-windows-and-linux/). Обратите также внимание на рекомендации, приведенные в документе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md). 
 ### <a name="other"></a>Другие
 Другие важные концепции, относящиеся к развертываниям виртуальных машин в Oracle Database, включая группы доступности Azure и мониторинг SAP, описываются в статье [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md).
@@ -463,7 +463,7 @@ Windows и Oracle Linux являются единственными операц
 
 Минимальная конфигурация:
 
-| Компонент | Диски | Caching | Чередование* |
+| Компонент | Диск | Caching | Чередование* |
 | --- | ---| --- | --- |
 | /Oracle/\<SID > / origlogaA & mirrlogB | "Премиум" | Нет | Не требуется. |
 | /Oracle/\<SID > / origlogaB & mirrlogA | "Премиум" | Нет | Не требуется. |
@@ -477,7 +477,7 @@ Windows и Oracle Linux являются единственными операц
 
 Конфигурация производительности:
 
-| Компонент | Диски | Caching | Чередование* |
+| Компонент | Диск | Caching | Чередование* |
 | --- | ---| --- | --- |
 | /Oracle/\<SID > / origlogaA | "Премиум" | Нет | Можно использовать  |
 | /Oracle/\<SID > / origlogaB | "Премиум" | Нет | Можно использовать |
@@ -513,7 +513,7 @@ Windows и Oracle Linux являются единственными операц
 
 Аспекты аварийного восстановления для баз данных Oracle в Azure описаны в статье [Аварийное восстановление базы данных Oracle Database 12c в среде Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/oracle-disaster-recovery).
 
-### <a name="accelerated-networking"></a>Ускоренная сеть
+### <a name="accelerated-networking"></a>Ускорение работы в сети
 Поддержка ускорения работы в сети Azure в Oracle Linux предоставляется в Oracle Linux 7 с обновлением 5 (Oracle Linux 7.5). Если вы не можете обновить Oracle Linux до версии 7.5, можно попробовать применить RedHat Compatible Kernel (RHCK) вместо ядра Oracle UEK. 
 
 Использование ядра RHEL в Oracle Linux поддерживается в соответствии с примечанием SAP [1565179](https://launchpad.support.sap.com/#/notes/1565179). Для ускорения сети Azure можно использовать ядро RHCKL выпуска не менее 3.10.0-862.13.1.el7. Если вы используете ядро UEK в Oracle Linux вместе с [ускоренной сетью Azure](https://azure.microsoft.com/blog/maximize-your-vm-s-performance-with-accelerated-networking-now-generally-available-for-both-windows-and-linux/), необходимо ядро Oracle UEK версии 5.

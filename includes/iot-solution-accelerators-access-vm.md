@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 08/16/2018
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: db1af4f046bd8849fddee299e949d6edbdaae86a
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 8d1f0f6ae3ffc123f1ae8318a6fbce4a9a3024fa
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66143401"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66814776"
 ---
 ## <a name="access-the-virtual-machine"></a>Доступ к виртуальной машине
 
-На следующих шагах в Azure Cloud Shell используется команда `az`. При желании на компьютер можно [установить Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli) и выполнять команды локально.
+Далее используется Azure CLI в Azure Cloud Shell. При желании вы можете [установите Azure CLI](/cli/azure/install-azure-cli) на разработки машинного и выполнять команды локально.
 
 Ниже показано, как настроить виртуальную машину Azure, чтобы разрешить доступ **SSH**. Представленные шаги предполагают, что имя, которое вы выбрали для ускорителя решения, — **contoso-simulation**. Замените это значение на имя вашего развертывания.
 

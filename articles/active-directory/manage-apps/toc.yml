@@ -83,6 +83,10 @@
           href: plan-sso-deployment.md
     - name: Порталы пользователей
       href: end-user-experiences.md
+    - name: Единый вход с помощью одного щелчка
+      items:
+        - name: Что собой представляет единый вход с помощью одного щелчка
+          href: one-click-sso-tutorial.md
 - name: Практические руководства
   items:
     - name: Добавление облачного приложения

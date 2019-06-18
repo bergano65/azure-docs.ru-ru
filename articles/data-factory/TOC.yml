@@ -486,6 +486,8 @@
           href: control-flow-expression-language-functions.md
         - name: Системные переменные
           href: control-flow-system-variables.md
+        - name: Параметры потока данных
+          href: parameters-data-flow.md
     - name: Безопасность
       items:
         - name: Вопросы безопасности при перемещении данных
@@ -516,7 +518,7 @@
       items:
         - name: Среда выполнения интеграции Azure
           href: create-azure-integration-runtime.md
-        - name: Среда выполнения интеграции с самостоятельным размещением
+        - name: Локальная среда выполнения интеграции
           href: create-self-hosted-integration-runtime.md
         - name: Azure-SSIS Integration Runtime
           href: create-azure-ssis-integration-runtime.md
@@ -546,6 +548,8 @@
           href: configure-bcdr-azure-ssis-integration-runtime.md
         - name: Очистка журналов SSISDB с помощью заданий обработки эластичных баз данных
           href: how-to-clean-up-ssisdb-logs-with-elastic-jobs.md
+        - name: "Устранение неполадок с выполнением пакетов в Azure-SSIS\_IR"
+          href: ssis-integration-runtime-ssis-activity-faq.md
     - name: Создание триггеров
       items:
         - name: Создание триггера на основе событий

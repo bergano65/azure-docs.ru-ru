@@ -11,10 +11,10 @@ ms.date: 09/06/2018
 ms.author: kevin
 ms.reviewer: igorstan
 ms.openlocfilehash: 26791aecb2ca57b31358d3385d07230c73c84904
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61474425"
 ---
 # <a name="how-to-monitor-the-gen2-cache"></a>Мониторинг кэша 2-го поколения
@@ -36,7 +36,7 @@ ms.locfileid: "61474425"
 
 |                                | **Высокий процент попаданий в кэш** | **Низкий процент попаданий в кэш** |
 | :----------------------------: | :---------------------------: | :--------------------------: |
-| **Высокий процент использования кэша** |          Сценарий 1           |          Сценарий 2          |
+| **Высокий процент использования кэша** |          Сценарий 1           |          Сценарий 2          |
 | **Низкий процент использования кэша**  |          Сценарий 3           |          Сценарий 4          |
 
 **Сценарий 1.** Вы оптимально используете кэш. [Устраните неполадки](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-manage-monitor) в других областях, которые могут замедлять выполнение запросов.

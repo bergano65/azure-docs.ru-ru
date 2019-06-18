@@ -16,20 +16,20 @@ ms.workload: infrastructure-services
 ms.date: 11/17/2018
 ms.author: sedusch
 ms.openlocfilehash: f09f66e81ec4878aedebfee9be4c0c67b75c8ad6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61463027"
 ---
 # <a name="sap-lama-connector-for-azure"></a>Соединитель SAP LaMa для Azure
 
-[1877727]:https://launchpad.support.sap.com/#/notes/1877727
-[2343511]:https://launchpad.support.sap.com/#/notes/2343511
-[2350235]:https://launchpad.support.sap.com/#/notes/2350235
-[примечание к SAP 2562184]:https://launchpad.support.sap.com/#/notes/2562184
-[примечание к SAP 2628497]:https://launchpad.support.sap.com/#/notes/2628497
-[2445033]:https://launchpad.support.sap.com/#/notes/2445033
+[1877727]: https://launchpad.support.sap.com/#/notes/1877727
+[2343511]: https://launchpad.support.sap.com/#/notes/2343511
+[2350235]: https://launchpad.support.sap.com/#/notes/2350235
+[примечание к SAP 2562184]: https://launchpad.support.sap.com/#/notes/2562184
+[примечание к SAP 2628497]: https://launchpad.support.sap.com/#/notes/2628497
+[2445033]: https://launchpad.support.sap.com/#/notes/2445033
 [Logo_Linux]:media/virtual-machines-shared-sap-shared/Linux.png
 [Logo_Windows]:media/virtual-machines-shared-sap-shared/Windows.png
 [dbms-guide]:dbms-guide.md
@@ -103,7 +103,7 @@ SAP LaMa используется многими клиентами для ис�
 * Пароль: ключ и пароль субъекта-службы.
 * URL-адрес: оставьте адрес по умолчанию https://management.azure.com/.
 * Интервал опроса (в секундах): должен быть не менее 300.
-* Идентификатор подписки: Идентификатор подписки Azure
+* Идентификатор подписки: Идентификатор подписки Azure.
 * Идентификатор клиента Azure Active Directory: идентификатор клиента Azure Active Directory.
 * Узел прокси-сервера: имя узла прокси-сервера, если SAP LaMa требуется прокси-сервер для подключения к Интернету.
 * Порт прокси-сервера: TCP-порт прокси-сервера.
@@ -237,7 +237,7 @@ SAP LaMa не может перемещать сам SQL Server, поэтому 
 /usr/sap/hostctrl/exe/sapacext -a ifup -i eth0 -h ah1-ascs -n 255.255.255.128
 ```
 
-![ Windows][Logo_Windows]  Windows
+![Windows][Logo_Windows] Windows
 
 ```bash
 # C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i <network interface> -h <virtual hostname or IP address> -n <subnet mask>
@@ -277,7 +277,7 @@ acosprep/nfs_paths=/home/ah1adm,/usr/sap/trans,/sapmnt/AH1,/usr/sap/AH1
 /usr/sap/hostctrl/exe/sapacext -a ifup -i eth0 -h ah1-di-0 -n 255.255.255.128
 ```
 
-![ Windows][Logo_Windows]  Windows
+![Windows][Logo_Windows] Windows
 
 ```bash
 # C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i <network interface> -h <virtual hostname or IP address> -n <subnet mask>

@@ -73,7 +73,7 @@ Chef работает во всех [операционных системах, 
 | apiVersion | `2017-12-01` | Строка (дата) |
 | publisher | `Chef.Bootstrap.WindowsAzure` | string |
 | type | `LinuxChefClient` (Linux), `ChefClient` (Windows) | string |
-| typeHandlerVersion | `1210.12` | Строка (двойная) |
+| typeHandlerVersion | `1210.12` | string (double) |
 
 ### <a name="settings"></a>Параметры
 
@@ -87,7 +87,7 @@ Chef работает во всех [операционных системах, 
 
 | ИМЯ | Пример | Тип данных | Обязательный?
 | ---- | ---- | ---- | ---- |
-| protectedSettings/ключ_проверки | `-----BEGIN RSA PRIVATE KEY-----\nKEYDATA\n-----END RSA PRIVATE KEY-----` | string | Да |
+| protectedSettings/validation_key | `-----BEGIN RSA PRIVATE KEY-----\nKEYDATA\n-----END RSA PRIVATE KEY-----` | string | Да |
 
 <!--
 ### Linux-specific settings

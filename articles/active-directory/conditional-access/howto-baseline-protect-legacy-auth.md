@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7eebc68ae8a55d636f3bc85e179bd7d6813be8d
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: e55bf4a66dcd8c1c7cfbc881d6f93c3a12f5dc00
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66235558"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112319"
 ---
 # <a name="baseline-policy-block-legacy-authentication-preview"></a>Базовая политика: Блок проверки подлинности (Предварительная версия)
 
@@ -116,8 +116,8 @@ SharePoint Online включена для современной проверк�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения можно найти в разделе
 
-* [Политики защиты базовых показателей для условного доступа](concept-baseline-protection.md)
+* [Политики защиты базовых показателей условного доступа](concept-baseline-protection.md)
 * [Пять шагов по защите инфраструктуры удостоверений](../../security/azure-ad-secure-steps.md)
-* [Что представляет собой условный доступ в Azure Active Directory?](overview.md)
+* [Что такое условный доступ в Azure Active Directory?](overview.md)

@@ -17,10 +17,10 @@ ms.workload: infrastructure-services
 ms.date: 09/26/2018
 ms.author: sedusch
 ms.openlocfilehash: c93bca14d9385eaf9f79f69d76e9e704796da7a9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66154174"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>Развертывание виртуальных машин Azure для SAP NetWeaver
@@ -29,18 +29,18 @@ ms.locfileid: "66154174"
 [773830]:https://launchpad.support.sap.com/#/notes/773830
 [826037]:https://launchpad.support.sap.com/#/notes/826037
 [965908]:https://launchpad.support.sap.com/#/notes/965908
-[1031096]:https://launchpad.support.sap.com/#/notes/1031096
+[1031096]: https://launchpad.support.sap.com/#/notes/1031096
 [1139904]:https://launchpad.support.sap.com/#/notes/1139904
 [1173395]:https://launchpad.support.sap.com/#/notes/1173395
 [1245200]:https://launchpad.support.sap.com/#/notes/1245200
-[1409604]:https://launchpad.support.sap.com/#/notes/1409604
+[1409604]: https://launchpad.support.sap.com/#/notes/1409604
 [1558958]:https://launchpad.support.sap.com/#/notes/1558958
 [1585981]:https://launchpad.support.sap.com/#/notes/1585981
 [1588316]:https://launchpad.support.sap.com/#/notes/1588316
 [1590719]:https://launchpad.support.sap.com/#/notes/1590719
-[1597355]:https://launchpad.support.sap.com/#/notes/1597355
+[1597355]: https://launchpad.support.sap.com/#/notes/1597355
 [1605680]:https://launchpad.support.sap.com/#/notes/1605680
-[1619720]:https://launchpad.support.sap.com/#/notes/1619720
+[1619720]: https://launchpad.support.sap.com/#/notes/1619720
 [1619726]:https://launchpad.support.sap.com/#/notes/1619726
 [1619967]:https://launchpad.support.sap.com/#/notes/1619967
 [1750510]:https://launchpad.support.sap.com/#/notes/1750510
@@ -54,22 +54,22 @@ ms.locfileid: "66154174"
 [1882376]:https://launchpad.support.sap.com/#/notes/1882376
 [1909114]:https://launchpad.support.sap.com/#/notes/1909114
 [1922555]:https://launchpad.support.sap.com/#/notes/1922555
-[1928533]:https://launchpad.support.sap.com/#/notes/1928533
+[1928533]: https://launchpad.support.sap.com/#/notes/1928533
 [1941500]:https://launchpad.support.sap.com/#/notes/1941500
 [1956005]:https://launchpad.support.sap.com/#/notes/1956005
 [1973241]:https://launchpad.support.sap.com/#/notes/1973241
-[1984787]:https://launchpad.support.sap.com/#/notes/1984787
-[1999351]:https://launchpad.support.sap.com/#/notes/1999351
-[2002167]:https://launchpad.support.sap.com/#/notes/2002167
-[2015553]:https://launchpad.support.sap.com/#/notes/2015553
+[1984787]: https://launchpad.support.sap.com/#/notes/1984787
+[1999351]: https://launchpad.support.sap.com/#/notes/1999351
+[2002167]: https://launchpad.support.sap.com/#/notes/2002167
+[2015553]: https://launchpad.support.sap.com/#/notes/2015553
 [2039619]:https://launchpad.support.sap.com/#/notes/2039619
-[2069760]:https://launchpad.support.sap.com/#/notes/2069760
+[2069760]: https://launchpad.support.sap.com/#/notes/2069760
 [2121797]:https://launchpad.support.sap.com/#/notes/2121797
 [2134316]:https://launchpad.support.sap.com/#/notes/2134316
-[2178632]:https://launchpad.support.sap.com/#/notes/2178632
-[2191498]:https://launchpad.support.sap.com/#/notes/2191498
+[2178632]: https://launchpad.support.sap.com/#/notes/2178632
+[2191498]: https://launchpad.support.sap.com/#/notes/2191498
 [2233094]:https://launchpad.support.sap.com/#/notes/2233094
-[2243692]:https://launchpad.support.sap.com/#/notes/2243692
+[2243692]: https://launchpad.support.sap.com/#/notes/2243692
 [2367194]:https://launchpad.support.sap.com/#/notes/2367194
 
 [azure-cli]:../../../cli-install-nodejs.md
@@ -237,7 +237,7 @@ ms.locfileid: "66154174"
 [resource-group-authoring-templates]:../../../resource-group-authoring-templates.md
 [resource-group-overview]:../../../azure-resource-manager/resource-group-overview.md
 [resource-groups-networking]:../../../networking/network-overview.md
-[sap-pam]:https://support.sap.com/pam (Матрица доступности продуктов SAP)
+[sap-pam]: https://support.sap.com/pam (Матрица доступности продуктов SAP)
 [sap-templates-2-tier-marketplace-image]:https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsap-2-tier-marketplace-image%2Fazuredeploy.json
 [sap-templates-2-tier-marketplace-image-md]:https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsap-2-tier-marketplace-image-md%2Fazuredeploy.json
 [sap-templates-2-tier-os-disk]:https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsap-2-tier-user-disk%2Fazuredeploy.json
@@ -535,7 +535,7 @@ ms.locfileid: "66154174"
 Процедуры создания частного образа в Windows и в Linux отличаются.
 
 - - -
-> ![ Windows][Logo_Windows]  Windows
+> ![Windows][Logo_Windows] Windows
 >
 > Чтобы подготовить образ Windows, который можно использовать для развертывания нескольких виртуальных машин, необходимо задать абстрагированные или обобщенные параметры Windows (например, ИД безопасности Windows и имя узла) на локальной виртуальной машине. Это можно сделать с помощью инструмента [Sysprep](https://msdn.microsoft.com/library/hh825084.aspx).
 >
@@ -675,7 +675,7 @@ ms.locfileid: "66154174"
 Дополнительные сведения об агенте виртуальной машины Azure см. в следующих ресурсах:
 
 - - -
-> ![ Windows][Logo_Windows]  Windows
+> ![Windows][Logo_Windows] Windows
 >
 > [Обзор агента виртуальной машины Azure][virtual-machines-windows-agent-user-guide]
 >
@@ -693,7 +693,7 @@ ms.locfileid: "66154174"
 
 Если диск уже передан и определен в Azure (см. [руководство по планированию и внедрению SAP NetWeaver на виртуальных машинах][planning-guide]), выполните действия, описанные в нескольких следующих разделах.
 
-#### <a name="create-a-virtual-machine"></a>Создать виртуальную машину
+#### <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 
 Чтобы создать развертывание с помощью частного диска ОС на портале Azure, воспользуйтесь шаблоном SAP, опубликованным в [репозитории azure-quickstart-templates на сайте GitHub][azure-quickstart-templates-github]. Кроме того, виртуальную машину можно создать вручную с помощью PowerShell.
 
@@ -872,7 +872,7 @@ azure --version
 
 Процедура настройки прокси отличается для Windows и Linux.
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
 Чтобы получать доступ к Интернету, необходимо должным образом настроить параметры прокси для учетной записи Local System. Если эти параметры не заданы с помощью групповой политики, их можно настроить для учетной записи Local System.
 
@@ -1086,9 +1086,9 @@ azure --version
 
    **Ожидаемый результат**: возвращается список счетчиков производительности. Файл не должен быть пустым.
 
-   2. Выполнить `cat /var/lib/AzureEnhancedMonitor/PerfCounters | grep Error`
+   2\. Выполнить `cat /var/lib/AzureEnhancedMonitor/PerfCounters | grep Error`
 
-   **Ожидаемый результат**: Возвращается одна строка, где для параметра error задано значение **none**, **3;config;Error;;0;0;none;0;1456416792;tst-servercs;**.
+   **Ожидаемый результат**: Возвращается одна строка, где для параметра error задано значение **none**, **3;config;Error;;0;0;none;0;1456416792;tst-servercs;** .
 
    c. Выполнить `more /var/lib/AzureEnhancedMonitor/LatestErrorRecord`
 
@@ -1102,7 +1102,7 @@ azure --version
 
      **Ожидаемый результат**: должно отобразиться содержимое каталога waagent.
 
-   2.  Выполнить `ps -ax | grep waagent`
+   2\.  Выполнить `ps -ax | grep waagent`
 
    **Ожидаемый результат**: должна отобразиться одна запись, аналогичная следующей: `python /usr/sbin/waagent -daemon`.
 
@@ -1112,7 +1112,7 @@ azure --version
 
    **Ожидаемый результат**: должно отобразиться содержимое каталога расширения расширенного мониторинга Azure.
 
-   2. Выполнить `ps -ax | grep AzureEnhanced`
+   2\. Выполнить `ps -ax | grep AzureEnhanced`
 
    **Ожидаемый результат**: должна отобразиться одна запись, аналогичная следующей: `python /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-2.0.0.2/handler.py daemon`.
 
@@ -1120,7 +1120,7 @@ azure --version
 
    a.  Выполнить `/usr/sap/hostctrl/exe/saposcol -d`
 
-   2.  Выполнить `dump ccm`
+   2\.  Выполнить `dump ccm`
 
    c.  Проверьте, задано ли для метрики **Virtualization_Configuration\Enhanced Monitoring Access** значение **true**.
 
@@ -1157,7 +1157,7 @@ azure --version
 
 ### <a name="fe25a7da-4e4e-4388-8907-8abc2d33cfd8"></a>Устранение неполадок инфраструктуры мониторинга Azure для SAP
 
-#### <a name="windowslogowindows-azure-performance-counters-do-not-show-up-at-all"></a>![ Windows][Logo_Windows]  Счетчики производительности Azure вообще не отображаются
+#### <a name="windowslogowindows-azure-performance-counters-do-not-show-up-at-all"></a>![Windows][Logo_Windows] Счетчики производительности Azure вообще не отображаются
 
 Сбор показателей производительности в Azure выполняет служба расширенного мониторинга Azure для Windows. Если она установлена неправильно или не запущена на виртуальной машине, сбор метрик производительности невозможен.
 
@@ -1198,13 +1198,13 @@ azure --version
 
 Недопустимая конфигурация. Перезапустите расширение мониторинга Azure для виртуальной машины, как описано в разделе [Настройка расширения расширенного мониторинга Azure для SAP][deployment-guide-4.5].
 
-#### <a name="windowslogowindows-some-azure-performance-counters-are-missing"></a>![ Windows][Logo_Windows]  Отсутствуют некоторые счетчики производительности Azure
+#### <a name="windowslogowindows-some-azure-performance-counters-are-missing"></a>![Windows][Logo_Windows] Отсутствуют некоторые счетчики производительности Azure
 
 Сбор показателей производительности в Azure выполняет служба расширенного мониторинга Azure для Windows. Она получает данные из нескольких источников. Некоторые данные конфигурации собираются локально, метрики производительности считываются из системы диагностики Azure, а счетчики хранилища используются из журналов на уровне подписки в хранилище.
 
 Если после устранения неполадок с использованием примечания к SAP [1999351] проблема не исчезла, повторно запустите скрипт конфигурации `Set-AzVMAEMExtension`. Необходимо подождать час, так как счетчики аналитики или диагностики хранилищ создаются не сразу после включения. Если проблема не исчезла, откройте сообщение о поддержке клиентов SAP в компоненте BC-OP-NT-AZR для виртуальной машины Windows или BC-OP-LNX-AZR для виртуальной машины Linux.
 
-#### <a name="linuxlogolinux-azure-performance-counters-do-not-show-up-at-all"></a>![Linux][Logo_Linux]  Счетчики производительности Azure вообще не отображаются
+#### <a name="linuxlogolinux-azure-performance-counters-do-not-show-up-at-all"></a>![Linux][Logo_Linux] Счетчики производительности Azure вообще не отображаются
 
 Сбор показателей производительности в Azure выполняет управляющая программа. Если она не запущена, сбор метрик производительности не выполняется.
 
@@ -1237,7 +1237,7 @@ WARNING: [WARN] Standard Managed Disks are not supported. Extension will be inst
 Сообщения вызваны тем фактом, что Управляемые диски (цен. категория "Стандартный") не предоставляют API-интерфейсы, используемые расширением мониторинга для проверки статистики учетных записей хранения Azure (цен. категория"Стандартный"). Это не повод для беспокойства. Основанием для введения мониторинга учетных записей хранилища дисков (цен. категория"Стандартный") было часто возникавшее регулирование операций ввода-вывода. Управляемые диски позволяют избежать такого регулирования за счет ограничения количества дисков в учетной записи хранилища. Поэтому отсутствие типа данных мониторинга не является критическим.
 
 
-#### <a name="linuxlogolinux-some-azure-performance-counters-are-missing"></a>![Linux][Logo_Linux]  Отсутствуют некоторые счетчики производительности Azure
+#### <a name="linuxlogolinux-some-azure-performance-counters-are-missing"></a>![Linux][Logo_Linux] Отсутствуют некоторые счетчики производительности Azure
 
 Сбор показателей производительности в Azure выполняет управляющая программа, которая получает данные из нескольких источников. Некоторые данные конфигурации собираются локально, метрики производительности считываются из системы диагностики Azure, а счетчики хранилища используются из журналов на уровне подписки в хранилище.
 

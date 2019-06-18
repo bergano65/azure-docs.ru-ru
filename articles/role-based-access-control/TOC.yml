@@ -52,9 +52,11 @@
       items:
         - name: Запрет назначений
           href: deny-assignments.md
-        - name: Microsoft Azure
+        - name: Портал
           href: deny-assignments-portal.md
-        - name: REST API
+        - name: PowerShell
+          href: deny-assignments-powershell.md
+        - name: "REST\_API"
           href: deny-assignments-rest.md
     - name: Пользовательские роли
       items:

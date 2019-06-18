@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 09/05/2018
+ms.date: 05/24/2019
 ms.author: mbullwin
-ms.openlocfilehash: 3f4ef7f333525d7408d0345b917102cddb295386
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 6ad2ab00060528557f618eb684ccfa710c3f09b9
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66255471"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67074181"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-status-monitor"></a>Инструментирование веб-приложений во время выполнения с помощью монитора состояний Application Insights
 
@@ -280,7 +280,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 
 Сейчас монитор состояний устанавливает только пакет SDK Application Insights версии 2.3 или 2.4. 
 
-Application Insights SDK версии 2.4 является [последней версии для поддержки .NET 4.0](https://github.com/microsoft/ApplicationInsights-dotnet/releases/tag/v2.5.0-beta1) которых должен был [EOL января 2016 г](https://devblogs.microsoft.com/dotnet/support-ending-for-the-net-framework-4-4-5-and-4-5-1/). Таким образом на данный момент монитор состояний можно использовать для инструментирования приложения .NET 4.0. 
+Application Insights SDK версии 2.4 является [последней версии для поддержки .NET 4.0](https://github.com/microsoft/ApplicationInsights-dotnet/releases/tag/v2.5.0-beta1) которых должен был [EOL января 2016 г.](https://devblogs.microsoft.com/dotnet/support-ending-for-the-net-framework-4-4-5-and-4-5-1/). Таким образом на данный момент монитор состояний можно использовать для инструментирования приложения .NET 4.0. 
 
 ### <a name="do-i-need-to-run-status-monitor-whenever-i-update-the-app"></a>Нужно ли запускать монитор состояния при каждом обновлении приложения?
 

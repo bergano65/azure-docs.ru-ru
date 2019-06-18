@@ -16,6 +16,10 @@
       href: manage-app-groups.md
     - name: 5. Создание пула узлов для проверки обновлений службы
       href: create-validation-host-pool.md
+    - name: 6. Развертывание средства управления
+      href: manage-resources-using-ui.md
+    - name: 7. Настройка оповещений служб
+      href: set-up-service-alerts.md
 - name: Инструкции
   items:
     - name: Подключение к ресурсам Виртуального рабочего стола Windows
@@ -40,6 +44,8 @@
       href: configure-vm-gpu.md
     - name: Автоматическое масштабирование узлов сеанса
       href: set-up-scaling-script.md
+    - name: Настройка свойств RDP
+      href: customize-rdp-properties.md
 - name: Основные понятия
   items:
     - name: Среда Виртуального рабочего стола Windows

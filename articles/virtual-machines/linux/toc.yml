@@ -85,9 +85,10 @@
           items:
             - name: Оптимизация производительности
               href: storage-performance.md
-        - name: Оптимизированные для GPU
-          href: sizes-gpu.md
+        - name: Ускорение вычислений
           items:
+            - name: Оптимизированные для GPU
+              href: sizes-gpu.md
             - name: Настройка драйверов GPU
               href: n-series-driver-setup.md
         - name: Для высокопроизводительных вычислений

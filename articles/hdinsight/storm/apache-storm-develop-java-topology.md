@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: 43f68908c8549c2f1d8322b5c4ad3985618cfe6e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 89cee70c9d7c5dffdb3078756cf4fa94d7cd1a9a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64695646"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67078220"
 ---
 # <a name="create-an-apache-storm-topology-in-java"></a>Создание топологии Apache Storm на языке Java
 
-Узнайте, как создать топологию на основе Java для [Apache Storm](https://storm.apache.org/). Здесь создать топологию Storm, реализующую приложение подсчета слов. Для сборки и упаковки проекта вы будете использовать [Apache Maven](https://maven.apache.org/). Затем вы узнаете, как определить топологию с помощью [Apache Storm Flux](https://storm.apache.org/releases/2.0.0-SNAPSHOT/flux.html) framework.
+Узнайте, как создать топологию на основе Java для [Apache Storm](https://storm.apache.org/). Здесь создать топологию Storm, реализующую приложение подсчета слов. Для сборки и упаковки проекта вы будете использовать [Apache Maven](https://maven.apache.org/). Затем вы узнаете, как определить топологию с помощью [Apache Storm Flux](https://storm.apache.org/releases/2.0.0/flux.html) framework.
 
 После выполнения действий, описанных в этом документе, вы сможете развернуть топологию в Apache Storm в HDInsight.
 
@@ -621,7 +621,7 @@ mvn compile exec:java -Dstorm.topology=com.microsoft.example.WordCountTopology
 
 ## <a name="convert-the-topology-to-flux"></a>Преобразование топологии для Flux
 
-[Flux](https://storm.apache.org/releases/2.0.0-SNAPSHOT/flux.html) — это новая платформа, доступная в Storm 0.10.0 и более поздних версий, которая позволяет отделить конфигурацию от реализации. Компоненты по-прежнему определяются на языке Java, но топология определяется с использованием файла YAML. Вы можете упаковать определение топологии по умолчанию в проекте или же использовать автономный файл при отправке топологии. При отправке топологии в Storm можно использовать переменные среды или файлы конфигурации для заполнения значений в определении топологии YAML.
+[Flux](https://storm.apache.org/releases/2.0.0/flux.html) — это новая платформа, доступная в Storm 0.10.0 и более поздних версий, которая позволяет отделить конфигурацию от реализации. Компоненты по-прежнему определяются на языке Java, но топология определяется с использованием файла YAML. Вы можете упаковать определение топологии по умолчанию в проекте или же использовать автономный файл при отправке топологии. При отправке топологии в Storm можно использовать переменные среды или файлы конфигурации для заполнения значений в определении топологии YAML.
 
 Файл YAML определяет компоненты для топологии и поток данных между ними. Файл YAML можно добавить как часть JAR-файла или можно использовать внешний файл YAML.
 
@@ -786,7 +786,7 @@ mvn compile exec:java -Dstorm.topology=com.microsoft.example.WordCountTopology
     notepad resources\topology.yaml
     ```
 
-    2. Найдите следующий раздел и измените значение свойства `10` для `5`. Это изменит интервал между отправкой пакетов с данными о количестве слов с 10 до 5 секунд.  
+    2\. Найдите следующий раздел и измените значение свойства `10` для `5`. Это изменит интервал между отправкой пакетов с данными о количестве слов с 10 до 5 секунд.  
 
     ```yaml
     - id: "counter-bolt"

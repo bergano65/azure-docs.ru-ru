@@ -1,10 +1,10 @@
 - name: Обзор
   items:
-    - name: Руководство разработчика по центру Azure IoT (IoT — Интернет вещей)
+    - name: Руководство для разработчиков
       href: azure-developer-guide.md
     - name: Пакеты SDK и средства
       href: 'https://docs.microsoft.com/azure/index#pivot=sdkstools'
-- name: Быстрый запуск
+- name: Краткое руководство
   items:
     - name: Веб-приложения
       href: 'https://docs.microsoft.com/azure/app-service/app-service-web-get-started-html'
@@ -12,7 +12,7 @@
       items:
         - name: Linux
           href: 'https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-portal'
-        - name: ' Windows'
+        - name: Windows
           href: 'https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal'
     - name: Бессерверные приложения
       href: 'https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function'
@@ -22,7 +22,7 @@
           href: 'https://docs.microsoft.com/azure/service-fabric/service-fabric-create-your-first-application-in-visual-studio'
         - name: Служба контейнеров
           href: 'https://docs.microsoft.com/azure/container-service/dcos-swarm/container-service-deployment'
-- name: Учебники
+- name: Руководства
   items:
     - name: Создание и развертывание веб-приложений
       items:
@@ -38,7 +38,7 @@
       items:
         - name: Linux
           href: 'https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-vm'
-        - name: ' Windows'
+        - name: Windows
           href: 'https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-manage-vm'
     - name: 'Создание функции, исполняемой в Azure'
       href: 'https://docs.microsoft.com/azure/azure-functions/functions-create-an-azure-connected-function'
@@ -83,7 +83,7 @@
     - name: План
       items:
         - name: Архитектура веб-приложений
-          href: 'https://docs.microsoft.com/azure/architecture/reference-architectures/managed-web-app/'
+          href: 'https://docs.microsoft.com/azure/architecture/reference-architectures/app-service-web-app/basic-web-app'
         - name: Архитектура виртуальных машин
           href: 'https://docs.microsoft.com/azure/architecture/reference-architectures/virtual-machines-windows/'
         - name: Подключение к локальным сетям
@@ -112,7 +112,7 @@
           href: 'https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-manage-vm'
     - name: Хранение данных
       items:
-        - name: BLOB-объекты
+        - name: Большие двоичные объекты
           href: 'https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs'
         - name: файловые ресурсы;
           href: 'https://docs.microsoft.com/azure/storage/files/storage-dotnet-how-to-use-files'
@@ -124,7 +124,7 @@
           href: 'https://docs.microsoft.com/azure/sql-database/sql-database-get-started'
         - name: Очереди сообщений
           href: 'https://docs.microsoft.com/azure/storage/queues/storage-dotnet-how-to-use-queues'
-    - name: Масштаб
+    - name: Масштабирование
       items:
         - name: Мобильные приложения и веб-приложения
           href: 'https://docs.microsoft.com/azure/app-service/web-sites-scale'
@@ -198,5 +198,5 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Примеры
       href: 'https://azure.microsoft.com/resources/samples/'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/home/'

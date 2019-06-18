@@ -59,7 +59,7 @@
       href: Face-API-How-to-Topics/HowtoIdentifyFacesinImage.md
     - name: Добавление лиц
       href: Face-API-How-to-Topics/how-to-add-faces.md
-    - name: Использование HeadPose для поворота прямоугольника
+    - name: Использование атрибута HeadPose
       href: Face-API-How-to-Topics/how-to-use-headpose.md
     - name: Указание модели распознавания лиц
       href: Face-API-How-to-Topics/specify-recognition-model.md

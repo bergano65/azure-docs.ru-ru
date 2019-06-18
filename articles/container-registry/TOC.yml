@@ -89,12 +89,14 @@
               href: container-registry-auth-aks.md
         - name: Доверие к содержимому
           href: container-registry-content-trust.md
-    - name: Сборка и применение исправлений
+    - name: Задачи ACR
       items:
-        - name: Задачи ACR
+        - name: Обзор Задач ACR
           href: container-registry-tasks-overview.md
         - name: Многошаговые задачи
           href: container-registry-tasks-multi-step.md
+        - name: Использование с управляемым удостоверением
+          href: container-registry-tasks-authentication-managed-identity.md
     - name: Реестры и другие службы Azure
       items:
         - name: Экземпляры контейнеров Azure

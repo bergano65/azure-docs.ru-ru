@@ -116,7 +116,7 @@
           href: licensing-groups-change-licenses.md
         - name: Дополнительные сценарии
           href: licensing-group-advanced.md
-        - name: Лицензирование группы с помощью PowerShell
+        - name: Лицензирование группы с помощью PowerShell и Graph
           href: licensing-ps-examples.md
         - name: Идентификаторы планов служб для лицензирования
           href: licensing-service-plan-reference.md

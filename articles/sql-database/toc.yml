@@ -83,22 +83,26 @@
           href: sql-database-design-first-database.md
         - name: Создание базы данных с помощью .NET
           href: sql-database-design-first-database-csharp.md
-    - name: Миграция в Базу данных SQL
+    - name: Отдельная база данных
       items:
         - name: Миграция в отдельную базу данных или базу данных в пуле с помощью DMS
           href: ../dms/tutorial-sql-server-to-azure-sql.md?toc=/azure/sql-database/toc.json
-        - name: Миграция в управляемый экземпляр с помощью DMS
+        - name: Реализация географически распределенной базы данных
+          href: sql-database-implement-geo-distributed-database.md
+        - name: "Настройка Синхронизации данных SQL\_Azure"
+          href: sql-database-get-started-sql-data-sync.md
+    - name: Управляемый экземпляр
+      items:
+        - name: Онлайн-миграция с помощью DMS
           href: ../dms/tutorial-sql-server-to-managed-instance.md?toc=/azure/sql-database/toc.json
+        - name: Настройка репликации транзакций
+          href: replication-with-sql-database-managed-instance.md
     - name: Обеспечение безопасности данных в Базе данных SQL
       items:
         - name: Защита отдельных баз данных и баз данных в пуле
           href: sql-database-security-tutorial.md
         - name: Обеспечение защиты управляемого экземпляра
           href: sql-database-managed-instance-aad-security-tutorial.md
-    - name: Реализация географически распределенной базы данных
-      href: sql-database-implement-geo-distributed-database.md
-    - name: "Настройка Синхронизации данных SQL\_Azure"
-      href: sql-database-get-started-sql-data-sync.md
     - name: Служба машинного обучения
       items:
         - name: "Создание прогнозной модели с помощью\_R"
@@ -500,8 +504,6 @@
           href: sql-database-managed-instance-find-management-endpoint-ip-address.md
         - name: Проверка встроенного брандмауэра для защиты
           href: sql-database-managed-instance-management-endpoint-verify-built-in-firewall.md
-        - name: Репликация транзакций
-          href: replication-with-sql-database-managed-instance.md
         - name: Настройка обнаружения угроз
           href: sql-database-managed-instance-threat-detection.md
         - name: Подключение приложений
@@ -558,7 +560,7 @@
       items:
         - name: "Настройка аутентификации Azure\_AD"
           href: sql-database-aad-authentication-configure.md
-        - name: Условный доступ
+        - name: условный доступ;
           href: sql-database-conditional-access.md
         - name: Многофакторная проверка подлинности с помощью AAD
           href: sql-database-ssms-mfa-authentication.md

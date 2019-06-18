@@ -3,20 +3,20 @@ title: Параметры контейнера Docker
 titleSuffix: Language Understanding - Azure Cognitive Services
 description: Среда выполнения контейнера LUIS настраивается с помощью аргументов команды `docker run`. LUIS поддерживает несколько обязательных и несколько необязательных параметров.
 services: cognitive-services
-author: diberry
+author: IEvangelist
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 05/23/2019
-ms.author: diberry
-ms.openlocfilehash: afd29c1689d6d467a42a7c3c60f9a1dccd1a66f0
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.date: 06/11/2019
+ms.author: dapine
+ms.openlocfilehash: 4a9f7762b7960c74acad8203f70bc1e7c7cbd90f
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66242615"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67063221"
 ---
 # <a name="configure-language-understanding-docker-containers"></a>Настройка контейнеров Docker Интеллектуальной службы распознавания речи 
 
@@ -67,7 +67,7 @@ ms.locfileid: "66242615"
 Не забудьте включить `luis/v2.0` маршрутизации в URL-адрес, как показано в следующей таблице:
 
 
-|Обязательно для заполнения| ИМЯ | Тип данных | Описание |
+|Обязательно для заполнения| Name | Тип данных | Описание |
 |--|------|-----------|-------------|
 |Да| `Billing` | String | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/luis/v2.0` |
 
@@ -99,7 +99,7 @@ ms.locfileid: "66242615"
 
 В следующей таблице описаны поддерживаемые параметры.
 
-|Обязательно для заполнения| ИМЯ | Тип данных | Описание |
+|Обязательно для заполнения| Name | Тип данных | Описание |
 |-------|------|-----------|-------------|
 |Да| `Input` | String | Цель входного подключения. По умолчанию используется значение `/input`. Это расположение файлов из пакета LUIS. <br><br>Пример:<br>`--mount type=bind,src=c:\input,target=/input`|
 |Нет| `Output` | String | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда относятся журналы запросов LUIS и журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
@@ -116,7 +116,7 @@ ms.locfileid: "66242615"
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
-| Местозаполнитель | Value | Формат или пример |
+| Placeholder | Значение | Формат или пример |
 |-------------|-------|---|
 |{ENDPOINT_KEY} | Ключ конечной точки обученного приложения LUIS. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
 |{BILLING_ENDPOINT} | Значение конечной точки выставления счетов можно найти в Azure `Cognitive Services` странице "Обзор". |https://westus.api.cognitive.microsoft.com/luis/v2.0|

@@ -2,7 +2,7 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое условный доступ?
+    - name: Что собой представляет условный доступ
       href: overview.md
 - name: Краткие руководства
   items:

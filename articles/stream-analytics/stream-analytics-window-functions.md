@@ -2,24 +2,24 @@
 title: Общие сведения о функции управления окнами Azure Stream Analytics
 description: В этой статье описаны четыре функции управления окнами ("переворачивающееся", "прыгающее", "скользящее" и "сеансовое" окно), которые используются в заданиях Azure Stream Analytics.
 services: stream-analytics
-author: lingliw
-ms.author: v-lingwu
-manager: digimobile
+author: jseb225
+ms.author: jeanb
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 01/21/19
-ms.openlocfilehash: 04c19e7e51777db4c59bfab3d5a8a7598560556a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 06/11/2019
+ms.openlocfilehash: 56b6f11d226f25e3094a90d8646fa13860ee306e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60844768"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67066760"
 ---
 # <a name="introduction-to-stream-analytics-windowing-functions"></a>Общие сведения о функциях управления окнами Stream Analytics
+
 При использовании потоковой передачи в реальном времени необходимо выполнять операции с теми данными, которые содержатся во временных окнах. В Stream Analytics имеется встроенная поддержка функций управления окнами. Это позволяет разработчикам выполнять сложные задания по обработке потоков с минимальными усилиями.
 
-Есть четыре типа временных окон: [**переворачивающиеся**](https://msdn.microsoft.com/azure/stream-analytics/reference/tumbling-window-azure-stream-analytics), [**прыгающие**](https://msdn.microsoft.com/azure/stream-analytics/reference/hopping-window-azure-stream-analytics), [**скользящие**](https://msdn.microsoft.com/azure/stream-analytics/reference/sliding-window-azure-stream-analytics)окна и окна [**сеансов**](https://msdn.microsoft.com/azure/stream-analytics/reference/session-window-azure-stream-analytics).  Функции управления окнами используются в предложении [**GROUP BY**](https://msdn.microsoft.com/azure/stream-analytics/reference/group-by-azure-stream-analytics) в синтаксических конструкциях запросов в заданиях Stream Analytics.
+Есть четыре типа временных окон: [**переворачивающиеся**](https://msdn.microsoft.com/azure/stream-analytics/reference/tumbling-window-azure-stream-analytics), [**прыгающие**](https://msdn.microsoft.com/azure/stream-analytics/reference/hopping-window-azure-stream-analytics), [**скользящие**](https://msdn.microsoft.com/azure/stream-analytics/reference/sliding-window-azure-stream-analytics)окна и окна [**сеансов**](https://msdn.microsoft.com/azure/stream-analytics/reference/session-window-azure-stream-analytics).  Функции управления окнами используются в предложении [**GROUP BY**](https://msdn.microsoft.com/azure/stream-analytics/reference/group-by-azure-stream-analytics) в синтаксических конструкциях запросов в заданиях Stream Analytics. Можно также статистической обработки событий по несколько окон с помощью [ **Windows()** функция](https://docs.microsoft.com/stream-analytics-query/windows-azure-stream-analytics).
 
 Все операции [управления окнами](https://msdn.microsoft.com/azure/stream-analytics/reference/windowing-azure-stream-analytics) выводят результаты в **конце** окна. Результатом для окна будет единичное событие, полученное на основе выбранной статистической функции. Метка времени для выходного события соответствует времени завершения окна, и все функции управления окнами выполняются с фиксированной длительностью. 
 
@@ -51,6 +51,7 @@ ms.locfileid: "60844768"
 
 Если указан ключ секции, то события группируются по ключу, и "сеансовое" окно применяется отдельно к каждой группе. Такое секционирование удобно в случаях, когда требуются разные "сеансовые" окна для различных пользователей или устройств.
 
+
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
@@ -58,4 +59,3 @@ ms.locfileid: "60844768"
 * [Справочник по языку запросов Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!--Update_Description: update meta properties -->

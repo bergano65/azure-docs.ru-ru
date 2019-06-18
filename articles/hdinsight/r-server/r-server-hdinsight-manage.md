@@ -9,10 +9,10 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.openlocfilehash: 607f85c10183366e88d597d84090f49fc30aff48
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64687982"
 ---
 # <a name="manage-ml-services-cluster-on-azure-hdinsight"></a>Управление кластером служб машинного обучения в Azure HDInsight
@@ -23,7 +23,7 @@ ms.locfileid: "64687982"
 
 * **Кластер служб машинного обучения в HDInsight**. Инструкции см. в статье [Начало работы со службами машинного обучения в Azure HDInsight](r-server-get-started.md).
 
-* **Клиент Secure Shell (SSH)**. Клиент SSH используется для удаленного подключения к кластеру HDInsight и выполнения команд непосредственно в кластере. Дополнительные сведения см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
+* **Клиент Secure Shell (SSH)** . Клиент SSH используется для удаленного подключения к кластеру HDInsight и выполнения команд непосредственно в кластере. Дополнительные сведения см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
 
 ## <a name="enable-multiple-concurrent-users"></a>Включение нескольких параллельных подключений пользователей
@@ -79,7 +79,7 @@ ms.locfileid: "64687982"
 
 ## <a name="connect-remotely-to-microsoft-ml-services"></a>Удаленное подключение к серверу или клиенту служб машинного обучения Microsoft
 
-Вы можете получить доступ к контексту вычислений Spark в HDInsight из удаленного экземпляра ML Client, запущенного на персональном компьютере. Для этого укажите на ПК параметры dfsShareDir, shareDir, sshUsername, sshHostname, sshSwitches и sshProfileScript, определяя контекст вычислений RxSpark. Например: 
+Вы можете получить доступ к контексту вычислений Spark в HDInsight из удаленного экземпляра ML Client, запущенного на персональном компьютере. Для этого укажите на ПК параметры dfsShareDir, shareDir, sshUsername, sshHostname, sshSwitches и sshProfileScript, определяя контекст вычислений RxSpark. Пример:
 
     myNameNode <- "default"
     myPort <- 0
@@ -313,7 +313,7 @@ ms.locfileid: "64687982"
 
    * Установите флажок только для параметра **Рабочая роль**.
 
-   * **Параметры.** Устанавливаемые пакеты R. Например `bitops stringr arules`.
+   * **Параметры.** Устанавливаемые пакеты R. Например: `bitops stringr arules`
 
    * Установите флажок **Persist this script action** (Сохранить это действие скрипта).  
 

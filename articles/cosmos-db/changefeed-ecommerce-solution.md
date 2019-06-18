@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: sngun
 ms.openlocfilehash: a53a62a7bc7a5c7f8d9bdabdf411588fdf7bd5e7
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66257074"
 ---
 # <a name="use-azure-cosmos-db-change-feed-to-visualize-real-time-data-analytics"></a>Использование канала изменений Azure Cosmos DB для визуализации аналитики данных в реальном времени
@@ -255,7 +255,7 @@ Power BI — набор средств бизнес-аналитики для а
 7. Теперь, если вы хотите визуализировать больше метрики, можете вернуться к **streamjob1** и создать еще три набора выходных данных со следующими полями.
 
    a. **Выходной псевдоним** — incomingRevenueOutput, имя набора данных — incomingRevenue, имя таблицы — incomingRevenue.  
-   2. **Выходной псевдоним** — top5Output, имя набора данных — top5, имя таблицы — top5.  
+   2\. **Выходной псевдоним** — top5Output, имя набора данных — top5, имя таблицы — top5.  
    c. **Выходной псевдоним** — uniqueVisitorCountOutput, имя набора данных — uniqueVisitorCount, имя таблицы — uniqueVisitorCount.
 
    Затем выберите **Изменить запрос** и вставьте следующие запросы **над** уже написанными.

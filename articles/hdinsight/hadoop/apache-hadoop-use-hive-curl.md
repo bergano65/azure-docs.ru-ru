@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: hrasheed
-ms.openlocfilehash: e020cbc9c18db2142ee7f52cdac22a3518683fce
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 82e08a8eeeb86d407be61c299656abe79a6f90f4
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64695821"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67078322"
 ---
 # <a name="run-apache-hive-queries-with-apache-hadoop-in-hdinsight-using-rest"></a>Выполнение запросов Apache Hive в Apache Hadoop в HDInsight с использованием REST
 
@@ -24,9 +24,6 @@ ms.locfileid: "64695821"
 ## <a name="prerequisites"></a>Технические условия
 
 * Hadoop в кластере HDInsight версии 3.4 или выше на платформе Linux.
-
-  > [!IMPORTANT]  
-  > Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
 * Клиент REST. В этом документе используются примеры для Windows PowerShell и [Curl](https://curl.haxx.se/).
 
@@ -141,7 +138,7 @@ ms.locfileid: "64695821"
 
    * `ROW FORMAT` — настройка форматирования данных. Поля всех журналов разделены пробелами.
    * `STORED AS TEXTFILE LOCATION` — указывает Hive расположение хранения данных (каталог example/data) и их формат (текст).
-   * `SELECT`. Подсчитывает количество строк, в которых столбец **t4** содержит значение **[ERROR]**. Эта инструкция возвращает значение **3**, так как данное значение содержат три строки.
+   * `SELECT`. Подсчитывает количество строк, в которых столбец **t4** содержит значение **[ERROR]** . Эта инструкция возвращает значение **3**, так как данное значение содержат три строки.
 
      > [!NOTE]  
      > Обратите внимание, что при использовании Curl пробелы между операторами HiveQL заменяются знаком `+`. Заключенные в кавычки значения, содержащие пробелы в качестве разделителя, заменять на `+`не нужно.

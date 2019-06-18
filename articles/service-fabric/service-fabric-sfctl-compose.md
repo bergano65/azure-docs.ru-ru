@@ -15,10 +15,10 @@ ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: 4b5cbb4a24b61de7e64a52ef950deedab3eec263
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60837272"
 ---
 # <a name="sfctl-compose"></a>sfctl compose
@@ -28,11 +28,11 @@ ms.locfileid: "60837272"
 
 |Команда|Описание|
 | --- | --- |
-| Создать | Создает развертывание Compose в Service Fabric. |
-| список | Возвращает список развертываний Compose, созданных в кластере Service Fabric. |
-| удалить | Удаляет существующее развертывание Compose в Service Fabric из кластера. |
+| create | Создает развертывание Compose в Service Fabric. |
+| list | Возвращает список развертываний Compose, созданных в кластере Service Fabric. |
+| remove | Удаляет существующее развертывание Compose в Service Fabric из кластера. |
 | status | Возвращает сведения о развертывании Compose в Service Fabric. |
-| обновление | Запускает обновление развертывания Compose в кластере Service Fabric. |
+| upgrade | Запускает обновление развертывания Compose в кластере Service Fabric. |
 | upgrade-rollback | Запускает откат обновления развертывания Compose в кластере Service Fabric. |
 | upgrade-status | Возвращает сведения о последнем обновлении данного развертывания Compose в Service Fabric. |
 

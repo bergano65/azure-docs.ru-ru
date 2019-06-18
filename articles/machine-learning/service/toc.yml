@@ -79,8 +79,7 @@
           displayName: 'Basic Sample, training, classification, sample 5'
           href: ui-sample-classification-predict-churn.md
     - name: Открытые наборы данных Azure
-      href: 'https://docs.microsoft.com/azure/open-datasets/samples'
-      maintainContext: true
+      href: /azure/open-datasets/samples?context=azure/machine-learning/service/context/ml-context
 - name: Основные понятия
   items:
     - name: Рабочая область
@@ -98,7 +97,7 @@
     - name: Служба управления моделями (MLOps)
       displayName: 'deploy, deployment, mlops, operationalize, operationalization'
       href: concept-model-management-and-deployment.md
-    - name: Возможность повторного использования конвейеров Машинного обучения
+    - name: Конвейеры Машинного обучения
       href: concept-ml-pipelines.md
     - name: Интерпретируемость модели
       displayName: explainability
@@ -119,7 +118,9 @@
           href: how-to-enable-virtual-network.md
         - name: Защита веб-служб с помощью SSL
           href: how-to-secure-web-service.md
-- name: Инструкции
+        - name: Повторное создание ключей доступа к хранилищу
+          href: how-to-change-storage-access-key.md
+- name: Практические руководства
   items:
     - name: Управление рабочими областями
       items:
@@ -177,10 +178,12 @@
           href: how-to-set-up-training-targets.md
         - name: Создание средств оценки при обучении модели
           href: how-to-train-ml-models.md
-        - name: Использование класса PyTorch
-          href: how-to-train-pytorch.md
         - name: Использование класса TensorFlow
           href: how-to-train-tensorflow.md
+        - name: Использование Keras
+          href: how-to-train-keras.md
+        - name: Использование класса PyTorch
+          href: how-to-train-pytorch.md
         - name: Настройка гиперпараметров
           displayName: parameter
           href: how-to-tune-hyperparameters.md
@@ -191,6 +194,9 @@
           href: how-to-manage-runs.md
         - name: Запись метрик для учебных запусков
           href: how-to-track-experiments.md
+        - name: Отслеживание экспериментов с помощью потока ML
+          displayName: 'log, monitor, metrics'
+          href: how-to-use-mlflow.md
     - name: Автоматизация машинного обучения
       displayName: 'automl, auto ml'
       items:
@@ -215,8 +221,9 @@
         - name: FPGA
           href: how-to-deploy-fpga-web-service.md
         - name: IoT Edge
-          href: ../../iot-edge/tutorial-deploy-machine-learning.md
-          maintainContext: true
+          href: /azure/iot-edge/tutorial-deploy-machine-learning?context=azure/machine-learning/service/context/ml-context
+        - name: Пользовательский образ Docker
+          href: how-to-deploy-custom-docker-image.md
         - name: Устранение неполадок
           href: how-to-troubleshoot-deployment.md
     - name: Использование веб-служб
@@ -241,8 +248,7 @@
           href: how-to-create-your-first-pipeline.md
         - name: Использование CI/CD рабочих процессов ML с Azure Pipelines
           displayName: 'continuous, integration, delivery'
-          href: /azure/devops/pipelines/targets/azure-machine-learning
-          mainContext: true
+          href: /azure/devops/pipelines/targets/azure-machine-learning?context=azure/machine-learning/service/context/ml-context
     - name: Управление квотами ресурсов
       displayName: limits
       href: how-to-manage-quotas.md
@@ -366,8 +372,7 @@
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-machine-learning'
     - name: Сравнение наших продуктов Машинного обучения
-      href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning
-      maintainContext: true
+      href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure/machine-learning/service/context/ml-context
     - name: Что произошло с Workbench
       displayName: desktop ui Workbench upgrade update transfer
       href: overview-what-happened-to-workbench.md

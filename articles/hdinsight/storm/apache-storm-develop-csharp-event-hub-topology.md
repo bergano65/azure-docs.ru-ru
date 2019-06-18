@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/27/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: b02945197b20c7fe704d0f8cfa9201a5b9cbc292
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 7f4db76fe2a302dd5acce01b456ef3b676b187c6
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64690947"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67078268"
 ---
 # <a name="process-events-from-azure-event-hubs-with-apache-storm-on-hdinsight-c"></a>Обработка событий из Центров событий Azure с помощью Apache Storm в HDInsight (C#)
 
@@ -38,7 +38,7 @@ ms.locfileid: "64690947"
 > [!IMPORTANT]  
 > Пример в этом документе предполагает наличие кластера HDInsight 3.5 или 3.6.
 >
-> Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).
+> Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. 
 
 Топологии C# должны быть рассчитаны на использование с .NET 4.5.
 
@@ -135,7 +135,7 @@ topologyBuilder.SetJavaBolt(
 
 1. Создав **концентратор событий**, просмотрите его параметры на портале Azure и щелкните **Политики общего доступа**. Воспользуйтесь ссылкой **+ Добавить**, чтобы добавить следующие политики.
 
-   | ИМЯ | Разрешения |
+   | Name | Разрешения |
    | --- | --- |
    | writer |Отправка |
    | reader |Прослушивание |
@@ -152,7 +152,7 @@ topologyBuilder.SetJavaBolt(
 
 3. В проекте **EventHubWriter** откройте файл **App.config**. Используйте сведения из концентратора событий, настроенного ранее, чтобы указать значения следующих ключей:
 
-   | Ключ | Value |
+   | Ключ | Значение |
    | --- | --- |
    | EventHubPolicyName |writer (если для политики с разрешением на *отправку* указано другое имя, используйте его). |
    | EventHubPolicyKey |Ключ для политики writer. |
@@ -168,7 +168,7 @@ topologyBuilder.SetJavaBolt(
 
 2. Для **EventHubReader** откройте файл **App.config**. Используйте сведения из концентратора событий, настроенного ранее, чтобы указать значения следующих ключей:
 
-   | Ключ | Value |
+   | Ключ | Значение |
    | --- | --- |
    | EventHubPolicyName |reader (если для политики с разрешением на *прослушивание* указано другое имя, используйте его). |
    | EventHubPolicyKey |Ключ для политики reader. |

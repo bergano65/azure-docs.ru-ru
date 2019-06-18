@@ -1,0 +1,15 @@
+- name: Документация по безопасной разработке
+  href: index.yml
+- name: Основные понятия
+  expanded: true
+  items:
+    - name: Рекомендации
+      items:
+        - name: Обзор
+          href: secure-dev-overview.md
+        - name: Проектирование безопасных приложений
+          href: secure-design.md
+        - name: Разработка безопасных приложений
+          href: secure-develop.md
+        - name: Развертывание безопасных приложений
+          href: secure-deploy.md

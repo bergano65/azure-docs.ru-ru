@@ -17,22 +17,22 @@ ms.date: 07/12/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 83319118c778d89749b1eb5d5fd792a5200c19c5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60836064"
 ---
 # <a name="sap-maxdb-livecache-and-content-server-deployment-on-azure-vms"></a>Развертывание SAP MaxDB, liveCache и сервера содержимого на виртуальных машинах Azure
 
-[767598]:https://launchpad.support.sap.com/#/notes/767598
+[767598]: https://launchpad.support.sap.com/#/notes/767598
 [773830]:https://launchpad.support.sap.com/#/notes/773830
-[826037]:https://launchpad.support.sap.com/#/notes/826037
+[826037]: https://launchpad.support.sap.com/#/notes/826037
 [965908]:https://launchpad.support.sap.com/#/notes/965908
 [1031096]:https://launchpad.support.sap.com/#/notes/1031096
 [1114181]:https://launchpad.support.sap.com/#/notes/1114181
-[1139904]:https://launchpad.support.sap.com/#/notes/1139904
-[1173395]:https://launchpad.support.sap.com/#/notes/1173395
+[1139904]: https://launchpad.support.sap.com/#/notes/1139904
+[1173395]: https://launchpad.support.sap.com/#/notes/1173395
 [1245200]:https://launchpad.support.sap.com/#/notes/1245200
 [1409604]:https://launchpad.support.sap.com/#/notes/1409604
 [1558958]:https://launchpad.support.sap.com/#/notes/1558958
@@ -42,7 +42,7 @@ ms.locfileid: "60836064"
 [1597355]:https://launchpad.support.sap.com/#/notes/1597355
 [1605680]:https://launchpad.support.sap.com/#/notes/1605680
 [1619720]:https://launchpad.support.sap.com/#/notes/1619720
-[1619726]:https://launchpad.support.sap.com/#/notes/1619726
+[1619726]: https://launchpad.support.sap.com/#/notes/1619726
 [1619967]:https://launchpad.support.sap.com/#/notes/1619967
 [1750510]:https://launchpad.support.sap.com/#/notes/1750510
 [1752266]:https://launchpad.support.sap.com/#/notes/1752266
@@ -55,7 +55,7 @@ ms.locfileid: "60836064"
 [1882376]:https://launchpad.support.sap.com/#/notes/1882376
 [1909114]:https://launchpad.support.sap.com/#/notes/1909114
 [1922555]:https://launchpad.support.sap.com/#/notes/1922555
-[1928533]:https://launchpad.support.sap.com/#/notes/1928533
+[1928533]: https://launchpad.support.sap.com/#/notes/1928533
 [1941500]:https://launchpad.support.sap.com/#/notes/1941500
 [1956005]:https://launchpad.support.sap.com/#/notes/1956005
 [1973241]:https://launchpad.support.sap.com/#/notes/1973241
@@ -339,7 +339,7 @@ ms.locfileid: "60836064"
 
 Вкратце повторим рекомендации.
 
-* При использовании учетных записей хранения Azure настройте учетную запись хранения Azure, в которой будут храниться тома данных и журналов (файлы данных и файлы журналов) SAP MaxDB, в качестве **локально избыточного хранилища (LRS)**, как описано в разделе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md).
+* При использовании учетных записей хранения Azure настройте учетную запись хранения Azure, в которой будут храниться тома данных и журналов (файлы данных и файлы журналов) SAP MaxDB, в качестве **локально избыточного хранилища (LRS)** , как описано в разделе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md).
 * Разделите пути ввода-вывода для томов данных (файлов данных) и томов журналов (файлов журналов) SAP MaxDB. Это означает, что тома данных (файлы данных) SAP MaxDB должны быть установлены на один логический диск, а тома журналов (файлы журналов) SAP MaxDB — на другой логический диск.
 * Правильно настройте тип кэширования для каждого диска. Настройки кэширования зависят от того, будут ли храниться в большом двоичном объекте тома данных или журналов SAP MaxDB (файлы данных или файлы журналов), а также от класса службы хранилища Azure (Standard или Premium), как описано в разделе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md).
 * Если текущего количества операций ввода-вывода в секунду для каждого диска достаточно, все тома данных можно хранить на одном подключенном диске, а все тома журналов базы данных — на другом.
@@ -372,7 +372,7 @@ ms.locfileid: "60836064"
 Сведения о распределении тома между несколькими дисками см. выше в разделе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md). 
 
 #### <a name="f77c1436-9ad8-44fb-a331-8671342de818"></a>Дополнительные рекомендации
-Все остальные общие вопросы, такие как группы доступности Azure и мониторинг SAP, изложенные в разделе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md),  также применяются к развертываниям виртуальных машин в базе данных SAP MaxDB 
+Все остальные общие вопросы, такие как группы доступности Azure и мониторинг SAP, изложенные в разделе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md),  также применяются к развертываниям виртуальных машин в базе данных SAP MaxDB
 Другие параметры SAP MaxDB прозрачны для виртуальных машин Azure и описаны в различных документах, перечисленных в примечании к SAP [767598], а также в следующих примечаниях к SAP:
 
 * [826037] 
@@ -422,7 +422,7 @@ ms.locfileid: "60836064"
 ### <a name="sap-content-server-version-support-for-azure-vms"></a>Поддерживаемые версии сервера содержимого SAP для виртуальных машин Azure
 В настоящее время SAP поддерживает:
 
-* **сервер содержимого SAP** версии **6.50 (и более поздние)**;
+* **сервер содержимого SAP** версии **6.50 (и более поздние)** ;
 * **SAP MaxDB версии 7.9;**
 * **службы Microsoft IIS версии 8.0 (и более поздние версии).**
 

@@ -6,11 +6,16 @@
   href: create-manage-support-requests-using-access-control.md
 - name: Запросы на увеличение квоты
   href: resource-manager-core-quotas-request.md
+  items:
+    - name: Увеличение лимита виртуальных ЦП для серии виртуальных машин
+      href: per-vm-quota-requests.md
+    - name: Общее региональное увеличение лимита виртуальных ЦП
+      href: regional-quota-requests.md
 - name: Устранение неполадок c доступом подписки к региону или номеру SKU
   href: sku-series-unavailable.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure
     - name: Azure PowerShell
       href: /powershell/azure

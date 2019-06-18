@@ -139,6 +139,8 @@
                   href: scenario-protected-web-api-app-registration.md
                 - name: Конфигурация кода
                   href: scenario-protected-web-api-app-configuration.md
+                - name: Проверка области действия или ролей приложения
+                  href: scenario-protected-web-api-verification-scope-app-roles.md
                 - name: Перенос в рабочую среду
                   href: scenario-protected-web-api-production.md
             - name: 'Веб-API, которые вызывают веб-API'
@@ -531,7 +533,7 @@
               href: consent-framework.md
             - name: Предоставление согласия для приложений
               href: application-consent-experience.md
-        - name: Условный доступ
+        - name: условный доступ;
           href: conditional-access-dev-guide.md
         - name: Национальные облака
           href: authentication-national-cloud.md

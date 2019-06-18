@@ -59,12 +59,20 @@
           href: concepts-business-continuity.md
         - name: Резервное копирование и восстановление
           href: concepts-backup.md
-    - name: Мониторинг
+    - name: Мониторинг и настройка
       items:
         - name: Мониторинг
           href: concepts-monitoring.md
-        - name: Журналы сервера
+        - name: Журналы медленных запросов
           href: concepts-server-logs.md
+        - name: Журналы аудита
+          href: concepts-audit-logs.md
+        - name: Хранилище запросов
+          href: concepts-query-store.md
+        - name: Анализ производительности запросов
+          href: concepts-query-performance-insight.md
+        - name: Рекомендации по производительности
+          href: concepts-performance-recommendations.md
     - name: Разработка
       items:
         - name: Совместимость драйверов и инструментов
@@ -75,6 +83,8 @@
       items:
         - name: Репликация входных данных
           href: concepts-data-in-replication.md
+        - name: Реплики чтения
+          href: concepts-read-replicas.md
 - name: Практические руководства
   items:
     - name: Правила брандмауэра
@@ -113,10 +123,16 @@
           href: howto-auto-grow-storage-portal.md
     - name: Доступ к журналам сервера
       items:
-        - name: Портал Azure
-          href: howto-configure-server-logs-portal.md
-        - name: Azure CLI
-          href: howto-configure-server-logs-cli.md
+        - name: Журналы медленных запросов
+          items:
+            - name: Портал Azure
+              href: howto-configure-server-logs-portal.md
+            - name: Инфраструктура CLI Azure
+              href: howto-configure-server-logs-cli.md
+        - name: Журналы аудита
+          items:
+            - name: Портал Azure
+              href: howto-configure-audit-logs-portal.md
     - name: Мониторинг
       items:
         - name: Создание оповещений на основе метрик
@@ -125,6 +141,8 @@
       items:
         - name: Настройка репликации входных данных
           href: howto-data-in-replication.md
+        - name: Создание реплик чтения с помощью портала Azure
+          href: howto-read-replicas-portal.md
     - name: Устранение неполадок
       items:
         - name: Устранение неполадок с подключением

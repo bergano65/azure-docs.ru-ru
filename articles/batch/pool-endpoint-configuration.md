@@ -8,12 +8,12 @@ ms.service: batch
 ms.topic: article
 ms.date: 02/13/2018
 ms.author: lahugh
-ms.openlocfilehash: a6c2c343b13b77048c772cb1e5c2ba06cf8add50
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9b6b28b9f55623fbdff6ab80c889141c8815600f
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60616863"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071529"
 ---
 # <a name="configure-or-disable-remote-access-to-compute-nodes-in-an-azure-batch-pool"></a>Настройка или отключение удаленного доступа к вычислительным узлам пула пакетной службы Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "60616863"
 Каждая конфигурация пула NAT включает одно или несколько правил [групп безопасности сети](/rest/api/batchservice/pool/add#networksecuritygrouprule), каждое из которых разрешает или запрещает определенный сетевой трафик к конечной точке. Вы можете разрешить или запретить весь трафик, трафик, определяемый по [тегу службы](../virtual-network/security-overview.md#service-tags) (например, "Интернет"), или трафик из определенных IP-адресов или подсетей.
 
 ### <a name="considerations"></a>Рекомендации
-* Конфигурация конечной точки пула является частью [сетевой конфигурации](/rest/api/batchservice/pool/add#NetworkConfiguration) пула. В сетевую конфигурацию при необходимости можно включить параметры для присоединения пула к [виртуальной сети Azure](batch-virtual-network.md). При настройке пула в виртуальной сети можно создать правила NSG, которые используют параметры адреса в виртуальной сети.
+* Конфигурация конечной точки пула является частью [сетевой конфигурации](/rest/api/batchservice/pool/add#networkconfiguration) пула. В сетевую конфигурацию при необходимости можно включить параметры для присоединения пула к [виртуальной сети Azure](batch-virtual-network.md). При настройке пула в виртуальной сети можно создать правила NSG, которые используют параметры адреса в виртуальной сети.
 * При настройке пула NAT можно настроить несколько правил группы безопасности сети (NSG). Правила проверяются в порядке приоритета. Когда применяется правило, соответствие других правил не проверяется.
 
 

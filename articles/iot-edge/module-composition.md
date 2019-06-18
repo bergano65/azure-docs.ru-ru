@@ -10,10 +10,10 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: f4828b59ffa43365f48c002262368d383dfcff05
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66389364"
 ---
 # <a name="learn-how-to-deploy-modules-and-establish-routes-in-iot-edge"></a>Сведения о развертывании модулей и установлении маршрутов в IoT Edge
@@ -135,7 +135,7 @@ ms.locfileid: "66389364"
 Каждый маршрут имеет исходную и конечную точки. При необходимости можно также добавить условие, чтобы фильтровать сообщения. 
 
 
-### <a name="source"></a>`Source`
+### <a name="source"></a>source
 
 Исходная точка определяет то место, откуда поступают сообщения. IoT Edge можно маршрутизировать сообщения из модулей или конечных устройств. 
 
@@ -143,7 +143,7 @@ ms.locfileid: "66389364"
 
 Свойство source может принимать любое из следующих значений:
 
-| `Source` | Описание |
+| source | Описание |
 | ------ | ----------- |
 | `/*` | Все сообщения, отправляемые с устройства в облако, и уведомления об изменениях двойника из любого модуля или конечного устройства. |
 | `/twinChangeNotifications` | Любые изменения двойника (сообщаемые свойства) из любого модуля или конечного устройства. |

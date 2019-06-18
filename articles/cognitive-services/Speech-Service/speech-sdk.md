@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: wolfma
 ms.openlocfilehash: 2bfe111cbe1e352c16c9cbdd6d2ecc999bbe444f
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66003013"
 ---
 # <a name="about-the-speech-sdk"></a>Сведения о пакете SDK службы "Речь"
@@ -27,7 +27,7 @@ ms.locfileid: "66003013"
 
 ## <a name="get-the-sdk"></a>Получение пакета SDK
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 Для Windows поддерживаются следующие языки:
 
@@ -66,7 +66,7 @@ sudo apt-get install libssl1.0.2 libasound2
 
 * C++: скачайте пакет SDK в виде [пакета TAR](https://aka.ms/csspeech/linuxbinary) и распакуйте файлы в папку по своему усмотрению. В таблице ниже показана структура папок пакета SDK:
 
-  |`Path`|Описание|
+  |Путь|Описание|
   |-|-|
   |`license.md`|Лицензия|
   |`ThirdPartyNotices.md`|Уведомления сторонних производителей|

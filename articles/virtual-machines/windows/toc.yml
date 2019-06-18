@@ -2,9 +2,9 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Сведения о виртуальных машинах Azure
+    - name: Сведения о Виртуальных машинах
       href: overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание виртуальной машины с помощью портала
@@ -15,23 +15,23 @@
       href: quick-create-cli.md
 - name: Учебники
   items:
-    - name: 1. Создание виртуальной машины и управление ею
+    - name: "1.\_Создание виртуальной машины и управление ею"
       href: tutorial-manage-vm.md
-    - name: 2. Создание дисков и управление ими
+    - name: "2.\_Создание дисков и управление ими"
       href: tutorial-manage-data-disk.md
-    - name: 3. Автоматизация настройки
+    - name: "3.\_Автоматизация настройки"
       href: tutorial-automate-vm-deployment.md
-    - name: 4. Создание образов виртуальных машин
+    - name: "4.\_Создание образов виртуальных машин"
       href: tutorial-custom-images.md
-    - name: 5. Высокодоступные виртуальные машины
+    - name: "5.\_Высокодоступные виртуальные машины"
       href: tutorial-availability-sets.md
-    - name: 6. Создание масштабируемого набора
+    - name: "6.\_Создание масштабируемого набора"
       href: tutorial-create-vmss.md
-    - name: 7. Балансировка нагрузки виртуальных машин
+    - name: "7.\_Распределение нагрузки виртуальных машин"
       href: tutorial-load-balancer.md
-    - name: 8. Управление сетями
+    - name: "8.\_Управление сетями"
       href: tutorial-virtual-network.md
-    - name: 9. Резервное копирование виртуальных машин
+    - name: "9.\_Резервное копирование виртуальных машин"
       href: tutorial-backup-vms.md
     - name: "10.\_Управление виртуальными машинами"
       href: tutorial-govern-resources.md
@@ -40,15 +40,15 @@
       href: tutorial-monitoring.md
     - name: "12.\_Управление безопасностью виртуальных машин"
       href: tutorial-azure-security.md
-    - name: 13. Установка стека SQL\IIS\.NET
+    - name: "13.\_Установка стека SQL\\IIS\\.NET"
       href: tutorial-iis-sql.md
-    - name: 14. Защита веб-сервера с помощью SSL
+    - name: "14.\_Защита веб-сервера с помощью SSL"
       href: tutorial-secure-web-server.md
 - name: Примеры
   items:
     - name: PowerShell
       href: powershell-samples.md
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: cli-samples.md
 - name: Основные понятия
   items:
@@ -70,22 +70,22 @@
         - name: Оптимизированные для вычислений
           href: sizes-compute.md
           displayName: Fsv2 Fs F-series
-        - name: Оптимизированные для памяти
+        - name: Оптимизированные для операций в памяти
           href: sizes-memory.md
           displayName: Esv3 Ev3 M-series GS G-series DSv2 Dv2
           items:
             - name: Ограниченное число виртуальных ЦП
               href: constrained-vcpu.md
-        - name: Оптимизированные для хранилища
+        - name: Оптимизированные для операций в хранилище
           displayName: ls
           href: sizes-storage.md
           items:
             - name: Оптимизация производительности
               href: storage-performance.md
-        - name: Оптимизированные для GPU
-          displayName: NV NVv2 NC NCv2 NCv3 ND
-          href: sizes-gpu.md
+        - name: Ускорение вычислений
           items:
+            - name: Оптимизированные для GPU
+              href: sizes-gpu.md
             - name: Настройка драйверов GPU
               href: n-series-driver-setup.md
         - name: Для высокопроизводительных вычислений
@@ -128,11 +128,11 @@
       href: states-lifecycle.md
     - name: Мониторинг
       href: monitor.md
-    - name: Архивация и восстановление
+    - name: Резервное копирование и восстановление
       href: backup-recovery.md
     - name: Пример инфраструктуры
       href: infrastructure-example.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Создание виртуальных машин
       items:
@@ -140,7 +140,7 @@
           href: csharp.md
         - name: Использование специализированного диска
           items:
-            - name: Microsoft Azure
+            - name: Портал
               href: create-vm-specialized-portal.md
             - name: PowerShell
               href: create-vm-specialized.md
@@ -157,7 +157,7 @@
           href: ps-template.md
         - name: Подключение к виртуальной машине
           href: connect-logon.md
-        - name: Использование лицензии с преимуществом гибридного использования Azure
+        - name: Использование лицензии с Преимуществом гибридного использования Azure
           href: hybrid-use-benefit-licensing.md
         - name: "Использование прав на мультитенантное размещение для Windows\_10"
           href: windows-desktop-multitenant-hosting-deployment.md
@@ -165,7 +165,7 @@
       items:
         - name: JIT-доступ
           href: ../../security-center/security-center-just-in-time.md
-        - name: шифрование;
+        - name: Шифрование
           href: encrypt-disks.md
           displayName: encryption
         - name: Использование WinRM
@@ -174,7 +174,7 @@
           href: ../../role-based-access-control/overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
         - name: Использование политик
           href: policy.md
-        - name: создать хранилище ключей;
+        - name: Создание хранилища ключей
           href: key-vault-setup.md
     - name: Защита виртуальных машин
       items:
@@ -243,7 +243,7 @@
           href: prepay-reserved-vm-instances.md
         - name: Основные сведения о резервировании в Azure
           href: ../../billing/billing-save-compute-costs-reservations.md
-        - name: Гибкость размеров для экземпляров виртуальных машин
+        - name: Гибкость размера экземпляра виртуальной машины
           href: reserved-vm-instance-size-flexibility.md
     - name: Использование образов
       items:
@@ -253,11 +253,11 @@
               href: shared-image-galleries.md
             - name: PowerShell
               href: shared-images.md
-            - name: Microsoft Azure
+            - name: Портал
               href: shared-images-portal.md
-            - name: Интерфейс командной строки
+            - name: CLI
               href: ../linux/shared-images.md
-            - name: Microsoft Azure
+            - name: Портал
               href: shared-images-portal.md
             - name: Совместное использование образов в клиентах
               href: share-images-across-tenants.md
@@ -291,13 +291,13 @@
           href: build-image-with-packer.md
         - name: Использование образов клиентских версий Windows
           href: client-images.md
-        - name: Загрузка существующего диска
+        - name: Скачивание существующего диска
           href: download-vhd.md
     - name: Высокая доступность и масштабирование
       items:
-        - name: Масштабируемые наборы виртуальных машин Microsoft Azure
+        - name: Масштабируемые наборы виртуальных машин
           href: ../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
-        - name: высокую доступность;
+        - name: Высокий уровень доступности
           href: manage-availability.md
         - name: Вертикальное масштабирование
           href: vertical-scaling-automation.md
@@ -305,7 +305,7 @@
           items:
             - name: PowerShell
               href: create-powershell-availability-zone.md
-            - name: Microsoft Azure
+            - name: Портал
               href: create-portal-availability-zone.md
     - name: Использование средств автоматизации
       items:
@@ -315,7 +315,7 @@
           href: publish-web-app-from-visual-studio.md
     - name: Запуск приложений
       items:
-        - name: SQL Server;
+        - name: SQL Server
           href: sql/virtual-machines-windows-sql-server-iaas-overview.md
         - name: MongoDB
           href: install-mongodb.md
@@ -328,11 +328,11 @@
         - name: Высокопроизводительные вычисления (HPC)
           href: hpcpack-cluster-options.md
           items:
-            - name: Кластер пакета HPC 2016
+            - name: "Кластер пакета HPC\_2016"
               href: hpcpack-2016-cluster.md
-            - name: Интеграция пакета HPC 2016 с Azure Active Directory
+            - name: "Интеграция пакета HPC\_2016 с Azure Active Directory"
               href: hpcpack-cluster-active-directory.md
-            - name: "Головной узел пакета HPC 2012\_R2"
+            - name: "Головной узел пакета HPC\_2012\_R2"
               href: hpcpack-cluster-headnode.md
             - name: "Отправка локальных заданий в пакет HPC 2012\_R2"
               href: hpcpack-cluster-submit-jobs.md
@@ -358,11 +358,11 @@
           href: incremental-snapshots.md
         - name: Миграция и преобразование
           items:
-            - name: Переход между хранилищами класса "Стандартный" и "Премиум" для дисков
+            - name: Переход между хранилищами ценовых категорий "Стандартный" и "Премиум" для дисков
               href: convert-disk-storage.md
-            - name: Миграция в хранилище класса Premium с помощью Azure Site Recovery
+            - name: Миграция в хранилище ценовой категории "Премиум" с помощью Azure Site Recovery
               href: migrate-to-premium-storage-using-azure-site-recovery.md
-            - name: Переход на управляемые диски
+            - name: Переход на Управляемые диски
               href: migrate-to-managed-disks.md
             - name: Переключение виртуальной машины с неуправляемых дисков на управляемые
               href: convert-unmanaged-to-managed-disks.md
@@ -370,7 +370,7 @@
           items:
             - name: Включение ускорителя записи
               href: how-to-enable-write-accelerator.md
-            - name: Включение дисков SSD ценовой категории "Ультра"
+            - name: Включение дисков SSD (цен. категория "Ультра")
               href: disks-enable-ultra-ssd.md
             - name: Тест производительности диска
               href: disks-benchmarks.md
@@ -403,9 +403,9 @@
           href: ../../dns/dns-for-azure-services.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
     - name: Настройка управляемых удостоверений
       items:
-        - name: Microsoft Azure
+        - name: Портал
           href: /azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm?context=azure/virtual-machines/windows/context/windows-vm-context
-        - name: Интерфейс командной строки
+        - name: CLI
           href: /azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm?context=azure/virtual-machines/windows/context/windows-vm-context
         - name: PowerShell
           href: /azure/active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm?context=azure/virtual-machines/windows/context/windows-vm-context
@@ -447,13 +447,13 @@
               href: migration-classic-resource-manager-errors.md
             - name: 'Средства миграции, созданные сообществом'
               href: migration-classic-resource-manager-community-tools.md
-            - name: Часто задаваемые вопросы
+            - name: Вопросы и ответы
               href: migration-classic-resource-manager-faq.md
 - name: Устранение неполадок
   href: ../troubleshooting/index.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/vm
     - name: Azure PowerShell
       href: /powershell/azureps-cmdlets-docs
@@ -467,7 +467,7 @@
       href: 'https://azure.microsoft.com/develop/python/'
     - name: REST для вычислений
       href: /rest/api/compute
-    - name: REST для управляемых дисков
+    - name: REST для Управляемых дисков
       href: /rest/api/compute/disks
     - name: Шаблон Resource Manager
       displayName: ARM
@@ -484,11 +484,11 @@
       href: 'https://azure.microsoft.com/documentation/templates'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/#Linux'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-virtual-machine'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=virtual-machines'
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: faq.md

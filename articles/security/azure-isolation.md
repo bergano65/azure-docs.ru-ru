@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
 ms.openlocfilehash: b8142551d9c20c18d83c256b3f07a0deb291577c
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66147653"
 ---
 # <a name="isolation-in-the-azure-public-cloud"></a>Изоляция в общедоступном облаке Azure
@@ -247,7 +247,7 @@ Azure предлагает следующие типы шифрования дл
 
 -   [Шифрование дисков Azure](https://docs.microsoft.com/azure/security/azure-security-disk-encryption) позволяет шифровать диски ОС и диски данных, используемые виртуальными машинами IaaS.
 
-#### <a name="azure-disk-encryption"></a>Шифрование диска Azure
+#### <a name="azure-disk-encryption"></a>Дисковое шифрование Azure
 [Шифрование дисков Azure](https://docs.microsoft.com/azure/security/azure-security-disk-encryption) для виртуальных машин помогает соблюдать корпоративные требования к безопасности и соответствию. Эта служба выполняет шифрование дисков виртуальных машин (загрузочных дисков и дисков данных) с использованием ключей и политик, которыми вы управляете в [Azure Key Vault](https://azure.microsoft.com/services/key-vault/).
 
 Шифрование дисков для Windows основано на [шифровании дисков Microsoft BitLocker](https://technet.microsoft.com/library/cc732774.aspx), а аналогичное решение для Linux использует шифрование [dm-crypt](https://en.wikipedia.org/wiki/Dm-crypt).

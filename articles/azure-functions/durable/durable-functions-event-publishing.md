@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: glenga
 ms.openlocfilehash: c07a42349fbd81a46b1b7cd9bcad1978f891a6b2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60733771"
 ---
 # <a name="durable-functions-publishing-to-azure-event-grid-preview"></a>Публикации устойчивых функций в службе "Сетка событий Azure" (предварительная версия)
@@ -42,7 +42,7 @@ ms.locfileid: "60733771"
 * [Краткие руководства по EventGrid: создание пользовательского события с помощью PowerShell](https://docs.microsoft.com/azure/event-grid/custom-event-quickstart-powershell)
 * [Краткие руководства по EventGrid: создание пользовательского события с помощью портала Azure](https://docs.microsoft.com/azure/event-grid/custom-event-quickstart-portal)
 
-### <a name="create-a-resource-group"></a>Создать группу ресурсов
+### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Создайте группу ресурсов с помощью команды `az group create`. В настоящее время "Сетка событий Azure" не поддерживает все регионы. Сведения о поддерживаемых регионах см. в разделе ["Сетка событий Azure" Обзор](https://docs.microsoft.com/azure/event-grid/overview).
 
@@ -250,19 +250,19 @@ namespace LifeCycleEventSpike
 
 В приведенном ниже списке описана схема событий жизненного цикла:
 
-* **`id`**. Уникальный идентификатор для события сетки событий.
-* **`subject`**. Путь к субъекту событий. `durable/orchestrator/{orchestrationRuntimeStatus}`. `{orchestrationRuntimeStatus}` будет `Running`, `Completed`, `Failed` и `Terminated`.  
-* **`data`**. Определенные параметры Устойчивых функций.
-  * **`hubName`**. Имя TaskHub](durable-functions-task-hubs.md).
-  * **`functionName`**. Имя функции оркестратора.
-  * **`instanceId`**. Идентификатор экземпляра Устойчивых функций.
-  * **`reason`**. Дополнительные данные, связанные с событием отслеживания. Дополнительные сведения см. в статье [Диагностика в устойчивых функциях (Функции Azure)](durable-functions-diagnostics.md).
-  * **`runtimeStatus`**. Состояние среды выполнения оркестрации. "Running", "Completed", "Failed", "Canceled".
-* **`eventType`**: «orchestratorEvent»
-* **`eventTime`**. Время события (UTC).
-* **`dataVersion`**. Версия схемы события жизненного цикла.
-* **`metadataVersion`**.  Версия метаданных.
-* **`topic`**. Ресурс раздела сетки событий.
+* **`id`** . Уникальный идентификатор для события сетки событий.
+* **`subject`** . Путь к субъекту событий. `durable/orchestrator/{orchestrationRuntimeStatus}`. `{orchestrationRuntimeStatus}` будет `Running`, `Completed`, `Failed` и `Terminated`.  
+* **`data`** . Определенные параметры Устойчивых функций.
+  * **`hubName`** . Имя TaskHub](durable-functions-task-hubs.md).
+  * **`functionName`** . Имя функции оркестратора.
+  * **`instanceId`** . Идентификатор экземпляра Устойчивых функций.
+  * **`reason`** . Дополнительные данные, связанные с событием отслеживания. Дополнительные сведения см. в статье [Диагностика в устойчивых функциях (Функции Azure)](durable-functions-diagnostics.md).
+  * **`runtimeStatus`** . Состояние среды выполнения оркестрации. "Running", "Completed", "Failed", "Canceled".
+* **`eventType`** : «orchestratorEvent»
+* **`eventTime`** . Время события (UTC).
+* **`dataVersion`** . Версия схемы события жизненного цикла.
+* **`metadataVersion`** .  Версия метаданных.
+* **`topic`** . Ресурс раздела сетки событий.
 
 ## <a name="how-to-test-locally"></a>Локальное тестирование
 

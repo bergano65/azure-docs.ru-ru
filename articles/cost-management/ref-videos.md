@@ -11,17 +11,17 @@ ms.service: cost-management
 manager: benshy
 ms.custom: seodec18
 ms.openlocfilehash: f96c78e636b873a0238f6e34d9b80d1036e5ba4f
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65969113"
 ---
 # <a name="cloudyn-walk-through-training-videos"></a>Пошаговые учебные видеоматериалы о Cloudyn
 
 В следующих видео показано, как начать работу со службой Cloudyn и ознакомиться с доступными возможностями. Служба Cloudyn позволяет отслеживать и оптимизировать затраты в нескольких облаках, включая Microsoft Azure, Amazon Web Services и Google Cloud Platform.
 
-## <a name="overview-video"></a>Видеообзор
+## <a name="overview-video"></a>Обзорное видео
 
 [Основные сведения о Cloudyn](https://youtu.be/NWIRny6Wpsk)
 

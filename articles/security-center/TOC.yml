@@ -74,8 +74,9 @@
     - name: Видимость на уровне клиента
       href: security-center-management-groups.md
     - name: Реализация рекомендаций по вопросам безопасности
-      href: security-center-recommendations.md
       items:
+        - name: Что такое рекомендации по безопасности
+          href: security-center-recommendations.md
         - name: Повышение уровня безопасности
           href: security-center-monitoring.md
         - name: Защита компьютеров и приложений
@@ -181,6 +182,8 @@
       href: /learn/browse/?term=securityS
     - name: Управление данными пользователей
       href: security-center-privacy.md
+    - name: Управление Интернетом вещей
+      href: 'https://docs.microsoft.com/en-us/azure/asc-for-iot/'
     - name: Вопросы и ответы
       href: security-center-faq.md
     - name: Безопасность в Azure
