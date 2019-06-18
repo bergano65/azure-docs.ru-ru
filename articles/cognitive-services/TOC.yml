@@ -15,6 +15,8 @@
       href: cognitive-services-apis-create-account.md
     - name: Аутентификация
       href: authentication.md
+    - name: Ведение журнала диагностики
+      href: diagnostic-logging.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure
