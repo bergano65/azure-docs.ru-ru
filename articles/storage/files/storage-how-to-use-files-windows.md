@@ -9,10 +9,10 @@ ms.date: 06/07/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 899bf4bbf201ae785a4f49c7f278de75fb48945e
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64926259"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
@@ -24,15 +24,15 @@ ms.locfileid: "64926259"
 
 | Версия Windows        | Версия SMB | Возможность подключения на виртуальной машине Azure | Возможность подключения в локальной среде |
 |------------------------|-------------|-----------------------|----------------------|
-| Windows Server 2019    | SMB 3.0 | Yes | Yes |
-| Windows 10<sup>1</sup> | SMB 3.0 | Yes | Yes |
-| Semi-Annual Channel<sup>2</sup> для Windows Server | SMB 3.0 | Yes | Yes |
-| Windows Server 2016    | SMB 3.0     | Yes                   | Yes                  |
-| Windows 8.1            | SMB 3.0     | Yes                   | Yes                  |
-| Windows Server 2012 R2 | SMB 3.0     | Yes                   | Yes                  |
-| Windows Server 2012    | SMB 3.0     | Yes                   | Yes                  |
-| Windows 7              | SMB 2.1     | Yes                   | Нет                    |
-| Windows Server 2008 R2 | SMB 2.1     | Yes                   | Нет                    |
+| Windows Server 2019    | SMB 3.0 | Да | Да |
+| Windows 10<sup>1</sup> | SMB 3.0 | Да | Да |
+| Semi-Annual Channel<sup>2</sup> для Windows Server | SMB 3.0 | Да | Да |
+| Windows Server 2016    | SMB 3.0     | Да                   | Да                  |
+| Windows 8.1            | SMB 3.0     | Да                   | Да                  |
+| Windows Server 2012 R2 | SMB 3.0     | Да                   | Да                  |
+| Windows Server 2012    | SMB 3.0     | Да                   | Да                  |
+| Windows 7              | SMB 2.1     | Да                   | Нет                   |
+| Windows Server 2008 R2 | SMB 2.1     | Да                   | Нет                   |
 
 <sup>1</sup> Windows 10 версий 1507, 1607, 1703, 1709, 1803 и 1809.  
 <sup>3</sup> Windows Server версий 1709 и 1803.
@@ -242,7 +242,7 @@ Remove-PSDrive -Name <desired-drive-letter>
 | Windows Server 2012 R2                    | Enabled              | Удаление с помощью функции Windows | 
 | Windows 8.1                               | Enabled              | Удаление с помощью функции Windows | 
 | Windows Server 2012                       | Enabled              | Отключение с помощью реестра       | 
-| Windows Server 2008 R2                    | Enabled              | Отключение с помощью реестра       |
+| Windows Server 2008 R2                    | Enabled              | Отключение с помощью реестра       |
 | Windows 7                                 | Enabled              | Отключение с помощью реестра       | 
 
 ### <a name="auditing-smb-1-usage"></a>Аудит использования SMB 1

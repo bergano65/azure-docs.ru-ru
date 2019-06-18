@@ -1,8 +1,8 @@
 ---
 title: H264 Multiple Bitrate 4x3 для iOS | Документация Майкрософт
 description: Этот раздел содержит общие сведения о предустановке задачи **H264 Multiple Bitrate 4x3 for iOS**.
-author: WenJason
-manager: digimobile
+author: Juliako
+manager: femila
 editor: ''
 services: media-services
 documentationcenter: ''
@@ -12,14 +12,13 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-origin.date: 03/18/2019
-ms.date: 04/01/2019
-ms.author: v-jay
+ms.date: 03/18/2019
+ms.author: juliako
 ms.openlocfilehash: 45dbaea4e2c6f8cdbe3d33df5d3b82b9df519ff2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61463656"
 ---
 # <a name="h264-multiple-bitrate-4x3-for-ios"></a>H264 Multiple Bitrate 4x3 для iOS
@@ -30,7 +29,7 @@ ms.locfileid: "61463656"
  Данная предустановка создает набор из 8 MP4-файлов с одинаковыми группами GOP, скоростями 200–8500 Кбит/с и стереофоническим звуком в формате AAC. Чтобы получить дополнительные сведения о профиле, скорости, частоте выборки и т. п. данной предустановки, ознакомьтесь с кодом XML или JSON ниже. Описание каждого элемента в этих предустановках и его допустимых значений см. в разделе [Схема Media Encoder Standard](media-services-mes-schema.md).  
   
 > [!NOTE]
->  При изменении значений `Width` и `Height` слоев убедитесь в сохранении пропорций. Пример. 1920x1080, 1280x720, 1080x576, 640x360. Не следует использовать смешанные сочетания пропорций, например 1280x720, 720x480, 640x360.  
+>  При изменении значений `Width` и `Height` слоев убедитесь в сохранении пропорций. Пример: 1920x1080, 1280x720, 1080x576, 640x360. Не следует использовать смешанные сочетания пропорций, например 1280x720, 720x480, 640x360.  
   
  XML  
   

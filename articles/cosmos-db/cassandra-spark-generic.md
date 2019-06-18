@@ -9,10 +9,10 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: 75d2930363b6ad1aeace22d7529df04f31deefe5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60893643"
 ---
 # <a name="connect-to-azure-cosmos-db-cassandra-api-from-spark"></a>Подключитесь к API Cassandra для Azure Cosmos DB из оболочки Spark
@@ -49,7 +49,7 @@ ms.locfileid: "60893643"
 | spark.cassandra.output.throughput_mb_per_sec  | Нет | Определяет общую пропускную способность записи для каждого исполнителя. Этот параметр может использоваться как верхнее ограничение пропускной способности задания Spark, так и как основа подготовленной пропускной способности коллекции Cosmos DB.   |
 | spark.cassandra.input.reads_per_sec| Нет   | Определяет общую пропускную способность чтения для каждого исполнителя. Этот параметр может использоваться как верхнее ограничение пропускной способности задания Spark, так и как основа подготовленной пропускной способности коллекции Cosmos DB.  |
 | spark.cassandra.output.batch.grouping.buffer.size |  1000  | Определяет количество пакетов для одной задачи Spark, которая может сохраниться в памяти перед отправкой в API Cassandra |
-| spark.cassandra.connection.keep_alive_ms | 60000 | Определяет период времени, до которого доступны соединения, которые не используются. | 
+| spark.cassandra.connection.keep_alive_ms | 60 000 | Определяет период времени, до которого доступны соединения, которые не используются. | 
 
 Настройте пропускную способность и степень параллелизма этих параметров, учитывая ожидаемую рабочую нагрузку ваших заданий Spark и пропускную способность, которую вы предоставили для своей учетной записи Cosmos DB.
 

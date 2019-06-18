@@ -14,15 +14,15 @@ ms.topic: conceptual
 ms.date: 04/19/2019
 ms.author: juliako
 ms.openlocfilehash: 7f0a071012685ee192d4f866396a5953d0a4508c
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64937249"
 ---
 # <a name="azure-media-services-overview"></a>Общие сведения о службах мультимедиа Azure 
 
-> [!div class="op_single_selector" title1="Select the version of Media Services that you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию служб мультимедиа, в которых используется:"]
 > * [Версия 3](../latest/media-services-overview.md)
 > * [Версия 2](media-services-overview.md)
 
@@ -77,7 +77,7 @@ ms.locfileid: "64937249"
 
 Дополнительные сведения см. в статье [Scenarios and availability of features and services across data centers](scenarios-and-availability.md) (Сценарии и доступность функций служб мультимедиа в центрах обработки данных).
 
-## <a name="service-level-agreement-sla"></a>Соглашение об уровне обслуживания (SLA):
+## <a name="service-level-agreement-sla"></a>Соглашение об уровне обслуживания
 
 Дополнительные сведения можно найти в разделе [Соглашение об уровне обслуживания Microsoft Azure](https://azure.microsoft.com/support/legal/sla/).
 

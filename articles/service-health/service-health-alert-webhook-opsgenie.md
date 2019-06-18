@@ -1,20 +1,19 @@
 ---
-title: Настройка оповещений о работоспособности служб Azure для OpsGenie | Документация Майкрософт
+title: Отправлять оповещения о работоспособности служб Azure с помощью веб-перехватчиков OpsGenie
 description: Передача в экземпляр OpsGenie персонализированных уведомлений о событиях работоспособности служб.
 author: stephbaron
 ms.author: stbaron
 ms.topic: article
 ms.service: service-health
-ms.workload: Supportability
-ms.date: 11/14/2017
-ms.openlocfilehash: 79a77fff206831c0f9b3bb73ad33f951d99e2c81
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 06/10/2019
+ms.openlocfilehash: fab99b7093ac3f18f6313273d21905e0a3ed7e5b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60782215"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67067168"
 ---
-# <a name="configure-service-health-alerts-with-opsgenie"></a>Настройка оповещений о работоспособности служб для OpsGenie
+# <a name="send-azure-service-health-alerts-with-opsgenie-using-webhooks"></a>Отправлять оповещения о работоспособности служб Azure с помощью веб-перехватчиков OpsGenie
 
 В этой статье показано, как с помощью веб-перехватчика настроить в OpsGenie оповещения о работоспособности служб Azure. Используя интеграцию работоспособности служб Azure в [OpsGenie](https://www.opsgenie.com/), можно перенаправлять в OpsGenie оповещения о работоспособности служб Azure. OpsGenie может определить, каких лиц следует уведомить, на основе расписаний по вызовам, используя электронную почту, текстовые сообщения (SMS), телефонные звонки, push-уведомления iOS и Android и выполняя эскалацию оповещений до их подтверждения или закрытия.
 
@@ -47,7 +46,7 @@ ms.locfileid: "60782215"
 
     a. **Тип действия:** *webhook*
 
-    2. **Подробности:** **URL-адрес интеграции** для OpsGenie, который вы сохранили ранее.
+    2\. **Подробности:** **URL-адрес интеграции** для OpsGenie, который вы сохранили ранее.
 
     c. **Имя:** имя, псевдоним или идентификатор веб-перехватчика.
 
@@ -64,7 +63,7 @@ ms.locfileid: "60782215"
 
     a. **Тип действия:** *webhook*
 
-    2. **Подробности:** **URL-адрес интеграции** для OpsGenie, который вы сохранили ранее.
+    2\. **Подробности:** **URL-адрес интеграции** для OpsGenie, который вы сохранили ранее.
 
     c. **Имя:** имя, псевдоним или идентификатор веб-перехватчика.
 

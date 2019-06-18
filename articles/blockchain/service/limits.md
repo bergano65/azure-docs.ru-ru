@@ -11,21 +11,21 @@ ms.service: azure-blockchain
 ms.reviewer: janders
 manager: femila
 ms.openlocfilehash: 169ec7a8ef407af3f754046aa8e3b06793a7e962
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65028175"
 ---
 # <a name="limits-in-azure-blockchain-service"></a>Ограничения в службе Azure Blockchain
 
 Служба Azure Blockchain имеет служба и функциональных возможностей, таких как количество узлов, которые могут иметь член, консорциума ограничения и объеме хранилища.
 
-## <a name="pricing-tier"></a>Ценовой уровень
+## <a name="pricing-tier"></a>Ценовая категория
 
 Максимальные значения для транзакции и узлы проверяющий элемент управления зависят от того, ли вам подготовить службу Блокчейн Azure на "базовый" или уровней "стандартный".
 
-| Ценовой уровень | Максимальный транзакции узлов | Максимальный средства проверки узлов |
+| Ценовая категория | Максимальный транзакции узлов | Максимальный средства проверки узлов |
 |:---|:---:|:---:|
 | базовая; | 10 | 1 |
 | Стандартная | 10 | 2 |

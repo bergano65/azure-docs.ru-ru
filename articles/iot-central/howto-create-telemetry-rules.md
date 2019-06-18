@@ -3,17 +3,17 @@ title: Создание правил телеметрии и управлени�
 description: Правила телеметрии Azure IoT Central позволяют отслеживать устройства практически в реальном времени и автоматически вызывать действия (например, отправлять сообщение электронной почты) при срабатывании правила.
 author: ankitgupta
 ms.author: ankitgup
-ms.date: 02/02/2019
+ms.date: 06/09/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: de4fba88784f41485b446f0f31cccb9a43092a3c
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 8684301b83e01989c745b63848995142cb766188
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65464359"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67052966"
 ---
 # <a name="create-a-telemetry-rule-and-set-up-notifications-in-your-azure-iot-central-application"></a>Создание правила телеметрии и настройка уведомлений в приложении Azure IoT Central
 

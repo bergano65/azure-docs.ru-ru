@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry, calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cafe81a1b5ab6d26e71eff05e355d2ed79c4d5e7
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: d006bd36cc8f8c84fb13bae43702a3e472f8876a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66119380"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67113293"
 ---
 # <a name="enable-combined-security-information-registration-preview"></a>Включение в сочетании безопасности сведения о регистрации (Предварительная версия)
 
@@ -53,7 +53,7 @@ ms.locfileid: "66119380"
 
 ## <a name="conditional-access-policies-for-combined-registration"></a>Политики условного доступа для объединенных регистрации
 
-Обеспечение безопасности, когда и каким образом регистрация пользователей для многофакторной идентификации Azure и самостоятельного сброса паролей теперь возможна с помощью действия пользователя в политике условного доступа. Эта функция предварительной версии доступна для организаций, которые включили [сочетании предварительной версии регистрации](../authentication/concept-registration-mfa-sspr-combined.md). Эта функция может быть включена в организациях, откуда угодно регистрации пользователей для многофакторной идентификации Azure и SSPR из центрального расположения, такие как надежного сетевого расположения во время адаптации отдела Кадров. Дополнительные сведения о создании надежных расположений в условном доступе см. в статье [Какова условия расположения в условном доступе Azure Active Directory?](../conditional-access/location-condition.md#named-locations)
+Обеспечение безопасности, когда и каким образом регистрация пользователей для многофакторной идентификации Azure и самостоятельного сброса паролей теперь возможна с помощью действия пользователя в политике условного доступа. Эта функция предварительной версии доступна для организаций, которые включили [сочетании предварительной версии регистрации](../authentication/concept-registration-mfa-sspr-combined.md). Эта функция может быть включена в организациях, откуда угодно регистрации пользователей для многофакторной идентификации Azure и SSPR из центрального расположения, такие как надежного сетевого расположения во время адаптации отдела Кадров. Дополнительные сведения о создании надежных расположений в условном доступе см. в статье [Какова условия расположения в Azure Active Directory условного доступа?](../conditional-access/location-condition.md#named-locations)
 
 ### <a name="create-a-policy-to-require-registration-from-a-trusted-location"></a>Создать политику, чтобы требовать регистрацию из надежных источников
 
@@ -92,4 +92,4 @@ ms.locfileid: "66119380"
 
 [Устранение неполадок в сочетании регистрации сведений о безопасности](howto-registration-mfa-sspr-combined-troubleshoot.md)
 
-[Что такое условие расположения в условном доступе Azure Active Directory?](../conditional-access/location-condition.md)
+[Что такое условие расположения в Azure Active Directory условного доступа?](../conditional-access/location-condition.md)
