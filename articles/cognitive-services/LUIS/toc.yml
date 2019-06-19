@@ -85,12 +85,24 @@
           displayName: roles
         - name: Извлечение неструктурированных данных
           href: luis-tutorial-pattern-any.md
-    - name: "Использование Bot Framework версии\_4"
+    - name: Использование с ботом
       items:
         - name: 'Использование C#'
-          href: luis-csharp-tutorial-bf-v4.md
+          items:
+            - name: 1. Создание простого бота
+              href: luis-csharp-tutorial-bf-v4.md
+              displayName: 'bot framework, framework, sdk, abs'
+            - name: 2. Добавление телеметрии в Application Insights
+              href: luis-tutorial-bot-csharp-appinsights.md
+              displayName: 'Application insight, kusto'
         - name: Использование Node.js
-          href: luis-nodejs-tutorial-bf-v4.md
+          items:
+            - name: 1. Создание простого бота
+              displayName: 'bot framework, framework, sdk, abs'
+              href: luis-nodejs-tutorial-bf-v4.md
+            - name: 2. Добавление телеметрии в Application Insights
+              displayName: 'Application insight, kusto'
+              href: luis-tutorial-bot-nodejs-appinsights.md
 - name: Примеры
   items:
     - name: Примеры кода
@@ -200,14 +212,6 @@
           href: luis-tutorial-bing-spellcheck.md
         - name: Со службой "Речь"
           href: ../speech-service/how-to-recognize-intents-from-speech-csharp.md?toc=/azure/cognitive-services/luis/toc.json&bc=/azure/cognitive-services/luis/breadcrumb/toc.json
-        - name: Бот с использованием Application Insights
-          items:
-            - name: Node.js
-              displayName: 'Application insight, kusto'
-              href: luis-tutorial-bot-nodejs-appinsights.md
-            - name: 'C#'
-              displayName: 'Application insight, kusto'
-              href: luis-tutorial-bot-csharp-appinsights.md
     - name: Повышение точности прогнозирования
       items:
         - name: Использование панели мониторинга

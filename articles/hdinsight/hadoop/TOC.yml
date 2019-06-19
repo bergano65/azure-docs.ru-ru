@@ -2,26 +2,17 @@
   href: /azure/hdinsight
 - name: Обзор
   items:
-    - name: Сведения об Apache Hadoop в HDInsight
+    - name: Общие сведения об Apache Hadoop в HDInsight
       href: apache-hadoop-introduction.md
-      maintainContext: true
-    - name: Архитектура Apache Hadoop в HDInsight
-      href: ../hdinsight-hadoop-architecture.md
-      maintainContext: true
-    - name: Компоненты Apache Hadoop в HDInsight
-      href: ../hdinsight-component-versioning.md
-      maintainContext: true
-    - name: "HDInsight\_4.0"
-      href: ../hdinsight-version-release.md
       maintainContext: true
 - name: Краткие руководства
   items:
     - name: "Создание кластера Apache Hadoop\_— портал"
       href: apache-hadoop-linux-create-cluster-get-started-portal.md
-    - name: Создание кластера Apache Hadoop с использованием шаблона Resource Manager
+    - name: "Создание кластера Apache Hadoop\_— шаблон"
       displayName: 'resource manager template, arm template, resource manager group'
       href: apache-hadoop-linux-tutorial-get-started.md
-- name: Учебники
+- name: Руководства
   items:
     - name: 'Выполнение операций извлечения, преобразования и загрузки'
       href: ../hdinsight-analyze-flight-delay-data-linux.md
@@ -45,6 +36,15 @@
       maintainContext: true
 - name: Основные понятия
   items:
+    - name: "HDInsight\_4.0"
+      href: ../hdinsight-version-release.md
+      maintainContext: true
+    - name: Архитектура Apache Hadoop в HDInsight
+      href: ../hdinsight-hadoop-architecture.md
+      maintainContext: true
+    - name: Компоненты Apache Hadoop в HDInsight
+      href: ../hdinsight-component-versioning.md
+      maintainContext: true
     - name: Планирование ресурсов кластера
       href: ../hdinsight-capacity-planning.md
       maintainContext: true
@@ -471,9 +471,6 @@
   items:
     - name: Кластеры Windows
       items:
-        - name: Перенос кластеров Windows в кластеры Linux
-          href: ../hdinsight-migrate-from-windows-to-linux.md
-          maintainContext: true
         - name: Перенос решений .NET в кластеры Linux
           href: ../hdinsight-hadoop-migrate-dotnet-to-linux.md
           maintainContext: true

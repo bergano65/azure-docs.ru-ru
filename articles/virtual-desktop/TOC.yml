@@ -44,6 +44,8 @@
       href: configure-vm-gpu.md
     - name: Автоматическое масштабирование узлов сеанса
       href: set-up-scaling-script.md
+    - name: Настройка канала для пользователей Виртуального рабочего стола Windows
+      href: customize-feed-for-virtual-desktop-users.md
     - name: Настройка свойств RDP
       href: customize-rdp-properties.md
 - name: Основные понятия

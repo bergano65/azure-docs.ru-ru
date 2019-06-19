@@ -111,8 +111,16 @@
           items:
             - name: Управление с помощью портала Azure
               href: data-box-portal-ui-admin.md
-            - name: Устранение неполадок с диском Data Box
-              href: data-box-disk-troubleshoot.md
+            - name: Устранение неполадок
+              items:
+                - name: Проблемы при разблокировке
+                  href: data-box-disk-troubleshoot-unlock.md
+                - name: Проблемы при копировании данных
+                  href: data-box-disk-troubleshoot-data-copy.md
+                - name: Проблемы при проверке
+                  href: data-box-disk-troubleshoot.md
+                - name: Проблемы при передаче данных
+                  href: data-box-disk-troubleshoot-upload.md
             - name: Запрос в службу поддержки
               href: data-box-disk-contact-microsoft-support.md
     - name: Data Box Heavy

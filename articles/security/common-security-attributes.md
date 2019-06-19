@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 64accb70561d4c0282b3ee45935d955dba1c67c4
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66474537"
 ---
 # <a name="security-attributes-for-azure-services"></a>Атрибуты безопасности для служб Azure
@@ -195,7 +195,7 @@ ms.locfileid: "66474537"
 
 | Атрибут безопасности | Да/нет | Примечания|
 |---|---|--|
-| Azure Monitor поддержки (Log analytics, Application insights, и т.д.)| Да | Log Analytics поддерживается с помощью журналов диагностики. Дополнительные сведения о мониторинге защищенных рабочих нагрузок Azure Backup с помощью Log Analytics (см. сведения по ссылке https://azure.microsoft.com/blog/monitor-all-azure-backup-protected-workloads-using-log-analytics/)). |
+| Azure Monitor поддержки (Log analytics, Application insights, и т.д.)| Да | Log Analytics поддерживается с помощью журналов диагностики. Дополнительные сведения о мониторинге защищенных рабочих нагрузок Azure Backup с помощью Log Analytics (см. сведения по ссылке https://azure.microsoft.com/blog/monitor-all-azure-backup-protected-workloads-using-log-analytics/) ). |
 
 ### <a name="identity-and-access-management"></a>Управление удостоверениями и доступом
 

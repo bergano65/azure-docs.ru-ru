@@ -7,14 +7,14 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Создание кластера Apache Kafka (портал)
+    - name: "Создание кластера Apache Kafka\_— портал"
       href: apache-kafka-get-started.md
-    - name: Создание кластера Apache Kafka (PowerShell)
+    - name: "Создание кластера Apache Kafka\_— PowerShell"
       href: apache-kafka-quickstart-powershell.md
-    - name: Создание кластера Apache Kafka (шаблон Resource Manager)
+    - name: "Создание кластера Apache Kafka\_— шаблон"
       displayName: 'resource manager template, arm template, resource manager group'
       href: apache-kafka-quickstart-resource-manager-template.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Использование структурированной потоковой передачи Apache Spark
       href: ../hdinsight-apache-kafka-spark-structured-streaming.md
