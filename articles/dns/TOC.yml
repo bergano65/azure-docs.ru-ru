@@ -4,7 +4,9 @@
   items:
     - name: Что такое Azure DNS?
       href: dns-overview.md
-- name: Быстрое начало работы
+    - name: Что собой представляет Частная зона DNS
+      href: private-dns-overview.md
+- name: Краткие руководства
   expanded: true
   items:
     - name: Разрешение имен с помощью портала
@@ -13,14 +15,14 @@
       href: dns-getstarted-powershell.md
     - name: Разрешение имен с помощью CLI
       href: dns-getstarted-cli.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Размещение домена в Azure DNS
       href: dns-delegate-domain-azure-dns.md
     - name: Создание пользовательских записей DNS для веб-приложения
       href: dns-web-sites-custom-domain.md
     - name: Создание частной зоны и записи DNS
-      href: private-dns-getstarted-powershell.md
+      href: private-dns-portal.md
     - name: Записи псевдонимов для диспетчера трафика
       href: tutorial-alias-tm.md
     - name: Записи псевдонимов для общедоступных IP-адресов
@@ -29,32 +31,38 @@
       href: tutorial-alias-rr.md
 - name: Примеры
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: cli-samples.md
 - name: Основные понятия
   items:
+    - name: Частная зона DNS
+      items:
+        - name: "Вопросы и ответы\_— Частная зона DNS"
+          href: dns-faq-private.md
+        - name: Сценарии с использованием частной зоны DNS
+          href: private-dns-scenarios.md
     - name: Зоны и записи
       href: dns-zones-records.md
     - name: Записи псевдонимов
       href: dns-alias.md
     - name: Делегирование с помощью Azure DNS
       href: dns-domain-delegation.md
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: dns-faq.md
-    - name: Использование частных зон DNS
-      href: private-dns-overview.md
-    - name: Сценарии с использованием частной зоны DNS
-      href: private-dns-scenarios.md
     - name: Оповещения и метрики DNS
       href: dns-alerts-metrics.md
     - name: Обратные зоны DNS
       href: dns-reverse-dns-overview.md
     - name: Аварийное восстановление с помощью Azure DNS и диспетчера трафика
       href: ../networking/disaster-recovery-dns-traffic-manager.md
-- name: Практическое руководство
+- name: Руководства
   items:
-    - name: Создание частной зоны и записи DNS с помощью Azure CLI
-      href: private-dns-getstarted-cli.md
+    - name: Частная зона DNS
+      items:
+        - name: "Создание частной зоны\_— CLI"
+          href: private-dns-getstarted-cli.md
+        - name: "Создание частной зоны\_— PowerShell"
+          href: private-dns-getstarted-powershell.md
     - name: Записи псевдонима для веб-приложений с балансировкой нагрузки
       href: dns-alias-appservice.md
     - name: Управление зонами DNS
@@ -103,7 +111,7 @@
       href: 'https://azure.microsoft.com/resources/samples/?service=dns'
     - name: Azure PowerShell
       href: /powershell/module/az.dns
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/network/dns
     - name: .NET
       href: /dotnet/api/microsoft.azure.management.dns.models
@@ -131,7 +139,7 @@
       href: /azure/load-balancer/
     - name: Диспетчер трафика
       href: /azure/traffic-manager/
-    - name: 'веб-приложений:'
+    - name: Веб-приложения
       href: /azure/app-service/
 - name: Ресурсы
   items:
