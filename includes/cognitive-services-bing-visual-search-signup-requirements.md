@@ -5,11 +5,11 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 12/18/2018
 ms.openlocfilehash: 606734726539397c0be0bc01afb3dbfac08b3a2b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66145285"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185567"
 ---
 Необходимо иметь [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с доступом к API-интерфейсам поиска Bing. Вам также понадобится ключ доступа, предоставляемый после оформления подписки в ценовой категории S9, как указано на странице [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/). 
 

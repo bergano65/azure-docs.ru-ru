@@ -9,13 +9,13 @@ ms.date: 09/18/2018
 ms.author: dacoulte
 ms.custom: include file
 ms.openlocfilehash: 9884557d8002d0babbc43722aeb1fb11d647f1e2
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66155364"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185436"
 ---
-## <a name="network"></a>Сеть
+## <a name="network"></a>Network
 
 [!INCLUDE [azure-policy-samples-network-naming](azure-policy-samples-network-nics.md)]
 

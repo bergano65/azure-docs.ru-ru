@@ -1,4 +1,4 @@
-- name: Таблицы Azure
+- name: Azure
   tocHref: /azure/
   topicHref: /azure/index
   items:
@@ -9,7 +9,7 @@
         - name: Управляемые удостоверения для ресурсов Azure
           tocHref: /azure/event-hubs/
           topicHref: /azure/active-directory/managed-identities-azure-resources/index
-- name: Таблицы Azure
+- name: Azure
   tocHref: /azure/
   topicHref: /azure/index
   items:
@@ -20,7 +20,7 @@
         - name: Управляемые удостоверения для ресурсов Azure
           tocHref: /azure/service-bus-messaging/
           topicHref: /azure/active-directory/managed-identities-azure-resources/index
-- name: Таблицы Azure
+- name: Azure
   tocHref: /azure/
   topicHref: /azure/index
   items:
@@ -31,7 +31,7 @@
         - name: Управляемые удостоверения для ресурсов Azure
           tocHref: /azure/app-service/
           topicHref: /azure/active-directory/managed-identities-azure-resources/index
-- name: Таблицы Azure
+- name: Azure
   tocHref: /azure/
   topicHref: /azure/index
   items:

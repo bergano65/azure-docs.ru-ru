@@ -7,18 +7,108 @@ author: nitinme
 manager: nitinme
 ms.service: cognitive-services
 ms.author: nitinme
-ms.date: 06/16/2019
+ms.date: 06/17/2019
 ms.topic: hub-page
-ms.openlocfilehash: aacd85f0f6a583869fe9c879d63b31e7d7d3cccd
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: d7234ca2441310867aa2f60936de0e3f44342ee8
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67163806"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67204005"
 ---
 <div id="main" class="v2">
 <h1>Документация по службам Azure Cognitive Services</h1>
         <p style="font-size: 1.12rem;margin-bottom: 1rem;">Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные алгоритмы, которые могут видеть, слышать, говорить и понимать потребности клиентов с помощью обычных средств связи. Руководства, краткие инструкции, справочники по API и примеры использования.</p>
+
+
+<h2>API-интерфейсы Cognitive Services</h2>
+<ul class="cardsF panelContent singlePanelContent" style="display:flex!important;">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>API компьютерного зрения</h3>
+                        <p><a href="/azure/cognitive-services/computer-vision/">Компьютерное зрение</a></p>
+                        <p><a href="/azure/cognitive-services/Custom-Vision-Service/">Пользовательское визуальное распознавание</a></p>
+                        <p><a href="/azure/cognitive-services/face/">API распознавания лиц</a></p>
+                        <p><a href="https://go.microsoft.com/fwlink/?linkid=2088514"><span>Распознаватель документов&nbsp;<sup style="font-size:70%">предварительная версия</sup></span></a></p>
+                        <p><a href="https://go.microsoft.com/fwlink/?linkid=2088323"><span>Распознаватель рукописного текста&nbsp;<sup style="font-size:70%">предварительная версия</sup></span></a></p>
+                        <p><a href="/azure/cognitive-services/video-indexer/video-indexer-overview">Индексатор видео</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>SAPI</h3>
+                        <p><a href="/azure/cognitive-services/speech-service">Службы "Речь"</a></p>
+                        <p><a href="/azure/cognitive-services/speaker-recognition/home"><span>API распознавания говорящего&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
+                        <p><a href="/azure/cognitive-services/speech/home"><span>API распознавания речи Bing&nbsp;<sup style="font-size:70%">на этапе прекращения использования</sup></span></a></p>
+                        <p><a href="/azure/cognitive-services/translator-speech/"><span>Перевод речи&nbsp;<sup style="font-size:70%">на этапе прекращения использования</sup></span></a></p>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>API речи</h3>
+                        <p><a href="/azure/cognitive-services/luis/">Распознавание речи (LUIS)</a></p>
+                        <p><a href="/azure/cognitive-services/qnamaker/index">QnA Maker</a></p>
+                        <p><a href="/azure/cognitive-services/text-analytics/">Анализ текста</a></p>
+                        <p><a href="/azure/cognitive-services/translator/">Перевод текстов</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>API поиска</h3>
+                        <p><a href="/azure/cognitive-services/bing-news-search/">Поиск новостей Bing</a></p>
+                        <p><a href="/azure/cognitive-services/Bing-Video-Search/">Поиск видео Bing</a></p>
+                        <p><a href="/azure/cognitive-services/bing-web-search/">Поиск в Интернете Bing</a></p>
+                        <p><a href="/azure/cognitive-services/Bing-Autosuggest">Автозаполнение Bing</a></p>
+                        <p><a href="/azure/cognitive-services/bing-custom-search">Пользовательский поиск Bing</a></p>
+                        <p><a href="/azure/cognitive-services/bing-entities-search/">Поиск сущностей Bing</a></p>
+                        <p><a href="/azure/cognitive-services/bing-image-search">Поиск изображений Bing</a></p>
+                        <p><a href="/azure/cognitive-services/bing-visual-search">Визуальный поиск Bing</a></p>
+                        <p><a href="/azure/cognitive-services/bing-spell-check/">Проверка орфографии Bing</a></p>
+                        <p><a href="/azure/cognitive-services/bing-local-business-search"><span>Bing Local Business Search&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardText">
+                        <h3>API принятия решений</h3>
+                        <p><a href="/azure/cognitive-services/anomaly-detector/"><span>Детектор аномалий&nbsp;<sup style="font-size:70%">ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ</sup></span></a></p>
+                        <p><a href="/azure/cognitive-services/content-moderator/">Content Moderator</a></p>
+                        <p><a href="https://go.microsoft.com/fwlink/?linkid=2088324"><span>Персонализатор&nbsp;<sup style="font-size:70%">предварительная версия</sup></span></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+</div>
+
+<h2>Начало работы</h2>
 <ul class="cardsY panelContent singlePanelContent" style="display:flex!important;">
         <li>
             <a href="/azure/cognitive-services/welcome/">
@@ -286,89 +376,4 @@ ms.locfileid: "67163806"
     </li>
 </ul>
 
-<h2>API-интерфейсы Cognitive Services</h2>
-<ul class="cardsF panelContent singlePanelContent" style="display:flex!important;">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>API компьютерного зрения</h3>
-                        <p><a href="/azure/cognitive-services/computer-vision/">Компьютерное зрение</a></p>
-                        <p><a href="/azure/cognitive-services/Custom-Vision-Service/">Пользовательское визуальное распознавание</a></p>
-                        <p><a href="/azure/cognitive-services/face/">API распознавания лиц</a></p>
-                        <p><a href="https://go.microsoft.com/fwlink/?linkid=2088514"><span>Распознаватель документов&nbsp;<sup style="font-size:70%">предварительная версия</sup></span></a></p>
-                        <p><a href="https://go.microsoft.com/fwlink/?linkid=2088323"><span>Распознаватель рукописного текста&nbsp;<sup style="font-size:70%">предварительная версия</sup></span></a></p>
-                        <p><a href="/azure/cognitive-services/video-indexer/video-indexer-overview">Индексатор видео</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>SAPI</h3>
-                        <p><a href="/azure/cognitive-services/speech-service">Службы "Речь"</a></p>
-                        <p><a href="/azure/cognitive-services/speaker-recognition/home"><span>API распознавания говорящего&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
-                        <p><a href="/azure/cognitive-services/speech/home"><span>API распознавания речи Bing&nbsp;<sup style="font-size:70%">на этапе прекращения использования</sup></span></a></p>
-                        <p><a href="/azure/cognitive-services/translator-speech/"><span>Перевод речи&nbsp;<sup style="font-size:70%">на этапе прекращения использования</sup></span></a></p>
-                     </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>API речи</h3>
-                        <p><a href="/azure/cognitive-services/luis/">Распознавание речи (LUIS)</a></p>
-                        <p><a href="/azure/cognitive-services/qnamaker/index">QnA Maker</a></p>
-                        <p><a href="/azure/cognitive-services/text-analytics/">Анализ текста</a></p>
-                        <p><a href="/azure/cognitive-services/translator/">Перевод текстов</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>API поиска</h3>
-                        <p><a href="/azure/cognitive-services/bing-news-search/">Поиск новостей Bing</a></p>
-                        <p><a href="/azure/cognitive-services/Bing-Video-Search/">Поиск видео Bing</a></p>
-                        <p><a href="/azure/cognitive-services/bing-web-search/">Поиск в Интернете Bing</a></p>
-                        <p><a href="/azure/cognitive-services/Bing-Autosuggest">Автозаполнение Bing</a></p>
-                        <p><a href="/azure/cognitive-services/bing-custom-search">Пользовательский поиск Bing</a></p>
-                        <p><a href="/azure/cognitive-services/bing-entities-search/">Поиск сущностей Bing</a></p>
-                        <p><a href="/azure/cognitive-services/bing-image-search">Поиск изображений Bing</a></p>
-                        <p><a href="/azure/cognitive-services/bing-visual-search">Визуальный поиск Bing</a></p>
-                        <p><a href="/azure/cognitive-services/bing-spell-check/">Проверка орфографии Bing</a></p>
-                        <p><a href="/azure/cognitive-services/bing-local-business-search"><span>Bing Local Business Search&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>API принятия решений</h3>
-                        <p><a href="/azure/cognitive-services/anomaly-detector/"><span>Детектор аномалий&nbsp;<sup style="font-size:70%">ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ</sup></span></a></p>
-                        <p><a href="/azure/cognitive-services/content-moderator/">Content Moderator</a></p>
-                        <p><a href="https://go.microsoft.com/fwlink/?linkid=2088324"><span>Персонализатор&nbsp;<sup style="font-size:70%">предварительная версия</sup></span></a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
-</div>
+

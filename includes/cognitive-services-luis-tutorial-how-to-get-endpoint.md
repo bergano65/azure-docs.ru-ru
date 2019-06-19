@@ -11,11 +11,11 @@ ms.topic: include
 ms.date: 10/08/2018
 ms.author: diberry
 ms.openlocfilehash: 4ada2e36f067db685944c683de8cc36d3bbf8cf6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66123584"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185589"
 ---
 В разделе **Управление** (меню справа вверху) на странице **Ключи и конечные точки** (меню слева) выберите URL-адрес **конечной точки** в нижней части страницы. В результате откроется другая вкладка браузера с URL-адресом конечной точки в адресной строке. 
 

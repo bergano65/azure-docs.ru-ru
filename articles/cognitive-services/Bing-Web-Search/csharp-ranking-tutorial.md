@@ -3,20 +3,20 @@ title: Использование ранжирования для отображ
 titleSuffix: Azure Cognitive Services
 description: Сведения об использовании ответа RankingResponse в Bing для отображения результатов поиска в определенном порядке.
 services: cognitive-services
-author: bradumbaugh
+author: aahill
 manager: nitinme
 ms.assetid: 2575A80C-FC74-4631-AE5D-8101CF2591D3
 ms.service: cognitive-services
 ms.subservice: bing-web-search
-ms.topic: conceptual
-ms.date: 05/08/2017
-ms.author: bking
-ms.openlocfilehash: 6afaa2f497fa1a23d083c3ddd76359a49105732d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.topic: tutorial
+ms.date: 06/18/2019
+ms.author: aahi
+ms.openlocfilehash: cfe198352cae95227a76535544d55a6be0c66abc
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66384844"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67203254"
 ---
 # <a name="build-a-console-app-search-client-in-c"></a>Создание клиента поиска в виде консольного приложения на C#
 
@@ -27,7 +27,7 @@ ms.locfileid: "66384844"
 - выполнение простого запроса к API Bing для поиска в Интернете;
 - отображение результатов запроса в порядке приоритета.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется следующее:
 
@@ -329,6 +329,6 @@ WebPage:
 ...
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Изучите дополнительные сведения [об использовании ранжирования при отображении ответов](rank-results.md).
