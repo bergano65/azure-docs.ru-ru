@@ -41,11 +41,11 @@ ms.locfileid: "60743435"
 | Ubuntu | 12+ |
 | Debian | 7 и 8 |
 | Red Hat | 6 и 7 |
-| Oracle Linux | 6.8 и выше и 7 |
+| Oracle Linux | 6.8+ и 7 |
 | SUSE Linux Enterprise Server | 11 и 12 |
-| OpenSUSE Leap | 42.3 или выше |
-| CentOS | 6.5 и выше и 7 |
-| CoreOS | 899.17.0 и выше |
+| OpenSUSE Leap | 42.3+ |
+| CentOS | 6.5+ и 7 |
+| CoreOS | 899.17.0+ |
 
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
