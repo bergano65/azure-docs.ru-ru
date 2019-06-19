@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 04/16/2019
 ms.author: aahi
-ms.openlocfilehash: c8319dbcb8cebe51dae2a4d7e8d9749c3ab7674f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 881c829424124cca843beb7005306edd53be2673
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65231426"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67203990"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованной сущности в текстовой аналитики
 
@@ -31,7 +31,7 @@ ms.locfileid: "65231426"
 ### <a name="named-entity-recognition-ner"></a>Распознавание именованных сущностей (NER)
 Распознавание именованных сущностей (NER) позволяет идентифицировать различные сущности в тексте и классифицировать их в предварительно определенные классы. Ниже перечислены поддерживаемые классы сущностей.
 
-В текстовой аналитики [версии 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634), связывание сущностей и распознавания именованных сущностей (NER) доступны.
+В текстовой аналитики [версии 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634), связывание сущностей и распознавания именованных сущностей (NER) доступны для нескольких языков. См. в разделе [языковая поддержка](../language-support.md#sentiment-analysis-key-phrase-extraction-and-named-entity-recognition) для получения дополнительной информации. 
 
 ### <a name="language-support"></a>Поддержка языков
 

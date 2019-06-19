@@ -70,14 +70,17 @@
     - name: Функции ОС
       href: operating-system-functionality.md
     - name: Безопасность
-      href: overview-security.md
       items:
+        - name: Рекомендации
+          href: security-recommendations.md
         - name: Аутентификация и авторизация
           href: overview-authentication-authorization.md
         - name: Установка исправлений для ОС и среды выполнения
           href: overview-patch-os-runtime.md
         - name: Атрибуты безопасности
           href: app-service-security-attributes.md
+        - name: Обзор системы безопасности
+          href: overview-security.md
     - name: Функции сетей
       href: networking-features.md
     - name: Входящие и исходящие IP-адреса

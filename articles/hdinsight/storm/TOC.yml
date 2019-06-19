@@ -4,6 +4,11 @@
   items:
     - name: Общие сведения об Apache Storm в HDInsight
       href: apache-storm-overview.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: Создание топологии Apache Storm в HDInsight
+      href: ./apache-storm-quickstart.md
 - name: Начало работы
   items:
     - name: Создание кластера Apache Storm

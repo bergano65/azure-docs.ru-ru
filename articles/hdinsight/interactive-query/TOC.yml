@@ -2,11 +2,8 @@
   href: /azure/hdinsight
 - name: Обзор
   items:
-    - name: Компоненты Apache Hadoop в HDInsight
-      href: ../hdinsight-component-versioning.md
-      maintainContext: true
-    - name: "HDInsight\_4.0"
-      href: ../hdinsight-version-release.md
+    - name: Общие сведения о кластере типа Interactive Query в HDInsight
+      href: ./apache-interactive-query-get-started.md
       maintainContext: true
 - name: Краткие руководства
   items:
@@ -14,8 +11,6 @@
       href: ./hdinsight-connect-hive-zeppelin.md
 - name: Начало работы
   items:
-    - name: Начало работы с Interactive Query
-      href: ./apache-interactive-query-get-started.md
     - name: Установка приложений HDInsight
       href: ../hdinsight-apps-install-applications.md
       maintainContext: true

@@ -2,19 +2,23 @@
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 12/11/2018
+ms.date: 06/05/2019
 ms.topic: include
-ms.openlocfilehash: a956cd1e029371fa7031d262206b0ce10aa8dbff
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 550ace93479278df2a592a87ee34d10f8763d2f6
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66117097"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67132947"
 ---
 > [!IMPORTANT]
 >
-> Для использования этой функции Azure от PowerShell требуется установленный модуль `AzureRM`. Это старый модуль, доступный только для Windows PowerShell 5.x, который получает критические обновления, но больше не получает новые функции. Если вы установили модуль `Az`, необходимо также установить `AzureRM`. Чтобы установить `AzureRM`:
-> 
-> 1. Отключите псевдонимы AzureRM в `Az` (если они включены) с помощью команды `Disable-AzAlias`. Выполнение этой команды в случае, если программа `Az` не установлена или псевдонимы отключены, не принесет никакого вреда.
-> 2. Выполните [актуальные инструкции по установке для AzureRM](/powershell/azure/install-az-ps). Даже если модуль `AzureRM` установлен, обновите его до последней версии.
+> Для использования этой функции Azure в PowerShell требуется установленный модуль `AzureRM`. Это устаревший модуль, поддерживаемый только в Windows PowerShell 5.1.x, в который больше не добавляются новые функции.
+> Модули `Az` и `AzureRM` являются __несовместимыми__ при использовании с одинаковыми версиями PowerShell.
+> Если вам необходимы обе версии, выполните следующее:
+>
+> 1. [Удалите модуль Az](/powershell/azure/uninstall-az-ps) в сеансе PowerShell 5.1.
+> 2. [Установите модуль AzureRM](/powershell/azure/azurerm/install-azurerm-ps) в сеансе PowerShell 5.1.
+> 3. [Скачайте и установите PowerShell Core 6.x или последующей версии](/powershell/scripting/install/installing-powershell-core-on-windows).
+> 4. [Установите модуль Az](/powershell/azure/install-az-ps) в сеансе PowerShell Core.
 

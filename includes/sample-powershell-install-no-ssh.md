@@ -4,13 +4,13 @@ ms.topic: include
 ms.date: 01/30/2019
 ms.service: azure-powershell
 ms.author: sttramer
-ms.openlocfilehash: 15d31db2e78e7171a5658e1785905494b0268854
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 5cfb93c51ae1f3aff9250601410e4808ed865a32
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66115865"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67059043"
 ---
-Для этого примера требуется Azure PowerShell. Выполните `Get-Module -ListAvailable Az`, чтобы проверить, установлен ли модуль. Если необходимо выполнить установку, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). 
+Для этого примера требуется Azure PowerShell Az 1.0 или более поздней версии. Запустите `Get-Module -ListAvailable Az` для просмотра установленных версий. Если необходимо выполнить установку, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). 
 
-Выполните команду `Connect-AzAccount`, чтобы создать подключение к Azure. 
+Запустите [Connect AzAccount](/powershell/module/az.accounts/connect-azaccount) для входа Azure.
