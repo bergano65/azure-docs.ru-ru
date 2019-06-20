@@ -8,9 +8,9 @@
   items:
     - name: 1. Создание клиента в Виртуальном рабочем столе Windows
       href: tenant-setup-azure-active-directory.md
-    - name: 2. Создание субъектов-служб и назначений ролей с помощью PowerShell
+    - name: 2. Создание субъектов-служб и назначений ролей с использованием PowerShell
       href: create-service-principal-role-powershell.md
-    - name: 3. Создание пула узлов с помощью Azure Marketplace
+    - name: 3. Создание пула узлов с использованием Azure Marketplace
       href: create-host-pools-azure-marketplace.md
     - name: 4. Управление группами приложений
       href: manage-app-groups.md

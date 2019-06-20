@@ -56,8 +56,10 @@
   items:
     - name: Цены
       href: 'https://aka.ms/adpricing'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://aka.ms/adregion'
+    - name: Присоединение к группе консультантов по Детектору аномалий в Microsoft Teams
+      href: 'https://aka.ms/adadvisorsjoin'
     - name: Эталонная архитектура решения
       href: 'https://azure.microsoft.com/solutions/architecture/anomaly-detector-process/'
     - name: Соответствие требованиям
@@ -66,8 +68,6 @@
   items:
     - name: Получение поддержки
       href: 'https://aka.ms/adsupport'
-    - name: Вступление в открытое сообщество
-      href: 'https://aka.ms/adadvisorsjoin'
     - name: Stack Overflow
       href: 'https://aka.ms/adso'
     - name: MSDN

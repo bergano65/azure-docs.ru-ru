@@ -1,0 +1,42 @@
+- name: Документация по Бастиону
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Сведения о Бастионе Azure
+      href: bastion-overview.md
+- name: Практические руководства
+  items:
+    - name: Создание узла-бастиона
+      href: bastion-create-host-portal.md
+    - name: Подключение к виртуальной машине
+      items:
+        - name: SSH (Linux)
+          href: bastion-connect-vm-ssh.md
+        - name: RDP (Windows)
+          href: bastion-connect-vm-rdp.md
+    - name: Работа с сеансом виртуальной машины
+      items:
+        - name: Копирование и вставка
+          href: bastion-vm-copy-paste.md
+        - name: Полноэкранный режим
+          href: bastion-vm-full-screen.md
+    - name: Работа с группами безопасности сети
+      href: bastion-nsg.md
+- name: Справочные материалы
+  items:
+    - name: REST
+      href: 'https://docs.microsoft.com/rest/api/network-gateway'
+- name: Ресурсы
+  items:
+    - name: Вопросы и ответы о Бастионе
+      href: bastion-faq.md
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=networking'
+    - name: Блог
+      href: 'https://azure.microsoft.com/blog/topics/networking'
+    - name: Форум
+      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=WAVirtualMachinesVirtualNetwork'
+    - name: Соглашение об уровне обслуживания для предварительной версии
+      href: 'https://azure.microsoft.com/support/legal/preview-supplemental-terms'
+    - name: Соглашение об уровне обслуживания
+      href: 'https://azure.microsoft.com/support/legal/sla'

@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 8dff2a54e5ac6626314a7b3faaedc8214a27680b
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 4605fd0296af6ac3c0d37c52c93d8a4a0903232b
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64866390"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67165200"
 ---
 # <a name="azure-vmware-solution-by-cloudsimple"></a>Решение VMware в Azure от CloudSimple
 
@@ -22,4 +22,4 @@ ms.locfileid: "64866390"
 - В разделе [Overview](cloudsimple-vmware-solutions-overview.md) (Обзор) представлены дополнительные сведения о Решении VMware в Azure от CloudSimple.
 - Выберите [CloudSimple private cloud overview](cloudsimple-private-cloud.md) (Обзор частного облака CloudSimple), чтобы узнать о решении CloudSimple.
 - Выберите [Nodes](cloudsimple-node.md) (Узлы), чтобы узнать об узлах CloudSimple.
-- Выберите [Initialize and purchase capacity](quickstart-create-cloudsimple-service.md) (Инициализировать и приобрести емкость), чтобы приступить к работе с Решением VMware в Azure от CloudSimple.
+- Выберите [Initialize and provision capacity](quickstart-create-cloudsimple-service.md) (Инициализировать и подготовить емкость), чтобы приступить к работе с Решением VMware в Azure от CloudSimple.

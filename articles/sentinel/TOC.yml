@@ -2,14 +2,14 @@
   href: index.yml
 - name: Обзор
   href: overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Подключение к Azure Sentinel
       href: quickstart-onboard.md
     - name: Контроль с помощью оповещений
       href: quickstart-get-visibility.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Обнаружение потенциальных угроз
       href: tutorial-detect-threats.md
@@ -40,6 +40,8 @@
               href: connect-azure-atp.md
             - name: Подключение Центра безопасности Azure
               href: connect-azure-security-center.md
+            - name: Подключение сервера доменных имен
+              href: connect-dns.md
             - name: Подключение брандмауэра веб-приложений Майкрософт
               href: connect-microsoft-waf.md
             - name: Подключение брандмауэра Windows
@@ -85,5 +87,5 @@
       href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
     - name: 'Блог по безопасности, конфиденциальности и соответствию нормам Azure'
       href: 'https://blogs.msdn.com/b/azuresecurity/'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'

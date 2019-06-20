@@ -31,6 +31,14 @@
       href: search-get-started-python.md
 - name: Руководства
   items:
+    - name: Создание первого приложения
+      items:
+        - name: "1.\_Страница базового поиска"
+          href: tutorial-csharp-create-first-app.md
+        - name: "2.\_Добавление страничного вывода результатов"
+          href: tutorial-csharp-paging.md
+        - name: "3.\_ Добавление упреждающего ввода"
+          href: tutorial-csharp-type-ahead-and-suggestions.md
     - name: Индексирование Базы данных SQL Azure
       href: search-indexer-tutorial.md
     - name: Индексация больших двоичных объектов JSON в Azure

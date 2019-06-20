@@ -10,7 +10,7 @@
     - name: Краткое руководство
       expanded: true
       items:
-        - name: Инициализация и приобретение емкости
+        - name: Инициализация и подготовка емкости
           href: quickstart-create-cloudsimple-service.md
         - name: Настройка среды частного облака
           href: quickstart-create-private-cloud.md
@@ -62,7 +62,7 @@
           href: access-cloudsimple-portal.md
         - name: Управление узлами
           items:
-            - name: Покупка узлов
+            - name: Подготовка узлов
               href: create-nodes.md
         - name: Управление ресурсами частного облака
           items:
