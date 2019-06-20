@@ -6,16 +6,19 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: zhshang
-ms.openlocfilehash: c06203cfd7537dd4c9bc35c75a3f21d12bf64d26
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c88e2b012086f61aad3143c8fe6b0bd25ec333e5
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61401892"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67275092"
 ---
 # <a name="build-real-time-apps-with-azure-functions-and-azure-signalr-service"></a>Создание приложений реального времени с помощью функций Azure и служба Azure SignalR
 
 Так как службы Azure SignalR и "Функции Azure" являются полностью управляемыми высокомасштабируемыми службами, которые позволяют сосредоточиться на создании приложений вместо управления инфраструктурой, часто используют обе службы, чтобы обеспечить обмен данными в реальном времени в [беcсерверной](https://azure.microsoft.com/solutions/serverless/) среде.
+
+> [!NOTE]
+> Узнайте, как совместно использовать SignalR и функций Azure интерактивного учебника [включить автоматическое обновление веб-приложения с помощью функций Azure и служба SignalR](https://docs.microsoft.com/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr).
 
 ## <a name="integrate-real-time-communications-with-azure-services"></a>Интеграция служб Azure в режиме реального времени
 
@@ -63,9 +66,10 @@ ms.locfileid: "61401892"
 
 В этой статье вы получили общие сведения об использовании службы "Функции Azure" со службой SignalR для реализации широкого спектра бессерверных сценариев обмена сообщениями в реальном времени.
 
-Подробные сведения о том, как совместное использование функций Azure и служба SignalR см. в этом руководстве.
+Дополнительные сведения о том, как совместное использование функций Azure и служба SignalR посетить следующие ресурсы:
 
 * [Функции разработки и конфигурации с помощью SignalR службы Azure](signalr-concept-serverless-development-config.md)
+* [Включить автоматическое обновление веб-приложения с помощью функций Azure и служба SignalR](https://docs.microsoft.com/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr)
 
 Дополнительные сведения см. в следующих кратких руководствах.
 

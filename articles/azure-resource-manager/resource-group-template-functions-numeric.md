@@ -1,25 +1,17 @@
 ---
 title: Числовые функции шаблона Azure Resource Manager | Документация Майкрософт
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для работы с числами.
-services: azure-resource-manager
-documentationcenter: na
 author: tfitzmac
-manager: timlt
-editor: tysonn
-ms.assetid: ''
 ms.service: azure-resource-manager
-ms.devlang: na
 ms.topic: reference
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 11/08/2017
 ms.author: tomfitz
-ms.openlocfilehash: 5ed3a0a57dad61a5fe783790eba4cb89ce19c660
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f63ce16369fd1ff58d5368b43c3c730008e63d9a
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66128650"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67206420"
 ---
 # <a name="numeric-functions-for-azure-resource-manager-templates"></a>Числовые функции для шаблонов Azure Resource Manager
 
@@ -93,7 +85,7 @@ ms.locfileid: "66128650"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | addResult | Int | 8 |
 
@@ -210,7 +202,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | divResult | Int | 2 |
 
@@ -304,7 +296,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | intResult | Int | 4\. |
 
@@ -502,7 +494,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | modResult | Int | 1 |
 

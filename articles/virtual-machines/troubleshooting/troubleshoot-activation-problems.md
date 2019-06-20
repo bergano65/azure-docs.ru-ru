@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 11/15/2018
 ms.author: genli
-ms.openlocfilehash: 18cd5a86cc2f52567c5f320719d1a9f21b377ed4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bc058cb3f27545b9e4ad8ef1062ca4d2fa4c9fa8
+ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60921282"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67155140"
 ---
 # <a name="troubleshoot-azure-windows-virtual-machine-activation-problems"></a>Устранение неполадок при активации виртуальных машин Windows в Azure
 
@@ -51,11 +51,9 @@ Azure использует различные конечные точки для
 >
 >Если вы используете ExpressRoute и опубликованный маршрут по умолчанию, то см. запись блога [Azure VM may fail to activate over ExpressRoute](https://blogs.msdn.com/b/mast/archive/2015/12/01/azure-vm-may-fail-to-activate-over-expressroute.aspx) (Возможен сбой при активации виртуальной машины Azure с помощью ExpressRoute).
 
-### <a name="step-1-configure-the-appropriate-kms-client-setup-key-for-windows-server-2016-and-windows-server-2012-r2"></a>Шаг 1. Настройка подходящего ключа установки клиента KMS (для Windows Server 2016 и Windows Server 2012 R2)
+### <a name="step-1-configure-the-appropriate-kms-client-setup-key"></a>Шаг 1. Настройка подходящего ключа установки клиента KMS
 
-На виртуальных машинах, созданных из образа Windows Server 2016 или Windows Server 2012 R2, необходимо настроить подходящий ключ установки клиента KMS для виртуальной машины.
-
-Этот шаг не применяется в Windows 2012 и Windows 2008 R2. Он использует функцию автоматической активации виртуальных машин (AVMA), которая поддерживается только в Windows Server 2016 и Windows Server 2012 R2.
+Для виртуальной Машины, созданной из пользовательского образа необходимо настроить подходящий ключ установки клиента KMS для виртуальной Машины.
 
 1. В командной строке с повышенными привилегиями выполните команду **slmgr.vbs /dlv**. В выходных данных проверьте значение Description (Описание), а затем определите, какой носитель лицензии использовался для создания — розничный (канал RETAIL) или корпоративный (VOLUME_KMSCLIENT):
   

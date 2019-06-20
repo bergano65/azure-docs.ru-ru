@@ -10,18 +10,14 @@ ms.topic: conceptual
 ms.date: 01/15/2018
 ms.author: brjohnst
 ms.custom: seodec2018
-ms.openlocfilehash: 3f47656bb13d08ea56cf25a2a29897722abb1cdb
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 82823bae76521080634d4f7ff285d94ce8495fbf
+ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "65024166"
 ---
 # <a name="upgrading-to-the-azure-search-net-sdk-version-11"></a>Обновление пакета SDK службы поиска Azure для .NET до версии 1.1
-
-> [!Important]
-> Это содержимое является еще находятся в разработке. Версия 9.0 пакета SDK для .NET для поиска Azure доступна в NuGet. Мы работаем над этой статье объясняется, как выполнить обновление до версии 9.0. 
-> 
 
 Если вы используете версию 1.0.2-preview [пакета SDK .NET для службы поиска Azure](https://aka.ms/search-sdk) или более раннюю версию, то эта статья поможет вам обновить приложение для использования версии 1.1.
 
@@ -178,7 +174,7 @@ ms.locfileid: "65024166"
         };
 
 ### <a name="model-class-changes"></a>Изменение классов модели
-Из-за изменений подписи, описанных в разделе [Изменение метода операции](#OperationMethodChanges), многие классы в пространстве имен `Microsoft.Azure.Search.Models` были переименованы или удалены. Например: 
+Из-за изменений подписи, описанных в разделе [Изменение метода операции](#OperationMethodChanges), многие классы в пространстве имен `Microsoft.Azure.Search.Models` были переименованы или удалены. Пример:
 
 * `IndexDefinitionResponse` был заменен на `AzureOperationResponse<Index>`.
 * `DocumentSearchResponse` был переименован в `DocumentSearchResult`.

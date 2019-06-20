@@ -12,20 +12,20 @@ ms.devlang: dotNet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 04/24/2019
+ms.date: 06/18/2019
 ms.author: pepogors
-ms.openlocfilehash: 051d6b1129724ce4e8a67bde4e56ebe61cd832f3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5fdbd3f15b11e4c3975ca29627d5984382bcf049
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65231373"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67206800"
 ---
 # <a name="azure-service-fabric-application-and-cluster-best-practices"></a>Рекомендации по приложению и кластеру Azure Service Fabric
 
-Управление приложениями Azure Service Fabric и кластеров успешно, существуют операции, которые мы настоятельно рекомендуем выполнить для оптимизации для обеспечения надежности рабочей среды; можно выполнять операции, определенные в этом документе и выберите один из наших [кластера Service Fabric Azure примеры шаблонов](https://github.com/Azure-Samples/service-fabric-cluster-templates) приступить к проектированию решения производства или изменить существующий шаблон для включения этих рекомендаций.
+В этой статье ссылки на лучшие решения по управлению приложениями Azure Service Fabric и кластерами. Мы настоятельно рекомендуем реализовать эти методы для обеспечения надежности рабочей среды. Используйте один из [шаблоны кластера Service Fabric](https://github.com/Azure-Samples/service-fabric-cluster-templates) приступить к проектированию решения производства или обновить существующий шаблон для включения этих рекомендаций.
 
-## <a name="security"></a>Безопасность 
+## <a name="security"></a>Безопасность
 
 * [Рекомендации по безопасности](service-fabric-best-practices-security.md)
 
@@ -52,11 +52,11 @@ ms.locfileid: "65231373"
 
 ## <a name="checklist"></a>Контрольный список
 
-После завершения работы со всеми вышеперечисленными разделами убедитесь, что вы интегрировали все рекомендации в контрольном списке готовности рабочей среды:
-* [Контрольный список готовности рабочей среды Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-production-readiness-checklist)
+После реализации рекомендации, предлагаемые в предыдущих разделах, убедитесь, что Вы интегрировали все рекомендации в контрольном списке готовности рабочей:
+* [Контрольный список для готовности рабочей среде Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-production-readiness-checklist)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Создание кластера на основе виртуальных машин или компьютеров под управлением Windows Server: [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md)
 * Создание кластера на основе виртуальных машин или компьютеров под управлением Linux: [Создание кластера Service Fabric в Azure с помощью портала Azure](service-fabric-cluster-creation-via-portal.md)
-* Устранение неполадок: [Руководство по устранению неполадок Service Fabric](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides)
+* Устранение неполадок Service Fabric: [Руководства по устранению неполадок](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides)

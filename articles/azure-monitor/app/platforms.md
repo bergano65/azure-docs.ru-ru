@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 05/16/2019
 ms.reviewer: olegan
 ms.author: mbullwin
-ms.openlocfilehash: 9ef5c9e8b4a46b4bf2bed25027602fb98a09dbf0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 99245dd7628aa4d25e44266a3e798e2f96501f1e
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66256106"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67275385"
 ---
 # <a name="developer-analytics-languages-platforms-and-integrations"></a>Аналитические средства для разработчиков: языки программирования, платформы, интеграция
 Ниже перечислены известные нам реализации [Application Insights](../../azure-monitor/app/app-insights-overview.md) , в том числе реализации от сторонних производителей.
@@ -56,7 +56,6 @@ ms.locfileid: "66256106"
 * [Node.JS](https://www.npmjs.com/package/applicationinsights)
 * [OSX](https://github.com/Microsoft/ApplicationInsights-OSX)
 * [SAFE Stack](https://safe-stack.github.io/docs/template-azure-ai/)
-* [Spring](https://joe.blog.freemansoft.com/2015/12/enabling-microsoft-application-insight.html)
 * [Универсальное приложение для Windows](../../azure-monitor/learn/mobile-center-quickstart.md) (Центр приложений)
 * [WCF](https://github.com/Microsoft/ApplicationInsights-SDK-Labs/blob/master/WCF/readme.md)
 * [Классические приложения, службы и рабочие роли Windows](../../azure-monitor/app/windows-desktop.md)
@@ -82,7 +81,6 @@ ms.locfileid: "66256106"
 * [WordPress](https://wordpress.org/plugins/application-insights/)
 
 ## <a name="export-and-data-analysis"></a>Экспорт и анализ данных
-* [Alooma](https://www.alooma.com/blog/application-insights-amazon-redshift)
 * [Power BI](https://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx)
 * [Анализ потока](../../azure-monitor/app/export-power-bi.md )
 

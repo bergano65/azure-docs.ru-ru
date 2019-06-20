@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
-ms.openlocfilehash: 637feb855c7816dfb26229c5a65a069260a58cd3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 279660d903b3b0e893c3ccddb89da7c6dc42fa09
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66003095"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67205079"
 ---
 # <a name="configure-a-linux-php-app-for-azure-app-service"></a>Настройка приложения Linux PHP для службы приложений Azure
 
@@ -167,7 +167,7 @@ php_value upload_max_filesize 10M
 
 В качестве альтернативы использованию *.htaccess*, можно использовать [ini_set()](https://www.php.net/manual/function.ini-set.php) в вашем приложении, чтобы настроить эти директивы не PHP_INI_SYSTEM.
 
-### <a name="customize-phpinisystem-directives"></a>Настройка PHP_INI_SYSTEM директивы
+### <a name="customize-php_ini_system-directives"></a>Настройка PHP_INI_SYSTEM директивы
 
 Чтобы настроить PHP_INI_SYSTEM директивы (см. в разделе [директив php.ini](https://www.php.net/manual/ini.list.php)), нельзя использовать *.htaccess* подход. Служба приложений предоставляет отдельный механизм, с помощью `PHP_INI_SCAN_DIR` параметр приложения.
 
@@ -252,7 +252,7 @@ zend_extension=/home/site/wwwroot/bin/xdebug.so
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Учебник. по приложению PHP с MySQL](tutorial-php-mysql-app.md)
+> [Руководство. по приложению PHP с MySQL](tutorial-php-mysql-app.md)
 
 > [!div class="nextstepaction"]
 > [Служба приложений под управлением Linux: вопросы и ответы](app-service-linux-faq.md)

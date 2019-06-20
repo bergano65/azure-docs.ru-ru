@@ -9,11 +9,11 @@ ms.date: 05/06/2019
 ms.author: heidist
 ms.custom: include file
 ms.openlocfilehash: b298c87d802314bd865bd6f38c35e4361eb69f3f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66160509"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185667"
 ---
 Возможности хранилища ограничиваются дисковым пространством или аппаратным ограничением *максимального количества* индексов, документов или высокоуровневых ресурсов (в зависимости от того, какое из ограничений достигается первым). В приведенной ниже таблице указаны размеры хранилища. Максимальные значения для индексов, документов и других объектов см. в разделе [ограничениях по ресурсам](../articles/search/search-limits-quotas-capacity.md#index-limits).
 

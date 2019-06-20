@@ -7,16 +7,18 @@ ms.date: 04/01/2019
 ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: ff9513418857562408c162533c48f6495b1f83c4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9accdc19062cba7bb313afac3da056798c325a4c
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65137860"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67274411"
 ---
 # <a name="working-with-large-azure-resource-data-sets"></a>Работа с большими наборами данных ресурса Azure
 
 Azure Resource Graph предназначен для работы и получения сведений о ресурсах в вашей среде Azure. Resource Graph дает возможность получать эти данные быстро, даже при запросе тысяч записей. Resource Graph имеет несколько параметров для работы с этими большими наборами данных.
+
+Рекомендации по работе с запросами с высокой частотой, см. в разделе [рекомендации для отрегулированных запросов](./guidance-for-throttled-requests.md).
 
 ## <a name="data-set-result-size"></a>Размер результата набора данных
 
@@ -84,6 +86,6 @@ Search-AzGraph -Query "project id, name | order by id asc" -First 1000 -Skip 300
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. описание используемого языка в разделе [Запросы для начинающих](../samples/starter.md)
-- См. описание расширенных вариантов использования в разделе [Расширенные запросы](../samples/advanced.md)
-- Подробнее о [просмотре ресурсов](explore-resources.md)
+- См. в разделе язык используется в [запросы Starter](../samples/starter.md).
+- См. Дополнительные использует в [расширенных запросов](../samples/advanced.md).
+- Узнайте, как [ознакомьтесь с ресурсами](explore-resources.md).

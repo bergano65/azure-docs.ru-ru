@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 11/21/2017
 ms.author: terrylan
 ms.openlocfilehash: 05a7c52dca420f97252c68445398fb3959be8804
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60445708"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "64711300"
 ---
 # <a name="a-practical-guide-to-designing-secure-health-care-solutions-in-azure"></a>Практическое руководство по разработке безопасных решений в сфере здравоохранения в Azure
 Многие компании, запускающие проекты в сфере здравоохранения, системотехнические предприятия (SI), независимые поставщики программного обеспечения (ISV) и медицинские организации планируют переход на платформу Azure. Всем им требуется руководство, которое поможет им освоить средства управления безопасностью, удовлетворяющие специфическим отраслевыми и нормативными требованиям.

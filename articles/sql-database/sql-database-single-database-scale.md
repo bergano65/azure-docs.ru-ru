@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 04/26/2019
-ms.openlocfilehash: 1048b4e2ac3a8523d5539ddc1a1bdaca3ec2d912
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 311015aff5ea7020043ad8e43fd987144cdcbf52
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65074260"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67206749"
 ---
 # <a name="scale-single-database-resources-in-azure-sql-database"></a>Масштабирование ресурсов отдельной базы данных в Базе данных SQL Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "65074260"
 
 ### <a name="latency-of-changing-service-tier-or-rescaling-compute-size"></a>Задержка изменения размера службы уровня или при изменении масштаба вычислений
 
-Задержка для изменения уровня обслуживания или изменения размера вычислительных отдельной базы данных или эластичного пула параметризован следующим образом:
+Предполагаемый задержки для изменения уровня обслуживания или изменения размера вычислительных отдельной базы данных или эластичного пула параметризован следующим образом:
 
 |Уровень служб|Основные отдельной базы данных</br>Standard (S0-S1)|Основные эластичного пула</br>Стандартный (S2 – S12) </br>Гипермасштабируемый, </br>Общие цели отдельной базы данных или эластичного пула|"Премиум" или критически важный для отдельной базы данных или эластичного пула|
 |:---|:---|:---|:---|

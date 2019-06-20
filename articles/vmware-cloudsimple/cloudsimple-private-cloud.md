@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: dc07b4eea553e6cb3d9b522826e860ddbfbc1513
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e3ab53466cae5bd39d85f8d846c8e59ad94f1f2d
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64577050"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67165742"
 ---
 # <a name="cloudsimple-private-cloud-overview"></a>Общие сведения о CloudSimple частного облака
 
@@ -63,7 +63,7 @@ CloudSimple преобразует и расширяет рабочих нагр
 
 Вы можете развернуть выделенные узлы в расположениях Azure. Затем можно управлять ими с помощью Azure и CloudSimple. Частное облако состоит из одного или нескольких кластерах vSphere, а каждый кластер содержит 3 до 16 узлов.
 
-Можно создать частное облако с помощью приобретенных узлов:
+Можно создать частное облако, используя подготовленные узлы:
 
 * Оплата по мере использования узлов
 * Зарезервированные и выделенных узлов

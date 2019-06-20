@@ -3,17 +3,17 @@ title: Настройка шаблона устройства в приложе�
 description: Подробные сведения о настройке измерений, параметров, свойств, правил и панели мониторинга в шаблоне устройства.
 author: viv-liu
 ms.author: viviali
-ms.date: 01/30/2019
+ms.date: 06/19/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: d1704220a13b6d6b5a48b7167d7912a38057127d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 58f50a1a2b90b4b5f9708bf0f1a7cb51db8e47ae
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65466525"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67275959"
 ---
 # <a name="set-up-a-device-template"></a>Настройка шаблона устройства
 
@@ -162,7 +162,7 @@ ms.locfileid: "65466525"
 
 | Название  | Имя поля | Начальное значение   |
 | --------------| -----------|-----------------|
-| Дата последнего обслуживания      | lastServiced        | 29\.01.2019     |
+| Дата последнего обслуживания      | lastServiced        | 29.01.2019     |
 
 ![Форма настройки даты последнего обслуживания на вкладке "Свойства"](./media/howto-set-up-template/propertiesform.png)
 

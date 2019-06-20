@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 05/30/2019
+ms.date: 06/14/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: c09c9df1b8af7adca5c0169cf31881121ba6cc99
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: cd7c268008afbd87e855516d5834676423272646
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66427488"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67146719"
 ---
 # <a name="how-to-update-azure-powershell-modules-in-azure-automation"></a>Как обновить модули Azure PowerShell в службе автоматизации Azure
 
@@ -35,9 +35,7 @@ ms.locfileid: "66427488"
 
 Ниже приведены некоторые рекомендации по использованию этого процесса для обновления модулей Azure.
 
-* Этот модуль runbook поддерживает обновление только **Azure** и **AzureRm** модули в данный момент. [Модули Azure PowerShell Az](/powershell/azure/new-azureps-module-az) поддерживаются в учетных записях службы автоматизации, но не могут быть заменены этого модуля runbook. Существуют важные факторы, которые необходимо учитывать при использовании `Az` модулей в учетной записи службы автоматизации, чтобы узнать больше, см. в разделе [Az использование модулей в учетной записи службы автоматизации](az-modules.md).
-
-* Не рекомендуется запускать этот модуль runbook в учетных записях службы автоматизации, которые содержат модули Az.
+* Этот модуль runbook поддерживает обновление **Azure** и **AzureRm** модулей по умолчанию. Этот модуль runbook поддерживает обновление **Az** также модулей. Просмотрите [обновления Azure модули runbook README](https://github.com/microsoft/AzureAutomation-Account-Modules-Update/blob/master/README.md) Дополнительные сведения об обновлении `Az` модули с этим модулем runbook. Существуют дополнительные важные факторы, которые необходимо учитывать при использовании `Az` модулей в учетной записи службы автоматизации, чтобы узнать больше, см. в разделе [Az использование модулей в учетной записи службы автоматизации](az-modules.md).
 
 * Перед запуском этого модуля runbook убедитесь, что для вашей учетной записи службы автоматизации созданы [учетные данные для учетной записи запуска от имени Azure](manage-runas-account.md).
 

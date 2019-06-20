@@ -16,7 +16,7 @@ ms.date: 11/8/2018
 ms.author: tomfitz
 ms.openlocfilehash: c80625fb36709f66319b4966e210785864f30d09
 ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "66128693"
@@ -136,8 +136,8 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 | Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| arg1 |Да |целое число, строка, массив или объект |Первое значение, которое проверяется на соответствие значению null. |
-| дополнительные аргументы |Нет |целое число, строка, массив или объект |Дополнительные значения, которые проверяются на соответствие значению null. |
+| arg1 |Да |int, string, array или object |Первое значение, которое проверяется на соответствие значению null. |
+| дополнительные аргументы |Нет |int, string, array или object |Дополнительные значения, которые проверяются на соответствие значению null. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 

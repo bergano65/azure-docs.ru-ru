@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: cost-management
 manager: ormaoz
 ms.custom: ''
-ms.openlocfilehash: 007b6c409dde248a4dde7a15fd16b543add234bc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 57e66d449b194662bfc03f7e130cf49c02a15793
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64870317"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67275715"
 ---
 # <a name="manage-aws-costs-and-usage-in-azure"></a>Управление на AWS и использовании в Azure
 
@@ -129,6 +129,8 @@ _Перед началом_: Если вы не знакомы с анализа
 
 ### <a name="no-permission-to-aws-linked-accounts"></a>Нет разрешения на AWS связанные учетные записи
 
+**Код ошибки:** _Доступ запрещен_
+
 Существует два способа для получения разрешения на доступ к затраты на AWS связанные учетные записи:
 
 - Получите доступ к группе управления, имеющий AWS связанные учетные записи.
@@ -136,7 +138,11 @@ _Перед началом_: Если вы не знакомы с анализа
 
 По умолчанию создатель соединитель AWS является владельцем всех объектов, которые созданы соединитель. Включая AWS консолидированные связать учетные записи и AWS учетной записи.
 
+Чтобы иметь возможность проверить выбранные параметры соединителя вам потребуется по крайней мере роль владельца, средство чтения не удается определить параметры соединителя
+
 ### <a name="collection-failed-with-assumerole"></a>Ошибка с AssumeRole Collection
+
+**Код ошибки:** _FailedToAssumeRole_
 
 Эта ошибка означает, что управление стоимостью не сможет вызывать AWS AssumeRole API. Эта проблема может происходить из-за проблемы с определением роли. Убедитесь, что соблюдаются следующие условия:
 
@@ -147,11 +153,23 @@ _Перед началом_: Если вы не знакомы с анализа
 
 ### <a name="collection-failed-with-access-denied"></a>Коллекции, сбой с отказано в доступе
 
-Это сообщение об ошибке означает, что управление затратами не может получить доступ к файлам по, хранящиеся в контейнере Amazon S3. Убедитесь, что политики AWS JSON, подключить к роли похож на пример, приведенный в конце [Создание роли и политики в AWS](aws-integration-set-up-configure.md#create-a-role-and-policy-in-aws) раздел.
+- **Код ошибки:** _AccessDeniedReportDefinitions_ 
+- **Код ошибки:** _AccessDeniedListReports_ 
+- **Код ошибки:** _AccessDeniedDownloadReport_ 
 
-### <a name="connector-error-with-failedtofindreport"></a>Ошибка в соединителе с FailedToFindReport
+Эта ошибка сообщения означает, что управление затратами не может получить доступ к файлам по, хранящиеся в контейнере Amazon S3. Убедитесь, что политики AWS JSON, подключить к роли похож на пример, приведенный в конце [Создание роли и политики в AWS](aws-integration-set-up-configure.md#create-a-role-and-policy-in-aws) раздел.
+
+### <a name="collection-failed-since-we-did-not-find-the-cost-and-usage-report"></a>Коллекции не удалось, так как не удалось найти затраты и отчет об использовании
+
+**Код ошибки:** _FailedToFindReport_
 
 Эта ошибка означает, что стоимость управления не удается найти отчет об издержках и использовании, определенную в соединителе. Убедитесь, что он не удаляется, что политики AWS JSON, подключить к роли, как показано в примере, приведенном в нижней части [Создание роли и политики в AWS](aws-integration-set-up-configure.md#create-a-role-and-policy-in-aws) раздел.
+
+### <a name="unable-to-create-or-verify-connector-due-to-cost-and-usage-report-definitions-mismatch"></a>Не удалось создать или проверить соединителя из-за несоответствия определения стоимости и отчет об использовании
+
+**Код ошибки:** _ReportIsNotValid_
+
+Эта ошибка относится к определению стоимости AWS и отчет об использовании, мы требуют специальной настройки для этого отчета, см. в разделе требований в [Создание отчета об издержках и использовании в AWS](aws-integration-set-up-configure.md#create-a-cost-and-usage-report-in-aws)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

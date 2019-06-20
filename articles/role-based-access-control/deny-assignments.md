@@ -15,12 +15,12 @@ ms.date: 06/13/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
-ms.openlocfilehash: 432703b5acb4cd56dac9b25edf99165ca26b0aa0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f15d6fd81337aa4a859539e86f37a516848c9370
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67118274"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67165979"
 ---
 # <a name="understand-deny-assignments-for-azure-resources"></a>Запрет назначений для ресурсов Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "67118274"
 
 ## <a name="compare-role-assignments-and-deny-assignments"></a>Сравнение назначений ролей и запретить назначения
 
-Запретите назначения выполните аналогичный шаблон, как запретить назначения, но есть некоторые различия.
+Запретите назначения имеют схожий шаблон в качестве назначения ролей, но есть некоторые различия.
 
 | Функция | Назначение роли | Отклонить назначение |
 | --- | --- | --- |

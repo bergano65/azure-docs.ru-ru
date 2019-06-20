@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: e1fc7809ad94d589483b87c638d027a39098164e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8a67cd2f82eb069555bda68e4cb04a6634e3b31d
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65209536"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67164354"
 ---
 # <a name="quickstart---configure-a-private-cloud-environment"></a>Краткое руководство. Настройка среды с частным облаком
 
@@ -33,7 +33,7 @@ ms.locfileid: "65209536"
 
 5. На портале CloudSimple укажите имя для вашего частного облака
 6. Выберите **расположение** частного облака
-7. Выберите **тип узла** вы приобрели в Azure.  Вы можете выбрать [CS28 или CS36](cloudsimple-node.md#vmware-solution-by-cloudsimple-nodes-sku). Последний вариант включает в себя Максимальная емкость вычислительных ресурсов и памяти.
+7. Выберите **тип узла** подготовки в Azure.  Вы можете выбрать [CS28 или CS36](cloudsimple-node.md#vmware-solution-by-cloudsimple-nodes-sku). Последний вариант включает в себя Максимальная емкость вычислительных ресурсов и памяти.
 8. Укажите **число узлов**.  Менее трех узлов, необходимы для создания частного облака
 
     ![Создание частного облака — основные сведения](media/create-private-cloud-basic-info.png)

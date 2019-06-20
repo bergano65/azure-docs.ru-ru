@@ -6,14 +6,14 @@ author: cherylmc
 tags: azure-resource-manager
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 5/21/2019
+ms.date: 6/18/2019
 ms.author: cherylmc
-ms.openlocfilehash: 6b66a9cf28faccf5ba22bc016297f1d53febe533
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 07bcf50a816c090ccef846909dff671486e514c4
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66157313"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67203058"
 ---
 # <a name="configure-a-point-to-site-connection-to-a-vnet-using-native-azure-certificate-authentication-azure-portal"></a>Настройка подключения "точка — сеть" к виртуальной сети с использованием собственной аутентификации Azure на основе сертификата и Портал Azure
 
@@ -98,7 +98,7 @@ ms.locfileid: "66157313"
 2. Щелкните **Настроить**, чтобы открыть страницу настройки.
 
    ![Элемент "Настроить"](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/configurenow.png)
-3. На странице **Конфигурация "точка — сеть"** в поле **Пул адресов** можно добавить диапазон частных IP-адресов, который вы хотите использовать. VPN-клиенты динамически получают IP-адрес из указанного вами диапазона. Щелкните **Сохранить**, чтобы проверить и сохранить настройки.
+3. На странице **Конфигурация "точка — сеть"** в поле **Пул адресов** можно добавить диапазон частных IP-адресов, который вы хотите использовать. VPN-клиенты динамически получают IP-адрес из указанного вами диапазона. Маска подсети, минимальная — 29 бит для активный/пассивный и 28 бит для конфигурации активный/активный. Щелкните **Сохранить**, чтобы проверить и сохранить настройки.
 
    ![Пул адресов клиента](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/addresspool.png)
 

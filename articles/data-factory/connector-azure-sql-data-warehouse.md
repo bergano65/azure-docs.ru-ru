@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/24/2019
 ms.author: jingwang
-ms.openlocfilehash: bd02a95f485f45c223fce4c24a72251481c2aa7e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 68d2f126ee32f61d13d170712bf58581101036e8
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66427893"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67206072"
 ---
 # <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
@@ -426,7 +426,7 @@ PolyBase хранилища данных SQL напрямую поддержив
     | [Хранилище Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | Проверка подлинности ключа учетной записи, управляемое удостоверение проверки подлинности |
 
     >[!IMPORTANT]
-    >Если с конечной точкой службы виртуальной сети настроено хранилище Azure, необходимо использовать управляемое удостоверение проверки подлинности. Ссылаться на [влияние использования конечных точек службы виртуальной сети со службой хранилища Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage)
+    >Если хранилище Azure настроена с помощью конечной точки службы виртуальной сети, необходимо использовать управляемое удостоверение проверки подлинности — см. [влияние использования конечных точек службы виртуальной сети со службой хранилища Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). Узнайте необходимые настройки в фабрике данных из [BLOB-объектов Azure — управляемое удостоверение проверки подлинности](connector-azure-blob-storage.md#managed-identity) и [Gen2 хранилища Озера данных Azure — управляемое удостоверение проверки подлинности](connector-azure-data-lake-storage.md#managed-identity) разделе соответственно.
 
 2. **Формат исходных данных** имеет **Parquet**, **ORC**, или **с разделителями текста**, со следующими конфигурациями:
 
@@ -537,12 +537,12 @@ PolyBase хранилища данных SQL напрямую поддержив
 ErrorCode=FailedDbOperation, ......HadoopSqlException: Error converting data type VARCHAR to DECIMAL.....Detailed Message=Empty string can't be converted to DECIMAL.....
 ```
 
-Решение заключается в снимите флажок "**тип использования по умолчанию**" параметра (false) в приемнике действия копирования "->" PolyBase параметрами. "[USE_TYPE_DEFAULT](https://docs.microsoft.com/sql/t-sql/statements/create-external-file-format-transact-sql?view=azure-sqldw-latest#arguments
+Решение заключается в снимите флажок "**тип использования по умолчанию**" параметра (false) в приемнике действия копирования "->" Параметры PolyBase. "[USE_TYPE_DEFAULT](https://docs.microsoft.com/sql/t-sql/statements/create-external-file-format-transact-sql?view=azure-sqldw-latest#arguments
 )" — это Конфигурация собственного PolyBase, который указывает способ обработки отсутствующих значений в текстовых файлов с разделителями, когда PolyBase извлекает данные из текстового файла. 
 
 **Прочее**
 
-Дополнительные проблемы knonw PolyBase, см. в разделе [нагрузки устранения неполадок PolyBase хранилища данных Azure SQL](../sql-data-warehouse/sql-data-warehouse-troubleshoot.md#polybase).
+Более известные проблемы PolyBase, см. в разделе [нагрузки устранения неполадок PolyBase хранилища данных Azure SQL](../sql-data-warehouse/sql-data-warehouse-troubleshoot.md#polybase).
 
 ### <a name="sql-data-warehouse-resource-class"></a>Класс ресурсов хранилища данных SQL
 

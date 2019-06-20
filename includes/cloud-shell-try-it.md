@@ -4,12 +4,12 @@ ms.service: azure
 ms.topic: include
 ms.date: 05/31/2019
 ms.author: sttramer
-ms.openlocfilehash: 53810e8d3cad73b35514beab75d8f65d0ca3b3d5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4a52041f773529c2a72c8019da27d56f98b6b53d
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67051103"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67147467"
 ---
 ## <a name="open-azure-cloud-shell"></a>Открытие Azure Cloud Shell
 
@@ -22,5 +22,5 @@ Azure Cloud Shell — это интерактивная оболочка сре�
 | Параметр | Пример и ссылка |
 |-----------------------------------------------|---|
 | Нажмите кнопку **Попробовать** в правом верхнем углу блока с кодом. При этом __не выполняется__ автоматическое копирование текста в Cloud Shell. | ![Открытие Azure Cloud Shell с помощью кнопки "Попробовать"](./media/cloud-shell-try-it/cli-try-it.png) |
-| Откройте [Azure Cloud Shell](https://shell.azure.com) в браузере. | <a href="https://shell.azure.com" title="Запуск Azure Cloud Shell"><img src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" /></a> |
+| Откройте [Azure Cloud Shell](https://shell.azure.com) в браузере. | <a href="https://shell.azure.com" title="Запуск Azure Cloud Shell"><img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" /></a> |
 | Нажмите кнопку меню **Cloud Shell** в правом верхнем углу окна [портала Azure](https://portal.azure.com). | ![Кнопка "Cloud Shell" на портале Azure](./media/cloud-shell-try-it/cloud-shell-menu.png) |

@@ -44,6 +44,10 @@
       href: ../hdinsight-sdk-python-samples.md
 - name: Основные понятия
   items:
+    - name: Использование IntelliJ для выполнения запросов Apache Spark
+      href: apache-spark-intellij-tool-plugin.md
+    - name: Использование VSCode для выполнения запросов Apache Spark
+      href: ../hdinsight-for-vscode.md
     - name: Компоненты Apache Hadoop в HDInsight
       href: ../hdinsight-component-versioning.md
     - name: "HDInsight\_4.0"
@@ -58,74 +62,74 @@
           href: ../hdinsight-hadoop-use-data-lake-storage-gen2.md
         - name: Использование Azure Data Lake Storage 1-го поколения
           href: ../hdinsight-hadoop-use-data-lake-store.md
-    - name: Разработка
-      items:
-        - name: Использование интерактивной оболочки Apache Spark
-          href: apache-spark-shell.md
-        - name: Работа с удаленными заданиями с помощью Apache Livy
-          href: apache-spark-livy-rest-interface.md
-        - name: Создание приложений с помощью Eclipse
-          href: apache-spark-eclipse-tool-plugin.md
-        - name: Создание приложений с помощью IntelliJ
-          href: apache-spark-intellij-tool-plugin.md
-        - name: Удаленная отладка заданий Apache Spark с помощью IntelliJ через SSH
-          href: apache-spark-intellij-tool-debug-remotely-through-ssh.md
-        - name: Удаленная отладка заданий Apache Spark с помощью IntelliJ через VPN
-          href: apache-spark-intellij-tool-plugin-debug-jobs-remotely.md
-        - name: Создание приложений .NET HDInsight с неинтерактивной проверкой подлинности
-          href: ../hdinsight-create-non-interactive-authentication-dotnet-applications.md
-    - name: Использование средств HDInsight
-      items:
-        - name: Инструменты для Visual Studio
-          href: ../hadoop/apache-hadoop-visual-studio-tools-get-started.md
-        - name: Инструменты для VSCode
-          href: ../hdinsight-for-vscode.md
-        - name: Инструменты для IntelliJ
-          href: apache-spark-intellij-tool-plugin.md
-        - name: Инструменты для Eclipse
-          href: apache-spark-eclipse-tool-plugin.md
-        - name: PySpark для VSCode
-          href: ../set-up-pyspark-interactive-environment.md
-        - name: Отладка Apache Spark в IntelliJ
-          href: apache-spark-intellij-tool-debug-remotely-through-ssh.md
-    - name: Использование записных книжек с Apache Spark
-      items:
-        - name: Использование локальной записной книжки Jupyter
-          href: apache-spark-jupyter-notebook-install-locally.md
-        - name: Ядра для записных книжек Jupyter
-          href: apache-spark-jupyter-notebook-kernels.md
-        - name: Использование внешних пакетов с записными книжками Jupyter с помощью волшебных команд
-          href: apache-spark-jupyter-notebook-use-external-packages.md
-        - name: Использование внешних пакетов с записными книжками Jupyter с помощью действий скрипта
-          href: apache-spark-python-package-installation.md
-        - name: Использование записных книжек Apache Zeppelin
-          href: apache-spark-zeppelin-notebook.md
-    - name: Использование с другими службами Azure
-      items:
-        - name: Использование с Data Lake Storage
-          href: apache-spark-use-with-data-lake-store.md
-        - name: Подключение к базе данных SQL Azure
-          href: apache-spark-connect-to-sql-database.md
-        - name: Реализация лямбда-архитектуры с использованием Apache Spark и Cosmos DB
-          href: ../../cosmos-db/lambda-architecture.md
-        - name: Выполнение рабочих нагрузок Машинного обучения Azure с помощью AutoML
-          href: apache-spark-run-machine-learning-automl.md
-    - name: Потоковая передача Apache Spark
-      items:
-        - name: Общие сведения о потоковой передаче
-          href: apache-spark-streaming-overview.md
-        - name: Общие сведения о структурированной потоковой передаче
-          href: apache-spark-structured-streaming-overview.md
-        - name: Создание высокодоступных заданий потоковой передачи Apache Spark в Apache Hadoop YARN
-          href: apache-spark-streaming-high-availability.md
-        - name: Структурированная потоковая передача с использованием Apache Kafka
-          href: ../hdinsight-apache-kafka-spark-structured-streaming.md
-        - name: Структурированная потоковая передача из Apache Kafka в CosmosDB
-          href: ../apache-kafka-spark-structured-streaming-cosmosdb.md
-        - name: Потоковая передача Spark (DStream) с использованием Apache Kafka
-          href: ../hdinsight-apache-spark-with-kafka.md
-        - name: Создание заданий потоковой передачи Apache Spark со строго однократной обработкой событий
-          href: apache-spark-streaming-exactly-once.md
+        - name: Разработка
+          items:
+            - name: Использование интерактивной оболочки Apache Spark
+              href: apache-spark-shell.md
+            - name: Работа с удаленными заданиями с помощью Apache Livy
+              href: apache-spark-livy-rest-interface.md
+            - name: Создание приложений с помощью Eclipse
+              href: apache-spark-eclipse-tool-plugin.md
+            - name: Создание приложений с помощью IntelliJ
+              href: apache-spark-intellij-tool-plugin.md
+            - name: Удаленная отладка заданий Apache Spark с помощью IntelliJ через SSH
+              href: apache-spark-intellij-tool-debug-remotely-through-ssh.md
+            - name: Удаленная отладка заданий Apache Spark с помощью IntelliJ через VPN
+              href: apache-spark-intellij-tool-plugin-debug-jobs-remotely.md
+            - name: Создание приложений .NET HDInsight с неинтерактивной проверкой подлинности
+              href: ../hdinsight-create-non-interactive-authentication-dotnet-applications.md
+        - name: Использование средств HDInsight
+          items:
+            - name: Инструменты для Visual Studio
+              href: ../hadoop/apache-hadoop-visual-studio-tools-get-started.md
+            - name: Инструменты для VSCode
+              href: ../hdinsight-for-vscode.md
+            - name: Инструменты для IntelliJ
+              href: apache-spark-intellij-tool-plugin.md
+            - name: Инструменты для Eclipse
+              href: apache-spark-eclipse-tool-plugin.md
+            - name: PySpark для VSCode
+              href: ../set-up-pyspark-interactive-environment.md
+            - name: Отладка Apache Spark в IntelliJ
+              href: apache-spark-intellij-tool-debug-remotely-through-ssh.md
+        - name: Использование записных книжек с Apache Spark
+          items:
+            - name: Использование локальной записной книжки Jupyter
+              href: apache-spark-jupyter-notebook-install-locally.md
+            - name: Ядра для записных книжек Jupyter
+              href: apache-spark-jupyter-notebook-kernels.md
+            - name: Использование внешних пакетов с записными книжками Jupyter с помощью волшебных команд
+              href: apache-spark-jupyter-notebook-use-external-packages.md
+            - name: Использование внешних пакетов с записными книжками Jupyter с помощью действий скрипта
+              href: apache-spark-python-package-installation.md
+            - name: Использование записных книжек Apache Zeppelin
+              href: apache-spark-zeppelin-notebook.md
+        - name: Использование с другими службами Azure
+          items:
+            - name: Использование с Data Lake Storage
+              href: apache-spark-use-with-data-lake-store.md
+            - name: Подключение к базе данных SQL Azure
+              href: apache-spark-connect-to-sql-database.md
+            - name: Реализация лямбда-архитектуры с использованием Apache Spark и Cosmos DB
+              href: ../../cosmos-db/lambda-architecture.md
+            - name: Выполнение рабочих нагрузок Машинного обучения Azure с помощью AutoML
+              href: apache-spark-run-machine-learning-automl.md
+        - name: Потоковая передача Apache Spark
+          items:
+            - name: Общие сведения о потоковой передаче
+              href: apache-spark-streaming-overview.md
+            - name: Общие сведения о структурированной потоковой передаче
+              href: apache-spark-structured-streaming-overview.md
+            - name: Создание высокодоступных заданий потоковой передачи Apache Spark в Apache Hadoop YARN
+              href: apache-spark-streaming-high-availability.md
+            - name: Структурированная потоковая передача с использованием Apache Kafka
+              href: ../hdinsight-apache-kafka-spark-structured-streaming.md
+            - name: Структурированная потоковая передача из Apache Kafka в CosmosDB
+              href: ../apache-kafka-spark-structured-streaming-cosmosdb.md
+            - name: Потоковая передача Spark (DStream) с использованием Apache Kafka
+              href: ../hdinsight-apache-spark-with-kafka.md
+            - name: Создание заданий потоковой передачи Apache Spark со строго однократной обработкой событий
+              href: apache-spark-streaming-exactly-once.md
     - name: Apache Spark и Машинное обучение
       items:
         - name: Прогнозирование результата проверки продуктов
@@ -138,173 +142,173 @@
           href: apache-spark-microsoft-cognitive-toolkit.md
         - name: Создание конвейера машинного обучения Apache Spark
           href: apache-spark-creating-ml-pipelines.md
-    - name: Анализ больших данных
-      items:
-        - name: Apache Hive с Apache Spark
-          href: ../interactive-query/apache-hive-warehouse-connector.md
-        - name: Чтение и запись данных Apache HBase с помощью Apache Spark
-          href: ../hdinsight-using-spark-query-hbase.md
-        - name: Анализ журналов телеметрии Application Insights
-          href: apache-spark-analyze-application-insight-logs.md
-    - name: Расширение кластеров
-      items:
-        - name: Настройка кластеров с использованием начальной загрузки
-          href: ../hdinsight-hadoop-customize-cluster-bootstrap.md
-        - name: Настройка кластеров с помощью действия скрипта
-          href: ../hdinsight-hadoop-customize-cluster-linux.md
-        - name: Разработка действий скрипта
-          href: ../hdinsight-hadoop-script-actions-linux.md
-        - name: Установка и использование Presto
-          href: ../hdinsight-hadoop-install-presto.md
-        - name: Добавление библиотек Apache Hive
-          href: ../hdinsight-hadoop-add-hive-libraries.md
-        - name: Использование Apache Giraph
-          href: ../hdinsight-hadoop-giraph-install-linux.md
-        - name: Использование Hue
-          href: ../hdinsight-hadoop-hue-linux.md
-        - name: Использование пустых граничных узлов
-          href: ../hdinsight-apps-use-edge-node.md
-        - name: Сборка приложений HDInsight
+        - name: Анализ больших данных
           items:
-            - name: Установка пользовательских приложений
-              href: ../hdinsight-apps-install-custom-applications.md
-            - name: Установка приложений с помощью REST
-              href: 'https://msdn.microsoft.com/library/mt706515.aspx'
-            - name: Публикация приложений HDInsight в Azure Marketplace
-              href: ../hdinsight-apps-publish-applications.md
-    - name: Безопасность
-      items:
-        - name: Использование SSH с HDInsight
-          href: ../hdinsight-hadoop-linux-use-ssh-unix.md
-        - name: Использование туннелирования SSH
-          href: ../hdinsight-linux-ambari-ssh-tunnel.md
-        - name: Ограничение доступа к данным
-          href: ../hdinsight-storage-sharedaccesssignature-permissions.md
-        - name: Предоставление пользователям доступа к представлениям Apache Ambari
-          href: ../hdinsight-authorize-users-to-ambari.md
-    - name: Управление
-      items:
-        - name: Управление ресурсами кластера
-          href: apache-spark-resource-manager.md
-        - name: Управление приложениями Apache Spark с помощью расширенного сервера журнала
-          href: apache-azure-spark-history-server.md
-        - name: Настройка параметров Apache Spark
-          href: apache-spark-settings.md
-        - name: Оптимизация заданий Apache Spark
-          href: apache-spark-perf.md
-        - name: Включение кэширования с помощью службы кэша операций ввода-вывода
-          href: apache-spark-improve-performance-iocache.md
-        - name: Планирование ресурсов кластера
-          href: ../hdinsight-capacity-planning.md
-        - name: Создание кластеров HDInsight
-          href: ../hdinsight-hadoop-provision-linux-clusters.md
+            - name: Apache Hive с Apache Spark
+              href: ../interactive-query/apache-hive-warehouse-connector.md
+            - name: Чтение и запись данных Apache HBase с помощью Apache Spark
+              href: ../hdinsight-using-spark-query-hbase.md
+            - name: Анализ журналов телеметрии Application Insights
+              href: apache-spark-analyze-application-insight-logs.md
+        - name: Расширение кластеров
           items:
-            - name: Использование портала Azure
-              href: ../hdinsight-hadoop-create-linux-clusters-portal.md
-            - name: Использование шаблонов Azure Resource Manager
-              displayName: 'resource manager template, arm template, resource manager group'
-              href: ../hdinsight-hadoop-create-linux-clusters-arm-templates.md
-            - name: Использование пакета SDK для .NET
-              href: 'https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet#create-a-cluster'
-            - name: Использование пакета SDK для Python
-              href: 'https://docs.microsoft.com/python/api/overview/azure/hdinsight?view=azure-python#create-a-cluster'
-            - name: Использование пакета SDK для Java
-              href: 'https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable#create-a-cluster'
-            - name: Использование Azure PowerShell
-              href: ../hdinsight-hadoop-create-linux-clusters-azure-powershell.md
-            - name: Использование cURL и REST API Azure
-              href: ../hdinsight-hadoop-create-linux-clusters-curl-rest.md
-            - name: Использование Azure CLI
-              href: ../hdinsight-hadoop-create-linux-clusters-azure-cli.md
-            - name: Создание кластеров по запросу
-              href: ../hdinsight-hadoop-create-linux-clusters-adf.md
-        - name: Управление кластерами HDInsight
-          href: ../hdinsight-administer-use-portal-linux.md
+            - name: Настройка кластеров с использованием начальной загрузки
+              href: ../hdinsight-hadoop-customize-cluster-bootstrap.md
+            - name: Настройка кластеров с помощью действия скрипта
+              href: ../hdinsight-hadoop-customize-cluster-linux.md
+            - name: Разработка действий скрипта
+              href: ../hdinsight-hadoop-script-actions-linux.md
+            - name: Установка и использование Presto
+              href: ../hdinsight-hadoop-install-presto.md
+            - name: Добавление библиотек Apache Hive
+              href: ../hdinsight-hadoop-add-hive-libraries.md
+            - name: Использование Apache Giraph
+              href: ../hdinsight-hadoop-giraph-install-linux.md
+            - name: Использование Hue
+              href: ../hdinsight-hadoop-hue-linux.md
+            - name: Использование пустых граничных узлов
+              href: ../hdinsight-apps-use-edge-node.md
+            - name: Сборка приложений HDInsight
+              items:
+                - name: Установка пользовательских приложений
+                  href: ../hdinsight-apps-install-custom-applications.md
+                - name: Установка приложений с помощью REST
+                  href: 'https://msdn.microsoft.com/library/mt706515.aspx'
+                - name: Публикация приложений HDInsight в Azure Marketplace
+                  href: ../hdinsight-apps-publish-applications.md
+        - name: Безопасность
           items:
-            - name: Использование пакета SDK для .NET
-              href: 'https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet#management'
-            - name: Использование пакета SDK для Python
-              href: 'https://docs.microsoft.com/python/api/overview/azure/hdinsight?view=azure-python'
-            - name: Использование пакета SDK для Java
-              href: 'https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable'
-            - name: Использование пакета SDK для Go (предварительная версия)
-              href: 'https://docs.microsoft.com/azure/hdinsight/hdinsight-go-sdk-overview'
-            - name: Использование Azure PowerShell
-              href: ../hdinsight-administer-use-powershell.md
-            - name: Использование Azure CLI
-              href: ../hdinsight-administer-use-command-line.md
-        - name: Управление кластерами с помощью пользовательского веб-интерфейса Apache Ambari
-          href: ../hdinsight-hadoop-manage-ambari.md
+            - name: Использование SSH с HDInsight
+              href: ../hdinsight-hadoop-linux-use-ssh-unix.md
+            - name: Использование туннелирования SSH
+              href: ../hdinsight-linux-ambari-ssh-tunnel.md
+            - name: Ограничение доступа к данным
+              href: ../hdinsight-storage-sharedaccesssignature-permissions.md
+            - name: Предоставление пользователям доступа к представлениям Apache Ambari
+              href: ../hdinsight-authorize-users-to-ambari.md
+        - name: Управление
           items:
-            - name: Оптимизация кластеров с помощью пользовательского веб-интерфейса Apache Ambari
-              href: ../hdinsight-changing-configs-via-ambari.md
-            - name: Использование REST API Apache Ambari
-              href: ../hdinsight-hadoop-manage-ambari-rest-api.md
-        - name: Управление журналами для кластера HDInsight
-          href: ../hdinsight-log-management.md
-        - name: Добавление учетных записей хранения
-          href: ../hdinsight-hadoop-add-storage.md
-        - name: Отправка данных для заданий Apache Hadoop
-          href: ../hdinsight-upload-data.md
-        - name: Использование нескольких кластеров HDInsight с Data Lake Storage
-          href: ../hdinsight-multiple-clusters-data-lake-store.md
-        - name: Импорт и экспорт данных с помощью Apache Sqoop
-          href: ../hadoop/hdinsight-use-sqoop.md
+            - name: Управление ресурсами кластера
+              href: apache-spark-resource-manager.md
+            - name: Управление приложениями Apache Spark с помощью расширенного сервера журнала
+              href: apache-azure-spark-history-server.md
+            - name: Настройка параметров Apache Spark
+              href: apache-spark-settings.md
+            - name: Оптимизация заданий Apache Spark
+              href: apache-spark-perf.md
+            - name: Включение кэширования с помощью службы кэша операций ввода-вывода
+              href: apache-spark-improve-performance-iocache.md
+            - name: Планирование ресурсов кластера
+              href: ../hdinsight-capacity-planning.md
+            - name: Создание кластеров HDInsight
+              href: ../hdinsight-hadoop-provision-linux-clusters.md
+              items:
+                - name: Использование портала Azure
+                  href: ../hdinsight-hadoop-create-linux-clusters-portal.md
+                - name: Использование шаблонов Azure Resource Manager
+                  displayName: 'resource manager template, arm template, resource manager group'
+                  href: ../hdinsight-hadoop-create-linux-clusters-arm-templates.md
+                - name: Использование пакета SDK для .NET
+                  href: 'https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet#create-a-cluster'
+                - name: Использование пакета SDK для Python
+                  href: 'https://docs.microsoft.com/python/api/overview/azure/hdinsight?view=azure-python#create-a-cluster'
+                - name: Использование пакета SDK для Java
+                  href: 'https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable#create-a-cluster'
+                - name: Использование Azure PowerShell
+                  href: ../hdinsight-hadoop-create-linux-clusters-azure-powershell.md
+                - name: Использование cURL и REST API Azure
+                  href: ../hdinsight-hadoop-create-linux-clusters-curl-rest.md
+                - name: Использование Azure CLI
+                  href: ../hdinsight-hadoop-create-linux-clusters-azure-cli.md
+                - name: Создание кластеров по запросу
+                  href: ../hdinsight-hadoop-create-linux-clusters-adf.md
+            - name: Управление кластерами HDInsight
+              href: ../hdinsight-administer-use-portal-linux.md
+              items:
+                - name: Использование пакета SDK для .NET
+                  href: 'https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet#management'
+                - name: Использование пакета SDK для Python
+                  href: 'https://docs.microsoft.com/python/api/overview/azure/hdinsight?view=azure-python'
+                - name: Использование пакета SDK для Java
+                  href: 'https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable'
+                - name: Использование пакета SDK для Go (предварительная версия)
+                  href: 'https://docs.microsoft.com/azure/hdinsight/hdinsight-go-sdk-overview'
+                - name: Использование Azure PowerShell
+                  href: ../hdinsight-administer-use-powershell.md
+                - name: Использование Azure CLI
+                  href: ../hdinsight-administer-use-command-line.md
+            - name: Управление кластерами с помощью пользовательского веб-интерфейса Apache Ambari
+              href: ../hdinsight-hadoop-manage-ambari.md
+              items:
+                - name: Оптимизация кластеров с помощью пользовательского веб-интерфейса Apache Ambari
+                  href: ../hdinsight-changing-configs-via-ambari.md
+                - name: Использование REST API Apache Ambari
+                  href: ../hdinsight-hadoop-manage-ambari-rest-api.md
+            - name: Управление журналами для кластера HDInsight
+              href: ../hdinsight-log-management.md
+            - name: Добавление учетных записей хранения
+              href: ../hdinsight-hadoop-add-storage.md
+            - name: Отправка данных для заданий Apache Hadoop
+              href: ../hdinsight-upload-data.md
+            - name: Использование нескольких кластеров HDInsight с Data Lake Storage
+              href: ../hdinsight-multiple-clusters-data-lake-store.md
+            - name: Импорт и экспорт данных с помощью Apache Sqoop
+              href: ../hadoop/hdinsight-use-sqoop.md
+              items:
+                - name: Подключение по SSH
+                  href: ../hadoop/apache-hadoop-use-sqoop-mac-linux.md
+                - name: Запуск с помощью cURL
+                  href: ../hadoop/apache-hadoop-use-sqoop-curl.md
+                - name: Запуск с помощью пакета SDK для .NET
+                  href: ../hadoop/apache-hadoop-use-sqoop-dotnet-sdk.md
+                - name: Запуск с помощью Azure PowerShell
+                  href: ../hadoop/apache-hadoop-use-sqoop-powershell.md
+            - name: Использование Apache Oozie для рабочих процессов
+              href: ../hdinsight-use-oozie-linux-mac.md
+            - name: Порты и универсальные коды ресурсов (URI) кластеров и служб
+              href: ../hdinsight-hadoop-port-settings-for-services.md
+            - name: Миграция в среду средств разработки Resource Manager
+              href: ../hdinsight-hadoop-development-using-azure-resource-manager.md
+            - name: Доступность и надежность
+              href: ../hdinsight-high-availability-linux.md
+            - name: Установка новой версии кластера HDInsight
+              href: ../hdinsight-upgrade-cluster.md
+            - name: Обновление ОС путем частичной замены для кластера HDInsight
+              href: ../hdinsight-os-patching.md
+        - name: Устранение неполадок
           items:
-            - name: Подключение по SSH
-              href: ../hadoop/apache-hadoop-use-sqoop-mac-linux.md
-            - name: Запуск с помощью cURL
-              href: ../hadoop/apache-hadoop-use-sqoop-curl.md
-            - name: Запуск с помощью пакета SDK для .NET
-              href: ../hadoop/apache-hadoop-use-sqoop-dotnet-sdk.md
-            - name: Запуск с помощью Azure PowerShell
-              href: ../hadoop/apache-hadoop-use-sqoop-powershell.md
-        - name: Использование Apache Oozie для рабочих процессов
-          href: ../hdinsight-use-oozie-linux-mac.md
-        - name: Порты и универсальные коды ресурсов (URI) кластеров и служб
-          href: ../hdinsight-hadoop-port-settings-for-services.md
-        - name: Миграция в среду средств разработки Resource Manager
-          href: ../hdinsight-hadoop-development-using-azure-resource-manager.md
-        - name: Доступность и надежность
-          href: ../hdinsight-high-availability-linux.md
-        - name: Установка новой версии кластера HDInsight
-          href: ../hdinsight-upgrade-cluster.md
-        - name: Обновление ОС путем частичной замены для кластера HDInsight
-          href: ../hdinsight-os-patching.md
-    - name: Устранение неполадок
-      items:
-        - name: Отладка заданий Apache Spark
-          href: apache-spark-job-debugging.md
-        - name: Отладка заданий Apache Spark через граф заданий
-          href: apache-azure-spark-history-server.md
-        - name: Использование IntelliJ для отладки заданий Apache Spark
-          href: apache-spark-intellij-tool-debug-remotely-through-ssh.md
-        - name: Устранение задержки работы или сбоя кластера HDInsight
-          href: ../hdinsight-troubleshoot-failed-cluster.md
-        - name: Устранение неполадок с Apache Spark
-          href: apache-troubleshoot-spark.md
-        - name: Устранение неполадок с Apache Hadoop HDFS
-          href: ../hdinsight-troubleshoot-hdfs.md
-        - name: Устранение неполадок с Apache Hadoop YARN
-          href: ../hdinsight-troubleshoot-yarn.md
-        - name: Известные проблемы
-          href: apache-spark-known-issues.md
-        - name: Ресурсы
-          items:
-            - name: Сведения об использовании HDInsight в Linux
-              href: ../hdinsight-hadoop-linux-information.md
-            - name: 'Apache Hadoop: память и производительность'
-              href: ../hdinsight-hadoop-stack-trace-error-messages.md
-            - name: Доступ к журналам приложений Apache Hadoop YARN в Linux
-              href: ../hdinsight-hadoop-access-yarn-app-logs-linux.md
-            - name: Включение дампов кучи для служб Apache Hadoop
-              href: ../hdinsight-hadoop-collect-debug-heap-dump-linux.md
-            - name: Анализ и устранение ошибок WebHCat
-              href: ../hdinsight-hadoop-templeton-webhcat-debug-errors.md
-            - name: Исправление ошибки "Недостаточно памяти" в параметрах Apache Hive
-              href: ../hdinsight-hadoop-hive-out-of-memory-error-oom.md
-            - name: Оптимизация запросов Apache Hive
-              href: ../hdinsight-hadoop-optimize-hive-query.md
+            - name: Отладка заданий Apache Spark
+              href: apache-spark-job-debugging.md
+            - name: Отладка заданий Apache Spark через граф заданий
+              href: apache-azure-spark-history-server.md
+            - name: Использование IntelliJ для отладки заданий Apache Spark
+              href: apache-spark-intellij-tool-debug-remotely-through-ssh.md
+            - name: Устранение задержки работы или сбоя кластера HDInsight
+              href: ../hdinsight-troubleshoot-failed-cluster.md
+            - name: Устранение неполадок с Apache Spark
+              href: apache-troubleshoot-spark.md
+            - name: Устранение неполадок с Apache Hadoop HDFS
+              href: ../hdinsight-troubleshoot-hdfs.md
+            - name: Устранение неполадок с Apache Hadoop YARN
+              href: ../hdinsight-troubleshoot-yarn.md
+            - name: Известные проблемы
+              href: apache-spark-known-issues.md
+            - name: Ресурсы
+              items:
+                - name: Сведения об использовании HDInsight в Linux
+                  href: ../hdinsight-hadoop-linux-information.md
+                - name: 'Apache Hadoop: память и производительность'
+                  href: ../hdinsight-hadoop-stack-trace-error-messages.md
+                - name: Доступ к журналам приложений Apache Hadoop YARN в Linux
+                  href: ../hdinsight-hadoop-access-yarn-app-logs-linux.md
+                - name: Включение дампов кучи для служб Apache Hadoop
+                  href: ../hdinsight-hadoop-collect-debug-heap-dump-linux.md
+                - name: Анализ и устранение ошибок WebHCat
+                  href: ../hdinsight-hadoop-templeton-webhcat-debug-errors.md
+                - name: Исправление ошибки "Недостаточно памяти" в параметрах Apache Hive
+                  href: ../hdinsight-hadoop-hive-out-of-memory-error-oom.md
+                - name: Оптимизация запросов Apache Hive
+                  href: ../hdinsight-hadoop-optimize-hive-query.md
 - name: Справочные материалы
   items:
     - name: Примеры кода

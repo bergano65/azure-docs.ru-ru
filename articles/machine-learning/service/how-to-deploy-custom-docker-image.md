@@ -10,12 +10,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 06/05/2019
-ms.openlocfilehash: 02bc8835ddb163d81f389e13b21b88adca55cb2f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: bd0e8099be5422d561541aeb8911c9a1610befcb
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67082629"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67272766"
 ---
 # <a name="deploy-a-model-using-a-custom-docker-image"></a>Развертывание модели с помощью пользовательского образа Docker
 
@@ -43,6 +43,7 @@ ms.locfileid: "67082629"
 * Рабочая группа службы машинного обучения Azure. Дополнительные сведения см. в разделе [создать рабочую область](setup-create-workspace.md) статьи.
 * Машинного обучения Azure SDK. Дополнительные сведения см. в разделе пакет SDK для Python [создать рабочую область](setup-create-workspace.md#sdk) статьи.
 * [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+* [Расширение CLI для машинного обучения Azure](reference-azure-machine-learning-cli.md).
 * [Реестр контейнеров Azure](/azure/container-registry) или другой реестр Docker, которая доступна в Интернете.
 * В этом документе предполагается, что вы знакомы с созданием и использованием __вывод конфигурации__ объект как часть модели развертывания. Дополнительные сведения см. в разделе «Подготовка к развертыванию» из [способа развертывания и как](how-to-deploy-and-where.md#prepare-to-deploy).
 

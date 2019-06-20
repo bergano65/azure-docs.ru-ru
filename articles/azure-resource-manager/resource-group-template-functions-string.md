@@ -1,23 +1,17 @@
 ---
 title: Строковые функции шаблона Azure Resource Manager | Документация Майкрософт
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для работы со строками.
-services: azure-resource-manager
-documentationcenter: na
 author: tfitzmac
-ms.assetid: ''
 ms.service: azure-resource-manager
-ms.devlang: na
 ms.topic: reference
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 04/08/2019
 ms.author: tomfitz
-ms.openlocfilehash: 82b9403a3d5a5b6938f5b95bbfce888d1e70e451
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 979474ea6b5b61935742591f8fba87d200d618e4
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66431211"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67206339"
 ---
 # <a name="string-functions-for-azure-resource-manager-templates"></a>Строковые функции для шаблонов Azure Resource Manager
 
@@ -116,7 +110,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | base64Output | String | b25lLCB0d28sIHRocmVl |
 | toStringOutput | String | one, two, three |
@@ -246,7 +240,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | base64Output | String | b25lLCB0d28sIHRocmVl |
 | toStringOutput | String | one, two, three |
@@ -294,7 +288,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | concatOutput | String | prefix-5yj4yjf5mbg72 |
 
@@ -335,7 +329,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | return | Массив, | ["1-1", "1-2", "1-3", "2-1", "2-2", "2-3"] |
 
@@ -411,7 +405,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | stringTrue | Bool | Истина |
 | stringFalse | Логический | False |
@@ -470,7 +464,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | dataUriOutput | String | data:text/plain;charset=utf8;base64,SGVsbG8= |
 | toStringOutput | String | Привет, мир! |
@@ -525,7 +519,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | dataUriOutput | String | data:text/plain;charset=utf8;base64,SGVsbG8= |
 | toStringOutput | String | Привет, мир! |
@@ -589,7 +583,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | arrayEmpty | Логический | Истина |
 | objectEmpty | Логический | Истина |
@@ -652,7 +646,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | startsTrue | Логический | Истина |
 | startsCapTrue | Логический | Да |
@@ -708,12 +702,12 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | String | one |
 | stringOutput | String | O |
 
-## <a name="format"></a>свойства
+## <a name="format"></a>format
 
 `format(formatString, arg1, arg2, ...)`
 
@@ -766,7 +760,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | formatTest | String | Привет, пользователь. Форматированного числа: 8,175,133 |
 
@@ -894,7 +888,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | firstT | Int | 0 |
 | lastT | int | 3 |
@@ -1007,7 +1001,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | firstT | Int | 0 |
 | lastT | int | 3 |
@@ -1123,7 +1117,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера зависит от каждого развертывания, однако будет выглядеть так:
 
-| ИМЯ | type | Значение |
+| Name | type | Значение |
 | ---- | ---- | ----- |
 | guidOutput | string | b76a51fc-bd72-4a77-b9a2-3c29e7d2e551 |
 
@@ -1217,7 +1211,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | stringOutput | String | 0000000123 |
 
@@ -1396,7 +1390,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | firstOutput | Массив, | ["one", "two", "three"] |
 | secondOutput | Массив, | ["one", "two", "three"] |
@@ -1458,7 +1452,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | startsTrue | Логический | Истина |
 | startsCapTrue | Логический | Да |
@@ -1532,7 +1526,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | objectOutput | String | {"valueA":10,"valueB":"Example Text"} |
 | arrayOutput | String | ["a","b","c"] |
@@ -1595,7 +1589,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | substringOutput | String | two |
 
@@ -1662,7 +1656,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Массив, | ["one", "two"] |
 | stringOutput | String | on |
@@ -1951,7 +1945,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | uriOutput | String | http://contoso.com/resources/nested/azuredeploy.json |
 | componentOutput | String | http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json |
@@ -2006,7 +2000,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | uriOutput | String | http://contoso.com/resources/nested/azuredeploy.json |
 | componentOutput | String | http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json |
@@ -2061,7 +2055,7 @@ ms.locfileid: "66431211"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | uriOutput | String | http://contoso.com/resources/nested/azuredeploy.json |
 | componentOutput | String | http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json |
@@ -2077,7 +2071,7 @@ ms.locfileid: "66431211"
 
 | Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| свойства |Нет |string |Значение, закодированное в формате URI, которое необходимо преобразовать в строку. Использовать [строки стандартного формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) или [строк настраиваемого формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). |
+| format |Нет |string |Значение, закодированное в формате URI, которое необходимо преобразовать в строку. Использовать [строки стандартного формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) или [строк настраиваемого формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). |
 
 ### <a name="remarks"></a>Примечания
 

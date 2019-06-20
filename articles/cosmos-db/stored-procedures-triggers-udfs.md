@@ -4,15 +4,15 @@ description: В этой статье вводятся такие концепц
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/21/2019
+ms.date: 06/14/2019
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 40d120fe5fcc79721923d3493e74b5195ecc129c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 529c536d9ea3b898745f03c80b63702b2af485da
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65965708"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67165577"
 ---
 # <a name="stored-procedures-triggers-and-user-defined-functions"></a>Хранимые процедуры, триггеры и определяемые пользователем функции
 
@@ -75,7 +75,7 @@ Azure Cosmos DB обеспечивает транзакционное выпол
 
 ## <a name="triggers"></a>Триггеры
 
-В этом разделе описываются два типа триггеров:
+Azure Cosmos DB поддерживает два типа триггеров:
 
 ### <a name="pre-triggers"></a>Триггеры предварительного выполнения
 
@@ -84,6 +84,9 @@ Azure Cosmos DB предоставляет триггеры, которые мо
 ### <a name="post-triggers"></a>Триггеры последующего выполнения
 
 Подобно триггерам предварительного выполнения триггеры последующего выполнения также связаны с операцией над элементом базы данных Azure Cosmos DB и не требуют никаких входных параметров. Они запускаются *после* завершения операции и получают доступ к ответному сообщению, которое отправляется клиенту. Примеры см. в статье [Как записать триггеры](how-to-write-stored-procedures-triggers-udfs.md#triggers).
+
+> [!NOTE]
+> Зарегистрированные триггеры не запускаются автоматически при их соответствующие операции (Создание, удаление / замены, обновления) происходит. Они должны вызываться явным образом при выполнении этих операций. Дополнительные сведения см. в разделе [запуск триггеров](how-to-use-stored-procedures-triggers-udfs.md#pre-triggers) статьи.
 
 ## <a id="udfs"></a>Функции, определяемые пользователем
 

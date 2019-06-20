@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/22/2018
 ms.author: sngun
-ms.openlocfilehash: 4ec9d5e605a2319a04dac4cb52dbe49c77354479
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 91f15f9c19b480d950b2c715e6d9290e01184cf7
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65510636"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67272373"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для .NET Core для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -49,6 +49,12 @@ ms.locfileid: "65510636"
 * Новая объектная модель и класс верхнего уровня CosmosClient с методами, разделенными между соответствующими классами (CosmosDatabases, CosmosContainers и CosmosItems).
 * Поддержка потоков.
 * Обновлен класс сервера CosmosResponseMessage. Теперь он возвращает код состояния и выдает исключение только в случае отсутствия ответа.
+
+### <a name="a-name250250"></a><a name="2.5.0"/>2.5.0
+
+* Разрешить запросы записи для возврата в другом регионе, в случае сбоя исходного одного
+* Добавить политику повтора сеанса для запроса на запись
+* Исправления, трассировка гонки для запросов, которые вызывали пустые страницы
 
 ### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
 
@@ -251,6 +257,7 @@ ms.locfileid: "65510636"
 
 | Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.5.0](#2.5.0) |18 июня 2019 г. |--- |
 | [2.4.0](#2.4.0) |05-мая 2019 г. |--- |
 | [2.3.0](#2.3.0) |04 апреля 2019 г. |--- |
 | [2.2.3](#2.2.3) |11 марта 2019 г. |--- |

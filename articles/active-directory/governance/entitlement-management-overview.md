@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 05/30/2019
+ms.date: 06/05/2019
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: efd3ff8a6e7ddf2aa6242cc322d8a6536a6bd26b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fbb4001e9496d31d9c2879721f8cf8e26b74ddf3
+ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66474067"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67204550"
 ---
 # <a name="what-is-azure-ad-entitlement-management-preview"></a>Что такое управление правами Azure AD? (предварительная версия)
 
@@ -130,41 +130,6 @@ ms.locfileid: "66474067"
 | Назначенные пользователи | Назначение пакета доступ пользователю или группе. |
 | enable | Процесс предоставления пакету доступ для пользователей, для запроса. |
 
-## <a name="roles-and-permissions"></a>Роли и разрешения
-
-Управление правами имеет разные роли, на основе выполняемых функций.
-
-| Роль | Описание |
-| --- | --- |
-| [Администратор пользователей](../users-groups-roles/directory-assign-admin-roles.md#user-administrator) | Управлять всеми аспектами управление правами.<br/>Создание пользователей и групп. |
-| Создатель каталога | Создание каталогов и управление ими. Обычно ИТ-администратор или владелец ресурса. Пользователь, автоматически создается каталог становится первый каталог владелец каталога. |
-| Владелец каталога | Изменение и управление ею существующих каталогов. Обычно ИТ-администратор или владелец ресурса. |
-| Диспетчер пакетов доступ | Изменение и управление ею всех существующих пакетов доступ в каталоге. |
-| Утверждающий | Утверждение запросов на доступ к пакетам. |
-| Запрашивающая сторона | Запросите пакеты. |
-
-В следующей таблице перечислены разрешения для каждой из этих ролей.
-
-| Задача | Администратор пользователей | Создатель каталога | Владелец каталога | Диспетчер пакетов доступ | Утверждающий |
-| --- | :---: | :---: | :---: | :---: | :---: |
-| [Создание нового пакета доступа в каталоге Общие](entitlement-management-access-package-create.md) | :heavy_check_mark: |  :heavy_check_mark: |  |  |  |
-| [Создание нового пакета доступа в каталоге](entitlement-management-access-package-create.md) | :heavy_check_mark: |   | :heavy_check_mark: |  |  |
-| [Добавление и удаление ролей ресурсов с пакет доступа](entitlement-management-access-package-edit.md) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Укажите, кто может запросить пакет доступа](entitlement-management-access-package-edit.md#add-a-new-policy) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Напрямую назначить пользователю к пакету доступ](entitlement-management-access-package-edit.md#directly-assign-a-user) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Представление, у кого есть назначения к пакету доступ](entitlement-management-access-package-edit.md#view-who-has-an-assignment) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Просмотреть запросы пакет доступа](entitlement-management-access-package-edit.md#view-requests) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Просмотр запроса с ошибками доставки](entitlement-management-access-package-edit.md#view-a-requests-delivery-errors) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Отмена ожидающего запроса](entitlement-management-access-package-edit.md#cancel-a-pending-request) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Скрыть пакет доступа](entitlement-management-access-package-edit.md#change-the-hidden-setting) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Удаление пакета доступа](entitlement-management-access-package-edit.md#delete) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Утвердить запрос доступа](entitlement-management-request-approve.md) |  |  |  |  | :heavy_check_mark: |
-| [Создание каталога](entitlement-management-catalog-create.md) | :heavy_check_mark: | :heavy_check_mark: |  |  |  |
-| [Добавление и удаление ресурсов из общего каталога](entitlement-management-catalog-create.md#add-resources-to-a-catalog) | :heavy_check_mark: |  |  |  |  |
-| [Добавление и удаление ресурсов из каталога](entitlement-management-catalog-create.md#add-resources-to-a-catalog) | :heavy_check_mark: |  | :heavy_check_mark: |  |  |
-| [Добавить владельцев каталога или получить доступ к диспетчеров пакетов](entitlement-management-catalog-create.md#add-catalog-owners-or-access-package-managers) | :heavy_check_mark: |  | :heavy_check_mark: |  |  |
-| [Изменить или удалить каталог](entitlement-management-catalog-create.md#edit-a-catalog) | :heavy_check_mark: |  | :heavy_check_mark: |  |  |
-
 ## <a name="license-requirements"></a>Требования лицензий
 
 [!INCLUDE [Azure AD Premium P2 license](../../../includes/active-directory-p2-license.md)]
@@ -173,5 +138,5 @@ ms.locfileid: "66474067"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Учебник. Создайте свой первый пакет доступа](entitlement-management-access-package-first.md)
+- [Руководство. Создайте свой первый пакет доступа](entitlement-management-access-package-first.md)
 - [Распространенные сценарии](entitlement-management-scenarios.md)

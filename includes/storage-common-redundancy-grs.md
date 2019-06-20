@@ -9,11 +9,11 @@ ms.date: 03/26/2018
 ms.author: jeking
 ms.custom: include file
 ms.openlocfilehash: efa593d0ff0043d81574b67192deed30933e1e40
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66114880"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185898"
 ---
 Геоизбыточное хранилище (GRS) предназначено для обеспечения устойчивости объектов на уровне 99,99999999999999 % (16 девяток) в течение определенного года за счет репликации данных в дополнительный регион, который находится в сотнях километров от основного региона. Если в учетной записи хранения включена репликация GRS, данные будут устойчивы даже в случае отключения электричества во всем регионе или аварии, при которой первичный регион не может быть восстановлен.
 

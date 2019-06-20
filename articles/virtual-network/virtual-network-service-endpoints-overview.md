@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 08/15/2018
 ms.author: sumeet.mittal
 ms.custom: ''
-ms.openlocfilehash: 73621c3bbab7f0c49feacab29e1e5de1792b80e4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: e621eeeca7a4f325efcfb242c204b2f727e55fc4
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61032583"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67147759"
 ---
 # <a name="virtual-network-service-endpoints"></a>Конечные точки служб для виртуальной сети
 
@@ -61,7 +61,7 @@ ms.locfileid: "61032583"
 - Функция доступна только для виртуальных сетей, развернутых посредством модели развертывания с помощью Azure Resource Manager.
 - Конечные точки включаются в подсетях, которые настроены в виртуальных сетях Azure. Конечные точки нельзя использовать для трафика, поступающего из локальной среды в службы Azure. Дополнительные сведения см. в разделе о [защите доступа к службам Azure из локальной среды](#securing-azure-services-to-virtual-networks).
 - В SQL Azure конечная точка службы применяется только к трафику службы Azure в пределах региона виртуальной сети. В службе хранилища Azure для поддержки трафика RA-GRS и GRS конечные точки также применяются к сопряженным регионам, в которых развернута виртуальная сеть. См. дополнительные сведения о [парах регионов Azure](../best-practices-availability-paired-regions.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-paired-regions).
-- У Azure Data Lake Storage 1-го поколения возможность интеграции с виртуальной сетью доступна только для виртуальных сетей из одного региона.
+- У Azure Data Lake Storage 1-го поколения возможность интеграции с виртуальной сетью доступна только для виртуальных сетей из одного региона. Также Обратите внимание, что интеграция виртуальной сети для Gen1 хранилища Озера данных Azure позволяет использовать безопасности конечной точки службы виртуальной сети между виртуальной сетью и Azure Active Directory (Azure AD), создавать дополнительную защиту утверждения в маркере доступа. Эти утверждения используются для проверки подлинности виртуальной сети в учетной записи ADLS 1-го поколения и для предоставления доступа. Тег «Microsoft.AzureActiveDirectory», в списке служб, поддерживающих конечных точек службы используется только для поддержки конечных точек службы ADLS Gen 1. Azure Active Directory (Azure AD) нет встроенной поддержки конечных точек службы. Дополнительные сведения о [Azure Data Lake Store Gen 1 интеграции с виртуальной сетью](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 ## <a name="securing-azure-services-to-virtual-networks"></a>Защита служб Azure в виртуальных сетях
 
@@ -120,7 +120,7 @@ ms.locfileid: "61032583"
 
 ## <a name="provisioning"></a>Подготовка
 
-Пользователь с правами на запись в виртуальной сети может настроить конечные точки служб в виртуальных сетях независимо друг от друга. Для защиты ресурсов служб Azure в виртуальной сети пользователь должен иметь разрешение *Microsoft.Network/JoinServicetoaSubnet* для добавляемых подсетей. Это разрешение по умолчанию включено во встроенные роли администраторов служб и может быть изменено при создании настраиваемых ролей.
+Пользователь с правами на запись в виртуальной сети может настроить конечные точки служб в виртуальных сетях независимо друг от друга. Чтобы защитить ресурсы служб Azure к виртуальной сети, пользователь должен иметь разрешение на *Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action* для добавляемых подсетей. Это разрешение по умолчанию включено во встроенные роли администраторов служб и может быть изменено при создании настраиваемых ролей.
 
 Узнайте больше о [встроенных ролях](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и назначении разрешений, определенных для [настраиваемых ролей](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
