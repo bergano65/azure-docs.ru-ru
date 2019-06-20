@@ -24,7 +24,7 @@ ms.locfileid: "64573827"
 # <a name="tutorial-build-your-first-data-factory-by-using-the-azure-portal"></a>Руководство по Создание первой фабрики данных с помощью портала Azure
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-build-your-first-pipeline.md)
-> * [портал Azure](data-factory-build-your-first-pipeline-using-editor.md)
+> * [Azure portal](data-factory-build-your-first-pipeline-using-editor.md)
 > * [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
 > * [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 > * [Шаблон Azure Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
@@ -212,11 +212,11 @@ ms.locfileid: "64573827"
    | Свойство | Где находится | ОПИСАНИЕ |
    |:--- |:--- |:--- |
    | type | properties |Для свойства типа задано значение **AzureBlob**, так как данные хранятся в хранилище BLOB-объектов. |
-   | linkedServiceName | свойства |Ссылается на созданную ранее службу AzureStorageLinkedService. |
+   | linkedServiceName | format |Ссылается на созданную ранее службу AzureStorageLinkedService. |
    | folderPath | typeProperties | Определяет контейнер больших двоичных объектов и папку, которая содержит входные большие двоичные объекты. | 
    | fileName | typeProperties |Это необязательное свойство. Если это свойство не указано, выбираются все файлы из папки folderPath. В этом руководстве обрабатывается только файл input.log. |
-   | type | свойства |Файлы журнала представлены в текстовом формате, поэтому используйте значение **TextFormat**. |
-   | columnDelimiter | свойства |Столбцы в файлах журнала разделяются запятыми (`,`). |
+   | type | format |Файлы журнала представлены в текстовом формате, поэтому используйте значение **TextFormat**. |
+   | columnDelimiter | format |Столбцы в файлах журнала разделяются запятыми (`,`). |
    | frequency/interval | availability |Для свойства frequency задано значение **Month**, а для свойства interval — значение **1**. Это означает, что срезы входных данных доступны ежемесячно. |
    | external | properties | Это свойство имеет значение **true**, если этот конвейер не создает входные данные. В этом руководстве файл input.log не создается этим конвейером, поэтому мы присвоим этому свойству значение **true**. |
 
