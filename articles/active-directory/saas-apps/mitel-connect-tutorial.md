@@ -124,8 +124,8 @@ ms.locfileid: "66254606"
 
 7. В текстовом поле **URL-адрес входа** введите любой из следующих URL-адресов:
 
-    * **https://portal.shoretelsky.com** — для использования портала Mitel Account как приложения Mitel по умолчанию;
-    * **https://teamwork.shoretel.com** — для использования Teamwork как приложения Mitel по умолчанию.
+    * [https://portal.shoretelsky.com]( **https://portal.shoretelsky.com** ) — для использования портала Mitel Account как приложения Mitel по умолчанию;
+    * [https://teamwork.shoretel.com]( **https://teamwork.shoretel.com** ) — для использования Teamwork как приложения Mitel по умолчанию.
 
     **Примечание.** Приложение Mitel по умолчанию — это приложение, на которое пользователь переходит, когда щелкает плитку Mitel Connect на Панели доступа. Также это приложение, к которому предоставляется доступ при выполнении тестовой настройки из Azure AD.
 
