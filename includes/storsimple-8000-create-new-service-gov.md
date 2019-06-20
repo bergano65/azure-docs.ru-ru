@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 6939553206fe223d8166368d2963f03b32d2629e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66118188"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185341"
 ---
 #### <a name="to-create-a-new-service"></a>Создание новой службы
 1. Войдите на [портал Microsoft Azure для государственных организаций](https://portal.azure.us/) с данными своей учетной записи Майкрософт.

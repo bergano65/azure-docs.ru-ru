@@ -9,11 +9,11 @@ ms.date: 04/04/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 19ad4e39ca4e402c37b2cfa69c7c306b6e5a2766
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66170102"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185140"
 ---
 1. Найдите и откройте страницу шлюза виртуальной сети. Это можно сделать несколькими способами. Вы можете перейти к шлюзу VNet1GW, последовательно открыв **TestVNet1 -> Обзор -> Подключенные устройства -> VNet1GW**.
 2. На странице VNet1GW щелкните **Подключения**. В верхней части страницы "Подключения" нажмите кнопку **Добавить**, чтобы открыть страницу **Добавление подключения**.

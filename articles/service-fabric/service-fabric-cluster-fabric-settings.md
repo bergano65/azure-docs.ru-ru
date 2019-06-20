@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/12/2019
 ms.author: aljo
-ms.openlocfilehash: fed991193e8d4a1f8e4e2fcf75ef8e2bf0d0a8d3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: a309b30fc9438ded280109691afd3bde0883dc3c
+ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67074293"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67144392"
 ---
 # <a name="customize-service-fabric-cluster-settings"></a>Настройка параметров кластера Service Fabric
 В этой статье описываются различные параметры структуры для кластера Service Fabric, которые вы можете настроить. Для кластеров, размещенных в Azure, можно настроить параметры на [портале Azure](https://portal.azure.com) или использовать шаблон Azure Resource Manager. Дополнительные сведения см. в статье об [обновлении конфигурации кластера в Azure](service-fabric-cluster-config-upgrade-azure.md). Чтобы настроить параметры для автономных кластеров, обновите файл *ClusterConfig.json* и обновите конфигурацию в своем кластере. Дополнительные сведения см. в статье об [обновлении конфигурации автономного кластера](service-fabric-cluster-config-upgrade-windows-server.md).
@@ -150,7 +150,7 @@ ms.locfileid: "67074293"
 |PartitionPrefix|Строка, значение по умолчанию — "--"|Статическое|Определяет строковое значение префикса секции в запросах DNS для секционированных служб. Значение: <ul><li>должно быть совместимо с RFC, так как будет входить в DNS-запрос;</li><li>не должно содержать точку, ".", так как точка влияет на поведение DNS-суффикса;</li><li>не может содержать более 5 знаков;</li><li>не может быть пустой строкой;</li><li>если параметр PartitionPrefix переопределяется, то параметр PartitionSuffix необходимо переопределить, и наоборот.</li></ul>Дополнительные сведения см. в статье [Служба DNS в Azure Service Fabric](service-fabric-dnsservice.md).|
 |PartitionSuffix|Строка, значение по умолчанию — ""|Статическое|Определяет строковое значение суффикса секции в запросах DNS для секционированных служб. Значение: <ul><li>должно быть совместимо с RFC, так как будет входить в DNS-запрос;</li><li>не должно содержать точку, ".", так как точка влияет на поведение DNS-суффикса;</li><li>не может содержать более 5 знаков;</li><li>если параметр PartitionPrefix переопределяется, то параметр PartitionSuffix необходимо переопределить, и наоборот.</li></ul>Дополнительные сведения см. в статье [Служба DNS в Azure Service Fabric](service-fabric-dnsservice.md). |
 
-## <a name="eventstore"></a>EventStore
+## <a name="eventstoreservice"></a>EventStoreService
 
 | **Параметр** | **Допустимые значения** | **Политика обновления** | **Рекомендация или краткое описание** |
 | --- | --- | --- | --- |

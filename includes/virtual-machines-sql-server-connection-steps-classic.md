@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: jroth
 ms.openlocfilehash: 57f238a8f91df1271e91894b88a7f02118b1f123
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66165545"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185231"
 ---
 ### <a name="determine-the-dns-name-of-the-virtual-machine"></a>Определение DNS-имени виртуальной машины
 Для подключения к компоненту SQL Server Database Engine с другого компьютера необходимо знать имя виртуальной машины в системе доменных имен (DNS). (Это имя используется для идентификации виртуальной машины в сети Интернет. Можно использовать IP-адрес, но IP-адрес может измениться при перемещении ресурсов Azure для обеспечения избыточности или при выполнении обслуживания. DNS-имя будет оставаться неизменным, так как оно может быть перенаправлено на новый IP-адрес).  

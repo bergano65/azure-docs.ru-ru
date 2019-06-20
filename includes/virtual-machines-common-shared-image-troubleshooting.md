@@ -9,11 +9,11 @@ ms.date: 04/25/2019
 ms.author: akjosh; cynthn
 ms.custom: include file
 ms.openlocfilehash: 1476830313296615591a69a2cadd04bcc56b22bc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66158700"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185224"
 ---
 Если возникнут проблемы при выполнении операций с коллекциями общих образов, определениями и версиями образов, выполните команду, которая дала сбой, в режиме отладки. Режим отладки активируется путем передачи параметра **-debug** в интерфейсе командной строки и параметра **-Debug** в PowerShell. Обнаружив ошибку, следуйте инструкциям в этом документе для ее устранения.
 

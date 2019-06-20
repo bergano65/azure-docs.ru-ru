@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 06/03/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 91880e43382662b5d55f112455ee8f4c92ad01c5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d206ea1afe43a91707a4bcd981a4158ff08fdc3a
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66471601"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67206161"
 ---
 # <a name="transfer-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения подпиской Azure другой учетной записи
 
@@ -116,7 +116,7 @@ ms.locfileid: "66471601"
 
 ### <a id="no-button"></a>Почему не отображается кнопка "Перенос подписки"?
 
-К сожалению самостоятельный перенос подписки недоступен для вашего предложения. Просмотр списка поддерживаемых предложений в [поддерживается предложения](#supported-offers) этой статьи. Кроме того мы не блокируют перемещение подписки для любой страны. Тем не менее кросс-Страна передачи не поддерживается. Для передачи прав владения подпиской кросс-страны, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade). 
+К сожалению самостоятельная передача подписки недоступен для вашего предложения. Просмотр списка поддерживаемых предложений в [поддерживается предложения](#supported-offers) этой статьи. Кроме того мы не блокируют перемещение подписки для любой страны. См. в разделе [полный список стран](https://azure.microsoft.com/pricing/faq/) где предоставляется коммерческий Azure. Тем не менее самостоятельная передача подписки не поддерживает передачу перекрестного страны. Для передачи прав владения подпиской кросс-страны, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade). 
 
 
 ### <a name="can-i-transfer-ownership-to-an-account-in-another-country"></a>Как передавать право собственности на учетную запись в другой стране?

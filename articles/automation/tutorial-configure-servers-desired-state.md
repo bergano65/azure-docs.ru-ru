@@ -9,12 +9,12 @@ ms.author: robreed
 manager: carmonm
 ms.topic: conceptual
 ms.date: 08/08/2018
-ms.openlocfilehash: 83a65be50a3cec9cea47682ab5e207bd4ad9e984
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: 3bcdb667ee649b9bbf32ad33e74e876cdd2b5cbf
+ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67072559"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67144191"
 ---
 # <a name="configure-servers-to-a-desired-state-and-manage-drift"></a>Настройка требуемого состояния серверов и управление смещением
 
@@ -154,7 +154,7 @@ $reports[0]
 > [!NOTE]
 > Отмена регистрации узла в службе только задает параметры локального диспетчера конфигураций, поэтому узел больше не подключается к службе.
 > Это не влияет на конфигурацию, применяемое к узлу.
-> Чтобы удалить текущую конфигурацию, используйте [PowerShell](https://docs.microsoft.com/en-us/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument?view=powershell-5.1) или удалить локальный файл конфигурации (это параметр только для узлов Linux).
+> Чтобы удалить текущую конфигурацию, используйте [PowerShell](https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument?view=powershell-5.1) или удалить локальный файл конфигурации (это параметр только для узлов Linux).
 
 ### <a name="azure-portal"></a>Портал Azure
 
@@ -165,7 +165,7 @@ $reports[0]
 
 ### <a name="powershell"></a>PowerShell
 
-Чтобы отменить регистрацию узла из службы настройки состояния службы автоматизации Azure с помощью PowerShell, следуя инструкциям в документации по командлету [Unregister-AzAutomationDscNode](https://docs.microsoft.com/en-us/powershell/module/az.automation/unregister-azautomationdscnode?view=azps-2.0.0).
+Чтобы отменить регистрацию узла из службы настройки состояния службы автоматизации Azure с помощью PowerShell, следуя инструкциям в документации по командлету [Unregister-AzAutomationDscNode](https://docs.microsoft.com/powershell/module/az.automation/unregister-azautomationdscnode?view=azps-2.0.0).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: jroth
 ms.openlocfilehash: 297317ff33d88d6390220980ef35f2538579e310
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66165520"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185228"
 ---
 ### <a name="open-tcp-ports-in-the-windows-firewall-for-the-default-instance-of-the-database-engine"></a>Откройте TCP-порты в брандмауэре Windows для экземпляра ядра СУБД по умолчанию
 1. Подключитесь к виртуальной машине через удаленный рабочий стол. Подробные инструкции по подключению к виртуальной машине см. в разделе [Открывать виртуальные машины с помощью удаленного рабочего стола](../articles/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision.md#remotedesktop).

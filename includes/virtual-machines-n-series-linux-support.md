@@ -9,11 +9,11 @@ ms.date: 02/11/2019
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: 9f0d694badaa6f4484a13364c6a56aee2ad1dcfb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66161585"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185300"
 ---
 ## <a name="supported-distributions-and-drivers"></a>Поддерживаемые дистрибутивы и драйверы
 
@@ -26,7 +26,7 @@ ms.locfileid: "66161585"
 
 | Дистрибутив | Драйвер |
 | --- | -- | 
-| Ubuntu 16.04 LTS, 18.04 LTS<br/><br/> Red Hat Enterprise Linux 7.3, 7.4, 7.5, 7.6<br/><br/> Версия 7.3, 7.4, 7.5, 7.6 на платформе CentOS, HPC на платформе CentOS 7.4 | 10\.1 NVIDIA CUDA, ветвь драйверов R418 |
+| Ubuntu 16.04 LTS, 18.04 LTS<br/><br/> Red Hat Enterprise Linux 7.3, 7.4, 7.5, 7.6<br/><br/> Версия 7.3, 7.4, 7.5, 7.6 на платформе CentOS, HPC на платформе CentOS 7.4 | 10.1 NVIDIA CUDA, ветвь драйверов R418 |
 
 ### <a name="nvidia-grid-drivers"></a>Драйверы NVIDIA GRID
 

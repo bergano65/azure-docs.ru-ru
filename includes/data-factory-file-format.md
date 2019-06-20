@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
 ms.openlocfilehash: 89d5483347f93cd3b57a02ced19b1e8b099a5ab0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66151606"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185958"
 ---
 ## <a name="specifying-formats"></a>Указание форматов
 Фабрика данных Azure поддерживает следующие типы форматов:
@@ -281,7 +281,7 @@ ms.locfileid: "66151606"
 | ordernumber | orderdate | order_pd | order_price | city |
 | --- | --- | --- | --- | --- |
 | 01 | 20170122 | P1 | 23 | [{"sanmateo":"No 1"}] |
-| 01 | 20170122 | P2 | 13\. | [{"sanmateo":"No 1"}] |
+| 01 | 20170122 | P2 | 13. | [{"sanmateo":"No 1"}] |
 | 01 | 20170122 | P3 | 231 | [{"sanmateo":"No 1"}] |
 
 Входной набор данных с типом **JsonFormat** определяется следующим образом (частичное определение только соответствующих частей). В частности:

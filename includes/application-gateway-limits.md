@@ -4,12 +4,12 @@ ms.service: application-gateway
 ms.topic: include
 ms.date: 6/5/2019
 ms.author: victorh
-ms.openlocfilehash: 592e1973344b231693077f8286a41dfd67a8d188
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 9a8d925e5d72500817028b913a80255a4339255c
+ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66689102"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67148458"
 ---
 | Ресурс | По умолчанию и максимальные ограничения | Примечание |
 | --- | --- | --- |
@@ -23,7 +23,7 @@ ms.locfileid: "66689102"
 | Параметры HTTP для сервера |100<sup>1</sup> | |
 | Экземпляров на шлюз |32 | |
 | SSL-сертификаты |100<sup>1</sup> |1 на HTTP-прослушиватель |
-| Максимальный размер сертификата SSL |V1 НОМЕР SKU - 10 КБ<br>V2 SKU — 25 КБ| |
+| Максимальный размер сертификата SSL |V1 НОМЕР SKU - 10 КБ<br>V2 SKU — 16 КБ| |
 | Сертификаты аутентификации клиента |100 | |
 | Доверенные корневые сертификаты |100 | |
 | Минимальное время ожидания запроса |1 с | |

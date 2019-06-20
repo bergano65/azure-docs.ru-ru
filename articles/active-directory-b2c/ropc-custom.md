@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 7a802354f20998c87ac8c2ef1f2c1dbdf47f6930
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d01e8ce894bfb1ece3555eddc714d2d3a80e44b5
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66733647"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67164855"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-active-directory-b2c-using-a-custom-policy"></a>Настройка потока учетных данных пароля владельца ресурса в Azure Active Directory B2C с помощью пользовательской политики
 
@@ -255,7 +255,7 @@ ms.locfileid: "66733647"
     ```
 
 5. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
-6. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
+6. Включить **перезаписать политику, в том случае, если он существует**, а затем найдите и выберите *ROPC_Auth.xml* файла.
 7. Щелкните **Отправить**.
 
 ## <a name="test-the-policy"></a>Проверка политики

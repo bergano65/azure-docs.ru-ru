@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 08/23/2018
 ms.author: crdun
 ms.openlocfilehash: 46cfb27b8bde95990d13ec4bca4e96f25cfe9dc5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66141255"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185802"
 ---
 Из-за постоянной ведущейся разработки версия пакета Android SDK, установленная в Android Studio, может не совпадать с версией в коде. В этом руководстве используется пакет SDK для Android версии 26 (последней на момент написания руководства). Номер версии может увеличиваться по мере выпуска новых пакетов SDK, и мы рекомендуем использовать новейшую доступную версию.
 

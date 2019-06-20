@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/22/2018
 ms.author: glenga
-ms.openlocfilehash: 02becd787fcc5f82efff7ef21feaf336fba3a26f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 62d359494050b188869d51d1e3975c823b9c0a76
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65967590"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67204936"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Справочник по параметрам приложений для Функций Azure
 
@@ -32,6 +32,10 @@ ms.locfileid: "65967590"
 |Ключ|Образец значения|
 |---|------------|
 |APPINSIGHTS_INSTRUMENTATIONKEY|5dbdd5e9-af77-484b-9032-64f83bb83bb|
+
+## <a name="azurefunctionsenvironment"></a>AZURE_FUNCTIONS_ENVIRONMENT
+
+В версии 2.x среды выполнения функций, настраивает поведение приложения в зависимости от среды выполнения. Это значение равно [чтения во время инициализации](https://github.com/Azure/azure-functions-host/blob/dev/src/WebJobs.Script.WebHost/Program.cs#L43). Можно задать `AZURE_FUNCTIONS_ENVIRONMENT` любое значение, но [три значения](/dotnet/api/microsoft.aspnetcore.hosting.environmentname) поддерживаются: [Разработка](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development), [промежуточной](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging), и [рабочей](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production). Когда `AZURE_FUNCTIONS_ENVIRONMENT` не задана, по умолчанию используется `Production`. Этот параметр следует использовать вместо `ASPNETCORE_ENVIRONMENT` для установки среды выполнения. 
 
 ## <a name="azurewebjobsdashboard"></a>AzureWebJobsDashboard
 
@@ -71,14 +75,6 @@ ms.locfileid: "65967590"
 |Ключ|Образец значения|
 |---|------------|
 |AzureWebJobsFeatureFlags|feature1,feature2|
-
-## <a name="azurewebjobsscriptroot"></a>AzureWebJobsScriptRoot
-
-Путь к корневому каталогу, где расположены файл *host.json* и папки функции. В приложении-функции значение по умолчанию — `%HOME%\site\wwwroot`.
-
-|Ключ|Образец значения|
-|---|------------|
-|AzureWebJobsScriptRoot|%HOME%\site\wwwroot|
 
 ## <a name="azurewebjobssecretstoragetype"></a>AzureWebJobsSecretStorageType
 

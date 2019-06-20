@@ -12,12 +12,12 @@ author: wenjiefu
 ms.author: wenjiefu
 ms.reviewer: sawinark
 manager: craigg
-ms.openlocfilehash: f17c364d258ef356a98180c9903603d92a6a9245
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7789970b47f0e55adee5bbe9da9f303aee6cdb25
+ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67078525"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67190124"
 ---
 # <a name="troubleshooting-package-execution-in-ssis-integration-runtime"></a>Устранение неполадок выполнения пакетов в среде выполнения интеграции SSIS
 
@@ -103,6 +103,13 @@ ms.locfileid: "67078525"
 ### <a name="error-message-your-integration-runtime-cannot-be-upgraded-and-will-eventually-stop-working-since-we-cannot-access-the-azure-blob-container-you-provided-for-custom-setup"></a>Сообщение об ошибке: «Среды выполнения интеграции не могут быть обновлены и в конечном итоге перестанет работать, так как мы не доступ к контейнеру BLOB-объектов Azure, заданное для пользовательской установки.»
 
 * Эта ошибка возникает, когда среда выполнения интеграции SSIS не может получить доступ к хранилищем, настроенным для Выборочная установка. Проверка ли указанный универсальный код ресурса SAS является допустимым и еще не истек.
+
+### <a name="error-message-microsoft-ole-db-provider-for-analysis-services-hresult-0x80004005-description-com-error-com-error-mscorlib-exception-has-been-thrown-by-the-target-of-an-invocation"></a>Сообщение об ошибке: «Поставщик Microsoft OLE DB для служб Analysis Services. "Hresult: 0x80004005 Описание: " Ошибка COM: Ошибка COM: mscorlib; Исключения по целевому объекту вызова»
+
+* Возможной причиной & Рекомендуемое действие:
+  * Одной из возможных причин является, имя пользователя и пароль с поддержкой MFA настроено для проверки подлинности служб Azure Analysis Services, который еще не поддерживается в среде выполнения интеграции SSIS. Попробуйте использовать субъект-службу для проверки подлинности служб Azure Analysis Service:
+    1. Подготовьте субъект-служба консультантам [https://docs.microsoft.com/azure/analysis-services/analysis-services-service-principal](https://docs.microsoft.com/azure/analysis-services/analysis-services-service-principal)
+    2. В диспетчере соединений, Настройка «Использовать указанные имя пользователя и пароль»: «AppID» в качестве имени пользователя и «clientSecret» в качестве пароля
 
 ### <a name="package-takes-unexpected-long-time-to-execute"></a>Пакет принимает Непредвиденная продолжительное время
 

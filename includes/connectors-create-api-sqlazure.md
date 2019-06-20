@@ -9,11 +9,11 @@ ms.date: 05/15/2018
 ms.author: estfan
 ms.custom: include file
 ms.openlocfilehash: da03c5247b8ebe0a3305b08a05d661264497663f
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "67122221"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185540"
 ---
 * Если вы используете Базу данных SQL Azure, следуйте инструкциям в разделе [Подключение к базе данных](#connect-azure-sql-db). 
 
@@ -21,7 +21,7 @@ ms.locfileid: "67122221"
 
 <a name="connect-azure-sql-db"></a>
 
-### <a name="connect-to-azure-sql-database"></a>Подключение к базе данных SQL Azure
+### <a name="connect-to-azure-sql-database"></a>Подключение к Базе данных SQL Azure
 
 1. Когда триггер или действие SQL запросит сведения о подключении, выполните следующие действия.
 
@@ -41,7 +41,7 @@ ms.locfileid: "67122221"
 
    В этом примере показаны сведения о подключении для триггера, но эти шаги подходят и для действия.
 
-   ![Создание подключения к базе данных SQL Azure](./media/connectors-create-api-sqlazure/azure-sql-database-create-connection.png)
+   ![Создание подключения к Базе данных SQL Azure](./media/connectors-create-api-sqlazure/azure-sql-database-create-connection.png)
    <br>
    Звездочки (*) указывают на обязательные значения.
 

@@ -5,11 +5,11 @@ ms.service: app-service-mobile
 ms.topic: include
 ms.date: 08/23/2018
 ms.openlocfilehash: 852a3b00e8513f9ce68c5aae54c974505d0c9af6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66140097"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185785"
 ---
 1. На компьютере Mac запустите программу **Keychain Access**. На панели навигации слева в разделе **Category** (Категория) откройте **My Certificates** (Мои сертификаты). Найдите и откройте скачанный на предыдущем этапе SSL-сертификат. Выберите только сертификат (без закрытого ключа). Затем [экспортируйте его](https://support.apple.com/kb/PH20122?locale=en_US).
 2. На [портале Azure](https://portal.azure.com/) последовательно выберите **Browse All (Просмотреть все)**  > **Службы приложений**. Выберите серверную часть для функции "Мобильные приложения". 
