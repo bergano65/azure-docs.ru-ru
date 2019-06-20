@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 06/09/2018
 ms.author: liydu
 ms.openlocfilehash: 783921009a1668647a238f1c344885ec807d5b8a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66166422"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185942"
 ---
 Чтобы продолжить знакомство с Центром Интернета вещей Azure и изучить другие сценарии Центра Интернета вещей с использованием IoT DevKit, см. следующие ресурсы:
 

@@ -9,11 +9,11 @@ ms.date: 06/22/2018
 ms.author: twooley
 ms.custom: include file
 ms.openlocfilehash: f328de00d206b58037fda800354e9634b1c374d6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66238292"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185678"
 ---
 Azure Data Lake Storage 1-го поколения — это крупномасштабный репозиторий корпоративного уровня для рабочих нагрузок анализа больших данных. Поколение 1 хранилища Озера данных можно использовать для сбора данных любого размера, типа и скоростью приема в одном месте для эксплуатационной и исследовательской аналитики. Нет ограничений на объем данных, которые можно хранить в учетной записи Gen1 хранилища Озера данных.
 

@@ -9,11 +9,11 @@ author: j-martens
 ms.author: jmartens
 ms.date: 12/04/2018
 ms.openlocfilehash: 6af620f54acb3bf782f05b81f12aca2103cddf47
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66123223"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185705"
 ---
 >[!IMPORTANT]
 >Созданные ресурсы могут использоваться в качестве необходимых компонентов для других руководств и статей с практическими рекомендациями по Службе машинного обучения Azure. 

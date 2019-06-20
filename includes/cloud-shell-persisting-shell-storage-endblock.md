@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: cynthn
 ms.openlocfilehash: c2ed33aea77b5478e8d17f6bd0213ef3e778b806
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66125212"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185624"
 ---
 ## <a name="transfer-local-files-to-cloud-shell"></a>Передача локальных файлов в Cloud Shell
 Каталог `clouddrive` синхронизируется c колонкой хранилища на портале Azure. Используйте эту колонку для перемещения локальных файлов в файловый ресурс и из него. Обновленные файлы в Cloud Shell отобразятся в графическом пользовательском интерфейсе хранилища файлов после обновления колонки.

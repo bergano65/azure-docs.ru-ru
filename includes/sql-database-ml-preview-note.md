@@ -6,14 +6,14 @@ ms.topic: include
 ms.date: 04/10/2019
 ms.author: garye
 ms.openlocfilehash: de3cbf4411c2b10c0a5a06c4e220f3a245f5bdc3
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66110228"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185368"
 ---
 > [!IMPORTANT]
-> Сейчас службы машинного обучения в базе данных SQL Azure находятся в общедоступной предварительной версии.
+> Сейчас службы машинного обучения в Базе данных SQL Azure находятся в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 >

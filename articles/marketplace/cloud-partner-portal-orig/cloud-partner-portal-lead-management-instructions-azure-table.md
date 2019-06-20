@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: pabutler
-ms.openlocfilehash: a1bcab9816627b453ba8b20b7bcd9402c2dfd151
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 08f9d794822dfd7879efc7c4813ecc46f92f6a45
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66240492"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67147897"
 ---
 # <a name="lead-management-instructions-for-azure-table"></a>Инструкции по управлению для таблиц Azure интересами
 
@@ -97,7 +97,7 @@ DefaultEndpointsProtocol=https;AccountName=myAccountName;AccountKey=myAccountKey
 
      ![Выбор пользовательского значения для имени таблицы Azure](./media/cloud-partner-portal-lead-management-instructions-azure-table/msflow-getentities-table-name.png)
 
-   - **Запрос фильтра** — щелкните это поле и **получение времени в прошлом** во всплывающем окне отображается значок. Выберите **Время в прошлом**, чтобы использовать эту метку времени для фильтрации запроса. Кроме того можно вставить следующую функцию в поле: CreatedTime `gt datetime'@{body('Get_past_time')}'` 
+   - **Запрос фильтра** — щелкните это поле и **получение времени в прошлом** во всплывающем окне отображается значок. Выберите **Время в прошлом**, чтобы использовать эту метку времени для фильтрации запроса. Кроме того можно вставить следующую функцию в поле: CreatedTime `Timestamp gt datetime'@{body('Get_past_time')}'` 
 
      ![Настройка функции запроса фильтра](./media/cloud-partner-portal-lead-management-instructions-azure-table/msflow-getentities-filterquery.png)
 

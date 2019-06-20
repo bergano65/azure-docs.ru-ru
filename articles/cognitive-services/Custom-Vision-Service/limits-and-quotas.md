@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: anroth
-ms.openlocfilehash: 85abc4a50710629d3485d05115698e59a93fc96e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9cff5fdac39be2338305cd37a4b2328a28a48255
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60995638"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67269258"
 ---
 # <a name="limits-and-quotas"></a>Ограничения и квоты
 
@@ -39,3 +39,5 @@ ms.locfileid: "60995638"
 |[Другие вызовы API](https://go.microsoft.com/fwlink/?linkid=865446) (число транзакций в секунду)|10|10|
 |Максимальный размер изображения (при передаче учебного изображения) |6 МБ|6 МБ|
 |Максимальный размер изображения (для прогнозирования)|4 МБ|4 МБ|
+|Max регионов для каждой изображение для обучения обнаружения объектов|200|200|
+|Max тегов для каждой классификации изображений|30|30|

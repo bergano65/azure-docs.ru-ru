@@ -8,16 +8,16 @@ ms.topic: article
 ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 26a5876971749a1a63447ef813219dad8485781c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fd1416befb74a7299136ea497eccc8a06b7f0f6a
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65160175"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67164864"
 ---
 # <a name="cloudsimple-node-quota-limits"></a>CloudSimple узел квоту.
 
-Четырех узлов — это количество по умолчанию, можно приобрести, при подписке включено для службы CloudSimple.  Вы можете приобрести любой [тип узла](cloudsimple-node.md) с портала Azure.  Как минимум из трех узлов одного номера SKU необходимы для создания частного облака.  Если вы приобрели узлы, ошибка может появиться при попытке приобрести дополнительные узлы.
+Четыре узла — это количество по умолчанию, доступные для подготовки, при подписке включено для службы CloudSimple.  Вы можете подготовить любой [тип узла](cloudsimple-node.md) с портала Azure.  Как минимум из трех узлов одного номера SKU необходимы для создания частного облака.  Если вы подготовили узлы, ошибка может появиться при попытке подготовить дополнительные узлы.
 
 ## <a name="quota-increase"></a>Увеличение квоты
 
@@ -40,5 +40,5 @@ ms.locfileid: "65160175"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Приобрести узлов](create-nodes.md)
+* [Подготовка узлов](create-nodes.md)
 * [Общие сведения о CloudSimple узлов](cloudsimple-node.md)

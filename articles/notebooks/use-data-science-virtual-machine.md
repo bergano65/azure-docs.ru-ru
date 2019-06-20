@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/08/2019
+ms.date: 06/13/2019
 ms.author: getroyer
-ms.openlocfilehash: ab3b742d50cc141420f9bffa1961a6e170b99d2a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 9b762f1b3f1c17e15b051e72f5d2cf98bef446bf
+ms.sourcegitcommit: e5dcf12763af358f24e73b9f89ff4088ac63c6cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66234349"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67137756"
 ---
 # <a name="use-azure-data-science-virtual-machines"></a>Используйте виртуальные машины обработки и анализа данных Azure
 
@@ -56,6 +56,17 @@ ms.locfileid: "66234349"
 ![Кнопку завершения работы в записных книжках Azure](media/shutdown.png)
 
 При запуске проекта на виртуальной Машине, файлы должны быть подключены в корневом каталоге сервера Jupyter (каталоге, указанном в JupyterHub), заменив файлы записных книжек Azure по умолчанию. Когда вы завершаете работу виртуальной Машины с помощью **завершение работы** кнопку записную книжку пользовательского интерфейса, записных книжек Azure восстанавливает файлы по умолчанию.
+
+![Кнопку завершения работы в записных книжках Azure](media/shutdown.png)
+
+## <a name="create-new-dsvm-users"></a>Создание новых пользователей DSVM
+
+Если несколько пользователей используют DSVM, можно избежать блокирования друг с другом путем создания и использования для каждого пользователя notebook DSVM пользователя:
+
+1. На [портал Azure](https://portal.azure.com), перейдите к виртуальной машине.
+1. В разделе **поддержка и устранение неполадок** в левом поле, выберите **сброс пароля**.
+1. Введите новое имя пользователя и пароль и выберите **обновления**. (Существующие имена пользователей не затрагиваются.)
+1. Повторите предыдущий шаг для дополнительных пользователей.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

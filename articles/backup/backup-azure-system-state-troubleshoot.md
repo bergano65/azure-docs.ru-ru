@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/09/2019
 ms.author: srinathvasireddy
-ms.openlocfilehash: 8a94994d697784fb9dab8027e5a43f24c135b32c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c9e5645fef952257580d74eb6e11911e2286bd79
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67059748"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67165117"
 ---
 # <a name="troubleshoot-system-state-backup"></a>Устранение неполадок при архивации состояния системы
 
@@ -118,7 +118,7 @@ System(EventSystem) событий COM + | Автоматический
 
   * Убедитесь, резервной копии WSB работает правильно, выполнив следующую команду из командной строки с повышенными правами:
 
-      ` wbadmin start systemstatebackup -backuptarget:X: -quiet `
+      `wbadmin start systemstatebackup -backuptarget:X: -quiet`
 
       > [!NOTE]
       >Замените X буквой диска тома, где вы хотите сохранить состояние системы резервного копирования образа.

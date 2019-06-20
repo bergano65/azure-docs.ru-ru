@@ -9,11 +9,11 @@ ms.date: 06/19/2018
 ms.author: wesmc
 ms.custom: include file
 ms.openlocfilehash: 94cd178b925b0b55f0ed6ed38ed821820bb1e072
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66117399"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185398"
 ---
 Можно сохранить созданные ресурсы и повторно использовать их при выполнении задач в следующей рекомендуемой статье, если вы планируете перейти к ней.
 

@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5eff7925599931104440213112ce288fd521b61
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d15bb4a1cd19af70b29d1d74f43e137cf884c4db
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66473773"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67164100"
 ---
 # <a name="enable-remote-access-to-sharepoint-with-azure-ad-application-proxy"></a>Настройка удаленного доступа к SharePoint с помощью прокси приложения Azure AD
 
@@ -129,7 +129,7 @@ setspn -S HTTP/SharePoint demo\spAppPoolAccount
    1. На странице приложения на портале выберите **Единый вход**.
    2. Для единого входа выберите режим **Встроенная проверка подлинности Windows**.
    3. Задайте для параметра "Внутреннее имя субъекта-службы приложения" значение, заданное ранее. В нашем примере это будет значение **HTTP/SharePoint**.
-   4. В поле "Делегированное удостоверение для входа" выберите **Имя локальной учетной записи управления лицензиями (SAM)** .
+   4. В «Делегированное удостоверение для входа» выберите наиболее подходящий вариант для вашей конфигурации леса Active Directory. Например, если у вас есть один домен AD в лесу, выберите **имя учетной записи SAM на локальном** (как показано ниже), но если пользователи не находятся в том же домене, что SharePoint и выберите серверы App Proxy Connector  **Имя участника-пользователя в локальной** (не показано).
 
    ![Настройка встроенной проверки подлинности Windows для единого входа](./media/application-proxy-integrate-with-sharepoint-server/configure-iwa.png)
 
