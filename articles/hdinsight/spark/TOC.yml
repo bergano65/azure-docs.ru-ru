@@ -20,8 +20,6 @@
   items:
     - name: Выполнение запросов в кластере Apache Spark
       href: apache-spark-load-data-run-query.md
-    - name: Использование VSCode для выполнения запросов Apache Spark
-      href: ../hdinsight-for-vscode.md
     - name: Использование IntelliJ для выполнения запросов Apache Spark
       href: apache-spark-intellij-tool-plugin.md
     - name: Анализ данных с помощью средств бизнес-аналитики
@@ -32,6 +30,8 @@
       href: apache-spark-ipython-notebook-machine-learning.md
     - name: Создание приложения Apache Spark в IntelliJ
       href: apache-spark-create-standalone-application.md
+    - name: Использование VSCode для выполнения запросов Apache Spark
+      href: ../hdinsight-for-vscode.md
     - name: Мониторинг доступности кластера с помощью журналов Ambari и Azure Monitor
       href: ../hdinsight-cluster-availability.md
 - name: Примеры

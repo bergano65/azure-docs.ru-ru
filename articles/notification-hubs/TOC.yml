@@ -34,10 +34,6 @@
               href: notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md
             - name: Отправка push-уведомлений определенным пользователям
               href: notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md
-    - name: Baidu
-      items:
-        - name: Отправка push-уведомлений с помощью службы push-уведомлений облака Baidu
-          href: notification-hubs-baidu-china-android-notifications-get-started.md
     - name: iOS
       items:
         - name: Отправка push-уведомлений в приложения iOS
@@ -143,6 +139,8 @@
       href: notification-hubs-push-notification-http2-token-authentification.md
     - name: Устранение неполадок из-за пропуска уведомлений
       href: notification-hubs-push-notification-fixer.md
+    - name: Отправка push-уведомлений с помощью службы push-уведомлений облака Baidu
+      href: notification-hubs-baidu-china-android-notifications-get-started.md
 - name: Справочные материалы
   items:
     - name: .NET
