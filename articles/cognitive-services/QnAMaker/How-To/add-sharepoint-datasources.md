@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 04/05/2019
+ms.date: 06/20/2019
 ms.author: tulasim
-ms.openlocfilehash: e479cf1729b7dcd2ed2f2470f2a935bdf94af80b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e1b0e3dfb81a9934b393428a946cf1440367985c
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65954969"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67311862"
 ---
 # <a name="add-a-secured-sharepoint-data-source-to-your-knowledge-base"></a>Добавление знаний защищенного источника данных Sharepoint
 
@@ -35,6 +35,20 @@ ms.locfileid: "65954969"
     ![Получите URL-адрес Sharepoint файла, выбрав меню с многоточием файла, затем копирование URL-адрес.](../media/add-sharepoint-datasources/get-sharepoint-file-url.png)
 
 1. На портале QnA Maker на **параметры** странице [добавить URL-адрес](edit-knowledge-base.md#add-datasource) в базу знаний. 
+
+### <a name="images-with-sharepoint-files"></a>Образы с файлами Sharepoint
+
+Если файлы включают в себя образы, их не извлекаются. Образ, можно добавить на портале QnA Maker, после файла на пары QnA.
+
+Добавьте изображение со следующим синтаксисом markdown: 
+
+```markdown
+![Explanation or description of image](URL of public image)
+```
+
+Текст в квадратные скобки, `[]`, описание образа. URL-адрес в круглые скобки, `()`, имеет прямую ссылку на изображение. 
+
+При тестировании пары QnA панели интерактивных тестов, на портале QnA Maker, отображается изображение вместо текста markdown. Это подтверждает изображения могут быть получены публично из клиентского приложения.
 
 ## <a name="permissions"></a>Разрешения
 

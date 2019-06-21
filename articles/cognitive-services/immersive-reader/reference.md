@@ -9,12 +9,12 @@ ms.subservice: immersive-reader
 ms.topic: reference
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: bf337f8d4eac859dc39a36ba12dd9645aa23fe41
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: c128608b3c4a8e1155c3ac962bcfd07f589fbf23
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67297036"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67311785"
 ---
 # <a name="immersive-reader-sdk-reference"></a>Справочник по пакету SDK иммерсивных чтения
 
@@ -22,7 +22,7 @@ ms.locfileid: "67297036"
 
 ## <a name="functions"></a>Функции Azure
 
-Пакет SDK предоставляет одну функцию, `ImmersiveReader.launchAsync(token, data, options)`.
+Пакет SDK предоставляет одну функцию, `ImmersiveReader.launchAsync(token, resourceName, content, options)`.
 
 ### <a name="launchasync"></a>launchAsync
 
@@ -34,7 +34,7 @@ launchAsync(token: string, resourceName: string, content: Content, options?: Opt
 
 #### <a name="parameters"></a>Параметры
 
-| Name | Тип | Описание |
+| ИМЯ | Тип | Описание |
 | ---- | ---- |------------ |
 | `token` | string | Маркер доступа, полученный из вызова `issueToken` конечной точки. |
 | `resourceName` | string | Зарезервировано. Нужно задать значение `null`. |

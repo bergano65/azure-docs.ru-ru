@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 04/16/2019
 ms.author: aahi
-ms.openlocfilehash: 881c829424124cca843beb7005306edd53be2673
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: ff4f9af82024e9d39ad89a39bcb2fe4130de9101
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203990"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67304183"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованной сущности в текстовой аналитики
 
@@ -105,7 +105,7 @@ ms.locfileid: "67203990"
 
 ## <a name="step-2-post-the-request"></a>Шаг 2. Передача запроса
 
-Анализ выполняется при получении запроса. Служба принимает до 100 запросов в второй до 1000 запросов в минуту. Каждый запрос не должен превышать 1 МБ.
+Анализ выполняется при получении запроса. См. в разделе [ограничения данных](../overview.md#data-limits) раздел в обзоре сведения о размере и числе запросов, вы можете отправлять в минуту и секунду.
 
 Не забывайте, что эта служба работает без отслеживания состояния. Данные не хранятся в учетной записи. Результаты возвращаются немедленно в ответе.
 

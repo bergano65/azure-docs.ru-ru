@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: aahi
-ms.openlocfilehash: 720a6c57d4f1a6079f78244559a25018349bd378
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e98979ac43945ebc9af82d5f89db01855429ca70
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60831424"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67304203"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>Как вызвать REST API службы "Анализ текста"
 
@@ -87,7 +87,7 @@ ms.locfileid: "60831424"
   + [Распознавание сущностей](text-analytics-how-to-entity-linking.md)  
 
 
-6. Щелкните **Отправить**, чтобы отправить запрос. Вы можете отправлять до 100 запросов в минуту. 
+6. Щелкните **Отправить**, чтобы отправить запрос. См. в разделе [ограничения данных](../overview.md#data-limits) раздел в обзоре сведения на число запросов, вы можете отправлять в минуту и секунду.
 
    В Postman ответ отображается в следующем расположенном ниже окне как один документ JSON с элементом для каждого идентификатора документа, предоставленного в запросе.
 

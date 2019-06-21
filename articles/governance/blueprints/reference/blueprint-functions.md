@@ -109,12 +109,12 @@ ms.locfileid: "65209410"
 
 | Expression | type | Значение |
 |:---|:---|:---|
-|`[artifacts("myTemplateArtifact").outputs.myArray]` | Array | \["first", "second"\] |
-|`[artifacts("myTemplateArtifact").outputs.myArray[0]]` | String | "first" |
-|`[artifacts("myTemplateArtifact").outputs.myString]` | String | "my string value" |
+|`[artifacts("myTemplateArtifact").outputs.myArray]` | Массив, | \[«Первый», «second»\] |
+|`[artifacts("myTemplateArtifact").outputs.myArray[0]]` | String | «Первый» |
+|`[artifacts("myTemplateArtifact").outputs.myString]` | String | «Мой строковое значение» |
 |`[artifacts("myTemplateArtifact").outputs.myObject]` | Object | { "myproperty": "my value", "anotherProperty": true } |
-|`[artifacts("myTemplateArtifact").outputs.myObject.myProperty]` | String | "my value" |
-|`[artifacts("myTemplateArtifact").outputs.myObject.anotherProperty]` | Bool | True |
+|`[artifacts("myTemplateArtifact").outputs.myObject.myProperty]` | String | «Мой value» |
+|`[artifacts("myTemplateArtifact").outputs.myObject.anotherProperty]` | Логический | Истина |
 
 ## <a name="concat"></a>concat
 
