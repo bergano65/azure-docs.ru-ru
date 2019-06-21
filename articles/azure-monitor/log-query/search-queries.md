@@ -13,20 +13,14 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/06/2018
 ms.author: bwren
-ms.openlocfilehash: b5860243b6b605288aaf8d6dffe2260bc031a592
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b118740f3a57e168c5dfb071c199bcf424bd5113
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65560829"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295559"
 ---
 # <a name="search-queries-in-azure-monitor-logs"></a>Запросы поиска в журналах Azure Monitor
-
-> [!NOTE]
-> Прежде чем приступать к этому руководству, необходимо ознакомиться со статьей [Начало работы с запросами журналов Azure Monitor](get-started-queries.md).
-
-[!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
-
 Запросы журнала в Azure Monitor могут начинаться с имени таблицы или команды search. В этом руководстве рассматриваются запросы на основе поиска. У каждого метода есть свои преимущества.
 
 Запросы на основе таблиц начинаются с определения области запроса и, следовательно, обычно более эффективны, чем поисковые запросы. Поисковые запросы менее структурированы, поэтому они являются лучшим выбором при поиске определенного значения в пределах столбцов и таблиц. Команда **search** может сканировать все столбцы в данной таблице или во всех таблицах в поисках указанного значения. Объем обрабатываемых данных может быть огромным, поэтому выполнение этих запросов может занять больше времени и могут возвращаться очень большие результирующие наборы.

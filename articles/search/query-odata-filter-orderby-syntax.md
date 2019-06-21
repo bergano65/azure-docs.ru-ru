@@ -1,7 +1,7 @@
 ---
-title: Синтаксис выражений OData для предложений фильтрации и упорядочивания в службе "Поиск Azure"
-description: Синтаксис OData для выражений фильтрации и упорядочивания для запросов в службе "Поиск Azure".
-ms.date: 05/02/2019
+title: Общие сведения о языках OData - поиска Azure
+description: Общие сведения о языке OData для фильтров, выберите и order-by для запросов поиска Azure.
+ms.date: 06/13/2019
 services: search
 ms.service: search
 ms.topic: conceptual
@@ -19,309 +19,217 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: b1f77a9e0a3308098e5f6c699f2fc79e5c437f17
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 166c23088fe0388199ca51efde05153bb5697e38
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024263"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67063705"
 ---
-# <a name="odata-expression-syntax-for-filters-and-order-by-clauses-in-azure-search"></a>Синтаксис выражений OData для предложений фильтрации и упорядочивания в службе "Поиск Azure"
+# <a name="odata-language-overview-for-filter-orderby-and-select-in-azure-search"></a>Общие сведения о языке OData для `$filter`, `$orderby`, и `$select` в службе поиска Azure
 
-Поиск Azure поддерживает подмножество синтаксиса выражений OData для выражений **$filter** и **$orderby**. Выражения для фильтрации вычисляются при синтаксическом анализе запроса. Они ограничивают поиск конкретными полями или добавляют критерии соответствия, используемые во время обработки индекса. Выражения упорядочивания — это шаг постобработки набора результатов. Оба выражения (фильтрации и упорядочивания) включаются в запрос с соблюдением синтаксиса OData, независимого от синтаксиса запроса ([простой](query-simple-syntax.md) или [полный](query-lucene-syntax.md)) в параметре **search**. В этой статье содержатся справочные материалы по выражениям OData, используемым в выражениях фильтрации и сортировки.
+Поиск Azure поддерживает подмножество выражений синтаксиса OData для **$filter**, **$orderby**, и **$select** выражения. Выражения для фильтрации вычисляются при синтаксическом анализе запроса. Они ограничивают поиск конкретными полями или добавляют критерии соответствия, используемые во время обработки индекса. Выражения Order by применяются как стадию завершающей обработки отказа результирующий набор, чтобы отсортировать документы, которые возвращаются. Выражения SELECT определяет, какие поля документа должны быть включены в результирующий набор. Синтаксис этих выражений отличается от [простой](query-simple-syntax.md) или [полный](query-lucene-syntax.md) синтаксис, который используется в запроса **поиска** параметра, несмотря на то, что некоторое перекрытие в синтаксисе ссылки на поля.
 
-## <a name="filter-syntax"></a>Синтаксис выражений фильтрации
+В этой статье описывается язык выражений OData, используемый в фильтрах, предложение order by и выражения select. Язык представлен «снизу вверх», начиная с самых базовых элементов и на их основе. В отдельной статье описан синтаксис верхнего уровня для каждого параметра:
 
-Выражение **$filter** можно выполнить изолировано как полностью выраженный запрос или использовать, чтобы уточнить запрос с дополнительными параметрами. В следующих примерах показано несколько ключевых сценариев. В первом примере фильтр является сущностью запроса.
+- [синтаксис $filter](search-query-odata-filter.md)
+- [синтаксис $orderby](search-query-odata-orderby.md)
+- [$select syntax](search-query-odata-select.md)
 
+OData выражения в диапазоне от простых до очень сложными, но они все совместно используют общие элементы. Самый простой части выражения OData в службе поиска Azure — это:
 
-```POST
-POST /indexes/hotels/docs/search?api-version=2019-05-06
-    {
-      "filter": "(baseRate ge 60 and baseRate lt 300) or hotelName eq 'Fancy Stay'"
-    }
-```
+- **Поле пути**, которые относятся к определенной полей индекса.
+- **Константы**, которые являются литеральные значения определенного типа данных.
 
-Другим распространенным вариантом использования являются фильтры, комбинированные с аспектами, где фильтр сокращает контактную зону запроса на основе выборки по пользовательскому аспекту:
+> [!NOTE]
+> Терминология в службе поиска Azure отличается от [стандарт OData](https://www.odata.org/documentation/) несколькими способами. Мы называем **поле** в службе поиска Azure называется **свойство** в OData и аналогично для **путь поля** и **путь к свойству**. **Индекс** содержащий **документов** в службе поиска Azure упоминается более общем случае в OData как **набор сущностей** содержащий **сущностей**. Терминология службы поиска Azure используется эта ссылка.
 
-```POST
-POST /indexes/hotels/docs/search?api-version=2019-05-06
-    {
-      "search": "test",
-      "facets": [ "tags", "baseRate,values:80|150|220" ],
-      "filter": "rating eq 3 and category eq 'Motel'"
-    }
-```
+## <a name="field-paths"></a>Поле пути
 
-### <a name="filter-operators"></a>Операторы фильтрации  
+Следующие EBNF ([расширенная форма Бэкуса-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику поля путей.
 
-- Логические операторы (AND, OR, NOT).  
-
-- Выражения сравнения (`eq, ne, gt, lt, ge, le`). При сравнении строк учитывается регистр.  
-
-- Константы поддерживаемых типов [модели EDM](https://docs.microsoft.com/dotnet/framework/data/adonet/entity-data-model) (список поддерживаемых типов данных для службы "Поиск Azure" см. в [этой статье](https://docs.microsoft.com/rest/api/searchservice/supported-data-types)). Константы типов коллекций не поддерживаются.  
-
-- Ссылки на имена полей. В выражениях фильтрации могут использоваться только поля `filterable`.  
-
-- `any` без параметров. Этот оператор проверяет, содержит ли поле типа `Collection(Edm.String)` какой-нибудь элемент.  
-
-- `any` и `all` с ограниченной поддержкой лямбда-выражений. 
-    
-  -   `any/all` поддерживаются для полей типа `Collection(Edm.String)`. 
-    
-  -   `any` может использоваться только с простыми выражениями равенства или с функцией `search.in`. Простые выражения состоят из сравнения одного поля с литеральным значением, например `Title eq 'Magna Carta'`.
-    
-  -   `all` может использоваться только с простыми выражениями равенства или с `not search.in`.   
-
-- Геопространственные функции `geo.distance` и `geo.intersects`. Функция `geo.distance` возвращает расстояния в километрах между двумя точками, одна из которых представляет из себя поле, а другая — константу, переданную как часть фильтра. Функция `geo.intersects` возвращает значение true, если заданная точка находится в пределах указанного многоугольника, где точка представляет из себя поле, а многоугольник указывается в качестве константы, переданной как часть фильтра.  
-
-  Многоугольник — это двумерная поверхность, которая хранится в виде последовательности точек, определяющих ограничивающее кольцо (см. пример ниже). Многоугольник должен быть замкнут, то есть первая и конечная точки должны совпадать. [Точки многоугольника должны наноситься в порядке против часовой стрелки](https://docs.microsoft.com/rest/api/searchservice/supported-data-types#Anchor_1).
-
-  `geo.distance` возвращает расстояние в километрах в службе "Поиск Azure". Другие службы, которые поддерживают геопространственные операции OData, обычно возвращают расстояние в метрах.  
-
-  > [!NOTE]  
-  >  При использовании функции geo.distance в фильтре необходимо сравнить расстояние, возвращаемое функцией, с константой с помощью операторов `lt`, `le`, `gt` или `ge`. Операторы `eq` и `ne` не предназначены для сравнения расстояний. В следующем примере показано правильное использование функции geo.distance: `$filter=geo.distance(location, geography'POINT(-122.131577 47.678581)') le 5`.  
-
-- Функция `search.in` проверяет, является ли указанное строковое поле равным указанному списку значений. Ее также можно использовать для сравнения одного значения поля коллекции строк с указанным списком значений. При проверке на равенство между полем и каждым значением списка учитывается регистр, так же как и для оператора `eq`. Следовательно, выражение, подобное `search.in(myfield, 'a, b, c')`, эквивалентно выражению `myfield eq 'a' or myfield eq 'b' or myfield eq 'c'`, за исключением того, что функция `search.in` выполняется намного быстрее. 
-
-   Первый параметр функции `search.in` — это ссылка на строковое поле (или переменную диапазона для поля коллекции строк в том случае, если `search.in` используется внутри выражения `any` или `all`). 
-  
-   Второй параметр является строкой, содержащей список значений, разделенных пробелами и/или запятыми. 
-  
-   Третий параметр является строкой, где каждый символ строки или подмножество эта строка рассматривается как разделитель при синтаксическом анализе списка значений в качестве второго параметра. Если необходимо использовать другие разделители (например, если эти знаки входят в ваши значения), можно указать необязательный третий параметр для функции `search.in`. 
-
-  > [!NOTE]   
-  > В некоторых сценариях требуется сравнение поля с большим количеством константных значений. Например, при реализации фильтрации по ролям безопасности с помощью фильтров может потребоваться сравнение поля идентификатора документа со списком идентификаторов, к которым запрашивающему пользователю предоставлен доступ на чтение. В подобных сценариях мы настоятельно рекомендуем использовать функцию `search.in` вместо более сложного логического сложения выражений равенства. Например, используйте функцию `search.in(Id, '123, 456, ...')` вместо `Id eq 123 or Id eq 456 or ....`. 
-  >
-  > При использовании `search.in` время отклика будет менее секунды, если второй параметр содержит список из сотен или тысяч значений. Обратите внимание, что нет явного ограничения на количество элементов, которое можно передать в `search.in`, хотя по-прежнему есть ограничение на максимальный размер запроса. Однако задержка растет по мере увеличения количества значений.
-
-- Функция `search.ismatch` вычисляет поисковый запрос как часть выражения фильтрации. Документы, соответствующие поисковому запросу, будут возвращены в результирующем наборе. Доступны следующие перегрузки этой функции:
-  - `search.ismatch(search)`
-  - `search.ismatch(search, searchFields)`
-  - `search.ismatch(search, searchFields, queryType, searchMode)`
-
-  где: 
-  
-  - `search` — поисковый запрос в любом синтаксисе ([простом](query-simple-syntax.md) или [полном](query-lucene-syntax.md)). 
-  - `queryType` — simple или full. По умолчанию: simple. Указывает, какой язык запроса использовался в параметре `search`.
-  - `searchFields` — разделенный запятыми список полей для поиска. По умолчанию: все поля в индексе, допускающие возможность поиска.    
-  - `searchMode` — "any" или "all". По умолчанию: "any". Указывает, необходимо ли совпадение по всем условиям или по любому из них, чтобы документ был возвращен в числе результатов.
-
-  Все вышеперечисленные параметры эквивалентны соответствующим [параметрам поискового запроса](https://docs.microsoft.com/rest/api/searchservice/search-documents).
-
-- Функция `search.ismatchscoring`, как и функция `search.ismatch`, возвращает значение true, если документ соответствует поисковому запросу, переданному в параметре. Разница между ними заключается в том, что оценка релевантности документов, соответствующих запросу функции `search.ismatchscoring`, будет влиять на общую оценку документа, а в случае функции `search.ismatch` оценка документа не будет изменена. Следующие перегрузки этой функции доступны с параметрами, идентичными параметрам функции `search.ismatch`:
-  - `search.ismatchscoring(search)`
-  - `search.ismatchscoring(search, searchFields)`
-  - `search.ismatchscoring(search, searchFields, queryType, searchMode)`
-
-  Функции `search.ismatch` и `search.ismatchscoring` полностью независимы друг от друга и от остальной части алгебры фильтров. Это означает, что обе функции можно использовать в одном выражении фильтра. 
-
-### <a name="geospatial-queries-and-polygons-spanning-the-180th-meridian"></a>Геопространственные запросы и многоугольники, охватывающие 180-й меридиан  
- Для многих библиотек геопространственных запросов формирование запроса, включающего 180-й меридиан (около линии дат), либо запрещено, либо требует обходного пути, такого как разделение многоугольника на два, по одному на каждую сторону меридиана.  
-
- В Поиске Azure геопространственные запросы, включающие долготу в 180 градусов, будут работать надлежащим образом, если форма запроса является прямоугольной, а ваши координаты выровнены с макетом сетки по долготе и широте (например, `geo.intersects(location, geography'POLYGON((179 65,179 66,-179 66,-179 65,179 65))'`). В противном случае для непрямоугольных или невыровненных фигур используйте подход с разделенным многоугольником.  
-
-<a name="bkmk_limits"></a>
-
-## <a name="filter-size-limitations"></a>Ограничения на размер выражений фильтрации 
-
- Существуют ограничения на размер и сложность выражений фильтрации, которые можно отправлять в Поиск Azure. Ограничения ориентировочно основаны на количестве предложений в выражении фильтрации. Хорошее проверенное правило: если у вас есть сотни предложений, вы рискуете превысить лимит. Мы рекомендуем разрабатывать приложение таким образом, чтобы оно не создавало фильтры неограниченного размера.  
-
-
-## <a name="filter-examples"></a>Примеры выражений фильтрации  
-
- Найти все гостиницы с базовой меньше 200 долл. США, рейтингом равна или превышает 4:  
+<!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
 ```
-$filter=baseRate lt 200.0 and rating ge 4
+field_path ::= identifier('/'identifier)*
+
+identifier ::= [a-zA-Z_][a-zA-Z_0-9]*
 ```
 
- Найти все отели, кроме "Roach Motel" с ремонтом 2010 года и более поздним:  
+Также доступна схему интерактивный синтаксис:
+
+> [!div class="nextstepaction"]
+> [Диаграмма синтаксиса OData для службы поиска Azure](https://azuresearch.github.io/odata-syntax-diagram/#field_path)
+
+> [!NOTE]
+> См. в разделе [Справочник по синтаксису выражений OData для службы поиска Azure](search-query-odata-syntax-reference.md) для завершения EBNF.
+
+Путь к полю состоит из одного или нескольких **идентификаторы** разделенных косыми чертами. Каждый идентификатор — это последовательность символов, должен начинаться с буквы ASCII или знака подчеркивания и содержать только ASCII буквы, цифры или символы подчеркивания. Буквы могут быть в верхнем или нижнем регистре.
+
+Идентификатор может ссылаться на имя поля, или чтобы **переменная диапазона** в контексте [выражения коллекции](search-query-odata-collection-operators.md) (`any` или `all`) в фильтре. Переменная диапазона доступна как переменная цикла, представляющий текущий элемент коллекции. Для сложных коллекций этой переменной представляет объект, поэтому можно использовать поле пути для ссылки на вложенные поля переменной. Это аналогично точечной нотации во многих языках программирования.
+
+В следующей таблице показаны примеры путей к поля:
+
+| Путь к полю | Описание |
+| --- | --- |
+| `HotelName` | Ссылается на поле верхнего уровня индекса |
+| `Address/City` | Ссылается на `City` подзапроса поле сложных поля в индексе; `Address` имеет тип `Edm.ComplexType` в этом примере |
+| `Rooms/Type` | Ссылается на `Type` подзапроса поле поля в индексе; `Rooms` имеет тип `Collection(Edm.ComplexType)` в этом примере |
+| `Stores/Address/Country` | Ссылается на `Country` подзапроса поле `Address` подзапроса поле поля в индексе; `Stores` имеет тип `Collection(Edm.ComplexType)` и `Address` имеет тип `Edm.ComplexType` в этом примере |
+| `room/Type` | Ссылается на `Type` подзапроса поле `room` переменной диапазона, например в критерии фильтра `Rooms/any(room: room/Type eq 'deluxe')` |
+| `store/Address/Country` | Ссылается на `Country` подзапроса поле `Address` подзапроса поле `store` переменной диапазона, например в критерии фильтра `Stores/any(store: store/Address/Country eq 'Canada')` |
+
+Значение пути к полю отличается в зависимости от контекста. В фильтрах, путь к полю ссылается на значение *единственных* поля в текущем документе. В других контекстах например **$orderby**, **$select**, или в [относящегося к полю поиска в полный синтаксис Lucene](query-lucene-syntax.md#bkmk_fields), путь к полю ссылается на само поле. Это различие имеет некоторые последствия для использование поля путей в фильтрах.
+
+Рассмотрим пути к полю `Address/City`. В фильтре он ссылается на один идентификатор города для текущего документа, например «Сан-Франциско». Напротив `Rooms/Type` ссылается на `Type` вложенные поля для многих комнаты (например, «стандартный» для первого места «deluxe» для второй помещений и т. д.). Так как `Rooms/Type` не относится к *единственных* вложенные поля `Type`, он не может использоваться непосредственно в фильтре. Вместо этого, чтобы отфильтровать тип номера, используется [лямбда-выражение](search-query-odata-collection-operators.md) с переменной диапазона, следующим образом:
+
+    Rooms/any(room: room/Type eq 'deluxe')
+
+В этом примере переменная диапазона `room` отображается в `room/Type` пути к полю. Таким образом, `room/Type` относится к типу текущего места в текущем документе. Это один экземпляр `Type` поля ввода, чтобы его можно использовать непосредственно в фильтре.
+
+### <a name="using-field-paths"></a>С помощью поля путей
+
+Поле пути используются в многочисленными параметрами [API службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice/). В следующей таблице перечислены все места, где они могут использоваться, а также каких-либо ограничений на их использование:
+
+| API | Имя параметра | Ограничения |
+| --- | --- | --- |
+| [Создание](https://docs.microsoft.com/rest/api/searchservice/create-index) или [обновления](https://docs.microsoft.com/rest/api/searchservice/update-index) индекса | `suggesters/sourceFields` | Нет |
+| [Создание](https://docs.microsoft.com/rest/api/searchservice/create-index) или [обновления](https://docs.microsoft.com/rest/api/searchservice/update-index) индекса | `scoringProfiles/text/weights` | Может ссылаться только на **для поиска** поля |
+| [Создание](https://docs.microsoft.com/rest/api/searchservice/create-index) или [обновления](https://docs.microsoft.com/rest/api/searchservice/update-index) индекса | `scoringProfiles/functions/fieldName` | Может ссылаться только на **фильтруемых** поля |
+| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `search` Когда `queryType` — `full` | Может ссылаться только на **для поиска** поля |
+| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `facet` | Может ссылаться только на **аспектируемый** поля |
+| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `highlight` | Может ссылаться только на **для поиска** поля |
+| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) | `searchFields` | Может ссылаться только на **для поиска** поля |
+| [Предложить](https://docs.microsoft.com/rest/api/searchservice/suggestions) и [автозаполнения](https://docs.microsoft.com/rest/api/searchservice/autocomplete) | `searchFields` | Можно ссылаться только на поля, которые являются частью [средства подбора](index-add-suggesters.md) |
+| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents), [предложить](https://docs.microsoft.com/rest/api/searchservice/suggestions), и [автозаполнения](https://docs.microsoft.com/rest/api/searchservice/autocomplete) | `$filter` | Может ссылаться только на **фильтруемых** поля |
+| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents) и [предложить](https://docs.microsoft.com/rest/api/searchservice/suggestions) | `$orderby` | Может ссылаться только на **сортируемого** поля |
+| [Поиск](https://docs.microsoft.com/rest/api/searchservice/search-documents), [предложить](https://docs.microsoft.com/rest/api/searchservice/suggestions), и [Уточняющий запрос](https://docs.microsoft.com/rest/api/searchservice/lookup-document) | `$select` | Может ссылаться только на **извлекаемые** поля |
+
+## <a name="constants"></a>Константы
+
+Константы в OData — литеральные значения заданного [модели EDM](https://docs.microsoft.com/dotnet/framework/data/adonet/entity-data-model) тип (модель EDM). См. в разделе [поддерживаемые типы данных](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) список поддерживаемых типов в службе поиска Azure. Константы типов коллекций не поддерживаются.
+
+Ниже приведены примеры констант для каждого из типов данных, поддерживаемых службой поиска Azure:
+
+| Тип данных | Константы |
+| --- | --- |
+| `Edm.Boolean` | `true`, `false` |
+| `Edm.DateTimeOffset` | `2019-05-06T12:30:05.451Z` |
+| `Edm.Double` | `3.14159`, `-1.2e7`, `NaN`, `INF`, `-INF` |
+| `Edm.GeographyPoint` | `geography'POINT(-122.131577 47.678581)'` |
+| `Edm.GeographyPolygon` | `geography'POLYGON((-122.031577 47.578581, -122.031577 47.678581, -122.131577 47.678581, -122.031577 47.578581))'` |
+| `Edm.Int32` | `123`, `-456` |
+| `Edm.Int64` | `283032927235` |
+| `Edm.String` | `'hello'` |
+
+Следующие EBNF ([расширенная форма Бэкуса-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику для большинства из констант, показано в приведенной выше таблице. Грамматика для гео пространственных типов можно найти в [геопространственные функции OData в службе поиска Azure](search-query-odata-geo-spatial-functions.md).
+
+<!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
 ```
-$filter=hotelName ne 'Roach Motel' and lastRenovationDate ge 2010-01-01T00:00:00Z
+constant ::=
+    string_literal
+    | date_time_offset_literal
+    | integer_literal
+    | float_literal
+    | boolean_literal
+    | 'null'
+
+string_literal ::= "'"([^'] | "''")*"'"
+
+date_time_offset_literal ::= date_part'T'time_part time_zone
+
+date_part ::= year'-'month'-'day
+
+time_part ::= hour':'minute(':'second('.'fractional_seconds)?)?
+
+zero_to_fifty_nine ::= [0-5]digit
+
+digit ::= [0-9]
+
+year ::= digit digit digit digit
+
+month ::= '0'[1-9] | '1'[0-2]
+
+day ::= '0'[1-9] | [1-2]digit | '3'[0-1]
+
+hour ::= [0-1]digit | '2'[0-3]
+
+minute ::= zero_to_fifty_nine
+
+second ::= zero_to_fifty_nine
+
+fractional_seconds ::= integer_literal
+
+time_zone ::= 'Z' | sign hour':'minute
+
+sign ::= '+' | '-'
+
+/* In practice integer literals are limited in length to the precision of
+the corresponding EDM data type. */
+integer_literal ::= digit+
+
+float_literal ::=
+    sign? whole_part fractional_part? exponent?
+    | 'NaN'
+    | '-INF'
+    | 'INF'
+
+whole_part ::= integer_literal
+
+fractional_part ::= '.'integer_literal
+
+exponent ::= 'e' sign? integer_literal
+
+boolean_literal ::= 'true' | 'false'
 ```
 
- Найти все гостиницы с базовой меньше, чем 200 долл. США, отремонтированные после 2010 со литерал даты-времени, включающий сведения о часовом поясе стандартное тихоокеанское время:  
+Также доступна схему интерактивный синтаксис:
+
+> [!div class="nextstepaction"]
+> [Диаграмма синтаксиса OData для службы поиска Azure](https://azuresearch.github.io/odata-syntax-diagram/#constant)
+
+> [!NOTE]
+> См. в разделе [Справочник по синтаксису выражений OData для службы поиска Azure](search-query-odata-syntax-reference.md) для завершения EBNF.
+
+## <a name="building-expressions-from-field-paths-and-constants"></a>Построение выражений из поля путей и константы
+
+Поле пути и константы являются основной частью выражения OData, но они уже сами полного выражения. На самом деле **$select** параметр в службе поиска Azure — всего лишь список поля путей, разделенных запятыми и **$orderby** не сильно сложнее, чем **$select**. Если имеется поле типа `Edm.Boolean` в индексе, можно даже написать фильтр, который представляет путь этого поля. Константы `true` и `false` также содержатся допустимые фильтры.
+
+Однако в большинстве случаев вам потребуется более сложные выражения, ссылающиеся на более чем одно поле и константы. Эти выражения строятся по-разному в зависимости от параметра.
+
+Следующие EBNF ([расширенная форма Бэкуса-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) определяет грамматику для **$filter**, **$orderby**, и **$select** параметров. Они создаются из более простые выражения, которые ссылаются на поле пути и константы:
+
+<!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
 ```
-$filter=baseRate lt 200 and lastRenovationDate ge 2010-01-01T00:00:00-08:00
+filter_expression ::= boolean_expression
+
+order_by_expression ::= order_by_clause(',' order_by_clause)*
+
+select_expression ::= '*' | field_path(',' field_path)*
 ```
 
- Найти все отели, в которых есть парковка и запрещено курить:  
+Также доступна схему интерактивный синтаксис:
 
-```
-$filter=parkingIncluded and not smokingAllowed
-```
+> [!div class="nextstepaction"]
+> [Диаграмма синтаксиса OData для службы поиска Azure](https://azuresearch.github.io/odata-syntax-diagram/#filter_expression)
 
- \- или -  
+> [!NOTE]
+> См. в разделе [Справочник по синтаксису выражений OData для службы поиска Azure](search-query-odata-syntax-reference.md) для завершения EBNF.
 
-```
-$filter=parkingIncluded eq true and smokingAllowed eq false
-```
+**$Orderby** и **$select** параметры являются оба списка с разделителями запятыми из более простые выражения. **$Filter** параметр представляет собой логическое выражение, состоящий более простой вложенных выражений. Эти вложенные выражения объединяются с помощью логических операторов, таких как [ `and`, `or`, и `not` ](search-query-odata-logical-operators.md), операторы сравнения, такие как [ `eq`, `lt`, `gt`, и так далее](search-query-odata-comparison-operators.md)и коллекции операторы, такие как [ `any` и `all` ](search-query-odata-collection-operators.md).
 
- Найти все отели класса люкс или отели с рейтингом 5, в которых есть парковка:  
+**$Filter**, **$orderby**, и **$select** параметры рассматриваются более подробно в следующих статьях:
 
-```
-$filter=(category eq 'Luxury' or parkingIncluded eq true) and rating eq 5
-```
-
- Найти все отели с тегом "wifi" (будут проверяться все отели, содержащие теги, хранящиеся в поле Collection(EDM.String)):  
-
-```
-$filter=tags/any(t: t eq 'wifi')
-```
-
- Найти все отели без тега "motel":  
-
-```
-$filter=tags/all(t: t ne 'motel')
-```
-
- Найти все отели, содержащие любые теги:  
-
-```
-$filter=tags/any()
-```
-
-Найти все гостиницы, у которых нет тегов:  
-
-```
-$filter=not tags/any()
-```
-
-
- Найти все отели в пределах 10 километров от заданного ориентира (где location — это поле типа Edm.GeographyPoint):  
-
-```
-$filter=geo.distance(location, geography'POINT(-122.131577 47.678581)') le 10
-```
-
- Найти все отели в заданном окне просмотра, описанном как многоугольник (где location — это поле типа Edm.GeographyPoint): Обратите внимание, что многоугольник замкнут (первая и последняя точки должны совпадать, и [точки должны быть нанесены в порядке против часовой стрелки](https://docs.microsoft.com/rest/api/searchservice/supported-data-types#Anchor_1)).
-
-```
-$filter=geo.intersects(location, geography'POLYGON((-122.031577 47.578581, -122.031577 47.678581, -122.131577 47.678581, -122.031577 47.578581))')
-```
-
- Найти все отели, которые либо не имеют значения в поле "description", либо для него явно задано значение null:  
-
-```
-$filter=description eq null
-```
-
-Найти все гостиницы с именем «Roach motel» или «Бюджета hotel»). Фразы должны содержать пробелы, который является разделителем по умолчанию. Вы можете specicfy альтернативного разделителя в одинарные кавычки в качестве третьего параметра строки:  
-
-```
-$filter=search.in(name, 'Roach motel,Budget hotel', ',')
-```
-
-Найти все отели с именем Roach motel или Budget hotel, имена разделены знаком "|":  
-
-```
-$filter=search.in(name, 'Roach motel|Budget hotel', '|')
-```
-
-Найти все отели с тегом wifi или pool:  
-
-```
-$filter=tags/any(t: search.in(t, 'wifi, pool'))
-```
-
-Найти совпадение для фразы в пределах коллекции, например «жаркие выкинуть стойках» или «hairdryer включены» в тегах. 
-
-```
-$filter=tags/any(t: search.in(t, 'heated towel racks,hairdryer included', ','))
-```
-
-Найти все отели без тегов motel и cabin:  
-
-```
-$filter=tags/all(t: not search.in(t, 'motel, cabin'))
-```
-
-Найти документы со словом waterfront. Этот запрос фильтрации идентичен [поисковому запросу](https://docs.microsoft.com/rest/api/searchservice/search-documents) с `search=waterfront`:
-
-```
-$filter=search.ismatchscoring('waterfront')
-```
-
-Найти документы со словом hostel и рейтингом, большим или равным 4, или документы со словом motel и рейтингом 5. Обратите внимание, что этот запрос невозможно составить без функции `search.ismatchscoring`.
-
-```
-$filter=search.ismatchscoring('hostel') and rating ge 4 or search.ismatchscoring('motel') and rating eq 5
-```
-
-Найти документы без слова luxury.
-
-```
-$filter=not search.ismatch('luxury') 
-```
-
-Найти документы с фразой "ocean view" или рейтингом 5. Запрос `search.ismatchscoring` будет выполняться только по отношению к полям `hotelName` и `description`.
-Обратите внимание, документы, которые соответствуют только второму предложению логического сложения, также будут возвращены — отели с рейтингом 5. В целях ясности документы, которые не соответствуют ни одному элементу выражения, будут возвращены с нулевой оценкой.
-
-```
-$filter=search.ismatchscoring('"ocean view"', 'description,hotelName') or rating eq 5
-```
-
-Найти документы, в которых термины hotel и airport находятся в пределах 5 слов друг от друга в описании отеля и в которых курение запрещено. В этом запросе используется [полный язык запросов Lucene](query-lucene-syntax.md).
-
-```
-$filter=search.ismatch('"hotel airport"~5', 'description', 'full', 'any') and not smokingAllowed 
-```
-
-## <a name="order-by-syntax"></a>Синтаксис предложения упорядочивания
-
-Параметр **$orderby** принимает разделенный запятыми список выражений (до 32) формата `sort-criteria [asc|desc]`. Критерием сортировки может быть либо имя поля `sortable`, либо вызов функции `geo.distance` или `search.score`. Для указания порядка сортировки можно использовать `asc` или `desc`. По умолчанию значения сортируются по возрастанию.
-
-Если несколько документов имеют одинаковые критерии сортировки и функция `search.score` не используется (например, если вы сортируете по числовому полю `rating` и все три документа имеют оценку 4), результаты будут отсортированы по оценке документов в убывающем порядке. Если оценки документов одинаковы (например, если в запросе не указан полнотекстовый поиск), относительный порядок связанных документов не определен.
- 
-Вы можете определить несколько условий сортировки. Порядок выражений определяет окончательный порядок сортировки. Например, для сортировки по убыванию оценки, а затем по значению рейтинга синтаксис будет таким: `$orderby=search.score() desc,rating desc`.
-
-Синтаксис для `geo.distance` в **$orderby** такой же, как и в **$filter**. При использовании функции `geo.distance` в **$orderby** поле, к которому она применяется, должно быть сортируемым (`sortable`) и иметь тип `Edm.GeographyPoint`.  
-
-Синтаксис для `search.score` в **$orderby** — `search.score()`. Функция `search.score` не принимает параметров.  
- 
-
-## <a name="order-by-examples"></a>Примеры выражений упорядочивания
-
-Сортировать отели по возрастанию базового тарифа:
-
-```
-$orderby=baseRate asc
-```
-
-Сортировать отели по убыванию рейтинга, а затем по возрастанию базового тарифа (помните, что по умолчанию сортировка происходит по возрастанию):
-
-```
-$orderby=rating desc,baseRate
-```
-
-Сортировать отели по убыванию рейтинга, а затем по возрастанию расстояния от заданных координат:
-
-```
-$orderby=rating desc,geo.distance(location, geography'POINT(-122.131577 47.678581)') asc
-```
-
-Сортировать отели в порядке убывания результатов функции search.score и рейтингу, а затем в порядке возрастания расстояния от заданных координат так, чтобы между двумя отелями с одинаковым рейтингом сначала отображался ближайший:
-
-```
-$orderby=search.score() desc,rating desc,geo.distance(location, geography'POINT(-122.131577 47.678581)') asc
-```
-<a name="bkmk_unsupported"></a>
-
-## <a name="unsupported-odata-syntax"></a>Неподдерживаемый синтаксис OData
-
--   Арифметические выражения  
-
--   Функции (за исключением геопространственных функций расстояния и объединения по пересечению).  
-
--   `any/all` с произвольными лямбда-выражениями.  
+- [Синтаксис OData $filter в службе поиска Azure](search-query-odata-filter.md)
+- [Синтаксис OData $orderby в службе поиска Azure](search-query-odata-orderby.md)
+- [Синтаксис OData $select в службе поиска Azure](search-query-odata-select.md)
 
 ## <a name="see-also"></a>См. также  
 
-+ [Фасетная навигация в службе поиска Azure](search-faceted-navigation.md) 
-+ [Фильтры в службе "Поиск Azure"](search-filters.md) 
-+ [Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) (Поиск по документам (REST API службы "Поиск Azure")) 
-+ [Синтаксис запросов Lucene](query-lucene-syntax.md)
-+ [Простой синтаксис запросов в службе "Поиск Azure"](query-simple-syntax.md)   
+- [Фасетная навигация в службе поиска Azure](search-faceted-navigation.md)
+- [Фильтры в службе "Поиск Azure"](search-filters.md)
+- [Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) (Поиск по документам (REST API службы "Поиск Azure"))
+- [Синтаксис запросов Lucene](query-lucene-syntax.md)
+- [Простой синтаксис запросов в службе "Поиск Azure"](query-simple-syntax.md)

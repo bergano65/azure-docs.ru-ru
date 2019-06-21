@@ -6,14 +6,14 @@ author: sachdevaswati
 manager: vijayts
 ms.service: backup
 ms.topic: conceptual
-ms.date: 03/23/2019
+ms.date: 06/18/2019
 ms.author: sachdevaswati
-ms.openlocfilehash: 0307dc5c83782119f6c10279563b8b9f0a999d28
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 28577bfc755d80cd479a40b9e2b653af6ddec319
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66236881"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67204460"
 ---
 # <a name="back-up-sql-server-databases-in-azure-vms"></a>Создание резервных копий баз данных SQL Server на виртуальных машинах Azure
 
@@ -34,9 +34,9 @@ ms.locfileid: "66236881"
 Перед выполнением резервного копирования базы данных SQL Server, проверьте следующие условия:
 
 1. Определите или создайте [хранилище служб восстановления](backup-sql-server-database-azure-vms.md#create-a-recovery-services-vault) в том же регионе или языковой стандарт в качестве виртуальной Машины, где размещен экземпляр SQL Server.
-2. Проверьте [виртуальной Машины разрешения, необходимые](backup-azure-sql-database.md#fix-sql-sysadmin-permissions) для резервного копирования баз данных SQL.
-3. Убедитесь, что виртуальная машина имеет [сетевое подключение](backup-sql-server-database-azure-vms.md#establish-network-connectivity).
-4. Убедитесь, что базы данных SQL Server выполните [базы данных рекомендации по именованию для резервного копирования Azure](#database-naming-guidelines-for-azure-backup).
+2. Убедитесь, что виртуальная машина имеет [сетевое подключение](backup-sql-server-database-azure-vms.md#establish-network-connectivity).
+3. Убедитесь, что базы данных SQL Server выполните [базы данных рекомендации по именованию для резервного копирования Azure](#database-naming-guidelines-for-azure-backup).
+4. Специально для SQL 2008 и 2008 R2 [Добавление раздела реестра](#add-registry-key-to-enable-registration) для включения регистрации сервера. Этот шаг будет быть не быть необходимы, когда станет общедоступной.
 5. Убедитесь, что у вас нет любые другие средства резервного копирования базы данных включено. Отключите все другие резервные копии SQL Server, прежде чем вы резервную копию базы данных.
 
 > [!NOTE]
@@ -79,16 +79,6 @@ ms.locfileid: "66236881"
 С помощью тегов Azure FQDN брандмауэра | Проще управлять как автоматически управляет требуется полных доменных имен | Может использоваться только с брандмауэром Azure
 Использование прокси-сервера HTTP | Точный контроль в прокси-сервер хранилища разрешено URL-адреса <br/><br/> Точка Интернет-доступ к виртуальным машинам <br/><br/> Не распространяются изменения Azure IP-адреса | Дополнительные затраты на запуск виртуальной Машины с программным обеспечением прокси-сервера
 
-### <a name="set-vm-permissions"></a>Настройка разрешений виртуальной машины
-
-Когда вы настраиваете резервной копии для базы данных SQL Server, Azure Backup выполняет следующие функции:
-
-- Добавляет расширение AzureBackupWindowsWorkload.
-- Создает учетную запись NT SERVICE\AzureWLBackupPluginSvc обнаружить базы данных на виртуальной машине. Эта учетная запись используется для резервного копирования и восстановления и требуются разрешения администратора SQL.
-- Находит базы данных, запущенных на виртуальной Машине, служба архивации Azure использует учетную запись NT AUTHORITY\SYSTEM. Это должна быть общедоступной входа на SQL Server.
-
-Если вы не создавали виртуальной Машины SQL Server в Azure Marketplace, может появиться сообщение об ошибке UserErrorSQLNoSysadminMembership. Дополнительные сведения см. в разделе рекомендации и ограничения компонентов см. в [о резервное копирование SQL Server на виртуальных машинах Azure](backup-azure-sql-database.md#fix-sql-sysadmin-permissions).
-
 ### <a name="database-naming-guidelines-for-azure-backup"></a>Базы данных, рекомендации по именованию для резервного копирования Azure
 
 Не используйте следующие элементы в имена баз данных:
@@ -101,6 +91,22 @@ ms.locfileid: "66236881"
 
 Совмещение имен для неподдерживаемые символы, но мы рекомендуем избегать их. Дополнительные сведения см. в статье [Understanding the Table Service Data Model](https://docs.microsoft.com/rest/api/storageservices/Understanding-the-Table-Service-Data-Model?redirectedfrom=MSDN) (Общие сведения о модели данных службы таблиц).
 
+### <a name="add-registry-key-to-enable-registration"></a>Добавление раздела реестра для включения регистрации
+
+1. Откройте программу Regedit
+2. Создайте путь к каталогу реестра: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WorkloadBackup\TestHook (необходимо будет создать TestHook «Key» в разделе WorkloadBackup, который в свою очередь должна быть создана в разделе Microsoft).
+3. В разделе реестра путь к каталогу, создайте новый «строковый параметр» с данным именем строки **AzureBackupEnableWin2K8R2SP1** и значение: **Значение true**
+
+    ![RegEdit для включения регистрации](media/backup-azure-sql-database/reg-edit-sqleos-bkp.png)
+
+Кроме того этот шаг можно автоматизировать, выполнив REG-файл, выполнив следующую команду:
+
+```csharp
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WorkloadBackup\TestHook]
+"AzureBackupEnableWin2K8R2SP1"="True"
+```
 
 [!INCLUDE [How to create a Recovery Services vault](../../includes/backup-create-rs-vault.md)]
 
@@ -141,7 +147,7 @@ ms.locfileid: "66236881"
     - Служба архивации Azure создает учетную запись службы NT Service\AzureWLBackupPluginSvc на виртуальной Машине.
       - Все операции резервного копирования и восстановления используют учетную запись службы.
       - NT Service\AzureWLBackupPluginSvc требуются разрешения администратора SQL. Все виртуальные машины SQL Server в Marketplace в состав SqlIaaSExtension установлен. Расширение AzureBackupWindowsWorkload использует SQLIaaSExtension, чтобы автоматически получить необходимые разрешения.
-    - Если вы не создавали виртуальной Машины из Marketplace, виртуальная машина не будет иметь SqlIaaSExtension установлен и операция обнаружения завершается сбоем с сообщением об ошибке UserErrorSQLNoSysAdminMembership. Чтобы устранить эту проблему, выполните [инструкции](backup-azure-sql-database.md#fix-sql-sysadmin-permissions).
+    - Если вы не создавали виртуальной Машины из Marketplace, или если вы используете SQL 2008 и 2008 R2, виртуальная машина может не иметь SqlIaaSExtension установлен, и операция обнаружения завершается сбоем с сообщением об ошибке UserErrorSQLNoSysAdminMembership. Чтобы устранить эту проблему, следуйте инструкциям в разделе [виртуальной Машины, задайте разрешения](backup-azure-sql-database.md#set-vm-permissions).
 
         ![Выбор виртуальной машины и базы данных](./media/backup-azure-sql-database/registration-errors.png)
 
