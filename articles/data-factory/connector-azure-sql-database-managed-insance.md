@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.author: jingwang
-ms.openlocfilehash: e68b522d5a0fe7c359d83fc436aa7a1fd2159198
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9208ceeb760bba97c12b23a1b6e5bdff7efc9020
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67048588"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67274818"
 ---
 # <a name="copy-data-to-and-from-azure-sql-database-managed-instance-by-using-azure-data-factory"></a>Копирование данных в Управляемый экземпляр Базы данных SQL Azure и из него с помощью Фабрики данных Azure
 
@@ -33,7 +33,11 @@ ms.locfileid: "67048588"
 - (в качестве источника) извлечение данных с использованием SQL-запроса или хранимой процедуры;
 - (в качестве приемника) применение пользовательской логики для добавления данных в целевую таблицу или вызова хранимой процедуры во время копирования.
 
-[Always Encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=sql-server-2017) в SQL Server в настоящее время не поддерживается. 
+>[!NOTE]
+>База данных управляемый экземпляр SQL Azure **[Always Encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=azuresqldb-mi-current)** теперь не поддерживается этим соединителем. Чтобы обойти это, можно использовать [универсальный соединитель ODBC](connector-odbc.md) и драйвер ODBC для SQL Server через локальную среду выполнения интеграции. Выполните [в этом руководстве](https://docs.microsoft.com/sql/connect/odbc/using-always-encrypted-with-the-odbc-driver?view=azuresqldb-mi-current) с ODBC драйвер загрузки и подключения строки конфигурации.
+
+>[!NOTE]
+>Проверок подлинности основного и управляемого удостоверения службы в настоящее время не поддерживаются этим соединителем и план для включения вскоре после. Сейчас, чтобы обойти эту проблему вы можете, что соединитель базы данных SQL Azure и вручную указать сервер управляемого экземпляра.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -57,7 +61,7 @@ ms.locfileid: "67048588"
 | connectionString |Это свойство указывает сведения о параметре connectionString, которые необходимы для подключения к управляемому экземпляру с использованием проверки подлинности SQL. Дополнительные сведения представлены в примерах ниже. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы также можете поместить пароль в Azure Key Vault, и если это аутентификация SQL, извлеките конфигурацию `password` из строки подключения. Ознакомьтесь с примером JSON под таблицей и с подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). |Да. |
 | connectVia | Это [среда выполнения интеграции](concepts-integration-runtime.md) для подключения к хранилищу данных. (Если ваш управляемый экземпляр имеет общедоступную конечную точку и разрешить ADF для доступа к), можно использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Да. |
 
-**Пример 1. Использование проверки подлинности SQL**.
+**Пример 1. Использовать проверку подлинности SQL** по умолчанию используется порт 1433. Если вы используете управляемый экземпляр SQL с общедоступной конечной точки, явно укажите порт 3342.
 
 ```json
 {
@@ -67,7 +71,7 @@ ms.locfileid: "67048588"
         "typeProperties": {
             "connectionString": {
                 "type": "SecureString",
-                "value": "Data Source=<servername:port>;Initial Catalog=<databasename>;Integrated Security=False;User ID=<username>;Password=<password>;"
+                "value": "Data Source=<hostname,port>;Initial Catalog=<databasename>;Integrated Security=False;User ID=<username>;Password=<password>;"
             }
         },
         "connectVia": {
@@ -78,7 +82,7 @@ ms.locfileid: "67048588"
 }
 ```
 
-**Пример 2. Использование аутентификации SQL с помощью пароля в Azure Key Vault**.
+**Пример 2. Использовать проверку подлинности SQL с паролем в Azure Key Vault** по умолчанию используется порт 1433. Если вы используете управляемый экземпляр SQL с общедоступной конечной точки, явно укажите порт 3342.
 
 ```json
 {
@@ -88,7 +92,7 @@ ms.locfileid: "67048588"
         "typeProperties": {
             "connectionString": {
                 "type": "SecureString",
-                "value": "Data Source=<servername>\\<instance name if using named instance>;Initial Catalog=<databasename>;Integrated Security=False;User ID=<username>;"
+                "value": "Data Source=<hostname,port>;Initial Catalog=<databasename>;Integrated Security=False;User ID=<username>;"
             },
             "password": { 
                 "type": "AzureKeyVaultSecret", 

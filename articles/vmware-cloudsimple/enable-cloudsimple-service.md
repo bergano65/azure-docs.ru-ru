@@ -8,31 +8,16 @@ ms.topic: article
 ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: cacd5510147ce997efec922f4b4656956a098d88
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 2553aa95d5028c510b4e1a1b7f51a9f410bcea51
+ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66676943"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67154864"
 ---
 # <a name="register-the-microsoftvmwarecloudsimple-resource-provider-on-your-azure-subscription"></a>Регистрация поставщика ресурсов Microsoft.VMwareCloudSimple в вашей подписке Azure
 
-Служба CloudSimple позволяет использовать решения Azure VMware с CloudSimple. Чтобы использовать службу CloudSimple, его сначала необходимо включить в вашей подписке Azure. Затем можно зарегистрировать Microsoft.VMwareCloudSimple службы как поставщик ресурсов.
-
-## <a name="enable-the-cloudsimple-service"></a>Включите службу CloudSimple
-
-Чтобы включить службу CloudSimple в вашей подписке Azure, откройте запрос в службу поддержки с [поддержки Майкрософт](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest). Выберите следующие параметры при отправке запроса.
-
-* Тип проблемы. **Технические требования**
-* Подписка: **Идентификатор подписки**
-* Тип службы: **Решение VMware, CloudSimple**
-* Тип проблемы: **Квота выделенных узлов**
-* Подтип проблемы: **Увеличьте квоту выделенных узлов**
-* Субъект: **Включение службы CloudSimple**
-
-Можно также обратиться к своему представителю корпорации Майкрософт в [ azurevmwaresales@microsoft.com ](mailto:azurevmwaresales@microsoft.com). Укажите идентификатор своей подписки Azure в сообщении электронной почты.  
-
-После включения службы CloudSimple для вашей подписки, вы можете включить поставщик ресурсов в подписке.
+Служба CloudSimple позволяет использовать решения Azure VMware с CloudSimple. Вы можете зарегистрировать Microsoft.VMwareCloudSimple службы как поставщик ресурсов.
 
 ## <a name="register-the-resource-provider"></a>Регистрация поставщика ресурсов
 

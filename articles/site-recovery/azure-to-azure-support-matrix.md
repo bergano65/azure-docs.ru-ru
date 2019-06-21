@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 06/09/2019
 ms.author: raynew
-ms.openlocfilehash: a9021a44f61f516f144b77309d3ed597bd6f4b06
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6a6db30bfe6e4dc1eed04d11b53113c90210a5cf
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67067124"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67275217"
 ---
 # <a name="support-matrix-for-replicating-azure-vms-from-one-region-to-another"></a>Матрица поддержки репликации виртуальных машин Azure из одного региона в другой
 
@@ -135,7 +135,7 @@ Debian 8; | 9.22, 9.23, 9.24 | С 3.16.0-4-amd64 по 3.16.0-7-amd64, с 4.9.0-0
 
 **Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
-SUSE Linux Enterprise Server 12 (SP1,SP2,SP3,SP4) | 9.25 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.107-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>4\.4.121-92.73-default SP2(LTSS) для 4.4.121-92.104-default</br></br>4\.4.73-5-default SP3 для 4.4.176-94.88-default</br></br>4\.12.14-94.41-default SP4 для 4.12.14-95.13-default |
+SUSE Linux Enterprise Server 12 (SP1,SP2,SP3,SP4) | 9.25 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.107-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>4\.4.121-92.73-default SP2(LTSS) для 4.4.121-92.104-default</br></br>4\.4.73-5-default SP3 для 4.4.176-94.88-default</br></br>4\.4.138-4.7-azure SP3 для 4.4.176-4.25-azure</br></br>4\.12.14-94.41-default SP4 для 4.12.14-95.13-default</br>4\.12.14-6.3-azure SP4 для 4.12.14-6.9-azure |
 SUSE Linux Enterprise Server 12 (SP1,SP2,SP3,SP4) | 9.24 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.107-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>4\.4.121-92.73-default SP2(LTSS) для 4.4.121-92.104-default</br></br>4\.4.73-5-default SP3 для 4.4.176-94.88-default</br></br>4\.12.14-94.41-default SP4 для 4.12.14-95.13-default |
 SUSE Linux Enterprise Server 12 (SP1, SP2, SP3, SP4) | 9.23 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.107-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>4\.4.121-92.73-default SP2(LTSS) для 4.4.121-92.101-default</br></br>С SP3 4.4.73-5-default по 4.4.162-94.69-default</br></br>4\.12.14-94.41-default SP4 для 4.12.14-95.6-default |
 SUSE Linux Enterprise Server 12 (SP1, SP2, SP3) | 9.22 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.107-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>С SP2(LTSS) 4.4.121-92.73-default по 4.4.121-92.98-default</br></br>С SP3 4.4.73-5-default по 4.4.162-94.72-default |

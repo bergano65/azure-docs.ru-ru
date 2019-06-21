@@ -1,26 +1,26 @@
 ---
-title: Настройка пользовательских правил брандмауэра веб-приложения с помощью Azure PowerShell
-description: Сведения о настройке WAF настраиваемые правила с помощью Azure PowerShell
+title: Настройка пользовательских правил брандмауэра веб-приложения версии 2 с помощью Azure PowerShell
+description: Сведения о настройке WAF v2 настраиваемые правила с помощью Azure PowerShell
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 6/7/2019
+ms.date: 6/18/2019
 ms.author: victorh
-ms.openlocfilehash: f7215c4f35d36486b8dda483f34bc487cc16fc69
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f4d2fd7342e0efe95a1bc69e0dba77692053cf14
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66743064"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67164748"
 ---
-# <a name="configure-web-application-firewall-with-a-custom-rule-using-azure-powershell"></a>Настройка брандмауэра веб-приложения с помощью настраиваемого правила с помощью Azure PowerShell
+# <a name="configure-web-application-firewall-v2--with-a-custom-rule-using-azure-powershell"></a>Настройка брандмауэра веб-приложения версии 2 с помощью настраиваемого правила с помощью Azure PowerShell
 
 <!--- If you make any changes to the PowerShell in this article, also make the change in the corresponding Sample file: azure-docs-powershell-samples/application-gateway/waf-rules/waf-custom-rules.ps1 --->
 
-Настраиваемые правила позволяют создавать собственные правила, вычисляемое для каждого запроса, проходящий через брандмауэр веб-приложения (WAF). Эти правила хранения более высокий приоритет, чем остальные правила в наборы правил для управляемого кода. Настраиваемые правила имеют действие (разрешить или запретить), условие соответствия и оператора, позволяет полностью перенастраивать.
+Настраиваемые правила позволяют создавать собственные правила, вычисляемое для каждого запроса, который проходит через брандмауэр веб-приложения (WAF) v2. Эти правила хранения более высокий приоритет, чем остальные правила в наборы правил для управляемого кода. Настраиваемые правила имеют действие (разрешить или запретить), условие соответствия и оператора, позволяет полностью перенастраивать.
 
-В этой статье создает WAF шлюза приложений, который использует настраиваемое правило. В блоках настраиваемое правило трафика, если заголовок запроса содержит User-Agent *evilbot*.
+В этой статье создает WAF шлюза приложений версии 2, использующий настраиваемое правило. Настраиваемое правило блокирует трафик, если заголовок запроса содержит User-Agent *evilbot*.
 
 Дополнительные примеры пользовательских правил см. в разделе [Создание и использование правил брандмауэра пользовательского веб-приложения](create-custom-waf-rules.md)
 
@@ -30,7 +30,7 @@ ms.locfileid: "66743064"
 
 ### <a name="azure-powershell-module"></a>модуль Azure PowerShell;
 
-Если вы решили установить и использовать Azure PowerShell локально, для этого сценария требуется модуль Azure PowerShell версии 2.1.0 или более поздней версии.
+Чтобы установить и использовать Azure PowerShell локально для работы с этим скриптом, вам понадобится модуль Azure PowerShell 2.1.0 или последующей версии.
 
 1. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
 2. Чтобы создать подключение к Azure, выполните команду `Connect-AzAccount`.

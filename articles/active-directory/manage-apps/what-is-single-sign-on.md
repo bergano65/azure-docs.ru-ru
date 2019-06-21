@@ -12,12 +12,12 @@ ms.date: 05/15/2019
 ms.author: mimart
 ms.reviewer: arvindh, japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51b3066a529183d7a8a13e4673d7879136aa0d7a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2576a33e62b370bc2fd91c5d155e9f8d6e52c0f8
+ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65824168"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67190271"
 ---
 # <a name="single-sign-on-to-applications-in-azure-active-directory"></a>Единый вход в приложениях в Azure Active Directory
 
@@ -95,7 +95,7 @@ ms.locfileid: "65824168"
 - Chrome в Windows 7 или более поздней версии и в Mac OS X;
 - Firefox 26.0 или более поздней версии в Windows XP с пакетом обновления 2 (SP2) или более поздней версии и в Mac OS X 10.6 или более поздней версии.
 
-Сведения о том, как настроить облачное приложение для единого входа на основе паролей, см. в разделе [Настройка приложения для единого входа на основе паролей](application-sign-in-problem-password-sso-gallery.md#configure-the-application-for-password-single-sign-on).
+Сведения о том, как настроить облачное приложение для единого входа на основе паролей, см. в разделе [Настройка приложения для единого входа на основе паролей](application-sign-in-problem-password-sso-gallery.md#configure-the-app-for-password-sso).
 
 Сведения о том, как настроить локальное приложение для единого входа через прокси приложения, см. в статье [Хранение паролей для единого входа с помощью прокси приложения](application-proxy-configure-single-sign-on-password-vaulting.md).
 

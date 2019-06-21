@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: twhitney
-ms.openlocfilehash: 12fb9dc67e8afae3dcb9ade97dd61ab438e0fac5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4b72b6e33ad59ffceebf58aed7b315a4833b02f9
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66475405"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67203677"
 ---
 # <a name="current-limitations-for-windows-server-node-pools-and-application-workloads-in-azure-kubernetes-service-aks"></a>Текущие ограничения для пулов узлов Windows Server и рабочих нагрузок приложений в службе Azure Kubernetes (AKS)
 
@@ -28,7 +28,7 @@ ms.locfileid: "66475405"
 
 ## <a name="limitations-for-windows-server-in-kubernetes"></a>Ограничения для Windows Server в Kubernetes
 
-Контейнеры Windows Server необходимо запустить на узле контейнера на основе Windows. Чтобы запустить контейнеры Windows Server в AKS, вы можете [создать пул узлов под управлением Windows Server] [ windows-node-cli] как гостевой ОС. Поддержка пула узлов сервера окна включает некоторые ограничения, которые являются частью вышестоящего сервера Windows в проекте Kubernetes. Эти ограничения не относятся к AKS. Дополнительные сведения о этом вышестоящего поддержка для Windows Server в Kubernetes, см. в разделе [контейнеры Windows Server в Kubernetes ограничения][upstream-limitations].
+Контейнеры Windows Server необходимо запустить на узле контейнера на основе Windows. Чтобы запустить контейнеры Windows Server в AKS, вы можете [создать пул узлов под управлением Windows Server] [ windows-node-cli] как гостевой ОС. Поддержка пула узлов сервера окна включает некоторые ограничения, которые являются частью вышестоящего сервера Windows в проекте Kubernetes. Эти ограничения не относятся к AKS. Дополнительные сведения о этом вышестоящего поддержка для Windows Server в Kubernetes, см. в разделе [контейнеры Windows Server в Kubernetes ограничения](https://docs.microsoft.com/azure/aks/windows-node-limitations).
 
 Следующие ограничения вышестоящего для контейнеров Windows Server в Kubernetes относящиеся к AKS:
 

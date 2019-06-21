@@ -6,23 +6,23 @@ services: time-series-insights
 author: ashannon7
 ms.author: dpalled
 manager: cshankar
-ms.reviewer: v-mamcge, jasonh, kfile, anshan
+ms.reviewer: v-mamcge, jasonh, kfile
 ms.topic: conceptual
 ms.workload: big-data
 ms.date: 04/30/2019
 ms.custom: seodec18
-ms.openlocfilehash: dfc04397b1d7e9f3256810cbe469067ae52c99bd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: df60429a8b3d6fbdc504a7605d1502b4e084d386
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66238975"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67165300"
 ---
 # <a name="share-a-custom-view-using-a-parameterized-url"></a>Предоставление общего доступа к пользовательскому представлению с помощью параметризованного URL-адреса
 
 Чтобы предоставить доступ к пользовательскому представлению в обозревателе Time Series Insights, возможность программно создавать параметризованные URL-адрес этого представления.
 
-Обозревателе Time Series Insights поддерживает параметры запроса URL-адреса для указания представлений в интерфейсе непосредственно из URL-адрес. Например, используя только URL-адрес, можно указать целевую среду, предикат поиска и нужный период времени. Когда пользователь щелкает настраиваемый URL-адрес, в интерфейсе отображается ссылка непосредственно на конкретный ресурс на портале "Аналитика временных рядов". Применяются политики доступа к данным.
+Обозревателе Time Series Insights поддерживает параметры запроса URL-адреса для указания представлений в интерфейсе непосредственно из URL-адрес. Например, используя только URL-адрес, можно указать целевую среду, предикат поиска и нужный период времени. Когда пользователь выбирает настраиваемый URL-адрес, этот интерфейс предоставляет ссылку непосредственно на конкретный ресурс на портале Time Series Insights. Применяются политики доступа к данным.
 
 > [!TIP]
 > * Просмотреть бесплатный [Демонстрация Time Series Insights](https://insights.timeseries.azure.com/samples).

@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: v-pawal
 ms.topic: conceptual
-ms.openlocfilehash: 29b74aeaaae0bcfd5f6ae4a3c38cc00176292899
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0959be545f541da2f0efd5bd1e8cc209ab5a0996
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66386909"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67275411"
 ---
 # <a name="document-formats-and-naming-convention-guidance"></a>Руководство по форматам документов и соглашениям об именовании
 
@@ -37,7 +37,7 @@ ms.locfileid: "66386909"
 
 ## <a name="dictionary-formats"></a>Форматы словарей
 
-Для словарей Custom Translator поддерживает все форматы файлов, поддерживаемые для набора для обучения. Если вы используете словарь в формате Excel, первая строка таблицы должна содержать коды языков.
+В словарях пользовательский преобразователь поддерживает все форматы файлов, которые поддерживаются для обучающих наборов. Если вы используете словарю Excel, первая строка / строки электронной таблицы должно быть кодов языков.
 
 ## <a name="zip-file-formats"></a>Форматы ZIP-файлов
 

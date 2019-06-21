@@ -9,12 +9,12 @@ ms.date: 03/11/2019
 ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: f0dfed10190685c1d51822b8bec2b3c80cea7bb2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5fecced844b3580c83fd18d0c14c3a2083f7a4fc
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65153942"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67165739"
 ---
 # <a name="azure-storage-analytics-metrics-classic"></a>Метрики аналитики хранилища Azure (Классическая модель)
 
@@ -90,18 +90,27 @@ ms.locfileid: "65153942"
 * **Служба**: Сбор метрик, таких как исходящие и входящие данные, доступность, задержка и процент успешных операций, который агрегируется для больших двоичных объектов, очередей, таблиц и файловых служб.
 * **ServiceAndApi**: Помимо метрик служба собирает тот же набор метрик для каждой операции с хранилищем в API службы хранилища Azure.
 
-Например, следующая команда выключает минутные метрики для службы BLOB-объектов в учетной записи хранения по умолчанию с установкой пятидневного периода хранения:  
+Например следующая команда выключает минутные метрики для службы BLOB-объектов в учетной записи хранения с срока хранения, установленного на пять дней: 
+
+> [!NOTE]
+> Эта команда предполагает, что вы вышли в свою подписку Azure с помощью `Connect-AzAccount` команды.
 
 ```  
-Set-AzureStorageServiceMetricsProperty -MetricsType Minute   
--ServiceType Blob -MetricsLevel ServiceAndApi  -RetentionDays 5  
+$storageAccount = Get-AzStorageAccount -ResourceGroupName "<resource-group-name>" -AccountName "<storage-account-name>"
+
+Set-AzureStorageServiceMetricsProperty -MetricsType Minute -ServiceType Blob -MetricsLevel ServiceAndApi  -RetentionDays 5 -Context $storageAccount.Context
 ```  
+
+* Замените `<resource-group-name>` заполнитель с именем группы ресурсов.
+
+* Замените значение заполнителя `<storage-account-name>` именем вашей учетной записи хранения.
+
+
 
 Следующая команда получает текущий уровень часовых метрик и длительность периода хранения в днях для службы BLOB-объектов в учетной записи хранения по умолчанию:  
 
 ```  
-Get-AzureStorageServiceMetricsProperty -MetricsType Hour   
--ServiceType Blob  
+Get-AzureStorageServiceMetricsProperty -MetricsType Hour -ServiceType Blob -Context $storagecontext.Context
 ```  
 
 Дополнительные сведения о настройке командлетов Azure PowerShell для работы с подпиской Azure и о выборе учетной записи хранения по умолчанию см. в статье с [общими сведениями об Azure PowerShell](https://azure.microsoft.com/documentation/articles/install-configure-powershell/).  

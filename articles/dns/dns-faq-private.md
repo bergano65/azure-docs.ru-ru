@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 6/12/2019
 ms.author: victorh
-ms.openlocfilehash: c963cb1b6930b41a703b479e0213311d971e6606
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 480cf22491dbbfcb9fe1961b5c9a7aa6fe12a0cb
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67082850"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67274038"
 ---
 # <a name="azure-private-dns-faq"></a>Azure DNS Private вопросы и ответы
 
@@ -88,6 +88,13 @@ ms.locfileid: "67082850"
 ## <a name="is-there-portal-support-for-private-zones"></a>Поддерживаются ли частные зоны на портале?
 
 Да и частных зон, которые уже созданы с помощью API-интерфейсы, PowerShell, интерфейса командной строки и пакеты SDK будут видимы на портале Azure.
+
+## <a name="why-dont-my-existing-private-dns-zones-show-up-in-new-portal-experience"></a>Почему мои существующие частные зоны DNS нет в новый интерфейс портала?
+
+В выпуске обновление предварительной версии мы поставляется новая модель ресурсов для частных зон DNS. Существующие частные зоны DNS необходимо перенести на новую модель ресурсов, прежде чем они могут отображаться в новый интерфейс портала. Ниже приведены инструкции по миграции на новую модель ресурсов.
+
+## <a name="how-do-i-migrate-my-existing-private-dns-zones-to-the-new-model"></a>Как перенести мой существующий частных зон DNS на новую модель?
+Настоятельно рекомендуется перейти на новую модель ресурсов как можно скорее. Модель устаревших ресурсов будут поддерживаться, однако дополнительные функции будет не разрабатываться на основе этой модели. В будущем мы планируем отказаться от его пользу новая модель ресурсов. Руководство по переносу существующих частной зоны DNS зонах, чтобы новая модель ресурсов см. в разделе[руководство по миграции для частными зонами Azure DNS](private-dns-migration-guide.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

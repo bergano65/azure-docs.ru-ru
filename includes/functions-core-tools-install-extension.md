@@ -9,11 +9,11 @@ ms.date: 09/25/2018
 ms.author: cshoe
 ms.custom: include file
 ms.openlocfilehash: fc5b43dcdee394fea023124171fb42c1a18224dc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66131461"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185053"
 ---
 Пакеты расширения сделать все привязки, опубликованных группой функций Azure, доступные посредством параметра в *host.json* файла. Для локальной разработки гарантировать использование последней версии [основных инструментов функций Azure](../articles/azure-functions/functions-run-local.md#install-the-azure-functions-core-tools).
 

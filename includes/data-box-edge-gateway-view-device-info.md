@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 03/04/2019
 ms.author: alkohli
 ms.openlocfilehash: d5af557a62f4bd35c242d334c28a38c3d632f7cf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66161188"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185747"
 ---
 1. [Подключение к интерфейсу PowerShell](#connect-to-the-powershell-interface).
 2. Используйте `Get-HcsApplianceInfo` для получения информации для вашего устройства.

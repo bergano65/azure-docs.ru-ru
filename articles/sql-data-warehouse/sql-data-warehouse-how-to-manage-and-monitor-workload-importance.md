@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: a39d71e0f8b8072cab6a3af9a2f0913973f303ee
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fbdab724e737b9bc223672c41ee9dde51e6cd99c
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66235929"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67165505"
 ---
 # <a name="manage-and-monitor-workload-importance-in-azure-sql-data-warehouse"></a>Управление и наблюдение за важной рабочей нагрузки в хранилище данных SQL Azure
 
@@ -72,4 +72,4 @@ GO
 - Дополнительные сведения о важности, см. в разделе [важность рабочих нагрузок](sql-data-warehouse-workload-importance.md)
 
 > [!div class="nextstepaction"]
-> [Перейти к настройке важность рабочих нагрузок ](sql-data-warehouse-how-to-configure-workload-importance.md)
+> [Перейти к настройке важность рабочих нагрузок](sql-data-warehouse-how-to-configure-workload-importance.md)

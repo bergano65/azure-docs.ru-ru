@@ -9,11 +9,11 @@ ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 0334f9fd2d749b88580ff3857d705de2ae961902
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66157709"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185141"
 ---
 Шлюз виртуальной сети использует определенную подсеть, которая называется подсетью шлюза. Подсеть шлюза входит в диапазон IP-адресов виртуальной сети, который вы указываете при ее настройке. Подсеть шлюза содержит IP-адреса, которые используют ресурсы и службы шлюза виртуальной сети. Чтобы развертывать ресурсы шлюза в Azure, подсети нужно присвоить имя GatewaySubnet. Для развертывания ресурсов шлюза нельзя указывать другую подсеть. Если при создании VPN-шлюза у вас нет подсети с именем GatewaySubnet, операция завершится сбоем.
 

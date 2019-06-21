@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: conceptual
 author: oslake
 ms.author: moslake
-ms.reviewer: genemi,ayolubek, jrasnick
+ms.reviewer: genemi, ayolubek, jrasnick
 manager: craigg
-ms.date: 03/12/2019
-ms.openlocfilehash: 9704acee2ca8bad7437ae22ff5041e2253916dce
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/19/2019
+ms.openlocfilehash: d15e629343e015af5f83e1d185c6a46fc48fa3c4
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66160805"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67275196"
 ---
 # <a name="dns-alias-for-azure-sql-database"></a>Псевдоним DNS для Базы данных SQL Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "66160805"
 
 ### <a name="cross-region-support"></a>Поддержка перехода в другой регион
 
-Аварийное восстановление может привести к переходу вашего сервера Базы данных SQL в другой географический регион. Для системы, которая использует псевдоним DNS, можно избежать необходимости поиска и обновления всех строк подключения для всех клиентов. Вместо этого вы можете обновить псевдоним, чтобы он ссылался на новый сервер базы данных SQL, в котором теперь находится ваша база данных.
+Аварийное восстановление может привести к переходу вашего сервера Базы данных SQL в другой географический регион. Для системы, который использовал DNS-псевдоним можно избежать необходимости найти и обновить все строки подключения для всех клиентов. Вместо этого вы можете обновить псевдоним, чтобы он ссылался на новый сервер базы данных SQL, в котором теперь находится ваша база данных.
 
 ## <a name="properties-of-a-dns-alias"></a>Свойства псевдонима DNS
 
@@ -67,13 +67,6 @@ ms.locfileid: "66160805"
 Для программного управления псевдонимами DNS доступны командлеты REST API и PowerShell.
 
 ### <a name="rest-apis-for-managing-your-dns-aliases"></a>REST API для управления псевдонимами DNS
-
-<!-- TODO
-??2 "soon" in the following live sentence, is not the best situation.
-TODO update this subsection very soon after REST API docu goes live.
-Dev = Magda Bojarska
-Comment as of:  2018-01-26
--->
 
 Документация по REST API доступна в следующей статье:
 
@@ -111,7 +104,7 @@ Comment as of:  2018-01-26
 - *Задержка до 2 минут.* Для обновления или удаления псевдонима DNS требуется до 2 минут.
   - Независимо от задержки (даже небольшой), псевдоним немедленно прекращает ссылаться на клиентские подключения к устаревшему серверу.
 - *Поиск DNS.* Это единственный надежный способ проверить, на какой сервер ссылается псевдоним [DNS](https://docs.microsoft.com/windows-server/administration/windows-commands/nslookup).
-- *[Аудит таблиц не поддерживается](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md).* Невозможно использовать псевдоним DNS на сервере Базы данных SQL Azure, в которой включен *аудит таблиц*.
+- _Аудит таблиц не поддерживается:_ Невозможно использовать псевдоним DNS на сервере Базы данных SQL Azure, в которой включен *аудит таблиц*.
   - Аудит таблиц не рекомендуется.
   - Рекомендуем использовать [аудит больших двоичных объектов](sql-database-auditing.md).
 

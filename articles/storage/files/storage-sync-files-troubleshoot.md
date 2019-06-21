@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/31/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 26055727e308f8c05aece31746434d7e9a0a5abd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.openlocfilehash: 76308b9b5676169de8828aa5850e71f6ba48de71
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65555946"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295090"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Устранение неполадок службы "Синхронизация файлов Azure"
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -863,6 +863,8 @@ New-FsrmFileScreen -Path "E:\AFSdataset" -Description "Filter unsupported charac
 
 Если проблема не устранена, запустите средство AFSDiag.
 1. Создайте каталог (например, C:\Output), в котором будут сохранены выходные данные средства AFSDiag.
+    > [!NOTE]
+    >AFSDiag удалит все содержимое в выходном каталоге до сбора журналов. Определение местоположения выходных данных, который не содержит данных.
 2. Откройте окно PowerShell, а затем выполните следующие команды (нажимайте клавишу ВВОД после каждой команды).
 
     ```powershell

@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Python и API-интерфейсы REST - службы поиска Azure
 description: Создание, загрузка и отправка запросов в индекс, с помощью Python, записные книжки Jupyter и API REST службы поиска Azure.
-ms.date: 06/11/2019
+ms.date: 06/20/2019
 author: heidisteen
 manager: cgronlun
 ms.author: heidist
@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: c519cbd151ac3008593e3309930db4e9a9414e51
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 227da2739216961dcd1f2fb8c643703a1b62e51a
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67056641"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67302282"
 ---
 # <a name="quickstart-create-an-azure-search-index-using-jupyter-python-notebooks"></a>Краткое руководство. Создание индекса службы поиска Azure с помощью записных книжек Jupyter Python
 > [!div class="op_single_selector"]
@@ -26,7 +26,7 @@ ms.locfileid: "67056641"
 > * [Портал](search-create-index-portal.md)
 > 
 
-Создание записной книжки Jupyter, который создает, загружает и отправляет запрос в индекс поиска Azure с помощью Python и [API REST службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice/). В этой статье объясняется, как создать записную книжку шаг за шагом, начиная с нуля. Кроме того можно запустить готовой записной книжки. Чтобы загрузить копию, перейдите к [репозитория Azure-Search-python-samples](https://github.com/Azure-Samples/azure-search-python-samples).
+Создание записной книжки Jupyter, который создает, загружает и отправляет запрос в индекс поиска Azure с помощью Python и [API REST службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice/). В этой статье объясняется, как создать записную книжку шаг за шагом, начиная с нуля. Кроме того можно запустить готовой записной книжки. Чтобы загрузить копию, перейдите к[aearch-python-репозитория примеров azure](https://github.com/Azure-Samples/azure-search-python-samples).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

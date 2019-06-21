@@ -9,11 +9,11 @@ ms.date: 12/19/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 03a4005da7794a989166f914e4ba4d03f93ae8b9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66170172"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185143"
 ---
 1. На портале щелкните **+Создать ресурс**.
 2. В поле поиска введите **шлюз локальной сети** и нажмите клавишу **ВВОД** для выполнения поиска. Будет возвращен список результатов. Щелкните **Шлюз локальной сети**, а затем — **Создать**, чтобы открыть страницу **Создание шлюза локальной сети**.

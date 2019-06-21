@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 05/22/2019
+ms.date: 06/19/2019
 ms.author: magoedte
-ms.openlocfilehash: 3f93318dedb8a4667d32bcc97eb6a697ccebfcc4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2d4e49b4f7c1aa244b59ef17716c90369a0d3339
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67122576"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67273376"
 ---
 # <a name="enable-azure-monitor-for-vms-preview-overview"></a>Включение Azure Monitor для обзор виртуальных машин (Предварительная версия)
 
@@ -42,10 +42,10 @@ Azure Monitor для виртуальных машин поддерживает 
 - Западно-центральная часть США
 - Западная часть США 2<sup>1</sup>
 - Восточная часть США
-- Центральная Канада<sup>1</sup>
-- UK South<sup>1</sup>
+- Центральная Канада
+- Южная часть Великобритании
 - Западная Европа
-- Юго-Восточная Азия<sup>1</sup>
+- Юго-Восточная Азия
 
 <sup>1</sup> Этот регион сейчас не поддерживает функцию мониторинга работоспособности в Azure Monitor для виртуальных машин.
 
@@ -90,6 +90,10 @@ Azure Monitor для виртуальных машин поддерживает 
 |Debian 8, 9.4 | X<sup>1</sup> | | X |
 
 <sup>1</sup> Функция "Производительность" Azure Monitor для виртуальных машин доступна только в Azure Monitor. Группа ресурсов недоступна, непосредственно из левой области на виртуальной Машине Azure.
+
+>[!NOTE]
+>Функция работоспособности монитора Azure для виртуальных машин не поддерживает [вложенной виртуализации](../../virtual-machines/windows/nested-virtualization.md) на виртуальной Машине Azure.
+>
 
 >[!NOTE]
 >В операционной системе Linux:

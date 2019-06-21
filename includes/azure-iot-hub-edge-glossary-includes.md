@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: dobett
 ms.openlocfilehash: c95bca125ea70cf32acad0d5ea67c3ad195ed704
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66146571"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185406"
 ---
 ## <a name="automatic-device-management"></a>Автоматическое управление устройствами
 Автоматическое управление устройствами в Центре Интернета вещей Azure позволяет автоматизировать многие повторяющиеся и сложные задачи управления для большого количества устройств на протяжении их жизненного цикла. Благодаря автоматическому управлению устройствами вы можете выбрать набор устройств по определенным свойствам и определить для них желаемую конфигурацию. Центр Интернета вещей будет сам обновлять выбранные устройства, которые становятся доступными для управления.  Служба содержит [автоматическую конфигурацию устройств](../articles/iot-hub/iot-hub-auto-device-config.md) и [автоматические развертывания IoT Edge](../articles/iot-edge/how-to-deploy-monitor.md).

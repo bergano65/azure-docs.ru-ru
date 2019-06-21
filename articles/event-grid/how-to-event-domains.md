@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.author: babanisa
 ms.topic: conceptual
 ms.date: 01/17/2019
-ms.openlocfilehash: 73c837897f4a104fabb4143d4b49fa3fbc258bb4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 0042b0bd8c6ed9e9d253c44151dcf0588c742b48
+ms.sourcegitcommit: e5dcf12763af358f24e73b9f89ff4088ac63c6cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66305029"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67137842"
 ---
 # <a name="manage-topics-and-publish-events-using-event-domains"></a>Управление разделами и публикация событий с помощью доменов событий
 
@@ -194,7 +194,7 @@ Get-AzureRmEventGridDomainKey `
 
 ## <a name="search-lists-of-topics-or-subscriptions"></a>Поиск в списках разделов или подписок
 
-Чтобы сделать поиск и управление большим количеством разделов или подписок, сетка событий API-интерфейсы поддерживают список разбиение на страницы.
+Чтобы сделать поиск и управление большим количеством разделов или подписок, API-интерфейсы сетки событий поддерживать список и разбиение на страницы.
 
 ### <a name="using-cli"></a>Использование синтаксиса командной строки
 

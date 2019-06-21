@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 1c3996c3f40da496af0cd795d0873864667a1f19
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66160291"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185292"
 ---
 ## <a name="use-the-azure-portal"></a>Использование портала Azure
 1. Выберите виртуальную машину для повторного развертывания и нажмите кнопку *Повторить развертывание* в колонке *Параметры*. Прокрутите вниз, чтобы отобразить раздел **Поддержка и устранение проблем**, содержащий кнопку "Повторить развертывание", как показано в примере ниже.

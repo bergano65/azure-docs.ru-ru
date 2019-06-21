@@ -12,13 +12,13 @@ author: dalechen
 ms.author: ninarn
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 11/14/2018
-ms.openlocfilehash: 56b4e948f4e1aab20de95a16f45ab790c7e591bb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.date: 06/14/2019
+ms.openlocfilehash: adbe8dfd41725c11516f820656b0476ed1aa8881
+ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66019819"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67144034"
 ---
 # <a name="working-with-sql-database-connection-issues-and-transient-errors"></a>Работа с проблемами подключения Базы данных SQL и временными ошибками
 
@@ -93,7 +93,7 @@ ms.locfileid: "66019819"
 - **SqlException.Number** = 11001
 - Сообщение: «Нет такой узел не существует»
 
-В рамках первой повторной попытки программа может исправить опечатку, а затем попытаться подключиться.
+В рамках первой повторной попытки можно подключиться клиентский компьютер к сети и затем попытаться подключиться.
 
 Чтобы сделать это тестирование практичным, следует отключить компьютер от сети, прежде чем запускать программу. Программа распознает параметр среды выполнения, после чего делает следующее.
 

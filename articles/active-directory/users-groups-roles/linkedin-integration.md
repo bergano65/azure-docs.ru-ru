@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: beengen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1130885cc3168582935264ffaad9fd7a8ba3c60b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 36ca46d6df9c32f23d3051d1205c3c6b39e69f5a
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64920261"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67164717"
 ---
 # <a name="integrate-linkedin-account-connections-in-azure-active-directory"></a>Интеграция подключений к учетной записи LinkedIn в Azure Active Directory
 
@@ -44,7 +44,7 @@ ms.locfileid: "64920261"
 1. В разделе **подключений к учетной записи LinkedIn**, разрешить пользователям подключать учетные записи для доступа к их подключений LinkedIn в некоторых приложениях Майкрософт. Данные не используется совместно, пока пользователи разрешать подключения учетной записи.
 
     * Выберите **Да** включить службу для всех пользователей в вашей организации
-    * Выберите **выбранные** для включения только группе выбранных пользователей в вашей организации
+    * Выберите **выбранную группу** включить службу для всех выбранных пользователей в вашей организации
     * Выберите **нет** Чтобы отозвать согласие от всех пользователей в вашей организации
 
     ![Интеграция подключений к учетной записи LinkedIn в организации](./media/linkedin-integration/linkedin-integration.png)

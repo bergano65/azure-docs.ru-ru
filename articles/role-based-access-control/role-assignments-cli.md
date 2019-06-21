@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 04/17/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 1cc3d3eca4063a8120851a9d3de1a85292eacb11
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: bc5deb614e2ac6e47ff3bf241943df92d97699b2
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60344569"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295177"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-azure-cli"></a>Управление доступом к ресурсам Azure с помощью RBAC и Azure CLI
 
@@ -192,7 +192,7 @@ az role definition list --name "Virtual Machine Contributor" --output json | jq 
 az role assignment list --assignee <assignee>
 ```
 
-По умолчанию отображаются только назначения в пределах подписки. Чтобы просмотреть назначения в пределах ресурсов или группы, используйте `--all`.
+По умолчанию будет отображаться только прямые назначения, в пределах подписки. Чтобы просмотреть назначения в пределах ресурсов или группы, используйте `--all` и просмотреть унаследованные asisgnments, с помощью `--include-inherited`.
 
 В следующем примере перечисляются назначения ролей, назначенные непосредственно *patlong\@contoso.com* пользователя:
 
@@ -339,5 +339,5 @@ az role assignment delete --assignee 22222222-2222-2222-2222-222222222222 --role
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Учебник. Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI](tutorial-custom-role-cli.md)
+- [Руководство. Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI](tutorial-custom-role-cli.md)
 - [Управление ресурсами и группами ресурсов Azure с помощью интерфейса командной строки Azure](../azure-resource-manager/cli-azure-resource-manager.md)

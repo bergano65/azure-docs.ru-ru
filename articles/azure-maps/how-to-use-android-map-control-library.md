@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: e655b442ba9290d4b4525108521f2d1a0c766b48
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9df5eb9fa4493f82c6efd4a8e30eee324e4eac2a
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64869822"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67273836"
 ---
 # <a name="getting-started-with-azure-maps-android-sdk"></a>Приступая к работе с Azure Maps пакета SDK для Android
 
@@ -201,7 +201,7 @@ Android Studio займет несколько секунд для постро�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы добавить содержимое на карту, см. в разделе:
+Сведения о добавлении данных наложения на карте:
 
 > [!div class="nextstepaction"]
 > [Добавьте символ слой в карту Android](https://review.docs.microsoft.com/azure/azure-maps/how-to-add-symbol-to-android-map)
@@ -211,5 +211,3 @@ Android Studio займет несколько секунд для постро�
 
 > [!div class="nextstepaction"]
 > [Изменение стилей карт в Android maps](https://docs.microsoft.com/azure/azure-maps/set-android-map-styles)
-
-

@@ -11,16 +11,16 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 06/06/2019
+ms.date: 06/14/2019
 ms.author: magoedte
-ms.openlocfilehash: 436685f3bba58ed7d06dfe834d808e7fe422176b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 081d65f60eab4e2412a5dd14c3a63a18598e3b8a
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66751983"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67146314"
 ---
-# <a name="collect-log-data-with-the-azure-log-analytics-agent"></a>Сбор данных журнала с помощью агента Azure Log Analytics
+# <a name="collect-log-data-with-the-log-analytics-agent"></a>Сбор данных журнала с помощью агента Log Analytics
 
 Агент Azure Log Analytics, который ранее назывался агентом Microsoft Monitoring Agent (MMA) или агентом OMS для Linux, был разработан для обеспечения комплексного управления на компьютерах в локальной среде, компьютерах, отслеживаемых с помощью [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/), и виртуальных машинах в любом облаке. Агенты Windows и Linux присоединение к Azure Monitor и хранить собранные данные журнала из различных источников в рабочей области Log Analytics, а также уникальные журналы и метрики, как определено в решении для мониторинга. 
 
@@ -34,11 +34,11 @@ ms.locfileid: "66751983"
 
 Агент для Linux и Windows обменивается исходящими данными в службу Azure Monitor через TCP-порт 443 и если компьютер подключается через брандмауэр или прокси-сервер для обмена данными через Интернет, ознакомьтесь с требованиями к ниже для понимания конфигурации сети Обязательно. Если политики ИТ-безопасности позволяет компьютерам в сети для подключения к Интернету, можно настроить [шлюза Log Analytics](gateway.md) и затем настроить агент для подключения через шлюз к журналам Azure Monitor. Агент можно получать сведения о конфигурации и отправлять данные, собранные в зависимости от того, какие данные правила сбора данных и решения для мониторинга вы включили в рабочей области. 
 
-Если ведется мониторинг компьютера, с помощью System Center Operations Manager 2012 R2 или более поздней версии, он может быть как многосетевой. с помощью службы Azure Monitor для сбора данных и пересылаться в службу и по-прежнему осуществляться [Operations Manager](../../azure-monitor/platform/om-agents.md). Компьютерами Linux агент не включает компонент службы работоспособности, как агент Windows выполняет и информация собирается и обрабатывает сервером управления, от его имени. Так как компьютеры Linux по-разному отслеживаются с помощью Operations Manager, они не получают конфигурацию или собирать данные напрямую и пересылать через группы управления, как управляемой агентом системе Windows. Таким образом этот сценарий не поддерживается компьютерами Linux, отчеты в Operations Manager.  
+Если ведется мониторинг компьютера, с помощью System Center Operations Manager 2012 R2 или более поздней версии, он может быть как многосетевой. с помощью службы Azure Monitor для сбора данных и пересылаться в службу и по-прежнему осуществляться [Operations Manager](../../azure-monitor/platform/om-agents.md). Компьютерами Linux агент не включает компонент службы работоспособности, как агент Windows выполняет и информация собирается и обрабатывает сервером управления, от его имени. Так как компьютеры Linux по-разному отслеживаются с помощью Operations Manager, они не получают конфигурацию или собирать данные напрямую и пересылать через группы управления, как управляемой агентом системе Windows. Таким образом, этот сценарий не поддерживается компьютерами Linux, отчеты в Operations Manager, и необходимо настроить компьютер Linux для [отчетов в группу управления Operations Manager](../platform/agent-manage.md#configure-agent-to-report-to-an-operations-manager-management-group) и рабочую область Log Analytics в двух действия.
 
 Агент для Windows может отправлять отчет в четыре рабочих области Log Analytics, а агент для Linux поддерживает отчетность только для одной рабочей области.  
 
-Агент для Linux и Windows не только для подключения к Azure Monitor, она также поддерживает службы автоматизации Azure для размещения гибридной рабочей роли Runbook и других служб, таких как [отслеживания изменений](../../automation/change-tracking.md) и [управления обновлениями](../../automation/automation-update-management.md). Дополнительные сведения о гибридной рабочей роли Runbook см. в разделе [Общие сведения об архитектуре автоматизации](../../automation/automation-hybrid-runbook-worker.md).  
+Агент для Linux и Windows не только для подключения к Azure Monitor, она также поддерживает службы автоматизации Azure для размещения гибридной рабочей роли Runbook и других служб, таких как [отслеживания изменений](../../automation/change-tracking.md), [управления обновлениями](../../automation/automation-update-management.md), и [центра безопасности](../../security-center/security-center-intro.md). Дополнительные сведения о гибридной рабочей роли Runbook см. в разделе [Общие сведения об архитектуре автоматизации](../../automation/automation-hybrid-runbook-worker.md).  
 
 ## <a name="supported-windows-operating-systems"></a>Поддерживаемые операционные системы Windows
 Для агента Windows официально поддерживаются следующие версии операционной системы Windows:
