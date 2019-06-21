@@ -123,7 +123,7 @@ ms.locfileid: "66753855"
 
 База данных SQL Azure в рамках этой схемы
 
-В экземпляре базы данных Azure SQL используются следующие меры безопасности базы данных:
+В экземпляре Базы данных Azure SQL используются следующие меры безопасности базы данных:
 
 - [правила брандмауэра уровня сервера и уровня базы данных](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) либо [конечные точки службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) с использованием [правил виртуальной сети](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview);
 - [прозрачное шифрование данных](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql) обеспечивает защиту Базы данных SQL Azure и хранилища данных Azure от вредоносных действий. Выполняется шифрование и расшифровка базы данных, связанных резервных копий и неактивных файлов журналов транзакций в реальном времени без необходимости изменения приложения.

@@ -1,6 +1,6 @@
 ---
 title: Использование .NET Core для создания запросов к базе данных SQL Azure | Документация Майкрософт
-description: Из этой статьи вы узнаете, как использовать .NET Core для создания программы, которая подключается к Базе данных SQL Azure, и создавать к ней запросы с помощью инструкций Transact-SQL.
+description: Из этой статьи вы узнаете, как использовать .NET Core для создания программы, которая подключается к базе данных SQL Azure, и создавать к ней запросы с помощью инструкций Transact-SQL.
 services: sql-database
 ms.service: sql-database
 ms.subservice: development

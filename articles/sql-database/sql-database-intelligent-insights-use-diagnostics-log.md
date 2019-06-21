@@ -19,7 +19,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "60703172"
 ---
-# <a name="use-the-intelligent-insights-azure-sql-database-performance-diagnostics-log"></a>Использование журнала диагностики производительности Intelligent Insights для базы данных SQL Azure
+# <a name="use-the-intelligent-insights-azure-sql-database-performance-diagnostics-log"></a>Использование журнала диагностики производительности Intelligent Insights для Базы данных SQL Azure
 
 Эта страница содержит сведения об использовании журнала диагностики производительности базы данных SQL Azure, созданного [Intelligent Insights](sql-database-intelligent-insights.md), о его формате и содержащихся в нем данных для различных задач разработки. Вы можете отправить этот журнал диагностики для [журналы Azure Monitor](../azure-monitor/insights/azure-sql.md), [концентраторов событий](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md), [хранилища Azure](sql-database-metrics-diag-logging.md#stream-into-storage), или стороннее решение для разработки пользовательских операций, оповещения и создания отчетов возможности.
 

@@ -21,7 +21,7 @@ ms.locfileid: "67119174"
 ---
 # <a name="configure-multi-factor-authentication-for-sql-server-management-studio-and-azure-ad"></a>Настройка Многофакторной идентификации для SQL Server Management Studio и Azure AD
 
-В этом разделе показано, как настроить Многофакторную идентификацию (MFA) Azure Active Directory для SQL Server Management Studio. Многофакторная идентификация Azure AD может использоваться при подключении SSMS или SqlPackage.exe к службе [База данных SQL](sql-database-technical-overview.md) и [Хранилищу данных SQL Azure](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Обзор Многофакторной идентификации базы данных SQL Azure приведен в разделе [Универсальная проверка подлинности для Базы данных SQL и хранилища данных SQL (поддержка SSMS для MFA)](sql-database-ssms-mfa-authentication.md).
+В этом разделе показано, как настроить Многофакторную идентификацию (MFA) Azure Active Directory для SQL Server Management Studio. Многофакторная идентификация Azure AD может использоваться при подключении SSMS или SqlPackage.exe к службе [База данных SQL](sql-database-technical-overview.md) и [Хранилищу данных SQL Azure](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Обзор многофакторной проверки подлинности в Базе данных SQL Azure приведен в разделе [Универсальная проверка подлинности для Базы данных SQL и хранилища данных SQL (поддержка SSMS для MFA)](sql-database-ssms-mfa-authentication.md).
 
 > [!NOTE]
 > Этот раздел относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере Azure SQL Server. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.

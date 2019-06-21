@@ -18,7 +18,7 @@ ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1d17823c4ef4917f9f312b8f2f327e2b0395cfa3
 ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "67109433"
@@ -84,7 +84,7 @@ ms.locfileid: "67109433"
 ### <a name="sql-server-used-by-azure-ad-connect"></a>SQL Server, используемый Azure AD Connect
 * Azure AD Connect требуется база данных SQL Server для хранения учетных данных. По умолчанию устанавливается SQL Server 2012 Express LocalDB (облегченная версия SQL Server Express). Размер экземпляра SQL Server Express может достигать 10 ГБ, позволяя управлять примерно 100 000 объектов. Если вам нужно управлять более значительным числом объектов каталога, в мастере установки укажите другую установку SQL Server. Тип установки SQL Server может повлиять на [производительность Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/plan-connect-performance-factors#sql-database-factors).
 * Если вы используете другую установку SQL Server, действуют следующие требования:
-  * Azure AD Connect поддерживает все версии Microsoft SQL Server 2008 R2 (с последним пакетом обновления) для SQL Server 2019. База данных SQL Microsoft Azure в качестве базы данных **не поддерживается** .
+  * Azure AD Connect поддерживает все версии Microsoft SQL Server 2008 R2 (с последним пакетом обновления) для SQL Server 2019. База данных SQL Microsoft Azure в качестве базы данных **не поддерживается**.
   * Необходимо использовать параметры сортировки SQL без учета регистра. Их можно определить по суффиксу \_CI_ в имени. Параметры сортировки с учетом регистра, имена которых содержат суффикс \_CS_, **не поддерживаются**.
   * На один экземпляр SQL может приходиться только один модуль синхронизации. Совместное использование экземпляра SQL модулями FIM/MIM Sync, DirSync и Azure AD Sync **не поддерживается**.
 

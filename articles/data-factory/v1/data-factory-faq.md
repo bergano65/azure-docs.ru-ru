@@ -39,7 +39,7 @@ ms.locfileid: "60486873"
 
 ### <a name="how-do-i-get-started-with-azure-data-factory"></a>Вопрос. Как приступить к работе с фабрикой данных Azure?
 * Общие сведения о фабрике данных Azure см. в разделе [Общие сведения о службе фабрики данных Azure, службе интеграции данных в облаке](data-factory-introduction.md).
-* Инструкции по **копированию и перемещению данных** с помощью действия копирования см. в статье [Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
+* Инструкции по **копированию и перемещению данных** с помощью действия копирования см. в статье [Копирование данных из хранилища BLOB-объектов Azure в Базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 * Учебник по **преобразованию данных** с помощью действия HDInsight Hive доступен в разделе [Начало работы с фабрикой данных Azure](data-factory-build-your-first-pipeline.md).
 
 ### <a name="what-is-the-data-factorys-region-availability"></a>Какова региональная доступность службы "Фабрика данных"?

@@ -1,6 +1,6 @@
 ---
-title: Настройка отдельной Базы данных SQL Azure | Документация Майкрософт
-description: Сведения о том, как настроить отдельную Базу данных SQL Azure и управлять ею
+title: Настройка отдельной базы данных SQL Azure | Документация Майкрософт
+description: Сведения о том, как настроить отдельную базу данных SQL Azure и управлять ею
 services: sql-database
 ms.service: sql-database
 ms.subservice: single-database

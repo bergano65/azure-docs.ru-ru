@@ -1,5 +1,5 @@
 ---
-title: Модели приобретения для базы данных SQL Azure | Документы Майкрософт
+title: Модели приобретения для Базы данных SQL Azure | Документы Майкрософт
 description: Дополнительные сведения о модели приобретения, доступные для базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database

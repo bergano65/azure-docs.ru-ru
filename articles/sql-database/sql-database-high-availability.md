@@ -1,6 +1,6 @@
 ---
-title: Высокая доступность службы базы данных SQL Azure | Документация Майкрософт
-description: Узнайте о возможностях и функциях высокой доступности службы базы данных SQL Azure
+title: Высокая доступность службы Базы данных SQL Azure | Документация Майкрософт
+description: Узнайте о возможностях и функциях высокой доступности службы Базы данных SQL Azure
 services: sql-database
 ms.service: sql-database
 ms.subservice: high-availability

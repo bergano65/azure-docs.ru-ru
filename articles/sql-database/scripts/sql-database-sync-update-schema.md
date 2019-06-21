@@ -32,7 +32,7 @@ ms.locfileid: "66729176"
 Общие сведения о синхронизации данных SQL см. в статье [Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL Azure](../sql-database-sync-data.md).
 
 > [!IMPORTANT]
-> Служба синхронизации данных SQL Azure пока **не** поддерживает управляемые экземпляры Базы данных SQL Azure.
+> Служба "Синхронизация данных SQL Azure" пока **не** поддерживает Управляемый экземпляры Базы данных SQL Azure.
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -88,13 +88,13 @@ UpdateSyncSchema.ps1 -SubscriptionId <subscription_id> -ResourceGroupName <resou
 
 Дополнительные сведения об Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
 
-Дополнительные примеры сценариев PowerShell для базы данных SQL Azure можно найти в разделе [Примеры Azure PowerShell для базы данных SQL Azure](../sql-database-powershell-samples.md).
+Дополнительные примеры сценариев PowerShell для Базы данных SQL Azure можно найти в разделе [Примеры Azure PowerShell для Базы данных SQL Azure](../sql-database-powershell-samples.md).
 
 Дополнительные сведения о синхронизации данных SQL:
 
 -   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью функции синхронизации данных SQL Azure](../sql-database-sync-data.md).
 -   Настройка синхронизации данных
-    - На портале: [Руководство по настройке синхронизации данных SQL между Базой данных SQL Azure и локальной базой данных SQL Server](../sql-database-get-started-sql-data-sync.md)
+    - На портале: [Руководство по настройке синхронизации данных SQL между базой данных SQL Azure и локальной базой данных SQL Server](../sql-database-get-started-sql-data-sync.md)
     - С помощью PowerShell
         -  [Использование PowerShell для синхронизации данных между несколькими базами данных SQL Azure](sql-database-sync-data-between-sql-databases.md)
         -  [Использование PowerShell для синхронизации данных между базой данных SQL Azure и локальной базой данных SQL Server](sql-database-sync-data-between-azure-onprem.md)

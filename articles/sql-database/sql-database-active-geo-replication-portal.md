@@ -19,7 +19,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "60864138"
 ---
-# <a name="configure-active-geo-replication-for-azure-sql-database-in-the-azure-portal-and-initiate-failover"></a>Настройка активной георепликации для базы данных SQL Azure с помощью портала Azure и запуск отработки отказа
+# <a name="configure-active-geo-replication-for-azure-sql-database-in-the-azure-portal-and-initiate-failover"></a>Настройка активной георепликации для Базы данных SQL Azure с помощью портала Azure и запуск отработки отказа
 
 В этой статье объясняется, как настроить [активную георепликацию для отдельной базы данных и базы данных в пуле](sql-database-active-geo-replication.md#active-geo-replication-terminology-and-capabilities) в Базе данных SQL Azure с помощью [портала Azure](https://portal.azure.com) и запустить отработку отказа.
 

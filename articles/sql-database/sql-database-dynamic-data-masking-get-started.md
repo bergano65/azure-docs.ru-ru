@@ -33,7 +33,7 @@ ms.locfileid: "64721555"
 
 ### <a name="dynamic-data-masking-permissions"></a>Разрешения для динамической маскировки данных
 
-Динамическую маскировку данных может настраивать администратор Базы данных SQL Azure, администратор сервера или [диспетчер безопасности SQL](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#sql-security-manager).
+Динамическую маскировку данных может настраивать администратор базы данных SQL Azure, администратор сервера или [диспетчер безопасности SQL](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#sql-security-manager).
 
 ### <a name="dynamic-data-masking-policy"></a>Политика динамической маскировки данных
 
@@ -57,7 +57,7 @@ ms.locfileid: "64721555"
 
 ## <a name="set-up-dynamic-data-masking-for-your-database-using-powershell-cmdlets"></a>Настройка динамического маскирования данных для базы данных с помощью командлетов PowerShell
 
-См. статью с описанием [командлетов базы данных SQL Azure](https://docs.microsoft.com/powershell/module/az.sql).
+См. статью с описанием [командлетов Базы данных SQL Azure](https://docs.microsoft.com/powershell/module/az.sql).
 
 ## <a name="set-up-dynamic-data-masking-for-your-database-using-rest-api"></a>Настройка динамической маскировки данных для базы данных с помощью REST API
 

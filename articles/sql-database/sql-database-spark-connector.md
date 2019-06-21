@@ -1,6 +1,6 @@
 ---
-title: Соединитель Spark с базой данных SQL Azure и SQL Server | Документация Майкрософт
-description: Узнайте, как использовать соединитель Spark для базы данных SQL Azure и SQL Server
+title: Соединитель Spark с Базой данных SQL Azure и SQL Server | Документация Майкрософт
+description: Узнайте, как использовать соединитель Spark для Базы данных SQL Azure и SQL Server
 services: sql-database
 ms.service: sql-database
 ms.subservice: development
@@ -19,9 +19,9 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "60331526"
 ---
-# <a name="accelerate-real-time-big-data-analytics-with-spark-connector-for-azure-sql-database-and-sql-server"></a>Ускорение анализа больших данных в режиме реального времени с помощью базы данных SQL Azure и SQL Server
+# <a name="accelerate-real-time-big-data-analytics-with-spark-connector-for-azure-sql-database-and-sql-server"></a>Ускорение анализа больших данных в режиме реального времени с помощью Базы данных SQL Azure и SQL Server
 
-Соединитель Spark для базы данных SQL Azure и SQL Server разрешает использовать базы данных SQL, включая базы данных SQL Azure и SQL Server, в качестве источника входных данных или приемника выходных данных для заданий Spark. Это позволяет использовать данные о транзакциях в реальном времени при анализе больших данных и сохранять результаты нерегламентированных запросов или отчетов. По сравнению со встроенным соединителем JDBC этот соединитель обеспечивает возможность массовой вставки данных в базы данных SQL. Он может в 10-20 раз превосходить по производительности вставку по строкам. Соединитель Spark для базы данных SQL Azure и SQL Server также поддерживает аутентификацию AAD. Это позволяет безопасно подключаться к базе данных SQL Azure из Azure Databricks, используя учетную запись AAD. Она предоставляет аналогичные интерфейсы со встроенным соединителем JDBC. Имеющиеся задания Spark можно легко перенести, чтобы использовать этот соединитель.
+Соединитель Spark для Базы данных SQL Azure и SQL Server разрешает использовать базы данных SQL, включая Базу данных SQL Azure и SQL Server, в качестве источника входных данных или приемника выходных данных для заданий Spark. Это позволяет использовать данные о транзакциях в реальном времени при анализе больших данных и сохранять результаты нерегламентированных запросов или отчетов. По сравнению со встроенным соединителем JDBC этот соединитель обеспечивает возможность массовой вставки данных в базы данных SQL. Он может в 10-20 раз превосходить по производительности вставку по строкам. Соединитель Spark для Базы данных SQL Azure и SQL Server также поддерживает аутентификацию AAD. Это позволяет безопасно подключаться к базе данных SQL Azure из Azure Databricks, используя учетную запись AAD. Она предоставляет аналогичные интерфейсы со встроенным соединителем JDBC. Имеющиеся задания Spark можно легко перенести, чтобы использовать этот соединитель.
 
 ## <a name="download"></a>Download (Скачать)
 Чтобы приступить к работе, скачайте соединитель Spark для базы данных SQL из репозитория [azure-sqldb-spark](https://github.com/Azure/azure-sqldb-spark) на сайте GitHub.
@@ -36,7 +36,7 @@ ms.locfileid: "60331526"
 | Microsoft SQL Server                 |SQL Server 2008 или более поздняя версия |
 | База данных SQL Azure                   |Поддерживаются                |
 
-Соединитель Spark для базы данных SQL Azure и SQL Server использует Microsoft JDBC Driver для SQL Server, чтобы перемещать данные между рабочими узлами Spark и базами данных SQL:
+Соединитель Spark для Базы данных SQL Azure и SQL Server использует Microsoft JDBC Driver для SQL Server, чтобы перемещать данные между рабочими узлами Spark и базами данных SQL:
  
 Поток данных выглядит следующим образом:
 1. Главный узел Spark подключается к SQL Server или базе данных Azure SQL и передает данные из определенной таблицы или использует специальный SQL-запрос.
@@ -113,7 +113,7 @@ import org.apache.spark.sql.SaveMode
 collection.write.mode(SaveMode.Append).sqlDB(config)
 ```
 
-### <a name="run-dml-or-ddl-query-in-azure-sql-database-or-sql-server"></a>Выполнение запроса DML или DDL в базе данных SQL Azure или SQL Server
+### <a name="run-dml-or-ddl-query-in-azure-sql-database-or-sql-server"></a>Выполнение запроса DML или DDL в Базе данных SQL Azure или SQL Server
 ```scala
 import com.microsoft.azure.sqldb.spark.config.Config
 import com.microsoft.azure.sqldb.spark.query._
@@ -214,7 +214,7 @@ df.bulkCopyToSqlDB(bulkCopyConfig, bulkCopyMetadata)
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Если это еще не сделано, скачайте соединитель для базы данных SQL Azure и SQL Server из [репозитория GitHub azure-sqldb-spark](https://github.com/Azure/azure-sqldb-spark) и изучите дополнительные ресурсы в репозитории:
+Если это еще не сделано, скачайте соединитель для Базы данных SQL Azure и SQL Server из [репозитория GitHub azure-sqldb-spark](https://github.com/Azure/azure-sqldb-spark) и изучите дополнительные ресурсы в репозитории:
 
 -   [Примеры записных книжек Azure Databricks](https://github.com/Azure/azure-sqldb-spark/tree/master/samples/notebooks).
 - [Пример сценариев (Scala)](https://github.com/Azure/azure-sqldb-spark/tree/master/samples/scripts)

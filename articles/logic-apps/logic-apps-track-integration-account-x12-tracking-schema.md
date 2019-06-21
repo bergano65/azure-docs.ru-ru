@@ -76,7 +76,7 @@ ms.locfileid: "60845772"
 | isTechnicalAcknowledgmentExpected | Boolean | Указывает, настроено ли в соглашении X12 техническое подтверждение. (обязательный параметр) |
 | isFunctionalAcknowledgmentExpected | Boolean | Указывает, настроено ли в соглашении X12 функциональное подтверждение. (обязательный параметр) |
 | needAk2LoopForValidMessages | Boolean | Указывает, требуется ли цикл AK2 для допустимого сообщения. (обязательный параметр) |
-| segmentsCount | Целое число | Число сегментов в наборе транзакций X12. (Дополнительно) |
+| segmentsCount | Integer | Число сегментов в наборе транзакций X12. (Дополнительно) |
 ||||
 
 ## <a name="x12-transaction-set-acknowledgement-tracking-schema"></a>Схема отслеживания подтверждения набора транзакций X12

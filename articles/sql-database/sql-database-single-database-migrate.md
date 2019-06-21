@@ -20,7 +20,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "65790312"
 ---
-# <a name="sql-server-database-migration-to-azure-sql-database"></a>Перенос базы данных SQL Server в базу данных SQL Azure
+# <a name="sql-server-database-migration-to-azure-sql-database"></a>Перенос базы данных SQL Server в Базу данных SQL Azure
 
 В этой статье вы узнаете об основных методах переноса базы данных SQL Server 2005 или более поздней версии в базу данных SQL Azure (отдельную или в пуле). Дополнительные сведения о переносе экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure см. в [этой статье](sql-database-managed-instance-migrate.md). Сведения о миграции из других платформ см. [здесь](https://datamigration.microsoft.com/).
 
@@ -28,10 +28,10 @@ ms.locfileid: "65790312"
 
 Существуют два основных метода переноса базы данных SQL Server 2005 или более поздней версии в базу данных SQL Azure (отдельную или в пуле). Первый метод проще, но миграция происходит с простоем, который может длиться достаточно долго. Второй метод более сложен, но значительно сокращает время простоя при выполнении миграции.
 
-В обоих случаях необходимо обеспечить совместимость базы данных-источника с базой данных SQL Azure с помощью [Data Migration Assistant (DMA)](https://www.microsoft.com/download/details.aspx?id=53595). Начиная с базы данных SQL версии 12, у всех последующих версий базы данных SQL Server функции, не связанные с операциями уровня сервера и операциями между базами данных, [практически не отличаются](sql-database-features.md). Базы данных и приложения, использующие [частично поддерживаемые или неподдерживаемые функции](sql-database-transact-sql-information.md), требуют небольшой [доработки для устранения этих несовместимостей](sql-database-single-database-migrate.md#resolving-database-migration-compatibility-issues) перед миграцией базы данных SQL Server.
+В обоих случаях необходимо обеспечить совместимость базы данных-источника с Базой данных SQL Azure с помощью [Data Migration Assistant (DMA)](https://www.microsoft.com/download/details.aspx?id=53595). Начиная с базы данных SQL версии 12, у всех последующих версий базы данных SQL Server функции, не связанные с операциями уровня сервера и операциями между базами данных, [практически не отличаются](sql-database-features.md). Базы данных и приложения, использующие [частично поддерживаемые или неподдерживаемые функции](sql-database-transact-sql-information.md), требуют небольшой [доработки для устранения этих несовместимостей](sql-database-single-database-migrate.md#resolving-database-migration-compatibility-issues) перед миграцией базы данных SQL Server.
 
 > [!NOTE]
-> Сведения о переносе в базу данных SQL Azure баз данных, отличных от SQL Server, в том числе Microsoft Access, Sybase, MySQL Oracle и DB2, см. в блоге, посвященном [помощнику по миграции SQL Server](https://blogs.msdn.microsoft.com/datamigration/2017/09/29/release-sql-server-migration-assistant-ssma-v7-6/).
+> Сведения о переносе в Базу данных SQL Azure баз данных, отличных от SQL Server, в том числе Microsoft Access, Sybase, MySQL Oracle и DB2, см. в блоге, посвященном [помощнику по миграции SQL Server](https://blogs.msdn.microsoft.com/datamigration/2017/09/29/release-sql-server-migration-assistant-ssma-v7-6/).
 
 ## <a name="method-1-migration-with-downtime-during-the-migration"></a>Метод 1. Миграция с простоем
 
@@ -48,7 +48,7 @@ ms.locfileid: "65790312"
 5. [Перенесите](https://docs.microsoft.com/sql/dma/dma-migrateonpremsql) копию базы данных в новую базу данных SQL Azure с помощью Data Migration Assistant.
 
 > [!NOTE]
-> Вместо DMA можно также использовать BACPAC-файл. См. раздел [Импорт BACPAC-файла в новую базу данных SQL Azure](sql-database-import.md).
+> Вместо DMA можно также использовать BACPAC-файл. См. сведения в статье [Импорт BACPAC-файла в новую базу данных SQL Azure](sql-database-import.md).
 
 ### <a name="optimizing-data-transfer-performance-during-migration"></a>Оптимизация производительности передачи данных во время миграции
 
@@ -67,11 +67,11 @@ ms.locfileid: "65790312"
 
 ## <a name="method-2-use-transactional-replication"></a>Метод 2. Использование репликации транзакций
 
-Если вы не можете отключить базу данных SQL Server от рабочих процессов на время миграции, вы можете воспользоваться транзакционной репликацией SQL Server в качестве решения для миграции. Чтобы использовать этот метод, база данных-источник должна соответствовать [требованиям к репликации транзакций](https://msdn.microsoft.com/library/mt589530.aspx) и быть совместимой с базой данных SQL Azure. Получите дополнительные сведения о [настройке репликации для групп доступности AlwaysOn (SQL Server)](/sql/database-engine/availability-groups/windows/configure-replication-for-always-on-availability-groups-sql-server).
+Если вы не можете отключить базу данных SQL Server от рабочих процессов на время миграции, вы можете воспользоваться транзакционной репликацией SQL Server в качестве решения для миграции. Чтобы использовать этот метод, база данных-источник должна соответствовать [требованиям к репликации транзакций](https://msdn.microsoft.com/library/mt589530.aspx) и быть совместимой с Базой данных SQL Azure. Получите дополнительные сведения о [настройке репликации для групп доступности AlwaysOn (SQL Server)](/sql/database-engine/availability-groups/windows/configure-replication-for-always-on-availability-groups-sql-server).
 
 Чтобы использовать это решение, следует настроить базу данных SQL Azure в качестве подписчика на экземпляр SQL Server, который требуется перенести. Распространитель репликации транзакций обеспечивает синхронизацию данных из базы данных (издателя) по мере возникновения новых транзакций.
 
-При транзакционной репликации все изменения данных или схемы отображаются в Базе данных SQL Azure. После завершения синхронизации и подготовки к миграции измените строку подключения ваших приложений, чтобы направить их в Базу данных SQL Azure. После того как репликация транзакций применила все изменения из вашей базы данных-источника и все приложения направлены к базе данных Azure, вы можете удалить репликацию транзакций. База данных SQL Azure теперь является рабочей системой.
+При транзакционной репликации все изменения данных или схемы отображаются в базе данных SQL Azure. После завершения синхронизации и подготовки к миграции измените строку подключения ваших приложений, чтобы направить их в базу данных SQL Azure. После того как репликация транзакций применила все изменения из вашей базы данных-источника и все приложения направлены к базе данных Azure, вы можете удалить репликацию транзакций. База данных SQL Azure теперь является рабочей системой.
 
  ![Диаграмма SeedCloudTR](./media/sql-database-cloud-migrate/SeedCloudTR.png)
 
@@ -101,7 +101,7 @@ ms.locfileid: "65790312"
   - Если снижение производительности неприемлемо, вы можете использовать другой сервер, но это усложнит управление и администрирование.
 - При выборе папки моментальных снимков убедитесь, что ее емкость достаточна для хранения BCP каждой таблицы, которую требуется реплицировать.
 - Создание моментального снимка блокирует связанные таблицы до завершения операции. Учитывайте это при планировании создания моментальных снимков.
-- В базе данных SQL Azure поддерживаются только принудительные подписки. Вы можете добавлять только подписчики из базы данных-источника.
+- В Базе данных SQL Azure поддерживаются только принудительные подписки. Вы можете добавлять только подписчики из базы данных-источника.
 
 ## <a name="resolving-database-migration-compatibility-issues"></a>Устранение проблем совместимости при миграции базы данных
 
@@ -123,6 +123,6 @@ ms.locfileid: "65790312"
 
 - Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure для [отслеживания использования базы данных TempDB во время миграции](https://blogs.msdn.microsoft.com/azuresqlemea/2016/12/28/lesson-learned-10-monitoring-tempdb-usage/).
 - Воспользуйтесь скриптом в блоге разработчиков EMEA SQL Azure, чтобы [отслеживать объем, занимаемый журналом транзакций в базе данных, во время миграции](https://blogs.msdn.microsoft.com/azuresqlemea/2016/10/31/lesson-learned-7-monitoring-the-transaction-log-space-of-my-database/0).
-- Сведения о миграции из SQL Server в базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://blogs.msdn.microsoft.com/sqlcat/2016/10/20/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files/).
+- Сведения о миграции из SQL Server в Базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://blogs.msdn.microsoft.com/sqlcat/2016/10/20/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files/).
 - Сведения об изменении часового пояса по умолчанию для локального часового пояса см. на [этой странице](https://blogs.msdn.microsoft.com/azuresqlemea/2016/07/27/lesson-learned-4-modifying-the-default-time-zone-for-your-local-time-zone/).
 - Сведения об изменении языка по умолчанию в базе данных SQL Azure после миграции см. на [этой странице](https://blogs.msdn.microsoft.com/azuresqlemea/2017/01/13/lesson-learned-16-how-to-change-the-default-language-of-azure-sql-database/).

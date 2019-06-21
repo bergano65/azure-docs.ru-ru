@@ -66,7 +66,7 @@ ms.locfileid: "60325431"
 
 ## <a name="geo-replication"></a>георепликация
 Процесс автоматической репликации такого содержимого, как BLOB-объекты, таблицы и очереди, в паре регионов.  
-См. статью [Активная георепликация для базы данных SQL Azure](sql-database/sql-database-geo-replication-overview.md).
+См. статью [Активная георепликация для Базы данных SQL Azure](sql-database/sql-database-geo-replication-overview.md).
 <!-- The meaning of "geo" in this term seems to be different than the meaning provided in the "geo" entry -->
 
 ## <a name="image"></a>image

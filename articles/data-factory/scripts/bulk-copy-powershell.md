@@ -20,7 +20,7 @@ ms.locfileid: "60480644"
 ---
 # <a name="powershell-script---copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Скрипт PowerShell: копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure
 
-С помощью этого примера скрипта PowerShell можно копировать данные из нескольких таблиц в базе данных Azure SQL в хранилище данных Azure SQL.
+С помощью этого примера сценария PowerShell можно копировать данные из нескольких таблиц в базе данных SQL Azure в хранилище данных SQL Azure.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 

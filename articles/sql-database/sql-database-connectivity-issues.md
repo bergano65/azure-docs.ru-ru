@@ -192,7 +192,7 @@ ms.locfileid: "67144034"
 
 Если клиентская программа находится на виртуальной машине Azure, см. статью [Порты для ADO.NET 4.5, отличные от порта 1433](sql-database-develop-direct-route-ports-adonet-v12.md).
 
-Основные сведения о конфигурации портов и IP-адресов собраны в статье [Настройка брандмауэра базы данных SQL Azure](sql-database-firewall-configure.md).
+Основные сведения о конфигурации портов и IP-адресов собраны в статье [Настройка брандмауэра Базы данных SQL Azure](sql-database-firewall-configure.md).
 
 <a id="d-connection-ado-net-4-5" name="d-connection-ado-net-4-5"></a>
 

@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
-ms.date: 05/17/2019
-ms.openlocfilehash: a6a681ace95f9bab3c77e4a0f9982a2281c778b8
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.date: 06/20/2019
+ms.openlocfilehash: bc038c863e1afb9313964a6b11365d766e0e8691
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "65966443"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67310611"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство по Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
@@ -123,8 +123,6 @@ ms.locfileid: "65966443"
 
     * Введите имя кластера.
 
-    * В рамках этой статьи создайте кластер со средой выполнения **5.1**.
-
     * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of inactivity** (Завершить через \_\_ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
 
     * Выберите **Create cluster** (Создать кластер). Когда кластер будет выполняться, можно присоединить к нему записные книжки и запустить на нем задания Spark.
@@ -150,6 +148,11 @@ ms.locfileid: "65966443"
    **Конфигурация сеанса**
 
    ```scala
+   val appID = "<appID>"
+   val password = "<password>"
+   val fileSystemName = "<file-system-name>"
+   val tenantID = "<tenant-id>"
+
    spark.conf.set("fs.azure.account.auth.type", "OAuth")
    spark.conf.set("fs.azure.account.oauth.provider.type", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
    spark.conf.set("fs.azure.account.oauth2.client.id", "<appID>")
@@ -163,23 +166,29 @@ ms.locfileid: "65966443"
    **Конфигурация учетной записи**
 
    ```scala
-   spark.conf.set("fs.azure.account.auth.type.<storage-account-name>.dfs.core.windows.net", "OAuth")
-   spark.conf.set("fs.azure.account.oauth.provider.type.<storage-account-name>.dfs.core.windows.net", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
-   spark.conf.set("fs.azure.account.oauth2.client.id.<storage-account-name>.dfs.core.windows.net", "<appID>")
-   spark.conf.set("fs.azure.account.oauth2.client.secret.<storage-account-name>.dfs.core.windows.net", "<password>")
-   spark.conf.set("fs.azure.account.oauth2.client.endpoint.<storage-account-name>.dfs.core.windows.net", "https://login.microsoftonline.com/<tenant-id>/oauth2/token")
+   val storageAccountName = "<storage-account-name>"
+   val appID = "<app-id>"
+   val password = "<password>"
+   val fileSystemName = "<file-system-name>"
+   val tenantID = "<tenant-id>"
+
+   spark.conf.set("fs.azure.account.auth.type." + storageAccountName + ".dfs.core.windows.net", "OAuth")
+   spark.conf.set("fs.azure.account.oauth.provider.type." + storageAccountName + ".dfs.core.windows.net", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
+   spark.conf.set("fs.azure.account.oauth2.client.id." + storageAccountName + ".dfs.core.windows.net", "" + appID + "")
+   spark.conf.set("fs.azure.account.oauth2.client.secret." + storageAccountName + ".dfs.core.windows.net", "" + password + "")
+   spark.conf.set("fs.azure.account.oauth2.client.endpoint." + storageAccountName + ".dfs.core.windows.net", "https://login.microsoftonline.com/" + tenantID + "/oauth2/token")
    spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "true")
-   dbutils.fs.ls("abfss://<file-system-name>@<storage-account-name>.dfs.core.windows.net/")
+   dbutils.fs.ls("abfss://" + fileSystemName  + "@" + storageAccountName + ".dfs.core.windows.net/")
    spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "false")
    ```
 
-6. В этом блоке кода замените значения заполнителя `appID`, `password`, `tenant-id` и `storage-account-name` значениями, полученными в ходе выполнения предварительных условий этого руководства. Значение заполнителя `file-system-name` замените на имя файловой системы.
+6. В этом блоке кода замените значения заполнителя `<app-id>`, `<password>`, `<tenant-id>` и `<storage-account-name>` значениями, полученными в ходе выполнения предварительных условий этого руководства. Значение заполнителя `<file-system-name>` замените на имя файловой системы.
 
-   * `appID` и `password` заменяются значениями из приложения, которое вы зарегистрировали в Azure AD при создании субъекта-службы.
+   * `<app-id>` и `<password>` заменяются значениями из приложения, которое вы зарегистрировали в Azure AD при создании субъекта-службы.
 
-   * Значение `tenant-id` берется из подписки.
+   * Значение `<tenant-id>` берется из подписки.
 
-   * `storage-account-name` — это имя учетной записи хранения Azure Data Lake Storage 2-го поколения.
+   * `<storage-account-name>` — это имя учетной записи хранения Azure Data Lake Storage 2-го поколения.
 
 7. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 
@@ -195,7 +204,7 @@ ms.locfileid: "65966443"
 
 Теперь в новую ячейку под этой введите следующий код и замените значения, которые отображаются в скобках, использованными ранее.
 
-    dbutils.fs.cp("file:///tmp/small_radio_json.json", "abfss://<file-system>@<account-name>.dfs.core.windows.net/")
+    dbutils.fs.cp("file:///tmp/small_radio_json.json", "abfss://" + fileSystemName + "@" + storageAccount + ".dfs.core.windows.net/")
 
 В ячейке нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
 
@@ -206,11 +215,6 @@ ms.locfileid: "65966443"
    ```scala
    val df = spark.read.json("abfss://<file-system-name>@<storage-account-name>.dfs.core.windows.net/small_radio_json.json")
    ```
-
-   * Замените значение заполнителя `file-system-name` именем, которое вы дали своей файловой системе в Обозревателе службы хранилища.
-
-   * Замените заполнитель `storage-account-name` именем вашей учетной записи хранения.
-
 2. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 
 3. Чтобы просмотреть содержимое кадра данных, выполните следующий код:
@@ -357,14 +361,7 @@ ms.locfileid: "65966443"
        "spark.sql.parquet.writeLegacyFormat",
        "true")
 
-   renamedColumnsDF.write
-       .format("com.databricks.spark.sqldw")
-       .option("url", sqlDwUrlSmall) 
-       .option("dbtable", "SampleTable")
-       .option( "forward_spark_azure_storage_credentials","True")
-       .option("tempdir", tempDir)
-       .mode("overwrite")
-       .save()
+   renamedColumnsDF.write.format("com.databricks.spark.sqldw").option("url", sqlDwUrlSmall).option("dbtable", "SampleTable")       .option( "forward_spark_azure_storage_credentials","True").option("tempdir", tempDir).mode("overwrite").save()
    ```
 
    > [!NOTE]

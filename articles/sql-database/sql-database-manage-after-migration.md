@@ -1,6 +1,6 @@
 ---
 title: Управление отдельными базами данных и базами данных в пуле после переноса в Базу данных SQL Azure | Документация Майкрософт
-description: Сведения о том, как управлять базой данных после ее переноса в базу данных SQL Azure.
+description: Сведения о том, как управлять базой данных после ее переноса в Базу данных SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: service

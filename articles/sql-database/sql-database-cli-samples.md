@@ -19,7 +19,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "66150240"
 ---
-# <a name="azure-cli-samples-for-azure-sql-database"></a>Примеры Azure CLI для базы данных SQL Azure
+# <a name="azure-cli-samples-for-azure-sql-database"></a>Примеры Azure CLI для Базы данных SQL Azure
 
 Базу данных SQL Azure можно настроить с помощью <a href="/cli/azure">Azure CLI</a>.
 
@@ -31,7 +31,7 @@ ms.locfileid: "66150240"
 
 ## <a name="single-database--elastic-pools"></a>Отдельная база данных и эластичные пулы
 
-В следующей таблице содержатся ссылки на примеры сценариев Azure CLI для базы данных SQL Azure.
+В следующей таблице содержатся ссылки на примеры сценариев Azure CLI для Базы данных SQL Azure.
 
 | |  |
 |---|---|

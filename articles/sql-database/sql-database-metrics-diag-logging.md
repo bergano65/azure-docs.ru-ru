@@ -19,7 +19,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "65791903"
 ---
-# <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Ведение журналов метрик и диагностики Базы данных SQL Azure
+# <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Метрики и журналы диагностики Базы данных SQL Azure
 
 В этом разделе вы узнаете, как настроить ведение журнала диагностики телеметрии для базы данных SQL Azure через портал Azure, PowerShell, Azure CLI, Azure Monitor REST API и шаблона Azure Resource Manager. Эти диагностические можно использовать для оценки использования ресурсов и статистику выполнения запросов. 
 
@@ -145,7 +145,7 @@ ms.locfileid: "65791903"
 > [!NOTE]
 > Журналы аудита и безопасности SQLSecurityAuditEvents нельзя включить в параметрах диагностики базы данных (несмотря на то, что показано на экране). Чтобы включить потоковую передачу журнала аудита, см. в разделе [Настройка аудита базы данных](sql-database-auditing.md#subheading-2), и [журналы в журналах Azure Monitor и концентраторов событий аудита](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/SQL-Audit-logs-in-Azure-Log-Analytics-and-Azure-Event-Hubs/ba-p/386242).
 > [!TIP]
-> Повторите эти шаги для каждой Базы данных SQL Azure, которую вы хотите отслеживать.
+> Повторите эти шаги для каждой базы данных SQL Azure, которую вы хотите отслеживать.
 
 ### <a name="configure-streaming-of-diagnostics-telemetry-for-managed-instances"></a>Настройка потоковой передачи диагностических данных телеметрии для управляемого экземпляра
 

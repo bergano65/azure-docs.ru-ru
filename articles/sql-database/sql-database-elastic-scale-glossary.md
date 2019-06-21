@@ -21,7 +21,7 @@ ms.locfileid: "60585629"
 ---
 # <a name="elastic-database-tools-glossary"></a>Глоссарий по средствам работы с эластичными базами данных
 
-В связи со [средствами работы с эластичными базами данных SQL Azure](sql-database-elastic-scale-introduction.md)применяются следующие термины. Для управления [картами сегментов](sql-database-elastic-scale-shard-map-management.md) используются такие инструменты, как [клиентская библиотека](sql-database-elastic-database-client-library.md), [средство разбиения и слияния](sql-database-elastic-scale-overview-split-and-merge.md), [пулы эластичных баз данных](sql-database-elastic-pool.md) и [запросы](sql-database-elastic-query-overview.md). 
+При использовании [средств для работы с эластичными базами данных SQL Azure](sql-database-elastic-scale-introduction.md) (компонентов Базы данных SQL Azure) применяются следующие термины. Для управления [картами сегментов](sql-database-elastic-scale-shard-map-management.md) используются такие инструменты, как [клиентская библиотека](sql-database-elastic-database-client-library.md), [средство разбиения и слияния](sql-database-elastic-scale-overview-split-and-merge.md), [пулы эластичных баз данных](sql-database-elastic-pool.md) и [запросы](sql-database-elastic-query-overview.md). 
 
 Эти термины используются в статьях [Добавление сегмента с использованием средств эластичных баз данных](sql-database-elastic-scale-add-a-shard.md) и [Устранение проблем сопоставления сегментов с помощью класса RecoveryManager](sql-database-elastic-database-recovery-manager.md).
 

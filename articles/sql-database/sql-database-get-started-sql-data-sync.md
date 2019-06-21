@@ -19,7 +19,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "60342241"
 ---
-# <a name="tutorial-set-up-sql-data-sync-between-azure-sql-database-and-sql-server-on-premises"></a>Руководство по Настройка синхронизации данных SQL между Базой данных SQL Azure и локальным сервером SQL Server
+# <a name="tutorial-set-up-sql-data-sync-between-azure-sql-database-and-sql-server-on-premises"></a>Руководство по Настройка синхронизации данных SQL между базой данных SQL Azure и локальным сервером SQL Server
 
 Из этого руководства вы узнаете, как настроить Синхронизацию данных SQL Azure, создав группу синхронизации с экземплярами Базы данных SQL Azure и SQL Server. Группа синхронизации полностью настраивается и синхронизируется по заданному расписанию.
 
@@ -30,7 +30,7 @@ ms.locfileid: "60342241"
 Примеры команд PowerShell для настройки Синхронизации данных SQL см. в статьях об использовании PowerShell для синхронизации данных [между несколькими базами данных SQL](scripts/sql-database-sync-data-between-sql-databases.md), а также [между базой данных SQL и локальной базой данных SQL Server](scripts/sql-database-sync-data-between-azure-onprem.md).
 
 > [!IMPORTANT]
-> Служба синхронизации данных SQL Azure пока **не** поддерживает управляемые экземпляры Базы данных SQL Azure.
+> Служба "Синхронизация данных SQL Azure" пока **не** поддерживает Управляемый экземпляры Базы данных SQL Azure.
 
 ## <a name="create-sync-group"></a>Создание группы синхронизации
 
@@ -69,9 +69,9 @@ ms.locfileid: "60342241"
 
 ![Шаг 2. Параметры](media/sql-database-get-started-sql-data-sync/steptwo.png)
 
-### <a name="to-add-an-azure-sql-database"></a>Добавление Базы данных SQL Azure
+### <a name="to-add-an-azure-sql-database"></a>Добавление базы данных SQL Azure
 
-В разделе **Рядовая база данных** можно дополнительно добавить в группу синхронизации Базу данных SQL Azure, щелкнув **Add an Azure SQL Database** (Добавление Базы данных SQL Azure). Откроется страница **Configure Azure SQL Database** (Настройка Базы данных SQL Azure).
+В разделе **Рядовая база данных** можно дополнительно добавить в группу синхронизации базу данных SQL Azure, щелкнув **Add an Azure SQL Database** (Добавление базы данных SQL Azure). Откроется страница **Configure Azure SQL Database** (Настройка Базы данных SQL Azure).
 
   ![Шаг 2. Настройка базы данных](media/sql-database-get-started-sql-data-sync/steptwo-configure.png)
 

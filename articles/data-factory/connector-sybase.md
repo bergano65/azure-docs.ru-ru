@@ -163,7 +163,7 @@ ms.locfileid: "61473065"
 
 При копировании данных из Sybase используются сопоставления типов данных Sybase с промежуточными типами данных фабрики данных Azure. Дополнительные сведения о том, как действие копирования сопоставляет исходную схему и типы данных для приемника, см. в статье [Сопоставление схем в действии копирования](copy-activity-schema-and-type-mapping.md).
 
-Sybase поддерживает типы T-SQL. Таблицы сопоставлений SQL типов к типам промежуточных данных фабрики данных Azure см. в разделе [Data type mapping for Azure SQL Database](connector-azure-sql-database.md#data-type-mapping-for-azure-sql-database) (Отображение типа данных для базы данных Azure SQL) статьи "Copy data to or from Azure SQL Database by using Azure Data Factory" (Копирование данных в или из базы данных Azure SQL с использованием фабрики данных Azure).
+Sybase поддерживает типы T-SQL. Таблицы сопоставлений SQL типов к типам промежуточных данных Фабрики данных Azure см. в разделе [Data type mapping for Azure SQL Database](connector-azure-sql-database.md#data-type-mapping-for-azure-sql-database) (Отображение типа данных для Базы данных Azure SQL) статьи "Copy data to or from Azure SQL Database by using Azure Data Factory" (Копирование данных в базу данных Azure SQL или из нее с использованием Фабрики данных Azure).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

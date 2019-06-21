@@ -1,6 +1,6 @@
 ---
 title: Использование Visual Studio c .NET и C# для создания запросов к базе данных SQL Azure | Документация Майкрософт
-description: Здесь показано, как использовать Visual Studio для создания приложения C#, которое подключается к Базе данных SQL Azure, и создавать к ней запросы с помощью инструкций Transact-SQL.
+description: Здесь показано, как использовать Visual Studio для создания приложения C#, которое подключается к базе данных SQL Azure, и создавать к ней запросы с помощью инструкций Transact-SQL.
 services: sql-database
 ms.service: sql-database
 ms.subservice: development

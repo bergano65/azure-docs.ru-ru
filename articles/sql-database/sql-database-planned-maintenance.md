@@ -1,6 +1,6 @@
 ---
 title: Планирование событий обслуживания Azure в Базе данных SQL Azure | Документация Майкрософт
-description: Узнайте, как подготовиться к событиям планового обслуживания в Базе данных SQL Azure.
+description: Узнайте, как подготовиться к событиям планового обслуживания в базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: operations
@@ -21,7 +21,7 @@ ms.locfileid: "60584613"
 ---
 # <a name="planning-for-azure-maintenance-events-in-azure-sql-database"></a>Планирование событий обслуживания Azure в Базе данных SQL Azure
 
-Узнайте, как подготовиться к событиям планового обслуживания в Базе данных SQL Azure.
+Узнайте, как подготовиться к событиям планового обслуживания в базе данных SQL Azure.
 
 ## <a name="what-is-a-planned-maintenance-event"></a>Что такое событие планового обслуживания
 

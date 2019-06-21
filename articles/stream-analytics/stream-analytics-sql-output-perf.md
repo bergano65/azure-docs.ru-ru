@@ -1,5 +1,5 @@
 ---
-title: Вывод данных Azure Stream Analytics в Базу данных SQL Azure
+title: Вывод данных Azure Stream Analytics в базу данных SQL Azure
 description: Сведения о выводе данных в SQL Azure из Azure Stream Analytics, а также об увеличении пропускной способности операций записи.
 services: stream-analytics
 author: chetanmsft
@@ -16,7 +16,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "60771657"
 ---
-# <a name="azure-stream-analytics-output-to-azure-sql-database"></a>Вывод данных Azure Stream Analytics в Базу данных SQL Azure
+# <a name="azure-stream-analytics-output-to-azure-sql-database"></a>Вывод данных Azure Stream Analytics в базу данных SQL Azure
 
 В этой статье рассматриваются советы по улучшению пропускной способности операций записи при загрузке данных в Базу данных SQL Azure с использованием Azure Stream Analytics.
 

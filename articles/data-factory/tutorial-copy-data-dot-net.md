@@ -1,6 +1,6 @@
 ---
 title: Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL | Документация Майкрософт
-description: В этом руководстве приведены пошаговые инструкции по копированию данных из хранилища BLOB-объектов Azure в базу данных SQL Azure.
+description: В этом руководстве приведены пошаговые инструкции по копированию данных из хранилища BLOB-объектов Azure в Базу данных SQL Azure.
 services: data-factory
 documentationcenter: ''
 author: linda33wj
@@ -19,9 +19,9 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 05/16/2019
 ms.locfileid: "65778863"
 ---
-# <a name="copy-data-from-azure-blob-to-azure-sql-database-using-azure-data-factory"></a>Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL Azure с помощью фабрики данных Azure
+# <a name="copy-data-from-azure-blob-to-azure-sql-database-using-azure-data-factory"></a>Копирование данных из хранилища BLOB-объектов Azure в Базу данных SQL Azure с помощью фабрики данных Azure
 
-В этом руководстве вы создадите фабрику данных с конвейером, который перемещает данные из хранилища BLOB-объектов Azure в базу данных SQL Azure. Шаблон конфигурации в этом руководстве применяется к копированию из файлового в реляционное хранилище данных. Список хранилищ данных, которые поддерживаются в качестве источников и приемников, см. в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
+В этом руководстве вы создадите фабрику данных с конвейером, который перемещает данные из хранилища BLOB-объектов Azure в Базу данных SQL Azure. Шаблон конфигурации в этом руководстве применяется к копированию из файлового в реляционное хранилище данных. Список хранилищ данных, которые поддерживаются в качестве источников и приемников, см. в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
 В этом руководстве вы выполните следующие шаги:
 
@@ -42,7 +42,7 @@ ms.locfileid: "65778863"
 * **Учетная запись хранения Azure.** В этом руководстве в качестве **источника** будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-quickstart-create-account.md).
 * **База данных SQL Azure**. Используйте базу данных как хранилище данных-**приемник**. Если у вас нет базы данных SQL Azure, вы можете создать ее, выполнив шаги из статьи [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md).
 * **Visual Studio** 2015 или 2017. В этом руководстве используется Visual Studio 2017.
-* **Скачайте и установите [пакет Azure SDK для .NET](https://azure.microsoft.com/downloads/)**.
+* **Скачайте и установите [пакет Azure SDK для .NET](https://azure.microsoft.com/downloads/)** .
 * [Используйте следующие инструкции](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application), **чтобы создать приложение в Azure Active Directory**. Запишите следующие значения, которые вы используете в следующих шагах: **идентификатор приложения**, **ключ аутентификации** и **идентификатор клиента**. Назначьте приложению роль **Участник**, следуя указаниям в той же статье.
 
 ### <a name="create-a-blob-and-a-sql-table"></a>Создание большого двоичного объекта и таблицы SQL
@@ -89,7 +89,7 @@ ms.locfileid: "65778863"
 
 1. Запустите **Visual Studio**.
 2. Щелкните **Файл**, наведите указатель мыши на пункт **Создать** и щелкните **Проект**.
-3. Выберите **Visual C#** -> **Консольное приложение (.NET Framework)** из списка типов проектов справа. Требуется .NET версии 4.5.2 или более поздней.
+3. Выберите **Visual C#**  -> **Консольное приложение (.NET Framework)** из списка типов проектов справа. Требуется .NET версии 4.5.2 или более поздней.
 4. Введите **ADFv2Tutorial** в качестве имени.
 5. Нажмите кнопку **ОК** , чтобы создать проект.
 
@@ -205,9 +205,9 @@ client.LinkedServices.CreateOrUpdate(resourceGroup, dataFactoryName, storageLink
 Console.WriteLine(SafeJsonConvert.SerializeObject(storageLinkedService, client.SerializationSettings));
 ```
 
-### <a name="create-an-azure-sql-database-linked-service"></a>Создание связанной службы базы данных SQL Azure
+### <a name="create-an-azure-sql-database-linked-service"></a>Создание связанной службы Базы данных SQL Azure
 
-Добавьте следующий код, создающий **связанную службу базы данных SQL Azure**, в метод **Main**. Дополнительные сведения о свойствах связанных служб базы данных SQL Azure см. в [этом разделе](connector-azure-sql-database.md#linked-service-properties).
+Добавьте следующий код, создающий **связанную службу Базы данных SQL Azure**, в метод **Main**. Дополнительные сведения о свойствах связанной службы "База данных SQL Azure" см. в [этом разделе](connector-azure-sql-database.md#linked-service-properties).
 
 ```csharp
 // Create an Azure SQL Database linked service
@@ -271,9 +271,9 @@ Console.WriteLine(SafeJsonConvert.SerializeObject(blobDataset, client.Serializat
 
 ### <a name="create-a-dataset-for-sink-azure-sql-database"></a>Создание набора данных для базы данных-приемника SQL Azure
 
-Добавьте следующий код, создающий **набор данных базы данных SQL Azure**, в метод **Main**. Дополнительные сведения о свойствах набора данных базы данных SQL Azure см. в [этом разделе](connector-azure-sql-database.md#dataset-properties).
+Добавьте следующий код, создающий **набор данных Базы данных SQL Azure**, в метод **Main**. Дополнительные сведения о свойствах набора данных Базы данных SQL Azure см. в [этом разделе](connector-azure-sql-database.md#dataset-properties).
 
-Задайте набор данных, который представляет данные приемника в базе данных SQL Azure. Этот набор данных относится к связанным службам базы данных SQL Azure, созданным на предыдущем шаге. Он также указывает таблицу SQL, которая содержит копируемые данных. 
+Задайте набор данных, который представляет данные приемника в Базе данных SQL Azure. Этот набор данных относится к связанным службам Базы данных SQL Azure, созданным на предыдущем шаге. Он также указывает таблицу SQL, которая содержит копируемые данных. 
 
 ```csharp
 // Create an Azure SQL Database dataset

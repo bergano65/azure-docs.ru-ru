@@ -33,12 +33,12 @@ ms.locfileid: "60878772"
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Azure Data Lake Storage 1-го поколения**. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
 * **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md). В этой статье предполагается, что у вас есть кластер HDInsight на платформе Linux с доступом к Data Lake Storage 1-го поколения.
-* **База данных SQL Azure**. Инструкции по созданию базы данных см. в статье [Руководство по базам данных SQL: создание базы данных SQL за несколько минут с помощью портала Azure](../sql-database/sql-database-get-started.md).
+* **База данных SQL Azure**. Инструкции по созданию базы данных см. в статье [Руководство по Базе данных SQL: создание базы данных SQL за несколько минут с помощью портала Azure](../sql-database/sql-database-get-started.md).
 
 ## <a name="do-you-learn-fast-with-videos"></a>Учитесь быстрее с помощью видео?
 [Просмотрите это видео](https://mix.office.com/watch/1butcdjxmu114) о копировании данных между большими двоичными объектами службы хранилища Azure и Data Lake Storage 1-го поколения с помощью DistCp.
 
-## <a name="create-sample-tables-in-the-azure-sql-database"></a>Создание образцов таблиц в базе данных SQL Azure
+## <a name="create-sample-tables-in-the-azure-sql-database"></a>Создание образцов таблиц в Базе данных SQL Azure
 1. Для начала создайте два образца таблиц в базе данных SQL Azure. Используйте [SQL Server Management Studio](../sql-database/sql-database-connect-query-ssms.md) или Visual Studio для подключения к базе данных SQL Azure и выполните приведенные ниже запросы.
 
     **Создание Table1**
@@ -110,7 +110,7 @@ ms.locfileid: "60878772"
     Каждый файл **part-m-** * соответствует строке в исходной таблице **Table1**. Чтобы проверить это, просмотрите содержимое файлов part-m-*.
 
 
-### <a name="export-data-from-data-lake-storage-gen1-into-azure-sql-database"></a>Экспорт данных из Data Lake Storage 1-го поколения в базу данных SQL Azure
+### <a name="export-data-from-data-lake-storage-gen1-into-azure-sql-database"></a>Экспорт данных из Data Lake Storage 1-го поколения в Базу данных SQL Azure
 1. Экспортируйте данные из учетной записи Data Lake Storage 1-го поколения в пустую таблицу **Table2** в базе данных SQL Azure. Используйте приведенный ниже синтаксис.
 
         sqoop-export --connect "jdbc:sqlserver://<sql-database-server-name>.database.windows.net:1433;username=<username>@<sql-database-server-name>;password=<password>;database=<sql-database-name>" --table Table2 --export-dir adl://<data-lake-storage-gen1-name>.azuredatalakestore.net/Sqoop/SqoopImportTable1 --input-fields-terminated-by ","

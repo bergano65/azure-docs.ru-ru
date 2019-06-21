@@ -28,7 +28,7 @@ ms.locfileid: "60614955"
 Общие сведения о синхронизации данных SQL см. в статье [Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL Azure](sql-database-sync-data.md).
 
 > [!IMPORTANT]
-> Служба синхронизации данных SQL Azure пока **не** поддерживает управляемые экземпляры базы данных SQL Azure.
+> Служба "Синхронизация данных SQL Azure" пока **не** поддерживает Управляемый экземпляры Базы данных SQL Azure.
 
 ## <a name="monitoring-dashboard-for-all-your-sync-groups"></a>Мониторинг панели мониторинга для всех групп синхронизации 
 
@@ -203,7 +203,7 @@ ms.locfileid: "60614955"
 
 -   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью функции синхронизации данных SQL Azure](sql-database-sync-data.md).
 -   Настройка синхронизации данных
-    - На портале: [Руководство по настройке синхронизации данных SQL между Базой данных SQL Azure и локальной базой данных SQL Server](sql-database-get-started-sql-data-sync.md)
+    - На портале: [Руководство по настройке синхронизации данных SQL между базой данных SQL Azure и локальной базой данных SQL Server](sql-database-get-started-sql-data-sync.md)
     - С помощью PowerShell
         -  [Использование PowerShell для синхронизации данных между несколькими базами данных SQL Azure](scripts/sql-database-sync-data-between-sql-databases.md)
         -  [Использование PowerShell для синхронизации данных между базой данных SQL Azure и локальной базой данных SQL Server](scripts/sql-database-sync-data-between-azure-onprem.md)

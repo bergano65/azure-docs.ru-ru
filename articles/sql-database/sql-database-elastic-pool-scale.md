@@ -1,6 +1,6 @@
 ---
 title: Масштабирование ресурсов эластичного пула — база данных SQL Azure | Документы Майкрософт
-description: На этой странице описано масштабирование ресурсов для эластичных пулов в базе данных SQL Azure.
+description: На этой странице описано масштабирование ресурсов для эластичных пулов в Базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: elastic-pools
@@ -19,7 +19,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 06/18/2019
 ms.locfileid: "67204817"
 ---
-# <a name="scale-elastic-pool-resources-in-azure-sql-database"></a>Масштабирование ресурсов эластичного пула в базе данных SQL Azure
+# <a name="scale-elastic-pool-resources-in-azure-sql-database"></a>Масштабирование ресурсов эластичного пула в Базе данных SQL Azure
 
 В этой статье описано масштабирование вычислительных ресурсов и ресурсов хранилища для эластичных пулов и баз данных в пуле в базе данных SQL Azure.
 

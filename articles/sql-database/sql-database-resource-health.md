@@ -19,7 +19,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "61483067"
 ---
-# <a name="use-resource-health-to-troubleshoot-connectivity-for-azure-sql-database"></a>Устранение неполадок подключения для Базы данных SQL Azure с помощью службы "Работоспособность ресурсов Azure"
+# <a name="use-resource-health-to-troubleshoot-connectivity-for-azure-sql-database"></a>Устранение неполадок подключения к базе данных SQL Azure с помощью службы "Работоспособность ресурсов Azure"
 
 ## <a name="overview"></a>Обзор
 

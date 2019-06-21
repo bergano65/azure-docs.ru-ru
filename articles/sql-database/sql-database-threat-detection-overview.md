@@ -1,5 +1,5 @@
 ---
-title: Расширенная защита от угроз для базы данных SQL Azure | Документация Майкрософт
+title: Расширенная защита от угроз для Базы данных SQL Azure | Документация Майкрософт
 description: Advanced Threat Protection обнаруживает аномальные операции базы данных, указывающее, потенциальные угрозы безопасности в базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -19,7 +19,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "60614597"
 ---
-# <a name="advanced-threat-protection-for-azure-sql-database"></a>Расширенная защита от угроз для базы данных SQL Azure
+# <a name="advanced-threat-protection-for-azure-sql-database"></a>Расширенная защита от угроз для Базы данных SQL Azure
 
 Advanced Threat Protection для [базы данных SQL Azure](sql-database-technical-overview.md) и [хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) выявляет аномальные операции, указывающие на нестандартные и потенциально вредоносные попытки получить доступ к или воспользоваться баз данных.
 

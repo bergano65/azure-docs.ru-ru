@@ -52,7 +52,7 @@ ms.locfileid: "66138971"
 
 ## <a name="enable-managed-identities"></a>Включение управляемых удостоверений
 
-Чтобы включить управляемое удостоверение для приложения Azure, используйте команду [az webapp identity assign](/cli/azure/webapp/identity?view=azure-cli-latest#az-webapp-identity-assign) в Cloud Shell. В следующей команде замените *\<app name>*.
+Чтобы включить управляемое удостоверение для приложения Azure, используйте команду [az webapp identity assign](/cli/azure/webapp/identity?view=azure-cli-latest#az-webapp-identity-assign) в Cloud Shell. В следующей команде замените *\<app name>* .
 
 ```azurecli-interactive
 az webapp identity assign --resource-group myResourceGroup --name <app name>
@@ -77,7 +77,7 @@ az ad sp show --id <principalid>
 
 ## <a name="grant-database-access-to-identity"></a>Предоставление доступа к базе данных
 
-Теперь вы предоставите удостоверению службы приложения доступ к базе данных, используя команду [`az sql server ad-admin create`](/cli/azure/sql/server/ad-admin?view=azure-cli-latest) в Cloud Shell. В следующей команде замените *\<server_name>* и <principalid_from_last_step>. Введите имя администратора вместо *\<admin_user>*.
+Теперь вы предоставите удостоверению службы приложения доступ к базе данных, используя команду [`az sql server ad-admin create`](/cli/azure/sql/server/ad-admin?view=azure-cli-latest) в Cloud Shell. В следующей команде замените *\<server_name>* и <principalid_from_last_step>. Введите имя администратора вместо *\<admin_user>* .
 
 ```azurecli-interactive
 az sql server ad-admin create --resource-group myResourceGroup --server-name <server_name> --display-name <admin_user> --object-id <principalid_from_last_step>
@@ -123,7 +123,7 @@ public MyDatabaseContext(SqlConnection conn) : base(conn, true)
 }
 ```
 
-Этот конструктор настраивает собственный объект SqlConnection для использования маркера доступа базы данных Azure SQL из службы приложений. С помощью маркера доступа приложение службы приложений проходит проверку подлинности в Базе данных SQL Azure с использованием управляемого удостоверения. Дополнительные сведения см. в разделе [Получение маркеров для ресурсов Azure](overview-managed-identity.md#obtaining-tokens-for-azure-resources). Оператор `if` позволяет продолжить тестирование приложения локально с помощью LocalDB.
+Этот конструктор настраивает собственный объект SqlConnection для использования маркера доступа к Базе данных Azure SQL из службы приложений. С помощью маркера доступа приложение службы приложений проходит проверку подлинности в Базе данных SQL Azure с использованием управляемого удостоверения. Дополнительные сведения см. в разделе [Получение маркеров для ресурсов Azure](overview-managed-identity.md#obtaining-tokens-for-azure-resources). Оператор `if` позволяет продолжить тестирование приложения локально с помощью LocalDB.
 
 > [!NOTE]
 > `SqlConnection.AccessToken` сейчас поддерживается только в .NET Framework версии 4.6 и выше и [.NET Core 2.2](https://www.microsoft.com/net/download/dotnet-core/2.2), но не в [.NET Core2.1](https://www.microsoft.com/net/learn/get-started/windows).

@@ -32,11 +32,11 @@ ms.locfileid: "64696420"
 
 * [База данных SQL Server](../sql-database/sql-database-get-started-portal.md) или [База данных SQL Azure](https://docs.microsoft.com/sql/relational-databases/databases/create-a-database). 
 
-  Чтобы при вызове операций приложение логики могло вернуть результаты, таблицы должны содержать данные. Если вы создаете Базу данных SQL Azure, вы также можете использовать предоставляемые примеры баз данных. 
+  Чтобы при вызове операций приложение логики могло вернуть результаты, таблицы должны содержать данные. Если вы создаете базу данных SQL Azure, вы также можете использовать предоставляемые примеры баз данных. 
 
 * Имя сервера SQL, имя базы данных, а также имя пользователя и пароль. Эти учетные данные используются для авторизации приложения логики и получения доступа к серверу SQL. 
 
-  * Для Базы данных Azure SQL эти сведения можно найти в строке подключения или на портале Azure в свойствах Базы данных SQL:
+  * Для Базы данных Azure SQL эти сведения можно найти в строке подключения или на портале Azure в свойствах базы данных SQL:
 
     "Server=tcp:<*yourServerName*>.database.windows.net,1433;Initial Catalog=<*yourDatabaseName*>;Persist Security Info=False;User ID=<*yourUserName*>;Password=<*yourPassword*>;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
 

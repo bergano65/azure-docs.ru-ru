@@ -1,6 +1,6 @@
 ---
 title: Руководство по Выполнение операций извлечения, преобразования и загрузки (ETL) с использованием Apache Hive в Azure HDInsight
-description: В этом руководстве вы узнаете, как извлекать данные из необработанного набора данных в формате CSV, преобразовывать их с помощью Apache Hive в Azure HDInsight и загружать преобразованные данные в Базу данных SQL Azure с помощью Sqoop.
+description: В этом руководстве вы узнаете, как извлекать данные из необработанного набора данных в формате CSV, преобразовывать их с помощью Apache Hive в Azure HDInsight и загружать преобразованные данные в базу данных SQL Azure с помощью Sqoop.
 services: storage
 author: normesta
 ms.subservice: data-lake-storage-gen2
@@ -43,7 +43,7 @@ ms.locfileid: "64939187"
 
 * **Azure CLI.** Если вы не установили интерфейс командной строки Azure, обратитесь к разделу [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-* **Клиент Secure Shell (SSH)**. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Hadoop) с помощью SSH](../../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md).
+* **Клиент Secure Shell (SSH)** . Дополнительные сведения см. в руководстве по [подключению к HDInsight (Hadoop) с помощью SSH](../../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md).
 
 > [!IMPORTANT]
 > Для выполнения действий, описанных в этой статье, необходим кластер HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с Azure HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../../hdinsight/hdinsight-component-versioning.md#hdinsight-windows-retirement).

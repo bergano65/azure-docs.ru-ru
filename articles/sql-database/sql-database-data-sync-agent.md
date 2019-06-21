@@ -24,7 +24,7 @@ ms.locfileid: "60201669"
 Синхронизируйте данные с локальными базами данных SQL Server с помощью установки и настройки Агента синхронизации данных для синхронизации данных SQL Azure. Дополнительные сведения о синхронизации данных SQL см. в статье [Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL](sql-database-sync-data.md).
 
 > [!IMPORTANT]
-> Служба "Синхронизация данных SQL Azure" пока **не** поддерживает Управляемые экземпляры Базы данных SQL Azure.
+> Служба "Синхронизация данных SQL Azure" пока **не** поддерживает Управляемый экземпляры Базы данных SQL Azure.
 
 ## <a name="download-and-install"></a>Загрузка и установка
 
@@ -321,7 +321,7 @@ SqlDataSyncAgentCommand.exe -action "updatecredential" -serverName localhost -da
 
 -   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью функции синхронизации данных SQL Azure](sql-database-sync-data.md).
 -   Настройка синхронизации данных
-    - На портале: [Руководство по настройке синхронизации данных SQL между Базой данных SQL Azure и локальной базой данных SQL Server](sql-database-get-started-sql-data-sync.md)
+    - На портале: [Руководство по настройке синхронизации данных SQL между базой данных SQL Azure и локальной базой данных SQL Server](sql-database-get-started-sql-data-sync.md)
     - С помощью PowerShell
         -  [Использование PowerShell для синхронизации данных между несколькими базами данных SQL Azure](scripts/sql-database-sync-data-between-sql-databases.md)
         -  [Использование PowerShell для синхронизации данных между базой данных SQL Azure и локальной базой данных SQL Server](scripts/sql-database-sync-data-between-azure-onprem.md)

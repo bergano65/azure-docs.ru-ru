@@ -5142,7 +5142,7 @@ ms.locfileid: "65962115"
 > | Действие | Microsoft.Sql/servers/databases/transparentDataEncryption/read | Извлекает состояние и сведения о функции безопасности "прозрачное шифрование данных" для заданной базы данных. |
 > | Действие | Microsoft.Sql/servers/databases/transparentDataEncryption/write | Изменение состояния прозрачного шифрования данных. |
 > | Действие | Microsoft.Sql/servers/databases/upgradeDataWarehouse/action | Обновление работы базы данных хранилища данных SQL Azure. |
-> | Действие | Microsoft.Sql/servers/databases/usages/read | Возвращение сведений об использовании базы данных SQL Azure. |
+> | Действие | Microsoft.Sql/servers/databases/usages/read | Возвращение сведений об использовании Базы данных SQL Azure. |
 > | Действие | Microsoft.Sql/servers/databases/vulnerabilityAssessments/delete | Удаление оценки уязвимости указанной базы данных. |
 > | Действие | Microsoft.Sql/servers/databases/vulnerabilityAssessments/read | Получение политик оценки уязвимости для конкретной базы данных |
 > | Действие | Microsoft.Sql/servers/databases/vulnerabilityAssessments/rules/baselines/delete | Удаление базовых показателей правила оценки уязвимости для указанной базы данных. |

@@ -1,6 +1,6 @@
 ---
-title: Пример для PowerShell. Создание управляемого экземпляра в базе данных SQL Azure | Документация Майкрософт
-description: Пример сценария Azure PowerShell для создания управляемого экземпляра в базе данных SQL Azure
+title: Пример для PowerShell. Создание управляемого экземпляра в Базе данных SQL Azure | Документация Майкрософт
+description: Пример сценария Azure PowerShell для создания управляемого экземпляра в Базе данных SQL Azure
 services: sql-database
 ms.service: sql-database
 ms.subservice: managed-instance

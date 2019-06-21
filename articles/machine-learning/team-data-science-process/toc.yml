@@ -122,7 +122,7 @@
                   href: move-data-to-azure-blob-using-ssis.md
             - name: Перемещение данных в SQL на виртуальной машине
               href: move-sql-server-virtual-machine.md
-            - name: Перемещение данных в Базу данных SQL Azure
+            - name: Перемещение данных в базу данных SQL Azure
               href: move-sql-azure.md
             - name: Перемещение данных в таблицы Hive
               href: move-hive-tables.md

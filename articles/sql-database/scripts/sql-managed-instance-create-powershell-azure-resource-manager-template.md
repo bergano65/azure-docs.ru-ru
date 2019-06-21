@@ -1,6 +1,6 @@
 ---
-title: Пример для PowerShell. Создание управляемого экземпляра в базе данных SQL Azure | Документация Майкрософт
-description: Пример сценария Azure PowerShell для создания управляемого экземпляра в базе данных SQL Azure
+title: Пример для PowerShell. Создание управляемого экземпляра в Базе данных SQL Azure | Документация Майкрософт
+description: Пример сценария Azure PowerShell для создания управляемого экземпляра в Базе данных SQL Azure
 services: sql-database
 ms.service: sql-database
 ms.subservice: managed-instance
@@ -19,7 +19,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 06/06/2019
 ms.locfileid: "66729154"
 ---
-# <a name="use-powershell-with-azure-resource-manager-template-to-create-a-managed-instance-in-azure-sql-database"></a>Создание управляемого экземпляра в базе данных SQL Azure с помощью PowerShell с шаблоном Azure Resource Manager
+# <a name="use-powershell-with-azure-resource-manager-template-to-create-a-managed-instance-in-azure-sql-database"></a>Создание управляемого экземпляра в Базе данных SQL Azure с помощью PowerShell с шаблоном Azure Resource Manager
 
 С помощью библиотеки Azure PowerShell и шаблонов Azure Resource Manager можно создать Управляемый экземпляр Базы данных SQL Azure.
 

@@ -24,12 +24,12 @@ ms.locfileid: "60723414"
 В этой статье рассматриваются основные вопросы, которые разработчик должен учитывать при программировании подключения к базе данных SQL Azure. Эта статья относится ко всем моделям развертывания Баз данных SQL Azure (отдельная база данных, пул эластичных баз данных и управляемый экземпляр).
 
 > [!TIP]
-> Если необходимо настроить Базу данных SQL Azure, ознакомьтесь с руководствами [Начало работы с отдельной базой данных в Базе данных SQL Azure](sql-database-single-database-quickstart-guide.md) и [Начало работы с управляемым экземпляром Базы данных SQL Azure](sql-database-managed-instance-quickstart-guide.md).
+> Если необходимо настроить базу данных SQL Azure, ознакомьтесь с руководствами [Начало работы с отдельной базой данных в Базе данных SQL Azure](sql-database-single-database-quickstart-guide.md) и [Начало работы с управляемыми экземплярами Базы данных SQL Azure](sql-database-managed-instance-quickstart-guide.md).
 >
 
 ## <a name="language-and-platform"></a>Язык и платформа
 
-Для подключения и отправки запросов к Базе данных SQL Azure подходят различные [языки и платформы](sql-database-connect-query.md). Вы можете найти [примеры приложений](https://azure.microsoft.com/resources/samples/?service=sql-database&sort=0), которые можно использовать для подключения к Базе данных SQL Azure.
+Для подключения и отправки запросов к базе данных SQL Azure подходят различные [языки и платформы](sql-database-connect-query.md). Вы можете найти [примеры приложений](https://azure.microsoft.com/resources/samples/?service=sql-database&sort=0), которые можно использовать для подключения к базе данных SQL Azure.
 
 Вы можете использовать инструменты с открытым кодом, такие как [cheetah](https://github.com/wunderlist/cheetah), [sql-cli](https://www.npmjs.com/package/sql-cli) и [VS Code](https://code.visualstudio.com/). Кроме того, база данных SQL Azure поддерживает инструменты Майкрософт, например [Visual Studio](https://www.visualstudio.com/downloads/) и [SQL Server Management Studio](https://msdn.microsoft.com/library/ms174173.aspx). Кроме того, портал Azure, PowerShell и интерфейсы REST API дополнительно упростят вам работу.
 
@@ -51,7 +51,7 @@ ms.locfileid: "60723414"
 
 База данных SQL Azure — это облачная служба, где в базовой инфраструктуре или при обмене данными между облачными объектами могут происходить временные ошибки. Хотя База данных SQL Azure устойчива к транзитивным сбоям инфраструктуры, они могут повлиять на ваше подключение. Ваш код должен предусматривать возможность [повторного вызова](sql-database-connectivity-issues.md), если при подключении к Базе данных SQL возникает временная ошибка. В коде повторного вызова мы рекомендуем применять логику отсрочки, которая защищает базу данных SQL от перегрузки из-за одновременных повторных вызовов от нескольких клиентов. Логика повторных попыток зависит от [сообщений об ошибках для клиентских программ Базы данных SQL](sql-database-develop-error-messages.md).
 
-Дополнительные сведения о подготовке к запланированным событиям по обслуживанию Базы данных SQL Azure см. в статье [Планирование событий обслуживания Azure в Базе данных SQL Azure](sql-database-planned-maintenance.md).
+Дополнительные сведения о подготовке к запланированным событиям по обслуживанию базы данных SQL Azure см. в статье [Планирование событий обслуживания Azure в Базе данных SQL Azure](sql-database-planned-maintenance.md).
 
 ## <a name="network-considerations"></a>Рекомендации относительно сети
 

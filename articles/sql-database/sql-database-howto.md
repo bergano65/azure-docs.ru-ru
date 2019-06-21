@@ -1,6 +1,6 @@
 ---
 title: База данных SQL Azure | Документация Майкрософт
-description: Сведения о том, как настроить Базу данных SQL Azure и управлять ею.
+description: Сведения о том, как настроить базу данных SQL Azure и управлять ею.
 services: sql-database
 ms.service: sql-database
 ms.subservice: service
@@ -21,7 +21,7 @@ ms.locfileid: "67120857"
 ---
 # <a name="how-to-use-azure-sql-database"></a>Использование Базы данных SQL Azure
 
-В этой статье можно найти различные руководства, сценарии и пояснения, которые помогут в администрировании и настройке отдельной Базы данных SQL Azure. Здесь также можно найти специальные руководства для [отдельной базы данных](sql-database-howto-single-database.md) и [Управляемого экземпляра](sql-database-howto-managed-instance.md).
+В этой статье можно найти различные руководства, сценарии и пояснения, которые помогут в администрировании и настройке отдельной базы данных SQL Azure. Здесь также можно найти специальные руководства для [отдельной базы данных](sql-database-howto-single-database.md) и [Управляемого экземпляра](sql-database-howto-managed-instance.md).
 
 ## <a name="load-data"></a>Загрузка данных
 

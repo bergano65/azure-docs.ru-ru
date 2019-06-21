@@ -320,7 +320,7 @@ END
 
         ![Связанная служба SQL Server — параметры](./media/tutorial-incremental-copy-multiple-tables-portal/sql-server-linked-service-settings.png)
 
-### <a name="create-the-azure-sql-database-linked-service"></a>Создание связанной службы базы данных SQL Azure
+### <a name="create-the-azure-sql-database-linked-service"></a>Создание связанной службы Базы данных SQL Azure
 На последнем шаге вы создадите связанную службу, которая свяжет исходную базу данных SQL Server с фабрикой данных. На этом шаге вы свяжете базу данных-приемник или целевую базу данных SQL Azure с фабрикой данных. 
 
 1. В окне **подключений** перейдите из вкладки **сред выполнения интеграции** на вкладку **Связанные службы**, а затем щелкните **+ Создать**.
@@ -367,7 +367,7 @@ END
    ![Меню "Новый набор данных"](./media/tutorial-incremental-copy-multiple-tables-portal/new-dataset-menu.png)
 1. В окне **Новый набор данных** выберите **База данных SQL Microsoft Azure** и щелкните **Готово**. 
 
-   ![Выбор Базы данных SQL Azure](./media/tutorial-incremental-copy-multiple-tables-portal/select-azure-sql-database.png)
+   ![Выбор базы данных SQL Azure](./media/tutorial-incremental-copy-multiple-tables-portal/select-azure-sql-database.png)
 1. Для настройки набора данных в веб-браузере откроется новая вкладка. Также этот набор данных появится в представлении TreeView. На вкладке **Общие** окна свойств ниже введите **SinkDataset** (Набор данных приемника) в поле **Имя**.
 
    ![Вкладка "Общие", имя набора данных приемника](./media/tutorial-incremental-copy-multiple-tables-portal/sink-dataset-general.png)
@@ -399,7 +399,7 @@ END
    ![Меню "Новый набор данных"](./media/tutorial-incremental-copy-multiple-tables-portal/new-dataset-menu.png)
 1. В окне **Новый набор данных** выберите **База данных SQL Microsoft Azure** и щелкните **Готово**. 
 
-   ![Выбор Базы данных SQL Azure](./media/tutorial-incremental-copy-multiple-tables-portal/select-azure-sql-database.png)
+   ![Выбор базы данных SQL Azure](./media/tutorial-incremental-copy-multiple-tables-portal/select-azure-sql-database.png)
 1. На вкладке **Общие** окна свойств ниже введите **WatermarkDataset** в поле **Имя**.
 1. Перейдите на вкладку **Подключения** и выполните следующие действия: 
 
@@ -440,7 +440,7 @@ END
 1. Перейдите на вкладку **Настройки** в окне **Свойства** и введите `@pipeline().parameters.tableList` для параметра **Элементы**. Действие ForEach выполняет итерацию по списку таблиц, а затем выполняет операцию добавочного копирования. 
 
     ![Настройки действия ForEach](./media/tutorial-incremental-copy-multiple-tables-portal/foreach-settings.png)
-1. Выберите в конвейере действие **ForEach**. Нажмите кнопку **редактирования (значок карандаша)**.
+1. Выберите в конвейере действие **ForEach**. Нажмите кнопку **редактирования (значок карандаша)** .
 
     ![Кнопка редактирования действия ForEach](./media/tutorial-incremental-copy-multiple-tables-portal/edit-foreach.png)
 1. На панели **Действия** разверните элемент **Общие**, перетащите действие **Поиск** в область конструктора конвейера, а затем укажите **LookupOldWaterMarkActivity** в качестве **имени**.

@@ -197,7 +197,7 @@ END
    ![Меню создания набора данных — старый нижний предел](./media/tutorial-incremental-copy-portal/new-dataset-old-watermark.png)
 6. В окне **Новый набор данных** выберите **База данных SQL Microsoft Azure** и щелкните **Готово**. Откроется новая вкладка для этого набора данных. 
 
-   ![Выбор Базы данных SQL Azure](./media/tutorial-incremental-copy-portal/select-azure-sql-database-old-watermark.png)
+   ![Выбор базы данных SQL Azure](./media/tutorial-incremental-copy-portal/select-azure-sql-database-old-watermark.png)
 7. В окне свойств набора данных введите **WatermarkDataset** в поле **Имя**.
 
    ![Набор данных для нижнего предела — имя](./media/tutorial-incremental-copy-portal/watermark-dataset-name.png)

@@ -19,7 +19,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "67061397"
 ---
-# <a name="connect-excel-to-a-single-database-in-azure-sql-database-and-create-a-report"></a>Подключение Excel к отдельной базе данных в базе данных SQL Azure и создание отчета
+# <a name="connect-excel-to-a-single-database-in-azure-sql-database-and-create-a-report"></a>Подключение Excel к отдельной базе данных в Базе данных SQL Azure и создание отчета
 
 Подключите Excel к отдельной базе данных в Базе данных SQL Azure и импортируйте данные, а также создавайте таблицы и диаграммы на основе значений в базе данных. Работая с этим руководством, вы установите подключение между Excel и таблицей базы данных, сохраните файл, в котором хранятся данные и сведения о соединении для Excel, а затем создадите сводную диаграмму на основе значений базы данных.
 

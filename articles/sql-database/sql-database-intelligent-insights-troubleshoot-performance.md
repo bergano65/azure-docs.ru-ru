@@ -1,5 +1,5 @@
 ---
-title: Устранение проблем с производительностью базы данных SQL Azure с помощью Intelligent Insights | Документация Майкрософт
+title: Устранение проблем с производительностью Базы данных SQL Azure с помощью Intelligent Insights | Документация Майкрософт
 description: Intelligent Insights помогает устранять проблемы с производительностью базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
@@ -330,6 +330,6 @@ Intelligent Insights автоматически обнаруживает про�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Изучите основные понятия [Intelligent Insights](sql-database-intelligent-insights.md).
-- Используйте [журнал диагностики производительности Intelligent Insights для базы данных SQL Azure](sql-database-intelligent-insights-use-diagnostics-log.md).
+- Используйте [журнал диагностики производительности Intelligent Insights для Базы данных SQL Azure](sql-database-intelligent-insights-use-diagnostics-log.md).
 - Настройте [мониторинг базы данных SQL Azure с помощью службы "Аналитика SQL Azure"](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql).
 - Изучите [сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md).

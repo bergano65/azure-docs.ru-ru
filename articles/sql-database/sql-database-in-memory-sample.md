@@ -46,7 +46,7 @@ ms.locfileid: "61035754"
 
 #### <a name="installation-steps"></a>Шаги установки
 
-1. На [портале Azure](https://portal.azure.com/) создайте на сервере базу данных уровня "Премиум" или "Критически важный для бизнеса". Укажите **источник** для примера базы данных AdventureWorksLT. Подробные инструкции см. в статье [Начало работы с серверами баз данных SQL Azure, базами данных и правилами брандмауэра с использованием портала Azure и SQL Server Management Studio](sql-database-single-database-get-started.md).
+1. На [портале Azure](https://portal.azure.com/) создайте на сервере базу данных уровня "Премиум" или "Критически важный для бизнеса". Укажите **источник** для примера базы данных AdventureWorksLT. Подробные инструкции см. в статье [Начало работы с серверами Базы данных SQL Azure, базами данных и правилами брандмауэра с использованием портала Azure и SQL Server Management Studio](sql-database-single-database-get-started.md).
 
 2. Подключитесь к базе данных с помощью SQL Server Management Studio [(SSMS.exe)](https://msdn.microsoft.com/library/mt238290.aspx).
 

@@ -19,7 +19,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 06/06/2019
 ms.locfileid: "66729136"
 ---
-# <a name="azure-powershell-samples-for-azure-sql-database"></a>Примеры Azure PowerShell для базы данных SQL Azure
+# <a name="azure-powershell-samples-for-azure-sql-database"></a>Примеры Azure PowerShell для Базы данных SQL Azure
 
 Служба "База данных SQL Azure" позволяет настраивать базы данных, экземпляры и пулы с помощью Azure PowerShell.
 
@@ -30,7 +30,7 @@ ms.locfileid: "66729136"
 
 ## <a name="single-database-and-elastic-pools"></a>Отдельная база данных и эластичные пулы
 
-В следующей таблице содержатся ссылки на примеры сценариев Azure PowerShell для базы данных SQL Azure.
+В следующей таблице содержатся ссылки на примеры сценариев Azure PowerShell для Базы данных SQL Azure.
 
 | |  |
 |---|---|

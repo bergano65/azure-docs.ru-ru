@@ -244,7 +244,7 @@ ms.locfileid: "67190714"
 2. [создайте общедоступный балансировщик нагрузки](../load-balancer/quickstart-create-basic-load-balancer-portal.md#create-a-basic-load-balancer) и назначьте ему общедоступный IP-адрес;
 3. [создайте виртуальную сеть и виртуальные машины](../load-balancer/quickstart-create-basic-load-balancer-portal.md#create-back-end-servers) для интерфейсных компонентов;
 4. [создайте группу безопасности сети](../virtual-network/security-overview.md) и настройте входящие подключения.
-5. Убедитесь, что исходящие подключения открыты в Базе данных SQL Azure с помощью [тега службы](../virtual-network/security-overview.md#service-tags) "Sql".
+5. Убедитесь, что исходящие подключения открыты для базы данных SQL Azure с помощью [тега службы](../virtual-network/security-overview.md#service-tags) "Sql".
 6. Создайте [правило брандмауэра базы данных SQL](sql-database-firewall-configure.md), чтобы разрешить входящий трафик из общедоступного IP-адреса, созданного на этапе 1.
 
 Дополнительные сведения о том, как настроить исходящий доступ и какой IP-адрес нужно использовать в правилах брандмауэра, см. в статье [Исходящие подключения в Azure](../load-balancer/load-balancer-outbound-connections.md).
@@ -292,7 +292,7 @@ ms.locfileid: "67190714"
 
 ## <a name="programmatically-managing-failover-groups"></a>Программное управление группами отработки отказа
 
-Как уже говорилось ранее, группами автоматической отработки отказа и активной георепликацией можно также управлять программно с помощью Azure PowerShell и REST API. В приведенных ниже таблицах описан доступный для этого набор команд. Активная георепликация включает в себя набор API-интерфейсов Azure Resource Manager для управления, в том числе [REST API базы данных SQL Azure](https://docs.microsoft.com/rest/api/sql/) и [командлеты Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview). Эти интерфейсы API требуют использования групп ресурсов и поддерживают безопасность на основе ролей (RBAC). Дополнительные сведения о том, как реализовать контроль доступа на основе ролей, см. в статье [Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure](../role-based-access-control/overview.md).
+Как уже говорилось ранее, группами автоматической отработки отказа и активной георепликацией можно также управлять программно с помощью Azure PowerShell и REST API. В приведенных ниже таблицах описан доступный для этого набор команд. Активная георепликация включает в себя набор API-интерфейсов Azure Resource Manager для управления, в том числе [REST API Базы данных SQL Azure](https://docs.microsoft.com/rest/api/sql/) и [командлеты Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview). Эти интерфейсы API требуют использования групп ресурсов и поддерживают безопасность на основе ролей (RBAC). Дополнительные сведения о том, как реализовать контроль доступа на основе ролей, см. в статье [Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure](../role-based-access-control/overview.md).
 
 ### <a name="powershell-manage-sql-database-failover-with-single-databases-and-elastic-pools"></a>PowerShell: Управление отработкой отказа баз данных SQL с отдельными базами данных и эластичными пулами
 
@@ -303,7 +303,7 @@ ms.locfileid: "67190714"
 | [Get-AzSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabasefailovergroup) | Возвращает конфигурацию группы отработки отказа. |
 | [Set-AzSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabasefailovergroup) |Изменяет конфигурацию группы отработки отказа. |
 | [Switch-AzSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/switch-azsqldatabasefailovergroup) | Запускает отработку отказа группы отработки отказа на сервер-получатель. |
-| [Add-AzSqlDatabaseToFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/add-azsqldatabasetofailovergroup)|Добавляет одну или несколько баз данных в группу отработки отказа базы данных SQL Azure.|
+| [Add-AzSqlDatabaseToFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/add-azsqldatabasetofailovergroup)|Добавляет одну или несколько баз данных в группу отработки отказа Базы данных SQL Azure.|
 |  | |
 
 > [!IMPORTANT]
@@ -370,6 +370,6 @@ ms.locfileid: "67190714"
   - [Настройка активной георепликации для базы данных SQL Azure в составе пула с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-pool-powershell.md)
   - [Настройка и отработка отказа для группы отработки отказа для отдельной базы данных](scripts/sql-database-setup-geodr-failover-database-failover-group-powershell.md)
 - Сведения об обеспечении непрерывности бизнес-процессов и возможные сценарии описаны в [обзоре непрерывности бизнес-процессов](sql-database-business-continuity.md)
-- Чтобы узнать об автоматически создаваемых резервных копиях базы данных SQL Azure, ознакомьтесь со статьей [Общие сведения об автоматическом резервном копировании базы данных SQL](sql-database-automated-backups.md).
+- Чтобы узнать об автоматически создаваемых резервных копиях базы данных SQL Azure, ознакомьтесь с разделом [Общие сведения об автоматическом резервном копировании базы данных SQL](sql-database-automated-backups.md).
 - Чтобы узнать об использовании автоматически создаваемых резервных копий для восстановления, ознакомьтесь с [восстановлением базы данных из резервных копий, инициируемых службой](sql-database-recovery-using-backups.md).
 - Дополнительные сведения о требованиях к проверке подлинности для новых сервера-источника и базы данных-источника см. в статье [Безопасность базы данных SQL после аварийного восстановления](sql-database-geo-replication-security-config.md).

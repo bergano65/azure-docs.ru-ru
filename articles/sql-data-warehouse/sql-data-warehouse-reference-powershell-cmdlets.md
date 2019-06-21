@@ -85,7 +85,7 @@ $resultDatabase = $database | Resume-AzSqlDatabase
 * [Создание хранилища данных SQL с помощью PowerShell][Create a SQL Data Warehouse using PowerShell]
 * [Восстановление базы данных][Database restore]
 
-Другие задачи, которые можно автоматизировать с помощью PowerShell, описаны в статье о [командлетах Базы данных SQL Azure][Azure SQL Database Cmdlets]. Обратите внимание, что хранилище данных SQL Azure поддерживает не все командлеты для базы данных SQL Azure.  Список задач, которые можно автоматизировать с помощью REST, см. в статье [Операции для баз данных SQL Azure][Operations for Azure SQL Database].
+Другие задачи, которые можно автоматизировать с помощью PowerShell, описаны в статье о [командлетах Базы данных SQL Azure][Azure SQL Database Cmdlets]. Обратите внимание, что хранилище данных SQL Azure поддерживает не все командлеты для Базы данных SQL Azure.  Список задач, которые можно автоматизировать с помощью REST, см. в статье [Операции для баз данных SQL Azure][Operations for Azure SQL Database].
 
 <!--Image references-->
 

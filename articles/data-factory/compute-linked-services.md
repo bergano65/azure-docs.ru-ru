@@ -497,7 +497,7 @@ ms.locfileid: "66480430"
 | newClusterInitScripts| набор сценариев инициализации необязательное, определяемое пользователем для нового кластера. Указав путь к DBFS в сценарии инициализации. | Нет  |
 
 
-## <a name="azure-sql-database-linked-service"></a>Связанная служба базы данных SQL Azure
+## <a name="azure-sql-database-linked-service"></a>Связанная служба "База данных SQL Azure"
 Связанная служба SQL Azure создается и применяется к [действию хранимой процедуры](transform-data-using-stored-procedure.md) для вызова хранимой процедуры из конвейера фабрики данных. Дополнительную информацию см. в статье о [связанной службе SQL Azure](connector-azure-sql-database.md#linked-service-properties).
 
 ## <a name="azure-sql-data-warehouse-linked-service"></a>Связанная служба хранилища данных SQL Azure

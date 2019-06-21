@@ -1,6 +1,6 @@
 ---
 title: Порты для базы данных SQL помимо 1433 | Документация Майкрософт
-description: Взаимодействие с базой данных при клиентских подключениях из ADO.NET к Базе данных SQL Azure может происходить напрямую, без прокси-сервера, если база данных не использует порт 1433.
+description: Взаимодействие с базой данных при клиентских подключениях из ADO.NET к базе данных SQL Azure может происходить напрямую, без прокси-сервера, если база данных не использует порт 1433.
 services: sql-database
 ms.service: sql-database
 ms.subservice: development
@@ -24,7 +24,7 @@ ms.locfileid: "61075503"
 В этом разделе описывается поведение подключения к Базе данных SQL Azure клиентов, использующих ADO.NET 4.5 или более поздней версии.
 
 > [!IMPORTANT]
-> Сведения об архитектуре подключения см. в статье [Azure SQL Database Connectivity Architecture](sql-database-connectivity-architecture.md) (Архитектура подключения базы данных SQL Azure).
+> Сведения об архитектуре подключения см. в статье [Azure SQL Database Connectivity Architecture](sql-database-connectivity-architecture.md) (Архитектура подключения Базы данных SQL Azure).
 >
 
 ## <a name="outside-vs-inside"></a>Снаружи или внутри
@@ -37,7 +37,7 @@ ms.locfileid: "61075503"
 
 ### <a name="inside-client-runs-on-azure"></a>*Внутренняя программа*. Клиент выполняется в Azure
 
-При запуске внутри границ облака Azure для взаимодействия с сервером Базы данных SQL клиент использует то, что можно назвать *прямым маршрутом* . После установления подключения дальнейшее взаимодействие между клиентом и базой данных не включает в себя шлюз базы данных SQL Azure.
+При запуске внутри границ облака Azure для взаимодействия с сервером Базы данных SQL клиент использует то, что можно назвать *прямым маршрутом* . После установления подключения дальнейшее взаимодействие между клиентом и базой данных не включает в себя шлюз Базы данных SQL Azure.
 
 Последовательность выглядит так:
 
@@ -79,7 +79,7 @@ ms.locfileid: "61075503"
 
 * Microsoft® ODBC Driver 17 for SQL Server® — Windows, Linux и macOS https://www.microsoft.com/download/details.aspx?id=56567
 
-* Подключение к базе данных SQL Azure версии 12 с помощью перенаправления https://techcommunity.microsoft.com/t5/DataCAT/Connect-to-Azure-SQL-Database-V12-via-Redirection/ba-p/305362
+* Подключение к Базе данных SQL Azure версии 12 с помощью перенаправления https://techcommunity.microsoft.com/t5/DataCAT/Connect-to-Azure-SQL-Database-V12-via-Redirection/ba-p/305362
 
 * [Список версий протокола TDS](http://www.freetds.org/userguide/tdshistory.htm)
 * [Общие сведения о разработке базы данных SQL](sql-database-develop-overview.md)

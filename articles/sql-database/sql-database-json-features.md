@@ -1,5 +1,5 @@
 ---
-title: Работа с данными JSON в Базе данных SQL Azure | Документация Майкрософт
+title: Работа с данными JSON в базе данных SQL Azure | Документация Майкрософт
 description: База данных SQL Azure позволяет анализировать, запрашивать и форматировать данные в формате JSON (нотация объектов JavaScript).
 services: sql-database
 ms.service: sql-database
@@ -130,7 +130,7 @@ EXEC InsertProduct 'Toy car', '{"Price":50,"Color":"White","tags":["toy","childr
 ## <a name="querying-json-data"></a>Запрос данных JSON
 Если данные в формате JSON хранятся в таблицах Azure SQL, то с помощью функций JSON эти данные можно использовать в SQL-запросе.
 
-Функции JSON, доступные в Базе данных SQL Azure, позволяют обрабатывать данные в формате JSON как данные SQL любого другого типа. Можно легко извлечь значения из текста JSON и использовать данные JSON в любом запросе.
+Функции JSON, доступные в базе данных SQL Azure, позволяют обрабатывать данные в формате JSON как данные SQL любого другого типа. Можно легко извлечь значения из текста JSON и использовать данные JSON в любом запросе.
 
 ```
 select Id, Title, JSON_VALUE(Data, '$.Color'), JSON_QUERY(Data, '$.tags')

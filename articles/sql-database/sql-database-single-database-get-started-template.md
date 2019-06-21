@@ -154,7 +154,7 @@ ms.locfileid: "59425786"
 
 2. Введите или выберите следующие значения.  
 
-    ![Создание базы данных SQL Azure  с помощью шаблона Azure Resource Manager](./media/sql-database-single-database-get-started-template/create-azure-sql-database-resource-manager-template.png)
+    ![Создание базы данных SQL Azure с помощью шаблона Azure Resource Manager](./media/sql-database-single-database-get-started-template/create-azure-sql-database-resource-manager-template.png)
 
     Если значение не указано, используйте значение по умолчанию.
 

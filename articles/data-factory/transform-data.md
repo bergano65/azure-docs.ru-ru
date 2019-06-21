@@ -61,7 +61,7 @@ ms.locfileid: "60622113"
 Дополнительные сведения об этих действиях машинного обучения см. в разделе [Создание прогнозных конвейеров с помощью действий машинного обучения Azure](transform-data-using-machine-learning.md). 
 
 ## <a name="stored-procedure-activity"></a>Действие хранимой процедуры
-С помощью действия "Хранимая процедура SQL Server" в конвейере Фабрики данных можно вызвать хранимую процедуру в одном из таких хранилищ данных: База данных Azure SQL, Хранилище данных SQL Azure, база данных SQL Server в вашей организации или на виртуальной машине Azure. Дополнительные сведения см. в статье [Преобразование данных с помощью действия хранимой процедуры SQL Server в фабрике данных Azure](transform-data-using-stored-procedure.md).  
+С помощью действия "Хранимая процедура SQL Server" в конвейере Фабрики данных можно вызвать хранимую процедуру в одном из таких хранилищ данных: Базе данных SQL Azure, Хранилище данных SQL Azure, базе данных SQL Server в вашей организации или на виртуальной машине Azure. Дополнительные сведения см. в статье [Преобразование данных с помощью действия хранимой процедуры SQL Server в фабрике данных Azure](transform-data-using-stored-procedure.md).  
 
 ## <a name="data-lake-analytics-u-sql-activity"></a>Действие U-SQL Data Lake Analytics
 Действие U-SQL Data Lake Analytics запускает скрипт U-SQL для кластера Azure Data Lake Analytics. Дополнительные сведения см. в статье [Преобразование данных с помощью сценариев U-SQL в Azure Data Lake Analytics](transform-data-using-data-lake-analytics.md). 

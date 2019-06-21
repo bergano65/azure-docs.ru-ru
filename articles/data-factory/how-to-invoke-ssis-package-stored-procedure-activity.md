@@ -26,7 +26,7 @@ ms.locfileid: "66154921"
 ## <a name="prerequisites"></a>Технические условия
 
 ### <a name="azure-sql-database"></a>База данных SQL Azure 
-В этих пошаговых инструкциях используется база данных SQL Azure, в которой размещен каталог SSIS. Вы также можете использовать Управляемый экземпляр базы данных SQL.
+В этих пошаговых инструкциях используется база данных SQL Azure, в которой размещен каталог SSIS. Вы также можете использовать Управляемый экземпляр Базы данных SQL.
 
 ## <a name="create-an-azure-ssis-integration-runtime"></a>Создание среды выполнения интеграции Azure SSIS.
 Создайте среду выполнения интеграции Azure SSIS, если у вас ее нет. Для этого выполните пошаговую инструкцию из статьи [Подготовка Integration Runtime Azure–SSIS в Фабрике данных Azure](tutorial-create-azure-ssis-runtime-portal.md).
@@ -83,15 +83,15 @@ ms.locfileid: "66154921"
 4. В окне **New Linked Service** (Новая связанная служба) выполните следующие действия: 
 
     1. В поле **Тип** выберите **База данных SQL Azure**.
-    2. Выберите среду выполнения интеграции Azure **по умолчанию** для подключения к Базе данных SQL Azure, в которой размещена база данных `SSISDB`.
-    3. В поле **Имя сервера** выберите Базу данных SQL Azure, в которой размещена база данных SSISDB.
+    2. Выберите среду выполнения интеграции Azure **по умолчанию** для подключения к базе данных SQL Azure, в которой размещена база данных `SSISDB`.
+    3. В поле **Имя сервера** выберите базу данных SQL Azure, в которой размещена база данных SSISDB.
     4. В поле **Имя базы данных** выберите **SSISDB**.
     5. В поле **Имя пользователя** введите имя пользователя, у которого есть доступ к базе данных.
     6. В поле **Пароль** введите пароль для этого пользователя. 
     7. Проверьте подключение к базе данных, нажав кнопку **Проверить соединение**.
     8. Сохраните связанную службу, нажав кнопку **Сохранить**. 
 
-        ![Связанная служба базы данных SQL Azure](./media/how-to-invoke-ssis-package-stored-procedure-activity/azure-sql-database-linked-service-settings.png)
+        ![Связанная служба "База данных SQL Azure"](./media/how-to-invoke-ssis-package-stored-procedure-activity/azure-sql-database-linked-service-settings.png)
 5. В окне свойств перейдите из вкладки **Учетная запись SQL** на вкладку **Хранимая процедура** и выполните следующие действия: 
 
     1. Выберите **Изменить** 
@@ -107,7 +107,7 @@ ms.locfileid: "66154921"
         DECLARE @return_value INT, @exe_id BIGINT, @err_msg NVARCHAR(150)    EXEC @return_value=[SSISDB].[catalog].[create_execution] @folder_name=N'<FOLDER name in SSIS Catalog>', @project_name=N'<PROJECT name in SSIS Catalog>', @package_name=N'<PACKAGE name>.dtsx', @use32bitruntime=0, @runinscaleout=1, @useanyworker=1, @execution_id=@exe_id OUTPUT    EXEC [SSISDB].[catalog].[set_execution_parameter_value] @exe_id, @object_type=50, @parameter_name=N'SYNCHRONIZED', @parameter_value=1    EXEC [SSISDB].[catalog].[start_execution] @execution_id=@exe_id, @retry_count=0    IF(SELECT [status] FROM [SSISDB].[catalog].[executions] WHERE execution_id=@exe_id)<>7 BEGIN SET @err_msg=N'Your package execution did not succeed for execution ID: ' + CAST(@exe_id AS NVARCHAR(20)) RAISERROR(@err_msg,15,1) END
         ```
 
-        ![Связанная служба базы данных SQL Azure](./media/how-to-invoke-ssis-package-stored-procedure-activity/stored-procedure-settings.png)
+        ![Связанная служба "База данных SQL Azure"](./media/how-to-invoke-ssis-package-stored-procedure-activity/stored-procedure-settings.png)
 6. Чтобы проверить конфигурацию конвейера, щелкните **Проверка** на панели инструментов. Чтобы закрыть **отчет о проверке конвейера**, нажмите кнопку **>>** .
 
     ![Проверка конвейера](./media/how-to-invoke-ssis-package-stored-procedure-activity/validate-pipeline.png)
@@ -192,7 +192,7 @@ ms.locfileid: "66154921"
 * Чтобы создать экземпляры фабрики данных, нужно назначить учетной записи пользователя, используемой для входа в Azure, роль **участника**, **владельца** либо **администратора** подписки Azure.
 * Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
-### <a name="create-an-azure-sql-database-linked-service"></a>Создание связанной службы базы данных SQL Azure
+### <a name="create-an-azure-sql-database-linked-service"></a>Создание связанной службы Базы данных SQL Azure
 Создайте связанную службу, которая свяжет базу данных SQL Azure, содержащую каталог SSIS, с вашей фабрикой данных. Фабрика данных использует информацию связанной службы для подключения к базе данных SSISDB и выполняет хранимую процедуру для запуска пакета SSIS. 
 
 1. В папке **C:\ADF\RunSSISPackage** создайте файл JSON с именем **AzureSqlDatabaseLinkedService.json** и следующим содержимым: 

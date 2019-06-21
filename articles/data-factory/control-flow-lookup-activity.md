@@ -249,8 +249,8 @@ firstRowOnly | Указывает, следует ли возвращать то
 }
 ```
 
-### <a name="azure-sql-database-linked-service"></a>Связанная служба базы данных SQL Azure
-Этот экземпляр базы данных SQL Azure содержит данные, копируемые в хранилище BLOB-объектов. 
+### <a name="azure-sql-database-linked-service"></a>Связанная служба "База данных SQL Azure"
+Этот экземпляр Базы данных SQL Azure содержит данные, копируемые в хранилище BLOB-объектов. 
 
 ```json
 {

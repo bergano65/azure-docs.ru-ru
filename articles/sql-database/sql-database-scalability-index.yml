@@ -1,9 +1,9 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: "Базы данных SQL Azure\_— масштабируемость"
+title: "База данных SQL Azure\_— масштабируемость"
 metadata:
   document_id: 36d89c48-3646-380e-34a0-ae3ac62e2641
-  title: "Базы данных SQL Azure\_— масштабируемость"
+  title: "База данных SQL Azure\_— масштабируемость"
   meta.description: Learn how to scale your Azure SQL Database.
   services: sql-database
   ms.subservice: scale-out

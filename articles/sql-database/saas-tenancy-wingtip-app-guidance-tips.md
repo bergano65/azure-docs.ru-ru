@@ -1,6 +1,6 @@
 ---
 title: Рекомендации по использованию примера мультитенантного приложения базы данных SQL | Документация Майкрософт
-description: В этой статье приводятся шаги и рекомендации по установке и запуску примера мультитенантного приложения SaaS, использующего базу данных SQL Azure — Wingtip Tickets.
+description: В этой статье приводятся шаги и рекомендации по установке и запуску примера мультитенантного приложения SaaS, использующего Базу данных SQL Azure — Wingtip Tickets.
 services: sql-database
 ms.service: sql-database
 ms.subservice: scenario
@@ -21,7 +21,7 @@ ms.locfileid: "60326300"
 ---
 # <a name="general-guidance-for-working-with-wingtip-tickets-sample-saas-apps"></a>Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets
 
-Эта статья содержит общие рекомендации по запуску примеров приложений SaaS Wingtip Tickets, использующих базу данных SQL Azure. 
+Эта статья содержит общие рекомендации по запуску примеров приложений SaaS Wingtip Tickets, использующих Базу данных SQL Azure. 
 
 ## <a name="download-and-unblock-the-wingtip-tickets-saas-scripts"></a>Скачивание и разблокирование сценариев SaaS Wingtip Tickets
 

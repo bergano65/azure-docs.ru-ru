@@ -1,5 +1,5 @@
 ---
-title: Чтение данных из Базы данных SQL Azure и запись в нее с использованием Apache Spark
+title: Чтение данных из базы данных SQL Azure и запись в нее с использованием Apache Spark
 description: Узнайте, как настроить подключение между кластером HDInsight Spark и базой данных SQL Azure для чтения данных из базы данных SQL, а также записи и потоковой передачи данных в нее.
 author: hrasheed-msft
 ms.author: hrasheed

@@ -1,6 +1,6 @@
 ---
 title: Использование Apache Sqoop с Apache Hadoop в Azure HDInsight
-description: Сведения об использовании Apache Sqoop для импорта и экспорта между Apache Hadoop в HDInsight и Базой данных SQL Azure.
+description: Сведения об использовании Apache Sqoop для импорта и экспорта между Apache Hadoop в HDInsight и базой данных SQL Azure.
 keywords: hadoop sqoop,sqoop
 author: hrasheed-msft
 ms.author: hrasheed
@@ -77,7 +77,7 @@ ms.locfileid: "64721631"
 
 ## <a name="limitations"></a>Ограничения
 
-* Массовый экспорт: при использовании HDInsight на основе Linux соединитель Sqoop, применяемый для экспорта данных на сервер Microsoft SQL Server или в базу данных SQL Azure, не поддерживает операции массовой вставки.
+* Массовый экспорт: при использовании HDInsight на основе Linux соединитель Sqoop, применяемый для экспорта данных на сервер Microsoft SQL Server или в Базу данных SQL Azure, не поддерживает операции массовой вставки.
 
 * Пакетная обработка: при использовании HDInsight на основе Linux, когда для выполнения вставок применяется параметр`-batch`, Sqoop выполняет несколько вставок вместо пакетной обработки операций вставки.
 

@@ -26,7 +26,7 @@ ms.locfileid: "60303593"
 
 * в [хранилище BLOB-объектов Azure](move-azure-blob.md) или из него;
 * в [SQL Server на виртуальной машине Azure](move-sql-server-virtual-machine.md);
-* в [Базе данных SQL Azure](move-sql-azure.md);
+* в [базе данных SQL Azure](move-sql-azure.md);
 * в [таблице Hive](move-hive-tables.md);
 * в [секционированных таблицах SQL](parallel-load-sql-partitioned-tables.md);
 * из [локальной базы данных SQL Server](move-sql-azure-adf.md).

@@ -137,7 +137,7 @@ Load Balancer
 
 **Бизнес-уровень**. Реализует бизнес-процессы и другую функциональную логику системы.
 
-**Уровень базы данных**. Предоставляет постоянное хранилище данных, использующее [группы доступности Always On SQL Server](https://msdn.microsoft.com/library/hh510230.aspx) для обеспечения высокого уровня доступности. Клиенты могут использовать [базу данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview) в качестве альтернативы PaaS.
+**Уровень базы данных**. Предоставляет постоянное хранилище данных, использующее [группы доступности Always On SQL Server](https://msdn.microsoft.com/library/hh510230.aspx) для обеспечения высокого уровня доступности. Клиенты могут использовать [Базу данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview) в качестве альтернативы PaaS.
 
 **Шлюз**. [VPN-шлюз](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways) предоставляет возможность подключения между маршрутизаторами в локальной сети и рабочей виртуальной сети.
 
