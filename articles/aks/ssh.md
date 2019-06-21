@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/24/2019
 ms.author: iainfou
-ms.openlocfilehash: 57eacca75d711c5125a2856a7b6219cd2ec5306b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 34f2d11cf4e1fb8e03d037be221e7b18ed4c5ad0
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66242031"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67303332"
 ---
 # <a name="connect-with-ssh-to-azure-kubernetes-service-aks-cluster-nodes-for-maintenance-or-troubleshooting"></a>Подключение по протоколу SSH к узлам кластера Службы Azure Kubernetes (AKS) для обслуживания или устранения неполадок
 
@@ -22,13 +22,13 @@ ms.locfileid: "66242031"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, см. в этом кратком руководстве AKS [с помощью Azure CLI][aks-quickstart-cli] or [using the Azure portal][aks-quickstart-portal].
 
-Вам также понадобится Azure CLI версии 2.0.64 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Вам также понадобится Azure CLI версии 2.0.64 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если требуется выполнить установку или обновление, см. в разделе [установить Azure CLI][install-azure-cli].
 
 ## <a name="add-your-public-ssh-key"></a>Добавление открытого ключа SSH
 
-По умолчанию ключи SSH получен, или создан, а затем добавляются на узлы, при создании кластера AKS. Если вам нужно указать различные ключи SSH, которые используются при создании кластера AKS, добавьте открытый ключ SSH к узлам Linux AKS. При необходимости можно создать в SSH ключа с помощью [macOS или Linux] [ ssh-nix] или [Windows][ssh-windows]. При использовании общего PuTTY для создания пары ключей, сохранить пару ключей в OpenSSH формате вместо кодировки по умолчанию формате закрытого ключа PuTTy (ppk-файл).
+По умолчанию ключи SSH получен, или создан, а затем добавляются на узлы, при создании кластера AKS. Если вам нужно указать различные ключи SSH, которые используются при создании кластера AKS, добавьте открытый ключ SSH к узлам Linux AKS. При необходимости можно создать в SSH ключа с помощью [macOS или Linux][ssh-nix] or [Windows][ssh-windows]. При использовании общего PuTTY для создания пары ключей, сохранить пару ключей в OpenSSH формате вместо кодировки по умолчанию формате закрытого ключа PuTTy (ppk-файл).
 
 > [!NOTE]
 > Can ключи SSH в настоящее время добавляться только к узлам Linux с помощью Azure CLI. Если вы используете узлы Windows Server, использовать ключи SSH, указанные при создании кластера AKS и перейдите к шагу на [как получение адреса узла AKS](#get-the-aks-node-address). Или, [подключение к узлам Windows Server, с помощью протокола удаленного рабочего стола (RDP) подключений][aks-windows-rdp].
@@ -42,13 +42,13 @@ ms.locfileid: "66242031"
 
 Чтобы добавить ключ SSH к узлу Linux AKS, выполните следующие действия.
 
-1. Получите имя группы ресурсов для ресурсов кластера AKS с помощью команды [az aks show][az-aks-show]. Укажите имя основной группы ресурсов и имя кластера AKS. Имя кластера, присвоенное переменной с именем *CLUSTER_RESOURCE_GROUP*:
+1. Получить имя группы ресурсов для ресурсов кластера AKS с помощью [az aks show][az-aks-show]. Имя кластера, присвоенное переменной с именем *CLUSTER_RESOURCE_GROUP*. Замените *myResourceGroup* с именем своей группы ресурсов, где вы кластера AKS находится:
 
     ```azurecli-interactive
     CLUSTER_RESOURCE_GROUP=$(az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv)
     ```
 
-1. Перечислите виртуальные машины в группе ресурсов кластера AKS с помощью команды [az vm list][az-vm-list]. Эти виртуальные машины и являются узлами AKS:
+1. Список виртуальных машин в AKS кластера группу ресурсов с помощью [список виртуальных машин az][az-vm-list] команды. Эти виртуальные машины и являются узлами AKS:
 
     ```azurecli-interactive
     az vm list --resource-group $CLUSTER_RESOURCE_GROUP -o table
@@ -62,7 +62,7 @@ ms.locfileid: "66242031"
     aks-nodepool1-79590246-0  MC_myResourceGroupAKS_myAKSClusterRBAC_eastus  eastus
     ```
 
-1. Чтобы добавить ключи SSH к узлу, используйте команду [az vm user update][az-vm-user-update]. Укажите имя группы ресурсов, а затем один из узлов AKS, полученных на предыдущем шаге. По умолчанию имя пользователя для узлов AKS — *azureuser*. Укажите расположение собственного открытого ключа SSH, например *~/.ssh/id_rsa.pub*, или вставьте содержимое открытого ключа SSH:
+1. Чтобы добавить ключи SSH к узлу, используйте [aaz vm user update][az-vm-user-update] команды. Укажите имя группы ресурсов, а затем один из узлов AKS, полученных на предыдущем шаге. По умолчанию имя пользователя для узлов AKS — *azureuser*. Укажите расположение собственного открытого ключа SSH, например *~/.ssh/id_rsa.pub*, или вставьте содержимое открытого ключа SSH:
 
     ```azurecli-interactive
     az vm user update \
@@ -76,19 +76,19 @@ ms.locfileid: "66242031"
 
 Чтобы добавить ключ SSH на узел Linux AKS, который является частью набора масштабирования виртуальных машин, выполните следующие действия.
 
-1. Получите имя группы ресурсов для ресурсов кластера AKS с помощью команды [az aks show][az-aks-show]. Укажите имя основной группы ресурсов и имя кластера AKS. Имя кластера, присвоенное переменной с именем *CLUSTER_RESOURCE_GROUP*:
+1. Получить имя группы ресурсов для ресурсов кластера AKS с помощью [az aks show][az-aks-show]. Имя кластера, присвоенное переменной с именем *CLUSTER_RESOURCE_GROUP*. Замените *myResourceGroup* с именем своей группы ресурсов, где вы кластера AKS находится:
 
     ```azurecli-interactive
     CLUSTER_RESOURCE_GROUP=$(az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv)
     ```
 
-1. Затем получите масштабируемый набор виртуальных машин для кластера AKS с помощью [az vmss list] [ az-vmss-list] команды. Имя виртуальной машины масштабируемого набора назначается переменной с именем *SCALE_SET_NAME*:
+1. Затем получите масштабируемый набор виртуальных машин для кластера AKS с помощью [az vmss list][az-vmss-list] команды. Имя виртуальной машины масштабируемого набора назначается переменной с именем *SCALE_SET_NAME*:
 
     ```azurecli-interactive
     SCALE_SET_NAME=$(az vmss list --resource-group $CLUSTER_RESOURCE_GROUP --query [0].name -o tsv)
     ```
 
-1. Чтобы добавить ключи SSH к узлам в масштабируемом наборе виртуальных машин, используйте [набора расширения az vmss] [ az-vmss-extension-set] команды. Группа ресурсов кластера и имя масштабируемого набора виртуальных машин предоставляются из предыдущей команды. По умолчанию имя пользователя для узлов AKS — *azureuser*. При необходимости обновите расположение собственные SSH открытого ключа, такие как *~/.ssh/id_rsa.pub*:
+1. Чтобы добавить ключи SSH к узлам в масштабируемом наборе виртуальных машин, используйте [набора расширения az vmss][az-vmss-extension-set] команды. Группа ресурсов кластера и имя масштабируемого набора виртуальных машин предоставляются из предыдущей команды. По умолчанию имя пользователя для узлов AKS — *azureuser*. При необходимости обновите расположение собственные SSH открытого ключа, такие как *~/.ssh/id_rsa.pub*:
 
     ```azurecli-interactive
     az vmss extension set  \
@@ -100,7 +100,7 @@ ms.locfileid: "66242031"
         --protected-settings "{\"username\":\"azureuser\", \"ssh_key\":\"$(cat ~/.ssh/id_rsa.pub)\"}"
     ```
 
-1. Примените ключ SSH к узлам, с помощью [az vmss update-instances] [ az-vmss-update-instances] команды:
+1. Примените ключ SSH к узлам, с помощью [az vmss update-instances][az-vmss-update-instances] команды:
 
     ```azurecli-interactive
     az vmss update-instances --instance-ids '*' \
@@ -117,7 +117,7 @@ ms.locfileid: "66242031"
 
 ### <a name="ssh-to-regular-aks-clusters"></a>SSH для регулярного кластерах AKS
 
-Просмотреть частный IP-адрес узла кластера AKS можно с помощью команды [az vm list-ip-addresses][ az-vm-list-ip-addresses]. Укажите имя своей группы ресурсов кластера AKS, полученное на предыдущем шаге [az-aks-show][az-aks-show]:
+Просмотреть частный IP-адрес узла кластера AKS с помощью [az vm list-ip-addresses][az-vm-list-ip-addresses] command. Provide your own AKS cluster resource group name obtained in a previous [az-aks-show][az-aks-show] шаг:
 
 ```azurecli-interactive
 az vm list-ip-addresses --resource-group $CLUSTER_RESOURCE_GROUP -o table
@@ -172,7 +172,7 @@ aksnpwin000000                      Ready    agent   13h   v1.12.7   10.240.0.67
     apt-get update && apt-get install openssh-client -y
     ```
 
-1. В новом окне терминала, не подключенном к контейнеру, перечислите модули pod в кластере AKS, используя команду [kubectl get pods][kubectl-get]. Модуль pod, созданный на предыдущем шаге, начинается с имени *aks-ssh*, как показано в следующем примере:
+1. В новом окне терминала, не подключен к контейнеру, список модулей POD в кластере AKS с помощью [kubectl get pods][kubectl-get] команды. Модуль pod, созданный на предыдущем шаге, начинается с имени *aks-ssh*, как показано в следующем примере:
 
     ```
     $ kubectl get pods
@@ -224,7 +224,7 @@ aksnpwin000000                      Ready    agent   13h   v1.12.7   10.240.0.67
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если вам нужны дополнительные сведения об устранении неполадок, вы можете [просмотреть журналы kubelet][view-kubelet-logs] или [журналы главного узла Kubernetes][view-master-logs].
+Если вам нужны дополнительные данные об устранении неполадок, вы можете [просмотра журналов kubelet][view-kubelet-logs] or [view the Kubernetes master node logs][view-master-logs].
 
 <!-- EXTERNAL LINKS -->
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get

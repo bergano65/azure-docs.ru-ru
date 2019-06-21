@@ -5,14 +5,14 @@ services: container-service
 author: tylermsft
 ms.service: container-service
 ms.topic: article
-ms.date: 06/06/2019
+ms.date: 06/17/2019
 ms.author: twhitney
-ms.openlocfilehash: cdcc1b985c570d1af4bbb33ac29a37e63b1dfa90
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a9887e923358b5658a365b5cfc88759eca2501e0
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66752390"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67303556"
 ---
 # <a name="preview---create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Preview — Создание контейнера Windows Server в кластер Azure Kubernetes Service (AKS), с помощью Azure CLI
 
@@ -22,7 +22,7 @@ ms.locfileid: "66752390"
 
 ![Изображение перехода к примеру приложения ASP.NET](media/windows-container/asp-net-sample-app.png)
 
-В этой статье требуется понимание основных концепций Kubernetes. Дополнительные сведения см. в статье [Ключевые концепции Kubernetes для службы Azure Kubernetes (AKS)][kubernetes-concepts].
+В этой статье требуется понимание основных концепций Kubernetes. Дополнительные сведения см. в разделе [Kubernetes ключевые понятия для службы Azure Kubernetes (AKS)][kubernetes-concepts].
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -42,7 +42,7 @@ ms.locfileid: "66752390"
 
 ### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки aks-preview
     
-Команды CLI для создания и управления несколькими пулы узлов доступны в *предварительной версии aks* расширение интерфейса командной строки. Установка *предварительной версии aks* расширение Azure CLI с помощью [добавить расширения az] [ az-extension-add] команды, как показано в следующем примере:
+Команды CLI для создания и управления несколькими пулы узлов доступны в *предварительной версии aks* расширение интерфейса командной строки. Установка *предварительной версии aks* расширение Azure CLI с помощью [добавить расширения az][az-extension-add] команды, как показано в следующем примере:
 
 ```azurecli-interactive
 az extension add --name aks-preview
@@ -53,7 +53,7 @@ az extension add --name aks-preview
 
 ### <a name="register-windows-preview-feature"></a>Зарегистрируйте функцию предварительной версии Windows
 
-Чтобы создать кластер AKS, можно использовать несколько пулов узлов и запускать контейнеры Windows Server, сначала включите функцию *WindowsPreview* флаги по вашей подписке компонентов. *WindowsPreview* функция также использует пул с несколькими узлами кластеров и масштабируемый набор для управления развертыванием и конфигурацию узлов Kubernetes виртуальных машин. Зарегистрировать *WindowsPreview* функции с помощью флага [az функция register] [ az-feature-register] команды, как показано в следующем примере:
+Чтобы создать кластер AKS, можно использовать несколько пулов узлов и запускать контейнеры Windows Server, сначала включите функцию *WindowsPreview* флаги по вашей подписке компонентов. *WindowsPreview* функция также использует пул с несколькими узлами кластеров и масштабируемый набор для управления развертыванием и конфигурацию узлов Kubernetes виртуальных машин. Зарегистрировать *WindowsPreview* функции с помощью флага [az функция register][az-feature-register] команды, как показано в следующем примере:
 
 ```azurecli-interactive
 az feature register --name WindowsPreview --namespace Microsoft.ContainerService
@@ -62,13 +62,13 @@ az feature register --name WindowsPreview --namespace Microsoft.ContainerService
 > [!NOTE]
 > Создается после успешной регистрации кластера AKS *WindowsPreview* этой предварительной версии кластера использовать флаг компонента. Чтобы продолжить создавать кластеры обычный, полностью поддерживаются, не включите функции предварительной версии на рабочие подписки. Используйте отдельный тестовый или разработка подписки Azure для тестирования функции предварительной версии.
 
-Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Состояние регистрации можно проверить с помощью команды [az feature list][az-feature-list].
+Он занимает несколько минут для завершения регистрации. Проверить состояние регистрации с помощью [список функций az][az-feature-list] команды:
 
 ```azurecli-interactive
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/WindowsPreview')].{Name:name,State:properties.state}"
 ```
 
-Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft.ContainerService* с помощью команды [az provider register][az-provider-register].
+Если указано состояние регистрации `Registered`, нажмите клавиши Ctrl-C, чтобы остановить наблюдение за состоянием.  Затем обновите регистрацию *Microsoft.ContainerService* поставщик ресурсов с помощью [az provider register][az-provider-register] команды:
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerService
@@ -93,6 +93,10 @@ az provider register --namespace Microsoft.ContainerService
 
 В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
+> [!NOTE]
+> В этой статье используется Bash синтаксис для команд в этом руководстве.
+> Если вы используете Azure Cloud Shell, убедитесь, что в раскрывающемся списке в левом верхнем углу окна Cloud Shell **Bash**.
+
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
 ```
@@ -113,12 +117,13 @@ az group create --name myResourceGroup --location eastus
 }
 ```
 
-## <a name="create-aks-cluster"></a>Создание кластера AKS
-Чтобы запустить кластер AKS, который поддерживает пулы узлов для контейнеров Windows Server, необходимо использовать политику сети, которая использует кластер [Azure CNI] [ azure-cni-about] подключаемого модуля (Дополнительно) сети. Более подробные сведения, которые помогут в планировании диапазоны необходимые подсети и рекомендации по сети, см. в разделе [Настройка сети Azure CNI][use-advanced-networking]. Используйте [создать az aks] [ az-aks-create] команду, чтобы создать кластер службы контейнеров AZURE с именем *myAKSCluster*. Эта команда создаст необходимые сетевые ресурсы, если они не существуют.
+## <a name="create-an-aks-cluster"></a>Создание кластера AKS
+
+Чтобы запустить кластер AKS, который поддерживает пулы узлов для контейнеров Windows Server, необходимо использовать политику сети, которая использует кластер [Azure CNI][azure-cni-about] (advanced) network plugin. For more detailed information to help plan out the required subnet ranges and network considerations, see [configure Azure CNI networking][use-advanced-networking]. Используйте [создать az aks][az aks create] команду, чтобы создать кластер службы контейнеров AZURE с именем *myAKSCluster*. Эта команда создаст необходимые сетевые ресурсы, если они не существуют.
   * Кластер настроен с одним узлом
   * *Windows-admin-password* и *имя пользователя администратора windows* параметры задать учетные данные администратора для любого контейнера Windows Server, создания в кластере.
 
-Укажите собственные безопасные *PASSWORD_WIN*.
+Укажите собственные безопасные *PASSWORD_WIN* (Помните, что команды в этой статье введены в оболочке BASH):
 
 ```azurecli-interactive
 PASSWORD_WIN="P@ssw0rd1234"
@@ -135,6 +140,10 @@ az aks create \
     --enable-vmss \
     --network-plugin azure
 ```
+
+> [!Note]
+> Если возникнет ошибка проверки пароля, попробуйте создать группу ресурсов в другом регионе.
+> Затем повторите создание кластера с помощью новой группы ресурсов.
 
 Через несколько минут выполнение команды завершается и отображаются сведения о кластере в формате JSON.
 
@@ -156,13 +165,13 @@ az aks nodepool add \
 
 ## <a name="connect-to-the-cluster"></a>Подключение к кластеру
 
-Управлять кластером Kubernetes можно при помощи [kubectl][kubectl], клиента командной строки Kubernetes. Если вы используете Azure Cloud Shell, `kubectl` уже установлен. Чтобы установить `kubectl` локально, используйте команду [az aks install-cli][az-aks-install-cli]:
+Управлять кластером Kubernetes можно использовать [kubectl][kubectl], клиент командной строки Kubernetes. Если вы используете Azure Cloud Shell, `kubectl` уже установлен. Чтобы установить `kubectl` локально, используйте [az aks install-cli][az-aks-install-cli] команды:
 
 ```azurecli
 az aks install-cli
 ```
 
-Чтобы настроить подключение `kubectl` к кластеру Kubernetes, выполните команду [az aks get-credentials][az-aks-get-credentials]. Эта команда скачивает учетные данные и настраивает интерфейс командной строки Kubernetes для их использования.
+Чтобы настроить `kubectl` на подключение к кластеру Kubernetes, выполните команду [az aks get-credentials][az-aks-get-credentials]. Эта команда скачивает учетные данные и настраивает интерфейс командной строки Kubernetes для их использования.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
@@ -184,9 +193,9 @@ aksnpwin987654                      Ready    agent   108s   v1.14.0
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
-Файл манифеста Kubernetes определяет требуемое состояние для кластера, включая образы контейнеров, которые нужно запустить. В этой статье манифест используется для создания всех объектов, необходимых для запуска примера приложения ASP.NET в контейнер Windows Server. Этот манифест содержит [развертывания Kubernetes] [ kubernetes-deployment] для примера приложения ASP.NET и внешним [службы Kubernetes] [ kubernetes-service] для доступ к приложению из Интернета.
+Файл манифеста Kubernetes определяет требуемое состояние для кластера, включая образы контейнеров, которые нужно запустить. В этой статье манифест используется для создания всех объектов, необходимых для запуска примера приложения ASP.NET в контейнер Windows Server. Этот манифест содержит [развертывания Kubernetes][kubernetes-deployment] for the ASP.NET sample application and an external [Kubernetes service][kubernetes-service] доступ к приложению из Интернета.
 
-Пример приложения ASP.NET предоставляется как часть [примеры .NET Framework] [ dotnet-samples] и выполняется в контейнере Windows Server. AKS требуется контейнеры Windows Server, должен быть основан на образы *Windows Server 2019* или более поздней версии. Также необходимо определить файл манифеста Kubernetes [селектор узла] [ node-selector] сообщить кластера AKS для запуска примера приложения ASP.NET pod в узле, который можно запускать контейнеры Windows Server.
+Пример приложения ASP.NET предоставляется как часть [примеры .NET Framework][dotnet-samples] и выполняется в контейнере Windows Server. AKS требуется контейнеры Windows Server, должен быть основан на образы *Windows Server 2019* или более поздней версии. Также необходимо определить файл манифеста Kubernetes [селектор узла][node-selector] сообщить кластера AKS для запуска примера приложения ASP.NET pod в узле, который можно запускать контейнеры Windows Server.
 
 Создайте файл `sample.yaml` и скопируйте в него следующее определение YAML. Если вы используете Azure Cloud Shell, этот файл можно создать с помощью `vi` или `nano`, как при работе в виртуальной или физической системе:
 
@@ -236,7 +245,7 @@ spec:
     app: sample
 ```
 
-Разверните приложение с помощью команды [kubectl apply][kubectl-apply] и укажите имя манифеста YAML:
+Развертывание приложений с помощью [kubectl применить][kubectl-apply] команду и укажите имя yaml-ФАЙЛ манифеста:
 
 ```azurecli-interactive
 kubectl apply -f sample.yaml
@@ -278,23 +287,23 @@ sample  LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m
 
 ## <a name="delete-cluster"></a>Удаление кластера
 
-Чтобы удалить ненужные кластер, группу ресурсов, службу контейнеров и все связанные с ней ресурсы, выполните команду [az group delete][az-group-delete].
+Если кластер больше не нужен, используйте [удаление группы az][az-group-delete] команду, чтобы удалить группу ресурсов, службу контейнеров и все связанные ресурсы.
 
 ```azurecli-interactive
 az group delete --name myResourceGroup --yes --no-wait
 ```
 
 > [!NOTE]
-> Когда вы удаляете кластер, субъект-служба Azure Active Directory, используемый в кластере AKS, не удаляется. Инструкции по удалению субъекта-службы см. в разделе [Дополнительные замечания][sp-delete].
+> Когда вы удаляете кластер, субъект-служба Azure Active Directory, используемый в кластере AKS, не удаляется. Действия по удалению субъекта-службы, см. в разделе [AKS службы субъекта рекомендации и удаления][sp-delete].
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье вы развернули кластер Kubernetes и развернуть пример приложения ASP.NET в контейнер Windows Server в нем. Чтобы выполнить доступ к панели мониторинга кластера Kubernetes, который вы создали, см. статью [Подключение веб-панели мониторинга Kubernetes в Службе Azure Kubernetes (AKS)][kubernetes-dashboard].
+В этой статье вы развернули кластер Kubernetes и развернуть пример приложения ASP.NET в контейнер Windows Server в нем. [Доступ к панели мониторинга Kubernetes][kubernetes-dashboard] для кластера, вы только что создали.
 
 Дополнительные сведения о AKS и инструкции по созданию полного кода для примера развертывания см. в руководстве по кластерам Kubernetes.
 
 > [!div class="nextstepaction"]
-> [Руководство по AKS][aks-tutorial]
+> [Руководство по AKS.][aks-tutorial]
 
 <!-- LINKS - external -->
 [kubectl]: https://kubernetes.io/docs/user-guide/kubectl/

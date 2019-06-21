@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 03/08/2019
 ms.topic: conceptual
-ms.openlocfilehash: 9accb41cdb4d780bf137d6872cca022226f902e6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b0c9699bccbb539c9617fac2f3296483139e7188
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61443135"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67203153"
 ---
 # <a name="configure-role-based-access-controls-in-the-remote-monitoring-solution-accelerator"></a>Настройка управления доступом на основе ролей в акселераторе решения для удаленного мониторинга
 
@@ -91,11 +91,11 @@ ms.locfileid: "61443135"
 
 1. Найдите **регистрацию приложения** для своего решения на портале Azure. В качестве имени приложения используется имя вашего решения для удаленного мониторинга. На следующем снимке экрана в качестве имен решения и приложения указано **contoso-rm4**.
 
-    ![Регистрация приложения](media/iot-accelerators-remote-monitoring-rbac/appregistration2.png)
+    ![Регистрация приложения](media/iot-accelerators-remote-monitoring-rbac/app-registration-2.png)
 
 1. Выберите свое приложение и щелкните **Манифест**. Отобразятся две имеющиеся [роли приложения](https://docs.microsoft.com/azure/architecture/multitenant-identity/app-roles), определенные для приложения:
 
-    ![Просмотр манифеста](media/iot-accelerators-remote-monitoring-rbac/viewmanifest.png)
+    ![Просмотр манифеста](media/iot-accelerators-remote-monitoring-rbac/view-manifest.png)
 
 1. Измените манифест, чтобы добавить роль **ManageDevices**, как показано в следующем фрагменте. Для идентификатора новой роли вам понадобится уникальная строка, такая как глобальный уникальный идентификатор (GUID). Вы можете создать новый GUID с помощью службы, например [Online GUID Generator](https://www.guidgenerator.com/):
 

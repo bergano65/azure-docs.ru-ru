@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 8/24/2018
 ms.author: pkc
-ms.openlocfilehash: a931de8be07d41cf4daab63aa7691973ee158452
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 667ee6a49238c1ecaabec631cb72804b0c4b2323
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60545067"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67304256"
 ---
 # <a name="azure-service-fabric-support-options"></a>Варианты поддержки Azure Service Fabric
 
@@ -43,7 +43,7 @@ ms.locfileid: "60545067"
 
 ## <a name="report-production-issues-or-request-paid-support-for-standalone-service-fabric-clusters"></a>Сообщение о проблемах рабочей среды или запрос платной поддержки для изолированных кластеров Service Fabric
 
-Чтобы сообщить о проблемах в кластере Service Fabric, развернутом в локальной среде или облаке стороннего производителя, откройте запрос в профессиональную службу поддержки на [портале службы поддержки Майкрософт](https://support.microsoft.com/oas/default.aspx?prid=16146).
+Чтобы сообщить о проблемах в кластере Service Fabric, развернутом в локальной среде или облаке стороннего производителя, откройте запрос в профессиональную службу поддержки на [портале службы поддержки Майкрософт](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview).
 
 См. также:
 
@@ -60,11 +60,11 @@ ms.locfileid: "60545067"
 
 ### <a name="stackoverflow-and-msdn-forums"></a>Сайт StackOverflow и форум MSDN
 
-[Тег Service Fabric на сайте StackOverflow][stackoverflow] и [форум MSDN по Service Fabric][msdn-forum] очень удобно использовать, чтобы задавать вопросы о принципах работы платформы и о том, как выполнять различные задачи с ее помощью.
+[Тег Service Fabric на сайте StackOverflow][stackoverflow] and the [Service Fabric forum on MSDN][msdn-forum] очень удобно использовать для отправки вопросов о принципах работы платформы и как это можно выполнить определенные задачи с ним.
 
 ### <a name="azure-feedback-forum"></a>Форум отзывов и предложений по Azure
 
-[Форум отзывов и предложений по Azure по Service Fabric][uservoice-forum] — лучший форум, на котором можно поделиться идеями о важных функциях для продукта, так как мы рассматриваем наиболее популярные запросы в процессе среднесрочного и долгосрочного планирования. Мы рекомендуем вам обращаться с предложениями в службу поддержки в этом сообществе.
+[Форуме обратной связи Azure для Service Fabric][uservoice-forum] — лучшее место для отправки больших идеи по улучшению продукта имеется для продукта, так как мы рассматриваем наиболее популярные запросы являются частью среднесрочного и долгосрочного планирования. Мы рекомендуем вам обращаться с предложениями в службу поддержки в этом сообществе.
 
 ## <a name="service-fabric-preview-versions---unsupported-for-production-use"></a>Предварительные версии Service Fabric не поддерживают работу в рабочей среде.
 

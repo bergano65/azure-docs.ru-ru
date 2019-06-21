@@ -1,6 +1,6 @@
 ---
-title: Подключение компьютеров Windows к Azure Log Analytics | Документация Майкрософт
-description: В этой статье объясняется, как с помощью Microsoft Monitoring Agent (MMA) подключить компьютеры, размещенные в облаках или в локальной среде, к Log Analytics.
+title: Подключение компьютеров Windows к Azure Monitor | Документация Майкрософт
+description: В этой статье описывается подключение компьютеров Windows, размещенных в других облаках и на локальной среды в Azure Monitor с помощью агента Log Analytics для Windows.
 services: log-analytics
 documentationcenter: ''
 author: mgoedtel
@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 04/29/2019
+ms.date: 06/14/2019
 ms.author: magoedte
-ms.openlocfilehash: 2d57e619ec17e183bc8c9bb155f3e111f43b85f1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 7f562959ac6022539ccf7137f352a2e9507758dc
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65952485"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67146351"
 ---
 # <a name="connect-windows-computers-to-azure-monitor"></a>Подключение компьютеров Windows к Azure Monitor
 
@@ -110,14 +110,16 @@ ms.locfileid: "65952485"
 2. Чтобы автоматически установить агент и настроить его для отправки отчетов в рабочую область коммерческого облака Azure, из папки, в которую вы извлекли файлы установки, выполните следующую команду: 
    
      ```dos
-    setup.exe /qn NOAPM=1 ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_AZURE_CLOUD_TYPE=0 OPINSIGHTS_WORKSPACE_ID=<your workspace ID> OPINSIGHTS_WORKSPACE_KEY=<your workspace key> AcceptEndUserLicenseAgreement=1
+    setup.exe /qn NOAPM=1 ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_AZURE_CLOUD_TYPE=0 OPINSIGHTS_WORKSPACE_ID="<your workspace ID>" OPINSIGHTS_WORKSPACE_KEY="<your workspace key>" AcceptEndUserLicenseAgreement=1
     ```
 
    Чтобы настроить агент для отправки отчетов в облако Azure для государственных организаций США, выполните следующую команду: 
 
      ```dos
-    setup.exe /qn NOAPM=1 ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_AZURE_CLOUD_TYPE=1 OPINSIGHTS_WORKSPACE_ID=<your workspace ID> OPINSIGHTS_WORKSPACE_KEY=<your workspace key> AcceptEndUserLicenseAgreement=1
+    setup.exe /qn NOAPM=1 ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_AZURE_CLOUD_TYPE=1 OPINSIGHTS_WORKSPACE_ID="<your workspace ID>" OPINSIGHTS_WORKSPACE_KEY="<your workspace key>" AcceptEndUserLicenseAgreement=1
     ```
+    >[!NOTE]
+    >Строковые значения для параметров *OPINSIGHTS_WORKSPACE_ID* и *OPINSIGHTS_WORKSPACE_KEY* должны заключаться в двойные кавычки, чтобы указать установщика Windows для interprit допустимыми вариантами для пакета. 
 
 ## <a name="install-the-agent-using-dsc-in-azure-automation"></a>Установка агента с помощью DSC в службе автоматизации Azure
 
@@ -202,4 +204,6 @@ ms.locfileid: "65952485"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об управлении агентом во время его жизненного цикла развертывания на ваших компьютерах см. в статье [Обслуживание агента Log Analytics для Windows и Linux и управление им](agent-manage.md).  
+- Дополнительные сведения об управлении агентом во время его жизненного цикла развертывания на ваших компьютерах см. в статье [Обслуживание агента Log Analytics для Windows и Linux и управление им](agent-manage.md).  
+
+- Просмотрите [Устранение неполадок агента Windows](agent-windows-troubleshoot.md) при возникновении проблем во время установки или настройки агента.

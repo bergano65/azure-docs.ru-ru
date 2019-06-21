@@ -1,10 +1,15 @@
 ---
+author: rayne-wiselman
+ms.service: site-recovery
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: raynew
 ms.openlocfilehash: ffc9b09c72ef1bf5180a0d626908d09b6fdd41ca
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62122799"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67203725"
 ---
 ### <a name="prepare-for-a-push-installation-on-a-windows-computer"></a>Подготовка к принудительной установке на компьютер Windows
 
@@ -13,23 +18,21 @@ ms.locfileid: "62122799"
 
    > [!NOTE]
    > Если учетная запись домена не используется, на локальном компьютере нужно отключить управление удаленным доступом пользователей. Чтобы отключить контроль доступа удаленных пользователей, в разделе реестра HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System, добавьте параметр DWORD: **LocalAccountTokenFilterPolicy**. Присвойте ему значение **1**. Для этой задачи выполните в командной строке следующую команду:  
-   > `REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1`
+   `REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1`
    >
    >
-1. В брандмауэре Windows на компьютере, который нужно защитить, выберите **Разрешить запуск программы или компонента через брандмауэр Windows**. Активируйте **общий доступ к файлам и принтерам** и **инструментарий управления Windows (WMI)**. Для компьютеров, принадлежащих домену, можно настроить политику брандмауэра с помощью объекта групповой политики.
+1. В брандмауэре Windows на компьютере, который нужно защитить, выберите **Разрешить запуск программы или компонента через брандмауэр Windows**. Активируйте **общий доступ к файлам и принтерам** и **инструментарий управления Windows (WMI)** . Для компьютеров, принадлежащих домену, можно настроить политику брандмауэра с помощью объекта групповой политики.
 
-   ![Настройки брандмауэра](./media/site-recovery-prepare-push-install-mob-svc-win/mobility1.png)
+   ![Параметры брандмауэра](./media/site-recovery-prepare-push-install-mob-svc-win/mobility1.png)
 
 1. Добавьте учетную запись, созданную в CSPSConfigtool. Выполните следующие действия.
 
     a. Войдите на сервер конфигурации.
 
-    2. Запустите файл **cspsconfigtool.exe**. Доступ к нему можно получить, щелкнув ярлык на рабочем столе, или перейдя в папку %ProgramData%\home\svsystems\bin.
+    2\. Запустите файл **cspsconfigtool.exe**. Доступ к нему можно получить, щелкнув ярлык на рабочем столе, или перейдя в папку %ProgramData%\home\svsystems\bin.
 
     c. На вкладке **Управление учетными записями** щелкните **Добавить учетную запись**.
 
     d. Добавьте созданную учетную запись.
 
     д. Введите учетные данные, используемые при включении репликации для компьютера.
-<!--Update_Description: wording update-->
-<!--ms.date: 09/17/2018-->

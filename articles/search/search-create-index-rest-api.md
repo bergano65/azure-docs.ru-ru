@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 7121bfceb177a7dc06d1c2a65b7c3edfca1d8c31
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 64252f42f5b3690e8ba6d929e27f7f41b649922e
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67063654"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67302293"
 ---
 # <a name="quickstart-create-an-azure-search-index-using-powershell"></a>Краткое руководство. Создание индекса службы поиска Azure с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -26,7 +26,7 @@ ms.locfileid: "67063654"
 > * [Портал](search-create-index-portal.md)
 > 
 
-В этой статье описывается процесс создания, загрузки и запроса поиска Azure [индекс](search-what-is-an-index.md) с помощью PowerShell и [интерфейсы API REST службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice/). Определение индекса и для поиска содержимого предоставляются в тексте запроса как содержимое правильного формата JSON.
+В этой статье описывается процесс создания, загрузки и запросов в индекс поиска Azure с помощью PowerShell и [API REST службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice/). В этой статье объясняется, как для выполнения команд PowerShell interatively. Кроме того можно выполнить по завершении сценария. Чтобы загрузить копию, перейдите к [azure-search-powershell-samples](https://github.com/Azure-Samples/azure-search-powershell-samples/tree/master/Quickstart) репозитория.
 
 Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) перед началом, а затем [зарегистрируйтесь в службе "Поиск Azure"](search-create-service-portal.md).
 
@@ -374,23 +374,23 @@ ms.locfileid: "67063654"
 
 ```powershell
 # Query example 1
-# Search the entire index for the terms 'hotels' and 'wifi'
-# Return only the HotelName and HotelId fields
-$url = 'https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quickstart/docs?api-version=2019-05-06&search=hotels wifi&$count=true&$select=HotelName,HotelId'
+# Search the entire index for the terms 'restaurant' and 'wifi'
+# Return only the HotelName, Description, and Tags fields
+$url = 'https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quickstart/docs?api-version=2019-05-06&search=restaurant wifi&$count=true&$select=HotelName,Description,Tags'
 
 # Query example 2 
 # Apply a filter to the index to find hotels rated 4 or highter
-# Returns the HotelId and Description. Two documents match.
-$url = 'https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quickstart/docs?api-version=2019-05-06&search=*&$filter=Rating gt 4&$select=HotelId,HotelName,Description,Rating'
+# Returns the HotelName and Rating. Two documents match.
+$url = 'https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quickstart/docs?api-version=2019-05-06&search=*&$filter=Rating gt 4&$select=HotelName,Rating'
 
 # Query example 3
-# Take the top two results, and show only HotelId,HotelName,Description in the results
-$url = 'https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quickstart/docs?api-version=2019-05-06&search=boutique&$top=2&$select=HotelId,HotelName,Description,Category'
+# Take the top two results, and show only HotelName and Category in the results
+$url = 'https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quickstart/docs?api-version=2019-05-06&search=boutique&$top=2&$select=HotelName,Category'
 
 # Query example 4
-# Sort by a specific field (`lastRenovationDate`) in descending order
+# Sort by a specific field (Address/City) in ascending order
 
-$url = 'https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quickstart/docs?api-version=2019-05-06&search=pool&$orderby=Address/City&$select=HotelId, HotelName, Address/City, Address/StateProvince, Tags'
+$url = 'https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quickstart/docs?api-version=2019-05-06&search=pool&$orderby=Address/City asc&$select=HotelName, Address/City, Tags, Rating'
 ```
 ## <a name="clean-up"></a>Очистка 
 
@@ -406,21 +406,7 @@ Invoke-RestMethod -Uri $url -Headers $headers -Method Delete
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Попробуйте добавить французский описания в индекс. В следующем примере включает в себя строки на французском языке и показаны дополнительные действия. Используйте mergeOrUpload для создания или добавления существующих полей. Следующие строки должны быть в кодировке UTF-8.
+В этом кратком руководстве вы использовали для пошагового выполнения базовый рабочий процесс для создания и доступа к содержимому в службе поиска Azure PowerShell. С основными понятиями, помните мы рекомендуем перейти к более сложные сценарии, такие как индексирование из источников данных Azure;
 
-```json
-{
-    "value": [
-        {
-            "@search.action": "mergeOrUpload",
-            "hotelId": "1",
-            "description_fr": "Meilleur hôtel en ville"
-        },
-        {
-            "@search.action": "merge",
-            "hotelId": "2",
-            "description_fr": "Hôtel le moins cher en ville"
-        }
-    ]
-}
-```
+> [!div class="nextstepaction"]
+> [Руководство по использованию REST: Индексирование и поиск частично структурированных данных (больших двоичных объектов JSON) в службе поиска Azure](search-semi-structured-data.md)

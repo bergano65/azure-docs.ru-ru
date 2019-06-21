@@ -9,11 +9,11 @@ ms.date: 06/22/2018
 ms.author: twooley
 ms.custom: include file
 ms.openlocfilehash: f5c395bd03fab2613a28aa35c9975ec71ffa34eb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66161367"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185750"
 ---
 > [!NOTE]
 > Платформа Azure Data Lake Storage 2-го поколения теперь общедоступна. Мы рекомендуем приступить к ее использованию уже сегодня. См. дополнительные сведения на [странице продукта](https://aka.ms/adlsgen2-product).

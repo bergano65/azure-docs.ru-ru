@@ -9,15 +9,15 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 05/10/2019
+ms.date: 06/08/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 25b3209bed98ea217db9e414caa6f08cee6d8c89
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b0a71e8b3ffff822521a23aafd6764bcce9bd4d4
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65761886"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67303935"
 ---
 # <a name="encoding-with-media-services"></a>Кодирование с помощью Служб мультимедиа
 
@@ -25,7 +25,7 @@ ms.locfileid: "65761886"
 
 Видео обычно доставляются устройств и приложений с [последовательную загрузку](https://en.wikipedia.org/wiki/Progressive_download) или с помощью [потоковой передачи с переменной скоростью](https://en.wikipedia.org/wiki/Adaptive_bitrate_streaming). 
 
-* Для доставки по последовательной загрузки, можно использовать службы мультимедиа Azure для преобразования цифрового файла мультимедиа (расширения) в [MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14) файл, который содержит видео, которая была закодирована с [H.264](https://en.wikipedia.org/wiki/H.264/MPEG-4_AVC) кодек, и аудио, которая была закодирована с [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding) кодека. Этот файл MP4 записывается ресурс в вашей учетной записи хранения. Вы можете использовать API службы хранилища Azure или пакетов SDK (например, [REST API службы хранилища](../../storage/common/storage-rest-api-auth.md), [пакета SDK для JAVA](../../storage/blobs/storage-quickstart-blobs-java-v10.md), или [пакета SDK для .NET](../../storage/blobs/storage-quickstart-blobs-dotnet.md)) для загрузки файла напрямую. Если вы создали выходные данные ресурс с именем конкретного контейнера в хранилище, использовать это расположение. В противном случае можно использовать службы мультимедиа для [список URL-адреса контейнера активов](https://docs.microsoft.com/rest/api/media/assets/listcontainersas). 
+* Для доставки по последовательной загрузки, можно использовать службы мультимедиа Azure для преобразования файлов мультимедиа (расширения) в [MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14) файл, который содержит видео, которая была закодирована с [H.264](https://en.wikipedia.org/wiki/H.264/MPEG-4_AVC) кодек, и аудио, которая была закодирована с [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding) кодека. Этот файл MP4 записывается ресурс в вашей учетной записи хранения. Вы можете использовать API службы хранилища Azure или пакетов SDK (например, [REST API службы хранилища](../../storage/common/storage-rest-api-auth.md), [пакета SDK для JAVA](../../storage/blobs/storage-quickstart-blobs-java-v10.md), или [пакета SDK для .NET](../../storage/blobs/storage-quickstart-blobs-dotnet.md)) для загрузки файла напрямую. Если вы создали выходные данные ресурс с именем конкретного контейнера в хранилище, использовать это расположение. В противном случае можно использовать службы мультимедиа для [список URL-адреса контейнера активов](https://docs.microsoft.com/rest/api/media/assets/listcontainersas). 
 * Для подготовки содержимого для доставки путем потоковой передачи с переменной скоростью, мезонинный файл должен быть закодирован в нескольких скоростей (от большего к меньшему). Чтобы нормальные перехода качества, как скорость уменьшается, так это разрешение видео. Это приводит к так называемые кодирования лестница — таблицу разрешений и частот дискретизации (см. в разделе [автоматически генерируемым адаптивной скоростей](autogen-bitrate-ladder.md)). Службы мультимедиа позволяют кодировать мезонинные файлы в нескольких скоростей — таким образом, вы получите набор MP4-файлов и связанных потоковой передачи файлов конфигурации, запись ресурс в вашей учетной записи хранения. Затем можно использовать [динамической упаковки](dynamic-packaging-overview.md) возможность в службах мультимедиа для доставки видео с помощью протоколов, таких как streaming [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) и [HLS](https://en.wikipedia.org/wiki/HTTP_Live_Streaming). Это требует создания [указатель потоковой передачи](streaming-locators-concept.md) и построения потоковой передачи URL-адреса, соответствующие поддерживаемые протоколы, которые затем может быть передан для устройств и приложений на основе их возможностей.
 
 В примере ниже показан рабочий процесс для кодирования по запросу с помощью динамической упаковки.
@@ -47,11 +47,46 @@ ms.locfileid: "65761886"
 > [!NOTE]
 > Не следует изменять или удалять MPI-файл, а также ваша служба не должна зависеть от существования (или отсутствия) такого файла.
 
+### <a name="creating-job-input-from-an-https-url"></a>Создание входных данных задания из URL-адрес HTTPS
+
+При отправке задания для обработки видео, вам необходимо сообщить служб мультимедиа, где можно найти входного видео. Один из вариантов является указать URL-адрес HTTPS в качестве входных данных задания. В настоящее время версии 3 службы мультимедиа не поддерживает Поблочное кодирование по URL-адреса HTTPS. 
+
+#### <a name="examples"></a>Примеры
+
+* [Кодирование из URL-адрес HTTPS с помощью .NET](stream-files-dotnet-quickstart.md)
+* [Кодирование из URL-адрес HTTPS с помощью REST](stream-files-tutorial-with-rest.md)
+* [Кодирование из URL-адрес HTTPS с помощью интерфейса командной строки](stream-files-cli-quickstart.md)
+* [Кодирование из URL-адрес HTTPS с помощью Node.js](stream-files-nodejs-quickstart.md)
+
+### <a name="creating-job-input-from-a-local-file"></a>Создание входных данных задания из локального файла
+
+Это видео может храниться как ресурс Служб мультимедиа. В этом случае необходимо создать входной ресурс на основе файла, который хранится локально в хранилище BLOB-объектов Azure. 
+
+#### <a name="examples"></a>Примеры
+
+[Кодирование локальный файл, используя встроенные стили](job-input-from-local-file-how-to.md)
+
+### <a name="creating-job-input-with-subclipping"></a>Создание входных данных задания с помощью подклипов
+
+При кодировании видео, можно указать также обрезать или файл исходной коллекции и выдает результат, имеющий только нужные части входного видео. Эта функция работает с любым [преобразования](https://docs.microsoft.com/rest/api/media/transforms) , построенный с помощью [BuiltInStandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) предустановки, или [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset) предустановок. 
+
+Можно указать для создания [задания](https://docs.microsoft.com/rest/api/media/jobs/create) с одной картинкой видео по требованию или динамического архива (записанное событие). Входные данные задания может быть актива или URL-адрес HTTPS.
+
+> [!TIP]
+> Если нужно передавать потоком sublip видео без reencoding видео, рассмотрите возможность использования [предварительная фильтрация манифестов с динамическим упаковщиком](filters-dynamic-manifest-overview.md).
+
+#### <a name="examples"></a>Примеры
+
+См. Примеры:
+
+* [Субклип видео с помощью .NET](subclip-video-dotnet-howto.md)
+* [Субклип видео с помощью REST](subclip-video-rest-howto.md)
+
 ## <a name="built-in-presets"></a>Встроенные предустановки
 
 В настоящее время Службы мультимедиа поддерживают следующие встроенные предустановки кодирования:  
 
-### <a name="builtinstandardencoderpreset-preset"></a>Предустановка BuiltInStandardEncoderPreset
+### <a name="builtinstandardencoderpreset"></a>BuiltInStandardEncoderPreset
 
 [BuiltInStandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) задает встроенную предустановку для кодирования входящего видео с помощью кодировщика категории "Стандартный". 
 
@@ -71,7 +106,7 @@ ms.locfileid: "65761886"
 
 Чтобы увидеть, как используются стили, просмотрите [отправки, кодирование и потоковая передача файлов](stream-files-tutorial-with-api.md).
 
-### <a name="standardencoderpreset-preset"></a>Предустановка StandardEncoderPreset
+### <a name="standardencoderpreset"></a>StandardEncoderPreset
 
 [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset) описывает параметры, используемые при кодировании входящего видео с помощью кодировщика категории "Стандартный". Эту предустановку следует использовать при настройке предустановок преобразования. 
 
@@ -82,9 +117,11 @@ ms.locfileid: "65761886"
 - Все значения высоты и ширины в содержимом AVC, должны быть кратна 4.
 - В Azure Media Services v3 все кодировки скоростей, в битах в секунду. Это отличается от предустановки с наши API версии 2, который используется в качестве единицы килобит в секунду. Например если скорости в версии 2 было указано как 128 (килобит в секунду), в версии 3 он устанавливается для 128000 (бит/с).
 
-#### <a name="examples"></a>Примеры
+### <a name="customizing-presets"></a>Настройка предустановок
 
 Службы мультимедиа полностью поддерживают настройку всех значений в предустановках в соответствии с конкретными требованиями к кодированию. Примеры, показывающие, как настроить предустановки кодировщика см. в разделе:
+
+#### <a name="examples"></a>Примеры
 
 - [Настройка предустановок с помощью .NET](customize-encoder-presets-how-to.md)
 - [Настройка предустановок с интерфейсом командной строки](custom-preset-cli-howto.md)
@@ -104,7 +141,7 @@ ms.locfileid: "65761886"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+* [Руководство. Отправка, кодирование и потоковая передача видео с помощью API](stream-files-tutorial-with-api.md)
 * [Кодирование из URL-адрес HTTPS, используя встроенные стили](job-input-from-http-how-to.md)
 * [Кодирование локальный файл, используя встроенные стили](job-input-from-local-file-how-to.md)
 * [Создать пользовательскую предустановку для конкретных требований сценария или устройства](customize-encoder-presets-how-to.md)
-* [Руководство. Отправка, кодирование и потоковая передача видео с помощью API](stream-files-tutorial-with-api.md)

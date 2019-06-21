@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 87e35573eea836fc8a88c7515409c070ec63aa3b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6871c75f0af662762ffac6e7346d4999e55eb937
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65024894"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67303441"
 ---
 # <a name="indexers-in-azure-search"></a>Индексаторы в службе поиска Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "65024894"
 
 Индексатор можно использовать как отдельное средство для приема данных. Кроме того, можно использовать комбинацию методов, предусматривающих использование индексатора для загрузки только некоторых полей в индексе.
 
-Вы можете запускать индексаторы по требованию или при регулярном обновлении данных, выполняемом каждые пятнадцать минут. Более частые обновления требуют использования модели отправки, выполняющей одновременное обновление данных в службе поиска Azure и источнике внешних данных.
+Можно запускать индексаторы по требованию или повторяющиеся данные обновления по расписанию, выполняемом каждые пять минут. Более частые обновления требуют использования модели отправки, выполняющей одновременное обновление данных в службе поиска Azure и источнике внешних данных.
 
 ## <a name="approaches-for-creating-and-managing-indexers"></a>Способы создания индексаторов и управления ими
 
@@ -130,7 +130,7 @@ ms.locfileid: "65024894"
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы ознакомились с основной идеей, можно переходить к изучению требований и задач, связанных с каждым типом источника данных.
 
-* [база данных Azure SQL (или SQL Server на виртуальных машинах Azure);](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
+* [База данных Azure SQL (или SQL Server на виртуальных машинах Azure);](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 * [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 * [Хранилище BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
 * [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)

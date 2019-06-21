@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/10/2019
 ms.author: ejarvi
-ms.openlocfilehash: 4b5b1f24fb22ff0922c362bd9911ad5c42236ee6
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 05d20e75cf8f0c84936ff4e5dfa42d60678f6ffc
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67051719"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295337"
 ---
 # <a name="azure-disk-encryption-for-linux-microsoftazuresecurityazurediskencryptionforlinux"></a>Шифрование дисков Azure для Linux (Microsoft.Azure.Security.AzureDiskEncryptionForLinux)
 
@@ -34,7 +34,7 @@ ms.locfileid: "67051719"
 
 ### <a name="operating-system"></a>Операционная система
 
-Шифрование дисков Azure сейчас поддерживается для некоторых дистрибутивов и версий.  Список поддерживаемых дистрибутивов Linux см. в разделе с [вопросами и ответами о шифровании дисков Azure](../../security/azure-security-disk-encryption-faq.md#bkmk_LinuxOSSupport).
+Шифрование дисков Azure сейчас поддерживается для некоторых дистрибутивов и версий.  См. в разделе [шифрования дисков Azure поддерживаемые операционные системы: Linux](../../security/azure-security-disk-encryption-prerequisites.md#linux) список дистрибутивов Linux, которые поддерживаются.
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
@@ -154,7 +154,7 @@ ms.locfileid: "67051719"
 | (необязательно) KeyVaultURL | url | string |
 | Парольная фраза | password | string | 
 | SequenceVersion | uniqueidentifier | string |
-| VolumeType | ОС, данные, все | string |
+| VolumeType | OS, Data, All | string |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 

@@ -11,13 +11,13 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 manager: craigg
-ms.date: 03/12/2019
-ms.openlocfilehash: 98b316f8a9c1c8ceba91870af4ff67b1aa854a9b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/20/2019
+ms.openlocfilehash: 0b92fb9c9bf022adce4cc0dd3e58ce8e476ed5b7
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65785335"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67303507"
 ---
 # <a name="quickstart-import-a-bacpac-file-to-a-database-in-azure-sql-database"></a>Краткое руководство. Импорт BACPAC-файла в Базу данных SQL Azure
 
@@ -35,6 +35,9 @@ ms.locfileid: "65785335"
 > [!NOTE]
 > Сейчас [управляемый экземпляр](sql-database-managed-instance.md) не поддерживает миграцию базы данных в базу данных экземпляра из файла BACPAC с помощью портала Azure. Чтобы импортировать в управляемый экземпляр, используйте SQL Server Management Studio или SQLPackage.
 
+> [!NOTE]
+> Компьютеры, обработку запросов импорта и экспорта, отправить с помощью портала или Powershell требуется для хранения bacpac-файл, а также временные файлы, создаваемые Data-Tier Application Framework (DacFX). Дисковое пространство, необходимое значительно меняется в зависимости от баз данных SQL с одного размера и может занять до 3 раза размера базы данных. Машины, выполнение запроса импорта и экспорта только иметь 450 ГБ дискового пространства. Как следствие некоторые запросы могут завершиться ошибкой «Не достаточно места на диске». В этом случае решение — запустите sqlpackage.exe на компьютере с достаточным объемом дискового пространства. При импорте или экспорте базы данных, размер которых превышает 150 ГБ, используйте [SqlPackage](#import-from-a-bacpac-file-using-sqlpackage) Чтобы избежать этой проблемы.
+ 
 1. Чтобы импортировать из файла BACPAC в новую отдельную базу данных с помощью портала Azure, откройте требуемую страницу сервера базы данных, а затем выберите **Импорт базы данных** на панели инструментов.  
 
    ![База данных import1](./media/sql-database-import/import1.png)
@@ -81,6 +84,8 @@ SqlPackage.exe /a:Import /sf:testExport.bacpac /tdn:NewDacFX /tsn:apptestserver.
 > [!NOTE]
 > [Управляемый экземпляр](sql-database-managed-instance.md) не поддерживается миграция базы данных в базе данных экземпляра из bacpac-файла с помощью Azure PowerShell. Чтобы импортировать в управляемый экземпляр, используйте SQL Server Management Studio или SQLPackage.
 
+> [!NOTE]
+> Компьютеры, обработку запросов импорта и экспорта, отправить с помощью портала или Powershell требуется для хранения bacpac-файл, а также временные файлы, создаваемые Data-Tier Application Framework (DacFX). Дисковое пространство, необходимое значительно меняется в зависимости от баз данных SQL с одного размера и может занять до 3 раза размера базы данных. Машины, выполнение запроса импорта и экспорта только иметь 450 ГБ дискового пространства. Как следствие некоторые запросы могут завершиться ошибкой «Не достаточно места на диске». В этом случае решение — запустите sqlpackage.exe на компьютере с достаточным объемом дискового пространства. При импорте или экспорте базы данных, размер которых превышает 150 ГБ, используйте [SqlPackage](#import-from-a-bacpac-file-using-sqlpackage) Чтобы избежать этой проблемы.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]

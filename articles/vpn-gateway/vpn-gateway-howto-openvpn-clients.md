@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 5/21/2019
+ms.date: 06/14/2019
 ms.author: cherylmc
-ms.openlocfilehash: fdfabf328ddfa6b5e4b578be5a1b329cb3219a18
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: a3806a7f64f30e5073182f96f552b8584cf1ce0c
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65989107"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67147252"
 ---
 # <a name="configure-openvpn-clients-for-azure-vpn-gateway"></a>Настройка клиентов OpenVPN для VPN-шлюза Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "65989107"
 
 ## <a name="windows"></a>Клиенты Windows
 
-1. Загрузите и установите официальный клиент OpenVPN с [веб-сайта OpenVPN](https://openvpn.net/index.php/open-source/downloads.html).
+1. Загрузить и установить клиент OpenVPN (версия 2.4 или более поздней версии) с официальной [OpenVPN веб-сайт](https://openvpn.net/index.php/open-source/downloads.html).
 2. Загрузите профиль VPN для шлюза. Это можно сделать со вкладки конфигурации "точка — сеть" на портале Azure или с "New-AzVpnClientConfiguration" в PowerShell.
 3. Распакуйте профиль. Затем откройте файл конфигурации *vpnconfig.ovpn* из папки OpenVPN в Блокноте.
 4. [Экспортируйте](vpn-gateway-certificates-point-to-site.md#clientexport) сертификат клиента P2S, который вы создали и отправили в конфигурацию P2S на шлюзе.
@@ -61,7 +61,7 @@ ms.locfileid: "65989107"
 
 ## <a name="mac"></a>Клиенты Mac
 
-1. Скачайте и установите клиент OpenVPN, например [TunnelBlik](https://tunnelblick.net/downloads.html). 
+1. Скачайте и установите клиент OpenVPN, такие как [TunnelBlick](https://tunnelblick.net/downloads.html). 
 2. Загрузите профиль VPN для шлюза. Это можно сделать со вкладки конфигурации "точка — сеть" на портале Azure или с помощью "New-AzVpnClientConfiguration" в PowerShell.
 3. Распакуйте профиль. Откройте файл конфигурации vpnconfig.ovpn из папки OpenVPN в Блокноте.
 4. Заполните раздел сертификата клиента подключения "точка — сеть" открытым ключом сертификата клиента P2S в формате base64. В сертификате с форматированием PEM вы можете просто открыть файл CER и скопировать ключ в формате base64, находящийся между заголовками сертификата. Дополнительные сведения о том, как экспортировать сертификат для получения закодированного открытого ключа, см. в разделе [Экспорт открытого ключа (CER)](vpn-gateway-certificates-point-to-site.md#cer).

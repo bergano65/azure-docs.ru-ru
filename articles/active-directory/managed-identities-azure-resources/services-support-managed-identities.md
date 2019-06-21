@@ -4,18 +4,18 @@ description: Список служб, которые поддерживают у
 services: active-directory
 author: MarkusVi
 ms.author: priyamo
-ms.date: 05/09/2019
+ms.date: 06/19/2019
 ms.topic: conceptual
 ms.service: active-directory
 ms.subservice: msi
 manager: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0809423472bde0240145d43f4c28d9594b517928
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 22c67f1dad55d5d8710a997394e247793943cd21
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65518690"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67293502"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -147,6 +147,17 @@ ms.locfileid: "65518690"
 - [Интерфейс командной строки Azure](~/articles/container-instances/container-instances-managed-identity.md)
 - [Шаблон Azure Resource Manager](~/articles/container-instances/container-instances-managed-identity.md#enable-managed-identity-using-resource-manager-template)
 - [YAML](~/articles/container-instances/container-instances-managed-identity.md#enable-managed-identity-using-yaml-file)
+
+### <a name="azure-container-registry-tasks"></a>Задачи Реестра контейнеров Azure
+
+Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure Government | Azure для Германии | Azure China 21Vianet |
+| --- | --- | --- | --- | --- |
+| Назначено системой | Доступна | Недоступно | Недоступно | Недоступно |
+| Назначено пользователем | Предварительный просмотр | Недоступно | Недоступно | Недоступно |
+
+См. следующий список, чтобы настроить управляемое удостоверение для задач реестра контейнеров Azure (в регионах при наличии):
+
+- [Интерфейс командной строки Azure](~/articles/container-registry/container-registry-tasks-authentication-managed-identity.md)
 
 ## <a name="azure-services-that-support-azure-ad-authentication"></a>Службы Azure, поддерживающие аутентификацию Azure AD
 

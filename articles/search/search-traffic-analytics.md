@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 01/25/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: c30c8bae3e76778a31cdd0695acde52b5b1c6b02
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b15ae30151b22509a78b9a39d258991363a05e5b
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60749620"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295428"
 ---
 # <a name="implement-search-traffic-analytics-in-azure-search"></a>Реализация аналитики поискового трафика в Поиске Azure
 Аналитика поискового трафика — это модель реализации цикла обратной связи для службы поиска. Эта модель описывает необходимые данные и метод их сбора с помощью Application Insights, лидирующего решения для мониторинга служб на нескольких платформах.
@@ -79,7 +79,7 @@ ms.locfileid: "60749620"
 
     // This sample uses the Azure Search .NET SDK https://www.nuget.org/packages/Microsoft.Azure.Search
 
-    var client = new SearchIndexClient(<ServiceName>, <IndexName>, new SearchCredentials(<QueryKey>)
+    var client = new SearchIndexClient(<SearchServiceName>, <IndexName>, new SearchCredentials(<QueryKey>)
     var headers = new Dictionary<string, List<string>>() { { "x-ms-azs-return-searchid", new List<string>() { "true" } } };
     var response = await client.Documents.SearchWithHttpMessagesAsync(searchText: searchText, searchParameters: parameters, customHeaders: headers);
     IEnumerable<string> headerValues;
@@ -98,7 +98,7 @@ ms.locfileid: "60749620"
 
 Каждый отправляемый поисковой запрос необходимо регистрировать в качестве события поиска, используя следующую схему пользовательского события Application Insights:
 
-**ServiceName**: (строка) имя службы поиска. **SearchId**: (GUID) уникальный идентификатор поискового запроса (отображается в ответе поиска). **IndexName**: (строка) индекс службы поиска для запроса. **QueryTerms**: (строка) условия поиска, введенные пользователем. **ResultCount**: (целое число) количество возвращенных документов (отображается в ответе поиска). **ScoringProfile**: (строка) имя используемого профиля оценки (при наличии).
+**SearchServiceName**: имя службы поиска (string) **SearchId**: (guid) уникальный идентификатор поискового запроса (поставляется в ответе поиска) **IndexName**: (строка) индекс службы поиска для запросить **QueryTerms**: (строка) условия поиска, введенные пользователем **ResultCount**: (int) количество документов, которые были возвращены (поставляется в ответе поиска)  **ScoringProfile**: (строка) имя профиля оценки используется, если таковые имеются
 
 > [!NOTE]
 > Получите число запросов, создаваемых пользователем, добавив $count=true в поисковый запрос. Дополнительные сведения см. [здесь](https://docs.microsoft.com/rest/api/searchservice/search-documents#request).

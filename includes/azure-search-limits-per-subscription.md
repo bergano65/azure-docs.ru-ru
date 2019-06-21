@@ -9,11 +9,11 @@ ms.date: 05/06/2019
 ms.author: heidist
 ms.custom: include file
 ms.openlocfilehash: 1e147e8bd9260cd1ece60b70641968a229995ec1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66160519"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185666"
 ---
 Можно создать несколько служб в рамках подписки. Каждый из них можно подготовить на определенном уровне. Вы ограничены только количество служб на каждом уровне. Например, в рамках одной подписки можно создать до двенадцати служб на уровне "Базовый" и еще двенадцать служб на уровне S1. Дополнительные сведения об уровнях см. в разделе [Выбор SKU или уровня для службы поиска Azure](../articles/search/search-sku-tier.md).
 

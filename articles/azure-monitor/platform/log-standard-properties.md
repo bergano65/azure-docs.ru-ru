@@ -12,20 +12,20 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: bwren
-ms.openlocfilehash: 4d7c1d9b59e802343f6d8fe258e8e4ac961bb2df
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 50804e1f6ab4f352239d3f405e5b41e4e0c58d14
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67061006"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67292818"
 ---
-# <a name="standard-properties-in-azure-monitor-log-records"></a>Стандартные свойства в записях журнала Azure Monitor
-Данные журнала Azure Monitor [хранятся в виде набора записей](../log-query/log-query-overview.md), каждая из которых содержит определенный тип данных с уникальным набором свойств. Большинство типов данных имеют стандартные свойства, которые являются общими для нескольких типов. В этой статье описаны эти свойства и приведены примеры по их использованию в запросах.
+# <a name="standard-properties-in-azure-monitor-logs"></a>Стандартные свойства в журналов Azure Monitor
+Данные в журналов Azure Monitor [сохраняется в виде набора записей в рабочей области Log Analytics или Application Insights приложения](../log-query/logs-structure.md), каждый с типом данных, который имеет уникальный набор свойств. Большинство типов данных имеют стандартные свойства, которые являются общими для нескольких типов. В этой статье описаны эти свойства и приведены примеры по их использованию в запросах.
 
 Некоторые из этих свойств еще находятся в процессе реализации, поэтому они могут отображаться только для отдельных типов данных.
 
-## <a name="timegenerated"></a>TimeGenerated
-Свойство **TimeGenerated** содержит дату и время создания записи. Это общее свойство позволяет фильтровать и суммировать данные по времени. Если диапазон времени выбран для представления или на панели мониторинга на портале Azure, результаты будут отфильтрованы с помощью TimeGenerated.
+## <a name="timegenerated-and-timestamp"></a>TimeGenerated и отметку времени
+**TimeGenerated** (рабочей области Log Analytics) и **timestamp** свойства (приложение Application Insights) содержат дату и время создания записи. Это общее свойство позволяет фильтровать и суммировать данные по времени. Если выбран диапазон времени для представления или панели мониторинга на портале Azure, в нем TimeGenerated или метки времени для фильтрации результатов.
 
 ### <a name="examples"></a>Примеры
 
@@ -39,16 +39,25 @@ Event
 | sort by TimeGenerated asc 
 ```
 
-## <a name="type"></a>type
-Свойство **Type** содержит имя таблицы, из которой извлечена запись. Это имя также является типом записи. Это свойство можно использовать в запросах, где объединяются записи из нескольких таблиц, например использующих оператор `search`, чтобы различать записи разных типов. В некоторых случаях вместо **Type** можно использовать **$table**.
+Следующий запрос возвращает количество исключения, созданные за каждый день предыдущей недели.
+
+```Kusto
+exceptions
+| where timestamp between(startofweek(ago(7days))..endofweek(ago(7days))) 
+| summarize count() by bin(TimeGenerated, 1day) 
+| sort by timestamp asc 
+```
+
+## <a name="type-and-itemtype"></a>Тип и itemType
+**Тип** (рабочей области Log Analytics) и **itemType** удержание свойства (приложение Application Insights) имя таблицы, что запись была восстановлена из которых может также рассматриваться как запись тип. Это свойство можно использовать в запросах, где объединяются записи из нескольких таблиц, например использующих оператор `search`, чтобы различать записи разных типов. В некоторых случаях вместо **Type** можно использовать **$table**.
 
 ### <a name="examples"></a>Примеры
 Указанный ниже запрос возвращает количество записей по типу, собранных за последний час.
 
 ```Kusto
 search * 
-| where TimeGenerated > ago(1h) 
-| summarize count() by Type 
+| where TimeGenerated > ago(1h)
+| summarize count() by Type
 ```
 
 ## <a name="resourceid"></a>\_ResourceId

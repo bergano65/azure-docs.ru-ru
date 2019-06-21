@@ -3,8 +3,8 @@ title: Как настроить федеративный единый вход 
 description: В этой статье описано, как настроить федеративный единый вход для приложения из коллекции Azure AD и быстро выполнить эти действия с помощью соответствующих руководств
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/11/2017
-ms.author: celested
+ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 03eed19336a67f3a1cbacc5f1ae033a6ea5be545
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b692c593dc134d9b24faeb9de8d3cd2e9a3521b6
+ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60292237"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67190204"
 ---
 # <a name="how-to-configure-federated-single-sign-on-for-an-azure-ad-gallery-application"></a>Настройка федеративного единого входа для приложения из коллекции Azure AD
 

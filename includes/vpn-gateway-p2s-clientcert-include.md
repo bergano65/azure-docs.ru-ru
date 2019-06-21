@@ -8,11 +8,11 @@ ms.topic: include
 ms.date: 12/11/2018
 ms.author: cherylmc
 ms.openlocfilehash: 31ccf14c82f6248c74d6af932fe9e338d26d2747
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66157217"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185149"
 ---
 На каждом клиентском компьютере, который вы подключаете к виртуальной сети с помощью подключения типа "точка — сеть", должен быть установлен сертификат клиента. Его нужно создать из корневого сертификата и установить на каждый клиентский компьютер. Если вы не установите допустимый сертификат клиента, проверка подлинности завершится со сбоем, когда клиент попытается подключиться к виртуальной сети.
 

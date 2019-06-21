@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 9c08cd52bba6391660bc5f28e5db2dbec1126951
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 16d1739e01061a90d673e4bd79bba7bfe7ec3a90
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67118710"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295070"
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Устранение неполадок службы файлов Azure в Linux
 
@@ -36,7 +36,7 @@ ms.locfileid: "67118710"
 | RHEL | 7 или выше | 7.5+ |
 | CentOS | 7 или выше |  7.5+ |
 | Debian | 8+ |   |
-| openSUSE | 13.2 или выше | 42.3 или выше |
+| openSUSE | 13.2 или выше | 42.3+ |
 | SUSE Linux Enterprise Server | 12 | 12 SP3 или выше |
 
 - На клиенте не установлены служебные программы CIFS (cfs-utils).
@@ -191,6 +191,40 @@ ms.locfileid: "67118710"
 - `Passwd [storage account name]`
 - `Su [storage account name]`
 - `Cp -p filename.txt /share`
+
+## <a name="cannot-connect-to-or-mount-an-azure-file-share"></a>Не удается подключиться к файловому ресурсу Azure или подключить ее
+
+### <a name="cause"></a>Причина:
+
+Ниже приведены распространенные причины этой проблемы:
+
+- Вы используете клиент из несовместимого дистрибутива Linux. Мы рекомендуем использовать для подключения к файловому ресурсу Azure следующие дистрибутивы Linux:
+
+    |   | SMB 2.1 <br>(подключение на виртуальных машинах в том же регионе Azure) | SMB 3.0 <br>(подключение из локальной среды и между регионами) |
+    | --- | :---: | :---: |
+    | Сервер Ubuntu | 14.04 или более поздней версии | 16.04 или выше |
+    | RHEL | 7 или выше | 7.5+ |
+    | CentOS | 7 или выше |  7.5+ |
+    | Debian | 8+ |   |
+    | openSUSE | 13.2 или выше | 42.3+ |
+    | SUSE Linux Enterprise Server | 12 | 12 SP3 или выше |
+
+- Служебные программы CIFS (cifs-utils) не установлены на клиенте.
+- На клиенте не установлена минимальная необходимая версия SMB или CIFS 2.1.
+- На клиенте не поддерживается шифрование SMB 3.0. Шифрование SMB 3.0 доступно в Ubuntu 16.4 и более поздних версиях, а также в SUSE 12.3 и более поздних версиях. В других дистрибутивах нужно использовать ядро 4.11 или более поздней версии.
+- Вы пытаетесь подключиться к учетной записи хранения через TCP-порт 445, который не поддерживается.
+- Вы пытаетесь подключиться к файловому ресурсу Azure с виртуальной машины Azure, которая не находится в одном регионе с учетной записью хранения.
+- Если для учетной записи хранения включен параметр [Требуется безопасное перемещение]( https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer), то служба файлов Azure разрешает подключения только по протоколу SMB 3.0 с шифрованием.
+
+### <a name="solution"></a>Решение
+
+Чтобы устранить эту проблему, используйте [средство устранения неполадок с подключением в службе файлов Azure для Linux](https://gallery.technet.microsoft.com/Troubleshooting-tool-for-02184089). Это средство предоставляет следующие возможности:
+
+* Помогает проверить среду выполнения клиента.
+* Выявляет несовместимые конфигурации клиента, которые приведут к ошибкам доступа в файлах Azure.
+* Предоставляет рекомендации для самостоятельного исправления.
+* Собирает диагностические трассировки.
+
 
 ## <a name="ls-cannot-access-ltpathgt-inputoutput-error"></a>ls: cannot access '&lt;path&gt;': Input/output error (ls: невозможно получить доступ к "путь".Ошибка ввода-вывода)
 

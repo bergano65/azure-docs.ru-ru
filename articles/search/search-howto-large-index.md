@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 12/19/2018
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 8923c94409dcf079179ed0464046e39ef7654c4c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8c067b6e238fab2970e5e40f0660a5c7555a8f2e
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65949833"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67302233"
 ---
 # <a name="how-to-index-large-data-sets-in-azure-search"></a>Индексирование больших наборов данных в службе "Поиск Azure"
 
@@ -54,7 +54,7 @@ ms.locfileid: "65949833"
 
 Запланированные операции индексирования запускаются через определенные интервалы времени, и обычно работа очередного задания индексатора завершается до того, как наступит время запускать следующее. Но если обработка к этому моменту еще не завершена, индексатор останавливается (завершается отведенное ему время). При запуске следующего задания обработка начнется с места остановки, так как система отслеживает текущее состояние операций. 
 
-На практике это означает, что для многодневных задач индексирования вам следует настроить для индексатора запуск через каждые 24 часа. Каждое следующее задание индексирования в начале 24-часового цикла начнет работу с последнего документа, который считается надежным. Такая схема работы позволяет индексатору перебирать очередь документа в течение нескольких дней, пока все они не будут обработаны. Дополнительные сведения об этом подходе см. в разделе об [индексировании больших наборов данных](search-howto-indexing-azure-blob-storage.md#indexing-large-datasets). Дополнительные сведения об общей настройке расписаний см. в статье о [REST API создания индексатора](https://docs.microsoft.com/rest/api/searchservice/Create-Indexer#request-syntax).
+На практике это означает, что для многодневных задач индексирования вам следует настроить для индексатора запуск через каждые 24 часа. Каждое следующее задание индексирования в начале 24-часового цикла начнет работу с последнего документа, который считается надежным. Такая схема работы позволяет индексатору перебирать очередь документа в течение нескольких дней, пока все они не будут обработаны. Дополнительные сведения об этом подходе см. в разделе об [индексировании больших наборов данных](search-howto-indexing-azure-blob-storage.md#indexing-large-datasets). Дополнительные сведения о настройке расписания в целом см. в разделе [Создание REST API индексатора](https://docs.microsoft.com/rest/api/searchservice/Create-Indexer#request-syntax) или см. в разделе [планирование индексаторы поиска Azure](search-howto-schedule-indexers.md).
 
 <a name="parallel-indexing"></a>
 
@@ -102,7 +102,7 @@ ms.locfileid: "65949833"
 
 + [Обзор индексатора](search-indexer-overview.md)
 + [Импорт данных в службу поиска Azure с помощью портала](search-import-data-portal.md)
-+ [Подключение базы данных SQL Azure к Поиску Azure с помощью индексаторов](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
++ [Индексатор Базы данных SQL Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 + [Индексатор базы данных Azure Cosmos](search-howto-index-cosmosdb.md)
 + [Индексатор хранилища BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
 + [Индексатор хранилища таблиц Azure](search-howto-indexing-azure-tables.md)

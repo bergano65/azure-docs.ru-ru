@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: bc85de0c8ec89ea88d2bae8e3f226da7d3163f53
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 607da7983cabe4c36c01171ba8d88c752b99ce3d
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64721087"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67303811"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>Live Metrics Stream: мониторинг и диагностика с задержкой в 1 секунду
 
-Держите руку на пульсе работы веб-приложения с помощью Live Metrics Stream в [Application Insights](../../azure-monitor/app/app-insights-overview.md). Выбирайте и фильтруйте метрики и счетчики производительности для отслеживания в режиме реального времени, не нарушая работу служб. Проверяйте трассировки стека на основе образцов неудавшихся запросов и исключений. Вместе с [Profiler](../../azure-monitor/app/profiler.md), [отладчиком моментальных снимков](../../azure-monitor/app/snapshot-debugger.md) и [тестированием производительности](../../azure-monitor/app/monitor-web-app-availability.md#performance-tests) Live Metrics Stream предоставляет эффективное средство диагностики веб-сайта, не вмешивающееся в его работу.
+Держите руку на пульсе работы веб-приложения с помощью Live Metrics Stream в [Application Insights](../../azure-monitor/app/app-insights-overview.md). Выбирайте и фильтруйте метрики и счетчики производительности для отслеживания в режиме реального времени, не нарушая работу служб. Проверяйте трассировки стека на основе образцов неудавшихся запросов и исключений. Вместе с [Profiler](../../azure-monitor/app/profiler.md), [Snapshot debugger](../../azure-monitor/app/snapshot-debugger.md). Live Stream метрик предоставляет мощный и не мешает работе средство диагностики для веб-сайт live.
 
 С помощью Live Metrics Stream можно выполнять следующие действия:
 
@@ -192,15 +192,6 @@ services.ConfigureTelemetryModule<QuickPulseTelemetryModule> ((module, o) => mod
 >[!NOTE]
 >Настоятельно рекомендуется установить аутентифицированный канал перед вводом в критерии фильтра потенциально конфиденциальной информации, например идентификатора клиента.
 >
-
-## <a name="generating-a-performance-test-load"></a>Создание нагрузки для тестирования производительности
-
-Если необходимо отследить результат повышения нагрузки, используйте колонку "Тест производительности". В ней имитируются одновременные запросы от нескольких пользователей. Можно выполнить "ручные тесты" (проверку связи) для отдельного URL-адреса или [многоэтапный веб-тест производительности](../../azure-monitor/app/monitor-web-app-availability.md#multi-step-web-tests), который добавляется так же, как тест доступности.
-
-> [!TIP]
-> После создания теста производительности откройте его и колонку Live Stream в отдельных окнах. Вы сможете увидеть, когда начнется тест производительности, поставленный в очередь, одновременно наблюдая за динамическим потоком.
->
-
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

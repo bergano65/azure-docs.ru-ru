@@ -4,20 +4,22 @@ description: Экспорт шаблона Azure Resource Manager с ресур�
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 05/09/2019
+ms.date: 06/19/2019
 ms.author: tomfitz
-ms.openlocfilehash: ea9499da3dac67635a48704f439f6592c6ed467e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e482bf99013b9bec9dfbf64c4e8ad5a8a43ff540
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65515389"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67296308"
 ---
 # <a name="single-and-multi-resource-export-to-template-in-azure-portal"></a>Экспорт одной или нескольких ресурсов в шаблон на портале Azure
 
 Для упрощения создания шаблонов Azure Resource Manager, можно экспортировать шаблон из существующих ресурсов. Экспортированный шаблон поможет вам разобраться в синтаксисе JSON и свойства, которые развертывания ресурсов. Чтобы автоматизировать будущие развертывания, начните с экспортированный шаблон и измените его для вашего сценария.
 
 Диспетчер ресурсов позволяет выбрать один или несколько ресурсов для экспорта в шаблон. Вы можете сосредоточиться на именно ресурсы, необходимые в шаблоне.
+
+В этой статье показано, как экспортировать шаблоны на портале. Можно также использовать [Azure CLI](manage-resource-groups-cli.md#export-resource-groups-to-templates), [Azure PowerShell](manage-resource-groups-powershell.md#export-resource-groups-to-templates), или [REST API](/rest/api/resources/resourcegroups/exporttemplate).
 
 ## <a name="choose-the-right-export-option"></a>Выберите параметр экспорта вправо
 
@@ -114,7 +116,7 @@ ms.locfileid: "65515389"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Чтобы узнать, Azure Resource Manager, см. в разделе [обзоре Azure Resource Manager](./resource-group-overview.md).
+- Узнайте, как экспортировать шаблоны с [Azure CLI](manage-resource-groups-cli.md#export-resource-groups-to-templates), [Azure PowerShell](manage-resource-groups-powershell.md#export-resource-groups-to-templates), или [REST API](/rest/api/resources/resourcegroups/exporttemplate).
 - Чтобы узнать синтаксис шаблона Resource Manager, см. в разделе [описание структуры и синтаксиса шаблонов Azure Resource Manager](./resource-group-authoring-templates.md).
 - Чтобы научиться разрабатывать шаблоны, см. в разделе [пошаговые учебники](/azure/azure-resource-manager/).
 - Чтобы просмотреть схемы шаблонов Azure Resource Manager, см. в разделе [Справочник по шаблонам](/azure/templates/).

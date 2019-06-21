@@ -8,13 +8,13 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.topic: reference
-ms.date: 05/13/2019
-ms.openlocfilehash: aa5d3a0555875571276fdf4046ad0e4dd1e69bbd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/19/2019
+ms.openlocfilehash: 490131d1743b366b5ac51a5a0fdac4b89ffe08f2
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65596943"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67274179"
 ---
 # <a name="reference-for-trigger-and-action-types-in-workflow-definition-language-for-azure-logic-apps"></a>Справочник по типы триггеров и действий на языке определения рабочего процесса для Azure Logic Apps
 
@@ -2624,7 +2624,7 @@ ID,Product_Name
 
 ### <a name="run-in-high-throughput-mode"></a>Запуск в режиме высокой пропускной способности
 
-Для запуска одного приложения логики количество действий, выполняемых каждые 5 минут, имеет [предел по умолчанию](../logic-apps/logic-apps-limits-and-config.md#throughput-limits). Чтобы повысить этот предел до [максимума](../logic-apps/logic-apps-limits-and-config.md#throughput-limits), установите для свойства `operationOptions` значение `OptimizedForHighThroughput`. Этот параметр помещает приложение логики в режим высокой пропускной способности. 
+Для единого определения приложения логики, число действий, выполняемых каждые 5 минут имеет [ограничение по умолчанию](../logic-apps/logic-apps-limits-and-config.md#throughput-limits). Чтобы повысить этот предел до [максимума](../logic-apps/logic-apps-limits-and-config.md#throughput-limits), установите для свойства `operationOptions` значение `OptimizedForHighThroughput`. Этот параметр помещает приложение логики в режим высокой пропускной способности. 
 
 > [!NOTE]
 > Режим высокой пропускной способности доступен в предварительной версии. Вы можете также распределить рабочую нагрузку между несколькими приложениями логики.

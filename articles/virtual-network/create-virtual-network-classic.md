@@ -17,11 +17,11 @@ ms.date: 10/31/2018
 ms.author: genli
 ms.custom: ''
 ms.openlocfilehash: e40648ef47b108050486d43eefdb1564786c053e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62098122"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67202871"
 ---
 # <a name="create-a-virtual-network-classic-with-multiple-subnets"></a>Создание (классической) виртуальной сети с несколькими подсетями
 
@@ -47,7 +47,7 @@ ms.locfileid: "62098122"
 
     |Параметр|Значение|
     |---|---|
-    |Name|myVnet|
+    |ИМЯ|myVnet|
     |Пространство адресов|10.0.0.0/16|
     |Имя подсети|Общедоступные|
     |Диапазон адресов подсети|10.0.0.0/24|

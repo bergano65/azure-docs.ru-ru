@@ -9,11 +9,11 @@ ms.date: 03/27/2018
 ms.author: zarhoads
 ms.custom: include file
 ms.openlocfilehash: 7f33312d0a5fbe383d438408d471dd9ae09d0332
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66156246"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185254"
 ---
 # <a name="regions-and-availability-for-virtual-machines-in-azure"></a>Регионы и доступность виртуальных машин в Azure
 Azure работает на основе множества центров обработки данных по всему миру. Эти центры обработки данных объединены в группы по географическому признаку, обеспечивая гибкость при выборе расположения для создания приложений. Чтобы повысить производительность, доступность и избыточность, нужно понимать, как работают и где расположены виртуальные машины в Azure, а также их параметры. В этой статье содержатся сведения о функциях доступности и избыточности Azure.

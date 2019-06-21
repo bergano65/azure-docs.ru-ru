@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 06/05/2019
-ms.openlocfilehash: 75a3c8a9912fe9ace70e411983996167da755128
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.date: 06/14/2019
+ms.openlocfilehash: c98247b0ba8b670a59dec9aa3ec87e949f1dda78
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66734646"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67147928"
 ---
 # <a name="read-replicas-in-azure-database-for-postgresql---single-server"></a>Чтение реплики в базе данных Azure для PostgreSQL: один сервер
 
@@ -122,6 +122,9 @@ AS total_log_delay_in_bytes from pg_stat_replication;
 Postgres требует, чтобы параметр `max_connections` на реплике имел значение не ниже, чем на главном сервере. В противном случае реплика не запустится. В службе "База данных Azure для PostgreSQL" значение `max_connections` устанавливается в зависимости от номера SKU. Дополнительные сведения см. в статье [Ограничения в базе данных Azure для PostgreSQL](concepts-limits.md). 
 
 При попытке обновить значения сервера без соблюдения ограничений возникнет ошибка.
+
+### <a name="maxpreparedtransactions"></a>max_prepared_transactions
+[Требуется PostgreSQL](https://www.postgresql.org/docs/10/runtime-config-resource.html#GUC-MAX-PREPARED-TRANSACTIONS) значение `max_prepared_transactions` параметр чтения реплике, больше или равно значению master; в противном случае реплика не запускается. Если вы хотите изменить `max_prepared_transactions` на главном узле, изменить его на репликах.
 
 ### <a name="stopped-replicas"></a>Остановленные реплики
 Если вы решили остановить репликацию между главным сервером и репликой чтения, для применения таких изменений реплика будет перезапущена. Остановленная реплика становится отдельным сервером, который принимает операции чтения и записи. Это сервер нельзя снова преобразовать в реплику.

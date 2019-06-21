@@ -13,24 +13,24 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 06/05/2019
 ms.author: magoedte
-ms.openlocfilehash: 51645f4f0c6dcc70d76ed1a20bc40f95db9d9717
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5e411182a26e370ef82a20e67ee18cedd5d96d86
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66693362"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67296108"
 ---
 # <a name="perform-cross-resource-log-queries-in-azure-monitor"></a>Выполнение запросов журнала между ресурсами в Azure Monitor  
 
-Ранее с помощью службы Azure Monitor вы могли анализировать данные только в пределах текущей рабочей области. Это препятствовало выполнению запросов в нескольких рабочих областях, определенных вашей подпиской.  Кроме того, элементы телеметрии, полученные из веб-приложения с помощью Application Insights, можно было искать только непосредственно в Application Insights или из Visual Studio. Это также усложняло встроенный совместный анализ операционных данных и данных приложения.   
+Ранее с помощью службы Azure Monitor вы могли анализировать данные только в пределах текущей рабочей области. Это препятствовало выполнению запросов в нескольких рабочих областях, определенных вашей подпиской.  Кроме того, элементы телеметрии, полученные из веб-приложения с помощью Application Insights, можно было искать только непосредственно в Application Insights или из Visual Studio. Это также усложняло встроенный совместный анализ операционных данных и данных приложения.
 
 Теперь вы можете выполнять запросы не только в нескольких рабочих областях Log Analytics, но также запрашивать данные из приложения Application Insights в той же или другой группе ресурсов или в другой подписке. Благодаря этому вы можете получить представление данных на уровне системы. Запросы таких типов можно выполнять только в [Log Analytics](portals.md).
 
 ## <a name="cross-resource-query-limits"></a>Ограничения запросов между ресурсами 
 
 * Ресурсы Application Insights и рабочих областей Log Analytics, которые могут включать в одном запросе существует ограничение в 100.
-* Запрос нескольких ресурсов не поддерживается в конструкторе представлений. Можно создать запрос в Log Analytics и закрепить на панели мониторинга Azure и [визуализировать поиск по журналам](../../azure-monitor/learn/tutorial-logs-dashboards.md#visualize-a-log-search). 
-* Запросы между ресурсами в оповещения журнала поддерживаются в новом [scheduledQueryRules API](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules). По умолчанию Azure Monitor использует [устаревшие API оповещения Log Analytics](../platform/api-alerts.md) для создания любого нового правила генерации оповещений на портале Azure, пока вы не переключаетесь с [устаревших API оповещений журнала](../platform/alerts-log-api-switch.md#process-of-switching-from-legacy-log-alerts-api). После переключения новый API используется по умолчанию для новых правил генерации оповещений на портале Azure и позволяет создавать правила генерации оповещений журнала запроса между разными ресурсами. Журнал запросов между ресурсами можно создать правила генерации оповещений не переключаетесь с помощью [шаблон ARM для scheduledQueryRules API](../platform/alerts-log.md#log-alert-with-cross-resource-query-using-azure-resource-template) – но этого правила генерации оповещений можно управлять, хотя [scheduledQueryRules API](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) а не из портала Azure.
+* Запрос нескольких ресурсов не поддерживается в конструкторе представлений. Можно создать запрос в Log Analytics и закрепить на панели мониторинга Azure для [визуализации запросов к журналу](../learn/tutorial-logs-dashboards.md). 
+* Запросы между ресурсами в оповещения журнала поддерживаются в новом [scheduledQueryRules API](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules). По умолчанию Azure Monitor использует [устаревшие API оповещения Log Analytics](../platform/api-alerts.md) для создания любого нового правила генерации оповещений на портале Azure, пока вы не переключаетесь с [устаревших API оповещений журнала](../platform/alerts-log-api-switch.md#process-of-switching-from-legacy-log-alerts-api). После переключения новый API используется по умолчанию для новых правил генерации оповещений на портале Azure и позволяет создавать правила генерации оповещений журнала запроса между разными ресурсами. Журнал запросов между ресурсами можно создать правила генерации оповещений не переключаетесь с помощью [шаблона Azure Resource Manager для scheduledQueryRules API](../platform/alerts-log.md#log-alert-with-cross-resource-query-using-azure-resource-template) – но этого правила генерации оповещений можно управлять, хотя [scheduledQueryRules API](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) , а не из портала Azure.
 
 
 ## <a name="querying-across-log-analytics-workspaces-and-from-application-insights"></a>Выполнение запросов в рабочих областях Log Analytics и запрос данных из приложения Application Insights

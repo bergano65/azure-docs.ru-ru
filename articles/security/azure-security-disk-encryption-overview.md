@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9b00a5262b1e144aa47cd7fd640906225ff4fecd
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 58c5c8321e505fe2c1c7d19c58fe0d031b75b3e4
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67068788"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67294862"
 ---
 # <a name="azure-disk-encryption-overview"></a>Обзор шифрования дисков Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "67068788"
 Он также поддерживает следующие сценарии для виртуальных машин, если они включены в Microsoft Azure:
 
 * интеграция с Azure Key Vault;
-* [Уровня "стандартный"](https://azure.microsoft.com/pricing/details/virtual-machines/). ([виртуальные машины Linux](azure-security-disk-encryption-faq.md#bkmk_LinuxOSSupport) этой ценовой категории должны соответствовать минимальным требованиям к объему памяти в 7 ГБ.) 
+* [Уровня "стандартный"](https://azure.microsoft.com/pricing/details/virtual-machines/) , соответствующие [минимальные требования к памяти](azure-security-disk-encryption-prerequisites.md#supported-vm-sizes). 
 * Включение шифрования для Windows и виртуальных машин Linux, управляемый диск и масштабирование виртуальных машин набора из поддерживаемых образов коллекции Azure.
 * Отключение шифрования операционной системы и данных дисков для виртуальных машин Windows, масштабирования виртуальных машин в наборе и управляемых виртуальных машин с дисками.
 * Отключение шифрования на дисках с данными для виртуальных машин Linux, масштабирование виртуальных машин в наборе и управляемых виртуальных машин с дисками.
@@ -56,7 +56,7 @@ ms.locfileid: "67068788"
 * Включение шифрования на дисках операционной системы виртуальной Машины Linux и данных.
 
    > [!NOTE]
-   > Шифрование диска операционной системы для некоторых дистрибутивов Linux не поддерживается. Дополнительные сведения см. в статье [Шифрование дисков Azure: часто задаваемые вопросы](azure-security-disk-encryption-faq.md#bkmk_LinuxOSSupport).
+   > Шифрование диска операционной системы для некоторых дистрибутивов Linux не поддерживается. Дополнительные сведения см. в разделе [шифрования дисков Azure поддерживаемые операционные системы: Linux](azure-security-disk-encryption-prerequisites.md#linux).
    
 * Включение шифрования для виртуальных машин, которые должны быть настроены дисковые пространства Windows, начиная с Windows Server 2016.
 * Резервное копирование и восстановление зашифрованных виртуальных машин для ключа шифрования ключей (KEK) и сценарии без ключа шифрования КЛЮЧЕЙ.
@@ -93,8 +93,6 @@ ms.locfileid: "67068788"
 * [Командлеты PowerShell дискового шифрования](/powershell/module/az.compute/set-azvmdiskencryptionextension?view=azps-2.2.0).
 * [Командлеты шифрования дисков Azure CLI](/cli/azure/vm/encryption?view=azure-cli-latest).
 * [Шаблоны Azure Resource Manager шифрования диска](azure-security-disk-encryption-appendix.md#resource-manager-templates).
-
-Шифрование дисков Azure поддерживается на виртуальных машинах под управлением Windows или ОС Linux. Дополнительные сведения о поддерживаемых операционных системах см. в разделе [ответы на вопросы о](azure-security-disk-encryption-faq.md#bkmk_LinuxOSSupport).
 
 > [!NOTE]
 > Дополнительная плата за шифрование дисков Azure для виртуальных машин не взимается. К хранилищу ключей, используемому для хранения ключей шифрования, применяются [цены на Key Vault](https://azure.microsoft.com/pricing/details/key-vault/) ценовой категории "Стандартный". 

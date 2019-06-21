@@ -5,18 +5,15 @@ services: azure-resource-manager
 documentationcenter: ''
 author: mumian
 ms.service: azure-resource-manager
-ms.workload: multiple
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
-ms.openlocfilehash: 8ae86d8bc7914a7a9c41eee93bb16b2f774993b9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3d6a102b794ca9c43e1dd18f923f6ce224596499
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60550501"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67296258"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-azure-powershell"></a>Управление группами ресурсов Azure Resource Manager с помощью Azure PowerShell
 
@@ -31,7 +28,7 @@ ms.locfileid: "60550501"
 
 Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. В группу ресурсов могут входить все ресурсы приложения или только те, которыми необходимо управлять совместно. Кроме того, пользователи могут выбрать оптимальный для своей организации способ распределения ресурсов в группах ресурсов. Как правило, ресурсы с общим жизненным циклом добавляют в одну и ту же группу ресурсов, чтобы их можно было легко развертывать, обновлять и удалять в виде группы.
 
-В группе ресурсов хранятся метаданные о ресурсах. Исходя из этого, при указании расположения группы ресурсов вы определяете расположение метаданных. В целях обеспечения соответствия необходимо убедиться, что данные хранятся в определенном регионе.
+В группе ресурсов хранятся метаданные о ресурсах. Таким образом, указывая расположение группы ресурсов, вы определяете расположение метаданных. В целях обеспечения соответствия необходимо убедиться, что данные хранятся в определенном регионе.
 
 В группе ресурсов хранятся метаданные о ресурсах. При указании расположения группы ресурсов, вы указываете, где хранятся эти метаданные.
 
@@ -122,10 +119,12 @@ Get-AzResourceLock -ResourceGroupName $resourceGroupName
 
 ## <a name="export-resource-groups-to-templates"></a>Экспорт групп ресурсов в шаблонах
 
-После успешной настройки группы ресурсов, может возникнуть необходимость просмотреть шаблон Resource Manager для группы ресурсов. Экспорт шаблона обеспечивает два преимущества:
+После настройки группы ресурсов, можно просмотреть шаблон Resource Manager для группы ресурсов. Экспорт шаблона обеспечивает два преимущества:
 
 - Автоматизируйте будущие развертывания решения, так как шаблон содержит полноценную инфраструктуру.
 - Узнайте синтаксис шаблона путем поиска в в объект нотацию JavaScript (JSON) своего решения.
+
+Чтобы экспортировать все ресурсы в группе ресурсов, используйте [AzResourceGroup экспорта](/powershell/module/az.resources/Export-AzResourceGroup) командлет и укажите имя группы ресурсов.
 
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -133,7 +132,87 @@ $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
 Export-AzResourceGroup -ResourceGroupName $resourceGroupName
 ```
 
-Дополнительные сведения см. в разделе [Экспорт группы ресурсов](./manage-resource-groups-portal.md#export-resource-groups-to-templates).
+Она сохраняет шаблон в виде локального файла.
+
+Вместо экспорта все ресурсы в группе ресурсов, вы можете выбрать, какие ресурсы для экспорта.
+
+Чтобы экспортировать один ресурс, передайте идентификатор этого ресурса.
+
+```azurepowershell-interactive
+$resource = Get-AzResource `
+  -ResourceGroupName <resource-group-name> `
+  -ResourceName <resource-name> `
+  -ResourceType <resource-type>
+Export-AzResourceGroup `
+  -ResourceGroupName <resource-group-name> `
+  -Resource $resource.ResourceId
+```
+
+Чтобы экспортировать более одного ресурса, передайте идентификаторы ресурсов в массив.
+
+```azurepowershell-interactive
+Export-AzResourceGroup `
+  -ResourceGroupName <resource-group-name> `
+  -Resource @($resource1.ResourceId, $resource2.ResourceId)
+```
+
+При экспорте шаблона, можно указать, используются ли параметры в шаблоне. По умолчанию включаются параметры для имен ресурсов, но они не имеет значения по умолчанию. Значение этого параметра необходимо передать во время развертывания.
+
+```json
+"parameters": {
+  "serverfarms_demoHostPlan_name": {
+    "defaultValue": null,
+    "type": "String"
+  },
+  "sites_webSite3bwt23ktvdo36_name": {
+    "defaultValue": null,
+    "type": "String"
+  }
+}
+```
+
+В ресурсе параметр используется для имени.
+
+```json
+"resources": [
+  {
+    "type": "Microsoft.Web/serverfarms",
+    "apiVersion": "2016-09-01",
+    "name": "[parameters('serverfarms_demoHostPlan_name')]",
+    ...
+  }
+]
+```
+
+Если вы используете `-IncludeParameterDefaultValue` параметр при экспорте шаблона, включает в себя параметр шаблона по умолчанию ей присваивается текущее значение. Можно использовать это значение по умолчанию или заменить значение по умолчанию, передав другое значение.
+
+```json
+"parameters": {
+  "serverfarms_demoHostPlan_name": {
+    "defaultValue": "demoHostPlan",
+    "type": "String"
+  },
+  "sites_webSite3bwt23ktvdo36_name": {
+    "defaultValue": "webSite3bwt23ktvdo36",
+    "type": "String"
+  }
+}
+```
+
+Если вы используете `-SkipResourceNameParameterization` параметр при экспорте шаблона, параметры для имен ресурсов не включается в шаблон. Вместо этого непосредственно на ресурсе, чтобы его текущее значение задано имя ресурса. Имя не может настроить во время развертывания.
+
+```json
+"resources": [
+  {
+    "type": "Microsoft.Web/serverfarms",
+    "apiVersion": "2016-09-01",
+    "name": "demoHostPlan",
+    ...
+  }
+]
+```
+
+Дополнительные сведения см. в разделе [экспорта одной или нескольких ресурсов в шаблон на портале Azure](./export-template-portal.md).
 
 ## <a name="manage-access-to-resource-groups"></a>Управление доступом к группам ресурсов
 

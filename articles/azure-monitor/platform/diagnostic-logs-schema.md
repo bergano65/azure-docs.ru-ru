@@ -8,12 +8,12 @@ ms.topic: reference
 ms.date: 10/11/2018
 ms.author: robb
 ms.subservice: logs
-ms.openlocfilehash: 21eec5ee2fef185a927f6a416732303765e02b1c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 468bcdb6aa688157196bb9cba8added623a857d3
+ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65789326"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67155293"
 ---
 # <a name="supported-services-schemas-and-categories-for-azure-diagnostic-logs"></a>Поддерживаемые службы, схемы и категории для журналов диагностики Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "65789326"
 | Пакетная служба Azure |[Ведение журналов диагностики пакетной службы Azure](../../batch/batch-diagnostics.md) |
 | База данных Azure для MySQL | [Журналы сервера в базе данных Azure для MySQL](../../mysql/concepts-server-logs.md#diagnostic-logs) |
 | База данных Azure для PostgreSQL | [Журналы сервера в базе данных Azure для PostgreSQL](../../postgresql/concepts-server-logs.md#diagnostic-logs) |
-| Cognitive Services | Схема недоступна. |
+| Cognitive Services | [Ведение журнала диагностики для Azure Cognitive Services](../../cognitive-services/diagnostic-logging.md) |
 | Сеть доставки содержимого | [Журналы Системы диагностики Azure для CDN](../../cdn/cdn-azure-diagnostic-logs.md) |
 | Cosmos DB | [Журнал ведения диагностики Azure Cosmos DB](../../cosmos-db/logging.md) |
 | Фабрика данных | [Мониторинг фабрик данных с помощью Azure Monitor](../../data-factory/monitor-using-azure-monitor.md) |
@@ -209,4 +209,3 @@ ms.locfileid: "65789326"
 * [Потоковая передача журналов диагностики Azure в **Центры событий**](../../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md)
 * [Создание или обновление диагностического параметра](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings)
 * [Сбор журналов и метрик для служб Azure для использования в Log Analytics](../../azure-monitor/platform/collect-azure-metrics-logs.md)
-

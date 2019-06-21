@@ -13,14 +13,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/21/2019
 ms.author: juliako
-ms.openlocfilehash: c957a98cdb6c195f7ed9b41dabc66a32714f57e7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f7f68398cb473ca166d328ee15a92f3c848840f2
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65142527"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67273298"
 ---
 # <a name="tutorial-use-aes-128-dynamic-encryption-and-the-key-delivery-service"></a>Руководство по Использование динамического шифрования AES-128 и службы доставки ключей
+
+> [!NOTE]
+> Несмотря на то, что в этом руководстве используется [пакета SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.models.liveevent?view=azure-dotnet) примеры, общие шаги одинаковы для [REST API](https://docs.microsoft.com/rest/api/media/liveevents), [CLI](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest), или другие поддерживаемые [пакеты SDK](media-services-apis-overview.md#sdks) .
 
 Службы мультимедиа можно использовать для доставки содержимого HTTP Live Streaming (HLS), MPEG-DASH и Smooth Streaming, зашифрованного с помощью 128-битных ключей шифрования AES. Они также включают в себя службу доставки ключей, которая доставляет ключи шифрования авторизованным пользователям. Для служб мультимедиа для динамического шифрования видео, можно связать ключ шифрования с указатель потоковой передачи и также настроить политики содержимого ключа. Когда поток запрашивается проигрывателем, службы мультимедиа используют указанный ключ для динамического шифрования содержимого с помощью AES-128. Чтобы расшифровать поток, проигрыватель запросит ключ у службы доставки ключей. Чтобы определить, есть ли у пользователя право на получение ключа, служба оценит политику ключа содержимого, заданную для него.
 

@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 5/6/2019
-ms.openlocfilehash: 962e2b10136cf1cbab7cc5d3d06059922c363b15
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/19/2019
+ms.openlocfilehash: efa4cc070f47174634c8dc67b37f10bc3d112d08
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65410272"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67293208"
 ---
 # <a name="postgresql-extensions-in-azure-database-for-postgresql---single-server"></a>Расширения PostgreSQL в базе данных Azure для PostgreSQL: один сервер
 PostgreSQL предоставляет возможность расширить функциональность базы данных с помощью расширений. Расширения позволяют объединить несколько связанных объектов SQL в одном пакете, который затем можно загрузить или удалить из базы данных с помощью одной команды. После загрузки в базу данных расширения могут работать как встроенные функции. Дополнительные сведения о расширениях PostgreSQL см. на странице  [Упаковка связанных объектов в расширение](https://www.postgresql.org/docs/9.6/static/extend-extensions.html).
@@ -73,6 +73,7 @@ PostgreSQL предоставляет возможность расширить 
 > | **Расширение** | **Описание** |
 > |---|---|
 > | [plpgsql](https://www.postgresql.org/docs/9.6/static/plpgsql.html) | Загружаемый процедурный язык PL/pgSQL. |
+> | [plv8](https://plv8.github.io/) | Расширение языка Javascript для PostgreSQL, которое можно использовать для хранимых процедур, триггеров и т. д. |
 
 ### <a name="miscellaneous-extensions"></a>Прочие расширения
 
@@ -124,7 +125,7 @@ TimescaleDB — это база данных временных рядов, ко
 [Дополнительные сведения о TimescaleDB](https://docs.timescale.com/latest), охраняемым товарным знаком [шкалы времени, Inc.](https://www.timescale.com/)
 
 ### <a name="installing-timescaledb"></a>Установка TimescaleDB
-Чтобы установить TimescaleDB, необходимо включить его в общую библиотеку предварительной загрузки от сервера. Изменение общих предварительной загрузки библиотек Postgres требует **перезагрузка сервера** вступили в силу.
+Чтобы установить TimescaleDB, необходимо включить его в общую библиотеку предварительной загрузки от сервера. Изменение элемента Postgres `shared_preload_libraries` параметр требует **перезапуска сервера** вступили в силу. Можно изменить параметры с помощью [портала Azure](howto-configure-server-parameters-using-portal.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).
 
 > [!NOTE]
 > TimescaleDB можно включить в базе данных Azure для PostgreSQL версии 9.6 и 10
@@ -137,10 +138,7 @@ TimescaleDB — это база данных временных рядов, ко
 
 3. Найдите параметр `shared_preload_libraries`.
 
-4. Скопируйте и вставьте следующее значение для `shared_preload_libraries`
-   ```
-   timescaledb
-   ```
+4. Выберите **TimescaleDB**.
 
 5. Выберите **Сохранить** для сохранения изменений. После сохранения изменений, вы получите уведомление. 
 
@@ -158,4 +156,4 @@ CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Если вы не видите расширение, которое вы хотите использовать, сообщите нам. Вы можете проголосовать за существующие запросы или оставить свои предложения на нашем [форуме отзывов клиентов](https://feedback.azure.com/forums/597976-azure-database-for-postgresql).
+Если вы не видите расширение, которое вы хотите использовать, сообщите нам. Вы можете проголосовать за существующие запросы или создать новые запросы отзывов в наших [форуме обратной связи](https://feedback.azure.com/forums/597976-azure-database-for-postgresql).

@@ -10,12 +10,12 @@ ms.service: billing
 ms.topic: article
 ms.date: 05/30/2019
 ms.author: byvinyal
-ms.openlocfilehash: 88c40021ff2e974ba16b3b3506ee54b45de90fda
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d1043f254d2a2cc2804ab8a4d68770b6d57cbed4
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66427602"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295964"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет расширен и обновлен, чтобы охватить больше служб.
@@ -45,7 +45,6 @@ ms.locfileid: "66427602"
 * [Управление API](#api-management-limits)
 * [Служба приложений](#app-service-limits)
 * [Шлюз приложений](#application-gateway-limits)
-* [Application Insights](#application-insights-limits)
 * [Автоматизация](#automation-limits)
 * [Кэш Azure для Redis](#azure-cache-for-redis-limits)
 * [Облачные службы Azure](#azure-cloud-services-limits)
@@ -58,7 +57,7 @@ ms.locfileid: "66427602"
 * [Служба Azure Kubernetes (AKS)](#azure-kubernetes-service-limits)
 * [Служба "Машинное обучение Azure"](#azure-machine-learning-service-limits)
 * [служба "Карты Azure"](#azure-maps-limits);
-* [Azure Monitor](#monitor-limits)
+* [Azure Monitor](#azure-monitor-limits)
 * [Политика Azure](#azure-policy-limits)
 * [Поиск Azure;](#azure-search-limits)
 * [Служба Azure SignalR](#azure-signalr-service-limits)
@@ -79,7 +78,6 @@ ms.locfileid: "66427602"
 * [Центр Интернета вещей](#iot-hub-limits)
 * [Служба подготовки устройств для Центра Интернета вещей](#iot-hub-device-provisioning-service-limits)
 * [хранилище ключей;](#key-vault-limits)
-* [Служба Log Analytics](#log-analytics-limits)
 * [Службы мультимедиа](#media-services-limits)
 * [Мобильные службы](#mobile-services-limits)
 * [Многофакторная идентификация](#multi-factor-authentication-limits)
@@ -282,8 +280,26 @@ ms.locfileid: "66427602"
 ### <a name="mobile-services-limits"></a>Ограничения мобильных служб
 [!INCLUDE [mobile-services-limits](../includes/mobile-services-limits.md)]
 
-### <a name="monitor-limits"></a>Пределы монитора
-[!INCLUDE [monitoring-limits](../includes/monitoring-limits.md)]
+### <a name="azure-monitor-limits"></a>Ограничения Azure Monitor
+
+#### <a name="alerts"></a>Оповещения
+
+[!INCLUDE [monitoring-limits](../includes/azure-monitor-limits-alerts.md)]
+
+#### <a name="action-groups"></a>Группы действий
+
+[!INCLUDE [monitoring-limits](../includes/azure-monitor-limits-action-groups.md)]
+
+#### <a name="log-analytics-workspaces"></a>Рабочие области Log Analytics
+
+[!INCLUDE [monitoring-limits](../includes/azure-monitor-limits-workspaces.md)]
+
+#### <a name="application-insights"></a>Application Insights
+
+[!INCLUDE [monitoring-limits](../includes/azure-monitor-limits-app-insights.md)]
+
+
+
 
 ### <a name="notification-hubs-limits"></a>Ограничения концентраторов уведомлений
 [!INCLUDE [notification-hub-limits](../includes/notification-hub-limits.md)]
@@ -330,9 +346,6 @@ ms.locfileid: "66427602"
 ### <a name="storsimple-system-limits"></a>Ограничения системы StorSimple
 [!INCLUDE [storsimple-limits-table](../includes/storsimple-limits-table.md)]
 
-### <a name="log-analytics-limits"></a>Ограничения Log Analytics
-[!INCLUDE [operational-insights-limits](../includes/operational-insights-limits.md)]
-
 ### <a name="backup-limits"></a>Ограничения резервного копирования
 [!INCLUDE [azure-backup-limits](../includes/azure-backup-limits.md)]
 
@@ -341,9 +354,6 @@ ms.locfileid: "66427602"
 
 ### <a name="site-recovery-limits"></a>Ограничения Site Recovery
 [!INCLUDE [site-recovery-limits](../includes/site-recovery-limits.md)]
-
-### <a name="application-insights-limits"></a>Ограничения Application Insights
-[!INCLUDE [application-insights-limits](../includes/application-insights-limits.md)]
 
 ### <a name="api-management-limits"></a>Ограничения управления API
 [!INCLUDE [api-management-service-limits](../includes/api-management-service-limits.md)]

@@ -1,10 +1,15 @@
 ---
+author: ecfan
+ms.service: logic-apps
+ms.topic: include
+ms.date: 11/03/2016
+ms.author: estfan
 ms.openlocfilehash: 70ca28fbcd6feea75788cd58677ca44080e47ae5
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62130049"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67202777"
 ---
 ### <a name="prerequisites"></a>Технические условия
 * Учетная запись [Salesforce](https://salesforce.com).  
@@ -13,7 +18,7 @@ ms.locfileid: "62130049"
 
 Ниже приведены указания по авторизации приложения логики для подключения к учетной записи Salesforce.  
 
-1. Чтобы создать подключение к Salesforce, в конструкторе приложений логики в раскрывающемся списке выберите параметр **Показать API, управляемые Майкрософт**, а затем введите в поле поиска *Salesforce*. Выберите триггер или действие, которые хотите использовать:   
+1. Чтобы создать подключение к Salesforce, в конструкторе приложений логики в раскрывающемся списке выберите параметр **Показать API, управляемые Майкрософт**, а затем введите в поле поиска *Salesforce*. Выберите триггер или действие, которые хотите использовать:  
    ![Подключение к Salesforce, изображение 1](./media/connectors-create-api-salesforce/salesforce-1.png)  
 2. Если вы ранее не создавали подключения к Salesforce, вам будет предложено ввести учетные данные Salesforce. Эти учетные данные будут использоваться для авторизации приложения логики, чтобы оно могло подключиться и получить доступ к данным вашей учетной записи Salesforce.  
    ![Подключение к Salesforce, изображение 2](./media/connectors-create-api-salesforce/salesforce-2.png)  

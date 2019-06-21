@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: pullabhk
 ms.assetid: 01169af5-7eb0-4cb0-bbdb-c58ac71bf48b
-ms.openlocfilehash: 1e85b633024b5a3e85874707ae9a1f068e7a328d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 7c53d8fe0ee5bbfdbe180aa4d18d8c7b7fab29c2
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66808522"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295292"
 ---
 # <a name="monitoring-at-scale-using-azure-monitor"></a>Мониторинг в нужном масштабе с помощью Azure Monitor
 
@@ -29,7 +29,7 @@ ms.locfileid: "66808522"
 ## <a name="using-log-analytics-workspace"></a>С помощью рабочей области Log Analytics
 
 > [!NOTE]
-> Данные из резервных копий виртуальных Машин Azure, агент MAB, DPM System Center (SC DPM), резервные копии SQL на виртуальных машинах Azure поступают в рабочую область Log Analytics с помощью параметров диагностики. Поддержка Azure резервными копиями файловых ресурсов, сервера архивации Microsoft Azure (MABS) ожидается в ближайшее время.
+> Данные из резервных копий виртуальных Машин Azure, агент MAB, System Center DPM (SC DPM), резервные копии SQL на виртуальных машинах Azure и резервные копии файлового ресурса Azure поступают в рабочую область Log Analytics с помощью параметров диагностики. Поддержка для Microsoft Azure Backup Server (MABS) ожидается в ближайшее время.
 
 Мы используя возможности двух служб Azure - **параметров диагностики** (для отправки данных из нескольких ресурсов Azure Resource Manager на другой ресурс) и **Log Analytics** (ЛА - создать пользовательские оповещения, где можно определить другие каналы уведомлений с помощью групп действий) для мониторинга в нужном масштабе. В следующих разделах подробно описывается по использованию LA для наблюдения за резервное копирование Azure в нужном масштабе.
 
@@ -47,6 +47,9 @@ ms.locfileid: "66808522"
 ### <a name="deploying-solution-to-log-analytics-workspace"></a>Развертывание решения в рабочей области Log Analytics
 
 После того как данные в рабочую область LA, [развертывание шаблона GitHub](https://azure.microsoft.com/resources/templates/101-backup-oms-monitoring/) на LA для визуализации данных. Убедитесь, что вы предоставляете группе ресурсов, имя рабочей области и расположение рабочей области правильно определить рабочую область, а затем установить этот шаблон на нем.
+
+> [!NOTE]
+> Пользователи, не имеющие предупреждения или задания резервного копирования и восстановления в свою рабочую область LA возможны ошибку с кодом «BadArgumentError» на портале. Пользователи могут не учитывать эту ошибку и продолжить использование решения. После запуска потока данных в рабочей области данных соответствующего типа визуализации отразят таким же образом и пользователи не увидят Эта ошибка больше.
 
 ### <a name="view-azure-backup-data-using-log-analytics-la"></a>Просмотр данных служба архивации Azure, с помощью Log Analytics (LA)
 

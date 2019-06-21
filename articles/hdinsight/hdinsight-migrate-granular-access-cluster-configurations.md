@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: 1ec4786291d6e2e5be6785e52cf3ab5bb5bbc690
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 982c5dcc052f92afe381235db0bf066262fd82c6
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66754540"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67304287"
 ---
 # <a name="migrate-to-granular-role-based-access-for-cluster-configurations"></a>Переход на детализированный доступ на основе ролей для конфигураций кластера
 
@@ -20,10 +20,10 @@ ms.locfileid: "66754540"
 
 ## <a name="what-is-changing"></a>Что изменяется?
 
-Ранее, секреты может быть получен через HDInsight API пользователями кластера имеет владельца, участника или читателя [роли RBAC](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles), как они были доступны любому пользователю с `*/read` требовалось разрешение.
+Ранее, секреты может быть получен через HDInsight API пользователями кластера имеет владельца, участника или читателя [роли RBAC](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles), как они были доступны любому пользователю с `*/read` разрешение.
 Забегая вперед, доступ к таким секретам потребует `Microsoft.HDInsight/clusters/configurations/*` разрешение, то есть они могут больше не обращаются пользователи с ролью читателя. Секреты, заданы как значения, которые могут использоваться для получения более с повышенными правами доступа, чем роли пользователя должен быть разрешен. К ним относятся значения, такие как учетные данные кластера шлюза HTTP, ключи учетной записи хранения и учетные данные базы данных.
 
-Мы также Представляем новый [создаст кластер оператор](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#hdinsight-cluster-operator) роли, будут иметь возможность получать секреты без наличия административных разрешений участника или владельца. Итог:
+Мы также Представляем новый [оператор кластера HDInsight](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#hdinsight-cluster-operator) роли, будут иметь возможность получать секреты без наличия административных разрешений участника или владельца. Итог:
 
 | Роль                                  | Ранее                                                                                       | Забегая вперед       |
 |---------------------------------------|--------------------------------------------------------------------------------------------------|-----------|
@@ -155,7 +155,7 @@ ms.locfileid: "66754540"
 
 ## <a name="add-the-hdinsight-cluster-operator-role-assignment-to-a-user"></a>Добавить оператор кластера HDInsight назначение роли пользователю
 
-Пользователь с [участник](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) или [владельца](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) роли можно назначить [создаст кластер оператор](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#hdinsight-cluster-operator) роли для пользователей, которые требуется иметь доступ на чтение и запись к учетом Значения конфигурации кластера HDInsight (например, учетные данные кластера шлюза и ключи учетной записи хранения).
+Пользователь с [участник](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) или [владельца](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) роли можно назначить [оператор кластера HDInsight](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#hdinsight-cluster-operator) роли для пользователей, которые требуется иметь доступ на чтение и запись к учетом Значения конфигурации кластера HDInsight (например, учетные данные кластера шлюза и ключи учетной записи хранения).
 
 ### <a name="using-the-azure-cli"></a>Использование Azure CLI
 

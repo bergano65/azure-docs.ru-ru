@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/19/2018
 ms.author: snmuvva
 ms.subservice: alerts
-ms.openlocfilehash: 00229cca1d7fb238b330ec98cd35d0bb59bc821a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0c8aa00d069ae54584d8e828dab35c22048f1876
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66015624"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295546"
 ---
 # <a name="use-the-voluntary-migration-tool-to-migrate-your-classic-alert-rules"></a>Используйте средство произвольную миграцию для переноса классической правилами генерации оповещений
 
@@ -38,7 +38,7 @@ ms.locfileid: "66015624"
 
 - Формат полезных данных уведомления и API-интерфейсы для создания и управления нового правила генерации оповещений отличаются по сравнению с классической правил генерации оповещений, так как они поддерживают дополнительные возможности. [Узнайте, как подготовиться к переносу](alerts-prepare-migration.md).
 
-- Невозможно перенести некоторые классические правила генерации оповещений с помощью средства. [Узнайте, какие правила станет невозможна и что делать с ними](alerts-understand-migration.md#which-classic-alert-rules-can-be-migrated).
+- Невозможно перенести некоторые классические правила генерации оповещений с помощью средства. [Узнайте, какие правила станет невозможна и что делать с ними](alerts-understand-migration.md#classic-alert-rules-that-will-not-be-migrated).
 
     > [!NOTE]
     > Процесс миграции не влияют на оценку классические правила генерации оповещений. Они будут продолжать работать и отсылать оповещения до переноса, и новые правила генерации оповещений вступили в силу.

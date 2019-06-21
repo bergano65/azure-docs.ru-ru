@@ -5,18 +5,15 @@ services: azure-resource-manager,azure-portal
 documentationcenter: ''
 author: mumian
 ms.service: azure-resource-manager
-ms.workload: multiple
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: jgao
-ms.openlocfilehash: 559c1874c119eabef2c35a954961c1e669df3c06
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bc3c1a05c64edea260bd177dd7eaefc003db5310
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65507229"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67296295"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-the-azure-portal"></a>Управление группами ресурсов Azure Resource Manager с помощью портала Azure
 
@@ -109,14 +106,6 @@ ms.locfileid: "65507229"
 ## <a name="export-resource-groups-to-templates"></a>Экспорт групп ресурсов в шаблонах
 
 Сведения об экспорте шаблонов см. в разделе [экспорта одной или нескольких ресурсов в шаблон - портал](export-template-portal.md).
-
-### <a name="fix-export-issues"></a>Устранение проблем при экспорте
-
-Функция экспорта шаблона поддерживается не для всех типов ресурсов. Проблемы при экспорте могут возникать, только если шаблон экспортируется из группы ресурсов, а не из журнала развертываний. Если последнее развертывание представляет точное состояние группы ресурсов, шаблон необходимо экспортировать из журнала развертываний, а не из группы ресурсов. Шаблон следует экспортировать из группы ресурсов, если вы внесли в группу ресурсов изменения, которые не определены в одном шаблоне.
-
-Проблему экспорта можно решить, добавив недостающие ресурсы в шаблон вручную. Сообщение об ошибке содержит типы ресурсов, которые невозможно экспортировать. Найдите этот тип ресурса в [справочнике по шаблонам](/azure/templates/). Дополнительные сведения о том, как вручную добавить шлюз виртуальной сети, см.в статье [Microsoft.Network/virtualNetworkGateways template reference](/azure/templates/microsoft.network/virtualnetworkgateways) (Справочник по шаблону Microsoft.Network/virtualNetworkGateways). Ссылка на шаблон предоставляет JSON, чтобы добавить ресурс в шаблон.
-
-Когда вы получите формат JSON для ресурса, вам нужно будет получить значения ресурса. Чтобы просмотреть значения для ресурса, используйте операцию GET в REST API для этого типа ресурса. Например, чтобы получить значения для шлюза виртуальной сети, см. раздел [Шлюзы виртуальной сети — Get](/rest/api/network-gateway/virtualnetworkgateways/get).
 
 ## <a name="manage-access-to-resource-groups"></a>Управление доступом к группам ресурсов
 

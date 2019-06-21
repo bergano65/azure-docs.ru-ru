@@ -1,48 +1,57 @@
 ---
-title: Настройка строки подключения для службы хранилища Azure | Документация Майкрософт
-description: Настройка строки подключения для учетной записи хранения Azure. Строка подключения содержит сведения, необходимые для авторизации при доступе к учетной записи хранения из приложения во время выполнения.
+title: Настроить строку подключения для службы хранилища Azure
+description: Настройка строки подключения для учетной записи хранения Azure. Строка подключения содержит сведения, необходимые для авторизации доступа к учетной записи хранения из приложения во время выполнения с помощью общего ключа авторизации.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 04/12/2017
+ms.date: 06/20/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: ef01cf194ea7a0afea033d2888df946208073e41
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7c83b382f8aca3d8fda1c0de4785c51f3f3b1fc5
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65874119"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67302530"
 ---
 # <a name="configure-azure-storage-connection-strings"></a>Настройка строк подключения службы хранилища Azure
 
-Строка подключения содержит сведения аутентификации, необходимые приложению для доступа к данным в учетной записи хранения Azure в среде выполнения. Настройка строки подключения позволяет выполнить следующие действия:
+Строка подключения содержит сведения о проверке подлинности, необходимые приложению для доступа к данным в учетной записи хранения Azure во время выполнения с помощью общего ключа авторизации. Настройка строки подключения позволяет выполнить следующие действия:
 
 * подключиться к эмулятору хранилища Azure;
 * получить доступ к учетной записи хранения в Azure;
 * получить доступ к указанным ресурсам Azure через подписанный URL-адрес (SAS).
 
+[!INCLUDE [storage-recommend-azure-ad-include](../../../includes/storage-recommend-azure-ad-include.md)]
+
 [!INCLUDE [storage-account-key-note-include](../../../includes/storage-account-key-note-include.md)]
 
-## <a name="storing-your-connection-string"></a>Хранение строки подключения
+## <a name="view-and-copy-a-connection-string"></a>Просмотр и копирование строки подключения
+
+[!INCLUDE [storage-view-keys-include](../../../includes/storage-view-keys-include.md)]
+
+## <a name="store-a-connection-string"></a>Store строку подключения
+
 Приложению требуется доступ к строке подключения во время выполнения, чтобы выполнять авторизацию запросов к службе хранилища Azure. Есть несколько вариантов для хранения строки подключения.
 
+* Можно хранить строки подключения в переменной среды.
 * Приложение, работающее на настольном компьютере или на устройстве, может хранить строку подключения в файле **app.config** или **web.config**. Добавьте строку подключения в раздел **AppSettings** в этих файлах.
 * Приложение, работающее в облачной службе Azure, может хранить строку подключения в [файле схемы конфигурации службы Azure (.cscfg)](https://msdn.microsoft.com/library/ee758710.aspx). Добавьте строку подключения в раздел **ConfigurationSettings** файла конфигурации службы.
-* Можно использовать строку подключения непосредственно в коде. Однако в большинстве случаев рекомендуется хранить строку подключения в файле конфигурации.
 
 Хранение строки подключения в файле конфигурации упрощает обновление строки подключения для переключения между эмулятором хранения и учетной записью хранения Azure в облаке. Вам потребуется только изменить строку подключения, чтобы указать целевую среду.
 
 Вы можете использовать [Microsoft Azure Configuration Manager](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/) для доступа к строке подключения в среде выполнения независимо от того, где выполняется приложение.
 
-## <a name="create-a-connection-string-for-the-storage-emulator"></a>Создание строки подключения для эмулятора хранения
+## <a name="configure-a-connection-string-for-the-storage-emulator"></a>Настроить строку подключения для эмулятора хранения
+
 [!INCLUDE [storage-emulator-connection-string-include](../../../includes/storage-emulator-connection-string-include.md)]
 
 Дополнительные сведения об эмуляторе хранения см. в статье [Использование эмулятора хранения Azure для разработки и тестирования](storage-use-emulator.md).
 
-## <a name="create-a-connection-string-for-an-azure-storage-account"></a>Создание строки подключения для учетной записи хранения Azure
+## <a name="configure-a-connection-string-for-an-azure-storage-account"></a>Настроить строку подключения для учетной записи хранения Azure
+
 Чтобы создать строку подключения для учетной записи хранения Azure, используйте формат, указанный ниже. Указывает, следует ли подключаться к учетной записи хранения через HTTPS (рекомендуется) или HTTP. Замените `myAccountName` на имя вашей учетной записи хранения и замените `myAccountKey` на ваш ключ доступа учетной записи:
 
 `DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey`
@@ -58,9 +67,11 @@ ms.locfileid: "65874119"
 >
 
 ## <a name="create-a-connection-string-using-a-shared-access-signature"></a>Создание строки подключения с помощью подписанного URL-адреса
+
 [!INCLUDE [storage-use-sas-in-connection-string-include](../../../includes/storage-use-sas-in-connection-string-include.md)]
 
 ## <a name="create-a-connection-string-for-an-explicit-storage-endpoint"></a>Создание строки подключения для явной конечной точки хранилища
+
 Вы можете указать явные конечные точки службы в строке подключения вместо конечных точек по умолчанию. Чтобы создать строку подключения, определяющую явную конечную точку, укажите полную конечную точку для каждой службы, включая спецификацию протокола (HTTPS (рекомендуется) или HTTP), в следующем формате:
 
 ```
@@ -107,6 +118,7 @@ AccountKey=<account-key>
 >
 
 ### <a name="create-a-connection-string-with-an-endpoint-suffix"></a>Создание строки подключения с суффиксом конечной точки
+
 Чтобы создать строку подключения для службы хранилища в регионах или экземплярах с разными суффиксами конечных точек, таких как 21Vianet в Azure для Китая или Azure для государственных организаций, используйте следующий формат строки подключения. Укажите, следует ли подключаться к учетной записи хранения через HTTPS (рекомендуется) или HTTP. Замените `myAccountName` именем своей учетной записи хранения, замените `myAccountKey` ключом доступа своей учетной записи и замените `mySuffix` суффиксом URI:
 
 ```
@@ -126,9 +138,11 @@ EndpointSuffix=core.chinacloudapi.cn;
 ```
 
 ## <a name="parsing-a-connection-string"></a>Анализ строки подключения
+
 [!INCLUDE [storage-cloud-configuration-manager-include](../../../includes/storage-cloud-configuration-manager-include.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 * [Использование эмулятора хранения Azure для разработки и тестирования](storage-use-emulator.md)
 * [Клиентские инструменты службы хранилища Azure](storage-explorers.md)
 * [Использование подписанных URL-адресов (SAS)](storage-dotnet-shared-access-signature-part-1.md)
