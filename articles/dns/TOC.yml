@@ -17,44 +17,50 @@
       href: dns-getstarted-cli.md
 - name: Руководства
   items:
-    - name: Размещение домена в Azure DNS
-      href: dns-delegate-domain-azure-dns.md
-    - name: Создание пользовательских записей DNS для веб-приложения
-      href: dns-web-sites-custom-domain.md
-    - name: Создание частной зоны и записи DNS
-      href: private-dns-portal.md
-    - name: Записи псевдонимов для диспетчера трафика
-      href: tutorial-alias-tm.md
-    - name: Записи псевдонимов для общедоступных IP-адресов
-      href: tutorial-alias-pip.md
-    - name: Записи псевдонимов для записей зон
-      href: tutorial-alias-rr.md
+    - name: Общедоступное имя DNS
+      items:
+        - name: Размещение домена в Azure DNS
+          href: dns-delegate-domain-azure-dns.md
+        - name: Создание пользовательских записей DNS для веб-приложения
+          href: dns-web-sites-custom-domain.md
+        - name: Записи псевдонимов для диспетчера трафика
+          href: tutorial-alias-tm.md
+        - name: Записи псевдонимов для общедоступных IP-адресов
+          href: tutorial-alias-pip.md
+        - name: Записи псевдонимов для записей зон
+          href: tutorial-alias-rr.md
+    - name: Частная зона DNS
+      items:
+        - name: Создание частной зоны и записи DNS
+          href: private-dns-portal.md
 - name: Примеры
   items:
     - name: Azure CLI
       href: cli-samples.md
 - name: Основные понятия
   items:
+    - name: Общедоступное имя DNS
+      items:
+        - name: Зоны и записи
+          href: dns-zones-records.md
+        - name: Записи псевдонимов
+          href: dns-alias.md
+        - name: Делегирование с помощью Azure DNS
+          href: dns-domain-delegation.md
+        - name: Вопросы и ответы
+          href: dns-faq.md
+        - name: Оповещения и метрики DNS
+          href: dns-alerts-metrics.md
+        - name: Обратные зоны DNS
+          href: dns-reverse-dns-overview.md
+        - name: Аварийное восстановление с помощью Azure DNS и диспетчера трафика
+          href: ../networking/disaster-recovery-dns-traffic-manager.md
     - name: Частная зона DNS
       items:
         - name: "Вопросы и ответы\_— Частная зона DNS"
           href: dns-faq-private.md
         - name: Сценарии с использованием частной зоны DNS
           href: private-dns-scenarios.md
-    - name: Зоны и записи
-      href: dns-zones-records.md
-    - name: Записи псевдонимов
-      href: dns-alias.md
-    - name: Делегирование с помощью Azure DNS
-      href: dns-domain-delegation.md
-    - name: Вопросы и ответы
-      href: dns-faq.md
-    - name: Оповещения и метрики DNS
-      href: dns-alerts-metrics.md
-    - name: Обратные зоны DNS
-      href: dns-reverse-dns-overview.md
-    - name: Аварийное восстановление с помощью Azure DNS и диспетчера трафика
-      href: ../networking/disaster-recovery-dns-traffic-manager.md
 - name: Руководства
   items:
     - name: Частная зона DNS
@@ -63,71 +69,85 @@
           href: private-dns-getstarted-cli.md
         - name: "Создание частной зоны\_— PowerShell"
           href: private-dns-getstarted-powershell.md
-    - name: Записи псевдонима для веб-приложений с балансировкой нагрузки
-      href: dns-alias-appservice.md
-    - name: Управление зонами DNS
+    - name: Общедоступное имя DNS
       items:
-        - name: Портал Azure
-          href: dns-operations-dnszones-portal.md
-        - name: Azure PowerShell
-          href: dns-operations-dnszones.md
-        - name: Инфраструктура CLI Azure
-          href: dns-operations-dnszones-cli.md
-    - name: Управление зонами DNS
-      items:
-        - name: Портал Azure
-          href: dns-operations-recordsets-portal.md
-        - name: Azure PowerShell
-          href: dns-operations-recordsets.md
-        - name: Инфраструктура CLI Azure
-          href: dns-operations-recordsets-cli.md
-    - name: Управление обратным поиском DNS
-      items:
-        - name: Размещение зон обратного просмотра в Azure DNS
-          href: dns-reverse-dns-hosting.md
-        - name: Управление записями обратного преобразования DNS для служб Azure
-          href: dns-reverse-dns-for-azure-services.md
-    - name: Импорт и экспорт файла зоны DNS
-      href: dns-import-export.md
-    - name: Делегирование поддомена
-      href: delegate-subdomain.md
-    - name: Делегирование поддомена с помощью PowerShell
-      href: delegate-subdomain-ps.md
-    - name: Интеграция с другими службами Azure
-      href: dns-for-azure-services.md
-    - name: Защита зон и записей DNS
-      href: dns-protect-zones-recordsets.md
-    - name: Автоматизация работы DNS с помощью пакета SDK для .NET
-      href: dns-sdk.md
-    - name: Личные домены для ресурсов Azure
-      href: dns-custom-domain.md
+        - name: Записи псевдонима для веб-приложений с балансировкой нагрузки
+          href: dns-alias-appservice.md
+        - name: Управление зонами DNS
+          items:
+            - name: Портал Azure
+              href: dns-operations-dnszones-portal.md
+            - name: Azure PowerShell
+              href: dns-operations-dnszones.md
+            - name: Инфраструктура CLI Azure
+              href: dns-operations-dnszones-cli.md
+        - name: Управление зонами DNS
+          items:
+            - name: Портал Azure
+              href: dns-operations-recordsets-portal.md
+            - name: Azure PowerShell
+              href: dns-operations-recordsets.md
+            - name: Инфраструктура CLI Azure
+              href: dns-operations-recordsets-cli.md
+        - name: Управление обратным поиском DNS
+          items:
+            - name: Размещение зон обратного просмотра в Azure DNS
+              href: dns-reverse-dns-hosting.md
+            - name: Управление записями обратного преобразования DNS для служб Azure
+              href: dns-reverse-dns-for-azure-services.md
+        - name: Импорт и экспорт файла зоны DNS
+          href: dns-import-export.md
+        - name: Делегирование поддомена
+          href: delegate-subdomain.md
+        - name: Делегирование поддомена с помощью PowerShell
+          href: delegate-subdomain-ps.md
+        - name: Интеграция с другими службами Azure
+          href: dns-for-azure-services.md
+        - name: Защита зон и записей DNS
+          href: dns-protect-zones-recordsets.md
+        - name: Автоматизация работы DNS с помощью пакета SDK для .NET
+          href: dns-sdk.md
+        - name: Личные домены для ресурсов Azure
+          href: dns-custom-domain.md
     - name: Устранение неполадок
       items:
         - name: Руководство по устранению неполадок
           href: dns-troubleshoot.md
 - name: Справочные материалы
   items:
-    - name: Примеры кода
-      href: 'https://azure.microsoft.com/resources/samples/?service=dns'
-    - name: Azure PowerShell
-      href: /powershell/module/az.dns
-    - name: Azure CLI
-      href: /cli/azure/network/dns
-    - name: .NET
-      href: /dotnet/api/microsoft.azure.management.dns.models
-    - name: Java
-      href: /java/api/com.microsoft.azure.management.dns
-    - name: Node.js
-      href: 'https://azure.github.io/azure-sdk-for-node/azure-arm-dns/latest/'
-    - name: Ruby
-      href: 'https://www.rubydoc.info/gems/azure_mgmt_dns/0.8.0'
-    - name: Python
-      href: 'http://azure-sdk-for-python.readthedocs.io/en/latest/sample_azure-mgmt-dns.html'
-    - name: REST
-      href: /rest/api/dns/
-    - name: Шаблон Resource Manager
-      href: /azure/templates/microsoft.network/dns-allversions
-- name: Сопутствующие материалы
+    - name: Общедоступное имя DNS
+      items:
+        - name: Примеры кода
+          href: 'https://azure.microsoft.com/resources/samples/?service=dns'
+        - name: Azure PowerShell
+          href: /powershell/module/az.dns
+        - name: Azure CLI
+          href: /cli/azure/network/dns
+        - name: .NET
+          href: /dotnet/api/microsoft.azure.management.dns.models
+        - name: Java
+          href: /java/api/com.microsoft.azure.management.dns
+        - name: Node.js
+          href: 'https://azure.github.io/azure-sdk-for-node/azure-arm-dns/latest/'
+        - name: Ruby
+          href: 'https://www.rubydoc.info/gems/azure_mgmt_dns/0.8.0'
+        - name: Python
+          href: 'http://azure-sdk-for-python.readthedocs.io/en/latest/sample_azure-mgmt-dns.html'
+        - name: REST
+          href: /rest/api/dns/
+        - name: Шаблон Resource Manager
+          href: /azure/templates/microsoft.network/dns-allversions
+    - name: Частная зона DNS
+      items:
+        - name: Инфраструктура CLI Azure
+          href: /cli/azure/network/private-dns
+        - name: Azure PowerShell
+          href: /powershell/module/az.PrivateDns
+        - name: .NET
+          href: /dotnet/api/overview/azure/privatedns/management
+        - name: REST
+          href: /rest/api/dns/privatedns/privatezones
+- name: Связанные материалы
   items:
     - name: Шлюз приложений
       href: /azure/application-gateway/
@@ -157,3 +177,5 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=dns'
+    - name: Руководство по переносу Частной зоны DNS
+      href: private-dns-migration-guide.md

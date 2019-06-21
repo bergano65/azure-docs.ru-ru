@@ -73,10 +73,14 @@
           href: service-fabric-tutorial-upgrade-cluster.md
         - name: "5.\_Удаление кластера"
           href: service-fabric-tutorial-delete-cluster.md
-    - name: Создание изолированного кластера в AWS
+    - name: Создание изолированного кластера
       items:
-        - name: 1. Создание сетевой инфраструктуры в AWS.
-          href: service-fabric-tutorial-standalone-create-infrastructure.md
+        - name: "1.\_Создание инфраструктуры"
+          items:
+            - name: С помощью AWS
+              href: service-fabric-tutorial-standalone-create-infrastructure.md
+            - name: С помощью Azure
+              href: service-fabric-tutorial-standalone-azure-create-infrastructure.md
         - name: 2. Настройка Service Fabric.
           href: service-fabric-tutorial-standalone-create-service-fabric-cluster.md
         - name: 3. Развертывание приложения в кластере.
@@ -695,6 +699,8 @@
       items:
         - name: Диагностика распространенных сценариев
           href: service-fabric-diagnostics-common-scenarios.md
+        - name: Диагностика ошибок пакета кода
+          href: service-fabric-diagnostics-code-package-errors.md
         - name: Мониторинг приложений
           items:
             - name: Добавление функции ведения журнала в приложение

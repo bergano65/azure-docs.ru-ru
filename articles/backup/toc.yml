@@ -26,6 +26,8 @@
       href: tutorial-restore-files.md
     - name: "Резервное копирование SQL\_Server на виртуальной машине Azure"
       href: tutorial-sql-backup.md
+    - name: Резервное копирование общих папок в службе Файлы Azure
+      href: tutorial-backup-azure-files.md
     - name: Резервное копирование Windows Server
       href: tutorial-backup-windows-server-to-azure.md
     - name: Восстановление файлов в Windows Server

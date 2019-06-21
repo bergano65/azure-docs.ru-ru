@@ -17,6 +17,15 @@ metadata:
 ms.custom: seodec18
 abstract:
   description: "Распознаватель документов Azure\_— это служба когнитивных вычислений, использующая технологию машинного обучения для идентификации и извлечения пар \"ключ\_— значение\" и данных таблиц из документов-форм. Затем эта служба выводит структурированные данные, которые включают в себя связи в исходном файле. Неконтролируемое обучение позволяет модели ознакомится с макетом, связями между полями и записями без добавления метки данных вручную или трудоемкого программирования и обслуживания."
+  aside:
+    image:
+      alt: null
+      height: 110
+      src: ../media/index/form-recognizer-landing-page-video.png
+      width: 250
+    title: 'Автоматизация процессов на основе средств ИИ с использованием Распознавателя документов (2:15)'
+    href: 'https://channel9.msdn.com/Shows/AI-Show/Learn-about-AI-powered-robotic-process-automation-with-Form-Recognizer'
+    width: 250
 sections:
   - items:
       - type: list
@@ -34,7 +43,7 @@ sections:
             image:
               src: ../media/index/i_get-started.svg
             title: Установка и запуск контейнеров
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Обучение модели Распознавателя документов и извлечение данных из форм с помощью:'
@@ -55,9 +64,9 @@ sections:
         style: cards
         className: cardsD
         items:
-          - title: Интерфейсы API
+          - title: API
             html: '<p><a href="https://aka.ms/form-recognizer/api">API Распознавателя документов</a></p>'
           - title: PowerShell
             html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: Интерфейс командной строки
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list">Интерфейс командной строки Azure</a></p>'
+          - title: CLI
+            html: "<p><a href=\"https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list\">Azure\_CLI</a></p>"

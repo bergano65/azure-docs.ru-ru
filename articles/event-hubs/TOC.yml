@@ -28,20 +28,8 @@
       items:
         - name: .NET Core
           href: event-hubs-dotnet-standard-getstarted-send.md
-        - name: .NET Framework
-          href: event-hubs-dotnet-framework-getstarted-send.md
         - name: Java
           href: event-hubs-java-get-started-send.md
-        - name: Python
-          href: event-hubs-python-get-started-send.md
-        - name: Node.js
-          href: event-hubs-node-get-started-send.md
-        - name: Go
-          href: event-hubs-go-get-started-send.md
-        - name: C (только отправка)
-          href: event-hubs-c-getstarted-send.md
-        - name: Apache Storm (только получение)
-          href: event-hubs-storm-getstarted-receive.md
     - name: Регистрация событий
       items:
         - name: Использование портала Azure для включения функции "Сбор" в Центрах событий
@@ -60,33 +48,21 @@
       href: event-hubs-tutorial-visualize-anomalies.md
     - name: Хранение собранных данных в Хранилище данных SQL
       href: store-captured-data-data-warehouse.md
+    - name: Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics
+      href: event-hubs-kafka-stream-analytics.md
     - name: Потоковая передача данных в Azure Databricks при помощи Центров событий
       href: ../azure-databricks/databricks-stream-from-eventhubs.md
       maintainContext: true
-    - name: Обеспечение интеграции виртуальных сетей и брандмауэров с пространством имен Центров событий
-      href: event-hubs-tutorial-virtual-networks-firewalls.md
-    - name: Центры событий для Apache Kafka
-      items:
-        - name: Зеркальное отображение брокера Kafka в концентраторе событий с поддержкой Apache Kafka
-          href: event-hubs-kafka-mirror-maker-tutorial.md
-        - name: Подключение Apache Spark к концентратору событий с поддержкой Apache Kafka
-          href: event-hubs-kafka-spark-tutorial.md
-        - name: Подключение Apache Flink к концентраторам событий с поддержкой Apache Kafka
-          href: event-hubs-kafka-flink-tutorial.md
-        - name: 'Интеграция Apache Kafka Connect с концентратором событий, поддерживающим Kafka (предварительная версия)'
-          href: event-hubs-kafka-connect-tutorial.md
-        - name: Подключение Akka Streams к концентраторам событий с поддержкой Apache Kafka
-          href: event-hubs-kafka-akka-streams-tutorial.md
 - name: Примеры
   href: event-hubs-samples.md
 - name: Основные понятия
   items:
-    - name: Функции Центров событий
+    - name: 'Термины, касающиеся Концентраторов событий'
       href: event-hubs-features.md
-    - name: Общие сведения об узле обработчика событий
-      href: event-hubs-event-processor-host.md
-    - name: Руководство по программированию
-      href: event-hubs-programming-guide.md
+    - name: Доступность и согласованность
+      href: event-hubs-availability-and-consistency.md
+    - name: Масштабируемость
+      href: event-hubs-scalability.md
     - name: Безопасность
       items:
         - name: Управляемое удостоверение для ресурсов Azure
@@ -99,54 +75,95 @@
           href: event-hubs-authentication-and-security-model-overview.md
         - name: Атрибуты безопасности
           href: event-hubs-security-attributes.md
-    - name: Доступность и согласованность
-      href: event-hubs-availability-and-consistency.md
     - name: "Руководство по использованию протокола AMQP\_1.0"
       href: ../service-bus-messaging/service-bus-amqp-protocol-guide.md
       maintainContext: true
 - name: Практические руководства
   items:
-    - name: 'Отправка, получение и запись событий с помощью Python'
-      href: event-hubs-python.md
-    - name: Настройка журналов диагностики
-      href: event-hubs-diagnostic-logs.md
-    - name: Центры событий для Apache Kafka
+    - name: Разработка
+      items:
+        - name: Получение строки подключения Центров событий
+          href: event-hubs-get-connection-string.md
+        - name: Обмен событиями между приложениями с использованием разных протоколов
+          href: event-hubs-exchange-events-different-protocols.md
+        - name: Руководство по программированию
+          href: event-hubs-programming-guide.md
+        - name: Получение событий с помощью узла обработчика событий
+          href: event-hubs-event-processor-host.md
+    - name: Использование клиентских библиотек
+      items:
+        - name: .NET Framework
+          items:
+            - name: Отправка и получение событий с помощью .NET Framework
+              href: event-hubs-dotnet-framework-getstarted-send.md
+        - name: Java
+          items:
+            - name: Создание приложения Spring Cloud Stream Binder
+              href: /java/azure/spring-framework/configure-spring-cloud-stream-binder-java-app-azure-event-hub
+              maintainContext: true
+            - name: Использование начального приложения Spring Boot для Apache Kafka
+              href: /java/azure/spring-framework/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub
+              maintainContext: true
+        - name: Python
+          items:
+            - name: Отправка и получение событий с помощью Python
+              href: event-hubs-python-get-started-send.md
+            - name: 'Отправка, получение и запись событий с помощью Python'
+              href: event-hubs-python.md
+        - name: Node.js
+          items:
+            - name: Отправка и получение событий с помощью Node.js
+              href: event-hubs-node-get-started-send.md
+        - name: Go
+          items:
+            - name: Отправка и получение событий с помощью Go
+              href: event-hubs-go-get-started-send.md
+        - name: C (только отправка)
+          items:
+            - name: Отправка событий с помощью C
+              href: event-hubs-c-getstarted-send.md
+        - name: Apache Storm (только получение)
+          items:
+            - name: Получение событий с помощью Apache Storm
+              href: event-hubs-storm-getstarted-receive.md
+    - name: Интеграция с Apache Kafka
       items:
         - name: Создание концентраторов событий с поддержкой Apache Kafka
           href: event-hubs-create-kafka-enabled.md
-        - name: Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics
-          href: event-hubs-kafka-stream-analytics.md
-    - name: Управление
+        - name: Зеркальное отображение брокера Kafka в концентраторе событий с поддержкой Apache Kafka
+          href: event-hubs-kafka-mirror-maker-tutorial.md
+        - name: Подключение Apache Spark к концентратору событий с поддержкой Apache Kafka
+          href: event-hubs-kafka-spark-tutorial.md
+        - name: Подключение Apache Flink к концентраторам событий с поддержкой Apache Kafka
+          href: event-hubs-kafka-flink-tutorial.md
+        - name: 'Интеграция Apache Kafka Connect с концентратором событий, поддерживающим Kafka (предварительная версия)'
+          href: event-hubs-kafka-connect-tutorial.md
+        - name: Подключение Akka Streams к концентраторам событий с поддержкой Apache Kafka
+          href: event-hubs-kafka-akka-streams-tutorial.md
+    - name: Управление и мониторинг
       items:
         - name: Мониторинг Центров событий с помощью Azure Monitor
           href: event-hubs-metrics-azure-monitor.md
+        - name: Настройка журналов диагностики
+          href: event-hubs-diagnostic-logs.md
+        - name: Потоковая передача данных системы диагностики Azure с помощью Центров событий
+          href: event-hubs-streaming-azure-diags-data.md
+        - name: Автоматическое масштабирование единиц пропускной способности
+          href: event-hubs-auto-inflate.md
         - name: Библиотеки управления Центров событий
           href: event-hubs-management-libraries.md
-    - name: Получение строки подключения Центров событий
-      href: event-hubs-get-connection-string.md
-    - name: Разработка Java
+    - name: Безопасность
       items:
-        - name: Создание приложения Spring Cloud Stream Binder
-          href: /java/azure/spring-framework/configure-spring-cloud-stream-binder-java-app-azure-event-hub
-        - name: Использование начального приложения Spring Boot для Apache Kafka
-          href: /java/azure/spring-framework/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub
+        - name: Использование брандмауэров
+          href: event-hubs-ip-filtering.md
+        - name: Использование конечных точек служб для виртуальной сети
+          href: event-hubs-service-endpoints.md
+        - name: Обеспечение интеграции виртуальных сетей и брандмауэров с пространством имен Центров событий
+          href: event-hubs-tutorial-virtual-networks-firewalls.md
     - name: Устранение неполадок
       items:
         - name: Исключения
           href: event-hubs-messaging-exceptions.md
-    - name: Использование брандмауэров
-      href: event-hubs-ip-filtering.md
-    - name: Использование конечных точек служб для виртуальной сети
-      href: event-hubs-service-endpoints.md
-    - name: Автоматическое масштабирование единиц пропускной способности
-      href: event-hubs-auto-inflate.md
-    - name: Потоковая передача данных системы диагностики Azure с помощью Центров событий
-      href: event-hubs-streaming-azure-diags-data.md
-    - name: Обмен событиями между приложениями с использованием разных протоколов
-      href: event-hubs-exchange-events-different-protocols.md
-    - name: Создание приложения Spring Cloud Stream Binder
-      href: /java/azure/spring-framework/configure-spring-cloud-stream-binder-java-app-azure-event-hub?view=azure-java-stable
-      maintainContext: true
 - name: Справочные материалы
   items:
     - name: Java

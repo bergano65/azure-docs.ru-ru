@@ -1,0 +1,62 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Документация по Иммерсивному средству чтения
+metadata:
+  title: "Документация по Иммерсивному средству чтения. Краткие руководства, учебные материалы и справочник по API. Azure Cognitive Services\_| Документация Майкрософт"
+  description: 'Узнайте, как использовать Иммерсивное средство чтения в своем приложении.'
+  services: cognitive-services
+  author: metanMSFT
+  manager: nitinme
+  ms.service: cognitive-services
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 06/20/2019
+  ms.author: metanMSFT
+abstract:
+  description: "Иммерсивное средство чтения\_— это решение, в котором реализованы проверенные методы, улучшающие понимание при чтении для начинающих, а также тех, кто изучает язык, и людей с особыми потребностями. Использовать Иммерсивное средство чтения в своем веб-приложении вы можете с помощью соответствующего пакета SDK."
+sections:
+  - items:
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 3
+        items:
+          - href: /azure/cognitive-services/immersive-reader/overview
+            html: '<p>Сведения об Иммерсивном средстве чтения и о том, как интегрировать его в приложения</p>'
+            image:
+              src: ../media/index/i_overview.svg
+            title: Что собой представляет Иммерсивное средство чтения?
+          - href: /azure/cognitive-services/immersive-reader/reference
+            html: <p>Сведения о пакете SDK Иммерсивного средства чтения для Javascript</p>
+            image:
+              src: ../media/index/i_overview.svg
+            title: Использование пакета SDK Иммерсивного средства чтения
+  - title: Пятиминутные руководства по началу работы
+    items:
+      - type: paragraph
+        text: 'Начало работы с Иммерсивным средством чтения:'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: media/index/logo_csharp.svg
+            text: 'C#'
+            alt: 'Логотип C#'
+            href: quickstart
+  - title: Пошаговые руководства
+    items:
+      - type: paragraph
+        text: 'Узнайте, как разрабатывать приложения с использованием Иммерсивного средства чтения:'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="tutorial.md">Запуск Иммерсивного средства чтения с помощью Node.js</a>
+  - title: Справочные материалы
+    items:
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Пакеты SDK
+            html: <p><a href="reference.md">Javascript</a></p>

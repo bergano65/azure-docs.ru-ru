@@ -43,6 +43,10 @@
       href: deploy-cli.md
     - name: Развертывание с помощью шаблона
       href: deploy-template.md
+    - name: Развертывание с помощью нескольких общедоступных IP-адресов
+      href: deploy-multi-public-ip-powershell.md
+    - name: Развертывание с использованием Зон доступности
+      href: deploy-availability-zone-powershell.md
     - name: Интеграция с подсистемой балансировки нагрузки
       href: integrate-lb.md
 - name: Справочные материалы

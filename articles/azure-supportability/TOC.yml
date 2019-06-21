@@ -11,6 +11,8 @@
       href: per-vm-quota-requests.md
     - name: Общее региональное увеличение лимита виртуальных ЦП
       href: regional-quota-requests.md
+    - name: Увеличение лимита сети
+      href: networking-quota-requests.md
 - name: Устранение неполадок c доступом подписки к региону или номеру SKU
   href: sku-series-unavailable.md
 - name: Справочные материалы

@@ -33,6 +33,9 @@
     - name: Работа с большими наборами данных
       displayName: 'page, first, skip, token'
       href: ./concepts/work-with-data.md
+    - name: Руководство по регулируемым запросам
+      displayName: 'pagination, batching, throttling, parallel'
+      href: ./concepts/guidance-for-throttled-requests.md
 - name: Практические руководства
   items:
     - name: Получение данных об изменении ресурса

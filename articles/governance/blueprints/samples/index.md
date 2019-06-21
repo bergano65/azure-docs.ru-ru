@@ -5,14 +5,14 @@ author: DCtheGeek
 manager: carmonm
 ms.service: blueprints
 ms.topic: sample
-ms.date: 04/22/2019
+ms.date: 06/13/2019
 ms.author: dacoulte
-ms.openlocfilehash: 03813bb440e90dd7a1d2caec543756f7fffc221b
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 0345ba564ea244011a83f69e6c152d236b95a920
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64685578"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67272186"
 ---
 # <a name="azure-blueprints-samples"></a>Примеры для Azure Blueprints
 
@@ -24,6 +24,7 @@ ms.locfileid: "64685578"
 |---------|---------|
 | [ISO 27001: общие службы](./iso27001-shared/index.md) | Предоставляет соответствующий требованиям набор шаблонов инфраструктуры и средства соответствия политикам, которые помогут пройти аттестацию ISO 27001. |
 | [ISO 27001: рабочая нагрузка ASE/SQL](./iso27001-ase-sql-workload/index.md) | Предоставляет дополнительную инфраструктуру для примера схемы [ISO 27001: общие службы](./iso27001-shared/index.md). |
+| [Руководство по аттестации UK OFFICIAL](./ukofficial/control-mapping.md) | Предоставляет соответствующий требованиям набор шаблонов инфраструктуры и средства соответствия политикам, которые помогут пройти аттестацию UK OFFICIAL. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

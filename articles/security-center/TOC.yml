@@ -45,7 +45,7 @@
       href: security-center-onboarding.md
     - name: Защита сервера с помощью ATP в Защитнике Windows
       href: security-center-wdatp.md
-    - name: Расширенная защита данных для IaaS
+    - name: Расширенная защита данных для SQL на виртуальных машинах Azure (общедоступная предварительная версия)
       href: security-center-iaas-advanced-data.md
     - name: Защита Службы приложений
       href: security-center-app-services.md
@@ -83,7 +83,7 @@
           href: security-center-virtual-machine-protection.md
         - name: Защита сетевых ресурсов
           href: security-center-network-recommendations.md
-        - name: Защита службы SQL и данных
+        - name: Защита служб данных и хранилища
           href: security-center-sql-service-recommendations.md
         - name: Защита идентификации и доступа
           href: security-center-identity-access.md
