@@ -1,23 +1,35 @@
 ---
-title: Настройка политики Azure Active Directory для каталога данных Azure
-description: Пользователь может войти на портал каталога данных Azure, но при попытке входа средство регистрации источника данных, могут столкнуться с ситуацией, получить сообщение об ошибке.
+title: Способы устранения проблем с каталогом данных Azure
+description: Этой статье описываются распространенные проблемы по устранению неполадок для ресурсов каталога данных Azure.
 author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
-ms.topic: conceptual
-ms.date: 04/06/2019
-ms.openlocfilehash: e69a7e3bd104d0fb82b248b6560d4fd082c88426
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.topic: troubleshooting
+ms.date: 06/13/2019
+ms.openlocfilehash: ed74e90e5e8ed55b75968f51cb50e6a1b4cdd75d
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62116607"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67203507"
 ---
-# <a name="azure-active-directory-policy-configuration"></a>Настройка политики Azure Active Directory
+# <a name="troubleshooting-azure-data-catalog"></a>Устранение неполадок каталог данных Azure
+
+Этой статье описываются распространенные проблемы по устранению неполадок для ресурсов каталога данных Azure. 
+
+## <a name="functionality-limitations"></a>Ограничения функций
+
+При использовании каталога данных Azure, ограничено следующие функциональные возможности:
+
+- Учетные записи с типом **роль Guest** не поддерживаются. Нельзя добавлять гостевых учетных записей в качестве пользователей каталога данных Azure и портал нельзя использовать в гостевых пользователей в www.azuredatacatalog.com.
+
+- Создание ресурсов каталога данных Azure с помощью шаблонов Azure Resource Manager или Azure PowerShell команд не поддерживается.
+
+- Ресурс каталога данных Azure нельзя перемещать между клиентами Azure.
+
+## <a name="azure-active-directory-policy-configuration"></a>Настройка политики Azure Active Directory
 
 Бывает, что пользователь может войти на портал каталога данных Azure, но при попытке входа в средство регистрации источника данных отображается сообщение об ошибке, которая запрещает вход в систему. Эта ошибка может возникать, когда вы находитесь в сети компании или когда пользователь подключается из-за пределов сети компании.
-
-## <a name="registration-tool"></a>Средство регистрации
 
 Средство регистрации использует *проверку подлинности на основе форм* для проверки пользователя, который входит в систему, с помощью данных Azure Active Directory. Для успешного входа в систему администратор Azure Active Directory должен включить проверку подлинности на основе форм в *глобальной политике проверки подлинности*.
 

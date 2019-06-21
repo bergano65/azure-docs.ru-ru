@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/14/2019
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: bfa3e5a943ee59b1ed335f45e113a60f62572675
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 722097f1a61a10cd45c0c330e998021cd1abf0c8
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66735028"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67147966"
 ---
 # <a name="get-started-with-azcopy"></a>Начало работы с AzCopy
 
@@ -49,7 +49,8 @@ AzCopy — программа командной строки, который м
 
 ![Встроенная справка](media/storage-use-azcopy-v10/azcopy-inline-help.png)
 
-Прежде чем сделать что-нибудь с помощью AzCopy, вам нужно решить, каким образом необходимо предоставить учетные данные авторизации в службе хранилища.
+> [!NOTE] 
+> Как владелец учетной записи хранилища Azure не назначаются автоматически разрешения для доступа к данным. Прежде чем сделать что-нибудь с помощью AzCopy, вам нужно решить, каким образом необходимо предоставить учетные данные авторизации в службе хранилища. 
 
 ## <a name="choose-how-youll-provide-authorization-credentials"></a>Выберите, каким образом необходимо предоставить учетные данные авторизации
 
@@ -67,9 +68,9 @@ AzCopy — программа командной строки, который м
 
 Уровень авторизации, который требуется основан на планируете ли вы отправить файлы или просто загрузите их.
 
-#### <a name="authorization-to-upload-files"></a>Авторизации для отправки файлов
+Если вы хотите скачать файлы, убедитесь, что [модуль чтения данных хранилища BLOB-объектов](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-reader) был назначен вашей личности.
 
-Убедитесь, что одной из этих ролей был назначен личности:
+Если вы хотите отправить файлы, а затем проверьте, что одной из этих ролей был назначен личности:
 
 - [участник данных BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-queue-data-contributor);
 - [владелец данных BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner);
@@ -87,27 +88,6 @@ AzCopy — программа командной строки, который м
 
 Дополнительные сведения см. в разделе [управление доступом в Azure Data Lake хранилища Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
 
-#### <a name="authorization-to-download-files"></a>Авторизация для загрузки файлов
-
-Убедитесь, что одной из этих ролей был назначен личности:
-
-- [читатель данных больших двоичных объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-reader).
-- [участник данных BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-queue-data-contributor);
-- [владелец данных BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner);
-
-Эти роли могут назначаться личности в любом из этих областей:
-
-- Контейнер (файловая система)
-- Учетная запись хранения
-- Группа ресурсов
-- Подписка
-
-Чтобы узнать, как проверить и назначение ролей, см. в разделе [предоставить доступ к BLOB-объектов и очереди данных Azure с помощью RBAC на портале Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
-
-Не нужно иметь одну из этих ролей, присваиваемый свое удостоверение личности добавляется в список управления доступом (ACL) целевой контейнер или каталога. В списке управления Доступом личности необходимо иметь разрешение на чтение каталога целевой и разрешение выполнения для контейнера и каждый родительский каталог.
-
-Дополнительные сведения см. в разделе [управление доступом в Azure Data Lake хранилища Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control).
-
 #### <a name="authenticate-your-identity"></a>Проверки подлинности
 
 Когда вы проверите, что ваше удостоверение получил нужный уровень авторизации, откройте командную строку, введите следующую команду и нажмите клавишу ВВОД.
@@ -115,6 +95,14 @@ AzCopy — программа командной строки, который м
 ```azcopy
 azcopy login
 ```
+
+Если вы входите в более чем одной организации, включают идентификатор клиента организации, к которой принадлежит учетной записи хранения.
+
+```azcopy
+azcopy login --tenant-id=<tenant-id>
+```
+
+Замените `<tenant-id>` заполнитель идентификатор клиента организации, к которой принадлежит учетной записи хранения. Чтобы найти идентификатор клиента, выберите **Azure Active Directory > Свойства > идентификатор каталога** на портале Azure.
 
 Эта команда возвращает код проверки подлинности и URL-адрес веб-сайта. Откройте веб-сайт, укажите код и нажмите кнопку **Далее**.
 
@@ -146,13 +134,32 @@ azcopy cp "C:\local\path" "https://account.blob.core.windows.net/mycontainer1/?s
 
 - [Передача данных с помощью AzCopy и контейнеров Amazon S3](storage-use-azcopy-s3.md)
 
-## <a name="configure-optimize-and-troubleshoot-azcopy"></a>Настроить, оптимизировать и устранение неполадок с AzCopy
+## <a name="use-azcopy-in-a-script"></a>Использовать AzCopy в сценарии
 
-См. в разделе [Настройка, оптимизации и устранении неполадок AzCopy](storage-use-azcopy-configure.md)
+Со временем, AzCopy [ссылка для скачивания](#download-and-install-azcopy) будет указывать на новые версии AzCopy. Если ваш сценарий скачивает AzCopy, сценарий могут перестать функционировать более новой версии AzCopy изменяет компоненты, от которых зависит ваш скрипт. 
+
+Чтобы избежать этих проблем, получения статического (без изменения) ссылки в текущей версии AzCopy. Таким образом, сценарий загрузки точно такую же версию AzCopy каждый раз, в которой он выполняется.
+
+Чтобы получить ссылку, выполните следующую команду:
+
+| Операционная система  | Команда |
+|--------|-----------|
+| **Linux** | `curl -v https://aka.ms/downloadazcopy-v10-linux` |
+| **Windows** | `(curl https://aka.ms/downloadazcopy-v10-windows -MaximumRedirection 0 -ErrorAction silentlycontinue).RawContent` |
+
+> [!NOTE]
+> Для Linux `--strip-components=1` на `tar` команда удаляет папку верхнего уровня, содержащий имя версии, а вместо этого извлекает двоичного файла непосредственно в текущей папке. Это позволит скрипту следует заменить на новую версию `azcopy` обновив только `wget` URL-адрес.
+
+URL-адрес отображается в выходных данных этой команды. Затем сценарий может загрузить AzCopy с использованием этого URL-адреса.
+
+| Операционная система  | Команда |
+|--------|-----------|
+| **Linux** | `wget -O azcopyv10.tar https://azcopyvnext.azureedge.net/release20190301/azcopy_linux_amd64_10.0.8.tar.gz tar -xf azcopyv10.tar --strip-components=1 ./azcopy` |
+| **Windows** | `Invoke-WebRequest https://azcopyvnext.azureedge.net/release20190517/azcopy_windows_amd64_10.1.2.zip -OutFile azcopyv10.zip <<Unzip here>>` |
 
 ## <a name="use-azcopy-in-storage-explorer"></a>Использование AzCopy в обозревателе службы хранилища
 
-Если вы хотите получить преимущества производительности AzCopy, но вы предпочитаете использовать обозреватель службы хранилища, а не командной строки для взаимодействия с файлами, включите AzCopy в обозревателе службы хранилища.
+Если вы хотите получить преимущества производительности AzCopy, но вы предпочитаете использовать обозреватель службы хранилища, а не командной строки для взаимодействия с файлами, включите AzCopy в обозревателе службы хранилища. 
 
 В обозревателе службы хранилища выберите **предварительной версии**->**использование AzCopy для Улучшенная передачи больших двоичных объектов и загрузки**.
 
@@ -161,6 +168,8 @@ azcopy cp "C:\local\path" "https://account.blob.core.windows.net/mycontainer1/?s
 > [!NOTE]
 > Включите этот параметр, если вы включили функцию иерархического пространства имен в вашей учетной записи хранения не нужно. Том, что обозреватель хранилищ автоматически использует AzCopy в учетных записях хранения, имеющих иерархического пространства имен.  
 
+Обозреватель службы хранилища использует ключ учетной записи для выполнения операций, поэтому после входа в систему в обозревателе службы хранилища, не нужно будет предоставить учетные данные дополнительной авторизации.
+
 <a id="previous-version" />
 
 ## <a name="use-the-previous-version-of-azcopy"></a>Использовать предыдущую версию AzCopy
@@ -168,7 +177,12 @@ azcopy cp "C:\local\path" "https://account.blob.core.windows.net/mycontainer1/?s
 Если необходимо использовать предыдущую версию AzCopy (AzCopy v8.1), см. в статье из следующих ссылок:
 
 - [AzCopy для Windows (v8)](https://docs.microsoft.com/previous-versions/azure/storage/storage-use-azcopy)
+
 - [AzCopy для Linux (v8)](https://docs.microsoft.com/previous-versions/azure/storage/storage-use-azcopy-linux)
+
+## <a name="configure-optimize-and-troubleshoot-azcopy"></a>Настроить, оптимизировать и устранение неполадок с AzCopy
+
+См. в разделе [Настройка, оптимизации и устранении неполадок AzCopy](storage-use-azcopy-configure.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

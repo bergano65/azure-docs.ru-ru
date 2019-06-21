@@ -11,12 +11,12 @@ ms.date: 01/09/2019
 author: sharonlo101
 ms.author: shlo
 manager: craigg
-ms.openlocfilehash: 82786b8f01ce409179f4ddd37127679f9357cd0e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: dfdfb9e38f16d0077175587933b0800b87cc1931
+ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64727055"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67144126"
 ---
 # <a name="azure-function-activity-in-azure-data-factory"></a>Действие функции Azure в Фабрике данных Azure
 
@@ -64,6 +64,10 @@ Azure функции времени ожидания после 230 секунд
 
 Дополнительные сведения об устойчивых функций в [в этой статье](../azure-functions/durable/durable-functions-overview.md). Действие функции Azure можно настроить для вызова устойчивой функции, которая вернет ответ с другой идентификатор URI, таких как [в этом примере](../azure-functions/durable/durable-functions-http-api.md#http-api-url-discovery). Так как `statusQueryGetUri` возвращает HTTP 202 состояния, тогда как функция работает, можно запросить состояние функции с помощью веб-действие. Просто настройте веб-действие с `url` поле "значение" `@activity('<AzureFunctionActivityName>').output.statusQueryGetUri`. По завершении устойчивой функции выходные данные функции будут выходные данные веб-действия.
 
+
+## <a name="sample"></a>Образец
+
+Пример из фабрики данных, которая использует функцию Azure, чтобы извлечь содержимое tar-файл можно найти [здесь](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV2/UntarAzureFilesWithAzureFunction).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

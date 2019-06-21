@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
 ms.openlocfilehash: b8585b62b0728d1ba6e010e42b44840903c46833
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66146910"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185755"
 ---
 ### <a name="azure-storage-linked-service"></a>Связанная служба хранилища Azure
 **Связанная служба хранилища Azure** позволяет связать учетную запись хранения Azure с фабрикой данных Azure с помощью **ключа учетной записи**, который предоставляет фабрике данных глобальный доступ к службе хранилища Azure. В таблице ниже приведено описание элементов JSON, которые относятся к связанной службе хранилища Azure.

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: magottei
 ms.custom: seodec2018
-ms.openlocfilehash: 256a38320c9b3ca826ee9c12ac0a437957f988e2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 4ed18b5f83bdb052f2db6847a320c26a8e49f83e
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65539279"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67147544"
 ---
 # <a name="troubleshooting-common-indexer-issues-in-azure-search"></a>Устранение распространенных неполадок с индексатором в Поиске Azure
 
@@ -35,14 +35,11 @@ ms.locfileid: "65539279"
 
 Включение брандмауэра нельзя связать с одним конкретным сообщением об ошибке. Обычно связанные с брандмауэром ошибки выглядят как `The remote server returned an error: (403) Forbidden`.
 
-Режим брандмауэра можно проверить на [портале](https://docs.microsoft.com/azure/storage/common/storage-network-security#azure-portal). Если он включен, проблему можно решить двумя способами.
+Режим брандмауэра можно проверить на [портале](https://docs.microsoft.com/azure/storage/common/storage-network-security#azure-portal). Единственное решение поддерживаемых — отключить брандмауэр, разрешает доступ из [«Все сети»](https://docs.microsoft.com/azure/storage/common/storage-network-security#azure-portal).
 
-1. Отключите брандмауэр, выбрав вариант разрешения доступа [Все сети](https://docs.microsoft.com/azure/storage/common/storage-network-security#azure-portal).
-1. [Добавьте исключение](https://docs.microsoft.com/azure/storage/common/storage-network-security#managing-ip-network-rules) для IP-адреса службы поиска. Чтобы узнать этот IP-адрес, выполните следующую команду:
+Если индексатор не содержит вложенный набор навыков, вы _может_ пытаются [добавить исключение](https://docs.microsoft.com/azure/storage/common/storage-network-security#managing-ip-network-rules) для IP-адреса службы поиска. Тем не менее этот сценарий не поддерживается и не сможет работать.
 
-`nslookup <service name>.search.windows.net`
-
-Исключения не работают для [когнитивный поиск](cognitive-search-concept-intro.md). В этом случае остается только одно решение — отключить брандмауэр.
+Чтобы узнать IP-адрес службы поиска путем проверки связи с его полное доменное имя (`<your-search-service-name>.search.windows.net`).
 
 ### <a name="cosmos-db"></a>База данных Cosmos
 

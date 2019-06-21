@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: 250aea52de63a6397ce00e9cadcadf3a8ba39858
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 41cf5f8bcc69e181350a63d215fb0d78d43dcfdf
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60870512"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67272810"
 ---
 # <a name="delegated-access-in-windows-virtual-desktop-preview"></a>Делегированный доступ в Апробация виртуального рабочего стола Windows
 
@@ -42,11 +42,11 @@ ms.locfileid: "60870512"
 
 ## <a name="powershell-cmdlets-for-role-assignments"></a>Командлеты PowerShell для назначения ролей
 
-Можно выполнить следующие командлеты для создания, просмотра и изменения назначения ролей:
+Можно выполнить следующие командлеты, чтобы создавать, просматривать и удалять назначения ролей:
 
 * **Get-RdsRoleAssignment** отображает список назначений ролей.
 * **Новый RdsRoleAssignment** создает новое назначение роли.
-* **SET-RdsRoleAssignment** изменение назначения ролей.
+* **Remove-RdsRoleAssignment** удаление назначений ролей.
 
 ### <a name="accepted-parameters"></a>Допустимые параметры
 

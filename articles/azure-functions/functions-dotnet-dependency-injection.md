@@ -10,19 +10,21 @@ ms.service: azure-functions
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 05/28/2019
-ms.author: jehollan, glenga, cshoe
-ms.openlocfilehash: b1a6751f0d788c26af60b28eee994dc9b3877f00
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.author: jehollan, cshoe
+ms.openlocfilehash: 9f932bf92cb3871af7f0eb294ac15dec82cdc8ba
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66693247"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67274246"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Использовать внедрение зависимостей в функциях Azure .NET
 
 Функции Azure поддерживают шаблон внедрения зависимостей (DI) программного обеспечения конструктора, который является способ достижения [Inversion of Control (IoC)](https://docs.microsoft.com/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) между классами и их зависимости.
 
 Функции Azure строится на основе функции внедрения зависимостей ASP.NET Core. Оповещения службы, время существования и шаблоны проектирования [внедрения зависимостей ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) перед использованием функции внедрения Зависимостей в функциях Azure рекомендуется использовать приложение.
+
+Поддержка внедрения зависимостей начинается с помощью функций Azure версии 2.x.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -32,13 +34,22 @@ ms.locfileid: "66693247"
 
 - [Пакет Microsoft.NET.Sdk.Functions](https://www.nuget.org/packages/Microsoft.NET.Sdk.Functions/) версии 1.0.28 или более поздней версии
 
+- Необязательно: [Microsoft.Extensions.Http](https://www.nuget.org/packages/Microsoft.Extensions.Http/) только необходимые для регистрации HttpClient при запуске
+
 ## <a name="register-services"></a>Регистрация служб
 
 Чтобы зарегистрировать службы, можно создать метод для настройки и добавить компоненты к списку `IFunctionsHostBuilder` экземпляра.  Узел функций Azure создает экземпляр класса `IFunctionsHostBuilder` и передает его непосредственно в методе.
 
-Чтобы зарегистрировать метод, добавьте `FunctionsStartup` атрибута сборки, который задает имя типа, используемый при запуске системы.
+Чтобы зарегистрировать метод, добавьте `FunctionsStartup` атрибута сборки, который задает имя типа, используемый при запуске системы. Также код ссылается на предварительную версию [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) в Nuget.
 
 ```csharp
+using System;
+using Microsoft.Azure.Functions.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Http;
+using Microsoft.Extensions.Logging;
+using Microsoft.Azure.Cosmos;
+
 [assembly: FunctionsStartup(typeof(MyNamespace.Startup))]
 
 namespace MyNamespace
@@ -62,6 +73,16 @@ namespace MyNamespace
 ASP.NET Core использует внедрение через конструктор для создания зависимостей, доступных в функцию. В следующем образце показано как `IMyService` и `HttpClient` зависимостей внедряются в функцию, активируемую HTTP.
 
 ```csharp
+using System;
+using System.IO;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.Http;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+
 namespace MyNamespace
 {
     public class HttpTrigger

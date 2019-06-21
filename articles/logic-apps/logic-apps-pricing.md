@@ -10,12 +10,12 @@ ms.reviewer: estfan, LADocs
 ms.assetid: f8f528f5-51c5-4006-b571-54ef74532f32
 ms.topic: article
 ms.date: 05/22/2019
-ms.openlocfilehash: 776f79d7f32cf23943ecab4133e055993d30c7cd
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 04b1d0eda85972517155f80488ad590fb56619ab
+ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67075061"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67190682"
 ---
 # <a name="pricing-model-for-azure-logic-apps"></a>Модель ценообразования для Azure Logic Apps
 
@@ -53,7 +53,7 @@ ms.locfileid: "67075061"
 
 ## <a name="connectors"></a>Соединители
 
-Соединители Azure Logic Apps помочь ваш доступ к приложениям логики приложения, служб и систем в облаке или в локальной среде, предоставив [триггеры](#triggers), [действия](#actions), или оба. Соединители подразделяются на выпуск Standard или Enterprise. Общие сведения об этих соединителей, см. в разделе [соединители для Azure Logic Apps](../connectors/apis-list.md). Следующие разделы содержат дополнительные сведения о как выставление счетов для триггеров и действия работать.
+Соединители Azure Logic Apps помочь ваш доступ к приложениям логики приложения, служб и систем в облаке или в локальной среде, предоставив [триггеры](#triggers), [действия](#actions), или оба. Соединители подразделяются на выпуск Standard или Enterprise. Общие сведения об этих соединителей, см. в разделе [соединители для Azure Logic Apps](../connectors/apis-list.md). Если нет готовых соединителей доступны для REST API, которые вы хотите использовать в приложениях логики, вы можете создать [настраиваемые соединители](https://docs.microsoft.com/connectors/custom-connectors), которые представляют собой просто оболочками вокруг те REST API. Настраиваемые соединители оплачиваются как стандартные соединители. Следующие разделы содержат дополнительные сведения о как выставление счетов для триггеров и действия работать.
 
 <a name="triggers"></a>
 

@@ -9,11 +9,11 @@ ms.date: 7/11/2018
 ms.author: victorh
 ms.custom: include file
 ms.openlocfilehash: ea1d331eefe07980547ffae18fbbca920475ec06
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66148440"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185819"
 ---
 > [!IMPORTANT]
 > Служба "Брандмауэр Azure" сейчас предоставляется в управляемой общедоступной предварительной версии. Она включается явным образом помощью команды PowerShell `Register-AzProviderFeature`.

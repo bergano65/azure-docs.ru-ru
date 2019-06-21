@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/22/2019
 ms.author: curtand
 ms.custom: include file
-ms.openlocfilehash: 067280cdad85f59106bce5ff214e2fa9eddf3b71
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: e6e1014ac20ef70f21344ec6ece5627eccb7ba66
+ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67133240"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67148457"
 ---
 Ниже перечислены ограничения на использование и другие ограничения для службы Azure Active Directory (Azure AD).
 
@@ -29,4 +29,4 @@ ms.locfileid: "67133240"
 | Панель доступа |<ul><li>Число приложений, которые могут отображаться в Панели доступа для каждого пользователя, не ограничено. Это также относится и к пользователям с назначенными лицензиями Azure AD Premium или Enterprise Mobility Suite.</li><li>Для каждого пользователя в Панели доступа могут отображаться не более 10 плиток приложений. Это ограничение действует для пользователей с назначенными лицензиями Azure AD Free или Azure AD Basic для Azure Active Directory. Примеры таких плиток приложений: Box, Salesforce или Dropbox. Это ограничение не действует для учетных записей администраторов.</li></ul> |
 | Отчеты | В любом отчете можно просматривать и загружать не более 1000 строк. Любые дополнительные данные будут усечены. |
 | Административные единицы | Объект может входить не более чем в 30 административных единиц. |
-| Роли и разрешения администратора | <ul><li>Группу нельзя добавить в качестве [владельца](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context#object-ownership).</li><li>Группы не могут быть назначены [роли](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles).</li><li>Возможность считывать данные из других пользователей каталога нельзя ограничить за пределами параметром на уровне клиента, чтобы отключить всех пользователей без прав администратора доступ ко всем сведениям каталог (не рекомендуется). Дополнительные сведения о разрешениях по умолчанию [здесь](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context#to-restrict-the-default-permissions-for-member-users).</li><li>Может занять до 15 минут или подписи out: вход в перед администратора дополнения членство в роли и выдачу вступили в силу.</li></ul> |
+| Роли и разрешения администратора | <ul><li>Группу нельзя добавить в качестве [владельца](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context#object-ownership).</li><li>Группы не могут быть назначены [роли](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).</li><li>Возможность считывать данные из других пользователей каталога нельзя ограничить за пределами параметром на уровне клиента, чтобы отключить всех пользователей без прав администратора доступ ко всем сведениям каталог (не рекомендуется). Дополнительные сведения о разрешениях по умолчанию [здесь](https://docs.microsoft.com/azure/active-directory/fundamentals/users-default-permissions?context=azure/active-directory/users-groups-roles/context/ugr-context#to-restrict-the-default-permissions-for-member-users).</li><li>Может занять до 15 минут или подписи out: вход в перед администратора дополнения членство в роли и выдачу вступили в силу.</li></ul> |

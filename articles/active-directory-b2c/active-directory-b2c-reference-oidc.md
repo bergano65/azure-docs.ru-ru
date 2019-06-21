@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 85639e2648131f9475ad2ae77f31d43e64bf82e7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 0c855a3e0280e1fadf2362f2d8959beff2f5d00a
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66509209"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67271972"
 ---
 # <a name="web-sign-in-with-openid-connect-in-azure-active-directory-b2c"></a>Вход в веб-приложения с помощью OpenID Connect в Azure Active Directory B2C
 
@@ -152,7 +153,9 @@ Azure AD B2C имеет конечную метаданных OpenID Connect, к
 
 Если вам требуется только запускать потоки пользователя веб-приложения, можно пропустить следующие несколько разделов. Эти разделы применяются только к веб-приложений, которым необходимо выполнять проверку подлинности вызовы веб-API и также защищены с помощью Azure AD B2C.
 
-Чтобы воспользоваться кодом авторизации маркера для необходимого ресурса (полученным с помощью `response_type=code+id_token`), отправьте запрос `POST` на конечную точку `/token`. В настоящее время единственным ресурсом, который можно запросить маркер для является серверной части приложения собственных веб-API. Чтобы использовать идентификатор клиента приложения в качестве области является соглашению при запросе маркера для себя:
+Чтобы воспользоваться кодом авторизации маркера для необходимого ресурса (полученным с помощью `response_type=code+id_token`), отправьте запрос `POST` на конечную точку `/token`. В Azure AD B2C, вы можете [запроса токенов доступа для других API](active-directory-b2c-access-tokens.md#request-a-token) как обычно, путем указания их следующие области в запросе.
+
+Также можно запросить маркер доступа для веб-API серверной части приложения, соглашению об использовании идентификатор клиента как запрошенной области (что приведет к созданию маркера доступа с таким Идентификатором клиента, как «аудитория»):
 
 ```
 POST fabrikamb2c.onmicrosoft.com/oauth2/v2.0/token?p=b2c_1_sign_in HTTP/1.1

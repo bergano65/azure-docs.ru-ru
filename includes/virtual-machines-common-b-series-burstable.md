@@ -9,11 +9,11 @@ ms.date: 03/09/2018
 ms.author: azcspmt;ayshak;cynthn
 ms.custom: include file
 ms.openlocfilehash: ecf70bbbeae8fd68309f3343615f021038fb10b6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66111432"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185283"
 ---
 Семейство виртуальных машин серии B позволяет выбирать размер виртуальной машины, который предоставит необходимый базовый уровень производительности для рабочей нагрузки с возможностью повышения производительности ЦП до 100 % при использовании виртуального процессора Intel® Broadwell E5-2673 v4 2673.E5 или Intel® Haswell 2.3 GHz v3-2.4 v3.
 

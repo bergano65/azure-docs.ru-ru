@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 2ae72045ae18d84eac2a6d619d94e3a9e49415ae
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66160238"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185285"
 ---
 ## <a name="issue-custom-image-provisioning-errors"></a>Проблема Пользовательский образ; ошибки подготовки
 Ошибки подготовки возникают при отправке или записи обобщенного образа виртуальной машины в качестве специализированного образа виртуальной машины (и наоборот). В первом случае возникнет ошибка времени ожидания подготовки, а во втором — сбой подготовки. Чтобы развернуть пользовательский образ без ошибок, необходимо обеспечить, чтобы тип изображения не менялся при записи.

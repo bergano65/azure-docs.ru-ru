@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 05/22/2019
-ms.openlocfilehash: 5a7c6c4553f46e8a7308995e05d6c06c0eb10f27
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/18/2019
+ms.openlocfilehash: 1d639a8b1d5c7a5dd2b7bac7c5e020be7c8b1c50
+ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66002215"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67190959"
 ---
 # <a name="troubleshoot-common-azure-database-migration-service-issues-and-errors"></a>Устранение распространенных ошибок и проблем Azure Database Migration Service
 
@@ -59,6 +59,16 @@ ms.locfileid: "66002215"
 | Причина:         | Способы устранения: |
 | ------------- | ------------- |
 | Эта ошибка отображается, когда экземпляр службы, которую вы пытаетесь остановить включает в себя действия, которые по-прежнему работают или представить в проектах миграции. <br><br><br><br><br><br> | Убедитесь, что нет действий, выполняемых в экземпляре Azure Database Migration Service требуется остановить. Прежде чем пытаться остановить службу, может также удалить действий или проектов. Удаление проектов для очистки экземпляра службы миграции, удалив все выполняемые задачи сделайте следующее:<br>1. Install-Module-Name AzureRM.DataMigration <br>2. Login-AzureRmAccount <br>3. SELECT-AzureRmSubscription - SubscriptionName "<subName>" <br> 4. Remove-AzureRmDataMigrationProject-имя <projectName> - ResourceGroupName <rgName> - ServiceName <serviceName> - DeleteRunningTask |
+
+## <a name="error-when-attempting-to-start-azure-database-migration-service"></a>Ошибка при попытке запустить Azure Database Migration Service
+
+При запуске экземпляра Azure Database Migration Service, вы получите следующую ошибку:
+
+* **Ошибка**: Происходит сбой запуска службы. Ошибка: {«errorDetail»: «службе не удалось запустить, обратитесь в службу поддержки Майкрософт»}
+
+| Причина:         | Способы устранения: |
+| ------------- | ------------- |
+| Эта ошибка содержит неуспешного внутренне предыдущего экземпляра. Эта ошибка возникает редко, и команды разработчиков об этом сообщить. <br> | Удалите экземпляр службы, что не удается запустить и затем подготовить новый заменить его. |
 
 ## <a name="error-restoring-database-while-migrating-sql-to-azure-sql-db-managed-instance"></a>Ошибка при восстановлении базы данных, пока миграция из SQL в базе данных SQL Azure управляемого экземпляра
 

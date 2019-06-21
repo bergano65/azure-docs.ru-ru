@@ -2,18 +2,18 @@
 title: Архитектура службы Azure Backup
 description: Обзор архитектуры, компонентов и процессов, используемых службой Azure Backup.
 services: backup
-author: rayne-wiselman
+author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 02/19/2019
-ms.author: raynew
-ms.openlocfilehash: 98ffe145103b4be04014627ed04d04dcf7542015
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: dacurwin
+ms.openlocfilehash: 7c0a1650490a863f5b3a3cf09a5500d72359e7f1
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60647453"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67272003"
 ---
 # <a name="azure-backup-architecture"></a>Архитектура службы Azure Backup
 

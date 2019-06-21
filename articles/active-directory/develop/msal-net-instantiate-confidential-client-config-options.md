@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f935b1b2815501710444e3f921a157ba02e3215
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7814ff6b7575fedc19e63676ce3353c2a62a62b4
+ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65544087"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67154433"
 ---
 # <a name="instantiate-a-confidential-client-application-with-configuration-options-using-msalnet"></a>Создать экземпляр конфиденциального клиентского приложения с параметрами конфигурации, с помощью MSAL.NET
 
@@ -62,12 +62,12 @@ ms.locfileid: "65544087"
 }
 ```
 
-Начиная с версии MSAL.NET v3.x, можно настроить приложение конфиденциального клиента из файла конфигурации. Классы, связанные с конфигурацией приложений находятся в папке `Microsoft.Identity.Client.AppConfig` пространства имен.
+Начиная с версии MSAL.NET v3.x, можно настроить приложение конфиденциального клиента из файла конфигурации.
 
-В классе, который нужно настроить и создание экземпляра приложения, необходимо объявить `ConfidentialClientApplicationOptions` объекта.  Привязку к экземпляру из приложения параметров конфигурации, считанными из источника (включая файл appconfig.json):
+В классе, который нужно настроить и создание экземпляра приложения, необходимо объявить `ConfidentialClientApplicationOptions` объекта.  Привязку к экземпляру параметров приложения, с помощью конфигурации, считанными из источника (включая файл appconfig.json) `IConfigurationRoot.Bind()` метода из [пакет nuget Microsoft.Extensions.Configuration.Binder](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder):
 
 ```csharp
-using Microsoft.Identity.Client.AppConfig;
+using Microsoft.Identity.Client;
 
 private ConfidentialClientApplicationOptions _applicationOptions;
 _applicationOptions = new ConfidentialClientApplicationOptions();

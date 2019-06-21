@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.date: 05/06/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: eb99cd94dca2a463c275dd5d4fab540b4fc55318
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 4cbca467b50dd0e43132b6d09dc0785c501fca0f
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66510446"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67204676"
 ---
 # <a name="manage-user-data-in-azure-active-directory-b2c"></a>Управление пользовательскими данными в Azure Active Directory B2C
 
@@ -25,7 +26,7 @@ ms.locfileid: "66510446"
 
 ## <a name="delete-user-data"></a>Удаление пользовательских данных
 
-Пользовательские данные хранятся в каталоге Azure AD B2C и журналах аудита. Все пользовательские данные аудита сохраняются в Azure AD B2C в течение 30 дней. Если вы хотите удалить данные пользователя в течение этого периода, можно использовать операцию [Удалить пользователя](/previous-versions/azure/ad/graph/api/users-operations#DeleteUser). Операция удаления требуется для каждого из клиентов Azure AD B2C, где могут храниться данные. 
+Пользовательские данные хранятся в каталоге Azure AD B2C и журналах аудита. Все данные аудита пользователя сохраняется в течение 7 дней в Azure AD B2C. Если вы хотите удалить пользовательские данные в пределах того 7-дневного периода, можно использовать [удаление пользователя](/previous-versions/azure/ad/graph/api/users-operations#DeleteUser) операции. Операция удаления требуется для каждого из клиентов Azure AD B2C, где могут храниться данные. 
 
 Каждому пользователю в Azure AD B2C назначается идентификатор объекта. Это однозначный идентификатор, позволяющий удалить пользовательские данные в Azure AD B2C. В зависимости от архитектуры идентификатор объекта может использоваться как полезный идентификатор корреляции в других службах, например базах данных для финансовых и маркетинговых сведений, а также для управления отношениями с клиентами. 
 

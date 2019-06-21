@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/31/2019
-ms.openlocfilehash: b29f3168b7ecc1ec8f783a7ce7a6dea83318fa14
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ba803c493fd85a7be7bc6c5922171678cc6e0df0
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66455711"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67164450"
 ---
 # <a name="understand-outputs-from-azure-stream-analytics"></a>Описание выходных данных из Azure Stream Analytics
 
@@ -247,8 +247,7 @@ DateTime | Строка | Строка |  DateTime | String
 | Идентификатор учетной записи | Имя или универсальный код ресурса (URI) конечной точки учетной записи Azure Cosmos DB. |
 | Ключ учетной записи | Общедоступный ключ доступа к учетной записи Azure Cosmos DB. |
 | База данных | Имя базы данных Azure Cosmos DB. |
-| Шаблон имен коллекций | Имя коллекции или шаблон для используемых коллекций. <br />Формат имени коллекции можно создать с помощью маркера необязательным {partition}, где разделы начинаются с 0. Два примера:  <br /><ul><li> _MyCollection_: Должна существовать одна коллекция с именем «MyCollection».</li>  <li> _MyCollection {partition}_ : На основании столбца секционирования.</li></ul> Должен существовать секционирования коллекциях столбцов: «MyCollection0,» «MyCollection1», «MyCollection2», и т. д. |
-| Ключ секции | Необязательный элемент. Это необходимо только в том случае, если в шаблоне имени коллекции используется маркер {partition}.<br /> Ключ секции — это имя поля в выходных событиях, который используется для указания ключа выходных данных секционирования в коллекциях.<br /> Для выходных данных одной коллекции можно использовать любой столбец произвольных выходных данных. Например, PartitionId. |
+| Имя коллекции | Имя коллекции в Azure Cosmos DB. Azure Cosmos DB контейнеров с неограниченным хранилищем являются рекомендуемым способом для секционирования данных, как Azure Cosmos DB автоматически масштабирует секций, на основе рабочей нагрузки. |
 | Идентификатор документа |Необязательный элемент. Имя поля в выходных событиях, который используется для указания первичного ключа, на какие insert или update основаны операции.
 
 ## <a name="azure-functions"></a>Функции Azure

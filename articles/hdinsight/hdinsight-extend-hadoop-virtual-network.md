@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 06/04/2019
-ms.openlocfilehash: 4bfbce7dd985f3ebf67fde671d83acf30623b641
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 06/17/2019
+ms.openlocfilehash: 0dbcc99850d0a8b3b7306fac2bd8f89e6c941e4c
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67055398"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67163660"
 ---
 # <a name="extend-azure-hdinsight-using-an-azure-virtual-network"></a>Расширение возможностей HDInsight с помощью виртуальной сети Azure
 
@@ -211,13 +211,13 @@ Azure предоставляет разрешение имен для служб
 
 ## <a id="networktraffic"></a>Управление сетевым трафиком
 
-### <a name="controlling-inbound-traffic-to-hdinsight-clusters"></a>Входящим трафиком в кластерах HDInsight
+### <a name="techniques-for-controlling-inbound-and-outbound-traffic-to-hdinsight-clusters"></a>Способы управления входящим и исходящим трафиком для кластеров HDInsight
 
 Для управления сетевым трафиком в виртуальных сетях Azure можно использовать следующие методы:
 
 * **Группы безопасности сети** (NSG) позволяют фильтровать входящий и исходящий трафик в сети. Дополнительные сведения см. в документе [Фильтрация сетевого трафика с помощью групп безопасности сети](../virtual-network/security-overview.md).
 
-* **Сетевые виртуальные модули** реплицируют функциональные возможности устройств, таких как межсетевые экраны и маршрутизаторы. Дополнительные сведения см. в документе [Сетевые устройства](https://azure.microsoft.com/solutions/network-appliances).
+* **Сетевые виртуальные устройства** (NVA), которые могут использоваться с только исходящий трафик. Виртуальные сетевые модули реплицируют функциональные возможности устройств, таких как брандмауэры и маршрутизаторы.  Дополнительные сведения см. в документе [Сетевые устройства](https://azure.microsoft.com/solutions/network-appliances).
 
 Как управляемая служба HDInsight требуется неограниченный доступ к HDInsight работоспособности и управления служб, как для входящего и исходящего трафика из виртуальной сети. При использовании групп безопасности сети, необходимо убедиться, что эти службы могут взаимодействовать с кластером HDInsight.
 

@@ -16,12 +16,12 @@ ms.date: 04/25/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d68c190b51b9bbb5faf21e8ea75b07d1a82005e5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0ea151ee79fccd66f1d9422744d8f57829677ec0
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64571417"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67204532"
 ---
 # <a name="change-the-azure-ad-connector-account-password"></a>Изменение пароля учетной записи соединителя Azure AD
 Предполагается, что учетная запись соединителя Azure AD является бесплатной службы. Если требуется сбросить ее учетные данные, в этой статье вы найдете необходимые сведения. Например если глобальный администратор по ошибке сбросить пароль учетной записи, с помощью PowerShell.
@@ -39,12 +39,12 @@ ms.locfileid: "64571417"
 ## <a name="known-issues-these-steps-can-solve"></a>Известные проблемы, которые можно решить с помощью описанных действий
 В этом разделе приведен список ошибок, обнаруженных пользователями, которые были исправлены путем сброса учетной записи Azure AD соединителя учетных данных.
 
-- - -
+---
 Событие 6900  
 Сервер обнаружил непредвиденную ошибку при обработке уведомления об изменении пароля.  
 AADSTS70002: ошибка при проверке учетных данных. AADSTS50054: Для идентификации используется старый пароль.
 
-- - -
+---
 Событие 659  
 Произошла ошибка при получении конфигурации синхронизации политики паролей. Microsoft.IdentityModel.Clients.ActiveDirectory.AdalServiceException.  
 AADSTS70002: ошибка при проверке учетных данных. AADSTS50054: Для идентификации используется старый пароль.

@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 5/6/2019
-ms.openlocfilehash: b7d69e0fe16f96b0e3886c3736f8b91d4c06b446
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 06/19/2019
+ms.openlocfilehash: c69ffb30a37de8e6dc3e15aa1f7dcd6a9311d614
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67063753"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67274305"
 ---
 # <a name="monitor-and-tune-azure-database-for-postgresql---single-server"></a>мониторингу и настройке отдельного сервера Базы данных Azure для PostgreSQL
 Мониторинг данных о серверах помогает устранять неполадки и оптимизировать рабочую нагрузку. База данных Azure для PostgreSQL предоставляет различные параметры мониторинга, дающие возможность получить полезные сведения о поведении сервера.
@@ -38,6 +38,8 @@ ms.locfileid: "67063753"
 |network_bytes_egress|Сеть (исходящий трафик)|Байты|Исходящий сетевой трафик по активным подключениям.|
 |network_bytes_ingress|Сеть (входящий трафик)|Байты|Входящий сетевой трафик по активным подключениям.|
 |backup_storage_used|Используемое хранилище резервных копий|Байты|Объем используемого хранилища резервных копий.|
+|pg_replica_log_delay_in_bytes|Максимальная задержка между репликами|Байты|Задержки в байтах между главным и реплики большинство отставания. Эта метрика доступна только на главном сервере.|
+|pg_replica_log_delay_in_seconds|Задержка реплики|Секунды|Время с момента последнего воспроизведения транзакций. Эта метрика доступна реплики только для серверов.|
 
 ## <a name="server-logs"></a>Журналы сервера
 Можно включить ведение журнала на сервере. Эти журналы доступны в журналах диагностики Azure в [Azure Monitor регистрирует](../azure-monitor/log-query/log-query-overview.md), концентраторы событий и учетной записи хранения. Дополнительные сведения о ведении журналов см. на странице [Журналы сервера в базе данных Azure для PostgreSQL](concepts-server-logs.md).

@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 11/21/2017
 ms.author: terrylan
 ms.openlocfilehash: a5dfecd1dd004486a119122192eecac3e03fba80
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60478282"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "64701134"
 ---
 # <a name="azure-security-videos-on-channel-9"></a>Видеоматериалы по безопасности в Azure на Channel 9
 [Channel 9](https://channel9.msdn.com/) — это сообщество, которое позволяет создателям наших продуктов знакомиться и общаться с клиентами.

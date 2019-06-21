@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 7157682d7952529f9dfa98e8bc8707df9cfe944f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.custom: fasttrack-edit
+ms.openlocfilehash: b3e94bfdb513016015320dfcdf7db30981466303
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66509238"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67272079"
 ---
 # <a name="oauth-20-authorization-code-flow-in-azure-active-directory-b2c"></a>Поток кода авторизации OAuth 2.0 в Azure Active Directory B2C
 
@@ -116,7 +117,9 @@ error=access_denied
 | состояние |См. полное описание в предыдущей таблице. Если запрос содержит параметр `state`, то в ответе должно отображаться то же значение. Приложение должно проверить, совпадают ли значения параметра `state` в запросе и ответе. |
 
 ## <a name="2-get-a-token"></a>2. Получение маркера
-После получения кода авторизации можно использовать `code`, чтобы получить маркер для целевого ресурса путем отправки запроса POST на конечную точку `/token`. В Azure AD B2C вы можете запросить маркер только для веб-API серверной части вашего приложения. В соответствии с соглашением, которое используется при запросе маркера для себя, следует использовать идентификатор клиента в качестве области.
+После получения кода авторизации можно использовать `code`, чтобы получить маркер для целевого ресурса путем отправки запроса POST на конечную точку `/token`. В Azure AD B2C, вы можете [запроса токенов доступа для других API](active-directory-b2c-access-tokens.md#request-a-token) как обычно, путем указания их следующие области в запросе.
+
+Также можно запросить маркер доступа для веб-API серверной части приложения, соглашению об использовании идентификатор клиента как запрошенной области (что приведет к созданию маркера доступа с таким Идентификатором клиента, как «аудитория»):
 
 ```
 POST fabrikamb2c.onmicrosoft.com/oauth2/v2.0/token?p=b2c_1_sign_in HTTP/1.1

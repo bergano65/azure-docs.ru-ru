@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: a78c03537d7fb3db6afa0c4a4e84c4746146ca85
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 82c180d869801cd9cd91a3e2a3659644f4e263d9
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60657856"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67273321"
 ---
 # <a name="api-templates-in-azure-api-management"></a>Шаблоны API в службе управления API Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "60657856"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
-##  <a name="APIList"></a>Список API  
+## <a name="APIList"></a>Список API  
  Шаблон **списка API** позволяет настроить текст страницы со списком API на портале разработчика.  
   
  ![Список API на портале разработчика](./media/api-management-api-templates/APIM-Developer-Portal-Templates-API-List.png "Список API на портале разработчика APIM")  
@@ -112,7 +112,7 @@ ms.locfileid: "60657856"
 }  
 ```  
   
-##  <a name="Product"></a> Операция  
+## <a name="Product"></a> Операция  
  Шаблон **операции** позволяет настроить текст страницы операции на портале разработчика.  
   
  ![Страница операции на портале разработчика](./media/api-management-api-templates/APIM-Developer-Portal-templates-Operation-page.png "Страница операции в шаблонах портала разработчика APIM")  
@@ -642,7 +642,7 @@ ms.locfileid: "60657856"
 }  
 ```  
   
-##  <a name="CodeSamples"></a> Примеры кода  
+## <a name="CodeSamples"></a> Примеры кода  
  Следующие шаблоны позволяют настроить текст отдельных примеров кода на странице операции.  
   
  ![Примеры кода в шаблонах портала разработчика](./media/api-management-api-templates/APIM-Developer-Portal-Templates-Code-samples.png "Примеры кода в шаблонах портала разработчика APIM")  
@@ -663,7 +663,7 @@ ms.locfileid: "60657856"
   
 -   [Ruby](#Ruby)  
   
-###  <a name="Curl"></a> Curl  
+### <a name="Curl"></a> Curl  
  Шаблон **DocumentationSamplesCurl** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
@@ -716,12 +716,12 @@ curl -v -X {{method}} "{{scheme}}://{{host}}{{path}}{{query | escape }}"
 }  
 ```  
   
-###  <a name="CSharp"></a> C#  
+### <a name="CSharp"></a> C#  
  Шаблон **DocumentationSamplesCsharp** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
   
-```xml  
+```csharp  
 using System;  
 using System.Net.Http.Headers;  
 using System.Text;  
@@ -895,12 +895,12 @@ namespace CSHttpClientSample
 }  
 ```  
   
-###  <a name="Stub"></a> Java  
+### <a name="Stub"></a> Java  
  Шаблон **DocumentationSamplesJava** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
   
-```xml  
+```java  
 // // This sample uses the Apache HTTP client from HTTP Components (http://hc.apache.org/httpcomponents-client-ga/)  
 import java.net.URI;  
 import org.apache.http.HttpEntity;  
@@ -991,12 +991,12 @@ public class JavaSample
 }  
 ```  
   
-###  <a name="JavaScript"></a> JavaScript  
+### <a name="JavaScript"></a> JavaScript  
  Шаблон **DocumentationSamplesJs** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
   
-```xml  
+```html  
 <!DOCTYPE html>  
 <html>  
 <head>  
@@ -1080,12 +1080,12 @@ public class JavaSample
 }  
 ```  
   
-###  <a name="ObjectiveC"></a>Objective C  
+### <a name="ObjectiveC"></a>Objective C  
  Шаблон **DocumentationSamplesObjc** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
   
-```xml  
+```objective-c  
 #import <Foundation/Foundation.h>  
   
 int main(int argc, const char * argv[])  
@@ -1192,12 +1192,12 @@ int main(int argc, const char * argv[])
 }  
 ```  
   
-###  <a name="PHP"></a> PHP  
+### <a name="PHP"></a> PHP  
  Шаблон **DocumentationSamplesPhp** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
   
-```xml  
+```php  
 <?php  
 // This sample uses the HTTP_Request2 PHP library (https://github.com/pear/HTTP_Request2)  
 require_once 'HTTP/Request2.php';  
@@ -1282,12 +1282,12 @@ catch (HttpException $ex)
 }  
 ```  
   
-###  <a name="Python"></a> Python  
+### <a name="Python"></a> Python  
  Шаблон **DocumentationSamplesPython** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
   
-```xml  
+```python  
 ########### Python 2.7 #############  
 import httplib, urllib, base64  
   
@@ -1400,12 +1400,12 @@ except Exception as e:
 }  
 ```  
   
-###  <a name="Ruby"></a> Ruby  
+### <a name="Ruby"></a> Ruby  
  Шаблон **DocumentationSamplesRuby** позволяет настраивать отображение примеров такого кода в разделе примеров кода на странице операции.  
   
 #### <a name="default-template"></a>Шаблон по умолчанию  
   
-```xml  
+```ruby  
 require 'net/http'  
   
 uri = URI('{{scheme}}://{{host}}{{path}}')  

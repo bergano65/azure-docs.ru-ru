@@ -7,17 +7,17 @@ ms.author: mamccrea
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 06/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: b06fec8ab726f48e1937bae4cfbdbd9842788d0a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7c945f39218f9099d5c304739ca9b567ab9b3325
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61480814"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67164693"
 ---
-# <a name="performing-sentiment-analysis-by-using-azure-stream-analytics-and-azure-machine-learning"></a>Выполнение анализа тональности с помощью Azure Stream Analytics и Машинного обучения Azure
-В этой статье описывается, как быстро настроить простое задание Azure Stream Analytics, интегрированное с Машинным обучением Azure. Вы используете модель машинного обучения для анализа тональности из коллекции Cortana Intelligence для анализа потока текстовых данных, а также определения оценки тональности в реальном времени. С помощью Cortana Intelligence Suite вы сможете выполнить эту задачу, не вникая в особенности создания модели анализа тональности.
+# <a name="performing-sentiment-analysis-by-using-azure-stream-analytics-and-azure-machine-learning-studio-preview"></a>Выполнение анализа тональности с помощью Azure Stream Analytics и студии машинного обучения Azure (Предварительная версия)
+В этой статье описывается, как быстро настроить простое задание Azure Stream Analytics, интегрированное студии машинного обучения Azure. Вы используете модель машинного обучения для анализа тональности из коллекции Cortana Intelligence для анализа потока текстовых данных, а также определения оценки тональности в реальном времени. С помощью Cortana Intelligence Suite вы сможете выполнить эту задачу, не вникая в особенности создания модели анализа тональности.
 
 Вы сможете применить сведения, полученные в рамках этой статьи, в следующих сценариях:
 
@@ -45,7 +45,7 @@ ms.locfileid: "61480814"
 В общих чертах, чтобы выполнить задачи, описанные в этой статье, сделайте следующее.
 
 1. Создайте учетную запись хранения Azure и контейнер хранилища BLOB-объектов, а затем передайте в контейнер входной файл в формате CSV.
-3. Добавьте модель анализа тональности из коллекции Cortana Intelligence в рабочую область Машинного обучения Azure и разверните в ней эту модель как веб-службу.
+3. Добавление модели анализа тональности из коллекции Cortana Intelligence в рабочую область студии машинного обучения Azure и развертывание этой модели в качестве веб-службы в рабочей области машинного обучения.
 5. Создайте задание Stream Analytics, вызывающее эту веб-службу как функцию, для определения тональности входного текста.
 6. Запустите задание Stream Analytics и просмотрите выходные данные.
 

@@ -9,12 +9,12 @@ ms.date: 04/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 66051bd0f8be349f748c72218d538bba273be8f6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.openlocfilehash: 5c50bd921c189a7290e2850cb6c03afca39f9fb4
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65147271"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67273855"
 ---
 # <a name="authenticate-access-to-azure-blobs-and-queues-using-azure-active-directory"></a>Проверки подлинности доступа к BLOB-объекты Azure и очереди, с помощью Azure Active Directory
 
@@ -50,7 +50,7 @@ Azure Active Directory (Azure AD) разрешает права доступа �
 - [Предоставление доступа к Azure данные больших двоичных объектов и очереди с помощью RBAC с помощью Azure CLI](storage-auth-aad-rbac-cli.md)
 - [Предоставление доступа к Azure данные больших двоичных объектов и очереди с помощью RBAC с помощью PowerShell](storage-auth-aad-rbac-powershell.md)
 
-Дополнительные сведения о том, как встроенные роли определяются для службы хранилища Azure, см. в статье, посвященной [обзору определений ролей](../../role-based-access-control/role-definitions.md#management-and-data-operations-preview). Сведения о создании настраиваемых ролей RBAC, см. в разделе [Создание пользовательских ролей для управления доступом к](../../role-based-access-control/custom-roles.md).
+Дополнительные сведения о том, как встроенные роли определяются для службы хранилища Azure, см. в статье, посвященной [обзору определений ролей](../../role-based-access-control/role-definitions.md#management-and-data-operations). Сведения о создании настраиваемых ролей RBAC, см. в разделе [Создание пользовательских ролей для управления доступом к](../../role-based-access-control/custom-roles.md).
 
 ### <a name="access-permissions-for-data-operations"></a>Разрешения на доступ к операции с данными
 

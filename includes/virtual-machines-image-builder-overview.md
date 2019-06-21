@@ -6,11 +6,11 @@ ms.topic: include
 ms.service: virtual-machines-linux
 manager: jeconnoc
 ms.openlocfilehash: e1b3b5fe603072069cb3a19c7597fcc1872fefd7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66111460"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185269"
 ---
 Образы стандартизированный виртуальных машин (ВМ) позволяют организациям перенести в облако и обеспечить согласованность в развертываниях. Образы обычно содержат предопределенные параметры безопасности и конфигурации и необходимое программное обеспечение. Настройка собственных образов конвейера требуется время, инфраструктуры и установки, но с Image Builder для виртуальной Машины Azure, просто предоставить простой конфигурации, описывающий изображение, отправить его в службу и изображение построена и распространяется.
  

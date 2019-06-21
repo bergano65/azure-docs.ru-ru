@@ -10,12 +10,12 @@ ms.author: minxia
 author: mx-iao
 ms.date: 06/07/2019
 ms.custom: seodec18
-ms.openlocfilehash: bd2552cdfde19995413f4665f04c41c295304d50
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e070b80f86cb6c8b1d9e7575e19022b5cb08f340
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67082603"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67165556"
 ---
 # <a name="train-and-register-keras-models-at-scale-with-azure-machine-learning-service"></a>Обучение и зарегистрировать Keras модели в масштабе с помощью службы машинного обучения Azure
 
@@ -27,12 +27,20 @@ Keras — это высокоуровневый API, могут работать
 
 ## <a name="prerequisites"></a>Технические условия
 
-- Подписка Azure. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
-- [Установка Azure Machine Learning пакета SDK для Python](setup-create-workspace.md#sdk)
-- [Создайте файл конфигурации рабочей области](setup-create-workspace.md#write-a-configuration-file)
-- [Скачайте файлы образца скрипта](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-keras) `mnist-keras.py` и `utils.py`
+Выполните этот код на любой из этих сред:
 
-Вы также найдете завершенного [версии записной книжки Jupyter](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-keras/train-hyperparameter-tune-deploy-with-keras.ipynb) данного руководства на странице образцов GitHub. Записная книжка включает расширенный, освещая интеллектуальной настройки гиперпараметров, развертывание модели и записной книжки мини-приложения.
+ - Machine Learning записные книжки Azure виртуальной Машины — нет файлы для загрузки или установки не требуется
+
+     - Завершить [быстрого запуска облачной записной книжки](quickstart-run-cloud-notebook.md) создание специальных ноутбуков сервера предварительно загруженным с помощью пакета SDK и репозиторий с примером.
+    - В папке samples на сервере записной книжки, найти записную книжку выполненной и развернутое, перейдя к этому каталогу: **практические-в-использование azureml > обучения с помощью глубокого обучения > train-hyperparameter-tune-deploy-with-keras** папка. 
+ 
+ - Собственный сервер Jupyter Notebook
+
+     - [Установка Azure Machine Learning пакета SDK для Python](setup-create-workspace.md#sdk)
+    - [Создайте файл конфигурации рабочей области](setup-create-workspace.md#write-a-configuration-file)
+    - [Скачайте файлы образца скрипта](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-keras) `mnist-keras.py` и `utils.py`
+     
+    Вы также найдете завершенного [версии записной книжки Jupyter](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-keras/train-hyperparameter-tune-deploy-with-keras.ipynb) данного руководства на странице образцов GitHub. Записная книжка включает расширенный, освещая интеллектуальной настройки гиперпараметров, развертывание модели и записной книжки мини-приложения.
 
 ## <a name="set-up-the-experiment"></a>Настроить эксперимент
 
@@ -105,12 +113,24 @@ exp = Experiment(workspace=ws, name='keras-mnist')
     shutil.copy('./utils.py', script_folder)
     ```
 
-## <a name="get-the-default-compute-target"></a>Получение целевого объекта вычислений по умолчанию
+## <a name="create-a-compute-target"></a>Создание целевого объекта вычислений
 
-Каждая рабочая область поставляется с двумя, целевые объекты вычислений по умолчанию: целевой объект вычислений на основе графического процессора и целевого объекта вычислений на основе использования ресурсов ЦП. Целевые объекты вычисления по умолчанию имеют автомасштабирования, значение 0, это означает, что не выделяются пока не будет его использовать. Выиграйте в этом примере, использовать целевой объект вычислений GPU по умолчанию.
+Создание целевого объекта вычислений для задания TensorFlow под управлением. В этом примере создания вычислительного кластера с поддержкой GPU машинного обучения Azure.
 
 ```Python
-compute_target = ws.get_default_compute_target(type="GPU")
+cluster_name = "gpucluster"
+
+try:
+    compute_target = ComputeTarget(workspace=ws, name=cluster_name)
+    print('Found existing compute target')
+except ComputeTargetException:
+    print('Creating a new compute target...')
+    compute_config = AmlCompute.provisioning_configuration(vm_size='STANDARD_NC6', 
+                                                           max_nodes=4)
+
+    compute_target = ComputeTarget.create(ws, cluster_name, compute_config)
+
+    compute_target.wait_for_completion(show_output=True, min_node_count=None, timeout_in_minutes=20)
 ```
 
 Дополнительные сведения о целевых объектах вычислений см. в разделе [Какова целевого объекта вычислений](concept-compute-target.md) статьи.
