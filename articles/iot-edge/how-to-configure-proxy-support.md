@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 1c0da1a768b894f543b9089643622c31d6a8758d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 34a94a1b9c38070f5c9de22d9a9e4f24183a876c
+ms.sourcegitcommit: 6e6813f8e5fa1f6f4661a640a49dc4c864f8a6cb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66730147"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67151005"
 ---
 # <a name="configure-an-iot-edge-device-to-communicate-through-a-proxy-server"></a>Настройка устройства IoT Edge для обмена данными через прокси-сервер
 
@@ -52,7 +52,7 @@ ms.locfileid: "66730147"
 
 URL-адрес прокси-сервера имеет такой формат: **протокол**://**узел прокси-сервера**:**порт прокси-сервера**.
 
-* Используется **протокол** HTTP или HTTPS. Управляющая программа Docker может использовать любой из протоколов, в зависимости от параметров реестра контейнеров, но для управляющей программы IoT Edge и контейнеров среды выполнения следует всегда использовать протокол HTTPS.
+* Используется **протокол** HTTP или HTTPS. Управляющую программу Docker можно использовать любой протокол, в зависимости от параметров реестра контейнеров, но контейнеры управляющей программы и среды выполнения IoT Edge всегда следует использовать для подключения к прокси-сервер HTTP.
 
 * **Узел прокси-сервера** — это адрес прокси-сервера. Если прокси-сервер требует проверки подлинности, вы можете предоставить свои учетные данные как часть прокси-узел следующий формат: **пользователя**:**пароль**\@**узел_прокси** .
 
@@ -250,7 +250,7 @@ Restart-Service iotedge
     },
     "env": {
         "https_proxy": {
-            "value": "https://proxy.example.com:3128"
+            "value": "http://proxy.example.com:3128"
         }
     },
     "status": "running",

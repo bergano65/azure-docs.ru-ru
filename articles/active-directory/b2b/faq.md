@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df4f06528d0dd261dd92ab84b07bb705e23f7fd6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 523f1adc94870f79d198366059f33ad52f5dad68
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67113070"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67293074"
 ---
 # <a name="azure-active-directory-b2b-collaboration-faqs"></a>Часто задаваемые вопросы о службе совместной работы Azure Active Directory B2B
 
@@ -42,7 +42,7 @@ ms.locfileid: "67113070"
 Многофакторную идентификацию выполняет приглашающая организация. То есть приглашающая организация отвечает за то, чтобы для приглашенных пользователей службы B2B, выполняющих MFA, было достаточно лицензий.
 
 ### <a name="what-if-a-partner-organization-already-has-multi-factor-authentication-set-up-can-we-trust-their-multi-factor-authentication-and-not-use-our-own-multi-factor-authentication"></a>Что делать, если в партнерской организации уже настроена Многофакторная идентификация? Можно ли доверять их MFA и не применять собственную?
-Мы планируем реализовать такую возможность в будущих выпусках. Когда это произойдет, вы сможете выбрать конкретных партнеров и исключить их из своей многофакторной проверки подлинности (в приглашающей организации).
+В настоящее время эта функция не поддерживается. Если доступ к ресурсам вашей организации требуется многофакторная проверка подлинности, партнерской организации, необходимо зарегистрировать для многофакторной проверки подлинности в вашей (приглашающей) организации.
 
 ### <a name="how-can-i-use-delayed-invitations"></a>Как настроить оправку приглашений с отложенной доставкой?
 Организации может потребоваться добавить пользователей службы совместной работы B2B, подготовить их для приложений (при необходимости), а затем отправить приглашения. Вы можете воспользоваться API-интерфейсом приглашения службы совместной работы B2B, чтобы настроить рабочий процесс подключения.
