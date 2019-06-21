@@ -1,5 +1,5 @@
 ---
-title: Приобрести узлов для решения VMware с CloudSimple - Azure
+title: Подготовка узлов для решения VMware с CloudSimple - Azure
 description: Узнайте, как добавлять узлы в VMWare с помощью CloudSimple развертывания
 author: dikamath
 ms.author: dikamath
@@ -8,18 +8,18 @@ ms.topic: article
 ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 9f5108207c4f8debc65b9d1fe625ae7033ca4e70
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 33de07663c91f12d4e10c4661b841cd2dbe5a162
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64577185"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67165257"
 ---
-# <a name="purchase-nodes-for-vmware-solution-by-cloudsimple---azure"></a>Приобрести узлов для решения VMware с CloudSimple - Azure
+# <a name="provision-nodes-for-vmware-solution-by-cloudsimple---azure"></a>Подготовка узлов для решения VMware с CloudSimple - Azure
 
 Подготовка узлов на портале Azure. Затем можно настроить оплаты как то перейдите емкости для вашей среды CloudSimple частного облака.
 
-## <a name="add-a-purchased-node-to-your-cloudsimple-private-cloud"></a>Добавление узла приобретенных CloudSimple частного облака
+## <a name="add-a-provisioned-node-to-your-cloudsimple-private-cloud"></a>Добавление узла подготовленного в частном облаке CloudSimple
 
 1. Выбор пункта **Все службы**.
 2. Поиск **CloudSimple узлы**.
@@ -31,7 +31,7 @@ ms.locfileid: "64577185"
 
     ![Добавление узлов CloudSimple](media/create-cloudsimple-node-add.png)
 
-5. Выберите подписку, где вы хотите приобрести CloudSimple узлов.
+5. Выберите подписку, которой вы хотите подготовить CloudSimple узлов.
 6. Выберите группу ресурсов для узлов. Чтобы добавить новую группу ресурсов, щелкните **Create New**.
 7. Введите префикс для идентификации узлов.
 8. Выберите расположение для ресурсов узла.

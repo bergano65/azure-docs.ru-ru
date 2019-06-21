@@ -16,12 +16,12 @@ ms.date: 05/16/2019
 ms.author: rolyon
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 312658bd653d94f3e1a32204b3c5ae4ae290558e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1b5ff842d1645d2b47a436eca4fc8dc614a9fb63
+ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65832756"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67190374"
 ---
 # <a name="create-a-new-access-package-in-azure-ad-entitlement-management-preview"></a>Создание нового пакета доступ в управление правами Azure AD (Предварительная версия)
 
@@ -127,4 +127,5 @@ ms.locfileid: "65832756"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Изменение и администрирование существующего пакета для доступа](entitlement-management-access-package-edit.md)
+- [Добавление владельца каталога или диспетчером пакетов с доступом](entitlement-management-delegate.md#add-a-catalog-owner-or-an-access-package-manager)
 - [Создание и управление каталогом](entitlement-management-catalog-create.md)

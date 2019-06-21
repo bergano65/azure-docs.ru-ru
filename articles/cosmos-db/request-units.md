@@ -4,14 +4,14 @@ description: Сведения о том, как задать и оценить �
 author: rimman
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 06/14/2019
 ms.author: rimman
-ms.openlocfilehash: 9615aebd345c957c8e401581ff94735f39ba73c6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 12f91676ac50511bf3d2d33f7fed2029e152dc98
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65953537"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67165003"
 ---
 # <a name="request-units-in-azure-cosmos-db"></a>Единицы запросов в базе данных Azure Cosmos DB
 
@@ -75,3 +75,4 @@ Azure Cosmos DB поддерживает многие интерфейсы API, 
 * Узнайте, как [Оптимизируйте затраты подготовленной пропускной способности в Azure Cosmos DB](optimize-cost-throughput.md).
 * Узнайте, как [оптимизировать операции чтения и записи стоимости в Azure Cosmos DB](optimize-cost-reads-writes.md).
 * Узнайте, как [оптимизировать стоимость запроса в Azure Cosmos DB](optimize-cost-queries.md).
+* Узнайте, как [использовать метрики пропускной способности монитор](use-metrics.md).

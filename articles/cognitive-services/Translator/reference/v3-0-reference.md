@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 03/29/2018
 ms.author: v-pawal
-ms.openlocfilehash: 973d38413fa39fec1c50b5e9770b6114fa2c4c3d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f58ff566ebb83ed6163637aa3899a925ed06242a
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66387515"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67269221"
 ---
 # <a name="translator-text-api-v30"></a>API перевода текстов v3.0
 
@@ -154,6 +154,7 @@ Authorization: Bearer <Base64-access_token>
 | 400075| Сочетание категории и пары языков не является допустимым.|
 | 400077| Превышен максимальный размер запроса. Представление [ограничения запросов](../request-limits.md).|
 | 400079| Система, запрошенная для перевода между данными исходным и целевым языками, не существует.|
+| 400080| Транслитерации не поддерживается для используемого языка или скрипта.|
 | 401000| Запрос не авторизован, так как учетные данные отсутствуют или являются недопустимыми.|
 | 401015| "Указаны учетные данные для API распознавания речи. Этот запрос требует учетные данные для API текста. Используйте подписку на API перевода текстов".|
 | 403000| Операция запрещена.|

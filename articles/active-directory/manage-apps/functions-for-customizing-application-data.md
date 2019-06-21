@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/21/2019
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec1994169891d5256436ac4de741339c865bb268
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 12b75c2df7d11b0e90c5dccc3bc2aae4e0fb0c1e
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65824643"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67204485"
 ---
 # <a name="writing-expressions-for-attribute-mappings-in-azure-active-directory"></a>Запись выражений для сопоставления атрибутов в Azure Active Directory
 При настройке подготовки для приложения SaaS одним из типов сопоставления атрибутов, которые можно указать, является сопоставление выражений. Для этого необходимо написать выражение, похожее на скрипт. Оно позволит вам преобразовать данные пользователей в форматы, более подходящие для приложений SaaS.
@@ -40,7 +40,7 @@ ms.locfileid: "65824643"
 ## <a name="list-of-functions"></a>Список функций
 [Append](#append) &nbsp;&nbsp;&nbsp;&nbsp; [FormatDateTime](#formatdatetime) &nbsp;&nbsp;&nbsp;&nbsp; [Join](#join) &nbsp;&nbsp;&nbsp;&nbsp; [Mid](#mid) &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; [NormalizeDiacritics](#normalizediacritics) [Not](#not) &nbsp;&nbsp;&nbsp;&nbsp; [Replace](#replace) &nbsp;&nbsp;&nbsp;&nbsp; [SelectUniqueValue](#selectuniquevalue)&nbsp;&nbsp;&nbsp;&nbsp; [SingleAppRoleAssignment](#singleapproleassignment)&nbsp;&nbsp;&nbsp;&nbsp; [Split](#split)&nbsp;&nbsp;&nbsp;&nbsp;[StripSpaces](#stripspaces) &nbsp;&nbsp;&nbsp;&nbsp; [Switch](#switch)&nbsp;&nbsp;&nbsp;&nbsp; [ToLower](#tolower)&nbsp;&nbsp;&nbsp;&nbsp; [ToUpper](#toupper)
 
-- - -
+---
 ### <a name="append"></a>Добавить
 **Функция:**<br> Append(source, suffix)
 
@@ -53,7 +53,7 @@ ms.locfileid: "65824643"
 | **источник** |Обязательно для заполнения |String |Как правило, имя атрибута из исходного объекта. |
 | **суффикс** |Обязательно для заполнения |String |Строка, которую необходимо присоединить к концу исходного значения. |
 
-- - -
+---
 ### <a name="formatdatetime"></a>FormatDateTime
 **Функция:**<br> FormatDateTime(source, inputFormat, outputFormat)
 
@@ -67,7 +67,7 @@ ms.locfileid: "65824643"
 | **входной_формат** |Обязательно для заполнения |String |Предполагаемый формат исходного значения. Поддерживаемые форматы см. по адресу [https://msdn.microsoft.com/library/8kb3ddd4%28v=vs.110%29.aspx](https://msdn.microsoft.com/library/8kb3ddd4%28v=vs.110%29.aspx). |
 | **выходной_формат** |Обязательно для заполнения |String |Формат вывода даты. |
 
-- - -
+---
 ### <a name="join"></a>Объединение
 **Функция:**<br> Join(separator, source1, source2, …)
 
@@ -77,12 +77,12 @@ ms.locfileid: "65824643"
 
 **Параметры:**<br> 
 
-| ИМЯ | Обязательно/повторяется | type | Примечания |
+| Name | Обязательно/повторяется | type | Примечания |
 | --- | --- | --- | --- |
 | **разделитель** |Обязательно для заполнения |String |Строка, используемая для разделения исходных значений, когда они объединяются в одну строку. Если разделитель не требуется, может не иметь значения (""). |
 | **источник1… источникN** |Обязательно, количество повторов может меняться |String |Строковые значения для объединения. |
 
-- - -
+---
 ### <a name="mid"></a>Mid
 **Функция:**<br> Mid(source, start, length)
 
@@ -90,13 +90,13 @@ ms.locfileid: "65824643"
 
 **Параметры:**<br> 
 
-| ИМЯ | Обязательно/повторяется | type | Примечания |
+| Name | Обязательно/повторяется | type | Примечания |
 | --- | --- | --- | --- |
 | **источник** |Обязательно для заполнения |String |Как правило, имя атрибута. |
 | **start** |Обязательно для заполнения |целое число |Индекс положения в строке **source**, откуда должна начинаться подстрока. Первый символ в строке будет иметь индекс 1, второй символ — индекс 2 и т. д. |
 | **длина** |Обязательно для заполнения |целое число |Длина подстроки. Если длина превышает размер **исходной** строки, функция возвращает подстроку из **начала** индекса и до конца **исходной** строки. |
 
-- - -
+---
 ### <a name="normalizediacritics"></a>NormalizeDiacritics
 **Функция:**<br> NormalizeDiacritics(source)
 
@@ -108,7 +108,7 @@ ms.locfileid: "65824643"
 | --- | --- | --- | --- |
 | **источник** |Обязательно для заполнения |String | Обычно атрибут имени или фамилии. |
 
-- - -
+---
 ### <a name="not"></a>not
 **Функция:**<br> Not(источник)
 
@@ -116,11 +116,11 @@ ms.locfileid: "65824643"
 
 **Параметры:**<br> 
 
-| ИМЯ | Обязательно/повторяется | type | Примечания |
+| Name | Обязательно/повторяется | type | Примечания |
 | --- | --- | --- | --- |
 | **источник** |Обязательно для заполнения |Логическая строка |Предполагаемые значения **source**: True или False. |
 
-- - -
+---
 ### <a name="replace"></a>Заменить
 **Функция:**<br> Replace(source, oldValue, regexPattern, regexGroupName, replacementValue, replacementAttributeName, template)
 
@@ -153,7 +153,7 @@ ms.locfileid: "65824643"
 | **имя_атрибута_замены** |Необязательно |String |Имя атрибута, используемого для значения замены, если источник не имеет значение. |
 | **шаблон** |Необязательно |String |Если указано значение **template**, будет выполнен поиск **oldValue** в шаблоне с последующей заменой исходным значением. |
 
-- - -
+---
 ### <a name="selectuniquevalue"></a>SelectUniqueValue
 **Функция:**<br> SelectUniqueValue(uniqueValueRule1, uniqueValueRule2, uniqueValueRule3, …)
 
@@ -171,7 +171,7 @@ ms.locfileid: "65824643"
 | **uniqueValueRule1... uniqueValueRuleN** |Требуется не менее 2, нет верхней границы |String | Список правил формирования уникальных значений для оценки. |
 
 
-- - -
+---
 ### <a name="singleapproleassignment"></a>SingleAppRoleAssignment
 **Функция:**<br> SingleAppRoleAssignment([appRoleAssignments])
 
@@ -179,11 +179,11 @@ ms.locfileid: "65824643"
 
 **Параметры:**<br> 
 
-| Name | Обязательно/повторяется | type | Примечания |
+| ИМЯ | Обязательно/повторяется | type | Примечания |
 | --- | --- | --- | --- |
 | **[appRoleAssignments]** |Обязательно для заполнения |String |Объект **[appRoleAssignments]** . |
 
-- - -
+---
 ### <a name="split"></a>разделение;
 **Функция:**<br> Split(source, delimiter)
 
@@ -196,7 +196,7 @@ ms.locfileid: "65824643"
 | **источник** |Обязательно для заполнения |String |**источник** , которое необходимо обновить. |
 | **разделитель** |Обязательно для заполнения |String |Задает символ, который будет использоваться для разделения строки (к примеру, ",") |
 
-- - -
+---
 ### <a name="stripspaces"></a>StripSpaces
 **Функция:**<br> StripSpaces(source)
 
@@ -208,7 +208,7 @@ ms.locfileid: "65824643"
 | --- | --- | --- | --- |
 | **источник** |Обязательно для заполнения |String |**источник** , которое необходимо обновить. |
 
-- - -
+---
 ### <a name="switch"></a>Switch
 **Функция:**<br> Switch(source, defaultValue, key1, value1, key2, value2, …)
 
@@ -223,7 +223,7 @@ ms.locfileid: "65824643"
 | **key** |Обязательно для заполнения |String |Параметр **key**, с которым сравнивается значение **source**. |
 | **значение** |Обязательно для заполнения |String |Значение, которым заменяется значение **source** , соответствующее ключу. |
 
-- - -
+---
 ### <a name="tolower"></a>ToLower
 **Функция:**<br> ToLower(источник, язык и региональные параметры)
 
@@ -231,12 +231,12 @@ ms.locfileid: "65824643"
 
 **Параметры:**<br> 
 
-| ИМЯ | Обязательно/повторяется | type | Примечания |
+| Name | Обязательно/повторяется | type | Примечания |
 | --- | --- | --- | --- |
 | **источник** |Обязательно для заполнения |String |Как правило, имя атрибута из исходного объекта. |
 | **Язык и региональные параметры** |Необязательно |String |Форматом названия языка и региональных параметров в соответствии с RFC 4646 является *languagecode2-country/regioncode2*, где *languagecode2* — это двухбуквенный код языка, а *country/regioncode2* — двухбуквенный код субкультуры. Примеры включают в себя ja-JP для японского языка (Япония) и en-US для английского (США). В случаях, когда двухбуквенный код языка недоступен, используется трехбуквенный код на основе ISO 639-2.|
 
-- - -
+---
 ### <a name="toupper"></a>ToUpper
 **Функция:**<br> ToUpper(источник, язык и региональные параметры)
 

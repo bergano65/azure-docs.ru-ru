@@ -9,11 +9,11 @@ ms.service: application-insights
 ms.topic: conceptual
 ms.date: 04/26/2019
 ms.author: mbullwin
-ms.openlocfilehash: ec5b3572cbf74bad9b82eb93a45d7a4664023b95
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: c447a14f72c56e3e1e244011aa215a33b3f222a6
+ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "65408235"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Мониторинг производительности Службы приложений Azure
@@ -23,7 +23,7 @@ ms.locfileid: "65408235"
 > [!NOTE]
 > Вручную добавлять расширение сайта Application Insights с помощью **средства разработки** > **расширения** является устаревшим. Этот метод установки расширения зависела от обновления вручную для каждой новой версии. Последняя стабильная версия расширения — это теперь [предварительно](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) как часть образа службы приложений. Файлы размещаются в `d:\Program Files (x86)\SiteExtensions\ApplicationInsightsAgent` и автоматически обновляются с каждым выпуском стабильной. Если вы следуете инструкциям на основе агента, чтобы включить мониторинг ниже, он автоматически удалит устаревшие расширения для вас.
 
-## <a name="enable-application-insights"></a>Включить Application Insights
+## <a name="enable-application-insights"></a>Включение Application Insights
 
 Чтобы включить мониторинг приложений для приложений, размещенных служб приложений Azure двумя способами:
 
@@ -138,7 +138,7 @@ ms.locfileid: "65408235"
 
 ### <a name="application-settings-definitions"></a>Определения параметров приложения
 
-|Имя параметра приложения |  Определение | Value |
+|Имя параметра приложения |  Определение | Значение |
 |-----------------|:------------|-------------:|
 |ApplicationInsightsAgent_EXTENSION_VERSION | Основным расширением, управляющий мониторинг среды выполнения. | `~2` |
 |XDT_MicrosoftApplicationInsights_Mode |  По умолчанию режим только, основные возможности для обеспечения оптимальной производительности. | `default` или `recommended`. |
@@ -274,7 +274,7 @@ ms.locfileid: "65408235"
             "type": "string"
         }
     },
-    "$schema": "https://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0"
 }
 ```
@@ -348,7 +348,7 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 В таблице ниже приведен более подробное описание что означают эти значения, их базовые вызывает, а также рекомендованные способы устранения проблемы:
 
-|Значение проблемы|Объяснение|Исправить
+|Значение проблемы|Объяснение|Fix
 |---- |----|---|
 | `AppAlreadyInstrumented:true` | Это значение указывает, что расширение обнаружила, что некоторые аспекты пакета SDK уже присутствует в приложении и будет переключения в пассивный режим. Она может быть вызвано ссылку `System.Diagnostics.DiagnosticSource`, `Microsoft.AspNet.TelemetryCorrelation`, или `Microsoft.ApplicationInsights`  | Удалите ссылки. Некоторые из этих ссылок добавляются по умолчанию на основе определенных шаблонов Visual Studio и более ранних версиях Visual Studio может добавлять ссылки на `Microsoft.ApplicationInsights`.
 |`AppAlreadyInstrumented:true` | Если приложение предназначено для .NET Core 2.1 или 2.2 и ссылается на [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) сам пакет метаданных, затем он переводит в Application Insights и расширение будет переключения в пассивный режим. | Для клиентов .NET Core 2.1,2.2, [рекомендуется](https://github.com/aspnet/Announcements/issues/287) вместо этого использовать Microsoft.AspNetCore.App мета package.|

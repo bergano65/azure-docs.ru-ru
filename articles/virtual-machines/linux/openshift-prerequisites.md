@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 04/19/2019
+ms.date: 06/14/2019
 ms.author: haroldw
-ms.openlocfilehash: d8a9b82e51c837af6343ddf851545d02299aa527
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 834484278bb597bba4a5e1821d0b6572913a761d
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61473891"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67147003"
 ---
 # <a name="common-prerequisites-for-deploying-openshift-in-azure"></a>Общие предварительные требования для развертывания OpenShift в Azure
 
@@ -69,7 +69,7 @@ az group create --name keyvaultrg --location eastus
 ```
 
 ## <a name="create-a-key-vault"></a>Создайте хранилище ключей.
-Создайте хранилище ключей, где будут храниться ключи SSH для кластера, с помощью команды [az keyvault create](/cli/azure/keyvault). Имя хранилища ключей должно быть глобально уникальным.
+Создайте хранилище ключей, где будут храниться ключи SSH для кластера, с помощью команды [az keyvault create](/cli/azure/keyvault). Имя хранилища ключей должно быть глобально уникальным и должен быть включен для развертывания шаблона, или развертывание завершится с ошибкой «KeyVaultParameterReferenceSecretRetrieveFailed».
 
 В следующем примере создается хранилище ключей с именем *keyvault* в группе ресурсов *keyvaultrg*:
 

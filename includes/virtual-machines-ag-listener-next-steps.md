@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 27b09ea9cc7ce3cf2559304a26d0c04f3ea30b54
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66165447"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185239"
 ---
 Кроме автоматического подключения клиентов к первичной реплике, прослушиватель можно использовать для перенаправления рабочих нагрузок только для чтения на вторичные реплики. Это может повысить производительность и масштабируемость решения в целом. Дополнительные сведения см. в записи блога [Use ReadIntent Routing with Azure AlwaysOn Availability Group Listener](https://go.microsoft.com/fwlink/?LinkId=522515) (Использование маршрутизации ReadIntent с прослушивателем группы доступности AlwaysOn Azure).
 

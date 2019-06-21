@@ -10,12 +10,12 @@ ms.date: 03/04/2019
 ms.topic: conceptual
 description: Описывает процессы пробелы разработки Azure, power и как они настроены в файле конфигурации azds.yaml
 keywords: azds.yaml, пробелы разработки Azure, разработки пробелы, Docker, Kubernetes, Azure, AKS, служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: e437a53d640bbdad3cdeeba8fd73e1f9ffef4023
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 083ed45a8fa95ac5fc26af6547b5765acf80e43b
+ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66399833"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67154558"
 ---
 # <a name="how-azure-dev-spaces-works-and-is-configured"></a>Как работает Azure Dev пробелы и является настроен
 
@@ -210,7 +210,7 @@ azds up
 1. Создает контейнер для вашего приложения.
 1. Развертывает приложение в области разработки.
 1. Создает общедоступный DNS-имя для конечной точки приложения, если настроен.
-1. Использует *прямого порта* для предоставления доступа к конечной точке приложения с помощью http://locahost.
+1. Использует *прямого порта* для предоставления доступа к конечной точке приложения с помощью http://localhost.
 1. Перенаправляет stdout и stderr в инструментарий на стороне клиента.
 
 
