@@ -27,7 +27,7 @@ ms.locfileid: "67206470"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="deployment"></a>Развертывание
+## <a name="deployment"></a>deployment
 `deployment()`
 
 Возвращает сведения о текущей операции развертывания.
@@ -161,7 +161,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 | Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| имя_параметра |Да |string |Имя параметра, который требуется вернуть. |
+| parameterName |Да |string |Имя параметра, который требуется вернуть. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -251,7 +251,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | stringOutput | String | вариант 1 |
 | intOutput | Int | 1 |
 | objectOutput | Object | {"one": "a", "two": "b"} |
-| arrayOutput | Массив, | [1, 2, 3] |
+| arrayOutput | Array | [1, 2, 3] |
 | crossOutput | String | вариант 1 |
 
 Развернуть этот пример шаблона с помощью Azure CLI можно так:
@@ -352,7 +352,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 | ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | exampleOutput1 | String | myVariable |
-| exampleOutput2 | Массив, | [1, 2, 3, 4] |
+| exampleOutput2 | Array | [1, 2, 3, 4] |
 | exampleOutput3 | String | myVariable |
 | exampleOutput4 |  Object | {"property1": "value1", "property2": "value2"} |
 
