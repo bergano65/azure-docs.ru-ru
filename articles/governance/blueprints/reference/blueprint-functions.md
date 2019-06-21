@@ -20,14 +20,14 @@ ms.locfileid: "65209410"
 
 Поддерживаются следующие функции:
 
-- [Артефакты](#artifacts)
+- [artifacts](#artifacts)
 - [concat](#concat)
 - [parameters](#parameters)
 - [resourceGroup](#resourcegroup)
-- [ResourceGroups](#resourcegroups)
+- [resourceGroups](#resourcegroups)
 - [subscription](#subscription)
 
-## <a name="artifacts"></a>Артефакты
+## <a name="artifacts"></a>artifacts
 
 `artifacts(artifactName)`
 
@@ -37,7 +37,7 @@ ms.locfileid: "65209410"
 
 | Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| Имя артефакта |Да |string |Имя артефакта в рамках схемы. |
+| artifactName |Да |string |Имя артефакта в рамках схемы. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -109,12 +109,12 @@ ms.locfileid: "65209410"
 
 | Expression | type | Значение |
 |:---|:---|:---|
-|`[artifacts("myTemplateArtifact").outputs.myArray]` | Массив, | \[«Первый», «second»\] |
-|`[artifacts("myTemplateArtifact").outputs.myArray[0]]` | String | «Первый» |
-|`[artifacts("myTemplateArtifact").outputs.myString]` | String | «Мой строковое значение» |
+|`[artifacts("myTemplateArtifact").outputs.myArray]` | Array | \["first", "second"\] |
+|`[artifacts("myTemplateArtifact").outputs.myArray[0]]` | String | "first" |
+|`[artifacts("myTemplateArtifact").outputs.myString]` | String | "my string value" |
 |`[artifacts("myTemplateArtifact").outputs.myObject]` | Object | { "myproperty": "my value", "anotherProperty": true } |
-|`[artifacts("myTemplateArtifact").outputs.myObject.myProperty]` | String | «Мой value» |
-|`[artifacts("myTemplateArtifact").outputs.myObject.anotherProperty]` | Логический | Истина |
+|`[artifacts("myTemplateArtifact").outputs.myObject.myProperty]` | String | "my value" |
+|`[artifacts("myTemplateArtifact").outputs.myObject.anotherProperty]` | Bool | True |
 
 ## <a name="concat"></a>concat
 
@@ -126,7 +126,7 @@ ms.locfileid: "65209410"
 
 | Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| строка1 |Да |string |Первое значение для сцепки. |
+| string1 |Да |string |Первое значение для сцепки. |
 | дополнительные аргументы |Нет |string |Дополнительные значения в последовательном порядке для сцепки |
 
 ### <a name="return-value"></a>Возвращаемое значение
@@ -151,7 +151,7 @@ Azure Blueprint функция отличается от функции шабл
 
 | Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| имя_параметра |Да |string |Имя параметра, который требуется вернуть. |
+| parameterName |Да |string |Имя параметра, который требуется вернуть. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -324,7 +324,7 @@ Azure Blueprint функция отличается от функции шабл
 }
 ```
 
-## <a name="subscription"></a>подписка
+## <a name="subscription"></a>subscription
 
 `subscription()`
 
