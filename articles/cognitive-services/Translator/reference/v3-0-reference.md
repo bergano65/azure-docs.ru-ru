@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 03/29/2018
 ms.author: v-pawal
-ms.openlocfilehash: f58ff566ebb83ed6163637aa3899a925ed06242a
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 4133cec401723ab103b0b3bfff62eee21b653e2b
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67269221"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331823"
 ---
 # <a name="translator-text-api-v30"></a>API перевода текстов v3.0
 
@@ -31,20 +31,20 @@ API перевода текстов версии 3 предоставляет с
 
 ## <a name="base-urls"></a>Базовые URL-адреса
 
-Microsoft Translator обслуживается несколькими центрами обработки данных. В настоящее время они располагаются в 6 [регионах Azure](https://azure.microsoft.com/global-infrastructure/regions):
+Microsoft Translator обслуживается несколькими центрами обработки данных. В настоящее время находятся в 6 [географических расположений Azure](https://azure.microsoft.com/global-infrastructure/regions):
 
 * **Северная и Южная Америка:** западная часть США 2 и центрально-западная часть США. 
 * **Азиатско-Тихоокеанский регион:** Юго-Восточная Азия и Республика Корея, южный регион.
 * **Европа** Северная Европа и Западная Европа.
 
-Запросы к Microsoft API перевода текстов в большинстве случаев обрабатываются ближайшим к месту отправки запроса центром обработки данных. В случае сбоя ближайшего центра обработки данных запрос может быть перенаправлен за пределы региона.
+Запросы к Microsoft API перевода текстов в большинстве случаев обрабатываются ближайшим к месту отправки запроса центром обработки данных. В случае сбоя центра обработки данных запрос может перенаправляться за пределами географического региона Azure.
 
-Чтобы настроить принудительную обработку запроса определенным центром обработки данных, измените глобальную конечную точку в запросе API на требуемую региональную конечную точку:
+Чтобы принудительно выполнить запрос для обработки в определенного географического региона Azure, измените региональных требуемая конечная точка глобальной конечной точки в запросе API:
 
-|Описание|Регион|Базовый URL-адрес|
+|Описание|Географическая территория Azure|Базовый URL-адрес|
 |:--|:--|:--|
-|Таблицы Azure|Глобальные|  api.cognitive.microsofttranslator.com|
-|Таблицы Azure|Северная Америка|   api-nam.cognitive.microsofttranslator.com|
+|Таблицы Azure|Global (без привязки к региону)|   api.cognitive.microsofttranslator.com|
+|Таблицы Azure|США|   api-nam.cognitive.microsofttranslator.com|
 |Таблицы Azure|Европа|  api-eur.cognitive.microsofttranslator.com|
 |Таблицы Azure|Азиатско-Тихоокеанский регион|    api-apc.cognitive.microsofttranslator.com|
 
