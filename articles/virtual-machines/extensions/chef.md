@@ -70,7 +70,7 @@ Chef работает во всех [операционных системах, 
 
 | Name | Значение и пример | Тип данных
 | ---- | ---- | ---- 
-| apiVersion | `2017-12-01` | Строка (дата) |
+| apiVersion | `2017-12-01` | string (date) |
 | publisher | `Chef.Bootstrap.WindowsAzure` | string |
 | type | `LinuxChefClient` (Linux), `ChefClient` (Windows) | string |
 | typeHandlerVersion | `1210.12` | string (double) |
@@ -79,8 +79,8 @@ Chef работает во всех [операционных системах, 
 
 | ИМЯ | Значение и пример | Тип данных | Обязательный?
 | ---- | ---- | ---- | ----
-| settings/параметры_начальной_загрузки/URL-адрес_сервера_Chef | `https://api.chef.io/organizations/myorg` | Строка (URL-адрес) | Да |
-| settings/параметры_начальной_загрузки/имя_клиента_для_проверки | `myorg-validator` | string | Да |
+| settings/bootstrap_options/chef_server_url | `https://api.chef.io/organizations/myorg` | string (url) | Да |
+| settings/bootstrap_options/validation_client_name | `myorg-validator` | string | Да |
 | settings/runlist | `recipe[mycookbook::default]` | string | Да |
 
 ### <a name="protected-settings"></a>Защищенные параметры

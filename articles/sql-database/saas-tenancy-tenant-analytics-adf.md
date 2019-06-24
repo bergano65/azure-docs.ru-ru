@@ -19,7 +19,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "61485079"
 ---
-# <a name="explore-saas-analytics-with-azure-sql-database-sql-data-warehouse-data-factory-and-power-bi"></a>Изучение аналитики SaaS с помощью базы данных SQL Azure, хранилища данных SQL, фабрики данных и Power BI
+# <a name="explore-saas-analytics-with-azure-sql-database-sql-data-warehouse-data-factory-and-power-bi"></a>Изучение аналитики SaaS с помощью Базы данных SQL Azure, хранилища данных SQL, фабрики данных и Power BI
 
 В этом руководстве описывается комплексный сценарий аналитики. В сценарии демонстрируется, как аналитика данных клиентов позволяет поставщикам программного обеспечения принимать интеллектуальные решения. Используя данные, извлеченные из каждой базы данных клиента, можно применять аналитику, чтобы получить детальные сведения о поведении клиента, включая использование примера SaaS-приложения Wingtip Tickets. Этот сценарий состоит из трех этапов. 
 
