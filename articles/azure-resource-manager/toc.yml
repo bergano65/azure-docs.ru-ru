@@ -212,7 +212,7 @@
 - name: Справочные материалы
   items:
     - name: Справочник по шаблонам
-      href: subtoc/toc.yml
+      href: /azure/templates/
     - name: Функции шаблонов
       items:
         - name: Все функции
