@@ -11,18 +11,18 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: diberry
-ms.openlocfilehash: badf351f8336e501b3ee1c035fcb389a570750c0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8c7476a82df75d8ba653a2a8e6c0f9f557b53c42
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65072850"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341872"
 ---
 # <a name="add-an-entity-to-example-utterances"></a>Добавление сущности к примерам высказываний 
 
 Примеры высказываний являются примерами текста пользовательских вопросов или команд. Для обучения службы "Распознавание речи"(LUIS) необходимо добавить [примеры фрагментов речи](luis-concept-utterance.md) в [намерение](luis-concept-intent.md).
 
-Как правило, сначала следует добавить пример высказывания в намерение, а затем создать сущности и помеченные высказывания на странице намерений. Если вам нужно сначала создать сущности, см. [этот](luis-how-to-add-entities.md) раздел.
+Как правило вы utterance пример объекта intent сначала добавьте, а затем создавать сущности и метки высказываний на странице намерений. Если вам нужно сначала создать сущности, см. [этот](luis-how-to-add-entities.md) раздел.
 
 ## <a name="marking-entities-in-example-utterances"></a>Маркировка сущностей в примерах высказываний
 

@@ -152,7 +152,7 @@ ms.locfileid: "67295337"
 | KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | string |
 | KeyEncryptionKeyURL | url | string |
 | (необязательно) KeyVaultURL | url | string |
-| Парольная фраза | password | string | 
+| Passphrase | password | string | 
 | SequenceVersion | uniqueidentifier | string |
 | VolumeType | OS, Data, All | string |
 

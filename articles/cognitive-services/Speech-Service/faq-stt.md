@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/11/2018
 ms.author: panosper
-ms.openlocfilehash: 29ec50a1d2e0aebb1aeb73b38c662f4a18624754
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6cc530d2680c0410081ad3ad3e573cd59d5583d6
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60539066"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341958"
 ---
 # <a name="speech-to-text-frequently-asked-questions"></a>Часто задаваемые вопросы о преобразовании речи в текст
 
@@ -69,7 +69,7 @@ ms.locfileid: "60539066"
 
 **Ответ**. Вы можете масштабировать модель, добавляя по 20 одновременно выполняемых запросов.
 
-Если вам нужно больше, свяжитесь с нами.
+Обратитесь к [поддержка управления речью](mailto:speechsupport@microsoft.com?subject=Request%20for%20higher%20concurrency%20for%20Speech-to-text) Если требуется отличается более высокой масштабируемостью.
 
 **Вопрос. Как мне скачать модель для локального выполнения?**
 
