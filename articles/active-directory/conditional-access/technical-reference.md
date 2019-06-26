@@ -119,10 +119,10 @@ ms.locfileid: "67112105"
 | Windows 10             | Internet Explorer, Microsoft Edge, Chrome     |
 | Windows 8, Windows 8.1        | Internet Explorer, Chrome                     |
 | Windows 7              | Internet Explorer, Chrome                     |
-| iOS                    | Управляемый браузер Intune Safari, Microsoft Edge |
-| Android                | Управляемый браузер Intune Chrome, Microsoft Edge |
-| Windows Phone          | Internet Explorer, Microsoft Edge, Chrome             |
-| Windows Server 2016    | Internet Explorer, Microsoft Edge, Chrome             |
+| iOS                    | Safari, Microsoft Edge, Intune Managed Browser |
+| Android                | Chrome, Microsoft Edge, Intune Managed Browser |
+| Windows Phone          | Internet Explorer, Microsoft Edge             |
+| Windows Server 2016    | Internet Explorer, Microsoft Edge             |
 | Windows Server 2016    | Chrome                                        |
 | Windows Server 2012 R2 | Internet Explorer, Chrome                     |
 | Windows Server 2008 R2 | Internet Explorer, Chrome                     |
@@ -140,19 +140,19 @@ ms.locfileid: "67112105"
 
 |    |    |
 | --- | --- |
-| Путь | HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist |
+| Path | HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist |
 | Name | 1 |
-| type | REG_SZ (String) |
-| Данные | ppnbnpeolgkicgegkbkbjmhlideopiji; https://clients2.google.com/service/update2/crx |
+| Type | REG_SZ (String) |
+| Data | ppnbnpeolgkicgegkbkbjmhlideopiji; https://clients2.google.com/service/update2/crx |
 
 Для поддержки Chrome в **Windows 8.1 и Windows 7** создайте следующий раздел реестра:
 
 |    |    |
 | --- | --- |
-| Путь | HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls |
+| Path | HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls |
 | Name | 1 |
-| type | REG_SZ (String) |
-| Данные | {"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}} |
+| Type | REG_SZ (String) |
+| Data | {"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}} |
 
 Эти браузеры поддерживают аутентификацию устройств, позволяя идентифицировать устройство и проверить, соответствует ли оно политике. Если браузер работает в частном режиме, проверка устройства завершается ошибкой.
 
