@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: e1583ccf04b68f81a71bd2f63779680427ce3362
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 98acc7f6dd5ec7cf3702bbcbe60e2739732512e2
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67068784"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67294914"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS
 
@@ -29,43 +29,6 @@ ms.locfileid: "67068784"
 ## <a name="how-much-does-azure-disk-encryption-cost"></a>Какова стоимость шифрования дисков Azure?
 
 Плата за шифрование дисков виртуальной машины с помощью шифрования дисков Azure не взимается, но оплачивается использование Azure Key Vault. Дополнительные сведения о ценах на Azure Key Vault см. на [этой странице](https://azure.microsoft.com/pricing/details/key-vault/).
-
-
-## <a name="which-virtual-machine-tiers-does-azure-disk-encryption-support"></a>Какие уровни виртуальных машин поддерживает шифрование дисков Azure?
-
-Шифрование дисков Azure доступно на виртуальных машинах уровня "стандартный", включая [A, D, DS, E, G, GS и F](https://azure.microsoft.com/pricing/details/virtual-machines/) виртуальные машины IaaS серий. Эта возможность также доступна для виртуальных машин с хранилищем класса Рremium. На виртуальных машинах уровня "Базовый" она недоступна.
-
-## <a name="bkmk_LinuxOSSupport"></a> Какие дистрибутивы Linux поддерживает шифрование дисков Azure?
-
-Шифрование дисков Azure поддерживается на подмножестве [дистрибутивов Linux, рекомендованные для Azure](../virtual-machines/linux/endorsed-distros.md), который сам является подмножеством всех возможных дистрибутивов сервера Linux.
-
- ![Диаграмма Венна server дистрибутивов Linux, которые поддерживают шифрование дисков Azure](./media/azure-security-disk-encryption-faq/ade-supported-distros.png)
-
-Server дистрибутивы Linux не поддерживается в Azure не поддерживают шифрование дисков Azure и из них, которые поддерживается, только для следующих дистрибутивов и версий поддерживает шифрование дисков Azure:
-
-| Дистрибутив Linux | Version | Тип тома, для которого поддерживается шифрование|
-| --- | --- |--- |
-| Ubuntu | 18,04| Диск операционной системы и данных |
-| Ubuntu | 16.04| Диск операционной системы и данных |
-| Ubuntu | 14.04.5</br>[с ядром, оптимизированным для Azure, обновленным до версии 4.15 или более поздней версии](azure-security-disk-encryption-tsg.md#bkmk_Ubuntu14) | Диск операционной системы и данных |
-| RHEL | 7.6 | Диск операционной системы и данных (см. примечание ниже) |
-| RHEL | 7.5 | Диск операционной системы и данных (см. примечание ниже) |
-| RHEL | 7.4 | Диск операционной системы и данных (см. примечание ниже) |
-| RHEL | 7.3 | Диск операционной системы и данных (см. примечание ниже) |
-| RHEL | 7,2 | Диск операционной системы и данных (см. примечание ниже) |
-| RHEL | 6,8 | Диск данных (см. примечание ниже) |
-| RHEL | 6.7 | Диск данных (см. примечание ниже) |
-| CentOS | 7.5 | Диск операционной системы и данных |
-| CentOS | 7.4 | Диск операционной системы и данных |
-| CentOS | 7.3 | Диск операционной системы и данных |
-| CentOS | 7.2n | Диск операционной системы и данных |
-| CentOS | 6,8 | Диск данных |
-| openSUSE | 42.3 | Диск данных |
-| SLES | 12-SP4 | Диск данных |
-| SLES | 12-SP3 | Диск данных |
-
-> [!NOTE]
-> Новая реализация ADE поддерживается для RHEL ОС и диска данных для образов RHEL7 оплаты по мере использования. Для образов RHEL, предоставляемых по подписке, ADE пока не поддерживается. См. в разделе [шифрования дисков Azure для Linux](azure-security-disk-encryption-linux.md) Дополнительные сведения.
 
 ## <a name="how-can-i-start-using-azure-disk-encryption"></a>Как приступить к работе с шифрованием дисков Azure?
 

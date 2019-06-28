@@ -12,12 +12,12 @@ ms.date: 11/15/2018
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51ad6ea2abcc18b985e9c45fbfb1ffba98fb2c1f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 674d055c40ff594f0e4e05ec512b9124b1d7ab77
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66113086"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341330"
 ---
 # <a name="understand-azure-ad-application-proxy-connectors"></a>Сведения о соединителях прокси приложения Azure AD
 
@@ -34,7 +34,7 @@ ms.locfileid: "66113086"
 ### <a name="windows-server"></a>Windows Server
 Вам также потребуется сервер под управлением Windows Server 2012 R2 или более поздней версии, на котором можно установить соединитель Application Proxy. Серверу нужна возможность подключаться к службам Application Proxy в Azure, а также к локальным приложениям, которые вы публикуете.
 
-Прежде чем установить этот соединитель, на сервере Windows Server нужно включить протокол TLS 1.2. Существующие соединители версий ниже 1.5.612.0 будут продолжать работать с предыдущими версиями TLS до последующего уведомления. Включение протокола TLS 1.2
+Прежде чем установить этот соединитель, на сервере Windows Server нужно включить протокол TLS 1.2. Чтобы включить TLS 1.2 на сервере:
 
 1. Настройте следующие разделы реестра:
     

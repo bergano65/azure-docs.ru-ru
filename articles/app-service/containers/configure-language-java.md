@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: routlaw
 ms.custom: seodec18
-ms.openlocfilehash: 9339d891e8fe895f598e1a2615fcfa66b053b3e0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 91368ac3b1d7948257fa9e55debc862567593425
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67063852"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341387"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Linux Java для службы приложений Azure
 
@@ -60,6 +60,43 @@ ms.locfileid: "67063852"
 ### <a name="troubleshooting-tools"></a>Средства устранения неполадок
 
 На основе встроенных образов Java [Alpine Linux](https://alpine-linux.readthedocs.io/en/latest/getting_started.html) операционной системы. Используйте `apk` диспетчер пакетов для установки Устранение неполадок средства или команды.
+
+### <a name="flight-recorder"></a>«Черный ящик»
+
+Все образы Linux на Java в службе приложений имеют Zulu «черный ящик» установлен, поэтому можно легко подключиться к виртуальной машине Java и запустить профилировщик записи или создания дампа кучи.
+
+#### <a name="timed-recording"></a>Истекло время ожидания записи
+
+Для получения работы SSH в службе приложений и запуска `jcmd` команду, чтобы просмотреть список всех процессов Java, запущенных. В дополнение к jcmd сам вы должны увидеть приложения Java, запущенного с идентификатором процесса (pid).
+
+```shell
+078990bbcd11:/home# jcmd
+Picked up JAVA_TOOL_OPTIONS: -Djava.net.preferIPv4Stack=true
+147 sun.tools.jcmd.JCmd
+116 /home/site/wwwroot/app.jar
+```
+
+Выполните следующую команду, чтобы начать запись 30-секундной виртуальной машины Java. Это профиля виртуальной машины Java и создайте файл JFR `jfr_example.jfr` в домашнем каталоге. (Замените 116 pid ваше приложение Java).
+
+```shell
+jcmd 116 JFR.start name=MyRecording settings=profile duration=30s filename="/home/jfr_example.jfr"
+```
+
+Во время 30-секундный интервал, можно проверить записи выполняется путем запуска `jcmd 116 JFR.check`. При этом будут отображены все записи для указанного процесса Java.
+
+#### <a name="continuous-recording"></a>Непрерывная записи
+
+Можно использовать «черный ящик» Zulu постоянно профилирование приложения Java с минимальным влиянием на производительность во время выполнения ([источника](https://assets.azul.com/files/Zulu-Mission-Control-data-sheet-31-Mar-19.pdf)). Чтобы сделать это, выполните следующую команду Azure CLI, чтобы создать параметр приложения с именем JAVA_OPTS с необходимой конфигурации. Содержимое параметра приложения, JAVA_OPTS передаются `java` команды при запуске приложения.
+
+```azurecli
+az webapp config appsettings set -g <your_resource_group> -n <your_app_name> --settings JAVA_OPTS=-XX:StartFlightRecording=disk=true,name=continuous_recording,dumponexit=true,maxsize=1024m,maxage=1d
+```
+
+Дополнительные сведения см. в разделе [Справочник по командам Jcmd](https://docs.oracle.com/javacomponents/jmc-5-5/jfr-runtime-guide/comline.htm#JFRRT190).
+
+### <a name="analyzing-recordings"></a>Анализ записей
+
+Используйте [FTPS](../deploy-ftp.md) можно скачать файл JFR на локальный компьютер. Чтобы проанализировать файл JFR, загрузите и установите [Zulu пакет управления](https://www.azul.com/products/zulu-mission-control/). Инструкции по Zulu пакет управления, см. в разделе [документации Azul](https://docs.azul.com/zmc/) и [инструкции по установке](https://docs.microsoft.com/en-us/java/azure/jdk/java-jdk-flight-recorder-and-mission-control).
 
 ## <a name="customization-and-tuning"></a>Настройка
 

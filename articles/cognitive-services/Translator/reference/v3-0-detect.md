@@ -3,19 +3,19 @@ title: Метод Detect в API перевода текстов
 titlesuffix: Azure Cognitive Services
 description: Использование метода Detect в API перевода текстов.
 services: cognitive-services
-author: rajdeep-in
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
-ms.author: v-pawal
-ms.openlocfilehash: 275cf91eb3bf72a612882164c24e4773edcad0f2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: swmachan
+ms.openlocfilehash: 6e90626759b3c78d98c8c0f6e32d37c1440385cd
+ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66389802"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357736"
 ---
 # <a name="translator-text-api-30-detect"></a>API перевода текстов 3.0: Определение
 

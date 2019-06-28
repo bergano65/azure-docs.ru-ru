@@ -16,7 +16,7 @@
     - name: "Резервное копирование виртуальной машины\_— шаблон Resource Manager"
       displayName: ARM
       href: quick-backup-vm-template.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Резервное копирование виртуальных машин Azure в нужном масштабе
       href: tutorial-backup-vm-at-scale.md
@@ -144,8 +144,6 @@
           items:
             - name: Управление резервными копиями виртуальных машин Azure
               href: backup-azure-manage-vms.md
-            - name: Мониторинг оповещений о резервных копиях виртуальных машин Azure
-              href: backup-azure-monitor-vms.md
         - name: Восстановление виртуальных машин Azure
           items:
             - name: Восстановление виртуальных машин Azure на портале
@@ -252,7 +250,7 @@
           href: backup-azure-mars-troubleshoot.md
         - name: Общая папка Azure
           href: troubleshoot-azure-files.md
-        - name: "SQL\_Server"
+        - name: SQL Server
           href: backup-sql-server-azure-troubleshoot.md
         - name: Состояние системы
           href: backup-azure-system-state-troubleshoot.md

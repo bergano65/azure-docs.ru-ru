@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: pabutler
-ms.openlocfilehash: dd2e68c820a8c9e503a3539fd50bf3fba68e3949
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9cfec65843012e781c8a8dd06cbc4d1225b0dd36
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66257531"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67338894"
 ---
 # <a name="dynamics-365-for-customer-engagement-prerequisites"></a>Предварительные требования для Dynamics 365 for Customer Engagement
 
@@ -40,7 +40,7 @@ ms.locfileid: "66257531"
 
 Бизнес-требования включают следующие процедурные, контрактные и юридические обязательства.
 
-* Вы должны быть зарегистрированы в программе [Microsoft Partner Network (MPN)](https://partners.microsoft.com/PartnerProgram/simplifiedenrollment.aspx) или быть зарегистрированным издателем в облаке Marketplace. Если вы еще не зарегистрированы, выполните действия для [регистрации в качестве издателя в облаке Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher)  (на третьем шаге используйте [форму предварительного утверждения партнера AppSource](https://appsource.microsoft.com/partners/signup)). 
+* Вы должны быть зарегистрированы в программе [Microsoft Partner Network (MPN)](https://partners.microsoft.com/PartnerProgram/simplifiedenrollment.aspx) или быть зарегистрированным издателем в облаке Marketplace. Если вы еще не зарегистрированы, выполните действия для [регистрации в качестве издателя в облаке Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher)  (Можно также подключиться с помощью [Dynamics 365 для взаимодействия с клиентами команда адаптации](https://experience.dynamics.com/isvengage/)).
 
     >[!NOTE]
     >Следует использовать одну и ту же учетную запись регистрации Центра разработки для Майкрософт для входа на портал Cloud Partner. У вас должна быть только одна учетная запись Майкрософт для публикации предложений в Azure Marketplace. Эта учетная запись не должна быть привязана к конкретным службам или предложениям.

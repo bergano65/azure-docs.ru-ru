@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.reviewer: vitalyg
 ms.author: cithomas
-ms.openlocfilehash: 7a657f175307e019155e37538021c5aecf5bb068
-ms.sourcegitcommit: e5dcf12763af358f24e73b9f89ff4088ac63c6cb
+ms.openlocfilehash: 4da91150999864c64ead28b74242e85d23a51ead
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67136896"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67310455"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -313,7 +313,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, Telemetr
                     <Add name = "SamplingPercentage" value = "50" />
                 </Processor>
             </BuiltInProcessors>
-        <TelemetryProcessors/>
+        </TelemetryProcessors>
     ```
 
 3. Конкретные типы телеметрии можно включить в выборку или исключить из нее с помощью следующих тегов внутри тега обработчика данных FixedRateSamplingTelemetryProcessor.
