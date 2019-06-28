@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/12/2019
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: 518f1048224a97943756c5b51b83cd509f82e11e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1ad618e9eb70fd75f433030584c0f6538532928f
+ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67072495"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67466987"
 ---
 # <a name="speech-service-supported-regions"></a>Поддерживаемые регионы для службы "Речь"
 
@@ -35,7 +35,7 @@ Speech SDK доступна в этих регионах для **распозн
   Регион | Параметр пакета SDK для службы "Речь" | Портал настройки распознавания речи
  ------|-------|--------
  Запад США | `westus` | https://westus.cris.ai
- Западная часть США 2 | `westus2` | https://westus2.cris.ai
+ Западный регион США 2 | `westus2` | https://westus2.cris.ai
  Восточная часть США | `eastus` | https://eastus.cris.ai
  Восток США 2 | `eastus2` | https://eastus2.cris.ai
  Центральный регион США | `centralus` | https://centralus.cris.ai
@@ -73,6 +73,20 @@ Speech SDK доступна в этих регионах для **распозн
  Северная Америка | Южная часть Бразилии | `brazilsouth`
 
 Это подмножество поддерживаемых регионов для публикации [службы распознавания речи (LUIS)](/azure/cognitive-services/luis/luis-reference-regions).
+
+### <a name="voice-first-virtual-assistants"></a>Виртуальные помощники по обработке голоса
+
+[Speech SDK](speech-sdk.md) поддерживает **виртуальные помощники voice-first** возможности в этих регионах:
+
+Регион | Параметр пакета SDK для службы "Речь"
+-------|---------------------
+Запад США | `westus`
+Западный регион США 2 | `westus2`
+Восточная часть США | `eastus`
+Восток США 2 | `eastus2`
+Западная Европа | `westeurope`
+Северная Европа | `northeurope`
+Юго-Восточная Азия | `southeastasia`
 
 ## <a name="rest-apis"></a>Интерфейсы API REST
 

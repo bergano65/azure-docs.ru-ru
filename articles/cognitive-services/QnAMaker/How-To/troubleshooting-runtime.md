@@ -3,26 +3,27 @@ title: Устранение неполадок — QnA Maker
 titlesuffix: Azure Cognitive Services
 description: QnA Maker состоит из компонентов, размещенных в учетной записи Azure пользователя. Для отладки пользователям может потребоваться оперировать ресурсами Azure для QnA Maker или предоставить группе поддержки QnA Maker дополнительные сведения об их конфигурации.
 services: cognitive-services
-author: tulasim88
+author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
 ms.date: 01/14/2019
-ms.author: tulasim
+ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 6a84ecff04381b6dcc9706105df92ecc96dc8b1c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5b65a121e895b4855c7c69d2b67e7055c88ddd08
+ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61389462"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67466058"
 ---
 # <a name="troubleshooting-tips-to-support-the-qna-maker-service-and-runtime"></a>Советы по устранению неполадок для поддержки службы и среды выполнения QnA Maker
 QnA Maker состоит из компонентов, размещенных в учетной записи Azure пользователя. Для отладки пользователям может потребоваться оперировать ресурсами Azure для QnA Maker или предоставить группе поддержки QnA Maker дополнительные сведения об их конфигурации.
 
 ## <a name="how-to-get-latest-qnamaker-runtime-updates"></a>Как получить последние обновления для среды выполнения QnA Maker
-Среда выполнения QnA Maker является частью развернутой службы приложений Azure в случае [создания службы QnA Maker](./set-up-qnamaker-service-azure.md) на портале Azure. Периодически устанавливаются обновления для этой среды выполнения. Чтобы применить последние обновления к конфигурации QnA Maker, необходимо перезапустить службу приложений.
+Среда выполнения QnA Maker является частью развернутой службы приложений Azure в случае [создания службы QnA Maker](./set-up-qnamaker-service-azure.md) на портале Azure. Периодически устанавливаются обновления для этой среды выполнения. Служба QnA Maker приложения на auto обновление режима post нашего апреля 2019 выпуска расширения сайта (5 и более поздних версиях). Эта возможность уже предназначена для обеспечения проверки НУЛЕВОЕ время простоя во время обновления. Можно проверить текущую версию в https://www.qnamaker.ai/UserSettings. Если ваша версия — старше версии 5.x, необходимо перезапустить службы приложений, чтобы применить последние обновления для применения на QnAMaker настройки.
+
 1. Перейдите к службе QnA Maker (группе ресурсов) на [портале Azure](https://portal.azure.com).
 
     ![Группа ресурсов Azure для QnA Maker](../media/qnamaker-how-to-troubleshoot/qnamaker-azure-resourcegroup.png)

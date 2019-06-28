@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: wolfma
 ms.custom: seodec18
-ms.openlocfilehash: d8330ff663a7adc2f1cae3ed6bdf1cec2fa972c5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae075dbc922932a4eaffd9126560c159d33459d0
+ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66808457"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67466969"
 ---
 # <a name="ship-an-application"></a>Доставка приложения
 
@@ -39,13 +39,16 @@ ms.locfileid: "66808457"
 
 Необходимые файлы пакета SDK для службы "Речь" можно развернуть в том же каталоге, что и приложение. Таким образом, приложение сможет получать прямой доступ к библиотекам. Убедитесь, что выбрана правильная версия (Win32/x64), соответствующая приложению.
 
-| Name | Функция
+| ИМЯ | Функция
 |:-----|:----|
 | `Microsoft.CognitiveServices.Speech.core.dll` | Основной пакет SDK, необходимый для развертывания управляемого и машинного кода
 | `Microsoft.CognitiveServices.Speech.csharp.dll` | Требуется для развертывания управляемого кода
 
 >[!NOTE]
 > Начиная с версии 1.3.0 файл `Microsoft.CognitiveServices.Speech.csharp.bindings.dll` (поставляется в предыдущих выпусках) больше не требуется. Функциональные возможности теперь интегрирован в пакет SDK для core.
+
+>[!NOTE]
+> Для приложения Windows Forms (.NET Framework) C# проекта, убедитесь, что библиотеки включаются в параметрах развертывания проекта. Это можно проверить в разделе `Properties -> Publish Section`. Щелкните `Application Files` кнопку и найти соответствующие библиотеки из прокрутите вниз список. Убедитесь, что значение присваивается `Included`. Visual Studio будет включать файл, при публикации и развертывания проекта.
 
 ## <a name="linux"></a>Linux
 
