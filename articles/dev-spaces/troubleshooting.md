@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 53571fdd7c5a93fef4df0832253542a5a6dfbec5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e0379bbc7f26ea30f65c5eac73633ca0371aa283
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67058539"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331307"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -414,3 +414,12 @@ azds controller create --name my-controller --target-name MyAKS --resource-group
 
 ### <a name="try"></a>Попытка
 [Добавление нарушить проверку](../aks/operator-best-practices-advanced-scheduler.md#provide-dedicated-nodes-using-taints-and-tolerations) к кластеру AKS, чтобы обеспечить Linux модулей не запланированы для запуска на узле Windows.
+
+## <a name="error-found-no-untainted-linux-nodes-in-ready-state-on-the-cluster-there-needs-to-be-at-least-one-untainted-linux-node-in-ready-state-to-deploy-pods-in-azds-namespace"></a>Ошибка «не удалось обнаружить полученные законным путем вещественные Linux узлы в состоянии "Готово" в кластере. Должен быть хотя бы один узел полученные законным путем вещественные Linux в состоянии готовности, развернуть POD, содержащихся в пространстве имен «azds».»
+
+### <a name="reason"></a>`Reason`
+
+Azure Dev пробелы не удалось создать контроллер в кластере AKS, так как не удалось найти узел полученные законным путем вещественные в *готовы* состояние нужно запланировать модулей POD для. Azure пробелы разработки требуется хотя бы один узел Linux в *готовы* состоянии, допускающем для планирования без указания tolerations модулей POD.
+
+### <a name="try"></a>Попытка
+[Обновите конфигурацию нарушить проверку](../aks/operator-best-practices-advanced-scheduler.md#provide-dedicated-nodes-using-taints-and-tolerations) в кластере AKS, чтобы обеспечить по крайней мере один Linux узла позволяет для планирования без указания tolerations модулей POD. Кроме того, убедитесь, что по крайней мере один узел Linux, который обеспечивает планирование модулей без указания tolerations в *готовы* состояния. Если вашего узла занимает много времени для достижения *готовы* state, попробуйте перезапустить вашего узла.

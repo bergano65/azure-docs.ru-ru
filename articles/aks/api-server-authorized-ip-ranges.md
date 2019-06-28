@@ -1,18 +1,18 @@
 ---
 title: Авторизация сервера API диапазонов IP-адресов в службе Azure Kubernetes (AKS)
-description: Узнайте, как для безопасного кластера с помощью IP-адрес диапазоны адресов для доступа к серверу API в службе Azure Kubernetes (AKS)
+description: Узнайте, как для защиты кластера с помощью диапазон IP-адресов для доступа к серверу API в службе Azure Kubernetes (AKS)
 services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
 ms.date: 05/06/2019
 ms.author: iainfou
-ms.openlocfilehash: 185c16e76094fe55a54fb17bef24fcd03d7b54f0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9ec48c8ed924293a5ffea903fe03a9830dcd1184
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66475158"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67329416"
 ---
 # <a name="preview---secure-access-to-the-api-server-using-authorized-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Предварительная версия — безопасный доступ к серверу API с помощью авторизованных диапазоны IP-адресов в службе Azure Kubernetes (AKS)
 
@@ -30,34 +30,38 @@ ms.locfileid: "66475158"
 
 Сервер API авторизованным IP-диапазонов работает только для новых кластеров AKS, создаваемые. В этой статье показано, как создать кластер AKS с помощью Azure CLI.
 
-Требуется Azure CLI версии 2.0.61 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Требуется Azure CLI версии 2.0.61 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если требуется выполнить установку или обновление, см. в разделе [установить Azure CLI][install-azure-cli].
 
 ### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки aks-preview
 
-Команды интерфейса командной строки, чтобы настроить диапазоны IP-адрес сервера авторизации API доступны в *предварительной версии aks* расширение интерфейса командной строки. Установка *предварительной версии aks* расширение Azure CLI с помощью [добавить расширения az] [ az-extension-add] команды, как показано в следующем примере:
+Чтобы настроить диапазоны IP-адрес сервера авторизации API, вам потребуется *предварительной версии aks* CLI версия расширения 0.4.1 или более поздней версии. Установка *предварительной версии aks* расширение Azure CLI с помощью [добавить расширения az][az-extension-add] command, then check for any available updates using the [az extension update][az-extension-update] команды:
 
 ```azurecli-interactive
+# Install the aks-preview extension
 az extension add --name aks-preview
-```
 
-> [!NOTE]
-> Если вы ранее установили *предварительной версии aks* расширения, устанавливать доступные обновления с помощью `az extension update --name aks-preview` команды.
+# Update the extension to make sure you have the latest version installed
+az extension update --name aks-preview
+```
 
 ### <a name="register-feature-flag-for-your-subscription"></a>Регистрация флаг компонента для подписки
 
-Чтобы использовать API сервер авторизован диапазоны IP-адресов, сначала включите флаг компонента по вашей подписке. Чтобы зарегистрировать *APIServerSecurityPreview* флаг, используйте [az функция register] [ az-feature-register] команды, как показано в следующем примере:
+Чтобы использовать API сервер авторизован диапазоны IP-адресов, сначала включите флаг компонента по вашей подписке. Чтобы зарегистрировать *APIServerSecurityPreview* флаг, используйте [az функция register][az-feature-register] команды, как показано в следующем примере:
+
+> [!CAUTION]
+> При регистрации компонента для подписки, вы не можете сейчас отменить регистрацию этой функции. После включения некоторые возможности предварительной версии, можно использовать значения по умолчанию для всех кластеров AKS, затем создается в подписке. Не включайте функции предварительной версии на рабочие подписки. Используйте отдельную подписку для тестирования функции предварительной версии и собирайте отзывы.
 
 ```azurecli-interactive
 az feature register --name APIServerSecurityPreview --namespace Microsoft.ContainerService
 ```
 
-Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Состояние регистрации можно проверить с помощью команды [az feature list][az-feature-list].
+Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Вы можете проверить состояние регистрации с помощью [список функций az][az-feature-list] команды:
 
 ```azurecli-interactive
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/APIServerSecurityPreview')].{Name:name,State:properties.state}"
 ```
 
-Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft.ContainerService* с помощью команды [az provider register][az-provider-register].
+Когда все будет готово, обновить регистрацию *Microsoft.ContainerService* поставщик ресурсов с помощью [az provider register][az-provider-register] команды:
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerService
@@ -81,7 +85,7 @@ az provider register --namespace Microsoft.ContainerService
 
 IP-адрес сервера авторизации API диапазоны работают только для новых кластеров в AKS. Невозможно включить авторизованных диапазоны IP-адресов, так как операция создания частью кластера. Если вы попытаетесь включить авторизованных диапазоны IP-адресов как часть кластера создать процесс, узлах кластера может получить доступ к API сервера во время развертывания, как IP-адрес исходящего трафика не определено в этот момент.
 
-Во-первых, создайте кластер с помощью [создать az aks] [ az-aks-create] команды. В следующем примере создается кластер с одним узлом с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup*.
+Во-первых, создайте кластер с помощью [создать az aks][az-aks-create] команды. В следующем примере создается кластер с одним узлом с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup*.
 
 ```azurecli-interactive
 # Create an Azure resource group
@@ -105,7 +109,7 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 > [!WARNING]
 > Использование брандмауэра Azure могут повлечь за собой значительные затраты ежемесячного цикла. Требование использовать брандмауэр Azure необходима только в этот период исходной предварительной версии. Дополнительные сведения и планирование затрат, см. в разделе [брандмауэр Azure цены][azure-firewall-costs].
 
-Во-первых, получите *MC_* имя группы ресурсов в кластере AKS и виртуальной сети. Затем создайте подсеть, используя [Создание подсети виртуальной сети az сети] [ az-network-vnet-subnet-create] команды. В следующем примере создается подсеть с именем *AzureFirewallSubnet* с диапазоном CIDR *10.200.0.0/16*:
+Во-первых, получите *MC_* имя группы ресурсов в кластере AKS и виртуальной сети. Затем создайте подсеть, используя [Создание подсети виртуальной сети az сети][az-network-vnet-subnet-create] команды. В следующем примере создается подсеть с именем *AzureFirewallSubnet* с диапазоном CIDR *10.200.0.0/16*:
 
 ```azurecli-interactive
 # Get the name of the MC_ cluster resource group
@@ -127,7 +131,7 @@ az network vnet subnet create \
     --address-prefixes 10.200.0.0/16
 ```
 
-Чтобы создать брандмауэр подключения к Azure, установите *брандмауэр azure* CLI с помощью расширения [добавить расширения az] [ az-extension-add] команды. Затем создайте брандмауэр с помощью [создать az сетевой брандмауэр] [ az-network-firewall-create] команды. В следующем примере создается брандмауэра Azure с именем *myAzureFirewall*:
+Чтобы создать брандмауэр подключения к Azure, установите *брандмауэр azure* CLI с помощью расширения [добавить расширения az][az-extension-add] command. Then, create a firewall using the [az network firewall create][az-network-firewall-create] команды. В следующем примере создается брандмауэра Azure с именем *myAzureFirewall*:
 
 ```azurecli-interactive
 # Install the CLI extension for Azure Firewall
@@ -139,7 +143,7 @@ az network firewall create \
     --name myAzureFirewall
 ```
 
-Брандмауэр Azure назначается общедоступный IP-адрес, который проходит исходящий трафик через. Создание общедоступного адреса с помощью [создать az сети public-ip] [ az-network-public-ip-create] команды, а затем создайте конфигурацию IP на брандмауэр с помощью [ip конфигурации брандмауэра az сети. Создайте] [ az-network-firewall-ip-config-create] , применяющее общедоступный IP-адрес:
+Брандмауэр Azure назначается общедоступный IP-адрес, который проходит исходящий трафик через. Создание общедоступного адреса с помощью [создать az сети public-ip][az-network-public-ip-create] command, then create an IP configuration on the firewall using the [az network firewall ip-config create][az-network-firewall-ip-config-create] , применяющее общедоступный IP-адрес:
 
 ```azurecli-interactive
 # Create a public IP address for the firewall
@@ -158,7 +162,7 @@ az network firewall ip-config create \
     --public-ip-address myAzureFirewallPublicIP
 ```
 
-Теперь создайте сетевое правило брандмауэра Azure для *Разрешить* все *TCP* трафике с помощью [брандмауэра сети Azure network-rule create] [ az-network-firewall-network-rule-create] команда. В следующем примере создается правило с именем сети *AllowTCPOutbound* для трафика с помощью любого адреса источника или назначения:
+Теперь создайте сетевое правило брандмауэра Azure для *Разрешить* все *TCP* трафике с помощью [брандмауэра сети Azure network-rule create][az-network-firewall-network-rule-create] команды. В следующем примере создается правило с именем сети *AllowTCPOutbound* для трафика с помощью любого адреса источника или назначения:
 
 ```azurecli-interactive
 az network firewall network-rule create \
@@ -192,7 +196,7 @@ FIREWALL_INTERNAL_IP=$(az network firewall show \
 K8S_ENDPOINT_IP=$(kubectl get endpoints -o=jsonpath='{.items[?(@.metadata.name == "kubernetes")].subsets[].addresses[].ip}')
 ```
 
-Наконец, создайте маршрут в существующих AKS сетевого маршрута таблицы с помощью [создать таблицу маршрутов az маршрут] [ az-network-route-table-route-create] команды, которое разрешает трафик, использовать устройство брандмауэра Azure для сервера API обмен данными.
+Наконец, создайте маршрут в существующих AKS сетевого маршрута таблицы с помощью [создать таблицу маршрутов az маршрут][az-network-route-table-route-create] команды, которое разрешает трафик, использовать устройство брандмауэра Azure для обмена данными с сервером API.
 
 ```azurecli-interactive
 az network route-table route create \
@@ -212,7 +216,7 @@ echo "Public IP address for the Azure Firewall instance that should be added to 
 
 Чтобы включить диапазоны IP-адрес сервера авторизации API, укажите список авторизованных диапазоны IP-адресов. При указании диапазона CIDR, начните с первый IP-адрес в диапазоне. Например *137.117.106.90/29* допустимый диапазон, но убедитесь, что вы указать первый IP-адрес в диапазоне, такие как *137.117.106.88/29*.
 
-Используйте [обновление az aks] [ az-aks-update] команду и укажите *--api-server авторизованных-диапазоны ip адресов* чтобы разрешить. Эти диапазоны IP-адресов обычно диапазоны адресов, используемых в локальной сети. Добавьте общедоступный IP-адрес собственных брандмауэра Azure, полученный на предыдущем шаге, такие как *20.42.25.196/32*.
+Используйте [обновление az aks][az-aks-update] команду и укажите *--api-server авторизованных-диапазоны ip адресов* чтобы разрешить. Эти диапазоны IP-адресов обычно диапазоны адресов, используемых в локальной сети. Добавьте общедоступный IP-адрес собственных брандмауэра Azure, полученный на предыдущем шаге, такие как *20.42.25.196/32*.
 
 В следующем примере включается диапазоны IP-адрес сервера авторизации API в кластере с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup*. Диапазоны IP-адресов для авторизации, *20.42.25.196/32* (брандмауэр Azure общедоступный IP-адрес), затем *172.0.0.10/16* и *168.10.0.10/18*:
 
@@ -225,7 +229,7 @@ az aks update \
 
 ## <a name="update-or-disable-authorized-ip-ranges"></a>Обновление или отключение авторизованных диапазоны IP-адресов
 
-Чтобы обновить или отключить авторизованных диапазоны IP-адресов, можно повторно использовать [обновление az aks] [ az-aks-update] команды. Укажите обновленный диапазон CIDR, которые вы хотите разрешить, или указать пустой диапазон для отключения сервера API авторизованным диапазоны IP-адресов, как показано в следующем примере:
+Чтобы обновить или отключить авторизованных диапазоны IP-адресов, можно повторно использовать [обновление az aks][az-aks-update] команды. Укажите обновленный диапазон CIDR, которые вы хотите разрешить, или указать пустой диапазон для отключения сервера API авторизованным диапазоны IP-адресов, как показано в следующем примере:
 
 ```azurecli-interactive
 az aks update \
@@ -238,7 +242,7 @@ az aks update \
 
 В этой статье вы включили диапазоны IP-адрес сервера авторизации API. Этот подход является одной из частей процесса выполнения защищенного кластера AKS.
 
-Дополнительные сведения см. в разделе [концепции безопасности для приложений и кластеров в AKS] [ concepts-security] и [советы и рекомендации для обеспечения безопасности кластера и обновления в AKS] [ operator-best-practices-cluster-security].
+Дополнительные сведения см. в разделе [концепции безопасности для приложений и кластеров в AKS][concepts-security] and [Best practices for cluster security and upgrades in AKS][operator-best-practices-cluster-security].
 
 <!-- LINKS - external -->
 [azure-firewall-costs]: https://azure.microsoft.com/pricing/details/azure-firewall/
@@ -265,3 +269,5 @@ az aks update \
 [az-network-route-table-route-create]: /cli/azure/network/route-table/route#az-network-route-table-route-create
 [aks-support-policies]: support-policies.md
 [aks-faq]: faq.md
+[az-extension-list]: /cli/azure/extension#az-extension-list
+[az-extension-update]: /cli/azure/extension#az-extension-update

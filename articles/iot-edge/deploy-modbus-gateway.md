@@ -6,15 +6,15 @@ manager: philmea
 ms.service: iot-edge
 services: iot-edge
 ms.topic: conceptual
-ms.date: 02/25/2019
+ms.date: 06/20/2019
 ms.author: kgremban
 ms.custom: seodec18
-ms.openlocfilehash: 1c9855f982b888e8e1d68bfe5233983db8c826ad
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 25be0629b2ef877d8757f515cb6ccd5942e58d5f
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61248048"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312797"
 ---
 # <a name="connect-modbus-tcp-devices-through-an-iot-edge-device-gateway"></a>Подключение устройств Modbus TCP через шлюз устройств IoT Edge
 
@@ -35,7 +35,7 @@ ms.locfileid: "61248048"
 
 Если вы хотите протестировать функции шлюза Modbus, корпорация Майкрософт предлагает использовать пример модуля. Доступ к модулю Azure Marketplace, [Modbus](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft_iot.edge-modbus?tab=Overview), или с помощью URI, образа **mcr.microsoft.com/azureiotedge/modbus:1.0**.
 
-Если вы хотите создать собственный модуль и настроить его для своей среды, в проекте GitHub можно найти [модуль Modbus для Azure IoT Edge](https://github.com/Azure/iot-edge-modbus) с открытым кодом. Следуйте инструкциям в этом проекте, чтобы создать образ контейнера. Если вы создаете собственный образ контейнера, см. [разработка C# модулей в Visual Studio](how-to-visual-studio-develop-csharp-module.md) или [разработки модулей в Visual Studio Code](how-to-vs-code-develop-module.md). Эти статьи содержат инструкции по созданию новых модулей и публикации образов контейнеров в реестр.
+Если вы хотите создать собственный модуль и настроить его для своей среды, в проекте GitHub можно найти [модуль Modbus для Azure IoT Edge](https://github.com/Azure/iot-edge-modbus) с открытым кодом. Следуйте инструкциям в этом проекте, чтобы создать образ контейнера. Создать образ контейнера, см. в статье [разработка C# модулей в Visual Studio](how-to-visual-studio-develop-csharp-module.md) или [разработки модулей в Visual Studio Code](how-to-vs-code-develop-module.md). Эти статьи содержат инструкции по созданию новых модулей и публикации образов контейнеров в реестр.
 
 ## <a name="try-the-solution"></a>Попробуйте решение
 
@@ -85,12 +85,13 @@ ms.locfileid: "61248048"
 
 5. Вернитесь к окну **Добавление модулей** и нажмите кнопку **Далее**.
 
-7. На шаге **указания маршрутов** скопируйте следующий код JSON в текстовое поле. Этот маршрут отправляет все сообщения, собранные модулем Modbus, в Центр Интернета вещей. В этом маршруте '' modbusOutput'' является конечной точки, используйте модуль Modbus для вывода данных, которая '' вышестоящего '' специальным пунктом назначения, который говорит центру Edge Интернета вещей для отправки сообщений в центр Интернета вещей.
+7. На шаге **указания маршрутов** скопируйте следующий код JSON в текстовое поле. Этот маршрут отправляет все сообщения, собранные модулем Modbus, в Центр Интернета вещей. В этом маршруте **modbusOutput** является конечной точкой, Modbus, модуль использует для вывода данных и **$upstream** является специальным пунктом назначения, который говорит центру Edge Интернета вещей для отправки сообщений в центр Интернета вещей.
+
    ```JSON
    {
-    "routes": {
-      "modbusToIoTHub":"FROM /messages/modules/modbus/outputs/modbusOutput INTO $upstream"
-    }
+     "routes": {
+       "modbusToIoTHub":"FROM /messages/modules/modbus/outputs/modbusOutput INTO $upstream"
+     }
    }
    ```
 

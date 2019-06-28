@@ -116,7 +116,7 @@ ms.locfileid: "67112105"
 
 | ОС                     | Браузеры                                      |
 | :--                    | :--                                           |
-| Windows 10             | Internet Explorer, Microsoft Edge, Chrome     |
+| Windows 10             | Internet Explorer, Microsoft Edge     |
 | Windows 8, Windows 8.1        | Internet Explorer, Chrome                     |
 | Windows 7              | Internet Explorer, Chrome                     |
 | iOS                    | Safari, Microsoft Edge, Intune Managed Browser |

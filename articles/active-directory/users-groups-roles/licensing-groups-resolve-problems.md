@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3dbfbd76d235cedd297a5ad54b51bc4ebb550bb1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a4060c90af3825122c871696a5555e8579d0ad0a
+ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65466284"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67358087"
 ---
 # <a name="identify-and-resolve-license-assignment-problems-for-a-group-in-azure-active-directory"></a>Определение и устранение проблем назначения лицензий для группы в Azure Active Directory
 
@@ -105,7 +105,7 @@ ms.locfileid: "65466284"
 > [!TIP]
 > Чтобы посмотреть, нет ли повторов прокси адресов, выполните следующий командлет PowerShell в Exchange Online:
 > ```
-> Run Get-Recipient | where {$_.EmailAddresses -match "user@contoso.onmicrosoft.com"} | fL Name, RecipientType,emailaddresses
+> Get-Recipient -ResultSize unlimited | where {$_.EmailAddresses -match "user@contoso.onmicrosoft.com"} | fL Name, RecipientType,emailaddresses
 > ```
 > Дополнительные сведения об этой проблеме см. в статье [Сообщение об ошибке "< адрес > адрес прокси-сервера уже используется" в Exchange Online](https://support.microsoft.com/help/3042584/-proxy-address-address-is-already-being-used-error-message-in-exchange-online). В статье [Подключение к Exchange Online PowerShell](https://technet.microsoft.com/library/jj984289.aspx) содержатся сведения о подключении к Exchange Online с помощью удаленного сеанса PowerShell.
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: b-juche
-ms.openlocfilehash: bf2262d8a222cec6c5d0d7e53ded7b2994481656
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 207fb003eb1fdaafe4f43f7cd41dd4b7662eddf9
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205707"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331979"
 ---
 # <a name="guidelines-for-azure-netapp-files-network-planning"></a>Рекомендации по планированию сети Azure NetApp Files
 
@@ -81,7 +81,7 @@ ms.locfileid: "67205707"
 
 ### <a name="udrs-and-nsgs"></a>Определяемые пользователем маршруты и группами безопасности сети
 
-Группы безопасности сети (Nsg) с типом следующего прыжка не может использоваться как делегированного подсетей для службы файлов Azure NetApp. Аналогичным образом определяемые пользователем маршруты (Udr) также не поддерживаются. 
+Определяемые пользователем маршруты (Udr) и группы безопасности сети (Nsg) не поддерживаются в подсетях делегированного для службы файлов Azure NetApp.
 
 Обойти это ограничение можно применить группы безопасности сети к другим подсетям, которые разрешают или запрещают трафик к и из подсети службы файлов Azure NetApp делегировать.  
 

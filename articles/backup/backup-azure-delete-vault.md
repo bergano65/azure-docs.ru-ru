@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.author: raynew
-ms.openlocfilehash: 8df4f17c9afbf10c6507e505c6540c3f66a42309
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 51de1c4ac17360282877f05d52c3ea8fa2c6d712
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67275622"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67310776"
 ---
 # <a name="delete-a-recovery-services-vault"></a>Удаление хранилища Служб восстановления
 
@@ -114,7 +114,7 @@ ms.locfileid: "67275622"
 1. В меню панели мониторинга хранилища щелкните **инфраструктура резервного копирования**.
 2. Нажмите кнопку **серверы управления архивацией** для просмотра серверов.
 
-    ![выберите хранилище, чтобы открыть его панель мониторинга](./media/backup-azure-delete-vault/delete-backup-management-servers.png)
+    ![Выберите хранилище, чтобы открыть ее панель мониторинга](./media/backup-azure-delete-vault/delete-backup-management-servers.png)
 
 3. Щелкните правой кнопкой мыши элемент > **удалить**.
 4. На **удалить** меню введите имя сервера и нажмите кнопку **удалить**.
@@ -124,7 +124,7 @@ ms.locfileid: "67275622"
 
 > [!NOTE]
 > Для удаления элементов, в консоли сервера управления или в режиме MARS консоли на защищенном сервере, отключите защиту и удалить резервные копии. Если остались архивные элементы, будет отображаться следующая ошибка, при попытке удаления и отмены регистрации сервера:
-> 
+>
 >![не удалось удалить](./media/backup-azure-delete-vault/deletion-failed.png)
 
 6. Чтобы убедиться, что удалить задание завершено, проверьте сообщения Azure ![Удалить данные архивации](./media/backup-azure-delete-vault/messages.png).
@@ -159,8 +159,8 @@ ms.locfileid: "67275622"
 
 > [!NOTE]
 > Архивные элементы, связанные с сервером Backup Management Server или Azure Backup Agent необходимо удалить до удаления регистрации этих серверов. Для удаления элементов резервного копирования, перейдите к SC DPM, MABS или консоль управления служб восстановления Microsoft AZURE на сервере, где это применимо и выберите соответствующие параметры для остановки защиты и удаление резервных копий. Если все элементы архивации по-прежнему связаны, вы увидите следующую ошибку:
-> 
-> 
+>
+>
 >![не удалось удалить](./media/backup-azure-delete-vault/deletion-failed.png)
 
 8. Чтобы убедиться, что удалить задание завершено, проверьте сообщения Azure ![Удалить данные архивации](./media/backup-azure-delete-vault/messages.png).

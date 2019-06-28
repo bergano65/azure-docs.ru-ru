@@ -152,4 +152,4 @@ ms.locfileid: "66730545"
 > [Tutorial: Use risk events to trigger Multi-Factor Authentication and password changes](tutorial-risk-based-sspr-mfa.md) (Руководство. Использование событий риска для запуска Многофакторной идентификации и изменений пароля)
 
 [Assignment]: ./media/tutorial-sspr-windows/profile-assignment.png "Назначение политики конфигурации устройства Intune группе устройств с Windows 10"
-[LoginScreen]: ./media/tutorial-sspr-windows/logon-reset-password.png "Ссылка "Сброс пароля" в окне входа в Windows 10"
+[LoginScreen]: ./media/tutorial-sspr-windows/logon-reset-password.png "Ссылка Сброс пароля в окне входа в Windows 10"

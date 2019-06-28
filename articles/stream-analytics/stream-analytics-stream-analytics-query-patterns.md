@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/16/2019
-ms.openlocfilehash: f6971038be7404850d958de67eb4755ae7d21a29
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b0f513462f1e09718dc18e9ce454b82e8978961f
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65761965"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67329611"
 ---
 # <a name="query-examples-for-common-stream-analytics-usage-patterns"></a>Примеры запросов для распространенных шаблонов использования Stream Analytics
 
@@ -422,14 +422,14 @@ GROUP BY
 
 **Входные данные**  
 
-| Пользователь | Компонент | Событие | Время |
+| Пользователь | Функция | Событие | Время |
 | --- | --- | --- | --- |
 | user@location.com |RightMenu |Начало |2015-01-01T00:00:01.0000000Z |
 | user@location.com |RightMenu |End |2015-01-01T00:00:08.0000000Z |
 
 **Выходные данные**:  
 
-| Пользователь | Компонент | Duration |
+| Пользователь | Функция | Duration |
 | --- | --- | --- |
 | user@location.com |RightMenu |7 |
 
@@ -437,7 +437,12 @@ GROUP BY
 
 ```SQL
     SELECT
-        [user], feature, DATEDIFF(second, LAST(Time) OVER (PARTITION BY [user], feature LIMIT DURATION(hour, 1) WHEN Event = 'start'), Time) as duration
+        [user],
+    feature,
+    DATEDIFF(
+        second,
+        LAST(Time) OVER (PARTITION BY [user], feature LIMIT DURATION(hour, 1) WHEN Event = 'start'),
+        Time) as duration
     FROM input TIMESTAMP BY Time
     WHERE
         Event = 'end'
@@ -655,7 +660,7 @@ GROUP BY TUMBLINGWINDOW(second, 5), TollId
 
 **Входные данные**  
 
-| deviceId | Время | Атрибут | Значение |
+| deviceId | Время | Атрибут | Value |
 | --- | --- | --- | --- |
 | 1 |2018-07-27T00:00:01.0000000Z |температура; |50 |
 | 1 |2018-07-27T00:00:01.0000000Z |температура; |50 |
@@ -695,6 +700,15 @@ GROUP BY DeviceId,TumblingWindow(minute, 5)
 ```
 
 **Объяснение**. [COUNT(DISTINCT Time)](/stream-analytics-query/count-azure-stream-analytics) возвращает количество уникальных значений в столбце "Время" в течение определенного интервала. Затем можно использовать выходные данные этого действия для вычисления среднего для каждого устройства путем удаления дубликатов.
+
+## <a name="geofencing-and-geospatial-queries"></a>Географическое зонирование и геопространственных запросов
+Azure Stream Analytics предоставляет встроенные геопространственные функции, которые могут использоваться для реализации сценариев, таких как управление транспортным отделом, воспользуйтесь преимуществами нового совместного использования, подключенные автомобили и отслеживания ресурсов. Геопространственные данные могут поступать в GeoJSON или WKT форматах, как часть потока событий или ссылочные данные. Дополнительные сведения см. [географическое зонирование и геопространственные сценарии статистической обработки с помощью Azure Stream Analytics](geospatial-scenarios.md) статьи.
+
+## <a name="language-extensibility-through-javascript-and-c"></a>Расширяемость языка через JavaScript иC#
+Azure langugae Stream Ananlytics запрос можно расширить с помощью пользовательских функций, написанных на языке JavaScript или C# языков. Дополнительные сведения см. в статьях работающих:
+* [Azure определяемые пользователем функции JavaScript в Stream Analytics](stream-analytics-javascript-user-defined-functions.md)
+* [Azure Stream Analytics JavaScript определяемые пользователем статистические функции](stream-analytics-javascript-user-defined-aggregates.md)
+* [Разработка .NET Standard определяемых пользователем функций для заданий Azure Stream Analytics Edge](stream-analytics-edge-csharp-udf-methods.md)
 
 ## <a name="get-help"></a>Получение справки
 

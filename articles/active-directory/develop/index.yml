@@ -1,6 +1,13 @@
 ### YamlMime:Landing
 title: "Платформа удостоверений Майкрософт (ранее\_— Azure Active Directory для разработчиков)"
 summary: "Платформа удостоверений Майкрософт\_— это решение на основе платформы для разработчиков Azure Active Directory (Azure AD). С ее помощью разработчики могут создавать приложения, которые обеспечивают вход с использованием любых удостоверений Майкрософт и получение маркеров для вызова таких программных API-интерфейсов Майкрософт, как Microsoft Graph или других программных интерфейсов, созданных разработчиками. Это полнофункциональная платформа, состоящая из стандартных совместимых служб аутентификации OAuth\_2.0 и OpenID Connect, библиотек с открытым кодом, возможностей регистрации и настройки приложений, обзорной и справочной документации, примеров для быстрого запуска, примеров кода, материалов и практических руководств."
+metadata:
+  ms.topic: landing-page
+  ms.date: 06/22/2019
+  author: CelesteDG
+  ms.service: active-directory
+  ms.subservice: develop
+  ms.workload: identity
 landingContent:
   - title: Общие сведения о платформе удостоверений Майкрософт
     linkLists:
@@ -50,7 +57,7 @@ landingContent:
         links:
           - text: ASP.NET Core
             url: quickstart-v2-aspnet-core-webapp.md
-          - text: 'ASP.NET:'
+          - text: ASP.NET
             url: quickstart-v2-aspnet-webapp.md
       - linkListType: tutorial
         links:

@@ -46,7 +46,7 @@ New-AzDnsZone -Name contoso.xyz -ResourceGroupName MyResourceGroup
 
 ## <a name="create-a-dns-record"></a>Создание записи DNS
 
-Для создания наборов записей используется командлет `New-AzDnsRecordSet`. В следующем примере создается запись с относительным именем www в зоне DNS contoso.xyz, в группе ресурсов MyResourceGroup. Полное доменное имя набора записей — www.contoso.xyz. Тип записи — A, IP-адрес — 10.10.10.10, срок жизни составляет 3600 секунд.
+Для создания наборов записей используется командлет `New-AzDnsRecordSet`. В следующем примере создается запись с относительным именем www в зоне DNS contoso.xyz, в группе ресурсов MyResourceGroup. Полное доменное имя набора записей — "www.contoso.xyz". Тип записи — A, IP-адрес — 10.10.10.10, срок жизни составляет 3600 секунд.
 
 ```powershell
 New-AzDnsRecordSet -Name www -RecordType A -ZoneName contoso.xyz -ResourceGroupName MyResourceGroup -Ttl 3600 -DnsRecords (New-AzDnsRecordConfig -IPv4Address "10.10.10.10")

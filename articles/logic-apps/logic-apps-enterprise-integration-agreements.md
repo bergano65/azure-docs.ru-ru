@@ -8,16 +8,15 @@ author: divyaswarnkar
 ms.author: divswa
 ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
-ms.assetid: 447ffb8e-3e91-4403-872b-2f496495899d
-ms.date: 04/05/2019
-ms.openlocfilehash: 26d653b873e959f0804e0456ed87ee68c39413e5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/22/2019
+ms.openlocfilehash: 4bfee4ec442c9e7b0351b0fd0c6a2b8e163a2541
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64720673"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67330305"
 ---
-# <a name="create-and-manage-trading-partner-agreements-by-using-azure-logic-apps-and-enterprise-integration-pack"></a>Создание и управление ими соглашения между торговыми партнерами с помощью Azure Logic Apps и пакета интеграции Enterprise
+# <a name="create-and-manage-trading-partner-agreements-in-azure-logic-apps"></a>Создание и управление ими в Azure Logic Apps соглашения между торговыми партнерами
 
 Объект [торгового партнера](../logic-apps/logic-apps-enterprise-integration-partners.md) 
 *соглашения* помогает организациям и предприятиям эффективно взаимодействовать друг с другом, определяя определенные стандартные для отрасли протокол, используемый при обмене предприятие предприятие (B2B) сообщения. Соглашения предоставляют основные аспекты, например:
@@ -27,6 +26,8 @@ ms.locfileid: "64720673"
 * Можно легко создавать, управлять и использовать для создания решений интеграции enterprise.
 
 В этой статье показано, как создать AS2, EDIFACT или X12 соглашениях, которые можно использовать при создании корпоративных решений по интеграции для реализации сценариев B2B с помощью [пакета интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md) и [Azure Logic Apps](../logic-apps/logic-apps-overview.md). После создания соглашения, его можно использовать AS2, EDIFACT или X12 соединители для обмена сообщениями B2B.
+
+Создание соглашения для обмена сообщениями RosettaNet, см. в разделе [сообщений Exchange RosettaNet](../logic-apps/logic-apps-enterprise-integration-rosettanet.md).
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -65,8 +66,8 @@ ms.locfileid: "64720673"
    | **Главный идентификатор** | Да | <*Идентификатор узла партнера*> | Идентификатор главного партнера |
    | **Гостевой партнер** | Да | <*Имя партнера гостя*> | Гостевой партнер представляет организацию, у которой есть деловые отношения с главным партнером. |
    | **Гостевой идентификатор** | Да | <*гостевой партнер идентификаторов*> | Идентификатор гостевого партнера |
-   | **Параметры получения** | Varies | Varies | Эти свойства указывают способ обработки всех входящих сообщений, получаемым посредством соглашения. Дополнительные сведения см. в разделе типа соответствующего соглашения: <p>- [Параметры сообщений AS2](../logic-apps/logic-apps-enterprise-integration-as2-message-settings.md) <br>- [Параметры сообщений EDIFACT](logic-apps-enterprise-integration-edifact.md) <br>- [Параметры сообщение X12.](logic-apps-enterprise-integration-x12.md) |
-   | **Параметры отправки** | Varies | Varies | Эти свойства указывают способ обработки всем исходящим сообщениям, отправляемым посредством соглашения. Дополнительные сведения см. в разделе типа соответствующего соглашения: <p>- [Параметры сообщений AS2](../logic-apps/logic-apps-enterprise-integration-as2-message-settings.md) <br>- [Параметры сообщений EDIFACT](logic-apps-enterprise-integration-edifact.md) <br>- [Параметры сообщение X12.](logic-apps-enterprise-integration-x12.md) |
+   | **Параметры получения** | Varies | Varies | Эти свойства указывают, как главный партнер получает все входящие сообщения от гостевого партнера в соглашении. Дополнительные сведения см. в разделе типа соответствующего соглашения: <p>- [Параметры сообщений AS2](../logic-apps/logic-apps-enterprise-integration-as2-message-settings.md) <br>- [Параметры сообщений EDIFACT](logic-apps-enterprise-integration-edifact.md) <br>- [Параметры сообщение X12.](logic-apps-enterprise-integration-x12.md) |
+   | **Параметры отправки** | Varies | Varies | Эти свойства указывают, как главный партнер отправляет все исходящие сообщения для гостевого партнера в соглашении. Дополнительные сведения см. в разделе типа соответствующего соглашения: <p>- [Параметры сообщений AS2](../logic-apps/logic-apps-enterprise-integration-as2-message-settings.md) <br>- [Параметры сообщений EDIFACT](logic-apps-enterprise-integration-edifact.md) <br>- [Параметры сообщение X12.](logic-apps-enterprise-integration-x12.md) |
    |||||
 
 1. После завершения создания соглашения, на **добавить** выберите **ОК**и вернуться к своей учетной записи интеграции.
