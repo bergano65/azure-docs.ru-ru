@@ -3,19 +3,19 @@ title: Метод BreakSentence в API перевода текстов
 titlesuffix: Azure Cognitive Services
 description: Использование метода BreakSentence в API перевода текстов.
 services: cognitive-services
-author: rajdeep-in
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
-ms.author: v-pawal
-ms.openlocfilehash: 0ecb620757bc58b109747f69eb3b5afe0c56bac4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: swmachan
+ms.openlocfilehash: 59f6957f1781852e4ab4c0713742581b5c884f25
+ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66387555"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357862"
 ---
 # <a name="translator-text-api-30-breaksentence"></a>API перевода текстов 3.0: BreakSentence
 

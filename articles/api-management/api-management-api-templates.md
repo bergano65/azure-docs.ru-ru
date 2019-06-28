@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: 82c180d869801cd9cd91a3e2a3659644f4e263d9
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: e8519bf436e1af19a22a840f48bf1bfccdae99b2
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67273321"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341256"
 ---
 # <a name="api-templates-in-azure-api-management"></a>Шаблоны API в службе управления API Azure
 
@@ -346,11 +346,11 @@ ms.locfileid: "67273321"
 |Свойство|type|Описание|  
 |--------------|----------|-----------------|  
 |`apiId`|string|Идентификатор текущего API.|  
-|`apiName`|string|Имя API.|  
+|`apiName`|строка|Имя API.|  
 |`apiDescription`|string|Описание API.|  
 |`api`|Сущность [API summary](api-management-template-data-model-reference.md#APISummary) (Сводные данные API).|Текущий API.|  
 |`operation`|[Операция](api-management-template-data-model-reference.md#Operation)|Операция, отображаемая в настоящий момент.|  
-|`sampleUrl`|string|URL-адрес текущей операции.|  
+|`sampleUrl`|строка|URL-адрес текущей операции.|  
 |`operationMenu`|[Меню операций](api-management-template-data-model-reference.md#Menu)|Меню операций для API.|  
 |`consoleUrl`|URI|Универсальный код ресурса для кнопки **Попробуйте**.|  
 |`samples`|Коллекция сущностей [Code sample](api-management-template-data-model-reference.md#Sample) (Пример кода).|Примеры кода для текущей операции.|  
@@ -1363,7 +1363,7 @@ except Exception as e:
     print("[Errno {0}] {1}".format(e.errno, e.strerror))  
   
 ####################################  
-```  
+```
   
 #### <a name="controls"></a>Управление  
  В шаблонах примеров кода нельзя использовать [элементы управления страницы](api-management-page-controls.md).  

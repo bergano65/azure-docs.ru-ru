@@ -13,14 +13,14 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
-ms.date: 03/12/2018
+ms.date: 06/24/2019
 ms.author: szark
-ms.openlocfilehash: 7776e0005facb57d223a1ba1e73d1efa30edec49
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c90b6b3292b7ced75c1a01e64133533ffa5970df
+ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60327955"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357284"
 ---
 # <a name="prepare-an-ubuntu-virtual-machine-for-azure"></a>Подготовка виртуальной машины Ubuntu для Azure
 [!INCLUDE [learn-about-deployment-models](../../../includes/learn-about-deployment-models-both-include.md)]
@@ -125,15 +125,6 @@ ms.locfileid: "60327955"
    > [!Note]
    >  Установка пакета `walinuxagent` приведет к удалению пакетов `NetworkManager` и `NetworkManager-gnome` (если они установлены).
 
-Для Ubuntu 18.04/18.10, обновить источник данных Azure, это изменение: /etc/cloud/cloud.cfg.d/90-azure.cfg, добавьте следующий код в конец файла:
-
-**Важные: код необходимо добавить точно как написано, включая пробелы.**
-
-```bash
-datasource:
-   Azure:
-     agent_command: [service, walinuxagent, start]
-```
 
 1. Выполните следующие команды, чтобы отменить подготовку виртуальной машины и подготовить ее в Azure:
    

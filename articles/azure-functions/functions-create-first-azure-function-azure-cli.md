@@ -12,12 +12,12 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: azure-cli
 manager: jeconnoc
-ms.openlocfilehash: 7ff57519cfbb99fa705aff6c970951730c501f3e
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 7be055588b58d20464639169ac8012c378900ff1
+ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52846459"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64866605"
 ---
 # <a name="create-your-first-function-from-the-command-line"></a>Создание первой функции из командной строки
 
@@ -29,7 +29,7 @@ ms.locfileid: "52846459"
 
 Перед выполнением этого примера вам понадобится следующее:
 
-+ Установка [основных инструментов Azure версии 2.x](functions-run-local.md#v2).
++ установить [Azure Functions Core Tools](./functions-run-local.md#v2) версии 2.6.666 или более поздней;
 
 + Установка [Azure CLI]( /cli/azure/install-azure-cli). В этой статье требуется Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Можно также использовать [Azure Cloud Shell](https://shell.azure.com/bash).
 
@@ -65,9 +65,11 @@ Initialized empty Git repository in C:/functions/MyFunctionProj/.git/
 cd MyFunctionProj
 ```
 
-[!INCLUDE [functions-create-function-core-tools](../../includes/functions-create-function-core-tools.md)]
+## <a name="reference-bindings"></a>Указание ссылки на привязки
 
-[!INCLUDE [functions-update-function-code](../../includes/functions-update-function-code.md)]
+[!INCLUDE [functions-extension-bundles](../../includes/functions-extension-bundles.md)]
+
+[!INCLUDE [functions-create-function-core-tools](../../includes/functions-create-function-core-tools.md)]
 
 [!INCLUDE [functions-run-function-test-local](../../includes/functions-run-function-test-local.md)]
 
@@ -79,11 +81,11 @@ cd MyFunctionProj
 
 Для выполнения функций вам понадобится приложение-функция, предоставляющее среду для выполнения кода функции без сервера. Это позволяет группировать функции в логические единицы и упростить развертывание и совместное использование ресурсов, а также управление ими. Создайте приложение-функцию с помощью команды [az functionapp create](/cli/azure/functionapp#az-functionapp-create). 
 
-В следующей команде замените `<app_name>` уникальным именем вашего приложения функции, а `<storage_name>` — именем учетной записи хранения. `<app_name>` используется по умолчанию в качестве домена DNS для приложения-функции. Поэтому это имя должно быть уникальным для всех приложений в Azure. Также следует задать среду выполнения `<language>` для приложения-функции из `dotnet` (C#) или `node` (JavaScript).
+В следующей команде замените `<APP_NAME>` уникальным именем вашего приложения функции, а `<STORAGE_NAME>` — именем учетной записи хранения. `<APP_NAME>` используется по умолчанию в качестве домена DNS для приложения-функции. Поэтому это имя должно быть уникальным для всех приложений в Azure. Также следует задать среду выполнения `<language>` для приложения-функции из `dotnet` (C#) или `node` (JavaScript).
 
 ```azurecli-interactive
 az functionapp create --resource-group myResourceGroup --consumption-plan-location westeurope \
---name <app_name> --storage-account  <storage_name> --runtime <language> 
+--name <APP_NAME> --storage-account  <STORAGE_NAME> --runtime <language>
 ```
 
 Если задать параметр _consumption-plan-location_, приложение-функция размещено в плане размещения по мере использования. В этом бессерверном плане ресурсы добавляются динамически, когда этого требуют функции, и оплачивается только выполнение функций. Дополнительные сведения см. в статье [Выбор правильного плана обслуживания для Функций Azure](functions-scale.md).

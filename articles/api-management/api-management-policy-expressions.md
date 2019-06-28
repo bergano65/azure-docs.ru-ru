@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: apimpm
-ms.openlocfilehash: 9a19165f9ac15f7a40aea0501f960b06efbd63a3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6446919c80e7e3fd379e6e39eb51712f9736ea7e
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66304357"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341215"
 ---
 # <a name="api-management-policy-expressions"></a>Выражения политики в службе управления API
 В этой статье описывается синтаксис выражений политики C# 7. У каждого выражения есть доступ к неявно заданной переменной [контекста](api-management-policy-expressions.md#ContextVariables) и разрешенному [подмножеству](api-management-policy-expressions.md#CLRTypes) типов .NET Framework.
@@ -94,19 +94,19 @@ ms.locfileid: "66304357"
 |System.Byte|Все|
 |System.Char|Все|
 |System.Collections.Generic.Dictionary<TKey, TValue>|Все|
-|System.Collections.Generic.HashSet<T>|Все|
-|System.Collections.Generic.ICollection<T>|Все|
+|System.Collections.Generic.HashSet\<T>|Все|
+|System.Collections.Generic.ICollection\<T >|Все|
 |System.Collections.Generic.IDictionary<TKey, TValue>|Все|
-|System.Collections.Generic.IEnumerable<T>|Все|
-|Перечислитель System.Collections.Generic.IEnumerator<T>|Все|
-|System.Collections.Generic.IList<T>|Все|
-|System.Collections.Generic.IReadOnlyCollection<T>|Все|
+|System.Collections.Generic.IEnumerable\<T >|Все|
+|Перечислитель System.Collections.Generic.IEnumerator\<T >|Все|
+|System.Collections.Generic.IList\<T >|Все|
+|System.Collections.Generic.IReadOnlyCollection\<T>|Все|
 |System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>|Все|
-|System.Collections.Generic.ISet<T>|Все|
+|System.Collections.Generic.ISet\<T >|Все|
 |System.Collections.Generic.KeyValuePair<TKey, TValue>|Все|
-|System.Collections.Generic.List<T>|Все|
-|System.Collections.Generic.Queue<T>|Все|
-|System.Collections.Generic.Stack<T>|Все|
+|System.Collections.Generic.List\<T >|Все|
+|System.Collections.Generic.Queue\<T>|Все|
+|System.Collections.Generic.Stack\<T >|Все|
 |System.Convert|Все|
 |System.DateTime|(Конструктор), добавление, AddDays, AddHours, AddMilliseconds, AddMinutes, AddMonths, AddSeconds, AddTicks, AddYears, дату, день, DayOfWeek, DayOfYear, DaysInMonth, час, IsDaylightSavingTime, IsLeapYear, MaxValue, миллисекунды, минуту, MinValue, месяца, теперь , Во-вторых, вычесть метода parse, тактов, TimeOfDay, сегодня, ToString, UtcNow, год|
 |System.DateTimeKind|Время в формате UTC|
@@ -156,7 +156,7 @@ ms.locfileid: "66304357"
 |System.Security.Cryptography.SymmetricAlgorithm|Все|
 |System.Security.Cryptography.X509Certificates.PublicKey|Все|
 |System.Security.Cryptography.X509Certificates.RSACertificateExtensions|Все|
-|System.Security.Cryptography.X509Certificates.X500DistinguishedName|Name|
+|System.Security.Cryptography.X509Certificates.X500DistinguishedName|ИМЯ|
 |System.Security.Cryptography.X509Certificates.X509Certificate|Все|
 |System.Security.Cryptography.X509Certificates.X509Certificate2|Все|
 |System.Security.Cryptography.X509Certificates.X509ContentType|Все|

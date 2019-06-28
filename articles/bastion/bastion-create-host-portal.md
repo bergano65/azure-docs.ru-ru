@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: conceptual
 ms.date: 06/03/2019
 ms.author: cherylmc
-ms.openlocfilehash: d8012fb75282d64f7d1858e02b842b1c770200f9
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: 5fbd64d2f001a0fbe91de2d954889816a1819479
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67191776"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67339450"
 ---
 # <a name="create-an-azure-bastion-host-preview"></a>Создать узел-Бастион Azure (Предварительная версия)
 
@@ -41,7 +41,7 @@ ms.locfileid: "67191776"
 
 Этот раздел поможет вам создать новый ресурс Azure Бастиона на портале Azure.
 
-1. На домашней странице в [ портал Azure — Предварительная версия](http://aka.ms/BastionHost), нажмите кнопку **+ создать ресурс**. Убедитесь, что использовать соответствующую ссылку для доступа к порталу для этой предварительной версии, а не регулярное портал Azure.
+1. На домашней странице в [ портал Azure — Предварительная версия](https://aka.ms/BastionHost), нажмите кнопку **+ создать ресурс**. Убедитесь, что использовать соответствующую ссылку для доступа к порталу для этой предварительной версии, а не регулярное портал Azure.
 
 1. На **New** странице *поиск по Marketplace* введите **Бастиона**, затем нажмите кнопку **ввод** для получения результатов поиска.
 

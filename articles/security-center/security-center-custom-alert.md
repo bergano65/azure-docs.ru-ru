@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/29/2018
 ms.author: rkarlin
-ms.openlocfilehash: a5deee4209001d8c2212033c2d547d7c4199bd25
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ab7165c3315e3a53f90900be8eaf1b9c614a2b07
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65192623"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341128"
 ---
 # <a name="custom-alert-rules-in-azure-security-center-preview"></a>Настраиваемые правила генерации оповещений в центре безопасности Azure (предварительная версия)
 В этом документе описана процедура создания настраиваемых правил генерации оповещений в центре безопасности Azure.
@@ -29,17 +29,15 @@ ms.locfileid: "65192623"
 
 ## <a name="retirement-of-custom-alert-rules-in-azure-security-center"></a>Правила вывода из эксплуатации настраиваемые оповещения в центре безопасности Azure
 
-Пользовательские оповещения будет прекращено 30 июня 2019 г., из-за прекращения использования базовой инфраструктуры, оно зависит. В период до устаревания пользователи будут иметь возможность редактировать существующие настраиваемые правила генерации оповещений, но не сможете добавить новые.
+Пользовательские оповещения будет прекращено 30 июня 2019 г., из-за прекращения использования базовой инфраструктуры, оно зависит. В период до устаревания пользователи будут иметь возможность редактировать существующие настраиваемые правила генерации оповещений, но не сможете добавить новые. Об устаревании любые пользовательские предупреждения, определенные не вступят в силу и оповещения системы безопасности на основе этих правил настраиваемые оповещения создаваться не будет.
 Пользователям рекомендуется либо:
-- Включить [Azure Sentinel](https://azure.microsoft.com/services/azure-sentinel/) переход одним щелчком на автоматически перенести свои существующие оповещения и создавать новые
+- Включить [Azure Sentinel](https://azure.microsoft.com/services/azure-sentinel/) и использовать его встроенным [analytics](https://docs.microsoft.com/azure/sentinel/tutorial-detect-threats) функциональные возможности для повторного создания их правила генерации оповещений
 - Повторно создать свои оповещения с помощью оповещений Azure Monitor log
                                      
-Чтобы сохранить существующие оповещения и перенести их в Azure Sentinel, пожалуйста, [запуска Azure Sentinel](https://portal.azure.com/#create/Microsoft.ASI/preview). В качестве первого шага выберите рабочую область, где хранятся ваши пользовательские оповещения и выберите пункт меню «Аналитика», чтобы автоматически перенести ваши оповещения.
+Чтобы сохранить существующие оповещения и перенести их в Azure Sentinel, пожалуйста, [запуска Azure Sentinel](https://portal.azure.com/#create/Microsoft.ASI/preview). В качестве первого шага выберите рабочую область, где хранятся ваши пользовательские оповещения и затем выберите пункт меню «Аналитика» для настройки правил настраиваемые оповещения. Посетите [документации](https://docs.microsoft.com/azure/sentinel/tutorial-detect-threats) Дополнительные сведения.
 
 > [!NOTE]
-> Миграция настраиваемые оповещения для Azure Sentinel — однократный перенос пользовательских оповещений в выбранной рабочей области. После завершения переноса, настраиваемые оповещения для выбранной рабочей области не будут доступны через Центр безопасности Azure.
->
-> Пользовательские оповещения с помощью [поиска](https://docs.microsoft.com/azure/azure-monitor/log-query/search-queries) или [объединения](https://docs-analytics-eus.azurewebsites.net/queryLanguage/query_language_unionoperator.html) операторы запросов не поддерживаются в Azure Sentinel и не будет подвергнуто миграции. Измените эти оповещения перед выполнением миграции.
+> Пользовательские оповещения с помощью [поиска](https://docs.microsoft.com/azure/azure-monitor/log-query/search-queries) или [объединения](https://docs-analytics-eus.azurewebsites.net/queryLanguage/query_language_unionoperator.html) операторы запросов не поддерживаются в Azure Sentinel. Измените эти оповещения перед выполнением миграции.
 
 Для повторного создания оповещения с помощью оповещений журнала Azure Monitor, см.: [Создавать, просматривать и управлять ими с помощью Azure Monitor оповещения журнала](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) инструкции по созданию оповещений журнала. Общие сведения о оповещения журнала в Azure Monitor, щелкните [здесь](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log).
 

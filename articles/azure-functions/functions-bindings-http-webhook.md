@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: fb219316afa798dfda777c4d0d406d5b8cabf7f9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f9f43720ff36b6dfac51a1626413ff7c2e590cd0
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66472366"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67342258"
 ---
 # <a name="azure-functions-http-triggers-and-bindings"></a>Триггеры и привязки HTTP в службе "Функции Azure"
 
@@ -307,6 +307,7 @@ module.exports = function(context, req) {
 ```python
 import logging
 import azure.functions as func
+
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
@@ -792,7 +793,7 @@ Webhook Slack создает маркер автоматически и не п�
 
 [!INCLUDE [functions-host-json-http](../../includes/functions-host-json-http.md)]
 
-## <a name="output"></a>Выход
+## <a name="output"></a>Output
 
 Привязка для вывода HTTP используется для ответа отправителю запроса HTTP. Эта привязка требует наличия триггера HTTP и позволяет настроить ответ, возвращаемый на запрос этого триггера. Если привязка выходных данных HTTP не указана, в Функциях версии 1.x триггер HTTP возвращает ответ HTTP "200 — OK" с пустым текстом, а в Функциях версии 2.x — ответ "204 — содержимое отсутствует" с пустым текстом.
 

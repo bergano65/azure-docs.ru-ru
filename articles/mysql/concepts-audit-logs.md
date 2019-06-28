@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 06/11/2019
-ms.openlocfilehash: 35cbe04380e2113f986d1e7adf3f7fdf89cb9326
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a82afe6f5299609fd6dd57a54f04f49fad5d2268
+ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67078876"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357645"
 ---
 # <a name="audit-logs-in-azure-database-for-mysql"></a>Журналы аудита в базе данных Azure для MySQL
 
@@ -29,7 +29,7 @@ ms.locfileid: "67078876"
 - `audit_log_events`: управляет событий в журнал. См. в следующей таблице для определенных событий аудита.
 - `audit_log_exclude_users`: Пользователи MySQL, должны быть исключены из ведения журнала. Позволяет выполнять не более четырех пользователей. Максимальная длина параметра составляет 256 символов.
 
-| **Event** | **Описание** |
+| **Событие** | **Описание** |
 |---|---|
 | `CONNECTION` | -Инициации подключения (успешное или неуспешное) <br> -Пользователь повторная проверка подлинности с другой пользователь/пароль во время сеанса <br> -Завершения соединений |
 | `DML_SELECT`| Запросы SELECT |
@@ -45,7 +45,7 @@ ms.locfileid: "67078876"
 
 Журналы аудита интегрированы с помощью журналов диагностики Azure Monitor. После включения журналы аудита на сервере MySQL, можно выдавать их в журналах Azure Monitor, концентраторы событий и службы хранилища Azure. Дополнительные сведения о том, как включить журналы диагностики на портале Azure, см. в разделе [портала статьи в журнале аудита](howto-configure-audit-logs-portal.md#set-up-diagnostic-logs).
 
-## <a name="schemas"></a>Схемы
+## <a name="diagnostic-logs-schemas"></a>Схемы для журналов диагностики
 
 В следующих разделах, что такое выходные данные в журналах аудита MySQL в зависимости от типа события. Порядок появления выбранных полей зависит от выбранного метода вывода.
 

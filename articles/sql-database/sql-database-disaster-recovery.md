@@ -11,13 +11,13 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
-ms.date: 01/25/2019
-ms.openlocfilehash: 1e1bc92c684bf6ddbb7dc4ff0f882ad61ddeb27e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/21/2019
+ms.openlocfilehash: 00fa1128df03befda8b15be2d7f2c527f65f9973
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61075818"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341076"
 ---
 # <a name="restore-an-azure-sql-database-or-failover-to-a-secondary"></a>Восстановление базы данных SQL Azure или переход на базу данных-получатель при отказе
 
@@ -34,7 +34,7 @@ ms.locfileid: "61075818"
 > При использовании избыточных между зонами пулов и баз данных уровня "Премиум"или "Критически важный для бизнеса" процесс восстановления автоматизирован. Поэтому описанные в этой статье действия выполнять не нужно.
 
 > [!NOTE]
-> База данных-источник и база данных-получатель должны иметь один и тот же уровень служб. Также настоятельно рекомендуется, базы данных-получателя было создано с вычисления (Dtu или виртуальных ядер) от размеров первичной. Дополнительные сведения см. в разделе [низкого как базы данных-источника или обновление](sql-database-active-geo-replication.md#upgrading-or-downgrading-a-primary-database).
+> База данных-источник и база данных-получатель должны иметь один и тот же уровень служб. Также настоятельно рекомендуется, базы данных-получателя было создано с вычисления (Dtu или виртуальных ядер) от размеров первичной. Дополнительные сведения см. в разделе [низкого как базы данных-источника или обновление](sql-database-active-geo-replication.md#upgrading-or-downgrading-primary-database).
 
 > [!NOTE]
 > Используйте одну или несколько групп отработки отказа для управления отработки отказа нескольких баз данных.

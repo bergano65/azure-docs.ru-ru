@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 06/07/2019
 ms.author: tomfitz
-ms.openlocfilehash: 8b7e6d234984e84f5b238d657281dd8b1b9ec423
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4f1bc1415fbb875120d7b64128cae69e1e3f442c
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67056883"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67339840"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
 В этой статье приводятся сведения о поддержке типом ресурса функции [тегов](resource-group-using-tags.md). Столбец с меткой **поддерживает теги** указывает, имеет ли тип ресурса свойство для тега. Столбец с меткой **тег в отчет о стоимости** указывает, передает ли этот тип ресурса тега отчет о стоимости.
@@ -864,8 +864,8 @@ ms.locfileid: "67056883"
 | dnszones/TXT | Нет |  Нет |
 | expressRouteCircuits | Да  | Нет |
 | expressRouteServiceProviders | Нет |  Нет |
-| frontdoors | Да | Да |
-| frontdoorWebApplicationFirewallPolicies | Да | Да |
+| frontdoors | Да, но ограниченный (см. в разделе [примечание ниже](#frontdoor)) | Да |
+| frontdoorWebApplicationFirewallPolicies | Да, но ограниченный (см. в разделе [примечание ниже](#frontdoor)) | Да |
 | getDnsResourceReference | Нет |  Нет |
 | interfaceEndpoints | Да | Да |
 | internalNotify | Нет |  Нет |
@@ -898,6 +898,10 @@ ms.locfileid: "67056883"
 | vpnGateways | Да | Нет |
 | vpnSites | Да | Да |
 | webApplicationFirewallPolicies | Да | Да |
+
+<a id="frontdoor" />
+
+Для службы Azure двери при создании ресурса можно применить теги, но обновление или добавление тегов в настоящее время не поддерживается.
 
 ## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |

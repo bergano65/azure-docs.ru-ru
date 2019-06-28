@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 92cb427149e6e6cbddfb96c6e4488017641e6482
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7dbb04a9d002fdcff49d28f69ee0975500bb7ed0
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60761749"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340789"
 ---
 # <a name="troubleshoot-azure-stream-analytics-outputs"></a>Устранение неполадок с выходными данными в Azure Stream Analytics
 
@@ -90,6 +90,10 @@ ms.locfileid: "60761749"
 * IGNORE_DUP_KEY нельзя установить для первичного ключа или уникального ограничения, в котором используется ALTER INDEX. Индекс нужно удалить и создать повторно.  
 * Вы можете задать параметр IGNORE_DUP_KEY для уникального индекса при помощи ALTER INDEX. Это ограничение отличается от PRIMARY KEY или UNIQUE и создается с использованием определения CREATE INDEX или INDEX.  
 * IGNORE_DUP_KEY не применяется к индексам хранилища столбцов, так как нельзя обеспечить уникальность таких индексов.  
+
+## <a name="column-names-are-lower-cased-by-azure-stream-analytics"></a>Имена столбцов в нижнем регистре, службой Azure Stream Analytics
+При использовании исходному уровню совместимости (1.0), Azure Stream Analytics используется для изменения имен столбцов в нижний регистр. Такое поведение было исправлено в более поздние версии уровни совместимости. Чтобы сохранить так, мы рекомендуем клиентам перейти на уровень совместимости 1.1 и более поздних версий. Дополнительные сведения можно найти на [уровне совместимости заданий Azure Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-compatibility-level).
+
 
 ## <a name="get-help"></a>Получение справки
 

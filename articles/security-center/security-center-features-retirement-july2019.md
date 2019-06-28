@@ -8,12 +8,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 4/16/2019
 ms.author: yoafr
-ms.openlocfilehash: 069345f9c2d0fff0b580365153d8be13bb4ba204
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1d364da9506124a35c724209c68ff72db4243e80
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65952142"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341575"
 ---
 # <a name="retirement-of-security-center-features-july-2019"></a>Прекращении работы функции центра безопасности (июля 2019 г.)
 
@@ -114,16 +114,18 @@ ms.locfileid: "65952142"
 
 ## Настраиваемые правила генерации оповещений (Предварительная версия)<a name="menu_customalerts"></a>
 
-Мы [снятия с учета пользовательский интерфейсе оповещений](https://docs.microsoft.com/azure/security-center/security-center-custom-alert) на 30 июня 2019 г. Поскольку снятия с учета его базовой инфраструктурой. До этого можно изменить существующие настраиваемые правила генерации оповещений, но вы не сможете добавить новые. Мы рекомендуем включить [Azure Sentinel](https://azure.microsoft.com/services/azure-sentinel/) автоматически перенести ваши оповещения и создавать новые. Кроме того можно создать оповещения с помощью оповещений Azure Monitor log.
+Мы [снятия с учета пользовательский интерфейсе оповещений](https://docs.microsoft.com/azure/security-center/security-center-custom-alert) на 30 июня 2019 г. Поскольку снятия с учета его базовой инфраструктурой. До этого можно изменить существующие настраиваемые правила генерации оповещений, но вы не сможете добавить новые. После даты прекращения использования любые пользовательские предупреждения, определенные не вступят в силу и не будут созданы на основе этих правил оповещения системы безопасности.
+Мы рекомендуем включить [Azure Sentinel](https://azure.microsoft.com/services/azure-sentinel/) и воссоздать ваши пользовательские оповещения. Кроме того можно создать оповещения с помощью оповещений Azure Monitor log.
 
-Чтобы сохранить существующие оповещения и перенести их в Azure Sentinel:
+Чтобы сохранить существующие оповещения и создать их с Azure Sentinel:
 
-1. Откройте Azure Sentinel и выберите рабочую область, где хранятся ваши пользовательские оповещения.
-1. Выберите **Analytics** меню, чтобы автоматически перенести ваши оповещения.
+1. [Откройте Azure Sentinel](https://portal.azure.com/#create/Microsoft.ASI/preview) и выберите рабочую область, где хранятся ваши пользовательские оповещения
+1. Выберите **Analytics** в меню
+1. Следуйте инструкциям в следующих [руководстве](https://docs.microsoft.com/azure/sentinel/tutorial-detect-threats) о том, как создать настраиваемые оповещения в Azure Sentinel
+
+Если вы не хотите использовать Azure Sentinel, можно создать оповещения с помощью оповещений Azure Monitor log. Инструкции см. в разделе [создание, просмотр и управление оповещений журнала с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) и [оповещениях журналов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log).
 
 ![Настраиваемые оповещения][13]
-
-Если вы не заинтересованы в процессе перехода к Azure Sentinel, мы рекомендуем вам для создания оповещения с помощью оповещений Azure Monitor log. Инструкции см. в разделе [создание, просмотр и управление оповещений журнала с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) и [оповещениях журналов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log).
 
 Дополнительные сведения о пользовательских оповещений вывода из эксплуатации см. в разделе [настраиваемые правила генерации оповещений в центре безопасности Azure (Предварительная версия)](https://docs.microsoft.com/azure/security-center/security-center-custom-alert).
 

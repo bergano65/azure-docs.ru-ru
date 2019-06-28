@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: adigan
-ms.openlocfilehash: dd4dad2cc3e541d3b6866c02341161dc1d9e1e6c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 801516ae2cfad891098c16f8cd6e9a4c7f157a93
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61234978"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67342015"
 ---
 # <a name="log-analytics-data-model-for-azure-backup-data"></a>Модель данных Log Analytics для данных Azure Backup
 
@@ -50,7 +50,7 @@ ms.locfileid: "61234978"
 | OperationName |Text |Имя текущей операции, например "Предупреждение" |
 | Категория |Text |Категория данных диагностики, отправляемых к журналам Azure Monitor. Всегда AzureBackupReport |
 | Ресурс |Text |Ресурс, для которого собираются данные. Отображается имя хранилища служб восстановления |
-| ProtectedServerUniqueId_s |Text |Уникальный идентификатор защищенного сервера, связанного с предупреждением |
+| ProtectedContainerUniqueId_s |Text |Уникальный идентификатор защищенного сервера, связанные с оповещением (был ProtectedServerUniqueId_s в версии 1)|
 | VaultUniqueId_s |Text |Уникальный идентификатор защищенного хранилища, связанного с предупреждением |
 | SourceSystem |Text |Исходная система текущих данных (Azure) |
 | ResourceId |Text |Уникальный идентификатор для ресурса, по которому собираются данные. Например, идентификатор ресурса хранилища служб восстановления |
@@ -67,10 +67,12 @@ ms.locfileid: "61234978"
 | --- | --- | --- |
 | EventName_s |Text |Имя события. Всегда AzureBackupCentralReport |  
 | BackupItemUniqueId_s |Text |Уникальный идентификатор архивируемого элемента |
-| BackupItemId_s |Text |Идентификатор архивируемого элемента |
+| BackupItemId_s |Text |Идентификатор архивируемого элемента (Данное поле используется только для схемы v1) |
 | BackupItemName_s |Text |Имя архивируемого элемента |
 | BackupItemFriendlyName_s |Text |Понятное имя архивируемого элемента |
 | BackupItemType_s |текст |Тип архивируемого элемента, например виртуальная машина, папка с файлами |
+| BackupItemProtectionState_s |Text |Состояние защиты архивируемого элемента |
+| BackupItemAppVersion_s |Text |Версия приложения архивируемого элемента |
 | ProtectionState_s |Text |Текущее состояние защиты архивируемого элемента, например "Защищено" или "Защита остановлена" |
 | ProtectionGroupName_s |Text | Имя группы защиты элементов архивации защищен, SC DPM и MABS, если применимо|
 | SecondaryBackupProtectionState_s |Text |Включении вторичную защиту для архивного элемента|
@@ -103,8 +105,7 @@ ms.locfileid: "61234978"
 | Категория |Text |Категория данных диагностики, отправляемых в Log Analytics (AzureBackupReport) |
 | OperationName |Text |Имя текущей операции (BackupItemAssociation) |
 | Ресурс |Text |Ресурс, для которого собираются данные. Отображается имя хранилища служб восстановления |
-| PolicyUniqueId_g |Text |Уникальный идентификатор политики, связанной с архивируемым элементом |
-| ProtectedServerUniqueId_s |Text |Уникальный идентификатор защищенного сервера, связанного с архивируемым элементом |
+| ProtectedContainerUniqueId_s |Text |Уникальный идентификатор защищенного сервера, связанный с элементом резервного копирования (был ProtectedServerUniqueId_s в версии 1) |
 | VaultUniqueId_s |Text |Уникальный идентификатор хранилища, которое содержит архивируемый элемент |
 | SourceSystem |Text |Исходная система текущих данных (Azure) |
 | ResourceId |Text |Идентификатор ресурса для собираемых данных. Например, идентификатор ресурса хранилища служб восстановления |
@@ -249,13 +250,14 @@ ms.locfileid: "61234978"
 | ProtectedContainerOSType_s |Text |Тип операционной системы защищенный контейнер. |
 | ProtectedContainerOSVersion_s |Text |Версия операционной системы для защищенный контейнер. |
 | AgentVersion_s |Text |Номер версии агента резервного копирования или агент защиты (в случае SC DPM и MABS) |
-| BackupManagementType_s |Text |Тип поставщика для выполнения архивации, например IaaSVM, FileFolder |
-| EntityState_s |Text |Текущее состояние объекта защищенного сервера, например "Активный" или "Удален" |
+| BackupManagementType_s |Text |Тип поставщика для выполнения резервного копирования. Например IaaSVM, FileFolder |
+| EntityState_s |Text |Текущее состояние объекта защищенного сервера. Например активный "или" удален |
 | ProtectedContainerFriendlyName_s |Text |Понятное имя защищенного сервера |
 | ProtectedContainerName_s |Text |Имя защищенного контейнера |
-| ProtectedContainerWorkloadType_s |Text |Тип контейнера защищенные резервные копии, IaaSVMContainer |
+| ProtectedContainerWorkloadType_s |Text |Тип контейнера защищенные резервные копии. Например IaaSVMContainer |
 | ProtectedContainerLocation_s |Text |Защищенный контейнер является расположено локально или в Azure |
 | ProtectedContainerType_s |Text |Является ли защищенный контейнер на сервере или контейнер |
+| ProtectedContainerProtectionState_s  |Text |Состояние защиты защищенный контейнер. |
 
 ### <a name="storage"></a>Хранилище
 
@@ -263,7 +265,7 @@ ms.locfileid: "61234978"
 
 | Поле | Тип данных | Описание |
 | --- | --- | --- |
-| CloudStorageInBytes_s |Десятичное число |Объем облачного резервного хранилища, используемого для архивации, вычисляемый на основе последнего значения |
+| CloudStorageInBytes_s |Десятичное число |Объем облачного резервного хранилища используется архивации, вычисляемый на основе последнего значения (Данное поле используется только для схемы v1)|
 | ProtectedInstances_s |Десятичное число |Число защищенных экземпляров, используемое для вычисления стоимости использования внешнего хранилища для выставления счетов на основе последнего значения |
 | EventName_s |Text |Имя события. Это всегда AzureBackupCentralReport |
 | SchemaVersion_s |Text |Это поле указывает текущую версию схемы, это **V2** |
@@ -280,6 +282,10 @@ ms.locfileid: "61234978"
 | ResourceGroup |Text |Группа ресурсов ресурса (напр., Хранилище служб восстановления), для которого собираются данные |
 | ResourceProvider |Text |Поставщик ресурсов, для которого собираются данные. Например, Microsoft.RecoveryServices |
 | ResourceType |Text |Тип ресурса, для которого собираются данные. Например, "Хранилище" |
+| StorageUniqueId_s |Text |Уникальный идентификатор, используемый для идентификации сущности хранилища |
+| StorageType_s |Text |Тип хранилища, например облако, тома, диск |
+| StorageName_s |Text |Имя сущности хранилища, к примеру E:\ |
+| StorageTotalSizeInGBs_s |Text |Общий размер хранилища в ГБ, потребляемая сущность хранилища|
 
 ### <a name="storageassociation"></a>StorageAssociation
 
@@ -342,7 +348,7 @@ ms.locfileid: "61234978"
 
 ### <a name="protectedinstance"></a>ProtectedInstance
 
-Эта таблица содержит связанные поля основные защищенных экземпляров.
+Эта таблица содержит основные защищенные поля связи экземпляров.
 
 | Поле | Тип данных |Применимые версии | Описание |
 | --- | --- | --- | --- |

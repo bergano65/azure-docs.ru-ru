@@ -7,19 +7,19 @@ ms.author: mamccrea
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 6/21/2018
 ms.custom: seodec18
-ms.openlocfilehash: 43dd8be998e0f8f3b5a2b783c6a01d5b5ef3da12
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 54ff94cad3034e3679e57e5596ca13f3430cbbb3
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65506925"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340561"
 ---
 # <a name="understand-stream-analytics-job-monitoring-and-how-to-monitor-queries"></a>Основные сведения о мониторинге заданий Stream Analytics и порядок мониторинга запросов
 
 ## <a name="introduction-the-monitor-page"></a>Введение. Страница мониторинга
-На портале Azure отображаются ключевые метрики производительности, которые можно использовать для мониторинга и устранения неполадок производительности запросов и заданий. Для просмотра метрик перейдите к нужному заданию Stream Analytics и просмотрите раздел **Мониторинг** на странице "Обзор".  
+Области портала Azure ключевых метрик производительности, который может использоваться для отслеживания и устранения неполадок производительности запросов и заданий. Для просмотра метрик перейдите к нужному заданию Stream Analytics и просмотрите раздел **Мониторинг** на странице "Обзор".  
 
 ![Ссылка на страницу мониторинга заданий Stream Analytics](./media/stream-analytics-monitoring/02-stream-analytics-monitoring-block.png)
 
@@ -68,4 +68,3 @@ ms.locfileid: "65506925"
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
 * [Справочник по языку запросов Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
-

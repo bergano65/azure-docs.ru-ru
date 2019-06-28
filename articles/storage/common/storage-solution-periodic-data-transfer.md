@@ -6,14 +6,14 @@ author: alkohli
 ms.service: storage
 ms.subservice: blobs
 ms.topic: article
-ms.date: 04/01/2019
+ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 8f106674c1b1ec90477c7c030dc55085fcf10656
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fb49802adf6242f445b700d06622d7e6aa336b4d
+ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60729925"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357043"
 ---
 # <a name="solutions-for-periodic-data-transfer"></a>Решения для периодической передачи данных
  
@@ -52,7 +52,7 @@ ms.locfileid: "60729925"
 
 ### <a name="continuous-data-ingestion-over-network"></a>Непрерывный прием данных по сети
 
-| Компонент                                       | Шлюз Data Box | Data Box Edge   | Фабрика данных Azure        |
+| Функция                                       | Шлюз Data Box | Data Box Edge   | Фабрика данных Azure        |
 |----------------------------------|-----------------------------------------|--------------------------|---------------------------|
 | Форм-фактор                                   | Виртуальное устройство             | Физическое устройство          | Служба размещена на портале Azure, агент размещен локально                                                            |
 | Оборудование                                      | Ваша низкоуровневая оболочка            | Предоставляет Майкрософт    | Нет данных                                                            |
@@ -66,7 +66,7 @@ ms.locfileid: "60729925"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Передача данных с помощью AzCopy](/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2ftables%2ftoc.json)
-- [Дополнительные сведения о передаче данных с помощью REST API службы хранилища](https://docs.microsoft.com/azure/databox-online/data-box-gateway-deploy-add-shares)
+- [Дополнительные сведения о передаче данных с помощью REST API службы хранилища](https://docs.microsoft.com/dotnet/api/overview/azure/storage?view=azure-dotnet)
 - Руководства
     - [Руководство по передаче данных с помощью Шлюза Data Box (предварительная версия)](https://docs.microsoft.com/azure/databox-online/data-box-gateway-deploy-add-shares).
     - [преобразованию данных с помощью Data Box Edge перед отправкой в Azure](https://docs.microsoft.com/azure/databox-online/data-box-edge-deploy-configure-compute).

@@ -1,5 +1,5 @@
 ---
-title: Безопасный доступ в Azure Logic Apps | Документация Майкрософт
+title: Безопасный доступ к Azure Logic Apps
 description: Добавление защиты для Azure Logic Apps, включая обеспечение безопасности доступа к триггерам, входным и выходным данным, а также к параметрам и другим службам
 services: logic-apps
 ms.service: logic-apps
@@ -7,15 +7,14 @@ ms.suite: integration
 author: kevinlam1
 ms.author: klam
 ms.reviewer: estfan, LADocs
-ms.assetid: 9fab1050-cfbc-4a8b-b1b3-5531bee92856
 ms.topic: article
 ms.date: 02/05/2019
-ms.openlocfilehash: 31b18e2dfbad1f572b5c9b0ae59f5e076db7cde2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 65369e5747f17c0e420d5775f1c5704cac9ca21b
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60995703"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341087"
 ---
 # <a name="secure-access-in-azure-logic-apps"></a>Безопасный доступ к Azure Logic Apps
 
@@ -156,9 +155,9 @@ POST
 
 Чтобы разрешить только определенным пользователям или группам выполнять операции в приложении логики, можно ограничить доступ к таким задачам, как управление, редактирование и просмотр. Logic Apps поддерживают [управление доступом на основе ролей Azure (RBAC)](../role-based-access-control/role-assignments-portal.md). Вы можете настроить его или назначить встроенные роли участникам подписки, например:
 
-* [Создатель приложений логики](../role-based-access-control/built-in-roles.md#logic-app-contributor). Пользователи могут просматривать, изменять и обновлять приложения логики. 
+* [Создатель приложений логики](../role-based-access-control/built-in-roles.md#logic-app-contributor). Позволяет управлять приложениями логики, но нельзя изменить доступ к ним.
 
-* [Оператор приложений логики](../role-based-access-control/built-in-roles.md#logic-app-operator). Пользователи могут просматривать приложение логики и журнал выполнения, а также включать и отключать приложение логики. Эта роль не позволяет изменять или обновлять приложение логики.
+* [Оператор приложений логики](../role-based-access-control/built-in-roles.md#logic-app-operator). Позволяет приступить к чтению, включения и отключения приложения логики, но нельзя изменять или обновлять их.
 
 Чтобы запретить другим пользователям изменять или удалять приложение логики, можно использовать [блокировку ресурсов Azure](../azure-resource-manager/resource-group-lock-resources.md). Эта возможность позволяет предотвратить изменение или удаление рабочих ресурсов.
 

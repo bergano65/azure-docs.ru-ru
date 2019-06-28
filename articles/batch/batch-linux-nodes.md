@@ -15,16 +15,16 @@ ms.workload: na
 ms.date: 06/01/2018
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 24576a46b47b22ef447793b4105730ed2755701d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 10a3c5a4f1c6eaceecb9dc5262d8694ee4265b48
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67050629"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340178"
 ---
 # <a name="provision-linux-compute-nodes-in-batch-pools"></a>Подготовка вычислительных узлов Linux в пулах пакетной службы
 
-Пакетная служба Azure позволяет выполнять параллельные вычислительные рабочие нагрузки на виртуальных машинах Linux и Windows. В этой статье описывается создание пулов вычислительных узлов Linux в пакетной службе с помощью клиентских библиотек [Python][py_batch_package] и [.NET][api_net].
+Пакетная служба Azure позволяет выполнять параллельные вычислительные рабочие нагрузки на виртуальных машинах Linux и Windows. В этой статье подробно описывается создание пулов вычислительных узлов Linux в пакетной службе с помощью [Python для пакетной службы][py_batch_package] and [Batch .NET][api_net] клиентских библиотек.
 
 > [!NOTE]
 > Пакеты приложений поддерживаются во всех пулах пакетной службы, созданных после 5 июля 2017 г. Если пул создан с помощью конфигурации облачной службы, пакеты приложений также поддерживаются в пулах пакетной службы, созданных между 10 марта 2016 г. и 5 июля 2017 г. Пулы пакетной службы, созданные до 10 марта 2016 г., не поддерживают пакеты приложений. Дополнительные сведения о развертывании приложений на узлах пакетной службы с помощью пакетов приложений см .в [этой статье](batch-application-packages.md).
@@ -39,7 +39,7 @@ ms.locfileid: "67050629"
 **Virtual Machine Configuration** предоставляет образы Windows и Linux для вычислительных узлов. Доступные размеры вычислительных узлов перечислены в статьях [Размеры виртуальных машин в Azure](../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) (Linux) и [Размеры виртуальных машин в Azure](../virtual-machines/windows/sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (Windows). При создании пула, содержащего узлы конфигурации виртуальных машин, необходимо указать размер узлов, ссылку на образ виртуальной машины и номер SKU агента узла пакетной службы для установки на узлах.
 
 ### <a name="virtual-machine-image-reference"></a>Ссылка на образ виртуальной машины
-Для предоставления вычислительных узлов в конфигурации виртуальной машины пакетная служба использует [масштабируемые наборы виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md). Вы можете указать образ из [Azure Marketplace][vm_marketplace] или подготовленный пользовательский образ. Дополнительные сведения о пользовательских образах см. в статье [Использование управляемого пользовательского образа для создания пула виртуальных машин](batch-custom-images.md).
+Для предоставления вычислительных узлов в конфигурации виртуальной машины пакетная служба использует [масштабируемые наборы виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md). Можно указать образ из [Azure Marketplace][vm_marketplace], или укажите пользовательский образ, который вы подготовили. Дополнительные сведения о пользовательских образах см. в статье [Использование управляемого пользовательского образа для создания пула виртуальных машин](batch-custom-images.md).
 
 При настройке ссылки на образ виртуальной машины задаются свойства образа виртуальной машины. Приведенные ниже свойства являются обязательными при создании ссылки на образ виртуальной машины.
 
@@ -48,7 +48,7 @@ ms.locfileid: "67050629"
 | Издатель |Canonical |
 | ПРЕДЛОЖЕНИЕ |UbuntuServer |
 | SKU |14.04.4-LTS |
-| Version |последняя |
+| Version |latest |
 
 > [!TIP]
 > Дополнительные сведения об этих свойствах и о том, как получить список образов из Marketplace, см. в статье [Выбор образов виртуальных машин Linux с помощью интерфейса командной строки Azure (Azure CLI)](../virtual-machines/linux/cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). Обратите внимание, что не все образы из Marketplace в настоящее время совместимы с пакетной службой. Дополнительные сведения см. в разделе [Номер SKU агента узла](#node-agent-sku).
@@ -68,9 +68,9 @@ ms.locfileid: "67050629"
 >
 
 ## <a name="create-a-linux-pool-batch-python"></a>Создание пула Linux. Python для пакетной службы
-В следующем фрагменте кода показан пример создания пула вычислительных узлов Ubuntu Server с помощью [клиентской библиотеки пакетной службы Microsoft Azure для Python][py_batch_package]. Справочную документацию по модулю Python пакетной службы можно найти в [пакете azure.batch][py_batch_docs] на сайте Read the Docs.
+В следующем фрагменте кода показан пример использования [клиентской библиотеки пакетной службы Microsoft Azure для Python][py_batch_package] to create a pool of Ubuntu Server compute nodes. Reference documentation for the Batch Python module can be found at [azure.batch package][py_batch_docs] на Read the Docs.
 
-В этом фрагменте кода явно создается объект [ImageReference][py_imagereference] и указывается каждое из его свойств (publisher, offer, SKU, version). Однако в рабочем коде рекомендуется использовать метод [list_node_agent_skus][py_list_skus] для определения и выбора доступных сочетаний образа и номера SKU агента узла в среде выполнения.
+Этот фрагмент создает [ImageReference][py_imagereference] explicitly and specifies each of its properties (publisher, offer, SKU, version). In production code, however, we recommend that you use the [list_node_agent_skus][py_list_skus] метод для определения и выбора доступных сочетаний образа и узла агента SKU во время выполнения.
 
 ```python
 # Import the required modules from the
@@ -95,7 +95,7 @@ config = batch.BatchServiceClientConfiguration(creds, batch_url)
 client = batch.BatchServiceClient(creds, batch_url)
 
 # Create the unbound pool
-new_pool = batchmodels.PoolAddParameter(id = pool_id, vm_size = vm_size)
+new_pool = batchmodels.PoolAddParameter(id=pool_id, vm_size=vm_size)
 new_pool.target_dedicated = node_count
 
 # Configure the start task for the pool
@@ -107,17 +107,17 @@ new_pool.start_task = start_task
 # Create an ImageReference which specifies the Marketplace
 # virtual machine image to install on the nodes.
 ir = batchmodels.ImageReference(
-    publisher = "Canonical",
-    offer = "UbuntuServer",
-    sku = "14.04.2-LTS",
-    version = "latest")
+    publisher="Canonical",
+    offer="UbuntuServer",
+    sku="14.04.2-LTS",
+    version="latest")
 
 # Create the VirtualMachineConfiguration, specifying
 # the VM image reference and the Batch node agent to
 # be installed on the node.
 vmc = batchmodels.VirtualMachineConfiguration(
-    image_reference = ir,
-    node_agent_sku_id = "batch.node.ubuntu 14.04")
+    image_reference=ir,
+    node_agent_sku_id="batch.node.ubuntu 14.04")
 
 # Assign the virtual machine configuration to the pool
 new_pool.virtual_machine_configuration = vmc
@@ -126,14 +126,15 @@ new_pool.virtual_machine_configuration = vmc
 client.pool.add(new_pool)
 ```
 
-Как упоминалось ранее, вместо явного создания объекта [ImageReference][py_imagereference] мы рекомендуем использовать метод [list_node_agent_skus][py_list_skus] для динамического выбора из поддерживаемых в настоящее время сочетаний агента узла и образа из Marketplace. Следующий фрагмент кода Python демонстрирует, как использовать этот метод.
+Как упоминалось ранее, рекомендуется вместо создания [ImageReference][py_imagereference] explicitly, you use the [list_node_agent_skus][py_list_skus] метод для динамического выбора из поддерживаемых в настоящее время сочетаний агента узла/Marketplace образ. Следующий фрагмент кода Python демонстрирует, как использовать этот метод.
 
 ```python
 # Get the list of node agents from the Batch service
 nodeagents = client.account.list_node_agent_skus()
 
 # Obtain the desired node agent
-ubuntu1404agent = next(agent for agent in nodeagents if "ubuntu 14.04" in agent.id)
+ubuntu1404agent = next(
+    agent for agent in nodeagents if "ubuntu 14.04" in agent.id)
 
 # Pick the first image reference from the list of verified references
 ir = ubuntu1404agent.verified_image_references[0]
@@ -141,14 +142,14 @@ ir = ubuntu1404agent.verified_image_references[0]
 # Create the VirtualMachineConfiguration, specifying the VM image
 # reference and the Batch node agent to be installed on the node.
 vmc = batchmodels.VirtualMachineConfiguration(
-    image_reference = ir,
-    node_agent_sku_id = ubuntu1404agent.id)
+    image_reference=ir,
+    node_agent_sku_id=ubuntu1404agent.id)
 ```
 
 ## <a name="create-a-linux-pool-batch-net"></a>Создание пула Linux. .NET для пакетной службы
-В следующем фрагменте кода показан пример создания пула вычислительных узлов Ubuntu Server с помощью клиентской библиотеки [.NET для пакетной службы][nuget_batch_net]. [Справочную документацию по .NET для пакетной службы][api_net] можно найти на сайте docs.microsoft.com.
+В следующем фрагменте кода показан пример использования [.NET для пакетной службы][nuget_batch_net] client library to create a pool of Ubuntu Server compute nodes. You can find the [Batch .NET reference documentation][api_net] на сайте docs.microsoft.com.
 
-В следующем фрагменте кода используется метод [PoolOperations][net_pool_ops].[ListNodeAgentSkus][net_list_skus] для выбора из списка поддерживаемых в настоящее время сочетаний образа из Marketplace и номера SKU агента узла. Этот способ является предпочтительным, так как список поддерживаемых сочетаний может меняться время от времени. Чаще всего добавляются поддерживаемые сочетания.
+В следующем фрагменте кода используется [PoolOperations][net_pool_ops] .[ListNodeAgentSkus][net_list_skus] метод для выбора из списка, в настоящее время поддерживается Marketplace сочетаний образа и узла агента SKU. Этот способ является предпочтительным, так как список поддерживаемых сочетаний может меняться время от времени. Чаще всего добавляются поддерживаемые сочетания.
 
 ```csharp
 // Pool settings
@@ -196,7 +197,7 @@ CloudPool pool = batchClient.PoolOperations.CreatePool(
 await pool.CommitAsync();
 ```
 
-Несмотря на то, что в приведенном ранее фрагменте используется метод [PoolOperations][net_pool_ops].[ListNodeAgentSkus][net_list_skus] для динамического перечисления и выбора поддерживаемых сочетаний образа и номера SKU агента узла (рекомендуемый), можно также настроить объект [ImageReference][net_imagereference] явным образом.
+Несмотря на то, что в приведенном ранее фрагменте используется [PoolOperations][net_pool_ops] .[ListNodeAgentSkus][net_list_skus] метод для динамического перечисления и выбора поддерживаемых сочетаний образа и узла агента SKU (рекомендуется), можно также настроить [ Объект ImageReference][net_imagereference] явным образом:
 
 ```csharp
 ImageReference imageReference = new ImageReference(
@@ -207,7 +208,7 @@ ImageReference imageReference = new ImageReference(
 ```
 
 ## <a name="list-of-virtual-machine-images"></a>Список образов виртуальных машин
-В следующей таблице указаны образы виртуальных машин из Marketplace, которые совместимы с доступными агентами узлов пакетной службы на момент написания этой статьи. Важно отметить, что этот список не является окончательным, так как в любое время образы и агенты узлов могут добавляться или удаляться. Рекомендуем всегда использовать в службах и приложениях пакетной службы методы [list_node_agent_skus][py_list_skus] (Python) или [ListNodeAgentSkus][net_list_skus] (.NET для пакетной службы) для определения и выбора доступных в настоящее время номеров SKU.
+В следующей таблице указаны образы виртуальных машин из Marketplace, которые совместимы с доступными агентами узлов пакетной службы на момент написания этой статьи. Важно отметить, что этот список не является окончательным, так как в любое время образы и агенты узлов могут добавляться или удаляться. Мы рекомендуем приложений пакетной службы и службы всегда использовать [list_node_agent_skus][py_list_skus] (Python) or [ListNodeAgentSkus][net_list_skus] (.NET пакетной службы) для определения и выбора в настоящее время доступных номеров SKU.
 
 > [!WARNING]
 > Следующий список может меняться в любое время. При выполнении заданий пакетной службы следует всегда использовать методы **получения списка номеров SKU агентов узлов**, доступные в интерфейсах API пакетной службы, для перечисления совместимых виртуальных машин и номеров SKU агентов узлов.
@@ -216,33 +217,33 @@ ImageReference imageReference = new ImageReference(
 
 | **Издатель** | **ПРЕДЛОЖЕНИЕ** | **Номер SKU образа** | **Версия** | **Идентификатор SKU агента узла** |
 | ------------- | --------- | ------------- | ----------- | --------------------- |
-| пакет (1) | rendering-centos73 | rendering | последняя | batch.node.centos 7 |
-| пакет (1) | rendering-windows2016 | rendering | последняя | batch.node.windows amd64 |
-| Canonical | UbuntuServer | 16.04-LTS | последняя | batch.node.ubuntu 16.04 |
-| Canonical | UbuntuServer | 14.04.5-LTS | последняя | batch.node.ubuntu 14.04 |
-| Credativ | Debian | 9 | последняя | batch.node.debian 9 |
-| Credativ | Debian | 8 | последняя | batch.node.debian 8 |
-| microsoft-ads | linux-data-science-vm | linuxdsvm | последняя | batch.node.centos 7 |
-| microsoft-ads | standard-data-science-vm | standard-data-science-vm | последняя | batch.node.windows amd64 |
-| microsoft-azure-batch | centos-container | 7-4 | последняя | batch.node.centos 7 |
-| microsoft-azure-batch | centos-container-rdma | 7-4 | последняя | batch.node.centos 7 |
-| microsoft-azure-batch | ubuntu-server-container | 16-04-lts | последняя | batch.node.ubuntu 16.04 |
-| microsoft-azure-batch | ubuntu-server-container-rdma | 16-04-lts | последняя | batch.node.ubuntu 16.04 |
-| MicrosoftWindowsServer | WindowsServer | 2016-Datacenter | последняя | batch.node.windows amd64 |
-| MicrosoftWindowsServer | WindowsServer | 2016-Datacenter-smalldisk | последняя | batch.node.windows amd64 |
-| MicrosoftWindowsServer | WindowsServer | 2016-Datacenter-with-Containers | последняя | batch.node.windows amd64 |
-| MicrosoftWindowsServer | WindowsServer | 2012-R2-Datacenter | последняя | batch.node.windows amd64 |
-| MicrosoftWindowsServer | WindowsServer | 2012-R2-Datacenter-smalldisk | последняя | batch.node.windows amd64 |
-| MicrosoftWindowsServer | WindowsServer | 2012-Datacenter | последняя | batch.node.windows amd64 |
-| MicrosoftWindowsServer | WindowsServer | 2012-Datacenter-smalldisk | последняя | batch.node.windows amd64 |
-| MicrosoftWindowsServer | WindowsServer | 2008-R2-SP1 | последняя | batch.node.windows amd64 |
-| MicrosoftWindowsServer | WindowsServer | 2008-R2-SP1-smalldisk | последняя | batch.node.windows amd64 |
-| OpenLogic | CentOS | 7.4 | последняя | batch.node.centos 7 |
-| OpenLogic | CentOS-HPC | 7.4 | последняя | batch.node.centos 7 |
-| OpenLogic | CentOS-HPC | 7.3 | последняя | batch.node.centos 7 |
-| OpenLogic | CentOS-HPC | 7.1 | последняя | batch.node.centos 7 |
-| Oracle | Oracle-Linux | 7.4 | последняя | batch.node.centos 7 |
-| SUSE | SLES-HPC | 12-SP2 | последняя | batch.node.opensuse 42.1 |
+| пакет (1) | rendering-centos73 | rendering | latest | batch.node.centos 7 |
+| пакет (1) | rendering-windows2016 | rendering | latest | batch.node.windows amd64 |
+| Canonical | UbuntuServer | 16.04-LTS | latest | batch.node.ubuntu 16.04 |
+| Canonical | UbuntuServer | 14.04.5-LTS | latest | batch.node.ubuntu 14.04 |
+| Credativ | Debian | 9 | latest | batch.node.debian 9 |
+| Credativ | Debian | 8 | latest | batch.node.debian 8 |
+| microsoft-ads | linux-data-science-vm | linuxdsvm | latest | batch.node.centos 7 |
+| microsoft-ads | standard-data-science-vm | standard-data-science-vm | latest | batch.node.windows amd64 |
+| microsoft-azure-batch | centos-container | 7-4 | latest | batch.node.centos 7 |
+| microsoft-azure-batch | centos-container-rdma | 7-4 | latest | batch.node.centos 7 |
+| microsoft-azure-batch | ubuntu-server-container | 16-04-lts | latest | batch.node.ubuntu 16.04 |
+| microsoft-azure-batch | ubuntu-server-container-rdma | 16-04-lts | latest | batch.node.ubuntu 16.04 |
+| MicrosoftWindowsServer | WindowsServer | 2016-Datacenter | latest | batch.node.windows amd64 |
+| MicrosoftWindowsServer | WindowsServer | 2016-Datacenter-smalldisk | latest | batch.node.windows amd64 |
+| MicrosoftWindowsServer | WindowsServer | 2016-Datacenter-with-Containers | latest | batch.node.windows amd64 |
+| MicrosoftWindowsServer | WindowsServer | 2012-R2-Datacenter | latest | batch.node.windows amd64 |
+| MicrosoftWindowsServer | WindowsServer | 2012-R2-Datacenter-smalldisk | latest | batch.node.windows amd64 |
+| MicrosoftWindowsServer | WindowsServer | 2012-Datacenter | latest | batch.node.windows amd64 |
+| MicrosoftWindowsServer | WindowsServer | 2012-Datacenter-smalldisk | latest | batch.node.windows amd64 |
+| MicrosoftWindowsServer | WindowsServer | 2008-R2-SP1 | latest | batch.node.windows amd64 |
+| MicrosoftWindowsServer | WindowsServer | 2008-R2-SP1-smalldisk | latest | batch.node.windows amd64 |
+| OpenLogic | CentOS | 7.4 | latest | batch.node.centos 7 |
+| OpenLogic | CentOS-HPC | 7.4 | latest | batch.node.centos 7 |
+| OpenLogic | CentOS-HPC | 7.3 | latest | batch.node.centos 7 |
+| OpenLogic | CentOS-HPC | 7.1 | latest | batch.node.centos 7 |
+| Oracle | Oracle-Linux | 7.4 | latest | batch.node.centos 7 |
+| SUSE | SLES-HPC | 12-SP2 | latest | batch.node.opensuse 42.1 |
 
 ## <a name="connect-to-linux-nodes-using-ssh"></a>Подключение к узлам Linux с помощью SSH
 Во время разработки или устранения неполадок может потребоваться войти на узлы в пуле. В отличие от вычислительных узлов Windows, для подключения к узлам Linux нельзя использовать протокол удаленного рабочего стола (RDP). Вместо этого пакетная служба включает доступ по протоколу SSH на каждом узле для удаленного подключения.
@@ -275,8 +276,8 @@ credentials = batchauth.SharedKeyCredentials(
     batch_account_key
 )
 batch_client = batch.BatchServiceClient(
-        credentials,
-        base_url=batch_account_url
+    credentials,
+    base_url=batch_account_url
 )
 
 # Create the user that will be added to each node in the pool
@@ -316,16 +317,16 @@ tvm-1219235766_3-20160414t192511z | ComputeNodeState.idle | 13.91.7.57 | 50002
 tvm-1219235766_4-20160414t192511z | ComputeNodeState.idle | 13.91.7.57 | 50001
 ```
 
-При создании пользователя на узле вместо пароля можно указать открытый ключ SSH. В пакете SDK для Python используйте параметр **ssh_public_key** в [ComputeNodeUser][py_computenodeuser]. В среде .NET используйте свойство [ComputeNodeUser][net_computenodeuser].[SshPublicKey][net_ssh_key].
+При создании пользователя на узле вместо пароля можно указать открытый ключ SSH. В пакет SDK для Python используйте **ssh_public_key** параметр на [ComputeNodeUser][py_computenodeuser]. In .NET, use the [ComputeNodeUser][net_computenodeuser].[ SshPublicKey][net_ssh_key] свойство.
 
 ## <a name="pricing"></a>Цены
-Пакетная служба Azure основана на технологии виртуальных машин Azure и облачных служб Azure. Сама пакетная служба предоставляется бесплатно. Это означает, что плата взимается только за вычислительные ресурсы, используемые решениями пакетной службы. При выборе режима **Cloud Services Configuration** (Конфигурация облачных служб) плата взимается в зависимости от структуры [цен на облачные службы][cloud_services_pricing]. При выборе режима **Конфигурация виртуальной машины** плата взимается в зависимости от структуры [цен на виртуальные машины][vm_pricing]. 
+Пакетная служба Azure основана на технологии виртуальных машин Azure и облачных служб Azure. Сама пакетная служба предоставляется бесплатно. Это означает, что плата взимается только за вычислительные ресурсы, используемые решениями пакетной службы. При выборе **конфигурация облачных служб**, плата взимается на основе [цен на облачные службы][cloud_services_pricing] структуры. При выборе **конфигурации виртуальной машины**, плата взимается на основе [цены на виртуальные машины][vm_pricing] структуры. 
 
 При развертывании приложений на узлах пакетной службы с помощью [пакетов приложений](batch-application-packages.md) также взимается плата за ресурсы службы хранилища Azure, используемые пакетами приложений. Как правило, эти затраты на службу хранилища Azure минимальны. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Примеры кода Python][github_samples_py] в репозитории [azure-batch-samples][github_samples] на портале GitHub содержат сценарии, в которых показано, как выполнять распространенные пакетные операции, такие как создание пула, задания и задачи. [Файл сведений][github_py_readme], прилагаемый к примерам кода Python, содержит подробные сведения об установке необходимых пакетов.
+[Примеры кода Python][github_samples_py] in the [azure-batch-samples][github_samples] репозитории на сайте GitHub содержат сценарии, в которых показано, как выполнять распространенные пакетные операции, такие как создание пула, задания и задачи. [Файл сведений][github_py_readme], прилагаемый к примерам кода Python, содержит подробные сведения об установке необходимых пакетов.
 
 [api_net]: https://msdn.microsoft.com/library/azure/mt348682.aspx
 [api_net_mgmt]: https://msdn.microsoft.com/library/azure/mt463120.aspx

@@ -14,12 +14,12 @@ ms.devlang: objective-c
 ms.topic: article
 ms.date: 05/21/2019
 ms.author: miparker
-ms.openlocfilehash: a4773ddd8114659118e89cfee57e73ddb39ff6b6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c35044918876b2c7710e26f6b868bc1096c2f538
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67116680"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340388"
 ---
 # <a name="tutorial-push-notifications-to-swift-ios-apps-that-use-the-notification-hubs-rest-api"></a>Руководство по Push-уведомления в Swift iOS приложений, использующих API REST центров уведомлений
 
@@ -87,12 +87,12 @@ ms.locfileid: "67116680"
 
 1. Обновление **devsettings.plist** для включения следующие записи конфигурации, используя собственные значения из центра уведомлений, которое вы подготовили:
 
-   | Ключ                            | type                     | Значение                     |
+   | Ключ                            | type                     | Value                     |
    |--------------------------------| -------------------------| --------------------------|
-   | notificationHubKey             | String                   | <hubKey>                  |
-   | notificationHubKeyName         | String                   | <hubKeyName>              |
-   | notificationHubName            | String                   | <hubName>                 |
-   | notificationHubNamespace       | String                   | <hubNamespace>            |
+   | notificationHubKey             | String                   | \<hubKey>                  |
+   | notificationHubKeyName         | String                   | \<hubKeyName>              |
+   | notificationHubName            | String                   | \<hubName >                 |
+   | notificationHubNamespace       | String                   | \<hubNamespace>            |
 
    Необходимые значения можно найти, перейдя по адресу ресурса центра уведомлений на портале Azure. В частности **notificationHubName** и **notificationHubNamespace** значения находятся в правом верхнем углу **Essentials** сводки в **Обзор** страницы.
 
@@ -408,10 +408,10 @@ SharedAccessSignature sig=<UrlEncodedSignature>&se=<ExpiryEpoch>&skn=<KeyName>&s
 
 1. Настройте заголовки запроса следующим образом:
 
-   | Ключ           | Значение            |
+   | Ключ           | Value            |
    | ------------- | ---------------- |
    | Content-Type  | приложение/json |
-   | Авторизация | <sasToken>       |
+   | Authorization | \<sasToken >       |
    | x-ms-version  | 2015-01          |
 
 1. Выберите **кода** кнопку, которая отображается в правом верхнем углу под **Сохранить** кнопки. Запрос должен выглядеть аналогично приведенному ниже:
@@ -656,10 +656,10 @@ class NotificationRegistrationService {
 
 1. Настройте заголовки запроса следующим образом:
 
-   | Ключ                            | Значение                          |
+   | Ключ                            | Value                          |
    | ------------------------------ | ------------------------------ |
    | Content-Type                   | application/json;charset=utf-8 |
-   | Авторизация                  | <sasToken>                     |
+   | Authorization                  | \<sasToken >                     |
    | Формат ServiceBusNotification  | шаблон                       |
    | Tags                           | 12345                        |
 
