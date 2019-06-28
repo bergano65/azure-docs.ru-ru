@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 06/15/2019
+ms.date: 06/21/2019
 ms.author: victorh
-ms.openlocfilehash: a7dd35212a573fc3e94dadea4365f150122e1b5a
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 9ec37197376c815c4fb9072164520a707b02be2b
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67276747"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312722"
 ---
 # <a name="deploy-an-azure-firewall-with-multiple-public-ip-addresses-using-azure-powershell"></a>Развернуть брандмауэр подключения к Azure с помощью нескольких общедоступных IP-адресов, с помощью Azure PowerShell
 
@@ -31,7 +31,7 @@ ms.locfileid: "67276747"
 Приведенные ниже примеры Azure PowerShell показано, как можно добавлять, удалять и настроить общедоступный IP-адреса для брандмауэра Azure.
 
 > [!NOTE]
-> Если добавить или удалить общедоступный IP-адрес, работающей брандмауэру, существующие входящие подключения, с помощью правил DNAT может работать на 40-120 секунд. Это ограничение общедоступной предварительной версии этой функции.
+> В общедоступной предварительной версии Если при добавлении или удалении общедоступный IP-адрес, работающей брандмауэру, существующие входящие подключения, с помощью правил DNAT может работать на 40-120 секунд. Невозможно удалить первый общедоступный IP-адрес, назначенные брандмауэр, если брандмауэр является освобождены или удалены.
 
 ## <a name="add-a-public-ip-address-to-an-existing-firewall"></a>Добавьте общедоступный IP-адрес в существующий брандмауэр
 
@@ -107,4 +107,4 @@ New-AzFirewall `
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Руководство. Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)
+* [Учебник. Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)

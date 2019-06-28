@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 6/6/2019
 ms.author: tomfitz
-ms.openlocfilehash: 314b28edbd5770186d96fb2a2b203f26ff27bda0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9ab8fbd8fa0453ca6c89f3e7ad91bea95b0b9096
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66752350"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331987"
 ---
 # <a name="move-operation-support-for-resources"></a>Поддержка операции перемещения для ресурсов
 В этой статье указано, поддерживается ли для тех или иных типов ресурсов Azure операция перемещения. Несмотря на то что тип ресурса поддерживает операцию перемещения, некоторые условия могут препятствовать перемещению ресурса. Дополнительные сведения об условиях, влияющих на операции перемещения, см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](resource-group-move-resources.md).
@@ -564,8 +564,8 @@ ms.locfileid: "66752350"
 | expressroutecrossconnections | Нет | Нет |
 | expressroutegateways | Нет | Нет |
 | expressrouteports | Нет | Нет |
-| frontdoors | Да | Да |
-| frontdoorwebapplicationfirewallpolicies | Да | Да |
+| frontdoors | Нет | Нет |
+| frontdoorwebapplicationfirewallpolicies | Нет | Нет |
 | loadbalancers | Да | Да |
 | localnetworkgateways | Да | Да |
 | natgateways | Да | Да |

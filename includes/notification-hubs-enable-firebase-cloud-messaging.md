@@ -44,7 +44,7 @@ ms.locfileid: "67185539"
         ```
         apply plugin: 'com.google.gms.google-services'
         ```        
-    4. На панели инструментов щелкните **Синхронизировать сейчас***. 
+    4. На панели инструментов щелкните **Синхронизировать сейчас** *. 
  
         ![Изменения конфигурации build.gradle.](./media/notification-hubs-enable-firebase-cloud-messaging/build-gradle-configurations.png)
 6. Выберите **Далее** на странице. 

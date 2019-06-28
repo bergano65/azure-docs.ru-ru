@@ -245,7 +245,7 @@ ms.locfileid: "67203079"
 | [body](#body) | Возвращает результат действия `body` во время выполнения. См. раздел [actionBody](../logic-apps/workflow-definition-language-functions-reference.md#actionBody). |
 | [formDataMultiValues](../logic-apps/workflow-definition-language-functions-reference.md#formDataMultiValues) | Создает массив значений, которые соответствуют имени ключа в выходных данных *form-data* или *form-encoded* действия. |
 | [formDataValue](../logic-apps/workflow-definition-language-functions-reference.md#formDataValue) | Возвращает значение, которое соответствует имени ключа в выходных данных *form-data* или *form-encoded* действия. |
-| [Item](../logic-apps/workflow-definition-language-functions-reference.md#item) | При использовании внутри повторяющегося действия в массиве возвращает текущий элемент массива во время текущей итерации действия. |
+| [item](../logic-apps/workflow-definition-language-functions-reference.md#item) | При использовании внутри повторяющегося действия в массиве возвращает текущий элемент массива во время текущей итерации действия. |
 | [items](../logic-apps/workflow-definition-language-functions-reference.md#items) | При использовании внутри Foreach или Until, возвращают текущий элемент из указанного цикла.|
 | [iterationIndexes](../logic-apps/workflow-definition-language-functions-reference.md#iterationIndexes) | При использовании внутри цикла Until, возвращают значение индекса для текущей итерации. Вы эту функцию можно использовать внутри вложенной до циклов. |
 | [listCallbackUrl](../logic-apps/workflow-definition-language-functions-reference.md#listCallbackUrl) | Возвращает URL-адрес обратного вызова, который вызывает триггер или действие. |
@@ -2254,7 +2254,7 @@ item().body
 
 <a name="items"></a>
 
-### <a name="items"></a>Items
+### <a name="items"></a>items
 
 Возвращает текущий элемент из каждого цикла в цикле for-each.
 Используйте эту функцию внутри цикла for-each.

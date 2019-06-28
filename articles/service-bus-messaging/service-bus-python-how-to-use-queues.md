@@ -14,12 +14,12 @@ ms.devlang: python
 ms.topic: article
 ms.date: 04/10/2019
 ms.author: aschhab
-ms.openlocfilehash: 6d95e4a0a7aeedef2fc7e635d2e49ea68c3ba0ca
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b74238ee49fe0d96d218f1800a33a9d60badc6d5
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65992050"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341711"
 ---
 # <a name="how-to-use-service-bus-queues-with-python"></a>Как использовать очереди служебной шины с Python
 
@@ -45,13 +45,13 @@ ms.locfileid: "65992050"
 from azure.servicebus import ServiceBusClient
 ```
 
-Следующий код создает **ServiceBusClient** объекта. Замените `mynamespace`, `sharedaccesskeyname` и `sharedaccesskey` своим пространством имен, именем и значением ключа подписанного URL-адреса (SAS).
+Следующий код создает **ServiceBusClient** объекта. Замените `<CONNECTION STRING>` с вашей connectionstring служебной шины.
 
 ```python
 sb_client = ServiceBusClient.from_connection_string('<CONNECTION STRING>')
 ```
 
-Значения для имени и значение ключа SAS можно найти в данных подключения к [порталу Azure][Azure portal] или в области **Свойства** Visual Studio при выборе пространства имен служебной шины в обозревателе сервера (как показано в предыдущем разделе).
+Значения для имени ключа SAS и значение можно найти в [портала Azure][Azure portal] сведения о соединении, или в Visual Studio **свойства** панели при выборе пространства имен служебной шины в обозревателе сервера (как) показано в предыдущем разделе).
 
 ```python
 sb_client.create_queue("taskqueue")
@@ -128,7 +128,7 @@ msg.delete()
 ## <a name="next-steps"></a>Дальнейшие действия
 Вы ознакомились с основными сведениями об очередях служебной шины. Дополнительные сведения см. в статье:
 
-* [Очереди, разделы и подписки служебной шины][Queues, topics, and subscriptions].
+* [Очереди, разделы и подписки][Queues, topics, and subscriptions]
 
 [Azure portal]: https://portal.azure.com
 [Python Azure Service Bus package]: https://pypi.python.org/pypi/azure-servicebus  
