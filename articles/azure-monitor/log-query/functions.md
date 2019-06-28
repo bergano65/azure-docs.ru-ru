@@ -13,20 +13,14 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/15/2018
 ms.author: bwren
-ms.openlocfilehash: 7eb5f090026b415e3c980116a9317594f4ca8115
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4b3116230a085bfbb9a6139fbada4179d802bf5e
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60728072"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67296066"
 ---
 # <a name="using-functions-in-azure-monitor-log-queries"></a>Использование функций в запросах журнала Azure Monitor
-
-> [!NOTE]
-> Прежде чем приступить к этому уроку, необходимо ознакомиться со статьями [Начало работы с порталом аналитики](get-started-portal.md) и [Начало работы с запросами](get-started-queries.md).
-
-[!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
-
 
 Чтобы использовать запрос журнала с другим запросом, сохраните его как функцию. Это позволяет упростить сложные запросы, разбивая их на части, и повторно использовать общий код с несколькими запросами.
 
@@ -36,7 +30,7 @@ ms.locfileid: "60728072"
 
 | Параметр | ОПИСАНИЕ |
 |:---|:---|
-| ИМЯ           | Отображаемое имя для запроса в **обозревателе запросов**. |
+| Name           | Отображаемое имя для запроса в **обозревателе запросов**. |
 | Сохранить как        | Функция |
 | Псевдоним функции | Короткое имя функции в других запросах. Не может содержать пробелы и должно быть уникальным. |
 | Категория       | Категория для организации сохраненных запросов и функций в **обозревателе запросов**. |

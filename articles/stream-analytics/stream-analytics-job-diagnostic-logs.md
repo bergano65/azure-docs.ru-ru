@@ -7,17 +7,19 @@ ms.author: jeanb
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 05/15/2019
-ms.openlocfilehash: ff2930fbe0e53c4b3c1223f87919c0913296d07c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/21/2019
+ms.openlocfilehash: a41c3f60d4b949f78c0755f97c9ef7e6302d78d8
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66515924"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67329999"
 ---
 # <a name="troubleshoot-azure-stream-analytics-by-using-diagnostics-logs"></a>Устранение неполадок Azure Stream Analytics с помощью журналов диагностики
 
 В некоторых случаях обработка задания Azure Stream Analytics неожиданно прекращается. Очень важно иметь возможность устранения подобных проблем. Сбои могут случиться из-за непредвиденного результата запроса, подключения к устройствам или неожиданного сбоя службы. Журналы диагностики в Stream Analytics могут помочь определить причину проблемы и ускорить восстановление.
+
+Настоятельно рекомендуется включить журналы диагностики для всех производственных заданий.
 
 ## <a name="log-types"></a>Типы журналов
 
@@ -62,7 +64,7 @@ Stream Analytics предоставляет журналы двух типов:
 
     ![Перемещение к колонке журналов диагностики](./media/stream-analytics-job-diagnostic-logs/diagnostic-logs-monitoring.png)  
 
-2.  Создайте **имя** в **параметрах диагностики** и установите флажок рядом с пунктом **Отправить в Log Analytics**. Затем добавьте имеющуюся рабочую область Log Analytics **или создайте новую**. Установите флажки **выполнения** и **разработки** в разделе **журнала**, а в разделе **метрики** — **AllMetrics**. Выберите команду **Сохранить**.
+2.  Создайте **имя** в **параметрах диагностики** и установите флажок рядом с пунктом **Отправить в Log Analytics**. Затем добавьте имеющуюся рабочую область Log Analytics **или создайте новую**. Установите флажки **выполнения** и **разработки** в разделе **журнала**, а в разделе **метрики** — **AllMetrics**. Выберите команду **Сохранить**. Рекомендуется использовать рабочую область Log Analytics в том же регионе Azure с заданием Stream Analytics, чтобы предотвратить дополнительные затраты.
 
     ![Параметры журналов диагностики](./media/stream-analytics-job-diagnostic-logs/diagnostic-settings.png)
 
@@ -113,7 +115,7 @@ properties | Сведения о записи журнала, сериализо
 
 ### <a name="data-errors"></a>Ошибки данных
 
-Любая ошибка, возникающая при обработке данных в задании, находится в этой категории журналов. Чаще всего эти журналы создаются во время операций чтения, сериализации и записи. Эти журналы не содержат ошибок подключения, которые обрабатываются как универсальные события.
+Любая ошибка, возникающая при обработке данных в задании, находится в этой категории журналов. Чаще всего эти журналы создаются во время операций чтения, сериализации и записи. Эти журналы не содержат ошибок подключения, которые обрабатываются как универсальные события. Дополнительные сведения о причине различных разных [входные и выходные данные ошибок](https://docs.microsoft.com/azure/stream-analytics/data-errors).
 
 ИМЯ | ОПИСАНИЕ
 ------- | -------
@@ -149,4 +151,4 @@ type | Тип сообщения. Сопоставляется с внутрен
 * [Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий Azure Stream Analytics для повышения пропускной способности базы данных](stream-analytics-scale-jobs.md)
 * [Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx) (Справочник по языку запросов Stream Analytics)
-* [Stream Analytics management REST API reference](https://msdn.microsoft.com/library/azure/dn835031.aspx) (Справочник по API-интерфейсу REST для управления Stream Analytics)
+* [Ошибки данных Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/data-errors)

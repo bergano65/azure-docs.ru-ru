@@ -4,14 +4,14 @@ description: Перемещайте ресурсы в новую группу р
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 06/13/2019
+ms.date: 06/19/2019
 ms.author: tomfitz
-ms.openlocfilehash: bb7715a7eaa2cb499ed80b78130571f315ef0c95
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: eb99bec74ae5444320b7098616d4bf2d81b90697
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67083537"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67332034"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -64,7 +64,7 @@ ms.locfileid: "67083537"
 * Azure Stack — регистрации
 * Пакетная служба Azure
 * Службы BizTalk
-* Служба Azure Bot
+* Служба Bot
 * CDN
 * Облачные службы — см. раздел [Ограничения классического развертывания](#classic-deployment-limitations).
 * Cognitive Services
@@ -79,7 +79,6 @@ ms.locfileid: "67083537"
 * DNS
 * Сетка событий
 * Центры событий;
-* Front Door
 * Кластеры HDInsight — см. раздел [Ограничения HDInsight](#hdinsight-limitations).
 * IoT Central
 * Центры Интернета вещей;
@@ -89,22 +88,22 @@ ms.locfileid: "67083537"
 * Машинное обучение. Веб-службы Студии машинного обучения Microsoft Azure можно переместить в группу ресурсов, размещенную в той же подписке, но не в другую подписку. Другие ресурсы машинного обучения можно перемещать между подписками.
 * Управляемые диски — управляемые диски в зонах доступности нельзя переместить в другую подписку
 * Службы мультимедиа
-* Монитор — убедитесь, что переход на новую подписку не превышает [квоты для подписки](../azure-subscription-service-limits.md#monitor-limits).
+* Монитор — убедитесь, что переход на новую подписку не превышает [квоты для подписки](../azure-subscription-service-limits.md#azure-monitor-limits).
 * Центры уведомлений
-* Operational Insights;
+* Operational Insights
 * Пакет Operations Management
 * Панели мониторинга на портале
 * Power BI (Power BI Embedded и коллекция рабочих областей Power BI)
 * Общедоступный IP-адрес — общедоступный IP-адрес с номером SKU "Базовый" можно переместить. Номер SKU "Стандартный" общедоступного IP-адреса нельзя переместить.
-* Хранилище Служб восстановления — зарегистрируйтесь для использования [предварительной версии](#recovery-services-limitations).
+* Служб восстановления хранилище — см. в разделе [ограничения](#recovery-services-limitations).
 * SAP HANA в Azure
 * Планировщик
 * Поиск — вы не можете за одну операцию переместить ресурсы поиска, размещенные в разных регионах. Переместите их в отдельных операциях.
 * Служебная шина Azure
 * Service Fabric
-* Сетка Service Fabric
+* Служба Microsoft Azure Service Fabric
 * Служба SignalR
-* Хранилище. Учетные записи хранения, находящиеся в разных регионах, не могут перемещаться в одной и той же операции. Вместо этого используйте отдельные операции для каждого региона.
+* Хранилище
 * Служба хранилища (классическая) — см. раздел [Ограничения классического развертывания](#classic-deployment-limitations).
 * Служба синхронизации хранилища
 * Stream Analytics — задание Stream Analytics в состоянии выполнения нельзя переместить.
@@ -128,7 +127,7 @@ ms.locfileid: "67083537"
 * Azure Databricks
 * Брандмауэр Azure
 * Служба Azure Kubernetes (AKS)
-* Служба "Миграция Azure"
+* Миграция Azure
 * Azure NetApp Files
 * Сертификаты. Сертификаты службы приложений можно перемещать, но для переданных сертификатов действуют [ограничения](#app-service-limitations).
 * Классические приложения
@@ -138,6 +137,7 @@ ms.locfileid: "67083537"
 * Рабочие среды для разработчиков
 * Dynamics LCS.
 * ExpressRoute
+* Front Door
 * Службы лабораторий — Labs аудитории нельзя переместить в новую группу ресурсов или подписку. DevTest Labs можно переместить в новую группу ресурсов в той же подписке, но не для всех подписок.
 * Управляемые приложения
 * Управляемое удостоверение, назначаемое пользователем

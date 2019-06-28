@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 06/12/2019
+ms.date: 06/19/2019
 ms.author: juliako
-ms.openlocfilehash: 49ab52f031e24ac77a534c86061fe831bbec39ce
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: f26467a250314fa8a6fe401f4ec1d6a999b6bb4d
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67114671"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67296210"
 ---
 # <a name="live-events-and-live-outputs"></a>События и выходные данные прямой трансляции
 
@@ -27,20 +27,23 @@ ms.locfileid: "67114671"
 > [!TIP]
 > Для клиентов, переходящих с помощью интерфейсов API служб мультимедиа версии 2 **событие прямой трансляции** заменяет сущность **канал** в версии 2 и **Live вывода** заменяет **программы**.
 
-
 ## <a name="live-events"></a>Динамические события
 
-[События потоковой трансляции](https://docs.microsoft.com/rest/api/media/liveevents) отвечают за прием и обработку видеопотоков. При создании события потоковой трансляции формируется входная конечная точка, которая используется для передачи сигнала с удаленного кодировщика в реальном времени. Удаленный динамический кодировщик транслирует в эту точку канал доставки, используя протокол [RTMP](https://www.adobe.com/devnet/rtmp.html) или [Smooth Streaming](https://msdn.microsoft.com/library/ff469518.aspx) (фрагментированный MP4). Для протокола приема Smooth Streaming поддерживаются следующие схемы URL-адресов: `http://` или `https://`. Для протокола приема RTMP поддерживаются следующие схемы URL-адресов: `rtmp://` или `rtmps://`. 
+[События потоковой трансляции](https://docs.microsoft.com/rest/api/media/liveevents) отвечают за прием и обработку видеопотоков. При создании события Live входную конечную точку основного и дополнительного создается, можно использовать для отправки источник сигнала от удаленного кодировщика. Удаленный динамический кодировщик отправляет вклад веб-канал, входную конечную точку, с помощью [RTMP](https://www.adobe.com/devnet/rtmp.html) или [Smooth Streaming](https://msdn.microsoft.com/library/ff469518.aspx) (фрагментированный MP4) входного протокола. Для протокола приема RTMP, содержимое передаются в незашифрованном виде (`rtmp://`) или надежно зашифрованных по сети (`rtmps://`). Для протокола приема Smooth Streaming поддерживаются следующие схемы URL-адресов: `http://` или `https://`.  
 
 ## <a name="live-event-types"></a>Типы событий потоковой трансляции
 
-Есть два типа [событий потоковой трансляции](https://docs.microsoft.com/rest/api/media/liveevents): сквозной режим и кодирование в реальном времени. 
+Есть два типа [событий потоковой трансляции](https://docs.microsoft.com/rest/api/media/liveevents): сквозной режим и кодирование в реальном времени. Типы устанавливаются во время создания с помощью [LiveEventEncodingType](https://docs.microsoft.com/rest/api/media/liveevents/create#liveeventencodingtype):
+
+* **LiveEventEncodingType.None** -локальный динамический кодировщик передает несколько скоростью потока. Переданные потоки проходят через событие прямой трансляции без дальнейшей обработки. 
+* **LiveEventEncodingType.Standard** — это локальный динамический кодировщик передает односкоростной поток в событие прямой трансляции и служб мультимедиа создает несколько потоков битрейтов. Если веб-канала вклад 720p или более высокого разрешения **Default720p** Предустановка кодируют набор пар 6 битрейтах в разрешение.
+* **LiveEventEncodingType.Premium1080p** — это локальный динамический кодировщик передает односкоростной поток в событие прямой трансляции и служб мультимедиа создает несколько потоков битрейтов. Предустановка Default1080p Указывает выходной набор пар битрейтах в разрешение. 
 
 ### <a name="pass-through"></a>Сквозной режим
 
 ![Сквозной режим](./media/live-streaming/pass-through.svg)
 
-При использовании сквозного режима **потоковой трансляции** локальный динамический кодировщик генерирует многоскоростной видеопоток и передает его как исходный в трансляцию с помощью протокола RTMP или фрагментированного MP4. Затем событие потоковой трансляции передает входящие видеопотоки без какой-либо дальнейшей обработки. Такой сквозной режим оптимизирован для длительно выполняющихся событий прямой трансляции или непрерывной круглогодичной линейной потоковой трансляции. Создавая событие потоковой трансляции такого типа, укажите значение None (LiveEventEncodingType.None).
+При использовании сквозного режима **потоковой трансляции** локальный динамический кодировщик генерирует многоскоростной видеопоток и передает его как исходный в трансляцию с помощью протокола RTMP или фрагментированного MP4. Затем событие потоковой трансляции передает входящие видеопотоки без какой-либо дальнейшей обработки. Такие сквозной Live событие оптимизирован для событий в прямом эфире длительных или 24 часа 365 линейной динамической потоковой передачи. Создавая событие потоковой трансляции такого типа, укажите значение None (LiveEventEncodingType.None).
 
 При этом исходный поток передается с разрешением до 4K и частотой 60 кадров в секунду при помощи видеокодеков H.264/AVC или H.265/HEVC, а также аудиокодека AAC (AAC-LC, HE-AACv1 или HE-AACv2).  Дополнительные сведения см. в статье, посвященной [сравнительным характеристикам и ограничениям типов событий потоковой трансляции](live-event-types-comparison.md).
 
@@ -84,7 +87,9 @@ ms.locfileid: "67114671"
 
 * Незапоминающийся URL-адрес
 
-    Незапоминающиеся URL-адреса — это режим по умолчанию в AMS версии 3. Таким образом, вы можете быстро получить событие потоковой трансляции, но URL-адрес приема будет известен только после запуска события. URL-адрес изменится, если вы остановите или запустите событие потоковой трансляции. <br/>Незапоминающиеся URL-адреса полезны в сценариях, когда пользователь хочет транслировать поток с помощью приложения максимально быстро и имеющийся динамический URL-адрес приема не является проблемой.
+    URL-адрес личного не является режимом по умолчанию в версии 3 службы мультимедиа. Таким образом, вы можете быстро получить событие потоковой трансляции, но URL-адрес приема будет известен только после запуска события. URL-адрес изменится, если вы остановите или запустите событие потоковой трансляции. <br/>Незапоминающиеся URL-адреса полезны в сценариях, когда пользователь хочет транслировать поток с помощью приложения максимально быстро и имеющийся динамический URL-адрес приема не является проблемой.
+    
+    Если клиентское приложение не должно, чтобы заранее создать URL-адрес приема до события Live создается, просто оставить служб мультимедиа для автоматического создания токена доступа для события прямой трансляции.
 * Запоминающийся URL-адрес
 
     Режим запоминающихся URL-адресов является предпочтительным для крупных медиа-вещателей, которые используют аппаратные широковещательные кодировщики и не хотят повторно их настраивать при запуске события потоковой трансляции. Им нужен прогнозируемый URL-адрес приема, который не будет изменяется со временем.
@@ -93,9 +98,9 @@ ms.locfileid: "67114671"
 
     Маркер доступа должно быть уникальным в вашем центре обработки данных. Если приложение должно использовать запоминающемся URL-АДРЕСЕ, рекомендуется всегда создавать новый экземпляр GUID для токена доступа (а не повторно использовать любой существующий GUID). 
 
-    Использовать следующие API-интерфейсы для включения Запоминающемся URL-АДРЕСЕ и задать значение маркера доступа является допустимым идентификатором GUID (например `"accessToken": "1fce2e4b-fb15-4718-8adc-68c6eb4c26a7"`):
+    Использовать следующие API-интерфейсы для включения Запоминающемся URL-АДРЕСЕ и задать значение маркера доступа является допустимым идентификатором GUID (например `"accessToken": "1fce2e4b-fb15-4718-8adc-68c6eb4c26a7"`).  
     
-    |Язык|Включить Запоминающемся URL-АДРЕСЕ|Задание маркера доступа.|
+    |Язык|Включить запоминающемся URL-АДРЕСЕ|Задание маркера доступа.|
     |---|---|---|
     |REST|[properties.vanityUrl](https://docs.microsoft.com/rest/api/media/liveevents/create#liveevent)|[LiveEventInput.accessToken](https://docs.microsoft.com/rest/api/media/liveevents/create#liveeventinput)|
     |Интерфейс командной строки|[--именного-URL-адрес](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest#az-ams-live-event-create)|[--маркер доступа](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest#optional-parameters)|
@@ -103,41 +108,41 @@ ms.locfileid: "67114671"
     
 ### <a name="live-ingest-url-naming-rules"></a>Правила именования URL-адресов динамического приема
 
-*Случайная* строка ниже представляет собой 128-разрядное шестнадцатеричное число (состоящее из 32 знаков: 0–9 и a–f).<br/>
-*Маркер доступа* необходимо указать для основных URL-адреса. Необходимо задать строку токена доступа, являющийся строковым GUID допустимую длину. <br/>
-*Имя потока* указывает имя потока для определенного подключения. Значение имени потока обычно добавляется динамическим кодировщиком, в использовании.
+* *Случайная* строка ниже представляет собой 128-разрядное шестнадцатеричное число (состоящее из 32 знаков: 0–9 и a–f).
+* *маркер доступа* -допустимым строка идентификатора GUID, задайте при использовании в собственном режиме. Например, `"1fce2e4b-fb15-4718-8adc-68c6eb4c26a7"`.
+* *имя потока* -указывает имя потока для определенного подключения. По динамическому кодировщику, используемого обычно добавляется значение имени потока. Можно настроить динамический кодировщик, чтобы использовать любое имя для описания соединения, например: «video1_audio1», «video2_audio1», «поток».
 
 #### <a name="non-vanity-url"></a>Незапоминающийся URL-адрес
 
 ##### <a name="rtmp"></a>RTMP
 
-`rtmp://<random 128bit hex string>.channel.media.azure.net:1935/live/<access token>/<stream name>`<br/>
-`rtmp://<random 128bit hex string>.channel.media.azure.net:1936/live/<access token>/<stream name>`<br/>
-`rtmps://<random 128bit hex string>.channel.media.azure.net:2935/live/<access token>/<stream name>`<br/>
-`rtmps://<random 128bit hex string>.channel.media.azure.net:2936/live/<access token>/<stream name>`<br/>
+`rtmp://<random 128bit hex string>.channel.media.azure.net:1935/live/<auto-generated access token>/<stream name>`<br/>
+`rtmp://<random 128bit hex string>.channel.media.azure.net:1936/live/<auto-generated access token>/<stream name>`<br/>
+`rtmps://<random 128bit hex string>.channel.media.azure.net:2935/live/<auto-generated access token>/<stream name>`<br/>
+`rtmps://<random 128bit hex string>.channel.media.azure.net:2936/live/<auto-generated access token>/<stream name>`<br/>
 
 ##### <a name="smooth-streaming"></a>Smooth Streaming
 
-`http://<random 128bit hex string>.channel.media.azure.net/<access token>/ingest.isml/streams(<stream name>)`<br/>
-`https://<random 128bit hex string>.channel.media.azure.net/<access token>/ingest.isml/streams(<stream name>)`<br/>
+`http://<random 128bit hex string>.channel.media.azure.net/<auto-generated access token>/ingest.isml/streams(<stream name>)`<br/>
+`https://<random 128bit hex string>.channel.media.azure.net/<auto-generated access token>/ingest.isml/streams(<stream name>)`<br/>
 
 #### <a name="vanity-url"></a>Запоминающийся URL-адрес
 
 ##### <a name="rtmp"></a>RTMP
 
-`rtmp://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net:1935/live/<access token>/<stream name>`<br/>
-`rtmp://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net:1936/live/<access token>/<stream name>`<br/>
-`rtmps://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net:2935/live/<access token>/<stream name>`<br/>
-`rtmps://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net:2936/live/<access token>/<stream name>`<br/>
+`rtmp://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net:1935/live/<your access token>/<stream name>`<br/>
+`rtmp://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net:1936/live/<your access token>/<stream name>`<br/>
+`rtmps://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net:2935/live/<your access token>/<stream name>`<br/>
+`rtmps://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net:2936/live/<your access token>/<stream name>`<br/>
 
 ##### <a name="smooth-streaming"></a>Smooth Streaming
 
-`http://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net/<access token>/ingest.isml/streams(<stream name>)`<br/>
-`https://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net/<access token>/ingest.isml/streams(<stream name>)`<br/>
+`http://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net/<your access token>/ingest.isml/streams(<stream name>)`<br/>
+`https://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net/<your access token>/ingest.isml/streams(<stream name>)`<br/>
 
 ## <a name="live-event-preview-url"></a>URL-адрес для предварительного просмотра событий потоковой трансляции
 
-Как только **событие потоковой трансляции** начинает принимать исходный поток, можно использовать конечную точку предварительного просмотра, чтобы перед публикацией убедиться, что вы принимаете потоковую трансляцию в реальном времени. Убедившись, что предварительный просмотр транслируется нормально, используйте компонент LiveEvent, чтобы сделать потоковую трансляцию доступной для доставки через одну или несколько предварительно созданных точек **StreamingEndpoint**. Для этого создайте [выходные данные потоковой трансляции](https://docs.microsoft.com/rest/api/media/liveoutputs) в **событии потоковой трансляции**. 
+Как только **событие потоковой трансляции** начинает принимать исходный поток, можно использовать конечную точку предварительного просмотра, чтобы перед публикацией убедиться, что вы принимаете потоковую трансляцию в реальном времени. После проверки того, что поток предварительного просмотра подходит, можно использовать событие прямой трансляции для предоставления обновляющегося потока для доставки через одну или несколько (предварительно созданные) **конечными точками потоковой передачи**. Для этого создайте [выходные данные потоковой трансляции](https://docs.microsoft.com/rest/api/media/liveoutputs) в **событии потоковой трансляции**. 
 
 > [!IMPORTANT]
 > Прежде чем продолжить, убедитесь, что видео правильно передается на URL-адрес предварительного просмотра.

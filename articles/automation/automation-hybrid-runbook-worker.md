@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 04/05/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 785cf5159615b4a81740e853f2b513f0e6d74aec
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1453f5282d9e3a48e5ca5d734258d70e44424a5a
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65198457"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67296232"
 ---
 # <a name="automate-resources-in-your-datacenter-or-cloud-by-using-hybrid-runbook-worker"></a>Автоматизация ресурсов в центре обработки данных или в облаке с помощью использования гибридной рабочей роли Runbook
 
@@ -46,6 +46,7 @@ ms.locfileid: "65198457"
 
 Перед началом развертывания гибридной рабочей роли Runbook ознакомьтесь со следующими [сведениями о подготовке сети](#network-planning). После успешного развертывания рабочей роли ознакомьтесь с [запуском модулей Runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md), чтобы узнать, как настроить модули Runbook для автоматизации процессов в локальном центре обработки данных или в другой облачной среде.
 
+Его можно добавить в группу гибридных рабочих ролей Runbook в учетной записи службы автоматизации, чтобы обеспечить поддержку модулей Runbook службы автоматизации при условии, что вы используете одну и ту же учетную запись для решения и для членства в группе гибридных рабочих ролей Runbook. Эта функция добавлена в версии 7.2.12024.0 гибридной рабочей роли Runbook.
 ## <a name="remove-a-hybrid-runbook-worker"></a>Удаление гибридной рабочей роли Runbook Worker
 
 В зависимости от необходимости можно удалить одну или несколько гибридных рабочих ролей Runbook из группы либо удалить группу. Чтобы удалить гибридную рабочую роль Runbook на локальном компьютере, сделайте следующее:

@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/29/2019
 ms.author: jingwang
-ms.openlocfilehash: a04dc76a110b1d126d5d826761e2e0c09c6aac47
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 088dfdbfbadfa43dc2bd161f56f0e2a6dbb94bb7
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65520238"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67311998"
 ---
 # <a name="copy-data-from-amazon-simple-storage-service-using-azure-data-factory"></a>Копирование данных из Amazon Simple Storage Service с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
@@ -111,6 +111,7 @@ ms.locfileid: "65520238"
 | bucketName | Имя контейнера S3.                                          | Yes      |
 | folderPath | Путь к папке данного контейнера. Если вы хотите использовать подстановочный знак в папку фильтра, пропустить этот параметр и укажите в параметрах исходного действия. | Нет       |
 | fileName   | Имя заданного контейнера и folderPath. Если вы хотите использовать подстановочный знак для фильтрации файлов, пропустите этот параметр и укажите в параметрах исходного действия. | Нет       |
+| version | Версия объекта S3, если включено управление версиями S3. Если не указан, будут выбираться последняя версия. |Нет |
 
 > [!NOTE]
 > **AmazonS3Object** типа набора данных в формате Parquet или текст, описанные в следующем разделе по-прежнему поддерживается в качестве-для действия копирования/подстановки/GetMetadata для обеспечения обратной совместимости, но он не работает с сопоставление потока данных. Рекомендуется использовать эту новую модель, в дальнейшем и разработки пользовательского интерфейса ADF изменился на создание этих новых типов.

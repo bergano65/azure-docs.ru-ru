@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 06/09/2019
 ms.author: raynew
-ms.openlocfilehash: 6a6db30bfe6e4dc1eed04d11b53113c90210a5cf
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 2cf9aee498c649cdbf973652a60fb2d1f3feb371
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67275217"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312151"
 ---
 # <a name="support-matrix-for-replicating-azure-vms-from-one-region-to-another"></a>Матрица поддержки репликации виртуальных машин Azure из одного региона в другой
 
@@ -168,7 +168,7 @@ SUSE Linux Enterprise Server 12 (SP1, SP2, SP3) | 9.22 | С SP1 3.12.49-11-defau
 **Действие** | **Дополнительные сведения**
 -- | ---
 Изменение размера диска на реплицируемой виртуальной машине | Поддерживаются
-Добавление диска к реплицируемой виртуальной машине | Не поддерживается.<br/><br/> Вы должны отключить репликацию для виртуальной машины, добавить диск, а затем снова включить репликацию.
+Добавление диска к реплицируемой виртуальной машине | Поддерживаются
 
 ## <a name="replicated-machines---storage"></a>Реплицированные компьютеры. Хранилище
 

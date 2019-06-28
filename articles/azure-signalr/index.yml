@@ -16,7 +16,7 @@ metadata:
 abstract:
   description: "Azure SignalR\_— это управляемая служба Azure, которая помогает разработчикам без труда создавать веб-приложения с функциями в режиме реального времени."
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Узнайте, как разработать первое веб-приложение для обмена данными в режиме реального времени с помощью службы Azure SignalR:'
@@ -25,8 +25,12 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/media/logos/logo_NETcore.svg'
-            text: ASP.NET Core;
+            text: ASP.NET Core
             href: /azure/azure-signalr/signalr-quickstart-dotnet-core
+          - image:
+              src: 'https://docs.microsoft.com/media/logos/logo_NET.svg'
+            text: ASP.NET
+            href: /azure/azure-signalr/signalr-quickstart-dotnet
           - image:
               src: 'https://docs.microsoft.com/media/logos/logo_js.svg'
             text: JavaScript
@@ -43,7 +47,7 @@ sections:
               src: 'https://docs.microsoft.com/media/logos/logo_REST.svg'
             text: REST API
             href: /azure/azure-signalr/signalr-quickstart-rest-api
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Узнайте, как создавать приложения службы Azure SignalR'
@@ -59,7 +63,7 @@ sections:
         className: spaced noBullet
         items:
           - html: '<a href="https://github.com/aspnet/AzureSignalR-samples">Примеры кода для Azure SignalR</a>'
-          - html: <a href="/azure/azure-signalr/signalr-cli-samples">Интерфейс командной строки Azure</a>
+          - html: <a href="/azure/azure-signalr/signalr-cli-samples">Azure CLI</a>
   - title: Справочные материалы
     items:
       - type: list
@@ -67,8 +71,8 @@ sections:
         className: cardsD
         items:
           - title: Командная строка
-            html: <p><a href="signalr-reference-cli.md">Интерфейс командной строки Azure</a></p>
-          - title: Languages
+            html: <p><a href="signalr-reference-cli.md">Azure CLI</a></p>
+          - title: Языки
             html: |
               <p><a href="https://docs.microsoft.com/aspnet/core">Пакет SDK для сервера ASP.NET Core</a></p> <p><a href="/azure/azure-functions/functions-bindings-signalr-service">Привязки Azure Cosmos DB для службы "Функции Azure" версии 1.х</a></p> <p><a href="https://docs.microsoft.com/aspnet/core/signalr/javascript-client">Клиент на JavaScript</a></p> <p><a href="https://docs.microsoft.com/aspnet/core/signalr/dotnet-client">Клиент на .NET Standard</a></p> <p><a href="https://github.com/aspnet/SignalR/tree/release/2.2/clients/java/signalr">Клиент на Java</a></p>
           - title: REST

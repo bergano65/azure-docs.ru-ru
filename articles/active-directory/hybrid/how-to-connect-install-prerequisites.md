@@ -16,12 +16,12 @@ ms.date: 05/08/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d17823c4ef4917f9f312b8f2f327e2b0395cfa3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: f2916c9aba7d404ff4ad380d249bd507fadf71ea
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67109433"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67310073"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure AD Connect.
@@ -52,7 +52,7 @@ ms.locfileid: "67109433"
 >На сервере Azure AD Connect содержит критические идентификационных данных и следует рассматривать как компонент уровня 0, как описано в статье [модель разделения администрирования Active Directory](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#ADATM_BM)
 
 * Службу Azure AD Connect нельзя установить на версии Small Business Server или Windows Server Essentials, которые предшествуют версиям 2019 года (поддерживается Windows Server Essentials 2019). Сервер должен использовать Windows Server Standard или более поздней версии.
-* Установка Azure AD Connect на контроллере домена не рекомендуется из-за по обеспечению безопасности и более строгие параметры, может препятствовать правильной установке Azure AD Connect
+* Установка Azure AD Connect на контроллере домена не рекомендуется из-за по обеспечению безопасности и более строгие параметры, может препятствовать правильной установке Azure AD Connect.
 * На сервере Azure AD Connect должен быть установлен полный графический интерфейс пользователя. Установка на ядро сервера **не поддерживается**.
 >[!IMPORTANT]
 >Установка Azure AD Connect на small business server, сервера essentials или server core не поддерживается.

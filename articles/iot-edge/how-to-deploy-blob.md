@@ -1,24 +1,27 @@
 ---
 title: Развертывание модуля на хранилище BLOB-объектов устройств — Edge Интернета вещей Azure | Документация Майкрософт
 description: Разверните модуль хранилища BLOB-объектов Azure на вашем устройстве IoT Edge для хранения данных на границе.
-author: kgremban
-ms.author: kgremban
-ms.date: 05/21/2019
+author: arduppal
+ms.author: arduppal
+ms.date: 06/19/2019
 ms.topic: article
 ms.service: iot-edge
 ms.custom: seodec18
 ms.reviewer: arduppal
-manager: philmea
-ms.openlocfilehash: d844e81de9cfb556e91ab5c0d5a8074c822cce0a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+manager: mchad
+ms.openlocfilehash: 468e4fca5e67850949e7d5826e4bc88fa504b9d6
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65990472"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295196"
 ---
 # <a name="deploy-the-azure-blob-storage-on-iot-edge-module-to-your-device"></a>Развертывание хранилища BLOB-объектов Azure в модуле IoT Edge на устройстве
 
 Существует несколько способов развертывание модулей на устройстве IoT Edge и все они работают для хранилища BLOB-объектов на модули Edge Интернета вещей. Два простейших метода — это портал Azure или шаблоны Visual Studio Code.
+
+> [!NOTE]
+> Хранилище BLOB-объектов в IoT Edge находится в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -88,35 +91,35 @@ ms.locfileid: "65990472"
      > [!IMPORTANT]
      > Не изменяйте вторую половину значения привязки каталога хранения, которая указывает на определенное расположение в модуле. Привязка каталога хранения всегда должна заканчиваться на **:/blobroot** — для контейнеров Linux и **:C:/BlobRoot** — для контейнеров Windows.
 
-    ![Изменение значений для параметров создания контейнера модуля на портале](./media/how-to-store-data-blob/edit-module.png)
-
-1. Задайте [распределение по уровням](how-to-store-data-blob.md#tiering-properties) и [time-to-live](how-to-store-data-blob.md#time-to-live-properties) свойства для модуля, скопируйте приведенный ниже код JSON и вставьте его в **требуемые свойства двойника модуля набор** поле. Настройте соответствующее значение каждого свойства, сохраните его и продолжить развертывание.
+1. Задайте [deviceToCloudUploadProperties](how-to-store-data-blob.md#devicetoclouduploadproperties) и [deviceAutoDeleteProperties](how-to-store-data-blob.md#deviceautodeleteproperties) свойства для модуля, скопируйте приведенный ниже код JSON и вставьте его в **требуемые набора двойника модуля свойства** поле. Настройте соответствующее значение каждого свойства, сохраните его и продолжить развертывание.
 
    ```json
    {
      "properties.desired": {
-       "ttlSettings": {
-         "ttlOn": <true, false>,
-         "timeToLiveInMinutes": <timeToLiveInMinutes>
+       "deviceAutoDeleteProperties": {
+         "deleteOn": <true, false>,
+         "deleteAfterMinutes": <timeToLiveInMinutes>,
+         "retainWhileUploading":<true,false>
        },
-       "tieringSettings": {
-         "tieringOn": <true, false>,
-         "backlogPolicy": "<NewestFirst, OldestFirst>",
-         "remoteStorageConnectionString": "DefaultEndpointsProtocol=https;AccountName=<your Azure Storage Account Name>;AccountKey=<your Azure Storage Account Key>; EndpointSuffix=<your end point suffix>",
-         "tieredContainers": {
+       "deviceToCloudUploadProperties": {
+         "uploadOn": <true, false>,
+         "uploadOrder": "<NewestFirst, OldestFirst>",
+         "cloudStorageConnectionString": "DefaultEndpointsProtocol=https;AccountName=<your Azure Storage Account Name>;AccountKey=<your Azure Storage Account Key>; EndpointSuffix=<your end point suffix>",
+         "storageContainersForUpload": {
            "<source container name1>": {
              "target": "<target container name1>"
            }
-         }
+         },
+         "deleteAfterUpload":<true,false>
        }
      }
    }
 
       ```
 
-   ![Задайте свойства распределения по уровням и time-to-live](./media/how-to-store-data-blob/iotedge_custom_module.png)
+   ![контейнер набора создать параметры, deviceAutoDeleteProperties и deviceToCloudUploadProperties свойства](./media/how-to-deploy-blob/iotedge-custom-module.png)
 
-   Сведения о настройке распределения по уровням и срок ЖИЗНИ, после развертывания модуля, см. в разделе [изменить Двойник модуля](https://github.com/Microsoft/vscode-azure-iot-toolkit/wiki/Edit-Module-Twin). Дополнительные сведения о требуемых свойств, см. в разделе [определение или обновление требуемых свойств](module-composition.md#define-or-update-desired-properties).
+   Сведения о настройке deviceToCloudUploadProperties и deviceAutoDeleteProperties после развертывания модуля, см. в разделе [изменить Двойник модуля](https://github.com/Microsoft/vscode-azure-iot-toolkit/wiki/Edit-Module-Twin). Дополнительные сведения о требуемых свойств, см. в разделе [определение или обновление требуемых свойств](module-composition.md#define-or-update-desired-properties).
 
 1. Щелкните **Сохранить**.
 
@@ -158,7 +161,7 @@ Azure IoT Edge предоставляет шаблоны в Visual Studio Code �
    | Выбор папки | Выберите расположение на компьютере разработки для Visual Studio Code для создания файлов решения. |
    | Введите название решения. | Введите описательное имя решения или примите имя по умолчанию **EdgeSolution**. |
    | Выбор шаблона модуля | Выберите **Existing Module (Enter full image URL)** (Имеющийся модуль (введите полный URL-адрес образа)). |
-   | Указание имени модуля | Введите имя модуля, используя знаки нижнего регистра, например **azureblobstorage**.<br /><br />В модуле IoT Edge очень важно использовать знаки нижнего регистра для имени хранилища BLOB-объектов Azure. IoT Edge учитывает регистр при ссылке на модули, а название пакета SDK службы хранилища по умолчанию преобразовывается в нижний регистр. |
+   | Указание имени модуля | Введите имя нижнего регистра для модуля, например **azureblobstorageoniotedge**.<br /><br />В модуле IoT Edge очень важно использовать знаки нижнего регистра для имени хранилища BLOB-объектов Azure. IoT Edge учитывает регистр при ссылке на модули, а название пакета SDK службы хранилища по умолчанию преобразовывается в нижний регистр. |
    | Указание образа Docker для модуля | Укажите универсальный код ресурса (URI) образа: **mcr.microsoft.com/azure-blob-storage:latest**. |
 
    Visual Studio Code принимает предоставленные сведения, создает решение IoT Edge, а затем загружает его в новом окне. Шаблон решения создает шаблон манифеста развертывания, который содержит образ модуля хранилища BLOB-объектов, но вам нужно настроить параметры создания модуля.
@@ -182,7 +185,7 @@ Azure IoT Edge предоставляет шаблоны в Visual Studio Code �
       }
       ```
 
-      ![Обновление модуля createOptions - Visual Studio Code](./media/how-to-store-data-blob/create-options.png)
+      ![Обновление модуля createOptions - Visual Studio Code](./media/how-to-deploy-blob/create-options.png)
 
 1. Замените `<your storage account name>` запоминаемым именем. Имена учетных записей должна содержать 3 до 24 знаков, с строчные буквы и цифры. Без пробелов.
 
@@ -196,32 +199,34 @@ Azure IoT Edge предоставляет шаблоны в Visual Studio Code �
       > [!IMPORTANT]
       > Не изменяйте вторую половину значения привязки каталога хранения, которая указывает на определенное расположение в модуле. Привязка каталога хранения всегда должна заканчиваться на **:/blobroot** — для контейнеров Linux и **:C:/BlobRoot** — для контейнеров Windows.
 
-1. Настройка [распределение по уровням](how-to-store-data-blob.md#tiering-properties) и [time-to-live](how-to-store-data-blob.md#time-to-live-properties) свойства для модуля, добавив следующий код JSON для *deployment.template.json* файла. Настройте соответствующее значение каждого свойства и сохраните файл.
+1. Настройка [deviceToCloudUploadProperties](how-to-store-data-blob.md#devicetoclouduploadproperties) и [deviceAutoDeleteProperties](how-to-store-data-blob.md#deviceautodeleteproperties) для модуля, добавив следующий код JSON для *deployment.template.json* файла. Настройте соответствующее значение каждого свойства и сохраните файл.
 
    ```json
    "<your azureblobstorageoniotedge module name>":{
      "properties.desired": {
-       "ttlSettings": {
-         "ttlOn": <true, false>,
-         "timeToLiveInMinutes": <timeToLiveInMinutes>
+       "deviceAutoDeleteProperties": {
+         "deleteOn": <true, false>,
+         "deleteAfterMinutes": <timeToLiveInMinutes>,
+         "retainWhileUploading": <true, false>
        },
-       "tieringSettings": {
-         "tieringOn": <true, false>,
-         "backlogPolicy": "<NewestFirst, OldestFirst>",
-         "remoteStorageConnectionString": "DefaultEndpointsProtocol=https;AccountName=<your Azure Storage Account Name>;AccountKey=<your Azure Storage Account Key>;EndpointSuffix=<your end point suffix>",
-         "tieredContainers": {
+       "deviceToCloudUploadProperties": {
+         "uploadOn": <true, false>,
+         "uploadOrder": "<NewestFirst, OldestFirst>",
+         "cloudStorageConnectionString": "DefaultEndpointsProtocol=https;AccountName=<your Azure Storage Account Name>;AccountKey=<your Azure Storage Account Key>;EndpointSuffix=<your end point suffix>",
+         "storageContainersForUpload": {
            "<source container name1>": {
              "target": "<target container name1>"
            }
-         }
+         },
+         "deleteAfterUpload": <true, false>
        }
      }
    }
    ```
 
-   ![задать нужные свойства для azureblobstorageoniotedge - Visual Studio Code](./media/how-to-store-data-blob/tiering_ttl.png)
+   ![задать нужные свойства для azureblobstorageoniotedge - Visual Studio Code](./media/how-to-deploy-blob/devicetocloud-deviceautodelete.png)
 
-   Сведения о настройке распределения по уровням и срок ЖИЗНИ, после развертывания модуля, см. в разделе [изменить Двойник модуля](https://github.com/Microsoft/vscode-azure-iot-toolkit/wiki/Edit-Module-Twin). Дополнительные сведения о контейнере параметры создания, перезапустите политики и требуемого состояния см. в разделе [EdgeAgent требуемые свойства](module-edgeagent-edgehub.md#edgeagent-desired-properties).
+   Сведения о настройке deviceToCloudUploadProperties и deviceAutoDeleteProperties после развертывания модуля, см. в разделе [изменить Двойник модуля](https://github.com/Microsoft/vscode-azure-iot-toolkit/wiki/Edit-Module-Twin). Дополнительные сведения о контейнере параметры создания, перезапустите политики и требуемого состояния см. в разделе [EdgeAgent требуемые свойства](module-edgeagent-edgehub.md#edgeagent-desired-properties).
 
 1. Сохраните файл *deployment.template.json*.
 

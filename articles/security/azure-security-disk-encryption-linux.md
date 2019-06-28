@@ -7,16 +7,16 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 04/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: db289e5b5be23176e8589f408a86734181129ebe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ffdda51c4739dfad6c326a5c90f4a93ebfb321cd
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65978493"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67294901"
 ---
 # <a name="enable-azure-disk-encryption-for-linux-iaas-vms"></a>Включение шифрования дисков Azure для виртуальных машин IaaS под управлением Linux 
 
-Возможно несколько сценариев включения шифрования дисков, и последовательность действий для каждого может отличаться. В следующих разделах сценарии для виртуальных машин IaaS под управлением Linux описаны более подробно. Перед тем как использовать шифрование дисков Azure, необходимо выполнить [эти предварительные требования](azure-security-disk-encryption-prerequisites.md) и [дополнительные требования для виртуальных машин IaaS Linux](azure-security-disk-encryption-prerequisites.md#bkmk_LinuxPrereq).
+Возможно несколько сценариев включения шифрования дисков, и последовательность действий для каждого может отличаться. В следующих разделах сценарии для виртуальных машин IaaS под управлением Linux описаны более подробно. Перед тем как использовать шифрование дисков [предварительных требованиях шифрования дисков Azure](azure-security-disk-encryption-prerequisites.md) должен быть завершен и [Дополнительные требования для виртуальных машин IaaS Linux](azure-security-disk-encryption-prerequisites.md#additional-prerequisites-for-linux-iaas-vms) разделе, необходимо проверить.
 
 Создайте [моментальный снимок](../virtual-machines/windows/snapshot-copy-managed-disk.md) и (или) резервную копию перед шифрованием дисков. Резервные копии обеспечивают возможность восстановления в случае любого непредвиденного сбоя во время шифрования. Для виртуальных машин с управляемыми дисками необходимо создать резервную копию до начала шифрования. Как только будет установлено резервной копии, можно использовать командлет Set-AzVMDiskEncryptionExtension зашифровать управляемые диски, указав параметр - skipVmBackup. Дополнительные сведения см. в статье [Резервное копирование и восстановление зашифрованных виртуальных машин с помощью службы Azure Backup](../backup/backup-azure-vms-encryption.md). 
 

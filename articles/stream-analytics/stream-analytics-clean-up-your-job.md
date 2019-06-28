@@ -7,23 +7,25 @@ ms.author: mamccrea
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 12/06/2018
+ms.date: 6/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: e43e1034abe4bbe3d31a46ab3b98b0efe612b852
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cb81c73f7946a10bae0470a55dcf1c0d55c2b847
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66159451"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67330053"
 ---
-# <a name="clean-up-your-azure-stream-analytics-job"></a>Очистка задания Azure Stream Analytics
+# <a name="stop-or-delete-your-azure-stream-analytics-job"></a>Остановить или удалить задания Azure Stream Analytics
 
-Задания Azure Stream Analytics можно легко удалять с помощью портала Azure, Azure PowerShell, пакета Azure SDK для .NET или REST API. Задание Stream Analytics нельзя восстановить после его удаления.
+Задания Azure Stream Analytics может быть легко остановлена или удалена с помощью портала Azure, Azure PowerShell, пакет Azure SDK для .net или REST API. Задание Stream Analytics нельзя восстановить после его удаления.
 
 >[!NOTE] 
 >При остановке задания Stream Analytics данные сохраняются в хранилище входных и выходных данных, например Центрах событий или Базе данных SQL Azure. Если необходимо удалить данные из Azure, обязательно следуйте процедуре удаления входящих и исходящих ресурсов задания Stream Analytics.
 
 ## <a name="stop-a-job-in-azure-portal"></a>Остановка задания на портале Azure
+
+При остановке задания, ресурсы, deprovisionned и останавливается обработка событий. Также останавливаются расходов, связанных с этим заданием. Тем не менее все настройки хранятся и более поздней версии можно перезапустить задание 
 
 1. Войдите на [портале Azure](https://portal.azure.com). 
 
@@ -35,6 +37,9 @@ ms.locfileid: "66159451"
 
 
 ## <a name="delete-a-job-in-azure-portal"></a>Удаление задания на портале Azure
+
+>[!WARNING] 
+>Задание Stream Analytics нельзя восстановить после его удаления.
 
 1. Войдите на портал Azure. 
 

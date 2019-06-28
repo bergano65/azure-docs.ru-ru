@@ -12,12 +12,12 @@ author: wenjiefu
 ms.author: wenjiefu
 ms.reviewer: sawinark
 manager: craigg
-ms.openlocfilehash: 7789970b47f0e55adee5bbe9da9f303aee6cdb25
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: a018a383de855a05b14aa6e1f1c465f8868f672d
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67190124"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312164"
 ---
 # <a name="troubleshooting-package-execution-in-ssis-integration-runtime"></a>Устранение неполадок выполнения пакетов в среде выполнения интеграции SSIS
 
@@ -110,6 +110,11 @@ ms.locfileid: "67190124"
   * Одной из возможных причин является, имя пользователя и пароль с поддержкой MFA настроено для проверки подлинности служб Azure Analysis Services, который еще не поддерживается в среде выполнения интеграции SSIS. Попробуйте использовать субъект-службу для проверки подлинности служб Azure Analysis Service:
     1. Подготовьте субъект-служба консультантам [https://docs.microsoft.com/azure/analysis-services/analysis-services-service-principal](https://docs.microsoft.com/azure/analysis-services/analysis-services-service-principal)
     2. В диспетчере соединений, Настройка «Использовать указанные имя пользователя и пароль»: «AppID» в качестве имени пользователя и «clientSecret» в качестве пароля
+
+### <a name="error-message-adonet-source-has-failed-to-acquire-the-connection-guid-with-the-following-error-message-login-failed-for-user-nt-authorityanonymous-logon-when-using-managed-identity"></a>Сообщение об ошибке: «Источник ADONET не смог установить подключение {GUID} сообщение об ошибке: Ошибка входа пользователя 'NT AUTHORITY\ANONYMOUS LOGON'» при использовании управляемого удостоверения
+
+* Возможной причиной & Рекомендуемое действие:
+  * Убедитесь, что вы не настраиваете метод проверки подлинности диспетчера соединений как «Проверка пароля Active Directory», если параметр «ConnectUsingManagedIdentity» имеет значение True. Можно настроить его как «Проверка подлинности SQL» вместо которого будет игнорироваться, если задано значение «ConnectUsingManagedIdentity»
 
 ### <a name="package-takes-unexpected-long-time-to-execute"></a>Пакет принимает Непредвиденная продолжительное время
 
