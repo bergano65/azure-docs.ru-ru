@@ -103,17 +103,17 @@ applicationsScoping //this brings data from Application Insights resources
 | ApplicationName | appName|
 | ApplicationTypeVersion | application_Version |
 | AvailabilityCount | itemCount |
-| AvailabilityDuration | длительность |
+| AvailabilityDuration | duration |
 | AvailabilityMessage | message |
 | AvailabilityRunLocation | location |
 | AvailabilityTestId | id |
 | AvailabilityTestName | name |
 | AvailabilityTimestamp | timestamp |
-| "Обзор" | client_browser |
+| Browser | client_browser |
 | City | client_city |
 | ClientIP | client_IP |
 | Computer | cloud_RoleInstance | 
-| Страна | client_CountryOrRegion | 
+| Country | client_CountryOrRegion | 
 | CustomEventCount | itemCount | 
 | CustomEventDimensions | customDimensions |
 | CustomEventName | name | 
@@ -125,23 +125,23 @@ applicationsScoping //this brings data from Application Insights resources
 | ExceptionType | type |
 | OperationID | operation_id |
 | OperationName | operation_Name | 
-| ОС | client_OS | 
+| OS | client_OS | 
 | PageViewCount | itemCount |
-| PageViewDuration | длительность | 
+| PageViewDuration | duration | 
 | PageViewName | name | 
 | ParentOperationID | operation_Id | 
 | RequestCount | itemCount | 
-| RequestDuration | длительность | 
+| RequestDuration | duration | 
 | RequestID | id | 
 | RequestName | name | 
-| RequestSuccess | Успешное завершение | 
+| RequestSuccess | success | 
 | ResponseCode | resultCode | 
-| Роль | cloud_RoleName |
+| Role | cloud_RoleName |
 | RoleInstance | cloud_RoleInstance |
 | SessionId | session_Id | 
 | SourceSystem | operation_SyntheticSource |
 | TelemetryTYpe | type |
-| URL-адрес | _url |
+| URL | _url |
 | UserAccountId | user_AccountId |
 
 ## <a name="next-steps"></a>Дальнейшие действия
