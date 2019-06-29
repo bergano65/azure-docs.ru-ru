@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 06/12/2019
+ms.date: 06/26/2019
 ms.author: diberry
-ms.openlocfilehash: 1e46c935d298f2fe7ebfa4bce471288c9ab8a606
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: a126456159776254408df8325f97fcee967835e2
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67271949"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442721"
 ---
 # <a name="use-follow-up-prompts-to-create-multiple-turns-of-a-conversation"></a>Дальнейшие действия используйте предлагает создать несколько включает диалога
 
@@ -229,33 +229,14 @@ In the knowledge base, when a question-and-answer pair is linked to follow-up pr
             "metadata": [],
             "context": {
                 "isContextOnly": true,
-                "promptsToAdd": [
+                "prompts": [
                     {
                         "displayOrder": 0,
                         "qnaId": 16,
                         "qna": null,
                         "displayText": "Use the sign-in screen"
-                    },
-                    {
-                        "displayOrder": 1,
-                        "qnaId": 17,
-                        "qna": null,
-                        "displayText": "Use Windows Hello to sign in"
-                    },
-                    {
-                        "displayOrder": 2,
-                        "qnaId": 18,
-                        "qna": null,
-                        "displayText": "Sign out"
-                    },
-                    {
-                        "displayOrder": 0,
-                        "qnaId": 79,
-                        "qna": null,
-                        "displayText": "Create a Windows Account"
                     }
-                ],
-                "promptsToDelete":[]
+                ]
             }
         },
         {
@@ -269,15 +250,14 @@ In the knowledge base, when a question-and-answer pair is linked to follow-up pr
             "metadata": [],
             "context": {
                 "isContextOnly": true,
-                "promptsToAdd": [
+                "prompts": [
                     {
                         "displayOrder": 0,
                         "qnaId": 16,
                         "qna": null,
                         "displayText": "Turn off the device"
                     }
-                ],
-                "promptsToDelete":[]
+                ]
             }
         },
         {
@@ -291,15 +271,14 @@ In the knowledge base, when a question-and-answer pair is linked to follow-up pr
             "metadata": [],
             "context": {
                 "isContextOnly": true,
-                "promptsToAdd": [],
-                "promptsToDelete":[]
+                "prompts": []
             }
         }
     ]
 }
 ```
 
-`promptsToAdd` Массива содержит текст в `displayText` свойство и `qnaId` потока значение, поэтому эти ответы можно отображать в виде Далее вариантов отображается в диалоге, отправить значения, выбранного для QnA Maker в следующий запрос. 
+`prompts` Массива содержит текст в `displayText` свойство и `qnaId` потока значение, поэтому эти ответы можно отображать в виде Далее вариантов отображается в диалоге, Отправить выбранный `qnaId` к QnA Maker в следующем запросе . 
 
 <!--
 
@@ -345,8 +324,7 @@ QnA Maker _GenerateAnswer_ ответ JSON включает дальнейшие
             "metadata": [],
             "context": {
                 "isContextOnly": true,
-                "promptsToAdd": [],
-                "promptsToDelete":[]
+                "prompts": []
             }
         },
         {
@@ -360,15 +338,14 @@ QnA Maker _GenerateAnswer_ ответ JSON включает дальнейшие
             "metadata": [],
             "context": {
                 "isContextOnly": true,
-                "promptsToAdd": [
+                "prompts": [
                     {
                         "displayOrder": 0,
                         "qnaId": 4,
                         "qna": null,
                         "displayText": "Ports and connectors"
                     }
-                ],
-                "promptsToDelete":[]
+                ]
             }
         },
         {
@@ -382,8 +359,7 @@ QnA Maker _GenerateAnswer_ ответ JSON включает дальнейшие
             "metadata": [],
             "context": {
                 "isContextOnly": true,
-                "promptsToAdd": [],
-                "promptsToDelete":[]
+                "prompts": []
             }
         }
     ]
@@ -407,6 +383,16 @@ QnA Maker _GenerateAnswer_ ответ JSON включает дальнейшие
 FIX - Need to go to parent, then answer column, then edit answer. 
 
 -->
+
+## <a name="create-knowledge-base-with-multi-turn-prompts-with-the-create-api"></a>Создавать базы знаний с несколькими включить запросы, используя API создания
+
+Вы можете создать обращение знаний с несколькими включить запросы с помощью [API создания QnA Maker](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create). Запросы добавляются в `context` свойства `prompts` массива. 
+
+
+## <a name="add-or-delete-multi-turn-prompts-with-the-update-api"></a>Добавление или удаление нескольких включить запросы с помощью API обновления
+
+Можно добавлять и удалять запросы несколькими включить с помощью [обновления API службы QnA Maker](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update).  Запросы добавляются в `context` свойства `promptsToAdd` массива и `promptsToDelete` массива. 
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

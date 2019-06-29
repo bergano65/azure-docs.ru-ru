@@ -3,20 +3,20 @@ title: Поддержка языков — QnA Maker
 titleSuffix: Azure Cognitive Services
 description: Язык базы знаний влияет на способность службы QnA Maker автоматически извлекать вопросы и ответы из источников, а также на релевантность результатов, предоставляемых службой QnA Maker в ответ на запросы пользователей. Список языков и региональных параметров, а также естественных языков, поддерживаемых QnA Maker для базы знаний. Не следует смешивать языки в одной базе знаний.
 services: cognitive-services
-author: tulasim88
+author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
 ms.date: 03/21/2019
-ms.author: tulasim
+ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 496f7c75e6633089d4ca88a9e3cd7c76ee415780
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a543b17633b99bea63d72f46ba856a8b4593d16a
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64922406"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67439556"
 ---
 # <a name="language-support-for-qna-maker"></a>Языковая поддержка QnA Maker
 

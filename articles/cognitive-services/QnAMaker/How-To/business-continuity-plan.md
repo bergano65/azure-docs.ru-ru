@@ -3,19 +3,19 @@ title: План обеспечения непрерывности бизнеса
 titleSuffix: Azure Cognitive Services
 description: Основная цель плана обеспечения непрерывности бизнес-процессов — создание отказоустойчивой конечной точки базы знаний, которая обеспечит отсутствие простоев бота или приложения, которые его используют.
 services: cognitive-services
-author: tulasim88
+author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
 ms.date: 01/14/2019
-ms.author: tulasim
-ms.openlocfilehash: ad4f10b3b59e71ca31f1b27879c4b60157f0a46c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: diberry
+ms.openlocfilehash: f9892acb387a655e173ee5d2bde28e7346a6c535
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61374918"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447539"
 ---
 # <a name="create-a-business-continuity-plan-for-your-qna-maker-service"></a>Создание плана по обеспечению непрерывности бизнес-процессов для службы QnA Maker
 

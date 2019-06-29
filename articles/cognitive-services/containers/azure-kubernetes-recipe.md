@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 06/19/2019
+ms.date: 06/26/2019
 ms.author: dapine
-ms.openlocfilehash: 61a76412d7619784582e1fddd2a5b60244159ebc
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 5b406f9c7f8c16038561853170896d2cd95dc383
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67272936"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67444852"
 ---
 # <a name="deploy-the-language-detection-container-to-azure-kubernetes-service"></a>Развертывание контейнера распознавания языка в Службе Azure Kubernetes
 
@@ -81,7 +81,7 @@ ms.locfileid: "67272936"
     Сохраните результаты, чтобы получить значение свойства **loginServer**. Оно будет частью адреса для размещенного контейнера, который вы позднее будете использовать в файле `language.yml`.
 
     ```console
-    >az acr create --resource-group cogserv-container-rg --name pattyregistry --sku Basic
+    > az acr create --resource-group cogserv-container-rg --name pattyregistry --sku Basic
     {
         "adminUserEnabled": false,
         "creationDate": "2019-01-02T23:49:53.783549+00:00",
@@ -407,8 +407,8 @@ az group delete --name cogserv-container-rg
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Поддержка контейнеров в Azure Cognitive Services](../cognitive-services-container-support.md)
-* Руководство. Подключение к службе "Анализ текста" в Cognitive Services с помощью подключенной службы в Visual Studio
+> [!div class="nextstepaction"]
+> [Контейнеры Cognitive Services](../cognitive-services-container-support.md)
 
 <!--
 kubectl get secrets

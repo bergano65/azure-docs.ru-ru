@@ -3,20 +3,20 @@ title: Базы знаний — QnA Maker
 titleSuffix: Azure Cognitive Services
 description: База знаний QnA Maker состоит из наборов пар вопросов и ответов (QnA) и дополнительных метаданных, связанных с каждой парой QnA.
 services: cognitive-services
-author: tulasim88
+author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 03/04/2019
-ms.author: tulasim
+ms.date: 06/25/2019
+ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 02111ac90fe97ddaddbd41ad42410e7e76f1c405
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b9562a1686c4de4f4e2ef57a7d91bbf18dce63ef
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61379357"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447603"
 ---
 # <a name="what-is-a-qna-maker-knowledge-base"></a>Что представляет собой база знаний QnA Maker?
 
@@ -37,6 +37,28 @@ ms.locfileid: "61379357"
 При приеме содержимого в базу знаний QnA Maker пытается преобразовать контент в markdown. Подробнее о форматах markdown, понятных большинству чат-клиентов, см. в [этом](https://aka.ms/qnamaker-docs-markdown-support) блоге.
 
 Поля метаданных состоят из пар "ключ — значение", разделенных двоеточием **(Продукт:Уничтожитель)** . Ключ и значение должны быть только текстом. Ключ метаданных не должен содержать пробелов. Метаданные поддерживает только одно значение каждого ключа.
+
+## <a name="how-qna-maker-processes-a-user-query-to-select-the-best-answer"></a>Как служба QnA Maker обрабатывает запрос пользователя, чтобы выбрать лучший ответ
+
+Обученной и [опубликованных](/quickstarts/create-publish-knowledge-base.md#publish-the-knowledge-base) знаний QnA Maker получает запрос пользователя из программы-робота или другого клиентского приложения за [GenerateAnswer API](/how-to/metadata-generateanswer-usage.md#get-answer-predictions-with-the-generateanswer-api). На схеме ниже процесс при получении запроса к пользователю.
+
+![Процесс ранжирования для запроса пользователя](../media/qnamaker-concepts-knowledgebase/rank-user-query-first-with-azure-search-then-with-qna-maker.png)
+
+Процесс описан в следующей таблице:
+
+|Шаг|Назначение|
+|--|--|
+|1|Клиентское приложение отправляет запрос пользователя, чтобы [GenerateAnswer API](/how-to/metadata-generateanswer-usage.md#get-answer-predictions-with-the-generateanswer-api).|
+|2|QnA Maker предварительной обработки запроса пользователя с определением языка, spellers и средства разбиения по словам.|
+|3|Это предварительная обработка берется изменить пользовательский запрос для получения наилучших результатов поиска.|
+|4\.|Этот измененный запрос отправляется в индекс службы поиска Azure, получение `top` число результатов. Если в этих результатах не правильный ответ, увеличьте значение параметра `top` немного. Обычно значение 10 для `top` работает в 90% запросов.|
+|5|QnA Maker относится добавление дополнительных признаков для определения правильности выбираемых результатов поиска Azure для запроса пользователя. |
+|6|Обученная модель средства ранжирования использует оценки характеристик, на шаге 5, для ранжирования результатов поиска Azure.|
+|7|Новые результаты возвращаются клиентскому приложению в упорядоченном.|
+|||
+
+Функции, используемые включают, но не ограничиваясь word на уровне семантики, термин уровень важности в совокупности, а также глубокий набор известных семантических моделей для определения подобия и соответствие между две текстовые строки.
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

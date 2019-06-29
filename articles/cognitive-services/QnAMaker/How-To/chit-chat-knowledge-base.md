@@ -3,20 +3,20 @@ title: Добавление беседы в базу знаний QnA Maker
 titleSuffix: Azure Cognitive Services
 description: Добавление пользовательских бесед к боту при создании базы знаний делает его более общительным и приятным. QnA Maker позволяет легко добавлять в базу знаний заранее заданный набор самых интересных бесед.
 services: cognitive-services
-author: tulasim88
+author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
 ms.date: 05/10/2019
-ms.author: tulasim
+ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 5d410e1015b751743c171adabda1d5bcbe68b491
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 60a17859fd74b1972e0905a830ba984838a94ffd
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65541001"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447491"
 ---
 # <a name="add-chit-chat-to-a-knowledge-base"></a>Добавление беседы в базу знаний
 

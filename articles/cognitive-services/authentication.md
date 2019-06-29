@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: erhopf
-ms.openlocfilehash: 06cc5509598cb6227a64e2cf375a5686c89312eb
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 6de5711ca977612f01943f6aaf2c9d7061116090
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67163677"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67435937"
 ---
 # <a name="authenticate-requests-to-azure-cognitive-services"></a>Проверка подлинности запросов к Azure Cognitive Services
 
@@ -28,7 +28,7 @@ ms.locfileid: "67163677"
 
 Чтобы выполнять запрос, вам нужно иметь учетную запись Azure и подписку Azure Cognitive Services. Если у вас есть учетная запись, пропустите этот раздел и перейдите к следующему. Если у вас нет учетной записи, воспользуйтесь этим руководством и создайте ее за несколько минут: [Краткое руководство. Создание учетной записи Cognitive Services на портале Azure](cognitive-services-apis-create-account.md).
 
-Можно получить ключ подписки из [портала Azure](cognitive-services-apis-create-account.md#access-your-resource) после создания учетной записи или активации [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/my-apis).
+Можно получить ключ подписки из [портала Azure](cognitive-services-apis-create-account.md#get-the-keys-for-your-subscription) после создания учетной записи или активации [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/my-apis).
 
 ## <a name="authentication-headers"></a>Заголовки проверки подлинности
 
@@ -38,7 +38,7 @@ ms.locfileid: "67163677"
 |--------|-------------|
 | Ocp-Apim-Subscription-Key | Используйте этот заголовок для проверки подлинности по ключу подписки для конкретной службы или для нескольких служб. |
 | Ocp-Apim-Subscription-Region | Этот заголовок является обязательным, только если используется ключ подписки для нескольких служб с [API перевода текстов](./Translator/reference/v3-0-reference.md). Используйте этот заголовок, чтобы указать регион подписки. |
-| Авторизация | Используйте этот заголовок, если вы применяете маркер проверки подлинности. В следующих разделах подробно описан процесс обмена маркерами. Значение предоставляется в следующем формате: `Bearer <TOKEN>`. |
+| Authorization | Используйте этот заголовок, если вы применяете маркер проверки подлинности. В следующих разделах подробно описан процесс обмена маркерами. Значение предоставляется в следующем формате: `Bearer <TOKEN>`. |
 
 ## <a name="authenticate-with-a-single-service-subscription-key"></a>Проверка подлинности по ключу подписки для одной службы
 

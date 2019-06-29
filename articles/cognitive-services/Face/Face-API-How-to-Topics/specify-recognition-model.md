@@ -10,12 +10,12 @@ ms.component: face-api
 ms.topic: conceptual
 ms.date: 03/28/2019
 ms.author: longl
-ms.openlocfilehash: 88b0ac853c64e1e32a2d1c429bdf8655158f030d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e8d5c416183a7d475a46c5e538577069612baf8e
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65411487"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449006"
 ---
 # <a name="specify-a-face-recognition-model"></a>Указание модели распознавания лиц
 
@@ -53,7 +53,7 @@ API распознавания лиц используются моделей м
 
 ```csharp
 string imageUrl = "https://news.microsoft.com/ceo/assets/photos/06_web.jpg";
-var faces = await faceServiceClient.Face.DetectWithUrlAsync(imageUrl, true, true, recognitionModel: "recognition_02", returnRecognitionModel: true);
+var faces = await faceClient.Face.DetectWithUrlAsync(imageUrl, true, true, recognitionModel: "recognition_02", returnRecognitionModel: true);
 ```
 
 ## <a name="identify-faces-with-specified-model"></a>Идентификация лиц с указанной модели
@@ -67,7 +67,7 @@ API распознавания лиц можно извлечь данные л�
 ```csharp
 // Create an empty PersonGroup with "recognition_02" model
 string personGroupId = "mypersongroupid";
-await faceServiceClient.PersonGroup.CreateAsync(personGroupId, "My Person Group Name", recognitionModel: "recognition_02");
+await faceClient.PersonGroup.CreateAsync(personGroupId, "My Person Group Name", recognitionModel: "recognition_02");
 ```
 
 В этом коде **каждой группе людей** с Идентификатором `mypersongroupid` создается, и он настроен для использования _recognition_02_ модели для извлечения функции распознавания лиц.
@@ -83,7 +83,7 @@ await faceServiceClient.PersonGroup.CreateAsync(personGroupId, "My Person Group 
 См. в следующем примере кода для клиентской библиотеки .NET.
 
 ```csharp
-await faceServiceClient.FaceList.CreateAsync(faceListId, "My face collection", recognitionModel: "recognition_02");
+await faceClient.FaceList.CreateAsync(faceListId, "My face collection", recognitionModel: "recognition_02");
 ```
 
 Этот код создает список лиц, который называется `My face collection`, с использованием _recognition_02_ модели для извлечения признаков. При поиске этот список лиц для похожих лиц для нового обнаруженного лица, с которыми сталкиваются должны были обнаружены ([Лиц — обнаружения]) с помощью _recognition_02_ модели. Как и в предыдущем разделе модель должна быть согласована.

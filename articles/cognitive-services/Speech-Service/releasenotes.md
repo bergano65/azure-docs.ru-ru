@@ -8,17 +8,42 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 05/13/2019
+ms.date: 06/26/2019
 ms.author: wolfma
 ms.custom: seodec18
-ms.openlocfilehash: f22b0fcac6099482addfcf56a20e0e828866326e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 09296585ab0ab61f39c18cae6c533c0bbd91926a
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65606352"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449249"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
+
+## <a name="speech-sdk-160-2019-june-release"></a>Speech SDK 1.6.0: 2019 — Июньский выпуск
+**Примеры**
+*   Примеры для быстрого запуска для преобразования текста в речь на UWP и Unity
+*   Пример быстрого запуска для Swift на iOS
+*   Примеры Unity для распознавания речи и распознавание намерения и перевода
+*   Обновленные примеры команд для DialogServiceConnector
+
+**Улучшения и изменения**
+* Диалоговое окно пространство имен:
+    * SpeechBotConnector был переименован в DialogServiceConnector
+    * BotConfig был переименован в DialogServiceConfig
+    * BotConfig::FromChannelSecret() была переназначена DialogServiceConfig::FromBotSecret()
+    * Все существующие клиенты прямой линии речи по-прежнему будет поддерживаться после переименования
+* Обновление адаптера TTS REST для поддержки прокси-сервера, постоянное подключение
+* Улучшить сообщение об ошибке, если передается недопустимый регион
+
+**Исправления ошибок**
+*   Исправление для преобразования текста в РЕЧЬ: где будущее SpeakTextAsync возвращается без ожидания завершения подготовки к просмотру аудио
+*   Исправление для маршалинга строк в C# включить полную языковую поддержку
+*   Исправление для проблемы приложения .NET core для загрузки библиотеки core с целевой платформой net461 в примерах
+*   Исправлена ошибка возникать проблемы для развертывания собственных библиотек в выходную папку, в примерах
+*   Исправление для веб-сокет, надежно закрытие
+*   Исправление для вероятность сбоя при открытии соединения очень высокая нагрузка на платформе Linux
+
 
 ## <a name="speech-sdk-151"></a>Speech SDK 1.5.1
 

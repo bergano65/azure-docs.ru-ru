@@ -3,52 +3,51 @@ title: Создание учетной записи Cognitive Services на по
 titlesuffix: Azure Cognitive Services
 description: Как создать учетную запись API Cognitive служб Azure на портале Azure.
 services: cognitive-services
-author: garyericson
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 06/11/2019
-ms.author: garye
-ms.openlocfilehash: 1149cc6bd4fa41514056342a06d31016123eb88c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: aahi
+ms.openlocfilehash: b857ee0395c447c8699b8f6a812853528812a7bd
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67062142"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67445857"
 ---
-# <a name="quickstart-create-a-cognitive-services-account-in-the-azure-portal"></a>Краткое руководство. Создание учетной записи Cognitive Services на портале Azure
+# <a name="create-a-cognitive-services-account-using-the-azure-portal"></a>Создание учетной записи Cognitive Services с помощью портала Azure
 
-Из этого краткого руководства вы узнаете, как зарегистрироваться в Azure Cognitive Services и создать подписку на одну или несколько служб. Эти службы представляются [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal) Azure, которые позволяют подключиться к одному или нескольким API-интерфейсам Azure Cognitive Services.
+В этом кратком руководстве вы узнаете, как зарегистрироваться в Azure Cognitive Services и создать учетную запись, имеющему подписку, одна служба или нескольких служб. Эти службы представляются [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal) Azure, которые позволяют подключиться к одному или нескольким API-интерфейсам Azure Cognitive Services.
 
 ## <a name="prerequisites"></a>Технические условия
 
 * Действующая подписка Azure. [Создайте учетную запись](https://azure.microsoft.com/free/) бесплатно.
 
-## <a name="create-and-subscribe-to-an-azure-cognitive-services-resource"></a>Создание и подписка на ресурс Azure Cognitive Services
+[!INCLUDE [cognitive-services-subscription-types](../../includes/cognitive-services-subscription-types.md)]
 
-Прежде чем приступать к работе, важно понимать, что существует два типа подписок Azure Cognitive Services. Первый — подписка на одну службу (например, "Компьютерное зрение" или службы распознавания речи). Подписка на одну службу распространяется только на соответствующий ресурс. Второй тип — подписка на несколько служб Azure Cognitive Services. Эта подписка позволяет использовать одну подписку для работы с большинством служб Azure Cognitive Services. Этот вариант предполагает консолидацию выставления счетов. Дополнительные сведения см. на странице [Цены на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/).
+## <a name="create-a-new-azure-cognitive-services-resource"></a>Создайте новый ресурс Azure Cognitive Services
 
->[!WARNING]
-> Сейчас некоторые службы **не** поддерживают ключи для нескольких служб: QnA Maker, речью, пользовательской службе визуального распознавания и обнаружения аномалий.
-
-В следующих разделах рассматривается создание подписки на одну или несколько служб.
-
-
-### <a name="multi-service-subscription"></a>Подписка на несколько служб
+Прежде чем создавать ресурс, необходимо иметь группу ресурсов Azure. Каждая учетная запись Cognitive Services (и его связанных ресурсов Azure) должны принадлежать к группе ресурсов Azure. При создании учетной записи, у вас есть параметр, чтобы создать новую группу ресурсов или использовать уже существующий. В этой статье показано, как создать группу ресурсов.
 
 1. Войдите на [портал Azure](https://portal.azure.com) и щелкните **+Создать ресурс**.
 
     ![Выбор API-интерфейсов Cognitive Services](media/cognitive-services-apis-create-account/azurePortalScreenMulti.png)
 
-2. Найдите строку поиска и введите следующий запрос: **Cognitive Services**.
+2. Вы найдете доступных Cognitive Services с одним из следующих способов:
+    * Используйте панель поиска и введите имя службы, которую вы хотите подписаться.
+        * Чтобы создать ресурс для нескольких служб подписки, введите **Cognitive Services** при поиске панели и выберите **Cognitive Services** ресурсов.
 
-    ![Поиск по запросу "Cognitive Services"](media/cognitive-services-apis-create-account/azureCogServSearchMulti.png)
+        ![Поиск по запросу "Cognitive Services"](media/cognitive-services-apis-create-account/azureCogServSearchMulti.png)
 
-3. Выберите **Cognitive Services**.
-
-    ![Выбор Cognitive Services](media/cognitive-services-apis-create-account/azureMarketplaceMulti.png)
+    * Чтобы просмотреть все доступные службы cognitive services, выберите **искусственный Интеллект и машинное Обучение**в разделе **Azure Marketplace**. Если вы не видите службу, вас интересует, щелкнуть **см. в разделе, все** и прокрутите страницу до **Cognitive Services**. Нажмите кнопку **дополнительные** для просмотра всего каталога API-интерфейсов Cognitive Services.
+    
+        ![Выбор API-интерфейсов Cognitive Services](media/cognitive-services-apis-create-account/azureMarketplace.png)
 
 3. На странице **Создание** введите приведенные ниже сведения.
+
+    > [!IMPORTANT]
+    > Не забывайте ваше расположение Azure, как вам может понадобиться при вызове Azure Cognitive Services.
 
     |    |    |
     |--|--|
@@ -58,51 +57,28 @@ ms.locfileid: "67062142"
     | **Ценовая категория** | Затраты на учетную запись Cognitive Services зависят от выбранных параметров и использования. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/cognitive-services/) API-интерфейсов.
     | **Группа ресурсов** | [Группа ресурсов Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/resource-consistency/azure-resource-access#what-is-an-azure-resource-group), которая будет содержать ресурс Cognitive Services. Вы можете создать новую группу или добавить к имеющейся группе. |
 
-    ![Снимок экрана создания ресурса](media/cognitive-services-apis-create-account/resource_create_screen_multi.png)
-
-### <a name="single-service-subscription"></a>Подписка на одну службу
-
-1. Войдите на [портал Azure](https://portal.azure.com) и щелкните **+Создать ресурс**.
-
-    ![Выбор API-интерфейсов Cognitive Services](media/cognitive-services-apis-create-account/azurePortalScreen.png)
-
-2. В разделе Azure Marketplace щелкните **Искусственный интеллект + Машинное обучение**. Если вы не видите службу, которая вам нужна, щелкните **Показать все**, чтобы просмотреть весь каталог API-интерфейсов Cognitive Services.
-
-    ![Выбор API-интерфейсов Cognitive Services](media/cognitive-services-apis-create-account/azureMarketplace.png)
-
-3. На странице **Создание** введите приведенные ниже сведения.
-
-    |    |    |
-    |--|--|
-    | **Имя** | Описательное имя для ресурса Cognitive Services. Рекомендуется использовать описательное имя, например *MyNameFaceAPIAccount*. |
-    | **Подписка** | Выберите одну из доступных подписок Azure. |
-    | **Location** | Расположение экземпляра Cognitive Service. Разные расположения могут увеличивать задержку, но не влияют на доступность среды выполнения ресурса. |
-    | **Ценовая категория** | Затраты на учетную запись Cognitive Services зависят от выбранных параметров и использования. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/cognitive-services/) API-интерфейсов.
-    | **Группа ресурсов** | [Группа ресурсов Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/resource-consistency/azure-resource-access#what-is-an-azure-resource-group), которая будет содержать ресурс Cognitive Services. Вы можете создать новую группу или добавить к имеющейся группе. |
-
     ![Снимок экрана создания ресурса](media/cognitive-services-apis-create-account/resource_create_screen.png)
 
-## <a name="access-your-resource"></a>Получение доступа к ресурсам
 
-> [!NOTE]
-> Владелец подписки может отключить создание учетной записи Cognitive Services для группы ресурсов или подписки с помощью [политики Azure](https://docs.microsoft.com/azure/governance/policy/overview#policy-definition), присвоив определение политики "Недопустимые типы ресурсов" и указав **Microsoft.CognitiveServices/accounts** в качестве целевого типа ресурсов.
+## <a name="get-the-keys-for-your-subscription"></a>Получить ключи для вашей подписки
 
-После создания ресурса вы можете получить к нему доступ на панели мониторинга Azure, если она закреплена. В противном случае его можно найти в **Группе ресурсов**.
+После создания ресурса вы можете получить к нему доступ на панели мониторинга Azure, если она закреплена. В противном случае его можно найти в **Группе ресурсов**. После выбора ресурса, ключи можно получить, выбрав **ключи** под **управления ресурсами**.
 
-В пределах ресурса Cognitive Services можно использовать URL-адрес конечной точки и ключи в разделе **Обзор**, чтобы выполнять вызовы API в своих приложениях.
+[!INCLUDE [cognitive-services-environment-variables](../../includes/cognitive-services-environment-variables.md)]
 
-![Снимок экрана ресурсов](media/cognitive-services-apis-create-account/resourceScreen.png)
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Запомните или запишите расположение и ключи. Их можно получить, выбрав **ключи** под **управления ресурсами**.
+Если вы хотите очистить и удалить подписку Cognitive Services, можно удалить ресурс или группу ресурсов. Удаление группы ресурсов также удаляет другие ресурсы, связанные с группой ресурсов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+Чтобы удалить группу ресурсов с помощью портала Azure, сделайте следующее:
 
-> [!div class="nextstepaction"]
-> [Проверка подлинности запросов к Azure Cognitive Services](authentication.md)
+1. На портале Azure разверните меню слева, чтобы открыть меню служб, и выберите **Resource Groups** (Группы ресурсов), чтобы просмотреть список групп ресурсов.
+2. Найдите группу ресурсов, который нужно удалить и щелкните правой кнопкой мыши еще кнопку (...) справа от списка.
+3. Выберите **Удалить группу ресурсов** и подтвердите выбор.
 
 ## <a name="see-also"></a>См. также
 
-* [Краткое руководство по извлечению рукописного текста из изображения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/quickstarts/csharp-hand-text)
-* [Руководство по созданию приложения для поиска лиц на изображении и помещения их в рамку](https://docs.microsoft.com/azure/cognitive-services/Face/Tutorials/FaceAPIinCSharpTutorial)
-* [Руководство по созданию веб-страницы пользовательского поиска](https://docs.microsoft.com/azure/cognitive-services/bing-custom-search/tutorials/custom-search-web-page)
-* [Бот LUIS в Node.js](https://docs.microsoft.com/azure/cognitive-services/luis/luis-nodejs-tutorial-bf-v4)
+* [Проверка подлинности запросов к Azure Cognitive Services](authentication.md)
+* [Что такое Azure Cognitive Services?](Welcome.md)
+* [Поддержка естественного языка](language-support.md)
+* [Поддержка контейнеров docker](cognitive-services-container-support.md)
