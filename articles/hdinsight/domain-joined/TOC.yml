@@ -4,7 +4,7 @@
   items:
     - name: Общие сведения о Корпоративном пакете безопасности в HDInsight
       href: apache-domain-joined-introduction.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Apache HBase RBAC и Apache Ranger
       href: apache-domain-joined-run-hbase.md
@@ -14,8 +14,6 @@
   items:
     - name: План для кластеров ESP
       href: apache-domain-joined-architecture.md
-    - name: Создание кластеров ESP и синхронизация с локальными средами
-      href: apache-domain-joined-create-configure-enterprise-security-cluster.md
     - name: Настройка кластеров ESP с помощью Azure AD DS
       href: apache-domain-joined-configure-using-azure-adds.md
     - name: Синхронизация пользователей Microsoft Azure AD с кластером HDInsight
@@ -30,26 +28,30 @@
       href: ../spark/apache-spark-eclipse-tool-plugin.md
     - name: Использование Apache Oozie в кластерах ESP
       href: hdinsight-use-oozie-domain-joined-clusters.md
-- name: Защита данных
-  href: ../hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage.md
-- name: Доступ к сети
+    - name: Защита данных
+      href: ../hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage.md
+    - name: Доступ к сети
+      items:
+        - name: HDInsight в виртуальной сети Azure
+          href: ../hdinsight-extend-hadoop-virtual-network.md
+        - name: Подключение HDInsight к локальной сети
+          href: ../connect-on-premises-network.md
+        - name: Создание кластера Apache HBase в виртуальной сети Azure
+          href: ../hbase/apache-hbase-provision-vnet.md
+        - name: Репликация кластера Apache HBase в виртуальной сети Azure
+          href: ../hbase/apache-hbase-replication.md
+    - name: Мониторинг с использованием журналов Azure Monitor
+      items:
+        - name: Использование журналов Azure Monitor
+          href: ../hdinsight-hadoop-oms-log-analytics-tutorial.md
+        - name: Использование запросов с журналами Azure Monitor
+          href: ../hdinsight-hadoop-oms-log-analytics-use-queries.md
+        - name: Мониторинг производительности кластера
+          href: ../hdinsight-key-scenarios-to-monitor.md
+- name: Практическое руководство
   items:
-    - name: HDInsight в виртуальной сети Azure
-      href: ../hdinsight-extend-hadoop-virtual-network.md
-    - name: Подключение HDInsight к локальной сети
-      href: ../connect-on-premises-network.md
-    - name: Создание кластера Apache HBase в виртуальной сети Azure
-      href: ../hbase/apache-hbase-provision-vnet.md
-    - name: Репликация кластера Apache HBase в виртуальной сети Azure
-      href: ../hbase/apache-hbase-replication.md
-- name: Мониторинг с использованием журналов Azure Monitor
-  items:
-    - name: Использование журналов Azure Monitor
-      href: ../hdinsight-hadoop-oms-log-analytics-tutorial.md
-    - name: Использование запросов с журналами Azure Monitor
-      href: ../hdinsight-hadoop-oms-log-analytics-use-queries.md
-    - name: Мониторинг производительности кластера
-      href: ../hdinsight-key-scenarios-to-monitor.md
+    - name: Создание кластеров ESP и синхронизация с локальными средами
+      href: apache-domain-joined-create-configure-enterprise-security-cluster.md
 - name: Справочные материалы
   items:
     - name: Примеры кода

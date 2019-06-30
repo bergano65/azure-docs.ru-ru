@@ -50,10 +50,6 @@
           href: xamarin-notification-hubs-ios-push-notification-apns-get-started.md
         - name: Отправка локализованных push-уведомлений на устройства iOS
           href: notification-hubs-ios-xplat-localized-apns-push-notification.md
-    - name: Kindle
-      items:
-        - name: Отправка push-уведомлений с помощью Amazon Device Messaging
-          href: notification-hubs-kindle-amazon-adm-push-notification.md
     - name: Windows Phone
       items:
         - name: Отправка push-уведомлений в приложения
@@ -129,8 +125,6 @@
           href: configure-windows-push-notification-service.md
         - name: Настройка службы push-уведомлений Microsoft
           href: configure-microsoft-push-notification-service.md
-        - name: Настройка Android Device Messaging
-          href: configure-android-device-messaging.md
         - name: Настройка push-уведомлений облака Baidu
           href: configure-baidu-cloud-push.md
     - name: Регистрация в серверной части приложения
@@ -167,7 +161,7 @@
       href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=notificationhubs'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-notificationhub'
-    - name: Запрос функции
+    - name: Запрашивание функции
       href: 'https://feedback.azure.com/forums/218849-notification-hubs'
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'

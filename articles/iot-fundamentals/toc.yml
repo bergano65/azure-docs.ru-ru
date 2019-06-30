@@ -1,4 +1,4 @@
-- name: Интернет вещей Azure
+- name: Azure IoT
   href: index.md
 - name: Обзор
   items:
@@ -8,11 +8,13 @@
       href: iot-services-and-technologies.md
 - name: Безопасность
   items:
-    - name: Архитектура безопасности
-      href: iot-security-architecture.md
-    - name: Рекомендации по обеспечению безопасности
-      href: iot-security-best-practices.md
-    - name: Безопасное развертывание
-      href: iot-security-deployment.md
+    - name: Рекомендации
+      href: security-recommendations.md
     - name: Все аспекты безопасности
       href: iot-security-ground-up.md
+    - name: Рекомендации по обеспечению безопасности
+      href: iot-security-best-practices.md
+    - name: Архитектура безопасности
+      href: iot-security-architecture.md
+    - name: Безопасное развертывание
+      href: iot-security-deployment.md

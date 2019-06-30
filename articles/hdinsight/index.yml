@@ -3,7 +3,7 @@ documentType: LandingData
 title: Документация по Azure HDInsight
 metadata:
   title: Документация по Azure HDInsight. Руководства и справочник по API | Документация Майкрософт
-  description: 'Ознакомьтесь с Apache Hadoop в HDInsight В этой документации описано, как использовать Apache Hadoop, Apache Spark, Apache Kafka, Apache HBase и другие решения для обработки и анализа больших данных.'
+  description: 'Ознакомьтесь с Apache Hadoop в HDInsight. В этой документации описано, как использовать Apache Hadoop, Apache Spark, Apache Kafka, Apache HBase и другие решения для обработки и анализа больших данных.'
   services: hdinsight
   author: hrasheed-msft
   ms.author: hrasheed
@@ -47,7 +47,7 @@ sections:
             href: /azure/hdinsight/hbase/apache-hbase-tutorial-get-started-linux
           - image:
               src: media/index/hive_r.svg
-            text: Интерактивные запросы
+            text: Интерактивный запрос
             href: /azure/hdinsight/interactive-query/apache-interactive-query-get-started
           - image:
               src: media/index/storm_r.svg
@@ -56,21 +56,20 @@ sections:
           - image:
               src: media/index/ml-server_r.svg
             text: Службы машинного обучения
-            href: /azure/hdinsight/r-server/r-server-get-started
-  - title: Пошаговые руководства
+            href: /azure/hdinsight/r-server/ml-services-quickstart-job-rstudio
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Узнайте, как использовать Azure HDInsight в различных сценариях:'
       - type: list
         style: unordered
         items:
-          - html: Apache Hadoop. <a href="/azure/hdinsight/hdinsight-analyze-flight-delay-data-linux">Выполнение операций ETL</a> | <a href="/azure/hdinsight/hdinsight-hadoop-create-linux-clusters-adf">Создание кластеров по требованию</a>.
-          - html: Apache Spark. <a href="/azure/hdinsight/spark/apache-spark-load-data-run-query">Выполнение интерактивных запросов</a> | <a href="/azure/hdinsight/spark/apache-spark-use-bi-tools">Визуализация данных</a> | <a href="/azure/hdinsight/spark/apache-spark-ipython-notebook-machine-learning">Машинное обучение</a>.
-          - html: Apache Kafka. <a href="/azure/hdinsight/hdinsight-apache-kafka-spark-structured-streaming">Использование структурированного потока с Kafka</a> | <a href="/azure/hdinsight/hdinsight-apache-storm-with-kafka">Использование со Storm в HDInsight</a> | <a href="/azure/hdinsight/kafka/apache-kafka-producer-consumer-api">Использование API производителя и потребителя Kafka</a>.
-          - html: Apache HBase. <a href="/azure/hdinsight/hbase/apache-hbase-provision-vnet">Создание кластеров HBase в виртуальной сети</a> | <a href="/azure/hdinsight/hdinsight-phoenix-in-hdinsight">Использование Apache Phoenix</a> | <a href="/azure/hdinsight/hdinsight-using-spark-query-hbase">Подключение к Spark</a>.
-          - html: Interactive Query. <a href="/azure/hdinsight/interactive-query/apache-hadoop-connect-hive-power-bi-directquery">Подключение к Power BI с использованием прямого запроса</a>.
-          - html: Apache Storm. <a href="/azure/hdinsight/storm/apache-storm-develop-java-topology">Создание топологии Storm на языке Java</a> | <a href="/azure/hdinsight/storm/apache-storm-deploy-monitor-topology-linux">Развертывание топологий Storm в HDInsight</a> | <a href="/azure/hdinsight/storm/apache-storm-write-data-lake-store">Запись из Storm в Data Lake Storage</a>.
-          - html: Службы машинного обучения. <a href="/azure/hdinsight/r-server/r-server-submit-jobs-r-tools-vs">Использование Инструментов R для Visual Studio</a>.
+          - html: Apache Spark. <a href="/azure/hdinsight/spark/apache-spark-load-data-run-query">Выполнение интерактивных запросов</a> | <a href="/azure/hdinsight/spark/apache-spark-use-bi-tools">Визуализация данных</a> | <a href="/azure/hdinsight/spark/apache-spark-ipython-notebook-machine-learning">Машинное обучение</a>
+          - html: Apache Kafka. <a href="/azure/hdinsight/hdinsight-apache-kafka-spark-structured-streaming">Использование структурированного потока с Kafka</a> | <a href="/azure/hdinsight/hdinsight-apache-storm-with-kafka">Использование со Storm в HDInsight</a> | <a href="/azure/hdinsight/kafka/apache-kafka-producer-consumer-api">Использование API производителя и потребителя Kafka</a>
+          - html: Apache HBase. <a href="/azure/hdinsight/hbase/apache-hbase-provision-vnet">Создание кластеров HBase в виртуальной сети</a> | <a href="/azure/hdinsight/hdinsight-phoenix-in-hdinsight">Использование Apache Phoenix</a> | <a href="/azure/hdinsight/hdinsight-using-spark-query-hbase">Подключение к Spark</a>
+          - html: Интерактивный запрос. <a href="/azure/hdinsight/interactive-query/apache-hadoop-connect-hive-power-bi-directquery">Подключение к Power BI с использованием прямого запроса</a>
+          - html: Apache Storm. <a href="/azure/hdinsight/storm/apache-storm-develop-java-topology">Создание топологии Storm на языке Java</a> | <a href="/azure/hdinsight/storm/apache-storm-deploy-monitor-topology-linux">Развертывание топологий Storm в HDInsight</a> | <a href="/azure/hdinsight/storm/apache-storm-write-data-lake-store">Запись из Storm в Data Lake Storage</a>
+          - html: Службы машинного обучения. <a href="/azure/hdinsight/r-server/r-server-submit-jobs-r-tools-vs">Использование Инструментов R для Visual Studio</a>
   - title: Справочные материалы
     items:
       - type: list

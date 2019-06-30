@@ -14,14 +14,17 @@
     - name: Использование API Индексатора видео
       href: video-indexer-use-apis.md
 - name: Основные понятия
-  href: video-indexer-concepts.md
   items:
+    - name: Обзор
+      href: video-indexer-concepts.md
     - name: Сравнение предустановок Индексатора видео и Служб мультимедиа
       href: compare-video-indexer-with-media-services-presets.md
     - name: Управление несколькими арендаторами
       href: manage-multiple-tenants.md
     - name: Настройка моделей содержимого
       items:
+        - name: Обзор
+          href: customize-content-models-overview.md
         - name: Торговые марки
           href: customize-brands-model-overview.md
         - name: Язык
@@ -86,3 +89,5 @@
       href: faq.md
     - name: Соответствие нормативным требованиям
       href: 'https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942'
+    - name: Заметки о выпуске
+      href: release-notes.md

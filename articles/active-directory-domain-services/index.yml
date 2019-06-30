@@ -5,8 +5,8 @@ metadata:
   title: Документация по доменным службам Azure AD
   description: 'Узнайте, как с помощью доменных служб Active Directory присоединять к домену виртуальные машины Azure, не используя контроллеры домена. В приведенных здесь руководствах и другой документации показано, как управлять виртуальными машинами с помощью групповых политик.'
   keywords: 'Azure AD, Azure, domain join, group policy, LDAP, Kerberos, domain controller, DC, lift and shift'
-  author: MikeStephens-MS
-  ms.author: mstephen
+  author: iainfoulds
+  ms.author: iainfou
   manager: daveba
   ms.date: 05/22/2019
   ms.topic: landing-page

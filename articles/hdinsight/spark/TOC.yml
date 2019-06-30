@@ -16,7 +16,7 @@
     - name: "Создание кластера Apache Spark\_— шаблон"
       displayName: 'resource manager template, arm template, resource manager group'
       href: apache-spark-jupyter-spark-sql.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Выполнение запросов в кластере Apache Spark
       href: apache-spark-load-data-run-query.md
@@ -30,10 +30,6 @@
       href: apache-spark-ipython-notebook-machine-learning.md
     - name: Создание приложения Apache Spark в IntelliJ
       href: apache-spark-create-standalone-application.md
-    - name: Использование VSCode для выполнения запросов Apache Spark
-      href: ../hdinsight-for-vscode.md
-    - name: Мониторинг доступности кластера с помощью журналов Ambari и Azure Monitor
-      href: ../hdinsight-cluster-availability.md
 - name: Примеры
   items:
     - name: Примеры для .NET
@@ -52,7 +48,9 @@
       href: ../hdinsight-component-versioning.md
     - name: "HDInsight\_4.0"
       href: ../hdinsight-version-release.md
-- name: Руководства
+    - name: Мониторинг доступности кластера с помощью журналов Ambari и Azure Monitor
+      href: ../hdinsight-cluster-availability.md
+- name: Практическое руководство
   items:
     - name: Использование системы хранения данных кластера
       items:
@@ -158,8 +156,6 @@
               href: ../hdinsight-hadoop-customize-cluster-linux.md
             - name: Разработка действий скрипта
               href: ../hdinsight-hadoop-script-actions-linux.md
-            - name: Установка и использование Presto
-              href: ../hdinsight-hadoop-install-presto.md
             - name: Добавление библиотек Apache Hive
               href: ../hdinsight-hadoop-add-hive-libraries.md
             - name: Использование Apache Giraph

@@ -19,6 +19,8 @@
               href: service-bus-quickstart-powershell.md
             - name: Инфраструктура CLI Azure
               href: service-bus-quickstart-cli.md
+            - name: Шаблон Azure Resource Manager
+              href: service-bus-resource-manager-namespace-queue.md
         - name: Отправка и получение сообщений
           items:
             - name: .NET
@@ -40,7 +42,11 @@
     - name: Разделы и подписки служебной шины
       items:
         - name: Создание разделов и подписок
-          href: service-bus-quickstart-topics-subscriptions-portal.md
+          items:
+            - name: Портал Azure
+              href: service-bus-quickstart-topics-subscriptions-portal.md
+            - name: Шаблон Azure Resource Manager
+              href: service-bus-resource-manager-namespace-topic.md
         - name: Шаблон "публикация/подписка" для обмена сообщениями
           items:
             - name: .NET
@@ -187,10 +193,6 @@
           items:
             - name: Создание пространства имен
               href: service-bus-resource-manager-namespace.md
-            - name: Создание пространства имен и очереди
-              href: service-bus-resource-manager-namespace-queue.md
-            - name: Создание пространства имен с разделом и подпиской
-              href: service-bus-resource-manager-namespace-topic.md
             - name: Создание правила авторизации для пространства имен и очереди
               href: service-bus-resource-manager-namespace-auth-rule.md
             - name: 'Создание пространства имен с разделом, подпиской и правилом'

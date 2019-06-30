@@ -2,19 +2,19 @@
 documentType: LandingData
 title: Документация по API Перевода текстов
 metadata:
-  title: 'Документация по API перевода текстов. Краткие руководства, учебные материалы и справочник по API Azure Cognitive Services | Документация Майкрософт'
-  description: 'Узнайте, как использовать API перевода текстов для перевода текста на несколько языков.'
+  title: 'Документация по API Перевода текстов. Краткие руководства, учебные материалы и справочник по API Azure Cognitive Services | Документация Майкрософт'
+  description: 'Узнайте, как использовать API Перевода текстов для перевода текста на несколько языков.'
   services: cognitive-services
-  author: v-pawal
+  author: swmachan
   manager: Chris.Wendt
   ms.service: cognitive-services
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
   ms.date: 06/04/2019
-  ms.author: v-jansko
+  ms.author: swmachan
 abstract:
-  description: '"Перевод текстов" — это облачная служба машинного перевода, позволяющая переводить текст практически в реальном времени путем простого вызова REST API. В этом API используются современные технологии нейронного машинного перевода, а также статистического машинного перевода. Custom Translator — это расширение API перевода текстов, которое позволяет создавать системы нейронного перевода. Настраиваемые системы перевода можно использовать для перевода текста с помощью API перевода текстов или <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/">служб распознавания речи Microsoft</a>. Список поддерживаемых языков как для нейронного, так и для статистического машинного перевода можно найти <a href="languages.md">здесь</a>.'
+  description: '"Перевод текстов" — это облачная служба машинного перевода, позволяющая переводить текст практически в реальном времени путем простого вызова REST API. В этом API используются современные технологии нейронного машинного перевода, а также статистического машинного перевода. "Пользовательский переводчик" — это расширение API перевода текстов, которое позволяет создавать системы нейронного перевода. Настраиваемые системы перевода можно использовать для перевода текста с помощью API Перевода текстов или <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/">служб "Речь" от Майкрософт</a>. Список поддерживаемых языков как для нейронного, так и для статистического машинного перевода можно найти <a href="languages.md">здесь</a>.'
 sections:
   - items:
       - type: list
@@ -23,24 +23,24 @@ sections:
         columns: 3
         items:
           - href: /azure/cognitive-services/translator/translator-info-overview
-            html: <p>Сведения об API перевода текстов</p>
+            html: <p>Сведения об API Перевода текстов</p>
             image:
               src: ../media/index/i_overview.svg
-            title: Что собой представляет API перевода текстов?
+            title: Что собой представляет API Перевода текстов?
           - href: /azure/cognitive-services/translator/custom-translator/overview
-            html: <p>Сведения о Custom Translator</p>
+            html: <p>Сведения о Пользовательском переводчике</p>
             image:
               src: ../media/index/i_overview.svg
-            title: Что такое Custom Translator?
+            title: Что такое Пользовательский переводчик?
           - href: /azure/cognitive-services/translator/custom-translator/quickstart-build-deploy-custom-model
-            html: '<p>Узнайте, как приступить к работе с Custom Translator</p>'
+            html: '<p>Узнайте, как приступить к работе с Пользовательским переводчиком</p>'
             image:
               src: ../media/index/i_get-started.svg
-            title: Краткое руководство по Custom Translator
+            title: Краткое руководство по Пользовательскому переводчику
   - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
-        text: 'Начало работы с API перевода текстов:'
+        text: 'Начало работы с API Перевода текстов:'
       - type: table
         style: dataMatrix
         columns:
@@ -88,12 +88,12 @@ sections:
               - href: quickstart-nodejs-dictionary
               - href: quickstart-python-dictionary
               - href: quickstart-go-dictionary
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
-        text: 'Как разрабатывать приложения с использованием API перевода текстов:'
+        text: 'Как разрабатывать приложения с использованием API Перевода текстов:'
       - type: paragraph
-        text: '<li><a href="tutorial-wpf-translation-csharp.md">Создание приложения WPF для API "Перевод текстов" на C#</a></li><li><a href="tutorial-build-flask-app-translation-synthesis.md">Создание приложения Flask для перевода на Python</a></li>'
+        text: '<li><a href="tutorial-wpf-translation-csharp.md">Создание приложения WPF для API Перевода текстов на C#</a></li><li><a href="tutorial-build-flask-app-translation-synthesis.md">Создание приложения Flask для перевода на Python</a></li>'
   - title: Справочные материалы
     items:
       - type: paragraph

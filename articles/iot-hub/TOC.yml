@@ -50,7 +50,7 @@
           href: quickstart-device-streams-proxy-nodejs.md
         - name: C
           href: quickstart-device-streams-proxy-c.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Маршрутизация сообщений
       items:
@@ -88,7 +88,7 @@
       href: iot-hub-compare-event-hubs.md
     - name: Выбор подходящей ценовой категории
       href: iot-hub-scaling.md
-    - name: Высокий уровень доступности и аварийное восстановление
+    - name: Высокая доступность и аварийное восстановление
       href: iot-hub-ha-dr.md
     - name: Поддержка дополнительных протоколов
       href: iot-hub-protocol-gateway.md
@@ -100,7 +100,7 @@
       href: iot-hub-device-sdk-platform-support.md
     - name: Общие сведения о потоках устройств Центра Интернета вещей (предварительная версия)
       href: iot-hub-device-streams-overview.md
-    - name: Руководство для разработчиков
+    - name: Руководство разработчика
       href: iot-hub-devguide.md
       items:
         - name: Руководство по функциям отправки сообщений с устройства в облако
@@ -159,6 +159,8 @@
           href: iot-hub-devguide-glossary.md
     - name: Безопасность
       items:
+        - name: Рекомендации
+          href: /azure/iot-fundamentals/security-recommendations?context=azure/iot-hub/rc/rc
         - name: Все аспекты безопасности
           href: /azure/iot-fundamentals/iot-security-ground-up?context=azure/iot-hub/rc/rc
         - name: Рекомендации по обеспечению безопасности
@@ -167,13 +169,13 @@
           href: /azure/iot-fundamentals/iot-security-architecture?context=azure/iot-hub/rc/rc
         - name: Защита развертывания IoT
           href: /azure/iot-fundamentals/iot-security-deployment?context=azure/iot-hub/rc/rc
-    - name: Защита с помощью сертификатов X.509 ЦС
+    - name: Обеспечение безопасности с помощью сертификатов X.509 ЦС
       items:
         - name: 'Общие сведения о безопасности, обеспечиваемой сертификатами X.509 ЦС'
           href: iot-hub-x509ca-overview.md
         - name: Понятия безопасности в контексте сертификатов X.509 ЦС
           href: iot-hub-x509ca-concept.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Разработка
       items:
@@ -225,7 +227,7 @@
               href: iot-hub-node-node-file-upload.md
             - name: Python
               href: iot-hub-python-python-file-upload.md
-        - name: Приступая к работе с двойниками устройств
+        - name: Начало работы с двойниками устройств
           items:
             - name: Node.js
               href: iot-hub-node-node-twin-getstarted.md
@@ -339,7 +341,7 @@
               href: iot-hub-arduino-iot-devkit-az3166-mqtt-helloworld.md
             - name: Мониторинг магнитного датчика и отправка уведомлений по электронной почте с помощью решения "Функции Azure"
               href: iot-hub-arduino-iot-devkit-az3166-door-monitor.md
-        - name: Расширенные сценарии IoT
+        - name: Расширенные сценарии Интернета вещей
           items:
             - name: Управление обменом сообщениями между устройством и облаком с помощью средств Azure IoT для VS Code
               href: iot-hub-vscode-iot-toolkit-cloud-device-messaging.md
@@ -413,9 +415,9 @@
           href: /azure/iot-hub
         - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
           href: /azure/iot-dps
-        - name: Пакеты SDK для служб Интернета вещей
+        - name: Пакеты SDK для служб IoT
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
-        - name: Карты
+        - name: Maps
           href: /azure/azure-maps
         - name: Аналитика временных рядов
           href: /azure/time-series-insights
@@ -439,7 +441,7 @@
       href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-ios/'
     - name: 'Каталог устройств, сертифицированных по программе Microsoft Azure Certified for IoT'
       href: 'https://catalog.azureiotsolutions.com/'
-    - name: Центр разработчиков Azure IoT
+    - name: Центр разработчика Azure IoT
       href: 'https://azure.microsoft.com/develop/iot/'
     - name: Запросы данных клиентов
       href: iot-hub-customer-data-requests.md
@@ -463,5 +465,5 @@
       href: 'https://stackoverflow.com/questions/tagged/azure-iot-hub'
     - name: Технические примеры использования
       href: 'https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=iot-hub'

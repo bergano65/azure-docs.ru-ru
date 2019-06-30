@@ -12,11 +12,8 @@
     - name: "Создание кластера Apache Hadoop\_— шаблон"
       displayName: 'resource manager template, arm template, resource manager group'
       href: apache-hadoop-linux-tutorial-get-started.md
-- name: Руководства
+- name: Учебники
   items:
-    - name: 'Выполнение операций извлечения, преобразования и загрузки'
-      href: ../hdinsight-analyze-flight-delay-data-linux.md
-      maintainContext: true
     - name: Создание кластеров по запросу
       href: ../hdinsight-hadoop-create-linux-clusters-adf.md
       maintainContext: true
@@ -141,6 +138,10 @@
         - name: Инструменты для VSCode
           href: ../hdinsight-for-vscode.md
           maintainContext: true
+        - name: Инструменты для IntelliJ
+          href: ../spark/apache-spark-intellij-tool-plugin.md
+        - name: Инструменты для Eclipse
+          href: ../spark/apache-spark-eclipse-tool-plugin.md
         - name: Использование инструментов Data Lake с песочницей Hortonworks
           href: ../hdinsight-hadoop-emulator-visual-studio.md
           maintainContext: true
@@ -186,9 +187,6 @@
           maintainContext: true
         - name: Разработка действий скрипта
           href: ../hdinsight-hadoop-script-actions-linux.md
-          maintainContext: true
-        - name: Установка и использование Presto
-          href: ../hdinsight-hadoop-install-presto.md
           maintainContext: true
         - name: Добавление библиотек Apache Hive
           href: ../hdinsight-hadoop-add-hive-libraries.md
@@ -467,15 +465,11 @@
     - name: Шаблон Resource Manager
       displayName: 'resource manager template, arm template, resource manager group'
       href: /azure/templates/microsoft.hdinsight/allversions
-- name: Сопутствующие материалы
-  items:
-    - name: Кластеры Windows
-      items:
-        - name: Перенос решений .NET в кластеры Linux
-          href: ../hdinsight-hadoop-migrate-dotnet-to-linux.md
-          maintainContext: true
 - name: Ресурсы
   items:
+    - name: Перенос решений .NET в кластеры Linux
+      href: ../hdinsight-hadoop-migrate-dotnet-to-linux.md
+      maintainContext: true
     - name: Заметки о выпуске
       items:
         - name: Заметки о текущем выпуске

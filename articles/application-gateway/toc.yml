@@ -1,4 +1,4 @@
-- name: Документация по шлюзу приложений
+- name: Документация по Шлюзу приложений
   href: index.yml
 - name: Обзор
   items:
@@ -15,7 +15,7 @@
       href: quick-create-powershell.md
     - name: "Создание шлюза приложений\_— Azure\_CLI"
       href: quick-create-cli.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Включение брандмауэра веб-приложения Azure
       href: application-gateway-web-application-firewall-portal.md
@@ -85,17 +85,18 @@
       href: application-gateway-web-app-overview.md
     - name: Поддержка WebSocket
       href: application-gateway-websocket.md
-    - name: Вопросы и ответы
+    - name: Часто задаваемые вопросы
       href: application-gateway-faq.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Размещение одного веб-сайта
       items:
         - name: Azure PowerShell
           href: tutorial-manage-web-traffic-powershell.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: tutorial-manage-web-traffic-cli.md
         - name: Шаблон
+          displayName: 'ARM, Resource Manager, template'
           href: create-vmss-template.md
     - name: Настройка внутреннего балансировщика нагрузки
       items:
@@ -105,7 +106,7 @@
           href: application-gateway-ilb-arm.md
     - name: Настройка SSL
       items:
-        - name: завершение SSL-запросов;
+        - name: Завершение SSL-запросов
           items:
             - name: Завершение SSL-запросов с использованием PowerShell
               href: tutorial-ssl-powershell.md
@@ -133,7 +134,7 @@
       items:
         - name: Azure PowerShell
           href: tutorial-restrict-web-traffic-powershell.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: tutorial-restrict-web-traffic-cli.md
     - name: Настройка набора правил WAF
       items:
@@ -153,13 +154,13 @@
       items:
         - name: Azure PowerShell
           href: tutorial-url-route-powershell.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: tutorial-url-route-cli.md
     - name: Размещение нескольких сайтов
       items:
         - name: Azure PowerShell
           href: tutorial-multiple-sites-powershell.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: tutorial-multiple-sites-cli.md
     - name: Перенаправление трафика
       items:
@@ -167,7 +168,7 @@
           items:
             - name: Azure PowerShell
               href: redirect-external-site-powershell.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: redirect-external-site-cli.md
         - name: Перенаправление с HTTP на HTTPS
           items:
@@ -175,13 +176,13 @@
               href: redirect-http-to-https-portal.md
             - name: Azure PowerShell
               href: redirect-http-to-https-powershell.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: redirect-http-to-https-cli.md
         - name: Перенаправление внутреннего трафика
           items:
             - name: Azure PowerShell
               href: redirect-internal-site-powershell.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: redirect-internal-site-cli.md
         - name: Перенаправление веб-трафика с помощью Azure PowerShell
           href: tutorial-url-redirect-powershell.md
@@ -209,7 +210,7 @@
           href: application-gateway-create-probe-ps.md
     - name: Устранение неполадок
       items:
-        - name: Внутренняя подсистема балансировки нагрузки со средой службы приложений
+        - name: Внутренняя подсистема балансировки нагрузки со Средой службы приложений
           href: create-gateway-internal-load-balancer-app-service-environment.md
         - name: Перенаправление на URL-адрес Службы приложений
           href: troubleshoot-app-service-redirection-app-service-url.md
@@ -225,7 +226,7 @@
   items:
     - name: Правила CRS
       href: application-gateway-crs-rulegroups-rules.md
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/network/application-gateway
     - name: Azure PowerShell
       href: /powershell/azure/overview
@@ -241,13 +242,15 @@
       href: /rest/api/applicationgateway
     - name: Azure Resource Manager
       href: ../azure-resource-manager/resource-group-overview.md
+    - name: Шаблон Resource Manager
+      href: 'https://docs.microsoft.com/azure/templates/microsoft.network/allversions'
 - name: Ресурсы
   items:
     - name: Создание шаблонов
       href: ../azure-resource-manager/resource-group-authoring-templates.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Шаблоны сообщества
+    - name: Шаблоны от сообщества
       href: 'https://azure.microsoft.com/documentation/templates'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/#Linux'
