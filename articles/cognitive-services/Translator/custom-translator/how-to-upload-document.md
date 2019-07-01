@@ -2,19 +2,19 @@
 title: Отправка документа с помощью Custom Translator
 titleSuffix: Azure Cognitive Services
 description: С помощью функции отправки документа вы можете отправить параллельный документ для своих обучений. Параллельные документы — это пары документов, в которых один является переводом другого. Один документ в паре содержит предложения на исходном языке, а другой — эти же предложения, переведенные на целевой язык.
-author: rajdeep-in
+author: swmachan
 manager: christw
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 02/21/2019
-ms.author: v-pawal
+ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 1fa786bee960f71e4109041d935757a0d1edd75e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 948c9628147ae8cf869046b283601b939d35b290
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66386932"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447922"
 ---
 # <a name="upload-a-document"></a>Отправка документа
 

@@ -4,13 +4,13 @@
   items:
     - name: Что такое Stream Analytics?
       href: stream-analytics-introduction.md
-    - name: Комплексные шаблоны решений
+    - name: Шаблоны комплексных решений
       href: stream-analytics-solution-patterns.md
 - name: Краткие руководства
   items:
-    - name: Создание задания с помощью портала Azure
+    - name: "Создание задания\_— портал Azure"
       href: stream-analytics-quick-create-portal.md
-    - name: Создание задания с помощью PowerShell
+    - name: "Создание задания\_— PowerShell"
       href: stream-analytics-quick-create-powershell.md
     - name: Создание задания — Visual Studio
       href: stream-analytics-quick-create-vs.md
@@ -62,13 +62,13 @@
       href: stream-analytics-geospatial-functions.md
     - name: Уровень совместимости
       href: stream-analytics-compatibility-level.md
-    - name: Стандартные шаблоны запросов
+    - name: Стандартные шаблоны запроса
       href: stream-analytics-stream-analytics-query-patterns.md
     - name: Анализ данных JSON и AVRO
       href: stream-analytics-parsing-json.md
     - name: Рекомендации по распределению времени
       href: stream-analytics-time-handling.md
-    - name: Контрольные точки и воспроизведение
+    - name: Контрольная точка и воспроизведение
       href: stream-analytics-concepts-checkpoint-replay.md
     - name: Политика обработки ошибок
       href: stream-analytics-output-error-policy.md
@@ -88,7 +88,7 @@
           href: stream-analytics-test-query.md
         - name: Просмотр результатов на панели мониторинга
           href: stream-analytics-power-bi-dashboard.md
-        - name: Очистка задания
+        - name: Остановка или удаление задания
           href: stream-analytics-clean-up-your-job.md
         - name: Связывание заданий для обеспечения надежности
           href: stream-analytics-job-reliability.md
@@ -119,7 +119,7 @@
           maintainContext: true
         - name: Сценарии обработки геопространственных данных
           href: geospatial-scenarios.md
-    - name: Мониторинг
+    - name: Монитор
       items:
         - name: Мониторинг заданий с помощью портала Azure
           href: stream-analytics-monitoring.md
@@ -139,7 +139,7 @@
               href: stream-analytics-parallelization.md
             - name: Повышение пропускной способности
               href: stream-analytics-scale-jobs.md
-        - name: Масштабирование с помощью функций машинного обучения
+        - name: Масштабирование с помощью функций Машинного обучения
           href: stream-analytics-scale-with-machine-learning-functions.md
     - name: Автоматизация
       items:
@@ -187,7 +187,7 @@
           href: data-errors.md
     - name: Интеграция с машинным обучением
       items:
-        - name: Анализ тональности с помощью моделей машинного обучения
+        - name: Анализ тональности с помощью моделей Машинного обучения
           href: stream-analytics-machine-learning-integration-tutorial.md
         - name: Обнаружение аномалий
           href: stream-analytics-machine-learning-anomaly-detection.md
@@ -443,10 +443,10 @@
             - name: '"Прыгающее" окно'
               href: /stream-analytics-query/hopping-window-azure-stream-analytics
               maintainContext: true
-            - name: '"Сеансовое" окно'
+            - name: Сеансовое окно
               href: /stream-analytics-query/session-window-azure-stream-analytics
               maintainContext: true
-            - name: '"Скользящее" окно'
+            - name: Скользящее окно
               href: /stream-analytics-query/sliding-window-azure-stream-analytics
               maintainContext: true
             - name: '"Переворачивающееся" окно'

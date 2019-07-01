@@ -8,7 +8,7 @@
   items:
     - name: Создание профиля Front Door
       href: quickstart-create-front-door.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Добавление личного домена в службу Front Door
       href: front-door-custom-domain.md
@@ -46,6 +46,8 @@
       href: front-door-routing-methods.md
     - name: Переопределение URL-адреса
       href: front-door-url-rewrite.md
+    - name: Перенаправление URL-адреса
+      href: front-door-url-redirect.md
     - name: WAF
       items:
         - name: Обзор
@@ -56,8 +58,16 @@
           href: waf-front-door-policy-settings.md
         - name: Мониторинг и ведение журнала
           href: waf-front-door-monitor.md
-- name: Практические руководства
+- name: Руководства
   items:
+    - name: Перенаправление трафика
+      items:
+        - name: Настройка Front Door Service с помощью перенаправления с HTTP на HTTPS
+          href: front-door-how-to-redirect-https.md
+    - name: Подключение личных доменов
+      items:
+        - name: Подключение корневого или вершинного домена
+          href: front-door-how-to-onboard-apex-domain.md
     - name: Устранение неполадок
       items:
         - name: Устранение проблем с маршрутизацией
@@ -78,7 +88,7 @@
           href: waf-front-door-configure-ip-restriction.md
         - name: "Настройка ограничения скорости\_— Azure PowerShell"
           href: waf-front-door-rate-limit-powershell.md
-- name: Вопросы и ответы
+- name: Часто задаваемые вопросы
   items:
     - name: Часто задаваемые вопросы о службе Front Door
       href: front-door-faq.md
@@ -90,7 +100,7 @@
       href: /cli/azure/ext/front-door/
     - name: Azure PowerShell
       href: /powershell/module/az.frontdoor
-    - name: "REST\_API"
+    - name: REST API
       href: /rest/api/frontdoor
 - name: Ресурсы
   items:

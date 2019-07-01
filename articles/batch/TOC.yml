@@ -15,7 +15,7 @@
       href: quick-run-dotnet.md
     - name: Выполнение пакетного задания — Python
       href: quick-run-python.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Параллельная обработка файлов — .NET
       href: tutorial-parallel-dotnet.md
@@ -27,6 +27,8 @@
       href: tutorial-rendering-batchexplorer-blender.md
     - name: Параллельное моделирование на R
       href: tutorial-r-doazureparallel.md
+    - name: Распознавание текста с помощью пакетной службы и Функций Azure
+      href: tutorial-batch-functions.md
 - name: Примеры
   items:
     - name: Примеры кода
@@ -35,7 +37,7 @@
           href: 'https://azure.microsoft.com/resources/samples/?service=batch'
         - name: Репозиторий образцов пакетной службы
           href: 'https://github.com/Azure/azure-batch-samples'
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: cli-samples.md
 - name: Основные понятия
   items:
@@ -47,11 +49,11 @@
       href: batch-quota-limit.md
     - name: Поддерживаемые размеры виртуальных машин
       href: batch-pool-vm-sizes.md
-    - name: Высокий уровень доступности и аварийное восстановление
+    - name: Высокая доступность и аварийное восстановление
       href: high-availability-disaster-recovery.md
     - name: Переменные среды выполнения задания
       href: batch-compute-node-environment-variables.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Управление учетными записями пакетной службы
       items:
@@ -158,7 +160,7 @@
           href: batch-rendering-storage-data-movement.md
         - name: Архитектура для рендеринга
           href: batch-rendering-architectures.md
-    - name: Обработка данных с помощью пакетной службы и фабрики данных
+    - name: Обработка данных с помощью пакетной службы и Фабрики данных
       href: ../data-factory/transform-data-using-dotnet-custom-activity.md?toc=%2fazure%2fbatch%2ftoc.json
 - name: Справочные материалы
   items:

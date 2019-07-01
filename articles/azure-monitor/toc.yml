@@ -31,7 +31,7 @@
           href: learn/quick-collect-linux-computer.md
         - name: "Сбор данных\_— компьютер Windows"
           href: learn/quick-collect-windows-computer.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Журналы
       items:
@@ -53,7 +53,7 @@
           href: learn/tutorial-alert.md
         - name: Общие сведения о пользователях приложения
           href: learn/tutorial-users.md
-        - name: Создание настраиваемых панелей мониторинга
+        - name: Создание пользовательских панелей мониторинга
           href: learn/tutorial-app-dashboards.md
         - name: Application Insights
     - name: Архивация данных журнала и метрики платформы
@@ -84,11 +84,11 @@
           href: platform/data-platform-logs.md
         - name: Время приема данных журналов
           href: platform/data-ingestion-time.md
-    - name: Аналитические сведения
+    - name: Аналитика
       href: insights/insights-overview.md
     - name: Решения для мониторинга
       href: insights/solutions-inventory.md
-    - name: Защита данных
+    - name: Безопасность данных
       items:
         - name: Данные журнала
           href: platform/data-security.md
@@ -124,7 +124,7 @@
       href: platform/partners.md
     - name: Прекращение поддержки портала OMS
       href: platform/oms-portal-transition.md
-    - name: Вопросы и ответы
+    - name: Часто задаваемые вопросы
       items:
         - name: Анализ журналов
           href: platform/log-faq.md
@@ -182,7 +182,7 @@
                   href: platform/activity-log-collect.md
                 - name: Сбор данных для всех клиентов
                   href: platform/activity-log-collect-tenants.md
-                - name: экспорт.
+                - name: Экспорт
                   href: platform/activity-log-export.md
                 - name: Схема
                   href: platform/activity-log-schema.md
@@ -435,7 +435,7 @@
                   href: app/proactive-trace-severity.md
                 - name: Объем исключений
                   href: app/proactive-exception-volume.md
-                - name: Утечка памяти
+                - name: Утечки памяти
                   href: app/proactive-potential-memory-leak.md
                 - name: Использование ресурсов
                   href: app/proactive-low-utilization-cloud-resources.md
@@ -447,6 +447,18 @@
                   href: app/proactive-arm-config.md
                 - name: Уведомление по электронной почте
                   href: app/proactive-email-notification.md
+            - name: Доступность
+              items:
+                - name: Тесты URL-адресов
+                  href: app/monitor-web-app-availability.md
+                - name: Многошаговые тесты
+                  href: app/availability-multistep.md
+                - name: Оповещения о доступности
+                  href: app/availability-alerts.md
+                - name: Устранение неполадок
+                  href: app/troubleshoot-availability.md
+            - name: Тестирование производительности
+              href: app/performance-testing.md
             - name: Создание ресурса
               href: app/create-new-resource.md
             - name: Отправка данных приложения в службу анализа журналов
@@ -459,7 +471,7 @@
                   href: ../application-insights/app-insights-troubleshoot-snapshot-debugger.md
                 - name: Java
                   href: app/java-troubleshoot.md
-                - name: Аналитика потребления
+                - name: Аналитика использования
                   href: app/usage-troubleshoot.md
         - name: Сбор пользовательских данных
           items:
@@ -475,7 +487,7 @@
               href: platform/collect-custom-metrics-linux-telegraf.md
         - name: System Center
           items:
-            - name: Configuration Manager
+            - name: Диспетчер конфигураций
               href: platform/collect-sccm.md
     - name: Получение полезных сведений
       items:
@@ -495,7 +507,7 @@
                   href: app/diagnostic-search.md
                 - name: Метрики
                   href: app/metrics-explorer.md
-                - name: Live Stream
+                - name: Прямая трансляция
                   href: app/live-stream.md
                 - name: Схема приложений
                   href: app/app-map.md
@@ -505,13 +517,13 @@
                   href: app/hockeyapp-bridge-app.md
             - name: Visual Studio
               items:
-                - name: Аналитические сведения F5
+                - name: Предупреждения при нажатии F5
                   href: app/visual-studio.md
                 - name: Тренды
                   href: app/visual-studio-trends.md
                 - name: CodeLens
                   href: app/visual-studio-codelens.md
-            - name: Потребление
+            - name: Использование
               items:
                 - name: Обзор
                   href: app/usage-overview.md
@@ -525,7 +537,7 @@
                   href: app/usage-cohorts.md
                 - name: Влияние
                   href: app/usage-impact.md
-                - name: Период удержания
+                - name: Сохранение
                   href: app/usage-retention.md
                 - name: Маршруты пользователей
                   href: app/usage-flows.md
@@ -554,6 +566,8 @@
                       href: insights/container-insights-enable-existing-clusters.md
                 - name: Анализ
                   href: insights/container-insights-analyze.md
+                - name: Настройка параметров сбора агента
+                  href: insights/container-insights-agent-config.md
                 - name: Отключение мониторинга
                   href: insights/container-insights-optout.md
                 - name: Просмотр динамических журналов
@@ -691,7 +705,7 @@
             - name: Обзор запросов к журналу
               displayname: 'log query, log queries, query, queries'
               href: log-query/log-query-overview.md
-            - name: Руководства
+            - name: Учебники
               items:
                 - name: Руководство по Log Analytics
                   href: log-query/get-started-portal.md
@@ -717,7 +731,7 @@
                   href: log-query/useful-operators.md
                 - name: Переход с поиска по журналам
                   href: log-query/log-search-transition.md
-                - name: Уроки
+                - name: Занятия
                   items:
                     - name: Операции со строками
                       href: log-query/string-operations.md
@@ -767,7 +781,7 @@
               href: platform/computer-groups.md
             - name: Соединитель для Flow
               href: platform/flow-tutorial.md
-    - name: Визуализация данных
+    - name: Визуализируйте данные
       items:
         - name: Представления
           items:
@@ -795,8 +809,6 @@
           items:
             - name: Правила генерации оповещений приложения
               items:
-                - name: Доступность
-                  href: app/monitor-web-app-availability.md
                 - name: Оповещения о метриках
                   href: app/alerts.md
             - name: Правила генерации оповещений метрик платформы
@@ -927,7 +939,7 @@
                   href: app/powershell.md
                 - name: Создание ресурсов
                   href: app/powershell-script-create-resource.md
-                - name: Настройка оповещений
+                - name: Задание предупреждений
                   href: app/powershell-alerts.md
                 - name: Получение данных диагностики Azure
                   href: app/powershell-azure-diagnostics.md
@@ -983,7 +995,7 @@
               href: platform/runbook-datacollect.md
 - name: Справочные материалы
   items:
-    - name: Ограничения служб
+    - name: Ограничения службы
       href: service-limits.md
     - name: Application Insights
       items:
@@ -1088,7 +1100,7 @@
       href: 'https://www.microsoft.com/en-us/WindowsForBusiness/windows-analytics'
     - name: Доступ по регионам
       href: 'https://azure.microsoft.com/regions/services/'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=monitor'
     - name: Шаблоны быстрого запуска
       href: 'https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Insights'

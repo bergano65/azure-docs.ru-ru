@@ -25,6 +25,8 @@
           href: howto-create-tenant.md
         - name: "Создание объекта приложения и пользователя Azure\_AD"
           href: howto-aad-app-configuration.md
+    - name: Развертывание изолированного экземпляра Prometheus в кластере Azure Red Hat OpenShift
+      href: howto-deploy-prometheus.md
 - name: Справочные материалы
   items:
     - name: Интерфейс командной строки Azure Red Hat OpenShift

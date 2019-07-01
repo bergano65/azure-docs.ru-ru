@@ -9,20 +9,20 @@ metadata:
   ms.author: mamccrea
   ms.service: stream-analytics
   ms.topic: landing-page
-  ms.date: 05/08/2019
+  ms.date: 06/21/2019
 abstract:
-  description: "Stream Analytics\_— это полностью управляемый бессерверный модуль обработки событий для анализа потоков данных, поступающих из приложений и с устройств Интернета вещей, в реальном времени. Узнайте, как использовать Azure Stream Analytics, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами."
+  description: "Stream Analytics\_— это полностью управляемая служба PaaS, которая позволяет анализировать и обрабатывать стремительно перемещающиеся потоки данных с устройств Интернета вещей и из приложений, сведения о посещениях и\_т.\_д. в режиме реального времени, а также при необходимости активировать оповещения и действия. Узнайте, как использовать Azure Stream Analytics, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами."
   aside:
     image:
       alt: null
       height: 110
       src: ./media/index/streaming-analytics-thumbnail.png
       width: 250
-    title: 'Аналитика в реальном времени и машинное обучение с помощью Azure Stream Analytics (1:15:05)'
-    href: 'https://myignite.techcommunity.microsoft.com/sessions/65358?source=sessions#ignite-html-anchor'
+    title: "Azure Stream Analytics помогает принимать решения в реальном времени, откуда бы ни поступали данные\_— из облака или с интеллектуальных пограничных устройств. (1:02:11)"
+    href: 'https://azure.microsoft.com/resources/videos/build-2019-from-cloud-to-the-intelligent-edge-drive-real-time-decisions-with-azure-stream-analytics/'
     width: 250
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Сведения о развертывании задания Azure Stream Analytics:'
@@ -45,7 +45,7 @@ sections:
               src: 'https://docs.microsoft.com/media/logos/logo_vs-code.svg'
             text: Visual Studio Code
             href: 'https://docs.microsoft.com/azure/stream-analytics/quick-create-vs-code'
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Сведения о развертывании, администрировании и мониторинге задания Azure Stream Analytics:'
@@ -70,4 +70,4 @@ sections:
           - title: Языки
             html: '<p><a href="/dotnet/api/microsoft.azure.management.streamanalytics?view=azuremgmtstreamanalytics-1.8.3">.NET</a></p><p><a href="https://msdn.microsoft.com/azure/stream-analytics/reference/stream-analytics-query-language-reference">Язык запросов Stream Analytics</a></p>'
           - title: REST
-            html: <p><a href="/rest/api/streamanalytics">справочник по API REST</a></p>
+            html: <p><a href="/rest/api/streamanalytics">Справочник по REST API</a></p>

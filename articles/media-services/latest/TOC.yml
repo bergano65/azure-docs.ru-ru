@@ -223,6 +223,14 @@
             - name: С помощью REST
               displayName: 'encode, encoding, custom, transform'
               href: custom-preset-rest-howto.md
+        - name: Создание субклипа из видео
+          items:
+            - name: С помощью .NET
+              href: subclip-video-dotnet-howto.md
+              displayName: 'subclipping, clip, edit, trim, clipping'
+            - name: С помощью REST
+              href: subclip-video-rest-howto.md
+              displayName: 'subclipping, clip, edit, trim, clipping'
     - name: Использование Сетки событий
       items:
         - name: Мониторинг событий (портал)

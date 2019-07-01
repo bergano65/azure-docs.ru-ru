@@ -14,7 +14,7 @@
       href: azure-portal-dashboard-share-access.md
     - name: Создание панелей мониторинга Azure программными средствами
       href: azure-portal-dashboards-create-programmatically.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Включение режима высокой контрастности или изменение темы
       href: azure-portal-change-theme-high-contrast.md
@@ -30,6 +30,8 @@
   items:
     - name: Сочетания клавиш
       href: azure-portal-keyboard-shortcuts.md
+    - name: Добавление URL-адресов портала Azure в список надежных адресов
+      href: azure-portal-safelist-urls.md
     - name: Структура панелей мониторинга Azure
       href: azure-portal-dashboards-structure.md
 - name: Ресурсы
@@ -40,9 +42,9 @@
       href: /learn/browse/?products=azure-portal
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-management-portal'
     - name: Видео по Azure
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=azure-portal&sort=newest'

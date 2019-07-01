@@ -13,7 +13,7 @@
       href: quickstart-create-logic-apps-with-visual-studio.md
     - name: "Создание приложений логики\_в Visual Studio Code"
       href: quickstart-create-logic-apps-visual-studio-code.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Регулярная проверка трафика
       href: tutorial-build-schedule-recurring-logic-app-workflow.md
@@ -33,7 +33,7 @@
       href: logic-apps-enterprise-integration-overview.md
     - name: Доступ к виртуальным сетям Azure
       href: connect-virtual-network-vnet-isolated-environment-overview.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Разработка
       items:
@@ -120,6 +120,8 @@
               href: logic-apps-enterprise-integration-edifact-decode.md
             - name: Обработка файлов EDIFACT с использованием сегмента UNH2.5
               href: logic-apps-enterprise-integration-edifact_inputfile_unh2.5.md
+        - name: Обмен сообщениями RosettaNet
+          href: logic-apps-enterprise-integration-rosettanet.md
         - name: Обмен сообщениями X12
           href: logic-apps-enterprise-integration-x12.md
           items:
@@ -169,9 +171,9 @@
           href: logic-apps-azure-functions.md
         - name: Azure Logic Apps
           href: logic-apps-http-endpoint.md
-        - name: Azure Service Bus
+        - name: Служебная шина Azure
           href: ../connectors/connectors-create-api-servicebus.md
-        - name: База данных SQL Azure
+        - name: Базы данных SQL Azure
           href: ../connectors/connectors-create-api-sqlazure.md
         - name: Поиск Bing
           href: ../connectors/connectors-create-api-bingsearch.md
@@ -217,7 +219,7 @@
           href: logic-apps-enterprise-integration-metadata.md
         - name: MailChimp
           href: ../connectors/connectors-create-api-mailchimp.md
-        - name: API безопасности Microsoft Graph
+        - name: Безопасность Microsoft Graph
           href: ../connectors/connectors-integrate-security-operations-create-api-microsoft-graph-security.md
         - name: Microsoft Translator
           href: ../connectors/connectors-create-api-microsofttranslator.md
@@ -233,7 +235,7 @@
           href: ../connectors/connectors-create-api-onedrive.md
         - name: OneDrive для бизнеса
           href: ../connectors/connectors-create-api-onedriveforbusiness.md
-        - name: База данных Oracle
+        - name: Oracle Database
           href: ../connectors/connectors-create-api-oracledatabase.md
         - name: Outlook.com
           href: ../connectors/connectors-create-api-outlook.md
@@ -243,13 +245,15 @@
           href: ../connectors/connectors-native-recurrence.md
         - name: Запрос и ответ
           href: ../connectors/connectors-native-reqres.md
+        - name: RosettaNet
+          href: logic-apps-enterprise-integration-rosettanet.md
         - name: RSS
           href: ../connectors/connectors-create-api-rss.md
         - name: Salesforce
           href: ../connectors/connectors-create-api-salesforce.md
         - name: SAP (новая версия)
           href: logic-apps-using-sap-connector.md
-        - name: Протокол SAP
+        - name: SAP
           href: logic-apps-using-sap-connector-old.md
         - name: SendGrid
           href: ../connectors/connectors-create-api-sendgrid.md
@@ -265,7 +269,7 @@
           href: ../connectors/connectors-native-sliding-window.md
         - name: SMTP
           href: ../connectors/connectors-create-api-smtp.md
-        - name: "SQL\_Server"
+        - name: SQL Server
           href: ../connectors/connectors-create-api-sqlazure.md
         - name: Преобразование XML
           href: logic-apps-enterprise-integration-transform.md
