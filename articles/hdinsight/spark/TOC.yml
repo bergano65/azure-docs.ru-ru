@@ -40,8 +40,6 @@
       href: ../hdinsight-sdk-python-samples.md
 - name: Основные понятия
   items:
-    - name: Использование IntelliJ для выполнения запросов Apache Spark
-      href: apache-spark-intellij-tool-plugin.md
     - name: Использование VSCode для выполнения запросов Apache Spark
       href: ../hdinsight-for-vscode.md
     - name: Компоненты Apache Hadoop в HDInsight

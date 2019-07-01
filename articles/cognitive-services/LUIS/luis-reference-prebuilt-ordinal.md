@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 06/25/2019
 ms.author: diberry
-ms.openlocfilehash: 752a26b21854ec9030fc1945024ae461445815a9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 16529c8334ae9f2eed5715abb22dcbcdbebec7c4
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65146714"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67485115"
 ---
 # <a name="ordinal-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность ordinal для приложения LUIS
 Порядковый номер — это числовое представление объекта внутри набора: `first`, `second`, `third`. Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие сущности ordinal, не нужно. Сущность ordinal поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md). 
@@ -130,4 +130,4 @@ ms.locfileid: "65146714"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о [процент](luis-reference-prebuilt-percentage.md), [номер телефона](luis-reference-prebuilt-phonenumber.md), и [температуры](luis-reference-prebuilt-temperature.md) сущностей. 
+Дополнительные сведения о [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md), [номер телефона](luis-reference-prebuilt-phonenumber.md), и [температуры](luis-reference-prebuilt-temperature.md) сущностей. 
