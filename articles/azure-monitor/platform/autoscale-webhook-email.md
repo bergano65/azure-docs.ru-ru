@@ -10,7 +10,7 @@ ms.author: ancav
 ms.subservice: autoscale
 ms.openlocfilehash: 25ef2541dfa0b4cbd6e11d64381da645acfe653a
 ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "60787313"
@@ -115,7 +115,7 @@ ms.locfileid: "60787313"
 | subscriptionId |Да |Идентификатор подписки для масштабируемого целевого ресурса |
 | resourceGroupName |Да |Имя группы ресурсов для масштабируемого целевого ресурса |
 | resourceName |Да |Имя масштабируемого целевого ресурса |
-| resourceType |Да |Поддерживается три значения: "microsoft.classiccompute/domainnames/slots/roles" — роли облачной службы, "microsoft.compute/virtualmachinescalesets" — наборы для масштабирования виртуальных машин и "Microsoft.Web/serverfarms" — веб-приложение |
+| тип_ресурса |Да |Поддерживается три значения: "microsoft.classiccompute/domainnames/slots/roles" — роли облачной службы, "microsoft.compute/virtualmachinescalesets" — наборы для масштабирования виртуальных машин и "Microsoft.Web/serverfarms" — веб-приложение |
 | resourceId |Да |Идентификатор Resource Manager для масштабируемого целевого ресурса |
 | portalLink |Да |Ссылка на страницу сводки целевого ресурса на портале Azure |
 | oldCapacity |Да |Текущее (старое) число экземпляров, когда автомасштабирование предпринимает действие масштабирования |
