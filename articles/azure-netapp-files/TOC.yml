@@ -19,12 +19,20 @@
       href: azure-netapp-files-resource-limits.md
     - name: Метрики для Azure NetApp Files
       href: azure-netapp-files-metrics.md
-    - name: Тесты производительности для Azure NetApp Files
-      href: azure-netapp-files-performance-benchmarks.md
+    - name: Производительность
+      items:
+        - name: Тесты производительности для Azure NetApp Files
+          href: azure-netapp-files-performance-benchmarks.md
+        - name: Рекомендации по ускорению Azure NetApp Files
+          href: azure-netapp-files-performance-considerations.md
+        - name: Тестирование для определения метрик и производительности тома с использованием Azure NetApp Files
+          href: azure-netapp-files-performance-metrics-volumes.md
     - name: Модель затрат для Azure NetApp Files
       href: azure-netapp-files-cost-model.md
     - name: Рекомендации по планированию сети Azure NetApp Files
       href: azure-netapp-files-network-topologies.md
+    - name: 'Архитектура решений, использующих Azure NetApp Files'
+      href: azure-netapp-files-solution-architectures.md
     - name: Вопросы и ответы об Azure NetApp Files
       href: azure-netapp-files-faqs.md
 - name: Практические руководства

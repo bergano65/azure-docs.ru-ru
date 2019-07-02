@@ -2,7 +2,7 @@
 documentType: LandingData
 title: Документация по Распознавателю документов
 metadata:
-  title: "Документация по API. Распознаватель документов в Azure Cognitive Services\_| Документация Майкрософт"
+  title: "Документация по API Распознавателя документов в Azure Cognitive Services\_| Документация Майкрософт"
   description: "Сведения об использовании Распознавателя документов для интеллектуального извлечения данных пар \"ключ\_— значение\" из ваших документов формы."
   services: cognitive-services
   author: PatrickFarley
@@ -43,6 +43,11 @@ sections:
             image:
               src: ../media/index/i_get-started.svg
             title: Установка и запуск контейнеров
+          - href: /azure/cognitive-services/form-recognizer/build-training-data-set
+            html: '<p>Создание набора данных, оптимизированного для обучения пользовательской модели.</p>'
+            image:
+              src: ../media/index/i_overview.svg
+            title: Создание набора данных для обучения
   - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
@@ -64,9 +69,9 @@ sections:
         style: cards
         className: cardsD
         items:
-          - title: API
+          - title: Программные интерфейсы
             html: '<p><a href="https://aka.ms/form-recognizer/api">API Распознавателя документов</a></p>'
           - title: PowerShell
             html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
           - title: CLI
-            html: "<p><a href=\"https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list\">Azure\_CLI</a></p>"
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list">Azure CLI</a></p>'

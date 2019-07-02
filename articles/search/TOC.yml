@@ -16,20 +16,14 @@
         - name: Расширение возможностей с помощью ИИ (когнитивный поиск)
           href: cognitive-search-quickstart-blob.md
     - name: 'C#'
-      items:
-        - name: "1.\_Создание индекса"
-          href: search-create-index-dotnet.md
-        - name: "2.\_Загрузка данных"
-          href: search-import-data-dotnet.md
-        - name: "3.\_Поиск в индексе"
-          href: search-query-dotnet.md
+      href: search-get-started-dotnet.md
     - name: Postman
-      href: search-fiddler.md
+      href: search-get-started-postman.md
     - name: PowerShell
-      href: search-create-index-rest-api.md
+      href: search-get-started-powershell.md
     - name: Python
       href: search-get-started-python.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Создание первого приложения
       items:
@@ -39,10 +33,16 @@
           href: tutorial-csharp-paging.md
         - name: "3.\_ Добавление упреждающего ввода"
           href: tutorial-csharp-type-ahead-and-suggestions.md
+        - name: 4. Добавление аспектов
+          href: tutorial-csharp-facets.md
+        - name: "5.\_Добавление упорядочивания результатов"
+          href: tutorial-csharp-orders.md
     - name: Индексирование в Базе данных SQL Azure
       href: search-indexer-tutorial.md
     - name: Индексация больших двоичных объектов JSON в Azure
       href: search-semi-structured-data.md
+    - name: Индексирование нескольких источников данных Azure
+      href: tutorial-multiple-data-sources.md
     - name: Расширение возможностей с помощью ИИ (когнитивный поиск)
       items:
         - name: 'C#'

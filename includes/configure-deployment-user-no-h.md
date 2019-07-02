@@ -5,19 +5,19 @@ services: app-service
 author: cephalin
 ms.service: app-service
 ms.topic: include
-ms.date: 02/02/2018
+ms.date: 06/14/2019
 ms.author: cephalin
 ms.custom: include file
-ms.openlocfilehash: cd7fc7487a41979f37c9a55baeb0b8e172e808c4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ebea8bfd69a4df605142ab82f3efbc7d97d34529
+ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66133171"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67143975"
 ---
-В Azure Cloud Shell настройте учетные данные развертывания с помощью команды [`az webapp deployment user set`](/cli/azure/webapp/deployment/user?view=azure-cli-latest#az-webapp-deployment-user-set). Пользователь развертывания необходим для развертывания FTP и локального репозитория Git в веб-приложении. Имя пользователя и пароль представляют уровень учетной записи. _Они отличаются от учетных данных подписки Azure._
+В Azure Cloud Shell настройте учетные данные развертывания с помощью команды [`az webapp deployment user set`](/cli/azure/webapp/deployment/user?view=azure-cli-latest#az-webapp-deployment-user-set). Эти учетные данные пользователя развертывания вы будете использовать для развертывания FTP и локального репозитория Git в веб-приложении. Имя пользователя и пароль представляют уровень учетной записи. _Они отличаются от учетных данных подписки Azure._
 
-В следующем примере замените *\<имя_пользователя>* и *\<пароль>* (включая скобки) новым именем пользователя и паролем. Имя пользователя должно быть уникальным в пределах Azure. Пароль должен содержать не менее восьми символов и включать два из трех следующих элементов: буквы, цифры и символы. 
+В следующем примере замените *\<имя_пользователя>* и *\<пароль>* (включая скобки) новым именем пользователя и паролем. Имя пользователя должно быть уникальным в пределах Azure. Пароль должен содержать не менее восьми символов и включать два из трех следующих элементов: буквы, цифры и символы.
 
 ```azurecli-interactive
 az webapp deployment user set --user-name <username> --password <password>

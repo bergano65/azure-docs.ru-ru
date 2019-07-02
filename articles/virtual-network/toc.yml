@@ -13,7 +13,7 @@
       href: quick-create-powershell.md
     - name: Создание виртуальной сети — Azure CLI
       href: quick-create-cli.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Фильтрация сетевого трафика
       href: tutorial-filter-network-traffic.md
@@ -25,7 +25,7 @@
       href: tutorial-connect-virtual-networks-portal.md
 - name: Примеры
   items:
-    - name: "Azure\_CLI"
+    - name: Azure CLI
       href: cli-samples.md
     - name: Azure PowerShell
       href: powershell-samples.md
@@ -69,7 +69,7 @@
           href: ../networking/connectivty-interoperability-preface.md?toc=%2fazure%2fvirtual-network%2ftoc.json
         - name: Параметры конфигурации для настройки теста
           href: ../networking/connectivty-interoperability-configuration.md?toc=%2fazure%2fvirtual-network%2ftoc.json
-        - name: Анализ в плоскости управления
+        - name: Анализ на уровне управления
           href: ../networking/connectivty-interoperability-control-plane.md?toc=%2fazure%2fvirtual-network%2ftoc.json
         - name: Анализ на уровне данных
           href: ../networking/connectivty-interoperability-data-plane.md?toc=%2fazure%2fvirtual-network%2ftoc.json
@@ -81,7 +81,7 @@
           href: virtual-network-ip-addresses-overview-classic.md
         - name: Доступ к спискам управления
           href: virtual-networks-acl.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: План
       items:
@@ -95,7 +95,7 @@
           items:
             - name: Azure PowerShell
               href: virtual-network-ipv4-ipv6-dual-stack-powershell.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: virtual-network-ipv4-ipv6-dual-stack-cli.md
             - name: Шаблон Resource Manager
               href: ipv6-configure-template-json.md
@@ -103,13 +103,13 @@
           items:
             - name: Azure PowerShell
               href: tutorial-filter-network-traffic-powershell.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: tutorial-filter-network-traffic-cli.md
         - name: Таблицы маршрутов
           items:
             - name: Azure PowerShell
               href: tutorial-create-route-table-powershell.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: tutorial-create-route-table-cli.md
             - name: Ansible
               href: /azure/ansible/ansible-create-configure-route-table
@@ -118,7 +118,7 @@
           items:
             - name: Azure PowerShell
               href: tutorial-restrict-network-access-to-resources-powershell.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: tutorial-restrict-network-access-to-resources-cli.md
         - name: 'Политики конечной точки службы: портал'
           href: virtual-network-service-endpoint-policies-portal.md
@@ -128,7 +128,7 @@
               items:
                 - name: Azure PowerShell
                   href: tutorial-connect-virtual-networks-powershell.md
-                - name: Инфраструктура CLI Azure
+                - name: Azure CLI
                   href: tutorial-connect-virtual-networks-cli.md
             - name: Одна модель развертывания — разные подписки
               href: create-peering-different-subscriptions.md
@@ -138,7 +138,7 @@
               href: create-peering-different-deployment-models-subscriptions.md
         - name: TAP виртуальной сети
           items:
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: tutorial-tap-virtual-network-cli.md
         - name: Работа с контейнерами в сети
           href: deploy-container-networking.md
@@ -150,23 +150,23 @@
                   href: virtual-network-deploy-static-pip-arm-portal.md
                 - name: Azure PowerShell
                   href: virtual-network-deploy-static-pip-arm-ps.md
-                - name: Инфраструктура CLI Azure
+                - name: Azure CLI
                   href: virtual-network-deploy-static-pip-arm-cli.md
             - name: Добавление общедоступного IP-адреса к существующей виртуальной машине
               href: associate-public-ip-address-vm.md
-            - name: Создание виртуальной машины. Статический частный IP-адрес
+            - name: Создание виртуальной машины (статический частный IP-адрес)
               items:
                 - name: Портал Azure
                   href: virtual-networks-static-private-ip-arm-pportal.md
                 - name: Azure PowerShell
                   href: virtual-networks-static-private-ip-arm-ps.md
-                - name: Инфраструктура CLI Azure
+                - name: Azure CLI
                   href: virtual-networks-static-private-ip-arm-cli.md
-            - name: Создание виртуальной машины. Несколько сетевых интерфейсов
+            - name: Создание виртуальной машины (несколько сетевых интерфейсов)
               items:
                 - name: Azure PowerShell
                   href: ../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json
-                - name: Инфраструктура CLI Azure
+                - name: Azure CLI
                   href: ../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json
             - name: Создание виртуальной машины. Несколько IP-адресов
               items:
@@ -174,13 +174,13 @@
                   href: virtual-network-multiple-ip-addresses-portal.md
                 - name: Azure PowerShell
                   href: virtual-network-multiple-ip-addresses-powershell.md
-                - name: Инфраструктура CLI Azure
+                - name: Azure CLI
                   href: virtual-network-multiple-ip-addresses-cli.md
             - name: Создание виртуальной машины. Ускоренная сеть
               items:
                 - name: Azure PowerShell
                   href: create-vm-accelerated-networking-powershell.md
-                - name: Инфраструктура CLI Azure
+                - name: Azure CLI
                   href: create-vm-accelerated-networking-cli.md
                   items:
                     - name: Установка набора DPDK
@@ -269,14 +269,14 @@
       items:
         - name: Создание виртуальной сети и управление ею
           items:
-            - name: Создать виртуальную сеть
+            - name: Создание виртуальной сети
               href: create-virtual-network-classic.md
               items:
                 - name: Портал Azure
                   href: virtual-networks-create-vnet-classic-pportal.md
                 - name: Azure PowerShell
                   href: virtual-networks-create-vnet-classic-netcfg-ps.md
-                - name: Инфраструктура CLI Azure
+                - name: Azure CLI
                   href: virtual-networks-create-vnet-classic-cli.md
             - name: Указание параметров DNS в файле конфигурации виртуальной сети
               href: virtual-networks-specifying-a-dns-settings-in-a-virtual-network-configuration-file.md
@@ -298,17 +298,17 @@
           items:
             - name: Azure PowerShell
               href: virtual-network-create-udr-classic-ps.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: virtual-network-create-udr-classic-cli.md
         - name: Сетевые подключения виртуальных машин
           items:
-            - name: Создание виртуальной машины. Несколько сетевых интерфейсов
+            - name: Создание виртуальной машины (несколько сетевых интерфейсов)
               items:
                 - name: Azure PowerShell
                   href: virtual-network-deploy-multinic-classic-ps.md
-                - name: Инфраструктура CLI Azure
+                - name: Azure CLI
                   href: virtual-network-deploy-multinic-classic-cli.md
-            - name: Создание виртуальной машины. Статический частный IP-адрес
+            - name: Создание виртуальной машины (статический частный IP-адрес)
               href: virtual-networks-reserved-public-ip.md
             - name: Управление
               items:
@@ -316,7 +316,7 @@
                   items:
                     - name: Azure PowerShell
                       href: virtual-networks-reserved-private-ip.md
-                    - name: Инфраструктура CLI Azure
+                    - name: Azure CLI
                       href: virtual-networks-static-private-ip-classic-cli.md
                 - name: Общие сведения об общедоступных IP-адресах уровня экземпляра
                   href: virtual-networks-instance-level-public-ip.md
@@ -363,6 +363,8 @@
       href: 'https://azure.microsoft.com/blog/topics/networking'
     - name: Форум по сетям
       href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=WAVirtualMachinesVirtualNetwork'
+    - name: Отзыв о работе сети
+      href: 'https://feedback.azure.com/forums/217313-networking?category_id=77469'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/virtual-network'
     - name: Калькулятор цен

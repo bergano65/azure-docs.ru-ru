@@ -6,10 +6,15 @@
       href: ./apache-interactive-query-get-started.md
       maintainContext: true
 - name: Краткие руководства
+  expanded: true
   items:
     - name: "Выполнение запросов Apache Hive\_— Apache Zeppelin"
       href: ./hdinsight-connect-hive-zeppelin.md
-- name: Начало работы
+- name: Учебники
+  items:
+    - name: Анализ данных с помощью интерактивного запроса
+      href: ./interactive-query-tutorial-analyze-flight-data.md
+- name: Основные понятия
   items:
     - name: Установка приложений HDInsight
       href: ../hdinsight-apps-install-applications.md
@@ -104,9 +109,6 @@
           maintainContext: true
         - name: Анализ сохраненных твитов
           href: ../hdinsight-analyze-twitter-data-linux.md
-          maintainContext: true
-        - name: Анализ данных о задержке рейсов
-          href: ../hdinsight-analyze-flight-delay-data-linux.md
           maintainContext: true
     - name: Расширение кластеров
       items:
@@ -246,9 +248,6 @@
         - name: Обновление ОС путем частичной замены для кластера HDInsight
           href: ../hdinsight-os-patching.md
           maintainContext: true
-        - name: "Перенос рабочих нагрузок Hive в HDInsight\_4.0"
-          href: apache-hive-migrate-workloads.md
-          maintainContext: true
     - name: Устранение неполадок
       href: ../hdinsight-troubleshoot-guide.md
       maintainContext: true
@@ -334,6 +333,11 @@
         - name: Мониторинг производительности кластера
           href: ../hdinsight-key-scenarios-to-monitor.md
           maintainContext: true
+- name: Практическое руководство
+  items:
+    - name: "Перенос рабочих нагрузок Hive в HDInsight\_4.0"
+      href: apache-hive-migrate-workloads.md
+      maintainContext: true
 - name: Справочные материалы
   items:
     - name: Примеры кода

@@ -31,8 +31,10 @@
           href: ../aks/tutorial-kubernetes-prepare-app.md
 - name: Краткие руководства
   items:
-    - name: Создание учетной записи
+    - name: Создание учетной записи с использованием портала Azure
       href: cognitive-services-apis-create-account.md
+    - name: Создание учетной записи с помощью Azure CLI
+      href: cognitive-services-apis-create-account-cli.md
     - name: Аутентификация
       href: authentication.md
     - name: Ведение журнала диагностики

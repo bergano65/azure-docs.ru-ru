@@ -8,7 +8,7 @@
   items:
     - name: "Создание службы\_— портал"
       href: quickstart-create-data-migration-service-portal.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Миграция из SQL Server в Базу данных SQL Azure в автономном режиме
       href: tutorial-sql-server-to-azure-sql.md
@@ -34,7 +34,7 @@
       href: tutorial-mongodb-cosmos-db-online.md
     - name: Миграция Oracle в Базу данных Azure для PostgreSQL через Интернет
       href: tutorial-oracle-azure-postgresql-online.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Миграция с SQL Server в Базу данных SQL Azure с помощью PowerShell
       href: howto-sql-server-to-azure-sql-powershell.md
@@ -54,8 +54,10 @@
       href: pre-reqs.md
     - name: Сетевые топологии для миграции в Управляемый экземпляр Базы данных SQL Azure
       href: resource-network-topologies.md
-    - name: Известные проблемы
+    - name: Устранение неполадок и известные проблемы
       items:
+        - name: Устранение неполадок с подключением базы данных-источника
+          href: known-issues-troubleshooting-dms-source-connectivity.md
         - name: Устранение распространенных неполадок и ошибок
           href: known-issues-troubleshooting-dms.md
         - name: Известные проблемы при миграции в Базу данных SQL Azure через Интернет
@@ -86,7 +88,7 @@
       items:
         - name: Доступные службы и средства для сценариев переноса данных
           href: dms-tools-matrix.md
-        - name: Руководство по миграции баз данных
+        - name: Руководство по переносу баз данных
           href: 'https://aka.ms/datamigration'
         - name: Помощник по миграции данных
           href: 'https://aka.ms/dma'

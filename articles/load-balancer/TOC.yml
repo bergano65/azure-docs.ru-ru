@@ -21,7 +21,7 @@
     - name: Создание Load Balancer (цен. категория "Стандартный") с помощью шаблона Azure Resource Manager
       displayName: ARM
       href: quickstart-load-balancer-standard-public-template.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Балансировка интернет-трафика на виртуальных машинах
       href: tutorial-load-balancer-standard-manage-portal.md
@@ -35,7 +35,7 @@
       href: tutorial-load-balancer-port-forwarding-portal.md
 - name: Примеры
   items:
-    - name: "Azure\_CLI"
+    - name: Azure CLI
       href: cli-samples.md
     - name: Azure PowerShell
       href: powershell-samples.md
@@ -66,14 +66,14 @@
     - name: Создание избыточной в пределах зоны общедоступной службы Azure Load Balancer ценовой категории "Стандартный"
       href: load-balancer-get-started-internet-az-portal.md
       items:
-        - name: Создание избыточной в пределах зоны общедоступной службы Azure Load Balancer ценовой категории "Стандартный" (PowerShell)
+        - name: Создание избыточной в пределах зоны общедоступной службы Load Balancer (цен. категория "Стандартный") (PowerShell)
           href: load-balancer-get-started-internet-az-powershell.md
-        - name: Создание избыточной в пределах зоны общедоступной службы Azure Load Balancer ценовой категории "Стандартный" (CLI)
+        - name: Создание избыточной в пределах зоны общедоступной службы Load Balancer (цен. категория "Стандартный") (CLI)
           href: load-balancer-get-started-internet-az-cli.md
-    - name: Создание зональной общедоступной службы Azure Load Balancer ценовой категории "Стандартный"
+    - name: Создание зональной общедоступной службы Load Balancer (цен. категория "Стандартный")
       href: load-balancer-get-started-internet-availability-zones-zonal-portal.md
       items:
-        - name: Создание зональной общедоступной службы Azure Load Balancer ценовой категории "Стандартный" (PowerShell)
+        - name: Создание зональной общедоступной службы Load Balancer (цен. категория "Стандартный") (PowerShell)
           href: load-balancer-get-started-internet-availability-zones-zonal-powershell.md
         - name: Создание зональной общедоступной службы Azure Load Balancer ценовой категории "Стандартный" (CLI)
           href: load-balancer-get-started-internet-availability-zones-zonal-cli.md
@@ -188,6 +188,8 @@
       href: /learn/browse/?products=azure-virtual-machines
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=networking'
+    - name: Отзыв об Azure Load Balancer
+      href: 'https://feedback.azure.com/forums/217313-networking/category/77467-load-balancing'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/load-balancer/'
     - name: Калькулятор цен

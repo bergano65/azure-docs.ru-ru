@@ -53,7 +53,7 @@
       href: tutorial-secure-web-server.md
 - name: Примеры
   items:
-    - name: "Azure\_CLI"
+    - name: Azure CLI
       href: cli-samples.md
     - name: Azure PowerShell
       href: powershell-samples.md
@@ -274,13 +274,13 @@
           items:
             - name: Обзор
               href: image-builder-overview.md
-            - name: Использование CLI
+            - name: Использование Azure CLI
               href: image-builder.md
             - name: Справочник по шаблонам
               href: image-builder-json.md
-            - name: Использование с коллекциями
+            - name: Сборка для коллекций образов
               href: image-builder-gallery.md
-            - name: Обновление версии образа
+            - name: Обновление существующего образа
               href: image-builder-gallery-update-image-version.md
             - name: Устранение неполадок
               href: 'https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md'
@@ -548,7 +548,7 @@
               href: migration-classic-resource-manager-faq.md
 - name: Справочные материалы
   items:
-    - name: "Azure\_CLI"
+    - name: Azure CLI
       href: /cli/azure/vm
     - name: PowerShell
       href: /powershell/azureps-cmdlets-docs

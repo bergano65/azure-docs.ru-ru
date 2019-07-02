@@ -302,6 +302,8 @@
           href: luis-reference-prebuilt-number.md
         - name: Сущность Ordinal
           href: luis-reference-prebuilt-ordinal.md
+        - name: Сущность ordinal V2
+          href: luis-reference-prebuilt-ordinal-v2.md
         - name: Сущность percentage
           href: luis-reference-prebuilt-percentage.md
         - name: Сущность PersonName

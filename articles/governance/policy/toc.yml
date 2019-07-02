@@ -113,7 +113,7 @@
               href: samples/allow-certain-vm-image.md
     - name: Data Lake
       items:
-        - name: Требование шифрования данных для Data Lake Store
+        - name: Требование шифрования данных для Data Lake Storage
           displayName: deny
           href: samples/enforce-data-lake-store-encryption.md
     - name: Гостевая конфигурация
@@ -135,7 +135,7 @@
       items:
         - name: Сетевые интерфейсы
           items:
-            - name: NSG X на каждой сетевой карте
+            - name: Конкретная группа безопасности сети на каждой сетевой карте
               displayName: deny
               href: samples/nsg-on-nic.md
             - name: Использование утвержденной подсети для сетевых интерфейсов виртуальной машины
@@ -146,7 +146,7 @@
               href: samples/use-approved-vnet-vm-nics.md
         - name: Виртуальные сети
           items:
-            - name: Разрешенные SKU для шлюзов приложений
+            - name: Разрешенные SKU для шлюза приложений
               displayName: deny
               href: samples/allowed-app-gateway-sku.md
             - name: Допустимые номера SKU шлюза виртуальной сети
@@ -161,7 +161,7 @@
             - name: Запрет определяемой пользователем таблицы маршрутов
               displayName: 'deny, all'
               href: samples/no-user-defined-route-table.md
-            - name: NSG X для каждой подсети
+            - name: Конкретная группа безопасности сети для каждой подсети
               displayName: 'deny, all'
               href: samples/nsg-on-subnet.md
             - name: Использование утвержденной подсети для сетевых интерфейсов виртуальной машины
@@ -172,7 +172,7 @@
               href: samples/use-approved-vnet-vm-nics.md
         - name: Группы безопасности сети
           items:
-            - name: NSG X на каждой сетевой карте
+            - name: Конкретная группа безопасности сети на каждой сетевой карте
               displayName: deny
               href: samples/nsg-on-nic.md
             - name: NSG X для каждой подсети
@@ -215,7 +215,7 @@
             - name: Аудит параметров аудита уровня SQL Server
               displayName: auditIfNotExists
               href: samples/audit-sql-server-audit-setting.md
-            - name: "Требование наличия SQL Server версии\_12.0"
+            - name: Требование наличия SQL Server версии 12.0
               displayName: 'deny, builtin'
               href: samples/require-sql-12.md
         - name: Базы данных SQL
@@ -232,12 +232,12 @@
             - name: Аудит параметров аудита уровня базы данных SQL
               displayName: auditIfNotExists
               href: samples/audit-sql-db-audit-setting.md
-    - name: Хранилище
+    - name: Служба хранилища
       items:
         - name: Допустимые номера SKU для учетной записи хранения и виртуальных машин
           displayName: 'initiative, vmSKUs, storageSKUs'
           href: samples/allowed-skus-storage.md
-        - name: Разрешенные номера SKU учетных записей хранения
+        - name: Допустимые номера SKU учетных записей хранения
           displayName: 'deny, builtin, storageSKUs'
           href: samples/allowed-storage-account-skus.md
         - name: Запрет на распределение по холодным уровням доступа для учетных записей хранения
@@ -257,13 +257,16 @@
     - name: Структура определения службы "Политика Azure"
       displayName: 'parameters, location, rule, alias, initiatives'
       href: ./concepts/definition-structure.md
-    - name: Сведения о действии политики
+    - name: Сведения о действии Политики
       displayName: 'order, evaluation'
       href: ./concepts/effects.md
+    - name: Политика Azure для Kubernetes
+      displayName: 'aks, rego, k8s, opa, open policy agent, gatekeeper'
+      href: ./concepts/rego-for-aks.md
     - name: Аудит виртуальных машин с гостевой конфигурацией
       displayName: 'provider, tools, definition'
       href: ./concepts/guest-configuration.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Программное создание политик
       displayName: 'assign, definition'
@@ -285,7 +288,7 @@
       href: ../../azure-monitor/insights/vminsights-enable-at-scale-policy.md?toc=/azure/governance/policy/toc.json
 - name: Справочные материалы
   items:
-    - name: Инфраструктура Azure CLI
+    - name: Azure CLI
       href: /cli/azure/policy
     - name: Azure PowerShell
       items:
@@ -319,7 +322,7 @@
           href: /rest/api/policy-insights/remediations
         - name: Гостевая конфигурация
           href: /rest/api/guestconfiguration/
-    - name: Шаблоны диспетчера ресурсов
+    - name: Шаблоны Resource Manager
       items:
         - name: Назначения
           href: /azure/templates/microsoft.authorization/policyassignments
@@ -331,13 +334,13 @@
   items:
     - name: 'GitHub: примеры для Политики Azure'
       href: 'https://github.com/Azure/azure-policy'
-    - name: 'Видео: Build 2018'
+    - name: "Видео: Build\_2018"
       href: 'https://channel9.msdn.com/events/Build/2018/THR2030'
     - name: 'Канал на YouTube, посвященный системе управления'
       href: 'https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ'
     - name: Видео по гостевой конфигурации
       items:
-        - name: Приступая к работе
+        - name: Начало работы
           href: 'https://www.youtube.com/watch?v=mjJw9_EIyHo'
         - name: Основные сведения об инициативах
           href: 'https://www.youtube.com/watch?v=4JZH3kuG8bI'

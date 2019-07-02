@@ -34,7 +34,9 @@
           href: 'https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates'
         - name: Azure PowerShell
           href: samples-powershell.md
-        - name: Azure CLI
+        - name: Azure PowerShell. Модуль Az.DevTestLabs2
+          href: 'https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Modules/Library'
+        - name: Инфраструктура CLI Azure
           href: samples-cli.md
 - name: Основные понятия
   items:
@@ -84,7 +86,7 @@
               href: classroom-labs/how-to-manage-classroom-labs.md
             - name: Настройка и публикация шаблонов
               href: classroom-labs/how-to-create-manage-template.md
-            - name: Настройка параметров использования и управление им
+            - name: Настройка параметров и контроль использования
               href: classroom-labs/how-to-configure-student-usage.md
             - name: Доступ к лабораториям для аудитории
               href: classroom-labs/how-to-use-classroom-lab.md
@@ -283,6 +285,8 @@
           href: /cli/azure/lab
         - name: PowerShell
           href: /powershell/module/az.devtestlabs
+        - name: PowerShell. Пример модуля Az.DevTestLabs2
+          href: 'https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Modules/Library'
         - name: REST API
           href: 'https://docs.microsoft.com/rest/api/dtl/'
         - name: Шаблон Resource Manager

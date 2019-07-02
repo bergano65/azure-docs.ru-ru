@@ -1,8 +1,8 @@
-- name: Документация по обозревателю данных Azure
+- name: Документация по Azure Data Explorer
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое обозреватель данных?
+    - name: Что такое Azure Data Explorer?
       href: data-explorer-overview.md
 - name: Краткие руководства
   expanded: true
@@ -11,13 +11,11 @@
       href: create-cluster-database-portal.md
     - name: Принятие демонстрационных данных
       href: ingest-sample-data.md
-    - name: Запрос данных
+    - name: Запрашивание данных
       items:
         - name: Веб-интерфейс
           href: web-query-data.md
-        - name: Python
-          href: python-query-data.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Прием данных без использования кода
       href: ingest-data-no-code.md
@@ -30,7 +28,7 @@
       href: ingest-data-overview.md
     - name: Обзор визуализации данных
       href: viz-overview.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Создание кластера и базы данных
       items:
@@ -64,17 +62,23 @@
       items:
         - name: Задание DevOps
           href: devops.md
-    - name: Запрос данных
+    - name: Запрашивание данных
       items:
         - name: Написание запросов
           href: write-queries.md
-        - name: Аналитика временных рядов
-          href: time-series-analysis.md
-        - name: Обнаружение аномалий и прогнозирование
-          href: anomaly-detection.md
-        - name: Машинное обучение
-          href: machine-learning-clustering.md
-    - name: Визуализация данных
+        - name: Отправка запроса данных в Azure Data Lake
+          href: data-lake-query-data.md
+        - name: Python
+          href: python-query-data.md
+        - name: Анализ временных рядов и машинное обучение
+          items:
+            - name: Аналитика временных рядов
+              href: time-series-analysis.md
+            - name: Обнаружение аномалий и прогнозирование
+              href: anomaly-detection.md
+            - name: Машинное обучение
+              href: machine-learning-clustering.md
+    - name: Визуализируйте данные
       items:
         - name: Power BI
           items:
@@ -132,7 +136,7 @@
       href: /azure/kusto/query/
     - name: Команды управления
       href: /azure/kusto/management/
-    - name: API
+    - name: Программные интерфейсы
       href: /azure/kusto/api/
     - name: Средства
       href: /azure/kusto/tools/

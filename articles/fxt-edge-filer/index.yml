@@ -1,0 +1,41 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Документация по Azure FXT Edge Filer
+metadata:
+  title: Документация по Azure FXT Edge Filer
+  description: 'Узнайте, как использовать Azure FXT Edge Filer в качестве слоя кэширования для задач с высокопроизводительными вычислениями (HPC) и большим количеством операций чтения'
+  author: ekpgh
+  ms.service: fxt-edge-filer
+  ms.topic: landing-page
+  ms.date: 06/20/2019
+  ms.author: v-erkell
+abstract:
+  description: "Кэш гибридного хранилища Azure FXT Edge Filer\_— это гибридная система, которая объединяет оборудование и программное обеспечение, ускоряя доступ к данным для рабочих процессов с высокой интенсивностью чтения высокопроизводительных вычислений (HPC) на основе файлов. Используя кластер из трех или более устройств Azure FXT Edge Filer, вы можете повысить производительность хранилища для локальных систем NAS (NetApp или Dell EMC Isilon), облачного хранилища или комбинации этих решений."
+sections:
+  - title: Пошаговые инструкции
+    items:
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="fxt-install">Установка оборудования Azure FXT Edge Filer</a>
+          - html: <a href="fxt-network-power">Установка сетевых подключений для Azure FXT Edge Filer</a>
+          - html: <a href="fxt-node-password">Настойка корневых паролей на узлах оборудования</a>
+          - html: <a href="fxt-cluster-create">Создание кластера кэша гибридного хранилища</a>
+          - html: <a href="fxt-add-nodes">Добавление узлов кластера</a>
+          - html: <a href="fxt-add-storage">Добавление серверного хранилища и настройка виртуального пространства имен</a>
+          - html: <a href="fxt-configure-network">Настройка параметров сети кластера</a>
+  - title: Руководства
+    items:
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="fxt-mount-clients">Подключение клиентов к кластеру Azure FXT Edge Filer</a>
+          - html: <a href="fxt-monitor">Мониторинг Azure FXT Edge Filer</a>
+          - html: <a href="fxt-power-off">Безопасное отключение питания для узла оборудования</a>
+  - title: Ресурсы
+    items:
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="fxt-specs">Характеристики оборудования</a>
+          - html: <a href="fxt-additional-doc">Дополнительная документация</a>

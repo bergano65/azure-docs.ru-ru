@@ -19,6 +19,8 @@
     - name: Разработка приложений
       expanded: true
       items:
+        - name: С помощью Draft
+          href: kubernetes-draft.md
         - name: С помощью Java (VS Code и CLI)
           href: ../dev-spaces/quickstart-java.md
           maintainContext: true
@@ -153,6 +155,8 @@
               href: configure-azure-cni.md
         - name: Создание внутреннего балансировщика нагрузки
           href: internal-lb.md
+        - name: Использование Load Balancer (цен. категория "Стандартный") (предварительная версия)
+          href: load-balancer-standard.md
         - name: Использование статического IP-адреса
           href: static-ip.md
         - name: Входящий трафик
@@ -187,6 +191,8 @@
           href: use-pod-security-policies.md
         - name: Определение диапазонов авторизованных IP-адресов сервера API (предварительная версия)
           href: api-server-authorized-ip-ranges.md
+        - name: Управление развертыванием с помощью Политики Azure (предварительная версия)
+          href: ../governance/policy/concepts/rego-for-aks.md?toc=/azure/aks/toc.json
         - name: Обновление учетных данных субъекта-службы кластера
           href: update-credentials.md
         - name: Ограничение и администрирование исходящего трафика кластера (предварительная версия)
@@ -256,7 +262,7 @@
                 - name: "3.\_Командная разработка"
                   href: ../dev-spaces/team-development-netcore.md
                   maintainContext: true
-            - name: .NET Core (Visual Studio 2017)
+            - name: ".NET Core (Visual Studio\_2017)"
               items:
                 - name: "1.\_Начало работы"
                   href: ../dev-spaces/get-started-netcore-visualstudio.md
@@ -280,8 +286,6 @@
                   maintainContext: true
         - name: Запуск приложений с помощью Helm
           href: kubernetes-helm.md
-        - name: Разработка приложений с помощью Draft
-          href: kubernetes-draft.md
         - name: С помощью открытого компонента Service Broker для Azure
           href: integrate-azure.md
         - name: "Использование API Cosmos\_DB для MongoDB с OSBA"

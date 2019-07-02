@@ -15,8 +15,10 @@
               href: quickstarts/curl-train-extract.md
             - name: Python
               href: quickstarts/python-train-extract.md
-- name: Инструкции
+- name: Руководства
   items:
+    - name: Создание набора данных для обучения
+      href: build-training-data-set.md
     - name: Использование контейнеров
       items:
         - name: Установка и запуск контейнеров

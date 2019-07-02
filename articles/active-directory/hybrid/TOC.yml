@@ -22,6 +22,8 @@
       items:
         - name: Облачное управление для локальных рабочих нагрузок
           href: cloud-governed-management-for-on-premises.md
+        - name: Четыре действия по настройке строгой идентификации
+          href: four-steps.md
     - name: Azure AD Connect с расширением Azure AD Connect Health
       items:
         - name: Что такое Azure AD Connect с расширением Azure AD Connect Health
@@ -58,9 +60,9 @@
           href: how-to-connect-fed-compatibility.md
     - name: Единый вход
       items:
-        - name: Что собой представляет единый вход
+        - name: Что такое единый вход
           href: how-to-connect-sso.md
-        - name: Принцип работы единого входа
+        - name: Принцип действия единого входа
           href: how-to-connect-sso-how-it-works.md
         - name: Единый вход и конфиденциальность пользователей
           href: how-to-connect-sso-user-privacy.md
@@ -68,6 +70,8 @@
       items:
         - name: Что такое синхронизация Azure AD Connect?
           href: how-to-connect-sync-whatis.md
+        - name: Учетная запись службы Azure ADSync
+          href: concept-adsync-service-account.md
         - name: "Функции синхронизации Azure\_AD Connect"
           href: how-to-connect-syncservice-features.md
         - name: "Что собой представляет диспетчер службы синхронизации Azure\_AD Connect"
@@ -78,7 +82,7 @@
           href: concept-azure-ad-connect-sync-architecture.md
         - name: Общие сведения о декларативной подготовке
           href: concept-azure-ad-connect-sync-declarative-provisioning.md
-        - name: Знакомство с выражениями декларативной подготовки.
+        - name: Знакомство с выражениями декларативной подготовки
           href: concept-azure-ad-connect-sync-declarative-provisioning-expressions.md
         - name: Общие сведения о конфигурации по умолчанию
           href: concept-azure-ad-connect-sync-default-configuration.md
@@ -86,7 +90,7 @@
           href: concept-azure-ad-connect-sync-user-and-contacts.md
         - name: Общие сведения о теневых атрибутах
           href: how-to-connect-syncservice-shadow-attributes.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Установка и обновление
       items:
@@ -128,7 +132,7 @@
       items:
         - name: Принципы проектирования
           href: plan-connect-design-concepts.md
-        - name: Топологии Azure AD Connect.
+        - name: Топологии для Azure AD Connect
           href: plan-connect-topologies.md
         - name: 'Факторы, влияющие на производительность Azure AD Connect'
           href: plan-connect-performance-factors.md
@@ -162,7 +166,7 @@
               href: plan-hybrid-identity-design-considerations-dataprotection-requirements.md
             - name: Определение требований к управлению содержимым
               href: plan-hybrid-identity-design-considerations-contentmgt-requirements.md
-            - name: Определение требований к контролю доступа
+            - name: Определение требований к управлению доступом
               href: plan-hybrid-identity-design-considerations-accesscontrol-requirements.md
             - name: Определение требований по реагированию на инциденты
               href: plan-hybrid-identity-design-considerations-incident-response-requirements.md
@@ -182,7 +186,7 @@
           href: how-to-connect-device-options.md
         - name: "Дополнительные функции в Azure\_AD Connect"
           href: how-to-connect-preview.md
-        - name: предотвращения случайного удаления
+        - name: Предотвращение случайного удаления
           href: how-to-connect-sync-feature-prevent-accidental-deletes.md
         - name: Включение корзины AD
           href: how-to-connect-sync-recycle-bin.md

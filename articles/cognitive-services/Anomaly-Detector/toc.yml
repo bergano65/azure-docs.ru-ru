@@ -58,11 +58,13 @@
       href: 'https://aka.ms/adpricing'
     - name: Доступность по регионам
       href: 'https://aka.ms/adregion'
+    - name: Создаваемое пользователями содержимое
+      href: user-generated-content.md
     - name: Присоединение к группе консультантов по Детектору аномалий в Microsoft Teams
       href: 'https://aka.ms/adadvisorsjoin'
     - name: Эталонная архитектура решения
       href: 'https://azure.microsoft.com/solutions/architecture/anomaly-detector-process/'
-    - name: Соответствие требованиям
+    - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
 - name: Поддержка
   items:

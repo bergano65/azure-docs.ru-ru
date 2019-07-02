@@ -1,4 +1,4 @@
-- name: Документация по акселераторам решений Интернета вещей
+- name: Документация по акселераторам решений для Интернета вещей
   href: index.md
 - name: Обзор
   expanded: true
@@ -18,7 +18,7 @@
       items:
         - name: Пробное использование решения для удаленного мониторинга
           href: quickstart-remote-monitoring-deploy.md
-    - name: Руководства
+    - name: Учебники
       items:
         - name: Мониторинг устройств Интернета вещей
           href: iot-accelerators-remote-monitoring-monitor.md
@@ -34,7 +34,7 @@
           href: iot-accelerators-remote-monitoring-bulk-configuration-update.md
         - name: Обнаружение аномальных действий на граничном устройстве
           href: iot-accelerators-remote-monitoring-edge.md
-    - name: Практические руководства
+    - name: Руководства
       items:
         - name: Развертывание решения
           items:
@@ -137,6 +137,8 @@
           href: overview-opc-twin.md
         - name: Что собой представляет хранилище OPC
           href: overview-opc-vault.md
+        - name: Что такое издатель OPC
+          href: overview-opc-publisher.md
         - name: Общие сведения о подключенной фабрике
           href: iot-accelerators-connected-factory-features.md
     - name: Краткие руководства
@@ -147,14 +149,12 @@
       items:
         - name: Архитектура двойника OPC
           href: overview-opc-twin-architecture.md
-    - name: Практические руководства
+    - name: Руководства
       items:
         - name: Подключенная фабрика
           items:
             - name: Использование панели мониторинга
               href: iot-accelerators-connected-factory-dashboard.md
-            - name: Использование издателя OPC
-              href: 'https://github.com/Azure/iot-edge-opc-publisher/blob/master/README.md'
             - name: настройка акселератора решений;
               href: iot-accelerators-connected-factory-configure.md
             - name: Настройка акселератора решений
@@ -177,6 +177,12 @@
                   href: howto-opc-vault-deploy-existing-client-server-communication.md
             - name: Развертывание хранилища OPC с нуля
               href: howto-opc-vault-deploy-scratch.md
+        - name: Издатель OPC
+          items:
+            - name: Настройка издателя OPC
+              href: howto-opc-publisher-configure.md
+            - name: Выполнение издателя OPC
+              href: howto-opc-publisher-run.md
     - name: Ресурсы
       items:
         - name: Репозиторий GitHub
@@ -191,13 +197,13 @@
       items:
         - name: Пробное использование симулятора устройств
           href: quickstart-device-simulation-deploy.md
-    - name: Руководства
+    - name: Учебники
       items:
         - name: Создание и запуск модели
           href: iot-accelerators-device-simulation-create-simulation.md
         - name: Создание пользовательского имитированного устройства
           href: iot-accelerators-device-simulation-create-custom-device.md
-    - name: Практические руководства
+    - name: Руководства
       items:
         - name: Использование существующего Центра Интернета вещей
           href: iot-accelerators-device-simulation-choose-hub.md
@@ -231,7 +237,7 @@
   items:
     - name: Обзор
       href: iot-accelerators-architecture-overview.md
-    - name: Download (Скачать)
+    - name: Скачивание
       href: 'https://aka.ms/iotrefarchitecture'
     - name: Варианты партнерских реализаций
       items:
@@ -255,11 +261,11 @@
           href: /azure/iot-hub
         - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
           href: /azure/iot-dps
-        - name: Пакеты SDK для служб Интернета вещей
+        - name: Пакеты SDK для служб IoT
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
-        - name: Карты
+        - name: Maps
           href: /azure/azure-maps
-        - name: Аналитика временных рядов Azure
+        - name: Аналитика временных рядов
           href: /azure/time-series-insights
     - name: Edge
       items:
@@ -277,7 +283,7 @@
   items:
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Вопросы и ответы
+    - name: Часто задаваемые вопросы
       href: iot-accelerators-faq.md
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-iot-suite'

@@ -10,7 +10,7 @@
   items:
     - name: "Создание Oracle\_DB"
       href: oracle-database-quick-create.md
-- name: Руководства
+- name: Учебники
   items:
     - name: "Настройка Oracle\_ASM"
       href: configure-oracle-asm.md
@@ -26,6 +26,10 @@
       href: oracle-backup-recovery.md
     - name: Параметры аварийного восстановления Oracle
       href: oracle-disaster-recovery.md
+- name: Руководства
+  items:
+    - name: Объединение Azure и OCI (предварительная версия)
+      href: configure-azure-oci-networking.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

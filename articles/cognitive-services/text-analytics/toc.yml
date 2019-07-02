@@ -36,7 +36,7 @@
           href: quickstarts/ruby-sdk.md
         - name: Node.js
           href: quickstarts/nodejs-sdk.md
-- name: Руководства
+- name: Учебники
   items:
     - name: "Интеграция Power\_BI для анализа отзывов пользователей"
       href: Tutorials/tutorial-power-bi-key-phrases.md
@@ -70,8 +70,16 @@
           href: how-tos/text-analytics-how-to-install-containers.md
         - name: Настройка контейнеров
           href: text-analytics-resource-container-config.md
-        - name: Сведения о выполнении в Службе Azure Kubernetes
-          href: How-tos/text-analytics-how-to-use-container-instance.md
+        - name: Использование экземпляров контейнеров (ACI)
+          items:
+            - name: Анализ мнений
+              href: how-tos/use-sentiment-analysis-on-aci.md
+        - name: Использование Службы Azure Kubernetes (AKS)
+          items:
+            - name: Определение языка
+              href: how-tos/use-language-detection-on-aks.md
+            - name: Анализ мнений
+              href: how-tos/use-sentiment-analysis-on-aks.md
     - name: Использование подключенной службы "Анализ текста"
       href: vs-text-connected-service.md
 - name: Справочные материалы
@@ -108,7 +116,7 @@
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/'
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/'
-    - name: Соответствие требованиям
+    - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/text-analytics-api'

@@ -57,7 +57,7 @@
               href: quickstart-v2-netcore-daemon.md
             - name: Веб-приложение управляющей программы ASP.NET
               href: 'https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2'
-    - name: Руководства
+    - name: Учебники
       items:
         - name: Одностраничные приложения
           items:
@@ -301,6 +301,8 @@
               href: app-objects-and-service-principals.md
             - name: "Добавление приложений в Azure\_AD"
               href: active-directory-how-applications-are-added.md
+            - name: Ограничения для универсального кода ресурса (URI) перенаправления и URL-адреса ответа
+              href: reply-url.md
             - name: Одно- и мультитенантные приложения
               href: single-and-multi-tenant-apps.md
         - name: Разрешения и согласие
@@ -533,7 +535,7 @@
               href: consent-framework.md
             - name: Предоставление согласия для приложений
               href: application-consent-experience.md
-        - name: условный доступ;
+        - name: Условный доступ
           href: conditional-access-dev-guide.md
         - name: Национальные облака
           href: authentication-national-cloud.md

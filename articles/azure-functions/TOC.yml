@@ -45,7 +45,9 @@
           href: functions-add-output-binding-storage-queue-python.md
         - name: "Хранилище\_— портал"
           href: functions-integrate-storage-queue-output-binding.md
-- name: Руководства
+        - name: Хранилище. Visual Studio Code
+          href: functions-add-output-binding-storage-queue-vs-code.md
+- name: Учебники
   items:
     - name: Использование функций Azure с Logic Apps
       href: functions-twitter-email.md
@@ -136,6 +138,8 @@
           href: functions-test-a-function.md
         - name: Локальная разработка и отладка
           href: functions-develop-local.md
+        - name: Разработка в Visual Studio Code
+          href: functions-develop-vs-code.md
         - name: Разработка в Visual Studio
           href: functions-develop-vs.md
         - name: Разработка основных инструментов
@@ -282,13 +286,10 @@
           href: functions-bindings-timer.md
         - name: Twilio
           href: functions-bindings-twilio.md
-    - name: Справочник по host.json
+    - name: Справочник по host.json 2.x
       href: functions-host-json.md
-      items:
-        - name: Функции 2.x
-          href: functions-host-json.md
-        - name: Функции 1.x
-          href: functions-host-json-v1.md
+    - name: Справочник по host.json 1.x
+      href: functions-host-json-v1.md
     - name: Часто задаваемые вопросы о сетевых подключениях
       href: functions-networking-faq.md
     - name: Справочник по OpenAPI

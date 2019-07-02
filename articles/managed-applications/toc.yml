@@ -21,7 +21,7 @@
       href: create-custom-provider.md
 - name: Примеры
   items:
-    - name: "Azure\_CLI"
+    - name: Azure CLI
       href: cli-samples.md
     - name: Azure PowerShell
       href: powershell-samples.md
@@ -29,10 +29,18 @@
       href: sample-projects.md
 - name: Основные понятия
   items:
-    - name: Настраиваемые поставщики
+    - name: Поставщики пользовательских ресурсов Azure
       href: custom-providers-overview.md
-- name: Инструкции
+    - name: Просмотр артефакта определения
+      href: concepts-view-definition.md
+- name: Руководства
   items:
+    - name: Поставщики пользовательских ресурсов
+      items:
+        - name: Добавление пользовательских действий в Azure
+          href: custom-providers-action-endpoint-how-to.md
+        - name: Добавление пользовательских ресурсов в Azure
+          href: custom-providers-resources-endpoint-how-to.md
     - name: Издатели
       items:
         - name: Создание интерфейса портала
@@ -57,7 +65,13 @@
           href: approve-just-in-time-access.md
 - name: Справочные материалы
   items:
-    - name: "Azure\_CLI"
+    - name: Поставщики пользовательских ресурсов
+      items:
+        - name: Справочник по прокси-серверу пользовательских ресурсов
+          href: custom-providers-proxy-resource-endpoint-reference.md
+        - name: Справочник по кэшу пользовательских ресурсов
+          href: custom-providers-proxy-cache-resource-endpoint-reference.md
+    - name: Инфраструктура CLI Azure
       href: /cli/azure/managedapp
     - name: PowerShell
       href: /powershell/module/az.resources

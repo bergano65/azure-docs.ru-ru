@@ -267,13 +267,13 @@
           items:
             - name: Обзор
               href: ../linux/image-builder-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
-            - name: Использование CLI
+            - name: Использование Azure CLI
               href: image-builder.md
-            - name: Использование с коллекциями
+            - name: Сборка для коллекций образов
               href: image-builder-gallery.md
-            - name: Обновление версии образа
+            - name: Обновление существующего образа
               href: image-builder-gallery-update-image-version.md
-            - name: Использование скриптов в службе хранилища Azure
+            - name: Хранение скриптов
               href: ../linux/image-builder-user-assigned-identity.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
             - name: Справочник по шаблонам
               href: ../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
@@ -480,7 +480,7 @@
       href: /learn/browse/?products=azure-virtual-machines
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Шаблоны сообщества
+    - name: Шаблоны от сообщества
       href: 'https://azure.microsoft.com/documentation/templates'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/#Linux'

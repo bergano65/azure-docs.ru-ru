@@ -45,7 +45,7 @@
           displayName: 'learning policy, Counterfactual, features'
     - name: Масштабируемость и производительность
       href: concepts-scalability-performance.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Создание и настройка Персонализатора
       href: how-to-settings.md
@@ -62,15 +62,23 @@
       href: 'https://go.microsoft.com/fwlink/?linkid=2092082'
     - name: Пакеты SDK
       items:
-        - name: Справочник по пакету SDK .NET
-          href: 'https://go.microsoft.com/fwlink/?linkid=2092353'
-        - name: Пакет NuGet
-          href: 'https://go.microsoft.com/fwlink/?linkid=2092272'
+        - name: .NET
+          items:
+            - name: Справочник по пакету SDK для .NET
+              href: 'https://go.microsoft.com/fwlink/?linkid=2092353'
+            - name: Пакет NuGet
+              href: 'https://go.microsoft.com/fwlink/?linkid=2092272'
+        - name: Python
+          items:
+            - name: Пакет Pypi
+              href: 'https://pypi.org/project/azure-cognitiveservices-personalizer/'
 - name: Ресурсы
   items:
+    - name: Устранение неполадок
+      href: troubleshooting.md
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
-    - name: Соответствие требованиям
+    - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Стратегия развития Azure
       href: 'https://go.microsoft.com/fwlink/?linkid=2092153'

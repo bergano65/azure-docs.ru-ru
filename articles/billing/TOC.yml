@@ -25,6 +25,8 @@
       href: billing-understand-your-invoice.md
     - name: "Пояснения к условиям оплаты счетов\_— только для клиентского соглашения Майкрософт"
       href: billing-mca-understand-your-invoice.md
+    - name: Как оплатить счет (только для клиентского соглашения Майкрософт)
+      href: billing-how-to-pay-bill.md
     - name: Учетные записи выставления счетов для клиентского соглашения Майкрософт
       href: billing-mca-overview.md
 - name: Управление затратами
@@ -49,17 +51,17 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Общие сведения о предельной сумме расходов
       href: billing-spending-limit.md
-    - name: Экономия средств за счет использования Azure Reserved VM Instances
+    - name: Экономия средств за счет использования резервирований в Azure
       items:
-        - name: Общие сведения об Azure Reserved VM Instances
+        - name: Общие сведения о резервированиях в Azure
           href: billing-save-compute-costs-reservations.md
         - name: Покупка резервирования
           items:
             - name: Хранилище данных SQL
               href: billing-prepay-sql-data-warehouse-charges-with-reserved-capacity.md
-            - name: Виртуальная машина.
+            - name: Виртуальная машина
               href: ../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/billing/TOC.json
-            - name: База данных Cosmos
+            - name: Cosmos DB
               href: ../cosmos-db/cosmos-db-reserved-capacity.md?toc=/azure/billing/TOC.json
             - name: База данных SQL
               href: ../sql-database/sql-database-reserved-capacity.md?toc=/azure/billing/TOC.json
@@ -79,7 +81,7 @@
               href: billing-understand-suse-reservation-charges.md
         - name: Расходы на программное обеспечение не входят в стоимость
           href: billing-reserved-instance-windows-software-costs.md
-        - name: Использование для модели с оплатой по мере использования
+        - name: Использование для отдельных подписок
           href: billing-understand-reserved-instance-usage.md
         - name: Использование для предприятия
           href: billing-understand-reserved-instance-usage-ea.md
@@ -175,7 +177,7 @@
       href: 'https://support.microsoft.com/en-us/help/4042961'
     - name: Просмотр стоимости Enterprise отключен
       href: billing-enterprise-mgmt-grp-troubleshoot-cost-view.md
-    - name: Обратитесь в службу поддержки.
+    - name: Обращение в службу поддержки
       href: ../azure-supportability/how-to-create-azure-support-request.md
 - name: Примеры
   items:

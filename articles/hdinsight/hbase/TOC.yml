@@ -11,21 +11,21 @@
       href: apache-hbase-phoenix-squirrel-linux.md
     - name: "Запросы к Apache HBase\_— оболочка HBase"
       href: ./query-hbase-with-hbase-shell.md
-- name: Начало работы
+- name: Учебники
   items:
-    - name: Начало работы с Apache HBase и NoSQL
+    - name: Использование Apache HBase в HDInsight
       href: apache-hbase-tutorial-get-started-linux.md
+- name: Основные понятия
+  items:
     - name: Установка приложений HDInsight
       href: ../hdinsight-apps-install-applications.md
     - name: Планирование ресурсов кластера
       href: ../hdinsight-capacity-planning.md
-- name: Основные понятия
-  items:
     - name: Компоненты Apache Hadoop в HDInsight
       href: ../hdinsight-component-versioning.md
     - name: "HDInsight\_4.0"
       href: ../hdinsight-version-release.md
-- name: Руководства
+- name: Практическое руководство
   items:
     - name: Использование системы хранения данных кластера
       items:

@@ -4,21 +4,28 @@
   items:
     - name: Общие сведения о службах машинного обучения в HDInsight
       href: r-server-overview.md
-- name: Начало работы
+- name: Краткие руководства
+  expanded: true
   items:
-    - name: Начало работы со Машинным обучением
-      href: r-server-get-started.md
+    - name: Пример задания. RStudio Server
+      href: ./machine-learning-services-quickstart-job-rstudio.md
+    - name: Пример задания. Консоль R
+      href: ./machine-learning-services-quickstart-job-rconsole.md
+- name: Учебники
+  items:
+    - name: Использование R в контексте вычислений Spark в HDInsight
+      href: ml-services-tutorial-spark-compute.md
+- name: Основные понятия
+  items:
     - name: Установка приложений HDInsight
       href: ../hdinsight-apps-install-applications.md
     - name: Планирование ресурсов кластера
       href: ../hdinsight-capacity-planning.md
-- name: Основные понятия
-  items:
     - name: Компоненты Apache Hadoop в HDInsight
       href: ../hdinsight-component-versioning.md
     - name: "HDInsight\_4.0"
       href: ../hdinsight-version-release.md
-- name: Руководства
+- name: Практическое руководство
   items:
     - name: Использование Машинного обучения
       items:
@@ -56,8 +63,6 @@
           href: ../hdinsight-hadoop-customize-cluster-linux.md
         - name: Разработка действий скрипта
           href: ../hdinsight-hadoop-script-actions-linux.md
-        - name: Установка и использование Presto
-          href: ../hdinsight-hadoop-install-presto.md
         - name: Добавление библиотек Apache Hive
           href: ../hdinsight-hadoop-add-hive-libraries.md
         - name: Использование Apache Giraph

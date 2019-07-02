@@ -481,6 +481,9 @@
     - name: Key Vault
       tocHref: /azure/key-vault/
       topicHref: /azure/key-vault/
+    - name: Azure Kinect DK
+      tocHref: /azure/kinect-dk/
+      topicHref: /azure/kinect-dk/
     - name: Службы лабораторий
       tocHref: /azure/lab-services/
       topicHref: /azure/lab-services/
@@ -675,7 +678,7 @@
             - name: Высокопроизводительные вычисления
               tocHref: /azure/virtual-machines/workloads/hpc/
               topicHref: /azure/virtual-machines/linux/high-performance-computing?toc=%2fazure%2fvirtual-machines%2fworkloads%2fhpc%2ftoc.json
-            - name: Протокол SAP
+            - name: SAP
               tocHref: /azure/virtual-machines/workloads/sap/
               topicHref: /azure/virtual-machines/workloads/sap/get-started
             - name: Oracle

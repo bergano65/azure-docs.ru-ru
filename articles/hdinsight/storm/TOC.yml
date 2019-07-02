@@ -9,20 +9,20 @@
   items:
     - name: Создание топологии Apache Storm в HDInsight
       href: ./apache-storm-quickstart.md
-- name: Начало работы
+- name: Учебники
   items:
-    - name: Создание кластера Apache Storm
-      href: apache-storm-tutorial-get-started-linux.md
-    - name: Установка приложений HDInsight
-      href: ../hdinsight-apps-install-applications.md
-    - name: Планирование ресурсов
-      href: ../hdinsight-capacity-planning.md
+    - name: Использование Apache Storm для записи в хранилище
+      href: apache-storm-write-data-lake-store.md
 - name: Основные понятия
   items:
     - name: Компоненты Apache Hadoop в HDInsight
       href: ../hdinsight-component-versioning.md
     - name: "HDInsight\_4.0"
       href: ../hdinsight-version-release.md
+    - name: Установка приложений HDInsight
+      href: ../hdinsight-apps-install-applications.md
+    - name: Планирование ресурсов
+      href: ../hdinsight-capacity-planning.md
 - name: Руководства
   items:
     - name: Разработка топологий Apache Storm
@@ -47,10 +47,6 @@
           href: 'https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/'
         - name: 'Концентратор событий и Apache Storm (C# и Java)'
           href: apache-storm-develop-csharp-event-hub-topology.md
-        - name: Служба хранилища Azure и Data Lake Storage (Java)
-          href: apache-storm-write-data-lake-store.md
-        - name: Концентратор событий и Apache HBase (Java)
-          href: apache-storm-sensor-data-analysis.md
     - name: Расширение кластеров
       items:
         - name: Настройка кластеров с использованием начальной загрузки

@@ -24,10 +24,10 @@ sections:
         className: cardImageOuter
         items:
           - title: Концепции
-            html: '<p><a href="https://docs.microsoft.com/azure/media-services/latest/storage-account-concept">Cloud upload and storage</a> (Передача в облако и хранение)</p><p><a href="https://docs.microsoft.com/azure/media-services/latest/encoding-concept">Кодирование</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/reacting-to-media-services-events">Мониторинг</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/analyzing-video-audio-files-concept">Аналитика мультимедиа</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/dynamic-packaging-overview">Упаковка</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/content-protection-overview">Защита</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/live-streaming-overview">Потоковая передача в реальном времени</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/use-azure-media-player">Клиенты Проигрывателя</a></p>'
+            html: '<p><a href="https://docs.microsoft.com/azure/media-services/latest/storage-account-concept">Передача в облако и хранение</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/encoding-concept">Кодирование</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/reacting-to-media-services-events">Мониторинг</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/analyzing-video-audio-files-concept">Аналитика мультимедиа</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/dynamic-packaging-overview">Упаковка</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/content-protection-overview">Защита</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/live-streaming-overview">Потоковая передача в реальном времени</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/use-azure-media-player">Клиенты в Проигрывателе</a></p>'
           - title: "Разработка с помощью API версии\_3"
             html: '<p><a href="https://docs.microsoft.com/azure/media-services/latest/media-services-apis-overview">Руководство</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/media-rest-apis-with-postman">Разработка с использованием REST</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/configure-connect-java-howto">Подключение с помощью Java</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/configure-connect-dotnet-howto">Подключение с помощью .NET</a></p><p><a href="https://docs.microsoft.com/azure/media-services/latest/configure-connect-nodejs-howto">Подключение с помощью Node.js</a></p>'
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Сведения о создании учетной записи Служб мультимедиа, запуске кодирования, упаковки и потоковой передачи видео:'
@@ -55,34 +55,22 @@ sections:
         className: cardsM
         columns: 1
         items:
-          - image:
-              src: media/index/dotnet.svg
-            html: '<p>В рамках этого руководства отправляется локальный видеофайл, затем он кодируется и выполняется потоковая передача кодированного содержимого.<p/>'
+          - html: '<p>В рамках этого руководства отправляется локальный видеофайл, затем он кодируется и выполняется потоковая передача кодированного содержимого.<p/>'
             href: /azure/media-services/latest/stream-files-tutorial-with-api
             title: Кодирование отправленного файла и потоковая передача видео
-          - image:
-              src: media/index/dotnet.svg
-            html: '<p>Из этого руководства вы узнаете, как настроить систему для события прямой трансляции. Также здесь объясняется, как с помощью .NET создавать события прямой трансляции сквозного типа.</p>'
+          - html: '<p>Из этого руководства вы узнаете, как настроить систему для события прямой трансляции. Здесь также объясняется, как создавать события прямой трансляции сквозного типа.</p>'
             href: /azure/media-services/latest/stream-live-tutorial-with-api
             title: Широковещательная трансляция
-          - image:
-              src: media/index/dotnet.svg
-            html: <p>Это руководство содержит сведения об анализе видео с помощью API Служб мультимедиа Azure.</p>
+          - html: <p>Это руководство содержит сведения об анализе видео с помощью API Служб мультимедиа Azure.</p>
             href: /azure/media-services/latest/analyze-videos-tutorial-with-api
             title: Анализ видео
-          - image:
-              src: media/index/dotnet.svg
-            html: '<p>Узнайте, как настроить и использовать API Служб мультимедиа для динамического шифрования содержимого с помощью AES-128.</p>'
+          - html: '<p>Узнайте, как настроить и использовать API Служб мультимедиа для динамического шифрования содержимого с помощью AES-128.</p>'
             href: /azure/media-services/latest/protect-with-aes128
             title: Динамическое шифрование с помощью AES-128
-          - image:
-              src: media/index/dotnet.svg
-            html: '<p>Узнайте, как настроить и использовать API Служб мультимедиа для динамического шифрования содержимого с помощью нескольких подсистем DRM (PlayReady, Widevine и FairPlay).</p>'
+          - html: '<p>Узнайте, как настроить и использовать API Служб мультимедиа для динамического шифрования содержимого с помощью нескольких подсистем DRM (PlayReady, Widevine и FairPlay).</p>'
             href: /azure/media-services/latest/protect-with-drm
             title: Динамическое шифрование с помощью нескольких подсистем DRM
-          - image:
-              src: media/index/rest.svg
-            html: '<p>В руководстве объясняется, как кодировать размещенный удаленно файл на основе URL-адреса и выполнить потоковую передачу видео.</p>'
+          - html: '<p>В руководстве объясняется, как кодировать размещенный удаленно файл на основе URL-адреса и выполнить потоковую передачу видео.</p>'
             href: /azure/media-services/latest/stream-files-tutorial-with-rest
             title: Кодирование размещенных удаленно файлов и потоковая передача видео
   - title: Примеры
@@ -94,7 +82,7 @@ sections:
         items:
           - image:
               src: media/index/cli.svg
-            text: Инфраструктура CLI Azure
+            text: Azure CLI
             href: 'https://github.com/Azure/azure-docs-cli-python-samples/tree/master/media-services'
           - image:
               src: media/index/rest.svg
@@ -120,7 +108,7 @@ sections:
         style: unordered
         className: spaced noBullet
         items:
-          - html: '<a href="https://aka.ms/ams-v3-cli-ref">Интерфейс командной строки Azure</a>'
+          - html: '<a href="https://aka.ms/ams-v3-cli-ref">Azure CLI</a>'
           - html: '<a href="https://aka.ms/ams-v3-rest-ref">REST</a>'
           - html: '<a href="https://aka.ms/ams-v3-dotnet-ref">.NET</a>'
           - html: '<a href="https://aka.ms/ams-v3-java-ref">Java</a>'

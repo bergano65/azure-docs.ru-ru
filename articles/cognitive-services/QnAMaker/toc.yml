@@ -144,8 +144,15 @@
 - name: Справочные материалы
   items:
     - name: Справочник по REST API
+      items:
+        - name: Разработка API-интерфейсов
+          href: 'https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase'
+        - name: API GenerateAnswer
+          href: 'https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer'
+        - name: API обучения
+          href: 'https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/train'
       href: 'https://go.microsoft.com/fwlink/?linkid=2092179'
-    - name: Вопросы и ответы
+    - name: Часто задаваемые вопросы
       href: faqs.md
     - name: Ограничения
       href: limits.md
@@ -182,9 +189,9 @@
               href: 'https://rubygems.org/gems/azure_cognitiveservices_qnamaker'
 - name: Ресурсы
   items:
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/'
-    - name: Соответствие требованиям
+    - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
