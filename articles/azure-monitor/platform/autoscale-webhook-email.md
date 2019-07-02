@@ -115,7 +115,7 @@ ms.locfileid: "60787313"
 | subscriptionId |Да |Идентификатор подписки для масштабируемого целевого ресурса |
 | resourceGroupName |Да |Имя группы ресурсов для масштабируемого целевого ресурса |
 | resourceName |Да |Имя масштабируемого целевого ресурса |
-| тип_ресурса |Да |Поддерживается три значения: "microsoft.classiccompute/domainnames/slots/roles" — роли облачной службы, "microsoft.compute/virtualmachinescalesets" — наборы для масштабирования виртуальных машин и "Microsoft.Web/serverfarms" — веб-приложение |
+| resourceType |Да |Поддерживается три значения: "microsoft.classiccompute/domainnames/slots/roles" — роли облачной службы, "microsoft.compute/virtualmachinescalesets" — наборы для масштабирования виртуальных машин и "Microsoft.Web/serverfarms" — веб-приложение |
 | resourceId |Да |Идентификатор Resource Manager для масштабируемого целевого ресурса |
 | portalLink |Да |Ссылка на страницу сводки целевого ресурса на портале Azure |
 | oldCapacity |Да |Текущее (старое) число экземпляров, когда автомасштабирование предпринимает действие масштабирования |

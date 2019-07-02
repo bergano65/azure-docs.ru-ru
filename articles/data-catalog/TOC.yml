@@ -1,12 +1,12 @@
-- name: Документация по каталогу данных
+- name: Документация по Каталогу данных
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое каталог данных?
+    - name: Что такое Каталог данных?
       href: overview.md
-- name: Быстрый запуск
+- name: Краткое руководство
   items:
-    - name: Создание каталога данных Azure
+    - name: Создание Каталога данных Azure
       href: data-catalog-get-started.md
 - name: Учебники
   items:
@@ -18,7 +18,7 @@
       href: data-catalog-common-scenarios.md
     - name: Поддерживаемые источники данных
       href: data-catalog-dsr.md
-    - name: Внедрение каталога данных Azure
+    - name: Внедрение Каталога данных Azure
       href: data-catalog-adopting-data-catalog.md
     - name: Предварительные требования
       href: data-catalog-prerequisites.md
@@ -58,8 +58,6 @@
       href: 'https://azure.microsoft.com/resources/samples/?service=data-catalog'
     - name: REST
       href: /rest/api/datacatalog/
-    - name: Шаблон Resource Manager
-      href: /azure/templates/microsoft.datacatalog/catalogs
     - name: Справочник по синтаксису поиска
       href: /rest/api/datacatalog/data-catalog-search-syntax-reference
     - name: 'Понятия, используемые разработчиками'
@@ -68,7 +66,7 @@
   items:
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Сочетания клавиш для каталога данных Azure
+    - name: Сочетания клавиш для Каталога данных Azure
       href: data-catalog-keyboard-shortcuts.md
     - name: Форум MSDN
       href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=azuredatacatalog'
@@ -78,7 +76,7 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=data-catalog'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-data-catalog'
     - name: Терминология
       href: data-catalog-terminology.md

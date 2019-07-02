@@ -9,11 +9,11 @@ metadata:
   ms.author: jasonh
   ms.service: data-catalog
   ms.topic: landing-page
-  ms.date: 04/05/2019
+  ms.date: 07/01/2019
 abstract:
-  description: 'Узнайте, как использовать каталог данных, чтобы помочь организации или команде находить, распознавать и использовать источники данных. Руководства, справочник по API REST и другая документация, в которой показано, как планировать и настраивать репозиторий данных, в котором пользователи могут искать доступные источники данных и использовать профильную информацию, предоставленную специалистами.'
+  description: 'Узнайте, как использовать Каталог данных, чтобы помочь организации или команде находить, распознавать и использовать источники данных. Руководства, справочник по API REST и другая документация, в которой показано, как планировать и настраивать репозиторий данных, в котором пользователи могут искать доступные источники данных и использовать профильную информацию, предоставленную специалистами.'
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Узнайте, как развернуть свой первый каталог данных Azure:'
@@ -24,7 +24,7 @@ sections:
               src: media/index/data-catalog.svg
             text: Портал Azure
             href: 'https://docs.microsoft.com/azure/data-catalog/data-catalog-get-started'
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Узнайте, как регистрировать, искать, контролировать и удалять ресурсы в Каталоге данных Azure, а также добавлять к ним заметки:'
@@ -39,6 +39,4 @@ sections:
         className: cardsD
         items:
           - title: REST
-            html: <p><a href="/rest/api/datacatalog/">справочник по API REST</a></p><p><a href="/rest/api/datacatalog/data-catalog-search-syntax-reference">Справочник по синтаксису поиска</a></p>
-          - title: Диспетчер ресурсов
-            html: <p><a href="/azure/templates/microsoft.datacatalog/catalogs">Шаблоны Resource Manager</a></p>
+            html: <p><a href="/rest/api/datacatalog/">Справочник по REST API</a></p><p><a href="/rest/api/datacatalog/data-catalog-search-syntax-reference">Справочник по синтаксису поиска</a></p>

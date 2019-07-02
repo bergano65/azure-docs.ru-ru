@@ -8,7 +8,7 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Обнаружение аномалий в данных
+    - name: "REST\_API"
       items:
         - name: 'Использование C#'
           href: quickstarts/detect-data-anomalies-csharp.md
@@ -16,6 +16,12 @@
           href: quickstarts/detect-data-anomalies-java.md
         - name: Использование Python
           href: quickstarts/detect-data-anomalies-python.md
+    - name: SDK
+      items:
+        - name: 'Использование C#'
+          href: quickstarts/detect-data-anomalies-csharp-sdk.md
+        - name: Использование Python
+          href: quickstarts/detect-data-anomalies-python-sdk.md
 - name: Руководства
   items:
     - name: "Визуализация аномалий в пакетном режиме с помощью Power\_BI"

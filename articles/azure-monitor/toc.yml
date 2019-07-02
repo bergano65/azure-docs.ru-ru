@@ -564,6 +564,8 @@
                       href: insights/container-insights-enable-new-cluster.md
                     - name: Включение для существующего кластера
                       href: insights/container-insights-enable-existing-clusters.md
+                    - name: Сопоставления регионов
+                      href: insights/container-insights-region-mapping.md
                 - name: Анализ
                   href: insights/container-insights-analyze.md
                 - name: Настройка параметров сбора агента
