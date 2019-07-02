@@ -3,19 +3,19 @@ title: Что такое рабочая область и проект? — Cust
 titleSuffix: Azure Cognitive Services
 description: Рабочая область — это рабочая зона для создания и построения пользовательской системы перевода. Рабочая область может содержать несколько проектов, моделей и документов. Проект — это программа-оболочка для модели, документов и тестов. Каждый проект автоматически включает все документы, переданные в эту рабочую область с правильной языковой парой.
 services: cognitive-services
-author: rajdeep-in
+author: swmachan
 manager: christw
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 02/21/2019
-ms.author: v-pawal
+ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 312688ddccd6a65745b919e4c396a95f40a58d3e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c35f3911b591a0d9adccdc48dbdc17f8afb5ea00
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66382324"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447342"
 ---
 # <a name="what-is-a-custom-translator-workspace"></a>Что представляет собой рабочая область Custom Translator?
 
