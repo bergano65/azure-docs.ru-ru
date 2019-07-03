@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-visual-search
 ms.topic: article
-ms.date: 4/03/2019
+ms.date: 7/01/2019
 ms.author: aahi
-ms.openlocfilehash: 62d34b859a0cf71320c478b7cab4a2914e5ee308
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: bd5118b42f32a521df8e3acfffb68391d4021791
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60579870"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67541532"
 ---
 # <a name="sending-search-queries-to-the-bing-visual-search-api"></a>Отправка поисковых запросов в API визуального поиска Bing
 
-В этой статье описаны параметры и атрибуты запросов, отправляемых в API визуального поиска Bing, а также объект ответа.
+В этой статье описаны параметры и атрибуты запросов, отправляемых в API визуального поиска Bing, а также объект ответа. 
 
 Аналитические сведения об изображении можно получить тремя способами.
 
@@ -192,6 +192,9 @@ Content-Disposition: form-data; name="knowledgeRequest"
 ```
 
 ## <a name="bing-visual-search-responses"></a>Ответы API визуального поиска Bing
+
+
+[!INCLUDE [cognitive-services-bing-url-note](../../../../includes/cognitive-services-bing-url-note.md)]
 
 Если для изображения доступны аналитические сведения, ответ содержит один или несколько полей `tags` с такими сведениями. `image` Поле содержит маркер insights для входного образа:
 

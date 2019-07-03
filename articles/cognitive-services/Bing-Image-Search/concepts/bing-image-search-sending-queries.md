@@ -1,5 +1,5 @@
 ---
-title: Отправка запросов на получение изображений — API Bing для поиска изображений
+title: Настройка и предложить запросов поиска образа — API поиска изображений Bing
 titleSuffix: Azure Cognitive Services
 description: Дополнительные сведения о настройке запросов поиска, отправляемых в API Bing для поиска изображений.
 services: cognitive-services
@@ -9,22 +9,20 @@ ms.assetid: C2862E98-8BCC-423B-9C4A-AC79A287BE38
 ms.service: cognitive-services
 ms.subservice: bing-image-search
 ms.topic: conceptual
-ms.date: 03/04/2019
+ms.date: 06/27/2019
 ms.author: aahi
-ms.openlocfilehash: 32ced1d06a10f33e9d71ef09ba51d22e9e406f73
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d833b017004365e9dad7241e360f42ff41a55883
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66384399"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67542740"
 ---
-# <a name="send-queries-to-the-bing-image-search-api"></a>Отправка запросов в API Bing для поиска изображений
+# <a name="customize-and-suggest-image-search-queries"></a>Настройка и предлагаемые запросы поиска изображений
 
-API Bing для поиска изображений предоставляет аналогичный поисковой системе Bing.com/Images функционал. Его можно использовать для отправки поискового запроса в Bing и получать список изображений, соответствующих запросу.
+Воспользуйтесь этой статьей, чтобы узнать, как настроить запросы и предложить поисковый запрос для отправки API Bing для поиска изображений.
 
-## <a name="use-and-suggest-search-terms"></a>Использование и предложение поисковых запросов
-
-После ввода поискового запроса он будет закодирован в URL-адресе перед параметром запроса [**q**](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#query). Например, если вы вводите *sailing dinghies*, установите для параметра `q` значение `sailing+dinghies` или `sailing%20dinghies`.
+## <a name="suggest-search-terms"></a>Предложить условия поиска
 
 Если в приложении предусмотрено поле для ввода условий поиска, то для упрощения работы можно использовать [API автозаполнения Bing](../../bing-autosuggest/get-suggested-search-terms.md). Этот API может отображать предлагаемые поисковые запросы в режиме реального времени. API возвращает предложенные строки запроса на основе частичных условий поиска и службы Cognitive Services.
 

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 06/19/2019
+ms.date: 07/02/2019
 ms.author: dapine
-ms.openlocfilehash: fff876de41e0069573b73779a16ebf06a3dd58c8
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 86b23c5f69fd96fe5c5614d99483e1936895ad9e
+ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295254"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67537099"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
@@ -110,7 +110,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 |--|--|--|--|
 |Обучение пройдено|Get, Post|Только контейнер|`{APPLICATION_ID}_v{APPLICATION_VERSION}.gz`|
 |Промежуточная|Get, Post|Azure и контейнер|`{APPLICATION_ID}_STAGING.gz`|
-|Производство|Get, Post|Azure и контейнер|`{APPLICATION_ID}_PRODUCTION.gz`|
+|Рабочая среда|Get, Post|Azure и контейнер|`{APPLICATION_ID}_PRODUCTION.gz`|
 
 > [!IMPORTANT]
 > Не переименовать, alter, перезаписать или распаковка файлов пакета LUIS.
@@ -175,16 +175,7 @@ Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 |{AUTHORING_KEY} | Ключ разработки учетной записи LUIS для опубликованного приложения LUIS.<br/>Ключ разработки можно получить на странице **User Settings** (Параметры пользователя) на портале LUIS. |
 |{AZURE_REGION} | Соответствующий регион Azure:<br/><br/>```westus``` — западная часть США<br/>```westeurope``` — Западная Европа<br/>```australiaeast``` — Восточная Австралия |
 
-С помощью следующей команды CURL скачайте опубликованный пакет, подставив собственные значения:
-
-```bash
-curl -X GET \
-https://{AZURE_REGION}.api.cognitive.microsoft.com/luis/api/v2.0/package/{APPLICATION_ID}/slot/{APPLICATION_ENVIRONMENT}/gzip  \
- -H "Ocp-Apim-Subscription-Key: {AUTHORING_KEY}" \
- -o {APPLICATION_ID}_{APPLICATION_ENVIRONMENT}.gz
-```
-
-В случае успешного выполнения ответом будет файл пакета LUIS. Сохраните файл в месте хранения, указанном для входного подключения контейнера. 
+Скачать опубликованный пакет, см. в статье [здесь документация по API][download-published-package]. Успешно загружено, представлен ли ответ файл пакета LUIS. Сохраните файл в месте хранения, указанном для входного подключения контейнера. 
 
 ### <a name="export-trained-apps-package-from-api"></a>Экспорт пакета обученного приложения из API
 
@@ -203,16 +194,7 @@ Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 |{AUTHORING_KEY} | Ключ разработки учетной записи LUIS для опубликованного приложения LUIS.<br/>Ключ разработки можно получить на странице **User Settings** (Параметры пользователя) на портале LUIS.  |
 |{AZURE_REGION} | Соответствующий регион Azure:<br/><br/>```westus``` — западная часть США<br/>```westeurope``` — Западная Европа<br/>```australiaeast``` — Восточная Австралия |
 
-С помощью следующей команды CURL скачайте обученный пакет:
-
-```bash
-curl -X GET \
-https://{AZURE_REGION}.api.cognitive.microsoft.com/luis/api/v2.0/package/{APPLICATION_ID}/versions/{APPLICATION_VERSION}/gzip  \
- -H "Ocp-Apim-Subscription-Key: {AUTHORING_KEY}" \
- -o {APPLICATION_ID}_v{APPLICATION_VERSION}.gz
-```
-
-В случае успешного выполнения ответом будет файл пакета LUIS. Сохраните файл в месте хранения, указанном для входного подключения контейнера. 
+Для загрузки обученной пакета, обратитесь к [здесь документация по API][download-trained-package]. Успешно загружено, представлен ли ответ файл пакета LUIS. Сохраните файл в месте хранения, указанном для входного подключения контейнера. 
 
 ## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью команды `docker run`
 
@@ -237,11 +219,9 @@ Billing={BILLING_ENDPOINT} ^
 ApiKey={ENDPOINT_KEY}
 ```
 
-* В этом примере используется каталог `c:` диска, чтобы избежать конфликтов разрешение на Windows. Если вам нужен конкретный каталог для входных данных, может потребоваться предоставить соответствующие разрешения службе Docker. 
+* В этом примере используется каталог `C:` диска, чтобы избежать конфликтов разрешение на Windows. Если вам нужен конкретный каталог для входных данных, может потребоваться предоставить соответствующие разрешения службе Docker. 
 * Не изменяйте порядок аргументов, если вы не являетесь уверенным пользователем контейнеров Docker.
 * Если вы используете другой операционной системы, используйте правильный консоли/терминалов, синтаксис папку для подключений, а символ продолжения строки для вашей системы. В этих примерах предполагается консоли Windows с символ продолжения строки `^`. Так как контейнер — это операционная система Linux, целевой объект подключения использует синтаксис папку стиле Linux.
-
-
 
 Эта команда:
 
@@ -279,7 +259,7 @@ ApiKey={ENDPOINT_KEY}
 
 |Параметр запроса|type|Назначение|
 |--|--|--|
-|`q`|string|Фраза пользователя.|
+|`q`|строка|Фраза пользователя.|
 |`timezoneOffset`|номер|Параметр timezoneOffset позволяет [изменить часовой пояс](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity), используемый предварительно созданной сущностью datetimeV2.|
 |`verbose`|boolean|Возвращает все намерения и их оценки, если задано значение true. По умолчанию задано значение false, при котором возвращается только верхнее намерение.|
 |`staging`|boolean|Возвращает запрос из результатов промежуточной среды, если задано значение true. |
@@ -324,7 +304,6 @@ curl -X GET \
 
 После отправки журнала [просмотрите фразы конечной точки](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-review-endpoint-utterances) на портале LUIS.
 
-
 <!--  ## Validate container is running -->
 
 [!INCLUDE [Container's API documentation](../../../includes/cognitive-services-containers-api-documentation.md)]
@@ -362,14 +341,13 @@ curl -X GET \
 
 Неподдерживаемые конфигурации приложения|Сведения|
 |--|--|
-|Неподдерживаемые языки и региональные параметры контейнеров| Нидерландский (nl-NL)<br>Японский (ja-JP)<br>Немецкий поддерживается только с [1.0.1 лексического анализатора или более поздней версии](luis-language-support.md#custom-tokenizer-versions).|
+|Неподдерживаемые языки и региональные параметры контейнеров| Нидерландский (nl-NL)<br>Японский (ja-JP)<br>Немецкий поддерживается только с [1.0.2 разметчика](luis-language-support.md#custom-tokenizer-versions).|
 |Неподдерживаемые сущности для всех языков и региональных параметров|Предварительно созданная сущность [KeyPhrase](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-keyphrase) для всех языков и региональных параметров|
 |Неподдерживаемые сущности для языка и региональных параметров "Английский (en-US)"|Предварительно созданные сущности [GeographyV2](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-geographyv2)|
 |Подготовка речи|Внешние зависимости не поддерживаются в контейнере.|
 |Анализ мнений|Внешние зависимости не поддерживаются в контейнере.|
 
-<!--blogs/samples/video coures -->
-
+<!--blogs/samples/video courses -->
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
 ## <a name="summary"></a>Сводка
@@ -390,3 +368,7 @@ curl -X GET \
 * Ознакомьтесь со статьей о [конфигурации контейнеров](luis-container-configuration.md).
 * Ознакомьтесь со статьей об [устранение неполадок](troubleshooting.md), чтобы устранить проблемы, связанные с функциональностью LUIS.
 * Воспользуйтесь [дополнительными контейнерами Cognitive Services](../cognitive-services-container-support.md)
+
+<!-- Links - external -->
+[download-published-package]: https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/apps-packagepublishedapplicationasgzip
+[download-trained-package]: https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/apps-packagetrainedapplicationasgzip
