@@ -4,7 +4,7 @@
       href: get-started.md
     - name: Сертификаты
       href: sap-certifications.md
-- name: SAP HANA в Azure (большие экземпляры)
+- name: SAP HANA в Azure (крупные экземпляры)
   items:
     - name: Обзор
       items:
@@ -50,7 +50,7 @@
           href: hana-installation.md
         - name: Пример установки HANA
           href: hana-example-installation.md
-    - name: Высокий уровень доступности и аварийное восстановление
+    - name: Высокая доступность и аварийное восстановление
       items:
         - name: Параметры и рекомендации
           href: hana-overview-high-availability-disaster-recovery.md
@@ -66,11 +66,11 @@
           href: troubleshooting-monitoring.md
         - name: Мониторинг и устранение неполадок со стороны HANA
           href: hana-monitor-troubleshoot.md
-    - name: Руководства
+    - name: Практическое руководство
       items:
         - name: Управление крупными экземплярами HANA в Azure с помощью портала Azure
           href: hana-li-portal.md
-        - name: Обеспечение высокой доступности с помощью STONITH
+        - name: Обеспечение высокого уровня доступности с помощью STONITH
           href: ha-setup-with-stonith.md
         - name: "Резервное копирование ОС для номеров SKU типа\_II"
           href: os-backup-type-ii-skus.md
@@ -118,17 +118,17 @@
       href: deployment-guide.md
     - name: Руководства по развертыванию СУБД для рабочих нагрузок SAP
       items:
-        - name: Общие сведения о развертывании СУБД на виртуальных машинах Azure для рабочих нагрузок SAP
+        - name: Общие сведения о развертывании СУБД на Виртуальных машинах Azure для рабочих нагрузок SAP
           href: dbms_guide_general.md
-        - name: Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server
+        - name: Рабочие нагрузки SAP на Виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server
           href: dbms_guide_sqlserver.md
-        - name: Развертывание СУБД на виртуальных машинах Azure в Oracle для рабочей нагрузки SAP
+        - name: Развертывание СУБД на Виртуальных машинах Azure в Oracle для рабочей нагрузки SAP
           href: dbms_guide_oracle.md
-        - name: Развертывание СУБД IBM DB2 на виртуальных машинах Azure для рабочей нагрузки SAP
+        - name: Развертывание СУБД IBM DB2 на Виртуальных машинах Azure для рабочей нагрузки SAP
           href: dbms_guide_ibm.md
-        - name: Обеспечение высокого уровня доступности IBM DB2 LUW на виртуальных машинах Azure в SUSE Linux Enterprise Server
+        - name: Обеспечение высокого уровня доступности IBM DB2 LUW на Виртуальных машинах Azure в SUSE Linux Enterprise Server
           href: dbms-guide-ha-ibm.md
-        - name: Развертывание СУБД на виртуальных машинах Azure в SAP ASE для рабочей нагрузки SAP
+        - name: Развертывание СУБД на Виртуальных машинах Azure в SAP ASE для рабочей нагрузки SAP
           href: dbms_guide_sapase.md
         - name: 'Развертывание SAP MaxDB, liveCache и сервера содержимого в Azure'
           href: dbms_guide_maxdb.md
@@ -168,6 +168,8 @@
               href: high-availability-guide-suse-netapp-files.md
             - name: Обеспечение высокого уровня доступности в Red Hat Enterprise Linux для экземпляра (A)SCS
               href: high-availability-guide-rhel.md
+            - name: HA в Red Hat Enterprise Linux для экземпляра (A)SCS с использованием Azure NetApp Files
+              href: high-availability-guide-rhel-netapp-files.md
         - name: Подготовка инфраструктуры Azure
           items:
             - name: Использование Windows с общим диском для экземпляра (A)SCS
@@ -194,6 +196,8 @@
               href: high-availability-guide-suse-netapp-files.md
             - name: Обеспечение высокого уровня доступности для SAP NetWeaver в Red Hat Enterprise Linux
               href: high-availability-guide-rhel.md
+            - name: Red Hat Enterprise Linux с NFS для экземпляра (A)SCS с использованием Azure NetApp Files
+              href: high-availability-guide-rhel-netapp-files.md
         - name: Использование нескольких SID в SAP
           items:
             - name: Использование Windows с общим диском для экземпляра (A)SCS

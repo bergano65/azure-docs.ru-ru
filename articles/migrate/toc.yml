@@ -18,7 +18,7 @@
       href: concepts-assessment-calculation.md
     - name: Сведения о визуализации зависимостей
       href: concepts-dependency-visualization.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Ряд примеров по миграции Contoso
       href: contoso-migration-overview.md
@@ -42,7 +42,9 @@
   items:
     - name: Часто задаваемые вопросы
       href: resources-faq.md
-    - name: "REST\_API"
+    - name: Миграция с помощью Cloud Adoption Framework
+      href: 'https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/index'
+    - name: REST API
       href: 'https://docs.microsoft.com/rest/api/migrate/'
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.migrate/allversions

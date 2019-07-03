@@ -93,6 +93,8 @@
       items:
         - name: Обзор Задач ACR
           href: container-registry-tasks-overview.md
+        - name: Запланированные задачи
+          href: container-registry-tasks-scheduled.md
         - name: Многошаговые задачи
           href: container-registry-tasks-multi-step.md
         - name: Использование с управляемым удостоверением
@@ -107,7 +109,7 @@
           href: ../service-fabric/service-fabric-tutorial-create-container-images.md
 - name: Справочные материалы
   items:
-    - name: "Azure\_CLI"
+    - name: Azure CLI
       href: /cli/azure/acr
     - name: REST
       href: /rest/api/containerregistry

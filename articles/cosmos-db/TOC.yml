@@ -458,12 +458,14 @@
           items:
             - name: "1.\_Запрашивание данных"
               href: tutorial-query-graph.md
-        - name: Инструкции
+        - name: Руководства
           items:
-            - name: Импорт данных графа
-              href: bulk-executor-graph-dotnet.md
+            - name: Моделирование данных графов
+              href: graph-modeling.md
             - name: Секционирование данных графов
               href: graph-partitioning.md
+            - name: Импорт данных графа
+              href: bulk-executor-graph-dotnet.md
             - name: Оптимизация запросов Gremlin
               href: graph-execution-profile.md
             - name: Хранение данных и управление ими с помощью Spring Data

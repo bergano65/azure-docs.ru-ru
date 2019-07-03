@@ -13,17 +13,17 @@
   items:
     - name: Создание приложения
       href: quick-deploy-iot-central.md
-- name: Руководства
+- name: Учебники
   items:
-    - name: "1.\_Определение нового типа устройства"
+    - name: 1. Определение нового типа устройства
       href: tutorial-define-device-type.md
-    - name: "2.\_Настройка правил"
+    - name: 2. Настройка правил
       href: tutorial-configure-rules.md
-    - name: "3.\_Настройка представления оператора"
+    - name: 3. Настройка представления оператора
       href: tutorial-customize-operator.md
-    - name: "4.\_Мониторинг устройств"
+    - name: 4. Мониторинг устройств
       href: tutorial-monitor-devices.md
-    - name: "5.\_Добавление устройства"
+    - name: 5. Добавление устройства
       href: tutorial-add-device.md
 - name: Основные понятия
   items:
@@ -31,7 +31,7 @@
       href: concepts-architecture.md
     - name: Возможность подключения
       href: concepts-connectivity.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Подключение устройств
       items:
@@ -62,7 +62,7 @@
         - name: Использование наборов устройств
           href: howto-use-device-sets.md
         - name: Создание версии шаблона устройства
-          href: howto-version-devicetemplate.md
+          href: howto-version-device-template.md
     - name: Мониторинг и аналитика
       items:
         - name: Создание правила телеметрии
@@ -105,6 +105,8 @@
           href: howto-prepare-images.md
         - name: Настройка панели мониторинга приложений
           href: howto-configure-homepage.md
+        - name: Использование плиток панелей мониторинга
+          href: howto-use-tiles.md
         - name: Настройка пользовательского интерфейса приложения
           href: howto-customize-ui.md
         - name: Использование шаблонов приложений
@@ -137,7 +139,7 @@
       items:
         - name: Центр Интернета вещей
           href: /azure/iot-hub
-        - name: Подготовка устройств к добавлению в Центр Интернета вещей
+        - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
           href: /azure/iot-dps
         - name: Службы на основе определения местоположения
           href: /azure/location-based-services

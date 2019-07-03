@@ -36,6 +36,8 @@
   items:
     - name: Выбор технологии анализа потоковой передачи
       href: streaming-technologies.md
+    - name: Выбор средства разработки для заданий
+      href: feature-comparison.md
     - name: Типы входных данных для задания
       items:
         - name: Общие сведения о входных данных
