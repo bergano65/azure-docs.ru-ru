@@ -8,8 +8,6 @@
       href: azure-portal-supported-browsers-devices.md
 - name: Основные понятия
   items:
-    - name: Создание панелей мониторинга Azure и предоставление общего доступа к ним
-      href: azure-portal-dashboards.md
     - name: Предоставление общего доступа с управлением доступом на основе ролей
       href: azure-portal-dashboard-share-access.md
     - name: Создание панелей мониторинга Azure программными средствами
@@ -20,6 +18,8 @@
       href: azure-portal-change-theme-high-contrast.md
     - name: 'Добавление, удаление и сортировка избранного'
       href: azure-portal-add-remove-sort-favorites.md
+    - name: Создание панелей мониторинга Azure и предоставление общего доступа к ним
+      href: azure-portal-dashboards.md
     - name: Использование пользовательской плитки с поддержкой Markdown
       href: azure-portal-markdown-tile.md
     - name: Экспорт или удаление параметров пользователя

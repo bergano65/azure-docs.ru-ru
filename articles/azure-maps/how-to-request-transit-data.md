@@ -25,7 +25,7 @@ ms.locfileid: "66735576"
 * Получить идентификатор области metro с помощью [API получения для области «METRO»](https://aka.ms/AzureMapsMobilityMetro)
 * Запросить рядом пути перестает использовать [Получение близлежащих передаче](https://aka.ms/AzureMapsMobilityNearbyTransit) службы.
 * Запрос [получить API маршрутов передаче](https://aka.ms/AzureMapsMobilityTransitRoute) на планирование маршрута с помощью общественного.
-* Запросить геометрического пути маршрута и подробное расписание для маршрута с помощью [API маршрута пути получения](https://aka.ms/ https://azure.microsoft.com/services/azure-maps/).
+* Запросить геометрического пути маршрута и подробное расписание для маршрута с помощью [API маршрута пути получения](https://aka.ms/https://azure.microsoft.com/services/azure-maps/).
 
 
 ## <a name="prerequisites"></a>Технические условия

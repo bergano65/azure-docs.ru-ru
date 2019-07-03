@@ -8,7 +8,7 @@ metadata:
   author: cherylmc
   ms.service: Bastion
   ms.topic: landing-page
-  ms.date: 06/13/2019
+  ms.date: 07/02/2019
   ms.author: cherylmc
 abstract:
   description: 'Узнайте, как подключиться к виртуальной машине с помощью Бастиона Azure. Настраивайте безопасное и бесперебойное подключение RDP или SSH к виртуальным машинам непосредственно на портале Azure по протоколу SSL. При подключении с помощью Бастиона Azure виртуальным машинам не требуются общедоступные IP-адреса.'
@@ -33,11 +33,3 @@ sections:
           - html: <a href="/azure/bastion/bastion-connect-vm-ssh">Подключение к виртуальной машине Windows</a>
           - html: <a href="/azure/bastion/bastion-connect-vm-rdp">Подключение к виртуальной машине Linux</a>
           - html: <a href="/azure/bastion/bastion-faq">Ознакомьтесь с вопросами и ответами о Бастионе Azure </a>
-  - title: Справочные материалы
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: REST
-            html: '<p><a href="https://msdn.microsoft.com/library/azure/mt586720">справочник по API REST</a></p>'

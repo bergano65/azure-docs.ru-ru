@@ -4,7 +4,7 @@
   items:
     - name: Сведения о Бастионе Azure
       href: bastion-overview.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Создание узла-бастиона
       href: bastion-create-host-portal.md
@@ -22,10 +22,6 @@
           href: bastion-vm-full-screen.md
     - name: Работа с группами безопасности сети
       href: bastion-nsg.md
-- name: Справочные материалы
-  items:
-    - name: REST
-      href: 'https://docs.microsoft.com/rest/api/network-gateway'
 - name: Ресурсы
   items:
     - name: Вопросы и ответы о Бастионе

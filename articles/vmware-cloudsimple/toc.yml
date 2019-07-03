@@ -72,6 +72,8 @@
               href: manage-private-cloud.md
             - name: Расширение частного облака
               href: expand-private-cloud.md
+            - name: Сжатие частного облака
+              href: shrink-private-cloud.md
             - name: Сопоставление подписки Azure
               href: azure-subscription-mapping.md
             - name: Эскалация привилегий

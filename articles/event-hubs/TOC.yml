@@ -30,7 +30,7 @@
           href: event-hubs-dotnet-standard-getstarted-send.md
         - name: Java
           href: event-hubs-java-get-started-send.md
-    - name: Регистрация событий
+    - name: Сбор событий
       items:
         - name: Использование портала Azure для включения функции "Сбор" в Центрах событий
           href: event-hubs-capture-enable-through-portal.md
@@ -42,7 +42,7 @@
       href: event-hubs-quickstart-kafka-enabled-event-hubs.md
     - name: Создание кластера ценовой категории "Выделенный"
       href: event-hubs-dedicated-cluster-create-portal.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Визуализация аномальных данных в потоках данных Центров событий
       href: event-hubs-tutorial-visualize-anomalies.md
@@ -63,14 +63,16 @@
       href: event-hubs-availability-and-consistency.md
     - name: Масштабируемость
       href: event-hubs-scalability.md
+    - name: Геоизбыточное аварийное восстановление
+      items:
+        - name: Геоизбыточное аварийное восстановление и георепликация
+          href: event-hubs-geo-dr.md
     - name: Безопасность
       items:
         - name: Управляемое удостоверение для ресурсов Azure
           href: event-hubs-managed-service-identity.md
         - name: Управление доступом на основе ролей (предварительная версия)
           href: event-hubs-role-based-access-control.md
-        - name: Геоизбыточное аварийное восстановление и георепликация
-          href: event-hubs-geo-dr.md
         - name: Общие сведения об аутентификации и безопасности
           href: event-hubs-authentication-and-security-model-overview.md
         - name: Атрибуты безопасности
@@ -78,7 +80,7 @@
     - name: "Руководство по использованию протокола AMQP\_1.0"
       href: ../service-bus-messaging/service-bus-amqp-protocol-guide.md
       maintainContext: true
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Разработка
       items:
