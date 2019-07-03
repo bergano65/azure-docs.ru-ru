@@ -62,8 +62,8 @@ ms.locfileid: "66510703"
 
 | Атрибут | Обязательно для заполнения | Описание |
 | --------- | -------- | ----------- |
-| issuer_secret | Да | Сертификат X509 (набор ключей RSA), используемый для подписывания токена JWT. Это ключ `B2C_1A_TokenSigningKeyContainer`, настроенный при работе со статьей [Azure Active Directory B2C: начало работы с настраиваемыми политиками](active-directory-b2c-get-started-custom.md). | 
-| issuer_refresh_token_key | Да | Сертификат X509 (набор ключей RSA), используемый для шифрования токена обновления. Вы настроили ключ `B2C_1A_TokenEncryptionKeyContainer` во время работы со статьей [Azure Active Directory B2C: начало работы с настраиваемыми политиками](active-directory-b2c-get-started-custom.md). |
+| issuer_secret | Да | Сертификат X509 (набор ключей RSA), используемый для подписывания токена JWT. Это `B2C_1A_TokenSigningKeyContainer` ключа, настроенное в [приступить к работе с настраиваемыми политиками](active-directory-b2c-get-started-custom.md). | 
+| issuer_refresh_token_key | Да | Сертификат X509 (набор ключей RSA), используемый для шифрования токена обновления. Вы настроили `B2C_1A_TokenEncryptionKeyContainer` в [приступить к работе с настраиваемыми политиками](active-directory-b2c-get-started-custom.md) |
 
 
 

@@ -18,7 +18,7 @@ ms.custom: aaddev;it-pro;seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a62f44783d63131812794a4b55f0e9f9f3b45f27
 ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "66742486"
@@ -823,7 +823,7 @@ Azure AD можно настроить автоматическую подгот
    ```
 
 ### <a name="handling-endpoint-authentication"></a>Обработка аутентификации на конечной точке
-Запросы от Azure Active Directory содержат токен носителя OAuth 2.0.   Любая служба, получающая запрос должна убедиться, что токен выдала Azure Active Directory для ожидаемого клиента Azure Active Directory, для доступа к веб-службы Azure Active Directory Graph.  В токене издатель обозначается утверждением iss, например «iss»:» https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/ «.  В этом примере базовый адрес утверждения со значением https://sts.windows.net , определяющее Azure Active Directory в качестве поставщика, относительного адреса сегмента, cbb1a5ac-f33b-45fa-9bf5-f37db0fed422, — это уникальный идентификатор клиента Azure Active Directory для выданный маркер.  Если токен выпущен для доступа к веб-службе Azure Active Directory Graph, то утверждение aud такого токена должно иметь значение 00000002-0000-0000-c000-000000000000, то есть значение идентификатора этой веб-службы.  Каждое из приложений, которые зарегистрированы в одном клиенте может появиться же `iss` утверждения с запросами SCIM.
+Запросы от Azure Active Directory содержат токен носителя OAuth 2.0.   Любая служба, получающая запрос должна убедиться, что токен выдала Azure Active Directory для ожидаемого клиента Azure Active Directory, для доступа к веб-службы Azure Active Directory Graph.  В токене издатель обозначается утверждением iss, например «iss»:"https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/ ".  В этом примере базовый адрес утверждения со значением https://sts.windows.net , определяющее Azure Active Directory в качестве поставщика, относительного адреса сегмента, cbb1a5ac-f33b-45fa-9bf5-f37db0fed422, — это уникальный идентификатор клиента Azure Active Directory для выданный маркер.  Если токен выпущен для доступа к веб-службе Azure Active Directory Graph, то утверждение aud такого токена должно иметь значение 00000002-0000-0000-c000-000000000000, то есть значение идентификатора этой веб-службы.  Каждое из приложений, которые зарегистрированы в одном клиенте может появиться же `iss` утверждения с запросами SCIM.
 
 Разработчики, использующие библиотеки CLI, предоставляемые корпорацией Майкрософт для создания службы SCIM могут аутентифицировать запросы от Azure Active Directory с помощью пакета Microsoft.Owin.Security.ActiveDirectory, выполнив следующие действия: 
 
