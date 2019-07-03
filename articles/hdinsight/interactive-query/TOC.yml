@@ -24,6 +24,9 @@
       maintainContext: true
 - name: Практическое руководство
   items:
+    - name: "Перенос рабочих нагрузок Hive в HDInsight\_4.0"
+      href: apache-hive-migrate-workloads.md
+      maintainContext: true
     - name: Использование системы хранения данных кластера
       items:
         - name: Использование службы хранилища Azure
@@ -100,6 +103,9 @@
           href: ./apache-hadoop-connect-hive-power-bi-directquery.md
         - name: "Подключение Power\_BI к Apache Hadoop"
           href: ../hadoop/apache-hadoop-connect-hive-power-bi.md
+          maintainContext: true
+        - name: Выполнение запросов Hive с помощью PowerShell и ODBC
+          href: apache-hive-query-odbc-driver-powershell.md
           maintainContext: true
         - name: Подключение Excel к Apache Hadoop
           href: ../hadoop/apache-hadoop-connect-excel-hive-odbc-driver.md
@@ -333,11 +339,6 @@
         - name: Мониторинг производительности кластера
           href: ../hdinsight-key-scenarios-to-monitor.md
           maintainContext: true
-- name: Практическое руководство
-  items:
-    - name: "Перенос рабочих нагрузок Hive в HDInsight\_4.0"
-      href: apache-hive-migrate-workloads.md
-      maintainContext: true
 - name: Справочные материалы
   items:
     - name: Примеры кода
