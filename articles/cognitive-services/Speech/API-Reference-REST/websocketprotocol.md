@@ -152,7 +152,7 @@ Content-Length: 0
 
 | Верхний колонтитул | Значение |
 |----|----|
-| Путь | Путь сообщений, указанный в этом документе |
+| Path | Путь сообщений, указанный в этом документе |
 | X-RequestId | UUID в формате "без тире" |
 | X-Timestamp | Клиентская метка времени UTC в формате ISO 8601 |
 
@@ -181,7 +181,7 @@ Content-Length: 0
 
 | Имя заголовка | Значение |
 |----|----|
-| Путь | `speech.config` |
+| Path | `speech.config` |
 | X-Timestamp | Клиентская метка времени UTC в формате ISO 8601 |
 | Content-Type | application/json; charset=utf-8 |
 
@@ -252,7 +252,7 @@ Content-Length: 0
 
 | Верхний колонтитул         |  Значение     |
 | ------------- | ---------------- |
-| Путь | `audio` |
+| Path | `audio` |
 | X-RequestId | UUID в формате "без тире" |
 | X-Timestamp | Клиентская метка времени UTC в формате ISO 8601 |
 | Content-Type | Тип содержимого аудио. Тип должен быть либо *audio/x-wav* (PCM), либо *audio/silk* (SILK). |
