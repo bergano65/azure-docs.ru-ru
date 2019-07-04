@@ -15,11 +15,11 @@ ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: apimpm
 ms.openlocfilehash: 6820b44309ac2b3dbeb5ad6f0beb460c8712e9af
-ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50912126"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67203686"
 ---
 # <a name="publish-multiple-versions-of-your-api"></a>Публикация нескольких версий API 
 
@@ -38,15 +38,15 @@ ms.locfileid: "50912126"
 ## <a name="prerequisites"></a>Предварительные требования
 
 + Ознакомьтесь с [терминологией службы управления API в Azure](api-management-terminology.md).
-+ Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
-+ Также выполните задачи из руководства по [импорту и публикации первого API](import-and-publish.md).
++ Выполните инструкции из краткого руководства — [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
++ Также выполните инструкции из руководства [Импорт и публикация первого API](import-and-publish.md).
 
 ## <a name="add-a-new-version"></a>Добавление новой версии
 
 ![Контекстное меню API: добавление версии](media/api-management-getstarted-publish-versions/AddVersionMenu.png)
 
 1. В списке API выберите **Demo Conference API**.
-2. Выберите контекстное меню (**...** ) рядом с пунктом.
+2. Выберите контекстное меню ( **...** ) рядом с пунктом.
 3. Выберите **+ Add Version** (+ Добавить версию).
 
 > [!TIP]

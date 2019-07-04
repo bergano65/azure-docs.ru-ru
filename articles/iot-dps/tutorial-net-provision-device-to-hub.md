@@ -10,16 +10,16 @@ services: iot-dps
 manager: timlt
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 6e1681e4eca923e8e4ce541570b4ed4b3ba9d567
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.openlocfilehash: 4a6a074c3f677023928fefa5c09eb305b5441dfe
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65834443"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67303975"
 ---
 # <a name="enroll-the-device-to-an-iot-hub-using-the-azure-iot-hub-provisioning-service-client-net"></a>Регистрация устройства в Центре Интернета вещей с помощью клиента службы подготовки для Центра Интернета вещей Azure (.NET)
 
-В предыдущем руководстве вы узнали, как настраивать устройство для подключения к службе подготовки устройств. В этом руководстве описывается, как использовать эту службу для подготовки устройства в одном Центре Интернета вещей с помощью как **_индивидуальной регистрации_**, так и **_групп регистраций_**. В этом учебнике описаны следующие процедуры.
+В предыдущем руководстве вы узнали, как настраивать устройство для подключения к службе подготовки устройств. В этом руководстве описывается, как использовать эту службу для подготовки устройства в одном Центре Интернета вещей с помощью как **_индивидуальной регистрации_** , так и **_групп регистраций_** . В этом учебнике описаны следующие процедуры.
 
 > [!div class="checklist"]
 > * Регистрация устройства
@@ -121,13 +121,13 @@ ms.locfileid: "65834443"
         SetRegistrationDataAsync().GetAwaiter().GetResult();
             
         Console.WriteLine("Done, hit enter to exit.");
-        Console.ReadLine();
     }
     catch (Exception ex)
     {
         Console.WriteLine();
         Console.WriteLine("Error in sample: {0}", ex.Message);
     }
+    Console.ReadLine();
     ```
         
 1. В обозревателе решений Visual Studio щелкните правой кнопкой мыши решение и выберите пункт **Назначить запускаемые проекты**. Выберите пункт **Один запускаемый проект**, а затем в раскрывающемся меню выберите проект **DeviceProvisioning**.  

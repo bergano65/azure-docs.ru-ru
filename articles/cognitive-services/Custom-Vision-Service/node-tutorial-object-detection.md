@@ -10,12 +10,12 @@ ms.component: custom-vision
 ms.topic: quickstart
 ms.date: 03/21/2019
 ms.author: areddish
-ms.openlocfilehash: 17b6e59e121b836823b9e86d0d60b91d93ba82f9
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: fdc29d39979bcddc75c3c51d39c9efee9eb5819e
+ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58487266"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67144293"
 ---
 # <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-nodejs-sdk"></a>Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательского визуального распознавания для Node.js
 
@@ -31,8 +31,8 @@ ms.locfileid: "58487266"
 Чтобы установить пакеты SDK Пользовательского визуального распознавания для Node.js, выполните следующие команды:
 
 ```command
-npm install azure-cognitiveservices-customvision-training
-npm install azure-cognitiveservices-customvision-prediction
+npm install @azure/cognitiveservices-customvision-training
+npm install @azure/cognitiveservices-customvision-prediction
 ```
 
 Вы можете скачать изображения из [репозитория примеров для Node.js](https://github.com/Azure-Samples/cognitive-services-node-sdk-samples).
@@ -231,7 +231,7 @@ const trainer = new TrainingApi.TrainingAPIClient(trainingKey, endPoint);
 node sample.js
 ```
 
-Выходные данные приложения должны появиться в консоли. Вы можете убедиться, что тестовое изображение (в **samples/vision/images/Test/**) помечено соответствующим образом и что область обнаружения верна.
+Выходные данные приложения должны появиться в консоли. Вы можете убедиться, что тестовое изображение (в **samples/vision/images/Test/** ) помечено соответствующим образом и что область обнаружения верна.
 
 [!INCLUDE [clean-od-project](includes/clean-od-project.md)]
 

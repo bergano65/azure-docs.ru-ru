@@ -15,11 +15,11 @@ ms.date: 04/10/2019
 ms.author: jmprieur
 ms.custom: include file
 ms.openlocfilehash: ae6d590cdada24638ec2d24c83609b8e6addfaf0
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66121623"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185462"
 ---
 ## <a name="set-up-your-project"></a>Настройка проекта
 
@@ -34,7 +34,7 @@ ms.locfileid: "66121623"
 Для создания приложения выполните следующие действия.
 
 1. В Visual Studio выберите **Файл** > **Создать** > **Проект**.
-2. В разделе **Шаблоны** выберите **Visual C#**.
+2. В разделе **Шаблоны** выберите **Visual C#** .
 3. Выберите **WPF App** (.NET Framework) в зависимости от используемой версии Visual Studio.
 
 ## <a name="add-msal-to-your-project"></a>Добавление MSAL в проект

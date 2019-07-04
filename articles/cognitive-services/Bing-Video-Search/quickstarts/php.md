@@ -8,21 +8,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: quickstart
-ms.date: 01/31/2019
+ms.date: 06/26/2019
 ms.author: aahi
-ms.openlocfilehash: 50c39594aeb014860d25b2f2cc791ebfec14b572
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 2e5d05c32c9c3271cfc49e7abd0609ec7b090778
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57535208"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67435296"
 ---
 # <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-php"></a>Краткое руководство. Поиск видео с помощью REST API Bing для поиска видео и PHP
 
 Из этого краткого руководства вы узнаете, как сделать первый вызов API Bing для поиска видео и просмотреть результаты поиска в ответе JSON. Это простое приложение JavaScript отправляет HTTP-запрос для поиска видео к API и выводит ответ. Хотя это приложение создается на языке JavaScript и использует язык Node.js, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 Этот пример кода должен выполняться в PHP 5.6.
 
-Технические сведения об API-интерфейсах см. в [справочнике по API](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference).
+Технические сведения об API-интерфейсах см. в [справочнике по API](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -32,7 +32,7 @@ ms.locfileid: "57535208"
 
 ## <a name="running-the-application"></a>Запуск приложения
 
-[API Bing для поиска видео](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference) возвращает результаты поиска видео из поисковой системы Bing.
+[API Bing для поиска видео](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference) возвращает результаты поиска видео из поисковой системы Bing.
 
 1. Убедитесь, что в `php.ini` включена поддержка безопасного HTTP-подключения, как описано в комментарии к коду.
 2. Создайте проект PHP в используемой вами интегрированной среде разработки или редакторе.

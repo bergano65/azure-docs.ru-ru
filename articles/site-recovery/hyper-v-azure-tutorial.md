@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 9d45e0f0c759685f9d35285ee7718585d5961333
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: f4c9ddf608033f6b85268fe74b12861eb8c30082
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66399412"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295154"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Настройка аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "66399412"
 
 Это третье руководство в серии. В нем предполагается, что вы уже выполнили задачи из предыдущих учебников.
 
-1. [Подготовка Azure](tutorial-prepare-azure.md).
+1. [Подготовка Azure](tutorial-prepare-azure.md)
 2. [Подготовка локальных серверов Hyper-V](tutorial-prepare-on-premises-hyper-v.md)
 
 ## <a name="select-a-replication-goal"></a>Выбор цели репликации
@@ -106,7 +106,7 @@ Azure Site Recovery извлечет метаданные с сервера Hype
 3. Зарегистрируйте сервер с помощью следующей команды:
 
     ```
-    cd  C:\Program Files\Microsoft Azure Site Recovery Provider\DRConfigurator.exe" /r /Friendlyname "FriendlyName of the Server" /Credentials "path to where the credential file is saved"
+    cd  "C:\Program Files\Microsoft Azure Site Recovery Provider\DRConfigurator.exe" /r /Friendlyname "FriendlyName of the Server" /Credentials "path to where the credential file is saved"
     ```
 
 ## <a name="set-up-the-target-environment"></a>Настройка целевой среды
@@ -144,4 +144,4 @@ Site Recovery проверяет наличие одной или несколь
 
 ## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"]
-> [Run a disaster recovery drill to Azure](tutorial-dr-drill-azure.md) (Выполнение отработки аварийного восстановления в Azure)
+> [Выполнение отработки аварийного восстановления](tutorial-dr-drill-azure.md)

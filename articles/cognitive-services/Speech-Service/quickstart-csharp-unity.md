@@ -10,14 +10,16 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 2/20/2019
 ms.author: wolfma
-ms.openlocfilehash: 3cedfaf1ae16c17026314fc24dbdc7bb11494caf
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: dd8e760e658715b89bf45718ac571ccaeb5ade96
+ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65020954"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67465575"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-unity-beta"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для Unity (бета-версия)
+
+Также доступны краткие руководства по [преобразованию текста в речь](quickstart-text-to-speech-csharp-unity.md).
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
@@ -79,7 +81,7 @@ ms.locfileid: "65020954"
 
 ## <a name="add-the-sample-code"></a>Добавление примеров кода
 
-1. В [окне проекта](https://docs.unity3d.com/Manual/ProjectView.html) (по умолчанию слева внизу) нажмите кнопку **Создать**, а затем выберите **Скрипт C#**. Назовите скрипт `HelloWorld`.
+1. В [окне проекта](https://docs.unity3d.com/Manual/ProjectView.html) (по умолчанию слева внизу) нажмите кнопку **Создать**, а затем выберите **Скрипт C#** . Назовите скрипт `HelloWorld`.
 
 1. Отредактируйте скрипт, дважды щелкнув его.
 

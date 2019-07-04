@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 2/20/2019
 ms.author: chlandsi
-ms.openlocfilehash: 7d405c1e4ac5de7591f92b391071cfd66371c088
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 023bb95eb55c88c7da548af003132bb391fdb7ce
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66003147"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67484978"
 ---
 # <a name="quickstart-recognize-speech-in-objective-c-on-ios-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в iOS с помощью Objective-C и пакета SDK службы "Речь"
 
@@ -35,7 +35,7 @@ ms.locfileid: "66003147"
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.5.1`.
+Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.6.0`.
 
 Пакет SDK службы "Речь" для Cognitive Services для iOS сейчас доступен в виде Cocoa Framework.
 Скачать его можно [здесь](https://aka.ms/csspeech/iosbinary). Загрузите файл в домашний каталог.
@@ -57,7 +57,7 @@ ms.locfileid: "66003147"
     1. Выберите свой домашний каталог, чтобы поместить в него проект. Это создаст в вашем домашнем каталоге каталог `helloworld`, содержащий все файлы проекта Xcode.
     1. Для этого примера проекта отключите создание репозитория Git.
     1. Измените пути к пакету SDK в *Параметрах проекта*.
-        1. На вкладке **Общие** в разделе **Embedded Binaries** (Внедренные двоичные файлы) добавьте в качестве платформы библиотеку пакета SDK: Последовательно выберите **Add embedded binaries (Добавить внедренные двоичные файлы)** > **Add other... (Добавить другое...)**, перейдите к корневому каталогу и выберите файл `MicrosoftCognitiveServicesSpeech.framework`. Также автоматически добавится библиотека пакета SDK в заголовок **Linked Framework and Libraries** (Связанные платформы и библиотеки).
+        1. На вкладке **Общие** в разделе **Embedded Binaries** (Внедренные двоичные файлы) добавьте в качестве платформы библиотеку пакета SDK: Последовательно выберите **Add embedded binaries (Добавить внедренные двоичные файлы)**  > **Add other... (Добавить другое...)** , перейдите к корневому каталогу и выберите файл `MicrosoftCognitiveServicesSpeech.framework`. Также автоматически добавится библиотека пакета SDK в заголовок **Linked Framework and Libraries** (Связанные платформы и библиотеки).
         ![Добавленная платформа](media/sdk/qs-objectivec-framework.png)
         1. Перейдите на вкладку **Build Settings** (Параметры сборки) и активируйте **Все** параметры.
         1. Добавьте каталог `$(SRCROOT)/..` в *Пути поиска платформы* под заголовком **Пути поиска**.
@@ -67,7 +67,7 @@ ms.locfileid: "66003147"
 
 В примере приложения будет очень простой пользовательский интерфейс: две кнопки для запуска распознавания речи из файла или из данных, поступающих в микрофон, и текстовая подпись для отображения результата.
 Пользовательский интерфейс настраивается в элементе проекта `Main.storyboard`.
-Откройте XML-представление раскадровки, щелкнув правой кнопкой мыши запись `Main.storyboard` в дереве проекта и выбрав **Open As...**(Открыть как...) > **Source Code**(Исходный код).
+Откройте XML-представление раскадровки, щелкнув правой кнопкой мыши запись `Main.storyboard` в дереве проекта и выбрав **Open As...** (Открыть как...) > **Source Code**(Исходный код).
 Замените автоматически сгенерированный XML на этот код:
 
 [!code-xml[](~/samples-cognitive-services-speech-sdk/quickstart/objectivec-ios/helloworld/helloworld/Base.lproj/Main.storyboard)]
@@ -81,7 +81,7 @@ ms.locfileid: "66003147"
    [!code-objectivec[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/objectivec-ios/helloworld/helloworld/ViewController.m#code)]
 1. Замените строку `YourSubscriptionKey` своим ключом подписки.
 1. Замените строку `YourServiceRegion` значением [региона](regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
-1. Добавьте запрос на доступ к микрофону. В дереве проекта щелкните правой кнопкой мыши запись `Info.plist` и выберите **Open As...** > **Source Code** ("Открыть как..." > "Исходный код"). Добавьте в раздел `<dict>` следующие строки, а затем сохраните файл.
+1. Добавьте запрос на доступ к микрофону. В дереве проекта щелкните правой кнопкой мыши запись `Info.plist` и выберите **Open As...**  > **Source Code** ("Открыть как..." > "Исходный код"). Добавьте в раздел `<dict>` следующие строки, а затем сохраните файл.
     ```xml
     <key>NSMicrophoneUsageDescription</key>
     <string>Need microphone access for speech recognition from microphone.</string>
@@ -90,9 +90,8 @@ ms.locfileid: "66003147"
 ## <a name="building-and-running-the-sample"></a>Сборка и запуск примера
 
 1. Сделайте вывод отладки видимым: **View**(Представление) > **Debug Area**(Отладка области) > **Activate Console**(Активировать консоль).
-1. Выберите либо симулятор iOS, либо устройство iOS, подключенное к компьютеру для разработки, в качестве места назначения для приложения из списка в меню **Продукт** -> **Место назначения**.
-1. Соберите и выполните пример кода в симуляторе iOS, выбрав в меню **Product**(Продукт) -> **Run**(Запустить) или нажав кнопку **Play**(Воспроизвести).
-   В настоящее время пакет SDK для службы "Речь" поддерживает только 64-разрядные платформы iOS.
+1. Выберите либо симулятор iOS, либо устройство iOS, подключенное к компьютеру для разработки, в качестве места назначения для приложения из списка в меню **Продукт** > **Место назначения**.
+1. Соберите и выполните пример кода в симуляторе iOS, выбрав в меню **Product**(Продукт) > **Run**(Запустить) или нажав кнопку **Play**(Воспроизвести).
 1. Нажав кнопку Recognize (File) (Распознать (файл)) в приложении, вы должны увидеть содержимое звукового файла What's the weather like? в нижней части экрана.
 
    ![Сымитированное приложение iOS](media/sdk/qs-objectivec-simulated-app.png)
