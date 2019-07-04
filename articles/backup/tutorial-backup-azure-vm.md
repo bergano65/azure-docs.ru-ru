@@ -1,19 +1,19 @@
 ---
 title: Резервное копирование нескольких виртуальных машин Azure с помощью PowerShell
 description: В этом учебнике рассматривается резервное копирование нескольких виртуальных машин Azure в хранилище Служб восстановления с помощью Azure PowerShell.
-author: rayne-wiselman
+author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: tutorial
 ms.date: 03/05/2019
-ms.author: raynew
+ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: 2a35435f56a4bb09a8a1958fbc175ef7c889c380
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7cbe2cca37ce237409042e40b4a60311aed2446c
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66127662"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67273996"
 ---
 # <a name="back-up-azure-vms-with-powershell"></a>Резервное копирование виртуальных машин Azure с помощью PowerShell
 

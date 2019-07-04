@@ -11,11 +11,11 @@ ms.date: 12/17/2018
 ms.topic: include
 manager: yuvalm
 ms.openlocfilehash: 40c1be20df845b975c023616e38cbb932c985735
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66157860"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185725"
 ---
 # <a name="team-development-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces
 
@@ -58,7 +58,7 @@ _Без_ использования сред Dev Spaces у Василия был
 
 1. Клонируйте [пример приложения Dev Spaces](https://github.com/Azure/dev-spaces): `git clone https://github.com/Azure/dev-spaces && cd dev-spaces`
 1. Проверьте удаленную ветвь *azds_updates*: `git checkout -b azds_updates origin/azds_updates`
-1. Выберите среду _dev_: `azds space select --name dev`. При появлении запроса на выбор родительской среды выберите _\<none\>_.
+1. Выберите среду _dev_: `azds space select --name dev`. При появлении запроса на выбор родительской среды выберите _\<none\>_ .
 1. Перейдите в каталог _mywebapi_ и выполните `azds up -d`
 1. Перейдите в каталог _webfrontend_ и выполните `azds up -d`
 1. Выполните `azds list-uris`, чтобы увидеть общедоступную конечную точку для _webfrontend_

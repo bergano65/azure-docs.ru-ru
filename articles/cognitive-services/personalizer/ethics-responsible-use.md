@@ -2,19 +2,20 @@
 title: Этика и ответственное использование. Персонализатор
 titleSuffix: Azure Cognitive Services
 description: Эти рекомендации помогут вам реализовать персонализацию так, чтобы это способствовало доверительным отношениям внутри компании. Обязательно уделите время изучению и анализу того, как персонализация влияет на жизнь людей. При любых сомнениях обращайтесь за помощью.
+services: cognitive-services
 author: edjez
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: overview
-ms.date: 05/07/2019
+ms.date: 06/12/2019
 ms.author: edjez
-ms.openlocfilehash: 437dc1fba2502602109483aa9d6f25b4265af26f
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 783bfcd5ad9e114a5329892449f35f6ed8316948
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66239891"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67428432"
 ---
 # <a name="guidelines-for-responsible-implementation-of-personalizer"></a>Рекомендации по ответственной реализации Персонализатора
 
@@ -196,7 +197,7 @@ ms.locfileid: "66239891"
 * [Ethics and Data Science](https://www.oreilly.com/library/view/ethics-and-data/9781492043898/) (Этика: обработка и анализ данных), авторы Дж. Патил (DJ Patil), Хилари Мэйсон (Hilary Mason) и Майк Лукидс (Mike Loukides).
 * [ACM Code of Ethics](https://www.acm.org/code-of-ethics) (Этический кодекс ACM).
 * [Genetic Information Nondiscrimination Act - GINA](https://en.wikipedia.org/wiki/Genetic_Information_Nondiscrimination_Act) (Закон о недискриминации генетической информации).
-* [FATML Principles for Accountable Algorithms](http://www.fatml.org/resources/principles-for-accountable-algorithms) (Принципы FATML для подконтрольных алгоритмов).
+* [FATML Principles for Accountable Algorithms](https://www.fatml.org/resources/principles-for-accountable-algorithms) (Принципы FATML для подконтрольных алгоритмов).
 
 
 ## <a name="next-steps"></a>Дополнительная информация
