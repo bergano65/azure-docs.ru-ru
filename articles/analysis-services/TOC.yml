@@ -1,10 +1,10 @@
-- name: Документация служб Analysis Services
+- name: Документация по Azure Analysis Services
   href: index.md
 - name: Обзор
   items:
-    - name: Общие сведения об Analysis Services
+    - name: Службы Azure Analysis Services
       href: analysis-services-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Создание сервера с помощью портала
       href: analysis-services-create-server.md
@@ -34,15 +34,15 @@
       href: analysis-services-gateway.md
     - name: Подключение к серверам
       href: analysis-services-connect.md
-    - name: высокую доступность;
+    - name: Высокий уровень доступности
       href: analysis-services-bcdr.md
     - name: Поддерживаемые источники данных
       href: analysis-services-datasource.md
 - name: Инструкции
   items:
-    - name: сервер;
+    - name: Сервер
       items:
-        - name: Архивация и восстановление
+        - name: Резервное копирование и восстановление
           href: analysis-services-backup.md
         - name: Настройка псевдонима имени сервера
           href: analysis-services-server-alias.md
@@ -124,7 +124,7 @@
       href: 'https://azure.microsoft.com/pricing/details/analysis-services/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-analysis-services'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=analysis-services&sort=newest'

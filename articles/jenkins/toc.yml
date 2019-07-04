@@ -4,14 +4,14 @@
   items:
     - name: Jenkins в Azure
       href: overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание сервера Jenkins
       href: install-jenkins-solution-template.md
 - name: Учебники
   items:
-    - name: 1. Install
+    - name: 1. Установка
       items:
         - name: Создание сервера Jenkins
           href: install-jenkins-solution-template.md
@@ -26,11 +26,13 @@
       items:
         - name: AKS
           items:
-            - name: Непрерывная интеграция и поставка в Kubernetes
+            - name: CI/CD в Kubernetes
               href: /azure/aks/jenkins-continuous-deployment
               maintainContext: true
             - name: Развертывание в AKS с использованием шаблона Blue-Green
               href: jenkins-aks-blue-green-deployment.md
+            - name: CI/CD в Azure Dev Spaces
+              href: tutorial-jenkins-dev-spaces.md
         - name: Служба приложений
           items:
             - name: Создание ресурсов Azure в задании конвейера
@@ -45,7 +47,7 @@
         - name: Публикация в службе хранилища Azure
           href: /azure/storage/storage-java-jenkins-continuous-integration-solution
           maintainContext: true
-        - name: Непрерывная интеграция и поставка на виртуальные машины Linux
+        - name: CI/CD в виртуальные машины Linux
           href: /azure/virtual-machines/linux/tutorial-jenkins-github-docker-cicd
           maintainContext: true
         - name: CI/CD в Service Fabric
@@ -53,7 +55,7 @@
           maintainContext: true
 - name: Инструкции
   items:
-    - name: Использование подключаемого модуля службы приложений Azure
+    - name: Использование подключаемого модуля Службы приложений Azure
       href: deploy-jenkins-app-service-plugin.md
 - name: Примеры
   items:

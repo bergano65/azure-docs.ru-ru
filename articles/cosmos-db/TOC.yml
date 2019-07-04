@@ -468,6 +468,8 @@
               href: bulk-executor-graph-dotnet.md
             - name: Оптимизация запросов Gremlin
               href: graph-execution-profile.md
+            - name: Визуализация данных графа
+              href: graph-visualization.md
             - name: Хранение данных и управление ими с помощью Spring Data
               href: /java/azure/spring-framework/configure-spring-data-gremlin-java-app-with-cosmos-db
               maintainContext: true

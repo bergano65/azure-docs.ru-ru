@@ -8,7 +8,7 @@
   items:
     - name: Настройка сброса паролей
       href: quickstart-sspr.md
-- name: Руководства
+- name: Учебники
   items:
     - name: 1. Включение MFA для приложений
       href: tutorial-mfa-applications.md
@@ -61,7 +61,7 @@
           href: concept-password-ban-bad-on-premises.md
     - name: Устойчивые элементы управления доступом
       href: concept-resilient-controls.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Самостоятельный сброс пароля
       items:
@@ -69,7 +69,7 @@
           href: howto-sspr-deployment.md
         - name: Предварительная регистрация данных проверки подлинности
           href: howto-sspr-authenticationdata.md
-        - name: Включений обратной записи паролей
+        - name: Включение компонента обратной записи паролей
           href: howto-sspr-writeback.md
         - name: 'SSPR для Windows 7, 8 и 8.1'
           href: howto-sspr-windows-7-8.md
@@ -83,7 +83,7 @@
           href: howto-mfa-userdevicesettings.md
         - name: Настройка параметров
           href: howto-mfa-mfasettings.md
-        - name: Служба федерации Active Directory
+        - name: Федерация Active Directory
           items:
             - name: Адаптер AD FS для Windows Server 2016
               href: 'https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa'
@@ -129,7 +129,7 @@
               href: howto-password-ban-bad-on-premises-agent-versions.md
     - name: Смарт-блокировка Azure AD
       href: howto-password-smart-lockout.md
-    - name: Windows Hello для бизнеса.
+    - name: Windows Hello для бизнеса
       href: 'https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification'
     - name: Вход без пароля с помощью телефона
       href: howto-authentication-phone-sign-in.md
@@ -144,9 +144,11 @@
               href: active-directory-certificate-based-authentication-ios.md
     - name: Отчеты
       items:
+        - name: Потребление и аналитические сведения
+          href: howto-authentication-methods-usage-insights.md
         - name: Отчеты SSPR
           href: howto-sspr-reporting.md
-        - name: Отчеты службы "Многофакторная идентификация Microsoft Azure"
+        - name: Отчеты службы "Многофакторная идентификация Azure"
           href: howto-mfa-reporting.md
         - name: Сбор данных
           href: howto-mfa-reporting-datacollection.md
@@ -154,7 +156,7 @@
       items:
         - name: Развертывание MFA в локальной среде
           href: howto-mfaserver-deploy.md
-        - name: Установить пользовательский портал.
+        - name: Установка пользовательского портала
           href: howto-mfaserver-deploy-userportal.md
         - name: Веб-служба мобильного приложения
           href: howto-mfaserver-deploy-mobileapp.md
@@ -176,7 +178,7 @@
               href: howto-mfaserver-dir-radius.md
             - name: Active Directory
               href: howto-mfaserver-dir-ad.md
-        - name: Служба федерации Active Directory
+        - name: Федерация Active Directory
           items:
             - name: Использование AD FS 2.0
               href: howto-mfaserver-adfs-2.md
@@ -212,7 +214,7 @@
       href: ../users-groups-roles/directory-service-limits-restrictions.md
 - name: Ресурсы
   items:
-    - name: Форум для отзывов и предложений по Azure
+    - name: Форум отзывов и предложений по Azure
       href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
     - name: Форум MSDN
       href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD'
