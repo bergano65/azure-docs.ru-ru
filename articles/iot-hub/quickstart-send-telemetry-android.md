@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/15/2019
 ms.author: wesmc
-ms.openlocfilehash: b8cf0891bd2a11a4ea46cc9fb8bad266862b6971
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 6e7d0ff396a4d264ee1f724d192c6c36abb400b1
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59005376"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67051563"
 ---
 # <a name="quickstart-send-iot-telemetry-from-an-android-device"></a>Краткое руководство. Отправка данных телеметрии в центр Интернета вещей с устройства Android
 
@@ -31,7 +31,7 @@ ms.locfileid: "59005376"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Скачайте Android Studio по ссылке https://developer.android.com/studio/. Дополнительные сведения об установке Android Studio см. на [этой странице](https://developer.android.com/studio/install). 
+* Скачайте Android Studio по ссылке https://developer.android.com/studio/. Дополнительные сведения об установке Android Studio см. на [этой странице](https://developer.android.com/studio/install).
 
 * Пакет SDK для Android 27, используемый в примере, который описан в этой статье.
 
@@ -87,7 +87,7 @@ ms.locfileid: "59005376"
     DeviceConnectionString=HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyNodeDevice;SharedAccessKey={YourSharedAccessKey}
     ```
 
-3. В Android Studio последовательно выберите **File (Файл)** > **Sync Project with Gradle Files (Синхронизировать проект с файлами Gradle)**. Проверьте, завершена ли сборка.
+3. В Android Studio последовательно выберите **File (Файл)**  > **Sync Project with Gradle Files (Синхронизировать проект с файлами Gradle)** . Проверьте, завершена ли сборка.
 
    > [!NOTE]
    > Возможные причины сбоя синхронизации проекта:
@@ -95,7 +95,7 @@ ms.locfileid: "59005376"
    > * Версии плагина Android Gradle и Gradle, указанные в проекте, устарели для вашей версии Android Studio. Выполните [эти инструкции](https://developer.android.com/studio/releases/gradle-plugin), чтобы установить надлежащие версии плагина и Gradle, а также добавить на них ссылки.
    > * Лицензионное соглашение для пакета SDK для Android не подписано. Следуйте инструкциям в выходных данных сборки, чтобы подписать лицензионное соглашение и скачать пакет SDK.
 
-4. По завершении сборки щелкните **Run (Запуск)** > **Run "app" (Запустить "app")**. Настройте приложение для запуска на физическом устройстве Android или в эмуляторе Android. Дополнительные сведения о запуске приложения Android на физическом устройстве или в эмуляторе см. в [этой статье](https://developer.android.com/training/basics/firstapp/running-app).
+4. По завершении сборки щелкните **Run (Запуск)**  > **Run "app" (Запустить "app")** . Настройте приложение для запуска на физическом устройстве Android или в эмуляторе Android. Дополнительные сведения о запуске приложения Android на физическом устройстве или в эмуляторе см. в [этой статье](https://developer.android.com/training/basics/firstapp/running-app).
 
 5. После загрузки приложения нажмите кнопку **Start** (Начать), чтобы начать отправку данных телеметрии в Центр Интернета вещей:
 
@@ -113,11 +113,10 @@ ms.locfileid: "59005376"
     ```azurecli-interactive
     az iot hub monitor-events --hub-name YourIoTHubName --output table
     ```
+
     На следующем снимке экрана показан пример выходных данных, когда центр Интернета вещей получает данные телеметрии, отправленные устройством Android:
 
       ![Чтение сообщений устройства с помощью Azure CLI](media/quickstart-send-telemetry-android/read-data.png)
-
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources.md)]
@@ -130,4 +129,3 @@ ms.locfileid: "59005376"
 
 > [!div class="nextstepaction"]
 > [Краткое руководство. Управление подключенным к Центру Интернета вещей устройством](quickstart-control-device-android.md)
-

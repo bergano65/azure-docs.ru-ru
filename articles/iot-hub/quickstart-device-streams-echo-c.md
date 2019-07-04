@@ -1,21 +1,20 @@
 ---
 title: Взаимодействие с приложением устройства в C с помощью потоков устройств Центра Интернета вещей (предварительная версия) | Документация Майкрософт
 description: С помощью этого краткого руководства вы запустите приложение C на стороне устройства, которое обменивается данными с устройством Интернета вещей через поток устройств.
-author: rezasherafat
-manager: briz
+author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: c
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/14/2019
-ms.author: rezas
-ms.openlocfilehash: 6a2fe71a1086559d90adf5c464323f353be431aa
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.author: robinsh
+ms.openlocfilehash: 4b6f987c68f9fe3ef95c82017b7d8be1d83083ea
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66733311"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67446128"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-c-via-iot-hub-device-streams-preview"></a>Краткое руководство. Взаимодействие с приложением устройства в C с помощью потоков устройств Центра Интернета вещей (предварительная версия)
 

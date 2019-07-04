@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 01/23/2019
 ms.author: shvija
-ms.openlocfilehash: 83e33ffa2854b92718828ae870b82431993fac24
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: 15b2b5863f5b78bd24ffd8cbd55b9914f52e32a1
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65603528"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072794"
 ---
 # <a name="quickstart-create-an-event-hub-using-azure-portal"></a>Краткое руководство. Создание концентратора событий с помощью портала Azure
 Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
@@ -57,7 +57,7 @@ ms.locfileid: "65603528"
    ![Поиск Центров событий](./media/event-hubs-quickstart-portal/select-event-hubs-menu.png)
 3. Выберите **Центры событий** в разделе **Избранное** в меню навигации слева и щелкните **Добавить** на панели инструментов.
 
-   ![Кнопка "Добавить" на панели инструментов](./media/event-hubs-quickstart-portal/event-hubs-add-toolbar.png)
+   ![Кнопка "Добавить"](./media/event-hubs-quickstart-portal/event-hubs-add-toolbar.png)
 4. На странице **Создание пространства имен** выполните следующие действия.
     1. Введите имя для пространства имен. Система немедленно проверяет, доступно ли оно.
     2. Выберите ценовую категорию ("Базовый" или "Стандартный").
@@ -99,7 +99,7 @@ ms.locfileid: "65603528"
 - [Java](event-hubs-java-get-started-send.md)
 - [Python](event-hubs-python-get-started-send.md)
 - [Node.js](event-hubs-node-get-started-send.md)
-- [Go](event-hubs-go-get-started-send.md)
+- [GO](event-hubs-go-get-started-send.md)
 - [C (только отправка)](event-hubs-c-getstarted-send.md)
 - [Apache Storm (только получение)](event-hubs-storm-getstarted-receive.md)
 

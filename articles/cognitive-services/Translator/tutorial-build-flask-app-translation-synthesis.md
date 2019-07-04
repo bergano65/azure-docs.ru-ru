@@ -3,19 +3,19 @@ title: Руководство по Создание приложения Flask �
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве описано, как создать веб-приложение Flask, которое использует Azure Cognitive Services для перевода текста, анализа тональности и синтеза речи на основе переведенного текста. Здесь описаны код Python и маршруты Flask, которые потребуются этому приложению. Мы не будем тратить время на код JavaScript, используемый для управления работой приложения, но предоставим вам все файлы для самостоятельного изучения.
 services: cognitive-services
-author: erhopf
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: tutorial
 ms.date: 06/04/2019
-ms.author: erhopf
-ms.openlocfilehash: 4df2de7f0428ffe35712a29bfef645b6feb66813
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.author: swmachan
+ms.openlocfilehash: cef747e82e7d039952bec73e822f28eab2adaa97
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66515009"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67434892"
 ---
 # <a name="tutorial-build-a-flask-app-with-azure-cognitive-services"></a>Руководство по Создание приложения Flask в Azure Cognitive Services
 

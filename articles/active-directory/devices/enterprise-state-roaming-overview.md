@@ -1,28 +1,22 @@
 ---
 title: Сведения о службе Enterprise State Roaming в Azure Active Directory | Документация Майкрософт
-description: Здесь содержится информация о параметрах Enterprise State Roaming для устройств Windows. Служба Enterprise State Roaming представляет собой единое решение для всех устройств Windows и сокращает процесс настройки нового устройства.
+description: Служба Enterprise State Roaming представляет собой единое решение для всех устройств Windows и сокращает процесс настройки нового устройства.
 services: active-directory
-keywords: что такое Enterprise State Roaming, корпоративная синхронизация, облако Windows
-documentationcenter: ''
+ms.service: active-directory
+ms.subservice: devices
+ms.topic: overview
+ms.date: 06/28/2019
+ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
-editor: curtand
-ms.subservice: devices
-ms.assetid: 83b3b58f-94c1-4ab0-be05-20e01f5ae3f0
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 10/25/2018
-ms.author: joflore
+ms.reviewer: na
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3a2a81bd8aa3fc99d033564e8a8782c79261305
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: c5b60970592180a2353860369e637d4b9a9bb8f9
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60353148"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67481906"
 ---
 # <a name="what-is-enterprise-state-roaming"></a>Служба Enterprise State Roaming
 
@@ -34,7 +28,7 @@ ms.locfileid: "60353148"
 
 Служба Enterprise State Roaming доступна в различных регионах Azure. Обновленный список доступных регионов см. на странице [Регионы Azure — Службы по региону](https://azure.microsoft.com/regions/#services) в разделе Azure Active Directory.
 
-| Статья | Описание |
+| Статья | ОПИСАНИЕ |
 | --- | --- |
 | [Включение службы Enterprise State Roaming в Azure Active Directory](enterprise-state-roaming-enable.md) |Служба Enterprise State Roaming доступна для любой компании с подпиской Azure Active Directory Premium (Azure AD). Дополнительные сведения о том, как получить подписку Azure AD, см. на странице продукта [Azure Active Directory](https://azure.microsoft.com/services/active-directory). |
 | [Часто задаваемые вопросы о перемещении параметров и данных](enterprise-state-roaming-faqs.md) |В этой статье содержится информация о синхронизации параметров и данных приложений, которая может быть полезной для ИТ-администраторов. |
@@ -42,6 +36,6 @@ ms.locfileid: "60353148"
 | [Справочник по перемещаемым параметрам в Windows 10](enterprise-state-roaming-windows-settings-reference.md) |Ниже приведен полный список всех параметров, для которых в Windows 10 будет выполнено перемещение и/или резервное копирование. |
 | [Устранение неполадок](enterprise-state-roaming-troubleshooting.md) |В этом разделе представлены основные инструкции по устранению неполадок, а также список известных проблем. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Сведения об активации службы Enterprise State Roaming см. в [соответствующей статье](enterprise-state-roaming-enable.md).

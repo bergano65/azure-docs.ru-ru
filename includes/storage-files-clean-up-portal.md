@@ -9,11 +9,11 @@ ms.date: 03/28/2018
 ms.author: wgries
 ms.custom: include file
 ms.openlocfilehash: 2ddf171090ab4a9e3dbe4506a399cbdbd2621bdd
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66114643"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185361"
 ---
 По завершении работы с руководством можно удалить группу ресурсов. При удалении группы ресурсов удаляются учетная запись хранения, файловый ресурс Azure и другие ресурсы, которые развертываются в группе ресурсов.
 

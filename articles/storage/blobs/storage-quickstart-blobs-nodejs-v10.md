@@ -9,16 +9,16 @@ ms.topic: quickstart
 ms.date: 11/14/2018
 ms.author: mhopkins
 ms.reviewer: seguler
-ms.openlocfilehash: f426ee10017533c21021d618d613dc0931767988
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: e2deda6bc9a5d13a631e9917f3020cfa68ee1e10
+ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65149437"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67536171"
 ---
 # <a name="quickstart-upload-download-list-and-delete-blobs-using-azure-storage-v10-sdk-for-javascript"></a>Краткое руководство. Передача, скачивание, составление списков и удаление больших двоичных объектов с помощью пакета SDK версии 10 службы хранилища Azure для JavaScript
 
-Из этого краткого руководства вы узнаете, как использовать [пакет SDK версии 10 службы хранилища Azure для JavaScript](https://github.com/Azure/azure-storage-js) в Node.js для передачи, загрузки, составления списков и удаления больших двоичных объектов и управления контейнерами.
+Из этого краткого руководства вы узнаете, как использовать [пакет SDK версии 10 службы хранилища Azure для JavaScript](https://github.com/Azure/azure-sdk-for-js) в Node.js для передачи, загрузки, составления списков и удаления больших двоичных объектов и управления контейнерами.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -99,7 +99,7 @@ const {
 
 ```javascript
 if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').load();
+    require('dotenv').config();
 }
 ```
 
@@ -238,7 +238,7 @@ async function showContainerNames(aborter, serviceURL) {
 await containerURL.create(aborter);
 console.log(`Container: "${containerName}" is created`);
 ```
-Поскольку имя контейнера определено при вызове *ContainerURL.fromServiceURL (serviceURL, containerName)*, вызов метода *create* — это все, что требуется для создания контейнера.
+Поскольку имя контейнера определено при вызове *ContainerURL.fromServiceURL (serviceURL, containerName)* , вызов метода *create* — это все, что требуется для создания контейнера.
 
 ### <a name="upload-text"></a>Передача текста
 Чтобы загрузить текст в большой двоичный объект, используйте метод *upload*.

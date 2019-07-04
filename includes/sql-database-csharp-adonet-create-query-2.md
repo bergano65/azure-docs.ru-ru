@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 12/10/2018
 ms.author: genemi
 ms.openlocfilehash: e30651cb0ed7d74082163a92acbc428c21018255
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66167226"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185365"
 ---
 ## <a name="c-program-example"></a>Пример программы C#
 
@@ -37,7 +37,7 @@ ms.locfileid: "66167226"
 
 Программа C# логически является одним CS-файлом. Она физически разделена на несколько блоков кода для удобства изучения каждого блока. Чтобы скомпилировать и запустить программу, выполните шаги ниже.
 
-1. Создайте проект C# в Visual Studio. Необходимо выбрать тип проекта *Консоль*. Это можно сделать в разделе **Шаблоны** > **Visual C#**  > **Классическое приложение Windows** > **Консольное приложение (.NET Framework)**.
+1. Создайте проект C# в Visual Studio. Необходимо выбрать тип проекта *Консоль*. Это можно сделать в разделе **Шаблоны** > **Visual C#**  > **Классическое приложение Windows** > **Консольное приложение (.NET Framework)** .
 
 1. В файле *Program.cs* замените соответствующие начальные строки кода, сделав следующее:
 

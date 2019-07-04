@@ -2,7 +2,8 @@
 title: Краткое руководство. Создание профиля диспетчера трафика для обеспечения высокодоступных приложений с помощью портала Azure
 description: В этом кратком руководстве показано, как создать профиль диспетчера трафика для сборки высокодоступных веб-приложений.
 services: traffic-manager
-author: KumudD
+author: asudbring
+manager: twooley
 Customer intent: As an IT admin, I want to direct user traffic to ensure high availability of web applications.
 ms.service: traffic-manager
 ms.devlang: na
@@ -10,13 +11,13 @@ ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/28/2018
-ms.author: kumud
-ms.openlocfilehash: 2cd8830f4b2b7c972ba8972e686be984bb96fd04
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.author: allensu
+ms.openlocfilehash: d9b1d0624aa94884c269eb33131f8b61671e99ee
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57760670"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67051001"
 ---
 # <a name="quickstart-create-a-traffic-manager-profile-using-the-azure-portal"></a>Краткое руководство. Создание профиля диспетчера трафика с помощью портала Azure
 
@@ -43,7 +44,7 @@ ms.locfileid: "57760670"
     | Подписка | Выберите подписку, которая будет использоваться в веб-приложении. |
     | Группа ресурсов | Выберите **Создать новую**, а затем введите *myResourceGroupTM1*. |
     | ОС | Выберите **Windows** в качестве операционной системы. |
-    | Опубликовать | Выберите **Код** как формат, который следует опубликовать. |
+    | Публикация | Выберите **Код** как формат, который следует опубликовать. |
 
 3. Выберите **План службы приложений или расположение**.
 4. В **План службы приложений** выберите команду **Создать**.
@@ -53,7 +54,7 @@ ms.locfileid: "57760670"
     | ------- | ----- |
     | План службы приложений | Введите *myAppServicePlanEastUS*. |
     | Расположение | Восточная часть США |
-    | Ценовой уровень | Стандартный S1 |
+    | Ценовая категория | Стандартный S1 |
 
 6. Нажмите кнопку **ОК**.
 
@@ -67,10 +68,10 @@ ms.locfileid: "57760670"
     | Подписка | Выберите подписку, которая будет использоваться в веб-приложении. |
     | Группа ресурсов | Выберите **Создать**, а затем введите *myResourceGroupTM2*. |
     | ОС | Выберите **Windows** в качестве операционной системы. |
-    | Опубликовать | Выберите **Код** как формат, который следует опубликовать. |
+    | Публикация | Выберите **Код** как формат, который следует опубликовать. |
     | Расположение или план службы приложений | Введите *myAppServicePlanWestEurope*. |
     | Расположение | Западная Европа |
-    | Ценовой уровень | Стандартный S1 |
+    | Ценовая категория | Стандартный S1 |
 
 ## <a name="create-a-traffic-manager-profile"></a>Создание профиля диспетчера трафика
 

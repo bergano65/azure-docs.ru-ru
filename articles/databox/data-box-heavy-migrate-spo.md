@@ -8,12 +8,12 @@ ms.subservice: heavy
 ms.topic: tutorial
 ms.date: 06/05/2019
 ms.author: alkohli
-ms.openlocfilehash: 5628a1b3ea42c91f49f78699c37bb2b306275e9e
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.openlocfilehash: 1c432ee5851115e029b55722b6b238b4672e8345
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66730832"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67446718"
 ---
 # <a name="use-the-azure-data-box-heavy-to-migrate-your-file-share-content-to-sharepoint-online"></a>Использование Azure Data Box Heavy для переноса содержимого общей папки в SharePoint Online
 
@@ -81,7 +81,7 @@ Microsoft Azure Data Box — это служба, которая позволя�
 
 1. Войдите на портал Azure и [создайте виртуальную машину](../virtual-machines/windows/quick-create-portal.md).
 2. [Подключите общую папку Azure к этой виртуальной машине](../storage/files/storage-how-to-use-files-windows.md#mount-the-azure-file-share-with-file-explorer).
-3. [Скачайте средство миграции SharePoint](http://spmtreleasescus.blob.core.windows.net/install/default.htm) и установите его на виртуальной машине Azure.
+3. [Скачайте средство миграции SharePoint](https://spmtreleasescus.blob.core.windows.net/install/default.htm) и установите его на виртуальной машине Azure.
 4. Запустите средство миграции SharePoint. Выберите **Войти** и введите имя пользователя и пароль Office 365.
 5. При появлении запроса **Где находятся ваши данные?** выберите **Общая папка**. Введите путь к общей папке Azure, в которой находятся ваши данные.
 6. Следуйте указаниям в остальных запросах как обычно, включая выбор целевого расположения. Дополнительные сведения см. в разделе [Использование средства миграции SharePoint](https://docs.microsoft.com/sharepointmigration/how-to-use-the-sharepoint-migration-tool).

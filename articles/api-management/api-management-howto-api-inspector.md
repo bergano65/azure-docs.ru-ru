@@ -15,11 +15,11 @@ ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: apimpm
 ms.openlocfilehash: ff3dde8ac95b678866ba6f5216ba23357b067765
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50415888"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67203564"
 ---
 # <a name="debug-your-apis-using-request-tracing"></a>Отладка API-интерфейсов с помощью трассировки запросов
 
@@ -35,8 +35,8 @@ ms.locfileid: "50415888"
 ## <a name="prerequisites"></a>Предварительные требования
 
 + Ознакомьтесь с [терминологией службы управления API в Azure](api-management-terminology.md).
-+ Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
-+ Также выполните задачи из руководства по [импорту и публикации первого API](import-and-publish.md).
++ Выполните инструкции из краткого руководства — [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
++ Также выполните инструкции из руководства [Импорт и публикация первого API](import-and-publish.md).
 
 ## <a name="trace-a-call"></a>Трассировка вызова
 

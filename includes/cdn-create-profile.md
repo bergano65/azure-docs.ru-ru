@@ -9,11 +9,11 @@ ms.date: 05/24/2018
 ms.author: cfowler
 ms.custom: include file
 ms.openlocfilehash: c58b226c0f3bd63cb2a54bd3d8c91eb750a26f0a
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66125558"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67185632"
 ---
 ## <a name="create-a-new-cdn-profile"></a>Создание нового профиля сети CDN
 
@@ -37,7 +37,7 @@ ms.locfileid: "66125558"
     | **Подписка** | В раскрывающемся списке выберите подписку Azure. |
     | **Группа ресурсов** | Щелкните **Создать** и введите *my-resource-group-123* в качестве имени группы ресурсов. Оно должно быть глобально уникальным. Если это имя уже используется, вы можете ввести другое имя или в разделе **Use existing** (Использовать существующее) выбрать в раскрывающемся списке **my-resource-group-123**. | 
     | **Расположение группы ресурсов** | В раскрывающемся списке выберите **Central US**. |
-    | **Ценовая категория** | В раскрывающемся списке выберите **Verizon уровня "Стандартный"**. |
+    | **Ценовая категория** | В раскрывающемся списке выберите **Verizon уровня "Стандартный"** . |
     | **Создать конечную точку CDN** | Не устанавливайте этот флажок. |  
    
     ![Новый профиль CDN](./media/cdn-create-profile/cdn-new-profile.png)

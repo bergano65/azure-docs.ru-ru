@@ -14,12 +14,12 @@ ms.workload: na
 ms.date: 01/14/2019
 ms.author: mbaldwin
 ms.custom: seodec18
-ms.openlocfilehash: 4af2db5af49e1fc70ee46f4fc4c953731daedf0e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c36f9506665f573a2e7990102af81a9de088e95b
+ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57862375"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67501648"
 ---
 # <a name="quickstart-encrypt-a-windows-iaas-vm-with-azure-powershell"></a>Краткое руководство. Шифрование виртуальной машины IaaS под управлением Windows с помощью Azure PowerShell
 
@@ -83,7 +83,7 @@ ms.locfileid: "57862375"
     $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
     
     # Create a resource group
-    #New-AzResourceGroup -Name $resourceGroup -Location $location
+    New-AzResourceGroup -Name $resourceGroup -Location $location
     
     # Create a subnet configuration
     $subnetConfig = New-AzVirtualNetworkSubnetConfig -Name mySubnet -AddressPrefix 192.168.1.0/24

@@ -3,18 +3,18 @@ title: Варианты Интернета вещей Microsoft Azure | Доку
 description: 'Выберите способ реализации решения Интернета вещей Azure: с помощью Azure IoT Central, акселераторов решений для Интернета вещей или Центра Интернета вещей.'
 author: dominicbetts
 ms.author: dobett
-ms.date: 11/30/2017
+ms.date: 06/09/2019
 ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: timlt
-ms.openlocfilehash: 571c703609bac2e4414baf19edc39cf5e9f8820a
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.openlocfilehash: 19ec7afeb71f0e9d5602f1c4ba1a2456162cdfae
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57759783"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67077389"
 ---
 # <a name="compare-azure-iot-central-and-azure-iot-options"></a>Сравнение вариантов Azure IoT Central и Azure IoT
 
@@ -58,6 +58,6 @@ Microsoft Azure IoT Central и Azure IoT предоставляют нескол
 
 На основе выбранного продукта и подхода предлагаются следующие шаги:
 
-* **Azure IoT Central**: [What is Azure IoT Central?](overview-iot-central.md) (Что собой представляет Azure IoT Central)
+* **Azure IoT Central**: [Что собой представляет Azure IoT Central](overview-iot-central.md)
 * **Акселераторы решений для Интернета вещей**. [Что такое акселераторы решений Интернета вещей Azure?](../iot-accelerators/iot-accelerators-what-are-solution-accelerators.md)
-* **Центр Интернета вещей.** [Что такое Центр Интернета вещей в Azure?](https://docs.microsoft.com/azure/iot-hub/iot-hub-what-is-iot-hub)
+* **Центр Интернета вещей.** [Что такое Центр Интернета вещей Azure?](https://docs.microsoft.com/azure/iot-hub/iot-hub-what-is-iot-hub)

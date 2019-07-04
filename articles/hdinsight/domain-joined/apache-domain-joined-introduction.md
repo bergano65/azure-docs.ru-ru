@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: overview
 ms.date: 06/12/2019
-ms.openlocfilehash: b7228fdf1bb67ff8029412174a883a3a0b123cfc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 266d6160562d5a97bde75597216338214f3d988d
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67126203"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67441421"
 ---
 # <a name="what-is-enterprise-security-package-in-azure-hdinsight"></a>Общие сведения о Корпоративном пакете безопасности в Azure HDInsight
 
@@ -49,7 +49,7 @@ ms.locfileid: "67126203"
 
 Администратор может просмотреть все случаи получения доступа к ресурсам и данным кластера HDInsight и сообщить о них. Кроме того, администратор может просмотреть все изменения в политиках контроля доступа, созданных в поддерживаемых конечных точках Apache Ranger, и сообщить о них. 
 
-Для поиска журналов аудита кластер HDInsight с ESP использует привычный пользовательский интерфейс Apache Ranger. В серверной части Ranger использует [Apache Solr](http://lucene.apache.org/solr/) для хранения и поиска журналов.
+Для поиска журналов аудита кластер HDInsight с ESP использует привычный пользовательский интерфейс Apache Ranger. В серверной части Ranger использует [Apache Solr](https://lucene.apache.org/solr/) для хранения и поиска журналов.
 
 ## <a name="encryption"></a>Шифрование
 Защита данных важна для соблюдения требований безопасности и соответствия, установленных в организации. Помимо ограничения доступа неавторизованных сотрудников к данным, их следует зашифровать. 

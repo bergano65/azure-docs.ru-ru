@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 05/29/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 650dfa7284b41407e9b128a2096548d7acfc1567
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: fd81115f4e811366b6b115d1c73a9be7ca26698b
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66393792"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67485622"
 ---
 # <a name="create-an-azure-search-service-in-the-portal"></a>Создание службы "Поиск Azure" на портале
 
@@ -94,7 +94,7 @@ ms.locfileid: "66393792"
 
 ## <a name="get-a-key-and-url-endpoint"></a>Получение ключа и конечной точки URL-адреса
 
-За редким исключением для использования новой службы необходимо указать конечную точку URL-адреса и ключ API авторизации. Краткие руководства, такие как [Работа с REST API службы "Поиск Azure" с помощью Fiddler или Postman](search-fiddler.md) и [Использование службы поиска Azure в приложении .NET](search-howto-dotnet-sdk.md), примеры и пользовательский код требуют конечной точки и ключа для запуска на конкретном ресурсе.
+За редким исключением для использования новой службы необходимо указать конечную точку URL-адреса и ключ API авторизации. Краткие руководства, такие как [Работа с REST API службы "Поиск Azure" с помощью Fiddler или Postman](search-get-started-postman.md) и [Использование службы поиска Azure в приложении .NET](search-howto-dotnet-sdk.md), примеры и пользовательский код требуют конечной точки и ключа для запуска на конкретном ресурсе.
 
 1. На странице обзора службы найдите и скопируйте конечную точку URL-адреса в правой части страницы.
 

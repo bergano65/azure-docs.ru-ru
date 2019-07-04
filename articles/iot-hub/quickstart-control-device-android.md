@@ -8,14 +8,14 @@ services: iot-hub
 ms.devlang: java
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 03/15/2019
+ms.date: 06/21/2019
 ms.author: wesmc
-ms.openlocfilehash: 4f9f4ccb53f9530122f0a2463f8f45b596856282
-ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
+ms.openlocfilehash: d125328d903b419aa81c54ffecf1f549d4cb4fe2
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60149688"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67330784"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-android"></a>Краткое руководство. Управление подключенным к Центру Интернета вещей устройством Android
 
@@ -94,12 +94,12 @@ ms.locfileid: "60149688"
 **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
 ```azurecli-interactive
-az iot hub show-connection-string --name YourIoTHubName --output table
+az iot hub show-connection-string --name YourIoTHubName --policy-name service --output table
 ```
 
 Запишите строку подключения к службе, которая выглядит так:
 
-`HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey={YourSharedAccessKey}`
+`HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}`
 
 Это значение понадобится позже в рамках этого краткого руководства. Строка подключения к службе отличается от строки подключения к устройству.
 
@@ -117,7 +117,7 @@ az iot hub show-connection-string --name YourIoTHubName --output table
     DeviceConnectionString=HostName={YourIoTHubName}.azure-devices.net;DeviceId=MyAndroidDevice;SharedAccessKey={YourSharedAccessKey}
     ```
 
-3. В Android Studio последовательно выберите **File (Файл)** > **Sync Project with Gradle Files (Синхронизировать проект с файлами Gradle)**. Проверьте, завершена ли сборка.
+3. В Android Studio последовательно выберите **File (Файл)**  > **Sync Project with Gradle Files (Синхронизировать проект с файлами Gradle)** . Проверьте, завершена ли сборка.
 
    > [!NOTE]
    > Возможные причины сбоя синхронизации проекта:
@@ -125,7 +125,7 @@ az iot hub show-connection-string --name YourIoTHubName --output table
    > * Версии плагина Android Gradle и Gradle, указанные в проекте, устарели для вашей версии Android Studio. Выполните [эти инструкции](https://developer.android.com/studio/releases/gradle-plugin), чтобы установить надлежащие версии плагина и Gradle, а также добавить на них ссылки.
    > * Лицензионное соглашение для пакета SDK для Android не подписано. Следуйте инструкциям в выходных данных сборки, чтобы подписать лицензионное соглашение и скачать пакет SDK.
 
-4. По завершении сборки щелкните **Run (Запуск)** > **Run "app" (Запустить "app")**. Настройте приложение для запуска на физическом устройстве Android или в эмуляторе Android. Дополнительные сведения о запуске приложения Android на физическом устройстве или в эмуляторе см. в [этой статье](https://developer.android.com/training/basics/firstapp/running-app).
+4. По завершении сборки щелкните **Run (Запуск)**  > **Run "app" (Запустить "app")** . Настройте приложение для запуска на физическом устройстве Android или в эмуляторе Android. Дополнительные сведения о запуске приложения Android на физическом устройстве или в эмуляторе см. в [этой статье](https://developer.android.com/training/basics/firstapp/running-app).
 
 5. После загрузки приложения нажмите кнопку **Start** (Начать), чтобы начать отправку данных телеметрии в Центр Интернета вещей:
 
@@ -166,11 +166,11 @@ az iot hub show-connection-string --name YourIoTHubName --output table
 2. В Android Studio откройте *gradle.properties* для примера проекта и замените значение свойства **ConnectionString** записанной ранее строкой подключения к службе, а значение свойства **DeviceId** идентификатором зарегистрированного устройства Android.
 
     ```
-    ConnectionString=HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey={YourSharedAccessKey}
+    ConnectionString=HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}
     DeviceId=MyAndroidDevice
     ```
 
-3. В Android Studio последовательно выберите **File (Файл)** > **Sync Project with Gradle Files (Синхронизировать проект с файлами Gradle)**. Проверьте, завершена ли сборка.
+3. В Android Studio последовательно выберите **File (Файл)**  > **Sync Project with Gradle Files (Синхронизировать проект с файлами Gradle)** . Проверьте, завершена ли сборка.
 
    > [!NOTE]
    > Возможные причины сбоя синхронизации проекта:
@@ -178,7 +178,7 @@ az iot hub show-connection-string --name YourIoTHubName --output table
    > * Версии плагина Android Gradle и Gradle, указанные в проекте, устарели для вашей версии Android Studio. Выполните [эти инструкции](https://developer.android.com/studio/releases/gradle-plugin), чтобы установить надлежащие версии плагина и Gradle, а также добавить на них ссылки.
    > * Лицензионное соглашение для пакета SDK для Android не подписано. Следуйте инструкциям в выходных данных сборки, чтобы подписать лицензионное соглашение и скачать пакет SDK.
 
-4. По завершении сборки щелкните **Run (Запуск)** > **Run "app" (Запустить "app")**. Настройте приложение для запуска на отдельном физическом устройстве Android или в эмуляторе Android. Дополнительные сведения о запуске приложения Android на физическом устройстве или в эмуляторе см. в [этой статье](https://developer.android.com/training/basics/firstapp/running-app).
+4. По завершении сборки щелкните **Run (Запуск)**  > **Run "app" (Запустить "app")** . Настройте приложение для запуска на отдельном физическом устройстве Android или в эмуляторе Android. Дополнительные сведения о запуске приложения Android на физическом устройстве или в эмуляторе см. в [этой статье](https://developer.android.com/training/basics/firstapp/running-app).
 
 5. После загрузки приложения для параметра **Set Messaging Interval** (Задать интервал отправки сообщений) укажите значение **1000** и нажмите кнопку **Invoke** (Вызвать).
 

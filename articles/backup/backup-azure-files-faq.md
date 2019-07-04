@@ -2,18 +2,18 @@
 title: Часто задаваемые вопросы о резервном копировании файлов Azure
 description: Эта статья содержит сведения о том, как защитить файловые ресурсы Azure.
 services: backup
-author: rayne-wiselman
-ms.author: raynew
+author: dcurwin
+ms.author: dacurwin
 ms.date: 01/31/2019
 ms.topic: tutorial
 ms.service: backup
 manager: carmonm
-ms.openlocfilehash: 139ce3fd81c14f9bf97e45c8aebb83d2fb1bbe10
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 0c9e68a14aa18726a751709e99953d494c62308e
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59426619"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67275538"
 ---
 # <a name="questions-about-backing-up-azure-files"></a>Вопросы о резервном копировании файлов Azure
 В этой статье содержатся ответы на часто задаваемые вопросы о резервном копировании файлов Azure. В некоторых ответах приведены ссылки на статьи, содержащие более подробные сведения. Кроме того, их также можно задать на [форуме для обсуждений](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
@@ -84,7 +84,7 @@ ms.locfileid: "59426619"
 ### <a name="after-enabling-virtual-networks-on-my-storage-account-the-backup-of-file-shares-in-the-account-started-failing-why"></a>После включения виртуальных сетей в учетной записи хранения начались сбои при резервном копировании файловых ресурсов в этой учетной записи. Почему?
 Служба Backup для файловых ресурсов Azure не поддерживает учетные записи хранения с включенными виртуальными сетями. Отключите виртуальные сети в учетных записях хранения, чтобы выполнять резервное копирование.
 
-## <a name="restore"></a>восстановление;
+## <a name="restore"></a>Восстановление
 
 ### <a name="can-i-recover-from-a-deleted-azure-file-share-br"></a>Можно ли выполнить восстановление из удаленного файлового ресурса Azure? <br/>
 При удалении файлового ресурса Azure отобразится список резервных копий, которые будут удалены, а также запрос на подтверждение. Удаленный файловый ресурс Azure не подлежит восстановлению.

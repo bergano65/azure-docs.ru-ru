@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-accelerators
 services: iot-accelerators
 manager: timlt
-ms.openlocfilehash: 042c3c2925e9d537847f16f02d841d793456fb03
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d9dd3ff2f24660404a1ab0440668c4d4da1e7319
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58172824"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67080516"
 ---
 # <a name="what-are-azure-iot-solution-accelerators"></a>Что такое акселераторы решений Интернета вещей Azure?
 
@@ -38,11 +38,11 @@ ms.locfileid: "58172824"
 
 С помощью панели удаленного мониторинга можно просмотреть данные телеметрии с подключенных устройств, подготовить новые устройства или обновить встроенное программное обеспечение на подключенных устройствах.
 
-[![Панель мониторинга решений удаленного мониторинга](./media/about-iot-accelerators/rm-dashboard-inline.png)](./media/about-iot-accelerators/rm-dashboard-expanded.png#lightbox)
+[![Панель мониторинга решений для удаленного мониторинга](./media/about-iot-accelerators/rm-dashboard-inline.png)](./media/about-iot-accelerators/rm-dashboard-expanded.png#lightbox)
 
 ### <a name="connected-factory"></a>Подключенная фабрика
 
-Используйте [акселератор решений подключенной фабрики](iot-accelerators-connected-factory-sample-walkthrough.md) для сбора данных телеметрии с промышленных объектов с помощью интерфейса [Унифицированная архитектура OPC](https://opcfoundation.org/about/opc-technologies/opc-ua/) и управления ими. Промышленные объекты могут включать сборочные и испытательные установки на производственной линии завода.
+Используйте [акселератор решений подключенной фабрики](iot-accelerators-connected-factory-features.md) для сбора данных телеметрии с промышленных объектов с помощью интерфейса [Унифицированная архитектура OPC](https://opcfoundation.org/about/opc-technologies/opc-ua/) и управления ими. Промышленные объекты могут включать сборочные и испытательные установки на производственной линии завода.
 
 Панель мониторинга подключенного производства можно использовать для отслеживания и управления производственными устройствами.
 
@@ -78,7 +78,7 @@ ms.locfileid: "58172824"
 
 Изначально акселераторы решений были написаны на .NET с использованием архитектуры "модель-представление-контроллер" (MVC). Корпорация Майкрософт переводит акселераторы решений на новую архитектуру на основе микрослужб. В таблице ниже показано текущее состояние для акселераторов решений со ссылками на репозитории GitHub.
 
-| Акселератор решений   | Архитектура  | Languages     |
+| Акселератор решений   | Архитектура  | Языки     |
 | ---------------------- | ------------- | ------------- |
 | Удаленный мониторинг      | Микрослужбы | [Java](https://github.com/Azure/azure-iot-pcs-remote-monitoring-java) и [.NET](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet) |
 | Прогнозное обслуживание | MVC           | [.NET](https://github.com/Azure/azure-iot-predictive-maintenance)          |

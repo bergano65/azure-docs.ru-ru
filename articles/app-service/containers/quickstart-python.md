@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 04/29/2019
 ms.author: cephalin
-ms.openlocfilehash: b704e9074c8ef88d8fefd97f466884af952c46f8
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: e74c32226815fe799529084da75dbc196771dc53
+ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64919607"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67514535"
 ---
 # <a name="create-a-python-app-in-azure-app-service-on-linux"></a>Создание приложения Python в Службе приложений Azure в Linux
 
@@ -170,7 +170,7 @@ return "Hello Azure!"
 
 Сохраните изменения и выйдите из редактора. Выполните команду `^S`, чтобы сохранить файл, и `^Q` — чтобы выйти.
 
-Повторно разверните приложение с помощью команды [`az webapp up`](/cli/azure/ext/webapp/webapp?view=azure-cli-latest.md#ext-webapp-az-webapp-up). Замените `<app-name>` на имя приложения и укажите расположение вместо `<location-name>` (с помощью одного из значений в выходных данных команды [`az account list-locations`](/cli/azure/appservice?view=azure-cli-latest.md#az-appservice-list-locations)).
+Повторно разверните приложение с помощью команды [`az webapp up`](/cli/azure/webapp#az-webapp-up). Замените `<app-name>` на имя приложения и укажите расположение вместо `<location-name>` (с помощью одного из значений в выходных данных команды [`az account list-locations`](/cli/azure/appservice?view=azure-cli-latest.md#az-appservice-list-locations)).
 
 ```bash
 az webapp up -n <app-name> -l <location-name>
@@ -199,10 +199,10 @@ az webapp up -n <app-name> -l <location-name>
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по использованию приложения Python с PostgreSQL](tutorial-python-postgresql-app.md)
+> [Руководство. по использованию приложения Python с PostgreSQL](tutorial-python-postgresql-app.md)
 
 > [!div class="nextstepaction"]
 > [Настройка приложения Python](how-to-configure-python.md)
 
 > [!div class="nextstepaction"]
-> [Руководство Запуск приложения Python в настраиваемом контейнере](tutorial-custom-docker-image.md)
+> [Руководство. Запуск приложения Python в настраиваемом контейнере](tutorial-custom-docker-image.md)
