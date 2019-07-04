@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/19/2019
-ms.openlocfilehash: 7f9100686eaab8c4c75e3d862026b18b6c46ed09
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 50db9a588cd953bbd0e912ec942194a8deeffe4c
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65203705"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67484041"
 ---
 # <a name="customize-hdinsight-clusters-using-bootstrap"></a>Настройка кластеров HDInsight с помощью начальной загрузки
 
@@ -133,9 +133,9 @@ $OozieConfigValues = @{ "oozie.service.coord.normal.default.timeout"="150" }  # 
 ![Настройка шаблона Azure Resource Manager для начальной загрузки кластера с помощью HDInsight Hadoop](./media/hdinsight-hadoop-customize-cluster-bootstrap/hdinsight-customize-cluster-bootstrap-arm.png)
 
 ## <a name="see-also"></a>См. также
-* статью [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий][hdinsight-provision-cluster], в которой даются указания по созданию кластера HDInsight с использованием других настраиваемых параметров.
+* [Создание кластеров Apache Hadoop в HDInsight][hdinsight-provision-cluster] содержит инструкции о том, как создать кластер HDInsight с использованием других настраиваемых параметров.
 * [Разработка скриптов действия сценария для HDInsight][hdinsight-write-script]
-* [Краткое руководство. Создание кластера Apache Spark в HDInsight с помощью шаблона][hdinsight-install-spark].
+* [Установка и использование Apache Spark в кластерах HDInsight][hdinsight-install-spark]
 * [Установка и использование Apache Giraph в кластерах HDInsight под управлением Windows](hdinsight-hadoop-giraph-install.md).
 
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install.md
@@ -149,9 +149,6 @@ $OozieConfigValues = @{ "oozie.service.coord.normal.default.timeout"="150" }  # 
 ## <a name="appendix-powershell-sample"></a>Приложение Пример для PowerShell
 
 Этот скрипт PowerShell создает кластер HDInsight и настраивает параметр Hive. Обязательно введите значения для `$nameToken`, `$httpPassword`, и `$sshPassword`.
-
-> [!IMPORTANT]  
-> Значения для `DefaultStorageAccount`, и `DefaultStorageContainer` не возвращаются из [Get-AzHDInsightCluster](https://docs.microsoft.com/powershell/module/az.hdinsight/get-azhdinsightcluster) при [безопасное перемещение](../storage/common/storage-require-secure-transfer.md) с включенной учетной записи хранения.
 
 > [!WARNING]  
 > Тип учетной записи хранения `BlobStorage` нельзя использовать для кластеров HDInsight.

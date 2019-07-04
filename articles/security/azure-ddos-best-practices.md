@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/06/2018
 ms.author: barclayn
-ms.openlocfilehash: 11f3dcefd283ada00e915c2d6cb8abf654590ec1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b8d5d1b3c3f505b66e07f7aa226cfa001af94af8
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60588164"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449326"
 ---
 # <a name="azure-ddos-protection-best-practices-and-reference-architectures"></a>Защита от атак DDoS Azure: рекомендации и эталонная архитектура
 
@@ -224,6 +224,8 @@ Azure предоставляет постоянную защиту от атак
 - Вы планируете вирусное событие, которое значительно увеличит ваш сетевой трафик.
 
 - Субъект угрожает запустить атаку DDoS против ваших ресурсов.
+
+- Если вам нужно белого списка IP-адрес или диапазон IP-адресов из стандартной защиты от атак DDoS Azure. Распространенный сценарий — белый список IP-адрес в том случае, если трафик направляется из внешних облачных WAF в Azure. 
 
 Для атак, которые имеют критическое влияние на бизнес, создайте [запрос в службу поддержки](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) с уровнем серьезности А.
 

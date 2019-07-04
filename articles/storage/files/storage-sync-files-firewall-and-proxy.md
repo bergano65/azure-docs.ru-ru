@@ -5,15 +5,15 @@ services: storage
 author: roygara
 ms.service: storage
 ms.topic: article
-ms.date: 11/26/2018
+ms.date: 06/24/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: d9b7296a116ebd06542a53087afbd083dbd3a7eb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fdbbea2d32762d2d4030ec3a10826595dadd371c
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64696750"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449835"
 ---
 # <a name="azure-file-sync-proxy-and-firewall-settings"></a>Параметры брандмауэра и прокси-сервера службы "Синхронизация файлов Azure"
 Служба "Синхронизация файлов Azure" подключает локальные серверы к службе файлов Azure, обеспечивая синхронизацию нескольких сайтов и распределение данных по уровням облака. Таким образом локальный сервер должен быть подключен к Интернету. Администратор отдела ИТ должен выбрать наилучший путь подключения сервера к облачным службам Azure.
@@ -111,20 +111,31 @@ Set-StorageSyncProxyConfiguration -Address <url> -Port <port number> -ProxyCrede
 
 | Облако  | Регион | URL-адрес основной конечной точки | Парный регион | URL-адрес обнаружения |
 |--------|--------|----------------------|---------------|---------------|
-| Общедоступные |Восточная часть Австралии | https://kailani-aue.one.microsoft.com | Юго-Восточная часть Австралии | https://kailani-aue.one.microsoft.com |
+| Общедоступные |Восточная часть Австралии | https://kailani-aue.one.microsoft.com | Юго-Восточная часть Австралии | https://tm-kailani-aue.one.microsoft.com |
 | Общедоступные |Юго-Восточная часть Австралии | https://kailani-aus.one.microsoft.com | Восточная часть Австралии | https://tm-kailani-aus.one.microsoft.com |
+| Общедоступные | Южная часть Бразилии | https://brazilsouth01.afs.azure.net | Центрально-южная часть США | https://tm-brazilsouth01.afs.azure.net |
 | Общедоступные | Центральная Канада | https://kailani-cac.one.microsoft.com | Восточная Канада | https://tm-kailani-cac.one.microsoft.com |
 | Общедоступные | Восточная Канада | https://kailani-cae.one.microsoft.com | Центральная Канада | https://tm-kailani.cae.one.microsoft.com |
+| Общедоступные | Центральная Индия | https://kailani-cin.one.microsoft.com | Южная Индия | https://tm-kailani-cin.one.microsoft.com |
 | Общедоступные | Центральный регион США | https://kailani-cus.one.microsoft.com | Восток США 2 | https://tm-kailani-cus.one.microsoft.com |
 | Общедоступные | Восточная Азия | https://kailani11.one.microsoft.com | Юго-Восточная Азия | https://tm-kailani11.one.microsoft.com |
-| Общедоступные | Восточная часть США | https://kailani1.one.microsoft.com | Запад США | https://tm-kailani1.one.microsoft.com |
+| Общедоступные | East US | https://kailani1.one.microsoft.com | Запад США | https://tm-kailani1.one.microsoft.com |
 | Общедоступные | Восток США 2 | https://kailani-ess.one.microsoft.com | Центральный регион США | https://tm-kailani-ess.one.microsoft.com |
+| Общедоступные | Восточная часть Японии | https://japaneast01.afs.azure.net | Западная часть Японии | https://tm-japaneast01.afs.azure.net |
+| Общедоступные | Западная часть Японии | https://japanwest01.afs.azure.net | Восточная часть Японии | https://tm-japanwest01.afs.azure.net |
+| Общедоступные | Центральная Корея | https://koreacentral01.afs.azure.net/ | Корея, юг | https://tm-koreacentral01.afs.azure.net/ |
+| Общедоступные | Корея, юг | https://koreasouth01.afs.azure.net/ | Центральная Корея | https://tm-koreasouth01.afs.azure.net/ |
+| Общедоступные | Центрально-северная часть США | https://northcentralus01.afs.azure.net | Центрально-южная часть США | https://tm-northcentralus01.afs.azure.net |
 | Общедоступные | Северная Европа | https://kailani7.one.microsoft.com | Западная Европа | https://tm-kailani7.one.microsoft.com |
+| Общедоступные | Центрально-южная часть США | https://southcentralus01.afs.azure.net | Центрально-северная часть США | https://tm-southcentralus01.afs.azure.net |
+| Общедоступные | Южная Индия | https://kailani-sin.one.microsoft.com | Центральная Индия | https://tm-kailani-sin.one.microsoft.com |
 | Общедоступные | Юго-Восточная Азия | https://kailani10.one.microsoft.com | Восточная Азия | https://tm-kailani10.one.microsoft.com |
 | Общедоступные | Южная часть Великобритании | https://kailani-uks.one.microsoft.com | Западная часть Великобритании | https://tm-kailani-uks.one.microsoft.com |
 | Общедоступные | Западная часть Великобритании | https://kailani-ukw.one.microsoft.com | Южная часть Великобритании | https://tm-kailani-ukw.one.microsoft.com |
+| Общедоступные | Западно-центральная часть США | https://westcentralus01.afs.azure.net | Западный регион США 2 | https://tm-westcentralus01.afs.azure.net |
 | Общедоступные | Западная Европа | https://kailani6.one.microsoft.com | Северная Европа | https://tm-kailani6.one.microsoft.com |
-| Общедоступные | Запад США | https://kailani.one.microsoft.com | Восточная часть США | https://tm-kailani.one.microsoft.com |
+| Общедоступные | Запад США | https://kailani.one.microsoft.com | East US | https://tm-kailani.one.microsoft.com |
+| Общедоступные | Западный регион США 2 | https://westus201.afs.azure.net | Западно-центральная часть США | https://tm-westus201.afs.azure.net |
 | Государственные организации | Аризона (для обслуживания государственных организаций США) | https://usgovarizona01.afs.azure.us | Техас (для обслуживания государственных организаций США) | https://tm-usgovarizona01.afs.azure.us |
 | Государственные организации | Техас (для обслуживания государственных организаций США) | https://usgovtexas01.afs.azure.us | Аризона (для обслуживания государственных организаций США) | https://tm-usgovtexas01.afs.azure.us |
 

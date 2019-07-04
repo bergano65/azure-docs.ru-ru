@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/07/2019
+ms.date: 07/01/2019
 ms.author: banders
-ms.openlocfilehash: b2452580eaecc0ab922f8e7db48676f70831a8ca
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 37d43dbdd8de66a10a94827e313679dc6ffd220d
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66126846"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67490383"
 ---
 # <a name="get-enterprise-agreement-reservation-costs-and-usage"></a>Получить соглашение Enterprise резервирование затраты и использование
 
@@ -40,7 +40,7 @@ ms.locfileid: "66126846"
 
 Сравнение двух наборов данных:
 
-| Данные | Фактический набор данных затрат | Набор данных амортизированная стоимость |
+| Data | Фактический набор данных затрат | Набор данных амортизированная стоимость |
 | --- | --- | --- |
 | Резервирование покупок | Доступные в этом представлении.<br><br>  Чтобы получить этот фильтр данных по ChargeType = &quot;покупки&quot;. <br><br> Ссылаться на ReservationID или ReservationName знать, какие резервирования, то плата взимается.  | Не применимо к этому представлению. <br><br> Затраты на покупку не поставляются в данных с поправкой на амортизацию. |
 | effectivePrice | Значение равно нулю для использования, которое получает скидка на резервирование. | Значение равно стоимость распределяется пропорционально каждый час резервирования для использования с скидка на резервирование. |

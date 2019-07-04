@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 04/26/2018
+ms.date: 07/02/2019
 ms.author: jingwang
-ms.openlocfilehash: 7c75793a696137a1d4cc24fa94877a7fb4e4247a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1a56006e5209a8ff6c15a2c626a752c00fcf131e
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66243922"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67509185"
 ---
 # <a name="copy-data-from-sap-ecc-using-azure-data-factory"></a>Копирование данных из SAP ECC с помощью фабрики данных Azure
 
@@ -124,7 +124,7 @@ ms.locfileid: "66243922"
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойству type источника действия копирования необходимо задать значение **SapEccSource**. | Да |
-| query | Параметры запроса OData для фильтрации данных. Пример: $select=Name,Description&$top=10.<br/><br/>Соединитель SAP ECC копирует данные из комбинированного URL-адреса: (URL-адрес, указанный в связанной службе)/(путь, указанный в наборе данных)?(запрос, указанный в источнике действия копирования). См. статью о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет |
+| query | Параметры запроса OData для фильтрации данных. Пример: $select=Name,Description&$top=10.<br/><br/>Соединитель SAP ECC копирует данные из комбинированного URL-адреса: `(url specified in linked service)/(path specified in dataset)?(query specified in copy activity source)`. См. статью о [компонентах URL-адреса OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет |
 
 **Пример.**
 

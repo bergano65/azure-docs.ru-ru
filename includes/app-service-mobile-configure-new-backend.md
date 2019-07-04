@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/06/2019
 ms.author: crdun
 ms.custom: include file
-ms.openlocfilehash: a7c994f85d90e94d514bb4e4f91a6644ed45432c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a7e543dcad9ad1b016d1244451cd87cda5ad7492
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66455206"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67440217"
 ---
 1. Скачайте клиент примеры использования пакета SDK для следующих платформ:
     
@@ -100,6 +100,4 @@ ms.locfileid: "66455206"
 
         4. Выберите **службы приложений** как целевого объекта публикации, нажмите кнопку **выбрать существующее**, затем нажмите кнопку **публикации** расположенную в нижней части окна.
 
-        5. Необходимо будет войти в Visual Studio с подпиской Azure, сначала. Выберите `Subscription`, `Resource Group`, а затем выберите имя приложения. Когда будете готовы, нажмите кнопку **ОК**, это будет развертывание серверного проекта .NET, у вас есть локально в серверную часть службы приложений. После завершения развертывания вы будете перенаправлены к `http://{zumoappname}.azurewebsites.net/` в браузере.
-        
-           ![Серверная часть является вверх](./media/app-service-mobile-configure-new-backend/backend-is-up.png)
+        5. Необходимо будет войти в Visual Studio с подпиской Azure, сначала. Выберите `Subscription`, `Resource Group`, а затем выберите имя приложения. Когда будете готовы, нажмите кнопку **ОК**, это будет развертывание серверного проекта .NET, у вас есть локально в серверную часть службы приложений. После завершения развертывания вы будете перенаправлены к `http://{zumoappname}.azurewebsites.net/` в браузере.                   

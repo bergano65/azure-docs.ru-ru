@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47626cbd8d5b8a5ddf7cc5c6ea42fb9453e5bfb2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 822990ebc2eb5edbdbc6611a4f3729bc5cfadc55
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65540673"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67482896"
 ---
 # <a name="application-and-service-principal-objects-in-azure-active-directory"></a>Объекты приложения и субъекта-службы в Azure Active Directory
 
@@ -45,14 +45,14 @@ ms.locfileid: "65540673"
 
 ## <a name="application-registration"></a>Регистрация приложения
 
-При регистрации приложения Azure AD на [портале Azure][AZURE-Portal] в клиенте Azure AD создаются два объекта:
+При регистрации приложения Azure AD в [портала Azure][AZURE-Portal], в вашем клиенте Azure AD создаются два объекта:
 
 - объект приложения;
 - объект субъекта-службы.
 
 ### <a name="application-object"></a>Объект приложения
 
-Объект приложения представляет определение вашего приложения Azure AD. Единственный экземпляр объекта приложения размещается в главном клиенте Azure AD приложения (то есть в клиенте, в котором зарегистрировано приложение). Microsoft Graph [сущности приложения] [ MS-Graph-App-Entity] определяет схему для свойства объекта приложения.
+Объект приложения представляет определение вашего приложения Azure AD. Единственный экземпляр объекта приложения размещается в главном клиенте Azure AD приложения (то есть в клиенте, в котором зарегистрировано приложение). Microsoft Graph [сущности приложения][MS-Graph-App-Entity] определяет схему для свойства объекта приложения.
 
 ### <a name="service-principal-object"></a>Объект субъекта-службы
 
@@ -60,7 +60,7 @@ ms.locfileid: "65540673"
 
 Субъект безопасности определяет политику доступа и разрешения для пользователя или приложения в клиенте Azure AD. Это обеспечивает базовые функции, включая аутентификацию пользователя или приложения во время входа, а также авторизацию во время получения доступа к ресурсам.
 
-Когда приложение получает разрешение на доступ к ресурсам в клиенте (при регистрации или [предоставлении согласия](developer-glossary.md#consent)), создается объект субъекта службы. Microsoft Graph [сущности ServicePrincipal] [ MS-Graph-Sp-Entity] определяет схему для свойств объекта субъекта-службы.
+Когда приложение получает разрешение на доступ к ресурсам в клиенте (при регистрации или [предоставлении согласия](developer-glossary.md#consent)), создается объект субъекта службы. Microsoft Graph [сущности ServicePrincipal][MS-Graph-Sp-Entity] определяет схему для свойств объекта субъекта-службы.
 
 ### <a name="application-and-service-principal-relationship"></a>Отношение приложения и субъекта-службы
 
@@ -83,7 +83,7 @@ ms.locfileid: "65540673"
 - **Contoso** — клиент, который использует компания Contoso, являющаяся объектом-получателем **приложения по управлению персоналом**;
 - **Fabrikam** — клиент, который использует компания Fabrikam, также потребляющая **приложение по управлению персоналом**.
 
-![Связь между объектом приложения и объектом субъекта-службы](./media/app-objects-and-service-principals/application-objects-relationship.svg)
+![Связь между объектом приложения и объект субъекта-службы](./media/app-objects-and-service-principals/application-objects-relationship.svg)
 
 Условия в этом примере сценария.
 
@@ -96,8 +96,8 @@ ms.locfileid: "65540673"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Можно использовать [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) для запроса объектов субъекта-службы и приложения.
-- Можно получить доступ к объекту приложения с помощью Microsoft Graph API, [на портале Azure] [ AZURE-Portal] редактора манифеста приложения или [командлетов Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azureadps-2.0) , как определено OData [сущности приложения][MS-Graph-App-Entity].
-- Для доступа к объекту субъекта-службы приложения Microsoft Graph API или [командлетов Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azureadps-2.0), как определено OData [сущности ServicePrincipal] [ MS-Graph-Sp-Entity].
+- Можно получить доступ к объекту приложения с помощью Microsoft Graph API, [на портале Azure][AZURE-Portal] редактора манифеста приложения или [командлетов Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azureadps-2.0), как определено OData [ Сущность приложения][MS-Graph-App-Entity].
+- Для доступа к объекту субъекта-службы приложения Microsoft Graph API или [командлетов Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azureadps-2.0), как определено OData [сущности ServicePrincipal][MS-Graph-Sp-Entity].
 
 <!--Image references-->
 

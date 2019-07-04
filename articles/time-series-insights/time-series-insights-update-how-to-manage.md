@@ -8,14 +8,14 @@ manager: cshankar
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 04/30/2019
+ms.date: 06/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6251df2317ceff9dded92f2d829bfab0503fdf1b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f626ce2e009a18afcb4d04b7caa6850ea58c7483
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66237592"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67446816"
 ---
 # <a name="provision-and-manage-azure-time-series-insights-preview"></a>Подготовка к работе службы "Аналитика временных рядов Azure" (предварительная версия) и управление ею
 
@@ -45,7 +45,7 @@ ms.locfileid: "66237592"
 
 1. В меню **SKU** выберите команду **PAYG**. Введите имя среды и выберите группы подписок и группы ресурсов, которые следует использовать. Затем выберите поддерживаемое расположение для размещения среды.
 
-   [![Создайте экземпляр Azure Time Series Insights.](media/v2-update-manage/manage_three.PNG)](media/v2-update-manage/manage_three.PNG#lightbox)
+   [![Создайте экземпляр Azure Time Series Insights.](media/v2-update-manage/manage-three.png)](media/v2-update-manage/manage-three.png#lightbox)
 
 1. Введите идентификатор временного ряда.
 
@@ -56,7 +56,7 @@ ms.locfileid: "66237592"
 
 1. Создайте учетную запись хранения Azure, выбрав имя учетной записи и указав способ репликации. При этом будет автоматически создана учетная запись хранения Azure общего назначения версии 1. Она будет создана в том же регионе, в котором ранее была создана среда службы "Аналитика временных рядов Azure" (предварительная версия).
 
-    [![Создание учетной записи хранения Azure для своего экземпляра](media/v2-update-manage/manage_five.PNG)](media/v2-update-manage/manage_five.PNG#lightbox)
+    [![Создание учетной записи хранения Azure для своего экземпляра](media/v2-update-manage/manage-five.png)](media/v2-update-manage/manage-five.png#lightbox)
 
 1. При необходимости вы можете добавить источник события.
 
@@ -67,11 +67,11 @@ ms.locfileid: "66237592"
      > [!TIP]
      > Время постановки в очередь сообщения, возможно, является не самим лучшим настраиваемым параметром, который можно использовать с пакетом событий или сценариями загрузки исторических данных. Не забудьте проверить свое решение об использовании в таких случаях свойства метки времени.
 
-     [![Вкладка "источник событий"](media/v2-update-manage/manage_two.PNG)](media/v2-update-manage/manage_two.PNG#lightbox)
+     [![Вкладка "источник событий"](media/v2-update-manage/manage-two.png)](media/v2-update-manage/manage-two.png#lightbox)
 
 1. Убедитесь, что ваша среда подготовлена с помощью нужных параметров.
 
-    [![Просмотр и Создание вкладки](media/v2-update-manage/manage_three.PNG)](media/v2-update-manage/manage_three.PNG#lightbox)
+    [![Просмотр и Создание вкладки](media/v2-update-manage/manage-three.png)](media/v2-update-manage/manage-three.png#lightbox)
 
 ## <a name="manage-the-environment"></a>Управление средой
 
@@ -88,7 +88,7 @@ ms.locfileid: "66237592"
 
 * Колонка **Эталонные данные** на портале Azure была удалена в службе "Аналитика временных рядов Azure" (предварительная версия), поскольку эталонные данные не входят в среды с оплатой по мере использования.
 
-[![Предварительная версия серии Insights среды на портале Azure](media/v2-update-manage/manage_four.PNG)](media/v2-update-manage/manage_four.PNG#lightbox)
+[![Предварительная версия серии Insights среды на портале Azure](media/v2-update-manage/manage-four.png)](media/v2-update-manage/manage-four.png#lightbox)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

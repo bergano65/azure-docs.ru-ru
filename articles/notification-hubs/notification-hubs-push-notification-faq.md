@@ -15,12 +15,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 03/11/2019
 ms.author: jowargo
-ms.openlocfilehash: 579d50a95ad0e478f401b7db012e7c743ce58491
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a434101a806a810218927cbf0bc24fa0d22c5628
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66730463"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67488650"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure: Часто задаваемые вопросы
 
@@ -69,7 +69,7 @@ ms.locfileid: "66730463"
 
 ### <a name="which-client-platforms-do-you-support"></a>Какие клиентские платформы вы поддерживаете?
 
-Push-уведомления поддерживаются для [iOS](notification-hubs-ios-apple-push-notification-apns-get-started.md), [Android](notification-hubs-android-push-notification-google-fcm-get-started.md), [универсальной Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md), [Windows Phone](notification-hubs-windows-mobile-push-notifications-mpns.md), [Kindle](notification-hubs-kindle-amazon-adm-push-notification.md), [Android China (через Baidu)](notification-hubs-baidu-china-android-notifications-get-started.md), Xamarin ([iOS](xamarin-notification-hubs-ios-push-notification-apns-get-started.md) и Android, и [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari). Дополнительные сведения см. на странице [Отправка push-уведомлений с помощью центров уведомлений Azure в iOS].
+Push-уведомления поддерживаются для [iOS](notification-hubs-ios-apple-push-notification-apns-get-started.md), [Android](notification-hubs-android-push-notification-google-fcm-get-started.md), [универсальной Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md), [Windows Phone](notification-hubs-windows-mobile-push-notifications-mpns.md), [Android China () через Baidu)](notification-hubs-baidu-china-android-notifications-get-started.md), Xamarin ([iOS](xamarin-notification-hubs-ios-push-notification-apns-get-started.md) и Android, и [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari). Дополнительные сведения см. на странице [Отправка push-уведомлений с помощью центров уведомлений Azure в iOS].
 
 ### <a name="do-you-support-text-message-email-or-web-notifications"></a>Поддерживаются ли уведомления по SMS и электронной почте, а также веб-уведомления?
 
@@ -85,7 +85,7 @@ Push-уведомления поддерживаются для [iOS](notificati
 
 Сведения о поддерживаемых устройствах см. на странице с [Цены на центры уведомлений].
 
-Если необходима поддержка более 10 млн зарегистрированных устройств, [свяжитесь с нами](https://azure.microsoft.com/overview/contact-us/) напрямую и мы поможем вам расширить решение.
+Если вам требуется поддержка более 10 млн зарегистрированных устройств, необходимо распределить устройства в нескольких центрах.
 
 ### <a name="how-many-push-notifications-can-i-send-out"></a>Сколько push-уведомлений я могу отправить?
 

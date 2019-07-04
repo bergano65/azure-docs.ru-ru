@@ -14,12 +14,12 @@ ms.date: 04/09/2019
 ms.author: rolyon
 ms.custom: pim ; H1Hack27Feb2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b6f978612cbbf0c326c3e66f25a0fbf4b749cc73
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: aa4fd850ac2116dc7f353eea87845501fff020bb
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60286969"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67476223"
 ---
 # <a name="azure-ad-roles-security-wizard-in-pim"></a>Мастер защиты ролей Azure AD в PIM
 
@@ -43,27 +43,27 @@ ms.locfileid: "60286969"
 
 1. Последовательно выберите **Роли Azure AD**, **Мастер**.
 
-    !["Роли Azure AD" — "Мастер"](./media/pim-security-wizard/wizard-start.png)
+    ![Роли Azure AD - страница мастера, отображающая 3 шагов, чтобы запустить мастер](./media/pim-security-wizard/wizard-start.png)
 
 1. Щелкните пункт 1 — **Обнаружение привилегированных ролей**.
 
 1. Просмотрите список привилегированных ролей, чтобы узнать, какие пользователи имеют постоянные, а какие — временные роли.
 
-    ![Обнаружение привилегированных ролей пользователей](./media/pim-security-wizard/discover-privileged-roles-users.png)
+    ![Обнаружение привилегированных ролей - областью роль постоянной и допустимых членов](./media/pim-security-wizard/discover-privileged-roles-users.png)
 
 1. Чтобы выбрать участников, которым будет назначена временная роль, нажмите кнопку **Далее**.
 
-    ![Преобразование ролей участников во временные](./media/pim-security-wizard/convert-members-eligible.png)
+    ![Преобразовать элементы право страницу с параметрами, чтобы выбрать элементы, которые требуется сделать доступной для ролей](./media/pim-security-wizard/convert-members-eligible.png)
 
 1. Когда вы выберете участников, нажмите кнопку **ОК**.
 
-    ![Проверка изменений](./media/pim-security-wizard/review-changes.png)
+    ![Страница «Просмотр изменений», отображение участников с постоянной роли с назначениями, которые будут преобразованы](./media/pim-security-wizard/review-changes.png)
 
 1. Чтобы преобразовать постоянные назначения во временные, нажмите кнопку **ОК**.
 
     После успешного преобразования вы получите уведомление.
 
-    ![Уведомления](./media/pim-security-wizard/notification-completion.png)
+    ![Уведомление о том, состояние преобразования](./media/pim-security-wizard/notification-completion.png)
 
 Если вам нужно преобразовать другие назначения привилегированных ролей во временные, запустите мастер еще раз. Если вы хотите использовать PIM интерфейс вместо мастера, см. в разделе [назначение ролей Azure AD в PIM](pim-how-to-add-role-to-user.md).
 

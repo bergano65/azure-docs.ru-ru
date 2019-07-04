@@ -3,7 +3,7 @@ title: Включение доменных служб Azure Active Directory с 
 description: Включение доменных служб Azure Active Directory с помощью PowerShell
 services: active-directory-ds
 documentationcenter: ''
-author: eringreenlee
+author: iainfoulds
 manager: daveba
 editor: curtand
 ms.assetid: d4bc5583-6537-4cd9-bc4b-7712fdd9272a
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/24/2019
-ms.author: ergreenl
-ms.openlocfilehash: f2c4f73af00e0093ce98f2de37e9c3a0ba381eda
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: iainfou
+ms.openlocfilehash: daddb2d13aee08fe7294ab2d7f0892bab761562b
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66246859"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67472674"
 ---
 # <a name="enable-azure-active-directory-domain-services-using-powershell"></a>Включение доменных служб Azure Active Directory с помощью PowerShell
 В этой статье показано, как включить доменные службы Azure Active Directory (AD) с помощью PowerShell.

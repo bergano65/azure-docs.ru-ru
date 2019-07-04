@@ -2,7 +2,7 @@
 title: Включение автономной синхронизации с помощью мобильных приложений iOS | Документация Майкрософт
 description: Узнайте, как использовать мобильные приложений службы приложений Azure для кэширования и синхронизации автономных данных в приложениях iOS.
 documentationcenter: ios
-author: conceptdev
+author: elamalani
 manager: crdun
 editor: ''
 services: app-service\mobile
@@ -12,17 +12,21 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-ios
 ms.devlang: objective-c
 ms.topic: article
-ms.date: 10/01/2016
-ms.author: crdun
-ms.openlocfilehash: 1283f812799fe71ef6987dbc7fab092aed4d3417
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/25/2019
+ms.author: emalani
+ms.openlocfilehash: f7ae3e7a33ae7df70214ed171b00cc2accbaccb5
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62112656"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67446368"
 ---
 # <a name="enable-offline-syncing-with-ios-mobile-apps"></a>Включение автономной синхронизации с помощью мобильных приложений iOS
 [!INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
+
+> [!NOTE]
+> Центр приложений Visual Studio вкладывает средства в новые и интегрированной службы, необходимые для разработки мобильных приложений. Разработчики могут использовать **построения**, **теста** и **распределить** служб для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения, разработчики могут отслеживать состояние и использования их приложений с помощью **Analytics** и **диагностики** служб и общайтесь с пользователями, с помощью **Push** Служба. Разработчики также могут использовать **Auth** подлинность пользователей и **данных** службы для сохранения и синхронизировать данные приложения в облаке. Ознакомьтесь с [App Center](https://appcenter.ms/?utm_source=zumo&utm_campaign=app-service-mobile-ios-get-started-offline-data) уже сегодня.
+>
 
 ## <a name="overview"></a>Обзор
 В этом руководстве рассматривается функция автономной синхронизации с помощью мобильных приложений службы приложений Azure для iOS. Автономная синхронизация позволяет конечным пользователям взаимодействовать с мобильным приложением, просматривая, добавляя или изменяя данные даже при отсутствии подключения к сети. Изменения сохраняются в локальной базе данных. Когда устройство возвращается в режим подключения к сети, изменения синхронизируются с удаленной серверной частью.

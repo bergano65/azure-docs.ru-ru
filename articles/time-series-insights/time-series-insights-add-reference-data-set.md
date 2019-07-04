@@ -9,14 +9,14 @@ manager: cshankar
 ms.reviewer: jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 05/13/2019
+ms.date: 06/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: ab80279fae9dacdf7462b6c9d8208e0a56ca0877
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 99933fa36cc822598ec9c173a470f90264d06d54
+ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67164985"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67461256"
 ---
 # <a name="create-a-reference-data-set-for-your-time-series-insights-environment-using-the-azure-portal"></a>Создание эталонного набора данных для среды Аналитики временных рядов с помощью портала Azure
 
@@ -44,35 +44,35 @@ ms.locfileid: "67164985"
 
 1. Разверните средство выбора среды в обозревателе TSI. Выберите активную среду. Выберите значок эталонных данных в правом верхнем углу на странице обозревателя.
 
-   [![Добавление ссылочных данных](media/add-reference-data-set/add_reference_data.png)](media/add-reference-data-set/add_reference_data.png#lightbox)
+   [![Добавление ссылочных данных](media/add-reference-data-set/add-reference-data.png)](media/add-reference-data-set/add-reference-data.png#lightbox)
 
 1. Нажмите кнопку **+ Добавить набор данных**, чтобы начать добавление нового набора данных.
 
-   [![Добавить набор данных](media/add-reference-data-set/add_data_set.png)](media/add-reference-data-set/add_data_set.png#lightbox)
+   [![Добавить набор данных](media/add-reference-data-set/add-data-set.png)](media/add-reference-data-set/add-data-set.png#lightbox)
 
 1. На странице **Новый эталонный набор данных** выберите формат данных:
    - выберите **CSV-файл** для данных с разделителями-запятыми (первая строка считается строкой заголовка);
    - выберите **Массив JSON** для данных в формате JSON (нотация объектов JavaScript).
 
-   [![Выберите формат данных.](media/add-reference-data-set/add_data.png)](media/add-reference-data-set/add_data.png#lightbox)
+   [![Выберите формат данных.](media/add-reference-data-set/add-data.png)](media/add-reference-data-set/add-data.png#lightbox)
 
 1. Укажите данные, используя один из двух способов:
    - вставьте данные в текстовый редактор а затем нажмите кнопку **Проанализировать эталонные данные**;
    - нажмите кнопку **Выберите файл**, чтобы добавить данные из локального текстового файла.
 
-   Например, вставьте данные CSV-файла: [![Вставленные данные CSV-файла](media/add-reference-data-set/csv_data_pasted.png)](media/add-reference-data-set/csv_data_pasted.png#lightbox)
+   Например, вставьте данные CSV-файла: [![Вставленные данные CSV-файла](media/add-reference-data-set/csv-data-pasted.png)](media/add-reference-data-set/csv-data-pasted.png#lightbox)
 
-   Например, вставьте данные массива JSON: [![Вставьте данные JSON](media/add-reference-data-set/json_data_pasted.png)](media/add-reference-data-set/json_data_pasted.png#lightbox)
+   Например, вставьте данные массива JSON: [![Вставьте данные JSON](media/add-reference-data-set/json-data-pasted.png)](media/add-reference-data-set/json-data-pasted.png#lightbox)
 
    Если при анализе значений данных произойдет ошибка, она отобразится красным цветом в нижней части страницы, например таким образом: `CSV parsing error, no rows extracted`.
 
 1. После успешного анализа данных появится сетка данных с отображением столбцов и строк с данными.  Просмотрите сетку данных, чтобы убедиться, что все правильно.
 
-   [![Добавление ссылочных данных](media/add-reference-data-set/parse_data.png)](media/add-reference-data-set/parse_data.png#lightbox)
+   [![Добавление ссылочных данных](media/add-reference-data-set/parse-data.png)](media/add-reference-data-set/parse-data.png#lightbox)
 
 1. Просмотрите каждый столбец, чтобы увидеть предполагаемый тип данных, и при необходимости измените этот тип.  Выберите символ типа данных в заголовке столбца: **#** для двойных (числовых данных), **T|F** для данных с логическими значениями или **Abc** для строки.
 
-   [![Выберите типы данных в заголовках столбцов.](media/add-reference-data-set/choose_datatypes.png)](media/add-reference-data-set/choose_datatypes.png#lightbox)
+   [![Выберите типы данных в заголовках столбцов.](media/add-reference-data-set/choose-datatypes.png)](media/add-reference-data-set/choose-datatypes.png#lightbox)
 
 1. При необходимости переименуйте заголовки столбцов. Имя ключевого столбца необходимо для присоединения к соответствующему свойству в источнике события. Убедитесь, что имя ключевого столбца эталонных данных точно совпадает с именем события для входящих данных, включая чувствительность к регистру. Имена столбцов, не являющихся ключевыми, используются для добавления входящих данных с соответствующими значениями эталонных данных.
 
@@ -82,17 +82,17 @@ ms.locfileid: "67164985"
 
 1. Присвойте имя набору данных, заполнив поле **Имя набора данных** над сеткой данных.
 
-    [![Имя набора данных.](media/add-reference-data-set/name_reference_dataset.png)](media/add-reference-data-set/name_reference_dataset.png#lightbox)
+    [![Имя набора данных.](media/add-reference-data-set/name-reference-dataset.png)](media/add-reference-data-set/name-reference-dataset.png#lightbox)
 
 1. Укажите столбец **первичного ключа** в наборе данных, выбрав раскрывающееся меню над сеткой данных.
 
-    [![Выбор столбца первичного ключа.](media/add-reference-data-set/set_primary_key.png)](media/add-reference-data-set/set_primary_key.png#lightbox)
+    [![Выбор столбца первичного ключа.](media/add-reference-data-set/set-primary-key.png)](media/add-reference-data-set/set-primary-key.png#lightbox)
 
     При необходимости нажмите кнопку **+** , чтобы добавить столбец вторичного ключа как составной первичный ключ. Если нужно отменить выбор, выберите пустое значение из раскрывающегося списка, чтобы удалить вторичный ключ.
 
 1. Для передачи данных нажмите кнопку **передачи строк**.
 
-    [![Отправить](media/add-reference-data-set/upload_rows.png)](media/add-reference-data-set/upload_rows.png#lightbox)
+    [![Отправить](media/add-reference-data-set/upload-rows.png)](media/add-reference-data-set/upload-rows.png#lightbox)
 
     На странице вы увидите подтверждение завершенной загрузки и сообщение **Набор данных успешно отправлен**.
 

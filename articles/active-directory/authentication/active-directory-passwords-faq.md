@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77154ef35242c55724becb77595dbd5ecf8a4da9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f98b72d9b5e59155bb7215181fd1ecd336126ee6
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60359064"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67440969"
 ---
 # <a name="password-management-frequently-asked-questions"></a>Вопросы и ответы об управлении паролями
 
@@ -114,7 +114,7 @@ ms.locfileid: "60359064"
   >
 * **Вопрос.  Куда именно нужно направлять пользователей для сброса паролей?**
 
-  > **Ответ.** Ознакомьтесь с предложениями в статье о [развертывании самостоятельного сброса пароля](howto-sspr-deployment.md#sample-communication).
+  > **Ответ.** Ознакомьтесь с предложениями в статье о [развертывании самостоятельного сброса пароля](howto-sspr-deployment.md#communications-plan).
   >
   >
 * **Вопрос.  Могу ли я пользоваться этой страницей на мобильном устройстве?**

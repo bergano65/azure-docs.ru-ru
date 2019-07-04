@@ -7,12 +7,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/19/2017
-ms.openlocfilehash: 78ea29b9b37c55a588a44f8d4b69486b89ee2fee
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 48792a90a42d0cfe5c0b34c872b3d474d6a784f1
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64684827"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67433506"
 ---
 # <a name="combine-scaler-and-sparkr-in-hdinsight"></a>Совместное использование ScaleR и SparkR в HDInsight
 
@@ -536,9 +536,7 @@ logmsg(paste('Elapsed time=',sprintf('%6.2f',elapsed),'(sec)\n\n'))
 
 - Дополнительные сведения об использовании ML Server в Apache Spark см. в [руководстве по началу работы](https://msdn.microsoft.com/microsoft-r/scaler-spark-getting-started).
 
-- Общие сведения об ML Server см. в статье о [начале работы с R](https://msdn.microsoft.com/microsoft-r/microsoft-r-get-started-node).
-
-- Сведения о Службах машинного обучения в HDInsight см. в статьях [Основные сведения об R Server и возможностях открытого кода R в HDInsight](r-server/r-server-overview.md) и [Начало работы со службами машинного обучения в Azure HDInsight](r-server/r-server-get-started.md).
+- Сведения о службах машинного Обучения в HDInsight см. в разделе [Обзор из служб машинного Обучения в HDInsight](r-server/r-server-overview.md).
 
 Дополнительные сведения об использовании SparkR см. в следующих статьях:
 

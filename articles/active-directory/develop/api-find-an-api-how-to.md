@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/11/2018
+ms.date: 06/28/2019
 ms.author: ryanwi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a017c13008288b26ddb11bf58be1966d652bbae
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2492a9346585698132e7fd9cfcde068ffd60ebc5
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65540554"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67476164"
 ---
 # <a name="how-to-find-a-specific-api-needed-for-a-custom-developed-application"></a>Как найти интерфейс API, необходимый для пользовательского приложения
 
@@ -28,15 +28,13 @@ ms.locfileid: "65540554"
 
 ## <a name="configuring-a-resource-application-to-expose-web-apis"></a>Настройка приложения ресурсов для предоставления веб-API
 
-При предоставлении веб-API этот интерфейс API будет отображаться в списке **Выберите API** при добавлении разрешений для регистрации приложения. Чтобы добавить области доступа, выполните действия, описанные в разделе [Добавление областей доступа для приложения-ресурса](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications).
+При предоставлении веб-API этот интерфейс API будет отображаться в списке **Выберите API** при добавлении разрешений для регистрации приложения. Чтобы добавить области доступа, выполните действия, описанные в [Настройка приложения для предоставления веб-API](quickstart-configure-app-expose-web-apis.md).
 
 ## <a name="configuring-a-client-application-to-access-web-apis"></a>Настройка клиентского приложения для доступа к веб-API
 
-При добавлении разрешений во время регистрации вашего приложения можно **добавить доступ к API** к предоставляемым веб-API. Для доступа к веб-API выполните действия, описанные в разделе [Добавление учетных данных или разрешений для доступа к веб-API](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications).
+При добавлении разрешений во время регистрации вашего приложения можно **добавить доступ к API** к предоставляемым веб-API. Чтобы получить доступ к веб-API, выполните действия, описанные в [настроить клиентское приложение для доступа к веб-API](quickstart-configure-app-access-web-apis.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-
--   [Интеграция приложений с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications)
 
 -   [Основные сведения о манифесте приложения Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-manifest)
 

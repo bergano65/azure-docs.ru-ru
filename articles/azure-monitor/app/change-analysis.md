@@ -10,16 +10,16 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: cawa
-ms.openlocfilehash: 2a31131b662d01f9841a3f1c5b0a6c459a117e77
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 45df8f9e57223ea60a11c6af2187d362184cae2b
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67075366"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443347"
 ---
 # <a name="use-application-change-analysis-preview-in-azure-monitor"></a>Использование анализа изменений приложения (Предварительная версия) в Azure Monitor
 
-При возникновении проблемы активного сайта либо сбой, важно быстро определить основную причину. Стандартный решений для мониторинга может предупреждать вас проблемы. Они могут даже означает сбой какой компонент. Однако это предупреждение не всегда следуют сразу объясняются причины сбоя. Вы знаете, что сайт работает пяти минут назад, и теперь оно нарушило. Что изменилось за последние пять минут? Это вопрос, анализ изменений приложения предназначен отвечать в Azure Monitor. 
+При возникновении проблемы активного сайта либо сбой, важно быстро определить основную причину. Стандартный решений для мониторинга может предупреждать вас проблемы. Они могут даже означает сбой какой компонент. Однако это предупреждение не всегда следуют сразу объясняются причины сбоя. Вы знаете, что сайт работает пяти минут назад, и теперь оно нарушило. Что изменилось за последние пять минут? Это вопрос, анализ изменений приложения предназначен отвечать в Azure Monitor.
 
 Основываясь на мощь [график ресурсов Azure](https://docs.microsoft.com/azure/governance/resource-graph/overview), анализ изменений предоставляет подробные сведения изменения приложения Azure для повышения наблюдаемость и снижения MTTR (среднее время восстановления).
 
@@ -62,21 +62,18 @@ ms.locfileid: "67075366"
 
     ![Снимок экрана «Доступность и производительность» способы устранения неполадок](./media/change-analysis/availability-and-performance.png)
 
-1. Выберите **сбои приложений**.
+1. Выберите **изменения приложения**. Не то, что эта функция также доступна в **сбой приложения происходит**.
 
-   ![Снимок экрана: кнопка «Сбои приложения»](./media/change-analysis/application-crashes-tile.png)
+   ![Снимок экрана: кнопка «Сбои приложения»](./media/change-analysis/application-changes.png)
 
 1. Чтобы включить анализ изменений, выберите **включить сейчас**.
 
-   ![Снимок экрана параметров «Сбои приложения»](./media/change-analysis/application-crashes.png)
+   ![Снимок экрана параметров «Сбои приложения»](./media/change-analysis/enable-changeanalysis.png)
 
-1. Чтобы воспользоваться преимуществами возможности анализа изменений, включите **анализа изменений**, **поиск изменений кода**, и **Always on**. Затем нажмите кнопку **Save** (Сохранить).
+1. Включите **анализа изменений** и выберите **Сохранить**.
 
     ![Снимок экрана пользовательского интерфейса «Включить анализ изменений»](./media/change-analysis/change-analysis-on.png)
 
-    - Включить **анализа изменений** для обнаружения изменений уровня ресурса. 
-    - Включить **поиск изменений кода** развертывания и изменения конфигурации сайта. 
-    - Включить **Always on** для оптимизации производительности просмотра изменений. Но имейте в виду, что этот параметр может взиматься дополнительная плата выставления счетов.
 
 1. Чтобы получить доступ к анализа изменений, выберите **Диагностика и решение проблем** > **доступности и производительности** > **сбой приложения происходит**. Вы увидите граф, описывающий тип изменений, со временем, а также сведения об этих изменениях:
 
@@ -106,7 +103,7 @@ ms.locfileid: "67075366"
         Get-AzureRmProviderFeature -ProviderNamespace "Microsoft.ChangeAnalysis" -ListAvailable #Check for feature flag availability
         Register-AzureRmProviderFeature -FeatureName PreviewAccess -ProviderNamespace Microsoft.ChangeAnalysis #Register feature flag
         ```
-    
+
 1. Зарегистрируйте поставщик ресурсов Analysis изменений для подписки.
 
    - Перейдите к **подписок**и выберите подписку, которую нужно включить в службе изменений. Выберите поставщиков ресурсов:
@@ -121,12 +118,12 @@ ms.locfileid: "67075366"
 
         ```PowerShell
         Get-AzureRmResourceProvider -ListAvailable | Select-Object ProviderNamespace, RegistrationState #Check if RP is ready for registration
-    
+
         Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.ChangeAnalysis" #Register the Change Analysis RP
         ```
 
         Чтобы задать скрытый тег на веб-приложения с помощью PowerShell, выполните следующую команду:
-    
+
         ```powershell
         $webapp=Get-AzWebApp -Name <name_of_your_webapp>
         $tags = $webapp.Tags

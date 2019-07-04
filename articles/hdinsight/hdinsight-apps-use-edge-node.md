@@ -8,12 +8,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.author: hrasheed
-ms.openlocfilehash: ee9b5b651f440bc7d179b1a06c7ddbd3f9137a0d
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 41313c7d484df5568fbf729b683a0e9df5325abc
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165901"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67433735"
 ---
 # <a name="use-empty-edge-nodes-on-apache-hadoop-clusters-in-hdinsight"></a>Использование пустых граничных узлов в кластерах Apache Hadoop в HDInsight
 
@@ -108,7 +108,7 @@ ms.locfileid: "67165901"
    * **Пароль пользователя для входа в кластер.** Введите пароль пользователя HTTP для Hadoop.
    * **Имя пользователя SSH**. Введите имя пользователя SSH. Имя по умолчанию — **sshuser**.
    * **Пароль SSH**. Введите пароль пользователя SSH.
-   * **Установка действия скрипта**. В рамках этого руководства оставьте значение по умолчанию.
+   * **Установка действия скрипта**. Оставьте значение по умолчанию для перехода по этой статье.
      
      Некоторые свойства жестко заданы в шаблоне: тип кластера, число рабочих узлов кластера, размер граничного узла и имя граничного узла.
 4. Установите флажок **Я принимаю указанные выше условия** и нажмите кнопку **Приобрести**, чтобы создать кластер с граничным узлом.

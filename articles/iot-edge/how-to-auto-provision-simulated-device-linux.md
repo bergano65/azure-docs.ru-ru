@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: f75ad287b5f026dea7ba0152b009a60572929148
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: 5ab85a8fb56789dbf3ecd6cf1cbc63e338615915
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67329626"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67439121"
 ---
 # <a name="create-and-provision-an-iot-edge-device-with-a-virtual-tpm-on-a-linux-virtual-machine"></a>Создание и Подготовка устройства IoT Edge с помощью виртуального доверенного платформенного МОДУЛЯ на виртуальной машине Linux
 
@@ -107,7 +107,7 @@ ms.locfileid: "67329626"
    sudo ./tpm_device_provision
    ```
    >[!TIP]
-   >Если вы тестируете симулятор доверенного платформенного МОДУЛЯ, необходимо поместить дополнительный параметр `-Duse_tpm_simulator:BOOL=ON` Чтобы включить его. Полная версия команды будет `cmake -Duse_prov_client:BOOL=ON -Duse_tpm_simulator:BOOL=ON .. `.
+   >Если вы тестируете симулятор доверенного платформенного МОДУЛЯ, необходимо поместить дополнительный параметр `-Duse_tpm_simulator:BOOL=ON` Чтобы включить его. Полная версия команды будет `cmake -Duse_prov_client:BOOL=ON -Duse_tpm_simulator:BOOL=ON ..`.
 
 5. Скопируйте значения параметров **Идентификатор регистрации** и **Ключ подтверждения**. Эти значения могут быть использованы при создании отдельной регистрации устройства в Службы подготовки устройств к добавлению в Центр Интернета вещей. 
 

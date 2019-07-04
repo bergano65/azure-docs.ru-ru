@@ -11,16 +11,16 @@ author: mx-iao
 ms.reviewer: peterlu
 ms.date: 06/18/2019
 ms.custom: seodec18
-ms.openlocfilehash: fc80fcde8de3fb2d6dd6f59804f6019b76aa8727
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 8def58eb003fcc817c21151416744cf391b5f38f
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295599"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443929"
 ---
 # <a name="train-and-register-pytorch-models-at-scale-with-azure-machine-learning-service"></a>Обучение и зарегистрировать PyTorch модели в масштабе с помощью службы машинного обучения Azure
 
-В этой статье показано, как обучать и зарегистрировать PyTorch модели с помощью службы машинного обучения Azure. Он основан на [переноса PyTorch обучения руководстве](https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html) которое создает классификатора глубокой нейронной сети (DNN) для образов ants и пчел.
+В этой статье показано, как обучать и зарегистрировать PyTorch модели с помощью службы машинного обучения Azure. Он основан на [переноса PyTorch обучения руководстве](https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html) которое создает классификатора глубокой нейронной сети (DNN) для образов chickens и turkeys.
 
 [PyTorch](https://pytorch.org/) — это платформа вычислений открытым исходным кодом, обычно используется для создания глубоких нейронных сетей (DNN). С помощью службы машинного обучения Azure вы можете быстро выполнить развертывание заданий обучения с открытым исходным кодом, с помощью эластичных облачных вычислительных ресурсов. Вы также можете отслеживать свои учебных запусков, моделях версии развертывание моделей и многое другое.
 
@@ -75,19 +75,19 @@ ws = Workspace.from_config()
 
 ### <a name="create-an-experiment"></a>Создание эксперимента
 
-Создание эксперимента и папку для хранения сценариев обучения. В этом примере Создайте эксперимент, который называется «pytorch hymenoptera».
+Создание эксперимента и папку для хранения сценариев обучения. В этом примере Создайте эксперимент, который называется «pytorch птиц».
 
 ```Python
-project_folder = './pytorch-hymenoptera'
+project_folder = './pytorch-birds'
 os.makedirs(project_folder, exist_ok=True)
 
-experiment_name = 'pytorch-hymenoptera'
+experiment_name = 'pytorch-birds'
 experiment = Experiment(ws, name=experiment_name)
 ```
 
 ### <a name="get-the-data"></a>Получение данных
 
-Набор данных состоит из около 120 обучающие изображения каждого ants и пчел, 75 проверки образов для каждого класса. Hymenoptera приведен порядок насекомых, включающий ants и пчел. Загрузите и извлеките набор данных как часть нашего сценария обучения `pytorch_train.py`.
+Набор данных состоит из 120 обучающие изображения каждого turkeys и chickens, с 100 проверки образов для каждого класса. Нужно будет скачать и извлечь набор данных как часть нашего сценария обучения `pytorch_train.py`. Образы представляют собой подмножество [набора данных v5 открытых изображений](https://storage.googleapis.com/openimages/web/index.html).
 
 ### <a name="prepare-training-scripts"></a>Подготовка скриптов обучения
 

@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/04/2018
 ms.author: allensu
-ms.openlocfilehash: 7aee68ef41b696549aa1db4386d467b55cd2d981
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8df1c29bc5230e925d05be9fd356de050a9b0f06
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67071073"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67550363"
 ---
 # <a name="traffic-manager-endpoint-monitoring"></a>Мониторинг конечных точек в диспетчере трафика
 
@@ -102,7 +102,7 @@ ms.locfileid: "67071073"
 - Если используется протокол мониторинга HTTP или HTTPS:
     - получаем ответ, отличный от 200, или ответ, который не включен в диапазон состояний, указанный в параметре **Expected status code ranges** (Ожидаемые диапазоны кодов состояния) (включая различные коды 2xx или перенаправление 301/302).
 - Если используется протокол мониторинга TCP: 
-    - в ответ на запрос SYNC, отправленный диспетчером трафика, чтобы установить подключение, получен ответ, отличный от ACK или SYN-ACK.
+    - Ответ, отличный от ACK или SYN-ACK принимается в ответ на запрос SYN, отправленный диспетчером трафика, чтобы установить подключение.
 - Превышено время ожидания. 
 - Любые другие проблемы с подключением, из-за которых невозможно получить доступ к конечной точке.
 

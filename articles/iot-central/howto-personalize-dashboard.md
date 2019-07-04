@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: a1641c4f3ae4eaa175657db8ff4064fa2202aea6
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c048ae8c0daba0e467a9243f4dd83f8d95921e10
+ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67053011"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67502650"
 ---
 # <a name="create-and-manage-personal-dashboards"></a>Создание и управление ими персональные информационные панели
 
@@ -38,6 +38,8 @@ ms.locfileid: "67053011"
 ![Вкладка "Панель мониторинга", на которой отображаются параметры и свойства плитки](media/howto-personalize-dashboard/personaldashboard.png)
 
 Вы можете изучить другие плитки типы в библиотеке для обнаружения для дальнейшей настройки личных панелей мониторинга.
+
+Дополнительные сведения об использовании плиток в Azure IoT Central, см. в разделе [использовать панели мониторинга плитки](howto-use-tiles.md).
 
 ## <a name="manage-dashboards"></a>Управление панелями мониторинга
 

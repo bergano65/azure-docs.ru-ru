@@ -3,7 +3,7 @@ title: Присоединение виртуальной машины Windows Se
 description: Присоединение виртуальной машины Windows Server к управляемому домену с помощью шаблонов Azure Resource Manager.
 services: active-directory-ds
 documentationcenter: ''
-author: MikeStephens-MS
+author: iainfoulds
 manager: daveba
 editor: curtand
 ms.assetid: 4eabfd8e-5509-4acd-86b5-1318147fddb5
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/20/2019
-ms.author: mstephen
-ms.openlocfilehash: e4ca613059e10755056616b964cc500625fef187
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: iainfou
+ms.openlocfilehash: 3d16a4240b7a30a483b70b068ab7d91ca7bdcb17
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66245959"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67473038"
 ---
 # <a name="join-a-windows-server-virtual-machine-to-a-managed-domain-using-a-resource-manager-template"></a>Присоединение виртуальной машины Windows Server к управляемому домену с помощью шаблона Resource Manager
 В этой статье показано, как с помощью шаблонов Azure Resource Manager присоединить виртуальную машину Windows Server к управляемому домену доменных служб Azure AD.
@@ -42,7 +42,7 @@ ms.locfileid: "66245959"
 * **Azure CLI.** [Установка и настройка](https://azure.microsoft.com/documentation/articles/xplat-cli-install/)
 
 
-## <a name="option-1-provision-a-new-windows-server-vm-and-join-it-to-a-managed-domain"></a>Вариант 1. Подготовка новой виртуальной машины Windows Server и ее присоединение к управляемому домену
+## <a name="option-1-provision-a-new-windows-server-vm-and-join-it-to-a-managed-domain"></a>Вариант 1: Подготовка новой виртуальной машины Windows Server и ее присоединение к управляемому домену
 **Имя шаблона быстрого запуска**. [201-vm-domain-join](https://azure.microsoft.com/resources/templates/201-vm-domain-join/)
 
 Чтобы развернуть виртуальную машину Windows Server и присоединить ее к управляемому домену, сделайте следующее.

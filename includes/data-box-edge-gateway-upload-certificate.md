@@ -2,14 +2,14 @@
 author: alkohli
 ms.service: databox
 ms.topic: include
-ms.date: 04/23/2019
+ms.date: 06/26/2019
 ms.author: alkohli
-ms.openlocfilehash: d7a9923d5bd9e357bcd75fae6e0a7d1bcd437a53
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 09d9b5bbf3f9ca7a4eef37891d03c9c865e7f74b
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185744"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448633"
 ---
 Действительный сертификат SSL гарантирует, что вы отправляете зашифрованные сведения к требуемому серверу. Помимо шифрования этот сертификат позволяет также для проверки подлинности. Вы можете отправить свои собственные доверенный SSL-сертификат в интерфейсе PowerShell устройства.
 
@@ -18,11 +18,11 @@ ms.locfileid: "67185744"
 
    - `CertificateFilePath` — Путь к общей папке, содержащей файл сертификата в *.pfx* формат.
    - `CertificatePassword` Пароль, используемый для защиты сертификата.
-   - `Credentials` — Имя пользователя и пароль для доступа к папке, который содержит сертификат.
+   - `Credentials` — Имя пользователя для доступа к папке с сертификатом. Введите пароль в общую сетевую папку при появлении запроса.
 
      В следующем примере показано использование этого командлета:
 
      ```
-     Set-HcsCertificate -Scope LocalWebUI -CertificateFilePath "\\myfileshare\certificates\mycert.pfx" -CertificatePassword "mypassword" -Credential "Username/Password"
+     Set-HcsCertificate -Scope LocalWebUI -CertificateFilePath "\\myfileshare\certificates\mycert.pfx" -CertificatePassword "mypassword" -Credential "Username"
      ```
 

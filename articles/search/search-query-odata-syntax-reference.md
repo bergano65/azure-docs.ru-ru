@@ -19,16 +19,16 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: cccfb749af07d1deeeda6e94de9c2cd5ce5396f3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ebe41ba61ac5136900328db9c35acb8551dcd5b2
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67079669"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67428660"
 ---
 # <a name="odata-expression-syntax-reference-for-azure-search"></a>Справочник по синтаксису выражений OData для службы поиска Azure
 
-Поиск Azure использует [выражения OData](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html) как параметры в API. Чаще всего выражения OData используются для `$orderby` и `$filter` параметров. Эти выражения могут быть сложными, содержащий несколько предложений, функции и операторы. Тем не менее даже простые выражения OData, такие как свойства пути, используемые во многих частях API REST службы поиска Azure. Например, выражения пути используются для ссылки на вложенные поля сложных полей в API, например когда список вложенные поля в любом файле [средство подбора](index-add-suggesters.md), [функция оценки](index-add-scoring-profiles.md), `$select` параметр , или даже [относящегося к полю поиска в запросах Lucene](query-lucene-syntax.md).
+Поиск Azure использует [выражения OData](https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html) как параметры в API. Чаще всего выражения OData используются для `$orderby` и `$filter` параметров. Эти выражения могут быть сложными, содержащий несколько предложений, функции и операторы. Тем не менее даже простые выражения OData, такие как свойства пути, используемые во многих частях API REST службы поиска Azure. Например, выражения пути используются для ссылки на вложенные поля сложных полей в API, например когда список вложенные поля в любом файле [средство подбора](index-add-suggesters.md), [функция оценки](index-add-scoring-profiles.md), `$select` параметр , или даже [относящегося к полю поиска в запросах Lucene](query-lucene-syntax.md).
 
 В этой статье описываются все эти формы с помощью формальная Грамматика выражений OData. Имеется также [интерактивной схемы](#syntax-diagram) для визуального изучения грамматики.
 

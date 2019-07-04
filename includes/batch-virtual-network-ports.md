@@ -15,12 +15,12 @@ ms.workload: ''
 ms.date: 04/10/2019
 ms.author: lahugh
 ms.custom: include file
-ms.openlocfilehash: 711b662c35b5f8fec96f1edee765696bc1028bf8
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: a794852e68fdb2bf52717aaa6441880bd1d51139
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185639"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67436268"
 ---
 ### <a name="general-requirements"></a>Общие требования
 
@@ -71,9 +71,9 @@ ms.locfileid: "67185639"
 
 **Правила безопасности для исходящего трафика**
 
-| source | Исходные порты | Место назначения | Тег целевой службы | Протокол | Действие |
-| --- | --- | --- | --- | --- | --- |
-| Любой | 443 | [Тег службы](../articles/virtual-network/security-overview.md#service-tags) | `Storage` (в одном регионе с вашей учетной записи пакетной службы и виртуальной сети)  | Любой | Allow |
+| source | Исходные порты | Место назначения | Тег целевой службы | Конечные порты | Протокол | Действие |
+| --- | --- | --- | --- | --- | --- | --- |
+| Любой | * | [Тег службы](../articles/virtual-network/security-overview.md#service-tags) | `Storage` (в одном регионе с вашей учетной записи пакетной службы и виртуальной сети) | 443 | TCP | Allow |
 
 ### <a name="pools-in-the-cloud-services-configuration"></a>Пулы в конфигурации облачных служб
 

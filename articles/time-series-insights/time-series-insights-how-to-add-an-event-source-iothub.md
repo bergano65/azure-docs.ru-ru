@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 05/01/2019
 ms.custom: seodec18
-ms.openlocfilehash: 12e86e2a47698d7f736b5f66a92819a4621d5e96
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 47e14ff87a6197ccc97231835da545207545a328
+ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165682"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67460814"
 ---
 # <a name="add-an-iot-hub-event-source-to-your-time-series-insights-environment"></a>Добавление в среду службы "Аналитика временных рядов Azure" источник событий центра Интернета вещей
 
@@ -42,7 +42,7 @@ ms.locfileid: "67165682"
 
 1. В разделе **параметры**выберите **встроенные конечные точки**, а затем выберите **события** конечной точки.
 
-   [![На странице сборки в конечные точки выберите "события"](media/time-series-insights-how-to-add-an-event-source-iothub/iothub_one.png)](media/time-series-insights-how-to-add-an-event-source-iothub/iothub_one.png#lightbox)
+   [![На странице сборки в конечные точки выберите "события"](media/time-series-insights-how-to-add-an-event-source-iothub/iothub-one.png)](media/time-series-insights-how-to-add-an-event-source-iothub/iothub-one.png#lightbox)
 
 1. В разделе **Группы потребителей** введите уникальное имя для группы объектов-получателей. Укажите это же имя при создании нового источника событий в среде службы "Аналитика временных рядов".
 
@@ -56,7 +56,7 @@ ms.locfileid: "67165682"
 
 1. В разделе **Топология окружения** выберите **Источники событий**, а затем щелкните **Добавить**.
 
-   [![Выберите источники событий, а затем выберите «Добавить»](media/time-series-insights-how-to-add-an-event-source-iothub/iothub_two.png)](media/time-series-insights-how-to-add-an-event-source-iothub/iothub_two.png#lightbox)
+   [![Выберите источники событий, а затем выберите «Добавить»](media/time-series-insights-how-to-add-an-event-source-iothub/iothub-two.png)](media/time-series-insights-how-to-add-an-event-source-iothub/iothub-two.png#lightbox)
 
 1. В области **Новый источник событий** в поле **Имя источника событий** введите имя, которое является уникальным для этой среды службы "Аналитика временных рядов". Например, введите **event-stream**.
 
@@ -66,11 +66,11 @@ ms.locfileid: "67165682"
 
    * Выберите **Использовать Центр Интернета вещей в доступных подписках**, если в одной из ваших подписок уже есть центр Интернета вещей. Этот вариант — самый простой подход.
    
-     [![Выберите параметры в области нового источника событий](media/time-series-insights-how-to-add-an-event-source-iothub/iothub_three.png)](media/time-series-insights-how-to-add-an-event-source-iothub/iothub_three.png#lightbox)
+     [![Выберите параметры в области нового источника событий](media/time-series-insights-how-to-add-an-event-source-iothub/iothub-three.png)](media/time-series-insights-how-to-add-an-event-source-iothub/iothub-three.png#lightbox)
 
     * В следующей таблице описаны обязательные свойства для варианта **Использовать Центр Интернета вещей в доступных подписках**:
 
-       [![Новая область источника событий - свойства для указания в использовать центр Интернета вещей из доступных подписок параметр](media/time-series-insights-how-to-add-an-event-source-iothub/iothub_four.png)](media/time-series-insights-how-to-add-an-event-source-iothub/iothub_four.png#lightbox)
+       [![Новая область источника событий - свойства для указания в использовать центр Интернета вещей из доступных подписок параметр](media/time-series-insights-how-to-add-an-event-source-iothub/iothub-four.png)](media/time-series-insights-how-to-add-an-event-source-iothub/iothub-four.png#lightbox)
 
        | Свойство | Описание |
        | --- | --- |
@@ -101,7 +101,7 @@ ms.locfileid: "67165682"
 
 1. Нажмите кнопку **Создать**.
 
-   [![«Создать»](media/time-series-insights-how-to-add-an-event-source-iothub/iothub_five.png)](media/time-series-insights-how-to-add-an-event-source-iothub/iothub_five.png#lightbox)
+   [![«Создать»](media/time-series-insights-how-to-add-an-event-source-iothub/iothub-five.png)](media/time-series-insights-how-to-add-an-event-source-iothub/iothub-five.png#lightbox)
 
 1. После создания источника событий служба "Аналитика временных рядов" автоматически запустит потоковую передачу данных в среду.
 

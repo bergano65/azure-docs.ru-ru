@@ -13,15 +13,15 @@ ms.topic: conceptual
 ms.workload: tbd
 ms.date: 09/05/2018
 ms.author: mbullwin
-ms.openlocfilehash: eb7cbb80be12498242363eb8141a468e08cba73a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 64995ad0560efd06bfa0084c948527e8a01e1890
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66478325"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443336"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Использование Application Insights для облачных служб Azure
-С помощью [Application Insights][start] можно отслеживать [приложения облачной службы Azure](https://azure.microsoft.com/services/cloud-services/) на предмет доступности, производительности, сбоев и использования, объединяя данные из пакета SDK Application Insights с данными [системы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) из облачных служб. Благодаря получаемым данным о производительности и эффективности работы приложения на практике вы можете принимать осознанные решения о направлении разработки в каждом жизненном цикле.
+[Application Insights][start] можно отслеживать [облачных службы приложений Azure](https://azure.microsoft.com/services/cloud-services/) для доступности, производительности, сбоев и использования, объединяя данные из пакеты SDK Application Insights с [системы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics)данных из облачных служб. Благодаря получаемым данным о производительности и эффективности работы приложения на практике вы можете принимать осознанные решения о направлении разработки в каждом жизненном цикле.
 
 ![Панель мониторинга с общими сведениями](./media/cloudservices/overview-graphs.png)
 
@@ -80,7 +80,7 @@ ms.locfileid: "66478325"
 
 Если вы решили создать отдельный ресурс для каждой роли и, возможно, отдельный набор для каждой конфигурации сборки, проще это сделать на портале Application Insights. Если создается много ресурсов, можно [автоматизировать этот процесс](../../azure-monitor/app/powershell.md).
 
-1. На [портале Azure][portal] выберите **Создать** > **Службы разработки** > **Application Insights**.  
+1. В [портала Azure][portal]выберите **New** > **служб для разработчиков** > **Application Insights**.  
 
     ![Панель Application Insights](./media/cloudservices/01-new.png)
 
@@ -136,7 +136,38 @@ ms.locfileid: "66478325"
 1. Настройте для файла *ApplicationInsights.config* копирование в выходной каталог.  
     В сообщении в файле *.config* будет предложено поместить в него ключ инструментирования. Но для облачных приложений лучше задать его в файле *.cscfg*. Такой подход позволит правильно идентифицировать роли на портале.
 
-#### <a name="run-and-publish-the-app"></a>Запуск и публикация приложения
+## <a name="set-up-status-monitor-to-collect-full-sql-queries-optional"></a>Настроить монитор состояния для сбора полный SQL-запросы (необязательно)
+
+Этот шаг требуется только в том случае, если вы хотите собирать полный SQL-запросы на платформе .NET Framework. 
+
+1. В `\*.csdef` файл добавить [задачи запуска](https://docs.microsoft.com/azure/cloud-services/cloud-services-startup-tasks) для каждой роли, аналогичную 
+
+    ```xml
+    <Startup>
+      <Task commandLine="AppInsightsAgent\InstallAgent.bat" executionContext="elevated" taskType="simple">
+        <Environment>
+          <Variable name="ApplicationInsightsAgent.DownloadLink" value="http://go.microsoft.com/fwlink/?LinkID=522371" />
+          <Variable name="RoleEnvironment.IsEmulated">
+            <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
+          </Variable>
+        </Environment>
+      </Task>
+    </Startup>
+    ```
+    
+2. Скачайте [InstallAgent.bat](https://github.com/microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent/InstallAgent.bat) и [InstallAgent.ps1](https://github.com/microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent/InstallAgent.ps1), поместить их в `AppInsightsAgent` папку на каждый проект роли. Не забудьте скопировать их в выходной каталог, с помощью Visual Studio файл свойств или создавать скрипты.
+
+3. На всех рабочих ролей добавьте переменные среды: 
+
+    ```xml
+      <Environment>
+        <Variable name="COR_ENABLE_PROFILING" value="1" />
+        <Variable name="COR_PROFILER" value="{324F817A-7420-4E6D-B3C1-143FBED6D855}" />
+        <Variable name="MicrosoftInstrumentationEngine_Host" value="{CA487940-57D2-10BF-11B2-A3AD5A13CBC0}" />
+      </Environment>
+    ```
+    
+## <a name="run-and-publish-the-app"></a>Запуск и публикация приложения
 
 1. Запустите приложение и войдите в Azure. 
 
@@ -146,10 +177,10 @@ ms.locfileid: "66478325"
 1. Добавьте дополнительные данные телеметрии (как описано в следующем разделе), а затем опубликуйте приложение для оперативного получения данных диагностики и сведений об использовании. 
 
 Если данные не отображаются, сделайте следующее:
-1. Откройте плитку [Поиск][diagnostic], чтобы просмотреть отдельные события.
+1. Чтобы просмотреть отдельные события, откройте [поиска][diagnostic] плитку.
 1. В приложении откройте несколько разных страниц, чтобы создать некоторый объем данных телеметрии.
 1. Подождите несколько секунд и щелкните **Обновить**.  
-    См. дополнительные сведения об [устранении неполадок][qna].
+    Дополнительные сведения см. в разделе [Устранение неполадок][qna].
 
 ## <a name="view-azure-diagnostics-events"></a>Просмотр событий диагностики Azure
 Источники данных [диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) в Application Insights можно найти в следующих расположениях:
@@ -223,10 +254,10 @@ ms.locfileid: "66478325"
 * Добавьте пользовательский инициализатор телеметрии. Это можно сделать в файле *ApplicationInsights.config* или [в коде](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L233).
 
 ## <a name="client-telemetry"></a>Данные телеметрии клиента
-[Добавьте пакет SDK JavaScript на веб-страницы][client], чтобы получать браузерные данные телеметрии, такие как число просмотров страниц, время загрузки страницы, исключения скриптов, и записывать пользовательскую телеметрию в скрипты страниц.
+Чтобы получить Браузерные данные телеметрии, например просмотров страниц, время загрузки страницы или исключения сценариев и записывать настраиваемую телеметрию в скрипты страниц, см. в разделе [добавьте пакет SDK JavaScript на веб-страницы][client].
 
 ## <a name="availability-tests"></a>Тесты доступности
-[Настройте веб-тесты][availability], которые обеспечат работоспособность приложения и его правильное реагирование на запросы.
+Чтобы убедиться в том, остается приложения live и отвечает на запросы, [веб-тестов][availability].
 
 ## <a name="display-everything-together"></a>Отображение всей информации вместе
 Чтобы получить общее представление о системе, можно отобразить ключевые диаграммы мониторинга на одной [панели мониторинга](../../azure-monitor/app/overview-dashboard.md). Например, можно закрепить количество запросов и сбоев для каждой роли. 

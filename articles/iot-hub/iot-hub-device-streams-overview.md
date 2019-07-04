@@ -1,19 +1,18 @@
 ---
 title: Потоки устройств Центра Интернета вещей (предварительная версия) | Документация Майкрософт
-description: Обзор потоков устройств Центра Интернета вещей.
-author: rezasherafat
-manager: briz
+description: Общие сведения о потоках устройства центра Интернета вещей
+author: robinsh
 services: iot-hub
 ms.service: iot-hub
 ms.topic: conceptual
 ms.date: 01/15/2019
-ms.author: rezas
-ms.openlocfilehash: eba08521cb28a29a08c8e4e48f0ec321cb0397c7
-ms.sourcegitcommit: e5dcf12763af358f24e73b9f89ff4088ac63c6cb
+ms.author: robinsh
+ms.openlocfilehash: 6c0fa0a3166dce5aa6adc71a46555a24d899c96b
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67137344"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67441357"
 ---
 # <a name="iot-hub-device-streams-preview"></a>Потоки устройств Центра Интернета вещей (предварительная версия)
 
@@ -139,7 +138,7 @@ az iot hub devicestream show --name <YourIoTHubName>
 
    ![«Журналы доступа потоке устройства»](./media/iot-hub-device-streams-overview/device-streams-view-logs.png)
 
-## <a name="regional-availability"></a>Доступ по регионам
+## <a name="regional-availability"></a>Доступность по регионам
 
 Во время действия общедоступной предварительной версии потоки устройств Центра Интернета вещей доступны в регионах "Центральная часть США" и "Центральная часть США (EUAP)". Убедитесь, что центр создан в одном из этих регионов.
 

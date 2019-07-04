@@ -11,12 +11,12 @@ author: nacharya1
 ms.author: nilesha
 ms.date: 06/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: b9fe8ff710cbfe7fbb4a4d8bd351028bb50efcb0
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: 137ef1ad78548053f3c5b8f30b7d83f2370f62da
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67331735"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442440"
 ---
 # <a name="what-is-automated-machine-learning"></a>Что такое автоматическое машинное обучение?
 
@@ -120,7 +120,7 @@ ms.locfileid: "67331735"
 
 Примеры и сведения о создании моделей с помощью автоматических машинного обучения:
 
-+ Выполните [руководства: Автоматическое обучение модели классификации с помощью автоматического машинного обучения Azure](tutorial-auto-train-models.md)
++ Выполните [руководства: Автоматически Обучите модель регрессии с помощью автоматической машинного обучения Azure](tutorial-auto-train-models.md)
 
 + Настройте параметры для автоматического обучающего эксперимента.
   + В интерфейс портала Azure [выполните следующие действия,](how-to-create-portal-experiments.md).

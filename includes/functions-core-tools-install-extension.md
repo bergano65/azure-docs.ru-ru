@@ -2,48 +2,42 @@
 title: включение файла
 description: включение файла
 services: functions
-author: craigshoemaker
+author: ggailey777
 ms.service: functions
 ms.topic: include
-ms.date: 09/25/2018
-ms.author: cshoe
+ms.date: 05/25/2019
+ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: fc5b43dcdee394fea023124171fb42c1a18224dc
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: d62da82b4a4dd35532dd8776a9111689db469201
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185053"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448364"
 ---
-Пакеты расширения сделать все привязки, опубликованных группой функций Azure, доступные посредством параметра в *host.json* файла. Для локальной разработки гарантировать использование последней версии [основных инструментов функций Azure](../articles/azure-functions/functions-run-local.md#install-the-azure-functions-core-tools).
+## <a name="register-extensions"></a>Регистрация расширений
 
-Чтобы использовать пакеты расширения, обновите *host.json* файл, чтобы включить следующую запись для `extensionBundle`:
+За исключением триггеров HTTP и таймера, привязки в функциях в среде выполнения версии 2.x реализованы в виде пакетов расширения. В версии 2.x среды выполнения функций Azure, вам необходимо явно зарегистрировать расширения для типов привязки, используемых в функции. Исключения составляют привязок HTTP и триггеры таймера, которые не требуют расширений.
 
-```json
-{
-    "version": "2.0",
-    "extensionBundle": {
-        "id": "Microsoft.Azure.Functions.ExtensionBundle",
-        "version": "[1.*, 2.0.0)"
-    }
-}
+Вы можете установить расширения привязки по отдельности, или можно добавить ссылку на расширение пакета, в файл проекта host.json. Пакеты расширения удаляет вероятность возникновения проблем совместимости пакета при использовании нескольких типов привязки. Это рекомендуемый подход для регистрации расширений привязки. Пакеты расширения также устраняет необходимость устанавливать .NET Core 2.x SDK. 
+
+### <a name="extension-bundles"></a>пакеты расширения
+
+[!INCLUDE [Register extensions](functions-extension-bundles.md)]
+
+Дополнительные сведения см. в разделе [расширений привязки функций Azure зарегистрировать](../articles/azure-functions/functions-bindings-register.md#extension-bundles). Перед добавлением привязки в файле Functions.JSON, используются файл, необходимо добавить пакеты расширений host.json.
+
+### <a name="register-individual-extensions"></a>Зарегистрировать отдельные расширения
+
+Если вам нужно установить расширения, которые не входят в пакет, можно зарегистрировать вручную пакеты отдельных расширений для определенных привязок. 
+
+> [!NOTE]
+> Чтобы вручную зарегистрировать расширения с помощью `func extensions install`, необходимо иметь .NET Core 2.x установлен пакет SDK.
+
+После обновления файла *function.json* для включения всех привязок, необходимых для функции, выполните следующую команду в папке проекта.
+
+```bash
+func extensions install
 ```
 
-- `id` Ссылается на пространство имен для пакетов расширения функций Microsoft Azure.
-- `version` Ссылается на версию пакета.
-
-Увеличение версии пакета как пакеты в пакет изменений. Основной номер версии изменения вступают в силу только в том случае, когда пакеты в пакете перемещает основной номер версии. `version` Используется в свойстве [записью интервал для указания диапазонов версий](https://docs.microsoft.com/nuget/reference/package-versioning#version-ranges-and-wildcards). Среда выполнения функций всегда выбирает максимальную допустимую версию определяется диапазон версий или интервал.
-
-После расширения пакеты ссылаетесь в своем проекте, все привязки по умолчанию становятся доступными для ваших функций. Привязки, доступные в [пакета расширения](https://github.com/Azure/azure-functions-extension-bundles/blob/master/src/Microsoft.Azure.Functions.ExtensionBundle/extensions.json) являются:
-
-|Пакет  |Version  |
-|---------|---------|
-|Microsoft.Azure.WebJobs.Extensions.CosmosDB|3.0.3|
-|Microsoft.Azure.WebJobs.Extensions.DurableTask|1.8.0|
-|Microsoft.Azure.WebJobs.Extensions.EventGrid|2.0.0|
-|Microsoft.Azure.WebJobs.Extensions.EventHubs|3.0.3|
-|Microsoft.Azure.WebJobs.Extensions.SendGrid|3.0.0|
-|Microsoft.Azure.WebJobs.Extensions.ServiceBus|3.0.3|
-|Microsoft.Azure.WebJobs.Extensions.SignalRService|1.0.0|
-|Microsoft.Azure.WebJobs.Extensions.Storage|3.0.4|
-|Microsoft.Azure.WebJobs.Extensions.Twilio|3.0.0|
+Эта команда считывает файл *function.json*, чтобы определить, какие пакеты требуются, а затем устанавливает их и перестраивает проект расширений. Затем добавляются все новые привязки в текущей версии, но существующие привязки не обновляются. Используйте параметр `--force`, чтобы обновить существующие привязки до последней версии при установке новых пакетов.

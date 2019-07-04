@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/07/2018
-ms.openlocfilehash: 35ef708cdcedc2d7bafedb8bf3686e4b468177df
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dc2c3e557f295bd3125c09d9b839716159dcf50b
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64723684"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67446456"
 ---
 # <a name="use-azure-kubernetes-service-with-apache-kafka-on-hdinsight"></a>Использование службы Azure Kubernetes с Apache Kafka в HDInsight
 
@@ -35,7 +35,7 @@ ms.locfileid: "64723684"
 * Служба Azure Kubernetes
 * Виртуальные сети Azure
 
-В этой статье предполагается, что вы ознакомились с [руководством по службе Azure Kubernetes](../../aks/tutorial-kubernetes-prepare-app.md). В нем создается служба контейнеров, кластер Kubernetes, реестр контейнера и настраивается служебная программа `kubectl`.
+В этой статье предполагается, что вы ознакомились с [руководством по службе Azure Kubernetes](../../aks/tutorial-kubernetes-prepare-app.md). В этой статье создается служба контейнеров, создает кластер Kubernetes, реестр контейнеров и настраивает `kubectl` служебной программы.
 
 ## <a name="architecture"></a>Архитектура
 
