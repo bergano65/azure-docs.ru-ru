@@ -8,6 +8,8 @@
       href: sql-database-paas-vs-sql-server-iaas.md
     - name: Заметки о выпуске
       href: sql-database-release-notes.md
+    - name: 'Обновления, касающиеся переноса IP-адресов шлюза'
+      href: sql-database-gateway-migration.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -396,7 +398,7 @@
               href: sql-database-machine-learning-services-differences.md
         - name: Интеграция со средой CLR (.NET) на стороне сервера
           href: 'https://docs.microsoft.com/sql/relational-databases/clr-integration/common-language-runtime-integration-overview?toc=/azure/sql-database/toc.json'
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Обзор
       href: sql-database-howto.md
@@ -560,7 +562,7 @@
       items:
         - name: "Настройка аутентификации Azure\_AD"
           href: sql-database-aad-authentication-configure.md
-        - name: условный доступ;
+        - name: Условный доступ
           href: sql-database-conditional-access.md
         - name: Многофакторная проверка подлинности с помощью AAD
           href: sql-database-ssms-mfa-authentication.md

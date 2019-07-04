@@ -156,7 +156,7 @@ Get-AzAlertRule -ResourceGroup montest -TargetResourceId /subscriptions/s1/resou
 | Расположение этого правила генерации оповещений |East US |
 | ResourceGroup |montest |
 | TargetResourceId |/subscriptions/s1/resourceGroups/montest/providers/Microsoft.Compute/virtualMachines/testconfig |
-| MetricName созданного оповещения |\PhysicalDisk(_Total)\Disk Writes/sec. Точные имена метрик можно получить с помощью командлета `Get-MetricDefinitions`. |
+| MetricName созданного оповещения |\PhysicalDisk(_Total)\Disk Writes/sec. See the `Get-MetricDefinitions` cmdlet about how to retrieve the exact metric names |
 | оператор |GreaterThan |
 | Пороговое значение (число/с для этой метрики) |1 |
 | WindowSize (в формате чч:мм:сс) |00:05:00 |

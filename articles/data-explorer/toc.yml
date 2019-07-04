@@ -11,10 +11,8 @@
       href: create-cluster-database-portal.md
     - name: Принятие демонстрационных данных
       href: ingest-sample-data.md
-    - name: Запрашивание данных
-      items:
-        - name: Веб-интерфейс
-          href: web-query-data.md
+    - name: Запрашивание данных с помощью пользовательского веб-интерфейса
+      href: web-query-data.md
 - name: Учебники
   items:
     - name: Прием данных без использования кода
@@ -88,14 +86,14 @@
               href: power-bi-imported-query.md
             - name: Запросы SQL
               href: power-bi-sql-query.md
-        - name: Соединитель ODBC
-          href: connect-odbc.md
-        - name: Sisense
-          href: sisense.md
         - name: Grafana
           href: grafana.md
+        - name: Соединитель ODBC
+          href: connect-odbc.md
         - name: Tableau
           href: tableau.md
+        - name: Sisense
+          href: sisense.md
     - name: Управление
       items:
         - name: Управление разрешениями базы данных

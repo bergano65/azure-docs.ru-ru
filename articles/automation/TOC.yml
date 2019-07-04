@@ -124,6 +124,8 @@
         - name: Устранение неполадок с runbook
           href: troubleshoot/runbooks.md
           displayName: troubleshoot
+        - name: Запуск и остановка виртуальных машин
+          href: troubleshoot/start-stop-vm.md
 - name: Управление обновлениями
   items:
     - name: Общие сведения о службе "Управление обновлениями"
@@ -313,6 +315,8 @@
   items:
     - name: Пересылка данных задания службы автоматизации Azure в Log Analytics
       href: automation-manage-send-joblogs-log-analytics.md
+    - name: 'Регионы, в которых поддерживается сопоставление рабочих областей Log Analytics'
+      href: how-to/region-mappings.md
 - name: Миграция
   items:
     - name: Перенос из Orchestrator
