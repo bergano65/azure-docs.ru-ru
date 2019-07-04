@@ -10,12 +10,12 @@ ms.author: sstein
 ms.reviewer: v-masebo
 manager: craigg
 ms.date: 02/08/2019
-ms.openlocfilehash: a13d1f843604025ee0f843c0770b3d11b53dd837
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: fc3b1cdfee76bbee7676170fa69a1c53a495dc53
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65762882"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67051143"
 ---
 # <a name="tutorial-design-a-relational-database-in-a-single-database-within-azure-sql-database-using-ssms"></a>Руководство по Проектирование отдельной реляционной базы данных в службе "База данных SQL Azure" с помощью SQL Server Management Studio
 
@@ -29,7 +29,7 @@ ms.locfileid: "65762882"
 > - выполнить массовую загрузку данных с помощью BCP;
 > - запросить данные с помощью SSMS.
 
-* Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+\* Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 > [!NOTE]
 > В рамках этого руководства используется отдельная база данных. Но вы также можете использовать базу данных в составе эластичного пула или базу данных экземпляра в управляемом экземпляре. Чтобы подключиться к управляемому экземпляру, ознакомьтесь с руководствами по управляемому экземпляру: [Краткое руководство Настройка виртуальной машины Azure для подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-configure-vm.md) и [Краткое руководство. Настройка подключения "точка — сеть" к Управляемому экземпляру Базы данных SQL Azure с локального компьютера](sql-database-managed-instance-configure-p2s.md).
@@ -115,7 +115,7 @@ ms.locfileid: "65762882"
 Теперь IP-адрес может проходить через брандмауэр IP-адресов. Теперь можно подключиться к отдельной базе данных с помощью SQL Server Management Studio или другого средства по своему усмотрению. Обязательно используйте созданную ранее учетную запись администратора сервера.
 
 > [!IMPORTANT]
-> По умолчанию доступ через брандмауэр IP-адресов Базы данных SQL включен для всех служб Azure. На этой странице щелкните **Откл.**, чтобы отключить доступ для всех служб Azure.
+> По умолчанию доступ через брандмауэр IP-адресов Базы данных SQL включен для всех служб Azure. На этой странице щелкните **Откл.** , чтобы отключить доступ для всех служб Azure.
 
 ## <a name="connect-to-the-database"></a>Подключение к базе данных
 
@@ -128,7 +128,7 @@ ms.locfileid: "65762882"
    | ------------ | ------------------ | ------------------------------------------------- |
    | **Тип сервера** | Ядро СУБД | Это обязательное значение. |
    | **Server name** (Имя сервера) | Полное имя сервера | Например, *yourserver.database.windows.net*. |
-   | **Проверка подлинности** | Проверка подлинности SQL Server | В рамках работы с этим руководством мы настроили только один тип проверки подлинности — проверку подлинности SQL. |
+   | **Аутентификация** | Проверка подлинности SQL Server | В рамках работы с этим руководством мы настроили только один тип проверки подлинности — проверку подлинности SQL. |
    | **Имя входа** | Учетная запись администратора сервера | Это учетная запись, указанная при создании сервера. |
    | **Пароль** | Пароль учетной записи администратора сервера | Пароль, указанный при создании сервера. |
 
@@ -227,15 +227,15 @@ ms.locfileid: "65762882"
 4. Выполните приведенные ниже команды, которые вставляют пример данных в таблицы. Укажите значения для *сервера*, *базы данных*, *пользователя* и *пароля*, соответствующие вашей среде.
 
    ```cmd
-   bcp Course in SampleCourseData.txt -S <server>.database.windows.net -d <database> -U <user> -P <password> -q -c -t ","
-   bcp Person in SamplePersonData.txt -S <server>.database.windows.net -d <database> -U <user> -P <password> -q -c -t ","
-   bcp Student in SampleStudentData.txt -S <server>.database.windows.net -d <database> -U <user> -P <password> -q -c -t ","
-   bcp Credit in SampleCreditData.txt -S <server>.database.windows.net -d <database> -U <user> -P <password> -q -c -t ","
+   bcp Course in SampleCourseData -S <server>.database.windows.net -d <database> -U <user> -P <password> -q -c -t ","
+   bcp Person in SamplePersonData -S <server>.database.windows.net -d <database> -U <user> -P <password> -q -c -t ","
+   bcp Student in SampleStudentData -S <server>.database.windows.net -d <database> -U <user> -P <password> -q -c -t ","
+   bcp Credit in SampleCreditData -S <server>.database.windows.net -d <database> -U <user> -P <password> -q -c -t ","
    ```
 
 Итак, вы загрузили пример данных в созданные ранее таблицы.
 
-## <a name="query-data"></a>Запрос данных
+## <a name="query-data"></a>Запрашивание данных
 
 Чтобы извлечь сведения из таблиц базы данных, выполните приведенные ниже запросы. Дополнительные сведения о создании запросов SQL см. в [этой статье](https://technet.microsoft.com/library/bb264565.aspx). Первый запрос объединяет четыре таблицы для поиска студентов, которые посещают занятия у преподавателя Dominick Pope и оценки которых выше 75 %. Второй запрос объединяет четыре таблицы и находит курсы, на которые когда-либо записывался Noe Coleman.
 

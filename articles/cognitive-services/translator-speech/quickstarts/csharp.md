@@ -3,20 +3,20 @@ title: Краткое руководство. API перевода речи с C
 titlesuffix: Azure Cognitive Services
 description: Сведения и примеры кода для быстрого начала работы с API перевода речи.
 services: cognitive-services
-author: v-jaswel
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-speech
 ms.topic: quickstart
 ms.date: 04/26/2019
-ms.author: v-jaswel
+ms.author: swmachan
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: b4fe4f651340ef54c2907192f3a96e9a017ab1dd
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 5cca3d5d02f9618e99f122bf3fc2a7d2874e1cdf
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65910514"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67444506"
 ---
 # <a name="quickstart-translator-speech-api-with-c"></a>Краткое руководство. API перевода речи с C#
 <a name="HOLTop"></a>

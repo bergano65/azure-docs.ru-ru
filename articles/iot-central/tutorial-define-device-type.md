@@ -3,18 +3,18 @@ title: Определение типа нового устройства в Azur
 description: В этом руководстве показано, как разработчики могут определить тип нового устройства в своем приложении Azure IoT Central. Вы определите телеметрию, состояние, свойства и параметры для вашего типа.
 author: dominicbetts
 ms.author: dobett
-ms.date: 01/28/2019
+ms.date: 06/07/2019
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: 884381cc3b9aaeec29f5697485cd90c28b2bd97e
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: 54884728533aeff0472ed99660be00478227fbcd
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59681256"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67056782"
 ---
 # <a name="tutorial-define-a-new-device-type-in-your-azure-iot-central-application"></a>Руководство по Определение типа нового устройства в приложении Azure IoT Central
 

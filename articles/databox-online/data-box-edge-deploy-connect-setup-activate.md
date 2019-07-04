@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Data Box Edge so I can use it to transfer data to Azure.
-ms.openlocfilehash: 3e951e44aeaa4ca8d3d06bae80a80bcb2eb1dd52
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: cf2aa9bc1234f8bc92829b107d1a788b75d56a6b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64924542"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67075084"
 ---
 # <a name="tutorial-connect-set-up-and-activate-azure-data-box-edge"></a>Руководство по Подключение, настройка и активация Azure Data Box Edge 
 
@@ -44,7 +44,7 @@ ms.locfileid: "64924542"
     ![Задняя панель подключенного устройства](./media/data-box-edge-deploy-install/backplane-cabled.png)
 
 
-3. Откройте окно браузера и перейдите к локальному пользовательскому веб-интерфейсу на устройстве по адресу https://192.168.100.10.  
+3. Откройте окно браузера и перейдите к локальному пользовательскому веб-интерфейсу на устройстве по адресу `https://192.168.100.10`.  
     Это действие может занять несколько минут после включения устройства. 
 
     Появится сообщение об ошибке или предупреждение, уведомляющее о проблеме с сертификатом безопасности веб-сайта. 

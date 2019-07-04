@@ -8,19 +8,19 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
 ms.topic: overview
-ms.date: 02/20/2019
+ms.date: 06/27/2019
 ms.author: aahi
-ms.openlocfilehash: e9f691147b5dcb12a48a632ff01880f3fdff89c5
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 2b33c27e7af603c73bf7b7c6188bd9aef5ebc669
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66390260"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67542719"
 ---
 # <a name="sending-requests-to-the-bing-spell-check-api"></a>Отправка запросов к API "Проверка орфографии Bing"
 
 Чтобы проверить текстовую строку на наличие орфографических и грамматических ошибок, необходимо отправить запрос GET на следующую конечную точку:  
-  
+
 ```
 https://api.cognitive.microsoft.com/bing/v7.0/spellcheck
 ```  
@@ -73,6 +73,8 @@ https://api.cognitive.microsoft.com/bing/v7.0/spellcheck
 
 Ниже показан ответ на предыдущий запрос. В примере также показаны заголовки ответа для Bing.
 
+[!INCLUDE [cognitive-services-bing-url-note](../../../../includes/cognitive-services-bing-url-note.md)]
+
 ```json
 BingAPIs-TraceId: 76DD2C2549B94F9FB55B4BD6FEB6AC
 X-MSEdge-ClientID: 1C3352B306E669780D58D607B96869
@@ -119,7 +121,7 @@ BingAPIs-Market: en-US
 }  
 ```  
 
-# <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Что такое API проверки орфографии Bing?](../overview.md)
-- [Справочник по API проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)
+- [Справочник по API Проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)

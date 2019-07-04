@@ -1,18 +1,18 @@
 ---
 title: Внедрение Azure Databricks с помощью конечной точки Cosmos DB
 description: В этом руководстве описывается, как внедрить Azure Databricks в виртуальную сеть с использованием конечной точки службы с поддержкой Cosmos DB.
-services: azure-databricks
 author: mamccrea
 ms.author: mamccrea
 ms.reviewer: jasonh
+ms.service: azure-databricks
 ms.topic: tutorial
 ms.date: 04/17/2019
-ms.openlocfilehash: 0d5442a63680227f3a6186330502666c92dc3129
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: d1268ea2cfc22e6350edb32230588a497be8bc79
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60012851"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67054492"
 ---
 # <a name="tutorial-implement-azure-databricks-with-a-cosmos-db-endpoint"></a>Руководство по Внедрение Azure Databricks с помощью конечной точки Cosmos DB
 
@@ -69,7 +69,7 @@ ms.locfileid: "60012851"
 
 3. Выберите вкладку **Сеть** и настройте виртуальную сеть. 
 
-   a. Выберите виртуальную сеть, созданную при выполнении предварительных условий, а затем выберите *public-subnet*. Обратите внимание на примечание к *private-subnet*: *Конечная точка "Microsoft AzureCosmosDB" отсутствует"*. Причина этого состоит в том, что вы включили конечную точку службы Cosmos DB только в подсети на *public-subnet*.
+   a. Выберите виртуальную сеть, созданную при выполнении предварительных условий, а затем выберите *public-subnet*. Обратите внимание на примечание к *private-subnet*: *Конечная точка "Microsoft AzureCosmosDB" отсутствует"* . Причина этого состоит в том, что вы включили конечную точку службы Cosmos DB только в подсети на *public-subnet*.
 
    b. Убедитесь, что параметр **Разрешить доступ с портала Azure** включен. Этот параметр позволяет получить доступ к вашей учетной записи Cosmos DB на портале Azure. Если этот параметр имеет значение **Запретить**, при попытке доступа к вашей учетной записи возникнут ошибки. 
 
