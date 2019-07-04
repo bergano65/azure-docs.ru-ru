@@ -3,18 +3,18 @@ title: Настройка правил и действий в Azure IoT Central 
 description: В этом руководстве показано, как разработчику настраивать правила и действия на основе телеметрии в своем приложении Azure IoT Central.
 author: ankitscribbles
 ms.author: ankitgup
-ms.date: 01/28/2019
+ms.date: 06/09/2019
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: 2bd22dec13e2dba63c512276a0b36d4fc50e05f8
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: 56ced4f5e2fd0fbf829f72cff2413998398a7a09
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59681571"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67066018"
 ---
 # <a name="tutorial-configure-rules-and-actions-for-your-device-in-azure-iot-central"></a>Руководство. Настройка правил и действий для устройства в Azure IoT Central
 
@@ -38,7 +38,7 @@ ms.locfileid: "59681571"
 
     ![Страница шаблонов устройств](media/tutorial-configure-rules/templatespage1.png)
 
-    Вы увидите шаблон устройства **Подключенный кондиционер (1.0.0)**, созданный в предыдущем руководстве.
+    Вы увидите шаблон устройства **Подключенный кондиционер (1.0.0)** , созданный в предыдущем руководстве.
 
 2. Чтобы настроить шаблон устройства, выберите шаблон **подключенного кондиционера**, созданный в предыдущем руководстве.
 

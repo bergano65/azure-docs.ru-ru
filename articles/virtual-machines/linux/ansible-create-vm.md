@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: ce99b537dd5958c2bec43759c58a9c182dd05142
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: ff0d3508f1d418a189fab0dfe5803280a20f9a00
+ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65237036"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67190140"
 ---
 # <a name="quickstart-configure-linux-virtual-machines-in-azure-using-ansible"></a>Краткое руководство. Настройка виртуальных машин Linux в Azure с помощью Ansible
 
@@ -35,7 +35,7 @@ ms.locfileid: "65237036"
     location: eastus
 ```
 
-## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 При создании виртуальной машины Azure вам потребуется [виртуальная сеть](/azure/virtual-network/virtual-networks-overview). Вы можете создать ее или использовать уже готовую. Кроме того, необходимо решить, как будет предоставляться доступ к виртуальным машинам по виртуальной сети. В следующем разделе примера сборника схем Ansible описывается создание виртуальной сети `myVnet` в адресном пространстве `10.0.0.0/16`:
 
@@ -105,7 +105,7 @@ ms.locfileid: "65237036"
 В следующем разделе примера сборника схем Ansible описывается создание виртуального сетевого интерфейса `myNIC`, подключенного к созданным ресурсам виртуальной сети.
 
 ```yaml
-- name: Create virtual network inteface card
+- name: Create virtual network interface card
   azure_rm_networkinterface:
     resource_group: myResourceGroup
     name: myNIC
@@ -184,7 +184,7 @@ ms.locfileid: "65237036"
           access: Allow
           priority: 1001
           direction: Inbound
-  - name: Create virtual network inteface card
+  - name: Create virtual network interface card
     azure_rm_networkinterface:
       resource_group: myResourceGroup
       name: myNIC
@@ -270,7 +270,7 @@ ms.locfileid: "65237036"
    TASK [Create Network Security Group that allows SSH] **********************
    changed: [localhost]
 
-   TASK [Create virtual network inteface card] *******************************
+   TASK [Create virtual network interface card] *******************************
    changed: [localhost]
 
    TASK [Create VM] **********************************************************
@@ -289,4 +289,4 @@ ms.locfileid: "65237036"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"] 
-> [Краткое руководство. Управление виртуальной машиной Linux в Azure с помощью Ansible](./ansible-manage-linux-vm.md)
+> [Краткое руководство Управление виртуальной машиной Linux в Azure с помощью Ansible](./ansible-manage-linux-vm.md)
