@@ -3,19 +3,19 @@ title: Руководство по Создание приложения для 
 titleSuffix: Azure Cognitive Services
 description: В рамках этого руководства вы создадите приложение Windows Presentation Foundation (WPF), в котором API-интерфейсы Cognitive Services используются для перевода текста, определения языка и проверки орфографии с помощью ключа одной подписки. В этом упражнении показано, как использовать функции API "Перевод текстов" и API "Проверка орфографии Bing".
 services: cognitive-services
-author: erhopf
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: tutorial
 ms.date: 06/04/2019
-ms.author: erhopf
-ms.openlocfilehash: 2deaa0ed8b21d5e091fe5d3b3e6986eaf2340281
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.author: swmachan
+ms.openlocfilehash: b300c40b4a9c832a0df87f7cfc6e6a9558d766f6
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66514712"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448229"
 ---
 # <a name="tutorial-create-a-translation-app-with-wpf"></a>Руководство по Создание приложения для перевода текста с помощью WPF
 
@@ -370,7 +370,7 @@ API "Перевод текстов" сейчас поддерживает бол
        HttpWebRequest detectLanguageWebRequest = (HttpWebRequest)WebRequest.Create(detectUri);
        detectLanguageWebRequest.Headers.Add("Ocp-Apim-Subscription-Key", COGNITIVE_SERVICES_KEY);
        detectLanguageWebRequest.Headers.Add("Ocp-Apim-Subscription-Region", "westus");
-       detectLanguageWebRequest.ContentType = "app/json; charset=utf-8";
+       detectLanguageWebRequest.ContentType = "application/json; charset=utf-8";
        detectLanguageWebRequest.Method = "POST";
 
        // Send request
@@ -427,7 +427,7 @@ private string CorrectSpelling(string text)
     HttpWebRequest spellCheckWebRequest = (HttpWebRequest)WebRequest.Create(uri);
     spellCheckWebRequest.Headers.Add("Ocp-Apim-Subscription-Key", COGNITIVE_SERVICES_KEY);
     spellCheckWebRequest.Method = "POST";
-    spellCheckWebRequest.ContentType = "app/x-www-form-urlencoded"; // doesn't work without this
+    spellCheckWebRequest.ContentType = "application/x-www-form-urlencoded"; // doesn't work without this
 
     // Create and send the request
     string body = "text=" + System.Web.HttpUtility.UrlEncode(text);

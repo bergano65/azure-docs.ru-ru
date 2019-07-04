@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 05/28/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: fb45d2e36939a53d6242cf7cd5a0b9f1990780c3
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: 292368687ea30b87f4a1fa851027f9bde38c9549
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66299051"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67485780"
 ---
 # <a name="rest-tutorial-call-cognitive-services-apis-in-an-azure-search-indexing-pipeline"></a>Руководство по использованию REST. Вызов API-интерфейсов Cognitive Services в конвейере индексирования службы "Поиск Azure"
 
@@ -61,7 +61,7 @@ ms.locfileid: "66299051"
 
 1. В разделе **Параметры** > **Ключи** получите ключ администратора, чтобы обрести полные права на службу. Существуют два взаимозаменяемых ключа администратора, предназначенных для обеспечения непрерывности бизнес-процессов на случай, если вам потребуется сменить один из них. Вы можете использовать первичный или вторичный ключ для выполнения запросов на добавление, изменение и удаление объектов.
 
-![Получение конечной точки HTTP и ключа доступа](media/search-fiddler/get-url-key.png "Получение конечной точки HTTP и ключа доступа")
+![Получение конечной точки HTTP и ключа доступа](media/search-get-started-postman/get-url-key.png "Получение конечной точки HTTP и ключа доступа")
 
 Для выполнения любого запроса к службе требуется использование ключа API. Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
@@ -89,7 +89,7 @@ ms.locfileid: "66299051"
 
 ## <a name="set-up-postman"></a>Настройка Postman
 
-Запустите Postman и настройте HTTP-запрос. Если вы не работали с этим инструментом, изучите статью [Работа с REST API службы "Поиск Azure" с помощью Postman или Fiddler](search-fiddler.md).
+Запустите Postman и настройте HTTP-запрос. Если вы не работали с этим инструментом, изучите статью [Работа с REST API службы "Поиск Azure" с помощью Postman или Fiddler](search-get-started-postman.md).
 
 Методы запроса, используемые в этом руководстве: **POST**, **PUT** и **GET**. Заголовки ключей: для Content-type задано значение application/json, а для api-key задано значение ключа администратора службы "Поиск Azure". Тело — это расположение фактического содержимого вызова. 
 

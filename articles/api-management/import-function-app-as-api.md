@@ -11,14 +11,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 08/28/2018
+ms.date: 06/28/2019
 ms.author: apimpm
-ms.openlocfilehash: e5e8ffc18db902eeaa8484122e3844f35046191f
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: f9e5c531e387ba8d2c61c6d46b1e8935bc7d42cf
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66243163"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67429045"
 ---
 # <a name="import-an-azure-function-app-as-an-api-in-azure-api-management"></a>Импорт приложения-функции Azure в качестве API в службу управления API Azure
 
@@ -69,7 +69,7 @@ ms.locfileid: "66243163"
     ![Добавление из приложения-функции](./media/import-function-app-as-api/add-05.png)
 
     > [!NOTE]
-    > Вы можете импортировать только функции, которые основаны на триггере HTTP и имеют уровень авторизации *Анонимный* или *Функция*. В данный момент приложения-функции Linux не поддерживаются.
+    > Вы можете импортировать только функции, которые основаны на триггере HTTP и имеют уровень авторизации *Анонимный* или *Функция*.
 
 7. Переключитесь в **полное** представление и назначьте **продукт** вашему новому API. При необходимости измените другие предварительно заполненные поля.
 

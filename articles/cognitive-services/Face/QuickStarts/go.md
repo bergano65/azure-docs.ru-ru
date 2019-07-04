@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 02/07/2019
 ms.author: pafarley
-ms.openlocfilehash: 752f15fd730f1244f44ba3749bff3c5bb85ca02b
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: e35b2f8781c4ad20b72a589b2127082be8c1c341
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56312605"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67205372"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-go"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Go
 
@@ -60,8 +60,16 @@ func main() {
 
     reader := strings.NewReader(imageUrlEnc)
 
+    //Configure TLS, etc.
+    tr := &http.Transport{
+        TLSClientConfig: &tls.Config{
+            InsecureSkipVerify: true,
+        },
+    }
+    
     // Create the Http client
     client := &http.Client{
+        Transport: tr,
         Timeout: time.Second * 2,
     }
 
@@ -304,4 +312,4 @@ detect-face
 В этом кратком руководстве вы написали скрипт Ruby, который вызывает API распознавания лиц Azure для обнаружения лиц на изображении и возвращения их атрибутов. Ознакомьтесь со справочной документацией по API распознавания лиц, чтобы узнать больше.
 
 > [!div class="nextstepaction"]
-> [API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
+> [API Распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
