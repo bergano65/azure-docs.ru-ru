@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 1/2/2019
 ms.author: crtreasu
 ms.openlocfilehash: e796e836a8250c665ac09b66b51ed32380e56723
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60012131"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67184973"
 ---
 Следующим шагом является настройка приложения для использования идентификатора вашей учетной записи и ключа учетной записи. Вы скопировали их в текстовый редактор, когда выполняли [настройку ресурсов пространственных привязок](#create-a-spatial-anchors-resource).
 

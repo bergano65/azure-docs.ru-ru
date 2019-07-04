@@ -15,11 +15,11 @@ ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: apimpm
 ms.openlocfilehash: 9b9a691cb2bce2357d184420912ab340aee534e8
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50412752"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67205307"
 ---
 # <a name="mock-api-responses"></a>Макетирование ответов API
 
@@ -42,9 +42,9 @@ ms.locfileid: "50412752"
 
 + Ознакомьтесь с [терминологией службы управления API в Azure](api-management-terminology.md).
 + Ознакомьтесь с [концепцией использования политик в службе управления API в Azure](api-management-howto-policies.md).
-+ Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
++ Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
 
-## <a name="create-a-test-api"></a>Создание тестового API 
+## <a name="create-a-test-api"></a>создание тестового API; 
 
 В этом разделе показано, как создать пустой API без серверной части. Кроме того, здесь показано, как добавить операции в API. Вызов операции после завершения действий в этом разделе вызовет ошибку. Если завершить все действия из раздела "Включение макетирования ответа" ошибки не возникнут.
 

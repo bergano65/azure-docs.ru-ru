@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: 929977913fdbf0c6f59d69ec536a2638bca7b97c
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 341f5a30fe03de4c69b5a7e18703931988d2d185
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65232740"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67063635"
 ---
 # <a name="tutorial-push-notifications-to-android-devices-by-using-azure-notification-hubs-and-google-cloud-messaging-deprecated"></a>Руководство по отправке push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging (не рекомендуется к использованию)
 
@@ -66,7 +66,7 @@ ms.locfileid: "65232740"
 
 ### <a name="configure-gcm-setting-for-the-notification-hub"></a>Настройка параметра GCM для центра уведомлений
 
-1. В разделе **Параметры уведомлений** выберите **Google (GCM)**.
+1. В разделе **Параметры уведомлений** выберите **Google (GCM)** .
 2. Введите **ключ API**, полученный из консоли Google Cloud.
 3. На панели инструментов щелкните **Сохранить**.
 
@@ -110,7 +110,7 @@ ms.locfileid: "65232740"
 
 ### <a name="updating-the-projects-androidmanifestxml"></a>Обновление файла проекта AndroidManifest.xml
 
-1. Чтобы обеспечить поддержку GCM, реализуйте службу прослушивания идентификаторов экземпляра в коде. Таким образом можно [получать маркеры регистрации](https://developers.google.com/cloud-messaging/android/client#sample-register) с помощью [API идентификаторов экземпляра Google](https://developers.google.com/instance-id/). В этом руководстве имя класса — `MyInstanceIDService`.
+1. Чтобы обеспечить поддержку GCM, реализуйте службу прослушивания идентификаторов экземпляра в коде. Таким образом можно [получать маркеры регистрации](https://developers.google.com/cloud-messaging/) с помощью [API идентификаторов экземпляра Google](https://developers.google.com/instance-id/). В этом руководстве имя класса — `MyInstanceIDService`.
 
     Добавьте приведенное ниже определение службы внутри тега `<application>` в файле AndroidManifest.xml. Замените заполнитель `<your package>` фактическим именем своего пакета, отображенным в верхней части файла `AndroidManifest.xml`.
   
@@ -144,7 +144,7 @@ ms.locfileid: "65232740"
     ```
 4. Добавьте следующие разрешения GCM под тегом `</application>`. Замените `<your package>` именем пакета, отображенным в верхней части файла `AndroidManifest.xml`.
 
-    Дополнительные сведения об этих разрешениях см. в статье [Setup a GCM Client app for Android](https://developers.google.com/cloud-messaging/android/client#manifest) (Настройка клиентского приложения GCM для Android).
+    Дополнительные сведения об этих разрешениях см. в статье [Setup a GCM Client app for Android](https://developers.google.com/cloud-messaging/) (Настройка клиентского приложения GCM для Android).
 
     ```xml
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -483,7 +483,7 @@ ms.locfileid: "65232740"
 
 Кроме того, добавьте учетную запись Google в запущенный эмулятор. Для этого щелкните **Параметры** > **Учетные записи**. В противном случае попытки регистрации в GCM могут привести к исключению **AUTHENTICATION\_FAILED**.
 
-## <a name="optional-send-push-notifications-directly-from-the-app"></a>Отправка push-уведомлений непосредственно из приложения (необязательное действие) 
+## <a name="optional-send-push-notifications-directly-from-the-app"></a>Отправка push-уведомлений непосредственно из приложения (необязательное действие)
 
 Обычно уведомления отправляются с сервера базы данных. Но в некоторых случаях бывает удобно отправлять push-уведомления непосредственно из клиентского приложения. В этом разделе показано, как отправлять уведомления из клиента с помощью интерфейса [REST API центра уведомлений Azure](https://msdn.microsoft.com/library/azure/dn223264.aspx).
 
