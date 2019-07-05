@@ -109,7 +109,7 @@
               href: data-box-disk-faq.md
         - name: Практическое руководство
           items:
-            - name: Управление с помощью портала Azure
+            - name: Управление через портал Azure
               href: data-box-portal-ui-admin.md
             - name: Устранение неполадок
               items:
@@ -121,7 +121,7 @@
                   href: data-box-disk-troubleshoot.md
                 - name: Проблемы при передаче данных
                   href: data-box-disk-troubleshoot-upload.md
-            - name: Запрос в службу поддержки
+            - name: Обращение в службу поддержки
               href: data-box-disk-contact-microsoft-support.md
     - name: Data Box Heavy
       items:
@@ -143,6 +143,14 @@
               items:
                 - name: По SMB
                   href: data-box-heavy-deploy-copy-data.md
+                - name: Через NFS
+                  href: data-box-heavy-deploy-copy-data-via-nfs.md
+                - name: Через REST
+                  href: data-box-heavy-deploy-copy-data-via-rest.md
+                - name: С помощью службы копирования данных
+                  href: data-box-heavy-deploy-copy-data-via-copy-service.md
+                - name: На управляемые диски
+                  href: data-box-heavy-deploy-copy-data-from-vhds.md
             - name: '4. Возврат, отправка, проверка'
               href: data-box-heavy-deploy-picked-up.md
         - name: Основные понятия
@@ -153,7 +161,7 @@
               href: data-box-heavy-system-requirements.md
             - name: Изучение ограничений
               href: data-box-heavy-limits.md
-        - name: Руководства
+        - name: Практическое руководство
           items:
             - name: Управление с помощью портала Azure
               href: data-box-portal-admin.md
@@ -163,7 +171,7 @@
               href: data-box-troubleshoot.md
             - name: Перемещение данных на уровень больших двоичных объектов
               href: data-box-how-to-set-data-tier.md
-            - name: Запрос в службу поддержки
+            - name: Обращение в службу поддержки
               href: data-box-disk-contact-microsoft-support.md
             - name: Миграция
               items:

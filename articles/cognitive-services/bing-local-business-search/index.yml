@@ -13,7 +13,7 @@ metadata:
   ms.devlang: na
   ms.topic: landing-page
   ms.date: 08/02/2018
-  ms.author: 'rosh, v-gedod'
+  ms.author: rosh
 abstract:
   description: 'С помощью API Поиска местных компаний Bing для приложений можно находить контактную информацию о местных компаниях, а также сведения об их расположении, на основе поисковых запросов.'
 sections:

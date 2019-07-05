@@ -1,5 +1,5 @@
 ---
-title: Справочник по поиску ответов в проектах
+title: Справочник по Project Answer Search
 titlesuffix: Azure Cognitive Services
 description: Справочник по конечной точке поиска ответов в проектах.
 services: cognitive-services
@@ -9,13 +9,13 @@ ms.service: cognitive-services
 ms.subservice: answer-search
 ms.topic: reference
 ms.date: 04/13/2018
-ms.author: rosh, v-gedod
-ms.openlocfilehash: 09fab691ea04ad98472abc4f4dee5ecb4d22e660
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: rosh
+ms.openlocfilehash: 4384bf658024f89664c5202ba10d793d7ad734e0
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60721017"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67592913"
 ---
 # <a name="project-answer-search-v7-reference"></a>Справочник по поиску ответов в проектах версии 7
 
@@ -83,7 +83,7 @@ https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=<searchTerm>
 Запрос может включать следующие параметры запроса. В столбце "Обязательно" отмечены обязательные параметры. К параметрам запроса нужно применить кодировку URL.  
   
   
-|Name|Значение|type|Обязательно для заполнения|  
+|ИМЯ|Значение|type|Обязательно для заполнения|  
 |----------|-----------|----------|--------------|  
 |<a name="mkt" />mkt|Рынок, по которому возвращаются результаты. <br /><br />Список возможных значений рынка приведен в разделе "Коды рынка".<br /><br /> **Примечание**. API предварительной версии URL-адреса в настоящее время поддерживает только рынок и язык en-us.<br /><br />|String|Да|  
 |<a name="query" />q|URL-адрес для предварительного просмотра|String|Да|  
@@ -138,7 +138,7 @@ https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=<searchTerm>
 ### <a name="licenseattribution"></a>LicenseAttribution  
 Определяет правило контракта для определения принадлежности лицензии.  
   
-|Name|Значение|type|  
+|ИМЯ|Значение|type|  
 |----------|-----------|----------|  
 |_type|Указание типа, который имеет значение LicenseAttribution.|String|  
 |license|Лицензия, по которой может использоваться содержимое.|[Лицензия](#license)|  
@@ -196,12 +196,12 @@ https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=<searchTerm>
 ### <a name="webpage"></a>WebPage  
 Определяет сведения о веб-странице, для которой выполнялся предварительный просмотр.  
   
-|Name|Значение|type|  
+|ИМЯ|Значение|type|  
 |----------|-----------|----------|
 |name|Заголовок страницы, не обязательно заголовок HTML|String|
 |url|URL-адрес, который фактически проверялся (запрос может обрабатываться с учетом перенаправлений)|String|  
 |description|Краткое описание страницы и содержимого|String|  
-|isFamilyFriendly|Наиболее точно для элементов в веб-индексе. В режиме реального времени это обнаружение основано исключительно на URL-адресе, а не на содержимом страницы.|Логическое|
+|isFamilyFriendly|Наиболее точно для элементов в веб-индексе. В режиме реального времени это обнаружение основано исключительно на URL-адресе, а не на содержимом страницы.|boolean|
 |primaryImageOfPage/contentUrl|URL-адрес примера изображения для включения в предварительный просмотр|String| 
   
   
@@ -232,7 +232,7 @@ https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=<searchTerm>
 ### <a name="rankingitem"></a>RankingItem
 Определяет элемент в результатах поиска для отображения.
 
-|Name|Значение|type|  
+|ИМЯ|Значение|type|  
 |-------------|-----------------|----------|
 |resultIndex|Отсчитываемый от нуля индекс элемента в ответе для отображения. Если в элементе нет этого поля, в ответе могут отобразиться все элементы. Например, можно отобразить все статьи в ответе "Новости".|Integer|
 |answerType|Ответ, содержащий элемент, который необходимо отобразить. Например, "Новости".<br /><br />Используйте этот тип, чтобы найти ответ в объекте SearchResponse. Тип — это имя поля SearchResponse.<br /><br /> Тем не менее используйте тип ответа, только если этот объект включает поле значения; в противном случае игнорируйте его.|String|
@@ -242,7 +242,7 @@ https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=<searchTerm>
 ### <a name="rankingresponse"></a>RankingResponse  
 Определяет, где должно быть размещено содержимое на странице результатов поиска и в каком порядке.  
   
-|Name|Значение|  
+|ИМЯ|Значение|  
 |----------|-----------|  
 |<a name="ranking-mainline" />mainline|Результаты поиска для отображения в основном поле.|  
 |<a name="ranking-pole" />pole|Результаты поиска, которые должны отображаться в самом заметном месте (например, над основным полем и боковой панелью).|  
@@ -263,7 +263,7 @@ https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=<searchTerm>
 ### <a name="textattribution"></a>TextAttribution  
 Определяет правило контракта для определения принадлежности обычного текста.  
   
-|Name|Значение|type|  
+|ИМЯ|Значение|type|  
 |----------|-----------|----------|  
 |_type|Укажите тип, который имеет значение TextAttribution.|String|  
 |Text|Текст определения принадлежности.<br /><br /> Определение принадлежности текста применяется к сущности в целом и должно отображаться сразу после презентации сущности. Если имеется несколько правил определения принадлежности текста или ссылок, которые не указывают цель, их нужно объединить и отобразить с помощью метки "Data from:".|String| 

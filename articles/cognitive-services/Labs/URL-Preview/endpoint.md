@@ -9,13 +9,13 @@ ms.service: cognitive-services
 ms.subservice: url-preview
 ms.topic: reference
 ms.date: 03/29/2018
-ms.author: rosh, v-gedod
-ms.openlocfilehash: 7cc52493ec0e2b9c81d52da4bb22102c2c7e5e5c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: rosh
+ms.openlocfilehash: 43254db734a48f3e7aaa5a26a7fbf3981c9e9d87
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60712499"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67592867"
 ---
 # <a name="project-url-preview-endpoint"></a>Конечная точка службы предварительного просмотра URL-адресов в проектах
 
@@ -31,7 +31,7 @@ https://api.labs.cognitive.microsoft.com/urlpreview/v7.0/search?q=https://swiftk
 ```
 
 ### <a name="query-parameters"></a>Параметры запроса
-|Name|Значение|type|Обязательно для заполнения|  
+|ИМЯ|Значение|type|Обязательно для заполнения|  
 |----------|-----------|----------|--------------|  
 |q|URL-адрес для предварительного просмотра|String |Да|
 |safeSearch|Недопустимое содержимое для взрослых или пиратское содержимое будет заблокировано с кодом ошибки 400, при этом флаг *isFamilyFriendly* не возвращается. <p>Ниже описано поведение, применяемое к разрешенному содержимому для взрослых. Возвращается код состояния 200, а флаг *isFamilyFriendly* имеет значение false.<ul><li>safeSearch=strict: не возвращаются заголовок, описание, URL-адрес и изображение.</li><li>safeSearch=moderate: возвращаются заголовок, URL-адрес и описание, но не изображение.</li><li>safeSearch=off: возвращаются все объекты и элементы ответа — заголовок, URL-адрес, описание и изображение.</li></ul> |String|Необязательно. </br> По умолчанию используется значение safeSearch=strict.| 

@@ -1,0 +1,48 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Документация по Azure API для FHIR (предварительная версия)
+metadata:
+  title: Документация по Azure API для FHIR (предварительная версия)
+  meta.description: Learn how Azure API for FHIR can power healthcare iteroperability in Azure.
+  services: healthcare-apis
+  author: hansenms
+  manager: dougseven
+  ms.author: mihansen
+  ms.service: healthcare-apis
+  ms.subservice: fhir
+  ms.topic: landing-page
+  ms.date: 02/07/2019
+abstract:
+  description: "Azure API для FHIR® (предварительная версия)\_— это полностью управляемый, основанный на стандартах, соответствующий нормативным требованиям API-интерфейс для медицинских данных, с помощью которого можно создавать новые системы взаимодействия для практического изучения таких данных, а также аналитики и машинного обучения на их основе."
+sections:
+  - title: null
+    items:
+      - type: paragraph
+        text: "FHIR&reg;\_— это зарегистрированная торговая марка организации HL7. Используется с разрешения HL7."
+  - title: Пятиминутные руководства по началу работы
+    items:
+      - type: paragraph
+        text: 'Щелкните ссылку в виде стрелки, чтобы узнать, каким образом Azure API для FHIR (предварительная версия) может улучшить взаимодействие на платформе Azure в сфере здравоохранения. <img src="media/index/link.jpg" height="15" width="15"></img>.'
+      - type: table
+        style: dataMatrix
+        columns:
+          - image:
+              src: media/index/portal.svg
+            title: Портал Azure
+          - image:
+              src: media/index/powershell.svg
+            title: Azure PowerShell
+          - image:
+              src: media/index/cli.svg
+            title: Azure CLI
+        rows:
+          - title: Развертывание Azure API для FHIR
+            values:
+              - href: fhir-paas-portal-quickstart.md
+              - href: fhir-paas-powershell-quickstart.md
+              - href: fhir-paas-cli-quickstart.md
+          - title: Развертывание сервера FHIR с открытым кодом
+            values:
+              - href: fhir-oss-portal-quickstart.md
+              - href: fhir-oss-powershell-quickstart.md
+              - href: fhir-oss-cli-quickstart.md

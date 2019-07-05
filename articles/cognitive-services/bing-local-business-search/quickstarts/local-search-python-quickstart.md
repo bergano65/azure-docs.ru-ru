@@ -8,13 +8,13 @@ manager: nitinme
 ms.service: cognitive-services
 ms.topic: quickstart
 ms.date: 11/01/2018
-ms.author: rosh, v-gedod
-ms.openlocfilehash: a8a21c0904bd750cdb59c03a36d23a8c32c9e8cd
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.author: rosh
+ms.openlocfilehash: cfc4bd95214c56dfbe940b7a2785d297f59105a9
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67051533"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67592731"
 ---
 # <a name="quickstart-send-a-query-to-the-bing-local-business-search-api-in-python"></a>Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью Python
 
@@ -22,7 +22,7 @@ ms.locfileid: "67051533"
 
 В этом примере приложения из API извлекаются сведения о местных компаниях по поисковому запросу `hotel in Bellevue`.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Python](https://www.python.org/) 2.x или 3.x.
  
@@ -66,7 +66,7 @@ print (json.dumps(json.loads(result), indent=4))
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 - [Краткое руководство. Использование Local Business Search с помощью Java](local-search-java-quickstart.md)
 - [Краткое руководство. Использование Local Business Search с помощью C#](local-quickstart.md)
 - [Краткое руководство. Использование Local Business Search с помощью Node](local-search-node-quickstart.md)

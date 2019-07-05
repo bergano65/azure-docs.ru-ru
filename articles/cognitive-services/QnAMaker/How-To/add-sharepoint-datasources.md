@@ -1,7 +1,7 @@
 ---
 title: Файлы SharePoint — QnA Maker
 titleSuffix: Azure Cognitive Services
-description: Добавьте защищенных источников данных Sharepoint в базу знаний для обогащения знаний с вопросами и ответами, которые могут быть защищены с помощью Active Directory.
+description: Добавьте защищенных источников данных SharePoint в базу знаний для обогащения знаний с вопросами и ответами, которые могут быть защищены с помощью Active Directory.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -10,33 +10,33 @@ ms.subservice: qna-maker
 ms.topic: article
 ms.date: 06/24/2019
 ms.author: diberry
-ms.openlocfilehash: 3e5aa1cc78efeb6e8158155b5e0676c8a63cf6e6
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 99b20e36163ec8c91fba864706f883b7866de65c
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447554"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67592902"
 ---
-# <a name="add-a-secured-sharepoint-data-source-to-your-knowledge-base"></a>Добавление знаний защищенного источника данных Sharepoint
+# <a name="add-a-secured-sharepoint-data-source-to-your-knowledge-base"></a>Добавление знаний защищенного источника данных SharePoint
 
-Добавьте защищенных источников данных Sharepoint в базу знаний для обогащения знаний с вопросами и ответами, которые могут быть защищены с помощью Active Directory. 
+Добавьте защищенных источников данных SharePoint в базу знаний для обогащения знаний с вопросами и ответами, которые могут быть защищены с помощью Active Directory. 
 
-При добавлении конфиденциальный документ Sharepoint знаний, как диспетчер QnA Maker, необходимо запросить разрешение Active Directory для QnA Maker. Это разрешение предоставляется из Active Directory диспетчера QnA Maker для доступа к Sharepoint, он не должен быть предоставлен снова. Каждый последующих добавления в базу знаний не потребуется авторизации, если он находится в один и тот же ресурс Sharepoint. 
+При добавлении конфиденциальный документ SharePoint знаний, как диспетчер QnA Maker, необходимо запросить разрешение Active Directory для QnA Maker. Это разрешение предоставляется из Active Directory диспетчера QnA Maker для доступа к SharePoint, он не должен быть предоставлен снова. Каждый последующих добавления в базу знаний не потребуется авторизации, если он находится в один и тот же ресурс SharePoint. 
 
 Если диспетчер знаний QnA Maker не manager Active Directory, необходимо связаться с диспетчером Active Directory, чтобы завершить этот процесс.
 
 ## <a name="add-supported-file-types-to-knowledge-base"></a>Добавить поддерживаемые типы файлов для базы знаний
 
-Вы можете добавить все поддерживаемые QnA Maker [типы файлов](../Concepts/data-sources-supported.md) с сервера Sharepoint в базу знаний. Может потребоваться предоставить [разрешения](#permissions) Если защищенный файл ресурсов.
+Вы можете добавить все поддерживаемые QnA Maker [типы файлов](../Concepts/data-sources-supported.md) с сайта SharePoint в базу знаний. Может потребоваться предоставить [разрешения](#permissions) Если защищенный файл ресурсов.
 
-1. С сервера Sharepoint, выберите кнопку с многоточием меню файла, `...`.
+1. Из библиотеки с сайтом SharePoint, выберите кнопку с многоточием меню файла, `...`.
 1. Скопируйте URL-адрес файла.
 
-    ![Получите URL-адрес Sharepoint файла, выбрав меню с многоточием файла, затем копирование URL-адрес.](../media/add-sharepoint-datasources/get-sharepoint-file-url.png)
+    ![Получите URL-адрес SharePoint файла, выбрав меню с многоточием файла, затем копирование URL-адрес.](../media/add-sharepoint-datasources/get-sharepoint-file-url.png)
 
 1. На портале QnA Maker на **параметры** странице [добавить URL-адрес](edit-knowledge-base.md#add-datasource) в базу знаний. 
 
-### <a name="images-with-sharepoint-files"></a>Образы с файлами Sharepoint
+### <a name="images-with-sharepoint-files"></a>Образы с файлами SharePoint
 
 Если файлы включают в себя образы, их не извлекаются. Образ, можно добавить на портале QnA Maker, после файла на пары QnA.
 
@@ -52,26 +52,26 @@ ms.locfileid: "67447554"
 
 ## <a name="permissions"></a>Разрешения
 
-Предоставление разрешений происходит при добавлении защищенного файла с сервера Sharepoint базы знаний. В зависимости от настроек Sharepoint вверх и разрешения пользователя, добавив файл, это может потребовать:
+Предоставление разрешений происходит при добавлении базы знаний защищенного файла с сайта SharePoint. В зависимости от настроек SharePoint вверх и разрешения пользователя, добавив файл, это может потребовать:
 
 * никаких дополнительных действий — пользователь, добавляющий файл имеет все необходимые разрешения.
 * действия по [знаний manager](#knowledge-base-manager-add-sharepoint-data-source-in-qna-maker-portal) и [manager Active Directory](#active-directory-manager-grant-file-read-access-to-qna-maker).
 
 См. приведенные ниже действия. 
 
-### <a name="knowledge-base-manager-add-sharepoint-data-source-in-qna-maker-portal"></a>Диспетчер базы знаний: Добавление источника данных Sharepoint в портал QnA Maker
+### <a name="knowledge-base-manager-add-sharepoint-data-source-in-qna-maker-portal"></a>Диспетчер базы знаний: Добавление источника данных SharePoint в портал QnA Maker
 
-Когда **manager QnA Maker** добавляет конфиденциальный документ Sharepoint с базой знаний, manager инициирует знаний запрос для разрешения, которое должен выполнить диспетчер Active Directory.
+Когда **manager QnA Maker** добавляет конфиденциальный документ SharePoint с базой знаний, manager инициирует знаний запрос для разрешения, которое должен выполнить диспетчер Active Directory.
 
 Запрос начинается с всплывающее окно для проверки подлинности с учетной записью Active Directory. 
 
 ![Проверки подлинности учетной записи пользователя](../media/add-sharepoint-datasources/authenticate-user-account.png)
 
-Когда диспетчер QnA Maker выбирает учетную запись, Active Directory администратор будет получать Обратите внимание, что им необходимо разрешить доступ к ресурсу Sharepoint приложений (не диспетчер QnA Maker) QnA Maker. Диспетчер Active Directory должен сделать это для каждого ресурса Sharepoint, но не каждый документ в этот ресурс. 
+Когда диспетчер QnA Maker выбирает учетную запись, Azure Active Directory администратор будет получать Обратите внимание, что им необходимо разрешить доступ к ресурсу SharePoint приложений (не диспетчер QnA Maker) QnA Maker. Диспетчер Azure Active Directory должен сделать это для каждого ресурса SharePoint, но не каждый документ в этот ресурс. 
 
 ### <a name="active-directory-manager-grant-file-read-access-to-qna-maker"></a>Диспетчер Active directory: предоставлять доступ на чтение файла QnA Maker
 
-Диспетчер Active Directory (не диспетчер QnA Maker) необходимо предоставить доступ к QnA Maker, доступ к ресурсу Sharepoint, выбрав [эту ссылку](https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=id_token&scope=Files.Read%20Files.Read.All%20Sites.Read.All%20User.Read%20User.ReadBasic.All%20profile%20openid%20email&client_id=c2c11949-e9bb-4035-bda8-59542eb907a6&redirect_uri=https%3A%2F%2Fwww.qnamaker.ai%3A%2FCreate&state=68) Чтобы авторизовать приложение QnA Maker портала Sharepoint enterprise для чтения файлов разрешения. 
+Диспетчер Active Directory (не диспетчер QnA Maker) необходимо предоставить доступ к QnA Maker, доступ к ресурсу SharePoint, выбрав [эту ссылку](https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=id_token&scope=Files.Read%20Files.Read.All%20Sites.Read.All%20User.Read%20User.ReadBasic.All%20profile%20openid%20email&client_id=c2c11949-e9bb-4035-bda8-59542eb907a6&redirect_uri=https%3A%2F%2Fwww.qnamaker.ai%3A%2FCreate&state=68) Чтобы авторизовать приложение QnA Maker портала SharePoint enterprise для чтения файлов разрешения. 
 
 ![Диспетчер Azure Active Directory предоставляет разрешение в интерактивном режиме](../media/add-sharepoint-datasources/aad-manager-grants-permission-interactively.png)
 
@@ -129,13 +129,13 @@ The Active Directory manager will get a pop-up window requesting permissions to 
   
 <!--
 
-## Add Sharepoint data source with APIs
+## Add SharePoint data source with APIs
 
-You need to get the Sharepoint file's URI before adding it to QnA Maker. 
+You need to get the SharePoint file's URI before adding it to QnA Maker. 
 
-## Get Sharepoint File URI
+## Get SharePoint File URI
 
-Use the following steps to transform the Sharepoint URL into a sharing token.
+Use the following steps to transform the SharePoint URL into a sharing token.
 
 1. Encode the URL using [base64](https://en.wikipedia.org/wiki/Base64). 
 
@@ -154,7 +154,7 @@ Use the following steps to transform the Sharepoint URL into a sharing token.
 
     Get the **@microsoft.graph.downloadUrl** and use this as `fileuri` in the QnA Maker APIs.
 
-### Add or update a Sharepoint File URI to your knowledge base
+### Add or update a SharePoint File URI to your knowledge base
 
 Use the **@microsoft.graph.downloadUrl** from the previous section as the `fileuri` in the QnA Maker API for [adding a knowledge base](https://go.microsoft.com/fwlink/?linkid=2092179) or [updating a knowledge base](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update). The following fields are mandatory: name, fileuri, filename, source.
 
@@ -177,10 +177,10 @@ Use the **@microsoft.graph.downloadUrl** from the previous section as the `fileu
 
 
 
-## Remove QnA Maker app from Sharepoint authorization
+## Remove QnA Maker app from SharePoint authorization
 
 1. Use the steps in the previous section to find the Qna Maker app in the Active Directory admin center. 
-1. When you select the **QnAMakerPortalSharepoint**, select **Overview**. 
+1. When you select the **QnAMakerPortalSharePoint**, select **Overview**. 
 1. Select **Delete** to remove permissions. 
 
 -->

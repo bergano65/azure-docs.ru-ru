@@ -8,13 +8,13 @@ manager: nitinme
 ms.service: cognitive-services
 ms.topic: article
 ms.date: 11/01/2018
-ms.author: rosh, v-gedod
-ms.openlocfilehash: 82b2f5ca70927856aeac889675b5ec4a54ae034f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: rosh
+ms.openlocfilehash: e96b1959d9e03273a9ca4c549c0f8b0bda6a708b
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65796744"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67592793"
 ---
 # <a name="bing-local-business-search-api-v7-reference"></a>Справочник по API Bing Local Business Search версии 7
 
@@ -117,7 +117,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search
 ### <a name="license"></a>License  
 Определяет лицензию, в рамках которой можно использовать текст или фотографию.  
   
-|Name|Значение|type|  
+|ИМЯ|Значение|type|  
 |----------|-----------|----------|  
 |name|Имя лицензии.|String|  
 |url|URL-адрес веб-сайта, где пользователь может получить дополнительные сведения о лицензии.<br /><br /> Используйте имя и URL-адрес для создания гиперссылки.|String|  
@@ -126,7 +126,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search
 ### <a name="link"></a>Ссылка  
 Определяет компоненты гиперссылки.  
   
-|Name|Значение|type|  
+|ИМЯ|Значение|type|  
 |----------|-----------|----------|  
 |_type|Указание типа.|String|  
 |Text|Отображаемый текст.|String|  
@@ -140,7 +140,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search
   
 Обратите внимание, что издатель может предоставить свое имя или веб-сайт, или и то, и другое.  
   
-|Name|Значение|type|  
+|ИМЯ|Значение|type|  
 |----------|-----------|----------|  
 |name|Имя издателя.|String|  
 |url|URL-адрес для веб-сайта издателя.<br /><br /> Обратите внимание, что издатель может не предоставить веб-сайт.|String|  
@@ -150,7 +150,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search
 ### <a name="place"></a>Место  
 Определяет сведения о местных бизнесах, например, ресторан или гостиница.  
   
-|Name|Значение|type|  
+|ИМЯ|Значение|type|  
 |----------|-----------|----------|  
 |_type|Тип указания, которому может быть присвоено одно из следующих имен:<br /><br /><ul><li>Hotel</li><li>LocalBusiness<br /></li><li>Ресторан</ul><li>|String|  
 |address|Почтовый адрес расположения сущности.|PostalAddress|  
@@ -174,21 +174,21 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search
 
 ### <a name="identifiable"></a>Identifiable
 
-|Name|Значение|type|  
+|ИМЯ|Значение|type|  
 |-------------|-----------------|----------|
 |id|Идентификатор ресурса|String|
  
 ### <a name="rankinggroup"></a>RankingGroup
 Определяет группу результатов поиска, такие как основное поле.
 
-|Name|Значение|type|  
+|ИМЯ|Значение|type|  
 |-------------|-----------------|----------|
 |items|Список результатов поиска для отображения в группе.|RankingItem|
 
 ### <a name="rankingitem"></a>RankingItem
 Определяет элемент в результатах поиска для отображения.
 
-|Name|Значение|type|  
+|ИМЯ|Значение|type|  
 |-------------|-----------------|----------|
 |resultIndex|Отсчитываемый от нуля индекс элемента в ответе для отображения. Если в элементе нет этого поля, в ответе могут отобразиться все элементы. Например, можно отобразить все статьи в ответе "Новости".|Integer|
 |answerType|Ответ, содержащий элемент, который необходимо отобразить. Например, "Новости".<br /><br />Используйте этот тип, чтобы найти ответ в объекте SearchResponse. Тип — это имя поля SearchResponse.<br /><br /> Тем не менее используйте тип ответа, только если этот объект включает поле значения; в противном случае игнорируйте его.|String|
@@ -198,7 +198,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search
 ### <a name="rankingresponse"></a>RankingResponse  
 Определяет, где должно быть размещено содержимое на странице результатов поиска и в каком порядке.  
   
-|Name|Значение|  
+|ИМЯ|Значение|  
 |----------|-----------|  
 |<a name="ranking-mainline" />mainline|Результаты поиска для отображения в основном поле.|  
 |<a name="ranking-pole" />pole|Результаты поиска, которые должны отображаться в самом заметном месте (например, над основным полем и боковой панелью).|  
