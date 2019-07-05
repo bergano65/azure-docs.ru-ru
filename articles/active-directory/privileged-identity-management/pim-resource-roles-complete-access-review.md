@@ -15,12 +15,12 @@ ms.date: 04/02/2018
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aee8ac3c2638ede559f8a1f9c51f2d6e62604998
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9903bb82a82291febf571829fb9874ba66d2eab2
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65602298"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67476366"
 ---
 # <a name="complete-an-access-review-of-azure-resource-roles-in-pim"></a>Завершение проверки доступа для ролей ресурсов Azure в PIM
 После [запуска проверки доступа](pim-resource-roles-start-access-review.md) администраторы привилегированных ролей могут проверить привилегированный доступ. Azure Active Directory (Azure AD) Privileged Identity Management (PIM) автоматически отправляет сообщение электронной почты с запросом на проверку доступа. Если пользователь не получил электронное письмо, ему можно отправить [инструкции по выполнению проверки доступа](pim-resource-roles-perform-access-review.md).
@@ -33,13 +33,14 @@ ms.locfileid: "65602298"
 2. Выберите ресурс.
 
 3. Выберите раздел **Проверки доступа** на панели мониторинга.
-![Проверки доступа](media/pim-resource-roles-complete-access-review/rbac-access-review-home-list.png)
+
+    ![Ресурсов Azure — роль Отображение списка, владелец, Дата начала, Дата окончания и состояния проверки доступа](media/pim-resource-roles-complete-access-review/rbac-access-review-home-list.png)
 
 4. Выберите необходимую проверку доступа.
 
 В колонке со сведениями о проверке доступа отобразятся параметры для управления проверкой. Вот они:
 
-![Параметры для управления проверкой](media/pim-resource-roles-complete-access-review/rbac-access-review-menu.png)
+![Параметры управления для просмотра - Stop "," Сброс "," Применить, Delete](media/pim-resource-roles-complete-access-review/rbac-access-review-menu.png)
 
 ### <a name="stop"></a>Остановить
 Все проверки доступа имеют дату окончания, но можно воспользоваться кнопкой **Остановить** , чтобы завершить их выполнение раньше. Все пользователи, по которым еще не закончилась проверка к этому времени, не смогут ее пройти после остановки. Нельзя перезапустить проверку после ее остановки.
@@ -54,12 +55,14 @@ ms.locfileid: "65602298"
 Если проверка вам больше не нужна, удалите ее. При нажатии кнопки **Удалить** проверка будет удалена из приложения PIM.
 
 ## <a name="results"></a>Результаты
-На вкладке **Результаты** просмотрите и скачайте список результатов проверки. 
-![Вкладка результатов](media/pim-resource-roles-complete-access-review/rbac-access-review-results.png)
+На **результаты** странице, просмотреть и скачать список результатов проверки. 
+
+![Страница результатов со списком пользователей, результат, поэтому проверено, применить и результат применения](media/pim-resource-roles-complete-access-review/rbac-access-review-results.png)
 
 ## <a name="reviewers"></a>Рецензенты
 Просмотрите и добавьте рецензентов в существующие проверки доступа. Напомните рецензентам выполнить проверки.
-![Добавить рецензентов](media/pim-resource-roles-complete-access-review/rbac-access-review-reviewers.png)
+
+![Рецензенты страницы со списком имя и имя участника-пользователя](media/pim-resource-roles-complete-access-review/rbac-access-review-reviewers.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -12,15 +12,15 @@ ms.workload: ''
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/11/2019
+ms.date: 07/01/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: 033e0865f23034b94e3133e0ba5890eca4e746ea
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1848891a0a37235c9769b3cee18262239e19df5a
+ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67080892"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67502662"
 ---
 # <a name="choose-a-vm-size-for-compute-nodes-in-an-azure-batch-pool"></a>Выбор размера виртуальной машины для вычислительных узлов в пуле пакетной службы Azure
 
@@ -51,8 +51,8 @@ ms.locfileid: "67080892"
 | [Размеров оптимизированных для памяти](../virtual-machines/linux/sizes-memory.md) | Нет | Недоступно |
 | Серия Fsv2 | Все размеры | Любой |
 | Серия H | Все размеры | Любой |
-| Серия HB | Все размеры | Режим пользовательской подписки |
-| Серия HC | Все размеры | Режим пользовательской подписки |
+| Серии HB<sup>2</sup> | Все размеры | Любой |
+| Серии HC<sup>2</sup> | Все размеры | Любой |
 | Серия Ls | Все размеры | Любой |
 | Серия Lsv2 | Нет | Недоступно |
 | Серия M | Виртуальная машина Standard_M64ms (низкоприоритетных только), виртуальная машина Standard_M128s (низкоприоритетных только) | Любой |  

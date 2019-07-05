@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/22/2018
-ms.openlocfilehash: c8b05886ae338bb73b0f4ddce4d02a1f1a926a45
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ac1a4c77589f4ef88c9ee862cb871b376ca8a0fe
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67078241"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67483853"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-azure-hdinsight"></a>Развертывание и администрирование топологий Apache Storm в Azure HDInsight 
 
@@ -21,11 +21,12 @@ ms.locfileid: "67078241"
 
 ## <a name="prerequisites"></a>Технические условия
 
-* **Storm под управлением Linux в кластере HDInsight.** Инструкции по созданию кластера см. в статье [Руководство по Apache Storm в HDInsight: начало работы с анализом больших объемов данных в HDInsight с помощью примеров Storm Starter](apache-storm-tutorial-get-started-linux.md).
+* Кластер Apache Storm в HDInsight. См. в разделе [Создание Apache кластеров с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md) и выберите **Storm** для **тип кластера**.
 
-* (Необязательно.) **Знакомство с SSH и SCP**. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-* (Необязательно.) **Visual Studio**. Пакет SDK для Azure 2.5.1 или более поздней версии и средства Azure Data Lake для Visual Studio. Дополнительные сведения см. в статье [Приступая к работе с инструментами Azure Data Lake (в HDInsight) для Visual Studio для выполнения запроса Hive](../hadoop/apache-hadoop-visual-studio-tools-get-started.md).
+* (Необязательно) Знакомство с SSH и SCP: Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md).
+
+* (Необязательно) Visual Studio: Пакет SDK для Azure 2.5.1 или более поздней версии и средства Azure Data Lake для Visual Studio. Дополнительные сведения см. в статье [Приступая к работе с инструментами Azure Data Lake (в HDInsight) для Visual Studio для выполнения запроса Hive](../hadoop/apache-hadoop-visual-studio-tools-get-started.md).
 
     Одна из следующих версий Visual Studio:
 

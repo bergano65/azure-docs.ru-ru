@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 7/14/2018
 ms.author: victorh
-ms.openlocfilehash: e44beed592e013a089011c2a774b7300f2b3f854
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 25c50d400a68cdbfb9110a9e8e9d66477ad4710a
+ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66133743"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513363"
 ---
 # <a name="create-an-application-gateway-with-internal-redirection-using-the-azure-cli"></a>Создание шлюза приложений с перенаправлением внутреннего трафика при помощи Azure CLI
 
@@ -213,11 +213,11 @@ az network public-ip show \
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-В адресной строке браузера введите имя домена. Например, http://www.contoso.com.
+В адресной строке браузера введите имя домена. Например, http:\//www.contoso.com.
 
 ![Проверка сайта contoso в шлюзе приложений](./media/redirect-internal-site-cli/application-gateway-nginxtest.png)
 
-Измените адрес на другой домен, например http://www.contoso.org и вы увидите, что трафик перенаправляется в прослушиватель для www\. contoso.com.
+Изменить адрес на другой домен, например http:\//www.contoso.org и вы должны увидеть, что трафик перенаправляется в прослушиватель для www\.contoso.com.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

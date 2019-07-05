@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/24/2019
 ms.author: jingwang
-ms.openlocfilehash: 68d2f126ee32f61d13d170712bf58581101036e8
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 24ee419e5c6eb4b8c148c61c232d2ab7ab07c74b
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67206072"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449597"
 ---
 # <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
@@ -472,7 +472,10 @@ PolyBase хранилища данных SQL напрямую поддержив
 
 Если исходные данные не соответствуют критериям предыдущего раздела, включите копирование данных через промежуточный экземпляр хранилища BLOB-объектов Azure. Это не может быть хранилище Azure класса Premium. В этом случае фабрика данных Azure автоматически запускает преобразования данных для соответствия требованиям формата данных PolyBase. Затем она загружает данные в хранилище данных SQL с помощью PolyBase. Наконец, она очищает ваши временные данные из хранилища BLOB-объектов. Подробные сведения о копировании данных через промежуточный экземпляр хранилища BLOB-объектов Azure см. в разделе [Промежуточное копирование](copy-activity-performance.md#staged-copy).
 
-Чтобы использовать эту функцию, создайте [связанную службу хранения Azure](connector-azure-blob-storage.md#linked-service-properties), которая относится к учетной записи хранения Azure с промежуточным хранилищем BLOB-объектов. Затем укажите свойства `enableStaging` и `stagingSettings` для действия копирования, как показано в следующем коде:
+Чтобы использовать эту функцию, создайте [связанную службу хранилища BLOB-объектов Azure](connector-azure-blob-storage.md#linked-service-properties) , ссылающийся на учетную запись хранения Azure с промежуточными BLOB-объектов хранилища. Затем укажите `enableStaging` и `stagingSettings` свойств для действия копирования, как показано в следующем коде.
+
+>[!IMPORTANT]
+>Если промежуточного хранилища Azure настроена с помощью конечной точки службы виртуальной сети, необходимо использовать управляемое удостоверение проверки подлинности — см. [влияние использования конечных точек службы виртуальной сети со службой хранилища Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). Узнайте необходимые настройки в фабрике данных из [BLOB-объектов Azure — управляемое удостоверение проверки подлинности](connector-azure-blob-storage.md#managed-identity).
 
 ```json
 "activities":[

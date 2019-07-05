@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 485f79f79c52067e89fa0a606e76a533c312fb84
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 85a32244a9aff9319343fd7d3961941973aa9d9a
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65545093"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67482253"
 ---
 # <a name="microsoft-identity-platform-and-the-oauth-20-client-credentials-flow"></a>Платформа Microsoft identity и поток учетных данных клиента OAuth 2.0
 
@@ -42,7 +42,7 @@ ms.locfileid: "65545093"
 
 Весь поток учетных данных клиента аналогичен приведенному на следующей схеме. Описание каждого шага приведено далее в этой статье.
 
-![Поток учетных данных клиента](./media/v2-oauth2-client-creds-grant-flow/convergence-scenarios-client-creds.svg)
+![Схема, показывающая потока учетных данных клиента](./media/v2-oauth2-client-creds-grant-flow/convergence-scenarios-client-creds.svg)
 
 ## <a name="get-direct-authorization"></a>Получение прямой авторизации
 
@@ -92,7 +92,7 @@ ms.locfileid: "65545093"
 Когда вы будете готовы запросить разрешения у администратора организации, можно перенаправить пользователя на платформе Microsoft identity *конечной точки предоставления согласия администратора*.
 
 > [!TIP]
-> Попытайтесь выполнить этот запрос в Postman. (Использовать свой идентификатор приложения для получения наилучших результатов — учебного приложения не будет запрашивать полезные разрешения). [![Выполнить в Postman](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)
+> Попытайтесь выполнить этот запрос в Postman. (Использовать свой идентификатор приложения для получения наилучших результатов — учебного приложения не будет запрашивать полезные разрешения). [![Попробуйте выполнить этот запрос в Postman](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)
 
 ```
 // Line breaks are for legibility only.
@@ -154,7 +154,7 @@ GET http://localhost/myapp/permissions?error=permission_denied&error_description
 Авторизовав приложение, можно переходить к получению маркеров доступа для интерфейсов API. Чтобы получить токен с помощью клиента предоставления учетных данных, отправьте запрос POST к `/token` конечная точка платформы удостоверений Microsoft:
 
 > [!TIP]
-> Попытайтесь выполнить этот запрос в Postman. (Использовать свой идентификатор приложения для получения наилучших результатов — учебного приложения не будет запрашивать полезные разрешения). [![Выполнить в Postman](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)
+> Попытайтесь выполнить этот запрос в Postman. (Использовать свой идентификатор приложения для получения наилучших результатов — учебного приложения не будет запрашивать полезные разрешения). [![Попробуйте выполнить этот запрос в Postman](./media/v2-oauth2-auth-code-flow/runInPostman.png)](https://app.getpostman.com/run-collection/f77994d794bab767596d)
 
 ### <a name="first-case-access-token-request-with-a-shared-secret"></a>Первый вариант. Запрос маркера доступа с помощью общего секрета
 

@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
-ms.date: 04/09/2019
+ms.date: 06/28/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 04e8615cc5534255308c35fa1f675ef3a85aa84e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: bdce060006f65f2b0fb08023066ee504578bc552
+ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60438529"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67501660"
 ---
 # <a name="activate-my-azure-resource-roles-in-pim"></a>Активация ролей ресурсов Azure в PIM
 
@@ -38,37 +38,37 @@ ms.locfileid: "60438529"
 
 1. Щелкните **Мои роли**.
 
-    ![Роли Azure AD и ролей ресурсов Azure — Мои роли](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png)
+    ![Страница "Мои роли" Отображение ролей, которые вы можете активировать](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png)
 
 1. Нажмите кнопку **ролей ресурсов Azure** для просмотра списка ролей подходящих ресурсов Azure.
 
-   ![Роли ресурсов Azure](./media/pim-resource-roles-activate-your-roles/resources-my-roles-azure-resources.png) 
+   ![Мои роли - страница ролей ресурсов Azure](./media/pim-resource-roles-activate-your-roles/resources-my-roles-azure-resources.png) 
 
 1. В списке **Роли службы ресурсов Azure** найдите роль, которую необходимо активировать.
 
-    ![Роли ресурсов Azure — список "Мои роли"](./media/pim-resource-roles-activate-your-roles/resources-my-roles-activate.png)
+    ![Роли ресурсов Azure — список соответствующих ролей](./media/pim-resource-roles-activate-your-roles/resources-my-roles-activate.png)
 
 1. Щелкните **Активировать**, чтобы открыть область активации.
 
 1. Если ваша роль требует многофакторной проверки подлинности (MFA), щелкните **Чтобы продолжить, подтвердите свою личность**. Проверка подлинности выполняется один раз за сеанс.
 
-    ![Проверка с помощью функции MFA перед активацией роли](./media/pim-resource-roles-activate-your-roles/resources-my-roles-mfa.png)
+    ![Подтверждение вашей личности с помощью MFA перед активацией роли](./media/pim-resource-roles-activate-your-roles/resources-my-roles-mfa.png)
 
 1. Щелкните **Подтверждение вашей личности** и следуйте инструкциям для настройки дополнительной проверки безопасности.
 
-    ![Дополнительная проверка безопасности](./media/pim-resource-roles-activate-your-roles/resources-mfa-enter-code.png)
+    ![Экран для предоставления проверки безопасности, такие как ПИН-код](./media/pim-resource-roles-activate-your-roles/resources-mfa-enter-code.png)
 
 1. Если вы хотите указать меньшую область, щелкните **Область**, чтобы открыть область "Фильтр ресурсов".
 
     Рекомендуется запрашивать доступ только к тем ресурсам, которые вам нужны. В области "Фильтр ресурсов" можно указать группы ресурсов или ресурсы, доступ к которым вам нужен.
 
-    ![Активация. Фильтр ресурсов](./media/pim-resource-roles-activate-your-roles/resources-my-roles-resource-filter.png)
+    ![Активировать - ресурс «фильтр» для указания области](./media/pim-resource-roles-activate-your-roles/resources-my-roles-resource-filter.png)
 
 1. При необходимости укажите время начала настраиваемой активации. Участник будет активирован по прошествии установленного времени.
 
 1. В поле **Причина** введите основание для запроса активации.
 
-    ![Область завершения активации](./media/pim-resource-roles-activate-your-roles/resources-my-roles-activate-done.png)
+    ![Завершенные активировать область с области действия, время начала, длительности и причина](./media/pim-resource-roles-activate-your-roles/resources-my-roles-activate-done.png)
 
 1. Щелкните **Активировать**.
 
@@ -76,7 +76,7 @@ ms.locfileid: "60438529"
 
     Если [роль требует утверждения](pim-resource-roles-approval-workflow.md) для активации, в правом верхнем углу браузера появится уведомление о том, что запрос ожидает утверждения.
 
-    ![Уведомление о запросе, ожидающем утверждения](./media/pim-resource-roles-activate-your-roles/resources-my-roles-activate-notification.png)
+    ![Запрос на активацию — уведомление ожидает утверждения](./media/pim-resource-roles-activate-your-roles/resources-my-roles-activate-notification.png)
 
 ## <a name="use-a-role-immediately-after-activation"></a>Использование роли сразу после активации
 
@@ -102,7 +102,7 @@ ms.locfileid: "60438529"
 
 1. Нажмите кнопку **Мои запросы** для просмотра списка роль Azure AD и роль ресурса Azure запрашивает.
 
-    ![Роли Azure AD и ролей ресурсов Azure — Мои запросы](./media/pim-resource-roles-activate-your-roles/resources-my-requests.png)
+    ![Мои запросы - страница ресурсов Azure с ожидающих запросов](./media/pim-resource-roles-activate-your-roles/resources-my-requests.png)
 
 1. Прокрутите вправо, чтобы увидеть столбец **Состояние запроса**.
 
@@ -118,22 +118,19 @@ ms.locfileid: "60438529"
 
     При нажатии кнопки "Отмена", запрос будет отменен. Чтобы активировать роль снова, необходимо будет отправить новый запрос на активацию.
 
-   ![Отмена ожидающего запроса](./media/pim-resource-roles-activate-your-roles/resources-my-requests-cancel.png)
+   ![Список запроса с выделенным действием "Отмена"](./media/pim-resource-roles-activate-your-roles/resources-my-requests-cancel.png)
 
 ## <a name="troubleshoot"></a>Устранение неполадок
 
-### <a name="permissions-not-granted-after-activating-a-role"></a>Разрешения не предоставляются после активации роли
+### <a name="permissions-are-not-granted-after-activating-a-role"></a>После активации роли не предоставлены разрешения
 
-После активации роли в PIM пройдет не менее десяти минут, прежде чем вы сможете получить доступ к нужному административному порталу или выполнить какие-либо функции в рамках определенной административной рабочей нагрузки. После завершения активации, выйдите из портала Azure и снова войдите начать использовать новые активированные роли.
+При активации роли в PIM, активации может мгновенно распространяется на все порталы, требующих привилегированных ролей. В некоторых случаях даже если изменение распространяется, веб-кэширования на портале может привести изменения, не удается применить немедленно. Если активацию задерживается, вот что следует сделать.
 
-Ознакомьтесь с дополнительными сведениями [об устранении неполадок, связанных с повышенным уровнем разрешений](https://social.technet.microsoft.com/wiki/contents/articles/37568.troubleshooting-elevated-permissions-with-azure-ad-privileged-identity-management.aspx).
+1. Выйдите из портала Azure и затем войти снова.
 
-### <a name="cannot-activate-a-role-due-to-a-resource-lock"></a>Не удается активировать роль из-за блокировки ресурсов
+    Если активировать роль ресурса Azure, вы увидите, что на этапах активацию. После завершения всех этапов, вы увидите **выйдите из системы** ссылку. Можно использовать эту ссылку, чтобы выйти из системы. Это решит большинстве случаев задержки активации.
 
-Если при попытке активировать роль вы получили сообщение о том, что ресурс Azure заблокирован, возможно, это связано с тем, что ресурс в области назначения роли включает блокировку ресурсов. Блокировка защищает ресурсы от случайного удаления или непредвиденных изменений. Блокировка также не позволяет PIM удалить назначение ролей для ресурса в конце периода активации. Технология PIM не может работать надлежащим образом, когда применяется блокировка, поэтому PIM запрещает пользователям активировать роли для ресурса. Эту проблему можно устранить двумя способами:
-
-- Удалить блокировку, как описано в статье [Блокировка ресурсов для предотвращения непредвиденных изменений](../../azure-resource-manager/resource-group-lock-resources.md).
-- Если вы хотите оставить функцию блокировки, используйте назначение ролей на постоянной основе или учетную запись аварийного доступа.
+1. В PIM убедитесь, что вы указаны как член роли.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

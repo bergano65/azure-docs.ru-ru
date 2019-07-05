@@ -10,12 +10,12 @@ ms.service: cognitive-services
 ms.topic: article
 ms.date: 06/11/2019
 ms.author: dapine
-ms.openlocfilehash: 8ebc3d9f3339e2f703a1f374363b72b86f63d903
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 263a67f885615941624befcb52c408158e680062
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204040"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67566108"
 ---
 # <a name="container-support-in-azure-cognitive-services"></a>Поддержка контейнеров в Azure Cognitive Services
 
@@ -72,7 +72,7 @@ ms.locfileid: "67204040"
 
 Кроме того, некоторые контейнеры поддерживаются в Cognitive Services [ **предложения все в одном** ](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAllInOne) ключи ресурсов. Можно создать один единый ресурс Cognitive Services в одном и использовать один и тот же ключ выставления счетов для поддерживаемых служб для следующих служб:
 
-* API Компьютерного зрения
+* Компьютерное зрение
 * Распознавание лиц
 * LUIS
 * Анализ текста
@@ -107,7 +107,7 @@ Docker нужно настроить таким образом, чтобы ко�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о [рецепты контейнера](/containers/container-reuse-recipe.md) можно использовать с Cognitive Services.
+Дополнительные сведения о [рецепты контейнера](/azure/cognitive-services/containers/container-reuse-recipe) можно использовать с Cognitive Services.
 
 Установите и изучите функциональные возможности, предоставляемые контейнерами в Azure Cognitive Services:
 

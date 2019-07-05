@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: elisol, bryanla
 ms.custom: aaddev, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 005e5c92a16760d8eec5dc37526f4b1f2dbd751c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 41b407b4343db4f594049c4b1027fe4279dab840
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65540535"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67482950"
 ---
 # <a name="how-to-list-your-application-in-the-azure-active-directory-application-gallery"></a>Практическое руководство: Добавление приложения в коллекцию приложений Azure Active Directory
 
@@ -117,11 +117,11 @@ ms.locfileid: "65540535"
 
 Пользователи могут отправить запрос от включения приложения, нажав кнопку **приложение запрашивает клиентами** -> **выдать новый запрос**.
 
-![Плитка запрошенного приложения клиента](./media/howto-app-gallery-listing/customer-submit-request.png)
+![Показывает пользователю запрошенный плитки приложения](./media/howto-app-gallery-listing/customer-submit-request.png)
 
 Ниже приведен запрошенный поток клиента приложения —
 
-![Клиент запросил потока приложения](./media/howto-app-gallery-listing/customer-request.png)
+![Показывает пользователю запрошенный поток приложения](./media/howto-app-gallery-listing/customer-request.png)
 
 ## <a name="timelines"></a>График выполнения процессов
 

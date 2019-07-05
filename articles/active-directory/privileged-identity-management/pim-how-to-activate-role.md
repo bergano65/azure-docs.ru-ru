@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
-ms.date: 04/09/2019
+ms.date: 06/28/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fa820d6c140251fce6b09110e65b45005b53afcc
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e7b3e02222580da67a4eeb4159e4fc5dc3b9a98f
+ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60289626"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67501670"
 ---
 # <a name="activate-my-azure-ad-roles-in-pim"></a>Активация моих ролей Azure AD в PIM
 
@@ -41,25 +41,25 @@ ms.locfileid: "60289626"
 
 1. Нажмите кнопку **Мои роли** для просмотра списка доступных вашей роли Azure AD.
 
-    ![Роли Azure AD - моих ролей](./media/pim-how-to-activate-role/directory-roles-my-roles.png)
+    ![Роли Azure AD — Мои роли, отображение списка ролей подходящего или активного](./media/pim-how-to-activate-role/directory-roles-my-roles.png)
 
 1. Найдите роль, которую необходимо активировать.
 
-    ![Роли Azure AD — список ролей](./media/pim-how-to-activate-role/directory-roles-my-roles-activate.png)
+    ![Роли Azure AD — список соответствующих ролей отображение Активировать связь](./media/pim-how-to-activate-role/directory-roles-my-roles-activate.png)
 
 1. Щелкните **Активировать**, чтобы открыть область сведений об активации роли.
 
 1. Если ваша роль требует многофакторной проверки подлинности (MFA), щелкните **Чтобы продолжить, подтвердите свою личность**. Проверка подлинности выполняется один раз за сеанс.
 
-    ![Проверка с помощью функции MFA перед активацией роли](./media/pim-how-to-activate-role/directory-roles-my-roles-mfa.png)
+    ![Проверьте панель "Мои удостоверения" с многофакторной проверкой Подлинности перед активацией роли](./media/pim-how-to-activate-role/directory-roles-my-roles-mfa.png)
 
 1. Щелкните **Подтверждение вашей личности** и следуйте инструкциям для настройки дополнительной проверки безопасности.
 
-    ![Дополнительная проверка безопасности](./media/pim-how-to-activate-role/additional-security-verification.png)
+    ![Странице дополнительной проверки безопасности тем, как связаться с вами](./media/pim-how-to-activate-role/additional-security-verification.png)
 
 1. Щелкните **Активировать**, чтобы открыть область активации.
 
-    ![Область активации](./media/pim-how-to-activate-role/directory-roles-activate.png)
+    ![Активации панели, чтобы указать время начала, длительности, запрос в службу и причина](./media/pim-how-to-activate-role/directory-roles-activate.png)
 
 1. При необходимости укажите время начала настраиваемой активации.
 
@@ -67,19 +67,19 @@ ms.locfileid: "60289626"
 
 1. В поле **Причина активации** введите основание для запроса активации. Для некоторых ролей требуется предоставить номер запроса на устранение неисправности.
 
-    ![Заполненная область активации](./media/pim-how-to-activate-role/directory-roles-activation-pane.png)
+    ![Завершенные области активации с пользовательским время начала, длительности, запрос в службу и причина](./media/pim-how-to-activate-role/directory-roles-activation-pane.png)
 
 1. Щелкните **Активировать**.
 
     Если роль не требует утверждения, **состояние активации** откроется панель, которая отображает состояние активации.
 
-    ![Состояние активации](./media/pim-how-to-activate-role/activation-status.png)
+    ![Страница состояния активации с трех этапов активации](./media/pim-how-to-activate-role/activation-status.png)
 
     После завершения всех этапах, щелкните **выйдите из системы** ссылку, чтобы выйти из портала Azure. Когда вы снова войдите на портал, теперь можно использовать роли.
 
     Если [роль требует утверждения](./azure-ad-pim-approval-workflow.md) для активации, в правом верхнем углу браузера появится уведомление о том, что запрос ожидает утверждения.
 
-    ![Уведомление о запросе, ожидающем утверждения](./media/pim-how-to-activate-role/directory-roles-activate-notification.png)
+    ![Запрос на активацию — уведомление ожидает утверждения](./media/pim-how-to-activate-role/directory-roles-activate-notification.png)
 
 ## <a name="view-the-status-of-your-requests"></a>Просмотр состояния запросов
 
@@ -91,7 +91,7 @@ ms.locfileid: "60289626"
 
 1. Щелкните **Мои запросы**, чтобы просмотреть список ваших запросов.
 
-    ![Роли Azure AD — Мои запросы](./media/pim-how-to-activate-role/directory-roles-my-requests.png)
+    ![Роли Azure AD - список запросов](./media/pim-how-to-activate-role/directory-roles-my-requests.png)
 
 ## <a name="deactivate-a-role"></a>Деактивация роли
 
@@ -123,15 +123,19 @@ ms.locfileid: "60289626"
 
     При нажатии кнопки "Отмена", запрос будет отменен. Чтобы активировать роль снова, необходимо будет отправить новый запрос на активацию.
 
-   ![Отмена ожидающего запроса](./media/pim-how-to-activate-role/directory-role-cancel.png)
+   ![Список запросов с выделенной кнопкой "Отмена"](./media/pim-how-to-activate-role/directory-role-cancel.png)
 
 ## <a name="troubleshoot"></a>Устранение неполадок
 
-### <a name="permissions-not-granted-after-activating-a-role"></a>Разрешения не предоставляются после активации роли
+### <a name="permissions-are-not-granted-after-activating-a-role"></a>После активации роли не предоставлены разрешения
 
-После активации роли в PIM пройдет не менее десяти минут, прежде чем вы сможете получить доступ к нужному административному порталу или выполнить какие-либо функции в рамках определенной административной рабочей нагрузки. После завершения активации, выйдите из портала Azure и снова войдите начать использовать новые активированные роли.
+При активации роли в PIM, активации может мгновенно распространяется на все порталы, требующих привилегированных ролей. В некоторых случаях даже если изменение распространяется, веб-кэширования на портале может привести изменения, не удается применить немедленно. Если активацию задерживается, вот что следует сделать.
 
-Ознакомьтесь с дополнительными сведениями [об устранении неполадок, связанных с повышенным уровнем разрешений](https://social.technet.microsoft.com/wiki/contents/articles/37568.troubleshooting-elevated-permissions-with-azure-ad-privileged-identity-management.aspx).
+1. Выйдите из портала Azure и затем войти снова.
+
+    Если активировать роль Azure AD, вы увидите, что на этапах активацию. После завершения всех этапов, вы увидите **выйдите из системы** ссылку. Можно использовать эту ссылку, чтобы выйти из системы. Это решит большинстве случаев задержки активации.
+
+1. В PIM убедитесь, что вы указаны как член роли.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

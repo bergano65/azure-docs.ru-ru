@@ -10,15 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 02/07/2019
+ms.date: 06/26/2019
 ms.reviewer: mbullwin
 ms.author: harelbr
-ms.openlocfilehash: 3ab50c92543615488d9ced599df433bf7e1e4061
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6bb89eec0b4905e101bed87d3d3fc617dec589e0
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61461567"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67477858"
 ---
 # <a name="manage-application-insights-smart-detection-rules-using-azure-resource-manager-templates"></a>Управление правилами интеллектуального обнаружения Application Insights с помощью шаблонов Azure Resource Manager
 
@@ -29,12 +29,14 @@ ms.locfileid: "61461567"
 
 Для правила интеллектуального обнаружения можно настроить следующие параметры:
 - Включено ли правило (по умолчанию используется значение **true**.)
-- Нужно ли отправлять сообщения владельцам подписки, участникам и читателям, если найдено обнаружение (по умолчанию используется значение **true**.)
+- Если сообщения электронной почты должны отправляться пользователям, связанной с подпиской [Monitoring Reader](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) и [Monitoring Contributor](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor) роли при обнаружении это обозначение (по умолчанию используется **true**.)
 - Можно указать дополнительных получателей, которые должны получать уведомление при обнаружении.
-- * Настройки электронной почты не поддерживается Правилами интеллектуального обнаружения, доступными в _предварительной версии_.
+    -  Настройки электронной почты не поддерживается, для правила интеллектуального обнаружения, имеющие _предварительной версии_.
 
 Чтобы разрешить настройку параметров правил с помощью Azure Resource Manager, конфигурация правила интеллектуального обнаружения теперь доступна в качестве внутреннего ресурса в ресурсе Application Insights и называется **ProactiveDetectionConfigs**.
 Чтобы достичь максимальной гибкости, для каждого правила интеллектуального обнаружения можно настроить уникальные параметры уведомлений.
+
+## 
 
 ## <a name="examples"></a>Примеры
 
@@ -136,12 +138,46 @@ ms.locfileid: "61461567"
 
 ```
 
+### <a name="failure-anomalies-v2-non-classic-alert-rule"></a>Правило генерации оповещений (неклассической) версии 2 аномалии сбоя
+
+Этот шаблон Azure Resource Manager демонстрирует настройке правила генерации оповещений аномалии в сбоях v2 с уровнем серьезности 2. Эту новую версию правила генерации оповещений аномалии в сбоях является частью нового оповещения платформы Azure и заменяет классической версии, который выводится из эксплуатации как часть [классических оповещений процесс прекращения использования](https://azure.microsoft.com/updates/classic-alerting-monitoring-retirement/).
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "resources": [
+        {
+            "type": "microsoft.alertsmanagement/smartdetectoralertrules",
+            "apiVersion": "2019-03-01",
+            "name": "Failure Anomalies - my-app",
+            "properties": {
+                  "description": "Detects a spike in the failure rate of requests or dependencies",
+                  "state": "Enabled",
+                  "severity": "2",
+                  "frequency": "PT1M",
+                  "detector": {
+                  "id": "FailureAnomaliesDetector"
+                  },
+                  "scope": ["/subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/MyResourceGroup/providers/microsoft.insights/components/my-app"],
+                  "actionGroups": {
+                        "groupIds": ["/subscriptions/00000000-1111-2222-3333-444444444444/resourcegroups/MyResourceGroup/providers/microsoft.insights/actiongroups/MyActionGroup"]
+                  }
+            }
+        }
+    ]
+}
+```
+
+> [!NOTE]
+> Этот шаблон Azure Resource Manager является уникальным для правила генерации оповещений v2 аномальных сбоев и отличается от классической другие правила интеллектуального обнаружения описывается в этой статье.   
+
 ## <a name="smart-detection-rule-names"></a>Имена правил интеллектуального обнаружения
 
 Ниже приведена таблица с именами правил интеллектуального обнаружения так, как они отображаются на портале, вместе с их внутренними именами, которые должны использоваться в шаблоне Azure Resource Manager.
 
 > [!NOTE]
-> Правила интеллектуального обнаружения, помеченные как предварительная версия, не поддерживают уведомления по электронной почте. Таким образом, для этих правил можно задать только свойство enabled. 
+> Правила интеллектуального обнаружения, имеющие _предварительной версии_ не поддерживают уведомления по электронной почте. Таким образом, можно задать только _включена_ свойства для этих правил. 
 
 | Имя правила на портале Azure | Внутреннее имя
 |:---|:---|
@@ -154,18 +190,7 @@ ms.locfileid: "61461567"
 | Чрезмерное увеличение числа исключений (предварительная версия) | extension_exceptionchangeextension |
 | Обнаружена возможная утечка памяти (предварительная версия) | extension_memoryleakextension |
 | Обнаружена возможная проблема с безопасностью (предварительная версия) | extension_securityextensionspackage |
-| Обнаружена проблема использования ресурсов (предварительная версия) | extension_resourceutilizationextensionspackage |
-
-## <a name="who-receives-the-classic-alert-notifications"></a>Кто получает (классические) оповещения?
-
-Этот раздел относится только к классическим оповещениям интеллектуального обнаружения, он поможет вам оптимизировать уведомления так, чтобы они приходили только желаемым получателям. Чтобы больше узнать о разнице между [классическими оповещениями](../platform/alerts-classic.overview.md) и новыми возможностями оповещений, изучите [обзорную статью об оповещениях](../platform/alerts-overview.md). В настоящее время оповещения интеллектуального обнаружения поддерживают только классические оповещения. Единственным исключением является [оповещения интеллектуального обнаружения в облачных службах Azure](./proactive-cloud-services.md). Чтобы управлять оповещениями интеллектуального обнаружения в облачных службах Azure, используйте [группы действий](../platform/action-groups.md).
-
-* Мы рекомендуем использовать определенных получателей для интеллектуального обнаружения и классических оповещений.
-
-* Для оповещений интеллектуального обнаружения флажок **bulk/group** (массовый/груповой), если он включен, отправляет оповещения пользователям с ролями владельца, участника или читателя в подписке. Фактически, _все_ пользователи, имеющие доступ к подписке Application Insights, находятся в области действия и будут получать уведомления. 
-
-> [!NOTE]
-> При отключении используемого флажка **bulk/group** (массовый/груповой) вы не сможете отменить изменение.
+| Чрезмерное увеличение ежедневным объемом данных (Предварительная версия) | extension_billingdatavolumedailyspikeextension |
 
 ## <a name="next-steps"></a>Следующие шаги
 

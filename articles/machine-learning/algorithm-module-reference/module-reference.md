@@ -9,12 +9,12 @@ ms.topic: reference
 author: xiaoharper
 ms.author: zhanxia
 ms.date: 05/02/2019
-ms.openlocfilehash: 8825f1dc3b66a5c4981ba25a90813aec63975b1f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e73d4ebd3eb05f7cf217573d8112e3dbbe6d3a37
+ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65145135"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67514080"
 ---
 # <a name="algorithm--module-reference-overview"></a>Справочные темы по алгоритмам и модулям
 
@@ -33,8 +33,8 @@ ms.locfileid: "65145135"
 | --- |--- | ---- |
 | Преобразование формата данных | Преобразование данных между разными форматами файлов, используемых в машинном обучении, | [Преобразовать в CSV-ФАЙЛ](convert-to-csv.md) |
 | Ввод и вывод данных | Перемещение данных из облачных источников в эксперимент. Записи результатов или интеллектуальному анализу данных — хранилище Azure, базу данных SQL или Hive, во время выполнения эксперимента или использовать Облачное хранилище для обмена данными между экспериментов.  | [Импорт данных](import-data.md)<br/>[Экспорт данных](export-data.md)<br/>[Ввод данных вручную](enter-data-manually.md) |
-| Преобразование данных | Операции с данными, которые уникальны для машинного обучения, такие как нормализация или группирования данных, Выбор компонентов и сокращение размерности.| [Выбор столбцов в наборе данных](select-columns-in-dataset.md) <br/> [Изменение метаданных](edit-metadata.md) <br/> [Очистка недостающих данных](clean-missing-data.md) <br/> [Добавление столбцов](add-columns.md) <br/> [Добавление строк](add-rows.md) <br/> [Удаление повторяющихся строк](remove-duplicate-rows.md) <br/> [Разбиение данных](split-data.md) <br/> [Нормализация данных](normalize-data.md) <br/> [Секционирование и выборка](partition-and-sample.md) |
-| Модуль Python | Написание кода, а также внедрить ее в модуле интеграции Python вместе с вашим экспериментом. | [Выполнение сценария Python](execute-python-script.md)   <br/> [Создание модели Python](create-python-model.md)
+| Преобразование данных | Операции с данными, которые уникальны для машинного обучения, такие как нормализация или группирования данных, Выбор компонентов и сокращение размерности.| [Выбор столбцов в наборе данных](select-columns-in-dataset.md) <br/> [Изменение метаданных](edit-metadata.md) <br/> [Очистка недостающих данных](clean-missing-data.md) <br/> [Добавление столбцов](add-columns.md) <br/> [Добавление строк](add-rows.md) <br/> [Удаление повторяющихся строк](remove-duplicate-rows.md) <br/> [Объединение данных](join-data.md) <br/> [Разбиение данных](split-data.md) <br/> [Нормализация данных](normalize-data.md) <br/> [Секционирование и выборка](partition-and-sample.md) |
+| Модули Python и R | Написание кода, а также внедрить ее в модуле интеграции Python и R вместе с вашим экспериментом. | [Выполнение сценария Python](execute-python-script.md)   <br/> [Создание модели Python](create-python-model.md) <br/> [Выполнение скрипта R](execute-r-script.md)
 |  | **Машинного обучения алгоритмов**: | |
 | классификация; | Прогнозировать класса.  Выберите из двоичного файла (двухклассовая) или по нескольким классам алгоритмов.| [Мультиклассовый лес принятия решений](multiclass-decision-forest.md) <br/> [Мультиклассовая логистическая Регрессия](multiclass-logistic-regression.md)  <br/> [Мультиклассовая Нейронная сеть](multiclass-neural-network.md)  <br/>  [Двухклассовой логистической регрессии](two-class-logistic-regression.md)  <br/>[Двухклассовый усредненный Перцептрон](two-class-averaged-perceptron.md) <br/> [Two-Class&nbsp;Boosted&nbsp;решение&nbsp;дерева](two-class-boosted-decision-tree.md)  <br/> [Двухклассовый лес принятия решений](two-class-decision-forest.md)  <br/> [Двухклассовая Нейронная сеть](two-class-neural-network.md)  <br/> [Два&#8209;класс&nbsp;поддержки&nbsp;вектор&nbsp;машины](two-class-support-vector-machine.md) 
 | Кластеризация | Группировка данных.| [Кластеризация K-средних](k-means-clustering.md)

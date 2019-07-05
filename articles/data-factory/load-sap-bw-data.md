@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: jingwang
-ms.openlocfilehash: 4cd61db3ec0e8d88c9b1c6d6ba427b120b3f1af1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3c846ab3e81e7ab8a4948aa4ed96cfa75e8eb3f4
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66152421"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449684"
 ---
 # <a name="copy-data-from-sap-business-warehouse-by-using-azure-data-factory"></a>Копирование данных из SAP Business Warehouse с помощью фабрики данных Azure
 
@@ -125,7 +125,7 @@ ms.locfileid: "66152421"
 
     ![Просмотр подробностей выходные данные действия](media/load-sap-bw-data/activity-output-details.png)
 
-## <a name="do-an-incremental-copy-from-sap-bw-open-hub"></a>Делать копия будет добавочной и откройте Центр SAP BW
+## <a name="incremental-copy-from-sap-bw-open-hub"></a>Добавочное копирование из SAP BW, откройте Центр
 
 > [!TIP]
 > См. в разделе [поток извлечения разностных соединителя SAP BW, откройте Центр](connector-sap-business-warehouse-open-hub.md#delta-extraction-flow) чтобы узнать, как соединитель SAP BW, откройте центр в фабрике данных копирует добавочные данные из SAP BW. В этой статье также может помочь вам понять основные соединитель configuration.

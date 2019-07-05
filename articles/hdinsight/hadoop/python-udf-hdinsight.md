@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 03/15/2019
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: 6f3140f412f9d36ca36cef440bd4e60f1a9197d4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d74c40264e8ed535d250e938487885a848ba6b47
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64702229"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67484201"
 ---
 # <a name="use-python-user-defined-functions-udf-with-apache-hive-and-apache-pig-in-hdinsight"></a>Использование определяемых пользователем функций Python с Apache Hive и Apache Pig в HDInsight
 
@@ -161,9 +161,6 @@ while True:
     ```
 
 ### <a name="upload-file-powershell"></a>Отправить файл (PowerShell)
-
-> [!IMPORTANT]  
-> Эти сценарии PowerShell не будет работать, если [безопасное перемещение](../../storage/common/storage-require-secure-transfer.md) включен.  Использовать команды оболочки, либо отключить безопасной передачи.
 
 PowerShell также можно использовать для удаленного запуска запросов на использование Hive. Убедитесь, рабочем каталоге where `hiveudf.py` находится.  Используйте следующий сценарий PowerShell для выполнения запроса Hive, использующего `hiveudf.py` сценария:
 
@@ -433,9 +430,6 @@ def create_structure(input):
 
 
 ### <a name="upload-file-powershell"></a>Отправить файл (PowerShell)
-
-> [!IMPORTANT]  
-> Эти сценарии PowerShell не будет работать, если [безопасное перемещение](../../storage/common/storage-require-secure-transfer.md) включен.  Использовать команды оболочки, либо отключить безопасной передачи.
 
 PowerShell также можно использовать для удаленного запуска запросов на использование Hive. Убедитесь, рабочем каталоге where `pigudf.py` находится.  Используйте следующий сценарий PowerShell для выполнения запроса Hive, использующего `pigudf.py` сценария:
 
