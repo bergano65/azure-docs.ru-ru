@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 03/15/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=fboylu, previous-ms.author=fboylu
-ms.openlocfilehash: e2f0f1e7ac8f510c4ff5be7933c55278fef74694
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: feccaea0451ae36d841aae95ed0baf54f90c2700
+ms.sourcegitcommit: 3107874d7559ea975e4d55ae33cdf45f4b5485e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60715660"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67568261"
 ---
 # <a name="technical-guide-to-the-cortana-intelligence-solution-template-for-predictive-maintenance-in-aerospace"></a>Техническое руководство по шаблону решения Cortana Intelligence для прогнозируемого обслуживания в аэрокосмических компаниях
 
@@ -88,7 +88,7 @@ ms.locfileid: "60715660"
 
 В этом документе не рассматривается способ ввода данных, но вы легко можете отправлять события или данные в концентратор событий Azure с помощью API концентратора событий.
 
-### <a name="azure-stream-analytics"></a>Azure Stream Analytics
+### <a name="azure-stream-analytics-1"></a>Azure Stream Analytics
 Служба Azure Stream Analytics используется для обеспечения аналитики практически в режиме реального времени путем чтения из потоков данных и вывода данных в любое количество источников.
 
 В случае шаблона решения для прогнозируемого обслуживания в аэрокосмических компаниях запрос Azure Stream Analytics состоит из четырех вложенных запросов, каждый из которых использует события из концентратора событий Azure и записывает выходные данные в четыре различных места. Эти выходные данные состоят из трех наборов данных Power BI и одного места хранения Azure.

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/29/2018
 ms.author: pepogors
-ms.openlocfilehash: 680c141e32333c4747ee69919229bd9381f536a4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 60b634b0b927804249148737ee7a99c0e86dd7d6
+ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60393801"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67537766"
 ---
 # <a name="develop-c-service-fabric-applications-with-visual-studio-code"></a>Разработка приложений Service Fabric на C# с помощью Visual Studio Code
 
@@ -77,6 +77,17 @@ sudo code . --user-data-dir='.'
 4. После проверки приложения, запустите браузер и открыть эту страницу: http:\//localhost:31002. Это веб-интерфейс приложения. Чтобы увидеть текущее значение счетчика при его изменении, обновите страницу.
 
    ![Приложение Counter Service в браузере](./media/service-fabric-develop-csharp-applications-with-vs-code/counter-service-running.png)
+
+## <a name="publish-the-application-to-an-azure-service-fabric-cluster"></a>Публикация приложения в кластере Azure Service Fabric
+А также развернуть приложение в локальном кластере, также можно опубликовать приложение на удаленный кластер Azure Service Fabric. 
+
+1. Убедитесь, что вы создали приложение, следуя инструкциям выше. Обновление в созданном файле конфигурации `Cloud.json` информацией о удаленный кластер, который вы хотите опубликовать.
+
+2. В **палитре команд** выберите команду **Service Fabric: Команды приложения публикации**. Выходные данные процесса установки отправляются в интегрированный терминал.
+
+   ![Публикация приложений в VS Code](./media/service-fabric-develop-csharp-applications-with-vs-code/sf-publish-application.png)
+
+3. Когда развертывание будет завершено, запустите браузер и откройте Service Fabric Explorer: `https:<clusterurl>:19080/Explorer`. Будет видно, что приложение запущено. Это может занять некоторое время. 
 
 ## <a name="debug-the-application"></a>Отладка приложения
 При отладке приложения в VS Code оно должно выполняться в локальном кластере. Затем в код можно добавить контрольные точки.
