@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: 85d6ed80da93f90e6dc0feaee7081ee3f36f1bf9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f46a35d971c008b61d4899e30101ea562d3cefea
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66242692"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67483410"
 ---
 # <a name="choose-a-real-time-analytics-and-streaming-processing-technology-on-azure"></a>Выберите аналитики в реальном времени и потоковой передачи технологии обработки в Azure
 
@@ -44,7 +44,7 @@ Azure Stream Analytics имеет более удобной out of box. Можн
 
 ### <a name="you-need-to-input-from-or-output-to-kafka"></a>Входные данные из или выходные данные в Kafka
 
-Azure Stream Analytics не входных данных используется Apache Kafka или выходной адаптер. Если у вас события в целевой или нужно отправить в Kafka, и у вас нет необходимость выполнения собственный кластер Kafka, вы можете использовать Stream Analytics, отправка событий в концентраторы событий с помощью Kafka API концентраторов событий, не изменяя отправителя события. Если нужно запустить собственный кластер Kafka, можно использовать структурированную потоковую передачу Spark, который полностью поддерживается в [Azure Databricks](../azure-databricks/index.yml), или Storm на [Azure HDInsight](../hdinsight/storm/apache-storm-tutorial-get-started-linux.md).
+Azure Stream Analytics не входных данных используется Apache Kafka или выходной адаптер. Если у вас события в целевой или нужно отправить в Kafka, и у вас нет необходимость выполнения собственный кластер Kafka, вы можете использовать Stream Analytics, отправка событий в концентраторы событий с помощью Kafka API концентраторов событий, не изменяя отправителя события. Если нужно запустить собственный кластер Kafka, можно использовать структурированную потоковую передачу Spark, который полностью поддерживается в [Azure Databricks](../azure-databricks/index.yml), или Storm на [Azure HDInsight](../hdinsight/storm/apache-storm-overview.md).
 
 ### <a name="you-want-to-write-udfs-udas-and-custom-deserializers-in-a-language-other-than-javascript-or-c"></a>Вы хотите написать на языке, кроме JavaScript определяемых пользователем функций, определяемых пользователем агрегатных функций и пользовательских deserializers илиC#
 

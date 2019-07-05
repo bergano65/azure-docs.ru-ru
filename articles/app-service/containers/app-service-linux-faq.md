@@ -4,7 +4,7 @@ description: 'Служба приложений Azure на платформе Li
 keywords: служба приложений azure, веб-приложение, вопросы и ответы, linux, oss, веб-приложение для контейнеров, мультиконтейнер, многоконтейнерный
 services: app-service
 documentationCenter: ''
-author: yili
+author: msangapu-msft
 manager: stefsch
 editor: ''
 ms.assetid: ''
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 10/30/2018
-ms.author: yili
+ms.author: msangapu-msft
 ms.custom: seodec18
-ms.openlocfilehash: dbf63ff47b11c2e75966b4a4b91fb1b00b40d216
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d465a93a23b7f0098471e0074240dfcbe9658736
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65594284"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448435"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Служба приложений Azure на платформе Linux: вопросы и ответы
 
@@ -119,10 +119,7 @@ const io = require('socket.io')(server,{
 
 **Я использую собственный пользовательский контейнер. Мне нужно, чтобы платформа подключила общий ресурс SMB в каталог `/home/`.**
 
-Укажите для параметра `WEBSITES_ENABLE_APP_SERVICE_STORAGE` приложения значение *true*. Помните, что это повлечет за собой перезапуск контейнера при изменении платформы хранения.
-
->[!NOTE]
->Если значение для `WEBSITES_ENABLE_APP_SERVICE_STORAGE` не задано или установлено значение *false*, каталог `/home/` больше не будет совместно использоваться масштабируемыми экземплярами, а записанные там файлы не будут сохранены после перезагрузки.
+Если `WEBSITES_ENABLE_APP_SERVICE_STORAGE` параметр **неуказанных** равным или *true*, `/home/` directory **будут совместно использоваться** экземпляров масштабирования и файлы, записанные **сохранится** между перезагрузками. Явная установка `WEBSITES_ENABLE_APP_SERVICE_STORAGE` для *false* приведет к отключению подключения.
 
 **Мой пользовательский контейнер долго запускается, и платформа перезапускает контейнер до завершения его запуска.**
 

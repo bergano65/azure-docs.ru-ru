@@ -15,12 +15,12 @@ ms.date: 05/21/2019
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6cd5bbba681acaa0c32e681f7cb4809142fe11f9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b6f73d3bf5e502a758dd46561059c15a2970d9b6
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66113237"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67471827"
 ---
 # <a name="review-access-to-groups-or-applications-in-azure-ad-access-reviews"></a>Проверка доступа к группам или проверок доступа приложений в Azure AD
 
@@ -40,7 +40,7 @@ Azure Active Directory (Azure AD) упрощает предприятиям уп
 
 1. Найдите сообщение от корпорации Майкрософт с просьбой проверить доступ. Ниже приведен пример сообщения электронной почты для проверки доступа для группы.
 
-    ![Электронное сообщение о проверке доступа](./media/perform-access-review/access-review-email.png)
+    ![Пример электронного письма от Майкрософт, чтобы проверить доступ к группе](./media/perform-access-review/access-review-email.png)
 
 1. Нажмите кнопку **запуск проверки** ссылку, чтобы открыть проверку доступа.
 
@@ -48,7 +48,7 @@ Azure Active Directory (Azure AD) упрощает предприятиям уп
 
 1. Войдите на портал MyApps в [ https://myapps.microsoft.com ](https://myapps.microsoft.com).
 
-    ![Портал MyApps](./media/perform-access-review/myapps-access-panel.png)
+    ![Список приложений, которые у вас есть разрешения на портале MyApps](./media/perform-access-review/myapps-access-panel.png)
 
 1. В правом верхнем углу страницы щелкните значок пользователя, где отображается ваше имя и название организации по умолчанию. Если в списке содержится несколько организаций, выберите ту организацию, которая запросила проверку доступа.
 
@@ -56,7 +56,7 @@ Azure Active Directory (Azure AD) упрощает предприятиям уп
 
     Если такой элемент не отображается, для этой организации нет ожидающих проверок доступа и в данный момент не требуется никаких действий.
 
-    ![Список проверок доступа](./media/perform-access-review/access-reviews-list.png)
+    ![Список проверок доступа для приложений и групп](./media/perform-access-review/access-reviews-list.png)
 
 1. Нажмите кнопку **начать проверку** ссылку для проверки доступа, вы хотите выполнить.
 
@@ -66,7 +66,7 @@ Azure Active Directory (Azure AD) упрощает предприятиям уп
 
 Если этот запрос поступает в проверке собственного доступа, страницы будут выглядеть иначе. Дополнительные сведения см. в разделе [проверка доступа для себя группам или приложениям](review-your-access.md).
 
-![Выполнить проверку доступа](./media/perform-access-review/perform-access-review.png)
+![Проверки доступа откройте, список пользователей, которым необходимо проверить](./media/perform-access-review/perform-access-review.png)
 
 Можно утвердить или запретить доступ двумя способами:
 
@@ -81,7 +81,7 @@ Azure Active Directory (Azure AD) упрощает предприятиям уп
 
 1. Нажмите кнопку **утвердить** или **запретить**. Если вы не уверены, можно щелкнуть **неизвестен**. Это приведет к пользователю, поддержание их доступ, но выделение будет отражаться в журналах аудита.
 
-    ![Выполнить проверку доступа](./media/perform-access-review/approve-deny.png)
+    ![Окно действия, которое включает в себя утвердить, отклонить, и не знаете, параметры](./media/perform-access-review/approve-deny.png)
 
 1. При необходимости введите причину в **Причина** поле.
 
@@ -102,11 +102,11 @@ Azure Active Directory (Azure AD) упрощает предприятиям уп
 
 1. Синюю полосу в нижней части страницы, нажмите кнопку **принять рекомендации**.
 
-    ![Принять рекомендации](./media/perform-access-review/accept-recommendations.png)
+    ![Проверки доступа откройте, список отображение кнопки рекомендации Accept](./media/perform-access-review/accept-recommendations.png)
 
     Вы увидите сводку рекомендуемые действия.
 
-    ![Принять рекомендации сводки](./media/perform-access-review/accept-recommendations-summary.png)
+    ![Окно, которое отображает сводку рекомендуемые действия](./media/perform-access-review/accept-recommendations-summary.png)
 
 1. Нажмите кнопку **ОК** чтобы принять эти рекомендации.
 

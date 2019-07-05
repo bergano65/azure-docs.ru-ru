@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: d6f44005080bbd8583ae2e2fdad31ef2c823c7ca
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: 61c3d37f365034984231c780199e181872c010c6
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67154527"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67544131"
 ---
 # <a name="accessing-the-vmware-solution-by-cloudsimple-portal-from-azure-portal"></a>Доступ к VMware решения с портала CloudSimple с портала Azure
 
@@ -21,7 +21,16 @@ ms.locfileid: "67154527"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Только пользователи с builtin **владельца** и **участник** роли можно получить доступ к порталу CloudSimple.  Роли необходимо настроить в подписке.  Дополнительные сведения о проверке роли см. в разделе [просмотреть назначения ролей](https://docs.microsoft.com/azure/role-based-access-control/check-access) статьи.
+Пользователи с builtin **владельца** и **участник** роли можно получить доступ к порталу CloudSimple.  Роли должен быть настроен в группе ресурсов, где развернута служба CloudSimple.  Роли также могут быть настроены в объекте CloudSimple службы.  Дополнительные сведения о проверке роли см. в разделе [просмотреть назначения ролей](https://docs.microsoft.com/azure/role-based-access-control/check-access) статьи.
+
+Если вы используете пользовательские роли, роль должна иметь любой из следующих операций в разделе ```Actions```.  Дополнительные сведения о пользовательских ролях см. в разделе [пользовательские роли для ресурсов Azure](https://docs.microsoft.com/azure/role-based-access-control/custom-roles).  Если любой из операций является частью ```NotActions```, он не может получить доступ к CloudSimple портала. 
+
+```
+Microsoft.VMwareCloudSimple/*
+Microsoft.VMwareCloudSimple/*/write
+Microsoft.VMwareCloudSimple/dedicatedCloudServices/*
+Microsoft.VMwareCloudSimple/dedicatedCloudServices/*/write
+```
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 

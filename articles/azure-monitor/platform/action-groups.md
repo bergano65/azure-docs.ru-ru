@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 5/30/2019
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: f4f10191ea28f73732f81eb9dc25321f82683652
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 796ae0e3be3a2e43d7f27d5932cdba0cf660f36b
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66416958"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67441906"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Создание групп действий и управление ими на портале Azure
 ## <a name="overview"></a>Обзор ##
@@ -56,6 +56,8 @@ ms.locfileid: "66416958"
     2\. **Тип действия:** выберите Email/SMS/Push/Voice (Электронная почта, SMS, push-уведомление, голосовой вызов), приложение логики, веб-перехватчик, ITSM или модуль runbook службы автоматизации.
 
     c. **Подробности:** в зависимости от выбранного типа действия укажите номер телефона, адрес электронной почты, универсальный код ресурса (URI) веб-перехватчика, приложение Azure, сведения о подключении ITSM или модуль runbook службы автоматизации. Для действия ITSM дополнительно укажите **рабочий элемент** и заполните другие поля, требуемые инструментом ITSM.
+    
+    d. **Общая схема предупреждения**: Вы можете включить [общей схеме оповещений](https://aka.ms/commonAlertSchemaDocs), который предоставляет преимущества размещения одной расширяемой и служб единой полезных данных оповещения всех оповещений в Azure Monitor.
 
 1. Нажмите кнопку **ОК**, чтобы создать группу действий.
 

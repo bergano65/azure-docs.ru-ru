@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 4f3fb624f5e6137c9edb0be97adc16d8c808ebd9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f60a41c48b3e78b860dca0e93d399420900dbd46
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65523075"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67485442"
 ---
 # <a name="how-to-index-json-blobs-using-azure-search-blob-indexer"></a>Как индексировать большие двоичные объекты JSON, с помощью индексатора больших двоичных объектов поиска Azure
 В этой статье показано, как настроить большой двоичный объект службы поиска Azure [индексатора](search-indexer-overview.md) извлечения структурированного содержимого из документов JSON в хранилище BLOB-объектов Azure и сделать его доступным для поиска в службе поиска Azure. Этот рабочий процесс создает индекс поиска Azure и загружает в него существующий текст, извлекаемый из больших двоичных объектов JSON. 
@@ -118,7 +118,7 @@ REST API можно использовать для индексирования
 
 Вы можете просмотреть [пример кода REST](#rest-example) в конце этого раздела, показано, как создать все три объекта. Этот раздел также содержит сведения о [анализа режимов JSON](#parsing-modes), [единый большие двоичные объекты](#parsing-single-blobs), [массивы JSON](#parsing-arrays), и [вложенные массивы](#nested-json-arrays).
 
-Для подобных индексирования JSON используйте [Postman](search-fiddler.md) и REST API для создания этих объектов:
+Для подобных индексирования JSON используйте [Postman](search-get-started-postman.md) и REST API для создания этих объектов:
 
 + [Индекс](https://docs.microsoft.com/rest/api/searchservice/create-index)
 + [Источник данных](https://docs.microsoft.com/rest/api/searchservice/create-data-source)
@@ -136,7 +136,7 @@ REST API можно использовать для индексирования
 
 ### <a name="1---assemble-inputs-for-the-request"></a>1 — Создание входных данных для запроса
 
-Для каждого запроса необходимо указать имя службы и ключ администратора для службы поиска Azure (в заголовке POST) и имя учетной записи хранения и ключ для хранилища BLOB-объектов. Можно использовать [Postman](search-fiddler.md) для отправки HTTP-запросы в службу поиска Azure.
+Для каждого запроса необходимо указать имя службы и ключ администратора для службы поиска Azure (в заголовке POST) и имя учетной записи хранения и ключ для хранилища BLOB-объектов. Можно использовать [Postman](search-get-started-postman.md) для отправки HTTP-запросы в службу поиска Azure.
 
 Скопируйте следующие четыре значения в Блокнот, чтобы их можно вставить в запрос:
 

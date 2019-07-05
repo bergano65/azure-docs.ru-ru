@@ -3,7 +3,7 @@ title: Доменные службы Azure Active Directory. Функции | �
 description: Функции доменных служб Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
-author: MikeStephens-MS
+author: iainfoulds
 manager: daveba
 editor: curtand
 ms.assetid: 8d1c3eb3-1022-4add-a919-c98cc6584af1
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/10/2019
-ms.author: mstephen
-ms.openlocfilehash: 27aaaca4f28feac0f68b4e034426c64b934b1f95
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: iainfou
+ms.openlocfilehash: e49a37ec95a8cf26a2c63bd90759da35fc537e41
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66234930"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67474240"
 ---
 # <a name="azure-ad-domain-services"></a>Доменные службы Azure AD
 ## <a name="features"></a>Функции

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/27/2018
 ms.author: monhaber
-ms.openlocfilehash: d42b929807bf67b73d0587232608efc0cea6d717
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1737856067b2490db4a993b4383b320cb13a7774
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66752577"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551767"
 ---
 # <a name="windows-defender-advanced-threat-protection-with-azure-security-center"></a>Интеграция Advanced Threat Protection в Защитнике Windows с центром безопасности Azure
 
@@ -71,7 +71,7 @@ ATP в Защитнике Windows в центре безопасности по�
 
 ## <a name="enable-windows-defender-atp-integration"></a>Включение интеграции ATP в Защитнике Windows
 
-Чтобы просмотреть, включена ли интеграция ATP в Защитнике Windows, выберите **Центр безопасности** > **Политики безопасности** > **Подписки** > **Изменить параметры**.
+Чтобы просмотреть, если включена интеграция с ATP в Защитнике Windows, выберите **центр безопасности** > **цен & Параметры** > откройте свою подписку.
 
   ![Управление политиками в центре безопасности Azure](media/security-center-wdatp/policy-management.png)
 

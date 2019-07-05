@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e94b307d562c4317a87713612a62e6da007f9703
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4afe5c89a83f251ee354c955b6dc28b0bccc9e6c
+ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64570638"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67561128"
 ---
 # <a name="integrate-your-vpn-infrastructure-with-azure-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Интеграция инфраструктуры VPN с Azure MFA с помощью расширения сервера политики сети для Azure
 
@@ -246,7 +246,7 @@ ms.locfileid: "64570638"
 
     2\. В разделе **Общий секрет** щелкните **Изменить** и введите общий секретный пароль, который вы создали и записали ранее.
 
-    c. В поле **Время ожидания (с)** выберите значение от **30** до **60**.  
+    c. В **время ожидания (в секундах)** введите значение **30**.  
     Это необходимо, чтобы предоставить достаточно времени для второго фактора аутентификации.
 
     ![Добавление окна RADIUS-сервер, Настройка времени ожидания](./media/howto-mfa-nps-extension-vpn/image16.png)
@@ -304,7 +304,7 @@ ms.locfileid: "64570638"
 
 ## <a name="configure-multi-factor-authentication"></a>Настройка Многофакторной идентификации
 
-Дополнительные сведения о многофакторной проверке подлинности пользователей см. в руководствах по [настройке двухфакторной проверки подлинности для пользователей и групп](howto-mfa-userstates.md) и [настройке учетной записи для двухфакторной проверки подлинности](../user-help/multi-factor-authentication-end-user-first-time.md)
+Помощь в настройке пользователей для многофакторной проверки подлинности см. в статьях [Планирование развертывания многофакторной идентификации Azure облачной](howto-mfa-getstarted.md#create-conditional-access-policy) и [Настройка учетной записи для двухфакторной проверки подлинности](../user-help/multi-factor-authentication-end-user-first-time.md)
 
 ## <a name="install-and-configure-the-nps-extension"></a>Установка и настройка расширения NPS
 

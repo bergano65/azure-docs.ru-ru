@@ -14,12 +14,12 @@ ms.subservice: report-monitor
 ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 6d461725d0d4c86ee7aa5b450d42c01ca77ffb16
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9433714c06dfad09270a6033f38a99471bcd517a
+ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67107678"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513619"
 ---
 # <a name="how-to-use-azure-monitor-workbooks-for-azure-active-directory-reports"></a>Как использовать Azure Monitor книг отчетов Azure Active Directory
 
@@ -57,7 +57,7 @@ ms.locfileid: "67107678"
 
 2. В области навигации слева выберите **Azure Active Directory**.
 
-3. В **мониторинг** выберите **Insights**. 
+3. В **мониторинг** выберите **книг**. 
 
     ![Выберите Insights](./media/howto-use-azure-monitor-workbooks/41.png)
 
@@ -93,7 +93,7 @@ ms.locfileid: "67107678"
 
 Для каждого тенденции получить разбивку по следующим категориям:
 
-- Расположение
+- Location
 
     ![Входы в систему по расположению](./media/howto-use-azure-monitor-workbooks/45.png)
 

@@ -8,16 +8,16 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/13/2019
-ms.openlocfilehash: 203f704862c4cbcef58d7ef902380c1dbbf00076
-ms.sourcegitcommit: e5dcf12763af358f24e73b9f89ff4088ac63c6cb
+ms.openlocfilehash: 5a98cb2356c25329e091514dd1d6181dfc2690be
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67137074"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448658"
 ---
 # <a name="use-hdinsight-spark-cluster-to-analyze-data-in-data-lake-storage-gen1"></a>Использование кластера HDInsight Spark для анализа данных в Data Lake Storage 1-го поколения
 
-В этом руководстве для выполнения задания, которое считывает данные из учетной записи Data Lake Storage, используется [Jupyter Notebook](https://jupyter.org/) с кластерами HDInsight Spark.
+В этой статье используется [записной книжки Jupyter](https://jupyter.org/) доступной с кластерами HDInsight Spark для выполнения задания, которое считывает данные из учетной записи хранения Озера данных.
 
 ## <a name="prerequisites"></a>Технические условия
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
-ms.openlocfilehash: a063461d9da66d57a7bdc3311ae80dec7f2c98f1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 49e80c3fc8935064aceef8ef4e2bd3257c41e5e7
+ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65470232"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67514198"
 ---
 # <a name="prepare-your-development-environment-on-linux"></a>Подготовка среды разработки в Linux
 > [!div class="op_single_selector"]
@@ -87,8 +87,7 @@ sudo curl -s https://raw.githubusercontent.com/Azure/service-fabric-scripts-and-
 4. Добавьте новый ключ Gnu Privacy Guard (GnuPG или GPG) в набор ключей APT.
 
     ```bash
-    sudo apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
-    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
+    curl -fsSL https://packages.microsoft.com/keys/msopentech.asc | sudo apt-key add -
     ```
 
 5. Добавьте официальный ключ Docker GPG в набор ключей APT.
@@ -107,8 +106,8 @@ sudo curl -s https://raw.githubusercontent.com/Azure/service-fabric-scripts-and-
 7. Добавьте ключ JDK Azul в набор ключей APT и настройте его репозиторий.
 
     ```bash
-    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0x219BD9C9
-    sudo apt-add-repository 'deb http://repos.azulsystems.com/ubuntu stable main'
+    curl -fsSL https://repos.azul.com/azul-repo.key | sudo apt-key add -
+    sudo add-apt-repository 'deb http://repos.azulsystems.com/ubuntu stable main'
     ```
 
 8. Обновите списки пакетов, добавив в них новые репозитории.
@@ -179,8 +178,8 @@ sudo yum install servicefabricsdkcommon
 
  | | DotNetCore | Java | Python | Node.js | 
 --- | --- | --- | --- |---
-Ubuntu | 2.0.0 | AzulJDK 1.8 | Неявно с использованием npm | последняя |
-RHEL | - | OpenJDK 1.8 | Неявно с использованием npm | последняя |
+Ubuntu | 2.0.0 | AzulJDK 1.8 | Неявно с использованием npm | latest |
+RHEL | - | OpenJDK 1.8 | Неявно с использованием npm | latest |
 
 ## <a name="set-up-a-local-cluster"></a>Настройка локального кластера
 Запустите локальный кластер после завершения установки.
@@ -216,7 +215,7 @@ Service Fabric предоставляет средства формирован�
 1. Установите Node.js и NPM на компьютере.
 
     ```bash
-    sudo apt-add-repository "deb https://deb.nodesource.com/node_8.x $(lsb_release -s -c) main"
+    sudo add-apt-repository "deb https://deb.nodesource.com/node_8.x $(lsb_release -s -c) main"
     sudo apt-get update
     sudo apt-get install nodejs
     ```
@@ -273,7 +272,7 @@ Service Fabric предоставляет средства формирован�
 > 
 > В Ubuntu мы рекомендуем установить Eclipse непосредственно с сайта, а не с помощью установщика пакета (`apt` или `apt-get`). Так вы получите последнюю версию Eclipse. Можно установить среду разработки Eclipse для разработчиков Java или Java EE.
 
-1. Откройте Eclipse и проверьте, установлена ли у вас версия Eclipse Neon или выше и последняя версия Buildship (2.2.1 или выше). Проверьте версии установленных компонентов, щелкнув **Help** > **About Eclipse** > **Installation Details** (Справка > О программе Eclipse > Сведения об установке). Чтобы обновить Buildship, воспользуйтесь инструкциями на странице [Eclipse Buildship: Eclipse Plug-ins for Gradle][buildship-update] (Eclipse Buildship. Подключаемые модули Eclipse для Gradle).
+1. Откройте Eclipse и проверьте, установлена ли у вас версия Eclipse Neon или выше и последняя версия Buildship (2.2.1 или выше). Проверьте версии установленных компонентов, щелкнув **Help** > **About Eclipse** > **Installation Details** (Справка > О программе Eclipse > Сведения об установке). Чтобы обновить Buildship, воспользуйтесь инструкциями на странице [Eclipse Buildship: Eclipse для Gradle подключаемые модули][buildship-update].
 
 2. Чтобы установить подключаемый модуль Service Fabric, выберите **Help** > **Install New Software** (Справка > Установка нового программного обеспечения).
 

@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin, nacanuma
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc352c6867779fd8f4487acdb1d11c0fabe4b9f7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 51fd5c8f406ea54c7fc8e81c674e41b30d7ad406
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67110993"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67482412"
 ---
 # <a name="service-to-service-calls-that-use-delegated-user-identity-in-the-on-behalf-of-flow"></a>Вызовы между службами с использованием делегированного удостоверения пользователя в потоке On-Behalf-Of
 
@@ -38,7 +38,7 @@ ms.locfileid: "67110993"
 
 Поток OBO начинается после того, как пользователь пройдет проверку подлинности для приложения с использованием [потока для предоставления кода проверки подлинности в OAuth 2.0](v1-protocols-oauth-code.md). На этом этапе приложение отправляет маркер доступа (токен A) в веб-API среднего уровня (API A), содержащий утверждения пользователя и его согласие на доступ к API A. Затем API A может отправить запрос проверки подлинности в нижестоящий веб-API (API B).
 
-Поток On-Behalf-Of состоит из следующих этапов: ![Поток On-Behalf-Of в OAuth 2.0](./media/v1-oauth2-on-behalf-of-flow/active-directory-protocols-oauth-on-behalf-of-flow.png)
+Поток On-Behalf-Of состоит из следующих этапов: ![Показаны шаги в OAuth 2.0 On-Behalf-Of flow](./media/v1-oauth2-on-behalf-of-flow/active-directory-protocols-oauth-on-behalf-of-flow.png)
 
 1. Клиентское приложение отправляет запрос к API A с токеном A.
 1. API A выполняет проверку подлинности на конечной точке выдачи токена Azure AD и запрашивает токен доступа к API B.

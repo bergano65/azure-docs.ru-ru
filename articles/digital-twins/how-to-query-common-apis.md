@@ -1,19 +1,19 @@
 ---
 title: Общие шаблоны запросов Azure Digital Twins | Документация Майкрософт
 description: Изучите общие шаблоны запросов API-интерфейсов управления Azure Digital Twins.
-author: dsk-2015
+author: kingdomofends
 manager: philmea
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 1/7/2019
-ms.author: dkshir
-ms.openlocfilehash: ff8638042fa10c939ff9c5fa7af99a660fcdc753
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: v-adgera
+ms.openlocfilehash: 57abb005f70661d23ea90eaf801b8e5407340bb7
+ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60924742"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67462036"
 ---
 # <a name="how-to-query-azure-digital-twins-apis-for-common-tasks"></a>Как запросить API Azure Digital Twins для выполнения общих задач
 

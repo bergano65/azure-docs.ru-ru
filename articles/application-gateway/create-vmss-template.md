@@ -1,34 +1,26 @@
 ---
-title: Создание шлюза приложений Azure с помощью шаблонов | Документация Майкрософт
-description: На этой странице приводятся инструкции по созданию шлюза приложений Azure с помощью шаблона диспетчера ресурсов Azure.
-documentationcenter: na
+title: Создание шлюза приложений Azure — шаблоны
+description: В этой статье приводятся инструкции по созданию шлюза приложений Azure с помощью шаблона Azure Resource Manager
 services: application-gateway
 author: vhorne
-manager: jpconnock
-editor: tysonn
 ms.service: application-gateway
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 07/31/2017
+ms.topic: conceptual
+ms.date: 6/26/2019
 ms.author: victorh
-ms.openlocfilehash: 7ff6db5acb150207f975931155386a308c48888b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a762e8c9ed1981173f3729837456ac2cfea081b8
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66134114"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449540"
 ---
-# <a name="create-an-application-gateway-by-using-the-azure-resource-manager-template"></a>Создание шлюза приложений с помощью шаблона диспетчера ресурсов Azure
+# <a name="create-an-application-gateway-using-the-azure-resource-manager-template"></a>Создание шлюза приложений с помощью шаблона Azure Resource Manager
 
-Шлюз приложений — это балансировщик нагрузки уровня 7. Он отвечает за отработку отказов и эффективную маршрутизацию HTTP-запросов между разными серверами (облачными и локальными). Шлюз приложений выполняет многие функции контроллера доставки приложений (ADC), включая балансировку нагрузки HTTP, определение сходства сеансов на основе файлов cookie, разгрузку SSL, выполнение пользовательской проверки работоспособности, поддержку нескольких сайтов и т. д. Полный список поддерживаемых функций представлен в [обзоре шлюза приложений](overview.md).
+Шлюз приложений — это балансировщик нагрузки уровня 7. Он отвечает за отработку отказов и эффективную маршрутизацию HTTP-запросов между разными серверами (облачными и локальными). Шлюз приложений выполняет многие функции контроллера доставки приложений (ADC), включая балансировку нагрузки HTTP, определение сходства сеансов на основе файлов cookie, разгрузку SSL, выполнение пользовательской проверки работоспособности, поддержку нескольких сайтов и т. д. Полный список поддерживаемых функций представлен в [обзоре шлюза приложений](application-gateway-introduction.md).
 
-В этой статье вы узнаете, как скачать и изменить существующий [шаблон Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md) из GitHub, а также развернуть шаблон из GitHub, PowerShell и интерфейса командной строки Azure (Azure CLI).
+В этой статье описывается скачивание и изменения существующего [шаблона Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md) из GitHub, а также развернуть шаблон из GitHub, Azure PowerShell и Azure CLI.
 
-Если вы разворачиваете шаблон непосредственно из GitHub без внесения каких-либо изменений, перейдите к развертыванию шаблона из GitHub.
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+Если вы просто развертываете шаблон непосредственно из GitHub без изменений, перейдите к развертыванию шаблона из GitHub.
 
 ## <a name="scenario"></a>Сценарий
 
@@ -42,7 +34,7 @@ ms.locfileid: "66134114"
 > [!NOTE]
 > Приведенные значения представляют в этом шаблоне параметры. Чтобы настроить шаблон, можно изменить правила, прослушиватель, SSL и другие параметры в файле azuredeploy.json.
 
-![Сценарий](./media/create-vmss-template/scenario.png)
+![Сценарий](./media/application-gateway-create-gateway-arm-template/scenario.png)
 
 ## <a name="download-and-understand-the-azure-resource-manager-template"></a>Скачивание и использование шаблона диспетчера ресурсов Azure
 
@@ -51,9 +43,9 @@ ms.locfileid: "66134114"
 1. Перейдите к статье [Create Application Gateway with web application firewall enabled](https://github.com/Azure/azure-quickstart-templates/tree/master/101-application-gateway-waf) (Создание шлюза приложения с включенным брандмауэром веб-приложений).
 1. Щелкните **azuredeploy.json** и нажмите кнопку **RAW**.
 1. Сохраните файл в локальную папку на своем компьютере.
-1. Если вы знакомы с шаблонами ARM, перейдите к шагу 7.
-1. Откройте только что сохраненный файл и просмотрите содержимое раздела **parameters** в строке
-1. В параметрах шаблона ARM есть заполнитель для значений, которые могут подставляться во время развертывания.
+1. Если вы знакомы с шаблонами Azure Resource Manager, перейдите к шагу 7.
+2. Откройте только что сохраненный файл и просмотрите содержимое раздела **parameters** в строке
+3. В параметрах шаблона ARM есть заполнитель для значений, которые могут подставляться во время развертывания.
 
    | Параметр | Описание |
    | --- | --- |
@@ -70,7 +62,7 @@ ms.locfileid: "66134114"
 
    * **type**. Тип ресурса, созданного на основе шаблона. В этом случае используется тип `Microsoft.Network/applicationGateways`, представляющий шлюз приложений.
    * **name**. Имя ресурса. Обратите внимание на применение `[parameters('applicationGatewayName')]`. Эта строка кода означает, что имя предоставляется пользователем или извлекается из файла параметров при развертывании.
-   * **properties**. Список свойств для ресурса. Во время создания шлюза приложений этот шаблон использует виртуальную сеть и общедоступный IP-адрес. Сведения о синтаксисе JSON и свойствах шлюза приложений в шаблоне см. в справочнике по шаблонам [Microsoft.Network/applicationGateways](/azure/templates/microsoft.network/applicationgateways).
+   * **properties**. Список свойств для ресурса. Во время создания шлюза приложений этот шаблон использует виртуальную сеть и общедоступный IP-адрес.
 
 1. Вернитесь к [https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-waf/](https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-waf).
 1. Щелкните **azuredeploy-parameters.json** и нажмите кнопку **RAW**.
@@ -116,21 +108,23 @@ ms.locfileid: "66134114"
      }
      ```
 
-1. Сохраните файл. Вы можете проверить шаблон JSON и шаблон параметров с помощью таких веб-инструментов проверки JSON, как [JSlint.com](https://www.jslint.com/).
+1. Сохраните файл. Можно проверить шаблон JSON и параметра шаблона с помощью инструментов проверки JSON как [JSlint.com](https://www.jslint.com/).
 
-## <a name="deploy-the-azure-resource-manager-template-by-using-powershell"></a>Развертывание шаблона диспетчера ресурсов Azure с помощью PowerShell
+## <a name="deploy-the-azure-resource-manager-template-using-azure-powershell"></a>Развертывание шаблона Azure Resource Manager, с помощью Azure PowerShell
 
-Если вы ранее не использовали Azure PowerShell, ознакомьтесь со статьей об [установке и настройке этой среды](/powershell/azure/overview). Следуйте инструкциям в статье, чтобы войти в Azure и выбрать подписку.
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-1. Войдите в PowerShell.
+Если вы никогда не использовали Azure PowerShell, см. в разделе: [установке и настройке этой среды](/powershell/azure/overview). Следуйте инструкциям в статье, чтобы войти в Azure и выбрать подписку.
 
-    ```powershell
-    Login-AzAccount
+1. Подключение к Azure
+
+    ```azurepowershell
+    Connect-AzAccount
     ```
 
 1. Просмотрите подписки учетной записи.
 
-    ```powershell
+    ```azurepowershell
     Get-AzSubscription
     ```
 
@@ -138,26 +132,26 @@ ms.locfileid: "66134114"
 
 1. Выберите, какие подписки Azure будут использоваться.
 
-    ```powershell
+    ```azurepowershell
     Select-AzSubscription -Subscriptionid "GUID of subscription"
     ```
 
-1. При необходимости создайте новую группу ресурсов с помощью командлета **New-AzureResourceGroup** . В примере ниже создается группа ресурсов с именем AppgatewayRG, расположенная в восточной части США.
+1. При необходимости создайте группу ресурсов с помощью **New-AzureResourceGroup** командлета. В примере ниже создается группа ресурсов с именем AppgatewayRG, расположенная в восточной части США.
 
-    ```powershell
+    ```azurepowershell
     New-AzResourceGroup -Name AppgatewayRG -Location "West US"
     ```
 
-1. Запустите **New AzResourceGroupDeployment** командлет, чтобы развернуть новую виртуальную сеть с помощью предыдущего шаблона и параметров файлов вы скачали и изменили.
+1. Запустите **New AzResourceGroupDeployment** командлет, чтобы развернуть новую виртуальную сеть, с помощью шаблона и параметров файлов вы скачали и изменили.
     
-    ```powershell
+    ```azurepowershell
     New-AzResourceGroupDeployment -Name TestAppgatewayDeployment -ResourceGroupName AppgatewayRG `
     -TemplateFile C:\ARM\azuredeploy.json -TemplateParameterFile C:\ARM\azuredeploy-parameters.json
     ```
 
-## <a name="deploy-the-azure-resource-manager-template-by-using-the-azure-cli"></a>Развертывание шаблона ARM с помощью интерфейса командной строки Azure
+## <a name="deploy-the-azure-resource-manager-template-using-the-azure-cli"></a>Развертывание шаблона Azure Resource Manager, с помощью Azure CLI
 
-Чтобы развернуть шаблон ARM, скачанный с помощью Azure CLI, выполните следующее.
+Чтобы развернуть шаблон Azure Resource Manager, загруженный с помощью Azure CLI, выполните следующие действия.
 
 1. Если вы еще не использовали Azure CLI, ознакомьтесь со статьей [Установка и настройка CLI Azure](/cli/azure/install-azure-cli) и следуйте инструкциям вплоть до выбора учетной записи Azure и подписки.
 
@@ -171,13 +165,13 @@ ms.locfileid: "66134114"
     
     **-l (или --location)** . Регион Azure, в котором создается группа ресурсов. В нашем примере это *westus*.
 
-1. Выполните командлет `az group deployment create`, чтобы развернуть новую виртуальную сеть с помощью шаблона и файлов параметров, которые вы скачали и изменили на предыдущем шаге. В списке, который откроется после выполнения команды, будут указаны используемые параметры.
+1. Запустите `az group deployment create` командлет, чтобы развернуть новую виртуальную сеть, с помощью шаблона и параметров файлов вы скачали и изменили на предыдущем шаге. В списке, который откроется после выполнения команды, будут указаны используемые параметры.
 
     ```azurecli
     az group deployment create --resource-group appgatewayRG --name TestAppgatewayDeployment --template-file azuredeploy.json --parameters @azuredeploy-parameters.json
     ```
 
-## <a name="deploy-the-azure-resource-manager-template-by-using-click-to-deploy"></a>Развертывание шаблона ARM с помощью интерфейса кнопки развертывания
+## <a name="deploy-the-azure-resource-manager-template-using-click-to-deploy"></a>Развертывание шаблона Azure Resource Manager, с помощью нажмите кнопку развертывания
 
 Развертывание с помощью кнопки развертывания — еще один способ использования шаблонов ARM. Он позволяет быстро и удобно работать с шаблонами на портале Azure.
 
@@ -185,21 +179,22 @@ ms.locfileid: "66134114"
 
 1. Нажмите кнопку **Развернуть в Azure**.
 
-    ![Развертывание в Azure](./media/create-vmss-template/deploytoazure.png)
+    ![Развертывание в Azure](./media/application-gateway-create-gateway-arm-template/deploytoazure.png)
     
 1. На портале укажите параметры шаблона развертывания и нажмите кнопку **OК**.
 
-    ![Параметры](./media/create-vmss-template/ibiza1.png)
+    ![Параметры](./media/application-gateway-create-gateway-arm-template/ibiza1.png)
     
 1. Установите флажок **Я принимаю указанные выше условия** и нажмите кнопку **Приобрести**.
 
-1. В колонке "Настраиваемое развертывание" щелкните **Создать**.
+1. На странице развертывания пользовательских щелкните **создать**.
 
 ## <a name="providing-certificate-data-to-resource-manager-templates"></a>Добавление данных сертификата в шаблоны Resource Manager
 
 При использовании протокола SSL с шаблоном сертификат необходимо указать в виде строки в формате base64, а не передать его. Для преобразования PFX- или CER-файла в строку base64, используйте одну из следующих команд. Следующие команды преобразуют сертификат в строку base64, которую можно указать для шаблона. Ожидаемым результатом является строка, которую можно сохранить в переменной и вставить в шаблон.
 
 ### <a name="macos"></a>macOS
+
 ```bash
 cert=$( base64 <certificate path and name>.pfx )
 echo $cert
@@ -214,9 +209,9 @@ echo $cert
 
 Чтобы удалить все ресурсы, созданные в этой статье, выполните одно из следующих действий:
 
-### <a name="powershell"></a>PowerShell
+### <a name="azure-powershell"></a>Azure PowerShell
 
-```powershell
+```azurepowershell
 Remove-AzResourceGroup -Name appgatewayRG
 ```
 
@@ -228,12 +223,11 @@ az group delete --name appgatewayRG
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если нужно настроить разгрузку SSL, см. статью [Настройка шлюза приложений для разгрузки SSL с помощью классической модели развертывания](tutorial-ssl-cli.md).
+Если вы хотите настроить разгрузку SSL, см. в разделе: [Настройка шлюза приложений для разгрузки SSL с помощью классической модели развертывания](application-gateway-ssl.md).
 
-Указания по настройке шлюза приложений для использования с внутренним балансировщиком нагрузки см. в статье [Создание шлюза приложений с помощью шаблона диспетчера ресурсов Azure](redirect-internal-site-cli.md).
+Если вы хотите настроить шлюз приложений для использования с внутренним балансировщиком нагрузки, см. в разделе: [Создание шлюза приложений с помощью шаблона диспетчера ресурсов Azure](application-gateway-ilb.md).
 
 Дополнительные сведения о параметрах балансировки нагрузки в целом см. в статьях:
 
 * [Подсистема балансировщика нагрузки Azure](https://azure.microsoft.com/documentation/services/load-balancer/)
 * [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
-

@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 06/21/2019
+ms.date: 7/2/2019
 ms.author: victorh
-ms.openlocfilehash: 9ec37197376c815c4fb9072164520a707b02be2b
-ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.openlocfilehash: a5a53766df3338bb36913b589ebda970de55ec94
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67312722"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67491938"
 ---
 # <a name="deploy-an-azure-firewall-with-multiple-public-ip-addresses-using-azure-powershell"></a>Развернуть брандмауэр подключения к Azure с помощью нескольких общедоступных IP-адресов, с помощью Azure PowerShell
 
@@ -21,7 +21,7 @@ ms.locfileid: "67312722"
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Вы можете развернуть брандмауэр подключения к Azure с помощью до 600 общедоступные IP-адреса.
+Вы можете развернуть брандмауэр подключения к Azure с помощью до 100 общедоступные IP-адреса.
 
 Эта функция поддерживает следующие сценарии:
 

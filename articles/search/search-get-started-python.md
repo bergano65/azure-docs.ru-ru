@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Python и API-интерфейсы REST - службы поиска Azure
-description: Создание, загрузка и отправка запросов в индекс, с помощью Python, записные книжки Jupyter и API REST службы поиска Azure.
+title: Краткое руководство Python. Создания, загрузки и запроса индексов с помощью API REST службы поиска Azure — службы поиска Azure
+description: Описание способов создания индекса, загрузка данных и выполнение запросов с помощью Python, записные книжки Jupyter и API REST службы поиска Azure.
 ms.date: 06/20/2019
 author: heidisteen
 manager: cgronlun
@@ -10,23 +10,23 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 227da2739216961dcd1f2fb8c643703a1b62e51a
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: 613879abd4c5c09450b690b793500a99428cff29
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67302282"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67485479"
 ---
-# <a name="quickstart-create-an-azure-search-index-using-jupyter-python-notebooks"></a>Краткое руководство. Создание индекса службы поиска Azure с помощью записных книжек Jupyter Python
+# <a name="quickstart-create-an-azure-search-index-in-python-using-jupyter-notebooks"></a>Краткое руководство. Создание индекса службы поиска Azure в Python с помощью записных книжек Jupyter
 > [!div class="op_single_selector"]
 > * [Python (REST)](search-get-started-python.md)
 > * [PowerShell (REST)](search-create-index-rest-api.md)
 > * [C#](search-create-index-dotnet.md)
-> * [Postman (REST)](search-fiddler.md)
+> * [Postman (REST)](search-get-started-postman.md)
 > * [Портал](search-create-index-portal.md)
 > 
 
-Создание записной книжки Jupyter, который создает, загружает и отправляет запрос в индекс поиска Azure с помощью Python и [API REST службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice/). В этой статье объясняется, как создать записную книжку шаг за шагом, начиная с нуля. Кроме того можно запустить готовой записной книжки. Чтобы загрузить копию, перейдите к[aearch-python-репозитория примеров azure](https://github.com/Azure-Samples/azure-search-python-samples).
+Создание записной книжки Jupyter, который создает, загружает и отправляет запрос в индекс поиска Azure с помощью Python и [API REST службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice/). В этой статье объясняется, как создать записную книжку шаг за шагом, начиная с нуля. Кроме того можно запустить готовой записной книжки. Чтобы загрузить копию, перейдите к[репозитория azure-search-python-samples](https://github.com/Azure-Samples/azure-search-python-samples).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -46,7 +46,7 @@ ms.locfileid: "67302282"
 
 1. В разделе **Параметры** > **Ключи** получите ключ администратора, чтобы обрести полные права на службу. Существуют два взаимозаменяемых ключа администратора, предназначенных для обеспечения непрерывности бизнес-процессов на случай, если вам потребуется сменить один из них. Вы можете использовать первичный или вторичный ключ для выполнения запросов на добавление, изменение и удаление объектов.
 
-![Получение конечной точки HTTP и ключа доступа](media/search-fiddler/get-url-key.png "Получение конечной точки HTTP и ключа доступа")
+![Получение конечной точки HTTP и ключа доступа](media/search-get-started-postman/get-url-key.png "Получение конечной точки HTTP и ключа доступа")
 
 Для выполнения любого запроса к службе требуется использование ключа API. Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
@@ -275,7 +275,7 @@ ms.locfileid: "67302282"
 
     ![Поиск в индексе](media/search-get-started-python/search-index.png "поиск в индексе")
 
-1. Еще несколько примеров запросов к знакомству с синтаксисом. Можно заменить фрагментом searchstring с приведенными ниже примерами и затем снова запустите запрос поиска. 
+1. Еще несколько примеров запросов к знакомству с синтаксисом. Вы можете заменить `searchstring` с помощью приведенных ниже примерах и перезапустите запрос поиска. 
 
    Применение фильтра: 
 

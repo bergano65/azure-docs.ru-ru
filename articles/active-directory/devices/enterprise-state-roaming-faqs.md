@@ -2,27 +2,21 @@
 title: Часто задаваемые вопросы о перемещении параметров и данных | Документация Майкрософт
 description: В статье содержится информация о синхронизации параметров и данных приложений, которая может быть полезной для ИТ-администраторов.
 services: active-directory
-keywords: параметры enterprise state roaming, облако windows, часто задаваемые вопросы о решении enterprise state roaming
-documentationcenter: ''
+ms.service: active-directory
+ms.subservice: devices
+ms.topic: troubleshooting
+ms.date: 06/28/2019
+ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
-editor: curtand
-ms.subservice: devices
-ms.assetid: c0824f5c-129b-4240-969f-921f6a64eae7
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 10/25/2018
-ms.author: joflore
+ms.reviewer: na
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a77cf89b7697b7b6b08dead34339ae50dbba8518
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9f9270aff6bc2aab7e210716ffe3e21efb07b8ed
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60296322"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67481957"
 ---
 # <a name="settings-and-data-roaming-faq"></a>Часто задаваемые вопросы о перемещении параметров и данных
 В этой статье содержится информация о синхронизации параметров и данных приложений, которая может быть полезной для ИТ-администраторов.

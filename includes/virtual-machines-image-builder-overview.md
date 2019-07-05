@@ -5,16 +5,16 @@ ms.date: 04/30/2019
 ms.topic: include
 ms.service: virtual-machines-linux
 manager: jeconnoc
-ms.openlocfilehash: 5884bb5dc389e6abfd4fa23d28dd71ecd16ff423
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 6eedc095f155a77cddf48211dbc4a677bf188112
+ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67347119"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67509905"
 ---
 Образы стандартизированный виртуальных машин (ВМ) позволяют организациям перенести в облако и обеспечить согласованность в развертываниях. Образы обычно содержат предопределенные параметры безопасности и конфигурации и необходимое программное обеспечение. Настройка собственных образов конвейера требуется время, инфраструктуры и установки, но с Image Builder для виртуальной Машины Azure, просто предоставить простой конфигурации, описывающий изображение, отправить его в службу и изображение построена и распространяется.
  
-Image Builder виртуальной Машины Azure (Azure Image Builder) позволяет запустите с Windows или на платформе Linux Azure Marketplace образ, существующие специальные образы или Red Hat Enterprise Linux (RHEL) ISO и начните добавлять свои собственные изменения. Надстраивается над Image Builder [HashiCorp Packer](https://packer.io/), вы также можете импортировать существующие сценарии средства подготовки Packer оболочки. Можно также указать, как бы вы хотели свои образы, размещенные в общий коллекции образов Azure (virtual-machines-common-shared-image-galleries.md), как управляемый образ или виртуальный жесткий ДИСК.
+Image Builder виртуальной Машины Azure (Azure Image Builder) позволяет запустите с Windows или на платформе Linux Azure Marketplace образ, существующие специальные образы или Red Hat Enterprise Linux (RHEL) ISO и начните добавлять свои собственные изменения. Надстраивается над Image Builder [HashiCorp Packer](https://packer.io/), вы также можете импортировать существующие сценарии средства подготовки Packer оболочки. Можно также указать, как бы вы хотели свои образы, размещенные в [коллекции образов Azure Shared](https://docs.microsoft.com/azure/virtual-machines/windows/shared-image-galleries), как управляемый образ или виртуальный жесткий ДИСК.
 
 > [!IMPORTANT]
 > Azure Image Builder в настоящее время находится в общедоступной предварительной версии.
@@ -35,7 +35,7 @@ Image Builder виртуальной Машины Azure (Azure Image Builder) п
 
 ## <a name="regions"></a>регионы
 Построитель служба образов в Azure будет доступна для предварительного просмотра в этих регионах. Образы могут распространяться за пределами этих регионов.
-- Восточная часть США
+- East US
 - Восток США 2
 - Западно-центральная часть США
 - Запад США
@@ -50,6 +50,12 @@ AIB поддерживают базовые образы Azure Marketplace:
 - Windows 2016
 - Windows 2019
 
+AIB будет поддерживать RHEL организации ISO, в качестве источника для:
+- RHEL 7.3
+- RHEL 7.4
+- RHEL 7.5
+
+RHEL 7.6 не поддерживается, но который проверяется.
 
 ## <a name="how-it-works"></a>Принцип работы
 

@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 04/26/2019
+ms.date: 07/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 481b19d0121e93c84d123579e91bcbfb9fb50815
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3f7bf3ce8c01e82fa69b3b041b573b4b31a719d2
+ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66356959"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67514091"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-service-or-dynamics-crm-by-using-azure-data-factory"></a>Копирование данных из Dynamics 365 (Common Data Service) или Dynamics CRM и в эти решения с помощью фабрики данных Azure
 
@@ -27,7 +27,13 @@ ms.locfileid: "66356959"
 
 Данные из Dynamics 365 (Common Data Service) или Dynamics CRM можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. В свою очередь, данные из любого хранилища данных, поддерживаемого в качестве источника, можно скопировать в Dynamics 365 (Common Data Service) или Dynamics CRM. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
-Этот соединитель Dynamics поддерживает следующие версии Dynamics и типы проверки подлинности. (IFD — сокращение от термина "развертывание с выходом в Интернет".)
+Этот соединитель Dynamics поддерживает Dynamics версии 7.x 9.x для обоих через Интернет, так и локально. В частности:
+
+- Версии 7.x сопоставляется Dynamics CRM 2015
+- Версии 8.x сопоставлений в ранней версии Dynamics 365 и Dynamics CRM 2016
+- Версии 9.x сопоставлений на более позднюю версию Dynamics 365
+
+См. в следующей таблице, на поддерживаемые типы проверки подлинности и конфигурации для соответствующей версии/продукты Dynamics. (IFD — сокращение от термина "развертывание с выходом в Интернет".)
 
 | Версии Dynamics | Типы проверки подлинности | Примеры связанной службы |
 |:--- |:--- |:--- |
@@ -43,6 +49,8 @@ ms.locfileid: "66356959"
 - Dynamics 365 for Marketing.
 
 Другие типы приложений (например, Dynamics 365 for Finance and Operations, Dynamics 365 for Talent и т. д.) не поддерживаются в этом соединителе.
+
+Этот соединитель Dynamics, создаются на основе [средств Dynamics XRM](https://docs.microsoft.com/dynamics365/customer-engagement/developer/build-windows-client-applications-xrm-tools).
 
 >[!TIP]
 >[Соединитель Dynamics AX](connector-dynamics-ax.md) также можно использовать для копирования данных из **Dynamics 365 Finance and Operations**.
@@ -156,7 +164,7 @@ ms.locfileid: "66356959"
 > [!IMPORTANT]
 >- При копировании данных из Dynamics, в разделе «structure», необязательно, но настоятельно recommanded в наборе данных Dynamics, чтобы результат детерминированным копирования. Он определяет столбец имени и тип данных для данных Dynamics, которые требуется скопировать. Дополнительные сведения см. в разделах [Структура набора данных](concepts-datasets-linked-services.md#dataset-structure-or-schema) и [Сопоставление типов данных для Dynamics](#data-type-mapping-for-dynamics).
 >- При импорте схемы в пользовательском интерфейсе разработки ADF выводит схему путем выборки верхних строк из результата запроса Dynamics для инициализации создания структуры. При этом столбцы без значений будут опущены. Это также применяется для копирования выполнений, если нет определения явной структуры. Вы можете просмотреть схему и при необходимости добавить в нее или структуру набора данных Dynamics дополнительные столбцы, которые будут учитываться во время копирования.
->- При копировании данных в Dynamics раздел structure является необязательным в наборе данных Dynamics. В какие столбцы выполняется копирование, определяет схема исходных данных. Если источником является CSV-файл без заголовка, во входном наборе данных укажите параметр structure с именем столбца и тип данных. Они последовательно сопоставляются с полями в CSV-файле.
+>- При копировании данных в Dynamics раздел structure является необязательным в наборе данных Dynamics. Какие столбцы выполняется копирование в определяется схема исходных данных. Если источником является CSV-файл без заголовка, во входном наборе данных укажите параметр structure с именем столбца и тип данных. Они последовательно сопоставляются с полями в CSV-файле.
 
 **Пример.**
 
@@ -341,9 +349,8 @@ ms.locfileid: "66356959"
 | AttributeType.State | Int32 | ✓ | ✓ |
 | AttributeType.Status | Int32 | ✓ | ✓ |
 
-
 > [!NOTE]
-> Типы данных Dynamics AttributeType.CalendarRules и AttributeType.PartyList не поддерживаются.
+> Типы данных Dynamics AttributeType.CalendarRules, AttributeType.MultiSelectPicklist и AttributeType.PartyList не поддерживаются.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных.

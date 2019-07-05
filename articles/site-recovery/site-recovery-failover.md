@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 05/30/2019
+ms.date: 06/30/2019
 ms.author: raynew
-ms.openlocfilehash: a02a2be7fb3ed942b1359949e18ba7d3dee824ae
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8d1471188999182623a57db50d3205a859c160a2
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66399970"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67491799"
 ---
 # <a name="fail-over-vms-and-physical-servers"></a>Отработка отказа виртуальных машин и физических серверов 
 
@@ -70,9 +70,9 @@ ms.locfileid: "66399970"
 
 > [!NOTE]
 > При отработке отказа виртуальных машин Hyper-V с одного локального сайта на другой локальный сайт может возникнуть необходимость вернуться на первичный сайт. Для этого сначала следует выполнить **обратную репликацию** виртуальной машины на первичный сайт, а затем запустить отработку отказа. Если первичная виртуальная машина недоступна, то перед запуском **обратной репликации** необходимо восстановить виртуальную машину из резервной копии.   
-> 
-> 
-> ## <a name="failover-job"></a>Задание отработки отказа
+ 
+ 
+## <a name="failover-job"></a>Задание отработки отказа
 
 ![Отработка отказа](./media/site-recovery-failover/FailoverJob.png)
 
@@ -111,7 +111,7 @@ ms.locfileid: "66399970"
 ## <a name="post-failover-considerations"></a>Рекомендации после отработки отказа
 Рекомендации, которым необходимо следовать после отработки отказа.
 ### <a name="retaining-drive-letter-after-failover"></a>Сохранение буквы диска после отработка отказа
-Чтобы сохранить буквы дисков на виртуальных машинах после отработки отказа, укажите значение **OnlineAll** в **политике SAN** для виртуальной машины. [Дополнительные сведения](https://support.microsoft.com/help/3031135/how-to-preserve-the-drive-letter-for-protected-virtual-machines-that-are-failed-over-or-migrated-to-azure).
+Azure Site Recovery обеспечивает хранение буквы дисков. [Дополнительные сведения](vmware-azure-exclude-disk.md#example-1-exclude-the-sql-server-tempdb-disk) на как это делается, если нужно исключить некоторые диски.
 
 ## <a name="prepare-to-connect-to-azure-vms-after-failover"></a>Подготовка к подключению виртуальных машин Azure после отработки отказа
 

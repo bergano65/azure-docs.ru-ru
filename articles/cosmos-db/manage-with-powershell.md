@@ -4,19 +4,19 @@ description: С помощью Azure Powershell управлять учетны�
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: samples
-ms.date: 05/23/2019
+ms.date: 07/03/2019
 ms.author: mjbrown
 ms.custom: seodec18
-ms.openlocfilehash: f720b678f2c7a6e564ef3e8fa9ae071b004ed1a6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 40f041f1b41077824aa3141f6196901b51415c35
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66243387"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67565918"
 ---
 # <a name="manage-azure-cosmos-db-sql-api-resources-using-powershell"></a>Управление ресурсами Azure Cosmos DB SQL API с помощью PowerShell
 
-В этом руководстве описывается сценарий с помощью PowerShell и автоматизация управления Azure Cosmos DB, включая учетной записи, базы данных, контейнера и пропускной способности. Управление Azure Cosmos DB происходит не с помощью Azure Cosmos DB командлеты, но с поставщиком ресурсов непосредственно через командлет AzResource. Чтобы просмотреть все свойства, которые могут управляться с помощью PowerShell для поставщика ресурсов Azure Cosmos DB, см. в разделе [схемы поставщика ресурсов Azure Cosmos DB](/azure/templates/microsoft.documentdb/allversions)
+Следующее руководство описывает использование PowerShell для сценария и автоматизировать управление ресурсами Azure Cosmos DB, включая учетной записи, базы данных, контейнера и пропускной способности. Управление из Azure Cosmos DB осуществляется через командлет AzResource напрямую к поставщику ресурсов Azure Cosmos DB. Чтобы просмотреть все свойства, которые могут управляться с помощью PowerShell для поставщика ресурсов Azure Cosmos DB, см. в разделе [схемы поставщика ресурсов Azure Cosmos DB](/azure/templates/microsoft.documentdb/allversions)
 
 Кросс платформенных управлять Azure Cosmos DB, можно использовать [Azure CLI](manage-with-cli.md), [REST API][rp-rest-api], или [портала Azure](create-sql-api-dotnet.md#create-account).
 
@@ -24,7 +24,7 @@ ms.locfileid: "66243387"
 
 ## <a name="getting-started"></a>Начало работы
 
-Следуйте инструкциям в [описывается установка и настройка Azure PowerShell] [ powershell-install-configure] для установки и войдите в свою учетную запись Azure в Powershell.
+Следуйте инструкциям в [описывается установка и настройка Azure PowerShell][powershell-install-configure] для установки и войдите в свою учетную запись Azure в Powershell.
 
 * Чтобы выполнять следующие команды без запроса пользовательского подтверждения, добавьте в команду флаг `-Force`.
 * Все следующие команды синхронные.
@@ -45,17 +45,17 @@ ms.locfileid: "66243387"
 
 ### <a id="create-account"></a> Создание учетной записи Azure Cosmos
 
-Эта команда позволяет создать учетную запись базы данных Azure Cosmos DB. Настройте новую учетную запись для использования в одном или [нескольких регионах][distribute-data-globally] и добавьте определенную [политику согласованности](consistency-levels.md).
+Эта команда создает учетную запись базы данных Azure Cosmos DB с [несколько регионов][distribute-data-globally], с ограниченным устареванием [политика согласованности](consistency-levels.md).
 
 ```azurepowershell-interactive
 # Create an Azure Cosmos Account for Core (SQL) API
 $resourceGroupName = "myResourceGroup"
-$location = "West US"
+$location = "West US 2"
 $accountName = "mycosmosaccount" # must be lower case.
 
 $locations = @(
-    @{ "locationName"="West US"; "failoverPriority"=0 },
-    @{ "locationName"="East US"; "failoverPriority"=1 }
+    @{ "locationName"="West US 2"; "failoverPriority"=0 },
+    @{ "locationName"="East US 2"; "failoverPriority"=1 }
 )
 
 $consistencyPolicy = @{
@@ -68,7 +68,7 @@ $CosmosDBProperties = @{
     "databaseAccountOfferType"="Standard";
     "locations"=$locations;
     "consistencyPolicy"=$consistencyPolicy;
-    "enableMultipleWriteLocations"="true"
+    "enableMultipleWriteLocations"="false"
 }
 
 New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
@@ -76,8 +76,8 @@ New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
     -Name $accountName -PropertyObject $CosmosDBProperties
 ```
 
-* `$accountName` Имя учетной записи Azure Cosmos. Должны быть строчными, принимает буквенно-цифровые и "-" символ и от 3 до 50 символов.
-* `$location` Расположение учетной записи Azure Cosmos.
+* `$accountName` Имя учетной записи Azure Cosmos. Должны быть строчными, принимает буквенно-цифровые и "-" символ, а также между 3 знаков до 31.
+* `$location` Расположение для ресурса учетной записи Azure Cosmos.
 * `$locations` Регионы реплик для учетной записи базы данных. Должен быть хотя бы один регион для записи каждой учетной записи базы данных со значением приоритета отработки отказа 0.
 * `$consistencyPolicy` Уровень согласованности по умолчанию учетной записи Azure Cosmos. Дополнительные сведения см. в статье о [настраиваемых уровнях согласованности в Azure Cosmos DB](consistency-levels.md).
 * `$CosmosDBProperties` Значения свойств передаются поставщику диспетчера ресурсов Azure Cosmos DB подготовить учетную запись.
@@ -111,7 +111,7 @@ Get-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
 * Включение несколькими хозяевами
 
 > [!NOTE]
-> Кроме того, эта команда позволяет добавлять или удалять регионы, но не изменять приоритеты при отработке отказа. Чтобы изменить приоритеты при отработке отказа, см. в разделе [изменение приоритета при отработке отказа для учетной записи Azure Cosmos](#modify-failover-priority).
+> Кроме того, эта команда позволяет добавлять или удалять регионы, но не изменять приоритеты при отработке отказа. Чтобы изменить приоритет отработки отказа, см. в разделе [изменение приоритета при отработке отказа для учетной записи Azure Cosmos](#modify-failover-priority).
 
 ```azurepowershell-interactive
 # Update an Azure Cosmos Account and set Consistency level to Session
@@ -148,7 +148,7 @@ Remove-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
 
 ### <a id="update-tags"></a> Обновление тегов учетной записи Azure Cosmos
 
-Следующий пример описывает способ задания [теги ресурсов Azure] [ azure-resource-tags] для учетной записи Azure Cosmos.
+Следующий пример описывает способ задания [теги ресурсов Azure][azure-resource-tags] для учетной записи Azure Cosmos.
 
 > [!NOTE]
 > Эту команду можно выполнять вместе с командами создания или обновления. Для этого необходимо добавить флаг `-Tags` с соответствующим параметром.
@@ -224,12 +224,12 @@ Select-Object $keys
 
 ### <a id="modify-failover-priority"></a> Изменение приоритета при отработке отказа
 
-Для учетных записей базы данных в нескольких регионах можно изменить приоритет отработки отказа в разных регионах, подгоняя учетной записи базы данных Azure Cosmos DB. Дополнительные сведения об отработке отказа в учетной записи базы данных Azure Cosmos DB см. в статье [Как работает глобальное распределение данных в Azure Cosmos DB?][distribute-data-globally]
+Для учетных записей базы данных в нескольких регионах можно изменить порядок, в котором учетной записи Cosmos переведет вторичных чтения должно выполняться региональной отработки отказа на реплики основной записи. Когда область с `failoverPriority=0` — изменения, эта команда также можно инициировать аварийного восстановления для тестирования аварийного восстановления.
 
-Приведенный ниже пример, предположим, у нее есть текущий приоритет отработки отказа westus = 0 и eastus = 1. Приведенный ниже пример переместятся регионов.
+Приведенный ниже пример, предположим, у нее есть текущий приоритет отработки отказа westus = 0 и eastus = 1, а также перевернуть регионов.
 
 > [!CAUTION]
-> Эта операция активирует отработку отказа вручную для вашей учетной записи в новый регион с failoverPriority нулевой.
+> Эта операция активирует отработку отказа вручную для учетной записи Azure Cosmos.
 
 ```azurepowershell-interactive
 # Change the failover priority for an Azure Cosmos Account
@@ -253,6 +253,7 @@ Invoke-AzResourceAction -Action failoverPriorityChange `
 
 * [Создание базы данных Azure Cosmos](#create-db)
 * [Создание базы данных Azure Cosmos с общей пропускной способности](#create-db-ru)
+* [Получение пропускной способности базы данных Azure Cosmos](#get-db-ru)
 * [Список всех баз данных Azure Cosmos в учетной записи](#get-all-db)
 * [Получение одной базы данных Azure Cosmos](#get-db)
 * [Удаление базы данных Azure Cosmos](#delete-db)
@@ -268,7 +269,8 @@ $resourceName = $accountName + "/sql/" + $databaseName
 
 $DataBaseProperties = @{
     "resource"=@{"id"=$databaseName}
-} 
+}
+
 New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts/apis/databases" `
     -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
     -Name $resourceName -PropertyObject $DataBaseProperties
@@ -290,6 +292,21 @@ $DataBaseProperties = @{
 New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts/apis/databases" `
     -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
     -Name $resourceName -PropertyObject $DataBaseProperties
+```
+
+### <a id="get-db-ru"></a>Получение пропускной способности базы данных Azure Cosmos
+
+```azurepowershell-interactive
+$resourceGroupName = "myResourceGroup"
+$accountName = "mycosmosaccount"
+$databaseName = "database1"
+$containerName = "container1"
+$databaseThroughputResourceType = "Microsoft.DocumentDb/databaseAccounts/apis/databases/settings"
+$databaseThroughputResourceName = $accountName + "/sql/" + $databaseName + "/throughput"
+
+Get-AzResource -ResourceType $databaseThroughputResourceType `
+    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
+    -Name $databaseThroughputResourceName  | Select-Object Properties
 ```
 
 ### <a id="get-all-db"></a>Получение всех баз данных Azure Cosmos в учетной записи
@@ -336,6 +353,7 @@ Remove-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts/apis/data
 В следующих разделах описано управление контейнера Azure Cosmos, включая:
 
 * [Создание контейнера Azure Cosmos](#create-container)
+* [Получение пропускной способности контейнера Azure Cosmos](#get-container-ru)
 * [Создание контейнера Azure Cosmos с общей пропускной способности](#create-container-ru)
 * [Создание контейнера Azure Cosmos с помощью пользовательских индексирования](#create-container-custom-index)
 * [Создание контейнера Azure Cosmos с индексированием отключена](#create-container-no-index)
@@ -348,7 +366,7 @@ Remove-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts/apis/data
 ### <a id="create-container"></a>Создание контейнера Azure Cosmos
 
 ```azurepowershell-interactive
-# Create an Azure Cosmos container with default indexes and throughput at 400 RU 
+# Create an Azure Cosmos container with default indexes and throughput at 400 RU
 $resourceGroupName = "myResourceGroup"
 $accountName = "mycosmosaccount"
 $databaseName = "database1"
@@ -357,17 +375,33 @@ $resourceName = $accountName + "/sql/" + $databaseName + "/" + $containerName
 
 $ContainerProperties = @{
     "resource"=@{
-        "id"=$containerName; 
+        "id"=$containerName;
         "partitionKey"=@{
-            "paths"=@("/myPartitionKey"); 
+            "paths"=@("/myPartitionKey");
             "kind"="Hash"
         }
-    }; 
+    };
     "options"=@{ "Throughput"="400" }
-} 
+}
+
 New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts/apis/databases/containers" `
     -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
     -Name $resourceName -PropertyObject $ContainerProperties
+```
+
+### <a id="get-container-ru"></a>Получение пропускной способности контейнера Azure Cosmos
+
+```azurepowershell-interactive
+$resourceGroupName = "myResourceGroup"
+$accountName = "mycosmosaccount"
+$databaseName = "database1"
+$containerName = "container1"
+$containerThroughputResourceType = "Microsoft.DocumentDb/databaseAccounts/apis/databases/containers/settings"
+$containerThroughputResourceName = $accountName + "/sql/" + $databaseName + "/" + $containerName + "/throughput"
+
+Get-AzResource -ResourceType $containerThroughputResourceType `
+    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
+    -Name $containerThroughputResourceName  | Select-Object Properties
 ```
 
 ### <a id="create-container-ru"></a>Создание контейнера Azure Cosmos с общей пропускной способности
@@ -383,12 +417,13 @@ $ContainerProperties = @{
     "resource"=@{
         "id"=$containerName; 
         "partitionKey"=@{
-            "paths"=@("/myPartitionKey"); 
+            "paths"=@("/myPartitionKey");
             "kind"="Hash"
         }
-    }; 
+    };
     "options"=@{}
-} 
+}
+
 New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts/apis/databases/containers" `
     -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
     -Name $resourceName -PropertyObject $ContainerProperties 
@@ -412,20 +447,10 @@ $ContainerProperties = @{
             "kind"="Hash"
         }; 
         "indexingPolicy"=@{
-            "indexingMode"="Consistent"; 
+            "indexingMode"="Consistent";
             "includedPaths"= @(@{
                 "path"="/*";
-                "indexes"= @(@{
-                        "kind"="Range";
-                        "dataType"="number";
-                        "precision"=-1
-                    },
-                    @{
-                        "kind"="Range";
-                        "dataType"="string";
-                        "precision"=-1
-                    }
-                )
+                "indexes"= @()
             });
             "excludedPaths"= @(@{
                 "path"="/myPathToNotIndex/*"
@@ -433,7 +458,7 @@ $ContainerProperties = @{
         }
     };
     "options"=@{ "Throughput"="400" }
-} 
+}
 
 New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts/apis/databases/containers" `
     -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
@@ -443,7 +468,7 @@ New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts/apis/databas
 ### <a id="create-container-no-index"></a>Создание контейнера Azure Cosmos с индексированием отключена
 
 ```azurepowershell-interactive
-# Create an Azure Cosmos container with no indexing 
+# Create an Azure Cosmos container with no indexing
 $resourceGroupName = "myResourceGroup"
 $accountName = "mycosmosaccount"
 $databaseName = "database1"
@@ -454,9 +479,9 @@ $ContainerProperties = @{
     "resource"=@{
         "id"=$containerName; 
         "partitionKey"=@{
-            "paths"=@("/myPartitionKey"); 
+            "paths"=@("/myPartitionKey");
             "kind"="Hash"
-        }; 
+        };
         "indexingPolicy"=@{
             "indexingMode"="none"
         }
@@ -481,26 +506,16 @@ $resourceName = $accountName + "/sql/" + $databaseName + "/" + $containerName
 
 $ContainerProperties = @{
     "resource"=@{
-        "id"=$containerName; 
+        "id"=$containerName;
         "partitionKey"=@{
-            "paths"=@("/myPartitionKey"); 
+            "paths"=@("/myPartitionKey");
             "kind"="Hash"
         }; 
         "indexingPolicy"=@{
-            "indexingMode"="Consistent"; 
+            "indexingMode"="Consistent";
             "includedPaths"= @(@{
                 "path"="/*";
-                "indexes"= @(@{
-                        "kind"="Range";
-                        "dataType"="number";
-                        "precision"=-1
-                    },
-                    @{
-                        "kind"="Range";
-                        "dataType"="string";
-                        "precision"=-1
-                    }
-                )
+                "indexes"= @()
             });
             "excludedPaths"= @()
         };
@@ -513,9 +528,9 @@ $ContainerProperties = @{
             })
         };
         "defaultTtl"= 100;
-    }; 
+    };
     "options"=@{ "Throughput"="400" }
-} 
+}
 
 New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts/apis/databases/containers" `
     -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
@@ -527,7 +542,7 @@ New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts/apis/databas
 Чтобы создать политики разрешения конфликтов для использования хранимой процедуры, задайте `"mode"="custom"` и задайте путь разрешения имени хранимой процедуры, `"conflictResolutionPath"="myResolverStoredProcedure"`. Чтобы записывать все конфликты ConflictsFeed и обрабатывать отдельно, задайте `"mode"="custom"` и `"conflictResolutionPath"=""`
 
 ```azurepowershell-interactive
-# Create container with last-writer-wins conflict resolution policy 
+# Create container with last-writer-wins conflict resolution policy
 $resourceGroupName = "myResourceGroup"
 $accountName = "mycosmosaccount"
 $databaseName = "database1"
@@ -538,16 +553,17 @@ $ContainerProperties = @{
     "resource"=@{
         "id"=$containerName;
         "partitionKey"=@{
-            "paths"=@("/myPartitionKey"); 
+            "paths"=@("/myPartitionKey");
             "kind"="Hash"
-        }; 
+        };
         "conflictResolutionPolicy"=@{
-            "mode"="lastWriterWins"; 
+            "mode"="lastWriterWins";
             "conflictResolutionPath"="/myResolutionPath"
         }
-    }; 
+    };
     "options"=@{ "Throughput"="400" }
-} 
+}
+
 New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts/apis/databases/containers" `
     -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
     -Name $resourceName -PropertyObject $ContainerProperties
@@ -556,7 +572,7 @@ New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts/apis/databas
 ### <a id="list-all-container"></a>Список всех контейнеров Azure Cosmos в базу данных
 
 ```azurepowershell-interactive
-# List all Azure Cosmos containers in a database 
+# List all Azure Cosmos containers in a database
 $resourceGroupName = "myResourceGroup"
 $accountName = "mycosmosaccount"
 $databaseName = "database1"

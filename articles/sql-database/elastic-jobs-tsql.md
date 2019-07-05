@@ -12,12 +12,12 @@ author: jaredmoo
 ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 59e0e4cf82af9851dacf3ec030575ed392571331
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 683297e32c40f73c64dc40b18f279d92e2396e8d
+ms.sourcegitcommit: 3107874d7559ea975e4d55ae33cdf45f4b5485e4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61475819"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67568278"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs"></a>Создание заданий эластичной базы данных и управление ими с помощью Transact-SQL (T-SQL)
 
@@ -426,7 +426,7 @@ EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob'
 
 
 
-### <a name="spaddjob"></a>sp_add_job
+### <a name="sp_add_job"></a>sp_add_job
 
 Добавляет новое задание. 
   
@@ -492,7 +492,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 Описание разрешений этих ролей приведено в разделе "Разрешения" этого документа. Только участники роли sysadmin могут использовать эту хранимую процедуру для редактирования атрибутов заданий, которыми владеют другие пользователи.
 
-### <a name="spupdatejob"></a>sp_update_job
+### <a name="sp_update_job"></a>sp_update_job
 
 Обновляет существующее задание.
 
@@ -555,7 +555,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 
 
-### <a name="spdeletejob"></a>sp_delete_job
+### <a name="sp_delete_job"></a>sp_delete_job
 
 Удаляет существующее задание.
 
@@ -587,7 +587,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 
 
-### <a name="spaddjobstep"></a>sp_add_jobstep
+### <a name="sp_add_jobstep"></a>sp_add_jobstep
 
 Добавляет шаг в задание.
 
@@ -713,7 +713,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 
 
-### <a name="spupdatejobstep"></a>sp_update_jobstep
+### <a name="sp_update_jobstep"></a>sp_update_jobstep
 
 Обновляет шаг задания.
 
@@ -838,7 +838,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 
 
-### <a name="spdeletejobstep"></a>sp_delete_jobstep
+### <a name="sp_delete_jobstep"></a>sp_delete_jobstep
 
 Удаляет шаг из задания.
 
@@ -884,7 +884,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 
 
-### <a name="spstartjob"></a>sp_start_job
+### <a name="sp_start_job"></a>sp_start_job
 
 Запускает выполнение задания.
 
@@ -915,7 +915,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 Описание разрешений этих ролей приведено в разделе "Разрешения" этого документа. Только участники роли sysadmin могут использовать эту хранимую процедуру для редактирования атрибутов заданий, которыми владеют другие пользователи.
 
-### <a name="spstopjob"></a>sp_stop_job
+### <a name="sp_stop_job"></a>sp_stop_job
 
 Останавливает выполнение задания.
 
@@ -944,7 +944,7 @@ sp_add_job необходимо выполнять из базы данных а
 Описание разрешений этих ролей приведено в разделе "Разрешения" этого документа. Только участники роли sysadmin могут использовать эту хранимую процедуру для редактирования атрибутов заданий, которыми владеют другие пользователи.
 
 
-### <a name="spaddtargetgroup"></a>sp_add_target_group
+### <a name="sp_add_target_group"></a>sp_add_target_group
 
 Добавляет целевую группу.
 
@@ -975,7 +975,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 Описание разрешений этих ролей приведено в разделе "Разрешения" этого документа. Только участники роли sysadmin могут использовать эту хранимую процедуру для редактирования атрибутов заданий, которыми владеют другие пользователи.
 
-### <a name="spdeletetargetgroup"></a>sp_delete_target_group
+### <a name="sp_delete_target_group"></a>sp_delete_target_group
 
 Удаляет целевую группу.
 
@@ -1003,7 +1003,7 @@ sp_add_job необходимо выполнять из базы данных а
 
 Описание разрешений этих ролей приведено в разделе "Разрешения" этого документа. Только участники роли sysadmin могут использовать эту хранимую процедуру для редактирования атрибутов заданий, которыми владеют другие пользователи.
 
-### <a name="spaddtargetgroupmember"></a>sp_add_target_group_member
+### <a name="sp_add_target_group_member"></a>sp_add_target_group_member
 
 Добавляет базу данных или несколько баз данных в целевую группу.
 
@@ -1092,7 +1092,7 @@ SELECT * FROM [jobs].target_group_members WHERE target_group_name= N'Servers Mai
 GO
 ```
 
-### <a name="spdeletetargetgroupmember"></a>sp_delete_target_group_member
+### <a name="sp_delete_target_group_member"></a>sp_delete_target_group_member
 
 Удаляет элемент из целевой группы.
 
@@ -1143,7 +1143,7 @@ EXEC jobs.sp_delete_target_group_member
 GO
 ```
 
-### <a name="sppurgejobhistory"></a>sp_purge_jobhistory
+### <a name="sp_purge_jobhistory"></a>sp_purge_jobhistory
 
 Удаляет записи журнала для задания.
 
@@ -1204,7 +1204,7 @@ GO
 |[target_group_members](#target_groups_members-view)     |   Отображает все элементы всех целевых групп.      |
 
 
-### <a name="jobsexecutions-view"></a>Представление jobs_executions
+### <a name="jobs_executions-view"></a>jobs_executions view
 
 [jobs].[jobs_executions]
 
@@ -1251,7 +1251,7 @@ GO
 |**schedule_end_time**| datetime2(7)|   Дата и время последнего успешного выполнения задания.|
 
 
-### <a name="jobversions-view"></a>Представление job_versions
+### <a name="job_versions-view"></a>представление job_versions
 
 [jobs].[job_versions]
 
@@ -1299,13 +1299,13 @@ GO
 |**max_parallelism**|   int|    Максимальное число баз данных на эластичный пул, которое может одновременно обрабатывать шаг задания. Значение по умолчанию — NULL. Оно означает отсутствие ограничения. |
 
 
-### <a name="jobstepversions-view"></a>Представление jobstep_versions
+### <a name="jobstep_versions-view"></a>представление jobstep_versions
 
 [jobs].[jobstep_versions]
 
 Отображает все шаги во всех версиях каждого задания. Схема идентична схеме [jobsteps](#jobsteps-view).
 
-### <a name="targetgroups-view"></a>Представление target_groups
+### <a name="target_groups-view"></a>представление target_groups
 
 [jobs].[target_groups]
 
@@ -1316,7 +1316,7 @@ GO
 |**target_group_name**| nvarchar(128)   |Имя целевой группы, содержащей коллекцию баз данных. 
 |**target_group_id**    |uniqueidentifier   |Уникальный идентификатор целевой группы.
 
-### <a name="targetgroupsmembers-view"></a>Представление target_groups_members
+### <a name="target_groups_members-view"></a>представление target_groups_members
 
 [jobs].[target_groups_members]
 

@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: glenga
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: 6c0732b33608105009eda9bba2e4970e8e12e652
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: dd6259173792585a83effd42c75ff9a7a7d572e4
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67050586"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448387"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -68,6 +68,9 @@ ms.locfileid: "67050586"
     ```bash
     npm install -g azure-functions-core-tools
     ```
+
+   Может занять несколько минут, npm загрузить и установить пакет основных инструментов.
+
 1. Если вы не планируете использовать [пакеты расширения], установить [.NET Core 2.x пакета SDK для Windows](https://www.microsoft.com/net/download/windows).
 
 #### <a name="brew"></a>MacOS с Homebrew
@@ -82,6 +85,7 @@ ms.locfileid: "67050586"
     brew tap azure/functions
     brew install azure-functions-core-tools
     ```
+
 1. Если вы не планируете использовать [пакеты расширения], установить [.NET Core 2.x пакета SDK для macOS](https://www.microsoft.com/net/download/macos).
 
 
@@ -115,6 +119,7 @@ ms.locfileid: "67050586"
     ```bash
     sudo apt-get install azure-functions-core-tools
     ```
+
 1. Если вы не планируете использовать [пакеты расширения], установить [.NET Core 2.x пакет SDK для Linux](https://www.microsoft.com/net/download/linux).
 
 ## <a name="create-a-local-functions-project"></a>Создание локального проекта службы "Функции"
@@ -163,53 +168,16 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 > [!IMPORTANT]
 > По умолчанию версия 2.x средства Core создает проекты приложений функций для среды выполнения .NET как [проектов класса C#](functions-dotnet-class-library.md) (.csproj). Эти проекты C#, которые могут использоваться с Visual Studio или Visual Studio Code, собираются во время тестирования и при публикации в Azure. Если вы хотите создавать и работать с тем же файлом сценария C# (.csx), созданным в версии 1.x и на портале, необходимо указать параметр `--csx` при создании и развертывании функций.
 
-## <a name="register-extensions"></a>Регистрация расширений
+[!INCLUDE [functions-core-tools-install-extension](../../includes/functions-core-tools-install-extension.md)]
 
-В версии 2.х среды выполнения "Функции Azure" нужно явно зарегистрировать расширения привязки (типы привязки), используемые в приложении-функции.
+[!INCLUDE [functions-local-settings-file](../../includes/functions-local-settings-file.md)]
 
-[!INCLUDE [Register extensions](../../includes/functions-core-tools-install-extension.md)]
-
-Дополнительные сведения см. в статье [Основные понятия триггеров и привязок в Функциях Azure](./functions-bindings-expressions-patterns.md).
-
-## <a name="local-settings-file"></a>Файл с локальными параметрами
-
-Файл local.settings.json хранит параметры приложения, строки подключения и параметры основных инструментов службы "Функции Azure". Параметры в файле local.settings.json используются инструментами Функций только при выполнении в локальной среде. По умолчанию эти параметры не переносятся автоматически при публикации проекта в Azure. [При публикации](#publish) используйте параметр `--publish-local-settings`, чтобы добавить эти параметры в приложение-функцию в Azure. Значения **ConnectionStrings** никогда не публикуются. Файл имеет следующую структуру:
-
-```json
-{
-  "IsEncrypted": false,
-  "Values": {
-    "FUNCTIONS_WORKER_RUNTIME": "<language worker>",
-    "AzureWebJobsStorage": "<connection-string>",
-    "AzureWebJobsDashboard": "<connection-string>",
-    "MyBindingConnection": "<binding-connection-string>"
-  },
-  "Host": {
-    "LocalHttpPort": 7071,
-    "CORS": "*",
-    "CORSCredentials": false
-  },
-  "ConnectionStrings": {
-    "SQLConnectionString": "<sqlclient-connection-string>"
-  }
-}
-```
-
-| Параметр      | Описание                            |
-| ------------ | -------------------------------------- |
-| **`IsEncrypted`** | Если задано значение `true`, все значения шифруются с помощью ключа локального компьютера. Используется с командами `func settings`. По умолчанию имеет значение `false`. |
-| **`Values`** | Коллекция параметров приложения и строк подключения, используемых при локальном выполнении. Эти значения соответствуют параметры приложения в приложении-функции в Azure, такие как [ `AzureWebJobsStorage` ]. Многие триггеры и привязки имеют свойство, которое ссылается на параметр приложения строки подключения, например `Connection` для [триггер хранилища BLOB-объектов](functions-bindings-storage-blob.md#trigger---configuration). Для таких свойств требуется параметр приложения, определенный в `Values` массива. <br/>[`AzureWebJobsStorage`] Обязательное приложение устанавливает для триггеров, отличных от HTTP. <br/>Версии 2.x среды выполнения функций требует [ `FUNCTIONS_WORKER_RUNTIME` ] параметр, который создается для проекта, основными инструментами. <br/> При наличии [эмулятора хранения Azure](../storage/common/storage-use-emulator.md) установлены локально, можно задать [ `AzureWebJobsStorage` ] для `UseDevelopmentStorage=true` и основных инструментов используется эмулятор. Во время разработки это удобно, но следует проверить подключение к фактическому хранилищу перед развертыванием. |
-| **`Host`** | Параметры в этом разделе служат для настройки хост-процесса Функций при выполнении в локальной среде. |
-| **`LocalHttpPort`** | Задает порт по умолчанию, используемый при выполнении локального узла Функций (`func host start` и `func run`). Параметр командной строки `--port` имеет приоритет над этим значением. |
-| **`CORS`** | Определяет источники, для которых разрешен [общий доступ к ресурсам независимо от источника (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing). Источники указываются в виде разделенного запятыми списка без пробелов. Допускается подстановочное значение (\*), разрешающее запросы из любого источника. |
-| **`CORSCredentials`** |  Задайте для него значение true, чтобы разрешить `withCredentials` запросов |
-| **`ConnectionStrings`** | Не применяйте эту коллекцию для строк подключения, используемых функциями привязки. Эта коллекция используется только с платформ, которые обычно получают строк соединения из `ConnectionStrings` файл раздел конфигурации, такие как [Entity Framework](https://msdn.microsoft.com/library/aa937723(v=vs.113).aspx). Строки подключения, содержащиеся в этом объекте, добавляются в среду с типом поставщика [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient(v=vs.110).aspx). Элементы этой коллекции не публикуются в Azure с другими параметрами приложения. Необходимо явным образом добавить эти значения для `Connection strings` коллекцию параметрах приложения-функции. Если вы создаете [ `SqlConnection` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(v=vs.110).aspx) в коде функции следует хранить значение строки подключения в **параметры приложения** на портале с другими подключениями. |
+По умолчанию эти параметры не переносятся автоматически при публикации проекта в Azure. [При публикации](#publish) используйте параметр `--publish-local-settings`, чтобы добавить эти параметры в приложение-функцию в Azure. Обратите внимание, что значения **ConnectionStrings** никогда не публикуются.
 
 Эти значения параметров приложения-функции также могут считываться в коде как переменные среды. Дополнительные сведения см. в разделе о переменных среды в этих справочниках для определенного языка:
 
 * [Предкомпилированный код C#](functions-dotnet-class-library.md#environment-variables)
 * [Скрипт C# (CSX)](functions-reference-csharp.md#environment-variables)
-* [Скрипт F# (FSX)](functions-reference-fsharp.md#environment-variables)
 * [Java](functions-reference-java.md#environment-variables)
 * [JavaScript](functions-reference-node.md#environment-variables)
 
@@ -439,7 +407,7 @@ func azure functionapp publish <FunctionAppName>
 
 | Параметр     | Описание                            |
 | ------------ | -------------------------------------- |
-| **`--publish-local-settings -i`** |  Публикация параметров из файла local.settings.json в Azure с запросом на перезапись, если параметр уже существует. Если используется эмулятор хранилища, измените параметр приложения на [подключение действующего хранилища](#get-your-storage-connection-strings). |
+| **`--publish-local-settings -i`** |  Публикация параметров из файла local.settings.json в Azure с запросом на перезапись, если параметр уже существует. Если вы используете эмулятор хранения, сначала измените значение параметра приложения на [подключение фактического хранения](#get-your-storage-connection-strings). |
 | **`--overwrite-settings -y`** | Отключите запрос на перезапись параметров приложения при использовании `--publish-local-settings -i`.|
 
 Следующие параметры публикации поддерживаются только в версии 2.x:
@@ -495,6 +463,6 @@ func deploy
 [Основные инструменты службы "Функции Azure"]: https://www.npmjs.com/package/azure-functions-core-tools
 [портале Azure]: https://portal.azure.com 
 [Node.js]: https://docs.npmjs.com/getting-started/installing-node#osx-or-windows
-[«FUNCTIONS_WORKER_RUNTIME»]: functions-app-settings.md#functions_worker_runtime
+[`FUNCTIONS_WORKER_RUNTIME`]: functions-app-settings.md#functions_worker_runtime
 [«AzureWebJobsStorage»]: functions-app-settings.md#azurewebjobsstorage
-[пакеты расширения]: functions-bindings-register.md#local-development-with-azure-functions-core-tools-and-extension-bundles
+[пакеты расширения]: functions-bindings-register.md#extension-bundles

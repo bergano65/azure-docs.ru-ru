@@ -4,14 +4,14 @@ description: В этой статье описывается, как с помо
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 05/14/2019
+ms.date: 07/01/2019
 ms.author: tomfitz
-ms.openlocfilehash: 1ff098bf329979d0702c41f83d8e5f8ee7cceca1
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 8a53ed1eea66c976c46a21378a9c48a1ad5ce902
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67206549"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508205"
 ---
 # <a name="azure-resource-manager-deployment-modes"></a>Режимы развертывания в Azure Resource Manager
 
@@ -22,6 +22,8 @@ ms.locfileid: "67206549"
 ## <a name="complete-mode"></a>Полный режим
 
 При использовании полного режима Resource Manager **удаляет** ресурсы, которые существуют в группе ресурсов, но не указаны в шаблоне. Ресурсы, указанные в шаблоне, но не развернутые, так как [условие](resource-group-authoring-templates.md#condition) принимает значение false, не будут удалены.
+
+Соблюдайте осторожность при использовании полного режима с [скопируйте циклы](resource-group-create-multiple.md). Будут удалены все ресурсы, которые не определены в шаблоне после устранения цикла копирования.
 
 Существуют некоторые различия в порядок типов ресурсов обработки полный режим удаления. Родительские ресурсы автоматически удаляются, если находятся не на шаблоне, который развертывается в полном режиме. Некоторые дочерние ресурсы не удаляются автоматически, если находятся вне шаблона. Тем не менее эти дочерние ресурсы будут удалены при удалении родительского ресурса. 
 

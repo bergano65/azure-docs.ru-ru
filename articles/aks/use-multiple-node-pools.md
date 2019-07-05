@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/17/2019
 ms.author: iainfou
-ms.openlocfilehash: 679d91da774b3e4d2c53c70cdc0abfd4da9c6953
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 48fdb251fa0302c2755281644a804c74ae80a63e
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67059632"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67491543"
 ---
 # <a name="preview---create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Предварительный просмотр - Создание и управление несколькими пулами узла для кластера в службе Azure Kubernetes (AKS)
 
@@ -32,18 +32,22 @@ ms.locfileid: "67059632"
 
 ### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки aks-preview
 
-Команды CLI для создания и управления несколькими пулы узлов доступны в *предварительной версии aks* расширение интерфейса командной строки. Установка *предварительной версии aks* расширение Azure CLI с помощью [добавить расширения az] [ az-extension-add] команды, как показано в следующем примере:
+Чтобы использовать несколько nodepools, необходимо сначала *предварительной версии aks* CLI версия расширения 0.4.1 или более поздней версии. Установка *предварительной версии aks* расширение Azure CLI с помощью [добавить расширения az][az-extension-add] command, then check for any available updates using the [az extension update][az-extension-update] команда::
 
 ```azurecli-interactive
+# Install the aks-preview extension
 az extension add --name aks-preview
-```
 
-> [!NOTE]
-> Если вы ранее установили *предварительной версии aks* расширения, устанавливать доступные обновления с помощью `az extension update --name aks-preview` команды.
+# Update the extension to make sure you have the latest version installed
+az extension update --name aks-preview
+```
 
 ### <a name="register-multiple-node-pool-feature-provider"></a>Регистрация поставщика функции пула несколько узла
 
-Чтобы создать кластер AKS, можно использовать несколько пулов узлов, необходимо сначала включите двух флагов компонентов в вашей подписке. Кластеры с несколькими узлами пула использовать масштабируемый набор виртуальных машин (VMSS) для управления развертыванием и конфигурацию узлов Kubernetes. Зарегистрировать *MultiAgentpoolPreview* и *VMSSPreview* флаги компонентов с помощью [az функция register] [ az-feature-register] команды, как показано на Следующий пример:
+Чтобы создать кластер AKS, можно использовать несколько пулов узлов, необходимо сначала включите двух флагов компонентов в вашей подписке. Кластеры с несколькими узлами пула использовать масштабируемый набор виртуальных машин (VMSS) для управления развертыванием и конфигурацию узлов Kubernetes. Зарегистрировать *MultiAgentpoolPreview* и *VMSSPreview* флаги компонентов с помощью [az функция register][az-feature-register] команды, как показано в следующем примере:
+
+> [!CAUTION]
+> При регистрации компонента для подписки, вы не можете сейчас отменить регистрацию этой функции. После включения некоторые возможности предварительной версии, можно использовать значения по умолчанию для всех кластеров AKS, затем создается в подписке. Не включайте функции предварительной версии на рабочие подписки. Используйте отдельную подписку для тестирования функции предварительной версии и собирайте отзывы.
 
 ```azurecli-interactive
 az feature register --name MultiAgentpoolPreview --namespace Microsoft.ContainerService
@@ -53,14 +57,14 @@ az feature register --name VMSSPreview --namespace Microsoft.ContainerService
 > [!NOTE]
 > Создается после успешной регистрации кластера AKS *MultiAgentpoolPreview* использования этой предварительной версии кластера. Чтобы продолжить создавать кластеры обычный, полностью поддерживаются, не включите функции предварительной версии на рабочие подписки. Используйте отдельный тестовый или разработка подписки Azure для тестирования функции предварительной версии.
 
-Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Состояние регистрации можно проверить с помощью команды [az feature list][az-feature-list].
+Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Вы можете проверить состояние регистрации с помощью [список функций az][az-feature-list] команды:
 
 ```azurecli-interactive
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/MultiAgentpoolPreview')].{Name:name,State:properties.state}"
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/VMSSPreview')].{Name:name,State:properties.state}"
 ```
 
-Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft.ContainerService* с помощью команды [az provider register][az-provider-register].
+Когда все будет готово, обновить регистрацию *Microsoft.ContainerService* поставщик ресурсов с помощью [az provider register][az-provider-register] команды:
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerService
@@ -74,16 +78,16 @@ az provider register --namespace Microsoft.ContainerService
 * Невозможно удалить пул первый узел.
 * Нельзя использовать надстройку маршрутизации HTTP приложения.
 * Вы не можете пулы Добавление, обновление и удаление узлов, используя существующий шаблон Resource Manager, как и большинство операций. Вместо этого [использовать отдельный шаблон Resource Manager](#manage-node-pools-using-a-resource-manager-template) вносить изменения в пулы узлов в кластере AKS.
-* Нельзя использовать автомасштабирования кластера (в настоящее время в предварительной версии в AKS).
 
 Пока эта функция находится на этапе предварительной версии, применяются следующие дополнительные ограничения.
 
 * Кластер AKS может иметь не более восьми пулов узлов.
 * Кластер AKS может иметь не более 400 узлов в пулах этих восьми узлов.
+* Все пулы узлов должны находиться в той же подсети
 
 ## <a name="create-an-aks-cluster"></a>Создание кластера AKS
 
-Чтобы приступить к работе, создайте кластер AKS на одном узле пула. В следующем примере используется [Создание группы az] [ az-group-create] команду, чтобы создать группу ресурсов с именем *myResourceGroup* в *eastus* регион. Кластер службы контейнеров AZURE с именем *myAKSCluster* создается с помощью [создать az aks] [ az-aks-create] команды. Объект *версия--kubernetes* из *1.12.6* позволяет увидеть, как обновить пул узлов на следующем шаге. Можно указать любой [поддерживаемая версия Kubernetes][supported-versions].
+Чтобы приступить к работе, создайте кластер AKS на одном узле пула. В следующем примере используется [Создание группы az][az-group-create] команду, чтобы создать группу ресурсов с именем *myResourceGroup* в *eastus* регион. Кластер службы контейнеров AZURE с именем *myAKSCluster* создается с помощью [создать az aks][az-aks-create] команды. Объект *версия--kubernetes* из *1.12.6* позволяет увидеть, как обновить пул узлов на следующем шаге. Можно указать любой [поддерживаемая версия Kubernetes][supported-versions].
 
 ```azurecli-interactive
 # Create a resource group in East US
@@ -101,7 +105,7 @@ az aks create \
 
 Создание кластера занимает несколько минут.
 
-Когда кластер будет готов, используйте [az aks get-credentials] [ az-aks-get-credentials] команду, чтобы получить учетные данные кластера для использования с `kubectl`:
+Когда кластер будет готов, используйте [az aks get-credentials][az-aks-get-credentials] команду, чтобы получить учетные данные кластера для использования с `kubectl`:
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
@@ -109,7 +113,7 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 
 ## <a name="add-a-node-pool"></a>Добавьте пул узлов
 
-Кластере, созданном на предыдущем шаге есть пул один узел. Давайте добавим второй узел пула при помощи [az aks узлов в пуле добавьте] [ az-aks-nodepool-add] команды. В следующем примере создается пул узлов с именем *mynodepool* , которое будет выполняться *3* узлов:
+Кластере, созданном на предыдущем шаге есть пул один узел. Давайте добавим второй узел пула при помощи [az aks узлов в пуле добавьте][az-aks-nodepool-add] команды. В следующем примере создается пул узлов с именем *mynodepool* , которое будет выполняться *3* узлов:
 
 ```azurecli-interactive
 az aks nodepool add \
@@ -119,7 +123,7 @@ az aks nodepool add \
     --node-count 3
 ```
 
-Чтобы просмотреть состояние пулов узла, используйте [список пула узлов az aks] [ az-aks-nodepool-list] команду и укажите имя группы и кластером ресурса:
+Чтобы просмотреть состояние пулов узла, используйте [список пула узлов az aks][az-aks-nodepool-list] команду и укажите имя группы и кластером ресурса:
 
 ```azurecli-interactive
 az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSCluster -o table
@@ -141,7 +145,7 @@ VirtualMachineScaleSets  1        110        nodepool1   1.12.6                 
 
 ## <a name="upgrade-a-node-pool"></a>Обновить пул узлов
 
-При создании кластера AKS на первом шаге, `--kubernetes-version` из *1.12.6* был указан. Выполним обновление *mynodepool* в Kubernetes *1.12.7*. Используйте [обновления пула узел az aks] [ az-aks-nodepool-upgrade] команду, чтобы обновить пуле узла, как показано в следующем примере:
+При создании кластера AKS на первом шаге, `--kubernetes-version` из *1.12.6* был указан. Выполним обновление *mynodepool* в Kubernetes *1.12.7*. Используйте [обновления пула узел az aks][az-aks-nodepool-upgrade] команду, чтобы обновить пуле узла, как показано в следующем примере:
 
 ```azurecli-interactive
 az aks nodepool upgrade \
@@ -152,7 +156,7 @@ az aks nodepool upgrade \
     --no-wait
 ```
 
-Список состояний пулов узел снова, используя [список пула узлов az aks] [ az-aks-nodepool-list] команды. В следующем примере показано, что *mynodepool* в *обновление* состояние *1.12.7*:
+Список состояний пулов узел снова, используя [список пула узлов az aks][az-aks-nodepool-list] команды. В следующем примере показано, что *mynodepool* в *обновление* состояние *1.12.7*:
 
 ```console
 $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster -o table
@@ -173,7 +177,7 @@ VirtualMachineScaleSets  1        110        nodepool1   1.12.6                 
 
 <!--If you scale down, nodes are carefully [cordoned and drained][kubernetes-drain] to minimize disruption to running applications.-->
 
-Чтобы увеличить количество узлов в пуле узлов, используйте [az aks узел пула масштабирования] [ az-aks-nodepool-scale] команды. В следующем примере масштабируется количество узлов в *mynodepool* для *5*:
+Чтобы увеличить количество узлов в пуле узлов, используйте [az aks узел пула масштабирования][az-aks-nodepool-scale] команды. В следующем примере масштабируется количество узлов в *mynodepool* для *5*:
 
 ```azurecli-interactive
 az aks nodepool scale \
@@ -184,7 +188,7 @@ az aks nodepool scale \
     --no-wait
 ```
 
-Список состояний пулов узел снова, используя [список пула узлов az aks] [ az-aks-nodepool-list] команды. В следующем примере показано, что *mynodepool* в *масштабирование* состояния с новый счетчик для *5* узлов:
+Список состояний пулов узел снова, используя [список пула узлов az aks][az-aks-nodepool-list] команды. В следующем примере показано, что *mynodepool* в *масштабирование* состояния с новый счетчик для *5* узлов:
 
 ```console
 $ az aks nodepool list -g myResourceGroupPools --cluster-name myAKSCluster -o table
@@ -199,7 +203,7 @@ VirtualMachineScaleSets  1        110        nodepool1   1.12.6                 
 
 ## <a name="delete-a-node-pool"></a>Удаление пула узла
 
-Если больше не требуется пул, можно удалить его и удалите базовые узлы виртуальной Машины. Чтобы удалить пул узлов, используйте [удаления пула узел az aks] [ az-aks-nodepool-delete] команду и укажите имя группы узлов. В следующем примере удаляется *mynoodepool* созданные на предыдущих шагах:
+Если больше не требуется пул, можно удалить его и удалите базовые узлы виртуальной Машины. Чтобы удалить пул узлов, используйте [удаления пула узел az aks][az-aks-nodepool-delete] команду и укажите имя группы узлов. В следующем примере удаляется *mynoodepool* созданные на предыдущих шагах:
 
 > [!CAUTION]
 > Существуют варианты восстановления без потери данных, которая возникает при удалении пул узлов. Если модули не могут быть запланированы на другие пулы узлов, эти приложения будут недоступны. Убедитесь, что когда резервные копии данных или возможность запускать на другие пулы узлов в кластере отсутствуют в использовании приложений, не удаляйте пул узлов.
@@ -208,7 +212,7 @@ VirtualMachineScaleSets  1        110        nodepool1   1.12.6                 
 az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster --name mynodepool --no-wait
 ```
 
-В следующем примере выходных данных из [список пула узлов az aks] [ az-aks-nodepool-list] команда отображает, *mynodepool* в *удаление* состояния:
+В следующем примере выходных данных из [список пула узлов az aks][az-aks-nodepool-list] команда отображает, *mynodepool* в *удаление* состояния:
 
 ```console
 $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster -o table
@@ -227,7 +231,7 @@ VirtualMachineScaleSets  1        110        nodepool1   1.12.6                 
 
 В следующем примере, создайте пул узлов на основе графического Процессора, использующий *Standard_NC6* размер виртуальной Машины. Эти виртуальные машины на базе карты NVIDIA Tesla K80. Сведения о доступных размерах виртуальных Машин, см. в разделе [размеры виртуальных машин Linux в Azure][vm-sizes].
 
-Создание пула узла с помощью [az aks узлов в пуле добавьте] [ az-aks-nodepool-add] еще раз выполните команду. На этот раз укажите имя *gpunodepool*и использовать `--node-vm-size` параметр для указания *Standard_NC6* размер:
+Создание пула узла с помощью [az aks узлов в пуле добавьте][az-aks-nodepool-add] еще раз выполните команду. На этот раз укажите имя *gpunodepool*и использовать `--node-vm-size` параметр для указания *Standard_NC6* размер:
 
 ```azurecli-interactive
 az aks nodepool add \
@@ -239,7 +243,7 @@ az aks nodepool add \
     --no-wait
 ```
 
-В следующем примере выходных данных из [список пула узлов az aks] [ az-aks-nodepool-list] команда отображает, *gpunodepool* — *создание* узлов с указанный *VmSize*:
+В следующем примере выходных данных из [список пула узлов az aks][az-aks-nodepool-list] команда отображает, *gpunodepool* — *создание* узлы с заданным *VmSize*:
 
 ```console
 $ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster -o table
@@ -254,7 +258,7 @@ VirtualMachineScaleSets  1        110        nodepool1    1.12.6                
 
 ## <a name="schedule-pods-using-taints-and-tolerations"></a>Расписание модулей с помощью taints и tolerations
 
-Теперь у вас есть два пулы узлов в кластере — изначально создан пул узла по умолчанию и пула на основе графического Процессора узла. Используйте [kubectl получить узлы] [ kubectl-get] команду, чтобы просмотреть узлы в кластере. В следующем примере выходных данных показан один узел в каждом пуле узла:
+Теперь у вас есть два пулы узлов в кластере — изначально создан пул узла по умолчанию и пула на основе графического Процессора узла. Используйте [kubectl получить узлы][kubectl-get] команду, чтобы просмотреть узлы в кластере. В следующем примере выходных данных показан один узел в каждом пуле узла:
 
 ```console
 $ kubectl get nodes
@@ -271,7 +275,7 @@ aks-nodepool1-28993262-vmss000000    Ready    agent   115m    v1.12.6
 
 Дополнительные сведения об использовании расширенных Kubernetes запланированные функции, см. в разделе [советы и рекомендации для возможности расширенной планировщика в AKS][taints-tolerations]
 
-В этом примере применяются нарушить проверку на основе графического Процессора узла с помощью [kubectl нарушить проверку узла] [ kubectl-taint] команды. Укажите имя узла на основе графического Процессора из выходных данных предыдущей `kubectl get nodes` команды. Нарушить проверку будет применяться в качестве *ключ: значение* и затем режим планирования. В следующем примере используется *sku = gpu* пары, а также определяет модулей имеющими *NoSchedule* возможности:
+В этом примере применяются нарушить проверку на основе графического Процессора узла с помощью [kubectl нарушить проверку узла][kubectl-taint] команды. Укажите имя узла на основе графического Процессора из выходных данных предыдущей `kubectl get nodes` команды. Нарушить проверку будет применяться в качестве *ключ: значение* и затем режим планирования. В следующем примере используется *sku = gpu* пары, а также определяет модулей имеющими *NoSchedule* возможности:
 
 ```console
 kubectl taint node aks-gpunodepool-28993262-vmss000000 sku=gpu:NoSchedule
@@ -310,7 +314,7 @@ spec:
 kubectl apply -f gpu-toleration.yaml
 ```
 
-Занимает несколько секунд, чтобы запланировать модуль и образ NGINX. Используйте [pod описания kubectl] [ kubectl-describe] команду, чтобы просмотреть состояние pod. Следующем сокращенном примере выходных данных будет указано *sku = gpu:NoSchedule* toleration применяется. В разделе «события» планировщик назначил pod для *aks-gpunodepool-28993262-vmss000000* узел на основе графического Процессора:
+Занимает несколько секунд, чтобы запланировать модуль и образ NGINX. Используйте [pod описания kubectl][kubectl-describe] команду, чтобы просмотреть состояние pod. Следующем сокращенном примере выходных данных будет указано *sku = gpu:NoSchedule* toleration применяется. В разделе «события» планировщик назначил pod для *aks-gpunodepool-28993262-vmss000000* узел на основе графического Процессора:
 
 ```console
 $ kubectl describe pod mypod
@@ -410,7 +414,7 @@ Events:
 }
 ```
 
-Разверните этот шаблон с использованием [Создание развертывания группы az] [ az-group-deployment-create] команды, как показано в следующем примере. Вам будет предложено на существующие имя кластера AKS и расположение:
+Разверните этот шаблон с использованием [Создание развертывания группы az][az-group-deployment-create] команды, как показано в следующем примере. Вам будет предложено на существующие имя кластера AKS и расположение:
 
 ```azurecli-interactive
 az group deployment create \
@@ -424,13 +428,13 @@ az group deployment create \
 
 В этой статье вы создали кластер AKS, который включает в себя узлы, на основе графического Процессора. Чтобы уменьшить излишних затрат, может потребоваться удалить *gpunodepool*, или весь кластер AKS.
 
-Чтобы удалить пул на основе графического Процессора узла, используйте [удалить az aks nodepool] [ az-aks-nodepool-delete] команды, как показано в следующем примере:
+Чтобы удалить пул на основе графического Процессора узла, используйте [удалить az aks nodepool][az-aks-nodepool-delete] команды, как показано в следующем примере:
 
 ```azurecli-interactive
 az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster --name gpunodepool
 ```
 
-Чтобы удалить сам кластер, используйте [удаление группы az] [ az-group-delete] команду, чтобы удалить группу ресурсов AKS:
+Чтобы удалить сам кластер, используйте [удаление группы az][az-group-delete] команду, чтобы удалить группу ресурсов AKS:
 
 ```azurecli-interactive
 az group delete --name myResourceGroup --yes --no-wait
@@ -473,3 +477,5 @@ az group delete --name myResourceGroup --yes --no-wait
 [az-group-deployment-create]: /cli/azure/group/deployment#az-group-deployment-create
 [aks-support-policies]: support-policies.md
 [aks-faq]: faq.md
+[az-extension-add]: /cli/azure/extension#az-extension-add
+[az-extension-update]: /cli/azure/extension#az-extension-update

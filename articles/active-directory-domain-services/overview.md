@@ -3,7 +3,7 @@ title: Обзор доменных служб Azure Active Directory | Доку�
 description: Обзор доменных служб Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
-author: MikeStephens-MS
+author: iainfoulds
 manager: daveba
 editor: curtand
 ms.assetid: 0d47178f-773e-45f9-9ff4-9e8cffa4ffa2
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/20/2019
-ms.author: mstephen
-ms.openlocfilehash: 4435407737508132fcf9f2ce6148650399e5316b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: iainfou
+ms.openlocfilehash: e29936915f0cd0b7e7ae7adfdbdb90d31195cd34
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66246934"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67472752"
 ---
 # <a name="azure-active-directory-ad-domain-services"></a>Доменные службы Azure Active Directory (AD)
 ## <a name="overview"></a>Обзор

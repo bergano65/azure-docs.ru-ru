@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 06/07/2019
 ms.author: juliako
-ms.openlocfilehash: aa4e37e3b360727feb998ef5e9ca9b776c4b0e53
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: b3e772ebb05f79abb70e58e63a93c3336a413e38
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67303944"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67542549"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -84,7 +84,7 @@ ms.locfileid: "67303944"
 
 ## <a name="march-2019"></a>Марта 2019 г.
 
-Динамическая упаковка теперь поддерживает Dolby Atmos. Дополнительные сведения см. в разделе [аудиокодеки поддерживаются динамической упаковкой](dynamic-packaging-overview.md#audio-codecs-supported-by-dynamic-packaging).
+Динамическая упаковка теперь поддерживает Dolby Atmos. Дополнительные сведения см. в разделе [аудиокодеки поддерживаются динамической упаковкой](dynamic-packaging-overview.md#audio-codecs).
 
 Теперь можно указать список фильтров активов или учетной записи, которые относятся к вашей указатель потоковой передачи. Дополнительные сведения см. в разделе [связать фильтры с указатель потоковой передачи](filters-concept.md#associating-filters-with-streaming-locator).
 

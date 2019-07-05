@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/21/2018
 ms.author: rkarlin
-ms.openlocfilehash: 7ffb9684045031c5bca7a79a15db7cb16fc99e9b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: af7896ec4afaeefda7261542bf593a89a7bb9ae8
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60332403"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551787"
 ---
 # <a name="ueba-for-azure-resources-and-users"></a>Аналитика поведения пользователей и сущностей для ресурсов и пользователей Azure 
 
@@ -55,8 +55,8 @@ ms.locfileid: "60332403"
 
 Эти оповещения включены по умолчанию, но их можно отключить.
 
-1. В колонке "Центр безопасности" выберите **Политика безопасности**. Для подписки, которую нужно изменить, выберите **Изменить параметры**.
-2.  Щелкните **Обнаружение угроз**.
+1. В колонке центра безопасности выберите **цен & Параметры** и выберите подписку, применимо.
+2. Щелкните **Обнаружение угроз**.
 3. В разделе **Enable integrations** (Включить интеграцию) снимите флажок **Allow Microsoft Cloud App Security to access my data** (Разрешить Microsoft Cloud App Security доступ к моим данным) и щелкните **Сохранить**.
 
    ![оповещение об обнаружении угроз](./media/security-center-ueba-mcas/security-center-mcas-optout.png)

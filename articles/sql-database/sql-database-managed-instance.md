@@ -11,13 +11,13 @@ author: bonova
 ms.author: bonova
 ms.reviewer: sstein, carlrab, vanto
 manager: craigg
-ms.date: 04/16/2019
-ms.openlocfilehash: c09dd990bb377672cb34ebd73a5aa9e59bbc067f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 06/26/2019
+ms.openlocfilehash: b03f546b992bd9de6092dc0da8ef72aa69aa1da2
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67070397"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447787"
 ---
 # <a name="use-sql-database-advanced-data-security-with-virtual-networks-and-near-100-compatibility"></a>Использование расширенной защиты данных Базы данных SQL с виртуальными сетями и почти полной совместимостью
 
@@ -81,6 +81,9 @@ ms.locfileid: "67070397"
 - **5-го поколения** логических ЦП основаны на процессорах Intel E5-2673 v4 (Broadwell) 2,3 ГГц, быстрый NVMe SSD, поддержкой технологии hyper threading логическое ядро и вычисления размеров от 4 до 80 ядер.
 
 Дополнительные сведения о различиях между поколениями оборудования приведены в разделе [Характеристики поколения оборудования](sql-database-managed-instance-resource-limits.md#hardware-generation-characteristics).
+
+> [!IMPORTANT]
+> Новые 4-го поколения базы данных больше не поддерживаются в регионе, AustraliaEast.
 
 ## <a name="managed-instance-service-tiers"></a>Уровни служб управляемого экземпляра
 

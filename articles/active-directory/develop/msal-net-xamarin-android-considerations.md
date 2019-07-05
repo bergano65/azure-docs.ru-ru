@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cb0cfb06e95cadbb549f669e5d59bdb0d795c896
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 357c83cfd0ae3fed8b13419e72f50fcb90c04186
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65545853"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67550657"
 ---
 # <a name="xamarin-android-specific-considerations-with-msalnet"></a>Рекомендации по относящихся к Xamarin Android с помощью MSAL.NET
 В этой статье рассматриваются специальные рекомендации, при использовании Xamarin Android с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).
@@ -97,7 +97,7 @@ var authResult = AcquireTokenInteractive(scopes)
 
 ### <a name="error-the-name-authenticationcontinuationhelper-does-not-exist-in-the-current-context"></a>Ошибка: Имя «AuthenticationContinuationHelper» не существует в текущем контексте
 
-Это, вероятно, так как Visual Studio не удалось правильно обновить файл Android.csproj*. Иногда **<HintPath>** filepath неправильно содержит netstandard13 вместо **monoandroid90**.
+Это, вероятно, так как Visual Studio не удалось правильно обновить файл Android.csproj*. Иногда  **\<HintPath >** filepath неправильно содержит netstandard13 вместо **monoandroid90**.
 
 ```xml
 <Reference Include="Microsoft.Identity.Client, Version=3.0.4.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae,

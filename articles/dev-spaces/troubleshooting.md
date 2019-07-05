@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: e0379bbc7f26ea30f65c5eac73633ca0371aa283
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: 651ae9d9f9a622724e1ee606219ba940995aa555
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67331307"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67441741"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -423,3 +423,19 @@ Azure Dev пробелы не удалось создать контроллер
 
 ### <a name="try"></a>Попытка
 [Обновите конфигурацию нарушить проверку](../aks/operator-best-practices-advanced-scheduler.md#provide-dedicated-nodes-using-taints-and-tolerations) в кластере AKS, чтобы обеспечить по крайней мере один Linux узла позволяет для планирования без указания tolerations модулей POD. Кроме того, убедитесь, что по крайней мере один узел Linux, который обеспечивает планирование модулей без указания tolerations в *готовы* состояния. Если вашего узла занимает много времени для достижения *готовы* state, попробуйте перезапустить вашего узла.
+
+## <a name="error-azure-dev-spaces-cli-not-installed-properly-when-running-az-aks-use-dev-spaces"></a>Ошибка «Azure Dev пробелов CLI не установлен должным образом, при запуске `az aks use-dev-spaces`
+
+### <a name="reason"></a>`Reason`
+Обновление интерфейса командной строки Azure Dev пробелы изменить пути установки. Если вы используете версию Azure CLI в более ранних, чем 2.0.63, может появиться Данная ошибка. Чтобы просмотреть версию Azure CLI, используйте `az --version`.
+
+```bash
+$ az --version
+azure-cli                         2.0.60 *
+...
+```
+
+Несмотря на сообщение об ошибке при выполнении `az aks use-dev-spaces` с версией перед 2.0.63 Azure CLI, установка выполнена успешно. Вы можете продолжать использовать `azds` без проблем.
+
+### <a name="try"></a>Попытка
+Обновление вашей установки [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) 2.0.63 или более поздней версии. Эта проблема разрешится сообщение об ошибке появляется при выполнении `az aks use-dev-spaces`. Кроме того можно продолжать использовать текущую версию Azure CLI и Azure CLI пробелы разработки.

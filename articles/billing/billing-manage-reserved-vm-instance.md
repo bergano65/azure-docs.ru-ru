@@ -1,23 +1,21 @@
 ---
-title: Управление резервированиями Azure | Документация Майкрософт
+title: Управление Azure резервирования
 description: Узнайте, как изменять область подписки и управлять доступом к резервированиям в Azure.
 ms.service: billing
-documentationcenter: ''
-author: yashesvi
+author: bandersmsft
 manager: yashesvi
-editor: ''
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/13/2019
+ms.date: 07/01/2019
 ms.author: banders
-ms.openlocfilehash: 9a5b200ffb9441b90875c7764786004ff5f1e8a1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 89279387b3630ea654070eef671f131ec757d55f
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66127140"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67491182"
 ---
 # <a name="manage-reservations-for-azure-resources"></a>Управление резервированиями для ресурсов Azure
 
@@ -54,7 +52,7 @@ ms.locfileid: "66127140"
 
 Если общую область изменить на отдельную область, то можно будет выбрать только подписку, владельцем которой вы являетесь. Можно выбрать только подписки в том же контексте выставления счетов, что и резервирование.
 
-Область применяется только к подпискам с оплатой по мере использования MS-AZR-0003P или MS-AZR-0023P, подпискам с Соглашением Enterprise MS-AZR-0017P или MS-AZR-0148P или подпискам CSP.
+Область применяется только к отдельные подписки с оплатой (предложений MS-AZR - 0003P или MS-AZR - 0023P), предложение Enterprise MS-AZR - 0017P "или" MS-AZR - 0148P "или" типы подписки CSP.
 
 ## <a name="add-or-change-users-who-can-manage-a-reservation"></a>Добавление или изменение пользователей, которые могут управлять резервированием
 

@@ -2,26 +2,21 @@
 title: Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory | Документация Майкрософт
 description: Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory .
 services: active-directory
-documentationcenter: ''
-author: MicrosoftGuyJFlo
-manager: daveba
-ms.assetid: cdc25576-37f2-4afb-a786-f59ba4c284c2
 ms.service: active-directory
 ms.subservice: devices
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 11/08/2017
+ms.topic: troubleshooting
+ms.date: 06/28/2019
 ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3671623312f0da00c8f6172a101529a5cd12be1b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dfb4b03fb57efecff587a91dfc2ad293be96d9ba
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67110545"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67481612"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-windows-10-and-windows-server-2016-devices"></a>Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory 
 
@@ -35,14 +30,10 @@ ms.locfileid: "67110545"
 В этой статье предполагается, что вы [настроили гибридное присоединение устройств к Azure Active Directory](hybrid-azuread-join-plan.md) для поддержки следующих сценариев:
 
 - Условный доступ на основе устройств
-
 - [Корпоративное перемещение параметров](../active-directory-windows-enterprise-state-roaming-overview.md)
-
 - [Настройка Windows Hello для бизнеса](../active-directory-azureadjoin-passport-deployment.md)
 
-
 Этот документ содержит рекомендации по устранению неполадок для устранения потенциальных проблем. 
-
 
 Для Windows 10 и Windows Server 2016 гибридное присоединение к Azure Active Directory поддерживает обновление Windows 10 от ноября 2015 г. Мы рекомендуем использовать юбилейное обновление.
 
@@ -53,8 +44,6 @@ ms.locfileid: "67110545"
 1. Запустите командную строку от имени администратора.
 
 2. Введите **dsregcmd/status**.
-
-
 
 ```
 +----------------------------------------------------------------------+
@@ -101,8 +90,6 @@ WamDefaultAuthority: organizations
          AzureAdPrt: YES
 ```
 
-
-
 ## <a name="step-2-evaluate-the-join-status"></a>Шаг 2. Анализ состояния присоединения 
 
 Просмотрите следующие поля и убедитесь, что для них заданы ожидаемые значения.
@@ -114,22 +101,14 @@ WamDefaultAuthority: organizations
 **Возможные причины:**
 
 - Произошла ошибка аутентификации для присоединения компьютера.
-
 - Компьютер не может обнаружить прокси-сервер HTTP в организации.
-
 - Компьютеру не удается получить доступ к Azure AD, чтобы пройти аутентификацию, или к Azure DRS, чтобы пройти регистрацию.
-
 - Компьютер может быть не подключен к внутренней сети организации или к VPN в пределах "прямой видимости" локального контроллера домена AD.
-
 - Доверенный платформенный модуль (TPM) на компьютере может быть неисправен.
-
 - Службы, упомянутые в документе выше, могут быть неправильно настроены. Это понадобится перепроверить. Ниже приведены распространенные примеры.
-
-    - На сервере федерации нет включенных конечных точек WS-Trust.
-
-    - На сервере федерации может быть запрещена входящая аутентификация компьютеров в сети с использованием встроенной проверки подлинности Windows.
-
-    - Нет объекта точки подключения службы, указывающего на имя проверенного домена в Azure AD в лесу AD, к которому относится компьютер.
+   - На сервере федерации нет включенных конечных точек WS-Trust.
+   - На сервере федерации может быть запрещена входящая аутентификация компьютеров в сети с использованием встроенной проверки подлинности Windows.
+   - Нет объекта точки подключения службы, указывающего на имя проверенного домена в Azure AD в лесу AD, к которому относится компьютер.
 
 ---
 
@@ -150,9 +129,7 @@ WamDefaultAuthority: organizations
 Эти поля показывают, прошел ли пользователь аутентификацию в Azure AD при входе в устройство. Если эти параметры имеют значение **NO**, то причины могут быть следующими:
 
 - С устройством при регистрации был связан недопустимый ключ к хранилищу данных в доверенном платформенном модуле (проверьте KeySignTest во время работы с повышенными привилегиями).
-
 - Наличие альтернативного имени пользователя.
-
 - Прокси-сервер HTTP не найден.
 
 ## <a name="next-steps"></a>Дальнейшие действия

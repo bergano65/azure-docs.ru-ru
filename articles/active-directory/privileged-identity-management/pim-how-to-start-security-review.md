@@ -14,12 +14,12 @@ ms.date: 04/27/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a0680ddf2c9e654455933bf09699ab81e8ab65d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e69bebfaeb28709b43ea74b7d33289426371a2bf
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65141706"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67476449"
 ---
 # <a name="create-an-access-review-of-azure-ad-roles-in-pim"></a>Создание проверки доступа Azure AD ролей в PIM
 
@@ -41,7 +41,7 @@ ms.locfileid: "65141706"
 
 1. В разделе Управление, выберите **проверок доступа**.
 
-    ![Проверки доступа Azure AD роли —](./media/pim-how-to-start-security-review/access-reviews.png)
+    ![Проверки доступа Azure AD роли — список, отображающий состояние всех проверок](./media/pim-how-to-start-security-review/access-reviews.png)
 
 
 [!INCLUDE [Privileged Identity Management access reviews](../../../includes/active-directory-privileged-identity-management-access-reviews.md)]
@@ -51,7 +51,7 @@ ms.locfileid: "65141706"
 
 Завершив настройку параметров для проверки доступа, щелкните **Запустить**. Проверки доступа будут отображаться в списке с индикатором, о его состоянии.
 
-![Список проверок доступа](./media/pim-how-to-start-security-review/access-reviews-list.png)
+![Список, отображающий состояние работы проверки проверки доступа](./media/pim-how-to-start-security-review/access-reviews-list.png)
 
 По умолчанию Azure AD отправляет электронные сообщения рецензентам вскоре после запуска проверки. Если вы выбрали не отправлять сообщения через службу Azure AD, обязательно сообщите рецензентам, что им необходимо выполнить проверку доступа. Вы можете показать им инструкции по [проверка доступа к роли Azure AD](pim-how-to-perform-security-review.md).
 
@@ -59,7 +59,7 @@ ms.locfileid: "65141706"
 
 Можно отслеживать ход выполнения проверяющими их проверок на **Обзор** страницу проверки доступа. Нет прав доступа, будут изменены в каталоге до [проверка завершается](pim-how-to-complete-review.md).
 
-![Ход выполнения проверки доступа](./media/pim-how-to-start-security-review/access-review-overview.png)
+![Отображение сведений о проверке страницу обзор проверки доступа](./media/pim-how-to-start-security-review/access-review-overview.png)
 
 Если это однократной проверки, после окончания периода проверки доступа или администратор остановил проверку, следуйте указаниям [завершение проверки доступа для ролей Azure AD](pim-how-to-complete-review.md) Чтобы просмотреть и применить результаты.  
 

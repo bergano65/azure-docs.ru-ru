@@ -6,14 +6,14 @@ manager: timlt
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 04/02/2018
+ms.date: 06/28/2019
 ms.author: wesmc
-ms.openlocfilehash: 49e0db690818e67f96f5bcefa4f581b1db6da451
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ea7b38f509fcdaa4e41ce17db3beca44b05a59b2
+ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64697336"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67514476"
 ---
 # <a name="choose-the-right-iot-hub-tier-for-your-solution"></a>Выбор правильного уровня Центра Интернета вещей для решения
 
@@ -46,7 +46,7 @@ ms.locfileid: "64697336"
 | [Передача сообщений из облака на устройство](iot-hub-devguide-c2d-guidance.md) |   | Да |
 | [Двойники устройств](iot-hub-devguide-device-twins.md), [двойники модулей](iot-hub-devguide-module-twins.md) и [управление устройствами](iot-hub-device-management-overview.md) |   | Да |
 | [Потоки устройств (предварительная версия)](iot-hub-device-streams-overview.md) |   | Да |
-| [Edge Интернета вещей Azure](../iot-edge/about-iot-edge.md) |   | Да |
+| [Azure IoT Edge](../iot-edge/about-iot-edge.md) |   | Да |
 
 Центр Интернета вещей также предлагает уровень "Бесплатный", который предназначен для тестирования и оценки. Он обладает всеми возможностями уровня "Стандартный", но ограничен квотами на сообщения. С уровня "Бесплатный" нельзя обновиться до уровня "Базовый" или "Стандартный".
 
@@ -62,6 +62,9 @@ ms.locfileid: "64697336"
 
 Конфигурация секции сохраняется при переходе с уровня "Базовый" на уровень "Стандартный".
 
+> [!NOTE]
+> Уровень "бесплатный" не поддерживает обновление до basic или standard.
+
 ## <a name="iot-hub-rest-apis"></a>Интерфейсы REST API для Центра Интернета вещей
 
 Разница в поддерживаемых возможностях между Центрами Интернета вещей уровня "Базовый" и "Стандартный" означает, что некоторые вызовы API не работают с концентраторами уровня "Базовый". В следующей таблице показаны доступные API:
@@ -70,26 +73,25 @@ ms.locfileid: "64697336"
 | --- | ---------- | ------------- |
 | [Удаление устройства](https://docs.microsoft.com/rest/api/iothub/service/deletedevice) | Да | Да |
 | [Получение устройства](https://docs.microsoft.com/rest/api/iothub/service/getdevice) | Да | Да |
-| Удаление модуля | Да | Да |
-| Получение модуля | Да | Да |
+| [Удалить модуль](https://docs.microsoft.com/rest/api/iothub/service/deletemodule) | Да | Да |
+| [Получение модуля](https://docs.microsoft.com/rest/api/iothub/service/getmodule) | Да | Да |
 | [Получение статистики реестра](https://docs.microsoft.com/rest/api/iothub/service/getdeviceregistrystatistics) | Да | Да |
 | [Получение статистики службы](https://docs.microsoft.com/rest/api/iothub/service/getservicestatistics) | Да | Да |
 | [Создание или обновление устройства](https://docs.microsoft.com/rest/api/iothub/service/createorupdatedevice) | Да | Да |
-| Отправка модуля | Да | Да |
+| [Создание или обновление модуля](https://docs.microsoft.com/rest/api/iothub/service/createorupdatemodule) | Да | Да |
 | [Отправка запроса в Центр Интернета вещей](https://docs.microsoft.com/rest/api/iothub/service/queryiothub) | Да | Да |
-| Запрос модулей | Да | Да |
 | [Создание URI SAS отправки файла](https://docs.microsoft.com/rest/api/iothub/device/createfileuploadsasuri) | Да | Да |
 | [Получение связанного с устройством уведомления](https://docs.microsoft.com/rest/api/iothub/device/receivedeviceboundnotification) | Да | Да |
 | [Отправка события устройства](https://docs.microsoft.com/rest/api/iothub/device/senddeviceevent) | Да | Да |
-| Отправка события модуля | Да | Да |
+| Отправка события модуля | AMQP и MQTT только | AMQP и MQTT только |
 | [Обновление состояния отправки устройства](https://docs.microsoft.com/rest/api/iothub/device/updatefileuploadstatus) | Да | Да |
-| [Массовые операции устройств](/rest/api/iot-dps/runbulkenrollmentgroupoperation/runbulkenrollmentgroupoperation) | Да, за исключением возможностей IoT Edge | Да | 
+| [Массовые операции устройств](https://docs.microsoft.com/rest/api/iothub/service/bulkcreateorupdatedevices) | Да, за исключением возможностей IoT Edge | Да |
 | [Очистка очереди команд](https://docs.microsoft.com/rest/api/iothub/service/purgecommandqueue) |   | Да |
 | [Получение двойника устройства](https://docs.microsoft.com/rest/api/iothub/service/gettwin) |   | Да |
-| Получение двойника модуля |   | Да |
+| [Получить двойник модуля](https://docs.microsoft.com/rest/api/iothub/service/getmoduletwin) |   | Да |
 | [Вызов метода устройства](https://docs.microsoft.com/rest/api/iothub/service/invokedevicemethod) |   | Да |
-| [Обновление двойников устройств](https://docs.microsoft.com/rest/api/iothub/service/updatetwin) |   | Да | 
-| Обновление двойника модуля |   | Да | 
+| [Обновление двойников устройств](https://docs.microsoft.com/rest/api/iothub/service/updatetwin) |   | Да |
+| [Обновить двойник модуля](https://docs.microsoft.com/rest/api/iothub/service/updatemoduletwin) |   | Да |
 | [Отказ от связанного с устройством уведомления](https://docs.microsoft.com/rest/api/iothub/device/abandondeviceboundnotification) |   | Да |
 | [Полное связанное с устройством уведомление](https://docs.microsoft.com/rest/api/iothub/device/completedeviceboundnotification) |   | Да |
 | [Отмена задания](https://docs.microsoft.com/rest/api/iothub/service/canceljob) |   | Да |

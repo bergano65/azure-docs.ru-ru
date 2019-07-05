@@ -1,7 +1,7 @@
 ---
 title: Развертывание модели для вывода с графическим Процессором
 titleSuffix: Azure Machine Learning service
-description: Узнайте, как развернуть модель глубокого обучения в качестве веб-службы, который использует графический Процессор для вывода. В этой статье модели Tensorflow развертывается в кластере Kubernetes службы Azure. Кластер использует виртуальные Машины с поддержкой GPU для размещения веб-службы и оценка вывод запросов.
+description: В этой статье объясняется, как использовать службы машинного обучения Azure для развертывания Tensorflow с поддержкой GPU для глубокого обучения модели в качестве web service.service и оценка вывод запросов.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,34 +9,36 @@ ms.topic: conceptual
 ms.author: vaidyas
 author: csteegz
 ms.reviewer: larryfr
-ms.date: 05/02/2019
-ms.openlocfilehash: 5f455d4f972153af934ab8966d0f1753fc55aa21
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.date: 06/01/2019
+ms.openlocfilehash: 8086d059913cc61bff0bca31681368bea6d76777
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205917"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67543800"
 ---
 # <a name="deploy-a-deep-learning-model-for-inference-with-gpu"></a>Развертывание модели глубокого обучения для вывода с графическим Процессором
 
-Узнайте, как использовать GPU определение для модели, развернутые как веб-службы машинного обучения. Определение или модель оценки, — это этап, где используется развернутой модели для прогнозирования, чаще всего для производственных данных.
+В этой статье объясняется, как использовать службы машинного обучения Azure для развертывания Tensorflow с поддержкой GPU для глубокого обучения модели как веб-службы.
 
-В этой статье объясняется, как использовать службы машинного обучения Azure для развертывания пример модели в кластер Azure Kubernetes Service (AKS) на с поддержкой GPU виртуальной машины (VM) глубокого обучения Tensorflow. При отправке запросов к службе, модель использует графический Процессор для выполнения рабочих нагрузок вывод.
+Разверните свою модель в кластер Azure Kubernetes Service (AKS) для выполнения с поддержкой GPU выводов. Выводов или оценки модели, — это этап, где используется развернутой модели для прогнозирования. Использование GPU вместо преимущества производительности ЦП предложения на высокий уровень параллелизма вычисления.
 
-Графические процессоры предоставляют преимущества в производительности перед ЦП на высокий уровень параллелизма вычисления. Отличная использования для виртуальных машин с поддержкой GPU включают в себя глубокого обучения модели обучения и вывода, особенно для больших пакетов запросов.
+Несмотря на то, что этот образец использует модель TensorFlow, можно применить следующие действия для машинного обучения. платформа с поддержкой графических процессоров путем внесения небольших изменений в файл оценки и файла среды. 
 
-В этом примере показано, как развернуть TensorFlow, сохранить модель машинного обучения Azure. Вам необходимо сделать следующее:
+Ниже перечислены действия, которые вы выполните в этой статье.
 
 * Создание кластера AKS с поддержкой GPU
 * Развертывание модели Tensorflow GPU
+* Выполните пример запроса к развернутой модели
 
 ## <a name="prerequisites"></a>Технические условия
 
-* В рабочей области службы машинного обучения Azure
-* Дистрибутив Python
-* Зарегистрированный Tensorflow сохранить модель. Дополнительные сведения о регистрации модели, см. в разделе [развертывание моделей](../service/how-to-deploy-and-where.md#registermodel).
+* В рабочей области машинного обучения Azure services.
+* Дистрибутив Python.
+* Зарегистрированный Tensorflow сохранить модель.
+    * Дополнительные сведения о регистрации модели, см. в разделе [развертывание моделей](../service/how-to-deploy-and-where.md#registermodel).
 
-Эта статья основана на записную книжку Jupyter, [развертывание модели Tensorflow в AKS](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/production-deploy-to-aks-gpu/production-deploy-to-aks-gpu.ipynb). Записная книжка Jupyter использует TensorFlow, сохранения моделей и развертывает их в кластер AKS. Можно также применить записной книжки для машинного обучения. платформа с поддержкой графических процессоров путем внесения небольших изменений в файл оценки и файла среды.  
+Можно выполнить первой части этого руководства по серии, [Практическое обучение модели TensorFlow](how-to-train-tensorflow.md), для выполнения необходимых условий.
 
 ## <a name="provision-an-aks-cluster-with-gpus"></a>Подготовка кластера AKS с графическими процессорами
 
@@ -44,16 +46,25 @@ Azure имеет целый ряд разных возможностей GPU. М
 
 Дополнительные сведения об использовании AKS с помощью службы машинного обучения Azure, см. в разделе [развертывание и где](../service/how-to-deploy-and-where.md#deploy-aks).
 
-```python
-# Provision AKS cluster with GPU machine
-prov_config = AksCompute.provisioning_configuration(vm_size="Standard_NC6")
+```Python
+# Choose a name for your cluster
+aks_name = "aks-gpu"
 
-# Create the cluster
-aks_target = ComputeTarget.create(
-    workspace=ws, name=aks_name, provisioning_configuration=prov_config
-)
+# Check to see if the cluster already exists
+try:
+    compute_target = ComputeTarget(workspace=ws, name=aks_name)
+    print('Found existing compute target')
+except ComputeTargetException:
+    print('Creating a new compute target...')
+    # Provision AKS cluster with GPU machine
+    prov_config = AksCompute.provisioning_configuration(vm_size="Standard_NC6")
 
-aks_target.wait_for_deployment()
+    # Create the cluster
+    aks_target = ComputeTarget.create(
+        workspace=ws, name=aks_name, provisioning_configuration=prov_config
+    )
+
+    aks_target.wait_for_completion(show_output=True)
 ```
 
 > [!IMPORTANT]
@@ -64,66 +75,49 @@ aks_target.wait_for_deployment()
 Сохраните следующий код в рабочий каталог как `score.py`. Этот файл оценки изображений, когда они отправляются в службу. Загружает модель TensorFlow сохранен, передает изображения к сеансу TensorFlow на каждый запрос POST и затем возвращает полученный оценки. Другие платформы выводов необходимы разные файлы оценки.
 
 ```python
-import tensorflow as tf
+import json
 import numpy as np
-import ujson
+import os
+import tensorflow as tf
+
 from azureml.core.model import Model
-from azureml.contrib.services.aml_request import AMLRequest, rawhttp
-from azureml.contrib.services.aml_response import AMLResponse
 
 def init():
-    global session
-    global input_name
-    global output_name
+    global X, output, sess
+    tf.reset_default_graph()
+    model_root = Model.get_model_path('tf-dnn-mnist')
+    saver = tf.train.import_meta_graph(os.path.join(model_root, 'mnist-tf.model.meta'))
+    X = tf.get_default_graph().get_tensor_by_name("network/X:0")
+    output = tf.get_default_graph().get_tensor_by_name("network/output/MatMul:0")
     
-    session = tf.Session()
+    sess = tf.Session()
+    saver.restore(sess, os.path.join(model_root, 'mnist-tf.model'))
 
-    model_path = Model.get_model_path('resnet50')
-    model = tf.saved_model.loader.load(session, ['serve'], model_path)
-    if len(model.signature_def['serving_default'].inputs) > 1:
-        raise ValueError("This score.py only supports one input")
-    input_name = [tensor.name for tensor in model.signature_def['serving_default'].inputs.values()][0]
-    output_name = [tensor.name for tensor in model.signature_def['serving_default'].outputs.values()]
-    
-
-@rawhttp
-def run(request):
-    if request.method == 'POST':
-        reqBody = request.get_data(False)
-        resp = score(reqBody)
-        return AMLResponse(resp, 200)
-    if request.method == 'GET':
-        respBody = str.encode("GET is not supported")
-        return AMLResponse(respBody, 405)
-    return AMLResponse("bad request", 500)
-
-def score(data):
-    result = session.run(output_name, {input_name: [data]})
-    return ujson.dumps(result[1])
-
-if __name__ == "__main__":
-    init()
-    with open("lynx.jpg", 'rb') as f: #load file for testing locally
-        content = f.read()
-        print(score(content))
+def run(raw_data):
+    data = np.array(json.loads(raw_data)['data'])
+    # make prediction
+    out = output.eval(session=sess, feed_dict={X: data})
+    y_hat = np.argmax(out, axis=1)
+    return y_hat.tolist()
 
 ```
-
 ## <a name="define-the-conda-environment"></a>Определите среду conda
 
 Создайте файл среды conda `myenv.yml` для определения зависимостей для вашей службы. Очень важно указать, что вы используете `tensorflow-gpu` для достижения улучшенную производительность.
 
 ```yaml
-name: aml-accel-perf
-channels:
-  - defaults
+name: project_environment
 dependencies:
-  - tensorflow-gpu = 1.12
-  - numpy
-  - ujson
-  - pip:
-    - azureml-core
-    - azureml-contrib-services
+  # The python interpreter version.
+  # Currently Azure ML only supports 3.5.2 and later.
+- python=3.6.2
+
+- pip:
+  - azureml-defaults==1.0.43.*
+- numpy
+- tensorflow-gpu=1.12
+channels:
+- conda-forge
 ```
 
 ## <a name="define-the-gpu-inferenceconfig-class"></a>Определите класс GPU InferenceConfig
@@ -134,12 +128,12 @@ dependencies:
 from azureml.core.model import Model
 from azureml.core.model import InferenceConfig
 
-aks_service_name ='gpu-rn'
+aks_service_name ='aks-dnn-mnist'
 gpu_aks_config = AksWebservice.deploy_configuration(autoscale_enabled = False, 
                                                     num_replicas = 3, 
                                                     cpu_cores=2, 
                                                     memory_gb=4)
-model = Model(ws,"resnet50")
+model = Model(ws,"tf-dnn-mnist")
 
 inference_config = InferenceConfig(runtime= "python", 
                                    entry_script="score.py",
@@ -173,18 +167,30 @@ print(aks_service.state)
 
 Дополнительные сведения см. в разделе [класс модели](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py).
 
-## <a name="issue-a-sample-query-to-your-deployed-model"></a>Выполните пример запроса к развернутой модели
+## <a name="issue-a-sample-query-to-your-model"></a>Выполним пример запрос к модели
 
-Отправка тестового запроса к развернутой модели. При отправке изображения в формате jpeg в модель, она оценивает изображение.
+Отправка тестового запроса к развернутой модели. При отправке изображения в формате jpeg в модель, она оценивает изображение. В следующем образце кода использует функции внешняя программа для загрузки изображений. Соответствующий код можно найти в pir [TensorFlow пример на GitHub](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-tensorflow/utils.py). 
 
 ```python
-scoring_url = aks_service.scoring_uri
-api_key = aks_service.get_key()(0)
-IMAGEURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Lynx_lynx_poing.jpg/220px-Lynx_lynx_poing.jpg"
+# Used to test your webservice
+from utils import load_data 
 
-headers = {'Authorization':('Bearer '+ api_key)}
-img_data = read_image_from(IMAGEURL).read()
-r = requests.post(scoring_url, data = img_data, headers=headers)
+# Load test data from model training
+X_test = load_data('./data/mnist/test-images.gz', False) / 255.0
+y_test = load_data('./data/mnist/test-labels.gz', True).reshape(-1)
+
+# send a random row from the test set to score
+random_index = np.random.randint(0, len(X_test)-1)
+input_data = "{\"data\": [" + str(list(X_test[random_index])) + "]}"
+
+api_key = aks_service.get_keys()[0]
+headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
+resp = requests.post(aks_service.scoring_uri, input_data, headers=headers)
+
+print("POST to url", aks_service.scoring_uri)
+#print("input data:", input_data)
+print("label:", y_test[random_index])
+print("prediction:", resp.text)
 ```
 
 > [!IMPORTANT]

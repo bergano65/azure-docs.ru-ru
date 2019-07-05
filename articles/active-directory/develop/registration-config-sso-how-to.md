@@ -1,5 +1,5 @@
 ---
-title: Настройка нового мультитенантного приложения | Документы Майкрософт
+title: Как настроить единый вход | Документация Майкрософт
 description: В этой статье описано, как настроить единый вход для пользовательского приложения, которое вы разрабатываете, и зарегистрировать это приложение в Azure AD.
 services: active-directory
 documentationcenter: ''
@@ -15,14 +15,14 @@ ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: ryanwi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83fae56dd0cf7157575b7c5a07e33ca1888d8560
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d151d4d7f32c479f2cfb4d71a8ed667f42e03b49
+ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65545459"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67465672"
 ---
-# <a name="how-to-configure-a-new-multi-tenant-application"></a>Настройка нового мультитенантного приложения
+# <a name="how-to-configure-single-sign-on-for-an-application"></a>Как настроить единый вход для приложения
 
 При настройке федерации с помощью Azure AD для OpenID Connect, SAML 2.0 или WS-Fed федеративный единый вход для вашего приложения включается автоматически. Если конечным пользователям приходится снова входить в систему несмотря на то, что сеанс Azure AD уже существует, возможно, приложение настроено неправильно.
 

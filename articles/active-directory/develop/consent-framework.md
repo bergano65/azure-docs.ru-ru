@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: zachowd, lenalepa, jesakowi
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2edbf5548f5e230986f0a1786d67fb4580e574e2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7b9d272c8a01eeed58278a6e7f0cec147b01a10e
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66235444"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67482940"
 ---
 # <a name="azure-active-directory-consent-framework"></a>Платформа предоставления согласия Azure Active Directory
 
@@ -50,7 +50,7 @@ ms.locfileid: "66235444"
 
 1. После входа Azure AD определяет, требуется ли отобразить этому пользователю страницу согласия. Принятие этого решения основано на том, дал ли этот пользователь (или администратор его организации) свое согласие для приложения. Если согласие еще не было дано, Azure AD запрашивает у пользователя согласие и отображает необходимые для этого разрешения. В диалоговом окне согласия отображается тот же набор разрешений, который совпадает с набором **Делегированные разрешения** на портале Azure.
 
-    ![Процедура использования согласия пользователей](./media/quickstart-v1-integrate-apps-with-azure-ad/consent.png)
+    ![Пример разрешений, отображаемых в диалоговом окне согласия](./media/quickstart-v1-integrate-apps-with-azure-ad/consent.png)
 
 1. После того как пользователь дает свое согласие, в ваше приложение возвращается код авторизации, который используется для получения токена доступа и токена обновления. Дополнительные сведения об этом потоке см. в статье о [типе приложения веб-API](web-api.md).
 

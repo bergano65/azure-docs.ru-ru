@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 07/23/2018
 ms.author: mbullwin
-ms.openlocfilehash: 3820a5d7becef275ed3408f01cc53ad8590ba60e
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 2966f90dcb381e439c00a6540ef9a01bd24f8743
+ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67272405"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67561186"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-net"></a>Устранение неполадок, связанных с тем, что в Application Insights для .NET не отображаются данные
 ## <a name="some-of-my-telemetry-is-missing"></a>Некоторая телеметрия отсутствует
@@ -28,13 +28,13 @@ ms.locfileid: "67272405"
 
 *У меня возникают потери данных случайным образом.*
 
-* Проверьте, если вы столкнулись с потерей данных на [канал телеметрии](telemetry-channels.md#does-applicationinsights-channel-offer-guaranteed-telemetry-delivery-or-what-are-the-scenarios-where-telemetry-can-be-lost)
+* Проверьте, если вы столкнулись с потерей данных на [канал телеметрии](telemetry-channels.md#does-the-application-insights-channel-guarantee-telemetry-delivery-if-not-what-are-the-scenarios-in-which-telemetry-can-be-lost)
 
 * Поиск известных проблемах в канал телеметрии [репозиторий Github](https://github.com/Microsoft/ApplicationInsights-dotnet/issues)
 
 *У меня возникают потери данных в консольном приложении или на веб-приложения, когда приложение собирается остановить.*
 
-* Пакет SDK для канала сохраняет данные телеметрии в буфер и отправляет их в пакеты. Если приложение завершает работу, может потребоваться явно вызывать [Flush()](api-custom-events-metrics.md#flushing-data). Поведение `Flush()` зависит от фактического [канал](telemetry-channels.md#built-in-telemetrychannels) используется.
+* Пакет SDK для канала сохраняет данные телеметрии в буфер и отправляет их в пакеты. Если приложение завершает работу, может потребоваться явно вызывать [Flush()](api-custom-events-metrics.md#flushing-data). Поведение `Flush()` зависит от фактического [канал](telemetry-channels.md#built-in-telemetry-channels) используется.
 
 ## <a name="no-data-from-my-server"></a>Нет данных с моего сервера
 *На моем веб-сервере установлено приложение, но данные телеметрии сервера не отображаются. На компьютере разработки все работало хорошо.*
@@ -215,7 +215,9 @@ ms.locfileid: "67272405"
 
 ### <a name="net-core"></a>.NET Core
 
-1. Установка [Microsoft.AspNetCore.ApplicationInsights.HostingStartup](https://www.nuget.org/packages/Microsoft.AspNetCore.ApplicationInsights.HostingStartup) пакет из NuGet. Устанавливаемая версия должна соответствовать текущей установленной версии `Microsoft.ApplicationInsights`
+1. Установите пакет [Microsoft.AspNet.ApplicationInsights.HostingStartup](https://www.nuget.org/packages/Microsoft.AspNet.ApplicationInsights.HostingStartup) из NuGet. Устанавливаемая версия должна соответствовать текущей установленной версии `Microsoft.ApplicationInsights`
+
+Последнюю версию Microsoft.ApplicationInsights.AspNetCore 2.7.1, и он относится к версии 2.10 Microsoft.ApplicationInsights. Таким образом версия Microsoft.AspNet.ApplicationInsights.HostingStartup для установки должна быть 2.10.0
 
 2. Изменить `ConfigureServices` метод в вашем `Startup.cs` классе:
 

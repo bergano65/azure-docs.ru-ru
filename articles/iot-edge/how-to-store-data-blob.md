@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: f70ca550f1688551abb94bb30ba4f76eb3c36404
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: dabaa06e224c6498c0080c4546c04f40e3919bb6
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67303964"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448537"
 ---
 # <a name="store-data-at-the-edge-with-azure-blob-storage-on-iot-edge-preview"></a>Хранение данных на границе с помощью хранилища BLOB-объектов Azure в IoT Edge (предварительная версия)
 
@@ -82,23 +82,24 @@ ms.locfileid: "67303964"
 
 Этот параметр называется `deviceToCloudUploadProperties`
 
-| Поле | Возможные значения | Объяснение |
-| ----- | ----- | ---- |
-| uploadOn | true, false | По умолчанию ему присваивается `false`, если вы хотите включить его на задайте для него значение `true`|
-| uploadOrder | NewestFirst, OldestFirst | Позволяет выбрать порядок, в котором данные копируются в Azure. По умолчанию ему присваивается `OldestFirst`. Порядок определяется время последнего изменения большого двоичного объекта |
-| cloudStorageConnectionString |  | `"DefaultEndpointsProtocol=https;AccountName=<your Azure Storage Account Name>;AccountKey=<your Azure Storage Account Key>;EndpointSuffix=<your end point suffix>"` строки подключения, которая позволяет указать учетную запись хранения Azure, к которому требуется, чтобы данные отправки. Укажите `Azure Storage Account Name`, `Azure Storage Account Key`, `End point suffix`. Добавьте соответствующие EndpointSuffix Azure где данные будут загружены, она меняется для глобальной платформы Azure, Azure для государственных организаций и Microsoft Azure Stack. |
-| storageContainersForUpload | `"<source container name1>": {"target": "<target container name>"}`,<br><br> `"<source container name1>": {"target": "%h-%d-%m-%c"}`, <br><br> `"<source container name1>": {"target": "%d-%c"}` | Позволяет указать имена контейнеров, который вы хотите отправить в Azure. Этот модуль позволяет указать исходные и целевые имена контейнеров. Если не указать имя целевого контейнера, он будет автоматически назначить имя контейнера как `<IoTHubName>-<IotEdgeDeviceID>-<ModuleName>-<SourceContainerName>`. Можно создавать строки шаблона для имени целевой контейнер, ознакомьтесь с возможными значениями столбца. <br>* %h "->" имя центра Интернета вещей (3 – 50 символов). <br>* %d "->" идентификатор устройства IoT Edge (от 1 до 129 символов). <br>* %m "->" имя модуля (от 1 до 64 символов). <br>* %c "->" имя исходного контейнера (от 3 до 63 символов). <br><br>Максимальный размер имени контейнера — 63 символа, при автоматически присвоении имя целевого контейнера, если размер контейнера больше, чем 63 символов, которые он удалит каждый раздел (IoTHubName, IotEdgeDeviceID, имя модуля, SourceContainerName) 15 символы. |
-| deleteAfterUpload | true, false | По умолчанию ему присваивается `false`. Когда он становится равным `true`, оно автоматически удалит данные после завершения отправки в Облачное хранилище |
+| Поле | Возможные значения | Объяснение | Переменная среды |
+| ----- | ----- | ---- | ---- |
+| uploadOn | true, false | По умолчанию ему присваивается `false`, если вы хотите включить его на задайте для него значение `true`| `deviceToCloudUploadProperties__uploadOn={false,true}` |
+| uploadOrder | NewestFirst, OldestFirst | Позволяет выбрать порядок, в котором данные копируются в Azure. По умолчанию ему присваивается `OldestFirst`. Порядок определяется время последнего изменения большого двоичного объекта | `deviceToCloudUploadProperties__uploadOrder={NewestFirst,OldestFirst}` |
+| cloudStorageConnectionString |  | `"DefaultEndpointsProtocol=https;AccountName=<your Azure Storage Account Name>;AccountKey=<your Azure Storage Account Key>;EndpointSuffix=<your end point suffix>"` строки подключения, которая позволяет указать учетную запись хранения Azure, к которому требуется, чтобы данные отправки. Укажите `Azure Storage Account Name`, `Azure Storage Account Key`, `End point suffix`. Добавьте соответствующие EndpointSuffix Azure где данные будут загружены, она меняется для глобальной платформы Azure, Azure для государственных организаций и Microsoft Azure Stack. | `deviceToCloudUploadProperties__cloudStorageConnectionString=<connection string>` |
+| storageContainersForUpload | `"<source container name1>": {"target": "<target container name>"}`,<br><br> `"<source container name1>": {"target": "%h-%d-%m-%c"}`, <br><br> `"<source container name1>": {"target": "%d-%c"}` | Позволяет указать имена контейнеров, который вы хотите отправить в Azure. Этот модуль позволяет указать исходные и целевые имена контейнеров. Если не указать имя целевого контейнера, он будет автоматически назначить имя контейнера как `<IoTHubName>-<IotEdgeDeviceID>-<ModuleName>-<SourceContainerName>`. Можно создавать строки шаблона для имени целевой контейнер, ознакомьтесь с возможными значениями столбца. <br>* %h "->" имя центра Интернета вещей (3 – 50 символов). <br>* %d "->" идентификатор устройства IoT Edge (от 1 до 129 символов). <br>* %m "->" имя модуля (от 1 до 64 символов). <br>* %c "->" имя исходного контейнера (от 3 до 63 символов). <br><br>Максимальный размер имени контейнера — 63 символа, при автоматически присвоении имя целевого контейнера, если размер контейнера больше, чем 63 символов, которые он удалит каждый раздел (IoTHubName, IotEdgeDeviceID, имя модуля, SourceContainerName) 15 символы. | `deviceToCloudUploadProperties__storageContainersForUpload__<sourceName>__target: <targetName>` |
+| deleteAfterUpload | true, false | По умолчанию ему присваивается `false`. Когда он становится равным `true`, оно автоматически удалит данные после завершения отправки в Облачное хранилище | `deviceToCloudUploadProperties__deleteAfterUpload={false,true}` |
+
 
 ### <a name="deviceautodeleteproperties"></a>deviceAutoDeleteProperties
 
 Этот параметр называется `deviceAutoDeleteProperties`
 
-| Поле | Возможные значения | Объяснение |
-| ----- | ----- | ---- |
-| deleteOn | true, false | По умолчанию ему присваивается `false`, если вы хотите включить его на задайте для него значение `true`|
-| deleteAfterMinutes | `<minutes>` | Укажите время в минутах. Модуль автоматически удалять большие двоичные объекты из локального хранилища, по истечении срока действия этого значения |
-| retainWhileUploading | true, false | По умолчанию ему присваивается `true`, и большого двоичного объекта во время его отправки в Облачное хранилище Если deleteAfterMinutes истечения срока действия. Можно задать значение `false` и сразу же после истечения срока действия deleteAfterMinutes удалит данные. Примечание. Для этого свойства для работы uploadOn следует установить значение true|
+| Поле | Возможные значения | Объяснение | Переменная среды |
+| ----- | ----- | ---- | ---- |
+| deleteOn | true, false | По умолчанию ему присваивается `false`, если вы хотите включить его на задайте для него значение `true`| `deviceAutoDeleteProperties__deleteOn={false,true}` |
+| deleteAfterMinutes | `<minutes>` | Укажите время в минутах. Модуль автоматически удалять большие двоичные объекты из локального хранилища, по истечении срока действия этого значения | `deviceAutoDeleteProperties__ deleteAfterMinutes=<minutes>` |
+| retainWhileUploading | true, false | По умолчанию ему присваивается `true`, и большого двоичного объекта во время его отправки в Облачное хранилище Если deleteAfterMinutes истечения срока действия. Можно задать значение `false` и сразу же после истечения срока действия deleteAfterMinutes удалит данные. Примечание. Для этого свойства для работы uploadOn следует установить значение true| `deviceAutoDeleteProperties__retainWhileUploading={false,true}` |
 
 ## <a name="configure-log-files"></a>Настройка файлов журнала
 

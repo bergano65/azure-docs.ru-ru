@@ -4,7 +4,7 @@ description: Узнайте, как использовать триггер сл
 services: functions
 documentationcenter: na
 author: craigshoemaker
-manager: jeconnoc
+manager: gwallace
 keywords: функции azure, функции, обработка событий, динамические вычисления, независимая архитектура
 ms.service: azure-functions
 ms.devlang: multiple
@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 72460136f5fa0dcfec78716fc02e0aaf9e860840
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9604ef276625d1fcc9164a9b75b94ebc22cb51e1
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66472294"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67480142"
 ---
 # <a name="azure-queue-storage-bindings-for-azure-functions"></a>Привязки хранилища очередей Azure для службы "Функции Azure"
 
@@ -307,7 +307,7 @@ module.exports = async function (context, message) {
 
 В файле [host.json](functions-host-json.md#queues) содержатся параметры, управляющие поведением очереди триггера. См. в разделе [host.json параметры](#hostjson-settings) подробные сведения о доступных параметрах см.
 
-## <a name="output"></a>Выход
+## <a name="output"></a>Output
 
 Используйте выходную привязку хранилища очередей Azure, чтобы записать сообщения в очередь.
 

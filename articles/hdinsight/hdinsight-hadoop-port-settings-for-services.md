@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/27/2019
 ms.author: hrasheed
-ms.openlocfilehash: 16041d2b7a971c9ba479c133261930b38d130792
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 77e7aec1797a4b33068430371ba0969d1737746e
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66252784"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508793"
 ---
 # <a name="ports-used-by-apache-hadoop-services-on-hdinsight"></a>Порты, используемые службами Apache Hadoop в HDInsight
 
@@ -41,7 +41,7 @@ ms.locfileid: "66252784"
 | sshd |23 |SSH |Подключает клиенты к sshd на дополнительном головном узле. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md). |
 | Ambari |443 |HTTPS |Веб-интерфейс Ambari. Дополнительные сведения см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md). |
 | Ambari |443 |HTTPS |REST API Ambari. Дополнительные сведения см. в статье [Управление кластерами HDInsight с помощью REST API Ambari](hdinsight-hadoop-manage-ambari-rest-api.md). |
-| WebHCat |443 |HTTPS |REST API HCatalog. Дополнительные сведения см. в статьях [Выполнение заданий Pig с помощью REST с использованием Apache Hadoop в HDInsight](hadoop/apache-hadoop-use-pig-curl.md), [Выполнение заданий Pig с помощью REST с использованием Apache Hadoop в HDInsight](hadoop/apache-hadoop-use-pig-curl.md) и [Запуск заданий MapReduce в среде Apache Hadoop, размещенной в HDInsight, с помощью REST](hadoop/apache-hadoop-use-mapreduce-curl.md). |
+| WebHCat |443 |HTTPS |REST API HCatalog. См. в разделе [использование MapReduce с помощью Curl](hadoop/apache-hadoop-use-mapreduce-curl.md) |
 | HiveServer2 |443 |ODBC |Подключение к Hive с помощью ODBC. См. статью [Подключение Excel к Hadoop с помощью драйвера Microsoft Hive ODBC](hadoop/apache-hadoop-connect-excel-hive-odbc-driver.md). |
 | HiveServer2 |443 |JDBC |Подключение к ApacheHive с помощью JDBC. Дополнительные сведения см. в статье [Отправка запросов в Apache Hive с помощью драйвера JDBC в HDInsight](hadoop/apache-hadoop-connect-hive-jdbc-driver.md). |
 

@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: arvinh
 ms.custom: aaddev;it-pro;seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a62f44783d63131812794a4b55f0e9f9f3b45f27
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 4a51401bcb8d282fef10b0b06e646b652bf5f8e8
+ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66742486"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67513399"
 ---
 # <a name="using-system-for-cross-domain-identity-management-scim-to-automatically-provision-users-and-groups-from-azure-active-directory-to-applications"></a>Использование системы для управления удостоверениями между доменами (SCIM) для автоматической подготовки пользователей и групп из Azure Active Directory в приложения
 
@@ -259,10 +259,10 @@ Azure AD можно настроить автоматическую подгот
 
 #### <a name="get-user"></a>Получить пользователя
 
-###### <a name="request"></a>Запрос
+###### <a name="request-1"></a>Запрос
 *GET /Users/5d48a0a8e9f04aa38008* 
 
-###### <a name="response"></a>Ответ
+###### <a name="response-1"></a>Ответ
 *HTTP/1.1 200 OK*
 ```json
 {
@@ -290,10 +290,10 @@ Azure AD можно настроить автоматическую подгот
 ```
 #### <a name="get-user-by-query"></a>Получить пользователя по запросу
 
-##### <a name="request"></a>Запрос
+##### <a name="request-2"></a>Запрос
 *GET /Users?filter=userName eq "Test_User_dfeef4c5-5681-4387-b016-bdf221e82081"*
 
-##### <a name="response"></a>Ответ
+##### <a name="response-2"></a>Ответ
 *HTTP/1.1 200 OK*
 ```json
 {
@@ -329,10 +329,10 @@ Azure AD можно настроить автоматическую подгот
 
 #### <a name="get-user-by-query---zero-results"></a>Получить пользователя запросом - нулевого результата
 
-##### <a name="request"></a>Запрос
+##### <a name="request-3"></a>Запрос
 *GET /Users?filter=userName eq "non-existent user"*
 
-##### <a name="response"></a>Ответ
+##### <a name="response-3"></a>Ответ
 *HTTP/1.1 200 OK*
 ```json
 {
@@ -347,7 +347,7 @@ Azure AD можно настроить автоматическую подгот
 
 #### <a name="update-user-multi-valued-properties"></a>Обновление пользователя [многозначных свойствах]
 
-##### <a name="request"></a>Запрос
+##### <a name="request-4"></a>Запрос
 *PATCH/Users/6764549bef60420686bc HTTP/1.1*
 ```json
 {
@@ -367,7 +367,7 @@ Azure AD можно настроить автоматическую подгот
 }
 ```
 
-##### <a name="response"></a>Ответ
+##### <a name="response-4"></a>Ответ
 *HTTP/1.1 200 OK*
 ```json
 {
@@ -396,7 +396,7 @@ Azure AD можно настроить автоматическую подгот
 
 #### <a name="update-user-single-valued-properties"></a>Обновление пользователя [свойств с одним значением]
 
-##### <a name="request"></a>Запрос
+##### <a name="request-5"></a>Запрос
 *PATCH/Users/5171a35d82074e068ce2 HTTP/1.1*
 ```json
 {
@@ -409,7 +409,7 @@ Azure AD можно настроить автоматическую подгот
 }
 ```
 
-##### <a name="response"></a>Ответ
+##### <a name="response-5"></a>Ответ
 *HTTP/1.1 200 OK*
 ```json
 {
@@ -439,10 +439,10 @@ Azure AD можно настроить автоматическую подгот
 
 #### <a name="delete-user"></a>Удаление пользователя
 
-##### <a name="request"></a>Запрос
+##### <a name="request-6"></a>Запрос
 *УДАЛИТЬ /Users/5171a35d82074e068ce2 HTTP/1.1*
 
-##### <a name="response"></a>Ответ
+##### <a name="response-6"></a>Ответ
 *HTTP/1.1 204 Нет содержимого*
 
 ### <a name="group-operations"></a>Операции группы
@@ -454,7 +454,7 @@ Azure AD можно настроить автоматическую подгот
 
 #### <a name="create-group"></a>Создание группы
 
-##### <a name="request"></a>Запрос
+##### <a name="request-7"></a>Запрос
 *POST/Groups HTTP/1.1*
 ```json
 {
@@ -468,7 +468,7 @@ Azure AD можно настроить автоматическую подгот
 }
 ```
 
-##### <a name="response"></a>Ответ
+##### <a name="response-7"></a>Ответ
 *HTTP/1.1 201 Создано*
 ```json
 {
@@ -488,10 +488,10 @@ Azure AD можно настроить автоматическую подгот
 
 #### <a name="get-group"></a>Получение группы
 
-##### <a name="request"></a>Запрос
+##### <a name="request-8"></a>Запрос
 *GET/группы/40734ae655284ad3abcc? excludedAttributes = члены HTTP/1.1*
 
-##### <a name="response"></a>Ответ
+##### <a name="response-8"></a>Ответ
 *HTTP/1.1 200 OK*
 ```json
 {
@@ -509,10 +509,10 @@ Azure AD можно настроить автоматическую подгот
 
 #### <a name="get-group-by-displayname"></a>Get Group by displayName
 
-##### <a name="request"></a>Запрос
+##### <a name="request-9"></a>Запрос
 */ Groups GET? excludedAttributes = фильтр & члены = displayName eq «displayName» HTTP/1.1*
 
-##### <a name="response"></a>Ответ
+##### <a name="response-9"></a>Ответ
 *HTTP/1.1 200 OK*
 ```json
 {
@@ -536,7 +536,7 @@ Azure AD можно настроить автоматическую подгот
 ```
 #### <a name="update-group-non-member-attributes"></a>Обновить группу [Non-member attributes]
 
-##### <a name="request"></a>Запрос
+##### <a name="request-10"></a>Запрос
 *PATCH/группы/fa2ce26709934589afc5 HTTP/1.1*
 ```json
 {
@@ -549,12 +549,12 @@ Azure AD можно настроить автоматическую подгот
 }
 ```
 
-##### <a name="response"></a>Ответ
+##### <a name="response-10"></a>Ответ
 *HTTP/1.1 204 Нет содержимого*
 
 ### <a name="update-group-add-members"></a>Группа обновлений [добавление членов]
 
-##### <a name="request"></a>Запрос
+##### <a name="request-11"></a>Запрос
 *PATCH /Groups/a99962b9f99d4c4fac67 HTTP/1.1*
 ```json
 {
@@ -570,12 +570,12 @@ Azure AD можно настроить автоматическую подгот
 }
 ```
 
-##### <a name="response"></a>Ответ
+##### <a name="response-11"></a>Ответ
 *HTTP/1.1 204 Нет содержимого*
 
 #### <a name="update-group-remove-members"></a>Обновить группу [удалить участников]
 
-##### <a name="request"></a>Запрос
+##### <a name="request-12"></a>Запрос
 *PATCH /Groups/a99962b9f99d4c4fac67 HTTP/1.1*
 ```json
 {
@@ -591,15 +591,15 @@ Azure AD можно настроить автоматическую подгот
 }
 ```
 
-##### <a name="response"></a>Ответ
+##### <a name="response-12"></a>Ответ
 *HTTP/1.1 204 Нет содержимого*
 
 #### <a name="delete-group"></a>Удалить группу
 
-##### <a name="request"></a>Запрос
+##### <a name="request-13"></a>Запрос
 *DELETE /Groups/cdb1ce18f65944079d37 HTTP/1.1*
 
-##### <a name="response"></a>Ответ
+##### <a name="response-13"></a>Ответ
 *HTTP/1.1 204 Нет содержимого*
 
 
@@ -1331,7 +1331,7 @@ Azure Active Directory может предоставлять веб-службе
 | mailNickname |externalId |
 | manager |manager |
 | mobile |phoneNumbers[type eq "mobile"].value |
-| objectId |ИД |
+| objectId |id |
 | postalCode |addresses[type eq "work"].postalCode |
 | proxy-Addresses |emails[type eq "other"].Value |
 | physical-Delivery-OfficeName |addresses[type eq "other"].Formatted |
@@ -1348,7 +1348,7 @@ Azure Active Directory может предоставлять веб-службе
 | почта |emails[type eq "work"].value |
 | mailNickname |displayName |
 | members |members |
-| objectId |ИД |
+| objectId |id |
 | proxyAddresses |emails[type eq "other"].Value |
 
 ## <a name="allow-ip-addresses-used-by-the-azure-ad-provisioning-service-to-make-scim-requests"></a>Разрешить IP-адреса, используемые службой подготовки Azure AD для выполнения запросов SCIM

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: edc3c2ddcddaa8a51ae634a7abcd3a61aab530e9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f7e93dc12b9932fed90c7f9fa3145e56a3488b32
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66357247"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448022"
 ---
 # <a name="azure-api-management-faqs"></a>Часто задаваемые вопросы о службе управления API Azure
 Ознакомьтесь с ответами на часто задаваемые вопросы, шаблонами и рекомендациями относительно службы управления API Azure.
@@ -65,7 +65,7 @@ ms.locfileid: "66357247"
 
 * Использование обычной проверки подлинности HTTP. Дополнительные сведения см. в статье об [импорте и публикации первого API](import-and-publish.md).
 * использовать взаимную проверку подлинности SSL, как описано в статье [Защита фоновых служб посредством проверки подлинности с помощью сертификата клиента в службе Azure API Management](api-management-howto-mutual-certificates.md).
-* использовать разрешенный список IP-адресов во внутренних службах. На всех уровнях службы управления API IP-адрес шлюза остается постоянным. Но есть определенные [особенности](#is-the-api-management-gateway-ip-address-constant-can-i-use-it-in-firewall-rules). Можно задать список разрешений и включить в него этот IP-адрес. IP-адрес экземпляра службы управления API можно узнать на панели мониторинга на портале Azure.
+* использовать разрешенный список IP-адресов во внутренних службах. На всех уровнях службы управления API, за исключением уровня потребления IP-адрес шлюза остается постоянным, обладающим некоторыми [предупреждения](#is-the-api-management-gateway-ip-address-constant-can-i-use-it-in-firewall-rules). Можно задать список разрешений и включить в него этот IP-адрес. IP-адрес экземпляра службы управления API можно узнать на панели мониторинга на портале Azure.
 * подключить экземпляр службы управления API к виртуальной сети Azure.
 
 ### <a name="how-do-i-copy-my-api-management-service-instance-to-a-new-instance"></a>Как скопировать экземпляр службы управления API в новый экземпляр?

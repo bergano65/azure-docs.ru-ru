@@ -8,12 +8,12 @@ ms.author: kasparks
 ms.service: advisor
 ms.topic: article
 ms.date: 01/29/2019
-ms.openlocfilehash: bdba3f135f852312af1692f77643095d865f1d06
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d78d8a689b860162a742e85c155205f072a3667c
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66254664"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67446788"
 ---
 # <a name="improve-availability-of-your-application-with-azure-advisor"></a>Повышение уровня доступности приложения с использованием Помощника по Azure
 
@@ -93,6 +93,9 @@ ms.locfileid: "66254664"
 ## <a name="upgrade-your-azure-cosmos-db-spark-connector-to-the-latest-version-from-maven"></a>Обновите соединитель Spark для Azure Cosmos DB до последней версии с сайта Maven
 
 Помощник по Azure определит учетные записи Azure Cosmos DB, использующих старые версии соединителя Spark для Cosmos DB, но Microsoft рекомендует выполнить обновление до последней версии из Maven последние исправления, повышение производительности и новые функции. [Дополнительные сведения о соединителе Spark для Cosmos DB](https://aka.ms/cosmosdb/spark-connector)
+
+## <a name="enable-virtual-machine-replication"></a>Включение репликации виртуальных машин
+Виртуальные машины, у которых нет в другой регион включена репликация, не являются устойчивыми к региональным простоям. Репликация виртуальных машин уменьшает какого-либо влияния последствий для компании во время выполнения сбой региона Azure. Помощник по обнаруживает виртуальные машины, у которых нет репликации включена и рекомендуем включить репликацию, чтобы в случае сбоя, вы можете быстро открыть ваши виртуальные машины в удаленном регионе Azure. [Дополнительные сведения о репликации виртуальных машин](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-quickstart)
 
 ## <a name="how-to-access-high-availability-recommendations-in-advisor"></a>Как получить доступ к рекомендациям по высокой доступности в Advisor
 

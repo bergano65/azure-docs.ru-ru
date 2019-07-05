@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 03127dc777588f669ef07af52c8f73d986bfe0ea
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f7ebc57e09691af1583815ae9672e1afb820145b
+ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61260476"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67462066"
 ---
 # <a name="azure-data-factory---samples"></a>Фабрика данных Azure — примеры
 > [!NOTE]
@@ -30,27 +30,27 @@ ms.locfileid: "61260476"
 
 | Образец | Описание |
 |:--- |:--- |
-| [Пошаговое руководство по ADF](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/ADFWalkthrough) |Этот пример представляет собой сквозное руководство по обработке файлов журналов с помощью фабрики данных Azure для преобразования данных из файлов журналов в аналитические данные. <br/><br/>В этом руководстве конвейер фабрики данных собирает примеры журналов, обрабатывает и дополняет их эталонными данными из журналов, а также преобразует сведения, чтобы оценить эффективность недавно запущенной маркетинговой кампании. |
-| [Примеры JSON](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/JSON) |В этой выборке представлены примеры кода JSON для распространенных сценариев. |
-| [Пример загрузчика данных HTTP](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/HttpDataDownloaderSample) |В этой выборке демонстрируется скачивание данных из конечной точки HTTP в хранилище BLOB-объектов Azure с помощью настраиваемого действия .NET. |
-| [Пример действия перекрестного домена приложения .NET](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/CrossAppDomainDotNetActivitySample) |Этот пример позволяет создать настраиваемое действие .NET, не ограниченное версиями сборок, которые используются средством запуска фабрики данных Azure (например, WindowsAzure.Storage версии 4.3.0, Newtonsoft.Json версии 6.0.x и т. д.). |
-| [Запуск сценария R](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/RunRScriptUsingADFSample) |Этот пример включает пользовательское действие фабрики данных, которое можно использовать для вызова файла RScript.exe. Этот пример работает только с вашим собственным кластером HDInsight (не по требованию), в которое уже установлен R. |
-| [Вызов заданий Spark в кластере HDInsight Hadoop](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/Spark) |В этом примере показано, как использовать действие MapReduce для запуска программы Spark. Программа Spark просто копирует данные из одного контейнера BLOB-объектов Azure в другой. |
-| [Анализ Twitter с использованием действия пакетной оценки показателей машинного обучения Azure](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/TwitterAnalysisSample-AzureMLBatchScoringActivity) |В этом примере показано, как использовать AzureMLBatchScoringActivity для вызова модели машинного обучения Azure, которая выполняет анализ мнений с помощью Twitter, оценку, прогноз и т. д. |
-| [Анализ Twitter с использованием настраиваемого действия](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/TwitterAnalysisSample-CustomC%23Activity) |В этом примере показано, как использовать настраиваемое действие .NET для вызова модели машинного обучения Azure, которая выполняет анализ мнений с помощью Twitter, оценку, прогноз и т. д. |
-| [Параметризованные конвейеры для машинного обучения Azure](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/ParameterizedPipelinesForAzureML/) |Пример содержит полный код C# для развертывания N конвейеров для оценки и повторного обучения с различными параметрами регионов (список регионов берется из файла parameters.txt, включенного в этот пример). |
-| [Обновление эталонных данных для заданий в службе Azure Stream Analytics](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/ReferenceDataRefreshForASAJobs) |В этом примере показано, как использовать фабрику данных Azure и службу Azure Stream Analytics для выполнения запросов с эталонными данными и настройки обновления эталонных данных по расписанию. |
-| [Гибридный конвейер с локальным кластером Hadoop Hortonworks](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/HybridPipelineWithOnPremisesHortonworksHadoop) |В этом примере локальный кластер Hadoop используется как целевой объект для выполнения заданий в фабрике данных, аналогично другим объектам вычислений, таким как кластер Hadoop на основе HDInsight в облаке. |
-| [Средство преобразования JSON](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/JSONConversionTool) |Позволяет преобразовать JSON из версии до 2015-07-01-preview в последнюю доступную версию или в версию 2015-07-01-preview (по умолчанию). |
-| [Пример входного файла U-SQL](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/U-SQL%20Sample%20Input%20File) |Это пример файла, который используется действием U-SQL. |
-| [Удаление файла большого двоичного объекта](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/DeleteBlobFileFolderCustomActivity) | В этом примере демонстрируется файл C#, который можно использовать как часть настраиваемого действия .NET ADF для удаления файлов из исходного расположения больших двоичных объектов Azure после копирования файлов.|
+| [Пошаговое руководство по ADF](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/ADFWalkthrough) |Этот пример представляет собой сквозное руководство по обработке файлов журналов с помощью фабрики данных Azure для преобразования данных из файлов журналов в аналитические данные. <br/><br/>В этом руководстве конвейер фабрики данных собирает примеры журналов, обрабатывает и дополняет их эталонными данными из журналов, а также преобразует сведения, чтобы оценить эффективность недавно запущенной маркетинговой кампании. |
+| [Примеры JSON](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/JSON) |В этой выборке представлены примеры кода JSON для распространенных сценариев. |
+| [Пример загрузчика данных HTTP](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/HttpDataDownloaderSample) |В этой выборке демонстрируется скачивание данных из конечной точки HTTP в хранилище BLOB-объектов Azure с помощью настраиваемого действия .NET. |
+| [Пример действия перекрестного домена приложения .NET](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/CrossAppDomainDotNetActivitySample) |Этот пример позволяет создать настраиваемое действие .NET, не ограниченное версиями сборок, которые используются средством запуска фабрики данных Azure (например, WindowsAzure.Storage версии 4.3.0, Newtonsoft.Json версии 6.0.x и т. д.). |
+| [Запуск сценария R](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/RunRScriptUsingADFSample) |Этот пример включает пользовательское действие фабрики данных, которое можно использовать для вызова файла RScript.exe. Этот пример работает только с вашим собственным кластером HDInsight (не по требованию), в которое уже установлен R. |
+| [Вызов заданий Spark в кластере HDInsight Hadoop](https://docs.microsoft.com/azure/data-factory/tutorial-transform-data-spark-portal) |В этом примере показано, как использовать действие MapReduce для запуска программы Spark. Программа Spark просто копирует данные из одного контейнера BLOB-объектов Azure в другой. |
+| [Анализ Twitter с использованием действия пакетной оценки показателей машинного обучения Azure](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/TwitterAnalysisSample-AzureMLBatchScoringActivity) |В этом примере показано, как использовать AzureMLBatchScoringActivity для вызова модели машинного обучения Azure, которая выполняет анализ мнений с помощью Twitter, оценку, прогноз и т. д. |
+| [Анализ Twitter с использованием настраиваемого действия](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/TwitterAnalysisSample-CustomC%23Activity) |В этом примере показано, как использовать настраиваемое действие .NET для вызова модели машинного обучения Azure, которая выполняет анализ мнений с помощью Twitter, оценку, прогноз и т. д. |
+| [Параметризованные конвейеры для машинного обучения Azure](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/ParameterizedPipelinesForAzureML) |Пример содержит полный код C# для развертывания N конвейеров для оценки и повторного обучения с различными параметрами регионов (список регионов берется из файла parameters.txt, включенного в этот пример). |
+| [Обновление эталонных данных для заданий в службе Azure Stream Analytics](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/ReferenceDataRefreshForASAJobs) |В этом примере показано, как использовать фабрику данных Azure и службу Azure Stream Analytics для выполнения запросов с эталонными данными и настройки обновления эталонных данных по расписанию. |
+| [Гибридный конвейер с локальным кластером Hadoop Hortonworks](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/HybridPipelineWithOnPremisesHortonworksHadoop) |В этом примере локальный кластер Hadoop используется как целевой объект для выполнения заданий в фабрике данных, аналогично другим объектам вычислений, таким как кластер Hadoop на основе HDInsight в облаке. |
+| [Средство преобразования JSON](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/JSONConversionTool) |Позволяет преобразовать JSON из версии до 2015-07-01-preview в последнюю доступную версию или в версию 2015-07-01-preview (по умолчанию). |
+| [Пример входного файла U-SQL](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/U-SQL%20Sample%20Input%20File) |Это пример файла, который используется действием U-SQL. |
+| [Удаление файла большого двоичного объекта](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/DeleteBlobFileFolderCustomActivity) | В этом примере демонстрируется файл C#, который можно использовать как часть настраиваемого действия .NET ADF для удаления файлов из исходного расположения больших двоичных объектов Azure после копирования файлов.|
 
 ## <a name="azure-resource-manager-templates"></a>Шаблоны Azure Resource Manager
 Следующие шаблоны Azure Resource Manager для фабрики данных можно найти на портале GitHub.
 
 | Шаблон | Описание |
 | --- | --- |
-| [Копирование из хранилища BLOB-объектов Azure в базу данных SQL Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-data-factory-blob-to-sql-copy) |Развертывание этого шаблона создает фабрику данных Azure с конвейером, который копирует данные из указанного хранилища BLOB-объектов Azure в базу данных SQL Azure. |
+| [Копирование из хранилища BLOB-объектов Azure в Базу данных SQL Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-data-factory-blob-to-sql-copy) |Развертывание этого шаблона создает фабрику данных Azure с конвейером, который копирует данные из указанного хранилища BLOB-объектов Azure в базу данных SQL Azure. |
 | [Копирование из Salesforce в хранилище BLOB-объектов Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-data-factory-salesforce-to-blob-copy) |Развертывание этого шаблона создает фабрику данных Azure с конвейером, который копирует данные из указанной учетной записи Salesforce в хранилище BLOB-объектов Azure. |
 | [Преобразование данных путем запуска сценария Hive в кластере Azure HDInsight](https://github.com/Azure/azure-quickstart-templates/tree/master/101-data-factory-hive-transformation) |Развертывание этого шаблона создает фабрику данных Azure с конвейером, который преобразовывает данные путем запуска примера сценария Hive в кластере Azure HDInsight (Hadoop). |
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 83ca0c11ab0065929d939b7345cbd15869740bb3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b56a31a58937ddbea08ff22c3d1c0c71942f47f1
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65024343"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67445393"
 ---
 # <a name="data-import-overview---azure-search"></a>Импорт данных, Обзор — службы поиска Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "65024343"
 
 Инструментов для передачи данных через портал пока не существует.
 
-Общие сведения о каждом методологии, см. в разделе [краткое руководство: Создание индекса службы поиска Azure с помощью PowerShell и REST API](search-create-index-rest-api.md) или [краткое руководство: Создание индекса службы поиска Azure в C# ](search-import-data-dotnet.md).
+Общие сведения о каждом методологии, см. в разделе [краткое руководство: Создание индекса службы поиска Azure с помощью PowerShell](search-create-index-rest-api.md) или [ C# краткое руководство: Создание индекса службы поиска Azure с помощью пакета SDK для .NET](search-get-started-dotnet.md).
 
 <a name="indexing-actions"></a>
 
@@ -44,9 +44,9 @@ ms.locfileid: "65024343"
 
 Можно управлять тип индексирования действия на основе каждого документа, указав, передаются ли документ в полную, объединенные с существующим содержимым документа или удаленные.
 
-В REST API выдавать запросы HTTP POST с телами запрос JSON URL-адрес конечной точки индекса службы поиска Azure. Каждый объект JSON в массиве «value» содержит ключ документа и задает действие индексирования, добавление, обновление и, или удаляет содержимое документа. Пример кода см. в разделе [загрузки документов](search-create-index-rest-api.md#load-documents).
+В REST API выдавать запросы HTTP POST с телами запрос JSON URL-адрес конечной точки индекса службы поиска Azure. Каждый объект JSON в массиве «value» содержит ключ документа и указывает ли действие индексирования добавляет, обновляет или удаляет содержимое документа. Пример кода см. в разделе [загрузки документов](search-get-started-dotnet.md#load-documents).
 
-В пакете SDK .NET упаковать данные в `IndexBatch` объекта. `IndexBatch` Инкапсулирует коллекцию `IndexAction` объектов, каждый из которых содержит документ и свойство, определяющее, какое действие необходимо выполнить с этим документом службы поиска Azure. Пример кода см. в разделе [создания IndexBatch](search-import-data-dotnet.md#construct-indexbatch).
+В пакете SDK .NET упаковать данные в `IndexBatch` объекта. `IndexBatch` Инкапсулирует коллекцию `IndexAction` объектов, каждый из которых содержит документ и свойство, определяющее, какое действие необходимо выполнить с этим документом службы поиска Azure. Пример кода см. в разделе [ C# быстрого запуска](search-get-started-dotnet.md).
 
 
 | @search.action | Описание | Необходимые поля для каждого документа | Примечания |

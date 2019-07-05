@@ -12,16 +12,16 @@ ms.author: sahsan
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 06/03/2019
-ms.openlocfilehash: ba787ccd51bf5ea9ec8e06e341a0f698afb5a7e2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6a4d3fd0f7b670bbb0b01385252b405829a91baa
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66688071"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442312"
 ---
 # <a name="copy-a-transactionally-consistent-copy-of-an-azure-sql-database"></a>Копирование транзакционно согласованной копии базы данных Azure SQL
 
-База данных SQL Azure предоставляет несколько методов создания транзакционно согласованной копии имеющейся базы данных SQL Azure на том же или на другом сервере. Базу данных SQL можно копировать с помощью портала Azure, PowerShell или T-SQL. 
+База данных SQL Azure предоставляет несколько методов создания транзакционно согласованной копии существующей базы данных Azure SQL ([отдельной базы данных](sql-database-single-database.md)) на том же сервере или другом сервере. Базу данных SQL можно копировать с помощью портала Azure, PowerShell или T-SQL. 
 
 ## <a name="overview"></a>Обзор
 
@@ -94,7 +94,7 @@ New-AzSqlDatabaseCopy -ResourceGroupName "myResourceGroup" `
 
 ### <a name="copy-a-sql-database-to-a-different-subscription"></a>Копирование базы данных SQL в другую подписку
 
-Копирование базы данных на сервер базы данных SQL, в другой подписке, можно использовать descrbed действия в предыдущем разделе. Убедитесь, что с помощью имени входа, имеющего то же имя и пароль владельца базы данных-источника, и он является членом роли dbmanager либо имя входа субъекта уровня сервера. 
+Копирование базы данных на сервер базы данных SQL, в другой подписке, можно использовать действия, описанные в предыдущем разделе. Убедитесь, что с помощью имени входа, имеющего то же имя и пароль владельца базы данных-источника, и он является членом роли dbmanager либо имя входа субъекта уровня сервера. 
 
 > [!NOTE]
 > [Портала Azure](https://portal.azure.com) не поддерживает копирование в другую подписку, поскольку портал вызывает ARM API и использует сертификаты подписки для доступа к обоих серверов, участвующих в георепликации.  

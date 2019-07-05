@@ -5,18 +5,18 @@ services: iot-edge
 author: shizn
 manager: philmea
 ms.author: xshi
-ms.date: 05/27/2019
+ms.date: 07/01/2019
 ms.topic: article
 ms.service: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 4014827366afc492d73757a0ac5e1acb64262c51
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 953a549a44d224f9d196c6d6842bdcae04cca975
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66474779"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67485909"
 ---
-# <a name="use-visual-studio-2019-to-develop-and-debug-modules-for-azure-iot-edge-preview"></a>Использовать 2019 г. Visual Studio для разработки и отладки модулей для Azure IoT Edge (Предварительная версия)
+# <a name="use-visual-studio-2019-to-develop-and-debug-modules-for-azure-iot-edge"></a>Использовать 2019 г. Visual Studio для разработки и отладки модулей для Azure IoT Edge
 
 Вы можете превратить бизнес-логику в модули для Azure IoT Edge. В этой статье показано, как использовать Visual Studio 2019 как основной инструмент для разработки и отладки модулей.
 
@@ -40,10 +40,10 @@ ms.locfileid: "66474779"
 
 Когда в Visual Studio 2019 будет готов, необходимо также следующие средства и компоненты:
 
-- Скачайте и установите [средства Edge Интернета вещей Azure (Предварительная версия)](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools) из Visual Studio marketplace для создания проекта IoT Edge в Visual Studio 2019.
+- Скачайте и установите [средства Edge Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools) из Visual Studio marketplace для создания проекта IoT Edge в Visual Studio 2019.
 
 > [!TIP]
-> Если вы используете Visual Studio 2017, plrease, загрузите и установите [средства Edge Интернета вещей Azure (Предварительная версия)](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools) для Visual STUDIO 2017 в Visual Studio Marketplace
+> Если вы используете Visual Studio 2017, plrease, загрузите и установите [средства Edge Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools) для Visual STUDIO 2017 в Visual Studio Marketplace
 
 - Скачайте и установите [Docker Community Edition](https://docs.docker.com/install/) на компьютере разработки для сборки и запуска образов модуля. Вам необходимо настроить Docker CE для работы в режиме контейнера в Linux или Windows.
 

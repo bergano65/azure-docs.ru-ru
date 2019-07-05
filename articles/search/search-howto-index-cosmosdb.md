@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 0610f57e264189961a6803bee5bb93c1ec9fb103
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7f9df42725e41fb514370dbdb828ad5b1305ea78
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66753997"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67485456"
 ---
 # <a name="how-to-index-cosmos-db-using-an-azure-search-indexer"></a>Как индексировать Cosmos DB с помощью индексатора поиска Azure
 
@@ -133,7 +133,7 @@ ms.locfileid: "66753997"
 
 ### <a name="1---assemble-inputs-for-the-request"></a>1 — Создание входных данных для запроса
 
-Для каждого запроса необходимо указать имя службы и ключ администратора для службы поиска Azure (в заголовке POST) и имя учетной записи хранения и ключ для хранилища BLOB-объектов. Можно использовать [Postman](search-fiddler.md) для отправки HTTP-запросы в службу поиска Azure.
+Для каждого запроса необходимо указать имя службы и ключ администратора для службы поиска Azure (в заголовке POST) и имя учетной записи хранения и ключ для хранилища BLOB-объектов. Можно использовать [Postman](search-get-started-postman.md) для отправки HTTP-запросы в службу поиска Azure.
 
 Скопируйте следующие четыре значения в Блокнот, чтобы их можно вставить в запрос:
 
@@ -255,7 +255,7 @@ ms.locfileid: "66753997"
 ### <a name="mapping-between-json-data-types-and-azure-search-data-types"></a>Сопоставление типов данных JSON и типов данных службы поиска Azure
 | Тип данных JSON | Совместимые типы полей целевого индекса |
 | --- | --- |
-| Логический |Edm.Boolean, Edm.String |
+| Bool |Edm.Boolean, Edm.String |
 | Числа, которые выглядят как целые числа |Edm.Int32, Edm.Int64, Edm.String |
 | Числа, которые выглядят как числа с плавающей запятой |Edm.Double, Edm.String |
 | String |Edm.String |

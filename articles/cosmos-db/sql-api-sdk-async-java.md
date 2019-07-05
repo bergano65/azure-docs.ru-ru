@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 3/5/2019
+ms.date: 07/01/2019
 ms.author: moderakh
-ms.openlocfilehash: 356838f16f7f13506657326bae5dbe994d54bdd5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3cafa4d5aecaa4c8f3863c3269ec02793340e3e6
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "57570102"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67509264"
 ---
 # <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Пакет SDK Async Java в Azure Cosmos DB для API-интерфейса SQL: заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -43,6 +43,16 @@ ms.locfileid: "57570102"
 | **Минимальная поддерживаемая среда выполнения**|[JDK 8](https://aka.ms/azure-jdks) | 
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name250250"></a><a name="2.5.0"/>2.5.0
+* Режим TCP теперь на по умолчанию
+* Метрики запросов в между разделами теперь возвращает все секции
+* Глобальные строгих теперь работает должным образом
+* Отработка отказа для запросов неправильно повторяет несколькими хозяевами
+* Изменяет рельеф зависимостей для исправлений безопасности
+
+### <a name="a-name245245"></a><a name="2.4.5"/>2.4.5
+* Устраняйте для поддержки хэш V2
 
 ### <a name="a-name243243"></a><a name="2.4.3"/>2.4.3
 * Устраняйте предмет утечки ресурсов на client#close() ([github #88](https://github.com/Azure/azure-cosmosdb-java/issues/88)).

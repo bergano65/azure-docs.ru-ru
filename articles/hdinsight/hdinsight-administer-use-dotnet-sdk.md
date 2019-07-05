@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: hrasheed
-ms.openlocfilehash: 06e3178e344ee46f67cfd8a6feaf08d56d3c86e7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: abfbac552cc5cb4449a75c45d0c1ffdbcf6b770c
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64724129"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508102"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-net-sdk"></a>Управление кластерами Apache Hadoop в HDInsight с помощью пакета SDK для .NET
 
@@ -257,10 +257,6 @@ foreach (var key in results.Configuration.Keys)
 
 См. статью о [выполнении запросов Apache Hive с помощью пакета SDK для .NET](hadoop/apache-hadoop-use-hive-dotnet-sdk.md).
 
-**Отправка заданий Apache Pig**
-
-См. статью о [выполнении заданий Apache Pig с помощью пакета SDK для .NET](hadoop/apache-hadoop-use-pig-dotnet-sdk.md).
-
 **Отправка заданий Apache Sqoop**
 
 См. статью об [использовании Apache Sqoop с HDInsight](hadoop/apache-hadoop-use-sqoop-dotnet-sdk.md).
@@ -271,16 +267,16 @@ foreach (var key in results.Configuration.Keys)
 
 ## <a name="upload-data-to-azure-blob-storage"></a>Отправка данных в хранилище BLOB-объектов Azure
 
-Ознакомьтесь со статьей [Отправка данных в HDInsight][hdinsight-upload-data].
+См. в разделе [отправка данных в HDInsight][hdinsight-upload-data].
 
 ## <a name="see-also"></a>См. также
 
 * [Справочная документация к пакету SDK для HDInsight .NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight)
 * [Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md)
 * [Администрирование HDInsight с помощью интерфейса командной строки][hdinsight-admin-cli]
-* [Создание кластеров Hadoop в HDInsight][hdinsight-provision]
+* [Создание кластеров HDInsight][hdinsight-provision]
 * [Отправка данных в HDInsight][hdinsight-upload-data]
-* [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux][hdinsight-get-started]
+* [Приступая к работе с Azure HDInsight][hdinsight-get-started]
 
 [azure-purchase-options]: https://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: https://azure.microsoft.com/pricing/member-offers/

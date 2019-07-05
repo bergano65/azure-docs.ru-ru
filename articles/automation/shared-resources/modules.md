@@ -4,17 +4,17 @@ description: В этой статье описывается управлени�
 services: automation
 ms.service: automation
 ms.subservice: shared-resources
-author: georgewallace
-ms.author: gwallace
+author: bobbytreed
+ms.author: robreed
 ms.date: 06/05/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 54ebe7df9523a863ae14bc55c6ae4c9635468755
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 69817d1412aa13d0e7983aa3ad27c15e59185432
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67063465"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67478171"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Управление модули в службе автоматизации Azure
 
@@ -71,7 +71,7 @@ Remove-AzureRmAutomationModule -Name <moduleName> -AutomationAccountName <automa
 
 Ниже приведен список командлетов во внутреннем `Orchestrator.AssetManagement.Cmdlets` модуль, который импортируется в каждой учетной записи службы автоматизации. Эти командлеты доступны в модулях Runbook и конфигурациях DSC и позволяют взаимодействовать с ресурсами в учетной записи службы автоматизации. Кроме того, внутренняя командлеты, которые позволяют получать секреты из зашифрованы **переменной** значения, **учетные данные**и зашифрованные **подключения** поля. Командлеты Azure PowerShell не удалось извлечь эти секреты. Эти командлеты не требуется явно подключиться к Azure, при их использовании. Это полезно для сценариев, где имеется подключение, например Run As Account, необходимо использовать для проверки подлинности в Azure.
 
-|Name|Описание|
+|ИМЯ|Описание|
 |---|---|
 |Get-AutomationCertificate|`Get-AutomationCertificate [-Name] <string> [<CommonParameters>]`|
 |Get-AutomationConnection|`Get-AutomationConnection [-Name] <string> [-DoNotDecrypt] [<CommonParameters>]` |

@@ -1,20 +1,19 @@
 ---
 title: Azure Stream Analytics в IoT Edge
 description: Создание заданий Edge в Azure Stream Analytics и развертывание их на устройствах, где работает Azure IoT Edge.
-services: stream-analytics
+ms.service: stream-analytics
 author: mamccrea
 ms.author: mamccrea
 ms.reviewer: jasonh
-ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 4/2/2019
+ms.date: 07/01/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4ecea8864a565997b8df119d870e7efee8448143
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 17b9d11b75e2677e22fa2e38c21a69f018a4bee8
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60803966"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508342"
 ---
 # <a name="azure-stream-analytics-on-iot-edge"></a>Azure Stream Analytics в IoT Edge
  
@@ -111,7 +110,7 @@ ASA развертывает задания Edge на устройства с п
 
 > [!Note]
 > На этом этапе ASA создает папку с именем EdgeJobs в контейнере хранения (если она еще не существует). Для каждого развертывания в папке "EdgeJobs" создается новая вложенная папка.
-> Чтобы развернуть задание на устройствах Edge, ASA создает подписанный URL-адрес (SAS) для файла определения задания. Ключ SAS безопасно передается на устройства IoT Edge с помощью двойника устройства. Срок действия этого ключа составляет три года после даты создания.
+> Если развернуть задание на устройствах IoT Edge, ASA создает подпись общего доступа (SAS) для файла определения задания. Ключ SAS безопасно передается на устройства IoT Edge с помощью двойника устройства. Срок действия этого ключа составляет три года после даты создания. При обновлении задания Edge Интернета вещей, подписанный URL-адрес изменится, но версия образа не изменится. Когда вы **обновление**, следуйте рабочему процессу, развертывания и уведомлений об обновлении регистрируется на устройстве.
 
 
 Дополнительные сведения о развертываниях IoT Edge см. на [этой странице](https://docs.microsoft.com/azure/iot-edge/module-deployment-monitoring).
@@ -203,9 +202,31 @@ ASA в IoT Edge доступна в качестве образов Windows и L
 * [Лицензия Azure Stream Analytics на IoT Edge](https://go.microsoft.com/fwlink/?linkid=862827). 
 * [Уведомление сторонних производителей для Azure Stream Analytics на IoT Edge](https://go.microsoft.com/fwlink/?linkid=862828).
 
+## <a name="azure-stream-analytics-module-image-information"></a>Данные образа модуля Azure Stream Analytics 
+
+Эти сведения на 2019-06-27 последнего обновления:
+
+- Изображение: `asaedge.azurecr.io/public/azure-stream-analytics/azureiotedge:1.0.3-linux-amd64`
+   - базовый образ: microsoft/dotnet:2.1.6-runtime-alpine3.7
+   - Платформа:
+      - Архитектура: amd64
+      - ОС: linux
+  
+- Изображение: `asaedge.azurecr.io/public/azure-stream-analytics/azureiotedge:1.0.3-linux-arm32v7`
+   - базовый образ: microsoft/dotnet:2.1.6-runtime-bionic-arm32v7
+   - Платформа:
+      - Архитектура: arm
+      - ОС: linux
+  
+- Изображение: `asaedge.azurecr.io/public/azure-stream-analytics/azureiotedge:1.0.3-windows-amd64`
+   - базовый образ: microsoft/dotnet:2.1.6-runtime-nanoserver-1809
+   - Платформа:
+      - Архитектура: amd64
+      - ОС: windows
+      
+      
 ## <a name="get-help"></a>Получение справки
 За дополнительной помощью обращайтесь на [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

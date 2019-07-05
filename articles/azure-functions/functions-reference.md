@@ -12,12 +12,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 10/12/2017
 ms.author: glenga
-ms.openlocfilehash: 5b2b7f3cd6bfa219b794edc63d6bf8b2784b713c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 737da27fd8da292b6c1f8997d4bd300bbec8740e
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62120744"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67565535"
 ---
 # <a name="azure-functions-developers-guide"></a>Руководство для разработчиков по Функциям Azure
 Некоторые из Функций Azure имеют ряд общих технических особенностей и компонентов вне зависимости от используемого языка или привязки. Прежде чем приступать к детальному изучению особенностей, характерных для определенного языка или привязки, ознакомьтесь с этими общими сведениями.
@@ -48,7 +48,7 @@ ms.locfileid: "62120744"
 
 | Свойство | Значения и типы | Комментарии |
 | --- | --- | --- |
-| `type` |string |Тип привязки. Пример: `queueTrigger`. |
+| `type` |строка |Тип привязки. Пример: `queueTrigger`. |
 | `direction` |"in", "out" |Указывает, служит ли привязка для получения данных в функции или для отправки их из функции. |
 | `name` |string |Имя, используемое для связанных данных в функции. Для C# это имя аргумента, а для JavaScript — ключ в списке ключей и значений. |
 
@@ -107,5 +107,5 @@ ms.locfileid: "62120744"
 * [Azure Functions triggers and bindings (Триггеры и привязки в Функциях Azure)](functions-triggers-bindings.md)
 * [Как программировать и тестировать функции Azure в локальной среде](./functions-develop-local.md)
 * [Best Practices for Azure Functions](functions-best-practices.md) (Рекомендации по Функциям Azure)
-* [Справочник разработчика C# по функциям Azure](functions-reference-csharp.md)
+* [Справочник разработчика C# по функциям Azure](functions-dotnet-class-library.md)
 * [Справочник разработчика NodeJS по функциям Azure](functions-reference-node.md)

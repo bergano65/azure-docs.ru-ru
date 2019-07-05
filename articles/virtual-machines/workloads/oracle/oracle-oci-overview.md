@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 06/04/2019
 ms.author: rogirdh
 ms.custom: ''
-ms.openlocfilehash: 8827feaf1d541edc7c0b54d8af951ddab79c5aaa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5a60e41d3195c0f7d88fd3ba14336d693d2f528e
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66808624"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67446678"
 ---
 # <a name="oracle-application-solutions-integrating-microsoft-azure-and-oracle-cloud-infrastructure-preview"></a>Решения Oracle приложений, интеграции Microsoft Azure и Oracle облачной инфраструктуры (Предварительная версия)
 
@@ -74,5 +74,7 @@ ms.locfileid: "66808624"
 В настоящее время такая интеграция позволяет управлять в одном централизованном месте, что такое Azure Active Directory. Azure AD синхронизирует все изменения в каталоге с помощью соответствующего каталога Oracle и используется для единого входа для облачных решениях Oracle.
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
+Начало работы с [облачной сети](configure-azure-oci-networking.md) между Azure и OCI. 
 
 Дополнительные сведения и технические документы о OCI, см. в разделе [Oracle Cloud](https://docs.cloud.oracle.com/iaas/Content/home.htm) документации.
