@@ -5,18 +5,18 @@ ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: hrasheed
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 04/15/2019
-ms.openlocfilehash: aa0d01bfbebd5279b5268bae9d161492f30b81de
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
-ms.translationtype: HT
+ms.openlocfilehash: 77260eaa2e19135586e438576397b4647afe7ece
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65546306"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67483977"
 ---
 # <a name="hdinsight-40-overview"></a>Обзор HDInsight 4.0
 
-Azure HDInsight является одной из самых популярных служб среди корпоративных клиентов для аналитики с открытым кодом Apache Hadoop и Apache Spark в Azure. HDInsight 4.0 является облачным дистрибутивом компонентов Apache Hadoop из платформы [Hortonworks Data Platform (HDP) 3.0](https://docs.hortonworks.com/HDPDocuments/HDP3/HDP-3.0.0/release-notes/content/relnotes.html). Эта статья содержит сведения о последнем выпуске Azure HDInsight и инструкции по обновлению.
+Azure HDInsight является одной из самых популярных служб среди корпоративных клиентов для аналитики с открытым кодом Apache Hadoop и Apache Spark в Azure. HDInsight 4.0 является облачным распределением компонентов Apache Hadoop. Эта статья содержит сведения о последнем выпуске Azure HDInsight и инструкции по обновлению.
 
 ## <a name="whats-new-in-hdinsight-40"></a>Что нового в HDInsight 4.0?
 
@@ -97,7 +97,7 @@ Apache Oozie 4.3.1 входит в состав HDI 4.0 со следующим�
 * Вы не можете *запретить* использование LLAP в кластере Spark LLAP. LLAP можно только выключить.
 * Azure Data Lake Storage 2-го поколения не поддерживает сохранение записных книжек Juypter в кластере Spark.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Документация по Azure HDInsight](index.yml)
 * [Заметки о выпуске](hdinsight-release-notes.md)

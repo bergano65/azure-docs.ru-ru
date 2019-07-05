@@ -5,14 +5,14 @@ services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: conceptual
-ms.date: 06/03/2019
+ms.date: 06/25/2019
 ms.author: cherylmc
-ms.openlocfilehash: 5fbd64d2f001a0fbe91de2d954889816a1819479
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 4a52383e6ab24c6ae1e2be0b67293d65dfa04466
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67339450"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67477876"
 ---
 # <a name="create-an-azure-bastion-host-preview"></a>Создать узел-Бастион Azure (Предварительная версия)
 
@@ -33,15 +33,11 @@ ms.locfileid: "67339450"
 
 [!INCLUDE [available regions](../../includes/bastion-regions-include.md)]
 
-Чтобы использовать эту предварительную версию, необходимо зарегистрировать. Чтобы зарегистрироваться для использования предварительной версии, выполните следующие действия:
-
-[!INCLUDE [register](../../includes/bastion-preview-register-include.md)]
-
 ## <a name="createhost"></a>Создать узел-бастион
 
 Этот раздел поможет вам создать новый ресурс Azure Бастиона на портале Azure.
 
-1. На домашней странице в [ портал Azure — Предварительная версия](https://aka.ms/BastionHost), нажмите кнопку **+ создать ресурс**. Убедитесь, что использовать соответствующую ссылку для доступа к порталу для этой предварительной версии, а не регулярное портал Azure.
+1. На домашней странице в [портал Azure — Предварительная версия Бастиона](https://aka.ms/BastionHost), нажмите кнопку **+ создать ресурс**. Убедитесь, что использовать соответствующую ссылку для доступа к порталу для этой предварительной версии, а не регулярное портал Azure.
 
 1. На **New** странице *поиск по Marketplace* введите **Бастиона**, затем нажмите кнопку **ввод** для получения результатов поиска.
 
@@ -72,7 +68,7 @@ ms.locfileid: "67339450"
 
 При создании узла-бастиона на портале с помощью существующей виртуальной Машины, различные параметры автоматически по умолчанию, соответствующий вашей виртуальной машины или виртуальной сети.
 
-1. В [портал предварительной версии](https://aka.ms/BastionHost), перейдите к виртуальной машине, а затем нажмите кнопку **Connect**.
+1. В [портал Azure — Предварительная версия Бастиона](https://aka.ms/BastionHost), перейдите к виртуальной машине, а затем нажмите кнопку **Connect**.
 
     ![Подключение виртуальной Машины](./media/bastion-create-host-portal/vmsettings.png)
 

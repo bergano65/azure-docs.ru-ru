@@ -14,12 +14,12 @@ ms.subservice: pim
 ms.date: 04/09/2019
 ms.author: rolyon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 786b5ed99cce29c7217bfa42446821848ca8e05f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1b9ca4862f129b2da23a1d1ad8bb0b1bd0a5078f
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60288193"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67476277"
 ---
 # <a name="discover-azure-resources-to-manage-in-pim"></a>Обнаружение ресурсов Azure и управление ими с помощью управления привилегированными пользователями
 
@@ -37,15 +37,15 @@ ms.locfileid: "60288193"
 
     Если вы впервые используете PIM для ресурсов Azure, отобразится область "Обнаружение ресурсов".
 
-    ![Область "Обнаружение ресурсов" при первом использовании](./media/pim-resource-roles-discover-resources/discover-resources-first-run.png)
+    ![Обнаружение ресурсов области без ресурсов, указанный для первого времени](./media/pim-resource-roles-discover-resources/discover-resources-first-run.png)
 
     Если ресурсами Azure в PIM уже управляет другой администратор ресурсов или каталогов в вашей организации, вы увидите список ресурсов, находящихся под управлением в настоящее время.
 
-    ![Область "Обнаружение ресурсов"](./media/pim-resource-roles-discover-resources/discover-resources.png)
+    ![Обнаружение ресурсов панели список ресурсов, в настоящее время управляемых](./media/pim-resource-roles-discover-resources/discover-resources.png)
 
 1. Щелкните **Обнаружение ресурсов**, чтобы запустить процесс обнаружения.
 
-    ![Область "Обнаружение"](./media/pim-resource-roles-discover-resources/discovery-pane.png)
+    ![Область обнаружения, перечисления ресурсов, которые могут управляться таким как подписки и группы управления](./media/pim-resource-roles-discover-resources/discovery-pane.png)
 
 1. В области "Обнаружение" используйте элементы **Фильтр состояния ресурсов** и **Выбор типа ресурса**, чтобы отобразить группы управления или подписки, для которых у вас есть разрешение на запись. Удобнее начать с параметра **Все**.
 
@@ -58,11 +58,11 @@ ms.locfileid: "60288193"
     > [!NOTE]
     > После настройки управления для группы управления или подписки ее уже невозможно будет сделать неуправляемый. Благодаря этому другой администратор не сможет удалить заданные вами параметры PIM.
 
-    ![Область "Обнаружение". Управление ресурсами](./media/pim-resource-roles-discover-resources/discovery-manage-resource.png)
+    ![Область обнаружения с выбранного ресурса и выделенным параметром ресурсов управление](./media/pim-resource-roles-discover-resources/discovery-manage-resource.png)
 
 1. Если вы видите сообщение для подтверждения подключения выбранного ресурса для управления, щелкните **Да**.
 
-    ![Область "Обнаружение". Сообщение об управлении ресурсами](./media/pim-resource-roles-discover-resources/discovery-manage-resource-message.png)
+    ![Сообщение с подтверждением для подключить выбранные ресурсы для управления](./media/pim-resource-roles-discover-resources/discovery-manage-resource-message.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

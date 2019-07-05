@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 06/10/2018
+ms.date: 06/26/2018
 ms.author: jingwang
-ms.openlocfilehash: 49f07b4aaadfd45e9743bde58dc715230e5bc983
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e54a69b6c2b48e50c089f8b6b7458cf91133dd85
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67074063"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443304"
 ---
 # <a name="copy-data-from-sap-table-using-azure-data-factory"></a>Копирование данных из таблицы SAP с помощью фабрики данных Azure
 
@@ -206,16 +206,16 @@ ms.locfileid: "67074063"
 
 | Свойство                         | ОПИСАНИЕ                                                  | Обязательно для заполнения |
 | :------------------------------- | :----------------------------------------------------------- | :------- |
-| type                             | Свойство type должно быть присвоено **SapTableSource**.       | Да      |
+| type                             | Свойство type должно быть присвоено **SapTableSource**.         | Да      |
 | Количество строк                         | Количество строк, которые требуется извлечь.                              | Нет       |
 | rfcTableFields                   | Полей, копируемых из таблицы SAP. Например, `column0, column1`. | Нет       |
 | rfcTableOptions                  | Параметры для фильтрации строк таблицы SAP. Например, `COLUMN0 EQ 'SOMEVALUE'`. См. описание под этой таблицей. | Нет       |
-| customRfcReadTableFunctionModule | Пользовательские RFC функция модуль, который может использоваться для чтения данных из таблицы SAP. | Нет       |
+| customRfcReadTableFunctionModule | Пользовательские RFC функция модуль, который может использоваться для чтения данных из таблицы SAP.<br>Можно использовать пользовательский модуль функции RFC для определения того, как данные извлекаются из системы SAP и возвращается к ADF. While, обратите внимание, что модуль пользовательскую функцию имел аналогичный интерфейс, реализованный (импорт, экспорт, таблицы), аналогично как/SAPDS/RFC_READ_TABLE2 по умолчанию, используемые ADF. | Нет       |
 | partitionOption                  | Механизм секционирования для считывания из таблицы SAP. Поддерживаемые параметры: <br/>- **Нет**<br/>- **PartitionOnInt** (обычным целым числом или целочисленных значений ноль заполнения слева, например 0000012345)<br/>- **PartitionOnCalendarYear** (4 цифр в формате «YYYY»)<br/>- **PartitionOnCalendarMonth** (6 цифр в формате «YYYYMM»)<br/>- **PartitionOnCalendarDate** (8 цифр в формате «ГГГГММДД») | Нет       |
-| partitionColumnName              | Имя столбца для секционирования данных. | Нет       |
+| partitionColumnName              | Имя столбца для секционирования данных.                | Нет       |
 | partitionUpperBound              | Максимальное значение для столбца, указанного в `partitionColumnName` , будет использоваться для секционирования продолжением. | Нет       |
 | partitionLowerBound              | Минимальное значение для столбца, указанного в `partitionColumnName` , будет использоваться для секционирования продолжением. | Нет       |
-| maxPartitionsNumber              | Максимальное число секций для разделения данных в. | Нет       |
+| maxPartitionsNumber              | Максимальное число секций для разделения данных в.     | Нет       |
 
 >[!TIP]
 >- Если в таблице SAP есть большое количество данных, такие как несколько миллиарды строк, используйте `partitionOption` и `partitionSetting` для разбиения данных на небольших секций, в этом случае данные считываются секций, каждая секция данных извлекается из ваш сервер SAP через один одним Вызов RFC.<br/>

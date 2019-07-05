@@ -16,12 +16,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda, hirsin, jmprieur, sureshja, jesakowi, lenalepa, kkrishna, negoe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ccac719c78ce2844a8dd37a80445e11baa4a488
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 22f3e4cde892a70ec331523524508a50008a4073
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65962879"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67483005"
 ---
 # <a name="why-update-to-microsoft-identity-platform-v20"></a>Почему обновления к платформе Microsoft identity (версии 2.0)?
 
@@ -46,7 +46,7 @@ ms.locfileid: "65962879"
 
 В приложениях, где используется конечная точка Azure AD версии 1.0, необходимо указывать необходимые разрешения OAuth 2.0 заранее, например:
 
-![Пользовательский интерфейс регистрации разрешений](./media/azure-ad-endpoint-comparison/app_reg_permissions.png)
+![Пример, показывающий, пользовательский Интерфейс регистрации разрешений](./media/azure-ad-endpoint-comparison/app_reg_permissions.png)
 
 Разрешения, задаваемые непосредственно при регистрации приложения, являются **статическими**. Статические разрешения для приложения, заданные на портале Azure, позволяют упростить код, но при этом представляют определенные потенциальные сложности для разработчиков:
 

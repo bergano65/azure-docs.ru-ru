@@ -8,25 +8,26 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 6ad6f9414df17f9edff7565752ef3845e0d3c88e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c2bf19a2599d59b9ff2b3d189b26134f1528a878
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66116206"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448570"
 ---
 # <a name="understand-azure-policy-effects"></a>Сведения о действии политик Azure
 
 Каждое определение политики в Azure имеет один эффект. Этот эффект определяет, что происходит при вычислении правила политики при сопоставлении. Действия по-разному влияют на новые, обновленные и имеющиеся ресурсы.
 
-В настоящее время в определении политики поддерживается шесть действий:
+Эти эффекты в настоящее время поддерживаются в определении политики:
 
-- Добавить
-- Аудит
-- AuditIfNotExists
-- Deny
-- DeployIfNotExists
-- Отключено
+- [добавить](#append)
+- [Аудит](#audit)
+- [AuditIfNotExists](#auditifnotexists)
+- [DENY, запрет](#deny)
+- [DeployIfNotExists](#deployifnotexists)
+- [Disabled](#disabled)
+- [EnforceRegoPolicy](#enforceregopolicy) (Предварительная версия)
 
 ## <a name="order-of-evaluation"></a>Порядок оценки
 
@@ -38,6 +39,8 @@ ms.locfileid: "66116206"
 - Затем оценивается действие **Audit** (аудит), после чего запрос отправляется поставщику ресурсов.
 
 После того, как поставщик ресурсов вернет код успешного выполнения, **AuditIfNotExists** и **DeployIfNotExists** вычисляются для определения того, чтобы определить, требуется ли дополнительное ведение журнала соответствия или действие.
+
+В настоящее время не все порядок вычисления для **EnforceRegoPolicy** эффект.
 
 ## <a name="disabled"></a>Отключено
 
@@ -332,6 +335,58 @@ ms.locfileid: "66116206"
                     }
                 }
             }
+        }
+    }
+}
+```
+
+## <a name="enforceregopolicy"></a>EnforceRegoPolicy
+
+С помощью определения политики используется этот эффект *режим* из `Microsoft.ContainerService.Data`. Он используется для передачи правил управления допуском, определенные с помощью [Rego](https://www.openpolicyagent.org/docs/how-do-i-write-policies.html#what-is-rego) для [откройте агент политики](https://www.openpolicyagent.org/) (OPA) на [службе Azure Kubernetes](../../../aks/intro-kubernetes.md).
+
+> [!NOTE]
+> [Политика Azure для Kubernetes](rego-for-aks.md) в общедоступной предварительной версии и поддерживает только определения встроенных политик.
+
+### <a name="enforceregopolicy-evaluation"></a>EnforceRegoPolicy оценки
+
+Контроллер допуском откройте агент политики оценивает любой новый запрос в кластере в режиме реального времени.
+Каждые 5 минут, полная проверка кластера завершается, и результаты будут передаваться с политикой Azure.
+
+### <a name="enforceregopolicy-properties"></a>Свойства EnforceRegoPolicy
+
+**Сведения** свойство эффекта EnforceRegoPolicy имеет вложенные свойства, которые описывают правила управления допуском Rego.
+
+- **policyId** [обязательный параметр]
+  - Уникальное имя, переданный в качестве параметра для правила управления допуском Rego.
+- **политика** [обязательный параметр]
+  - Указывает URI Rego правила управления допуском.
+- **policyParameters** [необязательно]
+  - Определяет, все параметры и значения для передачи в rego политику.
+
+### <a name="enforceregopolicy-example"></a>Пример EnforceRegoPolicy
+
+Пример: Rego правило управления допуском, чтобы разрешить только образы из указанного контейнера в AKS.
+
+```json
+"if": {
+    "allOf": [
+        {
+            "field": "type",
+            "equals": "Microsoft.ContainerService/managedClusters"
+        },
+        {
+            "field": "location",
+            "equals": "westus2"
+        }
+    ]
+},
+"then": {
+    "effect": "EnforceRegoPolicy",
+    "details": {
+        "policyId": "ContainerAllowedImages",
+        "policy": "https://raw.githubusercontent.com/Azure/azure-policy/master/built-in-references/KubernetesService/container-allowed-images/limited-preview/gatekeeperpolicy.rego",
+        "policyParameters": {
+            "allowedContainerImagesRegex": "[parameters('allowedContainerImagesRegex')]"
         }
     }
 }

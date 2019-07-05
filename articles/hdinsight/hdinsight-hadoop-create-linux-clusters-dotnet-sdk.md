@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: mamccrea
-ms.openlocfilehash: 42c3f0ce70467c6a90bcc4e2e6b8a21d7570edc4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d560c61339bd608ab9385f99583613526156ca41
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65606186"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508059"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-using-the-net-sdk"></a>Создание кластеров под управлением Linux в HDInsight с помощью пакета SDK для .NET
 
@@ -393,7 +393,6 @@ static void Main(string[] args)
 
 ### <a name="run-jobs"></a>Выполнение заданий
 * [Выполнение запросов Apache Hive с использованием пакета SDK .NET для HDInsight](hadoop/apache-hadoop-use-hive-dotnet-sdk.md)
-* [Выполнение заданий Apache Pig с помощью пакета SDK для .NET для Apache Hadoop в HDInsight](hadoop/apache-hadoop-use-pig-dotnet-sdk.md)
 * [Выполнение заданий Apache Sqoop с помощью пакета SDK для .NET для Apache Hadoop в HDInsight](hadoop/apache-hadoop-use-sqoop-dotnet-sdk.md)
 * [Использование Oozie с Hadoop для определения и выполнения рабочего процесса в HDInsight](hdinsight-use-oozie-linux-mac.md)
 

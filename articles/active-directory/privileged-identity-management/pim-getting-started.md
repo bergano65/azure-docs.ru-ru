@@ -14,12 +14,12 @@ ms.date: 04/09/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 651dc4efa653e7a4eb77f153280579ffd87fe8f7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 408991ffc3922986234f7d40e1cd589b1d126ba1
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60290050"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67476487"
 ---
 # <a name="start-using-pim"></a>Начало работы с PIM
 
@@ -56,25 +56,25 @@ ms.locfileid: "60290050"
 
 1. В списке щелкните **Согласие для PIM**.
 
-    ![Согласие для PIM](./media/pim-getting-started/consent-pim.png)
+    ![Согласие для PIM, чтобы включить PIM](./media/pim-getting-started/consent-pim.png)
 
 1. Выберите **Подтверждение вашей личности**, чтобы подтвердить свою личность с помощью Azure MFA. Вам будет предложено выбрать учетную запись.
 
-    ![Выбор учетной записи](./media/pim-getting-started/pick-account.png)
+    ![Окно учетной записи, чтобы подтвердить свою личность подбора](./media/pim-getting-started/pick-account.png)
 
 1. Если для проверки требуются дополнительные сведения, вы получите пошаговые инструкции по их добавлению. Дополнительные сведения см. в статье [Получение справки по двухфакторной проверке подлинности](https://go.microsoft.com/fwlink/p/?LinkId=708614).
 
-    ![Требуются дополнительные сведения](./media/pim-getting-started/more-information-required.png)
+    ![Дополнительные сведения, необходимые окна, если организации требуются дополнительные сведения](./media/pim-getting-started/more-information-required.png)
 
     Например, может потребоваться проверка по телефону.
 
-    ![Дополнительная проверка безопасности](./media/pim-getting-started/additional-security-verification.png)
+    ![Странице дополнительной проверки безопасности тем, как связаться с вами](./media/pim-getting-started/additional-security-verification.png)
 
 1. После завершения процесса проверки нажмите кнопку **Согласие**.
 
 1. В появившемся сообщении щелкните **Да**, чтобы дать согласие на использование службы PIM.
 
-    ![Сообщение о согласии на PIM](./media/pim-getting-started/consent-pim-message.png)
+    ![Согласие для PIM сообщения для завершения процесса предоставления разрешения](./media/pim-getting-started/consent-pim-message.png)
 
 ## <a name="sign-up-pim-for-azure-ad-roles"></a>Регистрация PIM для ролей Azure AD
 
@@ -100,7 +100,7 @@ ms.locfileid: "60290050"
 
 После настройки PIM можно выполнять задачи по управлению пользователями.
 
-![Задачи верхнего уровня для управления привилегированными пользователями — снимок экрана](./media/pim-getting-started/pim-quickstart-tasks.png)
+![Окно навигации в PIM Отображение задач и управление параметрами](./media/pim-getting-started/pim-quickstart-tasks.png)
 
 | Задача и управление | Описание |
 | --- | --- |
@@ -125,11 +125,11 @@ ms.locfileid: "60290050"
 
 1. Установите флажок **Закрепить колонку на панели мониторинга**, чтобы закрепить колонку "Быстрое начало" PIM на панели мониторинга.
 
-    ![Закрепление колонки на панели мониторинга](./media/pim-getting-started/pim-quickstart-pin-to-dashboard.png)
+    ![Значок канцелярской кнопки, чтобы закрепить колонку PIM на панель мониторинга](./media/pim-getting-started/pim-quickstart-pin-to-dashboard.png)
 
     На панели мониторинга Azure вы увидите такие плитки:
 
-    ![Плитка "Быстрое начало" PIM](./media/pim-getting-started/pim-quickstart-dashboard-tile.png)
+    ![Примеры использования PIM плитки на панели мониторинга](./media/pim-getting-started/pim-quickstart-dashboard-tile.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,5 +1,5 @@
 ---
-title: Ресурсы в Службах мультимедиа в Azure | Документация Майкрософт
+title: Ресурсы-контейнеры в службах мультимедиа Azure | Документация Майкрософт
 description: В этой статье приведены общие сведения о ресурсах и их использовании в Службах мультимедиа Azure.
 services: media-services
 documentationcenter: ''
@@ -9,15 +9,15 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 05/11/2019
+ms.date: 07/02/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 2afcf2066238414cd08e32901ffccf2a44718b6d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1bd9774cf045d9ed7f16a637fcb2eb1378b48686
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65551759"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67565816"
 ---
 # <a name="assets"></a>Активы
 
@@ -87,9 +87,22 @@ curl -X PUT \
 
 Полный пример см. в разделе [Создание входных данных задания из локального файла](job-input-from-local-file-how-to.md). В Службах мультимедиа версии 3 входные данные задания также могут создаваться из URL-адреса HTTPS (см. раздел [Создание входных данных задания из URL-адреса HTTPS](job-input-from-http-how-to.md)).
 
-## <a name="filtering-ordering-paging"></a>Фильтрации, упорядочивание, разбиение по страницам
+## <a name="map-v3-asset-properties-to-v2"></a>Сопоставления свойств ресурса v3 v2
 
-Ознакомьтесь с разделом [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md).
+В следующей таблице показано как [активов](https://docs.microsoft.com/rest/api/media/assets/createorupdate#asset)его свойства в версии 3 соответствуют свойствам актива v2.
+
+|свойства v3|Свойства версии 2|
+|---|---|
+|идентификатор - (уникальный) полный путь Azure Resource Manager, см. Примеры в [активов](https://docs.microsoft.com/rest/api/media/assets/createorupdate)||
+|Name — (уникальный) см. в разделе [соглашения об именовании](media-services-apis-overview.md#naming-conventions) ||
+|альтернативного имени пользователя|Альтернативного имени пользователя|
+|assetId|Идентификатор - значение (уникальный) начинается с `nb:cid:UUID:` префикс.|
+|created|Создано|
+|description|ИМЯ|
+|lastModified|LastModified|
+|storageAccountName|Имя_учетной_записи_хранения|
+|storageEncryptionFormat| Параметры - параметры создания|
+|type||
 
 ## <a name="storage-side-encryption"></a>Шифрование на стороне хранилища
 
@@ -104,6 +117,10 @@ curl -X PUT \
 <sup>1</sup>Хотя Службы мультимедиа поддерживают обработку содержимого в чистом, незашифрованном виде, мы не рекомендуем ее использовать.
 
 <sup>2</sup>В Службах мультимедиа версии 3 для обратной совместимости поддерживается шифрование хранилища (шифрование AES-256), только если ресурсы созданы с помощью Служб мультимедиа версии 2. То есть версия 3 работает с существующими зашифрованными ресурсами хранилища, но создание новых ресурсов не поддерживается.
+
+## <a name="filtering-ordering-paging"></a>Фильтрации, упорядочивание, разбиение по страницам
+
+Ознакомьтесь с разделом [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

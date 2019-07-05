@@ -5,15 +5,15 @@ services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
-ms.date: 05/30/2019
+ms.date: 06/30/2019
 ms.topic: conceptual
 ms.author: raynew
-ms.openlocfilehash: 9979cb97ec578a59ba8263f2eb1fe53d41db862f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 36c109e083873e9c4ec63ebe34f5c5c0cfb6eeb1
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66399462"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67491810"
 ---
 # <a name="common-questions---hyper-v-to-azure-disaster-recovery"></a>Часто задаваемые вопросы. Аварийное восстановление Hyper-V в Azure
 
@@ -26,6 +26,10 @@ ms.locfileid: "66399462"
 
 ### <a name="how-do-i-pay-for-azure-vms"></a>Как оплачивается использование виртуальных машин Azure?
 Во время репликации данные реплицируются в хранилище Azure, и вы не платите за любые изменения виртуальной машины. При выполнении отработки отказа в Azure служба Site Recovery автоматически создаст виртуальные машины IaaS Azure. После этого вам будет выставлен счет за вычислительные ресурсы, использованные в Azure.
+
+### <a name="is-there-any-difference-in-cost-when-replicating-to-general-purpose-v2-storage-account"></a>Есть ли разница в стоимости при репликации в учетную запись хранения общего назначения версии 2?
+
+Обычно вы будете видеть увеличение транзакции затраты на учетные записи хранения GPv2, так как Azure Site Recovery предусмотрена большой транзакции. [Дополнительные сведения](../storage/common/storage-account-upgrade.md#pricing-and-billing) оценить изменения.
 
 ## <a name="azure"></a>Таблицы Azure
 

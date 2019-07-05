@@ -11,19 +11,19 @@ ms.author: marthalc
 author: marthalc
 ms.date: 12/03/2018
 ms.custom: seodec18
-ms.openlocfilehash: df2f0731aff6c90ef83b26041a9d383ce14974c6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f596fb3a066017f0236de5b79586891dd21efb11
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65024243"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443977"
 ---
 # <a name="collect-data-for-models-in-production"></a>Сбор данных для моделей в рабочей среде
 
 Из этой статьи вы узнаете, как собирать входные данные модели от служб машинного обучения Azure, которые были развернуты в кластере Azure Kubernetes в хранилище BLOB-объектов Azure. 
 
 После включения сбора данных собранные данные помогут вам:
-* Отслеживать колебания данных при поступлении рабочих данных в вашу модель
+* [Мониторинг данных drifts](how-to-monitor-data-drift.md) рабочими данными, вводимыми модели
 
 * Принимать более взвешенные решения о необходимости повторного обучения и оптимизации модели
 

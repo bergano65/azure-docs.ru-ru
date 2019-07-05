@@ -16,12 +16,12 @@ ms.subservice: pim
 ms.date: 04/09/2019
 ms.author: rolyon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74607f6a746558238ead65036d708b515d370035
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 84bd491d992ed15df288d9226b58bfe832e0692a
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60441450"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67476499"
 ---
 # <a name="view-activity-and-audit-history-for-azure-resource-roles-in-pim"></a>Просмотр журнала аудита и действий для ролей ресурсов Azure в PIM
 
@@ -43,11 +43,11 @@ ms.locfileid: "60441450"
 
     Отобразится графическое представление действий пользователя в ресурсах Azure по датам. В нем также представлены недавние активации роли за тот же период времени.
 
-    ![Сведения о пользователе](media/azure-pim-resource-rbac/rbac-user-details.png)
+    ![Сведения о пользователе с активаций сводки и роль действия ресурсов](media/azure-pim-resource-rbac/rbac-user-details.png)
 
 1. Щелкните необходимую активацию роли, чтобы просмотреть сведения о ней и соответствующую активность с ресурсами Azure, которая произошла, когда этот пользователь был активен.
 
-    ![Выбор активации роли](media/azure-pim-resource-rbac/rbac-user-resource-activity.png)
+    ![Активация роли выбран и сведения о действиях, которые отображаются по дате](media/azure-pim-resource-rbac/rbac-user-resource-activity.png)
 
 ## <a name="export-role-assignments-with-children"></a>Экспорт назначений ролей с дочерними элементами
 
@@ -63,11 +63,11 @@ ms.locfileid: "60441450"
 
 1. Щелкните **Экспортировать**, чтобы открыть панель "Экспорт членства".
 
-    ![Панель "Экспорт членства"](media/azure-pim-resource-rbac/export-membership.png)
+    ![Экспортировать панель членства для экспорта всех элементов](media/azure-pim-resource-rbac/export-membership.png)
 
 1. Щелкните **Export all members** (Экспортировать всех участников), чтобы экспортировать все назначения ролей в CSV-файле.
 
-    ![Экспорт CSV-файла](media/azure-pim-resource-rbac/export-csv.png)
+    ![Экспортировать назначения ролей в CSV-файлы как отображаются в Excel](media/azure-pim-resource-rbac/export-csv.png)
 
 ## <a name="view-resource-audit-history"></a>Просмотр журнала аудита ресурсов
 
@@ -83,15 +83,15 @@ ms.locfileid: "60441450"
 
 1. Отфильтруйте журнал по предопределенной дате или настраиваемому диапазону.
 
-    ![Фильтрация журнала аудита ресурсов](media/azure-pim-resource-rbac/rbac-resource-audit.png)
+    ![Список ресурсов аудита с фильтрами](media/azure-pim-resource-rbac/rbac-resource-audit.png)
 
 1. В раскрывающемся списке **Тип аудита** выберите **Activate (Assigned + Activated)** (Активировать (назначено + активировано)).
 
-    ![Сведения о действиях](media/azure-pim-resource-rbac/rbac-audit-activity.png)
+    ![Список аудита ресурсов, которая фильтруется по типу аудита активировать](media/azure-pim-resource-rbac/rbac-audit-activity.png)
 
 1. В разделе **Действие** щелкните **(действие)** , чтобы пользователь мог просмотреть сведения о своих действиях в ресурсах Azure.
 
-    ![Сведения о действиях пользователя](media/azure-pim-resource-rbac/rbac-audit-activity-details.png)
+    ![Сведения о пользователе действие для выполнения определенного действия](media/azure-pim-resource-rbac/rbac-audit-activity-details.png)
 
 ## <a name="view-my-audit"></a>Просмотр раздела "Мой аудит"
 
@@ -107,7 +107,7 @@ ms.locfileid: "60441450"
 
 1. Отфильтруйте журнал по предопределенной дате или настраиваемому диапазону.
 
-    ![Действия в личной роли](media/azure-pim-resource-rbac/my-audit-time.png)
+    ![Список аудита для текущего пользователя](media/azure-pim-resource-rbac/my-audit-time.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -9,12 +9,12 @@ ms.date: 06/26/2018
 ms.author: normesta
 ms.reviewer: seguler
 ms.subservice: blobs
-ms.openlocfilehash: 4f6776a5f15cf391f3a65aceb6e9e783d87a2078
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c0fb3551b14a2239f26c54f639b90400277fab25
+ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65148929"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67501930"
 ---
 # <a name="configure-a-custom-domain-name-for-your-azure-storage-account"></a>Настройка имени личного домена для учетной записи хранения Azure
 
@@ -34,10 +34,10 @@ ms.locfileid: "65148929"
 
 | Тип ресурса | URL-адрес по умолчанию | URL-адрес личного домена |
 | --- | --- | --- |
-| Учетная запись хранения | http://mystorageaccount.blob.core.windows.net | http://www.contoso.com |
-| BLOB-объект |http://mystorageaccount.blob.core.windows.net/mycontainer/myblob | http://www.contoso.com/mycontainer/myblob |
-| Корневой контейнер | http://mystorageaccount.blob.core.windows.net/myblob или http://mystorageaccount.blob.core.windows.net/ $root/myblob| http://www.contoso.com/myblob или http://www.contoso.com/ $root/myblob |
-| Интернет |  http://mystorageaccount.[zone].web.core.windows.net/$web/[indexdoc] или http://mystorageaccount.[zone].web.core.windows.net/[indexdoc] или http://mystorageaccount.[zone].web.core.windows.net/$web или http://mystorageaccount.[zone].web.core.windows.net/ | http://www.contoso.com/ $web или http://www.contoso.com/ или http://www.contoso.com/ $web/[indexdoc] или http://www.contoso.com/ [indexdoc] |
+| Учетная запись хранения | http:\//mystorageaccount.blob.core.windows.net | http:\//www.contoso.com |
+| BLOB-объект |http:\//mystorageaccount.blob.core.windows.net/mycontainer/myblob | http:\//www.contoso.com/mycontainer/myblob |
+| Корневой контейнер | http:\//mystorageaccount.blob.core.windows.net/myblob или http:\//mystorageaccount.blob.core.windows.net/$root/myblob | http:\//www.contoso.com/myblob или http:\//www.contoso.com/$ корневой/myblob |
+| Интернет |  http:\//mystorageaccount. [ zone].Web.Core.Windows.NET/$Web/[indexdoc] или http:\//mystorageaccount. [ zone].Web.Core.Windows.NET/[indexdoc] или http:\//mystorageaccount. [ zone].Web.Core.Windows.NET/$Web или http:\//mystorageaccount. [ zone].Web.Core.Windows.NET/ | http:\//www.contoso.com/$ web или http:\//www.contoso.com/ или http:\//www.contoso.com/$ web / [indexdoc] или http:\//www.contoso.com/ [indexdoc] |
 
 > [!NOTE]  
 > Как показано в следующих разделах, все примеры для конечной точки службы BLOB-объектов распространяются и на конечную точку веб-службы.

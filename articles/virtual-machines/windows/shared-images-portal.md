@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/06/2019
 ms.author: cynthn
 ms.custom: ''
-ms.openlocfilehash: f63b705f7967eeddaf522941d6db9be5d9f2719d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 93734045cd06f279f37d7725aa573a59c4ec0be9
+ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66244987"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67465718"
 ---
 # <a name="create-a-shared-image-gallery-using-the-azure-portal"></a>Создание общего образа коллекции с помощью портала Azure
 
@@ -53,6 +53,9 @@ ms.locfileid: "66244987"
 ## <a name="create-vms-from-an-image"></a>Создание виртуальных машин из образа
 
 Когда версия образа будет готова, вы можете создать одну или несколько виртуальных машин. 
+
+> [!IMPORTANT]
+> Чтобы развернуть виртуальную Машину из образа в другом клиенте azure нельзя использовать портал. Чтобы создать виртуальную Машину из образа совместно несколькими клиентами, необходимо использовать [Azure CLI](../linux/shared-images.md#create-a-vm) или [Powershell](shared-images.md#create-vms-from-an-image).
 
 В этом примере создается виртуальная машина *myVMfromImage* в группе ресурсов *myResourceGroup* в регионе *Восточная часть США*.
 

@@ -5,14 +5,14 @@ author: msvijayn
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 09/15/2018
+ms.date: 06/25/2019
 ms.author: vinagara
-ms.openlocfilehash: f25321fa5a13ed5a39a62a4115bb0bc10306d36f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8183c7070b5d42e1c7a96fc0d64974658b2ec7d0
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66244958"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448924"
 ---
 # <a name="create-view-and-manage-activity-log-alerts-using-azure-monitor"></a>Создание, просмотр и управление оповещениями журнала действий с помощью Azure Monitor  
 
@@ -24,16 +24,17 @@ ms.locfileid: "66244958"
 > [!IMPORTANT]
 > Оповещения уведомлений о работоспособности службы невозможно создавать через интерфейс для создания оповещений журнала действий. Дополнительные сведения о создании и использовании уведомлений о работоспособности службы см. в статье [Создание оповещений журнала действий для уведомлений службы](alerts-activity-log-service-notifications.md).
 
+При создании правил генерации оповещений проверьте следующее.
+
+- Подписка в области ничем не отличается от подписки, в которой создается оповещение.
+- Условия должны соответствовать уровню, состоянию, вызывающему, группе ресурсов, идентификатору ресурса, типу ресурса или категории события, на основе которых настраивается оповещение.
+- Условие anyOf и вложенные условия отсутствуют в JSON-файле конфигурации оповещений (обычно разрешается только одно условие allOf без allOf и anyOf).
+- Для категории "административная". В оповещении необходимо указать хотя бы одно из описанных выше условий. Вы не можете создать оповещение, которое активируется каждый раз при создании события в журналах действий.
+
+
 ## <a name="azure-portal"></a>Портал Azure
 
-> [!NOTE]
-> 
->  При создании правил генерации оповещений проверьте следующее.
-> 
-> - Подписка в области ничем не отличается от подписки, в которой создается оповещение.
-> - Условия должны соответствовать уровню, состоянию, вызывающему, группе ресурсов, идентификатору ресурса, типу ресурса или категории события, на основе которых настраивается оповещение.
-> - Условие anyOf и вложенные условия отсутствуют в JSON-файле конфигурации оповещений (обычно разрешается только одно условие allOf без allOf и anyOf).
-> - Для категории "административная". В оповещении необходимо указать хотя бы одно из описанных выше условий. Вы не можете создать оповещение, которое активируется каждый раз при создании события в журналах действий.
+С помощью портала Azure, пользователь может создать и изменение правил генерации оповещений журнала действий. И интегрирована с помощью журнала действий Azure — чтобы обеспечить эффективное создание оповещения для определенных событий интерес.
 
 ### <a name="create-with-azure-portal"></a>Создание с помощью портала Azure
 
@@ -220,11 +221,11 @@ New-AzResourceGroupDeployment -ResourceGroupName "myRG" -TemplateFile sampleActi
 
 Для оповещений журнала действий предусмотрены специальные командлеты PowerShell.
 
-- [SET-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Set-AzActivityLogAlert?view=azps-1.3.0) : Создает новый или обновить существующие оповещения журнала действий.
-- [Get-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Get-AzActivityLogAlert?view=azps-1.3.0) : Получает один или несколько действий ресурсы оповещения журнала.
-- [Enable-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Enable-AzActivityLogAlert?view=azps-1.3.0) : Включает существующие оповещения журнала действий и задает его теги.
-- [Disable-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Disable-AzActivityLogAlert?view=azps-1.3.0) : Отключает оповещения для существующего журнала действий и задает его теги.
-- [Remove-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Remove-AzActivityLogAlert?view=azps-1.3.0)    : Удаление оповещения журнала действий.
+- [SET-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Set-AzActivityLogAlert) : Создает новый или обновить существующие оповещения журнала действий.
+- [Get-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Get-AzActivityLogAlert) : Получает один или несколько действий ресурсы оповещения журнала.
+- [Enable-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Enable-AzActivityLogAlert) : Включает существующие оповещения журнала действий и задает его теги.
+- [Disable-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Disable-AzActivityLogAlert) : Отключает оповещения для существующего журнала действий и задает его теги.
+- [Remove-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Remove-AzActivityLogAlert)    : Удаление оповещения журнала действий.
 
 ## <a name="cli"></a>Интерфейс командной строки
 

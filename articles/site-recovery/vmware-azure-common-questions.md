@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 services: site-recovery
-ms.date: 05/30/2019
+ms.date: 06/27/2019
 ms.topic: conceptual
 ms.author: raynew
-ms.openlocfilehash: 59be8e0585f0bedcafc868ee42f5113509c9c4ef
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 79118fb053c7064fa29730680feb0434f45f031a
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66417776"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67491696"
 ---
 # <a name="common-questions-about-vmware-to-azure-replication"></a>Часто задаваемые вопросы о VMware для репликации в Azure
 
@@ -85,6 +85,10 @@ Site Recovery сертифицирован для ISO 27001: 2013 и 27018, HIPA
 ### <a name="is-there-any-difference-in-cost-between-replicating-to-storage-or-directly-to-managed-disks"></a>Есть ли разница в стоимости между репликации в хранилище или непосредственно на управляемые диски?
 
 Управляемые диски взимается немного по-разному из учетных записей хранения. [Дополнительные сведения](https://azure.microsoft.com/pricing/details/managed-disks/) о ценах на управляемый диск.
+
+### <a name="is-there-any-difference-in-cost-when-replicating-to-general-purpose-v2-storage-account"></a>Есть ли разница в стоимости при репликации в учетную запись хранения общего назначения версии 2?
+
+Обычно вы будете видеть увеличение транзакции затраты на учетные записи хранения GPv2, так как Azure Site Recovery предусмотрена большой транзакции. [Дополнительные сведения](../storage/common/storage-account-upgrade.md#pricing-and-billing) оценить изменения.
 
 ## <a name="mobility-service"></a>Служба Mobility Service
 
@@ -293,7 +297,7 @@ Site Recovery соответствует модели поддержки N-4. [�
 
 ### <a name="how-do-i-update-the-process-server-to-version-924-or-later-for-accurate-health-information"></a>Как обновить сервер обработки до версии 9.24 или более поздней сведения о точной работоспособности?
 
-Начиная с версии [версии 9,24](service-updates-how-to.md#links-to-currently-supported-update-rollups), были добавлены дополнительные оповещения о работоспособности сервера обработки. [Чтобы 9.24 или более поздней версии с обновлением компонентов Site Recovery] (service-updates-how-to.md#links-to-currently-supported-update-rollups), чтобы все оповещений.
+Начиная с версии [версии 9,24](service-updates-how-to.md#links-to-currently-supported-update-rollups), были добавлены дополнительные оповещения о работоспособности сервера обработки. [Обновите компоненты Site Recovery до версии 9.24 или более поздней версии](service-updates-how-to.md#links-to-currently-supported-update-rollups) , чтобы все оповещений.
 
 ## <a name="failover-and-failback"></a>Отработка отказа и восстановление размещения
 

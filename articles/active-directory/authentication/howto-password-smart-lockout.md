@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/31/2018
+ms.date: 06/28/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c81a9f3891130f1c6fc2f1a665d7065fb983227
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 150ecbdfcc21ee7ec0bf54fd5b824bc93e0c76ce
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60358146"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67483307"
 ---
 # <a name="azure-active-directory-smart-lockout"></a>Смарт-блокировка Azure Active Directory
 
@@ -41,7 +41,9 @@ ms.locfileid: "60358146"
 При использовании [сквозной аутентификации](../hybrid/how-to-connect-pta.md) необходимо убедиться, что:
 
 * Пороговое значение блокировки Azure AD должно быть **меньше**, чем пороговое значение блокировки учетных записей Active Directory. Необходимо, чтобы пороговое значение блокировки учетных записей Active Directory как минимум в два-три раза превышало пороговое значение блокировки Azure AD. 
-* Продолжительность блокировки Azure AD, **в секундах**, должна **быть больше**, чем время до сброса счетчика блокировки учетных записей Active Directory, **в минутах**.
+* Продолжительность блокировки Azure AD должно быть установлено больше времени, чем Active Directory сбросить счетчик блокировки учетной записи через период. Имейте в виду, что Azure AD длительность задается в секундах, при AD длительность задается в минутах. 
+
+Например если требуется Azure AD счетчика будет больше, чем AD, Azure AD будет 120 секунд (2 минуты), пока ваш on prem AD установлено в 1 минуту (60 секунд).
 
 > [!IMPORTANT]
 > Сейчас администраторы не могут разблокировать учетные записи пользователей в облаке, если они заблокированы с помощью смарт-блокировки. Администраторы должны подождать, пока не завершится срок действия блокировки.

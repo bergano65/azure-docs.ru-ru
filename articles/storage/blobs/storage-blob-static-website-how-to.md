@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: article
 ms.author: normesta
 ms.date: 05/28/2019
-ms.openlocfilehash: 61477767c59dd521e3f46db4445238a5a1ea759e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5ab24a99b22fae172b5308ba7477953f27ecfd44
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67071438"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67435957"
 ---
 # <a name="host-a-static-website-in-azure-storage"></a>Размещение статического веб-сайта в службе хранилища Azure
 
@@ -44,13 +44,7 @@ ms.locfileid: "67071438"
 
 1. Сначала откройте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest), или если вы [установлен](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) Azure CLI локально, откройте командного консольного приложения, такие как Windows PowerShell.
 
-2. Из окна команд, вы открыли установите расширение предварительной версии хранилища.
-
-   ```azurecli-interactive
-   az extension add --name storage-preview
-   ```
-
-3. Если вашей личности связан с более чем одной подписки, задайте в активной подписки к подписке учетной записи хранения, где будет размещаться в статический веб-сайт.
+2. Если вашей личности связан с более чем одной подписки, задайте в активной подписки к подписке учетной записи хранения, где будет размещаться в статический веб-сайт.
 
    ```azurecli-interactive
    az account set --subscription <subscription-id>
@@ -58,7 +52,7 @@ ms.locfileid: "67071438"
 
    Замените `<subscription-id>` значение заполнителя с Идентификатором вашей подписки.
 
-4. Включите размещение статического веб-сайта.
+3. Включите размещение статического веб-сайта.
 
    ```azurecli-interactive
    az storage blob service-properties update --account-name <storage-account-name> --static-website --404-document <error-document-name> --index-document <index-document-name>
@@ -70,7 +64,7 @@ ms.locfileid: "67071438"
 
    * Замените `<index-document-name>` заполнитель имя документа индекса. Этот документ часто является «index.html».
 
-5. Передайте объекты в контейнер *$web* из исходного каталога.
+4. Передайте объекты в контейнер *$web* из исходного каталога.
 
    > [!NOTE]
    > Если вы используете Azure Cloud Shell, убедитесь в том добавить `\` escape-символ, при ссылке на `$web` контейнера (например: `\$web`). Если вы используете локальную установку Azure CLI, не придется использовать escape-символ.

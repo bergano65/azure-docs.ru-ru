@@ -19,12 +19,12 @@ ms.author: ryanwi
 ms.reviewer: sureshja
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 05b3d749eb3e2bc767889831b4c1ff01833a3f39
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a2ae83b655bfe607b1061168649ec74f02ab4064
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65544667"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67483183"
 ---
 # <a name="how-to-use-the-azure-ad-graph-api"></a>Практическое руководство: Использование API Graph Azure AD
 
@@ -65,7 +65,7 @@ API Graph Azure Active Directory (Azure AD) обеспечивает прогр�
 
 Ниже показан снимок экрана результата, который отобразится, если войти в Azure AD Graph Explorer и ввести `https://graph.windows.net/GraphDir1.OnMicrosoft.com/users?api-version=1.6`, чтобы отобразить всех пользователей в каталоге пользователя, выполнившего вход.
 
-![Обозреватель API Graph Azure AD](./media/active-directory-graph-api-quickstart/graph_explorer.png)
+![Пример выходных данных в обозреватель API Graph Azure AD](./media/active-directory-graph-api-quickstart/graph_explorer.png)
 
 **Загрузка песочницы Azure AD Graph**. Чтобы загрузить этот инструмент, перейдите к [https://graphexplorer.azurewebsites.net/](https://graphexplorer.azurewebsites.net/). Выполните **вход** с использованием данных учетной записи Azure AD, чтобы запустить Azure AD Graph Explorer для работы с клиентом. При запуске Azure AD Graph Explorer для своего собственного клиента вам или вашему администратору потребуется предоставить согласие в процессе входа. Если у вас есть подписка Office 365, у вас также есть клиент Azure AD. Учетные данные, используемые для входа в Office 365, в действительности являются учетными записями Azure AD, и эти учетные данные можно использовать в Azure AD Graph Explorer.
 

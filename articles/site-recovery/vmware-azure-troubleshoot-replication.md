@@ -5,14 +5,14 @@ author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 03/14/2019
+ms.date: 06/27/2019
 ms.author: mayg
-ms.openlocfilehash: 3221b2bd18b8b0756f280d88fffc6016d0498b8f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c005dcee78e2a9338dc7a816e06d9a78a2f355b6
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64924829"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67491670"
 ---
 # <a name="troubleshoot-replication-issues-for-vmware-vms-and-physical-servers"></a>Устранение неполадок с репликацией виртуальных машин VMware и физических серверов
 
@@ -77,6 +77,13 @@ Site Recovery использует [сервер обработки](vmware-phys
         - Служба VSS
         - поставщик VSS Azure Site Recovery.
         - САМУ службу
+
+- При выполнении рабочих нагрузок SQL или Exchange, проверьте журналы эти авторы приложений об ошибках. Частые ошибки и способах их устранения, сохраняются в следующих статьях:
+    -  [Автоматическое закрытие базы данных SQL Server был установлен в значение TRUE](https://support.microsoft.com/help/4504104)
+    - [SQL Server 2008 R2 генерации ошибку без возможности повторной попытки](https://support.microsoft.com/help/4504103)
+    - [Известная проблема в SQL Server 2016 и 2017](https://support.microsoft.com/help/4493364)
+    - [Распространенная проблема с серверами Exchange 2013 и 2016](https://support.microsoft.com/help/4037535)
+
 
 ### <a name="source-machines-with-high-churn-error-78188"></a>Исходные компьютеры с высокой скоростью изменения данных [Ошибка 78188]
 

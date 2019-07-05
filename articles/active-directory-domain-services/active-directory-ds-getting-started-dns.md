@@ -3,7 +3,7 @@ title: Доменные службы Azure Active Directory. Обновлени�
 description: Приступая к работе с доменными службами Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
-author: eringreenlee
+author: iainfoulds
 manager: daveba
 editor: curtand
 ms.assetid: d4f3e82c-6807-4690-b298-4eabad2b7927
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/30/2018
-ms.author: ergreenl
-ms.openlocfilehash: 4727c24c603e95aeee6214546e25a273aa652f4c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: iainfou
+ms.openlocfilehash: ef0c25227e98d066d75c9adb62af3f602e35db23
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60417336"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67474155"
 ---
 # <a name="enable-azure-active-directory-domain-services"></a>Включение доменных служб Azure Active Directory
 

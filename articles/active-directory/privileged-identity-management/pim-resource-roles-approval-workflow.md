@@ -15,12 +15,12 @@ ms.date: 04/09/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f645b7077ef43dc7eb4d70261b6b601b5e4af1b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9d2e8b4ae1a01cd299d910c4e88655885c7d00dc
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60288475"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67476384"
 ---
 # <a name="approve-or-deny-requests-for-azure-resource-roles-in-pim"></a>Подтверждение или отклонение запросов для ролей ресурсов Azure в PIM
 
@@ -38,15 +38,15 @@ ms.locfileid: "60288475"
 
 1. Выберите **Утверждение запросов**.
 
-    ![Ресурсы Azure. Утверждение запросов](./media/pim-resource-roles-approval-workflow/resources-approve-requests.png)
+    ![Утверждение запросов - страница запроса для просмотра ресурсов Azure](./media/pim-resource-roles-approval-workflow/resources-approve-requests.png)
 
     В разделе **Запросы на активацию ролей** вы увидите список запросов, ожидающих вашего утверждения.
 
 ## <a name="approve-requests"></a>Утверждение запросов
 
-1. Найдите и щелкните запрос, который требуется утвердить. Откроется область утверждения.
+1. Найдите и щелкните запрос, который требуется утвердить. Утвердить или отклонить, откроется панель.
 
-    ![Область "Утверждение запросов"](./media/pim-resource-roles-approval-workflow/resources-approve-pane.png)
+    ![Утверждение запросов — утвердить или отклонить панель со сведениями и обоснование поле](./media/pim-resource-roles-approval-workflow/resources-approve-pane.png)
 
 1. В поле **Обоснование** введите причину.
 
@@ -54,13 +54,13 @@ ms.locfileid: "60288475"
 
     Появится уведомление о вашем утверждении.
 
-    ![Уведомление об утверждении](./media/pim-resource-roles-approval-workflow/resources-approve-notification.png)
+    ![Утвердить уведомление о том, что запрос был утвержден](./media/pim-resource-roles-approval-workflow/resources-approve-notification.png)
 
 ## <a name="deny-requests"></a>Отклонение запросов
 
-1. Найдите и щелкните запрос, который требуется отклонить. Откроется область утверждения.
+1. Найдите и щелкните запрос, который требуется отклонить. Утвердить или отклонить, откроется панель.
 
-    ![Область "Утверждение запросов"](./media/pim-resource-roles-approval-workflow/resources-approve-pane.png)
+    ![Утверждение запросов — утвердить или отклонить панель со сведениями и обоснование поле](./media/pim-resource-roles-approval-workflow/resources-approve-pane.png)
 
 1. В поле **Обоснование** введите причину.
 

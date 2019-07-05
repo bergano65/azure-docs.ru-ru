@@ -8,12 +8,12 @@ ms.service: batch
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: lahugh
-ms.openlocfilehash: 886dea0e53519870aaa27dea721a9eb78515cf86
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 80cba5e1b5e38e31dea2272cc4e33b4a95940e41
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64706327"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67565616"
 ---
 # <a name="use-a-custom-image-to-create-a-pool-of-virtual-machines"></a>Использование пользовательского образа для создания пула виртуальных машин 
 
@@ -49,7 +49,7 @@ ms.locfileid: "64706327"
 
 ### <a name="prepare-a-vm"></a>Подготовка виртуальной машины
 
-Если вы создаете новую виртуальную Машину для образа, используйте первый образ Azure Marketplace сторона, поддерживаются пакетной службой в качестве базового образа для управляемого образа. Только первые сторона изображений можно использовать как базовый образ. Чтобы получить полный список ссылок образа Azure Marketplace поддерживает пакетная служба Azure, см. в разделе [списка номеров SKU агентов узлов](/rest/api/batchservice/account/listnodeagentskus) операции.
+Если вы создаете новую виртуальную Машину для образа, используйте первый образ Azure Marketplace сторона, поддерживаются пакетной службой в качестве базового образа для управляемого образа. Только первые сторона изображений можно использовать как базовый образ. Чтобы получить полный список ссылок образа Azure Marketplace поддерживает пакетная служба Azure, см. в разделе [списка номеров SKU агентов узлов](/java/api/com.microsoft.azure.batch.protocol.accounts.listnodeagentskus) операции.
 
 > [!NOTE]
 > В качестве базового образа нельзя использовать образы сторонних производителей, для которых предусматриваются дополнительные условия покупки и лицензия. Сведения об образах из Marketplace, см. в руководствах по виртуальным машинам [Linux](../virtual-machines/linux/cli-ps-findimage.md#deploy-an-image-with-marketplace-terms

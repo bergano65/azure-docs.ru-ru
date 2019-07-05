@@ -1,34 +1,30 @@
 ---
-title: Значение терминов в прайс-листа для клиентов соглашения Microsoft - Azure | Документация Майкрософт
-description: Узнайте, как просматривать и интерпретировать сведения, указанные в счете за использование подписки Azure.
-services: ''
-documentationcenter: ''
-author: jureid
+title: Значение терминов в прайс-листа для клиентов соглашения Microsoft - Azure
+description: Узнайте, как чтение и понимание использование и выставление счетов для клиента соглашение Microsoft.
+author: bandersmsft
 manager: jureid
-editor: ''
 tags: billing
-ms.assetid: 32eea268-161c-4b93-8774-bc435d78a8c9
 ms.service: billing
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/19/2019
+ms.date: 07/01/2019
 ms.author: banders
-ms.openlocfilehash: eb6184e10d38cdcfad7070663e36f6610d009cdb
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4d83228fbec395d604e5ce3f988d2a6157f21eed
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60371365"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67490662"
 ---
-# <a name="understand-the-terms-in-your-price-sheet-for-a-microsoft-customer-agreement"></a>Значение терминов в прайс-лист по договору клиента Microsoft
+# <a name="terms-in-your-microsoft-customer-agreement-price-sheet"></a>Условия вашего соглашения для Microsoft Customer прайс-листа
 
-Эта статья относится к учетной записи выставления счетов для клиента соглашение Microsoft. [Проверьте наличие доступа к соглашению клиента Microsoft](#check-access-to-a-microsoft-customer-agreement).
+Эта статья относится к учетной записи Azure выставления счетов для клиента соглашение Microsoft. [Проверьте наличие доступа к соглашению клиента Microsoft](#check-access-to-a-microsoft-customer-agreement).
 
 Если профиль выставления счетов, владелец, участник, чтения или Управление счетами прайс-лист вашей организации можно загрузить на портале Azure. См. в разделе [представление и загрузки ценообразования организации](billing-ea-pricing.md).
 
-## <a name="detailed-terms-and-descriptions-in-your-microsoft-customer-agreement-price-sheet"></a>Подробные условия и описания в прайс-лист в соглашении клиента Microsoft
+## <a name="terms-and-descriptions-in-your-price-sheet"></a>Термины и описания в прайс-листа
 
 В следующем разделе описаны важные термины, встречающиеся в прайс-лист в соглашении клиента Microsoft.
 
@@ -61,7 +57,7 @@ ms.locfileid: "60371365"
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
+Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

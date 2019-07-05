@@ -2,29 +2,21 @@
 title: Устранение неполадок параметров Enterprise State Roaming в Azure Active Directory | Документация Майкрософт
 description: В статье содержится информация о синхронизации параметров и данных приложений, которая может быть полезной для ИТ-администраторов.
 services: active-directory
-keywords: параметры enterprise state roaming, облако windows, часто задаваемые вопросы о решении enterprise state roaming
-documentationcenter: ''
+ms.service: active-directory
+ms.subservice: devices
+ms.topic: troubleshooting
+ms.date: 06/28/2019
+ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
-editor: ''
-ms.subservice: devices
-ms.assetid: f45d0515-99f7-42ad-94d8-307bc0d07be5
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 10/25/2018
-ms.author: joflore
 ms.reviewer: tanning
-ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b74be0dda8e5c79987479393ad0d8ef5c3bdd16
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4cceae17b06e8b631dd530b0408008a8222bccbf
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67110671"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67481851"
 ---
 # <a name="troubleshooting-enterprise-state-roaming-settings-in-azure-active-directory"></a>Устранение неполадок параметров Enterprise State Roaming в Azure Active Directory
 
@@ -70,12 +62,11 @@ ms.locfileid: "67110671"
 
 Для службы Enterprise State Roaming требуется зарегистрировать устройство в Azure AD. Следующие инструкции не относятся исключительно к Enterprise State Roaming. Они позволяют проверить состояние регистрации клиента Windows 10, а также отпечаток, URL-адрес настроек Azure AD, состояние NGC и другие сведения.
 
-1.  Откройте командную строку без повышенных привилегий. В Windows откройте окно "Выполнить" (WIN+R) и введите cmd, чтобы открыть командную строку.
-2.  После открытия командной строки введите *dsregcmd.exe /status*.
-3.  Поля **AzureAdJoined** и **WamDefaultSet** имеют значение YES, а поле **WamDefaultGUID** должно содержать GUID с (AzureAd) в конце.
+1. Откройте командную строку без повышенных привилегий. В Windows откройте окно "Выполнить" (WIN+R) и введите cmd, чтобы открыть командную строку.
+1. После открытия командной строки введите *dsregcmd.exe /status*.
+1. Поля **AzureAdJoined** и **WamDefaultSet** имеют значение YES, а поле **WamDefaultGUID** должно содержать GUID с (AzureAd) в конце.
 
 **Потенциальная проблема**. Поля **WamDefaultSet** и **AzureAdJoined** имеют значение NO, устройство присоединено к домену и зарегистрировано в Azure AD, но не синхронизируется. В таком случае может потребоваться подождать применения политики устройства, в противном случае при подключении к Azure AD не удастся выполнить проверку подлинности устройства. Может потребоваться подождать несколько часов, прежде чем политика будет применена. Можно также повторить попытку автоматической регистрации, выполнив повторный вход в систему, или запустить задачу в планировщике задач. В некоторых случаях эту проблему можно устранить, выполнив команду *dsregcmd.exe /leave* в окне командной строки с повышенными привилегиями с последующей перезагрузкой и попыткой повторной регистрации.
-
 
 **Потенциальная проблема**. Поле **SettingsUrl** пустое, и устройство не синхронизируется. Возможно, последний раз пользователь входил на устройство до того, как служба Enterprise State Roaming была включена на портале Azure Active Directory. Перезапустите устройство и выполните вход пользователя. При необходимости на портале ИТ-администратор может попробовать перейти в раздел **Azure Active Directory** > **Устройства** > **Enterprise State Roaming**, отключить и повторно включить параметр **Users may sync settings and app data across devices** (Пользователи могут синхронизировать настройки и данные приложений между устройствами). Затем перезапустите устройство и выполните вход пользователя. Если проблема не решена, возможно, поле **SettingsUrl** является пустым из-за недопустимого сертификата устройства. В этом случае проблему можно устранить, выполнив команду *dsregcmd.exe /leave* в окне командной строки с повышенными привилегиями с последующей перезагрузкой и попыткой повторной регистрации.
 

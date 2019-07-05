@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 06/03/2019
+ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 8937f4c47f0fa84d4ec371e951cff8a2fdaa8481
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2426ecd9c480b0cc236295384ae04c60051f37ce
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66476896"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442958"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-data-box-edge"></a>Управление доступом, эффективность и режим подключения для Microsoft Edge в поле данных Azure
 
@@ -66,7 +66,7 @@ ms.locfileid: "66476896"
 -  Создание общего ресурса с помощью учетной записи хранилища.
 -  Создание пользователя, который можно получить доступ к папкам на устройстве.
 
-Вы должны иметь `User` доступ в клиенте Active Directory, так как вам нужно иметь возможность `Read all directory objects`. Не может быть гостем, так как у них нет разрешений для `Read all directory objects`. Если вы являетесь гостя, а затем операции, такие как создание ключа активации, создания общего файлового ресурса на вашем устройстве Edge поле данных, создать пользователя, все не удастся.
+Вы должны иметь `User` доступ в клиенте Active Directory, так как вам нужно иметь возможность `Read all directory objects`. Не может быть гостем, так как у них нет разрешений для `Read all directory objects`. Если вы являетесь гостя, а затем операции, например создание активации ключа, создания общего файлового ресурса в устройство Edge поле данных, создании пользователя, конфигурации края вычислительных, сброс пароля устройства все не удастся.
 
 Дополнительные сведения о том, как предоставить доступ пользователям к Azure Active Directory Graph API см. в разделе [по умолчанию доступ для администраторов, пользователей и гостей](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
 

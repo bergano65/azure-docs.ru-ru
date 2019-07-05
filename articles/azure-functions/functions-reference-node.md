@@ -12,12 +12,12 @@ ms.devlang: nodejs
 ms.topic: reference
 ms.date: 02/24/2019
 ms.author: glenga
-ms.openlocfilehash: a021ed2be3a94add7500a98d71a962bb580078e9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9a7c186f7c5fb46078eaa5729e79fdcc256ecc6d
+ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66729463"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67460216"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -52,7 +52,7 @@ FunctionsProject
 
 В корневой папке проекта существует общий файл [host.json](functions-host-json.md), который может использоваться для настройки приложения-функции. У каждой функции есть папка с собственным файлом кода (JS) и файлом конфигурации привязки (function.json). Имя родительского каталога файла `function.json` всегда является именем этой функции.
 
-Расширения привязки, необходимые в [версии 2.x](functions-versions.md) среды выполнения функций, определены в файле `extensions.csproj` с фактическими файлами библиотеки в папке `bin`. При локальной разработке необходимо [зарегистрировать расширения привязки](./functions-bindings-register.md#local-development-with-azure-functions-core-tools-and-extension-bundles). При разработке функций на портале Azure эта регистрация выполняется автоматически.
+Расширения привязки, необходимые в [версии 2.x](functions-versions.md) среды выполнения функций, определены в файле `extensions.csproj` с фактическими файлами библиотеки в папке `bin`. При локальной разработке необходимо [зарегистрировать расширения привязки](./functions-bindings-register.md#extension-bundles). При разработке функций на портале Azure эта регистрация выполняется автоматически.
 
 ## <a name="exporting-a-function"></a>Экспорт функции
 
@@ -60,7 +60,7 @@ FunctionsProject
 
 По умолчанию среда выполнения Функций ищет функцию в файле `index.js`, где `index.js` использует тот же родительский каталог, что и соответствующий файл `function.json`. В стандартном случае экспортированная функция должна быть единственным экземпляром экспорта из соответствующего файла (экспорта с именем `run` или `index`). Чтобы настроить расположение файла и имя экспорта функции, ознакомьтесь с разделом ниже о [настройке точки входа функции](functions-reference-node.md#configure-function-entry-point).
 
-Экспортированной функции передается число аргументов при выполнении. Первый аргумент, который она всегда принимает, — это объект `context`. Если функция является синхронной (не возвращает обещание), необходимо передать объект `context`, так как для корректного использования требуется вызов `context.done`.
+Экспортированной функции передается число аргументов при выполнении. Первый аргумент, который она всегда принимает, — это объект `context`. Если функция является синхронным (не возвращает обещание), необходимо передать `context` объекта, что и вызов метода `context.done` необходима для правильного использования.
 
 ```javascript
 // You should include context, other arguments are optional
@@ -399,7 +399,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
     ```
 + ** _[Только ответ.]_ Путем вызова `context.res.send(body?: any)`.** HTTP-ответ создается с входными данными `body` в качестве текста ответа. `context.done()` вызывается неявным образом.
 
-+ ** _[Только ответ.]_ Путем вызова `context.done()`.** Специальный тип привязки HTTP возвращает ответ, передавшийся методу `context.done()`. Следующая привязка вывода HTTP определяет параметр вывода `$return`:
++ ** _[Только ответ.]_ Путем вызова `context.done()`.** Это специальный тип привязки HTTP возвращает ответ, который передается `context.done()` метод. Следующая привязка вывода HTTP определяет параметр вывода `$return`:
 
     ```json
     {
@@ -421,7 +421,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 | Версия службы "Функции" | Версия Node.js | 
 |---|---|
 | 1.x | 6.11.2 (заблокировано средой выполнения) |
-| 2.x  | _Активная версия LTS_ и четная _текущая_ версия Node.js (рекомендуются версии 8.11.1 и 10.14.1). Установите версию, используя [параметр приложения](functions-how-to-use-azure-function-app-settings.md#settings) WEBSITE_NODE_DEFAULT_VERSION.|
+| 2.x  | _Active LTS_ и _LTS обслуживания_ версий Node.js (8.11.1 и 10.14.1 рекомендуется). Установите версию, используя [параметр приложения](functions-how-to-use-azure-function-app-settings.md#settings) WEBSITE_NODE_DEFAULT_VERSION.|
 
 Введя `process.version` из любой функции или путем проверки параметра приложения, указанного выше, можно увидеть текущую версию, которую использует среда выполнения.
 
@@ -576,7 +576,7 @@ module.exports = myObj;
 
 [Функций Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) расширение позволяет разрабатывать функции с помощью TypeScript. Основные инструменты — требование для расширения функций Azure.
 
-Чтобы создать приложение-функцию TypeScript в Visual Studio Code, нужно просто выбрать `TypeScript` при создании приложения-функции и будет предложено выбрать язык.
+Чтобы создать приложение-функцию TypeScript в Visual Studio Code, выберите `TypeScript` качестве языка при создании приложения-функции.
 
 При нажатии клавиши **F5** для запуска приложения локально, транспилирования осуществляется до инициализации узла (func.exe). 
 
@@ -584,7 +584,7 @@ module.exports = myObj;
 
 ### <a name="azure-functions-core-tools"></a>Основных инструментов функций Azure
 
-Создание проекта приложения-функции TypeScript с помощью основных инструментов, необходимо указать параметр языка typescript при создании приложения-функции. Это можно сделать одним из следующих способов:
+Создание проекта приложения-функции TypeScript с помощью основных инструментов, необходимо указать параметр языка TypeScript при создании приложения-функции. Это можно сделать одним из следующих способов:
 
 - Запустите `func init` команды, выберите `node` как стек языков, а затем выберите `typescript`.
 
@@ -614,6 +614,55 @@ module.exports = myObj;
 ### <a name="connection-limits"></a>Ограничения на подключения
 
 При использовании клиента определенной службы в приложении "функции Azure", не создавайте новый клиент с каждого вызова функции. Вместо этого создайте единый, статические клиент в глобальной области. Дополнительные сведения см. в разделе [Управление подключениями в функциях Azure](manage-connections.md).
+
+### <a name="use-async-and-await"></a>Используйте `async` и `await`
+
+При написании функций Azure на языке JavaScript, следует писать код, используя `async` и `await` ключевые слова. Написание кода с помощью `async` и `await` вместо обратных вызовов или `.then` и `.catch` с обещаниями помогает избежать двух распространенных проблем:
+ - Перехваченные исключения, [приводит к сбою процесса Node.js](https://nodejs.org/api/process.html#process_warning_using_uncaughtexception_correctly), потенциально влияющие на выполнение других функций.
+ - Непредвиденное поведение, например отсутствующие журналы из context.log, из-за асинхронных вызовов, которые не являются ожидаемыми должным образом.
+
+В примере ниже, асинхронный метод `fs.readFile` вызывается с функцией обратного вызова первой ошибки в качестве второго параметра. Этот код вызывает обе проблемы, упомянутых выше. Исключение, которое явно не перехватывается в области действия аварийное завершение процесса (проблема #1). Вызов `context.done()` выходит за рамки обратный вызов функции означает, что вызов функции может заканчиваться прежде, чем файл доступен для чтения (выпуск #2). В этом примере вызов `context.done()` записи, начиная с журнала слишком рано результаты отсутствующих `Data from file:`.
+
+```javascript
+// NOT RECOMMENDED PATTERN
+const fs = require('fs');
+
+module.exports = function (context) {
+    fs.readFile('./hello.txt', (err, data) => {
+        if (err) {
+            context.log.error('ERROR', err);
+            // BUG #1: This will result in an uncaught exception that crashes the entire process
+            throw err;
+        }
+        context.log(`Data from file: ${data}`);
+        // context.done() should be called here
+    });
+    // BUG #2: Data is not guaranteed to be read before the Azure Function's invocation ends
+    context.done();
+}
+```
+
+С помощью `async` и `await` ключевые слова помогает избежать оба этих ошибок. Следует использовать служебную функцию Node.js [ `util.promisify` ](https://nodejs.org/api/util.html#util_util_promisify_original) превратить в awaitable функции обратного вызова первой ошибки в стиле функции.
+
+В следующем примере все необработанные исключения, возникшие во время выполнения функция восстановить только отдельные вызова, который вызвал исключение. `await` Ключевое слово означает, что следующее: `readFileAsync` выполнение только после `readFile` завершена. С помощью `async` и `await`, также не нужно вызывать `context.done()` обратного вызова.
+
+```javascript
+// Recommended pattern
+const fs = require('fs');
+const util = require('util');
+const readFileAsync = util.promisify(fs.readFile);
+
+module.exports = async function (context) {
+    try {
+        const data = await readFileAsync('./hello.txt');
+    } catch (err) {
+        context.log.error('ERROR', err);
+        // This rethrown exception will be handled by the Functions Runtime and will only fail the individual invocation
+        throw err;
+    }
+    context.log(`Data from file: ${data}`);
+}
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
