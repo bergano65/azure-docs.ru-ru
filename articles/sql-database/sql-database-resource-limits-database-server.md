@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: sashan,moslake,josack
 manager: craigg
 ms.date: 04/18/2019
-ms.openlocfilehash: 06e61d30f0d4e598c48f190572b8b4343f351043
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4e4c0a6cd25587b33c06526b57e6acdbebb69c8b
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65762788"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67445632"
 ---
 # <a name="sql-database-resource-limits-for-azure-sql-database-server"></a>Ограничения ресурсов для сервера Базы данных SQL Azure
 
@@ -44,6 +44,9 @@ ms.locfileid: "65762788"
 > По мере приближения количества баз данных к пороговому значению для сервера Базы данных SQL может произойти следующее:
 > - Увеличение задержки при выполнении запросов к базе данных master.  Сюда входят представления статистических данных использования ресурсов, такие как sys.resource_stats.
 > - Увеличение задержки при управлении и отображении для точек наблюдения портала, включая перечисление баз данных на сервере.
+
+### <a name="storage-size"></a>Размер хранилища
+- Для отдельных баз данных rources обратитесь к либо [ограничения ресурсов на основе DTU](sql-database-dtu-resource-limits-single-databases.md) или [ограничения ресурсов на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md) для ограничения размера хранилища для ценовой категории.
 
 ## <a name="what-happens-when-database-resource-limits-are-reached"></a>Что происходит при достижении ограничения ресурсов базы данных?
 

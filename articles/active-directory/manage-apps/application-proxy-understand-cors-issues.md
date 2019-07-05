@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: celested
 ms.reviewer: japere
-ms.openlocfilehash: 2b6adcf4231aa44a4f28d277e963efa16de8af81
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: afc0bb990f69521efb2557a6a086c0de5126f82c
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66399342"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67440413"
 ---
 # <a name="understand-and-solve-azure-active-directory-application-proxy-cors-issues"></a>Понимание и решение проблем с Azure Active Directory CORS прокси-сервера для приложения
 
-[Кросс-совместного использования ресурсов (CORS)](http://www.w3.org/TR/cors/) иногда может сопровождаться рядом проблем для приложения и интерфейсы API, опубликованного через прокси приложения Azure Active Directory. В этой статье рассматриваются проблемы CORS прокси приложения Azure AD и решения.
+[Кросс-совместного использования ресурсов (CORS)](https://www.w3.org/TR/cors/) иногда может сопровождаться рядом проблем для приложения и интерфейсы API, опубликованного через прокси приложения Azure Active Directory. В этой статье рассматриваются проблемы CORS прокси приложения Azure AD и решения.
 
 Безопасность обозревателя обычно препятствует веб-странице отправку запросов AJAX к другому домену. Это ограничение называется *политика одного источника*и предотвращает чтение конфиденциальных данных с другого сайта вредоносный сайт. Тем не менее иногда вам может потребоваться разрешить другие сайты вызова веб-API. CORS — это стандарт консорциума W3C, который дает возможность серверу смягчить ограничения политики одного источника и разрешить некоторые запросы независимо от источника, а другие — отклонять.
 
@@ -64,7 +64,7 @@ CORS проблемы можно определить с помощью сред
 
 Можно разрешить выше проблема CORS в одном из следующих способов.
 
-### <a name="option-1-set-up-a-custom-domain"></a>Вариант 1. Настройка личного домена
+### <a name="option-1-set-up-a-custom-domain"></a>Вариант 1: Настройка личного домена
 
 Использовать прокси приложения Azure AD [личного домена](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-custom-domains) для публикации с того же происхождения, без необходимости вносить изменения в приложение происхождения кода или заголовки. 
 

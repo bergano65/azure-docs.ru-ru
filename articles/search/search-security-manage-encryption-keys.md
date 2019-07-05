@@ -9,12 +9,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.custom: ''
-ms.openlocfilehash: 567f32cba76aaf2d1657b2476c4d11596d44dec5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 949628fa52b4b020d70b75f4a0e7895f1e0f8bba
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66753946"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67485317"
 ---
 # <a name="azure-search-encryption-using-customer-managed-keys-in-azure-key-vault"></a>Шифрование поиска Azure с помощью управляемых клиентом ключей в хранилище ключей Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "66753946"
 
 + [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) или [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) используется для выполнения задач конфигурации.
 
-+ [Postman](search-fiddler.md), [Azure PowerShell](search-create-index-rest-api.md) и [SDK для поиска Azure](https://aka.ms/search-sdk-preview) может использоваться для вызова REST API предварительной версии. Нет, портал или поддержка пакета SDK для .NET для шифрования, управляемых пользователем, в настоящее время.
++ [Postman](search-get-started-postman.md), [Azure PowerShell](search-create-index-rest-api.md) и [SDK для поиска Azure](https://aka.ms/search-sdk-preview) может использоваться для вызова REST API предварительной версии. Нет, портал или поддержка пакета SDK для .NET для шифрования, управляемых пользователем, в настоящее время.
 
 ## <a name="1---enable-key-recovery"></a>1 — включить восстановления ключей
 

@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/09/2018
 ms.author: sngun
-ms.openlocfilehash: d34da8928e06f04756e24f5cc3e4c430c2892f79
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 4f502984a09f81b5aaf0568c84b75832f8164151
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341582"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67541049"
 ---
 # <a name="azure-cosmos-db-net-sdk-for-sql-api-download-and-release-notes"></a>Пакет SDK .NET для Azure Cosmos DB для API SQL: скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
@@ -48,13 +48,18 @@ ms.locfileid: "67341582"
 * Поддержка потоков. 
 * Обновлен класс сервера CosmosResponseMessage. Теперь он возвращает код состояния и выдает исключение только в случае отсутствия ответа. 
 
+### <a name="a-name251251"></a><a name="2.5.1"/>2.5.1
+
+* Версия пакета SDK для System.Net.Http теперь соответствует их количеству в пакете NuGet.
+* Разрешить запросы записи для возврата в другом регионе в случае сбоя исходного одного.
+* Добавьте политику повтора сеанса для запроса на запись.
+
 ### <a name="a-name241241"></a><a name="2.4.1"/>2.4.1
 
 * Исправления, трассировка гонки для запросов, которые вызывали пустые страницы
 
 ### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
 
-* Версия пакета SDK для System.Net.Http соответствует их количеству в пакете NuGet
 * Увеличен размер знаков после запятой для запросов LINQ.
 * Добавлены новые классы CompositePath, CompositePathSortOrder, SpatialSpec, SpatialType и PartitionKeyDefinitionVersion
 * Добавлена TimeToLivePropertyPath к коллекции DocumentCollection
@@ -379,6 +384,7 @@ ms.locfileid: "67341582"
 
 | Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.5.1](#2.5.1) |02 июля 2019 г. |--- |
 | [2.4.1](#2.4.1) |20 июня 2019 г. |--- |
 | [2.4.0](#2.4.0) |05-мая 2019 г. |--- |
 | [2.3.0](#2.3.0) |04 апреля 2019 г. |--- |

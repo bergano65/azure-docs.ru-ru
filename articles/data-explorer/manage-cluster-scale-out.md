@@ -6,13 +6,13 @@ ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
-ms.date: 04/05/2019
-ms.openlocfilehash: 24bbddd28943adc929fbaea456eeae8165db290c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/30/2019
+ms.openlocfilehash: 882f44683bbdc7f4eb49ff4912ca7a33187afbf8
+ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60758670"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67537894"
 ---
 # <a name="manage-cluster-scale-out-to-accommodate-changing-demand"></a>Управление горизонтальным масштабированием кластера с учетом меняющихся потребностей
 
@@ -76,10 +76,10 @@ ms.locfileid: "60758670"
 
 Вы настроили операцию горизонтального масштабирования для кластера обозревателя данных Azure. Добавьте правило для операции свертывания. Эта конфигурация позволяет масштабировать кластер динамически на основе метрик вами.
 
-Вы также можете [управление вертикального масштабирования кластера](manage-cluster-scale-up.md) для определения соответствующего размера кластера.
-
 Если вам нужна помощь с проблемами, масштабирование кластеров, [откройте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) на портале Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Мониторинг производительности, работоспособности и использования с метриками обозреватель данных Azure](using-metrics.md)
+* [Мониторинг производительности, работоспособности и использования с метриками обозреватель данных Azure](using-metrics.md)
+
+* [Управление вертикального масштабирования кластера](manage-cluster-scale-up.md) для определения соответствующего размера кластера.

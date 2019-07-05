@@ -1,19 +1,18 @@
 ---
 title: Общие сведения о поддержке Azure MQTT в Центре Интернета вещей | Документация Майкрософт
 description: 'Руководство разработчика: поддержка устройств, подключающихся к конечной точке для устройств Центра Интернета вещей по протоколу MQTT. Содержит сведения о встроенной поддержке MQTT в пакетах SDK для устройств Azure IoT.'
-author: rezasherafat
-manager: ''
+author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 10/12/2018
-ms.author: rezas
-ms.openlocfilehash: 1a0b6cf8ce272733c259283fdec9c215ac2b0fd8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: robinsh
+ms.openlocfilehash: 238627f5cb57a614d5f82f0eeba1ea6b4e32f458
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61442568"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67445479"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Взаимодействие с Центром Интернета вещей с помощью протокола MQTT
 
@@ -336,7 +335,7 @@ client.publish("$iothub/twin/PATCH/properties/reported/?$rid=" + rid, twin_repor
 
 Дополнительные сведения о планировании развертывания Центра Интернета вещей см. в следующих руководствах:
 
-* [Каталог устройств, сертифицированных по программе Microsoft Azure Certified for IoT](https://catalog.azureiotsolutions.com/)
+* [Каталог устройств, сертифицированных по программе Azure Certified for IoT](https://catalog.azureiotsolutions.com/)
 * [Поддержка дополнительных протоколов](iot-hub-protocol-gateway.md)
 * [Сравнение с концентраторами событий](iot-hub-compare-event-hubs.md)
 * [Масштабирование, высокой ДОСТУПНОСТИ и аварийного восстановления](iot-hub-scaling.md)

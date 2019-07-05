@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 214462977c160685a943cb64c517da37d96d8e47
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: bc67fb216451bd19fe8cfb327c101aa989228b01
+ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67057361"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67536917"
 ---
 # <a name="ldap-authentication-and-azure-multi-factor-authentication-server"></a>Аутентификация LDAP и сервер Многофакторной идентификации Azure
 
@@ -49,6 +49,9 @@ ms.locfileid: "67057361"
 ### <a name="configure-the-ldap-directory-connection"></a>Настройка подключения каталога LDAP
 
 Если служба Многофакторной идентификации Azure настроена на получение проверок подлинности LDAP, данная служба должна передавать эти проверки в каталог LDAP. Таким образом, на вкладке «Целевой объект» отображается единственный неактивный параметр использования целевого объекта LDAP.
+
+> [!NOTE]
+> Интеграция каталогов не гарантируется для работы с каталогами, отличных от доменных служб Active Directory.
 
 1. Для настройки подключения каталога LDAP щелкните значок **Интеграция каталогов**.
 2. На вкладке "Параметры" установите переключатель **Использовать определенную конфигурацию LDAP**.

@@ -5,21 +5,21 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: reference
-ms.date: 12/19/2018
+ms.date: 07/01/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 1f9c30f1c914f6c8d42967e014d967ba0d5b85cc
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a958c33e173c881a3ad09a49fe9f71ddb0c9df56
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66142300"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508948"
 ---
 # <a name="manage-azure-analysis-services-with-powershell"></a>Управление службами Azure Analysis Services с помощью PowerShell
 
 В этой статье описаны командлеты PowerShell, используемые для выполнения задач управления базами данных и сервером служб Azure Analysis Services. 
 
-Для выполнения таких задач управления сервером, как создание или удаление сервера, приостановка или возобновление работы сервера или изменение уровня обслуживания (уровня служб), используются командлеты Azure Resource Manager (AzureRM) и Analysis Services (сервер). Для выполнения других задач управления базами данных, таких как добавление или удаление участников роли, обработка или секционирование, используются командлеты, включенные в том же модуле SqlServer, что и в службах SQL Server Analysis Services.
+Задачи управления ресурсов сервера, такие как создание или удаление сервера, приостановка или возобновление работы сервера или изменение уровня обслуживания (уровня) с помощью командлетов Azure Analysis Services. Для выполнения других задач управления базами данных, таких как добавление или удаление участников роли, обработка или секционирование, используются командлеты, включенные в том же модуле SqlServer, что и в службах SQL Server Analysis Services.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -29,40 +29,22 @@ ms.locfileid: "66142300"
 
 Для работы сервера с помощью командлетов Azure PowerShell, учетную запись или планировщик учетной записи необходимо также принадлежать к роли владельца ресурса в [управления доступом на основе ролей (RBAC)](../role-based-access-control/overview.md). 
 
-## <a name="resource-management-operations"></a>Операции управления ресурсами 
+## <a name="resource-and-server-operations"></a>Ресурс и сервер управления 
 
-Модуль - [Az.AnalysisServices](/powershell/module/az.analysisservices)
-
-|Командлет|Описание| 
-|------------|-----------------| 
-|[Get-AzAnalysisServicesServer](/powershell/module/az.analysisservices/get-azanalysisservicesserver)|Возвращает сведения об экземпляре сервера.|  
-|[New-AzAnalysisServicesServer](/powershell/module/az.analysisservices/new-azanalysisservicesserver)|Создает экземпляр сервера.|   
-|[Новый AzAnalysisServicesFirewallConfig](/powershell/module/az.analysisservices/new-azanalysisservicesfirewallconfig)|Создает настройки брандмауэра служб Analysis Services.|   
-|[New-AzAnalysisServicesFirewallRule](/powershell/module/az.analysisservices/new-azanalysisservicesfirewallrule)|Создает правило брандмауэра служб Analysis Services.|   
-|[Remove-AzAnalysisServicesServer](/powershell/module/az.analysisservices/remove-azanalysisservicesserver)|Удаляет экземпляр сервера.|  
-|[Resume-AzAnalysisServicesServer](/powershell/module/az.analysisservices/resume-azanalysisservicesserver)|Возобновляет работу экземпляра сервера.|  
-|[Приостановка AzAnalysisServicesServer](/powershell/module/az.analysisservices/suspend-azanalysisservicesserver)|Приостанавливает работу экземпляра сервера.| 
-|[Set-AzAnalysisServicesServer](/powershell/module/az.analysisservices/set-azanalysisservicesserver)|Изменяет экземпляр сервера.|   
-|[Test-AzAnalysisServicesServer](/powershell/module/az.analysisservices/test-azanalysisservicesserver)|Проверяет существование экземпляра сервера.| 
-
-## <a name="server-management-operations"></a>Операции управления сервером
-
-Модуль — [Azure.AnalysisServices](https://www.powershellgallery.com/packages/Azure.AnalysisServices)
-
-|Командлет|Описание| 
-|------------|-----------------| 
-|[Add-AzAnalysisServicesAccount](/powershell/module/az.analysisservices/add-AzAnalysisServicesaccount)|Добавляет учетную запись, прошедшую аутентификацию и используемую для запросов командлета к серверу Azure Analysis Services.| 
-|[AzAnalysisServicesInstance экспорта](/powershell/module/az.analysisservices/export-AzAnalysisServicesinstancelog)|Экспорт журналов из экземпляра сервера служб Analysis Services в текущего зарегистрированного в среде как указано в команде Add-AzAnalysisServicesAccount|  
-|[Restart-AzAnalysisServicesInstance](/powershell/module/az.analysisservices/restart-AzAnalysisServicesinstance)|Перезапускает экземпляр сервера служб Analysis Services в среде выполнившего вход; указанный в команде Add-AzAnalysisServicesAccount.|  
-|[AzAnalysisServicesInstance синхронизации](/powershell/module/az.analysisservices/restart-AzAnalysisServicesinstance)|Синхронизирует указанной базы данных на указанном экземпляре сервера служб Analysis Services ко всем экземплярам горизонтальное масштабирование запросов в текущего зарегистрированного в среде как указано в команде Add-AzAnalysisServicesAccount|  
+Установите модуль - [Az.AnalysisServices](https://www.powershellgallery.com/packages/Az.AnalysisServices)   
+Документация: [Az.AnalysisServices ссылки](/powershell/module/az.analysisservices)
 
 ## <a name="database-operations"></a>Операции с базой данных
 
-Для операций с базами данных служб Azure Analysis Services используется тот же [модуль SqlServer](https://www.powershellgallery.com/packages/SqlServer), что и для служб SQL Server Analysis Services. Однако для служб Azure Analysis Services поддерживаются не все командлеты. Дополнительные сведения см. в разделе [SQL Server PowerShell](https://docs.microsoft.com/sql/powershell/sql-server-powershell).
+Azure операций базы данных Analysis Services используется один и тот же модуль SqlServer как SQL Server Analysis Services. Однако для служб Azure Analysis Services поддерживаются не все командлеты. 
 
 Модуль SqlServer предоставляет командлеты для конкретных задач управления базой данных, а также командлет общего назначения Invoke-ASCmd, который принимает запрос TMSL или сценарий. Для служб Azure Analysis Services поддерживаются следующие командлеты из модуля SqlServer.
 
-  
+Установите модуль - [SqlServer](https://www.powershellgallery.com/packages/SqlServer)   
+Документация: [ссылку SqlServer](/powershell/module/sqlserver)
+
+### <a name="supported-cmdlets"></a>Поддерживаемые командлеты
+
 |Командлет|Описание|
 |------------|-----------------| 
 |[Add-RoleMember](https://docs.microsoft.com/powershell/module/sqlserver/Add-RoleMember)|Добавление участника в роль базы данных.| 
@@ -78,6 +60,7 @@ ms.locfileid: "66142300"
 
 ## <a name="related-information"></a>Связанные сведения
 
+* [SQL Server PowerShell](https://docs.microsoft.com/sql/powershell/sql-server-powershell)      
 * [Скачивание модуля PowerShell SQL Server](https://docs.microsoft.com/sql/ssms/download-sql-server-ps-module)   
 * [Скачивание SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)   
 * [Модуль SqlServer в коллекции PowerShell](https://www.powershellgallery.com/packages/SqlServer)    

@@ -11,13 +11,13 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
 manager: craigg
-ms.date: 05/06/2019
-ms.openlocfilehash: 520dba611e6791fca990e21173424a914c3d8e14
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/26/2019
+ms.openlocfilehash: e9d1ce3bcd3bf958be0a7837e8416300af03f5a2
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66693335"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449749"
 ---
 # <a name="choose-among-the-vcore-service-tiers-and-migrate-from-the-dtu-service-tiers"></a>Выбрать один из уровней служб виртуальное и перенос с уровней служб DTU
 
@@ -28,6 +28,8 @@ ms.locfileid: "66693335"
 
 Аппаратное обеспечение 4-го поколения предлагает значительно больше памяти на одно виртуальное ядро. Однако аппаратное обеспечение 5-го поколения позволяет значительно увеличивать масштаб вычислительных ресурсов.
 
+> [!IMPORTANT]
+> Новые 4-го поколения базы данных больше не поддерживаются в регионе, AustraliaEast.
 > [!NOTE]
 > Сведения об уровнях служб на основе DTU, см. в разделе [уровня для модели приобретения на основе DTU служб](sql-database-service-tiers-dtu.md). Сведения о различиях между уровнями служб для основе единиц DTU и модели приобретения на основе виртуальных ядер см. в разделе [базы данных SQL Azure, приобретение моделей](sql-database-purchase-models.md).
 

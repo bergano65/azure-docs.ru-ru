@@ -12,12 +12,12 @@ ms.author: arib
 ms.reviewer: vanto
 manager: craigg
 ms.date: 04/16/2019
-ms.openlocfilehash: 3efdf5c256a22529c9d19e9ae1dce5d2db9516a5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1b3a6a18d10b9d9f6ab6456ae2911e54f5c56a71
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65827775"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67544088"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Приступая к работе с аудитом базы данных SQL
 
@@ -138,7 +138,7 @@ ms.locfileid: "65827775"
 
 Если журналы аудита записываются в учетную запись хранения Azure, их можно просматривать несколькими способами:
 
-- Журналы аудита объединяются в учетной записи, выбранной на этапе настройки. Журналы аудита можно просматривать с помощью таких инструментов, как [обозреватель хранилищ Azure](https://storageexplorer.com/). В службе хранилища Azure журналы аудита сохраняются в виде коллекции файлов больших двоичных объектов в контейнере **sqldbauditlogs**. Дополнительные сведения об иерархии папки для хранения, соглашении об именовании и формате журнала см. в [документации по формату журнала аудита больших двоичных объектов](https://go.microsoft.com/fwlink/?linkid=829599).
+- Журналы аудита объединяются в учетной записи, выбранной на этапе настройки. Журналы аудита можно просматривать с помощью таких инструментов, как [обозреватель хранилищ Azure](https://storageexplorer.com/). В службе хранилища Azure журналы аудита сохраняются в виде коллекции файлов больших двоичных объектов в контейнере **sqldbauditlogs**. Дополнительные сведения об иерархии папки для хранения, соглашения об именовании и формате журнала см. в разделе [формат журнала аудита базы данных SQL](https://go.microsoft.com/fwlink/?linkid=829599).
 
 - Используйте [портал Azure](https://portal.azure.com).  Откройте соответствующую базу данных. В верхней области страницы базы данных **Аудит** щелкните **Ознакомиться с журналами аудита**.
 
@@ -233,10 +233,12 @@ ms.locfileid: "65827775"
 
 **Командлеты PowerShell (включая поддержку предложения WHERE для дополнительной фильтрации)** .
 
-- [Создание или обновление политики (Set-AzSqlDatabaseAuditing) аудита базы данных](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabaseauditing)
-- [Создание или обновление политики аудита сервера (Set-AzSqlServerAuditing)](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserverauditing)
-- [Получение политики аудита баз данных (Get-AzSqlDatabaseAuditing)](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaseauditing)
-- [Получение политики аудита (Get-AzSqlServerAuditing) сервера](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlserverauditing)
+- [Создание или обновление политики (Set-AzSqlDatabaseAudit) аудита базы данных](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabaseaudit)
+- [Создание или обновление политики аудита сервера (Set-AzSqlServerAudit)](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserveraudit)
+- [Получение (Get-AzSqlDatabaseAudit) политики аудита базы данных](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaseaudit)
+- [Получение политики аудита (Get-AzSqlServerAudit) сервера](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlserveraudit)
+- [Удалить (Remove-AzSqlDatabaseAudit) политики аудита базы данных](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqldatabaseaudit)
+- [Удалить политику аудита сервера (Remove-AzSqlServerAudit)](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlserveraudit)
 
 Пример сценария см. в статье [Настройка аудита и обнаружения угроз для базы данных SQL с помощью PowerShell](scripts/sql-database-auditing-and-threat-detection-powershell.md).
 

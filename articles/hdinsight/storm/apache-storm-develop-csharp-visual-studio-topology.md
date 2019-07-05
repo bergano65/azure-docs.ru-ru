@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 11/27/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: 14aa45808f44f7ca6fe34b70ef282a99f230bf0d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9d459f88cd252303384acb4a72d0af0cce6ee226
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64687756"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67428465"
 ---
 # <a name="develop-c-topologies-for-apache-storm-by-using-the-data-lake-tools-for-visual-studio"></a>Разработка топологий для Apache Storm на C# с помощью средств Data Lake для Visual Studio
 
@@ -559,7 +559,7 @@ public static MyComponent Get(Context ctx, Dictionary<string, Object> parms)
 
 ### <a name="test-a-topology-locally"></a>Локальная проверка топологии
 
-Хотя топологию легко развернуть в кластер, иногда ее необходимо проверять локально. Чтобы запустить и протестировать пример топологии, описанной в этой статье, локально в среде разработки, сделайте следующее.
+Хотя топологию легко развернуть в кластер, иногда ее необходимо проверять локально. Следуйте инструкциям ниже, чтобы запустить и протестировать пример топологии в этой статье, локально в среде разработки.
 
 > [!WARNING]  
 > Локальное тестирование работает только для базовых топологий на C#. Нельзя использовать локальное тестирование для гибридных топологий или топологий, использующих несколько потоков.

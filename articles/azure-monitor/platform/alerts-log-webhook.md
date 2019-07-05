@@ -5,15 +5,15 @@ author: msvijayn
 services: monitoring
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 05/01/2018
+ms.date: 06/25/2019
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: 809c98c1e2e51ae51d7fe03f2165a5d9eecb05cc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cad1b0ab484d172000bd62146a88a27bfab1e9f2
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64681814"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448771"
 ---
 # <a name="webhook-actions-for-log-alert-rules"></a>Действия веб-перехватчика для правил оповещений журнала
 При [создании оповещения в Azure](alerts-log.md) можно [настроить конфигурацию с помощью групп действий](action-groups.md) для выполнения одного или нескольких действий.  В этой статье описываются различные доступные действия веб-перехватчика и сведения о том, как настроить пользовательский веб-перехватчик на основе JSON.
@@ -41,7 +41,7 @@ ms.locfileid: "64681814"
 | Параметр | Переменная | Описание |
 |:--- |:--- |:--- |
 | AlertRuleName |#alertrulename |Имя правила генерации оповещений. |
-| Severity |#severity |Уровень серьезности, установленный для срабатывающего оповещения журнала. |
+| severity |#severity |Уровень серьезности, установленный для срабатывающего оповещения журнала. |
 | AlertThresholdOperator |#thresholdoperator |Оператор порога для правила генерации оповещений.  *Больше* или *Меньше*. |
 | AlertThresholdValue |#thresholdvalue |Значение порога для правила генерации оповещений. |
 | LinkToSearchResults |#linktosearchresults |Ссылка на портал Analytics, возвращающая записи из запроса, который создал оповещение. |
@@ -51,9 +51,10 @@ ms.locfileid: "64681814"
 | Время начала интервала поиска |#searchintervalstarttimeutc |Время начала запроса в формате UTC (формат: мм/дд/гггг ЧЧ:мм:сс AM/PM) 
 | SearchQuery |#searchquery |Запрос поиска журналов, используемый правилом генерации оповещений. |
 | SearchResults |"IncludeSearchResults": true|Записи, возвращаемые запросом в виде JSON-таблицы, ограничены первой 1000 записей, если в определение настраиваемого веб-перехватчика JSON добавлен параметр "IncludeSearchResults":true в качестве свойства верхнего уровня. |
+| Тип оповещения| #alerttype | Тип правила генерации оповещений журнала настроено — [измерения метрик](alerts-unified-log.md#metric-measurement-alert-rules) или [номер из результатов](alerts-unified-log.md#number-of-results-alert-rules).|
 | WorkspaceID |#workspaceid |Идентификатор рабочей области Log Analytics. |
 | Идентификатор приложения |#applicationid |Идентификатор вашего приложения Application Insight. |
-| Идентификатор подписки |#subscriptionid |Идентификатор подписки Azure, используемой с Application Insights. 
+| Идентификатор подписки |#subscriptionid |Идентификатор вашей подписки Azure. 
 
 > [!NOTE]
 > LinkToSearchResults передает из URL-адреса такие параметры, как SearchQuery, время начала и завершения интервала поиска, на портал Azure для просмотра данных в разделе аналитики. Портал Azure имеет URI ограничение приблизительно 2000 знаков размера и будет *не* открыть ссылку в создает предупреждение, если значения параметров к превышению указанного. Пользователи могут ввести сведения вручную, чтобы просмотреть результаты на портале Analytics, либо получить результаты с помощью программных средств, используя [REST API для Application Insights Analytics](https://dev.applicationinsights.io/documentation/Using-the-API) или [для Log Analytics](/rest/api/loganalytics/). 
@@ -88,8 +89,18 @@ ms.locfileid: "64681814"
 
 ```json
 {
-    "WorkspaceId":"12345a-1234b-123c-123d-12345678e",
-    "AlertRuleName":"AcmeRule","SearchQuery":"search *",
+    "SubscriptionId":"12345a-1234b-123c-123d-12345678e",
+    "AlertRuleName":"AcmeRule",
+    "SearchQuery":"Perf | where ObjectName == \"Processor\" and CounterName == \"% Processor Time\" | summarize AggregatedValue = avg(CounterValue) by bin(TimeGenerated, 5m), Computer",
+    "SearchIntervalStartTimeUtc": "2018-03-26T08:10:40Z",
+    "SearchIntervalEndtimeUtc": "2018-03-26T09:10:40Z",
+    "AlertThresholdOperator": "Greater Than",
+    "AlertThresholdValue": 0,
+    "ResultCount": 2,
+    "SearchIntervalInSeconds": 3600,
+    "LinkToSearchResults": "https://portal.azure.com/#Analyticsblade/search/index?_timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
+    "Description": "log alert rule",
+    "Severity": "Warning",
     "SearchResult":
         {
         "tables":[
@@ -107,15 +118,8 @@ ms.locfileid: "64681814"
                     }
                 ]
         },
-    "SearchIntervalStartTimeUtc": "2018-03-26T08:10:40Z",
-    "SearchIntervalEndtimeUtc": "2018-03-26T09:10:40Z",
-    "AlertThresholdOperator": "Greater Than",
-    "AlertThresholdValue": 0,
-    "ResultCount": 2,
-    "SearchIntervalInSeconds": 3600,
-    "LinkToSearchResults": "https://workspaceID.portal.mms.microsoft.com/#Workspace/search/index?_timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
-    "Description": null,
-    "Severity": "Warning"
+    "WorkspaceId":"12345a-1234b-123c-123d-12345678e",
+    "AlertType": "Metric measurement"
  }
  ```
 
@@ -131,7 +135,17 @@ ms.locfileid: "64681814"
     "schemaId":"Microsoft.Insights/LogAlert","data":
     { 
     "SubscriptionId":"12345a-1234b-123c-123d-12345678e",
-    "AlertRuleName":"AcmeRule","SearchQuery":"search *",
+    "AlertRuleName":"AcmeRule",
+    "SearchQuery":"requests | where resultCode == \"500\"",
+    "SearchIntervalStartTimeUtc": "2018-03-26T08:10:40Z",
+    "SearchIntervalEndtimeUtc": "2018-03-26T09:10:40Z",
+    "AlertThresholdOperator": "Greater Than",
+    "AlertThresholdValue": 0,
+    "ResultCount": 2,
+    "SearchIntervalInSeconds": 3600,
+    "LinkToSearchResults": "https://portal.azure.com/AnalyticsBlade/subscriptions/12345a-1234b-123c-123d-12345678e/?query=search+*+&timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
+    "Description": null,
+    "Severity": "3",
     "SearchResult":
         {
         "tables":[
@@ -149,16 +163,8 @@ ms.locfileid: "64681814"
                     }
                 ]
         },
-    "SearchIntervalStartTimeUtc": "2018-03-26T08:10:40Z",
-    "SearchIntervalEndtimeUtc": "2018-03-26T09:10:40Z",
-    "AlertThresholdOperator": "Greater Than",
-    "AlertThresholdValue": 0,
-    "ResultCount": 2,
-    "SearchIntervalInSeconds": 3600,
-    "LinkToSearchResults": "https://analytics.applicationinsights.io/subscriptions/12345a-1234b-123c-123d-12345678e/?query=search+*+&timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
-    "Description": null,
-    "Severity": "3",
-    "ApplicationId": "123123f0-01d3-12ab-123f-abc1ab01c0a1"
+    "ApplicationId": "123123f0-01d3-12ab-123f-abc1ab01c0a1",
+    "AlertType": "Number of results"
     }
 }
 ```

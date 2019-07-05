@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 05/21/2019
-ms.openlocfilehash: 2f3d9eeca1404fcae121ae5fead222cbde4037b1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 912c064fb5ca4e7ca311f60ed04a0122809cb0ff
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67059262"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442368"
 ---
 # <a name="what-is-an-azure-machine-learning-service-workspace"></a>Что такое служба рабочей областью машинного обучения Azure?
 
@@ -83,7 +83,7 @@ ms.locfileid: "67059262"
 При создании новой рабочей области она автоматически создает несколько ресурсов Azure, которые используются в рабочей области:
 
 + [Реестр контейнеров Azure.](https://azure.microsoft.com/services/container-registry/) Регистрирует контейнеры Docker, используемые во время обучения и при развертывании модели. Чтобы свести к минимуму затраты, ACR — **отложенной загрузке** пока не будут созданы образы для развертывания.
-+ [учетную запись хранения,](https://azure.microsoft.com/services/storage/) Используется как хранилище данных по умолчанию для рабочей области.
++ [учетную запись хранения,](https://azure.microsoft.com/services/storage/) Используется как хранилище данных по умолчанию для рабочей области.  Записные книжки Jupyter, которые используются с виртуальными машинами, записной книжки здесь хранятся также.
 + [Azure Application Insights.](https://azure.microsoft.com/services/application-insights/) Хранит сведения о мониторинге для моделей.
 + [Azure Key Vault.](https://azure.microsoft.com/services/key-vault/) Хранит секреты, используемые целевыми объектами вычисления, и другие конфиденциальные сведения, необходимые рабочей области.
 

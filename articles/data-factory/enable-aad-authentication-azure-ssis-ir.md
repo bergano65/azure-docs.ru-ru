@@ -12,12 +12,12 @@ ms.date: 5/14/2019
 author: swinarko
 ms.author: sawinark
 manager: craigg
-ms.openlocfilehash: a67436f09d6e28db8d19679e446ac4cf98383709
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f3d0aaee624bdba169f13313bb57a3ebe8075592
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65593803"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67490056"
 ---
 # <a name="enable-azure-active-directory-authentication-for-azure-ssis-integration-runtime"></a>Включение аутентификации Azure Active Directory для среды выполнения интеграции Azure-SSIS
 
@@ -146,17 +146,7 @@ ms.locfileid: "65593803"
 
 ### <a name="configure-azure-ad-authentication-for-azure-sql-database-managed-instance"></a>Настройка аутентификации Azure AD для управляемого экземпляра Базы данных SQL Azure
 
-1.   На портале Azure выберите **Все службы**  ->  **Серверы SQL Server** на левой панели навигации.
-
-2.   Выберите управляемый экземпляр, для которого нужно настроить аутентификацию Azure AD.
-
-3.   В разделе колонки **Параметры** выберите **Администратор Active Directory**.
-
-4.   На панели команд щелкните **Задать администратора**.
-
-5.   Выберите учетную запись пользователя Azure AD, которую необходимо сделать администратором сервера, а затем нажмите кнопку **Выбрать**.
-
-6.   На панели команд нажмите кнопку **Сохранить**.
+Выполните действия, описанные в [Подготовка администратора Azure Active Directory для управляемого экземпляра](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure#provision-an-azure-active-directory-administrator-for-your-managed-instance).
 
 ### <a name="add-the-managed-identity-for-your-adf-as-a-user-in-azure-sql-database-managed-instance"></a>Добавление управляемого удостоверения для ADF в качестве пользователя управляемого экземпляра Базы данных SQL Azure
 
@@ -164,7 +154,7 @@ ms.locfileid: "65593803"
 
 1.  Запустите SSMS.
 
-2.  Подключитесь к управляемому экземпляру под учетной записью администратора SQL/Active Directory.
+2.  Подключение к управляемому экземпляру с помощью учетной записи SQL Server, которая является **sysadmin**. Это временное ограничение, которое будет удален после участникам сервера Azure AD (имена входа) для базы данных управляемого экземпляра SQL Azure станет общедоступной. При попытке использования учетной записи администратора Azure AD для создания имени для входа отобразится следующая ошибка: Msg 15247, уровень 16, состояние 1, строка 1 пользователь не имеет разрешения на выполнение этого действия.
 
 3.  В **обозревателе объектов** разверните папку **Базы данных**  ->  **Системные базы данных**.
 

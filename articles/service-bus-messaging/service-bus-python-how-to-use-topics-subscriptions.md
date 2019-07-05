@@ -14,18 +14,18 @@ ms.devlang: python
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: aschhab
-ms.openlocfilehash: 47cd0621a601e3f1ef53572bc7bb8bc1c7ea76ab
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cd75ba9d407399703a382596019d5f370808b20a
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65991999"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67543664"
 ---
 # <a name="how-to-use-service-bus-topics-and-subscriptions-with-python"></a>Как использовать разделы и подписки служебной шины с Python
 
 [!INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
 
-В этой статье описывается использование разделов и подписок служебной шины. Примеры написаны на языке Python и в них используется [пакет Azure SDK для Python][Azure Python package]. К рассмотренным сценариям относятся:
+В этой статье описывается использование разделов и подписок служебной шины. Примеры написаны на Python и используют [пакет SDK для Azure Python][Azure Python package]. К рассмотренным сценариям относятся:
 
 - создание разделов и подписок; 
 - создание фильтров подписки; 
@@ -58,7 +58,7 @@ bus_service = ServiceBusService(
     shared_access_key_value='sharedaccesskey')
 ```
 
-Значения для имени и значение ключа SAS можно получить на [портале Azure][Azure portal].
+Получить значения для имени ключа SAS и значение можно на [портале Azure][Azure portal].
 
 ```python
 bus_service.create_topic('mytopic')
@@ -79,9 +79,9 @@ bus_service.create_topic('mytopic', topic_options)
 Подписки на разделы также создаются с помощью объекта **ServiceBusService**. Подписки имеют имена и могут использовать дополнительный фильтр, который ограничивает набор сообщений, доставляемых в виртуальную очередь подписки.
 
 > [!NOTE]
-> Подписки хранятся постоянно и продолжают существовать либо до их удаления, либо до удаления раздела, на который они подписаны.
+> По умолчанию подписки являются постоянными и продолжают существовать до их или раздел, в который они подписаны, удаляются.
 > 
-> 
+> У вас есть подписки, автоматически удаляется, задав [auto_delete_on_idle свойство](https://docs.microsoft.com/python/api/azure-mgmt-servicebus/azure.mgmt.servicebus.models.sbsubscription?view=azure-python).
 
 ### <a name="create-a-subscription-with-the-default-matchall-filter"></a>Создание подписки с фильтром по умолчанию (MatchAll)
 
@@ -178,7 +178,7 @@ msg.delete()
 
 ## <a name="delete-topics-and-subscriptions"></a>Удаление разделов и подписок
 
-Разделы и подписки хранятся постоянно, и их нужно удалять явным образом на [портале Azure][Azure portal] или с помощью программных средств. В следующем примере показано, как удалить раздел с именем `mytopic`
+Разделы и подписки хранятся постоянно Если [auto_delete_on_idle свойство](https://docs.microsoft.com/python/api/azure-mgmt-servicebus/azure.mgmt.servicebus.models.sbsubscription?view=azure-python) имеет значение. Они могут быть удалены, либо через [портала Azure][Azure portal] или программным способом. В следующем примере показано, как удалить раздел с именем `mytopic`
 
 ```python
 bus_service.delete_topic('mytopic')
@@ -197,7 +197,7 @@ bus_service.delete_subscription('mytopic', 'HighMessages')
 
 Вы узнали основные сведения о разделах служебной шины. Для получения дополнительных сведений используйте следующие ссылки.
 
-* Дополнительные сведения см. в статье [Очереди, разделы и подписки служебной шины][Queues, topics, and subscriptions].
+* См. статью [Очереди, разделы и подписки][Queues, topics, and subscriptions].
 * Справочник по [SqlFilter.SqlExpression][SqlFilter.SqlExpression].
 
 [Azure portal]: https://portal.azure.com

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/15/2019
-ms.openlocfilehash: 345f492c5b2c754cbbcfa150561ee06b5a4154a5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ede0538e90e9f35797546f34bfed757c2727b194
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64718687"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508881"
 ---
 # <a name="run-apache-sqoop-jobs-in-hdinsight-with-curl"></a>Выполнение заданий Apache Sqoop в HDInsight с помощью Curl
 [!INCLUDE [sqoop-selector](../../../includes/hdinsight-selector-use-sqoop.md)]
@@ -115,4 +115,4 @@ REST API защищен с помощью [обычной проверки по�
 * [Создание кластеров Apache Hadoop с помощью REST API Azure](../hdinsight-hadoop-create-linux-clusters-curl-rest.md)
 * [Выполнение запросов Apache Hive в Apache Hadoop в HDInsight с использованием REST](apache-hadoop-use-hive-curl.md)
 * [Запуск заданий MapReduce в среде Apache Hadoop, размещенной в HDInsight, с помощью REST](apache-hadoop-use-mapreduce-curl.md)
-* [Выполнение заданий Pig с помощью cURL с использованием Apache Hadoop в HDInsight](apache-hadoop-use-pig-curl.md)
+

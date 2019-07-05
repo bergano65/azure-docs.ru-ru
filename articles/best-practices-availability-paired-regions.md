@@ -5,14 +5,14 @@ author: rayne-wiselman
 manager: carmon
 ms.service: multiple
 ms.topic: article
-ms.date: 04/28/2019
+ms.date: 07/01/2019
 ms.author: raynew
-ms.openlocfilehash: 5ed9dc595c537d8a923d3eb056dcb002cf225f7c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 81ba993e6cbe55b45d34325545754bec561ce479
+ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66427113"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67514460"
 ---
 # <a name="business-continuity-and-disaster-recovery-bcdr-azure-paired-regions"></a>Непрерывность бизнес-процессов и аварийное восстановление (BCDR): пары регионов Azure
 
@@ -77,7 +77,7 @@ Azure работает в различных странах по всему ми
 
 ![IaaS](./media/best-practices-availability-paired-regions/1Green.png) **Служба вычислений Azure (IaaS)** . Вы должны подготовить дополнительные вычислительные ресурсы заранее, чтобы обеспечить доступность ресурсов в другом регионе во время аварии. Дополнительные сведения см. в [техническом руководстве по обеспечению устойчивости в Azure](resiliency/resiliency-technical-guidance.md).
 
-![Служба хранилища](./media/best-practices-availability-paired-regions/2Green.png) **Служба хранилища Azure**. При создании учетной записи службы хранилища Azure геоизбыточное хранилище (GRS) настраивается по умолчанию. При использовании GRS данные реплицируются трижды в основном регионе и трижды в дополнительном. Дополнительные сведения см. в статье [Репликация службы хранилища Azure](storage/common/storage-redundancy.md).
+![Хранилище](./media/best-practices-availability-paired-regions/2Green.png) **хранилища Azure** — Если вы используете управляемые диски, Дополнительные сведения о [резервного копирования между регионами](https://docs.microsoft.com/azure/architecture/resiliency/recovery-loss-azure-region#virtual-machines) со службой Azure Backup и [репликации виртуальных машин](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication) из одного региона в другой с помощью Azure Site Recovery. Если вы используете учетные записи хранения, геоизбыточное хранилище (GRS) настраивается по умолчанию, при создании учетной записи хранения Azure. При использовании GRS данные реплицируются трижды в основном регионе и трижды в дополнительном. Дополнительные сведения см. в статье [Репликация службы хранилища Azure](storage/common/storage-redundancy.md).
 
 ![Azure SQL](./media/best-practices-availability-paired-regions/3Green.png) **База данных SQL Azure**. С помощью георепликации базы данных SQL Azure можно настроить асинхронную репликацию транзакций в любой регион мира. Тем не менее, для наиболее эффективного аварийного восстановления мы рекомендуем развертывать эти ресурсы в связанном регионе. Дополнительные сведения см. в статье [Обзор: активная георепликация для базы данных SQL Azure](sql-database/sql-database-geo-replication-overview.md).
 

@@ -6,27 +6,23 @@ author: msmbaldwin
 manager: barbkess
 services: key-vault
 ms.author: mbaldwin
-ms.date: 03/05/2019
+ms.date: 07/06/2019
 ms.topic: conceptual
 ms.service: key-vault
-ms.openlocfilehash: defb67c7e100a50a81d55afee03aa84be8e1e8e9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 79d4254de40ef787b30eb4f483c86383a928ee1f
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64722474"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67566221"
 ---
 # <a name="service-to-service-authentication-to-azure-key-vault-using-net"></a>Проверка подлинности с взаимодействием между службами в Azure Key Vault с помощью .NET
 
-Чтобы выполнить проверку подлинности в Azure Key Vault, необходимо иметь учетные данные Azure Active Directory: в виде общего секрета или сертификата. Управление такими учетными данными может быть сложным. Очевидным решением может казаться объединить учетные данные в приложение, включив их в исходные данные или файлы конфигурации.
+Для аутентификации в Azure Key Vault требуется credential Azure Active Directory (AD), общий секрет или сертификат. 
 
-Пакет `Microsoft.Azure.Services.AppAuthentication` для библиотеки .NET упрощает эту проблему. Он использует учетные данные разработчика для выполнения проверки подлинности во время локальной разработки. Если решение позже развертывается в Azure, библиотека автоматически переключается на использование учетных данных приложения.  
+Управление такими учетными данными может быть сложным. Очевидным решением может казаться объединить учетные данные в приложение, включив их в исходные данные или файлы конфигурации.  Пакет `Microsoft.Azure.Services.AppAuthentication` для библиотеки .NET упрощает эту проблему. Он использует учетные данные разработчика для выполнения проверки подлинности во время локальной разработки. Если решение позже развертывается в Azure, библиотека автоматически переключается на использование учетных данных приложения.    Использовать учетные данные разработчика во время локального развертывания более безопасно, так как вам не нужно создавать учетные данные Azure AD или совместно использовать учетные данные с другими разработчиками.
 
-Использовать учетные данные разработчика во время локального развертывания более безопасно, так как вам не нужно создавать учетные данные Azure AD или совместно использовать учетные данные с другими разработчиками.
-
-Библиотека `Microsoft.Azure.Services.AppAuthentication` автоматически управляет проверкой подлинности, которая, в свою очередь, позволяет сконцентрироваться на решении, а не на учетных данных.
-
-Библиотека `Microsoft.Azure.Services.AppAuthentication` поддерживает локальную разработку с Microsoft Visual Studio, Azure CLI и встроенную проверку подлинности Azure AD. При развертывании в ресурс Azure, поддерживающий управляемое удостоверение, библиотека автоматически использует [управляемые удостоверения для ресурсов Azure](../active-directory/msi-overview.md). Изменение кода или конфигурации не требуется. Библиотека также поддерживает непосредственное использование [учетных данных клиента](../azure-resource-manager/resource-group-authenticate-service-principal.md) Azure AD, если управляемое удостоверение недоступно или когда контекст безопасности разработчика не удается определить во время локальной разработки.
+Библиотека `Microsoft.Azure.Services.AppAuthentication` автоматически управляет проверкой подлинности, которая, в свою очередь, позволяет сконцентрироваться на решении, а не на учетных данных.  Он поддерживает локальную разработку с Microsoft Visual Studio, Azure CLI или встроенную проверку подлинности Azure AD. При развертывании в ресурс Azure, поддерживающий управляемое удостоверение, библиотека автоматически использует [управляемые удостоверения для ресурсов Azure](../active-directory/msi-overview.md). Изменение кода или конфигурации не требуется. Библиотека также поддерживает непосредственное использование [учетных данных клиента](../azure-resource-manager/resource-group-authenticate-service-principal.md) Azure AD, если управляемое удостоверение недоступно или когда контекст безопасности разработчика не удается определить во время локальной разработки.
 
 ## <a name="using-the-library"></a>Использование библиотеки
 
@@ -53,22 +49,9 @@ ms.locfileid: "64722474"
 
 Для метода `GetAccessTokenAsync` требуется наличие идентификатора ресурса. Дополнительные сведения см. в статье об [управляемых удостоверениях для ресурсов Azure](../active-directory/msi-overview.md).
 
-## <a name="samples"></a>Примеры
-
-В следующих примерах показана библиотека `Microsoft.Azure.Services.AppAuthentication` в действии:
-
-1. [Извлечение секрета из Azure Key Vault во время выполнения с помощью управляемого удостоверения](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet)
-
-2. [Развертывание программным способом шаблона Azure Resource Manager из виртуальной машины Azure с помощью управляемого удостоверения](https://github.com/Azure-Samples/windowsvm-msi-arm-dotnet)
-
-3. [Вызов служб Azure из виртуальной машины Azure под управлением Linux с использованием примера .NET Core и управляемого удостоверения](https://github.com/Azure-Samples/linuxvm-msi-keyvault-arm-dotnet/)
-
 ## <a name="local-development-authentication"></a>Проверка подлинности среды локальной разработки
 
-Для локальной разработки существует два основных сценария проверки подлинности:
-
-- [проверка подлинности в службах Azure](#authenticating-to-azure-services);
-- [проверка подлинности в пользовательских службах](#authenticating-to-custom-services).
+Для локальной разработки существует два основных сценария проверки подлинности: [проверка подлинности в службах Azure](#authenticating-to-azure-services), и [проверка подлинности в пользовательских службах](#authenticating-to-custom-services).
 
 ### <a name="authenticating-to-azure-services"></a>Проверка подлинности в службах Azure
 
@@ -114,7 +97,7 @@ az account set --subscription <subscription-id>
 az account list
 ```
 
-### <a name="authenticating-with-azure-ad-integrate-authentication"></a>Использование встроенной проверки подлинности Azure AD
+### <a name="authenticating-with-azure-ad-authentication"></a>Проверка подлинности с помощью проверки подлинности Azure AD
 
 Чтобы использовать проверку подлинности Azure AD, убедитесь, что:
 
@@ -135,9 +118,8 @@ az account list
 
     2.  Выполните вход с помощью Azure CLI:
 
-        ```
-        az login --service-principal -u <principal-id> --password <password>
-           --tenant <tenant-id> --allow-no-subscriptions
+        ```azurecli
+        az login --service-principal -u <principal-id> --password <password> --tenant <tenant-id> --allow-no-subscriptions
         ```
 
         Так как субъект-служба может не иметь доступа к подписке, используйте аргумент `--allow-no-subscriptions`.
@@ -150,27 +132,36 @@ az account list
 
 ## <a name="running-the-application-using-managed-identity-or-user-assigned-identity"></a>Запуск приложения с помощью управляемого удостоверения или назначаемого пользователем удостоверения 
 
-При выполнении кода в Службе приложений Azure или на виртуальной машине Azure с включенным управляемым удостоверением библиотека автоматически использует это удостоверение. Изменения кода не требуются. 
+При выполнении кода в Службе приложений Azure или на виртуальной машине Azure с включенным управляемым удостоверением библиотека автоматически использует это удостоверение. 
 
-Кроме того можно проверять подлинность с помощью назначаемого пользователем удостоверения. Дополнительные сведения о назначенных пользователям удостоверений см. в разделе [о удостоверений, управляемых для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md#how-does-the-managed-identities-for-azure-resources-work). Строка подключения указана в [поддержка строки подключения](#connection-string-support) разделе ниже.
+Кроме того можно проверять подлинность с помощью назначаемого пользователем удостоверения. Дополнительные сведения о назначенных пользователям удостоверений см. в разделе [о удостоверений, управляемых для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md#how-does-the-managed-identities-for-azure-resources-work). Чтобы выполнить аутентификацию с помощью назначаемого пользователем удостоверения, необходимо указать идентификатор клиента для назначаемого пользователем удостоверения в строке подключения. Строка подключения указана в [поддержка строки подключения](#connection-string-support) разделе ниже.
 
 ## <a name="running-the-application-using-a-service-principal"></a>Запуск приложения с помощью субъекта-службы 
 
 Возможно, может понадобиться создать учетные данные клиента Azure AD для проверки подлинности. Ниже приведены распространенные примеры.
 
-1. Ваш код выполняется в среде локальной разработки, но не использует удостоверение разработчика.  Service Fabric, например, использует [учетную запись NetworkService](../service-fabric/service-fabric-application-secret-management.md) для локальной разработки.
+- Ваш код выполняется в среде локальной разработки, но не использует удостоверение разработчика.  Service Fabric, например, использует [учетную запись NetworkService](../service-fabric/service-fabric-application-secret-management.md) для локальной разработки.
  
-2. Ваш код выполняется в среде локальной разработки и выполняется проверка подлинности в пользовательской службе, поэтому вы не можете использовать удостоверение разработчика. 
+- Ваш код выполняется в среде локальной разработки и выполняется проверка подлинности в пользовательской службе, поэтому вы не можете использовать удостоверение разработчика. 
  
-3. Ваш код выполняется в вычислительном ресурсе Azure, который еще не поддерживает управляемые удостоверения для ресурсов Azure, например в пакетной службе Azure.
+- Ваш код выполняется в вычислительном ресурсе Azure, который еще не поддерживает управляемые удостоверения для ресурсов Azure, например в пакетной службе Azure.
 
-Чтобы войти в Azure AD с помощью сертификата, сделайте следующее:
+Существует три основных способа использования субъекта-службы для запуска приложения. Чтобы использовать любой из них, необходимо сначала [создать субъект-службу](/cli/azure/create-an-azure-service-principal-azure-cli).
 
-1. Создайте [сертификат субъекта-службы](../azure-resource-manager/resource-group-authenticate-service-principal.md). 
+### <a name="use-a-certificate-in-local-keystore-to-sign-into-azure-ad"></a>Использовать сертификат в локальном хранилище ключей для входа в Azure AD
 
-2. Разверните сертификат в хранилище *LocalMachine* или *CurrentUser*. 
+1. Создание сертификата субъекта-службы с помощью Azure CLI [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) команды. 
 
-3. Задайте переменную среды с именем **AzureServicesAuthConnectionString**, как показано в следующем примере:
+    ```azurecli
+    az ad sp create-for-rbac --create-cert
+    ```
+
+    Это создаст PEM-файл (закрытый ключ), которая будет храниться в домашнем каталоге. Разверните этот сертификат либо *LocalMachine* или *CurrentUser* хранения. 
+
+    > [!Important]
+    > Команда интерфейса командной строки создает PEM-файл, но Windows предоставляет встроенную поддержку только для сертификатов PFX. Вместо этого создать сертификат PFX, используйте команды PowerShell, показано ниже: [Создание субъекта-службы с самозаверяющим сертификатом](../active-directory/develop/howto-authenticate-service-principal-powershell.md#create-service-principal-with-self-signed-certificate). Эти команды автоматически развернуть сертификат также.
+
+1. Задайте переменную среды с именем **AzureServicesAuthConnectionString**, как показано в следующем примере:
 
     ```
     RunAs=App;AppId={AppId};TenantId={TenantId};CertificateThumbprint={Thumbprint};
@@ -179,11 +170,11 @@ az account list
  
     Замените *{AppId}* , *{TenantId}* и *{Thumbprint}* идентификатором приложения, идентификатором клиента и отпечатком, созданными на шаге 1. Замените *{CertificateStore}* на `LocalMachine` или `CurrentUser` в зависимости от плана развертывания.
 
-4. Запустите приложение. 
+1. Запустите приложение. 
 
-Чтобы выполнить вход с помощью учетных данных в виде общего секрета Azure AD, сделайте следующее:
+### <a name="use-a-shared-secret-credential-to-sign-into-azure-ad"></a>Использовать общие секретные учетные данные для входа в Azure AD
 
-1. Создайте [субъект-службу с паролем](../azure-resource-manager/resource-group-authenticate-service-principal.md) и предоставьте ей доступ к Key Vault. 
+1. Создание сертификата субъекта-службы с помощью пароля с помощью [az ad sp create-for-rbac--пароль](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac). 
 
 2. Задайте переменную среды с именем **AzureServicesAuthConnectionString**, как показано в следующем примере:
 
@@ -197,6 +188,33 @@ az account list
 
 Если установка выполнена правильно, дальнейшие изменения в коде не требуются.  `AzureServiceTokenProvider` использует переменную среды и сертификат для выполнения проверки подлинности в Azure AD. 
 
+### <a name="use-a-certificate-in-key-vault-to-sign-into-azure-ad"></a>Использовать сертификат в хранилище ключей для входа в Azure AD
+
+Этот параметр позволяет сохранить сертификат клиента субъекта-службы в хранилище ключей и использовать его для проверки подлинности субъекта-службы. Вы можете использовать в следующих случаях:
+
+* Локальной проверки подлинности, где требуется выполнять проверку подлинности с помощью субъекта-службы явной, а также безопасно сохранить учетные данные субъекта-службы в хранилище ключей. Учетная запись разработчика должна иметь доступ к хранилищу ключей. 
+* Проверка подлинности из Azure, где вы хотите использовать явные учетные данные (например, для межклиентских сценариев) и безопасно сохранить учетные данные субъекта-службы в хранилище ключей. Управляемые удостоверения должен иметь доступ к хранилищу ключей. 
+
+Управляемое удостоверение или удостоверение разработчика, должны иметь разрешение на получение сертификата клиента из хранилища ключей. Библиотека AppAuthentication использует полученный сертификат в качестве учетных данных клиента субъекта-службы.
+
+Чтобы использовать сертификат клиента для проверки подлинности субъекта-службы
+
+1. Создание сертификата субъекта-службы и автоматически сохранять его в к хранилищу ключей с помощью Azure CLI [az ad sp в create-for-rbac--keyvault <keyvaultname> --cert <certificatename> --создать cert--skip назначение](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) команды:
+
+    ```azurecli
+    az ad sp create-for-rbac --keyvault <keyvaultname> --cert <certificatename> --create-cert --skip-assignment
+    ```
+    
+    Идентификатор сертификата будет иметь URL-адрес в формате `https://<keyvaultname>.vault.azure.net/secrets/<certificatename>`
+
+1. Замените `{KeyVaultCertificateSecretIdentifier}` в эту строку подключения с идентификатором сертификата:
+
+```
+RunAs=App;AppId={TestAppId};KeyVaultCertificateSecretIdentifier={KeyVaultCertificateSecretIdentifier}
+```
+
+Если, например хранилище ключей назывался «myKeyVault» и вы создали сертификат с именем «myCert», идентификатор сертификата будет `https://myKeyVault.vault.azure.net/secrets/myCert`, и строка подключения может быть `RunAs=App;AppId={TestAppId};TenantId={TenantId};KeyVaultCertificateSecretIdentifier=https://myKeyVault.vault.azure.net/secrets/myCert`.
+
 ## <a name="connection-string-support"></a>Поддержка строки подключения
 
 По умолчанию `AzureServiceTokenProvider` использует несколько способов извлечения токена. 
@@ -205,18 +223,27 @@ az account list
 
 Поддерживаются следующие варианты.
 
-| Вариант&nbsp;строки&nbsp;подключения | Сценарий | Комментарии|
+| Параметр строки подключения | Сценарий | Комментарии|
 |:--------------------------------|:------------------------|:----------------------------|
 | `RunAs=Developer; DeveloperTool=AzureCli` | Локальная разработка | AzureServiceTokenProvider использует Azure CLI для получения токена. |
 | `RunAs=Developer; DeveloperTool=VisualStudio` | Локальная разработка | AzureServiceTokenProvider использует Visual Studio для получения токена. |
 | `RunAs=CurrentUser` | Локальная разработка | AzureServiceTokenProvider использует встроенную проверку подлинности Azure AD для получения токена. |
 | `RunAs=App` | [Управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/index.yml) | AzureServiceTokenProvider использует управляемое удостоверение для получения токена. |
 | `RunAs=App;AppId={ClientId of user-assigned identity}` | [Назначаемое пользователем удостоверение для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md#how-does-the-managed-identities-for-azure-resources-work) | AzureServiceTokenProvider использует назначаемое пользователем удостоверение для получения токена. |
-| `RunAs=App;AppId={AppId};TenantId={TenantId};CertificateThumbprint={Thumbprint};CertificateStoreLocation={LocalMachine or CurrentUser}`   | Субъект-служба | `AzureServiceTokenProvider` использует сертификат для получения токена из Azure AD. |
+| `RunAs=App;AppId={TestAppId};KeyVaultCertificateSecretIdentifier={KeyVaultCertificateSecretIdentifier}` | Пользовательские службы проверки подлинности | KeyVaultCertificateSecretIdentifier = секретный идентификатор сертификата. |
+| `RunAs=App;AppId={AppId};TenantId={TenantId};CertificateThumbprint={Thumbprint};CertificateStoreLocation={LocalMachine or CurrentUser}`| Субъект-служба | `AzureServiceTokenProvider` использует сертификат для получения токена из Azure AD. |
 | `RunAs=App;AppId={AppId};TenantId={TenantId};CertificateSubjectName={Subject};CertificateStoreLocation={LocalMachine or CurrentUser}` | Субъект-служба | `AzureServiceTokenProvider` использует сертификат для получения токена из Azure AD.|
 | `RunAs=App;AppId={AppId};TenantId={TenantId};AppKey={ClientSecret}` | Субъект-служба |`AzureServiceTokenProvider` использует секрет для получения токена из Azure AD. |
 
+## <a name="samples"></a>Примеры
 
+Чтобы увидеть `Microsoft.Azure.Services.AppAuthentication` библиотеки в действии, см. в следующих примерах кода.
+
+1. [Извлечение секрета из Azure Key Vault во время выполнения с помощью управляемого удостоверения](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet)
+
+2. [Развертывание программным способом шаблона Azure Resource Manager из виртуальной машины Azure с помощью управляемого удостоверения](https://github.com/Azure-Samples/windowsvm-msi-arm-dotnet)
+
+3. [Вызов служб Azure из виртуальной машины Azure под управлением Linux с использованием примера .NET Core и управляемого удостоверения](https://github.com/Azure-Samples/linuxvm-msi-keyvault-arm-dotnet/)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

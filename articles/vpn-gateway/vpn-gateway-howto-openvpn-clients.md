@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 06/14/2019
 ms.author: cherylmc
-ms.openlocfilehash: a3806a7f64f30e5073182f96f552b8584cf1ce0c
-ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.openlocfilehash: b8f1626da730178d2cd9c2f31c4f9876102b3d46
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67147252"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67477850"
 ---
 # <a name="configure-openvpn-clients-for-azure-vpn-gateway"></a>Настройка клиентов OpenVPN для VPN-шлюза Azure
 
@@ -67,9 +67,9 @@ ms.locfileid: "67147252"
 4. Заполните раздел сертификата клиента подключения "точка — сеть" открытым ключом сертификата клиента P2S в формате base64. В сертификате с форматированием PEM вы можете просто открыть файл CER и скопировать ключ в формате base64, находящийся между заголовками сертификата. Дополнительные сведения о том, как экспортировать сертификат для получения закодированного открытого ключа, см. в разделе [Экспорт открытого ключа (CER)](vpn-gateway-certificates-point-to-site.md#cer).
 5. Заполните раздел секретного ключа закрытым ключом сертификата клиента P2S в base64. Дополнительные сведения о том, как извлечь закрытый ключ, см. в разделе [Экспорт закрытого ключа](https://openvpn.net/community-resources/how-to/#pki).
 6. Не изменяйте остальные поля. Для подключения к VPN используйте заполненную конфигурацию на входе клиента.
-7. Дважды щелкните файл профиля, чтобы создать профиль в Tunnelblik.
-8. Запустите Tunnelblik из папки приложения.
-9. Нажмите значок Tunneblik на панели задач и выберите подключение.
+7. Дважды щелкните файл профиля, чтобы создать профиль в Tunnelblick.
+8. Запустите Tunnelblick из папки приложения.
+9. Щелкните значок Tunnelblick на панели задач и выбора подключения.
 
 > [!IMPORTANT]
 >Протокол OpenVPN поддерживают только iOS 11.0 и MacOS 10.13 и их более поздние версии.

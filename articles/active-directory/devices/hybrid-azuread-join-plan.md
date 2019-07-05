@@ -2,27 +2,21 @@
 title: Как планировать реализацию присоединения к гибридной Azure Active Directory (Azure AD) | Документация Майкрософт
 description: Сведения о настройке гибридных устройств, присоединенных к Azure Active Directory.
 services: active-directory
-documentationcenter: ''
-author: MicrosoftGuyJFlo
-manager: daveba
-editor: ''
-ms.assetid: 54e1b01b-03ee-4c46-bcf0-e01affc0419d
 ms.service: active-directory
 ms.subservice: devices
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 04/10/2019
+ms.topic: conceptual
+ms.date: 06/28/2019
 ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 54a1c349ae7cdd66c09db412331c344d6512ecd3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c476c2b326045db37c54a358d68f4b5f8bbaed9a
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67110598"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67509595"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Как Планирование реализации гибридного присоединения к Azure Active Directory
 
@@ -83,7 +77,7 @@ ms.locfileid: "67110598"
 
 Гибридное присоединение к Azure AD в настоящее время не поддерживается при использовании инфраструктуры виртуальных рабочих столов (VDI).
 
-Гибридная служба Azure AD не поддерживается для FIPS-совместимых доверенных платформенных модулей. Если устройства нет FIPS-совместимых доверенных платформенных модулей, их необходимо отключить перед продолжением гибридное присоединение к Azure AD. Корпорация Майкрософт предоставляет средства для отключения режима FIPS для доверенных платформенных модулей, так как он зависит от производителя доверенного платформенного МОДУЛЯ. Обратитесь в службу поддержки оборудования OEM.
+Гибридное присоединение к Azure AD не поддерживается для FIPS-совместимых доверенных платформенных модулей. Если устройства нет FIPS-совместимых доверенных платформенных модулей, их необходимо отключить перед продолжением гибридное присоединение к Azure AD. Корпорация Майкрософт предоставляет средства для отключения режима FIPS для доверенных платформенных модулей, так как он зависит от производителя доверенного платформенного МОДУЛЯ. Обратитесь в службу поддержки оборудования OEM.
 
 Гибридное присоединение к Azure AD не поддерживается для Windows Server, выполняющий роль контроллера домена (DC).
 
@@ -99,13 +93,11 @@ ms.locfileid: "67110598"
 - Вы может помешать устройства присоединены к домену Azure AD, зарегистрированы путем добавления этого раздела реестра - HKLM\SOFTWARE\Policies\Microsoft\Windows\WorkplaceJoin, «BlockAADWorkplaceJoin» = DWORD: 00000001.
 - Это изменение для выпуска Windows 10 версии 1803 с KB4489894 применения. Тем не менее если у вас есть Windows Hello для бизнеса настроен, пользователь необходим для re-программы установки Windows Hello для бизнеса после двойного состояние очистки.
 
-
 ## <a name="review-controlled-validation-of-hybrid-azure-ad-join"></a>Просмотрите управляемой проверки гибридное присоединение к Azure AD
 
 Когда выполняются все предварительные требования в месте, устройства Windows будут автоматически регистрироваться в клиенте Azure AD как устройства. Состояние этих удостоверений устройств в Azure AD называется гибридное присоединение к Azure AD. Дополнительные сведения об основных понятиях, описанных в этой статье можно найти в статьях [введение в Управление удостоверениями устройств в Azure Active Directory](overview.md) и [планирование вашей гибридное присоединение к Azure Active Directory Реализация](hybrid-azuread-join-plan.md).
 
 Организации может потребоваться сделать Контролируемая проверка гибридное присоединение к Azure AD, прежде чем включать его по всей организации за один раз. Ознакомьтесь со статьей [управляемой проверки гибридное присоединение к Azure AD](hybrid-azuread-join-control.md) понять, как ее выполнения.
-
 
 ## <a name="select-your-scenario-based-on-your-identity-infrastructure"></a>Выберите сценарий на основе вашей инфраструктуры удостоверений
 
@@ -135,8 +127,6 @@ ms.locfileid: "67110598"
 
 - [Настроить гибридное присоединение к Azure Active Directory для федеративной среде](hybrid-azuread-join-federated-domains.md)
 - [Настроить гибридное присоединение к Azure Active Directory для управляемой среды](hybrid-azuread-join-managed-domains.md)
-
-
 
 ## <a name="review-on-premises-ad-upn-support-for-hybrid-azure-ad-join"></a>Проверка локального имени участника-пользователя AD, поддержка гибридное присоединение к Azure AD
 

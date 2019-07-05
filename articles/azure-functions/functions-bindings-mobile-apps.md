@@ -4,19 +4,19 @@ description: Узнайте, как использовать привязки м
 services: functions
 documentationcenter: na
 author: craigshoemaker
-manager: jeconnoc
+manager: gwallace
 keywords: функции azure, функции, обработка событий, динамические вычисления, независимая архитектура
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 5fd220f15f363c1987f1576009519e4b2feae6b9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 965ec88b39336e71d2779da4b7cd31b9c26e28be
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61438131"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67480363"
 ---
 # <a name="mobile-apps-bindings-for-azure-functions"></a>Привязки мобильных приложений для службы "Функции Azure" 
 
@@ -163,7 +163,7 @@ module.exports = function (context, myQueueItem) {
 
 В функциях C# и F# любые изменения, внесенные во входную запись (входной параметр), после успешного выхода из функции автоматически отправятся обратно в таблицу. Изменить запись в JavaScript невозможно.
 
-## <a name="output"></a>Выход
+## <a name="output"></a>Output
 
 Используйте выходную привязку мобильных приложений, чтобы сделать новую запись в таблице мобильных приложений.  
 

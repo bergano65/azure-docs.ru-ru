@@ -8,16 +8,16 @@ ms.workload: web
 ms.topic: article
 ms.date: 2/04/2019
 ms.author: msangapu-msft
-ms.openlocfilehash: 6b4e145a693aabbf1a00d732e2fd602e7c887a03
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e6284174089419cd201d094bcb1a8c7e865d2892
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65956009"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67484417"
 ---
 # <a name="serve-content-from-azure-storage-in-app-service-on-linux"></a>Обработка содержимого из службы хранилища Azure в Службе приложений на платформе Linux
 
-В этом руководстве показано, как обрабатывать статическое содержимое в Службе приложений на платформе Linux с помощью [службы хранилища Azure](/azure/storage/common/storage-introduction). Преимущества включают защищенное содержимое, его переносимость, доступ к нескольким приложениям и несколько методов для передачи. 
+В этом руководстве показано, как обрабатывать статическое содержимое в Службе приложений на платформе Linux с помощью [службы хранилища Azure](/azure/storage/common/storage-introduction). Преимущества включают защищенное содержимое, его переносимость, доступ к нескольким приложениям и несколько методов для передачи.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -28,6 +28,8 @@ ms.locfileid: "65956009"
 
 > [!NOTE]
 > Служба хранилища Azure — это не хранилище по умолчанию, и счета для которого выставляются отдельно. Эта служба не входит в состав веб-приложения.
+>
+> Перевести собственное хранилище не поддерживает использование конфигурации брандмауэра хранилища из-за ограничений инфраструктуры.
 >
 
 Создайте [учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=azure-cli).

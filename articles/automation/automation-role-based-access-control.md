@@ -5,17 +5,17 @@ keywords: автоматизация RBAC, контроль доступа на 
 services: automation
 ms.service: automation
 ms.subservice: shared-capabilities
-author: georgewallace
-ms.author: gwallace
+author: bobbytreed
+ms.author: robreed
 ms.date: 05/17/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: bcbda2464a4607aaa0b1bb96ef8f34c8713cb5f1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9b2bcdf3d74c6946b8c9f0dacaeabf28d9c76f94
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60738839"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67477732"
 ---
 # <a name="role-based-access-control-in-azure-automation"></a>Управление доступом на основе ролей в службе автоматизации Azure
 
@@ -232,6 +232,7 @@ ms.locfileid: "60738839"
 |Проверка состояния подключения — чтение виртуальной машины      | Microsoft.Compute/virtualMachines/read         | Виртуальная машина         |
 |Проверка состояния подключения — чтение учетной записи      | Microsoft.Automation/automationAccounts/read  |  Учетная запись службы автоматизации   |
 | Проверка подключения рабочей области для виртуальной Машины<sup>1</sup>       | Microsoft.OperationalInsights/workspaces/read         | Подписка         |
+| Регистрация поставщика Log Analytics |Microsoft.Insights/register/action | Подписка|
 
 <sup>1</sup> это разрешение требуется для подключения через интерфейс портала для виртуальной Машины.
 
@@ -251,6 +252,7 @@ ms.locfileid: "60738839"
 |Создание или изменение сохраненного поискового запроса     | Microsoft.OperationalInsights/workspaces/write        | Рабочая область        |
 |Создание или изменение конфигурации области     | Microsoft.OperationalInsights/workspaces/write        | Рабочая область        |
 |Подключение решения к конфигурации области      | Microsoft.OperationalInsights/workspaces/intelligencepacks/write         | Решение         |
+| Регистрация поставщика Log Analytics |Microsoft.Insights/register/action | Подписка|
 |**Шаг 2. Подключение нескольких виртуальных машин**     |         |         |
 |Колонка VMOnboarding — создание расширения MMA     | Microsoft.Compute/virtualMachines/write           | Виртуальная машина        |
 |Создание или изменение сохраненного поискового запроса     | Microsoft.OperationalInsights/workspaces/write           | Рабочая область        |

@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 03/07/2019
 ms.author: brahmnes
-ms.openlocfilehash: 7ff93dffe2dd82bdbba204b4235a297b337438f5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cf06c7c21d30fb107baee0d43b33b221c7da2773
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60784102"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67439898"
 ---
 # <a name="enable-snapshot-debugger-for-net-apps-in-azure-app-service"></a>Включить отладчик моментальных снимков для приложений .NET в службе приложений Azure
 
@@ -29,6 +29,8 @@ ms.locfileid: "60784102"
 * [Службы Azure Service Fabric](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
 * [Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с помощью Application Insights Profiler](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
 * [Локальных виртуальных или физических компьютеров](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
+
+Если вы используете предварительную версию .NET Core, следуйте инструкциям для [включить отладчик моментальных снимков для других сред](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) сначала для включения [Microsoft.ApplicationInsights.SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) NuGet упаковать с приложением и следуйте дальнейшим инструкциям ниже. 
 
 Application Insights Snapshot Debugger предварительно устанавливается как часть среды выполнения службы приложений, но вам необходимо включить его на моментальные снимки get для приложения службы приложений. После развертывания приложения, даже если включить пакет SDK Application Insights в исходном коде, выполните следующие действия, чтобы включить отладчик моментальных снимков.
 
@@ -52,7 +54,9 @@ Application Insights Snapshot Debugger предварительно устана
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Работа с Azure Application Insights в Visual Studio](https://docs.microsoft.com/azure/application-insights/app-insights-visual-studio)
+- Создайте трафик для приложения, которое может вызвать исключение. Подождите 10 – 15 минут для моментальных снимков, который должны отправляться экземпляра Application Insights.
+- См. в разделе [моментальные снимки](snapshot-debugger.md?toc=/azure/azure-monitor/toc.json#view-snapshots-in-the-portal) на портале Azure.
+- Устранении неполадок отладчик моментальных снимков, см. в разделе [Устранение неполадок Snapshot Debugger](snapshot-debugger-troubleshoot.md?toc=/azure/azure-monitor/toc.json).
 
 [Enablement UI]: ./media/snapshot-debugger/enablement-ui.png
 [snapshot-debugger-app-setting]:./media/snapshot-debugger/snapshot-debugger-app-setting.png

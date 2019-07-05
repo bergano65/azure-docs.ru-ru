@@ -1,19 +1,17 @@
 ---
 title: Часто задаваемые вопросы о каталоге данных Azure
 description: Часто задаваемые вопросы о каталоге данных Azure, включая возможности для обнаружения источников данных, создания заметок и управления.
-services: data-catalog
 author: JasonWHowell
 ms.author: jasonh
-ms.assetid: 5c7e209a-458c-4bb4-96bb-7ed178f9528a
 ms.service: data-catalog
 ms.topic: conceptual
-ms.date: 01/18/2018
-ms.openlocfilehash: 7c5241b9df23bb0334a39f2c684fd1bdff40b4c2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 07/01/2019
+ms.openlocfilehash: 6ab5c67129b16cde5ca74e72effdf56ec0a22711
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61004047"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508889"
 ---
 # <a name="azure-data-catalog-frequently-asked-questions"></a>Часто задаваемые вопросы о каталоге данных Azure
 Эта статья содержит ответы на часто задаваемые вопросы, связанные со службой каталога данных Azure.
@@ -36,7 +34,7 @@ ms.locfileid: "61004047"
 Сейчас службы каталога данных доступны в следующих центрах обработки данных:
 
 * Запад США
-* Восточная часть США
+* East US
 * Западная Европа
 * Северная Европа
 * Восточная часть Австралии
@@ -103,9 +101,6 @@ ms.locfileid: "61004047"
 
 ## <a name="does-the-catalog-work-with-another-data-source-that-im-interested-in"></a>Поддерживает ли каталог другие источники данных, которые меня интересуют?
 Мы ведем активную работу по добавлению дополнительных источников в каталог данных. Если вам нужна поддержка определенного источника данных, предложите свой вариант (или проголосуйте за него, если он уже указан) на [форумах обратной связи в разделе каталога данных Azure](https://feedback.azure.com/forums/906052-data-catalog).
-
-## <a name="how-is-azure-data-catalog-related-to-the-data-catalog-in-power-bi-for-office-365"></a>Какое отношение каталог данных Azure имеет к каталогу данных в Power BI для Office 365?
-Каталог данных Azure можно рассматривать как следующий шаг на пути развития каталога данных в Power BI. Начиная с весны 2017 г., каталог данных Azure позволяет реализовать совместное использование и обнаружение запросов в Excel 2016 и Power Query для Excel. Возможности каталога данных в Excel доступны пользователям с лицензиями Power BI Pro.
 
 ## <a name="what-permissions-do-i-need-to-register-assets-with-data-catalog"></a>Какие разрешения нужны для регистрации ресурсов в каталоге данных?
 Чтобы запустить средство регистрации каталога данных, нужны разрешения на чтение метаданных из источника данных. Чтобы добавить функцию предварительного просмотра, требуется разрешение на чтение данных из регистрируемых объектов.

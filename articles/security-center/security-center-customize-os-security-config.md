@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 3/20/2019
 ms.author: rkarlin
-ms.openlocfilehash: d9dc9f3a4ab964b66e3a2cb03f4aad442c5665e9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7095992253fbbe5aafce1eab889965250f5d59a8
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64573606"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551366"
 ---
 # <a name="customize-os-security-configurations-in-azure-security-center-preview"></a>Настройка конфигураций безопасности операционной системы в центре безопасности Azure (предварительная версия)
 
@@ -56,13 +56,11 @@ ms.locfileid: "64573606"
 
 1.  Откройте панель мониторинга **центра безопасности**.
 
-2.  В области слева выберите **Политика безопасности**.      
+2.  В левой области выберите **цен & Параметры**.
 
     ![Список политик безопасности](media/security-center-customize-os-security-config/manual-provision.png)
 
-3.  В строке подписки, которую нужно настроить, выберите **Изменить параметры**.
-
-4. Выберите **Изменение настроек системы безопасности**.  
+4. Выберите применимые подписку и выберите **изменение конфигураций безопасности**.  
 
     ![Окно Edit security configurations (Изменение конфигураций безопасности)](media/security-center-customize-os-security-config/blade.png)
 

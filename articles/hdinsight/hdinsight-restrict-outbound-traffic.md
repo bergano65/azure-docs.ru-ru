@@ -8,12 +8,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: howto
 ms.date: 05/30/2019
-ms.openlocfilehash: 542813e0f82a1a52142a2b82bea3fdb101fdec28
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: af5ddd50556b493cddf27d1ebb766d9bf6105107
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67077175"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67433428"
 ---
 # <a name="configure-outbound-network-traffic-for-azure-hdinsight-clusters-using-firewall-preview"></a>Настройка исходящего сетевого трафика для кластеров Azure HDInsight, с помощью брандмауэра (Предварительная версия)
 
@@ -89,7 +89,7 @@ ms.locfileid: "67077175"
 
    | **Имя** | **Протокол** | **Адрес источника** | **Теги служб** | **Конечный порт** | **Примечания** |
    | --- | --- | --- | --- | --- | --- |
-   | Rule_7 | TCP | * | * | `1433,11000-11999,14000-14999` | Настройка правила сети в разделе "теги службы" для SQL, который позволит вам регистрирование и аудит трафик SQL, если вы не настроили конечные точки службы для SQL Server в HDInsight подсети, в которой будут обходить брандмауэр. |
+   | Rule_7 | TCP | * | SQL | `1433` | Настройка правила сети в разделе "теги службы" для SQL, который позволит вам регистрирование и аудит трафик SQL, если вы не настроили конечные точки службы для SQL Server в HDInsight подсети, в которой будут обходить брандмауэр. |
 
 1. Нажмите кнопку **добавить** чтобы завершить создание вашей коллекции правил сети.
 

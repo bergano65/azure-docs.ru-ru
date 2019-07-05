@@ -1,5 +1,5 @@
 ---
-title: Совокупная стоимость владения (TCO) при использовании Azure Cosmos DB
+title: Совокупную стоимость владения (TCO) с помощью Azure Cosmos DB
 description: В этой статье сравнивается совокупная стоимость владения Azure Cosmos DB с IaaS и локальными базами данных
 author: rimman
 ms.service: cosmos-db
@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: e603435a49894a9b8faa2df9b49a8572b94eecb5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 861aacb3e4c288ea7f55c5906534b728e9cd22b6
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65965587"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447205"
 ---
-# <a name="total-cost-of-ownershiptco-with-azure-cosmos-db"></a>Совокупная стоимость владения (TCO) при использовании Azure Cosmos DB
+# <a name="total-cost-of-ownership-tco-with-azure-cosmos-db"></a>Совокупную стоимость владения (TCO) с помощью Azure Cosmos DB
 
-В Azure Cosmos DB обеспечена высокоточная настройка мультитенантности и функции управления ресурсами. Такой подход позволяет Azure Cosmos DB работать со значительно меньшими затратами и помогать пользователям экономить. Сейчас Azure Cosmos DB поддерживает более 280 пользовательских рабочих нагрузок на одном компьютере с постоянно повышающейся плотностью, а также тысячи клиентских рабочих нагрузок в пределах кластера. Она распределяет нагрузку для реплик рабочих нагрузок клиентов по разным компьютерам в одном кластере и между несколькими кластерами в центре обработки данных. Дополнительные сведения см. в разделе [Azure Cosmos DB: Pushing the frontier of globally distributed databases](https://azure.microsoft.com/blog/azure-cosmos-db-pushing-the-frontier-of-globally-distributed-databases/) (Azure Cosmos DB: новый уровень разработки глобальных распределенных баз данных). Благодаря управлению ресурсами, мультитенантности и встроенной интеграции с остальной инфраструктурой Azure, Azure Cosmos DB в среднем в 4–6 раз дешевле MongoDB, Cassandra и других NoSQL с открытым кодом, работающих в IaaS, а также почти в 10 раз дешевле ядер СУБД, работающих локально. См. документ [The total cost of (non) ownership of a NoSQL database cloud service](https://documentdbportalstorage.blob.core.windows.net/papers/11.15.2017/NoSQL%20TCO%20paper.pdf) (Совокупная стоимость (не)владения облачной службой баз данных NoSQL).
+В Azure Cosmos DB обеспечена высокоточная настройка мультитенантности и функции управления ресурсами. Такой подход позволяет Azure Cosmos DB работать со значительно меньшими затратами и помогать пользователям экономить. Сейчас Azure Cosmos DB поддерживает более 280 пользовательских рабочих нагрузок на одном компьютере с постоянно повышающейся плотностью, а также тысячи клиентских рабочих нагрузок в пределах кластера. Он распределяет реплики рабочих нагрузок клиентов на разных компьютерах в кластере, а также между несколькими кластерами в центре обработки данных. Дополнительные сведения см. в разделе [Azure Cosmos DB: Pushing the frontier of globally distributed databases](https://azure.microsoft.com/blog/azure-cosmos-db-pushing-the-frontier-of-globally-distributed-databases/) (Azure Cosmos DB: новый уровень разработки глобальных распределенных баз данных). Благодаря управлению ресурсами, мультитенантности и встроенной интеграции с остальной инфраструктурой Azure, Azure Cosmos DB в среднем в 4–6 раз дешевле MongoDB, Cassandra и других NoSQL с открытым кодом, работающих в IaaS, а также почти в 10 раз дешевле ядер СУБД, работающих локально. См. документ [The total cost of (non) ownership of a NoSQL database cloud service](https://documentdbportalstorage.blob.core.windows.net/papers/11.15.2017/NoSQL%20TCO%20paper.pdf) (Совокупная стоимость (не)владения облачной службой баз данных NoSQL).
 
 Решения для баз данных NoSQL с открытым кодом, такие как Apache Cassandra, MongoDB, HBase, разработаны для работы в локальном режиме. Они предлагаются как управляемая служба и эквивалентны шаблону Resource Manager с базой данных арендатора для управления подготовленными кластерами и поддержки мониторинга. Использование архитектур NoSQL с открытым кодом сопряжено со значительными операционными расходами, а поиск опытных специалистов может быть трудоемким и дорогостоящим. Azure Cosmos DB — полностью управляемая облачная служба, которая позволяет разработчикам сосредоточиться на бизнес-инновациях, а не на управлении инфраструктурой базы данных и ее обслуживании. 
 

@@ -8,19 +8,19 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/28/2017
 ms.author: hrasheed
-ms.openlocfilehash: bef71f210e015dc10cd6f5c0c655d0d3beee3655
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5492f4865e464cf8bedaee6e9b0ab25532e21459
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64728921"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448763"
 ---
 # <a name="analyze-website-logs-using-a-custom-python-library-with-apache-spark-cluster-on-hdinsight"></a>Анализ журналов веб-сайтов с помощью пользовательской библиотеки Python и кластера Apache Spark в HDInsight
 
 Данная записная книжка показывает, как анализировать данные журналов с помощью настраиваемой библиотеки с кластером Apache Spark в HDInsight. В качестве пользовательской библиотеки используется библиотека Python с именем **iislogparser.py**.
 
 > [!TIP]  
-> Кроме того, это руководство доступно в виде записной книжки Jupyter в кластере Spark (на платформе Linux), созданном в HDInsight. Фрагменты кода Python можно выполнять непосредственно в записной книжке. Чтобы выполнить действия в руководстве из записной книжки, создайте кластер Spark, запустите записную книжку Jupyter (`https://CLUSTERNAME.azurehdinsight.net/jupyter`), а затем записную книжку **Анализ журналов в Spark с помощью настраиваемой библиотеки IPYNB** в папке **PySpark**.
+> В этой статье также доступна в виде записной книжки Jupyter в кластере Spark (Linux), созданный в HDInsight. Фрагменты кода Python можно выполнять непосредственно в записной книжке. Чтобы выполнить статьи из записной книжки, создайте кластер Spark, запустите записную книжку Jupyter (`https://CLUSTERNAME.azurehdinsight.net/jupyter`), а затем запустите записную книжку **анализ журналов с помощью Spark с помощью настраиваемой библиотеки ipynb** в разделе **PySpark** папки.
 >
 >
 

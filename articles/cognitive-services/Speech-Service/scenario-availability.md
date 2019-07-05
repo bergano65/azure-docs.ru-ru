@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: cbasoglu
-ms.openlocfilehash: d844b171ff99dc97e5d1107bcb745f9e8d5b3e9d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7aa2c72a01f1887ea9680f8d5706b825a49039a1
+ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65519832"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67561290"
 ---
 # <a name="scenario-availability"></a>Сценарии доступности
 
@@ -25,7 +25,7 @@ ms.locfileid: "65519832"
   - Все программирования языков и сред там, где ссылку со стрелкой <img src="media/index/link.jpg" height="15" width="15"></img> в таблице быстрого запуска [здесь](https://aka.ms/csspeech).
 - **Преобразование текста в речь (TTS)**
   - C++/ Windows и Linux
-  - C#/ Windows
+  - C#/ Windows и универсальной платформы Windows и Unity
   - В любой другой ситуации можно использовать REST API преобразования текста в РЕЧЬ.
 - **Настроить слово (ключевое слово Spotter/KWS)**
   - C++/ Windows и Linux

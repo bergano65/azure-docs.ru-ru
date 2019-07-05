@@ -11,17 +11,17 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
-ms.date: 03/12/2019
-ms.openlocfilehash: 089f5335a65151c9c576346995f0bee34b5d10b4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 05/21/2019
+ms.openlocfilehash: 6824a7151a0c007d6fe4ba021f274886a3cf0dcb
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65791903"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447824"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Метрики и журналы диагностики Базы данных SQL Azure
 
-В этом разделе вы узнаете, как настроить ведение журнала диагностики телеметрии для базы данных SQL Azure через портал Azure, PowerShell, Azure CLI, Azure Monitor REST API и шаблона Azure Resource Manager. Эти диагностические можно использовать для оценки использования ресурсов и статистику выполнения запросов. 
+В этом разделе вы узнаете, как настроить ведение журнала диагностики телеметрии для базы данных SQL Azure через портал Azure, PowerShell, Azure CLI, Azure Monitor REST API и шаблона Azure Resource Manager. Эти диагностические можно использовать для оценки использования ресурсов и статистику выполнения запросов.
 
 Отдельные базы данных, базы данных в эластичных пулах, базы данных экземпляра в управляемом экземпляре могут передавать потоки метрик и журналов диагностики для упрощения мониторинга производительности. Вы можете настроить базу данных для передачи сведений об использовании ресурсов, о рабочих ролях и сеансах, а также настроить подключение к одному из следующих ресурсов Azure:
 
@@ -119,7 +119,7 @@ ms.locfileid: "65791903"
 1. Кроме того настройте потоковую передачу данных телеметрии системы диагностики для каждой базы данных в эластичном пуле, который вы хотите отслеживать, выполнив шаги, описанные в следующем разделе.
 
 > [!IMPORTANT]
-> В дополнение к настройке телеметрии диагностики для эластичного пула, необходимо также настроить данные телеметрии диагностики для каждой базы данных в эластичном пуле, как описано ниже. 
+> В дополнение к настройке телеметрии диагностики для эластичного пула, необходимо также настроить данные телеметрии диагностики для каждой базы данных в эластичном пуле, как описано ниже.
 
 ### <a name="configure-streaming-of-diagnostics-telemetry-for-single-database-or-database-in-elastic-pool"></a>Настроить потоковую передачу данных телеметрии системы диагностики для отдельной базы данных или базы данных в эластичном пуле
 
@@ -181,7 +181,7 @@ ms.locfileid: "65791903"
 1. Кроме того настройте потоковую передачу данных телеметрии системы диагностики для каждой базы данных экземпляра в управляемый экземпляр, который вы хотите отслеживать, выполнив действия, описанные в следующем разделе.
 
 > [!IMPORTANT]
-> В дополнение к настройке телеметрии диагностики для управляемого экземпляра, также необходимо настроить данные телеметрии диагностики для каждой базы данных экземпляра, как описано ниже. 
+> В дополнение к настройке телеметрии диагностики для управляемого экземпляра, также необходимо настроить данные телеметрии диагностики для каждой базы данных экземпляра, как описано ниже.
 
 ### <a name="configure-streaming-of-diagnostics-telemetry-for-instance-databases"></a>Настроить потоковую передачу данных телеметрии системы диагностики для экземпляра базы данных
 
@@ -261,6 +261,7 @@ ms.locfileid: "65791903"
     PS C:\> $WSID = "/subscriptions/<subID>/resourcegroups/<RG_NAME>/providers/microsoft.operationalinsights/workspaces/<WS_NAME>"
     PS C:\> .\Enable-AzureRMDiagnostics.ps1 -WSID $WSID
     ```
+
    Замените \<subID\> идентификатором подписки, \<RG_NAME\> именем группы ресурсов, а \<WS_NAME\> — именем рабочей области.
 
 ### <a name="azure-cli"></a>Инфраструктура CLI Azure
@@ -396,10 +397,6 @@ insights-metrics-minute/resourceId=/SUBSCRIPTIONS/s1id1234-5679-0123-4567-890123
 ```powershell
 insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription ID}/ RESOURCEGROUPS/{resource group name}/PROVIDERS/Microsoft.SQL/servers/{resource_server}/ elasticPools/{elastic_pool_name}/y={four-digit numeric year}/m={two-digit numeric month}/d={two-digit numeric day}/h={two-digit 24-hour clock hour}/m=00/PT1H.json
 ```
-
-### <a name="download-metrics-and-logs-from-storage"></a>Скачивание метрик и журналов из хранилища
-
-Ознакомьтесь с разделом о [скачивании метрик и журналов диагностики из службы хранилища](../storage/blobs/storage-quickstart-blobs-dotnet.md#download-the-sample-application).
 
 ## <a name="data-retention-policy-and-pricing"></a>Политика хранения данных и цены
 
@@ -719,5 +716,3 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 - [Что такое Центры событий Azure?](../event-hubs/event-hubs-what-is-event-hubs.md)
 - [Начало работы с Центрами событий](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
-
-Дополнительные сведения о службе хранилища Azure см. в разделе о том, [как скачивать метрики и журналы диагностики из хранилища](../storage/blobs/storage-quickstart-blobs-dotnet.md#download-the-sample-application).

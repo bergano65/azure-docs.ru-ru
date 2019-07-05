@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: hrasheed
-ms.openlocfilehash: 36b43ce6636bf918e1e8c42af4c2746865f5ccd1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 320611f05190d755c85a94a8e8eb9a1c04b3310e
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65523349"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508822"
 ---
 # <a name="migrating-to-azure-resource-manager-based-development-tools-for-hdinsight-clusters"></a>Переход к средствам разработки на основе Azure Resource Manager для кластеров HDInsight
 
@@ -52,7 +52,7 @@ ms.locfileid: "65523349"
 
 * [Выполнение заданий MapReduce с помощью cURL с использованием Hadoop в HDInsight](hadoop/apache-hadoop-use-mapreduce-curl.md)
 * [Выполнение запросов Hive в Apache Hadoop в HDInsight с использованием REST](hadoop/apache-hadoop-use-hive-curl.md)
-* [Выполнение заданий Pig с помощью REST с использованием Apache Hadoop в HDInsight](hadoop/apache-hadoop-use-pig-curl.md)
+
 
 Сведения о других методах интерактивного выполнения Apache Hadoop MapReduce, Apache Hive и Apache Pig см. в статьях [Использование MapReduce в HDInsight](hadoop/hdinsight-use-mapreduce.md), [Обзор Apache Hive и HiveQL в Azure HDInsight](hadoop/hdinsight-use-hive.md) и [Использование Apache Pig с Apache Hadoop в HDInsight](hadoop/hdinsight-use-pig.md).
 
@@ -213,7 +213,6 @@ ms.locfileid: "65523349"
 #### <a name="other-samples"></a>Другие примеры
 * [Создание кластеров HDInsight](hdinsight-hadoop-create-linux-clusters-azure-powershell.md)
 * [Отправка заданий Apache Hive](hadoop/apache-hadoop-use-hive-powershell.md)
-* [Отправка заданий Apache Pig](hadoop/apache-hadoop-use-pig-powershell.md)
 * [Отправка заданий Apache Sqoop](hadoop/apache-hadoop-use-sqoop-powershell.md)
 
 ## <a name="migrating-to-the-new-hdinsight-net-sdk"></a>Переход на новый пакет SDK для HDInsight .NET
@@ -231,7 +230,6 @@ ms.locfileid: "65523349"
 | Интерактивная проверка подлинности приложений с Azure Active Directory c использованием пакета SDK для .NET |См. статью о [выполнении запросов Apache Hive с помощью пакета SDK для .NET](hadoop/apache-hadoop-use-hive-dotnet-sdk.md). Во фрагменте кода, представленном в этой статье, используется метод интерактивной проверки подлинности. |
 | Неинтерактивная проверка подлинности приложений с Azure Active Directory c использованием пакета SDK для .NET |См. статью [Создание приложений .NET HDInsight с неинтерактивной проверкой подлинности](hdinsight-create-non-interactive-authentication-dotnet-applications.md). |
 | Отправка задания Hive с помощью пакета SDK для .NET |См. статью об [отправке заданий Apache Hive](hadoop/apache-hadoop-use-hive-dotnet-sdk.md). |
-| Отправка задания Pig с помощью пакета SDK для .NET |См. статью об [отправке заданий Apache Pig](hadoop/apache-hadoop-use-pig-dotnet-sdk.md). |
 | Отправка задания Sqoop с помощью пакета SDK для .NET |См. статью об [отправке заданий Apache Sqoop](hadoop/apache-hadoop-use-sqoop-dotnet-sdk.md). |
 | Получение списка кластеров HDInsight с помощью пакета SDK для .NET |См. раздел [Получение списка кластеров](hdinsight-administer-use-dotnet-sdk.md#list-clusters). |
 | Масштабирование кластеров HDInsight с помощью пакета SDK для .NET |См. раздел [Масштабирование кластеров](hdinsight-administer-use-dotnet-sdk.md#scale-clusters). |

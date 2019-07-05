@@ -9,12 +9,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 05/13/2019
 ms.custom: seodec2018
-ms.openlocfilehash: 95f5dde12ad9e34a0a04c988a816538ac30e01e6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 422e9209609eac19b7952557674c99789d9f6088
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65595979"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67485187"
 ---
 # <a name="how-to-compose-a-query-in-azure-search"></a>Как создать запрос в службе "Поиск Azure"
 
@@ -29,7 +29,7 @@ ms.locfileid: "65595979"
 | Методика | Описание |
 |-------------|-------------|
 | [Обозреватель Поиска (портал)](search-explorer.md) | Предоставляет панель поиска и параметры для выбора индекса и значения api-version. Будут возвращены результаты в виде документов JSON. <br/>[Подробнее.](search-get-started-portal.md#query-index) | 
-| [Postman или Fiddler](search-fiddler.md) | Веб-инструменты тестирования идеально подходят для формирования вызовов REST. REST API поддерживает все возможные операции в службе "Поиск Azure". В этой статье описывается, как настроить заголовки и текст HTTP-запроса для отправки запросов к службе "Поиск Azure".  |
+| [Postman или Fiddler](search-get-started-postman.md) | Веб-инструменты тестирования идеально подходят для формирования вызовов REST. REST API поддерживает все возможные операции в службе "Поиск Azure". В этой статье описывается, как настроить заголовки и текст HTTP-запроса для отправки запросов к службе "Поиск Azure".  |
 | [SearchIndexClient (.NET)](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchindexclient?view=azure-dotnet) | Клиент, который может использоваться для отправки запроса к индексу Поиска Azure.  <br/>[Подробнее.](search-howto-dotnet-sdk.md#core-scenarios)  |
 | [Поиск по документам (REST API)](https://docs.microsoft.com/rest/api/searchservice/search-documents) | Методы GET или POST для индекса, допускающие использование параметров запроса для ввода дополнительных данных.  |
 

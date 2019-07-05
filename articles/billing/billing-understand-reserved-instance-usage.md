@@ -1,27 +1,24 @@
 ---
-title: Общие сведения об использовании Azure резервирования для подписки с оплатой по мере использования | Документация Майкрософт
-description: Сведения о том, как оценить данные об использовании, чтобы составить представление о применении резервирования Azure для подписки с оплатой по мере использования.
-services: billing
-documentationcenter: ''
-author: manish-shukla01
-manager: manshuk
-editor: ''
+title: Данные об использовании Azure резервирования для отдельной подписки с оплатой
+description: Узнайте, как данные об использовании, чтобы понять, как применять резервирование на Azure для отдельных подписку с оплатой.
+author: bandersmsft
+manager: yashr
 tags: billing
 ms.service: billing
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/13/2019
+ms.date: 07/01/2019
 ms.author: banders
-ms.openlocfilehash: 14bd7b61038bf938f7d370eaf6e16d71b5da43ca
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 11f05c3de50f2f82173b6666d304887fbc2038cc
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60370378"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67490366"
 ---
-# <a name="understand-azure-reservation-usage-for-your-pay-as-you-go-subscription"></a>Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования
+# <a name="understand-azure-reservation-usage-for-your-individual-subscription-with-pay-as-you-go-rates-subscription"></a>Общие сведения об использовании Azure резервирования для отдельных подписку с оплатой подписки
 
 Чтобы оценить использование резервирования, используйте идентификатор резервирования со [страницы резервирования](https://portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=Reservations&Microsoft_Azure_Reservations=true#blade/Microsoft_Azure_Reservations/ReservationsBrowseBlade) и файл с [портала учетных записей Azure](https://account.azure.com).
 
@@ -62,7 +59,7 @@ ms.locfileid: "60370378"
 4. **Meter ID** (Идентификатор средства измерения) представляет собой идентификатор средства измерения для резервирования. Стоимость этого средства измерения — 0 долларов США. Этот идентификатор средства измерения отображается для любой виртуальной машины, которая подходит для скидки на резервирование.
 5. Виртуальная машина Standard_DS1_v2 с одним виртуальным процессором развертывается без преимущества гибридного использования Azure. Это средство измерения включает в себя дополнительную плату за программное обеспечение Windows. Чтобы найти средство измерения, соответствующее 1-ядерной виртуальной машине серии D, ознакомьтесь со статьей [Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров Azure](billing-reserved-instance-windows-software-costs.md). Если вы участник программы "Преимущество гибридного использования Azure", эта дополнительная плата не будет взиматься.
 
-## <a name="usage-for-sql-database--cosmos-db-reserved-capacity-reservations"></a>Сведения об использовании для резервирования Базы данных SQL и Cosmos DB с получением резервной мощности
+## <a name="usage-for-sql-database--cosmos-db-reservations"></a>Использование для резервирования базы данных SQL и Cosmos DB
 
 В следующих разделах используйте Базу данных SQL Azure в качестве примера описания отчета об использовании. Чтобы получить данные об использовании Azure Cosmos DB можно выполнить те же действия.
 

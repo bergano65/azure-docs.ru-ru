@@ -3,18 +3,18 @@ title: Привязки Microsoft Graph для службы "Функции Azur
 description: Узнайте, как использовать триггеры и привязки Microsoft Graph в решении "Функции Azure".
 services: functions
 author: craigshoemaker
-manager: jeconnoc
+manager: gwallace
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/20/2017
 ms.author: cshoe
-ms.openlocfilehash: f112bdf9eacf51852659ab49a5673b0c8bfb0e46
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae376343103d68df226d30d1d76133a3f055f5c2
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64511818"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67480393"
 ---
 # <a name="microsoft-graph-bindings-for-azure-functions"></a>Привязки Microsoft Graph для службы "Функции Azure"
 
@@ -822,7 +822,7 @@ module.exports = function (context, req) {
 Привязка предоставляет следующие типы функций .NET:
 - byte[]
 - Поток
-- string
+- строка
 - Microsoft.Graph.DriveItem.
 
 
@@ -1402,7 +1402,7 @@ module.exports = function (context, req) {
 ### <a name="webhook-output---usage"></a>Использование выходной привязки веб-перехватчика
 
 Привязка предоставляет следующие типы функций .NET:
-- string
+- строка
 - Microsoft.Graph.Subscription.
 
 

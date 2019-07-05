@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 622525705979cd6a7a088c606ac167d28f8f6482
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 636086ce0d055ab8de1d1b95dbbf7e5d96c7d7ef
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65951000"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67483053"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Практическое руководство: Настройка утверждений, выпущенных в токене SAML для корпоративных приложений
 
@@ -35,7 +35,7 @@ ms.locfileid: "65951000"
 
 Чтобы просмотреть или изменить утверждения, выданные приложению в токене SAML, откройте приложение на портале Azure. Затем откройте **атрибуты пользователя и утверждения** раздел.
 
-![В разделе атрибутов пользователя & утверждений](./media/active-directory-saml-claims-customization/sso-saml-user-attributes-claims.png)
+![Откройте раздел атрибуты пользователя и заявки на портале Azure](./media/active-directory-saml-claims-customization/sso-saml-user-attributes-claims.png)
 
 Изменение утверждений, выданных в маркере SAML, может потребоваться по двум основным причинам:
 
@@ -73,7 +73,7 @@ ms.locfileid: "65951000"
 
 Выберите нужный источник для утверждения `NameIdentifier` (или NameID). Вы можете выбирать из следующих параметров.
 
-| Name | Описание |
+| ИМЯ | Описание |
 |------|-------------|
 | Email | Адрес электронной почты пользователя |
 | userprincipalName | Имя участника-пользователя (UPN) пользователя |

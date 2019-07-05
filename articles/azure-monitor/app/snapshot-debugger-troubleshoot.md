@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 03/07/2019
 ms.author: mbullwin
-ms.openlocfilehash: bf19d4f5ce60411413c21fce12f9fe9d2f391bf1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 25ccf20fc78a9ec00d4dfe23a60e824e96d12945
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60783983"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67444550"
 ---
 # <a id="troubleshooting"></a> Устранение неполадок, включение Application Insights Snapshot Debugger или Просмотр моментальных снимков
 Если включен отладчик моментальных снимков Application Insights для приложения, но не отображаются моментальные снимки для исключений, эти инструкции можно использовать для устранения неполадок. Может существовать много разных причин, почему моментальные снимки не создаются. Можно выполнить проверку работоспособности моментальных снимков для идентификации некоторые из возможных причин.
@@ -38,6 +38,10 @@ ms.locfileid: "60783983"
 ## <a name="verify-the-instrumentation-key"></a>Проверка ключа инструментирования
 
 Убедитесь, что в опубликованном приложении используется правильный ключ инструментирования. Как правило, ключ инструментирования считывается из файла ApplicationInsights.config. Убедитесь, что его значение такое же, что и у ключа инструментирования для ресурса Application Insights, который отображается на портале.
+
+## <a name="preview-versions-of-net-core"></a>В предварительных версиях .NET Core
+Если приложение использует предварительную версию .NET Core, и был включен отладчик моментальных снимков через [область Application Insights](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json) на портале, затем отладчик моментальных снимков может не запуститься. Следуйте инструкциям в [включить отладчик моментальных снимков для других сред](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) сначала для включения [Microsoft.ApplicationInsights.SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) пакет NuGet вместе с приложением ***кроме*** предоставить через [область Application Insights](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json).
+
 
 ## <a name="upgrade-to-the-latest-version-of-the-nuget-package"></a>Обновление пакета NuGet до последней версии
 

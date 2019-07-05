@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 05/01/2019
 ms.author: juliako
-ms.openlocfilehash: b9293dc8be4fb50a657093090b0e6d76de5b5d31
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: b85b06552dcd0fc419302882f05814adbd454f46
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67303517"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67542564"
 ---
 # <a name="migration-guidance-for-moving-from-media-services-v2-to-v3"></a>Руководство по миграции из версии 2 в версию 3 Служб мультимедиа
 
@@ -60,6 +60,7 @@ ms.locfileid: "67303517"
 * Если ресурсы созданы с помощью версии 3, Службы мультимедиа поддерживают шифрование хранилища только на стороне сервера [службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-service-encryption).
     * Вы можете использовать API версии 3 с ресурсами, созданными с помощью API версии 2, в которых есть [шифрование хранилища](../previous/media-services-rest-storage-encryption.md) (AES 256), предоставляемое Службами мультимедиа.
     * Вы не можете создать ресурсы с устаревшим [шифрованием хранилища](../previous/media-services-rest-storage-encryption.md) AES 256 с помощью API версии 3.
+* Свойства ресурса в версии 3 отличается от версии 2, см. в разделе [как сопоставить свойства](assets-concept.md#map-v3-asset-properties-to-v2).
 * Пакеты SDK версии 3 теперь лишаются хранилища SDK, что обеспечивает больший контроль над используемой версией хранилища SDK и позволяет избежать проблем с управлением версиями. 
 * В API версии 3 вся скорость кодировки указана в битах за секунду. Это отличается от предустановок Media Encoder Standard версии 2. Например, скорость в версии 2 указывается как 128 (кбит/с), а в версии 3 она имела бы значение 128 000 (бит/с). 
 * Сущности AssetFiles, AccessPolicies и IngestManifests не существуют в версии 3.

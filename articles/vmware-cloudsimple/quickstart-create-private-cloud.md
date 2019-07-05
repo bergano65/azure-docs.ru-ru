@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 8a67cd2f82eb069555bda68e4cb04a6634e3b31d
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 85a8840ccf6f6fe6390b5eeaccd715d87169f157
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67164354"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67476028"
 ---
 # <a name="quickstart---configure-a-private-cloud-environment"></a>Краткое руководство. Настройка среды с частным облаком
 
@@ -187,7 +187,10 @@ NSX manager развертывается с паролем по умолчани
 
     ![Найти полное доменное имя диспетчера NSX](media/private-cloud-nsx-manager-fqdn.png)
 
-Чтобы изменить пароль, следуйте инструкциям в [установки диспетчера NSX](https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.2/com.vmware.nsxt.install.doc/GUID-A65FE3DD-C4F1-47EC-B952-DEDF1A3DD0CF.html).
+Чтобы изменить пароль, следуйте инструкциям в [управление пароль](https://docs.vmware.com/en/VMware-NSX-T-Data-Center/2.4/administration/GUID-DB31B304-66A5-4516-9E55-2712D12B4F27.html).
+
+> [!WARNING]
+> По умолчанию пароль администратора NSX срок действия истекает через 90 дней.
 
 ## <a name="create-a-port-group"></a>Создайте группу портов
 

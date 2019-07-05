@@ -6,14 +6,14 @@ author: Rajeswari-Mamilla
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 04/14/2019
+ms.date: 07/0/2019
 ms.author: ramamill
-ms.openlocfilehash: 5f0578026e95378065fc68198434e347a87eb1fe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 44588fedd53b363c43a369eeb1917ccaec58d948
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62123920"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508778"
 ---
 # <a name="set-up-the-configuration-server-for-disaster-recovery-of-physical-servers-to-azure"></a>Настройка сервера конфигурации для аварийного восстановления физических серверов в Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "62123920"
 В этой статье предполагается, что у вас уже имеется:
 - Хранилище служб восстановления на [портале Azure](https://portal.azure.com "портал Azure").
 - Физический компьютер для установки сервера конфигурации.
-- Если вы отключили TLS 1.0 на компьютере, на котором вы устанавливаете сервер конфигурации, включите TLS 1.2 и установите .NET Framework версии 4.6 или более поздней (надежное шифрование должно быть отключено). [Узнайте больше](https://support.microsoft.com/help/4033999/how-to-resolve-azure-site-recovery-agent-issues-after-disabling-tls-1).
+- При отключении TLS 1.0 на компьютере, на котором вы устанавливаете сервер конфигурации убедитесь, что протокол TLs 1.2 включен, и установку .NET Framework версии 4.6 или более поздней версии на компьютере (с поддержкой устойчивое шифрование). [Узнайте больше](https://support.microsoft.com/help/4033999/how-to-resolve-azure-site-recovery-agent-issues-after-disabling-tls-1).
 
 ### <a name="configuration-server-minimum-requirements"></a>Минимальные требования к серверу конфигурации
 В следующей таблице перечислены минимальные требования к оборудованию, программному обеспечению и сети сервера конфигурации.

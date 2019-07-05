@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin, justhu
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10ac2f4ac83240acf644fc1529c9c14f5e9631a1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3d6ed5c80d5c3241a9a328a2427ed8b920790635
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67111287"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67482487"
 ---
 # <a name="authentication-and-authorization-error-codes"></a>Коды ошибок проверки подлинности и авторизации
 
@@ -215,6 +215,7 @@ ms.locfileid: "67111287"
 | AADSTS90093 | GraphUserUnauthorized — возвращается граф с кодом ошибки "Запрещено" для полученного запроса. |
 | AADSTS90094 | AdminConsentRequired: требуется согласие администратора. |
 | AADSTS90100 | InvalidRequestParameter: пустой или недопустимый параметр. |
+| AADSTS901002 | AADSTS901002: Параметр запроса «resource» не поддерживается. |
 | AADSTS90101 | InvalidEmailAddress: указан недопустимый адрес электронной почты. Необходимый формат: `someone@example.com`. |
 | AADSTS90102 | InvalidUriParameter: значение должно быть допустимым абсолютным URI. |
 | AADSTS90107 | InvalidXml: недопустимый запрос. Убедитесь, что данные не содержат недопустимые символы.|

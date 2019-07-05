@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: raynew
-ms.openlocfilehash: 4df65819256e6a81a07927d463d130fbfdf9317a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 85e7b40778305395bb0f4a9403b4aeafc4607654
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66255014"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67565700"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Резервное копирование и восстановление виртуальных машин Azure с помощью PowerShell
 
@@ -447,7 +447,7 @@ $restorejob
 >
 >
 
-Укажите дополнительный параметр **TargetResourceGroupName** для указания группы ресурсов, в которой будут восстановлены управляемые диски. 
+Укажите дополнительный параметр **TargetResourceGroupName** для указания группы ресурсов, в которой будут восстановлены управляемые диски.
 
 > [!NOTE]
 > Настоятельно рекомендуется использовать параметр **TargetResourceGroupName** для восстановления управляемых дисков, поскольку это приведет к значительному повышению производительности. Для модуля Az Azure Powershell, начиная с версии 1.0, этот параметр является обязательным в случае восстановления с управляемых дисков.
@@ -483,6 +483,15 @@ $details = Get-AzRecoveryServicesBackupJobDetails -Job $restorejob
 ```
 
 Восстановив диски, перейдите к следующему разделу по созданию виртуальной машины.
+
+## <a name="replace-disks-in-azure-vm"></a>Замена дисков на виртуальной Машине Azure
+
+Чтобы заменить дисков и сведений о конфигурации, выполните следующие действия:
+
+- Шаг 1. [Восстановление дисков](backup-azure-vms-automation.md#restore-the-disks)
+- Шаг 2. [Отключение диска данных, с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/detach-disk#detach-a-data-disk-using-powershell)
+- Шаг 3. [Подключение диска данных к виртуальной Машине Windows с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/attach-disk-ps)
+
 
 ## <a name="create-a-vm-from-restored-disks"></a>Создание виртуальной машины с восстановленного диска
 
@@ -718,6 +727,7 @@ New-AzResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleR
       ```powershell  
       Set-AzVMDiskEncryptionExtension -ResourceGroupName $RG -VMName $vm -DiskEncryptionKeyVaultUrl $dekUrl -DiskEncryptionKeyVaultId $keyVaultId -KeyEncryptionKeyUrl $kekUrl -KeyEncryptionKeyVaultId $keyVaultId -SkipVmBackup -VolumeType "All"
       ```
+
 
 ## <a name="restore-files-from-an-azure-vm-backup"></a>Восстановление файлов из резервной копии виртуальной машины Azure
 

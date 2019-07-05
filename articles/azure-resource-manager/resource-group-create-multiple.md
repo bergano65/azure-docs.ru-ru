@@ -5,14 +5,14 @@ services: azure-resource-manager
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 06/06/2019
+ms.date: 07/01/2019
 ms.author: tomfitz
-ms.openlocfilehash: 99fd4215de4dd118558acc008fcfa6490ea0093d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 22317372a7d954286ebcb0b59aea293c746b2a58
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66807367"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508173"
 ---
 # <a name="resource-property-or-variable-iteration-in-azure-resource-manager-templates"></a>Ресурс, свойства или переменной итерации в шаблонах Azure Resource Manager
 
@@ -50,6 +50,8 @@ ms.locfileid: "66807367"
 Чтобы указать число итераций, укажите значение для свойства count. Счетчик не может превышать 800.
 
 Счетчик не может быть отрицательным числом. При развертывании шаблона с помощью REST API версии **2019-05-10** или более поздней версии, можно задать число к нулю. Более ранние версии REST API не поддерживают нулевое значение для числа. В настоящее время Azure CLI или PowerShell не поддерживают нулевое значение для счетчика, но эта поддержка будет добавлена в будущем выпуске.
+
+Будет осторожны с помощью [выполнить развертывание в режиме](deployment-modes.md) с копией. При повторном развертывании с помощью полного режима в группу ресурсов, будут удалены все ресурсы, которые не определены в шаблоне после устранения цикла копирования.
 
 Ограничения для числа одинаковы ли использовании ресурсов, переменной или свойству.
 

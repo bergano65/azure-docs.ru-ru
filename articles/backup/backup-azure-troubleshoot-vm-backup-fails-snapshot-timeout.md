@@ -2,19 +2,19 @@
 title: Устранение неполадок службы Azure Backup. Состояние гостевого агента недоступно
 description: Симптомы, причины и способы устранения проблем в работе службы Azure Backup, связанных с агентом, расширением и дисками.
 services: backup
-author: genlin
-manager: cshepard
+author: saurabhsensharma
+manager: saurabhsensharma
 keywords: Azure backup; VM agent; Network connectivity;
 ms.service: backup
 ms.topic: troubleshooting
 ms.date: 12/03/2018
-ms.author: genli
-ms.openlocfilehash: 826a38dd80db7cd0e6e500949d2c259c3808c0a9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: saurabhsensharma
+ms.openlocfilehash: 5abaa040b22000a300fba22590866846f6dbbd4a
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64914944"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67565684"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 

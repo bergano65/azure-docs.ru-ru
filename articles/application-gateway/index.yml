@@ -30,7 +30,7 @@ sections:
             href: 'https://docs.microsoft.com/azure/application-gateway/quick-create-powershell'
           - image:
               src: 'https://docs.microsoft.com/azure/application-gateway/media/index/cli.svg'
-            text: "Azure\_CLI"
+            text: Azure CLI
             href: 'https://docs.microsoft.com/azure/application-gateway/quick-create-cli'
   - title: Пошаговые руководства
     items:
@@ -62,8 +62,8 @@ sections:
         className: cardsD
         items:
           - title: Командная строка
-            html: "<p><a href=\"/powershell/resourcemanager\">Azure PowerShell</a></p><p><a href=\"/cli/azure/network/application-gateway\">Azure\_CLI</a></p>"
+            html: <p><a href="/powershell/resourcemanager">Azure PowerShell</a></p><p><a href="/cli/azure/network/application-gateway">Azure CLI</a></p>
           - title: Языки
-            html: '<p><a href="/dotnet/api">.NET</a></p><p><a href="/java/api/com.microsoft.azure.management.network">Java</a></p><p><a href="/javascript/api/azure-arm-network/ApplicationGateways">Node.js</a></p><p><a href="https://docs.microsoft.com/python/api/azure-mgmt-network/azure.mgmt.network.v2018_08_01.operations.application_gateways_operations.applicationgatewaysoperations?view=azure-python">Python</a></p>'
+            html: '<p><a href="/dotnet/api">.NET</a></p><p><a href="/java/api/com.microsoft.azure.management.network">Java</a></p><p><a href="/javascript/api/azure-arm-network/ApplicationGateways">Node.js</a></p><p><a href="https://docs.microsoft.com/python/api/azure-mgmt-network/azure.mgmt.network.v2018_08_01.operations.applicationgatewaysoperations">Python</a></p>'
           - title: REST
             html: "<p><a href=\"https://msdn.microsoft.com/library/mt684941\">Полный справочник по REST\_API</a></p>"

@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: cynthn
-ms.openlocfilehash: 5022d765b5dfa4f1f973b7fb4370d5314bb887b8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 461df93400380ac74fa87eebc81fa06f77d7bf76
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60542879"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551652"
 ---
 # <a name="how-to-create-an-image-of-a-virtual-machine-or-vhd"></a>Создание образа виртуальной машины или виртуального жесткого диска
 
@@ -30,7 +30,9 @@ ms.locfileid: "60542879"
 
 Чтобы создать копию имеющейся виртуальной машины Linux для резервного копирования, отладки или передачи специализированного VHD Linux с локальной виртуальной машины, ознакомьтесь со статьей [Создание виртуальной машины Linux на основе пользовательского диска с помощью Azure CLI](upload-vhd.md).  
 
-Для создания пользовательской конфигурации также можно использовать **Packer**. Дополнительные сведения см. в статье [Создание образов виртуальных машин Linux в Azure с помощью Packer](build-image-with-packer.md).
+Можно использовать **построитель образ виртуальной Машины Azure (Предварительная версия)** службы для создания пользовательского образа, не нужно изучать любые средства или установки создавать конвейеры, просто обеспечивают Настройка image и Image Builder создаст образ. Дополнительные сведения см. в разделе [Приступая к работе с Azure VM Image Builder](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-overview).
+
+Кроме того, функции используйте **Packer** для создания пользовательской конфигурации. Дополнительные сведения см. в статье [Создание образов виртуальных машин Linux в Azure с помощью Packer](build-image-with-packer.md).
 
 Для создания образа вам понадобятся следующие элементы.
 

@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: sstein
 manager: craigg
 ms.date: 04/03/2019
-ms.openlocfilehash: ddb115370c62371e769ef98e0031f7e0379bafbf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d861ccb93de7aa0b84b20215afb5fddf49aa94c9
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61075503"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67427965"
 ---
 # <a name="ports-beyond-1433-for-adonet-45"></a>Порты для ADO.NET 4.5, отличные от порта 1433
 
@@ -81,7 +81,7 @@ ms.locfileid: "61075503"
 
 * Подключение к Базе данных SQL Azure версии 12 с помощью перенаправления https://techcommunity.microsoft.com/t5/DataCAT/Connect-to-Azure-SQL-Database-V12-via-Redirection/ba-p/305362
 
-* [Список версий протокола TDS](http://www.freetds.org/userguide/tdshistory.htm)
+* [Список версий протокола TDS](https://www.freetds.org/userguide/tdshistory.htm)
 * [Общие сведения о разработке базы данных SQL](sql-database-develop-overview.md)
 * [Брандмауэр базы данных SQL Azure](sql-database-firewall-configure.md)
 * [Практическое руководство. Настройка правил брандмауэра в Базе данных SQL](sql-database-configure-firewall-settings.md)

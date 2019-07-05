@@ -15,12 +15,12 @@ ms.date: 05/21/2019
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b38422b22885ad96c6681abe58b897155809521
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 22f12255bf14ca424a8a79107e7ca8e403552b62
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66113190"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67471746"
 ---
 # <a name="review-access-for-yourself-to-groups-or-applications-in-azure-ad-access-reviews"></a>Проверка доступа для себя в группы или приложения в Azure AD проверок доступа
 
@@ -40,7 +40,7 @@ Azure Active Directory (Azure AD) упрощает предприятий упр
 
 1. Найдите сообщение от корпорации Майкрософт с просьбой проверить доступ. Ниже приведен пример сообщения электронной почты проверить доступ к группе.
 
-    ![Электронное сообщение о проверке доступа](./media/review-your-access/access-review-email.png)
+    ![Пример электронного письма от Майкрософт, чтобы проверить доступ к группе](./media/review-your-access/access-review-email.png)
 
 1. Нажмите кнопку **проверка доступа** ссылку, чтобы открыть проверку доступа.
 
@@ -48,7 +48,7 @@ Azure Active Directory (Azure AD) упрощает предприятий упр
 
 1. Войдите на портал MyApps в [ https://myapps.microsoft.com ](https://myapps.microsoft.com).
 
-    ![Портал MyApps](./media/review-your-access/myapps-access-panel.png)
+    ![Список приложений, которые у вас есть разрешения на портале MyApps](./media/review-your-access/myapps-access-panel.png)
 
 1. В правом верхнем углу страницы щелкните значок пользователя, где отображается ваше имя и название организации по умолчанию. Если в списке содержится несколько организаций, выберите ту организацию, которая запросила проверку доступа.
 
@@ -56,7 +56,7 @@ Azure Active Directory (Azure AD) упрощает предприятий упр
 
     Если такой элемент не отображается, для этой организации нет ожидающих проверок доступа и в данный момент не требуется никаких действий.
 
-    ![Список проверок доступа](./media/review-your-access/access-reviews-list.png)
+    ![Список проверок доступа для приложений и групп](./media/review-your-access/access-reviews-list.png)
 
 1. Нажмите кнопку **начать проверку** ссылку для проверки доступа, вы хотите выполнить.
 
@@ -68,13 +68,13 @@ Azure Active Directory (Azure AD) упрощает предприятий упр
 
     Если запрос является проверка доступа для других пользователей, страницы будут выглядеть иначе. Дополнительные сведения см. в разделе [проверить доступ к группам или приложениям](perform-access-review.md).
 
-    ![Выполнить проверку доступа](./media/review-your-access/perform-access-review.png)
+    ![Проверки доступа откройте, запросом ли вам по-прежнему нужен доступ к группе](./media/review-your-access/perform-access-review.png)
 
 1. Нажмите кнопку **Да** или нажмите кнопку Сохранить доступ к **нет** удалить права доступа.
 
 1. Если щелкнуть **Да**, может потребоваться указать обоснование в **Причина** поле.
 
-    ![Выполнить проверку доступа](./media/review-your-access/perform-access-review-submit.png)
+    ![Выполнить проверку доступа, запросом ли вам по-прежнему нужен доступ к группе](./media/review-your-access/perform-access-review-submit.png)
 
 1. Нажмите кнопку **Submit**(Отправить).
 

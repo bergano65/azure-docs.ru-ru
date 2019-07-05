@@ -9,12 +9,12 @@ ms.date: 4/2/2019
 ms.topic: conceptual
 ms.service: service-fabric-mesh
 manager: chackdan
-ms.openlocfilehash: 251611e814f890e3cebf0fda2d33ab548a8ff213
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c2548ea3cf892ebe1a56cbb0909bfa5d5e805acf
+ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65506450"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67503315"
 ---
 # <a name="manage-service-fabric-mesh-application-secrets"></a>Управление секретами приложения "Сетка Service Fabric"
 Сетка Service Fabric поддерживает секреты в качестве ресурсов Azure. Секрет сетки Service Fabric может быть любой конфиденциальной текстовой информацией, например строками подключения к хранилищу, паролями или другими значениями, которые должны храниться и передаваться безопасно. В этой статье показано, как использовать службу Secure Store Service Fabric для развертывания и поддержки секретов.
@@ -208,7 +208,7 @@ az mesh deployment create –-<template-file> or --<template-uri>
 
 Пример:
 - az mesh deployment create — c:\MyMeshTemplates\SecretTemplate1.txt
-- az mesh deployment create — https://www.fabrikam.com/MyMeshTemplates/SecretTemplate1.txt
+- AZ сетки развертывания создайте--https:\//www.fabrikam.com/MyMeshTemplates/SecretTemplate1.txt
 
 ### <a name="show-a-secret"></a>Отображение секрета
 Возвращает описание секрета (но не его значение).

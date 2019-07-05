@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/27/2019
 ms.author: v-mohabe
-ms.openlocfilehash: b18267b1443b257a575bf2e1199b9f8fa8c419fc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6a6b5b6e247bd7c105286b86257a6ae11c1d1c60
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65966815"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551861"
 ---
 # <a name="protect-app-service-with-azure-security-center"></a>Защита службы приложений с помощью центра безопасности Azure
 Эта статья позволяет вам использовать центр безопасности Azure для мониторинга и защиты своих приложений, работающих на базе службы приложений.
@@ -47,9 +47,8 @@ ms.locfileid: "65966815"
 ## <a name="enabling-monitoring-and-protection-of-app-service"></a>Включение мониторинга и защиты службы приложений
 
 1. Выберите центр безопасности в Azure.
-2. Выберите **Политика безопасности** и выберите подписку.
-3. В конце строки подписки выберите **Изменить параметры**.
-4. В разделе **Ценовая категория** строки **Служба приложений** переведите план в состояние **Включено**.
+2. Перейдите к **цен & Параметры** и выберите подписку.
+3. В разделе **Ценовая категория** строки **Служба приложений** переведите план в состояние **Включено**.
 
 ![Переключатель службы приложений](./media/security-center-app-services/app-services-toggle.png)
 

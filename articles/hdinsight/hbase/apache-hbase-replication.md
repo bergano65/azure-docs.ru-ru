@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/15/2018
-ms.openlocfilehash: 95a1055df283765b24322f6f8efe3efcb9b19022
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 38d3c61acee9dca18ab1f863d878e02f7437a600
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64707979"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67433719"
 ---
 # <a name="set-up-apache-hbase-cluster-replication-in-azure-virtual-networks"></a>Настройка репликации кластера Apache HBase в виртуальных сетях Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "64707979"
 
 Репликация кластера использует методологию source-push. Кластер HBase может быть исходным, кластером назначения или выполнять обе роли одновременно. Репликация выполняется асинхронно. Целью репликации в конечном итоге является согласованность. При получении источником изменения в семействе столбцов с включенной репликацией такое изменение распространяется на все кластеры назначения. При репликации данных с одного кластера на другой исходный кластер и все кластеры, которые уже потребили данные, отслеживаются для предотвращения циклических репликаций.
 
-В этом руководстве показано, как настроить репликацию "источник — назначение". Другие топологии кластеров см. в [справочном руководстве по Apache HBase](https://hbase.apache.org/book.html#_cluster_replication).
+В этой статье можно настроить репликацию источник назначение. Другие топологии кластеров см. в [справочном руководстве по Apache HBase](https://hbase.apache.org/book.html#_cluster_replication).
 
 Примеры использования репликации HBase для одной виртуальной сети:
 
@@ -39,7 +39,7 @@ ms.locfileid: "64707979"
 Кластеры можно реплицировать с помощью скриптов [действий сценария](../hdinsight-hadoop-customize-cluster-linux.md), которые можно найти на [GitHub](https://github.com/Azure/hbase-utils/tree/master/replication).
 
 ## <a name="prerequisites"></a>Технические условия
-Прежде чем приступать к изучению этого руководства, необходимо оформить подписку Azure. См. страницу о [получении бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+Перед началом работы в этой статье, необходимо иметь подписку Azure. См. страницу о [получении бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
 ## <a name="set-up-the-environments"></a>Настройка сред
 
@@ -68,7 +68,7 @@ ms.locfileid: "64707979"
 
 | Свойство | Значение |
 |----------|-------|
-| Расположение | Запад США |
+| Location | Запад США |
 | Имя виртуальной сети | &lt;префикс_имени_кластера>-vnet1 |
 | Address space prefix | 10.1.0.0/16 |
 | Имя подсети | subnet 1 |
@@ -85,7 +85,7 @@ ms.locfileid: "64707979"
 
 | Свойство | Значение |
 |----------|-------|
-| Расположение | Восточная часть США |
+| Location | East US |
 | Имя виртуальной сети | &lt;префикс_имени_кластера>-vnet2 |
 | Address space prefix | 10.2.0.0/16 |
 | Имя подсети | subnet 1 |
@@ -301,7 +301,7 @@ sudo service bind9 status
 
 Ниже приведены обязательные аргументы.
 
-|Name|Описание|
+|ИМЯ|Описание|
 |----|-----------|
 |-s, --src-cluster | Указывает DNS-имя исходного кластера HBase. например -s hbsrccluster, --src-cluster=hbsrccluster. |
 |-d, --dst-cluster | Указывает DNS-имя кластера назначения (реплики) HBase. например -s dsthbcluster, --src-cluster=dsthbcluster. |
@@ -396,7 +396,7 @@ sudo service bind9 status
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве описано, как настраивать репликацию Apache HBase в пределах одной или двух виртуальных сетей. Дополнительные сведения об HDInsight и Apache HBase см.в следующих статьях:
+В этой статье вы узнали, как настроить репликацию Apache HBase в виртуальной сети или между двумя виртуальными сетями. Дополнительные сведения об HDInsight и Apache HBase см.в следующих статьях:
 
 * [Начало работы с примером Apache HBase в HDInsight](./apache-hbase-tutorial-get-started-linux.md)
 * [Общие сведения об HDInsight Apache HBase](./apache-hbase-overview.md)

@@ -1,28 +1,22 @@
 ---
 title: Параметры групповой политики и управления мобильными устройствами | Документация Майкрософт
-description: Здесь содержатся сведения о параметрах групповой политики и управления мобильными устройствами, которые следует использовать на корпоративных устройствах. Эти политики применяются ко всему устройству пользователя.
+description: Здесь содержатся сведения о параметрах групповой политики и управления мобильными устройствами, которые следует использовать на корпоративных устройствах.
 services: active-directory
-keywords: что такое параметры групповой политики и MDM для службы Enterprise State Roaming, служба Enterprise State Roaming, облако Windows
-documentationcenter: ''
+ms.service: active-directory
+ms.subservice: devices
+ms.topic: troubleshooting
+ms.date: 06/28/2019
+ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
-editor: curtand
-ms.subservice: devices
-ms.assetid: 6471a9b3-8dd4-4237-89d1-bfbeca9f8252
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 10/25/2018
-ms.author: joflore
+ms.reviewer: na
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f1b23862edeabbf8e03d4589fa3f22a3fab9f72
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a3f2b1afa67ec36da4d4da57b296e696fd6c6910
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60353165"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67481942"
 ---
 # <a name="group-policy-and-mdm-settings"></a>Параметры групповой политики и управления мобильными устройствами
 Используйте эти параметры групповой политики и управления мобильными устройствами (MDM) только на корпоративных устройствах, так как эти политики применяются ко всему устройству пользователя. Применение политики MDM для отключения синхронизации параметров на личном устройстве пользователя может негативно отразиться на использовании этого устройства. Кроме того, политика также влияет на другие учетные записи пользователей на устройстве.
@@ -33,7 +27,7 @@ ms.locfileid: "60353165"
 ## <a name="mdm-settings"></a>Параметры MDM
 Параметры политики MDM применяются к Windows 10 и Windows 10 Mobile.  Поддержка Windows 10 Mobile существует только для перемещения на основе учетной записи Майкрософт через учетную запись пользователя OneDrive.  Дополнительные сведения о том, для каких устройств поддерживается синхронизация на основе Azure AD, см. в разделе [Устройства и конечные точки](enterprise-state-roaming-windows-settings-reference.md).
 
-| Name | Описание |
+| ИМЯ | Описание |
 | --- | --- |
 | Разрешить подключение к учетной записи Майкрософт |Позволяет проходить проверку подлинности с использованием учетной записи Майкрософт на устройстве |
 | Разрешить синхронизацию моих параметров |Позволяет перемещать параметры Windows и данные приложений. Отключение этой политики приведет к отключению синхронизации и архивации на мобильных устройствах. |
@@ -43,7 +37,7 @@ ms.locfileid: "60353165"
 
 Эти параметры расположены в разделе `Computer Configuration > Administrative Templates > Windows Components > Sync your settings`. 
 
-| Name | Описание |
+| ИМЯ | Описание |
 | --- | --- |
 | Учетные записи: заблокировать учетные записи Майкрософт |Этот параметр политики запрещает пользователям добавлять новые учетные записи Майкрософт на этом компьютере |
 | Не синхронизировать |Не позволяет перемещать параметры Windows и данные приложений |

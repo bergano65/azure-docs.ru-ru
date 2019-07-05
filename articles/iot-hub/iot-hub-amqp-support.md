@@ -1,32 +1,32 @@
 ---
 title: Общие сведения о поддержке AMQP центра Интернета вещей Azure | Документация Майкрософт
 description: Руководство разработчика. Поддержка устройств, подключаемых к центру Интернета вещей для устройств и обращенную к службе конечных точек, с помощью протокола AMQP. Содержит сведения о встроенной поддержке AMQP в пакеты SDK для устройств Интернета вещей Azure.
-author: rezasherafat
-manager: ''
+author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 04/30/2019
-ms.author: rezas
-ms.openlocfilehash: c304c9b7fe02e3396d49aee0b70576071d9fac92
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: robinsh
+ms.openlocfilehash: e0c7b6aa9745beaf7a7d336e8308d12348bb274b
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67055381"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67432611"
 ---
 # <a name="communicate-with-your-iot-hub-by-using-the-amqp-protocol"></a>Взаимодействовать с центром Интернета вещей с помощью протокола AMQP
 
-Центр Интернета вещей Azure поддерживает [OASIS Advanced Message Queuing Protocol (AMQP) версии 1.0](http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf) предоставлять разнообразные функциональные возможности через обращенную к устройству и обращенную к службе конечные точки. В этом документе описывается использование клиентов AMQP для подключения к центру Интернета вещей, чтобы использовать функции центра Интернета вещей.
+Центр Интернета вещей Azure поддерживает [OASIS Advanced Message Queuing Protocol (AMQP) версии 1.0](https://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf) предоставлять разнообразные функциональные возможности через обращенную к устройству и обращенную к службе конечные точки. В этом документе описывается использование клиентов AMQP для подключения к центру Интернета вещей, чтобы использовать функции центра Интернета вещей.
 
 ## <a name="service-client"></a>Клиент службы
 
 ### <a name="connect-and-authenticate-to-an-iot-hub-service-client"></a>Подключиться и выполнить аутентификацию в центре Интернета вещей (клиент службы)
+
 Чтобы подключиться к центру Интернета вещей с помощью AMQP, клиент может использовать [безопасности на основе утверждений (CBS)](https://www.oasis-open.org/committees/download.php/60412/amqp-cbs-v1.0-wd03.doc) или [Simple Authentication and Security Layer (SASL) проверки подлинности](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer).
 
 Следующие сведения являются обязательным для клиента службы.
 
-| Информация | Значение | 
+| Информация | Значение |
 |-------------|--------------|
 | Имя узла центра Интернета вещей | `<iot-hub-name>.azure-devices.net` |
 | Имя ключа | `service` |
@@ -40,14 +40,15 @@ import uamqp
 import urllib
 import time
 
-# Use generate_sas_token implementation available here: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security#security-token-structure
+# Use generate_sas_token implementation available here: 
+# https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security#security-token-structure
 from helper import generate_sas_token
 
 iot_hub_name = '<iot-hub-name>'
 hostname = '{iot_hub_name}.azure-devices.net'.format(iot_hub_name=iot_hub_name)
 policy_name = 'service'
 access_key = '<primary-or-secondary-key>'
-operation = '<operation-link-name>' # e.g., '/messages/devicebound'
+operation = '<operation-link-name>' # example: '/messages/devicebound'
 
 username = '{policy_name}@sas.root.{iot_hub_name}'.format(iot_hub_name=iot_hub_name, policy_name=policy_name)
 sas_token = generate_sas_token(hostname, access_key, policy_name)
@@ -59,6 +60,7 @@ receive_client = uamqp.ReceiveClient(uri, debug=True)
 ```
 
 ### <a name="invoke-cloud-to-device-messages-service-client"></a>Вызвать сообщений из облака на устройство (клиент службы)
+
 Дополнительные сведения о cloud-to-device обмена сообщениями между службой и центром Интернета вещей, а также между устройством и центром Интернета вещей, см. в разделе [отправки сообщений из облака на устройство из центра Интернета вещей](iot-hub-devguide-messages-c2d.md). Служба клиента использует две ссылки для отправки сообщений и получение ответа на ранее отправили сообщения от устройств, как описано в следующей таблице:
 
 | Созданные | Тип ссылки | Путь ссылки | Описание |
@@ -121,8 +123,11 @@ for msg in batch:
 ```
 
 Как показано в приведенном выше коде cloud to device отзыв на сообщение с типом содержимого *application/vnd.microsoft.iothub.feedback.json*. Чтобы определить состояние доставки исходного сообщения, можно использовать свойства в текст сообщения JSON:
+
 * Ключ `statusCode` отзыва текст имеет одно из следующих значений: *Успех*, *истек срок действия*, *DeliveryCountExceeded*, *Отклонено*, или *очищено*.
+
 * Ключ `deviceId` отзыва текст имеет идентификатор целевого устройства.
+
 * Ключ `originalMessageId` отзыва текст имеет идентификатор исходного сообщения облака на устройство, отправленного службой. Это состояние доставки можно использовать для корреляции отзыв для сообщений из облака на устройство.
 
 ### <a name="receive-telemetry-messages-service-client"></a>Получение сообщений телеметрии (клиент службы)
@@ -132,8 +137,11 @@ for msg in batch:
 Для этой цели клиента службы сначала необходимо подключиться к конечной точке центра Интернета вещей и получить адрес перенаправления для концентраторов событий встроенных. Затем клиент службы использует предоставленный адрес для подключения к концентратору событий встроенных.
 
 На каждом шаге клиенту необходимо предоставить следующие сведения:
+
 * Учетные данные службы допустимым (подпись коллективного доступа службы).
+
 * Неверный формат пути для секции группы потребителей, он должен получить сообщения от. Для данного клиента с Идентификатором группы и секции, путь имеет следующий формат: `/messages/events/ConsumerGroups/<consumer_group>/Partitions/<partition_id>` (группа потребителей по умолчанию — `$Default`).
+
 * Дополнительный предикат фильтрации для обозначения отправной точкой для секции. Этот предикат может быть в виде последовательности номер, смещение или количество помещенных в очередь метку времени.
 
 В следующем фрагменте кода используется [uAMQP библиотеки на языке Python](https://github.com/Azure/azure-uamqp-python) для демонстрации описанные выше шаги:
@@ -193,20 +201,19 @@ for msg in batch:
 
 Для идентификатора данного устройства в центр Интернета вещей использует хэш-код устройства, чтобы определить какой секции сохранить свое сообщения в. В предыдущем фрагменте кода показано, как будут получены события из одного такого секции. Тем не менее Обратите внимание на то, что типичное приложение часто необходимо извлечь события, которые хранятся во всех секциях концентратора событий.
 
-
 ## <a name="device-client"></a>Клиент устройства
 
 ### <a name="connect-and-authenticate-to-an-iot-hub-device-client"></a>Подключиться и выполнить аутентификацию в центре Интернета вещей (клиент устройства)
+
 Чтобы подключиться к центру Интернета вещей с помощью AMQP, устройство может использовать [на основе утверждений (CBS) безопасности](https://www.oasis-open.org/committees/download.php/60412/amqp-cbs-v1.0-wd03.doc) или [Simple Authentication and Security Layer (SASL)](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer) проверки подлинности.
 
 Следующие сведения являются обязательным для клиента устройства.
 
-| Информация | Значение | 
+| Информация | Значение |
 |-------------|--------------|
 | Имя узла центра Интернета вещей | `<iot-hub-name>.azure-devices.net` |
 | Ключ доступа | Первичный или вторичный ключ, который связан с устройством |
 | Подписанный URL-адрес | Кратковременное подписанный URL-адрес в следующем формате: `SharedAccessSignature sig={signature-string}&se={expiry}&skn={policyName}&sr={URL-encoded-resourceURI}`. Чтобы получить код для создания подписи, см. в разделе [управление доступом к центру Интернета вещей](./iot-hub-devguide-security.md#security-token-structure).
-
 
 В следующем фрагменте кода используется [uAMQP библиотеки на языке Python](https://github.com/Azure/azure-uamqp-python) для подключения к центру Интернета вещей через ссылку отправителя.
 
@@ -215,7 +222,8 @@ import uamqp
 import urllib
 import uuid
 
-# Use generate_sas_token implementation available here: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security#security-token-structure
+# Use generate_sas_token implementation available here: 
+# https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security#security-token-structure
 from helper import generate_sas_token
 
 iot_hub_name = '<iot-hub-name>'
@@ -240,14 +248,14 @@ send_client = uamqp.SendClient(uri, debug=True)
 | Устройства | Ссылке отправителя | `/devices/<deviceID>messages/events` | Device-to-cloud сообщений, отправленных с устройства, отправляются через конкретную связь. |
 | Устройства | Ссылке отправителя | `/messages/serviceBound/feedback` | Отзыв на сообщение облака на устройство отправляются в службу через конкретную связь с устройствами. |
 
-
 ### <a name="receive-cloud-to-device-commands-device-client"></a>Получать команды cloud to device (устройство клиента)
+
 Прибыть облаком и устройством команд, отправленных на устройства `/devices/<deviceID>/messages/devicebound` ссылку. Устройства могут получать эти сообщения в виде пакетов и использовать полезные данные сообщения, свойства сообщения, заметки или свойства приложения в сообщении, при необходимости.
 
 В следующем фрагменте кода используется [uAMQP библиотеки на языке Python](https://github.com/Azure/azure-uamqp-python)) для получения сообщений из облака на устройство устройством.
 
 ```python
-# ... 
+# ...
 # Create a receive client for the cloud-to-device receive link on the device
 operation = '/devices/{device_id}/messages/devicebound'.format(device_id=device_id)
 uri = 'amqps://{}:{}@{}{}'.format(urllib.quote_plus(username), urllib.quote_plus(sas_token), hostname, operation)
@@ -283,13 +291,13 @@ while True:
 ```
 
 ### <a name="send-telemetry-messages-device-client"></a>Отправить сообщения телеметрии (клиент устройства)
+
 Также можно отправлять сообщения телеметрии с устройства с помощью AMQP. Устройство можно при необходимости указать словарь свойств, приложения или различные сообщения свойства, такие как идентификатор сообщения.
 
 В следующем фрагменте кода используется [uAMQP библиотеки на языке Python](https://github.com/Azure/azure-uamqp-python) для отправки сообщений с устройства в облако с устройства.
 
-
 ```python
-# ... 
+# ...
 # Create a send client for the device-to-cloud send link on the device
 operation = '/devices/{device_id}/messages/events'.format(device_id=device_id)
 uri = 'amqps://{}:{}@{}{}'.format(urllib.quote_plus(username), urllib.quote_plus(sas_token), hostname, operation)
@@ -328,12 +336,14 @@ for result in results:
 ```
 
 ## <a name="additional-notes"></a>Дополнительные замечания
+
 * Подключения AMQP может оказаться невозможным из-за сбоя сети или истечения срока действия проверки подлинности маркера (созданных в коде). Клиент службы необходимо обрабатывать эти ситуации и заново установить соединение и ссылки, при необходимости. Маркер проверки подлинности после истечения срока действия клиента можно избежать сброса соединения, заранее обновив маркер до истечения срока действия.
+
 * Ваш клиент иногда должен быть способен для правильной обработки перенаправлений ссылку. Чтобы понять, такая операция, см. в документации клиента AMQP.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о протоколе AMQP, см. в разделе [AMQP версии 1.0 спецификации](http://www.amqp.org/sites/amqp.org/files/amqp.pdf).
+Дополнительные сведения о протоколе AMQP, см. в разделе [AMQP версии 1.0 спецификации](https://www.amqp.org/sites/amqp.org/files/amqp.pdf).
 
 Дополнительные сведения о центре Интернета вещей сообщений, см. в разделе:
 

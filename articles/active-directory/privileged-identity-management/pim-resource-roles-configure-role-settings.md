@@ -15,12 +15,12 @@ ms.date: 04/09/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73d42c693fae6b538136d1e8c93094a0ea9e2077
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c6da92ccd50707e676a1f5d583fe22ae8b3d8b73
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60288414"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67476323"
 ---
 # <a name="configure-azure-resource-role-settings-in-pim"></a>Настройка параметров роли ресурсов Azure в PIM
 
@@ -38,19 +38,19 @@ ms.locfileid: "60288414"
 
 1. Выберите ресурс, которым нужно управлять, например группу управления или подписку.
 
-    ![Список ресурсов Azure для управления](./media/pim-resource-roles-configure-role-settings/resources-list.png)
+    ![Список ресурсов, которые могут управляться странице ресурсов Azure](./media/pim-resource-roles-configure-role-settings/resources-list.png)
 
 1. Щелкните **Параметры роли**.
 
-    ![Параметры роли](./media/pim-resource-roles-configure-role-settings/resources-role-settings.png)
+    ![Страница параметров роли, список ролей ресурсов Azure](./media/pim-resource-roles-configure-role-settings/resources-role-settings.png)
 
 1. Выберите роль, параметры которой нужно настроить.
 
-    ![Сведения о параметрах ролей](./media/pim-resource-roles-configure-role-settings/resources-role-setting-details.png)
+    ![Страница сведений параметр роли, со списком несколько параметров назначение и активация](./media/pim-resource-roles-configure-role-settings/resources-role-setting-details.png)
 
 1. Щелкните **Изменить**, чтобы открыть панель параметров роли.
 
-    ![Изменение параметров роли](./media/pim-resource-roles-configure-role-settings/resources-role-settings-edit.png)
+    ![Изменить параметры роли с параметрами, чтобы обновить параметры назначение и активация](./media/pim-resource-roles-configure-role-settings/resources-role-settings-edit.png)
 
     На панели для каждой роли есть ряд параметров, которые можно настроить.
 
@@ -109,7 +109,7 @@ ms.locfileid: "60288414"
 
 1. Щелкните **Выбор утверждающих лиц**, чтобы открыть панель выбора пользователя или группы.
 
-    ![Выбор участника или группы](./media/pim-resource-roles-configure-role-settings/resources-role-settings-select-approvers.png)
+    ![Выберите область элемента или группы к Выбор утверждающих лиц](./media/pim-resource-roles-configure-role-settings/resources-role-settings-select-approvers.png)
 
 1. Выберите по крайней мере одного участника или группу и нажмите кнопку **Выбрать**. Вы можете добавить любую комбинацию участников и групп. Нужно выбрать по меньшей мере одно утверждающее лицо. Утверждающих по умолчанию нет.
 

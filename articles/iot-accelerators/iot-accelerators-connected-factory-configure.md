@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 12/12/2017
 ms.author: dobett
-ms.openlocfilehash: 042277899ff22066cfa890e64f5c6c0f2e0134f9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3ddbf5832424cdafad2c29254f51754203c7f079
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67080472"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67428320"
 ---
 # <a name="configure-the-connected-factory-solution-accelerator"></a>Настройка акселератора решения "Подключенная фабрика"
 
@@ -29,7 +29,7 @@ ms.locfileid: "67080472"
 * Станция тестирования.
 * Станция упаковки.
 
-На серверах OPC UA расположены узлы OPC UA, а [издатель OPC](https://github.com/Azure/iot-edge-opc-publisher) отправляет значения этих узлов в решение "Подключенная фабрика". А именно:
+На серверах OPC UA расположены узлы OPC UA, а [издатель OPC](overview-opc-publisher.md) отправляет значения этих узлов в решение "Подключенная фабрика". А именно:
 
 * Текущее рабочее состояние, например текущее энергопотребление.
 * Производственные сведения, такие как количество произведенных продуктов.
@@ -264,10 +264,10 @@ ms.locfileid: "67080472"
 
 Свойства этой категории определяют внешний вид панели мониторинга решения "Подключенная фабрика". Примеры приведены ниже.
 
-* Name
+* ИМЯ
 * Описание
 * Image
-* Расположение
+* Location
 * Units
 * Visible
 
@@ -307,7 +307,7 @@ WebApp поддерживает внутренний словарь данных
 
   Определяет значение узла на сервере OPC UA. Формат свойства должен соответствовать спецификации OPC UA. В сообщениях это свойство отправляется в виде **NodeId**.
 
-На [этой странице](https://github.com/Azure/iot-edge-opc-publisher) GitHub содержатся дополнительные сведения о том, как данные телеметрии поступают в решение "Подключенная фабрика" с помощью издателя OPC.
+См. в разделе [Какова издатель OPC](overview-opc-publisher.md) Дополнительные сведения о том, как данные телеметрии поступают для подключенной фабрики.
 
 ## <a name="example-how-kpi1-is-calculated"></a>Пример: Метод вычисления KPI1
 

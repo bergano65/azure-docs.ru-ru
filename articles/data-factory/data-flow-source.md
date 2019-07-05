@@ -6,12 +6,12 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/12/2019
-ms.openlocfilehash: 86e30c465a605681519565261beec75d88ccd472
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: 4f77eafd3309d7c1d679c126b1a5eb1ff0e9a28d
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67190806"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67490092"
 ---
 # <a name="source-transformation-for-mapping-data-flow"></a>Преобразование источника для сопоставления потока данных 
 
@@ -146,6 +146,12 @@ ms.locfileid: "67190806"
 Можно изменить типы данных столбцов в «позже производный столбец». Используйте такое преобразование, выберите, чтобы изменить имена столбцов.
 
 ![Параметры для форматов данных по умолчанию](media/data-flow/source2.png "по умолчанию форматы")
+
+### <a name="add-dynamic-content"></a>Добавление динамического содержимого
+
+Если щелкнуть внутри поля на панели «параметр», вы увидите гиперссылку «Добавить динамическое содержимое». Если щелкнуть здесь, будет запущен построитель выражений. Это, где можно задать значения для параметров, динамически с помощью выражения статического литеральные значения и параметры.
+
+![Параметры](media/data-flow/params6.png "параметров")
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

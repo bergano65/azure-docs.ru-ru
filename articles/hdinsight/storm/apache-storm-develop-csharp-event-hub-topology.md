@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/27/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 7f4db76fe2a302dd5acce01b456ef3b676b187c6
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: dd1a46ea008ce5f8fb02dd468b27494d231717f0
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67078268"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67483921"
 ---
 # <a name="process-events-from-azure-event-hubs-with-apache-storm-on-hdinsight-c"></a>Обработка событий из Центров событий Azure с помощью Apache Storm в HDInsight (C#)
 
@@ -103,11 +103,11 @@ topologyBuilder.SetJavaBolt(
 
 ## <a name="download-the-completed-project"></a>Скачивание полного примера проекта
 
-Вы можете загрузить полную версию проекта, созданного в этом руководстве, с сайта [GitHub](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub). Но вам нужно будет указать параметры конфигурации, выполнив действия, описанные в этом учебнике.
+Можно загрузить полную версию проекта, созданного в этой статье из [GitHub](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub). Тем не менее по-прежнему необходимо указать параметры конфигурации, выполнив действия, описанные в этой статье.
 
 ### <a name="prerequisites"></a>Технические условия
 
-* [Кластер Apache Storm в HDInsight версии 3.5 или 3.6](apache-storm-tutorial-get-started-linux.md).
+* Кластер Apache Storm в HDInsight. См. в разделе [Создание Apache кластеров с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md) и выберите **Storm** для **тип кластера**.
 
     > [!WARNING]  
     > Для примера, используемого в этом документе, требуется кластер Storm в HDInsight версии 3.5 или 3.6. Это не будет работать с более старыми версиями HDInsight из-за критических изменений имени класса. Версию этого примера, которая работает со старыми кластерами, можно найти на сайте [GitHub](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub/releases).
@@ -135,7 +135,7 @@ topologyBuilder.SetJavaBolt(
 
 1. Создав **концентратор событий**, просмотрите его параметры на портале Azure и щелкните **Политики общего доступа**. Воспользуйтесь ссылкой **+ Добавить**, чтобы добавить следующие политики.
 
-   | Name | Разрешения |
+   | ИМЯ | Разрешения |
    | --- | --- |
    | writer |Отправка |
    | reader |Прослушивание |

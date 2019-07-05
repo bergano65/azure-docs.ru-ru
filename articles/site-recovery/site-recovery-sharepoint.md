@@ -5,14 +5,14 @@ author: sujayt
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 11/27/2018
+ms.date: 6/27/2019
 ms.author: sutalasi
-ms.openlocfilehash: 5f477cf20b817d7a6c8be856636bf1e3755b5424
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4b4edec43d01878bbc5899487f6ee1d2816eb135
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61472157"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67491833"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-sharepoint-application-for-disaster-recovery-using-azure-site-recovery"></a>Настройка аварийного восстановления с помощью Azure Site Recovery для многоуровневого приложения SharePoint | Документация Майкрософт
 
@@ -196,7 +196,7 @@ SharePoint можно развертывать на одном или неско
 
 Инструкции по выполнению тестовой отработки отказа для AD и DNS см. в документе [Рекомендации по тестированию отработки отказа для AD и DNS](site-recovery-active-directory.md#test-failover-considerations).
 
-Инструкции по выполнении тестовой отработки отказа для групп доступности SQL AlwaysOn см. в [соответствующем документе](site-recovery-sql.md#steps-to-do-a-test-failover).
+Руководство по выполнении тестовой отработки отказа для SQL всегда в группах доступности, см. в разделе [выполнения аварийного восстановления приложения с помощью Azure Site Recovery и выполнении тестовой отработки отказа](site-recovery-sql.md#disaster-recovery-of-application) документа.
 
 ## <a name="doing-a-failover"></a>Отработка отказа
 При выполнении отработки отказа используйте [это руководство](site-recovery-failover.md).

@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 9/7/2018
 ms.author: saurse
-ms.openlocfilehash: d58b51f06c21c787e4aa720c803ab6533544d55c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9c2f8ce0dfb866826de549946bc3ee1acc2b677f
+ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60238624"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67460263"
 ---
 # <a name="restore-files-to-windows-by-using-the-azure-resource-manager-deployment-model"></a>Восстановление файлов в Windows с помощью модели развертывания Azure Resource Manager
 
@@ -97,7 +97,7 @@ ms.locfileid: "60238624"
 * *Пример хранилища* — хранилище служб восстановления, в котором зарегистрированы исходный и целевой компьютеры. <br/>
 
 > [!NOTE]
-> Резервные копии невозможно восстановить на целевой компьютер с более ранней версией операционной системы. Например, резервную копию, созданную на компьютере Windows 7, можно восстановить на компьютере под управлением Windows 8 или более поздней версии, а резервную копию, созданную на компьютере Windows 8, невозможно восстановить на компьютере Windows 7.
+> Резервные копии невозможно восстановить на целевой компьютер с более ранней версией операционной системы. Например создание резервных копий на компьютере Windows 7 можно восстановить на компьютере Windows 7 (или более поздней). а резервную копию, созданную на компьютере Windows 8, невозможно восстановить на компьютере Windows 7.
 >
 >
 

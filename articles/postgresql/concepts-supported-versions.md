@@ -6,12 +6,13 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 06/11/2019
-ms.openlocfilehash: 0fc4eb90d9bed3877b4618fd839d9e8bf1608718
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.custom: fasttrack-edit
+ms.openlocfilehash: c328f0dc510c1b7d36b547e6560a292f98d72f6f
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67063738"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448040"
 ---
 # <a name="supported-postgresql-database-versions"></a>Поддерживаемые версии базы данных PostgreSQL
 Корпорация Майкрософт стремится поддерживать n-2 версии ядра PostgreSQL в базе данных Azure для PostgreSQL: один сервер. В Azure будут поддерживаться текущая основная версия (n) и две предыдущие основные версии (–2).
@@ -35,6 +36,9 @@ ms.locfileid: "67063738"
 
 ## <a name="managing-updates-and-upgrades"></a>Управление обновлениями
 База данных Azure для PostgreSQL автоматически управляет установкой исправлений для дополнительных версий. Сейчас обновление основной версии не поддерживается. Например, обновление с версии PostgreSQL 9.5 до PostgreSQL 9.6 не поддерживается. Чтобы выполнить обновление до следующей основной версии, [создайте дамп базы данных ](./howto-migrate-using-dump-and-restore.md) на сервере, который был создан с новой версией ядра.
+
+> Обратите внимание, что до PostgreSQL версии 10, [политики управления версиями PostgreSQL](https://www.postgresql.org/support/versioning/) считается _основной номер версии_ обновление увеличение в первом _или_ второй количество (для Пример, 9.5 для 9.6 считалось _основных_ обновление версии).
+> Начиная с версии 10, только изменения в первое число считается обновление основного номера версии (версии 10.0 для 10.1 приведен пример _незначительные_ обновление версии, а также от 10 до 11 — _основных_ обновление версии).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Сведения о поддержке различных расширений PostgreSQL см. в [этой статье](concepts-extensions.md).

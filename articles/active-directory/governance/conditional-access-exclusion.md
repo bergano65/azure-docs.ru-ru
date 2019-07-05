@@ -16,12 +16,12 @@ ms.date: 09/25/2018
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8611338acf7a1299e9c3a4f5347fb633604254e7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 880593773ca7801da2874dc2a09a4bddf910a503
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67110399"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67471841"
 ---
 # <a name="use-azure-ad-access-reviews-to-manage-users-excluded-from-conditional-access-policies"></a>Проверки доступа Azure AD предоставляет для управления пользователями, которые исключены из политики условного доступа
 
@@ -36,7 +36,7 @@ ms.locfileid: "67110399"
 
 Например, можно использовать [именованные расположения](../conditional-access/location-condition.md) условного доступа, чтобы настроить набор стран и регионов, из которых вы не хотите разрешить пользователям доступ к их клиенту.
 
-![Именованные расположения](./media/conditional-access-exclusion/named-locations.png)
+![Именованные расположения в условном доступе](./media/conditional-access-exclusion/named-locations.png)
 
 Однако в некоторых случаях пользователи могут иметь законные основания для входа из этих заблокированных стран или регионов. Например, во время деловой или личной поездки. В этом случае политику условного доступа для блокировки этих стран или регионов может иметь выделенное облако группы безопасности для пользователей, которые исключаются из политики. Пользователи, которым нужен доступ на время поездок, смогут сами добавлять себя в эту группу с помощью [самостоятельного управления группами AAD](../users-groups-roles/groups-self-service-management.md).
 
@@ -68,7 +68,7 @@ ms.locfileid: "67110399"
 
 1. Выберите пользователей, которые должны входить в эту группу исключения, и щелкните **Создать**.
 
-    ![Имя новой группы](./media/conditional-access-exclusion/new-group.png)
+    ![Новая область группы в Azure Active Directory](./media/conditional-access-exclusion/new-group.png)
 
 ### <a name="create-a-conditional-access-policy-that-excludes-the-group"></a>Создание политики условного доступа, который исключает группы
 
@@ -93,7 +93,7 @@ ms.locfileid: "67110399"
 
 1. Продолжите с настройкой политики условного доступа, в соответствии с требованиями организации.
 
-    ![Выбор исключенных пользователей](./media/conditional-access-exclusion/select-excluded-users.png)
+    ![Выбор исключенных пользователей панели в условном доступе](./media/conditional-access-exclusion/select-excluded-users.png)
 
 Давайте рассмотрим два примера, где проверки доступа можно использовать для управления исключениями в политиках условного доступа.
 
@@ -116,7 +116,7 @@ ms.locfileid: "67110399"
 
 6. Включите уведомления по электронной почте, чтобы пользователи получали информацию о начале и завершении проверки доступа.
 
-    ![Создание проверки доступа](./media/conditional-access-exclusion/create-access-review-1.png)
+    ![Создать область проверки доступа для примера 1](./media/conditional-access-exclusion/create-access-review-1.png)
 
 ## <a name="example-2-access-review-for-users-accessing-with-legacy-authentication"></a>Пример 2 Проверка доступа для пользователей, использующих устаревшие методы аутентификации
 
@@ -134,7 +134,7 @@ ms.locfileid: "67110399"
 
 6. Включите уведомления по электронной почте, чтобы пользователи получали информацию о начале и завершении проверки доступа.
 
-    ![Создание проверки доступа](./media/conditional-access-exclusion/create-access-review-2.png)
+    ![Создать область проверки доступа для примера 2](./media/conditional-access-exclusion/create-access-review-2.png)
 
 **Совет для профессионалов**. Если у вас много групп исключений, а значит есть необходимость создавать много проверок доступа, вы можете выполнять эти действия программным способом через API в бета-версии конечной точки Microsoft Graph. Чтобы воспользоваться этими возможностями, изучите [документацию по API проверки доступа AAD](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/accessreviews_root) и [примеры проверок доступа для AAD через Microsoft Graph](https://techcommunity.microsoft.com/t5/Azure-Active-Directory/Example-of-retrieving-Azure-AD-access-reviews-via-Microsoft/td-p/236096).
 
@@ -148,11 +148,11 @@ ms.locfileid: "67110399"
 
 1. Щелкните **Результаты**, чтобы увидеть списки подтвержденных и удаленных пользователей.
 
-    ![Результаты проверки доступа](./media/conditional-access-exclusion/access-reviews-results.png)
+    ![Результаты показывают, у кого утверждения проверки доступа](./media/conditional-access-exclusion/access-reviews-results.png)
 
 1. Теперь щелкните **Журналы аудита**, чтобы увидеть список выполненных в ходе этой проверки действий.
 
-    ![Журналы аудита проверки доступа](./media/conditional-access-exclusion/access-reviews-audit-logs.png)
+    ![Журналы аудита, список действий проверки доступа](./media/conditional-access-exclusion/access-reviews-audit-logs.png)
 
 Вы как ИТ-администратор должны знать, что иногда невозможно избежать создания групп исключений для политик. Но проверки доступа AAD существенно упростят обслуживание таких групп, регулярную проверку руководителями компании или самими пользователями, а также аудит изменений.
 

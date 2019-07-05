@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 05/30/2019
+ms.date: 6/27/2019
 ms.author: raynew
-ms.openlocfilehash: f2d64e0a081ff483be84053c442f48e7d145ca50
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a9c7aa2be945e4fbaa65bdd2a145d576422c5539
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66396502"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67491767"
 ---
 # <a name="azure-site-recovery-frequently-asked-questions-faq"></a>Azure Site Recovery: вопросы и ответы
 В этой статье приведены часто задаваемые вопросы об Azure Site Recovery.</br>
@@ -150,7 +150,7 @@ Azure Site Recovery реплицирует данные в учетную зап
 
 ### <a name="why-cant-i-replicate-over-vpn"></a>Почему я не могу выполнить репликацию через VPN?
 
-При выполнении репликации в Azure трафик репликации достигает общедоступных конечных точек в хранилище Azure. Таким образом репликацию можно выполнять только через общедоступный Интернет с помощью ExpressRoute (общедоступный пиринг), а VPN не будет работать.
+При выполнении репликации в Azure трафик репликации достигает общедоступных конечных точек в хранилище Azure. Таким образом репликацию можно выполнять только через общедоступный Интернет с помощью ExpressRoute (пиринг Майкрософт, или существующий общедоступный пиринг), а VPN не будет работать.
 
 ### <a name="can-i-use-riverbed-steelheads-for-replication"></a>Можно ли использовать Riverbed SteelHeads для репликации?
 
@@ -159,12 +159,11 @@ Azure Site Recovery реплицирует данные в учетную зап
 ### <a name="can-i-use-expressroute-to-replicate-virtual-machines-to-azure"></a>Можно ли использовать ExpressRoute для репликации виртуальных машин в Azure?
 Да, [ExpressRoute можно использовать](concepts-expressroute-with-site-recovery.md) для репликации локальных виртуальных машин в Azure.
 
-- Azure Site Recovery реплицирует данные в хранилище Azure через общедоступную конечную точку. Чтобы использовать ExpressRoute для репликации Site Recovery, необходимо настроить [общедоступный пиринг](../expressroute/expressroute-circuit-peerings.md#publicpeering) или [пиринг Майкрософт](../expressroute/expressroute-circuit-peerings.md#microsoftpeering).
+- Azure Site Recovery реплицирует данные в хранилище Azure через общедоступную конечную точку. Вам нужно настроить [пиринг Майкрософт](../expressroute/expressroute-circuit-peerings.md#microsoftpeering) или использовать существующее [общедоступного пиринга](../expressroute/expressroute-circuit-peerings.md#publicpeering) (не рекомендуется для новых каналов) использовать ExpressRoute для репликации Site Recovery.
 - Пиринг Майкрософт является рекомендуемым доменом маршрутизации для репликации.
-- После отработки отказа виртуальных машин в виртуальную сеть Azure доступ к можно получать с помощью [частного пиринга](../expressroute/expressroute-circuit-peerings.md#privatepeering), настроенного в виртуальной сети Azure.
 - Репликация через частный пиринг не поддерживается.
-- Если вы защищаете VMware или физических компьютеров, убедитесь, что сервер конфигурации, соответствует [требования к сети](vmware-azure-configuration-server-requirements.md#network-requirements) для репликации. 
-
+- Если вы защищаете VMware или физических компьютеров, убедитесь, что [требования к сети](vmware-azure-configuration-server-requirements.md#network-requirements) для сервера конфигурации также выполняются. Сервер конфигурации требуется подключение к определенным URL-адресам для оркестрации репликации Site Recovery. ExpressRoute не может использоваться для этого подключения.
+- После отработки отказа виртуальных машин в виртуальную сеть Azure доступ к можно получать с помощью [частного пиринга](../expressroute/expressroute-circuit-peerings.md#privatepeering), настроенного в виртуальной сети Azure.
 
 
 ### <a name="if-i-replicate-to-azure-what-kind-of-storage-account-or-managed-disk-do-i-need"></a>При репликации в Azure, укажите тип учетной записи хранения или управляемый диск необходимо?

@@ -10,12 +10,12 @@ ms.date: 05/02/2019
 manager: jlembicz
 ms.author: brjohnst
 ms.custom: seodec2018
-ms.openlocfilehash: 567124f50745080da12178a458957a0f6c8266b5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 99abcc70a81622e4efbe85722d457bd1846b6e15
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65024320"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67485214"
 ---
 # <a name="synonyms-in-azure-search"></a>Синонимы в службе "Поиск Azure"
 
@@ -25,7 +25,7 @@ Synonyms представляет собой поисковые системы, 
 
 ## <a name="create-synonyms"></a>Создание синонимов
 
-Отсутствует поддержка портала для создания синонимы, но можно использовать REST API или пакет SDK для .NET. Чтобы приступить к работе с REST, мы рекомендуем [с помощью Postman](search-fiddler.md) и формирование запросов, с помощью этого API: [Создание карт синонимов](https://docs.microsoft.com/rest/api/searchservice/create-synonym-map). Для C# разработчиков, вы можете начать работу с [Добавление синонимов в поиске Azure с помощью C# ](search-synonyms-tutorial-sdk.md).
+Отсутствует поддержка портала для создания синонимы, но можно использовать REST API или пакет SDK для .NET. Чтобы приступить к работе с REST, мы рекомендуем [с помощью Postman](search-get-started-postman.md) и формирование запросов, с помощью этого API: [Создание карт синонимов](https://docs.microsoft.com/rest/api/searchservice/create-synonym-map). Для C# разработчиков, вы можете начать работу с [Добавление синонимов в поиске Azure с помощью C# ](search-synonyms-tutorial-sdk.md).
 
 При необходимости Если вы используете [управляемых клиентом ключей](search-security-manage-encryption-keys.md) для со стороны службы шифрования при хранении, эта защита можно применить к содержимому карты синонимов.
 

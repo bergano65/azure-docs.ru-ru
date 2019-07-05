@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: anantr
 ms.component: alerts
-ms.openlocfilehash: c18227a491478d0d8010761440a54fd088344b39
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: be38f5d3bbf4fe3d90fc78feab8774595b5338f2
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60776595"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447672"
 ---
 # <a name="common-alert-schema"></a>Общая схема оповещений
 
@@ -125,6 +125,7 @@ ms.locfileid: "60776595"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие определения оповещений схемы для веб-перехватчик или логику приложения или Azure функции и автоматизацию Runbook.](https://aka.ms/commonAlertSchemaDefinitions)
+- [Узнайте, как создать приложение логики, которое использует общую схему оповещения для обработки всех предупреждений.](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations) 
 
 
 

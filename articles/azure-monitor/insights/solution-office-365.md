@@ -10,14 +10,14 @@ ms.service: operations-management-suite
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 05/29/2019
+ms.date: 07/01/2019
 ms.author: bwren
-ms.openlocfilehash: 4c7e1225a8da1e20bc90986d1530b781f7f2c11a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 34c7ecbf235bed838af9ed2f848ca492916583f6
+ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66357578"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67514212"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
@@ -25,7 +25,7 @@ ms.locfileid: "66357578"
 
 
 > [!NOTE]
-> Включение рекомендуемый метод для установки и настройки решения Office 365 [соединителя Office 365](../../sentinel/connect-office-365.md) в [Azure Sentinel](../../sentinel/overview.md) вместо, следуя инструкциям в этой статье. Это обновленная версия решения Office 365 с помощью средств улучшенной конфигурацией. Для подключения журналов Azure AD используйте [соединитель Azure Sentinel для Azure AD](../../sentinel/connect-azure-active-directory.md), с помощью которого можно получить более подробные данные журналов, чем с помощью журналов управления Office 365. 
+> Включение рекомендуемый метод для установки и настройки решения Office 365 [соединителя Office 365](../../sentinel/connect-office-365.md) в [Azure Sentinel](../../sentinel/overview.md) вместо, следуя инструкциям в этой статье. Это обновленная версия решения Office 365 с помощью средств улучшенной конфигурацией. Для подключения журналов Azure AD, можно использовать [Azure Sentinel Azure AD соединителя](../../sentinel/connect-azure-active-directory.md) или [настройки параметров диагностики в Azure AD](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md), который предоставляет более подробные данные журнала, чем журналы управления Office 365. 
 >
 > Когда вы [встроенного Sentinel Azure](../../sentinel/quickstart-onboard.md), укажите рабочую область Log Analytics, необходимо установить в решение Office 365. После включения соединителя решения будут доступны в рабочей области и использовать точно так же, как другие установленные мониторинга решения.
 >

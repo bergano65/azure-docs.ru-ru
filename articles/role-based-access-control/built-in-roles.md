@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 05/16/2019
+ms.date: 06/24/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 5a63053cc7fa1c1c86669ce2cea56b68f1a7b4b6
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: b92bc0a6c5d51ad26e069a363619edbdf0daa7c0
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341509"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442870"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -54,11 +54,17 @@ ms.locfileid: "67341509"
 | [Оператор Runbook автоматизации](#automation-runbook-operator) | Чтение свойств Runbook, позволяющее создавать задания Runbook. |
 | [Участник Avere](#avere-contributor) | Можно создать и управление кластером vFXT Avere. |
 | [Оператор Avere](#avere-operator) | Используемые в кластере vFXT Avere для управления кластером |
+| [Владелец данных концентраторов событий Azure (Предварительная версия)](#azure-event-hubs-data-owner-preview) | Обеспечивает полный доступ к ресурсам концентраторов событий Azure. |
+| [Получатель данных концентраторов событий Azure (Предварительная версия)](#azure-event-hubs-data-receiver-preview) | Позволяет получать доступ к ресурсам концентраторов событий Azure. |
+| [Отправитель данных концентраторов событий Azure (Предварительная версия)](#azure-event-hubs-data-sender-preview) | Позволяет отправить доступ к ресурсам концентраторов событий Azure. |
 | [Роль администратора кластера в Службе Azure Kubernetes](#azure-kubernetes-service-cluster-admin-role) | Список действий, выполненных с помощью учетных данных администратора кластера. |
 | [Роль пользователя кластера в Службе Azure Kubernetes](#azure-kubernetes-service-cluster-user-role) | Список действий, выполненных с помощью учетных данных пользователя кластера. |
 | [Модуль чтения данных карты Azure (Предварительная версия)](#azure-maps-data-reader-preview) | Предоставляет доступ для чтения сопоставить связанные данные из учетной записи Azure maps. |
+| [Владелец данных шины службы Azure (Предварительная версия)](#azure-service-bus-data-owner-preview) | Обеспечивает полный доступ к ресурсам служебной шины Azure. |
+| [Получатель данных шины службы Azure (Предварительная версия)](#azure-service-bus-data-receiver-preview) | Позволяет получать доступ к ресурсам служебной шины Azure. |
+| [Отправитель данных шины службы Azure (Предварительная версия)](#azure-service-bus-data-sender-preview) | Позволяет отправить доступ к ресурсам служебной шины Azure. |
 | [Владелец регистрации Azure Stack](#azure-stack-registration-owner) | Позволяет управлять регистрациями Azure Stack. |
-| [Участник резервного копирования](#backup-contributor) | Позволяет управлять службой архивации, но не разрешает создавать хранилища и предоставлять доступ другим пользователям |
+| [Участник резервного копирования](#backup-contributor) | Позволяет управлять службой архивации, но невозможно создавать хранилища и предоставлять доступ другим пользователям |
 | [Оператор резервного копирования](#backup-operator) | Позволяет управлять службами архивации, но не удалять архивные копии, создавать хранилища или предоставлять доступ другим пользователям |
 | [Читатель резервных копий](#backup-reader) | Может просматривать службы резервного копирования, но не может вносить изменения. |
 | [Читатель счетов](#billing-reader) | Разрешает читать данные выставления счетов. |
@@ -88,7 +94,6 @@ ms.locfileid: "67341509"
 | [Пользователь DevTest Labs](#devtest-labs-user) | Позволяет подключать, запускать, перезапускать виртуальные машины и завершать их работу в Azure DevTest Labs. |
 | [Участник зоны DNS](#dns-zone-contributor) | Позволяет управлять зонами DNS и наборами записей в Azure DNS, но не тем, кому они будут доступны. |
 | [Участник учетной записи DocumentDB](#documentdb-account-contributor) | Может управлять учетными записями Azure Cosmos DB Служба Azure Cosmos DB раньше называлась DocumentDB. |
-| [Владелец данных концентраторов событий](#event-hubs-data-owner) | Полный доступ к ресурсам концентраторов событий Azure | 
 | [Участник EventGrid EventSubscription](#eventgrid-eventsubscription-contributor) | Позволяет управлять операциями с подписками на события Сетки событий. |
 | [Читатель EventGrid EventSubscription](#eventgrid-eventsubscription-reader) | Позволяет получить доступ на чтение к подпискам на события Сетки событий. |
 | [Оператор кластера HDInsight](#hdinsight-cluster-operator) | Позволяет читать и изменять конфигурации кластера HDInsight. |
@@ -119,7 +124,6 @@ ms.locfileid: "67341509"
 | [Администратор безопасности](#security-admin) | Только в Центре безопасности. Может просматривать политики и состояния безопасности, изменять политики безопасности, просматривать оповещения и рекомендации, а также закрывать предупреждения и рекомендации. |
 | [Диспетчер безопасности (устаревший)](#security-manager-legacy) | Это устаревшая роль. Используйте роль администратора безопасности |
 | [Читатель сведений о безопасности](#security-reader) | Только в Центре безопасности. Может просматривать оповещения и рекомендации, просматривать политики и состояния безопасности, но не может вносить изменения. |
-| [Владелец данных шины службы](#service-bus-data-owner) | Позволяет получить полный доступ к ресурсам служебной шины Azure |
 | [Участник Site Recovery](#site-recovery-contributor) | Позволяет управлять службой Site Recovery, за исключением создания хранилищ и назначения ролей. |
 | [Оператор Site Recovery](#site-recovery-operator) | Позволяет выполнять отработку отказа и восстановление размещения, но не другие операции управления Site Recovery. |
 | [Читатель Site Recovery](#site-recovery-reader) | Позволяет просматривать состояние Site Recovery без выполнения других операций управления. |
@@ -130,15 +134,15 @@ ms.locfileid: "67341509"
 | [Управляемый экземпляр участника SQL](#sql-managed-instance-contributor) | Позволяет управлять управляемые экземпляры SQL и необходимые сетевые конфигурации, но не может предоставлять доступ другим пользователям. |
 | [Диспетчер безопасности SQL](#sql-security-manager) | Позволяет управлять политиками безопасности серверов SQL Server и баз данных SQL, но не доступом к ним. |
 | [Участник SQL Server](#sql-server-contributor) | Позволяет управлять серверами SQL Server и базами данных SQL, но не доступом к ним и их политиками безопасности. |
-| [Участник учетной записи хранения](#storage-account-contributor) | Позволяет управлять учетными записями хранения, но не доступом к ним. |
-| [Роль службы оператора ключей учетных записей хранения](#storage-account-key-operator-service-role) | Операторы ключей учетных записей хранения могут перечислять и повторно создавать ключи в учетных записях хранения. |
-| [участник данных BLOB-объектов хранилища](#storage-blob-data-contributor); | Разрешает доступ на чтение, запись и удаление к контейнерам больших двоичных объектов и данным службы хранилища Azure |
-| [владелец данных BLOB-объектов хранилища](#storage-blob-data-owner); | Разрешает полный доступ к контейнерам и данным BLOB-объектов службы хранилища Azure, включая назначение элемента управления доступом POSIX. |
-| [читатель данных больших двоичных объектов хранилища](#storage-blob-data-reader). | Разрешает доступ на чтение к контейнерам больших двоичных объектов и данным службы хранилища Azure |
-| [Участник для данных очереди хранилища](#storage-queue-data-contributor) | Разрешает доступ на чтение, запись и удаление к очередям и сообщениям в очередях службы хранилища Azure |
-| [Обработчик сообщений данных очереди хранилища](#storage-queue-data-message-processor) | Разрешает доступ на просмотр, получение и удаление для сообщений в очереди службы хранилища Azure. |
-| [Отправитель сообщения данных очереди хранилища](#storage-queue-data-message-sender) | Позволяет отправлять сообщения в очередь службы хранилища Azure. |
-| [Модуль чтения данных очереди хранилища](#storage-queue-data-reader) | Разрешает доступ на чтение к очередям и сообщениям в очередях службы хранилища Azure |
+| [Участник учетной записи хранения](#storage-account-contributor) | Разрешает управление учетными записями хранения. Не предоставляет доступ к данным в учетной записи хранения. |
+| [Роль службы оператора ключей учетных записей хранения](#storage-account-key-operator-service-role) | Разрешает вывод списка и повторное создание ключей доступа учетной записи хранения. |
+| [участник данных BLOB-объектов хранилища](#storage-blob-data-contributor); | Чтение, запись и удаление контейнеров службы хранилища Azure и больших двоичных объектов. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
+| [владелец данных BLOB-объектов хранилища](#storage-blob-data-owner); | Предоставляет полный доступ к контейнерам больших двоичных объектов службы хранилища Azure и данных, включая назначение контроля доступа POSIX. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
+| [читатель данных больших двоичных объектов хранилища](#storage-blob-data-reader). | Чтение и отображение контейнеры службы хранилища Azure и больших двоичных объектов. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
+| [Участник для данных очереди хранилища](#storage-queue-data-contributor) | Чтение, запись и удаление очередей службы хранилища Azure и очередями сообщений. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
+| [Обработчик сообщений данных очереди хранилища](#storage-queue-data-message-processor) | Просмотр, получения и удаления сообщения из очереди службы хранилища Azure. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
+| [Отправитель сообщения данных очереди хранилища](#storage-queue-data-message-sender) | Добавление сообщений в очередь службы хранилища Azure. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
+| [Модуль чтения данных очереди хранилища](#storage-queue-data-reader) | Чтение и отображение и сообщениям в очередях службы хранилища Azure. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
 | [Support Request Contributor](#support-request-contributor) (Участник с правом создавать запросы на поддержку) | Позволяет создавать запросы в службу поддержки и управлять ими. |
 | [Участник диспетчера трафика](#traffic-manager-contributor) | Позволяет управлять профилями диспетчера трафика, но не доступом к ним. |
 | [Администратор доступа пользователей](#user-access-administrator) | Позволяет управлять доступом пользователей к ресурсам Azure. |
@@ -548,6 +552,51 @@ ms.locfileid: "67341509"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
+## <a name="azure-event-hubs-data-owner-preview"></a>Владелец данных концентраторов событий Azure (Предварительная версия)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Обеспечивает полный доступ к ресурсам концентраторов событий Azure. |
+> | **Id** | f526a384-b230-433a-b45c-95f59c4a2dec |
+> | **Действия** |  |
+> | Microsoft.EventHub/* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft.EventHub/* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="azure-event-hubs-data-receiver-preview"></a>Получатель данных концентраторов событий Azure (Предварительная версия)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет получать доступ к ресурсам концентраторов событий Azure. |
+> | **Id** | a638d3c7-ab3a-418d-83e6-5f17a39d4fde |
+> | **Действия** |  |
+> | Microsoft.EventHub/*/eventhubs/consumergroups/read |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft.EventHub/*/receive/action |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="azure-event-hubs-data-sender-preview"></a>Отправитель данных концентраторов событий Azure (Предварительная версия)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет отправить доступ к ресурсам концентраторов событий Azure. |
+> | **Id** | 2b629674-e913-4c01-ae53-ef4638d8f975 |
+> | **Действия** |  |
+> | Microsoft.EventHub/*/eventhubs/read |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft.EventHub/*/send/action |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
 ## <a name="azure-kubernetes-service-cluster-admin-role"></a>Роль администратора кластера в Службе Azure Kubernetes
 > [!div class="mx-tableFixed"]
 > | | |
@@ -593,6 +642,55 @@ ms.locfileid: "67341509"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
+## <a name="azure-service-bus-data-owner-preview"></a>Владелец данных шины службы Azure (Предварительная версия)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Обеспечивает полный доступ к ресурсам служебной шины Azure. |
+> | **Id** | 090c5cfd-751d-490a-894a-3ce6f1109419 |
+> | **Действия** |  |
+> | Microsoft.ServiceBus/* |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft.ServiceBus/* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="azure-service-bus-data-receiver-preview"></a>Получатель данных шины службы Azure (Предварительная версия)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет получать доступ к ресурсам служебной шины Azure. |
+> | **Id** | 4f6d3b9b-027b-4f4c-9142-0e5a2a2247e0 |
+> | **Действия** |  |
+> | Microsoft.ServiceBus/*/queues/read |  |
+> | Microsoft.ServiceBus/*/topics/read |  |
+> | Microsoft.ServiceBus/*/topics/subscriptions/read |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft.ServiceBus/*/receive/action |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="azure-service-bus-data-sender-preview"></a>Отправитель данных шины службы Azure (Предварительная версия)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет отправить доступ к ресурсам служебной шины Azure. |
+> | **Id** | 69a216fc-b8fb-44d8-bc22-1f3c2cd27a39 |
+> | **Действия** |  |
+> | Microsoft.ServiceBus/*/queues/read |  |
+> | Microsoft.ServiceBus/*/topics/read |  |
+> | Microsoft.ServiceBus/*/topics/subscriptions/read |  |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | Microsoft.ServiceBus/*/send/action |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
 ## <a name="azure-stack-registration-owner"></a>Владелец регистрации Azure Stack
 > [!div class="mx-tableFixed"]
 > | | |
@@ -625,7 +723,6 @@ ms.locfileid: "67341509"
 > | Microsoft.RecoveryServices/Vaults/backupFabrics/refreshContainers/action | Обновляет список контейнеров. |
 > | Microsoft.RecoveryServices/Vaults/backupJobs/* | Создание заданий резервного копирования и управление ими |
 > | Microsoft.RecoveryServices/Vaults/backupJobsExport/action | Экспорт заданий |
-> | Microsoft.RecoveryServices/Vaults/backupJobsExport/operationResults/read |  |
 > | Microsoft.RecoveryServices/Vaults/backupManagementMetaData/* | Создание метаданных, связанных с управлением резервным копированием, и управление ими |
 > | Microsoft.RecoveryServices/Vaults/backupOperationResults/* | Создание результатов операций управления резервным копированием и управление ими |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/* | Создание политик резервного копирования и управление ими |
@@ -691,7 +788,6 @@ ms.locfileid: "67341509"
 > | Microsoft.RecoveryServices/Vaults/backupFabrics/refreshContainers/action | Обновляет список контейнеров. |
 > | Microsoft.RecoveryServices/Vaults/backupJobs/* | Создание заданий резервного копирования и управление ими |
 > | Microsoft.RecoveryServices/Vaults/backupJobsExport/action | Экспорт заданий |
-> | Microsoft.RecoveryServices/Vaults/backupJobsExport/operationResults/read |  |
 > | Microsoft.RecoveryServices/Vaults/backupManagementMetaData/read |  |
 > | Microsoft.RecoveryServices/Vaults/backupOperationResults/* | Создание результатов операций управления резервным копированием и управление ими |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/operationResults/read | Возвращает результаты операции политики. |
@@ -758,7 +854,6 @@ ms.locfileid: "67341509"
 > | Microsoft.RecoveryServices/Vaults/backupJobs/operationResults/read | Возвращает результат операции задания. |
 > | Microsoft.RecoveryServices/Vaults/backupJobs/read | Возвращает все объекты заданий. |
 > | Microsoft.RecoveryServices/Vaults/backupJobsExport/action | Экспорт заданий |
-> | Microsoft.RecoveryServices/Vaults/backupJobsExport/operationResults/read |  |
 > | Microsoft.RecoveryServices/Vaults/backupManagementMetaData/read |  |
 > | Microsoft.RecoveryServices/Vaults/backupOperationResults/read | Возвращает результат операции архивации для хранилища служб восстановления. |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/operationResults/read | Возвращает результаты операции политики. |
@@ -1409,22 +1504,6 @@ ms.locfileid: "67341509"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="event-hubs-data-owner"></a>Владелец данных концентраторов событий
-
-> [!div class="mx-tableFixed"]
-> | | |
-> | --- | --- |
-> | **Описание** | Обеспечивает полный доступ к ресурсам концентраторов событий Azure. |
-> | **Id** | f526a384-b230-433a-b45c-95f59c4a2dec |
-> | **Действия** |  |
-> | Microsoft.EventHubs/* | Разрешает доступ к управлению для пространства имен концентраторов событий |
-> | **NotActions** |  |
-> | *Нет* |  |
-> | **Действия с данными** |  |
-> | Microsoft.EventHubs/* | Разрешает полный доступ к данным для пространства имен концентраторов событий |
-> | **NotDataActions** |  |
-> | *Нет* |  |
-
 ## <a name="eventgrid-eventsubscription-contributor"></a>Участник EventGrid EventSubscription
 > [!div class="mx-tableFixed"]
 > | | |
@@ -1721,9 +1800,9 @@ ms.locfileid: "67341509"
 > | **Описание** | Создание, чтение, обновление и удаление пользовательских удостоверений. |
 > | **Id** | e40ec5ca-96e0-45a2-b4ff-59039f2c2b59 |
 > | **Действия** |  |
-> | Microsoft.ManagedIdentity/userAssignedIdentities/*/read |  |
-> | Microsoft.ManagedIdentity/userAssignedIdentities/*/write |  |
-> | Microsoft.ManagedIdentity/userAssignedIdentities/*/delete |  |
+> | Microsoft.ManagedIdentity/userAssignedIdentities/read | Получение существующего пользовательского удостоверения. |
+> | Microsoft.ManagedIdentity/userAssignedIdentities/write | Создание существующего пользовательского удостоверения или обновление связанных с ним тегов. |
+> | Microsoft.ManagedIdentity/userAssignedIdentities/delete | Удаление существующего пользовательского удостоверения. |
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
 > | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Получает или перечисляет группы ресурсов. |
@@ -2073,22 +2152,6 @@ ms.locfileid: "67341509"
 > | *Нет* |  |
 > | **Действия с данными** |  |
 > | *Нет* |  |
-> | **NotDataActions** |  |
-> | *Нет* |  |
-
-## <a name="service-bus-data-owner"></a>Владелец данных шины службы
-
-> [!div class="mx-tableFixed"]
-> | | |
-> | --- | --- |
-> | **Описание** | Обеспечивает полный доступ к ресурсам служебной шины Azure. |
-> | **Id** | 090c5cfd-751d-490a-894a-3ce6f1109419 |
-> | **Действия** |  |
-> | Microsoft.ServiceBus/* | Разрешает доступ к управлению к пространству имен служебной шины |
-> | **NotActions** |  |
-> | *Нет* |  |
-> | **Действия с данными** |  |
-> | Microsoft.ServiceBus/* | Разрешает полный доступ к пространству имен служебной шины |
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
