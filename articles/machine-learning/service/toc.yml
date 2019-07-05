@@ -197,7 +197,7 @@
         - name: Отслеживание экспериментов с помощью потока ML
           displayName: 'log, monitor, metrics'
           href: how-to-use-mlflow.md
-        - name: Визуализация экспериментов с помощью TensorBoard
+        - name: Визуализация выполняется с помощью TensorBoard
           displayName: 'log, monitor, metrics'
           href: how-to-monitor-tensorboard.md
     - name: Автоматизация машинного обучения

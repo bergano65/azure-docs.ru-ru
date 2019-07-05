@@ -37,10 +37,12 @@
       items:
         - name: Сценарии
           href: scenarios.md
-        - name: Выбор виртуальной сети
+        - name: Планирование виртуальной сети
           href: network-considerations.md
     - name: "Управление Azure AD\_DS"
       items:
+        - name: Включение аудита событий безопасности (предварительная версия)
+          href: security-audit-events.md
         - name: Проверка работоспособности управляемого домена
           href: check-health.md
         - name: "Настройка синхронизации определенных учетных записей Azure\_AD с управляемым доменом"
