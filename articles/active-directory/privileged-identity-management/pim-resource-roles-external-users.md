@@ -15,12 +15,12 @@ ms.date: 04/09/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0afec1d6eded25a2d9b2389c950e2e21e06e0d54
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 07476c9f5db64a5d107a493022fa3548fe0dae4c
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66307062"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67476345"
 ---
 # <a name="invite-guest-users-and-assign-azure-resource-roles-in-pim"></a>Приглашение гостевых пользователей и назначение ролей ресурсов Azure в PIM
 
@@ -47,7 +47,7 @@ Azure Active Directory (Azure AD) предприятие предприятие 
 
 При использовании службы совместной работы B2B, вы можете пригласить внешнего пользователя организации в качестве гостя. Гость находится в вашей организации, но гостевой ОС не поддерживает любые учетные данные, связанные с ней. Каждый раз, когда гостевого должен пройти проверку подлинности, они должны пройти проверку подлинности в своей организации, а не в вашей организации. Это означает, что если Гость больше не имеет доступа к своей организации, также теряют доступ к вашей организации. Например если гостевой уходит из организации, они автоматически теряет доступ к любым ресурсам, которыми вы делитесь с ними в Azure AD вам не нужно ничего делать. Дополнительные действия см. в статье [Что представляет собой гостевой доступ в службе совместной работы Azure Active Directory B2B?](../b2b/what-is-b2b.md)
 
-![B2B и гостевых](./media/pim-resource-roles-external-users/b2b-external-user.png)
+![Схема показывает, как гостевой пользователь появится в вашем каталоге, но проходит проверку подлинности в домашнем каталоге](./media/pim-resource-roles-external-users/b2b-external-user.png)
 
 ## <a name="check-guest-collaboration-settings"></a>Проверка параметров виртуальной машины совместной работы
 
@@ -59,7 +59,7 @@ Azure Active Directory (Azure AD) предприятие предприятие 
 
 1. Щелкните **Управление параметрами внешнего взаимодействия**.
 
-    ![Параметры внешнего взаимодействия](./media/pim-resource-roles-external-users/external-collaboration-settings.png)
+    ![Страница Параметры внешнего взаимодействия с разрешением, приглашения и совместной работы параметров ограниченного использования программ](./media/pim-resource-roles-external-users/external-collaboration-settings.png)
 
 1. Убедитесь, что переключатель **Администраторы и пользователи с ролью приглашающего гостей могут приглашать других пользователей** установлен в положение **Да**.
 
@@ -81,21 +81,21 @@ Azure Active Directory (Azure AD) предприятие предприятие 
 
 1. В разделе "Управление" щелкните **Роли**, чтобы просмотреть список ролей ресурсов Azure.
 
-    ![Роли ресурсов Azure](./media/pim-resource-roles-external-users/resources-roles.png)
+    ![Отображение числа пользователей, активных и допустимых список ролей ресурсов Azure](./media/pim-resource-roles-external-users/resources-roles.png)
 
 1. Выберите минимальную роль, которая потребуется пользователю.
 
-    ![Выбранная роль](./media/pim-resource-roles-external-users/selected-role.png)
+    ![Выбранные роли страницы, со списком текущих членов этой роли](./media/pim-resource-roles-external-users/selected-role.png)
 
 1. На странице роли щелкните **Добавить участника**, чтобы открыть панель нового назначения.
 
 1. Щелкните **Выберите участника или группу**.
 
-    ![Выбор участника или группы](./media/pim-resource-roles-external-users/select-member-group.png)
+    ![Новое назначение - выбора элемента или группы области, перечисление пользователей и групп с возможностью приглашения](./media/pim-resource-roles-external-users/select-member-group.png)
 
 1. Чтобы пригласить гостя, нажмите кнопку **пригласить**.
 
-    ![Приглашение гостя](./media/pim-resource-roles-external-users/invite-guest.png)
+    ![Пригласить гостя страницы в окне введите адрес электронной почты и укажите персональное сообщение](./media/pim-resource-roles-external-users/invite-guest.png)
 
 1. После выбора гостя, нажмите кнопку **пригласить**.
 
@@ -105,13 +105,13 @@ Azure Active Directory (Azure AD) предприятие предприятие 
 
 1. В **параметры членства** области, выберите тип назначения и длительность.
 
-    ![Параметры членства](./media/pim-resource-roles-external-users/membership-settings.png)
+    ![Новое назначение - странице "параметры членства" с параметрами, чтобы указать тип назначения, дату начала и Дата окончания](./media/pim-resource-roles-external-users/membership-settings.png)
 
 1. Чтобы завершить назначение, щелкните **Готово** и **Добавить**.
 
     Назначение роли гостевой будет отображаться в списке ролей.
 
-    ![Назначение ролей для гостевых систем](./media/pim-resource-roles-external-users/role-assignment.png)
+    ![Страница, на которой гостевой условиях временной роли](./media/pim-resource-roles-external-users/role-assignment.png)
 
 ## <a name="activate-role-as-a-guest"></a>Активация роли в качестве гостя
 
@@ -119,13 +119,13 @@ Azure Active Directory (Azure AD) предприятие предприятие 
 
 1. Откройте сообщение электронной почты с ваше приглашение. Это письмо выглядит примерно так, как показано ниже.
 
-    ![Приглашение по электронной почте](./media/pim-resource-roles-external-users/email-invite.png)
+    ![Приглашение по электронной почте с имя каталога, личное сообщение и ссылку приступить к работе](./media/pim-resource-roles-external-users/email-invite.png)
 
 1. Щелкните ссылку **Начать работу** в этом сообщении электронной почты.
 
 1. Проверьте разрешения и щелкните **Принять**.
 
-    ![Проверка разрешений](./media/pim-resource-roles-external-users/invite-accept.png)
+    ![Просмотр страницы «разрешения» в браузере с помощью списка разрешений, которые организация хочет вам ознакомиться с](./media/pim-resource-roles-external-users/invite-accept.png)
 
 1. Вам может быть предложено принять условия использования и укажите, хотите ли вы оставаться в системе.
 
@@ -133,11 +133,11 @@ Azure Active Directory (Azure AD) предприятие предприятие 
 
 1. Чтобы активировать роль, откройте сообщение электронной почты со ссылкой для активации. Это письмо выглядит примерно так, как показано ниже.
 
-    ![Приглашение по электронной почте](./media/pim-resource-roles-external-users/email-role-assignment.png)
+    ![Сообщение электронной почты из PIM, указывающее, разрешенными в для роли с помощью активировать роль связи](./media/pim-resource-roles-external-users/email-role-assignment.png)
 
 1. Щелкните **Активировать роль**, чтобы открыть доступные роли в PIM.
 
-    ![Мои роли - право](./media/pim-resource-roles-external-users/my-roles-eligible.png)
+    ![Страница роли в PIM, список соответствующих ролей](./media/pim-resource-roles-external-users/my-roles-eligible.png)
 
 1. В разделе "Действие" щелкните ссылку **Активировать**.
 
@@ -145,7 +145,7 @@ Azure Active Directory (Azure AD) предприятие предприятие 
 
 1. Указав нужные параметры для роли, щелкните **Активировать** для активации этой роли.
 
-    ![Активация роли](./media/pim-resource-roles-external-users/activate-role.png)
+    ![Активировать область листинг страницы и параметры, чтобы указать время начала, длительность и причину](./media/pim-resource-roles-external-users/activate-role.png)
 
     Если для активации роли не требуется подтверждение администратора, вы сразу получите доступ к указанным ресурсам.
 
@@ -157,13 +157,13 @@ Azure Active Directory (Azure AD) предприятие предприятие 
 
 1. Щелкните **Аудит ресурсов** для просмотра активности по этому ресурсу. Ниже показан пример действий для группы ресурсов.
 
-    ![Аудит ресурсов](./media/pim-resource-roles-external-users/audit-resource.png)
+    ![Azure ресурсы - страница аудита ресурсов, времени, запрашивающей стороне и действия](./media/pim-resource-roles-external-users/audit-resource.png)
 
 1. Чтобы просмотреть действия для гостей, щелкните **Azure Active Directory** > **пользователей** > имя гостя.
 
 1. Нажмите кнопку **журналы аудита** смогут просматривать журналы аудита для организации. Если потребуется, примените фильтры.
 
-    ![Организация аудита](./media/pim-resource-roles-external-users/audit-directory.png)
+    ![Список дат, целевой объект, инициируется и действия для журналов аудита Directory](./media/pim-resource-roles-external-users/audit-directory.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

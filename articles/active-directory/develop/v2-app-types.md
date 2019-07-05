@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cd7055794860398ecc6296d0174a691e7fac4450
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ac3dbd3f2148c14780c380cc0c7f2fab2a41e165
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66235250"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67482409"
 ---
 # <a name="application-types-for-microsoft-identity-platform"></a>Типы приложений для платформы удостоверений Microsoft
 
@@ -55,7 +55,7 @@ https://login.microsoftonline.com/common/oauth2/v2.0/token
 
 В этом потоке приложение получает маркеры непосредственно с платформой Microsoft identity конечной точки, без обмена любого сервера на сервер авторизации. Вся логика аутентификации и обработки сеансов размещается в клиенте JavaScript без перенаправления на дополнительные страницы.
 
-![Неявный поток аутентификации](./media/v2-app-types/convergence-scenarios-implicit.svg)
+![Показывает поток неявная проверка подлинности](./media/v2-app-types/convergence-scenarios-implicit.svg)
 
 Чтобы увидеть этот сценарий в действии, изучите один из примеров кода одностраничного приложения в [платформы удостоверений Microsoft Приступая к работе](v2-overview.md#getting-started) раздел.
 
@@ -80,7 +80,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImtyaU1QZG1Cd...
 
 В приложениях веб-сервера поток аутентификации для входа состоит из следующих базовых этапов.
 
-![Поток аутентификации веб-приложения](./media/v2-app-types/convergence-scenarios-webapp.svg)
+![Показывает поток аутентификации приложения web](./media/v2-app-types/convergence-scenarios-webapp.svg)
 
 Удостоверение пользователя можно обеспечить путем проверки маркера Идентификации с открытым ключом подписывания, полученного от конечной точки платформы Microsoft identity. Для этого задается файл cookie сеанса, с помощью которого можно идентифицировать пользователя при последующих запросах страницы.
 
@@ -106,7 +106,7 @@ Accept: application/json
 
 Веб-API может получать маркеры доступа от всех типов приложений, включая приложения веб-сервера, классические и мобильные приложения, одностраничные приложения, серверные управляющие программы и даже другие веб-API. Общий поток для веб-API выглядит следующим образом.
 
-![Поток аутентификации веб-API](./media/v2-app-types/convergence-scenarios-webapi.svg)
+![Показывает web API потока проверки подлинности](./media/v2-app-types/convergence-scenarios-webapi.svg)
 
 Чтобы узнать, как защитить веб-API с помощью маркеров доступа OAuth2, ознакомьтесь с примерами кода веб-API в [платформы удостоверений Microsoft Приступая к работе](v2-overview.md#getting-started) раздел.
 
@@ -118,7 +118,7 @@ Accept: application/json
 
 В этом потоке приложение получает код авторизации из конечной точки платформы Microsoft identity, при входе пользователя. Код авторизации представляет собой разрешение, полученное от приложения, на вызов внутренних служб от имени пользователя, выполнившего вход. Приложение может передать код авторизации в фоновом режиме, чтобы получить маркер доступа OAuth 2.0 и маркер обновления. Приложение может использовать маркер доступа для аутентификации в интерфейсах веб-API в HTTP-запросах и использовать маркер обновления, чтобы получать новые маркеры доступа после истечения срока действия старых маркеров.
 
-![Поток аутентификации собственного приложения](./media/v2-app-types/convergence-scenarios-native.svg)
+![Показывает поток аутентификации собственного приложения](./media/v2-app-types/convergence-scenarios-native.svg)
 
 ## <a name="daemons-and-server-side-apps"></a>Управляющие программы и серверные приложения
 
@@ -126,6 +126,6 @@ Accept: application/json
 
 В этом потоке приложение взаимодействует напрямую с `/token` конечная точка для получения доступа:
 
-![Поток аутентификации управляющей программы](./media/v2-app-types/convergence-scenarios-daemon.svg)
+![Показывает поток проверки подлинности приложений управляющей программы](./media/v2-app-types/convergence-scenarios-daemon.svg)
 
 Чтобы создать управляющую программу, изучите [документацию по учетным данным клиентов](v2-oauth2-client-creds-grant-flow.md) или ознакомьтесь с [примером приложения .NET](https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2).

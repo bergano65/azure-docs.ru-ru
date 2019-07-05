@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: hrasheed
-ms.openlocfilehash: fcb9171d2285efab0f65e6ab424908bc42c0ea2f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 01e7ca184f2be755f23cd402e0694ea282e3b85e
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66391886"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67441400"
 ---
 # <a name="connect-excel-to-apache-hadoop-in-azure-hdinsight-with-the-microsoft-hive-odbc-driver"></a>Подключение Excel к Apache Hadoop с помощью драйвера Microsoft Hive ODBC в Azure HDInsight
 
@@ -32,7 +32,7 @@ ms.locfileid: "66391886"
 * Рабочая станция с Office 2010 Professional Plus или более поздней версии или Excel 2010 или более поздней версии.
 
 ## <a name="install-microsoft-hive-odbc-driver"></a>Установка драйвера Microsoft Hive ODBC
-Скачайте и установите [драйвера Microsoft Hive ODBC](https://go.microsoft.com/fwlink/?LinkID=286698) версию, которая соответствует версии приложения, где вы будете использовать драйвер ODBC.  В рамках этого руководства используется драйвер для Office Excel.
+Скачайте и установите [драйвера Microsoft Hive ODBC](https://go.microsoft.com/fwlink/?LinkID=286698) версию, которая соответствует версии приложения, где вы будете использовать драйвер ODBC.  В этой статье драйвер используется для Office Excel.
 
 ## <a name="create-apache-hive-odbc-data-source"></a>Создание источника данных Apache Hive ODBC
 Ниже показано, как создать источник данных Hive ODBC.

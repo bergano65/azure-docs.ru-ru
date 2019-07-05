@@ -1,5 +1,5 @@
 ---
-title: Использование эталонных данных из Базы данных SQL для задания Azure Stream Analytics (предварительная версия)
+title: Использование ссылочных данных из базы данных SQL для задания Azure Stream Analytics
 description: В этой статье описывается, как использовать Базу данных SQL в качестве источника эталонных входных данных для задания Azure Stream Analytics на портале Azure и в Visual Studio.
 services: stream-analytics
 author: mamccrea
@@ -8,14 +8,14 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: f0e62c27885e2f6d5097194e1b9d869e167c4a4c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae1954b99e268e8bc44c4ba29bbc79d7734fda6e
+ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66304971"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67461741"
 ---
-# <a name="use-reference-data-from-a-sql-database-for-an-azure-stream-analytics-job-preview"></a>Использование эталонных данных из Базы данных SQL для задания Azure Stream Analytics (предварительная версия)
+# <a name="use-reference-data-from-a-sql-database-for-an-azure-stream-analytics-job"></a>Использование ссылочных данных из базы данных SQL для задания Azure Stream Analytics
 
 Azure Stream Analytics поддерживает базу данных SQL Azure в качестве источника эталонных входных данных. Базу данных SQL можно использовать как источник эталонных данных для задания Stream Analytics на портале Azure и в Visual Studio с помощью средств Stream Analytics. В этой статье показано, как реализовать оба этих варианта.
 

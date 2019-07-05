@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 16d1739e01061a90d673e4bd79bba7bfe7ec3a90
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 97f737c8d1228bd03baf59f2ebe830f715241299
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295070"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449840"
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Устранение неполадок службы файлов Azure в Linux
 
@@ -103,7 +103,7 @@ ms.locfileid: "67295070"
     - Используйте [AZCopy](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) для передачи данных между двумя файловыми ресурсами.
     - С помощью cp с параллельными могут повысить скорость копирования, число потоков зависит от варианта использования и рабочей нагрузки. В этом примере используется шесть: `find * -type f | parallel --will-cite -j 6 cp {} /mntpremium/ &`.
     - Откройте исходный сторонние инструменты, например:
-        - [Параллельный GNU](http://www.gnu.org/software/parallel/).
+        - [Параллельный GNU](https://www.gnu.org/software/parallel/).
         - [Fpart](https://github.com/martymac/fpart) — Сортировка файлов и упаковывает их в секции.
         - [Fpsync](https://github.com/martymac/fpart/blob/master/tools/fpsync) -использует Fpart и средство для копирования для создания нескольких экземпляров для переноса данных из src_dir dst_url.
         - [С несколькими](https://github.com/pkolano/mutil) -многопоточных cp и контрольной суммы MD5 с учетом GNU coreutils.

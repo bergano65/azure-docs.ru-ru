@@ -10,12 +10,12 @@ ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: cotresne
-ms.openlocfilehash: 10976c9cf16dfab4c31d0d77c519dc3277204a51
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 118daf02ab59646f2926071763aa4d7e97846e04
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67293047"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508218"
 ---
 # <a name="deployment-technologies-in-azure-functions"></a>Технологии развертывания в функциях Azure
 
@@ -50,16 +50,18 @@ ms.locfileid: "67293047"
 При изменении каких-либо триггеры, функции инфраструктуры необходимо знать об этих изменениях. Процесс синхронизации происходит автоматически на других технологиях развертывания. Однако в некоторых случаях необходимо вручную синхронизировать триггеры. При развертывании обновлений с помощью URL-адрес внешнего пакета, local Git, синхронизацию с облаком или FTP, необходимо убедиться, чтобы вручную синхронизировать триггеры. Вы можете синхронизировать триггеры в одном из трех способов:
 
 * Перезапуск приложения-функции на портале Azure
-* Отправить запрос HTTP POST для `https://www.{functionappname}.azurewebsites.net/admin/host/synctriggers?code=<API_KEY>` с помощью [главного ключа](functions-bindings-http-webhook.md#authorization-keys).
+* Отправить запрос HTTP POST для `https://{functionappname}.azurewebsites.net/admin/host/synctriggers?code=<API_KEY>` с помощью [главного ключа](functions-bindings-http-webhook.md#authorization-keys).
 * Отправить запрос HTTP POST для `https://management.azure.com/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP_NAME>/providers/Microsoft.Web/sites/<FUNCTION_APP_NAME>/syncfunctiontriggers?api-version=2016-08-01`. Замените заполнители своим Идентификатором подписки, имя группы ресурсов и имя приложения-функции.
 
 ## <a name="deployment-technology-details"></a>Сведения о технологии развертывания  
+
+Функции Azure поддерживают эти следующих методов.
 
 ### <a name="external-package-url"></a>URL-адрес внешнего пакета
 
 Позволяет ссылаться на удаленный пакет (.zip) файл, содержащий приложение-функцию. Файл загружается из указанного URL-адреса, а приложение выполняется в [выполнения из пакета](run-functions-from-deployment-package.md) режим.
 
->__Способы ее использования:__ Добавление `WEBSITE_RUN_FROM_PACKAGE` параметры приложения. Значение этого параметра должно быть URL-адрес — расположение файла определенного пакета, которую вы хотите запустить. Вы можете добавлять параметры либо [на портале](functions-how-to-use-azure-function-app-settings.md#settings) или [с помощью Azure CLI](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set). При использовании хранилища BLOB-объектов Azure, следует использовать закрытый контейнер с [подписи общего доступа (SAS)](../vs-azure-tools-storage-manage-with-storage-explorer.md#attach-a-storage-account-by-using-a-shared-access-signature-sas) для предоставления функций доступа к пакету. В любое время повторного запуска приложения он получает копию содержимого, что означает, что ссылки должен быть действительным в течение времени существования приложения.
+>__Способы ее использования:__ Добавление `WEBSITE_RUN_FROM_PACKAGE` параметры приложения. Значение этого параметра должно быть URL-адрес — расположение файла определенного пакета, которую вы хотите запустить. Вы можете добавлять параметры либо [на портале](functions-how-to-use-azure-function-app-settings.md#settings) или [с помощью Azure CLI](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set). При использовании хранилища BLOB-объектов Azure, следует использовать закрытый контейнер с [подписи общего доступа (SAS)](../vs-azure-tools-storage-manage-with-storage-explorer.md#generate-a-sas-in-storage-explorer) для предоставления функций доступа к пакету. В любое время повторного запуска приложения он получает копию содержимого, что означает, что ссылки должен быть действительным в течение времени существования приложения.
 
 >__Когда следует использовать:__ Этот способ только развертывания, которые поддерживаются для функций Azure на платформе Linux в плане потребления (Предварительная версия). При обновлении файл пакета ссылается на приложение-функцию, необходимо [вручную синхронизировать триггеры](#trigger-syncing) чтобы сообщить Azure, что приложения был изменен.
 
@@ -88,11 +90,11 @@ ms.locfileid: "67293047"
 
 ### <a name="web-deploy-msdeploy"></a>Веб-развертывания (MSDeploy)
 
-Пакеты и развертывание приложений Windows к любому серверу IIS, включая приложения-функции Azure под управлением Windows.
+Пакеты и развертывание приложений Windows к любому серверу IIS, включая приложения-функции под управлением Windows в Azure.
 
->__Способы ее использования:__ Используйте [средств Visual Studio для функций Azure](functions-create-your-first-function-visual-studio.md), и не делений `Run from package file (recommended)` "флажок".
+>__Способы ее использования:__ Используйте [средств Visual Studio для функций Azure](functions-create-your-first-function-visual-studio.md), а затем снимите флажок `Run from package file (recommended)` поле.
 >
->Кроме того, вызвать `MSDeploy.exe` непосредственно после загрузки [3.6 Развертывание Web](https://www.iis.net/downloads/microsoft/web-deploy).
+> Вы также можете скачать [3.6 Развертывание Web](https://www.iis.net/downloads/microsoft/web-deploy) и вызвать `MSDeploy.exe` напрямую.
 
 >__Когда следует использовать:__ Эта технология развертывания поддерживается и не имеет проблем, но теперь является предпочтительным механизмом [Zip развертывание с помощью выполнения из пакета](#zip-deploy). Чтобы узнать больше, посетите [руководство по разработке для Visual Studio](functions-develop-vs.md#publish-to-azure).
 

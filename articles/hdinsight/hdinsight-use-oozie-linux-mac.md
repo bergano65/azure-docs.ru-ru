@@ -7,12 +7,12 @@ ms.author: omidm
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.openlocfilehash: 55db43bf3037fcba59e7ad783c6d8c06f1886bdb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8227ff0c56e147db66c4cdc93083d671b08d1d98
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65142833"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67433420"
 ---
 # <a name="use-apache-oozie-with-apache-hadoop-to-define-and-run-a-workflow-on-linux-based-azure-hdinsight"></a>Использование Apache Oozie с Apache Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux
 
@@ -26,7 +26,7 @@ ms.locfileid: "65142833"
 Вы также можете использовать Oozie для планирования системных заданий, например Java-программ и сценариев оболочки.
 
 > [!NOTE]  
-> Еще один способ определения рабочих процессов с помощью HDInsight — использование фабрики данных Azure. Дополнительные сведения о фабрике данных см. в статье [Использование данных Apache Pig and Apache Hive в фабрике данных Azure][azure-data-factory-pig-hive]. Сведения об использовании Oozie в кластерах с Корпоративным пакетом безопасности см. в статье [Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности](domain-joined/hdinsight-use-oozie-domain-joined-clusters.md).
+> Еще один способ определения рабочих процессов с помощью HDInsight — использование фабрики данных Azure. Дополнительные сведения о фабрике данных, см. в разделе [использование Apache Pig и Apache Hive с фабрикой данных][azure-data-factory-pig-hive]. Сведения об использовании Oozie в кластерах с Корпоративным пакетом безопасности см. в статье [Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности](domain-joined/hdinsight-use-oozie-domain-joined-clusters.md).
 
 
 ## <a name="prerequisites"></a>Технические условия
@@ -54,12 +54,12 @@ ms.locfileid: "65142833"
 
     Сценарий Hive, используемый в этом документе, подсчитывает общее количество посещений для каждой платформы (например, Android или iPhone) и сохраняет результаты в новой таблице Hive.
 
-    Дополнительные сведения о Hive см. в статье [Использование Apache Hive и HiveQL с Hadoop в HDInsight][hdinsight-use-hive].
+    Дополнительные сведения о Hive см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight][hdinsight-use-hive].
 
-2. Действие Sqoop экспортирует содержимое новой таблицы Hive в таблицу, созданную в базе данных SQL Azure. Дополнительные сведения о Sqoop см. в статье [Использование Apache Hive и HiveQL с Hadoop в HDInsight][hdinsight-use-sqoop].
+2. Действие Sqoop экспортирует содержимое новой таблицы Hive в таблицу, созданную в базе данных SQL Azure. Дополнительные сведения о Sqoop см. в разделе [использование Apache Sqoop с HDInsight][hdinsight-use-sqoop].
 
 > [!NOTE]  
-> Сведения о поддерживаемых версиях Oozie в кластерах HDInsight см. в статье [Что представляют собой различные компоненты Hadoop, доступные в HDInsight?][hdinsight-versions]
+> Для поддерживаемых версиях Oozie в кластерах HDInsight, см. в разделе [новые возможности в кластере Hadoop, доступные в HDInsight][hdinsight-versions].
 
 ## <a name="create-the-working-directory"></a>Создайте рабочий каталог
 
@@ -127,7 +127,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc*.jar /tutorials/useoozi
 
    * `${hiveDataFolder}`: содержит расположения файлов данных для таблицы.
 
-     Файл с определением рабочего процесса (workflow.xml в этом руководстве) передает эти значения в скрипт HiveQL во время выполнения.
+     Файл определения рабочего процесса, workflow.xml в этой статье, передает эти значения в скрипт HiveQL во время выполнения.
 
 4. Чтобы сохранить файл, нажмите Ctrl+X, введите `Y`, а затем нажмите клавишу **ВВОД**.  
 
@@ -708,13 +708,13 @@ Oozie REST API позволяет создавать собственные ут
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как задать рабочий процесс Oozie и как запустить задание Oozie. Дополнительные сведения о работе с HDInsight приведены в следующих статьях:
+В этой статье вы узнали, как определить рабочий процесс Oozie и как выполнять задания Oozie. Дополнительные сведения о работе с HDInsight приведены в следующих статьях:
 
 * [Отправка данных для заданий Apache Hadoop в HDInsight][hdinsight-upload-data]
-* [Использование Apache Sqoop с Apache Hadoop в HDInsight][hdinsight-use-sqoop]
+* [Использование Apache Sqoop с Apache Hadoop в HDInsight][hdinsight-use-sqoop]
 * [Использование Apache Hive с Apache Hadoop в HDInsight][hdinsight-use-hive]
 * [Использование Apache Pig с Apache Hadoop в HDInsight][hdinsight-use-pig]
-* [Разработка программ MapReduce на Java для Hadoop в HDInsight на платформе Linux][hdinsight-develop-mapreduce]
+* [Разработка программ MapReduce на Java для HDInsight][hdinsight-develop-mapreduce]
 
 [hdinsight-cmdlets-download]: https://go.microsoft.com/fwlink/?LinkID=325563
 [azure-data-factory-pig-hive]: ../data-factory/transform-data.md

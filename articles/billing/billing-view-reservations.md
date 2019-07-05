@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/13/2019
 ms.author: banders
-ms.openlocfilehash: 872837c774368820527b12778b1a7dd4ddc5c7af
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 21bf96866c14615009a17279ff2fdd04bf4116ad
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60369228"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67490269"
 ---
 # <a name="view-azure-reservations-in-the-azure-portal"></a>Просмотреть резервирование Azure на портале Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "60369228"
 Чтобы просмотреть резервирование как владелец или читатель, выполните следующие действия.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Выполните поиск по **Резервированиям**.
+2. Поиск **резервирования**.
     ![Снимок экрана, показывающий поиска портала Azure](./media/billing-view-reservation/portal-reservation-search.png)  
 3. В списке отображаются все зарезервированные места, где у вас есть роль владельца или читателя. Каждое резервирование показано последнее процентное число известных использования.  
     ![Пример, показывающий список резервирования](./media/billing-view-reservation/view-reservations.png)
@@ -49,7 +49,7 @@ ms.locfileid: "60369228"
 Чтобы просмотреть транзакции резервирования на портале Azure, выполните следующие действия.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-1. Выполните поиск по **Управление затратами + выставление счетов**.
+1. Поиск **Cost Management + выставление счетов**.
 
     ![Снимок экрана, показывающий поиск на портале Azure](./media/billing-view-reservation/portal-cm-billing-search.png)
 

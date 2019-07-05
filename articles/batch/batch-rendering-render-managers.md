@@ -7,12 +7,12 @@ author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
-ms.openlocfilehash: bcc66a73e3d7986b177b13eb309ad664a006b960
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6878d3b4fc8648db540d016389747eceb45d936a
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62118592"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67436174"
 ---
 # <a name="using-azure-batch-with-render-farm-managers"></a>Использование пакетной службы Azure с диспетчерами фермы рендеринга
 
@@ -23,7 +23,7 @@ Azure предоставляет встроенную поддержку или 
 Поддерживаются следующие диспетчеры рендеринга:
 
 * [PipelineFX Qube!](https://www.pipelinefx.com/);
-* [Royal Render](http://www.royalrender.de/);
+* [Royal Render](https://www.royalrender.de/);
 * [Thinkbox Deadline](https://deadline.thinkboxsoftware.com/).
 
 ## <a name="using-azure-with-pipelinefx-qube"></a>Использование Azure с PipelineFX Qube
@@ -32,7 +32,7 @@ Azure предоставляет встроенную поддержку или 
 
 ## <a name="using-azure-with-royal-render"></a>Использование Azure с Royal Render
 
-Для Royal Render в Azure и пакетной службе Azure реализована встроенная поддержка интеграции, что позволяет расширить ферму рендеринга за счет виртуальных машин на платформе Azure. Краткое описание этого варианта вы найдете в [файлах справки](http://www.royalrender.de/help8/index.html?Cloudrendering.html).
+Для Royal Render в Azure и пакетной службе Azure реализована встроенная поддержка интеграции, что позволяет расширить ферму рендеринга за счет виртуальных машин на платформе Azure. Краткое описание этого варианта вы найдете в [файлах справки](https://www.royalrender.de/help8/index.html?Cloudrendering.html).
 
 Пример клиента Royal Render с интеграцией в Azure можно изучить в статье [об истории клиента Jellyfish Pictures](https://customers.microsoft.com/story/jellyfishpictures).
 

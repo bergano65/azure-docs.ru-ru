@@ -3,17 +3,17 @@ title: Порядок использования автоподготовки в
 description: Порядок использования автоподготовки в службе подготовки устройств к добавлению в Центр Интернета вещей для регистрации MXChip IoT DevKit в Центре Интернета вещей.
 author: liydu
 ms.author: liydu
-ms.date: 12/18/2018
+ms.date: 06/25/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: jeffya
-ms.openlocfilehash: 80e4895e0b276e701a6d7f10d8fc67649db0f188
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c809077b0ec14240d231e9b281285080f68596b3
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62122826"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67439510"
 ---
 # <a name="use-azure-iot-hub-device-provisioning-service-auto-provisioning-to-register-the-mxchip-iot-devkit-with-iot-hub"></a>Использование автоподготовки в службе подготовки устройств к добавлению в Центр Интернета вещей Azure для регистрации MXChip IoT DevKit в Центре Интернета вещей
 
@@ -30,7 +30,7 @@ ms.locfileid: "62122826"
 
 Для работы с этим руководством сначала следует выполнить следующие задачи:
 
-* Настройка DevKit по Wi-Fi и подготовьте среду разработки, выполнив следующие действия, описанные в [подключение IoT DevKit AZ3166 к центру Интернета вещей Azure в облаке](/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started).
+* Настройка DevKit по Wi-Fi и подготовить среду разработки, выполнив следующие шаги в разделе «Подготовка среды разработки» в [подключение IoT DevKit AZ3166 к центру Интернета вещей Azure в облаке](/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started#prepare-the-development-environment).
 * Обновите новейшее встроенное ПО до версии 1.3.0 или более новой, воспользовавшись руководством по [обновлению встроенного ПО DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/firmware-upgrading/).
 * Создайте и свяжите Центр Интернета вещей с экземпляром службы подготовки устройств, следуя шагам из руководства [Настройка службы подготовки устройств для Центра Интернета вещей на портале Azure](/azure/iot-dps/quick-setup-auto-provision).
 

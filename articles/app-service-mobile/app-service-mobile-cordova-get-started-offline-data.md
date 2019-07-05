@@ -2,7 +2,7 @@
 title: Включение автономной синхронизации для мобильного приложения Azure (Cordova) | Документация Майкрософт
 description: Использование мобильного приложения службы приложений для кэширования и синхронизации автономных данных в приложении Cordova
 documentationcenter: cordova
-author: conceptdev
+author: elamalani
 manager: crdun
 editor: ''
 services: app-service\mobile
@@ -12,18 +12,23 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-cordova-ios
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 10/30/2016
-ms.author: crdun
-ms.openlocfilehash: 44c54b570a38eb1a3b9ca773893599d1d497dfa2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/25/2019
+ms.author: emalani
+ms.openlocfilehash: 04c8e7b2b60a60f17c49862d5c17793c16456032
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62110989"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443522"
 ---
 # <a name="enable-offline-sync-for-your-cordova-mobile-app"></a>Включение автономной синхронизации для мобильного приложения Cordova
 [!INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
 
+> [!NOTE]
+> Центр приложений Visual Studio вкладывает средства в новые и интегрированной службы, необходимые для разработки мобильных приложений. Разработчики могут использовать **построения**, **теста** и **распределить** служб для настройки конвейера непрерывной интеграции и доставки. После развертывания приложения, разработчики могут отслеживать состояние и использования их приложений с помощью **Analytics** и **диагностики** служб и общайтесь с пользователями, с помощью **Push** Служба. Разработчики также могут использовать **Auth** подлинность пользователей и **данных** службы для сохранения и синхронизировать данные приложения в облаке. Ознакомьтесь с [App Center](https://appcenter.ms/?utm_source=zumo&utm_campaign=app-service-mobile-cordova-get-started-offline-data) уже сегодня.
+>
+
+## <a name="overview"></a>Обзор
 В этом руководстве рассматривается функция автономной синхронизации мобильных приложений Azure для Cordova. Автономная синхронизация позволяет пользователям взаимодействовать с мобильным приложением &mdash;просматривать, добавлять или изменять данные &mdash; даже при отсутствии подключения к сети. Изменения сохраняются в локальной базе данных.  Как только устройство возвращается в режим подключения к сети, эти изменения синхронизируются с удаленной службой.
 
 В этом руководстве используется решение быстрого запуска Cordova для мобильных приложений, которые вы создадите, завершив изучение руководства [ознакомительный проект Apache Cordova]. При работе с этим руководством вы обновите решение быстрого запуска для добавления автономных функций мобильных приложений Azure.  Мы также рассмотрим автономный код, применяемый в приложении.
@@ -187,7 +192,7 @@ ms.locfileid: "62110989"
     Обратите внимание, данные синхронизированы между базой данных и локальным хранилищем, и они содержат элементы, которые вы добавили, пока ваше приложение было вне сети.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
-* [Автономная синхронизация данных в мобильных приложениях Azure]
+* [Автономная Синхронизация данных в мобильных приложениях Azure]
 * [Инструменты Visual Studio для Apache Cordova]
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -201,7 +206,7 @@ ms.locfileid: "62110989"
 <!-- URLs. -->
 [ознакомительный проект Apache Cordova]: app-service-mobile-cordova-get-started.md
 [этом примере]: https://github.com/Azure-Samples/app-service-mobile-cordova-client-conflict-handling
-[Автономная синхронизация данных в мобильных приложениях Azure]: app-service-mobile-offline-data-sync.md
+[Автономная Синхронизация данных в мобильных приложениях Azure]: app-service-mobile-offline-data-sync.md
 [Cloud Cover: Offline Sync in Azure Mobile Services]: https://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 [Adding Authentication]: app-service-mobile-cordova-get-started-users.md
 [authentication]: app-service-mobile-cordova-get-started-users.md

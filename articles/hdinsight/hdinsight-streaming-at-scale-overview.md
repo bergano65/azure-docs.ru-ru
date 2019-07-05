@@ -7,12 +7,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/19/2018
-ms.openlocfilehash: e2b6cbabc9a0c727c9eb0232bd55048493b29128
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 97bc2e585ccce250dd83dc855c3eda5f958186a7
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64696921"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67484059"
 ---
 # <a name="streaming-at-scale-in-hdinsight"></a>Потоковая передача в нужном масштабе в HDInsight
 
@@ -64,7 +64,7 @@ Apache Storm — это распределенная отказоустойчи�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Начало работы с Apache Storm в HDInsight с использованием примеров storm-starter](storm/apache-storm-tutorial-get-started-linux.md)
+* [Создавать и отслеживать топологии Apache Storm в HDInsight Azure](storm/apache-storm-quickstart.md)
 * [Примеры топологий и компонентов Storm для Apache Storm в HDInsight](storm/apache-storm-example-topology.md)
 * [Apache Spark в Azure HDInsight](spark/apache-spark-overview.md)
 * [Приступая к работе с Apache Kafka в HDInsig](kafka/apache-kafka-get-started.md)

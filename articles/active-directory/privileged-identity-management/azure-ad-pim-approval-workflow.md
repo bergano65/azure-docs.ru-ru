@@ -16,12 +16,12 @@ ms.date: 04/09/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47e9033b33c70a72a1685696f75a442e88eed033
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f83cb38567feb51ba7959ada7730d66ded677bf9
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60289775"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67476538"
 ---
 # <a name="approve-or-deny-requests-for-azure-ad-roles-in-pim"></a>Утверждать или отклонять запросы для ролей Azure AD в PIM
 
@@ -41,7 +41,7 @@ ms.locfileid: "60289775"
 
 1. Выберите **Утверждение запросов**.
 
-    ![Роли управления привилегированными пользователями Azure AD — роли](./media/azure-ad-pim-approval-workflow/pim-directory-roles-approve-requests.png)
+    ![Роли Azure AD - утверждение запросов](./media/azure-ad-pim-approval-workflow/pim-directory-roles-approve-requests.png)
 
     Отобразится список запросов, ожидающих утверждения.
 
@@ -49,27 +49,27 @@ ms.locfileid: "60289775"
 
 1. Выберите запросы, которые требуется утвердить, а затем выберите **Утвердить**, чтобы открыть область "Утверждение выбранных запросов".
 
-    ![Список утвержденных запросов PIM](./media/azure-ad-pim-approval-workflow/pim-approve-requests-list.png)
+    ![Список запросов на утверждение с выделенным параметром утвердить](./media/azure-ad-pim-approval-workflow/pim-approve-requests-list.png)
 
 1. В области **Причина утверждения** введите причину.
 
-    ![Утверждение выбранных запросов PIM](./media/azure-ad-pim-approval-workflow/pim-approve-selected-requests.png)
+    ![Утверждение выбранных запросов панели с причиной утвердить](./media/azure-ad-pim-approval-workflow/pim-approve-selected-requests.png)
 
 1. Нажмите кнопку **Утвердить**.
 
     Символ состояния будет обновлен с вашим разрешением.
 
-    ![Утверждение выбранных запросов PIM](./media/azure-ad-pim-approval-workflow/pim-approve-status.png)
+    ![Утверждение выбранных запросов области после нажата кнопка "Утвердить"](./media/azure-ad-pim-approval-workflow/pim-approve-status.png)
 
 ## <a name="deny-requests"></a>Отклонение запросов
 
 1. Выберите запросы, которые требуется отклонить, а затем выберите **Запретить**, чтобы открыть область "Отклонение выбранных запросов".
 
-    ![Список утвержденных запросов PIM](./media/azure-ad-pim-approval-workflow/pim-deny-requests-list.png)
+    ![Утвердить запросы списка с выделенным параметром Deny](./media/azure-ad-pim-approval-workflow/pim-deny-requests-list.png)
 
 1. В области **Причина отклонения** введите причину.
 
-    ![Отклонение выбранных запросов PIM](./media/azure-ad-pim-approval-workflow/pim-deny-selected-requests.png)
+    ![Запретить панели выбранных запросов с причиной deny](./media/azure-ad-pim-approval-workflow/pim-deny-selected-requests.png)
 
 1. Выберите **Отклонить**.
 

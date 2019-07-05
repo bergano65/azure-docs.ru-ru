@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/29/2019
 ms.author: rolyon
 ms.custom: include file
-ms.openlocfilehash: 364d4a11772e6bb72e2e258503f3cce49dc61453
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: d791c4ba46587ac5709d72cb31bc76f087118b03
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185982"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67476255"
 ---
 ## <a name="create-one-or-more-access-reviews"></a>Создайте один или несколько проверок доступа
 
@@ -25,7 +25,7 @@ ms.locfileid: "67185982"
 
 1. Установите **дату начала**. По умолчанию проверка доступа выполняется однократно, начинается в то же самое время, когда она создается, и завершается через один месяц. Можно изменить даты начала и окончания таким образом, чтобы проверка доступа началась в будущем и длилась необходимое количество дней.
 
-    ![Создание проверки доступа — даты начала и окончания](./media/active-directory-privileged-identity-management-access-reviews/start-end-dates.png)
+    ![Дата, периодичность, длительность, end, сколько раз, даты начала и окончания](./media/active-directory-privileged-identity-management-access-reviews/start-end-dates.png)
 
 1. Чтобы повторяющиеся проверки доступа, изменить **частота** Azure с помощью **один раз** для **еженедельно**, **ежемесячные**,  **Квартальный**, **ежегодно**, или **частично annually**. Используйте **длительность** ползунка или текстового поля, которые для определения, сколько дней будет каждой новой рецензии ряда повторяющейся открыть для входных данных от рецензентов. Например, для ежемесячной проверки вы можете настроить продолжительность не более 27 дней, что позволяет избежать перекрытия интервалов проверки.
 
@@ -33,22 +33,22 @@ ms.locfileid: "67185982"
 
 1. В **пользователей** выберите одну или несколько ролей, которые вы хотите просматривать членство.
 
-    ![Создание проверки доступа - пользователей](./media/active-directory-privileged-identity-management-access-reviews/users.png)
+    ![Область пользователей, чтобы просмотреть членство в роли](./media/active-directory-privileged-identity-management-access-reviews/users.png)
 
     > [!NOTE]
     > Выбор более чем одной роли создаст несколько проверок доступа. Например выбрав пять ролей создаст пять проверок отдельных доступа.
 
     При создании проверки доступа для ролей Azure AD, ниже показан пример проверки списка членства.
 
-    ![Создание проверки доступа — членство в роли проверки](./media/active-directory-privileged-identity-management-access-reviews/review-membership.png)
+    ![Проверка членства со списком ролей Azure AD можно выбрать команду](./media/active-directory-privileged-identity-management-access-reviews/review-membership.png)
 
     При создании проверки доступа для ролей ресурсов Azure, ниже показан пример проверки списка членства.
 
-    ![Создание проверки доступа — членство в роли проверки](./media/active-directory-privileged-identity-management-access-reviews/review-membership-azure-resource-roles.png)
+    ![Проверка членства со списком ролей ресурсов Azure можно выбрать команду](./media/active-directory-privileged-identity-management-access-reviews/review-membership-azure-resource-roles.png)
 
 1. В **рецензенты** выберите один или несколько пользователей, которые проверят всех пользователей. Или можно указать, чтобы участники сами проверяли собственный доступ.
 
-    ![Создание проверки доступа — рецензенты](./media/active-directory-privileged-identity-management-access-reviews/reviewers.png)
+    ![Список рецензентов выбранных пользователей или участники (самостоятельные)](./media/active-directory-privileged-identity-management-access-reviews/reviewers.png)
 
     - **Выбранных пользователей** -используйте этот параметр, если вы не знаете, кому нужен доступ. С помощью этого параметра можно назначить выполнение проверки владельцу ресурса или руководителю группы.
     - **Участники (самостоятельные)** -используйте этот параметр, чтобы просмотреть свои собственные назначения ролей пользователи.
@@ -57,7 +57,7 @@ ms.locfileid: "67185982"
 
 1. Чтобы указать, что происходит после завершения проверки, разверните раздел **Настройки после завершения**.
 
-    ![Настройки после завершения](./media/active-directory-privileged-identity-management-access-reviews/upon-completion-settings.png)
+    ![После завершения настройки автоматически применяются и не выдавал проверки](./media/active-directory-privileged-identity-management-access-reviews/upon-completion-settings.png)
 
 1. Если вы хотите автоматически удалять доступ пользователей, для которых были получены запреты, задайте для параметра **Автоматически применять результаты к ресурсу** значение **Включить**. Если вы хотите вручную применять результаты по завершении проверки, выберите здесь значение **Отключить**.
 
@@ -72,7 +72,7 @@ ms.locfileid: "67185982"
 
 1. Чтобы настроить дополнительные параметры, разверните раздел **Дополнительные параметры**.
 
-    ![Дополнительные параметры](./media/active-directory-privileged-identity-management-access-reviews/advanced-settings.png)
+    ![Дополнительные параметры для отображения рекомендаций, указание причины для утверждения, почтовые уведомления и напоминаний](./media/active-directory-privileged-identity-management-access-reviews/advanced-settings.png)
 
 1. Задайте для параметра **Показывать рекомендации** значение **Включить**, чтобы рецензенты видели рекомендации системы на основе данных о доступе пользователя.
 

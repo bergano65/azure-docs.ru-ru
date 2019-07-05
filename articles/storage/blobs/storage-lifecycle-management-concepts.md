@@ -9,12 +9,12 @@ ms.date: 05/21/2019
 ms.author: mhopkins
 ms.reviewer: yzheng
 ms.subservice: common
-ms.openlocfilehash: ce2559f62d29c7b062cfd1ad1dcb61146adfd91c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 50eb62b20be66337c819372fa3d97eae4d7214b8
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66001754"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67435743"
 ---
 # <a name="manage-the-azure-blob-storage-lifecycle"></a>Управление жизненным циклом хранилища BLOB-объектов Azure
 
@@ -131,7 +131,7 @@ $policy = Set-AzStorageAccountManagementPolicy -ResourceGroupName $rgname -Stora
 
 ```json
 {
-  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {},
   "variables": {
@@ -199,10 +199,10 @@ $policy = Set-AzStorageAccountManagementPolicy -ResourceGroupName $rgname -Stora
 
 | Имя параметра | Тип параметра | Примечания | Обязательно для заполнения |
 |----------------|----------------|-------|----------|
-| `name`         | String |Имя правила может содержать до 256 буквенно-цифровые символы. В именах правил учитывается регистр.  Имя должно быть уникальным в пределах политики. | Истина |
+| `name`         | String |Имя правила может содержать до 256 буквенно-цифровые символы. В именах правил учитывается регистр.  Имя должно быть уникальным в пределах политики. | True |
 | `enabled`      | Boolean | Необязательное логическое значение, разрешающее правило для временного отключена. Значение по умолчанию имеет значение true, если оно не задано. | False | 
-| `type`         | Значение перечисления | Текущий тип допустимым является `Lifecycle`. | Истина |
-| `definition`   | Объект, который определяет правило жизненного цикла | Каждое определение состоит из набора фильтров и набора действий. | Истина |
+| `type`         | Значение перечисления | Текущий тип допустимым является `Lifecycle`. | True |
+| `definition`   | Объект, который определяет правило жизненного цикла | Каждое определение состоит из набора фильтров и набора действий. | True |
 
 ## <a name="rules"></a>Правила
 

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/02/2019
-ms.openlocfilehash: 03fcbb0216d85e337b4161aa24ceeb7d3a2bdebe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 41a57d1ad5d216797fc60ea13acff346734fdef8
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66479458"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67433633"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров Azure HDInsight с помощью действий сценария
 
@@ -51,6 +51,9 @@ ms.locfileid: "66479458"
       * Поколение 1 ADLS: Кластер HDInsight субъекта-службы с доступом к Data Lake Storage должен иметь доступ к сценарию с правами на чтение. URI для скриптов, находящихся в Data Lake Storage 1-го поколения, имеет формат `adl://DATALAKESTOREACCOUNTNAME.azuredatalakestore.net/path_to_file`.
       
       * Большой двоичный объект в учетной записи хранения Azure, которая служит основной или дополнительной учетной записью хранения для кластера HDInsight. При создании кластера HDInsight получает доступ к обоим типам учетных записей хранения.
+
+        > [!IMPORTANT]  
+        > Не вращаются ключ хранилища для этой учетной записи хранения Azure, так как это вызовет действия последующих скриптов с помощью скриптов, хранящихся на нем переход на другой.
 
       * Открытый общий доступ к файлам служба, доступная через пути http://. Примерами являются BLOB-объектов Azure, GitHub, OneDrive.
 
@@ -147,7 +150,6 @@ ms.locfileid: "66479458"
 | --- | --- |
 | добавление учетной записи хранения Azure; |`https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh`. Ознакомьтесь со статьей [Добавление дополнительных учетных записей хранения в HDInsight](hdinsight-hadoop-add-storage.md). |
 | установка Hue; |`https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh`. Ознакомьтесь со статьей [Установка и использование Hue на кластерах HDInsight Hadoop](hdinsight-hadoop-hue-linux.md). |
-| установка Presto; |`https://raw.githubusercontent.com/hdinsight/presto-hdinsight/master/installpresto.sh`. Ознакомьтесь со статьей [Установка и использование Presto в кластерах HDInsight Hadoop](hdinsight-hadoop-install-presto.md). |
 | установка Giraph; |`https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh`. Ознакомьтесь со статьей [Установка Apache Giraph в кластерах HDInsight Hadoop и использование Giraph для обработки диаграмм больших объемов](hdinsight-hadoop-giraph-install-linux.md). |
 | Предварительная загрузка библиотек Hive |`https://hdiconfigactions.blob.core.windows.net/linuxsetupcustomhivelibsv01/setup-customhivelibs-v01.sh`. Ознакомьтесь со статьей [Добавление пользовательских библиотек Apache Hive при создании кластера HDInsight](hdinsight-hadoop-add-hive-libraries.md). |
 
@@ -174,7 +176,7 @@ ms.locfileid: "66479458"
     | Свойство | Значение |
     | --- | --- |
     | Выберите скрипт | Чтобы использовать собственный скрипт, выберите __Настраиваемый__. В противном случае выберите один из предоставленных скриптов. |
-    | Name |Укажите имя для действия сценария. |
+    | ИМЯ |Укажите имя для действия сценария. |
     | URI bash-скрипта |Укажите URI сценария. |
     | Головной, рабочий или Zookeeper |Укажите узлы, на которых выполняется сценарий: **головной**, **рабочий** или **ZooKeeper**. |
     | Параметры |Укажите параметры, если они требуются для сценария. |

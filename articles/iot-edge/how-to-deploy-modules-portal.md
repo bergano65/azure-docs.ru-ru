@@ -4,18 +4,18 @@ description: Использование портала Azure для развер
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 02/19/2019
+ms.date: 06/25/2019
 ms.topic: conceptual
 ms.reviewer: menchi
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 9d7729dce5419c5813de3c4dfce55c40098f5988
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8337c8672eb886d79b38b2a38a74037f88604497
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60595243"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448550"
 ---
 # <a name="deploy-azure-iot-edge-modules-from-the-azure-portal"></a>Развертывание модулей IoT Edge Azure с помощью портала Azure
 
@@ -43,9 +43,9 @@ ms.locfileid: "60595243"
 
 ### <a name="add-modules"></a>Добавление модулей
 
-1. В разделе **Параметры реестра** на этой странице введите учетные данные для доступа ко всем реестрам частных контейнеров, которые содержат образы модулей.
+1. В **параметры реестра контейнеров** раздел страницы, введите учетные данные для доступа к любой закрытым реестрам контейнеров, которые содержат образы модуля.
 
-1. В разделе **Модули развертывания** на этой странице выберите **Добавить**.
+1. В **развертывания модулей** раздел страницы, выберите **добавить**.
 
 1. Просмотрите типы модулей в раскрывающемся списке:
 

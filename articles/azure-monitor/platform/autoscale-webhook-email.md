@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/03/2017
 ms.author: ancav
 ms.subservice: autoscale
-ms.openlocfilehash: 25ef2541dfa0b4cbd6e11d64381da645acfe653a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: c1386f4058f9490bad0161b680005db6031bace1
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60787313"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67491530"
 ---
 # <a name="use-autoscale-actions-to-send-email-and-webhook-alert-notifications-in-azure-monitor"></a>Использование действий автомасштабирования для отправки электронной почты и уведомлений об оповещениях веб-перехватчика в Azure Monitor
 В этой статье показано, как настраиваются триггеры, позволяющие вам обращаться к определенным URL-адресам или отправлять сообщения электронной почты на основе действий автоматического масштабирования в Azure.  
@@ -111,7 +111,7 @@ ms.locfileid: "60787313"
 | timestamp |Да |Отметка времени, когда было запущено действие автоматического масштабирования |
 | id |Да |Идентификатор Resource Manager для параметра автоматического масштабирования |
 | name |Да |Имя параметра автоматического масштабирования |
-| details |Да |Описание действия, предпринятого службой автоматического масштабирования, и изменение числа экземпляров |
+| сведения |Да |Описание действия, предпринятого службой автоматического масштабирования, и изменение числа экземпляров |
 | subscriptionId |Да |Идентификатор подписки для масштабируемого целевого ресурса |
 | resourceGroupName |Да |Имя группы ресурсов для масштабируемого целевого ресурса |
 | resourceName |Да |Имя масштабируемого целевого ресурса |

@@ -11,18 +11,18 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9cf0b848e551d3c0e7d7275af9eb2c8e970dbd9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dd4c6952aab1581a968fc671141792c0e16a7d46
+ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67113403"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67536957"
 ---
 # <a name="reports-in-azure-multi-factor-authentication"></a>Отчеты в службе Многофакторной идентификации Azure
 
 Служба "Многофакторная идентификация Azure" предоставляет несколько типов отчетов, которые могут быть полезны для вас и вашей организации. Просмотреть их можно на портале Azure. В следующей таблице перечислены доступные отчеты:
 
-| Отчет | Расположение | Описание |
+| Отчет | Location | Описание |
 |:--- |:--- |:--- |
 | Журнал заблокированных пользователей | "Azure AD > Сервер MFA > Блокировать или разблокировать пользователей" | История запросов на блокировку или разблокирование пользователей. |
 | Предупреждения об использовании и о мошенничестве | "Azure AD > События входа" | Сведения об общем использовании, сводка пользователей, сведения о пользователях, а также история предупреждений о мошенничестве, отправленных в течение указанного диапазона дат. |
@@ -188,5 +188,6 @@ ms.locfileid: "67113403"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+* [Об использовании SSPR и многофакторной проверки Подлинности и создания отчетов](howto-authentication-methods-usage-insights.md)
 * [Для пользователей](../user-help/multi-factor-authentication-end-user.md)
 * [Выберите для себя решение "Многофакторная идентификация Microsoft Azure"](concept-mfa-whichversion.md)

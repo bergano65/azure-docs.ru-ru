@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/07/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 899bf4bbf201ae785a4f49c7f278de75fb48945e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 02a8b825a513c75ef7c037348ccaecdf5026ded2
+ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64926259"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67560475"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Общие папки Azure можно легко использовать в Windows и Windows Server. В этой статье рассматриваются рекомендации по использованию общей папки Azure в Windows и Windows Server.
@@ -234,7 +234,7 @@ Remove-PSDrive -Name <desired-drive-letter>
 
 | Версия Windows                           | Состояние SMB 1 по умолчанию | Метод удаления или отключения       | 
 |-------------------------------------------|----------------------|-----------------------------|
-| Windows Server 2019 (предварительная версия)             | Отключено             | Удаление с помощью функции Windows |
+| Windows Server 2019                       | Отключено             | Удаление с помощью функции Windows |
 | Windows Server версии 1709 или выше            | Отключено             | Удаление с помощью функции Windows |
 | Windows 10 версии 1709 или выше                | Отключено             | Удаление с помощью функции Windows |
 | Windows Server 2016                       | Enabled              | Удаление с помощью функции Windows |
@@ -246,7 +246,7 @@ Remove-PSDrive -Name <desired-drive-letter>
 | Windows 7                                 | Enabled              | Отключение с помощью реестра       | 
 
 ### <a name="auditing-smb-1-usage"></a>Аудит использования SMB 1
-> Применяется к Windows Server 2019 (предварительная версия), Semi-Annual Channel для Windows Server (версии 1709 и 1803), Windows Server 2016, Windows 10 (версии 1507, 1607, 1703, 1709 и 1803), Windows Server 2012 R2 и Windows 8.1.
+> Применяется к Windows Server 2019, Windows Server полугодовой канал (версии 1709 и 1803), Windows Server 2016, Windows 10 (версии 1507, 1607, 1703, 1709 и 1803), Windows Server 2012 R2 и Windows 8.1
 
 Прежде чем удалять SMB 1 в вашей среде, можете провести аудит использования SMB 1, чтобы узнать, повлияет ли это изменение на работу каких-либо клиентов. Если какие-либо запросы к папкам SMB выполняются с помощью SMB 1, событие аудита будет регистрироваться в журнале событий в разделе `Applications and Services Logs > Microsoft > Windows > SMBServer > Audit`. 
 
@@ -260,7 +260,7 @@ Set-SmbServerConfiguration –AuditSmb1Access $true
 ```
 
 ### <a name="removing-smb-1-from-windows-server"></a>Удаление SMB 1 из Windows Server
-> Применяется к Windows Server 2019 (предварительная версия), Semi-Annual Channel для Windows Server (версии 1709 и 1803), Windows Server 2016 и Windows Server 2012 R2.
+> Применяется к 2019 Windows Server, Windows Server полугодовой канал (версии 1709 и 1803), Windows Server 2016, Windows Server 2012 R2
 
 Чтобы удалить SMB 1 из экземпляра Windows Server, выполните следующий командлет в сеансе PowerShell с повышенными правами:
 

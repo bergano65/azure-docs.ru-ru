@@ -4,14 +4,14 @@ ms.service: storage
 ms.topic: include
 ms.date: 05/06/2019
 ms.author: rogarana
-ms.openlocfilehash: 241e43a9cd851bf550c3eef8cad1fc3e0cc3e5a9
-ms.sourcegitcommit: 6e6813f8e5fa1f6f4661a640a49dc4c864f8a6cb
+ms.openlocfilehash: 9f259c3e403e933c847ac56000b1db2cd594caf5
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67150462"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449934"
 ---
-| Ресурс | Общие файлы уровня "Стандарт" | Общие файлы уровня "Премиум" |
+| Ресурс | Общие файлы уровня "Стандарт" | Файловые ресурсы уровня "премиум" |
 |----------|---------------|------------------------------------------|
 | Минимальный размер общего файла | Минимальное значение не задано; Оплата по мере | Содержит 100 Гиб; Подготовка |
 | Максимальный размер общей папки | 5 Тиб (GA), 100 Tиб (Предварительная версия) | 100 (тиб) |

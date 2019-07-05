@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 05/17/2019
-ms.openlocfilehash: 11abbb0494a9771676dcf2436b5e808346c16368
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 488a032e177897caf2897ba6335f4e7f64dc0e4d
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67078564"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67543831"
 ---
 # <a name="regenerate-storage-account-access-keys"></a>Повторное создание ключей доступа учетной записи хранения
 
@@ -72,7 +72,7 @@ for name, ds in datastores.items():
 > [!IMPORTANT]
 > Выполните все действия, обновление и рабочей области с помощью интерфейса командной строки, а также хранилища данных с помощью Python. Обновление только тот или иной может привести к ошибкам, пока не обновляются.
 
-1. Повторно создайте ключ. Сведения о повторном создании ключа доступа, см. в разделе [Управление учетной записью хранения](/azure/storage/common/storage-account-manage.md#access-keys) статьи. Сохраните новый ключ.
+1. Повторно создайте ключ. Сведения о повторном создании ключа доступа, см. в разделе [Управление учетной записью хранения](/azure/storage/common/storage-account-manage#access-keys) статьи. Сохраните новый ключ.
 
 1. Чтобы обновить рабочую область, для использования нового ключа, сделайте следующее:
 

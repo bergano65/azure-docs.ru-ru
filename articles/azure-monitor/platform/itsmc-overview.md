@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: v-jysur
-ms.openlocfilehash: abbd26779cefaf52c6f2247a5d27db25f280c930
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f2574cc64e157ff0f8a6cb875a832db88cf13dd6
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60395871"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67479811"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
 
@@ -62,7 +62,9 @@ ms.locfileid: "60395871"
 
 3. В разделе **Рабочая область OMS** выберите рабочую область Azure Log Analytics, где нужно установить решение.
    >[!NOTE]
-   >В рамках текущего перехода от Microsoft Operations Management Suite (OMS) к Azure Monitor рабочие области OMS теперь называются рабочими областями Log Analytics.
+   > * В рамках текущего перехода от Microsoft Operations Management Suite (OMS) к Azure Monitor рабочие области OMS теперь называются рабочими областями Log Analytics.
+   > * Соединитель ITSM может устанавливаться только в рабочих областях Log Analytics в следующих регионах: Восточная часть США, Западная Европа, Юго-Восточная Азия, Юго-Восточная Австралия, Западная Центральная часть США, Восточная Япония, Южная часть соединенного Королевства, центральная Индия, Центральная Канада.
+
 4. В разделе **Параметры рабочей области OMS** выберите группу ресурсов, в которой вы хотите создать решение.
 
    ![Рабочая область соединителя управления ИТ-услугами](media/itsmc-overview/itsmc-solution-workspace.png)
@@ -192,7 +194,7 @@ ServiceDeskWorkItemType_s="Incident"
 - Closed By (Кем закрыто);
 - source
 - Кому назначено
-- Категория
+- Category
 - Название
 - Описание
 - "Дата создания";
@@ -215,7 +217,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 - Кому назначено
 - Название
 - type
-- Категория
+- Category
 - Состояние
 - Escalation (Эскалация);
 - Conflict Status (Состояние конфликта);
@@ -249,7 +251,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | ClosedBy_s  | Closed By (Кем закрыто) |
 | Source_s| Contact type (Тип контакта) |
 | AssignedTo_s | Кому назначено  |
-| Category_s | Категория |
+| Category_s | Category |
 | Title_s|  Краткое описание |
 | Description_s|  Примечания |
 | CreatedDate_t|  Opened (Открыто) |
@@ -267,7 +269,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | AssignedTo_s | Кому назначено  |
 | Title_s|  Краткое описание |
 | Type_s|  type |
-| Category_s|  Категория |
+| Category_s|  Category |
 | CRState_s|  Состояние|
 | Urgency_s|  "Срочность"; |
 | Priority_s| Приоритет|

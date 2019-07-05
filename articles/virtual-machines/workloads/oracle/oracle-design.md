@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 1f808161087dff614ef83aacc606501bce96d3eb
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: 039b1628571b786a4997c08f96cc9aa0f347c7f7
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67155123"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67446702"
 ---
 # <a name="design-and-implement-an-oracle-database-in-azure"></a>Разработка базы данных Oracle и ее реализация в Azure
 
@@ -147,7 +147,7 @@ SQL> @?/rdbms/admin/awrrpt.sql
 - Использование виртуальных машин с [ускоренной сети](https://docs.microsoft.com/azure/virtual-network/create-vm-accelerated-networking-cli) для повышения производительности сети.
 - Для некоторых Linux distrubutions, рассмотрите возможность включения [поддержка операций TRIM и UNMAP](https://docs.microsoft.com/azure/virtual-machines/linux/configure-lvm#trimunmap-support).
 - Установка [Oracle Enterprise Manager](https://www.oracle.com/technetwork/oem/enterprise-manager/overview/index.html) на отдельной виртуальной машине.
-- Огромные страницы не включены в linux по умолчанию. Рассмотрите возможность включения огромные страниц и задайте `use_large_pages = ONLY ` на базе данных Oracle. Это может помочь повысить производительность. Дополнительные сведения см. [здесь](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/refrn/USE_LARGE_PAGES.html#GUID-1B0F4D27-8222-439E-A01D-E50758C88390).
+- Огромные страницы не включены в linux по умолчанию. Рассмотрите возможность включения огромные страниц и задайте `use_large_pages = ONLY` на базе данных Oracle. Это может помочь повысить производительность. Дополнительные сведения см. [здесь](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/refrn/USE_LARGE_PAGES.html#GUID-1B0F4D27-8222-439E-A01D-E50758C88390).
 
 ### <a name="disk-types-and-configurations"></a>Типы дисков и их конфигурации
 
@@ -235,5 +235,5 @@ SQL> @?/rdbms/admin/awrrpt.sql
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство. Создание высокодоступных виртуальных машин](../../linux/create-cli-complete.md)
+- [Учебник. Создание высокодоступных виртуальных машин](../../linux/create-cli-complete.md)
 - [Изучите примеры развертывания виртуальных машин с помощью интерфейса командной строки](../../linux/cli-samples.md).

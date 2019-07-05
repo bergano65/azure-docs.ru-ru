@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/16/2019
+ms.date: 06/24/2019
 ms.author: orspodek
-ms.openlocfilehash: f501257903f3b7c621512f06d1c8c7109e22db1e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 438adcd70c1be308c2b5779de0442486b303cfdd
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60394512"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449632"
 ---
 # <a name="copy-data-to-or-from-azure-data-explorer-using-azure-data-factory"></a>Копирование данных из Azure Data Explorer или обратно с помощью Фабрики данных Azure
 
@@ -140,6 +140,7 @@ ms.locfileid: "60394512"
 | type | Свойству **type** источника действия копирования необходимо задать значение **AzureDataExplorerSource** | Yes |
 | query | Запрос только для чтения в [формате KQL](/azure/kusto/query/). Используйте пользовательский запрос KQL в качестве ссылки. | Yes |
 | queryTimeout | Время ожидания до истечения срока запроса. Значение по умолчанию — 10 мин. (00:10:00); допустимое максимальное значение — 1 час (01:00:00). | Нет |
+| noTruncation | Указывает, следует ли усекать возвращенного результирующего набора. По умолчанию результат усекается после 500 000 записей или 64 МБ. Усечение настоятельно рекомендуется для правильного поведения действия. |Нет |
 
 >[!NOTE]
 >Размер источника в обозреватель данных Azure по умолчанию ограничен 500 000 записей или 64 МБ. Чтобы получить все записи без усечения, можно указать `set notruncation;` в начале запроса. Ссылаться на [запроса ограничения](https://docs.microsoft.com/azure/kusto/concepts/querylimits) на дополнительные сведения см.

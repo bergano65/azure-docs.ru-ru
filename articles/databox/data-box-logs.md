@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 06/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 108d17d3e0ca5f32648f9d4f6cf4b5f9a2984d0c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ba08cd7fdecda99c04d5bb1007b3e5f61cd1bd5c
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66495823"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67446768"
 ---
 # <a name="tracking-and-event-logging-for-your-azure-data-box-and-azure-data-box-heavy"></a>Отслеживание и ведение журнала событий для Azure Data Box и интенсивной поле данных Azure
 
@@ -24,12 +24,12 @@ ms.locfileid: "66495823"
 | Этап порядок поле данных       | Средство для отслеживания и аудита                                                                        |
 |----------------------------|------------------------------------------------------------------------------------------------|
 | Создание заказа               | [Настройка управления доступом для заказа с помощью RBAC](#set-up-access-control-on-the-order)                                                    |
-| Порядок обработки            | [Отслеживания порядка](#track-the-order) через <ul><li> Портал Azure </li><li> Доставка веб-сайта перевозчика </li><li>Уведомления по почте</ul> |
+| Порядок обработки            | [Отслеживания порядка](#track-the-order) через <ul><li> Портал Azure </li><li> Доставка веб-сайта перевозчика </li><li>Уведомления по электронной почте</ul> |
 | Настройка устройства              | Устройства, учетные данные доступа, вход [журналы действий](#query-activity-logs-during-setup)                                              |
 | Копирование данных на устройстве        | [Представление *error.xml* файлы](#view-error-log-during-data-copy) для копирования данных                                                             |
 | Подготовка к отправке            | [Проверка файлов Спецификации](#inspect-bom-during-prepare-to-ship) или файлы на устройстве                                      |
 | Отправка данных в Azure       | [Просмотрите *copylogs* ](#review-copy-log-during-upload-to-azure) ошибки во время данных можно загрузить в центре обработки данных Azure                         |
-| Стирание данных с устройства   | [Просмотр цепочки обеспечения сохранности журналов](#get-chain-of-custody-logs-after-data-erasure) включая журналы аудита и журналом заказов                                                   |
+| Стирание данных с устройства   | [Просмотр цепочки обеспечения сохранности журналов](#get-chain-of-custody-logs-after-data-erasure) включая журналы аудита и журналом заказов                |
 
 В этой статье подробно описываются различные механизмы или средств, доступных для отслеживания и аудита заказ Data Box или большой поле данных. Информация в этой статье относится, Data Box и интенсивной поле данных. В последующих разделах ссылки на поле данных применимы и к большой поле данных.
 
@@ -203,7 +203,7 @@ ms.locfileid: "66495823"
 
 Вычисление циклической проверки избыточности (CRC) выполняется при отправке в Azure. CRC из копии данных, и после передачи данных сравниваются. Несовпадение контрольной СУММЫ указывает, что соответствующие файлы не удалось отправить.
 
-По умолчанию журналы записываются в контейнер с именем copylog. Журналы хранятся с следующее соглашение об именовании:
+По умолчанию журналы записываются в контейнер с именем `copylog`. Журналы хранятся с следующее соглашение об именовании:
 
 `storage-account-name/databoxcopylog/ordername_device-serial-number_CopyLog_guid.xml`.
 
@@ -245,7 +245,41 @@ ms.locfileid: "66495823"
   <FilesErrored>2</FilesErrored>
 </CopyLog>
 ```
+Ниже приведен пример `copylog` где контейнеры, которые не соответствует соглашениям об именовании Azure были переименованы во время отправки данных в Azure.
 
+Новые уникальные имена для контейнеров, в формате `DataBox-GUID` и данные для контейнера, помещаются в новый файл переименован контейнер. `copylog` Указывает старое и новое имя контейнера для контейнера.
+
+```xml
+<ErroredEntity Path="New Folder">
+   <Category>ContainerRenamed</Category>
+   <ErrorCode>1</ErrorCode>
+   <ErrorMessage>The original container/share/blob has been renamed to: DataBox-3fcd02de-bee6-471e-ac62-33d60317c576 :from: New Folder :because either the name has invalid character(s) or length is not supported</ErrorMessage>
+  <Type>Container</Type>
+</ErroredEntity>
+```
+
+Ниже приведен пример `copylog` где большие двоичные объекты или файлы, которые не соответствует соглашениям об именовании Azure, были переименованы во время отправки данных в Azure. Новый большой двоичный объект или имена файлов преобразуются в хэш-кода SHA256 относительного пути к контейнеру и передаются в путь в зависимости от типа назначения. Назначения может быть блочных, страничных BLOB-объектов или файлов Azure.
+
+`copylog` Указывает старое и новое имя большого двоичного объекта или файла и путь в Azure.
+
+```xml
+<ErroredEntity Path="TesDir028b4ba9-2426-4e50-9ed1-8e89bf30d285\Ã">
+  <Category>BlobRenamed</Category>
+  <ErrorCode>1</ErrorCode>
+  <ErrorMessage>The original container/share/blob has been renamed to: PageBlob/DataBox-0xcdc5c61692e5d63af53a3cb5473e5200915e17b294683968a286c0228054f10e :from: Ã :because either name has invalid character(s) or length is not supported</ErrorMessage>
+  <Type>File</Type>
+</ErroredEntity><ErroredEntity Path="TesDir9856b9ab-6acb-4bc3-8717-9a898bdb1f8c\Ã">
+  <Category>BlobRenamed</Category>
+  <ErrorCode>1</ErrorCode>
+  <ErrorMessage>The original container/share/blob has been renamed to: AzureFile/DataBox-0xcdc5c61692e5d63af53a3cb5473e5200915e17b294683968a286c0228054f10e :from: Ã :because either name has invalid character(s) or length is not supported</ErrorMessage>
+  <Type>File</Type>
+</ErroredEntity><ErroredEntity Path="TesDirf92f6ca4-3828-4338-840b-398b967d810b\Ã">
+  <Category>BlobRenamed</Category>
+  <ErrorCode>1</ErrorCode>
+  <ErrorMessage>The original container/share/blob has been renamed to: BlockBlob/DataBox-0xcdc5c61692e5d63af53a3cb5473e5200915e17b294683968a286c0228054f10e :from: Ã :because either name has invalid character(s) or length is not supported</ErrorMessage>
+  <Type>File</Type>
+</ErroredEntity>
+```
 
 ## <a name="get-chain-of-custody-logs-after-data-erasure"></a>Получить цепочки обеспечения сохранности журналов после стирания данных
 

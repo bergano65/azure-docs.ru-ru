@@ -1,5 +1,5 @@
 ---
-title: Утверждениями REST API — Azure Active Directory B2C | Документация Майкрософт
+title: Утверждениями REST API — Azure Active Directory B2C
 description: Добавьте утверждениями REST API в пользовательские политики в Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: bc0cea765816bfac066b05aca65f668fbce0c8ef
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0bdef508e12a3b11143149b330da73838b53f860
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66508769"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67439013"
 ---
 # <a name="add-rest-api-claims-exchanges-to-custom-policies-in-azure-active-directory-b2c"></a>Добавить утверждениями REST API в пользовательские политики в Azure Active Directory B2C
 
@@ -28,7 +28,7 @@ ms.locfileid: "66508769"
 - может разрабатываться как этап оркестрации;
 - может вызывать внешнее действие, например записывать событие во внешнюю базу данных;
 - может использоваться, чтобы получить значение, а затем сохранить его в базе данных пользователя.
-- Можно изменить поток выполнения. 
+- Можно изменить поток выполнения.
 
 Сценарий, представленный в этой статье, включает следующие действия:
 
@@ -45,9 +45,16 @@ ms.locfileid: "66508769"
 
 В этом разделе вы готовитесь функцию Azure для получения значения для `email`и затем вернуть значение для `city` , можно использовать с помощью Azure AD B2C в качестве утверждения.
 
-Изменение файла run.csx для функции Azure, созданные для использования в следующем коде: 
+Изменение файла run.csx для функции Azure, созданные для использования в следующем коде:
 
-```
+```csharp
+#r "Newtonsoft.Json"
+
+using System.Net;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives;
+using Newtonsoft.Json;
+
 public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
 {
   log.LogInformation("C# HTTP trigger function processed a request.");
@@ -77,9 +84,9 @@ public class ResponseContent
 
 ## <a name="configure-the-claims-exchange"></a>Настройка обмена утверждениями
 
-Технический профиль предоставляет конфигурацию для обмена утверждения. 
+Технический профиль предоставляет конфигурацию для обмена утверждения.
 
-Откройте *TrustFrameworkExtensions.xml* файл и добавьте следующие элементы XML внутри **ClaimsProvider** элемент.
+Откройте *TrustFrameworkExtensions.xml* файл и добавьте следующие **ClaimsProvider** XML-элемент внутри **ClaimsProviders** элемент.
 
 ```XML
 <ClaimsProvider>
@@ -134,7 +141,7 @@ public class ResponseContent
 ```XML
 <OrchestrationStep Order="6" Type="ClaimsExchange">
   <ClaimsExchanges>
-    <ClaimsExchange Id="GetLoyaltyData" TechnicalProfileReferenceId="AzureFunctions-LookUpLoyaltyWebHook" />
+    <ClaimsExchange Id="GetLoyaltyData" TechnicalProfileReferenceId="AzureFunctions-WebHook" />
   </ClaimsExchanges>
 </OrchestrationStep>
 ```
@@ -188,7 +195,7 @@ public class ResponseContent
     <!-- Add a step 6 to the user journey before the JWT token is created-->
     <OrchestrationStep Order="6" Type="ClaimsExchange">
       <ClaimsExchanges>
-        <ClaimsExchange Id="GetLoyaltyData" TechnicalProfileReferenceId="AzureFunctions-LookUpLoyaltyWebHook" />
+        <ClaimsExchange Id="GetLoyaltyData" TechnicalProfileReferenceId="AzureFunctions-WebHook" />
       </ClaimsExchanges>
     </OrchestrationStep>
     <OrchestrationStep Order="7" Type="SendClaims" CpimIssuerTechnicalProfileReferenceId="JwtIssuer" />
@@ -204,13 +211,15 @@ public class ResponseContent
 После добавления нового утверждения Технический профиль выглядит следующим образом:
 
 ```XML
-<DisplayName>PolicyProfile</DisplayName>
-    <Protocol Name="OpenIdConnect" />
-    <OutputClaims>
-      <OutputClaim ClaimTypeReferenceId="objectId" PartnerClaimType="sub"/>
-      <OutputClaim ClaimTypeReferenceId="city" />
-    </OutputClaims>
-    <SubjectNamingInfo ClaimType="sub" />
+<TechnicalProfile Id="PolicyProfile">
+  <DisplayName>PolicyProfile</DisplayName>
+  <Protocol Name="OpenIdConnect" />
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="objectId" PartnerClaimType="sub"/>
+    <OutputClaim ClaimTypeReferenceId="tenantId" AlwaysUseDefaultValue="true" DefaultValue="{Policy:TenantObjectId}" />
+    <OutputClaim ClaimTypeReferenceId="city" />
+  </OutputClaims>
+  <SubjectNamingInfo ClaimType="sub" />
 </TechnicalProfile>
 ```
 

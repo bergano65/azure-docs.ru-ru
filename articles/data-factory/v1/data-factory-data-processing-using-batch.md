@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: e95f167cf6dcfe90fff1c2be174ca197cb2aa004
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 67829b6245fe4fea8da88c97fa8d5aeedccc90a0
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65204035"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67446607"
 ---
 # <a name="process-large-scale-datasets-by-using-data-factory-and-batch"></a>Обработка больших наборов данных с помощью фабрики данных и пакетной службы
 > [!NOTE]
@@ -124,7 +124,7 @@ ms.locfileid: "65204035"
    Е. Нажмите кнопку **ОК**, чтобы создать пул.
 
 #### <a name="azure-storage-explorer"></a>Обозреватель службы хранилища Azure
-Для проверки и изменения данных в проектах службы хранилища используется [Обозреватель службы хранилища Azure 6](https://azurestorageexplorer.codeplex.com/) или [CloudXplorer](http://clumsyleaf.com/products/cloudxplorer) (от ClumsyLeaf Software). Кроме того, с помощью этих средств можно проверять и изменять данные в журналах облачных приложений.
+Для проверки и изменения данных в проектах службы хранилища используется [Обозреватель службы хранилища Azure 6](https://azurestorageexplorer.codeplex.com/) или [CloudXplorer](https://clumsyleaf.com/products/cloudxplorer) (от ClumsyLeaf Software). Кроме того, с помощью этих средств можно проверять и изменять данные в журналах облачных приложений.
 
 1. Создайте контейнер **mycontainer** с закрытым доступом (без анонимного доступа).
 

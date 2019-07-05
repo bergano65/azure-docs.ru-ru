@@ -12,12 +12,12 @@ ms.date: 05/08/2019
 ms.author: celested
 ms.reviewer: arvinh,luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e34e6257b4800387470cdc1b7d624bf3ebd1d3e6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 95b7cbcf4e485dc93d49b9559dcb7d0d4f597ebe
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65989233"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67550355"
 ---
 # <a name="configure-single-sign-on-to-non-gallery-applications-in-microsoft-identity-platform"></a>Настройка единого входа для приложений не из коллекции в платформе Microsoft identity
 
@@ -186,7 +186,7 @@ ms.locfileid: "65989233"
 3. Выберите **пользователей и групп (\<номер > выбрано)** . **Пользователей и групп** откроется страница со списком доступных пользователей и групп.
 4. Тип или прокрутки для поиска пользователя или группу, которую вы хотите назначить из списка.
 5. Выберите каждого пользователя или группы, который требуется добавить, а затем выберите **выберите** кнопки. **Пользователей и групп** страницы исчезнет.
-6. В **добавьте назначения** выберите **назначить**. **<application name> -Пользователи и группы** отображается страница с дополнительных пользователей, перечисленных в списке.
+6. В **добавьте назначения** выберите **назначить**. **\<Имя приложения >-пользователи и группы** отображается страница с дополнительных пользователей, перечисленных в списке.
 
    ![Приложение пользователей и групп](./media/configure-single-sign-on-non-gallery-applications/application-users-and-groups.png)
 
@@ -250,6 +250,6 @@ ms.locfileid: "65989233"
 
 ## <a name="related-articles"></a>Связанные статьи
 
-- [Руководство. Настройка утверждений, выпущенных в маркере SAML для корпоративных приложений](../develop/active-directory-saml-claims-customization.md)
+- [Практическое руководство. Настройка утверждений, выпущенных в маркере SAML для корпоративных приложений](../develop/active-directory-saml-claims-customization.md)
 - [Отладка на основе SAML единого входа в приложения в Azure Active Directory](../develop/howto-v1-debug-saml-sso-issues.md)
 - [Платформа удостоверений Майкрософт (прежнее название — Azure Active Directory для разработчиков)](../develop/index.yml)

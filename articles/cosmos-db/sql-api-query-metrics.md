@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
-ms.openlocfilehash: 61bb102e17d9980d991fdf423174d7110cd5433d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d61d3d00de5b46f7dad44625509eabe6836ca7cf
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66237867"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447257"
 ---
 # <a name="tuning-query-performance-with-azure-cosmos-db"></a>Настройка производительности запросов в Azure Cosmos DB
 
@@ -272,7 +272,7 @@ IReadOnlyDictionary<string, QueryMetrics> metrics = result.QueryMetrics;
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Дополнительные сведения о поддерживаемых ключевых словах и операторах SQL-запросов см. в статье [SQL-запросы для API DocumentDB в Azure Cosmos DB](how-to-sql-query.md). 
+* Дополнительные сведения о поддерживаемых ключевых словах и операторах SQL-запросов см. в статье [SQL-запросы для API DocumentDB в Azure Cosmos DB](sql-query-getting-started.md). 
 * Дополнительные сведения о единицах запроса см. в статье [Единицы запросов в базе данных Azure Cosmos DB](request-units.md).
 * Дополнительные сведения о политике индексирования см. в статье [Как работает индексирование данных в Azure Cosmos DB?](index-policy.md) 
 

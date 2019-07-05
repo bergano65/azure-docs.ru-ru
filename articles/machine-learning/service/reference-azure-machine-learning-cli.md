@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 541ffe70ae5198e631568584a58d02ac283e89d3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 601a6139b81e45fa5005b7510189eac594c29fb0
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66298240"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67475999"
 ---
 # <a name="use-the-cli-extension-for-azure-machine-learning-service"></a>Использование расширения интерфейса командной строки для Службы машинного обучения Azure
 
@@ -58,6 +58,15 @@ az extension add -n azure-cli-ml
 ```azurecli-interactive
 az ml -h
 ```
+
+## <a name="update-the-extension"></a>Обновление расширения
+
+Чтобы обновить расширение Machine Learning CLI, используйте следующую команду:
+
+```azurecli-interactive
+az extension update -n azure-cli-ml
+```
+
 
 ## <a name="remove-the-extension"></a>Удаление расширения
 

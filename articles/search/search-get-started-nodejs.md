@@ -1,6 +1,6 @@
 ---
-title: Начало работы со службой "Поиск Azure" в Node.js
-description: Пошаговое создание приложения поиска в облачной службе поиска Azure с использованием Node.js в качестве языка программирования.
+title: 'Краткое руководство по node.js: Создания, загрузки и запроса индексов с помощью API REST службы поиска Azure — службы поиска Azure'
+description: Описание способов создания индекса, загрузка данных и выполнение запросов с помощью API REST поиска Azure и Node.js.
 author: jj09
 manager: jlembicz
 services: search
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.date: 04/26/2017
 ms.author: jjed
 ms.custom: seodec2018
-ms.openlocfilehash: 1b37b3c52abd3750c3452a46bdf5b0c5954de4dd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 44b7f1f49d6764418dcc0e72cb667e17a2b920c6
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61289209"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67450023"
 ---
-# <a name="get-started-with-azure-search-in-nodejs"></a>Начало работы со службой поиска Azure на Node.js
+# <a name="quickstart-create-an-azure-search-index-in-nodejs"></a>Краткое руководство. Создание индекса службы поиска Azure в Node.js
 > [!div class="op_single_selector"]
 > * [Портал](search-get-started-portal.md)
 > * [.NET](search-howto-dotnet-sdk.md)
@@ -32,7 +32,7 @@ ms.locfileid: "61289209"
 ## <a name="about-the-data"></a>О данных
 В этом примере приложения используются данные [Геологической службы США (USGS)](https://geonames.usgs.gov/domestic/download_data.htm), отфильтрованные по штату Род-Айленд для сокращения размера набора данных. Мы будем использовать эти данные при создании приложения поиска, возвращающего важные здания, такие как больницы и школы, а также геологические объекты, например реки, озера и вершины.
 
-В этом приложении программа **DataIndexer** создает и загружает индекс с помощью конструкции [индексатора](https://msdn.microsoft.com/library/azure/dn798918.aspx), получая отфильтрованный набор данных USGS из общедоступной базы данных SQL Azure. Учетные данные и сведения о подключении к сетевому источнику данных предоставляются в программном коде. Дальнейшая настройка не требуется.
+В этом приложении **DataIndexer** программа создает и загружает индекс с помощью [индексатора](https://msdn.microsoft.com/library/azure/dn798918.aspx) конструкция, получение отфильтрованный набор данных USGS из базы данных SQL Azure. Учетные данные и сведения о подключении к сетевому источнику данных предоставляются в программном коде. Дальнейшая настройка не требуется.
 
 > [!NOTE]
 > Мы применили фильтр к этому набору данных, чтобы не превысить ограничение бесплатной ценовой категории в 10 000 документов. Если используется стандартная категория, это ограничение не накладывается. Дополнительные сведения об ограничениях каждой ценовой категории см. в статье [Ограничения поиска Azure](search-limits-quotas-capacity.md).

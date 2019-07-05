@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 04/25/2019
+ms.date: 06/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 8cd89b21e80662ec50746e0c7721a5544cfbce30
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6af95b7f8bde6e77ba356fec9dde123e26a9a4a8
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64717499"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448624"
 ---
 # <a name="manage-an-azure-data-box-edge-device-via-windows-powershell"></a>Управление Azure Data Box пограничного устройства с помощью Windows PowerShell
 
@@ -52,8 +52,9 @@ ms.locfileid: "64717499"
 В следующем примере показано использование этого командлета для установки сертификатов IoT Edge:
 
 ```
-Set-HcsCertificate -Scope IotEdge -RootCACertificateFilePath "\\hcfs\root-ca-cert.pem" -DeviceCertificateFilePath "\\hcfs\device-ca-cert.pem\" -DeviceKeyFilePath "\\hcfs\device-key-cert.pem" -Credential "username/password"
+Set-HcsCertificate -Scope IotEdge -RootCACertificateFilePath "\\hcfs\root-ca-cert.pem" -DeviceCertificateFilePath "\\hcfs\device-ca-cert.pem\" -DeviceKeyFilePath "\\hcfs\device-key-cert.pem" -Credential "username"
 ```
+При выполнении этого командлета, будет предложено ввести пароль для общей сетевой папке.
 
 Дополнительные сведения о сертификатах см. в статье [сертификаты Azure IoT Edge](https://docs.microsoft.com/azure/iot-edge/iot-edge-certs) или [установить сертификаты на шлюзе](https://docs.microsoft.com/azure/iot-edge/how-to-create-transparent-gateway#install-certificates-on-the-gateway).
 
@@ -75,13 +76,12 @@ Set-HcsCertificate -Scope IotEdge -RootCACertificateFilePath "\\hcfs\root-ca-cer
     В следующем примере показано использование этого командлета:
 
     ```powershell
-    Get-AzureDataBoxEdgeComputeRoleLogs -Path "\\hcsfs\logs\myacct" -Credential "username/password" -RoleInstanceName "IotRole" -FullLogCollection
+    Get-AzureDataBoxEdgeComputeRoleLogs -Path "\\hcsfs\logs\myacct" -Credential "username" -FullLogCollection
     ```
 
     Ниже приведено описание параметров, используемых для командлета:
     - `Path`: Введите сетевой путь к общей папке, где вы хотите создать пакет журналов вычисления.
-    - `Credential`: Укажите имя пользователя и пароль на общий сетевой ресурс.
-    - `RoleInstanceName`: Укажите эту строку `IotRole` для этого параметра.
+    - `Credential`: Укажите имя пользователя на общий сетевой ресурс. При выполнении этого командлета, необходимо предоставить пароль общей папки.
     - `FullLogCollection`: Этот параметр гарантирует, что пакет журналов будет содержать все журналы вычислений. По умолчанию пакет журналов содержит только подмножество журналов.
 
 ## <a name="monitor-and-troubleshoot-compute-modules"></a>Мониторинг и устранение неполадок модули вычислений

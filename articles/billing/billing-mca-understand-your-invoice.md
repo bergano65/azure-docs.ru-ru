@@ -1,43 +1,40 @@
 ---
-title: Расшифровка счета клиента соглашение | Документация Майкрософт
-description: Узнайте, как для чтения и пояснения к счету MCA
-services: ''
-documentationcenter: ''
-author: jureid
+title: Расшифровка счета соглашении клиента Майкрософт в Azure
+description: Узнайте, как для чтения и пояснения к счету клиента соглашение в Azure
+author: bandersmsft
 manager: jureid
-editor: ''
 tags: billing
 ms.service: billing
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/19/2019
+ms.date: 07/01/2019
 ms.author: banders
-ms.openlocfilehash: aee51793c66ae57f740300797b8fdc1799e685cd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fed658d3f672d6116d7c2b0f3e2e9ad989dd67c6
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65604036"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67490635"
 ---
-# <a name="understand-terms-on-your-microsoft-customer-agreement-invoice"></a>Значение терминов в счете клиента соглашение Microsoft
+# <a name="terms-in-your-microsoft-customer-agreement-invoice"></a>Условия в соглашение с клиентом Microsoft счета
 
-Эта статья относится к учетной записи выставления счетов для клиента соглашение Microsoft. [Проверьте наличие доступа к соглашению клиента Microsoft](#check-access-to-a-microsoft-customer-agreement).
+Эта статья относится к учетной записи Azure выставления счетов для клиента соглашение Microsoft. [Проверьте наличие доступа к соглашению клиента Microsoft](#check-access-to-a-microsoft-customer-agreement).
 
 Счета в общих чертах расходов и инструкции по оплате. Он доступен для скачивания в формате PDF на [портале Azure](https://portal.azure.com/). Также его можно получить по электронной почте. Дополнительные сведения см. в разделе [представление и загрузки Microsoft Azure выставляется счет](billing-download-azure-invoice.md).
 
-<!-- ## When am I billed?
+## <a name="billing-period"></a>Расчетный период
 
-You are invoiced on a monthly basis. You can find out which day of the month you receive invoices by checking *invoice date* under billing profile properties in the [Azure portal](https://portal.azure.com/). Charges that occur between the end of the billing period and the invoice date are included in the next month's invoice, since they are in the next billing period. The billing period start and end dates for each invoice are listed in the invoice PDF above **Billing Summary**. -->
+Вам выставляются ежемесячно. Можно выяснить, какие числа месяца, вы получаете счета, проверив *дату накладной* в разделе выставления счетов свойства профиля в [портала Azure](https://portal.azure.com/). Расходы, которые выполняются между окончания расчетного периода и выставления счета, включаются в счет следующего месяца, так как они находятся в следующем расчетном периоде. Расчетный период даты начала и окончания для каждой накладной, перечислены в счете PDF выше **выставления счетов Сводка**.
 
 ## <a name="invoice-terms-and-descriptions"></a>Условия предоставления и описания
 
-В следующих разделах перечислены важные термины, которые встречаются в счете и описания каждого термина.
+В следующих разделах список важных терминов, см. в разделе в ваш счет и содержат описания каждого термина.
 
 ### <a name="invoice-summary"></a>Сводка по счету
 
-**Сводка по счету** верхней части первой страницы и отображает сведения о профиле выставления счетов и метод оплаты.
+**Сводка по счету** в верхней части первой страницы и отображает сведения о профиле выставления счетов и метод оплаты.
 
 ![Раздел "Сводка по счету"](./media/billing-understand-your-invoice-mca/invoicesummary.png)
 
@@ -78,7 +75,6 @@ You are invoiced on a monthly basis. You can find out which day of the month you
 
 Общая сумма к оплате для каждого семейства службы рассчитывается путем вычитания *кредиты Azure* из *кредиты/плата* и добавление *налог*:
 
-<!-- `Total = Charges/Credits - Azure Credit + Tax` -->
 
 ![Сведения о разделе счета](./media/billing-understand-your-invoice-mca/invoicesectiondetails.png)
 
@@ -103,9 +99,9 @@ You are invoiced on a monthly basis. You can find out which day of the month you
 ## <a name="check-access-to-a-microsoft-customer-agreement"></a>Проверьте доступ к соглашению клиента Microsoft
 [!INCLUDE [billing-check-mca](../../includes/billing-check-mca.md)]
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
+Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

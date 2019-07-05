@@ -13,12 +13,12 @@ ms.subservice: pim
 ms.date: 04/09/2019
 ms.author: rolyon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07259d90c7119dec4ca9139e10af2fb20a439425
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e1760d0e0bd356a05d84c07eda005e0526da5d13
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60289468"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67476526"
 ---
 # <a name="assign-azure-ad-roles-in-pim"></a>Назначение ролей Azure AD в PIM
 
@@ -42,17 +42,17 @@ ms.locfileid: "60289468"
 
 1. Щелкните **Роли** или **Участники**.
 
-    ![Роли Azure AD](./media/pim-how-to-add-role-to-user/pim-directory-roles.png)
+    ![Выделенной роли Azure AD с параметрами меню роли и члены](./media/pim-how-to-add-role-to-user/pim-directory-roles.png)
 
 1. Щелкните **Добавить участника**, чтобы открыть диалоговое окно "Добавление управляемых участников".
 
 1. Щелкните **Выберите роль**, выберите роль, которой вы хотите управлять, и нажмите кнопку **Выбрать**.
 
-    ![Выбор роли](./media/pim-how-to-add-role-to-user/pim-select-a-role.png)
+    ![Выберите область роли со списком ролей Azure AD](./media/pim-how-to-add-role-to-user/pim-select-a-role.png)
 
 1. Щелкните **Выберите участников**, выберите пользователей, которым нужно назначить роли, а затем нажмите кнопку **Выбрать**.
 
-    ![Выбор роли](./media/pim-how-to-add-role-to-user/pim-select-members.png)
+    ![Выберите панель «элементы», где можно выбрать пользователя](./media/pim-how-to-add-role-to-user/pim-select-members.png)
 
 1. В диалоговом окне "Добавление управляемых участников" нажмите кнопку **ОК**, добавить пользователя к роли.
 
@@ -60,7 +60,7 @@ ms.locfileid: "60289468"
 
      После назначения роли выбранный пользователь отобразится в списке участников как **разрешенный** для этой роли.
 
-    ![Пользователь, имеющий разрешение на роль](./media/pim-how-to-add-role-to-user/pim-directory-role-eligible.png)
+    ![Члены роли перечисляются вместе с их состоянием активации](./media/pim-how-to-add-role-to-user/pim-directory-role-eligible.png)
 
 1. Теперь, когда пользователь имеет право для роли, сообщите им, что они могут активировать их согласно инструкциям в [активация моих ролей Azure AD в PIM](pim-how-to-activate-role.md).
 
@@ -76,17 +76,17 @@ ms.locfileid: "60289468"
 
 1. Нажмите кнопку **Участники**.
 
-    ![Список участников](./media/pim-how-to-add-role-to-user/pim-directory-role-list-members.png)
+    ![Список членов роли Azure AD — отображение состояния роли и активация](./media/pim-how-to-add-role-to-user/pim-directory-role-list-members.png)
 
 1. Щелкните **разрешенную** роль, которую нужно сделать постоянной.
 
 1. Щелкните **Дополнительно** и **Make perm** (Сделать постоянной).
 
-    ![Настройка постоянного назначения роли](./media/pim-how-to-add-role-to-user/pim-make-perm.png)
+    ![Откройте панель со списком пользователя, который подходит для роли с дополнительные пункты меню](./media/pim-how-to-add-role-to-user/pim-make-perm.png)
 
     Теперь роль отображается как **постоянная**.
 
-    ![Список участников с постоянными ролями](./media/pim-how-to-add-role-to-user/pim-directory-role-list-members-permanent.png)
+    ![Список членов, отображающий состояние роли и активации, которое теперь является окончательным](./media/pim-how-to-add-role-to-user/pim-directory-role-list-members-permanent.png)
 
 ## <a name="remove-a-user-from-a-role"></a>Удаление пользователя из роли
 
@@ -100,17 +100,17 @@ ms.locfileid: "60289468"
 
 1. Нажмите кнопку **Участники**.
 
-    ![Список участников](./media/pim-how-to-add-role-to-user/pim-directory-role-list-members.png)
+    ![Список членов роли Azure AD - stat отображение роли и активация](./media/pim-how-to-add-role-to-user/pim-directory-role-list-members.png)
 
 1. Выберите назначение роли, которое вы хотите удалить.
 
 1. Щелкните **Дополнительно** > **Удалить**.
 
-    ![Удаление роли](./media/pim-how-to-add-role-to-user/pim-remove-role.png)
+    ![Откройте панель со списком как пользователь с постоянной роли с дополнительные пункты меню](./media/pim-how-to-add-role-to-user/pim-remove-role.png)
 
 1. В сообщении с запросом на подтверждение щелкните **Да**.
 
-    ![Удаление роли](./media/pim-how-to-add-role-to-user/pim-remove-role-confirm.png)
+    ![Сообщение с запросом, если вы хотите удалить участника из роли](./media/pim-how-to-add-role-to-user/pim-remove-role-confirm.png)
 
     Назначение роли удалено.
 
@@ -140,13 +140,13 @@ ms.locfileid: "60289468"
 
 1. В списке **Выбор** найдите и выберите субъект-службу **MS-PIM**.
 
-   ![Добавление разрешений для MS-PIM](./media/pim-how-to-add-role-to-user/ms-pim-add-permissions.png)
+   ![Добавить область назначения роли — добавить разрешения для субъекта-службы MS-PIM](./media/pim-how-to-add-role-to-user/ms-pim-add-permissions.png)
 
 1. Чтобы присвоить роль, выберите **Сохранить**.
 
    Через несколько секунд субъекту-службе MS-PIM будет назначена роль "Администратор доступа пользователей" на уровне подписки.
 
-   ![Роль "Администратор доступа пользователей" для MS-PIM](./media/pim-how-to-add-role-to-user/ms-pim-user-access-administrator.png)
+   ![Колонка "доступ Управление (IAM)", со администратор доступа пользователей назначение роли для MS PIM](./media/pim-how-to-add-role-to-user/ms-pim-user-access-administrator.png)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

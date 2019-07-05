@@ -1,37 +1,34 @@
 ---
-title: Просмотр и загрузка цены на Azure в организации | Документация Майкрософт
+title: Просмотр и загрузка цены на Azure вашей организации
 description: Узнайте, как просмотреть и скачать цены или оценить затраты благодаря ценовой политике вашей организации.
-services: ''
-documentationcenter: ''
-author: adpick
+author: bandersmsft
 manager: jureid
-editor: ''
 tags: billing
 ms.service: billing
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/22/2019
+ms.date: 07/01/2019
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: d4c64433089f14d845cea8be9adf0ef13675cfd1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a7f7da197a06dbbb730a7386882e534b8381cf9e
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62127639"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67491356"
 ---
 # <a name="view-and-download-your-organizations-azure-pricing"></a>Просмотр и загрузка цены на Azure вашей организации
 
-Клиенты с соглашением Enterprise (EA), Azure или [соглашении клиента Microsoft](#check-your-access-to-a-microsoft-customer-agreement) может просмотреть и скачать их стоимость на портале Azure. Если у вас есть соглашение Microsoft клиента, см. в разделе представления и загрузки, цены на соглашение с клиентом Microsoft.
+Клиенты Azure с помощью соглашение Azure Enterprise (EA) или [соглашении клиента Microsoft](#check-your-access-to-a-microsoft-customer-agreement) может просмотреть и скачать их стоимость на портале Azure.
 
-## <a name="view-and-download-ea-pricing"></a>Просмотр и скачивание сведений о ценах EA
+## <a name="ea-pricing"></a>Цены на EA
 
 В зависимости от политик, которые администратор задал для вашей организации, только некоторые административные роли предоставляют доступ к сведениям о ценах EA вашей организации. Дополнительные сведения см. в описании [административных ролей в Azure при использовании Соглашения Azure Enterprise](billing-understand-ea-roles.md).
 
-1. Войдите на [портал Azure](https://portal.azure.com/) с правами администратора организации.
-1. Выполните поиск по **Управление затратами + выставление счетов**.
+1. Как администратор предприятия для входа на [портала Azure](https://portal.azure.com/).
+1. Поиск *Cost Management + выставление счетов*.
 
    ![Снимок экрана, показывающий поиск на портале Azure](./media/billing-ea-pricing/portal-cm-billing-search.png)
 
@@ -40,27 +37,28 @@ ms.locfileid: "62127639"
    ![Снимок экрана с пунктом "Использование+расходы" в разделе "Выставление счетов"](./media/billing-ea-pricing/ea-pricing-usage-charges-nav.png)
 
 1. Выберите ![Снимок экрана с поиском на портале Azure](./media/billing-ea-pricing/download-icon.png) **Скачать** для месяца.
+
 1. В разделе **Прейскурант** выберите **Скачать CSV-файл**.
 
    ![Снимок экрана с кнопкой скачивания CSV-файла с прейскурантом](./media/billing-ea-pricing/download-ea-price-sheet.png)
 
-## <a name="view-and-download-pricing-for-your-microsoft-customer-agreement"></a>Просмотр и загрузка, цены на соглашение с клиентом Microsoft
+## <a name="microsoft-customer-agreement-pricing"></a>Цены на соглашении клиента Microsoft
 
 Будьте выставления счетов профиль владельца, участника, чтения или Управление счетами возможность просматривать и скачивать цены. Дополнительные сведения о ролях выставления счетов для соглашений клиентов Майкрософт, см. в разделе [выставления счетов профиля роли и задачи](billing-understand-mca-roles.md#billing-profile-roles-and-tasks).
 
 ### <a name="download-price-sheets-for-the-current-billing-period"></a>Скачайте прайс-листы для текущего расчетного периода
 
-1. Войдите на [портале Azure](https://portal.azure.com).
-1. Выполните поиск по **Управление затратами + выставление счетов**.
+1. Войдите на [портал Azure](https://portal.azure.com).
+1. Поиск *Cost Management + выставление счетов*.
 1. Выберите профиль выставления счетов. В зависимости от доступа необходимо сначала выбрать учетную запись выставления счетов.
-1. В **Обзор** колонке найдите ссылки для скачивания под расходы с начала месяца.
+1. В **Обзор** области найти ссылки на загрузки под расходы с начала месяца.
 1. Выберите **Azure прайс-лист**.
 ![Снимок экрана, показывающий загрузки из сводки](./media/billing-ea-pricing/open-pricing.png)
 
 ### <a name="download-price-sheets-for-billed-charges"></a>Скачайте прайс-листы для начисления оплаты
 
-1. Войдите на [портале Azure](https://portal.azure.com).
-1. Выполните поиск по **Управление затратами + выставление счетов**.
+1. Войдите на [портал Azure](https://portal.azure.com).
+1. Поиск *Cost Management + выставление счетов*.
 1. Выберите профиль выставления счетов. В зависимости от доступа необходимо сначала выбрать учетную запись выставления счетов.
 1. Выберите **Счета**.
 1. В сетке счета найдите строку счета-фактуры, соответствующий прайс-лист, который вы хотите загрузить.
@@ -85,7 +83,7 @@ ms.locfileid: "62127639"
 
 1. Выберите организацию.
 1. Нажмите кнопку **Применить**.
-1. Найдите и добавьте продукты в расчетную стоимость.
+1. Поиск, а затем добавьте продукты для расчета стоимости.
 1. Отображаемые ориентировочные цены основаны на ценах для выбранной организации.
 
 ## <a name="check-your-access-to-a-microsoft-customer-agreement"></a>Проверьте доступ к соглашению клиента Microsoft

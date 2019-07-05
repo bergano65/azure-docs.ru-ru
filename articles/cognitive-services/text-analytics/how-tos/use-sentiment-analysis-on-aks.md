@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
 ms.author: dapine
-ms.openlocfilehash: 4d5e1da01be531550915a38bed17dd8e57be907a
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: a419ed3b9c0d2c4db9c552642dc5c662786f6730
+ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67454953"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67561252"
 ---
 # <a name="deploy-a-sentiment-analysis-container-to-azure-kubernetes-services-aks"></a>Развертывание контейнера анализ тональности для службы Azure Kubernetes (AKS)
 
@@ -69,7 +69,7 @@ ms.locfileid: "67454953"
     code .
     ```
 
-1. В текстовом редакторе создайте файл с именем _sentiment.yaml_ и вставьте в него следующий yaml-ФАЙЛ:
+1. В текстовом редакторе создайте файл с именем _sentiment.yaml_ и вставьте в него следующий yaml-ФАЙЛ. Не забудьте заменить `billing/value` и `apikey/value` на собственные.
 
     ```yaml
     apiVersion: apps/v1beta1
@@ -91,9 +91,9 @@ ms.locfileid: "67454953"
             - name: EULA
               value: "accept"
             - name: billing
-              value: "https://westus2.api.cognitive.microsoft.com/"
+              value: # < Your endpoint >
             - name: apikey
-              value: "16c12e3419f54ba49a3222177cef781d"
+              value: # < Your API Key >
      
     --- 
     apiVersion: v1
@@ -115,7 +115,7 @@ ms.locfileid: "67454953"
     kuberctl apply -f sentiment.yaml
     ```
 
-    После команды успешно применил конфигурацию развертывания, сообщение, аналогичное приведенному ниже приведен выходных данных.
+    После команды успешно применил конфигурацию развертывания, сообщение, аналогичное приведенному ниже:
 
     ```
     deployment.apps "sentiment" created

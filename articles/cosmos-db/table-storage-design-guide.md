@@ -8,12 +8,12 @@ ms.date: 05/21/2019
 author: wmengmsft
 ms.author: wmeng
 ms.custom: seodec18
-ms.openlocfilehash: af155b5adb2e4b45412a8b84818852ed1b1c5e72
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0812828f8d7c0be38fb03c06f4a10019e2ed153c
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65966090"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447301"
 ---
 # <a name="azure-storage-table-design-guide-designing-scalable-and-performant-tables"></a>Руководство по разработке таблиц хранилища Azure. Разработка масштабируемых и производительных таблиц
 
@@ -41,7 +41,7 @@ ms.locfileid: "65966090"
 <th></th>
 </tr>
 <tr>
-<td>Marketing</td>
+<td>Маркетинг</td>
 <td>00001</td>
 <td>2014-08-22T00:50:32Z</td>
 <td>
@@ -61,7 +61,7 @@ ms.locfileid: "65966090"
 </table>
 </tr>
 <tr>
-<td>Marketing</td>
+<td>Маркетинг</td>
 <td>00002</td>
 <td>2014-08-22T00:50:34Z</td>
 <td>
@@ -81,7 +81,7 @@ ms.locfileid: "65966090"
 </table>
 </tr>
 <tr>
-<td>Marketing</td>
+<td>Маркетинг</td>
 <td>Department</td>
 <td>2014-08-22T00:50:30Z</td>
 <td>
@@ -91,7 +91,7 @@ ms.locfileid: "65966090"
 <th>EmployeeCount</th>
 </tr>
 <tr>
-<td>Marketing</td>
+<td>Маркетинг</td>
 <td>153</td>
 </tr>
 </table>
@@ -255,7 +255,7 @@ ms.locfileid: "65966090"
 Возвращаемые службой таблиц результаты запросов отсортированы по возрастанию сначала по **PartitionKey**, а затем по **RowKey**.
 
 > [!NOTE]
-> Результаты запроса, возвращаемые API таблиц Azure в Azure DB не сортируются по ключу секции или ключ строки. Дополнительные сведения см. в ответе на вопрос [Чем API таблиц отличается от хранилища таблиц Azure?](faq.md#where-is-table-api-not-identical-with-azure-table-storage-behavior).
+> Результаты запроса, возвращаемые API таблиц Azure в Azure Cosmos DB не сортируются по ключу секции или ключ строки. Дополнительные сведения см. в ответе на вопрос [Чем API таблиц отличается от хранилища таблиц Azure?](faq.md#where-is-table-api-not-identical-with-azure-table-storage-behavior).
 
 Ключи в службе хранилища таблиц Azure являются строковыми значениями. Чтобы правильно отсортировать числовые значения, их необходимо преобразовать в значения фиксированной длины и заполнить нулями. Например, если значение идентификатора сотрудника, используемое в качестве **RowKey**, является целочисленным значением, ИД сотрудника **123** необходимо преобразовать в **00000123**. 
 
@@ -723,7 +723,7 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 
 Извлечение *n* сущностей, недавно добавленных в раздел, с помощью значения **RowKey** , выполняющего сортировку по дате и времени в обратном порядке.  
 
 > [!NOTE]
-> Результаты запроса, возвращаемые API таблиц Azure в Azure DB не сортируются по ключу секции или ключ строки. Поэтому этот шаблон подходит для Хранилища таблиц Azure, но не подходит для Azure Cosmos DB. Дополнительные сведения см. в ответе на вопрос [Чем API таблиц отличается от Хранилища таблиц Azure?](faq.md#where-is-table-api-not-identical-with-azure-table-storage-behavior).
+> Результаты запроса, возвращаемые API таблиц Azure в Azure Cosmos DB не сортируются по ключу секции или ключ строки. Поэтому этот шаблон подходит для Хранилища таблиц Azure, но не подходит для Azure Cosmos DB. Дополнительные сведения см. в ответе на вопрос [Чем API таблиц отличается от Хранилища таблиц Azure?](faq.md#where-is-table-api-not-identical-with-azure-table-storage-behavior).
 
 #### <a name="context-and-problem"></a>Контекст и проблема
 Общее требование заключается в необходимости иметь возможность извлекать последние созданные сущности. Например, десять последних заявок на возмещение сотрудникам. Табличные запросы поддерживают операцию запроса **$top** для возвращения первых *n* сущностей из набора. Аналогичная операция запроса для возвращения последних n сущностей в наборе отсутствует.  

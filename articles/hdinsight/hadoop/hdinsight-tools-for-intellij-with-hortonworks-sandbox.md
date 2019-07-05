@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 6ae271fc464e2a5735ef95a428b3070066058ddc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5234835f5fbfd5617e6b0440ff38fa900051470a
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64696145"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67450108"
 ---
 # <a name="use-hdinsight-tools-for-intellij-with-hortonworks-sandbox"></a>Использование инструментов HDInsight для IntelliJ с песочницей Hortonworks
 
@@ -24,7 +24,7 @@ ms.locfileid: "64696145"
 
 ## <a name="prerequisites"></a>Технические условия
 
-Перед началом работы с этим руководством необходимо иметь следующее:
+Перед началом работы с этой статьей необходимо иметь следующее:
 
 - Платформа данных Hortonworks Data Platform 2.4 (HDP) в песочнице Hortonworks, выполняемая на локальном компьютере. Сведения о настройке HDP см. в статье [Начало работы с песочницей Apache Hadoop, эмулятором на виртуальной машине](apache-hadoop-emulator-get-started.md). 
     > [!NOTE]
@@ -142,7 +142,7 @@ ms.locfileid: "64696145"
 2. Затем сделайте следующее:
 
     1. В раскрывающемся списке **Spark cluster (Linux only)** (Кластер Spark (только для Linux)) выберите локальную песочницу Hortonworks.
-    2. В поле **Main class name** (Имя класса Main) выберите или введите имя класса Main. В этом руководстве имя — **GroupByTest**.
+    2. В поле **Main class name** (Имя класса Main) выберите или введите имя класса Main. В этой статье называется **GroupByTest**.
 
 3. Нажмите кнопку **Submit** (Отправить). Журналы отправки заданий отображаются в окне инструмента отправки Spark.
 

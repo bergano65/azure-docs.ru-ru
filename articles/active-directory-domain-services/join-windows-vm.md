@@ -3,7 +3,7 @@ title: Доменные службы Azure Active Directory. Присоедин�
 description: Присоединение виртуальной машины Windows Server к доменным службам Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
-author: MikeStephens-MS
+author: iainfoulds
 manager: daveba
 editor: curtand
 ms.assetid: 29316313-c76c-4fb9-8954-5fa5ec82609e
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/10/2019
-ms.author: mstephen
-ms.openlocfilehash: 1564fff8a749cc2d4db9e8e820981ba5dc1da570
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: iainfou
+ms.openlocfilehash: 377e253ef595e933f3ccab76bd053e2b416d3a16
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66245974"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67473165"
 ---
 # <a name="join-a-windows-server-virtual-machine-to-a-managed-domain"></a>Присоединение виртуальной машины Windows Server к управляемому домену
 В этой статье описано развертывание виртуальной машины Windows Server с помощью портала Azure. Затем показано, как присоединить виртуальную машину к управляемому домену доменных служб Azure Active Directory (Azure AD DS).

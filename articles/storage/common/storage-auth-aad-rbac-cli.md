@@ -5,20 +5,20 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 03/21/2019
+ms.date: 06/26/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: dc2beda1ae017b5e81fddf08d0c7e88c785bcdf5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1e29b8e23927ef2ff70416d1adc76e2b2b3f2d8a
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65153880"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443712"
 ---
 # <a name="grant-access-to-azure-blob-and-queue-data-with-rbac-using-azure-cli"></a>Предоставление доступа к Azure данные больших двоичных объектов и очереди с помощью RBAC с помощью Azure CLI
 
-Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью [управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md). Служба хранилища Azure определяет набор встроенных ролей RBAC, которые охватывают общие наборы разрешений, используемых для доступа к данным BLOB-объектов или очередей. 
+Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью [управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md). Служба хранилища Azure определяет набор встроенных ролей RBAC, которые охватывают общие наборы разрешений, используемых для доступа к данным BLOB-объектов или очередей.
 
 При назначении роли RBAC для субъекта безопасности Azure AD, Azure предоставляет доступ к этим ресурсам для этого участника безопасности. Доступ может ограничиваться уровнем подписки, группой ресурсов, учетной записью хранения или отдельным контейнером или очередью. Субъект безопасности Azure AD может быть пользователь, группы, субъекта-службы приложения, или [управляемое удостоверение для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).
 
@@ -52,9 +52,9 @@ Storage Queue Data Message Sender         Allows for sending of Azure Storage qu
 Storage Queue Data Reader                 Allows for read access to Azure Storage queues and queue messages
 ```
 
-## <a name="assign-an-rbac-role-to-a-user"></a>Назначение роли RBAC для пользователя
+## <a name="assign-an-rbac-role-to-a-security-principal"></a>Назначение роли RBAC субъекту безопасности
 
-Чтобы назначить пользователю роль RBAC, используйте [Создание назначений ролей az](/cli/azure/role/assignment#az-role-assignment-create) команды. Формат команды могут отличаться в зависимости от области назначения. Следующие примеры показывают, как назначение роли пользователю в различных областях.
+Чтобы назначить роль RBAC субъекту безопасности, используйте [Создание назначений ролей az](/cli/azure/role/assignment#az-role-assignment-create) команды. Формат команды могут отличаться в зависимости от области назначения. В следующих примерах показано назначение роли пользователю в различных областях, но можно использовать ту же команду для назначения роли для субъекта безопасности.
 
 ### <a name="container-scope"></a>Область контейнера
 

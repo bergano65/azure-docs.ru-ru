@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: 9dac7aa19e428c964bd10c3ef62df949393e8d1f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a2c66c5c4f1abe535eb51dba9101757ce6d26157
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64681774"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67444347"
 ---
 # <a name="compute-context-options-for-ml-services-on-hdinsight"></a>Параметры контекста вычислений для Служб машинного обучения в HDInsight
 
@@ -76,6 +76,5 @@ ms.locfileid: "64681774"
 В этой статье вы ознакомились с параметрами, которые доступны для указания необходимости и способа выполнения параллелизации между ядрами граничного узла или кластера HDInsight. Дополнительные сведения об использовании Служб машинного обучения в кластерах HDInsight см. в следующих статьях:
 
 * [Основные сведения о службах машинного обучения и возможностях открытого кода R в HDInsight](r-server-overview.md)
-* [Начало работы со службами машинного обучения в Azure HDInsight](r-server-get-started.md)
 * [Решения службы хранилища Azure для R Server в Azure HDInsight](r-server-storage.md)
 

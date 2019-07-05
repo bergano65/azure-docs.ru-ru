@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 06/11/2019
-ms.openlocfilehash: 765db8461465b74ac068782c1b91d3c68b73f7d4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 06/26/2019
+ms.openlocfilehash: 13ea60c62283db35ce4bf9fde6c3b36ba7f88013
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67079526"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67439218"
 ---
 # <a name="audit-logs-in-azure-database-for-mariadb"></a>Журналы аудита в базе данных Azure для MariaDB
 
@@ -29,7 +29,7 @@ ms.locfileid: "67079526"
 - `audit_log_events`: управляет событий в журнал. См. в следующей таблице для определенных событий аудита.
 - `audit_log_exclude_users`: MariaDB пользователей должны быть исключены из ведения журнала. Позволяет выполнять не более четырех пользователей. Максимальная длина параметра составляет 256 символов.
 
-| **Event** | **Описание** |
+| **Событие** | **Описание** |
 |---|---|
 | `CONNECTION` | -Инициации подключения (успешное или неуспешное) <br> -Пользователь повторная проверка подлинности с другой пользователь/пароль во время сеанса <br> -Завершения соединений |
 | `DML_SELECT`| Запросы SELECT |
@@ -44,7 +44,7 @@ ms.locfileid: "67079526"
 
 Журналы аудита интегрированы с помощью журналов диагностики Azure Monitor. После включения журналы аудита на сервере MariaDB, можно выдавать их в журналах Azure Monitor, концентраторы событий и службы хранилища Azure. Дополнительные сведения о том, как включить журналы диагностики на портале Azure, см. в разделе [портала статьи в журнале аудита](howto-configure-audit-logs-portal.md#set-up-diagnostic-logs).
 
-## <a name="schemas"></a>Схемы
+## <a name="diagnostic-logs-schemas"></a>Схемы для журналов диагностики
 
 В следующих разделах, что такое выходные данные в журналах аудита MariaDB в зависимости от типа события. Порядок появления выбранных полей зависит от выбранного метода вывода.
 
@@ -54,7 +54,7 @@ ms.locfileid: "67079526"
 |---|---|
 | `TenantId` | Идентификатор клиента |
 | `SourceSystem` | `Azure` |
-| `TimeGenerated` [UTC] | Метка времени, когда журнал был записан в формате UTC |
+| `TimeGenerated [UTC]` | Метка времени, когда журнал был записан в формате UTC |
 | `Type` | Тип журнала Всегда `AzureDiagnostics` |
 | `SubscriptionId` | Идентификатор GUID для подписки, принадлежащей серверу |
 | `ResourceGroup` | Имя группы ресурсов, принадлежащей серверу |
@@ -64,13 +64,13 @@ ms.locfileid: "67079526"
 | `Resource` | Имя сервера |
 | `Category` | `MySqlAuditLogs` |
 | `OperationName` | `LogEvent` |
-| `event_class` | `connection_log` |
-| `event_subclass` | `CONNECT`, `DISCONNECT` |
-| `connection_id` | Уникальный идентификатор соединения созданные MariaDB |
-| `host` | Пустой |
-| `ip` | IP-адрес клиента, подключающегося к MariaDB |
-| `user` | Имя пользователя, выполняющего запрос |
-| `db` | Имя базы данных, подключенных к |
+| `event_class_s` | `connection_log` |
+| `event_subclass_s` | `CONNECT`, `DISCONNECT` |
+| `connection_id_d` | Уникальный идентификатор соединения созданные MariaDB |
+| `host_s` | Пустой |
+| `ip_s` | IP-адрес клиента, подключающегося к MariaDB |
+| `user_s` | Имя пользователя, выполняющего запрос |
+| `db_s` | Имя базы данных, подключенных к |
 | `\_ResourceId` | Универсальный код ресурса (URI) |
 
 ### <a name="general"></a>Общие сведения
@@ -81,7 +81,7 @@ ms.locfileid: "67079526"
 |---|---|
 | `TenantId` | Идентификатор клиента |
 | `SourceSystem` | `Azure` |
-| `TimeGenerated` [UTC] | Метка времени, когда tshe журнала была записана в формате UTC |
+| `TimeGenerated [UTC]` | Метка времени, когда журнал был записан в формате UTC |
 | `Type` | Тип журнала Всегда `AzureDiagnostics` |
 | `SubscriptionId` | Идентификатор GUID для подписки, принадлежащей серверу |
 | `ResourceGroup` | Имя группы ресурсов, принадлежащей серверу |
@@ -91,15 +91,16 @@ ms.locfileid: "67079526"
 | `Resource` | Имя сервера |
 | `Category` | `MySqlAuditLogs` |
 | `OperationName` | `LogEvent` |
-| `event_class` | `general_log` |
-| `event_subclass` | `LOG`, `ERROR`, `RESULT` |
+| `LogicalServerName_s` | Имя сервера |
+| `event_class_s` | `general_log` |
+| `event_subclass_s` | `LOG`, `ERROR`, `RESULT` |
 | `event_time` | Запрос запуска секунд в метку времени UNIX |
-| `error_code` | Код ошибки, если не удалось выполнить запрос. `0` Ошибка не означает, что |
-| `thread_id` | Идентификатор потока, который выполняет запрос |
-| `host` | Пустой |
-| `ip` | IP-адрес клиента, подключающегося к MariaDB |
-| `user` | Имя пользователя, выполняющего запрос |
-| `sql_text` | Полный текст запроса |
+| `error_code_d` | Код ошибки, если не удалось выполнить запрос. `0` Ошибка не означает, что |
+| `thread_id_d` | Идентификатор потока, который выполняет запрос |
+| `host_s` | Пустой |
+| `ip_s` | IP-адрес клиента, подключающегося к MariaDB |
+| `user_s` | Имя пользователя, выполняющего запрос |
+| `sql_text_s` | Полный текст запроса |
 | `\_ResourceId` | Универсальный код ресурса (URI) |
 
 ### <a name="table-access"></a>Доступ к таблице
@@ -108,7 +109,7 @@ ms.locfileid: "67079526"
 |---|---|
 | `TenantId` | Идентификатор клиента |
 | `SourceSystem` | `Azure` |
-| `TimeGenerated` [UTC] | Метка времени, когда журнал был записан в формате UTC |
+| `TimeGenerated [UTC]` | Метка времени, когда журнал был записан в формате UTC |
 | `Type` | Тип журнала Всегда `AzureDiagnostics` |
 | `SubscriptionId` | Идентификатор GUID для подписки, принадлежащей серверу |
 | `ResourceGroup` | Имя группы ресурсов, принадлежащей серверу |
@@ -118,12 +119,13 @@ ms.locfileid: "67079526"
 | `Resource` | Имя сервера |
 | `Category` | `MySqlAuditLogs` |
 | `OperationName` | `LogEvent` |
-| `event_class` | `table_access_log` |
-| `event_subclass` | `READ`, `INSERT`, `UPDATE`, или `DELETE` |
-| `connection_id` | Уникальный идентификатор соединения созданные MariaDB |
-| `db` | Имя базы данных |
-| `table` | Имя таблицы, доступ к |
-| `sql_text` | Полный текст запроса |
+| `LogicalServerName_s` | Имя сервера |
+| `event_class_s` | `table_access_log` |
+| `event_subclass_s` | `READ`, `INSERT`, `UPDATE`, или `DELETE` |
+| `connection_id_d` | Уникальный идентификатор соединения созданные MariaDB |
+| `db_s` | Имя базы данных |
+| `table_s` | Имя таблицы, доступ к |
+| `sql_text_s` | Полный текст запроса |
 | `\_ResourceId` | Универсальный код ресурса (URI) |
 
 ## <a name="next-steps"></a>Дальнейшие действия

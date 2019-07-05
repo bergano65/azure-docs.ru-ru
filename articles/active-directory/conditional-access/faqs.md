@@ -2,26 +2,21 @@
 title: Часто задаваемые вопросы условного доступа Azure Active Directory | Документация Майкрософт
 description: Получите ответы на часто задаваемые вопросы об условном доступе в Azure Active Directory.
 services: active-directory
-documentationcenter: ''
-author: MicrosoftGuyJFlo
-manager: daveba
-ms.assetid: 14f7fc83-f4bb-41bf-b6f1-a9bb97717c34
 ms.service: active-directory
 ms.subservice: conditional-access
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/15/2018
 ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 111daef3448533cd863d45197d45c87d8d21264b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ad0494868c494b488a238a81e504c58552813907
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67112396"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508974"
 ---
 # <a name="azure-active-directory-conditional-access-faqs"></a>Часто задаваемые вопросы условного доступа Azure Active Directory
 
@@ -33,12 +28,9 @@ ms.locfileid: "67112396"
 
 Политики применяются для пользователей службы совместной работы B2B. Однако в некоторых случаях пользователь может не иметь возможности соответствовать требованиям политики. Например, организация гостевого пользователя может не поддерживать многофакторную проверку подлинности. 
 
-
-
 ## <a name="does-a-sharepoint-online-policy-also-apply-to-onedrive-for-business"></a>Распространяется ли политика SharePoint Online на OneDrive для бизнеса?
 
 Да. Политика SharePoint Online также распространяется на OneDrive для бизнеса.
-
 
 ## <a name="why-cant-i-set-a-policy-on-client-apps-like-word-or-outlook"></a>Почему не удается задать политику для клиентских приложений, таких как Word или Outlook?
 
@@ -56,7 +48,6 @@ ms.locfileid: "67112396"
 
 В настоящее время политики условного доступа применяются избирательно к на пользователей устройств iOS и Android. На других платформах по умолчанию не влияет на приложения с помощью политики условного доступа для устройств iOS и Android. Администратор клиента может переопределить глобальную политику, чтобы запретить доступ пользователям на платформах, которые не поддерживаются.
 
-
 ## <a name="how-do-conditional-access-policies-work-for-microsoft-teams"></a>Как работают политики условного доступа для Microsoft Teams?
 
 Microsoft Teams в значительной степени зависит от Exchange Online и SharePoint Online в основных сценариях производительности, таких как собрания, календари и совместное использование файлов. Политики условного доступа, заданные для этих облачных приложений применяются к Microsoft Teams при входе пользователя непосредственно в Microsoft Teams.
@@ -64,3 +55,7 @@ Microsoft Teams в значительной степени зависит от E
 Microsoft Teams также поддерживается отдельно как облачного приложения в политиках Azure Active Directory условного доступа. Политики условного доступа, заданные для облачного приложения применяются к Microsoft Teams при входе пользователя. Однако без правильных политик для других приложений, таких как Exchange Online и SharePoint Online, пользователям по-прежнему может предоставляться к ним прямой доступ.
 
 Клиенты рабочего стола Microsoft Teams для Windows и Mac поддерживают современные методы проверки подлинности. Современные методы проверки подлинности используют вход на основе библиотеки проверки подлинности Active Directory (ADAL) для клиентских приложений Microsoft Office на всех платформах.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Чтобы настроить политики условного доступа для своей среды, см. в разделе [советы и рекомендации для условного доступа в Azure Active Directory](best-practices.md). 
