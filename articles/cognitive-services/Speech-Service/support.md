@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/26/2018
+ms.date: 07/05/2019
 ms.author: wolfma
-ms.openlocfilehash: 4099bc7bfce6de620504e03be3afc5392281d8d8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9e975bbdcec2b45d67f910ac1a83a71ed252ebda
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67072375"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67606264"
 ---
 # <a name="support-and-help-options"></a>Возможности получения поддержки и справки
 
@@ -71,7 +71,7 @@ Stack Overflow — это идеальное место для вопросов
 |Перевод речи |[[microsoft-cognitive+translation]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+translation)|
 |Намерения говорящего |[[microsoft-cognitive+luis]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+luis)|
 |Общий пакет SDK для службы "Речь" |[[microsoft-cognitive+microsoft-speech-api]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+microsoft-speech-api)|
-| Виртуальные помощники Voice-first (Предварительная версия) | [[microsoft-cognitive + виртуального-помощника + botframework]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+virtual-assistant+botframework) | 
+| Виртуальные помощники Voice-first (Предварительная версия) | [[microsoft-cognitive + виртуального-помощника + botframework]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+virtual-assistant+botframework) |
 
 > [!TIP]
 > Указанные ниже публикации на Stack Overflow содержат советы о том, как формулировать вопросы и добавлять исходный код. Следуйте этим рекомендациям, чтобы повысить вероятность того, что участники сообщества быстро отреагируют на ваш вопрос:  

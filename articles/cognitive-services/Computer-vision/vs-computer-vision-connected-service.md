@@ -7,22 +7,22 @@ author: ghogen
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
-ms.topic: tutorial
-ms.date: 05/01/2019
+ms.topic: conceptual
+ms.date: 07/03/2019
 ms.author: ghogen
 ms.custom: seodec18
-ms.openlocfilehash: 24d9a5fa1e9c2f44ef32ac1fc05ad09f8a550f12
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
-ms.translationtype: HT
+ms.openlocfilehash: ff3ae9ec4a775e2450a552e414ec52597593dd39
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65827751"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67604283"
 ---
 # <a name="use-connected-services-in-visual-studio-to-connect-to-the-computer-vision-api"></a>Подключение к API компьютерного зрения с помощью компонента "Подключенные службы" в Visual Studio
 
 В этой статье и других статьях этой серии приводятся сведения об использовании компонента "Подключенные службы" Visual Studio для API компьютерного зрения в Cognitive Services. Эта возможность доступна как в Visual Studio 2017 15.7, так и в более поздней версии с установленным расширением Cognitive Services.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - Подписка Azure. Если у вас нет подписки, вы можете зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
 - Visual Studio 2017 версии 15.7 или более поздней с установленной рабочей нагрузкой **Веб-разработка**. [Скачайте это приложение](https://visualstudio.microsoft.com/downloads/).
@@ -258,6 +258,6 @@ ms.locfileid: "65827751"
 2. Выберите **Удалить группу ресурсов**.
 3. В поле **Введите имя группы ресурсов:** введите имя группы ресурсов и выберите **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше об API компьютерного зрения из [документации по API компьютерного зрения](Home.md).

@@ -7,17 +7,17 @@ author: sanjeev3
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
-ms.topic: quickstart
-ms.date: 10/10/2018
+ms.topic: conceptual
+ms.date: 07/03/2019
 ms.author: sajagtap
-ms.openlocfilehash: da8ad71ccf8b58ddf3ef7cc6a2f9e9c732913caa
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 0ab11d8ef9fd481d2b3ea7029664a1ec2778cf4b
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55858405"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67604086"
 ---
-# <a name="quickstart-check-text-against-a-custom-term-list-in-c"></a>Краткое руководство. Проверка текста с помощью списка пользовательских терминов на C#
+# <a name="check-text-against-a-custom-term-list-in-c"></a>Проверка текста с помощью списка пользовательских терминов на C#
 
 Стандартный глобальный список терминов в Azure Content Moderator достаточен для большинства задач модерации контента. Тем не менее может потребоваться проверка специальных терминов, относящихся к вашей организации. Например, может потребоваться добавить теги с названиями конкурентов для более тщательной проверки. 
 
@@ -373,7 +373,7 @@ static void DeleteTermList (ContentModeratorClient client, string list_id)
 }
 ```
 
-## <a name="putting-it-all-together"></a>Сборка
+## <a name="compose-the-main-method"></a>Compose в метод Main
 
 Добавьте определение метода **Main** в пространство имен **TermLists** в классе **Program**. Наконец, закройте класс **Program** и пространство имен **TermLists**.
 
@@ -415,9 +415,9 @@ static void Main(string[] args)
 
 ## <a name="run-the-application-to-see-the-output"></a>Запустите приложение, чтобы просмотреть выходные данные.
 
-Ниже приведен пример строк выходных данных, но полученные данные могут отличаться.
+Выходных данных консоли будет выглядеть следующим образом:
 
-```
+```console
 Creating term list.
 Term list created. ID: 252.
 Updating information for term list with ID 252.
@@ -447,6 +447,6 @@ Deleting term list with ID 252.
 Press ENTER to close the application.
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для выполнения инструкций из этого и других кратких руководств по Content Moderator для .NET и приступите к интеграции.

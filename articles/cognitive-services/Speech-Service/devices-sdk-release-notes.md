@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 05/22/2019
+ms.date: 07/05/2019
 ms.author: wellsi
-ms.openlocfilehash: 1c91cde45a6a420376af36f70487adf7fe0ee83a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 93272520434ea43a94af9441a947239e983c216f
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66751810"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67606685"
 ---
 # <a name="release-notes-of-cognitive-services-speech-devices-sdk"></a>Заметки о выпуске пакета SDK для речевых устройств в Cognitive Services
 В следующих разделах перечислены изменения в последних выпусках.
@@ -37,17 +37,17 @@ ms.locfileid: "66751810"
 *   Из-за новой технологии пробуждения word все слова пробуждения, необходимо создать на нашем портале word улучшенный пробуждения. Чтобы полностью удалить старый ключевые слова из устройства удалите старое приложение.
     - adb удалить com.microsoft.coginitiveservices.speech.samples.sdsdkstarterapp
 
-## <a name="cognitive-services-speech-devices-sdk-140-2019-apr-release"></a>Устройства речи Cognitive Services SDK 1.4.0: Выпуск апреля 2019 г. 
+## <a name="cognitive-services-speech-devices-sdk-140-2019-apr-release"></a>Устройства речи Cognitive Services SDK 1.4.0: Выпуск апреля 2019 г.
 
-* Обновить [Speech SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) компонента до версии 1.4.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew). 
+* Обновить [Speech SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) компонента до версии 1.4.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
 
-## <a name="cognitive-services-speech-devices-sdk-131-2019-mar-release"></a>Устройства речи Cognitive Services SDK 1.3.1: Выпуск марта 2019 г. 
+## <a name="cognitive-services-speech-devices-sdk-131-2019-mar-release"></a>Устройства речи Cognitive Services SDK 1.3.1: Выпуск марта 2019 г.
 
-* Обновить [Speech SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) компонента до версии 1.3.1. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew). 
+* Обновить [Speech SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) компонента до версии 1.3.1. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
 *   Обновленные настроить слово для обработки, см. в разделе Критические изменения.
 *   Пример приложения добавляет Выбор языка для распознавания речи и перевода.
 
-**Критические изменения** 
+**Критические изменения**
 
 *   [Установка слово пробуждения](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-devices-sdk-create-kws) была упрощена, он теперь является частью приложения и не требуется отдельная Установка на устройстве.
 *   Поддерживаются два события, и распознавания слова пробуждения был изменен.
@@ -55,22 +55,22 @@ ms.locfileid: "66751810"
     - RecognizedKeyword, указывает, что ключевое слово распознавания завершения распознавание заданное ключевое слово.
 
 
-## <a name="cognitive-services-speech-devices-sdk-110-2018-nov-release"></a>Выпуск пакета SDK для речевых устройств в Cognitive Services 1.1.0, ноябрь 2018 г. 
+## <a name="cognitive-services-speech-devices-sdk-110-2018-nov-release"></a>Выпуск пакета SDK для речевых устройств в Cognitive Services 1.1.0, ноябрь 2018 г.
 
-* Обновленный компонент [пакета SDK для распознавания речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.1.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew). 
+* Обновленный компонент [пакета SDK для распознавания речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.1.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
 * Повышена точность распознавания речи из дальней зоны за счет улучшенного алгоритма обработки аудио.
 * В пример приложения добавлена поддержка распознавания речи на китайском языке.
 
-## <a name="cognitive-services-speech-devices-sdk-101-2018-oct-release"></a>Выпуск пакета SDK для речевых устройств в Cognitive Services 1.0.1, октябрь 2018 г. 
+## <a name="cognitive-services-speech-devices-sdk-101-2018-oct-release"></a>Выпуск пакета SDK для речевых устройств в Cognitive Services 1.0.1, октябрь 2018 г.
 
-* Обновленный компонент [пакета SDK для распознавания речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.0.1. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew). 
+* Обновленный компонент [пакета SDK для распознавания речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.0.1. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
 * Повышение точности распознавания речи за счет улучшенного алгоритма обработки аудио  
 * Исправлена одна ошибка для звукового сеанса непрерывного распознавания.
 
-**Критические изменения** 
+**Критические изменения**
 
-* В этом выпуске представлен ряд критических изменений. Дополнительные сведения о соответствующих API приведены на [этой странице](https://aka.ms/csspeech/breakingchanges_1_0_0). 
-* Файлы модели KWS несовместимы с пакетом SDK для речевых устройств версии 1.0.1. После записи новых файлов слов пробуждения на устройство аналогичные существующие файлы будут удалены. 
+* В этом выпуске представлен ряд критических изменений. Дополнительные сведения о соответствующих API приведены на [этой странице](https://aka.ms/csspeech/breakingchanges_1_0_0).
+* Файлы модели KWS несовместимы с пакетом SDK для речевых устройств версии 1.0.1. После записи новых файлов слов пробуждения на устройство аналогичные существующие файлы будут удалены.
 
 ## <a name="cognitive-services-speech-devices-sdk-050-2018-aug-release"></a>Выпуск пакета SDK для речевых устройств в Cognitive Services 0.5.0, август 2018 г.
 

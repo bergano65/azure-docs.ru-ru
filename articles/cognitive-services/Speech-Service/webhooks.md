@@ -8,15 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 04/11/2019
+ms.date: 07/05/2019
 ms.author: panosper
-ms.custom: seodec18
-ms.openlocfilehash: fbe6fe25b5ff0cd5148e3bba22dec4648399510d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a100049ddfc9d4859e303546c1b10e814cf96ebb
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67072310"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67606209"
 ---
 # <a name="webhooks-for-speech-services"></a>Веб-перехватчики для службы распознавания речи
 
@@ -24,7 +23,7 @@ ms.locfileid: "67072310"
 
 ## <a name="supported-operations"></a>Поддерживаемые операции
 
-Службы речи поддержка все длительные операции веб-перехватчики. Каждый из указанных ниже операций можно инициировать обратный вызов HTTP, по завершении. 
+Службы речи поддержка все длительные операции веб-перехватчики. Каждый из указанных ниже операций можно инициировать обратный вызов HTTP, по завершении.
 
 * DataImportCompletion
 * ModelAdaptationCompletion
@@ -37,7 +36,7 @@ ms.locfileid: "67072310"
 
 ## <a name="create-a-webhook"></a>Создание веб-перехватчика
 
-Давайте создадим веб-перехватчика для автономных транскрипции. Сценарий: пользователь имеет длительную звуковой файл, они хотели транскрипция асинхронно с помощью API пакетной службы расшифровка дикторского текста. 
+Давайте создадим веб-перехватчика для автономных транскрипции. Сценарий: пользователь имеет длительную звуковой файл, они хотели транскрипция асинхронно с помощью API пакетной службы расшифровка дикторского текста.
 
 Веб-перехватчики могут создаваться путем отправки запроса POST к https://\<регион\>.cris.ai/api/speechtotext/v2.1/transcriptions/hooks.
 
@@ -65,7 +64,7 @@ ms.locfileid: "67072310"
 
 `Active` Свойство используется для переключения обратного вызова в URL-адрес, включение и отключение без необходимости удаления и повторной регистрации веб-перехватчика. Если необходимо только обратного вызова один раз после процесс будет иметь полный, удалите веб-перехватчика и коммутатор `Active` значение false.
 
-Тип события `TranscriptionCompletion` предоставляется в массиве события. Он выполняет обратный вызов к конечной точке при получении транскрипция в конечное состояние (`Succeeded` или `Failed`). Время обратного вызова зарегистрированным URL-адресом, запрос будет содержать `X-MicrosoftSpeechServices-Event` заголовок, содержащий один из зарегистрированных типов событий. Есть один запрос в тип зарегистрированного события. 
+Тип события `TranscriptionCompletion` предоставляется в массиве события. Он выполняет обратный вызов к конечной точке при получении транскрипция в конечное состояние (`Succeeded` или `Failed`). Время обратного вызова зарегистрированным URL-адресом, запрос будет содержать `X-MicrosoftSpeechServices-Event` заголовок, содержащий один из зарегистрированных типов событий. Есть один запрос в тип зарегистрированного события.
 
 Есть один тип событий, который нельзя подписаться на. Это `Ping` тип события. Запрос с этим типом отправляется на URL-адрес, после завершения создания веб-перехватчика при использовании URL-адрес проверки связи (см. ниже).  
 
@@ -94,7 +93,7 @@ public async Task<IActionResult> PostAsync([FromHeader(Name = EventTypeHeaderNam
             var validated = contentHash.SequenceEqual(storedHash);
         }
     }
- 
+
     switch (eventTypeHeader)
     {
         case WebHookEventType.Ping:
@@ -106,7 +105,7 @@ public async Task<IActionResult> PostAsync([FromHeader(Name = EventTypeHeaderNam
         default:
             break;
     }
- 
+
     return this.Ok();
 }
 
@@ -121,12 +120,12 @@ public async Task<IActionResult> PostAsync([FromHeader(Name = EventTypeHeaderNam
 
 Для удаления одного конкретного веб-перехватчика: DELETE https://westus.cris.ai/api/speechtotext/v2.1/transcriptions/hooks/:id
 
-> [!Note] 
+> [!Note]
 > В приведенном выше примере область — «westus». Это должны быть заменены регион, где, вы создали ресурс службы распознавания речи на портале Azure.
 
 POST https://westus.cris.ai/api/speechtotext/v2.1/transcriptions/hooks/:id/ping тела: пустой
 
-Отправляет запрос POST к зарегистрированным URL-адресом. Запрос содержит `X-MicrosoftSpeechServices-Event` заголовок со значением сообщения проверки связи. Если веб-перехватчика был зарегистрирован с помощью секрета, он будет содержать `X-MicrosoftSpeechServices-Signature` заголовок с хэш SHA256 с секретным кодом как ключ HMAC полезных данных. Хэш-код — в кодировке Base64. 
+Отправляет запрос POST к зарегистрированным URL-адресом. Запрос содержит `X-MicrosoftSpeechServices-Event` заголовок со значением сообщения проверки связи. Если веб-перехватчика был зарегистрирован с помощью секрета, он будет содержать `X-MicrosoftSpeechServices-Signature` заголовок с хэш SHA256 с секретным кодом как ключ HMAC полезных данных. Хэш-код — в кодировке Base64.
 
 POST https://westus.cris.ai/api/speechtotext/v2.1/transcriptions/hooks/:id/test тела: пустой
 

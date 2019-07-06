@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Проверка изображений с использованием списков на C# — Content Moderator
+title: Проверка изображений с использованием списков на C# — Content Moderator
 titlesuffix: Azure Cognitive Services
 description: Как модерировать изображения с использованием настраиваемых списков изображений посредством пакета SDK Content Moderator для C#.
 services: cognitive-services
@@ -7,17 +7,17 @@ author: sanjeev3
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
-ms.topic: quickstart
-ms.date: 10/10/2018
+ms.topic: conceptual
+ms.date: 07/03/2019
 ms.author: sajagtap
-ms.openlocfilehash: ded5b097e7c8feab56e2d82cb44f92e3127519e2
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 49f87b7cf3d7f46a66c0992edf25968b1dbae073
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55881797"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603412"
 ---
-# <a name="quickstart-moderate-with-custom-image-lists-in-c"></a>Краткое руководство. Модерация с помощью настраиваемых списков изображений на C#
+# <a name="moderate-with-custom-image-lists-in-c"></a>Модерация с помощью настраиваемых списков изображений на C#
 
 В этой статье содержатся сведения и примеры кода, которые помогут вам приступить к работе с [пакетом SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/). Вы научитесь выполнять такие задачи:
 - создание настраиваемого списка изображений;
@@ -32,7 +32,7 @@ ms.locfileid: "55881797"
 > [!NOTE]
 > Существует максимальное ограничение в **5 списков изображений**, каждый из которых может содержать **не более 10 000 изображений**.
 
-Консольное приложение для этого краткого руководства моделирует некоторые задачи, которые можно выполнять с помощью API управления списками изображений.
+Консольное приложение в этом руководстве имитирует некоторые задачи, которые можно выполнять с помощью API списка изображений.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 
@@ -303,7 +303,7 @@ private static ImageList CreateCustomList(ContentModeratorClient client)
 
 ## <a name="create-a-method-to-add-a-collection-of-images-to-the-list"></a>Создание метода для добавления в список коллекции изображений
 
-Добавьте следующий метод в класс **Program**. В этом кратком руководстве не демонстрируется применение тегов к изображениям в списке. 
+Добавьте следующий метод в класс **Program**. В этом руководстве не показано, как применить теги к изображениям в списке. 
 
 ```csharp
 /// <summary>
@@ -1089,6 +1089,6 @@ Response:
 []
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для выполнения инструкций из этого и других кратких руководств по Content Moderator для .NET и приступите к интеграции.

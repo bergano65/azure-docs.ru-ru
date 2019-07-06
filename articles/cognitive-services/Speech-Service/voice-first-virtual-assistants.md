@@ -8,15 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 05/02/2019
+ms.date: 07/05/2019
 ms.author: travisw
-ms.custom: ''
-ms.openlocfilehash: 1c5712fa8bbdb158992127f8f48d810a0a9b6f79
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4055b474938e38f653021b46f18200f8e39dd69d
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65603478"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67604745"
 ---
 # <a name="about-custom-voice-first-virtual-assistants-preview"></a>Сведения о предварительной версии пользовательские виртуальные помощники voice-first
 
@@ -30,7 +29,7 @@ ms.locfileid: "65603478"
 
 ## <a name="core-features"></a>Основные функции
 
-| Категория | Функции |
+| Category | Функции |
 |----------|----------|
 |[Настроить слово](speech-devices-sdk-create-kws.md) | Можно разрешить пользователям следует начинать диалоги программы-роботы, используя пользовательское ключевое слово как «Эй Contoso». Эта задача выполняется с помощью механизм word пользовательский пробуждения в пакете SDK для распознавания речи, который можно настроить с помощью настроить слово [, которую можно создать здесь](speech-devices-sdk-create-kws.md). Канала прямой линии речи входит проверка word со стороны службы пробуждения повышается точность активации word пробуждения и устройство отдельно.
 |[Преобразование речи в текст](speech-to-text.md) | Включает в себя канала прямой линии речи в режиме реального времени записи звука в распознанный текст с помощью [речи в текст](speech-to-text.md) из служб Azure речи. Этот текст будет доступен для вашего бота и клиентское приложение, так как он является расшифрованной.

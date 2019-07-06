@@ -1,5 +1,5 @@
 ---
-title: Руководство по Выполнение операций с изображениями — Python
+title: Выполнение операций с изображениями — Python
 titlesuffix: Azure Cognitive Services
 description: Узнайте о том, как использовать API компьютерного зрения с Python с помощью записных книжек Jupyter. Визуализируйте результаты с помощью популярных библиотек.
 services: cognitive-services
@@ -7,28 +7,28 @@ author: KellyDF
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
-ms.topic: tutorial
-ms.date: 11/06/2018
+ms.topic: conceptual
+ms.date: 07/03/2019
 ms.author: kefre
 ms.custom: seodec18
-ms.openlocfilehash: b5333557355aa816245b5086836eac980d90540a
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
-ms.translationtype: HT
+ms.openlocfilehash: b18f41db772c1c214bdf48c9bb765b1ce7e6d2c2
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341485"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67604157"
 ---
-# <a name="tutorial-computer-vision-api-python"></a>Руководство по API компьютерного зрения с Python
+# <a name="computer-vision-api-jupyter-notebook"></a>Записная книжка API Jupyter компьютерного зрения компьютера
 
-В этом руководстве показано, как использовать API компьютерного зрения в Python и как визуализировать результаты с помощью популярных библиотек. Для работы с руководством используется Jupyter. Сведения о том, как приступить к работе с интерактивными записными книжками Jupyter Notebook, см. в [документации по Jupyter](https://jupyter.readthedocs.io/en/latest/index.html).
+В этом руководстве показано, как с помощью API компьютерного зрения в Python и визуализировать результаты с помощью популярных библиотек. Для работы с руководством используется Jupyter. Сведения о том, как приступить к работе с интерактивными записными книжками Jupyter Notebook, см. в [документации по Jupyter](https://jupyter.readthedocs.io/en/latest/index.html).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 - [Python 2.7 или 3.5+](https://www.python.org/downloads/).
 - Средство [PIP](https://pip.pypa.io/en/stable/installing/).
 - Установленная записная книжка [Jupyter Notebook](https://jupyter.org/install).
 
-## <a name="open-the-tutorial-notebook-in-jupyter"></a>Открытие примера записной книжки в Jupyter 
+## <a name="open-the-notebook-in-jupyter"></a>Открыть записную книжку в Jupyter 
 
 1. Перейдите к репозиторию GitHub [Cognitive Vision Python](https://github.com/Microsoft/Cognitive-Vision-Python). 
 2. Нажмите зеленую кнопку, чтобы клонировать или загрузить репозиторий. 
@@ -37,7 +37,7 @@ ms.locfileid: "67341485"
 1. Запустите Jupyter, выполнив команду `jupyter notebook` из командной строки.
 1. В окне Jupyter щелкните _Computer Vision API Example.ipynb_, чтобы открыть пример записной книжки.
 
-## <a name="run-the-tutorial"></a>Запуск примера записной книжки
+## <a name="run-the-notebook"></a>Запустите записную книжку
 
 Для использования этой записной книжки потребуется ключ подписки на API компьютерного зрения. Перейдите на страницу [Подписка](https://azure.microsoft.com/try/cognitive-services/), чтобы зарегистрироваться. На странице **входа** войдите с помощью учетной записи Майкрософт. После этого вы сможете оформить подписку и получить бесплатные ключи. После регистрации вставьте ключ в `Variables` раздел записной книжки (воспроизведено ниже). Подойдет как первичный, так и вторичный ключ. Не забудьте заключить ключ в кавычки, чтобы сделать его строковым значением.
 
