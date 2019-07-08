@@ -226,7 +226,7 @@ az network dns record-set a remove-record --resource-group myresourcegroup --zon
 
 Вместо этого используйте `az network dns record-set cname set-record`, чтобы изменить запись типа CNAME. Чтобы получить справку, см. `az network dns record-set cname set-record --help`.
 
-В примере ниже показано изменение набора записей CNAME с именем *www* в зоне *contoso.com* в группе ресурсов *MyResourceGroup* таким образом, чтобы он указывал на www.fabrikam.net вместо существующего значения.
+В примере ниже показано изменение набора записей CNAME с именем *www* в зоне *contoso.com* в группе ресурсов *MyResourceGroup* таким образом, чтобы он указывал на 'www.fabrikam.net' вместо существующего значения.
 
 ```azurecli
 az network dns record-set cname set-record --resource-group myresourcegroup --zone-name contoso.com --record-set-name test-cname --cname www.fabrikam.net

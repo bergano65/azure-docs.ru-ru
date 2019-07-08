@@ -100,10 +100,10 @@
           href: manage-database-permissions.md
         - name: Проверка работоспособности кластера
           href: check-cluster-health.md
-        - name: Управление расширением кластера
-          href: manage-cluster-scale-out.md
-        - name: Управление увеличением масштаба кластера
-          href: manage-cluster-scale-up.md
+        - name: Управление горизонтальным масштабированием кластера
+          href: manage-cluster-horizontal-scaling.md
+        - name: Управление вертикальным масштабированием кластера
+          href: manage-cluster-vertical-scaling.md
         - name: Удаление данных
           href: delete-data.md
         - name: Обработка дублированных данных

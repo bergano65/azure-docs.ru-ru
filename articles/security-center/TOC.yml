@@ -35,6 +35,12 @@
       href: security-center-data-security.md
     - name: Использование рекомендаций для повышения уровня безопасности
       href: security-center-using-recommendations.md
+    - name: Обнаружение угроз
+      href: security-center-detection-capabilities.md
+    - name: Управление оповещениями системы безопасности
+      href: security-center-managing-and-responding-alerts.md
+    - name: Инциденты безопасности
+      href: security-center-incident.md
     - name: Реагирование на инциденты
       href: security-center-incident-response.md
 - name: Практические руководства
@@ -97,19 +103,24 @@
           href: security-center-file-integrity-monitoring.md
         - name: Адаптивная защита сети
           href: security-center-adaptive-network-hardening.md
-    - name: Обнаружение угроз
-      href: security-center-detection-capabilities.md
+    - name: Оповещения об обнаружении угроз
       items:
-        - name: Оповещения безопасности
-          href: security-center-managing-and-responding-alerts.md
-        - name: Инциденты безопасности
-          href: security-center-incident.md
-        - name: Основные сведения об оповещениях системы безопасности
-          href: security-center-alerts-type.md
-        - name: Проверка оповещений
+        - name: Общие сведения об оповещениях системы безопасности
+          href: security-center-alerts-overview.md
+        - name: Обнаружение угроз для виртуальных машин и серверов
+          href: security-center-alerts-iaas.md
+        - name: Обнаружение угроз для облачных собственных вычислений
+          href: security-center-alerts-compute.md
+        - name: Обнаружение угроз для служб обработки данных
+          href: security-center-alerts-data-services.md
+        - name: Обнаружение угроз для уровня служб Azure
+          href: security-center-alerts-service-layer.md
+        - name: Интеграция с системами и средствами безопасности Azure
+          href: security-center-alerts-integration.md
+        - name: Корреляция интеллектуальных оповещений в облаке (инциденты)
+          href: security-center-alerts-cloud-smart.md
+        - name: Проверка оповещений (в тестовом файле EICAR)
           href: security-center-alert-validation.md
-        - name: Аналитика поведения пользователей и сущностей для ресурсов и пользователей Azure
-          href: security-center-ueba-mcas.md
     - name: Архив
       items:
         - name: Применение шифрования дисков
@@ -168,6 +179,10 @@
           href: security-center-search.md
         - name: Планирование и эксплуатация
           href: security-center-planning-and-operations-guide.md
+        - name: Основные сведения об оповещениях системы безопасности
+          href: security-center-alerts-type.md
+        - name: Аналитика поведения пользователей и сущностей для ресурсов и пользователей Azure
+          href: security-center-ueba-mcas.md
 - name: Справочные материалы
   items:
     - name: "Интерфейсы REST\_API"
@@ -184,7 +199,7 @@
       href: security-center-privacy.md
     - name: Управление Интернетом вещей
       href: 'https://docs.microsoft.com/en-us/azure/asc-for-iot/'
-    - name: Вопросы и ответы
+    - name: Часто задаваемые вопросы
       href: security-center-faq.md
     - name: Безопасность в Azure
       href: /azure/security/
