@@ -11,7 +11,7 @@ ms.date: 12/03/2018
 ms.author: saurabhsensharma
 ms.openlocfilehash: 5abaa040b22000a300fba22590866846f6dbbd4a
 ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/04/2019
 ms.locfileid: "67565684"
@@ -233,7 +233,7 @@ ms.locfileid: "67565684"
 > [!NOTE]
 > Автоматическая очистка происходит после активации резервного копирования ad hoc/вручную несколько часов. Если запланированное резервное копирование по-прежнему дает сбой, попробуйте вручную удалить коллекцию точек восстановления, выполнив действия, перечисленные [здесь](#clean-up-restore-point-collection-from-azure-portal).
 
-#### <a name="clean-up-restore-point-collection-from-azure-portal">Очистка коллекции точек восстановления на портале Azure</a> <br>
+#### <a name="clean-up-restore-point-collection-from-azure-portal"></a> Очистка коллекции точек восстановления на портале Azure <br>
 
 Чтобы вручную очистить коллекцию точек восстановления, которая не очищается из-за блокировки группы ресурсов, попробуйте сделать следующее.
 1. Войдите на [портале Azure](https://portal.azure.com/).

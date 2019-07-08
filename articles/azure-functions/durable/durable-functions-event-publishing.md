@@ -253,7 +253,7 @@ namespace LifeCycleEventSpike
 * **`id`** . Уникальный идентификатор для события сетки событий.
 * **`subject`** . Путь к субъекту событий. `durable/orchestrator/{orchestrationRuntimeStatus}`. `{orchestrationRuntimeStatus}` будет `Running`, `Completed`, `Failed` и `Terminated`.  
 * **`data`** . Определенные параметры Устойчивых функций.
-  * **`hubName`** . Имя TaskHub](durable-functions-task-hubs.md).
+  * **`hubName`** . Имя [TaskHub](durable-functions-task-hubs.md).
   * **`functionName`** . Имя функции оркестратора.
   * **`instanceId`** . Идентификатор экземпляра Устойчивых функций.
   * **`reason`** . Дополнительные данные, связанные с событием отслеживания. Дополнительные сведения см. в статье [Диагностика в устойчивых функциях (Функции Azure)](durable-functions-diagnostics.md).
