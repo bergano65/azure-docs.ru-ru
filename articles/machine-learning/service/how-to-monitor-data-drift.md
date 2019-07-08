@@ -1,5 +1,5 @@
 ---
-title: Как определить смещение данных (Предварительная версия) на развертывание AKS
+title: Определить смещение данных (Предварительная версия) на развертывание AKS
 titleSuffix: Azure Machine Learning service
 description: Сведения о способах поиска данных о смещении в службе Azure Kubernetes развертывания моделей в службе машинного обучения Azure.
 services: machine-learning
@@ -10,21 +10,24 @@ ms.reviewer: jmartens
 ms.author: copeters
 author: cody-dkdc
 ms.date: 06/20/2019
-ms.openlocfilehash: e4deeab28fb643ff32624ba9dd16574e621f508c
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: c446c8236ca64948f0bb6a8354a83579cc6ff24c
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67333269"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443940"
 ---
-# <a name="how-to-detect-data-drift-preview-on-models-deployed-to-azure-kubernetes-service"></a>Как определить смещение данных (Предварительная версия) на моделях, развернутых в службе Azure Kubernetes
-В этой статье вы узнаете, как отслеживать [данные о смещении](concept-data-drift.md) между обучающих наборов данных и вывод данных развернутой модели. 
+# <a name="detect-data-drift-preview-on-models-deployed-to-azure-kubernetes-service"></a>Определить смещение данных (Предварительная версия) на моделях, развернутых в службе Azure Kubernetes
+В этой статье вы узнаете, как отслеживать данные о смещении между набора данных для обучения и вывод данных развернутой модели. 
 
-Смещение данных является одним из основных причин, где точности модели падение с течением времени. Это происходит, когда данные в модель в рабочей среде отличается от данных, используемых для обучения модели. Службы машинного обучения Azure можно отслеживать данные о смещении, с помощью средства обнаружения данных о смещении. Если обнаруживается смещение, служба может отправлять оповещение для вас.  
+## <a name="what-is-data-drift"></a>Что такое смещение данных?
+
+Смещение данных, называемый также концепция смещение, является одним из основных причин, где точности модели падение с течением времени. Это происходит, когда данные в модель в рабочей среде отличается от данных, используемых для обучения модели. Службы машинного обучения Azure можно отслеживать данные о смещении и, при обнаружении смещения, служба может отправлять оповещение по электронной почте для вас.  
 
 > [!Note]
 > Эта служба находится на (Предварительная версия) и ограниченные в параметры конфигурации. См. в нашем [документации по API](https://docs.microsoft.com/python/api/azureml-contrib-datadrift/?view=azure-ml-py) и [заметки о выпуске](azure-machine-learning-release-notes.md) подробные сведения и обновления. 
 
+## <a name="what-can-i-monitor"></a>Что можно отслеживать?
 С помощью службы машинного обучения Azure можно отслеживать входные данные для модели, развернутой в AKS и сравнить эти данные в обучающем наборе данных для модели. С регулярными интервалами, вывод данных является [моментальных снимков и профилировать](how-to-explore-prepare-data.md), затем вычисляемых на основе набора базовых показателей для создания анализ данных о смещении: 
 
 + Измеряет величина смещения данных, называется коэффициент смещения.
@@ -60,7 +63,7 @@ ms.locfileid: "67333269"
     print(model_name, image_name, service_name, model)
     ```
 
-- Настройка [сборщика данных модели](how-to-enable-data-collection.md) для сбора данных из модели развертывания AKS и подтверждения данных собираются в `modeldata` контейнер больших двоичных объектов.
+- [Включение сбора данных модели](how-to-enable-data-collection.md) для сбора данных из модели развертывания AKS и подтверждения данных собираются в `modeldata` контейнер больших двоичных объектов.
 
 ## <a name="import-dependencies"></a>Импорт зависимостей 
 Импортируйте зависимости, используемые в этом руководстве:
@@ -85,11 +88,11 @@ datadrift = DataDriftDetector.create(ws, model.name, model.version, services, fr
 print('Details of Datadrift Object:\n{}'.format(datadrift))
 ```
 
-Дополнительные сведения см. в разделе [DataDrift](https://docs.microsoft.com/python/api/azureml-contrib-datadrift/?view=azure-ml-py) ссылки.
+Дополнительные сведения см. в разделе `[DataDrift](https://docs.microsoft.com/python/api/azureml-contrib-datadrift/?view=azure-ml-py)` справочной документации по классу.
 
 ## <a name="submit-a-datadriftdetector-run"></a>Запуске DataDriftDetector
 
-С помощью DataDriftDetector настроен, вы можете отправить [данные о смещении запуска](https://docs.microsoft.com/python/api/azureml-contrib-datadrift/azureml.contrib.datadrift.datadriftdetector%28class%29?view=azure-ml-py#run-target-date--services--compute-target-name-none--create-compute-target-false--feature-list-none--drift-threshold-none-) в указанный день для модели. 
+С помощью `DataDriftDetector` объект настроен, вы можете отправить [данные о смещении запуска](https://docs.microsoft.com/python/api/azureml-contrib-datadrift/azureml.contrib.datadrift.datadriftdetector%28class%29?view=azure-ml-py#run-target-date--services--compute-target-name-none--create-compute-target-false--feature-list-none--drift-threshold-none-) в указанный день для модели. 
 
 ```python
 # adhoc run today
@@ -107,7 +110,7 @@ dd_run = Run(experiment=exp, run_id=run)
 RunDetails(dd_run).show()
 ```
 
-## <a name="get-data-drift-analysis-results"></a>Получить данные о смещении результатов анализа
+## <a name="visualize-drift-metrics"></a>Визуализировать метрики о смещении
 
 В следующем примере Python показано, как отобразить соответствующие данные о смещении метрик. Возвращаемый метрики можно использовать для создания собственных визуализаций:
 
@@ -120,13 +123,13 @@ drift_metrics = datadrift.get_output(start_time=start, end_time=end)
 drift_figures = datadrift.show(with_details=True)
 ```
 
-![Показать смещения данных](media/how-to-monitor-data-drift/drift_show.png)
+![Обнаружено машинным обучением Azure смещение данных см. в разделе](media/how-to-monitor-data-drift/drift_show.png)
 
 Дополнительные сведения о метрики, которые вычисляются, см. в разделе [данные о смещении концепция](concept-data-drift.md) статьи.
 
-## <a name="schedule-data-drift-detection"></a>Расписание данные о смещении обнаружения 
+## <a name="schedule-data-drift-scans"></a>Расписание данные о смещении сканирования 
 
-Включение расписания смещение данных выполняет DataDriftDetector, запустите с указанной частотой. Если коэффициент смещение превышает заданное пороговое значение, отправляется сообщение электронной почты. 
+При включении данные о смещении обнаружения DataDriftDetector выполняется с частотой, указанной, по расписанию. Если коэффициент смещение превышает заданное пороговое значение, отправляется сообщение электронной почты. 
 
 ```python
 datadrift.enable_schedule()
@@ -143,9 +146,9 @@ datadrift.disable_schedule()
 
 ![Портал Azure, данные о смещении](media/how-to-monitor-data-drift/drift_ui.png)
 
-## <a name="setting-up-alerts"></a>Настройка оповещений 
+## <a name="receiving-drift-alerts"></a>Получения оповещений о смещении
 
-Задать коэффициент смещения порог предупреждения и предоставляя адрес электронной почты [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) оповещение по электронной почте отправляется в том случае, если коэффициент смещение превышает пороговое значение. Все данные о смещении метрики хранятся в ресурс app insights, связанный с рабочей области службы машинного обучения Azure позволяет настроить настраиваемых оповещений и действия. Перейдите по ссылке в оповещения по электронной почте для запросов аналитики приложений.
+Задать коэффициент смещения порог предупреждения и указав адрес электронной почты [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) , будут автоматически отправляться оповещение по электронной почте каждый раз, когда коэффициент смещение превышает пороговое значение. Чтобы настроить пользовательские оповещения и действия все данные о смещении метрики хранятся в ресурсе Application Insights, который был создан вместе с рабочей области службы машинного обучения Azure. Перейдите по ссылке в электронном оповещении в запрос Application Insights.
 
 ![Оповещение по электронной почте о смещении данных](media/how-to-monitor-data-drift/drift_email.png)
 
