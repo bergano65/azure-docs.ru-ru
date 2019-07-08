@@ -1,4 +1,4 @@
-- name: Документация по службам мультимедиа
+- name: Документация по Службам мультимедиа
   href: index.md
 - name: Обзор
   href: media-services-overview.md
@@ -35,13 +35,13 @@
       items:
         - name: Портал Azure
           href: media-services-portal-vod-get-started.md
-        - name: ПАКЕТ SDK .NET
+        - name: Пакет SDK для .NET
           href: media-services-dotnet-get-started.md
         - name: Java
           href: media-services-java-how-to-use.md
         - name: REST
           href: media-services-rest-get-started.md
-    - name: Потоковая трансляция в реальном времени
+    - name: Потоковая трансляция
       items:
         - name: Портал Azure
           href: media-services-portal-live-passthrough-get-started.md
@@ -49,8 +49,11 @@
           href: media-services-dotnet-live-encode-with-onpremises-encoders.md
 - name: Практическое руководство
   items:
-    - name: управление
+    - name: Управление
       items:
+        - name: Учетные записи
+          displayName: subscription
+          href: media-services-account-concept.md
         - name: Сущности
           items:
             - name: .NET
@@ -64,9 +67,9 @@
               href: media-services-portal-manage-streaming-endpoints.md
             - name: .NET
               href: media-services-dotnet-manage-streaming-endpoints.md
-        - name: Хранилище
+        - name: Служба хранилища
           items:
-            - name: Обновление служб мультимедиа после оборота ключей доступа к хранилищу
+            - name: Обновление Служб мультимедиа после смены ключей доступа к хранилищу
               href: media-services-roll-storage-access-keys.md
             - name: Управление ресурсами в нескольких учетных записях хранения
               href: meda-services-managing-multiple-storage-accounts.md
@@ -106,7 +109,7 @@
           href: media-services-manage-encoding-speed.md
         - name: Media Encoder Standard (MES)
           items:
-            - name: Форматы и кодеки стандартного кодировщика служб мультимедиа
+            - name: Форматы и кодеки Media Encoder Standard
               href: media-services-media-encoder-standard-formats.md
             - name: Автоматическое создание схемы скоростей с помощью MES
               href: media-services-autogen-bitrate-ladder-with-mes.md
@@ -125,7 +128,7 @@
                   href: media-services-custom-mes-presets-with-dotnet.md
                 - name: Создание эскизов с помощью Media Encoder Standard c использованием .NET
                   href: media-services-dotnet-generate-thumbnail-with-mes.md
-                - name: Обрезка видео с помощью стандартного кодировщика мультимедиа
+                - name: Обрезка видео с помощью Media Encoder Standard
                   href: media-services-crop-video.md
                 - name: Создание эскиза спрайта
                   href: generate-thumbnail-sprite.md
@@ -190,19 +193,19 @@
                   href: media-services-mes-preset-H264-Single-Bitrate-High-Quality-SD-for-Android.md
                 - name: H264 Single Bitrate Low Quality SD для Android
                   href: media-services-mes-preset-H264-Single-Bitrate-Low-Quality-SD-for-Android.md
-        - name: Расширенный рабочий процесс кодировщика мультимедиа
+        - name: Media Encoder Premium Workflow
           items:
-            - name: Форматы и кодеки рабочего процесса Premium Media Encoder
+            - name: Форматы и кодеки Media Encoder Premium Workflow
               href: media-services-premium-workflow-encoder-formats.md
-            - name: Кодирование с помощью рабочего процесса Media Encoder Premium
+            - name: Кодирование с помощью Media Encoder Premium Workflow
               items:
-                - name: Расширенный рабочий процесс кодировщика мультимедиа
+                - name: Media Encoder Premium Workflow
                   href: media-services-encode-with-premium-workflow.md
-                - name: Учебники по расширенному рабочему процессу кодировщика мультимедиа
+                - name: Учебники по Media Encoder Premium Workflow
                   href: media-services-media-encoder-premium-workflow-tutorials.md
-                - name: Создание рабочих процессов расширенной кодировки с помощью конструктора рабочих процессов
+                - name: Создание рабочих процессов расширенного кодирования с помощью конструктора рабочих процессов
                   href: media-services-workflow-designer.md
-                - name: Расширенный рабочий процесс с несколькими элементами входных данных
+                - name: Рабочий процесс Premium с несколькими элементами входных данных
                   href: media-services-media-encoder-premium-workflow-multiplefilesinput.md
         - name: 'Создание задачи, генерирующей блоки fMP4'
           href: media-services-generate-fmp4-chunks.md
@@ -252,7 +255,7 @@
           href: media-services-dotnet-long-operations.md
         - name: Спецификация Fragmented MP4 Live Ingest
           href: media-services-fmp4-live-ingest-overview.md
-        - name: Приступая к работе
+        - name: Начало работы
           href: media-services-azure-media-clipper-getting-started.md
         - name: Загрузка видео
           href: media-services-azure-media-clipper-load-assets.md
@@ -269,7 +272,7 @@
       items:
         - name: Шифрование хранилища
           href: media-services-rest-storage-encryption.md
-        - name: шифрование AES-128.
+        - name: Шифрование AES-128
           href: media-services-protect-with-aes128.md
         - name: Использование PlayReady или Widevine для потоковой передачи
           href: media-services-protect-with-playready-widevine.md
@@ -335,10 +338,10 @@
           href: media-services-face-and-emotion-detection.md
         - name: Обработка с помощью Motion Detector
           href: media-services-motion-detection.md
-        - name: Обработка с помощью скрытия лиц
+        - name: Обработка с помощью Media Redactor
           href: media-services-face-redaction.md
           items:
-            - name: Пошаговое руководство по скрытию лиц
+            - name: Пошаговое руководство по Media Redactor
               href: media-services-redactor-walkthrough.md
         - name: Обработка с помощью эскизов видео
           href: media-services-video-summarization.md
@@ -353,7 +356,7 @@
           href: media-services-dotnet-telemetry.md
         - name: REST
           href: media-services-rest-telemetry.md
-    - name: Масштаб
+    - name: Масштабирование
       items:
         - name: Обработка мультимедиа
           href: media-services-scale-media-processing-overview.md
@@ -378,7 +381,7 @@
               href: media-services-dotnet-dynamic-manifest.md
             - name: Создание фильтров с помощью REST
               href: media-services-rest-dynamic-manifest.md
-        - name: Политика кэширования CDN в расширении служб мультимедиа
+        - name: Политика кэширования CDN в расширении Служб мультимедиа
           href: ../../cdn/cdn-caching-policy.md?toc=%2fazure%2fmedia-services%2ftoc.json
         - name: Публикация содержимого
           items:
@@ -452,7 +455,7 @@
       href: /dotnet/api/microsoft.windowsazure.mediaservices.client
     - name: REST
       href: 'https://docs.microsoft.com/rest/api/media/operations/azure-media-services-rest-api-reference'
-    - name: спецификации;
+    - name: Спецификации
       items:
         - name: 'Прием в реальном времени: спецификация приема фрагментированного MP4 в реальном времени'
           href: media-services-fmp4-live-ingest-overview.md
@@ -472,5 +475,5 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Заметки о выпуске
       href: media-services-release-notes.md
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=media-services'

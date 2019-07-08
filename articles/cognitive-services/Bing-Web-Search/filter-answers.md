@@ -9,14 +9,14 @@ ms.assetid: 8B837DC2-70F1-41C7-9496-11EDFD1A888D
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: conceptual
-ms.date: 02/12/2019
+ms.date: 07/08/2019
 ms.author: scottwhi
-ms.openlocfilehash: 8d8fd03d9c3d912788e9893377bbab3efac86f8a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a89d73b63680415aa8e516926b8e1d6c59ffbbad
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66383836"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67626022"
 ---
 # <a name="filtering-the-answers-that-the-search-response-includes"></a>Фильтрация результатов, возвращаемых в ответе на запрос поиска  
 
@@ -44,14 +44,20 @@ ms.locfileid: "66383836"
     }
 }    
 ```
-Вы можете фильтровать типы получаемого содержимого (например, изображения, видео и новости), используя параметр запроса [responseFilter](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#responsefilter). Если служба Bing находит содержимое, соответствующее указанным результатам, она возвращает его. Фильтр ответов — это список результатов с разделителями запятыми. 
 
-Чтобы исключить из результата такие определенные типы содержимого, как образы, вы можете добавить знак `-` в начало значения `responseFilter`. Вы можете записать отдельные исключенные типы через запятую (`,`). Пример:
+## <a name="query-parameters"></a>Параметры запроса
+
+Чтобы отфильтровать ответы, возвращаемые Bing, используйте ниже параметры запроса при обращении к API.  
+
+### <a name="responsefilter"></a>ResponseFilter
+
+Можно отфильтровать типы ответов, которые Bing включает в ответ (например, изображения, видео и новости) с помощью [responseFilter](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#responsefilter) параметр запроса, который представляет собой список с разделителями запятыми, ответов на вопросы. Ответ будет включаться в ответ, если Bing обнаружит соответствующего содержимого ее. 
+
+Чтобы исключить определенные ответы из ответа, таких как изображения, можно добавить в начало `-` символ к типу ответов. Пример:
 
 ```
 &responseFilter=-images,-videos
 ```
-
 
 Ниже показано, как использовать `responseFilter` для запроса изображений, видео и новостей по вождению шлюпок. При кодировании строки запроса запятые меняются на %2C.  
 
@@ -94,7 +100,9 @@ Host: api.cognitive.microsoft.com
 
 Не рекомендуется использовать `responseFilter` для получения результатов из одного API. Если требуется содержимое из одного API Bing, вызывайте этот API напрямую. Например, чтобы получить только изображения, отправьте запрос к конечной точке API для поиска изображений (`https://api.cognitive.microsoft.com/bing/v7.0/images/search`) или другой конечной точке [службы "Поиск изображений"](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#endpoints). Вызов одного API важен не только из соображений производительности, но потому, что интерфейсы API конкретного содержимого предоставляют более подробные результаты. Например, можно использовать фильтры результатов, которые недоступны в API для поиска в Интернете.  
 
-Чтобы получить результаты поиска из определенной области, добавьте оператор `site:` в строку запроса.  
+### <a name="site"></a>Сайт
+
+Чтобы получить результаты поиска из определенного домена, включите `site:` параметр в строке запроса.  
 
 ```
 https://api.cognitive.microsoft.com/bing/v7.0/search?q=sailing+dinghies+site:contososailing.com&mkt=en-us
@@ -103,9 +111,27 @@ https://api.cognitive.microsoft.com/bing/v7.0/search?q=sailing+dinghies+site:con
 > [!NOTE]
 > Если вы используете оператор `site:`, в зависимости от запроса есть вероятность, что ответ включает содержимое для взрослых независимо от параметра [safeSearch](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#safesearch). Вы должны использовать `site:`, только если вам известно о содержимом на сайте, и ваш сценарий поддерживает возможность использования содержимого для взрослых.
 
+### <a name="freshness"></a>Актуальность
+
+Чтобы ограничить результаты web ответов на веб-страницы, Bing, обнаруженный в течение определенного периода, установите [актуальность](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#freshness) одно из следующих значений без учета регистра параметр запроса:
+
+* `Day` — Возвращает веб-страниц Bing, обнаруженные за последние 24 часа
+* `Week` — Возвращает веб-страниц Bing, обнаруженные за последние 7 дней
+* `Month` — Возвращает веб-страниц, обнаруженных за последние 30 дней
+
+Этот параметр может также задать пользовательский диапазон дат в форме `YYYY-MM-DD..YYYY-MM-DD`. 
+
+`https://<host>/bing/v7.0/search?q=ipad+updates&freshness=2019-02-01..2019-05-30`
+
+Чтобы ограничить результаты одной даты, присвойте параметру актуальность определенной даты:
+
+`https://<host>/bing/v7.0/search?q=ipad+updates&freshness=2019-02-04`
+
+Результаты могут включать веб-страницы, выходящих за пределы указанного периода, если количество веб-страницы, Bing соответствует условиям фильтра меньше, чем количество веб-страниц, которое вы запросили (или значение по умолчанию, который возвращает Bing).
+
 ## <a name="limiting-the-number-of-answers-in-the-response"></a>Ограничение числа результатов в ответе
 
-Служба Bing включает в ответ результаты в соответствии с ранжированием. Например, если вы запрашиваете *кораблевождение+шлюпки*, служба Bing возвращает `webpages`, `images`, `videos` и `relatedSearches`.
+Bing можно вернуть несколько типов ответов в ответе JSON. Например, если вы запрашиваете *sailing + dinghies*, могут возвращать Bing `webpages`, `images`, `videos`, и `relatedSearches`.
 
 ```json
 {
