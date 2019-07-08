@@ -304,14 +304,14 @@ New-SelfSignedCertificate -Subject hdifabrikam.com `
 
         | Свойство | Значение |
         |---|---|
-        | source | Любой |
-        | Диапазоны исходных портов | * |
-        | Место назначения | Любой |
-        | Диапазон портов назначения | 636 |
-        | Протокол | Любой |
-        | Действие | Allow |
-        | Приоритет | <Desired Number> |
-        | ИМЯ | Port_LDAP_636 |
+        | Source | Any |
+        | Source port ranges | * |
+        | Destination | Any |
+        | Destination port range | 636 |
+        | Protocol | Any |
+        | Action | Allow |
+        | Priority | \<Desired Number> |
+        | Name | Port_LDAP_636 |
 
     ![правило безопасности для входящего трафика](./media/apache-domain-joined-create-configure-enterprise-security-cluster/add-inbound-security-rule.png)
 
