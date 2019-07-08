@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 01/24/2019
-ms.openlocfilehash: 6de16b7264c7ae7ead06b4e131e7fa46c664cedd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 07/02/2019
+ms.openlocfilehash: 2c1b7e8f777f1975a20bbf63919a3dbfe543e683
+ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64573352"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67537752"
 ---
 # <a name="configure-ssl-connectivity-in-your-application-to-securely-connect-to-azure-database-for-mariadb"></a>Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MariaDB
 База данных Azure для MariaDB поддерживает подключение сервера базы данных Azure для MariaDB к клиентским приложениям с помощью протокола SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
@@ -21,9 +21,19 @@ ms.locfileid: "64573352"
 **Для браузеров Microsoft Internet Explorer и Microsoft Edge:** после завершения скачивания переименуйте сертификат в BaltimoreCyberTrustRoot.crt.pem.
 
 ## <a name="bind-ssl"></a>Привязка SSL
-### <a name="connecting-to-server-using-the-mysql-workbench-over-ssl"></a>Подключение к серверу с помощью MySQL Workbench по протоколу SSL
-Настройте MySQL Workbench, чтобы безопасно подключаться по протоколу SSL. В диалоговом окне Setup New Connection (Настройка нового подключения) откройте вкладку **SSL**. Введите расположение файла **BaltimoreCyberTrustRoot.crt.pem** в поле **SSL CA File:** (Файл центра сертификации SSL-сертификата). 
-![Сохранение настроенного элемента](./media/howto-configure-ssl/mysql-workbench-ssl.png). Для существующих подключений можно привязать SSL-сертификат, щелкнув правой кнопкой мыши значок подключения и выбрав "Изменить". Откройте вкладку **SSL** и привяжите файл сертификата.
+
+### <a name="connecting-to-server-using-mysql-workbench-over-ssl"></a>Подключение к серверу с помощью MySQL Workbench по протоколу SSL
+Настройте MySQL Workbench, чтобы безопасно подключаться по протоколу SSL. 
+
+1. В диалоговом окне Setup New Connection (Настройка нового подключения) откройте вкладку **SSL**. 
+
+1. Обновление **использовать SSL** поле «Требовать».
+
+1. Введите расположение файла BaltimoreCyberTrustRoot.crt.pem в поле **SSL CA File:** (Файл центра сертификации SSL-сертификата). 
+    
+    ![Сохранить конфигурацию SSL](./media/howto-configure-ssl/mysql-workbench-ssl.png)
+
+Для существующих подключений можно привязать SSL, щелкнув правой кнопкой мыши значок подключения и щелкните "Изменить". Откройте вкладку **SSL** и привяжите файл сертификата.
 
 ### <a name="connecting-to-server-using-the-mysql-cli-over-ssl"></a>Подключение к серверу с помощью интерфейса командной строки MySQL по протоколу SSL
 Кроме того, можно привязать SSL-сертификат при помощи интерфейса командной строки MySQL, выполнив следующие команды. 

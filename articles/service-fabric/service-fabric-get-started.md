@@ -12,14 +12,14 @@ ms.devlang: dotNet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 06/10/2019
+ms.date: 07/03/2019
 ms.author: aljo
-ms.openlocfilehash: 4d7fb257c932d84d8ddcb6c69e5286373f9b6adf
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 19f5d99fe95e1290cc30dedc8b8172e234bd4642
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67067221"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67566059"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
 > [!div class="op_single_selector"]
@@ -29,7 +29,7 @@ ms.locfileid: "67067221"
 > 
 > 
 
-Чтобы создавать и запускать [приложения Service Fabric][1] на компьютере для разработки Windows, установите среду выполнения Service Fabric, пакет SDK и инструменты. Вам также нужно [включить выполнение сценариев Windows PowerShell](#enable-powershell-script-execution), включенных в пакет SDK.
+Чтобы построить и запустить [приложений Service Fabric][1] на компьютере разработки Windows, Установка среды выполнения Service Fabric, пакета SDK и средств. Вам также нужно [включить выполнение сценариев Windows PowerShell](#enable-powershell-script-execution), включенных в пакет SDK.
 
 ## <a name="prerequisites"></a>Технические условия
 ### <a name="supported-operating-system-versions"></a>Поддерживаемые версии операционных систем
@@ -43,7 +43,7 @@ ms.locfileid: "67067221"
 
 > [!NOTE]
 > Поддержка Windows 7:
-> - Windows 7 по умолчанию поставляется с Windows PowerShell версии 2.0. Для выполнения командлетов PowerShell для Service Fabric требуется PowerShell начиная с версии 3.0. В центре загрузки Майкрософт можно [скачать Windows PowerShell 5.0][powershell5-download].
+> - Windows 7 по умолчанию поставляется с Windows PowerShell версии 2.0. Для выполнения командлетов PowerShell для Service Fabric требуется PowerShell начиная с версии 3.0. Вы можете [скачать Windows PowerShell 5.0][powershell5-download] из центра загрузки Майкрософт.
 > - Обратный прокси-сервер Service Fabric недоступен в Windows 7.
 >
 
@@ -57,21 +57,21 @@ ms.locfileid: "67067221"
 Средства Service Fabric являются частью рабочей нагрузки разработки Azure в Visual Studio 2017. Эту рабочую нагрузку необходимо включить при установке Visual Studio.
 Кроме того, необходимо установить пакет SDK и среду выполнения Microsoft Azure Service Fabric, используя установщик веб-платформы.
 
-* [Установка пакета SDK Microsoft Azure Service Fabric][core-sdk]
+* [Установите пакет SDK для Microsoft Azure Service Fabric][core-sdk]
 
 ### <a name="to-use-visual-studio-2015-requires-visual-studio-2015-update-2-or-later"></a>Для использования Visual Studio 2015 (требуется Visual Studio 2015 с обновлением 2 или более поздней версии)
 Для Visual Studio 2015 средства Service Fabric устанавливаются вместе с пакетом SDK и средой выполнения с помощью установщика веб-платформы:
 
-* [Установка пакета SDK и средств Microsoft Azure Service Fabric][full-bundle-vs2015]
+* [Установка средств и пакета SDK Microsoft Azure Service Fabric][full-bundle-vs2015]
 
 ### <a name="sdk-installation-only"></a>Только установка пакета SDK
 Если вам требуется только пакет SDK, можно установить этот пакет:
-* [Установка пакета SDK Microsoft Azure Service Fabric][core-sdk]
+* [Установите пакет SDK для Microsoft Azure Service Fabric][core-sdk]
 
 Текущие версии:
-* Service Fabric SDK и средства 3.4.639
-* Среда выполнения Service Fabric 6.5.639
-* Средства Service Fabric для Visual Studio 2015 2.4.11116.1;
+* Service Fabric SDK и средства 3.4.641
+* Среда выполнения Service Fabric 6.5.641
+* Средства Service Fabric для Visual Studio 2015 2.5.20615.1
 * среда Visual Studio 2017 15.9, которая включает в себя Средства Service Fabric для Visual Studio 2.4.11024.1. 
 
 Список поддерживаемых версий см. в статье [Поддерживаемые версии Service Fabric](service-fabric-versions.md).

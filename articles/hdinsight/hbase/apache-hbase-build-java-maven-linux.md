@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,seodec18
 ms.topic: conceptual
 ms.date: 04/16/2019
-ms.openlocfilehash: a4c601e81390efa3bb53a6f07225bb6e939bc9bb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1ec4e9cbfd1d70c128f530bd996793a49c8a7d00
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64726441"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67484121"
 ---
 # <a name="build-java-applications-for-apache-hbase"></a>Создание приложений Java для Apache HBase
 
@@ -34,9 +34,6 @@ ms.locfileid: "64726441"
 * Если с помощью PowerShell, вам потребуется [AZ модуля](https://docs.microsoft.com/powershell/azure/overview).
 
 * Текстовый редактор. В этой статье используется Блокнот (Майкрософт).
-
-> [!IMPORTANT]  
-> Командлеты Azure PowerShell [Get-AzHDInsightCluster](https://docs.microsoft.com/powershell/module/az.hdinsight/get-azhdinsightcluster) и [Get-AzHDInsightJobOutput](https://docs.microsoft.com/powershell/module/az.hdinsight/get-azhdinsightjoboutput) в настоящее время не работают при [безопасное перемещение](../../storage/common/storage-require-secure-transfer.md) с включенной учетной записи хранения .
 
 ## <a name="test-environment"></a>Тестовая среда
 Среда, используемая для этой статьи была на компьютере под управлением Windows 10.  Команды, которые выполнялись в командной строке, и различные файлы были изменены в блокноте. Измените соответствующим образом для вашей среды.

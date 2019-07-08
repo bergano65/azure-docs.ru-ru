@@ -7,7 +7,7 @@ author: msjuergent
 manager: patfilot
 editor: ''
 tags: azure-resource-manager
-keywords: Протокол SAP
+keywords: SAP
 ms.service: virtual-machines-linux
 ms.devlang: NA
 ms.topic: article
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 04/10/2019
 ms.author: juergent
-ms.openlocfilehash: a74dd1a932cac41081786f76938a5b35de62d878
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7464ea481d4c95856b78a83a875f2cd24c00705b
+ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64689714"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67503321"
 ---
 [1928533]: https://launchpad.support.sap.com/#/notes/1928533
 [2015553]: https://launchpad.support.sap.com/#/notes/2015553
@@ -77,11 +77,11 @@ IBM Db2 для Linux, UNIX и Windows (LUW) в [высокий уровень д
 | Документация | 
 | --- |
 | [Вики-сайт сообщества SAP](https://wiki.scn.sap.com/wiki/display/HOME/SAPonLinuxNotes): Имеет все необходимые примечания к SAP для Linux |
-| [На виртуальных машинах планированию и внедрению SAP NETWEAVER на платформе Linux] [ planning-guide] руководство |
-| [Развертывание виртуальных машин для SAP NETWEAVER на] [ deployment-guide] (Эта статья) |
-| [Виртуальные машины Azure, базы данных управления system(DBMS) развертывания SAP NetWeaver на] [ dbms-guide] руководство |
+| [На виртуальных машинах планированию и внедрению SAP NETWEAVER на платформе Linux][planning-guide] руководство |
+| [Развертывание виртуальных машин для SAP NETWEAVER на][deployment-guide] (Эта статья) |
+| [Виртуальные машины Azure, базы данных управления system(DBMS) развертывания SAP NetWeaver на][dbms-guide] руководство |
 | [Рабочих нагрузок SAP в Azure контрольный список планирования и развертывания][azr-sap-plancheck] |
-| [рекомендации по SUSE Linux Enterprise Server for SAP Applications версии 12 с пакетом обновления 3 (SP3)][sles-for-sap-bp]: |
+| [SUSE Linux Enterprise Server для SAP приложений 12 SP3 лучшие рекомендации, руководства по][sles-for-sap-bp] |
 | [SUSE Linux Enterprise высокого уровня доступности расширения 12 SP3][sles-ha-guide] |
 | [IBM Db2 Azure виртуальные машины по развертыванию СУБД для рабочих нагрузок SAP][dbms-db2] |
 | [IBM Db2 HADR 11.1][db2-hadr-11.1] |
@@ -496,13 +496,12 @@ j2ee/dbhost = db-virt-hostname
 
 Используйте средство конфигурации J2EE для проверки или обновить URL-адреса JDBC. Так как средство настройки J2EE — это графическое средство, необходимо иметь X установлен сервер:
  
-1. Войдите на основной сервер приложений J2EE экземпляра и выполните:
-     <pre><code>sudo /usr/sap/*SID*/*Instance*/j2ee/configtool/configtool.sh</code></pre>
+1. Войдите на основной сервер приложений J2EE экземпляра и выполните:   `sudo /usr/sap/*SID*/*Instance*/j2ee/configtool/configtool.sh`
 1. В левом окне выберите **хранилища безопасности**.
-1. В правой области выберите ключа jdbc/пул / \<SAPSID>"/ URL".
+1. В правой области выберите ключаjdbc/пул/\<SAPSID > / URL-адрес.
 1. Измените имя узла в URL-адреса JDBC на имя виртуального узла.
-     <pre><code>jdbc:db2://db-virt-hostname:5912/TSP:deferPrepares=0</code></pre>
-1. Выберите **добавить**.
+     `jdbc:db2://db-virt-hostname:5912/TSP:deferPrepares=0`
+1. Выберите **Добавить**.
 1. Чтобы сохранить изменения, щелкните значок дискеты в левом верхнем углу.
 1. Закройте средство настройки.
 1. Перезапустите экземпляр Java.
@@ -516,7 +515,7 @@ j2ee/dbhost = db-virt-hostname
 
 Можно использовать существующие общие папки NFS высокой доступности для транспортов или каталог профиля. Дополнительные сведения можно найти в разделе
 
-- [Обеспечение высокого уровня доступности NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server][nfs-ha] 
+- [Высокий уровень доступности для NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server][nfs-ha] 
 - [Высокий уровень доступности для SAP NetWeaver на виртуальных машинах Azure в SUSE Linux Enterprise Server с файлами NetApp Azure для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files)
 - [Служба файлов Azure NetApp](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-introduction) (для создания общих ресурсов NFS)
 
