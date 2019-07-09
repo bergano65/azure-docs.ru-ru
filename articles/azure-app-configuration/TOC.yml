@@ -53,7 +53,7 @@
       items:
         - name: Устойчивость и аварийное восстановление
           href: concept-disaster-recovery.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Интеграция с функцией "Управляемое удостоверение службы Azure"
       href: howto-integrate-azure-managed-service-identity.md
@@ -73,10 +73,12 @@
           href: 'https://go.microsoft.com/fwlink/?linkid=2074664'
         - name: Построитель .NET Framework
           href: 'https://go.microsoft.com/fwlink/?linkid=2074663'
-        - name: Поставщик Java Spring
-          href: 'https://go.microsoft.com/fwlink/?linkid=2074659'
         - name: Пакет Azure SDK для .NET
           href: 'https://go.microsoft.com/fwlink/?linkid=2092056'
+        - name: Поставщик Java Spring
+          href: 'https://go.microsoft.com/fwlink/?linkid=2074659'
+        - name: Пакет SDK Azure для Java
+          href: 'https://go.microsoft.com/fwlink/?linkid=2098196'
         - name: REST
           href: 'https://go.microsoft.com/fwlink/?linkid=2078296'
     - name: Управление функциями

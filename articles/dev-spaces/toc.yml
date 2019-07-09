@@ -17,7 +17,7 @@
           href: quickstart-netcore-visualstudio.md
         - name: Node.js (VS Code и CLI)
           href: quickstart-nodejs.md
-    - name: Руководства
+    - name: Учебники
       items:
         - name: Java (VS Code и CLI)
           items:
@@ -55,7 +55,7 @@
       items:
         - name: Принцип работы Dev Spaces
           href: how-dev-spaces-works.md
-    - name: Руководства
+    - name: Практическое руководство
       items:
         - name: Создание кластера Kubernetes с помощью Azure Cloud Shell
           href: how-to/create-cluster-cloud-shell.md
@@ -71,6 +71,8 @@
           href: how-to/upgrade-tools.md
         - name: Использование CI/CD в Azure Dev Spaces
           href: how-to/setup-cicd.md
+        - name: Использование подключаемого модуля Azure Dev Spaces для Jenkins
+          href: ../jenkins/tutorial-jenkins-dev-spaces.md
         - name: Непрерывность бизнес-процессов и аварийное восстановление в Azure Dev Spaces
           href: how-to/dev-spaces-business-continuity.md
     - name: Устранение неполадок

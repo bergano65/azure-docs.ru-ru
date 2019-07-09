@@ -36,11 +36,16 @@
   items:
     - name: Обзор
       href: concepts-overview.md
-    - name: Передача в облако и хранение
+    - name: Учетные записи
       items:
-        - name: Хранилище
+        - name: Учетная запись Служб мультимедиа
+          displayName: subscription
+          href: media-services-account-concept.md
+        - name: Учетная запись хранения
           href: storage-account-concept.md
           displayName: Storage side encryption
+    - name: Передача файлов
+      items:
         - name: Активы
           href: assets-concept.md
     - name: Кодирование

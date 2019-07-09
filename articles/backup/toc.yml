@@ -64,6 +64,8 @@
           href: faq-backup-sql-server.md
         - name: Вопросы и ответы об Azure Backup Server и DPM
           href: backup-azure-dpm-azure-server-faq.md
+        - name: 'Вопросы и ответы: оповещения мониторинга Azure Backup'
+          href: backup-azure-monitor-alert-faq.md
     - name: Архитектура службы Backup
       href: backup-architecture.md
     - name: Управление доступом на основе ролей
