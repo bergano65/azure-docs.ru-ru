@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: article
 ms.date: 06/14/2019
 ms.author: erhopf
-ms.openlocfilehash: e1a6a44d7ff9d5786388fc47245ef5c79cb9be82
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: 3be912f053bf206999546678e1e407548af181bf
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67155734"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657682"
 ---
 # <a name="enable-diagnostic-logging-for-azure-cognitive-services"></a>Включить ведение журнала диагностики для Azure Cognitive Services
 
@@ -28,14 +28,14 @@ ms.locfileid: "67155734"
 * [Log Analytics](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitor-stream-diagnostic-logs-log-analytics) -средство поиска и аналитики гибкие журнала, которое позволяет для анализа необработанных журналов, создаваемых в ресурсе Azure.
 
 > [!NOTE]
-> Доступны дополнительные параметры конфигурации. Дополнительные сведения см. в разделе [сбор и использование данных журнала из ресурсов Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs).
+> Доступны дополнительные параметры конфигурации. Дополнительные сведения см. в разделе [сбор и использование данных журнала из ресурсов Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-overview).
 
 ## <a name="enable-diagnostic-log-collection"></a>Включите сбор журналов диагностики  
 
 Давайте начнем, включив ведение журналов с помощью портала Azure диагностики.
 
 > [!NOTE]
-> Чтобы включить эту функцию с помощью PowerShell или Azure CLI, используйте инструкции, предоставленные в [сбор и использование данных журнала из ресурсов Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs#how-to-enable-collection-of-diagnostic-logs).
+> Чтобы включить эту функцию с помощью PowerShell или Azure CLI, используйте инструкции, предоставленные в [сбор и использование данных журнала из ресурсов Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-overview#diagnostic-settings).
 
 1. Перейдите на портал Azure. Затем найдите и выберите ресурс Cognitive Services. Например, от подписки на поиск в Интернете Bing.   
 2. Затем в меню навигации слева найдите **мониторинг** и выберите **параметров диагностики**. Этот экран содержит все ранее созданный параметров диагностики для данного ресурса.

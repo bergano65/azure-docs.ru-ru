@@ -25,7 +25,7 @@ abstract:
     href: 'https://youtu.be/BSUuXXcJKCk/'
     width: 250
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Узнайте, как добавить приложения, чтобы пользователи могли получить к ним доступ через Azure Active Directory.'
@@ -40,7 +40,7 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_protect.svg'
             text: Просмотр приложений
             href: 'https://docs.microsoft.com/azure/active-directory/manage-apps/view-applications-portal'
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Узнайте, как включить простой и безопасный вход в систему для ваших приложений.'

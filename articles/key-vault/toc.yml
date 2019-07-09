@@ -1,10 +1,10 @@
-- name: Документация по хранилищу ключей
+- name: Документация по Key Vault
   href: index.yml
 - name: Обзор
   items:
     - name: Сведения о Key Vault
       href: key-vault-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Настройка и получение секрета — CLI
@@ -22,7 +22,7 @@
       href: quick-create-template.md
 - name: Учебники
   items:
-    - name: Веб-приложения Azure.
+    - name: Веб-приложения Azure
       items:
         - name: Использование Azure Key Vault с веб-приложением Azure (.NET)
           href: tutorial-net-create-vault-azure-web-app.md
@@ -60,7 +60,7 @@
   items:
     - name: Безопасность
       items:
-        - name: Обзор безопасности
+        - name: Общие сведения о безопасности
           href: overview-security.md
         - name: Общие атрибуты безопасности
           href: key-vault-security-attributes.md
@@ -68,13 +68,13 @@
           href: key-vault-ovw-security-worlds.md
         - name: Защита хранилища ключей
           href: key-vault-secure-your-key-vault.md
-    - name: Что такое хранилище ключей?
+    - name: Что такое Key Vault?
       href: key-vault-whatis.md
     - name: Обратимое удаление
       href: key-vault-ovw-soft-delete.md
     - name: Регулирование
       href: key-vault-ovw-throttling.md
-    - name: Конечные точки служб для виртуальной сети
+    - name: Конечные точки службы для виртуальной сети
       href: key-vault-overview-vnet-service-endpoints.md
     - name: 'Аутентификация, запросы и ответы'
       href: authentication-requests-and-responses.md
@@ -92,7 +92,7 @@
           href: create-certificate-scenarios.md
     - name: Общие атрибуты безопасности Azure
       href: key-vault-security-attributes.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Ведение журнала Azure Key Vault
       href: key-vault-logging.md
@@ -120,7 +120,7 @@
   items:
     - name: Azure PowerShell
       href: '/powershell/module/az.keyvault/?view=azps-1.2.0#key_vault'
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/keyvault
     - name: .NET
       href: /dotnet/api/overview/azure/key-vault?view=azure-dotnet
@@ -144,7 +144,7 @@
       items:
         - name: Руководство разработчика
           href: key-vault-developers-guide.md
-        - name: Ключи с защитой HSM
+        - name: 'Ключи, защищенные модулем HSM'
           href: key-vault-hsm-protected-keys.md
         - name: "Переход на .NET\_2.0"
           href: key-vault-dotnet2api-release-notes.md
@@ -164,15 +164,13 @@
       href: common-parameters-and-headers.md
     - name: Данные пользователей
       href: key-vault-customer-data.md
-    - name: Заметки о выпуске
-      href: key-vault-versions.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/key-vault/'
-    - name: Регионы доступности
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=key-vault'
-    - name: 'Соглашение об уровне обслуживания (SLA):'
+    - name: Соглашение об уровне обслуживания
       href: 'https://azure.microsoft.com/support/legal/sla/key-vault/'
-    - name: Ограничения служб
+    - name: Ограничения службы
       href: key-vault-service-limits.md
     - name: Состояние службы
       href: 'https://azure.microsoft.com/status/'

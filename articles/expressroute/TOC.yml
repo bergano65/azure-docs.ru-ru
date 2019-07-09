@@ -72,8 +72,11 @@
           href: expressroute-howto-circuit-portal-resource-manager.md
         - name: Azure PowerShell
           href: expressroute-howto-circuit-arm.md
-        - name: "Azure\_CLI"
+        - name: Инфраструктура CLI Azure
           href: howto-circuit-cli.md
+        - name: Шаблон Azure Resource Manager
+          displayName: 'ARM,resource manager template'
+          href: expressroute-howto-circuit-resource-manager-template.md
     - name: Создание и изменение конфигурации пиринга
       items:
         - name: Портал Azure
@@ -191,6 +194,7 @@
     - name: REST (классическая модель)
       href: 'https://msdn.microsoft.com/library/azure/dn606310'
     - name: Шаблон Resource Manager
+      displayName: 'ARM,resource manager template'
       href: /azure/templates/microsoft.network/expressroutecircuits
 - name: Ресурсы
   items:

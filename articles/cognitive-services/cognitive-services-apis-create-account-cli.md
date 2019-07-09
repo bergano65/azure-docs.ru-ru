@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 06/26/2019
 ms.author: aahi
-ms.openlocfilehash: 26f7f3ab60347d9ec5f2a144410ad3de436f5b5c
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: acafc2c42c2946632496b646d001c58d6b48c2a6
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67454898"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657713"
 ---
 # <a name="create-a-cognitive-services-account-using-the-azure-command-line-interfacecli"></a>Создание учетной записи Cognitive Services, с помощью Interface(CLI) командной строки Azure
 
@@ -39,11 +39,11 @@ az login
  
 ## <a name="create-a-new-azure-cognitive-services-resource-group"></a>Создать новую группу ресурсов Azure Cognitive Services
 
-Подписки будут Cognitive Services представлены ресурсы Azure. Каждая учетная запись Cognitive Services (и его связанных ресурсов Azure) должны принадлежать к группе ресурсов Azure.
+Подписки будут Cognitive Services представлены ресурсы Azure. Каждая учетная запись Cognitive Services (и связанные с ней ресурсы Azure) должна принадлежать к группе ресурсов Azure.
 
 ### <a name="choose-your-resource-group-location"></a>Выберите расположение группы ресурсов
 
-Чтобы создать ресурс, вам потребуется один из доступных расположений Azure для вашей подписки. Можно получить список доступных расположений с [az учетной записи list-locations](/cli/azure/account#az_account_list) команды. Большинство Cognitive Services может осуществляться из нескольких мест. Выберите из них, ближайший к вам, или узнать, какие расположения доступны для службы.
+Чтобы создать ресурс, вам потребуется один из доступных расположений Azure для вашей подписки. Можно получить список доступных расположений с [az учетной записи list-locations](/cli/azure/account#az-account-list-locations) команды. Большинство Cognitive Services может осуществляться из нескольких мест. Выберите из них, ближайший к вам, или узнать, какие расположения доступны для службы.
 
 > [!IMPORTANT]
 > * Помните ваше расположение Azure, так как он потребуется при вызове Azure Cognitive Services.
@@ -55,7 +55,7 @@ az account list-locations \
     --out table
 ```
 
-Добавив ваше расположение azure, создать новую группу ресурсов в Azure CLI с помощью [Создание группы az](/cli/azure/group#az_group_create) команды.
+Добавив ваше расположение azure, создать новую группу ресурсов в Azure CLI с помощью [Создание группы az](/cli/azure/group#az-group-create) команды.
 
 В следующем примере замените расположение azure `westus2` с помощью нескольких местоположениях Azure, доступных для вашей подписки.
 
