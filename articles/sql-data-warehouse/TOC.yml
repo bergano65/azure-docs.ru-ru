@@ -127,6 +127,14 @@
           href: sql-data-warehouse-overview-develop.md
         - name: Рекомендации
           href: sql-data-warehouse-best-practices-development.md
+        - name: Материализованное представление
+          items:
+            - name: Инструкция CREATE MATERIALIZED VIEW AS SELECT (Transact-SQL)
+              href: /sql/t-sql/statements/create-materialized-view-as-select-transact-sql
+            - name: Инструкция ALTER MATERIALIZED VIEW AS SELECT (Transact-SQL)
+              href: /sql/t-sql/statements/alter-materialized-view-transact-sql
+        - name: Кэширование результирующего набора
+          href: /sql/t-sql/statements/set-result-set-caching-transact-sql
         - name: Таблицы
           items:
             - name: Обзор
@@ -215,7 +223,7 @@
       items:
         - name: "Настройка аутентификации Azure\_AD"
           href: ../sql-database/sql-database-aad-authentication-configure.md?toc=/azure/sql-data-warehouse/toc.json
-        - name: условный доступ;
+        - name: Условный доступ
           href: ../sql-database/sql-database-conditional-access.md?toc=/azure/sql-data-warehouse/toc.json
         - name: Создание правил виртуальной сети с помощью PowerShell
           href: ../sql-database/sql-database-vnet-service-endpoint-rule-powershell.md?toc=/azure/sql-data-warehouse/toc.json

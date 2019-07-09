@@ -58,8 +58,12 @@
           href: virtual-machines-windows-portal-sql-server-provision.md
         - name: Использование Azure PowerShell
           href: virtual-machines-windows-ps-sql-create.md
+    - name: Регистрация в поставщике ресурсов
+      href: virtual-machines-windows-sql-register-with-resource-provider.md
     - name: Изменение модели лицензирования для виртуальной машины SQL
       href: virtual-machines-windows-sql-ahb.md
+    - name: Изменение выпуска SQL Server
+      href: virtual-machines-windows-sql-change-edition.md
     - name: Миграция
       items:
         - name: Перенос базы данных SQL Server
@@ -106,7 +110,7 @@
       href: /rest/api/
 - name: Ресурсы
   items:
-    - name: Вопросы и ответы
+    - name: Часто задаваемые вопросы
       href: virtual-machines-windows-sql-server-iaas-faq.md
     - name: Цены
       href: virtual-machines-windows-sql-server-pricing-guidance.md
