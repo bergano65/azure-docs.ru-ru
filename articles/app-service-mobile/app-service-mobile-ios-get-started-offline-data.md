@@ -167,7 +167,7 @@ ms.locfileid: "67446368"
 | --- | --- |
 | id | Integer 64 |
 | itemId | String |
-| properties | Двоичные данные |
+| properties |Binary Data |
 | table | String |
 | tableKind | Integer 16 |
 
@@ -180,7 +180,7 @@ ms.locfileid: "67446368"
 | --- | --- |
 | id |String |
 | operationId |Integer 64 |
-| properties |Двоичные данные |
+| properties |Binary Data |
 | tableKind |Integer 16 |
 
  **MS_TableConfig**
