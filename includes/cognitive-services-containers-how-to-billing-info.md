@@ -1,15 +1,15 @@
 ---
-author: diberry
-ms.author: diberry
+author: IEvangelist
+ms.author: dapine
+ms.date: 06/25/2019
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 04/16/2019
-ms.openlocfilehash: bfda8b83f1bedf11151ba89b58c95347aa35839a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: a24300958c27daaaf49cc3045a5e99d77c938ab7
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67052047"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704274"
 ---
 Запросы к контейнеру оплачиваются согласно ценовой категории ресурсов Azure, используемой для `<ApiKey>`.
 
@@ -23,7 +23,7 @@ ms.locfileid: "67052047"
 
 Чтобы запустить контейнер с помощью команды `docker run`, необходимо указать все три приведенных ниже параметра с допустимыми значениями:
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 |--------|-------------|
 | `ApiKey` | Ключ API ресурса Cognitive Services, используемый для отслеживания информации о выставлении счетов.<br/>Этому параметру следует присвоить значение ключа API для подготовленного ресурса, который можно получить в `Billing`. |
 | `Billing` | Конечная точка ресурса Cognitive Services, используемая для отслеживания информации о выставлении счетов.<br/>Этому параметру следует присвоить URI конечной точки подготовленного ресурса Azure.|

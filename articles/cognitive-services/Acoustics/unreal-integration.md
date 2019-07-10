@@ -10,12 +10,12 @@ ms.subservice: acoustics
 ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: kegodin
-ms.openlocfilehash: 02d63897cffa2ceca46b992e7d07b917dd73bc72
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 6207808efb9bee327afd2de21ffa59535acf4e55
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67621562"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704790"
 ---
 # <a name="project-acoustics-unreal-and-wwise-integration"></a>Unreal шума и интеграции Wwise проекта
 В этом практическом руководстве шаги подробные интеграции пакета проекта шума подключаемого модуля в существующих Unreal и Wwise игр проект. 
@@ -26,7 +26,7 @@ ms.locfileid: "67621562"
 * [Подключаемый модуль Wwise для Unreal](https://www.audiokinetic.com/library/?source=UE4&id=index.html)
   * Если вы используете прямая интеграция пакета SDK Wwise вместо того чтобы использовать подключаемые модули Wwise Unreal, обратитесь к проекта шума Unreal подключаемого модуля и изменить вызовы Wwise API.
 
-Если вы хотите использовать шума проекта с аудио engine Кроме Wwise, свяжитесь с нами на [форумы проекта шума](https://social.msdn.microsoft.com/Forums/en-US/home?forum=projectacoustics). Проект шума Unreal подключаемый модуль можно использовать для запроса данных шума и затем вызовов API к ядру.
+Если вы хотите использовать шума проекта с аудио engine Кроме Wwise, выполните запрос расширения на [шума проекта дискуссионный форум](https://github.com/microsoft/ProjectAcoustics/issues). Проект шума Unreal подключаемый модуль можно использовать для запроса данных шума и затем вызовов API к ядру.
 
 ## <a name="download-project-acoustics"></a>Загрузите проект шума
 Если это еще не сделано, загрузите [пакета подключаемый модуль проекта шума Unreal & Wwise](https://www.microsoft.com/download/details.aspx?id=58090)). 

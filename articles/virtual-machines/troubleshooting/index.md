@@ -4,7 +4,7 @@ description: Сведения об устранении неполадок с р
 title: Документация по устранению неполадок с виртуальными машинами Azure | Документация Майкрософт
 services: virtual-machines
 author: genlin
-manager: jeconnoc
+manager: gwallace
 ms.assetid: ''
 ms.service: virtual-machines
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 10/3/2018
 ms.author: genli
-ms.openlocfilehash: 1fdf195e5d02c9264bf24d9cf3ac8b1a47ed850b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 47db174042f7dd2e9d1bd1503c8e8b8f635b4dbe
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61227143"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705747"
 ---
 # <a name="troubleshooting-azure-virtual-machines"></a>Устранение неполадок с виртуальными машинами Azure
 
-- Ошибки выделения ресурсов
+- Ошибки распределения ресурсов
     - [Ошибки выделения ресурсов](allocation-failure.md)
     - [Ошибки распределения ресурсов для классических развертываний](allocation-failure-classic.md)
 - [Диагностика загрузки](boot-diagnostics.md)
@@ -53,20 +53,20 @@ ms.locfileid: "61227143"
     - [Виртуальные машины Windows](serial-console-windows.md)
         - [CMD и команды PowerShell](serial-console-cmd-ps-commands.md)
 - [Ошибки при удалении ресурсов хранилища](storage-resource-deletion-errors.md      )
-- [непредвиденные перезагрузки виртуальных машин с подключенными VHD](unexpected-reboots-attached-vhds.md);
+- [Непредвиденные перезагрузки виртуальных машин с подключенными VHD](unexpected-reboots-attached-vhds.md)
 - [Проблемы с активацией Windows](troubleshoot-activation-problems.md)
 - [Ошибки доступа к приложению](troubleshoot-app-connection.md)
 - Устранение неполадок развертываний
     - [Linux](troubleshoot-deploy-vm-linux.md)
     - [Windows](troubleshoot-deploy-vm-windows.md)
 - [Изменение имен устройств](troubleshoot-device-names-problems.md)
-- Доступ к виртуальной машине восстановления
-    -  Windows
+- Доступ к восстановлению виртуальной машины
+    - Windows
         - [PowerShell](troubleshoot-recovery-disks-windows.md)
-        - [портал Azure](troubleshoot-recovery-disks-portal-windows.md)
+        - [Портал Azure](troubleshoot-recovery-disks-portal-windows.md)
     - Linux
-        - [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](troubleshoot-recovery-disks-linux.md)
-    - [портал Azure](troubleshoot-recovery-disks-portal-linux.md)
+        - [CLI](troubleshoot-recovery-disks-linux.md)
+    - [Портал Azure](troubleshoot-recovery-disks-portal-linux.md)
 - [Ошибки при загрузке](boot-error-troubleshoot.md)
 - [Ошибки BitLocker](troubleshoot-bitlocker-boot-error.md)
 - [Проверка ошибок файловой системы](troubleshoot-check-disk-boot-error.md)
