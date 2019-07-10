@@ -9,14 +9,18 @@
       items:
         - name: Командная разработка
           href: quickstart-team-development.md
-        - name: Java (VS Code и CLI)
+        - name: Запуск приложения
+          href: quickstart-cli.md
+        - name: Запуск приложения с помощью файла Dockerfile
+          href: quickstart-cli-dockerfile.md
+        - name: Запуск и отладка кода Java в VS Code
           href: quickstart-java.md
-        - name: .NET Core (VS Code и CLI)
+        - name: Запуск и отладка кода .NET Core в VS Code
           href: quickstart-netcore.md
-        - name: .NET Core (Visual Studio)
-          href: quickstart-netcore-visualstudio.md
-        - name: Node.js (VS Code и CLI)
+        - name: Запуск и отладка кода Node.js в VS Code
           href: quickstart-nodejs.md
+        - name: Запуск и отладка кода .NET Core в Visual Studio
+          href: quickstart-netcore-visualstudio.md
     - name: Учебники
       items:
         - name: Java (VS Code и CLI)
@@ -55,6 +59,8 @@
       items:
         - name: Принцип работы Dev Spaces
           href: how-dev-spaces-works.md
+        - name: Принцип работы VS Code с Dev Spaces
+          href: how-vs-code-works-with-dev-spaces.md
     - name: Практическое руководство
       items:
         - name: Создание кластера Kubernetes с помощью Azure Cloud Shell

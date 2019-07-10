@@ -1,10 +1,10 @@
-- name: Документация по VPN-шлюзам
+- name: Документация по VPN-шлюзу
   href: index.yml
 - name: Обзор
   items:
-    - name: Основные сведения о VPN-шлюзах Azure
+    - name: Основные сведения о VPN-шлюзе Azure
       href: vpn-gateway-about-vpngateways.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Создание и администрирование VPN-шлюза
       href: vpn-gateway-tutorial-create-gateway-powershell.md
@@ -28,7 +28,7 @@
       href: vpn-gateway-highlyavailable.md
     - name: Сведения о подключениях "точка — сеть"
       href: point-to-site-about.md
-    - name: "Сведения о маршрутизации VPN-подключений типа \"точка\_— сеть\""
+    - name: "Сведения о маршрутизации VPN-подключений \"точка\_— сеть\""
       href: vpn-gateway-about-point-to-site-routing.md
     - name: Сведения об избыточных между зонами шлюзах для Зон доступности
       href: about-zone-redundant-vnet-gateways.md
@@ -38,13 +38,13 @@
           href: ../networking/connectivty-interoperability-preface.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
         - name: Параметры конфигурации для настройки теста
           href: ../networking/connectivty-interoperability-configuration.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
-        - name: Анализ в плоскости управления
+        - name: Анализ на уровне управления
           href: ../networking/connectivty-interoperability-control-plane.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
-        - name: Анализ в плоскости данных
+        - name: Анализ на уровне данных
           href: ../networking/connectivty-interoperability-data-plane.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
     - name: Атрибуты безопасности
       href: vpn-gateway-security-attributes.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Создание и администрирование VPN-шлюза
       items:
@@ -54,7 +54,7 @@
               href: create-routebased-vpn-gateway-portal.md
             - name: Azure PowerShell
               href: create-routebased-vpn-gateway-powershell.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: create-routebased-vpn-gateway-cli.md
         - name: Проверка подключения VPN-шлюза
           href: vpn-gateway-verify-connection-resource-manager.md
@@ -68,7 +68,7 @@
               href: vpn-gateway-delete-vnet-gateway-powershell.md
         - name: Управление устаревшими номерами SKU шлюза
           href: vpn-gateway-about-skus-legacy.md
-    - name: Подключения типа "сеть-сеть"
+    - name: "Подключения \"сеть\_— сеть\""
       items:
         - name: "Настройка подключений \"сеть\_— сеть\""
           items:
@@ -76,15 +76,15 @@
               href: vpn-gateway-howto-site-to-site-resource-manager-portal.md
             - name: Azure PowerShell
               href: vpn-gateway-create-site-to-site-rm-powershell.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: vpn-gateway-howto-site-to-site-resource-manager-cli.md
-        - name: "Настройка нескольких подключений типа \"сеть\_— сеть\""
+        - name: "Настройка нескольких подключений \"сеть\_— сеть\""
           href: vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md
         - name: Подключение к нескольким VPN-устройствам на основе политик
           href: vpn-gateway-connect-multiple-policybased-rm-ps.md
         - name: Параллельные подключения "сеть — сеть" и ExpressRoute
           href: ../expressroute/expressroute-howto-coexist-resource-manager.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
-    - name: "Подключения типа \"виртуальная сеть\_— виртуальная сеть\""
+    - name: "Подключения \"виртуальная сеть\_— виртуальная сеть\""
       items:
         - name: Настройка подключений между виртуальными сетями
           items:
@@ -92,7 +92,7 @@
               href: vpn-gateway-howto-vnet-vnet-resource-manager-portal.md
             - name: Azure PowerShell
               href: vpn-gateway-vnet-vnet-rm-ps.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: vpn-gateway-howto-vnet-vnet-cli.md
         - name: Настройка подключения между виртуальными сетями для разных моделей развертывания
           items:
@@ -100,11 +100,11 @@
               href: vpn-gateway-connect-different-deployment-models-portal.md
             - name: Azure PowerShell
               href: vpn-gateway-connect-different-deployment-models-powershell.md
-    - name: Подключения "точка-сеть"
+    - name: "Подключения \"точка\_— сеть\""
       items:
         - name: Аутентификация в Azure на основе сертификата
           items:
-            - name: "Настройка VPN для подключений \"точка\_— сеть\""
+            - name: "Настройка VPN-подключений \"точка\_— сеть\""
               items:
                 - name: Портал Azure
                   href: vpn-gateway-howto-point-to-site-resource-manager-portal.md
@@ -126,7 +126,7 @@
               href: point-to-site-vpn-client-configuration-azure-cert.md
         - name: Проверка подлинности RADIUS
           items:
-            - name: "Настройка VPN для подключений \"точка\_— сеть\""
+            - name: "Настройка VPN-подключений \"точка\_— сеть\""
               href: point-to-site-how-to-radius-ps.md
             - name: Создание и установка файлов конфигурации VPN-клиента
               href: point-to-site-vpn-client-configuration-radius.md
@@ -140,6 +140,8 @@
               href: vpn-gateway-howto-openvpn-clients.md
         - name: Переход на общедоступный сертификат шлюза от ЦС для P2S
           href: vpn-gateway-point-to-site-gateway-public-ca.md
+        - name: Настройка туннеля Always On VPN для устройства
+          href: vpn-gateway-howto-always-on-device-tunnel.md
     - name: Создание избыточного между зонами шлюза виртуальной сети в Зонах доступности Azure
       href: create-zone-redundant-vnet-gateway.md
     - name: Настройка политик IPsec/IKE для подключений
@@ -152,7 +154,7 @@
           items:
             - name: Azure PowerShell
               href: vpn-gateway-bgp-resource-manager-ps.md
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: bgp-how-to-cli.md
         - name: Настройка принудительного туннелирования
           items:
@@ -168,7 +170,7 @@
           href: vpn-gateway-modify-local-network-gateway-portal.md
         - name: Azure PowerShell
           href: vpn-gateway-modify-local-network-gateway.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: vpn-gateway-modify-local-network-gateway-cli.md
     - name: Настройка устройств VPN
       items:
@@ -193,7 +195,7 @@
           href: 'https://support.microsoft.com/help/4032151/configuring-and-validating-vnet-or-vpn-connections'
         - name: Проверка пропускной способности VPN для виртуальной сети
           href: vpn-gateway-validate-throughput-to-vnet.md
-        - name: Подключения "точка-сеть"
+        - name: "Подключения \"точка\_— сеть\""
           items:
             - name: Проблемы с подключением "точка — сеть"
               href: vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md
@@ -201,7 +203,7 @@
               href: vpn-gateway-troubleshoot-point-to-site-osx-ikev2.md
         - name: Проблемы с подключением "сеть-сеть"
           items:
-            - name: Подключения типа "сеть-сеть"
+            - name: "Подключения \"сеть\_— сеть\""
               href: vpn-gateway-troubleshoot-site-to-site-cannot-connect.md
             - name: Периодические разрывы подключений "сеть — сеть"
               href: vpn-gateway-troubleshoot-site-to-site-disconnected-intermittently.md
@@ -233,7 +235,7 @@
       href: /rest/api/network/virtualnetworkgateways
     - name: REST (классическая модель)
       href: 'https://msdn.microsoft.com/library/jj154113'
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/network/vnet-gateway
 - name: Ресурсы
   items:

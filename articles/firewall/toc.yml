@@ -1,10 +1,10 @@
-- name: Документации по брандмауэру Azure
+- name: Документации по Брандмауэру Azure
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое брандмауэр Azure?
+    - name: Что такое Брандмауэр Azure?
       href: overview.md
-- name: Руководства
+- name: Учебники
   expanded: true
   items:
     - name: Развертывание и настройка
@@ -23,7 +23,7 @@
       href: log-analytics-samples.md
 - name: Основные понятия
   items:
-    - name: теги FQDN;
+    - name: Теги FQDN
       href: fqdn-tags.md
     - name: FQDN инфраструктуры
       href: infrastructure-fqdns.md
@@ -35,7 +35,7 @@
       href: rule-processing.md
     - name: Теги служб
       href: service-tags.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: "Развертывание с помощью Azure\_PowerShell"
       href: deploy-ps.md
@@ -49,6 +49,8 @@
       href: deploy-availability-zone-powershell.md
     - name: Интеграция с подсистемой балансировки нагрузки
       href: integrate-lb.md
+    - name: Правила приложений с использованием полных доменных имен SQL
+      href: sql-fqdn-filtering.md
 - name: Справочные материалы
   items:
     - name: Azure CLI
@@ -69,13 +71,13 @@
       href: ../azure-resource-manager/resource-group-overview.md
 - name: Ресурсы
   items:
-    - name: Вопросы и ответы
+    - name: Часто задаваемые вопросы
       href: firewall-faq.md
     - name: Создание шаблонов
       href: ../azure-resource-manager/resource-group-authoring-templates.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Шаблоны сообщества
+    - name: Шаблоны от сообщества
       href: 'https://azure.microsoft.com/documentation/templates'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/azure-firewall/'

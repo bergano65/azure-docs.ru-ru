@@ -49,6 +49,14 @@
       items:
         - name: Что собой представляет единый вход
           href: what-is-single-sign-on.md
+        - name: Включение единого входа для мультитенантного приложения
+          href: isv-sso-content.md
+        - name: Создание клиента Azure для мультитенантного приложения
+          href: isv-tenant-multi-tenant-app.md
+        - name: Выбор федерации нескольких клиентов
+          href: isv-choose-multi-tenant-federation.md
+        - name: Создание документации для мультитенантного приложения
+          href: isv-create-sso-documentation.md
         - name: Планирование развертывания единого входа
           href: plan-sso-deployment.md
     - name: Единый вход с помощью одного щелчка
@@ -73,6 +81,20 @@
           href: tenant-restrictions.md
         - name: Настройка шифрования токенов SAML (предварительная версия)
           href: howto-saml-token-encryption.md
+    - name: Единый вход
+      items:
+        - name: Что собой представляет единый вход
+          href: what-is-single-sign-on.md
+        - name: Планирование развертывания единого входа
+          href: plan-sso-deployment.md
+        - name: Включение единого входа в мультитенантное приложение
+          href: isv-sso-content.md
+        - name: Выбор подходящего протокола для федерации единого входа
+          href: isv-choose-multi-tenant-federation.md
+        - name: Создание клиента Azure для мультитенантного приложения
+          href: isv-tenant-multi-tenant-app.md
+        - name: Создание и публикация документации по единому входу для приложения
+          href: isv-create-sso-documentation.md
     - name: Порталы пользователей
       href: end-user-experiences.md
 - name: Руководства

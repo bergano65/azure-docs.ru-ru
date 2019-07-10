@@ -4,11 +4,13 @@
   items:
     - name: Сведения о службе Azure SignalR
       href: signalr-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: "ASP.NET Core\_— C#"
       href: signalr-quickstart-dotnet-core.md
+    - name: "ASP.NET\_— C#"
+      href: signalr-quickstart-dotnet.md
     - name: Функции Azure — JavaScript
       href: signalr-quickstart-azure-functions-javascript.md
     - name: 'Функции Azure — C#'
@@ -25,7 +27,7 @@
   items:
     - name: Примеры кода
       href: 'https://github.com/aspnet/AzureSignalR-samples'
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: signalr-reference-cli.md
 - name: Основные понятия
   items:
@@ -41,7 +43,7 @@
           href: signalr-concept-serverless-development-config.md
         - name: Справочник по привязкам Службы SignalR для Функций Azure
           href: ../azure-functions/functions-bindings-signalr-service.md
-    - name: высокую доступность;
+    - name: Высокий уровень доступности
       items:
         - name: Устойчивость и аварийное восстановление
           href: signalr-concept-disaster-recovery.md
@@ -49,11 +51,11 @@
       href: signalr-concept-messages-and-connections.md
     - name: Рекомендации по производительности
       href: signalr-concept-performance.md
-    - name: Authentication
+    - name: Аутентификация
       href: signalr-concept-authenticate-oauth.md
-- name: Практические руководства
+- name: Руководства
   items:
-    - name: Масштаб
+    - name: Масштабирование
       items:
         - name: Выполнение на нескольких экземплярах
           href: signalr-howto-scale-multi-instances.md
@@ -67,7 +69,7 @@
           href: signalr-concept-azure-functions.md
 - name: Ссылки
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: signalr-reference-cli.md
     - name: REST API
       href: 'https://github.com/Azure/azure-signalr/blob/dev/docs/rest-api.md'
@@ -85,7 +87,7 @@
       href: 'https://github.com/aspnet/Home/wiki/Roadmap'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/'
-    - name: Регионы доступности
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=signalr-service'
     - name: Часто задаваемые вопросы
       href: signalr-resource-faq.md
@@ -93,7 +95,7 @@
       href: 'https://docs.microsoft.com/azure/azure-subscription-service-limits#signalr-service-limits'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/signalr-service/'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://www.youtube.com/results?search_query=Azure+SignalR+Core'
     - name: StackOverflow
       href: 'https://stackoverflow.com/search?q=signalr+service'

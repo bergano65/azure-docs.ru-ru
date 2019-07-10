@@ -209,6 +209,8 @@
           href: sql-database-managed-instance-index.yml
         - name: Возможности управляемого экземпляра
           href: sql-database-managed-instance.md
+        - name: 'Управляемый экземпляр: вопросы и ответы'
+          href: sql-database-managed-instance-faq.md
         - name: Справочник по API управления
           href: sql-database-managed-instance-create-manage.md
         - name: Ограничения ресурсов

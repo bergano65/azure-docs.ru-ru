@@ -9,7 +9,7 @@
       href: quickstart-onboard.md
     - name: Контроль с помощью оповещений
       href: quickstart-get-visibility.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Обнаружение потенциальных угроз
       href: tutorial-detect-threats.md
@@ -17,7 +17,7 @@
       href: tutorial-investigate-cases.md
     - name: Реагирование на угрозы
       href: tutorial-respond-threats-playbook.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Подключение источников данных
       href: connect-data-sources.md
@@ -32,7 +32,7 @@
               href: connect-cloud-app-security.md
             - name: Подключение журнала действий Azure
               href: connect-azure-activity.md
-            - name: Подключение службы защиты идентификации Azure AD
+            - name: Подключение Защиты идентификации Azure AD
               href: connect-azure-ad-identity-protection.md
             - name: Подключение Azure Information Protection
               href: connect-azure-information-protection.md
@@ -52,6 +52,8 @@
           items:
             - name: Подключение generic CEF
               href: connect-common-event-format.md
+            - name: Подключение AWS
+              href: connect-aws.md
             - name: Подключение Barracuda
               href: connect-barracuda.md
             - name: Подключение Check Point

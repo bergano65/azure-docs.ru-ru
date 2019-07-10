@@ -35,6 +35,8 @@
         - name: Настройка контейнеров
           href: form-recognizer-container-configuration.md
           displayName: 'docker, container, run, billing, apikey, logging'
+        - name: Использование экземпляров контейнеров
+          href: deploy-form-recognizer-on-container-instances.md
 - name: Справочные материалы
   items:
     - name: API Распознавателя документов

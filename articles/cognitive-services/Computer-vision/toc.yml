@@ -147,6 +147,8 @@
           href: computer-vision-how-to-install-containers.md
         - name: Настройка контейнеров
           href: computer-vision-resource-container-config.md
+        - name: Использование экземпляров контейнеров
+          href: deploy-computer-vision-on-container-instances.md
     - name: Использование подключенной службы "Компьютерное зрение"
       href: vs-computer-vision-connected-service.md
     - name: Анализ видео в реальном времени
