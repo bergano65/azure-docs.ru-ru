@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/25/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b9fdc6bf46cff1f3a38d40a4e7abad5bfe56c47
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 95ce68547ca13d2395fcd447990c42c48c04eb5f
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65866383"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67089389"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-symantec-web-security-service-wss"></a>Руководство. Интеграция Azure Active Directory с Symantec Web Security Service (WSS)
 
@@ -68,7 +68,7 @@ ms.locfileid: "65866383"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Symantec Web Security Service (WSS)**, затем выберите **Symantec Web Security Service (WSS)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить приложение.
+4. В поле поиска введите **Symantec Web Security Service (WSS)** , затем выберите **Symantec Web Security Service (WSS)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить приложение.
 
      ![Служба Symantec Web Security Service (WSS) в списке результатов](common/search-new-app.png)
 
@@ -152,11 +152,11 @@ ms.locfileid: "65866383"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Symantec Web Security Service (WSS).
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем **Symantec Web Security Service (WSS)**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем **Symantec Web Security Service (WSS)** .
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. В списке приложений введите и выберите **Symantec Web Security Service (WSS)**.
+2. В списке приложений введите и выберите **Symantec Web Security Service (WSS)** .
 
     ![Ссылка на Symantec Web Security Service (WSS) в списке приложений](common/all-applications.png)
 
@@ -193,5 +193,5 @@ ms.locfileid: "65866383"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

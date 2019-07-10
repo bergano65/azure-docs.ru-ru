@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/03/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 020e0395c7678f6856a293c8386a44d7a959bc06
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 67be6251b1500ff85b833bbb7c7348a76045496f
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65786532"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67092069"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-jira-by-resolution-gmbh"></a>Руководство по Интеграция Azure Active Directory с SAML SSO for Jira by resolution GmbH
 
@@ -319,5 +319,5 @@ ms.locfileid: "65786532"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

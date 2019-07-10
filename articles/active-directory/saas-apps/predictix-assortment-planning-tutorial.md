@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: c14362a220cc60b0b8956ca41950faecd0563b3e
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: bc3ea2f6fddc233a69d96c0c885ab310ed1e77c2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65890622"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67094156"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-predictix-assortment-planning"></a>Руководство по Интеграция Azure Active Directory с Predictix Assortment Planning
 
@@ -210,4 +210,4 @@ ms.locfileid: "65890622"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

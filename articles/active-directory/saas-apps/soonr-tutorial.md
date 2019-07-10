@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08-04-2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: efae272e1eadb852158005325146a58dd9e74318
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: 952572cf4f35e955b8a2d71010a1824f86bc763f
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59565280"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67090050"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-soonr-workplace"></a>Руководство по Интеграция Azure Active Directory с Soonr Workplace
 
@@ -62,7 +62,7 @@ ms.locfileid: "59565280"
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить новое приложение, нажмите кнопку **Новое приложение** в верхней части диалогового окна.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Новое приложение**.
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
@@ -206,5 +206,5 @@ ms.locfileid: "59565280"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

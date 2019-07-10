@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 48c5804df53c084715cac872aa431cf8694c6d35
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9e4ba987393628af07f8a8a507f635047eb18cc5
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65740282"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67102557"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-flatter-files"></a>Руководство по Интеграция Azure Active Directory с Flatter Files
 
@@ -239,5 +239,5 @@ ms.locfileid: "65740282"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

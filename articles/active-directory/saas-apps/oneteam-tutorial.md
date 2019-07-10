@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 6f12a4973f2c3427d9d44de625f9e987e836d4b7
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 195fa26a38d89d9ef738e6060ff7dab602d5c234
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59272620"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67095912"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-oneteam"></a>Руководство по Интеграция Azure Active Directory с Oneteam
 
@@ -156,7 +156,7 @@ ms.locfileid: "59272620"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension** .  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -208,5 +208,5 @@ ms.locfileid: "59272620"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/27/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 060492d2ed551ed0e90aaf3c1a373572c0c0ab73
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: b8e208c8e5f1136ef5029e03b59a2f09e113dc3f
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66307499"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67096346"
 ---
 # <a name="tutorial-integrate-neogov-with-azure-active-directory"></a>Руководство по Интеграция NEOGOV с Azure Active Directory
 
@@ -172,4 +172,4 @@ ms.locfileid: "66307499"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

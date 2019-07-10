@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 352ad9473a1c1a9360ddceb720ff968f4e97e012
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 5e405dc4ea323a6869207de53b7577ee960924eb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65889267"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67089234"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tableau-online"></a>Руководство по по интеграции Azure Active Directory с Tableau Online
 
@@ -247,4 +247,4 @@ ms.locfileid: "65889267"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

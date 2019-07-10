@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 6c3a7a8644e0e391f8817a7ae3a4cb9b8af5dab7
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 8943ff45d432768649ace28147c7c14f20f4ad44
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64920378"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67087123"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wingspan-etmf"></a>Руководство по Интеграция Azure Active Directory с Wingspan eTMF
 
@@ -198,5 +198,5 @@ ms.locfileid: "64920378"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

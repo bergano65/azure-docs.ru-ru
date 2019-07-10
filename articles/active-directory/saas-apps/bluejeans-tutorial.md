@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2830e95f042d5c83d91d6c026d2fa2e70eb3e3b2
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 0308fbb103fb06bd2dffe0a442346a3fc4f7db62
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65901086"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67106157"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bluejeans"></a>Руководство по Интеграция Azure Active Directory с BlueJeans
 
@@ -272,4 +272,4 @@ ms.locfileid: "65901086"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

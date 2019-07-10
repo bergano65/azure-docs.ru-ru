@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fe436632eee12157dde2b082a5c77e67e7977cc
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 114d29d11e51209d5ac788ae25413b5b989b84f4
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65957168"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67106104"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-boomi"></a>Руководство по Интеграция Azure Active Directory с Boomi
 
@@ -270,5 +270,5 @@ ms.locfileid: "65957168"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

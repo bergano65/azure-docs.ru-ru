@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 14313567df69b26b000f9bddd98e009aeed2dcd7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 23791738635d4b8d3b8473e526a1a239be935bc5
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65869584"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67094677"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-people"></a>Руководство по Интеграция Azure Active Directory с приложением "Люди"
 
@@ -118,7 +118,7 @@ ms.locfileid: "65869584"
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-6. Требуемый URL-адрес можно скопировать из раздела **Настройка приложения "Люди"**.
+6. Требуемый URL-адрес можно скопировать из раздела **Настройка приложения "Люди"** .
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -162,7 +162,7 @@ ms.locfileid: "65869584"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension** .  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -211,5 +211,5 @@ ms.locfileid: "65869584"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

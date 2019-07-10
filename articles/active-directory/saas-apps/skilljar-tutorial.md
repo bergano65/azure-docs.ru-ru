@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: ea7982290cdcd51ba09ca97aa3f23086222516df
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: e4df5e259ce1cf2cd10d6ec514fa9091a6bd2d76
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65889878"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67090660"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skilljar"></a>Руководство. Интеграция Azure Active Directory со Skilljar
 
@@ -149,7 +149,7 @@ ms.locfileid: "65889878"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension** .  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -201,5 +201,5 @@ ms.locfileid: "65889878"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

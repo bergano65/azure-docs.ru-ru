@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с LaunchDarkly | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с LaunchDarkly | Документация Майкрософт
 description: Сведения о том, как настроить единый вход между Azure Active Directory и LaunchDarkly.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f4ae2802c5f833f168385ef46d10b6a508fdf45a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: de59ce587facb94728e0652f47c7cdfce0ab4388
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57838669"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67098424"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-launchdarkly"></a>Руководство. Интеграция Azure Active Directory с LaunchDarkly
+# <a name="tutorial-azure-active-directory-integration-with-launchdarkly"></a>Руководство по Интеграция Azure Active Directory с LaunchDarkly
 
 В этом руководстве описано, как интегрировать LaunchDarkly с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением LaunchDarkly обеспечивает следующие преимущества:
@@ -179,7 +179,7 @@ ms.locfileid: "57838669"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -231,4 +231,4 @@ ms.locfileid: "57838669"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

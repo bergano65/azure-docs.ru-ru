@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 00154ac3c94a1f43872aff3be29ddd108a4173f0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2e93f6d1804dd32e9e0da2c9be98aa523a6faafa
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65866810"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67089698"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-springer-link"></a>Руководство по Интеграция Azure Active Directory со Springer Link
 
@@ -158,7 +158,7 @@ ms.locfileid: "65866810"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension** .  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -207,5 +207,5 @@ ms.locfileid: "65866810"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/16/2019
 ms.author: jeedes
-ms.openlocfilehash: bcad6232de7fa257b58fe6d84f2c2ff794b64589
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 63165da69815c77afb8692e1e68c1710beb8df8c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65902259"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67090821"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-silkroad-life-suite"></a>Руководство по Интеграция Azure Active Directory с SilkRoad Life Suite
 
@@ -286,4 +286,4 @@ ms.locfileid: "65902259"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

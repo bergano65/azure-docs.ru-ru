@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: 195e7bf21fe1f6017705883f2ec692c182f15375
-ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
+ms.openlocfilehash: 013e477b66d2772698ce5c9cc61a59f8a5a04a5a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65560594"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67094885"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pega-systems"></a>Руководство по Интеграция Azure Active Directory с Pega Systems
 
@@ -40,7 +40,7 @@ ms.locfileid: "65560594"
 
 Чтобы настроить интеграцию Azure AD с Pega Systems, вам потребуется:
 
-* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить [пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD Если у вас нет среды Azure AD, вы можете получить [пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
 * подписка Pega Systems с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -282,4 +282,4 @@ ms.locfileid: "65560594"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 6547a640f6e56865d44b6848cf37078161faa538
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: cf40686adcee757db065fa6f68f990ea122b9747
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65904844"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67095860"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-officespace-software"></a>Руководство по Интеграция Azure Active Directory с OfficeSpace Software
 
@@ -205,7 +205,7 @@ ms.locfileid: "65904844"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension** .  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -257,5 +257,5 @@ ms.locfileid: "65904844"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

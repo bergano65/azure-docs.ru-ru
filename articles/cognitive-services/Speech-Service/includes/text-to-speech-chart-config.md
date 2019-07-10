@@ -14,14 +14,14 @@ ms.openlocfilehash: e6c7dcd3015b0b8ab5b3c719ebd2397bc814b81a
 ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67711497"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717211"
 ---
 ### <a name="text-to-speech-sub-chart-chartstexttospeech"></a>Преобразование текста в речь (вложенные диаграммы: диаграммы/textToSpeech)
 
 Чтобы переопределить диаграмма «общий», добавьте префикс `textToSpeech.` на любой параметр, чтобы сделать его более конкретным. Например, она переопределит соответствующего параметра например `textToSpeech.numberOfConcurrentRequest` переопределяет `numberOfConcurrentRequest`.
 
-|Параметр|Описание|значение по умолчанию|
+|Параметр|Описание|Значение по умолчанию|
 | -- | -- | -- |
 | `enabled` | Ли **преобразования текста в речь** включена служба. | `false` |
 | `numberOfConcurrentRequest` | Число одновременных запросов для **преобразования текста в речь** службы. Эта диаграмма автоматически вычисляет ресурсы ЦП и памяти, на основе этого значения. | `2` |

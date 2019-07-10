@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
-ms.openlocfilehash: 878d9b40172313ac6c3d816cbf0da6aba5e18542
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: efde1f1dafc62576398c5225ad1c652438fc0c31
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65904147"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67094502"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-periscope-data"></a>Руководство по Интеграция Azure Active Directory с Periscope Data
 
@@ -235,5 +235,5 @@ ms.locfileid: "65904147"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

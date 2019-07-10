@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/15/2019
 ms.author: jeedes
-ms.openlocfilehash: d2f854c869ead8016a5437a4e40339d9455c9ad7
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 0b6fd17d2f8577532778733866260f43e9ac7685
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66226420"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67092735"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rolepoint"></a>Руководство по Интеграция Azure Active Directory с RolePoint
 
@@ -200,4 +200,4 @@ ms.locfileid: "66226420"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

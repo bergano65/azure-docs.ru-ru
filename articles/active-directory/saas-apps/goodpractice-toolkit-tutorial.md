@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5e55399337e06314a5079f9d0e692a771855f8ca
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: fe89c067aed6a6934bfff37609516b6ef4d281c0
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59683619"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67101563"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-goodpractice-toolkit"></a>Руководство по Интеграция Azure Active Directory с GoodPractice Toolkit
 
@@ -195,5 +195,5 @@ ms.locfileid: "59683619"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

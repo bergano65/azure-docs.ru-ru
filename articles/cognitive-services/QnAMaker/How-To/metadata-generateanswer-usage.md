@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: article
 ms.date: 06/27/2019
 ms.author: diberry
-ms.openlocfilehash: b691d447f51165ea3cb56410da9cd2d4d00ce913
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
+ms.openlocfilehash: 6bfcb531d0e4e8073a5553f7bc84a25e4f8a92a9
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67490202"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67785681"
 ---
 # <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>Получение ответа с помощью GenerateAnswer API и метаданные
 
@@ -96,7 +96,7 @@ https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer
 
 ## <a name="generateanswer-response-properties"></a>Свойства ответа GenerateAnswer
 
-[Ответа](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#successful_query) представляет собой объект JSON, включая все сведения, необходимые для отображения ответа, а также следующие включить в диалоге, если он доступен.
+[Ответа](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#successful-query) представляет собой объект JSON, включая все сведения, необходимые для отображения ответа, а также следующие включить в диалоге, если он доступен.
 
 ```json
 {
@@ -229,7 +229,7 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 **Публикации** страница также содержит сведения для создания ответа с помощью [Postman](../Quickstarts/get-answer-from-kb-using-postman.md) и [cURL](../Quickstarts/get-answer-from-kb-using-curl.md). 
 

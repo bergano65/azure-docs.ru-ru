@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 632ae913214794a114bc12019d92b6902172fca7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: cd936c823501dfe53dd81ba64b56bfb491fc85e4
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65858507"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67106228"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-birst-agile-business-analytics"></a>Руководство по Интеграция Azure Active Directory с Birst Agile Business Analytics
 
@@ -204,5 +204,5 @@ ms.locfileid: "65858507"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

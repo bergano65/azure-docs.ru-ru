@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/09/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ccb12ca5daf7a57ed50f6ed471e62f61b335466
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.openlocfilehash: f45fc1d5128811f04ca96224551dde969f4fe9d2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65551969"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67097251"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-meta4-global-hr"></a>Руководство по Интеграция Azure Active Directory с Meta4 Global HR
 
@@ -205,4 +205,4 @@ ms.locfileid: "65551969"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

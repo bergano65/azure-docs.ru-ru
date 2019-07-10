@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/16/2019
 ms.author: jeedes
-ms.openlocfilehash: c731919baf3acc8cedfb31c088f9a0a12791251c
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 0a37789e7c7efeb71770ff0e8061d57e6603b6c4
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64717994"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67086235"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zoho-one"></a>Руководство по Интеграция Azure Active Directory с Zoho One
 
@@ -266,5 +266,5 @@ B этом руководстве описано, как интегрирова�
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

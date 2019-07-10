@@ -1,5 +1,5 @@
 ---
-title: Руководство. интеграции Azure Active Directory с Dovetale | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Dovetale | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Dovetale.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/31/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c9f123cdc88a3af68f7c37e44f60b588f5e8b66
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 9dea184a09aea0b73bceb988a14400fa1d99b87b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57903544"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67103903"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-dovetale"></a>Руководство. Интеграция Azure Active Directory с Dovetale
+# <a name="tutorial-azure-active-directory-integration-with-dovetale"></a>Руководство по Интеграция Azure Active Directory с Dovetale
 
 В этом руководстве описано, как интегрировать Dovetale с Azure Active Directory (Azure AD).
 Интеграция Dovetale с Azure AD обеспечивает следующие преимущества.
@@ -118,7 +118,7 @@ ms.locfileid: "57903544"
 
 5. Приложение Dovetale ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия. 
 
@@ -131,9 +131,9 @@ ms.locfileid: "57903544"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -225,5 +225,5 @@ ms.locfileid: "57903544"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

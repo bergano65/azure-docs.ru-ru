@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 35f9a8949f5b51f88b9297890fc5562e7b8dd591
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 3625a6bbf22a2d51546a91e8a5f7c58b7fbb264f
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59273385"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67101177"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-help-scout"></a>Руководство по Интеграция Azure Active Directory с Help Scout
 
@@ -159,7 +159,7 @@ ms.locfileid: "59273385"
 
     a. В текстовом поле **URL-адрес входа** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
-    b. Нажмите кнопку **Upload Certificate** (Отправить сертификат), чтобы передать **сертификат(Base64)**, скачанный с портала Azure.
+    b. Нажмите кнопку **Upload Certificate** (Отправить сертификат), чтобы передать **сертификат(Base64)** , скачанный с портала Azure.
 
     c. Введите домен электронной почты вашей организации, например `contoso.com`, в текстовом поле **Email Domains** (Почтовые домены). Несколько доменов можно разделять запятыми. Пользователь или администратор Help Scout, входящий в этот домен на [странице входа Help Scout](https://secure.helpscout.net/members/login/), будет перенаправлен к поставщику удостоверений для проверки подлинности учетных данных.
 
@@ -234,4 +234,4 @@ ms.locfileid: "59273385"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

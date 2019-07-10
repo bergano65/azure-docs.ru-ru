@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/11/2019
 ms.author: jeedes
-ms.openlocfilehash: 9e7993ee1cb439ebeaa9f64bee55429aa54f9cee
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 897685eb967e03cfd30182eec6b237e27386496c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65903950"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67092149"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-fiori"></a>Руководство по интеграции Azure Active Directory с SAP Fiori
 
@@ -32,7 +32,7 @@ ms.locfileid: "65903950"
 * Пользователи могут автоматически входить в SAP Fiori с учетными записями Azure AD (единый вход).
 * Вы можете управлять учетными записями централизованно, через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье о [едином входе в приложения в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -80,10 +80,10 @@ SAP Fiori поддерживает следующие функции:
 
 | Задача | ОПИСАНИЕ |
 | --- | --- |
-| **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** | Позволяет пользователям использовать эту возможность. |
+| **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** | Позволяет пользователям использовать эту возможность. |
 | **[Настройка единого входа в SAP Fiori](#configure-sap-fiori-single-sign-on)** | Настройка параметров единого входа в приложении. |
-| **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** | Проверка работы единого входа Azure AD на примере пользователя Britta Simon. |
-| **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** | Предоставление пользователю Britta Simon возможности использовать единый вход Azure AD. |
+| **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** | Проверка работы единого входа Azure AD на примере пользователя Britta Simon. |
+| **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** | Предоставление пользователю Britta Simon возможности использовать единый вход Azure AD. |
 | **[Создание тестового пользователя SAP Fiori](#create-an-sap-fiori-test-user)** . | Требуется, чтобы в SAP Fiori существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD. |
 | **[Проверка единого входа](#test-single-sign-on)** | необходима, чтобы убедиться, что конфигурация работает правильно. |
 
@@ -158,7 +158,7 @@ SAP Fiori поддерживает следующие функции:
 
     ![Режим выбора единого входа](common/select-saml-option.png)
 
-1. В области **Настройка единого входа с помощью SAML** щелкните **Изменить** (значок карандаша), чтобы открыть область **Базовая конфигурация SAML**.
+1. На панели **Настройка единого входа с помощью SAML** щелкните **Изменить** (значок карандаша), чтобы открыть панель **Базовая конфигурация SAML**.
 
     ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
@@ -304,11 +304,11 @@ SAP Fiori поддерживает следующие функции:
 
 1. На портале Azure выберите **Azure Active Directory** > **Пользователи** > **Все пользователи**.
 
-    ![Параметры "Пользователи" и "Все пользователи"](common/users.png)
+    ![Пункты меню "Пользователи" и "Все пользователи"](common/users.png)
 
 1. Выберите **Новый пользователь**.
 
-    ![Параметр "Новый пользователь"](common/new-user.png)
+    ![Элемент "Новый пользователь"](common/new-user.png)
 
 1. В области **Пользователь** выполните приведенные ниже действия.
 
@@ -336,15 +336,15 @@ SAP Fiori поддерживает следующие функции:
 
 1. В меню выберите **Пользователи и группы**.
 
-    ![Параметр "Пользователи и группы"](common/users-groups-blade.png)
+    ![Пункт меню "Пользователи и группы"](common/users-groups-blade.png)
 
 1. Выберите **Добавить пользователя**. Затем в области **Добавление назначения** щелкните **Пользователи и группы**.
 
     ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. В области **Пользователи и группы** из списка пользователей выберите **Britta Simon**. Щелкните **Выбрать**.
+1. На панели **Пользователи и группы** в списке пользователей выберите **Britta Simon**. Щелкните **Выбрать**.
 
-1. Если вы планируете получать значение роли в утверждении SAML, выберите в области **Выбор роли** подходящую роль для пользователя из предложенного списка. Щелкните **Выбрать**.
+1. Если вы планируете получать значение роли в утверждении SAML, выберите на панели **Выбор роли** подходящую роль для пользователя из предложенного списка. Щелкните **Выбрать**.
 
 1. В области **Добавление назначения** выберите **Назначить**.
 
@@ -374,4 +374,4 @@ SAP Fiori поддерживает следующие функции:
 
 - [Список руководств по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 - [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

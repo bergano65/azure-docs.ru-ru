@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d0295162acdf358bd798e86bd7d3479f5e78d72
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: eded8eb446d36a321acf46231eee3e764ba41504
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65407903"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67088450"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-topdesk---secure"></a>Руководство по Интеграция Azure Active Directory с TOPdesk — Secure
 
@@ -184,7 +184,7 @@ ms.locfileid: "65407903"
 
     d. Чтобы отправить файл с логотипом, полученный от службы поддержки TOPdesk, напротив пункта **Logo icon** (Значок логотипа) нажмите кнопку **Browse** (Обзор).
 
-    д. В текстовое поле **Атрибут имени пользователя** введите значение `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    д. В текстовое поле **Атрибут имени пользователя** введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
     Е. В текстовом поле **Отображаемое имя** введите имя конфигурации.
 
@@ -250,7 +250,7 @@ ms.locfileid: "65407903"
 
 1. Выполните вход на веб-сайт **TOPdesk — Secure** компании в качестве администратора.
 
-2. В меню в верхней части страницы щелкните **TOPdesk \> New (Создать) \> Support Files (Файлы поддержки) \> Operator (Оператор)**.
+2. В меню в верхней части страницы щелкните **TOPdesk \> New (Создать) \> Support Files (Файлы поддержки) \> Operator (Оператор)** .
 
     ![Оператор](./media/topdesk-secure-tutorial/ic790610.png "Оператор")
 
@@ -283,5 +283,5 @@ ms.locfileid: "65407903"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

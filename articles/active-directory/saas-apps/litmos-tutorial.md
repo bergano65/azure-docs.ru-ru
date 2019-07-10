@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a9fb661e0b43e71cf9543e9b7042155763d1aa1
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: e84ec2d8895cf0cdaf933d6446b361a3e606feb5
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57856181"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67097876"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-litmos"></a>Руководство. Интеграция Azure Active Directory с Litmos
+# <a name="tutorial-azure-active-directory-integration-with-litmos"></a>Руководство по Интеграция Azure Active Directory с Litmos
 
 В этом руководстве описано, как интегрировать приложение Litmos с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Litmos обеспечивает следующие преимущества.
@@ -116,7 +116,7 @@ ms.locfileid: "57856181"
 
 5. Приложение Litmos ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
@@ -128,9 +128,9 @@ ms.locfileid: "57856181"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -206,7 +206,7 @@ ms.locfileid: "57856181"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -275,7 +275,7 @@ ms.locfileid: "57856181"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 <!--Image references-->
 

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5352040dbbe33569dfdb4e987d8bd84435702230
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 6514594d3119ebf8fab774c3e84c85e34bdfeaf4
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64917504"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67097932"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-liquidfiles"></a>Руководство по Интеграция Azure Active Directory с LiquidFiles
 
@@ -223,5 +223,5 @@ ms.locfileid: "64917504"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

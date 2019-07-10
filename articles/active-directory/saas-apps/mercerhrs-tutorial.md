@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
-ms.openlocfilehash: 8944e4533448f5787f5c85c12e4ab2747eb96e4e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9ae074e8732898524d917f2537023c4b506cff80
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65872270"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67097470"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mercer-benefitscentral-mbc"></a>Руководство по Интеграция Azure Active Directory с Mercer BenefitsCentral (MBC)
 
@@ -64,7 +64,7 @@ ms.locfileid: "65872270"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Mercer BenefitsCentral (MBC)**, выберите **Mercer BenefitsCentral (MBC)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **Mercer BenefitsCentral (MBC)** , выберите **Mercer BenefitsCentral (MBC)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
      ![Mercer BenefitsCentral (MBC) в списке результатов](common/search-new-app.png)
 
@@ -115,7 +115,7 @@ ms.locfileid: "65872270"
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-6. Требуемый URL-адрес можно скопировать из раздела **Настройка Mercer BenefitsCentral (MBC)**.
+6. Требуемый URL-адрес можно скопировать из раздела **Настройка Mercer BenefitsCentral (MBC)** .
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -127,7 +127,7 @@ ms.locfileid: "65872270"
 
 ### <a name="configure-mercer-benefitscentral-mbc-single-sign-on"></a>Настройка единого входа Mercer BenefitsCentral (MBC)
 
-Чтобы настроить единый вход на стороне **Mercer BenefitsCentral (MBC)**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Mercer BenefitsCentral (MBC)](https://www.mercer.com/contact-us.html). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Mercer BenefitsCentral (MBC)** , нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Mercer BenefitsCentral (MBC)](https://www.mercer.com/contact-us.html). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -158,11 +158,11 @@ ms.locfileid: "65872270"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Mercer BenefitsCentral (MBC).
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Mercer BenefitsCentral (MBC)**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Mercer BenefitsCentral (MBC)** .
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. Из списка "Приложения" выберите **Mercer BenefitsCentral (MBC)**.
+2. Из списка "Приложения" выберите **Mercer BenefitsCentral (MBC)** .
 
     ![Ссылка на Mercer BenefitsCentral (MBC) в списке "Приложения"](common/all-applications.png)
 
@@ -196,5 +196,5 @@ ms.locfileid: "65872270"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

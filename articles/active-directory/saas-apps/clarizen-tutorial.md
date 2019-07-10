@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 48955354baf86d84c0ddc6618a99f7e806c26c2b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 88f42a849d5c483feb9325072fd65769839672e4
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65862349"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67105384"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clarizen"></a>Руководство по Интеграция Azure Active Directory с Clarizen
 
@@ -80,7 +80,7 @@ ms.locfileid: "65862349"
 2. **[Настройка единого входа в Clarizen](#configure-clarizen-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создайте тестового пользователя Clarizen](#create-clarizen-test-user)**, чтобы в Clarizen был тестовый пользователь Britta Simon, связанный с соответствующим представлением пользователя в Azure AD.
+5. **[Создайте тестового пользователя Clarizen](#create-clarizen-test-user)** , чтобы в Clarizen был тестовый пользователь Britta Simon, связанный с соответствующим представлением пользователя в Azure AD.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -247,4 +247,4 @@ ms.locfileid: "65862349"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

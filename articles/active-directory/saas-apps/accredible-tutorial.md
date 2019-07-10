@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f8be215f1a972539aff47347395f041d89d4e81
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ddf337cc5573b4821f279d85aa43988ff4705874
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57892852"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67107440"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-accredible"></a>Руководство по Интеграция Azure Active Directory с Accredible
 
@@ -203,4 +203,4 @@ ms.locfileid: "57892852"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

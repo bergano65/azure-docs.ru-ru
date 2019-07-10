@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: a2bfcdcef00889d12fb30cb6f16bf74e6ab2cbd1
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: fb6c32870d7a0ef07a6616d5669325538e64b14c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65890856"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67094293"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-postbeyond"></a>Руководство по Интеграция Azure Active Directory с PostBeyond
 
@@ -196,5 +196,5 @@ ms.locfileid: "65890856"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 9214f438df57ca9cd95fd1f5827db8ab82f5a136
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 9bcfb6e8df7a30dd28e0443c435429da9f4fbb18
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65897358"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67097601"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mcm"></a>Руководство. Интеграция Azure Active Directory с МСМ
 
@@ -199,5 +199,5 @@ ms.locfileid: "65897358"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

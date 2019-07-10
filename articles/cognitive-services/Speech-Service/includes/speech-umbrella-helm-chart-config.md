@@ -14,14 +14,14 @@ ms.openlocfilehash: ed64412ccf9d192506fafe546b1ccee7941aa43a
 ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67711816"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717216"
 ---
 ### <a name="speech-umbrella-chart"></a>Речи (обобщающий диаграмма)
 
 Значения в диаграмме верхнего уровня «общий» переопределить соответствующие значения вложенные диаграммы. Таким образом все значения в локальной настройки здесь должны быть добавлены.
 
-|Параметр|Описание|значение по умолчанию|
+|Параметр|Описание|Значение по умолчанию|
 | -- | -- | -- | -- |
 | `speechToText.enabled` | Ли **речи в текст** включена служба. | `true` |
 | `speechToText.verification.enabled` | Ли `helm test` возможность для **речи в текст** включена служба. | `true` |

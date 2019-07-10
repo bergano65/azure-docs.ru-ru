@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee12bfc8a79b6abcfdf2978d4e640c34f801e346
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 7b2e012a4ce8ac4a9a5afb895d545beb0a0b8946
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65989708"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67100617"
 ---
 # <a name="tutorial-integrate-ilms-with-azure-active-directory"></a>Руководство по Интеграция iLMS с Azure Active Directory
 
@@ -244,4 +244,4 @@ ms.locfileid: "65989708"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

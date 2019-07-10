@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 01/22/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8252dea33ff5cde07e021421d9772a69ea9f143b
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 0b36d34babcbb0241118e895cfe0cc8e4c3bb363
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65899961"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67105135"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-collaborative-innovation"></a>Руководство по Интеграция Azure Active Directory с Collaborative Innovation
 
@@ -231,5 +231,5 @@ ms.locfileid: "65899961"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

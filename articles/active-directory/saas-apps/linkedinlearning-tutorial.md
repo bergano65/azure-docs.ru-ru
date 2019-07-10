@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/11/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3717ed095c162255b0c0cdf09cac13fe2033979a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 9ff3748213d8449704f7b1001469eb8f7a224498
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57905007"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67098075"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-linkedin-learning"></a>Руководство по Интеграция Azure Active Directory с LinkedIn Learning
 
@@ -108,7 +108,7 @@ ms.locfileid: "57905007"
 
     a. В текстовом поле **Идентификатор** введите **идентификатор сущности**, скопированный с портала LinkedIn. 
 
-    b. В текстовом поле **URL-адрес ответа** введите **URL-адрес службы обработчика утверждений (ACS)**, скопированный с портала LinkedIn.
+    b. В текстовом поле **URL-адрес ответа** введите **URL-адрес службы обработчика утверждений (ACS)** , скопированный с портала LinkedIn.
 
     c. Если вы хотите настроить для приложения режим, **инициированный поставщиком услуг**, тогда выберите вариант **Задать дополнительные URL-адреса** в разделе **Базовая конфигурация SAML**, где вы будете указывать URL-адрес для входа. Чтобы создать URL-адреса входа, скопируйте **URL-адрес службы обработчика утверждений (ACS)** и замените /saml/ на /login/. После этого URL-адрес входа должен иметь следующий вид.
 
@@ -121,7 +121,7 @@ ms.locfileid: "57905007"
 
 5. Приложение LinkedIn Learning ожидает утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение LinkedIn Learning ожидает сопоставления **nameidentifier** сопоставлены с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить** и изменив сопоставление атрибутов.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В дополнение к описанному выше приложение LinkedIn Learning ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
     
@@ -134,9 +134,9 @@ ms.locfileid: "57905007"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -162,7 +162,7 @@ ms.locfileid: "57905007"
 
     ![Настройка единого входа](./media/linkedinlearning-tutorial/tutorial_linkedin_admin_01.png)
 
-3. Щелкните **OR Click Here to load and copy individual fields from the form** (Или щелкните здесь, чтобы загрузить и скопировать отдельные поля из формы) и скопируйте значения **идентификатора сущности** и **URL-адреса службы обработчика утверждений (ACS)**, и вставьте их в раздел **Базовая конфигурация SAML** на портале Azure.
+3. Щелкните **OR Click Here to load and copy individual fields from the form** (Или щелкните здесь, чтобы загрузить и скопировать отдельные поля из формы) и скопируйте значения **идентификатора сущности** и **URL-адреса службы обработчика утверждений (ACS)** , и вставьте их в раздел **Базовая конфигурация SAML** на портале Azure.
 
     ![Настройка единого входа](./media/linkedinlearning-tutorial/tutorial_linkedin_admin_03.png)
 
@@ -192,7 +192,7 @@ ms.locfileid: "57905007"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -243,5 +243,5 @@ ms.locfileid: "57905007"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

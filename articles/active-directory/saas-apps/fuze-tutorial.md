@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Fuze | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Fuze | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Fuze.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/18/2019
 ms.author: jeedes
-ms.openlocfilehash: be8f70e36636fc090552fdc64a18f4d1829388e9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: db51e4020e3f16244b19c8107a17080bf85c3330
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57897254"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67101957"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-fuze"></a>Руководство. Интеграция Azure Active Directory с Fuze
+# <a name="tutorial-azure-active-directory-integration-with-fuze"></a>Руководство по Интеграция Azure Active Directory с Fuze
 
 В этом руководстве описано, как интегрировать приложение Fuze с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Fuze обеспечивает следующие преимущества:
@@ -144,7 +144,7 @@ ms.locfileid: "57897254"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -193,5 +193,5 @@ ms.locfileid: "57897254"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

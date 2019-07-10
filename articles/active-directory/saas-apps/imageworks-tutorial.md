@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cde9d4efd3d6eb5bc987a4bf7eb423447ceddc2
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: cee7757a0d590c35b0994f912e39adc80ad8606f
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65898072"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67100535"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-image-works"></a>Руководство по Интеграция Azure Active Directory с IMAGE WORKS
 
@@ -197,4 +197,4 @@ ms.locfileid: "65898072"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

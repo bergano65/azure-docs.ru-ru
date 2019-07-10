@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 91ba5de6a6e0a18d494a449acfdea330234bcc9b
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: f292ed4c39d6f11baaa66f25b8ab54587a6609bf
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65904765"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67096018"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-nomadic"></a>Руководство по Интеграция Azure Active Directory с Nomadic
 
@@ -201,5 +201,5 @@ ms.locfileid: "65904765"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

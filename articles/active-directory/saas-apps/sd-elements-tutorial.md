@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: a18971125724e6e2fdc6b37de15894efb8b9071a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9e6deb8b31559b8c5add06f1771cd69df0c1f136
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65867555"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67091350"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sd-elements"></a>Руководство по Интеграция Azure Active Directory с SD Elements
 
@@ -196,7 +196,7 @@ ms.locfileid: "65867555"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension** .  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -249,7 +249,7 @@ ms.locfileid: "65867555"
 
     ![Создание тестового пользователя SD Elements](./media/sd-elements-tutorial/tutorial_sd-elements_13.png) 
 
-    a. В текстовое поле **E-mail** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    a. В текстовое поле **E-mail** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com** .
 
     b. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
@@ -271,4 +271,4 @@ ms.locfileid: "65867555"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

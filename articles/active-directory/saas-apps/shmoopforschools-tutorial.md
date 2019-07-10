@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 39b7d251f1d6d75ac22d50f1b62a3581f9d343c7
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 0cf318161bff8950280fc5a8b007e08ef683ad18
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65890369"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67090769"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-shmoop-for-schools"></a>Руководство по Интеграция Azure Active Directory с Shmoop For Schools
 
@@ -223,4 +223,4 @@ ms.locfileid: "65890369"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

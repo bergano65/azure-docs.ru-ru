@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 05/03/2019
 ms.author: jeedes
-ms.openlocfilehash: ada93903113cedd68e23ec66a36dceef99ec1233
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 8652073eb3d7d154958566b68fb6e27c35d8da30
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65896161"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67086523"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-xaitporter"></a>Руководство по Интеграция Azure Active Directory с XaitPorter
 
@@ -120,7 +120,7 @@ ms.locfileid: "65896161"
 
 ### <a name="configure-xaitporter-single-sign-on"></a>Настройка единого входа в XaitPorter
 
-1. Для автоматизации настройки в XaitPorter необходимо установить **Расширение браузера "Безопасный вход в мои приложения"**, щелкнув **Установить расширение**.
+1. Для автоматизации настройки в XaitPorter необходимо установить **Расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
 
     ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
 
@@ -216,5 +216,5 @@ ms.locfileid: "65896161"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

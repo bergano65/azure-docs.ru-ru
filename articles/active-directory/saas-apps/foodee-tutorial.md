@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8d62e972ddf23cbafe3f91a07947540bea99160
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: c09752c1aa9840ab8dcdc1faa69222de4529644d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66245126"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67102138"
 ---
 # <a name="tutorial-integrate-foodee-with-azure-active-directory"></a>Руководство по Интеграция Foodee с Azure Active Directory
 
@@ -89,7 +89,7 @@ ms.locfileid: "66245126"
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Foodee](mailto:dev@food.ee). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите файл **XML метаданных федерации** и нажмите кнопку **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и нажмите кнопку **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
    ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
@@ -153,4 +153,4 @@ ms.locfileid: "66245126"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 8dead16c60a26e2fc53953ed65337195c3b2aa67
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: 4dfed25e61183f828bf421cecfc13001289915fe
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65470790"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67087269"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-webmethods-integration-suite"></a>Руководство по Интеграция Azure Active Directory с пакетом интеграции WebMethods
 
@@ -257,5 +257,5 @@ ms.locfileid: "65470790"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

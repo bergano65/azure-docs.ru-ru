@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2265c4227601c5273f093af9768864a8c7e07b89
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3b46b8644b9ba4f0dc6b0b97215a4a96b60d69c3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65865024"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67086037"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-internet-access-administrator"></a>Руководство. Интеграция Azure Active Directory с Zscaler Internet Access Administrator
 
@@ -258,4 +258,4 @@ https://help.zscaler.com/zia/adding-admins
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

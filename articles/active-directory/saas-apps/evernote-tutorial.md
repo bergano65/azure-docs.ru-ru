@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/10/2019
 ms.author: jeedes
-ms.openlocfilehash: 2ce05e904484a6d773a0132734208b87e161f960
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.openlocfilehash: 4185e9f5e1b411f95afacb80499db048769ea27b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59499926"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67102969"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-evernote"></a>Руководство по Интеграция Azure Active Directory с Evernote
 
@@ -51,7 +51,7 @@ ms.locfileid: "59499926"
 
 Чтобы настроить интеграцию Evernote с Azure AD, необходимо добавить Evernote из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Evernote из коллекции, сделайте следующее.**
+**Чтобы добавить Evernote из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -61,7 +61,7 @@ ms.locfileid: "59499926"
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить новое приложение, нажмите кнопку **Новое приложение** в верхней части диалогового окна.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Новое приложение**.
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
@@ -109,7 +109,7 @@ ms.locfileid: "59499926"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![изображение](common/both-preintegrated-signon.png)
+    ![image](common/both-preintegrated-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес: `https://www.evernote.com/Login.action`.
 
@@ -119,9 +119,9 @@ ms.locfileid: "59499926"
 
 7. В разделе **Сертификат подписи SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
 
-    ![изображение](common/edit-certificate.png) 
+    ![image](common/edit-certificate.png) 
 
-    ![изображение](./media/evernote-tutorial/samlassertion.png)
+    ![image](./media/evernote-tutorial/samlassertion.png)
 
     a. Для параметра **Вариант подписывания** выберите значение **Ответ знака SAML и утверждение**.
 
@@ -246,5 +246,5 @@ ms.locfileid: "59499926"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

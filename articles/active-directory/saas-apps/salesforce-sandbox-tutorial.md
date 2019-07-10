@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/17/2019
 ms.author: jeedes
-ms.openlocfilehash: b2940f3eee3112fe1c6d57cc92157c573ecad109
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 1e303485a03edcd9ba3d3e7380aa4c7ae8b1a4b0
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65904281"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67092614"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-salesforce-sandbox"></a>Руководство по Интеграция Azure Active Directory с песочницей Salesforce
 
@@ -310,6 +310,6 @@ ms.locfileid: "65904281"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 * [Руководство по настройке Google Apps для автоматической подготовки пользователей](salesforce-sandbox-provisioning-tutorial.md)

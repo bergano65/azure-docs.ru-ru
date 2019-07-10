@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff1d9089f3fb2f3ebf3022b54c442e8338ab983b
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 084a045fda66087b657f26679ab1926fa3611cb8
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65508343"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67103662"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-edcor"></a>Руководство по Интеграция Azure Active Directory с Edcor
 
@@ -193,5 +193,5 @@ ms.locfileid: "65508343"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

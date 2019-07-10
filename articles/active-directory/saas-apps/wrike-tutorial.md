@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12970e2df1d54212682ebb79f2354c4c9e712a34
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 22421d88d5d0b426b641c04cd8797c26d216c502
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65813682"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67086693"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wrike"></a>Руководство по Интеграция Azure Active Directory с Wrike
 
@@ -201,5 +201,5 @@ ms.locfileid: "65813682"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

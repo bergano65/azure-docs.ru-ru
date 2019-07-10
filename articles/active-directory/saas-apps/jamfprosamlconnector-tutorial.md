@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18b575b74c80499f2ddd6648bf051b5245077d2f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 00d03df38dee74f4767e8ff3b21d9462fd59c4c0
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58906146"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67099587"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jamf-pro"></a>Руководство по Интеграция Azure Active Directory с Jamf Pro
 
@@ -124,7 +124,7 @@ ms.locfileid: "58906146"
 
 ### <a name="configure-jamf-pro-single-sign-on"></a>Настройка единого входа Jamf Pro
 
-1. Для автоматизации настройки в Jamf Pro необходимо установить **Расширение браузера "Безопасный вход в мои приложения"**, щелкнув **Установить расширение**.
+1. Для автоматизации настройки в Jamf Pro необходимо установить **Расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
 
     ![image](./media/jamfprosamlconnector-tutorial/install_extension.png)
 
@@ -278,4 +278,4 @@ ms.locfileid: "58906146"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

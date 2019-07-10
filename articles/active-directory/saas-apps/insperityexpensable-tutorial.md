@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: b049b6526b0053c79b313d3d51a94a7706d5f93c
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: dd0c35d23541512e1ed021a57526ac50f7a68e26
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59565739"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67100141"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insperity-expensable"></a>Руководство по Интеграция Azure Active Directory с Insperity ExpensAble
 
@@ -195,4 +195,4 @@ ms.locfileid: "59565739"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

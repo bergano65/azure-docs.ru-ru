@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: 445e24732edc1bc7e4d1cfe3ff49a54115c7ea3a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: dc8c06d5c38092ee74367b40415f1fc2bb616633
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65867453"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67090931"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-shibumi"></a>Руководство по Интеграция Azure Active Directory с Shibumi
 
@@ -204,5 +204,5 @@ ms.locfileid: "65867453"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

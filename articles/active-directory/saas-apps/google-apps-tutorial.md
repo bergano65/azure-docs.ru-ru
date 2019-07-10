@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7462536443b2be23eef0f8b4c6f6b6412fb7032
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 8196576c4b419fdfc8f7e3adf5c474ef128ebbf6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65898744"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67101628"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-g-suite"></a>Руководство. Интеграция Azure Active Directory с G Suite
 
@@ -324,7 +324,7 @@ ms.locfileid: "65898744"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 - [Руководство по настройке Google Apps для автоматической подготовки пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/google-apps-provisioning-tutorial)
 
 <!--Image references-->

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
-ms.openlocfilehash: 964d7af92b087bd9905113a25513e2b2f7a3df17
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 25e223fc9e8222441e70fefb3c21f951b0ba06c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64922338"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67096621"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mozy-enterprise"></a>Руководство по Интеграция Azure Active Directory с Mozy Enterprise
 
@@ -251,5 +251,5 @@ ms.locfileid: "64922338"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

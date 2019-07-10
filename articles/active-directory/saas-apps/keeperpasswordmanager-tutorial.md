@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Keeper Password Manager & Digital Vault | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Keeper Password Manager & Digital Vault | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Keeper Password Manager & Digital Vault.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e105103eefe0b5cbd3ab22796325a3bc512e31a7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 42d12c31e098765209d80c7b5f400333fc11e8bd
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57850383"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67098862"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-keeper-password-manager--digital-vault"></a>Руководство. Интеграция Azure Active Directory с Keeper Password Manager & Digital Vault
+# <a name="tutorial-azure-active-directory-integration-with-keeper-password-manager--digital-vault"></a>Руководство по Интеграция Azure Active Directory с Keeper Password Manager & Digital Vault
 
 В этом учебнике описано, как интегрировать Keeper Password Manager & Digital Vault с Azure Active Directory (Azure AD).
 Интеграция Keeper Password Manager & Digital Vault с Azure AD обеспечивает следующие преимущества:
@@ -152,7 +152,7 @@ ms.locfileid: "57850383"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -201,5 +201,5 @@ ms.locfileid: "57850383"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

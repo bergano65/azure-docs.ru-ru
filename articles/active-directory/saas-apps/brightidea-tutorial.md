@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc45c63d3168a15b4701dcaff7bb531f759d47ad
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: fa15a91a6b82a8858bf46a08e8a9dbe11a51d8d1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65900031"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67105933"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-brightidea"></a>Руководство по Интеграция Azure Active Directory с Brightidea
 
@@ -168,7 +168,7 @@ ms.locfileid: "65900031"
    * Чтобы **отправить метаданные**, нажмите кнопку "Выбрать файл" и отправьте файл метаданных, загруженный с портала Azure.
 
      > [!NOTE]
-     > После отправки файла метаданных остальные поля (**"Служба единого входа", "Издатель поставщика удостоверений", "Отправить открытый ключ"**) заполняются автоматически.
+     > После отправки файла метаданных остальные поля ( **"Служба единого входа", "Издатель поставщика удостоверений", "Отправить открытый ключ"** ) заполняются автоматически.
 
    * В текстовом поле **Адрес электронной почты** введите значение в виде `mail`.
      
@@ -243,5 +243,5 @@ ms.locfileid: "65900031"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

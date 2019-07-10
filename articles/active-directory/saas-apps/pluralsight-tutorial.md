@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 4904e98556f5d4a033b178bfdc4305714a80e07e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d184a1099b525fa5d819532cefa5dd6750e6c358
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65869336"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67094282"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pluralsight"></a>Руководство по Интеграция Azure Active Directory с Pluralsight
 
@@ -115,7 +115,7 @@ ms.locfileid: "65869336"
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения URL-адреса входа и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Pluralsight](mailto:support@pluralsight.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. Для приложения Pluralsight проверочные утверждения SAML должны иметь определенный формат. Для этого необходимо добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов маркера SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
+5. Для приложения Pluralsight проверочные утверждения SAML должны иметь определенный формат. Для этого необходимо добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов маркера SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
     ![image](common/edit-attribute.png)
 
     >[!NOTE]
@@ -222,5 +222,5 @@ ms.locfileid: "65869336"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

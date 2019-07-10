@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
-ms.openlocfilehash: 1a1acde81baa596e71b7e39763b0464c8de2fb86
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 929d5d7a8e2b45aeb4ef71e4599cfcf23be83088
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66244176"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67096603"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-netdocuments"></a>Руководство по Интеграция Azure Active Directory с NetDocuments
 
@@ -236,5 +236,5 @@ ms.locfileid: "66244176"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

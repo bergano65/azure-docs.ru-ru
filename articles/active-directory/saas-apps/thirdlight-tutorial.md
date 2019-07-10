@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 67c8dcfffd78d4c0114a96622235d6548627fa92
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 448d46cd21a63488c4f567d5555fe6406fc0fa73
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66236960"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67089092"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-thirdlight"></a>Руководство по Интеграция Azure Active Directory с ThirdLight
 
@@ -192,7 +192,7 @@ ms.locfileid: "66236960"
 
     ![Выбор элемента "Добавить пользователя"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** выберите **Britta Simon** в списке пользователей, а затем в нижней части окна нажмите кнопку **Выбрать**.
+5. В диалоговом окне **Пользователи и группы** выберите **Britta Simon** из списка пользователей, а затем в нижней части окна нажмите кнопку **Выбрать**.
 
 6. Если ожидается, что в утверждении SAML будет получено значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка. В нижней части окна нажмите кнопку **Выбрать**.
 
@@ -231,4 +231,4 @@ ms.locfileid: "66236960"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

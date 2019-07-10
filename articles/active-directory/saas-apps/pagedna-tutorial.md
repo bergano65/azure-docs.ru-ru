@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11cb309e6c49ed36247398909e5e1b7ad9f7bc42
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 54c3ae22b9cc2e447960b9e3527bbbb0afae3e54
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65891203"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67095097"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pagedna"></a>Руководство по интеграции Azure Active Directory с PageDNA
 
@@ -211,4 +211,4 @@ PageDNA поддерживает следующие функции:
 
 * [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-* [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+* [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

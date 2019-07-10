@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af9d475c4be2adae360d77b3effc758684d60175
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 29bc057ac20f21fb552bd60d2b69f102c6201860
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65898872"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67103632"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-efi-digital-storefront"></a>Руководство. Интеграция Azure Active Directory с EFI Digital StoreFront
 
@@ -197,5 +197,5 @@ ms.locfileid: "65898872"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

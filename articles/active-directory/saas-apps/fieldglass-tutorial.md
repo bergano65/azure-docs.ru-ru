@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Fieldglass | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Fieldglass | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Fieldglass.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a2c66eba95f286dfa7a84c05c66c14768629312
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: a9c97ba19a680ece37ae4e3b4fa5257169f0842c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57877910"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67102676"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-fieldglass"></a>Руководство. Интеграция Azure Active Directory с Fieldglass
+# <a name="tutorial-azure-active-directory-integration-with-fieldglass"></a>Руководство по Интеграция Azure Active Directory с Fieldglass
 
 В этом учебнике описано, как интегрировать приложение Fieldglass с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Fieldglass обеспечивает следующие преимущества.
@@ -202,5 +202,5 @@ ms.locfileid: "57877910"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 037e01120a695b1bacf2b1d4bc47e9ca9ed3fbd2
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: db56cd7551ef8179aeff575fdd1f2578cbee74ee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65900365"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67106708"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-arcgis-online"></a>Руководство. Интеграция Azure Active Directory с ArcGIS Online
 
@@ -116,7 +116,7 @@ ms.locfileid: "65900365"
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-6. Для автоматизации настройки в **ArcGIS Online** необходимо установить **Расширение браузера "Безопасный вход в мои приложения"**, щелкнув **Установить расширение**.
+6. Для автоматизации настройки в **ArcGIS Online** необходимо установить **Расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
 
     ![image](./media/arcgis-tutorial/install_extension.png)
 
@@ -244,5 +244,5 @@ ms.locfileid: "65900365"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

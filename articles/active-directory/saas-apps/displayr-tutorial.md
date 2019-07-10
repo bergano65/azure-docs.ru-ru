@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93a1ad1f9fbc01cd06b3aaffc8a718634e8454d6
-ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
+ms.openlocfilehash: 3cd1785595cf2f6b2401837780106f52fdc97e36
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66357032"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67103990"
 ---
 # <a name="tutorial-integrate-displayr-with-azure-active-directory"></a>Руководство по Интеграция Displayr с Azure Active Directory
 
@@ -223,4 +223,4 @@ ms.locfileid: "66357032"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

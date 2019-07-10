@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с OU Campus | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с OU Campus | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и OU Campus.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 862594797410c19a60bf6cc34ba50868e52148ad
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 220f2d0f857b4626dbadccaf30a7a436bb15f409
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57839378"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67095249"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ou-campus"></a>Руководство. Интеграция Azure Active Directory с OU Campus
+# <a name="tutorial-azure-active-directory-integration-with-ou-campus"></a>Руководство по Интеграция Azure Active Directory с OU Campus
 
 В этом руководстве вы узнаете, как интегрировать OU Campus c Azure Active Directory (Azure AD).
 Интеграция OU Campus с Azure AD обеспечивает следующие преимущества.
@@ -145,7 +145,7 @@ ms.locfileid: "57839378"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -194,5 +194,5 @@ ms.locfileid: "57839378"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

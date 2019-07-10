@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 574c21dc2713f10513ac296e7db538e20a94c9d6
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: ecdcd8c6024b3cacb422b556718bbbdbb5d601c2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65406533"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67098241"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-learnupon"></a>Руководство по Интеграция Azure Active Directory с LearnUpon
 
@@ -165,9 +165,9 @@ ms.locfileid: "65406533"
 
      ![Настройка единого входа](./media/learnupon-tutorial/tutorial_learnupon_11.png)  
 
-    a. В текстовое поле **First Name Identifier Format** (Формат идентификатора имени) введите значение, которое обозначает расположение имени пользователя в утверждении SAML, например: `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
+    a. В текстовое поле **First Name Identifier Format** (Формат идентификатора имени) введите значение, которое обозначает расположение имени пользователя в утверждении SAML, например: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
   
-    b. В текстовое поле **Last Name Identifier Format** (Формат идентификатора фамилии) введите значение, которое обозначает расположение фамилии пользователя в утверждении SAML, например: `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
+    b. В текстовое поле **Last Name Identifier Format** (Формат идентификатора фамилии) введите значение, которое обозначает расположение фамилии пользователя в утверждении SAML, например: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -235,4 +235,4 @@ ms.locfileid: "65406533"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

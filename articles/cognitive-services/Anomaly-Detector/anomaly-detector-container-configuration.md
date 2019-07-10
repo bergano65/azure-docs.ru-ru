@@ -1,20 +1,21 @@
 ---
-title: Настройка контейнеров — средства обнаружения аномалий
+title: Настройка контейнера для API обнаружения аномалий
 titleSuffix: Azure Cognitive Services
-description: Среда выполнения контейнера обнаружения аномалий настраивается с помощью `docker run` аргументы команды. Контейнер поддерживает несколько обязательных и несколько необязательных параметров.
+description: Среда выполнения контейнера API обнаружения аномалий настраивается с помощью `docker run` аргументы команды. Контейнер поддерживает несколько обязательных и несколько необязательных параметров.
 services: cognitive-services
 author: IEvangelist
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: 50f62fa20ea9b52db79160d9d2f3a6fa463079b7
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: cb0a12df6696e76050d4c53bd75e07134b3dc27c
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67593099"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67721729"
 ---
 # <a name="configure-anomaly-detector-containers"></a>Настройка обнаружения аномалий контейнеров
 
@@ -24,7 +25,7 @@ ms.locfileid: "67593099"
 
 К контейнеру применяются следующие параметры конфигурации.
 
-|Обязательно для заполнения|Параметр|Назначение|
+|Обязательно для заполнения|Параметр|Цель|
 |--|--|--|
 |Да|[ApiKey](#apikey-configuration-setting)|Используется для отслеживания данных для выставлении счетов.|
 |Нет|[ApplicationInsights](#applicationinsights-setting)|Позволяет добавить в контейнер поддержку телеметрии [Azure Application Insights](https://docs.microsoft.com/azure/application-insights).|
@@ -60,7 +61,7 @@ ms.locfileid: "67593099"
 
 |Обязательно для заполнения| ИМЯ | Тип данных | Описание |
 |--|------|-----------|-------------|
-|Да| `Billing` | String | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus2.api.cognitive.microsoft.com` |
+|Да| `Billing` | Строка, | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus2.api.cognitive.microsoft.com` |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -89,8 +90,8 @@ ms.locfileid: "67593099"
 
 |Необязательно| ИМЯ | Тип данных | Описание |
 |-------|------|-----------|-------------|
-|Не разрешено| `Input` | String | Контейнеры обнаружения аномалий не следует использовать.|
-|Необязательно| `Output` | String | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Не разрешено| `Input` | Строка, | Контейнеры обнаружения аномалий не следует использовать.|
+|Необязательно| `Output` | Строка, | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 

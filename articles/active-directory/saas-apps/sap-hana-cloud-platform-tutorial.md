@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/17/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b345656b30a9bb182c097a4c9e18d71a293bf420
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 13ab9752391519f38e843b9d625164e655348d28
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65868109"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67091793"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-cloud-platform"></a>Руководство по Интеграция Azure Active Directory с SAP Cloud Platform
 
@@ -152,7 +152,7 @@ ms.locfileid: "65868109"
 
 ### <a name="configure-sap-cloud-platform-single-sign-on"></a>Настройка единого входа SAP Cloud Platform
 
-1. В другом окне браузера войдите на панель SAP Cloud Platform по адресу `https://account.<landscape host>.ondemand.com/cockpit` (например, https://account.hanatrial.ondemand.com/cockpit)).
+1. В другом окне браузера войдите на панель SAP Cloud Platform по адресу `https://account.<landscape host>.ondemand.com/cockpit` (например, https://account.hanatrial.ondemand.com/cockpit) ).
 
 2. Щелкните вкладку **Доверие** .
    
@@ -320,5 +320,5 @@ ms.locfileid: "65868109"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

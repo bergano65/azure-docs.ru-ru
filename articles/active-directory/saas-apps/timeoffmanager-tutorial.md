@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: a297c9db22d81ee3c32be4732198ba25b8f5a8f8
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 0d57b3ce4e378a366148b5c3eef6bc4d5d9eb96d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59280202"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67088542"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-timeoffmanager"></a>Руководство по Интеграция Azure Active Directory с TimeOffManager
 
@@ -256,5 +256,5 @@ ms.locfileid: "59280202"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

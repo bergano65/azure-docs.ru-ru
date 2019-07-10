@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9130717f7846c81bee2bf4892a13fcf6042257c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 5e0ca336fd2ca24a7fe2fbc0d2d693c4f793362f
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59261729"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67099526"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ivanti-service-manager-ism"></a>Руководство по Интеграция Azure Active Directory с Ivanti Service Manager (ISM)
 
@@ -129,7 +129,7 @@ ms.locfileid: "59261729"
 
     ![Ссылка для скачивания сертификата](common/certificateraw.png)
 
-7. Требуемые URL-адреса вы можете скопировать из раздела **Настройка Ivanti Service Manager (ISM)**.
+7. Требуемые URL-адреса вы можете скопировать из раздела **Настройка Ivanti Service Manager (ISM)** .
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -141,7 +141,7 @@ ms.locfileid: "59261729"
 
 ### <a name="configure-ivanti-service-manager-ism-single-sign-on"></a>Настройка единого входа в Ivanti Service Manager (ISM)
 
-Чтобы настроить единый вход на стороне **Ivanti Service Manager (ISM)**, нужно отправить скачанный **сертификат (необработанный)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Ivanti Service Manager (ISM)](https://www.ivanti.com/support/contact). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Ivanti Service Manager (ISM)** , нужно отправить скачанный **сертификат (необработанный)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Ivanti Service Manager (ISM)](https://www.ivanti.com/support/contact). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -172,11 +172,11 @@ ms.locfileid: "59261729"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к Ivanti Service Manager (ISM).
 
-1. На портале Azure последовательно выберите **Корпоративные приложения**, **Все приложения**, а затем — **Ivanti Service Manager (ISM)**.
+1. На портале Azure последовательно выберите **Корпоративные приложения**, **Все приложения**, а затем — **Ivanti Service Manager (ISM)** .
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. В списке приложений выберите **Ivanti Service Manager (ISM)**.
+2. В списке приложений выберите **Ivanti Service Manager (ISM)** .
 
     ![Ссылка на Ivanti Service Manager (ISM) в списке "Приложения"](common/all-applications.png)
 
@@ -213,5 +213,5 @@ ms.locfileid: "59261729"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

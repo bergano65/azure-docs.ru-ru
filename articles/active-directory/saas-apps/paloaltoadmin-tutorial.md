@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f45b0779693433f1b1fad3c5bfd4323eacb9a63b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: dd0ca3bb356319f4661e24b192a5f7e776d14cd0
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65870250"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67095074"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks---admin-ui"></a>Руководство по Интеграция Azure Active Directory с Palo Alto Networks (пользовательский интерфейс администратора)
 
@@ -158,7 +158,7 @@ ms.locfileid: "65870250"
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-8. Скопируйте требуемый URL-адрес из раздела **Настройка Palo Alto Networks (пользовательский интерфейс администратора)**.
+8. Скопируйте требуемый URL-адрес из раздела **Настройка Palo Alto Networks (пользовательский интерфейс администратора)** .
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -241,7 +241,7 @@ ms.locfileid: "65870250"
 
     ж. Нажмите кнопку **ОК**.
 
-13. Чтобы администраторы могли использовать единый вход SAML с Azure, выберите **Device (Устройство)** > **Setup (Установка)**. На панели **Setup** (Установка) выберите вкладку **Management** (Управление), а затем в разделе **Authentication Settings (Параметры проверки подлинности)** нажмите кнопку **Settings** (в виде шестеренки).
+13. Чтобы администраторы могли использовать единый вход SAML с Azure, выберите **Device (Устройство)**  > **Setup (Установка)** . На панели **Setup** (Установка) выберите вкладку **Management** (Управление), а затем в разделе **Authentication Settings (Параметры проверки подлинности)** нажмите кнопку **Settings** (в виде шестеренки).
 
     ![Кнопка Settings (Параметры)](./media/paloaltoadmin-tutorial/tutorial_paloaltoadmin_authsetup.png)
 
@@ -282,11 +282,11 @@ ms.locfileid: "65870250"
 
 В этом разделе описано, как предоставить пользователю Britta Simon доступ к Palo Alto Networks (пользовательский интерфейс администратора), чтобы он мог использовать единый вход Azure.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Palo Alto Networks (пользовательский интерфейс администратора)**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Palo Alto Networks (пользовательский интерфейс администратора)** .
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. В списке приложений выберите **Palo Alto Networks (пользовательский интерфейс администратора)**.
+2. В списке приложений выберите **Palo Alto Networks (пользовательский интерфейс администратора)** .
 
     ![Ссылка на Palo Alto Networks (пользовательский интерфейс администратора) в списке приложений](common/all-applications.png)
 
@@ -320,4 +320,4 @@ Palo Alto Networks (пользовательский интерфейс адми
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 4edd445fe526b9be5c421b21b25f9b095c734f43
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 07874988c97044ede59c18b8f85a425483679431
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65901711"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67089528"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sumologic"></a>Руководство по Интеграция Azure Active Directory с SumoLogic
 
@@ -138,7 +138,7 @@ ms.locfileid: "65901711"
 
 1. В другом окне веб-браузера войдите на корпоративный веб-сайт SumoLogic в качестве администратора.
 
-1. Выберите **Manage (Управление) \> Security (Безопасность)**.
+1. Выберите **Manage (Управление) \> Security (Безопасность)** .
 
     ![Управление](./media/sumologic-tutorial/ic778556.png "Управление")
 
@@ -188,7 +188,7 @@ ms.locfileid: "65901711"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension** .  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -264,5 +264,5 @@ ms.locfileid: "65901711"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с &frankly | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с &frankly | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении &frankly.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9190d288902a100313150688a767ecb452191447
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f3f4359570cdf701b11ee468b43068f6a1ead429
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57881985"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67106928"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-frankly"></a>Руководство по Интеграция Azure Active Directory с &frankly
 
@@ -203,4 +203,4 @@ ms.locfileid: "57881985"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

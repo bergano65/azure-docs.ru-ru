@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9e6a271f4e2c2190abf0074eb11c2a5e0e60755
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: cab39e4af44428118966b78eacaec5cc3220daeb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65869720"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67094787"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pavaso-digital-close"></a>Руководство по Интеграция Azure Active Directory с Pavaso Digital Close
 
@@ -203,4 +203,4 @@ ms.locfileid: "65869720"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

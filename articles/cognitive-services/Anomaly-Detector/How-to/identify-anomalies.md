@@ -1,5 +1,6 @@
 ---
 title: Как использовать API обнаружения аномалий в данных временных рядов
+titleSuffix: Azure Cognitive Services
 description: Узнайте, как обнаруживать аномалии в данных, либо в пакетном режиме, либо для потоковой передачи данных.
 services: cognitive-services
 author: aahill
@@ -9,14 +10,14 @@ ms.subservice: anomaly-detector
 ms.topic: article
 ms.date: 03/26/2019
 ms.author: aahi
-ms.openlocfilehash: 63ede8fe90d5c19c2473ffb315bf6096599ffb9c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 551196815004cb047680e2ae2f8dbe32186c1a0c
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61432344"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67721793"
 ---
-# <a name="how-to-use-the-anomaly-detector-api-on-your-time-series-data"></a>Практическое руководство: Использовать API обнаружения аномалий в данных временных рядов  
+# <a name="how-to-use-the-anomaly-detector-api-on-your-time-series-data"></a>Практическое руководство. Использовать API обнаружения аномалий в данных временных рядов  
 
 [API обнаружения аномалий](https://westus2.dev.cognitive.microsoft.com/docs/services/AnomalyDetector/operations/post-timeseries-entire-detect) предоставляет два метода обнаружения аномалий. Либо можно выявлять аномалии в пакетном режиме на протяжении вашего раз рядов, или как данных создается путем обнаружения аномалий состояние последней точки данных. Модель обнаружения возвращает аномалий результатов, а также ожидаемое значение каждой точки данных и аномалий верхней и нижней границы обнаружения. Эти значения можно использовать для визуализации диапазон нормальных значений и аномалий в данных.
 

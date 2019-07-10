@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04-08-2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91899b35f319dafd01a3f27d31aac53515b46d78
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: 542d1008bfe505887f4c3639ff0271fc1c81664e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59565015"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67090505"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skytap"></a>Руководство по Интеграция Azure Active Directory с приложением Skytap
 
@@ -62,7 +62,7 @@ ms.locfileid: "59565015"
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить новое приложение, нажмите кнопку **Новое приложение** в верхней части диалогового окна.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Новое приложение**.
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
@@ -205,5 +205,5 @@ ms.locfileid: "59565015"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

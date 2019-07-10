@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 764ad8f1ca19238e1986d1d187d19c405963a832
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ac476e2a66f7fd1d315adb37258917b3ff47373f
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65868840"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67093466"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-purecloud-by-genesys"></a>Руководство по Интеграция Azure Active Directory с PureCloud от Genesys
 
@@ -294,5 +294,5 @@ ms.locfileid: "65868840"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

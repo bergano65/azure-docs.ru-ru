@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e48e353df6c14ec24a01fe3b1852de2c6a0a3155
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 8b1e2baa2cdaee511ecff614406a0e4c25d553c8
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65901040"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67106837"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-appneta-performance-monitor"></a>Руководство по Интеграция Azure Active Directory с AppNeta Performance Monitor
 
@@ -239,4 +239,4 @@ ms.locfileid: "65901040"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

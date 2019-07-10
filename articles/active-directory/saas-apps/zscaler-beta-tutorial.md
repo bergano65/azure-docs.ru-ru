@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/24/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f31361dc3d7e24092677f1a78b2c405ae84578ed
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 07341c1ad30f1242bdff430826fdc82c45e09dac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65230047"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67086071"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-beta"></a>Руководство по Интеграция Azure Active Directory с Zscaler Beta
 
@@ -143,7 +143,7 @@ ms.locfileid: "65230047"
     > [!NOTE]
     > Сведения о настройке ролей в Azure AD см. в статье [Практическое руководство: настройка утверждения роли, выдаваемого в токене SAML для корпоративных приложений](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-app-role-management).
 
-7. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать**, чтобы скачать **сертификат (Base64)**. Сохраните его на компьютере.
+7. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать**, чтобы скачать **сертификат (Base64)** . Сохраните его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
@@ -157,7 +157,7 @@ ms.locfileid: "65230047"
 
 ### <a name="configure-zscaler-beta-single-sign-on"></a>Настройка единого входа в Zscaler Beta
 
-1. Для автоматизации настройки в Zscaler Beta необходимо установить **расширение браузера "Безопасный вход в мои приложения"**, выбрав **Установить расширение**.
+1. Для автоматизации настройки в Zscaler Beta необходимо установить **расширение браузера "Безопасный вход в мои приложения"** , выбрав **Установить расширение**.
 
     ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
 
@@ -307,5 +307,5 @@ ms.locfileid: "65230047"
 
 - [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

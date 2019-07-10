@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 1/3/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2281fb046ca9b96aa5800150d630b9086236c5c5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a9526cde92fe2f504207de188fa8f0567ffa580d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65866603"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67089824"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-successfactors"></a>Руководство по Интеграция Azure Active Directory с SuccessFactors
 
@@ -296,7 +296,7 @@ ms.locfileid: "65866603"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 <!--Image references-->
 

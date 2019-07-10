@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 5b3e839af886dc23bdfb11dacfb1854a2277bf3a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b26133c64877bcac07d2e8ba10dbee05d4e36d34
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65862644"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67102262"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-floqast"></a>Руководство по Интеграция Azure Active Directory с FloQast
 
@@ -237,5 +237,5 @@ ms.locfileid: "65862644"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

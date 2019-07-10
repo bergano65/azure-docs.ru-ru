@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9449e196a59fa20288bca9d4401c5e56a97b86cd
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 7143d0afce7a3644286703a9eba0da1ee45305f2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65901219"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67106555"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-attendance-management-services"></a>Руководство. Интеграция Azure Active Directory с Attendance Management Services
 
@@ -239,4 +239,4 @@ ms.locfileid: "65901219"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

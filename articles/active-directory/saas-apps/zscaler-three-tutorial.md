@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/24/2019
 ms.author: jeedes
-ms.openlocfilehash: e2729a47771f2c3073d91cb5b0de4684b51badbd
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 3e68e7004858cf750bbe6186861442da1f9c6cdf
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64681876"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67085885"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-three"></a>Руководство по Интеграция Azure Active Directory с Zscaler Three
 
@@ -306,5 +306,5 @@ ms.locfileid: "64681876"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

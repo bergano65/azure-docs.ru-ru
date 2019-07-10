@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
-ms.openlocfilehash: 21f7cdaf3dbd3e01040081c786cd7a03f6ba3e3c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f22f70c587556793c2b02fc79fa6175584b0c5cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65871412"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67096635"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-moxtra"></a>Руководство по Интеграция Azure Active Directory с Moxtra
 
@@ -243,7 +243,7 @@ ms.locfileid: "65871412"
 
 1. Выполните вход на веб-сайт компании Moxtra в качестве администратора.
 
-1. На панели инструментов слева щелкните **Admin Console (Консоль администрирования) > User Management (Управление пользователями)**, а затем нажмите кнопку **Add User** (Добавить пользователя).
+1. На панели инструментов слева щелкните **Admin Console (Консоль администрирования) > User Management (Управление пользователями)** , а затем нажмите кнопку **Add User** (Добавить пользователя).
    
     ![Настройка единого входа](./media/moxtra-tutorial/tutorial_moxtra_10.png) 
 
@@ -275,5 +275,5 @@ ms.locfileid: "65871412"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

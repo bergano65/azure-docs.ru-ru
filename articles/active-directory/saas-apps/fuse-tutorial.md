@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Fuse | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Fuse | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Fuse.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/18/2019
 ms.author: jeedes
-ms.openlocfilehash: d04f31ef20135271e4adb1551246d351bfab7b1f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: fda9594d97500075e6b018e1e8c9ff5816fe3590
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57883990"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67164971"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-fuse"></a>Руководство по Интеграция Azure Active Directory с Fuse
 
@@ -104,7 +104,7 @@ ms.locfileid: "57883990"
 
     ![Сведения о домене и URL-адресах единого входа приложения Fuse](common/sp-signonurl.png)
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<tenant name>.fusionuniversal.com/`.
+    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://{tenantname}.fuseuniversal.com/`.
 
     > [!NOTE]
     > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Для получения значения обратитесь к [группе поддержки клиентов Fuse](mailto:support@fusion-universal.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -145,7 +145,7 @@ ms.locfileid: "57883990"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -194,5 +194,5 @@ ms.locfileid: "57883990"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

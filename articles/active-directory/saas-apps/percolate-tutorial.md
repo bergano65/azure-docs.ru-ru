@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/01/2019
 ms.author: jeedes
-ms.openlocfilehash: 83027e9fbc1826de727f123afe4507c2858c49ff
-ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
+ms.openlocfilehash: a6c1f893757baf1e6c85420b31997a5073cff684
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65560566"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67094599"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-percolate"></a>Руководство по Интеграция Azure Active Directory с Percolate
 
@@ -234,4 +234,4 @@ ms.locfileid: "65560566"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

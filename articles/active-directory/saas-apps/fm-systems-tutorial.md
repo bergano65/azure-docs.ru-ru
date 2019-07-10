@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/05/2019
 ms.author: jeedes
-ms.openlocfilehash: dda1447a049071a0871079f2cabd046ed7c479d6
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 62e800a5ac1e1e001e5d4ef328a80c554d007182
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65770148"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67102345"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-fmsystems"></a>Руководство по Интеграция Azure Active Directory с FM:Systems
 
@@ -209,5 +209,5 @@ ms.locfileid: "65770148"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

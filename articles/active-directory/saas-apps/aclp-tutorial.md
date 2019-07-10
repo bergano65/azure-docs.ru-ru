@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 53bbbfea4d64c61f47130bb7270c5eb36cef402e
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: 516e85fa4dca6c18bc83ee169e284c3c490ba74e
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65473364"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67165101"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-aclp"></a>Руководство по интеграции Azure Active Directory c ACLP
 
@@ -181,8 +181,8 @@ ms.locfileid: "65473364"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

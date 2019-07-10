@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9cd8374bfce62184df5619b76f4b9e64dd86f900
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: bc5f7bf299465b6af272c9b417a62f121b9a4d82
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65874072"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67164936"
 ---
 # <a name="tutorial-integrate-jobhub-with-azure-active-directory"></a>Руководство по Интеграция JOBHUB с Azure Active Directory
 
@@ -145,9 +145,9 @@ ms.locfileid: "65874072"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

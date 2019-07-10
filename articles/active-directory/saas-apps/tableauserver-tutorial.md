@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/22/2019
 ms.author: jeedes
-ms.openlocfilehash: 480e799e0fe307b39ce8a2f0b026a04f507a6beb
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: ed8e63a49702e8ba951990f8d7ff19b8f058fa74
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65408012"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67089404"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tableau-server"></a>Руководство. Интеграция Azure Active Directory с Tableau Server
 
@@ -122,7 +122,7 @@ ms.locfileid: "65408012"
 
     | ИМЯ | Исходный атрибут | Пространство имен |
     | ---------------| --------------- | ----------- |
-    | Имя пользователя | user.userprincipalname | `https://schemas.xmlsoap.org/ws/2005/05/identity/claims` |
+    | Имя пользователя | user.userprincipalname | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims` |
     | | |
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
@@ -260,5 +260,5 @@ ms.locfileid: "65408012"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

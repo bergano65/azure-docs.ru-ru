@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 810d19a697e32f2d8e389bf58d52e82529bdd66b
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 28dd21bac2c1fb1602fd66ca237b230cdb12bdac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64917439"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67097636"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-marketo"></a>Руководство по Интеграция Azure Active Directory с Marketo
 
@@ -302,5 +302,5 @@ ms.locfileid: "64917439"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

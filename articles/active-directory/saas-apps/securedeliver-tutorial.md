@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ca2e717e612973fa4c46c9ab4e70091d32fcf19
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 7dbf96c3480f47e5f6b292759a949c9bbf36dc07
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65902427"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67091188"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-secure-deliver"></a>Руководство по Интеграция Azure Active Directory с SECURE DELIVER
 
@@ -197,5 +197,5 @@ ms.locfileid: "65902427"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

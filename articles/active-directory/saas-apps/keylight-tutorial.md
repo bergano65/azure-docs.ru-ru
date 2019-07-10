@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a03bb2626525bf022b109105a7c6bc0dee23aea
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 148c2c46a911088d01ab83fe2d16e8ca81d272ff
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65407024"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67098776"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lockpath-keylight"></a>Руководство по Интеграция Azure Active Directory с LockPath Keylight
 
@@ -172,11 +172,11 @@ ms.locfileid: "65407024"
 
     j. Задайте для параметра **Auto-provision security config** (Конфигурация безопасности для автоматической подготовки) значение **Standard User Configuration** (Конфигурация обычного пользователя).
 
-    k. В текстовое поле **Email Attribute** (Атрибут электронной почты) введите `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    k. В текстовое поле **Email Attribute** (Атрибут электронной почты) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
-    l. В текстовое поле **First name attribute** (Атрибут имени) введите значение `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
+    l. В текстовое поле **First name attribute** (Атрибут имени) введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
 
-    m. В текстовое поле **Last name attribute** (Атрибут фамилии) введите значение `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
+    m. В текстовое поле **Last name attribute** (Атрибут фамилии) введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
 
     n. Выберите команду **Сохранить**.
 
@@ -246,4 +246,4 @@ ms.locfileid: "65407024"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

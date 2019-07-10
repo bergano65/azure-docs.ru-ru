@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f65e7192bdcc148ba081d0de954b51535778e750
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: b25007fa8e9d547b9e5671390514b3bc10f329fa
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65900160"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67106100"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bomgar-remote-support"></a>Руководство по Интеграция Azure Active Directory с Bomgar Remote Support
 
@@ -201,4 +201,4 @@ ms.locfileid: "65900160"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

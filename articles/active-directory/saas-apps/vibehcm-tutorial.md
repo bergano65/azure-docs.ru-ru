@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: cf414f9dd0f3a7ab638dc72e50aa8f3997308cc7
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 8d1f974b7fea72bede2ead2e9d971419d5e83cb2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65813644"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67087524"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-vibe-hcm"></a>Руководство по Интеграция Azure Active Directory с Vibe HCM
 
@@ -188,5 +188,5 @@ ms.locfileid: "65813644"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

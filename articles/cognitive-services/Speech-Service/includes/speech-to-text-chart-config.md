@@ -14,14 +14,14 @@ ms.openlocfilehash: 1b46c58d3f3c804052e637f7bde2e1a456764dba
 ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67711508"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717223"
 ---
 ### <a name="speech-to-text-sub-chart-chartsspeechtotext"></a>Преобразование речи в текст (вложенные диаграммы: диаграммы/speechToText)
 
 Чтобы переопределить диаграмма «общий», добавьте префикс `speechToText.` на любой параметр, чтобы сделать его более конкретным. Например, она переопределит соответствующего параметра например `speechToText.numberOfConcurrentRequest` переопределяет `numberOfConcurrentRequest`.
 
-|Параметр|Описание|значение по умолчанию|
+|Параметр|Описание|Значение по умолчанию|
 | -- | -- | -- |
 | `enabled` | Ли **речи в текст** включена служба. | `false` |
 | `numberOfConcurrentRequest` | Число одновременных запросов для **речи в текст** службы. Эта диаграмма автоматически вычисляет ресурсы ЦП и памяти, на основе этого значения. | `2` |

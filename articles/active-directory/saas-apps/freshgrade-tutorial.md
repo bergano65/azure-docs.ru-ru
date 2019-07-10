@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 3dcbbfcdff0f30b8300e4fe767e27efb65723c5b
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 4abffc36695b5399eec28d74b9aa5eccb9841821
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65898515"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67101900"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-freshgrade"></a>Руководство по Интеграция Azure Active Directory с FreshGrade
 
@@ -196,5 +196,5 @@ ms.locfileid: "65898515"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

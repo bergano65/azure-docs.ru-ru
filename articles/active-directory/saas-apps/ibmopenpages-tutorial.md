@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 699e4830b6399fbce07dfc125e69513b58f58dd1
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: f045d5f880179827a00078419fc2c67d18db774a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59260125"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67100703"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ibm-openpages"></a>Руководство по Интеграция Azure Active Directory с IBM OpenPages
 
@@ -197,4 +197,4 @@ ms.locfileid: "59260125"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

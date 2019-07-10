@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/22/2019
 ms.author: jeedes
-ms.openlocfilehash: 2dea1dcd2f6ecef580d65a95d1227380901213eb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5c46b096b1182b3f2a998f992f72e6127dfe0888
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65866452"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67089557"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sugar-crm"></a>Руководство по Интеграция Azure Active Directory с SugarCRM
 
@@ -224,7 +224,7 @@ ms.locfileid: "65866452"
 
     ![Администрирование](./media/sugarcrm-tutorial/ic795893.png "Администрирование")
 
-1. Выберите **Users (Пользователи) \> Create New User (Создать нового пользователя)**.
+1. Выберите **Users (Пользователи) \> Create New User (Создать нового пользователя)** .
 
     ![Создание пользователя](./media/sugarcrm-tutorial/ic795894.png "Создание пользователя")
 
@@ -259,5 +259,5 @@ ms.locfileid: "65866452"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

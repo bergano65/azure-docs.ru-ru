@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/13/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cb82c3112634163328e08b330083f5b4942798ab
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: afa8c451790331e81a96485c7965110c968fe249
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65863190"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67104992"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-communifire"></a>Руководство по Интеграция Azure Active Directory с Communifire
 
@@ -218,5 +218,5 @@ ms.locfileid: "65863190"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

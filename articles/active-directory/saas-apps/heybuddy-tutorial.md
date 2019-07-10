@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 850f5e3f96439e1fea0a77b94f2ed733cc451bdf
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 8a29d20c434a7306b016fe9a549415242f5977a2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65898260"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67101109"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-heybuddy"></a>Руководство по Интеграция Azure Active Directory с HeyBuddy
 
@@ -223,4 +223,4 @@ ms.locfileid: "65898260"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

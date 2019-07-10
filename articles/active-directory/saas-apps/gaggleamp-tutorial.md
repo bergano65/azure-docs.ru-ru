@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/18/2019
 ms.author: jeedes
-ms.openlocfilehash: 57d80394c89072a0d0a2c87a378942c32ade6844
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 678f4e52fd8d3adf802bd89a1cc07ff585e696ef
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57860692"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67101803"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-gaggleamp"></a>Руководство. Интеграция Azure Active Directory с GaggleAMP
+# <a name="tutorial-azure-active-directory-integration-with-gaggleamp"></a>Руководство по Интеграция Azure Active Directory с GaggleAMP
 
 В этом руководстве описано, как интегрировать GaggleAMP с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением GaggleAMP обеспечивает следующие преимущества:
@@ -110,7 +110,7 @@ ms.locfileid: "57860692"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![изображение](common/both-preintegrated-signon.png)
+    ![image](common/both-preintegrated-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://gaggleamp.com/i/<customerid>`.
 
@@ -133,7 +133,7 @@ ms.locfileid: "57860692"
 
 ### <a name="configure-gaggleamp-single-sign-on"></a>Настройка единого входа в GaggleAMP
 
-1. В другом окне браузера перейдите на страницу единого входа SAML, созданную для вас группой поддержки Gaggle (например, *https://accounts.gaggleamp.com/saml_configurations/oXH8sQcP79dOzgFPqrMTyw/edit*).
+1. В другом окне браузера перейдите на страницу единого входа SAML, созданную для вас группой поддержки Gaggle (например, *https://accounts.gaggleamp.com/saml_configurations/oXH8sQcP79dOzgFPqrMTyw/edit* ).
 
 2. На странице **Единый вход SAML** выполните следующие действия.  
    
@@ -167,7 +167,7 @@ ms.locfileid: "57860692"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -216,5 +216,5 @@ ms.locfileid: "57860692"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

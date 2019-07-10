@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/01/2019
 ms.author: jeedes
-ms.openlocfilehash: 72505cfc0a86c00882de37c35dff61a12a9c3fbe
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 607e5aded52375190878de6b48ffa4aa2ab49767
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65899601"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67104087"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-docusign"></a>Руководство. Интеграция Azure Active Directory с DocuSign
 
@@ -178,7 +178,7 @@ ms.locfileid: "65899601"
 
     ![Настройка единого входа][62]
 
-    i. Выберите поле, которое нужно сопоставить с утверждением Azure AD. В этом примере утверждение **emailaddress** сопоставляется со значением **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress**. Это имя утверждения по умолчанию из Azure AD, которое используется для утверждения на электронную почту, а затем щелкните **Save** (Сохранить).
+    i. Выберите поле, которое нужно сопоставить с утверждением Azure AD. В этом примере утверждение **emailaddress** сопоставляется со значением **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** . Это имя утверждения по умолчанию из Azure AD, которое используется для утверждения на электронную почту, а затем щелкните **Save** (Сохранить).
 
     ![Настройка единого входа][57]
 
@@ -272,7 +272,7 @@ ms.locfileid: "65899601"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 <!--Image references-->
 

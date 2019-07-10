@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a13d2a62c64ea114e45b49e38eda0ddc686fe7cf
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 1341f0def306a1167e1e4876365c70901cf89cd2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66143159"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67087009"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workable"></a>Руководство по Интеграция Azure Active Directory с Workable
 
@@ -210,4 +210,4 @@ ms.locfileid: "66143159"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

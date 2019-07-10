@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 41f867e2700c7b3f5d70d76c78a32e0fa3361d56
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 5d7d9115ba7b5d60c6fbf61590aebd47a00c4b2f
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65813240"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67102169"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-folloze"></a>Руководство по Интеграция Azure Active Directory с Folloze
 
@@ -220,4 +220,4 @@ ms.locfileid: "65813240"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

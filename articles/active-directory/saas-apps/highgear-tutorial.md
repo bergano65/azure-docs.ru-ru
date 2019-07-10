@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция с Azure Active Directory с приложением HighGear | Документация Майкрософт
+title: Руководство по Интеграция с Azure Active Directory с приложением HighGear | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и HighGear.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 873bc340d738704418310e22c34b0042f71a96bd
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ad7aedf90ead4b21bab661bdaf85316cd648fd75
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57890905"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67101273"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-highgear"></a>Руководство. Интеграция Azure Active Directory с HighGear
+# <a name="tutorial-azure-active-directory-integration-with-highgear"></a>Руководство по Интеграция Azure Active Directory с HighGear
 
 В этом руководстве вы можете узнать, как интегрировать Azure Active Directory (Azure AD) с приложением HighGear.
 Интеграция Azure AD с приложением HighGear обеспечивает следующие преимущества.
@@ -114,7 +114,7 @@ ms.locfileid: "57890905"
     
     ![Пункт меню Single Sign-On Settings (Параметры единого входа)](media/highgear-tutorial/single-sign-on-settings-menu-item.png)
 
-    b. В текстовое поле **URL-адрес ответа** вставьте значение **URL-адреса службы обработчика утверждений (ACS)**, которое находится на странице параметров единого входа в систему HighGear.
+    b. В текстовое поле **URL-адрес ответа** вставьте значение **URL-адреса службы обработчика утверждений (ACS)** , которое находится на странице параметров единого входа в систему HighGear.
 
     ![Поле с URL-адресом ответа службы обработчика утверждений (ACS)](media/highgear-tutorial/assertion-consumer-service-url-field.png)
 
@@ -129,7 +129,7 @@ ms.locfileid: "57890905"
     > [!NOTE]
     > Эти значения приведены для примера. Замените эти значения фактическими идентификатором, URL-адресом ответа и URL-адресом единого входа, которые находятся на странице **Single Sign-On Settings** (Параметры единого входа) в системе HighGear. Если вам нужна помощь, обратитесь к [группе поддержки HighGear](mailto:support@highgear.com).
 
-4. На странице **Настройка единого входа с помощью SAML** откройте раздел **Сертификат подписи SAML** и щелкните ссылку **Скачать** рядом с пунктом **Сертификат (Base64)**, затем сохраните этот сертификат на компьютере. Он понадобится вам в дальнейшем для конфигурации единого входа.
+4. На странице **Настройка единого входа с помощью SAML** откройте раздел **Сертификат подписи SAML** и щелкните ссылку **Скачать** рядом с пунктом **Сертификат (Base64)** , затем сохраните этот сертификат на компьютере. Он понадобится вам в дальнейшем для конфигурации единого входа.
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
@@ -258,5 +258,5 @@ ms.locfileid: "57890905"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

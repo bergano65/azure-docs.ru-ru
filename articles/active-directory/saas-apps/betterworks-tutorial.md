@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9a20ed50db0e7bc71da559163181619ba35f881
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: 561c4458f942dc524f7de8df5b4385a1eaa1f6a8
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59565382"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67106285"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-betterworks"></a>Руководство по Интеграция Azure Active Directory с BetterWorks
 
@@ -62,7 +62,7 @@ ms.locfileid: "59565382"
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить новое приложение, нажмите кнопку **Новое приложение** в верхней части диалогового окна.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Новое приложение**.
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
@@ -121,7 +121,7 @@ ms.locfileid: "59565382"
 
 6. Приложение BetterWorks ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 7. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия. 
 
@@ -131,9 +131,9 @@ ms.locfileid: "59565382"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -231,4 +231,4 @@ ms.locfileid: "59565382"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

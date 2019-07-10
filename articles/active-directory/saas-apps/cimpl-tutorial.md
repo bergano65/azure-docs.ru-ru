@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8896922cf3f95439b76e12faf9577ca6570fbdf7
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 098c305f507d57a7e34dcb33d9c6bb3a3392e23f
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65900669"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67105638"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cimpl"></a>Руководство по Интеграция Azure Active Directory с Cimpl
 
@@ -128,7 +128,7 @@ ms.locfileid: "65900669"
 
 ### <a name="configure-cimpl-single-sign-on"></a>Настройка единого входа в Cimpl
 
-Чтобы настроить единый вход на стороне **Cimpl**, отправьте скачанный **сертификат (Base64)** и URL-адреса, скопированные на портале Azure, в службу технической поддержки Cimpl (**+1 866-982-8250**). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Cimpl**, отправьте скачанный **сертификат (Base64)** и URL-адреса, скопированные на портале Azure, в службу технической поддержки Cimpl ( **+1 866-982-8250**). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -197,4 +197,4 @@ ms.locfileid: "65900669"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

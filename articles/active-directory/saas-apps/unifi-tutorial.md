@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 27028a4e95abd2f190dd1f37bb877ed28fe8aade
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 67a26207e4b031cd93be8c7e5eec43c72582fcda
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57838152"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67087704"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-unifi"></a>Руководство по Интеграция Azure Active Directory с UNIFI
 
@@ -112,7 +112,7 @@ ms.locfileid: "57838152"
 
     В текстовом поле **URL-адрес входа** введите URL-адрес: `https://app.discoverunifi.com/login`.
 
-    ![изображение](common/both-preintegrated-signon.png)
+    ![image](common/both-preintegrated-signon.png)
 
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -148,7 +148,7 @@ ms.locfileid: "57838152"
 
     b. В текстовое поле **Provider URL** (URL-адрес поставщика) вставьте значение **URL-адреса входа**, скопированное с портала Azure.
 
-    c. Откройте сертификат, скачанный с портала Azure, в Блокноте. Удалите теги **---BEGIN CERTIFICATE---** и **---END CERTIFICATE---**, а затем вставьте остальное содержимое в текстовое поле **Сертификат**.
+    c. Откройте сертификат, скачанный с портала Azure, в Блокноте. Удалите теги **---BEGIN CERTIFICATE---** и **---END CERTIFICATE---** , а затем вставьте остальное содержимое в текстовое поле **Сертификат**.
 
     d. Установите флажок **Is Default Provider** (Является поставщиком по умолчанию).
 
@@ -170,7 +170,7 @@ ms.locfileid: "57838152"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -219,5 +219,5 @@ ms.locfileid: "57838152"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

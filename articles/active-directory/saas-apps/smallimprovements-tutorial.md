@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 19d9624c5bb60f47ef4bfa1b0629327780c2a9c7
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: d2d0bbc7a6e1c680434041d1b9d55e39a96b6f44
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65901880"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67090361"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-small-improvements"></a>Руководство. Интеграция Azure Active Directory со Small Improvements
 
@@ -170,7 +170,7 @@ ms.locfileid: "65901880"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension** .  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -229,7 +229,7 @@ ms.locfileid: "65901880"
 
     b. В текстовое поле **Last name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
-    c. В текстовое поле **Email** (Электронная почта) введите электронную почту пользователя, например **brittasimon@contoso.com**.
+    c. В текстовое поле **Email** (Электронная почта) введите электронную почту пользователя, например **brittasimon@contoso.com** .
 
     d. Кроме того, вы можете ввести персональное сообщение в поле **Отправить уведомление по электронной почте** . Если уведомление отправлять не нужно, снимите этот флажок.
 
@@ -247,4 +247,4 @@ ms.locfileid: "65901880"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -1,5 +1,5 @@
 ---
-title: Настройка контейнера Распознавателя документов
+title: Как настроить контейнер для распознавателя формы
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как настраивать контейнер Распознавателя документов для синтаксического анализа данных форм и таблиц.
 author: IEvangelist
@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: e4b6a852ece3060ecf866d66d32f213355d99950
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 7752b09dd1bf20d796b19d03e62426b098486c39
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592669"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67718456"
 ---
 # <a name="configure-form-recognizer-containers"></a>Настройка контейнера Распознавателя документов
 
@@ -47,7 +47,7 @@ ms.locfileid: "67592669"
 
 |Обязательно для заполнения| ИМЯ | Тип данных | Описание |
 |--|------|-----------|-------------|
-|Да| `Billing` | String | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus2.api.cognitive.microsoft.com/` |
+|Да| `Billing` | Строка, | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus2.api.cognitive.microsoft.com/` |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -74,10 +74,10 @@ ms.locfileid: "67592669"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того, расположение подключения на [главном компьютере](form-recognizer-container-howto.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и разрешениями для расположения подключения к узлу.
 
-|Необязательно| ИМЯ | Тип данных | Описание |
+|Необязательно| Имя | Тип данных | Описание |
 |-------|------|-----------|-------------|
-|Обязательно для заполнения| `Input` | String | Цель входного подключения. По умолчанию используется значение `/input`.    <br><br>Пример:<br>`--mount type=bind,src=c:\input,target=/input`|
-|Обязательно для заполнения| `Output` | String | Цель выходного подключения. По умолчанию используется значение `/output`.  <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Обязательно для заполнения| `Input` | Строка, | Цель входного подключения. По умолчанию используется значение `/input`.    <br><br>Пример:<br>`--mount type=bind,src=c:\input,target=/input`|
+|Обязательно для заполнения| `Output` | Строка, | Цель выходного подключения. По умолчанию используется значение `/output`.  <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run
 
@@ -135,6 +135,6 @@ Logging:Console:LogLevel:Default=Information
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Установка и запуск контейнеров Распознавателя документов](form-recognizer-container-howto.md)

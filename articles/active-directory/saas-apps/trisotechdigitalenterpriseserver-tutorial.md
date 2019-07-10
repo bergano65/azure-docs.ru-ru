@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: c5d1a791de5c295b4644e5633983a5369200498e
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 56399f99ede611c4a120603cce3a3eede2728c6d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65888420"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67088267"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-trisotech-digital-enterprise-server"></a>Руководство по Интеграция Azure Active Directory с Trisotech Digital Enterprise Server
 
@@ -134,7 +134,7 @@ ms.locfileid: "65888420"
 
     ![Настройка единого входа](./media/trisotechdigitalenterpriseserver-tutorial/user3.png)
 
-    a. В раскрывающемся списке в поле **Authentication Method** (Способ проверки подлинности) выберите **язык разметки заявлений системы безопасности 2 (SAML 2)**.
+    a. В раскрывающемся списке в поле **Authentication Method** (Способ проверки подлинности) выберите **язык разметки заявлений системы безопасности 2 (SAML 2)** .
 
     b. В текстовое поле **URL-адрес метаданных** вставьте значение **URL-адреса метаданных федерации приложений**, скопированное на портале Azure.
 
@@ -215,5 +215,5 @@ ms.locfileid: "65888420"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

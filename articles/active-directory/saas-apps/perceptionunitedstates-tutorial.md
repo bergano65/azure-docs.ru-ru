@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 4b7a9409052d8255bbad00b38217bcff030e8620
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e9ba42f780c93486409077383750d0635637e99b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65869514"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67094838"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-perception-united-states-non-ultipro"></a>Руководство. Интеграция Azure Active Directory с Perception United States (Non-UltiPro)
 
@@ -65,7 +65,7 @@ ms.locfileid: "65869514"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Perception United States (Non-UltiPro)**, выберите **Perception United States (Non-UltiPro)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **Perception United States (Non-UltiPro)** , выберите **Perception United States (Non-UltiPro)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
      ![Perception United States (Non-UltiPro) в списке результатов](common/search-new-app.png)
 
@@ -109,7 +109,7 @@ ms.locfileid: "65869514"
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://perception.kanjoya.com/sso?idp=<entity_id>`.
 
-    c. Для приложения **Perception United States (Non-UltiPro)** требуется, чтобы значение **идентификатора Azure AD** (указанное в виде <entity_id>), которое находится в разделе **Настройка Perception United States (Non-UltiPro)**, было закодировано в формат URI. Чтобы получить значение, закодированное в формате URI, перейдите по ссылке **http://www.url-encode-decode.com/**.
+    c. Для приложения **Perception United States (Non-UltiPro)** требуется, чтобы значение **идентификатора Azure AD** (указанное в виде <entity_id>), которое находится в разделе **Настройка Perception United States (Non-UltiPro)** , было закодировано в формат URI. Чтобы получить значение, закодированное в формате URI, перейдите по ссылке **http://www.url-encode-decode.com/** .
 
     d. Получив это значение, объедините его с **URL-адресом ответа**, как показано ниже:
 
@@ -121,7 +121,7 @@ ms.locfileid: "65869514"
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-6. Скопируйте требуемый URL-адрес из раздела **Настройка Perception United States (Non-UltiPro)**.
+6. Скопируйте требуемый URL-адрес из раздела **Настройка Perception United States (Non-UltiPro)** .
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -195,11 +195,11 @@ ms.locfileid: "65869514"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив ему доступ к Perception United States (Non-UltiPro).
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Perception United States (Non-UltiPro)**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Perception United States (Non-UltiPro)** .
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. В списке приложений выберите **Perception United States (Non-UltiPro)**.
+2. В списке приложений выберите **Perception United States (Non-UltiPro)** .
 
     ![Ссылка на Perception United States (Non-UltiPro) в списке "Приложения"](common/all-applications.png)
 
@@ -233,5 +233,5 @@ ms.locfileid: "65869514"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

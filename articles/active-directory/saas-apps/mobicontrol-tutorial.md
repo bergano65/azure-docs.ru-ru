@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 120be3ef7299391e611dc393e70af697c1daf2ba
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: a5ec603b65161f3b0b2d9c88224aef0004cc686a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65896854"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67096905"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mobicontrol"></a>Руководство по Интеграция Azure Active Directory с MobiControl
 
@@ -186,5 +186,5 @@ ms.locfileid: "65896854"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

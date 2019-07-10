@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/27/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e645dd40071416a28ced475e02c47688a5759eb4
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 88940b40eb309a5fb6ff73c04a47813ec3a47669
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66304053"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67103858"
 ---
 # <a name="tutorial-integrate-drift-with-azure-active-directory"></a>Руководство по Интеграция Drift с Azure Active Directory
 
@@ -193,4 +193,4 @@ ms.locfileid: "66304053"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

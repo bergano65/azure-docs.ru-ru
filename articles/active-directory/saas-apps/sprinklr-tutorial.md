@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 1c3b95686b8c91552615a9014102fd6a14f8c385
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 9e4025d040783bff1cd85fb46d571e3a89967892
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65889090"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67089662"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sprinklr"></a>Руководство по Интеграция Azure Active Directory со Sprinklr
 
@@ -130,11 +130,11 @@ ms.locfileid: "65889090"
 
 1. В другом окне веб-браузера войдите на сайт Sprinklr своей организации в качестве администратора.
 
-1. Выберите **Administration (Администрирование) \> Settings (Параметры)**.
+1. Выберите **Administration (Администрирование) \> Settings (Параметры)** .
 
     ![Администрирование](./media/sprinklr-tutorial/ic782907.png "Администрирование")
 
-1. В области слева выберите **Manage Partner (Управление партнером) \> Single Sign (Единый вход)**.
+1. В области слева выберите **Manage Partner (Управление партнером) \> Single Sign (Единый вход)** .
 
     ![Управление партнером](./media/sprinklr-tutorial/ic782908.png "Управление партнером")
 
@@ -186,7 +186,7 @@ ms.locfileid: "65889090"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension** .  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -223,11 +223,11 @@ ms.locfileid: "65889090"
 
 1. Войдите на сайт Sprinklr своей организации в качестве администратора.
 
-1. Выберите **Administration (Администрирование) \> Settings (Параметры)**.
+1. Выберите **Administration (Администрирование) \> Settings (Параметры)** .
 
     ![Администрирование](./media/sprinklr-tutorial/ic782907.png "Администрирование")
 
-1. В области слева выберите **Manage Client (Управление клиентом) \> Users (Пользователи)**.
+1. В области слева выберите **Manage Client (Управление клиентом) \> Users (Пользователи)** .
 
     ![Параметры](./media/sprinklr-tutorial/ic782914.png "Параметры")
 
@@ -275,4 +275,4 @@ ms.locfileid: "65889090"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

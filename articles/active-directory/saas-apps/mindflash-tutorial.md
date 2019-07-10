@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 571ab38dd52d83f1391b555bc4dfc8c091f1fd1b
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 97e38c62da74444f1f229f12e42d98e75a6e5073
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65896889"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67097199"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mindflash"></a>Руководство по Интеграция Azure Active Directory с Mindflash
 
@@ -222,5 +222,5 @@ ms.locfileid: "65896889"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

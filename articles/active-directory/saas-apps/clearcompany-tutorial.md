@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d7e137986b4b6a1d0dcf96bf890e7e7be2cac02
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4fc6abf9efc9014703eceda9a8b52a7204d8dae5
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65858975"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67105354"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clearcompany"></a>Руководство. Интеграция Azure Active Directory с ClearCompany
 
@@ -201,5 +201,5 @@ ms.locfileid: "65858975"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с iDiD Manager | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с iDiD Manager | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и iDiD Manager.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 1/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6036d428de89d160e58ae1ab7fe3c619e2b577d4
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 7f1d36cf3760c790f18d4fbc3d902a1365c49ae0
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57838355"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67100599"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-idid-manager"></a>Руководство. Интеграция Azure Active Directory с iDiD Manager
+# <a name="tutorial-azure-active-directory-integration-with-idid-manager"></a>Руководство по Интеграция Azure Active Directory с iDiD Manager
 
 В этом руководстве описано, как интегрировать iDiD Manager с Azure Active Directory (Azure AD).
 Интеграция Azure AD с iDiD Manager обеспечивает следующие преимущества.
@@ -140,7 +140,7 @@ ms.locfileid: "57838355"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -189,5 +189,5 @@ ms.locfileid: "57838355"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

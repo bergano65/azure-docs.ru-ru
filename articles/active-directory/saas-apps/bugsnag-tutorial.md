@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 01877e4d982433608dd10fb44f2506b8bf71aff6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 33d6ddb4434813e87e0fa1be3b5335795e9774cb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65858932"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67106042"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bugsnag"></a>Руководство по Интеграция Azure Active Directory с Bugsnag
 
@@ -191,4 +191,4 @@ ms.locfileid: "65858932"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

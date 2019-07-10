@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Front | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Front | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Front.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 6c050bd7cc620776d4e9cb5afd8d11637d11ab4d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 8fb5685338ee3d8888f99cc36f4868ef897de5a8
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57895735"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67101932"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-front"></a>Руководство. Интеграция Azure Active Directory с Front
+# <a name="tutorial-azure-active-directory-integration-with-front"></a>Руководство по Интеграция Azure Active Directory с Front
 
 В этом руководстве описано, как интегрировать Front с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Front обеспечивает следующие преимущества.
@@ -129,7 +129,7 @@ ms.locfileid: "57895735"
 
 1. Войдите в клиент Front с правами администратора.
 
-2. Последовательно выберите пункты **Settings (Параметры) (значок шестеренки в нижней части левой боковой панели) > Preferences (Предпочтения)**.
+2. Последовательно выберите пункты **Settings (Параметры) (значок шестеренки в нижней части левой боковой панели) > Preferences (Предпочтения)** .
    
     ![Настройка единого входа на стороне приложения](./media/front-tutorial/tutorial_front_000.png)
 
@@ -177,7 +177,7 @@ ms.locfileid: "57895735"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -226,5 +226,5 @@ ms.locfileid: "57895735"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

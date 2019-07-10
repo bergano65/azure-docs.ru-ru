@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 843a4ef36d633b8b72453ba5eb2b969af4649531
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: 674e2178ad5e9f58bbe691fd92f643750e0b91e2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65605313"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67088958"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-templafy"></a>Руководство по интеграции Azure Active Directory с Templafy
 
@@ -228,4 +228,4 @@ ms.locfileid: "65605313"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

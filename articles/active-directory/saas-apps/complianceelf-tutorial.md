@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/24/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5330d398a75105b78cb2caa0373b78fa2e32a99
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8fdc9132a88a9822f96600afd64bbb8e2f69a0a7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65863158"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67104848"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-compliance-elf"></a>Руководство по Интеграция Azure Active Directory с Compliance ELF
 
@@ -191,5 +191,5 @@ ms.locfileid: "65863158"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

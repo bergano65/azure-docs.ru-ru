@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: b1789f0f6441da8a38440fc606a5748d48930a1a
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: c480babcb88528ef59cc9f1a9a0478e35a7b3fba
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65897919"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67098719"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kiteworks"></a>Руководство. Интеграция Azure Active Directory с Kiteworks
 
@@ -229,4 +229,4 @@ ms.locfileid: "65897919"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

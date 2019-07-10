@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: 4f0b6dc725fbce2140ede98e7924730c4426e084
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: b04b44c907e3210f3cc3975b36639f4fe275eef9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64727505"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67099208"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-bitbucket"></a>Руководство по Интеграция Azure Active Directory с Kantega SSO for Bitbucket
 
@@ -317,5 +317,5 @@ ms.locfileid: "64727505"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

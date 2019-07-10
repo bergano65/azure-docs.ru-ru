@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
-ms.openlocfilehash: 0bbd13a29b8d01f64ca68c35b751b0adf0a76c58
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 751de509d17b05c2515261eeb7c036ae345986fc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65743811"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67096294"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-netop-portal"></a>Руководство по Интеграция Azure Active Directory с Netop Portal
 
@@ -223,4 +223,4 @@ ms.locfileid: "65743811"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

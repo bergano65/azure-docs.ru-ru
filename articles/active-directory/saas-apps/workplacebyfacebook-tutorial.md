@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 27173c8beeecf2be43e80f59df8907952734c06b
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: db14df2dc24afbc8f7982d8d1e4e6429c1c4b1ba
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65905221"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67086803"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workplace-by-facebook"></a>Руководство по Интеграция Azure Active Directory с Workplace by Facebook
 
@@ -58,7 +58,7 @@ ms.locfileid: "65905221"
 
 * Workplace by Facebook поддерживает единый вход, инициированный **поставщиком услуг**.
 * Workplace by Facebook поддерживает **JIT-подготовку**.
-* Workplace by Facebook поддерживает **[автоматическую подготовку пользователей](workplacebyfacebook-provisioning-tutorial.md)**.
+* Workplace by Facebook поддерживает **[автоматическую подготовку пользователей](workplacebyfacebook-provisioning-tutorial.md)** .
 
 ## <a name="adding-workplace-by-facebook-from-the-gallery"></a>Добавление Workplace by Facebook из коллекции
 
@@ -174,7 +174,7 @@ ms.locfileid: "65905221"
 
     i. Теперь для аутентификации всех пользователей Workplace будет отображаться страница входа в Azure AD.
 
-4. **Перенаправление для выхода SAML (необязательно)** -
+4. **Перенаправление для выхода SAML (необязательно)**  -
 
     При необходимости можно настроить URL-адрес выхода SAML, с помощью которого можно указать страницу выхода из Azure AD. После активации и настройки этого параметра пользователи больше не будут направляться на страницу выхода из Workplace. Вместо этого они будут переходить по URL-адресу, указанному в параметре перенаправления для выхода SAML.
 
@@ -259,6 +259,6 @@ ms.locfileid: "65905221"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Руководство по настройке Google Apps для автоматической подготовки пользователей](workplacebyfacebook-provisioning-tutorial.md)

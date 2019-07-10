@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfd3afea4a5f09f1e572030b28d3511b31d81b69
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 69c2599a2ddd09cbaf869bf4d9e21a8032855cce
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65865144"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67086166"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zoho"></a>Руководство по Интеграция Azure Active Directory с Zoho
 
@@ -216,7 +216,7 @@ ms.locfileid: "65865144"
 
 1. Выберите **Панель управления \> Mail & Docs** (Почта и документы).
 
-1. Щелкните **User Details (Сведения о пользователе) \> Add User (Добавить пользователя)**.
+1. Щелкните **User Details (Сведения о пользователе) \> Add User (Добавить пользователя)** .
    
     ![Добавление пользователя](./media/zoho-mail-tutorial/ic789611.png "Добавление пользователя")
 
@@ -249,5 +249,5 @@ ms.locfileid: "65865144"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

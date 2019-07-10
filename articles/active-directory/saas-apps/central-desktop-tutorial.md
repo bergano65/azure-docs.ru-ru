@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Central Desktop | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Central Desktop | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Central Desktop.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e5ddc8a1190161d9492cd083a50120ca9d5fc5f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 58fcd21c7e6e3f2336d3e809584451dc38f6276b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57901293"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67105742"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-central-desktop"></a>Руководство. Интеграция Azure Active Directory с Central Desktop
+# <a name="tutorial-azure-active-directory-integration-with-central-desktop"></a>Руководство по Интеграция Azure Active Directory с Central Desktop
 
 В этом руководстве описано, как интегрировать Central Desktop с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Central Desktop обеспечивает следующие преимущества:
@@ -257,4 +257,4 @@ ms.locfileid: "57901293"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6b8edf2627ade23fc6d1125afbabc34a1d9d21b
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: a3d0a8151610658d8302d90f9a3cb3159a877925
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65900222"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67106861"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-appdynamics"></a>Руководство по Интеграция Azure Active Directory с AppDynamics
 
@@ -224,5 +224,5 @@ ms.locfileid: "65900222"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

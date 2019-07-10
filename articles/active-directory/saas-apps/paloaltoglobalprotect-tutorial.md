@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/11/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ae59e6820214d1f3291f4d95a0bc7094f8b488d7
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: a61d634e4962a2cae508f8acb3c067a77263cc2a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65904725"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67095229"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks---globalprotect"></a>Руководство по Интеграция Azure Active Directory c Palo Alto Networks (GlobalProtect)
 
@@ -146,7 +146,7 @@ ms.locfileid: "65904725"
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-8. Скопируйте требуемый URL-адрес из раздела **Настройка Palo Alto Networks (GlobalProtect)**.
+8. Скопируйте требуемый URL-адрес из раздела **Настройка Palo Alto Networks (GlobalProtect)** .
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -207,7 +207,7 @@ ms.locfileid: "65904725"
 
 В этом разделе описано, как предоставить пользователю Britta Simon доступ к Palo Alto Networks (GlobalProtect), чтобы он мог использовать единый вход Azure.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Palo Alto Networks (GlobalProtect)**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Palo Alto Networks (GlobalProtect)** .
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -245,4 +245,4 @@ ms.locfileid: "65904725"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

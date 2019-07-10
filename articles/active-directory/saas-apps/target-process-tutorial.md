@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: ffb5da8abd9673d4922aeb4854b3dfa80349f284
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 60cd043c34ba2aee365c59feb38cc9dd02d45746
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65902217"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67089043"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-targetprocess"></a>Руководство. Интеграция Azure Active Directory с TargetProcess
 
@@ -129,7 +129,7 @@ ms.locfileid: "65902217"
 
 ### <a name="configure-targetprocess-single-sign-on"></a>Настройка единого входа в TargetProcess
 
-1. Для автоматизации настройки в **TargetProcess** необходимо установить **Расширение браузера "Безопасный вход в мои приложения"**, щелкнув **Установить расширение**.
+1. Для автоматизации настройки в **TargetProcess** необходимо установить **Расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
 
     ![image](./media/target-process-tutorial/install_extension.png)
 
@@ -235,4 +235,4 @@ ms.locfileid: "65902217"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

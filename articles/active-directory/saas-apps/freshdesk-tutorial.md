@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/21/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4bdeecc5682eb09ac0a65d3834ad1770258c4e0
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 3ed903e71a019d0bdb1b62503913bd696e9d8a8d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65898437"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67102047"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-freshdesk"></a>Руководство по Интеграция Azure Active Directory с FreshDesk
 
@@ -179,7 +179,7 @@ ms.locfileid: "65898437"
 
     d. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
-    д. В текстовое поле **Security Certificate Fingerprint** (Отпечаток сертификата безопасности) вставьте значение **Cert Hash(sha256)**, полученное ранее.
+    д. В текстовое поле **Security Certificate Fingerprint** (Отпечаток сертификата безопасности) вставьте значение **Cert Hash(sha256)** , полученное ранее.
   
     Е. Выберите команду **Сохранить**.
 
@@ -285,5 +285,5 @@ ms.locfileid: "65898437"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

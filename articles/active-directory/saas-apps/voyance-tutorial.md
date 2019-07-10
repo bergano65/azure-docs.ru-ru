@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 75570d9d06cbbb08feba418f0bab229dca1c8b53
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 3c286c004885cdc2cc83899bd06af19176c5581b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65192253"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67087573"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-voyance"></a>Руководство по Интеграция Azure Active Directory с Voyance
 
@@ -235,5 +235,5 @@ ms.locfileid: "65192253"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

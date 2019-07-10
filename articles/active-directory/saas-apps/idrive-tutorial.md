@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с IDrive | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с IDrive | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и IDrive.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b71ba92e46a0363a22695229c40bfac7e0d6f589
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 5e4fb9e300a4019ffe47b82582783b9024d968ef
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57904922"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67100571"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-idrive"></a>Руководство. Интеграция Azure Active Directory с IDrive
+# <a name="tutorial-azure-active-directory-integration-with-idrive"></a>Руководство по Интеграция Azure Active Directory с IDrive
 
 В этом руководстве описано, как интегрировать IDrive с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением IDrive обеспечивает следующие преимущества.
@@ -147,7 +147,7 @@ ms.locfileid: "57904922"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -196,5 +196,5 @@ ms.locfileid: "57904922"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

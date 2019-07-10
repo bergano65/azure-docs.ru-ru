@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Kronos | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Kronos | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Kronos.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 126d5b501b9c4239fbdbe06318604bcfaf861150
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 08cc13f8e8b1329794231f0a1d0821679abf811e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57838364"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67098586"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kronos"></a>Руководство по Интеграция Azure Active Directory с Kronos
 
@@ -113,17 +113,17 @@ ms.locfileid: "57838364"
 
 5. Приложение Kronos ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
     
     a. Щелкните **значок редактирования**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](./media/kronos-tutorial/tutorial_usermail.png)
+    ![image](./media/kronos-tutorial/tutorial_usermail.png)
 
-    ![изображение](./media/kronos-tutorial/tutorial_usermailedit.png)
+    ![image](./media/kronos-tutorial/tutorial_usermailedit.png)
 
-    b. Из списка **Преобразование** выберите **ExtractMailPrefix()**.
+    b. Из списка **Преобразование** выберите **ExtractMailPrefix()** .
 
     c. Из списка **Параметр 1** выберите **user.userprinicipalname**.
 
@@ -155,7 +155,7 @@ ms.locfileid: "57838364"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -204,5 +204,5 @@ ms.locfileid: "57838364"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

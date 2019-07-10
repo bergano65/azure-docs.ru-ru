@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: a3e457ca29ebe086c6097528af5a9253446b757c
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: c9c860bf994dfeef57e8fd86329ed3a2b3f85e4c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65990559"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67087349"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-vodeclic"></a>Руководство по Интеграция Azure Active Directory с Vodeclic
 
@@ -205,5 +205,5 @@ ms.locfileid: "65990559"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

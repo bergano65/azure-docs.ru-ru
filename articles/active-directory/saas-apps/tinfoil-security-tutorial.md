@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 135b5719422d1b28a82ac2eda06f76d6dd746800
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 627a324c580661220712a0598a996844fac0c169
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65813734"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67088605"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tinfoil-security"></a>Руководство по Интеграция Azure Active Directory с TINFOIL SECURITY
 
@@ -105,9 +105,9 @@ ms.locfileid: "65813734"
 
     ![Сведения о домене и URL-адресах единого входа для приложения TINFOIL SECURITY](common/preintegrated.png)
 
-5. Приложение TINFOIL SECURITY предусматривает использование проверочных утверждений SAML в определенном формате, что предполагает добавление настраиваемых сопоставлений атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
+5. Приложение TINFOIL SECURITY предусматривает использование проверочных утверждений SAML в определенном формате, что предполагает добавление настраиваемых сопоставлений атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-        ![image](common/edit-attribute.png)
+        ![image](common/edit-attribute.png)
 
 6. В дополнение к описанному выше приложение TINFOIL SECURITY ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
@@ -255,5 +255,5 @@ ms.locfileid: "65813734"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

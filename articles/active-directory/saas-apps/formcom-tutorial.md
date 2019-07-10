@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 1ed8dac90527de396e0b7ae59e5d19939a4a36be
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: bf054cb3a965e94f7f18e39065d744b4376b6527
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57904360"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67102180"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-formcom"></a>Руководство. Интеграция Azure Active Directory с Form.com
+# <a name="tutorial-azure-active-directory-integration-with-formcom"></a>Руководство по Интеграция Azure Active Directory с Form.com
 
 В этом руководстве описано, как интегрировать Form.com с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Form.com обеспечивает следующие преимущества.
@@ -118,7 +118,7 @@ ms.locfileid: "57904360"
     > [!NOTE]
     > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Form.com](https://form.com/about/company/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать требуемый **сертификат (Base64)**, а затем щелкните **значок** копирования, чтобы скопировать **URL-адрес метаданных федерации** приложения из предложенных вариантов, и сохраните его на своем компьютере.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать требуемый **сертификат (Base64)** , а затем щелкните **значок** копирования, чтобы скопировать **URL-адрес метаданных федерации** приложения из предложенных вариантов, и сохраните его на своем компьютере.
 
     ![Ссылка для скачивания сертификата](./media/formcom-tutorial/certificatebase64-url.png)
 
@@ -134,7 +134,7 @@ ms.locfileid: "57904360"
 
 ### <a name="configure-formcom-single-sign-on"></a>Настройка единого входа в Form.com
 
-Чтобы настроить единый вход на стороне **Form.com**, отправьте скачанный **сертификат (Base64)**, **URL-адрес метаданных федерации приложения** и URL-адреса, скопированные на портале Azure, [в службу технической поддержки Form.com](https://form.com/about/company/contact-us/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Form.com**, отправьте скачанный **сертификат (Base64)** , **URL-адрес метаданных федерации приложения** и URL-адреса, скопированные на портале Azure, [в службу технической поддержки Form.com](https://form.com/about/company/contact-us/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -154,7 +154,7 @@ ms.locfileid: "57904360"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -203,5 +203,5 @@ ms.locfileid: "57904360"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

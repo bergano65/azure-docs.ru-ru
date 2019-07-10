@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 851b28d10bdf0b2df67e1c0782a683e790b711bc
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 29addcd62afd193af83196b2d942e9778ff3f031
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65898004"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67099412"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jitbit-helpdesk"></a>Руководство по Интеграция Azure Active Directory с Jitbit Helpdesk
 
@@ -173,7 +173,7 @@ ms.locfileid: "65898004"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension** .  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -232,7 +232,7 @@ ms.locfileid: "65898004"
 
    a. В текстовом поле **Имя пользователя** введите имя, например **BrittaSimon**.
 
-   b. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **BrittaSimon@contoso.com**.
+   b. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **BrittaSimon@contoso.com** .
 
    c. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
@@ -255,4 +255,4 @@ ms.locfileid: "65898004"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

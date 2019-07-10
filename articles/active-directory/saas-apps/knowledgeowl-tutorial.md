@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/10/2019
 ms.author: jeedes
-ms.openlocfilehash: b57beb18b8bf7d82694f89e131d79d15c6fcd6bc
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: ab80b6efef71c71feea1359112d09bae90a7ab84
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64728298"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67098887"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-knowledgeowl"></a>Руководство по Интеграция Azure Active Directory с KnowledgeOwl
 
@@ -294,4 +294,4 @@ ms.locfileid: "64728298"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

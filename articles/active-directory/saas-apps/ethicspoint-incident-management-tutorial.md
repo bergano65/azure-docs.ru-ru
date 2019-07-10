@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e50cdd19510f0bf160c075c763e645120622674
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 76a43acb1cf0c514111e89f1a3f4408f4c51e091
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57835702"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67103057"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ethicspoint-incident-management-epim"></a>Руководство. Интеграция Azure Active Directory с решением EthicsPoint Incident Management (EPIM)
 
@@ -65,7 +65,7 @@ ms.locfileid: "57835702"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **EthicsPoint Incident Management (EPIM)**, на панели результатов выберите **EthicsPoint Incident Management (EPIM)**, а затем нажмите кнопку **Добавить**, чтобы добавить приложение.
+4. В поле поиска введите **EthicsPoint Incident Management (EPIM)** , на панели результатов выберите **EthicsPoint Incident Management (EPIM)** , а затем нажмите кнопку **Добавить**, чтобы добавить приложение.
 
      ![EthicsPoint Incident Management (EPIM) в списке результатов](common/search-new-app.png)
 
@@ -155,7 +155,7 @@ ms.locfileid: "57835702"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -166,11 +166,11 @@ ms.locfileid: "57835702"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив доступ к EthicsPoint Incident Management (EPIM).
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **EthicsPoint Incident Management (EPIM)**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **EthicsPoint Incident Management (EPIM)** .
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. В списке приложений выберите **EthicsPoint Incident Management (EPIM)**.
+2. В списке приложений выберите **EthicsPoint Incident Management (EPIM)** .
 
     ![Ссылка на EthicsPoint Incident Management (EPIM) в списке приложений](common/all-applications.png)
 
@@ -204,5 +204,5 @@ ms.locfileid: "57835702"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8ff026743ccda0a47ce176db51dbc7913376f46
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 8bc292be68879a608df6662418bb9f59c758f660
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65987991"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67106320"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bersin"></a>Руководство по Интеграция Azure Active Directory с Bersin
 
@@ -201,4 +201,4 @@ ms.locfileid: "65987991"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

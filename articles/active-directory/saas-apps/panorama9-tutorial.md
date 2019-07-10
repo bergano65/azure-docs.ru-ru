@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: ff26acc1050a6104525ec44304fd9fee21d6d3cb
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: c88088b804f90769512d33a5e96fdedc5ce6fba8
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65904335"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67094929"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-panorama9"></a>Руководство. Интеграция Azure Active Directory с Panorama9
 
@@ -216,7 +216,7 @@ ms.locfileid: "65904335"
    
     ![Пользователи](./media/panorama9-tutorial/ic790027.png "Пользователи")
 
-3. В разделе "Users" (Пользователи) щелкните **+**, чтобы добавить нового пользователя.
+3. В разделе "Users" (Пользователи) щелкните **+** , чтобы добавить нового пользователя.
 
     ![Пользователи](./media/panorama9-tutorial/ic790028.png "Пользователи")
 
@@ -239,5 +239,5 @@ ms.locfileid: "65904335"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

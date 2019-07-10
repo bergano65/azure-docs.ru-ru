@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/02/2019
 ms.author: jeedes
-ms.openlocfilehash: 7f793741638db5196bbf8bcd97e7f42d79548f0b
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 44cbad443cb1341ea080f517bbe614ec6fc46b13
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65897393"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67097819"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-manabi-pocket"></a>Руководство по Интеграция Azure Active Directory с Manabi Pocket
 
@@ -196,5 +196,5 @@ ms.locfileid: "65897393"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

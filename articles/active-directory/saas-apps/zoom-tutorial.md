@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 641fe5439e320208d41969b9563293257648d488
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 597c05e7018b1eb9dd20555458e67b515113ca2d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65895871"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67086378"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zoom"></a>Руководство по Интеграция Azure Active Directory с Zoom
 
@@ -112,7 +112,7 @@ ms.locfileid: "65895871"
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Zoom](https://support.zoom.us/hc/en-us). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. Приложение Zoom ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
+5. Приложение Zoom ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
     ![image](common/edit-attribute.png)
 
@@ -290,4 +290,4 @@ ms.locfileid: "65895871"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

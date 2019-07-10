@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bad7c7b0c5233640f21294aa0a1636cce8e40d2c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 8dec2801c4e5510616ca719c43b88bb07c01ad86
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57871251"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67104824"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-consent2go"></a>Руководство. Интеграция Azure Active Directory с Consent2Go
+# <a name="tutorial-azure-active-directory-integration-with-consent2go"></a>Руководство по Интеграция Azure Active Directory с Consent2Go
 
 В этом руководстве описано, как интегрировать Consent2Go с Azure Active Directory (Azure AD).
 Интеграция Consent2Go с Azure AD обеспечивает следующие преимущества:
@@ -133,7 +133,7 @@ ms.locfileid: "57871251"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -182,5 +182,5 @@ ms.locfileid: "57871251"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
