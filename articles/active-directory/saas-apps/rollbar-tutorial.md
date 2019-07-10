@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 5c3546dbadf64786b398610c19ee7f8e9e740d51
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: d76f4e9d61d8fd210fe9332084f9f44d19e54eed
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65956839"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67092679"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rollbar"></a>Руководство по Интеграция Azure Active Directory с Rollbar
 
@@ -138,15 +138,15 @@ ms.locfileid: "65956839"
 
 1. Щелкните **Profile Settings** (Параметры профиля) в правом верхнем углу и выберите **Account Name settings** (Параметры имени учетной записи).
 
-    ![Параметр Configuration](./media/rollbar-tutorial/general.png)
+    ![Конфигурация](./media/rollbar-tutorial/general.png)
 
 1. Щелкните **Identity Provider** (Поставщик удостоверений) в разделе "SECURITY" (Безопасность).
 
-    ![Параметр Configuration](./media/rollbar-tutorial/configure1.png)
+    ![Конфигурация](./media/rollbar-tutorial/configure1.png)
 
 1. В разделе **SAML Identity Provider** (Поставщик удостоверений SAML) выполните следующие действия.
 
-    ![Параметр Configuration](./media/rollbar-tutorial/configure2.png)
+    ![Конфигурация](./media/rollbar-tutorial/configure2.png)
 
     a. Выберите **AZURE** из раскрывающегося списка **SAML Identity Provider** (Поставщик удостоверений SAML).
 
@@ -156,7 +156,7 @@ ms.locfileid: "65956839"
 
 1. После нажатия кнопки сохранения экран будет выглядеть так:
 
-    ![Параметр Configuration](./media/rollbar-tutorial/configure3.png)
+    ![Конфигурация](./media/rollbar-tutorial/configure3.png)
 
     > [!NOTE]
     > Чтобы выполнить следующее действие, необходимо добавить себя в качестве пользователя в приложение Rollbar в Azure.
@@ -257,5 +257,5 @@ ms.locfileid: "65956839"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

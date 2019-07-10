@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с консолью администрирования Mimecast | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с консолью администрирования Mimecast | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в консоль администрирования Mimecast.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2019c61ccbffa1e68c1ef53c718d4839a604aa44
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0bbbd73d1856ba5d3dc19873c56fce622b272939
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57849964"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67097346"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mimecast-admin-console"></a>Руководство. Интеграция Azure Active Directory с консолью администрирования Mimecast
+# <a name="tutorial-azure-active-directory-integration-with-mimecast-admin-console"></a>Руководство по Интеграция Azure Active Directory с консолью администрирования Mimecast
 
 В этом руководстве описано, как интегрировать консоль администрирования Mimecast с Azure Active Directory (Azure AD).
 Интеграция Azure AD с консолью администрирования Mimecast обеспечивает следующие преимущества:
@@ -164,7 +164,7 @@ ms.locfileid: "57849964"
     >[!NOTE]
     >Значения URL-адреса входа в систему и URL-адреса выхода из системы для консоли администрирования Mimecast одинаковы.
     
-    ж. Откройте в Блокноте скачанный на портале Azure сертификат в кодировке Base-64, удалите первую строку ("*--*") и последнюю строку ("*--*"), скопируйте остальное содержимое в буфер обмена и вставьте его в текстовое поле **Identity Provider Certificate (Metadata)** (Сертификат поставщика удостоверений (метаданные)).
+    ж. Откройте в Блокноте скачанный на портале Azure сертификат в кодировке Base-64, удалите первую строку (" *--* ") и последнюю строку (" *--* "), скопируйте остальное содержимое в буфер обмена и вставьте его в текстовое поле **Identity Provider Certificate (Metadata)** (Сертификат поставщика удостоверений (метаданные)).
     
     h. Установите флажок **Разрешить единый вход**.
     
@@ -266,5 +266,5 @@ ms.locfileid: "57849964"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/04/2019
 ms.author: jeedes
-ms.openlocfilehash: daec6e169805c193b48781dfecbabd9349bdc59b
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: dd4eab2d8e877cac468097c0a6ed6aa3cfb750b9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59565637"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67102453"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-five9-plus-adapter-cti-contact-center-agents"></a>Руководство по интеграции Azure Active Directory с Five9 Plus Adapter (CTI, Contact Center Agents)
 
@@ -65,7 +65,7 @@ ms.locfileid: "59565637"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Five9 Plus Adapter (CTI, Contact Center Agents)**, выберите **Five9 Plus Adapter (CTI, Contact Center Agents)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **Five9 Plus Adapter (CTI, Contact Center Agents)** , выберите **Five9 Plus Adapter (CTI, Contact Center Agents)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
      ![Five9 Plus Adapter (CTI, Contact Center Agents) в списке результатов](common/search-new-app.png)
 
@@ -125,7 +125,7 @@ ms.locfileid: "59565637"
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-7. Требуемые URL-адреса можно скопировать в разделе **Настройка Five9 Plus Adapter (CTI, Contact Center Agents)**.
+7. Требуемые URL-адреса можно скопировать в разделе **Настройка Five9 Plus Adapter (CTI, Contact Center Agents)** .
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -137,7 +137,7 @@ ms.locfileid: "59565637"
 
 ### <a name="configure-five9-plus-adapter-cti-contact-center-agents-single-sign-on"></a>Настройка единого входа в Five9 Plus Adapter (CTI, Contact Center Agents)
 
-1. Чтобы настроить единый вход на стороне **Five9 Plus Adapter (CTI, Contact Center Agents)**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, которые в скопировали, [группе поддержки Five9 Plus Adapter (CTI, Contact Center Agents)](https://www.five9.com/about/contact). Для дальнейшей настройки единого входа выполните следующие действия в соответствии с адаптером:
+1. Чтобы настроить единый вход на стороне **Five9 Plus Adapter (CTI, Contact Center Agents)** , нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, которые в скопировали, [группе поддержки Five9 Plus Adapter (CTI, Contact Center Agents)](https://www.five9.com/about/contact). Для дальнейшей настройки единого входа выполните следующие действия в соответствии с адаптером:
 
     a. Руководство по администрированию "Five9 Plus Adapter for Agent Desktop Toolkit": [https://webapps.five9.com/assets/files/for_customers/documentation/integrations/agent-desktop-toolkit/plus-agent-desktop-toolkit-administrators-guide.pdf](https://webapps.five9.com/assets/files/for_customers/documentation/integrations/agent-desktop-toolkit/plus-agent-desktop-toolkit-administrators-guide.pdf)
     
@@ -173,11 +173,11 @@ ms.locfileid: "59565637"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Five9 Plus Adapter (CTI, Contact Center Agents).
 
-1. На портале Azure выберите **Корпоративные приложения**, выберите **Все приложения**, а затем — **Five9 Plus Adapter (CTI, Contact Center Agents)**.
+1. На портале Azure выберите **Корпоративные приложения**, выберите **Все приложения**, а затем — **Five9 Plus Adapter (CTI, Contact Center Agents)** .
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. В списке приложений выберите **Five9 Plus Adapter (CTI, Contact Center Agents)**.
+2. В списке приложений выберите **Five9 Plus Adapter (CTI, Contact Center Agents)** .
 
     ![Ссылка на Five9 Plus Adapter (CTI, Contact Center Agents) в списке "Приложения"](common/all-applications.png)
 
@@ -211,5 +211,5 @@ ms.locfileid: "59565637"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

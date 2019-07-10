@@ -1,26 +1,27 @@
 ---
 title: Справочник по пакету SDK иммерсивных чтения
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Ссылка для Иммерсивных модуля чтения пакета SDK
 services: cognitive-services
 author: metanMSFT
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: immersive-reader
 ms.topic: reference
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: c128608b3c4a8e1155c3ac962bcfd07f589fbf23
-ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.openlocfilehash: 485e8626af4266492e02d4f9fbe4af486e10c082
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67311785"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67718386"
 ---
 # <a name="immersive-reader-sdk-reference"></a>Справочник по пакету SDK иммерсивных чтения
 
 Иммерсивных пакета SDK для чтения — это библиотека JavaScript, которая позволяет интегрировать Иммерсивных чтения в веб-приложения.
 
-## <a name="functions"></a>Функции Azure
+## <a name="functions"></a>Функции
 
 Пакет SDK предоставляет одну функцию, `ImmersiveReader.launchAsync(token, resourceName, content, options)`.
 
@@ -36,8 +37,8 @@ launchAsync(token: string, resourceName: string, content: Content, options?: Opt
 
 | ИМЯ | Тип | Описание |
 | ---- | ---- |------------ |
-| `token` | string | Маркер доступа, полученный из вызова `issueToken` конечной точки. |
-| `resourceName` | string | Зарезервировано. Нужно задать значение `null`. |
+| `token` | строка | Маркер доступа, полученный из вызова `issueToken` конечной точки. |
+| `resourceName` | строка | Зарезервировано. Нужно задать значение `null`. |
 | `content` | [Содержимое](#content) | Объект, содержащий содержимое для отображения в Иммерсивных средство чтения. |
 | `options` | [Варианты](#options) | Параметры настройки определенными параметрами этих Иммерсивных средство чтения. Необязательный элемент. |
 
@@ -86,7 +87,7 @@ launchAsync(token: string, resourceName: string, content: Content, options?: Opt
 }
 ```
 
-### <a name="error"></a>Ошибка
+### <a name="error"></a>Error
 
 Содержит сведения об ошибке.
 
@@ -133,7 +134,7 @@ launchAsync(token: string, resourceName: string, content: Content, options?: Opt
 * Mozilla Firefox
 * Apple Safari;
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Изучите [Иммерсивных чтения SDK на сайте GitHub](https://github.com/Microsoft/immersive-reader-sdk)
 * [Краткое руководство Создание веб-приложения, который запускает Иммерсивных чтения (C#)](./quickstart.md)

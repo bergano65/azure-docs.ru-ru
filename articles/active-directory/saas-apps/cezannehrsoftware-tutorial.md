@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fc4d96b900090cd217b4b49b1af2f09762c0da84
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 78d259c0354a1519fa57633a68a1dcfa5a183890
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65407027"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67105695"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cezanne-hr-software"></a>Руководство по Интеграция Azure Active Directory с Cezanne HR Software
 
@@ -156,7 +156,7 @@ ms.locfileid: "65407027"
 
     d. В текстовое поле **Security Token Service Endpoint** (Конечная точка службы токенов безопасности) вставьте значение **URL-адреса для входа в учетную запись**, скопированное на портале Azure.
 
-    д. В текстовом поле "User ID Attribute Name" (Имя атрибута идентификатора пользователя) введите `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+    д. В текстовом поле "User ID Attribute Name" (Имя атрибута идентификатора пользователя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
     Е. Чтобы передать сертификат, скачанный с портала Azure, щелкните значок **Upload** (Передать).
 
@@ -253,7 +253,7 @@ ms.locfileid: "65407027"
 
     d. Последовательно выберите **ОК**.
 
-5. Перейдите на вкладку **Единый вход** и нажмите кнопку **Добавить** в области **Идентификаторы SAML 2.0)**.
+5. Перейдите на вкладку **Единый вход** и нажмите кнопку **Добавить** в области **Идентификаторы SAML 2.0)** .
 
     ![Пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_008.png "Пользователь")
 
@@ -277,4 +277,4 @@ ms.locfileid: "65407027"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

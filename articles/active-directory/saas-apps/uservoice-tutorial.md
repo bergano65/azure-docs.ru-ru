@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
-ms.openlocfilehash: dbd7189b1761a9ea88ce32dae3d7b45a88301ff6
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: c0c259d3d05232aa70016771e2a2bce7622730a0
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65905636"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67087636"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-uservoice"></a>Руководство по Интеграция Azure Active Directory с UserVoice
 
@@ -146,7 +146,7 @@ ms.locfileid: "65905636"
    
     ![Изменение проверки подлинности пользователя](./media/uservoice-tutorial/ic777521.png "Изменение проверки подлинности пользователя")
    
-    a. Выберите **Единый вход (SSO)**.
+    a. Выберите **Единый вход (SSO)** .
  
     b. В текстовое поле **SSO Remote Sign-Out** (Удаленный единый выход) вставьте скопированное на портале Azure значение **URL-адреса входа**.
 
@@ -251,5 +251,5 @@ ms.locfileid: "65905636"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

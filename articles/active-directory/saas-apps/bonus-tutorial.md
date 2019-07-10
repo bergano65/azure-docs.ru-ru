@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ffc2e8c186ce485f7df19b3f797aaa8982735f5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f605398896c93d15b7475c05c79361fdcefcfcab
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65864148"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442773"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bonusly"></a>Руководство по Интеграция Azure Active Directory с Bonusly
 
@@ -148,7 +148,7 @@ ms.locfileid: "65864148"
 
     c. В текстовое поле **IdP Issuer** (Издатель IdP) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
     
-    d. Вставьте значение  **Отпечаток**  с портала Azure в текстовое поле **Cert Fingerprint** (Отпечаток сертификата).
+    d. Вставьте значение **Отпечаток** с портала Azure в текстовое поле **Cert Fingerprint** (Отпечаток сертификата).
     
     д. Выберите команду **Сохранить**.
 
@@ -256,4 +256,4 @@ ms.locfileid: "65864148"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

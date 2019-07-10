@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
-ms.openlocfilehash: c2964169996aa3b2ac18c9c2accf358b7213c1c1
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 8297b16ba5efa371adc4d9a20428f88a48545440
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65901564"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67097717"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-menlo-security"></a>Руководство по Интеграция Azure Active Directory с Menlo Security
 
@@ -143,7 +143,7 @@ ms.locfileid: "65901564"
 
     д. **Service Identifier (Issuer)** (Идентификатор службы (издатель)): Вставьте **идентификатор Azure AD**, скопированный на портале Azure.
 
-    Е. **Сертификат X.509**: Откройте **Сертификат (Base64)**, скачанный на портале Azure, в Блокноте и вставьте его в это поле.
+    Е. **Сертификат X.509**: Откройте **Сертификат (Base64)** , скачанный на портале Azure, в Блокноте и вставьте его в это поле.
 
     ж. Нажмите кнопку **Сохранить** , чтобы сохранить параметры.
 
@@ -214,5 +214,5 @@ ms.locfileid: "65901564"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

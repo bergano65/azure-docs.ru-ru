@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с приложением Gra-Pe | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с приложением Gra-Pe | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Gra-Pe.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/18/2019
 ms.author: jeedes
-ms.openlocfilehash: 192db67f481f3a4c420c19be7ce1febe55342050
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: cd7b382e35191571af5a9d7ddd9884dff32e023d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57901378"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67101535"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-gra-pe"></a>Руководство. Интеграция Azure Active Directory с Gra-Pe
+# <a name="tutorial-azure-active-directory-integration-with-gra-pe"></a>Руководство по Интеграция Azure Active Directory с Gra-Pe
 
 В этом руководстве описано, как интегрировать Gra-Pe с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Gra-Pe обеспечивает следующие преимущества:
@@ -191,5 +191,5 @@ ms.locfileid: "57901378"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -13,8 +13,8 @@ ms.openlocfilehash: 38addf4651373ba0f4df411325218a255c835508
 ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67711409"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717192"
 ---
 ## <a name="create-an-azure-container-instance-resource"></a>Создайте ресурс экземпляра контейнера Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "67711409"
     |Подписка|Выберите свою подписку.|
     |Группа ресурсов|Выберите группу доступных ресурсов или создайте новую, такие как `cognitive-services`.|
     |Имя контейнера|Введите имя, такое как `cognitive-container-instance`. Имя должно быть в нижнем caps.|
-    |Location|Выберите регион для развертывания.|
+    |Местоположение|Выберите регион для развертывания.|
     |Тип образа|`Public`|
     |Имя образа|Укажите расположение контейнера Cognitive Services. Расположение может быть такой же в `docker pull` команды, обратитесь к [репозиториев контейнера и образов](../../cognitive-services-container-support.md#container-repositories-and-images) имена доступных образов и их соответствующие репозитории.|
     |Тип ОС|`Linux`|

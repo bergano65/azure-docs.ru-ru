@@ -1,26 +1,27 @@
 ---
-title: Установка и запуск контейнеров — средства обнаружения аномалий
+title: Установка и запуск контейнеров для использования API обнаружения аномалий
 titleSuffix: Azure Cognitive Services
 description: Используйте API обнаружения аномалий сложные алгоритмы для определения аномалий в данных временных рядов.
 services: cognitive-services
 author: IEvangelist
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: 254173df33bdc82b7de87328a715954c1a6993d7
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: f84f1bab048630d6dd45085b3d082004d10bb6a8
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67593128"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67721708"
 ---
 # <a name="install-and-run-anomaly-detector-containers"></a>Установка и запуск средства обнаружения аномалий контейнеров
 
 Средства обнаружения аномалий имеет следующий контейнер: 
 
-|Функция|Функции|
+|Функция|Компоненты|
 |-|-|
 |Детектор аномалий| <li> Обнаруживает аномалии в реальном времени. <li> Обнаруживает аномалии на протяжении всего набора данных в пакетном режиме. <li> Выводит ожидаемое обычный диапазон данных. <li> Корректировки чувствительность обнаружения аномалий поддерживает лучше разместить вашей информации. |
 
@@ -29,11 +30,11 @@ ms.locfileid: "67593128"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Перед использованием средства обнаружения аномалий контейнеры, необходимо выполнить следующие условия:
 
-|Обязательно для заполнения|Назначение|
+|Обязательно для заполнения|Цель|
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
@@ -194,7 +195,7 @@ ApiKey={BILLING_KEY}
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Cognitive Services контейнеры не отправляются в корпорацию Майкрософт данные клиента (например, данные временных рядов, который анализируется).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Ознакомьтесь со статьей о [конфигурации контейнеров](anomaly-detector-container-configuration.md).
 * [Дополнительные сведения о службе API обнаружения аномалий](https://go.microsoft.com/fwlink/?linkid=2080698&clcid=0x409)

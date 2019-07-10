@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f354d0413d023e7af6d1719d86e0fbff59cf2b2
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 10d43de00c9daefdb86a92d92ebe2cfe39fd3248
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65813306"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67164400"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-surveymonkey-enterprise"></a>Руководство по интеграции Azure Active Directory с SurveyMonkey Enterprise
 
@@ -110,7 +110,7 @@ ms.locfileid: "65813306"
 
     ![Сведения о домене и URL-адресах единого входа для приложения SurveyMonkey Enterprise](common/both-signonurl.png)
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес: ` https://www.surveymonkey.com/user/sign-in/sso/?ut_source=megamenu`.
+    В текстовом поле **URL-адрес входа** введите URL-адрес: `https://www.surveymonkey.com/user/sign-in/sso/?ut_source=megamenu`.
 
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -196,4 +196,4 @@ ms.locfileid: "65813306"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

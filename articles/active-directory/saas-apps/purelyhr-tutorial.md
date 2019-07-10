@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: b6e004ea613d1a3dfd47a2798e0298f41eab2d3d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 99423568de7ff6686198120fd94e9c09287b21a8
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65868616"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67093656"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-purelyhr"></a>Руководство. Интеграция Azure Active Directory с PurelyHR
 
@@ -142,7 +142,7 @@ ms.locfileid: "65868616"
 
     ![Настройка единого входа](./media/purelyhr-tutorial/purelyhr-dashboard-sso-settings.png)  
 
-    a. Откройте **Сертификат (Base64)**, скачанный на портале Azure, в Блокноте и скопируйте значение сертификата. Вставьте это значение в поле **Сертификат X.509**.
+    a. Откройте **Сертификат (Base64)** , скачанный на портале Azure, в Блокноте и скопируйте значение сертификата. Вставьте это значение в поле **Сертификат X.509**.
 
     b. В поле **Idp Issuer URL** (URL-адрес издателя поставщика удостоверений) вставьте **идентификатор Azure AD**, скопированный на портале Azure.
 
@@ -218,5 +218,5 @@ ms.locfileid: "65868616"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

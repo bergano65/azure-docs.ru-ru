@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bee7454942b9214eeb1253339446df370e20fe01
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: bfb154bce34b2ceda99b82c7ca3534b8a8ee0a1f
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65785835"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67098489"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kontiki"></a>Руководство. Интеграция Azure Active Directory с Kontiki
 
@@ -33,7 +33,7 @@ ms.locfileid: "65785835"
 * Пользователи могут автоматически входить в Kontiki с учетными записями Azure AD (единый вход).
 * Вы можете управлять учетными записями централизованно, через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье о [едином входе в приложения в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье о [едином входе в приложения в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -81,10 +81,10 @@ Kontiki поддерживает следующие функции:
 
 | Задача | ОПИСАНИЕ |
 | --- | --- |
-| **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** | Предоставление пользователям возможности использовать эту функцию. |
+| **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** | Предоставление пользователям возможности использовать эту функцию. |
 | **[Настройка единого входа в Kontiki](#configure-kontiki-single-sign-on)** | Настройка параметров единого входа в приложении. |
-| **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** | Проверка работы единого входа Azure AD на примере пользователя Britta Simon. |
-| **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** | Предоставление пользователю Britta Simon возможности использовать единый вход Azure AD. |
+| **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** | Проверка работы единого входа Azure AD на примере пользователя Britta Simon. |
+| **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** | Предоставление пользователю Britta Simon возможности использовать единый вход Azure AD. |
 | **[Создание тестового пользователя Kontiki](#create-a-kontiki-test-user)** | Создает в Kontiki копию пользователя Britta Simon, связанную с представлением этого же пользователя в AAD. |
 | **[Проверка единого входа](#test-single-sign-on)** | необходима, чтобы убедиться, что конфигурация работает правильно. |
 
@@ -111,7 +111,7 @@ Kontiki поддерживает следующие функции:
     > [!NOTE]
     > Чтобы получить правильное значение, обратитесь в [службу поддержки клиентов Kontiki](https://customersupport.kontiki.com/enterprise/contactsupport.html). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать** рядом с полем **XML метаданные федерации**. Выберите вариант для скачивания в соответствии с вашими требованиями. Сохраните сертификат на своем компьютере.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать** рядом с полем **XML метаданные федерации**. Выберите параметр для скачивания в соответствии с вашими требованиями. Сохраните сертификат на своем компьютере.
 
     ![Варианты для скачивания XML-файла метаданных федерации](common/metadataxml.png)
 
@@ -143,7 +143,7 @@ Kontiki поддерживает следующие функции:
 
     1. В поле **Имя** введите **BrittaSimon**.
   
-    1. В поле **Имя пользователя** введите значение **brittasimon\@\<домен_вашей_компании>.\<доменная_зона>** . Например, **brittasimon\@contoso.com**.
+    1. В поле **Имя пользователя** введите **brittasimon\@\<домен_вашей_компании>.\<доменная_зона>** . Например, **brittasimon\@contoso.com**.
 
     1. Установите флажок **Показать пароль**. Запишите значение, которое отображается в поле **Пароль**.
 
@@ -193,4 +193,4 @@ Kontiki поддерживает следующие функции:
 
 - [Список руководств по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 - [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

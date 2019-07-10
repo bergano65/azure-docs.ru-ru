@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/30/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c24cbf8ad21c7dd5875a71532a5278e313774e66
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 232742c9ca3f090e2900566c1e80f9720e284135
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57883973"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67104056"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-dmarcian"></a>Руководство. Интеграция Azure Active Directory с dmarcian
+# <a name="tutorial-azure-active-directory-integration-with-dmarcian"></a>Руководство по Интеграция Azure Active Directory с dmarcian
 
 В этом руководстве описано, как интегрировать dmarcian с Azure Active Directory (Azure AD).
 Интеграция dmarcian с Azure AD предоставляет следующие преимущества:
@@ -189,7 +189,7 @@ ms.locfileid: "57883973"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -260,5 +260,5 @@ ms.locfileid: "57883973"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b46135366c76abf8da5387ff0698b4dc7634d79c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 936de76d1117c56f5a9dec48b51f33b9afa15351
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59698548"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67107500"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-absorb-lms"></a>Руководство по Интеграция Azure Active Directory с Absorb LMS
 
@@ -163,7 +163,7 @@ ms.locfileid: "59698548"
 
     b. Выберите **SAML**в качестве **метода**.
 
-    c. В Блокноте откройте сертификат, скачанный с портала Azure. Удалите теги **---BEGIN CERTIFICATE---** и **---END CERTIFICATE---**. Затем в поле **Key** (Ключ) вставьте оставшееся содержимое.
+    c. В Блокноте откройте сертификат, скачанный с портала Azure. Удалите теги **---BEGIN CERTIFICATE---** и **---END CERTIFICATE---** . Затем в поле **Key** (Ключ) вставьте оставшееся содержимое.
 
     d. В поле **Mode** (Режим) выберите **Identity Provider Initiated** (Инициируемый поставщиком удостоверений).
 
@@ -283,4 +283,4 @@ ms.locfileid: "59698548"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

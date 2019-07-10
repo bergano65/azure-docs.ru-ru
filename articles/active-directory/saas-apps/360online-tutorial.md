@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с 360 Online | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с 360 Online | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и 360 Online.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9bf5a1e278d41e6fcec1a8dfa14348bb9e48333b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: adb93c25c9570848f6f0ca8a8741a5d13bbebc9e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57837870"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67107552"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-360-online"></a>Руководство. Интеграция Azure Active Directory с 360 Online
+# <a name="tutorial-azure-active-directory-integration-with-360-online"></a>Руководство по Интеграция Azure Active Directory с 360 Online
 
 В этом руководстве объясняется, как интегрировать приложение 360 Online со службой Azure Active Directory (Azure AD).
 Интеграция 360 Online с Azure AD обеспечивает следующие преимущества.
@@ -146,7 +146,7 @@ ms.locfileid: "57837870"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -195,5 +195,5 @@ ms.locfileid: "57837870"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

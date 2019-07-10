@@ -7,15 +7,15 @@ author: edjez
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: edjez
-ms.openlocfilehash: 29caea481b1999086440db2021b86d949ce6cbc6
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
-ms.translationtype: HT
+ms.openlocfilehash: 3fdedd1af9b683b221dfa4aebad7a30559b7abff
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025616"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67722492"
 ---
 # <a name="offline-evaluation"></a>Автономная оценка
 
@@ -96,6 +96,6 @@ ms.locfileid: "65025616"
 * Существуют ли нежелательные функции, которые не должны использоваться при персонализации из-за нормативных требований или правил ответственного использования? Существуют ли функции, которые схожи с (т. е точно повторяют или коррелируют с) нежелательными?
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 [Настройка Персонализатора](how-to-settings.md)

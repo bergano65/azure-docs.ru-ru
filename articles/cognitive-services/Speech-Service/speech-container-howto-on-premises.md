@@ -1,38 +1,37 @@
 ---
 title: Использовать Kubernetes на предприятии
 titleSuffix: Azure Cognitive Services
-description: Использование Helm и Kubernetes (K8s) для определения образы контейнеров речи в текст и преобразования текста в речь, мы создадим пакет Kubernetes. Этот пакет будет развернут кластер Kubernetes на предприятии.
+description: Использование Helm и Kubernetes для определения образы контейнеров речи в текст и преобразования текста в речь, мы создадим пакет Kubernetes. Этот пакет будет развернут кластер Kubernetes на предприятии.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/03/2019
+ms.date: 7/10/2019
 ms.author: dapine
-ms.openlocfilehash: 1e3afc80abad5f5c1f9b4d57c52ca75449eeb755
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 33d9de956a6d43145fc68f4ec46b09b8e8bf0188
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67711486"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67786252"
 ---
 # <a name="use-kubernetes-on-premises"></a>Использовать Kubernetes на предприятии
 
-Использование Helm и Kubernetes (K8s) для определения образы контейнеров речи в текст и преобразования текста в речь, мы создадим пакет Kubernetes. Этот пакет будет развернут кластер Kubernetes на предприятии. Наконец мы рассмотрим, как проверить развернутых служб и различные параметры конфигурации.
+Использование Helm и Kubernetes для определения образы контейнеров речи в текст и преобразования текста в речь, мы создадим пакет Kubernetes. Этот пакет будет развернут кластер Kubernetes на предприятии. Наконец мы рассмотрим, как проверить развернутых служб и различные параметры конфигурации.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этой процедуры необходимо установить и запустить несколько средств локально.
+Перед использованием речи контейнеры в локальной, необходимо выполнить следующие условия:
 
-* Используйте подписку Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][free-azure-account], прежде чем начинать работу.
-* Установка [Azure CLI][azure-cli] (az).
-* Установка [интерфейс командной строки Kubernetes][kubernetes-cli] (kubectl).
-* Установка [Helm][helm-install] клиент, диспетчер пакетов Kubernetes.
-    * Установите сервер Helm, [Tiller][tiller-install].
-* Ресурс Azure с правильной ценовой категорией. Не все ценовые категории работают с помощью этих образов контейнера.
-    * **Речи** только на уровнях ресурс с F0 или стандартных цен.
-    * Ресурс **Cognitive Services** с ценовой категорией S0.
+|Обязательно для заполнения|Цель|
+|--|--|
+| Учетная запись Azure | Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][free-azure-account], прежде чем начинать работу. |
+| Доступ к реестру контейнеров | Чтобы Kubernetes получить образы docker в кластер ему понадобится доступ к реестру контейнеров. Вам нужно [запросить доступ к реестру контейнеров][speech-preview-access] первого. |
+| Интерфейс командной строки Kubernetes | [Интерфейс командной строки Kubernetes][kubernetes-cli] является обязательным для управления общих учетных данных из реестра контейнеров. До Helm, который является диспетчер пакетов Kubernetes также требуется Kubernetes. |
+| Helm CLI | Как часть [интерфейс командной строки Helm][helm-install] install, you'll also need to initialize Helm which will install [Tiller][tiller-install]. |
+|Ресурс речи |Для использования контейнеров необходимо следующее:<br><br>Объект _речи_ ресурсов Azure, чтобы получить связанный ключ выставления счетов и выставления счетов URI конечной точки. Оба значения доступны на портале Azure **речи** страницы Обзор и ключи на них, необходимые для запуска контейнера.<br><br>**{API_KEY}** : ключ ресурса<br><br>**{ENDPOINT_URI}** : пример URI конечной точки: `https://westus.api.cognitive.microsoft.com/sts/v1.0`|
 
 ## <a name="the-recommended-host-computer-configuration"></a>Рекомендуемый узел Конфигурация компьютера
 
@@ -43,19 +42,13 @@ ms.locfileid: "67711486"
 | **Преобразование речи в текст** | один декодер требуется как минимум 1,150 миллиардах. Если `optimizedForAudioFile` включен, то 1,950 миллиардах являются обязательными. (по умолчанию: два декодеров) | Обязательно: 2 ГБ<br>Ограничен:  4 ГБ |
 | **Преобразование текста в речь** | один одновременных запросов требуется как минимум 500 миллиардах. Если `optimizeForTurboMode` включен, то 1000 миллиардах являются обязательными. (по умолчанию: два одновременных запросов) | Обязательно: 1 GB<br> Ограничен: 2 ГБ |
 
-## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
-
-Отправить [форму запроса контейнеры речи Cognitive Services][speech-preview-access] чтобы запросить доступ к контейнеру. 
-
-[!INCLUDE [Request access to the container registry](../../../includes/cognitive-services-containers-request-access-only.md)]
-
 ## <a name="connect-to-the-kubernetes-cluster"></a>Подключитесь к кластеру Kubernetes
 
 Главный компьютер должны быть доступного кластера Kubernetes. Это руководство см. в [развертывание кластера Kubernetes](../../aks/tutorial-kubernetes-deploy-cluster.md) концептуальной лучше понять, как развернуть кластер Kubernetes к главному компьютеру.
 
 ### <a name="sharing-docker-credentials-with-the-kubernetes-cluster"></a>Совместное использование учетных данных Docker с кластером Kubernetes
 
-Чтобы разрешить кластеру Kubernetes `docker pull` настроенные образы из `containerpreview.azurecr.io` реестр контейнеров, которые необходимо передать учетные данные docker в кластер. Выполнение [ `kubectl create` ][kubectl-create] следующую команду, чтобы создать *секрет docker-registry* на основе учетных данных, предоставленные в контейнере [доступ к реестру](#request-access-to-the-container-registry) раздел.
+Чтобы разрешить кластеру Kubernetes `docker pull` настроенные образы из `containerpreview.azurecr.io` реестр контейнеров, которые необходимо передать учетные данные docker в кластер. Выполнение [ `kubectl create` ][kubectl-create] следующую команду, чтобы создать *секрет docker-registry* на основе учетных данных, предоставляются из требования доступа реестра контейнеров.
 
 По выбору, выполните следующую команду в интерфейсе командной строки. Не забудьте заменить `<username>`, `<password>`, и `<email-address>` с учетными данными реестра контейнеров.
 
@@ -269,7 +262,7 @@ PASSED: text-to-speech-readiness-test
 
 [!INCLUDE [Text-to-Speech Helm Chart Config](includes/text-to-speech-chart-config.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об установке приложений с помощью Helm в Azure Kubernetes Service (AKS) [веб-странице][installing-helm-apps-in-aks].
 

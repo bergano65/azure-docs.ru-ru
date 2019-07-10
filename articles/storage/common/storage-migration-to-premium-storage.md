@@ -9,12 +9,12 @@ ms.date: 06/27/2017
 ms.author: rogarana
 ms.reviewer: yuemlu
 ms.subservice: common
-ms.openlocfilehash: 5cfb96bd3115c8f3116a28926e93df89dff54351
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6b6e442ff3333a7fd085f8e452ae056e7daaba8c
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65153768"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67565515"
 ---
 # <a name="migrating-to-azure-premium-storage-unmanaged-disks"></a>Перенос в хранилище Azure класса Premium (использующее неуправляемые диски)
 
@@ -61,7 +61,7 @@ ms.locfileid: "65153768"
 | Количество операций ввода-вывода в секунду на диск       | 500   | 2300  | 5000           | 7500           | 7500           | 
 | Пропускная способность на диск | 100 МБ в секунду | 150 МБ в секунду | 200 МБ в секунду | 250 МБ в секунду | 250 МБ в секунду |
 
-В зависимости от рабочей нагрузки определите, требуются ли дополнительные диски данных для виртуальной машины. К виртуальной машине можно подключить несколько дисков постоянных данных. Если необходимо увеличить емкость и производительность тома, вы можете создать на дисках чередующийся том. (Дополнительные сведения о чередовании дисков см. [здесь](../../virtual-machines/windows/premium-storage-performance.md#disk-striping).) Если вы создаете чередующийся том на дисках данных хранилища уровня "Премиум" с помощью [дисковых пространств][4], то необходимо настроить по одному столбцу для каждого используемого диска. В противном случае из-за неравномерного распределения трафика между дисками общая производительность чередующегося тома может быть ниже ожидаемой. Выполнить эту же операцию на виртуальных машинах с Linux можно с помощью служебной программы *mdadm*. Дополнительные сведения см. в статье [Настройка программного RAID-массива в Linux](../../virtual-machines/linux/configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+В зависимости от рабочей нагрузки определите, требуются ли дополнительные диски данных для виртуальной машины. К виртуальной машине можно подключить несколько дисков постоянных данных. Если необходимо увеличить емкость и производительность тома, вы можете создать на дисках чередующийся том. (Дополнительные сведения о чередовании дисков см. [здесь](../../virtual-machines/windows/premium-storage-performance.md#disk-striping).) Если вы создаете чередующийся том на дисках данных хранилища класса "Премиум" с помощью [дисковых пространств][4], необходимо настроить по одному столбцу для каждого используемого диска. В противном случае из-за неравномерного распределения трафика между дисками общая производительность чередующегося тома может быть ниже ожидаемой. Выполнить эту же операцию на виртуальных машинах с Linux можно с помощью служебной программы *mdadm*. Дополнительные сведения см. в статье [Настройка программного RAID-массива в Linux](../../virtual-machines/linux/configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 #### <a name="storage-account-scalability-targets"></a>Целевые показатели масштабируемости для учетной записи хранения
 У учетных записей хранения класса Premium есть следующие целевые показатели масштабируемости в дополнение к [целевым показателям масштабируемости и производительности службы хранилища Azure](storage-scalability-targets.md). Если потребности вашего приложения превышают целевые показатели по масштабируемости для отдельной учетной записи хранения, при создании настройте приложение на использование нескольких учетных записей хранения и распределите данные между этими учетными записями.
@@ -75,7 +75,7 @@ ms.locfileid: "65153768"
 #### <a name="disk-caching-policy"></a>Политика кэширования дисков
 По умолчанию для политики кэширования дисков задано значение *только чтение* для всех дисков с данными "Премиум" и *чтение и запись* для дисков операционной системы "Премиум", подключенных к виртуальной машине. Этот параметр конфигурации рекомендуется использовать, чтобы достичь оптимальной производительности при операциях ввода-вывода приложения. Отключите кэширование дисков данных, которые отличаются высокой интенсивностью записи или используются только для записи (например, файлов журналов SQL Server), чтобы улучшить производительность приложения. Параметры кэша для существующих дисков данных можно обновить с помощью [портала Azure](https://portal.azure.com) или *- HostCaching* параметр *Set-AzureDataDisk* командлета.
 
-#### <a name="location"></a>Расположение
+#### <a name="location"></a>Location
 Выберите расположение, где доступно хранилище Azure Premium. Актуальные сведения о доступных расположениях см. на странице [Доступность продуктов по регионам](https://azure.microsoft.com/regions/#services). Виртуальные машины, расположенные в одном регионе с учетной записью хранения, где хранятся диски для виртуальной машины, обеспечивают более высокую производительность, чем находящиеся в других регионах.
 
 #### <a name="other-azure-vm-configuration-settings"></a>Прочие параметры конфигурации виртуальной машины Azure
@@ -161,7 +161,7 @@ ms.locfileid: "65153768"
 #### <a name="copy-vhd-with-azcopy-or-powershell"></a>Шаг 3. Копирование VHD с помощью AzCopy или PowerShell
 Чтобы скопировать VHD с помощью одного из этих средств, вам понадобится путь контейнера и ключ учетной записи хранения (выберите **Портал Azure** > **Хранилище**, чтобы узнать их). URL-адрес будет иметь следующий вид контейнера «https:\//myaccount.blob.core.windows.net/mycontainer/».
 
-##### <a name="option-1-copy-a-vhd-with-azcopy-asynchronous-copy"></a>Вариант 1. Копирование VHD с помощью AzCopy (асинхронное копирование)
+##### <a name="option-1-copy-a-vhd-with-azcopy-asynchronous-copy"></a>Вариант 1: Копирование VHD с помощью AzCopy (асинхронное копирование)
 Средство AzCopy позволяет легко передать VHD через Интернет. В зависимости от размера виртуальных жестких дисков это может занять определенное время. Не забывайте проверять ограничения для исходящих и входящих данных учетной записи хранения при использовании этого параметра. Дополнительные сведения см. в статье [Целевые показатели производительности и масштабируемости службы хранилища Azure](storage-scalability-targets.md).
 
 1. Загрузите и установите AzCopy для Windows здесь: [последняя версия AzCopy](https://aka.ms/downloadazcopy).
@@ -176,23 +176,23 @@ ms.locfileid: "65153768"
 
     ```azcopy
     AzCopy /Source:https://sourceaccount.blob.core.windows.net/mycontainer1 /SourceKey:key1 /Dest:https://destaccount.blob.core.windows.net/mycontainer2 /DestKey:key2 /Pattern:abc.vhd
-    ```
+        ```
 
-    Ниже приведено описание параметров, используемых в команде AzCopy.
+    Here are descriptions of the parameters used in the AzCopy command:
 
-   * **/Source: *&lt;source&gt;:* ** месторасположение папки или URL-адрес контейнера с виртуальным жестким диском.
-   * **/SourceKey: *&lt;source-account-key&gt;:* ** ключ исходной учетной записи хранения.
-   * **/Dest: *&lt;destination&gt;:* ** URL-адрес контейнера хранилища для копирования виртуального жесткого диска.
-   * **/DestKey: *&lt;dest-account-key&gt;:* ** ключ целевой учетной записи хранения.
-   * **/Pattern: *&lt;file-name&gt;:* ** имя файла копируемого виртуального жесткого диска.
+   * **/Source: _&lt;source&gt;:_** Location of the folder or storage container URL that contains the VHD.
+   * **/SourceKey: _&lt;source-account-key&gt;:_** Storage account key of the source storage account.
+   * **/Dest: _&lt;destination&gt;:_** Storage container URL to copy the VHD to.
+   * **/DestKey: _&lt;dest-account-key&gt;:_** Storage account key of the destination storage account.
+   * **/Pattern: _&lt;file-name&gt;:_** Specify the file name of the VHD to copy.
 
-Дополнительные сведения об использовании средства AzCopy см. в статье [Передача данных с помощью служебной программы командной строки AzCopy](storage-use-azcopy.md).
+For details on using AzCopy tool, see [Transfer data with the AzCopy Command-Line Utility](storage-use-azcopy.md).
 
-##### <a name="option-2-copy-a-vhd-with-powershell-synchronized-copy"></a>Вариант 2. Копирование VHD с помощью PowerShell (синхронное копирование)
+##### Option 2: Copy a VHD with PowerShell (Synchronized copy)
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Вы также можете скопировать файл VHD с помощью командлета PowerShell Start-AzStorageBlobCopy. Используйте следующую команду в Azure PowerShell, чтобы скопировать виртуальный жесткий диск: Замените значения в угловых скобках <> соответствующими значениями из исходной и целевой учетной записи хранения. Чтобы использовать эту команду, в целевой учетной записи хранения должен быть контейнер с именем vhds. Если контейнер не существует, создайте его, прежде чем выполнять команду.
+You can also copy the VHD file using the PowerShell cmdlet Start-AzStorageBlobCopy. Use the following command on Azure PowerShell to copy VHD. Replace the values in <> with corresponding values from your source and destination storage account. To use this command, you must have a container called vhds in your destination storage account. If the container doesn't exist, create one before running the command.
 
 ```powershell
 $sourceBlobUri = <source-vhd-uri>
@@ -250,13 +250,13 @@ C:\PS> Start-AzStorageBlobCopy -srcUri $sourceBlobUri -SrcContext $sourceContext
 #### <a name="step-3-upload-the-vhd-to-azure-storage"></a>Шаг 3. Загрузка VHD в службу хранилища Azure
 Теперь, когда VHD расположен в локальном каталоге, с помощью AzCopy или Azure PowerShell VHD-файл можно передать в службу хранилища Azure. Это можно сделать двумя способами.
 
-##### <a name="option-1-using-azure-powershell-add-azurevhd-to-upload-the-vhd-file"></a>Вариант 1. Передача VHD-файла с помощью командлета Azure PowerShell Add-AzureVhd
+##### <a name="option-1-using-azure-powershell-add-azurevhd-to-upload-the-vhd-file"></a>Вариант 1: Передача VHD-файла с помощью командлета Azure PowerShell Add-AzureVhd
 
 ```powershell
 Add-AzureVhd [-Destination] <Uri> [-LocalFilePath] <FileInfo>
 ```
 
-Пример \<Uri > может быть ***"https://storagesample.blob.core.windows.net/mycontainer/blob1.vhd"***. Пример \<FileInfo > может быть ***«C:\path\to\upload.vhd»***.
+Пример \<Uri > может быть  ** _"https://storagesample.blob.core.windows.net/mycontainer/blob1.vhd"_** . Пример \<FileInfo > может быть  ** _«C:\path\to\upload.vhd»_** .
 
 ##### <a name="option-2-using-azcopy-to-upload-the-vhd-file"></a>Вариант 2. Передача VHD-файла с помощью AzCopy
 Средство AzCopy позволяет легко передать VHD через Интернет. В зависимости от размера виртуальных жестких дисков это может занять определенное время. Не забывайте проверять ограничения для исходящих и входящих данных учетной записи хранения при использовании этого параметра. Дополнительные сведения см. в статье [Целевые показатели производительности и масштабируемости службы хранилища Azure](storage-scalability-targets.md).
@@ -273,57 +273,57 @@ Add-AzureVhd [-Destination] <Uri> [-LocalFilePath] <FileInfo>
 
     ```azcopy
     AzCopy /Source:https://sourceaccount.blob.core.windows.net/mycontainer1 /SourceKey:key1 /Dest:https://destaccount.blob.core.windows.net/mycontainer2 /DestKey:key2 /BlobType:page /Pattern:abc.vhd
-    ```
+        ```
 
-    Ниже приведено описание параметров, используемых в команде AzCopy.
+    Here are descriptions of the parameters used in the AzCopy command:
 
-   * **/Source: *&lt;source&gt;:* ** месторасположение папки или URL-адрес контейнера с виртуальным жестким диском.
-   * **/SourceKey: *&lt;source-account-key&gt;:* ** ключ исходной учетной записи хранения.
-   * **/Dest: *&lt;destination&gt;:* ** URL-адрес контейнера хранилища для копирования виртуального жесткого диска.
-   * **/DestKey: *&lt;dest-account-key&gt;:* ** ключ целевой учетной записи хранения.
-   * **/BlobType: page:** указывает, что местом назначения является страничный BLOB-объект.
-   * **/Pattern: *&lt;file-name&gt;:* ** имя файла копируемого виртуального жесткого диска.
+   * **/Source: _&lt;source&gt;:_** Location of the folder or storage container URL that contains the VHD.
+   * **/SourceKey: _&lt;source-account-key&gt;:_** Storage account key of the source storage account.
+   * **/Dest: _&lt;destination&gt;:_** Storage container URL to copy the VHD to.
+   * **/DestKey: _&lt;dest-account-key&gt;:_** Storage account key of the destination storage account.
+   * **/BlobType: page:** Specifies that the destination is a page blob.
+   * **/Pattern: _&lt;file-name&gt;:_** Specify the file name of the VHD to copy.
 
-Дополнительные сведения об использовании средства AzCopy см. в статье [Передача данных с помощью служебной программы командной строки AzCopy](storage-use-azcopy.md).
+For details on using AzCopy tool, see [Transfer data with the AzCopy Command-Line Utility](storage-use-azcopy.md).
 
-##### <a name="other-options-for-uploading-a-vhd"></a>Другие возможности загрузки виртуального жесткого диска
-Вы также можете загрузить виртуальный жесткий диск в учетную запись хранения с помощью одного из следующих средств.
+##### Other options for uploading a VHD
+You can also upload a VHD to your storage account using one of the following means:
 
-* [API копирования BLOB-объекта хранилища Azure](https://msdn.microsoft.com/library/azure/dd894037.aspx)
-* [Обозреватель хранилищ Azure для передачи больших двоичных объектов](https://azurestorageexplorer.codeplex.com/)
-* [Справочник по API REST служб хранилища импорта и экспорта](https://msdn.microsoft.com/library/dn529096.aspx)
-
-> [!NOTE]
-> Мы рекомендуем использовать службу импорта и экспорта, если предполагаемое время передачи больше 7 дней. Чтобы оценить предполагаемое время передачи на основе размера данных и средства передачи, используйте компонент [DataTransferSpeedCalculator](https://github.com/Azure-Samples/storage-dotnet-import-export-job-management/blob/master/DataTransferSpeedCalculator.html).
->
-> Импорт и экспорт можно использовать для копирования в учетную запись хранения класса Standard. Необходимо осуществить копирование из учетной записи хранения Standard в учетную запись хранения Premium с помощью схожего с AzCopy средства.
->
->
-
-## <a name="create-azure-virtual-machine-using-premium-storage"></a>Создание виртуальной машины Azure с использованием хранилища Premium
-После загрузки или копирования VHD в необходимую учетную запись хранения следуйте инструкциям в этом разделе, чтобы зарегистрировать VHD в качестве образа ОС или диска ОС в зависимости от сценария, а затем создать на его основе экземпляр виртуальной машины. Диск данных виртуального жесткого диска можно прикрепить к виртуальной машине после ее создания.
-Пример скрипта переноса указан в конце этого раздела. Это простой скрипт, и он подходит не для всех сценариев. Вам может понадобиться обновить скрипт в соответствии с ситуацией. Сведения о том, применяется ли этот скрипт к вашему сценарию, см.в подразделе [Пример скрипта переноса](#a-sample-migration-script) ниже.
-
-### <a name="checklist"></a>Контрольный список
-1. Дождитесь завершения копирования VHD.
-2. Убедитесь, что хранилище класса Premium доступно в регионе, в который вы переносите виртуальную машину.
-3. Определите серию виртуальной машины, которую вы будете использовать. Ею должна быть виртуальная машина, поддерживающая хранилище класса Premium, а ее размер зависит от доступности в регионе и потребностей.
-4. Определите точный размер виртуальной машины, которую вы будете использовать. Размер виртуальной машины должен быть достаточно большим, чтобы поддерживать количество дисков данных, которые вы используете. (например, если вы используете 4 диска данных, виртуальная машина должна иметь минимум 2 ядра. Кроме того, учитывайте требования к вычислительной мощности, памяти и пропускной способности сети.
-5. Создайте учетную запись хранения класса Premium в целевом регионе. Эту учетную запись вы будете использовать для новой виртуальной машины.
-6. Держите сведения о текущей виртуальной машине под рукой, в том числе список дисков и соответствующих BLOB-объектов виртуальных жестких дисков.
-
-Подготовьте приложение к простою. Чтобы выполнить чистый перенос, необходимо остановить все процессы, выполняющиеся в текущей системе. Только так вы получите стабильное состояние, которое можно перенести на новую платформу. Длительность простоя будет зависеть от объема данных на дисках для переноса.
+* [Azure Storage Copy Blob API](https://msdn.microsoft.com/library/azure/dd894037.aspx)
+* [Azure Storage Explorer Uploading Blobs](https://azurestorageexplorer.codeplex.com/)
+* [Storage Import/Export Service REST API Reference](https://msdn.microsoft.com/library/dn529096.aspx)
 
 > [!NOTE]
-> При создании виртуальной машины Azure Resource Manager на основе специализированного VHD, используйте [этот шаблон](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-specialized-vhd), чтобы развернуть виртуальную машину с использованием имеющегося диска.
+> We recommend using Import/Export Service if estimated uploading time is longer than 7 days. You can use [DataTransferSpeedCalculator](https://github.com/Azure-Samples/storage-dotnet-import-export-job-management/blob/master/DataTransferSpeedCalculator.html) to estimate the time from data size and transfer unit.
+>
+> Import/Export can be used to copy to a standard storage account. You will need to copy from standard storage to premium storage account using a tool like AzCopy.
 >
 >
 
-### <a name="register-your-vhd"></a>Регистрация виртуального жесткого диска
-Чтобы создать виртуальную машину на основе VHD операционной системы или присоединить диск данных к новой виртуальной машине, сначала их необходимо зарегистрировать. Выполните приведенные ниже шаги в зависимости от сценария VHD.
+## <a name="create-azure-virtual-machine-using-premium-storage"></a>Create Azure VMs using Premium Storage
+After the VHD is uploaded or copied to the desired storage account, follow the instructions in this section to register the VHD as an OS image, or OS disk depending on your scenario and then create a VM instance from it. The data disk VHD can be attached to the VM once it is created.
+A sample migration script is provided at the end of this section. This simple script does not match all scenarios. You may need to update the script to match with your specific scenario. To see if this script applies to your scenario, see below [A Sample Migration Script](#a-sample-migration-script).
 
-#### <a name="generalized-operating-system-vhd-to-create-multiple-azure-vm-instances"></a>Обобщенный виртуальный жесткий диск операционной системы для создания нескольких экземпляров виртуальной машины Azure
-После загрузки VHD обобщенного образа операционной системы в учетную запись хранения зарегистрируйте его в качестве **образа виртуальной машины Azure**, чтобы на его основе можно было создать один или несколько экземпляров виртуальной машины. Используйте следующие командлеты PowerShell для регистрации вашего виртуального жесткого диска в качестве образа ОС виртуальной машины Azure. Укажите полный URL-адрес контейнера, в который был скопирован виртуальный жесткий диск.
+### Checklist
+1. Wait until all the VHD disks copying is complete.
+2. Make sure Premium Storage is available in the region you are migrating to.
+3. Decide the new VM series you will be using. It should be a Premium Storage capable, and the size should be depending on the availability in the region and based on your needs.
+4. Decide the exact VM size you will use. VM size needs to be large enough to support the number of data disks you have. E.g. if you have 4 data disks, the VM must have 2 or more cores. Also, consider processing power, memory and network bandwidth needs.
+5. Create a Premium Storage account in the target region. This is the account you will use for the new VM.
+6. Have the current VM details handy, including the list of disks and corresponding VHD blobs.
+
+Prepare your application for downtime. To do a clean migration, you have to stop all the processing in the current system. Only then you can get it to consistent state which you can migrate to the new platform. Downtime duration will depend on the amount of data in the disks to migrate.
+
+> [!NOTE]
+> If you are creating an Azure Resource Manager VM from a specialized VHD Disk, please refer to [this template](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-specialized-vhd) for deploying Resource Manager VM using existing disk.
+>
+>
+
+### Register your VHD
+To create a VM from OS VHD or to attach a data disk to a new VM, you must first register them. Follow steps below depending on your VHD's scenario.
+
+#### Generalized Operating System VHD to create multiple Azure VM instances
+After generalized OS image VHD is uploaded to the storage account, register it as an **Azure VM Image** so that you can create one or more VM instances from it. Use the following PowerShell cmdlets to register your VHD as an Azure VM OS image. Provide the complete container URL where VHD was copied to.
 
 ```powershell
 Add-AzureVMImage -ImageName "OSImageName" -MediaLocation "https://storageaccount.blob.core.windows.net/vhdcontainer/osimage.vhd" -OS Windows

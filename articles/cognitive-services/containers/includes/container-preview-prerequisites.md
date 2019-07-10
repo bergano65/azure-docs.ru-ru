@@ -12,10 +12,10 @@ ms.openlocfilehash: e5d40c9ffd32320ba685e2bdbd3095b4eeec3484
 ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67711420"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717065"
 ---
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Используйте подписку Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][free-account], прежде чем начинать работу.
 * Установка [Azure CLI][azure-cli] (az).

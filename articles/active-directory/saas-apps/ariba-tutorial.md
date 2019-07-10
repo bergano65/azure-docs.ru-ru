@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/25/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e6655c1f67b5655dbde8c04f09a664f64350e3d
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: f7e91ee9afb2bf217f97e5c9968557fe0f9cd71d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65900847"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67106718"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ariba"></a>Руководство по Интеграция Azure Active Directory с приложением Ariba
 
@@ -123,7 +123,7 @@ ms.locfileid: "65900847"
 
 ### <a name="configure-ariba-single-sign-on"></a>Настройка единого входа в Ariba
 
-Чтобы настроить единый вход для приложения, позвоните в службу поддержки Ariba по номеру **1-866-218-2155**. Вы получите дальнейшие указания по тому, как предоставить скачанный файл **сертификата (Base64)**.
+Чтобы настроить единый вход для приложения, позвоните в службу поддержки Ariba по номеру **1-866-218-2155**. Вы получите дальнейшие указания по тому, как предоставить скачанный файл **сертификата (Base64)** .
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -192,5 +192,5 @@ ms.locfileid: "65900847"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

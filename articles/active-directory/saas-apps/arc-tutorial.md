@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Arc Publishing — SSO | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Arc Publishing — SSO | Документация Майкрософт
 description: Сведения о том, как настроить единый вход Azure Active Directory в Arc Publishing — SSO.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8eec05507cd66e2b856e3110bfb60f24c87dfdf7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: bb088af37133269977c1f8ae9a5ad19a3b3e4513
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57879976"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67106776"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-arc-publishing---sso"></a>Руководство. Интеграция Azure Active Directory с Arc Publishing — SSO
+# <a name="tutorial-azure-active-directory-integration-with-arc-publishing---sso"></a>Руководство по Интеграция Azure Active Directory с Arc Publishing — SSO
 
 В этом руководстве описано, как интегрировать Arc Publishing — SSO с Azure Active Directory (Azure AD).
 Интеграция Arc Publishing — SSO с Azure AD обеспечивает следующие преимущества:
@@ -121,7 +121,7 @@ ms.locfileid: "57879976"
 
 6. Приложение Arc Publishing — SSO ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 7. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия. 
 
@@ -135,9 +135,9 @@ ms.locfileid: "57879976"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -190,7 +190,7 @@ ms.locfileid: "57879976"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -242,4 +242,4 @@ ms.locfileid: "57879976"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

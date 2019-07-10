@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 66393ffa5e8837b104e42df03ab3af5d6deea936
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c0a1f58705a64a973bb91e47e6e9fce87a48ce99
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65868771"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67094213"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-promaster-by-inlogik"></a>Руководство. Интеграция Azure Active Directory с ProMaster (от Inlogik)
 
@@ -65,7 +65,7 @@ ms.locfileid: "65868771"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **ProMaster (от Inlogik)**, выберите **ProMaster (от Inlogik)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **ProMaster (от Inlogik)** , выберите **ProMaster (от Inlogik)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
      ![ProMaster (от Inlogik) в списке результатов](common/search-new-app.png)
 
@@ -172,11 +172,11 @@ ms.locfileid: "65868771"
 
 В этом разделе описано, как предоставить пользователю Britta Simon доступ к ProMaster (от Inlogik), чтобы он мог использовать единый вход Azure.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **ProMaster (от Inlogik)**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **ProMaster (от Inlogik)** .
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. В списке приложений выберите **ProMaster (от Inlogik)**.
+2. В списке приложений выберите **ProMaster (от Inlogik)** .
 
     ![Ссылка на ProMaster (от Inlogik) в списке приложений](common/all-applications.png)
 
@@ -210,5 +210,5 @@ ms.locfileid: "65868771"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

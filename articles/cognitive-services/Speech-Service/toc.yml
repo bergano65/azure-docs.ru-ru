@@ -141,9 +141,17 @@
               href: quickstart-python-text-to-speech.md
               displayName: 'synthesize speech, speech synthesis, text-to-speech, tts, rest'
     - name: 'Пакет SDK для устройств, подключаемых к службе "Речь"'
-      href: speech-devices-sdk-android-quickstart.md
-      displayName: 'roobo, speech devices sdk'
-- name: Руководства
+      items:
+        - name: Android
+          href: speech-devices-sdk-android-quickstart.md
+          displayName: 'roobo, speech devices sdk'
+        - name: Linux
+          href: speech-devices-sdk-linux-quickstart.md
+          displayName: 'Azure Kinect DK, speech devices sdk'
+        - name: Windows
+          href: speech-devices-sdk-windows-quickstart.md
+          displayName: 'Azure Kinect DK, speech devices sdk'
+- name: Учебники
   items:
     - name: 'Распознавание намерений в речи с помощью LUIS (C#)'
       href: how-to-recognize-intents-from-speech-csharp.md

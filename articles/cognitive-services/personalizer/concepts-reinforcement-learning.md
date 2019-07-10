@@ -7,15 +7,15 @@ author: edjez
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: edjez
-ms.openlocfilehash: b65073c0646db0cd0c27a71005bb4f74b091ae09
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
-ms.translationtype: HT
+ms.openlocfilehash: 26f8348bc2de9cb56110c1cc7ce896934bb46ef7
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65506889"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67722456"
 ---
 # <a name="what-is-reinforcement-learning"></a>Что такое обучение с подкреплением?
 
@@ -68,6 +68,6 @@ _Память принятия решений_ (модель, обученная
 * [Инструкции по сопоставлению и визуальные наблюдения для действий в обучении с подкреплением](https://arxiv.org/abs/1704.08795)
 * [Научись искать лучше, чем твой учитель](https://arxiv.org/abs/1502.02206)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 [Offline evaluation](concepts-offline-evaluation.md) (Автономная оценка) 

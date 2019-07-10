@@ -242,6 +242,12 @@
           href: monitor-events-portal-how-to.md
         - name: Мониторинг событий (CLI)
           href: job-state-events-cli-how-to.md
+    - name: Использование Azure Monitor
+      items:
+        - name: Метрики мониторинга
+          href: media-services-metrics-howto.md
+        - name: Мониторинг журналов диагностики
+          href: media-services-diagnostic-logs-howto.md
     - name: Защита содержимого
       items:
         - name: "Получение политики ключа содержимого\_— .NET"

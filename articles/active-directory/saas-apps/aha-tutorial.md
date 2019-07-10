@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 90d4cdcecd08ae87b3a2ae6023b8a2557a515fb1
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: de27afabe024f08cb80a7b31cfb1b664684315a8
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65899384"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67107226"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-aha"></a>Руководство по Интеграция Azure Active Directory с Aha!
 
@@ -66,7 +66,7 @@ ms.locfileid: "65899384"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Aha!**, выберите **Aha!** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **Aha!** , выберите **Aha!** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
      ![Aha! в списке результатов](common/search-new-app.png)
 
@@ -188,11 +188,11 @@ ms.locfileid: "65899384"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Aha!.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Aha!**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Aha!** .
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. Из списка приложений выберите **Aha!**.
+2. Из списка приложений выберите **Aha!** .
 
     ![Ссылка на Aha! в списке приложений](common/all-applications.png)
 
@@ -226,4 +226,4 @@ ms.locfileid: "65899384"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

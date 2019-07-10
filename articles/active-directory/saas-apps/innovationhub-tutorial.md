@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cdaaf29e5649c6b82606b1e332fea56cabfc9aaa
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: df32eab48cbcdf4a8197e612e3efb24957c4d964
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57861745"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67100295"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-innoverse"></a>Руководство. Интеграция Azure Active Directory с Innoverse
+# <a name="tutorial-azure-active-directory-integration-with-innoverse"></a>Руководство по Интеграция Azure Active Directory с Innoverse
 
 В этом руководстве описано, как интегрировать Innoverse с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Innoverse обеспечивает следующие преимущества.
@@ -121,7 +121,7 @@ ms.locfileid: "57861745"
 
 6. Приложение Innoverse ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](./media/innovationhub-tutorial/tutorial-innovationhub-attribute.png)
+    ![image](./media/innovationhub-tutorial/tutorial-innovationhub-attribute.png)
 
 7. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
@@ -131,9 +131,9 @@ ms.locfileid: "57861745"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new_save_attribute.png)
+    ![image](common/new_save_attribute.png)
 
-    ![изображение](common/new_attribute_details.png)
+    ![image](common/new_attribute_details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -173,7 +173,7 @@ ms.locfileid: "57861745"
 
     a. В поле **Имя** введите **BrittaSimon**.
 
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -222,4 +222,4 @@ ms.locfileid: "57861745"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

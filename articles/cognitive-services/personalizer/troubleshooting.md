@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок
+title: Устранение неполадок — Personalizer
 titleSuffix: Azure Cognitive Services
 description: Устранение неполадок вопросы о Personalizer можно найти в этой статье.
 author: edjez
@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: article
 ms.date: 06/15/2019
 ms.author: edjez
-ms.openlocfilehash: 5136bd295c12c4439a894b4dcf0b868d32ce43ca
-ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.openlocfilehash: be6119d96b89622f45db1099a47e858a5893c2cb
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67313157"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67722248"
 ---
 # <a name="personalizer-troubleshooting"></a>Устранение неполадок personalizer
 
@@ -29,6 +29,6 @@ ms.locfileid: "67313157"
 
 Если вы не знаете о том, как цикл обучения в настоящее время работает, запустите [автономной оценки](concepts-offline-evaluation.md)и примените политику исправленный обучения. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Настройка частоты обновления модели](how-to-settings.md#model-update-frequency)

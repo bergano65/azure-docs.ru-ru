@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Adobe Captivate Prime | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Adobe Captivate Prime | Документация Майкрософт
 description: Сведения о том, как настроить единый вход между Azure Active Directory и Adobe Captivate Prime.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d48eb0605648ba09478d5481d35b61ff4f06a45
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 83124495b751b1e37ac23c7e9439e2dd8b78baa3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57901106"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67107315"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adobe-captivate-prime"></a>Руководство по Интеграция Azure Active Directory с Adobe Captivate Prime
 
@@ -198,4 +198,4 @@ ms.locfileid: "57901106"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

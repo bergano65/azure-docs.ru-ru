@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Brightspace (разработка Desire2Learn) | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Brightspace (разработка Desire2Learn) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Brightspace by Desire2Learn.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/08/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e927aa4b407103b1efed33a4305532c590780d9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 69b15cefc3280b4fc6006a2e492cfcbc9eed88e9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57849998"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67105899"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-brightspace-by-desire2learn"></a>Руководство. Интеграция Azure Active Directory с Brightspace (разработка Desire2Learn)
+# <a name="tutorial-azure-active-directory-integration-with-brightspace-by-desire2learn"></a>Руководство по Интеграция Azure Active Directory с Brightspace (разработка Desire2Learn)
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением Brightspace by Desire2Learn.
 Интеграция Brightspace by Desire2Learn с Azure AD дает следующие преимущества:
@@ -65,7 +65,7 @@ ms.locfileid: "57849998"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Brightspace (разработка Desire2Learn)**, выберите **Brightspace (разработка Desire2Learn)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **Brightspace (разработка Desire2Learn)** , выберите **Brightspace (разработка Desire2Learn)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
      ![Brightspace (разработка Desire2Learn) в списке результатов](common/search-new-app.png)
 
@@ -121,7 +121,7 @@ ms.locfileid: "57849998"
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-6. Скопируйте требуемый URL-адрес из раздела **Настройка Brightspace (разработка Desire2Learn)**.
+6. Скопируйте требуемый URL-адрес из раздела **Настройка Brightspace (разработка Desire2Learn)** .
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -133,7 +133,7 @@ ms.locfileid: "57849998"
 
 ### <a name="configure-brightspace-by-desire2learn-single-sign-on"></a>Настройка единого входа Brightspace (разработка Desire2Learn)
 
-Чтобы настроить единый вход на стороне **Brightspace (разработка Desire2Learn)**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Brightspace (разработка Desire2Learn)](https://www.d2l.com/contact/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Brightspace (разработка Desire2Learn)** , нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Brightspace (разработка Desire2Learn)](https://www.d2l.com/contact/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -164,7 +164,7 @@ ms.locfileid: "57849998"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Brightspace by Desire2Learn.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Brightspace (разработка Desire2Learn)**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Brightspace (разработка Desire2Learn)** .
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -205,4 +205,4 @@ ms.locfileid: "57849998"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

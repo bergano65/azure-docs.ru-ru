@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3595a946d930ca83b5d2f1f3d82b775bf8eb4855
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: d530ce802b6735ffe0b45abdc97fe99a1a7e619b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64712687"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67105774"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cerner-central"></a>Руководство по Интеграция Azure Active Directory с Cerner Central
 
@@ -198,6 +198,6 @@ ms.locfileid: "64712687"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Руководство по настройке Google Apps для автоматической подготовки пользователей](cernercentral-provisioning-tutorial.md)

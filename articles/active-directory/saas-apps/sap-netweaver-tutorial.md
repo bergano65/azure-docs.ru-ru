@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b648b8458c7f91cae6edb079fbd2ac78553dd969
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 01a70bfbb169090fbdf4b5f8e00af6895f69c964
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65903530"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67091914"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-netweaver"></a>Руководство по Интеграция Azure Active Directory с SAP NetWeaver
 
@@ -196,7 +196,7 @@ ms.locfileid: "65903530"
 
     ![image](./media/sapnetweaver-tutorial/nameidattribute1.png)
 
-    b. Из списка **Преобразование** выберите **ExtractMailPrefix()**.
+    b. Из списка **Преобразование** выберите **ExtractMailPrefix()** .
 
     c. Из списка **Параметр 1** выберите **user.userprinicipalname**.
 
@@ -380,4 +380,4 @@ ms.locfileid: "65903530"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
