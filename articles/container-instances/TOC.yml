@@ -2,9 +2,9 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Об экземплярах контейнеров Azure
+    - name: Об Экземплярах контейнеров Azure
       href: container-instances-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: "Развертывание экземпляра контейнера\_— CLI"
@@ -33,7 +33,7 @@
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?sort=0&term=aci'
-    - name: Шаблоны диспетчера ресурсов
+    - name: Шаблоны Resource Manager
       href: container-instances-samples-rm.md
 - name: Основные понятия
   items:
@@ -41,19 +41,19 @@
       href: container-instances-container-groups.md
     - name: Квоты и ограничения
       href: container-instances-quotas.md
-    - name: Регионы доступности
+    - name: Доступность по регионам
       href: container-instances-region-availability.md
     - name: Связь с оркестраторами
       href: container-instances-orchestrator-relationship.md
     - name: Вопросы безопасности
       href: container-instances-image-security.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Развертывание
       items:
         - name: Развертывание в виртуальной сети (предварительная версия)
           href: container-instances-vnet.md
-        - name: Развертывание из реестра контейнеров Azure
+        - name: Развертывание из Реестра контейнеров Azure
           href: container-instances-using-azure-container-registry.md
     - name: Сценарии с контейнерами
       items:
@@ -97,7 +97,7 @@
           href: container-instances-monitor.md
         - name: Получение журналов и событий контейнера
           href: container-instances-get-logs.md
-        - name: Ведение журнала с помощью Azure Log Analytics
+        - name: Ведение журналов с использованием журналов Azure Monitor
           href: container-instances-log-analytics.md
     - name: Устранение неполадок
       items:
@@ -105,7 +105,7 @@
           href: container-instances-troubleshooting.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/container
     - name: REST
       href: /rest/api/container-instances
@@ -125,7 +125,7 @@
   items:
     - name: Развитие навыков с помощью Microsoft Learn
       href: /learn/browse/?products=azure-container-instances
-    - name: Регионы доступности
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/container-instances/'
@@ -133,7 +133,9 @@
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Отзыв о продукте
       href: 'https://feedback.azure.com/forums/602224-azure-container-instances'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-container-instances'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=container-instances&sort=newest'
+    - name: Вопросы и ответы
+      href: container-instances-faq.md
