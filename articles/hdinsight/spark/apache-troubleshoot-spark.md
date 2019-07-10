@@ -84,7 +84,7 @@ ms.locfileid: "64721154"
 
 ### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
-[Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/ https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
+[Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
 ## <a name="how-do-i-configure-an-apache-spark-application-by-using-a-jupyter-notebook-on-clusters"></a>Как настроить приложение Apache Spark с помощью Jupyter Notebook в кластерах?
 
@@ -98,7 +98,7 @@ ms.locfileid: "64721154"
 
 ### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
-[Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/ https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
+[Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
 
 ## <a name="how-do-i-configure-an-apache-spark-application-by-using-apache-livy-on-clusters"></a>Как настроить приложение Apache Spark с помощью Apache Livy в кластерах?
@@ -115,7 +115,7 @@ ms.locfileid: "64721154"
 
 ### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
-[Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/ https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
+[Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
 ## <a name="how-do-i-configure-an-apache-spark-application-by-using-spark-submit-on-clusters"></a>Как настроить приложение Apache Spark с помощью spark-submit в кластерах?
 
@@ -131,7 +131,7 @@ ms.locfileid: "64721154"
 
 ### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
-[Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/ https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
+[Отправка заданий Apache Spark в кластерах HDInsight](https://web.archive.org/web/20190112152841/https://blogs.msdn.microsoft.com/azuredatalake/2017/01/06/spark-job-submission-on-hdinsight-101/)
 
 
 ## <a name="what-causes-an-apache-spark-application-outofmemoryerror-exception"></a>Что вызывает в приложении Apache Spark исключение OutOfMemoryError?
@@ -216,7 +216,7 @@ java.lang.OutOfMemoryError
 ### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 - [Обзор управления памятью в Apache Spark](https://spark.apache.org/docs/latest/tuning.html#memory-management-overview)
-- [Отладка приложения Apache Spark в кластере HDInsight](https://web.archive.org/web/20190112152909/ https://blogs.msdn.microsoft.com/azuredatalake/2016/12/19/spark-debugging-101/)
+- [Отладка приложения Apache Spark в кластере HDInsight](https://web.archive.org/web/20190112152909/https://blogs.msdn.microsoft.com/azuredatalake/2016/12/19/spark-debugging-101/)
 
 
 ### <a name="see-also"></a>См. также
