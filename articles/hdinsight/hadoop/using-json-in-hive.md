@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: 904a6a2af4c92c374d5afe4148f50e853e5d1fb2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5ec766cea2135f7c00df032ad0df4ada033d6293
+ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66479598"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67461987"
 ---
 # <a name="process-and-analyze-json-documents-by-using-apache-hive-in-azure-hdinsight"></a>Обработка и анализ документов JSON с использованием Apache Hive в Azure HDInsight
 
@@ -57,7 +57,7 @@ ms.locfileid: "66479598"
 
 Файл можно найти в `wasb://processjson@hditutorialdata.blob.core.windows.net/`. Дополнительные сведения об использовании хранилища BLOB-объектов Azure с HDInsight приведены в разделе [Использование службы хранилища Azure с кластерами Azure HDInsight](../hdinsight-hadoop-use-blob-storage.md). Вы можете скопировать файл в контейнер по умолчанию кластера.
 
-В этом руководстве используется консоль Apache Hive. Инструкции по открытию консоли Hive см. в разделе [использование Apache Ambari представления Hive с Apache Hadoop в HDInsight](apache-hadoop-use-hive-ambari-view.md).
+В этой статье используется консоль Apache Hive. Инструкции по открытию консоли Hive см. в разделе [использование Apache Ambari представления Hive с Apache Hadoop в HDInsight](apache-hadoop-use-hive-ambari-view.md).
 
 ## <a name="flatten-json-documents"></a>Документы JSON, преобразованные в плоскую структуру
 Методы, перечисленные в следующем разделе требуют, чтобы документ JSON содержал одну строку. Поэтому необходимо преобразовать документ JSON в строку. Если документ JSON уже преобразован, можно пропустить этот шаг и сразу перейти к следующему разделу, посвященному анализу данных JSON. Чтобы преобразовать документ JSON в плоскую структуру, выполните следующий сценарий:
@@ -141,7 +141,7 @@ LATERAL VIEW JSON_TUPLE(jt.json_body, 'StudentId', 'Grade') q1
 Определяемая пользователем функция JSON_TUPLE использует синтаксис [lateral view](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView) Hive, который позволяет JSON\_TUPLE создать виртуальную таблицу, применяя определяемую пользователем функцию к каждой строке исходной таблицы. Из-за многократного использования **LATERAL VIEW** синтаксис сложных документов JSON становится слишком громоздким. Кроме того, **JSON_TUPLE** не может обрабатывать вложенные документы JSON.
 
 ### <a name="use-a-custom-serde"></a>Использование пользовательского SerDe
-SerDe отлично подходит для синтаксического анализа вложенных документов JSON. Он позволяет определить схему JSON, а затем использовать ее для синтаксического анализа документов. См. инструкции по [использованию пользовательского формата SerDe JSON с Microsoft Azure HDInsight](https://web.archive.org/web/20190217104719/ https://blogs.msdn.microsoft.com/bigdatasupport/2014/06/18/how-to-use-a-custom-json-serde-with-microsoft-azure-hdinsight/).
+SerDe отлично подходит для синтаксического анализа вложенных документов JSON. Он позволяет определить схему JSON, а затем использовать ее для синтаксического анализа документов. См. инструкции по [использованию пользовательского формата SerDe JSON с Microsoft Azure HDInsight](https://web.archive.org/web/20190217104719/https://blogs.msdn.microsoft.com/bigdatasupport/2014/06/18/how-to-use-a-custom-json-serde-with-microsoft-azure-hdinsight/).
 
 ## <a name="summary"></a>Сводка
 Напоследок следует заметить, что тип оператора JSON в Hive, который нужно выбрать, зависит от ситуации. Если вам требуется найти всего одно поле в простом документе JSON, можно применять определяемую пользователем функцию Hive GET_JSON_OBJECT. Если нужно выполнить поиск по нескольким ключам, можно использовать json_tuple. При наличии вложенного документа следует использовать SerDe JSON.
@@ -151,5 +151,5 @@ SerDe отлично подходит для синтаксического ан
 Другие статьи по этой теме см. в следующих источниках:
 
 * [Использование Apache Hive и HiveQL с Apache Hadoop в HDInsight для анализа примера файла log4j Apache](../hdinsight-use-hive.md)
-* [Анализ данных о задержке рейсов с помощью Apache Hive в HDInsight](../hdinsight-analyze-flight-delay-data-linux.md)
+* [Анализ данных о задержке рейсов с помощью Interactive Query в HDInsight](../interactive-query/interactive-query-tutorial-analyze-flight-data.md)
 * [Анализ данных Twitter с помощью Apache Hive в HDInsight](../hdinsight-analyze-twitter-data-linux.md)

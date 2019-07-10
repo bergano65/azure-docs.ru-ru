@@ -186,7 +186,7 @@ az webapp config appsettings set --name <app_name> --resource-group <group_name>
 - **Учетная запись Майкрософт**. [Настраивая параметры аутентификации учетной записи Майкрософт](configure-authentication-provider-microsoft.md), выберите область `wl.offline_access`.
 - **Azure Active Directory**. На сайте [https://resources.azure.com](https://resources.azure.com) сделайте следующее:
     1. В верхней части страницы выберите **Read/Write** (Чтение и запись).
-    2. В левой части браузера перейдите к **subscriptions** >  ** _\<имя\_подписки_**  > **resourceGroups** >  _ **\<имя\_группы\_ресурсов>** _ > **providers** > **Microsoft.Web** > **sites** >  _ **\<имя\_приложения>** _ > **config** > **authsettings**. 
+    2. В левой части браузера перейдите к **subscriptions** >  ** _\<имя\_подписки_**  > **resourceGroups** >  _ **\<имя\_группы\_ресурсов>**_  > **providers** > **Microsoft.Web** > **sites** >  _ **\<имя\_приложения>**_  > **config** > **authsettings**. 
     3. Нажмите кнопку **Изменить**.
     4. Измените следующее свойство. Замените _\<app\_id>_ идентификатором приложения Azure Active Directory службы, к которой требуется получить доступ.
 
@@ -233,7 +233,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 Учетные записи Майкрософт и Azure Active Directory позволяют выполнять вход из нескольких доменов. Например, учетная запись Майкрософт позволяет выполнять вход с помощью учетных записей _outlook.com_, _live.com_ и _hotmail.com_. Azure Active Directory разрешает использовать любое количество личных доменов для учетных записей для входа. Это может быть нежелательно для внутренних приложений, к которым вы не хотите предоставлять доступ всем, у кого имеется учетная запись _outlook.com_. Чтобы ограничить доменное имя учетных записей для входа, сделайте следующее.
 
-В разделе [https://resources.azure.com](https://resources.azure.com) перейдите к **subscriptions** >  ** _\< имя\_ подписки_**  > **resourceGroups** >  _ **\< имя\_ группы\_ ресурсов>** _ > **providers** > **Microsoft.Web** > **sites** >  _ **\< имя\_ приложения>** _ > **config** > **authsettings**. 
+В разделе [https://resources.azure.com](https://resources.azure.com) перейдите к **subscriptions** >  ** _\< имя\_ подписки_**  > **resourceGroups** >  _ **\< имя\_ группы\_ ресурсов>**_  > **providers** > **Microsoft.Web** > **sites** >  _ **\< имя\_ приложения>**_  > **config** > **authsettings**. 
 
 Щелкните **Edit** (Изменить), измените следующее свойство и выберите **Put**. Обязательно замените _\<domain\_имя>_ необходимым доменом.
 

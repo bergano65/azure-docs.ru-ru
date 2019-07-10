@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 20e47b6d3243bb0cccbc42ab0ab904b72922e98b
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 428dba9e8ff5ec072d5172fee357fd5319d04ad8
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604782"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657728"
 ---
 # <a name="what-is-speech-translation"></a>Что такое перевода речи
 
@@ -55,10 +55,7 @@ ms.locfileid: "67604782"
 
 ## <a name="migration-guides"></a>Руководства по переносу
 
-> [!WARNING]
-> 15 октября 2019 г., будет списан перевода речи.
-
-Если приложения, средств или продуктов при использовании перевода речи, мы создали руководства помогут вам выполнить миграцию в службы распознавания речи.
+Если приложения, средств или продуктов при использовании [Translator Speech API](https://docs.microsoft.com/azure/cognitive-services/translator-speech/overview), мы создали руководства помогут вам выполнить миграцию в службы распознавания речи.
 
 * [Перенос из API перевода речи в службы речи](how-to-migrate-from-translator-speech-api.md)
 
