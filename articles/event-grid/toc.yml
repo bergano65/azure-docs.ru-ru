@@ -6,30 +6,30 @@
       href: overview.md
     - name: Сравнение служб обмена сообщениями
       href: compare-messaging-services.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: События хранилища
       items:
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: ../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json
         - name: PowerShell
           href: ../storage/blobs/storage-blob-event-quickstart-powershell.md?toc=%2fazure%2fevent-grid%2ftoc.json
-        - name: Microsoft Azure
+        - name: Портал
           href: blob-event-quickstart-portal.md
     - name: Настраиваемые события
       items:
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: custom-event-quickstart.md
         - name: PowerShell
           href: custom-event-quickstart-powershell.md
-        - name: Microsoft Azure
+        - name: Портал
           href: custom-event-quickstart-portal.md
     - name: Хранилище очередей в качестве обработчика событий
       href: custom-event-to-queue-storage.md
     - name: Центры событий в качестве обработчика событий
       href: custom-event-to-eventhub.md
-    - name: События реестра контейнеров
+    - name: События Реестра контейнеров
       href: ../container-registry/container-registry-event-grid-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json
 - name: Учебники
   items:
@@ -51,7 +51,7 @@
       href: custom-event-to-hybrid-connection.md
 - name: Примеры
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: cli-samples.md
       items:
         - name: Создание пользовательского раздела
@@ -81,13 +81,13 @@
           href: scripts/event-grid-powershell-resource-group.md
         - name: Подписка и фильтрация событий для группы ресурсов
           href: scripts/event-grid-powershell-resource-group-filter.md
-    - name: Шаблоны диспетчера ресурсов
+    - name: Шаблоны Resource Manager
       href: template-samples.md
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=event-grid'
 - name: Основные понятия
   items:
-    - name: Основные понятия службы "Сетка событий Azure"
+    - name: Основные понятия службы "Сетка событий"
       href: concepts.md
     - name: Безопасность и проверка подлинности
       href: security-authentication.md
@@ -103,7 +103,7 @@
       href: event-handlers.md
     - name: Аварийное восстановление с георепликацией
       href: geo-disaster-recovery.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Публикация в пользовательском разделе
       href: post-to-custom-topic.md
@@ -129,7 +129,7 @@
       href: custom-disaster-recovery.md
 - name: Справочные материалы
   items:
-    - name: "Azure\_CLI"
+    - name: Azure CLI
       href: /cli/azure/eventgrid
     - name: PowerShell
       href: /powershell/module/az.eventgrid
@@ -154,7 +154,7 @@
           href: event-schema-blob-storage.md
         - name: Реестр контейнеров
           href: event-schema-container-registry.md
-        - name: Центры событий;
+        - name: Центры событий
           href: event-schema-event-hubs.md
         - name: Центр Интернета вещей
           href: event-schema-iot-hub.md
@@ -162,12 +162,14 @@
           href: ../media-services/latest/media-services-event-schemas.md?toc=%2fazure%2fevent-grid%2ftoc.json
         - name: Группы ресурсов
           href: event-schema-resource-groups.md
-        - name: Служебная шина Azure
+        - name: Служебная шина
           href: event-schema-service-bus.md
         - name: Azure Maps
           href: event-schema-azure-maps.md
         - name: Конфигурация приложений
           href: event-schema-app-configuration.md
+        - name: Azure SignalR
+          href: event-schema-azure-signalr.md
     - name: Ресурсы шаблона
       items:
         - name: Подписки на события
@@ -186,5 +188,5 @@
       href: 'https://azure.microsoft.com/pricing/details/event-grid/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-eventgrid'

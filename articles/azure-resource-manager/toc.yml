@@ -130,6 +130,28 @@
           href: vs-resource-groups-project-devops-pipelines.md
     - name: Экспорт шаблона
       href: export-template-portal.md
+    - name: Move (Переместить)
+      items:
+        - name: Перемещение ресурсов
+          href: resource-group-move-resources.md
+        - name: Поддержка ресурсов
+          href: move-support-resources.md
+        - name: Устранение неполадок при перемещении
+          href: troubleshoot-move.md
+        - name: Руководство по перемещению для служб
+          items:
+            - name: Служба приложений
+              href: ./move-limitations/app-service-move-limitations.md
+            - name: Azure DevOps
+              href: /azure/devops/organizations/billing/change-azure-subscription?toc=/azure/azure-resource-manager/toc.json
+            - name: Классическое развертывание
+              href: ./move-limitations/classic-model-move-limitations.md
+            - name: Службы восстановления
+              href: ../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json
+            - name: Виртуальные машины
+              href: ./move-limitations/virtual-machines-move-limitations.md
+            - name: Виртуальные сети
+              href: ./move-limitations/virtual-network-move-limitations.md
     - name: Управление
       items:
         - name: Управление группами ресурсов
@@ -154,8 +176,6 @@
             - name: Использование Azure PowerShell
               displayName: 'open,delete,deploy,move,lock,tag'
               href: manage-resources-powershell.md
-        - name: Перемещение ресурсов
-          href: resource-group-move-resources.md
         - name: Упорядочение ресурсов
           displayName: tags
           href: resource-group-using-tags.md
@@ -235,8 +255,6 @@
       items:
         - name: Удаление ресурсов в полном режиме
           href: complete-mode-deletion.md
-        - name: Поддержка перемещения
-          href: move-support-resources.md
         - name: Поддержка тегов
           href: tag-support.md
     - name: Поставщики ресурсов по службам

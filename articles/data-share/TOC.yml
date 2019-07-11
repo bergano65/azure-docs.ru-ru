@@ -1,0 +1,39 @@
+- name: Документация по Azure Data Share (предварительная версия)
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что представляет собой Azure Data Share (предварительная версия)?
+      href: overview.md
+- name: Учебники
+  expanded: true
+  items:
+    - name: Совместное использование данных
+      href: share-your-data.md
+    - name: Прием и получение данных
+      href: subscribe-to-data-share.md
+- name: Основные понятия
+  items:
+    - name: Терминология по Azure Data Share
+      href: terminology.md
+    - name: Роли и требования
+      href: concepts-roles-permissions.md
+- name: Руководства
+  items:
+    - name: Мониторинг
+      href: how-to-monitor.md
+    - name: Настройка сопоставления наборов данных
+      href: how-to-configure-mapping.md
+    - name: Устранение неполадок
+      href: data-share-troubleshoot.md
+- name: Ресурсы
+  items:
+    - name: Блог
+      href: 'https://azure.microsoft.com/blog/tag/data-share'
+    - name: Техническое сообщество Майкрософт
+      href: 'https://techcommunity.microsoft.com/'
+    - name: Отзыв о продукте
+      href: 'https://feedback.azure.com/forums/922759-azure-data-share-public-preview'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=data-share'

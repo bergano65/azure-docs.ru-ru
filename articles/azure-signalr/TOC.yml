@@ -53,6 +53,8 @@
       href: signalr-concept-performance.md
     - name: Аутентификация
       href: signalr-concept-authenticate-oauth.md
+    - name: Обработка событий
+      href: signalr-concept-event-grid-integration.md
 - name: Руководства
   items:
     - name: Масштабирование
@@ -67,7 +69,9 @@
       items:
         - name: Привязки для Функций Azure
           href: signalr-concept-azure-functions.md
-- name: Ссылки
+        - name: Интеграция с Сеткой событий
+          href: signalr-howto-event-grid-integration.md
+- name: Справочники
   items:
     - name: Azure CLI
       href: signalr-reference-cli.md

@@ -92,6 +92,10 @@
           href: event-hubs-programming-guide.md
         - name: Получение событий с помощью узла обработчика событий
           href: event-hubs-event-processor-host.md
+    - name: Обработка данных
+      items:
+        - name: Обработка данных с помощью Azure Stream Analytics
+          href: process-data-azure-stream-analytics.md
     - name: Использование клиентских библиотек
       items:
         - name: .NET Framework

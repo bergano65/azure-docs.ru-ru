@@ -55,7 +55,7 @@
       href: app-service-web-tutorial-auth-aad.md
 - name: Примеры
   items:
-    - name: "Azure\_CLI"
+    - name: Azure CLI
       href: samples-cli.md
     - name: Azure PowerShell
       href: samples-powershell.md
@@ -79,7 +79,7 @@
           href: overview-patch-os-runtime.md
         - name: Атрибуты безопасности
           href: app-service-security-attributes.md
-        - name: Обзор системы безопасности
+        - name: Общие сведения о безопасности
           href: overview-security.md
     - name: Функции сетей
       href: networking-features.md
@@ -105,6 +105,10 @@
           href: web-sites-php-configure.md
         - name: Настройка Java
           href: configure-language-java.md
+        - name: Подключение к локальным ресурсам
+          href: web-sites-integrate-with-vnet.md
+        - name: Настройка хранилища Azure (контейнера)
+          href: configure-connect-to-azure-storage.md
     - name: Развертывание в Azure
       items:
         - name: Развертывание приложения
@@ -243,7 +247,7 @@
           href: troubleshoot-dotnet-visual-studio.md
         - name: Устранение неполадок с приложением Node.js
           href: app-service-web-nodejs-best-practices-and-troubleshoot-guide.md
-        - name: "Устранение неполадок в HTTP\_502 и 503"
+        - name: "Устранение неполадок в HTTP\_502 и\_503"
           href: troubleshoot-http-502-http-503.md
         - name: Устранение проблем с производительностью
           href: troubleshoot-performance-degradation.md

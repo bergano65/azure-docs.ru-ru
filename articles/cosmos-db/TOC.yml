@@ -797,6 +797,8 @@
       href: 'https://azure.microsoft.com/try/cosmosdb/'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cosmos-db/'
+    - name: Преимущества работы с несколькими источниками
+      href: multi-master-benefits.md
     - name: Варианты использования
       items:
         - name: Распространенные варианты использования

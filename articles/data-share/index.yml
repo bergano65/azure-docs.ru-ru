@@ -1,0 +1,51 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Документация по Azure Data Share (предварительная версия)
+metadata:
+  title: 'Документация по Azure Data Share (предварительная версия): руководства и инструкции'
+  description: "Azure Data Share (предварительная версия)\_— это безопасная и надежная служба для обмена данными со сторонними организациями."
+  author: joannapea
+  ms.author: joanpo
+  ms.service: data-share
+  ms.topic: landing-page
+  ms.date: 07/10/2019
+abstract:
+  description: "<p>Azure Data Share (предварительная версия)\_— это безопасная и надежная служба для обмена данными со сторонними организациями. Выберите наборы данных, к которым вы хотите предоставить доступ, добавьте получателей и начните совместно использовать данные с возможностью определять, отслеживать и контролировать связи при общем доступе к данным. </p><p>Узнайте, как использовать Azure Data Share, из наших руководств.</p>"
+  aside:
+    image:
+      alt: null
+      height: 110
+      src: media/azure-friday.png
+      width: 250
+    title: Azure Data Share в программе "Пятница с Azure"
+    href: 'https://channel9.msdn.com/Shows/Azure-Friday/Share-data-simply-and-securely-using-Azure-Data-Share/player?format=ny'
+    width: 250
+sections:
+  - title: Руководства
+    items:
+      - type: paragraph
+        text: 'Узнайте, как отслеживать общие папки с данными, настраивать сопоставление наборов данных, добавлять получателей и выполнять другие действия, ознакомившись с одним из следующих практических руководств:'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: /azure/data-share/media/index/portal.svg
+            text: Мониторинг в Azure Data Share
+            href: /azure/data-share/how-to-monitor
+          - image:
+              src: /azure/data-share/media/index/portal.svg
+            text: Настройка сопоставления набора данных
+            href: /azure/data-share/how-to-configure-mapping
+          - image:
+              src: /azure/data-share/media/index/portal.svg
+            text: Устранение неполадок в Azure Data Share
+            href: /azure/data-share/data-share-troubleshoot
+  - title: Пошаговые руководства
+    items:
+      - type: paragraph
+        text: 'Узнайте, как предоставить общий доступ к данным с помощью Azure Data Share'
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="share-your-data">Совместное использование данных с помощью Azure Data Share</a>
+          - html: <a href="subscribe-to-data-share">Прием и получение данных с помощью Azure Data Share</a>

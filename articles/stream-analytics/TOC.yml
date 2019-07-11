@@ -119,6 +119,9 @@
         - name: Обработка событий Kafka
           href: ../event-hubs/event-hubs-kafka-stream-analytics.md
           maintainContext: true
+        - name: Обработка данных Центров событий
+          href: ../event-hubs/process-data-azure-stream-analytics.md
+          maintainContext: true
         - name: Сценарии обработки геопространственных данных
           href: geospatial-scenarios.md
     - name: Монитор
