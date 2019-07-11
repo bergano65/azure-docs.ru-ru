@@ -13,14 +13,14 @@ ms.topic: quickstart
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/30/2019
-ms.author: aljo,suhuruli
+ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: 1487c9e3e57a2fe4dcdcab04aa81cd81315decfd
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 5d0c8b458f11076ea87d74eae3eecd72fb37eb40
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66302328"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621531"
 ---
 # <a name="quickstart-deploy-linux-containers-to-service-fabric"></a>Краткое руководство. Развертывание контейнеров Linux в Service Fabric
 
@@ -188,7 +188,7 @@ ResourceGroupName="containertestcluster"
 az group delete --name $ResourceGroupName
 ```
 
-По завершении работы с кластером можно удалить сертификат из хранилища сертификатов. Например: 
+По завершении работы с кластером можно удалить сертификат из хранилища сертификатов. Например:
 - Действия для ОС Windows. Используйте [оснастку MMC для сертификатов](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in). При добавлении оснастки не забудьте выбрать **свою учетную запись пользователя**. Перейдите в папку `Certificates - Current User\Personal\Certificates` и удалите сертификат.
 - Для компьютеров Mac. Используйте приложение цепочки ключей.
 - Для Ubuntu. Выполните шаги, которые вы использовали для просмотра сертификатов, и удалите сертификат.
