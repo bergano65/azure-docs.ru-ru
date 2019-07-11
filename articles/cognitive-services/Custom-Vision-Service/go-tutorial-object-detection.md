@@ -6,16 +6,16 @@ services: cognitive-services
 author: areddish
 manager: cgronlun
 ms.service: cognitive-services
-ms.component: custom-vision
+ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 03/21/2019
 ms.author: daauld
-ms.openlocfilehash: 77ba3144afcc48d68466341c154bc1d8eef54d3b
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 017fdf45da6da29e3b571e5eb03549e5e13feda8
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58479212"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67593023"
 ---
 # <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-go-sdk"></a>Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательского визуального распознавания для Go
 
@@ -273,7 +273,7 @@ func main() {
 go run sample.go
 ```
 
-Выходные данные приложения должны появиться в консоли. Вы можете убедиться, что тестовое изображение (в **samples/vision/images/Test/**) помечено соответствующим образом и что область обнаружения верна.
+Выходные данные приложения должны появиться в консоли. Вы можете убедиться, что тестовое изображение (в **samples/vision/images/Test/** ) помечено соответствующим образом и что область обнаружения верна.
 
 [!INCLUDE [clean-od-project](includes/clean-od-project.md)]
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: dd0c35d23541512e1ed021a57526ac50f7a68e26
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 43b24bec557d1cc879be9568bea451f1a8b0b310
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67100141"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67625318"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insperity-expensable"></a>Руководство по Интеграция Azure Active Directory с Insperity ExpensAble
 
@@ -108,7 +108,7 @@ ms.locfileid: "67100141"
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://server.expensable.com/esapp/Authenticate?companyId=<company ID>`.
 
     > [!NOTE]
-    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Для получения этого значения обратитесь в [службу поддержки Insperity ExpensAble](http://expensable.com/support/support-overview). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Для получения этого значения обратитесь в [службу поддержки Insperity ExpensAble](https://www.insperity.com/products/expense-management/support/express/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -126,7 +126,7 @@ ms.locfileid: "67100141"
 
 ### <a name="configure-insperity-expensable-single-sign-on"></a>Настройка единого входа в Insperity ExpensAble
 
-Чтобы настроить единый вход на стороне **Insperity ExpensAble**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки Insperity ExpensAble](http://expensable.com/support/support-overview). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Insperity ExpensAble**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки Insperity ExpensAble](https://www.insperity.com/products/expense-management/support/express/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -181,7 +181,7 @@ ms.locfileid: "67100141"
 
 ### <a name="create-insperity-expensable-test-user"></a>Создание тестового пользователя Insperity ExpensAble
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Insperity ExpensAble. Обратитесь в  [службу поддержки Insperity ExpensAble](http://expensable.com/support/support-overview), чтобы добавить пользователей на платформу Insperity ExpensAble. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Insperity ExpensAble. Обратитесь в  [службу поддержки Insperity ExpensAble](https://www.insperity.com/products/expense-management/support/express/), чтобы добавить пользователей на платформу Insperity ExpensAble. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
