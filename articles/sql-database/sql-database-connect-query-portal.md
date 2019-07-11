@@ -8,17 +8,17 @@ ms.subservice: development
 ms.custom: ''
 ms.devlang: ''
 ms.topic: quickstart
-author: AyoOlubeko
-ms.author: ayolubek
+author: Ninarn
+ms.author: ninarn
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 02/12/2019
-ms.openlocfilehash: b2109afe6760eb87269a33ed74784149c2bf3e03
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 06/28/2019
+ms.openlocfilehash: 52041ba3c057e871b60f283f293dd79a18f3b21e
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58105800"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508757"
 ---
 # <a name="quickstart-use-the-azure-portals-sql-query-editor-to-connect-and-query-data"></a>Краткое руководство. Использование редактора SQL-запросов на портале Azure для подключения к данным и их запроса
 
@@ -32,14 +32,14 @@ ms.locfileid: "58105800"
 
   || Отдельная база данных |
   |:--- |:--- |
-  | Создание| [Портал](sql-database-single-database-get-started.md) | 
-  || [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](scripts/sql-database-create-and-configure-database-cli.md) | 
-  || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | 
-  | Настройка | [Правило брандмауэра IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| 
+  | Создание| [Портал](sql-database-single-database-get-started.md) |
+  || [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](scripts/sql-database-create-and-configure-database-cli.md) |
+  || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) |
+  | Настройка | [Правило брандмауэра для IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)|
   |||
 
 > [!NOTE]
-> В параметрах брандмауэра SQL Server задайте для параметра **Разрешить доступ к службам Azure** значение **Вкл**. Таким образом вы предоставите редактору SQL-запросов доступ к базам и хранилищам данных.
+> Редактор запросов использует порты 443 и 1443 для обмена данными.  Убедитесь, что вы включили исходящий трафик HTTPS на этих портах. Кроме того, необходимо будет добавить исходящий IP-адрес к правилам брандмауэра, разрешенным для сервера, для доступа к базам данных и хранилищам данных.
 
 ## <a name="sign-in-the-azure-portal"></a>Вход на портал Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "58105800"
 
 3. В раскрывающемся меню **Тип авторизации** выберите **Проверка подлинности SQL Server** и введите идентификатор пользователя и пароль учетной записи администратора сервера, указанные при создании базы данных.
 
-    ![войти](./media/sql-database-connect-query-portal/login-menu.png) 
+    ![войти](./media/sql-database-connect-query-portal/login-menu.png)
 
 4. Нажмите кнопку **ОК**.
 
@@ -78,8 +78,8 @@ ms.locfileid: "58105800"
 
 4. На панели инструментов на странице администратора AD выберите **Сохранить**.
 
-5. Перейдите к базе данных **mySampleDatabase** и в левом меню выберите **Редактор запросов (предварительная версия)** . Откроется страница **входа**. Если вы обладаете правами администратора AD, справа в разделе **Active Directory single sign-on** (Единый вход Active Directory) отобразится сообщение о входе в систему. 
-   
+5. Перейдите к базе данных **mySampleDatabase** и в левом меню выберите **Редактор запросов (предварительная версия)** . Откроется страница **входа**. Если вы обладаете правами администратора AD, справа в разделе **Active Directory single sign-on** (Единый вход Active Directory) отобразится сообщение о входе в систему.
+
 6. Нажмите кнопку **ОК**.
 
 
@@ -160,7 +160,7 @@ ms.locfileid: "58105800"
 
 Ознакомьтесь с рекомендациями по работе с редактором запросов.
 
-* С помощью редактора запросов невозможно выполнять запрос баз данных SQL Server в виртуальной сети.
+* Редактор запросов использует порты 443 и 1443 для обмена данными.  Убедитесь, что вы включили исходящий трафик HTTPS на этих портах. Кроме того, необходимо будет добавить исходящий IP-адрес к правилам брандмауэра, разрешенным для сервера, для доступа к базам данных и хранилищам данных.
 
 * Если нажать клавишу F5, страница редактора запросов обновится, а выполняемый запрос будет закрыт.
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 04/03/2019
 ms.author: chlandsi
-ms.openlocfilehash: 67f2531b24796de1e00505fdc757f3c2244c5054
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 49e39a40093f2efdf0fabbbf9f383576b2cebe22
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66002353"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67484995"
 ---
 # <a name="quickstart-recognize-speech-in-objective-c-on-macos-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в macOS с помощью Objective-C и пакета SDK службы "Речь"
 
@@ -34,7 +34,7 @@ ms.locfileid: "66002353"
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.5.1`.
+Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.6.0`.
 
 Пакет SDK службы "Речь" в Cognitive Services для Mac сейчас доступен в виде пакета платформы.
 Его можно использовать в проектах Xcode в виде диспетчера зависимостей [CocoaPods](https://cocoapods.org/) или скачать по адресу https://aka.ms/csspeech/macosbinary и выполнить привязку вручную. В этом руководстве используется диспетчер зависимостей CocoaPods.
@@ -67,13 +67,7 @@ ms.locfileid: "66002353"
 ## <a name="install-the-sdk-as-a-cocoapod"></a>Установка пакета SDK в качестве диспетчера зависимостей CocoaPods
 
 1. Установите диспетчер зависимостей CocoaPods, следуя его [инструкциям по установке](https://guides.cocoapods.org/using/getting-started.html).
-1. Перейдите в каталог с примером приложения (`helloworld`). Поместите текстовый файл с именем `Podfile` и следующим содержимым в этот каталог:
-    ```
-    target 'helloworld' do
-        platform :osx, '10.13'
-        pod 'MicrosoftCognitiveServicesSpeech-macOS', '~> 1.5.1'
-    end
-    ```
+1. Перейдите в каталог с примером приложения (`helloworld`). Поместите текстовый файл с именем `Podfile` и следующим содержимым в этот каталог: [!code-objectivec[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/objectivec-macos/helloworld/Podfile)]
 1. В терминале перейдите к каталогу `helloworld` и выполните команду `pod install`. При этом будет создана рабочая область Xcode `helloworld.xcworkspace`, содержащая пример приложения и пакет SDK для службы "Речь" в виде зависимости. Эта рабочая область понадобится позже.
 
 ## <a name="add-the-sample-code"></a>Добавление примеров кода
@@ -87,7 +81,7 @@ ms.locfileid: "66002353"
 ## <a name="build-and-run-the-sample"></a>Сборка и запуск примера
 
 1. Сделайте вывод отладки видимым: **View**(Представление) > **Debug Area**(Отладка области) > **Activate Console**(Активировать консоль).
-1. Скомпилируйте и запустите пример кода, выбрав в меню **Product** -> **Run** (Продукт -> Запустить) или нажав кнопку **Play** (Воспроизвести).
+1. Скомпилируйте и запустите пример кода, выбрав в меню **Product** > **Run** (Продукт -> Запустить) или нажав кнопку **Play** (Воспроизвести).
 1. Если нажать кнопку и произнести несколько слов, эти слова должны быть распознаны и отображены в нижней части экрана. При первом запуске приложения должен отобразится запрос о предоставлении приложению доступа к микрофону компьютера.
 
 ## <a name="next-steps"></a>Дополнительная информация

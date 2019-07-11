@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/27/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ee7e58aa6298977b279d0d538fefb24da657388
-ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
+ms.openlocfilehash: 08453928ab000cf906c451fa6c1cd619a00ee4ca
+ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66357023"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67561203"
 ---
 # <a name="tutorial-integrate-appraisd-with-azure-active-directory"></a>Руководство по Интеграция Appraisd с Azure Active Directory
 
@@ -89,7 +89,7 @@ ms.locfileid: "66357023"
     > [!NOTE]
     > Фактические значения URL-адреса входа и состояния ретранслятора можно получить на странице настройки единого входа в Appraisd, как описано далее в этом руководстве.
 
-1. Приложение Appraisd ожидает проверочные утверждения SAML в определенном формате, поэтому необходимо добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда  **nameidentifier**  сопоставляется с  **user.userprincipalname**. Приложение Appraisd ожидает, что  **nameidentifier** будет сопоставляться с  **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок  **Изменить** .
+1. Приложение Appraisd ожидает проверочные утверждения SAML в определенном формате, поэтому необходимо добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Appraisd ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
 
     ![image](common/edit-attribute.png)
 
@@ -207,4 +207,4 @@ ms.locfileid: "66357023"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

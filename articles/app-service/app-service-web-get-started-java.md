@@ -16,12 +16,12 @@ ms.topic: quickstart
 ms.date: 05/29/2019
 ms.author: jasonfreeberg
 ms.custom: mvc
-ms.openlocfilehash: c77f7afe3941395a156896135043710252637ef3
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: bd11b5334fbffc28aa6869c9f37b2b9909692d56
+ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66393249"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67154790"
 ---
 # <a name="quickstart-create-a-java-app-in-app-service"></a>Краткое руководство. Создание приложения Java в Службе приложений
 
@@ -66,7 +66,7 @@ code pom.xml
     <plugin>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-webapp-maven-plugin</artifactId>
-        <version>1.5.4</version>
+        <version>1.6.0</version>
         <configuration>
             <!-- Specify v2 schema -->
             <schemaVersion>v2</schemaVersion>
@@ -105,9 +105,9 @@ code pom.xml
 | Placeholder | ОПИСАНИЕ |
 | ----------- | ----------- |
 | `SUBSCRIPTION_ID` | Уникальный идентификатор подписки, в которой вы хотите развернуть приложение. Идентификатор подписки по умолчанию можно получить в Cloud Shell или CLI с помощью команды `az account show`. Для всех доступных подписок используйте команду `az account list`.|
-| `RESOURCEGROUP_NAME` | Имя новой группы ресурсов, в которой создается приложение. Поместив все ресурсы для приложения в группу, вы можете управлять ими совместно. Например, при удалении группы ресурсов все ресурсы, связанные с приложением, также удаляются. Укажите вместо этого значения уникальное имя новой группы ресурсов, например *TestResources*. Это имя группы ресурсов будет использоваться для удаления всех ресурсов Azure в следующем разделе. |
+| `RESOURCEGROUP_NAME` | Имя новой группы ресурсов, в которой создается приложение. Поместив все ресурсы для приложения в группу, вы можете управлять ими совместно. Например, при удалении группы ресурсов все ресурсы, связанные с приложением, также удаляются. Укажите вместо этого значения уникальное имя новой группы ресурсов, например *myResourceGroup*. Это имя группы ресурсов будет использоваться для удаления всех ресурсов Azure в следующем разделе. |
 | `WEBAPP_NAME` | Имя приложения будет частью имени узла для приложения, которое будет развернуто в Azure (WEBAPP_NAME.azurewebsites.net). Измените значение этого параметра на уникальное имя нового приложения службы приложений, в котором будет размещено ваше приложение Java, например *contoso*. |
-| `REGION` | Регион Azure, в котором размещено приложение, например `westus2`. Список регионов можно получить из Cloud Shell или CLI с помощью команды `az account list-locations`. |
+| `REGION` | Регион Azure, в котором размещено приложение, например *westus2*. Список регионов можно получить из Cloud Shell или CLI с помощью команды `az account list-locations`. |
 
 ## <a name="deploy-the-app"></a>Развертывание приложения
 

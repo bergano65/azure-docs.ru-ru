@@ -11,12 +11,12 @@ ms.date: 01/10/2018
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: de99d1a58cac12c80748b34ef4a1b07c9fb2a78e
-ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.openlocfilehash: 34c8c49166ea13d67c1f3d51805671c63dbb352b
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57576860"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312287"
 ---
 # <a name="transform-data-in-the-cloud-by-using-a-spark-activity-in-azure-data-factory"></a>Преобразование данных в облаке с помощью действия Spark в фабрике данных Azure
 В этом руководстве вы создадите конвейер фабрики данных Azure с помощью портала Azure. Конвейер преобразует данные с помощью действия Spark и связанной службы Azure HDInsight по запросу. 
@@ -206,7 +206,7 @@ ms.locfileid: "57576860"
 
 
 ## <a name="trigger-a-pipeline-run"></a>Активация выполнения конвейера
-Выберите **Trigger** (Запустить) на панели инструментов, а затем **Trigger Now** (Запустить сейчас). 
+Выберите **Добавить триггер** на панели инструментов, а затем **Trigger Now** (Запустить сейчас). 
 
 ![Кнопки "Trigger" (Запустить) и "Trigger Now" (Запустить сейчас)](./media/tutorial-transform-data-spark-portal/trigger-now-menu.png)
 
@@ -222,7 +222,7 @@ ms.locfileid: "57576860"
 
    ![Состояние выполнения конвейера](./media/tutorial-transform-data-spark-portal/pipeline-run-succeeded.png) 
 
-   Чтобы вернуться в режим просмотра запусков конвейера, выберите ссылку **Конвейеры** вверху.
+   Чтобы вернуться в режим просмотра запусков конвейера, выберите ссылку **All Pipeline Runs** (Все запуски конвейера).
 
    ![Просмотр параметра "Выполнения действий"](./media/tutorial-transform-data-spark-portal/activity-runs.png)
 
@@ -231,7 +231,7 @@ ms.locfileid: "57576860"
 
 ![Расположение выходного файла](./media/tutorial-transform-data-spark-portal/verity-output.png)
 
-В этом файле должны содержаться все слова из входного текстового файла и число, обозначающее количество таких слов в этом файле. Например:  
+В этом файле должны содержаться все слова из входного текстового файла и число, обозначающее количество таких слов в этом файле. Например: 
 
 ```
 (u'This', 1)
@@ -253,7 +253,7 @@ ms.locfileid: "57576860"
 Чтобы узнать, как преобразовать данные, запустив сценарий Hive в кластере Azure HDInsight, который находится в виртуальной сети, ознакомьтесь со следующим руководством: 
 
 > [!div class="nextstepaction"]
-> [Руководство Преобразование данных в виртуальной сети Azure с помощью действия Hive в фабрике данных Azure](tutorial-transform-data-hive-virtual-network-portal.md).
+> [Руководство. Преобразование данных в виртуальной сети Azure с помощью действия Hive в фабрике данных Azure](tutorial-transform-data-hive-virtual-network-portal.md).
 
 
 

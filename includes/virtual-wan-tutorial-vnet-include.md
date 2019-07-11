@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 04/23/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 40c8cb41ad3bcd46e9973a5f96134ff1bfd02fd2
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 40ae634897361219c39e60d2161d3576cc44a400
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66150828"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67077529"
 ---
-Чтобы быстро создать свою виртуальную сеть, нажмите кнопку "Попробовать" в этой статье, чтобы открыть консоль PowerShell. Задайте значения, затем скопируйте и вставьте команды в окно консоли. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](/powershell/azure/new-azureps-module-az) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az см. в статье об [установке Azure PowerShell](/powershell/azure/install-az-ps).
+Чтобы быстро создать виртуальную сеть, нажмите кнопку "Попробовать" в этой статье, чтобы открыть консоль PowerShell в Azure Cloud Shell. Задайте значения, затем скопируйте и вставьте команды в окно консоли. 
 
 Убедитесь, что адресное пространство для создаваемой виртуальной сети не пересекается с диапазонами адресов для других виртуальных сетей, к которым вы хотите подключиться, или с вашими локальными адресными пространствами сети.
 

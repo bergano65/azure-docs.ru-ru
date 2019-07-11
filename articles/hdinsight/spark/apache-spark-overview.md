@@ -8,12 +8,12 @@ ms.custom: hdinsightactive,mvc
 ms.topic: overview
 ms.date: 05/28/2019
 ms.author: hrasheed
-ms.openlocfilehash: 4fd03dc6ebada5b665a0c256e9cedbb646cd2fb6
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: f10a45c7d9d5da4d5bea535e5157d9b96164e1b0
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66297455"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448676"
 ---
 # <a name="what-is-apache-spark-in-azure-hdinsight"></a>Apache Spark в Azure HDInsight
 
@@ -33,10 +33,10 @@ Spark предоставляет примитивы для кластерных 
 | --- | --- |
 | Простота создания |Создание кластера Spark в HDInsight с помощью портала Azure, Azure PowerShell или пакета SDK для HDInsight .NET занимает всего несколько минут. См. инструкции по [началу работы с кластером Apache Spark в HDInsight](apache-spark-jupyter-spark-sql-use-portal.md). |
 | Простота использования |Кластер Spark в HDInsight включает записные книжки Jupyter и Apache Zeppelin. Их можно использовать для интерактивной обработки и визуализации данных.|
-| Интерфейсы REST API |Кластеры Spark в HDInsight включают [Apache Livy](https://github.com/cloudera/hue/tree/master/apps/spark/java#welcome-to-livy-the-rest-spark-server), сервер заданий Spark на основе REST API, который позволяет удаленно отправлять и отслеживать задания. См. руководство по [удаленной отправке заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](apache-spark-livy-rest-interface.md).|
+| Интерфейсы REST API |Кластеры Spark в HDInsight включают [Apache Livy](https://github.com/cloudera/hue/tree/master/apps/spark/java#welcome-to-livy-the-rest-spark-server), сервер заданий Spark на основе REST API, который позволяет удаленно отправлять и отслеживать задания. См. руководство по [удаленной отправке заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](apache-spark-livy-rest-interface.md).|
 | Поддержка Azure Data Lake Storage | Кластеры Spark в HDInsight могут использовать Azure Data Lake Storage как основное или дополнительное хранилище. Дополнительные сведения о Data Lake Storage см. в [обзоре Azure Data Lake Storage](../../data-lake-store/data-lake-store-overview.md). |
 | Интеграция со службами Azure |Кластер Spark в HDInsight поставляется с соединителем для Центров событий Azure. Вы можете создавать приложения потоковой передачи с помощью Центров событий (в дополнение к системе [Apache Kafka](https://kafka.apache.org/), которая уже входит в состав Spark). |
-| Поддержка ML Server | Поддержка ML Server в HDInsight предоставляется в рамках типа кластера **Служб машинного обучения**. В кластере Служб машинного обучения можно настроить выполнение распределенных вычислений в среде R со скоростью, заявленной для кластера Spark. Дополнительные сведения см. в статье [Начало работы с кластером R Server в Azure HDInsight](../r-server/r-server-get-started.md). |
+| Поддержка ML Server | Поддержка ML Server в HDInsight предоставляется в рамках типа кластера **Служб машинного обучения**. В кластере Служб машинного обучения можно настроить выполнение распределенных вычислений в среде R со скоростью, заявленной для кластера Spark. Дополнительные сведения см. в статье [Общие сведения о службах машинного обучения в HDInsight](../r-server/r-server-overview.md). |
 | Интеграция со сторонними IDE | HDInsight предоставляет несколько подключаемых модулей IDE, которые можно использовать для создания приложений и их отправки в кластер HDInsight Spark. См. дополнительные сведения об [использовании Azure Toolkit for IntelliJ (IDEA)](apache-spark-intellij-tool-plugin.md), [использовании HDInsight для VSCode](../hdinsight-for-vscode.md) и [использовании Azure Toolkit for Eclipse](apache-spark-eclipse-tool-plugin.md).|
 | Параллельные запросы |Кластеры Spark в HDInsight поддерживают параллельные запросы. Благодаря этому несколько запросов от одного пользователя или несколько запросов от разных пользователей и из различных приложений могут использовать одни и те же ресурсы кластера. |
 | Кэширование на накопители SSD |Можно выбрать кэширование данных в памяти или на накопители SSD, подключенные к узлам кластера. Кэширование в память обеспечивает наилучшую производительность запросов, однако может оказаться ресурсоемким. Кэширование на накопители SSD предоставляет возможность повысить производительность запросов без необходимости создания кластера такого размера, который необходим для размещения всего набора данных в памяти. |

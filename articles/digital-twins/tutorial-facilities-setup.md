@@ -1,23 +1,23 @@
 ---
-title: Руководство. Развертывание Azure Digital Twins | Документация Майкрософт
+title: Руководство по Развертывание Azure Digital Twins | Документация Майкрософт
 description: В этом руководстве вы узнаете, как развертывать экземпляр Azure Digital Twins и настроить пространственные ресурсы.
 services: digital-twins
-author: dsk-2015
+author: alinamstanciu
 ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
-ms.date: 12/17/2018
-ms.author: dkshir
-ms.openlocfilehash: 096df62305af91ac85ce9ddbcff5b0160aaa4e8a
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.date: 06/26/2019
+ms.author: alinast
+ms.openlocfilehash: 15a152d6941a8c77cae2ef7771be93db4ddceae4
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57537467"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67484694"
 ---
-# <a name="tutorial-deploy-azure-digital-twins-and-configure-a-spatial-graph"></a>Руководство. Развертывание Azure Digital Twins и настройка пространственного графа
+# <a name="tutorial-deploy-azure-digital-twins-preview-and-configure-a-spatial-graph"></a>Руководство по развертыванию Azure Digital Twins (предварительная версия) и настройке пространственного графа
 
-Служба Azure Digital Twins позволяет объединять людей, места и устройства в связанной пространственной системе. В руководствах этой серии показано, как с помощью Azure Digital Twins определять степень заполненности помещения, а также оптимальные условия температуры и качества воздуха. 
+Служба Azure Digital Twins (предварительная версия) позволяет объединять людей, места и устройства в связанной пространственной системе. В руководствах этой серии показано, как с помощью Azure Digital Twins определять степень заполненности помещения, а также оптимальные условия температуры и качества воздуха. 
 
 В этих руководствах рассматривается консольное приложение .NET, которое позволяет реализовать сценарий офисного здания. В здании есть несколько этажей с комнатами на каждом из них. В комнатах есть устройства с прикрепленными датчиками, которые фиксируют движение, температуру окружающей среды и качество воздуха. 
 
@@ -103,7 +103,7 @@ ms.locfileid: "57537467"
 1. В Visual Studio Code откройте файл [appSettings.json](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/appSettings.json) в проекте **occupancy-quickstart**. Обновите следующие значения:
    * **ClientId:** введите идентификатор приложения из регистрации приложения Azure AD. Вы записали этот идентификатор в разделе, в котором [устанавливали разрешения приложения](#permissions).
    * **Tenant:** введите идентификатор каталога своего [клиента Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant). Вы также записали этот идентификатор в разделе, в котором [устанавливали разрешения приложения](#permissions).
-   * **BaseUrl:** введите URL-адрес экземпляра Digital Twins. Чтобы получить этот URL-адрес, замените заполнители в этом URL-адресе значениями для вашего экземпляра: `https://yourDigitalTwinsName.yourLocation.azuresmartspaces.net/management/api/v1.0/`. Вы также можете получить этот URL-адрес, изменив URL-адрес API управления, указанный в [разделе развертывания](#deploy). Замените **swagger/** на **api/v1.0/**.
+   * **BaseUrl:** введите URL-адрес экземпляра Digital Twins. Чтобы получить этот URL-адрес, замените заполнители в этом URL-адресе значениями для вашего экземпляра: `https://yourDigitalTwinsName.yourLocation.azuresmartspaces.net/management/api/v1.0/`. Вы также можете получить этот URL-адрес, изменив URL-адрес API управления, указанный в [разделе развертывания](#deploy). Замените **swagger/** на **api/v1.0/** .
 
 1. Просмотрите список функций Digital Twins, которые вы можете исследовать с помощью примера. Выполните следующую команду:
 

@@ -6,14 +6,14 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: sample
-ms.date: 10/26/2018
+ms.date: 7/2/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 8aae88b24cee64136fb247744325424a446a7bbf
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: a256a0ff5164ec9b25aea3849f20643ee3719fac
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54043164"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67541421"
 ---
 # <a name="create-an-azure-cosmos-db-account-with-azure-cosmos-dbs-api-for-mongodb-using-azure-cli"></a>Создание учетной записи с использованием API Azure Cosmos DB для MongoDB с помощью Azure CLI
 
@@ -22,6 +22,8 @@ ms.locfileid: "54043164"
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+
+[!NOTE] Дополнительные сведения о соглашениях об именовании базы данных и контейнера см. в статье [Work with databases, containers, and items in Azure Cosmos DB](../databases-containers-items.md) (Работа с базами данных, контейнерами и элементами в Azure Cosmos DB).
 
 ## <a name="sample-script"></a>Пример скрипта
 

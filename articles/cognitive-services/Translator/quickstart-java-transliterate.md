@@ -3,19 +3,19 @@ title: Краткое руководство. Транслитерация те�
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как транслитерировать (преобразовывать) текст из одного сценария в другой с помощью Java и REST API перевода текстов. В этом примере японский текст транслитерируется в текст на латинице.
 services: cognitive-services
-author: erhopf
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
-ms.author: erhopf
-ms.openlocfilehash: 353d5950372fe9a1255bf2b17dea4f8148d3ee6e
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.author: swmachan
+ms.openlocfilehash: 599ff4d2e888e6495044bb2161bc11813064399b
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66514789"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67445072"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-transliterate-text-using-java"></a>Краткое руководство. Транслитерация текста с помощью Java и API перевода текстов
 
@@ -108,6 +108,7 @@ public class Transliterate {
 String subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
 String url = "https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0&language=ja&fromScript=jpan&toScript=latn";
 ```
+Если вы используете подписку на несколько служб Cognitive Services, необходимо также включить `Ocp-Apim-Subscription-Region` в параметрах запроса. [Дополнительные сведения об аутентификации с использованием подписки на несколько служб](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
 
 ## <a name="create-a-client-and-build-a-request"></a>Создание клиента и выполнение запроса
 

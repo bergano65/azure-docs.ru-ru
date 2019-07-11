@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 10/31/2018
+ms.date: 06/13/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 34d62df989da80c84bad92a90fc2253c416a4924
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 688c33a098bb34a6b39937579e2e25591786c531
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64939650"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67147488"
 ---
 # <a name="tutorial-unpack-connect-and-unlock-azure-data-box-disk"></a>Руководство по Распаковка, подключение и разблокировка Диска Azure Data Box
 
@@ -123,7 +123,9 @@ ms.locfileid: "64939650"
     ```  
 8. Когда диск будет разблокирован, можно просмотреть содержимое диска.    
 
-    ![Содержимое диска Data Box](media/data-box-disk-deploy-set-up/data-box-disk-content.png) 
+    ![Содержимое диска Data Box](media/data-box-disk-deploy-set-up/data-box-disk-content.png)
+
+Если вы столкнетесь с проблемами при разблокировке дисков, ознакомьтесь со сведениями об [устранении неполадок при разблокировке](data-box-disk-troubleshoot-unlock.md). 
 
 ## <a name="unlock-disks-on-linux-client"></a>Разблокировка дисков на клиенте Linux
 
@@ -253,6 +255,9 @@ ms.locfileid: "64939650"
 8. Когда диск будет разблокирован, можно перейти к точке подключения и просмотреть содержимое диска. Теперь все готово для копирования данных в папки *BlockBlob* или *PageBlob*. 
 
     ![Содержимое диска Data Box](media/data-box-disk-deploy-set-up/data-box-disk-content-linux.png)
+
+
+Если вы столкнетесь с проблемами при разблокировке дисков, ознакомьтесь со сведениями об [устранении неполадок при разблокировке](data-box-disk-troubleshoot-unlock.md). 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

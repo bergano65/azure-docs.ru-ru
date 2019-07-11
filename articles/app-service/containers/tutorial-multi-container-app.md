@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/29/2019
 ms.author: msangapu
-ms.openlocfilehash: d4a93bbd823db59d688f77a626b1225519fb7b44
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: d1176d2d70dcd4de3e4287a1973de027c061f291
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65407610"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67055555"
 ---
 # <a name="tutorial-create-a-multi-container-preview-app-in-web-app-for-containers"></a>Руководство по Создание многоконтейнерного приложения (предварительная версия) на платформе Azure "Веб-приложение для контейнеров"
 
@@ -115,7 +115,7 @@ az appservice plan create --name myAppServicePlan --resource-group myResourceGro
 
 ## <a name="create-a-docker-compose-app"></a>Создание приложения Docker Compose
 
-В Cloud Shell создайте многоконтейнерное [веб-приложение](app-service-linux-intro.md) в рамках плана службы приложений `myAppServicePlan` с помощью команды [az webapp create](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create). Не забудьте указать уникальное имя приложения вместо _\<app-name>_.
+В Cloud Shell создайте многоконтейнерное [веб-приложение](app-service-linux-intro.md) в рамках плана службы приложений `myAppServicePlan` с помощью команды [az webapp create](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create). Не забудьте указать уникальное имя приложения вместо _\<app-name>_ .
 
 ```azurecli-interactive
 az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app-name> --multicontainer-config-type compose --multicontainer-config-file docker-compose-wordpress.yml
@@ -361,7 +361,7 @@ services:
 
 ### <a name="update-app-with-new-configuration"></a>Обновление приложения с указанием новой конфигурации
 
-В Cloud Shell измените конфигурацию многоконтейнерного [веб-приложения](app-service-linux-intro.md) с помощью команды [az webapp config container set](/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set). Не забудьте указать уникальное имя приложения вместо _\<app-name>_.
+В Cloud Shell измените конфигурацию многоконтейнерного [веб-приложения](app-service-linux-intro.md) с помощью команды [az webapp config container set](/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set). Не забудьте указать уникальное имя приложения вместо _\<app-name>_ .
 
 ```azurecli-interactive
 az webapp config container set --resource-group myResourceGroup --name <app-name> --multicontainer-config-type compose --multicontainer-config-file docker-compose-wordpress.yml
@@ -445,7 +445,7 @@ az webapp config appsettings set --resource-group myResourceGroup --name <app-na
 
 ### <a name="update-app-with-new-configuration"></a>Обновление приложения с указанием новой конфигурации
 
-В Cloud Shell измените конфигурацию многоконтейнерного [веб-приложения](app-service-linux-intro.md) с помощью команды [az webapp config container set](/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set). Не забудьте указать уникальное имя приложения вместо _\<app-name>_.
+В Cloud Shell измените конфигурацию многоконтейнерного [веб-приложения](app-service-linux-intro.md) с помощью команды [az webapp config container set](/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set). Не забудьте указать уникальное имя приложения вместо _\<app-name>_ .
 
 ```azurecli-interactive
 az webapp config container set --resource-group myResourceGroup --name <app-name> --multicontainer-config-type compose --multicontainer-config-file compose-wordpress.yml
@@ -530,7 +530,7 @@ WordPress подключится к серверу Redis. **Состояние**
 Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Руководство Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
+> [Руководство. Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
 
 Также ознакомьтесь с другими ресурсами:
 

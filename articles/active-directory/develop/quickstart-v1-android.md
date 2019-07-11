@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: brandwe, jmprieur, saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a05d8b9182451fc52dd1860dac1dcce57ba2c55
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 6023e4bd4028cf1679051b6665297afd00b1eba7
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66121998"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67482657"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из приложения Android
 
@@ -45,7 +45,7 @@ ms.locfileid: "66121998"
 
 ## <a name="scenario-sign-in-users-and-call-the-microsoft-graph"></a>Сценарий: вход пользователей и вызов Microsoft Graph
 
-![Топология](./media/quickstart-v1-android/active-directory-android-topology.png)
+![Отображает топологию Azure AD и Android](./media/quickstart-v1-android/active-directory-android-topology.png)
 
 Это приложение можно использовать для всех учетных записей Azure AD. Оно поддерживает сценарии как с одним, так и с несколькими клиентами (как описано ниже). Вы сможете создавать приложения для подключения к корпоративным пользователям и доступа к их данным в Azure и Office 365 с помощью Microsoft Graph. При проверке подлинности пользователям потребуется войти и подтвердить разрешения для приложения, в некоторых случаях разрешения должен подтвердить системный администратор. Большая часть логики в этом примере иллюстрирует проверку подлинности конечного пользователя и простой вызов Microsoft Graph.
 

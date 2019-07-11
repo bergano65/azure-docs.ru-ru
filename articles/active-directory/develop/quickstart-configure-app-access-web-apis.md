@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: aragra, lenalepa, sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b434e5b0c4524af642eb1255597cd3e7674571c
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 7e8b0e17248dff3c53b96fd240a7566f09b22fae
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65545804"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67482686"
 ---
 # <a name="quickstart-configure-a-client-application-to-access-web-apis"></a>Краткое руководство. Настройка клиентского приложения для доступа к веб-API
 
@@ -74,14 +74,14 @@ ms.locfileid: "65545804"
 1. Чтобы добавить пользовательский URI перенаправления для общедоступных клиентских приложений и веб-приложений, сделайте следующее:
 
    1. Найдите раздел **URI перенаправления**.
-   1. Выберите тип приложения, которое вы создаете — **Веб** или **общедоступного клиента (для мобильных и классических приложений)**.
+   1. Выберите тип приложения, которое вы создаете — **Веб** или **общедоступного клиента (для мобильных и классических приложений)** .
    1. Введите URI перенаправления для приложения.
       * Для веб-приложений укажите основной URL-адрес приложения. Например, выполняемое на локальном компьютере веб-приложение может иметь адрес `http://localhost:31544`. Пользователи будут использовать этот URL-адрес для входа в приложение веб-клиента.
       * Для общедоступных приложений укажите URI, который использует AAD для возвращения ответов маркера. Укажите значение, используемое в вашем приложении, например https://MyFirstApp.
 
 1. Чтобы выбрать из предлагаемых URI перенаправления для общедоступных клиентов (мобильные устройства, компьютеры), сделайте следующее:
 
-    1. Найдите раздел о предлагаемых **URI перенаправления для общедоступных клиентов (мобильные устройства, компьютеры)**.
+    1. Найдите раздел о предлагаемых **URI перенаправления для общедоступных клиентов (мобильные устройства, компьютеры)** .
     1. Выберите соответствующий URI перенаправления для приложения с помощью флажков.
 
 ## <a name="add-credentials-to-your-web-application"></a>Добавление учетных данных в веб-приложение
@@ -110,7 +110,7 @@ ms.locfileid: "65545804"
 
 ## <a name="add-permissions-to-access-web-apis"></a>Добавление разрешений для доступа к веб-API
 
-[![Добавление разрешений API](./media/quickstart-update-azure-ad-app-preview/api-permissions-expanded.png)](./media/quickstart-update-azure-ad-app-preview/api-permissions-expanded.png#lightbox)
+[![Отображает экран, где можно добавить разрешения API](./media/quickstart-update-azure-ad-app-preview/api-permissions-expanded.png)](./media/quickstart-update-azure-ad-app-preview/api-permissions-expanded.png#lightbox)
 
 Чтобы добавить разрешения для доступа к API ресурсов из клиента, сделайте следующее:
 

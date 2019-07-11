@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 05/02/2019
+ms.date: 07/05/2019
 ms.author: bidishac
-ms.openlocfilehash: 83149a8422db25106a97b1711c0ae9ce3c6603eb
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 78e80b276a13ee6e27fdf0515f2901fdeaa20c5d
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65465665"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67604926"
 ---
 # <a name="quickstart-create-a-voice-first-virtual-assistant-with-the-speech-sdk-java"></a>Краткое руководство. Создание виртуального помощника по обработке голоса с помощью пакета SDK для распознавания речи, Java
 
@@ -30,14 +30,11 @@ ms.locfileid: "65465665"
 * Операционная система: Windows (64-разрядная версия), Ubuntu Linux 16.04/18.04 (64-разрядная версия), а также macOS 10.13 или более поздней версии
 * [Eclipse Java IDE](https://www.eclipse.org/downloads/)
 * [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) или [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
-* Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
+* Ключ подписки Azure для служб "Речь". [Получите бесплатно](get-started.md) или создайте его на [портале Azure](https://portal.azure.com).
 * Предварительно настроенный бот, созданный с помощью Bot Framework версии 4.2 или более поздней. Для получения речевого ввода бот необходимо подписать на новый канал "Речь Direct Line".
 
     > [!NOTE]
-    > В настоящее время в предварительной версии канала "Речь Direct Line" поддерживается только регион **westus2**.
-
-    > [!NOTE]
-    > 30-дневная пробная версия ценовой категории "Стандартный", описанная в разделе [Try Speech Services for free](get-started.md) (Бесплатная пробная подписка на службу "Речь"), ограничена регионом **westus** (а не **westus2**) и поэтому несовместима с каналом "Речь Direct Line". Подписки в регионе **westus2** ценовых категорий "Стандартный" и "Бесплатный" совместимы с этим каналом.
+    > Служба "Речь Direct Line" (предварительная версия) сейчас доступна в ряде регионов служб распознавания речи. Ознакомьтесь со [списком поддерживаемых регионов для виртуальных помощников по обработке голоса](regions.md#Voice-first virtual assistants) и убедитесь, что ваши ресурсы развернуты в одном из этих регионов.
 
 Если вы используете Ubuntu 16.04 или 18.04, убедитесь, что перед запуском Eclipse у вас установлены следующие зависимости.
 
@@ -82,8 +79,8 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
 
     import com.microsoft.cognitiveservices.speech.audio.AudioConfig;
     import com.microsoft.cognitiveservices.speech.audio.PullAudioOutputStream;
-    import com.microsoft.cognitiveservices.speech.dialog.BotConnectorConfig;
-    import com.microsoft.cognitiveservices.speech.dialog.SpeechBotConnector;
+    import com.microsoft.cognitiveservices.speech.dialog.DialogServiceConfig;
+    import com.microsoft.cognitiveservices.speech.dialog.DialogServiceConnector;
     import org.slf4j.Logger;
     import org.slf4j.LoggerFactory;
 
@@ -142,62 +139,59 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
     }
     ```
 
-1. В методе **main** сначала настройте `BotConnectorConfig` и используйте его для создания экземпляра `SpeechBotConnector`. Он будет подключаться к каналу "Речь Direct Line" для взаимодействия с ботом. Экземпляр `AudioConfig` также используется для указания источника звуковых входных данных. В этом примере микрофон по умолчанию используется с `AudioConfig.fromDefaultMicrophoneInput()`.
+1. В методе **main** сначала настройте `DialogServiceConfig` и используйте его для создания экземпляра `DialogServiceConnector`. Он будет подключаться к каналу "Речь Direct Line" для взаимодействия с ботом. Экземпляр `AudioConfig` также используется для указания источника звуковых входных данных. В этом примере микрофон по умолчанию используется с `AudioConfig.fromDefaultMicrophoneInput()`.
 
     * Замените строку `YourSubscriptionKey` своим ключом подписки, который вы можете получить [здесь](get-started.md).
     * Замените строку `YourServiceRegion` на [регион](regions.md), связанный с вашей подпиской.
     * Замените строку `YourChannelSecret` секретом канала "Речь Direct Line".
 
     > [!NOTE]
-    > В настоящее время в предварительной версии канала "Речь Direct Line" поддерживается только регион **westus2**.
-
-    > [!NOTE]
-    > 30-дневная пробная версия ценовой категории "Стандартный", описанная в разделе [Try Speech Services for free](get-started.md) (Бесплатная пробная подписка на службу "Речь"), ограничена регионом **westus** (а не **westus2**) и поэтому несовместима с каналом "Речь Direct Line". Подписки в регионе **westus2** ценовых категорий "Стандартный" и "Бесплатный" совместимы с этим каналом.
+    > Служба "Речь Direct Line" (предварительная версия) сейчас доступна в ряде регионов служб распознавания речи. Ознакомьтесь со [списком поддерживаемых регионов для виртуальных помощников по обработке голоса](regions.md#voice-first-virtual-assistants) и убедитесь, что ваши ресурсы развернуты в одном из этих регионов.
 
     ```java
     final String channelSecret = "YourChannelSecret"; // Your channel secret
-    final String subscriptionKey = "YourSubscriptionKey"; // your subscription key
-    final String region = "YourServiceRegion"; // Your service region. Currently assumed to be westus2
-    final BotConnectorConfig botConnectorConfig = BotConnectorConfig.fromSecretKey(channelSecret, subscriptionKey, region);
+    final String subscriptionKey = "YourSubscriptionKey"; // Your subscription key
+    final String region = "YourServiceRegion"; // Your speech subscription service region. Note: only a subset of regions are currently supported
+    final DialogServiceConfig botConfig = DialogServiceConfig.fromBotSecret(channelSecret, subscriptionKey, region);
 
     // Configure audio input from microphone.
     final AudioConfig audioConfig = AudioConfig.fromDefaultMicrophoneInput();
 
-    // Create a SpeechjBotConnector instance
-    final SpeechBotConnector botConnector = new SpeechBotConnector(botConnectorConfig, audioConfig);
+    // Create a DialogServiceConnector instance
+    final DialogServiceConnector connector = new DialogServiceConnector(botConfig, audioConfig);
     ```
 
-1. `SpeechBotConnector` использует несколько событий, чтобы сообщать о работе бота, результатах распознавания речи и других данных. Далее добавьте эти прослушиватели событий.
+1. `DialogServiceConnector` использует несколько событий, чтобы сообщать о работе бота, результатах распознавания речи и других данных. Далее добавьте эти прослушиватели событий.
 
     ```java
     // Recognizing will provide the intermediate recognized text while an audio stream is being processed
-    botConnector.recognizing.addEventListener((o, speechRecognitionResultEventArgs) -> {
+    connector.recognizing.addEventListener((o, speechRecognitionResultEventArgs) -> {
         log.info("Recognizing speech event text: {}", speechRecognitionResultEventArgs.getResult().getText());
     });
 
     // Recognized will provide the final recognized text once audio capture is completed
-    botConnector.recognized.addEventListener((o, speechRecognitionResultEventArgs) -> {
+    connector.recognized.addEventListener((o, speechRecognitionResultEventArgs) -> {
         log.info("Recognized speech event reason text: {}", speechRecognitionResultEventArgs.getResult().getText());
     });
 
     // SessionStarted will notify when audio begins flowing to the service for a turn
-    botConnector.sessionStarted.addEventListener((o, sessionEventArgs) -> {
+    connector.sessionStarted.addEventListener((o, sessionEventArgs) -> {
         log.info("Session Started event id: {} ", sessionEventArgs.getSessionId());
     });
 
     // SessionStopped will notify when a turn is complete and it's safe to begin listening again
-    botConnector.sessionStopped.addEventListener((o, sessionEventArgs) -> {
+    connector.sessionStopped.addEventListener((o, sessionEventArgs) -> {
         log.info("Session stopped event id: {}", sessionEventArgs.getSessionId());
     });
 
     // Canceled will be signaled when a turn is aborted or experiences an error condition
-    botConnector.canceled.addEventListener((o, canceledEventArgs) -> {
+    connector.canceled.addEventListener((o, canceledEventArgs) -> {
         log.info("Canceled event details: {}", canceledEventArgs.getErrorDetails());
-        botConnector.disconnectAsync();
+        connector.disconnectAsync();
     });
 
     // ActivityReceived is the main way your bot will communicate with the client and uses bot framework activities.
-    botConnector.activityReceived.addEventListener((o, activityEventArgs) -> {
+    connector.activityReceived.addEventListener((o, activityEventArgs) -> {
         final String act = activityEventArgs.getActivity().serialize();
             log.info("Received activity {} audio", activityEventArgs.hasAudio() ? "with" : "without");
             if (activityEventArgs.hasAudio()) {
@@ -206,15 +200,15 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
         });
     ```
 
-1. Подключите `SpeechBotConnector` к каналу "Речь Direct Line", вызвав метод `connectAsync()`. Чтобы протестировать свой бот, вы можете вызвать метод `listenOnceAsync` для отправки звуковых входных данных со своего микрофона. Вы можете также использовать метод `sendActivityAsync` для отправки пользовательского действия в виде сериализованной строки. Эти пользовательские действия могут предоставить дополнительные данные, которые ваш бот будет использовать в разговоре.
+1. Подключите `DialogServiceConnector` к каналу "Речь Direct Line", вызвав метод `connectAsync()`. Чтобы протестировать свой бот, вы можете вызвать метод `listenOnceAsync` для отправки звуковых входных данных со своего микрофона. Вы можете также использовать метод `sendActivityAsync` для отправки пользовательского действия в виде сериализованной строки. Эти пользовательские действия могут предоставить дополнительные данные, которые ваш бот будет использовать в разговоре.
 
     ```java
-    botConnector.connectAsync();
+    connector.connectAsync();
     // Start listening.
     System.out.println("Say something ...");
-    botConnector.listenOnceAsync();
+    connector.listenOnceAsync();
 
-    // botConnector.sendActivityAsync(...)
+    // connector.sendActivityAsync(...)
     ```
 
 1. Сохраните изменения в файле `Main`.
@@ -479,10 +473,12 @@ sudo apt-get install build-essential libssl1.0.0 libasound2 wget
 Дополнительные примеры, такие как чтение речи из аудиофайла, доступны на сайте GitHub.
 
 > [!div class="nextstepaction"]
-> [Примеры для Java на сайте GitHub](https://aka.ms/csspeech/samples)
+> [Создание и развертывание простого бота](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0)
 
 ## <a name="see-also"></a>См. также
 
-- [Краткое руководство Перевод речи с помощью пакета SDK службы "Речь" для Java"](quickstart-translate-speech-java-jre.md)
-- [Настройка акустических моделей](how-to-customize-acoustic-models.md)
-- [Настройка языковых моделей](how-to-customize-language-model.md)
+- [About custom voice-first virtual assistants preview](voice-first-virtual-assistants.md) (Сведения о пользовательских виртуальных помощниках по обработке голоса (предварительная версия))
+- [Получите ключ подписки для Служб речи бесплатно](get-started.md)
+- [Create a custom wake word by using the Speech service](speech-devices-sdk-create-kws.md) (Создание пользовательских слов для активации с помощью службы "Речь")
+- [Подключение бота к каналу Direct Line Speech (предварительная версия)](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
+- [Примеры для Java на сайте GitHub](https://aka.ms/csspeech/samples)

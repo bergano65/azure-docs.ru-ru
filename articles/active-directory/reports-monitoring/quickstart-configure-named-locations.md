@@ -16,12 +16,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71b21c4727e7679c25dc2574a6506f8d3932aec2
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: d12991813f68a42f9846c1c9c9c31c01d371d1d4
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58434795"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67107642"
 ---
 # <a name="quickstart-configure-named-locations-in-azure-active-directory"></a>Краткое руководство. Настройка именованных расположений в Azure Active Directory
 
@@ -43,7 +43,7 @@ ms.locfileid: "58434795"
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 
-2. В области слева выберите **Azure Active Directory**, а затем выберите **Условный доступ** в разделе **Безопасность**.
+2. В области слева выберите **Azure Active Directory**, а затем **Условный доступ** в разделе **Безопасность**.
 
     ![Вкладка "Условный доступ"](./media/quickstart-configure-named-locations/entrypoint.png)
 
@@ -61,8 +61,8 @@ ms.locfileid: "58434795"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения можно найти в разделе
 
 - [Что представляет собой условный доступ в Azure Active Directory?](../active-directory-conditional-access-azure-portal.md)
-- [Условия расположения при условном доступе в Azure AD](../conditional-access/location-condition.md)
+- [What is the location condition in Azure Active Directory Conditional Access?](../conditional-access/location-condition.md) (Что собой представляют условия расположения при условном доступе в Azure AD?)
 - [Отчет о событиях входа, представляющих риск, на портале Azure Active Directory](concept-risky-sign-ins.md)  

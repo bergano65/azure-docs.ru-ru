@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5fdf88ed6cedaa38676a56536ff1eda7ee6bca66
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: a229eef3d49964e71becf066d67f60b18da6fc18
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56204803"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67113243"
 ---
-# <a name="tutorial-complete-an-azure-multi-factor-authentication-pilot-roll-out"></a>Руководство. Выполнение пилотного развертывания Многофакторной идентификации Azure
+# <a name="tutorial-complete-an-azure-multi-factor-authentication-pilot-roll-out"></a>Руководство по Выполнение пилотного развертывания Многофакторной идентификации Azure
 
-В этом руководстве описывается процедура настройки политики условного доступа для Многофакторной идентификации Azure (Azure MFA) при входе на портал Azure. Эта политика развертывается и проверяется в определенной группе пилотных пользователей. Развертывание Azure MFA с помощью условного доступа обеспечивает большую гибкость для организаций и администраторов по сравнению с традиционным принудительным методом.
+В этом учебнике описывается процедура настройки политики условного доступа для Многофакторной идентификации Azure (Azure MFA) при входе на портал Azure. Эта политика развертывается и проверяется в определенной группе пилотных пользователей. Развертывание Azure MFA с помощью условного доступа обеспечивает большую гибкость для организаций и администраторов по сравнению с традиционным принудительным методом.
 
 > [!div class="checklist"]
 > * Включение Многофакторной идентификации Azure

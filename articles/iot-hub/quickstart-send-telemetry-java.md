@@ -9,13 +9,13 @@ services: iot-hub
 ms.devlang: java
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 02/22/2019
-ms.openlocfilehash: 12574dd6600004175ab85eead0f837544c6e5ebf
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.date: 06/21/2019
+ms.openlocfilehash: 52e221088a7b12551636ecdc81532448f38eb26c
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59004796"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67330450"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-java"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (Java)
 
@@ -87,7 +87,7 @@ az extension add --name azure-cli-iot-ext
 
     Это значение понадобится позже в рамках этого краткого руководства.
 
-3. Вам также понадобится _конечная точка, совместимая с центрами событий_, _путь, совместимый с концентраторами событий_, и _первичный ключ iothubowner_ из Центра Интернета вещей, чтобы подключить внутреннее приложение к Центру Интернета вещей и получить сообщения. Следующие команды позволяют получить эти значения для Центра Интернета вещей:
+3. Вам также понадобится _конечная точка, совместимая с Центрами событий_, _путь, совместимый с Центрами событий_, и _первичный ключ службы_ из Центра Интернета вещей, чтобы подключить внутреннее приложение к Центру Интернета вещей и получить сообщения. Следующие команды позволяют получить эти значения для Центра Интернета вещей:
 
      **YourIoTHubName. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
@@ -96,7 +96,7 @@ az extension add --name azure-cli-iot-ext
 
     az iot hub show --query properties.eventHubEndpoints.events.path --name YourIoTHubName
 
-    az iot hub policy show --name iothubowner --query primaryKey --hub-name YourIoTHubName
+    az iot hub policy show --name service --query primaryKey --hub-name YourIoTHubName
     ```
 
     Запишите эти три значения, которые нужно использовать позже в рамках этого краткого руководства.
@@ -139,8 +139,7 @@ az extension add --name azure-cli-iot-ext
     | -------- | ----------- |
     | `eventHubsCompatibleEndpoint` | Замените значение переменной записанной ранее конечной точкой, совместимой с центрами событий. |
     | `eventHubsCompatiblePath`     | Замените значение переменной записанным ранее путем, совместимым с центрами событий. |
-    | `iotHubSasKey`                | Замените значение переменной записанным ранее первичным ключом iothubowner. |
-
+    | `iotHubSasKey`                | Замените значение переменной записанным ранее первичным ключом службы. |
 
 3. Установите необходимые библиотеки и создайте внутреннее приложение, выполнив в окне терминала на локальном компьютере следующие команды:
 

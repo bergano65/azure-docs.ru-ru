@@ -3,19 +3,19 @@ title: Краткое руководство. Транслитерация те�
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как транслитерировать (преобразовывать) текст из одного письма в другое с помощью Python и REST API перевода текстов. В этом примере японский текст транслитерируется в текст на латинице.
 services: cognitive-services
-author: erhopf
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
-ms.author: erhopf
-ms.openlocfilehash: ac91212ecc43e5aa03ecdd4857b1431ccf82b1c3
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.author: swmachan
+ms.openlocfilehash: 033bb19bfd003f889735f73a18a0eef1a20b8354
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66515053"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447889"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-transliterate-text-using-python"></a>Краткое руководство. Транслитерация текста с помощью Python и API перевода текстов
 
@@ -36,7 +36,10 @@ ms.locfileid: "66515053"
 
 ```python
 # -*- coding: utf-8 -*-
-import os, requests, uuid, json
+import os
+import requests
+import uuid
+import json
 ```
 
 > [!NOTE]
@@ -92,6 +95,8 @@ headers = {
 }
 ```
 
+Если вы используете подписку на несколько служб Cognitive Services, необходимо также включить `Ocp-Apim-Subscription-Region` в параметрах запроса. [Дополнительные сведения об аутентификации с использованием подписки на несколько служб](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
+
 ## <a name="create-a-request-to-transliterate-text"></a>Создание запроса для транслитерации текста
 
 Определите строку (или строки), которую вы хотите транслитерировать:
@@ -116,7 +121,8 @@ response = request.json()
 Последний шаг — вывести результаты. Этот фрагмент кода упорядочивает результаты, сортируя ключи, устанавливая отступы и объявляя разделители элементов и ключей.
 
 ```python
-print(json.dumps(response, sort_keys=True, indent=4, ensure_ascii=False, separators=(',', ': ')))
+print(json.dumps(response, sort_keys=True, indent=4,
+                 ensure_ascii=False, separators=(',', ': ')))
 ```
 
 ## <a name="put-it-all-together"></a>Сборка

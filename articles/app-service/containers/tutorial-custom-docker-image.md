@@ -16,16 +16,16 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 8463ffcb9d9983ff435c01f75dd48f68bde31767
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: b48ec72a1f0a4178dad66ed31c544399e90c5293
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59545608"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67484500"
 ---
 # <a name="tutorial-build-a-custom-image-and-run-in-app-service-from-a-private-registry"></a>Руководство по созданию и запуску настраиваемого образа в Службе приложений из частного реестра
 
-[Служба приложений](app-service-linux-intro.md) предоставляет встроенные образы Docker на основе Linux с поддержкой определенных версий, включая PHP 7.0 и Node.js 4.5. Служба приложений использует технологию контейнеров Docker для размещения встроенных и настраиваемых образов в качестве платформы как услуги. В этом руководстве вы узнаете, как создать настраиваемый образ и запустить его в Службе приложений. Этот шаблон используется, если встроенные образы не содержат нужный язык или для приложения требуется определенная конфигурация, которую не предоставляют встроенные образы.
+[Служба приложений](app-service-linux-intro.md) предоставляет встроенные образы Docker на основе Linux с поддержкой определенных версий, включая PHP 7.3 и Node.js 10.14. Служба приложений использует технологию контейнеров Docker для размещения встроенных и настраиваемых образов в качестве платформы как услуги. В этом руководстве вы узнаете, как создать настраиваемый образ и запустить его в Службе приложений. Этот шаблон используется, если встроенные образы не содержат нужный язык или для приложения требуется определенная конфигурация, которую не предоставляют встроенные образы.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -155,7 +155,7 @@ docker login <azure-container-registry-name>.azurecr.io --username <registry-use
 
 ### <a name="push-image-to-azure-container-registry"></a>Передача образа в реестр контейнеров Azure
 
-Пометьте локальный образ тегом для Реестра контейнеров Azure. Например: 
+Пометьте локальный образ тегом для Реестра контейнеров Azure. Например:
 ```bash
 docker tag mydockerimage <azure-container-registry-name>.azurecr.io/mydockerimage:v1.0.0
 ```
@@ -211,7 +211,7 @@ az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name
 
 ### <a name="configure-registry-credentials-in-web-app"></a>Настройка учетных данных реестра в веб-приложении
 
-Чтобы Служба приложений могла извлечь частный образ, ей требуются сведения о реестре и образе. Предоставьте их, выполнив в Cloud Shell команду [`az webapp config container set`](/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set). Замените значения *\<app-name>*, *\<azure-container-registry-name>*, _\<registry-username>_ и _\<password>_.
+Чтобы Служба приложений могла извлечь частный образ, ей требуются сведения о реестре и образе. Предоставьте их, выполнив в Cloud Shell команду [`az webapp config container set`](/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set). Замените значения *\<app-name>* , *\<azure-container-registry-name>* , _\<registry-username>_ и _\<password>_ .
 
 ```azurecli-interactive
 az webapp config container set --name <app-name> --resource-group myResourceGroup --docker-custom-image-name <azure-container-registry-name>.azurecr.io/mydockerimage:v1.0.0 --docker-registry-server-url https://<azure-container-registry-name>.azurecr.io --docker-registry-server-user <registry-username> --docker-registry-server-password <password>
@@ -278,7 +278,7 @@ SSH обеспечивает безопасный обмен данными ме
     > [!NOTE]
     > Эта конфигурация не разрешает внешние подключения к контейнеру. SSH доступен только на сайте Kudu и на сайте SCM. Сайты Kudu и SCM выполняют аутентификацию с вашей учетной записью Azure.
 
-* [Dockerfile](https://github.com/Azure-Samples/docker-django-webapp-linux/blob/master/Dockerfile#L18) копирует [sshd_config](https://github.com/Azure-Samples/docker-django-webapp-linux/blob/master/sshd_config file in the repository) в каталог */etc/ssh/*.
+* [Dockerfile](https://github.com/Azure-Samples/docker-django-webapp-linux/blob/master/Dockerfile#L18) копирует файл [sshd_config](https://github.com/Azure-Samples/docker-django-webapp-linux/blob/master/sshd_config) из репозитория в каталог */etc/ssh/* .
 
     ```Dockerfile
     COPY sshd_config /etc/ssh/
@@ -347,7 +347,7 @@ PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
 Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Руководство Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
+> [Руководство. Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
 
 Также ознакомьтесь с другими ресурсами:
 
@@ -355,4 +355,4 @@ PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
 > [Настройка настраиваемого контейнера](configure-custom-container.md)
 
 > [!div class="nextstepaction"]
-> [Руководство. Приложение Wordpress с несколькими контейнерами](tutorial-multi-container-app.md)
+> [Руководство. по приложению WordPress с несколькими контейнерами](tutorial-multi-container-app.md)

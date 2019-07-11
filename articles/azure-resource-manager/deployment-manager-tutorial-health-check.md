@@ -4,21 +4,16 @@ description: Использование шаблонов Resource Manager с п�
 services: azure-resource-manager
 documentationcenter: ''
 author: mumian
-manager: dougeby
-editor: tysonn
 ms.service: azure-resource-manager
-ms.workload: multiple
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.date: 05/31/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: d43a0e7c48db9dd42c7cf3b52e5d4072a4827898
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 0e8a9fefdf92f568001cc3352fe83a85157acf9a
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66479174"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442582"
 ---
 # <a name="tutorial-use-health-check-in-azure-deployment-manager-public-preview"></a>Руководство по использованию проверки работоспособности в диспетчере развертывания Azure (общедоступная предварительная версия)
 
@@ -41,7 +36,10 @@ ms.locfileid: "66479174"
 > * Проверка развертывания выпуска.
 > * Очистка ресурсов
 
-См. [справочник по REST API диспетчера развертывания Azure](https://docs.microsoft.com/rest/api/deploymentmanager/).
+Дополнительные ресурсы:
+
+- [Справочник по REST API диспетчера развертывания Azure](https://docs.microsoft.com/rest/api/deploymentmanager/).
+- [Пример диспетчера развертывания Azure](https://github.com/Azure-Samples/adm-quickstart).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -59,7 +57,7 @@ ms.locfileid: "66479174"
 Следующие два файла используются для развертывания функции Azure. Не нужно скачивать эти файлы для работы с этим руководством.
 
 * Шаблон Resource Manager, который находится по адресу [https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json](https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json). Вы развернете этот шаблон, чтобы создать функцию Azure.
-* ZIP-файл исходного кода функции Azure, который находится по адресу [http://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip](http://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip). Этот ZIP-файл вызывается шаблоном Resource Manager.
+* ZIP-файл исходного кода функции Azure, который находится по адресу [https://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip](https://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip). Этот ZIP-файл вызывается шаблоном Resource Manager.
 
 Чтобы развернуть функцию Azure, выберите **Попробовать**, чтобы открыть Azure Cloud Shell, а затем вставьте следующий скрипт в окно оболочки.  Чтобы вставить код, щелкните окно оболочки правой кнопкой мыши, а затем выберите **Вставить**.
 

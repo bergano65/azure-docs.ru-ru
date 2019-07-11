@@ -14,12 +14,12 @@ ms.service: azure
 ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: web
-ms.openlocfilehash: 382e342f2144bcc6eeedafd74790bb442b8f9308
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 11c8fdca595840389f318ce9810674d53ac7f2d2
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59784864"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67273367"
 ---
 # <a name="create-a-pivotal-cloud-foundry-cluster-on-azure"></a>Создание кластера Pivotal Cloud Foundry в Azure
 
@@ -64,7 +64,7 @@ ssh-keygen -t rsa -b 2048
 
     > [!NOTE]
     >
-    > Выберите домашнюю страницу приложения и URI идентификатора, например http://www.contoso.com.
+    > Выберите домашнюю страницу приложения и URI идентификатора, например [http://www.contoso.com](http://www.contoso.com).
 
 4. Создайте субъект-службу с новым идентификатором приложения.
 

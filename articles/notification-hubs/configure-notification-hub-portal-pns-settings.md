@@ -10,16 +10,16 @@ ms.workload: mobile
 ms.topic: quickstart
 ms.date: 02/14/2019
 ms.author: jowargo
-ms.openlocfilehash: ee627a168e6ca9bb758d994a3f75cc6185976971
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 1037d8d4652f238f03d8e80b0c59a5f396ab5605
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65203688"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67445717"
 ---
 # <a name="set-up-push-notifications-in-a-notification-hub-in-the-azure-portal"></a>Настройка push-уведомлений в центре уведомлений на портале Azure
 
-Центры уведомлений Azure предоставляют удобный в использовании масштабируемый механизм отправки push-уведомлений. С помощью Центров уведомлений можно отправлять уведомления на любую платформу (iOS, Android, Windows, Kindle, Baidu) и из любой серверной части (облачной или локальной). Дополнительные сведения см. в статье [Что такое Центры уведомлений Azure?](notification-hubs-push-notification-overview.md).
+Центры уведомлений Azure предоставляют удобный в использовании масштабируемый механизм отправки push-уведомлений. С помощью Центров уведомлений можно отправлять уведомления на любую платформу (iOS, Android, Windows, Baidu) и из любой серверной части (облачной или локальной). Дополнительные сведения см. в статье [Что такое Центры уведомлений Azure?](notification-hubs-push-notification-overview.md).
 
 В этом кратком руководстве вы используете параметры системы отправки уведомлений платформы (PNS) в Центрах уведомлений для настройки push-уведомлений для нескольких платформ. Здесь описаны действия, которые необходимо выполнить на портале Azure.
 
@@ -95,17 +95,6 @@ ms.locfileid: "65203688"
 
 Дополнительные сведения см. в статье [Руководство по отправке push-уведомлений в конкретные приложения Windows Phone с помощью Центров уведомлений Azure](notification-hubs-windows-mobile-push-notifications-mpns.md).
       
-## <a name="amazon-device-messaging"></a>Amazon Device Messaging
-
-Чтобы настроить push-уведомления для Amazon Device Messaging (ADM), сделайте следующее:
-
-1. На портале Azure на странице **Центр уведомлений** выберите **Amazon (ADM)** в меню слева.
-2. Введите значения в поля **Идентификатор клиента** и **Секрет клиента**.
-3. Щелкните **Сохранить**.
-    
-   ![Снимок экрана с параметрами ADM на портале Azure](./media/notification-hubs-kindle-get-started/notification-hub-adm-settings.png)
-
-Дополнительные сведения см. в статье [Приступая к работе с Центрами уведомлений для приложений Kindle](notification-hubs-kindle-amazon-adm-push-notification.md).
 
 ## <a name="baidu-android-china"></a>Baidu (Android China)
 
@@ -131,5 +120,4 @@ ms.locfileid: "65203688"
 - [Руководство. Отправка push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Google Firebase Cloud Messaging](notification-hubs-android-push-notification-google-fcm-get-started.md)
 - [Руководство по отправке уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md)
 - [Руководство по отправке push-уведомлений в конкретные приложения Windows Phone с помощью Центров уведомлений Azure](notification-hubs-windows-mobile-push-notifications-mpns.md)
-- [Приступая к работе с Центрами уведомлений для приложений Kindle](notification-hubs-kindle-amazon-adm-push-notification.md)
 - [Get started with Notification Hubs using Baidu](notification-hubs-baidu-china-android-notifications-get-started.md) (Приступая к работе с Центрами уведомлений с использованием Baidu)

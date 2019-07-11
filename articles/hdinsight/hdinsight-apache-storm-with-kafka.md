@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
-ms.date: 12/06/2018
-ms.openlocfilehash: c89567115079887295704e216cd4046fae99c9d1
-ms.sourcegitcommit: 8a681ba0aaba07965a2adba84a8407282b5762b2
+ms.date: 06/25/2019
+ms.openlocfilehash: b6ef08be346aebd220b7234253ce45c4615e38a9
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64873012"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67445510"
 ---
 # <a name="tutorial-use-apache-storm-with-apache-kafka-on-hdinsight"></a>Руководство по Использование Apache Storm с Apache Kafka в HDInsight
 
@@ -629,15 +629,9 @@ Kafka сохраняет данные в _разделе_. Раздел необ
 2. Найдите группу ресурсов, которую нужно удалить, и щелкните правой кнопкой мыши кнопку __Дополнительно__ (…) справа от списка.
 3. Выберите __Удалить группу ресурсов__ и подтвердите выбор.
 
-> [!WARNING]  
-> Начисление оплаты начинается после создания кластера HDInsight и прекращается только после его удаления. Кластеры оплачиваются поминутно, поэтому всегда следует удалять кластер, когда он больше не нужен.
-> 
-> При удалении кластера Kafka в HDInsight удаляются все данные, хранящиеся в Kafka.
-
 ## <a name="next-steps"></a>Дополнительная информация
 
 Из этого руководства вы узнали, как использовать топологию [Apache Storm](https://storm.apache.org/) для записи в систему [Apache Kafka](https://kafka.apache.org/) и считывании из нее в HDInsight. Вы также узнали, как хранить данные в совместимом с [Apache Hadoop HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) хранилище, используемом в HDInsight.
 
-Дополнительные сведения об использовании Kafka в HDInsight см. в статье [Руководство. Использование API производителя и потребителя Apache Kafka](kafka/apache-kafka-producer-consumer-api.md).
-
-Сведения о развертывании и мониторинге топологий в HDInsight под управлением Linux см. в статье [Развертывание топологий Apache Storm в HDInsight под управлением Linux и управление ими](storm/apache-storm-deploy-monitor-topology-linux.md).
+> [!div class="nextstepaction"]
+> [Руководство. Использование API производителя и потребителя Apache Kafka](kafka/apache-kafka-producer-consumer-api.md)

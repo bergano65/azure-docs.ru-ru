@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: tutorial
-ms.date: 06/03/2019
+ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: d99b10598b9f16da2cf202330f0b5bac9219699f
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 428b42e62f44d182de109740359544135561e54b
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66476835"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67441491"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-data-box-gateway"></a>Руководство по Подготовка Шлюза Azure Data Box к развертыванию
 
@@ -50,11 +50,10 @@ ms.locfileid: "66476835"
 
 Перед тем как начать, убедитесь в следующем.
 
-- Ваша подписка Microsoft Azure должна поддерживать создание ресурсов Шлюза Data Box. Подписки с оплатой по мере использования не поддерживаются.
+- Ваша подписка Microsoft Azure должна поддерживать создание ресурсов Шлюза Data Box. Подписки с оплатой по мере использования также поддерживаются.
 - У вас должен быть доступ с правами владельца или участника к Data Box Edge или Шлюзу Azure Data Box, Центру Интернета вещей и ресурсам службы хранилища Azure.
 
     - Для создания ресурсов Data Box Edge или Шлюза Azure Data Box необходимы разрешения с правами, начиная с участника, действующие на уровне группы ресурсов. Необходимо также убедиться, что зарегистрирован поставщик `Microsoft.DataBoxEdge`. Сведения о том, как выполнить регистрацию, см. в разделе о [регистрации поставщика ресурсов](data-box-gateway-manage-access-power-connectivity-mode.md#register-resource-providers).
-    - Для создания ресурсов Центра Интернета вещей нужно зарегистрировать поставщик Microsoft.Devices. Сведения о том, как выполнить регистрацию, см. в разделе о [регистрации поставщика ресурсов](data-box-gateway-manage-access-power-connectivity-mode.md#register-resource-providers).
     - Чтобы создать ресурс учетной записи хранения, также необходимы разрешения с правами, начиная с участника, действующие на уровне группы ресурсов. Хранилище Azure по умолчанию является зарегистрированным поставщиком ресурсов.
 - У вас есть доступ к API Graph Azure Active Directory в роли администратора или пользователя. Дополнительные сведения см. в статье [Области разрешений | Основные понятия API Graph](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
 - Имеется учетная запись хранения Microsoft Azure и данные для доступа к ней.

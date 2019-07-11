@@ -16,12 +16,12 @@ ms.author: jmprieur
 ms.reviwer: brandwe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6112facfc0c10d7a0a0495cd778fa6c3cb6130a7
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: d8f8c8e98a7a99fc1b94bd5ae84062843ebabbc1
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65962154"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67550589"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-from-an-android-app"></a>Вход пользователей и вызов Microsoft Graph из приложения Android
 
@@ -178,7 +178,7 @@ ms.locfileid: "65962154"
 
 ### <a name="add-msal-to-your-project"></a>Добавление MSAL в проект
 
-1. В Android Studio выберите **Gradle Scripts** (Скрипты Gradle) > **build.gradle (Module: app)**.
+1. В Android Studio выберите **Gradle Scripts** (Скрипты Gradle) > **build.gradle (Module: app)** .
 2. В разделе **Dependencies** (Зависимости) вставьте следующий код:
 
     ```gradle  
@@ -465,7 +465,7 @@ private void onSignOutClicked() {
 
 | ключ заголовка    | value                 |
 | ------------- | --------------------- |
-| Авторизация | Bearer <маркер доступа> |
+| Авторизация | Bearer \<маркер доступа> |
 
 Чтобы сделать это в коде, добавьте следующие два метода в приложение для вызова графа и обновления пользовательского интерфейса: 
 

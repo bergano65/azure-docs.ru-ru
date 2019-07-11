@@ -10,25 +10,25 @@ ms.date: 11/26/2018
 ms.author: normesta
 ms.reviewer: seguler
 ms.custom: mvc
-ms.openlocfilehash: e5be86f9f7fbaedeb8fbb10b89926644dcf8aac2
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.openlocfilehash: 612c0b48faac365623fe36d6d2435c1c79566d9b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65835133"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071326"
 ---
 # <a name="tutorial-upload-image-data-in-the-cloud-with-azure-storage"></a>Руководство. Передача данных изображений в облако с помощью службы хранилища Azure
 
 Это руководство представляет первую часть цикла. Из этого руководства вы узнаете, как развернуть веб-приложение, использующее клиентскую библиотеку службы хранилища Azure, для отправки изображений в учетную запись хранения. По окончании у вас будет веб-приложение, которое хранит и показывает изображения из службы хранилища Azure.
 
 # <a name="nettabdotnet"></a>[\.NET](#tab/dotnet)
-![Представление контейнера изображений](media/storage-upload-process-images/figure2.png)
+![Приложение для изменения размера изображений на платформе .NET](media/storage-upload-process-images/figure2.png)
 
-# <a name="nodejs-v2-sdktabnodejs"></a>[Пакет SDK для Node.js версии 2](#tab/nodejs)
-![Представление контейнера изображений](media/storage-upload-process-images/upload-app-nodejs-thumb.png)
+# <a name="nodejs-v2-sdktabnodejs"></a>[Пакет SDK для Node.js версии 2](#tab/nodejs)
+![Приложение для изменения размера изображений на платформе Node.js версии 2](media/storage-upload-process-images/upload-app-nodejs-thumb.png)
 
-# <a name="nodejs-v10-sdktabnodejsv10"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
-![Представление контейнера изображений](media/storage-upload-process-images/upload-app-nodejs-thumb.png)
+# <a name="nodejs-v10-sdktabnodejsv10"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
+![Приложение для изменения размера изображений на платформе Node.js версии 10](media/storage-upload-process-images/upload-app-nodejs-thumb.png)
 
 ---
 
@@ -211,7 +211,7 @@ AZURE_STORAGE_ACCOUNT_ACCESS_KEY=$blobStorageAccountKey
 
 Выберите область **Отправка фотографий**, чтобы выбрать и отправить файл, или перетащите файлы в нее. При успешной отправке изображение исчезнет. Раздел **Generated Thumbnails** (Созданные эскизы) будет оставаться пустым, пока мы не протестируем его позднее.
 
-![Приложение ImageResizer](media/storage-upload-process-images/figure1.png)
+![Отправка фотографий в .NET](media/storage-upload-process-images/figure1.png)
 
 В примере кода задача `UploadFiletoStorage` в файле *Storagehelper.cs* используется для отправки изображений в контейнер *Изображения* в учетной записи хранения с помощью метода [UploadFromStreamAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob.uploadfromstreamasync). В следующем примере кода содержится задача `UploadFiletoStorage`.
 
@@ -254,7 +254,7 @@ public static async Task<bool> UploadFileToStorage(Stream fileStream, string fil
 
 Чтобы выбрать файл, нажмите кнопку **Выбрать файл**, а затем **Загрузить изображение**. Раздел **Generated Thumbnails** (Созданные эскизы) будет оставаться пустым, пока мы не протестируем его позднее. 
 
-![Приложение для оправки изображений](media/storage-upload-process-images/upload-app-nodejs.png)
+![Отправка фотографий в Node.js версии 2](media/storage-upload-process-images/upload-app-nodejs.png)
 
 В примере кода маршрут `post` отвечает за отправку изображения в контейнер BLOB-объектов. Маршрут использует модули для обработки отправки:
 
@@ -318,7 +318,7 @@ router.post('/', uploadStrategy, (req, res) => {
 
 Чтобы выбрать файл, нажмите кнопку **Выбрать файл**, а затем **Загрузить изображение**. Раздел **Generated Thumbnails** (Созданные эскизы) будет оставаться пустым, пока мы не протестируем его позднее. 
 
-![Приложение для оправки изображений](media/storage-upload-process-images/upload-app-nodejs.png)
+![Отправка фотографий в Node.js версии 10](media/storage-upload-process-images/upload-app-nodejs.png)
 
 В примере кода маршрут `post` отвечает за отправку изображения в контейнер BLOB-объектов. Маршрут использует модули для обработки отправки:
 
@@ -400,7 +400,7 @@ router.post('/', uploadStrategy, async (req, res) => {
 
 Убедитесь, что изображение отображается в контейнере.
 
-![Представление контейнера изображений](media/storage-upload-process-images/figure13.png)
+![Список контейнеров образов на портале Azure](media/storage-upload-process-images/figure13.png)
 
 ## <a name="test-thumbnail-viewing"></a>Тестирование просмотра эскизов
 
@@ -413,13 +413,13 @@ router.post('/', uploadStrategy, async (req, res) => {
 Вернитесь к своему приложению и убедитесь, что изображение, отправленное в контейнер **эскизов**, отображается.
 
 # <a name="nettabdotnet"></a>[\.NET](#tab/dotnet)
-![Представление контейнера изображений](media/storage-upload-process-images/figure2.png)
+![Приложение для изменения размера изображений .NET с новым изображением](media/storage-upload-process-images/figure2.png)
 
-# <a name="nodejs-v2-sdktabnodejs"></a>[Пакет SDK для Node.js версии 2](#tab/nodejs)
-![Представление контейнера изображений](media/storage-upload-process-images/upload-app-nodejs-thumb.png)
+# <a name="nodejs-v2-sdktabnodejs"></a>[Пакет SDK для Node.js версии 2](#tab/nodejs)
+![Приложение для изменения размера изображений Node.js версии 2 с новым изображением](media/storage-upload-process-images/upload-app-nodejs-thumb.png)
 
-# <a name="nodejs-v10-sdktabnodejsv10"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
-![Представление контейнера изображений](media/storage-upload-process-images/upload-app-nodejs-thumb.png)
+# <a name="nodejs-v10-sdktabnodejsv10"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
+![Приложение для изменения размера изображений Node.js версии 10 с новым изображением](media/storage-upload-process-images/upload-app-nodejs-thumb.png)
 
 ---
 

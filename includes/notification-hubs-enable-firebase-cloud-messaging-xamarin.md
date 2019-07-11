@@ -8,32 +8,41 @@ ms.topic: include
 ms.date: 03/11/2019
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 4ceff7d59443fe78fb8cf7164e5f31cf1acc189a
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: 7e047ba57a61d2f327544ec795f640f5066962f6
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66420740"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67509908"
 ---
 1. Войдите в [консоль Firebase](https://firebase.google.com/console/). Создайте проект Firebase, если его еще нет.
 2. После создания проекта выберите **Add Firebase to your Android app** (Добавить Firebase в приложение Android). 
 
     ![Добавление Firebase в приложение Android](./media/notification-hubs-enable-firebase-cloud-messaging/notification-hubs-add-firebase-to-android-app.png)
-3. Выполните следующие действия на странице **Add Firebase to your Android app** (Добавление Firebase в приложение Android). 
+
+3. Выполните следующие действия на странице **Add Firebase to your Android app** (Добавление Firebase в приложение Android): 
+1. 
     1. В поле **Android package name** (Имя пакета Android) введите имя пакета. Например, `tutorials.tutoria1.xamarinfcmapp`. 
 
         ![Указание имени пакета.](./media/notification-hubs-enable-firebase-cloud-messaging/specify-package-name-fcm-settings.png)
-    2. Выберите **Регистрация приложения**. 
-4. Выберите **Download google-services.json** (Загрузить google-services.json), сохраните файл в папку **приложения** проекта, а затем выберите **Далее**. 
+
+2. Выберите **Регистрация приложения**. 
+1. 
+1. Выберите **Download google-services.json** (Скачать Download google-services.json). Затем сохраните файл в папку **приложений** проекта и выберите **Далее**. 
 
     ![Загрузка файла google-services.json.](./media/notification-hubs-enable-firebase-cloud-messaging/download-google-service-button.png)
-6. Выберите **Далее** на странице. 
-7. Выберите **Пропустить этот шаг** на странице. 
+
+6. Щелкните **Далее**. 
+7. Выберите **Пропустить этот шаг**. 
 
     ![Пропуск последнего шага.](./media/notification-hubs-enable-firebase-cloud-messaging/skip-this-step.png)
+
 8. В консоли Firebase щелкните значок шестеренки возле имени проекта. Выберите пункт **Project Settings** (Параметры проекта).
 
     ![Выбор параметров проекта](./media/notification-hubs-enable-firebase-cloud-messaging/notification-hubs-firebase-console-project-settings.png)
-4. Если вы еще не скачали файл **google-services.json**, это можно сделать на этой странице. 
-5. Переключитесь на вкладку **Обмен сообщениями в облаке** в верхней части. 
-6. Скопируйте и сохраните **Legacy Server key** (Ключ устаревшего сервера) для последующего использования. Это значение будет использоваться для настройки концентратора уведомлений.
+
+4. Если вы еще не скачали файл **google-services.json**, вы можете скачать его на этой странице. 
+
+1. Переключитесь на вкладку **Обмен сообщениями в облаке** в верхней части. 
+
+1. Скопируйте и сохраните **Legacy Server key** (Ключ устаревшего сервера) для последующего использования. Это значение будет использоваться для настройки концентратора уведомлений.

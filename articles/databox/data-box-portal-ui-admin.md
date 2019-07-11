@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: overview
 ms.date: 01/09/2019
 ms.author: alkohli
-ms.openlocfilehash: c998e01cdb9031771acd3d9605da3e77d5ae3201
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: a7681ba815533296deae2b585e377a733074b6c9
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65953371"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67147910"
 ---
 # <a name="use-azure-portal-to-administer-your-data-box-disk"></a>Администрирование Диска Data Box с помощью портала Azure
 
@@ -129,7 +129,7 @@ ms.locfileid: "65953371"
 |Received     | Диски получены в центре обработки данных Azure. Скоро начнется копирование данных.        |
 |Копирование данных     |Выполняется копирование данных.<br> Дождитесь завершения копирования данных.         |
 |Завершено       |Заказ успешно выполнен.<br> Прежде чем удалять локальные данные с серверов, убедитесь, что данные находятся в Azure.         |
-|Завершено с ошибками| Копирование данных выполнено, но с ошибками. <br> Просмотрите журналы копирования, используя путь, указанный на вкладке **Обзор**. Дополнительные сведения см. в разделе о [загрузке журналов диагностики](data-box-disk-troubleshoot.md#download-diagnostic-logs).   |
+|Завершено с ошибками| Копирование данных выполнено, но с ошибками. <br> Просмотрите журналы ошибок для отправки с помощью пути, указанного в разделе **Обзор**. Дополнительные сведения см. в разделе о [скачивании журналов ошибок передачи](data-box-disk-troubleshoot-upload.md#download-logs).   |
 |Canceled            |Ваш заказ отменен. <br> Либо вы отменили заказ, либо произошла ошибка и служба отменила заказ.     |
 
 

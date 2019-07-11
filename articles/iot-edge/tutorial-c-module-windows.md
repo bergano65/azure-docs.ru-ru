@@ -9,12 +9,12 @@ ms.date: 05/28/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 49f853341edab7c7dc92f72472b81f7fb22c0ad8
-ms.sourcegitcommit: f9448a4d87226362a02b14d88290ad6b1aea9d82
+ms.openlocfilehash: 3573e136c1a830cd75aba0725b4bf087bcd63869
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66808753"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67485966"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство по Разработка модулей IoT Edge на языке C для устройств с Windows
 
@@ -51,10 +51,18 @@ ms.locfileid: "66808753"
 * реестр контейнеров, например [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/);
 * Настроенная среда [Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/install-visual-studio) с расширением [Azure IoT Edge Tools](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools).
 * Приложение [Docker CE](https://docs.docker.com/install/), настроенное для запуска контейнеров Windows.
-* Пакет SDK Azure IoT для C. 
+* Установите пакет SDK Azure IoT для C для Windows X64 с помощью vcpkg:
 
+   ```powershell
+   git clone https://github.com/Microsoft/vcpkg
+   cd vcpkg
+   .\bootstrap-vcpkg.bat
+   .\vcpkg install azure-iot-sdk-c:x64-windows
+   .\vcpkg --triplet x64-windows integrate install
+   ```
+   
 > [!TIP]
-> Если вы используете Visual Studio 2017 (15.7 или более поздней версии), скачайте и установите [Azure IoT Edge Tools (предварительная версия)](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools) для Visual Studio 2017 из marketplace Visual Studio.
+> Если вы используете Visual Studio 2017 (15.7 или более поздней версии), скачайте и установите [Azure IoT Edge Tools](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools) для Visual Studio 2017 из marketplace Visual Studio.
 
 ## <a name="create-a-module-project"></a>Создание проекта модуля
 

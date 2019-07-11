@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 04/16/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: f5c498fc3f3fe051070b3565041e506bc40fceda
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 70890dcd72cadc55e56410381a94ac071b248a91
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64925164"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67147528"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-disk-and-verify"></a>Руководство по Копирование данных на Диск Microsoft Azure Data Box и проверка
 
@@ -250,6 +250,8 @@ ms.locfileid: "64925164"
 
     `DataBoxDiskSplitCopy.exe PrepImport /config:<configFile.json> /ResumeSession`
 
+Если при работе со средством разбиения и копирования возникают ошибки, см. статью [Troubleshoot data copy issues in Azure Data Box Disk](data-box-disk-troubleshoot-data-copy.md) (Устранение неполадок копирования данных на Диске Azure Data Box).
+
 После завершения копирования данных вы можете приступить к проверке ваших данных. Если вы использовали инструмент Split Copy, пропустите проверку (инструмент Split Copy выполняет проверку) и перейдите к следующему руководству.
 
 
@@ -270,6 +272,8 @@ ms.locfileid: "64925164"
     > - Используйте вариант 1 для файлов, которые работают с большим набором данных, содержащим небольшие файлы (~КБ). Этот вариант применим только к таким файлам, поскольку создание контрольной суммы может занять много времени и производительность может быть снижена.
 
 3. Если используется несколько дисков, выполните команду для каждого диска.
+
+Если возникают ошибки при проверке, см. статью [Use logs to troubleshoot validation issues in Azure Data Box Disk](data-box-disk-troubleshoot.md) (Устранение неполадок проверки на Диске Azure Data Box с помощью журналов).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

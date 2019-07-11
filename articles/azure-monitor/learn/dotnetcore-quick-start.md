@@ -5,17 +5,17 @@ services: application-insights
 keywords: ''
 author: mrbullwinkle
 ms.author: mbullwin
-ms.date: 05/22/2019
+ms.date: 06/26/2019
 ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: a4bbb43cb00eeb5a9e741016e1648ce915935eb9
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 931de532aa6e09b2cd00955df6ba1f05d7e4f42c
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66236596"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67428495"
 ---
 # <a name="start-monitoring-your-aspnet-core-web-application"></a>Запуск мониторинга веб-приложения ASP.NET Core
 
@@ -47,14 +47,14 @@ ms.locfileid: "66236596"
 
 1. Последовательно выберите **Создать ресурс** > **Средства разработчика** > **Application Insights**.
 
-   ![Добавления ресурса Application Insights](./media/dotnetcore-quick-start/1createresourceappinsight.png)
+   > [!NOTE]
+   >Если вы создаете ресурс Application Insights впервые, ознакомьтесь с дополнительными сведениями в статье [Create an Application Insights resource](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource) (Создание ресурса Application Insights).
 
     Откроется окно настроек, в котором нужно заполнить все поля в соответствии с приведенной ниже таблицей.
 
-    | Параметры        |  Значение           | ОПИСАНИЕ  |
+   | Параметры        |  Значение           | ОПИСАНИЕ  |
    | ------------- |:-------------|:-----|
    | **Имя**      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
-   | **Тип приложения** | Веб-приложение ASP.NET | Тип отслеживаемого приложения |
    | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных App Insights |
    | **Местоположение.** | Восточная часть США | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
 

@@ -10,13 +10,14 @@ ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: quickstart
 ms.date: 11/07/2018
-ms.author: azfuncdf, cotresne, glenga
-ms.openlocfilehash: 6c7952f5baf2e6956e4052f68ede6fb0c4902854
-ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
+ms.author: glenga
+ms.reviewer: azfuncdf, cotresne
+ms.openlocfilehash: c54a5631222a6de261e9805f284a4dfa2801750f
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65921352"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67612922"
 ---
 # <a name="create-your-first-durable-function-in-javascript"></a>Создание устойчивой функции с помощью JavaScript
 
@@ -32,7 +33,7 @@ ms.locfileid: "65921352"
 
 * Установите [Visual Studio Code](https://code.visualstudio.com/download).
 
-* Убедитесь, что используются [новейшие средства Функций Azure](../functions-develop-vs.md#check-your-tools-version).
+* Убедитесь, что используется последняя версия [Azure Functions Core Tools](../functions-run-local.md).
 
 * Убедитесь, что на компьютере с ОС Windows установлен и запущен [эмулятор службы хранилища Azure](../../storage/common/storage-use-emulator.md). На компьютере с ОС Mac или Linux необходимо использовать саму учетную запись хранения Azure.
 
@@ -48,69 +49,61 @@ ms.locfileid: "65921352"
 
 1. Установите пакет npm `durable-functions`, выполнив команду `npm install durable-functions` в корневом каталоге приложения-функции.
 
-## <a name="create-a-starter-function"></a>Создание функции запуска
+## <a name="creating-your-functions"></a>Создание функций
+
+Теперь мы создадим три функции, необходимые для начала работы с Устойчивыми функциями: начальный объект HTTP, оркестратор и функция действия. Начальный объект HTTP будет инициировать все решение, а оркестратор распределяет задания в различные функции действий.
+
+### <a name="http-starter"></a>Начальный объект HTTP
 
 Сначала создайте функцию, активируемую протоколом HTTP, которая запускает оркестрацию устойчивых функций.
 
-1. Выберите **Azure: Functions** (Azure: Функции) и щелкните значок Create Function (Создать функцию).
+1. Выберите *Azure: Functions* (Azure: Функции) и щелкните значок **Создать функцию**.
 
     ![Создание функции](./media/quickstart-js-vscode/create-function.png)
 
-2. Укажите папку со своим проектом приложения-функции и выберите шаблон функции **HTTP trigger** (Триггер HTTP).
+2. Выберите папку со своим проектом приложения-функции и выберите шаблон функции **Начальный объект HTTP устойчивых функций** .
 
-    ![Выбор шаблона функции, активируемой HTTP-запросом](./media/quickstart-js-vscode/create-function-choose-template.png)
+    ![Выбор шаблона начального объекта HTTP](./media/quickstart-js-vscode/create-function-choose-template.png)
 
-3. Введите `HttpStart`, чтобы задать имя функции и нажмите клавишу ВВОД, после чего укажите способ проверки подлинности **Anonymous** (Анонимно).
+3. Оставьте имя по умолчанию `DurableFunctionsHttpStart` и нажмите клавишу ****ВВОД**, после чего укажите способ аутентификации **Анонимно**.
 
     ![Анонимная аутентификация](./media/quickstart-js-vscode/create-function-anonymous-auth.png)
 
-    С помощью шаблона функции, активируемой HTTP-запросом, будет создана функция на выбранном вами языке.
-
-4. Замените файл index.js поданным ниже кодом JavaScript.
-
-    [!code-javascript[Main](~/samples-durable-functions/samples/javascript/HttpStart/index.js)]
-
-5. Замените файл function.json поданным ниже кодом JSON.
-
-    [!code-json[Main](~/samples-durable-functions/samples/javascript/HttpStart/function.json)]
-
 Мы создали точку входа в нашу устойчивую функцию. Теперь добавим оркестратор.
 
-## <a name="create-an-orchestrator-function"></a>Создание функции оркестратора
+### <a name="orchestrator"></a>Оркестратор:
 
-Теперь нужно создать еще одну функцию, которая будет работать в качестве оркестратора. Для удобства мы используем шаблон функции для триггеров HTTP. Код самой функции заменяется кодом оркестратора.
+Теперь мы создали оркестратор для координации функций действий.
 
-1. Повторите шаги из предыдущего раздела, чтобы создать вторую функцию с помощью шаблона триггера HTTP. Дайте этой функции имя `OrchestratorFunction`.
+1. Выберите *Azure: Functions* (Azure: Функции) и щелкните значок **Создать функцию**.
 
-2. Откройте файл index.js новой функции и замените его содержимое следующим кодом.
+    ![Создание функции](./media/quickstart-js-vscode/create-function.png)
 
-    [!code-json[Main](~/samples-durable-functions/samples/javascript/E1_HelloSequence/index.js)]
+2. Выберите папку со своим проектом приложения-функции и выберите шаблон функции **Оркестратор устойчивых функций**. Оставьте имя по умолчанию DurableFunctionsOrchestrator.
 
-3. Откройте файл function.json и замените его следующим кодом JSON.
-
-    [!code-json[Main](~/samples-durable-functions/samples/javascript/E1_HelloSequence/function.json)]
+    ![Выбор шаблона оркестратора](./media/quickstart-js-vscode/create-function-choose-template.png)
 
 Мы добавили оркестратор для координации функций действий. Теперь добавим функцию действия, на которое делается ссылка.
 
-## <a name="create-an-activity-function"></a>Создание функции действия
+### <a name="activity"></a>Действие
 
-1. Повторите шаги из предыдущих разделов, чтобы создать третью функцию с помощью шаблона триггера HTTP. Дайте этой функции имя `E1_SayHello`.
+Теперь мы создадим функцию действия, чтобы фактически выполнить работу решения.
 
-2. Откройте файл index.js новой функции и замените его содержимое следующим кодом.
+1. Выберите *Azure: Functions* (Azure: Функции) и щелкните значок **Создать функцию**.
 
-    [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E1_SayHello/index.js)]
+    ![Создание функции](./media/quickstart-js-vscode/create-function.png)
 
-3. Замените файл function.json поданным ниже кодом JSON.
+2. Выберите папку со своим проектом приложения-функции и выберите шаблон функции **Действие устойчивых функций**. Оставьте имя по умолчанию Hello.
 
-    [!code-json[Main](~/samples-durable-functions/samples/csx/E1_SayHello/function.json)]
+    ![Выбор шаблона действия](./media/quickstart-js-vscode/create-function-choose-template.png)
 
 Теперь мы добавили все компоненты, необходимые для начала оркестрации и объединения в цепочку функций действий.
 
 ## <a name="test-the-function-locally"></a>Локальное тестирование функции
 
-Основные инструменты службы "Функции Azure" позволяют запускать проекты функций Azure на локальном компьютере разработчика. Вам будет предложено установить эти инструменты при первом запуске функции из Visual Studio Code.  
+Основные инструменты службы "Функции Azure" позволяют запускать проекты функций Azure на локальном компьютере разработчика. Вам будет предложено установить эти инструменты при первом запуске функции из Visual Studio Code.
 
-1. На компьютере с ОС Windows запустите эмулятор службы хранилища Azure и убедитесь, что свойству **AzureWebJobsStorage** в local.settings.json присваивается значение `UseDevelopmentStorage=true`. 
+1. На компьютере с ОС Windows запустите эмулятор службы хранилища Azure и присвойте свойству **AzureWebJobsStorage** в *local.settings.json* значение `UseDevelopmentStorage=true`.
 
     Если используется Storage Emulator 5.8, убедитесь, что для свойства **AzureWebJobsSecretStorageType** в файле local.settings.json задано значение `files`. На компьютере с ОС Mac или Linux свойству **AzureWebJobsStorage** необходимо задать значение строки подключения существующей учетной записи хранения Azure. Далее в этой статье описывается создание учетной записи хранения.
 
@@ -123,7 +116,7 @@ ms.locfileid: "65921352"
 
     ![Локальные выходные данные в Azure](../media/functions-create-first-function-vs-code/functions-vscode-f5.png)
 
-4. Замените `{functionName}` на `OrchestratorFunction`.
+4. Замените `{functionName}` на `DurableFunctionsOrchestrator`.
 
 5. Отправьте запрос HTTP POST к конечной точке URL-адреса, используя средства наподобие [Postman](https://www.getpostman.com/) или [cURL](https://curl.haxx.se/).
 

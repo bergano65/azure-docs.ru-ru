@@ -6,13 +6,13 @@ ms.author: raagyema
 ms.service: postgresql
 ms.custom: tutorial, mvc
 ms.topic: tutorial
-ms.date: 5/16/2019
-ms.openlocfilehash: 94988f4f287730c69b51e44bcbfa4e3d63d139fa
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.date: 06/25/2019
+ms.openlocfilehash: 421d5cde46b466c0c13a52755abdf137e52f2f6b
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66515700"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443096"
 ---
 # <a name="tutorial-design-an-azure-database-for-postgresql---single-server-using-the-azure-portal"></a>Руководство по Разработка базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью портала Azure
 
@@ -88,7 +88,7 @@ ms.locfileid: "66515700"
 
 2. На странице сервера выберите **Безопасность подключения**. 
 
-3. Щелкните текстовое поле раздела **Имя правила** и добавьте новое правило брандмауэра, чтобы добавить диапазон IP-адресов для подключения в список разрешений. Введите диапазон IP-адресов. Выберите команду **Сохранить**.
+3. Щелкните текстовое поле раздела **Имя правила** и добавьте новое правило брандмауэра, чтобы указать диапазон IP-адресов для подключения. Введите диапазон IP-адресов. Выберите команду **Сохранить**.
 
    ![База данных Azure для PostgreSQL. Создание правила брандмауэра](./media/tutorial-design-database-using-azure-portal/5-firewall-2.png)
 
@@ -113,38 +113,36 @@ ms.locfileid: "66515700"
    ![База данных Azure для PostgreSQL. Имя для входа администратора сервера](./media/tutorial-design-database-using-azure-portal/6-server-name.png)
 
 
-## <a name="connect-to-postgresql-database-using-psql-in-cloud-shell"></a>Подключение к базе данных PostgreSQL с помощью psql в Cloud Shell
+## <a name="connect-to-postgresql-database-using-psql"></a>Подключение к базе данных PostgreSQL с помощью psql
+Если на клиентском компьютере установлено PostgreSQL, вы можете использовать локальный экземпляр [psql](https://www.postgresql.org/docs/9.6/static/app-psql.html) или консоль облачной службы Azure, чтобы подключиться к серверу Azure PostgreSQL. Теперь подключимся к серверу базы данных Azure для PostgreSQL с помощью служебной программы командной строки psql.
 
-Теперь подключимся к серверу базы данных Azure для PostgreSQL с помощью служебной программы командной строки [psql](https://www.postgresql.org/docs/9.6/static/app-psql.html). 
-1. Запустите Azure Cloud Shell с помощью значка терминала в верхней области навигации.
-
-   ![База данных Azure для PostgreSQL. Значок терминала Azure Cloud Shell](./media/tutorial-design-database-using-azure-portal/7-cloud-shell.png)
-
-2. В браузере откроется служба Azure Cloud Shell, которая позволяет выполнять команды Bash.
-
-   ![База данных Azure для PostgreSQL. Строка Bash в Azure Cloud Shell](./media/tutorial-design-database-using-azure-portal/8-bash.png)
-
-3. Подключитесь к базе данных Azure для сервера PostgreSQL, выполнив команду psql в командной строке Cloud Shell. Используйте следующий формат, чтобы подключиться к серверу базы данных Azure для PostgreSQL с помощью служебной программы [psql](https://www.postgresql.org/docs/9.6/static/app-psql.html):
-   ```bash
-   psql --host=<myserver> --port=<port> --username=<server admin login> --dbname=<database name>
+1. Чтобы подключиться к базе данных Azure для базы данных PostgreSQL, выполните следующую команду psql:
+   ```
+   psql --host=<servername> --port=<port> --username=<user@servername> --dbname=<dbname>
    ```
 
-   Например, следующая команда устанавливает подключение к базе данных по умолчанию **postgres** на сервере PostgreSQL **mydemoserver.postgres.database.azure.com**, используя учетные данные для доступа. В ответ на запрос введите пароль администратора сервера.
-
-   ```bash
+   Например, следующая команда устанавливает подключение к базе данных по умолчанию **postgres** на сервере PostgreSQL **mydemoserver.postgres.database.azure.com**, используя учетные данные для доступа. Введите `<server_admin_password>`, указанный при появлении запроса на ввод пароля.
+  
+   ```
    psql --host=mydemoserver.postgres.database.azure.com --port=5432 --username=myadmin@mydemoserver --dbname=postgres
    ```
 
-## <a name="create-a-new-database"></a>Создание базы данных
-Подключившись к серверу, создайте пустую базу данных с помощью командной строки.
-```bash
-CREATE DATABASE mypgsqldb;
-```
+   > [!TIP]
+   > Если вы предпочитаете использовать URL-путь для подключения к Postgres, закодируйте с помощью URL-адреса знак @ в имени пользователя с использованием `%40`. Например, строка подключения для psql будет выглядеть так:
+   > ```
+   > psql postgresql://myadmin%40mydemoserver@mydemoserver.postgres.database.azure.com:5432/postgres
+   > ```
 
-Выполните следующую команду в командной строке, чтобы подключиться к созданной базе данных **mypgsqldb**.
-```bash
-\c mypgsqldb
-```
+2. Подключившись к серверу, создайте пустую базу данных с помощью командной строки:
+   ```sql
+   CREATE DATABASE mypgsqldb;
+   ```
+
+3. Чтобы подключиться к созданной базе данных **mypgsqldb**, выполните следующую команду в командной строке:
+   ```sql
+   \c mypgsqldb
+   ```
+
 ## <a name="create-tables-in-the-database"></a>Создание таблиц в базе данных
 Теперь, когда вы знаете, как подключиться к базе данных Azure для PostgreSQL, можно выполнить некоторые основные задачи.
 

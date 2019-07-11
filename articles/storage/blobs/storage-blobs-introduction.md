@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 05/24/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: e8a68ca87307e1265c200f2e05464ff87983c1e6
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: e216503cac2db55115bd4c1b5bf0e2f6e50355fc
+ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66258411"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67190855"
 ---
 # <a name="introduction-to-azure-blob-storage"></a>Общие сведения о хранилище BLOB-объектов Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "66258411"
 
 На следующей схеме показана связь между этими ресурсами.
 
-![Схема архитектуры службы хранилища BLOB-объектов](./media/storage-blob-introduction/blob1.png)
+![связь между ресурсами большого двоичного объекта учетной записи и контейнера](./media/storage-blob-introduction/blob1.png)
 
 ### <a name="storage-accounts"></a>Учетные записи хранения
 
@@ -50,13 +50,13 @@ http://mystorageaccount.blob.core.windows.net
   > [!NOTE]
   > Все знаки в имени контейнера должны быть строчными. Дополнительные сведения о контейнерах именования см. в статье [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
 
-### <a name="blobs"></a>Большие двоичные объекты
+### <a name="blobs"></a>BLOB-объекты
  
 Хранилище Azure поддерживает три типа больших двоичных объектов.
 
 * **Блочные BLOB-объекты** хранят текст и двоичные данные объемом до 4,7 ТБ. Блочные большие двоичные объекты состоят из блоков данных, которыми можно управлять отдельно.
 * **Добавочные BLOB-объекты** состоят из блоков, как и блочные, но оптимизированы для операций добавления. Добавочные большие двоичные объекты идеально подходят для таких сценариев, как сбор данных журналов из виртуальных машин.
-* **Страничные BLOB-объекты** используются для хранения файлов произвольного доступа объемом до 8 ТБ. Страничные BLOB-объекты хранят файлы виртуального жесткого диска в качестве дисков для виртуальных машин Azure. Дополнительные сведения о страничных BLOB-объектах см. в статье [Общие сведения о страничных BLOB-объектах Azure](storage-blob-pageblob-overview.md).
+* **Страничные BLOB-объекты** используются для хранения файлов произвольного доступа объемом до 8 ТБ. Страничные BLOB-объекты хранят файлы виртуального жесткого диска (VHD) и выступают в качестве дисков для виртуальных машин Azure. Дополнительные сведения о страничных BLOB-объектах см. в статье [Общие сведения о страничных BLOB-объектах Azure](storage-blob-pageblob-overview.md).
 
 Дополнительные сведения о различных больших двоичных объектах см. в статье [Understanding Block Blobs, Append Blobs, and Page Blobs](https://docs.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs) (Основные сведения о блочных, добавочных и страничных BLOB-объектах).
 

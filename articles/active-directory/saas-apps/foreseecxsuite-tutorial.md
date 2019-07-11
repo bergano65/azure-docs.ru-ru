@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/01/2019
 ms.author: jeedes
-ms.openlocfilehash: 19c2ccab6685f53ba714298f66bc8e8821b4aa02
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: c78fa8ec470f04bcd88ab403249f77a65120c707
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65988030"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67550403"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-foresee-cx-suite"></a>Руководство. Интеграция Azure Active Directory с ForeSee CX Suite
 
@@ -119,7 +119,7 @@ ms.locfileid: "65988030"
 
     a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://cxsuite.foresee.com/`.
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: https:\//www.okta.com/saml2/service-provider/<UniqueID>.
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: https:\//www.okta.com/saml2/service-provider/\<уникальный_ИД>
 
     > [!Note]
     > Если значение поля **Идентификатор** автоматически не заполняется, введите его вручную в указанном выше формате. Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Для получения этого значения обратитесь в [группу поддержки клиентов ForeSee CX Suite](mailto:support@foresee.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -208,5 +208,5 @@ ms.locfileid: "65988030"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

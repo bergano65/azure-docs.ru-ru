@@ -5,15 +5,15 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: quickstart
-ms.date: 1/11/2019
+ms.date: 06/11/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 6c472c30514e6acd3b21822e31f2cefc0da5bc98
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.openlocfilehash: c0e80b1354302f227cb448391c7a92100049cc3a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66729653"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67053355"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-powershell"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure в Azure PowerShell
 
@@ -36,7 +36,7 @@ ms.locfileid: "66729653"
 
 ### <a name="resource-group"></a>Группа ресурсов
 
-В Azure выделите связанные ресурсы группе ресурсов. Вы можете выбрать существующую группу ресурсов или создать новую. В этом примере мы создадим новую группу ресурсов с помощью командлета [New-AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup). 
+В Azure выделите связанные ресурсы группе ресурсов. Вы можете выбрать существующую группу ресурсов или создать новую. В этом примере вы создадите группу ресурсов с помощью командлета [New-AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup). 
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name myResourceGroupAG -Location eastus
@@ -109,7 +109,7 @@ for ($i=1; $i -le 2; $i++)
   Add-AzVMNetworkInterface `
     -VM $vm `
     -Id $nic.Id
-  Set-AzVMBootDiagnostics `
+  Set-AzVMBootDiagnostic `
     -VM $vm `
     -Disable
   New-AzVM -ResourceGroupName myResourceGroupAG -Location EastUS -VM $vm
@@ -219,7 +219,7 @@ New-AzApplicationGateway `
 Для создания шлюза приложений не требуется устанавливать IIS. Но в рамках этого руководства они устанавливаются, чтобы проверить, создан ли шлюз приложений. Используйте IIS для тестирования шлюза приложений.
 
 1. Запустите командлет [Get-AzPublicIPAddress](/powershell/module/Az.network/get-Azpublicipaddress), чтобы получить общедоступный IP-адрес шлюза приложений. 
-2. Скопируйте и вставьте общедоступный IP-адрес в адресную строку браузера. Когда вы обновляете браузер, должно отобразиться имя виртуальной машины. Допустимый ответ подтверждает, что шлюз приложений успешно создан и может успешно подключиться к серверу.
+2. Скопируйте и вставьте общедоступный IP-адрес в адресную строку браузера. Когда вы обновляете браузер, должно отобразиться имя виртуальной машины. Допустимый ответ подтверждает, что шлюз приложений создан и может успешно подключиться к серверу.
 
 ```azurepowershell-interactive
 Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAddress

@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 04/11/2017
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: a1d4af695807a6e2c5ef4ee74527083002bc6015
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
+ms.openlocfilehash: ad9c50953447c1effee48eec5b0cb9f64386e6cc
+ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54900772"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67155569"
 ---
 # <a name="create-a-function-app-from-the-azure-portal"></a>Создание приложения-функции на портале Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "54900772"
 
 [!INCLUDE [functions-create-function-app-portal](../../includes/functions-create-function-app-portal.md)]
 
-При создании приложения-функции укажите допустимое **имя приложения**, содержащее только буквы, цифры и дефисы. Символ подчеркивания (**_**) использовать нельзя.
+При создании приложения-функции укажите допустимое **имя приложения**, содержащее только буквы, цифры и дефисы. Символ подчеркивания ( **_** ) использовать нельзя.
 
 Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и строчных букв. Имя учетной записи хранения должно быть уникальным в Azure. 
 
@@ -52,4 +52,7 @@ ms.locfileid: "54900772"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[!INCLUDE [Functions quickstart next steps](../../includes/functions-quickstart-next-steps.md)]
+Хотя портал Azure позволяет легко создать и опробовать функции, мы рекомендуем [локальную разработку](functions-develop-local.md). После создания приложения-функции на портале необходимо еще добавить функцию. 
+
+> [!div class="nextstepaction"]
+> [Добавление функции, активируемой HTTP](functions-create-first-azure-function.md#create-function)

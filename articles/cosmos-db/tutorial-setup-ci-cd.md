@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 05/23/2019
 ms.author: dech
 ms.reviewer: sngun
-ms.openlocfilehash: b97fb1956c75332c40e242484b9d94419a45eb92
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 19ced9767d77b0d7bfcec6f01425ab1089a55d54
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66242556"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67069230"
 ---
 # <a name="set-up-a-cicd-pipeline-with-the-azure-cosmos-db-emulator-build-task-in-azure-devops"></a>Настройка конвейера CI/CD с использованием задачи сборки эмулятора Azure Cosmos DB в Azure DevOps
 
@@ -48,6 +48,9 @@ ms.locfileid: "66242556"
    ![Выбор командного проекта, репозитория и ветви для конвейера сборки](./media/tutorial-setup-ci-cd/CreateNewBuildDef_2.png)
 
 3. И наконец, выберите нужный шаблон для конвейера сборки. В нашем примере для этого руководства выбран шаблон **ASP.NET**. 
+
+> [!NOTE]
+> Если в предыдущей задаче в рамках непрерывной интеграции установка выполняется вручную, то у пула агентов, выбираемого для непрерывной интеграции, должен быть установлен Docker для Windows. Для выбора пулов агентов см. статью [Microsoft hosted agents](https://docs.microsoft.com/azure/devops/pipelines/agents/hosted?view=azure-devops&tabs=yaml) (Агенты, размещенные корпорацией Майкрософт); мы рекомендуем начать с `Hosted VS2017` или `Hosted VS2019`. 
 
 Теперь у нас есть конвейер сборки, который можно настроить для использования задач сборки эмулятора Azure Cosmos DB. 
 

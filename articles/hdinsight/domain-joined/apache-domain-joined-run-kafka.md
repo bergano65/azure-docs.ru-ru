@@ -1,22 +1,22 @@
 ---
-title: Настройка политик Apache Kafka в HDInsight с Корпоративным пакетом безопасности — Azure
-description: Сведения о настройке политик Apache Ranger для Kafka в Azure HDInsight с корпоративным пакетом безопасности.
+title: Учебник. Настройка политик Apache Kafka в HDInsight с использованием Корпоративного пакета безопасности Azure
+description: 'Учебник: сведения о настройке политик Apache Ranger для Kafka в Azure HDInsight с корпоративным пакетом безопасности.'
 ms.service: hdinsight
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: hrasheed-msft
+ms.author: hrasheed
+ms.reviewer: jasonh
 ms.topic: tutorial
-ms.date: 01/14/2019
-ms.openlocfilehash: 6434f7cae3c3fa402efad00b2f6bfb0bc405f9e3
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 06/24/2019
+ms.openlocfilehash: ba16a975aa3b1e60393006ef49a7e422c572931e
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64730247"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67441371"
 ---
-# <a name="tutorial-configure-apache-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство. Настройка политик Apache Kafka в HDInsight с Корпоративным пакетом безопасности (предварительная версия)
+# <a name="tutorial-configure-apache-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство по Настройка политик Apache Kafka в HDInsight с Корпоративным пакетом безопасности (предварительная версия)
 
-Сведения о настройке политик Apache Ranger для кластеров Apache Kafka с Корпоративным пакетом безопасности (ESP). Кластеры ESP подключены к домену, благодаря чему пользователи могут проходить аутентификацию с учетными данными домена. В этом руководстве вы создадите две политики Ranger для ограничения доступа к разделам `sales*` и `marketingspend`.
+Сведения о настройке политик Apache Ranger для кластеров Apache Kafka с Корпоративным пакетом безопасности (ESP). Кластеры ESP подключены к домену, благодаря чему пользователи могут проходить аутентификацию с учетными данными домена. В этом руководстве вы создадите две политики Ranger для ограничения доступа к разделам `sales` и `marketingspend`.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -26,20 +26,13 @@ ms.locfileid: "64730247"
 > * Создание разделов в кластере Kafka
 > * Создание политик Ranger
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="prerequisite"></a>Предварительные требования
 
-* Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
-
-* Войдите на [портале Azure](https://portal.azure.com/).
-
-* Создайте [кластер Kafka в HDInsight с корпоративным пакетом безопасности](apache-domain-joined-configure-using-azure-adds.md).
+[Кластер Kafka в HDInsight с Корпоративным пакетом безопасности](./apache-domain-joined-configure-using-azure-adds.md).
 
 ## <a name="connect-to-apache-ranger-admin-ui"></a>Подключение к пользовательскому интерфейсу администратора Apache Ranger
 
-1. В браузере подключитесь к интерфейсу администратора Ranger с помощью URL-адреса `https://<ClusterName>.azurehdinsight.net/Ranger/`. Не забудьте изменить `<ClusterName>` на имя вашего кластера Kafka.
-
-    > [!NOTE]  
-    > Учетные данные Ranger не совпадают с учетными данными кластера Hadoop. Чтобы браузеры не использовали кэшированные учетные данные Hadoop, подключитесь к пользовательскому интерфейсу администратора Ranger в новом окне браузера в режиме InPrivate.
+1. В браузере подключитесь к интерфейсу администратора Ranger с помощью URL-адреса `https://ClusterName.azurehdinsight.net/Ranger/`. Не забудьте изменить `ClusterName` на имя вашего кластера Kafka. Учетные данные Ranger не совпадают с учетными данными кластера Hadoop. Чтобы браузеры не использовали кэшированные учетные данные Hadoop, подключитесь к пользовательскому интерфейсу администратора Ranger в новом окне браузера в режиме InPrivate.
 
 2. Зарегистрируйтесь, используя свои учетные данные администратора Azure Active Directory (AD). Учетные данные администратора Azure AD отличаются от учетных данных кластера HDInsight или учетных данных SSH узла Linux HDInsight.
 
@@ -47,7 +40,7 @@ ms.locfileid: "64730247"
 
 ## <a name="create-domain-users"></a>Создание пользователей домена
 
-В разделе [Создание кластера HDInsight с корпоративным пакетом безопасности](https://docs.microsoft.com/azure/hdinsight/domain-joined/apache-domain-joined-configure-using-azure-adds), чтобы узнать, как создать пользователей домена **sales_user** и **marketing_user**. В рабочем сценарии пользователи домена берутся из вашего клиента Active Directory.
+В разделе [Создание кластера HDInsight с корпоративным пакетом безопасности](./apache-domain-joined-configure-using-azure-adds.md), чтобы узнать, как создать пользователей домена **sales_user** и **marketing_user**. В рабочем сценарии пользователи домена берутся из вашего клиента Active Directory.
 
 ## <a name="create-ranger-policy"></a>Создание политики Ranger
 
@@ -59,7 +52,7 @@ ms.locfileid: "64730247"
 
 3. Щелкните **Добавить новую политику**, а затем введите следующие значения.
 
-   |**Параметр**  |**Рекомендуемое значение**  |
+   |Параметр  |Рекомендуемое значение  |
    |---------|---------|
    |Имя политики  |  политика hdi sales*   |
    |Раздел   |  sales* |
@@ -68,19 +61,18 @@ ms.locfileid: "64730247"
 
    Имя раздела может содержать следующие подстановочные знаки:
 
-   * * обозначает ноль или более вхождений символов.
+   * \* обозначает ноль или более вхождений символов.
    * ? означает один символ
 
-   ![Политика создания пользовательского интерфейса администратора Apache Ranger](./media/apache-domain-joined-run-kafka/apache-ranger-admin-create-policy.png)   
+   ![Политика создания пользовательского интерфейса администратора Apache Ranger](./media/apache-domain-joined-run-kafka/apache-ranger-admin-create-policy.png)
 
-   >[!NOTE]
-   >Подождите несколько минут, пока Ranger синхронизируется с Azure AD, если в поле **Выберите пользователя** автоматически не подставится пользователь домена.
+   Подождите несколько минут, пока Ranger синхронизируется с Azure AD, если в поле **Выберите пользователя** автоматически не подставится пользователь домена.
 
 4. Щелкните **Добавить**, чтобы сохранить политику.
 
 5. Щелкните **Добавить новую политику**, а затем введите следующие значения.
 
-   |**Параметр**  |**Рекомендуемое значение**  |
+   |Параметр  |Рекомендуемое значение  |
    |---------|---------|
    |Имя политики  |  маркетинговая политика hdi   |
    |Раздел   |  marketingspend |
@@ -97,11 +89,11 @@ ms.locfileid: "64730247"
 
 1. Чтобы открыть SSH-подключение к кластеру, выполните следующую команду:
 
-   ```bash
+   ```cmd
    ssh DOMAINADMIN@CLUSTERNAME-ssh.azurehdinsight.net
    ```
 
-   Замените `DOMAINADMIN` пользователем с правами администратора для вашего кластера, настроенного во время [создания кластера](https://docs.microsoft.com/azure/hdinsight/domain-joined/apache-domain-joined-configure-using-azure-adds#create-a-hdinsight-cluster-with-esp), и замените `CLUSTERNAME` именем вашего кластера. При появлении запроса введите пароль для учетной записи администратора. Дополнительные сведения об использовании `SSH` с HDInsight см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-use-ssh-unix).
+   Замените `DOMAINADMIN` пользователем с правами администратора для вашего кластера, настроенного во время [создания кластера](./apache-domain-joined-configure-using-azure-adds.md#create-a-hdinsight-cluster-with-esp), и замените `CLUSTERNAME` именем вашего кластера. При появлении запроса введите пароль для учетной записи администратора. Дополнительные сведения об использовании `SSH` с HDInsight см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md).
 
 2. Чтобы сохранить имя кластера в переменной и установить служебную программу синтаксического анализа JSON (`jq`), используйте следующие команды. При появлении запроса введите имя кластера Kafka.
 
@@ -116,12 +108,11 @@ ms.locfileid: "64730247"
    export KAFKABROKERS=`curl -sS -u admin -G https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/services/KAFKA/components/KAFKA_BROKER | jq -r '["\(.host_components[].HostRoles.host_name):9092"] | join(",")' | cut -d',' -f1,2`; \
    ```
 
-   > [!Note]  
-   > Прежде чем продолжить, вам может потребоваться настроить среду разработки, если вы еще не сделали это. Требуются такие компоненты, как Java JDK, Apache Maven и SSH-клиент с scp. Дополнительные сведения см. в инструкциях по установке [здесь](https://github.com/Azure-Samples/hdinsight-kafka-java-get-started/tree/master/DomainJoined-Producer-Consumer).
-   
+   Прежде чем продолжить, вам может потребоваться настроить среду разработки, если вы еще не сделали это. Требуются такие компоненты, как Java JDK, Apache Maven и SSH-клиент с scp. Дополнительные сведения см. в [инструкциях по настройке](https://github.com/Azure-Samples/hdinsight-kafka-java-get-started/tree/master/DomainJoined-Producer-Consumer).
+
 1. Скачайте [примеры присоединенного к домену производителя и потребителя Apache Kafka](https://github.com/Azure-Samples/hdinsight-kafka-java-get-started/tree/master/DomainJoined-Producer-Consumer).
 
-1. Выполните шаги 2 и 3 в разделе **Создание и развертывание примера** в [руководстве по использованию API производителя и потребителя Apache Kafka](https://docs.microsoft.com/azure/hdinsight/kafka/apache-kafka-producer-consumer-api#build-and-deploy-the-example).
+1. Выполните шаги 2 и 3 в разделе **Создание и развертывание примера** в [руководстве по использованию API производителя и потребителя Apache Kafka](../kafka/apache-kafka-producer-consumer-api.md#build-and-deploy-the-example).
 
 1. Выполните следующие команды:
 
@@ -154,7 +145,7 @@ ms.locfileid: "64730247"
 
    Пример: `export KAFKABROKERS=wn0-khdicl.contoso.com:9092,wn1-khdicl.contoso.com:9092`
 
-4. Выполните шаг 3 в разделе **Создание и развертывание примера** в статье [Руководство. Используйте API производителя и потребителя Apache Kafka](https://docs.microsoft.com/azure/hdinsight/kafka/apache-kafka-producer-consumer-api#build-and-deploy-the-example), чтобы убедиться, что `kafka-producer-consumer.jar` также доступно для **sales_user**.
+4. Выполните шаг 3 в разделе **Создание и развертывание примера** в статье [Руководство. Используйте API производителя и потребителя Apache Kafka](../kafka/apache-kafka-producer-consumer-api.md#build-and-deploy-the-example), чтобы убедиться, что `kafka-producer-consumer.jar` также доступно для **sales_user**.
 
 5. Убедитесь, что **sales_user1** может работать с разделом `salesevents`, выполнив следующую команду.
 
@@ -194,7 +185,17 @@ ms.locfileid: "64730247"
 
    ![Аудит политики пользовательского интерфейса Ranger](./media/apache-domain-joined-run-kafka/apache-ranger-admin-audit.png)
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если вы не собираетесь использовать это приложение в дальнейшем, удалите созданный кластер Kafka, сделав следующее:
+
+1. Войдите на [портале Azure](https://portal.azure.com/).
+1. В поле **Поиск** в верхней части страницы введите **HDInsight**.
+1. Выберите **Кластеры HDInsight** в разделе **Службы**.
+1. В списке кластеров HDInsight, который отобразится, щелкните **...** рядом с кластером, созданным при работе с этим руководством. 
+1. Нажмите кнопку **Delete**(Удалить). Щелкните **Да**.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Создание собственных ключей для Apache Kafka](https://docs.microsoft.com/azure/hdinsight/kafka/apache-kafka-byok)
-* [Общие сведения об обеспечении безопасности Apache Hadoop с помощью Корпоративного пакета безопасности](https://docs.microsoft.com/azure/hdinsight/domain-joined/apache-domain-joined-introduction)
+> [!div class="nextstepaction"]
+> [Создание собственных ключей для Apache Kafka](../kafka/apache-kafka-byok.md)

@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: arielgo
 ms.custom: aaddev, signin_art
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac14572210b80ac1415d129c5810f0e5443012c9
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 92770acb19bf95d6a19507184bd8bea10806d5b7
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65540112"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67483029"
 ---
 # <a name="branding-guidelines-for-applications"></a>Рекомендации по фирменной символике для приложений
 
@@ -41,7 +41,7 @@ ms.locfileid: "65540112"
 Корпорация Майкрософт управляет двумя платформами идентификации:
 
 - **Личные учетные записи** (ранее известные как Windows Live ID). Эти учетные записи представляют взаимоотношения между *отдельными* пользователями и корпорацией Майкрософт и используются для доступа к службам и устройствам Майкрософт. Они предназначены для личного пользования.
-- **Рабочие учетные записи**  Управление этими учетными записями осуществляется корпорацией Майкрософт от имени организаций, использующих Azure Active Directory. Эти учетные записи используются для входа в Office 365 и другие бизнес-службы, предоставляемые корпорацией Майкрософт.
+- **Рабочие учетные записи** Управление этими учетными записями осуществляется корпорацией Майкрософт от имени организаций, использующих Azure Active Directory. Эти учетные записи используются для входа в Office 365 и другие бизнес-службы, предоставляемые корпорацией Майкрософт.
 
 Рабочие учетные записи Майкрософт обычно присваиваются конечным пользователям (сотрудникам, студентам, федеральным служащим) их организациями (компанией, школой, государственным учреждением). Эти учетные записи можно создавать напрямую в облаке, Azure AD или синхронизировать из локального каталога, например Windows Server Active Directory. Корпорация Майкрософт является *хранителем* учетных записей, размещенных в Azure AD, но право владения и управления принадлежит организации.
 
@@ -70,9 +70,9 @@ ms.locfileid: "65540112"
 
 Когда администраторы предоставят разрешение для приложения, они могут добавить его в средство запуска приложений Office 365 (доступно из средства запуска приложений и [https://portal.office.com/myapps](https://portal.office.com/myapps)). Если требуется привлечь внимание к этой возможности, можно использовать описание наподобие "Добавить приложение для моей организации" и отобразить кнопку следующим образом.
 
-![Типы приложений и сценарии](./media/howto-add-branding-in-azure-ad-apps/add-to-my-org.png)
+![Кнопка с логотипом корпорации Майкрософт и текстом "Добавить в мою организацию"](./media/howto-add-branding-in-azure-ad-apps/add-to-my-org.png)
 
-Тем не менее рекомендуется написать пояснение, а не полагаться на кнопки. Например: 
+Тем не менее рекомендуется написать пояснение, а не полагаться на кнопки. Например:
 
 > *Если вы уже используете Office 365 или другие бизнес-службы Майкрософт, можно просто предоставить для <имя_вашего_приложения> доступ к корпоративным данным. Это позволит пользователям получить доступ к <имя_вашего_приложения> с помощью имеющихся рабочих учетных записей.*
 
@@ -80,7 +80,7 @@ ms.locfileid: "65540112"
 
 | Asset                                | Формат PNG | Формат SVG |
 | ------------------------------------ | ---------- | ---------- |
-| Логотип Майкрософт  | ![Логотип Майкрософт в формате PNG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_mssymbol_19.png) | ![Логотип Майкрософт в формате SVG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_mssymbol_19.svg) |
+| Логотип Майкрософт  | ![Скачиваемый логотип корпорации Майкрософт в формате PNG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_mssymbol_19.png) | ![Скачиваемый логотип корпорации Майкрософт в формате SVG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_mssymbol_19.svg) |
 
 ## <a name="visual-guidance-for-sign-in"></a>Визуальная подсказка для входа
 
@@ -92,16 +92,16 @@ ms.locfileid: "65540112"
 
 На схеме ниже показаны рекомендуемые корпорацией Майкрософт исправления при использовании этих ресурсов в приложении. Исправления относятся к надписи "Вход с помощью учетной записи Майкрософт" или ее более краткой версии "Вход".
 
-![Исправления надписи "Вход с помощью учетной записи Майкрософт"](./media/howto-add-branding-in-azure-ad-apps/sign-in-with-microsoft-redlines.png)
+![Отображает исправления надписи "Вход с помощью учетной записи Майкрософт"](./media/howto-add-branding-in-azure-ad-apps/sign-in-with-microsoft-redlines.png)
 
 Чтобы скачать официальные изображения для использования в приложении, щелкните одно из них правой кнопкой мыши и сохраните его на компьютере.
 
 | Asset                                | Формат PNG | Формат SVG |
 | ------------------------------------ | ---------- | ---------- |
-| "Вход с помощью учетной записи Майкрософт" (темная тема)  | ![Кнопка "Вход" (темная тема) в формате PNG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_dark.png) | !["Вход с помощью учетной записи Майкрософт" (темная тема) в формате SVG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_dark.svg) |
-| "Вход с помощью учетной записи Майкрософт" (светлая тема) | ![Кнопка "Вход" (светлая тема) в формате PNG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_light.png) | ![Кнопка "Вход с помощью учетной записи Майкрософт" (светлая тема) в формате SVG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_light.svg) |
-| "Вход" (темная тема)                 | ![Уменьшенная кнопка "Вход" (темная тема) в формате PNG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_dark_short.png) | ![Уменьшенная кнопка "Вход" (темная тема) в формате SVG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_dark_short.svg) |
-| "Вход" (светлая тема)                | ![Уменьшенная кнопка "Вход" (светлая тема) в формате PNG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_light_short.png) | ![Уменьшенная кнопка "Вход" (светлая тема) в формате SVG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_light_short.svg) |
+| "Вход с помощью учетной записи Майкрософт" (темная тема)  | ![Скачиваемая кнопка "Вход с помощью учетной записи Майкрософт" (темная тема) в формате PNG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_dark.png) | ![Скачиваемая кнопка "Вход с помощью учетной записи Майкрософт" (темная тема) в формате SVG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_dark.svg) |
+| "Вход с помощью учетной записи Майкрософт" (светлая тема) | ![Скачиваемая кнопка "Вход с помощью учетной записи Майкрософт" (светлая тема) в формате PNG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_light.png) | ![Скачиваемая кнопка "Вход с помощью учетной записи Майкрософт" (светлая тема) в формате SVG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_light.svg) |
+| "Вход" (темная тема)                 | ![Скачиваемая уменьшенная кнопка "Вход" (темная тема) в формате PNG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_dark_short.png) | ![Скачиваемая уменьшенная кнопка "Вход" (темная тема) в формате SVG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_dark_short.svg) |
+| "Вход" (светлая тема)                | ![Скачиваемая уменьшенная кнопка "Вход" (светлая тема) в формате PNG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_light_short.png) | ![Скачиваемая уменьшенная кнопка "Вход" (светлая тема) в формате SVG](./media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_light_short.svg) |
 
 ## <a name="branding-dos-and-donts"></a>Что следует и что не следует делать с фирменно символикой
 

@@ -12,12 +12,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, carlr
 manager: craigg
 ms.date: 03/25/2019
-ms.openlocfilehash: 739afe52403633b1a37f57f0005a85972cc78a39
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: ec0007e2d53a3fd3cae158375b696379d923b4b3
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59360172"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447770"
 ---
 # <a name="getting-started-with-azure-sql-database-managed-instance"></a>Начало работы с управляемым экземпляром Базы данных SQL Azure
 
@@ -79,3 +79,4 @@ ms.locfileid: "59360172"
 - Ознакомьтесь со статьями [Сравнение возможностей службы "База данных SQL Azure" и SQL Server](sql-database-features.md) и [Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server](sql-database-managed-instance-transact-sql-information.md).
 - Дополнительные сведения см. в разделе [Ограничения ресурсов на уровне экземпляра](sql-database-managed-instance-resource-limits.md#instance-level-resource-limits).
 - Дополнительные инструкции см. в статье [Использование управляемого экземпляра в Базе данных SQL Azure](sql-database-howto-managed-instance.md).
+- [Identify the right Azure SQL Database/Managed Instance SKU for your on-premises database](/sql/dma/dma-sku-recommend-sql-db/) (Определение нужного SKU Базы данных SQL Azure и Управляемого экземпляра для локальной базы данных).

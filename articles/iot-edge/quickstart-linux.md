@@ -4,17 +4,17 @@ description: Из этого краткого руководства вы узн
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 03/19/2019
+ms.date: 07/02/2019
 ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 5c790d39ea471a599e8a6b46004b3e350834c318
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 58dc2f5d8862c0b51b36e028d52275b2c8e732be
+ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64573956"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67537558"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-linux-device"></a>Краткое руководство. Развертывание модуля IoT Edge на устройстве под управлением ОС Linux
 
@@ -58,12 +58,11 @@ Azure IoT Edge переносит мощь облака на ваши устро
 * Устройство или виртуальная машина Linux для работы в качестве устройства IoT Edge. Вы должны использовать виртуальную машину [Azure IoT Edge on Ubuntu](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft_iot_edge.iot_edge_vm_ubuntu), предоставляемую корпорацией Майкрософт, которая предварительно установит все, что нужно для запуска IoT Edge на устройстве. Создайте эту виртуальную машину, используя следующую команду:
 
    ```azurecli-interactive
+   az vm image accept-terms --urn microsoft_iot_edge:iot_edge_vm_ubuntu:ubuntu_1604_edgeruntimeonly:latest
    az vm create --resource-group IoTEdgeResources --name EdgeVM --image microsoft_iot_edge:iot_edge_vm_ubuntu:ubuntu_1604_edgeruntimeonly:latest --admin-username azureuser --generate-ssh-keys --size Standard_DS1_v2
    ```
 
    Создание и запуск виртуальной машины может занять несколько минут.
-
-   На этом этапе может возникнуть ошибка `MarketplacePurchaseEligibilityFailed`. В этом случае необходимо принять условия, перейдя на страницу [Azure IoT Edge on Ubuntu](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft_iot_edge.iot_edge_vm_ubuntu) (Azure IoT Edge на Ubuntu) и щелкнув `Get It Now`. Выполните вход и примите условия перед повторным выполнением команды.
 
    При создании новой виртуальной машины запишите для нее значение **publicIpAddress** (общедоступный IP-адрес), которое содержится в выходных данных команды create. Используйте этот общедоступный IP-адрес для подключения к виртуальной машине далее в этом кратком руководстве.
 

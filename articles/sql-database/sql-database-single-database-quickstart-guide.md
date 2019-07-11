@@ -12,12 +12,12 @@ ms.author: jovanpop
 ms.reviewer: carlr
 manager: craigg
 ms.date: 02/04/2019
-ms.openlocfilehash: 0dc9d18ea4dae6ea0f45d1a91392eb1994e6e80e
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 7b52453bab661531461a2bec2f15f7659ec15a1c
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55757238"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67441721"
 ---
 # <a name="getting-started-with-single-databases-in-azure-sql-database"></a>Начало работы с отдельной базой данных в Базе данных SQL Azure
 
@@ -51,3 +51,4 @@ ms.locfileid: "55757238"
 - Дополнительные руководства см. в статье [Использование отдельной базы данных в Базе данных SQL Azure](sql-database-howto-single-database.md).
 - Ознакомьтесь с примерами скриптов, написанными в [PowerShell](sql-database-powershell-samples.md) и [Azure CLI](sql-database-cli-samples.md).
 - Узнайте больше об [API управления](sql-database-single-databases-manage.md), который можно использовать для настройки баз данных.
+- [Identify the right Azure SQL Database/Managed Instance SKU for your on-premises database](/sql/dma/dma-sku-recommend-sql-db/) (Определение нужного SKU Базы данных SQL Azure и Управляемого экземпляра для локальной базы данных).

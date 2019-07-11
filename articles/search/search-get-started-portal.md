@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Создание, загрузка и запрос индекса на портале Azure — служба "Поиск Azure"
-description: Узнайте, как в службе "Поиск Azure" выполнить создание и запрос индекса, используя готовые примеры данных и мастер импорта данных на портале Azure.
+description: Используйте мастер импорта данных на портале Azure для создания, загрузки и запроса первого индекса службы "Поиск Azure".
 author: HeidiSteen
 manager: cgronlun
 tags: azure-portal
@@ -10,18 +10,18 @@ ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: e5baa0876dc976553e8e541cef6b481329500bf6
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: 4a1944c5c5f169274cf45bd3ebfb6df47942dd5a
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65606448"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67485647"
 ---
-# <a name="quickstart-use-built-in-portal-tools-for-azure-search-import-indexing-and-queries"></a>Краткое руководство. Использование встроенных инструментов на портале для импорта, индексирования и отправки запросов в Поиске Azure
+# <a name="quickstart-create-an-azure-search-index-using-the-azure-portal"></a>Краткое руководство. Создание индекса службы "Поиск Azure" с помощью портала Azure
 > [!div class="op_single_selector"]
 > * [Портал](search-get-started-portal.md)
 > * [PowerShell](search-howto-dotnet-sdk.md)
-> * [Postman](search-fiddler.md)
+> * [Postman](search-get-started-postman.md)
 > * [C#](search-create-index-dotnet.md)
 >*
 
@@ -34,7 +34,7 @@ ms.locfileid: "65606448"
 > * Просмотрите существующий индекс и возможности для его изменения.
 > * Изучите полнотекстовый поиск, поиск нечетких соответствий, геопространственный поиск, а также фильтры и аспекты в **обозревателе поиска**.
 
-Если этих инструментов вам недостаточно, попробуйте применить [программирование службы "Поиск Azure" в приложении .NET с помощью кода](search-howto-dotnet-sdk.md) или [инструменты Postman и Fiddler для выполнения вызовов REST API](search-fiddler.md).
+Если этих инструментов вам недостаточно, попробуйте применить [программирование службы "Поиск Azure" в приложении .NET с помощью кода](search-howto-dotnet-sdk.md) или [инструменты Postman и Fiddler для выполнения вызовов REST API](search-get-started-postman.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. Можно также просмотреть 6-минутное [обзорное видео о службе поиска Azure](https://channel9.msdn.com/Events/Connect/2016/138), демонстрирующее шаги в этом руководстве, начиная с 3 минуты.
 
@@ -274,4 +274,4 @@ ms.locfileid: "65606448"
 
 * [Создание индекса службы поиска Azure с помощью пакета SDK для .NET](https://docs.microsoft.com/azure/search/search-create-index-dotnet)
 * [Создание индекса службы поиска Azure с помощью REST API](https://docs.microsoft.com/azure/search/search-create-index-rest-api)
-* [Создание индекса с помощью Postman или Fiddler и API REST Поиска Azure](search-fiddler.md)
+* [Создание индекса с помощью Postman или Fiddler и API REST Поиска Azure](search-get-started-postman.md)

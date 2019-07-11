@@ -3,19 +3,19 @@ title: Краткое руководство. Перевод текста, Java�
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как перевести строку с текстом с английского на итальянский и немецкий с помощью Java и REST API перевода текстов.
 services: cognitive-services
-author: erhopf
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
-ms.author: erhopf
-ms.openlocfilehash: fbbe139160a7efd528e63e206aa37ac72b2542df
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.author: swmachan
+ms.openlocfilehash: f8846e8dc6df8753562a36c05342f04307dd886e
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66515189"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67445087"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-translate-a-string-using-java"></a>Краткое руководство. Использование API перевода текстов для перевода строки с помощью Java
 
@@ -107,6 +107,8 @@ public class Translate {
 String subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
 String url = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=de,it";
 ```
+
+Если вы используете подписку на несколько служб Cognitive Services, необходимо также включить `Ocp-Apim-Subscription-Region` в параметрах запроса. [Дополнительные сведения об аутентификации с использованием подписки на несколько служб](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
 
 ## <a name="create-a-client-and-build-a-request"></a>Создание клиента и выполнение запроса
 

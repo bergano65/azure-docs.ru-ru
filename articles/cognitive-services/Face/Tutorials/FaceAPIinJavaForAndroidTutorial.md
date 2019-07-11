@@ -1,5 +1,5 @@
 ---
-title: Руководство. Обнаружение и выделение лиц на изображении с помощью пакета SDK для Android
+title: Руководство по Обнаружение и выделение лиц на изображении с помощью пакета SDK для Android
 titleSuffix: Azure Cognitive Services
 description: С помощью этого руководства вы создадите простое приложение Android, которое использует API распознавания лиц для определения и выделения лиц на изображении.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.subservice: face-api
 ms.topic: tutorial
 ms.date: 02/06/2019
 ms.author: pafarley
-ms.openlocfilehash: 5c7f2e86d6fe63d309c74d7304f1c19a714b6471
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: a809a4de588a388c4be8ca6efa245450699eeb64
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56312544"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67441605"
 ---
-# <a name="tutorial-create-an-android-app-to-detect-and-frame-faces-in-an-image"></a>Руководство. Создание приложения Android для обнаружения и выделения лиц на изображении
+# <a name="tutorial-create-an-android-app-to-detect-and-frame-faces-in-an-image"></a>Руководство по Создание приложения Android для обнаружения и выделения лиц на изображении
 
 С помощью этого руководства вы создадите простое приложение для Android, которое использует API распознавания лиц Azure, поставляемый через пакет SDK для Java, для определения лиц на изображении. Приложение отображает выбранное изображение и рисует рамку вокруг каждого распознанного лица.
 
@@ -78,7 +78,7 @@ ms.locfileid: "56312544"
 
 ### <a name="add-the-gradle-dependency"></a>Добавление зависимости Gradle
 
-В области **Project** (Проект) с помощью селектора раскрывающегося списка выберите **Android**. Разверните раздел **Gradle Scripts** (Скрипты Gradle), а затем откройте *build.gradle (Module: app)*. Добавьте зависимость `com.microsoft.projectoxford:face:1.4.3` для клиентской библиотеки службы распознавания лиц, как показано на следующем снимке экрана, а затем щелкните **Sync Now** (Синхронизировать).
+В области **Project** (Проект) с помощью селектора раскрывающегося списка выберите **Android**. Разверните раздел **Gradle Scripts** (Скрипты Gradle), а затем откройте *build.gradle (Module: app)* . Добавьте зависимость `com.microsoft.projectoxford:face:1.4.3` для клиентской библиотеки службы распознавания лиц, как показано на следующем снимке экрана, а затем щелкните **Sync Now** (Синхронизировать).
 
 ![Снимок экрана Android Studio с изображением файла приложения build.gradle](../Images/face-tut-java-gradle.png)
 
@@ -100,7 +100,7 @@ ms.locfileid: "56312544"
 
 ## <a name="upload-image-and-detect-faces"></a>Передача изображений и определение лиц
 
-Ваше приложение будет распознавать лица, вызывая метод **FaceServiceClient.detect**, который инкапсулирует REST API [обнаружения](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) и возвращает список экземпляров элементов **Face**.
+Ваше приложение будет распознавать лица, вызывая метод **faceClient.Face.DetectWithStreamAsync**, который инкапсулирует REST API [обнаружения](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) и возвращает список экземпляров элементов **Face**.
 
 Каждый возвращенный элемент **Face** выделяется прямоугольником, указывающим его расположение, и дополняется рядом необязательных атрибутов лица. В этом примере запрашиваются только прямоугольники для лиц.
 

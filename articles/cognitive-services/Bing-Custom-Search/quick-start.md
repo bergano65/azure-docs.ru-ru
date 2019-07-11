@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-custom-search
 ms.topic: quickstart
-ms.date: 02/12/2019
+ms.date: 06/18/2019
 ms.author: aahi
-ms.openlocfilehash: d7a0c29ad3386fcdf85292b6e2852842a971c076
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 6949824f598194456837544526223b823dcfc3e5
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56231915"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67273350"
 ---
 # <a name="quickstart-create-your-first-bing-custom-search-instance"></a>Краткое руководство. Создание первого экземпляра Пользовательского поиска Bing
 

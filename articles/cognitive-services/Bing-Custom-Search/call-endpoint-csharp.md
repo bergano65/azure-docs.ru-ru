@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-custom-search
 ms.topic: quickstart
-ms.date: 05/07/2018
+ms.date: 06/18/2018
 ms.author: maheshb
-ms.openlocfilehash: 267b50e15d39fc5a0df763cea2e2b79f9b23d151
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 87c6744dd9ee0a921a422320563f10acff9ed875
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65595807"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67206222"
 ---
 # <a name="quickstart-call-your-bing-custom-search-endpoint-using-c"></a>Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" с помощью C# 
 
@@ -25,9 +25,9 @@ ms.locfileid: "65595807"
 
 - Экземпляр службы "Пользовательский поиск Bing". См. [Краткое руководство. Создание первого экземпляра службы "Пользовательский поиск Bing"](quick-start.md), чтобы получить дополнительные сведения.
 - Microsoft [.NET Core](https://www.microsoft.com/net/download/core)
-- Любой выпуск [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/downloads/)
+- Любой выпуск [Visual Studio 2019 или более поздней версии](https://www.visualstudio.com/downloads/).
 - Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
-- Установленный пакет [NuGet для пользовательского поиска](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.CustomSearch/1.2.0). 
+- Пакет NuGet [Пользовательского поиска Bing](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.CustomSearch/1.2.0). 
     - В **обозревателе решений** Visual Studio щелкните правой кнопкой мыши проект и выберите пункт **Manage NuGet Packages** (Управление пакетами NuGet) в меню. Установите пакет `Microsoft.Azure.CognitiveServices.Search.CustomSearch`. При установке пакета NuGet для пользовательского поиска также будут установлены следующие сборки:
         - Microsoft.Rest.ClientRuntime
         - Microsoft.Rest.ClientRuntime.Azure
@@ -104,7 +104,7 @@ ms.locfileid: "65595807"
     ```
    ## <a name="process-and-view-the-results"></a>Обработка и просмотр результатов
 
-1. Выполните итерацию по объекту ответа, чтобы отобразить информацию о каждом результате поиска, включая его имя, URL-адрес и дату последнего просмотра веб-страницы.
+3. Выполните итерацию по объекту ответа, чтобы отобразить информацию о каждом результате поиска, включая его имя, URL-адрес и дату последнего просмотра веб-страницы.
 
     ```csharp
     for(int i = 0; i < response.webPages.value.Length; i++) {                

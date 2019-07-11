@@ -1,19 +1,19 @@
 ---
 title: Краткое руководство. Запрос Apache HBase в Azure HDInsight — Apache Phoenix
-description: Из этой статьи вы узнаете, как использовать Apache Phoenix в HDInsight. Также здесь объясняется, как установить и настроить SQLLine на компьютере для подключения к кластеру HBase в HDInsight.
+description: В этом кратком руководстве вы узнаете, как использовать Apache Phoenix в HDInsight. Также здесь объясняется, как установить и настроить SQLLine на компьютере для подключения к кластеру HBase в HDInsight.
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: quickstart
-ms.date: 05/08/2019
+ms.date: 06/12/2019
 ms.author: hrasheed
-ms.openlocfilehash: 46606a991ce878a3335c2c605a4040c9520d5128
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 20af6d32d03ae5d4fe37b1a37198ef1f2c50ec95
+ms.sourcegitcommit: e5dcf12763af358f24e73b9f89ff4088ac63c6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65596203"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67137419"
 ---
 # <a name="quickstart-query-apache-hbase-in-azure-hdinsight-with-apache-phoenix"></a>Краткое руководство. Запрос Apache HBase в Azure HDInsight с помощью Apache Phoenix
 
@@ -126,10 +126,3 @@ curl -u admin:PASSWORD -sS -G https://CLUSTERNAME.azurehdinsight.net/api/v1/clus
 
 > [!div class="nextstepaction"]
 > [Apache Phoenix в HDInsight](../hdinsight-phoenix-in-hdinsight.md)
-
-## <a name="see-also"></a>См. также
-
-* [Руководство по SQLLine](http://sqlline.sourceforge.net/#manual).
-* [Синтаксис Apache Phoenix](https://phoenix.apache.org/language/index.html)
-* [Apache Phoenix за 15 минут или еще меньше](https://phoenix.apache.org/Phoenix-in-15-minutes-or-less.html)
-* [Что такое HBase в HDInsight: база данных NoSQL, которая предоставляет возможности, схожие BigTable, для Hadoop](./apache-hbase-overview.md)

@@ -1,30 +1,29 @@
 ---
 title: 'Руководство по Использование API Потоков Apache Kafka в Azure HDInsight '
-description: Узнайте, как использовать API Потоков Apache Kafka в HDInsight. Этот API позволяет выполнять потоковую обработку между разделами в Kafka.
+description: 'Учебник: узнайте, как использовать API потоков Apache Kafka в HDInsight. Этот API позволяет выполнять потоковую обработку между разделами в Kafka.'
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: tutorial
-ms.date: 04/02/2019
-ms.openlocfilehash: 9425af0f39d14287b49fe06a81172281feb24e83
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 06/25/2019
+ms.openlocfilehash: 0639ecaa0e4ae0581a6c88e1ea9a47de870a8355
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64715974"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67446393"
 ---
-# <a name="tutorial-apache-kafka-streams-api"></a>Руководство по API Потоков Apache Kafka
+# <a name="tutorial-use-apache-kafka-streams-api-in-azure-hdinsight"></a>Руководство по использованию API потоков Apache Kafka в Azure HDInsight
 
-Узнайте, как создать приложение, использующее API для Apache Kafka Streams, и запустить его с помощью Kafka в HDInsight. 
+Узнайте, как создать приложение, использующее API для Apache Kafka Streams, и запустить его с помощью Kafka в HDInsight.
 
 В этом руководстве используется приложение для подсчета слов во время потоковой передачи. Оно считывает текстовые данные из раздела Kafka, извлекает отдельные слова, а затем сохраняет слово и количество слов в другом разделе Kafka.
 
-> [!NOTE]  
-> Потоковая обработка Kafka часто выполняется с помощью Apache Spark или Apache Storm. В Kafka версии 1.1.0 (в HDInsight 3.5 и 3.6) появился API Потоков Kafka. Этот API позволяет преобразовать потоки данных между входными и выходными разделами. В некоторых случаях это может быть альтернативой созданию решения потоковой передачи Spark или Storm. 
->
-> Дополнительные сведения о Потоках Kafka см. в [вводной документации ](https://kafka.apache.org/10/documentation/streams/) на сайте Apache.org.
+Потоковая обработка Kafka часто выполняется с помощью Apache Spark или Apache Storm. В Kafka версии 1.1.0 (в HDInsight 3.5 и 3.6) появился API Потоков Kafka. Этот API позволяет преобразовать потоки данных между входными и выходными разделами. В некоторых случаях это может быть альтернативой созданию решения потоковой передачи Spark или Storm.
+
+Дополнительные сведения о Потоках Kafka см. в [вводной документации ](https://kafka.apache.org/10/documentation/streams/) на сайте Apache.org.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -68,8 +67,7 @@ ms.locfileid: "64715974"
     </dependency>
     ```
 
-    > [!NOTE]  
-    > Запись `${kafka.version}` объявлена в разделе `<properties>..</properties>` файла `pom.xml`. Она настроена для версии Kafka кластера HDInsight.
+    Запись `${kafka.version}` объявлена в разделе `<properties>..</properties>` файла `pom.xml`. Она настроена для версии Kafka кластера HDInsight.
 
 * Подключаемые модули. Подключаемые модули Maven предоставляют различные возможности. В этом проекте используются следующие подключаемые модули:
 
@@ -206,8 +204,7 @@ public class Stream
    * `RekeyedIntermediateTopic`: этот раздел используется для секционирования данных, так как счетчик обновляется оператором `countByKey`.
    * `wordcount-example-Counts-changelog`: этот раздел является хранилищем состояний, используемым операцией `countByKey`.
 
-     > [!IMPORTANT]  
-     > Кроме того, Kafka в HDInsight можно настроить на автоматическое создание разделов. Дополнительные сведения см. в статье [How to configure Apache Kafka on HDInsight to automatically create topics](apache-kafka-auto-create-topics.md) (Настройка автоматического создания разделов в Apache Kafka в HDInsight).
+    Кроме того, Kafka в HDInsight можно настроить на автоматическое создание разделов. Дополнительные сведения см. в статье [How to configure Apache Kafka on HDInsight to automatically create topics](apache-kafka-auto-create-topics.md) (Настройка автоматического создания разделов в Apache Kafka в HDInsight).
 
 ## <a name="run-the-code"></a>Выполнение кода
 
@@ -217,8 +214,7 @@ public class Stream
     java -jar kafka-streaming.jar $KAFKABROKERS $KAFKAZKHOSTS &
     ```
 
-    > [!NOTE]  
-    > Может появиться предупреждение об Apache log4j. На это можно не обращать внимания.
+    Может появиться предупреждение об Apache log4j. На это можно не обращать внимания.
 
 2. Чтобы отправить записи в раздел `test`, используйте следующую команду для запуска приложения-отправителя:
 
@@ -232,8 +228,7 @@ public class Stream
     /usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --bootstrap-server $KAFKABROKERS --topic wordcounts --formatter kafka.tools.DefaultMessageFormatter --property print.key=true --property key.deserializer=org.apache.kafka.common.serialization.StringDeserializer --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer --from-beginning
     ```
 
-    > [!NOTE]  
-    > В соответствии с параметрами `--property` объект-получатель консоли печатает ключ (машинное слово) и число (значение). Кроме того, этот параметр настраивает десериализатор, используемый при считывании этих значений из Kafka.
+    В соответствии с параметрами `--property` объект-получатель консоли печатает ключ (машинное слово) и число (значение). Кроме того, этот параметр настраивает десериализатор, используемый при считывании этих значений из Kafka.
 
     Результат будет аналогичен приведенному ниже:
    
@@ -250,8 +245,7 @@ public class Stream
         jumped  13640
         jumped  13641
    
-    > [!NOTE]  
-    > Параметр `--from-beginning` настраивает запуск объекта-получателя в начале записей, хранящихся в разделе. Число увеличивается каждый раз, когда встречается слово, поэтому раздел содержит несколько записей для каждого слова с увеличивающимся числом.
+    Параметр `--from-beginning` настраивает запуск объекта-получателя в начале записей, хранящихся в разделе. Число увеличивается каждый раз, когда встречается слово, поэтому раздел содержит несколько записей для каждого слова с увеличивающимся числом.
 
 4. Нажмите клавиши __Ctrl+C__, чтобы закрыть отправитель. Снова нажмите клавиши __Ctrl+C__, чтобы выйти из приложения и объекта-получателя.
 
@@ -264,9 +258,19 @@ public class Stream
     /usr/hdp/current/kafka-broker/bin/kafka-topics.sh --delete --topic wordcount-example-Counts-changelog --zookeeper $KAFKAZKHOSTS
     ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Чтобы очистить ресурсы, созданные при работе с этим руководством, удалите группу ресурсов. При этом будет удален связанный кластер HDInsight и другие ресурсы, связанные с этой группой ресурсов.
+
+Чтобы удалить группу ресурсов с помощью портала Azure, сделайте следующее:
+
+1. На портале Azure разверните меню слева, чтобы открыть меню служб, а затем выберите __Группы ресурсов__, чтобы просмотреть список групп ресурсов.
+2. Найдите группу ресурсов, которую нужно удалить, и щелкните правой кнопкой мыши кнопку __Дополнительно__ (…) справа от списка.
+3. Выберите __Удалить группу ресурсов__ и подтвердите выбор.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 Из этого документа вы узнали, как использовать API для Apache Kafka Streams с Kafka в HDInsight. Дополнительные сведения о работе с Kafka см. в следующих материалах.
 
-* [Анализ журналов для Apache Kafka в HDInsight](apache-kafka-log-analytics-operations-management.md)
-* [Репликация данных между кластерами Apache Kafka](apache-kafka-mirroring.md)
+> [!div class="nextstepaction"]
+> [Анализ журналов для Apache Kafka в HDInsight](apache-kafka-log-analytics-operations-management.md)

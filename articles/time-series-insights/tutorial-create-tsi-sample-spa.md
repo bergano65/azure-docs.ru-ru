@@ -4,20 +4,20 @@ description: Описание способов создания одностра
 author: ashannon7
 ms.service: time-series-insights
 ms.topic: tutorial
-ms.date: 04/25/2019
+ms.date: 06/29/2019
 ms.author: dpalled
 manager: cshankar
 ms.custom: seodec18
-ms.openlocfilehash: 2f25267b95e9ed5f7d5f6e6373fb9e3807927a7f
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: e415c681ae5a35de6e8ff76e09cfef8cc8cc98f8
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66735346"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67544079"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-single-page-web-app"></a>Руководство по Создание одностраничного веб-приложения службы "Аналитика временных рядов Azure"
 
-Этот учебник поможет выполнить процесс создания собственного одностраничного веб-приложения (SPA) для доступа к данным Аналитики временных рядов Azure. 
+Этот учебник поможет выполнить процесс создания собственного одностраничного веб-приложения (SPA) для доступа к данным Аналитики временных рядов Azure.
 
 В этом руководстве описывается, как выполнять следующие задачи.
 
@@ -50,55 +50,14 @@ ms.locfileid: "66735346"
 
 ## <a name="register-the-application-with-azure-ad"></a>Регистрация приложения с помощью Azure AD
 
-Перед созданием приложения его необходимо зарегистрировать с помощью Azure AD. Регистрация предоставляет конфигурацию идентификатора, что позволяет приложению использовать поддержку OAuth для единого входа. OAuth требует, чтобы одностраничные приложения использовали тип предоставления разрешения неявной авторизации. Вы обновите авторизацию в манифесте приложения. Манифест приложения представляет собой конфигурацию идентификатора приложения в виде JSON.
-
-1. Войдите на [портал Azure](https://portal.azure.com), используя учетную запись подписки Azure.  
-1. Последовательно выберите элементы **Azure Active Directory** > **Регистрация приложений** > **Регистрация нового приложения**.
-
-   [![Регистрация приложения Azure AD на портале Azure](media/tutorial-create-tsi-sample-spa/ap-aad-app-registration.png)](media/tutorial-create-tsi-sample-spa/ap-aad-app-registration.png#lightbox)
-
-1. В области **Создание** заполните необходимые параметры.
-
-   Параметр|ОПИСАНИЕ
-   ---|---
-   **Имя** | Введите значимое регистрационное имя.  
-   **Тип приложения** | Оставьте значение **Web app/API** (Веб-приложение или API).
-   **URL-адрес входа** | Введите URL-адрес страницы входа (домашний) приложения. Так как приложение в итоге будет размещено в Службе приложений Azure, необходимо использовать URL-адрес в домене https:\//azurewebsites.net. В этом примере для имени взято регистрационное имя.
-
-   Выберите **Создать** для регистрации нового приложения.
-
-   [![Параметр "Создание" на панели регистрации приложения Azure AD на портале Azure](media/tutorial-create-tsi-sample-spa/ap-aad-app-registration-create.png)](media/tutorial-create-tsi-sample-spa/ap-aad-app-registration-create.png#lightbox)
-
-1. Приложения-ресурсы предоставляют интерфейсы REST API, которые могут использовать другие приложения. API-интерфейсы также зарегистрированы с помощью Azure AD. Программные интерфейсы обеспечивают детальный и защищенный доступ к клиентским приложениям, предоставляя *области резервирования*. Так как приложение вызывает API Аналитики временных рядов, необходимо указать API и область. Разрешения предоставляются для API и области во время выполнения. Выберите **Параметры** > **Требуемые разрешения** > **Добавить**.
-
-   [![Параметр "Добавить" для добавления разрешений Azure AD на портале Azure](media/tutorial-create-tsi-sample-spa/ap-aad-app-registration-add-perms.png)](media/tutorial-create-tsi-sample-spa/ap-aad-app-registration-add-perms.png#lightbox)
-
-1. В области **Добавить доступ через API** выберите **1 Выбор API**, чтобы указать API Аналитики временных рядов Azure. В области **Выбор API** введите в поле поиска **azure time**. Затем в списке результатов поиска выберите **Аналитика временных рядов Azure**. Щелкните **Выбрать**.
-
-   [![Параметр "Поиск" для добавления разрешений Azure AD на портале Azure](media/tutorial-create-tsi-sample-spa/ap-aad-app-registration-add-perms-api.png)](media/tutorial-create-tsi-sample-spa/ap-aad-app-registration-add-perms-api.png#lightbox)
-
-1. Чтобы выбрать область для API, щелкните **2 Выбрать разрешения** в области **Добавить доступ через API**. В области **Включить доступ** выберите область **Access Azure Time Series Insights service** (Доступ к службе Аналитика временных рядов Azure). Щелкните **Выбрать**. Вы вернетесь в область **Добавить доступ через API**. Нажмите кнопку **Готово**.
-
-   [![Установка области для добавления разрешений Azure AD на портале Azure](media/tutorial-create-tsi-sample-spa/ap-aad-app-registration-add-perms-api-scopes.png)](media/tutorial-create-tsi-sample-spa/ap-aad-app-registration-add-perms-api-scopes.png#lightbox)
-
-1. В области **Требуемые разрешения** теперь отображается API Аналитики временных рядов Azure. Кроме того, необходимо предварительно дать согласие на доступ приложения к API и области резервирования для всех пользователей. Щелкните **Предоставить разрешения** и затем выберите **Да**.
-
-   [![Параметр "Предоставить разрешения" для добавления требуемых разрешений Azure AD на портале Azure](media/tutorial-create-tsi-sample-spa/ap-aad-app-registration-required-permissions-consent.png)](media/tutorial-create-tsi-sample-spa/ap-aad-app-registration-required-permissions-consent.png#lightbox)
-
-1. Как уже говорилось ранее, необходимо также обновить манифест приложения. В горизонтальном меню в верхней части панели (элемент навигации) выберите имя приложения, чтобы вернуться к области **Зарегистрированное приложение**. Выберите **Манифест**, измените свойство `oauth2AllowImplicitFlow` на `true`, затем выберите **Сохранить**.
-
-   [![Обновление манифеста Azure AD на портале Azure](media/tutorial-create-tsi-sample-spa/ap-aad-app-registration-update-manifest.png)](media/tutorial-create-tsi-sample-spa/ap-aad-app-registration-update-manifest.png#lightbox)
-
-1. В элементе навигации выберите имя приложения, чтобы вернуться к области **Зарегистрированное приложение**. Скопируйте значения параметров **Домашняя страница** и **Идентификатор приложения** для приложения. Эти свойства понадобятся позже при работе с этим учебником.
-
-   [![Копирование URL-адреса домашней страницы и значений идентификатора приложения на портале Azure](media/tutorial-create-tsi-sample-spa/ap-aad-app-registration-application.png)](media/tutorial-create-tsi-sample-spa/ap-aad-app-registration-application.png#lightbox)
+[!INCLUDE [Azure Active Directory app registration](../../includes/time-series-insights-aad-registration.md)]
 
 ## <a name="build-and-publish-the-web-application"></a>Создание и публикация веб-приложения
 
 1. Создайте каталог для сохранения файлов проекта приложения. Затем перейдите к каждому из следующих URL-адресов. Щелкните правой кнопкой мыши ссылку **Необработанный** в правом верхнем углу страницы, а затем выберите **Сохранить как**, чтобы сохранить файлы в каталоге проекта.
 
    - [*index.html*](https://github.com/Microsoft/tsiclient/blob/tutorial/pages/tutorial/index.html): код HTML и JavaScript для страницы
-   - [*sampleStyles.css*]( https://github.com/Microsoft/tsiclient/blob/tutorial/pages/tutorial/sampleStyles.css): таблица стилей CSS
+   - [*sampleStyles.css*]( https://github.com/Microsoft/tsiclient/blob/tutorial/pages/tutorial/sampleStyles.css): таблицы стилей CSS
 
    > [!NOTE]
    > В зависимости от браузера перед сохранением файла может потребоваться изменить расширения файла на HTML или CSS.
@@ -142,7 +101,7 @@ ms.locfileid: "66735346"
       <link rel="stylesheet" type="text/css" href="../../dist/tsiclient.css"> -->
       ```
 
-   1. Чтобы настроить приложение для использования идентификатора регистрации приложения Azure AD, измените значения `clientID` и `postLogoutRedirectUri`, чтобы использовать значения для параметров **Идентификатор приложения** и **Домашняя страница**, скопированные на шаге 9 в разделе [Регистрация приложения с помощью Azure AD](#register-the-application-with-azure-ad).
+   1. Чтобы настроить приложение для использования идентификатора регистрации приложения Azure AD, измените значение `clientID`, чтобы использовать **идентификатор приложения**, скопированный на **шаге 3** при [регистрации приложения с помощью Azure AD](#register-the-application-with-azure-ad). Если вы создали **URL-адрес выхода** в Azure AD, установите его в качестве значения `postLogoutRedirectUri`.
 
       [!code-javascript[head-sample](~/samples-javascript/pages/tutorial/index.html?range=147-153&highlight=4-5)]
 
@@ -182,9 +141,9 @@ ms.locfileid: "66735346"
 
 Код ошибки и состояние | ОПИСАНИЕ
 ---------------------| -----------
-*AADSTS50011. Для приложения не зарегистрирован адрес ответа* | В регистрации Azure AD отсутствует свойство **URL-адрес ответа**. Перейдите на страницу **Параметры** > **URL-адреса ответа** для регистрации приложения Azure AD. Убедитесь, что присутствует URL-адрес **входа**, указанный в шаге 3 из раздела [Регистрация приложения с помощью Azure AD](#register-the-application-with-azure-ad).
-*AADSTS50011. The reply url specified in the request does not match the reply urls configured for the application: '\<Application ID GUID>'.* (Указанный в запросе URL-адрес ответа не соответствует URL-адресам ответа, настроенным для приложения: <глобальный уникальный идентификатор приложения>.) | Параметр `postLogoutRedirectUri`, указанный в шаге 6 раздела [Создание и публикация веб-приложения](#build-and-publish-the-web-application), должен соответствовать значению, указанному в свойстве **Параметры** > **URL-адреса ответа** в вашей регистрации приложения Azure AD. Обязательно также измените значение для **URL-адрес назначения**, чтобы использовать *HTTPS* на шаге 5 в разделе [Создание и публикация веб-приложения](#build-and-publish-the-web-application).
-Веб-приложение загружается, но на странице входа есть только текст и белый фон без стилей. | Убедитесь, что пути, обсуждаемые на шаге 4 из раздела [Создание и публикация веб-приложения](#build-and-publish-the-web-application), заданы правильно. Если веб-приложение не может найти файлы CSS, страница не будет правильно отображаться.
+*AADSTS50011. Для приложения не зарегистрирован адрес ответа* | В регистрации Azure AD отсутствует свойство **URL-адрес ответа**. Перейдите на страницу **Параметры** > **URL-адреса ответа** для регистрации приложения Azure AD. Убедитесь в наличии **URI перенаправления**, который вы могли указать на **шаге 2** при [регистрации приложения для использования Azure AD](#register-the-application-with-azure-ad).
+*AADSTS50011. The reply url specified in the request does not match the reply urls configured for the application: '\<Application ID GUID>'.* (Указанный в запросе URL-адрес ответа не соответствует URL-адресам ответа, настроенным для приложения: <глобальный уникальный идентификатор приложения>.) | Параметр `postLogoutRedirectUri`, указанный на **шаге 6** раздела [Создание и публикация веб-приложения](#build-and-publish-the-web-application), должен соответствовать значению, указанному в свойстве **Параметры** > **URL-адреса ответа** в вашей регистрации приложения Azure AD. Обязательно также измените значение для **URL-адреса назначения**, чтобы использовать *HTTPS* на **шаге 5** в разделе [Создание и публикация веб-приложения](#build-and-publish-the-web-application).
+Веб-приложение загружается, но на странице входа есть только текст и белый фон без стилей. | Убедитесь, что пути, обсуждаемые на **шаге 4** из раздела [Создание и публикация веб-приложения](#build-and-publish-the-web-application), заданы правильно. Если веб-приложение не может найти файлы CSS, страница не будет правильно отображаться.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

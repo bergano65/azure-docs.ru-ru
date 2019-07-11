@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: overview
-ms.date: 01/11/2019
+ms.date: 06/19/2019
 ms.author: scottwhi
-ms.openlocfilehash: 77f8e41b2271770e49c2e5c4d1591c213eaa257d
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: da1dd68b8e155e121f26f5599207691877fbf0ca
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66383419"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67274168"
 ---
 # <a name="search-for-news-with-the-bing-news-search-api"></a>Поиск новостей с помощью API Bing для поиска новостей
 
@@ -51,7 +51,7 @@ Host: api.cognitive.microsoft.com
 GET https://api.cognitive.microsoft.com/bing/v7.0/news/search?q=sailing+dinghies+site:contososailing.com&mkt=en-us HTTP/1.1
 ```
 
-Ниже показан ответ на предыдущий запрос. В соответствии с [требованиями к использованию и отображению](../useanddisplayrequirements.md) для API поиска Bing все новостные статьи должны отображаться в порядке, указанном в ответе. Если статья содержит сгруппированные статьи, необходимо указать, что существуют связанные статьи, и отображать их по запросу.
+В следующем примере JSON показан ответ на предыдущий запрос. В соответствии с [требованиями к использованию и отображению](../useanddisplayrequirements.md) для API поиска Bing все новостные статьи должны отображаться в порядке, указанном в ответе. Если статья содержит сгруппированные статьи, необходимо указать, что существуют связанные статьи, и отображать их по запросу.
 
 ```json
 {
@@ -107,7 +107,7 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/news/search?q=sailing+dinghies
 
 ## <a name="get-todays-top-news"></a>Получение главных новостей за сегодня
 
-Чтобы получить главные новостные статьи за сегодняшний день, вы должны сделать тот же запрос, что и на получение общих новостей, за исключением того, что нужно удалить `q`.
+Чтобы получить главные новостные статьи за сегодня, можно отправить тот же общий запрос новостей что и раньше, не задавая параметр `q`.
 
 ```http
 GET https://api.cognitive.microsoft.com/bing/v7.0/news/search?q=&mkt=en-us HTTP/1.1
@@ -119,7 +119,7 @@ X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>
 Host: api.cognitive.microsoft.com
 ```
 
-Ответ на получение главных новостей почти такой же, как и на получение общих новостей. Однако ответ `news` не включает поле `totalEstimatedMatches`, потому что есть определенное количество результатов. Количество главных новостных статей может различаться в зависимости от цикла новостей. Обязательно используйте свойство `provider`, чтобы указать источник статьи.
+Ответ на получение главных новостей почти такой же, как и на получение общих новостей. Однако ответ `news` не включает поле `totalEstimatedMatches`, потому что есть определенное количество результатов. Количество главных новостных статей может различаться в зависимости от цикла новостей. Обязательно используйте поле `provider`, чтобы указать источник статьи.
 
 ## <a name="get-news-by-category"></a>Получение новостей по категориям
 

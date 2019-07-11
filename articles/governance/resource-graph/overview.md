@@ -7,12 +7,12 @@ ms.date: 05/06/2019
 ms.topic: overview
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: 9d3385b688208065e5854b6358819b5afad8fe65
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 4724789dd1a0893c5ef4ab112306c185f0e87da7
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66162082"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67274382"
 ---
 # <a name="overview-of-the-azure-resource-graph-service"></a>Обзор службы Azure Resource Graph
 
@@ -71,7 +71,7 @@ Resource Graph регулирует запросы на уровне польз�
 - `x-ms-user-quota-remaining` (целое число): оставшаяся квота ресурсов для пользователя. Это значение соответствует количеству запросов.
 - `x-ms-user-quota-resets-after` (чч:мм:сс): время, оставшееся до сброса квоты потребления пользователя.
 
-Дополнительные сведения см. в статье [Throttling Resource Manager requests](../../azure-resource-manager/resource-manager-request-limits.md) (Регулирование запросов Resource Manager).
+Дополнительные сведения см. в разделе [рекомендаций для регулируемых запросов](./concepts/guidance-for-throttled-requests.md).
 
 ## <a name="running-your-first-query"></a>Выполнение первого запроса
 

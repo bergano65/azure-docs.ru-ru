@@ -3,19 +3,19 @@ title: Краткое руководство. Получение списка п
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, а также результаты поиска по словарю с помощью API перевода текстов.
 services: cognitive-services
-author: erhopf
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
-ms.author: erhopf
-ms.openlocfilehash: e5e57757fbd80ca8e90b9997440050a751914a8a
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.author: swmachan
+ms.openlocfilehash: 5b5bf33c70b9f8827f1f55378e9caf4d1c858bed
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66514955"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449420"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-get-a-list-of-supported-languages-using-c"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью C# и API перевода текстов
 
@@ -23,7 +23,7 @@ ms.locfileid: "66514955"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [ПАКЕТ SDK .NET](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial)
+* [Пакет SDK для .NET](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial)
 * [пакет NuGet .NET для JSON](https://www.nuget.org/packages/Newtonsoft.Json/);
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
 
@@ -114,6 +114,8 @@ var jsonResponse = response.Content.ReadAsStringAsync().Result;
 Console.WriteLine(PrettyPrint(jsonResponse));
 Console.WriteLine("Press any key to continue.");
 ```
+
+Если вы используете подписку на несколько служб Cognitive Services, необходимо также включить `Ocp-Apim-Subscription-Region` в параметрах запроса. [Дополнительные сведения об аутентификации с использованием подписки на несколько служб](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
 
 Чтобы напечатать с настройкой "Качественная печать" (форматирование текста ответа), добавьте эту функцию в класс Program:
 ```

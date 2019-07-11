@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: arvinh
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 537916ef14a7cd2748ad453e2d0d91e3b5c936b1
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: cccd5ddc2f268eda48bd9803596a1db1c5ee9395
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65826051"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67481161"
 ---
 # <a name="view-your-azure-active-directory-tenant-applications"></a>Просмотр клиентских приложений в Azure Active Directory
 
@@ -64,7 +64,6 @@ ms.locfileid: "65826051"
 1. В разделе **Видимость приложений** выберите **Любое** или **Скрытое**. Параметр **Скрытый** показывает приложения, которые находятся в клиенте, но не отображаются пользователям.
 
 1. После выбора нужных параметров щелкните **Применить**.
- 
 
 ## <a name="search-for-a-tenant-application"></a>Поиск клиентского приложения
 
@@ -74,19 +73,17 @@ ms.locfileid: "65826051"
 
 1. Введите имя приложения, которое необходимо найти. Если приложение было добавлено в клиент Azure AD, оно появится в результатах поиска. В этом примере показано, что GitHub не был добавлен в приложения клиента.
 
-    ![Поиск приложения](media/view-applications-portal/search-for-tenant-application.png)
+    ![Пример, показывающий, что приложение не добавлено в клиент](media/view-applications-portal/search-for-tenant-application.png)
 
 1. Попробуйте ввести первые несколько букв имени приложения. В этом примере показаны все приложения, которые начинаются с **Sales**.
 
-    ![Поиск с помощью префикса](media/view-applications-portal/search-by-prefix.png)
+    ![Пример, показывающий все приложения, которые начинаются с Sales](media/view-applications-portal/search-by-prefix.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Из этого краткого руководства вы узнали, как просмотреть приложения в клиенте Azure AD. Вы узнали, как фильтровать список приложений по типу приложения, состоянию и видимости. Вы также узнали, как искать конкретное приложение.
 
-Теперь, когда вы нашли нужное приложение, можете продолжать [добавлять дополнительные приложения в клиенте](add-application-portal.md). Кроме того, вы можете выбрать приложение для просмотра или изменить свойства и параметры конфигурации. Например, можно настроить единый вход. 
+Теперь, когда вы нашли нужное приложение, можете продолжать [добавлять дополнительные приложения в клиенте](add-application-portal.md). Кроме того, вы можете выбрать приложение для просмотра или изменить свойства и параметры конфигурации. Например, можно настроить единый вход.
 
 > [!div class="nextstepaction"]
 > [Настройка единого входа](configure-single-sign-on-portal.md)
-
-

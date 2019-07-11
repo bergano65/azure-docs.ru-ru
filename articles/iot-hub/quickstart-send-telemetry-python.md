@@ -10,12 +10,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 02/28/2019
-ms.openlocfilehash: 03c7da3e17e8e606b46c5c5e104a1271e8fbfd33
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: a8abd71609d3e063c92541485007a3bde44be954
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65873109"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67051234"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-python"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (Python)
 
@@ -112,6 +112,13 @@ az extension add --name azure-cli-iot-ext
     На следующем снимке экрана показан пример выходных данных, когда приложение имитированного устройства отправляет данные телеметрии в Центр Интернета вещей:
 
     ![Запуск виртуального устройства](media/quickstart-send-telemetry-python/SimulatedDevice.png)
+    
+### <a name="to-avoid-the-import-iothubclient-error"></a>Предотвращение ошибки импорта iothub_client
+Текущая версия пакета SDK Интернета вещей Azure для Python является оболочкой [нашего пакета C SDK](https://github.com/azure/azure-iot-sdk-c). Он создается с помощью библиотеки [Boost](https://www.boost.org/). Из-за этого он предоставляется с некоторыми значительными ограничениями. Дополнительные сведения см. [здесь](https://github.com/Azure/azure-iot-sdk-python#important-installation-notes---dealing-with-importerror-issues)
+
+1. Убедитесь, что у вас установлена правильная версия [Python](https://github.com/Azure/azure-iot-sdk-python#important-installation-notes---dealing-with-importerror-issues). Имейте в виду, что только определенные версии подходят для этого примера. 
+2. Убедитесь, что у вас установлена необходимая версия [Распространяемого компонента Microsoft Visual C++ для Visual Studio 2019](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) для среды выполнения C++. (Мы рекомендуем последнюю версию).
+3. Убедитесь, что вы установили клиент Центра Интернета вещей: `pip install azure-iothub-device-client`.
 
 ## <a name="read-the-telemetry-from-your-hub"></a>Чтение данных телеметрии из концентратора
 

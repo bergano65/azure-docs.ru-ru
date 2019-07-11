@@ -3,29 +3,30 @@ title: Краткое руководство. Определение языка 
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как с помощью REST API перевода текстов и .NET Core определить язык заданного текста.
 services: cognitive-services
-author: erhopf
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
-ms.date: 06/04/2019
-ms.author: erhopf
-ms.openlocfilehash: a6be4f89f19cd64f5c9d235dc628ca222dab973c
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.date: 06/13/2019
+ms.author: swmachan
+ms.openlocfilehash: eaf9fa86437d2c69a9a1a68fba797f69c1339dd1
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66515247"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448241"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-detect-text-language-using-c"></a>Краткое руководство. Определение языка текста с помощью C# и API перевода текстов
 
-Из этого краткого руководства вы узнаете, как с помощью REST API перевода текстов и .NET Core определить язык заданного текста.
+Из этого краткого руководства вы узнаете, как с помощью REST API Перевода текстов и .NET Core, C# версии 7.1 или более поздней определить язык заданного текста.
 
 Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом API перевода текстов. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [ПАКЕТ SDK .NET](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial)
+* C# версии 7.1 или более поздней
+* [Пакет SDK для .NET](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial)
 * [пакет NuGet .NET для JSON](https://www.nuget.org/packages/Newtonsoft.Json/);
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
 * ключ подписки Azure для API перевода текстов.
@@ -47,6 +48,18 @@ cd detect-sample
 dotnet add package Newtonsoft.Json --version 11.0.2
 ```
 
+## <a name="select-the-c-language-version"></a>Выбор версии языка C#
+
+Для работы с этим кратким руководством потребуется C# версии 7.1 или более поздней. Есть несколько способов изменить версию C# для проекта. В этом руководстве мы покажем, как настроить файл `detect-sample.csproj`. Все доступные варианты, в том числе смена языка через Visual Studio, описаны в статье [Выбор версии языка C#](https://docs.microsoft.com/dotnet/csharp/language-reference/configure-language-version).
+
+Откройте проект, а затем откройте `detect-sample.csproj`. Убедитесь, что для `LangVersion` установлено значение 7.1 или более высокое. Если для нужной версии языка не существует группы свойств, добавьте следующие строки:
+
+```xml
+<PropertyGroup>
+   <LangVersion>7.1</LangVersion>
+</PropertyGroup>
+```
+
 ## <a name="add-required-namespaces-to-your-project"></a>Добавление обязательных пространств имен в проект
 
 С помощью команды `dotnet new console`, которую вы выполнили ранее, был создан проект, включая `Program.cs`. Этот файл находится там, где будет размещаться код приложения. Откройте файл `Program.cs` и замените существующие инструкции using. Эти инструкции обеспечивают доступ ко всем типам, требуемым для создания и запуска примера приложения.
@@ -55,15 +68,42 @@ dotnet add package Newtonsoft.Json --version 11.0.2
 using System;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
+// Install Newtonsoft.Json with NuGet
 using Newtonsoft.Json;
+```
+
+## <a name="create-classes-for-the-json-response"></a>Создание классов для ответа JSON
+
+Далее мы создадим класс, используемый при десериализации ответа JSON, возвращенного с помощью API Перевода текстов.
+
+```csharp
+/// <summary>
+/// The C# classes that represents the JSON returned by the Translator Text API.
+/// </summary>
+public class DetectResult
+{
+    public string Language { get; set; }
+    public float Score { get; set; }
+    public bool IsTranslationSupported { get; set; }
+    public bool IsTransliterationSupported { get; set; }
+    public AltTranslations[] Alternatives { get; set; }
+}
+public class AltTranslations
+{
+    public string Language { get; set; }
+    public float Score { get; set; }
+    public bool IsTranslationSupported { get; set; }
+    public bool IsTransliterationSupported { get; set; }
+}
 ```
 
 ## <a name="create-a-function-to-detect-the-source-texts-language"></a>Создание функции для определения языка исходного текста
 
-В классе `Program` создайте функцию `Detect`. Этот класс инкапсулирует код, используемый для вызова ресурса Detect, и выводит результат в консоль.
+В классе `Program` создайте функцию `DetectTextRequest()`. Этот класс инкапсулирует код, используемый для вызова ресурса Detect, и выводит результат в консоль.
 
 ```csharp
-static void Detect()
+static public async Task DetectTextRequest(string subscriptionKey, string host, string route, string inputText)
 {
   /*
    * The code for your call to the translation service will be added to this
@@ -72,20 +112,12 @@ static void Detect()
 }
 ```
 
-## <a name="set-the-subscription-key-host-name-and-path"></a>Выбор ключа подписки, имени узла и пути
-
-Добавьте следующие строки в функцию `Detect`.
-
-```csharp
-string host = "https://api.cognitive.microsofttranslator.com";
-string route = "/detect?api-version=3.0";
-string subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
-```
+## <a name="serialize-the-detect-request"></a>Сериализация запроса определения
 
 Далее необходимо создать и сериализовать объект JSON, содержащий текст на определяемом языке.
 
 ```csharp
-System.Object[] body = new System.Object[] { new { Text = @"Salve mondo!" } };
+System.Object[] body = new System.Object[] { new { Text = inputText } };
 var requestBody = JsonConvert.SerializeObject(body);
 ```
 
@@ -115,44 +147,56 @@ using (var request = new HttpRequestMessage())
 Добавьте следующий код в `HttpRequestMessage`:
 
 ```csharp
-// Set the method to POST
+// Build the request.
 request.Method = HttpMethod.Post;
-
-// Construct the full URI
+// Construct the URI and add headers.
 request.RequestUri = new Uri(host + route);
-
-// Add the serialized JSON object to your request
 request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-
-// Add the authorization header
 request.Headers.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 
-// Send request, get response
-var response = client.SendAsync(request).Result;
-var jsonResponse = response.Content.ReadAsStringAsync().Result;
-
-// Pretty print the response
-Console.WriteLine(PrettyPrint(jsonResponse));
-Console.WriteLine("Press any key to continue.");
-```
-
-Чтобы напечатать с настройкой "Качественная печать" (форматирование текста ответа), добавьте эту функцию в класс Program:
-```
-static string PrettyPrint(string s)
+// Send the request and get response.
+HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
+// Read response as a string.
+string result = await response.Content.ReadAsStringAsync();
+// Deserialize the response using the classes created earlier.
+DetectResult[] deserializedOutput = JsonConvert.DeserializeObject<DetectResult[]>(result);
+// Iterate over the deserialized response.
+foreach (DetectResult o in deserializedOutput)
 {
-    return JsonConvert.SerializeObject(JsonConvert.DeserializeObject(s), Formatting.Indented);
+    Console.WriteLine("The detected language is '{0}'. Confidence is: {1}.\nTranslation supported: {2}.\nTransliteration supported: {3}.\n",
+        o.Language, o.Score, o.IsTranslationSupported, o.IsTransliterationSupported);
+    // Create a counter
+    int counter = 0;
+    // Iterate over alternate translations.
+    foreach (AltTranslations a in o.Alternatives)
+    {
+        counter++;
+        Console.WriteLine("Alternative {0}", counter);
+        Console.WriteLine("The detected language is '{0}'. Confidence is: {1}.\nTranslation supported: {2}.\nTransliteration supported: {3}.\n",
+            a.Language, a.Score, a.IsTranslationSupported, a.IsTransliterationSupported);
+    }
 }
 ```
 
+Если вы используете подписку на несколько служб Cognitive Services, необходимо также включить `Ocp-Apim-Subscription-Region` в параметрах запроса. [Дополнительные сведения об аутентификации с использованием подписки на несколько служб](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
+
 ## <a name="put-it-all-together"></a>Сборка
 
-Последний этап — вызов `Detect()` в функции `Main`. Найдите `static void Main(string[] args)` и добавьте следующие строки:
+Последний этап — вызов `DetectTextRequest()` в функции `Main`. Найдите строку `static void Main(string[] args)` и замените ее этим кодом:
 
 ```csharp
-Detect();
-Console.ReadLine();
+static async Task Main(string[] args)
+{
+    // This is our main function.
+    // Output languages are defined in the route.
+    // For a complete list of options, see API reference.
+    string subscriptionKey = "YOUR_TRANSLATOR_TEXT_KEY_GOES_HERE";
+    string host = "https://api.cognitive.microsofttranslator.com";
+    string route = "/detect?api-version=3.0";
+    string breakSentenceText = @"How are you doing today? The weather is pretty pleasant. Have you been to the movies lately?";
+    await DetectTextRequest(subscriptionKey, host, route, breakSentenceText);
+}
 ```
-
 ## <a name="run-the-sample-app"></a>Запуск примера приложения
 
 Теперь все готово к запуску примера приложения. В командной строке или сеансе терминала перейдите к каталогу проекта и выполните следующую команду:
@@ -163,30 +207,51 @@ dotnet run
 
 ## <a name="sample-response"></a>Пример ответа
 
-Найдите сокращенное наименование страны или региона в этом [списке языков](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).
+После выполнения примера в окне терминала должны быть выведены такие данные:
+
+> [!NOTE]
+> Найдите сокращенное наименование страны или региона в этом [списке языков](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).
+
+```bash
+The detected language is 'en'. Confidence is: 1.
+Translation supported: True.
+Transliteration supported: False.
+
+Alternative 1
+The detected language is 'fil'. Confidence is: 0.82.
+Translation supported: True.
+Transliteration supported: False.
+
+Alternative 2
+The detected language is 'ro'. Confidence is: 1.
+Translation supported: True.
+Transliteration supported: False.
+```
+
+Это сообщение строится на основе необработанных данных JSON, которые будут выглядеть следующим образом:
 
 ```json
-[
-  {
-    "language": "it",
-    "score": 1.0,
-    "isTranslationSupported": true,
-    "isTransliterationSupported": false,
-    "alternatives": [
-      {
-        "language": "pt",
-        "score": 1.0,
-        "isTranslationSupported": true,
-        "isTransliterationSupported": false
-      },
-      {
-        "language": "en",
-        "score": 1.0,
-        "isTranslationSupported": true,
-        "isTransliterationSupported": false
-      }
-    ]
-  }
+[  
+    {  
+        "language":"en",
+        "score":1.0,
+        "isTranslationSupported":true,
+        "isTransliterationSupported":false,
+        "alternatives":[  
+            {  
+                "language":"fil",
+                "score":0.82,
+                "isTranslationSupported":true,
+                "isTransliterationSupported":false
+            },
+            {  
+                "language":"ro",
+                "score":1.0,
+                "isTranslationSupported":true,
+                "isTransliterationSupported":false
+            }
+        ]
+    }
 ]
 ```
 

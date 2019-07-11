@@ -9,20 +9,42 @@ ms.topic: quickstart
 ms.date: 02/26/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to quickly deploy Data Box Disk so as to import data into Azure.
-ms.openlocfilehash: a01da3218b07307faa8e94acab1473c82bd86c41
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 65bf4e973ce33b2898abf585fe306a8bc85c64a0
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57546931"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67477798"
 ---
+::: zone target="docs"
+
 # <a name="quickstart-deploy-azure-data-box-disk-using-the-azure-portal"></a>Краткое руководство. Развертывание решения "Диск Azure Data Box" с помощью портала Azure
+
+::: zone-end
+
+::: zone target="chromeless"
+
+# <a name="get-started-with-azure-data-box-disk-using-azure-portal"></a>Начало работы с диском Azure Data Box с помощью портала Azure
+
+::: zone-end
+
+::: zone target="docs"
 
 В этом кратком руководстве описывается развертывание диска Azure Data Box с помощью портала Azure. В этих действиях описано как быстро создать заказ, получить диски, распаковать, подключить и копировать данные на диски, таким образом, чтобы оны отправлялись в Azure.
 
 Подробные пошаговое инструкции по развертыванию и отслеживанию см. в статье [Руководство. Заказ Диска Azure Data Box (предварительная версия)](data-box-disk-deploy-ordered.md). 
 
 Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+
+::: zone-end
+
+::: zone target="chromeless"
+
+В этом кратком руководстве описывается развертывание диска Azure Data Box с помощью портала Azure. Шаги включают проверку предварительных требований, разблокировку дисков, подключение и копирование данных на диски, которые отправляются в Azure.
+
+::: zone-end
+
+::: zone target="docs"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -33,6 +55,23 @@ ms.locfileid: "57546931"
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу [https://aka.ms/azuredataboxfromdiskdocs](https://aka.ms/azuredataboxfromdiskdocs).
+
+::: zone-end
+
+::: zone target="chromeless"
+
+## <a name="prerequisites"></a>Предварительные требования
+
+- Вы разместили заказ на диск Data Box с помощью статьи [Руководство. Заказ Диска Azure Data Box (предварительная версия)](data-box-disk-deploy-ordered.md).
+- Состояние ваших дисков и заданий на портале обновилось до **Доставлено**.
+- У вас есть клиентский компьютер, с которого можно копировать данные. На клиентском компьютере должны быть установлены:
+
+    - [поддерживаемая операционная система](data-box-disk-system-requirements.md#supported-operating-systems-for-clients).
+    - другое [необходимое установленное программное обеспечение](data-box-disk-system-requirements.md#other-required-software-for-windows-clients), если это клиент Windows.
+
+::: zone-end
+
+::: zone target="docs"
 
 ## <a name="order"></a>Порядок
 
@@ -123,3 +162,5 @@ ms.locfileid: "57546931"
 
 > [!div class="nextstepaction"]
 > [Use Azure portal to administer your Data Box](data-box-portal-ui-admin.md)(Использование портала Azure для управления диском Data Box)
+
+::: zone-end

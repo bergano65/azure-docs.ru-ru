@@ -11,16 +11,16 @@ ms.topic: quickstart
 ms.date: 05/02/2019
 ms.author: travisw
 ms.custom: ''
-ms.openlocfilehash: e03cc45c5868f90dd1c2da0d7b4890fbf72c9899
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 4044f8d48efae4e8423f780c85e0f3ccfde12461
+ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65954816"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67467054"
 ---
 # <a name="quickstart-create-a-voice-first-virtual-assistant-with-the-speech-sdk-uwp"></a>Краткое руководство. Создание виртуального помощника по обработке голоса с помощью пакета SDK для распознавания речи, UWP.
 
-Также доступны краткие руководства по [преобразованию речи в текст](quickstart-csharp-uwp.md) и [переводу речи](quickstart-translate-speech-uwp.md).
+Кроме того, доступны краткие руководства по [преобразованию речи в текст](quickstart-csharp-uwp.md), [преобразованию текста в речь](quickstart-text-to-speech-csharp-uwp.md) и [переводу речи](quickstart-translate-speech-uwp.md).
 
 Из этой статьи вы узнаете, как разработать приложение C# для универсальной платформы Windows с помощью [пакета SDK службы "Речь"](speech-sdk.md). Программа подключится к ранее созданному и настроенному боту, чтобы включить из клиентского приложения интерфейс виртуального помощника по обработке голоса. Приложение создается с использованием [пакета SDK NuGet для службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017 (любого выпуска).
 
@@ -32,14 +32,11 @@ ms.locfileid: "65954816"
 Для работы с этим кратким руководством вам понадобится:
 
 * [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
-* Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
+* Ключ подписки Azure для служб "Речь". [Получите бесплатно](get-started.md) или создайте его на [портале Azure](https://portal.azure.com).
 * Ранее созданный бот, настроенный с помощью[канала "Речь Direct Line"](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech).
 
     > [!NOTE]
-    > В настоящее время в предварительной версии канала "Речь Direct Line" поддерживается только регион **westus2**.
-
-    > [!NOTE]
-    > 30-дневная пробная версия ценовой категории "Стандартный", описанная в разделе [Try Speech Services for free](get-started.md) (Бесплатная пробная подписка на службу "Речь"), ограничена регионом **westus** (а не **westus2**) и поэтому несовместима с каналом "Речь Direct Line". Подписки в регионе **westus2** ценовых категорий "Стандартный" и "Бесплатный" совместимы с этим каналом.
+    > Служба "Речь Direct Line" (предварительная версия) сейчас доступна в ряде регионов служб распознавания речи. Ознакомьтесь со [списком поддерживаемых регионов для виртуальных помощников по обработке голоса](regions.md#voice-first-virtual-assistants) и убедитесь, что ваши ресурсы развернуты в одном из этих регионов.
 
 ## <a name="optional-get-started-fast"></a>Необязательно: Быстрое начало работы
 
@@ -63,7 +60,7 @@ ms.locfileid: "65954816"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    
+
         <Grid>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center"  Margin="20,50,0,0" VerticalAlignment="Center" Width="800">
                 <Button x:Name="EnableMicrophoneButton" Content="Enable Microphone"  Margin="0,0,10,0" Click="EnableMicrophone_ButtonClicked" Height="35"/>
@@ -111,7 +108,7 @@ ms.locfileid: "65954816"
     {
         public sealed partial class MainPage : Page
         {
-            private SpeechBotConnector botConnector;
+            private DialogServiceConnector connector;
 
             private enum NotifyType
             {
@@ -230,7 +227,7 @@ ms.locfileid: "65954816"
                 });
             }
 
-            private void InitializeBotConnector()
+            private void InitializeDialogServiceConnector()
             {
                 // New code will go here
             }
@@ -243,31 +240,31 @@ ms.locfileid: "65954816"
     }
     ```
 
-1. Затем с помощью сведений о подписке вы создадите `SpeechBotConnector`. Добавьте следующее в тело метода `InitializeBotConnector`, заменив строки `YourChannelSecret`, `YourSpeechSubscriptionKey` и `YourServiceRegion` собственными значениями для бота, подпиской на распознавание речи и [регионом](regions.md).
+1. Затем с помощью сведений о подписке вы создадите `DialogServiceConnector`. Добавьте следующее в тело метода `InitializeDialogServiceConnector`, заменив строки `YourChannelSecret`, `YourSpeechSubscriptionKey` и `YourServiceRegion` собственными значениями для бота, подпиской на распознавание речи и [регионом](regions.md).
 
     > [!NOTE]
-    > В настоящее время в предварительной версии канала "Речь Direct Line" поддерживается только регион **westus2**.
+    > Служба "Речь Direct Line" (предварительная версия) сейчас доступна в ряде регионов служб распознавания речи. Ознакомьтесь со [списком поддерживаемых регионов для виртуальных помощников по обработке голоса](regions.md#voice-first-virtual-assistants) и убедитесь, что ваши ресурсы развернуты в одном из этих регионов.
 
     > [!NOTE]
     > Для получения сведений о настройке бота и секрете канала см. документацию по Bot Framework для [канала "Речь Direct Line"](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech).
 
     ```csharp
-    // create a BotConnectorConfig by providing a bot secret key and Cognitive Services subscription key
+    // create a DialogServiceConfig by providing a bot secret key and Cognitive Services subscription key
     // the RecoLanguage property is optional (default en-US); note that only en-US is supported in Preview
-    const string channelSecret = "YourChannelSecret";
-    const string speechSubscriptionKey = "YourSpeechSubscriptionKey";
-    const string region = "YourServiceRegion"; // note: this is assumed as westus2 for preview
+    const string channelSecret = "YourChannelSecret"; // Your channel secret
+    const string speechSubscriptionKey = "YourSpeechSubscriptionKey"; // Your subscription key
+    const string region = "YourServiceRegion"; // Your subscription service region. Note: only a subset of regions are currently supported
 
-    var botConnectorConfig = BotConnectorConfig.FromSecretKey(channelSecret, speechSubscriptionKey, region);
-    botConnectorConfig.SetProperty(PropertyId.SpeechServiceConnection_RecoLanguage, "en-US");
-    botConnector = new SpeechBotConnector(botConnectorConfig);
+    var botConfig = DialogServiceConfig.FromBotSecret(channelSecret, speechSubscriptionKey, region);
+    botConfig.SetProperty(PropertyId.SpeechServiceConnection_RecoLanguage, "en-US");
+    connector = new DialogServiceConnector(botConfig);
     ```
 
-1. `SpeechBotConnector` использует несколько событий, чтобы сообщать о работе бота, результатах распознавания речи и других данных. Добавьте обработчиков для этих событий, добавив следующее в конце тела метода `InitializeBotConnector`.
+1. `DialogServiceConnector` использует несколько событий, чтобы сообщать о работе бота, результатах распознавания речи и других данных. Добавьте обработчиков для этих событий, добавив следующее в конце тела метода `InitializeDialogServiceConnector`.
 
     ```csharp
     // ActivityReceived is the main way your bot will communicate with the client and uses bot framework activities
-    botConnector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
+    connector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
     {
         NotifyUser($"Activity received, hasAudio={activityReceivedEventArgs.HasAudio} activity={activityReceivedEventArgs.Activity}");
 
@@ -277,7 +274,7 @@ ms.locfileid: "65954816"
         }
     };
     // Canceled will be signaled when a turn is aborted or experiences an error condition
-    botConnector.Canceled += (sender, canceledEventArgs) =>
+    connector.Canceled += (sender, canceledEventArgs) =>
     {
         NotifyUser($"Canceled, reason={canceledEventArgs.Reason}");
         if (canceledEventArgs.Reason == CancellationReason.Error)
@@ -286,47 +283,47 @@ ms.locfileid: "65954816"
         }
     };
     // Recognizing (not 'Recognized') will provide the intermediate recognized text while an audio stream is being processed
-    botConnector.Recognizing += (sender, recognitionEventArgs) =>
+    connector.Recognizing += (sender, recognitionEventArgs) =>
     {
         NotifyUser($"Recognizing! in-progress text={recognitionEventArgs.Result.Text}");
     };
     // Recognized (not 'Recognizing') will provide the final recognized text once audio capture is completed
-    botConnector.Recognized += (sender, recognitionEventArgs) =>
+    connector.Recognized += (sender, recognitionEventArgs) =>
     {
         NotifyUser($"Final speech-to-text result: '{recognitionEventArgs.Result.Text}'");
     };
     // SessionStarted will notify when audio begins flowing to the service for a turn
-    botConnector.SessionStarted += (sender, sessionEventArgs) =>
+    connector.SessionStarted += (sender, sessionEventArgs) =>
     {
         NotifyUser($"Now Listening! Session started, id={sessionEventArgs.SessionId}");
     };
     // SessionStopped will notify when a turn is complete and it's safe to begin listening again
-    botConnector.SessionStopped += (sender, sessionEventArgs) =>
+    connector.SessionStopped += (sender, sessionEventArgs) =>
     {
         NotifyUser($"Listening complete. Session ended, id={sessionEventArgs.SessionId}");
     };
     ```
 
-1. Теперь, имея установленную конфигурацию и зарегистрированных обработчиков событий, `SpeechBotConnector` просто нужно ожидать передачи данных. В тело метода `ListenButton_ButtonClicked` в классе `MainPage` добавьте следующее.
+1. Теперь, имея установленную конфигурацию и зарегистрированных обработчиков событий, `DialogServiceConnector` просто нужно ожидать передачи данных. В тело метода `ListenButton_ButtonClicked` в классе `MainPage` добавьте следующее.
 
     ```csharp
     private async void ListenButton_ButtonClicked(object sender, RoutedEventArgs e)
     {
-        if (botConnector == null)
+        if (connector == null)
         {
-            InitializeBotConnector();
+            InitializeDialogServiceConnector();
             // Optional step to speed up first interaction: if not called, connection happens automatically on first use
-            var connectTask = botConnector.ConnectAsync();
+            var connectTask = connector.ConnectAsync();
         }
 
         try
         {
             // Start sending audio to your speech-enabled bot
-            var listenTask = botConnector.ListenOnceAsync();
+            var listenTask = connector.ListenOnceAsync();
 
             // You can also send activities to your bot as JSON strings -- Microsoft.Bot.Schema can simplify this
             string speakActivity = @"{""type"":""message"",""text"":""Greeting Message"", ""speak"":""Hello there!""}";
-            await botConnector.SendActivityAsync(speakActivity);
+            await connector.SendActivityAsync(speakActivity);
 
         }
         catch (Exception ex)
@@ -359,10 +356,12 @@ ms.locfileid: "65954816"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Примеры для C# на сайте GitHub](https://aka.ms/csspeech/samples)
+> [Создание и развертывание простого бота](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0)
 
 ## <a name="see-also"></a>См. также
 
-- [Translate speech using Speech service](how-to-translate-speech-csharp.md) (Перевод речи с помощью службы распознавания речи)
-- [Настройка акустических моделей](how-to-customize-acoustic-models.md)
-- [Настройка языковых моделей](how-to-customize-language-model.md)
+- [About custom voice-first virtual assistants preview](voice-first-virtual-assistants.md) (Сведения о пользовательских виртуальных помощниках по обработке голоса (предварительная версия))
+- [Получите ключ подписки для Служб речи бесплатно](get-started.md)
+- [Create a custom wake word by using the Speech service](speech-devices-sdk-create-kws.md) (Создание пользовательских слов для активации с помощью службы "Речь")
+- [Подключение бота к каналу Direct Line Speech (предварительная версия)](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
+- [Примеры для C# на сайте GitHub](https://aka.ms/csspeech/samples)

@@ -2,18 +2,18 @@
 title: Руководство по Регистрация событий пространства Azure Digital Twins | Документация Майкрософт
 description: В этом руководстве вы узнаете, как получать уведомления от пространств, интегрировав Azure Digital Twins с Logic Apps.
 services: digital-twins
-author: dsk-2015
+author: alinamstanciu
 ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
 ms.date: 12/18/2018
-ms.author: dkshir
-ms.openlocfilehash: 524ca96687e9395b65ec513326ad0fd4f7c6d429
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.author: alinast
+ms.openlocfilehash: 2b84fa2fd8053ca4dc7ef0ad246d29b2bba3dae5
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57528913"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67484699"
 ---
 # <a name="tutorial-receive-notifications-from-your-azure-digital-twins-spaces-by-using-logic-apps"></a>Руководство по Получение уведомлений от пространств Azure Digital Twins с использованием Logic Apps
 
@@ -76,16 +76,16 @@ ms.locfileid: "57528913"
       - SpaceChange
       - TopologyOperation
       - UdfCustom
-      connectionString: Primary_connection_string_for_your_Event_Grid
-      secondaryConnectionString: Secondary_connection_string_for_your_Event_Grid
-      path: Event_Grid_Topic_Path
+      connectionString: <Primary connection string for your Event Grid>
+      secondaryConnectionString: <Secondary connection string for your Event Grid>
+      path: <Event Grid Topic Name without https:// and /api/events, e.g. eventgridname.region.eventgrid.azure.net>
     ```
 
-1. Замените заполнитель `Primary_connection_string_for_your_Event_Grid` значением **YOUR_KEY_1**.
+1. Замените заполнитель `<Primary connection string for your Event Grid>` значением **YOUR_KEY_1**.
 
-1. Замените заполнитель `Secondary_connection_string_for_your_Event_Grid` значением **YOUR_KEY_2**.
+1. Замените заполнитель `<Secondary connection string for your Event Grid>` значением **YOUR_KEY_2**.
 
-1. Замените заполнитель `Event_Grid_Topic_Path` путем к разделу сетки событий. Вы можете получить этот путь, удалив **https://** и пути к ресурсам в конце из URL-адреса **конечной точки раздела**. Он должен быть похожим на следующий формат: *имя вашей сетки событий.ваше расположение.eventgrid.azure.net*.
+1. Замените заполнитель **путем** к разделу сетки событий. Вы можете получить этот путь, удалив **https://** и пути к ресурсам в конце из URL-адреса **конечной точки раздела**. Он должен быть похожим на следующий формат: *имя вашей сетки событий.ваше расположение.eventgrid.azure.net*.
 
     > [!IMPORTANT]
     > Введите все значения без кавычек. Убедитесь, что в файле YAML после двоеточия есть по крайней мере один пробел. Вы также можете проверить содержимое файла YAML с помощью любого проверяющего элемента управления YAML в Интернете, например [этого](https://onlineyamltools.com/validate-yaml).
@@ -114,7 +114,7 @@ ms.locfileid: "57528913"
 
 1. Откройте развернутый ресурс Logic Apps, а затем откройте панель **Конструктор приложений логики**. 
 
-1. Выберите триггер **When an Event Grid event occurs** (Когда происходит событие службы "Сетка событий"). При появлении запроса войдите в клиент с использованием учетной записи Azure. При появлении запроса выберите **Разрешить доступ** для ресурса службы "Сетка событий". Выберите **Продолжить**.
+1. Выберите триггер **When an Event Grid resource event occurs** (Когда происходит событие ресурса службы "Сетка событий"). При появлении запроса войдите в клиент с использованием учетной записи Azure. При появлении запроса выберите **Разрешить доступ** для ресурса службы "Сетка событий". Выберите **Продолжить**.
 
 1. В окне **When an Event Grid event occurs (Preview)** (Когда происходит событие службы "Сетка событий" (предварительная версия)) сделайте следующее: 
    
@@ -134,7 +134,7 @@ ms.locfileid: "57528913"
 
    b. В поле **Содержимое** выберите **Текст** из списка **Динамическое содержимое**.
 
-   c. Выберите **Use sample to payload to generate schema** (Использовать пример полезной нагрузки, чтобы создать схему). Вставьте следующие полезные данные JSON и нажмите кнопку **Готово**.
+   c. Выберите **Использовать пример полезной нагрузки, чтобы создать схему**. Вставьте следующие полезные данные JSON и нажмите кнопку **Готово**.
 
     ```JSON
     {
@@ -208,7 +208,7 @@ ms.locfileid: "57528913"
 Вы можете приступить к следующему руководству, чтобы узнать, как визуализировать данные датчиков, а также анализировать тенденции и обнаруживать аномалии.
 
 > [!div class="nextstepaction"]
-> [Руководство по визуализации и анализу событий пространств Azure Digital Twins с помощью Аналитики временных рядов](tutorial-facilities-analyze.md)
+> [Руководство. по визуализации и анализу событий пространств Azure Digital Twins с помощью Аналитики временных рядов](tutorial-facilities-analyze.md)
 
 Вы также можете получить дополнительные сведения о пространственных интеллектуальных графах и моделях объектов в Azure Digital Twins:
 

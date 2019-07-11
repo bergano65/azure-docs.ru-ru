@@ -10,12 +10,12 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, служба контейнеров Azure, служба Azure Kubernetes, контейнеры, Helm, сетка службы, сетка службы маршрутизации, kubectl, k8s
 manager: mmontwil
-ms.openlocfilehash: 0677eb4c65da242f8cfcb20754ec88ffb02c5929
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: 517951be2bc99f7607facaed3c9b04260fc6d3d8
+ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66393161"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67503189"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-java"></a>Начало работы в Azure Dev Spaces с использованием Java
 
@@ -137,18 +137,27 @@ azds up
 
 ```
 (pending registration) Service 'webfrontend' port 'http' will be available at <url>
+Service 'webfrontend' port 'http' is available at http://webfrontend.1234567890abcdef1234.eus.azds.io/
 Service 'webfrontend' port 80 (TCP) is available at 'http://localhost:<port>'
 ```
 
-При открытии этого URL-адреса в окне браузера должна начаться загрузка веб-приложения. По мере выполнения контейнера в окно терминала передаются выходные данные `stdout` и `stderr`.
+Определите общедоступный URL-адрес для службы в выходных данных команды `up`. Он заканчивается на `.azds.io`. В нашем примере используется такой общедоступный URL-адрес: `http://webfrontend.1234567890abcdef1234.eus.azds.io/`.
+
+Чтобы просмотреть веб-приложение, откройте общедоступный URL-адрес в браузере. Кроме того, обратите внимание, что выходные данные `stdout` и `stderr` передаются потоком в окно терминала *azds trace* при взаимодействии с веб-приложением. Вы также увидите сведения об отслеживании HTTP-запросов при их прохождении в системе. Это упрощает отслеживание сложных вызовов к нескольким службам во время разработки. Инструментарий, добавленный в Dev Spaces, предоставляет эту возможность отслеживания запросов.
 
 > [!Note]
-> При первом запуске подготовка общедоступной записи DNS может занять несколько минут. Если не удается разрешить общедоступный URL-адрес, вместо него можно использовать альтернативный URL-адрес `http://localhost:<portnumber>`, который отображается в выходных данных консоли. Если вы используете URL-адрес localhost, может показаться, что контейнер выполняется локально, но на самом деле он выполняется в AKS. Для вашего удобства и упрощения взаимодействия со службой на локальном компьютере служба Azure Dev Spaces создает временный туннель SSH для контейнера, запущенного в Azure. Вы можете опробовать общедоступный URL-адрес позже, когда запись DNS будет готова.
-> ### <a name="update-a-content-file"></a>Обновление файла содержимого
-> Azure Dev Spaces — это не просто среда выполнения кода в Kubernetes. Она позволяет быстро и итеративно видеть, как изменения вашего кода вступают в силу в среде Kubernetes в облаке.
+> Кроме общедоступного URL-адреса можно использовать альтернативный URL-адрес `http://localhost:<portnumber>`, который отображается в выходных данных консоли. Если вы используете URL-адрес localhost, может показаться, что контейнер выполняется локально, но на самом деле он выполняется в AKS. В Azure Dev Spaces используется *перенаправление портов* Kubernetes для сопоставления порта localhost с контейнером, запущенным в AKS. Это облегчает работу со службой на локальном компьютере.
+
+### <a name="update-a-content-file"></a>Обновление файла содержимого
+Azure Dev Spaces — это не просто среда выполнения кода в Kubernetes. Она позволяет быстро и итеративно видеть, как изменения вашего кода вступают в силу в среде Kubernetes в облаке.
 
 1. В окне терминала нажмите клавишу `Ctrl+C` (чтобы остановить `azds up`).
-1. Откройте файл кода с именем `src/main/java/com/ms/sample/webfrontend/Application.java` и измените текст приветствия: `return "Hello from webfrontend in Azure!";`.
+1. Откройте `src/main/java/com/ms/sample/webfrontend/Application.java` и измените сообщение приветствие на [строку 19](https://github.com/Azure/dev-spaces/blob/master/samples/java/getting-started/webfrontend/src/main/java/com/ms/sample/webfrontend/Application.java#L19):
+
+    ```java
+    return "Hello from webfrontend in Azure!";
+    ```
+
 1. Сохраните файл.
 1. Запустите `azds up` в окне терминала.
 
@@ -181,7 +190,7 @@ Service 'webfrontend' port 80 (TCP) is available at 'http://localhost:<port>'
 ![](media/get-started-java/debug-configuration.png)
 
 > [!Note]
-> Если вы не видите никаких команд Azure Dev Spaces на палитре команд, убедитесь, что вы установили расширение VS Code для Azure Dev Spaces. Убедитесь, что рабочая область, которую вы открыли в VS Code, — это папка, содержащая файл azds.yaml.
+> Если вы не видите никаких команд Azure Dev Spaces на палитре команд, убедитесь, что вы установили расширение VS Code для Azure Dev Spaces. Убедитесь, что рабочая область, которую вы открыли в VS Code, — это папка, содержащая файл `azds.yaml`.
 
 ### <a name="debug-the-container-in-kubernetes"></a>Отладка контейнера в Kubernetes
 Нажмите клавишу **F5**, чтобы отладить свой код в Kubernetes.
@@ -189,7 +198,7 @@ Service 'webfrontend' port 80 (TCP) is available at 'http://localhost:<port>'
 Как и команда `up`, код синхронизируется со средой разработки, а контейнер создается и развертывается в Kubernetes. На этот раз, конечно, отладчик подключен к удаленному контейнеру.
 
 > [!Tip]
-> В строке состояния VS Code отобразится URL-адрес, щелкнув по которому, можно перейти на соответствующий ресурс.
+> Строка состояния VS Code станет оранжевой. Это указывает на то, что отладчик подключен. Кроме того, появится интерактивный URL-адрес, который можно использовать для открытия приложения.
 
 ![](media/common/vscode-status-bar-url.png)
 
@@ -207,9 +216,9 @@ public String greeting()
 }
 ```
 
-Сохраните файл и в области **действий отладки** нажмите кнопку **Обновить**.
+Сохраните файл и в области **действий отладки** нажмите кнопку **Restart** (Обновить).
 
-![](media/get-started-java/debug-action-refresh.png)
+![](media/common/debug-action-refresh.png)
 
 Вместо того, чтобы перестраивать и повторно развертывать новый образ контейнера при каждой правке кода, что часто занимает много времени, Azure Dev Spaces пошагово перекомпилирует код в существующем контейнере, чтобы ускорить цикл редактирования и отладки.
 

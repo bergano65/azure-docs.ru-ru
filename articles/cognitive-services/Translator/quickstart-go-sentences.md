@@ -3,19 +3,19 @@ title: Краткое руководство. Получение длины пр
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве объясняется, как определять длину предложений в тексте с помощью API перевода текстов и Go.
 services: cognitive-services
-author: erhopf
+author: swmachan
 manager: erhopf
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
-ms.author: erhopf
-ms.openlocfilehash: 723e7e33a043f3700b562cf50a6f75539741507f
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.author: swmachan
+ms.openlocfilehash: a2ed5fdd9ff8042bcf23fb5ce31880ae4167483a
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66515222"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449628"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-determine-sentence-length-using-go"></a>Краткое руководство. Определение длины предложения с помощью C# и API перевода текстов
 
@@ -27,7 +27,7 @@ ms.locfileid: "66515222"
 
 Для работы с этим кратким руководством вам понадобится:
 
-* [Go](https://golang.org/doc/install)
+* [GO](https://golang.org/doc/install)
 * ключ подписки Azure для API перевода текстов.
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
@@ -137,6 +137,8 @@ if err != nil {
     log.Fatal(err)
 }
 ```
+
+Если вы используете подписку на несколько служб Cognitive Services, необходимо также включить `Ocp-Apim-Subscription-Region` в параметрах запроса. [Дополнительные сведения об аутентификации с использованием подписки на несколько служб](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
 
 ## <a name="handle-and-print-the-response"></a>Обработка и вывод ответа
 

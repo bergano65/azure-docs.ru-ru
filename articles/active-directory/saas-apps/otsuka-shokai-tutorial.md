@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 06/06/2019
+ms.date: 06/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bec4cb17f2d25cd00ef115a78736c95eaf26d95f
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.openlocfilehash: bd06eafca2c508bc73fa2b327235621797be417c
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66752462"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67274200"
 ---
 # <a name="tutorial-integrate-otsuka-shokai-with-azure-active-directory"></a>Руководство по Интеграция Otsuka Shokai с Azure Active Directory
 
@@ -29,7 +29,6 @@ ms.locfileid: "66752462"
 
 * контроль доступа к Otsuka Shokai в Azure AD;
 * автоматический вход пользователей в Otsuka Shokai с помощью учетных записей Azure AD;
-* Централизованное управление учетными записями через портал Azure.
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
@@ -112,17 +111,15 @@ ms.locfileid: "66752462"
 
     ж. Выберите команду **Сохранить**.
 
-1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Сохраните его в Блокноте.
-
-   ![Ссылка для скачивания сертификата](common/copy-metadataurl.png)
-
-1. Требуемые URL-адреса можно скопировать из раздела **настройки Otsuka Shokai**.
-
-   ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
-
 ### <a name="configure-otsuka-shokai"></a>Настройка Otsuka Shokai
 
-Чтобы настроить единый вход на стороне **Otsuka Shokai**, отправьте **URL-адрес метаданных федерации приложений** в [службу технической поддержки Otsuka Shokai](mailto:Tatsuya.Satoh@otsuka-shokai.co.jp). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. При подключении к странице клиента "My Page" (Моя страница) из приложения единого входа запускается мастер настройки единого входа.
+
+2. Если идентификатор Otsuka не зарегистрирован, перейдите к регистрации идентификатора Otsuka.   Если вы зарегистрировали идентификатор Otsuka, перейдите к настройке связей.
+
+3. Выполните все инструкции мастера. Когда после входа на страницу клиента "My Page" (Моя страница) отобразится главный экран, настройка единого входа будет завершена.
+
+4. При следующем подключении к странице клиента "My Page" (Моя страница) из приложения единого входа, после того, как откроется экран рекомендаций и будет выполнен вход на страницу клиента "My Page" (Моя страница), отобразится главный экран.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -156,7 +153,7 @@ ms.locfileid: "66752462"
 
 ### <a name="create-otsuka-shokai-test-user"></a>Создание тестового пользователя Otsuka Shokai
 
-Из этого раздела вы узнаете, как создать пользователя B. Simon в приложении Otsuka Shokai. Обратитесь в  [службу технической поддержки Otsuka Shokai](mailto:Tatsuya.Satoh@otsuka-shokai.co.jp), чтобы добавить пользователей на платформу Otsuka Shokai. Перед использованием единого входа необходимо создать и активировать пользователей.
+Регистрация новой учетной записи SaaS будет выполнена при первом обращении к Otsuka Shokai. Кроме того, мы свяжем учетную запись Azure AD с учетной записью SaaS во время ее создания.
 
 ### <a name="test-sso"></a>Проверка единого входа
 
@@ -168,4 +165,4 @@ ms.locfileid: "66752462"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

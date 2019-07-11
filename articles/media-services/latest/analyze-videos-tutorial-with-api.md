@@ -1,5 +1,5 @@
 ---
-title: Анализ видео с помощью Служб мультимедиа Azure и .NET | Документация Майкрософт
+title: Анализ видео с помощью Служб мультимедиа Azure | Документация Майкрософт
 description: Используя инструкции этого руководства, вы сможете проанализировать видео с помощью Служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
@@ -9,22 +9,25 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
-ms.date: 04/21/2019
+ms.date: 06/19/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: ead6fdc0ade4a24d162603b9dc3749726c0d8002
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: d31d102300cf23e068aee6bec9ea6d253e874dca
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65415652"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67653957"
 ---
-# <a name="tutorial-analyze-videos-with-media-services-v3-using-net"></a>Руководство по Анализ видео с помощью Служб мультимедиа версии 3 и .NET
+# <a name="tutorial-analyze-videos-with-media-services-v3"></a>Руководство по Анализ видео с помощью Служб мультимедиа версии 3
+
+> [!NOTE]
+> Несмотря на то, что в этом учебнике используются примеры для [пакета SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.models.liveevent?view=azure-dotnet), общие шаги одинаковы для [REST API](https://docs.microsoft.com/rest/api/media/liveevents), [CLI](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest) или других поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
 Это руководство содержит сведения об анализе видео с помощью Служб мультимедиа Azure. Имеется множество сценариев, в которых может потребоваться получить подробные сведения о видео- и аудиозаписях. Например, чтобы повысить удовлетворенность клиентов, организации могут выполнить преобразование речи в текст. Таким образом можно сделать записи клиентов доступным для поиска каталогом с индексами и панелями мониторинга. Затем они могут получить информативные бизнес-сведения, например список распространенных жалоб, источники этих жалоб и другую полезную информацию.
 
 В этом учебнике описаны следующие процедуры.    
-
+ 
 > [!div class="checklist"]
 > * Скачивание примера приложения, описанного в этой статье.
 > * Проверка кода, анализирующего указанное видео
@@ -83,7 +86,7 @@ ms.locfileid: "65415652"
 Следующая функция выполняет такие действия:
 
 * создает каталог ресурсов; 
-* получает доступный для записи [URL-адрес SAS](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) для [контейнера ресурса в хранилище](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-dotnet?tabs=windows#upload-blobs-to-the-container);
+* получает доступный для записи [URL-адрес SAS](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) для [контейнера ресурса в хранилище](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-dotnet#upload-blobs-to-a-container);
 * отправляет файл в контейнер в хранилище через URL-адрес SAS.
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/AnalyzeVideos/Program.cs#CreateInputAsset)]

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 02/06/2018
 ms.author: mhopkins
 ms.reviewer: cbrooks
-ms.openlocfilehash: 41cb37eb9d96752d4732731d2a36d9bc892cbaa5
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: c3743c62dcbdccc2a119cfec570df96c622390c7
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66159816"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67540316"
 ---
 # <a name="quickstart-use-net-to-create-a-queue-in-azure-storage"></a>Краткое руководство. Использование .NET для создания очереди в службе хранилища Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "66159816"
 
 Затем загрузите и установите .NET Core 2.0 для своей ОС. На компьютере Windows можно установить Visual Studio и, если вы предпочитаете платформу .NET Framework, использовать ее. Кроме того, вы можете установить редактор для использования с ОС.
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 - Установите [.NET Core для Windows](https://www.microsoft.com/net/download/windows) или [.NET Framework](https://www.microsoft.com/net/download/windows) (входит в состав Visual Studio для Windows).
 - Установите [Visual Studio для Windows](https://www.visualstudio.com/). Если вы используете .NET Core, устанавливать Visual Studio не обязательно.  
@@ -63,7 +63,7 @@ git clone https://github.com/Azure-Samples/storage-queues-dotnet-quickstart.git
 
 После копирования строки подключения запишите ее в переменной среды на локальном компьютере, где выполняется приложение. Чтобы задать переменную среды, откройте окно консоли и следуйте инструкциям для используемой операционной системы. Замените `<yourconnectionstring>` фактической строкой подключения:
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 ```cmd
 setx storageconnectionstring "<yourconnectionstring>"
@@ -93,7 +93,7 @@ export STORAGE_CONNECTION_STRING=<yourconnectionstring>
 
 В этом примере приложения создается очередь и в нее добавляется сообщение. Сначала сообщение просматривается в приложении без удаления из очереди. Затем сообщение извлекается и удаляется из очереди.
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 Если вы используете Visual Studio в качестве редактора, нажмите клавишу **F5** для запуска. 
 
@@ -187,9 +187,9 @@ Console.WriteLine();
 
 Затем сообщение добавляется в конец очереди. 
 
-Сообщение должно быть в формате, допустимом для передачи XML-запросов с кодированием UTF-8. Размер сообщения не должен превышать 64 КБ. Если сообщение содержит двоичные данные, корпорация Майкрософт рекомендует использовать кодировку Base64.
+Сообщение должно быть в формате, допустимом для передачи XML-запросов с кодированием UTF-8. Размер сообщения не должен превышать 64 КБ. Если сообщение содержит двоичные данные, мы советуем использовать кодировку Base64 для сообщения.
 
-По умолчанию максимальное время действия сообщения составляет 7 дней. Время действия сообщения может быть любым положительным числом. Если указать -1, сообщение будет иметь неограниченное время действия.
+По умолчанию максимальное время действия сообщения составляет 7 дней. Для срока жизни сообщения можно указать любое положительное число.
 
 ```csharp
 // Create a message and add it to the queue. Set expiration time to 14 days.
@@ -199,6 +199,12 @@ Console.WriteLine("Added message '{0}' to queue '{1}'", message.Id, queue.Name);
 Console.WriteLine("Message insertion time: {0}", message.InsertionTime.ToString());
 Console.WriteLine("Message expiration time: {0}", message.ExpirationTime.ToString());
 Console.WriteLine();
+```
+
+Чтобы добавить сообщение с неограниченным сроком действия, используйте `Timespan.FromSeconds(-1)` при вызове [AddMessageAsync](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.addmessageasync).
+
+```csharp
+await queue.AddMessageAsync(message, TimeSpan.FromSeconds(-1), null, null, null);
 ```
 
 ### <a name="peek-a-message-from-the-queue"></a>Просмотр сообщения из очереди

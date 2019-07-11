@@ -11,12 +11,12 @@ ms.custom: mvc
 ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.date: 04/25/2019
-ms.openlocfilehash: afa539bc3369e4f9d9ecf27340436e0be70a03ad
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: a8857d62b3078d78bdd0a339ebadf766ddb2fb43
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65190584"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295821"
 ---
 # <a name="quickstart-create-automated-tasks-processes-and-workflows-with-azure-logic-apps---visual-studio"></a>Краткое руководство. Создание автоматизированных задач, операций и рабочих процессов с помощью Azure Logic Apps в Visual Studio
 
@@ -104,6 +104,9 @@ ms.locfileid: "65190584"
 1. В обозревателе решений откройте контекстное меню для файла **LogicApp.json**. Выберите действие **Открыть в конструкторе приложений логики**. (Или нажмите клавиши Ctrl+L.)
 
    ![Открытие файла JSON приложения логики с помощью конструктора приложений логики](./media/quickstart-create-logic-apps-with-visual-studio/open-logic-app-designer.png)
+
+   > [!TIP]
+   > Если у вас нет этой команды в Visual Studio 2019, убедитесь, что установлены последние обновления для Visual Studio.
 
    Visual Studio требуется подписка Azure и группа ресурсов для создания и развертывания ресурсов, связанных с приложением логики и подключениями.
 

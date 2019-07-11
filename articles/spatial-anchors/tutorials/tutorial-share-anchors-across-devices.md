@@ -8,12 +8,12 @@ ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: ff9868dd7347812eb6ef566288ec364bc89b6955
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.openlocfilehash: 734e1d08413867a438270660fa97bb8c5737e087
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58629309"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "67135385"
 ---
 # <a name="tutorial-share-azure-spatial-anchors-across-sessions-and-devices"></a>Руководство по Совместное использование Пространственных привязок Azure между сеансами и устройствами
 
@@ -38,7 +38,7 @@ ms.locfileid: "58629309"
 
 [!INCLUDE [Create Spatial Anchors resource](../../../includes/spatial-anchors-get-started-create-resource.md)]
 
-## <a name="open-the-sample-project-in-unity"></a>Открытие примера проекта в Unity
+## <a name="download-the-unity-sample-project"></a>Скачивание примера проекта Unity
 
 [!INCLUDE [Clone Sample Repo](../../../includes/spatial-anchors-clone-sample-repository.md)]
 
@@ -59,4 +59,4 @@ ms.locfileid: "58629309"
 Сведения о том, как улучшить веб-приложение ASP.NET Core, чтобы использовать Azure Cosmos DB для хранения общих идентификаторов пространственных привязок, см. в следующем руководстве. Azure Cosmos DB обеспечивает сохраняемость веб-приложения ASP.NET Core. Это позволит приложению, создав привязку в один день, обнаружить ее снова спустя несколько дней с помощью идентификатора привязки, сохраненного в веб-приложении.
 
 > [!div class="nextstepaction"]
-> [Руководство Совместное использование привязок между сеансами и устройствами с помощью Пространственных привязок Azure и серверной части службы Azure Cosmos DB](./tutorial-use-cosmos-db-to-store-anchors.md)
+> [Руководство. Совместное использование привязок между сеансами и устройствами с помощью Пространственных привязок Azure и серверной части службы Azure Cosmos DB](./tutorial-use-cosmos-db-to-store-anchors.md)

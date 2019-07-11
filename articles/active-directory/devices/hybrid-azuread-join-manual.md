@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8db7e2588b03807a42f82fd0fcd4e71855e55c1d
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.openlocfilehash: 8babf2a6a4f4a15c6d2979ea0d5ce558dfb0cd6a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66426321"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67052146"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Руководство по Настройка устройств с гибридным присоединением к Azure Active Directory
 
@@ -139,7 +139,7 @@ Azure AD Connect выполняет следующие функции:
 
 * Использует модуль PowerShell для Active Directory и средства доменных служб Azure Active Directory (Azure AD DS). Эти средства зависят от веб-служб Active Directory, работающих на контроллере домена. Поддержку веб-служб Active Directory выполняют контроллеры домена под управлением Windows Server 2008 R2 и более поздних версий.
 * Он поддерживается только модулем MSOnline PowerShell версии 1.1.166.0. Чтобы скачать этот модуль, используйте эту [ссылку](https://msconfiggallery.cloudapp.net/packages/MSOnline/1.1.166.0/).
-* Если не установить средства Azure AD DS, выполнение командлета `Initialize-ADSyncDomainJoinedComputerSync` завершится ошибкой. Средства Azure AD DS можно установить с помощью диспетчера сервера в разделе **Компоненты** > **Средства удаленного администрирования сервера** > **Средства администрирования ролей**.
+* Если не установить средства AD DS, выполнение командлета `Initialize-ADSyncDomainJoinedComputerSync` завершится ошибкой. Средства AD DS можно установить с помощью диспетчера сервера в разделе **Компоненты** > **Средства удаленного администрирования сервера** > **Средства администрирования ролей**.
 
 Если вы используете контроллер домена под управлением Windows Server 2008 или более ранних версий, для создания точки подключения службы используйте приведенный ниже сценарий. В конфигурации с несколькими лесами следует использовать следующий сценарий, чтобы создать точку подключения службы в каждом лесу, где существуют компьютеры.
 

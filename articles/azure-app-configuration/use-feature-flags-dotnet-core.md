@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.date: 04/19/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: fc5215f71af45d3273da437fc796bf0d396ba3f9
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: 5e27c6a1ab5fc9dff779c6e5d04689683d5c8e6d
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66393519"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67274148"
 ---
-# <a name="tutorial-use-feature-flags-in-a-net-core-app"></a>Руководство по Использование флагов компонентов в приложении .NET Core
+# <a name="tutorial-use-feature-flags-in-an-aspnet-core-app"></a>Руководство по использованию флагов функций в приложении ASP.NET Core
 
 Библиотеки управления функциями .NET Core обеспечивают идиоматическую поддержку реализации флагов функций в приложении .NET или ASP.NET Core. Эти библиотеки позволяют декларативно добавлять флаги функций в код, чтобы вам не пришлось записывать все операторы `if` для них вручную.
 
@@ -109,7 +109,7 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 config.AddAzureAppConfiguration(options => {
     options.Connect(settings["ConnectionStrings:AppConfig"])
            .UseFeatureFlags(featureFlagOptions => {
-                featureFlagOptions.PollInterval = TimeSpan.FromSeconds(5);
+                featureFlagOptions.PollInterval = TimeSpan.FromSeconds(300);
            });
 });
 ```
@@ -189,10 +189,10 @@ public class HomeController : Controller
 
 ## <a name="controller-actions"></a>Действия контроллера
 
-В контроллерах MVC с помощью атрибута `Feature` можно управлять объектом включения: весь класс контроллера или определенное действие. Для указанного ниже контроллера `HomeController` необходимо, чтобы флаг `FeatureA` был *включен*, прежде чем любое содержащееся в классе контроллера действие будет выполнено.
+В контроллерах MVC с помощью атрибута `FeatureGate` можно управлять объектом включения: весь класс контроллера или определенное действие. Для указанного ниже контроллера `HomeController` необходимо, чтобы флаг `FeatureA` был *включен*, прежде чем любое содержащееся в классе контроллера действие будет выполнено.
 
 ```csharp
-[Feature(MyFeatureFlags.FeatureA)]
+[FeatureGate(MyFeatureFlags.FeatureA)]
 public class HomeController : Controller
 {
     ...
@@ -202,7 +202,7 @@ public class HomeController : Controller
 Для выполнения указанного ниже действия `Index` требуется, чтобы флаг `FeatureA` был *включен*.
 
 ```csharp
-[Feature(MyFeatureFlags.FeatureA)]
+[FeatureGate(MyFeatureFlags.FeatureA)]
 public IActionResult Index()
 {
     return View();
@@ -218,6 +218,25 @@ public IActionResult Index()
 ```html
 <feature name="FeatureA">
     <p>This can only be seen if 'FeatureA' is enabled.</p>
+</feature>
+```
+
+Для отображения альтернативного содержимого при невыполнении требований можно использовать атрибут `negate`.
+
+```html
+<feature name="FeatureA" negate="true">
+    <p>This will be shown if 'FeatureA' is disabled.</p>
+</feature>
+```
+
+Тег функции `<feature>` также можно использовать для отображения содержимого, если включены функции в списке.
+
+```html
+<feature name="FeatureA, FeatureB" requirement="All">
+    <p>This can only be seen if 'FeatureA' and 'FeatureB' are enabled.</p>
+</feature>
+<feature name="FeatureA, FeatureB" requirement="Any">
+    <p>This can be seen if 'FeatureA', 'FeatureB', or both are enabled.</p>
 </feature>
 ```
 

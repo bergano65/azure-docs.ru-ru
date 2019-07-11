@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/11/2018
 ms.author: yexu
-ms.openlocfilehash: 1bc4bd9b95dc7e45b9b90fbe096ed71c5aa9bedf
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 6a9d6ec651cd365995ce63a8dff6d60c8b23dec1
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58447238"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312643"
 ---
 # <a name="incrementally-load-data-from-an-azure-sql-database-to-azure-blob-storage"></a>Пошаговая загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure
 В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из таблицы в базе данных SQL Azure в хранилище BLOB-объектов Azure. 
@@ -238,7 +238,7 @@ END
 
         ![Второе действие поиска — новый набор данных](./media/tutorial-incremental-copy-portal/source-dataset-connection.png)
 17. Перейдите в редактор конвейера, щелкнув вкладку конвейера вверху или имя конвейера в представлении в виде дерева слева. В окне свойств для действия **Поиск**, убедитесь, что в поле **Исходный набор данных** выбран вариант **SourceDataset**. 
-18. Выберите **Запрос** в поле **Использовать запрос** и введите следующий запрос, который выбирает максимальное значение **LastModifytime** из таблицы **data_source_table**. Если вы не укажете этот запрос, набор данных вернет все строки из таблицы, имя которой вы указали в определении набора данных (data_source_table).
+18. Выберите **Запрос** в поле **Использовать запрос** и введите следующий запрос, который выбирает максимальное значение **LastModifytime** из таблицы **data_source_table**. Убедитесь, что установлен флажок **Fist row only** (Только первая строка).
 
     ```sql
     select MAX(LastModifytime) as NewWatermarkvalue from data_source_table
@@ -308,8 +308,8 @@ END
 
         | ИМЯ | type | Значение | 
         | ---- | ---- | ----- | 
-        | LastModifiedtime | DateTime | @{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue} |
-        | TableName | Строка | @{activity('LookupOldWaterMarkActivity').output.firstRow.TableName} |
+        | LastModifiedtime | Дата и время | @{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue} |
+        | TableName | Строка, | @{activity('LookupOldWaterMarkActivity').output.firstRow.TableName} |
 
     ![Действие хранимой процедуры — параметры хранимой процедуры](./media/tutorial-incremental-copy-portal/sproc-activity-stored-procedure-settings.png)
 27. Чтобы проверить настройки конвейера, нажмите кнопку **Проверить** на панели инструментов. Убедитесь, что проверка завершается без ошибок. Чтобы закрыть окно **отчета о проверке конвейера**, нажмите кнопку ">>".   

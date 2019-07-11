@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 04/10/2019
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: ae17ef749a353cd60227e31ba4dadf328b1dc935
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 301abe95b245603e5414eef84ce74cdc8de01d19
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66482275"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67509912"
 ---
 # <a name="call-the-microsoft-graph-api-from-a-windows-desktop-app"></a>Вызов API Microsoft Graph из классического приложения для Windows
 
@@ -28,7 +28,7 @@ ms.locfileid: "66482275"
 Когда вы завершите работу с руководством, ваше приложение сможет вызывать защищенный API, использующий личные учетные записи (в том числе outlook.com, live.com и другие). Приложение будет также использовать рабочие и учебные учетные записи из любой компании или организации, использующей Azure Active Directory.  
 
 > [!NOTE]
-> Для работы с руководством требуется Visual Studio 2015 с обновлением 3 или Visual Studio 2019. У вас нет ни одной из этих версий? [Скачайте бесплатно Visual Studio 2019](https://www.visualstudio.com/downloads/).
+> Для работы с руководством требуется Visual Studio 2015 с обновлением 3, Visual Studio 2017 или Visual Studio 2019. У вас нет ни одной из этих версий? [Скачайте бесплатно Visual Studio 2019](https://www.visualstudio.com/downloads/).
 
 ## <a name="how-the-sample-app-generated-by-this-guide-works"></a>Как работает пример приложения, созданный в этом руководстве
 

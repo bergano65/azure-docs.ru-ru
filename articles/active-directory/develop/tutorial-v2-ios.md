@@ -16,12 +16,12 @@ ms.author: jmprieur
 ms.reviwer: brandwe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 780da9359aaf645abc9b685fa9d90bbea9199759
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: b7d68f6f7079872b81b750ba71997117aaa27d33
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65962165"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67550575"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-from-an-ios-app"></a>Вход пользователей и вызов Microsoft Graph из приложения iOS
 
@@ -382,7 +382,7 @@ MSAL предоставляет два основных метода получ�
 
 | ключ заголовка    | value                 |
 | ------------- | --------------------- |
-| Авторизация | Bearer <маркер доступа> |
+| Авторизация | Bearer \<маркер доступа> |
 
 Добавьте следующую строку в файл `ViewController.swift`:
 

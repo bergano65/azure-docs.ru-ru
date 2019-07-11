@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/22/2019
 ms.author: juliako
-ms.openlocfilehash: 15b2408113d8bd19d2e988643442ac5e3b305237
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: f9ca4b54db305a5c088b4dda27a6844c8439fa1a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65149211"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67055304"
 ---
 # <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---rest"></a>Руководство по Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью REST
 
@@ -236,7 +236,7 @@ ms.locfileid: "65149211"
 
 Процесс создания **указателя потоковой передачи** называется публикацией. По умолчанию **указатель потоковой передачи** допустим сразу после выполнения вызова API и действует, пока не будет удален, если не настроить дополнительное начальное и конечное время. 
 
-При создании [указателя потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators) необходимо указать **StreamingPolicyName**. В этом примере выполняется потоковая передача незашифрованного содержимого, поэтому используется предварительно определенная политика прозрачной потоковой передачи  **PredefinedStreamingPolicy.ClearStreamingOnly**.
+При создании [указателя потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators) необходимо указать желаемое имя **StreamingPolicyName**. В этом примере выполняется потоковая передача незашифрованного содержимого, поэтому используется предварительно определенная политика прозрачной потоковой передачи Predefined_ClearStreamingOnly.
 
 > [!IMPORTANT]
 > При использовании пользовательской политики [StreamingPolicy](https://docs.microsoft.com/rest/api/media/streamingpolicies) следует разработать ограниченный набор таких политик для учетной записи Служб мультимедиа и повторно использовать их для StreamingLocators всякий раз, когда требуются те же параметры шифрования и протоколы. 

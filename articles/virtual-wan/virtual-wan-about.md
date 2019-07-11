@@ -5,19 +5,19 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: overview
-ms.date: 03/20/2019
+ms.date: 06/11/2019
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to understand what Virtual WAN is and if it is the right choice for my Azure network.
-ms.openlocfilehash: 6dae42dcc8b74b682c7226916482228058db6154
-ms.sourcegitcommit: 02d17ef9aff49423bef5b322a9315f7eab86d8ff
+ms.openlocfilehash: 7ee6b2dd07a89de4f5347e82bde19990dbb6c995
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58336258"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67077542"
 ---
 # <a name="what-is-azure-virtual-wan"></a>Что такое Виртуальная глобальная сеть Azure?
 
-Виртуальная глобальная сеть Azure — это сетевая служба, которая обеспечивает оптимизированное и автоматизированное подключение типа "ветвь — ветвь" через Azure. Регионы Azure служат в качестве концентраторов, к которым вы можете подключить ветви. После подключения ветвей вы можете использовать магистральную сеть Azure, чтобы установить подключение между ветвью и виртуальной сетью и между ветвями. Список партнеров и расположений, поддерживающих VPN виртуальной глобальной сети, см. в статье [Virtual WAN partners and virtual hub locations](virtual-wan-locations-partners.md) (Партнеры Виртуальной глобальной сети и расположения виртуальных концентраторов).
+Виртуальная глобальная сеть Azure — это сетевая служба, которая обеспечивает оптимизированное и автоматизированное подключение типа "ветвь — ветвь" через Azure. Регионы Azure служат в качестве концентраторов, к которым вы можете подключить ветви. Вы можете использовать магистральную сеть Azure также для подключения ветвей и воспользоваться преимуществами подключения ветвей к виртуальной сети. Мы предоставляем список партнеров, поддерживающих автоматизацию подключения с помощью VPN Виртуальной глобальной сети Azure. Дополнительные сведения см. в статье [Virtual WAN partners and virtual hub locations](virtual-wan-locations-partners.md) (Партнеры Виртуальной глобальной сети и расположения виртуальных концентраторов).
 
 Виртуальная глобальная сеть Azure объединяет множество служб подключения к облаку Azure, таких как VPN типа "сеть — сеть" (общедоступно), ExpressRoute (предварительная версия) и пользовательский VPN типа "точка — сеть" в один интерфейс операций. Подключение к виртуальным сетям Azure устанавливается с помощью подключения по виртуальной сети.
 

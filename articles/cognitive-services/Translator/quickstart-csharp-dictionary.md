@@ -3,19 +3,19 @@ title: Краткое руководство. Поиск слов в двуяз�
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как с помощью API перевода текстов и .NET Core найти варианты перевода определенного термина и примеры их использования.
 services: cognitive-services
-author: erhopf
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
-ms.author: erhopf
-ms.openlocfilehash: a937ac1039d7a7552290257f42dd4bc45c8f0605
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.author: swmachan
+ms.openlocfilehash: 0c8fb4eb50b5824126d2be2160dd341ed60955af
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66514969"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448194"
 ---
 # <a name="quickstart-look-up-words-with-bilingual-dictionary-using-c"></a>Краткое руководство. Поиск слов в двуязычном словаре с помощью C#
 
@@ -25,7 +25,7 @@ ms.locfileid: "66514969"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [ПАКЕТ SDK .NET](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial)
+* [Пакет SDK для .NET](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial)
 * [пакет NuGet .NET для JSON](https://www.nuget.org/packages/Newtonsoft.Json/);
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
 * ключ подписки Azure для API перевода текстов.
@@ -89,6 +89,8 @@ System.Object[] body = new System.Object[] { new { Text = @"Elephants" } };
 var requestBody = JsonConvert.SerializeObject(body);
 ```
 
+
+
 ## <a name="instantiate-the-client-and-make-a-request"></a>Создание экземпляра клиента и выполнение запроса
 
 С помощью этих строк создается экземпляр `HttpClient` и `HttpRequestMessage`:
@@ -143,6 +145,8 @@ static string PrettyPrint(string s)
     return JsonConvert.SerializeObject(JsonConvert.DeserializeObject(s), Formatting.Indented);
 }
 ```
+
+Если вы используете подписку на несколько служб Cognitive Services, необходимо также включить `Ocp-Apim-Subscription-Region` в параметрах запроса. [Дополнительные сведения об аутентификации с использованием подписки на несколько служб](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
 
 ## <a name="put-it-all-together"></a>Сборка
 

@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 01/02/2019
 ms.author: barclayn
 ms.custom: mvc
-ms.openlocfilehash: 132711249ffde4a9c49bc997d8c4ebe4d9c74948
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 4f9fff41e4b9043c271d656583fb8b9a11ff3a7a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65872546"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67052784"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-by-using-a-net-web-app"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения .NET
 
@@ -174,7 +174,7 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <PrincipalId> --s
 Теперь при запуске приложения должно отображаться извлеченное значение секрета. В указанной команде вы предоставляете удостоверению службы приложений разрешения на операции **get** и **list** в хранилище ключей.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите группу ресурсов, виртуальную машину и все связанные ресурсы, если они вам больше не нужны. Чтобы сделать это, выберите группу ресурсов для виртуальной машины и нажмите **Удалить**.
+Удалите группу ресурсов, виртуальную машину и все связанные ресурсы, если они вам больше не нужны. Для этого выберите группу ресурсов для хранилища ключей и щелкните **Удалить**.
 
 Удалите хранилище ключей с помощью команды [az keyvault delete](https://docs.microsoft.com/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-delete).
 

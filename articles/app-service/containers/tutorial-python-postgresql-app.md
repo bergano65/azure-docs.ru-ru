@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: beverst;cephalin
 ms.custom: seodec18
-ms.openlocfilehash: b3d262a33ecbc35ada278019ee0998486bc92efe
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: 4b2304e170f9ddc14a5c1fa71a8822d083955106
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59678927"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341512"
 ---
 # <a name="build-a-python-and-postgresql-app-in-azure-app-service"></a>Создание приложения Python с подключением к базе данных PostgreSQL в Службе приложений Azure
 
@@ -162,7 +162,7 @@ Quit the server with CONTROL-C.
 
 [!INCLUDE [Create resource group](../../../includes/app-service-web-create-resource-group-linux-no-h.md)]
 
-### <a name="create-an-azure-database-for-postgresql-server"></a>Создание сервера базы данных Azure для PostgreSQL
+### <a name="create-an-azure-database-for-postgresql-server"></a>Создание сервера Базы данных Azure для PostgreSQL
 
 Создайте сервер PostgreSQL с помощью команды [`az postgres server create`](/cli/azure/postgres/server?view=azure-cli-latest#az-postgres-server-create) в Cloud Shell.
 
@@ -277,7 +277,7 @@ python manage.py runserver
 
 Еще раз перейдите к `http://localhost:8000`, и отобразится вопрос опроса. Теперь приложение записывает данные в базу данных на портале Azure.
 
-## <a name="deploy-to-azure"></a>Развернуть в Azure
+## <a name="deploy-to-azure"></a>Развертывание в Azure
 
 На этом шаге вы развернете приложение Python, подключенное к базе данных Postgres, в Службе приложений Azure.
 
@@ -286,7 +286,8 @@ python manage.py runserver
 Во входящих запросах Django проверяет заголовок `HTTP_HOST`. Чтобы приложение Django выполнялось в Службе приложений Azure, необходимо добавить полное доменное имя приложения для разрешенных узлов. Откройте _azuresite/settings.py_ и найдите параметр `ALLOWED_HOSTS`. Измените строку следующим образом:
 
 ```python
-ALLOWED_HOSTS = [os.environ['WEBSITE_SITE_NAME'] + '.azurewebsites.net', '127.0.0.1'] if 'WEBSITE_SITE_NAME' in os.environ else []
+ALLOWED_HOSTS = [os.environ['WEBSITE_SITE_NAME'] + '.azurewebsites.net',
+                 '127.0.0.1'] if 'WEBSITE_SITE_NAME' in os.environ else []
 ```
 
 Далее, Django не поддерживает [обработку статических файлов в рабочей среде](https://docs.djangoproject.com/en/2.1/howto/static-files/deployment/), поэтому необходимо включить эту функцию вручную. В этом учебнике используется [WhiteNoise](https://whitenoise.evans.io/en/stable/). Пакет WhiteNoise уже входит в _requirements.txt_. Чтобы использовать Django, его необходимо настроить. 
@@ -424,7 +425,7 @@ http://<app-name>.azurewebsites.net
 Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Руководство Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
+> [Руководство. Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
 
 Также ознакомьтесь с другими ресурсами:
 

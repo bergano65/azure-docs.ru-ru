@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: quickstart
-ms.date: 01/09/2019
+ms.date: 07/02/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 198e7d8d32e7142a266881e2f4ddbc3ed573c521
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: e78dd093c4bbf0cf1bdbd5280ffaa63286e585d4
+ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54187289"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67537130"
 ---
 # <a name="quickstart-configure-server-firewall---portal"></a>Краткое руководство. Настройка брандмауэра сервера с помощью портала
 
@@ -33,7 +33,7 @@ ms.locfileid: "54187289"
 1. Чтобы открыть страницу обзора, щелкните сервер. 
 2. Во вкладках **ПАРАМЕТРЫ** > **Брандмауэр** > **Включить брандмауэр** щелкните кнопку **Включить**.
 3. Чтобы разрешить доступ к DirectQuery из службы Power BI для поля **Разрешить доступ из Power BI**, нажмите кнопку **Включить**.  
-4. (Необязательно) Укажите один или несколько диапазонов IP-адресов. Введите имя, начальный и конечный IP-адрес для каждого из диапазонов. 
+4. (Необязательно) Укажите один или несколько диапазонов IP-адресов. Введите имя, начальный и конечный IP-адрес для каждого из диапазонов. Длина имени правила брандмауэра не должна превышать 128 знаков и может содержать только прописные и строчные буквы, цифры, подчеркивания и дефис. Пробелы и другие специальные символы не допускаются.
 5. Выберите команду **Сохранить**.
 
      ![Параметры брандмауэра](./media/analysis-services-qs-firewall/aas-qs-firewall.png)

@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: overview
-ms.date: 05/23/2019
+ms.date: 07/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 18c6175ede1e8459d3a9ca60f7890cc43d75e5ba
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 8f090a3f07eba529fd39976545eb654083e637eb
+ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66236281"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67561397"
 ---
 # <a name="azure-data-box-frequently-asked-questions"></a>Azure Data Box. Часто задаваемые вопросы
 
@@ -53,7 +53,7 @@ ms.locfileid: "66236281"
 О.  Сведения о доступности Data Box в разных странах и регионах см. на странице [доступности по регионам](data-box-overview.md#region-availability).  
 
 ### <a name="q-which-regions-can-i-store-data-in-with-data-box"></a>В. В каких регионах можно сохранять данные с помощью Data Box?
-О. Data Box поддерживается во всех регионах США, Западной и Северной Европы, а также во Франции и Великобритании. Поддерживаются регионы только общедоступного облака Azure. Облако Azure для государственных организаций и другие национальные облака не поддерживаются. Дополнительные сведения см. в разделе [Регионы доступности](data-box-overview.md#region-availability).
+О. Data Box поддерживается во всех регионах США, Западной и Северной Европы, во Франции, в Великобритании, Японии, Австралии и Канаде. Дополнительные сведения см. в разделе [Регионы доступности](data-box-overview.md#region-availability).
 
 ### <a name="q-whom-should-i-contact-if-i-encounter-any-issues-with-data-box"></a>В. С кем мне связаться, если возникнут проблемы с Data Box?
 О. При любых проблемах с Data Box обратитесь в [службу поддержки Майкрософт](data-box-disk-contact-microsoft-support.md).
@@ -170,7 +170,7 @@ A.  To speed up the copy process:
 
 
 ### <a name="q-can-i-use-multiple-storage-accounts-with-data-box"></a>В. Можно ли использовать один Data Box для нескольких учетных записей хранения?
-О.  Да. Для Data Box поддерживается до 10 учетных записей хранения: общего назначения, классических или хранилища BLOB-объектов. Поддерживаются и "горячие", и "холодные" большие двоичные объекты. На этапе общедоступной версии поддерживаются учетные записи хранения в общедоступном облаке Azure во всех регионах США, Западной и Северной Европы, Франции и Великобритании.
+О.  Да. Для Data Box поддерживается до 10 учетных записей хранения: общего назначения, классических или хранилища BLOB-объектов. Поддерживаются и "горячие", и "холодные" большие двоичные объекты. 
 
 
 ## <a name="ship-device"></a>Доставка устройства

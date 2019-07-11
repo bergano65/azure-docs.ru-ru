@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: quickstart
-ms.date: 04/01/2019
+ms.date: 07/02/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: e54c18eb405ffa36260e9980705784130bc0ca4c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: aae5b87e49b6d64e4c9ee854b65821d65969e66b
+ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58803015"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67536807"
 ---
 # <a name="quickstart-create-a-server---portal"></a>Краткое руководство. Создание сервера с помощью портала
 
@@ -33,11 +33,11 @@ ms.locfileid: "58803015"
 
 1. Выберите **+ Создать ресурс** > **Аналитика** > **Службы Analysis Services**.
 
-    ![Microsoft Azure](./media/analysis-services-create-server/aas-create-server-portal.png)
+    ![Портал](./media/analysis-services-create-server/aas-create-server-portal.png)
 
 2. В колонке **Службы Analysis Services** заполните обязательные поля и нажмите кнопку **Создать**.
    
-   * **Имя сервера**. Введите уникальное имя, используемое для обращения к серверу.
+   * **Имя сервера**. Введите уникальное имя, используемое для обращения к серверу. Имя сервера должно начинаться со строчной буквы и содержать от 3 до 128 знаков нижнего регистра и цифры. Пробелы и специальные символы не допускаются.
    * **Подписка**: Выберите подписку, с которой будет связан этот сервер.
    * **Группа ресурсов**. Создайте новую группу ресурсов или выберите существующую. Группы ресурсов предназначены для управления коллекцией ресурсов Azure. Дополнительные сведения см. в описании [групп ресурсов](../azure-resource-manager/resource-group-overview.md).
    * **Расположение**. В этом расположении центра обработки данных Azure размещается сервер. Выберите расположение, ближайшее к крупнейшей имеющейся базе пользователей.

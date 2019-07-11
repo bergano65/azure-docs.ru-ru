@@ -5,13 +5,13 @@ ms.service: cosmos-db
 ms.topic: tutorial
 author: deborahc
 ms.author: dech
-ms.date: 05/20/2019
-ms.openlocfilehash: 9e7342ebcbcf536b26e6cf7fb89e3cf58666d24f
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.date: 06/21/2019
+ms.openlocfilehash: d7d9d62525161e6871cafd65cf5cd2c403cf0579
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65953954"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331773"
 ---
 # <a name="use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде
 
@@ -413,6 +413,57 @@ cd $env:LOCALAPPDATA\CosmosDBEmulator\bind-mount
 
     https://<emulator endpoint provided in response>/_explorer/index.html
 
+## Запуск на компьютере Mac или Linux<a id="mac"></a>
+
+В настоящее время эмулятор Cosmos можно запустить только на компьютере с Windows. Пользователи компьютеров Mac или Linux могут запускать эмулятор на виртуальной машине Windows, на которой размещен гипервизор, такой как Parallels или VirtualBox. Ниже приведены шаги по реализации.
+
+На виртуальной машине Windows выполните приведенную ниже команду и запишите адрес IPv4.
+
+```cmd
+ipconfig.exe
+```
+
+В вашем приложении нужно изменить URI для объекта DocumentClient, чтобы использовать адрес IPv4, возвращаемый `ipconfig.exe`. Далее необходимо обойти проверку центра сертификации при создании объекта DocumentClient. Для этого вам нужно будет предоставить HttpClientHandler для конструктора DocumentClient, который имеет собственную реализацию ServerCertificateCustomValidationCallback.
+
+Ниже приведен пример того, как должен выглядеть код.
+
+```csharp
+using System;
+using Microsoft.Azure.Documents;
+using Microsoft.Azure.Documents.Client;
+using System.Net.Http;
+
+namespace emulator
+{
+    class Program
+    {
+        static async void Main(string[] args)
+        {
+            string strEndpoint = "https://10.135.16.197:8081/";  //IPv4 address from ipconfig.exe
+            string strKey = "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==";
+
+            //Work around the CA validation
+            var httpHandler = new HttpClientHandler()
+            {
+                ServerCertificateCustomValidationCallback = (req,cert,chain,errors) => true
+            };
+
+            //Pass http handler to document client
+            using (DocumentClient client = new DocumentClient(new Uri(strEndpoint), strKey, httpHandler))
+            {
+                Database database = await client.CreateDatabaseIfNotExistsAsync(new Database { Id = "myDatabase" });
+                Console.WriteLine($"Created Database: id - {database.Id} and selfLink - {database.SelfLink}");
+            }
+        }
+    }
+}
+```
+
+Наконец, на виртуальной машине Windows запустите эмулятор Cosmos из командной строки, используя следующие параметры.
+
+```cmd
+Microsoft.Azure.Cosmos.Emulator.exe /AllowNetworkAccess /Key=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==
+```
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

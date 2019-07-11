@@ -4,12 +4,12 @@ ms.service: container-registry
 ms.topic: include
 ms.date: 05/02/2019
 ms.author: danlep
-ms.openlocfilehash: 6e0175173f17ae0958522517360b94ee80f3b2f9
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 40cc1856a5e943ca5596e7d11712febadd30e3ec
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66148984"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67133873"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -27,9 +27,12 @@ ms.locfileid: "66148984"
 
 1. Перейдите на страницу создания PAT на GitHub по адресу https://github.com/settings/tokens/new.
 1. Введите краткое **описание** маркера, например "ACR Task Demo".
-1. Под флажком **repo** установите флажки **repo:status** и **public_repo**.
+1. Выберите области для ACR, чтобы получить доступ к репозиторию. Для доступа к общедоступному репозиторию, как в этом учебнике, в разделе **repo** включите **repo:status** и **public_repo**
 
    ![Снимок экрана со страницей создания личного маркера доступа GitHub][build-task-01-new-token]
+
+   > [!NOTE]
+   > Чтобы создать личный маркер доступа для доступа к репозиторию *private*, выберите область для полного контроля **репозитория**.
 
 1. Нажмите кнопку **Generate token** (Создать маркер) (может появиться запрос на подтверждение пароля).
 1. Скопируйте и сохраните созданный маркер в **защищенном расположении** (вы используете этот маркер при определении задачи в следующем разделе).

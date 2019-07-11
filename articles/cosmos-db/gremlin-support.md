@@ -5,68 +5,34 @@ author: LuisBosquez
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: overview
-ms.date: 05/21/2019
+ms.date: 06/24/2019
 ms.author: lbosq
-ms.openlocfilehash: b36c041c24a07f89701e78aea4d08270342b8d22
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.openlocfilehash: db263c1c7f0a8b87b315c5aa6da31336229c9643
+ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65978934"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67502726"
 ---
 # <a name="azure-cosmos-db-gremlin-graph-support"></a>Поддержка графа Gremlin в базе данных Azure Cosmos DB
 Azure Cosmos DB поддерживает язык обхода графов [Apache Tinkerpop](https://tinkerpop.apache.org), известный как [Gremlin](https://tinkerpop.apache.org/docs/3.3.2/reference/#graph-traversal-steps). Вы можете использовать язык Gremlin, чтобы создать сущности графа (вершины и ребра), изменить свойства в этих сущностях, выполнить запросы и обходы графа, а также удалить сущности. 
 
-База данных Azure Cosmos DB предоставляет возможности корпоративного уровня для баз данных графа. Эти возможности включают в себя глобальное распределение, независимое масштабирование хранилища и пропускной способности, прогнозируемую задержку операций менее 10 миллисекунд, автоматическое индексирование, Соглашения об уровнях обслуживания, доступность для операций чтения для учетных записей баз данных, используемых в пределах двух и более регионов Azure. Так как база данных Azure Cosmos DB поддерживает TinkerPop и Gremlin, вы можете легко перемещать приложения, написанные с помощью другой совместимой базы данных графа. Кроме того, благодаря поддержке языка Gremlin база данных Azure Cosmos DB быстро и эффективно интегрируется с платформами аналитики, совместимыми с TinkerPop, например с [Apache Spark GraphX](https://spark.apache.org/graphx/). 
-
 Эта статья содержит краткое руководство по языку Gremlin с перечислением функций Gremlin, поддерживаемых в API Gremlin.
 
-## <a name="gremlin-by-example"></a>Обзор Gremlin на примере
-Давайте рассмотрим пример графа, чтобы лучше понять, как в Gremlin могут выражаться запросы. На рисунке ниже в форме графа показано бизнес-приложение, управляющее данными о пользователях, их интересах и устройствах.  
+## <a name="compatible-client-libraries"></a>Совместимые клиентские библиотеки
 
-![Пример базы данных, в котором показаны люди, их интересы и устройства](./media/gremlin-support/sample-graph.png) 
+В таблице ниже приведены распространенные драйверы Gremlin, которые вы можете использовать для базы данных Azure Cosmos DB.
 
-Этот граф содержит следующие типы вершин (которые в Gremlin называются метками):
+| Скачивание | Источник | Начало работы | Поддерживаемая версия соединителя |
+| --- | --- | --- | --- |
+| [.NET](https://tinkerpop.apache.org/docs/3.3.1/reference/#gremlin-DotNet) | [Gremlin.NET в GitHub](https://github.com/apache/tinkerpop/tree/master/gremlin-dotnet) | [Создание приложения Graph с помощью .NET](create-graph-dotnet.md) | 3.4.0-RC2 |
+| [Java](https://mvnrepository.com/artifact/com.tinkerpop.gremlin/gremlin-java) | [Документация по Gremlin для Java](https://tinkerpop.apache.org/javadocs/current/full/) | [Создание приложения Graph с помощью Java](create-graph-java.md) | 3.2.0 и выше |
+| [Node.js](https://www.npmjs.com/package/gremlin) | [Gremlin для JavaScript в GitHub](https://github.com/jbmusso/gremlin-javascript) | [Создание приложения Graph с помощью Node.js](create-graph-nodejs.md) | 3.3.4 и выше |
+| [Python](https://tinkerpop.apache.org/docs/3.3.1/reference/#gremlin-python) | [Gremlin-Python в GitHub](https://github.com/apache/tinkerpop/tree/master/gremlin-python) | [Создание приложения Graph с помощью Python](create-graph-python.md) | 3.2.7 |
+| [PHP](https://packagist.org/packages/brightzone/gremlin-php) | [Gremlin-PHP в GitHub](https://github.com/PommeVerte/gremlin-php) | [Создание приложения Graph с помощью PHP](create-graph-php.md) | 3.1.0 |
+| [Консоль Gremlin](https://tinkerpop.apache.org/downloads.html) | [Документация по TinkerPop](https://tinkerpop.apache.org/docs/current/reference/#gremlin-console) |  [Создание приложения Graph с помощью консоли Gremlin](create-graph-gremlin-console.md) | 3.2.0 и выше |
 
-- Люди. На графе представлено три человека: Робин (Robin), Томас (Thomas) и Бен (Ben).
-- Интересы. Их интересы. В этом случае — футбол.
-- Устройства: Устройства, которые эти люди используют.
-- Операционные системы. Операционные системы, под управлением которых работают устройства.
-
-Мы представим взаимосвязи между этими сущностями, используя следующие типы ребер или метки:
-
-- Знакомства. Например, "Томас знает Робин".
-- Интересы. Используется, чтобы представить интересы людей на графе. Например, "Бен интересуется футболом".
-- Использующаяся операционная система. Ноутбук работает под управлением Windows.
-- Используемые устройства. Применяется, чтобы представить используемое устройство. Например, Робин использует телефон Motorola с серийным номером 77.
-
-Теперь выполним некоторые операции с этим графом с помощью [консоли Gremlin](https://tinkerpop.apache.org/docs/3.3.2/reference/#gremlin-console). Вы также можете выполнить эти операции с помощью драйверов Gremlin на платформе по вашему усмотрению — Java, Node.js, Python или .NET.  Прежде чем перейти к поддерживаемым базой данных Azure Cosmos DB функциям, давайте рассмотрим несколько примеров, чтобы ознакомиться с синтаксисом.
-
-Сначала рассмотрим операции CRUD (создание, чтение, обновление и удаление). Следующая инструкция Gremlin вставляет вершину "Thomas" в граф:
-
-```java
-:> g.addV('person').property('id', 'thomas.1').property('firstName', 'Thomas').property('lastName', 'Andersen').property('age', 44)
-```
-
-Затем инструкция Gremlin вставляет ребро "знакомства" между вершинами Thomas и Robin.
-
-```java
-:> g.V('thomas.1').addE('knows').to(g.V('robin.1'))
-```
-
-Следующий запрос возвращает вершины "людей" в порядке по убыванию их имен:
-```java
-:> g.V().hasLabel('person').order().by('firstName', decr)
-```
-
-Если часть графа подсвечивается, необходимо ответить на вопросы типа: "Какие операционные системы используют друзья Томаса?" Вы можете выполнить эту операцию обхода Gremlin, чтобы получить сведения из графа:
-
-```java
-:> g.V('thomas.1').out('knows').out('uses').out('runsos').group().by('name').by(count())
-```
-А теперь давайте рассмотрим, какие возможности предоставляет база данных Azure Cosmos DB разработчикам Gremlin.
-
-## <a name="gremlin-features"></a>Функции Gremlin
+## <a name="supported-graph-objects"></a>Поддерживаемые объекты Graph
 TinkerPop — это стандартная платформа, которая охватывает широкий ряд технологий графа. Таким образом, она содержит стандартную терминологию для описания функций, которые предоставляет поставщик графа. База данных Azure Cosmos DB обеспечивает временную базу данных графа с высокой степенью параллелизма и возможностью записи, которую можно разделить на секции на нескольких серверах или кластерах. 
 
 В таблице ниже перечислены функции TinkerPop, реализованные в базе данных Azure Cosmos DB: 
@@ -128,7 +94,7 @@ TinkerPop — это стандартная платформа, которая 
 | Свойство | ОПИСАНИЕ | 
 | --- | --- | --- |
 | `id` | Идентификатор вершины. Должен иметь уникальное значение (если применимо — со значением `_partition`). Если значение не указано, оно будет предоставляться автоматически с помощью идентификатора GUID. | 
-| `label` | Метка вершины. Она используется для описания типа сущности. |
+| `label` | Метка вершины. Это свойство используется для описания типа сущности. |
 | `type` | Используется для отделения вершин от документов, не связанных с графом. |
 | `properties` | Набор определенных пользователем свойств, связанных с вершиной. Каждое свойство может иметь несколько значений. |
 | `_partition` | Ключ секции вершины. Используется для [секционирования данных графа](graph-partitioning.md). |
@@ -184,12 +150,12 @@ TinkerPop — это стандартная платформа, которая 
 | `sample` | Используется для вывода примеров результатов из обхода. | [Шаг sample](https://tinkerpop.apache.org/docs/3.3.2/reference/#sample-step) |
 | `select` | Используется для проектирования результатов из обхода. |  [Шаг select](https://tinkerpop.apache.org/docs/3.3.2/reference/#select-step) |
 | `store` | Используется для статистических функций из обхода без блокировки. | [Шаг store](https://tinkerpop.apache.org/docs/3.3.2/reference/#store-step) |
-| `TextP.startingWith(string)` | Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, начинающегося с определенной строки. | [Предикаты TextP](http://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
-| `TextP.endingWith(string)` |  Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, заканчивающегося определенной строкой. | [Предикаты TextP](http://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
-| `TextP.containing(string)` | Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, содержащего определенную строку. | [Предикаты TextP](http://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
-| `TextP.notStartingWith(string)` | Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, не начинающегося с определенной строки. | [Предикаты TextP](http://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
-| `TextP.notEndingWith(string)` | Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, не заканчивающегося определенной строкой. | [Предикаты TextP](http://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
-| `TextP.notContaining(string)` | Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, не содержащего определенную строку. | [Предикаты TextP](http://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
+| `TextP.startingWith(string)` | Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, начинающегося с определенной строки. | [Предикаты TextP](https://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
+| `TextP.endingWith(string)` |  Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, заканчивающегося определенной строкой. | [Предикаты TextP](https://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
+| `TextP.containing(string)` | Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, содержащего определенную строку. | [Предикаты TextP](https://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
+| `TextP.notStartingWith(string)` | Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, не начинающегося с определенной строки. | [Предикаты TextP](https://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
+| `TextP.notEndingWith(string)` | Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, не заканчивающегося определенной строкой. | [Предикаты TextP](https://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
+| `TextP.notContaining(string)` | Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, не содержащего определенную строку. | [Предикаты TextP](https://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
 | `tree` | Выполняет статистическое вычисление путей из вершины в дерево. | [Шаг tree](https://tinkerpop.apache.org/docs/3.3.2/reference/#tree-step) |
 | `unfold` | Развертывает итератор.| [Шаг unfold](https://tinkerpop.apache.org/docs/3.3.2/reference/#unfold-step) |
 | `union` | Объединяет результаты из нескольких обходов.| [Шаг union](https://tinkerpop.apache.org/docs/3.3.2/reference/#union-step) |

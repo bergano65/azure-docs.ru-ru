@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/25/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0a62aa573d49ccdd237e692b63a6fda0dd83d52a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7c3651e81cd3916bccc859bc3bc010511b2a114a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65870002"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67095265"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks-captive-portal"></a>Руководство по Интеграция Azure Active Directory с Palo Alto Networks (Captive Portal)
 
@@ -68,7 +68,7 @@ Palo Alto Networks (Captive Portal) поддерживает следующие 
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Palo Alto Networks (Captive Portal)**. В результатах поиска выберите **Palo Alto Networks (Captive Portal)**, а затем выберите **Добавить**.
+4. В поле поиска введите **Palo Alto Networks (Captive Portal)** . В результатах поиска выберите **Palo Alto Networks (Captive Portal)** , а затем выберите **Добавить**.
 
      ![Palo Alto Networks (Captive Portal) в списке результатов](common/search-new-app.png)
 
@@ -78,12 +78,12 @@ Palo Alto Networks (Captive Portal) поддерживает следующие 
 
 Чтобы настроить и проверить единый вход Azure AD в Palo Alto Networks (Captive Portal), вам потребуется выполнить приведенные ниже задачи.
 
-1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)**: позволяет пользователю использовать эту функцию.
-2. **[Настройка единого входа для Palo Alto Networks (Captive Portal)](#configure-palo-alto-networks-captive-portal-single-sign-on)**: настройте параметры единого входа в приложении.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)**: проверьте работу единого входа Azure AD от имени пользователя *Britta Simon*.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)**: настройте пользователя Britta Simon для использования единого входа Azure AD.
-5. **Создание тестового пользователя в Palo Alto Networks (Captive Portal)**: создайте пользователя *Britta Simon* в Palo Alto Networks (Captive Portal), который будет связан с пользователем Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)**: убедитесь, что конфигурация работает правильно.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** : позволяет пользователю использовать эту функцию.
+2. **[Настройка единого входа для Palo Alto Networks (Captive Portal)](#configure-palo-alto-networks-captive-portal-single-sign-on)** : настройте параметры единого входа в приложении.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** : проверьте работу единого входа Azure AD от имени пользователя *Britta Simon*.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** : настройте пользователя Britta Simon для использования единого входа Azure AD.
+5. **Создание тестового пользователя в Palo Alto Networks (Captive Portal)** : создайте пользователя *Britta Simon* в Palo Alto Networks (Captive Portal), который будет связан с пользователем Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** : убедитесь, что конфигурация работает правильно.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -158,7 +158,7 @@ Palo Alto Networks (Captive Portal) поддерживает следующие 
 
     1. В поле **Имя** введите **BrittaSimon**.
   
-    2. В поле **Имя пользователя** введите **BrittaSimon@\@\<домен_вашей_компании\>**. Например **BrittaSimon\@contoso.com**.
+    2. В поле **Имя пользователя** введите **BrittaSimon@\@\<домен_вашей_компании\>** . Например **BrittaSimon\@contoso.com**.
 
     3. В поле **Пароль** введите пароль. Мы рекомендуем сохранить введенный пароль. Вы можете выбрать флажок **Показать пароль** для отображения пароля.
 

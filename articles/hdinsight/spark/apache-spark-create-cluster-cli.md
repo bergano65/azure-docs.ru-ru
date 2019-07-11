@@ -1,20 +1,20 @@
 ---
-title: Создание кластера Apache Spark в Azure HDInsight с помощью Azure CLI
+title: Краткое руководство. Создание кластера Apache Spark в Azure HDInsight с помощью Azure CLI
 description: В этом кратком руководстве показано, как создать кластер Apache Spark в Azure HDInsight с помощью Azure CLI.
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: quickstart
-ms.date: 05/09/2019
+ms.date: 06/12/2019
 ms.author: hrasheed
-ms.openlocfilehash: b9478ca8e1b31c1761e063a6789e96043f9a2c68
-ms.sourcegitcommit: 9e8dfa1169a55c3c8af93a6c5f4e0dace4de48b2
+ms.openlocfilehash: 72bdab9d7fb5c3019d97ffc4c92257c49ec2b8e5
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65556817"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67066241"
 ---
-# <a name="create-an-apache-spark-cluster-in-azure-hdinsight-with-azure-cli"></a>Создание кластера Apache Spark в Azure HDInsight с помощью Azure CLI
+# <a name="quickstart-create-apache-spark-cluster-in-azure-hdinsight-using-azure-cli"></a>Краткое руководство. Создание кластера Apache Spark в Azure HDInsight с помощью Azure CLI
 
 В этом кратком руководстве вы узнаете, как создать кластер Apache Spark в Azure HDInsight с помощью Azure CLI. Apache Spark обеспечивает быстрый анализ данных и кластерные вычисления, используя обработку в памяти. [Интерфейс командной строки Azure (Azure CLI)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) — это кроссплатформенный интерфейс командной строки от Майкрософт для управления ресурсами Azure.
 

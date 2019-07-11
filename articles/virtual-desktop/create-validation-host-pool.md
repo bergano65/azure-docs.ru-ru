@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 05/08/2019
 ms.author: v-chjenk
-ms.openlocfilehash: 91dd716a595dd56c14b3be0bf11a7b69eeb470d6
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.openlocfilehash: c9b2a593a6943fe2e9577acc61b1d5a7bcd98607
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65834119"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67070664"
 ---
 # <a name="tutorial-create-a-host-pool-to-validate-service-updates"></a>Руководство по Создание пула узлов для проверки обновлений службы
 
@@ -71,7 +71,7 @@ Get-RdsHostPool -TenantName $myTenantName -Name "contosoHostPool" -ValidationEnv
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Теперь, когда вы создали пул узлов проверки, вы можете при необходимости заполнить его с помощью RemoteApps. Дополнительные сведения о том, как управлять приложениями в Виртуальном рабочем столе Windows см. в руководстве по управлению группами приложений.
+Теперь, когда вы создали пул узлов проверки, вы узнаете, как развернуть средство управления ресурсами виртуального рабочего стола Майкрософт и подключиться к нему.
 
 > [!div class="nextstepaction"]
-> [Управление группами приложений](./manage-app-groups.md)
+> [Tutorial: Deploy a management tool](./manage-resources-using-ui.md) (Учебник: развертывание средства управления)

@@ -1,21 +1,24 @@
 ---
 title: Настройка нескольких источников в Azure Cosmos DB
 description: Сведения о том, как настроить несколько источников в приложениях в Azure Cosmos DB.
-author: rimman
+author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 05/23/2019
-ms.author: rimman
-ms.openlocfilehash: 1d9fa7380f62165d360888fd8cb03919f1736297
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.date: 07/02/2019
+ms.author: mjbrown
+ms.openlocfilehash: 73b4ada713e264aaa2504fe4d4f504e07ae45181
+ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66244748"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67538084"
 ---
 # <a name="configure-multi-master-in-your-applications-that-use-azure-cosmos-db"></a>Настройка нескольких источников в приложениях, использующих Azure Cosmos DB
 
-Чтобы использовать несколько источников в приложении, нужно включить выполнение операций записи в нескольких регионах и настроить множественную адресацию в Azure Cosmos DB. Чтобы настроить множественную адресацию, укажите регион, в котором развертывается приложение.
+После создания учетной записи с несколькими включенными регионами записи необходимо внести два изменения в приложении в ConnectionPolicy для DocumentClient, чтобы включить возможности нескольких источников и множественной адресации в Azure Cosmos DB. В ConnectionPolicy установите для UseMultipleWriteLocations значение true и передайте имя региона, в котором развернуто приложение, в SetCurrentLocation. Это заполнит свойство PreferredLocations на основе географической близости от передаваемого расположения. Позже при добавлении нового региона в учетную запись нет необходимости обновлять или повторно развертывать приложение. В случае инициации регионального события оно автоматически обнаружит ближайший регион и подключится к нему.
+
+> [!TIP]
+> Учетные записи Cosmos, созданные без первоначальной настройки нескольких источников, можно перенести без простоев. Дополнительные сведения см. в разделе [Настройка нескольких регионов записи](how-to-manage-database-account.md#configure-multiple-write-regions).
 
 ## <a id="netv2"></a>Пакет SDK для .NET версии 2
 

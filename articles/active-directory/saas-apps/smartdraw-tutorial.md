@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 7d811cd69185e77f50749fc48974dee684fb7cfa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9bafad5d28ef25f7f7bebe3899f288d0dfa72acb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65744703"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67090264"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-smartdraw"></a>Руководство по Интеграция Azure Active Directory со SmartDraw
 
@@ -116,7 +116,7 @@ ms.locfileid: "65744703"
     > [!NOTE]
     > Значение URL-адреса входа приведено для примера. Вы замените это значение на фактический URL-адрес для входа, который описывается далее в этом руководстве. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-6. Приложение SmartDraw ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
+6. Приложение SmartDraw ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
     ![image](common/edit-attribute.png)
 
@@ -175,13 +175,13 @@ ms.locfileid: "65744703"
 
     a. В текстовом поле **Your Domain (like acme.com)** (Ваш домен (например, acme.com)) введите свой домен.
 
-    b. Скопируйте значение **Your SP Initiated Login Url will be** (URL-адрес для входа, инициируемого поставщиком услуг) для своего экземпляра и вставьте его в текстовое поле "URL-адрес входа" в разделе  **Базовая конфигурация SAML** на портале Azure.
+    b. Скопируйте значение **Your SP Initiated Login Url will be** (URL-адрес для входа, инициируемого поставщиком услуг) для своего экземпляра и вставьте его в текстовое поле "URL-адрес входа" в разделе **Базовая конфигурация SAML** на портале Azure.
     
     c. В текстовом поле **Security Groups to Allow SmartDraw Access** (Группы безопасности с доступом к SmartDraw) введите **Everyone** (Все).
 
     d. В текстовое поле **Your SAML Issuer Url** (URL-адрес издателя SAML) вставьте **идентификатор Azure AD**, скопированный на портале Azure.
 
-    д. В Блокноте откройте скачанный на портале Azure XML-файл метаданных, скопируйте его содержимое, а затем вставьте его в поле  **Your SAML MetaData** (Метаданные SAML).
+    д. В Блокноте откройте скачанный с портала Azure XML-файл метаданных, скопируйте его содержимое, а затем вставьте его в поле **Your SAML MetaData** (Метаданные SAML).
 
     Е. Щелкните **Save Configuration** (Сохранить конфигурацию). 
 
@@ -203,7 +203,7 @@ ms.locfileid: "65744703"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension** .  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -252,5 +252,5 @@ ms.locfileid: "65744703"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

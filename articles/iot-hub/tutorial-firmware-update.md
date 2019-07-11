@@ -10,14 +10,14 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/22/2019
+ms.date: 06/28/2019
 ms.custom: mvc
-ms.openlocfilehash: 57ec4990447070d1889f7476b89abb742296c056
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: c576020118778e34b80187ec056fca22a4d9c5b1
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65597525"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67485830"
 ---
 # <a name="tutorial-implement-a-device-firmware-update-process"></a>Руководство по Реализация обновления встроенного ПО устройства
 
@@ -41,7 +41,7 @@ ms.locfileid: "65597525"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Примеры приложений, запускаемых в рамках этого краткого руководства, написаны на языке Node.js. Вам потребуется установить Node.js 10 x.x или более позднюю версию на компьютере для разработки.
+Примеры приложений, запускаемых в рамках этого краткого руководства, написаны на языке Node.js. Вам потребуется установить Node.js 10 x.x или более поздней версии на компьютере для разработки.
 
 Node.js, предназначенный для нескольких платформ, можно скачать здесь: [nodejs.org](https://nodejs.org).
 
@@ -73,7 +73,7 @@ az group create --name tutorial-iot-hub-rg --location $location
 az iot hub create --name $hubname --location $location --resource-group tutorial-iot-hub-rg --sku F1
 
 # Make a note of the service connection string, you need it later
-az iot hub show-connection-string --name $hubname -o table
+az iot hub show-connection-string --name $hubname -policy-name service -o table
 
 ```
 
@@ -95,8 +95,7 @@ az iot hub device-identity show-connection-string --device-id MyFirmwareUpdateDe
 ```
 
 > [!TIP]
-> При запуске этих команд в командной строке Windows или Powershell ознакомьтесь со страницей [azure-iot-cli-extension tips](https://github.com/Azure/azure-iot-cli-extension/wiki/Tips
-), чтобы получить сведения о том, как взять в кавычки строки JSON.
+> При запуске этих команд в командной строке Windows или Powershell ознакомьтесь со страницей [azure-iot-cli-extension tips](https://github.com/Azure/azure-iot-cli-extension/wiki/Tips), чтобы получить сведения о том, как взять в кавычки строки JSON.
 
 ## <a name="start-the-firmware-update"></a>Запуск обновления встроенного ПО
 
@@ -187,7 +186,7 @@ node ServiceClient.js "{your service connection string}"
 
 ![Внутреннее приложение](./media/tutorial-firmware-update/BackEnd2.png)
 
-Из-за задержки в реестре удостоверений устройства Центра Интернета вещей вы можете не видеть каждое обновление состояния, отправленное во внутреннее приложение. Метрики также можно просмотреть на портале в разделе **Automatic device management (Автоматическое управление устройствами) -> IoT device configuration (Конфигурация устройства Интернета вещей)** Центра Интернета вещей:
+Так как автоматические конфигурации устройств запускаются во время создания и затем каждые пять минут, каждое обновление состояния, передаваемое серверному приложению, может не отображаться. Метрики также можно просмотреть на портале в разделе **Automatic device management (Автоматическое управление устройствами) -> IoT device configuration (Конфигурация устройства Интернета вещей)** Центра Интернета вещей:
 
 ![Просмотр конфигурации на портале](./media/tutorial-firmware-update/portalview.png)
 

@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 05/15/2019
+ms.date: 06/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 672bcc3d0cb15ef348d090ed6c5a38d6912465ef
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.openlocfilehash: c74ed93383ea880900a5428a6f24b5b44a3ff135
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66496314"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443146"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-via-nfs"></a>Руководство по Копирование данных в Azure Data Box через NFS
 
@@ -88,6 +88,12 @@ ms.locfileid: "66496314"
 - Если данные, отправляемые Data Box, одновременно отправляются другими приложениями за пределами Data Box, это может привести к сбоям заданий отправки и повреждению данных.
 - Рекомендуем не использовать протоколы SMB и NFS одновременно либо копировать одни и те же данные в одно и то же конечное расположение в Azure. В таких случаях невозможно предсказать окончательный результат.
 - **Всегда создавайте отдельную папку для файлов, которые вы собираетесь скопировать в общую папку**. Папка, созданная в общих папках блочных и страничных BLOB-объектов, представляет собой контейнер, куда передаются данные в виде больших двоичных объектов. Вы не можете копировать файлы напрямую в *корневую* папку в учетной записи хранения.
+- При приеме имен каталогов и файлов с учетом регистра из общей папки NFS в NFS в Data Box: 
+    - Регистр в имени сохраняется.
+    - Регистр в файлах не учитывается.
+    
+    Например, при копировании `SampleFile.txt` и `Samplefile.Txt` в Data Box регистр в имени сохранится, но второй файл перезапишет первый, так как они считаются одним и тем же файлом.
+
 
 Если у вас главный компьютер с ОС Linux, используйте программу копирования, аналогичную Robocopy. Вот некоторые программы, доступные в ОС Linux: [rsync](https://rsync.samba.org/), [FreeFileSync](https://www.freefilesync.org/), [Unison](https://www.cis.upenn.edu/~bcpierce/unison/), [Ultracopier](https://ultracopier.first-world.info/).  
 

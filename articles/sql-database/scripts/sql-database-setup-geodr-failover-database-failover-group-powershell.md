@@ -1,6 +1,6 @@
 ---
-title: Пример для PowerShell. Группа отработки отказа георепликации для отдельной базы данных SQL Azure | Документация Майкрософт
-description: Пример скрипта Azure PowerShell для настройки группы отработки отказа активной георепликации отдельной базы данных в Базе данных SQL Azure и отработки отказа этой базы данных.
+title: 'Пример PowerShell: активная георепликация отдельной базы данных SQL Azure | Документация Майкрософт'
+description: Пример скрипта Azure PowerShell для настройки активной георепликации автономной базы данных в Базе данных SQL Azure и отработки отказа этой базы данных.
 services: sql-database
 ms.service: sql-database
 ms.subservice: high-availability
@@ -12,14 +12,14 @@ ms.author: mathoma
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: a90753d075f7f4db9dbae95fde979d471db3247c
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.openlocfilehash: 1733e117c2a5b0d58e37c3f5af451f949bd253f9
+ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66729190"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67561492"
 ---
-# <a name="use-powershell-to-configure-an-active-geo-replication-failover-group-for-a-single-database-in-azure-sql-database"></a>Настройка группы отработки отказа активной георепликации для отдельной базы данных в Базе данных SQL Azure с помощью PowerShell
+# <a name="use-powershell-to-configure-active-geo-replication-for-a-single-database-in-azure-sql-database"></a>Настройка активной георепликации для отдельной базы данных в Базе данных SQL Azure с помощью PowerShell
 
 Этот пример скрипта PowerShell настраивает группу отработки отказа активной георепликации для отдельной базы данных и выполняет для нее отработку отказа во вторичную реплику базы данных.
 
@@ -29,7 +29,7 @@ ms.locfileid: "66729190"
 
 Чтобы установить и использовать PowerShell локально, вам понадобится AZ PowerShell 1.4.0 или последующей версии для работы с этим руководством. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="sample-scripts"></a>Примеры скриптов
+## <a name="sample-scripts"></a>Примеры сценариев
 
 [!code-powershell-interactive[main](../../../powershell_scripts/sql-database/setup-geodr-and-failover/setup-geodr-and-failover-database-failover-group.ps1?highlight=18-21 "Set up failover group for single database")]
 

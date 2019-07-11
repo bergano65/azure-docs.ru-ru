@@ -7,30 +7,30 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 04/12/2019
 ms.author: helohr
-ms.openlocfilehash: 1e53f76f564c0970ac1f291d2125807441500de6
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: 44c823653ecbad1c4dd1fd35b676c8a6d8bd1620
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65523313"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67206662"
 ---
-# <a name="tutorial-create-service-principals-and-role-assignments-with-powershell"></a>Руководство по Создание субъектов-служб и назначений ролей с помощью PowerShell
+# <a name="tutorial-create-service-principals-and-role-assignments-by-using-powershell"></a>Руководство по Создание субъектов-служб и назначений ролей с использованием PowerShell
 
 Субъекты-службы — это удостоверения, которые вы можете создать в Azure Active Directory для назначения ролей и разрешений с определенной целью. В предварительной версии Виртуального рабочего стола Windows вы можете создать субъект-службу для решения следующих задач:
 
-- автоматизация определенных задач управления Виртуального рабочего стола Windows;
-- использование в качестве учетных данных вместо пользователей многофакторной идентификации при использовании какого-либо из шаблонов Resource Manager в Виртуальном рабочем столе Windows.
+- автоматизация определенных задач управления Виртуального рабочего стола Windows.
+- использование в качестве учетных данных вместо пользователей Многофакторной идентификации при использовании какого-либо из шаблонов Resource Manager в Виртуальном рабочем столе Windows.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Создание субъекта-службы в Azure Active Directory
-> * создание назначения роли в Виртуальном рабочем столе Windows;
+> * Создайте субъект-службу в Azure Active Directory.
+> * создание назначения роли в Виртуальном рабочем столе Windows.
 > * вход в Виртуальный рабочий стол Windows с помощью субъекта-службы.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед созданием субъектов-служб и назначений ролей вам необходимо сделать следующее:
+Перед созданием субъектов-служб и назначений ролей вам необходимо будет сделать следующее:
 
 1. Установите модуль Azure AD. Чтобы установить модуль, запустите PowerShell как администратор и запустите следующий командлет:
 
@@ -48,7 +48,7 @@ ms.locfileid: "65523313"
 
 ## <a name="create-a-service-principal-in-azure-active-directory"></a>Создание субъекта-службы в Azure Active Directory
 
-Когда вы выполните все предварительные требования в сеансе PowerShell, запустите указанные ниже командлеты PowerShell, чтобы создать мультитенатный субъект-службу в Azure.
+После того как вы выполните все предварительные требования в сеансе PowerShell, запустите указанные ниже командлеты PowerShell, чтобы создать мультитенатный субъект-службу в Azure.
 
 ```powershell
 Import-Module AzureAD
@@ -72,7 +72,7 @@ New-RdsRoleAssignment -RoleDefinitionName "RDS Owner" -ApplicationId $svcPrincip
 
 ## <a name="sign-in-with-the-service-principal"></a>Вход с помощью субъекта-службы
 
-Когда вы создадите назначение роли для субъекта-службы, удостоверьтесь, что субъект-служба может войти в Виртуальный рабочий стол Windows, запустив следующий командлет:
+После создания назначения ролей для субъекта-службы удостоверьтесь, что субъект-служба может войти в Виртуальный рабочий стол Windows, запустив следующий командлет:
 
 ```powershell
 $creds = New-Object System.Management.Automation.PSCredential($svcPrincipal.AppId, (ConvertTo-SecureString $svcPrincipalCreds.Value -AsPlainText -Force))

@@ -10,12 +10,12 @@ ms.subservice: acoustics
 ms.topic: overview
 ms.date: 03/20/2019
 ms.author: kegodin
-ms.openlocfilehash: 1fc125322b83a0eb51095fac21dee05c7ffb39c1
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 73b8980b0ea2d1adbd814026f026358e25dcbb55
+ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58313623"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67502953"
 ---
 # <a name="what-is-project-acoustics"></a>Что такое Project Acoustics?
 Project Acoustics — это подсистема волновой акустики для трехмерных интерактивных интерфейсов. Она моделирует волновые эффекты (дифракция, перемещение и реверберация) в сложных сценах, не требуя выполнения разметки зон вручную. Кроме того, она содержит игровой модуль и интеграцию аудио ПО промежуточного слоя. Философия Project Acoustics схожа со статическим освещением: моделирование детализированной физики в автономном режиме с целью обеспечения физической основы, а также использование упрощенной среды выполнения с выразительными элементами управления проектированием для реализации художественных целей.
@@ -41,17 +41,17 @@ Project Acoustics — это подсистема волновой акусти
 
 ## <a name="platforms"></a>Платформы
 Подключаемые модули среды выполнения Project Acoustics в настоящее время можно развернуть на следующих платформах:
-*  Windows
+* Windows
 * Android
 * Xbox One
 
-## <a name="download"></a>Download (Скачать)
+## <a name="download"></a>Скачивание
 * [Подключаемый модуль Project Acoustics Unity с примерами](https://www.microsoft.com/en-us/download/details.aspx?id=57346)
 * [Подключаемые модули Project Acoustics Unreal и Wwise с примерами](https://www.microsoft.com/download/details.aspx?id=58090)
   * Чтобы получить двоичные файлы и поддержку Xbox, свяжитесь с нами с помощью приведенной ниже формы регистрации.
 
 ## <a name="contact-us"></a>Свяжитесь с нами
-* [Форумы Project Acoustics](https://social.msdn.microsoft.com/Forums/en-US/home?forum=projectacoustics)
+* [Обсуждение Project Acoustics и отчеты по проблемам](https://github.com/microsoft/ProjectAcoustics/issues)
 * [Зарегистрируйтесь, чтобы получать сведения об обновления Project Acoustics](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRwMoAEhDCLJNqtVIPwQN6rpUOFRZREJRR0NIQllDOTQ1U0JMNVc4OFNFSy4u)
 
 ## <a name="next-steps"></a>Дополнительная информация

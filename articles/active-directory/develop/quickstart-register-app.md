@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: aragra, lenalepa, sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 156b26454aad6d6fd3230e19b47a938841331aec
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 541253cf3a8f2628ea0e76f1115ddc4a290daf62
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65545712"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67655477"
 ---
 # <a name="quickstart-register-an-application-with-the-microsoft-identity-platform"></a>Краткое руководство. Регистрация приложения с помощью платформы удостоверений Майкрософт
 
@@ -50,15 +50,15 @@ ms.locfileid: "65545712"
        - Для веб-приложений укажите основной URL-адрес приложения. Например, `http://localhost:31544` может быть URL-адресом веб-приложения, выполняемого на локальном компьютере. Пользователи будут использовать этот URL-адрес для входа в приложение веб-клиента.
        - Для общедоступных клиентских приложений укажите универсальный код ресурса (URI), который использует AAD для возвращения ответов маркера. Укажите значение, специфичное для вашего приложения, например `myapp://auth`.
 
-     Конкретные примеры для веб-приложений или собственных приложений см. в наших [кратких руководствах](https://docs.microsoft.com/azure/active-directory/develop/#quickstarts).
+     Конкретные примеры для веб-приложений или собственных приложений см. в наших [кратких руководствах](https://docs.microsoft.com/azure/active-directory/develop).
 
 1. По завершении щелкните **Зарегистрировать**.
 
-    [![Регистрация нового приложения на портале Azure](./media/quickstart-add-azure-ad-app-preview/new-app-registration-expanded.png)](./media/quickstart-add-azure-ad-app-preview/new-app-registration-expanded.png#lightbox)
+    [![Отображение экрана для регистрации нового приложения на портале Azure](./media/quickstart-add-azure-ad-app-preview/new-app-registration-expanded.png)](./media/quickstart-add-azure-ad-app-preview/new-app-registration-expanded.png#lightbox)
 
 AAD присвоит вашему приложению уникальный идентификатор, после чего откроется страница приложения **Обзор**. Чтобы добавить дополнительные возможности в свое приложение, вы можете выбрать другие параметры конфигурации, включая фирменную символику, сертификаты и секреты, разрешения API и прочее.
 
-[![Страница обзора нового зарегистрированного приложения](./media/quickstart-add-azure-ad-app-preview/new-app-overview-page-expanded.png)](./media/quickstart-add-azure-ad-app-preview/new-app-overview-page-expanded.png#lightbox)
+[![Пример страницы обзора нового зарегистрированного приложения](./media/quickstart-add-azure-ad-app-preview/new-app-overview-page-expanded.png)](./media/quickstart-add-azure-ad-app-preview/new-app-overview-page-expanded.png#lightbox)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -67,6 +67,6 @@ AAD присвоит вашему приложению уникальный ид
     - [Настройка клиентского приложения для доступа к веб-API](quickstart-configure-app-access-web-apis.md)
     - [Краткое руководство. Настройка приложения для доступа к веб-API (предварительная версия)](quickstart-configure-app-expose-web-apis.md)
     - [Краткое руководство. Изменение учетных записей, поддерживаемых приложением (предварительная версия)](quickstart-modify-supported-accounts.md)
-- Следуя этим [кратким руководствам](https://docs.microsoft.com/azure/active-directory/develop/#quickstarts), можно быстро создать приложение и добавить в него такие функциональные возможности, как получение и обновление маркеров, выполнение входа пользователя, отображение некоторых сведений о пользователе и многое другое.
+- Следуя этим [кратким руководствам](https://docs.microsoft.com/azure/active-directory/develop), можно быстро создать приложение и добавить в него такие функциональные возможности, как получение и обновление маркеров, выполнение входа пользователя, отображение некоторых сведений о пользователе и многое другое.
 - Дополнительные сведения о двух объектах Azure AD, представляющих зарегистрированное приложение, и о взаимосвязи между ними см. в описании [объектов приложения и субъекта-службы в Azure Active Directory (Azure AD)](app-objects-and-service-principals.md).
 - Дополнительные сведения о фирменной символике, которой следует пользоваться при разработке приложений, см. в [рекомендациях по использованию фирменной символики для приложений](howto-add-branding-in-azure-ad-apps.md).

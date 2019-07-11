@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 02/04/2019
 ms.author: diberry
-ms.openlocfilehash: 85d5fa1cc036737497e276413985e0828e3b51f6
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: c6fddec80da1baa852a2f3712a94b785d775919e
+ms.sourcegitcommit: 6e6813f8e5fa1f6f4661a640a49dc4c864f8a6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65788720"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67151042"
 ---
 # <a name="quickstart-create-a-knowledge-base-in-qna-maker-using-java"></a>Краткое руководство. Создание базы знаний в QnA Maker с помощью Java
 
@@ -100,7 +100,7 @@ ms.locfileid: "65788720"
 ```
 
 ## <a name="add-a-main-method"></a>Добавление метода main
-Метод main создает базу знаний, а затем выполняет опрос состояний. **Идентификатор операции** создания возвращается в **расположение** поля заголовка ответа POST, а затем используется как часть маршрута в запросе GET. ** Цикл `while` будет выполняться до тех пор, пока состояние не станет завершенным.
+Метод main создает базу знаний, а затем выполняет опрос состояний. Идентификатор операции возвращается в **расположение** поля заголовка ответа POST, а затем используется как часть маршрута в запросе GET. Цикл `while` будет выполняться до тех пор, пока состояние не станет завершенным.
 
 [!code-java[Add main method](~/samples-qnamaker-java/documentation-samples/quickstarts/create-knowledge-base/CreateKB.java?range=152-191 "Add main method")]
 

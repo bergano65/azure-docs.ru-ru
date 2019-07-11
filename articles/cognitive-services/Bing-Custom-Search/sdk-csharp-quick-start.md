@@ -1,21 +1,21 @@
 ---
 title: Краткое руководство. Вызов конечной точки Пользовательского поиска Bing с помощью пакета SDK для C# | Документация Майкрософт
 titleSuffix: Azure Cognitive Services
-description: Установка компонентов консольного приложения пакета SDK для пользовательского поиска для C#.
+description: Воспользуйтесь пакетом SDK Пользовательского поиска Bing для C# для поиска экземпляра службы пользовательского поиска.
 services: cognitive-services
 author: swhite-msft
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-custom-search
 ms.topic: quickstart
-ms.date: 09/06/2018
+ms.date: 06/18/2019
 ms.author: scottwhi
-ms.openlocfilehash: 9e13edce77819d5ef8cfc3b6becff9fb82224a83
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 0381df439d0c0904e8741bb1f31b179566c72ec5
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65595962"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67206177"
 ---
 # <a name="quickstart-call-your-bing-custom-search-endpoint-using-the-c-sdk"></a>Краткое руководство. Вызов конечной точки Пользовательского поиска Bing с помощью пакета SDK для C# 
 
@@ -27,7 +27,7 @@ ms.locfileid: "65595962"
 - Microsoft [.NET Core](https://www.microsoft.com/net/download/core)
 - Любой выпуск [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/downloads/)
 - Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
-- Установленный пакет [NuGet для пользовательского поиска](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.CustomSearch/1.2.0). 
+- Пакет NuGet [Пользовательского поиска Bing](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.CustomSearch/1.2.0). 
     - В **обозревателе решений** Visual Studio щелкните правой кнопкой мыши проект и выберите пункт **Manage NuGet Packages** (Управление пакетами NuGet) в меню. Установите пакет `Microsoft.Azure.CognitiveServices.Search.CustomSearch`. При установке пакета NuGet для пользовательского поиска также будут установлены следующие сборки:
         - Microsoft.Rest.ClientRuntime
         - Microsoft.Rest.ClientRuntime.Azure

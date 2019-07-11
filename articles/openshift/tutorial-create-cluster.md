@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.topic: tutorial
 ms.service: openshift
 ms.date: 05/14/2019
-ms.openlocfilehash: 651236c25ed912ebd7399d351677a67e3826278c
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 9094fa441ff5ffdd5f579fd072ffaa303961314d
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306182"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67304271"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-cluster"></a>Руководство по Создание кластера Azure Red Hat OpenShift
 
@@ -106,6 +106,10 @@ az group create --name $CLUSTER_NAME --location $LOCATION
 ### <a name="optional-connect-the-clusters-virtual-network-to-an-existing-virtual-network"></a>Необязательно: подключение виртуальной сети кластера к существующей виртуальной сети
 
 Если вам не нужно подключать виртуальную сеть создаваемого кластера к существующей виртуальной сети с помощью пиринга, пропустите этот шаг.
+
+Если пиринг сети находится за пределами подписки по умолчанию, то в этой подписке также понадобится зарегистрировать поставщик Microsoft.ContainerService. Для этого выполните указанную ниже команду в этой подписке. В противном случае если виртуальная сеть, пиринг которой выполняется, находится в той же подписке, шаг регистрации можно пропустить. 
+
+`az provider register -n Microsoft.ContainerService --wait`
 
 Для начала получите идентификатор существующей виртуальной сети. Этот идентификатор имеет такой формат: `/subscriptions/{subscription id}/resourceGroups/{resource group of VNET}/providers/Microsoft.Network/virtualNetworks/{VNET name}`.
 

@@ -1,23 +1,23 @@
 ---
-title: Руководство. Мониторинг пространства с помощью Azure Digital Twins | Документация Майкрософт
+title: Руководство по Мониторинг пространства с помощью Azure Digital Twins | Документация Майкрософт
 description: Сведения о подготовке пространственных ресурсов и контроле условий работы с помощью Azure Digital Twins.
 services: digital-twins
-author: dsk-2015
+author: alinamstanciu
 ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
-ms.date: 12/27/2018
-ms.author: dkshir
-ms.openlocfilehash: ad6c2625dc56dc3a3155183a04b712122a3b10f1
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.date: 06/26/2019
+ms.author: alinast
+ms.openlocfilehash: 3ebfa9b54007d0b409780e6a549bdd2411b94810
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57535388"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67484673"
 ---
-# <a name="tutorial-provision-your-building-and-monitor-working-conditions-with-azure-digital-twins"></a>Руководство. Подготовка примера здания и мониторинг условий работы с помощью Azure Digital Twins
+# <a name="tutorial-provision-your-building-and-monitor-working-conditions-with-azure-digital-twins-preview"></a>Руководство по Подготовка примера здания и мониторинг условий работы с помощью Azure Digital Twins (предварительная версия)
 
-В этом руководстве описано, как использовать Azure Digital Twins для отслеживания желаемых температурных условий и уровня комфорта в необходимых пространствах. [Настроив пример здания](tutorial-facilities-setup.md), вы можете подготовить его и запустить пользовательские функции на основе данных датчика, используя шаги в этом руководстве.
+В этом учебнике описано, как использовать Azure Digital Twins (предварительная версия) для отслеживания желаемых температурных условий и уровня комфорта в необходимых пространствах. [Настроив пример здания](tutorial-facilities-setup.md), вы можете подготовить его и запустить пользовательские функции на основе данных датчика, используя шаги в этом руководстве.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -43,14 +43,14 @@ ms.locfileid: "57535388"
 
 В примере проекта **occupancy-quickstart** откройте файл **src\actions\provisionSample.yaml** в Visual Studio Code. Обратите внимание на раздел, который начинается с типа **matchers**. Каждая запись в этом разделе создает сопоставитель с указанным **именем**. Сопоставитель будет отслеживать датчик типа **dataTypeValue**. Обратите внимание, как этот раздел относится к пространству с именем *Focus Room A1*, которое имеет узел **devices**, содержащий несколько датчиков. Для подготовки сопоставителя, который будет отслеживать один из этих датчиков, его значение **dataTypeValue** должно соответствовать **dataType** этого датчика. 
 
-Добавьте следующий сопоставитель под имеющимися. Убедитесь, что ключи согласованы, а пространства не заменены символами табуляции.
+Добавьте следующий сопоставитель под имеющимися. Убедитесь, что ключи согласованы, а пространства не заменены символами табуляции. Эти строки также присутствуют в файле *provisionSample.yaml* в закомментированном виде. Чтобы раскомментировать их, просто удалите символ `#` в начале каждой строки.
 
 ```yaml
       - name: Matcher Temperature
         dataTypeValue: Temperature
 ```
 
-Сопоставитель будет отслеживать датчик SAMPLE_SENSOR_TEMPERATURE, который вы добавили в [первом руководстве](tutorial-facilities-setup.md). Эти строки также присутствуют в файле *provisionSample.yaml* в закомментированном виде. Чтобы раскомментировать их, просто удалите символ `#` в начале каждой строки.
+Сопоставитель будет отслеживать датчик SAMPLE_SENSOR_TEMPERATURE, который вы добавили в [первом руководстве](tutorial-facilities-setup.md). 
 
 <a id="udf"></a>
 
@@ -269,7 +269,7 @@ ms.locfileid: "57535388"
 Теперь, когда вы подготовили пространства и создали платформу для активации пользовательских уведомлений, вы можете перейти к любому из следующих руководств:
 
 > [!div class="nextstepaction"]
-> [Руководство по получению уведомлений от пространств Azure Digital Twins с использованием Logic Apps](tutorial-facilities-events.md)
+> [Руководство. по получению уведомлений от пространств Azure Digital Twins с использованием Logic Apps](tutorial-facilities-events.md)
 
 > [!div class="nextstepaction"]
-> [Руководство по визуализации и анализу событий пространств Azure Digital Twins с помощью Аналитики временных рядов](tutorial-facilities-analyze.md)
+> [Руководство. по визуализации и анализу событий пространств Azure Digital Twins с помощью Аналитики временных рядов](tutorial-facilities-analyze.md)

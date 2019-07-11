@@ -9,12 +9,12 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: tutorial
 ms.date: 04/24/2019
-ms.openlocfilehash: 8d108e1683be03a79e87990b983f2eda3eadba90
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 08ef140eb860637cc0c09619abe7051cc007e99f
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65797535"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67540298"
 ---
 # <a name="tutorial-work-with-azure-storage-queues"></a>Руководство по Работа с очередями хранилища Azure
 
@@ -227,6 +227,14 @@ ms.locfileid: "65797535"
    ```
 
 2. Сохраните файл.
+
+Сообщение должно быть в формате, допустимом для передачи XML-запросов с кодированием UTF-8. Размер сообщения не должен превышать 64 КБ. Если сообщение содержит двоичные данные, мы советуем использовать кодировку Base64 для сообщения.
+
+По умолчанию максимальное время действия сообщения составляет 7 дней. Для срока жизни сообщения можно указать любое положительное число. Чтобы добавить сообщение с неограниченным сроком действия, используйте `Timespan.FromSeconds(-1)` при вызове **AddMessageAsync**.
+
+```csharp
+await theQueue.AddMessageAsync(message, TimeSpan.FromSeconds(-1), null, null, null);
+```
 
 ## <a name="dequeue-messages"></a>Вывод сообщений из очереди
 

@@ -4,14 +4,14 @@ description: Узнайте, как определить расходы в ед�
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 05/23/2019
+ms.date: 06/14/2019
 ms.author: thweiss
-ms.openlocfilehash: 0671556a1ad049782090ffede509072adbac4c6a
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 07ca6278da6dd1f50f017f389c2c1389a42196f4
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66416038"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67163841"
 ---
 # <a name="find-the-request-unit-charge-in-azure-cosmos-db"></a>Определение расходов в единицах запроса в Azure Cosmos DB
 
@@ -302,3 +302,4 @@ if (tableResult.RequestCharge.HasValue) // would be false when using Azure Stora
 * [Globally scale provisioned throughput](scaling-throughput.md) (Глобальное масштабирование подготовленной пропускной способности)
 * [Обеспечение необходимой пропускной способности для контейнеров и баз данных](set-throughput.md)
 * [Подготовка пропускной способности для контейнера](how-to-provision-container-throughput.md)
+* [Monitor and debug with metrics in Azure Cosmos DB](use-metrics.md) (Мониторинг и отладка с помощью метрик в Azure Cosmos DB)

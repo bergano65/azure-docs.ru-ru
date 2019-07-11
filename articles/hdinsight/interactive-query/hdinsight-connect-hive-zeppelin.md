@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Выполнение запросов Apache Hive в Azure HDInsight — Apache Zeppelin
-description: Сведения о выполнении запросов Apache Hive с помощью Apache Zeppelin.
+description: Из этого краткого руководства вы узнаете, как использовать Apache Zeppelin для выполнения запросов Apache Hive.
 keywords: hdinsight hadoop, hive, interactive query, LLAP
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: quickstart
 ms.date: 05/06/2019
 ms.author: hrasheed
-ms.openlocfilehash: f4b8495646e83005dc48e8a729a0e5987b832721
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 1642c64b0b14c2e290aad689399b59d896660a28
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65801055"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67056699"
 ---
 # <a name="quickstart-execute-apache-hive-queries-in-azure-hdinsight-with-apache-zeppelin"></a>Краткое руководство. Выполнение запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin
 
@@ -83,12 +83,3 @@ ms.locfileid: "65801055"
 
 > [!div class="nextstepaction"]
 > [Подключение к Azure HDInsight и выполнение запросов Apache Hive с помощью средств Data Lake для Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md)
-
-## <a name="see-also"></a>См. также
-
-* [Визуализация данных Apache Hive с помощью Microsoft Power BI в Azure HDInsight](../hadoop/apache-hadoop-connect-hive-power-bi.md)
-* [Визуализация данных Apache Hive из кластера Interactive Query с помощью Power BI в Azure HDInsight](./apache-hadoop-connect-hive-power-bi-directquery.md)
-* [Подключение Excel к Hadoop в Azure HDInsight с помощью Microsoft Hive ODBC Driver](../hadoop/apache-hadoop-connect-excel-hive-odbc-driver.md)
-* [Подключение Excel к Apache Hadoop с помощью Power Query](../hadoop/apache-hadoop-connect-excel-power-query.md)
-* [Использование средств Azure HDInsight для Visual Studio Code](../hdinsight-for-vscode.md).
-* [Отправка данных в HDInsight](../hdinsight-upload-data.md)

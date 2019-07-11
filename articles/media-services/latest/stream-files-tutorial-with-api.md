@@ -1,6 +1,6 @@
 ---
-title: Передача, кодирование и потоковая передача с помощью Служб мультимедиа Azure версии 3, используя .NET | Документация Майкрософт
-description: Следуйте инструкциям в этом руководстве, чтобы отправить файл, закодировать видео и выполнять потоковую передачу содержимого с помощью Служб мультимедиа версии 3, используя .NET.
+title: Передача, кодирование и потоковая передача с помощью Служб мультимедиа Azure версии 3 | Документация Майкрософт
+description: Следуйте инструкциям в этом руководстве, чтобы отправить файл, закодировать видео и выполнить потоковую передачу содержимого с помощью Служб мультимедиа версии 3.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -12,14 +12,17 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/22/2019
 ms.author: juliako
-ms.openlocfilehash: 66ee2c110edfdbd0e33c69d45dee8040654d421a
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 5b359b81de694c47151c95254b80f847db828aed
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65149143"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67653934"
 ---
-# <a name="tutorial-upload-encode-and-stream-videos-using-net"></a>Руководство по Отправка, кодирование и потоковая передача видео с помощью .NET
+# <a name="tutorial-upload-encode-and-stream-videos"></a>Руководство по Отправка, кодирование и потоковая передача видео
+
+> [!NOTE]
+> Несмотря на то, что в этом учебнике используются примеры для [пакета SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.models.liveevent?view=azure-dotnet), общие шаги одинаковы для [REST API](https://docs.microsoft.com/rest/api/media/liveevents), [CLI](https://docs.microsoft.com/cli/azure/ams/live-event?view=azure-cli-latest) или других поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
 Службы мультимедиа Azure позволяют кодировать файлы мультимедиа в разные форматы, пригодные для воспроизведения в разных браузерах и на различных устройствах. Например, можно организовать потоковую передачу содержимого в форматах HLS или MPEG DASH от Apple. Перед тем как передавать файл мультимедиа высокого качества, его нужно закодировать. Рекомендации по кодировке см. в статье [Encoding with Azure Media Services](encoding-concept.md) (Кодирование в Службах мультимедиа Azure). В этом руководстве описана отправка локального файла видео и кодирование загруженного файла. Также можно закодировать содержимое, которое доступно через URL-адрес HTTPS. Дополнительные сведения см. в разделе [Создание входных данных задания из URL-адреса HTTP (HTTPS)](job-input-from-http-how-to.md).
 
@@ -83,7 +86,7 @@ ms.locfileid: "65149143"
 Следующая функция выполняет такие действия:
 
 * создает **ресурс**; 
-* получает записываемый [URL-адрес SAS](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) [контейнера ресурса в хранилище](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-dotnet?tabs=windows#upload-blobs-to-the-container);
+* получает записываемый [URL-адрес SAS](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) [контейнера ресурса в хранилище](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-dotnet#upload-blobs-to-a-container);
 * отправляет файл в контейнер в хранилище через URL-адрес SAS.
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#CreateInputAsset)]
