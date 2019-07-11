@@ -8,15 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 05/02/2019
+ms.date: 07/05/2019
 ms.author: travisw
-ms.custom: ''
-ms.openlocfilehash: 4044f8d48efae4e8423f780c85e0f3ccfde12461
-ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
+ms.openlocfilehash: 22c18b573e7107163f858c79956ca6f5380f6834
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67467054"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67604980"
 ---
 # <a name="quickstart-create-a-voice-first-virtual-assistant-with-the-speech-sdk-uwp"></a>Краткое руководство. Создание виртуального помощника по обработке голоса с помощью пакета SDK для распознавания речи, UWP.
 
@@ -81,7 +80,7 @@ ms.locfileid: "67467054"
     </Page>
     ```
 
-1. Откройте исходный файл кода программной части `MainPage.xaml.cs`. Он сгруппирован в разделе `MainPage.xaml`. Замените его содержимое кодом, приведенным ниже. В этом примере показано следующее: 
+1. Откройте исходный файл кода программной части `MainPage.xaml.cs`. Он сгруппирован в разделе `MainPage.xaml`. Замените его содержимое кодом, приведенным ниже. В этом примере показано следующее:
 
     * использование операторов для пространств имен Speech и Speech.Dialog;
     * простая реализация доступа к микрофону с привязкой к обработчику кнопки;

@@ -10,18 +10,19 @@ ms.service: azure-functions
 ms.devlang: java
 ms.topic: quickstart
 ms.date: 08/10/2018
-ms.author: routlaw, glenga
+ms.author: routlaw
+ms.reviewer: glenga
 ms.custom: mvc, devcenter
-ms.openlocfilehash: ab705b6131bd43a7ab70bab16cef81d33f07c055
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: da4de9185ba7371281c140c5f2456d85661c0af4
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65827411"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706443"
 ---
 # <a name="create-your-first-function-with-java-and-maven"></a>Создание первой функции с помощью Java и Maven
 
-В этой статье показано, как использовать средство командной строки Maven для создания и публикации функции Java в службе Функции Azure. После выполнения действий, описанных в этой статье, код функции будет выполняться в Azure в [Плане потребления](functions-scale.md#consumption-plan) и может запускаться с помощью HTTP-запроса.
+В этой статье показано, как использовать средство командной строки Maven для создания и публикации функции Java в службе "Функции Azure". После выполнения действий, описанных в этой статье, код функции будет выполняться в Azure в [Плане потребления](functions-scale.md#consumption-plan) и может запускаться с помощью HTTP-запроса.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -52,7 +53,7 @@ mvn archetype:generate \
 > [!NOTE]
 > Если не удается запустить команду, проверьте, какая версия `maven-archetype-plugin` используется. Так как команда выполняется в пустом каталоге без файла `.pom`, она может пытаться использовать более старую версию плагина из расположения `~/.m2/repository/org/apache/maven/plugins/maven-archetype-plugin`, если вы обновили Maven из предыдущей версии. В таком случае попробуйте удалить каталог `maven-archetype-plugin` и повторно выполнить команду.
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 ```powershell
 mvn archetype:generate `
@@ -62,8 +63,8 @@ mvn archetype:generate `
 
 ```cmd
 mvn archetype:generate ^
-    -DarchetypeGroupId=com.microsoft.azure ^
-    -DarchetypeArtifactId=azure-functions-archetype
+    "-DarchetypeGroupId=com.microsoft.azure" ^
+    "-DarchetypeArtifactId=azure-functions-archetype"
 ```
 
 Maven запросит значения, необходимые для завершения создания проекта. Дополнительную информацию о значениях _groupId_, _artifactId_ и о _версии_ см. по ссылке [соглашения об именовании Maven](https://maven.apache.org/guides/mini/guide-naming-conventions.html). Значение _appName_ должно быть уникальным в Azure, поэтому Maven создает имя приложения на основе ранее заданного по умолчанию _artifactId_. Значение _ackageName_ определяет пакет Java для создаваемого кода функции.
@@ -79,7 +80,7 @@ Define value for property 'appName' fabrikam-functions-20170927220323382:
 Confirm properties configuration: Y
 ```
 
-Maven создает файлы проекта в новой папке с именем _artifactId_, в этом примере — `fabrikam-functions`. Созданный в проекте и готовый для запуска код — это простая функция [активации HTTP](/azure/azure-functions/functions-bindings-http-webhook), возвращающая текст запроса.
+Maven создает файлы проекта в новой папке с именем _artifactId_, в этом примере — `fabrikam-functions`. Созданный в проекте и готовый для запуска код — это функция [активации HTTP](/azure/azure-functions/functions-bindings-http-webhook), возвращающая текст запроса.
 
 ```java
 public class Function {
@@ -108,7 +109,7 @@ public class Function {
 
 ```
 
-## <a name="reference-bindings"></a>Указание ссылки на привязки
+## <a name="enable-extension-bundles"></a>Включение пакетов расширений
 
 [!INCLUDE [functions-extension-bundles](../../includes/functions-extension-bundles.md)]
 
@@ -156,7 +157,7 @@ Hello LocalFunction!
 az login
 ```
 
-Разверните свой код в новом приложении-функции, используя целевой объект Maven `azure-functions:deploy`.
+Разверните свой код в новом приложении-функции, используя целевой объект Maven `azure-functions:deploy`. При этом включается режим [Развертывание ZIP-файлов с запуском из пакета](functions-deployment-technologies.md#zip-deploy).
 
 > [!NOTE]
 > При использовании Visual Studio Code для развертывания приложения-функции необходимо выбрать платную подписку, иначе появится сообщение об ошибке. Подписка отображается в левой области интегрированной среды разработки.

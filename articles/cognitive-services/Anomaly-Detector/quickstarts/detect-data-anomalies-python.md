@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Обнаруживать аномалии в пакетном режиме, с помощью REST API обнаружения аномалий и Python | Документация Майкрософт
-description: Используйте API обнаружения аномалий для обнаружения отклонений в ряду данных в пакетном режиме или при потоковой передаче данных.
+title: Краткое руководство. Обнаружение аномалий в пакетном режиме с помощью REST API Детектора аномалий и Python | Документация Майкрософт
+description: Использование API Детектора аномалий для обнаружения аномалий для рядов данных в виде пакета или потоковой передача данных.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -9,31 +9,31 @@ ms.subservice: anomaly-detector
 ms.topic: quickstart
 ms.date: 03/26/2019
 ms.author: aahi
-ms.openlocfilehash: cd37638b9bac2a1b48f0ef0abb7b18da440049f0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: 0ab39a7bb86671efb6258e3171e3bf7847aa241f
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67080746"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341743"
 ---
-# <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-python"></a>Краткое руководство. Обнаруживать аномалии в данных временных рядов с помощью REST API обнаружения аномалий и Python
+# <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-python"></a>Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и Python
 
-Используйте в этом кратком руководстве, чтобы начать использовать API обнаружения аномалий два режима обнаружения для обнаружения аномалий в данных временных рядов. Это приложение Python отправляет два API запросов, содержащих данные ряда времени в формате JSON и возвращает ответы.
+Используйте это краткое руководство, чтобы узнать, как начать использовать две модели API Детектора аномалий для обнаружения аномалий в данных временных рядов. Это приложение Python отправляет два запроса API, которые содержат данные временных рядов в формате JSON, и получает ответы.
 
 | Запрос API                                        | Выходные данные приложения                                                                                                                         |
 |----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| Обнаруживать аномалии в пакетном режиме                        | Ответ JSON, содержащий состояние аномалий (и другие данные) для каждой точки данных в данных временных рядов и положения любые обнаруженные аномалии. |
-| Обнаружение аномалий состояние последней точки данных | Ответ JSON, содержащий состояние аномалий (и другие данные), наличие последней точки данных в данных временных рядов.                                                                                                                                         |
+| Обнаружение аномальных действий в пакетном режиме                        | В ответе JSON содержится состояние аномалии (и другие данные) для каждой точки данных в данных временных рядов и расположение любых обнаруженных аномалий. |
+| Обнаружение состояний аномалии последней точки данных | В ответе JSON содержится состояние аномалии (и другие данные) для последней точки данных в данных временных рядов.                                                                                                                                         |
 
  Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Python версии 2.x или 3.x](https://www.python.org/downloads/)
 
-- [Библиотеку запросов](http://docs.python-requests.org) для python
+- [Библиотека запросов](http://docs.python-requests.org) для Python
 
-- Указывает JSON файла содержащего данных временных рядов. Данные для примера в этом кратком руководстве можно найти на [GitHub](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/request-data.json).
+- JSON-файл содержит точки данных временного ряда. Пример данных для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/request-data.json).
 
 [!INCLUDE [cognitive-services-anomaly-detector-data-requirements](../../../../includes/cognitive-services-anomaly-detector-data-requirements.md)]
 
@@ -42,19 +42,19 @@ ms.locfileid: "67080746"
 
 ## <a name="create-a-new-application"></a>Создание приложения
 
-1. В предпочитаемом текстовом редакторе или интегрированной среды разработки создайте новый файл python. Добавьте следующие импорты.
+1. Создайте файл Python в любом удобном текстовом редакторе или интегрированной среде разработки. Добавьте приведенные ниже импортированные данные.
 
     ```python
     import requests
     import json
     ```
 
-2. Создайте переменные для ключ подписки и конечной точки. Ниже приведены идентификаторы URI, можно использовать для обнаружения аномалий. Они будут добавлены к конечной точке службы позднее для создания API URL-адреса запросов.
+2. Создайте переменные для ключа подписки и конечной точки. Далее приведены универсальные коды ресурса (URI), которые можно использовать для обнаружения аномалий. Для создания URL-адресов запроса API они будут добавлены в конечную точку службы позднее.
 
-    |Метод обнаружения  |URI  |
+    |Методы обнаружения  |URI  |
     |---------|---------|
-    |Обнаружение пакета    | `/anomalydetector/v1.0/timeseries/entire/detect`        |
-    |Обнаружение на последние точки данных     | `/anomalydetector/v1.0/timeseries/last/detect`        |
+    |Пакетное обнаружение    | `/anomalydetector/v1.0/timeseries/entire/detect`        |
+    |Обнаружение в последней точке данных     | `/anomalydetector/v1.0/timeseries/last/detect`        |
 
     ```python
     batch_detection_url = "/anomalydetector/v1.0/timeseries/entire/detect"
@@ -65,7 +65,7 @@ ms.locfileid: "67080746"
     data_location = "[PATH_TO_TIME_SERIES_DATA]"
     ```
 
-3. Чтение в JSON-файле данных, открыв его и с помощью `json.load()`.
+3. Чтобы прочитать файл данных JSON, сначала его следует открыть, а затем использовать `json.load()`.
 
     ```python
     file_handler = open(data_location)
@@ -74,63 +74,68 @@ ms.locfileid: "67080746"
 
 ## <a name="create-a-function-to-send-requests"></a>Создание функции для отправки запросов
 
-1. Создайте новую функцию `send_request()` , которая принимает переменные, созданные выше. Затем выполните следующие действия.
+1. Создайте функцию с именем `send_request()`, которая принимает ранее созданные переменные. Затем выполните следующие действия.
 
-2. Создание словаря для заголовков запросов. Задайте `Content-Type` для `application/json`и добавьте ключ подписки для `Ocp-Apim-Subscription-Key` заголовка.
+2. Создайте словарь для заголовков запросов. Задайте `Content-Type` для `application/json` и добавьте ключ подписки в заголовок `Ocp-Apim-Subscription-Key`.
 
-3. Отправка запроса с использованием `requests.post()`. Объединение конечной точки и URL-адреса обнаружения аномалий полный URL-адрес запроса, а также включают заголовки и данные запроса json. И затем возвращают ответ.
+3. Отправьте запрос с помощью `requests.post()`. Объедините конечную точку и URL-адрес обнаружения аномалии для полного запроса URL-адреса (включая заголовки и данные запроса в формате JSON). А затем получите ответ.
 
 ```python
 def send_request(endpoint, url, subscription_key, request_data):
-    headers = {'Content-Type': 'application/json', 'Ocp-Apim-Subscription-Key': subscription_key}
-    response = requests.post(endpoint+url, data=json.dumps(request_data), headers=headers)
+    headers = {'Content-Type': 'application/json',
+               'Ocp-Apim-Subscription-Key': subscription_key}
+    response = requests.post(
+        endpoint+url, data=json.dumps(request_data), headers=headers)
     return json.loads(response.content.decode("utf-8"))
 ```
 
-## <a name="detect-anomalies-as-a-batch"></a>Обнаруживать аномалии в пакетном режиме
+## <a name="detect-anomalies-as-a-batch"></a>Обнаружение аномальных действий в пакетном режиме
 
-1. Создайте метод с именем `detect_batch()` для обнаружения аномалий в данных в пакетном режиме. Вызовите `send_request()` метод, созданный ранее с помощью конечной точки, URL-адрес, ключ подписки и данных json.
+1. Чтобы выполнить пакетное обнаружение данных, создайте метод `detect_batch()`. С помощью конечной точки, URL-адреса, ключа подписки и данных JSON вызовите метод `send_request()`, который был создан ранее.
 
-2. Вызовите `json.dumps()` результат для его форматирования и вывода его на консоль.
+2. Чтобы отформатировать `json.dumps()`, вызовите его в результате и выведите его в консоль.
 
-3. Если в ответе содержится `code` поле, печати, код ошибки и сообщение об ошибке.
+3. Если ответ содержит поле `code`, выведите код ошибки и сообщение ошибки.
 
-4. В противном случае поиск позиции аномалии в наборе данных. Ответ `isAnomaly` поле содержит значение типа boolean, относящиеся к ли точки данных — аномалия. Итерацию по списку и печать индекса любого `True` значения. Эти значения соответствуют индекс точки данных подозрительной активности, если любой объект найден.
+4. В противном случае найдите позиции аномалий в наборе данных. Поле ответа `isAnomaly` содержит логическое значение, которое зависит от того, является ли заданная точка данных аномалией. Пройдите по списку, а затем выведите перечень любых `True` значений. Эти значения соответствуют индексу аномальных точек данных, если они были найдены.
 
 ```python
 def detect_batch(request_data):
     print("Detecting anomalies as a batch")
-    result = send_request(endpoint, batch_detection_url, subscription_key, request_data)
+    result = send_request(endpoint, batch_detection_url,
+                          subscription_key, request_data)
     print(json.dumps(result, indent=4))
 
     if result.get('code') != None:
-        print("Detection failed. ErrorCode:{}, ErrorMessage:{}".format(result['code'], result['message']))
+        print("Detection failed. ErrorCode:{}, ErrorMessage:{}".format(
+            result['code'], result['message']))
     else:
         # Find and display the positions of anomalies in the data set
         anomalies = result["isAnomaly"]
         print("Anomalies detected in the following data positions:")
         for x in range(len(anomalies)):
             if anomalies[x] == True:
-                print (x)
+                print(x)
 ```
 
-## <a name="detect-the-anomaly-status-of-the-latest-data-point"></a>Обнаружение аномалий состояние последней точки данных
+## <a name="detect-the-anomaly-status-of-the-latest-data-point"></a>Обнаружение состояний аномалии последней точки данных
 
-1. Создайте метод с именем `detect_latest()` для определения того, является ли последние точки данных ряда времени аномалий. Вызовите `send_request()` метод выше с помощью конечной точки, URL-адрес, ключ подписки и данных json. 
+1. Чтобы определить, является ли последняя точка данных аномалией, создайте метод `detect_latest()`. С помощью конечной точки, URL-адреса, ключа подписки и данных JSON вызовите метод `send_request()`. 
 
-2. Вызовите `json.dumps()` результат для его форматирования и вывода его на консоль.
+2. Чтобы отформатировать `json.dumps()`, вызовите его в результате и выведите его в консоль.
 
 ```python
 def detect_latest(request_data):
     print("Determining if latest data point is an anomaly")
     # send the request, and print the JSON result
-    result = send_request(endpoint, latest_point_detection_url, subscription_key, request_data)
+    result = send_request(endpoint, latest_point_detection_url,
+                          subscription_key, request_data)
     print(json.dumps(result, indent=4))
 ```
 
-## <a name="load-your-time-series-data-and-send-the-request"></a>Загрузить данные временных рядов и отправить запрос
+## <a name="load-your-time-series-data-and-send-the-request"></a>Загрузка данных временных рядов и отправка запроса
 
-1. Загрузить данные JSON временных рядов открыв обработчика файлов и с помощью `json.load()` на нем. Затем следует вызовите созданную выше методов обнаружения аномалий.
+1. Чтобы загрузить данные временных рядов в формате JSON, откройте обработчик файлов и используйте `json.load()`. Затем вызовете методы обнаружения аномалий, созданные ранее.
 
 ```python
 file_handler = open(data_location)
@@ -142,11 +147,11 @@ detect_latest(json_data)
 
 ### <a name="example-response"></a>Пример ответа
 
-Успешный ответ возвращается в формате JSON. Щелкните ссылки ниже, чтобы просмотреть ответ JSON на сайте GitHub:
-* [Пример ответа на обнаружение](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/batch-response.json)
-* [Пример последнюю точку обнаружения ответа](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/latest-point-response.json)
+Успешный ответ возвращается в формате JSON. Чтобы просмотреть ответы JSON на GitHub, перейдите по следующим ссылкам.
+* [Пример ответа обнаружения пакета](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/batch-response.json)
+* [Пример ответа последнего обнаружения точки](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/latest-point-response.json)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Справочник по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/AnomalyDetector/operations/post-timeseries-entire-detect)

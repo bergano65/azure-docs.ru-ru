@@ -1,227 +1,289 @@
 ---
-title: Проекты группы ресурсов Azure в Visual Studio | Документация Майкрософт
+title: Создание и развертывание проектов группы ресурсов Azure в Visual Studio
 description: Использование Visual Studio для создания проекта группы ресурсов Azure и развертывания ресурсов в Azure.
-services: azure-resource-manager
-documentationcenter: na
 author: tfitzmac
-manager: timlt
-editor: tysonn
 ms.service: azure-resource-manager
-ms.devlang: multiple
-ms.topic: tutorial
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 02/21/2019
+ms.topic: quickstart
+ms.date: 06/20/2019
 ms.author: tomfitz
-ms.openlocfilehash: ca7cccb1d4f17ff9f80ca006da0ef7ce77109227
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 8677d906375853bdde5c192c86dacc7479f2e31e
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65595544"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67311208"
 ---
 # <a name="creating-and-deploying-azure-resource-groups-through-visual-studio"></a>Создание и развертывание групп ресурсов Azure с помощью Visual Studio
 
-С помощью Visual Studio можно создать проект для развертывания инфраструктуры и кода в Azure. Например, можно определить веб-узел, веб-сайт и базу данных для приложения, а затем развернуть эту инфраструктуру вместе с кодом. Visual Studio предоставляет разные начальные шаблоны для распространенных сценариев развертывания. В этой статье показано, как развернуть веб-приложение и базу данных SQL.  
+С помощью Visual Studio можно создать проект для развертывания инфраструктуры и кода в Azure. Например, вы можете развернуть веб-узел, веб-сайт и код для веб-сайта. Visual Studio предоставляет разные начальные шаблоны для распространенных сценариев развертывания. В этой статье показано, как развернуть веб-приложение.  
 
-В этой статье показано, как использовать [Visual Studio 2017 или более поздней версии для разработки Azure и установленных рабочих нагрузок ASP.NET](/dotnet/azure/dotnet-tools). Использование Visual Studio 2015 с обновлением 2 и пакета Microsoft Azure SDK для .NET 2.9 или Visual Studio 2013 с Azure SDK 2.9 в основном ничем не отличается.
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+В этой статье показано, как использовать [Visual Studio 2019 или более поздней версии для разработки Azure и установленных рабочих нагрузок ASP.NET](/visualstudio/install/install-visual-studio?view=vs-2019). Использование Visual Studio 2017 в основном такое же.
 
 ## <a name="create-azure-resource-group-project"></a>Создание проекта группы ресурсов Azure
 
-В этом разделе будет создан проект группы ресурсов Azure с помощью шаблона **Веб-приложение + SQL**.
+В этом разделе будет создан проект группы ресурсов Azure с помощью шаблона **Веб-приложение**.
 
-1. В Visual Studio щелкните **Файл**, **Создать проект**, выберите **C#** или **Visual Basic** (на более поздних стадиях выбранный язык не имеет значения, так как в этих проектах имеется только содержимое JSON и PowerShell). Щелкните **Облако** и выберите проект **Группа ресурсов Azure**.
-   
-    ![Проект облачного развертывания](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/create-project.png)
-2. Выберите шаблон, который вы намерены развернуть в диспетчере ресурсов Azure. Обратите внимание, что доступны разные варианты, основывающиеся на типе проекта, который вы хотите развернуть. В этом примере следует выбрать шаблон **Веб-приложение+SQL**.
-   
+1. В Visual Studio выберите **Файл**, **Создать**, **Проект**. Выберите шаблон проекта **группы ресурсов Azure** и нажмите кнопку **Далее**.
+
+    ![Создание проекта](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/create-project.png)
+
+1. Дайте имя вашему проекту. Другие настройки по умолчанию, вероятно, подойдут, но проверьте их функционирование в вашей среде. Затем выберите **Создать**.
+
+    ![Создание проекта](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/name-project.png)
+
+1. Выберите шаблон, который вы намерены развернуть в диспетчере ресурсов Azure. Обратите внимание, что доступны разные варианты, основывающиеся на типе проекта, который вы хотите развернуть. В этом примере следует выбрать шаблон **Веб-приложение** и нажать кнопку **ОК**.
+
     ![Выберите шаблон](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/select-project.png)
-   
+
     Выбор шаблона — это просто отправная точка. Вы можете добавлять и удалять ресурсы для реализации своего сценария.
-   
-   > [!NOTE]
-   > Visual Studio получает список доступных шаблонов в Интернете. Этот список может изменяться.
-   > 
-   > 
-   
-    Visual Studio создает проект развертывания группы ресурсов для веб-приложения и базы данных SQL.
-3. Просмотрите узел в проекте развертывания, чтобы увидеть, какие ресурсы созданы.
-   
-    ![Показать узлы](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/show-items.png)
-   
-    Так как в этом примере выбран шаблон "Веб-приложение + SQL", отобразятся указанные ниже файлы. 
-   
+
+1. Visual Studio создает проект развертывания группы ресурсов для веб-приложения. Чтобы увидеть файлы для вашего проекта, посмотрите на узел в проекте развертывания.
+
+    ![Отображение узлов](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/show-items.png)
+
+    Так как вы выбрали шаблон "Веб-приложение", отобразятся указанные ниже файлы.
+
    | Имя файла | ОПИСАНИЕ |
    | --- | --- |
-   | Deploy-AzureResourceGroup.ps1 |Сценарий PowerShell, вызывающий команды PowerShell для развертывания в Azure Resource Manager.<br />**Примечание**. Visual Studio использует этот сценарий PowerShell для развертывания шаблона. Любые изменения, внесенные в этот сценарий, влияют на развертывание в Visual Studio, поэтому будьте внимательны. |
-   | WebSiteSQLDatabase.json |Шаблон Resource Manager, определяющий инфраструктуру, которую требуется развернуть в Azure, и параметры, которые можно указать во время развертывания. Кроме того, он определяет зависимости между ресурсами, благодаря чему Resource Manager развертывает их в правильном порядке. |
-   | WebSiteSQLDatabase.parameters.json |Файл параметров, который содержит значения, необходимые для шаблона. Это значения, передаваемые для настройки каждого развертывания. |
-   
+   | Deploy-AzureResourceGroup.ps1 |Сценарий PowerShell, вызывающий команды PowerShell для развертывания в Azure Resource Manager. Visual Studio использует этот скрипт PowerShell для развертывания шаблона. |
+   | WebSite.json |Шаблон Resource Manager, определяющий инфраструктуру, которую требуется развернуть в Azure, и параметры, которые можно указать во время развертывания. Кроме того, он определяет зависимости между ресурсами, благодаря чему Resource Manager развертывает их в правильном порядке. |
+   | WebSite.parameters.json |Файл параметров, который содержит значения, необходимые для шаблона. Это значения, передаваемые для настройки каждого развертывания. |
+
     Все проекты развертывания группы ресурсов содержат эти основные файлы. Другие проекты могут содержать дополнительные файлы для поддержки других функциональных возможностей.
 
-## <a name="customize-the-resource-manager-template"></a>Настройка шаблона в диспетчере ресурсов
-Вы можете настроить проект развертывания, изменив шаблоны JSON, описывающие ресурсы, которые требуется развернуть. JSON означает JavaScript Object Notation (нотация объектов JavaScript) и представляет собой удобный в использовании формат сериализованных данных. Файлы JSON используют схему, ссылка на которую располагается в верхней части каждого файла. Вы можете скачать эту схему и проанализировать ее для лучшего понимания. В схеме определены допустимые элементы, типы и форматы полей, возможные значения для свойства. Сведения об элементах шаблона Resource Manager см. в статье [Создание шаблонов диспетчера ресурсов Azure](resource-group-authoring-templates.md).
+## <a name="customize-resource-manager-template"></a>Настройка шаблона Resource Manager
 
-Для работы с шаблоном откройте файл **WebSiteSQLDatabase.json**.
+Вы можете настроить проект развертывания, изменив шаблон Resource Manager, описывающий ресурсы, которые требуется развернуть. Сведения об элементах шаблона Resource Manager см. в статье [Создание шаблонов диспетчера ресурсов Azure](resource-group-authoring-templates.md).
 
-Редактор Visual Studio предоставляет средства, которые помогают изменить шаблон Resource Manager. Окно **Структура JSON** упрощает просмотр элементов, определенных в шаблоне.
+1. Для работы с шаблоном откройте файл **WebSite.json**.
 
-![Показать структуру JSON](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/show-json-outline.png)
+1. Редактор Visual Studio предоставляет средства, которые помогают изменить шаблон Resource Manager. Окно **Структура JSON** упрощает просмотр элементов, определенных в шаблоне.
 
-При выборе любого элемента в структуре отображается соответствующая часть шаблона и фрагмента JSON.
+   ![Отображение структуры JSON](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/show-json-outline.png)
 
-![Перейти к JSON](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/navigate-json.png)
+1. Выберите элемент в структуре, чтобы перейти к этой части шаблона.
 
-Можно добавить новый ресурс, нажав кнопку **Добавить ресурс** в верхней части окна структуры JSON. Или же можно щелкнуть правой кнопкой мыши элемент **Ресурсы** и выбрать команду **Добавить новый ресурс**.
+   ![Переход к JSON](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/navigate-json.png)
 
-![Добавить ресурсы](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-resource.png)
+1. Можно добавить новый ресурс, нажав кнопку **Добавить ресурс** в верхней части окна структуры JSON. Или же можно щелкнуть правой кнопкой мыши элемент **Ресурсы** и выбрать команду **Добавить новый ресурс**.
 
-Для этого примера выберите пункт **Учетная запись хранения** и присвойте этой учетной записи имя. Имя учетной записи хранения должно содержать только цифры и строчные буквы, а длина не должна превышать 11 символов.
+   ![Добавление ресурса](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-resource.png)
 
-![Добавить хранилище](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-storage.png)
+1. Выберите **Учетная запись хранения** и укажите имя. Имя учетной записи хранения должно содержать только цифры и строчные буквы, а длина не должна превышать 11 символов.
 
-Обратите внимание, что добавляется не только ресурс: для типа учетной записи хранения также будет добавлен параметр, а для ее имени — переменная.
+   ![Добавление хранилища](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-storage.png)
 
-![Показать структуру](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/show-new-items.png)
+1. Обратите внимание, что добавляется не только ресурс: для типа учетной записи хранения также будет добавлен параметр, а для ее имени — переменная.
 
-Для параметра **storageType** предварительно определяются допустимые типы и тип по умолчанию. Вы можете использовать эти значения или изменить их для своего сценария. Если требуется ограничить доступ к развертыванию учетной записи хранения **Premium_LRS** с помощью этого шаблона, то удалите его из списка допустимых типов. 
+   ![Отображение структуры](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/show-new-items.png)
 
-```json
-"storageType": {
-  "type": "string",
-  "defaultValue": "Standard_LRS",
-  "allowedValues": [
-    "Standard_LRS",
-    "Standard_ZRS",
-    "Standard_GRS",
-    "Standard_RAGRS"
-  ]
-}
+1. В параметре для типа учетной записи хранения предварительно определяются допустимые типы и тип по умолчанию. Вы можете использовать эти значения или изменить их для своего сценария. Если требуется ограничить доступ к развертыванию учетной записи хранения **Premium_LRS** с помощью этого шаблона, то удалите его из списка допустимых типов.
+
+   ```json
+   "demoaccountType": {
+     "type": "string",
+     "defaultValue": "Standard_LRS",
+     "allowedValues": [
+       "Standard_LRS",
+       "Standard_ZRS",
+       "Standard_GRS",
+       "Standard_RAGRS"
+     ]
+   }
+   ```
+
+1. Кроме того, Visual Studio предоставляет шаблон IntelliSense, который определяет свойства, доступные при редактировании шаблона. Например, чтобы изменить свойства плана службы приложений, перейдите к ресурсу **HostingPlan** и задайте значение для параметра **properties**. Обратите внимание, что в шаблоне IntelliSense отображаются доступные значения, а также приводится описание каждого значения.
+
+   ![Отображение Intellisense](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/show-intellisense.png)
+
+   Можно задать для параметра **numberOfWorkers** значение 1 и сохранить файл.
+
+   ```json
+   "properties": {
+     "name": "[parameters('hostingPlanName')]",
+     "numberOfWorkers": 1
+   }
+   ```
+
+1. Откройте файл **WebSite.parameters.json**. Файл параметров используется для передачи во время развертывания значений, на основе которых настраивается развертываемый ресурс. Дайте имя плану размещения и сохраните файл.
+
+   ```json
+   {
+     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+     "contentVersion": "1.0.0.0",
+     "parameters": {
+       "hostingPlanName": {
+         "value": "demoHostPlan"
+       }
+     }
+   }
+   ```
+
+## <a name="deploy-project-to-azure"></a>Развертывание проекта в Azure
+
+Теперь все готово для развертывания проекта в группе ресурсов.
+
+По умолчанию скрипт PowerShell (Deploy-AzureResourceGroup.ps1) в проекте использует модуль AzureRM. Если у вас все еще установлен модуль AzureRM и вы хотите продолжить его использование, можно воспользоваться этим скриптом по умолчанию. При использовании этого скрипта можно развернуть свое решение с помощью интерфейса Visual Studio.
+
+Однако, если вы перешли на новый модуль [Az](/powershell/azure/new-azureps-module-az), в проект нужно добавить новый скрипт. Чтобы добавить скрипт, использующий модуль Az, скопируйте скрипт [Deploy-AzTemplate.ps1](https://github.com/Azure/azure-quickstart-templates/blob/master/Deploy-AzTemplate.ps1) и добавьте его в свой проект. Чтобы использовать этот скрипт для развертывания, необходимо запустить его из консоли PowerShell, а не через интерфейс развертывания Visual Studio.
+
+В этой статье описаны оба подхода. В этой статье скрипт по умолчанию называется скриптом модуля AzureRM, а новый скрипт — скриптом модуля Az.
+
+### <a name="az-module-script"></a>Скрипт модуля Az
+
+Для скрипта модуля Az откройте консоль PowerShell и запустите:
+
+```powershell
+.\Deploy-AzTemplate.ps1 -ArtifactStagingDirectory . -Location centralus -TemplateFile WebSite.json -TemplateParametersFile WebSite.parameters.json
 ```
 
-Кроме того, Visual Studio предоставляет шаблон IntelliSense, который определяет свойства, доступные при редактировании шаблона. Например, чтобы изменить свойства плана службы приложений, перейдите к ресурсу **HostingPlan** и задайте значение для параметра **properties**. Обратите внимание, что в шаблоне IntelliSense отображаются доступные значения, а также приводится описание каждого значения.
+### <a name="azurerm-module-script"></a>Скрипт модуля AzureRM
 
-![Показать Intellisense](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/show-intellisense.png)
-
-Можно задать для параметра **numberOfWorkers** значение 1.
-
-```json
-"properties": {
-  "name": "[parameters('hostingPlanName')]",
-  "numberOfWorkers": 1
-}
-```
-
-## <a name="deploy-the-resource-group-project-to-azure"></a>Развертывание проекта группы ресурсов в Azure
-Теперь все готово для развертывания проекта. Проект группы ресурсов Azure развертывается в группе ресурсов Azure. Группа ресурсов — это логическое объединение ресурсов с общим жизненным циклом.
+Для скрипта модуля AzureRM используйте Visual Studio:
 
 1. В контекстном меню узла проекта развертывания последовательно выберите пункты **Развернуть** > **Новое**.
-   
-    ![Пункт меню "Развертывание", "Новое развертывание"](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/deploy.png)
-   
-    Откроется диалоговое окно **Развертывание в группе ресурсов** .
-   
-    ![Диалоговое окно "Развертывание в группе ресурсов"](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/show-deployment.png)
-2. В раскрывающемся списке **Группа ресурсов** выберите существующую группу ресурсов или создайте новую. Чтобы создать группу ресурсов, откройте раскрывающийся список **Группа ресурсов** и выберите **Создать**.
-   
-    ![Диалоговое окно "Развертывание в группе ресурсов"](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/create-new-group.png)
-   
-    Откроется диалоговое окно **Создание группы ресурсов** . Укажите имя и расположение группы, а затем нажмите кнопку **Создать** .
-   
-    ![Диалоговое окно "Создание группы ресурсов"](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/create-resource-group.png)
-3. Измените параметры развертывания, нажав кнопку **Изменить параметры** .
-   
-    ![Кнопка "Изменить параметры"](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/edit-parameters.png)
-4. Укажите значения пустых параметров и нажмите кнопку **Сохранить** . К пустым параметрам относится **hostingPlanName**, **administratorLogin**, **administratorLoginPassword** и **databaseName**.
-   
-    **hostingPlanName** задает имя [плана службы приложений](../app-service/overview-hosting-plans.md) . 
-   
-    **administratorLogin** задает имя администратора SQL Server. Не используйте общие имена администраторов, такие как **sa** или **admin**. 
-   
-    Параметр **administratorLoginPassword** задает пароль администратора SQL Server. Мы не рекомендуем использовать параметр **Сохранить пароли как обычный текст в файле параметров** из соображений безопасности. Так как пароль не сохраняется как обычный текст, его потребуется ввести повторно во время развертывания. 
-   
-    **databaseName** задает имя создаваемой базы данных. 
-   
-    ![Диалоговое окно "Изменение параметров"](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/provide-parameters.png)
-5. Щелкните кнопку **Развернуть** , чтобы развернуть проект в Azure. Консоль PowerShell откроется вне экземпляра Visual Studio. При появлении запроса в консоли PowerShell введите пароль администратора базы данных. **Консоль PowerShell может быть скрыта под другими элементами или свернута на панели задач.**  Откройте ее и введите пароль.
-   
-   > [!NOTE]
-   > В Visual Studio может отобразиться запрос на установку командлетов Azure PowerShell. При появлении запроса установите их. Модули Azure PowerShell необходимы для успешного развертывания групп ресурсов. Скрипт PowerShell в проекте не работает с новым [модулем Azure PowerShell Az](/powershell/azure/new-azureps-module-az). 
-   >
-   > Дополнительные сведения см. в статье об [установке и настройке модулей Azure PowerShell](/powershell/azure/install-Az-ps).
-   > 
-   > 
-6. Развертывание может занять несколько минут. Состояние развертывания отображается в окне **Выходные данные** . После успешного завершения развертывания появится примерно такое сообщение:
-   
-        ... 
-        18:00:58 - Successfully deployed template 'websitesqldatabase.json' to resource group 'DemoSiteGroup'.
-7. Откройте в браузере [портал Azure](https://portal.azure.com/) и войдите в свою учетную запись. Чтобы просмотреть группу ресурсов, щелкните **Группы ресурсов** и укажите группу ресурсов, в которой выполнено развертывание.
-   
-    ![Выбрать группу](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/select-group.png)
-8. Отобразятся все развернутые ресурсы. Обратите внимание, что имя учетной записи хранения не совпадает с именем, указанным во время добавления этого ресурса. Учетная запись хранения должна быть уникальной. Шаблон автоматически добавляет строку символов в имя, указанное как уникальное. 
-   
-    ![Показать ресурсы](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/show-deployed-resources.png)
-9. Если вы захотите повторно развернуть проект после изменения конфигурации, выберите существующую группу ресурсов в контекстном меню проекта группы ресурсов Azure. В контекстном меню выберите **Развернуть**, а затем выберите развернутую группу ресурсов.
-   
-    ![Развернутая группа ресурсов Azure](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/redeploy.png)
 
-## <a name="deploy-code-with-your-infrastructure"></a>Развертывание кода с определенной инфраструктурой
-На этом этапе инфраструктура для приложения уже развернута, а фактический код для проекта — еще нет. В этой статье показано, как развернуть веб-приложение и таблицы базы данных SQL во время развертывания. При развертывании виртуальной машины вместо веб-приложения на компьютере необходимо запустить определенный код. Процесс развертывания кода для веб-приложения практически не отличается от процесса настройки виртуальной машины.
+    ![Пункт меню "Новое развертывание"](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/deploy.png)
+
+1. Откроется диалоговое окно **Развертывание в группе ресурсов** . В раскрывающемся списке **Группа ресурсов** выберите существующую группу ресурсов или создайте новую. Выберите **Развернуть**.
+
+    ![Диалоговое окно "Развертывание в группе ресурсов"](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/show-deployment.png)
+
+1. Состояние развертывания отображается в окне **Выходные данные** . После успешного завершения развертывания появится примерно такое сообщение:
+
+   ```output
+   18:00:58 - Successfully deployed template 'website.json' to resource group 'ExampleAppDeploy'.
+   ```
+
+## <a name="view-deployed-resources"></a>Отображение развернутых ресурсов
+
+Давайте проверим результаты.
+
+1. Откройте в браузере [портал Azure](https://portal.azure.com/) и войдите в свою учетную запись. Чтобы просмотреть группу ресурсов, щелкните **Группы ресурсов** и укажите группу ресурсов, в которой выполнено развертывание.
+
+1. Отобразятся все развернутые ресурсы. Обратите внимание, что имя учетной записи хранения не совпадает с именем, указанным во время добавления этого ресурса. Учетная запись хранения должна быть уникальной. Шаблон автоматически добавляет строку символов в предоставленное имя, чтобы сделать его уникальным.
+
+    ![Отображение ресурсов](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/show-deployed-resources.png)
+
+## <a name="add-code-to-project"></a>Добавление кода в проект
+
+На этом этапе инфраструктура для приложения уже развернута, а фактический код для проекта — еще нет.
 
 1. Добавьте проект в свое решение Visual Studio. Щелкните правой кнопкой мыши решение и выберите команду **Добавить** > **Новый проект**.
-   
-    ![Добавить проект](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-project.png)
-2. Добавьте **веб-приложение ASP.NET**. 
-   
-    ![Добавить веб-приложение](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-app.png)
-3. Выберите **MVC**.
-   
-    ![Выбрать MVC](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/select-mvc.png)
-4. После создания веб-приложения в Visual Studio оба проекта отобразятся в решении.
-   
-    ![Показать проекты](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/show-projects.png)
-5. Теперь нужно убедиться, что проект группы ресурсов уведомлен о новом проекте. Вернитесь к проекту группы ресурсов (AzureResourceGroup1). Щелкните правой кнопкой мыши **Ссылки** и выберите **Добавить ссылку**.
-   
-    ![Добавить ссылку](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-new-reference.png)
-6. Выберите созданный проект веб-приложения.
-   
-    ![добавление ссылки](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-reference.png)
-   
-    Добавляя ссылку, вы связываете проект веб-приложения с проектом группы ресурсов и автоматически задаете три ключевых свойства. Свойства отображаются в окне **Свойства** для ссылки.
-   
-      ![Просмотреть ссылку](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/see-reference.png)
-   
-    Существуют следующие свойства.
-   
-   * Свойство **Дополнительные свойства** содержит данные о промежуточном расположении пакета веб-развертывания, который будет отправлен в службу хранилища Azure. Обратите внимание на папку (ExampleApp) и файл (package.zip). Эти значения необходимо знать, так как их нужно указывать при развертывании приложения. 
-   * Свойство **Include File Path** (Включать путь к файлу) содержит путь к расположению, в котором будет создан пакет. Свойство **Include Targets** (Включать целевые объекты) содержит команду, которая будет выполнена при развертывании. 
-   * Значение по умолчанию свойства **Build;Package** (Сборка;пакет) отвечает за сборку и создание пакета веб-развертывания (package.zip) при развертывании.  
-     
-     Профиль публикации не требуется, так как при развертывании необходимые для создания пакета данные будут получены из свойств.
-7. Вернитесь к WebSiteSQLDatabase.json и добавьте ресурс в шаблон.
-   
-    ![добавление ресурса](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-resource-2.png)
-8. На этот раз выберите **Веб-развертывание для веб-приложений**. 
-   
-    ![добавление веб-развертывания](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-web-deploy.png)
-9. Повторно разверните проект группы ресурсов в группе ресурсов. В этом случае будут использоваться некоторые новые параметры. Вам не нужно задавать значения для параметров **_artifactsLocation** или **_artifactsLocationSasToken**. Visual Studio создает эти значения автоматически. Однако в путь к пакету развертывания необходимо добавить имя папки и файла (на следующем рисунке это **ExampleAppPackageFolder** и **ExampleAppPackageFileName**). Введите значения, которые вы ранее видели в свойствах ссылки (**ExampleApp** и **package.zip**).
-   
-    ![Добавить веб-развертывание](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/set-new-parameters.png)
-   
-    Для параметра **Учетная запись хранения артефактов**выберите учетную запись, развернутую в этой группе ресурсов.
-10. После завершения развертывания выберите веб-приложение на портале. Щелкните URL-адрес, чтобы перейти на сайт.
-    
-     ![Перейти на сайт](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/browse-site.png)
-11. Приложение ASP.NET по умолчанию успешно развернуто.
-    
-     ![Показать развернутое приложение](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/show-deployed-app.png)
 
-## <a name="add-an-operations-dashboard-to-your-deployment"></a>Добавление панели мониторинга операций к развертыванию
+    ![Добавление проекта](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-project.png)
+
+1. Добавьте **веб-приложение ASP.NET Core**.
+
+    ![Добавление веб-приложения](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-app.png)
+
+1. Дайте вашему веб-приложению имя и нажмите кнопку **Создать**.
+
+    ![Присвоение имени для веб-приложения](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/name-web-app.png)
+
+1. Выберите **Веб-приложение** и нажмите кнопку **Создать**.
+
+    ![Выбор веб-приложения](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/select-project-type.png)
+
+1. После создания веб-приложения в Visual Studio оба проекта отобразятся в решении.
+
+    ![Отображение проектов](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/show-projects.png)
+
+1. Теперь нужно убедиться, что проект группы ресурсов уведомлен о новом проекте. Вернитесь к проекту группы ресурсов (ExampleAppDeploy). Щелкните правой кнопкой мыши **Ссылки** и выберите **Добавить ссылку**.
+
+    ![Ссылка, которую нужно добавить](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-new-reference.png)
+
+1. Выберите созданный проект веб-приложения.
+
+   ![Ссылка, которую нужно добавить](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-reference.png)
+
+   Добавляя ссылку, вы связываете проект веб-приложения с проектом группы ресурсов и автоматически задаете ряд свойств. Свойства отображаются в окне **Свойства** для ссылки. Свойство **Include File Path** (Включать путь к файлу) содержит путь к расположению, в котором будет создан пакет. Обратите внимание на папку (ExampleApp) и файл (package.zip). Эти значения необходимо знать, так как их нужно указывать при развертывании приложения.
+
+   ![Просмотр ссылки](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/see-reference.png)
+
+1. Вернитесь к шаблону WebSite.json и добавьте ресурс в шаблон.
+
+    ![Добавление ресурса](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-resource-2.png)
+
+1. На этот раз выберите **Веб-развертывание для веб-приложений**. 
+
+    ![Добавление веб-развертывания](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-web-deploy.png)
+
+   Сохраните свой шаблон.
+
+1. В вашем шаблоне есть несколько новых параметров. Они были добавлены на предыдущем этапе. Вам не нужно задавать значения для параметров **_artifactsLocation** или **_artifactsLocationSasToken**, так как эти значения создаются автоматически. Тем не менее, вы должны задать папку и имя файла, соответствующие пути, по которому расположен пакет развертывания. Имена этих параметров заканчиваются на **PackageFolder** и **PackageFileName**. Первая часть имени — это имя добавленного вами ресурса веб-развертывания. В этой статье они названы **ExampleAppPackageFolder** и **ExampleAppPackageFileName**. 
+
+   Откройте файл **Website.parameters.json** и установите для этих параметров значения, которые вы видели в справочных свойствах. Задайте для параметра **ExampleAppPackageFolder** имя папки. Задайте для параметра **ExampleAppPackageFileName** имя ZIP-файла.
+
+   ```json
+   {
+     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+     "contentVersion": "1.0.0.0",
+     "parameters": {
+       "hostingPlanName": {
+         "value": "demoHostPlan"
+       },
+       "ExampleAppPackageFolder": {
+         "value": "ExampleApp"
+       },
+       "ExampleAppPackageFileName": {
+         "value": "package.zip"
+       }
+     }
+   }
+   ```
+
+## <a name="deploy-code-with-infrastructure"></a>Развертывание кода с инфраструктурой
+
+Так как вы добавили код в проект, на этот раз ваше развертывание немного отличается. Во время развертывания разместите артефакты для проекта в расположении, к которому сможет обращаться Resource Manager. Артефакты размещаются в учетной записи хранения.
+
+### <a name="az-module-script"></a>Скрипт модуля Az
+
+Если вы используете скрипт модуля Az, вам нужно внести одно небольшое изменение в свой шаблон. Этот скрипт добавляет косую черту к расположению артефактов, но ваш шаблон не ожидает такой косой черты. Откройте файл WebSite.json и найдите свойства для расширения MSDeploy. Он содержит свойство с именем **packageUri**. Удалите косую черту между расположением артефактов и папкой пакета.
+
+Результат будет выглядеть так:
+
+```json
+"packageUri": "[concat(parameters('_artifactsLocation'), parameters('ExampleAppPackageFolder'), '/', parameters('ExampleAppPackageFileName'), parameters('_artifactsLocationSasToken'))]",
+```
+
+Обратите внимание, что в предыдущем примере нет `'/',` между параметрами **parameters('_artifactsLocation')** и **parameters('ExampleAppPackageFolder')** .
+
+Выполните повторную сборку проекта. Сборка проекта гарантирует, что файлы, которые нужно развернуть, будут добавлены в промежуточную папку.
+
+Теперь откройте консоль PowerShell и запустите:
+
+```powershell
+.\Deploy-AzTemplate.ps1 -ArtifactStagingDirectory .\bin\Debug\staging\ExampleAppDeploy -Location centralus -TemplateFile WebSite.json -TemplateParametersFile WebSite.parameters.json -UploadArtifacts -StorageAccountName <storage-account-name>
+```
+
+### <a name="azurerm-module-script"></a>Скрипт модуля AzureRM
+
+Для скрипта модуля AzureRM используйте Visual Studio:
+
+1. Для повторного развертывания щелкните **Развернуть** и выберите группу ресурсов, которую вы развернули ранее.
+
+    ![Повторное развертывание проекта](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/redeploy.png)
+
+1. Для параметра **Учетная запись хранения артефактов** выберите учетную запись, развернутую в этой группе ресурсов.
+
+   ![Повторное развертывание веб-развертывания](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/redeploy-web-app.png)
+
+## <a name="view-web-app"></a>Просмотр веб-приложения
+
+1. После завершения развертывания выберите веб-приложение на портале. Щелкните URL-адрес, чтобы перейти на сайт.
+
+   ![Просмотр сайта](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/browse-site.png)
+
+1. Приложение ASP.NET по умолчанию успешно развернуто.
+
+   ![Отображение развернутого приложения](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/show-deployed-app.png)
+
+## <a name="add-operations-dashboard"></a>Добавление панели мониторинга операций
+
 Вы можете использовать не только ресурсы, доступные через интерфейс Visual Studio. Развертывание можно настроить, добавив пользовательский ресурс в шаблон. Для отображения добавления ресурса следует добавить панель мониторинга операций, позволяющую управлять развертываемым ресурсом.
 
-1. Откройте файл WebsiteSqlDeploy.json и добавьте следующий JSON после ресурса учетной записи хранения, но перед закрывающей скобкой `]` раздела ресурсов.
+1. Откройте файл WebSite.json и добавьте следующий JSON после ресурса учетной записи хранения, но перед закрывающей скобкой `]` раздела ресурсов.
 
    ```json
     ,{
@@ -300,15 +362,27 @@ ms.locfileid: "65595544"
     }
    ```
 
-2. Разверните группу ресурсов повторно. На панели мониторинга на портале Azure вы увидите общую панель мониторинга, добавленную в список вариантов.
+1. Заново разверните проект.
+
+1. После завершения развертывания просмотрите панель мониторинга на портале. Щелкните **Панель мониторинга** и выберите ту, которую вы развернули.
 
    ![Настраиваемая панель мониторинга](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/view-custom-dashboards.png)
 
-3. Выберите панель мониторинга.
+1. Вы увидите настроенную панель мониторинга.
 
    ![Настраиваемая панель мониторинга](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/Ops-DemoSiteGroup-dashboard.png)
 
 Доступом к панели мониторинга можно управлять с помощью групп RBAC. Кроме того, после развертывания панели мониторинга можно настроить ее внешний вид. Однако если вы повторно развернете группу ресурсов, панель мониторинга будет сброшена до значений по умолчанию в шаблоне. Дополнительные сведения о создании панелей мониторинга см. в статье [Создание панелей мониторинга Azure программными средствами](../azure-portal/azure-portal-dashboards-create-programmatically.md).
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если ресурсы Azure больше не нужны, их можно удалить. Для этого необходимо удалить группу ресурсов.
+
+1. На портале Azure в меню слева выберите **Группы ресурсов**.
+
+1. Выберите имя группы ресурсов.
+
+1. В главном меню выберите **Удалить группу ресурсов**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -1,7 +1,7 @@
 ---
-title: Создание бота на C# с помощью Bot Framework версии 4
+title: Бот распознавания речи версии 4 на C#
 titleSuffix: Language Understanding - Azure Cognitive Services
-description: Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), используя C#. Для быстрой реализации решений ботов этот чат-бот использует приложение "Управление персоналом". Бот создается с помощью Bot Framework версии 4 и бота веб-приложения Azure.
+description: Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), используя C#. Бот создается с помощью Bot Framework версии 4 и службы бота веб-приложения Azure.
 services: cognitive-services
 author: diberry
 ms.custom: seodec18
@@ -9,26 +9,25 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 01/09/2019
+ms.date: 06/24/2019
 ms.author: diberry
-ms.openlocfilehash: 028c06924e41606ba1d4e0b15fe26f2b7270db3c
-ms.sourcegitcommit: fdd6a2927976f99137bb0fcd571975ff42b2cac0
+ms.openlocfilehash: 8a03d87441f26d3116aff8af33fd94da0ef9a909
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56960310"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67438426"
 ---
-# <a name="tutorial-luis-bot-in-c-with-the-bot-framework-4x-and-the-azure-web-app-bot"></a>Руководство. Создание бота Интеллектуальной службы распознавания речи на C# с помощью Bot Framework 4.x и бота веб-приложения Azure.
-С помощью C# можно создавать чат-боты, интегрированные со службой распознавания речи (LUIS). Этот бот использует приложение HomeAutomation, чтобы реализовать решение ботов. Бот создается с помощью [бота веб-приложения Azure](https://docs.microsoft.com/azure/bot-service/) и [Bot Framework версии 4](https://github.com/Microsoft/botbuilder-js).
+# <a name="tutorial-use-a-web-app-bot-enabled-with-language-understanding-in-c"></a>Руководство по совместному использованию бота веб-приложения и службы распознавания речи в C#
+
+Использование C# для создания чат-бота для интеграции со службой распознавания речи (LUIS). Бот создается с помощью ресурса [Бот веб-приложения](https://docs.microsoft.com/azure/bot-service/) Azure и 4 [версии Bot Framework](https://github.com/Microsoft/botbuilder-dotnet).
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
 > [!div class="checklist"]
 > * Создание бота веб-приложения. Этот процесс создает новое приложение LUIS.
-> * Добавление предварительно созданного домена в новую модель LUIS
-> * Загрузка проекта, созданного веб-службой ботов
+> * Загрузка проекта бота, созданного веб-службой ботов
 > * Запуск бота и эмулятора на локальном компьютере
-> * Изменение кода ботов для новых намерений LUIS
 > * Просмотр результатов высказывания в боте
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -37,13 +36,13 @@ ms.locfileid: "56960310"
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/)
 
 
-## <a name="create-web-app-bot"></a>Создание бота веб-приложения
+## <a name="create-a-web-app-bot-resource"></a>Создание ресурса бота веб-приложения
 
 1. На [портале Azure](https://portal.azure.com) выберите **Создание ресурса**.
 
-2. С помощью поля поиска найдите и выберите **Web App Bot** (Бот веб-приложения). Нажмите кнопку **Создать**.
+1. С помощью поля поиска найдите и выберите **Web App Bot** (Бот веб-приложения). Нажмите кнопку **Создать**.
 
-3. В **Службе Bot** введите необходимые сведения.
+1. В **Службе Bot** введите необходимые сведения.
 
     |Параметр|Назначение|Предлагаемый параметр|
     |--|--|--|
@@ -51,257 +50,319 @@ ms.locfileid: "56960310"
     |Подписка|Подписка, в которой нужно создать бот.|Основная подписка.
     |Группа ресурсов|Логическая группа ресурсов Azure|Создайте группу для хранения всех ресурсов, используемых с этим ботом, и назовите эту группу `luis-csharp-bot-resource-group`.|
     |Расположение|Регион Azure не обязательно должен совпадать с регионом разработки или публикации LUIS.|`westus`|
-    |Ценовой уровень|Используется для ограничения запросов службы и выставления счетов.|`F0` — уровень "Бесплатный".
+    |Ценовая категория|Используется для ограничения запросов службы и выставления счетов.|`F0` — уровень "Бесплатный".
     |Имя приложения.|При развертывании бота в облаке имя используется в качестве поддомена (например, humanresourcesbot.azurewebsites.net).|`luis-csharp-bot-` + `<your-name>`, например `luis-csharp-bot-johnsmith`|
     |Шаблон бота|Параметры Bot Framework (см. следующую таблицу)|
     |Расположение приложения LUIS|Должно совпадать с регионом ресурса LUIS|`westus`|
+    |расположение или план службы приложений;|Значение по умолчанию не следует изменять.|
+    |Application Insights|Значение по умолчанию не следует изменять.|
+    |Идентификатор и пароль приложения Майкрософт|Значение по умолчанию не следует изменять.|
 
-4. Выберите следующие компоненты в **параметрах шаблона бота**, а затем нажмите кнопку **Выбрать**:
+1. Выберите следующие компоненты в **шаблоне бота**, а затем нажмите кнопку **Выбрать**:
 
     |Параметр|Назначение|Выбор|
     |--|--|--|
     |Версия пакета SDK|Версия Bot Framework|**Пакет SDK версии 4**|
     |Язык пакета SDK|Язык программирования бота|**C#**|
-    |Echo или базовый бот|Тип бота|**Базовый бот**|
+    |Бот|Тип бота|**Базовый бот**|
     
-5. Нажмите кнопку **Создать**. В Azure будет создана и развернута служба ботов. Элементом этого процесса является создание приложения LUIS с именем `luis-csharp-bot-XXXX`. Это имя зависит от имен бота и приложения в предыдущем разделе.
+1. Нажмите кнопку **Создать**. В Azure будет создана и развернута служба ботов. Элементом этого процесса является создание приложения LUIS с именем `luis-csharp-bot-XXXX`. Данное имя основано на имени приложения службы Azure Bot.
 
     [![Создание бота веб-приложения](./media/bfv4-csharp/create-web-app-service.png)](./media/bfv4-csharp/create-web-app-service.png#lightbox)
 
-6. Не закрывайте эту вкладку браузера. Откройте новую вкладку браузера для работы с порталом LUIS. После завершения развертывания новой службы ботов перейдите к следующему разделу.
+    Прежде, чем продолжить, дождитесь создания службы ботов.
 
-## <a name="add-prebuilt-domain-to-model"></a>Добавление предварительно созданного домена в модель
-Элемент развертывания службы ботов создает новое приложение LUIS с намерениями и примерами высказываний. В новом приложении LUIS бот предоставляет сопоставление намерений для следующих целей. 
+## <a name="the-bot-has-a-language-understanding-model"></a>Бот содержит модель распознавания речи
+
+Служба ботов создает процесс, а также новое приложение LUIS с намерениями и примерами речевых фрагментов. В новом приложении LUIS бот предоставляет сопоставление намерений для следующих целей. 
 
 |Намерения базового бота LUIS|Пример высказывания|
 |--|--|
-|Отмена|`stop`|
-|Greeting|`hello`|
-|Справка|`help`|
+|Заказать билет на самолет|`Travel to Paris`|
+|Отмена|`bye`|
 |Нет|Все, что находится за пределами домена приложения.|
 
-Добавление предварительно созданного приложения HomeAutomation в модель для обработки высказывания, например `Turn off the living room lights`.
+## <a name="test-the-bot-in-web-chat"></a>Тестирование бота в веб-чате
 
-1. Перейдите на портал [LUIS](https://www.luis.ai) и войдите в систему.
-2. Чтобы отсортировать приложения по дате создания, выберите столбец **Дата создания** на странице **Мои приложения**. В предыдущем разделе служба Azure Bot создала новое приложение. Его имя — `luis-csharp-bot-` + `<your-name>` + 4 случайных символа.
-3. Откройте приложение и выберите раздел **Сборка** на верхней панели навигации.
-4. В левой области навигации выберите **Prebuilt Domains** (Предварительно созданные домены).
-5. Выберите домен **HomeAutomation**, на его карте выбрав **Добавить домен**.
-6. Выберите **Train** (Обучать) в правом верхнем меню.
-7. Выберите **Опубликовать** в правом верхнем меню. 
+1. Не выходя из портала Azure для нового бота, выберите **Тестирование в веб-чате**. 
+1. В текстовом поле **Введите текст сообщения** введите `hello`. Ответом бота будут сведения о платформе ботов, а также примеры запросов для данной модели LUIS, например, заказ авиабилетов в Париж. 
 
-    Теперь приложение, созданное службой Azure Bot, имеет новые намерения:
+    ![Снимок экрана портала Azure, на котором введен текст "hello".](./media/bfv4-csharp/ask-bot-question-in-portal-test-in-web-chat.png)
 
-    |Новые намерения базового бота|Пример высказывания|
-    |--|--|
-    |HomeAutomation.TurnOn|`turn the fan to high`
-    |HomeAutomation.TurnOff|`turn off ac please`|
+    Для быстрой проверки бота можно выполнить тестирование функциональных возможностей. Для выполнения более сложного тестирования, в которое входит отладка, загрузите код бота и используйте Visual Studio. 
 
-## <a name="download-the-web-app-bot"></a>Загрузка бота веб-приложения 
+## <a name="download-the-web-app-bot-source-code"></a>Загрузка исходного кода бота веб-приложения
 Чтобы разработать код бота веб-приложения, загрузите код и используйте его на локальном компьютере. 
 
-1. На портале Azure, по-прежнему в ресурсе бота веб-приложения, выберите **Параметры приложения** и скопируйте значения **botFilePath** и **botFileSecret**. Позже их необходимо добавить в файл среды. 
+1. Выберите **Сборка** в разделе **Bot management** (Управление ботом) на портале Azure. 
 
-2. Выберите **Сборка** в разделе **Bot management** (Управление ботом) на портале Azure. 
-
-3. Выберите **Download Bot source code** (Загрузка исходного кода бота). 
+1. Выберите **Download Bot source code** (Загрузка исходного кода бота). 
 
     [![Загрузка исходного кода бота веб-приложения для базового бота](../../../includes/media/cognitive-services-luis/bfv4/download-code.png)](../../../includes/media/cognitive-services-luis/bfv4/download-code.png#lightbox)
 
-4. Когда исходный код запакован, появляется сообщение со ссылкой для загрузки кода. Перейдите по ссылке. 
+1. При появлении всплывающего диалогового окна с запросом **Include app settings in the downloaded zip file?** (Включить параметры приложения в загруженный ZIP-файл?) выберите **Да**.
 
-5. Сохраните ZIP-файл на локальном компьютере и извлеките файлы. Откройте проект. 
+1. Когда исходный код запакован, появляется сообщение со ссылкой для загрузки кода. Перейдите по ссылке. 
 
-6. Откройте файл bot.cs и найдите в нем `_services.LuisServices`. Это место, где фраза пользователя, введенная в бот, отправляется в LUIS.
+1. Сохраните ZIP-файл на локальном компьютере и извлеките файлы. Откройте проект с помощью Visual Studio. 
+
+## <a name="review-code-to-send-utterance-to-luis-and-get-response"></a>Проверка кода, который используется для отправки высказывания в LUIS и получение ответа
+
+1. Откройте файл **LuisHelper.cs**. Это место, где фраза пользователя, введенная в бот, отправляется в LUIS. Ответ от LUIS будет получен из метода как объект **BookDetails**. При создании бота также необходимо создать объект для получения подробной информации с помощью LUIS. 
+
 
     ```csharp
-    /// <summary>
-    /// Run every turn of the conversation. Handles orchestration of messages.
-    /// </summary>
-    /// <param name="turnContext">Bot Turn Context.</param>
-    /// <param name="cancellationToken">Task CancellationToken.</param>
-    /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-    public async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken)
+    // Copyright (c) Microsoft Corporation. All rights reserved.
+    // Licensed under the MIT License.
+    
+    using System;
+    using System.Linq;
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Microsoft.Bot.Builder;
+    using Microsoft.Bot.Builder.AI.Luis;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.Logging;
+    
+    namespace Microsoft.BotBuilderSamples
     {
-        var activity = turnContext.Activity;
-
-        if (activity.Type == ActivityTypes.Message)
+        public static class LuisHelper
         {
-            // Perform a call to LUIS to retrieve results for the current activity message.
-            var luisResults = await _services.LuisServices[LuisConfiguration].RecognizeAsync(turnContext, cancellationToken).ConfigureAwait(false);
-
-            // If any entities were updated, treat as interruption.
-            // For example, "no my name is tony" will manifest as an update of the name to be "tony".
-            var topScoringIntent = luisResults?.GetTopScoringIntent();
-
-            var topIntent = topScoringIntent.Value.intent;
-            switch (topIntent)
+            public static async Task<BookingDetails> ExecuteLuisQuery(IConfiguration configuration, ILogger logger, ITurnContext turnContext, CancellationToken cancellationToken)
             {
-                case GreetingIntent:
-                    await turnContext.SendActivityAsync("Hello.");
-                    break;
-                case HelpIntent:
-                    await turnContext.SendActivityAsync("Let me try to provide some help.");
-                    await turnContext.SendActivityAsync("I understand greetings, being asked for help, or being asked to cancel what I am doing.");
-                    break;
-                case CancelIntent:
-                    await turnContext.SendActivityAsync("I have nothing to cancel.");
-                    break;
-                case NoneIntent:
-                default:
-                    // Help or no intent identified, either way, let's provide some help.
-                    // to the user
-                    await turnContext.SendActivityAsync("I didn't understand what you just said to me.");
-                    break;
-            }
-        }
-        else if (activity.Type == ActivityTypes.ConversationUpdate)
-        {
-            if (activity.MembersAdded.Any())
-            {
-                // Iterate over all new members added to the conversation.
-                foreach (var member in activity.MembersAdded)
+                var bookingDetails = new BookingDetails();
+    
+                try
                 {
-                    // Greet anyone that was not the target (recipient) of this message.
-                    // To learn more about Adaptive Cards, see https://aka.ms/msbot-adaptivecards for more details.
-                    if (member.Id != activity.Recipient.Id)
+                    // Create the LUIS settings from configuration.
+                    var luisApplication = new LuisApplication(
+                        configuration["LuisAppId"],
+                        configuration["LuisAPIKey"],
+                        "https://" + configuration["LuisAPIHostName"]
+                    );
+    
+                    var recognizer = new LuisRecognizer(luisApplication);
+    
+                    // The actual call to LUIS
+                    var recognizerResult = await recognizer.RecognizeAsync(turnContext, cancellationToken);
+    
+                    var (intent, score) = recognizerResult.GetTopScoringIntent();
+                    if (intent == "Book_flight")
                     {
-                        var welcomeCard = CreateAdaptiveCardAttachment();
-                        var response = CreateResponse(activity, welcomeCard);
-                        await turnContext.SendActivityAsync(response).ConfigureAwait(false);
+                        // We need to get the result from the LUIS JSON which at every level returns an array.
+                        bookingDetails.Destination = recognizerResult.Entities["To"]?.FirstOrDefault()?["Airport"]?.FirstOrDefault()?.FirstOrDefault()?.ToString();
+                        bookingDetails.Origin = recognizerResult.Entities["From"]?.FirstOrDefault()?["Airport"]?.FirstOrDefault()?.FirstOrDefault()?.ToString();
+    
+                        // This value will be a TIMEX. And we are only interested in a Date so grab the first result and drop the Time part.
+                        // TIMEX is a format that represents DateTime expressions that include some ambiguity. e.g. missing a Year.
+                        bookingDetails.TravelDate = recognizerResult.Entities["datetime"]?.FirstOrDefault()?["timex"]?.FirstOrDefault()?.ToString().Split('T')[0];
                     }
                 }
+                catch (Exception e)
+                {
+                    logger.LogWarning($"LUIS Exception: {e.Message} Check your LUIS configuration.");
+                }
+    
+                return bookingDetails;
             }
         }
-
     }
     ```
 
-    Бот отправляет высказывание пользователя в LUIS и возвращает результаты. Главное намерение определяет поток общения. 
+1. Чтобы просмотреть, как объект извлекает сведения, полученные от LUIS, откройте файл **BookingDetails.cs**. 
 
-
-## <a name="start-the-bot"></a>Запуск бота
-Прежде чем изменить какой-либо код или параметры, убедитесь, что бот работает. 
-
-1. Откройте файл решения в Visual Studio. 
-
-2. Создайте файл `appsettings.json` для хранения переменных бота, которые ищет код бота.
-
-    ```JSON
+    ```csharp
+    // Copyright (c) Microsoft Corporation. All rights reserved.
+    // Licensed under the MIT License.
+    
+    namespace Microsoft.BotBuilderSamples
     {
-    "botFileSecret": "",
-    "botFilePath": ""
-
+        public class BookingDetails
+        {
+            public string Destination { get; set; }
+    
+            public string Origin { get; set; }
+    
+            public string TravelDate { get; set; }
+        }
     }
     ```
 
-    Задайте значения переменных для тех значений, которые вы скопировали из параметров приложения службы Azure Bot на шаге 1 в разделе **[Загрузка бота веб-приложения](#download-the-web-app-bot)**.
-
-3. Запустите бот в Visual Studio. Откроется окно браузера с веб-сайтом бота веб-приложения на `http://localhost:3978/`.
-
-## <a name="start-the-emulator"></a>Запуск эмулятора
-
-1. Запустите Bot Emulator.
-
-2. В эмуляторе бота выберите файл *.bot в корневой папке проекта. Этот файл `.bot` включает в себя конечную точку URL-адреса бота для сообщений.
-
-    [![Bot Emulator версии 4](../../../includes/media/cognitive-services-luis/bfv4/bot-emulator-v4.png)](../../../includes/media/cognitive-services-luis/bfv4/bot-emulator-v4.png#lightbox)
-
-3. Введите секрет бота, который вы скопировали из параметров приложения службы Azure Bot на шаге 1 в разделе **[Загрузка бота веб-приложения](#download-the-web-app-bot)**. Это позволяет эмулятору получить доступ к любому зашифрованному полю в файле `.bot`.
-
-    ![Секрет Bot Emulator версии 4](../../../includes/media/cognitive-services-luis/bfv4/bot-secret.png)
-
-4. В Bot Emulator введите `Hello` и получите корректный ответ базового бота.
-
-    [![Ответ базового бота в эмуляторе](../../../includes/media/cognitive-services-luis/bfv4/emulator-test.png)](../../../includes/media/cognitive-services-luis/bfv4/emulator-test.png#lightbox)
-
-## <a name="modify-bot-code"></a>Изменение кода бота 
-
-Добавьте код для обработки новых намерений в файл `BasicBot.cs`. 
-
-1. В верхней части файла найдите раздел **Поддерживаемые намерения LUIS** и добавьте константы для намерений HomeAutomation.
+1. Чтобы понять, как объект BookingDetails используется для управлением потоком общения, откройте файл **Диалоговые окна -> BookingDialog.cs**. Подробная информация о поездке запрашивается поэтапно, а затем все бронирование подтверждается. После этого пользователю отправляется ответ. 
 
     ```csharp
-    // Supported LUIS Intents
-    public const string GreetingIntent = "Greeting";
-    public const string CancelIntent = "Cancel";
-    public const string HelpIntent = "Help";
-    public const string NoneIntent = "None";
-    public const string TurnOnIntent = "HomeAutomation_TurnOn"; // new intent
-    public const string TurnOffIntent = "HomeAutomation_TurnOff"; // new intent
-    ```
-
-    Обратите внимание, что точка `.` между доменом и намерением приложения портала LUIS заменяется на символ подчеркивания `_`. 
-
-2. Найдите метод **OnTurnAsync**, который получает прогнозирование фразы LUIS. Добавьте код в оператор переключения, чтобы вернуть ответ LUIS для двух намерений HomeAutomation. 
-
-    ```csharp
-    case TurnOnIntent:
-        await turnContext.SendActivityAsync("TurnOn intent found, JSON response: " + luisResults?.Entities.ToString());
-        break;
-    case TurnOffIntent:
-        await turnContext.SendActivityAsync("TurnOff intent found, JSON response: " + luisResults?.Entities.ToString());
-        break;
-    ```
-
-    Ответы бота и запросов REST API LUIS не полностью совпадают, поэтому важно изучить различия, посмотрев файл JSON ответа. Свойства текста и намерений одинаковы, но значения свойств сущности были изменены. 
-
-    ```JSON
+    // Copyright (c) Microsoft Corporation. All rights reserved.
+    // Licensed under the MIT License.
+    
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Microsoft.Bot.Builder;
+    using Microsoft.Bot.Builder.Dialogs;
+    using Microsoft.Recognizers.Text.DataTypes.TimexExpression;
+    
+    namespace Microsoft.BotBuilderSamples.Dialogs
     {
-        "$instance": {
-            "HomeAutomation_Device": [
+        public class BookingDialog : CancelAndHelpDialog
+        {
+            public BookingDialog()
+                : base(nameof(BookingDialog))
+            {
+                AddDialog(new TextPrompt(nameof(TextPrompt)));
+                AddDialog(new ConfirmPrompt(nameof(ConfirmPrompt)));
+                AddDialog(new DateResolverDialog());
+                AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
                 {
-                    "startIndex": 23,
-                    "endIndex": 29,
-                    "score": 0.9776345,
-                    "text": "lights",
-                    "type": "HomeAutomation.Device"
-                }
-            ],
-            "HomeAutomation_Room": [
+                    DestinationStepAsync,
+                    OriginStepAsync,
+                    TravelDateStepAsync,
+                    ConfirmStepAsync,
+                    FinalStepAsync,
+                }));
+    
+                // The initial child Dialog to run.
+                InitialDialogId = nameof(WaterfallDialog);
+            }
+    
+            private async Task<DialogTurnResult> DestinationStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+            {
+                var bookingDetails = (BookingDetails)stepContext.Options;
+    
+                if (bookingDetails.Destination == null)
                 {
-                    "startIndex": 12,
-                    "endIndex": 22,
-                    "score": 0.9079433,
-                    "text": "livingroom",
-                    "type": "HomeAutomation.Room"
+                    return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = MessageFactory.Text("Where would you like to travel to?") }, cancellationToken);
                 }
-            ]
-        },
-        "HomeAutomation_Device": [
-            "lights"
+                else
+                {
+                    return await stepContext.NextAsync(bookingDetails.Destination, cancellationToken);
+                }
+            }
+    
+            private async Task<DialogTurnResult> OriginStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+            {
+                var bookingDetails = (BookingDetails)stepContext.Options;
+    
+                bookingDetails.Destination = (string)stepContext.Result;
+    
+                if (bookingDetails.Origin == null)
+                {
+                    return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = MessageFactory.Text("Where are you traveling from?") }, cancellationToken);
+                }
+                else
+                {
+                    return await stepContext.NextAsync(bookingDetails.Origin, cancellationToken);
+                }
+            }
+            private async Task<DialogTurnResult> TravelDateStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+            {
+                var bookingDetails = (BookingDetails)stepContext.Options;
+    
+                bookingDetails.Origin = (string)stepContext.Result;
+    
+                if (bookingDetails.TravelDate == null || IsAmbiguous(bookingDetails.TravelDate))
+                {
+                    return await stepContext.BeginDialogAsync(nameof(DateResolverDialog), bookingDetails.TravelDate, cancellationToken);
+                }
+                else
+                {
+                    return await stepContext.NextAsync(bookingDetails.TravelDate, cancellationToken);
+                }
+            }
+    
+            private async Task<DialogTurnResult> ConfirmStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+            {
+                var bookingDetails = (BookingDetails)stepContext.Options;
+    
+                bookingDetails.TravelDate = (string)stepContext.Result;
+    
+                var msg = $"Please confirm, I have you traveling to: {bookingDetails.Destination} from: {bookingDetails.Origin} on: {bookingDetails.TravelDate}";
+    
+                return await stepContext.PromptAsync(nameof(ConfirmPrompt), new PromptOptions { Prompt = MessageFactory.Text(msg) }, cancellationToken);
+            }
+    
+            private async Task<DialogTurnResult> FinalStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+            {
+                if ((bool)stepContext.Result)
+                {
+                    var bookingDetails = (BookingDetails)stepContext.Options;
+    
+                    return await stepContext.EndDialogAsync(bookingDetails, cancellationToken);
+                }
+                else
+                {
+                    return await stepContext.EndDialogAsync(null, cancellationToken);
+                }
+            }
+    
+            private static bool IsAmbiguous(string timex)
+            {
+                var timexProperty = new TimexProperty(timex);
+                return !timexProperty.Types.Contains(Constants.TimexTypes.Definite);
+            }
+        }
+    }
+    ```
+
+
+## <a name="start-the-bot-code-in-visual-studio"></a>Запуск кода бота в Visual Studio
+
+Запустите бот в Visual Studio. Откроется окно браузера с веб-сайтом бота веб-приложения на `http://localhost:3978/`. Сведения о боте отображаются на домашней странице.
+
+![Сведения о боте отображаются на домашней странице.](./media/bfv4-csharp/running-bot-web-home-page-success.png)
+
+## <a name="use-the-bot-emulator-to-test-the-bot"></a>Использование эмулятора бота для тестирования бота
+
+1. Запустите эмулятора бота и выберите **Open Bot** (Открыть бот).
+1. Во всплывающем диалоговом окне **Open Bot** (Открыть бот) введите URL-адрес бота, например, `http://localhost:3978/api/messages`. Путь `/api/messages` — веб-адрес бота.
+1. Введите **Microsoft App ID** (Идентификатор приложения Майкрософт) и **Microsoft App password**(Пароля приложения Майкрософт), которые можно найти в файле **appsettings.json** в корне кода бота, который был скачан.
+
+    Кроме этого, можно создать новую конфигурацию бота и скопировать `appId` и `appPassword` из файла **appsettings.json** в проекте Visual Studio для бота. Название файла конфигурации бота должно соответствовать названию бота. 
+
+    ```json
+    {
+        "name": "<bot name>",
+        "description": "<bot description>",
+        "services": [
+            {
+                "type": "endpoint",
+                "appId": "<appId from appsettings.json>",
+                "appPassword": "<appPassword from appsettings.json>",
+                "endpoint": "http://localhost:3978/api/messages",
+                "id": "<don't change this value>",
+                "name": "http://localhost:3978/api/messages"
+            }
         ],
-        "HomeAutomation_Room": [
-            "livingroom"
-        ]
+        "padlock": "",
+        "version": "2.0",
+        "overrides": null,
+        "path": "<local path to .bot file>"
     }
     ```
 
+1. В эмуляторе бота введите `Hello` и получите такой же ответ от основного бота, который соответствует ответу, полученному при **Тестировании в веб-чате**.
+
+    [![Ответ базового бота в эмуляторе](./media/bfv4-csharp/ask-bot-emulator-a-question-and-get-response.png)](./media/bfv4-csharp/ask-bot-emulator-a-question-and-get-response.png#lightbox)
 
 
-## <a name="view-results-in-bot"></a>Просмотр результатов в боте
+## <a name="ask-bot-a-question-for-the-book-flight-intent"></a>Вопрос боту о заказе билет на самолет
 
-1. В эмуляторе бота введите высказывание `Turn on the livingroom lights to 50%`.
+1. В эмуляторе бота закажите билет на самолет путем введения следующего речевого фрагмента. 
 
-2. Бот выдает следующее.
+    ```bot
+    Book a flight from Paris to Berlin on March 22, 2020
+    ```
 
-    ```JSON
-    TurnOn intent found, JSON response: {"$instance":{“HomeAutomation_Device”:[{“startIndex”:23,“endIndex”:29,“score”:0.9776345,“text”:“lights”,“type”:“HomeAutomation.Device”}],“HomeAutomation_Room”:[{“startIndex”:12,“endIndex”:22,“score”:0.9079433,“text”:“livingroom”,“type”:“HomeAutomation.Room”}]},“HomeAutomation_Device”:[“lights”],“HomeAutomation_Room”:[“livingroom”]}
-    ```    
+    Эмулятор бота запросит подтверждение. 
 
-## <a name="learn-more-about-bot-framework"></a>Дополнительные сведения о платформе Bot Framework
-Служба Azure Bot использует Bot Framework SDK. Дополнительные сведения о пакете SDK и платформе Bot Framework см. в следующих статьях.
+1. Выберите **Да**. Бот ответит сводкой своих действий. 
+1. Из журнала эмулятора бота выберите строку, в которой содержится `Luis Trace`. Отобразится ответ LUIS в формате JSON для намерения и экземпляров речевого фрагмента.
 
-* [Общие сведения о службе Azure Bot](https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0) версии 4
-* [Bot Builder Samples](https://github.com/Microsoft/botbuilder-samples) (Примеры Bot Builder)
-* [botbuilder-core package](https://docs.microsoft.com/javascript/api/botbuilder-core/?view=botbuilder-ts-latest)
-* [Bot Builder tools](https://github.com/Microsoft/botbuilder-tools) (Средства для Bot Builder)
+    [![Ответ базового бота в эмуляторе](./media/bfv4-csharp/ask-luis-book-flight-question-get-json-response-in-bot-emulator.png)](./media/bfv4-csharp/ask-luis-book-flight-question-get-json-response-in-bot-emulator.png#lightbox)
+
+[!INCLUDE [Bot Information](../../../includes/cognitive-services-qnamaker-luis-bot-info.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Вы создали службу Azure Bot, скопировали секрет бота и путь к файлу с расширением `.bot`, а также скачали ZIP-файл кода. Вы добавили предварительно созданный домен HomeAutomation к приложению LUIS, созданному как часть новой службы Azure Bot, а затем обучили и опубликовали приложение снова. Вы извлекли проект кода, создали файл среды (`.env`) и задали секрет бота и путь к файлу с расширением `.bot`. Вы добавили код для обработки двух новых намерений в файл bot.js. Затем вы протестировали бота в Bot Emulator, чтобы увидеть ответ LUIS для высказывания одного из новых намерений. 
-
-См. дополнительные [примеры](https://github.com/Microsoft/AI) чат-ботов. 
+См. дополнительные [примеры](https://github.com/microsoft/botframework-solutions) чат-ботов. 
 
 > [!div class="nextstepaction"]
-> [Руководство: 1. Создание приложения с личным доменом](luis-quickstart-intents-only.md)
+> [Руководство по созданию приложения LUIS на заданную пользователем тему](luis-quickstart-intents-only.md)

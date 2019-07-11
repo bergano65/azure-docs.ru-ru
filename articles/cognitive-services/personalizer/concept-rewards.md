@@ -7,15 +7,15 @@ author: edjez
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 06/07/2019
 ms.author: edjez
-ms.openlocfilehash: c64d43301fd173203bd1625b8d37120b71c22805
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: 39db28cd7e11d77362a2aefcf4ad8d2748db59c2
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67077412"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67722510"
 ---
 # <a name="reward-scores-indicate-success-of-personalization"></a>Оценки вознаграждения демонстрируют успешность персонализации
 
@@ -116,7 +116,7 @@ ms.locfileid: "67077412"
 
 * Время ожидания не должно меньшим, чем требуется для получения отклика. Например, если некоторая часть вознаграждения присуждается за 1 минуту просмотра, длительность эксперимента должна быть по меньшей мере вдвое дольше.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 * [Обучение с подкреплением](concepts-reinforcement-learning.md) 
 * [Работа с API ранжирования](https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/Rank/console)

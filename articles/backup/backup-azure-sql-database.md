@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: backup
 ms.topic: tutorial
-ms.date: 04/23/2019
+ms.date: 06/18/2019
 ms.author: raynew
-ms.openlocfilehash: 2a6319565aa05f34ce31a14c5fc57e591248f4ee
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: 5dbdeeba68ae75069b61bd6dc069279ec3c5e5de
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66399691"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443013"
 ---
 # <a name="about-sql-server-backup-in-azure-vms"></a>Сведения о резервном копировании SQL Server на виртуальных машинах Azure
 
@@ -50,6 +50,17 @@ ms.locfileid: "66399691"
 **Поддерживаемые операционные системы** | Windows Server 2016, Windows Server 2012 R2 и Windows Server 2012<br/><br/> Linux в настоящее время не поддерживается.
 **Поддерживаемые версии SQL Server** | SQL Server 2017; SQL Server 2016, SQL Server 2014, SQL Server 2012.<br/><br/> Enterprise, Standard, Web, Developer, Express.
 **Поддерживаемые версии .NET** | На виртуальной машине установлен .NET Framework 4.5.2 или более поздняя версия.
+
+### <a name="support-for-sql-server-2008-and-sql-server-2008-r2"></a>Поддержка SQL Server 2008 и SQL Server 2008 R2
+
+Недавно Azure Backup анонсировала поддержку [EOS SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-2008-eos-extend-support) — SQL Server 2008 и SQL Server 2008 R2. Сейчас это решение доступно в режиме предварительного доступа для EOS SQL Server и оно поддерживает следующую конфигурацию:
+
+1. SQL Server 2008 и SQL Server 2008 R2 на базе Windows 2008 R2 SP1
+2. На виртуальную машину следует установить .NET Framework 4.5.2 или более позднюю версию.
+3. Резервное копирование для экземпляра отказоустойчивого кластера и зеркальных баз данных отсутствует.
+
+До момента пока эта функция не станет общедоступной, с пользователей не будет взиматься плата за ее использование. Все другие [Рекомендации и ограничения касательно функций](#feature-consideration-and-limitations) также применяются к этим версиям. См. [предварительные требования](backup-sql-server-database-azure-vms.md#prerequisites) перед настройкой защиты на серверах SQL Server 2008 и 2008 R2, которые включают в себя параметр [раздел реестра](backup-sql-server-database-azure-vms.md#add-registry-key-to-enable-registration) (этот шаг необязателен при включенной функции общедоступности).
+
 
 ## <a name="feature-consideration-and-limitations"></a>Рекомендации и ограничения касательно функций
 
@@ -114,9 +125,19 @@ ms.locfileid: "66399691"
 Журнал |  Вторичная
 Полная резервная копия (только копирование) |  Вторичная
 
-## <a name="fix-sql-sysadmin-permissions"></a>Исправление разрешений sysadmin SQL
+## <a name="set-vm-permissions"></a>Настройка разрешений виртуальной машины
 
-  Если вам требуется исправить разрешения из-за ошибки **UserErrorSQLNoSysadminMembership**, сделайте следующее:
+  При запуске обнаружения в SQL Server Azure Backup выполнит следующие действия.
+
+* Добавляет расширение AzureBackupWindowsWorkload.
+* Чтобы обнаруживать базы данных на виртуальной машине, Azure Backup создает учетную запись NT SERVICE\AzureWLBackupPluginSvc. Эта учетная запись используется для резервного копирования и восстановления и требует разрешений системного администратора SQL.
+* Для предоставления баз данных, запущенных на виртуальной машине, Azure Backup использует учетную запись NT AUTHORITY\SYSTEM. Эта учетная запись должна быть общедоступной для входа в SQL.
+
+Если вы не создавали виртуальную машину SQL Server в Azure Marketplace или если вы используете SQL 2008 и SQL 2008 R2, может появиться ошибка **UserErrorSQLNoSysadminMembership**.
+
+Сведения о предоставленных разрешениях для **SQL 2008** и **SQL 2008 R2** используемых в Windows 2008 R2, см. в статье [ ](#give-sql-sysadmin-permissions-for-sql-2008-and-sql-2008-r2).
+
+Для всех остальных версий следует исправить разрешения с помощью следующих шагов.
 
   1. Войдите в SQL Server Management Studio (SSMS) с помощью учетной записи, имеющей разрешение sysadmin SQL Server. Если вам не требуются специальные разрешения, можно использовать проверку подлинности Windows.
   2. На сервере SQL Server последовательно откройте папки **Security (Безопасность) и Logins (Имена входа)** .
@@ -146,8 +167,72 @@ ms.locfileid: "66399691"
 > [!NOTE]
 > Если в среде SQL Server установлено несколько экземпляров SQL Server, то необходимо добавить разрешение sysadmin для учетной записи **NT Service\AzureWLBackupPluginSvc** для всех этих экземпляров.
 
+### <a name="give-sql-sysadmin-permissions-for-sql-2008-and-sql-2008-r2"></a>Присвоение разрешений администратора SQL в SQL 2008 и SQL 2008 R2
+
+Добавьте в экземпляр SQL Server имена входа **NT AUTHORITY\SYSTEM** и **NT Service\AzureWLBackupPluginSvc**.
+
+1. Перейдите к экземпляру SQL Server в обозревателе объектов.
+2. Перейдите в раздел "Безопасность -> Имена входа"
+3. Щелкните правой кнопкой мыши "Имена входа", и выберите *Создать имя входа...*
+
+    ![Создание имени входа с помощью SSMS](media/backup-azure-sql-database/sql-2k8-new-login-ssms.png)
+
+4. Перейдите на вкладку "Общие" и в качестве имени входа введите **NT AUTHORITY\SYSTEM**.
+
+    ![Имя входа для SSMS](media/backup-azure-sql-database/sql-2k8-nt-authority-ssms.png)
+
+5. Перейдите к *Роли сервера* и выберите такие роли, как *общедоступная* и *администратор*.
+
+    ![Выбор ролей в SSMS](media/backup-azure-sql-database/sql-2k8-server-roles-ssms.png)
+
+6. Перейдите в раздел *Состояние*. *Предоставить* разрешение на подключение к ядру СУБД и вход как *Включено*.
+
+    ![Предоставление разрешений в SSMS](media/backup-azure-sql-database/sql-2k8-grant-permission-ssms.png)
+
+7. Нажмите кнопку ОК.
+8. Чтобы добавить имя для входа NT Service\AzureWLBackupPluginSvc в экземпляр SQL Server, повторите ту же последовательность шагов (1 - 7 приведенных выше). Если имя для входа уже существует, убедитесь, что ему присвоена роль администратора сервера и в разделе состояния этому имени предоставлено разрешение на подключение к ядру СУБД и вход в качестве включено.
+9. После предоставления разрешений на портале следует выполните **Re-discover DBs** (Повторное обнаружение баз данных). Хранилище **->** резервного копирования инфраструктуры **->** рабочей нагрузки в VM Azure.
+
+    ![Повторное обнаружение баз данных на портале Azure](media/backup-azure-sql-database/sql-rediscover-dbs.png)
+
+Кроме этого, можно автоматизировать раздачу разрешений путем выполнения следующих команд PowerShell в режиме администратора. По умолчанию в качестве имени экземпляра устанавливается значение MSSQLSERVER. Если возникнет необходимость, то в скрипте можно изменить имя экземпляра если изменить его аргумент.
+
+```powershell
+param(
+    [Parameter(Mandatory=$false)]
+    [string] $InstanceName = "MSSQLSERVER"
+)
+if ($InstanceName -eq "MSSQLSERVER")
+{
+    $fullInstance = $env:COMPUTERNAME   # In case it is the default SQL Server Instance
+}
+else
+{
+    $fullInstance = $env:COMPUTERNAME + "\" + $InstanceName   # In case of named instance
+}
+try
+{
+    sqlcmd.exe -S $fullInstance -Q "sp_addsrvrolemember 'NT Service\AzureWLBackupPluginSvc', 'sysadmin'" # Adds login with sysadmin permission if already not available
+}
+catch
+{
+    Write-Host "An error occurred:"
+    Write-Host $_.Exception|format-list -force
+}
+try
+{
+    sqlcmd.exe -S $fullInstance -Q "sp_addsrvrolemember 'NT AUTHORITY\SYSTEM', 'sysadmin'" # Adds login with sysadmin permission if already not available
+}
+catch
+{
+    Write-Host "An error occurred:"
+    Write-Host $_.Exception|format-list -force
+}
+```
+
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения о резервном копировании баз данных SQL Server см. в [этой статье](backup-sql-server-database-azure-vms.md).
-- Дополнительные сведения о восстановлении резервных копий баз данных SQL Server см. в [этой статье](restore-sql-database-azure-vm.md).
-- Дополнительные сведения об управлении резервными копиями баз данных SQL Server см. в [этой статье](manage-monitor-sql-database-backup.md).
+* Дополнительные сведения о резервном копировании баз данных SQL Server см. в [этой статье](backup-sql-server-database-azure-vms.md).
+* Дополнительные сведения о восстановлении резервных копий баз данных SQL Server см. в [этой статье](restore-sql-database-azure-vm.md).
+* Дополнительные сведения об управлении резервными копиями баз данных SQL Server см. в [этой статье](manage-monitor-sql-database-backup.md).
