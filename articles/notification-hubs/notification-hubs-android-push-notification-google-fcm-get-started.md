@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/30/2019
 ms.author: jowargo
-ms.openlocfilehash: c21b1e38077575fc49221150a61693a23aa408a3
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: f2efa9b7e1e534f93e4ea01ba52740c8c5ac7b02
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509103"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67653841"
 ---
 # <a name="tutorial-push-notifications-to-android-devices-by-using-azure-notification-hubs-and-google-firebase-cloud-messaging"></a>Руководство по Отправка push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Google Firebase Cloud Messaging
 
@@ -88,7 +88,26 @@ ms.locfileid: "67509103"
 
 ### <a name="add-google-play-services-to-the-project"></a>Добавление служб Google Play в проект
 
-[!INCLUDE [Add Play Services](../../includes/notification-hubs-android-studio-add-google-play-services.md)]
+1. В Android Studio в меню выберите **Средства**, а затем — **Диспетчер пакетов SDK**. 
+2. Выберите целевую версию пакета SDK для Android, который используется в проекте. Затем выберите **Show Package Details** (Показать сведения о пакете). 
+
+    ![Диспетчер пакетов SDK Android: выбор целевой версии](./media/notification-hubs-android-studio-add-google-play-services/notification-hubs-android-studio-sdk-manager.png)
+3. Выберите **Google APIs** (API-интерфейсы Google), если они еще не установлены.
+
+    ![Диспетчер пакетов SDK для Android с выбранными API-интерфейсами Google](./media/notification-hubs-android-studio-add-google-play-services/googole-apis-selected.png)
+4. Переключитесь на вкладку **SDK Tools**. Если сервисы Google Play еще не установлены, щелкните **Сервисы Google Play**, как показано на рисунке ниже. Затем выберите **Применить** для установки. Запишите путь к пакету SDK. Он вам потребуется в дальнейшем.
+
+    ![Диспетчер пакетов SDK для Android с выбранными Сервисами Google Play](./media/notification-hubs-android-studio-add-google-play-services/google-play-services-selected.png)
+3. Если вы видите диалоговое окно **Подтвердить изменение**, выберите **ОК**. Установщик компонентов устанавливает запрошенные компоненты. После установки компонентов выберите **Готово**.
+4. Выберите **ОК**, чтобы закрыть диалоговое окно **Settings for New Projects** (Параметры для новых проектов).  
+5. Выберите значок **Синхронизировать сейчас** на панели инструментов.
+1. Откройте файл AndroidManifest.xml, а затем добавьте следующий тег для тега *приложения*.
+
+    ```xml
+    <meta-data android:name="com.google.android.gms.version"
+         android:value="@integer/google_play_services_version" />
+    ```
+
 
 ### <a name="add-azure-notification-hubs-libraries"></a>Затем добавьте библиотеки Центров уведомлений Azure.
 
@@ -354,7 +373,6 @@ ms.locfileid: "67509103"
 
         mainActivity = this;
         registerWithNotificationHubs();
-        MyHandler.createChannelAndHandleNotifications(getApplicationContext());
     }
     ```
 
@@ -526,7 +544,7 @@ Push-уведомления с [портал Azure] можно отправит�
 В этом руководстве вы использовали Firebase Cloud Messaging, для отправки уведомлений на все устройства Android, зарегистрированных в службе. Чтобы узнать, как отправлять push-уведомления на конкретные устройства, перейдите к следующему руководству:
 
 > [!div class="nextstepaction"]
->[Руководство. отправке push-уведомлений на конкретные устройства Android](notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md)
+>[Руководство. отправке push-уведомлений на конкретные устройства Android](push-notifications-android-specific-devices-firebase-cloud-messaging.md)
 
 <!-- Images. -->
 
