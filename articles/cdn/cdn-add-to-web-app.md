@@ -7,7 +7,7 @@ author: mdgattuso
 manager: danielgi
 editor: ''
 ms.assetid: ''
-ms.service: cdn
+ms.service: azure-cdn
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 05/14/2018
 ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: 33b47d33262a4968a0eafb9ec70ef73e50975735
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: 1b67522834497a264d95fc9b80246b16841d6026
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53602823"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67594227"
 ---
-# <a name="tutorial-add-azure-cdn-to-an-azure-app-service-web-app"></a>Руководство. Добавление сети доставки содержимого Azure в веб-приложение Службы приложений Azure
+# <a name="tutorial-add-azure-cdn-to-an-azure-app-service-web-app"></a>Руководство по Добавление сети доставки содержимого Azure в веб-приложение Службы приложений Azure
 
 В этом руководстве показано, как добавить [сеть доставки содержимого Azure (CDN)](cdn-overview.md) в [веб-приложение службы приложений Azure](../app-service/overview.md). Веб-приложения — это служба для размещения веб-приложений, интерфейсов REST API и серверной части мобильных решений. 
 
@@ -75,8 +75,8 @@ ms.locfileid: "53602823"
 | Параметр | Рекомендуемое значение | ОПИСАНИЕ |
 | ------- | --------------- | ----------- |
 | **Профиль CDN** | myCDNProfile | Профиль CDN представляет собой коллекцию конечных точек сети CDN из одной ценовой категории. |
-| **Ценовая категория** | Akamai уровня "Стандартный" | От [ценовой категории](cdn-features.md) зависят поставщик и доступные возможности. В этом руководстве используется *Akamai уровня "Стандартный"*. |
-| **Имя конечной точки CDN** | Любое имя, которое является уникальным в домене azureedge.net | Вы можете обращаться к кэшированным ресурсам в домене *&lt;имя_конечной_точки&gt;*.azureedge.net.
+| **Ценовая категория** | Akamai уровня "Стандартный" | От [ценовой категории](cdn-features.md) зависят поставщик и доступные возможности. В этом руководстве используется *Akamai уровня "Стандартный"* . |
+| **Имя конечной точки CDN** | Любое имя, которое является уникальным в домене azureedge.net | Вы можете обращаться к кэшированным ресурсам в домене *&lt;имя_конечной_точки&gt;* .azureedge.net.
 
 Выберите **Создать**, чтобы создать профиль CDN.
 
@@ -268,6 +268,6 @@ http://<endpointname>.azureedge.net/index.html?q=1
 Чтобы узнать, как оптимизировать производительность CDN, см. следующие статьи:
 
 > [!div class="nextstepaction"]
-> [Руководство Добавление личного домена к конечной точке Azure CDN](cdn-map-content-to-custom-domain.md)
+> [Руководство. Добавление личного домена к конечной точке Azure CDN](cdn-map-content-to-custom-domain.md)
 
 

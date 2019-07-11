@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 2/20/2019
+ms.date: 07/05/2019
 ms.author: wolfma
-ms.openlocfilehash: dd8e760e658715b89bf45718ac571ccaeb5ade96
-ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
+ms.openlocfilehash: b55c6535184a905790f575b98c1b5a60a83f5daf
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67465575"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67606387"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-unity-beta"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для Unity (бета-версия)
 
@@ -37,7 +37,7 @@ ms.locfileid: "67465575"
 
 * [Unity 2018.3 или более поздней версии](https://store.unity.com/) с [Unity 2019.1, добавляющий поддержку для UWP ARM64](https://blogs.unity3d.com/2019/04/16/introducing-unity-2019-1/#universal)
 * [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
-     * Для поддержки ARM64 установите [дополнительные инструменты сборки для ARM64 и Windows 10 SDK для ARM64](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/) 
+     * Для поддержки ARM64 установите [дополнительные инструменты сборки для ARM64 и Windows 10 SDK для ARM64](https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development/)
 * Ключ подписки для службы "Речь". [Его можно получить бесплатно](get-started.md).
 * Доступ к микрофону компьютера.
 

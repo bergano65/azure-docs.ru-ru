@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/30/2019
 ms.author: jowargo
-ms.openlocfilehash: f4a0da5d3ef0dd2d5ae04a2cc1b07ddb0a649bef
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: dd11696ea4a90e61408a03400fa3315ee7eaff5f
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65205394"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67653505"
 ---
 # <a name="tutorial-push-notifications-to-specific-android-devices-using-azure-notification-hubs-and-google-firebase-cloud-messaging-fcm"></a>Руководство по Отправка push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Firebase Cloud Messaging (FCM)
 
@@ -329,7 +329,7 @@ ms.locfileid: "65205394"
 Из этого руководства вы узнали, как рассылать широковещательные уведомления на конкретные устройства Android, зарегистрированные для получения уведомлений по категориям. Сведения о том, как отправлять push-уведомления конкретным пользователям, вы найдете в следующем руководстве:
 
 > [!div class="nextstepaction"]
->[Отправка push-уведомлений конкретным адресатам](notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md).
+>[Отправка push-уведомлений конкретным адресатам](push-notifications-android-specific-users-firebase-cloud-messaging.md).
 
 <!-- Images. -->
 [A1]: ./media/notification-hubs-aspnet-backend-android-breaking-news/android-breaking-news1.PNG

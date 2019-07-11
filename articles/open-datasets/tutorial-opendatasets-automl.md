@@ -4,18 +4,17 @@ titleSuffix: Azure Open Datasets
 description: Узнайте, как с помощью открытых наборов данных Azure и Службы машинного обучения Azure создать регрессионную модель для прогнозирования тарифов на такси в Нью-Йорке.
 services: open-datasets
 ms.service: open-datasets
-ms.subservice: core
 ms.topic: tutorial
 author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 05/02/2019
-ms.openlocfilehash: e753793b5da59d09a21991831046a43899c62ef2
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: a1df79c59ede8cd9ad72a2ebb2edb4bdb64b802a
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65027520"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67588975"
 ---
 # <a name="tutorial-build-a-regression-model-with-automated-machine-learning-and-open-datasets"></a>Руководство по Создание регрессионной модели с помощью автоматизированного машинного обучения и открытых наборов данных
 
@@ -489,7 +488,7 @@ green_taxi_df.head(10)
       <td>1.0</td>
       <td>1</td>
       <td>1</td>
-      <td>4.</td>
+      <td>4\.</td>
       <td>21</td>
       <td>США</td>
     </tr>
@@ -513,7 +512,7 @@ green_taxi_df.head(10)
       <td>1.0</td>
       <td>1</td>
       <td>1</td>
-      <td>4.</td>
+      <td>4\.</td>
       <td>0</td>
       <td>США</td>
     </tr>
@@ -536,7 +535,7 @@ green_taxi_df.head(10)
       <td>13,8</td>
       <td>1.0</td>
       <td>1</td>
-      <td>4.</td>
+      <td>4\.</td>
       <td>0</td>
       <td>17</td>
       <td>США</td>
@@ -585,7 +584,7 @@ green_taxi_df.head(10)
       <td>1.0</td>
       <td>1</td>
       <td>29</td>
-      <td>4.</td>
+      <td>4\.</td>
       <td>17</td>
       <td>США</td>
     </tr>
@@ -767,7 +766,7 @@ green_taxi_df.head(5)
       <td>12,8</td>
       <td>1</td>
       <td>1</td>
-      <td>4.</td>
+      <td>4\.</td>
       <td>21</td>
       <td>США</td>
     </tr>
@@ -784,7 +783,7 @@ green_taxi_df.head(5)
       <td>13,8</td>
       <td>1</td>
       <td>1</td>
-      <td>4.</td>
+      <td>4\.</td>
       <td>0</td>
       <td>США</td>
     </tr>
@@ -800,7 +799,7 @@ green_taxi_df.head(5)
       <td>40,694248</td>
       <td>13,8</td>
       <td>1</td>
-      <td>4.</td>
+      <td>4\.</td>
       <td>0</td>
       <td>17</td>
       <td>США</td>
@@ -997,7 +996,7 @@ taxi_holidays_df.head(5)
       <td>12,8</td>
       <td>1</td>
       <td>1</td>
-      <td>4.</td>
+      <td>4\.</td>
       <td>21</td>
       <td>США</td>
       <td>Истина</td>
@@ -1016,7 +1015,7 @@ taxi_holidays_df.head(5)
       <td>13,8</td>
       <td>1</td>
       <td>1</td>
-      <td>4.</td>
+      <td>4\.</td>
       <td>0</td>
       <td>США</td>
       <td>Истина</td>
@@ -1034,7 +1033,7 @@ taxi_holidays_df.head(5)
       <td>40,694248</td>
       <td>13,8</td>
       <td>1</td>
-      <td>4.</td>
+      <td>4\.</td>
       <td>0</td>
       <td>17</td>
       <td>США</td>
@@ -1042,7 +1041,7 @@ taxi_holidays_df.head(5)
       <td>NaN</td>
     </tr>
     <tr>
-      <th>4.</th>
+      <th>4\.</th>
       <td>1</td>
       <td>2016-01-13</td>
       <td>1</td>

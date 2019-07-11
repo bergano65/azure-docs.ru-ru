@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 06/16/2019
 ms.author: diberry
-ms.openlocfilehash: 5459fb5d8304a35b3f009354c446514a2831c513
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: cfed5477df75350f24e77786117e85b9c728c49a
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67155291"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657747"
 ---
 # <a name="add-luis-results-to-application-insights-from-a-bot-in-nodejs"></a>Добавление результатов LUIS, полученных бота Node.js, в Application Insights
 В руководстве описана процедура добавления сведений, полученных от бота и службы "Распознавание речи", в хранилище данных телеметрии [Application Insights](https://azure.microsoft.com/services/application-insights/). Полученные данные можно запрашивать (используя язык Kusto или Power Bi) для анализа, статистической обработки и создания отчетов по намерениям и сущностям фрагментов речи в реальном времени. Этот анализ помогает определить, следует ли добавлять или изменять намерения и сущности приложения LUIS.
@@ -205,7 +205,7 @@ ms.locfileid: "67155291"
     ![Просмотр пользовательских свойств LUIS, хранимых в Application Insights](./media/luis-tutorial-appinsights/application-insights-luis-trace-custom-properties-nodejs.png)
 
 ## <a name="query-application-insights-for-intent-score-and-utterance"></a>Запрос Application Insights для получения намерения, оценки и фрагмента речи
-Application Insights позволяет выполнять запросы данных с помощью языка [Kusto](https://docs.microsoft.com/azure/application-insights/app-insights-analytics#query-data-in-analytics), а также экспортировать их в [Power BI](https://powerbi.microsoft.com). 
+Application Insights позволяет выполнять запросы данных с помощью языка [Kusto](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview#what-language-do-log-queries-use), а также экспортировать их в [Power BI](https://powerbi.microsoft.com). 
 
 1. Выберите **Log (Analytics)** . Откроется новое окно с окном запроса вверху и окном таблицы данных внизу. Если вы использовали базы данных, то такая организация будет вам знакома. В запросе отобразятся предыдущие отфильтрованные данные. В столбце **CustomDimensions** будут содержаться данные бота и LUIS.
 1. Чтобы получить сведения об основном намерении, оценке и фрагменте речи, добавьте следующий код над последней строкой (строка `|top...`) в окне запроса:

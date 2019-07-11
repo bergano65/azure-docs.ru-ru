@@ -4,7 +4,7 @@ description: В этом руководстве описаны функции ц
 services: virtual-machines-windows
 documentationcenter: virtual-machines
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
@@ -16,14 +16,14 @@ ms.workload: infrastructure
 ms.date: 12/05/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 4c54383df74d9cfd7941dc52d26856bc8da51457
-ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.openlocfilehash: cb9df71859947f868b858cbed0d6f75b91956a94
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56594718"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67708121"
 ---
-# <a name="tutorial-use-azure-security-center-to-monitor-windows-virtual-machines"></a>Руководство. Использование центра безопасности Azure для мониторинга виртуальных машин Windows в Azure
+# <a name="tutorial-use-azure-security-center-to-monitor-windows-virtual-machines"></a>Руководство по Использование центра безопасности Azure для мониторинга виртуальных машин Windows в Azure
 
 Центр безопасности Azure поможет получить рекомендации по безопасности ресурсов Azure. Центр безопасности предлагает встроенный мониторинг безопасности. Это позволяет распознавать угрозы, которые в противном случае могли быть не замечены. В этом руководстве вы узнаете о центре безопасности Azure и научитесь:
 
@@ -51,7 +51,7 @@ ms.locfileid: "56594718"
 
 1. На панели мониторинга центра безопасности щелкните **Политика безопасности** и выберите свою подписку. 
 2. Для параметра **Сбор данных** в разделе **Автоматическая подготовка** выберите **Вкл**.
-3. В разделе **Конфигурация рабочей области по умолчанию** выберите **Использовать рабочие области, созданные центром безопасности (по умолчанию)**.
+3. В разделе **Конфигурация рабочей области по умолчанию** выберите **Использовать рабочие области, созданные центром безопасности (по умолчанию)** .
 4. В разделе **События безопасности** оставьте выбранным параметр по умолчанию **Общий**.
 4. Щелкните **Сохранить** в верхней части страницы. 
 

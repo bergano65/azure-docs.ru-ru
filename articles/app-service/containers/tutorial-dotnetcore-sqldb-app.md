@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: c90d0d2596eb6b8650e2d9809b23bb0e184d97c0
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 4837867188721b13b3f4cb64245ae85a1e32fe50
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59547833"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67656622"
 ---
 # <a name="build-an-aspnet-core-and-sql-database-app-in-azure-app-service-on-linux"></a>Создание веб-приложения ASP.NET Core с Базой данных SQL в Службе приложений Azure в Linux
 
@@ -362,7 +362,7 @@ git push azure master
 
 ## <a name="stream-diagnostic-logs"></a>Потоковая передача журналов диагностики
 
-В примере проекта уже выполнены инструкции из руководства [Ведение журналов в ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging#logging-in-azure) и внесены два изменения в настройки:
+В примере проекта уже выполнены инструкции из руководства [Ведение журналов в ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging#azure-app-service-provider) и внесены два изменения в настройки:
 
 - в файле *DotNetCoreSqlDb.csproj* содержится ссылка на `Microsoft.Extensions.Logging.AzureAppServices`.
 - в файле *Startup.cs* содержится вызов `loggerFactory.AddAzureWebAppDiagnostics()`.
@@ -405,7 +405,7 @@ git push azure master
 Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Руководство Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
+> [Руководство. Сопоставление настраиваемого DNS-имени с приложением](../app-service-web-tutorial-custom-domain.md)
 
 Также ознакомьтесь с другими ресурсами:
 

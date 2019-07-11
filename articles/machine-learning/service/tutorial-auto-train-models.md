@@ -11,12 +11,12 @@ ms.author: nilesha
 ms.reviewer: trbye
 ms.date: 04/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: 907383c057c0c1eebee6550a0d1e9c75dd88513c
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 8cedf7abf71a772a0b770dd2f82d9a5508f5dd75
+ms.sourcegitcommit: dda9fc615db84e6849963b20e1dce74c9fe51821
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66417295"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67622375"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-build-your-regression-model"></a>Руководство по Создание регрессионной модели с помощью автоматического машинного обучения
 
@@ -792,7 +792,7 @@ rundata
       <th>1</th>
       <th>2</th>
       <th>3</th>
-      <th>4.</th>
+      <th>4\.</th>
       <th>5</th>
       <th>6</th>
       <th>7</th>
@@ -1127,6 +1127,8 @@ print(y_predict[:10])
 Создайте точечную диаграмму для отображения прогнозируемых значений затрат в сравнении с фактическими значениями затрат. Следующий код использует функцию `distance` в качестве оси X и поездку `cost` как ось Y. Чтобы сравнивать дисперсию прогнозируемых затрат при каждом значении расстояния поездки, первые 100 прогнозируемых и фактических значений затрат создаются в виде отдельных рядов. Просматривая график видно, что отношение расстояния и затрат почти линейное, а прогнозируемые значения затрат в большинстве случаев очень близки к фактической цене для той же длительности поездки.
 
 ```python
+%matplotlib inline
+
 import matplotlib.pyplot as plt
 
 fig = plt.figure(figsize=(14, 10))

@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: tutorial
 ms.date: 02/13/2019
 ms.author: aahi
-ms.openlocfilehash: 24767f73e3e1409f81262ad57f3fd5152a4ec319
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 705e637235eb81be29a2ea0d7d68ccd000ea0470
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60003477"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67626039"
 ---
 # <a name="tutorial-integrate-power-bi-with-the-text-analytics-cognitive-service"></a>Руководство по Интеграция Power BI с Анализом текста в Cognitive Services
 
@@ -103,7 +103,7 @@ Microsoft Power BI Desktop — бесплатное приложение, поз
 Теперь вы готовы к созданию настраиваемой функции, позволяющей интегрировать Power BI и Анализ текст. Этот текст служит параметром функции. Она преобразовывает данные в требуемый формат JSON (и из него) и выполняет HTTP-запрос к API ключевых фраз. Затем эта функция анализирует ответ API и возвращает строку со списком извлеченных ключевых фраз с разделителями-запятыми.
 
 > [!NOTE]
-> Настраиваемые функции Power BI Desktop написаны на [языке формул Power Query M](https://msdn.microsoft.com/library/mt211003.aspx) (М для краткости). М — язык функционального программирования на основе [F#](https://docs.microsoft.com/dotnet/fsharp/). Чтобы завершить работу с этим руководством, не нужно быть программистом, — весь необходимый код приведен ниже.
+> Настраиваемые функции Power BI Desktop написаны на [языке формул Power Query M](https://docs.microsoft.com/powerquery-m/power-query-m-reference) (М для краткости). М — язык функционального программирования на основе [F#](https://docs.microsoft.com/dotnet/fsharp/). Чтобы завершить работу с этим руководством, не нужно быть программистом, — весь необходимый код приведен ниже.
 
 Убедитесь, что вы работаете с окном редактора запросов в Power BI Desktop. Если это не так, выберите ленту **Главная**, а затем в группе **Внешние данные** щелкните **Изменить запросы**.
 
@@ -188,7 +188,7 @@ Power BI Desktop требуется несколько секунд, чтобы 
 > [!NOTE]
 > Зачем использовать извлеченные ключевые фразы вместо текста всего комментария? Ключевые фразы содержат *важные* слова из комментариев пользователей, а не только *самые распространенные*. Кроме того, размер слова в полученном облаке не изменяется в соответствии с частотой его использования в относительно небольшом числе комментариев.
 
-Если у вас нет настраиваемого визуального элемента облака Word, установите его. На панели "Визуализации" справа щелкните многоточие (**...**) и выберите **Import From Store** (Импорт из Store). Введите "облако" в строке поиска и нажмите кнопку **Добавить** рядом с облаком Word. Power BI установит визуальный элемент облака слов и сообщит об этом.
+Если у вас нет настраиваемого визуального элемента облака Word, установите его. На панели "Визуализации" справа щелкните многоточие ( **...** ) и выберите **Import From Store** (Импорт из Store). Введите "облако" в строке поиска и нажмите кнопку **Добавить** рядом с облаком Word. Power BI установит визуальный элемент облака слов и сообщит об этом.
 
 ![[Добавление настраиваемого визуального элемента]](../media/tutorials/power-bi/add-custom-visuals.png)<br><br>
 
@@ -294,7 +294,7 @@ in  keyphrases
 > [Справочник по API анализа текста](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/56f30ceeeda5650db055a3c6)
 
 > [!div class="nextstepaction"]
-> [Справочник по Power Query M](https://msdn.microsoft.com/library/mt211003.aspx)
+> [Справочник по Power Query M](https://docs.microsoft.com/powerquery-m/power-query-m-reference)
 
 > [!div class="nextstepaction"]
 > [Документация по Power BI](https://powerbi.microsoft.com/documentation/powerbi-landing-page/)

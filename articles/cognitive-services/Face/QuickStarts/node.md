@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
-ms.date: 02/06/2019
+ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: bbb5cf9a043f8f4ab4202b6113d1c1b915f3b8a0
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: aade8552e7fd39a61334c1c6c7c9ca62085961be
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56312776"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603280"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-nodejs"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Node.js
 
@@ -98,7 +98,7 @@ request.post(options, (error, response, body) => {
 node facedetection.js
 ```
 
-В окне консоли должна появиться информация о лицах в виде данных JSON. Например: 
+В окне консоли должна появиться информация о лицах в виде данных JSON. Например:
 
 ```json
 [
@@ -284,4 +284,4 @@ node facedetection.js
 В этом кратком руководстве вы написали скрипт Node.js, который вызывает API распознавания лиц Azure для обнаружения лиц на изображении и возвращения их атрибутов. Ознакомьтесь со справочной документацией по API распознавания лиц, чтобы узнать больше.
 
 > [!div class="nextstepaction"]
-> [API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
+> [API Распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

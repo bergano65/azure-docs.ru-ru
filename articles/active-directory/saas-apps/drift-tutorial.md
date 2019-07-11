@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/27/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88940b40eb309a5fb6ff73c04a47813ec3a47669
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4728ad4fcd44c754a62ec19037562e63d92ec304
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67103858"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67656606"
 ---
 # <a name="tutorial-integrate-drift-with-azure-active-directory"></a>Руководство по Интеграция Drift с Azure Active Directory
 
@@ -88,7 +88,7 @@ ms.locfileid: "67103858"
 
     d. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://start.drift.com`.
 
-6. Приложение Drift ожидает проверочные утверждения SAML в определенном формате, поэтому в вашу конфигурацию атрибутов токена SAML следует добавить сопоставления настраиваемых атрибутов. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить** , чтобы открыть диалоговое окно "Атрибуты пользователя".
+6. Приложение Drift ожидает проверочные утверждения SAML в определенном формате, поэтому в вашу конфигурацию атрибутов токена SAML следует добавить сопоставления настраиваемых атрибутов. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно "Атрибуты пользователя".
 
     ![image](common/edit-attribute.png)
 

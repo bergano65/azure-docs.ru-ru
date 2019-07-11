@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 03/27/2019
+ms.date: 07/03/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: ba6c0c8627ce1e46f36f7a85a9e92d85236b7ee6
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: eadf3aca848f1b8ad24cd387e1988cdf8ea55580
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60009299"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67604425"
 ---
 # <a name="quickstart-analyze-a-remote-image-using-the-computer-vision-rest-api-and-java"></a>Краткое руководство. Удаленный анализ изображения с помощью REST API компьютерного зрения и Java
 
@@ -27,7 +27,7 @@ ms.locfileid: "60009299"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - У вас должна быть установлена платформа [Java&trade;, комплект разработчика Java, выпуск "Стандартный" версии 7 или 8](https://aka.ms/azure-jdks) (JDK 7 или 8).
-- У вас должен быть ключ подписки для Компьютерного зрения. На странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) можно получить бесплатную пробную версию ключа. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ.
+- У вас должен быть ключ подписки для Компьютерного зрения. На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ.
 
 ## <a name="create-and-run-the-sample-application"></a>Создание и запуск примера приложения
 
@@ -72,7 +72,7 @@ public class Main {
     // from the West US region, replace "westcentralus" in the URL
     // below with "westus".
     //
-    // Free trial subscription keys are generated in the "westus" region.
+    // Free trial subscription keys are generated in the "westcentralus" region.
     // If you use a free trial subscription key, you shouldn't need to change
     // this region.
     private static final String uriBase =
@@ -203,10 +203,6 @@ REST Response:
   }]
 }
 ```
-
-## <a name="clean-up-resources"></a>Очистка ресурсов
-
-Если проект Java больше не нужен, удалите его вместе со скомпилированным классом и импортированными библиотеками.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
