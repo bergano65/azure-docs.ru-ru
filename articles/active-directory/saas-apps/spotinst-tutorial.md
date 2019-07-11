@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a5b3c9a0152144ac0d705c7d3f12c18cbc38398f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 817eecce6c2c1be273b47494e8ecc14180394796
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67090151"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705339"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-spotinst"></a>Руководство по Интеграция Azure Active Directory со Spotinst
 
@@ -114,7 +114,7 @@ ms.locfileid: "67090151"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Spotinst](common/metadata-upload-additional-signon.png)
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес: `https://console.spotinst.com`.
+    В текстовом поле **URL-адрес входа** введите URL-адрес: `https://console.spotinst.com/auth/saml`.
 
     > [!NOTE]
     > Значение "Состояние ретранслятора" приведено для примера. Это значение нужно заменить фактическим значением состояния ретранслятора, которое описано далее в этом руководстве.

@@ -4,7 +4,7 @@ description: В этом руководстве описаны функции ц
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 06/11/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: b4c484f3dd118a19291741b071432b09894e836c
-ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.openlocfilehash: 671b7de8852b0aac30e35b76d89eb4489a206f91
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56593307"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67708554"
 ---
 # <a name="tutorial-use-azure-security-center-to-monitor-linux-virtual-machines"></a>Руководство по Использование Центра безопасности Azure для мониторинга виртуальных машин Linux
 
@@ -51,7 +51,7 @@ ms.locfileid: "56593307"
 
 1. На панели мониторинга центра безопасности щелкните **Политика безопасности** и выберите свою подписку. 
 2. Для параметра **Сбор данных** в разделе **Автоматическая подготовка** выберите **Вкл**.
-3. В разделе **Конфигурация рабочей области по умолчанию** выберите **Использовать рабочие области, созданные центром безопасности (по умолчанию)**.
+3. В разделе **Конфигурация рабочей области по умолчанию** выберите **Использовать рабочие области, созданные центром безопасности (по умолчанию)** .
 4. В разделе **События безопасности** оставьте выбранным параметр по умолчанию **Общий**.
 4. Щелкните **Сохранить** в верхней части страницы. 
 

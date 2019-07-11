@@ -9,12 +9,12 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 05/21/2019
-ms.openlocfilehash: 72f23b10047928f32886d9054f4dd1abdc569bd8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a33eb98525ea857ee52ad2fffa5937207504909d
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66396929"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67720548"
 ---
 1. Войдите на [портал Azure](https://portal.azure.com/) с помощью учетных данных для используемой подписки Azure. 
 
@@ -22,15 +22,15 @@ ms.locfileid: "66396929"
 
 1. Выберите **Создать ресурс** в левом верхнем углу портала.
 
-   ![Создание ресурса на портале Azure](./media/aml-create-in-portal/portal-create-a-resource-05-2019.png)
+   ![Создание ресурса на портале Azure](./media/aml-create-in-portal/portal-create-a-resource-07-2019.png)
 
 1. В строке поиска введите **машинное обучение**. Выберите результат поиска **рабочей области Службы машинного обучения**.
 
-   ![Поиск рабочей области](./media/aml-create-in-portal/allservices-search-05-2019.png)
+   ![Поиск рабочей области](./media/aml-create-in-portal/allservices-search.png)
 
 1. В области **Рабочая область службы ML**  выберите **Создать**, чтобы начать создание.
 
-    ![Кнопка "Создать"](./media/aml-create-in-portal/portal-create-button-05-2019.png)
+    ![Кнопка "Создать"](./media/aml-create-in-portal/portal-create-button.png)
 
 1. Настройте рабочую область на панели **рабочей области Службы машинного обучения**.
 
@@ -41,18 +41,14 @@ ms.locfileid: "66396929"
    Группа ресурсов | Используйте группу ресурсов, которая есть в подписке, или введите имя, чтобы создать группу ресурсов. Группа ресурсов содержит связанные ресурсы для решения Azure. В этом примере мы используем **docs-aml**. 
    Расположение | Выберите ближайшее к пользователям и ресурсам данных расположение. В нем будет создана рабочая область.
 
-   ![Создание рабочей области](./media/aml-create-in-portal/workspace-create-main-tab-05-2019.png)
-
 1. Чтобы начать процесс создания, выберите **Review + Create** (Просмотреть и создать).
 
-    ![Создание](./media/aml-create-in-portal/workspace-create-main-review-button-05-2019.png)
+    ![Создание рабочей области](./media/aml-create-in-portal/workspace-create-main-tab.png)
 
 1. Проверьте конфигурацию рабочей области. Если она правильная, выберите **Создать**. Создание рабочей области может занять несколько минут.
-
-    ![Создание](./media/aml-create-in-portal/workspace-create-review-tab-05-2019.png)
 
 1. Вы можете проверить состояние развертывания, щелкнув значок уведомлений (**колокольчик**) на панели инструментов.
 
 1. По завершении процесса появится сообщение об успешном развертывании. Оно также присутствует в области уведомлений. Чтобы просмотреть новую рабочую область, выберите **Перейти к ресурсу**.
 
-   ![Состояние создания рабочей области](./media/aml-create-in-portal/notifications-05-2019.png)
+   ![Состояние создания рабочей области](./media/aml-create-in-portal/notifications.png)

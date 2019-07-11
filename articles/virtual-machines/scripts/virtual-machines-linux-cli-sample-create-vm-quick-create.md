@@ -4,7 +4,7 @@ description: Пример скрипта Azure CLI. Быстрое создан�
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: tysonn
 tags: azure-service-management
 ms.assetid: ''
@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 02/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: ce424fcd7521893caf0dd0f7924c3021fb0f2599
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
+ms.openlocfilehash: fb7280c842b4f2fc4e763fadd9bea077fc5eeeb9
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55695569"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67709482"
 ---
 # <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 

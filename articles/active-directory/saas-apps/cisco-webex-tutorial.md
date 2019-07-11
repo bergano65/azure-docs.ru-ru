@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec8c2fc2c2dbbfd2c98184215f696aaf18a87193
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 498650ce8a22f4804773bb66db3d640cd63bab8c
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67105547"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67655836"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cisco-webex-meetings"></a>Руководство по Интеграция Azure Active Directory с Cisco Webex Meetings
 
@@ -122,7 +122,7 @@ ms.locfileid: "67105547"
 
     В текстовое поле **URL-адрес входа** вставьте значение **URL-адреса ответа**, которое автоматически заполняется при отправке файла метаданных поставщика услуг.
 
-5. Для приложения Cisco Webex Meetings требуются проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок  **Изменить** , чтобы добавить атрибуты.
+5. Для приложения Cisco Webex Meetings требуются проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы добавить атрибуты.
 
     ![image](common/edit-attribute.png)
 

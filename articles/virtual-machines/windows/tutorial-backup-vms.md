@@ -4,7 +4,7 @@ description: Из этого руководства вы узнаете, как 
 services: virtual-machines-windows
 documentationcenter: virtual-machines
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 06/06/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 1efa76cf6bb29dfac473ad6ce31cefdfee0c52ec
-ms.sourcegitcommit: f9448a4d87226362a02b14d88290ad6b1aea9d82
+ms.openlocfilehash: 3db1884fb80ce28dc58f09687ff16cc1ce904679
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66808785"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67708099"
 ---
 # <a name="tutorial-back-up-and-restore-files-for-windows-virtual-machines-in-azure"></a>Руководство по резервному копированию и восстановлению файлов для виртуальных машин Windows в Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "66808785"
 > * Планирование ежедневной архивации
 > * Восстановление файла из архива
 
-## <a name="backup-overview"></a>Обзор службы архивации
+## <a name="backup-overview"></a>Обзор службы Azure Backup
 
 Служба архивации Azure запускает задание архивации. При этом расширение архивации создает моментальный снимок. Служба архивации Azure использует расширение _VMSnapshot_. Расширение устанавливается во время первой архивации виртуальной машины, если виртуальная машина запущена. Если виртуальная машина не запущена, служба резервного копирования создает моментальный снимок базового хранилища (так как операции записи в приложении не выполняются, пока виртуальная машина остановлена).
 

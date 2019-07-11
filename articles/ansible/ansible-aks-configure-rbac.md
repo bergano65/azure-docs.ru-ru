@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: dbef7c2cb8de5a1b4bbb3073f694b8f77c9f441b
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: eae23806ee1b4e2dac1d3410e32c3242e89d4be8
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65231302"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67719818"
 ---
 # <a name="tutorial-configure-role-based-access-control-rbac-roles-in-azure-kubernetes-service-aks-using-ansible"></a>Руководство по настройке ролей RBAC (управление доступом на основе ролей) в Службе Azure Kubernetes (AKS) с помощью Ansible
 
@@ -39,7 +39,7 @@ ms.locfileid: "65231302"
 
 ## <a name="configure-azure-ad-for-aks-authentication"></a>Настройка Azure AD для аутентификации AKS
 
-При настройке Azure AD для аутентификации AKS настраиваются два приложения Azure AD. Эту операцию должен выполнять администратор клиента Azure. Дополнительные сведения см. в разделе [Интеграция Azure Active Directory со службой Azure Kubernetes](/azure/aks/aad-integration#create-server-application). 
+При настройке Azure AD для аутентификации AKS настраиваются два приложения Azure AD. Эту операцию должен выполнять администратор клиента Azure. Дополнительные сведения см. в разделе [Интеграция Azure Active Directory со службой Azure Kubernetes](/azure/aks/aad-integration#create-the-server-application). 
 
 Обратитесь к администратору клиента Azure, чтобы получить следующие значения:
 
@@ -73,7 +73,7 @@ ms.locfileid: "65231302"
       location: "{{ location }}"
 
 - name: List supported kubernetes version from Azure
-  azure_rm_aks_version:
+  azure_rm_aksversion_facts:
       location: "{{ location }}"
   register: versions
 
