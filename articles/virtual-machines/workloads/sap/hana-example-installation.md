@@ -4,7 +4,7 @@ description: Как установить HANA на сервере SAP HANA в Az
 services: virtual-machines-linux
 documentationcenter: ''
 author: hermanndms
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
 ms.devlang: NA
@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 09/10/2018
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f4629894933507bda7359fb034c4079d38100029
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: ce82a2972d9cc349e527811e32c974996327e70b
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203881"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67709744"
 ---
 # <a name="install-hana-on-sap-hana-on-azure-large-instances"></a>Установка HANA на сервере SAP HANA в Azure (крупные экземпляры)
 
@@ -131,7 +131,7 @@ rpm –qa | grep gtk2
 Теперь экземпляр SAP HANA должен быть готов к использованию. Вы сможете подключиться к нему из SAP HANA Studio. Кроме того, убедитесь, что последние обновления проверены и установлены.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Высокий уровень доступности и аварийное восстановление SAP HANA в Azure (крупные экземпляры)](hana-overview-high-availability-disaster-recovery.md)
 

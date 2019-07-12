@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: b5ff218ce7bc7593d38f496b22d2a03402a00cdc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cd35af6ead2d734fa68b85b199aac219daf8dcd9
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66514426"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807155"
 ---
-# <a name="status-monitor-v2-api-disable-instrumentationengine-v021-alpha"></a>Состояние монитора v2 API: Disable-InstrumentationEngine (v0.2.1-альфа-версия)
+# <a name="status-monitor-v2-api-disable-instrumentationengine-v040-alpha"></a>Состояние монитора v2 API: Disable-InstrumentationEngine (v0.4.0-альфа-версия)
 
 В этой статье описывается командлет, который является членом [модуль Az.ApplicationMonitor PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
@@ -46,7 +46,7 @@ PS C:\> Disable-InstrumentationEngine
 ### <a name="-verbose"></a>-Verbose
 **Общий параметр.** Этот параметр можно используйте для вывода подробных журналов.
 
-## <a name="output"></a>Выход
+## <a name="output"></a>Вывод
 
 
 #### <a name="example-output-from-successfully-disabling-the-instrumentation-engine"></a>Пример выходных данных успешно отключать подсистему инструментирования
@@ -60,7 +60,7 @@ Configuring registry for instrumentation engine...
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
  Новые возможности в версии 2 монитор состояния:
  - Используйте наше руководство по [Устранение](status-monitor-v2-troubleshoot.md) v2 монитор состояния.
