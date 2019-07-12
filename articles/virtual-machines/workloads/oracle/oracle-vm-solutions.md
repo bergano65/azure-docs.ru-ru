@@ -4,7 +4,7 @@ description: Дополнительные сведения о поддержив
 services: virtual-machines-linux
 documentationcenter: ''
 author: romitgirdhar
-manager: jeconnoc
+manager: gwallace
 tags: azure-resource-management
 ms.assetid: ''
 ms.service: virtual-machines-windows
@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 05/23/2019
 ms.author: rogirdh
 ms.custom: seodec18
-ms.openlocfilehash: 9dd7f7d07b34ed3c1076b46c0bf5185d6c8cd31a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 70e87a38373688c1b364a079cd07934309662e3e
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67074232"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67707433"
 ---
 # <a name="oracle-vm-images-and-their-deployment-on-microsoft-azure"></a>Образы виртуальных Машин Oracle и их развертывание в Microsoft Azure
 
@@ -131,7 +131,7 @@ Oracle поддерживает выполнение выпусков базы �
    Комплект JDK, доступный в JDK 6 и 7 образы и виртуальные машины и образы, полученные из них, может использоваться только в пределах Azure.
 * **64-разрядный JDK.** Образы виртуальных машин Oracle WebLogic Server и Oracle JDK, предоставляемые Azure, содержат 64-разрядные версии Windows Server и JDK.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь у вас есть общие сведения о текущих решениях Oracle, на основе образов виртуальных машин в Microsoft Azure. Следующим шагом является развертывание первой базы данных Oracle в Azure.
 
 > [!div class="nextstepaction"]
