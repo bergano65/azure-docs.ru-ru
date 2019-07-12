@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 225ac86efba8a32b085a5fb7fc41bed48c499eab
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 41637fae5592ac292da22303071d51b43116c78b
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65022170"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67671910"
 ---
 # <a name="documentation-resources-for-cognitive-search-workloads"></a>Ресурсы документации для рабочих нагрузок когнитивного поиска
 
@@ -23,11 +23,11 @@ ms.locfileid: "65022170"
 
 Далее представлена полная документация со статьями по когнитивному поиску.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 + [What is cognitive search?](cognitive-search-concept-intro.md) (Что такое когнитивный поиск?)
 + [Краткое руководство Создание конвейера когнитивного поиска с использованием навыков и примера данных](cognitive-search-quickstart-blob.md)
 + [Руководство. Вызов API когнитивного поиска (предварительная версия)](cognitive-search-tutorial-blob.md)
-+ [Пример создания пользовательского навыка с помощью API перевода текста](cognitive-search-create-custom-skill-example.md)
++ [Пример. Создание пользовательских опыт для когнитивный поиск](cognitive-search-create-custom-skill-example.md)
 
 ## <a name="how-to-guidance"></a>Практические руководства
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
@@ -38,7 +38,7 @@ ms.locfileid: "65022170"
 + [How to add a custom skill to a cognitive search pipeline](cognitive-search-custom-skill-interface.md) (Добавление пользовательского навыка в конвейер когнитивного поиска)
 + [Советы по устранению неполадок](cognitive-search-concept-troubleshooting.md)
 
-## <a name="reference"></a>Справочные материалы
+## <a name="reference"></a>Ссылка
 
 + [Предопределенные навыки](cognitive-search-predefined-skills.md)
   + [Microsoft.Skills.Text.KeyPhraseSkill](cognitive-search-skill-keyphrases.md)

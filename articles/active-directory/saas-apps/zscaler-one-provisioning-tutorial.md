@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настройка Zscaler One для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
+title: Учебник. Настройка Zscaler One для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory настроить автоматическую подготовку и отзыв учетных записей пользователей в Zscaler One.
 services: active-directory
 documentationcenter: ''
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/27/2019
-ms.author: v-ant-msft
-ms.openlocfilehash: 5319b0ac06c4ddf1a7627a4e7fe0bfb2694f79f6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: jeedes
+ms.openlocfilehash: 3d6210fa215792fc7ff049eb597df5905926c193
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64706607"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67670894"
 ---
-# <a name="tutorial-configure-zscaler-one-for-automatic-user-provisioning"></a>Руководство по Настройка Zscaler One для автоматической подготовки пользователей
+# <a name="tutorial-configure-zscaler-one-for-automatic-user-provisioning"></a>Учебник. Настройка Zscaler One для автоматической подготовки пользователей
 
 Этот учебник демонстрирует шаги в Zscaler One и Azure Active Directory (Azure AD) для настройки Azure AD настроить автоматическую подготовку и отзыв пользователей и групп в Zscaler One.
 
@@ -31,7 +31,7 @@ ms.locfileid: "64706607"
 >
 > Этот соединитель доступен в настоящее время доступна в предварительной версии. Дополнительные сведения о общие Microsoft Azure условия использования предварительных версий функций, см. в разделе [дополнительные условия использования предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Сценарий, описанный в этом руководстве предполагается, что у вас есть:
 
@@ -107,7 +107,7 @@ Azure Active Directory используется концепция, называ
 
     ![Параметры проверки подлинности в Zscaler One](./media/zscaler-one-provisioning-tutorial/secret-token-1.png)
 
-    a. Выберите **настроить SAML** открыть **настроить SAML** параметры.
+    1\. Выберите **настроить SAML** открыть **настроить SAML** параметры.
 
     ![Zscaler One Настройка SAML](./media/zscaler-one-provisioning-tutorial/secret-token-2.png)
 
@@ -164,7 +164,7 @@ Azure Active Directory используется концепция, называ
 * [Managing user account provisioning for enterprise apps in the Azure portal](../manage-apps/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
 

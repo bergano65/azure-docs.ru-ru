@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: reference
 ms.date: 05/23/2019
 ms.author: evansma
-ms.openlocfilehash: ecee1669c29d7b298741f9e5521de03da6dd7e3b
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: 476aaacbe6f1bf6d1920df0f12599976bfcc27b7
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67331635"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67701141"
 ---
 # <a name="saas-fulfillment-apis-version-2"></a>Выполнение SaaS API-интерфейсы, версия 2 
 
@@ -87,7 +87,7 @@ Azure SaaS управляет весь жизненный цикл покупк�
 | `offerId`                | Уникальный строковый идентификатор для каждого предложения (например: «offer1»).  |
 | `planId`                 | Уникальный строковый идентификатор для каждого плана или номера SKU (например: «серебро»). |
 | `operationId`            | Идентификатор GUID для конкретной операции.  |
-|  `action`                | Действие, выполняемое для ресурса, либо `subscribe`, `unsubscribe`, `suspend`, `reinstate`, или `changePlan`, `changeQuantity`, `transfer`.  |
+|  `action`                | Действие, выполняемое для ресурса, либо `unsubscribe`, `suspend`, `reinstate`, или `changePlan`, `changeQuantity`, `transfer`.  |
 |   |   |
 
 Глобальные уникальные идентификаторы ([идентификаторы GUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)) являются числами 128-разрядный (32-шестнадцатеричном формате), которые обычно формируется автоматически. 
@@ -111,7 +111,7 @@ Azure SaaS управляет весь жизненный цикл покупк�
 |  Content-Type      | `application/json` |
 |  x-ms-requestid    |  Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, один будет сгенерирован и в заголовке ответа. |
 |  x-ms-correlationid |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
-|  authorization     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app). |
+|  авторизация     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app). |
 |  x-ms-marketplace-token  |  Параметр маркера запроса в URL-АДРЕСЕ, когда пользователь перенаправляется на веб-сайт партнера SaaS с Azure (например: `https://contoso.com/signup?token=..`). *Примечание.* URL-адрес декодирует значение токена из браузера перед его использованием.  |
 
 *Коды ответов:*
@@ -175,7 +175,7 @@ Azure SaaS управляет весь жизненный цикл покупк�
 | Content-Type       |  `application/json`  |
 | x-ms-requestid     |  Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, один будет сгенерирован и в заголовке ответа. |
 | x-ms-correlationid |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
-| authorization      |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app).  |
+| авторизация      |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app).  |
 
 *Коды ответов:*
 
@@ -199,10 +199,16 @@ Azure SaaS управляет весь жизненный цикл покупк�
           "purchaser": { // Tenant that purchased the SaaS subscription. These could be different for reseller scenario
               "tenantId": "<guid>"
           },
+            "term": {
+                "startDate": "2019-05-31",
+                "endDate": "2019-06-29",
+                "termUnit": "P1M"
+          },
           "allowedCustomerOperations": [
               "Read" // Possible Values: Read, Update, Delete.
           ], // Indicates operations allowed on the SaaS subscription. For CSP-initiated purchases, this will always be Read.
           "sessionMode": "None", // Possible Values: None, DryRun (Dry Run indicates all transactions run as Test-Mode in the commerce stack)
+          "isFreeTrial": "true", // true – the customer subscription is currently in free trial, false – the customer subscription is not currently in free trial.
           "saasSubscriptionStatus": "Subscribed" // Indicates the status of the operation: [NotStarted, PendingFulfillmentStart, Subscribed, Suspended, Unsubscribed]
       }
   ],
@@ -247,7 +253,7 @@ Azure SaaS управляет весь жизненный цикл покупк�
 |  Content-Type      |  `application/json`  |
 |  x-ms-requestid    |  Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, один будет сгенерирован и в заголовке ответа. |
 |  x-ms-correlationid |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
-|  authorization     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app). |
+|  авторизация     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app). |
 
 *Коды ответов:*
 
@@ -271,7 +277,13 @@ Response Body:
           },
         "allowedCustomerOperations": ["Read"], // Indicates operations allowed on the SaaS subscription. For CSP-initiated purchases, this will always be Read.
         "sessionMode": "None", // Dry Run indicates all transactions run as Test-Mode in the commerce stack
+        "isFreeTrial": "true", // true – customer subscription is currently in free trial, false – customer subscription is not currently in free trial.
         "status": "Subscribed", // Indicates the status of the operation.
+          "term": { //This gives the free trial term start and end date
+            "startDate": "2019-05-31",
+            "endDate": "2019-06-29",
+            "termUnit": "P1M"
+        },
 }
 ```
 
@@ -311,7 +323,7 @@ Response Body:
 |   Content-Type     |  `application/json` |
 |   x-ms-requestid   |   Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, один будет сгенерирован и в заголовке ответа. |
 |  x-ms-correlationid  | Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа. |
-|  authorization     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app). |
+|  авторизация     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app). |
 
 *Коды ответов:*
 
@@ -363,7 +375,7 @@ Response Body:
 |  Content-Type      | `application/json`  |
 |  x-ms-requestid    | Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
 |  x-ms-correlationid  | Уникальное строковое значение для операции на стороне клиента. Эта строка сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
-|  authorization     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app). |
+|  авторизация     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app). |
 
 *Полезные данные запроса:*
 
@@ -420,7 +432,7 @@ Response Body:
 |  Content-Type      | `application/json` |
 |  x-ms-requestid    |   Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
 |  x-ms-correlationid  |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.    |
-| authorization      |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app).  |
+| авторизация      |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app).  |
 
 *Полезные данные запроса:*
 
@@ -486,7 +498,7 @@ Request Body:
 |  Content-Type      | `application/json` |
 |  x-ms-requestid    |   Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
 |  x-ms-correlationid  |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.    |
-| authorization      |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app).  |
+| авторизация      |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app).  |
 
 *Полезные данные запроса:*
 
@@ -537,7 +549,7 @@ Request Body:
 
 Отказаться от подписки и удаление указанной подписки.
 
-##### <a name="deletebr-httpsmarketplaceapimicrosoftcomapisaassubscriptionssubscriptionid-api-versionapiversion"></a>Delete (Удалить)<br> `https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId> ?api-version=<ApiVersion>`
+##### <a name="deletebr-httpsmarketplaceapimicrosoftcomapisaassubscriptionssubscriptionid-api-versionapiversion"></a>Оператор delete<br> `https://marketplaceapi.microsoft.com/api/saas/subscriptions/<subscriptionId> ?api-version=<ApiVersion>`
 
 *Параметры запроса:*
 
@@ -553,7 +565,7 @@ Request Body:
 |   Content-Type     |  `application/json` |
 |  x-ms-requestid    |   Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, один будет сгенерирован и в заголовке ответа.   |
 |  x-ms-correlationid  |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.   |
-|  authorization     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app).  |
+|  авторизация     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app).  |
 
 *Коды ответов:*
 
@@ -606,7 +618,7 @@ Request Body:
 |   Content-Type     |  `application/json` |
 |  x-ms-requestid    |  Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
 |  x-ms-correlationid |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
-|  authorization     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app).  |
+|  авторизация     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app).  |
 
 *Коды ответов:*
 
@@ -669,7 +681,7 @@ Request Body:
 |  Content-Type      |  `application/json`   |
 |  x-ms-requestid    |   Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
 |  x-ms-correlationid |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
-|  authorization     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app).  |
+|  авторизация     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app).  |
 
 *Коды ответов:*<br>
 
@@ -733,7 +745,7 @@ Response body:
 |   Content-Type     | `application/json`   |
 |   x-ms-requestid   |   Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, один будет сгенерирован и в заголовке ответа. |
 |  x-ms-correlationid |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа. |
-|  authorization     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app).  |
+|  авторизация     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app).  |
 
 *Полезные данные запроса:*
 
@@ -794,7 +806,6 @@ Response body:
 }
 ```
 Когда действие может принимать одно из следующих: 
-- `subscribe` (если ресурс был активирован)
 - `unsubscribe` (если ресурс был удален)
 - `changePlan` (после завершения операции изменения плана)
 - `changeQuantity` (после завершения операции изменения количество)
@@ -803,7 +814,7 @@ Response body:
 
 Где состояние может принимать одно из следующих: 
 - **NotStarted** <br>
- - **Выполняется** <br>
+ - **InProgress** <br>
 - **Успешно** <br>
 - **Сбой** <br>
 - **Конфликт** <br>
@@ -822,6 +833,6 @@ Response body:
 
 Любой из вызовов API в этой статье может быть сделан для конечной точки макет узла. Как правило надеяться на получение фиктивные данные назад в качестве отклика. Вызовы методов обновления подписки на макет API всегда возвращает 500. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Разработчики могут программным путем получения и обработки рабочих нагрузок, предложения и издателе профилей с помощью [API-интерфейсов REST портал Cloud Partner](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-api-overview).

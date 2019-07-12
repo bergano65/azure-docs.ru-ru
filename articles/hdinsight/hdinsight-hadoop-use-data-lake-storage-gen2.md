@@ -7,12 +7,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/30/2019
 ms.author: hrasheed
-ms.openlocfilehash: f381090e663923ec9f45fba03d0688c9879ab173
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dd639ae7e05309ab4528eb460ce38550db4cffe1
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66427382"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67670761"
 ---
 # <a name="use-azure-data-lake-storage-gen2-with-azure-hdinsight-clusters"></a>Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight
 
@@ -37,7 +37,7 @@ Gen2 хранилища Озера данных доступен в качест
 
 ### <a name="create-a-data-lake-storage-gen2-account"></a>Создание учетной записи Azure Data Lake Storage 2-го поколения
 
-Создайте учетную запись хранения Azure Data Lake Storage 2-го поколения. Убедитесь, что **иерархического пространства имен** включен параметр. Дополнительные сведения см. в разделе [ Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-quickstart-create-account.md).
+Создайте учетную запись хранения Azure Data Lake Storage 2-го поколения. Убедитесь, что **иерархического пространства имен** включен параметр. Дополнительные сведения см. в [кратком руководстве Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-quickstart-create-account.md).
 
 ![Снимок экрана, на котором показано создание учетной записи хранения на портале Azure](./media/hdinsight-hadoop-data-lake-storage-gen2/azure-data-lake-storage-account-create-advanced.png)
 
@@ -72,31 +72,40 @@ Gen2 хранилища Озера данных доступен в качест
 
 ## <a name="create-a-cluster-with-data-lake-storage-gen2-through-the-azure-cli"></a>Создание кластера с Gen2 хранилища Озера данных с помощью Azure CLI
 
-Вы можете [загрузить образец файла шаблона](https://github.com/Azure-Samples/hdinsight-data-lake-storage-gen2-templates/blob/master/hdinsight-adls-gen2-template.json) и [загрузить образец файла параметров](https://github.com/Azure-Samples/hdinsight-data-lake-storage-gen2-templates/blob/master/parameters.json). Перед использованием шаблона, замените строку `<SUBSCRIPTION_ID>` своим идентификатором фактическое подписки Azure. Кроме того, замените строку `<PASSWORD>` с выбранным пароль, чтобы задать пароль, который вы используете для входа в кластер и пароль SSH.
+Вы можете [загрузить образец файла шаблона](https://github.com/Azure-Samples/hdinsight-data-lake-storage-gen2-templates/blob/master/hdinsight-adls-gen2-template.json) и [загрузить образец файла параметров](https://github.com/Azure-Samples/hdinsight-data-lake-storage-gen2-templates/blob/master/parameters.json). Перед использованием шаблона и Приведенный далее фрагмент кода Azure CLI, замените следующие заполнители правильных значений:
+
+| Placeholder | Описание |
+|---|---|
+| `<SUBSCRIPTION_ID>` | Идентификатор подписки Azure |
+| `<RESOURCEGROUPNAME>` | Группа ресурсов, где требуется новый кластер и учетную запись хранения создана. |
+| `<MANAGEDIDENTITYNAME>` | Имя управляемого удостоверения, будут предоставлены разрешения учетной записи Gen2 хранилища Озера данных Azure. |
+| `<STORAGEACCOUNTNAME>` | Новый Gen2 хранилища Озера данных Azure учетная запись, которая будет создаваться. |
+| `<CLUSTERNAME>` | Это имя вашего кластера HDInsight. |
+| `<PASSWORD>` | Выбранный пароль для входа в кластер с помощью SSH, а также панели мониторинга Ambari. |
 
 Приведенный ниже фрагмент кода выполняет следующие начальные действия:
 
 1. Журналы в учетную запись Azure.
 1. Задает активную подписку, где будут выполняться операции create.
-1. Создает новую группу ресурсов для новых операций развертывания с именем `hdinsight-deployment-rg`.
-1. Создание назначаемого пользователем управляемого удостоверения с именем `test-hdinsight-msi`.
+1. Создает новую группу ресурсов для всех новых действий развертывания. 
+1. Создание назначаемого пользователем управляемого удостоверения.
 1. Добавляет расширение Azure CLI для использования функций для Gen2 хранилища Озера данных.
-1. Создает новую учетную запись Gen2 хранилища Озера данных с именем `hdinsightadlsgen2`, с помощью `--hierarchical-namespace true` флаг.
+1. Создает новую учетную запись Gen2 хранилища Озера данных с помощью `--hierarchical-namespace true` флаг. 
 
 ```azurecli
 az login
-az account set --subscription <subscription_id>
+az account set --subscription <SUBSCRIPTION_ID>
 
 # Create resource group
-az group create --name hdinsight-deployment-rg --location eastus
+az group create --name <RESOURCEGROUPNAME> --location eastus
 
 # Create managed identity
-az identity create -g hdinsight-deployment-rg -n test-hdinsight-msi
+az identity create -g <RESOURCEGROUPNAME> -n <MANAGEDIDENTITYNAME>
 
 az extension add --name storage-preview
 
-az storage account create --name hdinsightadlsgen2 \
-    --resource-group hdinsight-deployment-rg \
+az storage account create --name <STORAGEACCOUNTNAME> \
+    --resource-group <RESOURCEGROUPNAME> \
     --location eastus --sku Standard_LRS \
     --kind StorageV2 --hierarchical-namespace true
 ```
@@ -107,7 +116,7 @@ az storage account create --name hdinsightadlsgen2 \
 
 ```azurecli
 az group deployment create --name HDInsightADLSGen2Deployment \
-    --resource-group hdinsight-deployment-rg \
+    --resource-group <RESOURCEGROUPNAME> \
     --template-file hdinsight-adls-gen2-template.json \
     --parameters parameters.json
 ```
@@ -136,7 +145,7 @@ RBAC использует назначения ролей, чтобы эффек
 
 Чтобы задать разрешения для пользователей, для запроса данных, используйте группы безопасности Azure AD как назначенный основной в списках управления доступом. Не напрямую назначать разрешения доступа к файлам для отдельных пользователей или субъекты-службы. При использовании группы безопасности Azure AD для управления потоком разрешений, вы можете добавлять и удалять пользователи или субъекты-службы не повторное применение списков управления доступом к структуре каталогов. Нужно просто добавить пользователей в соответствующую группу безопасности Azure AD или удалить их из нее. Списки управления доступом не унаследован, поэтому повторное применение списков ACL требуется обновление ACL в любом файле или подкаталога.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Azure HDInsight integration with Data Lake Storage Gen2 preview - ACL and security update](https://azure.microsoft.com/blog/azure-hdinsight-integration-with-data-lake-storage-gen-2-preview-acl-and-security-update/) (Интеграция Azure HDInsight с Data Lake Storage 2-го поколения (предварительная версия) — обновление списка управления доступом и системы безопасности)
 * [Общие сведения о хранилище Azure Data Lake Storage Gen2 (предварительная версия)](../storage/blobs/data-lake-storage-introduction.md)
