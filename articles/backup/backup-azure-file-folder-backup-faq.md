@@ -5,14 +5,14 @@ author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
-ms.date: 07/02/2019
+ms.date: 07/09/2019
 ms.author: dacurwin
-ms.openlocfilehash: d4d1044a30d4ebc551cf1305993aba2a201c4c94
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: dd800c0eeb18fe45b44a72aeb58b500623b2b366
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67514448"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705079"
 ---
 # <a name="common-questions-about-backing-up-files-and-folders"></a>Часто задаваемые вопросы о резервном копировании файлов и папок
 
@@ -88,9 +88,19 @@ ms.locfileid: "67514448"
 Размер папки кэша определяет объем данных, для которых выполняется резервное копирование.
 - Тома папку кэша должны иметь свободное место, равное по крайней мере 5 – 10% от общего размера данных резервных копий.
 - Если объем составляет менее 5% свободного места, увеличьте размер тома или перемещение папки кэша на том с достаточным объемом места.
-- Если создать резервную копию состояния системы Windows, необходимо дополнительно 30 – 35 ГБ свободного места в томе, содержащем папку кэша
-### <a name="how-do-i-change-the-cache-location-for-the-mars-agent"></a>Как изменить расположение кэша для агента служб восстановления Microsoft AZURE?
+- Если создать резервную копию состояния системы Windows, необходимо дополнительно 30 – 35 ГБ свободного места в томе, содержащем папку кэша.
 
+### <a name="how-to-check-if-scratch-folder-is-valid-and-accessible"></a>Как проверить, если временная папка является допустимым и доступным?
+
+1. По умолчанию временная папка находится в `\Program Files\Microsoft Azure Recovery Services Agent\Scratch`
+2. Убедитесь, что путь к временной папке совпадает со значениями ключа реестра, показано ниже:
+
+  | Путь к элементу реестра | Ключ реестра | Значение |
+  | --- | --- | --- |
+  | `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config` |ScratchLocation |*Новое расположение папки кэша* |
+  | `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config\CloudBackupProvider` |ScratchLocation |*Новое расположение папки кэша* |
+
+### <a name="how-do-i-change-the-cache-location-for-the-mars-agent"></a>Как изменить расположение кэша для агента служб восстановления Microsoft AZURE?
 
 1. Выполните следующую команду в командной строке с повышенными правами для остановки модуля резервного копирования:
 
@@ -133,13 +143,13 @@ ms.locfileid: "67514448"
 
 Да, вы можете использовать **изменить свойства** параметр в агент MARS для регулировки пропускной способности и времени. [Узнайте больше](backup-configure-vault.md#enable-network-throttling).
 
-## <a name="restore"></a>восстановление;
+## <a name="restore"></a>Восстановление
 
 ### <a name="what-happens-if-i-cancel-an-ongoing-restore-job"></a>Что произойдет, если отменить выполняемое задание восстановления?
 
 Если задание восстановления текущих отменяется, останавливает процесс восстановления. Все файлы, восстановленные до отмены взаимодействуют целевому (исходное или другое расположение), без любой откатов.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Узнайте,](tutorial-backup-windows-server-to-azure.md) резервное копирование компьютера Windows.

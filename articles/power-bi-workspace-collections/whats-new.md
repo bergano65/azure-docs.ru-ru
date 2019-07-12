@@ -2,18 +2,18 @@
 title: Новые возможности в коллекциях рабочих областей Power BI
 description: В этой статье вы найдете самую актуальную информацию о новых возможностях коллекций рабочих областей Power BI.
 services: power-bi-workspace-collections
-ms.service: power-bi-workspace-collections
+ms.service: power-bi-embedded
 author: rkarlin
 ms.author: rkarlin
 ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
-ms.openlocfilehash: 9ef9416abb4aaf0927d1e072286ef83a4d8c39cb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 448c0997068fae0637c7015eed96fafbaf5b3442
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64724021"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672344"
 ---
 # <a name="whats-new-in-power-bi-workspace-collections"></a>Новые возможности в коллекциях рабочих областей Power BI
 
@@ -22,7 +22,7 @@ ms.locfileid: "64724021"
 > [!IMPORTANT]
 > Использовать службу "Коллекции рабочих областей Power BI" не рекомендуется. Она будет доступна до июня 2018 года или до даты, указанной в контракте. Мы советуем организовать перенос приложения в Power BI Embedded, чтобы избежать прерываний в его работе. Сведения о том, как перенести данные из коллекций рабочих областей Power BI в Power BI Embedded, см. в [этой статье](https://powerbi.microsoft.com/documentation/powerbi-developer-migrate-from-powerbi-embedded/).
 
-## <a name="march-2017"></a>Март 2017 г.
+## <a name="march-2017"></a>Март 2017 г.
 
 **Возможности самообслуживания**
 
@@ -45,11 +45,11 @@ ms.locfileid: "64724021"
 
 * Обновленный [пример внедрения отчета JavaScript](https://microsoft.github.io/PowerBI-JavaScript/demo)
 
-## <a name="december-2016"></a>Декабрь 2016 г.
+## <a name="december-2016"></a>Декабрь 2016 г.
 
 * [Новый пример внедрения JavaScript](https://microsoft.github.io/PowerBI-JavaScript/demo/)
 
-## <a name="october-2016"></a>Октябрь 2016 г.
+## <a name="october-2016"></a>Октябрь 2016 г.
 
 * [Advanced Analytics with Power BI Workspace Collections and R](https://powerbi.microsoft.com/blog/r-in-pbie/) (Расширенная аналитика с использованием коллекций рабочих областей Power BI и R)
 

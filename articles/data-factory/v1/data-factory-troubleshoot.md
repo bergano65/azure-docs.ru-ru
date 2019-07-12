@@ -14,14 +14,14 @@ ms.author: gamal
 ms.reviewer: maghan
 manager: craigg
 robots: noindex
-ms.openlocfilehash: 5f2627932eb2fd427d934eba322230222b5e6958
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cc880885777cbca67d6fb39b90feadc889339f76
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66002946"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67836178"
 ---
-# <a name="troubleshoot-data-factory-issues"></a>Устранение неполадок фабрики данных
+# <a name="troubleshoot-data-factory-issues"></a>Устранение неполадок Фабрики данных
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. 
 
@@ -119,14 +119,14 @@ Failed to create cluster. Exception: Unable to complete the cluster create opera
 
 ## <a name="use-azure-portal-to-troubleshoot"></a>Устранение неполадок с помощью портала Azure
 ### <a name="using-portal-blades"></a>Использование колонок на портале
-Действия см. в статье [Мониторинг конвейера](data-factory-build-your-first-pipeline-using-editor.md#monitor-a-pipeline).
+Действия см. в статье [Мониторинг конвейера](data-factory-monitor-manage-pipelines.md).
 
 ### <a name="using-monitor-and-manage-app"></a>Использование приложения по мониторингу и управлению
 Сведения см. в статье [Мониторинг конвейеров фабрики данных Azure и управление ими с помощью приложения по мониторингу и управлению](data-factory-monitor-manage-app.md).
 
 ## <a name="use-azure-powershell-to-troubleshoot"></a>Использование Azure PowerShell для устранения неполадок
 ### <a name="use-azure-powershell-to-troubleshoot-an-error"></a>Использование Azure PowerShell для устранения ошибок
-Сведения см. в разделе [Мониторинг конвейеров фабрики данных с помощью Azure PowerShell](data-factory-build-your-first-pipeline-using-powershell.md#monitor-pipeline).
+Сведения см. в разделе [Мониторинг конвейеров фабрики данных с помощью Azure PowerShell](data-factory-monitor-manage-pipelines.md).
 
 [adfgetstarted]: data-factory-copy-data-from-azure-blob-storage-to-sql-database.md
 [use-custom-activities]: data-factory-use-custom-activities.md

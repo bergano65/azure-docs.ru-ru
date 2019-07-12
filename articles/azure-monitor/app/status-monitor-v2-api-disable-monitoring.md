@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 201c5cc251896efae6b9f4639818471c0f011afe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 98171692284f5f28fb189e2658d207fb80d428ba
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66514408"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807147"
 ---
-# <a name="status-monitor-v2-api-disable-applicationinsightsmonitoring-v021-alpha"></a>Состояние монитора v2 API: Disable-ApplicationInsightsMonitoring (v0.2.1-альфа-версия)
+# <a name="status-monitor-v2-api-disable-applicationinsightsmonitoring-v040-alpha"></a>Состояние монитора v2 API: Disable-ApplicationInsightsMonitoring (v0.4.0-альфа-версия)
 
 В этой статье описывается командлет, который является членом [модуль Az.ApplicationMonitor PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
@@ -47,7 +47,7 @@ PS C:\> Disable-ApplicationInsightsMonitoring
 ### <a name="-verbose"></a>-Verbose
 **Общий параметр.** Этот параметр можно используйте для отображения подробных журналов.
 
-## <a name="output"></a>Выход
+## <a name="output"></a>Вывод
 
 
 #### <a name="example-output-from-successfully-disabling-monitoring"></a>Пример выходных данных из успешно отключение мониторинга
@@ -74,7 +74,7 @@ Successfully disabled Application Insights Status Monitor
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
  Новые возможности в версии 2 монитор состояния:
  - Используйте наше руководство по [Устранение](status-monitor-v2-troubleshoot.md) v2 монитор состояния.

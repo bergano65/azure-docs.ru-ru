@@ -5,17 +5,17 @@ services: sql-data-warehouse
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: ''
-ms.date: 05/13/2019
+ms.date: 07/03/2019
 author: anumjs
 ms.author: anjangsh
 ms.reviewer: jrasnick
 manager: craigg
-ms.openlocfilehash: 9e5f10c2b4c2108626db79ad9821a8b07e57a2e3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ee01ebad9e03aaa34911db49ce344d51b6a756d8
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66417703"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67798697"
 ---
 # <a name="azure-sql-data-warehouse-release-notes"></a>Заметки о выпуске для Хранилища данных SQL Azure
 
@@ -25,20 +25,31 @@ ms.locfileid: "66417703"
 
 Как новые функции распространяются среди всех регионах, проверьте версии, развернутой для своего экземпляра и последние заметки о выпуске хранилища данных SQL Azure для доступности функций. Чтобы проверить установленную версию хранилища данных SQL Azure, подключитесь к хранилищу данных с помощью SQL Server Management Studio (SSMS) и выполните `SELECT @@VERSION AS 'SQL Data Warehouse';` для возврата текущей версии хранилища данных SQL Azure.
 
-Выходные данные примера: ![Версия Хранилища данных SQL](./media/release-notes/sql_data_warehouse_version.png)
+Выходные данные примера:
+
+![Версия хранилища данных SQL](./media/release-notes/sql_data_warehouse_version.png)
 
 Использование даты, определенных для подтверждения, который выпуска применен в хранилище данных SQL Azure.
+
+## <a name="july-2019"></a>Июль 2019 г.
+
+| Улучшения службы | Сведения |
+| --- | --- |
+|**Материализованное представление (Предварительная версия)**|Материализованного представления сохраняет данные, возвращенные из запроса определения представления и автоматически обновляется при изменении данных в базовых таблицах. Это повышает производительность сложных запросов (обычно запросы с использованием соединения и агрегаты), предлагая операций простого обслуживания. Дополнительные сведения можно найти в разделе </br> - [CREATE MATERIALIZED VIEW AS SELECT &#40;Transact-SQL&#41;](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?view=azure-sqldw-latest)</br> - [ALTER MATERIALIZED VIEW &#40;Transact-SQL&#41;](/sql/t-sql/statements/alter-materialized-view-transact-sql?view=azure-sqldw-latest) </br> - [Инструкции T-SQL, поддерживаемые в хранилище данных SQL Azure](/azure/sql-data-warehouse/sql-data-warehouse-reference-tsql-statements)|
+|**Дополнительная поддержка T-SQL**|Контактную зону языка T-SQL для хранилища данных SQL была расширена для поддержки: </br> - [AT TIME ZONE](/sql/t-sql/queries/at-time-zone-transact-sql?view=azure-sqldw-latest)</br> - [STRING_AGG](/sql/t-sql/functions/string-agg-transact-sql?view=azure-sqldw-latest)|
+|**Результирующий набор, кэширование (Предварительная версия)**|Команды DBCC добавлено для управления было объявлено ранее результат кэша. Дополнительные сведения можно найти в разделе </br> - [DBCC DROPRESULTSETCACHE &#40;Transact-SQL&#41;](/sql/t-sql/database-console-commands/dbcc-dropresultsetcache-transact-sql?view=azure-sqldw-latest)  </br> - [DBCC SHOWRESULTCACHESPACEUSED &#40;Transact-SQL&#41;](/sql/t-sql/database-console-commands/dbcc-showresultcachespaceused-transact-sql?view=azure-sqldw-latest) </br></br> Также см. в разделе, новый столбец result_set_cache [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?view=azure-sqldw-latest) , показано использование результат выполненного запроса задать кэша.|
+|**Упорядоченные кластеризованный индекс columnstore (Предварительная версия)**|Новый столбец, column_store_order_ordinal, добавляемый [sys.index_columns](/sql/relational-databases/system-catalog-views/sys-index-columns-transact-sql?view=azure-sqldw-latest) для определения порядка столбцов в индексе упорядоченный кластеризованный индекс columnstore.|
 
 ## <a name="may-2019"></a>Май 2019 г.
 
 | Улучшения службы | Сведения |
 | --- | --- |
-|**Платформа динамических данных, маскируя (Предварительная версия)**|Динамическое маскирование данных (DDM) предотвращает несанкционированный доступ к конфиденциальным данным в хранилище данных, затемняя их в режиме реального времени в результатах запроса, на основе правил маскирования вами. Дополнительные сведения см. в разделе [маскирование динамических данных базы данных SQL](/azure/sql-database/sql-database-dynamic-data-masking-get-started).|
-|**Важность рабочей нагрузки теперь общедоступны**|Классификации управления рабочей нагрузки и важность обеспечения возможности влияют на порядок выполнения запросов. Дополнительные сведения о важности рабочей нагрузки, см. в разделе [классификации](sql-data-warehouse-workload-classification.md) и [важности](sql-data-warehouse-workload-importance.md) обзорные статьи в документации. Ознакомьтесь с [СОЗДАНИЯ КЛАССИФИКАТОРА рабочей НАГРУЗКИ](/sql/t-sql/statements/create-workload-classifier-transact-sql?view=azure-sqldw-latest) также doc.<br/><br/>Важность рабочих нагрузок в действии см. в разделе ниже видео:<br/> -[Основные понятия управления рабочей нагрузки](https://www.youtube.com/embed/QcCRBAhoXpM)<br/> -[Сценарии управления рабочей нагрузкой](https://www.youtube.com/embed/_2rLMljOjw8)|
+|**Платформа динамических данных, маскируя (Предварительная версия)**|Функция динамического маскирования данных предотвращает несанкционированный доступ к вашим конфиденциальным данным в хранилище данных благодаря немедленному их маскированию в результатах запроса. При этом используются заданные вами правила маскирования. Дополнительные сведения см. в разделе [маскирование динамических данных базы данных SQL](/azure/sql-database/sql-database-dynamic-data-masking-get-started).|
+|**Важность рабочей нагрузки теперь общедоступны**|Классификация и важность управления рабочими нагрузками позволяют определять порядок выполнения запросов. Дополнительные сведения о важности рабочей нагрузки, см. в разделе [классификации](sql-data-warehouse-workload-classification.md) и [важности](sql-data-warehouse-workload-importance.md) обзорные статьи в документации. Ознакомьтесь с [СОЗДАНИЯ КЛАССИФИКАТОРА рабочей НАГРУЗКИ](/sql/t-sql/statements/create-workload-classifier-transact-sql?view=azure-sqldw-latest) также doc.<br/><br/>Важность рабочих нагрузок в действии см. в разделе ниже видео:<br/> -[Основные понятия управления рабочей нагрузки](https://www.youtube.com/embed/QcCRBAhoXpM)<br/> -[Сценарии управления рабочей нагрузкой](https://www.youtube.com/embed/_2rLMljOjw8)|
 |**Дополнительная поддержка T-SQL**|Контактную зону языка T-SQL для хранилища данных SQL была расширена для поддержки: </br> - [TRIM](/sql/t-sql/functions/trim-transact-sql?view=azure-sqldw-latest)|
 |**Функции JSON**|Бизнес-аналитикам теперь можно использовать знакомый язык T-SQL для запроса и работы с документами, которые имеют формат данных JSON с использованием следующие новые функции JSON в хранилище данных.</br> - [ISJSON](/sql/t-sql/functions/isjson-transact-sql?view=azure-sqldw-latest)</br> - [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?view=azure-sqldw-latest)</br> -  [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?view=azure-sqldw-latest)</br> -  [JSON_MODIFY](/sql/t-sql/functions/json-modify-transact-sql?view=azure-sqldw-latest)</br> - [OPENJSON](/sql/t-sql/functions/openjson-transact-sql?view=azure-sqldw-latest)|
 |**Результирующий набор, кэширование (Предварительная версия)**|Результирующий набор кэширование позволяет время ответа на запрос мгновенных при уменьшает время для получения сведений для бизнес-аналитики и отчетности пользователей. Дополнительные сведения можно найти в разделе</br> - [ALTER DATABASE (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql?view=azure-sqldw-latest)</br> - [Параметры ALTER DATABASE SET (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azure-sqldw-latest)</br> - [РЕЗУЛЬТИРУЮЩИЙ НАБОР для НАБОРА КЭШИРОВАНИЯ (Transact-SQL)](/sql/t-sql/statements/set-result-set-caching-transact-sql?view=azure-sqldw-latest)</br> - [Инструкция SET (Transact-SQL)](/sql/t-sql/statements/set-statements-transact-sql)</br> - [sys.databases (Transact-SQL)](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql?view=azure-sqldw-latest)|
-|**Упорядоченные кластеризованный индекс columnstore (Предварительная версия)**|ColumnStore является является ключевой для хранения и эффективно запрашивать большие объемы данных. Для каждой таблицы он делит входящих данных на группы строк и каждого столбца в группе строк формы сегмента на диске.  Упорядоченные кластеризованный индекс columnstore дополнительные индексы оптимизируют выполнение запроса, позволяя эффективно сегмент исключения.   Дополнительные сведения можно найти в разделе</br> -  [CREATE TABLE (хранилище данных Azure SQL)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=azure-sqldw-latest)</br> -  [CREATE COLUMNSTORE INDEX (Transact-SQL)](/sql/t-sql/statements/create-columnstore-index-transact-sql?view=azure-sqldw-latest).|
+|**Упорядоченные кластеризованный индекс columnstore (Предварительная версия)**|Columnstore — это основная возможность хранения и эффективного запрашивания больших объемов данных. Для каждой таблицы входящие данные делятся на группы строк, а каждый столбец группы строк составляет сегмент на диске.  Упорядоченные кластеризованные индексы columnstore еще больше оптимизируют выполнение запросов, так как они обеспечивают эффективную корректировку сегментов.   Дополнительные сведения можно найти в разделе</br> -  [CREATE TABLE (хранилище данных Azure SQL)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=azure-sqldw-latest)</br> -  [CREATE COLUMNSTORE INDEX (Transact-SQL)](/sql/t-sql/statements/create-columnstore-index-transact-sql?view=azure-sqldw-latest).|
 
 ## <a name="march-2019"></a>Марта 2019 г.
 
@@ -73,7 +84,7 @@ ms.locfileid: "66417703"
 
 | Улучшения документации | Сведения |
 | --- | --- |
-|нет | |
+|none | |
 | | |
 
 ## <a name="december-2018"></a>Декабрь 2018 г.
@@ -105,7 +116,7 @@ ms.locfileid: "66417703"
 |**Важные ошибки**|CETAS к сбоям Parquet в классах ресурсов небольшого размера в хранилищах данных DW2000, и многое другое — это исправление правильно определяет пустую ссылку в создать внешние таблицы как путь кода Parquet.<br/><br/>Значение столбца идентификаторов может привести к потере в какой-либо операции CTAS - значение столбца удостоверений могут не сохраняться при CTASed с другой таблицей. В [блог](https://blog.westmonroepartners.com/azure-sql-dw-identity-column-bugs/).<br/><br/>Внутренний сбой в некоторых случаях, когда сеанс закрывается, хотя по-прежнему выполняется запрос — это исправление вызывает исключение InvalidOperationException, если сеанс закрывается, когда запрос по-прежнему выполняется.<br/><br/>(Развертывается в ноябре 2018 года) Пользователи испытывали проблемы повышения производительности, при попытке загрузить несколько небольших файлов из ADLS (поколение 1), с помощью Polybase. -Производительность системы был перегружены во время проверки маркера безопасности AAD. Кэширование маркеров безопасности помогло решить проблемы с производительностью. |
 | | |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [создать хранилище данных SQL](./create-data-warehouse-portal.md)
 
@@ -116,5 +127,5 @@ ms.locfileid: "66417703"
 - [Истории успеха клиентов](https://azure.microsoft.com/case-studies/?service=sql-data-warehouse)
 - [Форум Stack Overflow](https://stackoverflow.com/questions/tagged/azure-sqldw)
 - [Twitter](https://twitter.com/hashtag/SQLDW)
-- [Видеоролики](https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse)
+- [Видео](https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse)
 - [глоссарий Azure Глоссарий](../azure-glossary-cloud-terminology.md)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: windows
 ms.workload: ''
 ms.date: 03/26/2018
 ms.author: robreed
-ms.openlocfilehash: 9f81e2b7537a5ecc6778baa93a1bab23dd30ff8a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 89d652f440e97650b7e7ac63cccc7fde75d7204a
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61475513"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67798282"
 ---
 # <a name="powershell-dsc-extension"></a>Расширение PowerShell DSC
 
@@ -27,7 +27,7 @@ ms.locfileid: "61475513"
 
 Расширение DSC PowerShell для Windows публикуется и поддерживается корпорацией Майкрософт. Расширение отправляет и применяет конфигурацию DSC PowerShell к виртуальной машине Azure. Расширение DSC вызывает DSC PowerShell, чтобы применить полученную конфигурацию DSC к виртуальной машине. В этом документе подробно описаны поддерживаемые платформы, конфигурации и параметры развертывания для расширения виртуальной машины DSC для Windows.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
@@ -72,7 +72,7 @@ Windows Server 2019 г., Windows Server 2016, Windows Server 2012 R2, Windows Se
             "dataCollection": "enable"
         },
         "advancedOptions": {
-            "forcePullAndApply": false
+            "forcePullAndApply": false,
             "downloadMappings": {
                 "specificDependencyKey": "https://myCustomDependencyLocation"
             }
@@ -101,31 +101,31 @@ Windows Server 2019 г., Windows Server 2016, Windows Server 2012 R2, Windows Se
 | ИМЯ | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | apiVersion | 2018-10-01 | date |
-| publisher | Microsoft.Powershell.DSC | string |
-| type | DSC | string |
-| typeHandlerVersion | 2.77 | int |
+| publisher | Microsoft.Powershell.DSC | строка |
+| type | DSC | строка |
+| typeHandlerVersion | 2.77 | ssNoversion |
 
 ### <a name="settings-property-values"></a>Значения свойства параметров
 
-| Name | Тип данных | Описание
+| ИМЯ | Тип данных | Описание
 | ---- | ---- | ---- |
-| settings.wmfVersion | string | Указывает версию Windows Management Framework, которую необходимо установить на виртуальной машине. Если задать для этого свойства значение latest, будет установлена последняя версия Windows Management Framework. Для этого свойства доступны только такие значения: 4.0, 5.0 и latest. Возможные значения зависят от обновлений. По умолчанию используется значение latest. |
-| settings.configuration.url | string | Указывает URL-адрес расположения, из которого можно скачать ZIP-файл конфигурации DSC. Если для доступа к предоставленному URL-адресу требуется маркер SAS, для свойства protectedSettings.configurationUrlSasToken будет необходимо задать значение маркера SAS. Это свойство обязательное, если заданы свойства settings.configuration.script и (или) settings.configuration.function.
-| settings.configuration.script | string | Указывает имя файла скрипта, содержащего определение вашей конфигурации DSC. Этот скрипт должен находиться в корневом каталоге ZIP-файла, скачанного по URL-адресу, указанному в свойстве configuration.url. Это свойство обязательное, если заданы свойства settings.configuration.url и (или) settings.configuration.script.
-| settings.configuration.function | string | Указывает имя вашей конфигурации DSC. Указанную конфигурацию необходимо добавить в скрипт, заданный в свойстве configuration.script. Это свойство обязательное, если заданы свойства settings.configuration.url и (или) settings.configuration.function.
+| settings.wmfVersion | строка | Указывает версию Windows Management Framework, которую необходимо установить на виртуальной машине. Если задать для этого свойства значение latest, будет установлена последняя версия Windows Management Framework. Для этого свойства доступны только такие значения: 4.0, 5.0 и latest. Возможные значения зависят от обновлений. По умолчанию используется значение latest. |
+| settings.configuration.url | строка | Указывает URL-адрес расположения, из которого можно скачать ZIP-файл конфигурации DSC. Если для доступа к предоставленному URL-адресу требуется маркер SAS, для свойства protectedSettings.configurationUrlSasToken будет необходимо задать значение маркера SAS. Это свойство обязательное, если заданы свойства settings.configuration.script и (или) settings.configuration.function.
+| settings.configuration.script | строка | Указывает имя файла скрипта, содержащего определение вашей конфигурации DSC. Этот скрипт должен находиться в корневом каталоге ZIP-файла, скачанного по URL-адресу, указанному в свойстве configuration.url. Это свойство обязательное, если заданы свойства settings.configuration.url и (или) settings.configuration.script.
+| settings.configuration.function | строка | Указывает имя вашей конфигурации DSC. Указанную конфигурацию необходимо добавить в скрипт, заданный в свойстве configuration.script. Это свойство обязательное, если заданы свойства settings.configuration.url и (или) settings.configuration.function.
 | settings.configurationArguments | Collection | Определяет параметры, которые необходимо передать в конфигурацию DSC. Это свойство не будет зашифровано.
-| settings.configurationData.url | string | Указывает URL-адрес расположения, из которого можно скачать файл данных конфигурации (в формате PDS1), используемый в качестве входных данных для вашей конфигурации DSC. Если для доступа к предоставленному URL-адресу требуется маркер SAS, для свойства protectedSettings.configurationDataUrlSasToken будет необходимо задать значение маркера SAS.
-| settings.privacy.dataEnabled | string | Включает или отключает сбор данных телеметрии. Для этого свойства доступны только такие значения: Enable, Disable, '' или $null. Если для этого свойства не задано значение или задано значение NULL, сбор данных телеметрии будет выполняться.
-| settings.advancedOptions.forcePullAndApply | Логический | Этот параметр предназначен для улучшения работы с расширением регистрацию узлов с помощью DSC службы автоматизации Azure.  Если значение равно `$true`, расширение будет ожидать первого выполнения конфигурации берется из службы перед возвратом об успехе или сбое.  Если значение задано значение $false, состояние, возвращаемое расширение будет ссылаться только на ли узел с помощью настройки состояния службы автоматизации Azure успешно зарегистрирован и конфигурации узла не будет выполнено во время регистрации.
+| settings.configurationData.url | строка | Указывает URL-адрес расположения, из которого можно скачать файл данных конфигурации (в формате PDS1), используемый в качестве входных данных для вашей конфигурации DSC. Если для доступа к предоставленному URL-адресу требуется маркер SAS, для свойства protectedSettings.configurationDataUrlSasToken будет необходимо задать значение маркера SAS.
+| settings.privacy.dataEnabled | строка | Включает или отключает сбор данных телеметрии. Для этого свойства доступны только такие значения: Enable, Disable, '' или $null. Если для этого свойства не задано значение или задано значение NULL, сбор данных телеметрии будет выполняться.
+| settings.advancedOptions.forcePullAndApply | Bool | Этот параметр предназначен для улучшения работы с расширением регистрацию узлов с помощью DSC службы автоматизации Azure.  Если значение равно `$true`, расширение будет ожидать первого выполнения конфигурации берется из службы перед возвратом об успехе или сбое.  Если значение задано значение $false, состояние, возвращаемое расширение будет ссылаться только на ли узел с помощью настройки состояния службы автоматизации Azure успешно зарегистрирован и конфигурации узла не будет выполнено во время регистрации.
 | settings.advancedOptions.downloadMappings | Collection | Определяет альтернативные расположения для скачивания зависимостей, таких как WMF и .NET.
 
 ### <a name="protected-settings-property-values"></a>Значения свойств защищенных параметров
 
-| Name | Тип данных | Описание
+| Имя | Тип данных | Описание
 | ---- | ---- | ---- |
-| protectedSettings.configurationArguments | string | Определяет параметры, которые необходимо передать в конфигурацию DSC. Это свойство будет зашифровано. |
-| protectedSettings.configurationUrlSasToken | string | Указывает маркер SAS для доступа к URL-адресу, определенному в свойстве configuration.url. Это свойство будет зашифровано. |
-| protectedSettings.configurationDataUrlSasToken | string | Указывает маркер SAS для доступа к URL-адресу, определенному в свойстве configurationData.url. Это свойство будет зашифровано. |
+| protectedSettings.configurationArguments | строка | Определяет параметры, которые необходимо передать в конфигурацию DSC. Это свойство будет зашифровано. |
+| protectedSettings.configurationUrlSasToken | строка | Указывает маркер SAS для доступа к URL-адресу, определенному в свойстве configuration.url. Это свойство будет зашифровано. |
+| protectedSettings.configurationDataUrlSasToken | строка | Указывает маркер SAS для доступа к URL-адресу, определенному в свойстве configurationData.url. Это свойство будет зашифровано. |
 
 
 ## <a name="template-deployment"></a>Развертывание шаблона

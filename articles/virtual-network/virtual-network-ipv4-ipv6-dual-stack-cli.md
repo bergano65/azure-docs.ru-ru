@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/22/2019
 ms.author: kumud
-ms.openlocfilehash: 12fbf2ae5387ac0a9350cc203f4a6f2587c8dafe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9e591bdf2ff0b6493f092d666d02c2614c907700
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62131012"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67798978"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-in-azure-virtual-network---cli-preview"></a>Развертывание приложения двойной стек IPv6 в виртуальной сети Azure - CLI (Предварительная версия)
 
@@ -33,7 +33,7 @@ ms.locfileid: "62131012"
 
 Если вы решили установить и использовать Azure CLI локально, в этом кратком руководстве необходимо использовать Azure CLI версии 2.0.49 или более поздней версии. Выполните команду `az --version`, чтобы узнать установленную версию. Сведения об установке или обновлении Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Чтобы использовать IPv6 для компонентов виртуальной сети Azure, необходимо настроить подписки с помощью Azure PowerShell следующим образом:
 
 ```azurecli
@@ -166,7 +166,7 @@ az network lb rule create \
 --backend-pool-name dsLbBackEndPool_v4
 
 
-az network lb rule create \ 
+az network lb rule create \
 --lb-name dsLB  \
 --name dsLBrule_v6  \
 --resource-group DsResourceGroup01 \
@@ -264,7 +264,7 @@ az network nsg rule create \
 ```
 
 
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 Создайте виртуальную сеть с помощью команды [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet?view=azure-cli-latest#az-network-vnet-create). В следующем примере создается виртуальная сеть с именем *dsVNET* с подсетями *dsSubNET_v4* и *dsSubNET_v6*:
 
@@ -383,6 +383,6 @@ az vm create \
  az group delete --name DsRG1
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы создали основные подсистемы балансировки нагрузки с двумя внешнюю конфигурацию IP-адрес (IPv4 и IPv6). Вы также создали две виртуальные машины, которые включены сетевые карты с двумя IP-конфигурации (IPV4 + IPv6), которые были добавлены в пул серверной части подсистемы балансировки нагрузки. Дополнительные сведения о поддержке IPv6 в виртуальных сетях Azure см. в разделе [Какова IPv6 для виртуальной сети Azure?](ipv6-overview.md)

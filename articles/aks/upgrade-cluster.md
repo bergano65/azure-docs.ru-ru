@@ -2,17 +2,17 @@
 title: Обновление кластера службы Azure Kubernetes (AKS)
 description: Сведения об обновлении кластера Службы Azure Kubernetes (AKS)
 services: container-service
-author: iainfoulds
+author: mlearned
 ms.service: container-service
 ms.topic: article
 ms.date: 05/31/2019
-ms.author: iainfou
-ms.openlocfilehash: 2cadd4b33cb52307599ce1e83eee8370ef9850fe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: mlearned
+ms.openlocfilehash: dd88b5a044fe495da374178be8774f45bdd30f61
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66692781"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67614063"
 ---
 # <a name="upgrade-an-azure-kubernetes-service-aks-cluster"></a>Обновление кластера службы Azure Kubernetes (AKS)
 
@@ -26,7 +26,7 @@ AKS кластеры, использующие несколько пулов у�
 
 ## <a name="check-for-available-aks-cluster-upgrades"></a>Проверка доступных обновлений кластера AKS
 
-С помощью команды [az aks get-upgrades][az-aks-get-upgrades] проверьте выпуски Kubernetes, доступные для кластера. В следующем примере выполняется проверка доступных обновлений для кластера *myAKSCluster* в группе ресурсов *myResourceGroup*.
+Чтобы проверить, какие выпуски Kubernetes доступны для кластера, используйте [az aks get обновления][az-aks-get-upgrades] команды. В следующем примере выполняется проверка доступных обновлений для кластера *myAKSCluster* в группе ресурсов *myResourceGroup*.
 
 ```azurecli-interactive
 az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster --output table
@@ -47,7 +47,7 @@ default  myResourceGroup  1.11.9         1.11.9           1.12.7, 1.12.8
 
 ## <a name="upgrade-an-aks-cluster"></a>Обновление кластера AKS
 
-С помощью команды [az aks upgrade][az-aks-upgrade] обновите кластер AKS, используя список доступных версий. В процессе обновления AKS добавляет новый узел в кластер под управлением указанной версии Kubernetes, затем внимательно [cordon и продвижения] [ kubernetes-drain] один из старого узлов, чтобы свести к минимуму нарушения работы приложения. Когда новый узел утверждается как запущенные модули приложения, удаляется старый узел. Этот процесс повторяется до обновления всех узлов в кластере.
+Список доступных версий для кластера AKS, использовать [обновление az aks][az-aks-upgrade] command to upgrade. During the upgrade process, AKS adds a new node to the cluster that runs the specified Kubernetes version, then carefully [cordon and drains][kubernetes-drain] один из старого узлов, чтобы свести к минимуму нарушения работы запущенных приложений. Когда новый узел утверждается как запущенные модули приложения, удаляется старый узел. Этот процесс повторяется до обновления всех узлов в кластере.
 
 В следующем примере обновляется кластер до версии *1.12.8*:
 
@@ -57,7 +57,7 @@ az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes
 
 Время, требуемое для выполнения обновления кластера, зависит от количества узлов.
 
-Чтобы проверить, что обновление выполнено успешно, введите команду [az aks show][az-aks-show].
+Чтобы убедиться в успешности обновления, используйте [az aks show][az-aks-show] команды:
 
 ```azurecli-interactive
 az aks show --resource-group myResourceGroup --name myAKSCluster --output table
@@ -71,12 +71,12 @@ Name          Location    ResourceGroup    KubernetesVersion    ProvisioningStat
 myAKSCluster  eastus      myResourceGroup  1.12.8               Succeeded            myaksclust-myresourcegroup-19da35-90efab95.hcp.eastus.azmk8s.io
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье было показано, как выполнить обновление существующего кластера AKS. Дополнительные сведения о развертывании AKS и управлении ею см. в следующей статье.
 
 > [!div class="nextstepaction"]
-> [Руководство. Подготовка приложения для Службы Azure Kubernetes (AKS)][aks-tutorial-prepare-app].
+> [Учебники по AKS][aks-tutorial-prepare-app]
 
 <!-- LINKS - external -->
 [kubernetes-drain]: https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/

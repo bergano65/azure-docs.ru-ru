@@ -15,14 +15,14 @@ ms.date: 11/08/2018
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf665362e2d20f26c17e8a4ae9da29fc30cb47ce
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 71c342ede77349b3f6c22093e5877ad5f5ce6549
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67481290"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807684"
 ---
-# <a name="how-to-deploy-the-access-panel-extension-for-internet-explorer-using-group-policy"></a>Практическое руководство: Развертывание расширения панели доступа для Internet Explorer с помощью групповой политики
+# <a name="how-to-deploy-the-access-panel-extension-for-internet-explorer-using-group-policy"></a>Практическое руководство. Развертывание расширения панели доступа для Internet Explorer с помощью групповой политики
 
 В этом руководстве описывается удаленная установка расширения панели доступа для Internet Explorer на компьютерах пользователей с помощью групповой политики. Это расширение является обязательным для пользователей Internet Explorer, выполняющих вход в приложения, для которых настроен [единый вход по паролю](what-is-single-sign-on.md#password-based-sso).
 
@@ -30,7 +30,7 @@ ms.locfileid: "67481290"
 
 Также существует расширение панели доступа для браузеров [Chrome](https://go.microsoft.com/fwLink/?LinkID=311859) и [Firefox](https://go.microsoft.com/fwLink/?LinkID=626998). Для их установки права администратора не требуются.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Вы уже настроили [доменные службы Active Directory](https://msdn.microsoft.com/library/aa362244%28v=vs.85%29.aspx)и подключили компьютеры пользователей к домену.
 * У вас есть разрешение на изменение параметров для редактирования объекта групповой политики. По умолчанию это разрешение имеют члены следующих групп безопасности: "Администраторы домена", "Администраторы предприятия" и "Владельцы-создатели групповой политики". [Подробнее.](https://technet.microsoft.com/library/cc781991%28v=ws.10%29.aspx)
@@ -43,9 +43,11 @@ ms.locfileid: "67481290"
 1. В окне **диспетчера серверов** выберите пункт **Файловые службы и службы хранилища**.
 
     ![Откройте «Файловые службы и службы хранилища»](./media/deploy-access-panel-browser-extension/files-services.png)
+
 1. Перейдите на вкладку **Общие ресурсы** . Затем выберите **Задачи** > **Новый общий ресурс...**
 
-    ![Откройте «Файловые службы и службы хранилища»](./media/deploy-access-panel-browser-extension/shares.png)
+    ![Снимок экрана показано, где можно найти новую общую папку на экране задачи](./media/deploy-access-panel-browser-extension/shares.png)
+
 1. Выполните все шаги **мастера создания общих ресурсов** и настройте разрешения, позволяющие использовать ресурс с компьютеров пользователей. [Дополнительные сведения об общих ресурсах.](https://technet.microsoft.com/library/cc753175.aspx)
 1. Скачайте следующий пакет установщика Microsoft Windows (MSI-файл): [Access Panel Extension.msi](https://account.activedirectory.windowsazure.com/Applications/Installers/x64/Access%20Panel%20Extension.msi).
 1. Скопируйте пакет установщика в выбранное расположение в общем ресурсе.
@@ -80,15 +82,16 @@ ms.locfileid: "67481290"
 
    * `Computer Configuration/Policies/Software Settings/`
    * `User Configuration/Policies/Software Settings/`
+
 1. Щелкните правой кнопкой мыши пункт **Установка программного обеспечения**, а затем выберите **Создать** > **Пакет…**
 1. Перейдите к общей папке, в которую был помещен пакет установщика на этапе 1 ([ Создание точки распространения](#step-1-create-the-distribution-point)), выберите MSI-файл и нажмите кнопку **Открыть**.
 
    > [!IMPORTANT]
    > Если общая папка расположена на том же сервере, убедитесь, что вы обращаетесь к MSI-файлу через сетевой, а не локальный путь.
 
-    ![Выберите пакет установки из общей папки.](./media/deploy-access-panel-browser-extension/select-package.png)
+    ![Выберите пакет установки из общей папки](./media/deploy-access-panel-browser-extension/select-package.png)
 
-1. В окне запроса **Развертывание программ** выберите элемент **Назначено** для выбранного вами метода развертывания. Нажмите кнопку **ОК**.
+1. В окне запроса **Развертывание программ** выберите элемент **Назначено** для выбранного вами метода развертывания. Затем нажмите кнопку **ОК**.
 
 Теперь расширение будет развернуто для выбранного организационного подразделения. [Дополнительные сведения о групповой политике установки программного обеспечения.](https://technet.microsoft.com/library/cc738858%28v=ws.10%29.aspx)
 
@@ -100,6 +103,7 @@ ms.locfileid: "67481290"
 
    * `Computer Configuration/Policies/Administrative Templates/Windows Components/Internet Explorer/Security Features/Add-on Management`
    * `User Configuration/Policies/Administrative Templates/Windows Components/Internet Explorer/Security Features/Add-on Management`
+
 1. Щелкните правой кнопкой мыши **Список надстроек** и выберите пункт **Изменить**.
 
     ![«Список надстроек» щелкните правой кнопкой мыши и выберите «Изменить»](./media/deploy-access-panel-browser-extension/edit-add-on-list.png)
@@ -111,8 +115,8 @@ ms.locfileid: "67481290"
 1. В окне **Вывод содержания** выполните следующие действия.
 
    1. Скопируйте и вставьте в первый столбец (поле **Имя значения**) следующий идентификатор класса: `{030E9A3F-7B18-4122-9A60-B87235E4F59E}`.
-   2. Во втором столбце (поле **Значение**) введите следующее значение: `1`.
-   3. Нажмите кнопку **ОК**, чтобы закрыть окно **Вывод содержания**.
+   1. Во втором столбце (поле **Значение**) введите следующее значение: `1`.
+   1. Нажмите кнопку **ОК**, чтобы закрыть окно **Вывод содержания**.
 
       ![Заполните значения, указанные на предыдущем шаге](./media/deploy-access-panel-browser-extension/show-contents.png)
 
@@ -160,7 +164,7 @@ ms.locfileid: "67481290"
 1. После перезагрузки откройте браузер **Internet Explorer**. В правом верхнем углу окна щелкните **Сервис** (значок шестеренки), а затем выберите пункт **Настроить надстройки**.
 1. В окне **Управление надстройками** убедитесь, что **расширение панели доступа** установлено и для параметра **Состояние** задано значение **Включено**.
 
-   ![Убедитесь, что расширение панели доступа установлено и включено.](./media/deploy-access-panel-browser-extension/verify-install.png)
+   ![Убедитесь, что расширение панели доступа установлен и включен](./media/deploy-access-panel-browser-extension/verify-install.png)
 
 ## <a name="learn-more"></a>Подробнее
 

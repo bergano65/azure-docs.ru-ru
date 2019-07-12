@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 04/23/2019
-ms.openlocfilehash: 8699533cd64e6b1778c5e78b8c51eb1efe518c75
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 81f14fa54303911a34b334f41b5f7f6b0f9f394b
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67126210"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67720628"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory
 
@@ -34,6 +34,8 @@ ms.locfileid: "67126210"
 Включение доменных служб Azure AD является необходимым предварительным условием, которое нужно выполнить, прежде чем вы сможете создать кластер HDInsight с ESP. Дополнительные сведения см. в разделе [Включение доменных служб Azure Active Directory с помощью портала Azure](../../active-directory-domain-services/create-instance.md). 
 
 Если доменные службы Azure AD включены, все пользователи и объекты начинают синхронизацию из Azure Active Directory (AAD) в Azure AD DS по умолчанию. Продолжительность операции синхронизации зависит от числа объектов в Azure AD. Синхронизация сотен тысяч объектов может занять несколько дней. 
+
+Доменное имя, которое можно использовать с Azure AD DS должны быть 39 символов или меньше, для работы с HDInsight.
 
 Вы можете синхронизировать только группы, которым требуется доступ к кластерам HDInsight. Этот вариант синхронизации только определенных групп называется *синхронизацией определенных объектов*. Инструкции см. в статье [Configure Scoped Synchronization from Azure AD to your managed domain](../../active-directory-domain-services/scoped-synchronization.md) (Настройка синхронизации определенных объектов из Azure AD в управляемый домен).
 
@@ -118,7 +120,7 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 
 ![Конфигурация доменных служб Active Directory в Azure HDInsight с корпоративным пакетом безопасности](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-identity-managed-identity.png).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Сведения о настройке политик Hive и выполнении запросов Hive см. в статье [Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности](apache-domain-joined-run-hive.md).
 * Сведения о подключении к кластерам HDInsight с корпоративным пакетом безопасности с использованием SSH см. в разделе [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).

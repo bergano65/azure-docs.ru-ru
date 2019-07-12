@@ -2,24 +2,24 @@
 title: включение файла
 description: включение файла
 services: virtual-machines
-author: jpconnock
+author: singhkays
 ms.service: virtual-machines
 ms.topic: include
 ms.date: 05/18/2018
-ms.author: jeconnoc
+ms.author: kasing
 ms.custom: include file
-ms.openlocfilehash: 74496cd3d4cd01be326baae870b075eb923983af
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: c4f9334a91e99c92e74af060d84308a8aaccc6e7
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185262"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67671277"
 ---
 # <a name="frequently-asked-questions-about-classic-to-azure-resource-manager-migration"></a>Часто задаваемые вопросы о миграции из классической модели в модель Azure Resource Manager
 
 ## <a name="does-this-migration-plan-affect-any-of-my-existing-services-or-applications-that-run-on-azure-virtual-machines"></a>Влияет ли этот план миграции на существующие службы или приложения, которые выполняются на виртуальных машинах Azure? 
 
-№ Виртуальные машины (классические) — это службы, которые полностью поддерживаются в общедоступной версии. Можно продолжать использовать эти ресурсы, чтобы расширить занимаемый объем в Microsoft Azure.
+Нет. Виртуальные машины (классические) — это службы, которые полностью поддерживаются в общедоступной версии. Можно продолжать использовать эти ресурсы, чтобы расширить занимаемый объем в Microsoft Azure.
 
 ## <a name="what-happens-to-my-vms-if-i-dont-plan-on-migrating-in-the-near-future"></a>Что произойдет с моей виртуальной машиной, если я не планирую перенос в ближайшем будущем? 
 
@@ -43,7 +43,7 @@ ms.locfileid: "67185262"
 
 ## <a name="do-i-have-to-buy-another-express-route-circuit-if-i-have-to-use-iaas-under-resource-manager"></a>Нужно ли приобретать еще один канал ExpressRoute, если нужно использовать ресурсы IaaS в модели Resource Manager? 
 
-№ Мы недавно включили [перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager](../articles/expressroute/expressroute-move.md). Поэтому при наличии существующего канала ExpressRoute не нужно приобретать еще один.
+Нет. Мы недавно включили [перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager](../articles/expressroute/expressroute-move.md). Поэтому при наличии существующего канала ExpressRoute не нужно приобретать еще один.
 
 ## <a name="what-if-i-had-configured-role-based-access-control-policies-for-my-classic-iaas-resources"></a>Что произойдет, если для классических ресурсов IaaS настроено управление доступом на основе ролей? 
 
@@ -82,7 +82,7 @@ ms.locfileid: "67185262"
 
 ## <a name="what-if-i-dont-like-the-names-of-the-resources-that-the-platform-chose-during-migration"></a>Что делать, если мне не нравятся имена, которые платформа выбрала для ресурсов во время миграции? 
 
-Имена всех ресурсов, которые указаны явным образом в классической модели развертывания, при миграции будут сохранены. В некоторых случаях будут создаваться новые ресурсы. Например, для каждой виртуальной машины создается сетевой интерфейс. В данный момент возможность управления именами этих новых ресурсов, создаваемых во время миграции, не поддерживается. Проголосуйте за эту функцию на [форуме отзывов об Azure](http://feedback.azure.com).
+Имена всех ресурсов, которые указаны явным образом в классической модели развертывания, при миграции будут сохранены. В некоторых случаях будут создаваться новые ресурсы. Например, для каждой виртуальной машины создается сетевой интерфейс. В данный момент возможность управления именами этих новых ресурсов, создаваемых во время миграции, не поддерживается. Проголосуйте за эту функцию на [форуме отзывов об Azure](https://feedback.azure.com).
 
 ## <a name="can-i-migrate-expressroute-circuits-used-across-subscriptions-with-authorization-links"></a>Можно ли перенести каналы ExpressRoute, используемые в подписках со ссылками авторизации? 
 

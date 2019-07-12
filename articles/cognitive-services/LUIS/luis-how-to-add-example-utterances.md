@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: diberry
-ms.openlocfilehash: dd8ed146c507d8d39ba99c6573321ee80bc891c9
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: af43697dc864019c6fd86b041e231a54d8aa8b40
+ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442562"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67827490"
 ---
 # <a name="add-an-entity-to-example-utterances"></a>Добавление сущности к примерам высказываний 
 
@@ -45,7 +45,7 @@ Are there any SQL server jobs?
     > [!NOTE]
     > Во время выбора слов, которые нужно отметить в качестве сущностей, выполните следующие действия.
     > * Если это одно слово — просто выберите его. 
-    > * Если это словосочетание — выделите всю фразу от начала до конца.
+    > * В наборе два или несколько слов выберите первое слово и последнее слово.
 
 1. Во всплывающем окне **What type of entity do you want to create?** (Какой тип сущности необходимо создать?) проверьте имя сущности, выберите **Простой** тип сущности и щелкните **Done** (Готово).
 
@@ -157,6 +157,6 @@ Are there any SQL server jobs?
 
 После добавления, изменения и удаления высказываний выполните [обучение](luis-how-to-train.md) и [публикацию](luis-how-to-publish-app.md) приложения, чтобы применить изменения к запросам конечной точки. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После добавления меток фразы в вашей **Intents**, теперь вы можете создать [составной сущности](luis-how-to-add-entities.md).

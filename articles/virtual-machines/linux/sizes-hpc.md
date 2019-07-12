@@ -4,7 +4,7 @@ description: Список различных размеров виртуальн
 services: virtual-machines-linux
 documentationcenter: ''
 author: jonbeck7
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 10/12/2018
 ms.author: jonbeck
-ms.openlocfilehash: 003a14174ff65bab253f27a458d4f3e2c0a1a6db
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 847f25d9be1a8654bbc0435d7874acb0ff793304
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67070000"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67695605"
 ---
 # <a name="high-performance-compute-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для высокопроизводительных вычислений
 
@@ -56,7 +56,15 @@ Azure Marketplace состоит из многих дистрибутивов Li
   "typeHandlerVersion": "1.0",
   } 
   ```
- 
+  
+  Следующая команда устанавливает модуль InfiniBandDriverLinux последней версии 1.0 на всех виртуальных машинах с поддержкой RDMA, в существующий масштабируемый набор с именем *myVMSS* развернута в группе ресурсов с именем *myResourceGroup*:
+  ```powershell
+  $VMSS = Get-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myVMSS"
+  Add-AzVmssExtension -VirtualMachineScaleSet $VMSS -Name "InfiniBandDriverLinux" -Publisher "Microsoft.HpcCompute" -Type "InfiniBandDriverLinux" -TypeHandlerVersion "1.0"
+  Update-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "MyVMSS" -VirtualMachineScaleSet $VMSS
+  Update-AzVmssInstance -ResourceGroupName "myResourceGroup" -VMScaleSetName "myVMSS" -InstanceId "*"
+  ```
+  
   > [!NOTE]
   > В образах HPC на основе CentOS обновления ядра отключены в файле конфигурации **yum** . Это потому, что драйверы Linux RDMA распространяются в виде пакета RPM и обновления драйверов могут не работать, если обновления ядра.
   >
@@ -83,6 +91,8 @@ Azure предоставляет несколько вариантов для с
 
 * **Масштабируемые наборы виртуальных машин** — в масштабируемый набор виртуальных машин задано, убедитесь, что вы ограниченного развертывания одной группы размещения. Например, в шаблоне Resource Manager задайте значение `true` для свойства `singlePlacementGroup`. 
 
+* **MPI между виртуальными машинами** — Если связи MPI при необходимости между виртуальными машинами (ВМ), убедитесь, что виртуальные машины находятся в одной группе доступности или виртуальной машины, так же масштабируемого набора.
+
 * **Azure CycleCloud**. Создайте кластер HPC в [Azure CycleCloud](/azure/cyclecloud/), чтобы запустить задания MPI на узлах Linux.
 
 * **Пакетная служба Azure**. Создайте пул [пакетной службы Azure](/azure/batch/) для выполнения рабочих нагрузок MPI на вычислительных узлах Linux. Дополнительные сведения см. в статье [Использование экземпляров с поддержкой RDMA или графического процессора (GPU) в пулах пакетной службы](../../batch/batch-pool-compute-intensive-sizes.md). Чтобы запустить рабочие нагрузки на основе контейнера в пакетной службе, ознакомьтесь с проектом [Batch Shipyard](https://github.com/Azure/batch-shipyard).
@@ -105,7 +115,7 @@ Azure предоставляет несколько вариантов для с
 - [GPU](../windows/sizes-gpu.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о том, как настроить, оптимизировать и масштабировать [рабочих нагрузок HPC](../workloads/hpc/configure.md) в Azure.
 - Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.

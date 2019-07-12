@@ -4,7 +4,7 @@ description: Использование последовательной кон�
 services: virtual-machines-linux
 documentationcenter: ''
 author: asinn826
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines-linux
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
-ms.openlocfilehash: a249cf96981957de2c445079c0172b9c0c2ce543
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5ff87e761bbe5243a478a00ca90d4be03fdbc6d4
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60799473"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706564"
 ---
 # <a name="use-serial-console-to-access-grub-and-single-user-mode"></a>Использование последовательной консоли для доступа к GRUB и однопользовательскому режиму
 GRUB — это универсальный загрузчик с титулом GRand. GRUB, помимо всего прочего, дает возможность изменить конфигурацию для загрузки в однопользовательский режим.
@@ -183,7 +183,7 @@ SLES автоматически переключается в аварийную
 ### <a name="single-user-mode-in-oracle-linux"></a>Однопользовательский режим в Oracle Linux
 Чтобы включить однопользовательский режим в Oracle Linux, выполните предложенные выше инструкции для RHEL.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * См. страницу документации по работе с [последовательной консолью Linux](serial-console.md).
 * Используйте последовательную консоль для [вызовов SysRq и NMI](serial-console-nmi-sysrq.md).
 * Последовательная консоль также доступна для виртуальных машин [Windows](../windows/serial-console.md).

@@ -3,18 +3,17 @@ title: Управление модули в службе автоматизац�
 description: В этой статье описывается управление модули в службе автоматизации Azure
 services: automation
 ms.service: automation
-ms.subservice: shared-resources
 author: bobbytreed
 ms.author: robreed
 ms.date: 06/05/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 69817d1412aa13d0e7983aa3ad27c15e59185432
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: cd085164fc9804e0c1c822df1c72d3ef94093a07
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478171"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672785"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Управление модули в службе автоматизации Azure
 
@@ -233,7 +232,7 @@ Remove-AzureRmAutomationModule -Name <moduleName> -AutomationAccountName <automa
 |Имя модуля|Version|
 |---|---|
 | AuditPolicyDsc | 1.1.0.0 |
-| Таблицы Azure | 1.0.3 |
+| Azure | 1.0.3 |
 | Azure.Storage; | 1.0.3 |
 | AzureRM.Automation | 1.0.3 |
 | AzureRM.Compute | 1.2.1 |
@@ -257,6 +256,6 @@ Remove-AzureRmAutomationModule -Name <moduleName> -AutomationAccountName <automa
 | xPowerShellExecutionPolicy | 1.1.0.0 |
 | xRemoteDesktopAdmin | 1.1.0.0 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о создании модулей PowerShell см. в статье [Writing a Windows PowerShell Module](https://msdn.microsoft.com/library/dd878310%28v=vs.85%29.aspx) (Написание модуля Windows PowerShell).

@@ -11,14 +11,15 @@ ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: article
 ms.date: 03/10/2019
-ms.author: cephalin;byvinyal
+ms.author: cephalin
+ms.reviewer: byvinyal
 ms.custom: seodec18
-ms.openlocfilehash: b054e56afdec65ac000b0dc18a0c1a3fd845b4c3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 65e5d6bacc67c64fa21268a853dc9c9d9b447da7
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65955977"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67617185"
 ---
 # <a name="configure-deployment-credentials-for-azure-app-service"></a>Настройка учетных данных развертывания службы приложений Azure
 [Служба приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714) поддерживает два типа учетных данных для [развертывания локальной системы Git](deploy-local-git.md) и [развертывания FTP(S)](deploy-ftp.md). Эти учетные данные не так же, как учетные данные Azure Active Directory.
@@ -71,6 +72,6 @@ ms.locfileid: "65955977"
 
 Чтобы сбросить учетные данные на уровне приложения, щелкните **Сбросить учетные данные** в том же диалоговом окне.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как использовать эти учетные данные для развертывания приложения из [локального репозитория Git](deploy-local-git.md) или с помощью [FTP(S)](deploy-ftp.md).

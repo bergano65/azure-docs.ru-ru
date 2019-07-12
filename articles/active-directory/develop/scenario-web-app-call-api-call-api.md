@@ -15,12 +15,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dd44dda06b2f6fc48538f2fb74c0bf8e04d0362b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3624f4e859081e53ee27b6f8415eb3f9b5a2a5fa
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65074640"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67785461"
 ---
 # <a name="web-app-that-calls-web-apis---call-a-web-api"></a>Веб-приложение, которое вызывает веб-API - вызов веб-API
 
@@ -28,7 +28,18 @@ ms.locfileid: "65074640"
 
 ## <a name="aspnet-core"></a>ASP.NET Core
 
-Ниже приведен упрощенный код действия `HomeController`. Этот код получает токен для вызова Microsoft Graph. Этот код времени была добавлена, показывающий, как для вызова Microsoft Graph, как REST API.
+Ниже приведен упрощенный код действия `HomeController`. Этот код получает токен для вызова Microsoft Graph. Этот код времени была добавлена, показывающий, как для вызова Microsoft Graph, как REST API. URL-адрес для graph API предоставляется в `appsettings.json` файлов и чтение в переменной с именем `webOptions`:
+
+```JSon
+{
+  "AzureAd": {
+    "Instance": "https://login.microsoftonline.com/",
+    ...
+  },
+  ...
+  "GraphApiUrl": "https://graph.microsoft.com"
+}
+```
 
 ```CSharp
 public async Task<IActionResult> Profile()
@@ -76,7 +87,7 @@ public async Task<IActionResult> Profile()
 >
 > Наиболее Azure web API предоставляют пакет SDK, который упрощает вызов этого метода. Это также происходит из Microsoft Graph. Вы узнаете, в следующей статье где можно найти руководства, иллюстрирующие эти аспекты.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Переместить в рабочую среду](scenario-web-app-call-api-production.md)

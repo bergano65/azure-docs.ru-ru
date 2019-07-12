@@ -16,12 +16,12 @@ ms.author: lizross
 ms.reviewer: dhanyahk
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 833a22635c1d53dce9086aa3e11220d5868a302c
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: af215c80148010d526c951e7a5128d6e4622b1cd
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67471990"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67625566"
 ---
 # <a name="whats-new-in-azure-active-directory"></a>Новые возможности Azure Active Directory
 
@@ -61,7 +61,7 @@ Azure AD усовершенствуется на постоянной основ
 
 В июне 2019 г. мы добавили поддержку этих 22 новых приложений с федерацией в коллекцию приложений:
 
-[Набор средств Azure AD SAML](https://docs.microsoft.com/azure/active-directory/saas-apps/saml-toolkit-tutorial), [Otsuka Shokai (大塚商会)](https://docs.microsoft.com/azure/active-directory/saas-apps/otsuka-shokai-tutorial), [ANAQUA](https://docs.microsoft.com/azure/active-directory/saas-apps/anaqua-tutorial), [Azure VPN-клиента](https://portal.azure.com/), [ExpenseIn](https://docs.microsoft.com/azure/active-directory/saas-apps/expensein-tutorial), [ Вспомогательный вспомогательный](https://docs.microsoft.com/azure/active-directory/saas-apps/helper-helper-tutorial), [Costpoint](https://docs.microsoft.com/azure/active-directory/saas-apps/costpoint-tutorial), [GlobalOne](https://docs.microsoft.com/azure/active-directory/saas-apps/globalone-tutorial), [Mercedes Benz автомобиль Office](https://me.secure.mercedes-benz.com/), [Skore](https://app.justskore.it/), [ Oracle облачной инфраструктуры консоли](https://docs.microsoft.com/azure/active-directory/saas-apps/oracle-cloud-tutorial), [проверку подлинности CyberArk SAML](https://docs.microsoft.com/azure/active-directory/saas-apps/cyberark-saml-authentication-tutorial), [Scrible Edu](https://www.scrible.com/sign-in/#/create-account), [PandaDoc](https://docs.microsoft.com/azure/active-directory/saas-apps/pandadoc-tutorial), [Perceptyx ](https://apexdata.azurewebsites.net/docs.microsoft.com/azure/active-directory/saas-apps/perceptyx-tutorial), [Proptimise ОС](https://proptimise.co.uk/property-software/), [Vtiger CRM (SAML)](https://docs.microsoft.com/azure/active-directory/saas-apps/vtiger-crm-saml-tutorial), диспетчер доступа к Oracle для Oracle розничной торговли, розничных продаж, диспетчер доступа к Oracle для Oracle E-Business Suite в Oracle IDCS для E-Business Suite, Oracle IDCS для PeopleSoft, Oracle IDCS для JD Edwards
+[Набор средств Azure AD SAML](https://docs.microsoft.com/azure/active-directory/saas-apps/saml-toolkit-tutorial), [Otsuka Shokai (大塚商会)](https://docs.microsoft.com/azure/active-directory/saas-apps/otsuka-shokai-tutorial), [ANAQUA](https://docs.microsoft.com/azure/active-directory/saas-apps/anaqua-tutorial), [Azure VPN-клиента](https://portal.azure.com/), [ExpenseIn](https://docs.microsoft.com/azure/active-directory/saas-apps/expensein-tutorial), [ Вспомогательный вспомогательный](https://docs.microsoft.com/azure/active-directory/saas-apps/helper-helper-tutorial), [Costpoint](https://docs.microsoft.com/azure/active-directory/saas-apps/costpoint-tutorial), [GlobalOne](https://docs.microsoft.com/azure/active-directory/saas-apps/globalone-tutorial), [Mercedes Benz автомобиль Office](https://me.secure.mercedes-benz.com/), [Skore](https://app.justskore.it/), [ Oracle облачной инфраструктуры консоли](https://docs.microsoft.com/azure/active-directory/saas-apps/oracle-cloud-tutorial), [проверку подлинности CyberArk SAML](https://docs.microsoft.com/azure/active-directory/saas-apps/cyberark-saml-authentication-tutorial), [Scrible Edu](https://www.scrible.com/sign-in/#/create-account), [PandaDoc](https://docs.microsoft.com/azure/active-directory/saas-apps/pandadoc-tutorial), [Perceptyx ](https://apexdata.azurewebsites.net/docs.microsoft.com/azure/active-directory/saas-apps/perceptyx-tutorial), [Proptimise ОС](https://proptimise.co.uk/software/), [Vtiger CRM (SAML)](https://docs.microsoft.com/azure/active-directory/saas-apps/vtiger-crm-saml-tutorial), диспетчер доступа к Oracle для Oracle розничной торговли, розничных продаж, диспетчер доступа к Oracle для Oracle E-Business Suite в Oracle IDCS для E-Business Suite, Oracle IDCS для PeopleSoft, Oracle IDCS для JD Edwards
 
 Дополнительные сведения об этих приложениях см. в статье [Интеграция приложений SaaS с Azure Active Directory](https://aka.ms/appstutorial). Дополнительные сведения о том, как добавить приложение в коллекцию приложений Azure AD см. в [этой статье](https://aka.ms/azureadapprequest).
 
@@ -292,7 +292,7 @@ Azure AD усовершенствуется на постоянной основ
 ### <a name="administrators-can-now-use-conditional-access-for-the-combined-registration-process-public-preview"></a>Администраторы теперь могут использовать условного доступа для процесса регистрации объединенный (Предварительная версия)
 
 **Тип:** Новая функция  
-**Категория службы.** условный доступ;  
+**Категория службы.** Условный доступ  
 **Возможности продукта.** безопасность и защита идентификации  
 
 Администраторы теперь могут создавать политики условного доступа для использования на странице объединенного регистрации. Это включает в себя применение политики, чтобы разрешить регистрацию, если:
@@ -405,7 +405,7 @@ Azure AD усовершенствуется на постоянной основ
 
 **Тип:** Измененная функция  
 **Категория службы:** AD Sync  
-**Возможности продукта.** платформа
+**Возможности продукта.** Платформа
 
 Azure AD Connect находится в процессе перехода наших серверов оповещения по электронной почте, потенциально, показывающий некоторые клиенты нового сообщения электронной почты отправителя. Чтобы решить эту проблему, необходимо добавить `azure-noreply@microsoft.com` в список разрешений в вашей организации или вы не сможете продолжить получать важные оповещения из Office 365, Azure или служб синхронизации.
 
@@ -415,7 +415,7 @@ Azure AD Connect находится в процессе перехода наш�
 
 **Тип:** исправление  
 **Категория службы:** AD Sync  
-**Возможности продукта.** платформа
+**Возможности продукта.** Платформа
 
 Теперь можно успешно изменить суффикс имени участника-пользователя пользователя из одного федеративного домена в другой домен федеративные в Azure AD Connect. Это исправление означает, что больше не должны получить сообщение об ошибке FederatedDomainChangeError во время цикла синхронизации или получать уведомления по электронной почте сообщение о том, «не удается обновить этот объект в Azure Active Directory, так как атрибут [ FederatedUser.UserPrincipalName], является недопустимым. Обновите значение в локальных службах каталогов».
 
@@ -426,7 +426,7 @@ Azure AD Connect находится в процессе перехода наш�
 ### <a name="increased-security-using-the-app-protection-based-conditional-access-policy-in-azure-ad-public-preview"></a>Повышение безопасности с использованием политики условного доступа на основе защиты приложений в Azure AD (Предварительная версия)
 
 **Тип:** Новая функция  
-**Категория службы.** условный доступ;  
+**Категория службы.** Условный доступ  
 **Возможности продукта.** безопасность и защита идентификации
 
 Условный доступ на основе защиты приложения теперь доступна с помощью **требуют защиты приложений** политики. Эта новая политика помогает повысить безопасность вашей организации за счет предотвращения:
@@ -444,7 +444,7 @@ Azure AD Connect находится в процессе перехода наш�
 ### <a name="new-support-for-azure-ad-single-sign-on-and-conditional-access-in-microsoft-edge-public-preview"></a>Новая поддержка Azure AD единого входа и условного доступа в Microsoft Edge (Предварительная версия)
 
 **Тип:** Новая функция  
-**Категория службы.** условный доступ;  
+**Категория службы.** Условный доступ  
 **Возможности продукта.** безопасность и защита идентификации
 
 Мы усовершенствовали поддержке Microsoft Edge, включая предоставление новой поддержки для Azure AD единого входа и условного доступа Azure AD. Если вы ранее использовали управляемый браузер Microsoft Intune, теперь можно использовать Microsoft Edge вместо этого.
@@ -558,7 +558,7 @@ Azure AD Connect находится в процессе перехода наш�
 ### <a name="new-warnings-and-guidance-to-help-prevent-accidental-administrator-lockout-from-misconfigured-conditional-access-policies"></a>Новые предупреждения и рекомендации для предотвращения случайного администратора блокировки из неправильной настройкой политики условного доступа
 
 **Тип:** Измененная функция  
-**Категория службы.** условный доступ;  
+**Категория службы.** Условный доступ  
 **Возможности продукта.** безопасность и защита идентификации
 
 Чтобы администраторы не блокировали случайно себя за пределы их собственными клиентами через неправильной настройкой политики условного доступа, мы создали новые предупреждения и обновленных рекомендаций на портале Azure. Дополнительные сведения о новое руководство, см. в разделе [Каковы зависимости служб в Azure Active Directory условного доступа](https://docs.microsoft.com/azure/active-directory/conditional-access/service-dependencies).
@@ -598,7 +598,7 @@ Azure AD Connect находится в процессе перехода наш�
 ### <a name="breaking-change-updates-to-condition-evaluation-by-exchange-activesync-eas"></a>Критическое изменение. Обновления для вычисления условия с Exchange ActiveSync (EAS)
 
 **Тип:** план изменений  
-**Категория службы:** условный доступ;  
+**Категория службы:** Условный доступ  
 **Возможности продукта:** Контроль доступа
 
 Мы обновляем как Exchange ActiveSync (EAS) вычисляет следующих условий:

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 44f16b3334b991e071fa85ca4cffbc0837f0a6ec
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ffce8a2bd8a04e73acdeac037be0b10ba1a9a887
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66244433"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672389"
 ---
 # <a name="attach-a-cognitive-services-resource-with-a-skillset-in-azure-search"></a>Подключение ресурса Cognitive Services с набором навыков в службе "Поиск Azure" 
 
@@ -42,7 +42,7 @@ ms.locfileid: "66244433"
 
 1. Откройте мастер импорта данных:
 
-   ![Откройте мастер импорта данных](media/search-get-started-portal/import-data-cmd2.png "открыть мастер импорта данных")
+   ![Откройте мастер импорта данных](media/search-get-started-portal/import-data-cmd.png "открыть мастер импорта данных")
 
 1. Выбор источника данных и по-прежнему **добавить когнитивный поиск (необязательно)** . Пошаговое руководство по этого мастера, см. в разделе [импорта, индекса и запросе с помощью средств портала](search-get-started-portal.md).
 
@@ -157,7 +157,7 @@ Content-Type: application/json
 
 Окончательная сборка, оплата составит около 57,00 долларов на прием 1000 документов PDF-ФАЙЛ этого типа с помощью описанного набор навыков.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 + [Цены на "Поиск Azure"](https://azure.microsoft.com/pricing/details/search/)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [Создание набора навыков (REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)

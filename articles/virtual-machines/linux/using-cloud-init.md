@@ -4,7 +4,7 @@ description: Общие сведения о возможностях cloud-init 
 services: virtual-machines-linux
 documentationcenter: ''
 author: rickstercdn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 195c22cd-4629-4582-9ee3-9749493f1d72
@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: rclaus
-ms.openlocfilehash: 377ad49ae3a5ae0f61cd0fd93b68dd817d617397
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 057f7c42c037dac4cb2be686df09287de7113f0d
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67050824"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67695387"
 ---
 # <a name="cloud-init-support-for-virtual-machines-in-azure"></a>Поддержка cloud-init для виртуальных машин в Azure
 Из этой статьи можно узнать об имеющейся поддержке [cloud-init](https://cloudinit.readthedocs.io) для настройки виртуальной машины или масштабируемых наборов виртуальных машин во время подготовки в Azure. Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы.  
@@ -32,15 +32,15 @@ ms.locfileid: "67050824"
 
  Мы активно сотрудничаем с нашими утвержденными партнерами, работающими над дистрибутивами Linux, чтобы образы с поддержкой cloud-init стали доступными в Azure Marketplace. Эти образы обеспечивают бесперебойную работу развертываний и конфигураций cloud-init с виртуальными машинами и масштабируемыми наборами виртуальных машин (VMSS). В следующей таблице приведены сведения о текущей доступности образов с поддержкой cloud-init на платформе Azure:
 
-| Издатель | ПРЕДЛОЖЕНИЕ | SKU | Version | готовность к использованию cloud-init |
+| Издатель | ПРЕДЛОЖЕНИЕ | номер SKU | Version | готовность к использованию cloud-init |
 |:--- |:--- |:--- |:--- |:--- |
-|Canonical |UbuntuServer |18.04-LTS |последняя |Да | 
-|Canonical |UbuntuServer |17.10 |последняя |Да | 
-|Canonical |UbuntuServer |16.04-LTS |последняя |Да | 
-|Canonical |UbuntuServer |14.04.5-LTS |последняя |Да |
-|CoreOS |CoreOS |Stable |последняя |Да |
-|OpenLogic |CentOS |7-CI |последняя |предварительный просмотр |
-|RedHat |RHEL |7-RAW-CI |последняя |предварительный просмотр |
+|Canonical |UbuntuServer |18.04-LTS |latest |Да | 
+|Canonical |UbuntuServer |17.10 |latest |Да | 
+|Canonical |UbuntuServer |16.04-LTS |latest |Да | 
+|Canonical |UbuntuServer |14.04.5-LTS |latest |Да |
+|CoreOS |CoreOS |Stable |latest |Да |
+|OpenLogic |CentOS |7-CI |latest |предварительный просмотр |
+|RedHat |RHEL |7-RAW-CI |latest |предварительный просмотр |
 
 Сейчас Azure Stack не поддерживает подготовку RHEL 7.4 и CentOS 7.4 с помощью cloud-init.
 
@@ -94,7 +94,7 @@ az vm create \
 
 Дополнительные сведения о журнале cloud-init см. в [документации по cloud-init](https://cloudinit.readthedocs.io/en/latest/topics/logging.html) 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Примеры изменения конфигураций с помощью cloud-init см. в следующих документах:
  
 - [Добавление пользователя Linux к виртуальной машине](cloudinit-add-user.md)

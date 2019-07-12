@@ -5,72 +5,31 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 7/2/2019
+ms.date: 7/10/2019
 ms.author: victorh
-ms.openlocfilehash: a5a53766df3338bb36913b589ebda970de55ec94
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
+ms.openlocfilehash: ce47612f18ee64caa3a053001deb5448f7c27bfd
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67491938"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67703984"
 ---
 # <a name="deploy-an-azure-firewall-with-multiple-public-ip-addresses-using-azure-powershell"></a>Развернуть брандмауэр подключения к Azure с помощью нескольких общедоступных IP-адресов, с помощью Azure PowerShell
 
 > [!IMPORTANT]
-> Брандмауэр Azure с помощью нескольких общедоступных IP-адресов в настоящее время находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Брандмауэр Azure с помощью нескольких общедоступных IP-адресов доступен через Azure PowerShell, Azure CLI, REST и шаблоны. Пользовательском интерфейсе портала постепенно добавляемый регионы и будут доступны во всех регионах после завершения развертывания.
 
 Вы можете развернуть брандмауэр подключения к Azure с помощью до 100 общедоступные IP-адреса.
 
 Эта функция поддерживает следующие сценарии:
 
-- **DNAT** -можно преобразовать несколько экземпляров стандартный порт для внутренних серверов. Например если у вас есть два общедоступных IP-адресов, можно легко преобразовать TCP-порт 3389 (RDP) для обоих IP-адресов.
-- **SNAT** -доступны дополнительные порты для исходящих подключений SNAT, снижая вероятность нехватки портов SNAT. В настоящее время брандмауэр Azure случайным образом выбирает источник общедоступный IP-адрес для подключения. Если у вас есть какой-либо подчиненные фильтрации в сети, необходимо разрешить все общедоступные IP-адреса, связанные с брандмауэром.
+- **DNAT**. Позволяет преобразовать несколько стандартных экземпляров порта для внутренних серверов. Например, если существует два общедоступных IP-адреса, то для обоих IP-адреса можно преобразовать TCP-порт 3389 (RDP).
+- **SNAT**. Дополнительные порты доступны для исходящих SNAT подключений, что снижает вероятность нехватки SNAT портов. На данный момент Брандмауэр Azure случайно выбирает общедоступные IP-адреса источника, которые можно использовать для подключения. Если в сети установлена любая фильтрация, необходимо разрешить все публичные IP-адреса, которые связанные с брандмауэром.
 
-Приведенные ниже примеры Azure PowerShell показано, как можно добавлять, удалять и настроить общедоступный IP-адреса для брандмауэра Azure.
+Приведенные ниже примеры Azure PowerShell показано, как можно настроить, добавление и удаление общедоступных IP-адресов для брандмауэра Azure.
 
 > [!NOTE]
-> В общедоступной предварительной версии Если при добавлении или удалении общедоступный IP-адрес, работающей брандмауэру, существующие входящие подключения, с помощью правил DNAT может работать на 40-120 секунд. Невозможно удалить первый общедоступный IP-адрес, назначенные брандмауэр, если брандмауэр является освобождены или удалены.
-
-## <a name="add-a-public-ip-address-to-an-existing-firewall"></a>Добавьте общедоступный IP-адрес в существующий брандмауэр
-
-В этом примере общедоступный IP-адрес *azFwPublicIp1* как подключенные к брандмауэру.
-
-```azurepowershell
-$pip = New-AzPublicIpAddress `
-  -Name "azFwPublicIp1" `
-  -ResourceGroupName "rg" `
-  -Sku "Standard" `
-  -Location "centralus" `
-  -AllocationMethod Static
-
-$azFw = Get-AzFirewall `
-  -Name "AzureFirewall" `
-  -ResourceGroupName "rg"
-
-$azFw.AddPublicIpAddress($pip)
-
-$azFw | Set-AzFirewall
-```
-
-## <a name="remove-a-public-ip-address-from-an-existing-firewall"></a>Удалить общедоступный IP-адрес из существующий брандмауэр
-
-В этом примере общедоступный IP-адрес *azFwPublicIp1* отсоединенными от брандмауэра.
-
-```azurepowershell
-$pip = Get-AzPublicIpAddress `
-  -Name "azFwPublicIp1" `
-  -ResourceGroupName "rg"
-
-$azFw = Get-AzFirewall `
-  -Name "AzureFirewall" `
-  -ResourceGroupName "rg"
-
-$azFw.RemovePublicIpAddress($pip)
-
-$azFw | Set-AzFirewall
-```
+> Нельзя удалить первый IP-конфигурации на странице конфигурации общедоступный адрес для IP-адрес брандмауэра Azure. Если вы хотите изменить IP-адрес, можно использовать Azure PowerShell.
 
 ## <a name="create-a-firewall-with-two-or-more-public-ip-addresses"></a>Создание брандмауэра с помощью двух или более общих IP-адресов
 
@@ -105,6 +64,45 @@ New-AzFirewall `
   -PublicIpAddress @($pip1, $pip2)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="add-a-public-ip-address-to-an-existing-firewall"></a>Добавьте общедоступный IP-адрес в существующий брандмауэр
+
+В этом примере общедоступный IP-адрес *azFwPublicIp1* подключен к брандмауэру.
+
+```azurepowershell
+$pip = New-AzPublicIpAddress `
+  -Name "azFwPublicIp1" `
+  -ResourceGroupName "rg" `
+  -Sku "Standard" `
+  -Location "centralus" `
+  -AllocationMethod Static
+
+$azFw = Get-AzFirewall `
+  -Name "AzureFirewall" `
+  -ResourceGroupName "rg"
+
+$azFw.AddPublicIpAddress($pip)
+
+$azFw | Set-AzFirewall
+```
+
+## <a name="remove-a-public-ip-address-from-an-existing-firewall"></a>Удалить общедоступный IP-адрес из существующий брандмауэр
+
+В этом примере общедоступный IP-адрес *azFwPublicIp1* отсоединяется от брандмауэра.
+
+```azurepowershell
+$pip = Get-AzPublicIpAddress `
+  -Name "azFwPublicIp1" `
+  -ResourceGroupName "rg"
+
+$azFw = Get-AzFirewall `
+  -Name "AzureFirewall" `
+  -ResourceGroupName "rg"
+
+$azFw.RemovePublicIpAddress($pip)
+
+$azFw | Set-AzFirewall
+```
+
+## <a name="next-steps"></a>Следующие шаги
 
 * [Учебник. Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)

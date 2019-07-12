@@ -4,7 +4,7 @@ description: Узнайте, как создавать резервные коп
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: romitgirdhar
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: c41f13a6437f69121d3bbb387c96d8e13f2be0b3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 461f6127111e745fe4a81958aaa225ed1dc4392a
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60567081"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67707722"
 ---
 # <a name="back-up-and-recover-an-oracle-database-12c-database-on-an-azure-linux-virtual-machine"></a>Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "60567081"
 
 ## <a name="prepare-the-environment"></a>Подготовка среды
 
-### <a name="step-1-prerequisites"></a>Шаг 1. Технические условия
+### <a name="step-1-prerequisites"></a>Шаг 1. Предварительные требования
 
 *   Для резервного копирования и восстановления вам необходимо сначала создать виртуальную машину Linux с установленным экземпляром базы данных Oracle Database 12c. Имя образа Marketplace, который вы будете использовать для создания виртуальных машин, — *Oracle:Oracle-Database-Ee:12.1.0.2:latest*.
 
@@ -284,11 +284,11 @@ ms.locfileid: "60567081"
 
     ![Страница резервного копирования хранилищ служб восстановления](./media/oracle-backup-recovery/recovery_service_04.png)
 
-5.  В колонке **Цель резервного копирования** используйте значения по умолчанию — **Azure** и **Виртуальная машина**. Последовательно выберите **ОК**.
+5.  В колонке **Цель резервного копирования** используйте значения по умолчанию — **Azure** и **Виртуальная машина**. Нажмите кнопку **ОК**.
 
     ![Страница сведений о хранилищах служб восстановления](./media/oracle-backup-recovery/recovery_service_05.png)
 
-6.  Для **политики резервного копирования** используйте параметр **DefaultPolicy** или выберите **Создание новой политики**. Последовательно выберите **ОК**.
+6.  Для **политики резервного копирования** используйте параметр **DefaultPolicy** или выберите **Создание новой политики**. Нажмите кнопку **ОК**.
 
     ![Страница сведений о политике резервного копирования хранилищ служб восстановления](./media/oracle-backup-recovery/recovery_service_06.png)
 
@@ -562,7 +562,7 @@ ms.locfileid: "60567081"
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Учебник. Создание высокодоступных виртуальных машин](../../linux/create-cli-complete.md)
 

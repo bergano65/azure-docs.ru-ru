@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.date: 05/15/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 4ff7f92d1d13966be5d17f37210bef961f64faf2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 51fae63b6db99f28a5b3bed056dadc0c2513ff0f
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61462417"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839932"
 ---
 # <a name="copy-data-to-or-from-oracle-on-premises-by-using-azure-data-factory"></a>Копирование данных в локальную базу данных Oracle и обратно с помощью Фабрики данных Azure
 
-> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
+> [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](data-factory-onprem-oracle-connector.md)
 > * [Версия 2 (текущая)](../connector-oracle.md)
 
@@ -42,7 +42,7 @@ ms.locfileid: "61462417"
 
 [!INCLUDE [data-factory-supported-sources](../../../includes/data-factory-supported-sources.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Фабрика данных поддерживает подключение к локальным источникам Oracle с помощью шлюза управления данными. Дополнительные сведения о шлюзе управления данными см. в [этой](data-factory-data-management-gateway.md) статье. Пошаговые инструкции по настройке шлюза для перемещения данных с помощью конвейера см. в статье, посвященной [перемещению данных между локальными источниками и облаком](data-factory-move-data-between-onprem-and-cloud.md).
 
@@ -83,7 +83,7 @@ ms.locfileid: "61462417"
 
 Проще всего создать конвейер с помощью мастера копирования. Пошаговые инструкции см. в [руководстве Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md).
 
-Кроме того, для создания конвейера можно использовать такие инструменты, как **портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
+Также можно использовать один из следующих средств для создания конвейера: **Visual Studio**, **Azure PowerShell**, **шаблона Azure Resource Manager**, **.NET API**, или **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 Независимо от используемого инструмента или интерфейса API для создания конвейера, который перемещает данные из исходного хранилища данных в приемник, необходимо выполнить указанные ниже действия.
 
@@ -100,7 +100,7 @@ ms.locfileid: "61462417"
 
 В приведенной ниже таблице описываются элементы JSON, которые относятся к связанной службе Oracle.
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
 | type |Для свойства **type** необходимо задать значение **OnPremisesOracle**. |Да |
 | driverType | Укажите, какой драйвер следует использовать для копирования данных в базу данных Oracle и из нее. Допустимые значения: **Майкрософт** или **ODP** (по умолчанию). Дополнительные сведения о драйверах см. в разделе [Поддерживаемые версии и установка](#supported-versions-and-installation). | Нет |
@@ -151,7 +151,7 @@ ms.locfileid: "61462417"
 
 Раздел **typeProperties** во всех типах наборов данных разный. В нем содержатся сведения о расположении данных в хранилище данных. Раздел **typeProperties** набора данных с типом **OracleTable** обладает следующими свойствами.
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
 | tableName |Имя таблицы в базе данных Oracle, на которое ссылается связанная служба. |Нет (если указан параметр **oracleReaderQuery** объекта **OracleSource**) |
 
@@ -170,7 +170,7 @@ ms.locfileid: "61462417"
 
 Если источник относится к типу **OracleSource**, в разделе **typeProperties** для действия копирования доступны следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
+| Свойство | Описание | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | oracleReaderQuery |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, "select \* from **MyTable**". <br/><br/>Если не указано другое, выполняется инструкция SQL: "select \* from **MyTable**" |Нет<br />(если для свойства **tableName** задано значение **dataset**) |
 
@@ -178,7 +178,7 @@ ms.locfileid: "61462417"
 
 **OracleSink** поддерживает следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
+| Свойство | Описание | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | writeBatchTimeout |Время ожидания до выполнения операции пакетной вставки, пока не завершится срок ее действия. |**timespan**<br/><br/> Пример: 00:30:00 (30 минут) |Нет |
 | writeBatchSize |Вставляет данные в таблицу SQL, когда размер буфера достигает значения **writeBatchSize**. |Целое число (количество строк) |Нет (значение по умолчанию: 100) |
@@ -187,7 +187,7 @@ ms.locfileid: "61462417"
 
 ## <a name="json-examples-for-copying-data-to-and-from-the-oracle-database"></a>Примеры JSON для копирования данных в базу данных Oracle и обратно
 
-Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). В примерах показано, как копировать данные из базы данных Oracle и хранилища BLOB-объектов Azure и обратно. Однако данные можно копировать в любые приемники, указанные в статье о [поддерживаемых хранилищах данных и форматах](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Для этого применяется действие копирования в Фабрике данных.
+Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). В примерах показано, как копировать данные из базы данных Oracle и хранилища BLOB-объектов Azure и обратно. Однако данные можно копировать в любые приемники, указанные в статье о [поддерживаемых хранилищах данных и форматах](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Для этого применяется действие копирования в Фабрике данных.
 
 **Пример. Копирование данных из Oracle в хранилище BLOB-объектов Azure**
 
@@ -599,27 +599,27 @@ ms.locfileid: "61462417"
 | --- | --- |
 | BFILE |Byte[] |
 | BLOB |Byte[]<br/>(поддерживается только в Oracle 10g и более поздних версиях при использовании драйвера Майкрософт) |
-| CHAR |String |
-| CLOB |String |
+| CHAR |Строка, |
+| CLOB |Строка, |
 | DATE |DateTime |
 | FLOAT |Decimal, String (если точность больше 28) |
 | INTEGER |Decimal, String (если точность больше 28) |
 | INTERVAL YEAR TO MONTH |Int32 |
 | INTERVAL DAY TO SECOND |Интервал времени |
-| LONG |String |
+| LONG |Строка, |
 | LONG RAW |Byte[] |
-| NCHAR |String |
-| NCLOB |String |
+| NCHAR |Строка, |
+| NCLOB |Строка, |
 | NUMBER |Decimal, String (если точность больше 28) |
-| NVARCHAR2 |String |
+| NVARCHAR2 |Строка, |
 | RAW |Byte[] |
-| ROWID |String |
+| ROWID |Строка, |
 | TIMESTAMP |DateTime |
 | TIMESTAMP WITH LOCAL TIME ZONE |DateTime |
 | TIMESTAMP WITH TIME ZONE |DateTime |
 | UNSIGNED INTEGER |Number |
-| VARCHAR2 |String |
-| XML |String |
+| VARCHAR2 |Строка, |
+| XML |Строка, |
 
 > [!NOTE]
 > При использовании драйвера Майкрософт типы данных **INTERVAL YEAR TO MONTH** и **INTERVAL DAY TO SECOND** не поддерживаются.

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/12/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 192a6f4841e9dc3a478da5e4b53594362955ca71
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 7c1f3fc7861f5e1b895423d502218b9b07302c1c
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185105"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67659895"
 ---
 ### <a name="is-bgp-supported-on-all-azure-vpn-gateway-skus"></a>VPN-шлюзы Azure поддерживают BGP для всех классов SKU?
 Нет, BGP поддерживается в VPN-шлюзах Azure класса **VpnGw1**, **VpnGw2**, **VpnGw3**, **Standard** и **HighPerformance**. **Basic** не поддерживается.
@@ -85,7 +85,7 @@ VPN-шлюз Azure объявляет следующие маршруты для
 Да. 
 
 ### <a name="what-address-does-azure-vpn-gateway-use-for-bgp-peer-ip"></a>Какой адрес VPN-шлюз Azure использует в качестве IP-адреса узла BGP?
-VPN-шлюз Azure выделит один IP-адрес из диапазона подсети шлюза (GatewaySubnet), определенного для виртуальной сети. По умолчанию это предпоследний адрес диапазона. Например, если подсеть шлюза GatewaySubnet имеет значение 10.12.255.0/27 (т. е. сеть использует диапазон адресов от 10.12.255.0 до 10.12.255.31), VPN-шлюз Azure назначит узлу BGP IP-адрес 10.12.255.30. Эту информацию можно найти при выводе сведений о VPN-шлюзе Azure.
+VPN-шлюз Azure выделит один IP-адрес из диапазона подсеть шлюза для VPN-шлюзов активный и резервный или два IP-адреса для активных VPN-шлюзов. Вы можете получить фактический BGP IP-адресов, выделенных с помощью PowerShell (Get-AzVirtualNetworkGateway, найдите свойство «значение bgpPeeringAddress») или на портале Azure (в свойстве «Настроить ASN BGP», на странице настройки шлюза).
 
 ### <a name="what-are-the-requirements-for-the-bgp-peer-ip-addresses-on-my-vpn-device"></a>Каковы требования к адресам узла BGP на VPN-устройстве?
 Локальный узел BGP **не может** иметь тот же IP-адрес, который используется как общедоступный IP-адрес VPN-устройства. Используйте в качестве IP-адреса узла BGP другой IP-адрес VPN-устройства. Это может быть петлевой адрес интерфейса на устройстве, но ни в коем случае не адрес APIPA (169.254.x.x). Укажите этот адрес на локальном сетевом шлюзе, который представляет это расположение.
