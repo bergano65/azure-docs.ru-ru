@@ -5,15 +5,15 @@ author: dominicbetts
 ms.author: dobett
 ms.date: 11/26/2018
 ms.topic: conceptual
-ms.service: iot-industrialiot
+ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 41d544fd23d258393cc83ea09371332655223581
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 798f087c260b6b0a1efc366b864fe2bb7bce732e
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203927"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603699"
 ---
 # <a name="deploy-opc-twin-module-and-dependencies-from-scratch"></a>Развертывание OPC Двойника модуля и зависимости с нуля
 
@@ -72,7 +72,7 @@ OPC Двойника модуля выполняется в IoT Edge и пред
               "restartPolicy": "always",
               "settings": {
                 "image": "mcr.microsoft.com/iotedge/opc-twin:latest",
-                "createOptions": "{\"NetworkingConfig\":{\"EndpointsConfig\":{\"host\":{}}},\"HostConfig\":{\"NetworkMode\":\"host\",\"CapAdd\":[\"NET_ADMIN\"]}}"
+                "createOptions": "{\"NetworkingConfig\": {\"EndpointsConfig\": {\"host\": {}}}, \"HostConfig\": {\"NetworkMode\": \"host\" }}"
               }
             },
             "opcpublisher": {
@@ -107,9 +107,9 @@ OPC Двойника модуля выполняется в IoT Edge и пред
 
 ## <a name="deploying-from-azure-portal"></a>Развертывание на портале Azure
 
-Самый простой способ развернуть модули на устройстве шлюза IoT Edge Azure — через портал Azure.  
+Самый простой способ развернуть модули на устройстве шлюза Edge Интернета вещей Azure — через портал Azure.  
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 
 1. Развертывание на "Двойнике" OPC [зависимости](howto-opc-twin-deploy-dependencies.md) и не получил результирующий `.env` файл. Обратите внимание, развернутому `hub name` из `PCS_IOTHUBREACT_HUB_NAME` переменных в итоговом `.env` файл.
 
@@ -136,7 +136,7 @@ OPC Двойника модуля выполняется в IoT Edge и пред
    Как *параметры создания* используйте приведенный ниже код JSON:
 
    ```json
-   {"HostConfig":{"NetworkMode":"host","CapAdd":["NET_ADMIN"]}}
+   {"NetworkingConfig": {"EndpointsConfig": {"host": {}}}, "HostConfig": {"NetworkMode": "host" }}
    ```
 
    При желании заполните необязательные поля. Дополнительные сведения о возможностях при создании контейнера, политике перезапуска и требуемом состоянии см. в разделе [Требуемые свойства EdgeAgent](https://docs.microsoft.com/azure/iot-edge/module-edgeagent-edgehub#edgeagent-desired-properties). Подробные сведения о двойниках модулей см. в разделе [Определение или обновление требуемых свойств](https://docs.microsoft.com/azure/iot-edge/module-composition#define-or-update-desired-properties).
@@ -176,7 +176,7 @@ OPC Двойника модуля выполняется в IoT Edge и пред
 
 ## <a name="deploying-using-azure-cli"></a>Развертывание с помощью Azure CLI
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 
 1. Установите последнюю версию [интерфейс командной строки Azure (AZ)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) из [здесь](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
@@ -201,7 +201,7 @@ OPC Двойника модуля выполняется в IoT Edge и пред
 
    Параметр идентификатора устройства чувствителен к регистру. ![Выходные данные команды az iot hub module-identity list](https://docs.microsoft.com/azure/iot-edge/media/how-to-deploy-cli/list-modules.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как развернуть Двойника OPC с нуля, вот мы предлагаем:
 

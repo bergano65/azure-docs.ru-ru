@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 10/19/2018
 ms.author: pabutler
-ms.openlocfilehash: 3d38efadfb8ad13d072056ef851be99d9540ad4b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0637491a1d7799bcaef594123aab53f89690c86f
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64938433"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67654031"
 ---
 # <a name="configure-the-azure-hosted-vm"></a>Настройка размещенной в Azure виртуальной машины
 
@@ -66,7 +66,7 @@ ms.locfileid: "64938433"
 > [!WARNING]
 >  Поскольку обновления могут применяться автоматически, после запуска sysprep следует отключить виртуальную машину и не включать до завершения развертывания.  Завершение работы не позволит неожиданным обновлениям внести на виртуальный жесткий диск или в установленные службы изменения, относящиеся к конкретному экземпляру.
 
-Дополнительные сведения о запуске sysprep см. в разделе [шаги по подготовке виртуального жесткого диска](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image#steps-to-generalize-a-vhd)
+Дополнительные сведения о запуске sysprep см. в разделе [шаги по подготовке виртуального жесткого диска](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource#generalize-the-windows-vm-using-sysprep)
 
 ### <a name="linux"></a>Linux
 
@@ -93,6 +93,6 @@ ms.locfileid: "64938433"
 - Виртуальная машина Windows. [Загрузить виртуальный жесткий диск Windows из Azure](../../../virtual-machines/windows/download-vhd.md)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Завершив настройку виртуальной машины, можно переходить к [развертыванию виртуальной машины из виртуального жесткого диска](./cpp-deploy-vm-vhd.md).

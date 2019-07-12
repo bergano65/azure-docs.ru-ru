@@ -4,7 +4,7 @@ description: Сведения о кластеризации экземпляра
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
 author: goraco
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 987cd1e5860b0fe340ba8a5163d844bec29b541c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: aef5c67786726790c5841c1ce4ddff8b67bdf21b
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65205105"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67709046"
 ---
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
 [1999351]:https://launchpad.support.sap.com/#/notes/1999351
@@ -192,13 +192,13 @@ ms.locfileid: "65205105"
 
 Отказоустойчивый кластер представляет собой группу из 1 + n независимых серверов (узлов), работающих совместно для повышения доступности приложений и служб. В случае отказа узла отказоустойчивый кластер Windows Server вычисляет допустимое количество сбоев, при котором сохранится работоспособность кластера для предоставления приложений и служб. Возможность отказоустойчивой кластеризации можно добавить, используя разные режимы кворума.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Перед началом работы с этой статьей, ознакомьтесь со следующим документом:
 
-* [Архитектура высокого уровня доступности и сценарии для SAP NetWeaver на виртуальных машинах Azure][sap-high-availability-architecture-scenarios]
+* [Архитектура высокого уровня доступности Azure виртуальные машины и сценарии для SAP NetWeaver][sap-high-availability-architecture-scenarios]
 
 
-## <a name="windows-server-failover-clustering-in-azure"></a>Отказоустойчивая кластеризация Windows Server в Azure
+## <a name="windows-server-failover-clustering-in-azure"></a>Отказоустойчивый кластер Windows Server в Azure
 
 На виртуальных машинах Azure нужно выполнить больше действий для настройки WSFC по сравнению с развертываниями без операционной системы и развертываниями в частных облаках. При создании кластера вы должны назначить несколько IP-адресов и имен виртуальных узлов экземпляру SAP ASCS/SCS.
 
@@ -274,8 +274,8 @@ _**Рис. 5.** Windows конфигурация отказоустойчиво
 > В некоторых СУБД, например SQL Server, общие диски не требуются для достижения высокого уровня доступности. SQL Server AlwaysOn выполняет репликацию файлов данных и журналов СУБД с локального диска одного узла кластера на локальный диск другого узла кластера. Поэтому в конфигурации кластера Windows не нужен общий диск.
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Узнайте, как подготовить инфраструктуру Azure для SAP высокого уровня доступности с помощью отказоустойчивого кластера Windows и общего диска для экземпляров SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk]
+* [Подготовка инфраструктуры Azure для SAP высокого уровня ДОСТУПНОСТИ с использованием отказоустойчивого кластера Windows и общего диска для экземпляра SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk]
 
-* [Установите SAP NetWeaver высокого уровня доступности в отказоустойчивом кластере Windows на общем диске для экземпляра SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk]
+* [Установка SAP NetWeaver высокого уровня ДОСТУПНОСТИ в отказоустойчивом кластере Windows и общего диска для экземпляра SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk]

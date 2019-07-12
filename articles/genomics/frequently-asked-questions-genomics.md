@@ -9,33 +9,20 @@ ms.author: grhuynh
 ms.service: genomics
 ms.topic: article
 ms.date: 12/07/2017
-ms.openlocfilehash: 2bcbf9d145d9b8b5a3c42893235906d24516405c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d36a2c6379a95cc67a55c2cc266ced94b4a0179a
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65792620"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672227"
 ---
 # <a name="microsoft-genomics-common-questions"></a>Microsoft Genomics: Часто задаваемые вопросы
 
 В этой статье перечислены самые популярные вопросы, связанные с Microsoft Genomics. Дополнительные сведения о службе Microsoft Genomics см. в [этой статье](overview-what-is-genomics.md). Дополнительные сведения об устранении неполадок см. в [этом руководстве](troubleshooting-guide-genomics.md). 
 
-## <a name="what-is-the-microsoft-genomics-service-gatk-4-promotion"></a>Что такое рекламное предложение GATK 4 службы Microsoft Genomics?
-До 30 июня 2019 г. в службе Microsoft Genomics предлагает 20 WGS запуск с помощью GATK4 бесплатно. Для участия в этом рекламном предложении зарегистрируйтесь [здесь](https://aka.ms/msgatk4). 
 
-### <a name="what-are-the-common-issues-i-might-encounter-while-running-the-microsoft-genomics-service-gatk4-promotion"></a>Каковы общие проблемы, которые могут возникнуть при запуске рекламного предложения GATK4 службы Microsoft Genomics
-Ниже приведен список распространенных ошибок, которые могут возникнуть, и их рекомендуемое решение:
-
-| **Сообщение**                                                                                                                                                                                    | **Причина**                                                                                                    | **Способы устранения:**                                                                                                                                                                                                       |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `gatk4-promo` не включено для вашей учетной записи. Дополнительные сведения см. в разделе https://docs.microsoft.com/azure/genomics/frequently-asked-questions-genomics.                               | Вы пытаетесь запустить рабочие процессы GATK4 в службе Microsoft Genomics, не активировав учетную запись.       | Перейдите [сюда](https://aka.ms/msgatk4) для активации учетной записи. Обратите внимание на то, что срок действия пробной версии истекает 30 июня 2019 г. Вы не сможете активировать свою учетную запись для выполнения рекламных запусков после этой даты. |
-| Благодарим вас за ознакомление с `gatk4-promo`. Срок действия пробной версии завершен. Дополнительные сведения см. в статье https://docs.microsoft.com/azure/genomics/frequently-asked-questions-genomics.                  | Срок действия пробной версии GATK4 истек в конце календарного года, и вы пытаетесь вызвать процесс `gatk4-promo`.  | Измените значение параметра process_name с `gatk4-promo` на `gatk4`. Это официальная версия gatk4, и за ваш рабочий процесс будет выставлен счет, если вы используете этот параметр.                                         |
-| Благодарим вас за ознакомление с `gatk4-promo`. Вы использовали все выделенные запуски. Дополнительные сведения см. в разделе https://docs.microsoft.com/azure/genomics/frequently-asked-questions-genomics. | Вы успешно выполнили все 20 рекламных запусков GATK4.                               | Отправляйте новые запуски gatk4, указав для аргумента process_name значение `gatk4` вместо `gatk4-promo`. При использовании последнего значения вам будет выставлен счет за рабочий процесс.                                                          |        
-
-
-## <a name="can-i-run-gatk4-workflows-on-microsoft-genomics-without-signing-up-for-the-gatk4-promotion"></a>Можно ли запускать рабочие процессы GATK4 в Microsoft Genomics без регистрации для использования решения GATK4?
-Да. В файле config.txt службы Microsoft Genomics укажите для параметра process_name значение `gatk4`. Обратите внимание, что вам будет выставлен счет по обычным тарифам, а 20 бесплатных запусков в вашей учетной записи Microsoft Genomics не будут учтены.
-
+## <a name="how-do-i-run-gatk4-workflows-on-microsoft-genomics"></a>Как запускать рабочие процессы GATK4 на Microsoft Genomics?
+В файле config.txt в службе Microsoft Genomics, указать имя_процесса для `gatk4`. Обратите внимание на то, что вам будет выставлен счет по обычным тарифам выставления счетов.
 
 
 ## <a name="what-is-the-sla-for-microsoft-genomics"></a>Что такое Соглашение об уровне обслуживания для Microsoft Genomics?
@@ -74,7 +61,7 @@ ms.locfileid: "65792620"
 
 Поддерживаются следующие референсные геномы:
 
- |Справочные материалы              | Значение `-pa/--process-args` |
+ |Ссылка              | Значение `-pa/--process-args` |
  |:-------------         |:-------------                 |
  |b37                    | `R=b37m1`                     |
  |hg38                   | `R=hg38m1`                    |      
@@ -95,7 +82,7 @@ msgen распознает файлы конфигурации в следующ
   |`-k/--access-key KEY`            | *access_key:KEY*              |      
   |`-pa/--process-args R=B37m1`     | *process_args:R-b37m1*        |  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Используйте следующие ресурсы, чтобы приступить к работе с Microsoft Genomics:
 - Приступить к работе, запустив первый рабочий процесс с помощью службы Microsoft Genomics. [Запуск рабочего процесса в службе Microsoft Genomics](quickstart-run-genomics-workflow-portal.md)

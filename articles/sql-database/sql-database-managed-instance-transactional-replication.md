@@ -12,12 +12,12 @@ ms.author: mathoma
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 02/08/2019
-ms.openlocfilehash: bcbdd5fd8395cb0a47038595127e9b20118bdf1b
-ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.openlocfilehash: 1c62fb466774a3599972d6a9cc340cca300eee59
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67147708"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67696193"
 ---
 # <a name="transactional-replication-with-single-pooled-and-instance-databases-in-azure-sql-database"></a>Репликация транзакций с отдельными базами данных, базами данных в составе пула и базами данных экземпляров в Базе данных SQL Azure.
 
@@ -50,12 +50,12 @@ ms.locfileid: "67147708"
 
 **Подписчик** — это экземпляр или сервер, который принимает изменения, внесенные в издателе. Подписчиками могут быть отдельные базы данных, базы данных в составе пула и базы данных экземпляров в Базе данных SQL Azure или в базах данных SQL Server. Подписчика отдельной базы данных или базы данных в пуле необходимо настроить как принудительного подписчика. 
 
-| Роль | Отдельные базы данных и базы данных в пуле | Базы данных экземпляров |
+| Role | Отдельные базы данных и базы данных в пуле | Базы данных экземпляров |
 | :----| :------------- | :--------------- |
-| **Издатель** | Нет | Yes | 
-| **Распространитель** | Нет | Yes|
-| **Подписчик по запросу** | Нет | Yes|
-| **Принудительный подписчик**| Yes | Yes|
+| **Издатель** | Нет | Да | 
+| **Распространитель** | Нет | Да|
+| **Подписчик по запросу** | Нет | Да|
+| **Принудительный подписчик**| Да | Да|
 | &nbsp; | &nbsp; | &nbsp; |
 
   >[!NOTE]
@@ -66,11 +66,11 @@ ms.locfileid: "67147708"
 
 | Репликация | Отдельные базы данных и базы данных в пуле | Базы данных экземпляра|
 | :----| :------------- | :--------------- |
-| [**Стандартный транзакций**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication) | Да (только в качестве подписчика) | Yes | 
-| [**Моментальных снимков**](https://docs.microsoft.com/sql/relational-databases/replication/snapshot-replication) | Да (только в качестве подписчика) | Yes|
+| [**Стандартный транзакций**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/transactional-replication) | Да (только в качестве подписчика) | Да | 
+| [**Моментальных снимков**](https://docs.microsoft.com/sql/relational-databases/replication/snapshot-replication) | Да (только в качестве подписчика) | Да|
 | [**Слиянием**](https://docs.microsoft.com/sql/relational-databases/replication/merge/merge-replication) | Нет | Нет|
 | [**Одноранговая**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/peer-to-peer-transactional-replication) | Нет | Нет|
-| [**Двунаправленная**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/bidirectional-transactional-replication) | Нет | Yes|
+| [**Двунаправленная**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/bidirectional-transactional-replication) | Нет | Да|
 | [**Обновляемых подписок**](https://docs.microsoft.com/sql/relational-databases/replication/transactional/updatable-subscriptions-for-transactional-replication) | Нет | Нет|
 | &nbsp; | &nbsp; | &nbsp; |
 
@@ -137,11 +137,11 @@ ms.locfileid: "67147708"
 В этой конфигурации База данных SQL Azure (отдельная база данных, база данных в составе пула и база данных экземпляра) является подписчиком. Эта конфигурация поддерживает миграцию из локальной среды в Azure. Если подписчик находится в отдельной базе данных или базе данных в пуле, он должен находиться в режиме принудительной отправки.  
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-1. [Настройка репликации транзакций для Управляемого экземпляра](replication-with-sql-database-managed-instance.md). 
+1. [Настройка репликации между двумя экземплярами управляемых](replication-with-sql-database-managed-instance.md). 
 1. [Создание публикации](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication).
-1. [Создайте принудительную подписку](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription), используя имя сервера Базы данных SQL Azure в качестве подписчика (например, `N'azuresqldbdns.database.windows.net`) и имя Базы данных SQL Azure в качестве целевой базы данных (например, **Adventureworks**). )
+1. [Создайте принудительную подписку](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription), используя имя сервера Базы данных SQL Azure в качестве подписчика (например, `N'azuresqldbdns.database.windows.net`) и имя базы данных SQL Azure в качестве целевой базы данных (например, **Adventureworks**). )
 
 
 

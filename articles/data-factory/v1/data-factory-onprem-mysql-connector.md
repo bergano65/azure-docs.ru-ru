@@ -13,15 +13,15 @@ ms.topic: conceptual
 ms.date: 06/06/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: de1263d68e96a23bd6b5eca4297e74b56ba22e40
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 20dd86a46ac1b50f5ce20da6ecf9dff251a8c0b0
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60823952"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839011"
 ---
 # <a name="move-data-from-mysql-using-azure-data-factory"></a>Перемещение данных из MySQL с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
+> [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](data-factory-onprem-mysql-connector.md)
 > * [Версия 2 (текущая)](../connector-mysql.md)
 
@@ -33,7 +33,7 @@ ms.locfileid: "60823952"
 
 Вы можете скопировать данные из локального хранилища данных MySQL в любой поддерживаемый приемник данных. Список хранилищ данных, которые поддерживаются в качестве приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Сейчас фабрика данных поддерживает только перемещение данных из локального хранилища данных MySQL в другие хранилища данных, но не наоборот. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Служба фабрики данных поддерживает подключение к локальным источникам MySQL с помощью шлюза управления данными. В статье [Перемещение данных между локальными и облачными ресурсами](data-factory-move-data-between-onprem-and-cloud.md) приведены сведения о шлюзе управления данными и пошаговые инструкции по его настройке.
 
 Шлюз является обязательным, даже если база данных MySQL размещается на виртуальной машине (ВМ) Azure IaaS. Шлюз можно установить на той же ВМ, на которой размещается хранилище данных, или на другой ВМ. Важно, чтобы шлюз мог подключиться к базе данных.
@@ -47,11 +47,11 @@ ms.locfileid: "60823952"
 > [!TIP]
 > Если произошла ошибка "Аутентификация не пройдена из-за закрытия транспортного потока удаленной стороной", то рекомендуется обновить соединитель MySQL Connector/Net до более поздней версии.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 Вы можете создать конвейер с действием копирования, которое перемещает данные из локального хранилища данных Cassandra, с помощью разных инструментов и интерфейсов API. 
 
 - Проще всего создать конвейер с помощью **мастера копирования**. Пошаговые инструкции см. в [руководстве Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md), где приведено краткое пошаговое руководство по созданию конвейера с помощью мастера копирования данных. 
-- Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). 
+- Для создания конвейера можно использовать указанные ниже средства. **Visual Studio**, **Azure PowerShell**, **шаблона Azure Resource Manager**, **.NET API**, и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). 
 
 Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги:
 
@@ -66,7 +66,7 @@ ms.locfileid: "60823952"
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 В следующей таблице содержится описание элементов JSON, которые относятся к связанной службе MySQL.
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
 | type |Свойству type необходимо задать значение **OnPremisesMySql** |Да |
 | server |Имя сервера MySQL. |Да |
@@ -82,7 +82,7 @@ ms.locfileid: "60823952"
 
 Раздел **typeProperties** во всех типах наборов данных разный. В нем содержатся сведения о расположении данных в хранилище данных. Раздел typeProperties набора данных с типом **RelationalTable** (который включает набор данных MySQL) содержит следующие свойства.
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
 | tableName |Имя таблицы в экземпляре базы данных MySQL, на которое ссылается связанная служба. |Нет (если для свойства **RelationalSource** задано значение **query**). |
 
@@ -93,13 +93,13 @@ ms.locfileid: "60823952"
 
 Если источник действия копирования относится к типу **RelationalSource** (который содержит MySQL), то в разделе typeProperties доступны следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
+| Свойство | Описание | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
-| query |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, select * from MyTable. |Нет (если для свойства **tableName** задано значение **dataset**). |
+| запрос |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, select * from MyTable. |Нет (если для свойства **tableName** задано значение **dataset**). |
 
 
 ## <a name="json-example-copy-data-from-mysql-to-azure-blob"></a>Пример JSON. Копирование данных из MySQL в большой двоичный объект Azure
-Ниже приведен пример с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). В нем показано, как скопировать данные из локальной базы данных MySQL в хранилище BLOB-объектов Azure. Тем не менее данные можно копировать в любой из указанных [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемников. Это делается с помощью действия копирования в фабрике данных Azure.
+В этом примере приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). В нем показано, как скопировать данные из локальной базы данных MySQL в хранилище BLOB-объектов Azure. Тем не менее данные можно копировать в любой из указанных [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемников. Это делается с помощью действия копирования в фабрике данных Azure.
 
 > [!IMPORTANT]
 > Этот пример содержит фрагменты кода JSON. Он не включает в себя пошаговые инструкции по созданию фабрики данных. Эти инструкции приведены в статье [Перемещение данных между локальными источниками и облаком с помощью шлюза управления данными](data-factory-move-data-between-onprem-and-cloud.md) .
@@ -304,42 +304,42 @@ ms.locfileid: "60823952"
 | bigint unsigned |Decimal |
 | bigint |Int64 |
 | bit |Decimal |
-| BLOB-объект |Byte[] |
-| bool |Boolean |
-| char |String |
+| blob-объект |Byte[] |
+| bool |Логическое |
+| char |Строка, |
 | date |DateTime |
-| Datetime |DateTime |
+| datetime |DateTime |
 | decimal |Decimal |
 | double precision |Double |
 | Double |Double |
-| enum |String |
+| enum |Строка, |
 | float |Single |
 | int unsigned |Int64 |
-| int |Int32 |
+| ssNoversion |Int32 |
 | integer unsigned |Int64 |
 | integer |Int32 |
 | long varbinary |Byte[] |
-| long varchar |String |
+| long varchar |Строка, |
 | longblob |Byte[] |
-| longtext |String |
+| longtext |Строка, |
 | mediumblob |Byte[] |
 | mediumint unsigned |Int64 |
 | mediumint |Int32 |
-| mediumtext |String |
+| mediumtext |Строка, |
 | numeric |Decimal |
 | real |Double |
-| set |String |
+| set |Строка, |
 | smallint unsigned |Int32 |
 | smallint |Int16 |
-| Text |String |
+| text |Строка, |
 | time |TimeSpan |
 | timestamp |DateTime |
 | tinyblob |Byte[] |
 | tinyint unsigned |Int16 |
 | tinyint; |Int16 |
-| tinytext |String |
-| varchar |String |
-| год |Int |
+| tinytext |Строка, |
+| varchar |Строка, |
+| year |int |
 
 ## <a name="map-source-to-sink-columns"></a>Сопоставление столбцов источника и приемника
 Дополнительные сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в [этой статье](data-factory-map-columns.md).

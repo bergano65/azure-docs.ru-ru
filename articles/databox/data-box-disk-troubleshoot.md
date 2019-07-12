@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: article
 ms.date: 06/14/2019
 ms.author: alkohli
-ms.openlocfilehash: f725f38a335972ae8e0a8b8402a99202caa54a70
-ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.openlocfilehash: f8116ec0836623adf803991017950ddc7f960923
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67147087"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67805707"
 ---
 # <a name="use-logs-to-troubleshoot-validation-issues-in-azure-data-box-disk"></a>Устранение неполадок проверки в диска Azure Data Box с помощью журналов
 
@@ -90,10 +90,10 @@ ms.locfileid: "67147087"
 | `InvalidBlobNameFormat` | Путь к файлу не сопоставлен с путь допустимым BLOB-объектов в облаке согласно соглашения об именовании BLOB-объектов Azure.|Переименуйте файл, чтобы он соответствует [соглашениям об именовании Azure](data-box-disk-limits.md#azure-block-blob-page-blob-and-file-naming-conventions). Повторите проверку. |
 | `InvalidFileNameFormat` | Путь к файлу не сопоставлен с допустимый путь к файлу в облаке согласно файлов Azure, соглашения об именовании. |Переименуйте файл, чтобы он соответствует [соглашениям об именовании Azure](data-box-disk-limits.md#azure-block-blob-page-blob-and-file-naming-conventions). Повторите проверку. |
 | `InvalidDiskNameFormat` | Путь к файлу не сопоставлен с именем допустимое диск в облаке согласно соглашения об именовании управляемого диска Azure. |Переименуйте файл, чтобы он соответствует [соглашениям об именовании Azure](data-box-disk-limits.md#azure-block-blob-page-blob-and-file-naming-conventions). Повторите проверку.       |
-| `NotPartOfFileShare` | Не удалось отправить файлы, так как путь передачи является недопустимым. Передача файлов в папку в службе файлов Azure.   | Удалить файлы с ошибками и передача файлов в предварительно созданных папку. Повторите проверку. |
-| `NonVhdFileNotSupportedForManagedDisk` | Не VHD-файла не может быть загружен как управляемого диска. |Удалите не VHD-файлы, так как они не поддерживаются. Повторите проверку. |
+| `NotPartOfFileShare` | Недопустимый путь передачи, для файлов. Передача файлов в папку в службе файлов Azure.   | Удалить файлы с ошибками и передача файлов в предварительно созданных папку. Повторите проверку. |
+| `NonVhdFileNotSupportedForManagedDisk` | Не VHD-файла не может быть загружен как управляемого диска. |Удалите файлы не виртуального жесткого диска из `ManagedDisk` папку, так как они не поддерживаются или переместите эти файлы для `PageBlob` папки. Повторите проверку. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Устранение неполадок [ошибки при отправке данных](data-box-disk-troubleshoot-upload.md).

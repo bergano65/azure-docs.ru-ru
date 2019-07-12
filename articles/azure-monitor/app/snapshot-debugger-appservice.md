@@ -11,13 +11,13 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 03/07/2019
-ms.author: brahmnes
-ms.openlocfilehash: cf06c7c21d30fb107baee0d43b33b221c7da2773
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.author: bfung
+ms.openlocfilehash: 3e8ce3c2eff7b1f7184bb37f141e62563d4fe714
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67439898"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67612684"
 ---
 # <a name="enable-snapshot-debugger-for-net-apps-in-azure-app-service"></a>Включить отладчик моментальных снимков для приложений .NET в службе приложений Azure
 
@@ -52,7 +52,7 @@ Application Insights Snapshot Debugger предварительно устана
 Выполните те же действия, что и для **Включение Snapshot Debugger**, но переключиться оба переключателя для отладчика моментальных снимков для **Off**.
 Мы рекомендуем использовать отладчик моментальных снимков, которые включены для всех приложений, для упрощения диагностики исключений приложений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Создайте трафик для приложения, которое может вызвать исключение. Подождите 10 – 15 минут для моментальных снимков, который должны отправляться экземпляра Application Insights.
 - См. в разделе [моментальные снимки](snapshot-debugger.md?toc=/azure/azure-monitor/toc.json#view-snapshots-in-the-portal) на портале Azure.

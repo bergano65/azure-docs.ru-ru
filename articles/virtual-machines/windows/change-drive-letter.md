@@ -4,7 +4,7 @@ description: Описывает, как изменить буквы дисков
 services: virtual-machines-windows
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: 0867a931-0055-4e31-8403-9b38a3eeb904
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/02/2018
 ms.author: cynthn
-ms.openlocfilehash: cfd46d5e9750a81d89ed6d3a79bcc9bffdc3d0dd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 12986068a761b92611c557a0dfcf08905283b8bd
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60844205"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67719239"
 ---
 # <a name="use-the-d-drive-as-a-data-drive-on-a-windows-vm"></a>Использование диска D в качестве диска данных на виртуальной машине Windows
 Если вашему приложению нужно использовать диск D для хранения данных, следуйте приведенным указаниям, чтобы использовать другой диск в качестве временного. Никогда не используйте временный диск для хранения данных, которые нужно сохранить.
@@ -63,6 +63,6 @@ ms.locfileid: "60844205"
 8. Нажмите кнопку **Применить**. Вы получите предупреждение о том, что для вступления изменений в силу необходимо перезагрузить компьютер.
 9. Перезапустите виртуальную машину.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Вы можете увеличить объема хранилища на виртуальной машине через [присоединение дополнительный диск с данными](attach-managed-disk-portal.md).
 

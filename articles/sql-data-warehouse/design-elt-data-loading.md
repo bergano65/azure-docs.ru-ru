@@ -6,16 +6,16 @@ author: kevinvngo
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: load data
+ms.subservice: load-data
 ms.date: 05/10/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: de5649498dddcec8c65f2cfca6dcb39fa20a9267
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fa688f40f8eb968f2c388601b387e4f584951a91
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66242247"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67595602"
 ---
 # <a name="designing-a-polybase-data-loading-strategy-for-azure-sql-data-warehouse"></a>Проектирование стратегии загрузки данных PolyBase для Хранилища данных SQL Azure
 
@@ -55,23 +55,23 @@ PolyBase загружает данные из текстовых файлов с
 | :-------------------: | :----------------------------------------------------------: |
 |        tinyint        |                           tinyint                            |
 |       smallint        |                           smallint                           |
-|          int          |                             int                              |
+|          ssNoversion          |                             ssNoversion                              |
 |        bigint         |                            bigint                            |
-|        Логическое        |                             bit                              |
+|        Логический        |                             bit                              |
 |        double         |                            float                             |
 |         float         |                             real                             |
 |        double         |                            money                             |
 |        double         |                          smallmoney                          |
-|        string         |                            nchar                             |
-|        string         |                           nvarchar                           |
-|        string         |                             char                             |
-|        string         |                           varchar                            |
+|        строка         |                            nchar                             |
+|        строка         |                           nvarchar                           |
+|        строка         |                             char                             |
+|        строка         |                           varchar                            |
 |        binary         |                            binary                            |
 |        binary         |                          varbinary                           |
 |       timestamp       |                             date                             |
 |       timestamp       |                        smalldatetime                         |
 |       timestamp       |                          datetime2                           |
-|       timestamp       |                           Datetime                           |
+|       timestamp       |                           datetime                           |
 |       timestamp       |                             time                             |
 |       date        | (1) загрузки как int и привести к дате </br> (2) [использовать соединитель хранилища данных SQL Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/databricks-extract-load-sql-data-warehouse#load-data-into-azure-sql-data-warehouse) с </br> spark.conf.set( "spark.sql.parquet.writeLegacyFormat", "true" ) </br> (**обновления, ожидается в ближайшее время**) |
 |        decimal        | [Использование соединителя хранилища данных SQL Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/databricks-extract-load-sql-data-warehouse#load-data-into-azure-sql-data-warehouse) с </br> spark.conf.set( "spark.sql.parquet.writeLegacyFormat", "true" ) </br> (**обновления, ожидается в ближайшее время**) |
@@ -147,7 +147,7 @@ PolyBase загружает данные из текстовых файлов с
 Многие из наших партнеров предлагают решения для загрузки. Дополнительные сведения см. в статье [Партнеры по бизнес-аналитике хранилища данных SQL](sql-data-warehouse-partner-business-intelligence.md). 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Инструкции по загрузке см. [здесь](guidance-for-loading-data.md).
 

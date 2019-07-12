@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3da96c09026baff3965e0a90d1f461fd948a3a50
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 59f716ccd7b2e02c9064f13cf1ffd6e8180858c9
+ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60441140"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67827909"
 ---
 # <a name="audit-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях аудита на портале Azure Active Directory 
 
@@ -41,7 +41,7 @@ ms.locfileid: "60441140"
  
 ## <a name="who-can-access-the-data"></a>Кто может получить доступ к данным?
 
-* Пользователи в **администратора безопасности**, **читатель безопасности**, **читатель отчета** или **глобального администратора** ролей
+* Пользователи в **администратор безопасности**, **читатель безопасности**, **читатель отчета** или **глобального администратора** ролей
 * Кроме того, все пользователи (не администраторы) могут просматривать собственные действия аудита.
 
 ## <a name="audit-logs"></a>Журналы аудита
@@ -96,7 +96,7 @@ ms.locfileid: "60441140"
 - Приложение единого входа
 - Методы проверки подлинности
 - B2C
-- условный доступ;
+- Условный доступ
 - "Core Directory" (Основной каталог);
 - Управление правами
 - Защита идентификации
@@ -111,8 +111,8 @@ ms.locfileid: "60441140"
 - Все
 - AdministrativeUnit
 - ApplicationManagement
-- Authentication
-- Авторизация
+- Проверка подлинности
+- Authorization
 - Контакт
 - Устройство
 - Конфигурация устройства
@@ -132,7 +132,7 @@ ms.locfileid: "60441140"
 **Состояние** фильтр позволяет выполнять фильтрацию на основе состояния операции аудита. Состояние может принимать одно из следующих:
 
 - Все
-- Успешно
+- Success
 - Сбой
 
 **Целевой** фильтра можно выполнять поиск конкретной цели по имени или имя участника-пользователя (UPN). Имя целевого объекта и имени участника-пользователя учитывается регистр. 
@@ -208,7 +208,7 @@ ms.locfileid: "60441140"
 
 Вы также можете получить программный доступ к журналам действий Office 365 с помощью [API управления Office 365](https://docs.microsoft.com/office/office-365-management-api/office-365-management-apis-overview).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Справочные материалы по действиям аудита в Azure AD](reference-audit-activities.md)
 - [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md)

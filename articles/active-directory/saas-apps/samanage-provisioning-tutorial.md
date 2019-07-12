@@ -14,23 +14,23 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/28/2019
-ms.author: v-wingf-msft
+ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d474d9bfd6016885eaa21afcea5d44d39c624084
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 67cfe5a26740837508ea3a3e76295a896c3cc107
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64730580"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67670925"
 ---
-# <a name="tutorial-configure-samanage-for-automatic-user-provisioning"></a>Руководство по Настройка Samanage для автоматической подготовки пользователей
+# <a name="tutorial-configure-samanage-for-automatic-user-provisioning"></a>Учебник. Настройка Samanage для автоматической подготовки пользователей
 
 Этот учебник демонстрирует шаги в Samanage и Azure Active Directory (Azure AD) для настройки Azure AD настроить автоматическую подготовку и отзыв пользователей и групп в Samanage.
 
 > [!NOTE]
 > В данном учебнике соединитель, который является надстройкой служба подготовки пользователей Azure AD. Сведения о назначении эта служба, как это работает и часто задаваемые вопросы см. в разделе [Автоматическая подготовка пользователей и ее отзыв для приложений программного обеспечения как услуга (SaaS) с Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом руководстве предполагается, что у вас есть:
 
@@ -167,7 +167,7 @@ Azure Active Directory используется концепция, называ
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 

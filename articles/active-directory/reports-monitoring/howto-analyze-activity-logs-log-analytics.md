@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 04/18/2019
-ms.author: priyamo
+ms.author: markvi
 ms.reviewer: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1651bb2898a2bd1e3e0c3fbbce77dc4106d76e7a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4145ea2162cdd56deb8bbdcfa81d5a90a2ed9382
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60438240"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67611573"
 ---
 # <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs"></a>Azure AD анализировать журналы действий с помощью журналов Azure Monitor
 
@@ -32,7 +32,7 @@ ms.locfileid: "60438240"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>Технические условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Для работы вам потребуется следующее:
 
@@ -55,7 +55,7 @@ ms.locfileid: "60438240"
 1. В представлении запроса по умолчанию в предыдущем разделе выберите **Схему** и разверните рабочую область. 
 
 2. Разверните раздел **Управление журналами**, а затем разверните **AuditLogs** или **SignInLogs**, чтобы просмотреть схему журнала.
-    ![Audit logs](./media/howto-analyze-activity-logs-log-analytics/auditlogschema.png) ![Signin logs](./media/howto-analyze-activity-logs-log-analytics/signinlogschema.png)
+    ![AuditLogs](./media/howto-analyze-activity-logs-log-analytics/auditlogschema.png)![SigninLogs](./media/howto-analyze-activity-logs-log-analytics/signinlogschema.png)
 
 ## <a name="query-the-azure-ad-activity-logs"></a>Запрос журналов действий Azure AD
 
@@ -102,10 +102,10 @@ AuditLogs
 * **Sign-ins Events** (События входа в систему). В этом представлении отображаются наиболее важные отчеты, связанные с мониторингом действий входа в систему, например, число входов по приложениям, пользователям, устройствам, а также сводное представление для отслеживания числа входов со временем.
 * **Users Performing Consent** (Пользователи, дающие согласие). В этом представлении отображаются отчеты, связанные с согласием пользователя, в том числе число согласий, предоставленных пользователем, число входов в систему пользователей, предоставивших согласие, а также число входов в систему всех приложений с доступом по согласию. 
 
-См. сведения об [установке и использовании представлений Log Analytics для журналов действий Azure AD](howto-install-use-log-analytics-views.md). 
+См. сведения об [установке и использовании предоставлений анализа журналов для журналов действий Azure AD](howto-install-use-log-analytics-views.md). 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Начало работы с запросами журналов Azure Monitor](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries)
 * [Создание групп действий и управление ими на портале Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups)

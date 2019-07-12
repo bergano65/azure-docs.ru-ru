@@ -4,7 +4,7 @@ description: Из этого практического руководства �
 services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-linux
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/17/2018
 ms.author: cynthn
-ms.openlocfilehash: d1db228f4c73cc00cd32ca6ae5b86056db68f05b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f8f00c49ced4e06eb634cbbfb1b786e6729783d2
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66155958"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67667651"
 ---
 # <a name="log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход на виртуальную машину Linux в Azure с аутентификацией Azure Active Directory (предварительная версия)
 
@@ -194,6 +194,6 @@ Access denied
 
 Поделиться своими отзывами об этой предварительной версии функции или сообщите о проблемах на [форуме отзывов и предложений по Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md).

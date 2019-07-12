@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 6/10/2018
-ms.author: aljo, subramar
-ms.openlocfilehash: b8012cbdad02995c3fc98a3ea1fa02a3a08bd2dc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: subramar
+ms.openlocfilehash: 58bfee5963257df380adac94133dcc55dd03a443
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60870882"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67617635"
 ---
 # <a name="service-fabric-azure-files-volume-driver-preview"></a>Драйвер тома службы файлов Azure для Service Fabric (предварительная версия)
 Подключаемый модуль тома службы файлов Azure — это [подключаемый модуль тома Docker](https://docs.docker.com/engine/extend/plugins_volume/), предоставляющий тома [службы файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) для контейнеров Docker. Этот подключаемый модуль тома Docker упакован в виде приложения Service Fabric, которое можно развернуть в кластерах Service Fabric. Он позволяет предоставить тома службы файлов Azure для других контейнерных приложений Service Fabric, развернутых в кластере.
@@ -28,7 +28,7 @@ ms.locfileid: "60870882"
 > 6\.4.571.9590 версия подключаемого модуля тома службы файлов Azure — предварительной версии, которая входит в состав этого документа. Как и любой предварительный выпуск, эта версия **не** предназначена для рабочих сред.
 >
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 * Версия подключаемого модуля тома службы файлов Azure для Windows работает только в операционных системах [Windows Server версии 1709](https://docs.microsoft.com/windows-server/get-started/whats-new-in-windows-server-1709), [Windows 10 версии 1709](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1709) или более поздних версий. Версия подключаемого модуля тома службы файлов Azure для Linux работает во всех версиях операционной системы, поддерживаемых Service Fabric.
 
 * Подключаемый модуль тома службы файлов Azure работает с Service Fabric версии 6.2 и новее.
@@ -225,6 +225,6 @@ docker plugin install --alias azure --grant-all-permissions docker4x/cloudstor:1
 
 Если задан драйвер ведения журналов Docker, необходимо развернуть агенты (или контейнеры) для обработки журналов в кластере. Чтобы указать параметры драйвера ведения журналов можно использовать тег **DriverOption**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Примеры контейнеров, включая драйвер тома, приведены в разделе [Примеры контейнеров Service Fabric](https://github.com/Azure-Samples/service-fabric-containers).
 * Развертывание контейнеров в кластере Service Fabric описывается в разделе [Развертывание контейнера в Service Fabric](service-fabric-deploy-container.md).

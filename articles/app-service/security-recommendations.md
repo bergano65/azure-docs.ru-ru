@@ -8,12 +8,13 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 06/17/2019
 ms.author: barclayn
-ms.openlocfilehash: f50532a21d11d2f7142fa3ee7ed08f759df36d52
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.custom: security-recommendations
+ms.openlocfilehash: 53cd2b1dde1158a1c46f798e57911dad110dc87e
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67207545"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67718266"
 ---
 # <a name="security-recommendations-for-app-service"></a>Рекомендации по безопасности для службы приложений
 
@@ -59,6 +60,6 @@ ms.locfileid: "67207545"
 |-|-|
 |В центре безопасности Azure уровня "стандартный" | [Центр безопасности Azure](../security-center/security-center-app-services.md) изначально интегрирован со службой приложений Azure. Его можно выполнять оценку и предоставляет рекомендации по безопасности. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Обратитесь к поставщику приложения, чтобы узнать, есть дополнительные требования к безопасности. Дополнительные сведения о разработке безопасных приложений, см. в разделе [безопасного документации по разработке приложений](../security/abstract-develop-secure-apps.md).

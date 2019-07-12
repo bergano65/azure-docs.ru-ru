@@ -14,21 +14,21 @@ ms.workload: iaas-sql-server
 ms.date: 02/12/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 5efbe874bbf3c1c4081eb7a2c76c1be5a3358ec8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b5015f00d3c6dfe0e1e5c2466af777cc0f1bc509
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65518976"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67607157"
 ---
 # <a name="use-azure-sql-vm-cli-to-configure-always-on-availability-group-for-sql-server-on-an-azure-vm"></a>Настройка группы доступности AlwaysOn для SQL Server на виртуальной Машине Azure с помощью CLI виртуальной Машины SQL Azure
 В этой статье описывается использование [виртуальной Машины SQL Azure CLI](/cli/azure/sql/vm?view=azure-cli-latest/) для развертывания Windows отказоустойчивого кластера (WSFC) и добавить в кластер виртуальных машин SQL Server, а также создание внутренней подсистемы балансировки нагрузки и прослушивателя для группы доступности Always On.  Фактическое развертывание группы доступности Always On по-прежнему выполняется вручную через SQL Server Management Studio (SSMS). 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы автоматизировать настройку группы доступности AlwaysOn с помощью интерфейса командной строки виртуальной Машины SQL Azure, требуется следующее: 
 - [подписка Azure](https://azure.microsoft.com/free/);
 - Группа ресурсов с контроллером домена. 
-- Один или несколько присоединенных к домену [виртуальных машин в Azure выполнения SQL Server 2016 (или более поздней версии) Enterprise edition](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision) в *одной группе доступности или в разных зонах доступности* , которые прошли [зарегистрирован в поставщике ресурсов виртуальной Машины SQL](virtual-machines-windows-sql-ahb.md#register-sql-server-vm-with-sql-resource-provider).  
+- Один или несколько присоединенных к домену [виртуальных машин в Azure выполнения SQL Server 2016 (или более поздней версии) Enterprise edition](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision) в *одной группе доступности или в разных зонах доступности* , которые прошли [зарегистрирован в поставщике ресурсов виртуальной Машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md).  
 - [Azure CLI](/cli/azure/install-azure-cli). 
 - (Не используется для любой сущности) доступны два IP-адреса, один для внутренней подсистемы балансировки нагрузки и один для прослушивателя группы доступности в пределах той же подсети, что группы доступности. Если используется существующий балансировщик нагрузки, только один доступный IP-адрес необходим для прослушивателя группы доступности. 
 
@@ -210,7 +210,7 @@ az sql vm group ag-listener create -n <listener name> -g <resource group name> `
 az sql vm group ag-listener delete --group-name <cluster name> --name <listener name > --resource-group <resource group name>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих статьях: 
 

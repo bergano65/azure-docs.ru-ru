@@ -4,15 +4,15 @@ description: В этой статье вы узнаете, как разверн
 services: firewall
 author: vhorne
 ms.service: firewall
-ms.date: 06/11/2019
+ms.date: 7/10/2019
 ms.author: victorh
 ms.topic: article
-ms.openlocfilehash: b40ac789fbc331e779e85462724e5c8a8e9bce47
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 24954eecde58c978fa3e14bb3a2d411d708687a3
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67083357"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67707161"
 ---
 # <a name="deploy-and-configure-azure-firewall-using-azure-cli"></a>Развертывание и настройка брандмауэра Azure, с помощью Azure CLI
 
@@ -20,7 +20,7 @@ ms.locfileid: "67083357"
 
 Вы можете управлять доступом к исходящей сети из подсети Azure только с помощью Брандмауэра Azure. Брандмауэр Azure позволяет настроить:
 
-* Правила приложений, определяющие полные доменные имена (FQDN), к которым можно получить доступ из подсети.
+* Правила приложений, определяющие полные доменные имена (FQDN), к которым можно получить доступ из подсети. Полное доменное имя можно также [включают экземпляры SQL](sql-fqdn-filtering.md).
 * Правила сети, определяющие адрес источника, протокол, порт назначения и адрес назначения.
 
 При маршрутизации трафика на брандмауэр, используемый в качестве шлюза по умолчанию, для подсети к трафику применяются настроенные правила брандмауэра.
@@ -49,11 +49,18 @@ ms.locfileid: "67083357"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 ### <a name="azure-cli"></a>Инфраструктура CLI Azure
 
 Если вы решили установить и использовать CLI локально, вам потребуется Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду **az --version**. Дополнительные сведения об установке или обновлении см. [здесь]( /cli/azure/install-azure-cli).
+
+Установка расширения брандмауэр Azure:
+
+```azurecli-interactive
+az extension add -n azure-firewall
+```
+
 
 ## <a name="set-up-the-network"></a>Настройка сети
 
@@ -293,6 +300,6 @@ az group delete \
   -n Test-FW-RG
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Учебник. Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)

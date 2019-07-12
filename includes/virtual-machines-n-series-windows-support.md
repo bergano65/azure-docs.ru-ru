@@ -8,33 +8,33 @@ ms.topic: include
 ms.date: 02/11/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 12f053d7255c21441d78dab8c7937bcf45ec48c2
-ms.sourcegitcommit: 6e6813f8e5fa1f6f4661a640a49dc4c864f8a6cb
+ms.openlocfilehash: 0f87b122f81fbd04767354e623dcb808466ee1be
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67151823"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67673499"
 ---
 ## <a name="supported-operating-systems-and-drivers"></a>Поддерживаемые операционные системы и драйверы
 
 ### <a name="nvidia-tesla-cuda-drivers"></a>Драйверы NVIDIA Tesla (CUDA)
 
-Драйверы NVIDIA Tesla (CUDA) для виртуальных машин серий NC, NCv2, NCv3, ND и NDv2 (необязательно для серии NV) поддерживаются только в операционных системах, перечисленных в следующей таблице. Ссылки для скачивания драйверов актуальны на момент публикации. Последние версии драйверов можно получить на веб-сайте [NVIDIA](http://www.nvidia.com/).
+Драйверы NVIDIA Tesla (CUDA) для виртуальных машин серий NC, NCv2, NCv3, ND и NDv2 (необязательно для серии NV) поддерживаются только в операционных системах, перечисленных в следующей таблице. Ссылки для скачивания драйверов актуальны на момент публикации. Последние версии драйверов можно получить на веб-сайте [NVIDIA](https://www.nvidia.com/).
 
 > [!TIP]
 > Вместо ручной установки драйвера CUDA на виртуальной машине Windows Server можно развернуть образ [виртуальной машины для обработки и анализа данных](../articles/machine-learning/data-science-virtual-machine/overview.md) Azure. Выпуски DSVM Windows Server 2016 предварительно устанавливают драйверы NVIDIA CUDA, библиотеку глубокой нейронной сети CUDA и другие средства.
 
 
-| ОС | Драйвер |
+| OS | Драйвер |
 | -------- |------------- |
-| Windows Server 2016 | [398.75](http://us.download.nvidia.com/Windows/Quadro_Certified/398.75/398.75-tesla-desktop-winserver2016-international.exe) (EXE-файл) |
-| Windows Server 2012 R2 | [398.75](http://us.download.nvidia.com/Windows/Quadro_Certified/398.75/398.75-tesla-desktop-winserver2008-2012r2-64bit-international.exe) (EXE-файл) |
+| Windows Server 2016 | [398.75](https://us.download.nvidia.com/Windows/Quadro_Certified/398.75/398.75-tesla-desktop-winserver2016-international.exe) (EXE-файл) |
+| Windows Server 2012 R2 | [398.75](https://us.download.nvidia.com/Windows/Quadro_Certified/398.75/398.75-tesla-desktop-winserver2008-2012r2-64bit-international.exe) (EXE-файл) |
 
 ### <a name="nvidia-grid-drivers"></a>Драйверы NVIDIA GRID
 
 Корпорация Майкрософт распространяет установщики драйверов NVIDIA GRID для виртуальных машин серии NV и NVv2, используемых в качестве виртуальных рабочих станций или виртуальных приложений. Эти драйверы GRID следует устанавливать только на виртуальные машины Azure серии NV под управлением операционных систем, перечисленных в следующей таблице. Эти драйверы содержат лицензии на ПО виртуального графического процессора GRID в Azure. Вам не нужно настраивать сервер лицензий программного обеспечения vGPU NVIDIA.
 
-| ОС | Драйвер |
+| OS | Драйвер |
 | -------- |------------- |
-| Windows Server 2019<br/><br/>Windows Server 2016<br/><br/>Windows 10 (до версии 1809. Без исправлений и уровень исправления 0 1809 не поддерживается). | [Сетка 8.0 (425.31)](https://go.microsoft.com/fwlink/?linkid=874181) (.exe) |
+| Windows Server 2019<br/><br/>Windows Server 2016<br/><br/>Windows 10 (до версии 1809. Без исправлений и уровень исправления 0 1809 не поддерживается). | [Сетка 8.0 (425.31)](https://go.microsoft.com/fwlink/?linkid=874181) (.exe) |
 | Windows Server 2012 R2 | [Сетка 8.0 (425.31)](https://go.microsoft.com/fwlink/?linkid=874184) (.exe)  |

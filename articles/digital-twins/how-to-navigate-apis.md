@@ -6,14 +6,14 @@ manager: philmea
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 1/7/2019
+ms.date: 07/09/2019
 ms.author: v-adgera
-ms.openlocfilehash: 1c5549b903e9a4768d81d601c42e621864522781
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: da1493d2d52f2c8a964df3b72c1622a9c6b66abf
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67462023"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67719849"
 ---
 # <a name="how-to-use-azure-digital-twins-management-apis"></a>Как использовать API управления Azure Digital Twins
 
@@ -66,7 +66,7 @@ API управления Azure Digital Twins предоставляют эффе
    - Относительный уровень  *-1* представляет пространства на том же уровне, что и родительское пространство указанного пространства.
 
 - **traverse**. Позволяет перемещаться в любом направлении от заданного идентификатора пространства, как указано с помощью следующих значений.
-   - **Нет**. Это значение по умолчанию фильтрует по заданному идентификатору пространства.
+   - **Нет** — Это значение по умолчанию фильтрует по заданному идентификатору пространства.
    - **Down**. Это значение фильтрует по заданному идентификатору пространства и его потомкам. 
    - **Up**. Это значение фильтрует по заданному идентификатору пространства и его предкам. 
    - **Span**. Это значение фильтрует горизонтальную часть пространственного графа на том же уровне, что и заданный идентификатор пространства. Для этого для параметров **minRelative** или **maxRelative** должно быть установлено значение true. 
@@ -109,8 +109,8 @@ API управления Azure Digital Twins предоставляют эффе
 - `YOUR_MANAGEMENT_API_URL/spaces?$orderby=Name desc&$top=3&$filter=substringof('Floor’,Name)`
  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о некоторых распространенных шаблонах запросов API см. в статье [Как запросить API Azure Digital Twins для выполнения общих задач](how-to-query-common-apis.md).
 
-
+Дополнительные сведения о конечных точках API см. в статье [способы использования цифровых Swagger двойниками](./how-to-use-swagger.md).

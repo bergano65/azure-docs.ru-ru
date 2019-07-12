@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 7a1e440a8dc8f518e272df9e126771df54390ed5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 586ddb237144daddf0cbfd19785fcba7658469a0
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60762486"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621475"
 ---
 # <a name="troubleshoot-azure-stream-analytics-queries"></a>Устранение неполадок з запросами в службе Azure Stream Analytics
 
@@ -25,11 +25,11 @@ ms.locfileid: "60762486"
     - На вкладке **Запрос** выберите **Тест**. Для [проверки запроса](stream-analytics-test-query.md) используйте загруженные демонстрационные данные. Проанализируйте все ошибки и попытайтесь исправить их.   
     - Кроме того, вы можете [проверить запрос, используя реальные входные данные](stream-analytics-live-data-local-testing.md), с помощью инструментов Stream Analytics для Visual Studio.
 
-2.  Если используются [**метки времени**](https://msdn.microsoft.com/library/azure/mt573293.aspx), убедитесь, что они зарегистрированы для событий после [начала выполнения задания](stream-analytics-out-of-order-and-late-events.md).
+2.  Если используются [**метки времени**](https://docs.microsoft.com/stream-analytics-query/timestamp-by-azure-stream-analytics), убедитесь, что они зарегистрированы для событий после [начала выполнения задания](stream-analytics-out-of-order-and-late-events.md).
 
 3.  Исключите типичные проблемы, например:
-    - Предложение [ **WHERE**](https://msdn.microsoft.com/library/azure/dn835048.aspx) в запросе фильтрует все события, предотвращая создание выходных данных.
-    - Выполнение функции [**CAST**](https://msdn.microsoft.com/azure/stream-analytics/reference/cast-azure-stream-analytics) завершается ошибкой, что приводит к сбою всего задания. Чтобы избежать сбоев приведения типов, используйте функцию [**TRY_CAST**](https://msdn.microsoft.com/azure/stream-analytics/reference/try-cast-azure-stream-analytics).
+    - Предложение [ **WHERE**](https://docs.microsoft.com/stream-analytics-query/where-azure-stream-analytics) в запросе фильтрует все события, предотвращая создание выходных данных.
+    - Выполнение функции [**CAST**](https://docs.microsoft.com/stream-analytics-query/cast-azure-stream-analytics) завершается ошибкой, что приводит к сбою всего задания. Чтобы избежать сбоев приведения типов, используйте функцию [**TRY_CAST**](https://docs.microsoft.com/stream-analytics-query/try-cast-azure-stream-analytics).
     - При использовании оконных функций подождите до завершения окна для вывода выходных данных из запроса.
     - Метка времени для событий предшествует времени запуска задания, поэтому события сбрасываются.
 
@@ -99,5 +99,5 @@ ms.locfileid: "60762486"
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
-* [Справочник по языку запросов Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+* [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

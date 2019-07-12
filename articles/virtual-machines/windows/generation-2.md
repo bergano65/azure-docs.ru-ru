@@ -4,7 +4,7 @@ description: Общие сведения о поддержке Azure для ви
 services: virtual-machines-windows
 documentationcenter: ''
 author: laurenhughes
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines-windows
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/23/2019
 ms.author: lahugh
-ms.openlocfilehash: d8991a6e3137953aae18b91f9cc19e81f0440c75
-ms.sourcegitcommit: 6e6813f8e5fa1f6f4661a640a49dc4c864f8a6cb
+ms.openlocfilehash: 7abc1b7cd3be775af03aeaf558f631060cc6f81c
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67151218"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67722730"
 ---
 # <a name="support-for-generation-2-vms-preview-on-azure"></a>Поддержка второго поколения 2 виртуальные машины (Предварительная версия) в Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "67151218"
 * [Серия Dsv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-general#dsv2-series) и [серии Dsv3](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-general#dsv3-series-1)
 * [Серии Esv3](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory#esv3-series)
 * [Серия Fsv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-compute#fsv2-series-1)
-* [Серия GS](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory#gs-series)
+* [Серия GS](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-previous-gen#gs-series)
 * [Серия ls —](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-previous-gen#ls-series) и [Lsv2 серии](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-storage#lsv2-series)
 * [Серии Mv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory#mv2-series)
 
@@ -58,7 +58,7 @@ ms.locfileid: "67151218"
 
 Azure сейчас не поддерживает некоторые функции, которые в локальной Hyper-V поддерживает виртуальные машины поколения 2.
 
-| Функция поколения 2                | On-premises Hyper-V | Таблицы Azure |
+| Функция поколения 2                | On-premises Hyper-V | Azure |
 |-------------------------------------|---------------------|-------|
 | Безопасная загрузка                         | :heavy_check_mark:  | :x:   |
 | Экранированной виртуальной Машины                         | :heavy_check_mark:  | :x:   |
@@ -108,7 +108,7 @@ Azure сейчас не поддерживает некоторые функци
 
 Поколения 2 можно создать виртуальную Машину из управляемого образа или управляемый диск таким же образом, вы создадите поколения 1 виртуальной Машины.
 
-### <a name="virtual-machine-scale-sets"></a>наборы для масштабирования виртуальных машин
+### <a name="virtual-machine-scale-sets"></a>Масштабируемые наборы виртуальных машин
 
 Также можно создать поколения 2 виртуальные машины с помощью масштабируемых наборов виртуальных машин. В Azure CLI используйте масштабирование Azure задает для создания поколения 2 виртуальных машин.
 
@@ -118,7 +118,7 @@ Azure сейчас не поддерживает некоторые функци
     Да. Но не все [размеры виртуальных Машин поколения 2](#generation-2-vm-sizes) доступны в каждом регионе. Доступность поколения 2 виртуальной Машины зависит от доступности размера виртуальной Машины.
 
 * **Есть ли разница в цене между поколения 1 и поколения 2 виртуальных машин?**  
-   №
+   Нет.
 
 * **Как увеличить размер диска ОС?**  
   Диски ОС размером более 2 ТБ не приходилось поколения виртуальных машин. По умолчанию диски ОС размером менее 2 ТБ для виртуальных машин поколения 2. Можно увеличить размер диска, рекомендуемый максимум до 4 ТБ. Чтобы увеличить размер диска операционной системы, используйте Azure CLI или портала Azure. Сведения о том, как расширить диски программно, см. в разделе [изменения размера диска](expand-os-disk.md).
@@ -145,7 +145,7 @@ Azure сейчас не поддерживает некоторые функци
 * **Можно ли перенести виртуальную Машину из поколения 1 в поколение 2?**  
     Нет, не удается изменить поколение виртуальной Машины после ее создания. Если необходимо переключиться между поколениями виртуальной Машины, создайте виртуальную Машину различные поколения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [виртуальные машины поколения 2 в Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v).
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: c15d315d186af5622d9fa988945750d93e8eb11f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae6d55180785c9407662776a95fcba31f8ba5275
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66507562"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67835210"
 ---
 #  <a name="add-claims-and-customize-user-input-using-custom-policies-in-azure-active-directory-b2c"></a>Добавление утверждений и настройка пользовательского ввода с помощью настраиваемых политик в Azure Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "66507562"
 
 В этой статье описано, как использовать новую запись, предоставляемую пользователем (утверждение), при регистрации пользователя в Azure Active Directory (Azure AD) B2C.  Вы настроите запись как раскрывающийся список и определить, является ли это обязательно.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните шаги, описанные в статье [Azure Active Directory B2C. Приступая к работе с настраиваемыми политиками](active-directory-b2c-get-started-custom.md). Проверьте процесс регистрации или входа пользователя для регистрации новой локальной учетной записи, прежде чем продолжить.
 
@@ -79,7 +79,7 @@ ms.locfileid: "66507562"
 
 #### <a name="dropdownsingleselect"></a>DropdownSingleSelect
 
-![Снимок экрана с раскрывающимся списком](./media/active-directory-b2c-configure-signup-self-asserted-custom/dropdown-menu-example.png)
+![Элемент управления dropdown одиночного выбора, отображаются несколько вариантов](./media/active-directory-b2c-configure-signup-self-asserted-custom/dropdown-menu-example.png)
 
 ```xml
 <ClaimType Id="city">
@@ -96,7 +96,7 @@ ms.locfileid: "66507562"
 
 #### <a name="checkboxmultiselect"></a>CheckboxMultiSelect
 
-![Снимок экрана с вариантом множественного выбора](./media/active-directory-b2c-configure-signup-self-asserted-custom/multiselect-menu-example.png)
+![Элемент управления checkbox множественного выбора, отображаются несколько вариантов](./media/active-directory-b2c-configure-signup-self-asserted-custom/multiselect-menu-example.png)
 
 ```xml
 <ClaimType Id="city">
@@ -235,7 +235,7 @@ ms.locfileid: "66507562"
       <IncludeTechnicalProfile ReferenceId="AAD-Common" />
     </TechnicalProfile>
     ```
-   
+
 4. Добавьте утверждение `<OutputClaim ClaimTypeReferenceId="city" />` в файл SignUporSignIn.xml, чтобы это утверждение отправлялось в приложение в токене после успешной операции.
 
     ```xml
@@ -304,6 +304,6 @@ ms.locfileid: "66507562"
 <OutputClaim ClaimTypeReferenceId="email" PartnerClaimType="Verified.Email" Required="true" />
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как [использовать настраиваемые атрибуты в пользовательской политике изменения профиля](active-directory-b2c-create-custom-attributes-profile-edit-custom.md).

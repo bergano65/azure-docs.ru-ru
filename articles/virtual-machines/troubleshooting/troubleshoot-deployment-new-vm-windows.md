@@ -4,7 +4,7 @@ description: Устранение неполадок развертывания 
 services: virtual-machines-windows, azure-resource-manager
 documentationcenter: ''
 author: JiangChen79
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: top-support-issue, azure-resource-manager
 ms.assetid: afc6c1a4-2769-41f6-bbf9-76f9f23bcdf4
@@ -16,12 +16,12 @@ ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: cjiang
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8f18fbabe52c9170cde70900933ce96a3a6400c7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6bdf0816e40e34b184da0340a8dbaffbcd7657e8
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62123862"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67710463"
 ---
 # <a name="troubleshoot-deployment-issues-when-creating-a-new-windows-vm-in-azure"></a>Устранение неполадок развертывания при создании виртуальной машины Windows в Azure
 [!INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-opening](../../../includes/virtual-machines-troubleshoot-deployment-new-vm-opening-include.md)]
@@ -89,7 +89,7 @@ ms.locfileid: "62123862"
   * создайте новую виртуальную машину в другой группе доступности (в том же регионе);
   * добавьте новую виртуальную машину в ту же виртуальную сеть.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 При возникновении проблем во время запуска остановленной виртуальной машины Windows или в случае изменения размера существующей виртуальной машины Windows в Azure см. раздел [Устранение неполадок в развертывании Resource Manager при перезагрузке или изменении размера существующей виртуальной машины Windows в Azure](restart-resize-error-troubleshooting.md).
 
 

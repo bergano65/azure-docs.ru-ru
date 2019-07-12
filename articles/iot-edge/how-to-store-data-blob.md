@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: dabaa06e224c6498c0080c4546c04f40e3919bb6
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: bb6cd43c77c31874115250d13f8d4067b3db7b36
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448537"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67804986"
 ---
 # <a name="store-data-at-the-edge-with-azure-blob-storage-on-iot-edge-preview"></a>Хранение данных на границе с помощью хранилища BLOB-объектов Azure в IoT Edge (предварительная версия)
 
@@ -54,7 +54,7 @@ ms.locfileid: "67448537"
 
 В этой статье описываются основные понятия, связанные с хранилище BLOB-объектов в контейнере IoT Edge, который запускает службу BLOB-объектов на вашем устройстве IoT Edge.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Устройство Azure IoT Edge.
 
@@ -62,13 +62,14 @@ ms.locfileid: "67448537"
 
 - Хранилище BLOB-объектов в модуле IoT Edge поддерживает следующие конфигурации устройств:
 
-  | Операционная система | Архитектура |
-  | ---------------- | ----- | ----- |
-  | Ubuntu Server 16.04 | AMD64 |
-  | Ubuntu Server 18.04 | AMD64 |
-  | Windows 10 IoT Enterprise | AMD64 |
-  | Windows Server 2019 | AMD64 |
-  | Raspbian-stretch | ARM32 |
+  | Операционная система | AMD64 | ARM32v7 | ARM64 |
+  | ---------------- | ----- | ----- | ---- |
+  | Raspbian-stretch | Нет | Да | Нет |  
+  | Ubuntu Server 16.04 | Да | Нет | Да |
+  | Ubuntu Server 18.04 | Да | Нет | Да |
+  | Windows 10 IoT Корпоративная сборки 17763 | Да | Нет | Нет |
+  | 2019 Windows Server, сборки 17763 | Да | Нет | Нет |
+  
 
 Облачные ресурсы.
 
@@ -197,7 +198,7 @@ ms.locfileid: "67448537"
 - Отмена удаления BLOB-объекта
 - Установка уровня BLOB-объекта
 
-### <a name="block-blobs"></a>Блочные BLOB-объекты
+### <a name="block-blobs"></a>Blob-блоки
 
 Поддерживается:
 
@@ -212,12 +213,12 @@ ms.locfileid: "67448537"
 
 Ниже приведены [комментариях на docker hub](https://hub.docker.com/_/microsoft-azure-blob-storage) для этого модуля
 
-## <a name="feedback"></a>Отзыв
+## <a name="feedback"></a>Отзывы
 
 Ваш отзыв важен для нас, чтобы сделать этот модуль и его компонентах, полезными и простой в использовании. Отправьте свой отзыв и дайте нам знать, как мы можем улучшить.
 
 Вы можете связаться с нами по адресу absiotfeedback@microsoft.com
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [развернуть хранилище BLOB-объектов Azure в IoT Edge](how-to-deploy-blob.md)

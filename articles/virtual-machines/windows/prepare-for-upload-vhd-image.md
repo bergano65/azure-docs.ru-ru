@@ -4,7 +4,7 @@ description: Узнайте, как подготовка Windows VHD или VHDX
 services: virtual-machines-windows
 documentationcenter: ''
 author: glimoli
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 7802489d-33ec-4302-82a4-91463d03887a
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 05/11/2019
 ms.author: genli
-ms.openlocfilehash: cc942aeb34d17e8dff064c6a21a3c7b2099c742a
-ms.sourcegitcommit: 6e6813f8e5fa1f6f4661a640a49dc4c864f8a6cb
+ms.openlocfilehash: f40b3e0d2a49f6522149a977572d4f3c12e34255
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67151032"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67720064"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Подготовка диска VHD или VHDX для Windows к отправке в Azure
 
@@ -346,7 +346,7 @@ Set-Service -Name RemoteRegistry -StartupType Automatic
 ### <a name="install-windows-updates"></a>Установка обновлений Windows
 В идеале следует хранить компьютер в обновленном *уровень обновления*. Если это невозможно, убедитесь, что установлены следующие обновления:
 
-| Компонент               | Binary         | Windows 7 с пакетом обновления 1, Windows Server 2008 R2 с пакетом обновления 1 | Windows 8, Windows Server 2012               | Windows 8.1, Windows Server 2012 R2 | Windows 10 v1607, Windows Server 2016 v1607 | V1703 Windows 10    | V1709 Windows 10, Windows Server 2016 v1709 | V1803 Windows 10, Windows Server 2016 v1803 |
+| Компонент               | Бинарный         | Windows 7 с пакетом обновления 1, Windows Server 2008 R2 с пакетом обновления 1 | Windows 8, Windows Server 2012               | Windows 8.1, Windows Server 2012 R2 | Windows 10 v1607, Windows Server 2016 v1607 | V1703 Windows 10    | V1709 Windows 10, Windows Server 2016 v1709 | V1803 Windows 10, Windows Server 2016 v1803 |
 |-------------------------|----------------|-------------------------------------------|---------------------------------------------|------------------------------------|---------------------------------------------------------|----------------------------|-------------------------------------------------|-------------------------------------------------|
 | Хранилище                 | disk.sys       | 6.1.7601.23403 — KB3125574                | 6.2.9200.17638 / 6.2.9200.21757 — KB3137061 | 6.3.9600.18203 — KB3137061         | -                                                       | -                          | -                                               | -                                               |
 |                         | storport.sys   | 6.1.7601.23403 — KB3125574                | 6.2.9200.17188 / 6.2.9200.21306 — KB3018489 | 6.3.9600.18573 — KB4022726         | 10.0.14393.1358 — KB4022715                             | 10.0.15063.332             | -                                               | -                                               |
@@ -432,7 +432,7 @@ Set-Service -Name RemoteRegistry -StartupType Automatic
    ```
   Диск данных, подключенного к виртуальной Машине, буква том временного диска обычно является *D*. Это назначение может отличаться в зависимости от настроек и количество дисков.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Отправка образа виртуальной машины Windows в Azure для развертываний Resource Manager](upload-generalized-managed.md)
 * [Устранение неполадок активации виртуальных Машин Windows Azure](troubleshoot-activation-problems.md)
 

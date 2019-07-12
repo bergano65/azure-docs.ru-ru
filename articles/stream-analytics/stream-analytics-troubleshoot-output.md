@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 7dbb04a9d002fdcff49d28f69ee0975500bb7ed0
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: a07ac40ad3adda486b5216e83d683e00ec93265d
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67340789"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620793"
 ---
 # <a name="troubleshoot-azure-stream-analytics-outputs"></a>Устранение неполадок с выходными данными в Azure Stream Analytics
 
@@ -79,7 +79,7 @@ ms.locfileid: "67340789"
 
 ## <a name="key-violation-warning-with-azure-sql-database-output"></a>Предупреждение о нарушении ключа с выходными данными службы "База данных SQL Azure"
 
-При настройке службы "База данных SQL Azure" для выходных данных задания Stream Analytics выполняется массовая вставка записей в целевую таблицу. Обычно Azure Stream Analytics гарантирует [по крайней мере однократную доставку]( https://msdn.microsoft.com/azure/stream-analytics/reference/event-delivery-guarantees-azure-stream-analytics) в приемник выходных данных. Но можно обеспечить и [исключительно однократную доставку]( https://blogs.msdn.microsoft.com/streamanalytics/2017/01/13/how-to-achieve-exactly-once-delivery-for-sql-output/) для выходных данных SQL. Для этого в таблице SQL нужно определить уникальное ограничение. 
+При настройке службы "База данных SQL Azure" для выходных данных задания Stream Analytics выполняется массовая вставка записей в целевую таблицу. Обычно Azure Stream Analytics гарантирует [по крайней мере однократную доставку](https://docs.microsoft.com/stream-analytics-query/event-delivery-guarantees-azure-stream-analytics) в приемник выходных данных. Но можно обеспечить и [исключительно однократную доставку]( https://blogs.msdn.microsoft.com/streamanalytics/2017/01/13/how-to-achieve-exactly-once-delivery-for-sql-output/) для выходных данных SQL. Для этого в таблице SQL нужно определить уникальное ограничение. 
 
 Когда в таблицу SQL, в которой настроены уникальные ограничения ключей, вставляются повторяющиеся записи, Azure Stream Analytics удаляет такую запись. Данные разделяются на пакеты, которые рекурсивно вставляются, пока не будет обнаружена повторяющаяся запись. Если задание потоковой передачи имеет значительное число повторяющихся строк, процесс разбиения и вставки должен игнорировать дубликаты по одному, что менее эффективно и занимает много времени. Если в журнале действий в течение последнего часа отображается несколько предупреждающих сообщений о нарушении ключа, вполне вероятно, что обработка выходных данных SQL замедляет выполнение всего задания. 
 
@@ -104,5 +104,5 @@ ms.locfileid: "67340789"
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
-* [Справочник по языку запросов Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+* [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

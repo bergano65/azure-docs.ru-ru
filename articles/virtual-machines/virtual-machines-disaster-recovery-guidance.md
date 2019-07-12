@@ -4,7 +4,7 @@ description: Узнайте, что делать, если прерывание 
 services: virtual-machines
 documentationcenter: ''
 author: kmouss
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: 65272148-ff06-4bce-91f1-851d706d4d40
 ms.service: virtual-machines
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 05/31/2017
 ms.author: kmouss;aglick
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: dc71e8564b35f4fdd4153a04c66a3d8c5df88c30
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f071e1ae97228a16799d391e226ba44b99f6096e
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61478850"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67721190"
 ---
 # <a name="what-to-do-in-the-event-that-an-azure-service-disruption-impacts-azure-vms"></a>Что делать, если прерывание работы службы Azure влияет на виртуальные машины Azure
 Корпорация Майкрософт прилагает все усилия для того, чтобы наши службы всегда были доступны. Иногда по независящим от нас обстоятельствам происходят незапланированные нарушения работы служб.
@@ -44,11 +44,11 @@ ms.locfileid: "61478850"
 
 
 > [!NOTE]
-> Учтите, что этот процесс нельзя контролировать и он выполняется только при нарушении работы службы на уровне региона. Поэтому для обеспечения самого высокого уровня доступности необходимо также использовать и другие стратегии архивации приложения. Дополнительные сведения см. в разделе о [стратегиях аварийного восстановления данных](https://docs.microsoft.com/azure/architecture/resiliency/disaster-recovery-azure-applications#data-strategies-for-disaster-recovery).
+> Учтите, что этот процесс нельзя контролировать и он выполняется только при нарушении работы службы на уровне региона. Поэтому для обеспечения самого высокого уровня доступности необходимо также использовать и другие стратегии архивации приложения. Дополнительные сведения см. в разделе о [стратегиях аварийного восстановления данных](https://docs.microsoft.com/azure/architecture/reliability/disaster-recovery#disaster-recovery-plan).
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Начните [защищать приложения, работающие на виртуальных машинах Azure](https://aka.ms/a2a-getting-started), с помощью Azure Site Recovery
 

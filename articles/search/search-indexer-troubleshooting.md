@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: magottei
 ms.custom: seodec2018
-ms.openlocfilehash: 4ed18b5f83bdb052f2db6847a320c26a8e49f83e
-ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.openlocfilehash: 1cb3260fa11354de963318a023fec912d082eae4
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67147544"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67653406"
 ---
 # <a name="troubleshooting-common-indexer-issues-in-azure-search"></a>Устранение распространенных неполадок с индексатором в Поиске Azure
 
@@ -41,11 +41,11 @@ ms.locfileid: "67147544"
 
 Чтобы узнать IP-адрес службы поиска путем проверки связи с его полное доменное имя (`<your-search-service-name>.search.windows.net`).
 
-### <a name="cosmos-db"></a>База данных Cosmos
+### <a name="cosmos-db"></a>Cosmos DB
 
 #### <a name="indexing-isnt-enabled"></a>Индексирование не включено
 
-Поиск Azure имеет неявную зависимость от индексирования Cosmos DB. Если вы отключите автоматическое индексирование в Cosmos DB, Поиск Azure сообщит об успешном выполнении операции, но не сможет индексировать содержимое контейнера. Процессы проверки параметров и включения индексирования описаны в статье [Управление индексированием в Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/how-to-manage-indexing-policy#manage-indexing-using-azure-portal).
+Поиск Azure имеет неявную зависимость от индексирования Cosmos DB. Если вы отключите автоматическое индексирование в Cosmos DB, Поиск Azure сообщит об успешном выполнении операции, но не сможет индексировать содержимое контейнера. Процессы проверки параметров и включения индексирования описаны в статье [Управление индексированием в Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/how-to-manage-indexing-policy#use-the-azure-portal).
 
 ## <a name="document-processing-errors"></a>Ошибки обработки документов
 

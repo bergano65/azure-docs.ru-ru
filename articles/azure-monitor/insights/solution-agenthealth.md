@@ -7,23 +7,23 @@ author: MGoedtel
 manager: carmonm
 editor: ''
 ms.assetid: ''
-ms.service: operations-management-suite
+ms.service: azure-monitor
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/19/2017
 ms.author: magoedte
-ms.openlocfilehash: 568ff99364923c43b7199bed1dacd32cf0d18ab9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e9e27e224e42bf3f65fadcac22210fda314445fa
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64571157"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67665997"
 ---
 #  <a name="agent-health-solution-in-azure-monitor"></a>Агент работоспособности решения в Azure Monitor
 Агент работоспособности решения в Azure поможет вам понять, для всех агентов, отчеты непосредственно в рабочей области Log Analytics в Azure Monitor или группу управления System Center Operations Manager, подключенных к Azure Monitor, который не отвечает и Отправка рабочих данных.  Вы также можете отслеживать число развернутых агентов и их географическое распределение, а также выполнять другие запросы, чтобы знать о распределении агентов, развернутых в Azure, других облачных средах или в локальной среде.    
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Перед развертыванием этого решения убедитесь, что у вас есть поддерживаемые [агенты Windows](../../log-analytics/log-analytics-windows-agent.md), которые отправляют отчеты в рабочую область Log Analytics или [группу управления Operations Manager](../../azure-monitor/platform/om-agents.md), интегрированную с вашей рабочей областью.
 
 ## <a name="solution-components"></a>Компоненты решения
@@ -37,7 +37,7 @@ ms.locfileid: "64571157"
 
 Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../../azure-monitor/platform/om-agents.md).
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 Добавьте решение для мониторинга работоспособности агентов в рабочую область Log Analytics, как описано в статье [Добавление решений](solutions.md). Дополнительная настройка не требуется.
 
 
@@ -115,6 +115,6 @@ ms.locfileid: "64571157"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [оповещения в Azure Monitor](../platform/alerts-overview.md) для генерации оповещений на основе журнала запросов. 

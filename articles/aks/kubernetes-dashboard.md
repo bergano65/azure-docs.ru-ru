@@ -2,33 +2,33 @@
 title: Управление кластером Службы Azure Kubernetes с помощью веб-панели мониторинга
 description: Узнайте, как использовать панель мониторинга пользовательского веб-интерфейса Kubernetes для управления кластером Службы Azure Kubernetes (AKS)
 services: container-service
-author: tylermsft
+author: mlearned
 ms.service: container-service
 ms.topic: article
 ms.date: 10/08/2018
-ms.author: twhitney
-ms.openlocfilehash: 80c0bd630ba2263696b72b003e27c53f1e457704
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: mlearned
+ms.openlocfilehash: 0de2f285b5eca88a098a2d7cfe1608ad2f0db71b
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66304527"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67615240"
 ---
 # <a name="access-the-kubernetes-web-dashboard-in-azure-kubernetes-service-aks"></a>Подключение веб-панели мониторинга Kubernetes в Службе Azure Kubernetes (AKS)
 
 Служба Kubernetes включает в себя веб-панель мониторинга, которая может использоваться для базовых операций управления. Эта панель мониторинга позволяет просматривать базовое состояние работоспособности и метрики для приложений, создавать и развертывать службы, а также изменять существующие приложения. В этом документе рассматривается запуск панели мониторинга Kubernetes с помощью Azure CLI, а также некоторые основные операции с ней.
 
-Дополнительные сведения о панели мониторинга Kubernetes см. в статье [Web UI (Dashboard)][kubernetes-dashboard] (Панель мониторинга пользовательского веб-интерфейса).
+Дополнительные сведения о панели мониторинга Kubernetes см. в разделе [панели мониторинга пользовательского интерфейса Kubernetes][kubernetes-dashboard].
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В действиях, описанных в этом документе, предполагается, что создан кластер AKS и с ним установлено подключение `kubectl`. Если необходимо создать кластер AKS, см. раздел [AKS quickstart][aks-quickstart] (Краткое руководство по развертыванию кластера службы Azure Kubernetes (AKS)).
+В действиях, описанных в этом документе, предполагается, что создан кластер AKS и с ним установлено подключение `kubectl`. Если вам нужно создать кластер службы контейнеров AZURE, см. в разделе [краткое руководство AKS][aks-quickstart].
 
-Кроме того, нужно установить и настроить Azure CLI 2.0.46 или более поздней версии. Чтобы узнать версию, выполните команду  `az --version` . Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Кроме того, нужно установить и настроить Azure CLI 2.0.46 или более поздней версии. Чтобы узнать версию, выполните команду  `az --version` . Если требуется выполнить установку или обновление, см. в разделе [установить Azure CLI][install-azure-cli].
 
 ## <a name="start-the-kubernetes-dashboard"></a>Запуск панели мониторинга Kubernetes
 
-Выполните команду [az aks browse][az-aks-browse] для запуска панели мониторинга Kubernetes. В следующем примере создается панель мониторинга для кластера с именем *myAKSCluster* в группе ресурсов *myResourceGroup*.
+Для запуска панели мониторинга Kubernetes, используйте [Обзор az aks][az-aks-browse] команды. В следующем примере создается панель мониторинга для кластера с именем *myAKSCluster* в группе ресурсов *myResourceGroup*.
 
 ```azurecli
 az aks browse --resource-group myResourceGroup --name myAKSCluster
@@ -42,18 +42,18 @@ az aks browse --resource-group myResourceGroup --name myAKSCluster
 
 Если кластер AKS использует RBAC, необходимо создать *ClusterRoleBinding*(связи кластерных ролей) прежде чем правильно подключиться к панели мониторинга. По умолчанию панель мониторинга Kubernetes развертывается с минимальными правами доступа на чтение и отображает сообщения об ошибках доступа RBAC. Сейчас панель мониторинга Kubernetes не поддерживает пользовательские учетные данные для определения уровня доступа. Вместо этого она использует роли, предоставленные учетной записи службы. Администратор кластера может предоставить дополнительный доступ к учетной записи службы *kubernetes-dashboard*, однако это может послужить вектором для эскалации привилегий. Вы также можете интегрировать аутентификацию Azure Active Directory, чтобы предоставить более детальный уровень доступа.
 
-Чтобы создать связь, используйте команду [kubectl create clusterrolebinding][kubectl-create-clusterrolebinding], как показано в следующем примере. 
+Чтобы создать привязку, используйте [kubectl создать clusterrolebinding][kubectl-create-clusterrolebinding] команды, как показано в следующем примере. 
 
 > [!WARNING]
 > Этот пример привязки не применяется к дополнительной проверке подлинности и может привести к небезопасному использованию. Панель мониторинга Kubernetes доступна для любого пользователя, имеющего доступ к URL-адресу. Не предоставляйте публичный доступ к панели мониторинга Kubernetes.
 >
-> Дополнительные сведения об использовании разных методов проверки подлинности см. в статье о панели мониторинга Kubernetes [Access control][dashboard-authentication](Контроль доступа).
+> Дополнительные сведения об использовании разных методов проверки подлинности см. в статье вики-сайт панели мониторинга Kubernetes на [элементы управления доступом][dashboard-authentication].
 
 ```console
 kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
 ```
 
-Теперь можно просматривать панели мониторинга Kubernetes в кластере с поддержкой RBAC. Для запуска панели мониторинга Kubernetes выполните команду [az aks browse][az-aks-browse], как описано на предыдущем шаге.
+Теперь можно просматривать панели мониторинга Kubernetes в кластере с поддержкой RBAC. Для запуска панели мониторинга Kubernetes, используйте [Обзор az aks][az-aks-browse] команды, как описано на предыдущем шаге.
 
 ## <a name="create-an-application"></a>Создание приложения
 
@@ -103,9 +103,9 @@ kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-adm
 
 ![Просмотр сведений о наборе реплик](./media/kubernetes-dashboard/view-replica-set.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о веб-панели мониторинга Kubernetes см. в [этой статье][kubernetes-dashboard].
+Дополнительные сведения о панели мониторинга Kubernetes см. в разделе [панели мониторинга пользовательского интерфейса Kubernetes][kubernetes-dashboard].
 
 <!-- LINKS - external -->
 [kubernetes-dashboard]: https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/

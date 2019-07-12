@@ -4,7 +4,7 @@ description: Windows виртуальной машины Устранение н
 services: virtual-machines-windows
 documentationcenter: ''
 author: genlin
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 4e383427-4aff-4bf3-a0f4-dbff5c6f0c81
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 11/01/2018
 ms.author: genli
-ms.openlocfilehash: 5752731f08a7dc9ae8661e698aef9655837c6220
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 76841484595b0a8809b8ab10db3199fc8cd28b04
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60593234"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67710440"
 ---
 # <a name="troubleshoot-deploying-windows-virtual-machine-issues-in-azure"></a>Устранение неполадок при развертывании виртуальных машин Windows в Azure
 
@@ -119,7 +119,7 @@ ms.locfileid: "60593234"
 Да. Существующую классическую виртуальную машину можно добавить в новую или существующую группу доступности. Дополнительные сведения см. в разделе [Добавление существующей виртуальной машины к группе доступности](/previous-versions/azure/virtual-machines/windows/classic/configure-availability-classic#addmachine).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/).
 
 Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**.

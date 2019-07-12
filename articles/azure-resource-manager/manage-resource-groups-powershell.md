@@ -8,12 +8,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
-ms.openlocfilehash: 3d6a102b794ca9c43e1dd18f923f6ce224596499
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 5197358e3bd8a3052fbf71cafc2f1e3acda46b26
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67296258"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67721142"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-azure-powershell"></a>Управление группами ресурсов Azure Resource Manager с помощью Azure PowerShell
 
@@ -89,7 +89,7 @@ Remove-AzResourceGroup -Name $resourceGroupName
 
 ## <a name="move-to-another-resource-group-or-subscription"></a>Переместить в другую группу ресурсов или подписку
 
-Ресурсы в группе можно переместить в другую группу ресурсов. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](./resource-group-move-resources.md#move-resources).
+Ресурсы в группе можно переместить в другую группу ресурсов. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](./resource-group-move-resources.md).
 
 ## <a name="lock-resource-groups"></a>Блокировки группы ресурсов
 
@@ -218,7 +218,7 @@ Export-AzResourceGroup `
 
 [Управление доступом на основе ролей (RBAC)](../role-based-access-control/overview.md) — это способ управления доступом к ресурсам в Azure. Дополнительные сведения см. в разделе [управление доступом с помощью Azure PowerShell и RBAC](../role-based-access-control/role-assignments-powershell.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы узнать, Azure Resource Manager, см. в разделе [обзоре Azure Resource Manager](./resource-group-overview.md).
 - Чтобы узнать синтаксис шаблона Resource Manager, см. в разделе [описание структуры и синтаксиса шаблонов Azure Resource Manager](./resource-group-authoring-templates.md).

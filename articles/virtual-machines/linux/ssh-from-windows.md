@@ -4,7 +4,7 @@ description: Узнайте, как создавать и использоват
 services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-service-management,azure-resource-manager
 ms.assetid: 2cacda3b-7949-4036-bd5d-837e8b09a9c8
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 0ac62a99f5735647f67917d441645e30444b3818
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bd5eeb3bc3864dc0203c558228dce2f54dbaa79d
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61473709"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67708800"
 ---
 # <a name="how-to-use-ssh-keys-with-windows-on-azure"></a>Как использовать ключи SSH с Windows в Azure
 
@@ -124,7 +124,7 @@ ssh azureuser@myvm.westus.cloudapp.azure.com
 
 4. Щелкните **Open** (Открыть) для подключения к виртуальной машине.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Подробные инструкции, параметры и дополнительные примеры работы с ключами SSH приведены в статье [Подробные инструкции: создание ключей SSH для аутентификации на виртуальной машине Linux в Azure и управление этими ключами](create-ssh-keys-detailed.md).
 

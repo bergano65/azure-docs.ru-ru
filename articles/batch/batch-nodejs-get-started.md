@@ -10,19 +10,19 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.workload: big-compute
 ms.date: 05/22/2017
-ms.author: shwetams
-ms.openlocfilehash: bb0bfa5eac3dd9031718fb12f270f5fc03bbaea6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: shg
+ms.openlocfilehash: 890e26d21b46fbf24e205fb8e4c8e32e09bf5cb9
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60775236"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704817"
 ---
 # <a name="get-started-with-batch-sdk-for-nodejs"></a>Приступая к работе с пакетом SDK для пакетной службы для Node.js
 
 Изучите основы создания клиента пакетной службы в Node.js с помощью [пакета SDK для пакетной службы Azure для Node.js](/javascript/api/overview/azure/batch). Мы определим ключевые аспекты приложения пакетной службы, а затем настроим его с помощью клиента Node.js.  
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 В этой статье предполагается, что вы уже работали с Node.js и знаете, как работать в Linux. Также предполагается, что у вас есть настроенная учетная запись Azure с правами доступа для создания пакетной службы и службы хранилища.
 
 Перед изучением шагов, описанных в этой статье, советуем ознакомиться со статьей [Выполнение реальных параллельных рабочих нагрузок с использованием пакетной службы](batch-technical-overview.md).
@@ -351,7 +351,7 @@ var container_list = ["con1","con2","con3","con4"]
 
 Портал содержит подробные представления задач и состояния заданий. Можно также использовать список, чтобы получить функции в пакете SDK узла Azure. Подробные сведения приведены в документации по [ссылке](https://azure.github.io/azure-sdk-for-node/azure-batch/latest/Job.html).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Если вы недавно используете пакетную службу, рекомендуем прочитать статью [с обзором функций пакетной службы Azure](batch-api-basics.md) .
 - Сведения об API пакетной службы см. в статье [Microsoft Azure SDK for Node.js - Batch Service](/javascript/api/overview/azure/batch) (Пакет Microsoft Azure SDK для Node.js. Пакетная служба).

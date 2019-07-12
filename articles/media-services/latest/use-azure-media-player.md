@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 01/03/2018
+ms.date: 07/10/2018
 ms.author: juliako
-ms.openlocfilehash: fd5bf9f7bca9c667191d0d3f83be6e29a96c8dbe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c599bc2bba27a3b3603d8d67e2c6049dc2a8b08b
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64926514"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67840154"
 ---
 # <a name="azure-media-player-overview"></a>Обзор Проигрывателя мультимедиа Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "64926514"
 
 ### <a name="start-using"></a>Начать использовать
 
-[Демонстрационную страницу Проигрывателя мультимедиа Azure](https://aka.ms/amp) можно использовать для воспроизведения примеров Служб мультимедиа Azure или собственного потока.  
+[Демонстрационную страницу Проигрывателя мультимедиа Azure](http://aka.ms/azuremediaplayer) можно использовать для воспроизведения примеров Служб мультимедиа Azure или собственного потока.  
 
 Чтобы воспроизвести новое видео, вставьте другой URL-адрес и нажмите кнопку **Обновить**.
 
@@ -40,7 +40,7 @@ ms.locfileid: "64926514"
 
 ### <a name="monitor-diagnostics-of-a-video-stream"></a>Мониторинг диагностики видеопотока
 
-Для отслеживания диагностики видеопотока можно использовать [демонстрационную страницу Проигрывателя мультимедиа Azure](https://aka.ms/amp). 
+Для отслеживания диагностики видеопотока можно использовать [демонстрационную страницу Проигрывателя мультимедиа Azure](http://aka.ms/azuremediaplayer). 
 
 ![Диагностика Проигрывателя мультимедиа Azure Media Player](./media/azure-media-player/diagnostics.png)
 
@@ -48,7 +48,7 @@ ms.locfileid: "64926514"
 
 Проигрыватель мультимедиа Azure можно легко настроить. Для базового воспроизведения мультимедийного содержимого из учетной записи Служб мультимедиа потребуется всего несколько минут. Дополнительные сведения о настройке Проигрывателя мультимедиа Azure см. в [документации по Проигрывателю мультимедиа Azure](https://aka.ms/ampdocs). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Документация по Проигрывателю мультимедиа Azure](https://aka.ms/ampdocs)
 - [Примеры Проигрывателя мультимедиа Azure](https://aka.ms/ampsamples)

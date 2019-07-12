@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/01/2019
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: c0584a69349c2785b5b6bce1d17c023c95b36151
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0b6bdc884107a522c81d100c0a05018cbc9d0a70
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66136179"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67718281"
 ---
 # <a name="troubleshoot-domain-and-ssl-certificate-problems-in-azure-app-service"></a>Устранение неполадок с доменами и SSL-сертификатами в Службе приложений Azure
 
@@ -269,7 +269,7 @@ ms.locfileid: "66136179"
 
     |Тип записи|Узел|На что указывает|
     |------|------|-----|
-    |A|@|IP-адрес приложения|
+    |А|@|IP-адрес приложения|
     |TXT|@|`<app-name>.azurewebsites.net`|
     |CNAME|www|`<app-name>.azurewebsites.net`|
 
@@ -325,7 +325,6 @@ ms.locfileid: "66136179"
 
 **Можно ли переместить веб-приложения с личным доменом в другую подписку или из среды службы приложений версии 1 до версии 2?**
 
-Да, веб-приложения можно переместить между подписками. Следуйте указаниям в [как переместить ресурсы в Azure](../azure-resource-manager/resource-group-move-resources.md). Существуют некоторые ограничения при перемещении веб-приложения. Дополнительные сведения см. в разделе [ограничения для перемещения ресурсов службы приложений](../azure-resource-manager/resource-group-move-resources.md#app-service-limitations
-).
+Да, веб-приложения можно переместить между подписками. Следуйте указаниям в [как переместить ресурсы в Azure](../azure-resource-manager/resource-group-move-resources.md). Существуют некоторые ограничения при перемещении веб-приложения. Дополнительные сведения см. в разделе [ограничения для перемещения ресурсов службы приложений](../azure-resource-manager/move-limitations/app-service-move-limitations.md).
 
 После перемещения веб-приложения, привязок имен узлов из доменов в пределах Настройка личных доменов должен оставаться неизменным. Дополнительные действия не требуются для настройки привязок имен узлов.

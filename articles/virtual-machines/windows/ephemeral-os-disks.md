@@ -3,25 +3,25 @@ title: Временные диски операционной системы в�
 description: Дополнительные сведения о временных дисках ОС для виртуальных машин Azure.
 services: virtual-machines-windows
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.topic: article
-ms.date: 05/02/2019
+ms.date: 07/01/2019
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: 1e5d37b860a5809806f11df2d13cffc113402ac2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f821089bb9f46bcf63350519953d6cff843351f5
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65159200"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67808043"
 ---
-# <a name="preview-ephemeral-os-disks-for-azure-vms"></a>Предварительный просмотр: Временные диски ОС для виртуальных машин Azure
+# <a name="ephemeral-os-disks-for-azure-vms"></a>Временные диски ОС для виртуальных машин Azure
 
 [!INCLUDE [virtual-machines-common-ephemeral](../../../includes/virtual-machines-common-ephemeral.md)]
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Вы можете создать виртуальную Машину с временный диск ОС с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.compute/new-azvm).
 

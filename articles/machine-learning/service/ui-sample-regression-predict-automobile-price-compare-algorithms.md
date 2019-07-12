@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: sgilley
 ms.date: 05/10/2019
-ms.openlocfilehash: c8c813a2304797e71499a916e29c18f8bec2b389
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: aa0a1fc2acdc9687030040c23cdb1781e9529169
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65787792"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67605690"
 ---
 # <a name="sample-2---regression-predict-price-and-compare-algorithms"></a>Пример 2 - регрессии. Предсказать цену и сравнение алгоритмов
 
@@ -27,7 +27,7 @@ ms.locfileid: "65787792"
 
 [![Граф эксперимента](media/ui-sample-regression-predict-automobile-price-compare-algorithms/graph.png)](media/ui-sample-classification-predict-credit-risk-cost-sensitive/graph.png#lightbox)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 
@@ -88,7 +88,7 @@ ms.locfileid: "65787792"
 
 [!INCLUDE [aml-ui-cleanup](../../../includes/aml-ui-cleanup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Изучите другие примеры, доступные для визуального интерфейса:
 
@@ -96,3 +96,4 @@ ms.locfileid: "65787792"
 - [Пример 3 - классификация. Спрогнозировать кредитный риск](ui-sample-classification-predict-credit-risk-basic.md)
 - [Пример 4 - классификация. Прогнозирования кредитного риска (стоимость конфиденциальные)](ui-sample-classification-predict-credit-risk-cost-sensitive.md)
 - [Пример 5 - классификации. Прогнозирование оттока](ui-sample-classification-predict-churn.md)
+- [Пример 6 - классификации. Прогнозирование задержки рейсов](ui-sample-classification-predict-flight-delay.md)

@@ -2,17 +2,17 @@
 title: Ограничения для пулов узлов Windows Server в службе Azure Kubernetes (AKS)
 description: Дополнительные сведения об известных ограничениях при выполнении пулы узлов Windows Server и рабочих нагрузок приложений в службе Azure Kubernetes (AKS)
 services: container-service
-author: tylermsft
+author: mlearned
 ms.service: container-service
 ms.topic: article
 ms.date: 05/31/2019
-ms.author: twhitney
-ms.openlocfilehash: 457a908a70fccd9f4209121d9b99e5e53905500b
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.author: mlearned
+ms.openlocfilehash: 0d79b4d76249bd4a79f8adbd5df0cfa1ae133760
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67444105"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67613740"
 ---
 # <a name="current-limitations-for-windows-server-node-pools-and-application-workloads-in-azure-kubernetes-service-aks"></a>Текущие ограничения для пулов узлов Windows Server и рабочих нагрузок приложений в службе Azure Kubernetes (AKS)
 
@@ -71,7 +71,7 @@ Kubernetes — Исторически ориентированных на Linux.
 - **Пути к файлам** -соглашение о вызовах для Windows Server является использование \ вместо /.
     - В спецификации pod, которые подключают тома укажите путь для контейнеров Windows Server. Например, вместо того, чтобы подключить точка *тома/mnt/* в контейнере Linux укажите букву диска и расположение например */K/тома* подключение в качестве *K:* диска.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы приступить к работе с контейнерами Windows Server в AKS, [создать пул узлов под управлением Windows Server в AKS][windows-node-cli].
 

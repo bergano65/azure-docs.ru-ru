@@ -4,19 +4,19 @@ description: Azure DevOps Projects упрощает начало работы с
 author: shizn
 manager: ''
 ms.author: xshi
-ms.date: 01/22/2019
+ms.date: 07/09/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 02977032c5975de4098600ddbebccfcbb9b0fafd
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 109a7e327217a342f485dd61b53115569f2346cd
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60595500"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67722983"
 ---
-# <a name="create-a-cicd-pipeline-for-iot-edge-with-azure-devops-projects-preview"></a>Создание конвейера CI/CD для IoT Edge с помощью Azure DevOps Projects (предварительная версия)
+# <a name="create-a-cicd-pipeline-for-iot-edge-with-azure-devops-projects"></a>Создание конвейера CI/CD для IoT Edge с помощью проектов Azure DevOps
 
 Настройте непрерывную интеграцию (CI) и непрерывную доставку (CD) для приложения IoT Edge с помощью DevOps Projects. DevOps Projects упрощает начальную настройку конвейера сборки и выпуска в Azure Pipelines.
 
@@ -38,7 +38,7 @@ DevOps Projects создает конвейер CI/CD в Azure DevOps. Вы мо
 
    ![Выбор языка для создания приложения](./media/how-to-devops-project/select-language.png)
 
-2. Выберите **Простой Интернет вещей (предварительная версия)** как исполняющую среду, а затем щелкните **Далее**.
+2. Выберите **простых вещей** как исполняющая среда, а затем выберите **Далее**.
 
    ![Выбор платформы "Простой Интернет вещей"](media/how-to-devops-project/select-iot.png)
 
@@ -138,7 +138,7 @@ DevOps Projects создает репозиторий Git для проекта 
 
 Ненужную Службу приложений Azure и связанные ресурсы можно удалить. Для этого воспользуйтесь функцией **Удалить** на панели мониторинга DevOps Projects.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Дополнительные сведения о задачах Azure IoT Edge в Azure DevOps см. в статье [Непрерывная интеграция и непрерывное развертывание в Azure IoT Edge](how-to-ci-cd.md).
 * Основные сведения о развертывании IoT Edge см. в статье [Understand IoT Edge deployments for single devices or at scale](module-deployment-monitoring.md) (Основные сведения о развертываниях IoT Edge для отдельных устройств или в требуемом масштабе).
 * Ознакомьтесь со статьей [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-monitor.md), чтобы узнать, как создавать, обновлять или удалять развертывание.

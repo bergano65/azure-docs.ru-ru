@@ -4,7 +4,7 @@ description: Настройка кластера Pacemaker в SUSE Linux Enterpr
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
 author: mssedusch
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: sedusch
-ms.openlocfilehash: 9a23f13947c4c7a77460ff389861e1dcc1de3c7f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 46044c061cca24714d1a951e28cf01ca29f14a7e
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65992110"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67707209"
 ---
 # <a name="setting-up-pacemaker-on-suse-linux-enterprise-server-in-azure"></a>Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure.
 
@@ -448,7 +448,7 @@ o- / ...........................................................................
    <pre><code>sudo vi /etc/corosync/corosync.conf
    </code></pre>
 
-   Добавьте следующее содержимое, выделенное полужирным шрифтом, в файл, если значения отсутствуют или отличаются. Не забудьте заменить токен на 30 000, чтобы разрешить обслуживание с сохранением памяти. Дополнительные сведения см. в [этой статье для Linux][virtual-machines-linux-maintenance] или [Windows][virtual-machines-windows-maintenance]. Кроме того, не забудьте удалить параметр mcastaddr.
+   Добавьте следующее содержимое, выделенное полужирным шрифтом, в файл, если значения отсутствуют или отличаются. Не забудьте заменить токен на 30 000, чтобы разрешить обслуживание с сохранением памяти. Дополнительные сведения см. в разделе [этой статьи для Linux][virtual-machines-linux-maintenance] or [Windows][virtual-machines-windows-maintenance]. Кроме того, не забудьте удалить параметр mcastaddr.
 
    <pre><code>[...]
      <b>token:          30000
@@ -606,11 +606,11 @@ sudo crm configure property maintenance-mode=false
      Предупреждение: cib-bootstrap-options: неизвестный атрибут "hostName_ <strong>hostname</strong>"  
    > Эти предупреждения можно игнорировать.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
-* [Развертывание программного обеспечения SAP на виртуальных машинах Azure][deployment-guide]
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по развертыванию СУБД][dbms-guide]
-* [Обеспечение высокого уровня доступности NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server][sles-nfs-guide]
+* [На виртуальных машинах планированию и внедрению SAP NETWEAVER][planning-guide]
+* [Развертывание виртуальных машин для SAP][deployment-guide]
+* [Развертывание СУБД виртуальных машин Azure для SAP][dbms-guide]
+* [Высокий уровень доступности для NFS на виртуальных машинах Azure в SUSE Linux Enterprise Server][sles-nfs-guide]
 * [Руководство по обеспечению высокого уровня доступности виртуальных машин Azure для SAP NetWeaver на SUSE Linux Enterprise Server для приложений SAP][sles-guide]
-* Дополнительные сведения об установке высокого уровня доступности и плана для аварийного восстановления SAP HANA на виртуальных машинах Azure см. в статье [Высокий уровень доступности SAP HANA на виртуальных машинах Azure][sap-hana-ha].
+* Дополнительные сведения об обеспечении высокого уровня доступности и плана для аварийного восстановления SAP HANA на виртуальных машинах Azure, см. в разделе [высокий уровень доступности SAP HANA на виртуальных машинах Azure (ВМ)][sap-hana-ha]

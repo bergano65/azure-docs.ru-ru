@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: ef40ce0987d44c968b120d7d4b142cc95d7eaf30
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 8e01815cee0d6e39f6f773e9838b2a8b60638ab1
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67294848"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672302"
 ---
 # <a name="azure-disk-encryption-prerequisites"></a>Предварительные требования для шифрования дисков Azure
 
@@ -48,10 +48,14 @@ ms.locfileid: "67294848"
 
 ### <a name="windows"></a>Windows
 
-- Версии Windows Server: Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016, Windows Server 2012 R2 Server Core и Windows Server 2016 Server core.
-Для Windows Server 2008 R2 перед включением шифрования в Azure требуется установить .NET Framework 4.5. Установите его из центра обновления Windows с помощью необязательное обновление Microsoft .NET Framework 4.5.2 для Windows Server 2008 R2 x64-разрядных систем (KB2901983).
-- Ядро Windows Server 2012 R2 и Windows Server 2016 Core поддерживаются шифрование дисков Azure, когда компонент bdehdcfg установлено на виртуальной Машине.
-- Версии клиентов Windows: клиент Windows 8 и клиент Windows 10.
+- Клиент Windows: Windows 8 и более поздних версий.
+- Сервер Windows Server: Windows Server 2008 R2 и более поздних версий.  
+ 
+> [!NOTE]
+> Windows Server 2008 R2 требуется .NET Framework 4.5, должны быть установлены шифрование; Установите его из Windows установить необязательное обновление Microsoft .NET Framework 4.5.2 для Windows Server 2008 R2 x64-разрядных систем ([KB2901983](https://www.catalog.update.microsoft.com/Search.aspx?q=KB2901983)).  
+>  
+> Ядро Windows Server 2012 R2 и Windows Server 2016 Core требуется компонент bdehdcfg должны быть установлены на виртуальной Машине для шифрования.
+
 
 ### <a name="linux"></a>Linux 
 
@@ -110,7 +114,7 @@ Server дистрибутивы Linux не поддерживается в Azure
 
 
 **Групповая политика:**
- - Решение шифрования дисков Azure использует внешний предохранитель ключа BitLocker для виртуальных машин IaaS под управлением Windows. Если виртуальные машины присоединены к домену, не применяйте групповые политики, требующие использования предохранителей TPM. Сведения о групповой политике "Разрешить использование BitLocker без совместимого TPM" см. в [справке по групповым политикам BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-group-policy-settings#a-href-idbkmk-unlockpol1arequire-additional-authentication-at-startup).
+ - Решение шифрования дисков Azure использует внешний предохранитель ключа BitLocker для виртуальных машин IaaS под управлением Windows. Если виртуальные машины присоединены к домену, не применяйте групповые политики, требующие использования предохранителей TPM. Сведения о групповой политике "Разрешить использование BitLocker без совместимого TPM" см. в [справке по групповым политикам BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-group-policy-settings#bkmk-unlockpol1).
 
 -  Политика BitLocker на присоединенных к домену виртуальных машинах с настраиваемой групповой политикой должна включать следующий параметр: [Настройка хранилища пользователя BitLocker, сведения о восстановлении, "->" Разрешить 256-разрядный ключ восстановления](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-group-policy-settings). Шифрование дисков Azure завершится ошибкой, если параметры настраиваемой групповой политики для BitLocker несовместимы. На компьютерах без соответствующего параметра политики может потребоваться применить новую политику, принудительно обновить ее (gpupdate.exe /force) и перезагрузить компьютер.
 
@@ -292,7 +296,7 @@ Server дистрибутивы Linux не поддерживается в Azure
 1. Выберите хранилище ключей, перейдите на вкладку **Политики доступа** и выберите **Щелкните, чтобы показать политики расширенного доступа**.
 2. Установите флажок **Включить доступ к шифрованию дисков Azure для шифрования томов**.
 3. Выберите **Включить доступ к виртуальным машинам Azure для развертывания** или **Включить доступ к Azure Resource Manager для развертывания шаблонов**, если это необходимо. 
-4. Выберите команду **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
     ![Установка политики расширенного доступа к хранилищу Azure Key Vault](./media/azure-security-disk-encryption/keyvault-portal-fig4.png)
 
@@ -351,7 +355,7 @@ Server дистрибутивы Linux не поддерживается в Azure
 
 
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 > [!div class="nextstepaction"]
 > [Включение шифрования дисков Azure для виртуальных машин Windows IaaS](azure-security-disk-encryption-windows.md)
 

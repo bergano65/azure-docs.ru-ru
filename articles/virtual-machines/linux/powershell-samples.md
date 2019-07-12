@@ -4,7 +4,7 @@ description: Примеры PowerShell для виртуальной машин�
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: tysonn
 tags: azure-service-management
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 03/01/2019
 ms.author: cynthn
-ms.openlocfilehash: 53784c3d74f9e6af5f1e84cc098194113e81333b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2d954bc068693a34ef1d69e4296e972979d4f61b
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60771266"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67671030"
 ---
 # <a name="azure-virtual-machine-powershell-samples"></a>Примеры PowerShell для виртуальной машины Azure
 
@@ -45,4 +45,5 @@ ms.locfileid: "60771266"
 |**Мониторинг виртуальных машин**||
 | [Мониторинг виртуальной Машины с помощью журналов Azure Monitor](./../scripts/virtual-machines-linux-powershell-sample-create-vm-oms.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Создает виртуальную машину, устанавливает агент Log Analytics и регистрирует виртуальную машину в рабочей области Log Analytics.  |
 | [Копирование управляемого диска в ту же или другую подписку](../scripts/virtual-machines-linux-powershell-sample-copy-managed-disks-to-same-or-different-subscription.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Копирует управляемый диск в ту же или другую подписку, расположенную в том же регионе, что и родительский управляемый диск.
+| [Сбор сведений о всех виртуальных машин в подписке с помощью PowerShell](../scripts/virtual-machines-powershell-sample-collect-vm-details.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Создает CSV-файл, содержащий имя, группа ресурсов виртуальной Машины имя, регион, виртуальной сети, подсети, частный IP-адрес, тип операционной системы и общедоступный IP-адрес из виртуальных машин в выбранной подписке.
 | | |

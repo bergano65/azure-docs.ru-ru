@@ -4,14 +4,14 @@ description: Описывает функции, используемые в ша
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 05/21/2019
+ms.date: 07/11/2019
 ms.author: tomfitz
-ms.openlocfilehash: dcad4b988f37d46a0b843fbf905e18011bc4e313
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0b65c7a9b6d4f025c574c2dddace6fa45b77398c
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65990754"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67835786"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Функции для работы с ресурсами в шаблонах Azure Resource Manager
 
@@ -37,10 +37,10 @@ ms.locfileid: "65990754"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | Описание |
+| Параметр | Обязательно для заполнения | Type | Описание |
 |:--- |:--- |:--- |:--- |
-| имя_ресурса или идентификатор_ресурса |Да |string |Уникальный идентификатор ресурса. |
-| версия_API |Да |string |Версия API для состояния среды выполнения ресурса. Как правило, указывается в формате **гггг-мм-дд**. |
+| имя_ресурса или идентификатор_ресурса |Да |строка |Уникальный идентификатор ресурса. |
+| версия_API |Да |строка |Версия API для состояния среды выполнения ресурса. Как правило, указывается в формате **гггг-мм-дд**. |
 | functionValues |Нет |object | Объект, содержащий значения для функции. Предоставляйте этот объект только для функций, которые поддерживают прием объекта с параметрами, например **listAccountSas** в учетной записи хранения. В этой статье показан пример передачи значения функции. | 
 
 ### <a name="implementations"></a>Варианты реализации решения
@@ -50,9 +50,13 @@ ms.locfileid: "65990754"
 | Тип ресурса | Имя функции |
 | ------------- | ------------- |
 | Microsoft.AnalysisServices/servers | [listGatewayStatus](/rest/api/analysisservices/servers/listgatewaystatus) |
+| Microsoft.AppConfiguration/configurationStores | listKeys |
 | Microsoft.Automation/automationAccounts | [listKeys](/rest/api/automation/keys/listbyautomationaccount) |
 | Microsoft.Batch/batchAccounts | [listkeys](/rest/api/batchmanagement/batchaccount/getkeys) |
 | Microsoft.BatchAI/workspaces/experiments/jobs | [listoutputfiles](/rest/api/batchai/jobs/listoutputfiles) |
+| Microsoft.Blockchain/blockchainMembers | [listApiKeys](/rest/api/blockchain/2019-06-01-preview/blockchainmembers/listapikeys) |
+| Microsoft.Blockchain/blockchainMembers/transactionNodes | [listApiKeys](/rest/api/blockchain/2019-06-01-preview/transactionnodes/listapikeys) |
+| Microsoft.BotService/botServices/channels | listChannelWithKeys |
 | Microsoft.Cache/redis | [listKeys](/rest/api/redis/redis/listkeys) |
 | Microsoft.CognitiveServices/accounts | [listKeys](/rest/api/cognitiveservices/accountmanagement/accounts/listkeys) |
 | Microsoft.ContainerRegistry/registries | [listBuildSourceUploadUrl](/rest/api/containerregistry/registries%20(tasks)/getbuildsourceuploadurl) |
@@ -60,8 +64,12 @@ ms.locfileid: "65990754"
 | Microsoft.ContainerRegistry/registries | [listPolicies](/rest/api/containerregistry/registries/listpolicies) |
 | Microsoft.ContainerRegistry/registries | [listUsages](/rest/api/containerregistry/registries/listusages) |
 | Microsoft.ContainerRegistry/registries/webhooks | [listEvents](/rest/api/containerregistry/webhooks/listevents) |
+| Microsoft.ContainerRegistry/registries/runs | [listLogSasUrl](/rest/api/containerregistry/runs/getlogsasurl) |
+| Microsoft.ContainerRegistry/registries/tasks | [listDetails](/rest/api/containerregistry/tasks/getdetails) |
 | Microsoft.ContainerService/managedClusters | [listClusterAdminCredential](/rest/api/aks/managedclusters/listclusteradmincredentials) |
 | Microsoft.ContainerService/managedClusters | [listClusterUserCredential](/rest/api/aks/managedclusters/listclusterusercredentials) |
+| Microsoft.ContainerService/managedClusters/accessProfiles | [listCredential](/rest/api/aks/managedclusters/getaccessprofile) |
+| Microsoft.DataBox/jobs | listCredentials |
 | Microsoft.DataFactory/datafactories/gateways | listauthkeys |
 | Microsoft.DataFactory/factories/integrationruntimes | [listauthkeys](/rest/api/datafactory/integrationruntimes/listauthkeys) |
 | Microsoft.DataLakeAnalytics/accounts/storageAccounts/Containers | [listSasTokens](/rest/api/datalakeanalytics/storageaccounts/listsastokens) |
@@ -76,11 +84,14 @@ ms.locfileid: "65990754"
 | Microsoft.DocumentDB/databaseAccounts | [listKeys](/rest/api/cosmos-db-resource-provider/databaseaccounts/listkeys) |
 | Microsoft.DomainRegistration | [listDomainRecommendations](/rest/api/appservice/domains/listrecommendations) |
 | Microsoft.DomainRegistration/topLevelDomains | [listAgreements](/rest/api/appservice/topleveldomains/listagreements) |
+| Microsoft.EventGrid/domains | [listKeys](/rest/api/eventgrid/domains/listsharedaccesskeys) |
 | Microsoft.EventGrid/topics | [listKeys](/rest/api/eventgrid/topics/listsharedaccesskeys) |
 | Microsoft.EventHub/namespaces/authorizationRules | [listkeys](/rest/api/eventhub/namespaces/listkeys) |
 | Microsoft.EventHub/namespaces/disasterRecoveryConfigs/authorizationRules | [listkeys](/rest/api/eventhub/disasterrecoveryconfigs/listkeys) |
 | Microsoft.EventHub/namespaces/eventhubs/authorizationRules | [listkeys](/rest/api/eventhub/eventhubs/listkeys) |
 | Microsoft.ImportExport/jobs | [listBitLockerKeys](/rest/api/storageimportexport/bitlockerkeys/list) |
+| Microsoft.LabServices/users | [ListEnvironments](/rest/api/labservices/globalusers/listenvironments) |
+| Microsoft.LabServices/users | [ListLabs](/rest/api/labservices/globalusers/listlabs) |
 | Microsoft.Logic/integrationAccounts/agreements | [listContentCallbackUrl](/rest/api/logic/agreements/listcontentcallbackurl) |
 | Microsoft.Logic/integrationAccounts/assemblies | [listContentCallbackUrl](/rest/api/logic/integrationaccountassemblies/listcontentcallbackurl) |
 | Microsoft.Logic/integrationAccounts | [listCallbackUrl](/rest/api/logic/integrationaccounts/getcallbackurl) |
@@ -90,6 +101,8 @@ ms.locfileid: "65990754"
 | Microsoft.Logic/integrationAccounts/schemas | [listContentCallbackUrl](/rest/api/logic/schemas/listcontentcallbackurl) |
 | Microsoft.Logic/workflows | [listCallbackUrl](/rest/api/logic/workflows/listcallbackurl) |
 | Microsoft.Logic/workflows | [listSwagger](/rest/api/logic/workflows/listswagger) |
+| Microsoft.Logic/workflows/triggers | [listCallbackUrl](/rest/api/logic/workflowtriggers/listcallbackurl) |
+| Microsoft.Logic/workflows/versions/triggers | [listCallbackUrl](/rest/api/logic/workflowversions/listcallbackurl) |
 | Microsoft.MachineLearning/webServices | [listkeys](/rest/api/machinelearning/webservices/listkeys) |
 | Microsoft.MachineLearning/Workspaces | listworkspacekeys |
 | Microsoft.MachineLearningServices/workspaces/computes | listKeys |
@@ -99,10 +112,12 @@ ms.locfileid: "65990754"
 | Microsoft.Media/mediaservices/assets | [listStreamingLocators](/rest/api/media/assets/liststreaminglocators) |
 | Microsoft.Media/mediaservices/streamingLocators | [listContentKeys](/rest/api/media/streaminglocators/listcontentkeys) |
 | Microsoft.Media/mediaservices/streamingLocators | [listPaths](/rest/api/media/streaminglocators/listpaths) |
+| Microsoft.Network/applicationSecurityGroups | listIpConfigurations |
 | Microsoft.NotificationHubs/Namespaces/authorizationRules | [listkeys](/rest/api/notificationhubs/namespaces/listkeys) |
 | Microsoft.NotificationHubs/Namespaces/NotificationHubs/authorizationRules | [listkeys](/rest/api/notificationhubs/notificationhubs/listkeys) |
 | Microsoft.OperationalInsights/workspaces | [listKeys](/rest/api/loganalytics/workspaces%202015-03-20/listkeys) |
 | Microsoft.Relay/namespaces/authorizationRules | [listkeys](/rest/api/relay/namespaces/listkeys) |
+| Microsoft.Relay/namespaces/disasterRecoveryConfigs/authorizationRules | listkeys |
 | Microsoft.Relay/namespaces/HybridConnections/authorizationRules | [listkeys](/rest/api/relay/hybridconnections/listkeys) |
 | Microsoft.Relay/namespaces/WcfRelays/authorizationRules | [listkeys](/rest/api/relay/wcfrelays/listkeys) |
 | Microsoft.Search/searchServices | [listAdminKeys](/rest/api/searchmanagement/adminkeys/get) |
@@ -123,6 +138,8 @@ ms.locfileid: "65990754"
 | microsoft.web/connections | listconsentlinks |
 | Microsoft.Web/customApis | listWsdlInterfaces |
 | microsoft.web/locations | listwsdlinterfaces |
+| Microsoft.Web/apimanagementaccounts/APIs/Connections | listconnectionkeys |
+| Microsoft.Web/apimanagementaccounts/APIs/Connections | listsecrets |
 | microsoft.web/sites/functions | [listsecrets](/rest/api/appservice/webapps/listfunctionsecrets) |
 | microsoft.web/sites/hybridconnectionnamespaces/relays | [listkeys](/rest/api/appservice/webapps/listhybridconnectionkeys) |
 | microsoft.web/sites | [listsyncfunctiontriggerstatus](/rest/api/appservice/webapps/listsyncfunctiontriggers) |
@@ -248,10 +265,10 @@ ms.locfileid: "65990754"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | Описание |
+| Параметр | Обязательно для заполнения | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| пространство_имен_поставщика |Да |string |Пространство имен поставщика. |
-| тип_ресурса |Нет |string |Тип ресурса в указанном пространстве имен. |
+| пространство_имен_поставщика |Да |строка |Пространство имен поставщика. |
+| resourceType |Нет |строка |Тип ресурса в указанном пространстве имен. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -323,11 +340,11 @@ ms.locfileid: "65990754"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | Описание |
+| Параметр | Обязательно для заполнения | Тип | Описание |
 |:--- |:--- |:--- |:--- |
-| имя_ресурса или идентификатор_ресурса |Да |string |Имя или уникальный идентификатор ресурса. |
-| apiVersion |Нет |string |Версия API для указанного ресурса. Если ресурс не предоставляется в рамках того же шаблона, необходимо включить этот параметр. Как правило, указывается в формате **гггг-мм-дд**. |
-| Full |Нет |string |Значение, указывающее, следует ли возвращать полный объект ресурса. Если вы не укажете `'Full'`, возвращается только объект свойств ресурса. Полный объект включает такие значения, как идентификатор ресурса и расположение. |
+| имя_ресурса или идентификатор_ресурса |Да |строка |Имя или уникальный идентификатор ресурса. |
+| apiVersion |Нет |строка |Версия API для указанного ресурса. Если ресурс не предоставляется в рамках того же шаблона, необходимо включить этот параметр. Как правило, указывается в формате **гггг-мм-дд**. |
+| Full |Нет |строка |Значение, указывающее, следует ли возвращать полный объект ресурса. Если вы не укажете `'Full'`, возвращается только объект свойств ресурса. Полный объект включает такие значения, как идентификатор ресурса и расположение. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -586,13 +603,13 @@ ms.locfileid: "65990754"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | Описание |
+| Параметр | Обязательно для заполнения | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | subscriptionId |Нет |строка (в формате GUID) |Значение по умолчанию — текущая подписка. Укажите это значение, если нужно получить ресурс из другой подписки. |
-| resourceGroupName |Нет |string |Значение по умолчанию — текущая группа ресурсов. Укажите это значение, если нужно получить ресурс из другой группы ресурсов. |
-| тип_ресурса |Да |string |Тип ресурса, включая пространство имен поставщика ресурсов. |
-| имя_ресурса1 |Да |string |Имя ресурса. |
-| имя_ресурса2 |Нет |string |Имя следующего ресурса, если ресурс является вложенным. |
+| resourceGroupName |Нет |строка |Значение по умолчанию — текущая группа ресурсов. Укажите это значение, если нужно получить ресурс из другой группы ресурсов. |
+| resourceType |Да |строка |Тип ресурса, включая пространство имен поставщика ресурсов. |
+| имя_ресурса1 |Да |строка |Имя ресурса. |
+| имя_ресурса2 |Нет |строка |Имя следующего ресурса, если ресурс является вложенным. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -712,12 +729,12 @@ ms.locfileid: "65990754"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Name | type | Значение |
+| ИМЯ | Тип | Значение |
 | ---- | ---- | ----- |
-| sameRGOutput | String | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| differentRGOutput | String | /subscriptions/{ИД_текущей_подписки}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| differentSubOutput | String | /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| nestedResourceOutput | String | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.SQL/servers/serverName/databases/databaseName |
+| sameRGOutput | Строка, | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| differentRGOutput | Строка, | /subscriptions/{ИД_текущей_подписки}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| differentSubOutput | Строка, | /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| nestedResourceOutput | Строка, | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.SQL/servers/serverName/databases/databaseName |
 
 ## <a name="subscription"></a>подписка
 
@@ -756,7 +773,7 @@ ms.locfileid: "65990754"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](resource-group-linked-templates.md).

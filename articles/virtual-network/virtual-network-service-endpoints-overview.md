@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/15/2018
-ms.author: sumeet.mittal
+ms.author: sumi
 ms.custom: ''
-ms.openlocfilehash: 54178ae8988266c751ae0e23ae8c5e6ef7a16f20
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: e36e1ca17b5106c79076d1c62e737ba60907ab19
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67544156"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67666471"
 ---
-# <a name="virtual-network-service-endpoints"></a>Конечные точки служб для виртуальной сети
+# <a name="virtual-network-service-endpoints"></a>Конечные точки службы для виртуальной сети
 
 Конечные точки служб виртуальной сети расширяют пространство частных адресов и возможности идентификации вашей виртуальной сети в службах Azure благодаря прямому соединению. Конечные точки позволяют защищать критически важные ресурсы служб Azure в пределах отдельных виртуальных сетей. Трафик, поступающий из виртуальной сети в службу Azure, всегда остается в магистральной сети Microsoft Azure.
 
@@ -39,11 +39,12 @@ ms.locfileid: "67544156"
 - **[Служебная шина Azure](../service-bus-messaging/service-bus-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия во всех регионах Azure.
 - **[Центры событий Azure](../event-hubs/event-hubs-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия во всех регионах Azure.
 - **[Azure Data Lake Store 1-го поколения](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия во всех регионах Azure, в которых доступна ADLS 1-го поколения.
+- **[Служба приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions)** : Общедоступная во всех регионах Azure, где доступны службы приложений
 
 **Общедоступная предварительная версия**
 
 - **[Реестр контейнеров Azure](../container-registry/container-registry-vnet.md)** : Предварительный просмотр доступен во всех регионах Azure, где доступны реестр контейнеров Azure.
-- **[Служба приложений Azure](https://docs.microsoft.com/en-us/azure/app-service/app-service-ip-restrictions)** : Предварительный просмотр доступен во всех регионах Azure, где доступны службы приложений.
+.
 
 Самые актуальные уведомления доступны на странице [обновлений виртуальной сети Azure](https://azure.microsoft.com/updates/?product=virtual-network).
 
@@ -80,7 +81,7 @@ ms.locfileid: "67544156"
 
 ![Защита служб Azure в виртуальных сетях](./media/virtual-network-service-endpoints-overview/VNet_Service_Endpoints_Overview.png)
 
-### <a name="configuration"></a>Параметр Configuration
+### <a name="configuration"></a>Конфигурация
 
 - Конечные точки служб настраиваются в подсети виртуальной сети. Конечные точки работают с любым типом вычислительных экземпляров, выполняющихся в этой подсети.
 - Можно настроить несколько конечных точек служб для всех поддерживаемых служб Azure (например, для службы хранилища Azure или Базы данных SQL Azure) в подсети.
@@ -137,13 +138,13 @@ ms.locfileid: "67544156"
 
 ## <a name="virtual-network-service-endpoint-policies"></a>Политики конечных точек служб для виртуальной сети 
 
-Политики конечных точек служб для виртуальной сети позволяют фильтровать трафик из виртуальной сети к службам Azure, разрешая трафик определенных ресурсов служб через конечные точки служб. Политики конечных точек служб предоставляют возможность детального контроля доступа трафика из виртуальной сети к службам Azure. Дополнительные сведения см. в статье [Политики конечных точек служб виртуальной сети (предварительная версия)](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview).
+Политики конечных точек служб для виртуальной сети позволяют фильтровать трафик из виртуальной сети к службам Azure, разрешая трафик определенных ресурсов служб через конечные точки служб. Политики конечных точек служб предоставляют возможность детального контроля доступа трафика из виртуальной сети к службам Azure. Дополнительные сведения см. в статье [Политики конечных точек служб для виртуальной сети (предварительная версия)](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview).
 
 ## <a name="faqs"></a>Часто задаваемые вопросы
 
 Часто задаваемые вопросы о конечной точке службы для виртуальной сети см. [здесь](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#virtual-network-service-endpoints).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте, как [настроить конечные точки служб для виртуальной сети](tutorial-restrict-network-access-to-resources.md).
 - Узнайте, как [защитить учетную запись хранения Azure с помощью виртуальной сети](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json).

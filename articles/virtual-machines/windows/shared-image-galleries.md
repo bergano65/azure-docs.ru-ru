@@ -4,7 +4,7 @@ description: Узнайте, как предоставлять сотрудни�
 services: virtual-machines-windows
 documentationcenter: virtual-machines
 author: axayjo
-manager: jeconnoc
+manager: gwallace
 editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
@@ -14,14 +14,15 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 05/06/2019
-ms.author: akjosh; cynthn
+ms.author: akjosh
+ms.reviewer: cynthn
 ms.custom: ''
-ms.openlocfilehash: 982a24cc47ff17c56b1d75e4dcdc01f15ebdea32
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b28ad9b61a14a1961cf2a9de828df320134be838
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66418422"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67709178"
 ---
 # <a name="shared-image-gallery-overview"></a>Обзор коллекции общих образов
 
@@ -29,6 +30,6 @@ ms.locfileid: "66418422"
 [!INCLUDE [virtual-machines-common-shared-image-galleries](../../../includes/virtual-machines-common-shared-image-galleries.md)]
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как [развертывать общие образы с помощью Azure PowerShell](shared-images.md).

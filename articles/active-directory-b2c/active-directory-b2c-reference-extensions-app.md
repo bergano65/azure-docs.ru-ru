@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 9/06/2017
+ms.date: 09/06/2017
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: d9fbceee8fb0e565df668406f09df27272318dd0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e5d38d8d791c6b932d8a28a898f2e2b80caff7ac
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66509487"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67654073"
 ---
 # <a name="azure-ad-b2c-extensions-app"></a>Azure AD B2C. Приложение расширений
 
@@ -40,7 +40,7 @@ ms.locfileid: "66509487"
 1. Войдите на сайт как глобальный администратор каталога Azure AD B2C, в котором необходимо восстановить удаленное приложение. У этого глобального администратора должен быть адрес электронной почты следующего образца: `username@{yourTenant}.onmicrosoft.com`.
 1. Выполните запрос HTTP GET для URL-адреса `https://graph.windows.net/myorganization/deletedApplications` с версией API 1.6. При выполнении этой операции отображается список всех приложений, удаленных за последние 30 дней.
 1. Найдите в списке приложение, имя которого начинается с b2c-extension-app, и скопируйте значение его свойства `objectid`.
-1. Выполните запрос HTTP POST для URL-адреса `https://graph.windows.net/myorganization/deletedApplications/{OBJECTID}/restore`. Замените часть `{OBJECTID}` URL-адреса на `objectid` из предыдущего шага. 
+1. Выполните запрос HTTP POST для URL-адреса `https://graph.windows.net/myorganization/deletedApplications/{OBJECTID}/restore`. Замените часть `{OBJECTID}` URL-адреса на `objectid` из предыдущего шага.
 
 Теперь [восстановленное приложение может появиться](#verifying-that-the-extensions-app-is-present) на портале Azure.
 

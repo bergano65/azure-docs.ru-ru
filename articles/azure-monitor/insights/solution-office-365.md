@@ -6,18 +6,18 @@ documentationcenter: ''
 author: bwren
 manager: carmonm
 editor: ''
-ms.service: operations-management-suite
+ms.service: azure-monitor
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/01/2019
 ms.author: bwren
-ms.openlocfilehash: 34c7ecbf235bed838af9ed2f848ca492916583f6
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: 3f4b0ad8b7aad01472a76db67f2c07e03e978e41
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67514212"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67673042"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
@@ -42,7 +42,7 @@ ms.locfileid: "67514212"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем устанавливать и настраивать это решение, необходимо иметь в наличии следующие компоненты.
 
@@ -123,7 +123,7 @@ ms.locfileid: "67514212"
 1. Для нового ключа введите **описание** и **срок действия**.
 1. Нажмите кнопку **Сохранить**, а затем скопируйте созданное **значение**.
 
-    ![ключей](media/solution-office-365/keys.png)
+    ![Ключи](media/solution-office-365/keys.png)
 
 ### <a name="add-admin-consent"></a>Добавление согласия администратора
 
@@ -521,7 +521,7 @@ At line:12 char:18
 
 Панель мониторинга содержит столбцы, перечисленные в приведенной ниже таблице. Каждый столбец содержит десять ведущих оповещений с числом, показывающим соответствие оповещения критериям данного столбца, таким как область действия и диапазон времени. Можно выполнить поиск журналов, выводящий весь список, щелкнув элемент "Просмотреть все" внизу столбца или заголовок этого столбца.
 
-| столбец | ОПИСАНИЕ |
+| столбец | Описание |
 |:--|:--|
 | Операции | Предоставляет сведения об активных пользователях из всех отслеживаемых подписок Office 365. Также можно просмотреть количество действий, выполненных за определенный период времени.
 | Exchange | Отображает разбивку по действиям Exchange Server, таким как Add-MailboxPermission (Добавление разрешения для почтового ящика) или Set-Mailbox (Настройка почтового ящика). |
@@ -541,7 +541,7 @@ At line:12 char:18
 
 | Свойство | Description |
 |:--- |:--- |
-| type | *OfficeActivity* |
+| Type | *OfficeActivity* |
 | ClientIP | IP-адрес устройства, которое использовалось при записи действия в журнал. IP-адрес отображается в формате IPv4- или IPv6-адреса. |
 | OfficeWorkload | Служба Office 365, к которой относится запись.<br><br>AzureActiveDirectory<br>Exchange<br>SharePoint|
 | Операция | Имя действия пользователя или администратора.  |
@@ -557,7 +557,7 @@ At line:12 char:18
 
 Следующие свойства являются общими для всех записей Azure Active Directory.
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 |:--- |:--- |
 | OfficeWorkload | AzureActiveDirectory |
 | RecordType     | AzureActiveDirectory |
@@ -569,7 +569,7 @@ At line:12 char:18
 
 Эти записи создаются при попытке пользователя Active Directory войти в систему.
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 |:--- |:--- |
 | OfficeWorkload | AzureActiveDirectory |
 | RecordType     | AzureActiveDirectoryAccountLogon |
@@ -583,7 +583,7 @@ At line:12 char:18
 
 Эти записи создаются при внесении изменений или дополнений в объекты Azure Active Directory.
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 |:--- |:--- |
 | OfficeWorkload | AzureActiveDirectory |
 | RecordType     | AzureActiveDirectory |
@@ -601,7 +601,7 @@ At line:12 char:18
 
 Эти записи создаются на основе данных аудита безопасности центра обработки данных.  
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 |:--- |:--- |
 | EffectiveOrganization | Имя клиента, в отношении которого выполнялось повышение прав или командлет. |
 | ElevationApprovedTime | Метка времени, когда был утвержден запрос на повышение прав. |
@@ -617,7 +617,7 @@ At line:12 char:18
 
 Эти записи создаются при внесении изменений в конфигурацию Exchange.
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 |:--- |:--- |
 | OfficeWorkload | Exchange |
 | RecordType     | ExchangeAdmin |
@@ -632,7 +632,7 @@ At line:12 char:18
 
 Эти записи создаются при внесении изменений или дополнений в почтовые ящики Exchange.
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 |:--- |:--- |
 | OfficeWorkload | Exchange |
 | RecordType     | ExchangeItem |
@@ -655,7 +655,7 @@ At line:12 char:18
 
 Эти записи создаются при создании записей аудита почтового ящика.
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 |:--- |:--- |
 | OfficeWorkload | Exchange |
 | RecordType     | ExchangeItem |
@@ -670,7 +670,7 @@ At line:12 char:18
 
 Эти записи создаются при внесении изменений или дополнений в группы Exchange.
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 |:--- |:--- |
 | OfficeWorkload | Exchange |
 | OfficeWorkload | ExchangeItemGroup |
@@ -689,7 +689,7 @@ At line:12 char:18
 
 Эти свойства являются общими для всех записей SharePoint.
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 |:--- |:--- |
 | OfficeWorkload | SharePoint |
 | OfficeWorkload | SharePoint |
@@ -706,7 +706,7 @@ At line:12 char:18
 
 Эти записи создаются при внесении изменений в конфигурацию SharePoint.
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 |:--- |:--- |
 | OfficeWorkload | SharePoint |
 | OfficeWorkload | SharePoint |
@@ -719,7 +719,7 @@ At line:12 char:18
 
 Эти записи создаются в ответ на операции с файлами в SharePoint.
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 |:--- |:--- |
 | OfficeWorkload | SharePoint |
 | OfficeWorkload | SharePointFileOperation |
@@ -740,7 +740,7 @@ At line:12 char:18
 
 Следующая таблица содержит примеры запросов поиска по журналу для получения записей обновлений, собранных этим решением.
 
-| Запрос | ОПИСАНИЕ |
+| Запрос | Описание |
 | --- | --- |
 |Количество всех операций для подписки Office 365 |OfficeActivity &#124; summarize count() by Operation |
 |Использование сайтов SharePoint|OfficeActivity &#124; где OfficeWorkload = ~ «sharepoint» &#124; суммировать count() by SiteUrl \| sort by Count asc|
@@ -750,7 +750,7 @@ At line:12 char:18
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения об обновлении данных см. в статье [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md).
 * [Создайте собственные панели мониторинга](../learn/tutorial-logs-dashboards.md) для отображения избранных поисковых запросов Office 365.

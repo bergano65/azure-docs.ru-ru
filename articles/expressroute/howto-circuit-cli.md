@@ -6,13 +6,14 @@ author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
 ms.date: 12/07/2018
-ms.author: anzaman;cherylmc
-ms.openlocfilehash: 556589aa7a0a577b9b1a010cf4811922ebc6de52
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: cherylmc
+ms.reviewer: anzaman
+ms.openlocfilehash: e42190814b9365c7db054eb2b5f1842581b64009
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60837816"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657065"
 ---
 # <a name="create-and-modify-an-expressroute-circuit-using-cli"></a>Создание и изменение канала ExpressRoute с помощью CLI
 
@@ -23,9 +24,10 @@ ms.locfileid: "60837816"
 > * [портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-circuit-arm.md)
 > * [Интерфейс командной строки Azure](howto-circuit-cli.md)
+> * [Шаблон Azure Resource Manager](expressroute-howto-circuit-resource-manager-template.md)
 > * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
 > * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
-> 
+>
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -117,7 +119,7 @@ az network express-route list-service-providers
 
 Проверьте, указан ли в ответе ваш поставщик услуг подключения. Запишите следующие сведения, которые потребуются при создании канала:
 
-* Name
+* ИМЯ
 * PeeringLocations
 * BandwidthsOffered
 
@@ -127,8 +129,8 @@ az network express-route list-service-providers
 
 > [!IMPORTANT]
 > Выставление счетов за использование ExpressRoute начинается после получения ключа службы. Выполните эту операцию, когда поставщик услуг подключения будет готов предоставить канал.
-> 
-> 
+>
+>
 
 Перед созданием канала ExpressRoute необходимо создать группу ресурсов (если вы этого еще не сделали) Чтобы создать группу ресурсов, выполните следующую команду:
 
@@ -136,7 +138,7 @@ az network express-route list-service-providers
 az group create -n ExpressRouteResourceGroup -l "West US"
 ```
 
-В приведенном ниже примере показано, как создать канал ExpressRoute со скоростью 200 Мбит/с каналом через Equinix в Кремниевой долине. Если вы используете другой поставщик и другие параметры, подставьте в запрос соответствующие данные. 
+В приведенном ниже примере показано, как создать канал ExpressRoute со скоростью 200 Мбит/с каналом через Equinix в Кремниевой долине. Если вы используете другой поставщик и другие параметры, подставьте в запрос соответствующие данные.
 
 Убедитесь, что указаны правильный уровень SKU и семейство SKU:
 
@@ -267,8 +269,8 @@ az network express-route show --resource-group ExpressRouteResourceGroup --name 
 
 > [!IMPORTANT]
 > Эти инструкции распространяются только на каналы от поставщиков, предоставляющих услуги подключения второго уровня. Если ваш поставщик услуг подключения предлагает услуги третьего уровня (обычно это IPVPN, например MPLS), то он возьмет на себя настройку маршрутизации и управление ею.
-> 
-> 
+>
+>
 
 ### <a name="8-link-a-virtual-network-to-an-expressroute-circuit"></a>8. Связывание виртуальной сети с каналом ExpressRoute
 
@@ -279,7 +281,7 @@ az network express-route show --resource-group ExpressRouteResourceGroup --name 
 Некоторые свойства канала ExpressRoute можно изменить, не повлияв на подключение. Можно вносить следующие изменения без простоя:
 
 * Включать и отключать надстройку ExpressRoute "Премиум" для канала ExpressRoute.
-* Увеличивать пропускную способность канала ExpressRoute при условии, что в порту имеется доступная емкость. Однако снижение уровня пропускной способности канала не поддерживается. 
+* Увеличивать пропускную способность канала ExpressRoute при условии, что в порту имеется доступная емкость. Однако снижение уровня пропускной способности канала не поддерживается.
 * Перейти с тарифного плана с оплатой за трафик на безлимитный тарифный план. Однако переход с безлимитного тарифного плана на тарифный план с оплатой за трафик не поддерживается.
 * Параметр *Allow Classic Operations*(Разрешить классические операции) можно включать и отключать.
 
@@ -299,8 +301,8 @@ az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --sku-
 
 > [!IMPORTANT]
 > Операция может завершиться ошибкой, если использовать больше ресурсов, чем разрешено для канала "Стандартный".
-> 
-> 
+>
+>
 
 Перед отключением надстройки ExpressRoute "Премиум" ознакомьтесь со следующими требованиями:
 
@@ -358,7 +360,7 @@ az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --sku-
 az network express-route delete  -n MyCircuit -g ExpressRouteResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После создания канала обязательно выполните задачи, описанные в следующих статьях:
 

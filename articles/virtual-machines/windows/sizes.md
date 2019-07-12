@@ -4,7 +4,7 @@ description: Список различных размеров виртуальн
 services: virtual-machines-windows
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: aabf0d30-04eb-4d34-b44a-69f8bfb84f22
@@ -15,19 +15,19 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 07/02/2019
 ms.author: jonbeck
-ms.openlocfilehash: bd083a00887c5de41a488866fc5244126f6b17be
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: 78b0de43652aba20563e2712e249e18ccd18c407
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67544059"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67710084"
 ---
 # <a name="sizes-for-windows-virtual-machines-in-azure"></a>Размеры виртуальных машин Windows в Azure
 
 В этой статье описаны доступные размеры и разновидности виртуальных машин Azure, которые можно использовать для запуска приложений для Windows и рабочих нагрузок Windows. Здесь также предоставлены рекомендации по развертыванию, которые нужно учитывать при планировании использования этих ресурсов.  Также доступна версия этой статьи для [виртуальных машин Linux](../linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 
-| type                     | Размеры           |    Описание       |
+| Тип                     | Размеры           |    Описание       |
 |--------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | [Универсальные](sizes-general.md)          | B, Dsv3, Dv3, DSv2, Dv2, Av2, DC  | Сбалансированное соотношение ресурсов ЦП и памяти. Идеальное решение для тестирования и разработки, небольших и средних баз данных, а также веб-серверов с небольшим или средним объемом трафика. |
 | [Оптимизированные для вычислений](sizes-compute.md)        | Fsv2           | Высокое соотношение ресурсов ЦП и памяти. Подходят для веб-серверов со средним объемом трафика, сетевых устройств, пакетных процессов и серверов приложений.        |
@@ -61,7 +61,7 @@ ms.locfileid: "67544059"
 
 Узнайте больше о вычислительной мощности виртуальных машин Windows с помощью [результатов теста производительности CoreMark](compute-benchmark-scores.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о различных доступных размерах виртуальных машин.
 - [Универсальные](sizes-general.md)

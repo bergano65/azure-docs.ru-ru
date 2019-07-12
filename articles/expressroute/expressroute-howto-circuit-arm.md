@@ -8,18 +8,19 @@ ms.topic: article
 ms.date: 02/20/2019
 ms.author: ganesr;cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 7594261fc8af4e7b392e2f229b28cfee36a52115
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 06f49dc00b83ee2190f6361ebb8e6f052384402a
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60366323"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657308"
 ---
 # <a name="create-and-modify-an-expressroute-circuit-using-powershell"></a>Создание и изменение канала ExpressRoute с помощью PowerShell
 > [!div class="op_single_selector"]
 > * [портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-circuit-arm.md)
 > * [Интерфейс командной строки Azure](howto-circuit-cli.md)
+> * [Шаблон Azure Resource Manager](expressroute-howto-circuit-resource-manager-template.md)
 > * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
 > * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
 >
@@ -52,7 +53,7 @@ Get-AzExpressRouteServiceProvider
 
 Проверьте, указан ли в списке поставщик услуг подключения. Запишите следующие сведения, которые потребуются позднее при создании канала:
 
-* Name
+* ИМЯ
 * PeeringLocations
 * BandwidthsOffered
 
@@ -78,8 +79,8 @@ New-AzExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "Exp
 
 > [!IMPORTANT]
 > Выставление счетов за использование ExpressRoute начинается после получения ключа службы. Обязательно выполните эту операцию, как только поставщик услуг подключения будет готов предоставить канал.
-> 
-> 
+>
+>
 
 Ответ будет содержать ключ службы. Подробное описание всех параметров можно получить, выполнив следующую команду.
 
@@ -208,8 +209,8 @@ Get-AzExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "Exp
 
 > [!IMPORTANT]
 > Эти инструкции распространяются только на каналы от поставщиков, предоставляющих услуги подключения второго уровня. Если ваш поставщик услуг подключения предлагает услуги третьего уровня (обычно это IPVPN, например MPLS), то он возьмет на себя настройку маршрутизации и управление ею.
-> 
-> 
+>
+>
 
 ### <a name="8-link-a-virtual-network-to-an-expressroute-circuit"></a>8. Связывание виртуальной сети с каналом ExpressRoute
 Теперь свяжите виртуальную сеть с каналом ExpressRoute. При работе с моделью развертывания Resource Manager пользуйтесь статьей [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md) .
@@ -291,7 +292,7 @@ get-help get-azurededicatedcircuit -detailed
 Вы можете выполнять следующие задачи без простоя:
 
 * включать и отключать надстройку ExpressRoute "Премиум" для канала ExpressRoute;
-* увеличивать пропускную способность канала ExpressRoute при условии, что в порту имеется доступная емкость. Снижение уровня пропускной способности канала не поддерживается. 
+* увеличивать пропускную способность канала ExpressRoute при условии, что в порту имеется доступная емкость. Снижение уровня пропускной способности канала не поддерживается.
 * Перейдите с тарифного плана с оплатой за трафик на безлимитный тарифный план. Переход с безлимитного тарифного плана на тарифный план с оплатой за трафик не поддерживается.
 * Параметр *Allow Classic Operations*(Разрешить классические операции) можно включать и отключать.
 
@@ -314,8 +315,8 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 ### <a name="to-disable-the-expressroute-premium-add-on"></a>Отключение надстройки ExpressRoute "Премиум"
 > [!IMPORTANT]
 > Если использовать больше ресурсов, чем разрешено для канала "Стандартный", операция может завершиться ошибкой.
-> 
-> 
+>
+>
 
 Обратите внимание на следующие сведения:
 
@@ -341,7 +342,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 > Может потребоваться заново создать канал ExpressRoute, если существующий порт не обеспечивает достаточную емкость. Канал невозможно обновить, если в его расположении нет доступной дополнительной емкости.
 >
 > Уменьшить пропускную способность канала ExpressRoute без прерывания его работы нельзя. Для снижения пропускной способности нужно будет отозвать канал ExpressRoute и повторно подготовить новый канал ExpressRoute.
-> 
+>
 
 Выберите необходимый размер и используйте следующую команду для изменения размера канала:
 
@@ -369,7 +370,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 ```
 
 ### <a name="to-control-access-to-the-classic-and-resource-manager-environments"></a>Управление доступом к классической среде и среде диспетчера ресурсов
-Инструкции см. в статье [Перемещение каналов ExpressRoute из классической модели развертывания в модель Resource Manager](expressroute-howto-move-arm.md).  
+Инструкции см. в статье [Перемещение каналов ExpressRoute из классической модели развертывания в модель Resource Manager](expressroute-howto-move-arm.md).
 
 ## <a name="delete"></a>Отзыв и удаление канала ExpressRoute
 Обратите внимание на следующие сведения:
@@ -384,7 +385,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 Remove-AzExpressRouteCircuit -ResourceGroupName "ExpressRouteResourceGroup" -Name "ExpressRouteARMCircuit"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После создания канала обязательно выполните задачи, описанные в следующих статьях:
 

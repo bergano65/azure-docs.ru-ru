@@ -3,18 +3,18 @@ title: Интеграция Azure Active Directory для Azure Red Hat OpenShif
 description: Узнайте, как создать группу безопасности Azure AD и пользователя для тестирования приложений в кластере Microsoft Azure Red Hat OpenShift.
 author: jimzim
 ms.author: jzim
-ms.service: openshift
+ms.service: container-service
 manager: jeconnoc
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/13/2019
-ms.openlocfilehash: b79efa6ee1f4c052a0037a971fc36d8a9ae0ce58
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: 00609905d09f8d414660c21805c6efca5eb30843
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67458730"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67669384"
 ---
 # <a name="azure-active-directory-integration-for-azure-red-hat-openshift"></a>Интеграция Azure Active Directory для Azure Red Hat OpenShift
 
@@ -90,7 +90,7 @@ Microsoft Azure Red Hat OpenShift требуются разрешения на �
 
 Дополнительные сведения о создании нового приложения Azure AD, см. в разделе [регистрации приложения с конечной точкой Azure Active Directory версии 1.0](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v1-add-azure-ad-app).
 
-## <a name="add-api-permissions"></a>Добавить разрешения API
+## <a name="add-api-permissions"></a>Добавление разрешений API
 
 1. В **управление** щелкните **разрешения API**.
 2. Нажмите кнопку **добавить разрешение** и выберите **Azure Active Directory Graph** затем **делегированные разрешения**
@@ -112,7 +112,7 @@ Microsoft Azure Red Hat OpenShift требуются разрешения на �
 * [Приложения и объектов субъекта-службы в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals)
 * [Краткое руководство Регистрация приложения с конечной точкой Azure Active Directory версии 1.0](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v1-add-azure-ad-app)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если соблюдены все [предварительные требования Azure Red Hat OpenShift](howto-setup-environment.md), вы будете готовы создать свой первый кластер!
 

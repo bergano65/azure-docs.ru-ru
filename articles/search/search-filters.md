@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 06/13/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 8676ad48bc4fab6149db00d778349ac1acd7223d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4b5d198506473c598f058c881f781a06e191df88
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67062383"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67653436"
 ---
 # <a name="filters-in-azure-search"></a>Фильтры в службе "Поиск Azure" 
 
@@ -97,7 +97,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 ## <a name="filter-usage-patterns"></a>Шаблоны использования фильтров
 
-В следующих примерах показаны несколько шаблонов использования для сценариев фильтра. Дополнительные примеры можно найти в разделе [Примеры OData](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search#filter-examples).
+В следующих примерах показаны несколько шаблонов использования для сценариев фильтра. Дополнительные примеры можно найти в разделе [Примеры OData](https://docs.microsoft.com/azure/search/search-query-odata-filter#examples).
 
 + Автономный параметр **$filter** без строки запроса полезен, когда выражение фильтра может полностью определить интересующие документы. Без строки запроса не выполняется лексический или лингвистический анализ, нет оценки и рейтинга. Обратите внимание, что строка поиска является просто звездочку, что означает «сопоставление все документы».
 
@@ -170,7 +170,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 Документы, содержащие числовые поля (цена, размер, SKU, идентификатор), предоставляют эти значения в результатах поиска, если поле отмечено `retrievable`. Суть в том, что полнотекстовый поиск не применим к числовым типам полей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сначала попробуйте использовать **обозреватель поиска** на портале, чтобы отправить запросы с параметрами **$filter**. [Пример индекса выборки недвижимости](search-get-started-portal.md) предоставляет полезные результаты для следующих отфильтрованных запросов при их вставке в строку поиска:
 
@@ -195,12 +195,12 @@ search=John Leclerc&$count=true&$select=source,city,postCode,baths,beds&$filter=
 search=John Leclerc&$count=true&$select=source,city,postCode,baths,beds&$filter=city gt 'Seattle'
 ```
 
-Дополнительные примеры можно найти в разделе [Примеры OData](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search#filter-examples).
+Дополнительные примеры можно найти в разделе [Примеры OData](https://docs.microsoft.com/azure/search/search-query-odata-filter#examples).
 
 ## <a name="see-also"></a>См. также
 
 + [Как работает полнотекстовый поиск в службе поиска Azure](search-lucene-query-architecture.md)
 + [Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/search-documents) (Поиск по документам (REST API службы поиска Azure))
-+ [Простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
++ [Синтаксис простых запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
 + [Синтаксис запросов Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)
 + [Supported data types (Azure Search)](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) (Поддерживаемые типы данных (служба "Поиск Azure")).

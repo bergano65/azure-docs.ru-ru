@@ -7,19 +7,20 @@ author: rkarlin
 manager: rkarlin
 editor: ''
 ms.assetid: add92907-0d7c-42b8-a773-f570f2d705ff
-ms.service: sentinel
+ms.service: azure-sentinel
+ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/17/2019
 ms.author: rkarlin
-ms.openlocfilehash: 6f061a99a526b3865081a7d19b1eecbdc158d6a1
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: f3ab4861e874074e7de059c7c50064d53749748c
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442658"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67611300"
 ---
 # <a name="connect-your-fortinet-appliance"></a>Подключение устройства Fortinet
 
@@ -175,7 +176,7 @@ ms.locfileid: "67442658"
       
      Перезапустите управляющую программу системного журнала с помощью следующей команды: `sudo service syslog-ng restart`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этой статье вы узнали, как подключиться к Azure Sentinel Fortinet устройств. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальные угрозы](quickstart-get-visibility.md).
 - Начало работы [обнаружение угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

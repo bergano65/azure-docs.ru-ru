@@ -4,7 +4,7 @@ description: Архитектура хранилища при развертыв
 services: virtual-machines-linux
 documentationcenter: ''
 author: RicksterCDN
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
 ms.devlang: NA
@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 03/05/2019
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 02272ee16cf3303890a8ba6d35d38676e98c788c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a2cfe9dc02e69f3b47c99e01bc70bffc942338fd
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60478656"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67707253"
 ---
 # <a name="sap-hana-large-instances-storage-architecture"></a>Архитектура хранилища SAP HANA (крупные экземпляры)
 
@@ -79,7 +79,7 @@ ms.locfileid: "60478656"
 
 Некоторые примеры использования нескольких экземпляров SAP HANA могут выглядеть так:
 
-| SKU | Размер памяти | Размер хранилища | Размеры с несколькими базами данных |
+| номер SKU | Размер памяти | Размер хранилища | Размеры с несколькими базами данных |
 | --- | --- | --- | --- |
 | S72 | 768 ГБ | 3 TБ | 1 экземпляр HANA на 768 ГБ<br /> или 1 экземпляр на 512 ГБ и 1 экземпляр на 256 ГБ<br /> или 3 экземпляра по 256 ГБ | 
 | S72m | 1,5 ТБ | 6 TБ | 3 экземпляра HANA 512 ГБ<br />или 1 экземпляр на 512 ГБ и 1 экземпляр на 1 ТБ<br />или 6 экземпляров по 256 ГБ<br />или 1 экземпляр на 1,5 ТБ | 

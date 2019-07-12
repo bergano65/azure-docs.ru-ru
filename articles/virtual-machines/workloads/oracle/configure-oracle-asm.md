@@ -4,7 +4,7 @@ description: Быстрая подготовка и запуск Oracle ASM в �
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: romitgirdhar
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 0af6e87d3e0b4b3b40b63db07384d4a33a9d43e1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a2f6eab495680b3f32246488af5b7bbe5263d93a
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66154197"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67707705"
 ---
 # <a name="set-up-oracle-asm-on-an-azure-linux-virtual-machine"></a>Настройка Oracle ASM в виртуальной машине Linux в Azure  
 
@@ -581,7 +581,7 @@ ssh <publicIpAddress>
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Учебник. Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux](configure-oracle-dataguard.md)
 

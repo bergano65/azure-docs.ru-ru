@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/12/2017
 ms.author: yushwang
-ms.openlocfilehash: c65ea038fc39702affae93cb68b8cf644393c62e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d7a84bfda06b5db30afff6322c63a056a414357b
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66150219"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67626577"
 ---
 # <a name="how-to-configure-bgp-on-azure-vpn-gateways-using-powershell"></a>Настройка BGP на VPN-шлюзах Azure с помощью PowerShell
 В этой статье содержится пошаговое описание процесса, который позволит с помощью модели развертывания Resource Manager и PowerShell включить BGP для VPN-подключения типа "сеть — сеть" (S2S), настроенного между локальными сетями, или для подключения между виртуальными сетями.
@@ -118,7 +118,7 @@ $gwipconf1 = New-AzVirtualNetworkGatewayIpConfig -Name $GWIPconfName1 -Subnet $s
 Создайте шлюз для виртуальной сети TestVNet1. Для использования BGP обязательно нужен VPN-шлюз на основе маршрутов, а также дополнительный параметр -Asn, который задает номер ASN для TestVNet1. Если параметр ASN не указан, будет назначено значение ASN 65515. Создание шлюза может занять некоторое время (30 минут или более).
 
 ```powershell
-New-AzVirtualNetworkGateway -Name $GWName1 -ResourceGroupName $RG1 -Location $Location1 -IpConfigurations $gwipconf1 -GatewayType Vpn -VpnType RouteBased -GatewaySku HighPerformance -Asn $VNet1ASN
+New-AzVirtualNetworkGateway -Name $GWName1 -ResourceGroupName $RG1 -Location $Location1 -IpConfigurations $gwipconf1 -GatewayType Vpn -VpnType RouteBased -GatewaySku VpnGw1 -Asn $VNet1ASN
 ```
 
 #### <a name="3-obtain-the-azure-bgp-peer-ip-address"></a>3. Получение IP-адреса для узла Azure BGP
@@ -282,7 +282,7 @@ $gwipconf2 = New-AzVirtualNetworkGatewayIpConfig -Name $GWIPconfName2 -Subnet $s
 Создайте VPN-шлюз с номером AS. Номер ASN по умолчанию необходимо переопределить для ваших VPN-шлюзов Azure. Номера ASN для подключенных виртуальных сетей должны быть разными, чтобы работал протокол BGP и транзитная маршрутизация.
 
 ```powershell
-New-AzVirtualNetworkGateway -Name $GWName2 -ResourceGroupName $RG2 -Location $Location2 -IpConfigurations $gwipconf2 -GatewayType Vpn -VpnType RouteBased -GatewaySku Standard -Asn $VNet2ASN
+New-AzVirtualNetworkGateway -Name $GWName2 -ResourceGroupName $RG2 -Location $Location2 -IpConfigurations $gwipconf2 -GatewayType Vpn -VpnType RouteBased -GatewaySku VpnGw1 -Asn $VNet2ASN
 ```
 
 ### <a name="step-2---connect-the-testvnet1-and-testvnet2-gateways"></a>Шаг 2. Подключение шлюзов TestVNet1 и TestVNet2
@@ -319,6 +319,6 @@ New-AzVirtualNetworkGatewayConnection -Name $Connection21 -ResourceGroupName $RG
 
 ![BGP между виртуальными сетями](./media/vpn-gateway-bgp-resource-manager-ps/bgp-crosspremv2v.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Установив подключение, можно добавить виртуальные машины в виртуальные сети. Инструкции см. в статье о [создании виртуальной машины](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

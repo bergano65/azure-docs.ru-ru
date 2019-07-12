@@ -4,7 +4,7 @@ description: Узнайте, как расширить виртуальные ж
 services: virtual-machines-linux
 documentationcenter: ''
 author: roygara
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-linux
@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 10/15/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 4113d582647b5bea86980824714936d24dafc870
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cc61ad7fb6fb741c03fe8395b4cd460c3bd33c53
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65511150"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67667824"
 ---
 # <a name="expand-virtual-hard-disks-on-a-linux-vm-with-the-azure-cli"></a>Расширение виртуальных жестких дисков на виртуальной машине Linux с помощью Azure CLI
 
@@ -84,7 +84,7 @@ ms.locfileid: "65511150"
 
 1. Развертывание основного раздела и файловой системы.
 
-    a. Если диск подключен, отключите его:
+    1\. Если диск подключен, отключите его:
 
     ```bash
     sudo umount /dev/sdc1
@@ -113,7 +113,7 @@ ms.locfileid: "65511150"
         1      0.00B  107GB  107GB  ext4
     ```
 
-    c. Разверните раздел с помощью команды `resizepart`. Введите номер (*1*) и размер для нового раздела.
+    В. Разверните раздел с помощью команды `resizepart`. Введите номер (*1*) и размер для нового раздела.
 
     ```bash
     (parted) resizepart
@@ -121,7 +121,7 @@ ms.locfileid: "65511150"
     End?  [107GB]? 215GB
     ```
 
-    d. Чтобы закрыть командную строку, введите `quit`.
+    Г. Чтобы закрыть командную строку, введите `quit`.
 
 1. Изменив размер раздела, проверьте его целостность с помощью команды `e2fsck`.
 
@@ -148,6 +148,6 @@ ms.locfileid: "65511150"
     /dev/sdc1        197G   60M   187G   1% /datadrive
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Если вам требуется дополнительное место для хранения, можно также [добавить диски данных в виртуальную машину Linux](add-disk.md). 
 * Дополнительные сведения о шифровании диска см. в статье [Encrypt disks on a Linux VM using the Azure CLI](encrypt-disks.md) (Шифрование дисков на виртуальной машине Linux с помощью Azure CLI).

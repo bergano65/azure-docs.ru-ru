@@ -4,7 +4,7 @@ description: Планирование переноса ресурсов IaaS и�
 services: virtual-machines-windows
 documentationcenter: ''
 author: singhkays
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 78492a2c-2694-4023-a7b8-c97d3708dcb7
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2017
 ms.author: kasing
-ms.openlocfilehash: d3e1995682569e5ef7b356bd85ad6c7dba6cdbdb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5e2790515e172ec14e2180f9dfcac6c97b2e135a
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64689490"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67723174"
 ---
 # <a name="planning-for-migration-of-iaas-resources-from-classic-to-azure-resource-manager"></a>Планирование переноса ресурсов IaaS из классической модели развертывания в модель Azure Resource Manager.
 Хотя Azure Resource Manager и предлагает множество разнообразных возможностей, чрезвычайно важно спланировать процесс переноса ресурсов, чтобы не столкнуться с какими-либо проблемами. Грамотное планирование позволит предотвратить возникновение ошибок при выполнении действий по переносу ресурсов.
@@ -214,7 +214,7 @@ ms.locfileid: "64689490"
 Не забывайте об основной цели миграции из классической модели в модель Azure Resource Manager.  Каковы были первоначальные коммерческие соображения? Достигли ли вы этих целей?
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Обзор поддерживаемого платформой переноса ресурсов IaaS из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-deep-dive.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)

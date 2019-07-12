@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/21/2019
 ms.author: kumud;tyao
-ms.openlocfilehash: aac871e71ca0dd30a32e74dd92e417fc95eaa5e1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ff8330ab8aec7f0e9aa92409ce1eafd5be5ceeaf
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66241333"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67605760"
 ---
 # <a name="configure-a-web-application-firewall-policy-using-azure-powershell"></a>Настройка политики брандмауэра приложения web, с помощью Azure PowerShell
 Политика брандмауэра (WAF) приложение веб-Azure определяет проверки, необходимые при получении запроса на входной двери.
@@ -24,7 +24,7 @@ ms.locfileid: "66241333"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Прежде чем начать настроить политику ограничения скорости, настройте среду PowerShell и создание передовой профиля.
 ### <a name="set-up-your-powershell-environment"></a>Настройка среды PowerShell
 В Azure PowerShell доступен набор командлетов, которые используют модель [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) для управления ресурсами Azure. 
@@ -79,7 +79,7 @@ $URLOver100 = New-AzFrontDoorWafCustomRuleObject -Name "URLOver100" -RuleType Ma
 
 В следующем примере создается управляемый по умолчанию набор правил с помощью Azure PowerShell:
 ```powershell-interactive
-$managedRules = New-AzFrontDoorManagedRuleObject -Type DefaultRuleSet -Version "preview-0.1"
+$managedRules =  New-AzFrontDoorWafManagedRuleObject -Type DefaultRuleSet -Version 1.0
 ```
 ## <a name="configure-a-security-policy"></a>Настройка политики безопасности
 
@@ -106,7 +106,7 @@ $myWAFPolicy=New-AzFrontDoorWafPolicy -Name $policyName -ResourceGroupName $reso
 > [!NOTE]
 > Необходимо задать *WebApplicationFirewallPolicyLink* свойство один раз, чтобы связать политику безопасности двери переднего плана. Последующие политики обновления автоматически применяются к внешней сети.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о [двери](front-door-overview.md) 
 - Дополнительные сведения о [WAF для входной двери](waf-overview.md)

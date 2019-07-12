@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c476c2b326045db37c54a358d68f4b5f8bbaed9a
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: abb050eb527e65b4fd31f3251d37fef7d51e867e
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509595"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67655974"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Как Планирование реализации гибридного присоединения к Azure Active Directory
 
@@ -30,7 +30,7 @@ ms.locfileid: "67509595"
 
 Если вы хотите присоединиться к AD присоединенных к домену компьютеры в Azure AD в локальной среде Active Directory (AD), это можно сделать, выполнив гибридное присоединение к Azure AD. В этой статье приведены соответствующие шаги для реализации гибридного присоединения устройств к Azure AD в вашей среде. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 В этой статье предполагается, что вы знакомы с [введение в Управление удостоверениями устройств в Azure Active Directory](../device-management-introduction.md).
 
@@ -56,7 +56,7 @@ ms.locfileid: "67509595"
 ### <a name="windows-current-devices"></a>Текущие устройства Windows
 
 - Windows 10
-- Windows Server 2016
+- Windows Server 2016
 - Windows Server 2019
 
 Для устройств под управлением ОС Windows для настольных ПК, поддерживаемые версии перечислены в этой статье [сведения о выпуске Windows 10](https://docs.microsoft.com/windows/release-information/). Рекомендуется Корпорация Майкрософт рекомендует обновление до последней версии Windows 10.
@@ -67,7 +67,7 @@ ms.locfileid: "67509595"
 - Windows 7. Сведения о поддержке на Windows 7, см. в статье в этой статье [окончания поддержки для Windows 7](https://www.microsoft.com/en-us/windowsforbusiness/end-of-windows-7-support)
 - Windows Server 2012 R2
 - Windows Server 2012
-- Windows Server 2008 R2
+- Windows Server 2008 R2
 
 В качестве первого шага планирования вам следует просмотреть свою среду и определить, нужно ли вам поддерживать устройства Windows нижнего уровня.
 
@@ -87,7 +87,7 @@ ms.locfileid: "67509595"
 
 Если вы полагаетесь на моментальный снимок виртуальной машины (VM), чтобы создать дополнительные виртуальные машины, убедитесь, что этот моментальный снимок не из виртуальной Машины, который уже зарегистрирован в Azure AD в качестве гибридного присоединения к Azure AD.
 
-Если ваши присоединенные к домену устройства Windows 10 уже [зарегистрированы в Azure AD](https://docs.microsoft.com/azure/active-directory/devices/overview#azure-ad-registered-devices) для вашего клиента, то, прежде чем включать гибридное присоединение к Azure Active Directory, мы настоятельно рекомендуем выйти из учетной записи. Начиная с выпуска 1809 Windows 10, были внесены следующие изменения, чтобы избежать этого состояния.
+Если ваши присоединенные к домену устройства Windows 10 уже [зарегистрированы в Azure AD](https://docs.microsoft.com/azure/active-directory/devices/overview#getting-devices-in-azure-ad) для вашего клиента, то, прежде чем включать гибридное присоединение к Azure Active Directory, мы настоятельно рекомендуем выйти из учетной записи. Начиная с выпуска 1809 Windows 10, были внесены следующие изменения, чтобы избежать этого состояния.
 
 - После присоединения устройства к гибридной Azure AD автоматически удаляется любая существующая регистрация в Azure AD.
 - Вы может помешать устройства присоединены к домену Azure AD, зарегистрированы путем добавления этого раздела реестра - HKLM\SOFTWARE\Policies\Microsoft\Windows\WorkplaceJoin, «BlockAADWorkplaceJoin» = DWORD: 00000001.
@@ -144,7 +144,7 @@ ms.locfileid: "67509595"
 | Маршрутизируемый | Управляемые | Не поддерживается | |
 | Немаршрутизируемый | Управляемые | Не поддерживается | |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Настройка гибридного присоединения к Azure Active Directory для федеративной организации](hybrid-azuread-join-federated-domains.md)

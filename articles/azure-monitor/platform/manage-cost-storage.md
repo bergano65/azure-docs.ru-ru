@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 06/06/2019
 ms.author: magoedte
 ms.subservice: ''
-ms.openlocfilehash: b7fa59f4086608a8bacabde21f0c02c108f1f5e8
-ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
+ms.openlocfilehash: bcfefc9698f7f251e99531750e19e7c06395e064
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67466727"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67655702"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Управление потреблением и расходов с помощью журналов Azure Monitor
 
@@ -216,7 +216,7 @@ Usage | where TimeGenerated > startofday(ago(31d))| where IsBillable == true
 | summarize TotalVolumeGB = sum(Quantity) / 1024 by bin(TimeGenerated, 1d), Solution| render barchart
 ```
 
-### <a name="data-volume-by-computer"></a>Том данных по компьютерам
+### <a name="data-volume-by-computer"></a>Объем данных в зависимости от компьютера
 
 Чтобы увидеть **размер** оплачиваемых событий, обрабатываемых на каждом компьютере, используйте `_BilledSize` [свойство](log-standard-properties.md#_billedsize), предоставляющий размер в байтах:
 
@@ -302,7 +302,7 @@ union withsource = tt *
 | События безопасности            | Выберите [события со стандартным или минимальным уровнем безопасности](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection#data-collection-tier). <br> Измените политику аудита безопасности таким образом, чтобы собирать только необходимые события. В частности проверьте необходимость сбора следующих событий: <br> - [аудит платформы фильтрации](https://technet.microsoft.com/library/dd772749(WS.10).aspx); <br> - [аудит реестра](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941614(v%3dws.10));<br> - [аудит файловой системы](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772661(v%3dws.10));<br> - [аудит объектов ядра](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941615(v%3dws.10));<br> - [аудит работы с дескрипторами](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772626(v%3dws.10));<br> — аудит съемных носителей. |
 | Счетчики производительности       | Измените [конфигурацию счетчика производительности](data-sources-performance-counters.md), чтобы <br> уменьшить частоту сбора или <br> сократить число счетчиков производительности. |
 | Журналы событий                 | Измените [конфигурацию журнала событий](data-sources-windows-events.md), чтобы <br> сократить число собранных журналов событий или <br> выполнять сбор только необходимых уровней событий. Например, не выполняйте сбор событий уровня *сведений*. |
-| syslog                     | Измените [конфигурацию системного журнала](data-sources-syslog.md), чтобы <br> сократить число собранных объектов или <br> выполнять сбор только необходимых уровней событий. Например, не выполняйте сбор событий уровня *сведений* и *отладки*. |
+| Системный журнал                     | Измените [конфигурацию системного журнала](data-sources-syslog.md), чтобы <br> сократить число собранных объектов или <br> выполнять сбор только необходимых уровней событий. Например, не выполняйте сбор событий уровня *сведений* и *отладки*. |
 | AzureDiagnostics           | Измените коллекцию журнала ресурсов, чтобы: <br> Уменьшить число ресурсов, отправляющих журналы в Log Analytics. <br> Выполнять сбор только необходимых журналов. |
 | Данные решений с компьютеров, которым не требуется решение | Используйте [нацеливание решений](../insights/solution-targeting.md), чтобы выполнять сбор данных только в нужных группах компьютеров. |
 
@@ -383,7 +383,7 @@ union withsource = $table Usage
 
 При создании оповещения для первого запроса, когда имеется объем данных, превышающий 100 ГБ в сутки, задайте параметрам следующие значения:  
 
-- Для параметра **Определение условия оповещения** укажите свою рабочую область Log Analytics в качестве целевого ресурса.
+- Для параметра **Определение условия оповещения** укажите вашу рабочую область Log Analytics в качестве целевого ресурса.
 - Для **критериев оповещения** укажите следующее:
    - для **названия сигнала** выберите значение **Пользовательский поиск по журналам**;
    - **поисковому запросу** — `union withsource = $table Usage | where QuantityUnit == "MBytes" and iff(isnotnull(toint(IsBillable)), IsBillable == true, IsBillable == "true") == true | extend Type = $table | summarize DataGB = sum((Quantity / 1024)) by Type | where DataGB > 100`;
@@ -397,7 +397,7 @@ union withsource = $table Usage
 
 При создании оповещения для второго запроса, когда спрогнозировано, что суточный объем данных превысит 100 ГБ, задайте параметрам следующие значения:
 
-- Для параметра **Определение условия оповещения** укажите свою рабочую область Log Analytics в качестве целевого ресурса.
+- Для параметра **Определение условия оповещения** укажите вашу рабочую область Log Analytics в качестве целевого ресурса.
 - Для **критериев оповещения** укажите следующее:
    - для **названия сигнала** выберите значение **Пользовательский поиск по журналам**;
    - **поисковому запросу** — `union withsource = $table Usage | where QuantityUnit == "MBytes" and iff(isnotnull(toint(IsBillable)), IsBillable == true, IsBillable == "true") == true | extend Type = $table | summarize EstimatedGB = sum(((Quantity * 8) / 1024)) by Type | where EstimatedGB > 100`;
@@ -413,10 +413,10 @@ union withsource = $table Usage
 
 ## <a name="limits-summary"></a>Сводная таблица ограничений
 
-Существуют некоторые дополнительные ограничения Log Analytics, некоторые из которых зависят от Log Analytics, Ценовая категория. Все они описаны [здесь](https://docs.microsoft.com/azure/azure-subscription-service-limits#log-analytics-limits).
+Существуют некоторые дополнительные ограничения Log Analytics, некоторые из которых зависят от Log Analytics, Ценовая категория. Все они описаны [здесь](https://docs.microsoft.com/azure/azure-subscription-service-limits#log-analytics-workspaces).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - См. в разделе [при поиске по журналам в Azure Monitor журналы](../log-query/log-query-overview.md) вы научитесь использовать язык поиска. Вы можете использовать поисковые запросы, чтобы выполнить дополнительный анализ данных об использовании.
 - Выполните действия, описанные в разделе о [создании оповещений журналов](alerts-metric.md), чтобы получать уведомления при выполнении условий поиска.

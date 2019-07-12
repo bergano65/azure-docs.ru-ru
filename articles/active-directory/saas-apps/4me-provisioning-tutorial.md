@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настройка 4me для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
+title: Учебник. Настройка 4me для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в 4me.
 services: active-directory
 documentationcenter: ''
@@ -8,21 +8,21 @@ writer: zchia
 manager: beatrizd
 ms.assetid: na
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 06/3/2019
 ms.author: zchia
-ms.openlocfilehash: 0cfd760eb9d631bf6ab098afef0ef9b66c92cfa6
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: e2e7c27d8cfa79bc7a8f8462def4d46e598cb508
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67168159"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67595097"
 ---
-# <a name="tutorial-configure-4me-for-automatic-user-provisioning"></a>Руководство по Настройка 4me для автоматической подготовки пользователей
+# <a name="tutorial-configure-4me-for-automatic-user-provisioning"></a>Учебник. Настройка 4me для автоматической подготовки пользователей
 
 Цель данного учебника — продемонстрировать действия, выполняемые в 4me и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической подготовки и отзыва пользователей и групп в 4me.
 
@@ -31,7 +31,7 @@ ms.locfileid: "67168159"
 >
 > Сейчас этот соединитель предоставляется в общедоступной предварительной версии. Дополнительные сведения о общие Microsoft Azure условия использования предварительных версий функций, см. в разделе [дополнительным условиям использования предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -122,7 +122,7 @@ Azure Active Directory используется концепция, называ
 
     ![Уведомление по электронной почте](common/provisioning-notification-email.png)
 
-9. Выберите команду **Сохранить**.
+9. Нажмите кнопку **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать пользователей Azure Active Directory с 4me**.
 
@@ -169,6 +169,6 @@ Azure Active Directory используется концепция, называ
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)

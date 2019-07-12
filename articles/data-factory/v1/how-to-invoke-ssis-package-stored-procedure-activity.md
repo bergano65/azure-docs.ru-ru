@@ -13,12 +13,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: jingwang
-ms.openlocfilehash: d61874a57801a6c02af885cab6a97ed38da1deb1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 030617d3afd73c68793ca0a1d6185264c92b791f
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66156621"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839900"
 ---
 # <a name="invoke-an-ssis-package-using-stored-procedure-activity-in-azure-data-factory"></a>Вызов пакета SSIS с помощью действия хранимой процедуры в фабрике данных Azure
 В этой статье описывается, как вызвать пакет SSIS из конвейера фабрики данных Azure, используя действие хранимой процедуры. 
@@ -26,141 +26,13 @@ ms.locfileid: "66156621"
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", см. руководство по [вызову пакетов SSIS с помощью действия хранимой процедуры в службе "Фабрика данных" версии 2](../how-to-invoke-ssis-package-stored-procedure-activity.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 ### <a name="azure-sql-database"></a>База данных SQL Azure 
 В этих пошаговых инструкциях используется база данных SQL Azure, в которой размещен каталог SSIS. Вы также можете использовать Управляемый экземпляр Базы данных SQL.
 
 ### <a name="create-an-azure-ssis-integration-runtime"></a>Создание среды выполнения интеграции Azure SSIS.
 Создайте среду выполнения интеграции Azure SSIS, если у вас ее нет. Для этого выполните пошаговую инструкцию из статьи [Подготовка Integration Runtime Azure–SSIS в Фабрике данных Azure](../tutorial-create-azure-ssis-runtime-portal.md). Для создания среды выполнения интеграции Azure SSIS нельзя использовать службу "Фабрика данных" версии 1. 
-
-## <a name="azure-portal"></a>Портал Azure
-В этом разделе с помощью портала Azure вы создадите конвейер фабрики данных с действием хранимой процедуры, которое вызывает пакет SSIS.
-
-### <a name="create-a-data-factory"></a>Создание фабрики данных
-Сначала нужно создать фабрику данных с помощью портала Azure. 
-
-1. Перейдите на [портал Azure](https://portal.azure.com). 
-2. В меню слева щелкните **Создать**, выберите **Данные+аналитика** и щелкните **Фабрика данных**. 
-   
-   ![Создать -> Фабрика данных](./media/how-to-invoke-ssis-package-stored-procedure-activity/new-azure-data-factory-menu.png)
-2. На странице **Новая фабрика данных** введите **ADFTutorialDataFactory** в поле **Имя**. 
-      
-     ![Страница "Новая фабрика данных"](./media/how-to-invoke-ssis-package-stored-procedure-activity/new-azure-data-factory.png)
- 
-   Имя фабрики данных Azure должно быть **глобально уникальным**. Если вы увидите следующую ошибку для поля имени, введите другое имя фабрики данных (например, ваше_имя_ADFTutorialBulkCopyDF). Ознакомьтесь со статьей [Фабрика данных Azure — правила именования](data-factory-naming-rules.md), чтобы узнать правила именования для артефактов службы "Фабрика данных".
-
-    `Data factory name ADFTutorialDataFactory is not available`
-3. Выберите **подписку** Azure, в рамках которой вы хотите создать фабрику данных. 
-4. Для **группы ресурсов** выполните одно из следующих действий.
-     
-   - Выберите **Использовать существующую**и укажите существующую группу ресурсов в раскрывающемся списке. 
-   - Выберите **Создать новую**и укажите имя группы ресурсов.   
-         
-     Сведения о группах ресурсов см. в статье, где описывается [использование групп ресурсов для управления ресурсами Azure](../../azure-resource-manager/resource-group-overview.md).  
-4. Выберите **V1** в качестве **версии**.
-5. Укажите **расположение** фабрики данных. В этом раскрывающемся списке отображаются только сведения о расположениях, поддерживаемых службой "Фабрика данных". Хранилища данных (служба хранилища Azure, служба "База данных SQL Azure" и т. д.) и вычислительные ресурсы (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
-6. Кроме того, установите флажок **Закрепить на панели мониторинга**.     
-7. Нажмите кнопку **Создать**.
-8. На панели мониторинга вы увидите приведенный ниже элемент с состоянием **Deploying data factory** (Развертывание фабрики данных). 
-
-     ![Элемент Deploying data factory (Развертывание фабрики данных)](media//how-to-invoke-ssis-package-stored-procedure-activity/deploying-data-factory.png)
-9. Когда завершится создание, откроется страница **Фабрика данных**, как показано на рисунке ниже.
-   
-     ![Домашняя страница фабрики данных](./media/how-to-invoke-ssis-package-stored-procedure-activity/data-factory-home-page.png)
-10. Щелкните плитку **Создать и развернуть**, чтобы открыть редактор фабрики данных.
-
-    ![Редактор фабрики данных](./media/how-to-invoke-ssis-package-stored-procedure-activity/data-factory-editor.png)
-
-### <a name="create-an-azure-sql-database-linked-service"></a>Создание связанной службы Базы данных SQL Azure
-Создайте связанную службу, которая свяжет базу данных SQL Azure, содержащую каталог SSIS, с вашей фабрикой данных. Фабрика данных использует информацию связанной службы для подключения к базе данных SSISDB и выполняет хранимую процедуру для запуска пакета SSIS. 
-
-1. В редакторе фабрики данных щелкните в меню пункт **Новое хранилище данных** и выберите **База данных SQL Azure**. 
-
-    ![Новое хранилище данных -> База данных SQL Azure](./media/how-to-invoke-ssis-package-stored-procedure-activity/new-azure-sql-database-linked-service-menu.png)
-2. В области справа выполните следующие действия:
-
-    1. Замените `<servername>` именем сервера Azure SQL. 
-    2. Замените `<databasename>` именем базы данных каталога SSIS (**SSISDB**). 
-    3. Замените `<username@servername>` именем пользователя, у которого есть доступ к кластеру серверу Azure SQL. 
-    4. Замените `<password>` паролем этого пользователя. 
-    5. Разверните связанную службу, нажав кнопку **Развернуть** на панели инструментов. 
-
-        ![Связанная служба "База данных SQL Azure"](./media/how-to-invoke-ssis-package-stored-procedure-activity/azure-sql-database-linked-service-definition.png)
-
-### <a name="create-a-dummy-dataset-for-output"></a>Создание пустого набора данных для вывода
-Этот пустой выходной набор данных используется для выполнения расписания конвейера. Обратите внимание, что частота составляет час, а интервал — 1. Это значит, что конвейер выполняется раз в час на протяжении всего периода между временем начала и окончания конвейера. 
-
-1. Слева на странице редактора фабрики данных щелкните **... Дополнительно** -> **Новый набор данных** -> **Azure SQL**.
-
-    ![Дополнительно -> Новый набор данных](./media/how-to-invoke-ssis-package-stored-procedure-activity/new-dataset-menu.png)
-2. Скопируйте следующий фрагмент кода JSON в правую панель редактора JSON. 
-    
-    ```json
-    {
-        "name": "sprocsampleout",
-        "properties": {
-            "type": "AzureSqlTable",
-            "linkedServiceName": "AzureSqlLinkedService",
-            "typeProperties": { },
-            "availability": {
-                "frequency": "Hour",
-                "interval": 1
-            }
-        }
-    }
-    ```
-3. На панели инструментов щелкните **Развернуть** . Это действие развертывает набор данных в службе фабрики данных Azure. 
-
-### <a name="create-a-pipeline-with-stored-procedure-activity"></a>Создание конвейера с действием хранимой процедуры 
-На этом этапе создается конвейер с действием хранимой процедуры. Это действие вызывает хранимую процедуру sp_executesql для запуска пакета SSIS. 
-
-1. В левой области щелкните **... Дополнительно** и **Новый конвейер**.
-2. Скопируйте следующий фрагмент кода JSON в редактор JSON. 
-
-    > [!IMPORTANT]
-    > Прежде чем сохранять файл, замените заполнители &lt;folder name&gt;, &lt;project name&gt;, &lt;package name&gt; именами папки, проекта и пакета в каталоге SSIS соответственно.
-
-    ```json
-    {
-        "name": "MyPipeline",
-        "properties": {
-            "activities": [{
-                "name": "SprocActivitySample",
-                "type": "SqlServerStoredProcedure",
-                "typeProperties": {
-                    "storedProcedureName": "sp_executesql",
-                    "storedProcedureParameters": {
-                        "stmt": "DECLARE @return_value INT, @exe_id BIGINT, @err_msg NVARCHAR(150)    EXEC @return_value=[SSISDB].[catalog].[create_execution] @folder_name=N'<folder name>', @project_name=N'<project name>', @package_name=N'<package name>', @use32bitruntime=0, @runinscaleout=1, @useanyworker=1, @execution_id=@exe_id OUTPUT    EXEC [SSISDB].[catalog].[set_execution_parameter_value] @exe_id, @object_type=50, @parameter_name=N'SYNCHRONIZED', @parameter_value=1    EXEC [SSISDB].[catalog].[start_execution] @execution_id=@exe_id, @retry_count=0    IF(SELECT [status] FROM [SSISDB].[catalog].[executions] WHERE execution_id=@exe_id)<>7 BEGIN SET @err_msg=N'Your package execution did not succeed for execution ID: ' + CAST(@exe_id AS NVARCHAR(20)) RAISERROR(@err_msg,15,1) END"
-                    }
-                },
-                "outputs": [{
-                    "name": "sprocsampleout"
-                }],
-                "scheduler": {
-                    "frequency": "Hour",
-                    "interval": 1
-                }
-            }],
-            "start": "2018-01-19T00:00:00Z",
-            "end": "2018-01-19T05:00:00Z",
-            "isPaused": false
-        }
-    }    
-    ```
-3. На панели инструментов щелкните **Развернуть** . Это действие развертывает конвейер в службе фабрики данных Azure. 
-
-### <a name="monitor-the-pipeline-run"></a>Мониторинг конвейера
-Для выходного набора данных определено расписание ежечасного выполнения. Время окончания конвейера отстоит от времени запуска на пять часов. Таким образом, отображается пять запусков конвейера. 
-
-1. Закройте окно редактора, чтобы увидеть домашнюю страницу фабрики данных. Щелкните плитку **Мониторинг и управление**. 
-
-    ![Плитка "Схема"](./media/how-to-invoke-ssis-package-stored-procedure-activity/monitor-manage-tile.png)
-2. Измените **время начала** и **время окончания**, указав значения **01/18/2018 08:30** и **01/20/2018 08:30** соответственно, и щелкните **Применить**. Вы увидите **окна действий**, связанные с выполнением конвейера. 
-
-    ![Окна действий](./media/how-to-invoke-ssis-package-stored-procedure-activity/activity-windows.png)
-
-Дополнительные сведения о мониторинге конвейеров см в статье [Мониторинг конвейеров фабрики данных Azure и управление ими с помощью нового приложения по мониторингу и управлению](data-factory-monitor-manage-app.md).
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 В этом разделе с помощью Azure PowerShell вы создадите конвейер фабрики данных с действием хранимой процедуры, которое вызывает пакет SSIS.
@@ -324,6 +196,6 @@ ms.locfileid: "66156621"
     select * from catalog.executions
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 См дополнительные сведения о [действии хранимой процедуры](data-factory-stored-proc-activity.md).
 

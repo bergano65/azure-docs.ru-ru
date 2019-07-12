@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 7925f3aef4123fddd3a96c6e62971b881ae4cbc3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c9dfa6af4fb13018051c06783e5ae2bc3f49c0da
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65021873"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672092"
 ---
 # <a name="predefined-skills-for-content-enrichment-azure-search"></a>Предопределенные навыки для обогащения содержимого ("Поиск Azure")
 
@@ -45,7 +45,7 @@ ms.locfileid: "65021873"
 | [Microsoft.Skills.Custom.WebApiSkill](cognitive-search-custom-skill-web-api.md) | Позволяет расширять конвейер когнитивного поиска, превращая вызов HTTP в пользовательский веб-API. |
 
 
-Инструкции по созданию [пользовательского навыка](cognitive-search-custom-skill-web-api.md) см. в статьях [Добавление пользовательского навыка в конвейер когнитивного поиска](cognitive-search-custom-skill-interface.md) и [Пример: создание пользовательского навыка с помощью API перевода текста](cognitive-search-create-custom-skill-example.md).
+Рекомендации по созданию [пользовательских навыков](cognitive-search-custom-skill-web-api.md), см. в разделе [определение пользовательского интерфейса](cognitive-search-custom-skill-interface.md) и [пример: Создание пользовательских опыт для когнитивного поиска](cognitive-search-create-custom-skill-example.md).
 
 ## <a name="see-also"></a>См. также
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 97f737c8d1228bd03baf59f2ebe830f715241299
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 232b4ca2ee4f3137069ed155cc82a5c5e3251420
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67449840"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807276"
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Устранение неполадок службы файлов Azure в Linux
 
@@ -94,19 +94,30 @@ ms.locfileid: "67449840"
 
 Сократите количество одновременно открытых дескрипторов, закрыв некоторые из них, и повторите операцию.
 
+Чтобы просмотреть открытые дескрипторы для общей папки, каталога или файла, используйте [Get AzStorageFileHandle](https://docs.microsoft.com/powershell/module/az.storage/get-azstoragefilehandle) командлета PowerShell.  
+
+Чтобы закрыть открытые дескрипторы для общей папки, каталога или файла, используйте [AzStorageFileHandle закрыть](https://docs.microsoft.com/powershell/module/az.storage/close-azstoragefilehandle) командлета PowerShell.
+
+> [!Note]  
+> Командлеты Get-AzStorageFileHandle и закрыть AzStorageFileHandle включаются в Az модуль PowerShell версии 2.4 или более поздней версии. Чтобы установить последнюю версию модуля Az PowerShell, см. в разделе [установить модуль Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+
 <a id="slowfilecopying"></a>
 ## <a name="slow-file-copying-to-and-from-azure-files-in-linux"></a>Медленное копирование файлов в службе файлов Azure и из нее в Linux
 
 - Если определенные требования к минимальному размеру операций ввода-вывода отсутствуют, для оптимальной производительности мы рекомендуем использовать 1 МиБ.
-- Если вам известен размер файла, в который выполняется запись, и используемое программное обеспечение допускает нули в конечном фрагменте файла, запись которого еще не закончена, лучше всего указать размер файла заранее и не менять его при каждой операции записи.
 - Используйте правильный метод копирования:
     - Используйте [AZCopy](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) для передачи данных между двумя файловыми ресурсами.
-    - С помощью cp с параллельными могут повысить скорость копирования, число потоков зависит от варианта использования и рабочей нагрузки. В этом примере используется шесть: `find * -type f | parallel --will-cite -j 6 cp {} /mntpremium/ &`.
+    - Использование cp или дд в параллельном режиме может повысить скорость копирования, число потоков зависит от варианта использования и рабочей нагрузки. В следующих примерах используется шесть: 
+    - Пример CP (cp используется размер блока по умолчанию в файловой системе как размер фрагмента данных): `find * -type f | parallel --will-cite -j 6 cp {} /mntpremium/ &`.
+    - дд пример (эта команда явно задает размер блока 1 MiB). `find * -type f | parallel --will-cite-j 6 dd if={} of=/mnt/share/{} bs=1M`
     - Откройте исходный сторонние инструменты, например:
         - [Параллельный GNU](https://www.gnu.org/software/parallel/).
         - [Fpart](https://github.com/martymac/fpart) — Сортировка файлов и упаковывает их в секции.
         - [Fpsync](https://github.com/martymac/fpart/blob/master/tools/fpsync) -использует Fpart и средство для копирования для создания нескольких экземпляров для переноса данных из src_dir dst_url.
         - [С несколькими](https://github.com/pkolano/mutil) -многопоточных cp и контрольной суммы MD5 с учетом GNU coreutils.
+- Установив размер файла заранее вместо чтобы каждая запись расширять записи, помогает повысить скорость копирования в сценариях, где известен размер файла. Если расширение необходимость записи избегать, можно задать размер файла назначения с `truncate - size <size><file>` команды. После этого `dd if=<source> of=<target> bs=1M conv=notrunc`команда скопирует исходный файл не нужно повторно обновить размер целевого файла. Например, можно задать размер целевого файла для каждого файла, который требуется скопировать (предположим, ресурс подключен/mnt/общей папке):
+    - `$ for i in `` find * -type f``; do truncate --size ``stat -c%s $i`` /mnt/share/$i; done`
+    - и - скопируйте файлы без расширения операции записи в параллельном режиме: `$find * -type f | parallel -j6 dd if={} of =/mnt/share/{} bs=1M conv=notrunc`
 
 <a id="error115"></a>
 ## <a name="mount-error115-operation-now-in-progress-when-you-mount-azure-files-by-using-smb-30"></a>"Ошибка подключения(115). Операция выполняется" при подключении службы файлов Azure с помощью SMB 3.0
@@ -140,6 +151,23 @@ ms.locfileid: "67449840"
 ### <a name="solution-for-cause-2"></a>Решение для причины 2
 
 Убедитесь, что правила виртуальной сети и брандмауэра настроены надлежащим образом для учетной записи хранения. Чтобы проверить, связана ли проблема с правилами виртуальной сети или брандмауэра, временно задайте для учетной записи хранения параметр **Разрешить доступ из всех сетей**. Подробнее см. в статье [Настройка брандмауэров службы хранилища Azure и виртуальных сетей (предварительная версия)](https://docs.microsoft.com/azure/storage/common/storage-network-security).
+
+<a id="open-handles"></a>
+## <a name="unable-to-delete-a-file-or-directory-in-an-azure-file-share"></a>Не удалось удалить файл или каталог в файловый ресурс Azure
+
+### <a name="cause"></a>Причина:
+Эта проблема обычно возникает, если файл или каталог имеет открытый дескриптор. 
+
+### <a name="solution"></a>Решение
+
+Если клиенты SMB закрыты все открытые дескрипторы и проблема продолжает возникать, сделайте следующее:
+
+- Используйте [Get AzStorageFileHandle](https://docs.microsoft.com/powershell/module/az.storage/get-azstoragefilehandle) командлет PowerShell, чтобы просмотреть открытых дескрипторов.
+
+- Используйте [AzStorageFileHandle закрыть](https://docs.microsoft.com/powershell/module/az.storage/close-azstoragefilehandle) командлет PowerShell, чтобы закрыть открытых дескрипторов. 
+
+> [!Note]  
+> Командлеты Get-AzStorageFileHandle и закрыть AzStorageFileHandle включаются в Az модуль PowerShell версии 2.4 или более поздней версии. Чтобы установить последнюю версию модуля Az PowerShell, см. в разделе [установить модуль Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
 
 <a id="slowperformance"></a>
 ## <a name="slow-performance-on-an-azure-file-share-mounted-on-a-linux-vm"></a>Низкая производительность файлового ресурса Azure, подключенного к виртуальной машине Linux
@@ -191,40 +219,6 @@ ms.locfileid: "67449840"
 - `Passwd [storage account name]`
 - `Su [storage account name]`
 - `Cp -p filename.txt /share`
-
-## <a name="cannot-connect-to-or-mount-an-azure-file-share"></a>Не удается подключиться к файловому ресурсу Azure или подключить ее
-
-### <a name="cause"></a>Причина:
-
-Ниже приведены распространенные причины этой проблемы:
-
-- Вы используете клиент из несовместимого дистрибутива Linux. Мы рекомендуем использовать для подключения к файловому ресурсу Azure следующие дистрибутивы Linux:
-
-    |   | SMB 2.1 <br>(подключение на виртуальных машинах в том же регионе Azure) | SMB 3.0 <br>(подключение из локальной среды и между регионами) |
-    | --- | :---: | :---: |
-    | Сервер Ubuntu | 14.04 или более поздней версии | 16.04 или выше |
-    | RHEL | 7 или выше | 7.5+ |
-    | CentOS | 7 или выше |  7.5+ |
-    | Debian | 8+ |   |
-    | openSUSE | 13.2 или выше | 42.3+ |
-    | SUSE Linux Enterprise Server | 12 | 12 SP3 или выше |
-
-- Служебные программы CIFS (cifs-utils) не установлены на клиенте.
-- На клиенте не установлена минимальная необходимая версия SMB или CIFS 2.1.
-- На клиенте не поддерживается шифрование SMB 3.0. Шифрование SMB 3.0 доступно в Ubuntu 16.4 и более поздних версиях, а также в SUSE 12.3 и более поздних версиях. В других дистрибутивах нужно использовать ядро 4.11 или более поздней версии.
-- Вы пытаетесь подключиться к учетной записи хранения через TCP-порт 445, который не поддерживается.
-- Вы пытаетесь подключиться к файловому ресурсу Azure с виртуальной машины Azure, которая не находится в одном регионе с учетной записью хранения.
-- Если для учетной записи хранения включен параметр [Требуется безопасное перемещение]( https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer), то служба файлов Azure разрешает подключения только по протоколу SMB 3.0 с шифрованием.
-
-### <a name="solution"></a>Решение
-
-Чтобы устранить эту проблему, используйте [средство устранения неполадок с подключением в службе файлов Azure для Linux](https://gallery.technet.microsoft.com/Troubleshooting-tool-for-02184089). Это средство предоставляет следующие возможности:
-
-* Помогает проверить среду выполнения клиента.
-* Выявляет несовместимые конфигурации клиента, которые приведут к ошибкам доступа в файлах Azure.
-* Предоставляет рекомендации для самостоятельного исправления.
-* Собирает диагностические трассировки.
-
 
 ## <a name="ls-cannot-access-ltpathgt-inputoutput-error"></a>ls: cannot access '&lt;path&gt;': Input/output error (ls: невозможно получить доступ к "путь".Ошибка ввода-вывода)
 

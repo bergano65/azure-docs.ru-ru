@@ -10,12 +10,12 @@ ms.subservice: development
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: d4321f8aef6e754d8a1c5b16ac82b4fa62c40949
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e8d516cfd764f947bd2fe7fc25f6394c313c0d9a
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65873612"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67595496"
 ---
 # <a name="views-in-azure-sql-data-warehouse"></a>Представления в хранилище данных SQL Azure
 Советы по использованию представлений T-SQL в хранилище данных SQL Azure для разработки решений. 
@@ -23,12 +23,18 @@ ms.locfileid: "65873612"
 ## <a name="why-use-views"></a>Зачем нужны представления?
 Представления можно использовать разными способами для повышения качества вашего решения.  В этой статье представлены примеры того, как можно улучшить решение с помощью представлений; кроме того, здесь описаны ограничения, которые следует учитывать.
 
+
+> [!IMPORTANT]
+> См. в разделе новый синтаксис материализованное представление в [Создание МАТЕРИАЛИЗОВАННОГО ПРЕДСТАВЛЕНИЯ AS SELECT](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?view=azure-sqldw-latest).  Дополнительные сведения см. в разделе [заметки о выпуске](/azure/sql-data-warehouse/release-notes-10-0-10106-0).
+>
+
+
 > [!NOTE]
 > Синтаксис команды CREATE VIEW в этой статье не рассматривается. Дополнительные сведения см. в [документации по CREATE VIEW](/sql/t-sql/statements/create-view-transact-sql).
 > 
-> 
 
 ## <a name="architectural-abstraction"></a>Архитектурная абстракция
+
 Один из распространенных шаблонов приложения — повторное создание таблиц с помощью инструкции CREATE TABLE AS SELECT (CTAS), после которой следует шаблон переименования объектов в процессе загрузки данных.
 
 Приведенный ниже пример добавляет новые записи даты в измерение даты. Обратите внимание, что сначала создается новая таблица DimDate_New, которая затем переименовывается для замены исходной версии таблицы.
@@ -65,7 +71,7 @@ RENAME OBJECT DimDate_New TO DimDate;
 * Не поддерживаются указания для EXPAND и NOEXPAND.
 * В хранилище данных SQL нет индексированных представлений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](sql-data-warehouse-overview-develop.md).
 
 

@@ -1,5 +1,5 @@
 ---
-title: Настройка входа с помощью поставщика SAML Salesforce, используя пользовательские политики Azure в Active Directory B2C | Документация Майкрософт
+title: Настройка входа с помощью поставщика SAML Salesforce, используя пользовательские политики Azure в Active Directory B2C
 description: Настройте вход с помощью поставщика SAML Salesforce, используя пользовательские политики Azure в Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/21/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: e565822c006191615dbc10b980da24dcd9ed787a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7cbde2beb03c174facbd145954387a31f6158a9a
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66508307"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67654189"
 ---
 # <a name="set-up-sign-in-with-a-salesforce-saml-provider-by-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа с помощью поставщика SAML Salesforce, используя пользовательские политики Azure в Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "66508307"
 
 В этой статье описывается включение входа пользователей из организации Salesforce с помощью [пользовательских политик](active-directory-b2c-overview-custom.md) в Azure Active Directory (Azure AD) B2C. Вход в систему включается путем добавления [технического профиля SAML](saml-technical-profile.md) в пользовательскую политику.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
 - Если это еще не сделано, зарегистрируйтесь для получения [бесплатной учетной записи Developer Edition](https://developer.salesforce.com/signup). В этой статье предполагается использование [Salesforce Lightning Experience](https://developer.salesforce.com/page/Lightning_Experience_FAQ).
@@ -31,11 +31,11 @@ ms.locfileid: "66508307"
 
 ### <a name="set-up-salesforce-as-an-identity-provider"></a>Настройка Salesforce в качестве поставщика удостоверений
 
-1. [Войдите в Salesforce](https://login.salesforce.com/). 
+1. [Войдите в Salesforce](https://login.salesforce.com/).
 2. В меню слева в разделе **Параметры** разверните узел **Удостоверение** и выберите **Поставщик удостоверений**.
 3. Выберите **Enable Identity Provider** (Включить поставщик удостоверений).
-4. В разделе **Select the certificate** (Выберите сертификат) выберите сертификат, который необходимо использовать в Salesforce при взаимодействии с Azure AD B2C. Вы можете использовать сертификат по умолчанию. 
-5. Выберите команду **Сохранить**. 
+4. В разделе **Select the certificate** (Выберите сертификат) выберите сертификат, который необходимо использовать в Salesforce при взаимодействии с Azure AD B2C. Вы можете использовать сертификат по умолчанию.
+5. Нажмите кнопку **Сохранить**.
 
 ### <a name="create-a-connected-app-in-salesforce"></a>Создание подключенного приложения в Salesforce
 
@@ -49,7 +49,7 @@ ms.locfileid: "66508307"
       ```
 
 6. В поле **ACS URL** (URL-адрес ACS) введите приведенный ниже URL-адрес. Замените значение `your-tenant` на имя клиента Azure AD B2C.
-      
+
       ```
       https://your-tenant.b2clogin.com/your-tenant.onmicrosoft.com/B2C_1A_TrustFrameworkBase/samlp/sso/assertionconsumer
       ```
@@ -90,17 +90,17 @@ Export-PfxCertificate -Cert $Cert -FilePath .\B2CSigningCert.pfx -Password $pwd
 1. Войдите на [портале Azure](https://portal.azure.com/).
 2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
-4. На странице "Обзор" выберите **Identity Experience Framework — предварительная версия**.
+4. На странице "Обзор" выберите **Identity Experience Framework**.
 5. Выберите **Ключи политики**, а затем щелкните **Добавить**.
 6. Для пункта **Параметры** выберите `Upload`.
 7. Введите **имя** политики. Например, SAMLSigningCert. Префикс `B2C_1A_` будет автоматически добавлен к имени ключа.
-8. Найдите созданный сертификат B2CSigningCert.pfx и выберите его. 
+8. Найдите созданный сертификат B2CSigningCert.pfx и выберите его.
 9. Введите **пароль** для сертификата.
 3. Нажмите кнопку **Создать**.
 
 ## <a name="add-a-claims-provider"></a>Добавление поставщика утверждений
 
-Если необходимо разрешить пользователям входить в систему с помощью учетной записи Salesforce, нужно определить учетную запись в качестве поставщика утверждений, с которым Azure AD B2C может взаимодействовать через конечную точку. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя. 
+Если необходимо разрешить пользователям входить в систему с помощью учетной записи Salesforce, нужно определить учетную запись в качестве поставщика утверждений, с которым Azure AD B2C может взаимодействовать через конечную точку. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
 
 Чтобы определить учетную запись Salesforce в качестве поставщика утверждений, добавьте ее в элемент **ClaimsProviders** в файле расширения политики.
 
@@ -189,7 +189,7 @@ Export-PfxCertificate -Cert $Cert -FilePath .\B2CSigningCert.pfx -Password $pwd
     ```XML
     <ClaimsExchange Id="SalesforceExchange" TechnicalProfileReferenceId="salesforce" />
     ```
-    
+
     Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение **Id** ранее созданного технического профиля. Например, `LinkedIn-OAUTH`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.

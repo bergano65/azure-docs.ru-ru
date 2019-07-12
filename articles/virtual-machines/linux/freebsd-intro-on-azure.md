@@ -4,7 +4,7 @@ description: Узнайте о том, как использовать вирт�
 services: virtual-machines-linux
 documentationcenter: ''
 author: thomas1206
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 32b87a5f-d024-4da0-8bf0-77e233d1422b
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/13/2017
 ms.author: huishao
-ms.openlocfilehash: 1f2d3c40352d60d3cc7366aca6f38a8255a7a629
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 248588ad43f3b3beefa35de468a21cecedc8913d
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60627713"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67667785"
 ---
 # <a name="introduction-to-freebsd-on-azure"></a>Введение в FreeBSD в Azure
 В этой статье представлен обзор запуска виртуальной машины FreeBSD в Azure.
@@ -132,5 +132,5 @@ $ sudo <COMMAND>
 ## <a name="known-issues"></a>Известные проблемы
 [Гостевой агент виртуальной машины Azure](https://github.com/Azure/WALinuxAgent/) версии 2.2.2 имеет [известную проблему](https://github.com/Azure/WALinuxAgent/pull/517), вызывающую сбой подготовки виртуальной машины FreeBSD в Azure. Ошибка исправлена в [гостевом агенте виртуальной машины Azure](https://github.com/Azure/WALinuxAgent/) версии 2.2.3 и более поздних выпусках. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Перейдите на сайт [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeBSD112) , чтобы создать виртуальную машину FreeBSD.

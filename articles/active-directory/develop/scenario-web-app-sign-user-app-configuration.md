@@ -15,12 +15,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 82e6cbcd01c87ddffb7eac8d0ea0faef85f41a13
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b7484b627d3bc3f26fa01d4c38ee96047c70d007
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66254009"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67785483"
 ---
 # <a name="web-app-that-signs-in-users---code-configuration"></a>Веб-приложение, выполняет вход пользователей - код конфигурации
 
@@ -31,11 +31,13 @@ ms.locfileid: "66254009"
 <!-- This section can be in an include for Web App and Web APIs -->
 Ниже приведены библиотеки, используемые для защиты веб-приложения (и веб-API).
 
-| платформа | Библиотека | Описание |
+| Платформа | Библиотека | Описание |
 |----------|---------|-------------|
 | ![.NET](media/sample-v2-code/logo_net.png) | [Расширения модели удостоверения для .NET](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) | Расширения Microsoft Identity для .NET используется напрямую, ASP.NET и ASP.NET Core, и предлагает набор файлы DLL, запускаемые на .NET Framework и .NET Core. Из приложения веб-Core ASP.NET/ASP.NET, можно управлять с помощью проверки маркера **TokenValidationParameters** класса (в частности, в некоторых сценариях независимого поставщика программного обеспечения) |
 
 ## <a name="aspnet-core-configuration"></a>Конфигурации ASP.NET Core
+
+Фрагменты кода в этой статье и следующих извлекаются из [веб-ASP.NET Core app добавочные учебника, Глава 1](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-1-MyOrg). Может потребоваться ссылаться на этот учебник для все детали реализации.
 
 ### <a name="application-configuration-files"></a>Файлы конфигурации приложений
 
@@ -186,7 +188,7 @@ ms.locfileid: "66254009"
  }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Входа систему и выхода](scenario-web-app-sign-user-sign-in.md)

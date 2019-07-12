@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: johnkem
 ms.subservice: logs
-ms.openlocfilehash: 13eb1a8fcea2f74cda5921a51b8c2e8816be975f
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: e8e6276a38f06b5c6ebb24c89f3733b9fd7220f7
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67303712"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67612827"
 ---
 # <a name="stream-azure-diagnostic-logs-to-log-analytics-workspace-in-azure-monitor"></a>Stream журналов диагностики в рабочую область Log Analytics в Azure Monitor
 
@@ -58,7 +58,7 @@ Azure Monitor предоставляет гибкую журнала запро�
 
    ![Добавление параметра диагностики — имеющиеся параметры](media/diagnostic-logs-stream-log-store/diagnostic-settings-configure.png)
 
-4. Выберите команду **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
 Через несколько секунд новый параметр появится в списке параметров для данного ресурса, и сразу же после создания данных о событии журналы диагностики будут отправлены в необходимую рабочую область. Возможно, до 15 минут между когда создается событие, и когда она появится в Log Analytics.
 
@@ -99,6 +99,30 @@ az monitor diagnostic-settings create --name <diagnostic name> \
 
 В колонке "журналы" на портале Azure Monitor можно запросить журналы диагностики в рамках решения управления журналами в таблице AzureDiagnostics. Существуют также [несколько решений для мониторинга для ресурсов Azure](../../azure-monitor/insights/solutions.md) можно установить, чтобы мгновенно получать представление о данных журналов, отправляемых в Azure Monitor.
 
+### <a name="examples"></a>Примеры
+
+```Kusto
+// Resources that collect diagnostic logs into this Log Analytics workspace, using Diagnostic Settings
+AzureDiagnostics
+| distinct _ResourceId
+```
+```Kusto
+// Resource providers collecting diagnostic logs into this Log Analytics worksapce, with log volume per category
+AzureDiagnostics
+| summarize count() by ResourceProvider, Category
+```
+```Kusto
+// Resource types collecting diagnostic logs into this Log Analytics workspace, with number of resources onboarded
+AzureDiagnostics
+| summarize ResourcesOnboarded=dcount(_ResourceId) by ResourceType
+```
+```Kusto
+// Operations logged by specific resource provider, in this example - KeyVault
+AzureDiagnostics
+| where ResourceProvider == "MICROSOFT.KEYVAULT"
+| distinct OperationName
+```
+
 ## <a name="azure-diagnostics-vs-resource-specific"></a>Azure Diagnostics vs ресурсом  
 После назначения Log Analytics включена в конфигурации системы диагностики Azure, существует два различных способа, данные будут отображаться в рабочей области:  
 - **Система диагностики Azure** -это метод прежних версий, используемых сегодня большинство служб Azure. В этом режиме все данные из любого параметра диагностики, на который указывает для заданной рабочей области будут направлены в _AzureDiagnostics_ таблицы. 
@@ -109,7 +133,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
 
     В таблице AzureDiagnostics будет выглядеть следующим образом, с демонстрационными данными:  
 
-    | ResourceProvider | Категория | A | b | C | D | E | F | G. | H | I |
+    | ResourceProvider | Категория | А | С | В | D | E | C | П | H | I |
     | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
     | Microsoft.Resource1 | AuditLogs | x1 | y1 | z1 |
     | Microsoft.Resource2 | ErrorLogs | | | | Вопрос 1 | W1 | e1 |
@@ -124,7 +148,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
     В приведенном выше примере в результате создается три таблицы: 
     - Таблица _AuditLogs_ следующим образом:
 
-        | ResourceProvider | Категория | A | b | C |
+        | ResourceProvider | Категория | А | С | В |
         | -- | -- | -- | -- | -- |
         | Microsoft.Resource1 | AuditLogs | x1 | y1 | z1 |
         | Microsoft.Resource1 | AuditLogs | x5 | y5 | z5 |
@@ -132,7 +156,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
 
     - Таблица _ErrorLogs_ следующим образом:  
 
-        | ResourceProvider | Категория | D | E | F |
+        | ResourceProvider | Категория | D | E | C |
         | -- | -- | -- | -- | -- | 
         | Microsoft.Resource2 | ErrorLogs | Вопрос 1 | W1 | e1 |
         | Microsoft.Resource2 | ErrorLogs | вопрос 2 | W2 | e2 |
@@ -140,7 +164,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
 
     - Таблица _DataFlowLogs_ следующим образом:  
 
-        | ResourceProvider | Категория | G. | H | I |
+        | ResourceProvider | Категория | П | H | I |
         | -- | -- | -- | -- | -- | 
         | Microsoft.Resource3 | DataFlowLogs | J1 | K1 | L1|
         | Microsoft.Resource3 | DataFlowLogs | J3 | K3 | L3|
@@ -176,7 +200,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
 Более системы диагностики Azure будет переходит от всех служб Azure, которые поддерживают режим конкретного ресурса. Мы рекомендуем перемещение в этот режим, как можно скорее, чтобы уменьшить вероятность влияния это ограничение в 500 столбцов.  
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Дополнительные сведения о журналах диагностики Azure](diagnostic-logs-overview.md)
 

@@ -2,24 +2,25 @@
 title: Часто задаваемые вопросы о центре безопасности Azure для Интернета вещей Preview | Документация Майкрософт
 description: Найдите ответы на часто задаваемые вопросы о центре безопасности Azure для службы и возможности Интернета вещей.
 services: asc-for-iot
-ms.service: ASCforiot
+ms.service: asc-for-iot
 documentationcenter: na
 author: mlottner
 manager: rkarlin
 editor: ''
 ms.assetid: 97fda6c2-1ecb-491f-b48d-41788bd7e0d3
+ms.subservice: asc-for-iot
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/25/2019
 ms.author: mlottner
-ms.openlocfilehash: f15cd14ddc3a489db3abbbd2665d242470b5a821
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4e04e21d55722b8cb90b277b34b5bffab343c575
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65200708"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67616599"
 ---
 # <a name="azure-security-center-for-iot-frequently-asked-questions"></a>Центр безопасности Azure для Интернета вещей часто задаваемые вопросы  
 
@@ -142,7 +143,7 @@ ASC для Интернета вещей предоставляет можно �
 ASC для Интернета вещей модуля используется для настройки агента и управления.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о том, как приступить к работе с ASC для Интернета вещей, см. в разделе со следующими статьями:
 

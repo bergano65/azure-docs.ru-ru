@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 06/29/2019
 ms.author: v-adgera
 ms.custom: seodec18
-ms.openlocfilehash: 0b8c2b50e00c8e9727b09a454504d214a3060fe4
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: 9d4fd798309398dff38081cc66b4071c5dd1f5bf
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67502691"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67670788"
 ---
 # <a name="azure-digital-twins-swagger-reference-documentation"></a>Справочная документация о Swagger с Azure Digital Twins
 
@@ -42,15 +42,15 @@ Swagger предоставляет интерактивную сводку по 
 
 В краткой сводке описывается API.
 
-[![Верхней swagger](media/how-to-use-swagger/swagger_management_top.PNG)](media/how-to-use-swagger/swagger_management_top.PNG#lightbox)
+[![Верхней swagger](media/how-to-use-swagger/swagger-management-top-img.png)](media/how-to-use-swagger/swagger-management-top-img.png#lightbox)
 
 Кроме того, перечислены модели объекта API управления.
 
-[![Swagger моделей](media/how-to-use-swagger/swagger_management_models.PNG)](media/how-to-use-swagger/swagger_management_models.PNG#lightbox)
+[![Swagger моделей](media/how-to-use-swagger/swagger-management-models-img.png)](media/how-to-use-swagger/swagger-management-models-img.png#lightbox)
 
 Можно выбрать каждую объектную модель объекта в списке, чтобы ознакомится с более подробным описанием атрибутов ключей.
 
-[![Модель swagger](media/how-to-use-swagger/swagger_management_model.PNG)](media/how-to-use-swagger/swagger_management_model.PNG#lightbox)
+[![Модель swagger](media/how-to-use-swagger/swagger-management-model-img.png)](media/how-to-use-swagger/swagger-management-model-img.png#lightbox)
 
 С помощью созданных объектных моделей Swagger можно просмотреть все доступные [объекты и API](./concepts-objectmodel-spatialgraph.md) Azure Digital Twins. Этот ресурс используется разработчиками при построении решений на Azure Digital Twins.
 
@@ -64,7 +64,7 @@ Swagger также предоставляет полный обзор всех �
 * Типы данных обязательных параметров.
 * Метод HTTP для получения доступа к ресурсу.
 
-[![Конечные точки swagger](media/how-to-use-swagger/swagger_management_endpoints.PNG)](media/how-to-use-swagger/swagger_management_endpoints.PNG#lightbox)
+[![Конечные точки swagger](media/how-to-use-swagger/swagger-management-endpoints-img.png)](media/how-to-use-swagger/swagger-management-endpoints-img.png#lightbox)
 
 Чтобы просмотреть более подробные сведения, выберите каждый ресурс.
 
@@ -74,11 +74,11 @@ Swagger также предоставляет полный обзор всех �
 
 Выбрав конкретную конечную точку, вы увидите пункт **Попробовать**.
 
-[![Попробуйте swagger](media/how-to-use-swagger/swagger_management_try.PNG)](media/how-to-use-swagger/swagger_management_try.PNG#lightbox)
+[![Попробуйте swagger](media/how-to-use-swagger/swagger-management-try-img.png)](media/how-to-use-swagger/swagger-management-try-img.png#lightbox)
 
 После развертывания этого раздела появятся поля ввода для каждого обязательного и дополнительного параметров. Введите соответствующие значения и щелкните **Execute** (Выполнить).
 
-[![Попытка swagger](media/how-to-use-swagger/swagger_management_tried.PNG)](media/how-to-use-swagger/swagger_management_tried.PNG#lightbox)
+[![Попытка swagger](media/how-to-use-swagger/swagger-management-tried-img.png)](media/how-to-use-swagger/swagger-management-tried-img.png#lightbox)
 
 Выполнив тестирование, можно проверить данные ответа.
 
@@ -86,7 +86,7 @@ Swagger также предоставляет полный обзор всех �
 
 Каждая указанная конечная точка также содержит данные текста ответа, необходимые для проверки вашей разработки и тестирования. Эти примеры включают коды нужного состояния и JSON, необходимые для успешного выполнения HTTP-запросов.
 
-[![Ответ swagger](media/how-to-use-swagger/swagger_management_response.PNG)](media/how-to-use-swagger/swagger_management_response.PNG#lightbox)
+[![Ответ swagger](media/how-to-use-swagger/swagger-management-response-img.png)](media/how-to-use-swagger/swagger-management-response-img.png#lightbox)
 
 Примеры также включают коды ошибок, которые помогают отлаживать или улучшать неудачные тестирования.
 
@@ -120,11 +120,11 @@ Swagger также предоставляет полный обзор всех �
 
 1. Затем вы будете перенаправлены для следующих модальное успеха.
 
-    [![Модальное окно перенаправления swagger](media/how-to-use-swagger/swagger_auth_redirect.png)](media/how-to-use-swagger/swagger_auth_redirect.png#lightbox)
+    [![Модальное окно перенаправления swagger](media/how-to-use-swagger/swagger-auth-redirect-img.png)](media/how-to-use-swagger/swagger-auth-redirect-img.png#lightbox)
 
 Дополнительные сведения об интерактивном тестировании запросов, защищенных с помощью OAuth 2.0, см. в [официальной документации](https://swagger.io/docs/specification/authentication/oauth2/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения об объектных моделях и пространственном интеллектуальном графе Azure Digital Twins см. [здесь](./concepts-objectmodel-spatialgraph.md).
 

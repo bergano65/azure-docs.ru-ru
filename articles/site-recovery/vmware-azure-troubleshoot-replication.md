@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 06/27/2019
 ms.author: mayg
-ms.openlocfilehash: c005dcee78e2a9338dc7a816e06d9a78a2f355b6
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
+ms.openlocfilehash: ed04c21fc5f3aecb91483dbd1eb7ca5fbf47c3e9
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67491670"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67805958"
 ---
 # <a name="troubleshoot-replication-issues-for-vmware-vms-and-physical-servers"></a>Устранение неполадок с репликацией виртуальных машин VMware и физических серверов
 
@@ -133,8 +133,64 @@ Site Recovery использует [сервер обработки](vmware-phys
         
           C:\Program Files (X86)\Microsoft Azure Site Recovery\agent\svagents*log
 
+## <a name="error-id-78144---no-app-consistent-recovery-point-available-for-the-vm-in-the-last-xxx-minutes"></a>Идентификатор ошибки 78144 - нет доступных для виртуальной Машины в течение минут 'XXX' точек восстановления с согласованием приложений
+
+Ниже перечислены некоторые из наиболее распространенных проблем
+
+#### <a name="cause-1-known-issue-in-sql-server-20082008-r2"></a>Причина 1. Известная проблема в SQL server 2008/2008 R2 
+**Способы устранения** : Имеется известная проблема с SQL server 2008/2008 R2. См. в статье базы Знаний [агент Azure Site Recovery и другие, не являющегося компонентом VSS, резервное копирование завершается ошибкой для сервера размещения SQL Server 2008 R2](https://support.microsoft.com/help/4504103/non-component-vss-backup-fails-for-server-hosting-sql-server-2008-r2)
+
+#### <a name="cause-2-azure-site-recovery-jobs-fail-on-servers-hosting-any-version-of-sql-server-instances-with-autoclose-dbs"></a>Причина 2. Сбой задания Azure Site Recovery на серверах размещения всех версий экземпляров SQL Server с помощью баз данных параметр AUTO_CLOSE 
+**Способы устранения** : См. КБ [статьи](https://support.microsoft.com/help/4504104/non-component-vss-backups-such-as-azure-site-recovery-jobs-fail-on-ser) 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+#### <a name="cause-3-known-issue-in-sql-server-2016-and-2017"></a>Причина 3. Известная проблема в SQL Server 2016 и 2017
+**Способы устранения** : См. КБ [статьи](https://support.microsoft.com/help/4493364/fix-error-occurs-when-you-back-up-a-virtual-machine-with-non-component) 
+
+
+### <a name="more-causes-due-to-vss-related-issues"></a>Дополнительные причины, из-за VSS проблемы, связанные с:
+
+Выполнить дополнительную диагностику, проверьте файлы на исходном компьютере, чтобы получить точный код ошибки для сбоя:
+    
+    C:\Program Files (x86)\Microsoft Azure Site Recovery\agent\Application Data\ApplicationPolicyLogs\vacp.log
+
+Как найти ошибки в файле?
+Выполните поиск строки «vacpError», открыв файл vacp.log в редакторе
+        
+    Ex: vacpError:220#Following disks are in FilteringStopped state [\\.\PHYSICALDRIVE1=5, ]#220|^|224#FAILED: CheckWriterStatus().#2147754994|^|226#FAILED to revoke tags.FAILED: CheckWriterStatus().#2147754994|^|
+
+В приведенном выше примере **2147754994** является кодом ошибки, информирующее о причине сбоя, как показано ниже
+
+#### <a name="vss-writer-is-not-installed---error-2147221164"></a>Модуль записи VSS не установлена — ошибка 2147221164 
+
+*Способы устранения*: Чтобы создать тег согласованности приложения, Azure Site Recovery использует Microsoft теневого копирования томов (VSS) службы. Он устанавливает поставщик VSS, для его работы для создания моментальных снимков согласованности приложений. Этот поставщик VSS устанавливается как служба. В случае, если не установлена служба поставщика VSS, создания приложения согласованность моментального снимка завершается сбоем с кодом ошибки 0x80040154 «Класс не зарегистрирован». </br>
+См. [статьи по устранению неполадок установки модуля записи VSS](https://docs.microsoft.com/azure/site-recovery/vmware-azure-troubleshoot-push-install#vss-installation-failures) 
+
+#### <a name="vss-writer-is-disabled---error-2147943458"></a>Модуль записи VSS отключено — ошибка 2147943458
+
+**Способы устранения**: Чтобы создать тег согласованности приложения, Azure Site Recovery использует Microsoft теневого копирования томов (VSS) службы. Он устанавливает поставщик VSS, для его работы для создания моментальных снимков согласованности приложений. Этот поставщик VSS устанавливается как служба. В случае, если поставщик VSS служба отключена, создания моментального снимка согласованности приложения завершается сбоем с кодом ошибки «указанная служба отключена и не может быть started(0x80070422)». </br>
+
+- При отключении VSS
+    - Убедитесь, что тип запуска службы поставщика VSS **автоматического**.
+    - Перезапустите следующие службы:
+        - Служба VSS
+        - поставщик VSS Azure Site Recovery.
+        - САМУ службу
+
+####  <a name="vss-provider-notregistered---error-2147754756"></a>NOT_REGISTERED поставщик VSS - ошибка 2147754756
+
+**Способы устранения**: Чтобы создать тег согласованности приложения, Azure Site Recovery использует Microsoft теневого копирования томов (VSS) службы. Проверьте, установлены ли службы VSS поставщик Azure Site Recovery или нет. </br>
+
+- Повторная установка поставщика, используя следующие команды.
+- Удаление существующего поставщика: C:\Program файлы (x86) \Microsoft Azure Site Recovery\agent\InMageVSSProvider_Uninstall.cmd
+- Переустановите: C:\Program Files (x86)\Microsoft Azure Site Recovery\agent\InMageVSSProvider_Install.cmd
+ 
+Убедитесь, что тип запуска службы поставщика VSS **автоматического**.
+    - Перезапустите следующие службы:
+        - Служба VSS
+        - поставщик VSS Azure Site Recovery.
+        - САМУ службу
+
+## <a name="next-steps"></a>Следующие шаги
 
 Если вам нужна дополнительная помощь, задайте свой вопрос на [форуме Azure Site Recovery](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr). У нас активное сообщество, и один из наших инженеров сможет помочь вам.

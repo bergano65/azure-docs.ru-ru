@@ -2,18 +2,18 @@
 title: Вопросы и ответы о коллекциях рабочих областей Power BI
 description: Вопросы и ответы о коллекциях рабочих областей Power BI.
 services: power-bi-workspace-collections
-ms.service: power-bi-workspace-collections
+ms.service: power-bi-embedded
 author: rkarlin
 ms.author: rkarlin
 ms.topic: article
 ms.workload: powerbi
 ms.date: 09/25/2017
-ms.openlocfilehash: e3c28cc28261e65e945887d7ad9bfa5fd3984605
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b737c7753ce374d0360738e37d83609d1db995b1
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64701589"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672420"
 ---
 # <a name="power-bi-workspace-collections-faq"></a>Вопросы и ответы о коллекциях рабочих областей Power BI
 
@@ -72,7 +72,7 @@ ms.locfileid: "64701589"
 
 ## <a name="does-my-application-end-user-need-a-power-bi-license"></a>Нужна ли лицензия Power BI конечным пользователям моего приложения?
 
-№ Пользователям вашего приложения не требуется приобретать отдельную подписку Power BI для доступа к визуализациям данных в приложении. В модели коллекций рабочих областей Power BI вам, как поставщику приложения, выставляется счет за использование службы по данным индикатора потребления Azure. Дополнительные сведения см. на [странице сведений о ценах и лицензировании](https://go.microsoft.com/fwlink/?LinkId=760527).
+Нет. Пользователям вашего приложения не требуется приобретать отдельную подписку Power BI для доступа к визуализациям данных в приложении. В модели коллекций рабочих областей Power BI вам, как поставщику приложения, выставляется счет за использование службы по данным индикатора потребления Azure. Дополнительные сведения см. на [странице сведений о ценах и лицензировании](https://go.microsoft.com/fwlink/?LinkId=760527).
 
 ## <a name="how-does-user-authentication-work-with-power-bi-workspace-collections"></a>Как выполняется аутентификация пользователей в коллекциях рабочих областей Power BI?
 

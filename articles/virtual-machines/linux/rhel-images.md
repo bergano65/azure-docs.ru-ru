@@ -4,7 +4,7 @@ description: Дополнительные сведения об образах R
 services: virtual-machines-linux
 documentationcenter: ''
 author: BorisB2015
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
 ms.devlang: na
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 6/6/2019
 ms.author: borisb
-ms.openlocfilehash: b40f62a90dbe7c822b95476abe6ec25cf3fb21d6
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f7ae82b0376489e21b35e4e94dce32805bea69c6
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67070034"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67708382"
 ---
 # <a name="red-hat-enterprise-linux-images-in-azure"></a>Образы Red Hat Enterprise Linux в Azure
 В этой статье описываются доступные образы Red Hat Enterprise Linux (RHEL) в Azure Marketplace, а также политики их именования и хранения.
@@ -111,7 +111,7 @@ RHEL 8.0      |Н/Д                            | В настоящее врем
 ## <a name="list-of-rhel-images-available"></a>Список доступных образов RHEL
 Для общедоступного использования сейчас доступны предложения со следующими номерами SKU.
 
-ПРЕДЛОЖЕНИЕ| SKU | Секционирование | Подготовка | Примечания
+ПРЕДЛОЖЕНИЕ| номер SKU | Секционирование | Подготовка | Примечания
 :----|:----|:-------------|:-------------|:-----
 RHEL          | 7-RAW    | RAW    | Агент Linux | Семейство образов RHEL 7. <br> Не присоединен к EUS репозиториев по умолчанию.
 |             | 7-LVM    | Диспетчер логических томов    | Агент Linux | Семейство образов RHEL 7. <br> Не присоединен к EUS репозиториев по умолчанию.
@@ -152,6 +152,6 @@ RHEL-SAP-APPS | 6,8      | RAW    | Агент Linux | RHEL 6.8 for SAP Busines
 ## <a name="image-retention-policy"></a>Политика хранения образов
 Наша текущая политика предполагает хранение всех ранее опубликованных образов. Мы оставляем за собой право удалить образы, которые вызывают какие-либо проблемы. Например, могут быть удалены образы с неверной конфигурацией из-за последующих обновлений платформы или компонентов. Для образов, которые могут быть удалены, применяется текущая политика Marketplace, которая подразумевает предоставление обновлений за 30 дней до удаления образа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Дополнительные сведения об Azure Red Hat Update Infrastructure см. [здесь](https://aka.ms/rhui-update).
 * Сведения о политиках поддержки Red Hat для всех версий RHEL можно найти на странице [о жизненных циклах выпусков Red Hat Enterprise Linux](https://access.redhat.com/support/policy/updates/errata).

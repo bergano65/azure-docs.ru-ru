@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f4e71bd7fd7e0ed9a220619995ba108fdccabe4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 51596e4db8999de5089748e40f9b24bd46c84e56
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66233750"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807836"
 ---
 # <a name="set-a-custom-home-page-for-published-apps-by-using-azure-ad-application-proxy"></a>Настройка пользовательской домашней страницы для опубликованных приложений с помощью прокси приложения Azure AD
 
@@ -36,8 +36,8 @@ ms.locfileid: "66233750"
 - Внешний URL-адрес по умолчанию `https://ExpenseApp-contoso.msappproxy.net`, который не принимает внешнего пользователя на страницу входа в систему.
 - Вы хотите установить `https://ExpenseApp-contoso.msappproxy.net/login/login.aspx` как URL-адрес домашней страницы, таким образом внешний пользователь увидит страницу входа сначала.
 
->[!NOTE]
->Когда вы предоставляете пользователям доступ к опубликованным приложениям, эти приложения отображаются на [панели доступа Azure AD](../user-help/my-apps-portal-end-user-access.md) и в [средстве запуска приложений Office 365](https://www.microsoft.com/microsoft-365/blog/2016/09/27/introducing-the-new-office-365-app-launcher/).
+> [!NOTE]
+> Когда вы предоставляете пользователям доступ к опубликованным приложениям, эти приложения отображаются на [панели доступа Azure AD](../user-help/my-apps-portal-end-user-access.md) и в [средстве запуска приложений Office 365](https://www.microsoft.com/microsoft-365/blog/2016/09/27/introducing-the-new-office-365-app-launcher/).
 
 ## <a name="before-you-start"></a>Перед началом работы
 
@@ -56,22 +56,22 @@ ms.locfileid: "66233750"
 Чтобы изменить URL-адрес домашней страницы приложения с помощью портала Azure AD, выполните следующие действия.
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с использованием учетной записи администратора.
-2. Выберите **Azure Active Directory**, а затем **регистрация приложений**. Появится список зарегистрированных приложений.
-3. Выберите приложение из списка. Откроется страница со сведениями об зарегистрированного приложения.
-4. В разделе **управление**выберите **фирменной символики**.
-5. Обновление **URL-адрес домашней страницы** новый путь.
+1. Выберите **Azure Active Directory**, а затем **регистрация приложений**. Появится список зарегистрированных приложений.
+1. Выберите приложение из списка. Откроется страница со сведениями об зарегистрированного приложения.
+1. В разделе **управление**выберите **фирменной символики**.
+1. Обновление **URL-адрес домашней страницы** новый путь.
 
    ![Фирменная символика страницы для зарегистрированного приложения, показывающая поле URL-адрес домашней страницы](media/application-proxy-configure-custom-home-page/app-proxy-app-branding.png)
- 
-6. Щелкните **Сохранить**.
+
+1. Щелкните **Сохранить**.
 
 ## <a name="change-the-home-page-with-powershell"></a>Изменение домашней страницы с помощью PowerShell
 
 Чтобы настроить домашнюю страницу приложения с помощью PowerShell, вам потребуется:
 
 1. Установите модуль Azure AD PowerShell.
-2. Найдите значение ObjectId приложения.
-3. Обновите URL-адрес домашней страницы приложения, с помощью команд PowerShell.
+1. Найдите значение ObjectId приложения.
+1. Обновите URL-адрес домашней страницы приложения, с помощью команд PowerShell.
 
 ### <a name="install-the-azure-ad-powershell-module"></a>Установка модуля Azure AD PowerShell
 
@@ -87,7 +87,7 @@ ms.locfileid: "66233750"
 
     Если вы запускаете команду не от имени администратора, используйте параметр `-scope currentuser`.
 
-2. Во время установки выберите ответ **Y** (Да) на предложение установить два пакета с сайта Nuget.org. Требуются оба пакета.
+1. Во время установки выберите ответ **Y** (Да) на предложение установить два пакета с сайта Nuget.org. Требуются оба пакета.
 
 ### <a name="find-the-objectid-of-the-app"></a>Поиск идентификатора ObjectId приложения
 
@@ -99,13 +99,13 @@ ms.locfileid: "66233750"
    Import-Module AzureAD
    ```
 
-2. Войдите в модуль Azure AD в качестве администратора клиента.
+1. Войдите в модуль Azure AD в качестве администратора клиента.
 
    ```powershell
    Connect-AzureAD
    ```
 
-3. Найдите приложение. В этом примере PowerShell, чтобы найти ObjectId для приложения с отображаемым именем из `SharePoint`.
+1. Найдите приложение. В этом примере PowerShell, чтобы найти ObjectId для приложения с отображаемым именем из `SharePoint`.
 
    ```powershell
    Get-AzureADApplication | Where-Object { $_.DisplayName -eq "SharePoint" } | Format-List DisplayName, Homepage, ObjectId
@@ -135,31 +135,31 @@ ms.locfileid: "66233750"
    $objguid = "8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4"
    ```
 
-2. Убедитесь, что вы нашли правильное приложение, выполнив следующую команду. Выходные данные должны быть идентичны в выходные данные, вы видели в предыдущем разделе ([поиск идентификатора ObjectId приложения](#find-the-objectid-of-the-app)).
+1. Убедитесь, что вы нашли правильное приложение, выполнив следующую команду. Выходные данные должны быть идентичны в выходные данные, вы видели в предыдущем разделе ([поиск идентификатора ObjectId приложения](#find-the-objectid-of-the-app)).
 
    ```powershell
    Get-AzureADApplication -ObjectId $objguid | Format-List DisplayName, Homepage, ObjectId
    ```
 
-3. Создайте пустой объект приложения, в котором будут храниться ваши изменения.
+1. Создайте пустой объект приложения, в котором будут храниться ваши изменения.
 
    ```powershell
    $appnew = New-Object "Microsoft.Open.AzureAD.Model.Application"
    ```
 
-4. Задайте нужное значение для URL-адреса домашней страницы. Это значение должно быть путем к поддомену опубликованного приложения. Например, если изменить URL-адрес домашней страницы с `https://sharepoint-iddemo.msappproxy.net/` на `https://sharepoint-iddemo.msappproxy.net/hybrid/`, пользователи приложения перейдут непосредственно на пользовательскую домашнюю страницу.
+1. Задайте нужное значение для URL-адреса домашней страницы. Это значение должно быть путем к поддомену опубликованного приложения. Например, если изменить URL-адрес домашней страницы с `https://sharepoint-iddemo.msappproxy.net/` на `https://sharepoint-iddemo.msappproxy.net/hybrid/`, пользователи приложения перейдут непосредственно на пользовательскую домашнюю страницу.
 
    ```powershell
    $homepage = "https://sharepoint-iddemo.msappproxy.net/hybrid/"
    ```
 
-5. Установите обновление, домашней страницы.
+1. Установите обновление, домашней страницы.
 
    ```powershell
    Set-AzureADApplication -ObjectId $objguid -Homepage $homepage
    ```
 
-6. Чтобы убедиться, что изменения внесены успешно, выполните следующую команду из шага 2 еще раз.
+1. Чтобы убедиться, что изменения внесены успешно, выполните следующую команду из шага 2 еще раз.
 
    ```powershell
    Get-AzureADApplication -ObjectId $objguid | Format-List DisplayName, Homepage, ObjectId
@@ -173,12 +173,12 @@ ms.locfileid: "66233750"
    ObjectId    : 8af89bfa-eac6-40b0-8a13-c2c4e3ee22a4
    ```
 
-7. Перезапустите приложение, чтобы убедиться, что на домашней странице отображается как первый экран, должным образом.
+1. Перезапустите приложение, чтобы убедиться, что на домашней странице отображается как первый экран, должным образом.
 
->[!NOTE]
->Все изменения, которые вы внесли в приложение, могут сбросить URL-адрес домашней страницы. В случае сброса URL-адреса домашней страницы повторите шаги в этом разделе, чтобы снова задать его.
+> [!NOTE]
+> Все изменения, которые вы внесли в приложение, могут сбросить URL-адрес домашней страницы. В случае сброса URL-адреса домашней страницы повторите шаги в этом разделе, чтобы снова задать его.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка удаленного доступа к SharePoint с помощью прокси приложения Azure AD](application-proxy-integrate-with-sharepoint-server.md)
 - [Учебник. Добавление локального приложения для удаленного доступа через прокси приложения в Azure Active Directory](application-proxy-add-on-premises-application.md)

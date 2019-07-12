@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: andret
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0b820068f7bd59941346c8d2a3e8ede15252d58b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cc42ab8a8cfb0d182c69bd0940e23cffdb2be0af
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65540269"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807237"
 ---
 # <a name="how-to-get-appsource-certified-for-azure-active-directory"></a>Как получить сертификат AppSource для Azure Active Directory
 
@@ -56,19 +56,19 @@ ms.locfileid: "65540269"
 
 ## <a name="appsource-trial-experiences"></a>Пробные версии возможностей AppSource
 
-### <a name="free-trial-customer-led-trial-experience"></a>Бесплатная пробная версия возможностей (клиентская) 
+### <a name="free-trial-customer-led-trial-experience"></a>Бесплатная пробная версия возможностей (клиентская)
 
-Клиентская пробная версия возможностей рекомендуется AppSource, так как она позволяет воспользоваться доступом к приложению в один щелчок. Ниже показано, как выглядит эта возможность.<br/><br/>
+Клиентская пробная версия возможностей рекомендуется AppSource, так как она позволяет воспользоваться доступом к приложению в один щелчок. В следующем примере показано, как выглядит этот интерфейс:
 
 <table >
 <tr>
-    <td valign="top" width="33%">1.<br/><img src="media/active-directory-devhowto-appsource-certified/customer-led-trial-step1.png" width="85%"/><ul><li>Пользователь находит ваше приложение на веб-сайте AppSource.</li><li>Затем выбирает "Бесплатная пробная версия".</li></ul></td>
-    <td valign="top" width="33%">2.<br/><img src="media/active-directory-devhowto-appsource-certified/customer-led-trial-step2.png" width="85%" /><ul><li>AppSource перенаправляет пользователя по URL-адресу вашего веб-сайта.</li><li>На вашем веб-сайте автоматически запускается <i>единый вход</i> (при загрузке страницы).</li></ul></td>
-    <td valign="top" width="33%">3.<br/><img src="media/active-directory-devhowto-appsource-certified/customer-led-trial-step3.png" width="85%"/><ul><li>Пользователь перенаправляется на страницу входа Майкрософт.</li><li>Пользователь указывает учетные данные для входа.</li></ul></td>
+    <td valign="top" width="33%">1.<br/><img src="media/active-directory-devhowto-appsource-certified/customer-led-trial-step1.png" width="85%" alt-text="Shows Free trial for customer-led trial experience"/><ul><li>Пользователь находит ваше приложение на веб-сайте AppSource.</li><li>Затем выбирает "Бесплатная пробная версия".</li></ul></td>
+    <td valign="top" width="33%">2.<br/><img src="media/active-directory-devhowto-appsource-certified/customer-led-trial-step2.png" width="85%" alt-text="Shows how user is redirected to a URL in your web site"/><ul><li>AppSource перенаправляет пользователя по URL-адресу вашего веб-сайта.</li><li>На вашем веб-сайте автоматически запускается <i>единый вход</i> (при загрузке страницы).</li></ul></td>
+    <td valign="top" width="33%">3.<br/><img src="media/active-directory-devhowto-appsource-certified/customer-led-trial-step3.png" width="85%" alt-text="Shows the Microsoft sign-in page"/><ul><li>Пользователь перенаправляется на страницу входа Майкрософт.</li><li>Пользователь указывает учетные данные для входа.</li></ul></td>
 </tr>
 <tr>
-    <td valign="top" width="33%">4.<br/><img src="media/active-directory-devhowto-appsource-certified/customer-led-trial-step4.png" width="85%"/><ul><li>Пользователь дает согласие для приложения.</li></ul></td>
-    <td valign="top" width="33%">5.<br/><img src="media/active-directory-devhowto-appsource-certified/customer-led-trial-step5.png" width="85%"/><ul><li>Вход выполняется и пользователь перенаправляется на ваш веб-сайт.</li><li>Пользователь запускает бесплатную пробную версию.</li></ul></td>
+    <td valign="top" width="33%">4.<br/><img src="media/active-directory-devhowto-appsource-certified/customer-led-trial-step4.png" width="85%" alt-text="Example: Consent page for an application"/><ul><li>Пользователь дает согласие для приложения.</li></ul></td>
+    <td valign="top" width="33%">5.<br/><img src="media/active-directory-devhowto-appsource-certified/customer-led-trial-step5.png" width="85%" alt-text="Shows the experience the user sees when redirected back to your site"/><ul><li>Вход выполняется и пользователь перенаправляется на ваш веб-сайт.</li><li>Пользователь запускает бесплатную пробную версию.</li></ul></td>
     <td></td>
 </tr>
 </table>
@@ -79,20 +79,20 @@ ms.locfileid: "65540269"
 
 <table valign="top">
 <tr>
-    <td valign="top" width="33%">1.<br/><img src="media/active-directory-devhowto-appsource-certified/partner-led-trial-step1.png" width="85%"/><ul><li>Пользователь находит ваше приложение на веб-сайте AppSource.</li><li>Выбирает параметр "Связаться со мной".</li></ul></td>
-    <td valign="top" width="33%">2.<br/><img src="media/active-directory-devhowto-appsource-certified/partner-led-trial-step2.png" width="85%"/><ul><li>Заполняет форму контактными данными.</li></ul></td>
+    <td valign="top" width="33%">1.<br/><img src="media/active-directory-devhowto-appsource-certified/partner-led-trial-step1.png" width="85%" alt-text="Shows Contact me for partner-led trial experience"/><ul><li>Пользователь находит ваше приложение на веб-сайте AppSource.</li><li>Выбирает параметр "Связаться со мной".</li></ul></td>
+    <td valign="top" width="33%">2.<br/><img src="media/active-directory-devhowto-appsource-certified/partner-led-trial-step2.png" width="85%" alt-text="Shows an example form with contact info"/><ul><li>Заполняет форму контактными данными.</li></ul></td>
      <td valign="top" width="33%">3.<br/><br/>
         <table bgcolor="#f7f7f7">
         <tr>
-            <td><img src="media/active-directory-devhowto-appsource-certified/UserContact.png" width="55%"/></td>
+            <td><img src="media/active-directory-devhowto-appsource-certified/UserContact.png" width="55%" alt-text="Shows placeholder for user information"/></td>
             <td>Вы получаете сведения о пользователе.</td>
         </tr>
         <tr>
-            <td><img src="media/active-directory-devhowto-appsource-certified/SetupEnv.png" width="55%"/></td>
+            <td><img src="media/active-directory-devhowto-appsource-certified/SetupEnv.png" width="55%" alt-text="Shows placeholder for setup environment info"/></td>
             <td>Настраиваете среду.</td>
         </tr>
         <tr>
-            <td><img src="media/active-directory-devhowto-appsource-certified/ContactCustomer.png" width="55%"/></td>
+            <td><img src="media/active-directory-devhowto-appsource-certified/ContactCustomer.png" width="55%" alt-text="Shows placeholder for trial info"/></td>
             <td>Связываетесь с пользователем по поводу информации о пробной версии.</td>
         </tr>
         </table><br/><br/>
@@ -100,9 +100,9 @@ ms.locfileid: "65540269"
     </td>
 </tr>
 <tr>
-    <td valign="top" width="33%">4.<br/><img src="media/active-directory-devhowto-appsource-certified/partner-led-trial-step3.png" width="85%"/><ul><li>Пользователь получает доступ к приложению и завершает процесс единого входа.</li></ul></td>
-    <td valign="top" width="33%">5.<br/><img src="media/active-directory-devhowto-appsource-certified/partner-led-trial-step4.png" width="85%"/><ul><li>Пользователь дает согласие для приложения.</li></ul></td>
-    <td valign="top" width="33%">6.<br/><img src="media/active-directory-devhowto-appsource-certified/customer-led-trial-step5.png" width="85%"/><ul><li>Вход выполняется и пользователь перенаправляется на ваш веб-сайт.</li><li>Пользователь запускает бесплатную пробную версию.</li></ul></td>
+    <td valign="top" width="33%">4.<br/><img src="media/active-directory-devhowto-appsource-certified/partner-led-trial-step3.png" width="85%" alt-text="Shows the application sign-in screen"/><ul><li>Пользователь получает доступ к приложению и завершает процесс единого входа.</li></ul></td>
+    <td valign="top" width="33%">5.<br/><img src="media/active-directory-devhowto-appsource-certified/partner-led-trial-step4.png" width="85%" alt-text="Shows an example consent page for an application"/><ul><li>Пользователь дает согласие для приложения.</li></ul></td>
+    <td valign="top" width="33%">6.<br/><img src="media/active-directory-devhowto-appsource-certified/customer-led-trial-step5.png" width="85%" alt-text="Shows the experience the user sees when redirected back to your site"/><ul><li>Вход выполняется и пользователь перенаправляется на ваш веб-сайт.</li><li>Пользователь запускает бесплатную пробную версию.</li></ul></td>
    
 </tr>
 </table>
@@ -110,16 +110,15 @@ ms.locfileid: "65540269"
 ### <a name="more-information"></a>Дополнительные сведения
 
 Дополнительные сведения о пробной версии AppSource см. [в этом видео](https://aka.ms/trialexperienceforwebapps). 
- 
+
 ## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о разработке приложений, поддерживающих вход с помощью Azure AD, см. в статье [Сценарии проверки подлинности в Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-scenarios).
 - Сведения о выводе списка приложений SaaS в AppSource см. на [странице сведений для партнеров AppSource](https://appsource.microsoft.com/partners).
 
-
 ## <a name="get-support"></a>Получение поддержки
 
-Для интеграции Azure AD мы используем [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-active-directory+appsource). Кроме того, участники сообщества могут предоставлять поддержку. 
+Для интеграции Azure AD мы используем [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-active-directory+appsource). Кроме того, участники сообщества могут предоставлять поддержку.
 
 Мы настоятельно рекомендуем сначала задавать вопросы на сайте Stack Overflow и просмотреть имеющиеся проблемы, чтобы узнать, не задавал ли кто-то аналогичные вопросы раньше. Пометьте вопросы и комментарии тегами [`[azure-active-directory]` и `[appsource]`](https://stackoverflow.com/questions/tagged/azure-active-directory+appsource).
 
@@ -131,6 +130,5 @@ ms.locfileid: "65540269"
 [AAD-Dev-Guide]: v1-overview.md
 [AAD-Howto-Multitenant-Overview]: howto-convert-app-to-be-multi-tenant.md
 [AAD-QuickStart-Web-Apps]: v1-overview.md#get-started
-
 
 <!--Image references-->

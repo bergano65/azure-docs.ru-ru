@@ -5,16 +5,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 01/18/2019
+ms.date: 07/10/2019
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: 078c62913b903eafe9e0fcfcef4189f5ca735d0f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b4b9e913363938f98999c6a769ba83efbd625b69
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66002821"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67798325"
 ---
 # <a name="azure-storage-redundancy"></a>Избыточность хранилища Azure
 
@@ -46,12 +46,14 @@ ms.locfileid: "66002821"
 | Доступность по соглашению об уровне обслуживания для запросов на чтение | По крайней мере 99,9 % (99 % для холодного уровня доступа) | По крайней мере 99,9 % (99 % для холодного уровня доступа) | По крайней мере 99,9 % (99 % для холодного уровня доступа) | По крайней мере 99,9 % (99,9 % для холодного уровня доступа) |
 | Доступность по соглашению об уровне обслуживания для запросов на запись | По крайней мере 99,9 % (99 % для холодного уровня доступа) | По крайней мере 99,9 % (99 % для холодного уровня доступа) | По крайней мере 99,9 % (99 % для холодного уровня доступа) | По крайней мере 99,9 % (99 % для холодного уровня доступа) |
 
+Все данные вашей учетной записи хранения реплицируются, включая блочные и добавочные BLOB-объектов, страничных BLOB-объектов, очередей, таблиц и файлов. Все типы учетных записей хранения, реплицируются, несмотря на то, что ZRS требуется учетная запись хранения общего назначения версии 2.
+
 В разделе [Цены на службу хранилища Azure](https://azure.microsoft.com/pricing/details/storage/) приведены сведения о различных вариантах обеспечения избыточности данных. 
 
 Сведения о гарантиях службы хранилища Azure в вопросах устойчивости и доступности см. в [Соглашении об уровне обслуживания службы хранилища Azure](https://azure.microsoft.com/support/legal/sla/storage/).
 
 > [!NOTE]
-> Хранилище класса Premium поддерживает только локально избыточное хранилище (LRS).
+> Служба хранилища Azure уровня "премиум" поддерживает только локально избыточное хранилище (LRS).
 
 ## <a name="changing-replication-strategy"></a>Изменение стратегии репликации
 Разработка стратегии репликации учетной записи хранения можно изменить с помощью [портала Azure](https://portal.azure.com/), [Azure Powershell](storage-powershell-guide-full.md), [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), или один из [клиент Azure библиотеки](https://docs.microsoft.com/azure/index#pivot=sdkstools). При изменении типа репликации для учетной записи хранения простоя не будет.

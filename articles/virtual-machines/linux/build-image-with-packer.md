@@ -4,7 +4,7 @@ description: Сведения об использовании Packer для со
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 05/07/2019
 ms.author: cynthn
-ms.openlocfilehash: c0ec2616d8bdcf3cfd6d649f12e9bfceea33690a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4dcf6f2e26a2cc589e350ee2b40c10b85786d4be
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65467744"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67671767"
 ---
 # <a name="how-to-use-packer-to-create-linux-virtual-machine-images-in-azure"></a>Создание образов виртуальных машин Linux в Azure с помощью Packer
 Каждая виртуальная машина в Azure создается из образа, определяющего дистрибутив Linux и версию операционной системы. Образы могут содержать предварительно установленные приложения и конфигурации. Azure Marketplace предоставляет большое количество образов Майкрософт и сторонних разработчиков для наиболее распространенных операционных систем и приложений. Кроме того, вы можете создать собственные настраиваемые образы, отвечающие конкретным потребностям. В этой статье описывается определение и создание пользовательских образов в Azure с использованием средства с открытым кодом [Packer](https://www.packer.io/).
@@ -234,5 +234,5 @@ az vm open-port \
 ![Сайт NGINX по умолчанию](./media/build-image-with-packer/nginx.png) 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Можно также использовать существующие сценарии средства подготовки Packer с [Azure Image Builder](image-builder.md).

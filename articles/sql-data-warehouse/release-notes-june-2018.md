@@ -10,12 +10,12 @@ ms.subservice: ''
 ms.date: 07/23/2018
 ms.author: anjangsh
 ms.reviewer: jrasnick
-ms.openlocfilehash: 95c59d3e5504058e27cdb4eda311c3917d6c834a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4348a634fd5b2b33f36d8e79f28caf659b82ccf4
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65912230"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67626155"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-june-2018"></a>Что нового в Хранилище данных SQL Azure? Июнь 2018 г.
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с июня 2018 г. 
@@ -91,7 +91,7 @@ Central Standard Time             -05:00               1
 
 ## <a name="auto-stats-operations-appear-in-sysdmpdwexecrequests-behavior-change"></a>Отображение операций автоматического создания статистики в sys.dm_pdw_exec_requests (изменение в поведении)
 
-С появлением [автоматического создания статистики](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistics#automatic-creation-of-statistics) Хранилище данных SQL Azure будет создавать статистику для оптимизации выполнения запросов. В выпуске за июнь 2018 г. добавлена возможность отслеживать автоматическое создание статистики. Теперь в представление [sys.dm_pdw_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql) добавляется новая запись при каждом выполнении операции [CREATE STATISTICS](https://docs.microsoft.com/sql/t-sql/statements/create-statistics-transact-sql).
+С появлением [автоматического создания статистики](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistics#automatic-creation-of-statistic) Хранилище данных SQL Azure будет создавать статистику для оптимизации выполнения запросов. В выпуске за июнь 2018 г. добавлена возможность отслеживать автоматическое создание статистики. Теперь в представление [sys.dm_pdw_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql) добавляется новая запись при каждом выполнении операции [CREATE STATISTICS](https://docs.microsoft.com/sql/t-sql/statements/create-statistics-transact-sql).
 
 ```sql
 SELECT
@@ -110,8 +110,8 @@ start_time                | end_time                | command
 2018-06-06 19:06:26.173    2018-06-06 19:06:26.173    CREATE STATISTICS _WA_Sys_00000001_63D998CC ON dbo.LineItem(l_orderkey);
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-Теперь, когда вам уже известны некоторые сведения о хранилище данных SQL, узнайте о том, как его [создать][create a SQL Data Warehouse]. Если вы раньше не работали с Azure, используйте [глоссарий Azure][Azure glossary], чтобы узнать значение новых терминов. Или ознакомьтесь со следующими ресурсами, посвященными хранилищу данных SQL.  
+## <a name="next-steps"></a>Следующие шаги
+Теперь, когда вы немного узнали о хранилище данных SQL, узнайте, как быстро [Создание хранилища данных SQL][create a SQL Data Warehouse] . If you are new to Azure, you may find the [Azure glossary][Azure glossary] полезных новых терминов. Или ознакомьтесь со следующими ресурсами, посвященными хранилищу данных SQL.  
 
 * [Истории успеха клиентов]
 * [Блоги]

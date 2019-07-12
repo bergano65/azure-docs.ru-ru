@@ -4,7 +4,7 @@ description: Синхронизация времени для виртуальн
 services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: tysonn
 tags: azure-resource-manager
 ms.service: virtual-machines-linux
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 075fc48d4db4c4cfcc6f45f5fe93e8cfb38d5559
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3271804a80ededae650c3b6ad34fdb7f9f1e5b18
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65991843"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67708619"
 ---
 # <a name="time-sync-for-linux-vms-in-azure"></a>Синхронизация времени для виртуальных машин Linux в Azure
 
@@ -153,7 +153,7 @@ refclock PHC /dev/ptp0 poll 3 dpoll -2 offset 0
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в статье [Точное время в Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/accurate-time).
 

@@ -4,7 +4,7 @@ description: Узнайте, как установить и настроить P
 services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: 1a747363-0cc5-4ba3-9be7-084dfeb04651
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/01/2016
 ms.author: cynthn
-ms.openlocfilehash: 5fe5e819c4f1079b6eb1fa8bb19d337ecfed600d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 086b36b347f214e1e9cdf44e4fb5a29fe501fa8b
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65955146"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67667110"
 ---
 # <a name="install-and-configure-postgresql-on-azure"></a>Установка и настройка PostgreSQL в Azure
 PostgreSQL — это расширенная открытая СУБД, аналогичная СУБД Oracle и DB2. Она предлагает возможности корпоративного уровня, обеспечивая полное соответствие принципам ACID, надежную обработку транзакций и управление параллелизмом в разных версиях. Она также поддерживает такие стандарты, как ANSI SQL и SQL/MED (включая оболочки для внешних данных Oracle, MySQL, MongoDB и др.). Высокая расширяемость обеспечивается поддержкой более 12 процедурных языков, индексов GIN и GIST, пространственных данных, различных функций NoSQL для JSON и приложений на основе пары "ключ — значение".

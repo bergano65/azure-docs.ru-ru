@@ -10,12 +10,12 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 04/11/2018
 ms.author: wesmc
-ms.openlocfilehash: 72d7956036404d13849f7c2b08f9df4210f12aa7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e7863e4a0f4cab6f6328de19d1611710f9188de3
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65597274"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67838759"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-nodejs"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)
 
@@ -82,10 +82,6 @@ ms.locfileid: "65597274"
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
-### <a name="retrieve-connection-string-for-iot-hub"></a>Получение строки подключения для центра Интернета вещей
-
-[!INCLUDE [iot-hub-include-find-connection-string](../../includes/iot-hub-include-find-connection-string.md)]
-
 ## <a name="register-a-new-device-in-the-iot-hub"></a>Регистрация нового устройства в центре Интернета вещей
 
 [!INCLUDE [iot-hub-include-create-device](../../includes/iot-hub-include-create-device.md)]
@@ -98,7 +94,7 @@ ms.locfileid: "65597274"
 
 1. Скачайте ОС Raspbian.
 
-   a. [Скачайте Raspbian Stretch](https://downloads.raspberrypi.org/raspbian/images/raspbian-2017-07-05/) (ZIP-файл).
+   1\. [Скачайте Raspbian Stretch](https://downloads.raspberrypi.org/raspbian/images/raspbian-2017-07-05/) (ZIP-файл).
 
    > [!WARNING]
    > Используйте ссылку выше, чтобы скачать ZIP-файл образа `raspbian-2017-07-5`. Последняя версия образа Raspbian имеет некоторые известные проблемы с Wiring-Pi Node, которые могут привести к сбою при выполнении дальнейших шагов.
@@ -107,17 +103,17 @@ ms.locfileid: "65597274"
 
 2. Установите ОС Raspbian на карту microSD.
 
-   a. [Скачайте и установите служебную программу Etcher для записи данных на карты SD](https://etcher.io/).
+   1\. [Скачайте и установите служебную программу Etcher для записи данных на карты SD](https://etcher.io/).
 
    2\. Запустите Etcher и выберите образ Raspbian, извлеченный на шаге 1.
 
-   c. Выберите устройство для чтения карт microSD. В программе Etcher уже может быть выбрано правильное устройство для чтения.
+   В. Выберите устройство для чтения карт microSD. В программе Etcher уже может быть выбрано правильное устройство для чтения.
 
-   d. Щелкните Flash (Переключиться), чтобы установить ОС Raspbian на карту microSD.
+   Г. Щелкните Flash (Переключиться), чтобы установить ОС Raspbian на карту microSD.
 
-   д. По завершении установки удалите карту microSD из компьютера. Удалять карту microSD напрямую безопасно, так как программа Etcher автоматически извлекает или отключает карту microSD после завершения.
+   Д. По завершении установки удалите карту microSD из компьютера. Удалять карту microSD напрямую безопасно, так как программа Etcher автоматически извлекает или отключает карту microSD после завершения.
 
-   Е. Вставьте карту microSD в устройство Pi.
+   f. Вставьте карту microSD в устройство Pi.
 
 ### <a name="enable-ssh-and-i2c"></a>Включение SSH и I2C
 
@@ -178,7 +174,7 @@ ms.locfileid: "65597274"
 
    **Пользователи Windows**
   
-   a. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows. 
+   1\. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows. 
 
    2\. Скопируйте IP-адрес устройства Pi и вставьте его в поле для имени узла (или для IP-адреса), а затем выберите тип подключения SSH.
 
@@ -259,7 +255,7 @@ ms.locfileid: "65597274"
 
 Дополнительные способы обработки данных, отправленные устройством перейдите к следующему разделу.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы запустили пример приложения, чтобы собрать данные датчика и отправить их в Центр Интернета вещей.
 

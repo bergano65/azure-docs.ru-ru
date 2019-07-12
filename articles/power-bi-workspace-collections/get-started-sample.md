@@ -2,18 +2,18 @@
 title: Начало работы с примером
 description: В этой статье приведены общие сведения о примере для начала работы с коллекциями рабочих областей Power BI.
 services: power-bi-workspace-collections
-ms.service: power-bi-workspace-collections
+ms.service: power-bi-embedded
 author: rkarlin
 ms.author: rkarlin
 ms.topic: article
 ms.workload: powerbi
 ms.date: 09/25/2017
-ms.openlocfilehash: 6cf78bf9c83df0a1255c14499bbd2036a2be5ed6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9b45dd6bcc9aa3abf2d5078b54e51531cae4ec5f
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64714506"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67669119"
 ---
 # <a name="get-started-with-power-bi-workspace-collections-sample"></a>Пример для начала работы с коллекциями рабочих областей Power BI
 
@@ -38,7 +38,7 @@ ms.locfileid: "64714506"
 
 1. Скачайте и распакуйте пример для [интеграции отчета в веб-приложение с помощью коллекций рабочих областей Power BI](https://go.microsoft.com/fwlink/?LinkId=761493) с сайта GitHub.
 2. Откройте файл **PowerBI-embedded.sln** в Visual Studio. Может потребоваться выполнить команду **Update-Package** в консоли диспетчера пакетов NuGET, чтобы обновить пакеты, используемые в этом решении.
-3. Выполните сборку решения.
+3. Постройте решение.
 4. Запустите консольное приложение **ProvisionSample** . В примере консольного приложения необходимо подготовить рабочую область и импортировать файл PBIX.
 5. Чтобы подготовить новую **рабочую область**, выберите параметр 1 — **Collection management** (Управление коллекциями), а затем параметр 6 — **Provision a new Workspace** (Подготовка новой рабочей области).
 6. Чтобы импортировать новый **отчет**, выберите параметр 2 — **Report management** (Управление отчетами), а затем параметр 3 — **Import PBIX Desktop file into a workspace** (Импорт PBIX-файла рабочего стола в рабочую область).
@@ -140,7 +140,7 @@ Data Source=tcp:MyServer.database.windows.net,1433;Initial Catalog=MyDatabase
 
 | Часть | Описание |
 | --- | --- |
-| Название |Имя отчета. |
+| Заголовок |Имя отчета. |
 | QueryString |Ссылка на идентификатор отчета. |
 ```cshtml
 <div id="reports-nav" class="panel-collapse collapse">

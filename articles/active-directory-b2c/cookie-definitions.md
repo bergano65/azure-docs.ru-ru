@@ -9,19 +9,19 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: marsma
-ms.component: B2C
-ms.openlocfilehash: 1de1734d791608f3262d2af70becc2e082c9f317
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.subservice: B2C
+ms.openlocfilehash: af3244a32e9d02a1ba5053da85547bf614053127
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66511147"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67587416"
 ---
 # <a name="cookies-definitions-for-azure-active-directory-b2c"></a>Определения файлов cookie для Azure Active Directory B2C
 
 В следующей таблице перечислены файлы cookie, использованные в Azure Active Directory B2C.
 
-| Name | Домен | Окончание срока действия | Назначение |
+| Имя | Домен | Окончание срока действия | Цель |
 | ----------- | ------ | -------------------------- | --------- |
 | x-ms-cpim-admin | main.b2cadmin.ext.azure.com | Окончание [сеанс браузера](active-directory-b2c-token-session-sso.md) | Содержит данных о членстве пользователя на клиентах. Клиентов, когда пользователь является членом объекта и уровней членства (администратора или пользователя). |
 | x-ms-cpim-slice | Login.microsoftonline.com, b2clogin.com, фирменный домен | Окончание [сеанс браузера](active-directory-b2c-token-session-sso.md) | Используется, чтобы перенаправлять запросы в соответствующий рабочий экземпляр. |
@@ -30,7 +30,7 @@ ms.locfileid: "66511147"
 | x-ms-cpim-cache:{id}_n | Login.microsoftonline.com, b2clogin.com, фирменный домен | Окончание [сеанс браузера](active-directory-b2c-token-session-sso.md), успешной проверки подлинности | Используется для обработки состояния запроса. |
 | x-ms-cpim-csrf | Login.microsoftonline.com, b2clogin.com, фирменный домен | Окончание [сеанс браузера](active-directory-b2c-token-session-sso.md) | Подделкой межсайтовых токен, используемый для защиты CRSF. |
 | x-ms-cpim-dc | Login.microsoftonline.com, b2clogin.com, фирменный домен | Окончание [сеанс браузера](active-directory-b2c-token-session-sso.md) | Используется для маршрутизации сети в Azure AD B2C. |
-| x-ms-cpim-ctx | Login.microsoftonline.com, b2clogin.com, фирменный домен | Окончание [сеанс браузера](active-directory-b2c-token-session-sso.md) | Context |
+| x-ms-cpim-ctx | Login.microsoftonline.com, b2clogin.com, фирменный домен | Окончание [сеанс браузера](active-directory-b2c-token-session-sso.md) | Контекст |
 | x-ms-cpim-rp | Login.microsoftonline.com, b2clogin.com, фирменный домен | Окончание [сеанс браузера](active-directory-b2c-token-session-sso.md) | Используется для хранения данных о членстве для клиента поставщика ресурса. |
 | x-ms-cpim-rc | Login.microsoftonline.com, b2clogin.com, фирменный домен | Окончание [сеанс браузера](active-directory-b2c-token-session-sso.md) | Используется для хранения файла cookie ретрансляции. |
 

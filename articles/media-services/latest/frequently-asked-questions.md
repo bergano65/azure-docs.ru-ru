@@ -9,20 +9,20 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/24/2019
+ms.date: 06/21/2019
 ms.author: juliako
-ms.openlocfilehash: 98e8c0ccd150776341e644f7565696e8fbd63e99
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b060e2c8a7353dd8145ced8c6e89d9b666a4212c
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65556265"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67703896"
 ---
-# <a name="azure-media-services-v3-frequently-asked-questions"></a>Часто задаваемые вопросы о Службах мультимедиа Azure версии 3
+# <a name="media-services-v3-frequently-asked-questions"></a>Вопросы и ответы по версии 3 службы мультимедиа
 
 В этой статье предоставлены ответы на часто задаваемые вопросы о Службах мультимедиа Azure (AMS) версии 3.
 
-## <a name="v3-apis"></a>Интерфейсы API версии 3
+## <a name="general"></a>Общие сведения
 
 ### <a name="what-azure-roles-can-perform-actions-on-azure-media-services-resources"></a>Какие роли Azure можно выполнять действия с ресурсами служб мультимедиа Azure? 
 
@@ -45,6 +45,10 @@ ms.locfileid: "65556265"
 ### <a name="what-features-are-not-yet-available-in-azure-media-services-v3"></a>Какие функции еще не доступны в версии 3 службы мультимедиа Azure?
 
 Дополнительные сведения см. в разделе [компонентов пропуски по отношению к версии 2 API-интерфейсы](migrate-from-v2-to-v3.md#feature-gaps-with-respect-to-v2-apis).
+
+### <a name="what-is-the-process-of-moving-a-media-services-account-between-subscriptions"></a>Что такое процесс перемещения одной подписки в другую учетную запись служб мультимедиа  
+
+Дополнительные сведения см. в разделе [перемещение между подписками учетную запись служб мультимедиа](media-services-account-concept.md).
 
 ## <a name="live-streaming"></a>Потоковая передача в реальном времени 
 
@@ -93,6 +97,6 @@ ms.locfileid: "65556265"
 
 Сейчас рекомендуется использовать шифрование хранилища на стороне сервера (которое включено по умолчанию). Дополнительные сведения см. в статье [Шифрование службы хранилища Azure для неактивных данных (предварительная версия)](https://docs.microsoft.com/azure/storage/common/storage-service-encryption).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Что такое Службы мультимедиа Azure версии 3?](media-services-overview.md)

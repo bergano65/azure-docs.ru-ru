@@ -10,12 +10,12 @@ ms.author: robreed
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: b486c30827ee67b58cbdc0027c8221cceed02e51
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a5d4657f87b0a6cbae0699c5a2f95773ff55f633
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66235941"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67798449"
 ---
 # <a name="azure-automation-state-configuration-overview"></a>Обзор службы "Настройка состояния службы автоматизации Azure"
 
@@ -41,7 +41,7 @@ ms.locfileid: "66235941"
 
 Узлы, управление которыми осуществляется с помощью "Настройка состояния службы автоматизации Azure", отправляют подробные отчеты с данными о состоянии на встроенный опрашивающий сервер. В службе "Настройка состояния службы автоматизации Azure" можно настроить отправку этих данных в рабочую область Log Analytics. Чтобы узнать, как отправлять данные о состоянии конфигурации состояния в рабочую область Log Analytics, см. в разделе [вперед автоматизации настройки состояния Azure данные отчетов Azure Monitor журналы](automation-dsc-diagnostics.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Рассмотрите следующие требования при использовании конфигурации состояния службы автоматизации Azure (DSC).
 
@@ -50,7 +50,7 @@ ms.locfileid: "66235941"
 Для узлов под управлением Windows поддерживаются следующие версии:
 
 - Windows Server 2019
-- Windows Server 2016
+- Windows Server 2016
 - Windows Server 2012R2
 - Windows Server 2012
 - Windows Server 2008 R2 с пакетом обновления 1
@@ -81,6 +81,10 @@ Ubuntu  | 18,04
 * Глобальный URL-адрес: *.azure-automation.net.
 * Глобальный URL-адрес US Gov (Вирджиния): *.azure automation.us
 * Служба агента: https://\<ИД рабочей области\>.agentsvc.azure-automation.net
+
+Это обеспечивает подключение к сети для управляемого узла для взаимодействия со службой автоматизации Azure.
+Если вы используете ресурсы DSC, которые обмениваются данными между узлами, такие как [ресурсы WaitFor *](https://docs.microsoft.com/powershell/dsc/reference/resources/windows/waitForAllResource), также необходимо разрешить трафик между узлами.
+См. в документации для каждого ресурса DSC понять эти требования к сети.
 
 #### <a name="proxy-support"></a>Поддержка прокси-сервера
 
@@ -129,7 +133,7 @@ Ubuntu  | 18,04
 
 > [!VIDEO https://channel9.msdn.com/Events/Ignite/2015/BRK3467/player]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы приступить к работе со службой "Настройка состояния службы автоматизации Azure", см. сведения в [этой статье](automation-dsc-getting-started.md).
 - Дополнительные сведения о подключении узлов см. в статье [Подключение компьютеров для управления с помощью Azure Automation DSC](automation-dsc-onboarding.md).

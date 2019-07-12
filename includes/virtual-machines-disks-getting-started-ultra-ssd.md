@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/10/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 7515c061467419412608bb8103136791845ae093
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 742e0028b1f92beb8300cc97f09d8292259fbc0a
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67132980"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67712576"
 ---
 # <a name="enable-and-deploy-azure-ultra-ssds-preview"></a>Включите и развернете Azure ultra SSD (Предварительная версия)
 
@@ -33,7 +33,7 @@ CLI: `az vm list-skus --resource-type disks --query "[?name=='UltraSSD_LRS'].loc
 
 Сохранить **зоны** значение, он представляет зону доступности, и он понадобится для развертывания ultra диске SSD.
 
-|ResourceType  |ИМЯ  |Расположение  |Зоны  |Ограничение  |Функция  |Значение  |
+|ResourceType  |Имя  |Местоположение  |Зоны  |Ограничение  |Функция  |Значение  |
 |---------|---------|---------|---------|---------|---------|---------|
 |disks     |UltraSSD_LRS         |eastus2         |X         |         |         |         |
 
@@ -63,7 +63,7 @@ CLI: `az vm list-skus --resource-type disks --query "[?name=='UltraSSD_LRS'].loc
 Замените или задать **$vmname**, **$rgname**, **$diskname**, **$location**, **$password**, **$user** переменных собственными значениями. Задайте **$zone** равным зону доступности, полученный из [начало в этой статье](#determine-your-availability-zone). Затем выполните следующую команду интерфейса командной строки, чтобы создать виртуальную Машину ultra включена:
 
 ```azurecli-interactive
-az vm create --subscription $subscription -n $vmname -g $rgname --image Win2016Datacenter --ultra-ssd-enabled --zone $zone --authentication-type password --admin-password $password --admin-username $user --attach-data-disks $diskname --size Standard_D4s_v3 --location $location
+az vm create --subscription $subscription -n $vmname -g $rgname --image Win2016Datacenter --ultra-ssd-enabled true --zone $zone --authentication-type password --admin-password $password --admin-username $user --attach-data-disks $diskname --size Standard_D4s_v3 --location $location
 ```
 
 ### <a name="create-an-ultra-ssd-using-cli"></a>Создание ultra диске SSD с помощью интерфейса командной строки
@@ -150,6 +150,6 @@ $diskupdateconfig = New-AzDiskUpdateConfig -DiskMBpsReadWrite 2000
 Update-AzDisk -ResourceGroupName $resourceGroup -DiskName $diskName -DiskUpdate $diskupdateconfig
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы хотите попробовать новый тип диска [запросить доступ к предварительной версии в этом опросе](https://aka.ms/UltraSSDPreviewSignUp).

@@ -10,21 +10,21 @@ ms.topic: conceptual
 ms.date: 09/20/2017
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: e1abdfa8bc47f42f7373760370588c0bc41fc1dc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a798b766d09428e7ebebc04d969d63a542de3808
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66507784"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67835713"
 ---
 # <a name="azure-active-directory-b2c-configure-the-ui-with-dynamic-content-by-using-custom-policies"></a>Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Пользовательские политики Azure Active Directory B2C (Azure AD B2C) позволяют отправлять параметр в строке запроса. Передавая параметр в конечную точку HTML, вы можете динамически изменять содержимое страницы. Например, можно изменить фоновое изображение страницы регистрации или входа в Azure AD B2C на основе параметра, передаваемого из веб-приложения или мобильного приложения. 
+Пользовательские политики Azure Active Directory B2C (Azure AD B2C) позволяют отправлять параметр в строке запроса. Передавая параметр в конечную точку HTML, вы можете динамически изменять содержимое страницы. Например, можно изменить фоновое изображение страницы регистрации или входа в Azure AD B2C на основе параметра, передаваемого из веб-приложения или мобильного приложения.
 
-## <a name="prerequisites"></a>Технические условия
-Эта статья посвящена настройке пользовательского интерфейса Azure AD B2C с помощью *динамического содержимого*, используя пользовательские политики. Сведения по началу работы см. в статье [Azure Active Directory B2C. Настройка пользовательского интерфейса с помощью настраиваемой политики](active-directory-b2c-ui-customization-custom.md). 
+## <a name="prerequisites"></a>предварительные требования
+Эта статья посвящена настройке пользовательского интерфейса Azure AD B2C с помощью *динамического содержимого*, используя пользовательские политики. Сведения по началу работы см. в статье [Azure Active Directory B2C. Настройка пользовательского интерфейса с помощью настраиваемой политики](active-directory-b2c-ui-customization-custom.md).
 
 >[!NOTE]
 >В статье об Azure AD B2C [Настройка пользовательского интерфейса с помощью настраиваемой политики](active-directory-b2c-ui-customization-custom.md) содержатся следующие основные сведения:
@@ -35,11 +35,11 @@ ms.locfileid: "66507784"
 
 ## <a name="add-a-link-to-html5css-templates-to-your-user-journey"></a>Добавление ссылки на шаблоны HTML5 и CSS к пути взаимодействия пользователя
 
-В пользовательской политике определение содержимого определяет универсальный код ресурса (URI) страницы HTML5, используемой для данного шага пользовательского интерфейса (например, страницы регистрации или входа). Базовая политика определяет внешний вид по умолчанию, указывая на URI файлов HTML5 (в содержимом CSS). В политике расширения можно изменить внешний вид путем переопределения LoadUri для этого файла HTML5. Определения содержимого содержат URL-адреса внешнего содержимого, которое определяется путем создания файлов HTML5 или CSS соответственно. 
+В пользовательской политике определение содержимого определяет универсальный код ресурса (URI) страницы HTML5, используемой для данного шага пользовательского интерфейса (например, страницы регистрации или входа). Базовая политика определяет внешний вид по умолчанию, указывая на URI файлов HTML5 (в содержимом CSS). В политике расширения можно изменить внешний вид путем переопределения LoadUri для этого файла HTML5. Определения содержимого содержат URL-адреса внешнего содержимого, которое определяется путем создания файлов HTML5 или CSS соответственно.
 
 Раздел `ContentDefinitions` содержит серии XML-элементов `ContentDefinition`. Атрибут идентификатора элемента `ContentDefinition` указывает тип страниц, относящихся к определению содержимого. Таким образом, этот элемент определяет контекст, который пользовательский шаблон HTML5/CSS будет применять. В следующей таблице описан набор идентификаторов определений содержимого, распознаваемых ядром IEF, и типы страниц, относящихся к ним.
 
-| Идентификатор для определения содержимого | Шаблон HTML5 по умолчанию| Описание | 
+| Идентификатор для определения содержимого | Шаблон HTML5 по умолчанию| Описание |
 |-----------------------|--------|-------------|
 | *api.error* | [exception.cshtml](https://login.microsoftonline.com/static/tenant/default/exception.cshtml) | **Страница ошибки.** Эта страница отображается при обнаружении исключения или ошибки. |
 | *api.idpselections* | [idpSelector.cshtml](https://login.microsoftonline.com/static/tenant/default/idpSelector.cshtml) | **Страница выбора поставщика удостоверений.** На этой странице содержится список поставщиков удостоверений, которые пользователи могут выбирать во время входа. Обычно это поставщики удостоверений организаций, социальных сетей, включая Facebook и Google+, или локальных учетных записей. |
@@ -53,14 +53,14 @@ ms.locfileid: "66507784"
 | *api.signuporsignin* | [unified.html](https://login.microsoftonline.com/static/tenant/default/unified.cshtml) | **Единая страница регистрации или входа.** Эта страница обрабатывает регистрацию и вход пользователей. Пользователи могут использовать поставщики удостоверений организаций, социальных сетей, включая Facebook и Google+, или локальные учетные записи.  |
 
 ## <a name="serving-dynamic-content"></a>Обслуживание динамического содержимого
-В статье [Azure Active Directory B2C. Настройка пользовательского интерфейса с помощью настраиваемой политики](active-directory-b2c-ui-customization-custom.md) выполнялась отправка файлов HTML5 в хранилище BLOB-объектов Azure. Эти файлы HTML5 являются статичными и отображают то же HTML-содержимое для каждого запроса. 
+В статье [Azure Active Directory B2C. Настройка пользовательского интерфейса с помощью настраиваемой политики](active-directory-b2c-ui-customization-custom.md) выполнялась отправка файлов HTML5 в хранилище BLOB-объектов Azure. Эти файлы HTML5 являются статичными и отображают то же HTML-содержимое для каждого запроса.
 
-В этой статье используется веб-приложение ASP.NET, которое может принимать параметры строки запроса и реагировать соответствующим образом. 
+В этой статье используется веб-приложение ASP.NET, которое может принимать параметры строки запроса и реагировать соответствующим образом.
 
 В этом пошаговом руководстве описаны следующие операции:
-* создание веб-приложения ASP.NET Core, где размещены шаблоны HTML5; 
-* добавление пользовательского шаблона HTML5 _unified.cshtml_; 
-* публикация веб-приложения в службе приложений Azure; 
+* создание веб-приложения ASP.NET Core, где размещены шаблоны HTML5;
+* добавление пользовательского шаблона HTML5 _unified.cshtml_;
+* публикация веб-приложения в службе приложений Azure;
 * настройка общего доступа к ресурсам независимо от источника (CORS) для своего веб-приложения;
 * переопределение элементов `LoadUri` для указания на файл HTML5.
 
@@ -89,7 +89,7 @@ ms.locfileid: "66507784"
 ### <a name="step-22-add-the-mvc-view"></a>Шаг 2.2. Добавление представления MVC
 1. Щелкните правой кнопкой мыши папку Views/Home, а затем выберите **Добавить** > **Новый элемент**.
 
-    ![Добавление нового элемента MVC](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-view1.png)
+    ![Добавление нового элемента меню в Visual Studio](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-view1.png)
 
 2. В окне **Добавление нового элемента — Contoso.AADB2C.UI** выберите **Интернет > ASP.NET**.
 
@@ -99,7 +99,7 @@ ms.locfileid: "66507784"
 
 5. Выберите **Добавить**.
 
-    ![Добавление представления MVC](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-view2.png)
+    ![Новый диалоговое окно добавления элемента в Visual Studio с выделенным страница представления MVC](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-view2.png)
 
 6. Если файл *unified.cshtml* еще не открыт, дважды щелкните его, чтобы открыть, и очистите его содержимое.
 
@@ -127,7 +127,7 @@ ms.locfileid: "66507784"
 
 ### <a name="step-24-add-your-view-to-the-mvc-controller"></a>Шаг 2.4. Добавление представления в контроллер MVC
 
-1. Откройте **Controllers\HomeController.cs** и добавьте следующий метод: 
+1. Откройте **Controllers\HomeController.cs** и добавьте следующий метод:
 
     ```C
     public IActionResult unified()
@@ -136,9 +136,9 @@ ms.locfileid: "66507784"
     }
     ```
     Этот код указывает, что метод должен использовать файл шаблона *представления* для отображения ответа в браузере. Так как имя файла шаблона *представления* явно не указано, MVC по умолчанию будет использовать файл представления _unified.cshtml_ в папке */Views/Home*.
-    
+
     После добавления метода _unified_ код должен выглядеть так:
-    
+
     ![Изменение контроллера для отображения представления](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-controller-view.png)
 
 2. Выполните отладку веб-приложения и убедитесь, что _единая_ страница доступна (например, `http://localhost:<Port number>/Home/unified`).
@@ -174,7 +174,7 @@ ms.locfileid: "66507784"
 
 2. В разделе **Параметры** в области **API** выберите **CORS**.
 
-    ![Выбор параметров CORS](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-CORS2.png)
+    ![Пункт меню CORS в службе приложений меню на портале Azure](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-CORS2.png)
 
 3. В окне **CORS** в поле **Разрешенные источники** выполните одно из следующих действий.
 
@@ -183,9 +183,9 @@ ms.locfileid: "66507784"
 
 4. Щелкните **Сохранить**.
 
-    ![Окно CORS](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-CORS3.png)
+    ![Страница параметров CORS с звездочка, они выделены разрешенные источники](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-CORS3.png)
 
-    После нажатия кнопки **Сохранить** приложение API начнет принимать вызовы JavaScript с указанных URL-адресов. 
+    После нажатия кнопки **Сохранить** приложение API начнет принимать вызовы JavaScript с указанных URL-адресов.
 
 ## <a name="step-4-html5-template-validation"></a>Шаг 4. Проверка шаблона HTML5
 Шаблон HTML5 готов к использованию. Однако он недоступен в коде `ContentDefinition`. Прежде чем добавить `ContentDefinition` в пользовательскую политику, убедитесь в следующем.
@@ -193,7 +193,7 @@ ms.locfileid: "66507784"
 * На сервере содержимого включен механизм CORS.
 
     >[!NOTE]
-    >Чтобы проверить, что на сайте, где вы размещаете содержимое, включен механизм CORS и можно тестировать запросы CORS, перейдите на веб-сайт [test-cors.org](https://test-cors.org/). 
+    >Чтобы проверить, что на сайте, где вы размещаете содержимое, включен механизм CORS и можно тестировать запросы CORS, перейдите на веб-сайт [test-cors.org](https://test-cors.org/).
 
 * Обслуживаемое содержимое защищено с помощью **HTTPS**.
 * При использовании *абсолютные URL-адреса*, такие как `https://yourdomain/content`, для всех ссылок, содержимого CSS и изображений.
@@ -206,16 +206,16 @@ ms.locfileid: "66507784"
 
 3. Откройте файл расширения (например, *TrustFrameworkExtensions.xml*) и найдите элемент `<BuildingBlocks>`. Если такой элемент не существует, добавьте его.
 
-4. Вставьте весь скопированный узел `<ContentDefinitions>` как дочерний узел элемента `<BuildingBlocks>`. 
+4. Вставьте весь скопированный узел `<ContentDefinitions>` как дочерний узел элемента `<BuildingBlocks>`.
 
 5. Найдите узел `<ContentDefinition>`, содержащий `Id="api.signuporsignin"` в скопированном файле XML.
 
-6. Измените значение `LoadUri` с _~/tenant/default/unified_ на _https://<имя_приложения>.azurewebsites.net/home/unified_.  
+6. Измените значение `LoadUri` с _~/tenant/default/unified_ на _https://<имя_приложения>.azurewebsites.net/home/unified_.
     Пользовательская политика должна выглядеть следующим образом:
-    
-    ![Определение содержимого](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-content-definition.png)
 
-## <a name="step-6-upload-the-policy-to-your-tenant"></a>Шаг 6. Отправка политики в клиент
+    ![Пример XML-фрагмент с выделенным элементом LoadUri](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-content-definition.png)
+
+## <a name="step-6-upload-the-policy-to-your-tenant"></a>Шаг 6. Отправка политики в клиент
 1. На [портале Azure](https://portal.azure.com) переключитесь в [контекст клиента Azure AD B2C](active-directory-b2c-navigate-to-b2c-context.md) и выберите **Azure AD B2C**.
 
 2. Выберите **Инфраструктура процедур идентификации**.
@@ -234,20 +234,20 @@ ms.locfileid: "66507784"
     >[!NOTE]
     >Для использования команды Run now (Запустить сейчас) необходимо, чтобы в клиенте было предварительно зарегистрировано хотя бы одно приложение. Дополнительные сведения о регистрации приложений см. в статье [Azure AD B2C: начало работы](active-directory-b2c-get-started.md) или [Регистрация приложения](active-directory-b2c-app-registration.md).
 
-2. Откройте **B2C_1A_signup_signin**, отправленную вами пользовательскую политику проверяющей стороны, а затем выберите **Run Now** (Запустить сейчас).  
+2. Откройте **B2C_1A_signup_signin**, отправленную вами пользовательскую политику проверяющей стороны, а затем выберите **Run Now** (Запустить сейчас).
     Вы должны увидеть настраиваемый HTML5 с ранее созданным фоном.
 
     ![Политика регистрации или входа в систему](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-demo1.png)
 
 ## <a name="step-8-add-dynamic-content"></a>Шаг 8. Добавление динамического содержимого
-Измените фон на основе запроса параметра строки с именем _campaignId_. Приложение проверяющей стороны (веб- или мобильное приложение) отправляет параметр в Azure AD B2C. Политика считывает параметр и отправляет его значение в шаблон HTML5. 
+Измените фон на основе запроса параметра строки с именем _campaignId_. Приложение проверяющей стороны (веб- или мобильное приложение) отправляет параметр в Azure AD B2C. Политика считывает параметр и отправляет его значение в шаблон HTML5.
 
 ### <a name="step-81-add-a-content-definition-parameter"></a>Шаг 8.1. Добавление параметра определения содержимого
 
 Добавьте элемент `ContentDefinitionParameters` следующим образом:
 1. Откройте файл политики *SignUpOrSignin* (например, *SignUpOrSignin.xml*).
 
-2. В узле `<DefaultUserJourney>` добавьте узел `UserJourneyBehaviors`:  
+2. В узле `<DefaultUserJourney>` добавьте узел `UserJourneyBehaviors`:
 
     ```XML
     <RelyingParty>
@@ -292,50 +292,50 @@ ms.locfileid: "66507784"
 
 2. Найдите элемент `<img>` с идентификатором `background_background_image` и замените значение `src` на `@ViewData["background"]`.
 
-    ![Изменение фона страницы](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-dynamic-background.png)
+    ![элемент img с выделенным значением src ](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-dynamic-background.png)
 
 ### <a name="83-upload-the-changes-and-publish-your-policy"></a>8.3. Отправка изменений и публикация политики
 1. Опубликуйте проект Visual Studio в службе приложений Azure.
 
 2. Отправьте файл политики *SignUporSignIn.xml* в Azure AD B2C.
 
-3. Откройте **B2C_1A_signup_signin**, отправленную вами пользовательскую политику проверяющей стороны, а затем выберите **Запустить сейчас**.  
+3. Откройте **B2C_1A_signup_signin**, отправленную вами пользовательскую политику проверяющей стороны, а затем выберите **Запустить сейчас**.
     Вы увидите то же фоновое изображение, которое было показано ранее.
 
 4. Скопируйте URL-адрес из адресной строки браузера.
 
 5. Добавьте параметр строки запроса _campaignId_ в универсальный код ресурса (URI). Например, добавьте `&campaignId=hawaii`, как показано на следующем рисунке:
 
-    ![Изменение фона страницы](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-campaignId-param.png)
+    ![URI выделен параметр строки запроса campaignId](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-campaignId-param.png)
 
 6. Нажмите клавишу **ВВОД**, чтобы отобразить фон Гавайев.
 
-    ![Изменение фона страницы](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-demo2.png)
+    ![Зарегистрируйтесь на страницу входа с помощью пользовательского образа отобразится фон гавайев:](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-demo2.png)
 
-7. Измените значение на *Tokyo* и нажмите клавишу **ВВОД**.  
+7. Измените значение на *Tokyo* и нажмите клавишу **ВВОД**.
     В браузере отобразится фон Токио.
 
-    ![Изменение фона страницы](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-demo3.png)
+    ![Страница регистрации входа в систему с настраиваемый фон Токио образа](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-demo3.png)
 
 ## <a name="step-9-change-the-rest-of-the-user-journey"></a>Шаг 9. Изменение остальной части пути взаимодействия пользователя
 Если выбрать ссылку **Зарегистрироваться сейчас** на странице входа, в браузере отобразится фоновое изображение по умолчанию, а не определенное изображение. Это связано с тем, что вы изменили только страницу регистрации или входа в систему. Чтобы изменить остальную часть определений содержимого с самостоятельным утверждением, сделайте следующее:
 1. Вернитесь к шагу 2 и выполните следующие действия.
 
-    a. Скачайте файл *selfasserted*.
+    1\. Скачайте файл *selfasserted*.
 
     2\. Скопируйте содержимое файла.
 
-    c. Создайте представление *selfasserted*.
+    В. Создайте представление *selfasserted*.
 
-    d. Добавьте *selfasserted* в контроллер **Home**.
+    Г. Добавьте *selfasserted* в контроллер **Home**.
 
-2. Вернитесь к шагу 4 и выполните следующие действия. 
+2. Вернитесь к шагу 4 и выполните следующие действия.
 
-    a. В политике расширения найдите узел `<ContentDefinition>`, который содержит `Id="api.selfasserted"`, `Id="api.localaccountsignup"` и `Id="api.localaccountpasswordreset"`.
+    1\. В политике расширения найдите узел `<ContentDefinition>`, который содержит `Id="api.selfasserted"`, `Id="api.localaccountsignup"` и `Id="api.localaccountpasswordreset"`.
 
     2\. Задайте для атрибута `LoadUri` универсальный код ресурса (URI) *selfasserted*.
 
-3. Вернитесь к шагу 8.2 и измените код так, чтобы принимать параметры строки запроса, но на этот раз укажите функцию *selfasserted*. 
+3. Вернитесь к шагу 8.2 и измените код так, чтобы принимать параметры строки запроса, но на этот раз укажите функцию *selfasserted*.
 
 4. Отправьте политику *TrustFrameworkExtensions.xml* и немного подождите, чтобы удостовериться в отсутствии сбоя при проверке.
 

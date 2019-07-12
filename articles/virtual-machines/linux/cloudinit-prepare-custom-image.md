@@ -4,7 +4,7 @@ description: Подготовка существующего образа вир
 services: virtual-machines-linux
 documentationcenter: ''
 author: danis
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines-linux
@@ -14,17 +14,17 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 06/24/2019
 ms.author: danis
-ms.openlocfilehash: a64fb40c905fbe98dc594ab3626666723d1628d0
-ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
+ms.openlocfilehash: 1f9f6042b52c722280a8227754960ffb270e94b8
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357269"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67668250"
 ---
 # <a name="prepare-an-existing-linux-azure-vm-image-for-use-with-cloud-init"></a>Подготовка существующего образа виртуальной машины Azure Linux к использованию с cloud-init
 В этой статье показано, как выбрать и подготовить существующую виртуальную машину Azure к повторному развертыванию и применению cloud-init. Из полученного образа можно развернуть новую виртуальную машину или масштабируемый набор виртуальных машин. И то, и другое вы сможете дополнительно настроить во время развертывания с помощью cloud-init.  Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы. Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 В этом документе предполагается, что у вас уже есть виртуальная машина Azure под управлением поддерживаемой версии ОС Linux. На этой виртуальной машине должны быть выполнены все необходимые настройки, установлены все необходимые модули, применены все необходимые обновления и проведены все проверки на соответствие требованиям. 
 
 ## <a name="preparing-rhel-76--centos-76"></a>Подготовка RHEL 7.6 / CentOS 7.6
@@ -126,7 +126,7 @@ az vm generalize --resource-group myResourceGroup --name sourceVmName
 az image create --resource-group myResourceGroup --name myCloudInitImage --source sourceVmName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные примеры изменения конфигурации с помощью cloud-init см. в следующих статьях:
  
 - [Добавление пользователя Linux к виртуальной машине](cloudinit-add-user.md)

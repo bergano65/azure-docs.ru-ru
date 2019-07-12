@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: b2da78f5c750dbc694085bb46a6ed43e74884d45
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 73b1392adb2beee9e60d078d865257889b3205f8
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66303038"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67612711"
 ---
 # <a name="management-net-sdk-set-up-and-run-analytics-jobs-using-the-azure-stream-analytics-api-for-net"></a>Управление пакетом SDK для .NET: настройка и запуск заданий аналитики с помощью API Azure Stream Analytics для .NET
 Узнайте, как настраивать и запускать задания аналитики с помощью API Azure Stream Analytics для .NET, используя управление SDK для .NET. Настраивайте проект, создавайте источники входных и выходных данных и преобразования, а также запускайте и останавливайте задания. Для выполнения заданий аналитики можно осуществлять потоковую передачу данных из хранилища больших двоичных объектов или из концентратора событий.
@@ -26,7 +26,7 @@ Azure Stream Analytics является полностью управляемо�
 > [!NOTE]
 > Мы обновили пример кода в этой статье с помощью управления SDK для .NET версии 2.х Azure Stream Analytics. Пример кода с использованием устаревших версий пакета SDK (1.x) см. в статье [Управление SDK для .NET: настройка и запуск заданий аналитики с помощью API Azure Stream Analytics для .NET](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-dotnet-management-sdk-v1).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Перед началом работы с этой статьей необходимо иметь следующие требования:
 
 * Установите Visual Studio 2019 или 2015.
@@ -288,14 +288,14 @@ Azure Stream Analytics является полностью управляемо�
 ## <a name="get-support"></a>Получение поддержки
 За дополнительной помощью обращайтесь на наш [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Вы изучили основы использования пакета SDK для .NET для создания и выполнения заданий аналитики. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
 * [Использование пакета SDK для .NET для управления Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn889315.aspx)
-* [Справочник по языку запросов Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+* [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
 <!--Image references-->

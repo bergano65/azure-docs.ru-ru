@@ -14,15 +14,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 06/10/2019
+ms.date: 07/10/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8b4ed11b5a0f463afee0dae149820bb546db0c53
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 27e12b5f33f2e3c0024d5caa6a9bee5e9576a45a
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67058719"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67805830"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Используйте Azure для размещения и выполнения сценариев рабочей нагрузки SAP
 
@@ -36,17 +36,19 @@ ms.locfileid: "67058719"
 
 ## <a name="latest-changes"></a>Последние изменения
 
+- Выпуск нового руководства для [HADR IBM Db2 в Red Hat Enterprise Server](high-availability-guide-rhel-ibm-db2-luw.md)
+- Выпуск [высокий уровень доступности SAP NetWeaver в Red Hat Enterprise Linux с файлами NetApp Azure для приложений SAP](high-availability-guide-rhel-netapp-files.md)
 - Общие сведения о пути, быстро ExpressRoute и глобальным доступом для крупных экземпляров HANA в [сетевой архитектуры SAP HANA (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-network-architecture) и связанных документов
 - Выпуск [управление крупных экземпляров HANA в Azure с помощью портала Azure](hana-li-portal.md)
 - Выпуск [высокий уровень доступности для SAP NetWeaver на виртуальных машинах Azure в SUSE Linux Enterprise Server с файлами NetApp Azure для приложений SAP](high-availability-guide-suse-netapp-files.md)
-- Разъяснение к **net.ipv4.tcp_timestamps параметр ОС Linux** подсистемы балансировки нагрузки параметры вместе с Azure
 
 
 
 
 
 
-## <a name="sap-hana-on-azure-large-instances"></a>SAP HANA в Azure (большие экземпляры)
+
+## <a name="sap-hana-on-azure-large-instances"></a>SAP HANA в Azure (крупные экземпляры)
 
 Серии документов проведет вас через SAP HANA в Azure (крупные экземпляры), или сокращенно крупных экземпляров HANA. Сведения о следующих областях крупных экземпляров HANA см. в разделе:
 
@@ -96,9 +98,9 @@ ms.locfileid: "67058719"
 
 - [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general)
 - [SAP NetWeaver на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_sqlserver)
-- [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД Oracle](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_oracle)
-- [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД IBM DB2](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_ibm)
-- [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД SAP ASE](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_sapase)
+- [Рабочие нагрузки SAP на Виртуальных машинах Azure. Руководство по развертыванию СУБД Oracle](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_oracle)
+- [Рабочие нагрузки SAP на Виртуальных машинах Azure. Руководство по развертыванию СУБД IBM DB2](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_ibm)
+- [Рабочие нагрузки SAP на Виртуальных машинах Azure. Руководство по развертыванию СУБД SAP ASE](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_sapase)
 - [SAP MaxDB, Live кэш и сервер содержимого развертывания на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_maxdb)
 
 Сведения о базах данных SAP HANA в Azure см. в разделе «SAP HANA на виртуальных машинах Azure».

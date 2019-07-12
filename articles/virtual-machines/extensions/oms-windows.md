@@ -4,7 +4,7 @@ description: Развертывание агента Log Analytics на вирт
 services: virtual-machines-windows
 documentationcenter: ''
 author: roiyz-msft
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: feae6176-2373-4034-b5d9-a32c6b4e1f10
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/29/2019
 ms.author: roiyz
-ms.openlocfilehash: fb931d5ce72b21cb17abbcd11095dbc8d611f0c9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b9d0e582b77dc06e1655a7bdb57ee232c603bc86
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67064424"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706669"
 ---
 # <a name="azure-monitor-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Azure Monitor для Windows
 
@@ -28,7 +28,7 @@ ms.locfileid: "67064424"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
@@ -42,11 +42,11 @@ ms.locfileid: "67064424"
 
 | Версия пакета агента Log Analytics Windows | Azure версия расширения виртуальной Машины Windows монитора | Дата выпуска | Заметки о выпуске |
 |--------------------------------|--------------------------|--------------------------|--------------------------|
-| 10.20.18001 | 1.0.18001 | 2019 июня | <ul><li> Незначительные исправления ошибок и улучшения стабилизации </li><li> Добавлена возможность отключения учетных данных по умолчанию для подключения прокси-сервера (поддержка WINHTTP_AUTOLOGON_SECURITY_LEVEL_HIGH) </li></ul>|
+| 10.20.18001 | 1.0.18001 | Июнь 2019 г. | <ul><li> Незначительные исправления ошибок и улучшения стабилизации </li><li> Добавлена возможность отключения учетных данных по умолчанию для подключения прокси-сервера (поддержка WINHTTP_AUTOLOGON_SECURITY_LEVEL_HIGH) </li></ul>|
 | 10.19.13515 | 1.0.13515 | Марта 2019 г. | <ul><li>Исправления незначительных стабилизации </li></ul> |
-| 10.19.10006 | Недоступно | Декабря 2018 г. | <ul><li> Исправления незначительных стабилизации </li></ul> | 
-| 8.0.11136 | Недоступно | Сентября 2018 г. |  <ul><li> Добавлена поддержка обнаружения изменение идентификатора ресурса на перемещение виртуальной Машины </li><li> Добавлена поддержка reporting ресурсов, установите идентификатор при использовании не являющийся расширением </li></ul>| 
-| 8.0.11103 | Недоступно |  Апрель 2018 г. | |
+| 10.19.10006 | Н/Д | Декабря 2018 г. | <ul><li> Исправления незначительных стабилизации </li></ul> | 
+| 8.0.11136 | Н/Д | Сентября 2018 г. |  <ul><li> Добавлена поддержка обнаружения изменение идентификатора ресурса на перемещение виртуальной Машины </li><li> Добавлена поддержка reporting ресурсов, установите идентификатор при использовании не являющийся расширением </li></ul>| 
+| 8.0.11103 | Н/Д |  Апрель 2018 г. | |
 | 8.0.11081 | 1.0.11081 | Ноября 2017 г. | | 
 | 8.0.11072 | 1.0.11072 | Сентября 2017 г. | |
 | 8.0.11049 | 1.0.11049 | Февраля 2017 г. | |
@@ -87,7 +87,7 @@ ms.locfileid: "67064424"
 ```
 ### <a name="property-values"></a>Значения свойств
 
-| ИМЯ | Значение и пример |
+| Имя | Значение и пример |
 | ---- | ---- |
 | apiVersion | 2015-06-15 |
 | publisher | Microsoft.EnterpriseCloud.Monitoring |

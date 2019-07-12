@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 03/15/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=fboylu, previous-ms.author=fboylu
-ms.openlocfilehash: feccaea0451ae36d841aae95ed0baf54f90c2700
-ms.sourcegitcommit: 3107874d7559ea975e4d55ae33cdf45f4b5485e4
+ms.openlocfilehash: 37acd88dbfe8ed1790f1bfa68d5e9762a861ddc7
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67568261"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67626406"
 ---
 # <a name="technical-guide-to-the-cortana-intelligence-solution-template-for-predictive-maintenance-in-aerospace"></a>Техническое руководство по шаблону решения Cortana Intelligence для прогнозируемого обслуживания в аэрокосмических компаниях
 
@@ -103,7 +103,7 @@ ms.locfileid: "67568261"
   * ***QUERY*** для просмотра самого запроса.
   * ***OUTPUTS*** для просмотра разных выходных данных.
 
-Сведения о построении запросов Azure Stream Analytics можно найти в [справочнике по запросам Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx) на сайте MSDN.
+Сведения о построении запросов Azure Stream Analytics можно найти в [справочнике по запросам Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference) на сайте MSDN.
 
 В этом решении запросы выводят три набора данных с собранной практически в режиме реального времени аналитической информацией о потоках входящих данных на панель мониторинга Power BI, которая предоставляется как часть этого шаблона решения. Поскольку есть неявные сведения о формате входящих данных, эти запросы нужно изменить в зависимости от вашего формата данных.
 

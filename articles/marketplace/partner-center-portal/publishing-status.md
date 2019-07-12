@@ -7,12 +7,12 @@ ms.author: mattwoj
 ms.service: marketplace
 ms.topic: conceptual
 ms.date: 05/30/2019
-ms.openlocfilehash: 9bf3136969974abbe9a99a5632478e3cbb22307e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae4840877ae461244a76984ed8ac3edc82d57a38
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66474524"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67653987"
 ---
 # <a name="check-the-publishing-status-of-your-commercial-marketplace-offer"></a>Проверьте статус публикации вашего предложения для коммерческих Marketplace
 
@@ -75,7 +75,7 @@ ms.locfileid: "66474524"
 - снимки экрана качества и сопутствующие видео; и
 - Объяснение, как предложение использует платформ и средств Майкрософт.
 
-Дополнительные сведения о критерии проверки содержимого можно найти [общие список политик](https://docs.microsoft.com/legal/marketplace/general-policies#10-general-listing-policies).
+Дополнительные сведения о критерии проверки содержимого можно найти [общие список политик](https://docs.microsoft.com/legal/marketplace/certification-policies#100-general-policies).
 
 #### <a name="technical-validation"></a>Техническая проверка
 
@@ -141,6 +141,6 @@ ms.locfileid: "66474524"
 
 Если вы хотите внести изменения на предложение, которые уже были опубликованы, необходимо сначала обновить существующее предложение, а затем опубликовать его повторно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Обновление существующего предложения в коммерческих Marketplace](./update-existing-offer.md)

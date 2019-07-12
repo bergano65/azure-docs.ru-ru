@@ -10,12 +10,12 @@ ms.reviewer: menchi
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 766b51f208e7e8f4a49109e32864f2726b8ccd63
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: edcde083934bb454f62ce3dd55c026138ad8fcca
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62126398"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67797677"
 ---
 # <a name="deploy-azure-iot-edge-modules-with-azure-cli"></a>Развертывание модулей IoT Edge Azure с помощью интерфейса командной строки Azure
 
@@ -25,11 +25,11 @@ ms.locfileid: "62126398"
 
 В этой статье показано, как создать манифест развертывания JSON и применить этот файл для отправки этого развертывания на устройство IoT Edge. Информацию о создании развертываний, предназначенных для нескольких устройств с определенными значениями тегов, см. в разделе [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-monitor-cli.md)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-using-cli.md) в подписке Azure.
 * [Устройство IoT Edge](how-to-register-device-cli.md) с установленной средой выполнения IoT Edge.
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. Вам понадобится как минимум Azure CLI версии 2.0.24 или более поздней. Для проверки используйте `az –-version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack.
+* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. Вам понадобится как минимум Azure CLI версии 2.0.24 или более поздней. Для проверки используйте `az --version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack.
 * [Расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension).
 
 ## <a name="configure-a-deployment-manifest"></a>Настройка манифеста развертывания
@@ -134,6 +134,6 @@ ms.locfileid: "62126398"
 
    ![Выходные данные команды az iot hub module-identity list](./media/how-to-deploy-cli/list-modules.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Изучите раздел [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-monitor.md)

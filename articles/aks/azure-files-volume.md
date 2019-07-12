@@ -2,29 +2,29 @@
 title: Создание тома "Статический" для нескольких групп контейнеров в Службе Azure Kubernetes (AKS)
 description: Сведения о том, как вручную создавать том с файлами Azure для использования с несколькими параллельными pod в Службе Azure Kubernetes (AKS)
 services: container-service
-author: iainfoulds
+author: mlearned
 ms.service: container-service
 ms.topic: article
 ms.date: 03/01/2019
-ms.author: iainfou
-ms.openlocfilehash: 5f3c1331e2b005b136a015c537d0fc18406ca9d8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: mlearned
+ms.openlocfilehash: ad80b738058b4048fa1a51144a37eb4f62b538c0
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65072086"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67616026"
 ---
 # <a name="manually-create-and-use-a-volume-with-azure-files-share-in-azure-kubernetes-service-aks"></a>Создание вручную и совместное использование тома с файловым ресурсом Azure в службе Azure Kubernetes (AKS)
 
-Контейнерные приложения часто требуются для обращения к данным и их хранения во внешнем томе данных. Если несколько модулей pod требуют одновременный доступ в одно и то же хранилище, используйте службу файлов Azure для подключения с помощью [протокола Server Message Block (SMB)][smb-overview]. В этой статье показано, как вручную создать файловый ресурс Azure и присоединить его к контейнеру в AKS.
+Контейнерные приложения часто требуются для обращения к данным и их хранения во внешнем томе данных. Если несколько модулей POD требуется одновременный доступ, в том же хранилище, службой файлов Azure можно использовать для подключения с помощью [протокол Server Message Block (SMB)][smb-overview]. В этой статье показано, как вручную создать файловый ресурс Azure и присоединить его к контейнеру в AKS.
 
 Дополнительные сведения о томах Kubernetes см. в разделе [параметры хранилища для приложений в AKS][concepts-storage].
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, см. в этом кратком руководстве AKS [с помощью Azure CLI][aks-quickstart-cli] or [using the Azure portal][aks-quickstart-portal].
 
-Вам также понадобится Azure CLI версии 2.0.59 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Вам также понадобится Azure CLI версии 2.0.59 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если требуется выполнить установку или обновление, см. в разделе [установить Azure CLI][install-azure-cli].
 
 ## <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
 
@@ -61,7 +61,7 @@ echo Storage account key: $STORAGE_KEY
 
 ## <a name="create-a-kubernetes-secret"></a>Создание секрета Kubernetes
 
-Kubernetes требуются учетные данные для доступа к файловому ресурсу, созданные на предыдущем шаге. Эти учетные данные хранятся в [секрете Kubernetes][kubernetes-secret], который указывается при создании pod Kubernetes.
+Kubernetes требуются учетные данные для доступа к файловому ресурсу, созданные на предыдущем шаге. Эти учетные данные хранятся в [секрет Kubernetes][kubernetes-secret], который указывается при создании Kubernetes pod.
 
 Создайте секрет с помощью команды `kubectl create secret`. Следующий пример создает ресурс с именем *azure-secret* и заполняет параметры *azurestorageaccountname* и *azurestorageaccountkey* данными, созданными на предыдущем шаге. Чтобы использовать существующую учетную запись Azure, укажите имя и ключ учетной записи.
 
@@ -137,7 +137,7 @@ Volumes:
 
 Значения по умолчанию *fileMode* and *dirMode* различаются между версиями Kubernetes, как описано в следующей таблице.
 
-| версия | value |
+| version | value |
 | ---- | ---- |
 | v1.6.x, v1.7.x | 0777 |
 | v1.8.0-v1.8.5 | 0700 |
@@ -168,13 +168,13 @@ spec:
   - gid=1000
 ```
 
-При использовании кластера версии 1.8.0–1.8.4 контекст безопасности можно указать, задав для *runAsUser* значение *0*. Дополнительные сведения о контексте безопасности Pod см. в разделе [Configure a Security Context][kubernetes-security-context] (Настройка контекста безопасности).
+При использовании кластера версии 1.8.0–1.8.4 контекст безопасности можно указать, задав для *runAsUser* значение *0*. Дополнительные сведения о контексте безопасности Pod см. в разделе [настроить контекст безопасности][kubernetes-security-context].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Связанные практические рекомендации, см. в разделе [советы и рекомендации для хранилища и резервных копий в AKS][operator-best-practices-storage].
 
-Дополнительные сведения о взаимодействии кластеров AKS с файлами Azure, см. в разделе [Подключаемый модуль Kubernetes для службы файлов Azure][kubernetes-files].
+Дополнительные сведения о кластерах AKS будут работать с файлами Azure, см. в разделе [подключаемый модуль Kubernetes для службы файлов Azure][kubernetes-files].
 
 <!-- LINKS - external -->
 [kubectl-create]: https://kubernetes.io/docs/user-guide/kubectl/v1.8/#create

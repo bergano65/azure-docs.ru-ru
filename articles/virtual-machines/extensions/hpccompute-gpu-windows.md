@@ -4,7 +4,7 @@ description: Расширение Microsoft Azure для установки др
 services: virtual-machines-windows
 documentationcenter: ''
 author: vermagit
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-windows
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: roiyz
-ms.openlocfilehash: 5adc86b161770f2502b6ef9cf5ec2189ec3d4f99
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 004d6125de6762303db91f3a5ef9ffa16e6e501f
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60388681"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705957"
 ---
 # <a name="nvidia-gpu-driver-extension-for-windows"></a>Расширение драйвера GPU NVIDIA для Windows
 
@@ -27,9 +27,10 @@ ms.locfileid: "60388681"
 
 Это расширение устанавливает драйверы GPU NVIDIA на виртуальных машинах серии N для Windows. В зависимости от семейства виртуальных машин расширение устанавливает драйверы CUDA или GRID. При установке драйверов NVIDIA с помощью этого расширения требуется принять условия [лицензионного соглашения NVIDIA](https://go.microsoft.com/fwlink/?linkid=874330). Во время установки драйвера виртуальная машина может быть перезагружена для завершения процедуры.
 
+Инструкции по установке вручную драйверы и текущими поддерживаемыми версиями доступны [здесь](https://docs.microsoft.com/azure/virtual-machines/windows/n-series-driver-setup).
 Это расширение также доступно для установки драйверов GPU NVIDIA на [виртуальных машинах Linux серии N](hpccompute-gpu-linux.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
@@ -37,8 +38,8 @@ ms.locfileid: "60388681"
 
 | Дистрибутив | Version |
 |---|---|
-| Windows 10 (до версии 1803)| Core |
-| Windows Server 2016 | Core |
+| Windows 10 | Core |
+| Windows Server 2016 | Core |
 | Windows Server 2012R2 | Core |
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
@@ -69,14 +70,14 @@ ms.locfileid: "60388681"
 }
 ```
 
-### <a name="properties"></a>properties
+### <a name="properties"></a>Свойства
 
 | ИМЯ | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
-| publisher | Microsoft.HpcCompute | string |
-| type | NvidiaGpuDriverWindows | string |
-| typeHandlerVersion | 1.2 | int |
+| publisher | Microsoft.HpcCompute | строка |
+| type | NvidiaGpuDriverWindows | строка |
+| typeHandlerVersion | 1.2 | ssNoversion |
 
 
 ## <a name="deployment"></a>Развертывание
@@ -173,7 +174,7 @@ C:\WindowsAzure\Logs\Plugins\Microsoft.HpcCompute.NvidiaGpuDriverMicrosoft\
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 См. дополнительные сведения о [расширениях и компонентах виртуальных машин Windows](features-windows.md).
 
 См. дополнительные сведения о [размерах виртуальных машин серии N, оптимизированных для GPU](../windows/sizes-gpu.md).

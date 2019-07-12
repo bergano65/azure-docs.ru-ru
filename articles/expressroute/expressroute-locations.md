@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/03/2019
+ms.date: 07/10/2019
 ms.author: jaredr80
-ms.openlocfilehash: cf336adecf871743a62933d8a5e14caa4f32489a
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
+ms.openlocfilehash: 2887a8ed525b94b1cdfd20820d1567bee4b41ff4
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67565930"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807456"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -89,7 +89,7 @@ ExpressRoute поддерживается во всех регионах и ра
 | **Chief Telecom** |Поддерживаются |Поддерживаются |Гонконг, Тайбэй |
 | **China Telecom Global** |Поддерживаются |Не поддерживается |Гонконг, САР |
 | **[Cologix](https://www.cologix.com/hyperscale/microsoft-azure/)** |Поддерживаются |Поддерживаются |Чикаго, Даллас, Монреаль, Торонто, Вашингтон (округ Колумбия) |
-| **[Colt](https://www.colt.net/uk/en/news/colt-announces-dedicated-cloud-access-for-microsoft-azure-services-en.htm)** |Поддерживаются |Поддерживаются |Амстердам, Дублин, Лондон, Ньюпорт, Париж, Сингапур 2, Токио |
+| **[Colt](https://www.colt.net/uk/en/news/colt-announces-dedicated-cloud-access-for-microsoft-azure-services-en.htm)** |Поддерживаются |Поддерживаются |Амстердам, Дублин, Лондон, Ньюпорт, Осака, Париж, Сингапур 2, Токио |
 | **[Comcast](https://business.comcast.com/landingpage/microsoft-azure)** |Поддерживаются |Поддерживаются |Чикаго, Кремниевая долина, Вашингтон, округ Колумбия |
 | **[CoreSite](https://www.coresite.com/solutions/cloud-services/public-cloud-providers/microsoft-azure-expressroute)** |Поддерживаются |Поддерживаются |Чикаго, Денвер, Лос-Анджелес, Нью-Йорк, кремниевая Долина, Silicon Valley2 Вашингтон Округ Колумбия, штат Вашингтон DC2 |
 | **[DE-CIX](https://www.de-cix.net/en/de-cix-service-world/directcloud/find-a-cloud-service/detail/microsoft-azure)** | Поддерживаются |Поддерживаются |Марселе Amsterdam2, Франкфурт,|
@@ -103,7 +103,7 @@ ExpressRoute поддерживается во всех регионах и ра
 | **FarEasTone** |Поддерживаются |Поддерживаются |Тайбэй|
 | **GÉANT** |Поддерживаются |Поддерживаются |Амстердам |
 | **[Global Cloud Xchange (GCX)](https://globalcloudxchange.com/cloud-platform/cloud-x-fusion/)** | Поддерживаются| Поддерживаются | Ченнаи, Мумбаи |
-| **[InterCloud](https://www.intercloud.com/)** |Поддерживаются |Поддерживаются |Амстердам, Чикаго, Лондон, Нью-Йорк, Париж, кремниевая Долина, Сингапур, Вашингтон Округ Колумбия |
+| **[InterCloud](https://www.intercloud.com/)** |Поддерживаются |Поддерживаются |Амстердам, Чикаго, Лондон, Нью-Йорк, Париж, кремниевая Долина, Сингапур, Вашингтон Округ Колумбия, Цюрих |
 | **[Internet2](https://www.internet2.edu/products-services/cloud-services-applications/microsoft-azure/#service-cloud-connect)** |Поддерживаются |Поддерживаются |Чикаго, Даллас, Вашингтон (округ Колумбия) |
 | **[Internet Initiative Japan Inc. - IIJ](https://www.iij.ad.jp/en/news/pressrelease/2015/1216-2.html)** |Поддерживаются |Поддерживаются |Осака, Токио |
 | **[Internet Solutions - Cloud Connect](https://www.is.co.za/solution/cloud-connect/)** |Поддерживаются |Поддерживаются |Кейптаун, Йоханнесбург, Лондон |
@@ -112,7 +112,7 @@ ExpressRoute поддерживается во всех регионах и ра
 | **Мышь сети** |Поддерживаются |Поддерживаются |Марсель|
 | **[Jisc +](https://www.jisc.ac.uk/microsoft-azure-expressroute)** |Поддерживаются |Поддерживаются |Лондон |
 | **[KINX](https://www.kinx.net/service/network/cloudhub/ms-expressroute/?lang=en)** |Поддерживаются |Поддерживаются |Сеул |
-| **[Kordia](https://www.kordia.co.nz/cloudconnect)** | Поддерживаются |Поддерживаются |Сидней |
+| **[Kordia](https://www.kordia.co.nz/cloudconnect)** | Поддерживаются |Поддерживаются |Окленд, Сидней |
 | **[KPN](https://www.kpn.com/zakelijk/cloud/connect.htm)** | Поддерживаются | Поддерживаются | Амстердам | 
 | **[Level 3 Communications](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** |Поддерживаются |Поддерживаются |Амстердам, Вашингтон (округ Колумбия), Даллас, Кремниевая долина, Лондон, Ньюпорт (Уэльс), Сан-Паулу, Сингапур, Сиэтл, Чикаго |
 | **LG CNS** |Поддерживаются |Поддерживаются |Пусан, Сеул |
@@ -140,7 +140,7 @@ ExpressRoute поддерживается во всех регионах и ра
 | **[Telefonica](https://www.business-solutions.telefonica.com/es/enterprise/solutions/efficient-infrastructure/managed-voice-data-connectivity/)** |Поддерживаются |Поддерживаются |Амстердам, Сан-Паулу |
 | **[Telehouse - KDDI](https://www.telehouse.net/solutions/cloud-services/cloud-link)**  |Поддерживаются |Поддерживаются |Лондон |
 | **Telenor** |Поддерживаются |Поддерживаются |Амстердам, Лондон |
-| **[Telia Carrier](https://teliacarrier.com/our-services/connectivity/cloud-connect.html?title=Cloud%20Connect)** | Поддерживаются | Поддерживаются |Амстердам, Чикаго, Даллас, Лондон, Париж, Вашингтон Округ Колумбия |
+| **[Telia Carrier](https://teliacarrier.com/our-services/connectivity/cloud-connect.html?title=Cloud%20Connect)** | Поддерживаются | Поддерживаются |Амстердам, Чикаго, Даллас, Гонконг, Лондон, Париж, Вашингтон Округ Колумбия |
 | **Telmex Uninet**| Поддерживаются | Поддерживаются | Даллас |
 | **[Telstra Corporation](https://www.telstra.com.au/business-enterprise/network-services/networks/cloud-direct-connect/)** |Поддерживаются |Поддерживаются |Мельбурн, Сингапур, Сидней |
 | **[Telus](https://www.telus.com)** |Поддерживаются |Поддерживаются |Монреаль, Сиэтл, Торонто |
@@ -162,7 +162,7 @@ ExpressRoute поддерживается во всех регионах и ра
 | **Поставщик услуг** | **Microsoft Azure** | **Office 365** | **Расположения** |
 | --- | --- | --- | --- |
 | **[AT&T NetBond](https://www.synaptic.att.com/clouduser/html/productdetail/ATT_NetBond.htm)** |Поддерживаются |Поддерживаются |Чикаго, Phoenix, Вашингтон Округ Колумбия |
-| **[CenturyLink Cloud Connect](https://www.centurylink.com/cloudconnect)** |Поддерживаются |Поддерживаются |Нью-Йорк, Phoenix, Сан-Антонио |
+| **[CenturyLink Cloud Connect](https://www.centurylink.com/cloudconnect)** |Поддерживаются |Поддерживаются |Нью-Йорк, Phoenix, Сан-Антонио, Вашингтон Округ Колумбия |
 | **[Equinix](https://www.equinix.com/partners/microsoft-azure/)** |Поддерживаются |Поддерживаются |Чикаго, Даллас, Нью-Йорк, Сиэтл, Кремниевая долина, Вашингтон (округ Колумбия) |
 | **[Level 3 Communications](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** |Поддерживаются |Поддерживаются |Чикаго, Кремниевая долина, Вашингтон, округ Колумбия |
 | **[Megaport](https://www.megaport.com/services/microsoft-expressroute/)** |Поддерживаются | Поддерживаются | Чикаго, Даллас, Сан-Антонио, Сиэтл, Вашингтон Округ Колумбия |
@@ -324,7 +324,7 @@ ExpressRoute поддерживается во всех регионах и ра
 | **[Venha Pra Nuvem](https://venhapranuvem.com.br/)** | Северная Америка |
 | **[Vigilant.IT](https://vigilant.it/expressroute)** | Австралия |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).
 * Убедитесь, что выполнены все необходимые условия. Ознакомьтесь с разделом [Предварительные требования и контрольный список для ExpressRoute](expressroute-prerequisites.md).
 

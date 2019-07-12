@@ -6,17 +6,17 @@ author: kevinvngo
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: load data
+ms.subservice: load-data
 ms.date: 05/31/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seoapril2019
-ms.openlocfilehash: 3387f6df36e9f5d98606e33b60a7584ff591efd6
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: bb170b53946a014d4aa69ce628c2e4bef7459b93
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67340122"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67595585"
 ---
 # <a name="best-practices-for-loading-data-into-azure-sql-data-warehouse"></a>Рекомендации по загрузке данных в хранилище данных SQL Azure
 
@@ -138,7 +138,7 @@ ALTER DATABASE SCOPED CREDENTIAL my_credential WITH IDENTITY = 'my_identity', SE
 
 Вносить изменения в базовые внешние источники данных больше не нужно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о PolyBase и проектировании процесса извлечения, загрузки и преобразования (ELT) см. в статье о [проектировании ELT для хранилища данных SQL](design-elt-data-loading.md).
 - Руководство по загрузке см. в статье [Загрузка данных из хранилища BLOB-объектов Azure в хранилище данных SQL Azure с помощью PolyBase](load-data-from-azure-blob-storage-using-polybase.md).

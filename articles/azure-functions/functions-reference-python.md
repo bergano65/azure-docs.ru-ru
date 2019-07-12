@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 04/16/2018
 ms.author: glenga
-ms.openlocfilehash: 249e5ac33b1420ada2cda45ea729471351f21adf
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 14594e95efe94fe38502dc6269627158c42a04be
+ms.sourcegitcommit: dda9fc615db84e6849963b20e1dce74c9fe51821
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341990"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67622352"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Справочник разработчика Python. Функции Azure
 
@@ -211,7 +211,7 @@ def main(req: func.HttpRequest,
     return message
 ```
 
-## <a name="logging"></a>Ведение журналов
+## <a name="logging"></a>Ведение журнала
 
 Доступ к средству ведения журнала среды выполнения Функций Azure предоставляется через корневой обработчик [`logging`](https://docs.python.org/3/library/logging.html#module-logging) в приложении-функции. Это средство ведения журнала привязано к Application Insights и позволяет отмечать предупреждения и ошибки, возникшие во время выполнения функции.
 
@@ -257,7 +257,7 @@ def main():
     some_blocking_socket_io()
 ```
 
-## <a name="context"></a>Context
+## <a name="context"></a>Контекст
 
 Чтобы получить контекст вызова функции во время выполнения, включите в его подпись аргумент `context`. 
 
@@ -336,28 +336,66 @@ func azure functionapp publish <app name> --build-native-deps
 
 ## <a name="unit-testing"></a>Модульное тестирование
 
-Функции, написанные на Python можно тестировать как другой код Python, с помощью стандартной платформы тестирования. Для большинства привязок, можно создать макет входного объекта создается экземпляр соответствующего класса со `azure.functions` пакета.
+Функции, написанные на Python можно тестировать как другой код Python, с помощью стандартной платформы тестирования. Для большинства привязок, можно создать макет входного объекта создается экземпляр соответствующего класса со `azure.functions` пакета. Так как [ `azure.functions` ](https://pypi.org/project/azure-functions/) пакета в данный момент недоступна, установите его с помощью вашей `requirements.txt` файл, как описано в разделе [управление версиями и пакетами Python](#python-version-and-package-management) предыдущем разделе.
 
 Например ниже приведен макетов, чтобы проверить функции, активируемой HTTP.
 
-```python
-# myapp/__init__.py
-import azure.functions as func
-import logging
-
-
-def main(req: func.HttpRequest,
-         obj: func.InputStream):
-
-    logging.info(f'Python HTTP triggered function processed: {obj.read()}')
+```json
+{
+  "scriptFile": "httpfunc.py",
+  "entryPoint": "my_function",
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}
 ```
 
 ```python
-# myapp/test_func.py
+# myapp/httpfunc.py
+import azure.functions as func
+import logging
+
+def my_function(req: func.HttpRequest) -> func.HttpResponse:
+    logging.info('Python HTTP trigger function processed a request.')
+
+    name = req.params.get('name')
+    if not name:
+        try:
+            req_body = req.get_json()
+        except ValueError:
+            pass
+        else:
+            name = req_body.get('name')
+
+    if name:
+        return func.HttpResponse(f"Hello {name}")
+    else:
+        return func.HttpResponse(
+             "Please pass a name on the query string or in the request body",
+             status_code=400
+        )
+```
+
+```python
+# myapp/test_httpfunc.py
 import unittest
 
 import azure.functions as func
-from . import my_function
+from httpfunc import my_function
 
 
 class TestFunction(unittest.TestCase):
@@ -366,7 +404,7 @@ class TestFunction(unittest.TestCase):
         req = func.HttpRequest(
             method='GET',
             body=None,
-            url='/my_function',
+            url='/api/HttpTrigger',
             params={'name': 'Test'})
 
         # Call the function.
@@ -375,7 +413,7 @@ class TestFunction(unittest.TestCase):
         # Check the output.
         self.assertEqual(
             resp.get_body(),
-            'Hello, Test!',
+            b'Hello Test',
         )
 ```
 
@@ -418,7 +456,7 @@ class TestFunction(unittest.TestCase):
 
 Все известные проблемы и запросы возможностей отслеживаются в [списке проблем на GitHub](https://github.com/Azure/azure-functions-python-worker/issues). Если вы столкнулись с проблемой и не можете найти ее решение на GitHub, откройте новую проблему и укажите ее подробное описание.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для получения дополнительных сведений см. следующие ресурсы:
 

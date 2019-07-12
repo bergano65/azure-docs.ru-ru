@@ -7,19 +7,20 @@ author: rkarlin
 manager: rkarlin
 editor: ''
 ms.assetid: ff7c862e-2e23-4a28-bd18-f2924a30899d
-ms.service: sentinel
+ms.service: azure-sentinel
+ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: 6b1e167d26b5848238dd51bf9792f8316c33a385
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1d6a467307e4816ffbb45f23bac55b8023267352
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65205570"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67611238"
 ---
 # <a name="connect-data-from-office-365-logs"></a>Подключайте данные из Office 365 журналов
 
@@ -30,7 +31,7 @@ ms.locfileid: "65205570"
 Можно осуществлять потоковую передачу журналов аудита из [Office 365](https://docs.microsoft.com/office365/admin/admin-home?view=o365-worldwide) в Azure Sentinel одним щелчком. Можно осуществлять потоковую передачу журналов аудита из нескольких клиентов в одной рабочей области в Azure Sentinel. Соединитель журнала действий Office 365 позволяет отслеживать действия текущих пользователей. Вы получите сведения о различных пользователей, admin, системы и действия политики и событий из Office 365. Подключив журналы Office 365 в Azure Sentinel эти данные можно использовать для просмотра панелей мониторинга, создать настраиваемые оповещения и улучшить процесс исследования.
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - На клиенте должен быть глобальный администратор или администратор безопасности
 - На компьютере, с которого вы выполнили вход в Azure Sentinel, чтобы создать подключение, убедитесь, что открыт порт 4433 для веб-трафика.
@@ -49,7 +50,7 @@ ms.locfileid: "65205570"
 3. Для соответствующей схемы в Log Analytics можно использовать для журналов Office 365, поиск **OfficeActivity**.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключиться к Azure Sentinel Office 365. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальные угрозы](quickstart-get-visibility.md).
 - Начало работы [обнаружение угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

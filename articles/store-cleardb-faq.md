@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 10/27/2016
 ms.author: sumuth
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 1838dbb627a6dec46f817101fc1d0cca0961ef77
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7b6d38f7755ebd97791959a5a414b09fe4ac769b
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64574181"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67718016"
 ---
 # <a name="faq-for-cleardb-mysql-databases-with-azure-app-service"></a>Часто задаваемые вопросы о базах данных ClearDB MySql в службе приложений Azure
 Ответы на часто задаваемые вопросы об использовании и покупке баз данных ClearDB MySql для службы веб-приложений Azure.
@@ -74,13 +74,13 @@ Azure Marketplace недоступен для клиентов из Азерба
 По всем вопросам, связанным с базами данных, обращайтесь в [службу поддержки ClearDB](https://www.cleardb.com/developers/help/support) . Вам нужно будет сообщить данные вашей подписки Azure.
 
 ## <a name="can-i-create-additional-users-for-my-cleardb-mysql-database-cluster-solution"></a>Можно ли создавать дополнительных пользователей для кластера баз данных ClearDB MySQL?
-№ Создавать дополнительных пользователей в кластере баз данных ClearDB нельзя, но можно создавать дополнительные базы данных.  
+Нет. Создавать дополнительных пользователей в кластере баз данных ClearDB нельзя, но можно создавать дополнительные базы данных.  
 
 ## <a name="can-basicpro-series-databases-be-upgraded-in-place-similar-to-planetary-plans-today-on-cleardb-portal"></a>Можно ли обновить базы данных серий Basic и Pro на месте, как в случае с текущими планами Planetary, на портале ClearDB?
 Да, базы данных серии Basic (Basic 60 – Basic 500) можно обновить на месте. Вы можете обновить на месте базы данных серии Pro (Pro 125–1000), за исключением Pro 60. В настоящее время обновление базы данных Pro 60 не поддерживается. 
 
 ## <a name="when-i-migrate-my-resources-from-one-subscription-to-another-does-my-cleardb-mysql-database-get-migrated-as-well"></a>Переносится ли база данных ClearDB MySQL при переносе ресурсов из одной подписки в другую?
-При переносе ресурсов из одной подписки в другую действуют некоторые [ограничения](azure-resource-manager/resource-group-move-resources.md#app-service-limitations) . База данных ClearDB MySQL — это сторонняя служба, в связи с чем она не перемещается при переносе подписки Azure. Перенос базы данных MySQL необходимо выполнить до переноса ресурсов Azure, иначе базы данных ClearDB MySQL могут быть отключены. Сначала вручную перенесите свои базы данных, а затем измените подписку веб-приложения. 
+При переносе ресурсов из одной подписки в другую действуют некоторые [ограничения](azure-resource-manager/move-support-resources.md) . База данных ClearDB MySQL — это сторонняя служба, в связи с чем она не перемещается при переносе подписки Azure. Перенос базы данных MySQL необходимо выполнить до переноса ресурсов Azure, иначе базы данных ClearDB MySQL могут быть отключены. Сначала вручную перенесите свои базы данных, а затем измените подписку веб-приложения. 
 
 ## <a name="i-hit-the-spending-limit-on-my-subscription-i-removed-the-limit-and-my-app-service-is-online-however-the-database-is-not-accessible-how-do-i-re-enable-the-cleardb-database"></a>В моей подписке достигнута предельная сумма расходов. Предел был снят, и служба приложений работает, однако база данных недоступна. Как повторно включить базу данных ClearDB?
 Чтобы повторно включить базу данных, обратитесь в [службу поддержки ClearDB](https://www.cleardb.com/developers/help/support). Сообщите данные вашей подписки Azure и имя базы данных.

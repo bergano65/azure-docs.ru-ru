@@ -7,19 +7,20 @@ author: rkarlin
 manager: rkarlin
 editor: ''
 ms.assetid: d5750b3e-bfbd-4fa0-b888-ebfab7d9c9ae
-ms.service: sentinel
+ms.service: azure-sentinel
+ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/27/2019
 ms.author: rkarlin
-ms.openlocfilehash: 891f9fbd26b53b392ac84ed9d420b58558cd20c2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c9f2f011acb9d815202aa6c6a38ed364ffb0f9cd
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66258433"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67619651"
 ---
 # <a name="on-board-azure-sentinel-preview"></a>Предварительная версия встроенного Sentinel Azure
 
@@ -77,7 +78,7 @@ Azure Sentinel создает подключение к службам и при
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали о подключении к Azure Sentinel источников данных. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальные угрозы](quickstart-get-visibility.md).
 - Начало работы [обнаружение угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

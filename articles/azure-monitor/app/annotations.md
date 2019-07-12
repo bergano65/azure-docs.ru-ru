@@ -10,104 +10,105 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 05/31/2019
+ms.date: 07/01/2019
 ms.author: mbullwin
-ms.openlocfilehash: 6567d7f2ebaab5bd7b5bc8fb7b5a62970f169161
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e3ec202ba6126b150fb78c76591682f163018661
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66476171"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67604540"
 ---
 # <a name="annotations-on-metric-charts-in-application-insights"></a>Заметки к диаграммам метрик в Application Insights
 
-Заметки к диаграммам [обозревателя метрик](../../azure-monitor/app/metrics-explorer.md) показывают, где развернута новая сборка, а также отображают другие важные события. С их помощью легко увидеть, повлияли ли ваши изменения на производительность приложения. Заметки могут создаваться автоматически [системой сборки Azure DevOps Services](https://docs.microsoft.com/azure/devops/pipelines/tasks/). Заметки можно также создавать, чтобы помечать какие-либо события, используя PowerShell.
+Заметки на [обозревателя метрик](../../azure-monitor/app/metrics-explorer.md) диаграммы показывают, где развернута новая сборка или другие значимые события. Заметки позволяют легко см. в разделе ли внесенные изменения повлияли на производительность приложения. Они могут автоматически создавать [конвейеры Azure](https://docs.microsoft.com/azure/devops/pipelines/tasks/) системы сборки. Заметки можно также создавать, чтобы помечать какие-либо события, используя PowerShell.
 
 > [!NOTE]
-> В этой статье описывается **классический интерфейс для работы с метриками**, который не рекомендуется к использованию. Сейчас заметки доступны только в классическом интерфейсе и в **[книгах](../../azure-monitor/app/usage-workbooks.md)** . Сведения об интерфейсе для работы с метриками, который используется сейчас, см. в [этой статье](../../azure-monitor/platform/metrics-charts.md).
+> В этой статье описывается **классический интерфейс для работы с метриками**, который не рекомендуется к использованию. Сейчас заметки доступны только в классическом интерфейсе и в **[книгах](../../azure-monitor/app/usage-workbooks.md)** . Дополнительные сведения о текущей деятельности метрики, см. в разделе [дополнительные возможности обозревателя метрик Azure](../../azure-monitor/platform/metrics-charts.md).
 
 ![Пример заметок](./media/annotations/0-example.png)
 
-## <a name="release-annotations-with-azure-devops-services-build"></a>Заметки к выпуску со сборкой Azure DevOps Services
+## <a name="release-annotations-with-azure-pipelines-build"></a>Azure конвейеры сборки заметки о выпуске
 
-Заметки к выпуску — это функция облачной службы Azure Pipelines в службе Azure DevOps Services.
+Заметки к выпуску являются компонентом облачной службы Azure конвейеры DevOps в Azure.
 
 ### <a name="install-the-annotations-extension-one-time"></a>Установка расширения заметок (однократно)
-Чтобы получить возможность создания заметок к выпуску, необходимо установить одно из расширений Azure DevOps Services, доступных в Visual Studio Marketplace.
+Чтобы иметь возможность создания заметок к выпуску, необходимо установить один из доступных расширений Azure DevOps в Visual Studio Marketplace.
 
-1. Войдите в проект [Azure DevOps Services](https://azure.microsoft.com/services/devops/).
-2. В Visual Studio Marketplace [найдите расширение заметок к выпуску](https://marketplace.visualstudio.com/items/ms-appinsights.appinsightsreleaseannotations) и добавьте его в свою организацию Azure DevOps Services.
-
-![Выберите организацию Azure DevOps, а затем установите.](./media/annotations/1-install.png)
-
-Для вашей организации Azure DevOps Services это необходимо сделать всего один раз. Теперь вы можете настроить заметки к выпуску для любого проекта в организации.
+1. Войдите в ваш [Azure DevOps](https://azure.microsoft.com/services/devops/) проекта.
+   
+1. В Visual Studio Marketplace [расширение заметок к выпуску](https://marketplace.visualstudio.com/items/ms-appinsights.appinsightsreleaseannotations) странице, выберите вашу организацию Azure DevOps, а затем выберите **установить** для добавления расширения к вашей организации DevOps в Azure.
+   
+   ![Выберите организацию Azure DevOps, а затем выберите Install.](./media/annotations/1-install.png)
+   
+Необходимо установить расширение один раз для вашей организации DevOps в Azure. Теперь можно настроить заметки к выпуску для любого проекта в вашей организации.
 
 ### <a name="configure-release-annotations"></a>Настройка заметок к выпуску
 
-Для каждого шаблона выпуска Azure DevOps Services необходимо получить отдельный ключ API.
+Создайте отдельный ключ API для каждого из шаблонов выпуска Azure конвейеров.
 
-1. Войдите в [портал Microsoft Azure](https://portal.azure.com) и откройте ресурс Application Insights, отслеживающий вашего приложения. (Или [создайте новый](../../azure-monitor/app/app-insights-overview.md), если вы этого еще не сделали.)
-2. Откройте **доступ через API** вкладка и копирования **идентификатор Application Insights**.
+1. Войдите в [портала Azure](https://portal.azure.com) и откройте ресурс Application Insights, отслеживающий вашего приложения. Или если у вас нет, [создания ресурса Application Insights](../../azure-monitor/app/app-insights-overview.md).
    
-    ![На сайте portal.azure.com откройте ресурс Application Insights и выберите "Параметры". Откройте "Доступ к API". Скопируйте идентификатор приложения.](./media/annotations/2-app-id.png)
-
-4. В отдельном окне браузера откройте (или создайте) шаблон выпуска, который управляет развертываниями из Azure DevOps Services.
+1. Откройте **доступ через API** вкладка и копирования **идентификатор Application Insights**.
    
-    Добавьте задачу и выберите в меню задачу заметок к выпуску Application Insights.
+   ![В разделе доступ через API скопируйте идентификатор приложения.](./media/annotations/2-app-id.png)
 
-   ![Щелкните знак «плюс», чтобы добавить задачу и выберите заметки к выпуску Application Insights. Вставьте ИД Application Insights.](./media/annotations/3-add-task.png)
-
-    Вставить **идентификатор приложения** , скопированный на вкладке "доступ через API".
+1. В отдельном окне браузера откройте или создайте шаблон выпуска, который управляет развертываниями Azure конвейеров.
    
-    ![Вставьте идентификатор Application Insights](./media/annotations/4-paste-app-id.png)
-
-5. В окне Azure создайте ключ API и скопируйте его.
+1. Выберите **добавить задачу**, а затем выберите **заметки к выпуску Application Insights** задач в меню.
    
-    ![На вкладке "доступ через API" в окне Azure нажмите кнопку "Создать ключ API".](./media/annotations/5-create-api-key.png)
-
-    ![На вкладке ключей создать API ввести комментарий, проверьте написать заметки и нажмите кнопку Создать ключ. Скопируйте новый ключ.](./media/annotations/6-create-api-key.png)
-
-6. Перейдите на вкладку "Конфигурация" шаблона выпуска.
+   ![Выберите Добавление задач и заметок к выпуску Application Insights.](./media/annotations/3-add-task.png)
    
-    Создайте определение переменной для `ApiKey`.
+1. В разделе **идентификатор приложения**, вставьте идентификатор Application Insights, скопированный из **доступ через API** вкладки.
    
-    Вставьте ключ API в определение переменной ApiKey.
+   ![Вставьте идентификатор Application Insights](./media/annotations/4-paste-app-id.png)
    
-    ![В окне службам DevOps в Azure перейдите на вкладку переменных и щелкните "Добавить". Задайте имя, ApiKey и в значение, вставьте ключ, который был создан и щелкните значок замка.](./media/annotations/7-paste-api-key.png)
-1. Наконец, **сохраните** конвейер выпуска.
+1. Вернитесь в Application Insights **доступ через API** выберите **Создание ключа API**. 
+   
+   ![На вкладке "доступ через API" выберите Создание ключа API.](./media/annotations/5-create-api-key.png)
+   
+1. В **Создание ключа API** выберите окно, введите описание, **записи заметок**, а затем выберите **создать ключ**. Скопируйте новый ключ.
+   
+   ![В окне API для создания ключа введите описание, выберите запись заметок и выберите создать ключ.](./media/annotations/6-create-api-key.png)
+   
+1. В окне шаблон выпуска на **переменных** выберите **добавить** создать определение переменной для нового ключа API.
 
+1. В разделе **имя**, введите `ApiKey`и в разделе **значение**, вставьте ключ API, скопированный из **доступ через API** вкладки.
+   
+   ![На вкладке "переменные DevOps Azure" выберите Add, имя переменной ApiKey и вставьте ключ API в значением.](./media/annotations/7-paste-api-key.png)
+   
+1. Выберите **Сохранить** в окне шаблон основной выпуск, чтобы сохранить шаблон.
 
 ## <a name="view-annotations"></a>Просмотр заметок
-Теперь при каждом развертывании нового выпуска с помощью шаблона выпуска заметки будут отправляться в Application Insights. Заметки будут отображаться на диаграммах в обозревателе метрик.
+Теперь при использовании шаблона выпуска для развертывания нового выпуска заметки отправляется в Application Insights. Заметки отображаются на диаграммах в **обозревателя метрик**.
 
-Щелкните любой маркер заметки (света Серая стрелка) чтобы открыть сведения о выпуске, включая запросившую сторону, ветвь системы управления версиями, выпуск конвейера, среду и многое другое.
+Выберите любой маркер заметки (света Серая стрелка) чтобы открыть сведения о выпуске, включая запрашивающей стороны, ветвь системы управления версиями, конвейер выпуска и среды.
 
-![Щелкните любой маркер заметки о выпуске.](./media/annotations/8-release.png)
+![Выберите маркер заметки о выпуске.](./media/annotations/8-release.png)
 
 ## <a name="create-custom-annotations-from-powershell"></a>Создание настраиваемых заметок в PowerShell
-Вы также можете создать заметки из любого необходимого процесса (без использования Azure DevOps Services). 
+Можно использовать [CreateReleaseAnnotation](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1) сценарий PowerShell из GitHub, чтобы создать аннотации из любого процесса, вам нравится, без использования DevOps в Azure. 
 
+1. Создать локальную копию [CreateReleaseAnnotation.ps1](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1).
+   
+1. Следуйте инструкциям в предыдущей процедуре, чтобы получить идентификатор приложения Insights и создайте ключ API из Application Insights **доступ через API** вкладки.
+   
+1. Вызовите сценарий PowerShell следующим кодом, заменив заполнители в угловых скобках своими значениями. `-releaseProperties` Являются необязательными. 
+   
+   ```powershell
+   
+        .\CreateReleaseAnnotation.ps1 `
+         -applicationId "<applicationId>" `
+         -apiKey "<apiKey>" `
+         -releaseName "<releaseName>" `
+         -releaseProperties @{
+             "ReleaseDescription"="<a description>";
+             "TriggerBy"="<Your name>" }
+   ```
 
-1. Создайте локальную копию [сценария PowerShell из GitHub](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1).
+Можно изменить сценарий, например для создания заметок за последний.
 
-2. Получение идентификатора приложения и создайте ключ API на вкладке "доступ через API".
-
-3. Вызовите сценарий следующим образом.
-
-```PS
-
-     .\CreateReleaseAnnotation.ps1 `
-      -applicationId "<applicationId>" `
-      -apiKey "<apiKey>" `
-      -releaseName "<myReleaseName>" `
-      -releaseProperties @{
-          "ReleaseDescription"="a description";
-          "TriggerBy"="My Name" }
-```
-
-Сценарий легко изменить, например, чтобы создать заметки для предыдущих выпусков.
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание рабочих элементов](../../azure-monitor/app/diagnostic-search.md#create-work-item)
 * [Автоматизация с помощью PowerShell](../../azure-monitor/app/powershell.md)

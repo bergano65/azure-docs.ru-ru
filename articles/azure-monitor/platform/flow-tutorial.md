@@ -11,19 +11,19 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 09/29/2017
 ms.author: bwren
-ms.openlocfilehash: c3732dd2fa87b00eec38f88ab828605b33567235
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 46a4544b86648ee99a751d4793013f6104d1d9df
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60396602"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807036"
 ---
 # <a name="automate-azure-monitor-log-processes-with-the-connector-for-microsoft-flow"></a>Автоматизация процессов журнала Azure Monitor с помощью соединителя для Microsoft Flow
 [Microsoft Flow](https://ms.flow.microsoft.com) позволяет создавать автоматизированные рабочие процессы, используя сотни действий для различных служб. Выходные данные одного действия могут использоваться в качестве входных данных другого действия, что позволяет интегрировать различные службы.  Соединитель Azure Log Analytics для Microsoft Flow позволяет создавать рабочие процессы, которые включают данные, полученные запросами журнала из рабочих областей Log Analytics в Azure Monitor.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-Например, с помощью Microsoft Flow вы можете использовать данные журнала Azure Monitor в уведомлении по электронной почте от Office 365, создавать ошибку в Azure DevOps или отправлять сообщение Slack.  Вы можете запускать рабочие процессы с помощью простого расписания или какого-либо действия в подключенной службе, например при получении почты или твита.  
+Например можно использовать Microsoft Flow использовать данные журналов Azure Monitor в уведомление по электронной почте из Office 365, создать ошибку в DevOps в Azure или отправить сообщение Slack.  Вы можете запускать рабочие процессы с помощью простого расписания или какого-либо действия в подключенной службе, например при получении почты или твита.  
 
 В этой статье содержится руководство о том, как создать поток, который автоматически отправляет по электронной почте результаты запроса журнала Azure Monitor. Это лишь один из примеров того, как можно использовать соединитель Log Analytics в Microsoft Flow. 
 
@@ -77,7 +77,7 @@ ms.locfileid: "60396602"
 3. По завершении потока проверьте почту получателя, которую вы указали.  Вы должны получить сообщение с текстом, подобным этому:<br><br>![Пример электронного сообщения](media/flow-tutorial/flow08.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о запросах журнала в Azure Monitor см. в [этой статье](../log-query/log-query-overview.md).
 - Дополнительные сведения о [Microsoft Flow](https://ms.flow.microsoft.com).

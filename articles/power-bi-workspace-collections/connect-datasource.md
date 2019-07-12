@@ -2,18 +2,18 @@
 title: Подключение к источнику данных в коллекциях рабочих областей Power BI | Документация Майкрософт
 description: Сведения о подключении к источнику данных в коллекциях рабочих областей Power BI.
 services: power-bi-workspace-collections
-ms.service: power-bi-workspace-collections
+ms.service: power-bi-embedded
 author: rkarlin
 ms.author: rkarlin
 ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
-ms.openlocfilehash: 721458c5725e912d801b307ac05f3fde0776580e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1ce666a017c1e5ac25b11fe1c22cdb37746f75df
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64708758"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67669156"
 ---
 # <a name="connect-to-a-data-source"></a>Подключение к источнику данных
 
@@ -24,7 +24,7 @@ ms.locfileid: "64708758"
 
 Ниже описаны различия между **импортом** и **DirectQuery**.
 
-| Импортировать | DirectQuery |
+| Импорт | DirectQuery |
 | --- | --- |
 | Таблицы, столбцы и *данные* импортируются или копируются в набор данных отчета. Чтобы определить изменения в базовых данных, вам нужно повторно обновить или импортировать готовый текущий набор данных. |В набор данных отчета импортируются или копируются только *таблицы и столбцы* . Вы всегда просматриваете самые последние данные. |
 
@@ -37,7 +37,7 @@ ms.locfileid: "64708758"
 
 **DirectQuery**
 * База данных SQL Azure
-* Хранилище данных SQL Azure
+* Хранилище данных SQL Azure
 
 **Импорт**
 

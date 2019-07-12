@@ -10,13 +10,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/18/2018
-ms.author: sumeet.mittal
-ms.openlocfilehash: b39f365c8b66f7cab074a20bc574803e12f93422
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: sumi
+ms.openlocfilehash: 86726eefb53638036a4e9207c648bf5ffe6c866e
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61033906"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67595385"
 ---
 # <a name="virtual-network-service-endpoint-policies-preview"></a>Политики конечных точек служб для виртуальной сети (предварительная версия)
 
@@ -45,7 +45,7 @@ __Служба хранилища Azure__. WestCentralUS, WestUS2, NorthCentralU
 
    Политики конечных точек — это горизонтально масштабируемое высокодоступное решение, позволяющее фильтровать трафик служб Azure из виртуальных сетей через конечные точки служб. Обслуживание центральных сетевых устройств обработки этого трафика в виртуальных сетях не требует дополнительных расходов.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 - С помощью политик конечных точек вы можете ограничивать трафик из виртуальной сети к определенным ресурсам служб Azure. В предварительной версии реализована поддержка политик конечных точек службы хранилища Azure. 
 - Политика конечной точки настраивается в подсети виртуальной сети. Чтобы применить политику, в подсети необходимо включить конечные точки всех служб, перечисленных в этой политике.
@@ -113,7 +113,7 @@ __Служба хранилища Azure__. WestCentralUS, WestUS2, NorthCentralU
 
      - Среда Службы приложений Azure
      - Кэш Redis для Azure
-     - Управление API Azure
+     - Cлужба управления Azure API
      - Управляемый экземпляр SQL Azure
      - Доменные службы Azure Active Directory
      - Шлюз приложений Azure (классическая модель)

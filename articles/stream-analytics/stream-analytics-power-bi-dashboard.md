@@ -8,12 +8,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/11/2019
-ms.openlocfilehash: 0e67a56e3d723874ed93fc8dcad91e3063d923ed
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c415bdecdaf55f3068dcd804ab34de402fe7a31f
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67076189"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67612295"
 ---
 # <a name="stream-analytics-and-power-bi-a-real-time-analytics-dashboard-for-streaming-data"></a>Stream Analytics и Power BI: панель мониторинга аналитики для потоковой передачи данных в режиме реального времени
 
@@ -24,7 +24,7 @@ Azure Stream Analytics позволяет воспользоваться одн�
 Посмотрите [видео](https://www.youtube.com/watch?v=SGUpT-a99MA) об этом сценарии.
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы начать, у вас должны быть следующие компоненты:
 
@@ -100,7 +100,7 @@ Azure Stream Analytics позволяет воспользоваться одн�
    GROUP BY TumblingWindow(Duration(second, 1))
    ```
 
-4. Выберите команду **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
 
 ## <a name="test-the-query"></a>Проверка запроса
@@ -202,7 +202,7 @@ Azure Stream Analytics позволяет воспользоваться одн�
 
 ![Формула для вычисления длительности окна в секундах](./media/stream-analytics-power-bi-dashboard/compute-window-seconds-equation.png)  
 
-Например:
+Пример:
 
 * У вас есть 1000 устройств, отправляющих данные с интервалами в 1 секунду.
 * Вы используете лицензию Power BI Pro, которая поддерживает 1 000 000 строк в час.
@@ -242,5 +242,5 @@ Azure Stream Analytics позволяет воспользоваться одн�
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
-* [Azure Stream Analytics query language reference](https://msdn.microsoft.com/library/azure/dn834998.aspx) (Справочник по языку запросов Azure Stream Analytics).
+* [Azure Stream Analytics query language reference](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference) (Справочник по языку запросов Azure Stream Analytics).
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

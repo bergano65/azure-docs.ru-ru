@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c43498a7829a43fad331841aca045f52ae680be
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 54a99d001f8cb59af3042ce8b6849a2cd9480e99
+ms.sourcegitcommit: 0ebc62257be0ab52f524235f8d8ef3353fdaf89e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67481470"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67724000"
 ---
 # <a name="header-based-authentication-for-single-sign-on-with-application-proxy-and-pingaccess"></a>Аутентификация на основе заголовка для единого входа с использованием прокси приложения и PingAccess
 
@@ -53,10 +53,11 @@ ms.locfileid: "67481470"
 Соединитель прокси приложения — это служба Windows Server, которая направляет трафик от удаленных сотрудников к опубликованным приложениям. Более подробные инструкции по установке, см. в разделе [руководства: Добавление локального приложения для удаленного доступа через прокси приложения в Azure Active Directory](application-proxy-add-on-premises-application.md).
 
 1. Войдите в [портал Azure Active Directory](https://aad.portal.azure.com/) как администратор приложений. **Центр администрирования Azure Active Directory** появится страница.
-2. Выберите **Azure Active Directory** > **прокси приложения** > **скачать службу соединителя**. **Скачивания соединителя прокси приложения** появится страница.
+1. Выберите **Azure Active Directory** > **прокси приложения** > **скачать службу соединителя**. **Скачивания соединителя прокси приложения** появится страница.
 
    ![Скачивание соединителя прокси приложения](./media/application-proxy-configure-single-sign-on-with-ping-access/application-proxy-connector-download.png)
-3. Выполните инструкции по установке.
+
+1. Выполните инструкции по установке.
 
 Загрузка connector должен автоматически включить прокси приложения для каталога, но если это не так, можно выбрать **Включение прокси приложения**.
 
@@ -138,8 +139,8 @@ ms.locfileid: "67481470"
 
 | Имя поля в Azure AD | Имя поля PingAccess | Формат данных |
 | --- | --- | --- |
-| **Идентификатор приложения (клиент)** | **Идентификатор клиента** | GUID |
-| **Идентификатор каталог (клиент)** | **Издатель** | GUID |
+| **Application (client) ID** (Идентификатор приложения (клиент)) | **Идентификатор клиента** | GUID |
+| **Идентификатор каталога (клиент)** | **Издатель** | GUID |
 | `PingAccess key` | **Секрет клиента** | Случайная строка |
 
 Для сбора этой информации:
@@ -205,7 +206,7 @@ PATCH https://graph.windows.net/myorganization/applications/<object_id_GUID_of_y
 
 ### <a name="use-of-claims-mapping-policy-optional"></a>Использование утверждений, сопоставление политики (необязательно)
 
-[Утверждения сопоставления политики (Предварительная версия)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-claims-mapping#claims-mapping-policy-properties/) для атрибутов, которые не существуют в Azure AD. Сопоставление утверждений позволяет переносить старых локальных приложений в облако путем добавления дополнительных настраиваемых утверждений, связанных с ADFS или пользователь объектов
+[Утверждения сопоставления политики (Предварительная версия)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-claims-mapping#claims-mapping-policy-properties) для атрибутов, которые не существуют в Azure AD. Сопоставление утверждений позволяет переносить старых локальных приложений в облако путем добавления дополнительных настраиваемых утверждений, связанных с ADFS или пользователь объектов
 
 Чтобы сделать приложение использовать настраиваемое утверждение и включение дополнительных полей, убедитесь, что вы уже также [создается политика сопоставления настраиваемых утверждений и назначается приложение](../develop/active-directory-claims-mapping.md#claims-mapping-policy-assignment).
 
@@ -239,7 +240,7 @@ Add-AzureADServicePrincipalPolicy -Id "<<The object Id of the Enterprise Applica
 
 После завершения этих шагов, ваше приложение должно быть приступить к работе. Чтобы протестировать его, откройте браузер и перейдите на внешний URL-адрес, созданный при публикации приложения в Azure. Вход с тестовой учетной записи, которое было назначено приложение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка PingAccess для Azure AD для защиты приложений, опубликованных с помощью прокси приложения Microsoft Azure AD](https://docs.pingidentity.com/bundle/paaad_m_ConfigurePAforMSAzureADSolution_paaad43/page/pa_c_PAAzureSolutionOverview.html)
 - [Единый вход в приложениях в Azure Active Directory](what-is-single-sign-on.md)

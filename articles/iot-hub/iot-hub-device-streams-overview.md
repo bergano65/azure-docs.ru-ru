@@ -7,12 +7,12 @@ ms.service: iot-hub
 ms.topic: conceptual
 ms.date: 01/15/2019
 ms.author: robinsh
-ms.openlocfilehash: 6c0fa0a3166dce5aa6adc71a46555a24d899c96b
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 86f8c6e527f58a7c4cfca6233165f0ab05426409
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67441357"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672568"
 ---
 # <a name="iot-hub-device-streams-preview"></a>Потоки устройств Центра Интернета вещей (предварительная версия)
 
@@ -82,7 +82,7 @@ ms.locfileid: "67441357"
 
 ![«Конечные точки потока на устройство»](./media/iot-hub-device-streams-overview/device-stream-in-portal.png)
 
-Кроме того, информацию о конечных точках, в частности ключи `property.hostname` и `property.deviceStreams`, также можно получить с помощью Azure CLI в разделе свойств центра.
+Кроме того, конечные точки можно получить сведения в частности, с помощью Azure CLI в разделе "Свойства" Центр `property.hostname` и `property.deviceStreams` ключи.
 
 ```azurecli-interactive
 az iot hub devicestream show --name <YourIoTHubName>
@@ -208,7 +208,7 @@ az iot hub devicestream show --name <YourIoTHubName>
 
 * [Устройства программы на языке C](quickstart-device-streams-proxy-c.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Используйте приведенные ниже ссылки для получения дополнительных сведений о потоках устройства.
 

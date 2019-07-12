@@ -4,7 +4,7 @@ description: Быстрое создание и запуск базы данны
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: romitgirdhar
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 490ac613adac968cc323c2d8351b59aece181b68
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 26c6abc75e653b489a7385c423a9b2d00a4ed063
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66153900"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705308"
 ---
 # <a name="create-an-oracle-database-in-an-azure-vm"></a>Создание базы данных Oracle на виртуальной машине Azure
 
@@ -323,7 +323,7 @@ export ORACLE_SID=cdb1
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте о других [решениях Oracle в Azure](oracle-considerations.md). 
 

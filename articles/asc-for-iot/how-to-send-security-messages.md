@@ -2,24 +2,25 @@
 title: Отправка сообщений безопасности в центре безопасности Azure для предварительной версии Интернета вещей | Документация Майкрософт
 description: Узнайте, как отправлять сообщения безопасности с помощью центра безопасности Azure для Интернета вещей.
 services: asc-for-iot
-ms.service: ascforiot
+ms.service: asc-for-iot
 documentationcenter: na
 author: mlottner
 manager: rkarlin
 editor: ''
 ms.assetid: c611bb5c-b503-487f-bef4-25d8a243803d
+ms.subservice: asc-for-iot
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/26/2019
 ms.author: mlottner
-ms.openlocfilehash: a91a3538a9c176e3c76e351eb53eb84decc85938
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 73335773695059b3c2afd121a0dd39ada8d28bb0
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65200534"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67618091"
 ---
 # <a name="send-security-messages-sdk"></a>Пакет SDK для отправки сообщений системы безопасности
 
@@ -156,7 +157,7 @@ static void SendConfirmCallback(IOTHUB_CLIENT_CONFIRMATION_RESULT result, void* 
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Просмотрите [обзор](overview.md) службы ASC для Интернета вещей.
 - Ознакомьтесь с дополнительными сведениями об [архитектуре](architecture.md) ASC для Интернета вещей.
 - Включите [службу](quickstart-onboard-iot-hub.md).

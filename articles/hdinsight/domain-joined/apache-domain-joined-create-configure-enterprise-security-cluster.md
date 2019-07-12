@@ -6,14 +6,14 @@ ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
-ms.topic: howto
+ms.topic: conceptual
 ms.date: 05/09/2019
-ms.openlocfilehash: e9cb9a902cf60fbd3b297a72a7dfa836ee18c835
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
-ms.translationtype: HT
+ms.openlocfilehash: 98bd222212d616a5d2c608779c607bb431d184b9
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67484587"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657326"
 ---
 # <a name="create-and-configure-enterprise-security-package-clusters-in-azure-hdinsight"></a>Создать и настроить кластеры пакет безопасности предприятия в Azure HDInsight
 
@@ -49,7 +49,7 @@ ms.locfileid: "67484587"
         ![Создание шаблона виртуальной Машины Azure и леса AD](./media/apache-domain-joined-create-configure-enterprise-security-cluster/create-azure-vm-ad-forest.png)
 
     1. Нажмите кнопку **покупки**
-    1. Мониторинг развертывания и дождитесь ее завершения.
+    1. Отслеживая развертывание, дождитесь его завершения.
     1. Подтвердите создание ресурсов в группе ресурсов `OnPremADVRG`.
 
 ## <a name="configure-users-and-groups-for-cluster-access"></a>Настройка пользователей и группы для доступа к кластеру
@@ -219,7 +219,7 @@ ms.locfileid: "67484587"
 
     ![Выберите сеть](./media/apache-domain-joined-create-configure-enterprise-security-cluster/image086.png)
 
-1. На **группы администраторов** экрана, вы увидите уведомление, в котором создается группа с именем **Администраторы контроллера домена AAD** уже создан для этой группы управления. При необходимости можно изменить членство данной группы, но он не является обязательным для действия в этой статье. Последовательно выберите **ОК**.
+1. На **группы администраторов** экрана, вы увидите уведомление, в котором создается группа с именем **Администраторы контроллера домена AAD** уже создан для этой группы управления. При необходимости можно изменить членство данной группы, но он не является обязательным для действия в этой статье. Нажмите кнопку **ОК**.
 
     ![представление группы администраторов](./media/apache-domain-joined-create-configure-enterprise-security-cluster/image088.png)
 
@@ -306,12 +306,12 @@ New-SelfSignedCertificate -Subject hdifabrikam.com `
         |---|---|
         | Source | Any |
         | Source port ranges | * |
-        | Место назначения | Any |
+        | Назначение | Any |
         | Destination port range | 636 |
         | Протокол | Any |
-        | Action | Allow |
-        | Приоритет | <Desired Number> |
-        | Name | Port_LDAP_636 |
+        | Action | РАЗРЕШИТЬ |
+        | Приоритет | \<Количество пропущенных периодических сигналов\> |
+        | ИМЯ | Port_LDAP_636 |
 
     ![правило безопасности для входящего трафика](./media/apache-domain-joined-create-configure-enterprise-security-cluster/add-inbound-security-rule.png)
 
@@ -345,7 +345,7 @@ New-SelfSignedCertificate -Subject hdifabrikam.com `
 1. Настройка пользовательской службы DNS на **HDIFabrikam AADDSVNET** виртуальной сети.
     1. Перейдите на портал Azure > **групп ресурсов** > **OnPremADVRG** > **HDIFabrikam AADDSVNET**  >   **DNS-серверы**.
     1. Выберите **Custom** и введите `10.0.0.4` и `10.0.0.5`.
-    1. Выберите команду **Сохранить**.
+    1. Нажмите кнопку **Сохранить**.
 
         ![сохранить параметры пользовательской службы dns](./media/apache-domain-joined-create-configure-enterprise-security-cluster/image123.png)
 
@@ -378,6 +378,6 @@ New-SelfSignedCertificate -Subject hdifabrikam.com `
 
 Если по этой учетной записи, затем кластера ESP правильно настроен для синхронизации с локальной службой active directory.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Общие сведения об обеспечении безопасности Apache Hadoop с помощью Корпоративного пакета безопасности](apache-domain-joined-introduction.md)

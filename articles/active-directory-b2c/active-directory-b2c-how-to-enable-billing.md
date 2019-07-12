@@ -10,12 +10,12 @@ ms.workload: identity
 ms.date: 01/24/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: d2440b638a9c8eb27505b747d26917de8032e6cd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5cc6c8b4947f8c5ebeb27be2dc82f323f84a6902
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66510123"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67835421"
 ---
 # <a name="link-an-azure-subscription-to-an-azure-active-directory-b2c-tenant"></a>Связывание подписки Azure с клиентом Azure Active Directory B2C
 
@@ -45,9 +45,9 @@ ms.locfileid: "66510123"
 
 ## <a name="find-azure-ad-b2c-in-the-azure-marketplace"></a>Поиск Azure AD B2C в Azure Marketplace
 
-Нажмите кнопку **Создать ресурс**. В поле **Поиск по Marketplace** введите `B2C`.
+Нажмите кнопку **Создать ресурс**. В **поиск по Marketplace** введите `Active Directory B2C`.
 
-![Выделенная кнопка добавления и поле поиска по Marketplace с текстом Azure Active Directory B2C](../../includes/media/active-directory-b2c-create-tenant/find-azure-ad-b2c.png)
+![Снимок экрана портала с помощью «Active Directory B2C» в Marketplace поиск](../../includes/media/active-directory-b2c-create-tenant/find-azure-ad-b2c.png)
 
 В списке результатов выберите **Azure AD B2C**.
 
@@ -67,7 +67,7 @@ ms.locfileid: "66510123"
 
 Выберите группу ресурсов и расположение группы ресурсов. Этот выбор не оказывает влияния на расположение, производительность и статус оплаты для этого клиента B2C.
 
-![Создание ресурса B2C](./media/active-directory-b2c-how-to-enable-billing/createresourceb2c.png)
+![Страница создания ресурса Azure AD B2C на портале Azure](./media/active-directory-b2c-how-to-enable-billing/createresourceb2c.png)
 
 ## <a name="manage-your-azure-ad-b2c-tenant-resources"></a>Управление ресурсами клиента Azure AD B2C
 
@@ -80,7 +80,15 @@ ms.locfileid: "66510123"
 - Отправить запрос на техническую поддержку.
 - для перемещения ресурса "Клиент B2C" в другую подписку Azure или в другую группу ресурсов.
 
-![Параметры ресурсов B2C](./media/active-directory-b2c-how-to-enable-billing/b2cresourcesettings.png)
+![Параметры ресурсов B2C на портале Azure](./media/active-directory-b2c-how-to-enable-billing/b2cresourcesettings.PNG)
+
+## <a name="change-the-azure-ad-b2c-tenant-billing-subscription"></a>Смена клиента Azure AD B2C, выставления счетов подписки
+
+Клиенты Azure AD B2C можно переместить в другую подписку, если исходная и целевая подписка существует в одном клиенте Azure Active Directory.
+
+Узнайте, как переместить ресурсы Azure, таких как клиент Azure AD B2C в другую подписку, см. в разделе [перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/resource-group-move-resources.md).
+
+Прежде чем начать перемещение, не забудьте прочитать всю статью, чтобы полностью понять ограничения и требования для такого перехода. В дополнение к инструкциям по перемещению ресурсы он включает критически важные сведения, как и контрольный список до перемещения и проверке операции перемещения.
 
 ## <a name="known-issues"></a>Известные проблемы
 
@@ -88,7 +96,7 @@ ms.locfileid: "66510123"
 
 Пользователь может установить региональное ограничение на создание ресурсов Azure. Такие ограничения могут помешать созданию ресурса Azure AD B2C. Для устранения проблемы снимите это ограничение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Когда вы выполните эти шаги для каждого клиента Azure AD B2C, в выбранной подписке Azure начнется выставление счетов в соответствии с используемым соглашением Azure Direct или Enterprise.
 

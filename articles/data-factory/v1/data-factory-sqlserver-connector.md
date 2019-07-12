@@ -13,15 +13,15 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: be36f9ab881f2375b14ba0ea36038f9e840d199f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1e70611d438678ded1260dd00a04960c798fdde5
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66156495"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67836222"
 ---
 # <a name="move-data-to-and-from-sql-server-on-premises-or-on-iaas-azure-vm-using-azure-data-factory"></a>Перемещение данных в базу данных SQL Server и обратно на локальных компьютерах и виртуальных машинах Azure IaaS с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
+> [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](data-factory-sqlserver-connector.md)
 > * [Версия 2 (текущая)](../connector-sql-server.md)
 
@@ -51,12 +51,12 @@ ms.locfileid: "66156495"
 
 Вы можете установить шлюз на тот же локальный компьютер или экземпляр облачной виртуальной машины, на котором установлена система SQL Server, однако для более эффективной работы мы рекомендуем устанавливать их на разные компьютеры. Размещение шлюза и SQL Server на разных компьютерах уменьшает конкуренцию за ресурсы.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 Можно создать конвейер с действием копирования, которое перемещает данные из базы данных SQL Server или в нее с помощью различных инструментов и интерфейсов API.
 
 Проще всего создать конвейер с помощью **мастера копирования**. Пошаговые инструкции см. в [руководстве Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md), где приведено краткое пошаговое руководство по созданию конвейера с помощью мастера копирования данных.
 
-Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
+Для создания конвейера можно использовать указанные ниже средства. **Visual Studio**, **Azure PowerShell**, **шаблона Azure Resource Manager**, **.NET API**, и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги:
 
@@ -74,7 +74,7 @@ ms.locfileid: "66156495"
 
 В следующей таблице содержится описание элементов JSON, которые относятся к связанной службе SQL Server.
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
 | type |Свойству type необходимо присвоить значение **OnPremisesSqlServer**. |Да |
 | connectionString |Укажите сведения о параметре connectionString, необходимые для подключения к локальной базе данных SQL Server с помощью проверки подлинности SQL или проверки подлинности Windows. |Да |
@@ -131,7 +131,7 @@ ms.locfileid: "66156495"
 
 Раздел typeProperties во всех типах наборов данных разный. В нем содержатся сведения о расположении данных в хранилище данных. Раздел **typeProperties** для набора данных с типом **SqlServerTable** содержит следующие свойства.
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
 | tableName |Имя таблицы или представления в экземпляре базы данных SQL Server, на который ссылается связанная служба. |Да |
 
@@ -148,7 +148,7 @@ ms.locfileid: "66156495"
 ### <a name="sqlsource"></a>SqlSource
 Когда источник в действии копирования относится к типу **SqlSource**, в разделе **typeProperties** доступны указанные ниже свойства:
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
+| Свойство | Описание | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | sqlReaderQuery |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, select * from MyTable. Может ссылаться на несколько таблиц из базы данных, на которую ссылается входной набор данных. Если не указано другое, выполняется инструкция SQL select from MyTable. |Нет |
 | sqlReaderStoredProcedureName |Имя хранимой процедуры, которая считывает данные из исходной таблицы. |Имя хранимой процедуры. Последней инструкцией SQL должна быть инструкция SELECT в хранимой процедуре. |Нет |
@@ -166,7 +166,7 @@ ms.locfileid: "66156495"
 ### <a name="sqlsink"></a>SqlSink
 **SqlSink** поддерживает указанные ниже свойства.
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
+| Свойство | Описание | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | writeBatchTimeout |Время ожидания до выполнения операции пакетной вставки, пока не завершится срок ее действия. |Интервал времени<br/><br/> Пример: "00:30:00" (30 минут). |Нет |
 | writeBatchSize |Вставляет данные в таблицу SQL, когда размер буфера достигает значения writeBatchSize. |Целое число (количество строк) |Нет (по умолчанию 10 000) |
@@ -178,7 +178,7 @@ ms.locfileid: "66156495"
 
 
 ## <a name="json-examples-for-copying-data-from-and-to-sql-server"></a>Примеры JSON для копирования данных в SQL Server и обратно
-Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). В следующих примерах показано, как копировать данные в базу данных SQL Server и хранилище BLOB-объектов Azure и обратно. Тем не менее данные можно копировать **непосредственно** из любых источников в любой указанный [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемник. Это делается с помощью действия копирования в фабрике данных Azure.
+Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). В следующих примерах показано, как копировать данные в базу данных SQL Server и хранилище BLOB-объектов Azure и обратно. Тем не менее данные можно копировать **непосредственно** из любых источников в любой указанный [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемник. Это делается с помощью действия копирования в фабрике данных Azure.
 
 ## <a name="example-copy-data-from-sql-server-to-azure-blob"></a>Пример: копирование данных из SQL Server в хранилище BLOB-объектов Azure
 В примере ниже используется следующее:
@@ -665,7 +665,7 @@ create table dbo.TargetTbl
 | FILESTREAM attribute (varbinary(max)) |Byte[] |
 | Float |Double |
 | image |Byte[] |
-| int |Int32 |
+| ssNoversion |Int32 |
 | money |Decimal |
 | nchar |String, Char[] |
 | ntext |String, Char[] |

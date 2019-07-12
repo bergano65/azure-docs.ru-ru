@@ -6,13 +6,13 @@ ms.author: cynthn
 ms.date: 05/02/2019
 ms.topic: article
 ms.service: virtual-machines-linux
-manager: jeconnoc
-ms.openlocfilehash: 31ef53abcf9b416500ee70e42cc3cbd12cb11f35
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+manager: gwallace
+ms.openlocfilehash: 9155f6fc1243f0d2e4d63f2718ccfd6846ebbc50
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65159545"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67671498"
 ---
 # <a name="preview-create-a-new-image-version-from-an-existing-image-version-using-azure-image-builder"></a>Предварительный просмотр: Создание новой версии образа с существующей версии образа с помощью Azure Image Builder
 
@@ -182,6 +182,6 @@ az sig image-version list -g $sigResourceGroup -r $sigName -i $imageDefName -o t
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о компонентах JSON-файла, используемые в этой статье, см. в разделе [изображения Справочник по шаблонам построитель](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

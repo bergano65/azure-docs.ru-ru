@@ -12,14 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.date: 04/04/2018
-ms.author: aelnably;nicking
+ms.author: aelnably
+ms.reviewer: nicking
 ms.custom: seodec18
-ms.openlocfilehash: 8d4290f1411749e2d8d3d27fbd792ceeeea47ef7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ed659e95289665b6ce63ba6961e9f63650b4accf
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60851364"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67617544"
 ---
 # <a name="restore-an-app-in-azure-from-a-snapshot"></a>Восстановление приложения в Azure из моментального снимка
 В этой статье показано, как восстановить приложение из моментального снимка в [службе приложений Azure](../app-service/overview.md). Вы можете восстановить для приложения состояние на определенный момент времени, используя моментальный снимок этого приложения. Нет необходимости отдельно включать резервное копирование моментальных снимков, так как платформа автоматически сохраняет моментальные снимки всех приложений для восстановления данных.
@@ -71,4 +72,4 @@ ms.locfileid: "60851364"
    
     ![](./media/app-service-web-restore-snapshots/4.png)
 
-5. Последовательно выберите **ОК**.
+5. Нажмите кнопку **ОК**.
