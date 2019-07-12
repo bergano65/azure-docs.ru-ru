@@ -4,15 +4,15 @@ description: Для выявления и устранения клиента и
 services: virtual-desktop
 author: ChJenk
 ms.service: virtual-desktop
-ms.topic: troubleshoot
-ms.date: 04/08/2019
+ms.topic: troubleshooting
+ms.date: 07/10/2019
 ms.author: v-chjenk
-ms.openlocfilehash: 88e843c410a750387ecf58497dec79586e2a59d8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7ec4e0ffd87c0ef73a551416d8a8cc672f095483
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65523330"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67786728"
 ---
 # <a name="tenant-and-host-pool-creation"></a>Создание пула узлов и клиента
 
@@ -118,6 +118,17 @@ ms.locfileid: "65523330"
 **Причина 2.** Доменное имя не разрешается.
 
 **Исправление 2:** Отображается ошибка «не разрешается доменное имя», для виртуальных машин не присоединены к домену в [конфигурацию виртуальной Машины узла сеансов](troubleshoot-vm-configuration.md).
+
+
+### <a name="error-your-deployment-failedunauthorized"></a>Ошибка: Failed...\Unauthorized вашего развертывания
+
+```Error
+{"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.","details":[{"code":"Unauthorized","message":"{\r\n \"Code\": \"Unauthorized\",\r\n \"Message\": \"The scale operation is not allowed for this subscription in this region. Try selecting different region or scale option.\",\r\n \"Target\": null,\r\n \"Details\": [\r\n {\r\n \"Message\": \"The scale operation is not allowed for this subscription in this region. Try selecting different region or scale option.\"\r\n },\r\n {\r\n \"Code\": \"Unauthorized\"\r\n },\r\n {\r\n \"ErrorEntity\": {\r\n \"ExtendedCode\": \"52020\",\r\n \"MessageTemplate\": \"The scale operation is not allowed for this subscription in this region. Try selecting different region or scale option.\",\r\n \"Parameters\": [\r\n \"default\"\r\n ],\r\n \"Code\": \"Unauthorized\",\r\n \"Message\": \"The scale operation is not allowed for this subscription in this region. Try selecting different region or scale option.\"\r\n }\r\n }\r\n ],\r\n \"Innererror\": null\r\n}"}]}
+```
+
+**Причина.** Подписку, которую вы используете — это тип, который не может получить доступ к необходимые компоненты в регионе, где клиент пытается развернуть. Например подписок MSDN, бесплатный и образовательных учреждений можно отобразить эту ошибку.
+
+**Исправление:** Измените тип подписки или региона с доступом к необходимые компоненты.
 
 ### <a name="error-vmextensionprovisioningerror"></a>Ошибка: VMExtensionProvisioningError
 
@@ -331,7 +342,7 @@ New-RdsRoleAssignment -TenantName <Windows Virtual Desktop tenant name> -RoleDef
 - IsServicePrincipal: **true**
 - AadTenantId: Созданный идентификатор клиента Azure AD субъекта-службы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Общие сведения об устранении неполадок виртуального рабочего стола Windows и отслеживает эскалации, см. в разделе [Устранение неполадок, Обзор, отзывы и поддержка](troubleshoot-set-up-overview.md).
 - Чтобы устранить неполадки при настройке виртуальной машины (VM) в виртуальный рабочий стол Windows, см. в разделе [конфигурацию виртуальной машины узла сеансов](troubleshoot-vm-configuration.md).

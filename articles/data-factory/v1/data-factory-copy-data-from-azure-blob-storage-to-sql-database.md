@@ -14,18 +14,17 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 557228bafc00c3028a1fda520da8fe4ec8c7a6f2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ad114ce3a40e11048d01c6768811089c43cdf1db
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60487338"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839390"
 ---
-# <a name="tutorial-copy-data-from-blob-storage-to-sql-database-using-data-factory"></a>Руководство по Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных
+# <a name="tutorial-copy-data-from-blob-storage-to-sql-database-using-data-factory"></a>Учебник. Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Мастер копирования](data-factory-copy-data-wizard-tutorial.md)
-> * [портал Azure](data-factory-copy-activity-tutorial-using-azure-portal.md)
 > * [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md)
 > * [PowerShell](data-factory-copy-activity-tutorial-using-powershell.md)
 > * [Шаблон Azure Resource Manager](data-factory-copy-activity-tutorial-using-azure-resource-manager-template.md)
@@ -117,7 +116,6 @@ ms.locfileid: "60487338"
 Необходимые условия выполнены. Для создания фабрики данных можно использовать один из приведенных ниже способов. Выберите в раскрывающемся списке в верхней части страницы один из вариантов или щелкните одну из следующих ссылок, чтобы изучить руководство.     
 
 * [Мастер копирования](data-factory-copy-data-wizard-tutorial.md)
-* [портал Azure](data-factory-copy-activity-tutorial-using-azure-portal.md)
 * [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md)
 * [PowerShell](data-factory-copy-activity-tutorial-using-powershell.md)
 * [Шаблон Azure Resource Manager](data-factory-copy-activity-tutorial-using-azure-resource-manager-template.md)

@@ -11,12 +11,12 @@ ms.date: 08/04/2017
 ms.author: marsma
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 2c1bfd9e2659127ab77e9db661b54fde18a8d25c
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 216f5413ce3dae1f2d040643a30a4d7db4a879b8
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205362"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67835415"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Обращение к журналам аудита Azure AD B2C
 
@@ -33,24 +33,24 @@ Azure Active Directory B2C (Azure AD B2C) создает журналы ауди
 
 |тип действия; |Описание  |
 |---------|---------|
-|Авторизация |Действия, касающиеся авторизации пользователя для доступа к ресурсам B2C (например, доступ администратора к списку политик B2C)         |
-|Каталог |Действия, связанные с атрибутами каталога, полученными при входе администратора через портал Azure |
+|Authorization |Действия, касающиеся авторизации пользователя для доступа к ресурсам B2C (например, доступ администратора к списку политик B2C)         |
+|Каталог |Действия, связанные с атрибутов каталога, получены, когда администратор выполняет вход с помощью портала Azure |
 |Приложение | Операции CRUD для приложений B2C |
 |Ключ |Операции CRUD для ключей, хранящихся в контейнере ключей B2C |
-|Ресурс |Операции CRUD для ресурсов B2C (например, политик и поставщиков удостоверений)
-|Authentication |Проверка учетных данных пользователя и выдача токенов|
+|Resource |Операции CRUD для ресурсов B2C (например, политик и поставщиков удостоверений)
+|Проверка подлинности |Проверка учетных данных пользователя и выдача токенов|
 
 > [!NOTE]
 > Сведения о действиях CRUD для объектов пользователя см. в категории **основного каталога**.
 
 ## <a name="example-activity"></a>Пример действия
-Приведенный ниже пример показывает данные, полученные при входе пользователя с помощью внешнего поставщика удостоверений: ![Журналы аудита — пример](./media/active-directory-b2c-reference-audit-logs/audit-logs-example.png)
+Приведенный ниже пример показывает данные, полученные при входе пользователя с помощью внешнего поставщика удостоверений: ![Пример страницы сведения об активности журналов аудита на портале Azure](./media/active-directory-b2c-reference-audit-logs/audit-logs-example.png)
 
 Панель подробностей действий содержит следующие сведения:
 
-|`Section`|Поле|Описание|
+|Раздел|Поле|Описание|
 |-------|-----|-----------|
-| Действие | Name | Какие действия были внесены. Например, «выдавать маркер "id_token" приложение» (который завершает вход пользователя). |
+| Действие | ИМЯ | Какие действия были внесены. Например, «выдавать маркер "id_token" приложение» (который завершает вход пользователя). |
 | "Кем инициировано (субъект)". | ObjectId | **Идентификатор объекта** приложения B2C, пользователь выполняет вход с (этот идентификатор не отображается на портале Azure, но он доступен через Graph API для примера). |
 | "Кем инициировано (субъект)". | Имя участника-службы | **Идентификатор приложения** приложения B2C, пользователь выполняет вход с. |
 | Целевые объекты | ObjectId | **Идентификатор объекта** пользователя, который выполняет вход. |
@@ -58,20 +58,20 @@ Azure Active Directory B2C (Azure AD B2C) создает журналы ауди
 | Дополнительные сведения | `PolicyId` | **Идентификатор политики** потока пользователя (политика), используемого для входа пользователя. |
 | Дополнительные сведения | ApplicationId | **Идентификатор приложения** приложения B2C, пользователь выполняет вход с. |
 
-## <a name="accessing-audit-logs-through-the-azure-portal"></a>Доступ к журналам аудита через портал Azure
+## <a name="accessing-audit-logs-through-the-azure-portal"></a>Доступ к журналам аудита на портале Azure
 1. Перейдите на [портал Azure](https://portal.azure.com). Перейдите в каталог B2C.
 2. Щелкните **Azure Active Directory** на панели "Избранное" слева.
-    
-    ![Журналы аудита — кнопка "Azure Active Directory"](./media/active-directory-b2c-reference-audit-logs/audit-logs-portal-aad.png)
+
+    ![Azure Active Directory выделена кнопка "в левом меню на портале](./media/active-directory-b2c-reference-audit-logs/audit-logs-portal-aad.png)
 
 1. В разделе **Действия** щелкните **Журналы аудита**
 
-    ![Журналы аудита — раздел журналов](./media/active-directory-b2c-reference-audit-logs/audit-logs-portal-section.png)
+    ![В разделе "действия" меню кнопку журналы аудита](./media/active-directory-b2c-reference-audit-logs/audit-logs-portal-section.png)
 
 2. В раскрывающемся списке **Категория** выберите **B2C**.
 3. Нажмите кнопку **Применить**.
 
-    ![Журналы аудита — категория](./media/active-directory-b2c-reference-audit-logs/audit-logs-portal-category.png)
+    ![Категории и кнопки "Применить", выделенным в фильтре журнал аудита](./media/active-directory-b2c-reference-audit-logs/audit-logs-portal-category.png)
 
 Вы увидите список действий, внесенных в журнал за последние семь дней.
 - Используйте раскрывающийся список **Тип ресурса действия** для фильтрации указанных выше типов действий.
@@ -85,7 +85,7 @@ Azure Active Directory B2C (Azure AD B2C) создает журналы ауди
 ## <a name="accessing-audit-logs-through-the-azure-ad-reporting-api"></a>Доступ к журналам аудита через API отчетов Azure AD
 Журналы аудита публикуются в том же конвейере, что и другие действия для Azure Active Directory, поэтому к ним можно обратиться через [API отчетов Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-api-audit-reference).
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 Чтобы проверить подлинность в API отчетов Azure AD, нужно сначала зарегистрировать приложение. Выполните действия из раздела [Предварительные требования для доступа к интерфейсам API отчетов Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-reporting-api-getting-started/).
 
 ### <a name="accessing-the-api"></a>Получение доступа к API

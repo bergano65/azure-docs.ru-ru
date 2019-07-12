@@ -16,12 +16,12 @@ ms.date: 05/08/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f2916c9aba7d404ff4ad380d249bd507fadf71ea
-ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.openlocfilehash: b0392a40ef948d96e613da9127629f52b02deb97
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67310073"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67655819"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure AD Connect.
@@ -49,7 +49,7 @@ ms.locfileid: "67310073"
 
 ### <a name="azure-ad-connect-server"></a>Сервер Azure AD Connect
 >[!IMPORTANT]
->На сервере Azure AD Connect содержит критические идентификационных данных и следует рассматривать как компонент уровня 0, как описано в статье [модель разделения администрирования Active Directory](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#ADATM_BM)
+>На сервере Azure AD Connect содержит критические идентификационных данных и следует рассматривать как компонент уровня 0, как описано в статье [модель разделения администрирования Active Directory](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)
 
 * Службу Azure AD Connect нельзя установить на версии Small Business Server или Windows Server Essentials, которые предшествуют версиям 2019 года (поддерживается Windows Server Essentials 2019). Сервер должен использовать Windows Server Standard или более поздней версии.
 * Установка Azure AD Connect на контроллере домена не рекомендуется из-за по обеспечению безопасности и более строгие параметры, может препятствовать правильной установке Azure AD Connect.
@@ -93,7 +93,7 @@ ms.locfileid: "67310073"
 * Учетная запись администратора предприятия для локальной службы Active Directory при использовании экспресс-параметров или обновлении с DirSync.
 * [Учетные записи в Active Directory](reference-connect-accounts-permissions.md) при использовании пути установки с пользовательскими параметрами или учетная запись администратора предприятия для локальной службы Active Directory.
 
-### <a name="connectivity"></a>Соединение
+### <a name="connectivity"></a>Возможность подключения
 * Для серверов Azure AD Connect требуется разрешение DNS как для интрасети, так и для Интернета. DNS-сервер должен иметь возможность разрешения имен как для локальной службы Active Directory, так и для конечных точек Azure AD.
 * Если в вашей интрасети есть брандмауэры и вам необходимо открыть порты между серверами Azure AD Connect и контроллерами доменов, то дополнительные сведения см. в статье [Порты и протоколы, необходимые для гибридной идентификации](reference-connect-ports.md).
 * Если прокси-сервер или брандмауэр ограничивает доступные URL-адреса, то на нем необходимо открыть URL-адреса, указанные в разделе [URL-адреса и диапазоны IP-адресов Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2).
@@ -202,7 +202,7 @@ ms.locfileid: "67310073"
 ## <a name="azure-ad-connect-supporting-components"></a>Вспомогательные компоненты Azure AD Connect
 Ниже приведен перечень компонентов, которые Azure AD Connect установит на сервере, где установлен Azure AD Connect. Этот список предназначен для базовой установки Express. Если на странице "Установить службы синхронизации" вы выбрали другой выпуск SQL Server, то SQL Express LocalDB не устанавливается локально.
 
-* Azure AD Connect Health,
+* Azure AD Connect Health
 * Программы командной строки Microsoft SQL Server 2012
 * Microsoft SQL Server 2012 Express LocalDB
 * Microsoft SQL Server 2012 Native Client
@@ -227,5 +227,5 @@ ms.locfileid: "67310073"
 * ОЗУ: 2 ГБ или более;
 * Виртуальная машина Azure: конфигурация A2 или выше.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

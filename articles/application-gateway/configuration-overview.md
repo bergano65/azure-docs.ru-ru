@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 6/1/2019
 ms.author: absha
-ms.openlocfilehash: c5cc39c2f2a7f2a79b8d6bc2bd95506ee5532a84
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 86b41bb2554dbefeaeb724e746bcaf757463f8ae
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67073979"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67795907"
 ---
 # <a name="application-gateway-configuration-overview"></a>Общие сведения о конфигурации шлюза приложений
 
@@ -25,7 +25,7 @@ ms.locfileid: "67073979"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 ### <a name="azure-virtual-network-and-dedicated-subnet"></a>Виртуальная сеть Azure и выделенную подсеть
 
@@ -268,7 +268,7 @@ Set-AzApplicationGateway -ApplicationGateway $gw
 
 Этот параметр в сочетании с помощью протокола HTTPS в поддерживает прослушиватель [-сквозного режима связи SSL](https://docs.microsoft.com/azure/application-gateway/ssl-overview). Это позволяет безопасно передавать конфиденциальные данные, зашифрованные в серверной части. Каждый тыловых серверов в пуле серверной части с поддержкой протокола SSL end-to-end настраиваются с помощью сертификата, чтобы обеспечивать безопасное взаимодействие.
 
-### <a name="port"></a>Port
+### <a name="port"></a>Порт
 
 Этот параметр указывает порт, где внутренние серверы прослушивать трафик из шлюза приложений. Вы можете настроить порты, от 1 до 65535.
 
@@ -297,6 +297,7 @@ Set-AzApplicationGateway -ApplicationGateway $gw
   | / home/secondhome /          | /pathrule*      | /override/            | / Переопределение/home/secondhome /   |
   | /pathrule/home /            | / pathrule/home * | /override/            | /override/                   |
   | / pathrule/home/secondhome / | / pathrule/home * | /override/            | / override/secondhome /        |
+  | /pathrule/                 | /pathrule/      | /override/            | /override/                   |
 
 ### <a name="use-for-app-service"></a>Использование для службы приложений
 
@@ -343,7 +344,7 @@ Set-AzApplicationGateway -ApplicationGateway $gw
 > [!NOTE]
 > После создания пользовательской пробы работоспособности, необходимо связать его с параметром HTTP серверной части. Пользовательская проверка не будет проверять работоспособность пула серверной части, соответствующий параметр HTTP явным образом связано с прослушивателем.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы знаете о компонентах шлюза приложений, вы можете:
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настроить для автоматической подготовки пользователей Azure Active Directory с Zscaler Beta | Документация Майкрософт
+title: Учебник. Настроить для автоматической подготовки пользователей Azure Active Directory с Zscaler Beta | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Zscaler Beta.
 services: active-directory
 documentationcenter: ''
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/27/2019
-ms.author: v-ant-msft
-ms.openlocfilehash: 54cf2924a94dda1d29baf048c866f019b82e1402
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: jeedes
+ms.openlocfilehash: 82f9746b8f2f6665506491c328841e6a88438472
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67049974"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672962"
 ---
-# <a name="tutorial-configure-zscaler-beta-for-automatic-user-provisioning"></a>Руководство по Настройка Zscaler Beta для автоматической подготовки пользователей
+# <a name="tutorial-configure-zscaler-beta-for-automatic-user-provisioning"></a>Учебник. Настройка Zscaler Beta для автоматической подготовки пользователей
 
 Цель данного учебника — продемонстрировать действия, выполняемые в Zscaler Beta и Azure Active Directory (Azure AD) для настройки Azure AD для автоматической подготовки и отзыва пользователей и групп в Zscaler Beta.
 
@@ -32,7 +32,7 @@ ms.locfileid: "67049974"
 
 > Сейчас этот соединитель предоставляется в общедоступной предварительной версии. Дополнительные сведения о общие Microsoft Azure условия использования предварительных версий функций, см. в разделе [дополнительным условиям использования предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом руководстве, предполагает, что у вас уже имеется:
 
@@ -124,7 +124,7 @@ ms.locfileid: "67049974"
 
     ![Zscaler Beta Подготовка](./media/zscaler-beta-provisioning-tutorial/notification.png)
 
-9. Выберите команду **Сохранить**.
+9. Нажмите кнопку **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать пользователей Azure Active Directory с Zscaler Beta**.
 
@@ -165,7 +165,7 @@ ms.locfileid: "67049974"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
 

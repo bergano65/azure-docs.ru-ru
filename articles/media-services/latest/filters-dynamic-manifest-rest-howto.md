@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 06/13/2019
 ms.author: juliako
-ms.openlocfilehash: 447116267e53f8c4df1e882ca30c6a2e906d314c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 76e6e1595cb8bf49dbbc82c3cae5de80ea718aeb
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67114288"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67786453"
 ---
 # <a name="creating-filters-with-media-services-rest-api"></a>Создание фильтров с помощью REST API Служб мультимедиа
 
@@ -31,7 +31,7 @@ ms.locfileid: "67114288"
 > [!NOTE]
 > Не забудьте проверить [presentationTimeRange](filters-concept.md#presentationtimerange).
 
-## <a name="prerequisites"></a>Технические условия 
+## <a name="prerequisites"></a>предварительные требования 
 
 Чтобы выполнить действия, описанные в этом разделе, необходимо сделать следующее:
 
@@ -97,7 +97,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Фильтр создан.
 
-Дополнительные сведения см. в статье о [создании или обновлении фильтров учетной записи](https://docs.microsoft.com/rest/api/media/accountfilters/createorupdate). Также см. [примеры JSON для фильтров учетной записи](https://docs.microsoft.com/rest/api/media/accountfilters/createorupdate#create_an_account_filter).
+Дополнительные сведения см. в статье о [создании или обновлении фильтров учетной записи](https://docs.microsoft.com/rest/api/media/accountfilters/createorupdate). Также см. [примеры JSON для фильтров учетной записи](https://docs.microsoft.com/rest/api/media/accountfilters/createorupdate#create-an-account-filter).
 
 ## <a name="create-asset-filters"></a>Создание фильтров ресурсов  
 
@@ -115,7 +115,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Фильтр ресурса-контейнера создан.
 
-Дополнительные сведения см. в статье о [создании или обновлении фильтров ресурсов-контейнеров](https://docs.microsoft.com/rest/api/media/assetfilters/createorupdate). Также см. [примеры JSON для фильтров](https://docs.microsoft.com/rest/api/media/assetfilters/createorupdate#create_an_asset_filter). 
+Дополнительные сведения см. в статье о [создании или обновлении фильтров ресурсов-контейнеров](https://docs.microsoft.com/rest/api/media/assetfilters/createorupdate). Также см. [примеры JSON для фильтров](https://docs.microsoft.com/rest/api/media/assetfilters/createorupdate#create-an-asset-filter). 
 
 ## <a name="associate-filters-with-streaming-locator"></a>Связать фильтры с указатель потоковой передачи
 
@@ -135,6 +135,6 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 |MPEG DASH|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(format=mpd-time-csf,filter=myAssetFilter)`|
 |Smooth Streaming|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(filter=myAssetFilter)`|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Потоковая передача видео](stream-files-tutorial-with-rest.md) 

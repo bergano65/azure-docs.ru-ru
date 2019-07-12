@@ -4,7 +4,7 @@ description: Узнайте о создании виртуальных маши�
 services: virtual-machines-windows
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: fbae9c8e-2341-4ed0-bb20-fd4debb2f9ca
@@ -16,12 +16,12 @@ ms.topic: conceptual
 ms.date: 10/04/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 604a47ef73d50a2d127d1569b0b6a240a7a27d73
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7bb87713f1f7d1f41f68f3743b2504784b37bb23
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65506844"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67723049"
 ---
 # <a name="overview-of-windows-virtual-machines-in-azure"></a>Обзор виртуальных машин Windows в Azure
 
@@ -84,7 +84,7 @@ Azure предоставляет множество [образов из Marketp
 | --- | --- |
 | Портал Azure |При выборе используемого образа значения задаются автоматически. |
 | Azure PowerShell |[Get-AzVMImagePublisher](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagepublisher). Параметр *location* указывает расположение.<BR>[Get-AzVMImageOffer](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimageoffer). Параметр *location* указывает расположение, *publisherName* — имя издателя.<BR>[Get-AzVMImageSku](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagesku). Параметр *location* указывает расположение, *publisherName* — имя издателя, *offerName* — имя предложения. |
-| Интерфейсы API REST |[Получение списка издателей образов](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publishers)<BR>[Получение списка предложений для образа](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publisher-offers)<BR>[Получение списка SKU для образа](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publisher-offer-skus) |
+| Интерфейсы REST API |[Получение списка издателей образов](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publishers)<BR>[Получение списка предложений для образа](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publisher-offers)<BR>[Получение списка SKU для образа](https://docs.microsoft.com/rest/api/compute/platformimages/platformimages-list-publisher-offer-skus) |
 | Инфраструктура CLI Azure |[az vm image list-publishers](https://docs.microsoft.com/cli/azure/vm/image?view=azure-cli-latest). Параметр *--location* указывает расположение.<BR>[az vm image list-offers](https://docs.microsoft.com/cli/azure/vm/image?view=azure-cli-latest). Параметр *--location* указывает расположение, *--publisher* — имя издателя.<BR>[az vm image list-skus](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest). Параметр *--location* указывает расположение, *--publisher* — имя издателя, а *--offer* — имя предложения.|
 
 Вы можете [передать и использовать собственный образ](upload-generalized-managed.md#upload-the-vhd-to-your-storage-account). В этом случае имя издателя, предложение и SKU не используются.
@@ -101,7 +101,7 @@ Azure предоставляет множество [образов из Marketp
 ### <a name="related-resources"></a>Связанные ресурсы
 Ресурсы в этой таблице используются в виртуальной машине. Они должны существовать или создаваться вместе с виртуальной машиной.
 
-| Ресурс | Обязательно для заполнения | Описание |
+| Resource | Обязательно для заполнения | Описание |
 | --- | --- | --- |
 | [Группа ресурсов](../../azure-resource-manager/resource-group-overview.md) |Да |Виртуальная машина должна входить в группу ресурсов. |
 | [Учетная запись хранения](../../storage/common/storage-create-storage-account.md) |Да |Виртуальной машине требуется учетная запись хранения для хранения виртуальных жестких дисков. |
@@ -121,7 +121,7 @@ Azure предоставляет множество [образов из Marketp
 | Шаблоны |[Создание виртуальной машины Windows с использованием шаблона диспетчера ресурсов](ps-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) |
 | Azure PowerShell |[Создание виртуальной машины Windows с помощью PowerShell](../virtual-machines-windows-ps-create.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) |
 | Клиентские пакеты SDK |[Развертывание ресурсов Azure с помощью языка C#](csharp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) |
-| Интерфейсы API REST |[Создание или обновление виртуальной машины](https://docs.microsoft.com/rest/api/compute/virtualmachines/virtualmachines-create-or-update) |
+| Интерфейсы REST API |[Создание или обновление виртуальной машины](https://docs.microsoft.com/rest/api/compute/virtualmachines/virtualmachines-create-or-update) |
 | Инфраструктура CLI Azure |[Создание виртуальной машины с помощью Azure CLI](https://docs.microsoft.com/azure/virtual-machines/scripts/virtual-machines-windows-cli-sample-create-vm) |
 
 Так или иначе, иногда вы будете сталкиваться с проблемами. В этом случае см. сведения в статье [Устранение неполадок в развертывании Resource Manager при создании виртуальной машины Windows в Azure](../troubleshooting/troubleshoot-deployment-new-vm-windows.md).
@@ -151,6 +151,6 @@ Azure предоставляет множество [образов из Marketp
 ### <a name="back-up-the-vm"></a>Архивация виртуальной машины
 [Хранилище служб восстановления](../../backup/backup-introduction-to-azure-backup.md) используется для защиты данных и ресурсов в службе архивации Azure и службах Azure Site Recovery. Хранилище служб восстановления позволяет [развертывать резервные копии виртуальных машин, развернутых с помощью Resource Manager, и управлять ими с использованием PowerShell](../../backup/backup-azure-vms-automation.md). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Если планируется работать с виртуальными машинами Linux, см. сведения в статье [Azure и Linux](../linux/overview.md).
 * Дополнительные рекомендации по настройке инфраструктуры см. в статье [Пошаговое руководство по примеру инфраструктуры Azure](infrastructure-example.md).

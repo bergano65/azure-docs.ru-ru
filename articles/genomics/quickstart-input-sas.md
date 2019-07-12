@@ -9,12 +9,12 @@ ms.author: grhuynh
 ms.service: genomics
 ms.topic: conceptual
 ms.date: 03/02/2018
-ms.openlocfilehash: 7c51a0934457a2fcc03f9be1535712e97ac91a1e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 833067f53f53f347ce091a64702d44a78cde836f
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60781212"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657099"
 ---
 # <a name="submit-a-workflow-to-microsoft-genomics-using-a-sas-instead-of-a-storage-account-key"></a>Отправка рабочего процесса в Microsoft Genomics с использованием SAS вместо ключа учетной записи хранения 
 
@@ -58,7 +58,7 @@ SAS для входных файлов должен быть привязан к
 
 ### <a name="set-up-create-a-sas-programmatically"></a>Настройка. Создание SAS программным способом
 
-Чтобы создать SAS с помощью SDK службы хранилища Azure, обратитесь к документации, доступной для нескольких языков, включая [.NET](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-shared-access-signature-part-2#generate-a-shared-access-signature-uri-for-a-blob), [Python](https://docs.microsoft.com/azure/storage/blobs/storage-python-how-to-use-blob-storage) и [Node.js](https://docs.microsoft.com/azure/storage/blobs/storage-nodejs-how-to-use-blob-storage). 
+Чтобы создать SAS с помощью SDK службы хранилища Azure, обратитесь к документации, доступной для нескольких языков, включая [.NET](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1), [Python](https://docs.microsoft.com/azure/storage/blobs/storage-python-how-to-use-blob-storage) и [Node.js](https://docs.microsoft.com/azure/storage/blobs/storage-nodejs-how-to-use-blob-storage). 
 
 Создание подписанного URL-адреса возможно без использования пакета SDK. Строку запроса SAS можно написать, включив все данные, необходимые для проверки подлинности SAS. В этих [инструкциях](https://docs.microsoft.com/rest/api/storageservices/constructing-a-service-sas) подробно описаны компоненты строки запроса SAS и ее создание. Необходимый SAS создается путем создания HMAC с использованием информации для проверки подлинности большого двоичного объекта или контейнера, как описано в этих [инструкциях](https://docs.microsoft.com/rest/api/storageservices/service-sas-examples).
 
@@ -85,5 +85,5 @@ msgen submit -f [full path to your config file] -b1 [name of your first paired e
 msgen submit -f [full path to your config file] 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этой статье использовались токены SAS вместо ключей учетной записи для отправки рабочего процесса в службу Microsoft Genomics через клиент Python `msgen`. Дополнительные сведения об отправке рабочего процесса и других командах, которые можно использовать в службе Microsoft Genomics, см. в разделе [часто задаваемых вопросов](frequently-asked-questions-genomics.md). 

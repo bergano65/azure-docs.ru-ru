@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: e275411f9fd9dfb672bb0815e83e37bcd5d1dda9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 50a653648f3ae4b40e0bfe2c6f168cfb890bcc59
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60825426"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839107"
 ---
 # <a name="load-1-tb-into-azure-sql-data-warehouse-under-15-minutes-with-data-factory"></a>Загрузка 1 ТБ в хранилище данных SQL Azure с помощью фабрики данных менее чем за 15 минут
 > [!NOTE]
@@ -41,11 +41,11 @@ ms.locfileid: "60825426"
 > [!NOTE]
 >  В статье [Перемещение данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure](data-factory-azure-sql-data-warehouse-connector.md) приведены общие сведения о возможностях фабрики данных по перемещению данных в хранилище данных SQL Azure и из него.
 >
-> Можно также создавать конвейеры с помощью портала Azure, Visual Studio PowerShell и т. д. Пошаговые инструкции см. в [руководстве по копированию данных из BLOB-объекта Azure в Базу данных SQL](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). В нем объясняется, как использовать действие копирования в Фабрике данных Azure.  
+> Можно также создавать конвейеры с помощью Visual Studio, PowerShell и т. д. Пошаговые инструкции см. в [руководстве по копированию данных из BLOB-объекта Azure в Базу данных SQL](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). В нем объясняется, как использовать действие копирования в Фабрике данных Azure.  
 >
 >
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 * Хранилище BLOB-объектов Azure: в этом эксперименте хранилище BLOB-объектов Azure (GRS) используется для хранения тестового набора данных TPC-H.  Если у вас нет учетной записи хранения Azure, узнайте, как [создать учетную запись хранения](../../storage/common/storage-quickstart-create-account.md).
 * Данные [TPC-H](http://www.tpc.org/tpch/): в качестве тестового набора данных мы будем использовать TPC-H.  Для этого необходимо использовать `dbgen` из набора средств TPC-H. Это поможет создать набор данных.  Можно скачать исходный код `dbgen` из [инструментов TPC](http://www.tpc.org/tpc_documents_current_versions/current_specifications.asp) и скомпилировать его или скачать скомпилированный двоичный файл с сайта [GitHub](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/TPCHTools).  Выполните dbgen.exe с приведенными ниже командами, чтобы создать неструктурированный файл размером в 1 ТБ для таблицы `lineitem`, распределенной на 10 файлов.
 
@@ -213,6 +213,6 @@ ms.locfileid: "60825426"
 
 Дополнительные сведения см. в разделе [Рекомендации по использованию хранилища данных SQL Azure](../../sql-data-warehouse/sql-data-warehouse-best-practices.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Мастер копирования фабрики данных](data-factory-copy-wizard.md). В этой статье приведены сведения о мастере копирования.
 * [Руководство по настройке производительности действия копирования](data-factory-copy-activity-performance.md). Эта статья содержит эталонные измерения производительности и руководство по настройке.

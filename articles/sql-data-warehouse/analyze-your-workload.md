@@ -6,16 +6,16 @@ author: ronortloff
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: workload management
+ms.subservice: workload-management
 ms.date: 03/13/2019
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: f470670ae3d526f3b66badf219a01a471c24db0d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 54652ba573fb2ec2d064b7a85ad5728b73e71db3
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66242241"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67588748"
 ---
 # <a name="analyze-your-workload-in-azure-sql-data-warehouse"></a>Анализ рабочей нагрузки в хранилище данных SQL Azure
 
@@ -150,6 +150,6 @@ FROM    sys.dm_pdw_wait_stats w
 ;
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об управлении пользователями и безопасностью базы данных см. в статье [Защита базы данных в хранилище данных SQL](sql-data-warehouse-overview-manage-security.md). Дополнительные сведения о повышении качества кластеризованных индексов columnstore за счет повышения класса ресурсов см. в разделе [Повышение качества сегментов за счет перестроения индексов](sql-data-warehouse-tables-index.md#rebuilding-indexes-to-improve-segment-quality).

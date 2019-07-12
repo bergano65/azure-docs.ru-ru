@@ -6,12 +6,13 @@ author: vhorne
 ms.service: application-gateway
 ms.date: 2/22/2019
 ms.author: victorh
-ms.openlocfilehash: f96395a54f66b787878faeee057f02818f956ade
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.topic: conceptual
+ms.openlocfilehash: 35114783f8f438a0890d59c05452f4f0b0dbb41b
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60831458"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67618578"
 ---
 # <a name="customize-web-application-firewall-rules-through-powershell"></a>Настройка правил брандмауэра веб-приложения с помощью PowerShell
 
@@ -104,7 +105,7 @@ Set-AzApplicationGateway -ApplicationGateway $gw
 
 * Входящие аномалий показатель превышает порог
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После настройки с отключением правил вы можете узнать, как просматривать журналы WAF. Дополнительные сведения см. в разделе [Журналы диагностики](application-gateway-diagnostics.md#diagnostic-logging).
 

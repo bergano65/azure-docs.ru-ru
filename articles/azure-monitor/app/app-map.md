@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: 70d1f54aed5e83801b1d1e249d7a412dd6d9a49a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d69825b947af69a86525a996ed8709472846d9fe
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65964037"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67795678"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -82,7 +82,7 @@ ms.locfileid: "65964037"
 
 ![Снимок экрана с интерфейсом службы Analytics](media/app-map/analytics.png)
 
-### <a name="alerts"></a>Оповещения
+### <a name="alerts"></a>Предупреждения
 
 Чтобы просмотреть активные оповещения и основные правила, которые их активируют, щелкните **Оповещения**.
 
@@ -119,7 +119,7 @@ namespace CustomInitializer.Telemetry
 }
 ```
 
-**Инициализатор нагрузки для активной конфигурацией TelemetryConfiguration**
+**Приложения ASP.NET: Инициализатор нагрузки для активной конфигурацией TelemetryConfiguration**
 
 In ApplicationInsights.config :
 
@@ -132,9 +132,6 @@ In ApplicationInsights.config :
       </TelemetryInitializers>
     </ApplicationInsights>
 ```
-
-> [!NOTE]
-> Добавление инициализатор `ApplicationInsights.config` не является действительным для приложений ASP.NET Core.
 
 Чтобы создать экземпляр инициализатора в коде, например в Global.aspx.cs является альтернативного метода веб-приложений ASP.NET:
 
@@ -149,15 +146,20 @@ In ApplicationInsights.config :
     }
 ```
 
+> [!NOTE]
+> Добавление инициализатор `ApplicationInsights.config` или с помощью `TelemetryConfiguration.Active` не является действительным для приложений ASP.NET Core. 
+
+**Приложения ASP.NET Core: Загрузка инициализатора для конфигурацией TelemetryConfiguration**
+
 Для [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) приложений, добавив новый `TelemetryInitializer` можно сделать, добавив его в контейнер внедрения зависимостей, как показано ниже. Это можно сделать в `ConfigureServices` метод вашей `Startup.cs` класса.
 
 ```csharp
  using Microsoft.ApplicationInsights.Extensibility;
  using CustomInitializer.Telemetry;
  public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddSingleton<ITelemetryInitializer, MyCustomTelemetryInitializer>();
-    }
+{
+    services.AddSingleton<ITelemetryInitializer, MyTelemetryInitializer>();
+}
 ```
 
 ### <a name="nodejs"></a>Node.js
@@ -268,6 +270,6 @@ appInsights.context.addTelemetryInitializer((envelope) => {
 
 ![Изображение MapLink-1](./media/app-map/14-updated.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Корреляция данных телеметрии в Application Insights](https://docs.microsoft.com/azure/application-insights/application-insights-correlation)

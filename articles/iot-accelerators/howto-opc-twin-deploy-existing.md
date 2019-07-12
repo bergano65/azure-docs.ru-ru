@@ -5,15 +5,15 @@ author: dominicbetts
 ms.author: dobett
 ms.date: 11/26/2018
 ms.topic: conceptual
-ms.service: iot-industrialiot
+ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 6eeca062bdc17ec207910b9ba4aa8cea4048f849
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5e3be8f0c565f86ab5332730972e0ed960d22255
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67080509"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603724"
 ---
 # <a name="deploy-opc-twin-to-an-existing-project"></a>Развертывание OPC Двойника в существующий проект
 
@@ -28,7 +28,7 @@ Micro service Двойника OPC облегчает взаимодействи
 > [!NOTE]
 > Дополнительные сведения о подробных сведений о развертывании и инструкции см. в разделе со сведениями о GitHub [репозитория](https://github.com/Azure/azure-iiot-opc-twin-module).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Убедитесь, что у вас есть PowerShell и [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) установлены расширения. Если вы еще не сделали, клонируйте этот репозиторий GitHub. В PowerShell выполните следующие команды:
 
@@ -137,7 +137,7 @@ cd azure-iiot-components
 -credentials
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как развернуть OPC Двойника в существующий проект, вот мы предлагаем:
 

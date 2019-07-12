@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 95ec6a863f951a8c26abd865041c68df333a4e38
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a244883f470f4906879725daf0d37bd1759e65c4
+ms.sourcegitcommit: af31deded9b5836057e29b688b994b6c2890aa79
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65071344"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67812895"
 ---
 # <a name="durable-functions-patterns-and-technical-concepts-azure-functions"></a>Устойчивые функции шаблонов и технические концепции (функции Azure)
 
@@ -374,7 +374,7 @@ module.exports = async function (context) {
 };
 ```
 
-## <a name="pattern-6-aggregator-preview"></a>Шаблон #6: Средство инвентаризации программного обеспечения (Предварительная версия)
+### <a name="aggregator"></a>Шаблон #6: Средство инвентаризации программного обеспечения (Предварительная версия)
 
 Шестой шаблон посвящен статистическая обработка данных событий за период времени, в единую адресуемый *сущности*. В этом шаблоне, подвергаемый статистической обработке данных могут поступать из нескольких источников могут доставляться в пакетах и могут быть разбросаны за длинные интервалы времени. Средство инвентаризации программного обеспечения может потребоваться выполнить действие на данные события, как их поступления, и внешним клиентам может потребоваться направить запрос объединенные данные.
 
@@ -385,27 +385,46 @@ module.exports = async function (context) {
 С помощью [функция устойчивых сущности](durable-functions-preview.md#entity-functions), можно реализовать этот шаблон легко в виде одной функции.
 
 ```csharp
-public static async Task Counter(
-    [EntityTrigger(EntityClassName = "Counter")] IDurableEntityContext ctx)
+[FunctionName("Counter")]
+public static void Counter([EntityTrigger] IDurableEntityContext ctx)
 {
     int currentValue = ctx.GetState<int>();
-    int operand = ctx.GetInput<int>();
 
-    switch (ctx.OperationName)
+    switch (ctx.OperationName.ToLowerInvariant())
     {
         case "add":
+            int amount = ctx.GetInput<int>();
             currentValue += operand;
             break;
-        case "subtract":
-            currentValue -= operand;
-            break;
         case "reset":
-            await SendResetNotificationAsync();
             currentValue = 0;
+            break;
+        case "get":
+            ctx.Return(currentValue);
             break;
     }
 
     ctx.SetState(currentValue);
+}
+```
+
+Устойчивые сущности также можно моделировать в виде классов .NET. Это может быть полезно, если список операций становится слишком большим и если она по большей части статический. Следующий пример представляет собой эквивалент реализацию `Counter` сущности с помощью .NET классы и методы.
+
+```csharp
+public class Counter
+{
+    [JsonProperty("value")]
+    public int CurrentValue { get; set; }
+
+    public void Add(int amount) => this.CurrentValue += amount;
+    
+    public void Reset() => this.CurrentValue = 0;
+    
+    public int Get() => this.CurrentValue;
+
+    [FunctionName(nameof(Counter))]
+    public static Task Run([EntityTrigger] IDurableEntityContext ctx)
+        => ctx.DispatchAsync<Counter>();
 }
 ```
 
@@ -426,7 +445,7 @@ public static async Task Run(
 }
 ```
 
-Аналогичным образом, клиенты могут запрашивать состояние функции сущности с помощью методов `orchestrationClient` привязки.
+Динамически создаваемого прокси-серверы также доступны для сигналов сущностей в виде строго типизированным. И помимо передачи сигналов, клиенты могут также запрашивать состояние функции сущности с помощью методов `orchestrationClient` привязки.
 
 > [!NOTE]
 > Функции сущности сейчас доступны только в [устойчивых функций 2.0 preview](durable-functions-preview.md).
@@ -451,7 +470,7 @@ public static async Task Run(
 
 Поведение воспроизведения оркестратора кода создает ограничивает тип кода, который может записывать в функцию оркестратора. Например код оркестратора должен быть детерминированным, так как оно вызов будет воспроизведен несколько раз, и он должен создавать тот же результат при каждом. Полный список ограничений, см. в разделе [ограничения кода оркестратора](durable-functions-checkpointing-and-replay.md#orchestrator-code-constraints).
 
-## <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика.
+## <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика
 
 Расширение устойчивых функций автоматически отправляет структурированные данные отслеживания для [Application Insights](../functions-monitoring.md) Если вы настроили приложение-функцию с помощью ключа инструментирования Azure Application Insights. Данные отслеживания можно использовать для отслеживания хода выполнения ваших оркестраций и действий.
 
@@ -484,7 +503,7 @@ public static async Task Run(
 
 Следует отслеживать все известные проблемы в списке [проблем на GitHub](https://github.com/Azure/azure-functions-durable-extension/issues). Если вы столкнулись с проблемами и не удается найти проблему в GitHub, откройте новый вопрос. Укажите ее подробное описание проблемы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об устойчивых функций см. в разделе [устойчивые функции функций типам и возможностям](durable-functions-types-features-overview.md). 
 

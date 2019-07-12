@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/26/2018
-ms.author: zhiweiw
+ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ffd783ec41b1b0c4a11ee426648c1e36fbbbf75
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6c5bc2ea76c558e47eaa5f297ebe36a629aa5754
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60349953"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67702640"
 ---
 # <a name="health-service-data-is-not-up-to-date-alert"></a>Оповещение "Данные службы работоспособности неактуальны"
 
@@ -40,7 +40,7 @@ ms.locfileid: "60349953"
  
 В таблице ниже приведены типы служб в соответствующие типы необходимых данных:
 
-| Service type (Тип службы) | Агент (имя службы Windows) | Назначение | Тип данных, созданный  |
+| Service type (Тип службы) | Агент (имя службы Windows) | Цель | Тип данных, созданный  |
 | --- | --- | --- | --- |  
 | Azure AD Connect (Sync) | Служба Sync Insights Azure AD Connect Health | Собирать сведения, относящиеся с AAD Connect (соединителей, правила синхронизации, и т.д.) | AadSyncService-SynchronizationRules <br />  AadSyncService соединителей <br /> AadSyncService-GlobalConfigurations  <br />  AadSyncService-RunProfileResults <br /> AadSyncService-ServiceConfigurations <br /> AadSyncService-ServiceStatus   |
 |  | Служба Sync Monitoring Azure AD Connect Health | Сбор, относящиеся к AAD Connect счетчики производительности, трассировки событий Windows, файлы | Счетчик производительности |
@@ -66,7 +66,7 @@ ms.locfileid: "60349953"
 * Если вы используете прокси-сервер HTTP, следуйте этим [этапам конфигурации](how-to-connect-health-agent-install.md#configure-azure-ad-connect-health-agents-to-use-http-proxy). 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Если какие-либо выше шаги выявления проблемы, устранить ее и дождитесь оповещение, чтобы разрешить. Оповещения фоновый процесс выполняется каждые 2 часа, поэтому может занять до двух часов, чтобы устранить это предупреждение. 
 
 * [Политика хранения данных Azure AD Connect Health](reference-connect-health-user-privacy.md#data-retention-policy)

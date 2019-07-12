@@ -4,15 +4,15 @@ description: Как создать кластер узла в Апробация
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
-ms.topic: how-to
+ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: helohr
-ms.openlocfilehash: a58e059e800b13d01ba8e50880bd75077d4418ae
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 374d5a8f51e28b8a10595842cfc301db503b6bed
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65833970"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67613325"
 ---
 # <a name="create-a-host-pool-with-powershell"></a>Создание пула узлов с помощью PowerShell
 
@@ -101,7 +101,7 @@ $token = (Export-RdsRegistrationInfo -TenantName <tenantname> -HostPoolName <hos
 >[!IMPORTANT]
 >Чтобы усилить защиту среды Виртуального рабочего стола Windows в Azure, мы рекомендуем не открывать входящий порт 3389 для виртуальных машин. Виртуальный рабочий стол Windows не требует открытия входящего порта 3389, чтобы пользователи могли получить доступ к виртуальным машинам пула узла. Если вам все же нужно открыть порт 3389 для устранения неполадок, мы рекомендуем использовать[JIT-доступ к виртуальным машинам](https://docs.microsoft.com/azure/security-center/security-center-just-in-time).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы внесли пула узла, его можно заполнить RemoteApps. Дополнительные сведения о том, как управлять приложениями в Виртуальном рабочем столе Windows см. в руководстве по управлению группами приложений.
 

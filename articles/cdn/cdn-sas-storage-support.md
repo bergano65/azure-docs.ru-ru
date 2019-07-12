@@ -7,19 +7,19 @@ author: mdgattuso
 manager: danielgi
 editor: ''
 ms.assetid: ''
-ms.service: cdn
+ms.service: azure-cdn
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 06/21/2018
 ms.author: magattus
-ms.openlocfilehash: 7edf0a9f8d4eb4c01b6d80fd82a1061b6cbb1e35
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 999bffe9650f3d2f2a04dba728a9aa41fa46a6b0
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60324158"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67593410"
 ---
 # <a name="using-azure-cdn-with-sas"></a>Использование Azure CDN с SAS
 
@@ -32,7 +32,7 @@ SAS дает возможность определить различные па
 ## <a name="setting-up-azure-cdn-to-work-with-storage-sas"></a>Настройка Azure CDN для работы с SAS хранилища
 Для использования SAS с Azure CDN рекомендуются следующие три варианта. Предполагается, что вы уже создали рабочий SAS (см. предварительные требования). 
  
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительные требования
 Для начала создайте учетную запись хранения, а затем создайте SAS для ресурса. Вы можете создать два типа подписанных URL-адресов: SAS службы или учетной записи. Дополнительные сведения см. в разделе [Типы подписанных URL-адресов](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1#types-of-shared-access-signatures).
 
 После создания маркера SAS можно обращаться к файлу в хранилище BLOB-объектов, добавляя `?sv=<SAS token>` в URL-адрес. Этот URL-адрес имеет следующий формат. 
@@ -140,7 +140,7 @@ https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-07-29&
 | Разрешенные IP-адреса | Необязательный элемент. Если вы используете **Azure CDN от Verizon**, примените параметр диапазонов, указанных на странице [Azure CDN from Verizon Edge Server IP Ranges](/azure/cdn/cdn-pop-list-api) (Диапазоны IP-адресов пограничного сервера Azure CDN от Verizon). Если вы используете **Azure CDN от Akamai**, нельзя задать параметр диапазонов IP-адресов, так как они не являются статичными.|
 | Разрешенные протоколы | Протоколы, разрешенные для запроса, сделанного с помощью SAS учетной записи. Рекомендуется использовать параметр HTTPS.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о SAS доступны в следующих статьях:
 - [Использование подписанных URL-адресов (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)

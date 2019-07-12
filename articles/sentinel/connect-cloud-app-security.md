@@ -7,19 +7,20 @@ author: rkarlin
 manager: rkarlin
 editor: ''
 ms.assetid: cd9e5e27-fdd4-4717-8924-be4c1c430f23
-ms.service: sentinel
+ms.service: azure-sentinel
+ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: a418bb318654752eaf48ffbdd05b80cabb487ece
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4e75c9003103e267e864a98c7ee5c1bef2176bae
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65207551"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67612409"
 ---
 # <a name="connect-data-from-microsoft-cloud-app-security"></a>Подключайте данные из Microsoft Cloud App Security 
 
@@ -29,7 +30,7 @@ ms.locfileid: "65207551"
 
 Можно осуществлять потоковую передачу журналов из [Cloud App Security](https://docs.microsoft.com/cloud-app-security/what-is-cloud-app-security) в Azure Sentinel одним щелчком. Это подключение позволяет потоковую передачу оповещений из Cloud App Security в Azure Sentinel. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - Пользователь с глобальным администратором или разрешения администратора безопасности
 
@@ -46,7 +47,7 @@ ms.locfileid: "65207551"
 3. Чтобы использовать соответствующей схемы в Log Analytics для оповещений Cloud App Security, поиск **SecurityAlert**.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключиться к Azure Sentinel Microsoft Cloud App Security. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальные угрозы](quickstart-get-visibility.md).
 - Начало работы [обнаружение угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

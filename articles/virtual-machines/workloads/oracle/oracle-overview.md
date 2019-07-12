@@ -4,7 +4,7 @@ description: Дополнительные сведения о вариантах
 services: virtual-machines-linux
 documentationcenter: ''
 author: romitgirdhar
-manager: jeconnoc
+manager: gwallace
 tags: azure-resource-management
 ms.assetid: ''
 ms.service: virtual-machines-linux
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/04/2019
 ms.author: rogirdh
-ms.openlocfilehash: b5e40975fca491f289d949ee273d13053897fc6d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b8bfa0dfa82f73cad010a608150eac48c7f3d4c8
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66743640"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67707448"
 ---
 # <a name="overview-of-oracle-applications-and-solutions-on-azure"></a>Обзор приложения Oracle и решений в Azure
 
@@ -81,7 +81,7 @@ ms.locfileid: "66743640"
 
 Развертывание приложений Oracle в Azure основан на модели «принести собственные лицензии». Предполагается, что вы имеете право использовать программное обеспечение Oracle и у вас соглашение о текущей поддержке на месте с Oracle должным образом. Oracle гарантирует перемещение лицензий из локальной среды в Azure. См. в разделе Oracle Azure [часто задаваемые вопросы о](https://www.oracle.com/cloud/technologies/oracle-azure-faq.html).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о развертывании [образов виртуальных Машин Oracle](oracle-vm-solutions.md) в инфраструктуре Azure.
 

@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 11/20/2018
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: 9b7bc043c748000f03a98a28f856299527015388
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e7a049c8def0a5014aeb8a0e7a16aaa8def28009
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66397824"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705699"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions-preview"></a>Использование ссылок на Key Vault в Службе приложений и Функциях Azure (предварительная версия)
 
@@ -38,6 +38,8 @@ ms.locfileid: "66397824"
    > Ссылки на Key Vault сейчас поддерживают только назначаемые системой управляемые удостоверения. Вы не сможете использовать удостоверения, назначаемые пользователем.
 
 1. Создайте [политику доступа в Key Vault](../key-vault/key-vault-secure-your-key-vault.md#key-vault-access-policies) для созданного ранее удостоверения приложения. Включите в этой политике разрешения "Get" на получение секретов. Не устанавливайте "авторизованное приложение" или параметр `applicationId`, так как он не совместим с управляемым удостоверением.
+
+    Предоставление доступа к приложению удостоверений в хранилище ключей является операцией onetime, и он останется тем же для всех подписок Azure. Его можно использовать для развертывания сертификатов, нужно. 
 
 ## <a name="reference-syntax"></a>Синтаксис ссылок
 

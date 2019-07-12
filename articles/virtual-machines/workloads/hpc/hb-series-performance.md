@@ -4,7 +4,7 @@ description: Дополнительные сведения о производи
 services: virtual-machines
 documentationcenter: ''
 author: vermagit
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines
@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: amverma
-ms.openlocfilehash: 9174ed0fbf95a094c363fa1d9aa899d9554b345b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 820aa1d04437a80f72e95fab71f5c8503c59822c
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66809982"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67707732"
 ---
 # <a name="hb-series-virtual-machine-sizes"></a>Размеры виртуальных машин серии HB
 
@@ -45,7 +45,7 @@ numactl --physcpubind=[INSERT CORE #]  ib_send_lat -a
 |  #bytes         | #iterations     | t_min [микросекунды]     | t_max [микросекунды]     | t_typical [микросекунды] | t_avg [микросекунды]     | t_stdev [микросекунды]   |
 |-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|
 | 2               | 1000            | 2.35            | 12.63           | 2.38            | 2.42            | 0.33            |
-| 4\.               | 1000            | 2.35            | 18.53           | 2.38            | 2.4             | 0.21            |
+| 4               | 1000            | 2.35            | 18.53           | 2.38            | 2.4             | 0.21            |
 | 8               | 1000            | 2.36            | 6.06            | 2.39            | 2.41            | 0.22            |
 | 16              | 1000            | 2.36            | 6.05            | 2.39            | 2.41            | 0.21            |
 | 32              | 1000            | 2.37            | 18.93           | 2.4             | 2.42            | 0,25            |
@@ -70,7 +70,7 @@ numactl --physcpubind=[INSERT CORE #]  ib_send_lat -a
 | #bytes  | Задержка [микросекунды] (MPICH 3.3 + гл. 4) | Задержка [микросекунды] (OpenMPI 4.0.0) | Задержка [микросекунды] (MVAPICH2 2.3) | Задержка [микросекунды] (Intel MPI 2019) |
 |------|----------|----------|----------|----------|
 | 2    | 2.44     | 2.52     | 2.84     | 2.76     |
-| 4\.    | 2.44     | 2.53     | 2.84     | 2.76     |
+| 4    | 2.44     | 2.53     | 2.84     | 2.76     |
 | 8    | 2.44     | 2.53     | 2.83     | 2.76     |
 | 16   | 2.45     | 2.53     | 2,87     | 2.77     |
 | 32   | 2.62     | 2.69     | 2.89     | 2.78     |
@@ -78,7 +78,7 @@ numactl --physcpubind=[INSERT CORE #]  ib_send_lat -a
 | 128  | 2.76     | 2.88     | 3.06     | 2.91     |
 | 256  | 3.53     | 3.65     | 3.73     | 3.57     |
 | 512  | 3.68     | 3.78     | 3.81     | 3.70     |
-| 1024 | 3.86     | 3.97     | 3.95     | 3.93     |
+| 1024 | 3,86     | 3.97     | 3.95     | 3.93     |
 | 2048 | 4.12     | 4.5.      | 4.24     | 4.22     |
 | 4096 | 4.79     | 5.28     | 6.33     | 4.91     |
 
@@ -94,7 +94,7 @@ numactl --physcpubind=[INSERT CORE #]  ib_send_lat -a
 | #Size            | Пропускная способность (МБ/с) | Пропускная способность (ГБ/с) |
 |------------------|------------------|------------------|
 | 2                | 4.03             | 0.03             |
-| 4\.                | 8.2              | 0,07             |
+| 4                | 8.2              | 0,07             |
 | 8                | 16.15            | 0.13             |
 | 16               | 32.33            | 0,26             |
 | 32               | 64.36            | 0.51             |
@@ -117,7 +117,7 @@ numactl --physcpubind=[INSERT CORE #]  ib_send_lat -a
 | 4194304          | 12061.33         | 96.49            |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [высокопроизводительные вычислительные системы](https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/) в Azure.
 

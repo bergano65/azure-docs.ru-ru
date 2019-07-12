@@ -12,13 +12,13 @@ ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
-ms.author: annahar
-ms.openlocfilehash: 9654fd66faa1f745f25494e8b54625a92eb1745b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: anavin
+ms.openlocfilehash: bbd21ffeffeaf036909b5ab89f1a07909a03c3f0
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66111627"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621710"
 ---
 # <a name="load-balancing-on-multiple-ip-configurations-using-powershell"></a>Балансировка нагрузки в конфигурациях с несколькими IP-адресами с помощью PowerShell
 
@@ -141,6 +141,6 @@ ms.locfileid: "66111627"
 
 13. Наконец, необходимо настроить записи ресурсов DNS, чтобы они указывали на соответствующие интерфейсные IP-адреса подсистемы балансировки нагрузки. Домены можно разместить в Azure DNS. Дополнительные сведения об использовании Azure DNS с подсистемой балансировки нагрузки см. в разделе [Использование Azure DNS с другими службами Azure](../dns/dns-for-azure-services.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Узнайте больше о том, как объединять службы балансировки нагрузки, в статье [Использование служб балансировки нагрузки в Azure](../traffic-manager/traffic-manager-load-balancing-azure.md).
 - Узнайте, как использовать различные виды журналов в Azure управление и устранение неполадок подсистемы балансировки нагрузки в [журналы Azure Monitor для Azure Load Balancer](../load-balancer/load-balancer-monitor-log.md).

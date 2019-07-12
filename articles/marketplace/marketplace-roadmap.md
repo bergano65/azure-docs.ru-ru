@@ -7,13 +7,13 @@ manager: MaggiePucciEvans
 ms.service: marketplace
 ms.topic: article
 ms.date: 06/17/2019
-ms.author: BrianLevenson
-ms.openlocfilehash: 39a0ea2ec173c8e3a2f79fd19dfa35ce2806d442
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.author: blevens
+ms.openlocfilehash: 83710085c4bdfc76b851e59046cb148f768e3513
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67274886"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621424"
 ---
 # <a name="azure-marketplace-and-appsource-roadmap"></a>Стратегия развития Azure Marketplace и AppSource
 
@@ -22,7 +22,7 @@ ms.locfileid: "67274886"
 Ждем ваших предложений! Присоединяйтесь к обсуждениям в [сообществе партнеров Майкрософт](https://www.microsoftpartnercommunity.com/), чтобы получать последние новости о новых возможностях, программах и событиях.
 
 
-## <a name="roadmap"></a>Стратегия развития
+## <a name="roadmap"></a>Стратегия
 ![Стратегия развития Marketplace за июнь](./media/marketplace-publishers-guide/roadmap-june19.png)
 
 
@@ -50,6 +50,6 @@ ms.locfileid: "67274886"
 ) / [Обновление имеющегося предложения](https://docs.microsoft.com/azure/marketplace/partner-center-portal/update-existing-offer) / [предлагают Analytics](https://docs.microsoft.com/azure/marketplace/partner-center-portal/analytics)
 * [Получение поддержки для marketplace в центре партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/support)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Посетите страницу [руководства по публикации в Azure Marketplace и AppSource](https://docs.microsoft.com/azure/marketplace/marketplace-publishers-guide).

@@ -4,7 +4,7 @@ description: Обзор агента виртуальной машины Azure
 services: virtual-machines-windows
 documentationcenter: virtual-machines
 author: roiyz-msft
-manager: jeconnoc
+manager: gwallace
 editor: tysonn
 tags: azure-resource-manager
 ms.assetid: 0a1f212e-053e-4a39-9910-8d622959f594
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: roiyz
-ms.openlocfilehash: d17d7c9d7b57e6ca040e4f81c9665789c8bc26e2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3de0e7ac20296544f7ca02030056aa60542cb0b0
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60799774"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706165"
 ---
 # <a name="azure-virtual-machine-agent-overview"></a>Обзор агента виртуальной машины Azure
 Агент виртуальной машины Microsoft Azure — это защищенный упрощенный процесс, который управляет взаимодействием виртуальной машины с контроллером структуры Azure. Основная роль агента виртуальной машины — это включение и выполнение расширений виртуальной машины Azure. Расширения виртуальной машины позволяют выполнять дополнительные действия по настройке виртуальной машины после развертывания, например устанавливать и настраивать программное обеспечение. Они также предоставляют возможности восстановления, такие как сброс пароля администратора виртуальной машины. Расширения виртуальной машины не могут выполняться без агента виртуальной машины Azure.
@@ -109,5 +109,5 @@ foreach ($vm in $vms) {
 Агент виртуальной машины Azure для Windows обновляется автоматически. Так как новые виртуальные машины развертываются в Azure, во время подготовки виртуальной машины на них устанавливается последняя версия агента виртуальной машины. Чтобы во время создания образа на пользовательских образах виртуальных машин устанавливалась новая версия агента виртуальной машины, их необходимо обновлять вручную.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о расширениях виртуальных машин см. в статье c [обзором расширений и компонентов виртуальной машины Azure](overview.md).

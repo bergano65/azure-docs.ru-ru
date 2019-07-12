@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: article
-ms.date: 03/22/2019
+ms.date: 07/10/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5919eebccad8d7f9e048ae07be296eaaaf8428eb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 535842989ef49ee13a5ddee7c4349a3b819f741c
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67112105"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67797857"
 ---
 # <a name="azure-active-directory-conditional-access-settings-reference"></a>Справочник по параметрам Azure Active Directory условного доступа
 
@@ -101,7 +101,7 @@ ms.locfileid: "67112105"
 
 В политике условного доступа можно настроить [клиентских приложений](conditions.md#client-apps) условие для привязки политики в клиентское приложение, которое инициировало попытку доступа. Условие клиентских приложений можно задать, чтобы предоставить или заблокировать доступ, если была предпринята попытка доступа из приведенных ниже типов клиентских приложений:
 
-- "Обзор"
+- Browser
 - мобильные и классические приложения.
 
 ![Управление доступом к клиентским приложениям](./media/technical-reference/03.png)
@@ -114,7 +114,7 @@ ms.locfileid: "67112105"
 
 Этот параметр работает со всеми браузерами. Но чтобы выполнить условия политики устройств, например требование соответствия, поддерживаются следующие операционные системы и браузеры:
 
-| ОС                     | Браузеры                                      |
+| OS                     | Браузеры                                      |
 | :--                    | :--                                           |
 | Windows 10             | Internet Explorer, Microsoft Edge     |
 | Windows 8, Windows 8.1        | Internet Explorer, Chrome                     |
@@ -122,10 +122,10 @@ ms.locfileid: "67112105"
 | iOS                    | Safari, Microsoft Edge, Intune Managed Browser |
 | Android                | Chrome, Microsoft Edge, Intune Managed Browser |
 | Windows Phone          | Internet Explorer, Microsoft Edge             |
-| Windows Server 2016    | Internet Explorer, Microsoft Edge             |
-| Windows Server 2016    | Chrome                                        |
+| Windows Server 2016    | Internet Explorer, Microsoft Edge             |
+| Windows Server 2016    | Chrome                                        |
 | Windows Server 2012 R2 | Internet Explorer, Chrome                     |
-| Windows Server 2008 R2 | Internet Explorer, Chrome                     |
+| Windows Server 2008 R2 | Internet Explorer, Chrome                     |
 | macOS                  | Chrome, Safari                                |
 
 #### <a name="why-do-i-see-a-certificate-prompt-in-the-browser"></a>Почему в браузере запрос сертификата
@@ -134,14 +134,14 @@ ms.locfileid: "67112105"
 
 #### <a name="chrome-support"></a>Поддержка Chrome
 
-Для поддержки Chrome в **Windows 10 Creators Update (версия 1703)** или более поздней версии установите [это расширение](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji).
+Для поддержки Chrome в **Windows 10 Creators Update (версия 1703)** или более поздней версии, установите [учетных записей Windows 10 расширение](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji). Это расширение является обязательным, если политика условного доступа требует определенных сведений об устройстве.
 
 Чтобы автоматически развернуть это расширение в браузере Chrome, создайте следующий раздел реестра:
 
 |    |    |
 | --- | --- |
 | Path | HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist |
-| Name | 1 |
+| ИМЯ | 1 |
 | Type | REG_SZ (String) |
 | Data | ppnbnpeolgkicgegkbkbjmhlideopiji; https://clients2.google.com/service/update2/crx |
 
@@ -150,7 +150,7 @@ ms.locfileid: "67112105"
 |    |    |
 | --- | --- |
 | Path | HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls |
-| Name | 1 |
+| ИМЯ | 1 |
 | Type | REG_SZ (String) |
 | Data | {"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}} |
 
@@ -164,7 +164,7 @@ ms.locfileid: "67112105"
 
 Этот параметр влияет на попытки доступа, предпринимаемые из следующих мобильных приложений и классических клиентов.
 
-| Клиентские приложения | Целевая служба | платформа |
+| Клиентские приложения | Целевая служба | Платформа |
 | --- | --- | --- |
 | Приложение Dynamics CRM | Dynamics CRM | Windows 10, Windows 8.1, iOS и Android |
 | Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Office 365 Exchange Online | Windows 10 |
@@ -249,7 +249,7 @@ ms.locfileid: "67112105"
 - **Требуется политика защиты приложений** требования:
     - поддерживает только iOS и Android для [условия платформы устройства](#device-platform-condition);
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Общие сведения об условном доступе см. в разделе [что такое условный доступ в Azure Active Directory?](../active-directory-conditional-access-azure-portal.md)
 - Если вы готовы к настройке политик условного доступа в вашей среде, см. в разделе [рекомендации для условного доступа в Azure Active Directory](best-practices.md).

@@ -4,7 +4,7 @@ description: Узнайте о рекомендованных дистрибут
 services: virtual-machines-linux
 documentationcenter: ''
 author: szarkos
-manager: jeconnoc
+manager: gwallace
 editor: tysonn
 tags: azure-service-management,azure-resource-manager
 ms.assetid: 2777a526-c260-4cb9-a31a-bdfe1a55fffc
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2019
 ms.author: szark
-ms.openlocfilehash: a1be0b6870882d3c7b0281dec7933e87c50e49de
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 172267af394885d0c5ac0a0717de87e968182d37
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65834554"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67667866"
 ---
 # <a name="endorsed-linux-distributions-on-azure"></a>Рекомендованные дистрибутивы Linux в Azure
 Партнеры предоставляют образы Linux в Azure Marketplace. Мы активно сотрудничаем с разными сообществами Linux, чтобы расширить список рекомендованных дистрибутивов. Если дистрибутив Linux недоступен в Marketplace, всегда можно использовать собственный, следуя инструкциям в статье [Информация о нерекомендованных дистрибутивах](https://docs.microsoft.com/azure/virtual-machines/linux/create-upload-generic).
@@ -39,7 +39,7 @@ ms.locfileid: "65834554"
 | [CoreOS](https://coreos.com/docs/running-coreos/cloud-providers/azure/) |494.4.0 + |В ядре |Исходный код: [GitHub](https://github.com/coreos/coreos-overlay/tree/master/app-emulation/wa-linux-agent) |
 | Debian |Debian 7.9+, 8.2+ |В ядре |Пакет: в репозитории под именем waagent <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | Oracle Linux |6.4+, 7.0+ |В ядре |Пакет: в репозитории под именем WALinuxAgent <br/>Исходный код: [GitHub](https://go.microsoft.com/fwlink/p/?LinkID=250998) |
-| Red Hat Enterprise Linux. |RHEL 6.7 + И 7.1 +, 8.0 + |В ядре |Пакет: в репозитории под именем WALinuxAgent <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
+| Red Hat Enterprise Linux |RHEL 6.7 + И 7.1 +, 8.0 + |В ядре |Пакет: в репозитории под именем WALinuxAgent <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | SUSE Linux Enterprise |SLES или SLES for SAP<br>11 SP4<br>12 SP1 или более поздняя версия<br>15|В ядре |Пакет:<p> для версии 11: в репозитории [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools);<br>для версии 12: входит в состав модуля Public Cloud в python-azure-agent.<br/>Исходный код: [GitHub](https://go.microsoft.com/fwlink/p/?LinkID=250998) |
 | openSUSE |openSUSE LEAP 42.2+ |В ядре |Пакет: в репозитории [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools) под именем python-azure-agent <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | Ubuntu |Ubuntu 12.04+ **<sup>1</sup>** |В ядре |Пакет: в репозитории под именем walinuxagent <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |

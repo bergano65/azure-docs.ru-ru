@@ -2,17 +2,17 @@
 title: Ресурсы кластера управления RBAC и Azure AD в службе Azure Kubernetes
 description: Узнайте, как использовать членство в группе Azure Active Directory для ограничения доступа к ресурсам кластера, с помощью управления доступом на основе ролей (RBAC) в службе Azure Kubernetes (AKS)
 services: container-service
-author: iainfoulds
+author: mlearned
 ms.service: container-service
 ms.topic: article
 ms.date: 04/16/2019
-ms.author: iainfou
-ms.openlocfilehash: e974c47d1dfb04f66b622c64a7143d00de87c4cb
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: mlearned
+ms.openlocfilehash: fba54fd23fefbe0029b9a809b23568490f05b23e
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60467550"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67616166"
 ---
 # <a name="control-access-to-cluster-resources-using-role-based-access-control-and-azure-active-directory-identities-in-azure-kubernetes-service"></a>Управление доступом к ресурсам кластера, используя управление доступом на основе ролей и удостоверения Azure Active Directory в службе Azure Kubernetes
 
@@ -37,7 +37,7 @@ ms.locfileid: "60467550"
 
 В производственной среде можно использовать существующих пользователей и групп в клиенте Azure AD.
 
-Сначала получите идентификатор ресурса кластера AKS с помощью [az aks show] [ az-aks-show] команды. Назначьте идентификатор ресурса с именем переменной *AKS_ID* таким образом, чтобы его можно ссылаться в дополнительные команды.
+Сначала получите идентификатор ресурса кластера AKS с помощью [az aks show][az-aks-show] команды. Назначьте идентификатор ресурса с именем переменной *AKS_ID* таким образом, чтобы его можно ссылаться в дополнительные команды.
 
 ```azurecli-interactive
 AKS_ID=$(az aks show \
@@ -46,13 +46,13 @@ AKS_ID=$(az aks show \
     --query id -o tsv)
 ```
 
-Создание первой группы пример в Azure AD для разработчиков приложений, использующих [создать группы Active Directory az] [ az-ad-group-create] команды. В следующем примере создается группа с именем *appdev*:
+Создание первой группы пример в Azure AD для разработчиков приложений, использующих [создать группы Active Directory az][az-ad-group-create] команды. В следующем примере создается группа с именем *appdev*:
 
 ```azurecli-interactive
 APPDEV_ID=$(az ad group create --display-name appdev --mail-nickname appdev --query objectId -o tsv)
 ```
 
-Теперь создайте назначения ролей Azure для *appdev* группы с использованием [Создание назначений ролей az] [ az-role-assignment-create] команды. Это назначение позволяет использовать любой член группы `kubectl` для взаимодействия с кластером AKS, предоставив этому пользователю *роли пользователя кластера для службы Azure Kubernetes*.
+Теперь создайте назначения ролей Azure для *appdev* группы с использованием [Создание назначений ролей az][az-role-assignment-create] команды. Это назначение позволяет использовать любой член группы `kubectl` для взаимодействия с кластером AKS, предоставив этому пользователю *роли пользователя кластера для службы Azure Kubernetes*.
 
 ```azurecli-interactive
 az role assignment create \
@@ -83,7 +83,7 @@ az role assignment create \
 
 С двумя группами пример, созданные в Azure AD для разработчиков приложений из наших SREs теперь давайте создадим два примера пользователя. Проверка интеграции RBAC в конце статьи, вы вход в кластер AKS с помощью этих учетных записей.
 
-Создание первой учетной записи пользователя в Azure AD с помощью [создать пользователей ad az] [ az-ad-user-create] команды.
+Создание первой учетной записи пользователя в Azure AD с помощью [создать пользователей ad az][az-ad-user-create] команды.
 
 В следующем примере создается пользователь с отображаемым именем *разработки AKS* и имя участника-пользователя (UPN) из `aksdev@contoso.com`. Обновить имя участника-пользователя для включения проверенного домена для вашего клиента Azure AD (Замените *contoso.com* с именем вашего домена) и предоставляют свои собственные безопасные `--password` учетных данных:
 
@@ -95,7 +95,7 @@ AKSDEV_ID=$(az ad user create \
   --query objectId -o tsv)
 ```
 
-Теперь добавьте пользователя *appdev* группу, созданную в предыдущем разделе, с помощью [добавить члена группы ad az] [ az-ad-group-member-add] команды:
+Теперь добавьте пользователя *appdev* группу, созданную в предыдущем разделе, с помощью [добавить члена группы ad az][az-ad-group-member-add] команды:
 
 ```azurecli-interactive
 az ad group member add --group appdev --member-id $AKSDEV_ID
@@ -119,19 +119,19 @@ az ad group member add --group opssre --member-id $AKSSRE_ID
 
 Группы Azure AD и пользователи будут созданы. Назначения ролей Azure были созданы для членов группы для подключения к кластеру AKS как для обычного пользователя. Теперь давайте настроим кластера AKS, чтобы разрешить этим разным группам доступ к определенным ресурсам.
 
-Сначала необходимо получить учетные данные администратора с помощью кластера [az aks get-credentials] [ az-aks-get-credentials] команды. В одном из следующих разделов, вы получаете стандартным *пользователя* учетных данных для проверки подлинности Azure AD см. в разделе кластера потока в действии.
+Сначала необходимо получить учетные данные администратора с помощью кластера [az aks get-credentials][az-aks-get-credentials] команды. В одном из следующих разделов, вы получаете стандартным *пользователя* учетных данных для проверки подлинности Azure AD см. в разделе кластера потока в действии.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster --admin
 ```
 
-Создание пространства имен в кластере AKS с помощью [kubectl создание пространства имен] [ kubectl-create] команды. В следующем примере создается имя пространства имен *разработки*:
+Создание пространства имен в кластере AKS с помощью [kubectl создание пространства имен][kubectl-create] команды. В следующем примере создается имя пространства имен *разработки*:
 
 ```console
 kubectl create namespace dev
 ```
 
-В Kubernetes *ролей* определить разрешения, чтобы предоставить, и *RoleBindings* применить их к необходимых пользователей или групп. Эти назначения могут применяться для определенного пространства имен или в масштабах всего кластера. Дополнительные сведения см. в статье об [Использовании авторизации RBAC][rbac-authorization].
+В Kubernetes *ролей* определить разрешения, чтобы предоставить, и *RoleBindings* применить их к необходимых пользователей или групп. Эти назначения могут применяться для определенного пространства имен или в масштабах всего кластера. Дополнительные сведения см. в разделе [авторизации с помощью RBAC][rbac-authorization].
 
 Во-первых, создайте роль для *разработки* пространства имен. Эта роль предоставляет полный набор разрешений на пространство имен. В производственной среде можно указать более детальные разрешения для разных пользователей или групп.
 
@@ -154,13 +154,13 @@ rules:
   verbs: ["*"]
 ```
 
-Создание роли с помощью [применить kubectl] [ kubectl-apply] команду и укажите имя файла yaml-ФАЙЛ манифеста:
+Создание роли с помощью [kubectl применить][kubectl-apply] команду и укажите имя файла yaml-ФАЙЛ манифеста:
 
 ```console
 kubectl apply -f role-dev-namespace.yaml
 ```
 
-Затем получите идентификатор ресурса для *appdev* группы с использованием [Показать группы ad az] [ az-ad-group-show] команды. Эта группа будет задан предметом RoleBinding на следующем шаге.
+Затем получите идентификатор ресурса для *appdev* группы с использованием [Показать группы ad az][az-ad-group-show] команды. Эта группа будет задан предметом RoleBinding на следующем шаге.
 
 ```azurecli-interactive
 az ad group show --group appdev --query objectId -o tsv
@@ -184,7 +184,7 @@ subjects:
   name: groupObjectId
 ```
 
-Создается при помощи RoleBinding [применить kubectl] [ kubectl-apply] команду и укажите имя файла yaml-ФАЙЛ манифеста:
+Создается при помощи RoleBinding [kubectl применить][kubectl-apply] команду и укажите имя файла yaml-ФАЙЛ манифеста:
 
 ```console
 kubectl apply -f rolebinding-dev-namespace.yaml
@@ -194,7 +194,7 @@ kubectl apply -f rolebinding-dev-namespace.yaml
 
 Теперь повторите предыдущие шаги, чтобы создать пространство имен, роли и RoleBinding для SREs.
 
-Во-первых, создайте пространство имен для *sre* с помощью [kubectl создание пространства имен] [ kubectl-create] команды:
+Во-первых, создайте пространство имен для *sre* с помощью [kubectl создание пространства имен][kubectl-create] команды:
 
 ```console
 kubectl create namespace sre
@@ -219,13 +219,13 @@ rules:
   verbs: ["*"]
 ```
 
-Создание роли с помощью [применить kubectl] [ kubectl-apply] команду и укажите имя файла yaml-ФАЙЛ манифеста:
+Создание роли с помощью [kubectl применить][kubectl-apply] команду и укажите имя файла yaml-ФАЙЛ манифеста:
 
 ```console
 kubectl apply -f role-sre-namespace.yaml
 ```
 
-Получить идентификатор ресурса для *opssre* группы с использованием [Показать группы ad az] [ az-ad-group-show] команды:
+Получить идентификатор ресурса для *opssre* группы с использованием [Показать группы ad az][az-ad-group-show] команды:
 
 ```azurecli-interactive
 az ad group show --group opssre --query objectId -o tsv
@@ -249,7 +249,7 @@ subjects:
   name: groupObjectId
 ```
 
-Создается при помощи RoleBinding [применить kubectl] [ kubectl-apply] команду и укажите имя файла yaml-ФАЙЛ манифеста:
+Создается при помощи RoleBinding [kubectl применить][kubectl-apply] команду и укажите имя файла yaml-ФАЙЛ манифеста:
 
 ```console
 kubectl apply -f rolebinding-sre-namespace.yaml
@@ -259,13 +259,13 @@ kubectl apply -f rolebinding-sre-namespace.yaml
 
 Теперь давайте протестируем ожидаемые разрешения работают при создании и управлении ресурсами в кластере AKS. В этих примерах можно запланировать и просмотреть POD, содержащихся в пространстве имен назначенного пользователя. Затем предпринимается попытка расписание и представление модулей вне назначенного пространства имен.
 
-Во-первых, сброс *kubeconfig* контекста с помощью [az aks get-credentials] [ az-aks-get-credentials] команды. В предыдущем разделе задается контекст, используя учетные данные администратора кластера. Учетную запись администратора обходит входа Azure AD в запросах. Без `--admin` применяется параметр, контекст пользователя, которой требуются все запросы должны проходить проверку подлинности с помощью Azure AD.
+Во-первых, сброс *kubeconfig* контекста с помощью [az aks get-credentials][az-aks-get-credentials] команды. В предыдущем разделе задается контекст, используя учетные данные администратора кластера. Учетную запись администратора обходит входа Azure AD в запросах. Без `--admin` применяется параметр, контекст пользователя, которой требуются все запросы должны проходить проверку подлинности с помощью Azure AD.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster --overwrite-existing
 ```
 
-Основные pod NGINX с помощью расписания [запустите kubectl] [ kubectl-run] в команду *разработки* пространство имен:
+Основные pod NGINX с помощью расписания [запустите kubectl][kubectl-run] в команду *разработки* пространство имен:
 
 ```console
 kubectl run --generator=run-pod/v1 nginx-dev --image=nginx --namespace dev
@@ -281,7 +281,7 @@ To sign in, use a web browser to open the page https://microsoft.com/devicelogin
 pod/nginx-dev created
 ```
 
-Теперь с помощью [kubectl get pods] [ kubectl-get] команду, чтобы просмотреть POD, содержащихся в *разработки* пространства имен.
+Теперь с помощью [kubectl get pods][kubectl-get] команду, чтобы просмотреть POD, содержащихся в *разработки* пространства имен.
 
 ```console
 kubectl get pods --namespace dev
@@ -298,7 +298,7 @@ nginx-dev   1/1     Running   0          4m
 
 ### <a name="create-and-view-cluster-resources-outside-of-the-assigned-namespace"></a>Создание и просмотр ресурсов кластера вне назначенного пространства имен
 
-Теперь при попытке просмотра модулей за пределами *разработки* пространства имен. Используйте [kubectl get pods] [ kubectl-get] команду еще раз, чтобы см. в разделе `--all-namespaces` следующим образом:
+Теперь при попытке просмотра модулей за пределами *разработки* пространства имен. Используйте [kubectl get pods][kubectl-get] команду еще раз, чтобы см. в разделе `--all-namespaces` следующим образом:
 
 ```console
 kubectl get pods --all-namespaces
@@ -324,7 +324,7 @@ Error from server (Forbidden): pods is forbidden: User "aksdev@contoso.com" cann
 
 Чтобы убедиться, что наши членство в группе Azure AD и Kubernetes RBAC работают между разными пользователями и группами, повторите приведенные выше команды, когда в систему как *opssre* пользователя.
 
-Сброс *kubeconfig* контекста с помощью [az aks get-credentials] [ az-aks-get-credentials] команду, которая очищает токена проверки подлинности ранее кэшированных *aksdev*  пользователя:
+Сброс *kubeconfig* контекста с помощью [az aks get-credentials][az-aks-get-credentials] команду, которая очищает токена проверки подлинности ранее кэшированных *aksdev* пользователя:
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster --overwrite-existing
@@ -390,7 +390,7 @@ az ad group delete --group appdev
 az ad group delete --group opssre
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о защите кластеров Kubernetes см. в разделе [параметры доступа и удостоверений для AKS)][rbac-authorization].
 

@@ -4,7 +4,7 @@ description: Дополнительные требования к сети дл�
 services: virtual-machines-linux
 documentationcenter: ''
 author: RicksterCDN
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
 ms.devlang: NA
@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 09/10/2018
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2f4c74076f2763addc1f2b971d8ea0ca29ce6fd0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 953ee5d40a3a4c49d7cc01de804ae5c76ceedc7a
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60203981"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67709799"
 ---
 # <a name="additional-network-requirements-for-large-instances"></a>Дополнительные требования к сети для крупных экземпляров
 
@@ -67,6 +67,6 @@ ms.locfileid: "60203981"
 
 Чтобы удалить дополнительный канал ExpressRoute SAP HANA в Azure (крупные экземпляры), отправьте запрос на поддержку Azure в службу поддержки решения "SAP HANA для управления службами Майкрософт" и укажите, что нужно удалить канал. В подписке Azure вы можете по желанию удалить или оставить виртуальную сеть. Тем не менее нужно удалить подключение между каналом ExpressRoute крупных экземпляров HANA и связанным шлюзом виртуальной сети.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Как установить и настроить SAP HANA в Azure (крупные экземпляры)](hana-installation.md)

@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 06/26/2019
 ms.author: brendm
 ms.custom: seodec18
-ms.openlocfilehash: 51ca597208b582e95fd305886dcf163744825eee
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: af6fd7b99147396a70fccc7b2b11dfef3def15a8
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509648"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67786292"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Linux Java для службы приложений Azure
 
@@ -133,7 +133,7 @@ az webapp config appsettings set -g <your_resource_group> -n <your_app_name> --s
 
 При настройке параметров кучи приложения просмотрите сведения о плане службы приложений и примите во внимание, что наличие нескольких приложений и одного слота развертывания требует оптимального выделения памяти.
 
-Если вы развертываете приложение JAR-ФАЙЛ, его имя должно *app.jar* таким образом, чтобы встроенного изображения мог корректно идентифицировать приложение. (Подключаемый модуль Maven делает этот переименование автоматически.) Если вы не хотите переименовать JAR-ФАЙЛУ для *app.jar*, вы можете отправить сценарий оболочки с помощью команды для запуска JAR-ФАЙЛУ. Вставьте полный путь для этого сценария в [файл запуска](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-faq#startup-file) текстовое поле в разделе конфигурации портала.
+Если вы развертываете приложение JAR-ФАЙЛ, его имя должно *app.jar* таким образом, чтобы встроенного изображения мог корректно идентифицировать приложение. (Подключаемый модуль Maven делает этот переименование автоматически.) Если вы не хотите переименовать JAR-ФАЙЛУ для *app.jar*, вы можете отправить сценарий оболочки с помощью команды для запуска JAR-ФАЙЛУ. Вставьте полный путь для этого сценария в [файл запуска](app-service-linux-faq.md#built-in-images) текстовое поле в разделе конфигурации портала.
 
 ### <a name="turn-on-web-sockets"></a>Включение веб-сокетов
 
@@ -171,11 +171,15 @@ az webapp start --name <app-name> --resource-group <resource-group-name>
 
 Если приложение Java, особенно велик, следует увеличить предельное время запуска. Чтобы сделать это, создайте параметр приложения, `WEBSITES_CONTAINER_START_TIME_LIMIT` и присвойте ему значение количество секунд ожидания до истечения времени ожидания службы приложений. Максимальное значение равно `1800` секунд.
 
+### <a name="pre-compile-jsp-files"></a>Предварительная компиляция JSP-файлы
+
+Для повышения производительности приложений Tomcat, вы можете компилировать файлы JSP перед развертыванием в службе приложений. Можно использовать [подключаемого модуля Maven](https://sling.apache.org/components/jspc-maven-plugin/plugin-info.html) предоставленный приложением Apache Sling или с помощью этого [файл сборки Ant](https://tomcat.apache.org/tomcat-9.0-doc/jasper-howto.html#Web_Application_Compilation).
+
 ## <a name="secure-applications"></a>Защита приложений
 
 Для приложений Java, работающих в службе приложений для Linux, предлагается тот же набор [рекомендаций по обеспечению безопасности](/azure/security/security-paas-applications-using-app-services), что и для других приложений.
 
-### <a name="authenticate-users"></a>Проверка подлинности пользователей
+### <a name="authenticate-users"></a>Аутентификация пользователей
 
 Настроить проверку подлинности приложений на портале Azure с помощью **проверки подлинности и авторизации** параметр. Вы можете включить аутентификацию с помощью Azure Active Directory или имен для входа в социальные сети, таких как Facebook, Google или GitHub. На портале Azure можно настроить только один поставщик аутентификации. Дополнительные сведения приведены в разделе [Настройка приложения службы приложений для использования входа с помощью Azure Active Directory](../configure-authentication-provider-aad.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) и связанных статьях о других поставщиках удостоверений. Если необходимо включить несколько поставщиков входа, следуйте инструкциям в статье [Настройка проверки подлинности и авторизации в службе приложений Azure](../app-service-authentication-how-to.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
 
@@ -290,7 +294,7 @@ public int getServerPort()
 |------------|-----------------------------------------------|------------------------------------------------------------------------------------------|
 | PostgreSQL | `org.postgresql.Driver`                        | [Загрузить](https://jdbc.postgresql.org/download.html)                                    |
 | MySQL      | `com.mysql.jdbc.Driver`                        | [Скачать](https://dev.mysql.com/downloads/connector/j/) (выберите "Platform Independent" (Независимо от платформы)) |
-| SQL Server; | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
+| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
 
 Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или API сохраняемости Java (JPA), сначала нужно настроить `CATALINA_OPTS` переменной среды, считываемое Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 
@@ -680,7 +684,7 @@ public int getServerPort()
 
 Если планируется прекращение использования какой-либо поддерживаемой среды выполнения Java, то разработчики для Azure, использующие эту среду выполнения, получат соответствующее уведомление по крайней мере за шесть месяцев до прекращения использования.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Посетите центр [Azure для разработчиков Java](/java/azure/), чтобы найти краткие руководства Azure, руководства и справочную документацию по Java.
 

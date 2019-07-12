@@ -8,12 +8,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.openlocfilehash: ad789a597da759b9a2d58138c7ed441389a12adb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: aed716b01fe748be40ee22e3eba5742983c2a523
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61479989"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620928"
 ---
 # <a name="introduction-to-stream-analytics-geospatial-functions"></a>Сведения о геопространственных функциях Azure Stream Analytics
 
@@ -54,7 +54,7 @@ FROM input
 
  {"type" : "LineString", "coordinates" : [ [20.2321, -87.33], [10.0, 10.0], [10.5, 10.5] ]}
 
-Дополнительные сведения см. по ссылке [CreateLineString](https://msdn.microsoft.com/azure/stream-analytics/reference/createlinestring).
+Дополнительные сведения см. по ссылке [CreateLineString](https://docs.microsoft.com/stream-analytics-query/createlinestring).
 
 ## <a name="createpoint"></a>CreatePoint
 
@@ -81,7 +81,7 @@ FROM input
   
  {"type" : "Point", "coordinates" : [20.2321, -87.33]}  
 
-Дополнительные сведения см. по ссылке [CreatePoint](https://msdn.microsoft.com/azure/stream-analytics/reference/createpoint).
+Дополнительные сведения см. по ссылке [CreatePoint](https://docs.microsoft.com/stream-analytics-query/createpoint).
 
 ## <a name="createpolygon"></a>CreatePolygon
 
@@ -108,7 +108,7 @@ FROM input
  
  {"type" : "Polygon", "coordinates" : [[ [20.2321, -87.33], [10.0, 10.0], [10.5, 10.5], [20.2321, -87.33] ]]}
 
-Дополнительные сведения см. по ссылке [CreatePolygon](https://msdn.microsoft.com/azure/stream-analytics/reference/createpolygon).
+Дополнительные сведения см. по ссылке [CreatePolygon](https://docs.microsoft.com/stream-analytics-query/createpolygon).
 
 
 ## <a name="stdistance"></a>ST_DISTANCE
@@ -122,7 +122,7 @@ FROM Cars c
 JOIN Station s ON ST_DISTANCE(c.Location, s.Location) < 10 * 1000
 ```
 
-Дополнительные сведения см. по ссылке [ST_DISTANCE](https://msdn.microsoft.com/azure/stream-analytics/reference/st-distance).
+Дополнительные сведения см. по ссылке [ST_DISTANCE](https://docs.microsoft.com/stream-analytics-query/st-distance).
 
 ## <a name="stoverlaps"></a>ST_OVERLAPS
 Функция `ST_OVERLAPS` сравнивает два многоугольника. Если многоугольники перекрываются, функция возвращает значение 1. Если многоугольники не перекрываются, функция возвращает значение 0. 
@@ -143,7 +143,7 @@ FROM Cars c, Storm s
 JOIN Storm s ON ST_OVERLAPS(c.Location, s.Course)
 ```
 
-Дополнительные сведения см. по ссылке [ST_OVERLAPS](https://msdn.microsoft.com/azure/stream-analytics/reference/st-overlaps).
+Дополнительные сведения см. по ссылке [ST_OVERLAPS](https://docs.microsoft.com/stream-analytics-query/st-overlaps).
 
 ## <a name="stintersects"></a>ST_INTERSECTS
 Функция `ST_INTERSECTS` сравнивает два LineString. Если LineString пересекаются, функция возвращает 1. Если LineString не пересекаются, функция возвращает 0.
@@ -169,7 +169,7 @@ FROM input
   
  0  
 
-Дополнительные сведения см. по ссылке [ST_INTERSECTS](https://msdn.microsoft.com/azure/stream-analytics/reference/st-intersects).
+Дополнительные сведения см. по ссылке [ST_INTERSECTS](https://docs.microsoft.com/stream-analytics-query/st-intersects).
 
 ## <a name="stwithin"></a>ST_WITHIN
 Функция `ST_WITHIN` определяет есть ли точки или многоугольник внутри многоугольника. Если многоугольник содержит точки или многоугольник, функция возвращает значение 1. Функция возвращает значение 0, если точки или многоугольник не находятся в пределах объявленного многоугольника.
@@ -195,12 +195,12 @@ FROM input
   
  1  
 
-Дополнительные сведения см. по ссылке [ST_WITHIN](https://msdn.microsoft.com/azure/stream-analytics/reference/st-within).
+Дополнительные сведения см. по ссылке [ST_WITHIN](https://docs.microsoft.com/stream-analytics-query/st-within).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
-* [Справочник по языку запросов Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+* [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

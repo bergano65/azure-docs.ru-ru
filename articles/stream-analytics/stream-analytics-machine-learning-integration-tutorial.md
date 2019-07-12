@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: 7c945f39218f9099d5c304739ca9b567ab9b3325
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 2d74488f60f21e3644a7a04579bfab7e70882b01
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67164693"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621548"
 ---
 # <a name="performing-sentiment-analysis-by-using-azure-stream-analytics-and-azure-machine-learning-studio-preview"></a>Выполнение анализа тональности с помощью Azure Stream Analytics и студии машинного обучения Azure (Предварительная версия)
 В этой статье описывается, как быстро настроить простое задание Azure Stream Analytics, интегрированное студии машинного обучения Azure. Вы используете модель машинного обучения для анализа тональности из коллекции Cortana Intelligence для анализа потока текстовых данных, а также определения оценки тональности в реальном времени. С помощью Cortana Intelligence Suite вы сможете выполнить эту задачу, не вникая в особенности создания модели анализа тональности.
@@ -36,7 +36,7 @@ ms.locfileid: "67164693"
 
 ![Обзор интеграции машинного обучения в Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-figure-1.png)  
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы начать, у вас должны быть следующие компоненты:
 
 * Активная подписка Azure.
@@ -145,7 +145,7 @@ ms.locfileid: "67164693"
 
    ![Указание параметров входных данных нового задания Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-create-sa-input-new-portal.png)
 
-1. Выберите команду **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 ### <a name="configure-the-job-output"></a>Настройка выходных данных для задания
 Задание передает результаты в то же хранилище BLOB-объектов, в котором получает входные данные. 
@@ -165,7 +165,7 @@ ms.locfileid: "67164693"
 
    ![Указание параметров выходных данных нового задания Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/create-stream-analytics-output.png) 
 
-4. Выберите команду **Сохранить**.   
+4. Нажмите кнопку **Сохранить**.   
 
 
 ### <a name="add-the-machine-learning-function"></a>Добавление функции машинного обучения 
@@ -183,11 +183,11 @@ ms.locfileid: "67164693"
    |---------|---------|
    | **Псевдоним функции** | Используйте имя `sentiment` и выберите **Provide Azure Machine Learning function settings manually** (Указать параметры функции Машинного обучения Azure вручную). После этого введите URL-адрес и ключ.      |
    | **URL-адрес**| Вставьте URL-адрес веб-службы.|
-   |**Ключ** | Вставьте ключ API. |
+   |**Key** | Вставьте ключ API. |
   
    ![Параметры добавления функции службы "Машинное обучение" в задание Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/add-machine-learning-function.png)  
     
-4. Выберите команду **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
 ### <a name="create-a-query-to-transform-the-data"></a>Создание запроса для преобразования данных
 
@@ -249,10 +249,10 @@ Stream Analytics использует декларативный запрос н
 * **События функций** отображает количество событий в запросе. По умолчанию каждый запрос к веб-службе машинного обучения может содержать до 1000 событий.  
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
-* [Справочник по языку запросов Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+* [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Интеграция машинного обучения в Stream Analytics](stream-analytics-how-to-configure-azure-machine-learning-endpoints-in-stream-analytics.md)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 

@@ -7,19 +7,19 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 02/08/2018
 ms.author: danlep
-ms.openlocfilehash: 98a72123a05fa7d8dc16be7ddb787f2a2cf7e4d1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d91706da898e84effc6194a74dce69a66be0f4ac
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60563126"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657610"
 ---
 # <a name="mount-an-emptydir-volume-in-azure-container-instances"></a>Подключение тома emptyDir в службе "Экземпляры контейнеров Azure"
 
 Узнайте, как подключить том *emptyDir* для обмена данными между контейнерами в группе контейнеров службы "Экземпляры контейнеров Azure".
 
 > [!NOTE]
-> Сейчас подключение тома *emptyDir* поддерживается только для контейнеров Linux. Мы работаем над тем, чтобы обеспечить все функции для контейнеров Windows, но для текущей платформы есть отличия в [квотах и доступности регионов для службы "Экземпляры контейнеров Azure"](container-instances-quotas.md).
+> Сейчас подключение тома *emptyDir* поддерживается только для контейнеров Linux. Пока мы работаем, чтобы обеспечить все функции для контейнеров Windows, можно найти текущей платформы есть отличия в [Обзор](container-instances-overview.md#linux-and-windows-containers).
 
 ## <a name="emptydir-volume"></a>Том emptyDir
 
@@ -46,7 +46,7 @@ ms.locfileid: "60563126"
 
 Пример развертывания экземпляра контейнера с помощью шаблона Azure Resource Manager см. в статье [Развертывание группы контейнеров](container-instances-multi-container-group.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения о подключении других типов томов в службе "Экземпляры контейнеров Azure" см. в следующих статьях:
 

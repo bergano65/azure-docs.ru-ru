@@ -4,18 +4,17 @@ description: Это руководство поможет вам узнать, �
 services: key-vault
 author: ghogen
 manager: jillfra
-ms.prod: visual-studio
-ms.technology: vs-azure
+ms.service: key-vault
 ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: ghogen
-ms.openlocfilehash: 154eaa577ea66056c301db9516b425931b81d24d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f84662ce17d604f1a60b6700d259d322415ae91e
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64730434"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672206"
 ---
 # <a name="add-key-vault-to-your-web-application-by-using-visual-studio-connected-services"></a>Добавление хранилища ключей в веб-приложение с помощью функции "Подключенные службы" в Visual Studio
 
@@ -23,7 +22,7 @@ ms.locfileid: "64730434"
 
 Подробные сведения об изменениях, вносимых функцией "Подключенные службы" в проект для поддержки Key Vault, можно получить из раздела [Что произошло с моим проектом ASP.NET при добавлении подключенной службы Key Vault в Visual Studio?](#how-your-aspnet-framework-project-is-modified) или [Что произошло с моим проектом ASP.NET Core при добавлении подключенной службы Key Vault в Visual Studio?](#how-your-aspnet-core-project-is-modified)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - **Подписка Azure**. Если у вас нет подписки, вы можете зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
 - **Visual Studio 2019** или **Visual Studio 2017 версии 15.7** с **веб-разработки** установленной рабочей нагрузкой. [Скачайте это приложение](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
@@ -151,7 +150,7 @@ ms.locfileid: "64730434"
 
 Влияет на ссылки на .NET файлы проекта и ссылки на пакет NuGet.
 
-| type | Справочные материалы |
+| Type | Ссылка |
 | --- | --- |
 | NuGet | Microsoft.AspNetCore.AzureKeyVault.HostingStartup |
 
@@ -187,7 +186,7 @@ ms.locfileid: "64730434"
 
 Влияет на ссылки на .NET файлы проекта и `packages.config` (ссылки NuGet).
 
-| type | Справочные материалы |
+| Type | Ссылка |
 | --- | --- |
 | .NET; NuGet | Microsoft.Azure.KeyVault |
 | .NET; NuGet | Microsoft.Azure.KeyVault.WebKey |
@@ -231,6 +230,6 @@ ms.locfileid: "64730434"
 - Создана группа ресурсов или использована существующая.
 - В указанной группе ресурсов создано хранилище ключей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о разработке для Key Vault в [руководстве разработчика для Key Vault](key-vault-developers-guide.md).

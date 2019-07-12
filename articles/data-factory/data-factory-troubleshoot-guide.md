@@ -5,17 +5,16 @@ services: data-factory
 author: abnarain
 manager: craigg
 ms.service: data-factory
-ms.topic: troubleshoot
-ms.subservice: troubleshoot
+ms.topic: troubleshooting
 ms.date: 6/26/2019
 ms.author: abnarain
 ms.reviewer: craigg
-ms.openlocfilehash: 8d6ab565098e1ea40ede5c650f05e670a1edc7f6
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: d220730bb2e93e32d00e56ed98f4962ad89eda5a
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67452687"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67626327"
 ---
 # <a name="troubleshooting-azure-data-factory"></a>Устранение неполадок фабрики данных Azure
 В этой статье перечислены распространенные вопросы об устранении неполадок.
@@ -81,7 +80,7 @@ ms.locfileid: "67452687"
 | 2505         | Невозможно создать подпись общего доступа, если не используются учетные данные ключа учетной записи. | Настраиваемые действия поддерживают только учетные записи хранения, использующие ключ доступа. | См. описание                                            |
 | 2507         | Путь к папке не существует или является пустым:...            | Нет файлов в учетной записи хранения по указанному пути.       | FolderPath должен содержать исполняемые файлы, которые вы хотите запустить. |
 | 2508         | Имеются дублирующиеся файлы в папке ресурсов.               | Существует несколько файлов с тем же именем в различных подпапках папки folderPath. | Настраиваемые действия сведение структуры папки в folderPath.  Если структура папок необходимо сохранить, ZIP-файлы и извлеките их в пакетной службе Azure с помощью команды unzip, например: powershell.exe - nologo - noprofile-команда «& {Add-Type — «System.IO.Compression.FileSystem»;   [IO.Compression.ZipFile]::ExtractToDirectory ($zipFile, $folder); }" ;   $folder\yourProgram.exe |
-| 2509         | URL-адрес пакета... является недопустимым, он должен быть в формате Uri.         | URL-адреса пакетной службы должен оказаться похожим https://mybatchaccount.eastus.batch.azure.com | См. описание                                            |
+| 2509         | URL-адрес пакета... является недопустимым, он должен быть в формате Uri.         | URL-адреса пакетной службы должен оказаться похожим на https:\//mybatchaccount.eastus.batch.azure.com | См. описание                                            |
 | 2510         | Произошла ошибка при отправке запроса.               | Недопустимый URL-адрес пакета                                         | Проверьте URL-адрес пакета.                                            |
 
 ## <a name="hdinsight-spark-hive-mapreduce-pig-hadoop-streaming"></a>HDInsight (Spark, Hive, MapReduce, Pig, потоковая передача Hadoop)
@@ -92,7 +91,7 @@ ms.locfileid: "67452687"
 | 2300         | Произошел сбой при отправке задания Hadoop. Задание: … кластере:... /. Ошибка: Задача была отменена. | Истекло время ожидания отправки задания.                         | Это может быть общей проблемы подключения к HDInsight или проблема с сетевым подключением. Во-первых, убедитесь, что пользовательский Интерфейс Ambari HDInsight доступен с помощью любого браузера, и учетные данные действительны. Убедитесь в том сделать это из виртуальную Машину или компьютер, где устанавливается локальная среда IR использовании резидентных IR. Затем повторите попытку отправки задания из фабрики данных AZURE. Если проблема не исчезла, обратитесь к ADF группе поддержки. |
 | 2300         | Доступ запрещен:   Ambari имя пользователя или пароль неверны  <br/><br/>Доступ запрещен:   Администратор пользователей будет заблокирован в Ambari   <br/><br/>403 - запрещено. Отказано в доступе | Предоставленные учетные данные для HDInsight неверны или истечет срок действия | Исправьте их и повторно развернуть связанную службу. Убедитесь, что учетные данные работать на HDInsight во-первых, открыв URI кластера в любом браузере и пытаться войти в систему. Если они не работают, вы можете сбросить их с портала Azure. |
 | 2300,   2310 | 502 - веб-сервер получил недопустимый ответ, действующий в качестве шлюза или прокси-сервера       <br/>Недопустимый шлюз | Ошибка поступает из HDInsight                               | Данная ошибка поступает из кластера HDInsight. См. [средства устранения неполадок HDInsight](https://hdinsight.github.io/ambari/ambari-ui-502-error.html) типичных ошибок.    <br/>Для кластеров Spark причина может быть также из-за [это](https://hdinsight.github.io/spark/spark-thriftserver-errors.html). <br/><br/>[Дополнительные ссылки](https://docs.microsoft.com/azure/application-gateway/application-gateway-troubleshooting-502) |
-| 2300         | Произошел сбой при отправке задания Hadoop. Задание: … кластере:... Ошибка: {\"ошибка\":\"не удается обработать запрос задания отправки, как служба templeton занята слишком большим количеством запросов отправки задания. Пожалуйста, подождите некоторое время, прежде чем повторять операцию. Обратитесь к templeton.parallellism.job.submit конфигурации для настройки одновременных запросов. \  <br/><br/>Произошел сбой при отправке задания Hadoop. Задание: 161da5d4-6fa8-4ef4-a240-6b6428c5ae2f, кластера: https://abc-analytics-prod-hdi-hd-trax-prod01.azurehdinsight.net/.   Ошибка: {\"ошибка\":\"java.io.IOException: org.apache.hadoop.yarn.exceptions.YarnException: Не удалось отправить application_1561147195099_3730 для YARN: org.apache.hadoop.security.AccessControlException: Root.joblauncher очереди уже имеет 500 приложений, не может принимать отправки приложения: application_1561147195099_3730\ | В то же время слишком большого числа заданий передаются в HDInsight | Рекомендуется ограничить количество одновременных заданий, отправляемые в HDI. Обратитесь к ADF действия параллелизма, если они отправляются с помощью одного действия. Измените триггеры, чтобы число параллельных выполнений, разбросанных со временем. Также ссылаться на HDInsight документы, чтобы настроить «templeton.parallellism.job.submit», как видно из ошибки. |
+| 2300         | Произошел сбой при отправке задания Hadoop. Задание: … кластере:... Ошибка: {\"ошибка\":\"не удается обработать запрос задания отправки, как служба templeton занята слишком большим количеством запросов отправки задания. Пожалуйста, подождите некоторое время, прежде чем повторять операцию. Обратитесь к templeton.parallellism.job.submit конфигурации для настройки одновременных запросов. \  <br/><br/>Произошел сбой при отправке задания Hadoop. Задание: 161da5d4-6fa8-4ef4-a240-6b6428c5ae2f, кластера: https: \/ /abc-analytics-prod-hdi-hd-trax-prod01.azurehdinsight.net/.   Ошибка: {\"ошибка\":\"java.io.IOException: org.apache.hadoop.yarn.exceptions.YarnException: Не удалось отправить application_1561147195099_3730 для YARN: org.apache.hadoop.security.AccessControlException: Root.joblauncher очереди уже имеет 500 приложений, не может принимать отправки приложения: application_1561147195099_3730\ | В то же время слишком большого числа заданий передаются в HDInsight | Рекомендуется ограничить количество одновременных заданий, отправляемые в HDI. Обратитесь к ADF действия параллелизма, если они отправляются с помощью одного действия. Измените триггеры, чтобы число параллельных выполнений, разбросанных со временем. Также ссылаться на HDInsight документы, чтобы настроить «templeton.parallellism.job.submit», как видно из ошибки. |
 | 2303,   2347 | Сбой задания Hadoop с кодом завершения "5". См. в разделе "wasbs://adfjobs@adftrialrun.blob.core.windows.net/StreamingJobs/da4afc6d-7836-444e-bbd5-635fce315997/18_06_2019_05_36_05_050/stderr" для получения дополнительных сведений.  <br/><br/>Сбой выполнения Hive с кодом ошибки «UserErrorHiveOdbcCommandExecutionFailure».   См. в разделе "wasbs://adfjobs@eclsupplychainblobd.blob.core.windows.net/HiveQueryJobs/16439742-edd5-4efe-adf6-9b8ff5770beb/18_06_2019_07_37_50_477/Status/hive.out" для получения дополнительных сведений | Отправки задания в HDInsight, а не удалось выполнить на HDInsight | Задание для HDInsight успешно отправлен. Не удалось в кластере. Пожалуйста откройте задания в пользовательском Интерфейсе Ambari HDInsight и откройте журналы существует или открыть файл из хранилища в виде точек сообщения ошибки out. Сведения об ошибке будет находиться в этом файле. |
 | 2328         | При обработке запроса произошла внутренняя ошибка сервера. Пожалуйста, повторите запрос или обратитесь в службу поддержки | Происходит в HDInsight по запросу.                              | Данная ошибка поступает из службы HDInsight, при сбое подготовки HDInsight. Обратитесь в службу HDInsight и предоставьте имя кластера по запросу. |
 | 2310         | java.lang.NullPointerException                               | Произошла ошибка при отправке задания в кластер Spark      | Это исключение поступает из HDInsight, а также скрывает возникшей проблемы.   . Обратитесь в службу HDInsight для поддержки и предоставьте имя кластера и диапазон времени выполнения действия. |
@@ -150,13 +149,13 @@ ms.locfileid: "67452687"
 
 Дополнительные сведения о Fiddler [здесь](https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/ConfigureFiddler)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ниже перечислены некоторые ресурсы, которые можно использовать для поиска решения вашей проблемы.
 
 *  [Блоги](https://azure.microsoft.com/blog/tag/azure-data-factory/)
 *  [Запросы функций](https://feedback.azure.com/forums/270578-data-factory)
-*  [Видеоролики](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
+*  [Видео](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
 *  [Форум MSDN](https://social.msdn.microsoft.com/Forums/home?sort=relevancedesc&brandIgnore=True&searchTerm=data+factory)
 *  [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-data-factory)
 *  [Twitter](https://twitter.com/hashtag/DataFactory)

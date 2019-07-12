@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 39edbc77215d3a4f6477beae3be9d7d47cbba4f0
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: 61a3c1cdccf01b266581a13fe3c660bd57f59b2c
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67540921"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67796201"
 ---
 # <a name="deploy-and-monitor-iot-edge-modules-at-scale-using-the-azure-cli"></a>Развертывание и мониторинг большого числа модулей IoT Edge с помощью Azure CLI
 
@@ -29,7 +29,7 @@ ms.locfileid: "67540921"
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-using-cli.md) в подписке Azure. 
 * [Устройство IoT Edge](how-to-register-device-cli.md) с установленной средой выполнения IoT Edge.
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. Вам понадобится как минимум Azure CLI версии 2.0.24 или более поздней. Для проверки используйте `az –-version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack. 
+* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. Вам понадобится как минимум Azure CLI версии 2.0.24 или более поздней. Для проверки используйте `az --version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack. 
 * [Расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension).
 
 ## <a name="configure-a-deployment-manifest"></a>Настройка манифеста развертывания
@@ -200,7 +200,7 @@ az iot edge deployment update --deployment-id [deployment id] --hub-name [hub na
 * **--set** — обновление свойства в развертывании. Можно обновлять следующие свойства.
   * targetCondition — например `targetCondition=tags.location.state='Oregon'`
   * метки; 
-  * приоритет
+  * priority
 
 
 ## <a name="delete-a-deployment"></a>Удаление развертывания
@@ -217,6 +217,6 @@ az iot edge deployment delete --deployment-id [deployment id] --hub-name [hub na
 * **--deployment-id** — имя существующего развертывания в центре IoT.
 * **--hub-name** — имя концентратора IoT, в котором существует развертывание. Центр должен быть в текущей подписке. Переключитесь на нужную подписку с помощью команды `az account set -s [subscription name]`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [развертывании модулей на устройствах IoT Edge](module-deployment-monitoring.md).

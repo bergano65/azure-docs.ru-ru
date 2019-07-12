@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 07/01/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cff3c57c31526119ab81225a1c70b163173be937
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: 7d41e32065e3de37eb8f01ab1b836040e7f57b12
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67514439"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657873"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Передача владения подпиской Azure другой учетной записи
 
@@ -38,7 +38,7 @@ ms.locfileid: "67514439"
 
 1. Выберите **подписок** в левой области. В зависимости от доступа, может потребоваться выбрать область, выставления счетов, а затем выберите **подписок** или **подписок Azure**.
 
-1. Выберите **передачу в другую учетную запись** для подписки, которую вы хотите передать. 
+1. Выберите **передачи прав владения выставлением счетов** для подписки, которую вы хотите передать. 
 
    ![Выберите подписку для передачи](./media/billing-subscription-transfer/billing-select-subscription-to-transfer.png)
 
@@ -214,6 +214,6 @@ ms.locfileid: "67514439"
 
 Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Просмотрите и обновите роли администратора служб, соадминистраторов и другие роли RBAC. Дополнительные сведения см. в статьях [Добавление или изменение администраторов подписки Azure](billing-add-change-azure-subscription-administrator.md) и [Управление доступом с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md).

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 06/06/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 2b0892fb107827cd9060a36855e9b8bf4416463c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d3c547fbc09aeb034df5b7ed579639e1ff4bc0b4
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67069432"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705799"
 ---
 # <a name="azure-app-service-access-restrictions"></a>Ограничения доступа к службе приложений Azure #
 
@@ -98,7 +98,7 @@ ms.locfileid: "67069432"
 
 ## <a name="programmatic-manipulation-of-access-restriction-rules"></a>Программные манипуляции правила ограничения доступа ##
 
-В настоящее время нет интерфейса командной строки или PowerShell для ограничения доступа к новым возможностям, но значения могут быть установлены вручную с помощью операции PUT о конфигурации приложения в диспетчере ресурсов. Например, можно использовать resources.azure.com и изменить блок ipSecurityRestrictions, чтобы добавить необходимый код JSON.
+В настоящее время нет интерфейса командной строки или PowerShell для ограничения доступа к новым возможностям, но значения могут быть установлены вручную с помощью [Azure REST API](https://docs.microsoft.com/rest/api/azure/) операцию PUT в конфигурации приложения в диспетчере ресурсов. Например, можно использовать resources.azure.com и изменить блок ipSecurityRestrictions, чтобы добавить необходимый код JSON.
 
 Эти сведения в Resource Manager находятся здесь:
 
@@ -106,15 +106,19 @@ management.azure.com/subscriptions/**ИД_подписки**/resourceGroups/**г
 
 Ниже показан синтаксис JSON для приведенного выше примера.
 
-    "ipSecurityRestrictions": [
-      {
-        "ipAddress": "131.107.159.0/24",
-        "action": "Allow",
-        "tag": "Default",
-        "priority": 100,
-        "name": "allowed access"
+    {
+      "properties": {
+        "ipSecurityRestrictions": [
+          {
+            "ipAddress": "122.133.144.0/24",
+            "action": "Allow",
+            "tag": "Default",
+            "priority": 100,
+            "name": "IP example rule"
+          }
+        ]
       }
-    ],
+    }
 
 ## <a name="function-app-ip-restrictions"></a>Ограничения IP-адрес приложения функции
 

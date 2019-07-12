@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
-ms.date: 06/05/2019
-ms.openlocfilehash: 29fdb200075a5b5843944a7a890cc2f8ad61f1ee
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.date: 07/11/2019
+ms.openlocfilehash: b8591fe750d4bb1441cdc28c488b2c860eb0bccb
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67543857"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67840068"
 ---
 # <a name="deploy-a-model-using-a-custom-docker-image"></a>Развертывание модели с помощью пользовательского образа Docker
 
@@ -38,7 +38,7 @@ ms.locfileid: "67543857"
 * Создание пользовательского образа: Сведения для администраторов и DevOps, о создании пользовательского образа и настройке проверки подлинности для реестра контейнеров Azure с помощью интерфейса командной строки Azure и Machine Learning CLI.
 * Использование пользовательского образа: Сведения об использовании пользовательских образов при развертывании обученной модели из пакета SDK для Python или командной строки машинного Обучения для специалистов по анализу данных и DevOps/MLOps.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочая группа службы машинного обучения Azure. Дополнительные сведения см. в разделе [создать рабочую область](setup-create-workspace.md) статьи.
 * Машинного обучения Azure SDK. Дополнительные сведения см. в разделе пакет SDK для Python [создать рабочую область](setup-create-workspace.md#sdk) статьи.
@@ -116,6 +116,9 @@ ms.locfileid: "67543857"
     ```text
     FROM ubuntu:16.04
 
+    ARG CONDA_VERSION=4.5.12
+    ARG PYTHON_VERSION=3.6
+
     ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
     ENV PATH /opt/miniconda/bin:$PATH
 
@@ -124,12 +127,12 @@ ms.locfileid: "67543857"
         apt-get clean && \
         rm -rf /var/lib/apt/lists/*
 
-    RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-4.5.12-Linux-x86_64.sh -O ~/miniconda.sh && \
+    RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-${CONDA_VERSION}-Linux-x86_64.sh -O ~/miniconda.sh && \
         /bin/bash ~/miniconda.sh -b -p /opt/miniconda && \
         rm ~/miniconda.sh && \
         /opt/miniconda/bin/conda clean -tipsy
 
-    RUN conda install -y python=3.6 && \
+    RUN conda install -y conda=${CONDA_VERSION} python=${PYTHON_VERSION} && \
         conda clean -aqy && \
         rm -rf /opt/miniconda/pkgs && \
         find / -type d -name __pycache__ -prune -exec rm -rf {} \;
@@ -173,7 +176,7 @@ ms.locfileid: "67543857"
 
 Корпорация Майкрософт предоставляет несколько образов docker в общедоступный репозиторий, который может использоваться с действия, описанные в этом разделе:
 
-| Image | Описание |
+| Изображение | Описание |
 | ----- | ----- |
 | `mcr.microsoft.com/azureml/o16n-sample-user-base/ubuntu-miniconda` | Базовый образ для службы машинного обучения Azure |
 | `mcr.microsoft.com/azureml/onnxruntime:v0.4.0` | Содержит ONNX среды выполнения. |
@@ -248,7 +251,7 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json --dc depl
 
 Дополнительные сведения о развертывании модели с помощью командной строки машинного Обучения см. в разделе «Регистрация модели, профилирование и развертывание» из [расширение CLI для службы машинного обучения Azure](reference-azure-machine-learning-cli.md#model-registration-profiling-deployment) статьи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [способа развертывания и как](how-to-deploy-and-where.md).
 * Узнайте, как [Train и развертывать модели машинного обучения с помощью Azure конвейеров](/azure/devops/pipelines/targets/azure-machine-learning?view=azure-devops).

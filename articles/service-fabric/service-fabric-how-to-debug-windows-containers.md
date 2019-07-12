@@ -12,19 +12,19 @@ ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/14/2019
-ms.author: aljo, mikhegn
-ms.openlocfilehash: 15f288d5400b49ec05c9ffb936fd2097cc61bae8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: mikhegn
+ms.openlocfilehash: 07df215d9c3435d5ca3668b3c8d1587dbb99dca1
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66428153"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621947"
 ---
-# <a name="how-to-debug-windows-containers-in-azure-service-fabric-using-visual-studio-2019"></a>Практическое руководство: Отладка контейнеров Windows в Azure Service Fabric с помощью Visual Studio 2019 г.
+# <a name="how-to-debug-windows-containers-in-azure-service-fabric-using-visual-studio-2019"></a>Практическое руководство. Отладка контейнеров Windows в Azure Service Fabric с помощью Visual Studio 2019 г.
 
 С помощью Visual Studio 2019 г. можно выполнять отладку приложений .NET в контейнерах, как службы Service Fabric. В этой статье показано, как настроить среду, а затем выполнить отладку приложения .NET в контейнере, выполняемом в локальном кластере Service Fabric.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * В Windows 10 выполните это краткое руководство, чтобы [настроить Windows 10 для запуска контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-10).
 * В Windows Server 2016 выполните это краткое руководство, чтобы [настроить Windows 2016 для запуска контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-server).
@@ -80,5 +80,5 @@ ms.locfileid: "66428153"
 
     Visual Studio поддерживает типы консоли и проектов ASP.NET для .NET и .NET Core.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о возможностях Service Fabric и контейнеры, см. в разделе overview](service-fabric-containers-overview.md) контейнеры Service Fabric.

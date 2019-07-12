@@ -10,14 +10,14 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab, bonova
 manager: craigg
-ms.date: 03/13/2019
+ms.date: 07/07/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 2ca2e4e98f56f7df5e81217bcda00179f05ff69e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6b0e10ce48088853090958dca9d8c1fad20780e7
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67070354"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67723257"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server
 
@@ -186,7 +186,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - [Резервное копирование главного ключа службы](https://docs.microsoft.com/sql/t-sql/statements/backup-service-master-key-transact-sql) не поддерживается (управляется службой базы данных SQL).
 - [Восстановление главного ключа службы](https://docs.microsoft.com/sql/t-sql/statements/restore-service-master-key-transact-sql) не поддерживается (управляется службой базы данных SQL).
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 ### <a name="buffer-pool-extension"></a>Расширение буферного пула
 
@@ -293,18 +293,18 @@ WITH PRIVATE KEY (<private_key_options>)
   - SQL Server Analysis Services не поддерживаются.
 - Уведомления поддерживаются частично.
 - Поддерживается уведомление по электронной почте, несмотря на то, что его необходимо настроить профиль компонента Database Mail. Агент SQL Server можно использовать только один профиль компонента Database Mail, и ему должно быть присвоено `AzureManagedInstance_dbmail_profile`. 
-  - Пейджер не поддерживается. 
+  - Пейджер не поддерживается.
   - NetSend не поддерживается.
   - Оповещения еще не поддерживаются.
-  - Прокси-серверы не поддерживаются. 
+  - Прокси-серверы не поддерживаются.
 - EventLog не поддерживается.
 
-Следующие функции сейчас не поддерживаются, но будут добавлены в будущем:
+Следующие компоненты агента SQL в настоящее время не поддерживаются:
 
 - прокси-серверы;
 - Планирование заданий простоя ЦП
 - Включение или отключение агента
-- Оповещения
+- Предупреждения
 
 Сведения об агенте SQL Server см. в статье [Агент SQL Server](https://docs.microsoft.com/sql/ssms/agent/sql-server-agent).
 
@@ -398,7 +398,13 @@ MSDTC и [эластичные транзакции](sql-database-elastic-transa
 
 ### <a name="replication"></a>Репликация
 
-Репликация доступна в общедоступной предварительной версии управляемых экземпляров. Сведения о репликации см. в разделе [репликации SQL Server](https://docs.microsoft.com/sql/relational-databases/replication/replication-with-sql-database-managed-instance).
+[Репликация транзакций](sql-database-managed-instance-transactional-replication.md) доступна в общедоступной предварительной версии в управляемом экземпляре, с некоторыми ограничениями:
+- Al типы участников репликации (издатель, распространитель, по запросу подписчика и Push-подписчика) можно поместить в управляемом экземпляре, но издателя и распространителя не могут размещаться на разных экземплярах.
+- Типы репликации транзакций, моментальных снимков и двунаправленным письмом, поддерживаются. Репликация слиянием, Peer-to-peer репликацию и обновляемые подписки не поддерживаются.
+- Управляемый экземпляр может взаимодействовать с последних версиях SQL Server. Поддерживаемые версии см. в разделе [здесь](sql-database-managed-instance-transactional-replication.md#supportability-matrix-for-instance-databases-and-on-premises-systems).
+- Репликация транзакций имеет некоторые [Дополнительные требования к сети](sql-database-managed-instance-transactional-replication.md#requirements).
+
+Сведения о настройке репликации, см. в разделе [руководстве репликации](replication-with-sql-database-managed-instance.md).
 
 ### <a name="restore-statement"></a>Инструкция RESTORE 
 
@@ -416,7 +422,7 @@ MSDTC и [эластичные транзакции](sql-database-elastic-transa
   - `FROM DISK`/`TAPE` или устройство резервного копирования не поддерживаются.
   - Резервные наборы данных не поддерживаются.
 - `WITH` параметры не поддерживаются, например нет `DIFFERENTIAL` или `STATS`.
-- `ASYNC RESTORE`: Восстановление продолжится даже в случае разрыва соединения с клиентом. При разрыве соединения, можно проверить `sys.dm_operation_status` представления состояние операции восстановления, а также для СОЗДАНИЯ и удаления базы данных. См. статью [sys.dm_operation_status (база данных SQL Azure)](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database). 
+- `ASYNC RESTORE`. Восстановление продолжится даже в случае разрыва соединения с клиентом. При разрыве соединения, можно проверить `sys.dm_operation_status` представления состояние операции восстановления, а также для СОЗДАНИЯ и удаления базы данных. См. статью [sys.dm_operation_status (база данных SQL Azure)](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database). 
 
 Следующие параметры базы данных установлены или переопределении и нельзя будет изменить позже: 
 
@@ -439,9 +445,9 @@ MSDTC и [эластичные транзакции](sql-database-elastic-transa
 
 Компонент Service Broker между экземплярами не поддерживается:
 
-- `sys.routes`: Перед началом необходимо выбрать адрес из sys.routes. Адрес должен быть ЛОКАЛЬНЫМ для каждого маршрута. См. статью [sys.routes (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-routes-transact-sql).
-- `CREATE ROUTE`: Нельзя использовать `CREATE ROUTE` с `ADDRESS` отличное от `LOCAL`. См. статью [CREATE ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-route-transact-sql).
-- `ALTER ROUTE`: Нельзя использовать `ALTER ROUTE` с `ADDRESS` отличное от `LOCAL`. См. статью [ALTER ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-route-transact-sql). 
+- `sys.routes`. Перед началом необходимо выбрать адрес из sys.routes. Адрес должен быть ЛОКАЛЬНЫМ для каждого маршрута. См. статью [sys.routes (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-routes-transact-sql).
+- `CREATE ROUTE`. Нельзя использовать `CREATE ROUTE` с `ADDRESS` отличное от `LOCAL`. См. статью [CREATE ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-route-transact-sql).
+- `ALTER ROUTE`. Нельзя использовать `ALTER ROUTE` с `ADDRESS` отличное от `LOCAL`. См. статью [ALTER ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-route-transact-sql). 
 
 ### <a name="stored-procedures-functions-and-triggers"></a>Хранимые процедуры, функции и триггеры
 
@@ -459,7 +465,7 @@ MSDTC и [эластичные транзакции](sql-database-elastic-transa
 
 ## <a name="Environment"></a>Ограничения среды
 
-### <a name="subnet"></a>Подсеть
+### <a name="subnet"></a>Subnet
 - В подсеть, зарезервированную для управляемого экземпляра не удается разместить другие ресурсы (например, виртуальные машины). Поместите эти ресурсы в других подсетях.
 - Подсеть должна иметь достаточное количество доступных [IP-адреса](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Минимальное значение — 16, хотя рекомендуется иметь по крайней мере 32 IP-адресов в подсети.
 - [Конечные точки службы не может быть связана с подсетью управляемого экземпляра](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Убедитесь, что службы конечных точек может быть отключена при создании виртуальной сети.
@@ -486,7 +492,7 @@ MSDTC и [эластичные транзакции](sql-database-elastic-transa
 
 ### <a name="tempdb-size"></a>Размер tempdb
 
-Максимальный размер файла `tempdb` не может превышать 24 ГБ на ядро, на уровне общего назначения. Максимально `tempdb` размер критически важный для бизнеса уровень не с размером экземпляра хранилища. `tempdb` Базы данных всегда состоит из 12 файлов. Этот максимальный размер каждого файла нельзя изменить, и невозможно добавить новые файлы `tempdb`. Некоторые запросы могут возвращать ошибку, если им требуется более чем 24 ГБ на каждое ядро в `tempdb`. `tempdb` всегда повторно создается как пустой базы данных при запуск экземпляра или отработки отказа и любые изменения внесены в `tempdb` не будет сохранен. 
+Максимальный размер файла `tempdb` не может превышать 24 ГБ на ядро, на уровне общего назначения. Максимально `tempdb` размер критически важный для бизнеса уровень не с размером экземпляра хранилища. `tempdb` размер файла журнала ограничена 120 ГБ на общего назначения и уровни критически важный для бизнеса. `tempdb` Базы данных всегда состоит из 12 файлов. Этот максимальный размер каждого файла нельзя изменить, и невозможно добавить новые файлы `tempdb`. Некоторые запросы могут возвращать ошибку, если им требуется более чем 24 ГБ на каждое ядро в `tempdb` или если они создают более чем 120 ГБ журнала. `tempdb` всегда будет создан заново, пустую базу данных при запуске экземпляра или отработки отказа и любые изменения внесены в `tempdb` не будет сохранен. 
 
 ### <a name="cant-restore-contained-database"></a>Не удается восстановить автономной базы данных
 
@@ -586,7 +592,12 @@ using (var scope = new TransactionScope())
 
 **Решение:** Использовать автоматическое резервное копирование и восстановление на момент времени или [управлением клиентом (BYOK) TDE](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql#customer-managed-transparent-data-encryption---bring-your-own-key) вместо этого. Также можно отключить шифрование в базе данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+### <a name="point-in-time-restore-follows-time-by-the-time-zone-set-on-the-source-instance"></a>Восстановление на определенный момент следует за время, заданные в экземпляре источника часовой пояс
+
+В настоящее время восстановления на определенный момент интерпретирует требуется восстановить, следующие часовой пояс исходного экземпляра вместо этого путем следующих UTC.
+Проверьте [управляемый экземпляр часового пояса известные проблемы](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-timezone#known-issues) для получения дополнительных сведений.
+
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения об управляемых экземплярах см. в разделе [что такое управляемый экземпляр?](sql-database-managed-instance.md)
 - Для функций и список сравнения см. в разделе [сравнение функций базы данных SQL Azure](sql-database-features.md).

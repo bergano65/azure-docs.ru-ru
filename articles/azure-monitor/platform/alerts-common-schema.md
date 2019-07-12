@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: anantr
-ms.component: alerts
-ms.openlocfilehash: be38f5d3bbf4fe3d90fc78feab8774595b5338f2
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.subservice: alerts
+ms.openlocfilehash: 91ec5aa42367f6caaa93aaf808fde504e92fbc04
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447672"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67594322"
 ---
 # <a name="common-alert-schema"></a>Общая схема оповещений
 
@@ -35,7 +35,7 @@ ms.locfileid: "67447672"
 
 Общая схема оповещения в первую очередь проявляется в ваши уведомления. Ниже перечислены усовершенствования, которые будут доступны.
 
-| Действие | Улучшения|
+| Action | Улучшения|
 |:---|:---|
 | SMS | Согласованное шаблона SMS для всех типов оповещений. |
 | Email | Шаблон согласованное и подробное сообщение электронной почты, что позволяет легко диагностировать проблемы с первого взгляда. Внедренные глубокого ссылки на экземпляр предупреждения об изменении на портале и затронутого ресурса убедитесь, что можно быстро перейти в процесс исправления. |
@@ -122,7 +122,7 @@ ms.locfileid: "67447672"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Общие определения оповещений схемы для веб-перехватчик или логику приложения или Azure функции и автоматизацию Runbook.](https://aka.ms/commonAlertSchemaDefinitions)
 - [Узнайте, как создать приложение логики, которое использует общую схему оповещения для обработки всех предупреждений.](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations) 

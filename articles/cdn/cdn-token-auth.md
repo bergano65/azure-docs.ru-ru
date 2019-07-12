@@ -7,19 +7,19 @@ author: zhangmanling
 manager: zhangmanling
 editor: ''
 ms.assetid: 837018e3-03e6-4f9c-a23e-4b63d5707a64
-ms.service: cdn
+ms.service: azure-cdn
 ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: integration
 ms.date: 11/17/2017
 ms.author: mezha
-ms.openlocfilehash: b55685bc9cfdc8c31e6658050be94cbe49062f89
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fa71f472294b91baebc2a6075ddb2b50123e545d
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66472156"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67593395"
 ---
 # <a name="securing-azure-cdn-assets-with-token-authentication"></a>Защита ресурсов Azure CDN с помощью аутентификации на основе маркеров
 
@@ -190,7 +190,7 @@ ms.locfileid: "66472156"
 5. Можно настроить маркер, воспользовавшись исходным кодом на сайте [GitHub](https://github.com/VerizonDigital/ectoken).
    Доступны такие языки:
     
-   - C
+   - В
    - C#
    - PHP
    - Perl;

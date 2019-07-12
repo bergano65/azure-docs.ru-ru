@@ -13,22 +13,22 @@ ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/05/2019
-ms.subservice: manage-apps
+ms.subservice: app-mgmt
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7af05769861f98ec192789d90f8a61f5b6638d1d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 97b54d57a13f0f2b47633a25f1a44efdfa17d11a
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65783288"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67595055"
 ---
 # <a name="azure-ad-application-proxy-version-release-history"></a>Характеристики прокси приложения Azure AD: Журнал выпуска версий
 В этой статье перечислены версии и возможности прокси приложения Azure Active Directory (Azure AD), которые были выпущены. Команда Azure AD регулярно обновляет прокси приложения, добавляя новые функции и возможности. Соединители прокси приложения обновляются автоматически при выпуске новой версии.
 
 Ниже приведен список связанных ресурсов:
 
-Ресурс |  Сведения
+Resource |  Сведения
 --------- | --------- |
 Включение прокси приложения | Описываются предварительные требования для включения прокси приложения, Установка и регистрация соединителя в этом [руководстве](application-proxy-add-on-premises-application.md).
 Сведения о соединителях прокси приложения Azure AD | Дополнительные сведения о [управления соединителя](application-proxy-connectors.md) и как соединители [автоматическое обновление](application-proxy-connectors.md#automatic-updates).
@@ -88,6 +88,6 @@ ms.locfileid: "65783288"
 
 Если вы используете более ранних, чем 1.5.36.0 версия соединителя прокси приложения, обновление до последней версии, чтобы гарантировать использование последней полностью поддерживаемые функции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Дополнительные сведения о [удаленного доступа к локальным приложениям через прокси приложения Azure AD](application-proxy.md).
 - Чтобы начать использовать Application Proxy, воспользуйтесь статьей [Руководство. Добавление локального приложения для удаленного доступа через Application Proxy в Azure Active Directory](application-proxy-add-on-premises-application.md).

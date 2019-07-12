@@ -9,13 +9,13 @@ ms.date: 05/11/2018
 ms.topic: conceptual
 description: Использование настраиваемого веб-канала NuGet для предоставления доступа и использования пакетов NuGet в Azure Dev Spaces.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Container Service, containers
-manager: ghogen
-ms.openlocfilehash: 1a000e378a9b8ecfb09d778fd6444e3f24b3df7b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+manager: gwallace
+ms.openlocfilehash: ca1fee76dfe280322a39fad56b9f85ebe1a92d3b
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60686463"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704034"
 ---
 #  <a name="use-a-custom-nuget-feed-in-an-azure-dev-space"></a>Использование настраиваемого веб-канала NuGet в Azure Dev Spaces
 
@@ -63,7 +63,7 @@ ms.locfileid: "60686463"
         ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После того, как вы выполнили вышеуказанные шаги, при следующем запуске `azds up` (или нажатии `F5` в VSCode или Visual Studio) служба Azure Dev Spaces синхронизирует с Azure файл `NuGet.Config`, который затем `dotnet restore` будет использовать для установки зависимостей пакетов в контейнере.
 

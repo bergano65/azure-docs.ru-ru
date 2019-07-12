@@ -4,7 +4,7 @@ description: Создание виртуальной машины Linux в Azure
 services: virtual-machines-linux
 documentationcenter: ''
 author: vlivech
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: facb1115-2b4e-4ef3-9905-330e42beb686
 ms.service: virtual-machines-linux
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 12/15/2016
 ms.author: v-livech
-ms.openlocfilehash: 569e90c7908ce435689a80f7917b20275703f537
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a757e156d48eb27a9e4d9b38cb08d5417f1e35b6
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61473745"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67671070"
 ---
 # <a name="create-a-linux-vm-using-the-azure-classic-cli"></a>Создание виртуальной машины Linux с помощью классического интерфейса командной строки Azure
 
@@ -50,14 +50,14 @@ azure vm quick-create -M ~/.ssh/id_rsa.pub -Q CoreOS
 
 Чтобы быстро выбрать дистрибутив, можно воспользоваться псевдонимами интерфейса командной строки Azure для большинства распространенных дистрибутивов ОС. В следующей таблице перечислены псевдонимы (для интерфейса командной строки Azure версии 0.10). Все развертывания с использованием команды `quick-create` по умолчанию устанавливают резервные виртуальные машины с поддержкой хранилища на основе твердотельных накопителей (SSD), что обеспечивает более быструю подготовку к работе и доступ к диску с высокой производительностью. (Эти псевдонимы представляют лишь небольшую часть дистрибутивов, доступных в Azure. Чтобы найти другие образы в Azure Marketplace, выполните поиск в [PowerShell](../windows/cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json), [Интернете](https://azure.microsoft.com/marketplace/virtual-machines/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) или [загрузите собственный пользовательский образ](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).)
 
-| Alias | Издатель | ПРЕДЛОЖЕНИЕ | SKU | Version |
+| Alias | Издатель | ПРЕДЛОЖЕНИЕ | номер SKU | Version |
 |:--- |:--- |:--- |:--- |:--- |
-| CentOS |OpenLogic |CentOS |7,2 |последняя |
-| CoreOS |CoreOS |CoreOS |Stable |последняя |
-| Debian |credativ |Debian |8 |последняя |
-| openSUSE |SUSE |openSUSE |13.2 |последняя |
-| RHEL |Red Hat |RHEL |7,2 |последняя |
-| UbuntuLTS |Canonical |Сервер Ubuntu |14.04.4-LTS |последняя |
+| CentOS |OpenLogic |CentOS |7,2 |latest |
+| CoreOS |CoreOS |CoreOS |Stable |latest |
+| Debian |credativ |Debian |8 |latest |
+| openSUSE |SUSE |openSUSE |13.2 |latest |
+| RHEL |Red Hat |RHEL |7,2 |latest |
+| UbuntuLTS |Canonical |Сервер Ubuntu |14.04.4-LTS |latest |
 
 В следующих разделах для параметра **ImageURN** (`-Q`) используется псевдоним `UbuntuLTS`, чтобы развернуть виртуальную машину на базе сервера Ubuntu 14.04.4 LTS.
 
@@ -67,7 +67,7 @@ azure vm quick-create -M ~/.ssh/id_rsa.pub -Q CoreOS
 * имя виртуальной машины;
 * расположение (по умолчанию можно использовать `westus` или `westeurope`);
 * Linux (для Azure необходимо указать ОС, которую вы предпочитаете использовать);
-* username
+* username пользователя
 
 В приведенном ниже примере указаны все необходимые значения. Так как в качестве файла открытого ключа формата SSH-RSA используется `~/.ssh/id_rsa.pub`, этот файл работает как есть.
 
@@ -201,7 +201,7 @@ applicable law.
 myAdminUser@myVM:~$
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 С помощью команды `azure vm quick-create` можно быстро развернуть виртуальную машину, чтобы войти в оболочку Bash и начать работу. Однако использование `vm quick-create` не дает возможностей всестороннего контроля или создания более сложной среды.  Чтобы развернуть виртуальную машину Linux, настроенную для вашей инфраструктуры, выполните инструкции, приведенные в любой из следующих статей:
 
 * [Создание полной среды Linux с помощью интерфейса командной строки Azure](create-cli-complete.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

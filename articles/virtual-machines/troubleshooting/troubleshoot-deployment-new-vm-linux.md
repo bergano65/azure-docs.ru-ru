@@ -4,7 +4,7 @@ description: Устранение неполадок развертывания 
 services: virtual-machines-linux, azure-resource-manager
 documentationcenter: ''
 author: JiangChen79
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: top-support-issue, azure-resource-manager
 ms.assetid: 906a9c89-6866-496b-b4a4-f07fb39f990c
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 09/09/2016
 ms.author: cjiang
-ms.openlocfilehash: 9fea914fdf9b025fd5d38219a6bfc81b4a9cc584
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dd6241f75311ea956b204b5181ae17db0ef3faa1
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62125622"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67710489"
 ---
 # <a name="troubleshoot-resource-manager-deployment-issues-with-creating-a-new-linux-virtual-machine-in-azure"></a>Устранение неполадок в развертывании Resource Manager при создании виртуальной машины Linux в Azure
 [!INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-opening](../../../includes/virtual-machines-troubleshoot-deployment-new-vm-opening-include.md)]
@@ -88,6 +88,6 @@ ms.locfileid: "62125622"
   * создайте новую виртуальную машину в другой группе доступности (в том же регионе);
   * добавьте новую виртуальную машину в ту же виртуальную сеть.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 При возникновении проблем во время запуска остановленной виртуальной машины Linux или в случае изменения размера существующей виртуальной машины Linux в Azure см. раздел [Устранение неполадок в развертывании Resource Manager при перезагрузке или изменении размера существующей виртуальной машины Linux в Azure](../linux/restart-resize-error-troubleshooting.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 

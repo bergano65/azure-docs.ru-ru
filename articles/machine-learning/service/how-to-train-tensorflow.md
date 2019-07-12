@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.author: minxia
-author: mx-iao
+ms.author: maxluk
+author: maxluk
 ms.date: 06/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: a13afe56e007e2371b3193003ee95266b0750569
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: 67263df319063cdf21dadea257dcab05ba0d5f7b
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67543793"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67840000"
 ---
 # <a name="train-and-register-tensorflow-models-at-scale-with-azure-machine-learning-service"></a>Обучение и зарегистрируйте модели TensorFlow в масштабе с помощью службы машинного обучения Azure
 
@@ -25,7 +25,7 @@ TensorFlow — это платформа вычислений открытым �
 
 Вы разрабатываете модель TensorFlow из нуля или вам нужно добавить [существующей модели](how-to-deploy-existing-model.md) в облаке, службы машинного обучения Azure позволяют создавать готовые модели.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните этот код на любой из этих сред:
 
@@ -288,7 +288,7 @@ cluster_spec = tf.train.ClusterSpec(cluster)
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы обучена и зарегистрировали модели TensorFlow. Чтобы научиться развертывать модели в кластере с поддержкой GPU, перейти к изучению нашей статье о развертывании модели GPU.
 

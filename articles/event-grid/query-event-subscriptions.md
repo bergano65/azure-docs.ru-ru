@@ -8,12 +8,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 01/04/2019
 ms.author: spelluru
-ms.openlocfilehash: ad9c2d492f70a697ef0e7dc3b7ed03b9938f2468
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 08fa9ada97c652ca609a499da1c8e87f7e4487db
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66162019"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67786624"
 ---
 # <a name="query-event-grid-subscriptions"></a>Запрос к подпискам службы "Сетка событий Azure" 
 
@@ -46,7 +46,7 @@ Get-AzEventGridSubscription
 Для интерфейса командной строки Azure:
 
 ```azurecli-interactive
-az eventgrid event-subscription list --topic-type-name "Microsoft.Resources.Subscriptions"
+az eventgrid event-subscription list --topic-type-name "Microsoft.Resources.Subscriptions" --location global
 ```
 
 Для PowerShell используйте команду:
@@ -60,7 +60,7 @@ Get-AzEventGridSubscription -TopicTypeName "Microsoft.Resources.Subscriptions"
 Для интерфейса командной строки Azure:
 
 ```azurecli-interactive
-az eventgrid event-subscription list --topic-type-name "Microsoft.Resources.ResourceGroups"
+az eventgrid event-subscription list --topic-type-name "Microsoft.Resources.ResourceGroups" --location global
 ```
 
 Для PowerShell используйте команду:
@@ -74,7 +74,7 @@ Get-AzEventGridSubscription -TopicTypeName "Microsoft.Resources.ResourceGroups"
 Для интерфейса командной строки Azure:
 
 ```azurecli-interactive
-az eventgrid event-subscription list --resource-group myResourceGroup
+az eventgrid event-subscription list --resource-group myResourceGroup --location global
 ```
 
 Для PowerShell используйте команду:
@@ -159,7 +159,7 @@ $resourceid = (Get-AzResource -Name mystorage -ResourceGroupName myResourceGroup
 Get-AzEventGridSubscription -ResourceId $resourceid
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * См. дополнительные сведения о [доставке сообщений и повторных попытках в Сетке событий](delivery-and-retry.md).
 * Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).

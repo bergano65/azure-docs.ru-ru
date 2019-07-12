@@ -6,20 +6,20 @@ author: Rajeswari-Mamilla
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 07/0/2019
+ms.date: 07/03/2019
 ms.author: ramamill
-ms.openlocfilehash: 44588fedd53b363c43a369eeb1917ccaec58d948
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: 902c14211e91a1500c6b50cd790b347e337c4f70
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67508778"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67589061"
 ---
 # <a name="set-up-the-configuration-server-for-disaster-recovery-of-physical-servers-to-azure"></a>Настройка сервера конфигурации для аварийного восстановления физических серверов в Azure
 
 В этой статье приведены сведения о настройке локальной среды для запуска репликации физических серверов под управлением Windows или Linux в Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 В этой статье предполагается, что у вас уже имеется:
 - Хранилище служб восстановления на [портале Azure](https://portal.azure.com "портал Azure").
@@ -71,6 +71,6 @@ ms.locfileid: "67508778"
 [!INCLUDE [site-recovery-vmware-to-azure-install-register-issues](../../includes/site-recovery-vmware-to-azure-install-register-issues.md)]
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Следующий этап заключается в [настройке целевой среды](physical-azure-set-up-target.md) в Azure.

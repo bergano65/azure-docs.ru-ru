@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/02/2019
-ms.openlocfilehash: 41a57d1ad5d216797fc60ea13acff346734fdef8
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 7885b03e9f92fc8e8c5b2c78049760cbed8d4dc7
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67433633"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67703964"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров Azure HDInsight с помощью действий сценария
 
@@ -146,7 +146,7 @@ ms.locfileid: "67433633"
 
 В HDInsight доступны скрипты для установки следующих компонентов в кластерах HDInsight.
 
-| ИМЯ | Скрипт |
+| Имя | Скрипт |
 | --- | --- |
 | добавление учетной записи хранения Azure; |`https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh`. Ознакомьтесь со статьей [Добавление дополнительных учетных записей хранения в HDInsight](hdinsight-hadoop-add-storage.md). |
 | установка Hue; |`https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh`. Ознакомьтесь со статьей [Установка и использование Hue на кластерах HDInsight Hadoop](hdinsight-hadoop-hue-linux.md). |
@@ -176,9 +176,9 @@ ms.locfileid: "67433633"
     | Свойство | Значение |
     | --- | --- |
     | Выберите скрипт | Чтобы использовать собственный скрипт, выберите __Настраиваемый__. В противном случае выберите один из предоставленных скриптов. |
-    | ИМЯ |Укажите имя для действия сценария. |
+    | Имя |Укажите имя для действия сценария. |
     | URI bash-скрипта |Укажите URI сценария. |
-    | Head, Worker или ZooKeeper |Укажите узлы, на которых выполняется сценарий: **Head**, **Worker** или **ZooKeeper**. |
+    | HEAD/рабочих/ZooKeeper |Укажите узлы, на которых выполняется сценарий: **головной**, **рабочий** или **ZooKeeper**. |
     | Параметры |Укажите параметры, если они требуются для сценария. |
 
     Используйте запись __Сохранить это действие сценария__, чтобы сценарий применялся при масштабировании.
@@ -258,7 +258,7 @@ ms.locfileid: "67433633"
     | Свойство | Значение |
     | --- | --- |
     | Выберите скрипт | Чтобы использовать собственный скрипт, выберите __Настраиваемый__. В противном случае выберите предоставленный скрипт. |
-    | ИМЯ |Укажите имя для действия сценария. |
+    | Имя |Укажите имя для действия сценария. |
     | URI bash-скрипта |Укажите URI сценария. |
     | Головной, рабочий или Zookeeper |Укажите узлы, на которых выполняется сценарий: **головной**, **рабочий** или **ZooKeeper**. |
     | Параметры |Укажите параметры, если они требуются для сценария. |
@@ -514,7 +514,7 @@ sudo pip install azure-storage==0.20.0
 
     Из-за конфликта имен имеющихся сценариев в этом кластере не будут выполняться новые действия сценариев. Имена сценариев, указанные при создании кластера, должны быть уникальными. Имеющиеся сценарии выполняются при изменении размера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Разработка действий сценариев с помощью HDInsight](hdinsight-hadoop-script-actions-linux.md)
 * [Установка и использование Apache Giraph в кластерах HDInsight](hdinsight-hadoop-giraph-install-linux.md)

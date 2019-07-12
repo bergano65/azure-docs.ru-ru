@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 04/29/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f61396d8fb0f02fe77f5ee35560f45a0c4698a10
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 87de721f596eb4148939c00bc4b4db270a87c24e
+ms.sourcegitcommit: 0ebc62257be0ab52f524235f8d8ef3353fdaf89e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65850764"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67724107"
 ---
 # <a name="change-the-profile-information-for-your-azure-account"></a>Измените данные профиля для учетной записи Azure
 
@@ -87,14 +87,20 @@ ms.locfileid: "65850764"
 1. Перейдите к [форма запроса](https://account.microsoft.com/profile/permissions-link-request) отправить запрос, используя свой адрес электронной почты профиля. Вы получите ссылку по электронной почте, чтобы обновить параметры.
 2. Выберите ссылку, чтобы открыть **Управление разрешениями связи** страницы. На этой странице отображаются типы рекламные сообщения, адрес электронной почты включено. Очистить все разделы, которые вы хотите отказаться от, а затем выберите **Сохранить**.
 
-
 ![Пример страницы для управления разрешениями, связи](./media/billing-how-to-change-azure-account-profile/manage-communication-permissions.png)
 
 Если отказаться рекламные сообщения, вы по-прежнему получать уведомления службы, на основе вашей учетной записи.
+
+## <a name="change-the-subscription-name"></a>Изменить имя подписки
+
+1. Войдите в [портала Azure](https://portal.azure.com)выберите **подписки** из левой области, а затем выберите подписку, которую необходимо переименовать.
+1. Выберите **Обзор**, а затем выберите **Переименовать** на панели команд.
+    ![Пример того, переименование подписки Azure](./media/billing-how-to-change-azure-account-profile/rename-sub.png)
+1. После изменения имени, выберите **Сохранить**.
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Просмотреть учетные записи выставления счетов](billing-view-all-accounts.md)

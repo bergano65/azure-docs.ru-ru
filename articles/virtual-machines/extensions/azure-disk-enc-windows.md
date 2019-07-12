@@ -4,7 +4,7 @@ description: Развертывание шифрования дисков Azure 
 services: virtual-machines-windows
 documentationcenter: ''
 author: ejarvi
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-windows
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: ejarvi
-ms.openlocfilehash: ff77f9fc017627143b14544af03d0d5e80813db9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9a3e135172f0744c053da816b3c77762dbe783c3
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67051699"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706101"
 ---
 # <a name="azure-disk-encryption-for-windows-microsoftazuresecurityazurediskencryption"></a>Шифрование дисков Azure для Windows (Microsoft.Azure.Security.AzureDiskEncryption)
 
@@ -27,7 +27,7 @@ ms.locfileid: "67051699"
 
 При шифровании дисков Azure используется Bitlocker для полного шифрования диска на виртуальных машинах Azure под управлением Windows.  Шифрование дисков Azure интегрировано в Azure Key Vault, что позволяет управлять секретами и ключами шифрования дисков в подписке Key Vault. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 См. полный список [необходимых компонентов для шифрования дисков Azure](
 ../../security/azure-security-disk-encryption-prerequisites.md).
@@ -141,23 +141,23 @@ ms.locfileid: "67051699"
 
 ### <a name="property-values"></a>Значения свойств
 
-| ИМЯ | Значение и пример | Тип данных |
+| Имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
-| publisher | Microsoft.Azure.Security | string |
-| type | AzureDiskEncryptionForLinux | string |
-| typeHandlerVersion | 0.1, 1.1 | int |
+| publisher | Microsoft.Azure.Security | строка |
+| type | AzureDiskEncryptionForLinux | строка |
+| typeHandlerVersion | 0.1, 1.1 | ssNoversion |
 | (0,1 схема) AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
-| (0,1 схема) AADClientSecret | password | string |
-| (0,1 схема) AADClientCertificate | thumbprint | string |
+| (0,1 схема) AADClientSecret | password | строка |
+| (0,1 схема) AADClientCertificate | thumbprint | строка |
 | DiskFormatQuery | {"dev_path":"","name":"","file_system":""} | Словарь JSON |
-| EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | string | 
-| KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | string |
-| KeyEncryptionKeyURL | url | string |
-| KeyVaultURL | url | string |
-| (необязательно) Passphrase | password | string | 
-| SequenceVersion | uniqueidentifier | string |
-| VolumeType | OS, Data, All | string |
+| EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | строка | 
+| KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | строка |
+| KeyEncryptionKeyURL | url | строка |
+| KeyVaultURL | url | строка |
+| (необязательно) Passphrase | password | строка | 
+| SequenceVersion | uniqueidentifier | строка |
+| VolumeType | OS, Data, All | строка |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 Пример шаблона развертывания см. в руководстве по [созданию зашифрованной виртуальной машины Windows из образа коллекции](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-create-new-vm-gallery-image).
@@ -176,5 +176,5 @@ ms.locfileid: "67051699"
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 См. дополнительные сведения о [расширениях и компонентах виртуальных машин Windows](features-windows.md).

@@ -5,14 +5,14 @@ ms.service: hdinsight
 author: msft-tacox
 ms.author: tacox
 ms.reviewer: jasonh
-ms.topic: howto
+ms.topic: conceptual
 ms.date: 04/24/2019
-ms.openlocfilehash: b39279e560cb1738ff9b33ec587562efd2ed4e8d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c1809885c930c4d22dff3f30d6e874aacf0b540e
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65800951"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672558"
 ---
 # <a name="migrate-azure-hdinsight-36-hive-workloads-to-hdinsight-40"></a>Перенос рабочих нагрузок Azure HDInsight 3.6 Hive в HDInsight 4.0
 
@@ -111,7 +111,7 @@ Studio для аналитики данных, которые могут зап�
     * `tez.history.logging.proto-base-dir`
 3. Перезапустите HDFS, Hive, Tez и DAS на обоих головных узлах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Объявление HDInsight 4.0](../hdinsight-version-release.md)
 * [Подробный обзор HDInsight 4.0](https://azure.microsoft.com/blog/deep-dive-into-azure-hdinsight-4-0/)

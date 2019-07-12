@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 010880304c5011bd5a767650aa0ae6b6103bdde2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e5d473cffeefe29febc4f0dfb2a620d917bf238d
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65540859"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672113"
 ---
 # <a name="how-to-create-a-skillset-in-an-enrichment-pipeline"></a>Создание набора навыков в конвейере обогащения
 
-Когнитивный поиск извлекает и обогащает данные, позволяя находить их в службе "Поиск Azure". Шаги извлечения и обогащения называются *когнитивными навыками*. Они объединяются в *наборы навыков*, указываемые при индексировании. Можно использовать набор навыков [встроенные навыки](cognitive-search-predefined-skills.md) или пользовательские методики (см. в разделе [пример: Создание пользовательского опыта](cognitive-search-create-custom-skill-example.md) Дополнительные сведения).
+Когнитивный поиск извлекает и обогащает данные, позволяя находить их в службе "Поиск Azure". Шаги извлечения и обогащения называются *когнитивными навыками*. Они объединяются в *наборы навыков*, указываемые при индексировании. Можно использовать набор навыков [встроенные навыки](cognitive-search-predefined-skills.md) или пользовательские методики (см. в разделе [пример: Создание пользовательских опыт для когнитивного поиска](cognitive-search-create-custom-skill-example.md) Дополнительные сведения).
 
 В этой статье описано, как создать конвейер обогащения для используемых навыков. Набор навыков связывается с [индексатором](search-indexer-overview.md) службы "Поиск" Azure. Процесс проектирования конвейера, который описывается в этой статье, включает создание самого набора навыков, 
 
@@ -277,6 +277,6 @@ Content-Type: application/json
 
 <a name="next-step"></a>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали о конвейере обогащения и наборах навыков, переходите к руководствам по [созданию ссылок на аннотации в наборе навыков](cognitive-search-concept-annotations-syntax.md) и [сопоставлению выходных данных с полями в индексе](cognitive-search-output-field-mapping.md). 

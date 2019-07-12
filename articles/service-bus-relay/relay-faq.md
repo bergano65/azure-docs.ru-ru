@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/21/2018
 ms.author: spelluru
-ms.openlocfilehash: 2433f4b3563cc8b301d1815cccf5ab24406e8662
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c6ea5e72f70620004b4b00be0c779893a3b2ad90
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66111474"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706192"
 ---
 # <a name="azure-relay-faqs"></a>Часто задаваемые вопросы о ретрансляторе Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "66111474"
 В этом разделе содержатся ответы на некоторые часто задаваемые вопросы о ценах на использование ретранслятора. Общие сведения о расценках Azure см. на странице [часто задаваемых вопросов о поддержке Azure](https://azure.microsoft.com/support/faq/). Дополнительные сведения о ценах на использование ретранслятора см. на странице [цен на служебную шину][Pricing overview].
 
 ### <a name="how-do-you-charge-for-hybrid-connections-and-wcf-relay"></a>Как выставляется цена за гибридные подключения и ретранслятор WCF?
-Подробные сведения см. в таблице [гибридных подключений и ретрансляторов WCF][Pricing overview] на странице с ценами на служебную шину. Помимо платы, указанной на этой странице, также взимается плата за связанные операции передачи данных, исходящих из центра данных, в котором подготавливается ваше приложение.
+Полные сведения о ценах на использование ретранслятора см. в разделе [гибридные подключения и ретрансляторы WCF][Pricing overview] таблице на странице с ценами на Service Bus. Помимо платы, указанной на этой странице, также взимается плата за связанные операции передачи данных, исходящих из центра данных, в котором подготавливается ваше приложение.
 
 ### <a name="how-am-i-billed-for-hybrid-connections"></a>Как рассчитывается стоимость использования гибридных подключений?
 Ниже приведены три примера сценария выставления счетов за гибридные подключения.
@@ -86,7 +86,7 @@ ms.locfileid: "66111474"
 | Параллельные подключения ретрансляции для всех конечных точек ретрансляции в пространстве имен службы |Пространство имен |- |5 000 |
 | Конечные точки ретрансляции на одно пространство имен службы |Пространство имен |- |10 000 |
 | Размер сообщения для ретрансляций [NetOnewayRelayBinding](/dotnet/api/microsoft.servicebus.netonewayrelaybinding) и [NetEventRelayBinding](/dotnet/api/microsoft.servicebus.neteventrelaybinding) |Пространство имен |Входящие сообщения, размер которых превышает эти значения, отклоняются, а в вызывающем коде возникает исключение. |64 КБ |
-| Размер сообщения для ретрансляций [HttpRelayTransportBindingElement](/dotnet/api/microsoft.servicebus.httprelaytransportbindingelement) и [NetTcpRelayBinding](/dotnet/api/microsoft.servicebus.nettcprelaybinding) |Пространство имен |Нет ограничений на размер сообщения. |Не ограничено |
+| Размер сообщения для ретрансляций [HttpRelayTransportBindingElement](/dotnet/api/microsoft.servicebus.httprelaytransportbindingelement) и [NetTcpRelayBinding](/dotnet/api/microsoft.servicebus.nettcprelaybinding) |Пространство имен |Нет ограничений на размер сообщения. |Без ограничений |
 
 ### <a name="does-relay-have-any-usage-quotas"></a>Есть ли у ретранслятора квоты использования?
 По умолчанию для любой облачной службы Майкрософт устанавливается квота совокупного месячного использования в рамках всех подписок клиента. Мы понимаем, что в некоторых случаях вам может потребоваться больше, чем разрешено этими ограничениями. Вы можете в любой момент обратиться в службу поддержки клиентов и договориться об изменении квот в соответствии с вашими потребностями. Для служебной шины установлены следующие квоты общего использования:
@@ -106,7 +106,7 @@ ms.locfileid: "66111474"
 
 #### <a name="azure-portal"></a>Портал Azure
 
-Сведения об использовании портала Azure для переноса пространства имен ретранслятора Azure из одной подписки в другую см. в разделе [С помощью портала](../azure-resource-manager/resource-group-move-resources.md#use-portal). 
+Сведения об использовании портала Azure для переноса пространства имен ретранслятора Azure из одной подписки в другую см. в разделе [С помощью портала](../azure-resource-manager/resource-group-move-resources.md#use-the-portal). 
 
 #### <a name="powershell"></a>PowerShell
 
@@ -125,15 +125,15 @@ Move-AzResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptio
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 ### <a name="what-are-some-of-the-exceptions-generated-by-azure-relay-apis-and-suggested-actions-you-can-take"></a>Какие исключения создаются API ретранслятора Azure? Какие действия можно предпринять?
-Описание распространенных исключений и сведения о действиях, которые можно предпринять, см. в статье [Исключения ретранслятора][Relay exceptions].
+Описание распространенных исключений и предлагаемые действия, которые можно предпринять, см. в разделе [исключения ретранслятора][Relay exceptions].
 
 ### <a name="what-is-a-shared-access-signature-and-which-languages-can-i-use-to-generate-a-signature"></a>Что такое подписанный URL-адрес? На каких языках можно создавать подписи?
-Подписанные URL-адреса (SAS) представляют собой механизм аутентификации на базе алгоритма безопасного хэширования SHA-256 или URI. Дополнительные сведения о том, как создавать собственные подписи с использованием Node, PHP, Java, C и C#, см. в статье [Аутентификация служебной шины с помощью подписанных URL-адресов][Shared Access Signatures].
+Подписанные URL-адреса (SAS) представляют собой механизм аутентификации на базе алгоритма безопасного хэширования SHA-256 или URI. Сведения о том, как создавать собственные подписи в узел, PHP, Java, C и C#, см. в разделе [проверки подлинности Service Bus с подписями общего доступа][Shared Access Signatures].
 
 ### <a name="is-it-possible-to-whitelist-relay-endpoints"></a>Можно ли добавить конечные точки ретрансляции в список разрешений?
 Да. Клиент ретрансляции устанавливает подключения к службе ретрансляции Azure, используя полные доменные имена. Пользователи могут добавить запись для `*.servicebus.windows.net` в брандмауэры, поддерживающие добавление в список разрешений DNS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Создание пространства имен](relay-create-namespace-portal.md)
 * [Приступая к работе с .NET](relay-hybrid-connections-dotnet-get-started.md)
 * [Приступая к работе с Node](relay-hybrid-connections-node-get-started.md)

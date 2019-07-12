@@ -1,7 +1,7 @@
 ---
 title: Руководство по устранению неполадок с развертыванием
 titleSuffix: Azure Machine Learning service
-description: Узнайте, как обойти решать и устранение распространенных ошибок развертывания Docker с AKS и ACI, с помощью службы машинного обучения Azure.
+description: Узнайте, как обойти решать и устранение распространенных ошибок развертывания Docker с помощью службы Azure Kubernetes и экземпляры контейнеров Azure, с помощью службы машинного обучения Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,16 +9,16 @@ ms.topic: conceptual
 author: chris-lauren
 ms.author: clauren
 ms.reviewer: jmartens
-ms.date: 05/02/2018
+ms.date: 07/09/2018
 ms.custom: seodec18
-ms.openlocfilehash: 0fba7c2f5a46e0c5d0e3c5fdd65a03bb77f148d9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e0f4b024d717c08df3514df057abf89d55be1dc9
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67074995"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67707040"
 ---
-# <a name="troubleshooting-azure-machine-learning-service-aks-and-aci-deployments"></a>Устранение неполадок при развертывании AKS и ACI с помощью Службы машинного обучения Azure
+# <a name="troubleshooting-azure-machine-learning-service-azure-kubernetes-service-and-azure-container-instances-deployment"></a>Устранение неполадок при развертывании службы Azure Kubernetes и экземпляры контейнеров Azure службы машинного обучения Azure
 
 Узнайте, как обойти или устранить распространенных ошибок развертывания в Docker с помощью экземпляров контейнеров Azure (ACI) и Azure Kubernetes Service (AKS) с помощью службы машинного обучения Azure.
 
@@ -315,7 +315,215 @@ def run(input_data):
 Дополнительные сведения о параметр `autoscale_target_utilization`, `autoscale_max_replicas`, и `autoscale_min_replicas` , см. в разделе [AksWebservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py) ссылка на модуль.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="advanced-debugging"></a>Усовершенствованная Отладка
+
+В некоторых случаях может потребоваться интерактивную отладку кода Python, содержащихся в модели развертывания. Например, если происходит сбой сценарий входа и причина не может определяться дополнительное ведение журнала. С помощью Visual Studio Code, а также инструменты Python для Visual Studio (PTVSD), можно присоединить к код, выполняющийся в контейнере Docker.
+
+> [!IMPORTANT]
+> Этот метод отладки не работает при использовании `Model.deploy()` и `LocalWebservice.deploy_configuration` развертывание модели локально. Вместо этого необходимо создать образ с помощью [ContainerImage](https://docs.microsoft.com/python/api/azureml-core/azureml.core.image.containerimage?view=azure-ml-py) класса. 
+>
+> Развертывания локального веб-служб требуется рабочая установки Docker в локальной системе. Docker должна быть запущена перед развертыванием локальных веб-службы. Сведения об установке и использовании Docker см. в разделе [ https://www.docker.com/ ](https://www.docker.com/).
+
+### <a name="configure-development-environment"></a>Настройка среды разработки
+
+1. Чтобы установить инструменты Python для Visual Studio (PTVSD) в локальной среде разработки Visual STUDIO Code, используйте следующую команду:
+
+    ```
+    python -m pip install --upgrade ptvsd
+    ```
+
+    Дополнительные сведения об использовании PTVSD с VS Code см. в разделе [удаленной отладки](https://code.visualstudio.com/docs/python/debugging#_remote-debugging).
+
+1. Чтобы настроить VS Code для взаимодействия с образа Docker, создайте новую конфигурацию отладки:
+
+    1. В VS Code выберите __Отладка__ меню и выберите __откройте конфигураций__. Файл с именем __launch.json__ открывает.
+
+    1. В __launch.json__ файл, найдите строку, которая содержит `"configurations": [`и вставьте следующий текст после него:
+
+        ```json
+        {
+            "name": "Azure Machine Learning service: Docker Debug",
+            "type": "python",
+            "request": "attach",
+            "port": 5678,
+            "host": "localhost",
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}",
+                    "remoteRoot": "/var/azureml-app"
+                }
+            ]
+        }
+        ```
+
+        > [!IMPORTANT]
+        > Если уже есть другие записи в разделе конфигурации, добавьте запятую (,) после вставленного кода.
+
+        В этом разделе присоединяет в контейнер Docker, с помощью открытый порт 5678.
+
+    1. Сохранить __launch.json__ файла.
+
+### <a name="create-an-image-that-includes-ptvsd"></a>Создать образ, содержащий PTVSD
+
+1. Таким образом, чтобы он включал PTVSD, измените среду conda для развертывания. В следующем примере показано добавление его с помощью `pip_packages` параметр:
+
+    ```python
+    from azureml.core.conda_dependencies import CondaDependencies 
+    
+    # Usually a good idea to choose specific version numbers
+    # so training is made on same packages as scoring
+    myenv = CondaDependencies.create(conda_packages=['numpy==1.15.4',            
+                                'scikit-learn==0.19.1', 'pandas==0.23.4'],
+                                 pip_packages = ['azureml-defaults==1.0.17', 'ptvsd'])
+    
+    with open("myenv.yml","w") as f:
+        f.write(myenv.serialize_to_string())
+    ```
+
+1. Чтобы начать PTVSD и ожидания соединения при запуске службы, добавьте следующее в верхнюю часть вашей `score.py` файла:
+
+    ```python
+    import ptvsd
+    # Allows other computers to attach to ptvsd on this IP address and port.
+    ptvsd.enable_attach(address=('0.0.0.0', 5678), redirect_output = True)
+    # Wait 30 seconds for a debugger to attach. If none attaches, the script continues as normal.
+    ptvsd.wait_for_attach(timeout = 30)
+    print("Debugger attached...")
+    ```
+
+1. Во время отладки может потребоваться внести изменения без необходимости ее повторного создания файлов в образе. Для установки в текстовом редакторе (vim) в образ Docker, создайте новый текстовый файл с именем `Dockerfile.steps` и используйте следующую команду в качестве содержимого файла:
+
+    ```text
+    RUN apt-get update && apt-get -y install vim
+    ```
+
+    В текстовом редакторе позволяет изменять файлы, находящиеся внутри образа docker, чтобы проверить изменения, не создавая новый образ.
+
+1. Чтобы создать образ, использующий `Dockerfile.steps` файла следует использовать `docker_file` параметр при создании образа. Следующий пример демонстрирует, как это сделать:
+
+    > [!NOTE]
+    > В этом примере предполагается, что `ws` указывает на рабочей области машинного обучения Azure и что `model` — это модель развертывания. `myenv.yml` Файл содержит зависимости conda, созданное на шаге 1.
+
+    ```python
+    from azureml.core.image import Image, ContainerImage
+    image_config = ContainerImage.image_configuration(runtime= "python",
+                                 execution_script="score.py",
+                                 conda_file="myenv.yml",
+                                 docker_file="Dockerfile.steps")
+
+    image = Image.create(name = "myimage",
+                     models = [model],
+                     image_config = image_config, 
+                     workspace = ws)
+    # Print the location of the image in the repository
+    print(image.image_location)
+    ```
+
+После создания образа, отображается расположение образа в реестре. Расположение похож на следующий текст:
+
+```text
+myregistry.azurecr.io/myimage:1
+```
+
+В этом примере текст имени реестра используется `myregistry` и используется образ `myimage`. Версия образа `1`.
+
+### <a name="download-the-image"></a>Скачивание образа
+
+1. Откройте командную строку, терминал или другую оболочку и используйте следующую команду [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) команду для проверки подлинности в подписку Azure, которая содержит рабочую область машинного обучения Azure:
+
+    ```azurecli
+    az login
+    ```
+
+1. Для проверки подлинности в реестр контейнеров Azure (ACR), содержащий образ, используйте следующую команду. Замените `myregistry` с тем, которое возвращается, когда вы зарегистрировали изображения:
+
+    ```azurecli
+    az acr login --name myregistry
+    ```
+
+1. Чтобы загрузить образ для локального Docker, используйте следующую команду. Замените `myimagepath` с расположением, возвращается, когда вы зарегистрировали изображения:
+
+    ```bash
+    docker pull myimagepath
+    ```
+
+    Путь к изображению должен быть аналогичен `myregistry.azurecr.io/myimage:1`. Где `myregistry` — ваш реестр `myimage` — это образ, и `1` — это версия образа.
+
+    > [!TIP]
+    > Проверку подлинности на предыдущем шаге неограниченно долго не действует. Если вы подождет достаточно долго между команды проверки подлинности и по запросу, вы получите ошибку проверки подлинности. В этом случае проверку подлинности.
+
+    Время, необходимое для завершения загрузки зависит от скорости подключения к Интернету. Состояние загрузки отображается во время процесса. После завершения загрузки можно использовать `docker images` команду, чтобы убедиться, что его загрузки.
+
+1. Чтобы сделать проще работать с изображением, используйте следующую команду для добавления тега. Замените `myimagepath` с значение расположения из шага 2.
+
+    ```bash
+    docker tag myimagepath debug:1
+    ```
+
+    Остальные шаги, см. в локальный образ как `debug:1` вместо значения путь полного образа.
+
+### <a name="debug-the-service"></a>Отладка службы
+
+> [!TIP]
+> Если вы установить время ожидания для соединения PTVSD в `score.py` файл, необходимо соединиться с VS Code до истечения времени ожидания сеанса отладки. Запустите VS Code, открыть локальную копию `score.py`, установите точку останова, и будет готова к работе, прежде чем использовать шаги в этом разделе.
+>
+> Дополнительные сведения об отладке и задание точек останова см. в разделе [Отладка](https://code.visualstudio.com/Docs/editor/debugging).
+
+1. Чтобы запустить контейнер Docker, с помощью образа, используйте следующую команду:
+
+    ```bash
+    docker run --rm --name debug -p 8000:5001 -p 5678:5678 debug:1
+    ```
+
+1. Чтобы подключить отладчик VS Code PTVSD внутри контейнера, откройте VS Code и воспользоваться клавишей F5, ключевые, или выберите __Отладка__. При появлении запроса, выберите __службы машинного обучения Azure: Docker отладки__ конфигурации. Можно также выбрать значок "Отладка" на боковой панели __службы машинного обучения Azure: Docker отладки__ запись из раскрывающегося меню "Отладка", а затем используйте зеленую стрелку, чтобы присоединить отладчик.
+
+    ![Значок "Отладка", отладки "Пуск" и выбора конфигурации](media/how-to-troubleshoot-deployment/start-debugging.png)
+
+На этом этапе VS Code подключается к PTVSD в контейнере Docker и останавливается в точке останова, заданными ранее. Теперь можно выполнить пошаговую через код во время их выполнения, просматривать переменные и т. д.
+
+Дополнительные сведения об использовании VS Code для отладки Python, см. в разделе [отладку кода Python](https://docs.microsoft.com/visualstudio/python/debugging-python-in-visual-studio?view=vs-2019).
+
+<a id="editfiles"></a>
+### <a name="modify-the-container-files"></a>Измените файлы контейнера
+
+Чтобы внести изменения в файлы изображения, можно подключить к запущенному контейнеру и выполнить оболочку bash. После этого можно использовать vim для редактирования файлов:
+
+1. Чтобы подключиться к запущенному контейнеру и запустите оболочку bash в контейнер, используйте следующую команду:
+
+    ```bash
+    docker exec -it debug /bin/bash
+    ```
+
+1. Чтобы найти файлы, используемые службой, используйте следующую команду из оболочки bash в контейнере:
+
+    ```bash
+    cd /var/azureml-app
+    ```
+
+    На этой странице можно использовать vim для редактирования `score.py` файл. Дополнительные сведения об использовании vim, см. в разделе [с помощью редактора Vim](https://www.tldp.org/LDP/intro-linux/html/sect_06_02.html).
+
+1. Изменения в контейнер, обычно не сохраняются. Чтобы сохранить любые изменения, внесенные, используйте следующую команду, перед выходом из оболочки к работе на предыдущем шаге (то есть в другой оболочкой):
+
+    ```bash
+    docker commit debug debug:2
+    ```
+
+    Эта команда создает новый образ с именем `debug:2` , содержащий изменения.
+
+    > [!TIP]
+    > Необходимо остановить текущий контейнер и начать использовать новую версию, прежде чем изменения вступят в силу.
+
+1. Не забудьте сохранить изменения, внесенные в файлы в контейнере синхронизацию локальных файлов, используемых в VS Code. В противном случае процесс отладчика не будет работать должным образом.
+
+### <a name="stop-the-container"></a>Остановка контейнера
+
+Чтобы остановить контейнер, используйте следующую команду:
+
+```bash
+docker stop debug
+```
+
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о развертывании см. в статьях, представленных ниже.
 

@@ -11,20 +11,20 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36429feed99c421984ed55d4e506954aa30f0040
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 4332c921af770cb47e9a9a779d0bd148153fcd31
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67482125"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67666145"
 ---
-# <a name="how-to-plan-your-azure-ad-join-implementation"></a>Практическое руководство: Планирование реализации присоединения к Azure AD
+# <a name="how-to-plan-your-azure-ad-join-implementation"></a>Практическое руководство. Планирование реализации присоединения к Azure AD
 
 Присоединение к Azure AD позволяет подключать устройства непосредственно к Azure AD без необходимости в присоединении к локальной службе Active Directory, в то же время поддерживая продуктивность и безопасность работы пользователей. Присоединение к Azure AD готово к использованию на предприятиях как в масштабных, так и в ограниченных развертываниях.   
 
 В этой статье содержатся сведения, необходимые для планирования реализации присоединения к Azure AD.
  
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Предполагается, что вы ознакомлены с [общими сведениями об управлении устройствами в Azure Active Directory](../device-management-introduction.md).
 
@@ -70,7 +70,7 @@ ms.locfileid: "67482125"
 - **WS-Fed**. Этот протокол необходим для присоединения устройства к Azure AD.
 - **WS-Trust**. Этот протокол необходим для входа на присоединенное к Azure AD устройство. 
 
-Если ваш поставщик удостоверений не поддерживает эти протоколы, то присоединение Azure AD не работает по умолчанию. Начиная с Windows 10 версии 1809, ваши пользователи могут выполнять вход на присоединенном к Azure AD устройстве с поставщиком удостоверений на основе SAML, используя [веб-вход в Windows 10](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1809#web-sign-in-to-windows-10). В настоящее время функция веб-входа доступна только в предварительной версии.
+Если ваш поставщик удостоверений не поддерживает эти протоколы, то присоединение Azure AD не работает по умолчанию. Начиная с Windows 10 версии 1809, ваши пользователи могут выполнять вход на присоединенном к Azure AD устройстве с поставщиком удостоверений на основе SAML, используя [веб-вход в Windows 10](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1809#web-sign-in-to-windows-10). В настоящее время входа в веб-службы — это функция предварительной версии и не рекомендуется для рабочих развертываний.
 
 ### <a name="smartcards-and-certificate-based-authentication"></a>Смарт-карты и проверка подлинности на основе сертификатов
 
@@ -283,7 +283,7 @@ MAM не применяется для присоединения к Azure AD.
 
 Можно использовать эту реализацию для [требуют управляемых устройств для доступа к облаку приложения с условным доступом](../conditional-access/require-managed-devices.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Руководство по присоединению нового устройства с Windows 10 с помощью Azure AD во время первого запуска](azuread-joined-devices-frx.md)

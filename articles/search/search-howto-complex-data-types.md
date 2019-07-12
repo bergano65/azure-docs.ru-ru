@@ -10,12 +10,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.custom: seodec2018
-ms.openlocfilehash: 61f2094449995e26c3d321aaf35deb3d60ff250c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e7e6ddefd13d669c949389bc4fad85fb6cff4d3a
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67056588"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621366"
 ---
 # <a name="how-to-model-complex-data-types-in-azure-search"></a>Моделирование сложных типов данных в службе поиска Azure
 
@@ -50,12 +50,12 @@ ms.locfileid: "67056588"
     {
       "Description": "Budget Room, 1 Queen Bed (Cityside)",
       "Type": "Budget Room",
-      "BaseRate": 96.99,
+      "BaseRate": 96.99
     },
     {
       "Description": "Deluxe Room, 2 Double Beds (City View)",
       "Type": "Deluxe Room",
-      "BaseRate": 150.99,
+      "BaseRate": 150.99
     },
   ]
 }
@@ -158,7 +158,7 @@ Indexers are a different story. When defining an indexer, in particular one used
 
 Как с помощью простого поля верхнего уровня, простые вложенные поля сложных полей включается только в фильтрах при наличии **фильтруемых** атрибут `true` в определении индекса. Дополнительные сведения см. в разделе [Справочник по API создания индекса](https://docs.microsoft.com/rest/api/searchservice/create-index#request).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Попробуйте [набора данных гостиницы](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/README.md) в **импорта данных** мастера. Вам потребуется сведения о подключении Cosmos DB, содержащимся в файле readme для доступа к данным.
 

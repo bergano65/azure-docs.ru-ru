@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: f2115ee14b58030f695c9410870615f03d353cd2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: df59766ce38ac81568570cd6544ee28808ff8249
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66734961"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807014"
 ---
 # <a name="troubleshooting-status-monitor-v2"></a>Устранение неполадок с состоянием отслеживать версии 2
 
@@ -98,15 +98,16 @@ ms.locfileid: "66734961"
 Выполните команду `Get-Command -Module Az.ApplicationMonitor` для получения доступных команд:
 
 ```
-Command type     Name                                               Version    Source
+CommandType     Name                                               Version    Source
 -----------     ----                                               -------    ------
-Cmdlet          Disable-ApplicationInsightsMonitoring              0.2.1      Az.ApplicationMonitor
-Cmdlet          Disable-InstrumentationEngine                      0.2.1      Az.ApplicationMonitor
-Cmdlet          Enable-ApplicationInsightsMonitoring               0.2.1      Az.ApplicationMonitor
-Cmdlet          Enable-InstrumentationEngine                       0.2.1      Az.ApplicationMonitor
-Cmdlet          Get-ApplicationInsightsMonitoringConfig            0.2.1      Az.ApplicationMonitor
-Cmdlet          Get-ApplicationInsightsMonitoringStatus            0.2.1      Az.ApplicationMonitor
-Cmdlet          Set-ApplicationInsightsMonitoringConfig            0.2.1      Az.ApplicationMonitor
+Cmdlet          Disable-ApplicationInsightsMonitoring              0.4.0      Az.ApplicationMonitor
+Cmdlet          Disable-InstrumentationEngine                      0.4.0      Az.ApplicationMonitor
+Cmdlet          Enable-ApplicationInsightsMonitoring               0.4.0      Az.ApplicationMonitor
+Cmdlet          Enable-InstrumentationEngine                       0.4.0      Az.ApplicationMonitor
+Cmdlet          Get-ApplicationInsightsMonitoringConfig            0.4.0      Az.ApplicationMonitor
+Cmdlet          Get-ApplicationInsightsMonitoringStatus            0.4.0      Az.ApplicationMonitor
+Cmdlet          Set-ApplicationInsightsMonitoringConfig            0.4.0      Az.ApplicationMonitor
+Cmdlet          Start-ApplicationInsightsMonitoringTrace           0.4.0      Az.ApplicationMonitor
 ```
 
 #### <a name="determine-the-current-version-of-the-status-monitor-v2-module"></a>Определить текущую версию модуля v2 монитор состояния
@@ -130,7 +131,7 @@ Cmdlet          Set-ApplicationInsightsMonitoringConfig            0.2.1      Az
 
 ### <a name="collect-etw-logs-by-using-perfview"></a>Сбор журналов трассировки событий Windows с помощью PerfView
 
-#### <a name="setup"></a>Настройка
+#### <a name="setup"></a>Установка
 
 1. Скачайте PerfView.exe и PerfView64.exe из [GitHub](https://github.com/Microsoft/perfview/releases).
 2. Запустите PerfView64.exe.
@@ -152,7 +153,7 @@ Cmdlet          Set-ApplicationInsightsMonitoringConfig            0.2.1      Az
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Просмотрите [Справочник по API](status-monitor-v2-overview.md#powershell-api-reference) Дополнительные сведения о параметрах, вы не решены.
 - Если вам встретится проблема, которая отсутствует в списке, вы можете обратиться к нам на [GitHub](https://github.com/Microsoft/ApplicationInsights-Home/issues).

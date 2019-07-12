@@ -4,7 +4,7 @@ description: Создание неуправляемого образа унив
 services: virtual-machines-windows
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 05/23/2017
 ms.author: cynthn
 ROBOTS: NOINDEX
-ms.openlocfilehash: e1ed419892412c1fb9334fed74b82c53154723ed
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 929dd5bdb01adeaa7b1332bd7a5e6d823edba34a
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64708416"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67710411"
 ---
 # <a name="how-to-create-an-unmanaged-vm-image-from-an-azure-vm"></a>Создание неуправляемого образа виртуальной машины на основе виртуальной машины Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "64708416"
 2. Откройте окно командной строки с правами администратора. Измените каталог на **%windir%\system32\sysprep** и запустите файл `sysprep.exe`.
 3. В диалоговом окне **Программа подготовки системы** выберите **Переход в окно приветствия системы (OOBE)** и убедитесь, что установлен флажок **Подготовка к использованию**.
 4. В разделе **Параметры завершения работы** выберите **Завершение работы**.
-5. Последовательно выберите **ОК**.
+5. Нажмите кнопку **ОК**.
    
     ![Запуск Sysprep](./media/upload-generalized-managed/sysprepgeneral.png)
 6. После выполнения всех необходимых действий Sysprep завершает работу виртуальной машины. 
@@ -129,7 +129,7 @@ $imageURI = "https://mystorageaccount.blob.core.windows.net/mycontainer/myVhd.vh
 ```
 
 
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 Создайте виртуальную сеть и подсеть [виртуальной сети](../../virtual-network/virtual-networks-overview.md).
 
 1. Создание подсети. В следующем примере создается подсеть с именем **mySubnet** в группе ресурсов **myResourceGroup** с префикс адреса **10.0.0.0/24**.  
@@ -257,7 +257,7 @@ $vnet = Get-AzVirtualNetwork -ResourceGroupName $rgName -Name $vnetName
     $vmList.Name
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Сведения об управлении созданной виртуальной машиной с помощью Azure PowerShell см. в статье [Управление виртуальными машинами Azure с помощью Azure Resource Manager и PowerShell](tutorial-manage-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 

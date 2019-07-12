@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: sgilley
 ms.date: 05/10/2019
-ms.openlocfilehash: f37c945758cfbd03889d79acf764e7f67022267a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6ec91ca83d7aa1bc5e6c290d35b573a60cc0ed19
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65789398"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67605771"
 ---
 # <a name="sample-3---classification-predict-credit-risk"></a>Пример 3 - классификация. Прогнозирование кредитного риска
 
@@ -27,7 +27,7 @@ ms.locfileid: "65789398"
 
 ![Граф эксперимента](media/ui-sample-classification-predict-credit-risk-basic/overall-graph.png)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 
@@ -39,7 +39,7 @@ ms.locfileid: "65789398"
 
 [Пример 4 - классификация. Прогнозирование кредитных рисков (стоимость с учетом)](ui-sample-classification-predict-credit-risk-cost-sensitive.md) предоставляет расширенные эксперимент, в котором устранены как этот эксперимент. Показано, как выполнять _стоимость конфиденциальных_ классификация при помощи **Execute Python Script** модуля и сравнить производительность двух алгоритмов двоичной классификации. Ссылаться на него, если вы хотите узнать больше о том, как создавать эксперименты классификации.
 
-## <a name="data"></a>Данные
+## <a name="data"></a>Data
 
 Мы используем набор данных немецкой кредитной карты из репозитория UC Irvine.
 Набор данных содержит 1000 примеры с 20 функций и 1 метка. Каждый пример представляет человека. К функциям относится числовые и категориальные компоненты. См. в разделе [веб-сайте UCI](https://archive.ics.uci.edu/ml/datasets/Statlog+%28German+Credit+Data%29) для значения категориальных признаков. Последний столбец — это метка, которая обозначает кредитного риска и имеет только два возможных значения: высокий кредитный риск = 2 и низкого кредитного риска = 1.
@@ -70,7 +70,7 @@ ms.locfileid: "65789398"
 
 [!INCLUDE [aml-ui-cleanup](../../../includes/aml-ui-cleanup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Изучите другие примеры, доступные для визуального интерфейса:
 
@@ -78,3 +78,4 @@ ms.locfileid: "65789398"
 - [Пример 2 - регрессии. Сравнение алгоритмы для прогнозирования стоимости автомобиля](ui-sample-regression-predict-automobile-price-compare-algorithms.md)
 - [Пример 4 - классификация. Прогнозирования кредитного риска (стоимость конфиденциальные)](ui-sample-classification-predict-credit-risk-cost-sensitive.md)
 - [Пример 5 - классификации. Прогнозирование оттока](ui-sample-classification-predict-churn.md)
+- [Пример 6 - классификации. Прогнозирование задержки рейсов](ui-sample-classification-predict-flight-delay.md)

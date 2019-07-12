@@ -7,19 +7,19 @@ author: mdgattuso
 manager: danielgi
 editor: ''
 ms.assetid: ''
-ms.service: cdn
+ms.service: azure-cdn
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: magattus
-ms.openlocfilehash: 3aefe2ff3891857ec3588e4b48f53876c5c90aa2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9cd688de861015cc12d1f98ed71e5376e5f574db
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61069720"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67593886"
 ---
 # <a name="azure-cdn-ddos-protection"></a>Защита от атак DDoS Azure CDN
 
@@ -37,6 +37,6 @@ Azure CDN от Verizon защищен платформой Verzion в собст
 
 Azure CDN от Akamai защищен платформой Akamai собственные DDoS устранение рисков. Она интегрирована в Azure CDN от Akamai, по умолчанию и без дополнительной платы. Он предоставляет основную защиту от наиболее распространенных, часто возникают определенные уровня 7 DNS запрос и третьего уровня обычных и Flood-4 объемные атаки, целевые конечные точки CDN.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [от атак DDoS Azure](https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview). 

@@ -4,19 +4,19 @@ description: Включение вложенной виртуализации в
 services: virtual-machines-windows
 documentationcenter: virtual-machines
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 ms.author: cynthn
 ms.date: 10/09/2017
 ms.topic: conceptual
 ms.service: virtual-machines-windows
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
-ms.openlocfilehash: acb44a34eae84d8a5718ebcc0003d3cf50b9d43a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 843dfa64cdf0af3ad6cfd3a9f83c16f0ce85fcd0
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65510035"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67720207"
 ---
 # <a name="how-to-enable-nested-virtualization-in-an-azure-vm"></a>Как включить вложенную виртуализацию в виртуальных машинах Azure
 
@@ -119,6 +119,10 @@ New-NetNat -Name "InternalNat" -InternalIPInterfaceAddressPrefix 192.168.0.0/24
 
 
 ## <a name="create-the-guest-virtual-machine"></a>Создание гостевой виртуальной машины
+
+>[!IMPORTANT] 
+>
+>Гостевой агент Azure не поддерживается на вложенные виртуальные машины и может вызвать проблемы на узле и вложенных виртуальных машин. Не устанавливайте агент Azure на вложенные виртуальные машины и не используйте образ для создания вложенных виртуальных машин, которые уже был установлен агент Azure guest.
 
 1. Откройте диспетчер Hyper-V и создайте виртуальную машину. Настройте виртуальную машину для использования созданной внутренней сети.
     

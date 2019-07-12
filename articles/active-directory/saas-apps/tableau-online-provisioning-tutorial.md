@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настройка Tableau Online для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Учебник. Настройка Tableau Online для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory настроить автоматическую подготовку и отзыв учетных записей пользователей в Tableau Online.
 services: active-directory
 documentationcenter: ''
@@ -14,23 +14,23 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/27/2019
-ms.author: v-wingf-msft
+ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2dbebfa5fa7d9b255cc685696bfe8b3f61d5cf6b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3e203e88de8d806f489e5a7ab9bfd227c8232f84
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64708927"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67670896"
 ---
-# <a name="tutorial-configure-tableau-online-for-automatic-user-provisioning"></a>Руководство по Настройка Tableau Online для автоматической подготовки пользователей
+# <a name="tutorial-configure-tableau-online-for-automatic-user-provisioning"></a>Учебник. Настройка Tableau Online для автоматической подготовки пользователей
 
 Этот учебник демонстрирует шаги в Tableau Online и Azure Active Directory (Azure AD) для настройки Azure AD настроить автоматическую подготовку и отзыв пользователей и групп в Tableau Online.
 
 > [!NOTE]
 > В данном учебнике соединитель, который является надстройкой служба подготовки пользователей Azure AD. Сведения о назначении эта служба, как это работает и часто задаваемые вопросы см. в разделе [Автоматическая подготовка пользователей и ее отзыв для приложений программного обеспечения как услуга (SaaS) с Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом руководстве предполагается, что у вас есть:
 
@@ -173,7 +173,7 @@ Azure Active Directory используется концепция, называ
 * [Managing user account provisioning for enterprise apps in the Azure portal](../manage-apps/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 

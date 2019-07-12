@@ -5,19 +5,19 @@ services: app-service
 author: cephalin
 ms.service: app-service
 ms.topic: include
-ms.date: 06/05/2018
+ms.date: 06/12/2019
 ms.author: cephalin
 ms.custom: include file
-ms.openlocfilehash: 7ec4028c319749b6a3da019e1d320d3937e9c4b2
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: add0d392f39ab476c6d75f704d5b2e2e0faaa77c
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185760"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67836780"
 ---
 ## <a name="prepare-your-repository"></a>Подготовка репозитория
 
-Чтобы получить автоматическую сборку на сервере сборки Kudu для службы приложений Azure, убедитесь, что корень репозитория содержит нужные файлы в проекте.
+Чтобы получить автоматическую сборку из сервер сборки Kudu для службы приложений Azure, убедитесь, что корень репозитория содержит нужные файлы в проекте.
 
 | Среда выполнения | Файлы в корневом каталоге |
 |-|-|
@@ -28,13 +28,12 @@ ms.locfileid: "67185760"
 | Node.js | _server.js_, _app.js_ или _package.json_ со сценарием запуска |
 | Python | _\*PY_-файлы, _requirements.txt_ или _runtime.txt_ |
 | HTML | _default.htm_, _default.html_, _default.asp_, _index.htm_, _index.html_ или _iisstart.htm_ |
-| Веб-задания | _\<имя_задания>/run.\<extension>_ в папке _App\_Data/jobs/continuous_ (для непрерывных веб-заданий) или в папке _App\_Data/jobs/triggered_ (для активируемых веб-заданий). Дополнительные сведения см. в разделе [документации веб-заданиям Kudu](https://github.com/projectkudu/kudu/wiki/WebJobs). |
-| Функции Azure | Ознакомьтесь с разделом [Непрерывное развертывание для Функций Azure](../articles/azure-functions/functions-continuous-deployment.md#requirements-for-continuous-deployment). |
+| Веб-задания | _\<имя_задания > / run. \<расширения >_ под _приложения\_данных/заданий/continuous_ для непрерывных веб-заданий, или _приложения\_данных/заданий/triggered_ для активации Веб-заданий. Дополнительные сведения см. в разделе [документации веб-заданиям Kudu](https://github.com/projectkudu/kudu/wiki/WebJobs). |
+| Функции | Ознакомьтесь с разделом [Непрерывное развертывание для Функций Azure](../articles/azure-functions/functions-continuous-deployment.md#requirements-for-continuous-deployment). |
 
-Чтобы настроить развертывание, добавьте в корень репозитория _DEPLOYMENT_-файл. Дополнительные сведения см. в разделе [настраивать развертывания](https://github.com/projectkudu/kudu/wiki/Customizing-deployments) и [Custom deployment script](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script).
+Чтобы настроить развертывание, добавьте в корень репозитория *DEPLOYMENT*-файл. Дополнительные сведения см. в разделе [настраивать развертывания](https://github.com/projectkudu/kudu/wiki/Customizing-deployments) и [Custom deployment script](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script).
 
 > [!NOTE]
 > Если для разработки используется Visual Studio, позвольте [Visual Studio автоматически создать репозиторий](/azure/devops/repos/git/creatingrepo?view=vsts&tabs=visual-studio). Проект немедленно готов к развертыванию с помощью Git.
->
 >
 

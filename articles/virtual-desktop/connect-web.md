@@ -4,15 +4,15 @@ description: Сведения о подключении к предварите�
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
-ms.topic: how-to
+ms.topic: conceptual
 ms.date: 04/12/2019
 ms.author: helohr
-ms.openlocfilehash: d99f20efcebc3c9d97c5e2228e8b55bfd3f432b5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4f6bb7c414c38eaa605d259195218c461ddb0ca7
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65834012"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620168"
 ---
 # <a name="connect-from-a-web-browser"></a>Подключение из веб-браузера
 
@@ -25,7 +25,7 @@ ms.locfileid: "65834012"
 
 Хотя любой HTML5 с поддержкой браузера должны работать, мы официально поддерживает следующие операционные системы и браузеры.
 
-| "Обзор"           | Поддерживаемая ОС                     | Примечания               |
+| Browser           | Поддерживаемая ОС                     | Примечания               |
 |-------------------|----------------------------------|---------------------|
 | Microsoft Edge    | Windows                          |                     |
 | Internet Explorer | Windows                          |                     |

@@ -6,13 +6,13 @@ author: v-miclar
 ms.service: marketplace
 ms.topic: article
 ms.date: 08/27/2018
-ms.author: Ankit.Sud
-ms.openlocfilehash: 4a75d706d55512201786b2b74376047ff75380a7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: ansud
+ms.openlocfilehash: e6099caf949d93abf8c665f61cd9b91d545dd0f4
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64938115"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67612540"
 ---
 # <a name="update-an-existing-vm-offer-on-azure-marketplace"></a>Обновление существующего предложения виртуальной машины в Azure Marketplace
 
@@ -128,7 +128,7 @@ ms.locfileid: "64938115"
 
 4.  Если вы установили все цены в графическом интерфейсе пользователя, их можно изменить непосредственно в интерфейсе. Если вы установили цены путем импорта или экспорта электронной таблицы, этот метод необходимо использовать и для снижения цены.
 
-3.  Выберите команду **Сохранить**.
+3.  Нажмите кнопку **Сохранить**.
 
 4.  Щелкните **Опубликовать**, чтобы запустить рабочий процесс публикации изменений.
 

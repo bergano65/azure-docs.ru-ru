@@ -7,12 +7,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 07/01/2019
 ms.author: danlep
-ms.openlocfilehash: 06e45127f940e01de5f3ceeefc354014a88014db
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: e6e0cdd73a5a2999f78599a06cc7ee397ecc3b4b
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67514401"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67806588"
 ---
 # <a name="restrict-access-to-an-azure-container-registry-using-an-azure-virtual-network-or-firewall-rules"></a>Ограничение доступа к реестру контейнеров Azure с помощью виртуальной сети Azure или правила брандмауэра
 
@@ -34,11 +34,19 @@ ms.locfileid: "67514401"
 
 * Каждый реестр поддерживает не более 100 правил виртуальной сети.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Чтобы использовать Azure CLI описанные в этой статье, Azure CLI версии 2.0.58 или более поздней. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli].
 
 * Если у вас еще нет в реестр контейнеров, создайте ее (требуется SKU уровня "премиум") и Push-пример изображения, такие как `hello-world` из Docker Hub. Например, использовать [портала Azure][quickstart-portal] or the [Azure CLI][quickstart-cli] Создание реестра. 
+
+* Если вы хотите ограничить доступ к реестру с помощью виртуальной сети в другую подписку Azure, необходимо зарегистрировать поставщик ресурсов для реестра контейнеров Azure в этой подписке. Пример:
+
+  ```azurecli
+  az account set --subscription <Name or ID of subscription of virtual network>
+
+  az provider register --namespace Microsoft.ContainerRegistry
+  ``` 
 
 ## <a name="about-network-rules-for-a-container-registry"></a>О правилах сети для реестра контейнеров
 
@@ -52,7 +60,7 @@ ms.locfileid: "67514401"
 
 Службы несколькими клиентами, такие как реестр контейнеров Azure, используют один набор IP-адресов для всех клиентов. Конечная точка службы назначает конечную точку для доступа к реестру. Эта конечная точка предоставляет трафика оптимального маршрута к ресурсу через магистральную сеть Azure. В каждом запросе также передаются удостоверения виртуальной сети и подсети.
 
-### <a name="firewall-rules"></a>Правила файрволла
+### <a name="firewall-rules"></a>Правила брандмауэра
 
 Для правила IP-сети, укажите разрешенные internet диапазоны адресов, с помощью нотации CIDR, например *16.17.18.0/24* или отдельные IP-адреса в том, как *16.17.18.19*. Правила IP-сети можно применять только для *открытый* Интернета IP-адреса. Диапазоны IP-адресов, зарезервированные для частных сетей (как определено в RFC 1918) запрещено использовать в правилах IP.
 
@@ -369,7 +377,7 @@ az group delete --name myResourceGroup
 
 Чтобы очистить ресурсы на портале, перейдите к группе ресурсов myResourceGroup. После загрузки группы ресурсов щелкните **удалить группу ресурсов** для удаления группы ресурсов и ресурсы, хранящиеся в ней.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье были кратко описаны несколько ресурсов и функций виртуальной сети. Более подробно эти темы рассматриваются в следующей документации по виртуальным сетям Azure:
 

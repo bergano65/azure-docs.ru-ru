@@ -4,7 +4,7 @@ description: Разработка базы данных Oracle и ее реал�
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: romitgirdhar
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 039b1628571b786a4997c08f96cc9aa0f347c7f7
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 8058246ea5f4ac87c24fab8c5ec64032eb8a1f0b
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67446702"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67710643"
 ---
 # <a name="design-and-implement-an-oracle-database-in-azure"></a>Разработка базы данных Oracle и ее реализация в Azure
 
@@ -233,7 +233,7 @@ SQL> @?/rdbms/admin/awrrpt.sql
 - [Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux](configure-oracle-golden-gate.md)
 - [Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure](oracle-backup-recovery.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Учебник. Создание высокодоступных виртуальных машин](../../linux/create-cli-complete.md)
 - [Изучите примеры развертывания виртуальных машин с помощью интерфейса командной строки](../../linux/cli-samples.md).

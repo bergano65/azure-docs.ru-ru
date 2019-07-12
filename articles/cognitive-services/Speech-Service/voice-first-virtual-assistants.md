@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: travisw
-ms.openlocfilehash: 4055b474938e38f653021b46f18200f8e39dd69d
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: c9b85895e701ff74e025d6f7895bc32513bc29a1
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604745"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67806905"
 ---
 # <a name="about-custom-voice-first-virtual-assistants-preview"></a>Сведения о предварительной версии пользовательские виртуальные помощники voice-first
 
@@ -29,7 +29,7 @@ ms.locfileid: "67604745"
 
 ## <a name="core-features"></a>Основные функции
 
-| Category | Функции |
+| Категория | Компоненты |
 |----------|----------|
 |[Настроить слово](speech-devices-sdk-create-kws.md) | Можно разрешить пользователям следует начинать диалоги программы-роботы, используя пользовательское ключевое слово как «Эй Contoso». Эта задача выполняется с помощью механизм word пользовательский пробуждения в пакете SDK для распознавания речи, который можно настроить с помощью настроить слово [, которую можно создать здесь](speech-devices-sdk-create-kws.md). Канала прямой линии речи входит проверка word со стороны службы пробуждения повышается точность активации word пробуждения и устройство отдельно.
 |[Преобразование речи в текст](speech-to-text.md) | Включает в себя канала прямой линии речи в режиме реального времени записи звука в распознанный текст с помощью [речи в текст](speech-to-text.md) из служб Azure речи. Этот текст будет доступен для вашего бота и клиентское приложение, так как он является расшифрованной.
@@ -43,6 +43,7 @@ ms.locfileid: "67604745"
 * [Примеры виртуальные помощники Voice-first (SDK)](https://aka.ms/csspeech/samples)
 * [Краткое руководство: виртуальные помощники voice-first (C#)](quickstart-virtual-assistant-csharp-uwp.md)
 * [Краткое руководство: основанная на голосовой виртуальные помощники (Java)](quickstart-virtual-assistant-java-jre.md)
+* [Направить клиент речи строки (C#, WPF)](https://github.com/Azure-Samples/Cognitive-Services-Direct-Line-Speech-Client)
 
 ## <a name="customization"></a>Настройка
 
@@ -56,7 +57,7 @@ ms.locfileid: "67604745"
 * [пакет SDK для службы "Речь"](speech-sdk-reference.md);
 * [Служба Azure Bot](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Получите ключ подписки для Служб речи бесплатно](get-started.md)
 * [Получить Speech SDK](speech-sdk.md)

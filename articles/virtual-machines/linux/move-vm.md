@@ -4,7 +4,7 @@ description: Из этой статьи вы узнаете, как перене
 services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: d635f0a5-4458-4b95-a5f8-eed4f41eb4d4
@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 09/12/2018
 ms.author: cynthn
-ms.openlocfilehash: d2d3f36c9b4ee0557f9e060bec762877a94ea637
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7c22fe8beea894bccb311a63a1be70c972188e59
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61473950"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67667283"
 ---
 # <a name="move-a-linux-vm-to-another-subscription-or-resource-group"></a>Перемещение виртуальной машины Linux в другую подписку или группу ресурсов
 В этой статье описано перемещение виртуальной машины Linux между группами ресурсов или подписками. Перемещение ВМ между подписками может понадобиться, если вы создали виртуальную машину в личной подписке и вам нужно переместить ее в корпоративную подписку.
@@ -71,6 +71,6 @@ az resource move \
 
 [!INCLUDE [virtual-machines-common-move-vm](../../../includes/virtual-machines-common-move-vm.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Вы можете перемещать разные типы ресурсов между группами ресурсов и подписками. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../../resource-group-move-resources.md).    
 

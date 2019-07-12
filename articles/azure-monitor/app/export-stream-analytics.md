@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 01/08/2019
 ms.author: mbullwin
-ms.openlocfilehash: b791d74c2b3e94465a1903299d5db0b281ec9355
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d4a4196aa601fc8da79da3962faec026eff5ec87
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67053306"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67625060"
 ---
 # <a name="use-stream-analytics-to-process-exported-data-from-application-insights"></a>Обработка данных, экспортированных из Application Insights, при помощи Stream Analytics
 [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) — идеальное средство для обработки данных, [экспортированных из Application Insights](export-telemetry.md). Stream Analytics может извлекать данные из различных источников. Это средство может преобразовывать и фильтровать данные и затем отправлять их в различные приемники.
@@ -148,7 +148,7 @@ ms.locfileid: "67053306"
 
 * export-input — это псевдоним, присвоенный входным данным потока.
 * pbi-output — это определенный псевдоним выходных данных.
-* Мы используем [OUTER APPLY GetElements](https://msdn.microsoft.com/library/azure/dn706229.aspx), так как имя события находится во вложенном массиве JSON. Затем элемент Select выбирает имя события, а также количество экземпляров с этим именем за определенный период времени. Предложение [Group By](https://msdn.microsoft.com/library/azure/dn835023.aspx) группирует элементы по периодам времени в одну минуту.
+* Мы используем [OUTER APPLY GetElements](https://docs.microsoft.com/stream-analytics-query/apply-azure-stream-analytics), так как имя события находится во вложенном массиве JSON. Затем элемент Select выбирает имя события, а также количество экземпляров с этим именем за определенный период времени. Предложение [Group By](https://docs.microsoft.com/stream-analytics-query/group-by-azure-stream-analytics) группирует элементы по периодам времени в одну минуту.
 
 ### <a name="query-to-display-metric-values"></a>Запрос для отображения значений метрики
 ```SQL
@@ -220,7 +220,7 @@ ms.locfileid: "67053306"
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [непрерывный экспорт.](export-telemetry.md)
 * [Подробный справочник по модели данных типов и значений свойств.](export-data-model.md)
 * [Application Insights](../../azure-monitor/app/app-insights-overview.md)

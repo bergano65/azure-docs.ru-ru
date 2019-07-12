@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/2/2018
 ms.author: rkarlin
-ms.openlocfilehash: 73043680ea7b8b63a329d0a457449b635b7b80f2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9bf2704fbbaa2c7a469dcefa3dc3f3cd7e4d5504
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60703597"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67626263"
 ---
 # <a name="automate-onboarding-of-azure-security-center-using-powershell"></a>Автоматизированное подключение центра безопасности Azure с помощью PowerShell
 
@@ -42,7 +42,7 @@ PowerShell позволяет автоматизировать задачи и �
 
 6. Присвойте [политики безопасности по умолчанию](tutorial-security-policy.md) центра безопасности.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Эти действия следует выполнять перед запуском командлетов центра безопасности:
 
@@ -101,7 +101,7 @@ PowerShell позволяет автоматизировать задачи и �
 ## <a name="see-also"></a>См. также
 Дополнительные сведения об использовании PowerShell для автоматизации подключения к центру безопасности см. в следующей статье:
 
-* [Az.Security](https://github.com/Azure/azure-powershell/blob/master/src/ResourceManager/Security/Commands.Security/help/Az.Security.md).
+* [Az.Security](https://docs.microsoft.com/powershell/module/az.security).
 
 Дополнительные сведения о центре безопасности см. в следующих статьях:
 

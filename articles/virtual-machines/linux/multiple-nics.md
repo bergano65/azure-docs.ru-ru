@@ -4,7 +4,7 @@ description: Узнайте, как создать виртуальную маш
 services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: 5d2d04d0-fc62-45fa-88b1-61808a2bc691
 ms.service: virtual-machines-linux
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/07/2018
 ms.author: cynthn
-ms.openlocfilehash: 838afe38cc3b2b98ddad358ddb23ab6b6727e867
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 04aaa1da304657ac3cc305b8939ac4fcce126145
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66236851"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67671179"
 ---
 # <a name="how-to-create-a-linux-virtual-machine-in-azure-with-multiple-network-interface-cards"></a>Как создать виртуальную машину Linux в Azure с несколькими сетевыми картами
 
@@ -247,7 +247,7 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 ping bing.com -c 4 -I eth1
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь с [размерами виртуальных машин Linux](sizes.md), когда будете создавать виртуальную машину с несколькими сетевыми картами. Обратите внимание на максимальное число сетевых карт, поддерживаемых каждым из размеров виртуальной машины.
 
 Для дальнейшего обеспечения безопасности виртуальных машин используйте JIT-доступ к виртуальной машине. Эта функция при необходимости открывает правила группы безопасности сети для SSH-трафика на определенный период времени. Дополнительные сведения см. в статье [Управление доступом к виртуальным машинам с помощью JIT](../../security-center/security-center-just-in-time.md).

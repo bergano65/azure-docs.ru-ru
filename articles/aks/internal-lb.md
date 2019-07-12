@@ -2,17 +2,17 @@
 title: Создание внутренней подсистемы балансировки нагрузки в Службе Azure Kubernetes (AKS)
 description: Узнайте, как создать и использовать внутреннюю подсистему балансировки нагрузки для предоставления доступа к службам через AKS (Службу Azure Kubernetes).
 services: container-service
-author: iainfoulds
+author: mlearned
 ms.service: container-service
 ms.topic: article
 ms.date: 03/04/2019
-ms.author: iainfou
-ms.openlocfilehash: 50a2161be4ee70f7ae5c8baa3816eb9f9943a5d2
-ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
+ms.author: mlearned
+ms.openlocfilehash: 5842003d43d4268d0f663e8a57e40562a480e252
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358021"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67615150"
 ---
 # <a name="use-an-internal-load-balancer-with-azure-kubernetes-service-aks"></a>Использование внутренней подсистемы балансировки нагрузки со Службой Azure Kubernetes (AKS)
 
@@ -136,7 +136,7 @@ spec:
 
 Вы можете также напрямую удалить службу, как и любой ресурс Kubernetes, например `kubectl delete service internal-app`. При этом также будет удалена базовая подсистема балансировки нагрузки Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о службах Kubernetes в [документации по службам Kubernetes][kubernetes-services].
 

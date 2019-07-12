@@ -4,7 +4,7 @@ description: Узнайте о решениях, которые интегрир
 services: virtual-machines-linux
 documentationcenter: ''
 author: romitgirdhar
-manager: jeconnoc
+manager: gwallace
 tags: ''
 ms.assetid: ''
 ms.service: virtual-machines
@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 06/04/2019
 ms.author: rogirdh
 ms.custom: ''
-ms.openlocfilehash: 5a60e41d3195c0f7d88fd3ba14336d693d2f528e
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: fcdd46ea60ea53088ffacd7d13693b16a208d527
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67446678"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67707471"
 ---
 # <a name="oracle-application-solutions-integrating-microsoft-azure-and-oracle-cloud-infrastructure-preview"></a>Решения Oracle приложений, интеграции Microsoft Azure и Oracle облачной инфраструктуры (Предварительная версия)
 
@@ -67,13 +67,13 @@ ms.locfileid: "67446678"
 
 Кроме того, можно настроить [списки безопасности](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm) на вашей OCI облачной виртуальной сети и правил безопасности (присоединен к Azure [группы безопасности сети](../../../virtual-network/security-overview.md)). Эти правила используются для управления трафиком, передающимся между машинами в виртуальных сетях. Можно добавить правила сетевой безопасности на уровне компьютера, на уровне подсети, а также на уровне виртуальной сети.
  
-## <a name="identity"></a>Удостоверение
+## <a name="identity"></a>идентификации
 
 Идентификация является одной из основных ключевых компонентов партнерству Майкрософт и Oracle. Значительный объем работы были проведены интегрировать [облачную службу удостоверений Oracle](https://docs.oracle.com/en/cloud/paas/identity-cloud/index.html) (IDCS) с [Azure Active Directory](../../../active-directory/index.yml) (Azure AD). Azure AD — облачной идентификацией и доступом служба управления корпорации Майкрософт. Он помогает пользователям вход и доступ к различным ресурсам. Azure AD также позволяет управлять пользователями и их разрешения.
 
 В настоящее время такая интеграция позволяет управлять в одном централизованном месте, что такое Azure Active Directory. Azure AD синхронизирует все изменения в каталоге с помощью соответствующего каталога Oracle и используется для единого входа для облачных решениях Oracle.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Начало работы с [облачной сети](configure-azure-oci-networking.md) между Azure и OCI. 
 

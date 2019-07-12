@@ -13,15 +13,15 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: b2c665de94750c4c6f41bda47960fdb9ba17e819
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 840a839f7d3259de0473937de9c9970fcb95227c
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60824039"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839076"
 ---
 # <a name="move-data-from-an-odata-source-using-azure-data-factory"></a>Перемещение данных из OData источника, с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
+> [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](data-factory-odata-connector.md)
 > * [Версия 2 (текущая)](../connector-odata.md)
 
@@ -41,12 +41,12 @@ ms.locfileid: "60824039"
 * Чтобы получить доступ к **облачному** каналу OData, можно использовать анонимную, обычную (имя пользователя и пароль) аутентификацию или аутентификацию OAuth на основе Azure Active Directory.
 * Чтобы получить доступ к **локальному** каналу OData, можно использовать анонимную, обычную (имя пользователя и пароль) аутентификацию или аутентификацию Windows.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 Вы можете создать конвейер с действием копирования, который перемещает данные из источника OData, с помощью разных инструментов и интерфейсов API.
 
 Проще всего создать конвейер с помощью **мастера копирования**. Пошаговые инструкции см. в [руководстве Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md), где приведено краткое пошаговое руководство по созданию конвейера с помощью мастера копирования данных.
 
-Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
+Для создания конвейера можно использовать указанные ниже средства. **Visual Studio**, **Azure PowerShell**, **шаблона Azure Resource Manager**, **.NET API**, и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги:
 
@@ -61,7 +61,7 @@ ms.locfileid: "60824039"
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 В приведенной далее таблице содержится описание элементов JSON, которые относятся к связанной службе OData.
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
 | type |Свойству type необходимо задать значение **OData** |Да |
 | url |URL-адрес службы OData. |Да |
@@ -146,9 +146,9 @@ ms.locfileid: "60824039"
 
 Раздел **typeProperties** во всех типах наборов данных разный. В нем содержатся сведения о расположении данных в хранилище данных. Раздел typeProperties набора данных типа **ODataResource** (который включает в себя набор данных OData) содержит следующие свойства.
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
-| путь |Путь к ресурсу OData |Нет |
+| path |Путь к ресурсу OData |Нет |
 
 ## <a name="copy-activity-properties"></a>Свойства действия копирования
 Полный список разделов и свойств, используемых для определения действий, см. в статье [Создание конвейеров](data-factory-create-pipelines.md). Свойства (включая имя, описание, входные и выходные таблицы, политику и т. д.) доступны для всех типов действий.
@@ -159,7 +159,7 @@ ms.locfileid: "60824039"
 
 | Свойство | Описание | Пример | Обязательно для заполнения |
 | --- | --- | --- | --- |
-| query |Используйте пользовательский запрос для чтения данных. |"?$select=Name, Description&$top=5" |Нет |
+| запрос |Используйте пользовательский запрос для чтения данных. |"?$select=Name, Description&$top=5" |Нет |
 
 ## <a name="type-mapping-for-odata"></a>Сопоставление типов для OData
 Как упоминалось в статье о [действиях перемещения данных](data-factory-data-movement-activities.md), во время копирования типы источников автоматически преобразовываются в типы приемников. Такое преобразование выполняется в два этапа:
@@ -172,7 +172,7 @@ ms.locfileid: "60824039"
 | Тип данных OData | Тип .NET |
 | --- | --- |
 | Edm.Binary |Byte[] |
-| Edm.Boolean |Логический |
+| Edm.Boolean |Bool |
 | Edm.Byte |Byte[] |
 | Edm.DateTime |DateTime |
 | Edm.Decimal |Decimal |
@@ -191,7 +191,7 @@ ms.locfileid: "60824039"
 > Сложные типы данных OData, например объекты, не поддерживаются.
 
 ## <a name="json-example-copy-data-from-odata-source-to-azure-blob"></a>Пример JSON. Копирование данных из источника OData в BLOB-объект Azure
-Ниже приведен пример с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). Вы узнаете, как копировать данные из источника OData в хранилище BLOB-объектов Azure. Тем не менее данные можно копировать в любой из указанных [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемников. Это делается с помощью действия копирования в фабрике данных Azure. Пример содержит следующие сущности фабрики данных.
+В этом примере приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). Вы узнаете, как копировать данные из источника OData в хранилище BLOB-объектов Azure. Тем не менее данные можно копировать в любой из указанных [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемников. Это делается с помощью действия копирования в фабрике данных Azure. Пример содержит следующие сущности фабрики данных.
 
 1. Связанная служба типа [OData](#linked-service-properties).
 2. Связанная служба типа [AzureStorage](data-factory-azure-blob-connector.md#linked-service-properties).

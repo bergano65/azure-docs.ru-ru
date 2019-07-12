@@ -4,7 +4,7 @@ services: virtual-machines-windows
 documentationcenter: ''
 description: Описание процедуры включения системы диагностики Azure на виртуальной машине под управлением Windows с помощью PowerShell.
 author: sbtron
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: 2e6d88f2-1980-4a24-827e-a81616a0d247
 ms.service: virtual-machines-windows
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/15/2015
 ms.author: saurabh
-ms.openlocfilehash: bd2bcc9284c24f9fa6a02556d7101c1b788ee71e
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: 19d30d207e67e1dfd8cdec2fe9951c763a921a0e
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67154990"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706072"
 ---
 # <a name="use-powershell-to-enable-azure-diagnostics-in-a-virtual-machine-running-windows"></a>Включение системы диагностики Azure на виртуальной машине под управлением Windows с помощью PowerShell
 
@@ -196,7 +196,7 @@ ms.locfileid: "67154990"
     </PublicConfig>
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Дополнительные рекомендации по использованию системы диагностики Azure и других методов для устранения неполадок см. в статье [Включение системы диагностики Azure в облачных службах Azure](../../cloud-services/cloud-services-dotnet-diagnostics.md).
 * Пояснение различных параметров XML-конфигураций для расширения диагностики см. в статье, посвященной [схеме конфигураций диагностики](https://msdn.microsoft.com/library/azure/mt634524.aspx).
 

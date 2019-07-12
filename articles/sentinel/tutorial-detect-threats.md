@@ -7,21 +7,22 @@ author: rkarlin
 manager: rkarlin
 editor: ''
 ms.assetid: b5fbc5ac-68b2-4024-9c1b-bd3cc41a66d0
-ms.service: sentinel
+ms.service: azure-sentinel
+ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/20/2019
 ms.author: rkarlin
-ms.openlocfilehash: 6cb40f8c9f1ee85848b5e3db311d0fb652ec1bc3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e20f6fc0dc8dbe02b09490f62ce84af12aa31b87
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65921819"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621236"
 ---
-# <a name="tutorial-detect-threats-with-azure-sentinel-preview"></a>Руководство по Обнаружение угроз с предварительной версией Sentinel Azure
+# <a name="tutorial-detect-threats-with-azure-sentinel-preview"></a>Учебник. Обнаружение угроз с предварительной версией Sentinel Azure
 
 > [!IMPORTANT]
 > Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
@@ -45,7 +46,7 @@ ms.locfileid: "65921819"
 
 1. На портале Azure в разделе Azure Sentinel, выберите **Analytics**.
 
-   ![Аналитика](./media/tutorial-detect-threats/alert-rules.png)
+   ![Analytics](./media/tutorial-detect-threats/alert-rules.png)
 
 2. В верхней строке меню, щелкните **+ добавить**.  
 
@@ -93,7 +94,7 @@ Azure Sentinel предоставляет два основных вариант
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом руководстве вы узнали, как приступить к работе, обнаружение угроз с помощью Azure Sentinel. 
 
 Чтобы узнать, как автоматизировать ваши ответы на угрозы, [как реагировать на угрозы с помощью автоматических наборов инструкций playbook](tutorial-respond-threats-playbook.md).

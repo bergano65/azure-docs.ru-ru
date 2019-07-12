@@ -4,7 +4,7 @@ description: Узнайте, как настроить MPI для HPC в Azure.
 services: virtual-machines
 documentationcenter: ''
 author: vermagit
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines
@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: amverma
-ms.openlocfilehash: 5356a033dbc3d989dd27019f03b1fe36035ff9a4
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 541e42a72ea604c4d71dc546b14dea2f0857bcc1
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67441651"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67797515"
 ---
 # <a name="set-up-message-passing-interface-for-hpc"></a>Установка Message Passing Interface для HPC
 
@@ -126,7 +126,7 @@ sudo ./platform_mpi-09.01.04.03r-ce.bin
 
 ## <a name="osu-mpi-benchmarks"></a>Тест производительности OSU MPI
 
-[Скачать OSU MPI тесты производительности] [ http://mvapich.cse.ohio-state.edu/benchmarks/ ](http://mvapich.cse.ohio-state.edu/benchmarks/) и распаковать двоичный.
+[Загрузить тесты производительности MPI OSU](http://mvapich.cse.ohio-state.edu/benchmarks/) и распаковать двоичный.
 
 ```bash
 wget http://mvapich.cse.ohio-state.edu/download/mvapich/osu-micro-benchmarks-5.5.tar.gz
@@ -146,7 +146,7 @@ make
 
 ## <a name="discover-partition-keys"></a>Обнаружение ключи секций
 
-Получить ключи раздела (p ключи) для взаимодействия с другими виртуальными машинами.
+Получить ключи раздела (p ключи) для взаимодействия с другими виртуальными машинами в одном клиенте (группы доступности или масштабируемом наборе виртуальных Машин).
 
 ```bash
 /sys/class/infiniband/mlx5_0/ports/1/pkeys/0
@@ -164,13 +164,15 @@ cat /sys/class/infiniband/mlx5_0/ports/1/pkeys/1
 
 Используйте раздел, отличный от ключа раздела по умолчанию (0x7fff). UCX требует MSB p-ключа для очистки. Например в качестве UCX_IB_PKEY 0x000b для 0x800b.
 
+Обратите внимание на то, что до тех пор, пока существует клиента (AVSet или масштабируемого набора виртуальных МАШИН), PKEYs не изменяются. Это верно даже в том случае, когда узлы будут добавлены или удалены. Новые клиенты получить другой PKEYs.
+
 
 ## <a name="set-up-user-limits-for-mpi"></a>Настройка максимального числа пользователей для MPI
 
 Настройка максимального числа пользователей для MPI.
 
 ```bash
-cat << EOF >> /etc/security/limits.conf
+cat << EOF | sudo tee -a /etc/security/limits.conf
 *               hard    memlock         unlimited
 *               soft    memlock         unlimited
 *               hard    nofile          65535
@@ -195,6 +197,6 @@ chmod 644 /home/$USER/.ssh/config
 
 Синтаксисе выше предполагается, что общий домашний каталог, else каталоге .ssh должны быть скопированы на каждый узел.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [HPC](https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/) в Azure.

@@ -9,12 +9,12 @@ ms.reviewer: jamesbak
 ms.date: 12/06/2018
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 57cda4d07315c6c37c2ce51f530fb081949b628c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: abe3f67141011c765f9de93bcf51998ddae002cb
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64939503"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67696146"
 ---
 # <a name="the-azure-blob-filesystem-driver-abfs-a-dedicated-azure-storage-driver-for-hadoop"></a>Драйвер файловой системы больших двоичных объектов Azure (ABFS): выделенный драйвер службы хранилища Azure для Hadoop
 
@@ -43,15 +43,15 @@ hdfs dfs -put flight_delays.csv abfs://fileanalysis@myanalytics.dfs.core.windows
 
 На внутреннем уровне драйвер ABFS преобразует ресурсы, указанные в URI, в файлы и каталоги и вызывает REST API хранилища Azure Data Lake Storage с использованием этих ссылок.
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Проверка подлинности
 
-Драйвер ABFS поддерживает две формы проверки подлинности, поэтому приложение Hadoop может безопасно обращаться к ресурсам, содержащимся в учетной записи, совместимой с Data Lake Storage 2-го поколения. Дополнительные сведения о схемах проверки подлинности приведены в [Руководстве по безопасности службы хранилища Azure](../common/storage-security-guide.md). К ним относятся:
+Драйвер ABFS поддерживает две формы проверки подлинности, поэтому приложение Hadoop может безопасно обращаться к ресурсам, содержащимся в учетной записи, совместимой с Data Lake Storage 2-го поколения. Дополнительные сведения о схемах проверки подлинности приведены в [Руководстве по безопасности службы хранилища Azure](../common/storage-security-guide.md). Подробные сведения.
 
 - Используя **общий ключ**, пользователи могут получать доступ ко всем ресурсам в учетной записи. Ключ шифруется и сохраняется в конфигурации Hadoop.
 
 - **Токен носителя OAuth Azure Active Directory**. Токен носителя Azure AD приобретается и обновляется с помощью драйвера и идентификатора пользователя или настроенного субъекта-службы. С помощью этой модели проверки подлинности доступ разрешен для каждого вызова, использующего идентификатор, который связан с предоставленным токеном и оценивается с помощью назначенного списка управления доступом POSIX (ACL).
 
-### <a name="configuration"></a>Параметр Configuration
+### <a name="configuration"></a>Конфигурация
 
 Все настройки драйвера ABFS хранятся в файле конфигурации <code>core-site.xml</code>. В дистрибутивах Hadoop с [Ambarі](https://ambari.apache.org/) конфигурацией также можно управлять с помощью веб-портала или REST API Ambari.
 
@@ -59,9 +59,9 @@ hdfs dfs -put flight_delays.csv abfs://fileanalysis@myanalytics.dfs.core.windows
 
 ### <a name="hadoop-documentation"></a>Документация Hadoop
 
-Все сведения о драйвере ABFS см. в [официальной документации по Hadoop](https://hadoop.apache.org/docs/current/hadoop-azure/index.html).
+Все сведения о драйвере ABFS см. в [официальной документации по Hadoop](https://github.com/apache/hadoop/blob/trunk/hadoop-tools/hadoop-azure/src/site/markdown/abfs.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure](./data-lake-storage-quickstart-create-databricks-account.md)
 - [Использование URI в хранилище Azure Data Lake Storage Gen2](./data-lake-storage-introduction-abfs-uri.md)

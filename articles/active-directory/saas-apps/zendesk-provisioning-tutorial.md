@@ -14,23 +14,23 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/27/2019
-ms.author: v-ant
+ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f559d2c2398998ba590419758de559f21d9b65f5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 166b7727362549aaf054e3f0282c564eca687eb9
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64696940"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672879"
 ---
-# <a name="tutorial-configure-zendesk-for-automatic-user-provisioning"></a>Руководство по Настройка Zendesk для автоматической подготовки пользователей
+# <a name="tutorial-configure-zendesk-for-automatic-user-provisioning"></a>Учебник. Настройка Zendesk для автоматической подготовки пользователей
 
 Этот учебник демонстрирует шаги в Zendesk и Azure Active Directory (Azure AD) для настройки Azure AD настроить автоматическую подготовку и отзыв пользователей и групп в Zendesk.
 
 > [!NOTE]
 > В данном учебнике соединитель, который является надстройкой служба подготовки пользователей Azure AD. Сведения о назначении эта служба, как это работает и часто задаваемые вопросы см. в разделе [Автоматическая подготовка пользователей и ее отзыв для приложений программного обеспечения как услуга (SaaS) с Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Сценарий, описанный в этом руководстве предполагается, что у вас есть:
 
@@ -173,7 +173,7 @@ Azure Active Directory используется концепция, называ
 * [Managing user account provisioning for enterprise apps in the Azure portal](../manage-apps/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 

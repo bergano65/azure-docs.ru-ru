@@ -6,16 +6,16 @@ author: kevinvngo
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: load data
+ms.subservice: load-data
 ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: eb52169fc522ba323f82c42d9505571b18f49f1b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b96b65b7dd38900fccb8d5d3a9133f37ee93949f
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66244480"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67595517"
 ---
 # <a name="load-contoso-retail-data-to-azure-sql-data-warehouse"></a>Загрузка данных Contoso Retail в хранилище данных SQL Azure
 
@@ -72,7 +72,7 @@ WITH (
 ```
 
 ### <a name="12-create-the-external-data-source"></a>1.2. Создание внешнего источника данных
-Используйте команду [CREATE EXTERNAL DATA SOURCE][CREATE EXTERNAL DATA SOURCE], чтобы сохранить расположение и тип данных. 
+Используйте команду [CREATE EXTERNAL DATA SOURCE][CREATE EXTERNAL DATA SOURCE] , чтобы сохранить расположение и тип данных. 
 
 ```sql
 CREATE EXTERNAL DATA SOURCE AzureStorage_west_public
@@ -89,7 +89,7 @@ WITH
 > 
 
 ## <a name="2-configure-data-format"></a>2. Настройка формата данных
-В хранилище BLOB-объектов Azure данные хранятся в текстовых файлах, где каждое поле отделяется разделителем. Выполните следующую команду в SSMS, [CREATE EXTERNAL FILE FORMAT] [ CREATE EXTERNAL FILE FORMAT] команду, чтобы указать формат данных в текстовых файлах. Для примера Contoso используются данные без сжатия с разделением вертикальной чертой.
+В хранилище BLOB-объектов Azure данные хранятся в текстовых файлах, где каждое поле отделяется разделителем. Выполните следующую команду в SSMS, [CREATE EXTERNAL FILE FORMAT][CREATE EXTERNAL FILE FORMAT] команду, чтобы указать формат данных в текстовых файлах. Для примера Contoso используются данные без сжатия с разделением вертикальной чертой.
 
 ```sql
 CREATE EXTERNAL FILE FORMAT TextFileFormat 
@@ -213,7 +213,7 @@ GO
 ```
 
 ### <a name="42-load-the-data-into-new-tables"></a>4.2. Загрузка данных в новые таблицы
-Чтобы загрузить данные из хранилища BLOB-объектов Azure в таблицу хранилища данных, используйте [CREATE TABLE AS SELECT (Transact-SQL)] [ CREATE TABLE AS SELECT (Transact-SQL)] инструкции. Загрузке с помощью CTAS используются строго типизированные внешние таблицы, созданных вами. Чтобы загрузить данные в новые таблицы, используйте один [CTAS] [ CTAS] инструкции на таблицу. 
+Чтобы загрузить данные из хранилища BLOB-объектов Azure в таблицу хранилища данных, используйте [CREATE TABLE AS SELECT (Transact-SQL)][CREATE TABLE AS SELECT (Transact-SQL)] statement. Loading with CTAS leverages the strongly typed external tables you've created. To load the data into new tables, use one [CTAS][CTAS] инструкции на таблицу. 
  
 Компонент CTAS создает новую таблицу и заполняет ее результатам инструкции Select. CTAS определяет новую таблицу так, чтобы в ней содержались те же столбцы и типы данных, которые были выведены инструкцией Select. Если выбрать все столбцы из внешней таблицы, новая таблица будет репликой столбцов и типов данных такой внешней таблицы.
 
@@ -276,7 +276,7 @@ ALTER INDEX ALL ON [cso].[DimProduct]               REBUILD;
 ALTER INDEX ALL ON [cso].[FactOnlineSales]          REBUILD;
 ```
 
-Дополнительные сведения об обслуживании индексов columnstore см. в статье, посвященной [управлению индексами columnstore][manage columnstore indexes].
+Дополнительные сведения об обслуживании индексов columnstore см. в разделе [Управление индексами columnstore][manage columnstore indexes] статьи.
 
 ## <a name="6-optimize-statistics"></a>6. Оптимизация статистики
 Лучше всего создать статистику по отдельным столбцам сразу после загрузки. Если вы знаете, что некоторые столбцы не будем в предикатах запросов, можно пропустить создание статистики для этих столбцов. При создании статистики по отдельным столбцам для каждого столбца, может занять много времени для перестроения всей статистики. 
@@ -340,7 +340,7 @@ JOIN    [cso].[DimProduct]      AS p ON f.[ProductKey] = p.[ProductKey]
 GROUP BY p.[BrandName]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Чтобы загрузить полный набор данных, запустите пример [загрузки полного хранилища данных Contoso Retail](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse/readme.md) из репозитория примеров Microsoft SQL Server.
 
 Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL][SQL Data Warehouse development overview].

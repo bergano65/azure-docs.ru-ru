@@ -7,13 +7,13 @@ ms.service: storage
 ms.date: 06/11/2019
 ms.author: normesta
 ms.topic: article
-ms.component: data-lake-storage-gen2
-ms.openlocfilehash: 65ef586d74297e692160dc075dead2f0b1d973b5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.subservice: data-lake-storage-gen2
+ms.openlocfilehash: 4445a8566c04d30cfb8743cbd33623f2e23f0dde
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67116967"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67595398"
 ---
 # <a name="use-azure-data-box-to-migrate-data-from-an-on-premises-hdfs-store-to-azure-storage"></a>Использовать Azure Data Box для переноса данных из локального хранилища HDFS в хранилище Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "67116967"
 > * Отправьте устройство обратно в корпорацию Майкрософт.
 > * Переместите данные на уровень Gen2 хранилища Озера данных.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Необходимо, чтобы эти действия для завершения миграции.
 
@@ -352,6 +352,6 @@ sudo -u hdfs ./copy-acls.sh -s /{hdfs_path} > ./filelist.json
 .*/hbase/data/WALs.*
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как работает Gen2 хранилища Озера данных с кластерами HDInsight. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight).

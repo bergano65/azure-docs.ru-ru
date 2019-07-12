@@ -2,17 +2,17 @@
 title: Основные понятия хранения данных в Службе Azure Kubernetes (AKS)
 description: Узнайте о хранении данных в Службе Azure Kubernetes (AKS), включая тома, постоянные тома, классы хранилищ и утверждения.
 services: container-service
-author: iainfoulds
+author: mlearned
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 03/01/2019
-ms.author: iainfou
-ms.openlocfilehash: cce38eb12d803c0640d9ee774dbc6c98ab5db219
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: mlearned
+ms.openlocfilehash: eb9141d363bdb09b5773f80dfc5a1c4b9b92728f
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60466823"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67615811"
 ---
 # <a name="storage-options-for-applications-in-azure-kubernetes-service-aks"></a>Возможности хранения данных в Службе Azure Kubernetes (AKS)
 
@@ -119,24 +119,24 @@ spec:
         claimName: azure-managed-disk
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Связанные практические рекомендации, см. в разделе [советы и рекомендации для хранилища и резервных копий в AKS][operator-best-practices-storage].
 
 Чтобы узнать, как для создавать динамические и статические тома, использующие диски Azure или файлы Azure, ознакомьтесь со следующими практическими руководствами:
 
-- [Создание статического тома с помощью дисков Azure][aks-static-disks]
-- [Создание статического тома с помощью файлов Azure][aks-static-files]
+- [Создание статических тома с помощью дисков Azure][aks-static-disks]
+- [Создание статических тома, использующих службу файлов Azure][aks-static-files]
 - [Создание динамического тома с помощью дисков Azure][aks-dynamic-disks]
-- [Создание динамического тома с помощью файлов Azure][aks-dynamic-files]
+- [Создание динамического тома, использующих службу файлов Azure][aks-dynamic-files]
 
-Дополнительные сведения о ключевых понятиях Kubernetes и AKS см. в следующих статьях:
+Дополнительные сведения о ключевых концепциях Kubernetes и AKS вы получите в следующих статьях:
 
-- [Кластеры и рабочие нагрузки Kubernetes и AKS][aks-concepts-clusters-workloads]
-- [Идентификация в Kubernetes и AKS][aks-concepts-identity]
-- [Безопасность Kubernetes и AKS][aks-concepts-security]
-- [Виртуальные сети Kubernetes и AKS][aks-concepts-network]
-- [Масштабирование Kubernetes и AKS][aks-concepts-scale]
+- [Kubernetes / AKS clusters и рабочих нагрузок][aks-concepts-clusters-workloads]
+- [Kubernetes / удостоверению AKS][aks-concepts-identity]
+- [Kubernetes / AKS безопасности][aks-concepts-security]
+- [Kubernetes / AKS виртуальных сетей][aks-concepts-network]
+- [Kubernetes / масштабирование AKS][aks-concepts-scale]
 
 <!-- EXTERNAL LINKS -->
 

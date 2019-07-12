@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настройка Dropbox for Business для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
+title: Учебник. Настройка Dropbox for Business для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Dropbox для бизнеса.
 services: active-directory
 documentationcenter: ''
@@ -8,28 +8,28 @@ writer: zchia
 manager: beatrizd
 ms.assetid: na
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/20/2019
-ms.author: zchia
-ms.openlocfilehash: c95346ff9026b7fc8c9141234fb3cde9c0809d23
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: jeedes
+ms.openlocfilehash: d7a7a76c86100041b544916c7d10e43bf3aaa44d
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67053503"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672906"
 ---
-# <a name="tutorial-configure-dropbox-for-business-for-automatic-user-provisioning"></a>Руководство по Настройка автоматической подготовки пользователей в Dropbox for Business
+# <a name="tutorial-configure-dropbox-for-business-for-automatic-user-provisioning"></a>Учебник. Настройка автоматической подготовки пользователей в Dropbox for Business
 
 Цель данного учебника — продемонстрировать действия, выполняемые в Dropbox для бизнеса и Azure Active Directory (Azure AD) для настройки Azure AD для автоматической подготовки и отзыва пользователей и групп в Dropbox для бизнеса.
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -114,7 +114,7 @@ Azure Active Directory используется концепция, называ
 
     ![Уведомление по электронной почте](common/provisioning-notification-email.png)
 
-9. Выберите команду **Сохранить**.
+9. Нажмите кнопку **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать пользователей Azure Active Directory с Dropbox**.
 
@@ -159,7 +159,7 @@ Azure Active Directory используется концепция, называ
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 

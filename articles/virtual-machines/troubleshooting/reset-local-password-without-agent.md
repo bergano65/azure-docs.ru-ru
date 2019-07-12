@@ -4,7 +4,7 @@ description: Описывается, как сбросить пароль лок
 services: virtual-machines-windows
 documentationcenter: ''
 author: genlin
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: cf353dd3-89c9-47f6-a449-f874f0957013
 ms.service: virtual-machines-windows
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/25/2019
 ms.author: genli
-ms.openlocfilehash: 3c0152726aba115e1b370838308a7bf0af08cab7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4dc38714f4edb024255b4015cef54f26d5eef189
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64708134"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67710658"
 ---
 # <a name="reset-local-windows-password-for-azure-vm-offline"></a>Сброс локального пароля Windows для виртуальной машины Azure вне сети
 Локальный пароль Windows для виртуальной машины Azure можно сбросить с помощью [портала Azure или Azure PowerShell](reset-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (если установлен гостевой агент Azure). Этот метод является основным способом сброса пароля для виртуальной машины Azure. Если в работе гостевого агента Azure возникают неполадки (агент не отвечает или не устанавливается после передачи пользовательского образа), то можно сбросить пароль Windows вручную. В этой статье описывается, как сбросить пароль локальной учетной записи, подключив исходный виртуальный диск операционной системы к другой виртуальной машине. Действия, описанные в этой статье, не применяются к контроллерам домена Windows. 
@@ -161,6 +161,6 @@ ms.locfileid: "64708134"
     * Из расположения %windir%\System32\GroupPolicy
       * удалите файл gpt.ini (если файл gpt.ini уже существовал и был переименован в gpt.ini.bak, то переименуйте BAK-файл обратно в gpt.ini).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Если все еще не удается подключиться с помощью удаленного рабочего стола, то см. статью [Устранение неполадок с подключением к удаленному рабочему столу на виртуальной машине Azure под управлением Windows](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). [Подробное руководство по устранению неполадок с подключением к удаленному рабочему столу на виртуальной машине Windows в Azure](detailed-troubleshoot-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) скорее посвящено методам устранения неполадок, чем конкретным действиям. Вы также можете [отправить запрос в службу поддержки Azure](https://azure.microsoft.com/support/options/) и получить практическую помощь.
 

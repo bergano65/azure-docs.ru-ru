@@ -4,7 +4,7 @@ description: Узнайте, как создать и передать вирт�
 services: virtual-machines-linux
 documentationcenter: ''
 author: szarkos
-manager: jeconnoc
+manager: gwallace
 editor: tysonn
 tags: azure-resource-manager,azure-service-management
 ms.assetid: 3e097959-84fc-4f6a-8cc8-35e087fd1542
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/24/2019
 ms.author: szark
-ms.openlocfilehash: c90b6b3292b7ced75c1a01e64133533ffa5970df
-ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
+ms.openlocfilehash: 50651a31cd407da3ce32be3c2ddbbd24e6ca6b69
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357284"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67671572"
 ---
 # <a name="prepare-an-ubuntu-virtual-machine-for-azure"></a>Подготовка виртуальной машины Ubuntu для Azure
 [!INCLUDE [learn-about-deployment-models](../../../includes/learn-about-deployment-models-both-include.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "67357284"
 * Ubuntu 18.04/Bionic: [bionic-server-cloudimg-amd64.vhd.zip](https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.vhd.zip)
 * Ubuntu 18.10/Cosmic: [cosmic-server-cloudimg-amd64.vhd.zip](https://cloud-images.ubuntu.com/cosmic/current/cosmic-server-cloudimg-amd64.vhd.zip)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 В этой статье предполагается, что вы уже установили операционную систему Ubuntu Linux на виртуальный жесткий диск. Существует несколько средств для создания VHD-файлов, например решение для виртуализации, такое как Hyper-V. Инструкции см. в разделе [Установка роли Hyper-V и настройка виртуальной машины](https://technet.microsoft.com/library/hh846766.aspx).
 
 **Замечания по установке Ubuntu**
@@ -134,9 +134,9 @@ ms.locfileid: "67357284"
 
 1. В диспетчере Hyper-V выберите **Действие -> Завершение работы**. Виртуальный жесткий диск Linux готов к передаче в Azure.
 
-## <a name="references"></a>Справочники
+## <a name="references"></a>Ссылки
 [Ядро Ubuntu с расширенной поддержкой оборудования (HWE)](https://wiki.ubuntu.com/Kernel/LTSEnablementStack)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь виртуальный жесткий диск Ubuntu Linux можно использовать для создания новых виртуальных машин Azure. Если вы отправляете VHD-файл в Azure впервые, см. раздел [Вариант 1. Передача VHD](upload-vhd.md#option-1-upload-a-vhd).
 

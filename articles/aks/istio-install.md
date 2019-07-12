@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 04/19/2019
 ms.author: pabouwer
-ms.openlocfilehash: c7c234e181e10499e532436bfde05ed89bdc7d28
-ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
+ms.openlocfilehash: 9d973cb2ac210e912d93941a2f81889557379f43
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67465692"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67625973"
 ---
 # <a name="install-and-use-istio-in-azure-kubernetes-service-aks"></a>Установка и использование Istio в Службе Azure Kubernetes (AKS)
 
@@ -152,14 +152,19 @@ echo "source ~/completions/istioctl.bash" >> ~/.bashrc
 
 ### <a name="windows"></a>Windows
 
-Чтобы установить Istio `istioctl` в двоичные файлы клиента **Powershell**-на основе оболочки на Windows, используйте следующие команды. Эти команды копируют `istioctl` двоичный файл в папку Istio клиента и сделать его постоянно доступным через ваш `PATH`. Не требуется привилегий (администратор) для выполнения этих команд.
+Чтобы установить Istio `istioctl` в двоичные файлы клиента **Powershell**-на основе оболочки на Windows, используйте следующие команды. Эти команды копируют `istioctl` двоичный файл в папку Istio клиента и затем сделать его доступным как немедленно (в текущей оболочке) и без возможности восстановления (между перезагрузками оболочки) с помощью вашей `PATH`. С повышенными правами (администратор) для выполнения этих команд не требуется и не требуется перезапуск оболочки.
 
 ```powershell
+# Copy istioctl.exe to C:\Istio
 cd istio-$ISTIO_VERSION
 New-Item -ItemType Directory -Force -Path "C:\Istio"
 Copy-Item -Path .\bin\istioctl.exe -Destination "C:\Istio\"
-$PATH = [environment]::GetEnvironmentVariable("PATH", "User")
-[environment]::SetEnvironmentVariable("PATH", $PATH + "; C:\Istio\", "User")
+
+# Add C:\Istio to PATH. 
+# Make the new PATH permanently available for the current User, and also immediately available in the current shell.
+$PATH = [environment]::GetEnvironmentVariable("PATH", "User") + "; C:\Istio\"
+[environment]::SetEnvironmentVariable("PATH", $PATH, "User") 
+[environment]::SetEnvironmentVariable("PATH", $PATH)
 ```
 
 Теперь перейдем к следующему разделу, чтобы [установить Istio CRDs в AKS](#install-the-istio-crds-on-aks).
@@ -524,7 +529,7 @@ PowerShell
 kubectl get crds -o name | Select-String -Pattern 'istio.io' |% { kubectl delete $_ }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В следующей документации описаны способы Istio для intelligent маршрутизации, чтобы развернуть раннего выпуска:
 

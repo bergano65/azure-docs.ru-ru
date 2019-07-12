@@ -4,7 +4,7 @@ description: Сведения о включении InfiniBand с SR-IOV.
 services: virtual-machines
 documentationcenter: ''
 author: vermagit
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines
@@ -12,27 +12,26 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: amverma
-ms.openlocfilehash: 879b1eed7bf4778d4d49f6f991d6d74214d33823
-ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
+ms.openlocfilehash: 2e28627359f339a3bf818a15d6a5c8e456fb554a
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67537658"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67797521"
 ---
 # <a name="enable-infiniband-with-sr-iov"></a>Включить InfiniBand с SR-IOV
-
 
 — Это самый простой и рекомендуемый способ настройки вашего пользовательского образа виртуальной Машины с помощью InfiniBand (IB) для добавления расширения InfiniBandDriverLinux или InfiniBandDriverWindows виртуальной Машины к развертыванию.
 Сведения об использовании этих расширений виртуальной Машины с [Linux](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-hpc#rdma-capable-instances) и [Windows](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-hpc#rdma-capable-instances)
 
-Чтобы вручную настроить InfiniBand на SR-IOV включена виртуальными машинами (в настоящее время HB и HC), выполните следующие действия. Эти действия предназначены только для RHEL и CentOS. Для Ubuntu (16.04 и 18.04) и SLES (12 SP4 и 15) драйверы работают хорошо. Для Ubuntu. 
-
+Чтобы вручную настроить InfiniBand на SR-IOV включена виртуальными машинами (в настоящее время HB и HC), выполните следующие действия. Эти действия предназначены только для RHEL и CentOS. Для Ubuntu (16.04 и 18.04) и SLES (12 SP4 и 15) драйверы работают хорошо.
 
 ## <a name="manually-install-ofed"></a>Вручную установите OFED
 
 Установите последние версии драйверов MLNX_OFED ConnectX-5 из [Mellanox](https://www.mellanox.com/page/products_dyn?product_family=26).
 
 Для RHEL и CentOS (7.6 пример ниже):
+
 ```bash
 sudo yum install -y kernel-devel python-devel
 sudo yum install -y redhat-rpm-config rpm-build gcc-gfortran gcc-c++
@@ -83,6 +82,6 @@ fi
     systemctl restart waagent
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [HPC](https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/) в Azure.

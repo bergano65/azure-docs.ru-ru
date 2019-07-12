@@ -4,7 +4,7 @@ description: Общие команды PowerShell, позволяющие при
 services: virtual-machines-windows
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 56e1a73c-8299-4996-bd03-f74585caa1dc
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/17/2017
 ms.author: cynthn
-ms.openlocfilehash: 020f2a4171a5bd656e53c91e59edb16931b20d0d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: db6afa2900cc67d971ba06d393a936da9b55b574
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60597676"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67719931"
 ---
 # <a name="common-powershell-commands-for-azure-virtual-networks"></a>Общие команды PowerShell для виртуальных сетей Azure
 
@@ -35,10 +35,10 @@ ms.locfileid: "60597676"
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 
-| Задача | Команда |
+| Задача | Command |
 | ---- | ------- |
 | Создание конфигураций подсети |$subnet1 = [New-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig) -Name "mySubnet1" -AddressPrefix XX.X.X.X/XX<BR>$subnet2 = New-AzVirtualNetworkSubnetConfig -Name "mySubnet2" -AddressPrefix XX.X.X.X/XX<BR><BR>В обычной сети может быть подсеть для [балансировщика нагрузки с выходом в Интернет](../../load-balancer/load-balancer-internet-overview.md) и отдельная подсеть для [внутреннего балансировщика нагрузки](../../load-balancer/load-balancer-internal-overview.md). |
-| Создать виртуальную сеть |$vnet = [New-AzureRmVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork) -Name "myVNet" -ResourceGroupName $myResourceGroup -Location $location -AddressPrefix XX.X.X.X/XX -Subnet $subnet1, $subnet2 |
+| Создание виртуальной сети |$vnet = [New-AzureRmVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork) -Name "myVNet" -ResourceGroupName $myResourceGroup -Location $location -AddressPrefix XX.X.X.X/XX -Subnet $subnet1, $subnet2 |
 | Проверка доменного имени на уникальность |[Test-AzDnsAvailability](https://docs.microsoft.com/powershell/module/az.network/test-azdnsavailability) -DomainNameLabel "myDNS" -Location $location<BR><BR>Вы можете указать DNS-имя домена для [ресурса с общедоступным IP-адресом](../../virtual-network/virtual-network-ip-addresses-overview-arm.md). В результате этого будут сопоставлены адрес доменное_имя.расположение.cloudapp.azure.com и общедоступный IP-адрес на DNS-серверах под управлением Azure. Имя может содержать только буквы, цифры и дефисы. Первым и последним знаком должна быть буква или цифра, а доменное имя должно быть уникальным в пределах его расположения Azure. Если возвращается значение **True**, то предложенное имя является глобально уникальным. |
 | Создание общедоступного IP-адреса |$pip = [New-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/new-azpublicipaddress) -Name "myPublicIp" -ResourceGroupName $myResourceGroup -DomainNameLabel "myDNS" -Location $location -AllocationMethod Dynamic<BR><BR>В общедоступном IP-адресе используется доменное имя, которое вы ранее проверили и которое используется интерфейсной конфигурацией балансировщика нагрузки. |
 | Создание интерфейсной IP-конфигурации |$frontendIP = [New-AzLoadBalancerFrontendIpConfig](https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerfrontendipconfig) -Name "myFrontendIP" -PublicIpAddress $pip<BR><BR>Конфигурация внешнего интерфейса содержит общедоступный IP-адрес, созданный ранее для входящего сетевого трафика. |
@@ -51,7 +51,7 @@ ms.locfileid: "60597676"
 
 ## <a name="get-information-about-network-resources"></a>Получение сведений о сетевых ресурсах
 
-| Задача | Команда |
+| Задача | Command |
 | ---- | ------- |
 | Получение списка виртуальных сетей |[Get-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/get-azvirtualnetwork) -ResourceGroupName $myResourceGroup<BR><BR>Выводит список всех виртуальных сетей в группе ресурсов. |
 | Получение сведений о виртуальной сети |Get-AzVirtualNetwork -Name "myVNet" -ResourceGroupName $myResourceGroup |
@@ -65,7 +65,7 @@ ms.locfileid: "60597676"
 
 ## <a name="manage-network-resources"></a>Управление сетевыми ресурсами
 
-| Задача | Команда |
+| Задача | Command |
 | ---- | ------- |
 | Добавление подсети в виртуальную сеть |[Add-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/add-azvirtualnetworksubnetconfig) -AddressPrefix XX.X.X.X/XX -Name "mySubnet1" -VirtualNetwork $vnet<BR><BR>Добавляет подсеть в существующую виртуальную сеть. Значение $vnet представляет собой объект, возвращаемый командлетом Get-AzVirtualNetwork. |
 | Удаление виртуальной сети |[Remove-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/remove-azvirtualnetwork) -Name "myVNet" -ResourceGroupName $myResourceGroup<BR><BR>Удаляет указанную виртуальную сеть из группы ресурсов. |

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настроить для автоматической подготовки пользователей Azure Active Directory с Keeper Password Manager & Digital Vault | Документация Майкрософт
+title: Учебник. Настроить для автоматической подготовки пользователей Azure Active Directory с Keeper Password Manager & Digital Vault | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Keeper Password Manager & Digital Vault.
 services: active-directory
 documentationcenter: ''
@@ -8,21 +8,21 @@ writer: zchia
 manager: beatrizd
 ms.assetid: na
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/07/2019
-ms.author: zchia
-ms.openlocfilehash: 445579eb780b49f536ef1a9e13e5ca43db6f98f6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: jeedes
+ms.openlocfilehash: 74bfe37323a17bde19e4a9bf4ec28c9c3910b37f
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65508567"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67666252"
 ---
-# <a name="tutorial-configure-keeper-password-manager--digital-vault-for-automatic-user-provisioning"></a>Руководство по Настроить Keeper Password Manager & Digital Vault для автоматической подготовки пользователей
+# <a name="tutorial-configure-keeper-password-manager--digital-vault-for-automatic-user-provisioning"></a>Учебник. Настроить Keeper Password Manager & Digital Vault для автоматической подготовки пользователей
 
 Цель данного руководства является демонстрация действия, выполняемые в Keeper Password Manager & Digital Vault и Azure Active Directory (Azure AD) для настройки Azure AD настроить автоматическую подготовку и отмену подготовки пользователей и групп в Keeper Password Manager & Digital Vault.
 
@@ -31,7 +31,7 @@ ms.locfileid: "65508567"
 >
 > Сейчас этот соединитель предоставляется в общедоступной предварительной версии. Дополнительные сведения о общие Microsoft Azure условия использования предварительных версий функций, см. в разделе [дополнительным условиям использования предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -126,7 +126,7 @@ Azure Active Directory используется концепция, называ
 
     ![Уведомление по электронной почте](common/provisioning-notification-email.png)
 
-9. Выберите команду **Сохранить**.
+9. Нажмите кнопку **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать пользователей Azure Active Directory с Keeper Password Manager & Digital Vault**.
 
@@ -172,7 +172,7 @@ Azure Active Directory используется концепция, называ
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 

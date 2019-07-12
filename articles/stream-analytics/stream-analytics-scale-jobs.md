@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/22/2017
-ms.openlocfilehash: f4307da2e74846507cafb9f767a6ccae855e42a2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fe4d37563af159f566bc3fb03a3cfe136e7cb734
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60816811"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621730"
 ---
 # <a name="scale-an-azure-stream-analytics-job-to-increase-throughput"></a>Масштабирование задания Azure Stream Analytics для повышения пропускной способности базы данных
 В этой статье описано, как настроить запрос Stream Analytics для увеличения пропускной способности заданий Streaming Analytics. Руководство ниже можно использовать для масштабирования заданий, чтобы обрабатывать большую нагрузку и использовать больше ресурсов системы (таких как пропускная способность, ресурсы ЦП, память).
@@ -85,7 +85,7 @@ ms.locfileid: "60816811"
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
-* [Справочник по языку запросов Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+* [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
 <!--Image references-->

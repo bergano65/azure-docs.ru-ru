@@ -4,7 +4,7 @@ description: Узнайте, как устранять неполадки вир
 services: virtual-machines-linux
 documentationCenter: ''
 author: genlin
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
 ms.devlang: azurecli
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 02/16/2017
 ms.author: genli
-ms.openlocfilehash: dfb85b0f9f1dda611c613cb296177cf28391adc0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e1e91ec4393072a7da78c0de800cab26608c74d6
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60318856"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67709336"
 ---
 # <a name="troubleshoot-a-linux-vm-by-attaching-the-os-disk-to-a-recovery-vm-with-the-azure-cli"></a>Устранение неполадок виртуальной машины Linux путем подключения диска ОС к виртуальной машине восстановления с помощью Azure CLI
 Если возникает проблема с загрузкой или диском на виртуальной машине Linux, возможно, вам нужно устранить неполадки, связанные с самим виртуальным жестким диском. Например, такая ситуация возникает из-за неправильной записи в `/etc/fstab`, которая мешает успешно загрузить виртуальную машину. В этой статье подробно описано, как с помощью Azure CLI подключить виртуальный жесткий диск к другой виртуальной машине Linux для устранения ошибок, а затем восстановить исходную виртуальную машину. 
@@ -194,6 +194,6 @@ az vm boot-diagnostics enable --resource-group myResourceGroup --name myDeployed
 4. [Подключите управляемый диск в качестве диска данных виртуальной машины](../windows/attach-disk-ps.md).
 5. [Замените диск данных из шага 4 на диск операционной системы](../windows/os-disk-swap.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 При возникновении проблем с подключением к виртуальной машине см. статью [Устранение неполадок с SSH-подключением к виртуальной машине Azure Linux: сбой, ошибка или отклонение](troubleshoot-ssh-connection.md). Для решения проблем с доступом к приложениям, выполняющимся на виртуальной машине, см. статью [Устранение проблем с подключением к приложениям на виртуальных машинах Linux в Azure](troubleshoot-app-connection.md).
 

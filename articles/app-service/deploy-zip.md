@@ -12,14 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/07/2018
-ms.author: cephalin;sisirap
+ms.author: cephalin
+ms.reviewer: sisirap
 ms.custom: seodec18
-ms.openlocfilehash: aac60d3d4fd154847bdfae3dfb590b947e861e9e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6cf46f96e84e8a00a478c3ad3edece10a36ce0bd
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65978822"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67617004"
 ---
 # <a name="deploy-your-app-to-azure-app-service-with-a-zip-or-war-file"></a>Развертывание приложения в Службе приложений Azure с помощью ZIP- или WAR-файла
 
@@ -39,7 +40,7 @@ ms.locfileid: "65978822"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этой статье, сделайте следующее:
 
@@ -122,7 +123,7 @@ Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $base64A
 
 [!INCLUDE [What happens to my app during deployment?](../../includes/app-service-deploy-atomicity.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы изучить более сложные сценарии развертывания, ознакомьтесь с [развертыванием в Azure с помощью Git](deploy-local-git.md). Развертывание в Azure на основе Git обеспечивает систему управления версиями, восстановление пакета, MSBuild и многое другое.
 

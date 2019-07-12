@@ -9,13 +9,15 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 05/30/2019
-ms.openlocfilehash: 50905eb987defac612f1055b450b682726f0a56f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1b62d4b2ac1bb69e2270c3202d29eb595df7aac4
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66752948"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67806026"
 ---
+**Вычислить целевые объекты можно повторно использовать из одного задания обучения к следующему**. Например, после присоединения удаленной виртуальной машины к рабочей области ее можно повторно использовать для нескольких заданий.
+
 |Обучение &nbsp;целевых объектов| Поддержка GPU |[Автоматические машинного Обучения](../articles/machine-learning/service/concept-automated-ml.md) | [Конвейеры машинного Обучения](../articles/machine-learning/service/concept-ml-pipelines.md) | [Графический интерфейс](../articles/machine-learning/service/ui-concept-visual-interface.md)
 |----|:----:|:----:|:----:|:----:|
 |[Локальный компьютер](../articles/machine-learning/service/how-to-set-up-training-targets.md#local)| Возможно | Да | &nbsp; | &nbsp; |
@@ -25,5 +27,3 @@ ms.locfileid: "66752948"
 |[Аналитика озера данных Azure](../articles/machine-learning/service/how-to-create-your-first-pipeline.md#adla)| &nbsp; | &nbsp; | Да | &nbsp; |
 |[Azure HDInsight](../articles/machine-learning/service/how-to-set-up-training-targets.md#hdinsight)| &nbsp; | &nbsp; | Да | &nbsp; |
 |[Пакетная служба Azure](../articles/machine-learning/service/how-to-set-up-training-targets.md#azbatch)| &nbsp; | &nbsp; | Да | &nbsp; |
-
-**Все целевые объекты вычислений могут использоваться повторно для нескольких заданий обучения**. Например, после присоединения удаленной виртуальной машины к рабочей области ее можно повторно использовать для нескольких заданий.

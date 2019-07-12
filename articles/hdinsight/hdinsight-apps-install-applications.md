@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/17/2019
 ms.author: hrasheed
-ms.openlocfilehash: 3e1f64aa00ea0d78eca8a994814a91600b91239f
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: 9d25996db9c13a12781d369327f2b43a41fb4115
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67190693"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67786522"
 ---
 # <a name="install-third-party-apache-hadoop-applications-on-azure-hdinsight"></a>Установка сторонних приложений Apache Hadoop в Azure HDInsight
 
@@ -38,13 +38,13 @@ ms.locfileid: "67190693"
 |[Звезда с Presto для Azure HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/starburst.starburst-presto) |Hadoop |Presto быстрых и масштабируемых распределенных обработчик SQL-запросов. Разработанная для разделения хранилища и вычислений Presto идеально подходит для выполнения запросов к данным в Azure Data Lake Storage, хранилищах BLOB-объектов Azure, базах данных SQL и NoSQL и других источниках данных. |
 |[Сборщик данных StreamSets для облака HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/streamsets.streamsets-data-collector-hdinsight) |Hadoop, HBase, Spark, Kafka |Сборщик данных StreamSets – это упрощенный, мощный механизм, выводит данные в режиме реального времени. Используйте сборщик данных для маршрута и обработка данных в потоки данных. Он поставляется с лицензией на пробную версию в течение 30 дней. |
 |[Trifacta Wrangler Enterprise](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/trifacta.tr01) |Hadoop, Spark, HBase |Enterprise Wrangler Trifacta для HDInsight поддерживает структурирование для любого масштаба данных корпоративного уровня данных. Стоимость выполнения Trifacta в Azure представляет собой сочетание Trifacta затраты на подписку, а также затраты на инфраструктуру Azure для виртуальных машин. |
-|[Платформа данных Unifi](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/unifi-software.unifi-data-platform) |Hadoop, HBase, Storm или Spark |Платформа данных Unifi — это набор интегрированных средств самостоятельного данных расширить возможности бизнес-пользователь к решению данных проблем, добавочное доходы, снижать затраты или сложность эксплуатации. |
+|[Платформа данных Unifi](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/unifi-software.unifi-data-catalog) |Hadoop, HBase, Storm или Spark |Платформа данных Unifi — это набор интегрированных средств самостоятельного данных расширить возможности бизнес-пользователь к решению данных проблем, добавочное доходы, снижать затраты или сложность эксплуатации. |
 |[Unraveldata APM](https://azuremarketplace.microsoft.com/marketplace/apps/unravel-data.unravel-app) |Spark |Обнаружить приложение данных для кластера HDInsight Spark. |
 |[Каталог данных, управляемых искусственным Интеллектом waterline](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/waterline_data.waterline_data) |Spark |Waterline каталоги, упорядочивает и управляет данных с помощью искусственного Интеллекта для данных автоматически тег с бизнес-терминологией. Каталог грамотного бизнеса Waterline —это чрезвычайно важный компонент успешного проведения самостоятельной аналитики, обеспечения соответствия требованиям и системы управления, а также инициатив в области управления ИТ. |
 
 В этой статье используется портал Azure. Вы можете экспортировать шаблон Azure Resource Manager с портала или получить его копию у поставщиков, а затем развернуть его с помощью Azure PowerShell и классического интерфейса командной строки Azure.  Ознакомьтесь со статьей [Создание кластеров Apache Hadoop в HDInsight с помощью шаблонов Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Если вы хотите установить приложение HDInsight в существующем кластере HDInsight, вы должны создать кластер HDInsight. Инструкции по созданию кластера см. в [этом разделе](hadoop/apache-hadoop-linux-tutorial-get-started.md#create-cluster). Вы также можете установить приложения HDInsight во время создания кластера HDInsight.
 
 ## <a name="install-applications-to-existing-clusters"></a>Установка приложений в имеющиеся кластеры
@@ -99,7 +99,7 @@ ms.locfileid: "67190693"
 ## <a name="troubleshoot"></a>Устранение неполадок
 См. раздел [Устранение неполадок, связанных с установкой](hdinsight-apps-install-custom-applications.md#troubleshoot-the-installation).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md)— узнайте, как развернуть в HDInsight неопубликованное приложение HDInsight.
 * [Публикация приложения HDInsight в Azure Marketplace](hdinsight-apps-publish-applications.md). Узнайте, как опубликовать пользовательские приложения HDInsight в Microsoft Azure Marketplace.
 * [MSDN. Application](https://msdn.microsoft.com/library/mt706515.aspx) (Приложение). Узнайте, как определить приложения HDInsight.

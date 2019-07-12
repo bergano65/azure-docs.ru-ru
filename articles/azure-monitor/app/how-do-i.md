@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/04/2017
 ms.author: mbullwin
-ms.openlocfilehash: 5e22a3f3b362811fd87460ec41b61a990f4d83fb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9f80edf18a531d6c2850658ddef9c7007edb350f
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60902112"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67795512"
 ---
 # <a name="how-do-i--in-application-insights"></a>Как работать с Application Insights
 ## <a name="get-an-email-when-"></a>Получать уведомление по электронной почте, если...
@@ -137,16 +137,25 @@ ms.locfileid: "60902112"
 ## <a name="disable-telemetry"></a>Отключение данных телеметрии
 Чтобы **динамически остановить и запустить** сбор и передачу данных телеметрии с сервера:
 
-```
+### <a name="aspnet-classic-applications"></a>Приложения ASP.NET Classic
 
+```csharp
     using  Microsoft.ApplicationInsights.Extensibility;
 
     TelemetryConfiguration.Active.DisableTelemetry = true;
 ```
 
+### <a name="other-applications"></a>Другие приложения
+Не рекомендуется использовать `TelemetryConfiguration.Active` одноэлементный экземпляр консоли или приложения ASP.NET Core.
+Если вы создали `TelemetryConfiguration` экземпляр себя – набор `DisableTelemetry` для `true`.
 
+Для приложений ASP.NET Core могут получить доступ к `TelemetryConfiguration` экземпляра с помощью [внедрения зависимостей ASP.NET Core](/aspnet/core/fundamentals/dependency-injection/). Дополнительные сведения в [ApplicationInsights для приложений ASP.NET Core](../../azure-monitor/app/asp-net-core.md) статьи.
 
-Чтобы **отключить выбранные стандартные сборщики** , например счетчики производительности, HTTP-запросы или зависимости, удалите или закомментируйте соответствующие строки в файле [ApplicationInsights.config](../../azure-monitor/app/api-custom-events-metrics.md). Это можно сделать, если вы, например, хотите отправить собственные данные TrackRequest.
+## <a name="disable-selected-standard-collectors"></a>Отключить выбранные стандартные сборщики
+Вы можете отключить стандартные сборщики (например, счетчики производительности, HTTP-запросы или зависимости)
+
+* **Приложения ASP.NET** , удалите или закомментируйте соответствующие строки в [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md)
+* **Приложения ASP.NET Core** -выполните в параметры конфигурации модулей телеметрии [ApplicationInsights ASP.NET Core](../../azure-monitor/app/asp-net-core.md#configuring-or-removing-default-telemetrymodules)
 
 ## <a name="view-system-performance-counters"></a>Просмотр счетчиков производительности системы
 В показатели метрики, которые можно отображать в обозревателе метрики, входит набор системных счетчиков производительности. В готовой колонке **Серверы** отображается несколько таких счетчиков.

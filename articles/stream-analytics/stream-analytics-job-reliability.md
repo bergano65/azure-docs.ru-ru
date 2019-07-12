@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: 672706c97a423819dd26941e0b6e22affa9c2bb8
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: e38f8a923daa210d8aa5b56631e5f8157d4b3f70
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67329834"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620880"
 ---
 # <a name="guarantee-stream-analytics-job-reliability-during-service-updates"></a>Обеспечение надежности заданий Stream Analytics во время обновления служб
 
@@ -30,10 +30,10 @@ _За исключением региона "Центральная Индия"_
 
 Рекомендуется развертывать идентичные задания на обоих сопряженных регионах. Затем следует [отслеживать эти задания](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-set-up-alerts#scenarios-to-monitor) для получения уведомлений, когда происходит что-то непредвиденное. Если один из следующих заданий заканчивается вверх в [в состоянии сбоя](https://docs.microsoft.com/azure/stream-analytics/job-states) после обновления службы Stream Analytics, вы можете обратитесь в службу поддержки для выявления основной причины. Вы также должны отрабатывать отказ всех нисходящих потребителей выходные данные работоспособного задания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Что такое Stream Analytics?](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий Azure Stream Analytics для повышения пропускной способности базы данных](stream-analytics-scale-jobs.md)
-* [Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx) (Справочник по языку запросов Stream Analytics)
+* [Stream Analytics Query Language Reference](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference) (Справочник по языку запросов Stream Analytics)
 * [Stream Analytics management REST API reference](https://msdn.microsoft.com/library/azure/dn835031.aspx) (Справочник по API-интерфейсу REST для управления Stream Analytics)

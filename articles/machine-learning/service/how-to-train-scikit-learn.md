@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.author: minxia
-author: mx-iao
+ms.author: maxluk
+author: maxluk
 ms.date: 06/30/2019
 ms.custom: seodec18
-ms.openlocfilehash: d2c9b104d1fe9333221bc20e7e23b436358c9ece
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: c9e983f7981c1155964617694d2cce86aba741b7
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67514021"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67840024"
 ---
 # <a name="train-and-register-scikit-learn-models-at-scale-with-azure-machine-learning-service"></a>Обучение и зарегистрировать Scikit-learn модели в масштабе с помощью службы машинного обучения Azure
 
@@ -25,7 +25,7 @@ Scikit-learn – это инфраструктура вычислений отк
 
 При разработке модели Scikit-learn из нуля, или вам нужно добавить существующую модель в облаке, службы машинного обучения Azure поможет вам создавать готовые модели.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните этот код на любой из этих сред:
  - Machine Learning записные книжки Azure виртуальной Машины — нет файлы для загрузки или установки не требуется
@@ -188,7 +188,7 @@ joblib.dump(svm_model_linear, 'model.joblib')
 model = run.register_model(model_name='sklearn-iris', model_path='model.joblib')
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы обучена и зарегистрировали Scikit-learn модели службе машинного обучения Azure.
 

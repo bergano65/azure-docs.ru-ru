@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
-ms.date: 05/31/2019
+ms.date: 07/08/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: dcb90eb8ee25b8b0c780006f3555a5a9b815ffdd
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: fb23e61142a639420d74c08e5a9a41324acab18b
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67514276"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706282"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Развертывание моделей с помощью Службы машинного обучения Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "67514276"
 
 Дополнительные сведения об основных понятиях, связанных с рабочим процессом развертывания, см. в статье [Администрирование, развертывание и мониторинг моделей с помощью службы "Машинное обучение Azure"](concept-model-management-and-deployment.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Модель. Если у вас нет обученной модели, можно использовать модель и файлы зависимостей, предоставляются в [учебником](https://aka.ms/azml-deploy-cloud).
 
@@ -122,9 +122,9 @@ ms.locfileid: "67514276"
 
 Сценарий содержит две функции, которые загружают и запустить модель:
 
-* `init()`: Обычно эта функция загружает модель в глобальный объект. Эта функция выполняется только один раз, когда запускается контейнер Docker для веб-службы.
+* `init()`. Обычно эта функция загружает модель в глобальный объект. Эта функция выполняется только один раз, когда запускается контейнер Docker для веб-службы.
 
-* `run(input_data)`: Эта функция использует модель для прогнозирования значения на основе входных данных. Ко входным и выходным данным для запуска обычно применяется формат JSON для сериализации и десериализации. Вы также можете работать с необработанными двоичными данными. Вы можете преобразовать данные, прежде чем отправлять их в модель или возвращать клиенту.
+* `run(input_data)`. Эта функция использует модель для прогнозирования значения на основе входных данных. Ко входным и выходным данным для запуска обычно применяется формат JSON для сериализации и десериализации. Вы также можете работать с необработанными двоичными данными. Вы можете преобразовать данные, прежде чем отправлять их в модель или возвращать клиенту.
 
 #### <a name="what-is-getmodelpath"></a>Что такое get_model_path?
 
@@ -332,12 +332,9 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json
 Ниже показано, как создать конфигурацию развертывания, а затем использовать его для развертывания веб-службы.
 
 ### <a name="optional-profile-your-model"></a>Необязательно: Профилирование модели
-Перед развертыванием модели в качестве службы, может потребоваться его для определения оптимальной ЦП и требования к памяти. Вы можно сделать профиль модели с помощью пакета SDK или интерфейса командной строки.
+Перед развертыванием модели в качестве службы, вы можете профилировать его, чтобы определить оптимальное ЦП и требования к памяти, с помощью пакета SDK или интерфейса командной строки.  Модель результатов профилирования передаются в рамках `Run` объекта. Подробные сведения о [схему профиль модели можно найти в документации по API](https://docs.microsoft.com/python/api/azureml-core/azureml.core.profile.modelprofile?view=azure-ml-py)
 
-Дополнительные сведения можно извлечь документации пакета SDK: https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#profile-workspace--profile-name--models--inference-config--input-data-
-
-Модель результатов профилирования передаются в рамках объекта Run.
-Особенности схемы профиль модели можно найти здесь: https://docs.microsoft.com/python/api/azureml-core/azureml.core.profile.modelprofile?view=azure-ml-py
+Дополнительные сведения о [профилирование с помощью пакета SDK](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#profile-workspace--profile-name--models--inference-config--input-data-)
 
 ## <a name="deploy-to-target"></a>Развертывание в целевой объект
 
@@ -356,9 +353,27 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json
 
 + **С помощью интерфейса командной строки**
 
+    Чтобы развернуть с помощью интерфейса командной строки, используйте следующую команду. Замените `mymodel:1` с именем и версией зарегистрированной модели:
+
   ```azurecli-interactive
-  az ml model deploy -m sklearn_mnist:1 -ic inferenceconfig.json -dc deploymentconfig.json
+  az ml model deploy -m mymodel:1 -ic inferenceconfig.json -dc deploymentconfig.json
   ```
+
+    Записи в `deploymentconfig.json` схемы документа к параметрам для [LocalWebservice.deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservicedeploymentconfiguration?view=azure-ml-py). В следующей таблице описаны сопоставления между сущностями в документе JSON, а также параметры для метода:
+
+    | Сущность JSON | Параметр метода | Описание |
+    | ----- | ----- | ----- |
+    | `computeType` | Нет данных | Целевой объект вычисления. Для локальных, значение должно быть `local`. |
+    | `port` | `port` | Локальный порт, на котором для предоставления конечной точки службы HTTP. |
+
+    Приведенный ниже код JSON приведен пример конфигурации развертывания для использования с помощью интерфейса командной строки:
+
+    ```json
+    {
+        "computeType": "local",
+        "port": 32267
+    }
+    ```
 
 ### <a id="aci"></a> Экземпляры контейнеров Azure (DEVTEST)
 
@@ -379,10 +394,44 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json
 
 + **С помощью интерфейса командной строки**
 
-  ```azurecli-interactive
-  az ml model deploy -m sklearn_mnist:1 -n aciservice -ic inferenceconfig.json -dc deploymentconfig.json
-  ```
+    Чтобы развернуть с помощью интерфейса командной строки, используйте следующую команду. Замените `mymodel:1` с именем и версией зарегистрированной модели. Замените `myservice` с именем, чтобы предоставить этой службы:
 
+    ```azurecli-interactive
+    az ml model deploy -m mymodel:1 -n myservice -ic inferenceconfig.json -dc deploymentconfig.json
+    ```
+
+    Записи в `deploymentconfig.json` схемы документа к параметрам для [AciWebservice.deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aci.aciservicedeploymentconfiguration?view=azure-ml-py). В следующей таблице описаны сопоставления между сущностями в документе JSON, а также параметры для метода:
+
+    | Сущность JSON | Параметр метода | Описание |
+    | ----- | ----- | ----- |
+    | `computeType` | Нет данных | Целевой объект вычисления. Для ACI, значение должно быть `ACI`. |
+    | `containerResourceRequirements` | Нет данных | Содержит элементы конфигурации для ЦП и памяти, выделенной для контейнера. |
+    | &emsp;&emsp;`cpu` | `cpu_cores` | Число ядер ЦП, выделенных для этой веб-службы. Значения по умолчанию, `0.1` |
+    | &emsp;&emsp;`memoryInGB` | `memory_gb` | Объем памяти (в ГБ) для выделения этой веб-службы. По умолчанию, `0.5` |
+    | `location` | `location` | Регион Azure для развертывания этого веб-службы. Если не указано, будет использоваться расположение рабочей области. Дополнительные сведения о доступных регионов можно найти здесь: [Регионы ACI](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=container-instances) |
+    | `authEnabled` | `auth_enabled` | Следует ли включить проверки подлинности для этого веб-службы. По умолчанию — False |
+    | `sslEnabled` | `ssl_enabled` | Следует ли включить SSL для этой веб-службы. По умолчанию — False. |
+    | `appInsightsEnabled` | `enable_app_insights` | Следует ли включить AppInsights для этой веб-службы. По умолчанию — False |
+    | `sslCertificate` | `ssl_cert_pem_file` | Файл сертификата, требуется, если протокол SSL включен |
+    | `sslKey` | `ssl_key_pem_file` | Файл ключа, требуется, если протокол SSL включен |
+    | `cname` | `ssl_cname` | Запись cname для Если протокол SSL включен |
+    | `dnsNameLabel` | `dns_name_label` | Метка DNS-имени для конечной точки оценки. Если не указано, будет создан метку уникальное DNS-имени для конечной точки оценки. |
+
+    Приведенный ниже код JSON приведен пример конфигурации развертывания для использования с помощью интерфейса командной строки:
+
+    ```json
+    {
+        "computeType": "aci",
+        "containerResourceRequirements":
+        {
+            "cpu": 0.5,
+            "memoryInGB": 1.0
+        },
+        "authEnabled": true,
+        "sslEnabled": false,
+        "appInsightsEnabled": false
+    }
+    ```
 
 + **С помощью VS Code**
 
@@ -414,9 +463,71 @@ az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json
 
 + **С помощью интерфейса командной строки**
 
+    Чтобы развернуть с помощью интерфейса командной строки, используйте следующую команду. Замените `myaks` именем AKS целевого объекта вычислений. Замените `mymodel:1` с именем и версией зарегистрированной модели. Замените `myservice` с именем, чтобы предоставить этой службы:
+
   ```azurecli-interactive
-  az ml model deploy -ct myaks -m mymodel:1 -n aksservice -ic inferenceconfig.json -dc deploymentconfig.json
+  az ml model deploy -ct myaks -m mymodel:1 -n myservice -ic inferenceconfig.json -dc deploymentconfig.json
   ```
+
+    Записи в `deploymentconfig.json` схемы документа к параметрам для [AksWebservice.deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aks.aksservicedeploymentconfiguration?view=azure-ml-py). В следующей таблице описаны сопоставления между сущностями в документе JSON, а также параметры для метода:
+
+    | Сущность JSON | Параметр метода | Описание |
+    | ----- | ----- | ----- |
+    | `computeType` | Нет данных | Целевой объект вычисления. Для AKS, значение должно быть `aks`. |
+    | `autoScaler` | Нет данных | Содержит элементы конфигурации для автоматического масштабирования. См. в таблице автомасштабирования. |
+    | &emsp;&emsp;`autoscaleEnabled` | `autoscale_enabled` | Следует ли включить автоматическое масштабирование веб-службы. Если `numReplicas`  =  `0`, `True`; в противном случае `False`. |
+    | &emsp;&emsp;`minReplicas` | `autoscale_min_replicas` | Минимальное число контейнеров для использования при автоматическом масштабировании этой веб-службы. По умолчанию, `1`. |
+    | &emsp;&emsp;`maxReplicas` | `autoscale_max_replicas` | Максимальное число контейнеров для использования при автоматическом масштабировании этой веб-службы. По умолчанию, `10`. |
+    | &emsp;&emsp;`refreshPeriodInSeconds` | `autoscale_refresh_seconds` | Как часто автомасштабирования пытается этой веб-службы. По умолчанию, `1`. |
+    | &emsp;&emsp;`targetUtilization` | `autoscale_target_utilization` | Целевому показателю использования (в процентах из 100), следует попытаться Ведение этой веб-службы автомасштабирования. По умолчанию, `70`. |
+    | `dataCollection` | Нет данных | Содержит элементы конфигурации для сбора данных. |
+    | &emsp;&emsp;`storageEnabled` | `collect_model_data` | Следует ли включить сбор данных модели веб-службы. По умолчанию, `False`. |
+    | `authEnabled` | `auth_enabled` | Следует ли включить проверку подлинности для веб-службы. По умолчанию, `True`. |
+    | `containerResourceRequirements` | Нет данных | Содержит элементы конфигурации для ЦП и памяти, выделенной для контейнера. |
+    | &emsp;&emsp;`cpu` | `cpu_cores` | Число ядер ЦП, выделенных для этой веб-службы. Значения по умолчанию, `0.1` |
+    | &emsp;&emsp;`memoryInGB` | `memory_gb` | Объем памяти (в ГБ) для выделения этой веб-службы. По умолчанию, `0.5` |
+    | `appInsightsEnabled` | `enable_app_insights` | Следует ли включить ведение журнала Application Insights для веб-службы. По умолчанию, `False`. |
+    | `scoringTimeoutMs` | `scoring_timeout_ms` | Время ожидания, чтобы принудительно использовать для вызовов веб-службе оценки. По умолчанию, `60000`. |
+    | `maxConcurrentRequestsPerContainer` | `replica_max_concurrent_requests` | Максимальное число параллельных запросов на каждый узел этой веб-службы. По умолчанию, `1`. |
+    | `maxQueueWaitMs` | `max_request_wait_time` | Максимальное время запроса будут оставаться в тебя очереди (в миллисекундах) до 503 возвращается ошибка. По умолчанию, `500`. |
+    | `numReplicas` | `num_replicas` | Число контейнеров для выделения этой веб-службы. Значение по умолчанию отсутствует. Если этот параметр не задан, по умолчанию включено Автомасштабирование. |
+    | `keys` | Нет данных | Содержит элементы конфигурации для ключей. |
+    | &emsp;&emsp;`primaryKey` | `primary_key` | Ключ основной проверки подлинности, используемый для этой веб-службы |
+    | &emsp;&emsp;`secondaryKey` | `secondary_key` | Ключ вторичной проверки подлинности, используемый для этой веб-службы |
+    | `gpuCores` | `gpu_cores` | Число ядер GPU, выделяемых для этой веб-службы. Значение по умолчанию: 1. |
+    | `livenessProbeRequirements` | Нет данных | Содержит элементы конфигурации для требования проверки активности. |
+    | &emsp;&emsp;`periodSeconds` | `period_seconds` | Как часто (в секундах) для выполнения проверки активности. По умолчанию 10 секунд. Минимальное значение равно 1. |
+    | &emsp;&emsp;`initialDelaySeconds` | `initial_delay_seconds` | Число секунд после запуска контейнера перед инициируются пробы активности. Значение по умолчанию — 310 |
+    | &emsp;&emsp;`timeoutSeconds` | `timeout_seconds` | Количество секунд, после которого истекает проверки активности. По умолчанию — 2 секунды. Минимальное значение — 1 |
+    | &emsp;&emsp;`successThreshold` | `success_threshold` | Минимальное последовательных успешных испытаний для проверки активности считается успешным после сбойный. По умолчанию равен 1. Минимальное значение равно 1. |
+    | &emsp;&emsp;`failureThreshold` | `failure_threshold` | При запуске Pod и происходит сбой проверки активности, Kubernetes предпримет попытку failureThreshold раз перед прекращением. По умолчанию — 3. Минимальное значение равно 1. |
+    | `namespace` | `namespace` | Пространство имен Kubernetes, развернутой в веб-службы. Может содержать до 63 строчные буквы, цифры («» – «z», "0"-"9") и дефис ("-") символов. Первый и последний символы не могут быть дефисами. |
+
+    Приведенный ниже код JSON приведен пример конфигурации развертывания для использования с помощью интерфейса командной строки:
+
+    ```json
+    {
+        "computeType": "aks",
+        "autoScaler":
+        {
+            "autoscaleEnabled": true,
+            "minReplicas": 1,
+            "maxReplicas": 3,
+            "refreshPeriodInSeconds": 1,
+            "targetUtilization": 70
+        },
+        "dataCollection":
+        {
+            "storageEnabled": true
+        },
+        "authEnabled": true,
+        "containerResourceRequirements":
+        {
+            "cpu": 0.5,
+            "memoryInGB": 1.0
+        }
+    }
+    ```
 
 + **С помощью VS Code**
 
@@ -600,7 +711,7 @@ print(service.get_logs())
 
 Дополнительные сведения см. в справочной документации по [WebService.delete()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#delete--), и [Model.delete()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#delete--).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Развертывание модели с помощью пользовательского образа Docker](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)
 * [Защита веб-служб Машинного обучения Azure с помощью SSL](how-to-secure-web-service.md)

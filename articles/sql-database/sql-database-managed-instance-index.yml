@@ -41,7 +41,7 @@ sections:
           - title: Расширенная контактная зона
             href: '/azure/sql-database/sql-database-managed-instance#sql-features-supported'
             html: <p>Практически 100-процентная совместимость компонентов SQL с последней версией ядра СУБД SQL Server.</p>
-          - title: Интеграция виртуальной сети
+          - title: интеграция с виртуальной сетью;
             href: /azure/sql-database/sql-database-managed-instance-connectivity-architecture
             html: <p>Защищенная служба размещена в частной виртуальной сети Azure с использованием частных IP-адресов.</p>
           - title: Простой переход
@@ -56,7 +56,7 @@ sections:
           - title: Возможности PaaS
             href: /azure/sql-database/sql-database-paas
             html: '<p>Azure PaaS позволяет использовать экземпляр с минимальной необходимостью в управлении и доступностью на уровне 99,99 %.</p>'
-          - title: Уровни служб
+          - title: Уровни службы
             href: /azure/sql-database/sql-database-service-tiers-general-purpose-business-critical
             html: <p>В зависимости от бизнес-потребностей можно выбрать между уровнями служб "Общего назначения" и "Критически важный для бизнеса".</p>
           - title: Расширенные функции безопасности
@@ -81,7 +81,7 @@ sections:
           - html: 'Использование <a href="https://aka.ms/managed-instance-failover-groups">географически распределенных групп отработки отказа</a> для сохранения копии экземпляра в другом регионе и обеспечение доступности данных даже в сценарии региональной аварии (предварительная версия).'
           - html: "<a href=\"https://aka.ms/managed-instance-configurable-backup-retention\">Настройка периода хранения резервных копий (до 35\_дней)</a> для восстановления на момент времени. Обратите внимание, что долгосрочное хранение резервных копий (до 10\_лет) по-прежнему не включено, поэтому можно использовать <a href=\"https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server\">резервные копии только для копирования</a> в качестве альтернативы."
           - html: 'Создание <a href="https://aka.ms/managed-instance-aadlogins">субъектов сервера AAD на уровне экземпляра (имен для входа) </a> с помощью операции <a href="https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">создания имени для входа из внешнего поставщика</a> (предварительная версия).'
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Управляемый экземпляр позволяет легко выполнять базовые задачи управления с помощью портала Azure, Azure CLI и Azure PowerShell. Узнайте, как выполнять основные задачи управления с использованием примеров из следующих кратких руководств:'
@@ -93,7 +93,7 @@ sections:
             title: Портал Azure
           - image:
               src: media/index/cli.svg
-            title: Инфраструктура CLI Azure
+            title: Azure CLI
           - image:
               src: media/index/logo_powershell.svg
             title: PowerShell
@@ -105,7 +105,7 @@ sections:
             values:
               - href: /azure/sql-database/sql-database-managed-instance-get-started
               - href: 'https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44'
-              - href: sql-database-managed-instance-get-started
+              - href: /azure/sql-database/scripts/sql-database-create-configure-managed-instance-powershell
               - href: 'https://github.com/Azure/azure-quickstart-templates/tree/master/101-sqlmi-new-vnet'
           - title: Изменение экземпляра
             values:
@@ -141,7 +141,7 @@ sections:
             values:
               - href: null
               - href: null
-              - href: 'https://medium.com/azure-sqldb-managed-instance/geo-restore-your-databases-on-azure-sql-instances-1451480e90fa'
+              - href: /azure/sql-database/scripts/sql-managed-instance-restore-geo-backup
               - href: null
           - title: Набор общедоступную конечную точку IP-адрес
             values:
@@ -167,7 +167,7 @@ sections:
           - html: 'Дополнительные сведения об уровне хранилища уровня служб "Общего назначения" см. в <a href="https://medium.com/azure-sqldb-managed-instance/file-layout-in-general-purpose-azure-sql-managed-instance-cf21fff9c76c">этой статье</a>, а рекомендации по оптимизации производительности хранилища и вопросы, касающиеся управляемых экземпляров уровня служб "Общего назначения", см. <a href="https://techcommunity.microsoft.com/t5/DataCAT/Storage-performance-best-practices-and-considerations-for-Azure/ba-p/305525">здесь</a>.'
           - html: 'Ознакомьтесь с рекомендациями по <a href="https://www.youtube.com/watch?v=vO6k05Ox1iI">защите вашего экземпляра</a>.'
           - html: 'Найти дополнительные <a href="sql-database-howto-managed-instance.md">практические руководства</a> , поможет вам настраивать управляемому экземпляру.'
-  - title: Справочные материалы
+  - title: Ссылка
     items:
       - type: list
         style: cards

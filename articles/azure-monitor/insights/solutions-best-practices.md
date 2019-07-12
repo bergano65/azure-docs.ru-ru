@@ -7,18 +7,18 @@ author: bwren
 manager: carmonm
 editor: tysonn
 ms.assetid: 1915e204-ba7e-431b-9718-9eb6b4213ad8
-ms.service: operations-management-suite
+ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/27/2017
 ms.author: bwren
-ms.openlocfilehash: d6d2414935bb5d1f095ad2b200acafa97b3b9b32
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a4f982f6265d1c8cab2ae666b9d6e2e33beb5064
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60596656"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672920"
 ---
 # <a name="best-practices-for-creating-management-solutions-in-azure-preview"></a>Рекомендации по созданию решений по управлению в Azure (предварительная версия)
 > [!NOTE]
@@ -43,12 +43,12 @@ ms.locfileid: "60596656"
 - Добавьте также сообщение о [проверке потока данных](../../azure-monitor/platform/view-designer-tiles.md) во все представления своего решения, где требуется сообщить пользователю об источниках данных, которые должны быть настроены для сбора необходимых данных.
 - Настройте решение таким образом, чтобы оно [содержало](solutions-solution-file.md#solution-resource) представление. В этом случае оно будет удаляться при удалении решения.
 
-## <a name="alerts"></a>Оповещения
+## <a name="alerts"></a>Предупреждения
 - Определите список получателей как параметр в файле решения, что позволит пользователю указать значения при установке решения.
 - Настройте в решении [ссылку](solutions-solution-file.md#solution-resource) на правила оповещения, чтобы пользователи могли изменить свою конфигурацию.  Им может потребоваться внести изменения, например изменить список получателей или пороговое значение для оповещения, а также отключить правило оповещения. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Ознакомьтесь с базовым процессом [разработки и создания решения по управлению](solutions-creating.md).
 * Узнайте, как [создать файл решения](solutions-solution-file.md).
 * [Добавьте сохраненные поиски и оповещения](solutions-resources-searches-alerts.md) в решение для управления.

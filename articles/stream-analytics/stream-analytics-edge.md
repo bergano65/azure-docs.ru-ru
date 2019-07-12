@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 07/01/2019
 ms.custom: seodec18
-ms.openlocfilehash: 17b9d11b75e2677e22fa2e38c21a69f018a4bee8
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: 8e3b6d0fbefb8e3d3437fd5e24f929e453c573df
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67508342"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621010"
 ---
 # <a name="azure-stream-analytics-on-iot-edge"></a>Azure Stream Analytics в IoT Edge
  
@@ -49,7 +49,7 @@ ASA развертывает задания Edge на устройства с п
 | 1   | **Создание контейнера хранилища**   | Контейнеры хранилища используются для сохранения определения задания, доступ к которому можно получить с устройств IoT. <br>  Любой имеющийся контейнер хранилища можно использовать повторно.     |
 | 2   | **Создание задания Edge ASA**   |  Создайте новое задание, выберите **Edge** в качестве **среды размещения**. <br> Создание этих заданий и управление ими осуществляется из облака, а выполняются они на ваших устройствах IoT Edge.     |
 | 3   | **Настройка среды IoT Edge на ваших устройствах**   | Инструкции для [Windows](https://docs.microsoft.com/azure/iot-edge/quickstart) или [Linux](https://docs.microsoft.com/azure/iot-edge/quickstart-linux).          |
-| 4\.   | **Развертывание ASA на ваших устройствах IoT Edge**   |  Определение задания ASA экспортируется в контейнер хранилища, созданный ранее.       |
+| 4   | **Развертывание ASA на ваших устройствах IoT Edge**   |  Определение задания ASA экспортируется в контейнер хранилища, созданный ранее.       |
 
 Вы можете выполнить инструкции из [этого пошагового руководства](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics), чтобы развернуть свое первое задание ASA в IoT Edge. Следующее видео поможет вам понять процесс выполнения задания Stream Analytics на устройстве IoT Edge:  
 
@@ -81,7 +81,7 @@ ASA развертывает задания Edge на устройства с п
 4. Укажите сведения о контейнере хранилища в меню **Параметры IoT Edge**.
 
 5. Указание необязательных параметров
-    1. **Упорядочивание событий**. Неупорядоченную политику можно настроить на портале. Документация доступна [здесь](https://msdn.microsoft.com/library/azure/mt674682.aspx?f=255&MSPPError=-2147217396).
+    1. **Упорядочивание событий**. Неупорядоченную политику можно настроить на портале. Документация доступна [здесь](https://docs.microsoft.com/stream-analytics-query/time-skew-policies-azure-stream-analytics).
     2. **Языковой стандарт**. Задайте формат интернализации.
 
 
@@ -228,7 +228,7 @@ ASA в IoT Edge доступна в качестве образов Windows и L
 ## <a name="get-help"></a>Получение справки
 За дополнительной помощью обращайтесь на [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Что такое Azure IoT Edge (предварительная версия)](https://docs.microsoft.com/azure/iot-edge/how-iot-edge-works)
 * [Deploy Azure Stream Analytics as an IoT Edge module - preview](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics) (Развертывание Azure Stream Analytics в качестве модуля IoT Edge (предварительная версия))

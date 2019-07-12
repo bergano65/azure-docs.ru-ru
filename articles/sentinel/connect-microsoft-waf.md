@@ -7,19 +7,20 @@ author: rkarlin
 manager: rkarlin
 editor: ''
 ms.assetid: bfa2eca4-abdc-49ce-b11a-0ee229770cdd
-ms.service: sentinel
+ms.service: azure-sentinel
+ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: 99c553145f0a600826e48bec437449f278b74fbf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0a308394c3cfa77f80db1361b5a49a485ee5ca0e
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65205647"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67611347"
 ---
 # <a name="connect-data-from-microsoft-web-application-firewall"></a>Подключайте данные из Microsoft брандмауэр веб-приложения
 
@@ -30,7 +31,7 @@ ms.locfileid: "65205647"
 Можно осуществлять потоковую передачу журналов из брандмауэра шлюза приложений Azure Microsoft веб-приложения (WAF). Этот WAF защиту приложений от распространенных сетевых уязвимостей, например путем внедрения кода SQL и межсайтовых сценариев и позволяет настраивать правила, чтобы сократить число ложных срабатываний. Выполните эти инструкции для потоковой передачи журналов брандмауэра приложений Microsoft Web в Azure Sentinel.
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - Существующий ресурс шлюза приложений
 
@@ -49,7 +50,7 @@ ms.locfileid: "65205647"
     1. Выберите типы журналов, которые необходимо проанализировать. Мы рекомендуем: ApplicationGatewayAccessLog и ApplicationGatewayFirewallLog.
 1. Для использования соответствующей схемы в Log Analytics для оповещений Microsoft web application брандмауэра, поиск **AzureDiagnostics**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как соединиться с брандмауэром веб-приложения Microsoft Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальные угрозы](quickstart-get-visibility.md).
 - Начало работы [обнаружение угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
