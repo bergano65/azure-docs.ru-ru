@@ -4,15 +4,15 @@ description: В этой статье описывается настройка 
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
-ms.topic: how-to
+ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: e9f500e3ab965b9dbfc5e395a6572497c85f6f8f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3b98db361a8ec888eb8bf9e1bf3658a7e38111c6
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66755132"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620414"
 ---
 # <a name="automatically-scale-session-hosts"></a>Автоматическое масштабирование узлов сеанса
 
@@ -20,7 +20,7 @@ ms.locfileid: "66755132"
 
 В этой статье используется простой сценарий масштабирования для автоматического масштабирования сеанса размещения виртуальных машин в среде виртуального рабочего стола Windows. Дополнительные сведения о том, как сценарий масштабирования, см. в разделе [принцип масштабирования сценарий](#how-the-scaling-script-works) раздел.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Среда, где выполняется сценарий необходимо иметь следующее:
 
@@ -75,7 +75,7 @@ ms.locfileid: "66755132"
     Например **Set-Variable - имя KeyPath-область глобального-значение «c:\\масштабирование HostPool1»**
 5. Запустите **New StoredCredential - KeyPath \$KeyPath** командлета. При запросе введите свои учетные данные виртуальному рабочему столу Windows с разрешениями для запроса пула узла (узла пула указывается в **config.xml**).
     - Если вы используете отдельный субъект-службу или стандартной учетной записью, выполните **New StoredCredential - KeyPath \$KeyPath** командлета после для каждой учетной записи для создания локальных сохраненные учетные данные.
-6. Запустите **Get StoredCredentials-список** для подтверждения того, учетные данные были успешно созданы.
+6. Запустите **Get StoredCredential-список** для подтверждения того, учетные данные были успешно созданы.
 
 ### <a name="configure-the-configxml-file"></a>Настройка файла config.xml
 

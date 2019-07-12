@@ -5,18 +5,18 @@ documentationcenter: ''
 author: bwren
 manager: carmonm
 editor: tysonn
-ms.service: monitoring
+ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2019
 ms.author: bwren
-ms.openlocfilehash: 319def9072dbf38eff44ca4459428f1ef99a2b54
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 684491b546a0456d936ae199cdfb93180aa05043
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64867966"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67607024"
 ---
 # <a name="metrics-in-azure-monitor"></a>Метрики в Azure Monitor
 
@@ -37,7 +37,7 @@ ms.locfileid: "64867966"
 | Визуализация | Закрепление диаграммы из обозревателя метрик для [мониторинга Azure](../learn/tutorial-app-dashboards.md).<br>Создание [книги](../app/usage-workbooks.md) для объединения с несколькими наборами данных в виде интерактивного отчета. Экспортировать результаты запроса, чтобы [Grafana](grafana-plugin.md) повысить эффективность его панелей мониторинга и объединить с другими источниками данных. |
 | Предупреждение | Настройка [правила оповещения метрики](alerts-metric.md) , отправляет уведомление или принимает [автоматизированное действие](action-groups.md) когда значение метрики достигает порогового значения. |
 | Автоматизация |  Используйте [автомасштабирования](autoscale-overview.md) для увеличения или уменьшения ресурсов с учетом значение метрики, пересекает пороговое значение. |
-| Экспортировать | [Направлять метрики в журналы](diagnostic-logs-stream-log-store.md) для анализа данных в метрики Azure Monitor вместе с данными в журналах Azure Monitor и для хранения значения метрик дольше, чем 93 дня.<br>Stream метрики для [концентратора событий](stream-monitoring-data-event-hubs.md) маршрута к внешним системам. |
+| Экспорт | [Направлять метрики в журналы](diagnostic-logs-stream-log-store.md) для анализа данных в метрики Azure Monitor вместе с данными в журналах Azure Monitor и для хранения значения метрик дольше, чем 93 дня.<br>Stream метрики для [концентратора событий](stream-monitoring-data-event-hubs.md) маршрута к внешним системам. |
 | Получение | Доступ из командной строки с помощью значения метрик [командлеты PowerShell](https://docs.microsoft.com/powershell/module/az.applicationinsights)<br>Доступ к значения метрик из пользовательского приложения с помощью [REST API](rest-api-walkthrough.md).<br>Доступ к значения метрик из командной строки с помощью [CLI](/cli/azure/monitor/metrics). |
 | Архив | [Архивация](..//learn/tutorial-archive-data.md) журнала производительности и работоспособности ресурса в целях соответствия требованиям, аудита или автономной отчетности. |
 
@@ -105,7 +105,7 @@ ms.locfileid: "64867966"
 > [!NOTE]
 > Вы можете [отправлять метрики платформы для ресурсов Azure Monitor в рабочую область Log Analytics](diagnostic-logs-stream-log-store.md) для построения долгосрочных тенденций.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о [платформы данных Azure Monitor](data-platform.md).
 - Дополнительные сведения о [записи данных в Azure Monitor](data-platform-logs.md).

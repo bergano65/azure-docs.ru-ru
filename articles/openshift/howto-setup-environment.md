@@ -7,14 +7,14 @@ author: jimzim
 ms.author: jzim
 ms.date: 05/10/2019
 ms.topic: conceptual
-ms.service: openshift
+ms.service: container-service
 manager: jeconnoc
-ms.openlocfilehash: 21ccd7b2919714610dbd51c62701c4bb32d330d6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a31655e8c8805505bdcc5e90bf25191590d35c18
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66808832"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672520"
 ---
 # <a name="set-up-your-azure-red-hat-openshift-dev-environment"></a>Настройка среды разработки Azure Red Hat OpenShift
 
@@ -119,12 +119,12 @@ Azure Red Hat OpenShift, требуются разрешения для выпо
 
 Следуйте инструкциям в [создать объект приложения Azure AD и пользователя](howto-aad-app-configuration.md) Чтобы создать субъект-службу, создать секрет и проверки подлинности обратного вызова URL-адрес клиента для приложения и создать новую группу безопасности Azure AD и пользователя для доступа к кластер.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь вы готовы использовать Azure Red Hat OpenShift!
 
 Ознакомьтесь с учебником:
 > [!div class="nextstepaction"]
-> [Создание кластера Azure Red Hat OpenShift](tutorial-create-cluster.md).
+> [Создание кластера Azure Red Hat OpenShift](tutorial-create-cluster.md)
 
 [azure-cli-install]: https://docs.microsoft.com/cli/azure/install-azure-cli

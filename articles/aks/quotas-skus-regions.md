@@ -2,17 +2,17 @@
 title: Квоты, SKU и доступность по регионам в службе Azure Kubernetes (AKS)
 description: Сведения о квотах по умолчанию, размеров SKU виртуальной Машины ограниченных узлов и доступность в регионах Azure Kubernetes Service (AKS).
 services: container-service
-author: iainfoulds
+author: mlearned
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 04/09/2019
-ms.author: iainfou
-ms.openlocfilehash: 8d4ed8f791858747814972bcf16a9672a7f12610
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: mlearned
+ms.openlocfilehash: 318846cddecdf020e2e751d3a0b9e05fc83bba73
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65901456"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67614553"
 ---
 # <a name="quotas-virtual-machine-size-restrictions-and-region-availability-in-azure-kubernetes-service-aks"></a>Квоты, ограничения на размер виртуальной машины и доступность по регионам в службе Azure Kubernetes (AKS)
 
@@ -49,9 +49,9 @@ ms.locfileid: "65901456"
 
 Обновленный список where можно развернуть и запускайте кластеры, см. в разделе [доступности области AKS][region-availability].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Вы можете повысить лимит нескольких ограничений и квот. Если ресурс поддерживает увеличение, запросить увеличение через [запрос на поддержку Azure] [ azure-support] (для **тип проблемы**выберите **квоты** ).
+Вы можете повысить лимит нескольких ограничений и квот. Если ресурс поддерживает увеличение, запросить увеличение через [запрос на поддержку Azure][azure-support] (для **тип проблемы**выберите **квоты**).
 
 <!-- LINKS - External -->
 [azure-support]: https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest

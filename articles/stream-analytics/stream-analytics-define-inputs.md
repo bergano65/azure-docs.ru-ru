@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/30/2019
-ms.openlocfilehash: bfdebacb4de205fa42fe96ceb9970d2d109536e8
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 1f03f9e68640edd73d2f6bb55cf205a609450658
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67296153"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620501"
 ---
 # <a name="stream-data-as-input-into-stream-analytics"></a>Потоковые данные в качестве входных данных Stream Analytics
 
@@ -21,7 +21,7 @@ Stream Analytics полностью интегрируется с потокам
 
 - [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/)
 - [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub/) 
-- [хранилище BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/) 
+- [Хранилище BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/) 
 
 Эти ресурсы входных данных могут существовать в той же подписке Azure, что и задание Stream Analytics, или другой подписке.
 
@@ -79,7 +79,7 @@ FROM Input
 ```
 
 > [!NOTE]
-> При использовании концентратора событий в качестве конечной точки для маршрутов Центра Интернета вещей вы можете получить доступ к метаданным Центра Интернета вещей с помощью [функции GetMetadataPropertyValue](https://msdn.microsoft.com/library/azure/mt793845.aspx).
+> При использовании концентратора событий в качестве конечной точки для маршрутов Центра Интернета вещей вы можете получить доступ к метаданным Центра Интернета вещей с помощью [функции GetMetadataPropertyValue](https://docs.microsoft.com/stream-analytics-query/getmetadatapropertyvalue).
 > 
 
 ## <a name="stream-data-from-iot-hub"></a>Потоковая передача данных из Центра Интернета вещей
@@ -129,7 +129,7 @@ FROM Input
 
 Обработка журналов — это часто используемый сценарий для обработки входных данных хранилища больших двоичных объектов с помощью Stream Analytics. В этом сценарии файлы данных телеметрии, полученные из системы, необходимо проанализировать и обработать, чтобы извлечь значимые данные.
 
-По умолчанию метка времени событий хранилища больших двоичных объектов в Stream Analytics — это метка времени последнего изменения большого двоичного объекта, то есть `BlobLastModifiedUtcTime`. Для обработки данных как потока с помощью метки времени в полезных данных события необходимо использовать ключевое слово [TIMESTAMP BY](https://msdn.microsoft.com/library/azure/dn834998.aspx). Задание Stream Analytics извлекает данные из входных данных хранилища BLOB-объектов Azure каждую секунду, если доступен файл большого двоичного объекта. В случае, если этот файл недоступен, применяется экспоненциально увеличивающаяся задержка с максимальным значением, равным 90 секундам.
+По умолчанию метка времени событий хранилища больших двоичных объектов в Stream Analytics — это метка времени последнего изменения большого двоичного объекта, то есть `BlobLastModifiedUtcTime`. Для обработки данных как потока с помощью метки времени в полезных данных события необходимо использовать ключевое слово [TIMESTAMP BY](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference). Задание Stream Analytics извлекает данные из входных данных хранилища BLOB-объектов Azure каждую секунду, если доступен файл большого двоичного объекта. В случае, если этот файл недоступен, применяется экспоненциально увеличивающаяся задержка с максимальным значением, равным 90 секундам.
 
 Входных данных в формате CSV требуют, чтобы строка заголовка определяла поля для набора данных, и все поля заголовка строки должны быть уникальными.
 
@@ -175,7 +175,7 @@ SELECT
 FROM Input
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 > [!div class="nextstepaction"]
 > [Краткое руководство по созданию задания Stream Analytics с помощью портала Azure](stream-analytics-quick-create-portal.md)
 

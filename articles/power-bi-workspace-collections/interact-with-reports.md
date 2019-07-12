@@ -2,18 +2,18 @@
 title: Взаимодействие с отчетами с помощью интерфейса API JavaScript | Документация Майкрософт
 description: Интерфейс API JavaScript службы Power BI позволяет с легкостью внедрять отчеты Power BI в приложения.
 services: power-bi-workspace-collections
-ms.service: power-bi-workspace-collections
+ms.service: power-bi-embedded
 author: rkarlin
 ms.author: rkarlin
 ms.topic: conceptual
 ms.workload: powerbi
 ms.date: 09/20/2017
-ms.openlocfilehash: 252296af8b2065ae22bed8b421d4d00718b78287
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8203070fa8a48420dd192208701c539dc3ca7f25
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64705516"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67669061"
 ---
 # <a name="interact-with-power-bi-reports-using-the-javascript-api"></a>Взаимодействие с отчетами Power BI с помощью интерфейса API JavaScript
 
@@ -126,7 +126,7 @@ const advancedFilter: pbi.models.IAdvancedFilter = {
 
 [Дополнительные сведения об обработке событий.](https://github.com/Microsoft/PowerBI-JavaScript/wiki/Handling-Events)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об интерфейсе API JavaScript службы Power BI доступны по таким ссылкам:
 

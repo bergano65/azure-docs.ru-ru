@@ -2,17 +2,17 @@
 title: Лучшие методики для Службы Azure Kubernetes (AKS)
 description: Коллекция лучших методик по созданию приложений и управлению ими в Службе Azure Kubernetes (AKS) для оператора и разработчика кластера
 services: container-service
-author: iainfoulds
+author: mlearned
 ms.service: container-service
 ms.topic: article
 ms.date: 12/07/2018
-ms.author: iainfou
-ms.openlocfilehash: 20922f0fb6932191b8e522e4640b1ba4fecd5ca4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: mlearned
+ms.openlocfilehash: 7127894b364ac8f0fe1d87e13150d5522f5473e2
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66514555"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67615962"
 ---
 # <a name="cluster-operator-and-developer-best-practices-to-build-and-manage-applications-on-azure-kubernetes-service-aks"></a>Лучшие методики по созданию приложений и управлению ими в Службе Azure Kubernetes (AKS) для оператора и разработчика кластера
 
@@ -76,6 +76,6 @@ ms.locfileid: "66514555"
 * [Варианты хранилищ](concepts-storage.md)
 * [Возможности масштабирования приложений в Службе Azure Kubernetes (AKS)](concepts-scale.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вам необходимо приступить к работе с AKS, ознакомьтесь с одним из кратких руководств по развертыванию кластера Службы Azure Kubernetes (AKS) с помощью [Azure CLI](kubernetes-walkthrough.md) или [портала Azure](kubernetes-walkthrough-portal.md).

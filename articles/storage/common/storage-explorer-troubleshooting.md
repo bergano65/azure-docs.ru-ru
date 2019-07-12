@@ -7,12 +7,12 @@ ms.service: virtual-machines
 ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
-ms.openlocfilehash: 03cb3f2339dda1bf1dbb510b686882e924a98d74
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fd34ab7cd899549962663e8cee8ee2121c39c49e
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67118701"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67840387"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Руководство по устранению неполадок обозреватель службы хранилища Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "67118701"
 
 ### <a name="what-if-i-cant-get-the-management-layer-permissions-i-need-from-my-administrator"></a>Что делать, если не удается получить управление уровень разрешений требуется от администратора?
 
-Это решение, связанные с RBAC еще нет в данный момент. Чтобы избежать этого, вы можете запросить URI SAS для [присоединить к ресурсу](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=linux#attach-a-service-by-using-a-shared-access-signature-sas).
+Это решение, связанные с RBAC еще нет в данный момент. Чтобы избежать этого, вы можете запросить URI SAS для [присоединить к ресурсу](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=linux#use-a-sas-uri).
 
 ## <a name="error-self-signed-certificate-in-certificate-chain-and-similar-errors"></a>Ошибка: "Самозаверяющий сертификат в цепочке сертификатов" (и подобные ей ошибки)
 
@@ -115,7 +115,7 @@ ms.locfileid: "67118701"
 2. Удалите папку .IdentityService с компьютера. В Windows папка находится в расположении `C:\users\<username>\AppData\Local`. Для Mac и Linux вы можете найти папку в корневой папке каталога пользователя.
 3. Если вы используете Mac или Linux, будет необходимо также удалить запись на Microsoft.Developer.IdentityService хранилище ключей вашей операционной системе. В Mac хранилище ключей — это приложение Gnome Keychain. Для Linux приложение обычно называется Keyring, но имя может отличаться в зависимости от вашего дистрибутива.
 
-### <a name="conditional-access"></a>условный доступ;
+### <a name="conditional-access"></a>Условный доступ
 
 Условный доступ не поддерживается при использовании обозревателя службы хранилища в Windows 10, Linux или macOS. Это связано с ограничением в библиотеке AAD, используемая обозревателем хранилищ.
 
@@ -233,46 +233,76 @@ ms.locfileid: "67118701"
 
 ## <a name="linux-dependencies"></a>Зависимости Linux
 
-В общем случае обозреватель службы хранилища под управлением Linux требуются следующие пакеты:
+<!-- Storage Explorer 1.9.0 and later is available as a snap from the Snap Store. The Storage Explorer snap installs all of its dependencies with no extra hassle.
 
-* [.NET core 2.0 среды выполнения](https://docs.microsoft.com/dotnet/core/linux-prerequisites?tabs=netcore2x) Примечание: Обозреватель службы хранилища версии 1.7.0 и более ранних версий требуют .NET Core 2.0. При наличии более новой версии .NET Core установлен будет нужно исправлять обозреватель службы хранилища (см. ниже). Если вы используете обозреватель службы хранилища 1.8.0 или больше, затем можно будет использовать до .NET Core 2.2. Для работы в настоящее время не были проверены версии сверх 2.2.
-* `libgnome-keyring-common` и `libgnome-keyring-dev`
+Storage Explorer requires the use of a password manager, which may need to be connected manually before Storage Explorer will work correctly. You can connect Storage Explorer to your system's password manager with the following command:
+
+```bash
+snap connect storage-explorer:password-manager-service :password-manager-service
+```
+
+You can also download the application .tar.gz file, but you'll have to install dependencies manually. -->
+
+> [!IMPORTANT]
+> Обозреватель хранилищ, как указано в. tar.gz загрузки поддерживается только для дистрибутивов Ubuntu. Другие дистрибутивы не были проверены и может потребоваться альтернативные или дополнительные пакеты.
+
+Эти пакеты являются наиболее распространенных требований обозревателя службы хранилища в Linux:
+
+* [Среда выполнения .NET core 2.0](https://docs.microsoft.com/dotnet/core/linux-prerequisites?tabs=netcore2x)
 * `libgconf-2-4`
+* `libgnome-keyring0` или `libgnome-keyring-dev`
+* `libgnome-keyring-common`
 
-В зависимости от вашего дистрибутива, могут существовать разные или дополнительные пакеты необходимо установить.
+> [!NOTE]
+> Обозреватель службы хранилища версии 1.7.0 и более ранних версий требуют .NET Core 2.0. Если у вас есть более новая версия .NET Core установлен, то необходимо будет [patch обозреватель хранилищ](#patching-storage-explorer-for-newer-versions-of-net-core). Если вы используете обозреватель службы хранилища 1.8.0 или больше, затем можно будет использовать до .NET Core 2.2. Для работы в настоящее время не были проверены версии сверх 2.2.
 
-Обозреватель хранилищ официально поддерживается на 18.04 для Ubuntu 16.04 и 14.04. Далее приведены действия по установке для чистого машин.
+# <a name="ubuntu-1904tab1904"></a>[Ubuntu 19.04](#tab/1904)
+
+1. Скачивание обозревателя службы хранилища.
+2. Установка [среда выполнения .NET Core](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu19-04/runtime-current).
+3. Выполните следующую команду:
+   ```bash
+   sudo apt-get install libgconf-2-4 libgnome-keyring0
+   ```
 
 # <a name="ubuntu-1804tab1804"></a>[Ubuntu 18.04](#tab/1804)
 
-1. Скачивание обозревателя службы хранилища
-2. Установить среду выполнения .NET Core, самой последней версии проверенных: [2.0.8](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/runtime-2.0.8) (Если вы уже установили более новой версии, может потребоваться исправление обозревателя службы хранилища, см. ниже)
-3. Выполнить `sudo apt-get install libgconf-2-4`
-4. Выполнить `sudo apt install libgnome-keyring-common libgnome-keyring-dev`
+1. Скачивание обозревателя службы хранилища.
+2. Установка [среда выполнения .NET Core](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/runtime-current).
+3. Выполните следующую команду:
+   ```bash
+   sudo apt-get install libgconf-2-4 libgnome-keyring-common libgnome-keyring0
+   ```
 
 # <a name="ubuntu-1604tab1604"></a>[Ubuntu 16.04](#tab/1604)
 
 1. Скачивание обозревателя службы хранилища
-2. Установить среду выполнения .NET Core, самой последней версии проверенных: [2.0.8](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu16-04/runtime-2.0.8) (Если вы уже установили более новой версии, может потребоваться исправление обозревателя службы хранилища, см. ниже)
-3. Выполнить `sudo apt install libgnome-keyring-dev`
+2. Установка [среда выполнения .NET Core](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu16-04/runtime-current).
+3. Выполните следующую команду:
+   ```bash
+   sudo apt install libgnome-keyring-dev
+   ```
 
 # <a name="ubuntu-1404tab1404"></a>[Ubuntu 14.04](#tab/1404)
 
 1. Скачивание обозревателя службы хранилища
-2. Установить среду выполнения .NET Core, самой последней версии проверенных: [2.0.8](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu14-04/runtime-2.0.8) (Если вы уже установили более новой версии, может потребоваться исправление обозревателя службы хранилища, см. ниже)
-3. Выполнить `sudo apt install libgnome-keyring-dev`
+2. Установка [среда выполнения .NET Core](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu14-04/runtime-current).
+3. Выполните следующую команду:
+   ```bash
+   sudo apt install libgnome-keyring-dev
+   ```
 
----
+### <a name="patching-storage-explorer-for-newer-versions-of-net-core"></a>Исправление обозревателя службы хранилища для более новых версиях .NET Core
 
-### <a name="patching-storage-explorer-for-newer-versions-of-net-core"></a>Исправление обозревателя службы хранилища для более новых версиях .NET Core 
-При наличии версии .NET Core больше 2.0 установлена и обозреватель хранилищ версии 1.7.0 или более ранней версии, вы наверняка потребуются на исправление обозреватель хранилищ, выполнив следующие действия:
+Для обозревателя службы хранилища 1.7.0 или более ранней версии, может потребоваться исправление версию .NET Core, используемая обозревателем хранилищ.
+
 1. Загрузить версию 1.5.43 StreamJsonRpc [из nuget](https://www.nuget.org/packages/StreamJsonRpc/1.5.43). Найдите ссылку «Загрузить пакет» в правой части страницы.
-2. После загрузки пакета, измените расширение файла из `.nupkg` для `.zip`
-3. Распакуйте пакет
-4. Перейдите на сайт `streamjsonrpc.1.5.43/lib/netstandard1.1/`.
+2. После загрузки пакета, измените расширение файла из `.nupkg` для `.zip`.
+3. Распакуйте пакет.
+4. Откройте папку `streamjsonrpc.1.5.43/lib/netstandard1.1/`.
 5. Копировать `StreamJsonRpc.dll` в следующие расположения в папке обозреватель службы хранилища:
-    1. `StorageExplorer/resources/app/ServiceHub/Services/Microsoft.Developer.IdentityService/`
-    2. `StorageExplorer/resources/app/ServiceHub/Hosts/ServiceHub.Host.Core.CLR.x64/`
+   * `StorageExplorer/resources/app/ServiceHub/Services/Microsoft.Developer.IdentityService/`
+   * `StorageExplorer/resources/app/ServiceHub/Hosts/ServiceHub.Host.Core.CLR.x64/`
 
 ## <a name="open-in-explorer-from-azure-portal-doesnt-work"></a>Откройте в обозревателе из портала Azure не работает
 
@@ -282,8 +312,8 @@ ms.locfileid: "67118701"
 * Google Chrome
 * Microsoft Internet Explorer
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если ни одно из решений не работает, [начните обсуждение проблемы на сайте GitHub](https://github.com/Microsoft/AzureStorageExplorer/issues). Вы также можете быстро перейти на сайт GitHub с помощью кнопки "Report issue to GitHub" (Сообщить о проблеме на GitHub) в нижнем левом углу.
 
-![Отзыв](./media/storage-explorer-troubleshooting/feedback-button.PNG)
+![Отзывы](./media/storage-explorer-troubleshooting/feedback-button.PNG)

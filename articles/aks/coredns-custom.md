@@ -6,36 +6,36 @@ author: jnoller
 ms.service: container-service
 ms.topic: article
 ms.date: 03/15/2019
-ms.author: jnoller
-ms.openlocfilehash: 9f3a62c5782724f14f10b5875fc8db31dbffe67c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: jenoller
+ms.openlocfilehash: 247665f58dd064565f0e9aebc9859e97ce0ab0c0
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66693384"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67836981"
 ---
 # <a name="customize-coredns-with-azure-kubernetes-service"></a>Настройка CoreDNS со службой Azure Kubernetes
 
-Служба Azure Kubernetes (AKS) использует [CoreDNS] [ coredns] проекта для управления DNS кластера и разрешение со всеми *1.12.x* и более поздней версии кластеров. Ранее был использован проекта kube-dns. Этот проект kube-dns теперь является устаревшим. Дополнительные сведения о настройке CoreDNS и Kubernetes, см. в разделе [официальной документации вышестоящего][corednsk8s].
+Служба Azure Kubernetes (AKS) использует [CoreDNS][coredns] проекта для управления DNS кластера и разрешение со всеми *1.12.x* и более поздней версии кластеров. Ранее был использован проекта kube-dns. Этот проект kube-dns теперь является устаревшим. Дополнительные сведения о настройке CoreDNS и Kubernetes, см. в разделе [официальной документации вышестоящего][corednsk8s].
 
 А AKS — это управляемая служба, нельзя изменить основной конфигурации для CoreDNS ( *CoreFile*). Вместо этого использовать Kubernetes *ConfigMap* переопределять параметры по умолчанию. Чтобы просмотреть AKS CoreDNS ConfigMaps по умолчанию, используйте `kubectl get configmaps coredns -o yaml` команды.
 
 В этой статье показано, как использовать ConfigMaps базовой настройки параметров CoreDNS в AKS.
 
 > [!NOTE]
-> `kube-dns` предлагаются различные [параметры настройки] [ kubednsblog] через карту конфигурации Kubernetes. — CoreDNS **не** обратную совместимость с kube-dns. Необходимо обновить все настройки, который использовался ранее для использования с CoreDNS.
+> `kube-dns` предлагаются различные [параметры настройки][kubednsblog] через карту конфигурации Kubernetes. — CoreDNS **не** обратную совместимость с kube-dns. Необходимо обновить все настройки, который использовался ранее для использования с CoreDNS.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, см. в этом кратком руководстве AKS [с помощью Azure CLI][aks-quickstart-cli] or [using the Azure portal][aks-quickstart-portal].
 
 ## <a name="what-is-supportedunsupported"></a>Новые возможности, поддерживаемые и неподдерживаемые
 
-Поддерживаются все встроенные подключаемые модули CoreDNS. Поддерживаются не add-on/сторонние подключаемые модули.
+Поддерживаются все встроенные подключаемые модули CoreDNS. Поддерживаются не add-on/сторонние подключаемые модули. 
 
 ## <a name="rewrite-dns"></a>Перепишите DNS
 
-Один сценарий, к которым у вас есть — для выполнения операции перезаписи имя DNS в режиме реального времени. В следующем примере замените `<domain to be written>` собственным полным доменным именем. Создайте файл с именем `corednsms.json` и вставьте следующий пример конфигурации:
+Один сценарий, к которым у вас есть — для выполнения операции перезаписи имя DNS в режиме реального времени. В следующем примере замените `<domain to be written>` собственным полным доменным именем. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
 
 ```yaml
 apiVersion: v1
@@ -53,19 +53,19 @@ data:
     }
 ```
 
-Создается при помощи ConfigMap [kubectl применить configmap] [ kubectl-apply] команду и укажите имя yaml-ФАЙЛ манифеста:
+Создается при помощи ConfigMap [kubectl применить configmap][kubectl-apply] команду и укажите имя yaml-ФАЙЛ манифеста:
 
 ```console
-kubectl apply -f corednsms.json
+kubectl apply -f corednsms.yaml
 ```
 
-Чтобы проверить, были применены настройки, используйте [kubectl get configmaps] [ kubectl-get] и укажите ваш *coredns-custom* ConfigMap:
+Чтобы проверить, были применены настройки, используйте [kubectl get configmaps][kubectl-get] и укажите ваш *coredns-custom* ConfigMap:
 
 ```
 kubectl get configmaps --namespace=kube-system coredns-custom -o yaml
 ```
 
-Теперь принудительно CoreDNS перезагрузить ConfigMap. [Kubectl удалить pod] [ kubectl delete] команда не уничтожения данных и не вызывает простоя. `kube-dns` Модулей будут удалены, а планировщик Kubernetes заново их. Эти новые модули содержат изменение значение срока ЖИЗНИ.
+Теперь принудительно CoreDNS перезагрузить ConfigMap. [Kubectl удалить pod][kubectl delete] команда не уничтожения данных и не вызывает простоя. `kube-dns` Модулей будут удалены, а планировщик Kubernetes заново их. Эти новые модули содержат изменение значение срока ЖИЗНИ.
 
 ```console
 kubectl delete pod --namespace kube-system -l k8s-app=kube-dns
@@ -76,7 +76,7 @@ kubectl delete pod --namespace kube-system -l k8s-app=kube-dns
 
 ## <a name="custom-proxy-server"></a>Пользовательский прокси-сервер
 
-Если вам нужно указать прокси-сервер для сетевого трафика, можно создать ConfigMap для настройки DNS. В следующем примере обновите `proxy` имя и адрес со значениями для конкретной среды. Создайте файл с именем `corednsms.json` и вставьте следующий пример конфигурации:
+Если вам нужно указать прокси-сервер для сетевого трафика, можно создать ConfigMap для настройки DNS. В следующем примере обновите `proxy` имя и адрес со значениями для конкретной среды. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
 
 ```yaml
 apiVersion: v1
@@ -91,10 +91,10 @@ data:
     }
 ```
 
-Как и в предыдущих примерах создается при помощи ConfigMap [kubectl применить configmap] [ kubectl-apply] команду и укажите имя манифеста YAML. Затем, принудительно CoreDNS перезагрузить ConfigMap с помощью [kubectl удалить pod] [ kubectl delete] планировщик Kubernetes должен повторно создать их:
+Как и в предыдущих примерах создается при помощи ConfigMap [kubectl применить configmap][kubectl-apply] command and specify the name of your YAML manifest. Then, force CoreDNS to reload the ConfigMap using the [kubectl delete pod][kubectl delete] планировщик Kubernetes должен повторно создать их:
 
 ```console
-kubectl apply -f corednsms.json
+kubectl apply -f corednsms.yaml
 kubectl delete pod --namespace kube-system --label k8s-app=kube-dns
 ```
 
@@ -102,7 +102,7 @@ kubectl delete pod --namespace kube-system --label k8s-app=kube-dns
 
 Может потребоваться настройка личных доменов, которые можно разрешить только внутренним образом. Например, может потребоваться разрешить пользовательский домен *puglife.local*, который не является допустимым доменом верхнего уровня. Без личного домена ConfigMap в кластере AKS не удается разрешить адрес.
 
-В следующем примере обновление личного домена и IP-адрес передавать трафик со значениями для конкретной среды. Создайте файл с именем `corednsms.json` и вставьте следующий пример конфигурации:
+В следующем примере обновление личного домена и IP-адрес передавать трафик со значениями для конкретной среды. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
 
 ```yaml
 apiVersion: v1
@@ -119,16 +119,16 @@ data:
     }
 ```
 
-Как и в предыдущих примерах создается при помощи ConfigMap [kubectl применить configmap] [ kubectl-apply] команду и укажите имя манифеста YAML. Затем, принудительно CoreDNS перезагрузить ConfigMap с помощью [kubectl удалить pod] [ kubectl delete] планировщик Kubernetes должен повторно создать их:
+Как и в предыдущих примерах создается при помощи ConfigMap [kubectl применить configmap][kubectl-apply] command and specify the name of your YAML manifest. Then, force CoreDNS to reload the ConfigMap using the [kubectl delete pod][kubectl delete] планировщик Kubernetes должен повторно создать их:
 
 ```console
-kubectl apply -f corednsms.json
+kubectl apply -f corednsms.yaml
 kubectl delete pod --namespace kube-system --label k8s-app=kube-dns
 ```
 
 ## <a name="stub-domains"></a>Заглушки доменов
 
-CoreDNS также может использоваться для настройки доменов заглушки. В следующем примере обновление пользовательских доменов и IP-адресов со значениями для конкретной среды. Создайте файл с именем `corednsms.json` и вставьте следующий пример конфигурации:
+CoreDNS также может использоваться для настройки доменов заглушки. В следующем примере обновление пользовательских доменов и IP-адресов со значениями для конкретной среды. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
 
 ```yaml
 apiVersion: v1
@@ -151,16 +151,16 @@ data:
 
 ```
 
-Как и в предыдущих примерах создается при помощи ConfigMap [kubectl применить configmap] [ kubectl-apply] команду и укажите имя манифеста YAML. Затем, принудительно CoreDNS перезагрузить ConfigMap с помощью [kubectl удалить pod] [ kubectl delete] планировщик Kubernetes должен повторно создать их:
+Как и в предыдущих примерах создается при помощи ConfigMap [kubectl применить configmap][kubectl-apply] command and specify the name of your YAML manifest. Then, force CoreDNS to reload the ConfigMap using the [kubectl delete pod][kubectl delete] планировщик Kubernetes должен повторно создать их:
 
 ```console
-kubectl apply -f corednsms.json
+kubectl apply -f corednsms.yaml
 kubectl delete pod --namespace kube-system --label k8s-app=kube-dns
 ```
 
 ## <a name="hosts-plugin"></a>Подключаемый модуль узлов
 
-Поддерживаются все встроенные подключаемые модули это означает, что CoreDNS [узлы] [ coredns hosts] подключаемый модуль доступен для настройки также:
+Поддерживаются все встроенные подключаемые модули это означает, что CoreDNS [узлы][coredns hosts] подключаемый модуль доступен для настройки также:
 
 ```yaml
 apiVersion: v1
@@ -176,7 +176,7 @@ data:
           }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье показано несколько примеров сценариев для настройки CoreDNS. Сведения о проекте CoreDNS, см. в разделе [страницы вышестоящего проекта CoreDNS][coredns].
 

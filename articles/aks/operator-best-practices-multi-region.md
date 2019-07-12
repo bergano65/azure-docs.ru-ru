@@ -6,13 +6,13 @@ author: lastcoolnameleft
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/28/2018
-ms.author: lastcoolnameleft
-ms.openlocfilehash: 4afc1231e6c9fa49c04c7bf6dfe26ee5eb87cc31
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: thfalgou
+ms.openlocfilehash: 4d4535af1814ab1250bbd56c989b4849013adff6
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66475162"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67614838"
 ---
 # <a name="best-practices-for-business-continuity-and-disaster-recovery-in-azure-kubernetes-service-aks"></a>Рекомендации по обеспечению непрерывности бизнес-процессов и аварийного восстановления в Службе Azure Kubernetes (AKS)
 
@@ -124,12 +124,12 @@ Kubernetes в настоящее время не предоставляет со
 
 ![асинхронная репликация на основе приложений;](media/operator-best-practices-bc-dr/aks-app-based-async-repl.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Эта статья посвящена непрерывности бизнес-процессов и аварийного восстановления для кластеров в AKS. Дополнительные сведения об операциях кластера в AKS см. в статьях, советы и рекомендации:
 
 * [Изоляция мультитенантности и кластера][aks-best-practices-cluster-isolation]
-* [Основные функции планировщика Kubernetes][aks-best-practices-scheduler]
+* [Основные возможности планировщик Kubernetes][aks-best-practices-scheduler]
 
 <!-- INTERNAL LINKS -->
 [aks-best-practices-scheduler]: operator-best-practices-scheduler.md

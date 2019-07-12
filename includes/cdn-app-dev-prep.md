@@ -1,17 +1,17 @@
 ---
 author: zhangmanling
-ms.service: cdn
+ms.service: azure-cdn
 ms.topic: include
 ms.date: 11/21/2018
 ms.author: mazha
-ms.openlocfilehash: 7f80c8f1773cfeb8ddfb222d068a5c6571c2e5c7
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: f21a768733456a6c00e5a87612f3055dd76d416c
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185633"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67594120"
 ---
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Перед созданием кода управления CDN необходимо выполнить определенную подготовку, чтобы код мог взаимодействовать с Azure Resource Manager. Для этого сделайте следующее:
 
 * Создайте группу ресурсов для профиля CDN, который мы создадим в этом руководстве.

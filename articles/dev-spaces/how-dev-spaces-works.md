@@ -3,19 +3,18 @@ title: Как работает Azure Dev пробелы и является на
 titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
-ms.component: azds-kubernetes
 author: zr-msft
 ms.author: zarhoads
 ms.date: 03/04/2019
 ms.topic: conceptual
 description: Описывает процессы пробелы разработки Azure, power и как они настроены в файле конфигурации azds.yaml
 keywords: azds.yaml, пробелы разработки Azure, разработки пробелы, Docker, Kubernetes, Azure, AKS, служба Azure Kubernetes, контейнеры
-ms.openlocfilehash: 083ed45a8fa95ac5fc26af6547b5765acf80e43b
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: 83034dd3c99cc030ed770995bf00a6ad9fb57bdc
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67154558"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67670819"
 ---
 # <a name="how-azure-dev-spaces-works-and-is-configured"></a>Как работает Azure Dev пробелы и является настроен
 
@@ -427,7 +426,7 @@ ingress:
 
 При использовании *azureuser*, все запросы к *serviceA* будут направляться на обновленную версию в *azureuser*. Запрос на *serviceB* вначале предпринимается попытка направляться *azureuser* версии *serviceB*. Так как он не существует, он будет перенаправлен к *по умолчанию* версии *serviceB*. Если *azureuser* версии *serviceA* удаляется, все запросы к *serviceA* будет переключиться на использование *по умолчанию* версии *serviceA*.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы приступить к использованию пробелов разработки Azure, см. в разделе следующих кратких руководств:
 

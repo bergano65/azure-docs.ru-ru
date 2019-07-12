@@ -14,17 +14,16 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: d9d9e68b7e74ba7725e97162d01e1a35314fdd0f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 552c89cd3294567e8203b69f81c1ac24716a8b1b
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60564599"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839437"
 ---
-# <a name="tutorial-build-your-first-pipeline-to-transform-data-using-hadoop-cluster"></a>Руководство по Создание первого конвейера для преобразования данных с помощью кластера Hadoop.
+# <a name="tutorial-build-your-first-pipeline-to-transform-data-using-hadoop-cluster"></a>Учебник. Создание первого конвейера для преобразования данных с помощью кластера Hadoop.
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-build-your-first-pipeline.md)
-> * [портал Azure](data-factory-build-your-first-pipeline-using-editor.md)
 > * [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
 > * [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 > * [Шаблон Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
@@ -36,7 +35,7 @@ ms.locfileid: "60564599"
 
 Из этого учебника вы узнаете, как создать свою первую фабрику данных Azure, используя конвейер данных. Конвейер преобразует входные данные, запуская сценарий Hive в кластере Azure HDInsight (Hadoop) для создания выходных данных.  
 
-Эта статья содержит общие сведения и описание необходимых компонентов для работы с учебником. Обеспечив наличие всех необходимых компонентов, вы можете выполнить инструкции из руководства с помощью следующих средств или пакетов: портала Azure, Visual Studio, PowerShell, шаблона Resource Manager, REST API. Выберите один из вариантов в раскрывающемся списке в начале (или) ссылки в конце этой статьи, чтобы пройти учебник, используя один из этих вариантов.    
+Эта статья содержит общие сведения и описание необходимых компонентов для работы с учебником. Обеспечив наличие всех необходимых компонентов, вы можете выполнить инструкции из руководства с помощью следующих средств или пакетов: Visual Studio, PowerShell, шаблона Resource Manager, REST API. Выберите один из вариантов в раскрывающемся списке в начале (или) ссылки в конце этой статьи, чтобы пройти учебник, используя один из этих вариантов.    
 
 ## <a name="tutorial-overview"></a>Обзор учебника
 Вот какие шаги выполняются в этом учебнике:
@@ -80,7 +79,7 @@ adfgetstarted/partitioneddata/year=2016/month=3/000000_0
 
 В примерах строк выше первая из них (содержащая дату 2016-01-01) записывается в файл 000000_0 в папке month=1. Аналогичным образом вторая строка записывается в файл в папке month=2, а третья — в файл в папке month=3.  
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим учебником необходимо следующее:
 
 1. **Подписка Azure**. Если ее нет, можно за пару минут создать бесплатную пробную учетную запись. Сведения о том, как получить такую учетную запись, см. на странице [бесплатного ознакомительного периода](https://azure.microsoft.com/pricing/free-trial/).
@@ -93,13 +92,12 @@ adfgetstarted/partitioneddata/year=2016/month=3/000000_0
 
 Обеспечив наличие всех необходимых компонентов, выберите одно из следующих средств или пакетов SDK для прохождения этого учебника: 
 
-- [портал Azure](data-factory-build-your-first-pipeline-using-editor.md)
 - [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
 - [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 - [Шаблон Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
 - [REST API](data-factory-build-your-first-pipeline-using-rest-api.md)
 
-Портал Azure и Visual Studio позволяют создавать фабрики данных с помощью графического пользовательского интерфейса. PowerShell, шаблон Resource Manager и интерфейс REST API, в свою очередь, дают возможность сделать это с помощью средств создания сценариев и программирования.
+Visual Studio предоставляет способ графического интерфейса пользователя создавать фабрики данных. PowerShell, шаблон Resource Manager и интерфейс REST API, в свою очередь, дают возможность сделать это с помощью средств создания сценариев и программирования.
 
 > [!NOTE]
 > Описанный в этом руководстве конвейер данных преобразовывает входные данные в выходные. Он не копирует данные из исходного хранилища данных в целевое. Инструкции по копированию данных с помощью Фабрики данных Azure см. в [руководстве по Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).

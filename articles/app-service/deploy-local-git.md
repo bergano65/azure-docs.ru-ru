@@ -11,208 +11,156 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/14/2019
+ms.date: 06/18/2019
 ms.author: dariagrigoriu;cephalin
+ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: e66c625c3f30580715762d2dd3f48eeaa6e548dc
-ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.openlocfilehash: fa961e43408fed014be2266c14c7972d39435b97
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67143957"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67836914"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Развертывание локального репозитория Git в службе приложений Azure
 
-В этом руководстве показано, как развернуть в [службе приложений Azure](overview.md) свой код из репозитория Git на локальном компьютере.
+В этом практическом руководстве показано, как развернуть приложение в [службе приложений Azure](overview.md) из репозитория Git на локальном компьютере.
 
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
-
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Выполните следующие шаги для изучения данного руководства.
 
-* [Установка Git](https://www.git-scm.com/downloads).
-* Обеспечьте локальный репозиторий Git с кодом, который вы хотите развернуть.
-
-Чтобы в дальнейшем использовать пример репозитория, выполните следующую команду в локальном окне терминала.
-
-```bash
-git clone https://github.com/Azure-Samples/nodejs-docs-hello-world.git
-```
+- [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+  
+- [Установка Git](https://www.git-scm.com/downloads).
+  
+- Есть локальный репозиторий Git с кодом, который вы хотите развернуть. Чтобы скачать пример репозитория, выполните следующую команду в локальном окне терминала:
+  
+  ```bash
+  git clone https://github.com/Azure-Samples/nodejs-docs-hello-world.git
+  ```
 
 [!INCLUDE [Prepare repository](../../includes/app-service-deploy-prepare-repo.md)]
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="deploy-with-kudu-builds"></a>Развертывание с помощью Kudu сборок
+## <a name="deploy-with-kudu-build-server"></a>Развертывание с помощью сервер сборки Kudu
 
-Включить локальное развертывание Git для вашего приложения с сервера сборки Kudu проще всего с помощью облачной среды.
+Чтобы включить локальное развертывание Git для приложения с помощью сервер сборки Kudu службы приложений проще всего использовать Azure Cloud Shell. 
 
 ### <a name="configure-a-deployment-user"></a>Настойка пользователя развертывания
 
 [!INCLUDE [Configure a deployment user](../../includes/configure-deployment-user-no-h.md)]
 
-> [!NOTE]
-> Вместо учетных данных на уровне учетной записи можно также развернуть с помощью учетных данных на уровне приложения, которые создаются автоматически для каждого приложения.
->
+### <a name="get-the-deployment-url"></a>Получить URL-адрес развертывания
 
-### <a name="enable-local-git-with-kudu"></a>Включить локальный Git с помощью Kudu
-
-Чтобы включить локальное развертывание Git для вашего приложения с сервера сборки Kudu, выполните [`az webapp deployment source config-local-git`](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-local-git) в Cloud Shell.
+Чтобы получить URL-адрес, чтобы включить локальное развертывание Git для существующего приложения, выполните [ `az webapp deployment source config-local-git` ](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-local-git) в Cloud Shell. Замените \<имя_приложения > и \<имя группы > с именами, приложения и его группу ресурсов Azure.
 
 ```azurecli-interactive
 az webapp deployment source config-local-git --name <app-name> --resource-group <group-name>
 ```
 
-Чтобы вместо этого создать приложение с поддержкой Git, выполните команду [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) в Cloud Shell с параметром `--deployment-local-git`.
+Или, чтобы создать новое приложение с поддержкой Git, выполните [ `az webapp create` ](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) в Cloud Shell с `--deployment-local-git` параметра. Замените \<имя_приложения >, \<имя группы >, и \<плана name > с именами для нового приложения Git, соответствующей группы ресурсов Azure и его план службы приложений Azure.
 
 ```azurecli-interactive
 az webapp create --name <app-name> --resource-group <group-name> --plan <plan-name> --deployment-local-git
 ```
 
-### <a name="deploy-your-project"></a>Развертывание проекта
+Либо команда возвращает URL-адрес, например: `https://<deployment-username>@<app-name>.scm.azurewebsites.net/<app-name>.git`. Используйте этот URL-адрес для развертывания приложения на следующем шаге.
 
-Вернитесь к _окну терминала (в локальном расположении)_ и добавьте удаленное приложение Azure в локальный репозиторий Git. Замените  _\<имя пользователя >_ с пользователя развертывания из [Настойка пользователя развертывания](#configure-a-deployment-user) и  _\<имя_приложения >_ с именем приложения из [Включение Git для приложения](#enable-local-git-with-kudu).
+Вместо этого URL-адреса уровня учетной записи, вы можете также включить локального репозитория Git с помощью учетных данных на уровне приложения. Служба приложений Azure автоматически создает эти учетные данные для каждого приложения. 
 
-```bash
-git remote add azure https://<username>@<app-name>.scm.azurewebsites.net/<app-name>.git
+Получение учетных данных приложения, выполнив следующую команду в Cloud Shell. Замените \<имя_приложения > и \<имя группы > с именем вашего приложения и имя группы ресурсов Azure.
+
+```azurecli-interactive
+az webapp deployment list-publishing-credentials --name <app-name> --resource-group <group-name> --query scmUri --output tsv
 ```
 
-> [!NOTE]
-> Для развертывания с помощью учетных данных на уровне приложения вместо получения учетных данных для вашего приложения, выполнив следующую команду в Cloud Shell:
->
-> ```azurecli-interactive
-> az webapp deployment list-publishing-credentials -n <app-name> -g <group-name> --query scmUri --output tsv
-> ```
->
-> Затем используйте команду вывода для выполнения `git remote add azure <url>` , например выше.
+Используйте URL-адрес, который возвращает для развертывания приложения на следующем шаге.
 
-Отправьте код в удаленное приложение Azure, чтобы развернуть приложение. При появлении запроса ввести пароль, убедитесь, что введенный пароль, созданный в [Настойка пользователя развертывания](#configure-a-deployment-user), не пароль, используйте для входа на портал Azure.
+### <a name="deploy-the-web-app"></a>Развертывание веб-приложения
 
-```bash
-git push azure master
-```
+1. Откройте в окне терминала на локальном в локальном репозитории Git и добавьте удаленное Azure. В следующей команде замените \<URL-адрес > с URL-адрес развертывания для конкретного пользователя или URL-адрес конкретного приложения, полученный из предыдущего шага.
+   
+   ```bash
+   git remote add azure <url>
+   ```
+   
+1. Удаленную службу приложений Azure с помощью `git push azure master`. 
+   
+1. В **Git Credential Manager** окно, введите ваш [пароль пользователя развертывания](#configure-a-deployment-user), не Azure входа пароль.
+   
+1. Просмотрите выходные данные. Среда выполнения автоматизации, например MSBuild для ASP.NET, может появиться `npm install` для Node.js, и `pip install` для Python. 
+   
+1. Перейдите к приложению на портале Azure, чтобы убедиться, что содержимое развернуто.
 
-В выходных данных могут отображаться автоматизированные операции времени выполнения, например MSBuild для ASP.NET, `npm install` для Node.js и `pip install` для Python. 
+## <a name="deploy-with-azure-pipelines-builds"></a>Развертывание с помощью Azure конвейеры сборки
 
-Перейдите к своему приложению, чтобы убедиться, что содержимое развернуто.
+Если у вас есть необходимые разрешения, можно настроить конвейеры Azure (Предварительная версия), чтобы включить локальное развертывание Git для вашего приложения. 
 
-## <a name="deploy-with-azure-devops-builds"></a>Развертывание с помощью сборок Azure DevOps
+- Учетная запись Azure, необходимо иметь разрешения на запись в Azure Active Directory и создать службу. 
+  
+- Учетная запись Azure, необходимо иметь **владельца** роли в подписке Azure.
 
-> [!NOTE]
-> Чтобы служба приложений создавала необходимые конвейеры Azure Pipelines в организации Azure DevOps Services, ваша учетная запись Azure должна иметь роль **владельца** в подписке Azure.
->
+- Вы должны обладать правами администратора в проект Azure DevOps, который вы хотите использовать.
 
-Чтобы включить локальное развертывание Git для вашего приложения с сервера сборки с помощью Kudu, перейдите в свое приложение на [портале Azure](https://portal.azure.com).
+Чтобы включить локальное развертывание Git для приложения с помощью конвейеров Azure (Предварительная версия):
 
-На левой навигационной панели страницы приложения щелкните **Центр развертывания** > **Локальный Git** > **Продолжить**.
+1. Перейдите на страницу приложения службы приложений Azure в [портала Azure](https://portal.azure.com)и выберите **центр развертывания** в меню слева.
+   
+1. На **центр развертывания** выберите **локального репозитория Git**, а затем выберите **Продолжить**. 
+   
+   ![Выберите локальный репозиторий Git, а затем выберите Продолжить](media/app-service-deploy-local-git/portal-enable.png)
+   
+1. На **поставщик построения** выберите **конвейеры Azure (Предварительная версия)** , а затем выберите **Продолжить**. 
+   
+   ![Выберите конвейеры Azure (Предварительная версия), а затем выберите продолжить.](media/app-service-deploy-local-git/pipeline-builds.png)
 
-![](media/app-service-deploy-local-git/portal-enable.png)
+1. На **Настройка** странице, настроить новую организацию Azure DevOps, или указать существующую организацию и выберите **Продолжить**.
+   
+   > [!NOTE]
+   > Если нет в списке существующих организации DevOps в Azure, может потребоваться связать ее с подпиской Azure. Дополнительные сведения см. в разделе [определения конвейера выпуска компакт-ДИСК](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps#cd).
+   
+1. В зависимости от плана службы приложений [ценовой](https://azure.microsoft.com/pricing/details/app-service/plans/), может появиться **развертывание в промежуточной** страницы. Выберите необходимость [включить слотов развертывания](deploy-staging-slots.md), а затем выберите **Продолжить**.
+   
+1. На **Сводка** странице, проверьте параметры, а затем выберите **Готово**.
+   
+1. Когда конвейер Azure будет готово, скопируйте URL-адрес репозитория Git из **центр развертывания** страница, используемая на следующем шаге. 
+   
+   ![Скопируйте URL-адрес репозитория Git](media/app-service-deploy-local-git/vsts-repo-ready.png)
 
-Нажмите кнопку **конвейеры Azure (Предварительная версия)**  > **по-прежнему**.
-
-![](media/app-service-deploy-local-git/pipeline-builds.png)
-
-В **Настройка** странице, настроить новую организацию DevOps в Azure или указать существующую организацию. По завершении нажмите кнопку **Продолжить**.
-
-> [!NOTE]
-> Если вы хотите использовать существующую организацию Azure DevOps, отсутствующий в списке, необходимо [привязка служб Azure DevOps организации к подписке Azure](https://github.com/projectkudu/kudu/wiki/Setting-up-a-VSTS-account-so-it-can-deploy-to-a-Web-App).
-
-В зависимости от [ценовой категории](https://azure.microsoft.com/pricing/details/app-service/plans/) вашего плана App Service также можно увидеть страницу **Разворачивание по этапам**. Выберите, где нужно включить слоты развертывания, затем щелкните **Продолжить**.
-
-На странице **Сводка** проверьте параметры и нажмите **Готово**.
-
-Настройка организации Azure DevOps Services займет несколько минут. Когда она будет готова, скопируйте URL-адрес репозитория Git в центре развертывания.
-
-![](media/app-service-deploy-local-git/vsts-repo-ready.png)
-
-Вернитесь к _окну терминала (в локальном расположении)_ и добавьте удаленное приложение Azure в локальный репозиторий Git. Замените _\<url>_ на URL-адрес, полученный на последнем шаге.
-
-```bash
-git remote add vsts <url>
-```
-
-Отправьте код в удаленное приложение Azure, чтобы развернуть приложение. При запросе диспетчера ввода учетных данных Git войдите с помощью пользователя visualstudio.com. Дополнительные методы проверки подлинности см. в статье [Authentication overview](/vsts/git/auth-overview?view=vsts) (Общие сведения о проверке подлинности).
-
-```bash
-git push vsts master
-```
-
-После завершения развертывания можно увидеть выполнение сборки в `https://<vsts_account>.visualstudio.com/<project_name>/_build` и выполнение развертывания в `https://<vsts_account>.visualstudio.com/<project_name>/_release`.
-
-Перейдите к своему приложению, чтобы убедиться, что содержимое развернуто.
+1. В локальном окне терминала добавьте удаленный Azure в локальный репозиторий Git. В команде замените \<URL-адрес > с URL-адрес репозитория Git, полученным на предыдущем шаге.
+   
+   ```bash
+   git remote add azure <url>
+   ```
+   
+1. Удаленную службу приложений Azure с помощью `git push azure master`. 
+   
+1. На **Git Credential Manager** странице, войдите с помощью имени пользователя и visualstudio.com. Другие методы проверки подлинности, см. в разделе [обзор проверки подлинности служб Azure DevOps](/vsts/git/auth-overview?view=vsts).
+   
+1. После завершения развертывания, просмотрите ход компоновки в `https://<azure_devops_account>.visualstudio.com/<project_name>/_build`и ход выполнения развертывания в `https://<azure_devops_account>.visualstudio.com/<project_name>/_release`.
+   
+1. Перейдите к приложению на портале Azure, чтобы убедиться, что содержимое развернуто.
 
 [!INCLUDE [What happens to my app during deployment?](../../includes/app-service-deploy-atomicity.md)]
 
-## <a name="troubleshooting-kudu-deployment"></a>Устранение неполадок при развертывании Kudu
+## <a name="troubleshoot-deployment"></a>Устранение неполадок с развертыванием
 
-Ниже перечислены распространенные ошибки или проблемы, возникающие при использовании Git для публикации в приложение службы приложений в Azure.
+Возможны следующие распространенные сообщения об ошибках при использовании Git для публикации в приложении службы приложений в Azure.
 
----
-**Симптом**: `Unable to access '[siteURL]': Failed to connect to [scmAddress]`
-
-**Причина:** эта ошибка может возникнуть, если приложение не работает.
-
-**Решение:** запуск приложения на портале Azure. Если веб-приложение остановлено развертывание Git недоступно.
-
----
-**Симптом**: `Couldn't resolve host 'hostname'`
-
-**Причина:** эта ошибка может возникнуть, если при создании удаленного репозитория azure был введен неправильный адрес.
-
-**Решение:** используйте команду `git remote -v`, чтобы вывести список всех удаленных репозиториев с соответствующими URL-адресами. Проверьте правильность URL-адреса удаленного репозитория "azure". При необходимости удалите и повторно создайте этот удаленный репозиторий, используя правильный URL-адрес.
-
----
-**Симптом**: `No refs in common and none specified; doing nothing. Perhaps you should specify a branch such as 'master'.`
-
-**Причина:** эта ошибка может возникнуть, если при использовании команды `git push` не была указана ветвь или если не задано значение `push.default` в `.gitconfig`.
-
-**Решение:** выполните команду `git push` еще раз, указав главную ветвь. Пример:
-
-```bash
-git push azure master
-```
-
----
-**Симптом**: `src refspec [branchname] does not match any.`
-
-**Причина:** эта ошибка может возникнуть при попытке принудительно отправить данные в ветвь, отличную от главной, в удаленном репозитории azure.
-
-**Решение:** выполните команду `git push` еще раз, указав главную ветвь. Пример:
-
-```bash
-git push azure master
-```
-
----
-**Симптом**: `RPC failed; result=22, HTTP code = 5xx.`
-
-**Причина:** эта ошибка может возникнуть при попытке отправить большой репозиторий Git по протоколу HTTPS.
-
-**Решение:** измените конфигурацию Git на локальном компьютере, чтобы увеличить значение postBuffer.
-
-```bash
-git config --global http.postBuffer 524288000
-```
-
----
-**Симптом**: `Error - Changes committed to remote repository but your web app not updated.`
-
-**Причина:** эта ошибка может возникнуть при развертывании приложения Node.js, содержащего файл _package.json_, в котором указаны дополнительные необходимые модули.
-
-**Решение:** до этой ошибки должны быть зарегистрированы дополнительные сообщения, содержащие "npm ERR!", и они могут предоставлять дополнительный контекст для данного сбоя. Ниже перечислены известные причины этой ошибки и соответствующее сообщение npm ERR!. сообщение:
-
-* **Malformed package.json file**: npm ERR! Couldn't read dependencies (не удалось прочитать зависимости).
-* **Собственный модуль, не имеющий двоичного дистрибутива для Windows**:
-
-  * `npm ERR! \cmd "/c" "node-gyp rebuild"\ failed with 1`
-
-      Или
-  * `npm ERR! [modulename@version] preinstall: \make || gmake\`
+|Сообщение|Причина:|Способы устранения:
+---|---|---|
+|`Unable to access '[siteURL]': Failed to connect to [scmAddress]`|Приложение не будет работать.|запуск приложения на портале Azure. Развертывание Git недоступно при остановке веб-приложения.|
+|`Couldn't resolve host 'hostname'`|Сведения об адресах «Azure» удаленный неправильный.|используйте команду `git remote -v`, чтобы вывести список всех удаленных репозиториев с соответствующими URL-адресами. Проверьте правильность URL-адреса удаленного репозитория "azure". При необходимости удалите и повторно создайте этот удаленный репозиторий, используя правильный URL-адрес.|
+|`No refs in common and none specified; doing nothing. Perhaps you should specify a branch such as 'master'.`|Не указана ветвь при `git push`, или вы не задали `push.default` значение в `.gitconfig`.|Запустите `git push` еще раз, указав в главную ветвь: `git push azure master`.|
+|`src refspec [branchname] does not match any.`|Предпринята попытка в удаленную ветвь, отличную от главной в «azure».|Запустите `git push` еще раз, указав в главную ветвь: `git push azure master`.|
+|`RPC failed; result=22, HTTP code = 5xx.`|эта ошибка может возникнуть при попытке отправить большой репозиторий Git по протоколу HTTPS.|Измените конфигурацию git на локальном компьютере, чтобы сделать `postBuffer` больше. Например, `git config --global http.postBuffer 524288000`.|
+|`Error - Changes committed to remote repository but your web app not updated.`|Вы развернули приложение Node.js с _package.json_ файл, в котором указаны дополнительные необходимые модули.|Просмотрите `npm ERR!` сообщения об ошибках до этой ошибки дополнительный контекст для данного сбоя. Ниже перечислены известные причины этой ошибки, и соответствующий `npm ERR!` сообщений:<br /><br />**Файл имеет неправильный формат package.json**: `npm ERR! Couldn't read dependencies.`<br /><br />**Собственный модуль не имеющий двоичного дистрибутива для Windows**:<br />`npm ERR! \cmd "/c" "node-gyp rebuild"\ failed with 1` <br />или диспетчер конфигурации служб <br />"npm ERR! [modulename@version] предварительной установки: \make || gmake\`|
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Документация по проекту Kudu](https://github.com/projectkudu/kudu/wiki)
-* [Непрерывное развертывание в службе приложений Azure](deploy-continuous-deployment.md)
-* [Пример. Создание веб-приложения и развертывание кода из локального репозитория Git (Azure CLI)](./scripts/cli-deploy-local-git.md?toc=%2fcli%2fazure%2ftoc.json)
-* [Пример. Создание веб-приложения и развертывание кода из локального репозитория Git (PowerShell)](./scripts/powershell-deploy-local-git.md?toc=%2fpowershell%2fmodule%2ftoc.json)
+- [Документация по проекту Kudu](https://github.com/projectkudu/kudu/wiki)
+- [Непрерывное развертывание в службе приложений Azure](deploy-continuous-deployment.md)
+- [Пример. Создание веб-приложения и развертывание кода из локального репозитория Git (Azure CLI)](./scripts/cli-deploy-local-git.md?toc=%2fcli%2fazure%2ftoc.json)
+- [Пример. Создание веб-приложения и развертывание кода из локального репозитория Git (PowerShell)](./scripts/powershell-deploy-local-git.md?toc=%2fpowershell%2fmodule%2ftoc.json)

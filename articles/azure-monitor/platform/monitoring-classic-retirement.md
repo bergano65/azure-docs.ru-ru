@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 2/7/2019
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: fb7821b07e68459cb3d76812a12e85387b9f0f52
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 28dba8af059e24040abb254dd4ecd8e336d8221d
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295104"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67594301"
 ---
 # <a name="unified-alerting--monitoring-in-azure-monitor-replaces-classic-alerting--monitoring"></a>Унифицированные оповещения и мониторинг в Azure Monitor заменяют классические оповещения и мониторинг
 
@@ -40,7 +40,7 @@ Azure Monitor стала единой службой мониторинга по
 - **Метрики платформы Application Insights**. Вы получаете популярные встроенные метрики из Application Insights. Дополнительные сведения см. в разделе [Предварительно агрегированные метрики](../../azure-monitor/app/pre-aggregated-metrics-log-metrics.md#pre-aggregated-metrics).
 - **Доступность Application Insights и веб-тест** дают возможность оценить скорость отклика и доступность веб-приложения или сервера. Дополнительные сведения см. в статье [Наблюдение за доступностью и скоростью реагирования веб-сайта](../../azure-monitor/app/monitor-web-app-availability.md).
 - **Пользовательские метрики Application Insights**, позволяющие определять и выдавать собственные метрики для мониторинга и оповещений. Дополнительные сведения см. в разделе [Измерения пользовательских метрик и предварительное агрегирование](../../azure-monitor/app/pre-aggregated-metrics-log-metrics.md#custom-metrics-dimensions-and-pre-aggregation).
-- **Аномалии сбоев Application Insights (часть интеллектуального обнаружения)** . Вы автоматически получаете уведомление (почти в реальном времени), когда работа веб-приложения сопровождается чрезмерно частыми неудачно завершенными HTTP-запросами и вызовами зависимостей. Аномалии сбоев Application Insights (часть интеллектуального обнаружения) как часть нового Azure Monitor станут доступны в ближайшее время. Мы добавим в этот документ ссылки на следующую итерацию, как только она будет выпущена в ближайшие месяцы.
+- **Аномалии сбоев Application Insights (часть интеллектуального обнаружения)** . Вы автоматически получаете уведомление (почти в реальном времени), когда работа веб-приложения сопровождается чрезмерно частыми неудачно завершенными HTTP-запросами и вызовами зависимостей. Дополнительные сведения см. в статье об использовании [Интеллектуальное обнаружение — аномалии в сбоях](https://docs.microsoft.com/azure/azure-monitor/app/proactive-failure-diagnostics).
 
 ## <a name="unified-metrics-and-alerts-for-other-azure-resources"></a>Унифицированные метрики и оповещения для других ресурсов Azure
 
@@ -84,7 +84,7 @@ Azure Monitor стала единой службой мониторинга по
 В этой статье будут постоянно обновляться ссылки и подробности о новых функциях мониторинга и оповещения Azure, а также о доступности инструментов, помогающих пользователям во внедрении новой платформы Azure Monitor.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [новой унифицированной службе Azure Monitor](../../azure-monitor/overview.md).
 * Дополнительные сведения о новых [оповещениях Azure](../../azure-monitor/platform/alerts-overview.md).

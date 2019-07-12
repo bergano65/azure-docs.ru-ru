@@ -1,5 +1,5 @@
 ---
-title: Руководство по Настройка Proxyclick для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
+title: Учебник. Настройка Proxyclick для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Proxyclick.
 services: active-directory
 documentationcenter: ''
@@ -8,21 +8,21 @@ writer: zchia
 manager: beatrizd
 ms.assetid: na
 ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 06/3/2019
-ms.author: zchia
-ms.openlocfilehash: 2117f481d213c14f8feeb23eb8af3670db81cab4
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.author: jeedes
+ms.openlocfilehash: c1656e6cc0c690e5a2bccfd2efab02aa843875b8
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67276643"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672888"
 ---
-# <a name="tutorial-configure-proxyclick-for-automatic-user-provisioning"></a>Руководство по Настройка Proxyclick для автоматической подготовки пользователей
+# <a name="tutorial-configure-proxyclick-for-automatic-user-provisioning"></a>Учебник. Настройка Proxyclick для автоматической подготовки пользователей
 
 Цель данного учебника — продемонстрировать действия, выполняемые в Proxyclick и Azure Active Directory (Azure AD) для настройки Azure AD для автоматической подготовки и отзыва пользователей и групп в Proxyclick.
 
@@ -31,7 +31,7 @@ ms.locfileid: "67276643"
 >
 > Сейчас этот соединитель предоставляется в общедоступной предварительной версии. Дополнительные сведения о общие Microsoft Azure условия использования предварительных версий функций, см. в разделе [дополнительным условиям использования предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -136,7 +136,7 @@ Azure Active Directory используется концепция, называ
 
     ![Уведомление по электронной почте](common/provisioning-notification-email.png)
 
-9. Выберите команду **Сохранить**.
+9. Нажмите кнопку **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать пользователей Azure Active Directory с Proxyclick**.
 
@@ -174,7 +174,7 @@ Azure Active Directory используется концепция, называ
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 

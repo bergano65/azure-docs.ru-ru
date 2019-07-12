@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/22/2019
 ms.author: gokuma
-ms.openlocfilehash: 64642da88850e9a0a17173bc50ae9e750cab55a2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 57768fc463f5ea1d2f1ec386f3f0975758220013
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66235103"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67626385"
 ---
 # <a name="provision-a-windows-data-science-virtual-machine-on-azure"></a>Подготовка Виртуальной машины Windows для обработки и анализа данных в Azure
 
@@ -61,13 +61,13 @@ ms.locfileid: "66235103"
 
 Используйте ее, чтобы быстро начать работу со своим аналитическим проектом. Вы сможете работать над задачами на разных языках, включая R, Python, SQL и C#. Visual Studio предоставляет простую платформу IDE (интегрированную среду разработки) для разработки и тестирования кода. Пакет SDK Azure в виртуальной машине позволяет создавать приложения с помощью различных служб на облачной платформе Майкрософт.
 
-Плата за программное обеспечение для этого образа виртуальной машины не взимается. Вы платите только за использование Azure. Суммы оплаты зависят от размера подготовленной виртуальной машины. Дополнительные сведения об оплате вычислительных ресурсов см. в **этом разделе** на странице [Data Science Virtual Machine](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.windows-data-science-vm?tab=PlansAndPrice) (Виртуальная машина для обработки и анализа данных).
+Плата за программное обеспечение для этого образа виртуальной машины не взимается. Вы платите только за использование Azure. Суммы оплаты зависят от размера подготовленной виртуальной машины. Дополнительные сведения об оплате вычислительных ресурсов см. в **этом разделе** на странице [Data Science Virtual Machine](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.dsvm-windows) (Виртуальная машина для обработки и анализа данных).
 
 ### <a name="other-dsvm-versions"></a>Другие версии DSVM
 
 * Образ [Ubuntu](dsvm-ubuntu-intro.md). В нем есть множество средств, как и в DSVM, а также несколько дополнительных платформ глубокого обучения.
 * Образ [Linux CentOS](linux-dsvm-intro.md).
-* Выпуск [Windows Server 2012](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.standard-data-science-vm) Виртуальной машины для обработки и анализа данных. Некоторые средства доступны только в выпуске Windows Server 2016. За исключением этого, сведения в настоящей статье также применимы к выпуску Windows Server 2012.
+* Выпуск [Windows Server 2012](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.dsvm-windows) Виртуальной машины для обработки и анализа данных. Некоторые средства доступны только в выпуске Windows Server 2016. За исключением этого, сведения в настоящей статье также применимы к выпуску Windows Server 2012.
 
 ## <a name="prerequisite"></a>Предварительные требования
 
@@ -176,7 +176,7 @@ CREATE LOGIN [%COMPUTERNAME%\SQLRUserGroup] FROM WINDOWS
 
 Замените `%COMPUTERNAME%` на имя своей виртуальной машины.
 
-### <a name="azure"></a>Таблицы Azure
+### <a name="azure"></a>Azure
 
 На виртуальной машине установлено несколько инструментов Azure.
 
@@ -224,7 +224,7 @@ CREATE LOGIN [%COMPUTERNAME%\SQLRUserGroup] FROM WINDOWS
 > [!NOTE]
 > В DSVM с выпусками Windows Server 2012 и Windows Server 2016, развернутых до марта 2018 г., по умолчанию используется среда Anaconda для Python 2.7. Среда Python 3.5 устанавливается в качестве дополнительной в папку **C:\Anaconda\envs\py35**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Изучите инструменты, включенные в Виртуальную машину для обработки и анализа данных, открыв меню **Пуск**.
 * Дополнительные сведения о службе машинного обучения Azure см. в статье [Что такое служба машинного обучения Azure?](../service/overview-what-is-azure-ml.md) и ознакомьтесь с доступными [краткими руководствами и учебниками](../service/index.yml).

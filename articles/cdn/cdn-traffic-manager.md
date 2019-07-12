@@ -7,7 +7,7 @@ author: mdgattuso
 manager: danielgi
 editor: ''
 ms.assetid: ''
-ms.service: cdn
+ms.service: azure-cdn
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: magattus
 ms.custom: ''
-ms.openlocfilehash: f7de7fe1c677d54c0fa3e6d3ca4730ef1083bc81
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 276fe9352d0c4ca7ec525b88d65689b56c0ba027
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67273275"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67593349"
 ---
 # <a name="set-up-failover-across-multiple-azure-cdn-endpoints-with-azure-traffic-manager"></a>Настройка отработки отказа между несколькими конечными точками Azure CDN при помощи диспетчера трафика Azure
 
@@ -60,7 +60,7 @@ ms.locfileid: "67273275"
 
 1. Перейдите на веб-сайт поставщика домена для своего пользовательского домена, например GoDaddy, и создайте две записи DNS CNAME. 
 
-    a. Для первой записи CNAME подключите к конечной точке CDN пользовательский домен с поддоменом cdnverify. Эта запись нужна для регистрации пользовательского домена в конечной точке CDN, которая была добавлена в диспетчер трафика Azure в шаге 2.
+    1\. Для первой записи CNAME подключите к конечной точке CDN пользовательский домен с поддоменом cdnverify. Эта запись нужна для регистрации пользовательского домена в конечной точке CDN, которая была добавлена в диспетчер трафика Azure в шаге 2.
 
       Пример: 
 
@@ -95,7 +95,7 @@ ms.locfileid: "67273275"
  
 По завершении этих действий служба с несколькими сетями CDN с возможностью отработки отказа будет настроена с помощью диспетчера трафика Azure. У вас будет доступ с пользовательского домена к тестовым URL-адресам. Чтобы проверить функции, отключите основную конечную точку CDN и убедитесь, что запрос правильно перенесен на вспомогательную конечную точку CDN. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Можно также настроить другие методы маршрутизации, например географические, чтобы сбалансировать нагрузку между разными конечными точками CDN. Дополнительные сведения см. в разделе [Настройка метода маршрутизации трафика по географическому расположению с помощью диспетчера трафика Azure](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-configure-geographic-routing-method).
 
 

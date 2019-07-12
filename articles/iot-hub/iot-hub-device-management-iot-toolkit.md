@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/04/2019
 ms.author: junhan
-ms.openlocfilehash: 03df2ceb2df4d857e48f1790703a1d87647e43d0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f5697e0b51e8349de62e71be1471beb76aa48765
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60401176"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67838721"
 ---
 # <a name="use-azure-iot-tools-for-visual-studio-code-for-azure-iot-hub-device-management"></a>Управление устройствами Центра Интернета вещей Azure с помощью средств Интернета вещей Azure для Visual Studio Code
 
@@ -63,7 +63,7 @@ ms.locfileid: "60401176"
 5. Через несколько секунд на вкладке **Azure IoT Hub Devices** (Устройства Центра Интернета вещей Azure) отобразится список устройств.
 
    > [!Note]
-   > Можно также завершить настройку выбрав **Установка строки подключения Центра Интернета вещей**. Введите во всплывающем окне строку подключения Центра Интернета вещей, к которому подключается ваш Центр Интернета вещей Azure.
+   > Можно также завершить настройку выбрав **Установка строки подключения Центра Интернета вещей**. Введите **iothubowner** политики строку подключения для центра Интернета вещей, к которому подключается ваше устройство Интернета вещей для во всплывающем окне.
 
 ## <a name="direct-methods"></a>Прямые методы
 
@@ -97,7 +97,7 @@ ms.locfileid: "60401176"
 
 3. Результаты отобразятся в представлении **Выходные данные** > **Azure IoT Hub Toolkit** (Набор средств Центра Интернета вещей Azure).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы узнали, как использовать расширение средств Интернета вещей Azure для Visual Studio Code с различными параметрами управления.
 

@@ -3,16 +3,16 @@ title: Переопределение режима HTTP с помощью Azure 
 description: Обработчик правил позволяет настраивать способ обработки HTTP-запросов с Azure CDN от Verizon уровня "премиум", например блокировать доставку определенных типов содержимого, определение политики кэширования и изменение заголовков HTTP.
 services: cdn
 author: mdgattuso
-ms.service: cdn
+ms.service: azure-cdn
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: magattus
-ms.openlocfilehash: 81af3073d64e4379972568a57907a7fb2f82356d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fa08f59f3b69395d548649bb131e04c5071c053d
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66481734"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67593186"
 ---
 # <a name="override-http-behavior-using-the-azure-cdn-from-verizon-premium-rules-engine"></a>Переопределение режима HTTP с помощью Azure CDN от Verizon Premium обработчика правил
 
@@ -22,7 +22,7 @@ ms.locfileid: "66481734"
 
 Обработчик правил Azure CDN позволяет настраивать процесс обработки запросов HTTP. Например, можно блокировать доставку определенных типов содержимого, определять политику кэширования и изменять заголовок HTTP. В этом руководстве описано, как создать правило, которое изменяет схему кэширования ресурсов CDN. Дополнительные сведения о синтаксисе обработчика правил см. в разделе [Обработчик правил Azure CDN](cdn-verizon-premium-rules-engine-reference.md).
 
-## <a name="access"></a>Доступ
+## <a name="access"></a>Access
 
 Чтобы получить доступ к обработчику правил, сначала необходимо получить доступ к странице управление Azure CDN. Это можно сделать, выбрав **Управление** в верхней части страницы **профиля CDN**. В зависимости от того, была ли конечная точка оптимизирована для динамического ускорения сайтов (DSA), вы получаете доступ к обработчику правил с набором правил, подходящих для вашего типа конечной точки.
 
@@ -40,7 +40,7 @@ ms.locfileid: "66481734"
 
     ![Обработчик правил для DSA](./media/cdn-rules-engine/cdn-dsa-rules-engine.png)
 
-## <a name="tutorial"></a>Руководство
+## <a name="tutorial"></a>Учебник
 
 1. На странице **профиля CDN** выберите **Управление**.
    
@@ -96,8 +96,8 @@ ms.locfileid: "66481734"
 ## <a name="see-also"></a>См. также
 
 - [Общие сведения о сети доставки содержимого Azure](cdn-overview.md)
-- [Обработчик правил Azure CDN](cdn-verizon-premium-rules-engine-reference.md)
-- [Условия соответствия для обработчика правил Azure CDN](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
-- [Условные выражения обработчика правил Azure CDN](cdn-verizon-premium-rules-engine-reference-conditional-expressions.md)
-- [Функции обработчика правил Azure CDN](cdn-verizon-premium-rules-engine-reference-features.md)
+- [Справочник по обработчику правил](cdn-verizon-premium-rules-engine-reference.md)
+- [Условия соответствия для обработчика правил](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
+- [Условные выражения обработчика правил](cdn-verizon-premium-rules-engine-reference-conditional-expressions.md)
+- [Возможности обработчика правил](cdn-verizon-premium-rules-engine-reference-features.md)
 - [Пятница с Azure: Мощные новые функции уровня "премиум" Azure CDN](https://azure.microsoft.com/documentation/videos/azure-cdns-powerful-new-premium-features/) (видео)

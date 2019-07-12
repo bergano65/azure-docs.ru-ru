@@ -3,17 +3,17 @@ title: Безопасность для CloudSimple служб
 description: Описание модели безопасности служб CloudSimple ответственности
 author: sharaths-cs
 ms.author: b-shsury
-ms.date: 4/27/19
+ms.date: 04/27/2019
 ms.topic: article
 ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: db093f6aef4f1bdb28a96bf89b3013d359a7b796
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: 325915aae43c905236910382f650730a6daa127a
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67154115"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67595323"
 ---
 # <a name="cloudsimple-security-overview"></a>Общие сведения о безопасности CloudSimple
 
@@ -39,7 +39,7 @@ ms.locfileid: "67154115"
 
 Как часть службы CloudSimple всем клиентам CloudSimple получение выделенных узлов без операционной системы с локального подключенными дисками, которые физически изолированы от другого оборудования клиента. Гипервизор ESXi с помощью виртуальной сети хранения данных выполняется на каждом узле. Узлы осуществляется с помощью специализированного клиента VMware vCenter и NSX. Не совместного использования оборудования, между клиентами обеспечивает дополнительный уровень изоляции и защиты.
 
-## <a name="data-security"></a>Защита данных
+## <a name="data-security"></a>Безопасность данных
 
 Элемент управления и особенностей владения свои данные на предприятиях ваших заказчиков. Администраторе данных клиентских данных отвечает за клиента.
 
@@ -88,7 +88,7 @@ CloudSimple поддерживает необязательная конфигу
 
 По умолчанию клиенты получают привилегии, необходимые для выполнения повседневных операций в vCenter в частном облаке. Этот уровень разрешений не включает административного доступа к vCenter. Если временно требуется административный доступ, вы можете [повысить свои привилегии](https://docs.azure.cloudsimple.com/escalate-private-cloud-privileges) в течение ограниченного периода во время выполнения административных задач.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте, как [Создание CloudSimple службы в Azure](quickstart-create-cloudsimple-service.md).
 * Узнайте, как [Создание частного облака](https://docs.azure.cloudsimple.com/create-private-cloud/).

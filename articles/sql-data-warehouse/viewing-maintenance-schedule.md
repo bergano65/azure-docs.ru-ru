@@ -10,12 +10,12 @@ ms.subservice: design
 ms.date: 11/27/2018
 ms.author: anvang
 ms.reviewer: igorstan
-ms.openlocfilehash: 61537a4cb8ca1e6e98f2fa04959861eb03480fe9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f0b9b59ec09445a170d1f93181c2b432eafb60bf
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61474885"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839985"
 ---
 # <a name="view-a-maintenance-schedule"></a>Просмотр расписания обслуживания 
 
@@ -27,11 +27,11 @@ ms.locfileid: "61474885"
 
 1.  Войдите на [портале Azure](https://portal.azure.com/).
 2.  Выберите хранилище данных, которое необходимо просмотреть. 
-3.  Выбранное хранилище данных откроется в колонке "Обзор". Под пунктом **Расписание обслуживания (предварительная версия)** будет отображаться расписание, примененное к данному хранилищу данных.
+3.  Выбранное хранилище данных откроется в колонке "Обзор". Расписание обслуживания, который применяется к хранилищу данных отображается под **расписание обслуживания**.
 
 ![Колонка "Обзор"](media/sql-data-warehouse-maintenance-scheduling/clear-overview-blade.PNG)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Дополнительные сведения о создании, просмотре оповещений и управлении ими с помощью Azure Monitor см. в [этой статье](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitor-alerts-unified-usage).
 - Дополнительные сведения о действиях веб-перехватчика для правил генерации оповещений журнала см. в [этой статье](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitor-alerts-unified-log-webhook).
 - [Дополнительные сведения](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups) о создании групп действий и управлении ими.

@@ -7,19 +7,19 @@ author: zhangmanling
 manager: zhangmanling
 editor: ''
 ms.assetid: bf23bd89-35b2-4aca-ac7f-68ee02953f31
-ms.service: cdn
+ms.service: azure-cdn
 ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: integration
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: ad4bf7ae97a08f89b9d82e1d4e025a5bd5d47fc1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6710f5e5b873f751ad21068acdc15d38574f8378
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64696172"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67593440"
 ---
 # <a name="monitor-the-health-of-azure-cdn-resources"></a>Отслеживание работоспособности ресурсов Azure CDN
   
@@ -51,7 +51,7 @@ ms.locfileid: "64696172"
 
 Состояния, связанные с работоспособностью ресурсов Azure CDN, перечислены ниже.
 
-|`Message` | Рекомендуемое действие |
+|Сообщение | Рекомендуемое действие |
 |---|---|
 |Возможно, вы остановили, удалили или неправильно настроили одну конечную точку CDN или несколько. | Возможно, вы остановили, удалили или неправильно настроили одну конечную точку CDN или несколько.|
 |К сожалению, служба управления CDN сейчас недоступна. | Обновления состояния см. здесь позже. Если проблему не удается устранить спустя ожидаемый период времени, обратитесь в службу поддержки.|
@@ -60,7 +60,7 @@ ms.locfileid: "64696172"
 |К сожалению, возникли проблемы при загрузке вспомогательного портала. | Обновления состояния см. здесь позже. Если проблему не удается устранить спустя ожидаемый период времени, обратитесь в службу поддержки.|
 К сожалению, возникли проблемы с некоторыми поставщиками CDN. | Обновления состояния см. здесь позже. Если проблему не удается устранить спустя ожидаемый период времени, обратитесь в службу поддержки. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Ознакомьтесь с обзором службы работоспособности ресурсов Azure](../resource-health/resource-health-overview.md).
 - [Узнайте, как устранить неполадки со сжатием CDN](./cdn-troubleshoot-compression.md).

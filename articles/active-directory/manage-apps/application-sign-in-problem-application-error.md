@@ -16,12 +16,12 @@ ms.date: 07/11/2017
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d41ec1f510b028a2ffe2554bfcbd77bc439c4e79
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 23e6a3d0b533dccc3c3111382b014907d5c026ab
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67272948"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67612670"
 ---
 # <a name="an-app-page-shows-an-error-message-after-the-user-signs-in"></a>На странице приложения отобразится сообщение об ошибке после входа пользователя
 
@@ -99,7 +99,7 @@ ms.locfileid: "67272948"
 
 ## <a name="change-the-nameid-format"></a>Изменение формата идентификатора имени
 
-Если приложение ожидает другой формат для **NameID** атрибут (идентификатора пользователя), см. в разделе [nameID редактирование](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-claims-customization.md#editing-nameid) для изменения формата NameID.
+Если приложение ожидает другой формат для **NameID** атрибут (идентификатора пользователя), см. в разделе [nameID редактирование](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-claims-customization#editing-nameid) для изменения формата NameID.
 
 Azure AD выбирает формат **NameID** атрибута (идентификатор пользователя) на основе значения, который выбран или формат, который запрашивается в приложении, в который SAML. Дополнительные сведения см. в разделе «NameIDPolicy» [единый вход SAML протокола](https://docs.microsoft.com/azure/active-directory/develop/single-sign-on-saml-protocol#nameidpolicy).
 
@@ -163,5 +163,5 @@ Azure AD выбирает формат **NameID** атрибута (иденти
 
    В следующий раз пользователь выполняет вход в приложение Azure AD подпишет маркер SAML с помощью алгоритма SHA-1.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Отладка на основе SAML единого входа для приложений в Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-saml-debugging).

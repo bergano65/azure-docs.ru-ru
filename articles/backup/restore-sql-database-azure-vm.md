@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: raynew
-ms.openlocfilehash: d8ade598e4f1b6331367e8bd04ad59951ef5de8f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 856f45f448aa843e9dc04ec3b6a60841cfe33227
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66242373"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704862"
 ---
 # <a name="restore-sql-server-databases-on-azure-vms"></a>Восстановление баз данных SQL Server на виртуальных машинах Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "66242373"
 - Восстановите определенную полную или разностную резервную копию восстановить до определенной точки восстановления.
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Перед восстановлением базы данных, обратите внимание на следующее:
 
@@ -156,11 +156,11 @@ ms.locfileid: "66242373"
 
 ### <a name="restore-databases-with-large-number-of-files"></a>Восстановление баз данных с большим числом файлов
 
-Если общая строка размера файлов в базе данных больше, чем [определенного предела](backup-sql-server-azure-troubleshoot.md#files-size-limit-beyond-which-restore-happens-to-default-path), службы архивации Azure хранит список файлов базы данных в компоненте разных pit таким образом, что вы не сможете задать путь к целевой объект восстановления во время восстановления операция. Файлы будут восстановлены на путь по умолчанию SQL.
+Если общая строка размера файлов в базе данных больше, чем [определенного предела](backup-sql-server-azure-troubleshoot.md#size-limit-for-files), службы архивации Azure хранит список файлов базы данных в компоненте разных pit таким образом, что вы не сможете задать путь к целевой объект восстановления во время восстановления операция. Файлы будут восстановлены на путь по умолчанию SQL.
 
   ![Восстановление базы данных с большими файлами](./media/backup-azure-sql-database/restore-large-files.jpg)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Управление и наблюдение за](manage-monitor-sql-database-backup.md) баз данных SQL Server, резервное копирование службой Azure Backup.

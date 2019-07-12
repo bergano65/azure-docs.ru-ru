@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 4e11b1bc16f874f892288f9677a71023f483de7c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8e10151cd117a3400893f94559b2c9892de9f3c7
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60458124"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67666220"
 ---
 # <a name="integrate-azure-vpn-gateway-radius-authentication-with-nps-server-for-multi-factor-authentication"></a>Интеграция аутентификации RADIUS шлюза Azure с NPS-сервером для обеспечения Многофакторной идентификации 
 
@@ -52,18 +52,18 @@ ms.locfileid: "60458124"
 ### <a name="step-2-configure-the-nps-for-azure-mfa"></a>Шаг 2. Настройка сервера политики сети для Azure MFA
 
 1. [Установите расширение NPS для MFA Azure](../active-directory/authentication/howto-mfa-nps-extension.md#install-the-nps-extension) на NPS-сервере.
-2. Откройте консоль NPS, щелкните правой кнопкой мыши **RADUIS Clients** (Клиенты RADUIS), а затем выберите **Создать**. Создайте клиент RADUIS, указав следующие параметры.
+2. Откройте консоль сервера политики сети, щелкните правой кнопкой мыши **RADIUS-клиенты**, а затем выберите **New**. Создайте клиент RADIUS, указав следующие параметры:
 
     - **Понятное имя.** Введите любое имя.
     - **Адрес (IP или DNS).** Введите подсеть шлюза, созданную на шаге 1.
     - **Общий секрет**. Введите любой секретный ключ и запомните его для последующего использования.
 
-      ![Рисунок: параметры клиента RADUIS](./media/vpn-gateway-radiuis-mfa-nsp/create-radius-client1.png)
+      ![Рисунок: параметры RADIUS-клиента](./media/vpn-gateway-radiuis-mfa-nsp/create-radius-client1.png)
 
  
 3.  На вкладке **Дополнительно** () укажите имя поставщика **RADIUS Standard** и убедитесь, что флажок **Дополнительные параметры** не установлен.
 
-    ![Рисунок: дополнительные параметры клиента RADUIS](./media/vpn-gateway-radiuis-mfa-nsp/create-radius-client2.png)
+    ![Рисунок: Дополнительные параметры клиента RADIUS](./media/vpn-gateway-radiuis-mfa-nsp/create-radius-client2.png)
 
 4. Выберите **Политики** > **Политики сети**, дважды щелкните политику **Подключения к серверу маршрутизации и удаленного доступа (Microsoft)** политики, выберите **Предоставить доступ**, а затем нажмите кнопку **ОК**.
 
@@ -79,7 +79,7 @@ ms.locfileid: "60458124"
 
       ![Рисунок: параметры подключения типа "точка — сеть"](./media/vpn-gateway-radiuis-mfa-nsp/configure-p2s.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Многофакторная идентификация Azure](../active-directory/authentication/multi-factor-authentication.md)
 - [Интеграция имеющейся инфраструктуры NPS со службой Многофакторной идентификации Azure](../active-directory/authentication/howto-mfa-nps-extension.md)

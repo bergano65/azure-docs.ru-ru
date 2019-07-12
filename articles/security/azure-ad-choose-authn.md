@@ -4,17 +4,17 @@ description: Это руководство поможет руководител
 services: active-directory
 keywords: ''
 author: martincoetzer
-ms.author: martincoetzer
+ms.author: martinco
 ms.date: 04/12/2018
 ms.topic: article
 ms.service: active-directory
 ms.workload: identity
-ms.openlocfilehash: 26fca12060363f4ad05baaeceb6fb800a0d76216
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: c0faeb211860391c93563200f509d60876a504b9
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67449273"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67786696"
 ---
 # <a name="choose-the-right-authentication-method-for-your-azure-active-directory-hybrid-identity-solution"></a>Выбор правильного метода аутентификации для гибридного решения для идентификации Azure Active Directory 
 
@@ -94,7 +94,7 @@ Azure AD поддерживает следующие методы аутенти
 
 * **Сложные сценарии**. При необходимости организации могут использовать аналитические сведения из удостоверений в отчетах службы защиты идентификации Azure AD с Azure AD Premium P2. Например, в отчете об утечке учетных данных. Имеет Windows Hello для бизнеса [особые требования при использовании синхронизации хэша паролей](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-identity-verification). [Доменные службы Azure AD](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started-password-sync) требуется синхронизация хэшированных паролей для подготовки пользователей с помощью своих корпоративных учетных данных в управляемом домене.
 
-    Организаций, которым требуется многофакторная проверка подлинности с синхронизацией хэшированных паролей необходимо использовать многофакторную проверку подлинности Azure AD или [пользовательских элементов управления условного доступа](https://docs.microsoft.com/azure/active-directory/conditional-access/controls#custom-controls). Эти организации не могут использовать сторонние или в локальной методы многофакторной проверки подлинности, на которые полагается на федерации.
+    Организаций, которым требуется многофакторная проверка подлинности с синхронизацией хэшированных паролей необходимо использовать многофакторную проверку подлинности Azure AD или [пользовательских элементов управления условного доступа](https://docs.microsoft.com/azure/active-directory/conditional-access/controls#custom-controls-preview). Эти организации не могут использовать сторонние или в локальной методы многофакторной проверки подлинности, на которые полагается на федерации.
 
 > [!NOTE]
 > Условный доступ Azure AD требуется [Azure AD Premium P1](https://azure.microsoft.com/pricing/details/active-directory/) лицензии.
@@ -118,7 +118,7 @@ Azure AD поддерживает следующие методы аутенти
 
 * **Сложные сценарии**. Сквозная аутентификация принудительно применяет политику локальных учетных записей во время входа. Например, доступ запрещается, если локальная учетная запись пользователя отключена, заблокирована, [истек срок действия ее пароля](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-pta-faq#what-happens-if-my-users-password-has-expired-and-they-try-to-sign-in-by-using-pass-through-authentication) или пользователь пытается войти в период времени, когда вход запрещен. 
 
-    Организаций, которым требуется многофакторная проверка подлинности с помощью сквозной проверки подлинности необходимо использовать многофакторную идентификацию Azure (MFA) или [пользовательских элементов управления условного доступа](https://docs.microsoft.com/azure/active-directory/conditional-access/controls#custom-controls). Эти организации не могут использовать сторонние или локальной многофакторной проверки подлинности метод, который зависит от федерации. Для использования расширенных функций требуется, чтобы синхронизация хэша паролей была развернута независимо от того, реализуется ли сквозная аутентификация. Например, это требуется для получения отчетов об утечке учетных данных службы "Защита идентификации".
+    Организаций, которым требуется многофакторная проверка подлинности с помощью сквозной проверки подлинности необходимо использовать многофакторную идентификацию Azure (MFA) или [пользовательских элементов управления условного доступа](https://docs.microsoft.com/azure/active-directory/conditional-access/controls#custom-controls-preview). Эти организации не могут использовать сторонние или локальной многофакторной проверки подлинности метод, который зависит от федерации. Для использования расширенных функций требуется, чтобы синхронизация хэша паролей была развернута независимо от того, реализуется ли сквозная аутентификация. Например, это требуется для получения отчетов об утечке учетных данных службы "Защита идентификации".
 
 * **Непрерывность бизнес-процессов**. Рекомендуется развернуть два дополнительных агента сквозной аутентификации. Они устанавливаются в дополнение к первому агенту на сервере Azure AD Connect. Развертывание эти агентов обеспечивает высокий уровень доступности запросов на аутентификацию. Если развернуты три агента, один агент все еще может выйти из строя, если другой агент отключен для обслуживания. 
 
@@ -179,9 +179,9 @@ Azure AD поддерживает следующие методы аутенти
 |Где происходит аутентификация?|В облаке|В облаке после безопасного обмена данными проверки пароля с локальным агентом аутентификации|Локальная система|
 |Каковы требования к локальному серверу, помимо системы подготовки: Azure AD Connect?|Нет|Один сервер для каждого дополнительного агента аутентификации|Не менее двух серверов AD FS<br><br>Не менее двух WAP-серверов в сети периметра|
 |Каковы локальные требования к доступу к Интернету и сетевым подключениям помимо системы подготовки?|Нет|[Исходящий доступ к Интернету](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-pta-quick-start) с серверов, где работают агенты аутентификации|[Входящий доступ к Интернету](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-requirements) к WAP-серверам в сети периметра<br><br>Входящий сетевой доступ к серверам AD FS с WAP-серверов в сети периметра<br><br>Балансировка сетевой нагрузки|
-|Существует ли требование к SSL-сертификату?|Нет|Нет|Yes|
+|Существует ли требование к SSL-сертификату?|Нет|Нет|Да|
 |Имеется ли решение для мониторинга работоспособности?|Не требуется|Состояние агента, предоставляемое [Центром администрирования Azure Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/tshoot-connect-pass-through-authentication)|[Azure AD Connect Health](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs)|
-|Пользователи получают единый вход в облачные ресурсы с присоединенных к домену устройств в корпоративной сети?|Да, с [простым единым входом](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso)|Да, с [простым единым входом](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso)|Yes|
+|Пользователи получают единый вход в облачные ресурсы с присоединенных к домену устройств в корпоративной сети?|Да, с [простым единым входом](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso)|Да, с [простым единым входом](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso)|Да|
 |Какие типы входа поддерживаются?|UserPrincipalName и пароль<br><br>Встроенная проверка подлинности Windows с [простым единым входом](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso)<br><br>[Альтернативный идентификатор входа](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-custom)|UserPrincipalName и пароль<br><br>Встроенная проверка подлинности Windows с [простым единым входом](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso)<br><br>[Альтернативный идентификатор входа](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-pta-faq)|UserPrincipalName и пароль<br><br>sAMAccountName и пароль<br><br>Встроенная проверка подлинности Windows<br><br>[Аутентификация с использованием сертификатов и смарт-карт](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-user-certificate-authentication)<br><br>[Альтернативный идентификатор входа](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configuring-alternate-login-id)|
 |Поддерживается ли Windows Hello для бизнеса?|[Модель доверия на основе ключей](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)|[Модель доверия на основе ключей](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)<br>*Требует режима работы домена Windows Server 2016*|[Модель доверия на основе ключей](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)<br><br>[Модель доверия на основе сертификатов](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-key-trust-adfs)|
 |Какие варианты многофакторной проверки подлинности существуют?|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Пользовательские элементы управления с помощью условного доступа *](https://docs.microsoft.com/azure/active-directory/conditional-access/controls)|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Пользовательские элементы управления с помощью условного доступа *](https://docs.microsoft.com/azure/active-directory/conditional-access/controls)|[Многофакторная идентификация Azure](https://docs.microsoft.com/azure/multi-factor-authentication/)<br><br>[Сервер Azure MFA](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-deploy)<br><br>[Стороннее решение многофакторной идентификации](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-additional-authentication-methods-for-ad-fs)<br><br>[Пользовательские элементы управления с помощью условного доступа *](https://docs.microsoft.com/azure/active-directory/conditional-access/controls)|
@@ -219,7 +219,7 @@ Azure AD поддерживает следующие методы аутенти
 
 Рассмотрите каждый метод аутентификации. Соответствуют вашим бизнес-требованиям трудозатраты, необходимые для развертывания решения, и взаимодействие с пользователем при входе в систему? Оцените, нужны ли вашей организации расширенные сценарии и возможности обеспечения непрерывности бизнес-процессов каждого метода аутентификации. Наконец, учтите рекомендации для каждого метода аутентификации. Возможно, какая-либо из них изменит ваше решение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В современном мире угрозы есть постоянно и повсюду. Реализация правильного метода аутентификации поможет снизить риски для безопасности и защитить удостоверения.
 

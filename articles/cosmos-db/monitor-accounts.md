@@ -8,10 +8,10 @@ ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: seodec18
 ms.openlocfilehash: 02bbde9a2d744c79cc8a7e95b0732b775c4dc695
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0ebc62257be0ab52f524235f8d8ef3353fdaf89e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 07/10/2019
 ms.locfileid: "66241625"
 ---
 # <a name="monitor-performance-and-storage-metrics-in-azure-cosmos-db"></a>Мониторинг метрик производительности и хранения в Azure Cosmos DB
@@ -79,6 +79,6 @@ ms.locfileid: "66241625"
 
 Дополнительные сведения см. в записи блога [Retrieving Resource Metrics via the Azure Insights API](https://blogs.msdn.microsoft.com/cloud_solution_architect/2016/02/23/retrieving-resource-metrics-via-the-azure-insights-api/) (Получение метрик ресурсов через API Azure Insights). Обратите внимание, что служба Azure Insights была переименована в Azure Monitor.  В этой записи блога используется устаревшее название.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о планировании ресурсов DocumentDB см. на [странице калькулятора ресурсов Azure Cosmos DB](https://www.documentdb.com/capacityplanner).
 
