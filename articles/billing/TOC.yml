@@ -65,6 +65,8 @@
               href: ../cosmos-db/cosmos-db-reserved-capacity.md?toc=/azure/billing/TOC.json
             - name: База данных SQL
               href: ../sql-database/sql-database-reserved-capacity.md?toc=/azure/billing/TOC.json
+            - name: Azure Databricks
+              href: billing-prepay-databricks-reserved-capacity.md
             - name: Планы программного обеспечения Azure
               href: ../virtual-machines/linux/prepay-suse-software-charges.md?toc=/azure/billing/TOC.json
         - name: Способ применения скидки
@@ -77,6 +79,8 @@
               href: billing-understand-reservation-charges.md
             - name: Хранилище данных SQL
               href: billing-how-reservation-discount-is-applied-to-azure-sql-dw.md
+            - name: Azure Databricks
+              href: billing-reservation-discount-databricks.md
             - name: Планы программного обеспечения Azure
               href: billing-understand-suse-reservation-charges.md
         - name: Расходы на программное обеспечение не входят в стоимость

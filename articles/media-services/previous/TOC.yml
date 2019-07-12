@@ -254,7 +254,7 @@
         - name: Обработка длительных операций
           href: media-services-dotnet-long-operations.md
         - name: Спецификация Fragmented MP4 Live Ingest
-          href: media-services-fmp4-live-ingest-overview.md
+          href: ../media-services-fmp4-live-ingest-overview.md
         - name: Начало работы
           href: media-services-azure-media-clipper-getting-started.md
         - name: Загрузка видео
@@ -458,11 +458,11 @@
     - name: Спецификации
       items:
         - name: 'Прием в реальном времени: спецификация приема фрагментированного MP4 в реальном времени'
-          href: media-services-fmp4-live-ingest-overview.md
+          href: ../media-services-fmp4-live-ingest-overview.md
         - name: 'Прием в реальном времени: сигнализация метаданных времени в потоковой трансляции'
-          href: media-services-specifications-live-timed-metadata.md
+          href: ../media-services-specifications-live-timed-metadata.md
         - name: Smooth Streaming для HEVC
-          href: media-services-specifications-ms-sstr-amendment-hevc.md
+          href: ../media-services-specifications-ms-sstr-amendment-hevc.md
 - name: Ресурсы
   items:
     - name: Сообщество Служб мультимедиа Azure

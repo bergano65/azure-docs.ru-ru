@@ -1,4 +1,4 @@
-- name: Документация по виртуальным машинам
+- name: Документация по Виртуальным машинам
   href: index.yml
 - name: Виртуальные машины Linux в Azure
   href: linux/overview.md
@@ -10,10 +10,10 @@
   items:
     - name: Oracle
       href: workloads/oracle/oracle-considerations.md
-    - name: Протокол SAP
+    - name: SAP
       href: workloads/sap/get-started.md
     - name: Высокопроизводительные вычисления
-      href: workloads/hpc/configure.md
+      href: workloads/hpc/overview.md
     - name: Повторное размещение мейнфреймов
       href: workloads/mainframe-rehosting/overview.md
 - name: Классические развертывания
