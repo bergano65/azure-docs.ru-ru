@@ -18,7 +18,7 @@
       href: ../sql/virtual-machines-windows-migrate-sql.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fsqlclassic%2ftoc.json
 - name: Практическое руководство
   items:
-    - name: Настройка высокой доступности
+    - name: Настройка высокого уровня доступности
       items:
         - name: Возможности обеспечения высокой доступности
           href: ../sql/virtual-machines-windows-sql-high-availability-dr.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fsqlclassic%2ftoc.json
@@ -30,7 +30,7 @@
           href: virtual-machines-windows-classic-ps-sql-ext-listener.md
         - name: Расширение локальной группы доступности в Azure
           href: virtual-machines-windows-classic-sql-onprem-availability.md
-    - name: управление
+    - name: Управление
       items:
         - name: "Использование расширения агента IaaS для SQL\_Server"
           href: virtual-machines-windows-classic-sql-server-agent-extension.md
@@ -42,22 +42,14 @@
           href: virtual-machines-windows-classic-sql-server-premium-storage.md
         - name: Вопросы безопасности
           href: ../sql/virtual-machines-windows-sql-security.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fsqlclassic%2ftoc.json
-    - name: Архивация и восстановление
+    - name: Резервное копирование и восстановление
       items:
-        - name: Архивация и восстановление
+        - name: Резервное копирование и восстановление
           href: ../sql/virtual-machines-windows-sql-backup-recovery.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fsqlclassic%2ftoc.json
         - name: Автоматическое резервное копирование
           href: virtual-machines-windows-classic-sql-automated-backup.md
-        - name: Резервное копирование и восстановление м помощью службы хранилища Azure
+        - name: Резервное копирование и восстановление с помощью службы хранилища Azure
           href: ../sql/virtual-machines-windows-use-storage-sql-server-backup-restore.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fsqlclassic%2ftoc.json
-    - name: бизнес-аналитика;
-      items:
-        - name: "Бизнес-аналитика SQL\_Server на виртуальных машинах Azure"
-          href: virtual-machines-windows-classic-ps-sql-bi.md
-        - name: 'Использование ReportViewer для веб-сайта, размещенного в Azure'
-          href: virtual-machines-windows-classic-sql-server-reportviewer.md
-        - name: Использование Azure PowerShell для создания виртуальной машины Azure с помощью сервера отчетов
-          href: virtual-machines-windows-classic-ps-sql-report.md
     - name: Рекомендации по оптимизации производительности
       href: ../sql/virtual-machines-windows-sql-performance.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fsqlclassic%2ftoc.json
     - name: Шаблоны приложений
@@ -66,7 +58,7 @@
   items:
     - name: Azure PowerShell
       href: /powershell/azure/overview?view=azuresmps-3.7.0
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/
     - name: T-SQL
       href: 'https://docs.microsoft.com/sql/t-sql/language-reference'
@@ -82,9 +74,9 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: SQL Server Data Tools (SSDT)
       href: 'https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt'
-    - name: SQL Server Management Studio (SSMS);
+    - name: SQL Server Management Studio (SSMS)
       href: 'https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms'
     - name: Инструменты SQL Server
       href: 'https://docs.microsoft.com/sql/tools/overview-sql-tools'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/search?q=%5Bazure-virtual-machine%5D+sql+server'

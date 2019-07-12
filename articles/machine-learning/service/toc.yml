@@ -245,7 +245,7 @@
         - name: Составление пакетных прогнозов
           displayName: score scoring asynchronous consume pipeline
           href: how-to-run-batch-predictions.md
-    - name: Мониторинг веб-служб
+    - name: Мониторинг моделей
       items:
         - name: Сбор и оценка данных модели
           displayName: track production
@@ -273,9 +273,6 @@
     - name: Пакет SDK для Машинного обучения
       displayName: api core package python data prep
       href: 'https://aka.ms/aml-sdk'
-    - name: Пакет SDK для мониторинга
-      displayName: api package python monitor
-      href: 'https://aka.ms/aml-monitoring-sdk'
     - name: Интерфейс командной строки для Машинного обучения
       displayName: 'cli, extension, command line, command-line, az, ci/cd, automate, automated'
       href: reference-azure-machine-learning-cli.md

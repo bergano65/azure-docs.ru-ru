@@ -42,7 +42,7 @@ SAPI — элемент Cognitive Services. Вы можете получить �
 
 ### <a name="open-the-sample-directly"></a>Открытие образца напрямую
 
-Получите ключ подписки, как описано выше. Затем откройте [ссылку на образец](https://htmlpreview.github.io/? https://github.com/Azure-Samples/SpeechToText-WebSockets-Javascript/blob/preview/samples/browser/Sample.html). Это загрузит страницу в ваш браузер по умолчанию (отображается с помощью [htmlPreview](https://github.com/htmlpreview/htmlpreview.github.com)).
+Получите ключ подписки, как описано выше. Затем откройте [ссылку на образец](https://htmlpreview.github.io/?https://github.com/Azure-Samples/SpeechToText-WebSockets-Javascript/blob/preview/samples/browser/Sample.html). Это загрузит страницу в ваш браузер по умолчанию (отображается с помощью [htmlPreview](https://github.com/htmlpreview/htmlpreview.github.com)).
 
 ### <a name="open-the-sample-from-a-local-copy"></a>Открытие образца из локальной копии
 
