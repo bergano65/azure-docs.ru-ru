@@ -4,7 +4,7 @@ description: Дополнительные сведения об известны
 services: virtual-machines
 documentationcenter: ''
 author: vermagit
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines
@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: amverma
-ms.openlocfilehash: a41155b90257f7eaec85c3adbd975a0a37e24d91
-ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
+ms.openlocfilehash: 8d4b57fb2fee3849e102868c86fe3cab465fc70d
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67560419"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67707782"
 ---
 # <a name="known-issues-with-hb-series-and-hc-series-vms"></a>Известные проблемы с виртуальными машинами серий HB и HC
 
@@ -87,6 +87,6 @@ echo 3 > /proc/sys/vm/drop_caches [cleans page-cache and slab objects]
 
 Это предупреждение можно игнорировать. Это вызвано известное ограничение низкоуровневая оболочка Azure, которая будет решена со временем.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [высокопроизводительные вычислительные системы](https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/) в Azure.

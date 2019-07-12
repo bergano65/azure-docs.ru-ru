@@ -4,7 +4,7 @@ description: Существуют две основные возможности
 services: virtual-machines-linux
 documentationcenter: ''
 author: hermanndms
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
 ms.devlang: NA
@@ -13,12 +13,12 @@ ums.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/05/2018
 ms.author: rclaus
-ms.openlocfilehash: 74f47344afff630a8633b340ea4ce21db28db7ca
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 875060a59cf70d295534c3a4f56136010a560e74
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60936607"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67709931"
 ---
 # <a name="sap-hana-backup-based-on-storage-snapshots"></a>Резервное копирование SAP HANA на основе моментальных снимков хранилища
 
@@ -147,7 +147,7 @@ _&quot;Мы настоятельно советуем как можно скор
 
 Эту процедуру можно упростить, остановив виртуальную машину SAP HANA перед созданием моментальных снимков больших двоичных объектов. В этом случае вы пропустите этап создания моментального снимка HANA (если в системе больше ничего не происходит), а также этап остановки файловой системы. Дополнительные этапы необходимы при создании моментальных снимков с включенной системой. Дополнительные сведения см. в разделе _Согласованность данных SAP HANA при создании моментальных снимков хранилища_ связанного [руководства по резервному копированию SAP HANA на виртуальных машинах Azure](sap-hana-backup-guide.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Общие сведения и информацию о начале работы см. в [руководстве по резервному копированию SAP HANA на виртуальных машинах Azure](sap-hana-backup-guide.md).
 * В статье [Резервное копирование SAP HANA в Azure на уровне файлов](sap-hana-backup-file-level.md) представлены сведения о файловой резервной копии.
 * Дополнительные сведения об обеспечении высокого уровня доступности и планировании аварийного восстановления SAP HANA в Azure (крупные экземпляры) см. в [этой статье](hana-overview-high-availability-disaster-recovery.md).

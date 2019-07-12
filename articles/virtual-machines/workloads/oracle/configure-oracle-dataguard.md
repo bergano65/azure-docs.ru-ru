@@ -4,7 +4,7 @@ description: Быстрое создание и запуск Oracle Data Guard �
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: romitgirdhar
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: c98e59cd0e547381d6b173b3a4b91c3a3e27b3a8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4329ce7fb74c61a601a37646a398c46940e22ffa
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60771725"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67707508"
 ---
 # <a name="implement-oracle-data-guard-on-an-azure-linux-virtual-machine"></a>Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux 
 
@@ -686,7 +686,7 @@ SQL>
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Учебник. по созданию высокодоступных виртуальных машин](../../linux/create-cli-complete.md)
 

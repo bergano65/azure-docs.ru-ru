@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 98acc7f6dd5ec7cf3702bbcbe60e2739732512e2
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: c28cf4326593897dcbc90902737fc4846356078d
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67294914"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67653386"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS
 
@@ -33,6 +33,10 @@ ms.locfileid: "67294914"
 ## <a name="how-can-i-start-using-azure-disk-encryption"></a>Как приступить к работе с шифрованием дисков Azure?
 
 Чтобы приступить к работе, ознакомьтесь с [обзором шифрования дисков Azure](azure-security-disk-encryption-overview.md).
+
+## <a name="what-vm-sizes-and-operating-systems-support-azure-disk-encryption"></a>Какие размеры виртуальных Машин и операционные системы поддерживают шифрование дисков Azure?
+
+[Предварительных требованиях шифрования дисков Azure](azure-security-disk-encryption-prerequisites.md) статьи списки [размеры виртуальных Машин](azure-security-disk-encryption-prerequisites.md#supported-vm-sizes) и [операционных систем виртуальной Машины](azure-security-disk-encryption-prerequisites.md#supported-operating-systems) , которые поддерживают шифрование дисков Azure.
 
 ## <a name="can-i-encrypt-both-boot-and-data-volumes-with-azure-disk-encryption"></a>Можно ли с помощью шифрования дисков Azure зашифровать загрузочные тома и тома данных?
 
@@ -131,7 +135,7 @@ XFS тома поддерживаются для шифрования диско
 
 Задать вопрос или оставить отзыв можно на [форуме по шифрованию дисков Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDiskEncryption).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Из этого документа вы получили ответы на самые распространенные вопросы, связанные с шифрованием дисков Azure. Дополнительные сведения об этой службе см. в следующих статьях:
 
 - [Шифрование дисков Azure для виртуальных машин IaaS](azure-security-disk-encryption-overview.md)

@@ -3,15 +3,15 @@ title: Как завершить работу единое Edge FXT Filer для
 description: Процедуры для запуска и безопасного отключения узла Azure FXT Edge Filer
 author: ekpgh
 ms.service: fxt-edge-filer
-ms.topic: how-to
+ms.topic: conceptual
 ms.date: 07/01/2019
 ms.author: v-erkell
-ms.openlocfilehash: 8d779547040da9855409d3408827af2e4acd17a7
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: 6921e7a52e43a63055b59242c02cc6ca3b8c5313
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67542862"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620099"
 ---
 # <a name="how-to-safely-power-off-azure-fxt-edge-filer-hardware"></a>Безопасно выключение Azure FXT Edge Filer оборудования
 
@@ -33,7 +33,7 @@ ms.locfileid: "67542862"
 1. В списке узлов кластера найдите расположение, которое вы хотите завершить работу. Нажмите кнопку **выключить питание** кнопку в его **действия** столбца. 
 1. Подождите несколько минут. Узел отключается и выключение питания сам.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о индикаторы состояния и другие показатели в [состояние оборудования монитора Azure FXT Edge Filer](fxt-monitor.md).
 * Дополнительные сведения о power Azure FXT Edge Filer предоставляет в [подключите кабели питания](fxt-network-power.md#connect-power-cables).

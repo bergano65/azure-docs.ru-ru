@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: 0a1ead1580f6764fec7d1d18daa38bf093f242f2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 07/11/2019
+ms.openlocfilehash: c19ec06ce353d653086fa693dde975a55f51f823
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61364445"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839259"
 ---
 # <a name="replicate-data-into-azure-database-for-mariadb"></a>Репликация данных в базу данных Azure для MariaDB
 
@@ -37,7 +37,6 @@ ms.locfileid: "61364445"
 
 ### <a name="other"></a>Другие
 - Репликация данных поддерживается только в ценовых категориях общего назначения и с оптимизацией для операций в памяти.
-- Идентификаторы глобальных транзакций (GTID) не поддерживаются.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Узнайте, как [настроить репликацию входных данных](howto-data-in-replication.md).

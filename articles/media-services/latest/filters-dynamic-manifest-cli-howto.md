@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 06/13/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: c6007b66e31996db5c6b043219470968a7b05031
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 26350479f0f066f45c143e1a35061b3a409de309
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67114686"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67786491"
 ---
 # <a name="creating-filters-with-cli"></a>Создание фильтров с помощью CLI 
 
@@ -32,7 +32,7 @@ ms.locfileid: "67114686"
 > [!NOTE]
 > Не забудьте проверить [presentationTimeRange](filters-concept.md#presentationtimerange).
 
-## <a name="prerequisites"></a>Технические условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа. 
 
@@ -88,7 +88,7 @@ ms.locfileid: "67114686"
 az ams account-filter create -a amsAccount -g resourceGroup -n filterName --tracks @tracks.json
 ```
 
-Также см. [примеры JSON для фильтров](https://docs.microsoft.com/rest/api/media/accountfilters/createorupdate#create_an_account_filter).
+Также см. [примеры JSON для фильтров](https://docs.microsoft.com/rest/api/media/accountfilters/createorupdate#create-an-account-filter).
 
 ## <a name="create-asset-filters"></a>Создание фильтров ресурсов
 
@@ -98,7 +98,7 @@ az ams account-filter create -a amsAccount -g resourceGroup -n filterName --trac
 az ams asset-filter create -a amsAccount -g resourceGroup -n filterName --asset-name assetName --tracks @tracks.json
 ```
 
-Также см. [примеры JSON для фильтров](https://docs.microsoft.com/rest/api/media/assetfilters/createorupdate#create_an_asset_filter).
+Также см. [примеры JSON для фильтров](https://docs.microsoft.com/rest/api/media/assetfilters/createorupdate#create-an-asset-filter).
 
 ## <a name="associate-filters-with-streaming-locator"></a>Связать фильтры с указатель потоковой передачи
 

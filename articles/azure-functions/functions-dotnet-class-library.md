@@ -11,12 +11,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 09/12/2018
 ms.author: glenga
-ms.openlocfilehash: 2a6d670ba9f2f496cc94d2790eb6f66d46305746
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 30c97eed5f28631bd2583cbda75df5755ffe2e34
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65872788"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67626098"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Справочник разработчика C# по функциям Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "65872788"
  | - host.json
 ```
 
-Этот каталог — то, что будет развернуто в вашем приложении-функции в Azure. Расширения привязки, необходимые в [версии 2.x](functions-versions.md) среды выполнения функций, [добавляются в проект как пакеты NuGet](./functions-bindings-register.md#c-class-library-with-visual-studio-2019).
+Этот каталог — то, что будет развернуто в вашем приложении-функции в Azure. Расширения привязки, необходимые в [версии 2.x](functions-versions.md) среды выполнения функций, [добавляются в проект как пакеты NuGet](./functions-bindings-register.md#vs).
 
 > [!IMPORTANT]
 > Процесс сборки создает файл *function.json* для каждой функции. Этот файл *function.json* не предназначен для непосредственного редактирования. Невозможно изменить конфигурацию привязки или отключить функцию путем редактирования этого файла. Чтобы узнать, как отключить функцию, см. раздел [Отключение функций](disable-function.md#functions-2x---c-class-libraries).
@@ -231,7 +231,7 @@ public static class ICollectorExample
 }
 ```
 
-## <a name="logging"></a>Ведение журналов
+## <a name="logging"></a>Ведение журнала
 
 Для записи выходных данных в потоковые журналы в C# включите аргумент с типом [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger). Мы рекомендуем использовать имя `log`, как показано в следующем примере:  
 
@@ -402,7 +402,7 @@ public static class IBinderExampleMultipleAttributes
 
 [!INCLUDE [Supported triggers and bindings](../../includes/functions-bindings.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о триггерах и привязках](functions-triggers-bindings.md)

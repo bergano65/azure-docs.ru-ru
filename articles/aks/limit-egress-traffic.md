@@ -2,17 +2,17 @@
 title: Ограничить исходящий трафик в службе Azure Kubernetes (AKS)
 description: Узнайте, какие порты и адреса необходимы для управления исходящий трафик в службе Azure Kubernetes (AKS)
 services: container-service
-author: iainfoulds
+author: mlearned
 ms.service: container-service
 ms.topic: article
 ms.date: 06/06/2019
-ms.author: iainfou
-ms.openlocfilehash: 52a9ba20b60e8ef6cdb743546cd842e4ee24b3fd
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.author: mlearned
+ms.openlocfilehash: 12922496bc97ad51d1cc96f7ffe8df05c1fd66ea
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67441923"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67614963"
 ---
 # <a name="preview---limit-egress-traffic-for-cluster-nodes-and-control-access-to-required-ports-and-services-in-azure-kubernetes-service-aks"></a>Предварительная версия — ограничение исходящий трафик для узлов кластера и управление доступом для требуемых портов и служб в службе Azure Kubernetes (AKS)
 
@@ -77,7 +77,7 @@ az provider register --namespace Microsoft.ContainerService
 
 Следующими полными именами домена / правил приложения требуются:
 
-| ПОЛНОЕ ДОМЕННОЕ ИМЯ                       | Port      | Использование      |
+| ПОЛНОЕ ДОМЕННОЕ ИМЯ                       | Порт      | Использование      |
 |----------------------------|-----------|----------|
 | *.HCP. \<расположение\>. azmk8s.io | HTTPS:443, TCP:22, TCP:9000 | Этот адрес является конечной точкой сервера API. Замените *\<расположение\>* с областью, где развертывается кластер AKS. |
 | *. приведенные. \<расположение\>. azmk8s.io | HTTPS:443, TCP:22, TCP:9000 | Этот адрес является конечной точкой сервера API. Замените *\<расположение\>* с областью, где развертывается кластер AKS. |
@@ -97,7 +97,7 @@ az provider register --namespace Microsoft.ContainerService
 
 Следующими полными именами домена / правил приложения рекомендуются для AKS кластеров для правильной работы:
 
-| ПОЛНОЕ ДОМЕННОЕ ИМЯ                                    | Port      | Использование      |
+| ПОЛНОЕ ДОМЕННОЕ ИМЯ                                    | Порт      | Использование      |
 |-----------------------------------------|-----------|----------|
 | *.ubuntu.com                            | HTTP:80   | Этот адрес позволяет загрузить исправления и обновления узлов кластера Linux. |
 | Packages.Microsoft.com                  | HTTPS:443 | Этот адрес — это репозиторий пакетов Microsoft используется для кэшированных *apt-get* операций. |
@@ -108,7 +108,7 @@ az provider register --namespace Microsoft.ContainerService
 | apt.dockerproject.org                   | HTTPS:443 | Этот адрес используется для установки драйвер и операции на узлах, на основе графического Процессора. |
 | nvidia.github.io                        | HTTPS:443 | Этот адрес используется для установки драйвер и операции на узлах, на основе графического Процессора. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, какие порты и адреса, чтобы разрешить, если ограничить исходящий трафик для кластера. Также можно определить как модули, сами могут взаимодействовать и какие ограничения у них есть в пределах кластера. Дополнительные сведения см. в разделе [защиты трафика между модулей с помощью политик сети в AKS][network-policy].
 

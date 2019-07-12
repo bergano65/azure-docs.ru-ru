@@ -8,12 +8,13 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 06/26/2019
 ms.author: dkshir
-ms.openlocfilehash: d079e082fb8ac90f398e46f283bd1e33e2b4ab40
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.custom: security-recommendations
+ms.openlocfilehash: 4416f3149c33a0c9a437b2fbd6a48729a5a7f044
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67463088"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67722869"
 ---
 # <a name="security-recommendations-for-azure-internet-of-things-iot-deployment"></a>Рекомендации по безопасности для развертывания Интернета вещей Azure (IoT)
 
@@ -61,7 +62,7 @@ ms.locfileid: "67463088"
 | Мониторинг решения Интернета вещей из облака | Отслеживать общую работоспособность решения центра Интернета вещей с помощью [метрики в Azure Monitor](https://docs.microsoft.com/azure/iot-hub/iot-hub-metrics). |
 | Настройка системы диагностики | Отслеживать операции, ведение журнала событий в решении и последующей отправки журналов диагностики Azure Monitor, чтобы получить представление о производительности. Чтение [мониторинг и диагностика неполадок в центре Интернета вещей](https://docs.microsoft.com/azure/iot-hub/iot-hub-monitor-resource-health) Дополнительные сведения. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для более сложных сценариев, включающих Интернета вещей Azure необходимо учитывать дополнительные требования к безопасности. См. в разделе [архитектура безопасности Интернета вещей](iot-security-architecture.md) Дополнительные рекомендации.
 

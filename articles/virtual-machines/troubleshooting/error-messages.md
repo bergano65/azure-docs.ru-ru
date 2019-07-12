@@ -4,7 +4,7 @@ description: Ознакомьтесь с кодами ошибок, часто �
 services: virtual-machines
 documentationcenter: ''
 author: xujing-ms
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines
@@ -12,12 +12,12 @@ ms.topic: troubleshooting
 ms.workload: infrastructure
 ms.date: 5/22/2017
 ms.author: xujing
-ms.openlocfilehash: 5945be210812a6cbc24c9a3bb12414be5212be17
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3b8c9c80c93430d8dc5a888742e4e4e96ba99400
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60711209"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67695324"
 ---
 # <a name="understand-common-error-messages-when-you-manage-virtual-machines-in-azure"></a>Сведения о сообщениях об ошибках, часто возникающих при управлении виртуальными машинами в Azure
 
@@ -215,5 +215,5 @@ ms.locfileid: "60711209"
 |  VMStartTimedOut  |  Виртуальная машина "{0}" не запустилась в отведенное время. ВМ еще может успешно запуститься. Проверьте состояние запуска позднее.  |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Если вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**.

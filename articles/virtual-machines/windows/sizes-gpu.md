@@ -4,7 +4,7 @@ description: Список различных размеров виртуальн
 services: virtual-machines-windows
 documentationcenter: ''
 author: jonbeck7
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/11/2019
 ms.author: jonbeck
-ms.openlocfilehash: 57a19b11d7aead6f67f411b75b046a9238cf7c12
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 86725fccba810284677aeb3324839a52c91c3021
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67055239"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67710206"
 ---
 # <a name="gpu-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для GPU
 
@@ -44,6 +44,6 @@ ms.locfileid: "67055239"
 - [Оптимизированные для хранилища](sizes-storage.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.
 

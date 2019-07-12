@@ -2,17 +2,17 @@
 title: Использование политик безопасности pod в службе Azure Kubernetes (AKS)
 description: Сведения об управлении приемной комиссии pod с помощью PodSecurityPolicy в службе Azure Kubernetes (AKS)
 services: container-service
-author: iainfoulds
+author: mlearned
 ms.service: container-service
 ms.topic: article
 ms.date: 04/17/2019
-ms.author: iainfou
-ms.openlocfilehash: 9da722006651cfc9e9f2a175d5c330ba5df08123
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.author: mlearned
+ms.openlocfilehash: c398567dd3383f4b0b4fd2eaa4b474d1e95b7575
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447068"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67613896"
 ---
 # <a name="preview---secure-your-cluster-using-pod-security-policies-in-azure-kubernetes-service-aks"></a>Preview — защита кластера с помощью политик безопасности pod в службе Azure Kubernetes (AKS)
 
@@ -500,7 +500,7 @@ kubectl delete -f psp-deny-privileged.yaml
 kubectl delete namespace psp-aks
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье показано, как создать политику безопасности pod для предотвращения использования привилегированного доступа. Существует множество возможностей, которые можно применить политики, такие как тип для тома или запуска от имени пользователя. Дополнительные сведения о доступных параметрах см. в разделе [Kubernetes pod справочные документы политики безопасности][kubernetes-policy-reference].
 

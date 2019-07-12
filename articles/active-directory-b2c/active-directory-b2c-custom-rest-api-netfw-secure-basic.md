@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/25/2017
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 08aebf698a7a00729a0e37b57cb15938853e4185
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: 8c1251056ad816af664f95abcd18d50ceca4619d
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67501631"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67835278"
 ---
 # <a name="secure-your-restful-services-by-using-http-basic-authentication"></a>Защита служб RESTful с использованием обычной проверки подлинности HTTP
 
@@ -27,7 +27,7 @@ ms.locfileid: "67501631"
 
 Дополнительные сведения см. в статье [Basic authentication in ASP.NET web API](https://docs.microsoft.com/aspnet/web-api/overview/security/basic-authentication) (Обычная проверка подлинности в веб-API ASP.NET).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Выполните действия из статьи: [Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных](active-directory-b2c-custom-rest-api-netfw.md).
 
@@ -68,7 +68,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 ### <a name="step-13-add-an-authentication-middleware-class"></a>Шаг 1.3. Добавление класса ПО промежуточного слоя для аутентификации
 
-Добавьте класс `ClientAuthMiddleware.cs` в папку *App_Start*. Для этого выполните следующие действия:
+Добавьте класс `ClientAuthMiddleware.cs` в папку *App_Start*. Для этого сделайте следующее:
 
 1. Щелкните правой кнопкой мыши папку *App_Start*, выберите **Добавить**, а затем — **Класс**.
 
@@ -76,12 +76,12 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 2. В поле **Имя** введите **ClientAuthMiddleware.cs**.
 
-   ![Создание нового класса C#](media/aadb2c-ief-rest-api-netfw-secure-basic/rest-api-netfw-secure-basic-OWIN-startup-auth2.png)
+   ![Создание нового C# класс в диалоговом окне Добавление нового элемента в Visual Studio](media/aadb2c-ief-rest-api-netfw-secure-basic/rest-api-netfw-secure-basic-OWIN-startup-auth2.png)
 
 3. Откройте файл *App_Start\ClientAuthMiddleware.cs* и замените содержимое этого файла следующим кодом:
 
     ```csharp
-    
+
     using Microsoft.Owin;
     using System;
     using System.Collections.Generic;
@@ -91,7 +91,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
     using System.Text;
     using System.Threading.Tasks;
     using System.Web;
-    
+
     namespace Contoso.AADB2C.API
     {
         /// <summary>
@@ -101,12 +101,12 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
         {
             private static readonly string ClientID = ConfigurationManager.AppSettings["WebApp:ClientId"];
             private static readonly string ClientSecret = ConfigurationManager.AppSettings["WebApp:ClientSecret"];
-    
+
             /// <summary>
             /// Gets or sets the next owin middleware
             /// </summary>
             private Func<IDictionary<string, object>, Task> Next { get; set; }
-    
+
             /// <summary>
             /// Initializes a new instance of the <see cref="ClientAuthMiddleware"/> class.
             /// </summary>
@@ -115,7 +115,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
             {
                 this.Next = next;
             }
-    
+
             /// <summary>
             /// Invoke client authentication middleware during each request.
             /// </summary>
@@ -125,7 +125,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
             {
                 // Get wrapper class for the environment
                 var context = new OwinContext(environment);
-    
+
                 // Check whether the authorization header is available. This contains the credentials.
                 var authzValue = context.Request.Headers.Get("Authorization");
                 if (string.IsNullOrEmpty(authzValue) || !authzValue.StartsWith("Basic ", StringComparison.OrdinalIgnoreCase))
@@ -133,21 +133,21 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
                     // Process next middleware
                     return Next(environment);
                 }
-    
+
                 // Get credentials
                 var creds = authzValue.Substring("Basic ".Length).Trim();
                 string clientId;
                 string clientSecret;
-    
+
                 if (RetrieveCreds(creds, out clientId, out clientSecret))
                 {
                     // Set transaction authenticated as client
                     context.Request.User = new GenericPrincipal(new GenericIdentity(clientId, "client"), new string[] { "client" });
                 }
-    
+
                 return Next(environment);
             }
-    
+
             /// <summary>
             /// Retrieve credentials from header
             /// </summary>
@@ -159,7 +159,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
             {
                 string pair;
                 clientId = clientSecret = string.Empty;
-    
+
                 try
                 {
                     pair = Encoding.UTF8.GetString(Convert.FromBase64String(credentials));
@@ -172,16 +172,16 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
                 {
                     return false;
                 }
-    
+
                 var ix = pair.IndexOf(':');
                 if (ix == -1)
                 {
                     return false;
                 }
-    
+
                 clientId = pair.Substring(0, ix);
                 clientSecret = pair.Substring(ix + 1);
-    
+
                 // Return whether credentials are valid
                 return (string.Compare(clientId, ClientAuthMiddleware.ClientID) == 0 &&
                     string.Compare(clientSecret, ClientAuthMiddleware.ClientSecret) == 0);
@@ -192,17 +192,17 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 ### <a name="step-14-add-an-owin-startup-class"></a>Шаг 1.4. Добавление класса запуска OWIN
 
-Добавьте класс запуска OWIN с именем `Startup.cs` в API. Для этого выполните следующие действия:
+Добавьте класс запуска OWIN с именем `Startup.cs` в API. Для этого сделайте следующее:
 1. Щелкните проект правой кнопкой мыши и выберите **Добавить** > **Новый элемент**, после чего найдите **OWIN**.
 
-   ![Добавление класса запуска OWIN](media/aadb2c-ief-rest-api-netfw-secure-basic/rest-api-netfw-secure-basic-OWIN-startup.png)
+   ![Создание класса запуска OWIN в диалоговом окне Добавление нового элемента в Visual Studio](media/aadb2c-ief-rest-api-netfw-secure-basic/rest-api-netfw-secure-basic-OWIN-startup.png)
 
 2. Откройте файл *Startup.cs* и замените содержимое этого файла следующим кодом:
 
     ```csharp
     using Microsoft.Owin;
     using Owin;
-    
+
     [assembly: OwinStartup(typeof(Contoso.AADB2C.API.Startup))]
     namespace Contoso.AADB2C.API
     {
@@ -241,7 +241,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 4. В пункте **Параметры** выберите **Manual** (Вручную).
 
-5. Для параметра **Имя** введите значение **B2cRestClientId**.  
+5. Для параметра **Имя** введите значение **B2cRestClientId**.
     Префикс *B2C_1A_* может быть добавлен автоматически.
 
 6. В поле **Секрет** введите ИД приложения, который вы задали ранее.
@@ -262,7 +262,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 4. В пункте **Параметры** выберите **Manual** (Вручную).
 
-5. Для параметра **Имя** введите значение **B2cRestClientSecret**.  
+5. Для параметра **Имя** введите значение **B2cRestClientSecret**.
     Префикс *B2C_1A_* может быть добавлен автоматически.
 
 6. В поле **Секрет** введите секрет приложения, который вы задали ранее.
@@ -297,8 +297,8 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
     ```
 
     После добавления фрагмента кода технический профиль должен выглядеть аналогично следующему XML-коду:
-    
-    ![Добавление XML-элементов для простой аутентификации](media/aadb2c-ief-rest-api-netfw-secure-basic/rest-api-netfw-secure-basic-add-1.png)
+
+    ![Добавьте XML-элементы для обычной проверки подлинности в Технический профиль](media/aadb2c-ief-rest-api-netfw-secure-basic/rest-api-netfw-secure-basic-add-1.png)
 
 ## <a name="step-5-upload-the-policy-to-your-tenant"></a>Шаг 5. Отправка политики в клиент
 
@@ -323,12 +323,12 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 2. Откройте **B2C_1A_signup_signin**, отправленную вами пользовательскую политику проверяющей стороны, а затем выберите **Run Now** (Запустить сейчас).
 
-3. Проверьте процесс, введя **Test** в поле **Имя**.  
+3. Проверьте процесс, введя **Test** в поле **Имя**.
     В верхней части страницы Azure AD B2C отобразится сообщение об ошибке.
 
-    ![Проверка API для идентификации](media/aadb2c-ief-rest-api-netfw-secure-basic/rest-api-netfw-test.png)
+    ![Тестирование проверки входных данных заданным именем в API для идентификации](media/aadb2c-ief-rest-api-netfw-secure-basic/rest-api-netfw-test.png)
 
-4. В поле **Имя** введите имя, отличное от Test.  
+4. В поле **Имя** введите имя, отличное от Test.
     Azure AD B2C зарегистрирует нового пользователя и отправит в ваше приложение номер лояльности. Обратите внимание на номер в этом примере:
 
     ```
@@ -357,6 +357,6 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 * После того как вы ознакомитесь с [пошаговым руководством по началу работы с пользовательскими политиками](active-directory-b2c-get-started-custom.md), рекомендуем создать свой сценарий, используя собственные файлы пользовательской политики. Для справки мы предоставили [образцы файлов политики](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/scenarios/aadb2c-ief-rest-api-netfw-secure-basic).
 * Вы можете загрузить полный код из примера решения Visual Studio [отсюда](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/tree/master/scenarios/aadb2c-ief-rest-api-netfw-secure-basic).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Azure Active Directory B2C: Secure your RESTful services using client certificates](active-directory-b2c-custom-rest-api-netfw-secure-cert.md) (Azure Active Directory B2C: защита служб RESTful с помощью клиентских сертификатов)

@@ -5,14 +5,14 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 05/29/2019
+ms.date: 07/05/2019
 ms.author: yushwang
-ms.openlocfilehash: 6535949767999e04b11106ff8a294e912a6d0fb8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8301594f63efaa5c6484a4dfd640aafa96cf15a0
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66388856"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67666260"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз
 
@@ -31,10 +31,6 @@ ms.locfileid: "66388856"
 
 ## <a name="devicetable"></a>Проверенные VPN-устройства и руководства по конфигурации устройства
 
-> [!NOTE]
-> При настройке подключения типа "сеть — сеть" для VPN-устройства необходимо указывать общедоступный IP-адрес IPv4.
->
-
 В сотрудничестве с поставщиками устройств мы утвердили набор стандартных VPN-устройств. Все устройства из приведенного ниже списка семейств должны работать с VPN-шлюзами. Чтобы понять, какой тип VPN (PolicyBased или RouteBased) использовать для VPN-шлюза, который необходимо настроить, ознакомьтесь с [этим разделом](vpn-gateway-about-vpn-gateway-settings.md#vpntype).
 
 Чтобы настроить VPN-устройство, перейдите по ссылкам, соответствующим семейству устройств. Ссылки на инструкции по настройке будут предоставляться по мере возможности. За поддержкой VPN-устройства обратитесь к его изготовителю.
@@ -48,6 +44,7 @@ ms.locfileid: "66388856"
 | Check Point |Security Gateway |R80.10 |[Руководство по настройке](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |[Руководство по настройке](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk101275) |
 | Cisco              |ASA       |8.3<br>8.4+ (IKEv2*) |Поддерживаются |[Руководство по настройке*](https://www.cisco.com/c/en/us/support/docs/security/adaptive-security-appliance-asa-software/214109-configure-asa-ipsec-vti-connection-to-az.html) |
 | Cisco |ASR |PolicyBased: iOS 15.1<br>RouteBased: iOS 15.2 |Поддерживаются |Поддерживаются |
+| Cisco | CSR-ФАЙЛА | RouteBased: IOS-XE 16.10 | | [Скрипт настройки](vpn-gateway-download-vpndevicescript.md) |
 | Cisco |ISR |PolicyBased: iOS 15.0<br>RouteBased*: iOS 15.1 |Поддерживаются |Поддерживаются |
 | Cisco |Meraki |Н/Д |Не совместимо |Не совместимо |
 | Citrix |NetScaler MPX, SDX, VPX |10.1 и выше |[Руководство по настройке](https://docs.citrix.com/en-us/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html) |Не совместимо |
@@ -127,7 +124,7 @@ ms.locfileid: "66388856"
 
 ### <a name="ike-phase-1-main-mode-parameters"></a>Параметры этапа 1 IKE (главный режим)
 
-| **Свойство**          |**PolicyBased**    | **RouteBased**    |
+| **Property**          |**PolicyBased**    | **RouteBased**    |
 | ---                   | ---               | ---               |
 | Версия IKE           |IKEv1              |IKEv2              |
 | Группа Диффи — Хелмана  |Группа 2 (1024 бита) |Группа 2 (1024 бита) |
@@ -137,7 +134,7 @@ ms.locfileid: "66388856"
 
 ### <a name="ike-phase-2-quick-mode-parameters"></a>Параметры этапа 2 IKE (быстрый режим)
 
-| **Свойство**                  |**PolicyBased**| **RouteBased**                              |
+| **Property**                  |**PolicyBased**| **RouteBased**                              |
 | ---                           | ---           | ---                                         |
 | Версия IKE                   |IKEv1          |IKEv2                                        |
 | Алгоритмы шифрования и хэширования |1. AES256, SHA256<br>2. AES256, SHA1<br>3. AES128, SHA1<br>4. 3DES, SHA1 |[Предложения по сопоставлению безопасности в быстром режиме на основе маршрутизации](#RouteBasedOffers) |
@@ -153,23 +150,23 @@ ms.locfileid: "66388856"
 
 #### <a name="azure-gateway-as-initiator"></a>Шлюз Azure в качестве инициатора
 
-|-  |**Шифрование**|**Проверка подлинности**|**Группа PFS**|
+|-  |**Шифрование**|**Authentication**|**Группа PFS**|
 |---| ---          |---               |---          |
 | 1 |GCM AES256    |GCM (AES256)      |Нет         |
 | 2 |AES256        |SHA1              |Нет         |
 | 3 |3DES          |SHA1              |Нет         |
-| 4\. |AES256        |SHA256            |Нет         |
+| 4 |AES256        |SHA256            |Нет         |
 | 5 |AES128        |SHA1              |Нет         |
 | 6 |3DES          |SHA256            |Нет         |
 
 #### <a name="azure-gateway-as-responder"></a>Шлюз Azure в качестве ответчика
 
-|-  |**Шифрование**|**Проверка подлинности**|**Группа PFS**|
+|-  |**Шифрование**|**Authentication**|**Группа PFS**|
 |---| ---          | ---              |---          |
 | 1 |GCM AES256    |GCM (AES256)      |Нет         |
 | 2 |AES256        |SHA1              |Нет         |
 | 3 |3DES          |SHA1              |Нет         |
-| 4\. |AES256        |SHA256            |Нет         |
+| 4 |AES256        |SHA256            |Нет         |
 | 5 |AES128        |SHA1              |Нет         |
 | 6 |3DES          |SHA256            |Нет         |
 | 7 |DES           |SHA1              |Нет         |

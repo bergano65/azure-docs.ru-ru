@@ -4,7 +4,7 @@ description: Выполнение обновления операционной 
 services: virtual-machines-linux
 documentationcenter: ''
 author: saghorpa
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
 ms.devlang: NA
@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 06/28/2018
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d7d451f3831309b4755170915b35a23da8910510
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5583a633c64943185f874e1c0ff80f654010aa53
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60935642"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67710014"
 ---
 # <a name="operating-system-upgrade"></a>Обновление операционной системы
 В этом документе описывается обновление операционной системы в HANA (крупные экземпляры).
@@ -50,6 +50,6 @@ ms.locfileid: "60935642"
 - Для категории номеров SKU класса II после установки новой версии операционной системы удаляется Software Foundation Server (SFS). После установки новой версии операционной системы необходимо переустановить совместимый компонент SFS.
 - Драйверы карт Ethernet (ENIC и FNIC) откатываются до предыдущей версии. После установки новой версии необходимо переустановить совместимые версии драйверов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Ознакомьтесь с [резервным копированием и восстановлением](hana-overview-high-availability-disaster-recovery.md) операционной системы для номеров SKU класса I.
 - Ознакомьтесь с [резервным копированием операционной системы для номеров SKU класса II](os-backup-type-ii-skus.md).

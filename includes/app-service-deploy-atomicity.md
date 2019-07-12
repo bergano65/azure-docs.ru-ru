@@ -5,20 +5,20 @@ services: app-service
 author: cephalin
 ms.service: app-service
 ms.topic: include
-ms.date: 06/08/2018
+ms.date: 06/12/2019
 ms.author: cephalin
 ms.custom: include file
-ms.openlocfilehash: 8709956adee06e4e783ac5a7b317b2c4dec43e73
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 93332002cd2ac513d125e0f9eb75dff4a2d8760c
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185759"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67836831"
 ---
 ## <a name="what-happens-to-my-app-during-deployment"></a>Что происходит с моим приложением во время развертывания?
 
-Все официально поддерживаемые методы развертывания объединяет одно: они вносят изменения в файлы в папке `/home/site/wwwroot` приложения. Именно эти файлы выполняются в рабочей среде. Поэтому развертывание может завершиться сбоем из-за заблокированных файлов или приложение в рабочей среде может вести себя непредсказуемо во время развертывания, так как не все файлы обновляются одновременно. Избежать этих проблем можно несколькими способами.
+Все методы развертывания официально поддерживаемых вносить изменения в файлы `/home/site/wwwroot` папку приложения. Эти файлы являются теми же самыми элементами, которые выполняются в рабочей среде. Таким образом развертывание может завершиться сбоем из-за заблокированные файлы. Приложение в рабочей среде может также работать непредсказуемым образом во время развертывания, так как не все файлы обновляются одновременно. Избежать этих проблем можно несколькими способами.
 
-- Остановите приложение или включите для него автономный режим на время развертывания. Дополнительные сведения см. в разделе [Dealing with locked files during deployment](https://github.com/projectkudu/kudu/wiki/Dealing-with-locked-files-during-deployment) (Устранение проблем из-за заблокированных файлов при развертывании).
+- Остановите приложение или включите для него автономный режим на время развертывания. Дополнительные сведения см. в разделе [забытое заблокированные файлы во время развертывания](https://github.com/projectkudu/kudu/wiki/Dealing-with-locked-files-during-deployment).
 - Выполняйте развертывание в [промежуточный слот](../articles/app-service/deploy-staging-slots.md) с включенным [автоматическим переключением](../articles/app-service/deploy-staging-slots.md#configure-auto-swap). 
-- Используйте [запуск из пакета](https://github.com/Azure/app-service-announcements/issues/84) вместо этого.
+- Используйте [запуск из пакета](https://github.com/Azure/app-service-announcements/issues/84) вместо непрерывного развертывания.

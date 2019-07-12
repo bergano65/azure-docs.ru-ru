@@ -4,7 +4,7 @@ description: Как подключить хранилище файлов Azure �
 services: virtual-machines-linux
 documentationcenter: virtual-machines-linux
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-linux
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/28/2018
 ms.author: cynthn
-ms.openlocfilehash: 4b3bba1da5238655ca749f6464c539e53ca48f27
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9ca58bbc6f7b983ff545eb2dca6240359637e214
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60542787"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67671227"
 ---
 # <a name="mount-azure-file-storage-on-linux-vms-using-smb"></a>Подключение хранилища файлов Azure на виртуальных машинах Linux с помощью протокола SMB
 
@@ -112,7 +112,7 @@ sudo mount -t cifs //$STORAGEACCT.file.core.windows.net/myshare /mnt/MyAzureFile
 ```
 Для обеспечения безопасности в рабочих средах следует хранить учетные данные за пределами fstab.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка виртуальной машины Linux во время создания с помощь cloud-init](using-cloud-init.md)
 - [Добавление диска к виртуальной машине Linux](add-disk.md)

@@ -16,12 +16,12 @@ ms.workload: iaas-sql-server
 ms.date: 08/09/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: ce07c6c19c19f134cc322309bb338b94ef11ea85
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d53c1de9678db497a20788d0cab7ee4f0e6f0c9c
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66393860"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67607062"
 ---
 # <a name="pricing-guidance-for-sql-server-azure-vms"></a>Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure
 
@@ -44,10 +44,10 @@ ms.locfileid: "66393860"
 
 Чтобы создать виртуальную машину Azure SQL Server 2017 на основе одного из этих образов, перейдите по следующим ссылкам:
 
-| платформа | Образы с бесплатными лицензиями |
+| Платформа | Образы с бесплатными лицензиями |
 |---|---|
-| Windows Server 2016 | [Виртуальная машина SQL Server 2017 Developer в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonWindowsServer2016)<br/>[Виртуальная машина SQL Server 2017 Express в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonWindowsServer2016) |
-| Red Hat Enterprise Linux. | [Виртуальная машина SQL Server 2017 Developer в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonRedHatEnterpriseLinux74)<br/>[Виртуальная машина SQL Server 2017 Express в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonRedHatEnterpriseLinux74) |
+| Windows Server 2016 | [Виртуальная машина SQL Server 2017 Developer в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonWindowsServer2016)<br/>[Виртуальная машина SQL Server 2017 Express в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonWindowsServer2016) |
+| Red Hat Enterprise Linux | [Виртуальная машина SQL Server 2017 Developer в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonRedHatEnterpriseLinux74)<br/>[Виртуальная машина SQL Server 2017 Express в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonRedHatEnterpriseLinux74) |
 | SUSE Linux Enterprise Server | [Виртуальная машина SQL Server 2017 Developer в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonSLES12SP2)<br/>[Виртуальная машина SQL Server 2017 Express в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonSLES12SP2) |
 | Ubuntu | [Виртуальная машина SQL Server 2017 Developer в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017DeveloperonUbuntuServer1604LTS)<br/>[Виртуальная машина SQL Server 2017 Express в Azure](https://portal.azure.com/#create/Microsoft.FreeSQLServerLicenseSQLServer2017ExpressonUbuntuServer1604LTS) |
 
@@ -77,10 +77,10 @@ ms.locfileid: "66393860"
 
 Чтобы создать виртуальную машину SQL Server 2017 в Azure на основе одного из этих образов с оплатой за использование, перейдите по следующим ссылкам:
 
-| платформа | Лицензированные образы |
+| Платформа | Лицензированные образы |
 |---|---|
-| Windows Server 2016 | [Виртуальная машина SQL Server 2017 Web в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonWindowsServer2016)<br/>[Виртуальная машина SQL Server 2017 Standard в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonWindowsServer2016)<br/>[Виртуальная машина SQL Server 2017 Enterprise в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseWindowsServer2016) |
-| Red Hat Enterprise Linux. | [Виртуальная машина SQL Server 2017 Web в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonRedHatEnterpriseLinux74)<br/>[Виртуальная машина SQL Server 2017 Standard в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonRedHatEnterpriseLinux74)<br/>[Виртуальная машина SQL Server 2017 Enterprise в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseonRedHatEnterpriseLinux74) |
+| Windows Server 2016 | [Виртуальная машина SQL Server 2017 Web в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonWindowsServer2016)<br/>[Виртуальная машина SQL Server 2017 Standard в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonWindowsServer2016)<br/>[Виртуальная машина SQL Server 2017 Enterprise в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseWindowsServer2016) |
+| Red Hat Enterprise Linux | [Виртуальная машина SQL Server 2017 Web в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonRedHatEnterpriseLinux74)<br/>[Виртуальная машина SQL Server 2017 Standard в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonRedHatEnterpriseLinux74)<br/>[Виртуальная машина SQL Server 2017 Enterprise в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseonRedHatEnterpriseLinux74) |
 | SUSE Linux Enterprise Server | [Виртуальная машина SQL Server 2017 Web в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonSLES12SP2)<br/>[Виртуальная машина SQL Server 2017 Standard в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonSLES12SP2)<br/>[Виртуальная машина SQL Server 2017 Enterprise в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseonSLES12SP2) |
 | Ubuntu | [Виртуальная машина SQL Server 2017 Web в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017WebonUbuntuServer1604LTS)<br/>[Виртуальная машина SQL Server 2017 Standard в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017StandardonUbuntuServer1604LTS)<br/>[Виртуальная машина SQL Server 2017 Enterprise в Azure](https://portal.azure.com/#create/Microsoft.SQLServer2017EnterpriseonUbuntuServer1604LTS) |
 
@@ -110,7 +110,7 @@ ms.locfileid: "66393860"
 
 - **Рабочие нагрузки с известным временем существования и масштабом**. Например, это может быть приложение, которое востребовано на протяжении всего года и потребности которого спрогнозированы.
 
-Чтобы использовать BYOL с виртуальной машиной SQL Server, необходимо иметь лицензию на SQL Server Standard или SQL Server Enterprise и участвовать в программе [Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx#tab=1). Это обязательный компонент в некоторых программах корпоративного лицензирования и необязательная покупка в других программах. Уровень ценообразования, предоставляемый в рамках программ корпоративного лицензирования, может отличаться в зависимости от типа соглашения и количества лицензий и/или обязательств по SQL Server. Как правило, использование собственных лицензий для непрерывных рабочих нагрузок дает следующие преимущества.
+Чтобы использовать BYOL с виртуальной машиной SQL Server, необходимо иметь лицензию на SQL Server Standard или SQL Server Enterprise и участвовать в программе [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx#tab=1). Это обязательный компонент в некоторых программах корпоративного лицензирования и необязательная покупка в других программах. Уровень ценообразования, предоставляемый в рамках программ корпоративного лицензирования, может отличаться в зависимости от типа соглашения и количества лицензий и/или обязательств по SQL Server. Как правило, использование собственных лицензий для непрерывных рабочих нагрузок дает следующие преимущества.
 
 | Преимущество BYOL | Описание |
 |-----|-----|
@@ -144,7 +144,7 @@ ms.locfileid: "66393860"
 | Размер виртуальной машины | Число виртуальных ЦП | Память | Максимальное количество дисков | Максимальная пропускная способность ввода-вывода | Стоимость лицензии SQL | Общая себестоимость (вычисление + лицензирование) |
 |---|---|---|---|---|---|---|
 | **Standard_DS14v2** | 16 | 112 ГБ | 32 | 51 200 операций ввода-вывода в секунду (IOPS) или 768 МБ/с | | |
-| **Standard_DS14-4v2** | 4\. | 112 ГБ | 32 | 51 200 операций ввода-вывода в секунду (IOPS) или 768 МБ/с | на 75 % ниже | на 57 % ниже |
+| **Standard_DS14-4v2** | 4 | 112 ГБ | 32 | 51 200 операций ввода-вывода в секунду (IOPS) или 768 МБ/с | на 75 % ниже | на 57 % ниже |
 
 > [!IMPORTANT]
 > Это пример "на момент времени". Самые последние спецификации можно найти в статьях о размерах виртуальных машин и на странице цен Azure для [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) и [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/).
@@ -166,7 +166,7 @@ ms.locfileid: "66393860"
 > [!IMPORTANT]
 > Завершение работы и освобождение виртуальной машины — единственный способ избежать ненужных расходов. Если просто остановить или завершить работу виртуальной машины с помощью параметров включения, то за ее использование все равно будет взиматься плата.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Общие рекомендации по ценам Azure приведены в статье [Предотвращение непредвиденных расходов с помощью функции выставления счетов и управления затратами в Azure](../../../billing/billing-getting-started.md). Последние цены на виртуальные машины, включая лицензии SQL Server, доступны на странице со сведениями о ценах на виртуальные машины Azure для [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) и [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/).
 

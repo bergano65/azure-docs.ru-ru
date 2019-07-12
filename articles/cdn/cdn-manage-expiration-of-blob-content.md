@@ -7,24 +7,24 @@ author: zhangmanling
 manager: erikre
 editor: ''
 ms.assetid: ad4801e9-d09a-49bf-b35c-efdc4e6034e8
-ms.service: cdn
+ms.service: azure-cdn
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: article
 ms.date: 02/1/2018
 ms.author: mazha
-ms.openlocfilehash: 89f821398f2bccf19a8be090de0e8788090670fb
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: edeb2a798031e34a8ee3f93fd104ebb221ce9c61
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67080833"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67593764"
 ---
 # <a name="manage-expiration-of-azure-blob-storage-in-azure-cdn"></a>Управление сроком действия хранилища BLOB-объектов Azure в Azure CDN
 > [!div class="op_single_selector"]
 > * [Веб-содержимое Azure](cdn-manage-expiration-of-cloud-service-content.md)
-> * [хранилище BLOB-объектов Azure](cdn-manage-expiration-of-blob-content.md)
+> * [Хранилище BLOB-объектов Azure](cdn-manage-expiration-of-blob-content.md)
 > 
 > 
 
@@ -75,7 +75,7 @@ ms.locfileid: "67080833"
 
 1. В разделе **Настраиваемые правила кэширования** создайте два условия соответствия.
 
-     О. В первом условии соответствия задайте для параметра **Условие соответствия** значение **Путь** и введите значение `/blobcontainer1/*` для параметра **Значения соответствия**. Задайте для параметра **Поведение кэширования** значение **Переопределить** и введите 4 в поле **Часы**.
+     A. В первом условии соответствия задайте для параметра **Условие соответствия** значение **Путь** и введите значение `/blobcontainer1/*` для параметра **Значения соответствия**. Задайте для параметра **Поведение кэширования** значение **Переопределить** и введите 4 в поле **Часы**.
 
     Б. Во втором условии соответствия задайте параметру **Условие соответствия** значение **Путь** и введите значение `/blobcontainer1/blob1.txt` для параметра **Значения соответствия**. Задайте для параметра **Поведение кэширования** значение **Переопределить** и введите 2 в поле **Часы**.
 

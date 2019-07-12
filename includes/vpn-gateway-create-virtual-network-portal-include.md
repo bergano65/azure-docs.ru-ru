@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/04/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: d35da4f1eaed91411c015ed7665944d886f9d79c
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 714f46b7019b6e64c504c5925ef5eb5539558c2d
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185142"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67673502"
 ---
 Чтобы создать виртуальную сеть на основе модели развертывания Resource Manager, используя портал Azure, следуйте инструкциям ниже. Если вы работаете с этими инструкциями как с руководством, используйте [примеры значений](#values). В противном случае замените значения собственными. Дополнительные сведения о работе с виртуальными сетями см. в статье [Обзор виртуальной сети](../articles/virtual-network/virtual-networks-overview.md).
 
@@ -22,7 +22,7 @@ ms.locfileid: "67185142"
 >
 >
 
-1. В браузере откройте [портал Azure](http://portal.azure.com) и выполните вход с помощью учетной записи Azure.
+1. В браузере откройте [портал Azure](https://portal.azure.com) и выполните вход с помощью учетной записи Azure.
 2. Щелкните **Создать ресурс**. В поле **Поиск по Marketplace** введите "виртуальная сеть". В результатах поиска найдите и щелкните **Виртуальная сеть**, чтобы открыть страницу **Виртуальная сеть**.
 3. В нижней части страницы "Виртуальная сеть" из списка **Выберите модель развертывания** выберите **Resource Manager** и щелкните **Создать**. Откроется страница "Создание виртуальной сети".
 

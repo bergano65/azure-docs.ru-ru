@@ -7,19 +7,19 @@ author: mdgattuso
 manager: danielgi
 editor: ''
 ms.assetid: ''
-ms.service: cdn
+ms.service: azure-cdn
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2018
 ms.author: magattus
-ms.openlocfilehash: b9f7a5332c8529753f2e22efd6af3d04cb3f44b6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a5881bea578f2791f8dc0d6e760fd15c6f47e435
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66479750"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67593259"
 ---
 # <a name="verizon-specific-http-headers-for-azure-cdn-rules-engine"></a>HTTP-заголовки (Verizon) для обработчика правил Azure CDN
 
@@ -54,7 +54,7 @@ X-EC- _&lt;имя&gt;_ | Заголовки запроса, которые на�
 
 - Платформа: Указывает платформу, на котором было запрошено содержимое. В этом поле допустимы следующие коды: 
 
-    Код | платформа
+    Код | Платформа
     -----|---------
     ECAcc | Большой HTTP-объект
     ECS   | Малый HTTP-объект

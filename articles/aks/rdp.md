@@ -2,21 +2,21 @@
 title: RDP в узлы Windows Server кластера Azure Kubernetes Service (AKS)
 description: Сведения о создании RDP-подключение с кластером Azure Kubernetes Service (AKS) узлов Windows Server для устранения неполадок и обслуживание задач.
 services: container-service
-author: tylermsft
+author: mlearned
 ms.service: container-service
 ms.topic: article
 ms.date: 06/04/2019
-ms.author: twhitney
-ms.openlocfilehash: 11f6869d4d5a2ee0ef2e986ee8268c7a001ea015
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: mlearned
+ms.openlocfilehash: 0238278b81255d735f8a950ca307d0e05100cfec
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66688636"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67614561"
 ---
 # <a name="connect-with-rdp-to-azure-kubernetes-service-aks-cluster-windows-server-nodes-for-maintenance-or-troubleshooting"></a>Подключение с помощью протокола удаленного рабочего СТОЛА для службы Azure Kubernetes (AKS) узлов кластера Windows Server для обслуживания или устранения неполадок
 
-На протяжении жизненного цикла кластера Azure Kubernetes Service (AKS) может потребоваться доступ к узлу AKS Windows Server. Этот доступ используется для обслуживания, сбора журналов или других операций по устранению неполадок. Можно получить доступ к узлов AKS Windows Server, с помощью протокола удаленного рабочего СТОЛА. Кроме того, если вы хотите использовать SSH для доступа к узлам AKS Windows Server и у вас есть доступ к тем же пару ключей, который использовался во время создания кластера, необходимо выполнить действия, описанные в [SSH в узлы кластера Azure Kubernetes Service (AKS)] [ssh-steps]. В целях безопасности узлы Службы Azure Kubernetes (AKS) недоступны через Интернет.
+На протяжении жизненного цикла кластера Azure Kubernetes Service (AKS) может потребоваться доступ к узлу AKS Windows Server. Этот доступ используется для обслуживания, сбора журналов или других операций по устранению неполадок. Можно получить доступ к узлов AKS Windows Server, с помощью протокола удаленного рабочего СТОЛА. Кроме того, если вы хотите использовать SSH для доступа к узлам AKS Windows Server и у вас есть доступ к тем же пару ключей, который использовался во время создания кластера, необходимо выполнить действия, описанные в [SSH в узлы кластера Azure Kubernetes Service (AKS)][ssh-steps]. В целях безопасности узлы Службы Azure Kubernetes (AKS) недоступны через Интернет.
 
 Поддержка узлов Windows Server в настоящее время доступна Предварительная версия в AKS.
 
@@ -24,9 +24,9 @@ ms.locfileid: "66688636"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В этой статье предполагается, что у вас есть кластер AKS с узла Windows Server. Если вам нужен кластер AKS, см. в статье на [создание кластера AKS с помощью контейнера Windows с помощью Azure CLI][aks-windows-cli]. Требуется имя пользователя администратора Windows и пароль для узла Windows Server, которым нужно устранить проблему. Вам также понадобится клиент RDP например [удаленный рабочий стол Майкрософт][rdp-mac].
+В этой статье предполагается, что у вас есть кластер AKS с узла Windows Server. Если вам нужен кластер AKS, см. в статье на [создание кластера AKS с помощью контейнера Windows с помощью Azure CLI][aks-windows-cli]. You need the Windows administrator username and password for the Windows Server node you want to troubleshoot. You also need an RDP client such as [Microsoft Remote Desktop][rdp-mac].
 
-Вам также понадобится Azure CLI версии 2.0.61 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Вам также понадобится Azure CLI версии 2.0.61 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если требуется выполнить установку или обновление, см. в разделе [установить Azure CLI][install-azure-cli].
 
 ## <a name="deploy-a-virtual-machine-to-the-same-subnet-as-your-cluster"></a>Развертывание виртуальной машины в той же подсети, что и кластер
 
@@ -66,19 +66,19 @@ az vm create \
 
 ## <a name="get-the-node-address"></a>Получить адрес узла
 
-Управлять кластером Kubernetes можно при помощи [kubectl][kubectl], клиента командной строки Kubernetes. Если вы используете Azure Cloud Shell, `kubectl` уже установлен. Чтобы установить `kubectl` локально, используйте команду [az aks install-cli][az-aks-install-cli]:
+Управлять кластером Kubernetes можно c помощью [kubectl][kubectl], клиента командной строки Kubernetes. Если вы используете Azure Cloud Shell, `kubectl` уже установлен. Чтобы установить `kubectl` локально, используйте команду [az aks install-cli][az-aks-install-cli]:
     
 ```azurecli-interactive
 az aks install-cli
 ```
 
-Чтобы настроить подключение `kubectl` к кластеру Kubernetes, выполните команду [az aks get-credentials][az-aks-get-credentials]. Эта команда скачивает учетные данные и настраивает интерфейс командной строки Kubernetes для их использования.
+Чтобы настроить `kubectl` на подключение к кластеру Kubernetes, выполните команду [az aks get-credentials][az-aks-get-credentials]. Эта команда скачивает учетные данные и настраивает интерфейс командной строки Kubernetes для их использования.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
 
-Внутренний IP-адрес узлов Windows Server, с использованием [kubectl get] [ kubectl-get] команды:
+Внутренний IP-адрес узлов Windows Server, с использованием [kubectl get][kubectl-get] команды:
 
 ```console
 kubectl get nodes -o wide
@@ -113,15 +113,15 @@ aksnpwin000000                      Ready    agent   13h   v1.12.7   10.240.0.67
 
 ## <a name="remove-rdp-access"></a>Удалить доступ по протоколу RDP
 
-Закончив, выйдите из RDP-подключение к узлу Windows Server, а затем выйдите из сеанса удаленного рабочего СТОЛА к виртуальной машине. После выхода из обоих RDP-сеансы, удалить виртуальную машину с [удаление виртуальной машины az] [ az-vm-delete] команды:
+Закончив, выйдите из RDP-подключение к узлу Windows Server, а затем выйдите из сеанса удаленного рабочего СТОЛА к виртуальной машине. После выхода из обоих RDP-сеансы, удалить виртуальную машину с [удаление виртуальной машины az][az-vm-delete] команды:
 
 ```azurecli-interactive
 az vm delete --resource-group myResourceGroup --name myVM
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Если вам нужны дополнительные данные об устранении неполадок, вы можете [просмотра журналов главном узле Kubernetes] [ view-master-logs] или [Azure Monitor][azure-monitor-containers].
+Если вам нужны дополнительные данные об устранении неполадок, вы можете [просмотра журналов главном узле Kubernetes][view-master-logs] or [Azure Monitor][azure-monitor-containers].
 
 <!-- EXTERNAL LINKS -->
 [kubectl]: https://kubernetes.io/docs/user-guide/kubectl/

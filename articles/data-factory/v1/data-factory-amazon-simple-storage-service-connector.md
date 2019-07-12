@@ -13,15 +13,15 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 1f5064cece32cfc38f149816961e5156ff20974a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0e2468fdd44374343894416c8e39c263cecaa7d5
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60335340"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839566"
 ---
 # <a name="move-data-from-amazon-simple-storage-service-by-using-azure-data-factory"></a>Перемещение данных из Amazon Simple Storage Service с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
+> [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](data-factory-amazon-simple-storage-service-connector.md)
 > * [Версия 2 (текущая)](../connector-amazon-simple-storage-service.md)
 
@@ -40,12 +40,12 @@ ms.locfileid: "60335340"
 
 Полный список разрешений Amazon S3 см. в статье, посвященной [назначению разрешений в политике](https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html).
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 Вы можете создать конвейер с действием копирования, которое перемещает данные из источника Amazon S3 с помощью различных средств или API-интерфейсов.
 
 Проще всего создать конвейер с помощью **мастера копирования**. Краткое пошаговое руководство — [Руководство. Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md).
 
-Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
+Для создания конвейера можно использовать указанные ниже средства. **Visual Studio**, **Azure PowerShell**, **шаблона Azure Resource Manager**, **.NET API**, и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги:
 
@@ -63,9 +63,9 @@ ms.locfileid: "60335340"
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 Связанная служба привязывает хранилище данных к фабрике данных. Для связи хранилища данных Amazon S3 с фабрикой данных следует создать связанную службу типа **AwsAccessKey**. В таблице ниже приведено описание элементов JSON, которые относятся к связанной службе Amazon S3 (AwsAccessKey).
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно |
+| Свойство | Описание | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
-| accessKeyID |Идентификатор секретного ключа доступа. |string |Да |
+| accessKeyID |Идентификатор секретного ключа доступа. |строка |Да |
 | secretAccessKey |Сам секретный ключ доступа. |Зашифрованная строка секрета |Да |
 
 >[!NOTE]
@@ -92,12 +92,12 @@ ms.locfileid: "60335340"
 
 Разделы structure, availability и policy одинаковы для всех типов наборов данных (таких как базы данных SQL, большие двоичные объекты Azure и таблицы Azure). Раздел **typeProperties** во всех типах наборов данных разный. Он содержит сведения о расположении данных в хранилище данных. Раздел **typeProperties** набора данных типа **AmazonS3** (который включает в себя набор данных Amazon S3) содержит следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
+| Свойство | Описание | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
-| bucketName |Имя контейнера S3. |String |Да |
-| key |Ключ объекта S3. |String |Нет |
-| prefix |Префикс для ключа объекта S3. Выбираются объекты, ключи которых начинаются с этого префикса. Применяется, только если ключ пустой. |String |Нет |
-| version |Версия объекта S3, если включено управление версиями S3. |String |Нет |
+| bucketName |Имя контейнера S3. |Строка, |Да |
+| ключ |Ключ объекта S3. |Строка, |Нет |
+| prefix |Префикс для ключа объекта S3. Выбираются объекты, ключи которых начинаются с этого префикса. Применяется, только если ключ пустой. |Строка, |Нет |
+| version |Версия объекта S3, если включено управление версиями S3. |Строка, |Нет |
 | format | Поддерживаются следующие форматы файлов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Свойству **type** в разделе format необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [текстовом формате](data-factory-supported-file-and-compression-formats.md#text-format), [формате JSON](data-factory-supported-file-and-compression-formats.md#json-format), [формате Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [формате Orc](data-factory-supported-file-and-compression-formats.md#orc-format) и [формате Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Если требуется скопировать файлы между файловыми хранилищами как есть (двоичное копирование), можно пропустить раздел форматирования в определениях входного и выходного наборов данных. |Нет | |
 | compression | Укажите тип и уровень сжатия данных. Ниже приведены поддерживаемые типы. **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Оптимальный** и **Самый быстрый**. Узнайте больше о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет | |
 
@@ -173,14 +173,14 @@ ms.locfileid: "60335340"
 ## <a name="copy-activity-properties"></a>Свойства действия копирования
 Полный список разделов и свойств, доступных для определения действий, см. в разделе [Конвейеры и действия в фабрике данных Azure](data-factory-create-pipelines.md). Свойства (такие как имя, описание, входные и выходные таблицы, политики и т. д.) доступны для всех типов действий. Свойства, доступные в разделе **typeProperties** действия, зависят от конкретного типа действия. Для действия копирования свойства различаются в зависимости от типов источников и приемников. Когда источник действия копирования имеет тип **FileSystemSource** (который включает в себя Amazon S3), в разделе **typeProperties** доступно приведенное ниже свойство.
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
+| Свойство | Описание | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | recursive |Указывает, следует ли отображать рекурсивный список объектов S3 в каталоге. |True или false |Нет |
 
 ## <a name="json-example-copy-data-from-amazon-s3-to-azure-blob-storage"></a>Пример JSON. Копирование данных из Amazon S3 в хранилище BLOB-объектов Azure
 В этом примере показано, как скопировать данные из Amazon S3 в хранилище BLOB-объектов Azure. Тем не менее данные можно копировать непосредственно в [любой из поддерживаемых приемников](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Для этого применяется действие копирования в фабрике данных.
 
-Пример содержит определения JSON для следующих сущностей фабрики данных. Используя эти определения, вы можете создать конвейер для копирования данных из Amazon S3 в хранилище BLOB-объектов с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [PowerShell](data-factory-copy-activity-tutorial-using-powershell.md).   
+Пример содержит определения JSON для следующих сущностей фабрики данных. Эти определения можно использовать для создания конвейера для копирования данных из Amazon S3 в хранилище BLOB-объектов, с помощью [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [PowerShell](data-factory-copy-activity-tutorial-using-powershell.md).   
 
 * Связанная служба типа [AwsAccessKey](#linked-service-properties).
 * Связанная служба типа [AzureStorage](data-factory-azure-blob-connector.md#linked-service-properties).
@@ -360,7 +360,7 @@ ms.locfileid: "60335340"
 > Сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в статье [Сопоставление столбцов набора данных в фабрике данных Azure](data-factory-map-columns.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь со следующими статьями:
 
 * Сведения о ключевых факторах, влияющих на производительность перемещения данных (действие копирования) в фабрике данных, и различных способах оптимизации этого процесса см. в [руководстве по настройке производительности действия копирования](data-factory-copy-activity-performance.md).

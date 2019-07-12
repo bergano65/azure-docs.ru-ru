@@ -11,12 +11,12 @@ ms.author: sanpil
 author: sanpil
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 948594a43cec92aa62386b041ce8c96a0558995e
-ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
+ms.openlocfilehash: 564f71c9d90a0fa2721389c09388445149d49787
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67466913"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67795505"
 ---
 # <a name="create-and-run-a-machine-learning-pipeline-by-using-azure-machine-learning-sdk"></a>Создание и запуск конвейера машинного обучения с помощью пакета SDK для машинного обучения Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "67466913"
 
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию службы машинного обучения Azure](https://aka.ms/AMLFree).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Настройте среду разработки](how-to-configure-environment.md) для установки пакета SDK для Машинного обучения Azure.
 
@@ -113,7 +113,7 @@ output_data1 = PipelineData(
 
 * Вычислительная среда Машинного обучения Azure;
 * Azure Databricks 
-* Azure Data Lake Analytics
+* Аналитика озера данных Azure
 
 ### <a name="azure-machine-learning-compute"></a>Вычислительная среда Машинного обучения Azure;
 
@@ -188,6 +188,9 @@ except ComputeTargetException:
     
     databricks_compute.wait_for_completion(True)
 ```
+
+Более подробный пример см. в разделе [пример записной книжки](https://aka.ms/pl-databricks) на сайте GitHub.
+
 ### <a id="adla"></a>Azure Data Lake Analytics
 
 Azure Data Lake Analytics — это платформа аналитики больших данных в облаке Azure. Ее можно использовать как целевой объект вычислений с помощью конвейера Машинного обучения Azure.
@@ -232,6 +235,8 @@ except ComputeTargetException:
     
     adla_compute.wait_for_completion(True)
 ```
+
+Более подробный пример см. в разделе [пример записной книжки](https://aka.ms/pl-adla) на сайте GitHub.
 
 > [!TIP]
 > Конвейеры машинного обучения Azure работают только с хранимыми данными в хранилище данных учетной записи Data Lake Analytics по умолчанию. Если данные, с которыми нужно работать, находятся в хранилище не по умолчанию, то для копирования данных перед обучением можно использовать [`DataTransferStep`](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.data_transfer_step.datatransferstep?view=azure-ml-py).
@@ -395,7 +400,7 @@ step = PythonScriptStep(name="Hello World",
 ```
  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Используйте [эти записные книжки Jupyter на сайте GitHub](https://aka.ms/aml-pipeline-readme), чтобы подробнее изучить конвейеры машинного обучения.
 - Прочитайте справочные материалы по пакету SDK для пакетов [azureml-pipelines-core](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py) и [azureml-pipelines-steps](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py).
 

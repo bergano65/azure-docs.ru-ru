@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 05/09/2019
 ms.author: tomfitz
-ms.openlocfilehash: e47a087e27b6a8ade947e36ded762ce2e518ca25
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: de52dbb10d515a2255b5886df5bf0a0faa454f6b
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65507996"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672760"
 ---
 # <a name="use-azure-key-vault-to-pass-secure-parameter-value-during-deployment"></a>Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания
 
@@ -94,7 +94,7 @@ Set-AzKeyVaultAccessPolicy `
       ]
     }
     ```
-    Замените "00000000-0000-0000-0000-000000000000" на идентификатор подписки пользователя, которому необходимо развернуть шаблоны.
+    Замените идентификатор подписки: «00000000-0000-0000-0000-000000000000»
 
 2. Создание новой роли с помощью JSON-файла:
 
@@ -343,7 +343,7 @@ New-AzResourceGroupDeployment `
   -vaultName $keyVaultName -vaultResourceGroupName $keyVaultResourceGroupName -secretName $secretName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о хранилищах ключей см. в статье [Что такое хранилище ключей Azure?](../key-vault/key-vault-overview.md)
 - Полные примеры использования ссылок на секреты ключей приведены [здесь](https://github.com/rjmax/ArmExamples/tree/master/keyvaultexamples).

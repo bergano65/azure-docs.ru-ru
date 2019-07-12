@@ -4,7 +4,7 @@ description: Дополнительные сведения о предварит
 services: virtual-machines
 documentationcenter: ''
 author: vermagit
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines
@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: amverma
-ms.openlocfilehash: f96a1179c103dd9dfb4d358572f9a9adbe24b977
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6cdb539846104f70dabf684925685fb062fea8af
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66809877"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67797547"
 ---
 # <a name="hc-series-virtual-machine-overview"></a>Обзор виртуальных машин серии гибридного подключения
 
@@ -31,7 +31,7 @@ ms.locfileid: "66809877"
 
 Виртуальная машина не имеет сведений pCores 0-1 и 24-25 не получает к нему. Таким образом он предоставляет каждой vNUMA изначально принимает 22 ядер.
 
-Intel Xeon Platinum, Gold и Silver ЦП также представляем в двухмерной сетке работающая на сети для обмена данными в и внешние центральный процессор. Мы настоятельно рекомендуем процесс закрепления для оптимальной производительности и согласованности. Закрепление процесс будет работать на виртуальных машинах серии гибридного подключения, поскольку базовый silicon указывается в виде — является гостевой виртуальной Машине. Дополнительные сведения об Intel Xeon SP архитектуры: https://bit.ly/2RCYkiE
+Intel Xeon Platinum, Gold и Silver ЦП также представляем в двухмерной сетке работающая на сети для обмена данными в и внешние центральный процессор. Мы настоятельно рекомендуем процесс закрепления для оптимальной производительности и согласованности. Закрепление процесс будет работать на виртуальных машинах серии гибридного подключения, поскольку базовый silicon указывается в виде — является гостевой виртуальной Машине. Дополнительные сведения см. в разделе [архитектуры Intel Xeon SP](https://bit.ly/2RCYkiE).
 
 На следующей схеме показана разделения ядер зарезервированных для низкоуровневой оболочки Azure и виртуальные Машины серии гибридного подключения.
 
@@ -61,7 +61,7 @@ Intel Xeon Platinum, Gold и Silver ЦП также представляем в 
 | Поддержка Azure CycleCloud    | Да                         |
 | Поддержка пакетной службы Azure         | Да                         |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о размерах виртуальной Машины HPC для [Linux](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-hpc) и [Windows](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-hpc) в Azure.
 

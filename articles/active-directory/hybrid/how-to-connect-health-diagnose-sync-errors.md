@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/11/2018
-ms.author: zhiweiw
+ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbdeef7c591221756ad206bf2f3dd78ac3d26c4f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b1fd5f9746299d72ed58a3209013822505b19b56
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60350003"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67702558"
 ---
 # <a name="diagnose-and-remediate-duplicated-attribute-sync-errors"></a>Диагностика и устранение ошибок синхронизации повторяющихся атрибутов
 
@@ -107,8 +107,8 @@ ms.locfileid: "60350003"
 ### <a name="do-both-of-these-accounts-belong-to-the-same-user"></a>Обе эти учетные записи принадлежат одному пользователю?
 Этот вопрос позволяет проверить входящего конфликтующего пользователя и текущий объект пользователя в Azure AD, чтобы узнать, принадлежат ли они одному пользователю.  
 1. Конфликтующий объект вновь синхронизируется с Azure Active Directory. Сравните атрибуты объектов.  
-   - Название
-   - Имя участника-пользователя
+   - Отображаемое имя
+   - Имя субъекта-пользователя
    - Object ID
 2. Если службе Azure AD не удается их сравнить, проверьте, есть ли в Active Directory объекты с указанными значениями **UserPrincipalName**. Ответьте **Нет**, если найдете оба объекта.
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 2e590e4765f4795123e219f8da4b3e62bc79ca30
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e8de1d27d92ac57f478b7615144dba166f420d27
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66511347"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807232"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-ad-b2c"></a>Настройка последовательности проверки учетных данных пароля владельца ресурса в Azure AD B2C
 
@@ -68,12 +68,12 @@ ms.locfileid: "66511347"
 
 `https://yourtenant.b2clogin.com/<yourtenant.onmicrosoft.com>/oauth2/v2.0/token?p=B2C_1_ROPC_Auth`
 
-| Ключ | Value |
+| Ключ | Значение |
 | --- | ----- |
 | username | leadiocl@outlook.com |
 | password | Passxword1 |
 | grant_type | password |
-| scope | openid \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> offline_access |
+| область | openid \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> offline_access |
 | client_id | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
 | response_type | token id_token |
 
@@ -108,12 +108,12 @@ username=leadiocl%40trashmail.ws&password=Passxword1&grant_type=password&scope=o
 
 `https://yourtenant.b2clogin.com/<yourtenant.onmicrosoft.com>/oauth2/v2.0/token?p=B2C_1_ROPC_Auth`
 
-| Ключ | Value |
+| Ключ | Значение |
 | --- | ----- |
 | grant_type | refresh_token |
 | response_type | id_token |
 | client_id | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
-| resource | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
+| ресурс | \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> |
 | refresh_token | eyJraWQiOiJacW9pQlp2TW5pYVc2MUY0TnlfR3... |
 
 *Client_id* и *resource* — это значения, записанные выше в качестве идентификатора приложения. *Refresh_token* — упомянутый ранее токен, полученный в вызове проверки подлинности.
@@ -135,6 +135,8 @@ username=leadiocl%40trashmail.ws&password=Passxword1&grant_type=password&scope=o
     "refresh_token_expires_in": 1209600
 }
 ```
+> [!NOTE]
+> При создании пользователей с помощью Graph API, приложение должно иметь «openid», «offline_access» и «профиль» разрешений Microsoft Graph.
 
 ## <a name="implement-with-your-preferred-native-sdk-or-use-app-auth"></a>Реализация с помощью предпочтительного собственного пакета SDK или использование AppAuth
 

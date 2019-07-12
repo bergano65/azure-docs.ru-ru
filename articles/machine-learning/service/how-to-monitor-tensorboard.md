@@ -1,21 +1,20 @@
 ---
-title: Визуализация эксперименты со службой TensorBoard и машинного обучения Azure
+title: Визуализация экспериментов с помощью TensorBoard
+titleSuffix: Azure Machine Learning service
 description: Запуск TensorBoard визуализировать историю запуска эксперимента и определения возможных областей гиперпараметров, настройки и повторного обучения.
 services: machine-learning
+ms.service: machine-learning
+ms.subservice: core
+ms.topic: article
 author: maxluk
 ms.author: maxluk
-ms.reviewer: nibaccam
-ms.service: machine-learning
-ms.component: core
-ms.workload: data-services
-ms.topic: article
 ms.date: 06/28/2019
-ms.openlocfilehash: babd4cdf8b7ed9e04b4bd975d840688b27439c4f
-ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
+ms.openlocfilehash: fde2b6d1d298e89227951c376d584452fbff2679
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67560850"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67707049"
 ---
 # <a name="visualize-experiment-runs-and-metrics-with-tensorboard-and-azure-machine-learning"></a>Визуализация экспериментов и метрик с помощью TensorBoard и машинного обучения Azure
 
@@ -28,7 +27,7 @@ ms.locfileid: "67560850"
 
 + Для экспериментов, которые не выводят изначально TensorBoard готовых к использованию файлов, таких как Scikit-learn или Azure экспериментов машинного обучения, используйте [ `export_to_tensorboard()` метод](#export) экспортировать журналы выполнения в виде журналов TensorBoard и запустить TensorBoard оттуда. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Для запуска TensorBoard и Просмотр журналов выполнения эксперимент, эксперименты нужно было включено ведение журнала для отслеживания его метрики и производительность.  
 
@@ -48,7 +47,7 @@ ms.locfileid: "67560850"
           * Создание рабочей области и соответствующий файл конфигурации (config.json)
   
 <a name="direct"></a>
-## <a name="option-1-directly-view-run-history-in-tensorboard"></a>Вариант 1: Непосредственно в представлении журнала выполнения в TensorBoard
+## <a name="option-1-directly-view-run-history-in-tensorboard"></a>Вариант 1. Непосредственно в представлении журнала выполнения в TensorBoard
 
 Этот параметр работает для экспериментов, что изначально выходные данные журналов готовых к использованию с TensorBoard, например PyTorch, Chainer и TensorFlow эксперименты. Если это не так эксперимента, используйте [ `export_to_tensorboard()` метод](#export) вместо этого.
 
@@ -283,7 +282,7 @@ tb.start()
 tb.stop()
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой инструкции, создается два экспериментов и узнали, как запуск TensorBoard по свои журналы выполнения для определения областей возможные настройки и повторного обучения. 
 

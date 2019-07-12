@@ -4,7 +4,7 @@ description: Узнайте, как использовать Terraform для с
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: echuvyrov
-manager: jeconnoc
+manager: gwallace
 editor: na
 tags: azure-resource-manager
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/14/2017
 ms.author: echuvyrov
-ms.openlocfilehash: 406af03ab81b279be4f0d72dcca4ec8ec0e4ee55
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 66c5161f1e8f6eba735e6989f36b8d8008d4b975
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66304649"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67708637"
 ---
 # <a name="create-a-complete-linux-virtual-machine-infrastructure-in-azure-with-terraform"></a>Создание готовой инфраструктуры виртуальных машин Linux в Azure с помощью Terraform
 
@@ -467,5 +467,5 @@ az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] -
 ssh azureuser@<publicIps>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Вы создали базовую инфраструктуру в Azure с помощью Terraform. Для более сложных сценариев, включая примеры с использованием подсистемы балансировки нагрузки и масштабируемых наборов виртуальных машин, см. многочисленные [примеры Terraform для Azure](https://github.com/hashicorp/terraform/tree/master/examples). Обновленный список поддерживаемых поставщиков Azure см. в [документации Terraform](https://www.terraform.io/docs/providers/azurerm/index.html).

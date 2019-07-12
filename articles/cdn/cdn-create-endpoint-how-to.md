@@ -6,7 +6,7 @@ documentationcenter: ''
 author: mdgattuso
 manager: danielgi
 editor: ''
-ms.service: cdn
+ms.service: azure-cdn
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -14,17 +14,17 @@ ms.topic: article
 ms.date: 06/12/2018
 ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: 296f1df9175f4595274a57ed936282abb73da18b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: afd9599dd1e396dea6975c397688e4b97371fd6d
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60679578"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67593941"
 ---
 # <a name="create-an-azure-cdn-endpoint"></a>Создание конечной точки сети CDN Azure
 В этой статье описываются все параметры для создания конечной точки [сети доставки содержимого Azure](cdn-overview.md) в существующем профиле CDN. Когда профиль и конечная точка будут созданы, можете приступить к доставке содержимого своим клиентам. Краткое руководство по созданию профиля и конечной точки, см. в разделе [краткое руководство: по созданию профиля и конечной точки Azure CDN](cdn-create-new-endpoint.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Перед созданием конечной точки CDN, необходимо создать по крайней мере один профиль CDN, который может содержать одну или несколько конечных точек CDN. Для упорядочения конечных точек сети CDN по домену Интернета, веб-приложению или согласно другим условиям можно использовать несколько профилей. Так как стоимость использования CDN определяется уровнем профиля CDN, вам потребуется создать несколько профилей CDN, чтобы использовать сочетание разных ценовых категорий. Выберите [Создать новый](cdn-create-new-endpoint.md#create-a-new-cdn-profile), чтобы создать новый профиль CDN.
 
 ## <a name="log-in-to-the-azure-portal"></a>Войдите на портал Azure.
@@ -104,7 +104,7 @@ ms.locfileid: "60679578"
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Чтобы удалить конечную точку когда она больше не нужна, щелкните ее, а затем выберите команду **Удалить**. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о пользовательских доменах см. в руководстве "Добавление личного домена к конечной точке CDN Azure".
 
 > [!div class="nextstepaction"]

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 01/14/2016
 ms.author: aelnably
 ms.custom: seodec18
-ms.openlocfilehash: 907816d4f44a953ae338f6ca505b8fb3e048234e
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: d31a6ee13965aa326ab8a71b5b5435025bc26057
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67329650"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705728"
 ---
 # <a name="azure-app-service-app-cloning-using-powershell"></a>Клонирование приложений службы приложений Azure с помощью PowerShell
 
@@ -130,8 +130,9 @@ $destapp = New-AzWebApp -ResourceGroupName <Resource group name> -Name dest-weba
 * Правила TiP не клонируются
 * Содержимое базы данных не клонируется.
 * При клонировании в другую единицу масштабирования исходящие IP-адреса изменяются.
+* Недоступно для приложений Linux
 
-### <a name="references"></a>Справочники
+### <a name="references"></a>Ссылки
 * [Клонирование службы приложений](app-service-web-app-cloning.md)
 * [Резервное копирование приложения в службе приложений Azure](manage-backup.md)
 * [Предварительная поддержка диспетчера трафика Azure в диспетчере ресурсов Azure](../traffic-manager/traffic-manager-powershell-arm.md)

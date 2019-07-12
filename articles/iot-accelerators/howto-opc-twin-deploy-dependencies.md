@@ -5,15 +5,15 @@ author: dominicbetts
 ms.author: dobett
 ms.date: 11/26/2018
 ms.topic: conceptual
-ms.service: iot-industrialiot
+ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: ae9f2b05bfc6ea6315022d04c8d267d916cf282e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 95c2130727c0cef889771c181fec53557a2a4b0f
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61451605"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603716"
 ---
 # <a name="deploying-dependencies-for-local-development"></a>Развертывание зависимостей для локальной разработки
 
@@ -50,7 +50,7 @@ ms.locfileid: "61451605"
 2. Кроме того развертывание частного клиента AAD, перезапустите сценарий и выберите, чтобы использовать его.
 3. Продолжить без проверки подлинности.  Поскольку micro служб выполняются локально, это приемлемо, но не повторяет рабочих средах.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда служб Двойника OPC успешно развернуто в существующий проект, вот мы предлагаем:
 

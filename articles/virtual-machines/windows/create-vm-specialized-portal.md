@@ -4,7 +4,7 @@ description: Создание виртуальной машины Windows из �
 services: virtual-machines-windows
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines-windows
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/18/2019
 ms.author: cynthn
-ms.openlocfilehash: b24435501ed1312e91ebec9b9c434971dbc94b55
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cadd4b16ab111f46e49429c6d99e0e692325b3b1
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61402310"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67718938"
 ---
 # <a name="create-a-vm-from-a-vhd-by-using-the-azure-portal"></a>Создание виртуальной машины из виртуального жесткого диска с помощью портала Azure
 
@@ -76,7 +76,7 @@ ms.locfileid: "61402310"
 11. Когда все будет готово, выберите **Просмотр и создание**. 
 12. Если конфигурация виртуальной машины пройдет проверку, щелкните **Создать**, чтобы начать развертывание.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Можно также использовать PowerShell для [отправки VHD в Azure и создания специализированной виртуальной машины](create-vm-specialized.md).
 

@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: e0d5363e253e89b32b5eca14366504f0ace39043
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 1e5a4ac9f159ce238149d44127fd63dcf3279623
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67479639"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807103"
 ---
-# <a name="status-monitor-v2-api-enable-applicationinsightsmonitoring-v031-alpha"></a>Состояние монитора v2 API: Enable-ApplicationInsightsMonitoring (v0.3.1-альфа-версия)
+# <a name="status-monitor-v2-api-enable-applicationinsightsmonitoring-v040-alpha"></a>Состояние монитора v2 API: Enable-ApplicationInsightsMonitoring (v0.4.0-альфа-версия)
 
 В этой статье описывается командлет, который является членом [модуль Az.ApplicationMonitor PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
@@ -93,9 +93,9 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap
 - **MachineFilter** требуется C# regex компьютера или имя виртуальной Машины.
     - ". *" будет соответствовать всем
     - «Имя компьютера» будет соответствовать только компьютеры с указанным именем точно.
-- **AppFilter** требуется C# regex компьютера или имя виртуальной Машины.
+- **AppFilter** требуется C# регулярное выражение имени узла IIS. Список сайтов на сервере можно получить, выполнив команду [get-iissite](https://docs.microsoft.com/powershell/module/iisadministration/get-iissite).
     - ". *" будет соответствовать всем
-    - «Имя_приложения» будет соответствовать только приложения служб IIS с указанным именем точно.
+    - «SiteName» будет соответствовать только сайт IIS с указанным именем точно.
 - **InstrumentationKey** необходим для включения мониторинга приложений, которые соответствуют выше два фильтра.
     - Оставьте это значение null, если вы хотите определить правила, чтобы исключить мониторинг.
 
@@ -120,7 +120,7 @@ PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap
 ### <a name="-whatif"></a>-WhatIf 
 **Общий параметр.** Этот параметр можно используйте для тестирования и проверки входных параметров без фактически Включение мониторинга.
 
-## <a name="output"></a>Output
+## <a name="output"></a>Вывод
 
 
 #### <a name="example-output-from-a-successful-enablement"></a>Пример выходных данных из успешного подключения
@@ -156,7 +156,7 @@ Updating app pool permissions...
 Successfully enabled Application Insights Status Monitor
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
   Просмотр телеметрии:
  - [Изучение метрик](../../azure-monitor/app/metrics-explorer.md) для контроля производительности и использования.

@@ -5,15 +5,15 @@ author: dominicbetts
 ms.author: dobett
 ms.date: 11/26/2018
 ms.topic: conceptual
-ms.service: iot-industrialiot
+ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 5ba2dba02585598b3797dd1b490976ebe34b489e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f170d05c513e7f0cc638c5a35e2264f9e043cbcd
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61450670"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603675"
 ---
 # <a name="secure-opc-ua-client-and-opc-ua-server-application"></a>Защита OPC UA, клиента и сервера OPC UA 
 OPC Vault — это микрослужба, которая настраивает и регистрирует сертификаты клиентских приложений и сервера на основе унифицированной архитектуры OPC в облаке, а также управляет их жизненным циклом. В этой статье показано, как защитить клиента OPC UA и OPC UA серверному приложению, в новую пару ключей и сертификатов, используя хранилище OPC.
@@ -148,7 +148,7 @@ docker-compose -f testbed.yml up
 - OPC тестовый клиент будет использовать вызовов прямых методов центра Интернета вещей и вызовы методов OPC для настройки издателя OPC для публикации, Отмена публикации узлов на тестовом сервере OPC.
 - Просмотрите выходные данные для сообщения об ошибках.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы узнали, как развернуть хранилище OPC в существующий проект, вот мы предлагаем:
 

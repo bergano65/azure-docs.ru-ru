@@ -7,19 +7,20 @@ author: rkarlin
 manager: rkarlin
 editor: ''
 ms.assetid: cbf5003b-76cf-446f-adb6-6d816beca70f
-ms.service: sentinel
+ms.service: azure-sentinel
+ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/02/2019
 ms.author: rkarlin
-ms.openlocfilehash: 8e711c0586ce63d4293e2fb0914bbe884b55971f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f9435c4b7649e9b97c209fb554f62228cde95034
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66389962"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67612386"
 ---
 # <a name="connect-your-external-solution-using-common-event-format"></a>Подключите решение внешнего с использованием Cef
 
@@ -170,7 +171,7 @@ Azure Sentinel можно подключиться с внешним решен�
 8. Убедитесь, что размер по умолчанию сообщения системного журнала ограничена 2048 байт (2 КБ). Если журналы имеют слишком большую длину, обновите security_events.conf, с помощью следующей команды: `message_length_limit 4096`
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключиться к Azure Sentinel CEF устройств. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальные угрозы](quickstart-get-visibility.md).
 - Начало работы [обнаружение угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

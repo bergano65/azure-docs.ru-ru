@@ -13,15 +13,15 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 72c88ef10bf1df217ec6e24ac744d0b30386b4a3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e473858ed02afce89313c0bfeffd95c785120d40
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60824020"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839034"
 ---
 # <a name="move-data-from-db2-by-using-azure-data-factory-copy-activity"></a>Перемещение данных из DB2 с помощью действия копирования в фабрике данных Azure
-> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
+> [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](data-factory-onprem-db2-connector.md)
 > * [Версия 2 (текущая)](../connector-db2.md)
 
@@ -33,7 +33,7 @@ ms.locfileid: "60824020"
 
 Сейчас фабрика данных поддерживает только перемещение данных из базы данных DB2 в другое [поддерживаемое хранилище-приемник](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Перемещение данных из других хранилищ в базу данных DB2 не поддерживается.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Фабрика данных поддерживает подключение к локальной базе данных DB2 с помощью [шлюза управления данными](data-factory-data-management-gateway.md). Пошаговые инструкции по настройке шлюза для перемещения данных с помощью конвейера см. в статье [Перемещение данных между локальными источниками и облаком с помощью шлюза управления данными](data-factory-move-data-between-onprem-and-cloud.md).
 
 Шлюз является обязательным, даже если база данных DB2 размещается на виртуальной машине Azure IaaS. Шлюз можно установить на ту же виртуальную машину IaaS, что и хранилище данных. Если шлюз может подключиться к базе данных, то можно установить шлюз на другой виртуальной машине.
@@ -60,11 +60,11 @@ ms.locfileid: "60824020"
 > - DB2 для i (AS400). Позволяет опытному пользователю создать коллекцию для обычного пользователя перед выполнением действия копирования. Чтобы создать коллекцию, используйте команду `create collection <username>`.
 > - DB2 для z/OS или LUW. Использование учетной записи с высоким уровнем привилегий — опытного пользователя или администратора с правами на работу с пакетами и разрешениями BIND, BINDADD, GRANT EXECUTE TO PUBLIC — для однократного выполнения действия копирования. Необходимый пакет автоматически создается во время копирования. Для выполнения последующих действий копирования можно переключиться на обычную учетную запись.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 Вы можете создать конвейер с действием копирования для перемещения данных из локального хранилища данных DB2 с помощью различных инструментов и интерфейсов API: 
 
 - Проще всего создать конвейер с помощью мастера копирования фабрики данных Azure. Краткие пошаговые указания по созданию конвейера с помощью мастера копирования приведены в статье [Руководство. Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md). 
-- Также для создания конвейера можно использовать такие инструменты, как портал Azure, Visual Studio, Azure PowerShell, шаблон Azure Resource Manager, API .NET и REST API. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). 
+- Можно также использовать средства для создания конвейера, включая Visual Studio, Azure PowerShell, шаблона Azure Resource Manager, .NET API и REST API. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). 
 
 Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги:
 
@@ -79,7 +79,7 @@ ms.locfileid: "60824020"
 ## <a name="db2-linked-service-properties"></a>Свойства связанной службы DB2
 В следующей таблице перечислены свойства JSON, характерные для связанной службы DB2.
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
 | **type** |Этому свойству необходимо задать значение **OnPremisesDB2**. |Да |
 | **server** |Имя сервера DB2. |Да |
@@ -95,7 +95,7 @@ ms.locfileid: "60824020"
 
 Раздел **typeProperties** во всех типах наборов данных разный. В нем содержатся сведения о расположении данных в хранилище данных. Раздел **typeProperties** набора данных с типом **RelationalTable**, который включает набор данных DB2, имеет следующее свойство:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
 | **tableName** |Имя таблицы в экземпляре базы данных DB2, на которое ссылается связанная служба. Это свойство чувствительно к регистру. |Нет (если указано свойство **query** действия копирования типа **RelationalSource**). |
 
@@ -104,7 +104,7 @@ ms.locfileid: "60824020"
 
 Для действия копирования, когда источник относится к типу **RelationalSource** (который содержит DB2), в разделе **typeProperties** доступны следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
+| Свойство | Описание | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | **query** |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например: `"query": "select * from "MySchema"."MyTable""` |Нет (если для свойства **tableName** задано значение dataset). |
 
@@ -112,7 +112,7 @@ ms.locfileid: "60824020"
 > В именах схем и таблиц учитывается регистр. В инструкции запроса заключите имена свойств в двойные кавычки ("").
 
 ## <a name="json-example-copy-data-from-db2-to-azure-blob-storage"></a>Пример JSON. Копирование данных из DB2 в хранилище BLOB-объектов Azure
-Ниже приведены примеры определений JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). В примере показано, как скопировать данные из базы данных DB2 в хранилище BLOB-объектов. Тем не менее данные можно скопировать в [любой поддерживаемый тип хранилища-приемника данных](data-factory-data-movement-activities.md#supported-data-stores-and-formats) с помощью действия копирования в фабрике данных Azure.
+В этом примере приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md), или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). В примере показано, как скопировать данные из базы данных DB2 в хранилище BLOB-объектов. Тем не менее данные можно скопировать в [любой поддерживаемый тип хранилища-приемника данных](data-factory-data-movement-activities.md#supported-data-stores-and-formats) с помощью действия копирования в фабрике данных Azure.
 
 Пример содержит следующие сущности фабрики данных.
 
@@ -309,7 +309,7 @@ ms.locfileid: "60824020"
 | Тип базы данных DB2 | Тип .NET Framework |
 | --- | --- |
 | SmallInt |Int16 |
-| Integer |Int32 |
+| Целое число |Int32 |
 | BigInt |Int64 |
 | Real |Single |
 | Double |Double |
@@ -317,25 +317,25 @@ ms.locfileid: "60824020"
 | Decimal |Decimal |
 | DecimalFloat |Decimal |
 | Numeric |Decimal |
-| Дата |DateTime |
-| Время |TimeSpan |
+| Date |DateTime |
+| Time |TimeSpan |
 | Timestamp |Datetime |
-| xml |Byte[] |
-| Char |String |
-| VarChar |String |
-| LongVarChar |String |
-| DB2DynArray |String |
-| Binary |Byte[] |
+| Xml |Byte[] |
+| Char |Строка, |
+| VarChar |Строка, |
+| LongVarChar |Строка, |
+| DB2DynArray |Строка, |
+| Бинарный |Byte[] |
 | VarBinary |Byte[] |
 | LongVarBinary |Byte[] |
-| Graphic |String |
-| VarGraphic |String |
-| LongVarGraphic |String |
-| Clob |String |
-| BLOB-объект |Byte[] |
-| DbClob |String |
+| Graphic |Строка, |
+| VarGraphic |Строка, |
+| LongVarGraphic |Строка, |
+| Clob |Строка, |
+| Blob |Byte[] |
+| DbClob |Строка, |
 | SmallInt |Int16 |
-| Integer |Int32 |
+| Целое число |Int32 |
 | BigInt |Int64 |
 | Real |Single |
 | Double |Double |
@@ -343,11 +343,11 @@ ms.locfileid: "60824020"
 | Decimal |Decimal |
 | DecimalFloat |Decimal |
 | Numeric |Decimal |
-| Дата |DateTime |
-| Время |TimeSpan |
+| Date |DateTime |
+| Time |TimeSpan |
 | Timestamp |Datetime |
-| xml |Byte[] |
-| Char |String |
+| Xml |Byte[] |
+| Char |Строка, |
 
 ## <a name="map-source-to-sink-columns"></a>Сопоставление столбцов источника и приемника
 Сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в статье [Сопоставление столбцов исходного набора данных со столбцами целевого набора данных](data-factory-map-columns.md).

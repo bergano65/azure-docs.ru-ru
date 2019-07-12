@@ -4,15 +4,15 @@ description: В этой статье описывается использов�
 services: virtual-desktop
 author: ChJenk
 ms.service: virtual-desktop
-ms.topic: troubleshoot
+ms.topic: troubleshooting
 ms.date: 05/23/2019
 ms.author: v-chjenk
-ms.openlocfilehash: 0b4113f1e0024415135aa99d1fb4e881efe448a3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a139542bf9272336784ac96d667d65caa1ed96ff
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66499269"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67607335"
 ---
 # <a name="diagnose-graphics-performance-issues-in-remote-desktop"></a>Диагностика проблем производительности графики в удаленном рабочем столе
 
@@ -103,7 +103,7 @@ ms.locfileid: "66499269"
 > [!NOTE]
 > В настоящее время мы не поддерживаем счетчика Frames/Second источника. Пока счетчик Frames/Second источника всегда иметь значение 0.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы создать виртуальную машину Azure оптимизированные для GPU, см. в разделе [Настройка графических процессоров ускорение графического процессора для среды Апробация виртуального рабочего стола Windows](https://docs.microsoft.com/azure/virtual-desktop/configure-vm-gpu).
 - Обзор устранения неполадок и эскалации дорожек, см. в разделе [Устранение неполадок, Обзор, отзывы и поддержка](https://docs.microsoft.com/azure/virtual-desktop/troubleshoot-set-up-overview).

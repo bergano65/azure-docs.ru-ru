@@ -5,12 +5,12 @@ ms.date: 04/30/2019
 ms.topic: include
 ms.service: virtual-machines-linux
 manager: jeconnoc
-ms.openlocfilehash: 6eedc095f155a77cddf48211dbc4a677bf188112
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: 55d73b2602a9a862375ca3e72dee4597c1d6f1d6
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509905"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67659896"
 ---
 Образы стандартизированный виртуальных машин (ВМ) позволяют организациям перенести в облако и обеспечить согласованность в развертываниях. Образы обычно содержат предопределенные параметры безопасности и конфигурации и необходимое программное обеспечение. Настройка собственных образов конвейера требуется время, инфраструктуры и установки, но с Image Builder для виртуальной Машины Azure, просто предоставить простой конфигурации, описывающий изображение, отправить его в службу и изображение построена и распространяется.
  
@@ -33,7 +33,7 @@ Image Builder виртуальной Машины Azure (Azure Image Builder) п
 - Создание образов в формате VHD.
  
 
-## <a name="regions"></a>регионы
+## <a name="regions"></a>Регионы
 Построитель служба образов в Azure будет доступна для предварительного просмотра в этих регионах. Образы могут распространяться за пределами этих регионов.
 - East US
 - Восток США 2
@@ -55,7 +55,7 @@ AIB будет поддерживать RHEL организации ISO, в ка
 - RHEL 7.4
 - RHEL 7.5
 
-RHEL 7.6 не поддерживается, но который проверяется.
+Образы RHEL 7.6 ISO не поддерживаются, но также проходят проверку.
 
 ## <a name="how-it-works"></a>Принцип работы
 
@@ -103,7 +103,7 @@ Image Builder создает виртуальную Машину, использ
  
 Azure Image Builder будет распространять образ в вашей выбранных региона, в которых может взиматься плата за исходящий трафик сети.
  
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
  
 Чтобы опробовать Azure Image Builder, см. в статьях, для построения [Linux](../articles/virtual-machines/linux/image-builder.md) или [Windows](../articles/virtual-machines/windows/image-builder.md) изображения.
  

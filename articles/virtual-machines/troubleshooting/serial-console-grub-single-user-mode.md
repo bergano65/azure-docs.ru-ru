@@ -4,7 +4,7 @@ description: Использование последовательной кон�
 services: virtual-machines-linux
 documentationcenter: ''
 author: asinn826
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines-linux
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 05/08/2019
 ms.author: alsin
-ms.openlocfilehash: 440d917c2ee4a51f2c8ba4b134b50508bdaf4bcb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8a3be6420a91093e060850459ff22fc5823b8cf2
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66735266"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67710585"
 ---
 # <a name="use-serial-console-to-access-grub-and-single-user-mode"></a>Использование последовательной консоли для доступа к GRUB и однопользовательскому режиму
 GRUB — это универсальный загрузчик с титулом GRand, который, вероятнее всего, является первым, что вы увидите при загрузке виртуальной машины. Так как он отображается до запуска операционной системы, он недоступен по протоколу SSH. GRUB, помимо всего прочего, дает возможность изменить конфигурацию для загрузки в однопользовательский режим.
@@ -198,7 +198,7 @@ SLES автоматически переключается в аварийную
 ### <a name="single-user-mode-in-oracle-linux"></a>Однопользовательский режим в Oracle Linux
 Чтобы включить однопользовательский режим в Oracle Linux, выполните предложенные выше инструкции для RHEL.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * См. страницу документации по работе с [последовательной консолью Linux](serial-console-linux.md).
 * Узнайте, как с помощью последовательной консоли [включать GRUB в различных дистрибутивах](https://blogs.msdn.microsoft.com/linuxonazure/2018/10/23/why-proactively-ensuring-you-have-access-to-grub-and-sysrq-in-your-linux-vm-could-save-you-lots-of-down-time/).
 * Используйте последовательную консоль для [вызовов SysRq и NMI](serial-console-nmi-sysrq.md).

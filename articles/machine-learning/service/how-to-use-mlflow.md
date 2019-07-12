@@ -11,16 +11,16 @@ ms.reviewer: nibaccam
 ms.topic: conceptual
 ms.date: 06/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: d0bc4620d0c55d6e94a3d99c39ab405dab2743e5
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: 2f3ec9792a7af0398da770286b805be4d1f25589
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67461655"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657965"
 ---
 # <a name="use-mlflow-with-azure-machine-learning-service-preview"></a>Использовать MLflow со службой машинного обучения Azure (Предварительная версия)
 
-В этой статье демонстрируется использование ведения журнала API и отслеживания URI MLflow в совокупности называются MLflow отслеживания, со службой машинного обучения Azure для отслеживания и регистрации метрики эксперимента и артефактов в вашей [машинного обучения Azure рабочей области службы](https://docs.microsoft.com/azure/machine-learning/service/concept-azure-machine-learning-architecture#workspace). Если вы уже используете MLflow отслеживания для собственных экспериментов, рабочая область предоставляет централизованное, безопасная и масштабируемая расположение для хранения метрик обучения и модели.
+В этой статье демонстрируется использование ведения журнала API и отслеживания URI MLflow в совокупности называются MLflow отслеживания, со службой машинного обучения Azure для отслеживания и регистрации метрики эксперимента и артефактов в вашей [машинного обучения Azure рабочей области службы](https://docs.microsoft.com/azure/machine-learning/service/concept-azure-machine-learning-architecture#workspaces). Если вы уже используете MLflow отслеживания для собственных экспериментов, рабочая область предоставляет централизованное, безопасная и масштабируемая расположение для хранения метрик обучения и модели.
 
 [MLflow](https://www.mlflow.org) является библиотекой с открытым исходным кодом для управления жизненным циклом эксперименты машинного обучения. [Отслеживание MLFlow](https://mlflow.org/docs/latest/quickstart.html#using-the-tracking-api) входит в состав MLflow, которое регистрирует и отслеживает обучения запустить метрики и артефакты модели ли эксперименты запускаются локально, на виртуальной машине или на удаленном вычислительный кластер.
 ![mlflow со схемой обучения машины azure](media/how-to-use-mlflow/mlflow-diagram.png)
@@ -31,7 +31,7 @@ ms.locfileid: "67461655"
 
  Отслеживание MLflow предоставляет ведение журнала с метриками и артефакта хранилища, которые доступны только в противном случае через [пакета SDK Azure Machine Learning Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
 
-| | MLflow отслеживания | Машинное обучение Azure <br> Пакет SDK для Python |  Машинное обучение Azure <br> Интерфейс командной строки | Портал Azure|
+| | MLflow отслеживания | Машинное обучение Azure <br> Пакет SDK для Python |  Машинное обучение Azure <br> CLI | Портал Azure|
 |-|-|-|-|-|
 | Управление рабочей областью |   | ✓ |  ✓ | ✓  |
 | Использование хранилища данных  |   | ✓ |  ✓ |    |
@@ -41,7 +41,7 @@ ms.locfileid: "67461655"
 | Управление вычислительными ресурсами   |   | ✓ | ✓  | ✓ |
 | Развертывание моделей    |   | ✓ |   ✓ | ✓ |
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Установите MLflow.](https://mlflow.org/docs/latest/quickstart.html)
 * [Установка пакета SDK Azure Machine Learning Python на локальном компьютере и создание рабочей области Azure машинного обучения](setup-create-workspace.md#sdk). Пакет SDK предоставляет возможность подключения к MLflow для доступа к рабочей области.
@@ -147,6 +147,6 @@ run = exp.submit(src)
 
 [MLflow с записными книжками машинного Обучения Azure](https://aka.ms/azureml-mlflow-examples) понятия в этой статье.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Развертывание модели](how-to-deploy-and-where.md).

@@ -4,7 +4,7 @@ description: Сведения о масштабировании приложен
 services: virtual-machines
 documentationcenter: ''
 author: vermagit
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines
@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: amverma
-ms.openlocfilehash: e2e2476449f956361639e42e7c398e53e42d44ab
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 00d5b86c8cae01d342d55b7ad20ec59c3f7530bd
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66810117"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67707841"
 ---
 # <a name="scaling-hpc-applications"></a>Масштабирование приложений HPC
 
@@ -84,6 +84,6 @@ gcc $(OPTIMIZATIONS) $(OMP) $(STACK) $(STREAM_PARAMETERS) stream.c -o stream.gcc
 * Некоторые приложения с extreme чувствительности к пропускной способности памяти выгоден с помощью меньшего числа ядер на CCX. Для этих приложений используя 3 или 2 ядрами в расчете на CCX может уменьшить количество конфликтов пропускной способности памяти и дает более высокую производительность реальных или более согласованным масштабируемости. В частности такие MPI может выиграть от этого.
 * Значительно больше запусков масштабирования рекомендуется использовать транспорт, RC + домене обновления UD или гибридной. Многие библиотеки библиотек и сред выполнения MPI этого внутренним образом (например, UCX или MVAPICH2). Проверьте конфигурации транспорта для крупномасштабных запусков.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [HPC](https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/) в Azure.

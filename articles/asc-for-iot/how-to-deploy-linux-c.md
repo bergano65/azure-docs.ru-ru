@@ -2,24 +2,25 @@
 title: Руководство по установке и развертывании C ОС Linux агент центра безопасности Azure для Интернета вещей предварительной версии | Документация Майкрософт
 description: Сведения об установке агента IoT в центре безопасности Azure в 32-разрядных и 64-разрядной Linux.
 services: asc-for-iot
-ms.service: ascforiot
+ms.service: asc-for-iot
 documentationcenter: na
 author: mlottner
 manager: rkarlin
 editor: ''
 ms.assetid: 3ccf2aec-106a-4d2c-8079-5f3e8f2afdcb
+ms.subservice: asc-for-iot
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/28/2019
 ms.author: mlottner
-ms.openlocfilehash: 49ebb5932e1e918330625fd0df98811873dd5cd5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7f5b98060486e6c55bb1702386cd5438f558254b
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65200657"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67616848"
 ---
 # <a name="deploy-azure-security-center-for-iot-c-based-security-agent-for-linux"></a>Развертывание центра безопасности для безопасности на основе Интернета вещей C агента для Linux
 
@@ -36,7 +37,7 @@ ms.locfileid: "65200657"
 > * Удаление агента.
 > * Устранение неполадок 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Другие платформы и версии агента, см. в разделе [выберите агент защиты](how-to-deploy-agent.md).
 
@@ -93,7 +94,7 @@ ms.locfileid: "65200657"
     systemctl status ASCIoTAgent.service
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Просмотрите [обзор](overview.md) службы ASC для Интернета вещей.
 - Ознакомьтесь с дополнительными сведениями об [архитектуре](architecture.md) ASC для Интернета вещей.
 - Включите [службу](quickstart-onboard-iot-hub.md).

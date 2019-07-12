@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: b5ed614fdd378b36d8f95fc90ce7ff98d63ef31a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8357a53ee065812922b5df53fbdef7c14e5f0ff7
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60761920"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621027"
 ---
 # <a name="troubleshoot-input-connections"></a>Устранение неполадок с входными подключениями
 
@@ -29,7 +29,7 @@ ms.locfileid: "60761920"
         
     Нажмите кнопку [**Образцы данных**](stream-analytics-sample-data-input.md) для входных данных и скачайте пример входных данных.
         
-    Проверьте демонстрационные данные, чтобы определить форму данных: схему и [типы данных](https://msdn.microsoft.com/library/azure/dn835065.aspx).
+    Проверьте демонстрационные данные, чтобы определить форму данных: схему и [типы данных](https://docs.microsoft.com/stream-analytics-query/data-types-azure-stream-analytics).
 
 ## <a name="malformed-input-events-causes-deserialization-errors"></a>Неправильный формат входных событий, который приводит к ошибкам десериализации 
 Если входной поток задания Stream Analytics содержит сообщения неправильного формата, возникают проблемы десериализации. Например, сообщение может иметь неправильный формат из-за отсутствия круглых или фигурных скобок в объекте JSON или неверного формата метки времени в соответствующем поле. 
@@ -145,5 +145,5 @@ FROM data
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
-* [Справочник по языку запросов Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+* [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Справочник по API-интерфейсу REST управления Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

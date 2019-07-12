@@ -4,7 +4,7 @@ description: Узнайте, как установить и настроить �
 services: virtual-machines-linux
 documentationcenter: ''
 author: roiyz-msft
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-service-management,azure-resource-manager
 ms.assetid: e41de979-6d56-40b0-8916-895bf215ded6
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 10/17/2016
 ms.author: roiyz
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1defa08b0eb9ede2adec3b7ac12c873522dd6c37
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 59a0cdd29e50501f023faf323948a400f325df0b
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60800213"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706157"
 ---
 # <a name="understanding-and-using-the-azure-linux-agent"></a>Что такое агент Linux для Azure и как его использовать
 
@@ -132,7 +132,7 @@ ms.locfileid: "60800213"
 * управляющая программа: Запуск waagent как управляющая программа для управления взаимодействием с платформой. Этот аргумент указывается для waagent в сценарии инициализации waagent.
 * Начало: Запуск waagent как фонового процесса
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 Файл конфигурации (/ etc/waagent.conf) определяет действия waagent. Ниже показан пример файла конфигурации.
 
     ```

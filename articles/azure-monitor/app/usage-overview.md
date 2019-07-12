@@ -13,12 +13,12 @@ ms.date: 10/10/2017
 ms.pm_owner: daviste;NumberByColors
 ms.reviewer: mbullwin
 ms.author: daviste
-ms.openlocfilehash: f2539d5250ff436a720fe10f748f40db29b0ee25
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ba29688958ee11aa9906a820f7a3d2bf41223743
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60783432"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67798169"
 ---
 # <a name="usage-analysis-with-application-insights"></a>Анализ использования с помощью Application Insights
 
@@ -80,7 +80,7 @@ ms.locfileid: "60783432"
 - Сформируйте гипотезу на основе данных реальных пользователей. 
 - Определите, является ли период удержания проблемой для вашего продукта. 
 
-![Период удержания](./media/usage-overview/retention.png) 
+![Сохранение](./media/usage-overview/retention.png) 
 
 Помимо прочего, элементы управления периодом удержания позволяют определить конкретные события и диапазон времени для вычисления периода удержания. График в середине дает визуальное представление об общем проценте удержания за указанный диапазон времени. График внизу отображает период удержания отдельных пользователей за заданный период времени. Такой уровень детализации позволяет лучше понять, что ваши пользователи делают и что может повлиять на возвращение пользователей.  
 
@@ -132,11 +132,11 @@ ms.locfileid: "60783432"
 
 Чтобы сравнить различные версии, на портале Application Insights можно отфильтровать и разделить данные по значениям свойств.
 
-Для этого следует [настроить инициализатор телеметрии](../../azure-monitor/app/api-filtering-sampling.md##add-properties-itelemetryinitializer).
+Для этого следует [настроить инициализатор телеметрии](../../azure-monitor/app/api-filtering-sampling.md#add-properties-itelemetryinitializer).
+
+**Приложения ASP.NET**
 
 ```csharp
-
-
     // Telemetry initializer class
     public class MyTelemetryInitializer : ITelemetryInitializer
     {
@@ -155,13 +155,29 @@ ms.locfileid: "60783432"
     {
         // ...
         TelemetryConfiguration.Active.TelemetryInitializers
-        .Add(new MyTelemetryInitializer());
+         .Add(new MyTelemetryInitializer());
     }
+```
+
+**Приложения ASP.NET Core**
+
+> [!NOTE]
+> Добавление инициализатор `ApplicationInsights.config` или с помощью `TelemetryConfiguration.Active` не является действительным для приложений ASP.NET Core. 
+
+Для [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) приложений, добавив новый `TelemetryInitializer` можно сделать, добавив его в контейнер внедрения зависимостей, как показано ниже. Это можно сделать в `ConfigureServices` метод вашей `Startup.cs` класса.
+
+```csharp
+ using Microsoft.ApplicationInsights.Extensibility;
+ using CustomInitializer.Telemetry;
+ public void ConfigureServices(IServiceCollection services)
+{
+    services.AddSingleton<ITelemetryInitializer, MyTelemetryInitializer>();
+}
 ```
 
 Все новые клиенты телеметрии автоматически добавляют указанное значение свойства. Отдельные события телеметрии могут переопределять значения по умолчанию.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
    - [Пользователи, сеансы, события](usage-segmentation.md)
    - [Воронки](usage-funnels.md)
    - [Сохранение](usage-retention.md)

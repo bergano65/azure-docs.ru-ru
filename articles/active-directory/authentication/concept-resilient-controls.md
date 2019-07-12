@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 12/19/2018
-ms.author: martincoetzer
+ms.author: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff59b93603af61fd8ea571966a3c43a06929ae04
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 831ba47ea4e999219a6d8cf34cb5fb0fdcd1ead8
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67113477"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67594955"
 ---
 # <a name="create-a-resilient-access-control-management-strategy-with-azure-active-directory"></a>Создание устойчивой стратегии управления доступом с помощью Azure Active Directory
 
@@ -143,7 +143,7 @@ EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions
   * Имя: EM001. ВКЛЮЧЕНИЕ В АВАРИЙНОМ РЕЖИМЕ. Нарушение работы MFA [1/4]. Exchange SharePoint. Требование гибридного присоединения Azure AD
   * Пользователи и группы: включает ContingencyAccess, исключает CoreAdmins и EmergencyAccess
   * Облачные приложения: Exchange Online и SharePoint Online
-  * Условия: Любой
+  * Условия: Any
   * Предоставить управление: требуется присоединение к домену
   * Состояние: Отключено
 * Политика 2: блокировка платформ, отличных от Windows

@@ -8,12 +8,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 6/1/2019
 ms.author: victorh
-ms.openlocfilehash: 25779cd62f70df41a7734d2f8097504923dcb3a3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 71f1beb68171613fe926ba4d87a13ef58cac1edf
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66430885"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67655272"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Часто задаваемые вопросы о шлюзе приложений
 
@@ -45,7 +45,7 @@ ms.locfileid: "66430885"
 
 ### <a name="what-resources-are-supported-as-part-of-a-backend-pool"></a>Какие ресурсы поддерживаются как часть серверного пула?
 
-См. в разделе [поддерживается серверным ресурсам](https://docs.microsoft.com/azure/application-gateway/application-gateway-components#backend-pool).
+См. в разделе [поддерживается серверным ресурсам](https://docs.microsoft.com/azure/application-gateway/application-gateway-components#backend-pools).
 
 ### <a name="in-what-regions-is-application-gateway-available"></a>В каких регионах доступна шлюза приложений?
 
@@ -105,7 +105,7 @@ ms.locfileid: "66430885"
 
 ### <a name="can-i-use-exchange-server-as-a-backend-with-application-gateway"></a>Можно использовать Exchange Server в качестве серверной части с помощью шлюза приложений?
 
-№ Шлюз приложений не поддерживает протоколы электронной почты, например SMTP, IMAP и POP3. 
+Нет. Шлюз приложений не поддерживает протоколы электронной почты, например SMTP, IMAP и POP3. 
 
 ## <a name="performance"></a>Производительность
 
@@ -125,7 +125,7 @@ ms.locfileid: "66430885"
 
 ### <a name="does-manual-scale-up-or-scale-down-cause-downtime"></a>Не ручное масштабирование и уменьшить время простоя причина?
 
-№ Экземпляры распределяются через домены обновления и домены сбоя.
+Нет. Экземпляры распределяются через домены обновления и домены сбоя.
 
 ### <a name="does-application-gateway-support-connection-draining"></a>Поддерживает ли Шлюз приложений фильтрацию подключений?
 
@@ -135,7 +135,7 @@ ms.locfileid: "66430885"
 
 Да. Azure распределяет экземпляры по доменам сбоя и обновления, чтобы убедиться, что экземпляры не завершатся ошибкой все одновременно. Шлюз приложений поддерживает масштабирование путем добавления нескольких экземпляров одного шлюза для распределения нагрузки.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 ### <a name="is-application-gateway-always-deployed-in-a-virtual-network"></a>Всегда ли Шлюз приложений развертывается в виртуальной сети?
 
@@ -147,7 +147,7 @@ ms.locfileid: "66430885"
 
 ### <a name="can-i-deploy-anything-else-in-the-application-gateway-subnet"></a>Можно ли развернуть еще что-нибудь в подсети шлюза приложений?
 
-№ Но вы можете развернуть другие шлюзы приложений в подсети.
+Нет. Но вы можете развернуть другие шлюзы приложений в подсети.
 
 ### <a name="are-network-security-groups-supported-on-the-application-gateway-subnet"></a>Поддерживаются ли группы безопасности сети в подсети шлюза приложений?
 
@@ -179,7 +179,7 @@ ms.locfileid: "66430885"
 
 ### <a name="do-custom-probes-support-wildcards-or-regex-on-response-data"></a>Пользовательская проверка работоспособности поддерживают подстановочные знаки или регулярное выражение в данных ответа?
 
-№ 
+Нет. 
 
 ### <a name="how-are-routing-rules-processed-in-application-gateway"></a>Как обрабатываются правила маршрутизации в шлюз приложений?
 
@@ -195,7 +195,7 @@ ms.locfileid: "66430885"
 
 ### <a name="can-i-use-the-same-port-for-both-public-facing-and-private-facing-listeners"></a>Можно использовать тот же порт для прослушивателей общедоступные и частные выходом?
 
-№
+Нет.
 
 ### <a name="is-there-guidance-available-to-migrate-from-the-v1-sku-to-the-v2-sku"></a>Есть ли рекомендации, доступные для переноса с v1 SKU на v2 SKU?
 
@@ -296,7 +296,7 @@ ms.locfileid: "66430885"
 
 ### <a name="does-detection-mode-block-traffic"></a>Блокируется ли трафик в режиме обнаружения?
 
-№ Режим обнаружения только регистрирует трафик, который активирует правило WAF.
+Нет. Режим обнаружения только регистрирует трафик, который активирует правило WAF.
 
 ### <a name="can-i-customize-waf-rules"></a>Могу ли я настроить правила WAF?
 
@@ -362,6 +362,6 @@ ms.locfileid: "66430885"
 
 Как правило вы см. в разделе неизвестном состоянии при блокировании доступа к серверной части группы безопасности сети (NSG), пользовательский DNS-сервер, или определяемые пользователем маршрутизацию (UDR) в подсети шлюза приложений. Дополнительные сведения см. в разделе [серверной части работоспособности, ведение журнала диагностики и метрики для шлюза приложений](application-gateway-diagnostics.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о шлюзе приложений см. в разделе [что такое шлюз приложений Azure?](overview.md).

@@ -4,7 +4,7 @@ description: Развертывание виртуальной машины и �
 services: virtual-machines-windows
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/17/2017
 ms.author: cynthn
-ms.openlocfilehash: 816233368c2274e34d2acdd712aed270a5e3bfa5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b02fd8f012dee2436f4f276e05185428008508a1
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60203930"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67722571"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-java"></a>Создание виртуальных машин Windows в Azure и управление ими с помощью Java
 
@@ -471,6 +471,6 @@ input.nextLine();
 2. Прежде чем нажать клавишу **ВВОД** и начать удаление ресурсов, потратьте несколько минут и проверьте на портале Azure, созданы ли эти ресурсы. Щелкните состояние развертывания, чтобы просмотреть сведения о развертывании.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Дополнительные сведения об использовании библиотек Azure для Java см. в [этой статье](https://docs.microsoft.com/java/azure/java-sdk-azure-overview).
 

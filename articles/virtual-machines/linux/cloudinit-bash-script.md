@@ -4,7 +4,7 @@ description: Как с помощью cloud-init выполнить bash-сце�
 services: virtual-machines-linux
 documentationcenter: ''
 author: rickstercdn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines-linux
@@ -14,12 +14,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: rclaus
-ms.openlocfilehash: 4f65ebfd2e1ce508c5cf9b224871102a35b55fe0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7a7d771023fabf8746ecb771e71a563daa5cb130
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60627849"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67668311"
 ---
 # <a name="use-cloud-init-to-run-a-bash-script-in-a-linux-vm-in-azure"></a>Выполнение bash-скрипта на виртуальной машине Linux в Azure с помощью cloud-init
 В этой статье показано, как с помощью [cloud-init](https://cloudinit.readthedocs.io) выполнить существующий bash-скрипт на виртуальной машине или в масштабируемом наборе виртуальных машин при их подготовке в Azure. Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы. Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).
@@ -65,7 +65,7 @@ ssh <publicIpAddress>
 Running config-scripts-user using lock Running command ['/var/lib/cloud/instance/scripts/part-001']
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные примеры изменения конфигурации с помощью cloud-init см. в следующих статьях:
  
 - [Добавление пользователя Linux к виртуальной машине](cloudinit-add-user.md)

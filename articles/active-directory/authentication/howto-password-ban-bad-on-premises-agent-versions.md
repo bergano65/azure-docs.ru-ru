@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60ce66b079942944176540826c7f3e7a91b070d2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c024954053588537ac3363703876f716a38f41d9
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60358214"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67702949"
 ---
 # <a name="azure-ad-password-protection-agent-version-history"></a>журнал выпуска версий агента защиты паролем Azure AD
 
@@ -38,7 +38,7 @@ ms.locfileid: "60358214"
   * Версия программного обеспечения и данных клиента Azure доступны только для агентов DC и прокси-серверы под управлением версии 1.2.116.0 или более поздней версии.
   * Данные клиента Azure, не могут указываться до повторной регистрации (или обновления) прокси-сервера или возникла леса.
 * Теперь, служба прокси-сервер требует наличия .NET 4.7.
-  * .NET 4.7 уже должны быть установлены на сервере полностью обновленный Windows. Если это не так, скачайте и запустите установщик обнаружил на [автономный установщик .NET Framework 4.7 для Windows](https://support.microsoft.com/en-us/help/3186497/the-net-framework-4-7-offline-installer-for-windows).
+  * .NET 4.7 уже должны быть установлены на сервере полностью обновленный Windows. Если это не так, скачайте и запустите установщик обнаружил на [автономный установщик .NET Framework 4.7 для Windows](https://support.microsoft.com/help/3186497/the-net-framework-4-7-offline-installer-for-windows).
   * В системах ядра сервера может потребоваться передать флаг/q, установщик .NET 4.7, чтобы получить его для успешного выполнения.
 * Служба прокси-сервер теперь поддерживает автоматическое обновление. Автоматическое обновление использует службу Microsoft Azure AD Connect Agent Updater, являющийся установленных side-by-side со службой прокси. Автоматическое обновление включено по умолчанию.
 * Автоматическое обновление, можно включить или отключить с помощью командлета Set-AzureADPasswordProtectionProxyConfiguration. Текущее значение параметра можно запрашивать с помощью командлета Get-AzureADPasswordProtectionProxyConfiguration.
@@ -134,6 +134,6 @@ ms.locfileid: "60358214"
 
 Первоначальный выпуск общедоступной предварительной версии
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Развертывание защиты паролем Azure AD (предварительная версия)](howto-password-ban-bad-on-premises-deploy.md)

@@ -2,17 +2,17 @@
 title: Статический IP-адрес для исходящего трафика в Службе Azure Kubernetes (AKS)
 description: Узнайте, как создать и использовать статический общедоступный IP-адрес для исходящего трафика в кластере Службы Azure Kubernetes (AKS).
 services: container-service
-author: iainfoulds
+author: mlearned
 ms.service: container-service
 ms.topic: article
 ms.date: 03/04/2019
-ms.author: iainfou
-ms.openlocfilehash: 6612d801804cdd1e092b50977230f24b378e64ba
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: mlearned
+ms.openlocfilehash: 094a696a12025dcfd575ce3f035b12b4a04aba10
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60466432"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67615564"
 ---
 # <a name="use-a-static-public-ip-address-for-egress-traffic-in-azure-kubernetes-service-aks"></a>Использование статического IP-адреса для исходящего трафика в Службе Azure Kubernetes (AKS)
 
@@ -22,19 +22,19 @@ ms.locfileid: "60466432"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, см. в этом кратком руководстве AKS [с помощью Azure CLI][aks-quickstart-cli] or [using the Azure portal][aks-quickstart-portal].
 
-Вам также понадобится Azure CLI версии 2.0.59 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Вам также понадобится Azure CLI версии 2.0.59 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если требуется выполнить установку или обновление, см. в разделе [установить Azure CLI][install-azure-cli].
 
 ## <a name="egress-traffic-overview"></a>Обзор исходящего трафика
 
-Исходящий трафик из кластера AKS регулируется на основе [соглашений Azure Load Balancer][outbound-connections]. До создания первой службы Kubernetes типа `LoadBalancer` узлы агента в кластере AKS не являются частью любого пула Azure Load Balancer. В этой конфигурации у узлов нет общедоступного IP-адреса уровня экземпляра. Azure преобразует исходящий поток в общедоступный исходный IP-адрес, который не является настраиваемым или детерминированным.
+Следует за исходящий трафик из кластера AKS [соглашения Azure Load Balancer][outbound-connections]. До создания первой службы Kubernetes типа `LoadBalancer` узлы агента в кластере AKS не являются частью любого пула Azure Load Balancer. В этой конфигурации у узлов нет общедоступного IP-адреса уровня экземпляра. Azure преобразует исходящий поток в общедоступный исходный IP-адрес, который не является настраиваемым или детерминированным.
 
 После создания службы Kubernetes типа `LoadBalancer` узлы агента добавляются в пул Azure Load Balancer. Azure преобразует исходящий поток в первый общедоступный IP-адрес, настроенный в подсистеме балансировки нагрузки. Этот общедоступный IP-адрес действует только на протяжении существования этого ресурса. Если вы удалите службу LoadBalancer Kubernetes, связанные с ней подсистема балансировки нагрузки и IP-адрес также будут удалены. Если вы хотите назначить определенный IP-адрес или сохранить IP-адрес для повторно развернутых служб Kubernetes, можно создать и использовать статический общедоступный IP-адрес.
 
 ## <a name="create-a-static-public-ip"></a>Создание статического общедоступного IP-адреса
 
-Статический общедоступный IP-адрес для использования с AKS нужно создать в группе ресурсов **узла**. Получите имя группы ресурсов, выполнив команду [az aks show][az-aks-show] и добавив параметр запроса `--query nodeResourceGroup`. В следующем примере возвращается группа ресурсов узла для имени кластера AKS *myAKSCluster* в группе ресурсов *myResourceGroup*.
+Статический общедоступный IP-адрес для использования с AKS нужно создать в группе ресурсов **узла**. Получить имя группы ресурсов с [az aks show][az-aks-show] команду и добавьте `--query nodeResourceGroup` параметр запроса. В следующем примере возвращается группа ресурсов узла для имени кластера AKS *myAKSCluster* в группе ресурсов *myResourceGroup*.
 
 ```azurecli-interactive
 $ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
@@ -42,7 +42,7 @@ $ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeR
 MC_myResourceGroup_myAKSCluster_eastus
 ```
 
-Затем выполните команду [az network public-ip create][az-network-public-ip-create], чтобы создать статический общедоступный IP-адрес. Укажите имя группы ресурсов узла, полученное в предыдущей команде, а затем имя ресурса IP-адреса, например *myAKSPublicIP*:
+Теперь создайте статический общедоступный IP-адрес с [создать общедоступный IP-адрес az сети][az-network-public-ip-create] команды. Укажите имя группы ресурсов узла, полученное в предыдущей команде, а затем имя ресурса IP-адреса, например *myAKSPublicIP*:
 
 ```azurecli-interactive
 az network public-ip create \
@@ -65,7 +65,7 @@ az network public-ip create \
   }
 ```
 
-Позже можно получить общедоступный IP-адрес с помощью команды [az network public-ip list][az-network-public-ip-list]. Укажите имя группы ресурсов узла, а затем запросите *ipAddress*, как показано в следующем примере:
+Позже можно получить общедоступный IP-адрес с помощью [az сети public-ip list][az-network-public-ip-list] команды. Укажите имя группы ресурсов узла, а затем запросите *ipAddress*, как показано в следующем примере:
 
 ```azurecli-interactive
 $ az network public-ip list --resource-group MC_myResourceGroup_myAKSCluster_eastus --query [0].ipAddress --output tsv
@@ -121,9 +121,9 @@ $ curl -s checkip.dyndns.org
 <html><head><title>Current IP Check</title></head><body>Current IP Address: 40.121.183.52</body></html>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Чтобы избежать поддержки нескольких общедоступных IP-адресов в Azure Load Balancer, можно использовать контроллер входящего трафика. Контроллеры входящего трафика обеспечивают такие дополнительные преимущества, как обработка подключений SSL и TLS, поддержка повторных записей URI и восходящее шифрование протоколов SSL и TLS. Дополнительные сведения см. в статье [Создание контроллера входящего трафика в Службе Azure Kubernetes (AKS)][ingress-aks-cluster].
+Чтобы избежать поддержки нескольких общедоступных IP-адресов в Azure Load Balancer, можно использовать контроллер входящего трафика. Контроллеры входящего трафика обеспечивают такие дополнительные преимущества, как обработка подключений SSL и TLS, поддержка повторных записей URI и восходящее шифрование протоколов SSL и TLS. Дополнительные сведения см. в разделе [создавать базовые входящий контроллер в AKS][ingress-aks-cluster].
 
 <!-- LINKS - internal -->
 [az-network-public-ip-create]: /cli/azure/network/public-ip#az-network-public-ip-create

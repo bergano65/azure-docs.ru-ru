@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/13/2017
 ms.author: kumud
-ms.openlocfilehash: 23eacd0fdb85eea43c534fc0f98a14188b954502
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: becae0f085fcaf4b0d0c7b29e102aaa3186fb85e
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67061619"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67653747"
 ---
 # <a name="read-nsg-flow-logs"></a>Чтение журналов потоков NSG
 
@@ -33,7 +33,7 @@ ms.locfileid: "67061619"
 
 В следующем сценарии используется пример журнала потоков, хранящийся в учетной записи хранения. Вы узнаете, как выборочно просматривать последние события в журналах потоков NSG. В этой статье вы будете использовать PowerShell, однако описанные здесь концепции не ограничиваются одним языком программирования и применимы для всех языков, которые поддерживаются интерфейсами API службы хранилища Azure.
 
-## <a name="setup"></a>Настройка
+## <a name="setup"></a>Установка
 
 Прежде чем мы начнем работу, вам необходимо включить журналы потоков для одной или нескольких групп безопасности сети в вашей учетной записи. Инструкции по включению журналов потоков для групп безопасности сети есть в статье [Общие сведения о ведении журнала потоков для групп безопасности сети](network-watcher-nsg-flow-logging-overview.md).
 
@@ -116,7 +116,7 @@ ZjAyZTliYWE3OTI1YWZmYjFmMWI0MjJhNzMxZTI4MDM=      2      True
 
 ## <a name="read-the-block-blob"></a>Чтение блочного BLOB-объекта
 
-Чтобы получить данные, необходимо прочитать переменную `$blocklist`. В этом примере мы выполняем итерацию по списку блоков, считываем байты из каждого блока и сохраняем их в массиве. Для извлечения данных используйте метод [DownloadRangeToByteArray](/dotnet/api/microsoft.azure.storage.blob.cloudblob.downloadrangetobytearray#Microsoft_WindowsAzure_Storage_Blob_CloudBlob_DownloadRangeToByteArray_System_Byte___System_Int32_System_Nullable_System_Int64__System_Nullable_System_Int64__Microsoft_WindowsAzure_Storage_AccessCondition_Microsoft_WindowsAzure_Storage_Blob_BlobRequestOptions_Microsoft_WindowsAzure_Storage_OperationContext_).
+Чтобы получить данные, необходимо прочитать переменную `$blocklist`. В этом примере мы выполняем итерацию по списку блоков, считываем байты из каждого блока и сохраняем их в массиве. Для извлечения данных используйте метод [DownloadRangeToByteArray](/dotnet/api/microsoft.azure.storage.blob.cloudblob.downloadrangetobytearray).
 
 ```powershell
 function Get-NSGFlowLogReadBlock  {
@@ -186,7 +186,7 @@ A","1497646742,10.0.0.4,168.62.32.14,44942,443,T,O,A","1497646742,10.0.0.4,52.24
 
 Этот сценарий является примером того, как прочитать записи в журналах потоков NSG, не анализируя весь журнал. Вы можете считывать новые записи в журнале по мере их записывания, используя идентификатор блока или отслеживая длину блоков, сохраненных в блочном BLOB-объекте. Это позволяет считывать только новые записи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для дополнительных сведений о способах просмотра журналов потоков NSG см. статьи [Визуализация журнала потоков для групп безопасности сети Наблюдателя за сетями Azure с помощью инструментов с открытым кодом](network-watcher-visualize-nsg-flow-logs-open-source-tools.md), [Управление журналами потоков для групп безопасности сети и их анализ с помощью наблюдателя за сетями и Grafana](network-watcher-nsg-grafana.md), и [Анализ журналов потоков для групп безопасности сети и управление ими в Azure с помощью Наблюдателя за сетями и Graylog](network-watcher-analyze-nsg-flow-logs-graylog.md). Подход функции Azure с открытым кодом к непосредственному использованию больших двоичных объектов и отправлению к различным объектам-получателям Log Analytics можно найти [здесь](https://github.com/Microsoft/AzureNetworkWatcherNSGFlowLogsConnector).
 

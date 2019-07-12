@@ -3,15 +3,15 @@ title: Архитектура подключений к базе данных Az
 description: Описывается архитектура подключений к базе данных Azure для сервера PostgreSQL.
 author: kummanish
 ms.author: manishku
-ms.service: PostgreSQL
+ms.service: postgresql
 ms.topic: conceptual
 ms.date: 05/23/2019
-ms.openlocfilehash: 73c23c471cb12ca3a3a7df4380779b464b8d86d4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0d91458c555c819c4bcf97215a712719ebc5eb71
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66735741"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67588956"
 ---
 # <a name="connectivity-architecture-in-azure-database-for-postgresql"></a>Архитектура подключений к базе данных Azure для PostgreSQL
 В этой статье объясняется база данных Azure для PostgreSQL архитектура подключений к также, как направлять трафик к вашей базе данных Azure для экземпляра базы данных PostgreSQL, от клиентов как внутри, так и за пределами Azure.
@@ -64,7 +64,7 @@ ms.locfileid: "66735741"
 > [!NOTE]
 > В регионе *Восточная часть США 2* также доступен третичный IP-адрес `52.167.104.0`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью портала Azure](./howto-manage-firewall-using-portal.md)
 * [Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью Azure CLI](./howto-manage-firewall-using-cli.md)

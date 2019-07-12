@@ -4,7 +4,7 @@ description: Сведения о том, как ресурс виртуальн�
 services: virtual-machines-windows
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: f63ab5cc-45b8-43aa-a4e7-69dc42adbb99
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: cynthn
-ms.openlocfilehash: f4a69fd57bf2e9535fdb1664365b074927e27585
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fd4fad40ef4809c756321493854f38fd813569ca
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64707282"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67710285"
 ---
 # <a name="virtual-machines-in-an-azure-resource-manager-template"></a>Виртуальные машины в шаблоне Azure Resource Manager
 
@@ -375,7 +375,7 @@ Resource Manager параллельно развертывает все ресу
 ],
 ```
 
-## <a name="extensions"></a>Расширения
+## <a name="extensions"></a>расширения.
 
 Хотя функции [расширения](extensions-features.md) являются отдельным ресурсом, они тесно связаны с виртуальными машинами. Расширения можно добавить как дочерний ресурс виртуальной машины или как отдельный ресурс. В примере показано добавление [расширения системы диагностики](extensions-diagnostics-template.md) к виртуальным машинам.
 

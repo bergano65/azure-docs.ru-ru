@@ -6,16 +6,16 @@ author: kevinvngo
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: load data
+ms.subservice: load-data
 ms.date: 04/26/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: a706fca7f7653c6916efc72d07988e79c9015a43
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c69382ee0bec5586fc247cd0e568f5f48f0eda08
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66244502"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67588602"
 ---
 # <a name="load-data-from-azure-data-lake-storage-to-sql-data-warehouse"></a>Загрузка данных из хранилища Озера данных Azure в хранилище данных SQL
 Используйте внешние таблицы PolyBase для загрузки данных из хранилища Озера данных Azure в хранилище данных SQL Azure. Несмотря на то, что можно запускать специальные запросы к данным, хранящимся в хранилище Озера данных, мы рекомендуем импортировать данные в хранилище данных SQL для достижения оптимальной производительности.
@@ -213,7 +213,7 @@ ALTER INDEX ALL ON [dbo].[DimProduct] REBUILD;
 ## <a name="achievement-unlocked"></a>Победа!
 Данные успешно загружены в хранилище данных SQL Azure. Отличная работа!
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
 В этом руководстве вы создали внешние таблицы для определения структуры данных, хранящихся в Data Lake Storage 1-го поколения, а затем использовали инструкцию PolyBase CREATE TABLE AS SELECT для загрузки данных в хранилище данных. 
 
 Вы выполнили такие действия:

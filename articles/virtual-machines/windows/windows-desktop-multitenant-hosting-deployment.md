@@ -4,7 +4,7 @@ description: Узнайте, как воспользоваться преиму�
 services: virtual-machines-windows
 documentationcenter: ''
 author: xujing
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-windows
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 1/24/2018
 ms.author: xujing
-ms.openlocfilehash: 7f43528c55cd22c2649ca0f1208da6f41695b98e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b99ae2abdc4e062588174b6d945b6592ae8e58ed
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61485497"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67707855"
 ---
 # <a name="how-to-deploy-windows-10-on-azure-with-multitenant-hosting-rights"></a>Как развернуть Windows 10 в Azure с правами на мультитенантное размещение 
 Клиентам, использующим Windows 10 Корпоративная E3 или Windows 10 Корпоративная E5 для каждого пользователя, либо Windows VDA для каждого пользователя (лицензии на подписку пользователя или дополнительные лицензии на подписку пользователя), права на мультитенантное размещение для Windows 10 позволяют перенести лицензии Windows 10 в облако и запустить виртуальные машины Windows 10 в Azure без необходимости платить за другую лицензию. Дополнительные сведения см. в [этом разделе](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx).
@@ -33,7 +33,7 @@ ms.locfileid: "61485497"
 ## <a name="deploying-windows-10-image-from-azure-marketplace"></a>Развертывание образа Windows 10 из Azure Marketplace 
 Для развертывания с помощью PowerShell, CLI или шаблонов Azure Resource Manager образ Windows 10 можно найти со следующими именем издателя, предложением и номером SKU.
 
-| ОС  |      PublisherName      |  ПРЕДЛОЖЕНИЕ | Sku |
+| OS  |      PublisherName      |  ПРЕДЛОЖЕНИЕ | Sku |
 |:----------|:-------------:|:------|:------|
 | Windows 10 Профессиональная    | MicrosoftWindowsDesktop | Windows-10  | RS2-Pro   |
 | Windows 10 Pro N  | MicrosoftWindowsDesktop | Windows-10  | RS2-ProN  |

@@ -4,7 +4,7 @@ description: Использование последовательной кон�
 services: virtual-machines-linux
 documentationcenter: ''
 author: asinn826
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines-linux
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
-ms.openlocfilehash: ad29bbd038c8982778f2dbca63756f6995077dce
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 79729cf222c208a78a2eac430e51b996cddb4e78
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65204920"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67710542"
 ---
 # <a name="use-serial-console-for-sysrq-and-nmi-calls"></a>Использование последовательной консоли для вызовов SysRq и NMI
 
@@ -52,7 +52,7 @@ echo "1" >/proc/sys/kernel/sysrq
 ### <a name="command-keys"></a>Клавиши команд 
 Как указано в упомянутом выше руководстве администратора SysRq:
 
-|Команда| Функция
+|Command| Функция
 | ------| ----------- |
 |``b``  |   Немедленно инициирует перезагрузку системы без синхронизации или отключение дисков.
 |``c``  |   Выполняет сбой системы с помощью разыменования пустого указателя. Если настроено, будет создан аварийный дамп.
@@ -128,7 +128,7 @@ echo "1" >/proc/sys/kernel/sysrq
 ### <a name="coreos"></a>CoreOS 
 - [Сбор журналов сбоев](https://coreos.com/os/docs/latest/collecting-crash-logs.html)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * См. страницу документации по работе с [последовательной консолью Linux](serial-console-linux.md).
 * Используйте последовательную консоль для [перехода в режим GRUB и однопользовательский режим](serial-console-grub-single-user-mode.md).
 * Последовательная консоль также доступна для виртуальных машин [Windows](serial-console-windows.md).

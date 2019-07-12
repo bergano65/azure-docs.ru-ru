@@ -4,7 +4,7 @@ description: Как с помощью cloud-init и Azure CLI настроить
 services: virtual-machines-linux
 documentationcenter: ''
 author: rickstercdn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines-linux
@@ -14,12 +14,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: rclaus
-ms.openlocfilehash: 626fd4739daf2506854c42f16ac986a361ebab38
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: adf03ea912a028c1059683c49350dea3743ee7a6
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60729823"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67671697"
 ---
 # <a name="use-cloud-init-to-configure-a-swapfile-on-a-linux-vm"></a>Настройка файла подкачки на виртуальной машине Linux с помощью cloud-init
 В этой статье показано, как с помощью [cloud-init](https://cloudinit.readthedocs.io) настроить файл подкачки в разных дистрибутивах Linux. Файл подкачки традиционно настраивался агентом Linux (WALA) в зависимости от того, каким дистрибутивам он требовался.  В этом документе описано, как создать файл подкачки по запросу во время подготовки с использованием cloud-init.  Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).
@@ -88,7 +88,7 @@ Filename                Type        Size    Used    Priority
 > [!NOTE] 
 > Если в существующем образе Azure настроен файл подкачки, и необходимо изменить его конфигурацию для новых образов, следует удалить существующий файл подкачки. Дополнительные сведения см. в документе "Customize Images to provision by cloud-init" (Настройка образов для подготовки с помощью cloud-init).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные примеры изменения конфигурации с помощью cloud-init см. в следующих статьях:
  
 - [Добавление пользователя Linux к виртуальной машине](cloudinit-add-user.md)

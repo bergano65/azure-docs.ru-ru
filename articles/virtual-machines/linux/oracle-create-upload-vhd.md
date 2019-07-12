@@ -4,7 +4,7 @@ description: Узнайте, как создать и передать вирт�
 services: virtual-machines-linux
 documentationcenter: ''
 author: szarkos
-manager: jeconnoc
+manager: gwallace
 editor: tysonn
 tags: azure-service-management,azure-resource-manager
 ms.assetid: dd96f771-26eb-4391-9a89-8c8b6d691822
@@ -15,17 +15,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/12/2018
 ms.author: szark
-ms.openlocfilehash: 55a2b7b690c40ab21a59f93aaba0ab5add5faa98
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 0d83a6f9b42a56799371c5cdf82422ab73b8859a
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203013"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67671088"
 ---
 # <a name="prepare-an-oracle-linux-virtual-machine-for-azure"></a>Подготовка виртуальной машины Oracle Linux для Azure
 [!INCLUDE [learn-about-deployment-models](../../../includes/learn-about-deployment-models-both-include.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 В этой статье предполагается, что вы уже установили операционную систему Oracle Linux на виртуальный жесткий диск. Существует несколько средств для создания VHD-файлов, например решение для виртуализации, такое как Hyper-V. Инструкции см. в разделе [Установка роли Hyper-V и настройка виртуальной машины](https://technet.microsoft.com/library/hh846766.aspx).
 
 ### <a name="oracle-linux-installation-notes"></a>Замечания по установке Oracle Linux
@@ -183,6 +183,6 @@ ms.locfileid: "67203013"
         # logout
 15. В диспетчере Hyper-V выберите **Действие -> Завершение работы**. Виртуальный жесткий диск Linux готов к передаче в Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь вы можете создавать новые виртуальные машины в Azure с помощью VHD-файла системы Oracle Linux. Если вы отправляете VHD-файл в Azure впервые, см. раздел [Вариант 1. Передача VHD](upload-vhd.md#option-1-upload-a-vhd).
 

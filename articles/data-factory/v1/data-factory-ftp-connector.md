@@ -13,15 +13,15 @@ ms.topic: conceptual
 ms.date: 05/02/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 4aba7aadbe92b6c4f0ab417785e230bb6a6823df
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5d043072244ede5b1d7bd28d4628ffe3cf4961d8
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60486589"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67836327"
 ---
 # <a name="move-data-from-an-ftp-server-by-using-azure-data-factory"></a>Перемещение данных с FTP-сервера с использованием фабрики данных Azure
-> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
+> [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](data-factory-ftp-connector.md)
 > * [Версия 2 (текущая)](../connector-ftp.md)
 
@@ -45,7 +45,7 @@ ms.locfileid: "60486589"
 
 Проще всего создать конвейер с помощью **мастера копирования фабрики данных**. Пошаговые инструкции см. в [руководстве по созданию конвейера с помощью мастера копирования](data-factory-copy-data-wizard-tutorial.md).
 
-Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **PowerShell**, **шаблон Azure Resource Manager**, **.NET API** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
+Для создания конвейера можно использовать указанные ниже средства. **Visual Studio**, **PowerShell**, **шаблона Azure Resource Manager**, **.NET API**, и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 Независимо от используемого средства или интерфейса API для создания конвейера, который перемещает данные из исходного хранилища данных в приемник, необходимо выполнить указанные ниже действия.
 
@@ -63,18 +63,18 @@ ms.locfileid: "60486589"
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 В приведенной ниже таблице описываются элементы JSON, которые относятся к связанной службе FTP.
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения | значение по умолчанию |
+| Свойство | Описание | Обязательно для заполнения | Значение по умолчанию |
 | --- | --- | --- | --- |
-| type |Задайте значение FtpServer. |Yes |&nbsp; |
-| host |Укажите имя или IP-адрес FTP-сервера. |Yes |&nbsp; |
-| authenticationType |Укажите тип проверки подлинности. |Yes |Обычная, анонимная |
+| type |Задайте значение FtpServer. |Да |&nbsp; |
+| host |Укажите имя или IP-адрес FTP-сервера. |Да |&nbsp; |
+| authenticationType |Укажите тип проверки подлинности. |Да |Обычная, анонимная |
 | username |Укажите пользователя, имеющего доступ к FTP-серверу. |Нет |&nbsp; |
 | password |Укажите пароль для пользователя (username). |Нет |&nbsp; |
 | encryptedCredential |Укажите зашифрованные учетные данные для доступа к FTP-серверу. |Нет |&nbsp; |
 | gatewayName |Укажите имя шлюза управления данными для подключения к локальному FTP-серверу. |Нет |&nbsp; |
 | port |Укажите порт, прослушиваемый FTP-сервером. |Нет |21 |
-| enableSsl |Укажите, какой канал следует использовать (FTP через SSL или TLS). |Нет |Да |
-| enableServerCertificateValidation |Укажите, следует ли включать проверку SSL-сертификата на сервере при использовании канала FTP через SSL или TLS. |Нет |Да |
+| enableSsl |Укажите, какой канал следует использовать (FTP через SSL или TLS). |Нет |true |
+| enableServerCertificateValidation |Укажите, следует ли включать проверку SSL-сертификата на сервере при использовании канала FTP через SSL или TLS. |Нет |true |
 
 >[!NOTE]
 >Соединитель FTP поддерживает доступ к FTP-серверу без шифрования или с явным шифрованием SSL/TLS. Он не поддерживает неявное шифрование SSL/TLS.
@@ -153,13 +153,13 @@ ms.locfileid: "60486589"
 
 Разделы **typeProperties** для каждого типа набора данных отличаются. Он предоставляет сведения, которые относятся к типу набора данных. Раздел **typeProperties** набора данных типа **FileShare** содержит перечисленные ниже свойства.
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
-| folderPath |Подпуть к папке. Чтобы указать специальные знаки в строке, используйте escape-знак "\". Примеры приведены в разделе "Примеры определений связанной службы и набора данных".<br/><br/>Вы можете использовать это свойство вместе с параметром **partitionBy**, чтобы в путях к папкам учитывались дата и время начала и окончания среза. |Yes |
+| folderPath |Подпуть к папке. Чтобы указать специальные знаки в строке, используйте escape-знак "\". Примеры приведены в разделе "Примеры определений связанной службы и набора данных".<br/><br/>Вы можете использовать это свойство вместе с параметром **partitionBy**, чтобы в путях к папкам учитывались дата и время начала и окончания среза. |Да |
 | fileName |Укажите имя файла в папке **folderPath** , если таблица должна ссылаться на определенный файл в папке. Если этому свойству не присвоить значение, таблица будет указывать на все файлы в папке.<br/><br/>Если свойство **fileName** не указано для выходного набора данных, то имя созданного файла будет иметь следующий формат: <br/><br/>`Data.<Guid>.txt` (пример: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt). |Нет |
 | fileFilter |Укажите фильтр для выбора подмножества файлов из **folderPath**. Фильтр дает возможность выбирать только некоторые файлы, а не все.<br/><br/>Допустимые значения: `*` (несколько знаков) и `?` (один знак).<br/><br/>Пример 1: `"fileFilter": "*.log"`<br/>Пример 2: `"fileFilter": 2014-1-?.txt"`<br/><br/> Свойство **fileFilter** применяется ко входному набору данных FileShare. Распределенная файловая система Hadoop (HDFS) не поддерживает это свойство. |Нет |
 | partitionedBy |Используется для того, чтобы указать динамические **путь к папке** и **имя файла** для временного ряда данных. Например, можно указать **путь к папке**, который будет параметризироваться для данных за каждый час. |Нет |
-| свойства | Поддерживаются следующие форматы файлов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Свойству **type** в разделе format необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [текстовом формате](data-factory-supported-file-and-compression-formats.md#text-format), [формате Json](data-factory-supported-file-and-compression-formats.md#json-format), [формате Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [формате Orc](data-factory-supported-file-and-compression-formats.md#orc-format) и [формате Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Если требуется скопировать файлы между файловыми хранилищами как есть (двоичное копирование), пропустите раздел формата в определениях входного и выходного наборов данных. |Нет |
+| format | Поддерживаются следующие форматы файлов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Свойству **type** в разделе format необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [текстовом формате](data-factory-supported-file-and-compression-formats.md#text-format), [формате Json](data-factory-supported-file-and-compression-formats.md#json-format), [формате Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [формате Orc](data-factory-supported-file-and-compression-formats.md#orc-format) и [формате Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Если требуется скопировать файлы между файловыми хранилищами как есть (двоичное копирование), пропустите раздел формата в определениях входного и выходного наборов данных. |Нет |
 | compression | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Optimal** и **Fastest**. Узнайте больше о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет |
 | useBinaryTransfer |Укажите, следует ли использовать режим передачи в двоичном формате. Значение true, если следует использовать двоичный формат (это значение по умолчанию), и false, если следует использовать ASCII. Это свойство можно использовать, только когда тип связанной службы — FtpServer. |Нет |
 
@@ -204,14 +204,14 @@ ms.locfileid: "60486589"
 
 Если источник относится к типу **FileSystemSource**, в действии копирования в разделе **typeProperties** доступны указанные ниже свойства.
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
+| Свойство | Описание | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
 | recursive |Указывает, следует ли читать данные рекурсивно из вложенных папок или только из указанной папки. |True, False (по умолчанию) |Нет |
 
 ## <a name="json-example-copy-data-from-ftp-server-to-azure-blob"></a>Пример JSON. Копирование данных с FTP-сервера в большой двоичный объект Azure
 В этом примере показано, как скопировать данные с FTP-сервера в хранилище BLOB-объектов Azure. Однако данные можно напрямую копировать в любые приемники, указанные в статье [Поддерживаемые хранилища данных и форматы](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Для этого применяется действие копирования в фабрике данных.
 
-Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [PowerShell](data-factory-copy-activity-tutorial-using-powershell.md).
+Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md), или [PowerShell](data-factory-copy-activity-tutorial-using-powershell.md):
 
 * Связанная служба типа [FtpServer](#linked-service-properties)
 * Связанная служба типа [AzureStorage](data-factory-azure-blob-connector.md#linked-service-properties)
@@ -389,7 +389,7 @@ ms.locfileid: "60486589"
 > [!NOTE]
 > Сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в [этой статье](data-factory-map-columns.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь со следующими статьями:
 
 * Сведения о ключевых факторах, влияющих на производительность перемещения данных (действие копирования) в фабрике данных, и различных способах оптимизации этого процесса см. в [руководстве по настройке производительности действия копирования](data-factory-copy-activity-performance.md).

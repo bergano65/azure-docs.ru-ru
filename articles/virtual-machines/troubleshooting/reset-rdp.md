@@ -4,7 +4,7 @@ description: Узнайте, как сбросить пароль учетной
 services: virtual-machines-windows
 documentationcenter: ''
 author: genlin
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 45c69812-d3e4-48de-a98d-39a0f5675777
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 03/25/2019
 ms.author: genli
-ms.openlocfilehash: 0a12cbabc28640283f5a28eb7a83c7d7717e0882
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: caa0066f8020c19cecccaa0421f90188260c644b
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60921219"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67710628"
 ---
 # <a name="reset-remote-desktop-services-or-its-administrator-password-in-a-windows-vm"></a>Сброс служб удаленных рабочих столов или пароля администратора на виртуальной машине Windows
 Если не удается подключиться к виртуальной машине Windows, можно сбросить пароль локального администратора или конфигурацию служб удаленных рабочих столов (не поддерживается для контроллеров домена Windows). Для сброса пароля используйте портал Azure или расширение VMAccess в Azure PowerShell. Войдите на виртуальную машину и сбросьте пароль для этого локального администратора.  
@@ -88,7 +88,7 @@ ms.locfileid: "60921219"
 
 1. Если по-прежнему не удается удаленно подключиться к виртуальной машине, см. статью [Устранение неполадок с подключением к удаленному рабочему столу на виртуальной машине Azure под управлением Windows](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). При утрате подключения к контроллеру домена Windows необходимо будет восстановить его с помощью резервной копии контроллера домена.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Если расширение доступа к виртуальной машине Azure не отвечает и сбросить пароль не удается, вы можете [сбросить локальный пароль Windows в автономном режиме](reset-local-password-without-agent.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Этот метод является более сложным и требует подключения виртуального жесткого диска проблемной виртуальной машины к другой виртуальной машине. Сначала выполните действия, описанные в этой статье, и попытайтесь сбросить пароль в автономном режиме, только если они не помогут.
 

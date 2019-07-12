@@ -4,7 +4,7 @@ description: Узнайте, как установить и настроить T
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: echuvyrov
-manager: jeconnoc
+manager: gwallace
 editor: na
 tags: azure-resource-manager
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/19/2018
 ms.author: echuvyrov
-ms.openlocfilehash: 71cf07b227a75e53119f2f35e79ccd7926b551e7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 30593bc874e2cd666c0af89336b26a15c944a424
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60418869"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67708659"
 ---
 # <a name="install-and-configure-terraform-to-provision-vms-and-other-infrastructure-into-azure"></a>Установка и настройка Terraform для подготовки виртуальных машин и другой инфраструктуры в Azure
  
@@ -146,7 +146,7 @@ azurerm_resource_group.rg: Creating...
 azurerm_resource_group.rg: Creation complete after 1s
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы установили Terraform или использовали Cloud Shell, чтобы настроить учетные данные Azure и начать создание ресурсов в подписке Azure. Чтобы создать полное развертывание Terraform в Azure, перейдите к следующей статье:
 

@@ -4,7 +4,7 @@ description: Сведения об использовании Python для со
 services: virtual-machines-windows
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/22/2017
 ms.author: cynthn
-ms.openlocfilehash: 748bc08e003d398e96ef55493e4f3b0bf6b7da28
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 21b423aa900d4d47c1ae1239b6197280be8cada2
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61034762"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67719889"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-python"></a>Развертывание виртуальной машины Azure с помощью Python
 
@@ -571,7 +571,7 @@ compute_client = ComputeManagementClient(
     На полное выполнение этого консольного приложения потребуется примерно 5 минут. После закрытия приложения на удаление ресурсов и групп ресурсов может потребоваться несколько минут.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - При наличии проблем с развертыванием ознакомьтесь с информацией об [устранении неполадок развертываний групп ресурсов с помощью портала Azure](../../resource-manager-troubleshoot-deployments-portal.md).
 - Узнайте больше о [библиотеке Azure для Python](https://docs.microsoft.com/python/api/overview/azure/?view=azure-python).

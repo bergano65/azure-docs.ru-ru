@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 07/02/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 1bd9774cf045d9ed7f16a637fcb2eb1378b48686
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
+ms.openlocfilehash: d0a81d5d7ce8e7569b77007b6ad9c322cf626f16
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67565816"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67670699"
 ---
 # <a name="assets"></a>Активы
 
@@ -95,13 +95,13 @@ curl -X PUT \
 |---|---|
 |идентификатор - (уникальный) полный путь Azure Resource Manager, см. Примеры в [активов](https://docs.microsoft.com/rest/api/media/assets/createorupdate)||
 |Name — (уникальный) см. в разделе [соглашения об именовании](media-services-apis-overview.md#naming-conventions) ||
-|альтернативного имени пользователя|Альтернативного имени пользователя|
+|альтернативного имени пользователя|альтернативного имени пользователя|
 |assetId|Идентификатор - значение (уникальный) начинается с `nb:cid:UUID:` префикс.|
 |created|Создано|
 |description|ИМЯ|
 |lastModified|LastModified|
 |storageAccountName|Имя_учетной_записи_хранения|
-|storageEncryptionFormat| Параметры - параметры создания|
+|storageEncryptionFormat| Параметры (параметры создания)|
 |type||
 
 ## <a name="storage-side-encryption"></a>Шифрование на стороне хранилища
@@ -122,7 +122,7 @@ curl -X PUT \
 
 Ознакомьтесь с разделом [Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа](entities-overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
 * [Использование средства цифровой видеозаписи в облаке](live-event-cloud-dvr.md)

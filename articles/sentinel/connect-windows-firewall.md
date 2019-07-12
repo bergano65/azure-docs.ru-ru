@@ -7,19 +7,20 @@ author: rkarlin
 manager: rkarlin
 editor: ''
 ms.assetid: 0e41f896-8521-49b8-a244-71c78d469bc3
-ms.service: sentinel
+ms.service: azure-sentinel
+ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/17/2019
 ms.author: rkarlin
-ms.openlocfilehash: 09e63612d6e0e70b1bb21c23b158f650d4c34080
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: a863910ee338da5655e9f3b5610b0a8049b8b2a9
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67190604"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620780"
 ---
 # <a name="connect-windows-firewall"></a>Подключение брандмауэра Windows
 
@@ -57,7 +58,7 @@ ms.locfileid: "67190604"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключиться к Azure Sentinel брандмауэра Windows. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальные угрозы](quickstart-get-visibility.md).
 - Начало работы [обнаружение угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

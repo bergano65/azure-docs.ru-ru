@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство Python. Создания, загрузки и запроса индексов с помощью API REST службы поиска Azure — службы поиска Azure
 description: Описание способов создания индекса, загрузка данных и выполнение запросов с помощью Python, записные книжки Jupyter и API REST службы поиска Azure.
-ms.date: 06/20/2019
+ms.date: 07/11/2019
 author: heidisteen
 manager: cgronlun
 ms.author: heidist
@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 613879abd4c5c09450b690b793500a99428cff29
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 123afa2452c3e492b85292514e64f84d3baec390
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67485479"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67840287"
 ---
 # <a name="quickstart-create-an-azure-search-index-in-python-using-jupyter-notebooks"></a>Краткое руководство. Создание индекса службы поиска Azure в Python с помощью записных книжек Jupyter
 > [!div class="op_single_selector"]
@@ -26,15 +26,15 @@ ms.locfileid: "67485479"
 > * [Портал](search-create-index-portal.md)
 > 
 
-Создание записной книжки Jupyter, который создает, загружает и отправляет запрос в индекс поиска Azure с помощью Python и [API REST службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice/). В этой статье объясняется, как создать записную книжку шаг за шагом, начиная с нуля. Кроме того можно запустить готовой записной книжки. Чтобы загрузить копию, перейдите к[репозитория azure-search-python-samples](https://github.com/Azure-Samples/azure-search-python-samples).
+Создание записной книжки Jupyter, который создает, загружает и отправляет запрос в индекс поиска Azure с помощью Python и [API REST службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice/). В этой статье объясняется, как создать записную книжку пошаговое. Кроме того, вы можете [Загрузка и запуск готовой записной книжки Jupyter Python](https://github.com/Azure-Samples/azure-search-python-samples).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 В этом кратком руководстве используются перечисленные ниже службы и инструменты. 
 
-+ [Anaconda 3.x](https://www.anaconda.com/distribution/#download-section), предоставляя Python 3.x и записные книжки Jupyter.
++ [Anaconda 3.x](https://www.anaconda.com/distribution/#download-section) с Python 3.x и записными книжками Jupyter Notebook.
 
 + [Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. В этом кратком руководстве используется уровень "бесплатный". 
 
@@ -64,7 +64,7 @@ ms.locfileid: "67485479"
    from pprint import pprint
    ```
 
-1. Во второй ячейке входные элементы запроса, которые будут константы при каждом запросе. Замените имя службы поиска (YOUR-SEARCH-SERVICE-NAME) и ключ API администратора (YOUR-ADMIN-API-KEY) значениями, действительными. 
+1. Во второй ячейке входные элементы запроса, которые будут константы при каждом запросе. Замените заполнители имени службы поиска (YOUR-SEARCH-SERVICE-NAME) и ключа API администрирования (YOUR-ADMIN-API-KEY) реальными значениями. 
 
    ```python
    endpoint = 'https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/'
@@ -295,28 +295,15 @@ ms.locfileid: "67485479"
    searchstring = '&search=pool&$orderby=Address/City&$select=HotelId, HotelName, Address/City, Address/StateProvince, Tags'
    ```
 
-## <a name="clean-up"></a>Очистка 
+## <a name="clean-up"></a>Очистка
 
-Следует удалить индекс, если он больше не нужен. Это бесплатная служба ограничена трех индексов. Следует удалить все индексы, которые активно не используется, чтобы освободить место для других учебников.
+При работе в вашей подписке, рекомендуется в конце проекта можно определить ресурсы по-прежнему нужны что вы создали. Работающие ресурсы могут означать лишние затраты. Можно удалить ресурсы по отдельности или удалить группу ресурсов, чтобы удалить весь набор ресурсов.
 
-Самый простой способ удалить объекты, — через портал, но так как это краткое руководство Python, следующий синтаксис такой же результат:
+Можно найти и управлять ресурсами на портале с помощью **все ресурсы** или **групп ресурсов** ссылку на панели навигации слева.
 
-   ```python
-  url = endpoint + "indexes/hotels-quickstart" + api_version
-  response  = requests.delete(url, headers=headers)
-   ```
+Если вы используете это бесплатная служба, помните, что вы будете ограничены трех индексов, индексаторов и источников данных. Вы можете удалить отдельные элементы на портале, чтобы не превысить лимит. 
 
-Удаление индекса можно проверить, запросив список существующих индексов. Если отсутствует гостиницы quickstart, то знаете, ваш запрос выполнен успешно.
-
-```python
-url = endpoint + "indexes" + api_version + "&$select=name"
-
-response  = requests.get(url, headers=headers)
-index_list = response.json()
-pprint(index_list)
-```
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Упрощения в этом кратком руководстве используется сокращенная версия индекса отелей. Можно создать полную версию Пробный запрос более интересным. Чтобы получить полную версию и все документы, 50, выполните **импорта данных** мастера, выбрав *гостиницы sample* из источников данных встроенного образца.
 

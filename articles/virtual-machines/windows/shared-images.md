@@ -4,7 +4,7 @@ description: Узнайте, как использовать Azure PowerShell д
 services: virtual-machines-windows
 documentationcenter: virtual-machines
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/06/2019
 ms.author: cynthn
 ms.custom: ''
-ms.openlocfilehash: c58faa7104a3ca2c740a1d1e35ca5bfd47c3a9fd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 707c642fae4d7698eb3d793b83dc574872925f0f
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66241201"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67709129"
 ---
 # <a name="create-a-shared-image-gallery-with-azure-powershell"></a>Создание коллекции общих образов с помощью Azure PowerShell 
 
@@ -33,7 +33,7 @@ ms.locfileid: "66241201"
 
 Функция коллекции общих образов имеет несколько типов ресурсов. Мы будем использовать или создавать в этой статье следующие ресурсы:
 
-| Ресурс | Описание|
+| Resource | Описание|
 |----------|------------|
 | **Управляемый образ** | Это базовый образ, который можно использовать отдельно или для создания **версии образа** в коллекции образов. Управляемые образы создаются на основе обобщенных виртуальных машин. Управляемый образ — это специальный тип виртуального жесткого диска, который может применяться для создания нескольких виртуальных машин. Теперь его можно использовать для создания версий общих образов. |
 | **Коллекция образов** | Как и Azure Marketplace, **коллекция образов** — это репозиторий для управления и совместного использования образов, но в отличие от Azure Marketplace доступ к коллекции образов контролируете вы. |
@@ -97,7 +97,7 @@ New-AzVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
 
 [!INCLUDE [virtual-machines-common-shared-images-update-delete-ps](../../../includes/virtual-machines-common-shared-images-update-delete-ps.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Azure Image Builder (Предварительная версия)](image-builder-overview.md) можно автоматизировать создание версии образа, его можно использовать даже для обновления и [Создание новой версии образа с существующей версии образа](image-builder-gallery-update-image-version.md). 
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 

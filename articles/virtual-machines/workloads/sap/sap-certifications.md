@@ -4,7 +4,7 @@ description: Обновленный список текущих конфигур
 services: virtual-machines-linux
 documentationcenter: ''
 author: RicksterCDN
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 05/15/2019
 ms.author: rclaus
 ms.custom: ''
-ms.openlocfilehash: a38d5b44aaca0aa28e7ecd32543d2b0563964b3d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e64e2386611060b1393a330695a4729fe9490e54
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65797445"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67709976"
 ---
 # <a name="sap-certifications-and-configurations-running-on-microsoft-azure"></a>Сертификаты и конфигурации SAP на платформе Microsoft Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "65797445"
 
 | Продукт SAP | Гостевая ОС | Реляционная СУБД | Типы виртуальных машин |
 | --- | --- | --- | --- |
-| SAP Business One на SQL Server | Windows  | SQL Server; | Все типы виртуальных машин, сертифицированные NetWeaver<br /> [Примечание к SAP № 928839](https://launchpad.support.sap.com/#/notes/928839) |
+| SAP Business One на SQL Server | Windows  | SQL Server | Все типы виртуальных машин, сертифицированные NetWeaver<br /> [Примечание к SAP № 928839](https://launchpad.support.sap.com/#/notes/928839) |
 | SAP BPC 10.01 MS SP08 | Windows и Linux | | Все типы виртуальных машин, сертифицированные NetWeaver<br /> Примечание к SAP № 2451795 |
 | Платформа SAP BusinessObjects BI | Windows и Linux | | Примечание к SAP № 2145537 |
 | SAP Data Services 4.2 | | | Примечание к SAP № 2288344 |

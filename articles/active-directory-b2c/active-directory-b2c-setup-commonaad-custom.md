@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 72d01d6927ee421d01a831244acf65c44a084354
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1938164e957daa84b22fa83e9cb9fa8d51ffeb15
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66508664"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67654077"
 ---
 # <a name="set-up-sign-in-for-multi-tenant-azure-active-directory-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа для мультитенантного Azure Active Directory с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -26,7 +26,7 @@ ms.locfileid: "66508664"
 >[!NOTE]
 >В следующих инструкциях клиент организации Azure AD будет называться `Contoso.com`, а клиент Azure AD B2C — `fabrikamb2c.onmicrosoft.com`.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
 
@@ -45,7 +45,7 @@ ms.locfileid: "66508664"
     ```
     https://yourtenant.b2clogin.com/your-tenant.onmicrosoft.com/oauth2/authresp
     ```
-    
+
 8. Нажмите кнопку **Создать**. Скопируйте **идентификатор приложения** для использования в будущем.
 9. Выберите приложение, а затем щелкните **Параметры**.
 10. Выберите **Ключи**, введите описание ключа, установите срок действия и нажмите кнопку **Сохранить**. Скопируйте значение ключа, который отображается, для использования в будущем.
@@ -57,7 +57,7 @@ ms.locfileid: "66508664"
 
 1. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
 2. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
-3. На странице "Обзор" выберите **Identity Experience Framework — предварительная версия**.
+3. На странице "Обзор" выберите **Identity Experience Framework**.
 4. Выберите **Ключи политики**, а затем щелкните **Добавить**.
 5. Для пункта **Параметры** выберите `Manual`.
 6. Введите **имя** ключа политики. Например, `ContosoAppSecret`.  Префикс `B2C_1A_` будет автоматически добавлен к имени ключа.
@@ -67,7 +67,7 @@ ms.locfileid: "66508664"
 
 ## <a name="add-a-claims-provider"></a>Добавление поставщика утверждений
 
-Если необходимо разрешить пользователям входить в систему с помощью Azure Active Directory, нужно определить Azure Active Directory в качестве поставщика утверждений, с которым Azure AD B2C может взаимодействовать через конечную точку. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя. 
+Если необходимо разрешить пользователям входить в систему с помощью Azure Active Directory, нужно определить Azure Active Directory в качестве поставщика утверждений, с которым Azure AD B2C может взаимодействовать через конечную точку. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
 
 Вы можете определить Azure AD в качестве поставщика утверждений, добавив Azure AD к элементу **ClaimsProvider** в файле расширения политики.
 
@@ -93,7 +93,7 @@ ms.locfileid: "66508664"
             <Item Key="response_mode">form_post</Item>
             <Item Key="HttpBinding">POST</Item>
             <Item Key="DiscoverMetadataByTokenIssuer">true</Item>
-        
+
             <!-- The key below allows you to specify each of the Azure AD tenants that can be used to sign in. Update the GUIDs below for each tenant. -->
             <Item Key="ValidTokenIssuerPrefixes">https://sts.windows.net/00000000-0000-0000-0000-000000000000,https://sts.windows.net/11111111-1111-1111-1111-111111111111</Item>
 
@@ -178,7 +178,7 @@ ms.locfileid: "66508664"
     ```XML
     <ClaimsExchange Id="AzureADExchange" TechnicalProfileReferenceId="Common-AAD" />
     ```
-    
+
     Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение **Id** ранее созданного технического профиля. Например, `Common-AAD`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.

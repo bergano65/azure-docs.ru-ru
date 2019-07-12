@@ -3,7 +3,7 @@ title: Установка драйвера GPU на виртуальные ма�
 description: Как установить драйверы NVIDIA GPU для виртуальных машин серии N под управлением Windows Server или Windows в Azure
 services: virtual-machines-windows
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: f3950c34-9406-48ae-bcd9-c0418607b37d
@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 09/24/2018
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5b6f0d79e773ac7b79c79e4be6206fe39928cd0a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 24189fa8e0f6c31d7fbd3779f666eb85e24dc8f7
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62127790"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67723114"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-windows"></a>Установка драйверов GPU NVIDIA на виртуальные машины серии N под управлением Windows 
 
@@ -67,7 +67,7 @@ ms.locfileid: "62127790"
 Сеть RDMA поддерживает трафик MPI (Message Passing Interface) для приложений, использующих [Microsoft MPI](https://docs.microsoft.com/message-passing-interface/microsoft-mpi) или Intel MPI 5.x. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Разработчики приложений с ускорением GPU, предназначенных для графических процессоров NVIDIA Tesla, могут также скачать и установить последнюю версию [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads). Дополнительные сведения см. в [руководстве по установке CUDA](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html#axzz4ZcwJvqYi).
 

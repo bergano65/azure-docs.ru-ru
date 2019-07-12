@@ -4,7 +4,7 @@ description: Как использовать Azure CLI для создания �
 services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 721b8378-9e47-411e-842c-ec3276d3256a
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 03/22/2019
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5cf213bec0b4d9e9662a9b554be72102f11e8d2d
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 9f12bfaa09b74bf2d9004044dbedb8d7bb15965c
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295458"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67671590"
 ---
 # <a name="how-to-create-a-linux-virtual-machine-with-azure-resource-manager-templates"></a>Как создать виртуальную машину Linux с помощью шаблонов Azure Resource Manager
 
@@ -78,7 +78,7 @@ az vm show --resource-group $resourceGroupName --name "$projectName-vm" --show-d
 ssh <adminUsername>@<ipAddress>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом примере вы создали базовую виртуальную машину Linux. Дополнительные шаблоны Resource Manager, включающие платформы приложений и создания более сложных сред, Обзор [шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Compute&pageNumber=1&sort=Popular).
 

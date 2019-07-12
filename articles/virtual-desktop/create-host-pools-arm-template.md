@@ -4,15 +4,15 @@ description: Как создать кластер узла в Апробация
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
-ms.topic: how-to
+ms.topic: conceptual
 ms.date: 04/05/2019
 ms.author: helohr
-ms.openlocfilehash: 4df8b854a94374346eec6f77d761e65a04ef78a2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cdc61aede6e650bce62768b7a97f8640affd594f
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65523978"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620484"
 ---
 # <a name="create-a-host-pool-with-an-azure-resource-manager-template"></a>Создание пула узлов с помощью шаблона Azure Resource Manager
 
@@ -20,7 +20,7 @@ ms.locfileid: "65523978"
 
 Следуйте инструкциям в этом разделе, чтобы создать пул узлов для клиента виртуальный рабочий стол Windows с помощью шаблона Azure Resource Manager, предоставляемые корпорацией Майкрософт. В этой статье о том, как создать пул узла в виртуальный рабочий стол Windows, создайте группу ресурсов с виртуальными машинами в подписке Azure, присоединение этих виртуальных машин к домену AD и зарегистрировать виртуальные машины с помощью виртуального рабочего стола Windows.
 
-## <a name="what-you-need-to-run-the-azure-resource-manager-template"></a>Что необходимо для выполнения шаблона Azure Resource Manager
+## <a name="what-you-need-to-run-the-azure-resource-manager-template"></a>Предварительные требования для запуска шаблона Azure Resource Manager
 
 Убедитесь, что перед запуском шаблона Azure Resource Manager, вы знаете следующее:
 
@@ -40,11 +40,11 @@ ms.locfileid: "65523978"
 
 Если вы развертываете в подписке поставщика облачных решений, выполните следующие действия для развертывания в Azure.
 
-1. Прокрутите вниз и щелкните правой кнопкой мыши **развертывание в Azure**, а затем выберите **Копировать URL-адрес**.
-2. Откройте текстовый редактор, например Блокнот и вставьте link.
+1. Прокрутите страницу вниз и щелкните правой кнопкой мыши **Развертывание в Azure**, а затем выберите **Copy Link Location** (Скопировать ссылку).
+2. Откройте текстовый редактор, например Блокнот, и вставьте в него ссылку.
 3. Сразу же после "https://portal.azure.com/" и перед хештега (#) введите знак (@) и имя домена клиента. Ниже приведен пример формата, следует использовать: https://portal.azure.com/@Contoso.onmicrosoft.com#create/.
-4. Войдите на портал Azure как пользователь с правами администратора или участника для подписки поставщика облачных решений.
-5. Вставьте ссылку, скопированный в текстовый редактор в адресную строку.
+4. Войдите на портал Azure как пользователь с правами администратора или участника подписки поставщика облачных решений.
+5. Вставьте скопированную в текстовый редактор ссылку в адресную строку.
 
 Рекомендации, о какие параметры следует ввести для вашего сценария, см. в разделе виртуального рабочего стола Windows [файл Readme](https://github.com/Azure/RDS-Templates/blob/master/wvd-templates/Create%20and%20provision%20WVD%20host%20pool/README.md). Файл сведений всегда обновляется с последними изменениями.
 

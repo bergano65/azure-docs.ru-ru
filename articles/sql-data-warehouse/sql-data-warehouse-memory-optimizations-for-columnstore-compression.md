@@ -6,16 +6,16 @@ author: kevinvngo
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: load data
+ms.subservice: load-data
 ms.date: 03/22/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 39d0fe06ee0e0230411024833cac7c88308f86c7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ec85bcc764ba7a7ae6341e0490530c31fdb5a02b
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66225379"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67595461"
 ---
 # <a name="maximizing-rowgroup-quality-for-columnstore"></a>Максимальное повышение качества группы строк для индекса columnstore
 
@@ -138,7 +138,7 @@ OPTION (MAXDOP 1);
 - Сведения об увеличении числа DWU см.в разделе [Масштабирование производительности](quickstart-scale-compute-portal.md).
 - Сведения об изменении класса ресурсов для запросов см. в разделе [Пример изменения класса ресурсов пользователя](resource-classes-for-workload-management.md#change-a-users-resource-class).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные способы повышения производительности в хранилище данных SQL см. в статье [Monitor user queries in Azure SQL Data Warehouse](sql-data-warehouse-overview-manage-user-queries.md) (Мониторинг пользовательских запросов в хранилище данных Azure SQL).
 

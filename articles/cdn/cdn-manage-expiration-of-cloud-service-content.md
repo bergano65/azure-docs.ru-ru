@@ -7,24 +7,24 @@ author: mdgattuso
 manager: danielgi
 editor: ''
 ms.assetid: bef53fcc-bb13-4002-9324-9edee9da8288
-ms.service: cdn
+ms.service: azure-cdn
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/15/2018
 ms.author: magattus
-ms.openlocfilehash: c21ae227d74442be5701dd906180392b1e0fdf8b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a701c332659181081184906a73826b7137d8c49c
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60636711"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67593715"
 ---
 # <a name="manage-expiration-of-web-content-in-azure-cdn"></a>Управление сроком действия веб-содержимого в Azure CDN
 > [!div class="op_single_selector"]
 > * [Веб-содержимое Azure](cdn-manage-expiration-of-cloud-service-content.md)
-> * [хранилище BLOB-объектов Azure](cdn-manage-expiration-of-blob-content.md)
+> * [Хранилище BLOB-объектов Azure](cdn-manage-expiration-of-blob-content.md)
 > 
 
 Файлы из общедоступных исходных веб-серверов могут кэшироваться в Azure CDN до истечения срока их жизни (TTL). Срок жизни определяется заголовком `Cache-Control`, указанным в HTTP-ответе исходного сервера. В этой статье описано, как определить заголовки `Cache-Control` для функции веб-приложений службы приложений Microsoft Azure, облачных служб Azure, приложений ASP.NET и сайтов IIS. Все они настраиваются сходным образом. Определить заголовок `Cache-Control` можно с помощью файлов конфигурации или программным способом. 
@@ -72,7 +72,7 @@ ms.locfileid: "60636711"
 
 1. В разделе **Настраиваемые правила кэширования** создайте два условия соответствия.
 
-     a. В первом условии соответствия задайте для параметра **Условие соответствия** значение **Путь** и введите значение `/webfolder1/*` для параметра **Значения соответствия**. Задайте для параметра **Поведение кэширования** значение **Переопределить** и введите 4 в поле **Часы**.
+     1\. В первом условии соответствия задайте для параметра **Условие соответствия** значение **Путь** и введите значение `/webfolder1/*` для параметра **Значения соответствия**. Задайте для параметра **Поведение кэширования** значение **Переопределить** и введите 4 в поле **Часы**.
 
      2\. Во втором условии соответствия задайте параметру **Условие соответствия** значение **Путь** и введите значение `/webfolder1/file1.txt` для параметра **Значения соответствия**. Задайте для параметра **Поведение кэширования** значение **Переопределить** и введите 2 в поле **Часы**.
 

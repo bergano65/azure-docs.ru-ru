@@ -4,7 +4,7 @@ description: Список различных размеров виртуальн
 services: virtual-machines-windows
 documentationcenter: ''
 author: vermagit
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/12/2018
 ms.author: jonbeck;amverma
-ms.openlocfilehash: 5fc5b5a287a421f93d3184ded3e429c5cff8fa3c
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
+ms.openlocfilehash: 62c6bb906d9c9935be2da148f24d5285cbf0ed67
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67566297"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67710340"
 ---
 # <a name="high-performance-compute-vm-sizes"></a>Размеры виртуальных машин, оптимизированных для высокопроизводительных вычислений
 
@@ -91,7 +91,7 @@ Azure предоставляет несколько вариантов для с
 - [Оптимизированные для GPU](sizes-gpu.md)
 - [Предыдущие поколения](sizes-previous-gen.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Контрольные списки для использования экземпляров с большим объемом вычислений с пакетом HPC на Windows Server см. в статье [Настройка кластера RDMA в Windows с помощью пакета HPC для запуска приложений MPI](classic/hpcpack-rdma-cluster.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
 

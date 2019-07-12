@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 5e691dde92ac05b653cdafb22db9276c7a566008
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dd9aa28703003d2e286197d57e9f00361e2b460d
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66258959"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67653998"
 ---
 # <a name="become-a-cloud-marketplace-publisher"></a>Регистрация в качестве издателя в облаке Marketplace
 
@@ -22,11 +22,11 @@ ms.locfileid: "66258959"
 
 |  | Шаг регистрации | Duration | Сведения |  
 |:--- |:--- |:--- |:--- |  
-| 1 | Регистрация в партнерской сети Microsoft Partner Network | 15 мин. | [Регистрация в партнерской сети Microsoft Partner Network](https://docs.microsoft.com/azure/marketplace/become-publisher#1-register-in-microsoft-partner-network) |  
-| 2 | Создание учетной записи Майкрософт <ul>(требуется для предложений типа "Транзакция" Microsoft Azure Marketplace; рекомендуется для других)</ul> | 15 мин. | [Создание идентификатора Майкрософт](https://docs.microsoft.com/azure/marketplace/become-publisher#2-create-a-microsoft-account) |  
-| 3 | Создайте учетную запись центра партнеров | 15 мин. | [Создайте учетную запись центра партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) |  
-| 4\. |  Вход на Портал Cloud Partner | От 1 до 3 дней | [Вход на Портал Cloud Partner](https://docs.microsoft.com/azure/marketplace/become-publisher#4-sign-into-cloud-partner-portal) |  
-| 5 | Регистрация в Центре разработчиков Майкрософт (Центр разработки) (для предложений типа "Транзакция" Microsoft Azure Marketplace) | От 5 до 10 дней | [Регистрация в центре разработчиков](https://docs.microsoft.com/azure/marketplace/become-publisher#5-register-in-dev-center-for-transact-publishing-option-only) |  
+| 1 | Регистрация в партнерской сети Microsoft Partner Network | 15 мин. | [Регистрация в партнерской сети Microsoft Partner Network](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account#register-for-an-account-using-the-enrollment-page) |  
+| 2 | Создание учетной записи Майкрософт <ul>(требуется для предложений типа "Транзакция" Microsoft Azure Marketplace; рекомендуется для других)</ul> | 15 мин. | [Создание идентификатора Майкрософт](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) |  
+| 3 | Создайте учетную запись центра партнеров | 15 мин. | [Создание учетной записи Центра партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) |  
+| 4 |  Вход на Портал Cloud Partner | От 1 до 3 дней | [Вход на Портал Cloud Partner](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account#sign-in-with-a-work-account) |  
+| 5 | Регистрация в Центре разработчиков Майкрософт (Центр разработки) (для предложений типа "Транзакция" Microsoft Azure Marketplace) | От 5 до 10 дней | [Регистрация в центре разработчиков](/azure/marketplace/deprecated/register-dev-center) |  
 
 
 ## <a name="1-register-in-microsoft-partner-network"></a>1. Регистрация в партнерской сети Microsoft Partner Network  
@@ -50,9 +50,9 @@ ms.locfileid: "66258959"
 [ВАЖНО!] Обратите внимание, что учетная запись Майкрософт, связанная с вашей рабочей электронной почтой, не позволяет получить доступ к порталу.
 
 > [!Note]
-> Если у вас уже есть учетная запись Майкрософт, просмотрите [рекомендации по созданию идентификатора Майкрософт для управления учетной записью Marketplace](https://docs.microsoft.com/azure/marketplace/guidelines#guidelines-for-creating-a-microsoft-id-to-manage-a-marketplace-account), чтобы определить, можно ли ее использовать для публикации в Marketplace. 
+> Если у вас уже есть учетная запись Майкрософт, просмотрите [рекомендации по созданию идентификатора Майкрософт для управления учетной записью Marketplace](https://docs.microsoft.com/azure/marketplace/partner-center-portal/manage-account#manage-tenants), чтобы определить, можно ли ее использовать для публикации в Marketplace. 
 > 
-> Пользователям с федеративной корпоративной учетной записью Azure Active Directory следует прочесть [эту статью](https://docs.microsoft.com/azure/marketplace/guidelines#issue-microsoft-id-in-an-azure-ad-federated-domain) перед попыткой создать или использовать имеющуюся учетную запись Майкрософт.
+> Пользователям с федеративной корпоративной учетной записью Azure Active Directory следует прочесть [эту статью](https://docs.microsoft.com/azure/marketplace/partner-center-portal/manage-account#manage-users) перед попыткой создать или использовать имеющуюся учетную запись Майкрософт.
 
 *   Дополнительные сведения о создании учетной записи Майкрософт или управлении ею см. на [странице справки учетной записи Майкрософт в службе поддержки](https://support.microsoft.com/products/microsoft-account?category=manage-account).
 
@@ -104,7 +104,7 @@ You will be asked to include the following information:
 >Прежде чем создавать учетную запись Центра разработки Майкрософт, убедитесь, что у вашей организации еще нет такой учетной записи во избежание повторяющихся учетных записей. Дополнительные сведения см. в статье [Регистрация в центре разработки](https://docs.microsoft.com/azure/marketplace/register-dev-center).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Дополнительные сведения об онлайн-магазинах Azure Marketplace и AppSource [Сравнение AppSource и Azure Marketplace](https://docs.microsoft.com/azure/marketplace/comparing-appsource-azure-marketplace).
 *   [Выбор варианта публикации](https://docs.microsoft.com/azure/marketplace/determine-your-listing-type).
 

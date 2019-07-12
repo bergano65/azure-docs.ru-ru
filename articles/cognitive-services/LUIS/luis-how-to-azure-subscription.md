@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 06/18/2019
+ms.date: 07/10/2019
 ms.author: diberry
-ms.openlocfilehash: 7f82bf5a40df0554d4f98b2d835fcbd69279be43
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: dedc498ebc910b448b1684136c288b2045780e00
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204163"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67797953"
 ---
 # <a name="using-subscription-keys-with-your-luis-app"></a>Использование ключей подписки с приложением LUIS
 
@@ -32,6 +32,8 @@ ms.locfileid: "67204163"
 
 Создании [ресурс конечной точки прогноза](get-started-portal-deploy-app.md#create-the-endpoint-resource) на портале Azure. Этот ресурс следует использовать только для запросов прогнозирования конечной точки. Не используйте этот ресурс для внесения изменений в приложение.
 
+Можно создать Language Understanding ресурса или ресурса Cognitive Services. При создании ресурса Language Understanding, хорошей практикой является postpend, тип ресурса в имя ресурса. 
+
 <a name="programmatic-key" ></a>
 <a name="authoring-key" ></a>
 <a name="endpoint-key" ></a>
@@ -45,6 +47,15 @@ ms.locfileid: "67204163"
 <a name="assign-endpoint-key"></a>
 <a name="assign-resource"></a>
 
+### <a name="using-resource-from-luis-portal"></a>С помощью ресурса с портала LUIS
+
+При использовании ресурсов на портале LUIS, необязательно знать ключ и расположение. Вместо этого вы должны знать клиента ресурса, подписки и имя ресурса.
+
+Когда вы [назначить](#assign-resource-key-to-luis-app-in-luis-portal) ресурс для приложения LUIS в портале LUIS, ключ и расположения предоставляются как часть URL-адрес конечной точки запроса прогнозирования в разделе Управление **ключи и конечной точки параметры** страницы.
+ 
+### <a name="using-resource-from-rest-api-or-sdk"></a>С помощью ресурса из REST API или пакета SDK
+
+Если вы используете ресурс из REST API(s) или пакета SDK, вы должны знать, ключ и расположение. Эти сведения предоставляются как часть URL-адрес конечной точки запроса прогнозирования в разделе Управление **ключи и конечной точки параметры** страницы на портале Azure, на страницах Обзор и ключи ресурсов.
 
 ## <a name="assign-resource-key-to-luis-app-in-luis-portal"></a>Назначение ключа ресурса для приложения LUIS на портале LUIS
 
@@ -121,7 +132,7 @@ ms.locfileid: "67204163"
 
     Этот API POST принимает указанные ниже параметры.
 
-    |Верхний колонтитул|Значение|
+    |Header|Значение|
     |--|--|
     |`Authorization`|Значение заголовка `Authorization` — `Bearer {token}`. Обратите внимание, что перед значением маркера должны находиться слово `Bearer` и пробел.| 
     |`Ocp-Apim-Subscription-Key`|Ваш [ключ разработки](luis-how-to-account-settings.md).|
@@ -132,11 +143,11 @@ ms.locfileid: "67204163"
 
     Этот API POST принимает указанные ниже параметры.
 
-    |type|Параметр|Значение|
+    |Тип|Параметр|Значение|
     |--|--|--|
-    |Верхний колонтитул|`Authorization`|Значение заголовка `Authorization` — `Bearer {token}`. Обратите внимание, что перед значением маркера должны находиться слово `Bearer` и пробел.|
-    |Верхний колонтитул|`Ocp-Apim-Subscription-Key`|Ваш [ключ разработки](luis-how-to-account-settings.md).|
-    |Верхний колонтитул|`Content-type`|`application/json`|
+    |Header|`Authorization`|Значение заголовка `Authorization` — `Bearer {token}`. Обратите внимание, что перед значением маркера должны находиться слово `Bearer` и пробел.|
+    |Header|`Ocp-Apim-Subscription-Key`|Ваш [ключ разработки](luis-how-to-account-settings.md).|
+    |Header|`Content-type`|`application/json`|
     |Строка запроса|`appid`|Идентификатор приложения LUIS. 
     |Текст||{"AzureSubscriptionId":"ddda2925-af7f-4b05-9ba1-2155c5fe8a8e",<br>"ResourceGroup": "resourcegroup-2",<br>"AccountName": "luis-uswest-S0-2"}|
 
@@ -200,6 +211,6 @@ ms.locfileid: "67204163"
 
 Добавьте оповещение для метрики **общее число вызовов** за определенный период времени. Добавьте адреса электронной почты всех пользователей, которые должны получать оповещение. Добавьте веб-привязки для всех систем, которые должны получать оповещения. При запуске оповещения также может выполняться приложение логики. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения об использовании [версий](luis-how-to-manage-versions.md) для управления изменениями в приложении LUIS.

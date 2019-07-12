@@ -15,12 +15,12 @@ ms.devlang: javascript
 ms.topic: article
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: bc5266bc37a0b58913feb08452e173949b64c112
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 129127a2a43cd9a86e0a1e1cf538358b62381257
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67061613"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706232"
 ---
 # <a name="sending-push-notifications-with-azure-notification-hubs-and-nodejs"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure и Node.js
 
@@ -46,7 +46,7 @@ ms.locfileid: "67061613"
 
 ## <a name="create-a-nodejs-application"></a>Создание приложения Node.js
 
-Первый шаг этого руководства представляет собой создание пустого приложения Node.js. Указания по созданию приложения Node.js см. в статьях [Создание и развертывание простого веб-приложения Node.js][nodejswebsite], [Построение и развертывание приложения Node.js в облачной службе Azure][Node.js Cloud Service] (с использованием Windows PowerShell) или [Создание и развертывание веб-приложения Node.js в Azure с использованием WebMatrix][webmatrix].
+Первый шаг этого руководства представляет собой создание пустого приложения Node.js. Инструкции по созданию приложения Node.js, см. в разделе [Создание и развертывание приложения Node.js на веб-сайте Azure][nodejswebsite] , [Node.js Cloud Service][Node.js Cloud Service] с помощью Windows PowerShell, или [веб-сайт с WebMatrix] [webmatrix].
 
 ## <a name="configure-your-application-to-use-notification-hubs"></a>Настройка приложения для использования центров уведомлений
 
@@ -98,7 +98,7 @@ var notificationHubService = azure.createNotificationHubService('hubname','conne
 - **Windows Phone** — используйте объект `MpnsService`, доступный в `notificationHubService.mpns`;
 - **универсальная платформа Windows** — используйте объект `WnsService`, доступный в `notificationHubService.wns`.
 
-### <a name="how-to-send-push-notifications-to-android-applications"></a>Практическое руководство: Отправка push-уведомлений в приложения Android
+### <a name="how-to-send-push-notifications-to-android-applications"></a>Практическое руководство. Отправка push-уведомлений в приложения Android
 
 Объект `GcmService` предоставляет метод `send`, который может использоваться для отправки push-уведомлений в приложения Android. Метод `send` принимает следующие параметры:
 
@@ -106,7 +106,7 @@ var notificationHubService = azure.createNotificationHubService('hubname','conne
 - **Payload** — полезные данные JSON или строковые полезные данные сообщения.
 - **Callback** — функция обратного вызова.
 
-Дополнительные сведения о формате полезных данных см. в разделе **Payload** (Полезные данные) документа [About GCM Connection Server](https://developers.google.com/cloud-messaging/) (О сервере подключений GCM).
+Дополнительные сведения о формате полезных данных, см. в разделе [полезных данных документации](https://distriqt.github.io/ANE-PushNotifications/m.FCM-GCM%20Payload).
 
 В следующем коде для отправки push-уведомления всем зарегистрированным клиентам используется экземпляр `GcmService`, предоставляемый `NotificationHubService`.
 
@@ -123,7 +123,7 @@ notificationHubService.gcm.send(null, payload, function(error){
 });
 ```
 
-### <a name="how-to-send-push-notifications-to-ios-applications"></a>Практическое руководство: Отправка push-уведомлений в приложения iOS
+### <a name="how-to-send-push-notifications-to-ios-applications"></a>Практическое руководство. Отправка push-уведомлений в приложения iOS
 
 Как и в случае с описанными выше приложениями Android, объект `ApnsService` предоставляет метод `send`, который может использоваться для отправки push-уведомлений в приложения iOS. Метод `send` принимает следующие параметры:
 
@@ -146,7 +146,7 @@ notificationHubService.apns.send(null, payload, function(error){
 });
 ```
 
-### <a name="how-to-send-push-notifications-to-windows-phone-applications"></a>Практическое руководство: Отправка push-уведомлений в приложения Windows Phone
+### <a name="how-to-send-push-notifications-to-windows-phone-applications"></a>Практическое руководство. Отправка push-уведомлений в приложения Windows Phone
 
 Объект `MpnsService` предоставляет метод `send`, который может использоваться для отправки push-уведомлений в приложения Windows Phone. Метод `send` принимает следующие параметры:
 
@@ -170,7 +170,7 @@ notificationHubService.mpns.send(null, payload, 'toast', 22, function(error){
 });
 ```
 
-### <a name="how-to-send-push-notifications-to-universal-windows-platform-uwp-applications"></a>Практическое руководство: Отправка push-уведомлений в приложения универсальной платформы Windows (UWP)
+### <a name="how-to-send-push-notifications-to-universal-windows-platform-uwp-applications"></a>Практическое руководство. Отправка push-уведомлений в приложения универсальной платформы Windows (UWP)
 
 Объект `WnsService` предоставляет метод `send`, который может использоваться для отправки push-уведомлений в приложения универсальной платформы Windows.  Метод `send` принимает следующие параметры:
 

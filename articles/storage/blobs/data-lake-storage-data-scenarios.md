@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: normesta
-ms.openlocfilehash: c5b6287757f6b71cfd60687f463673f142db04d9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fd3875c5c78a02efab1251166ec7113902be3e08
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64939293"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67723234"
 ---
 # <a name="using-azure-data-lake-storage-gen2-for-big-data-requirements"></a>Использование Azure Data Lake Storage 2-ого поколения для обеспечения соответствия требованиям больших данных
 
@@ -39,8 +39,8 @@ ms.locfileid: "64939293"
 
 |Средство | Руководство |
 |---|--|
-|Обозреватель службы хранилища Azure | [Создание файловой системы с помощью Обозревателя службы хранилища](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-explorer#create-a-filesystem) |
-|AzCopy | [Создание контейнера больших двоичных объектов или общего файлового ресурса с помощью AzCopyV10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#create-a-blob-container-or-file-share)|
+|Обозреватель службы хранилища Azure | [Создание файловой системы с помощью Обозревателя службы хранилища](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-explorer#create-a-file-system) |
+|AzCopy | [Создание контейнера больших двоичных объектов или общего файлового ресурса с помощью AzCopyV10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10#transfer-files)|
 |Интерфейс командной строки Hadoop (HDFS) с использованием HDInsight |[Создание файловой системы с помощью HDFS и HDInsight](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-use-hdfs-data-lake-storage?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#create-a-file-system) |
 |Код в записной книжке Azure Databricks|[Создание файловой системы учетной записи хранения (Scala)](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-quickstart-create-databricks-account?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#create-storage-account-file-system) <br><br> [Создание и подключение файловой системы (Python)](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-use-databricks-spark?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#create-a-file-system-and-mount-it)|
 
@@ -54,11 +54,11 @@ ms.locfileid: "64939293"
 
 * Назначьте одну из этих ролей пользователю, группе, управляемому пользователем удостоверению или субъекту-службе:
 
-  [читатель данных больших двоичных объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-reader-preview).
+  [читатель данных больших двоичных объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-reader).
 
-  [участник данных BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-queue-data-contributor-preview);
+  [участник данных BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-queue-data-contributor);
 
-  [владелец данных BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner-preview);
+  [владелец данных BLOB-объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner);
 
 * Используйте маркер подписанного URL-адреса (SAS).
 
@@ -69,11 +69,11 @@ ms.locfileid: "64939293"
 |Средство | Предоставление доступа | Руководство |
 |---|--|---|
 |Обозреватель службы хранилища| Назначение роли пользователям и группам. | [Назначение ролей администратора и других ролей пользователям с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal) |
-|AzCopy| Назначение роли пользователям и группам. <br>**или диспетчер конфигурации служб**<br> Использование маркера SAS.| [Назначение ролей администратора и других ролей пользователям с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal)<br><br>[Простое создание подписанного URL-адреса для скачивания файла из службы хранилища Azure с помощью Обозревателя службы хранилища Azure](https://blogs.msdn.microsoft.com/jpsanders/2017/10/12/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer/)|
+|AzCopy| Назначение роли пользователям и группам. <br>**Или**<br> Использование маркера SAS.| [Назначение ролей администратора и других ролей пользователям с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal)<br><br>[Простое создание подписанного URL-адреса для скачивания файла из службы хранилища Azure с помощью Обозревателя службы хранилища Azure](https://blogs.msdn.microsoft.com/jpsanders/2017/10/12/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer/)|
 |Apache DistCp | Назначение роли для управляемого удостоверения, назначаемого пользователем | [Создание кластера HDInsight с Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2) |
-|Фабрика данных Azure| Назначение роли для управляемого удостоверения, назначаемого пользователем<br>**или диспетчер конфигурации служб**<br> назначение роли субъекту-службе<br>**или диспетчер конфигурации служб**<br> использование ключа учетной записи хранения. | [Свойства связанной службы](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#linked-service-properties) |
+|Фабрика данных Azure| Назначение роли для управляемого удостоверения, назначаемого пользователем<br>**Или**<br> назначение роли субъекту-службе<br>**Или**<br> использование ключа учетной записи хранения. | [Свойства связанной службы](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#linked-service-properties) |
 |Azure HDInsight| Назначение роли для управляемого удостоверения, назначаемого пользователем | [Создание кластера HDInsight с Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2)|
-|Azure Databricks| Назначение роли субъекту-службе. | [Руководство. Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal)|
+|Azure Databricks| Назначение роли субъекту-службе. | [Практическое руководство. Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal)|
 
 Чтобы предоставить доступ к определенным файлам и папкам, ознакомьтесь с приведенными ниже статьями.
 
@@ -95,7 +95,7 @@ ms.locfileid: "64939293"
 
 Ниже приведен список инструментов, которые можно использовать для приема специальных данных.
 
-| источник данных | Средство для приема |
+| источника данных | Средство для приема |
 | --- | --- |
 | Локальный компьютер |[Обозреватель хранилища](https://azure.microsoft.com/features/storage-explorer/)<br><br>[Средство AzCopy ](../common/storage-use-azcopy-v10.md)|
 | Большой двоичный объект хранилища Azure |[Фабрика данных Azure](../../data-factory/connector-azure-data-lake-store.md)<br><br>[Средство AzCopy ](../common/storage-use-azcopy-v10.md)<br><br>[DistCp, запущенный на кластере HDInsight](data-lake-storage-use-distcp.md)|
@@ -196,4 +196,4 @@ Azure ExpressRoute позволяет создавать закрытые под
 |Средство | Руководство |
 |---|--|
 |Фабрика данных Azure | [Действие копирования в Фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/copy-activity-overview) |
-|Apache DistCop | [Использование средства DistCp для копирования данных между Azure Storage Blob и Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-use-distcp) |
+|Apache DistCp | [Использование средства DistCp для копирования данных между Azure Storage Blob и Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-use-distcp) |

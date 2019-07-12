@@ -5,14 +5,14 @@ author: qianw211
 manager: evansma
 ms.author: v-qiwe
 ms.service: marketplace
-ms.topic: how-to
+ms.topic: conceptual
 ms.date: 06/05/2019
-ms.openlocfilehash: f3fb34f263ead9552b8d1d0b1dba4996b355c22a
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: dd68ac502a92b044e958969cc6a2863b5d197416
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67503504"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621661"
 ---
 # <a name="how-to-purchase-software-on-microsoft-appsource"></a>Как купить программное обеспечение в Microsoft AppSource
 
@@ -68,6 +68,6 @@ Microsoft [AppSource](https://appsource.microsoft.com/) теперь позво�
 
 Для продуктов для предприятий [обратитесь к справке здесь](https://docs.microsoft.com/office365/admin/contact-support-for-business-products?view=o365-worldwide&tabs=phone).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - См. в разделе [документации коммерческих Marketplace](https://docs.microsoft.com/azure/marketplace/partner-center-portal/commercial-marketplace-overview) Дополнительные сведения.

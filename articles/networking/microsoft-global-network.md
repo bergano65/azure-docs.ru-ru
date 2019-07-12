@@ -5,19 +5,19 @@ services: networking
 documentationcenter: ''
 author: KumudD
 manager: ''
-ms.service: networking
+ms.service: virtual-network
 ms.devlang: ''
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/13/2019
 ms.author: ypitsch,kumud
-ms.openlocfilehash: ecce41878f7579862bba083f8cecf5db3cbde3e6
-ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.openlocfilehash: bcd2415255643926db2cd4e1e4e55bb7381d6437
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67144140"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672542"
 ---
 # <a name="microsoft-global-network"></a>Глобальная сеть Майкрософт
 
@@ -69,5 +69,5 @@ Microsoft Azure предлагает широчайший набор служб 
  
 Экспоненциальный рост числа Azure и ее сетью достиг точки, где мы поняли, что интуицию человека может больше не следует полагаться на использовании для управления операциями глобальной сети. Для выполнения необходимость проверки долго, средний и краткосрочных изменений в сети, мы разработали платформу для отражения и synthetically эмуляции нашей рабочей сети. Возможность создавать зеркальные среды и создать миллионы моделей, позволяет проверить программное обеспечение и конфигурацию оборудования и их влияние перед их внесением производственная платформа и сети. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Дополнительные сведения о сетевых служб, предоставляемых в Azure](https://azure.microsoft.com/product-categories/networking/)

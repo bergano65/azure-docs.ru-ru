@@ -4,7 +4,7 @@ description: Принципы и подготовка аварийного во�
 services: virtual-machines-linux
 documentationcenter: ''
 author: saghorpa
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
 ms.devlang: NA
@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 09/10/2018
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 73643cd6954932f933e200baad09e4301300aac2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cb1ed063cb11a82d786badd3f63b2d4b6932ce13
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60794902"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67709733"
 ---
 # <a name="disaster-recovery-principles"></a>Принципы аварийного восстановления
 
@@ -105,6 +105,6 @@ ms.locfileid: "60794902"
 
 В случае отработки отказа вместо последнего моментального снимка хранилища вы также можете восстановить более старый моментальный снимок.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - См. статью о [процедуре отработки отказа при аварийном восстановлении](hana-failover-procedure.md).

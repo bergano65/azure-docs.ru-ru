@@ -12,14 +12,15 @@ ms.date: 05/03/2019
 ms.author: mimart
 ms.reviewer: arvindh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23e5fc24e426c87bbc5062183f2ee2db0e546484
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 74c6787068cf8ba1e86cbf43955d0ac995aa8de1
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66388214"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67702112"
 ---
 # <a name="end-user-experiences-for-applications-in-azure-active-directory"></a>Возможности для взаимодействия пользователя с приложениями в Azure Active Directory
+
 Azure Active Directory (Azure AD) предоставляет несколько настраиваемых способов развертывания приложений для пользователей в организации:
 
 * панель доступа Azure AD;
@@ -30,27 +31,31 @@ Azure Active Directory (Azure AD) предоставляет несколько 
 Вы сами выбираете метод (или методы) развертывания в своей организации.
 
 ## <a name="azure-ad-access-panel"></a>панель доступа Azure AD;
+
 Панель доступа по адресу https://myapps.microsoft.com представляет собой веб-портал, который позволяет пользователям с учетной записью организации в Azure Active Directory просматривать и запускать облачные приложения, к которым администратор Azure AD предоставил доступ. Если вы являетесь пользователем [Azure Active Directory Premium](https://azure.microsoft.com/pricing/details/active-directory/), вы также можете использовать возможности панели доступа для самостоятельного управления группами.
 
-![Панель доступа Azure AD](media/what-is-single-sign-on/azure-ad-access-panel.png)
+![Снимок экрана показывает на портале панели доступа Azure AD](media/what-is-single-sign-on/azure-ad-access-panel.png)
 
 Панель доступа отделена от портала Azure, для нее не требуется подписка Azure или Office 365.
 
 Дополнительные сведения о панели доступа Azure AD см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="office-365-application-launcher"></a>средство запуска приложений Office 365;
+
 Для организаций, использующих Office 365, приложения, назначенные пользователям через Azure AD, также отображаются на портале Office 365 в [ https://portal.office.com/myapps ](https://portal.office.com/myapps). Благодаря этому пользователи в организации могут легко запускать приложения без входа на второй портал. Это решение рекомендуется для запуска приложений в организациях, использующих Office 365.
 
-![Портал Office 365](./media/end-user-experiences/microsoft-365-portal-office-com.png)
+![Снимок экрана показывает на портале Office 365](./media/end-user-experiences/microsoft-365-portal-office-com.png)
 
 Дополнительные сведения о средстве запуска приложений Office 365 см. в статье [Добавление приложений в средство запуска приложений Office 365](https://msdn.microsoft.com/office/office365/howto/connect-your-app-to-o365-app-launcher).
 
 ## <a name="direct-sign-on-to-federated-apps"></a>Прямой вход в федеративные приложения
+
 Большинство федеративных приложений, поддерживающих SAML 2.0, WS-Federation или OpenID Connect, также дают пользователям возможность запустить приложение, а затем выполнить вход через Azure AD с помощью автоматического перенаправления или ссылки для входа. Это называется входом, инициируемым поставщиком услуг. Большинство федеративных приложений в коллекции приложений Azure AD поддерживает его (дополнительные сведения приведены в документах, доступных по ссылкам в мастере настройки единого входа в приложении на портале Azure).
 
 ![Пример того, страница входа мобильное приложение](./media/end-user-experiences/workdaymobile.png)
 
 ## <a name="direct-sign-on-links"></a>Ссылки для прямого входа
+
 Azure AD также поддерживает ссылки для прямого единого входа в отдельные приложения, которые поддерживают единый вход на основе пароля, связанный единый вход или любой вид федеративного единого входа.
 
 Эти ссылки представляют собой специально созданные URL-адреса, позволяющие пользователю войти в конкретное приложение с помощью Azure AD, не запуская его с панели доступа Azure AD или Office 365. Эти **пользователя получить доступ к URL-адреса** можно найти в разделе свойств этого доступных корпоративных приложений. На портале Azure выберите **Azure Active Directory** > **корпоративные приложения**. Выберите приложение, а затем выберите **свойства**.
@@ -69,5 +74,6 @@ Azure AD также поддерживает ссылки для прямого 
 
 Эти ссылки используют тот же механизм управления доступом, что и панель доступа и Office 365, и только пользователи или группы, которым назначено приложение на портале Azure, смогут пройти аутентификацию. Неавторизированный пользователь увидит сообщение о том, что ему не предоставлен доступ. Кроме того, отобразится ссылка для загрузки панели доступа, на которой пользователь может увидеть приложения, к которым у него есть доступ.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
+
 Сведения о планах развертывания Azure Active Directory см. [здесь](../fundamentals/active-directory-deployment-plans.md).

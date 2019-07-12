@@ -4,7 +4,7 @@ description: Узнайте о расширениях, доступных для
 services: virtual-machines-linux
 documentationcenter: ''
 author: roiyz-msft
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-service-management,azure-resource-manager
 ms.assetid: 52f5d0ec-8f75-49e7-9e15-88d46b420e63
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: roiyz
-ms.openlocfilehash: c83eb1f6525c54bc44386f84498789b50bf19043
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3f22da9eabc6f539ef37009f565f073b9de89319
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64721132"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706747"
 ---
 # <a name="virtual-machine-extensions-and-features-for-linux"></a>Обзор расширений и компонентов виртуальных машин под управлением Linux
 
@@ -38,7 +38,7 @@ ms.locfileid: "64721132"
 
 Помимо расширений, созданных для конкретных процессов, существует расширение пользовательских сценариев для виртуальных машин под управлением Windows и Linux. Расширение пользовательских сценариев для Linux позволяет запустить на виртуальной машине любой сценарий Bash. Пользовательские сценарии могут пригодиться при проектировании развертывания Azure, для которого требуется дополнительная настройка, ее невозможно выполнить собственными средствами Azure. Дополнительные сведения см. в статье [Использование расширения пользовательских сценариев Azure на виртуальных машинах Linux](custom-script-linux.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы расширения работали на виртуальной машине, на ней нужно установить агент Linux для Azure. Некоторые расширения имеют дополнительные требования, например доступ к определенным ресурсам или зависимости.
 
@@ -222,7 +222,7 @@ info:    vm extension set command OK
 Когда обновление становится доступно, оно устанавливается на виртуальных машинах только при внесении изменений в расширения или другие элементы модели виртуальной машины, как например:
 
 - Диски данных
-- Расширения
+- расширения.
 - контейнер диагностики загрузки;
 - секреты гостевой ОС;
 - Размер виртуальной машины
@@ -411,6 +411,6 @@ az vm extension delete \
 | Расширение системы диагностики Azure |Управляет системой диагностики Azure. |[Расширение системы диагностики Azure](https://azure.microsoft.com/blog/windows-azure-virtual-machine-monitoring-with-wad-extension/) |
 | Расширение Azure VM Access |Управляет пользователями и учетными данными. |[Расширение VM Access для Linux](https://azure.microsoft.com/blog/using-vmaccess-extension-to-reset-login-credentials-for-linux-vm/) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о расширениях виртуальных машин см. в статье c [обзором расширений и компонентов виртуальной машины Azure](overview.md).

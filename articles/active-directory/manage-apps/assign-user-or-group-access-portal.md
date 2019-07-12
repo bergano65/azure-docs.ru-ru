@@ -12,24 +12,22 @@ ms.date: 04/11/2019
 ms.author: mimart
 ms.reviewer: luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 702eb5008c60764cd84e2787a8e2c2818d3f9268
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 249dfeeb231c61b05af2e89f0dc02822cc18e627
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65780940"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67702170"
 ---
 # <a name="assign-a-user-or-group-to-an-enterprise-app-in-azure-active-directory"></a>Назначение пользователя или группы корпоративному приложению в Azure Active Directory
-Чтобы назначить пользователя или группу в корпоративном приложении, необходимо иметь соответствующие разрешения для управления корпоративным приложением, а также права глобального администратора для доступа к каталогу.
+
+Чтобы назначить пользователя или группу в корпоративном приложении, необходимо иметь соответствующие разрешения для управления корпоративным приложением, а также права глобального администратора для доступа к каталогу. В приложениях Майкрософт (например, в приложениях Office 365) назначить пользователей в корпоративном приложении можно с помощью PowerShell.
 
 > [!NOTE]
 > Требования к лицензированию компонентов, рассматриваемых в этой статье, см. на странице [цен на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory).
 
-> [!NOTE]
-> В приложениях Майкрософт (например, в приложениях Office 365) назначить пользователей в корпоративном приложении можно с помощью PowerShell.
-
-
 ## <a name="assign-a-user-to-an-app---portal"></a>Назначение приложения пользователю — портал
+
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи глобального администратора каталога.
 1. Выберите **Все службы**, в текстовом поле введите Azure Active Directory, а затем нажмите клавишу **ВВОД**.
 1. Выберите **Корпоративные приложения**.
@@ -38,13 +36,13 @@ ms.locfileid: "65780940"
 1. На ***appname*** **-пользователи и группы** области выберите **добавить пользователя**.
 1. На **Добавление назначения** области выберите **пользователей и групп**.
 
-    ![Назначение приложению пользователя или группы](./media/assign-user-or-group-access-portal/assign-users.png)
+   ![Назначение приложению пользователя или группы](./media/assign-user-or-group-access-portal/assign-users.png)
+
 1. На **пользователей и групп** области, выберите один или несколько пользователей или групп в списке, а затем выберите **выберите** кнопки в нижней части области.
 1. На **Добавление назначения** области выберите **роли**. Затем на **Выбор роли** , выберите роль для применения к выбранных пользователей или группы, затем выбрать команду **ОК** в нижней части области.
 1. На **Добавление назначения** области выберите **назначить** кнопки в нижней части области. У назначенных пользователей и групп будут разрешения, определенные выбранной ролью для этого корпоративного приложения.
 
 ## <a name="allow-all-users-to-access-an-app---portal"></a>Предоставление всем пользователям доступа к приложению — портал
-Чтобы предоставить всем пользователям доступ к приложению, сделайте следующее:
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи глобального администратора каталога.
 1. Выберите **Все службы**, в текстовом поле введите Azure Active Directory, а затем нажмите клавишу **ВВОД**.
@@ -52,7 +50,7 @@ ms.locfileid: "65780940"
 1. В области **Корпоративные приложения** выберите **All applications** (Все приложения). Отобразится список приложений, которыми вы можете управлять.
 1. В области **Корпоративные приложения — All applications (Все приложения)** выберите приложение.
 1. На ***appname*** области выберите **свойства**.
-1. На  ***appname* -свойства** установите **требуется назначение пользователей?** присвоить **нет**. 
+1. На  ***appname* -свойства** установите **требуется назначение пользователей?** присвоить **нет**.
 
 Параметр **Требуется назначение пользователей**:
 
@@ -60,13 +58,12 @@ ms.locfileid: "65780940"
 - Только функции, используемые облачными приложениями с поддержкой единого входа SAML и локальными приложениями с поддержкой Application Proxy. См. дополнительные сведения о [едином входе для приложений](what-is-single-sign-on.md).
 - Требует, чтобы пользователи предоставляли согласие для приложения. Администратор может предоставить согласие для всех пользователей.  См. дополнительные сведения о [настройки способа предоставления согласия для приложения пользователями](configure-user-consent.md).
 
-
 ## <a name="assign-a-user-to-an-app---powershell"></a>Назначение приложения пользователю — PowerShell
 
 1. Откройте окно Windows PowerShell с повышенными привилегиями.
 
-    >[!NOTE] 
-    > Вам потребуется установить модуль Azure AD (с помощью команды `Install-Module -Name AzureAD`). Если будет предложено установить модуль NuGet или новый модуль PowerShell Azure для Active Directory версии 2, введите Y и нажмите клавишу ВВОД.
+   > [!NOTE]
+   > Вам потребуется установить модуль Azure AD (с помощью команды `Install-Module -Name AzureAD`). Если будет предложено установить модуль NuGet или новый модуль PowerShell Azure для Active Directory версии 2, введите Y и нажмите клавишу ВВОД.
 
 1. Выполните команду `Connect-AzureAD` и войдите в систему с помощью учетных данных глобального администратора.
 1. Чтобы назначить пользователя и его роль в приложении, используйте следующий скрипт:
@@ -76,15 +73,15 @@ ms.locfileid: "65780940"
     $username = "<You user's UPN>"
     $app_name = "<Your App's display name>"
     $app_role_name = "<App role display name>"
-    
+
     # Get the user to assign, and the service principal for the app to assign to
     $user = Get-AzureADUser -ObjectId "$username"
     $sp = Get-AzureADServicePrincipal -Filter "displayName eq '$app_name'"
     $appRole = $sp.AppRoles | Where-Object { $_.DisplayName -eq $app_role_name }
-    
+
     # Assign the user to the app role
     New-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId -PrincipalId $user.ObjectId -ResourceId $sp.ObjectId -Id $appRole.Id
-    ```     
+    ```
 
 Дополнительные сведения о том, как назначить пользователю роль в приложении, см. в документации по командлету [New-AzureADUserAppRoleAssignment](https://docs.microsoft.com/powershell/module/azuread/new-azureaduserapproleassignment?view=azureadps-2.0).
 
@@ -94,7 +91,7 @@ ms.locfileid: "65780940"
 
 В этом примере пользователь Britta Simon назначается в приложении [Microsoft Workplace Analytics](https://products.office.com/business/workplace-analytics) с помощью PowerShell.
 
-1. В PowerShell присвойте соответствующие значения переменным $username, $app_name и $app_role_name. 
+1. В PowerShell присвойте соответствующие значения переменным $username, $app_name и $app_role_name.
 
     ```powershell
     # Assign the values to the variables
@@ -109,13 +106,13 @@ ms.locfileid: "65780940"
     $user = Get-AzureADUser -ObjectId "$username"
     $sp = Get-AzureADServicePrincipal -Filter "displayName eq '$app_name'"
     ```
-        
+
 1. Выполните команду `$sp.AppRoles`, чтобы отобразить роли, доступные для приложения Workplace Analytics. В этом примере мы хотим назначить пользователю Britta Simon роль Analyst (Limited Access) (аналитик с ограниченным доступом).
-    
-    ![Роль в приложении Workplace Analytics](./media/assign-user-or-group-access-portal/workplace-analytics-role.png)
+
+   ![Показаны роли, доступные для пользователя с помощью Workplace Analytics роли](./media/assign-user-or-group-access-portal/workplace-analytics-role.png)
 
 1. Присвойте имя роли переменной `$app_role_name`.
-        
+
     ```powershell
     # Assign the values to the variables
     $app_role_name = "Analyst (Limited access)"
@@ -129,8 +126,9 @@ ms.locfileid: "65780940"
     New-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId -PrincipalId $user.ObjectId -ResourceId $sp.ObjectId -Id $appRole.Id
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-* [Просмотр всех моих групп](../fundamentals/active-directory-groups-view-azure-portal.md)
-* [Удаление назначения пользователя или группы из корпоративного приложения](remove-user-or-group-access-portal.md)
-* [Отключение входа пользователя в корпоративное приложение](disable-user-sign-in-portal.md)
-* [Изменение имени или логотипа корпоративного приложения](change-name-or-logo-portal.md)
+## <a name="next-steps"></a>Следующие шаги
+
+- [Просмотр всех моих групп](../fundamentals/active-directory-groups-view-azure-portal.md)
+- [Удаление назначения пользователя или группы из корпоративного приложения](remove-user-or-group-access-portal.md)
+- [Отключение входа пользователя в корпоративное приложение](disable-user-sign-in-portal.md)
+- [Изменение имени или логотипа корпоративного приложения](change-name-or-logo-portal.md)

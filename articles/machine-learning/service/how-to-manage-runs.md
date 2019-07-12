@@ -11,12 +11,12 @@ author: rastala
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 04/05/2019
-ms.openlocfilehash: a93492b8ea97500fe3c761f3ac0c49f8c1342d09
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a67ac07c26063b380bda2b8cb2b6a02677e7f816
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67074954"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67656200"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Запуск, отслеживать и отменять учебных запусков в Python
 
@@ -29,7 +29,7 @@ ms.locfileid: "67074954"
 * Создание дочерних запусков.
 * Пометить и нахождение запусков.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Вам понадобятся следующие элементы:
 
@@ -178,7 +178,7 @@ local_script_run.cancel()
 print("Did the run cancel?",local_script_run.get_status())
 ```
 
-Если завершения запуска, но содержит ошибку (например, скрипт неверные обучения использовалась), можно использовать [ `fail()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#fail-error-details-none---set-status-true-) метод, чтобы пометить его как не удалось.
+Если завершения запуска, но содержит ошибку (например, скрипт неверные обучения использовалась), можно использовать [ `fail()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)#fail-error-details-none--error-code-none---set-status-true-) метод, чтобы пометить его как не удалось.
 
 ```Python
 local_script_run = exp.submit(run_config)
@@ -319,6 +319,6 @@ az ml run list --experiment-name experiment [?properties.author=='azureml-user' 
 
 * Дополнительные сведения об управлении выполняется с помощью пакета SDK для Azure Machine Learning, см. в разделе [управление запуски notebook](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training/manage-runs).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Чтобы узнать, как выполнять вход метрики для экспериментов, см. в разделе [журнала метрик во время учебные запуски](how-to-track-experiments.md).

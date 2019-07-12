@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: cc657e079949b8217031906efeb84049217d6493
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1bf90ec8987ec419131ba21137972a0905e33f19
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66510248"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67654137"
 ---
 # <a name="set-up-sign-in-with-a-twitter-account-by-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа с помощью учетной записи Twitter с использованием пользовательских политик Azure в Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "66510248"
 
 В этой статье описывается включение входа пользователей из учетных записей Twitter с помощью [пользовательских политик](active-directory-b2c-overview-custom.md) в Azure Active Directory (Azure AD) B2C.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
 - Если у вас нет учетной записи Twitter, создайте ее на [странице регистрации Twitter](https://twitter.com/signup).
@@ -48,7 +48,7 @@ ms.locfileid: "66510248"
 1. Войдите на [портале Azure](https://portal.azure.com/).
 2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите **фильтр каталога и подписки** в верхнем меню и выберите каталог, содержащий вашего клиента.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
-4. На странице "Обзор" выберите **Identity Experience Framework — предварительная версия**.
+4. На странице "Обзор" выберите **Identity Experience Framework**.
 5. Выберите **Ключи политики**, а затем щелкните **Добавить**.
 6. Для пункта **Параметры** выберите `Manual`.
 7. Введите **имя** ключа политики. Например, `TwitterSecret`. Префикс `B2C_1A_` будет автоматически добавлен к имени ключа.
@@ -58,7 +58,7 @@ ms.locfileid: "66510248"
 
 ## <a name="add-a-claims-provider"></a>Добавление поставщика утверждений
 
-Если необходимо разрешить пользователям входить в систему с помощью учетной записи Twitter, определите учетную запись, используемую в качестве поставщика утверждений, с которым Azure AD B2C может взаимодействовать через конечную точку. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя. 
+Если необходимо разрешить пользователям входить в систему с помощью учетной записи Twitter, определите учетную запись, используемую в качестве поставщика утверждений, с которым Azure AD B2C может взаимодействовать через конечную точку. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
 
 Чтобы определить учетную запись Twitter в качестве поставщика утверждений, можно добавить ее в элемент **ClaimsProviders** в файле расширения политики.
 
@@ -147,7 +147,7 @@ ms.locfileid: "66510248"
     ```XML
     <ClaimsExchange Id="TwitterExchange" TechnicalProfileReferenceId="Twitter-OAUTH1" />
     ```
-    
+
     Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `Twitter-OAUTH1`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.

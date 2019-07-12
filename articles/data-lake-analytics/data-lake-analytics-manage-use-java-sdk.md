@@ -9,19 +9,19 @@ ms.reviewer: jasonwhowell
 ms.assetid: 07830b36-2fe3-4809-a846-129cf67b6a9e
 ms.topic: conceptual
 ms.date: 06/18/2017
-ms.openlocfilehash: f2a4b98404139abead411c20648b82d9081481f9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4d7388a103411b5776cd0bf385af25c0b12f44e7
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60614987"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67625375"
 ---
 # <a name="manage-azure-data-lake-analytics-using-a-java-app"></a>Управление Azure Data Lake Analytics с помощью приложения Java
 [!INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
 
 Из этой статьи вы узнаете, как управлять учетными записями, источниками данных, пользователями и заданиями Azure Data Lake Analytics, используя приложение, написанное с помощью пакета SDK Azure для Java. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 * **Пакет средств разработки для Java (JDK) 8** (с использованием Java версии 1.8).
 * **IntelliJ** или другая подходящая среда разработки Java. В инструкциях в этом документе используется IntelliJ.
 * Создайте приложение Azure Active Directory (AAD) и получите его **идентификатор клиента**, **код клиента** и **ключ**. Дополнительные сведения о приложениях AAD и указания о том, как получить идентификатор клиента, см. в статье [Создание приложения Active Directory и субъекта-службы с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md). Когда будут созданы приложение и ключ, URI ответа и ключ также будут доступны на портале.
@@ -374,8 +374,8 @@ public static String GetJobStatus(UUID jobId) throws IOException, CloudException
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Сведения о языке U-SQL см. в статье [Учебник. Приступая к работе с языком U-SQL для аналитики озера данных Azure](data-lake-analytics-u-sql-get-started.md) и в [справочнике по языку U-SQL](https://go.microsoft.com/fwlink/?LinkId=691348).
+* Сведения о языке U-SQL см. в статье [Учебник. Приступая к работе с языком U-SQL для аналитики озера данных Azure](data-lake-analytics-u-sql-get-started.md) и в [справочнике по языку U-SQL](https://docs.microsoft.com/u-sql/).
 * Задачи управления описываются в руководстве по [управлению Azure Data Lake Analytics с помощью портала Azure](data-lake-analytics-manage-use-portal.md).
 * Общие сведения об Azure Data Lake Analytics см. в [этой статье](data-lake-analytics-overview.md).

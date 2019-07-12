@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: sgilley
 ms.date: 05/10/2019
-ms.openlocfilehash: 42724f5fcb3101015cef0d218a3d548f349646be
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7d10d996febd0e31c9085bf5cb82324cce101c80
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65785820"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67606143"
 ---
 # <a name="sample-5---classification-predict-churn-appetency-and-up-selling"></a>Пример 5 - классификации. Прогнозирование оттока стремления и сопутствующих продаж 
 
@@ -29,7 +29,7 @@ ms.locfileid: "65785820"
 
 ![Граф эксперимента](./media/ui-sample-classification-predict-churn/experiment-graph.png)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 
@@ -37,7 +37,7 @@ ms.locfileid: "65785820"
 
     ![Откройте эксперимент](media/ui-sample-classification-predict-churn/open-sample5.png)
 
-## <a name="data"></a>Данные
+## <a name="data"></a>Data
 
 Данные, которые мы используем для этого эксперимента, с KDD Cup 2009. Набор данных содержит 50 000 строк и столбцов 230 компонентов. Задача — прогнозирование оттока стремления и сопутствующих продаж для клиентов, использующих эти функции. Дополнительные сведения о данных и задачи, см. в разделе [KDD веб-сайт](https://www.kdd.org/kdd-cup/view/kdd-cup-2009).
 
@@ -71,7 +71,7 @@ ms.locfileid: "65785820"
 
 [!INCLUDE [aml-ui-cleanup](../../../includes/aml-ui-cleanup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Изучите другие примеры, доступные для визуального интерфейса:
 
@@ -79,3 +79,4 @@ ms.locfileid: "65785820"
 - [Пример 2 - регрессии. Сравнение алгоритмы для прогнозирования стоимости автомобиля](ui-sample-regression-predict-automobile-price-compare-algorithms.md)
 - [Пример 3 - классификация. Спрогнозировать кредитный риск](ui-sample-classification-predict-credit-risk-basic.md)
 - [Пример 4 - классификация. Прогнозирования кредитного риска (стоимость конфиденциальные)](ui-sample-classification-predict-credit-risk-cost-sensitive.md)
+- [Пример 6 - классификации. Прогнозирование задержки рейсов](ui-sample-classification-predict-flight-delay.md)

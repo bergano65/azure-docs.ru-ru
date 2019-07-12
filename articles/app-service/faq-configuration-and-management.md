@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: 88051c45f21bdf11807ffcc63d8248cba81ae70b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ec2580f0c71c98c7a03f3326cb1b8ff539109ee0
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66137057"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67720024"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "66137057"
 
 ## <a name="are-there-limitations-i-should-be-aware-of-if-i-want-to-move-app-service-resources"></a>Есть ли ограничения для перемещения ресурсов службы приложений?
 
-Существует несколько ограничений для перемещения ресурсов службы приложений в новую группу ресурсов или подписку. Дополнительные сведения см. в разделе [Ограничения службы приложений](../azure-resource-manager/resource-group-move-resources.md#app-service-limitations).
+Существует несколько ограничений для перемещения ресурсов службы приложений в новую группу ресурсов или подписку. Дополнительные сведения см. в разделе [Ограничения службы приложений](../azure-resource-manager/move-limitations/app-service-move-limitations.md).
 
 ## <a name="how-do-i-use-a-custom-domain-name-for-my-web-app"></a>Как использовать имя пользовательского домена для веб-приложения?
 
@@ -56,11 +56,11 @@ ms.locfileid: "66137057"
 
 В настоящее время Azure Application Insights не поддерживает операции перемещения. Если исходная группа ресурсов содержит ресурс Application Insights, этот ресурс переместить нельзя. Если при попытке переместить приложение службы приложений включить ресурс Application Insights, вся операция заканчивается ошибкой. Тем не менее для корректной работы приложения ресурс Application Insights и план службы приложений не должны обязательно находиться в одной группе ресурсов.
 
-Дополнительные сведения см. в разделе [Ограничения службы приложений](../azure-resource-manager/resource-group-move-resources.md#app-service-limitations).
+Дополнительные сведения см. в разделе [Ограничения службы приложений](../azure-resource-manager/move-limitations/app-service-move-limitations.md).
 
 ## <a name="where-can-i-find-a-guidance-checklist-and-learn-more-about-resource-move-operations"></a>Где найти контрольный список с инструкциями и дополнительные сведения о перемещении ресурсов?
 
-В разделе [Ограничения службы приложений](../azure-resource-manager/resource-group-move-resources.md#app-service-limitations) объясняется, как переместить ресурсы в новую подписку или в новую группу ресурсов в той же подписке. Также здесь содержатся сведения о контрольном списке для перемещения ресурсов, службах, поддерживающих операции перемещения, ограничениях службы приложений и другая информация.
+В разделе [Ограничения службы приложений](../azure-resource-manager/move-limitations/app-service-move-limitations.md) объясняется, как переместить ресурсы в новую подписку или в новую группу ресурсов в той же подписке. Также здесь содержатся сведения о контрольном списке для перемещения ресурсов, службах, поддерживающих операции перемещения, ограничениях службы приложений и другая информация.
 
 ## <a name="how-do-i-set-the-server-time-zone-for-my-web-app"></a>Как задать часовой пояс сервера для веб-приложения?
 

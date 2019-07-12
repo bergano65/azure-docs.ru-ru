@@ -4,18 +4,18 @@ description: Используйте API REST Azure для сбора метри�
 services: virtual-machines
 author: rloutlaw
 ms.reviewer: routlaw
-manager: jeconnoc
+manager: gwallace
 ms.service: load-balancer
 ms.custom: REST
 ms.topic: article
 ms.date: 06/13/2018
 ms.author: routlaw
-ms.openlocfilehash: 924154a64673b4ff646f3b6ece373b278ee37181
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 53e93d20f4a8c4877374d8242521ca97d481e15d
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60773270"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67667453"
 ---
 # <a name="get-virtual-machine-usage-metrics-using-the-rest-api"></a>Получение метрик использования виртуальной машины с помощью REST API
 
@@ -42,7 +42,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 ### <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
 
-| Name | Описание |
+| ИМЯ | Описание |
 | :--- | :---------- |
 | subscriptionId | Идентификатор подписки Azure. Если у вас несколько подписок, см. раздел [Использование нескольких подписок](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
 | resourceGroupName | Имя группы ресурсов Azure, связанное с ресурсом. Вы можете получить это значение из API-интерфейса Azure Resource Manager, CLI или портала. |
@@ -52,7 +52,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 | Интервал времени | Строка, в следующем формате `startDateTime_ISO/endDateTime_ISO`, определяет диапазон времени для возвращаемых метрик. Этот необязательный параметр имеет значение для возврата суточных данных в примере. |
 | &nbsp; | &nbsp; |
 
-### <a name="request-body"></a>Текст запроса
+### <a name="request-body"></a>Тело запроса
 
 Для этой операции текст запроса не требуется.
 

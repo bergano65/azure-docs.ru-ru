@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 11/23/2016
 ms.author: mbullwin
-ms.openlocfilehash: 062b565369c3b6e877d36f883a152ca6c013e0cf
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: d1c4005651518eb27eebde0005bd70b4adad6432
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67479661"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67798364"
 ---
 # <a name="filtering-and-preprocessing-telemetry-in-the-application-insights-sdk"></a>Фильтрация и предварительная обработка данных телеметрии в пакете SDK для Application Insights
 
@@ -96,7 +96,10 @@ public class SuccessfulDependencyFilter : ITelemetryProcessor
     }
 }
 ```
-3. В файл ApplicationInsights.config вставьте следующее:
+
+3. Добавление вашего процессора
+
+**Приложения ASP.NET** вставить это в файле ApplicationInsights.config:
 
 ```xml
 <TelemetryProcessors>
@@ -129,6 +132,26 @@ builder.Build();
 ```
 
 Клиенты TelemetryClient, созданные после этой точки, будут использовать обработчики.
+
+**Приложения ASP.NET Core**
+
+> [!NOTE]
+> Добавление инициализатор `ApplicationInsights.config` или с помощью `TelemetryConfiguration.Active` не является действительным для приложений ASP.NET Core. 
+
+
+Для [ASP.NET Core](asp-net-core.md#adding-telemetry-processors) приложений, добавив новый `TelemetryInitializer` можно сделать, добавив его в контейнер внедрения зависимостей, как показано ниже. Это можно сделать в `ConfigureServices` метод вашей `Startup.cs` класса.
+
+```csharp
+    public void ConfigureServices(IServiceCollection services)
+    {
+        // ...
+        services.AddApplicationInsightsTelemetry();
+        services.AddApplicationInsightsTelemetryProcessor<SuccessfulDependencyFilter>();
+
+        // If you have more processors:
+        services.AddApplicationInsightsTelemetryProcessor<AnotherProcessor>();
+    }
+```
 
 ### <a name="example-filters"></a>Примеры фильтров
 #### <a name="synthetic-requests"></a>Искусственные запросы
@@ -237,7 +260,7 @@ namespace MvcWebRole.Telemetry
 }
 ```
 
-**Загрузка инициализатора**
+**Приложения ASP.NET: Загрузка инициализатора**
 
 В ApplicationInsights.config.:
 
@@ -257,15 +280,27 @@ namespace MvcWebRole.Telemetry
 protected void Application_Start()
 {
     // ...
-    TelemetryConfiguration.Active.TelemetryInitializers
-    .Add(new MyTelemetryInitializer());
+    TelemetryConfiguration.Active.TelemetryInitializers.Add(new MyTelemetryInitializer());
 }
 ```
 
-
 [Дополнительную информацию см. здесь.](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService/MvcWebRole)
 
-<a name="js-initializer"></a>
+**Приложения ASP.NET Core: Загрузка инициализатора**
+
+> [!NOTE]
+> Добавление инициализатор `ApplicationInsights.config` или с помощью `TelemetryConfiguration.Active` не является действительным для приложений ASP.NET Core. 
+
+Для [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) приложений, добавив новый `TelemetryInitializer` можно сделать, добавив его в контейнер внедрения зависимостей, как показано ниже. Это можно сделать в `ConfigureServices` метод вашей `Startup.cs` класса.
+
+```csharp
+ using Microsoft.ApplicationInsights.Extensibility;
+ using CustomInitializer.Telemetry;
+ public void ConfigureServices(IServiceCollection services)
+{
+    services.AddSingleton<ITelemetryInitializer, MyTelemetryInitializer>();
+}
+```
 
 ### <a name="java-telemetry-initializers"></a>Инициализаторы телеметрии Java
 

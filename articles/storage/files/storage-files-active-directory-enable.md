@@ -5,14 +5,14 @@ services: storage
 author: roygara
 ms.service: storage
 ms.topic: article
-ms.date: 06/19/2019
+ms.date: 07/05/2019
 ms.author: rogarana
-ms.openlocfilehash: 80d871bdc17c3f93e113b08201d6c53f29bfeff0
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: cd4c952caa336f2602d3c30e0db3e10ebee59cb9
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295616"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67696126"
 ---
 # <a name="enable-azure-active-directory-domain-service-authentication-over-smb-for-azure-files-preview"></a>Включить проверку подлинности доменная служба Active Directory Azure по протоколу SMB для службы файлов Azure (Предварительная версия)
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -22,20 +22,20 @@ ms.locfileid: "67295616"
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="overview-of-the-workflow"></a>Обзор рабочего процесса
-Прежде чем включать Azure AD по протоколу SMB для службы файлов Azure, убедитесь, что среды Azure AD и службы хранилища Azure настроены должным образом. Рекомендуется ознакомиться с [предварительными требованиями](#prerequisites), чтобы убедиться, что вы выполнили все необходимые шаги. 
+Прежде чем включить проверку подлинности Azure AD DS по протоколу SMB для службы файлов Azure, убедитесь, что Azure AD и правильность настройки среды хранения Azure. Рекомендуется ознакомиться с [предварительными требованиями](#prerequisites), чтобы убедиться, что вы выполнили все необходимые шаги. 
 
 Затем предоставьте доступ к ресурсам службы файлов Azure с помощью учетных данных Azure AD, выполнив следующее: 
 
-1. Включите аутентификацию Azure AD по протоколу SMB для своей учетной записи хранения, чтобы зарегистрировать эту учетную запись в соответствующем развертывании доменных служб Azure AD.
+1. Включите проверку подлинности Доменных служб Azure по протоколу SMB для вашей учетной записи для регистрации учетной записи хранения в соответствующее развертывание доменных служб Azure AD.
 2. Назначьте права доступа к общему ресурсу для удостоверения Azure AD (пользователя, группы или субъекта-службы).
 3. Настройте разрешения NTFS по протоколу SMB для каталогов и файлов.
 4. Подключите файловый ресурс Azure из виртуальной машины, присоединенной к домену.
 
-На приведенной ниже схеме показан комплексный рабочий процесс включения аутентификации Azure AD по протоколу SMB для службы файлов Azure. 
+На следующей схеме показан рабочий процесс end-to-end для включения проверки подлинности Доменных служб Azure по протоколу SMB для службы файлов Azure. 
 
 ![Схема, показывающая рабочий процесс включения Azure AD по протоколу SMB для службы файлов Azure](media/storage-files-active-directory-enable/azure-active-directory-over-smb-workflow.png)
 
-## <a name="prerequisites"></a>Технические условия 
+## <a name="prerequisites"></a>предварительные требования 
 
 Прежде чем включать Azure AD по протоколу SMB для службы файлов Azure, убедитесь, что выполнены следующие предварительные требования.
 
@@ -56,7 +56,7 @@ ms.locfileid: "67295616"
     Чтобы получить доступ к файловому ресурсу с использованием учетных данных Azure AD с виртуальной машины, ваша виртуальная машина должна быть подключена к домену доменных служб Azure AD. Дополнительные сведения см. в статье [Присоединение виртуальной машины Windows Server к управляемому домену](../../active-directory-domain-services/join-windows-vm.md).
 
     > [!NOTE]
-    > Аутентификации Azure AD по протоколу SMB в службе файлов Azure поддерживается только на виртуальных машинах Azure, работающих на ОС версий выше Windows 7 или Windows Server 2008 R2.
+    > Проверка подлинности Azure AD DS по протоколу SMB с файлами Azure поддерживается только на виртуальных машинах Azure под управлением версий операционной системы, предшествующей Windows 7 или Windows Server 2008 R2.
 
 4.  **Выберите или создайте файловый ресурс Azure**.
 
@@ -67,15 +67,15 @@ ms.locfileid: "67295616"
 
     Чтобы убедиться, что ваша виртуальная машина и файловый ресурс настроены правильно, попробуйте установить общий доступ к файлу с помощью ключа учетной записи хранения. Дополнительные сведения см. в статье [Использование общей папки Azure в Windows](storage-how-to-use-files-windows.md).
 
-## <a name="enable-azure-ad-authentication-for-your-account"></a>Включение аутентификации Azure AD для учетной записи
+## <a name="enable-azure-ad-ds-authentication-for-your-account"></a>Включить проверку подлинности Azure AD DS для вашей учетной записи
 
-Чтобы включить аутентификацию Azure AD по протоколу SMB для службы файлов Azure, вы можете задать свойство в учетных записях хранения, созданных после 24 сентября 2018 года, с помощью портала Azure, Azure PowerShell или Azure CLI. В результате установки этого свойства учетная запись хранения регистрируется в соответствующем развертывании доменных служб Azure AD. Затем аутентификация Azure AD по протоколу SMB включается для всех новых и существующих файловых ресурсов в учетной записи хранения. 
+Включение Доменных служб Azure по протоколу SMB для службы файлов Azure, вы можно задать свойства для учетных записей хранения, созданной после 24 сентября 2018 г., с помощью портала Azure, Azure PowerShell или интерфейса командной строки Azure. В результате установки этого свойства учетная запись хранения регистрируется в соответствующем развертывании доменных служб Azure AD. Проверка подлинности Azure AD DS по протоколу SMB включается для всех новых и существующих общих папок в учетной записи хранения. 
 
-Помните, что вы можете включить аутентификацию Azure AD по протоколу SMB только после успешного развертывания доменных служб Azure AD в вашем клиенте Azure AD. Дополнительные сведения см. в разделе с [предварительными требованиями](#prerequisites).
+Имейте в виду, что вы можете включить проверку подлинности Azure AD DS по протоколу SMB, только после успешного развертывания доменных служб Azure AD для вашего клиента Azure AD. Дополнительные сведения см. в разделе с [предварительными требованиями](#prerequisites).
 
 ### <a name="azure-portal"></a>Портал Azure
 
-Чтобы включить аутентификацию Azure AD по протоколу SMB с помощью [портала Azure](https://portal.azure.com), выполните следующие действия.
+Чтобы включить проверку подлинности Azure AD DS по сравнению с использованием SMB [портала Azure](https://portal.azure.com), выполните следующие действия:
 
 1. На портале Azure перейдите к существующей учетной записи хранения или [создайте ее](../common/storage-quickstart-create-account.md).
 2. В разделе **Параметры** выберите **Конфигурация**.
@@ -87,13 +87,13 @@ ms.locfileid: "67295616"
   
 ### <a name="powershell"></a>PowerShell  
 
-Чтобы включить аутентификацию Azure AD по протоколу SMB через Azure PowerShell, сначала установите предварительную сборку модуля `Az.Storage` с поддержкой Azure AD. Дополнительные сведения об установке PowerShell см. в статье [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](https://docs.microsoft.com/powershell/azure/install-Az-ps):
+Включение проверки подлинности Доменных служб Azure по протоколу SMB с помощью Azure PowerShell. Во-первых установите последнюю версию модуля Az (2.4 или более поздней версии) или модуля Az.Storage (1.5 или более поздняя). Дополнительные сведения об установке PowerShell см. в разделе [установить Azure PowerShell в Windows с помощью PowerShellGet](https://docs.microsoft.com/powershell/azure/install-Az-ps):
 
 ```powershell
 Install-Module -Name Az.Storage -AllowPrerelease -Force -AllowClobber
 ```
 
-Затем создайте учетную запись хранения, вызовите [Set-AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/set-azstorageaccount) и задайте для параметра **EnableAzureFilesAadIntegrationForSMB** значение **true**. В приведенном ниже примере не забудьте заменить значения заполнителей собственными значениями.
+Создайте новое хранилище учетной записи, а затем вызовите [набора AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/set-azstorageaccount) и задайте **EnableAzureActiveDirectoryDomainServicesForFile** параметр **true**. В приведенном ниже примере не забудьте заменить значения заполнителей собственными значениями. (При использовании предыдущей предварительной версии модуля, параметр Включение функции является **EnableAzureFilesAadIntegrationForSMB**.)
 
 ```powershell
 # Create a new storage account
@@ -102,8 +102,17 @@ New-AzStorageAccount -ResourceGroupName "<resource-group-name>" `
     -Location "<azure-region>" `
     -SkuName Standard_LRS `
     -Kind StorageV2 `
-    -EnableAzureFilesAadIntegrationForSMB $true
+    -EnableAzureActiveDirectoryDomainServicesForFile $true
 ```
+Чтобы включить эту функцию на существующих учетных записей хранения, используйте следующую команду:
+
+```powershell
+# Update a storage account
+Set-AzStorageAccount -ResourceGroupName "<resource-group-name>" `
+    -Name "<storage-account-name>" `
+    -EnableAzureActiveDirectoryDomainServicesForFile $true
+```
+
 
 ### <a name="azure-cli"></a>Инфраструктура CLI Azure
 
@@ -122,115 +131,51 @@ az storage account create -n <storage-account-name> -g <resource-group-name> --f
 
 ## <a name="assign-access-permissions-to-an-identity"></a>Назначение разрешений на доступ для удостоверения 
 
-Чтобы получить доступ к ресурсам службы файлов Azure, используя учетные данные Azure AD, у удостоверения (пользователя, группы или субъекта-службы) должны быть необходимые разрешения на уровне общего ресурса. В инструкциях в этом разделе описывается, как назначить для удостоверения права доступа на чтение, запись или удаление к файловому ресурсу.
+Чтобы получить доступ к ресурсам службы файлов Azure, используя учетные данные Azure AD, у удостоверения (пользователя, группы или субъекта-службы) должны быть необходимые разрешения на уровне общего ресурса. Этот процесс похож на указание разрешений для общей папки Windows, где вы указываете тип доступа, который имеет данный пользователь. В инструкциях в этом разделе описывается, как назначить для удостоверения права доступа на чтение, запись или удаление к файловому ресурсу.
+
+Мы представили два Azure встроенные роли для предоставления пользователям разрешения на уровне общего ресурса: Модуля чтения общего ресурса SMB хранилища файлов данных и общей папки SMB участник для хранения файла данных. 
+
+- **Модуль чтения общего ресурса SMB хранилища файл данных** разрешает доступ на чтение в общих папок службы хранилища Azure через SMB
+- **Общий ресурс SMB участник для данных хранилища файл** позволяет чтение, запись и удаление общих папок службы хранилища Azure через SMB
 
 > [!IMPORTANT]
 > Для полного административного управления файловым ресурсом, включая возможность присвоения роли удостоверению, требуется использовать ключ учетной записи хранения. Административный элемент управления не поддерживается при использовании учетных данных Azure AD. 
 
-### <a name="define-a-custom-role"></a>Определение пользовательской роли
+Для назначения встроенных ролей пользователя удостоверения Azure AD для предоставления разрешения на уровне общего ресурса можно использовать портал Azure, PowerShell или Azure CLI. 
 
-Чтобы предоставить разрешения на уровне общего ресурса, определите пользовательскую роль RBAC и назначьте ее удостоверению для определенного файлового ресурса. Этот процесс похож на указание разрешений для общей папки Windows, где вы указываете тип доступа, который имеет данный пользователь.  
+#### <a name="azure-portal"></a>Портал Azure
+Чтобы назначить роль RBAC для удостоверения Azure AD с помощью [портала Azure](https://portal.azure.com), выполните следующие действия:
 
-Шаблоны, показанные в следующих разделах, предоставляют разрешения на чтение или изменение файлового ресурса. Чтобы определить пользовательскую роль, создайте JSON-файл и скопируйте в него соответствующий шаблон. Дополнительные сведения об определении пользовательских ролей RBAC см. в статье [Пользовательские роли в Azure](../../role-based-access-control/custom-roles.md).
-
-**Определение роли для разрешения изменения на уровне общего ресурса**  
-Следующий шаблон пользовательской роли предоставляет разрешения на изменение на уровня общего ресурса, а именно: доступ на чтение, запись и удаление к ресурсу.
-
-```json
-{
-  "Name": "<Custom-Role-Name>",
-  "Id": null,
-  "IsCustom": true,
-  "Description": "Allows for read, write and delete access to Azure File Share over SMB",
-  "Actions": [
-    "Microsoft.Storage/storageAccounts/fileServices/*"
-  ],
-  "DataActions": [
-    "Microsoft.Storage/storageAccounts/fileServices/*"
-  ],
-  "NotDataActions": [
-    "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/modifypermissions/action",
-    "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/actassuperuser/action"
-  ],
-  "AssignableScopes": [
-        "/subscriptions/<Subscription-ID>"
-  ]
-}
-```
-
-**Определение роли для разрешения чтения на уровне общего ресурса**  
-Следующий шаблон пользовательской роли предоставляет разрешения на чтение на уровне общего ресурса, а именно доступ на чтение к ресурсу.
-
-```json
-{
-  "Name": "<Custom-Role-Name>",
-  "Id": null,
-  "IsCustom": true,
-  "Description": "Allows for read access to Azure File Share over SMB",
-  "Actions": [
-    "Microsoft.Storage/storageAccounts/fileServices/*/read"
-  ],
-  "DataActions": [
-    "Microsoft.Storage/storageAccounts/fileServices/*/read"
-  ],
-  "AssignableScopes": [
-        "/subscriptions/<Subscription-ID>"
-  ]
-}
-```
-
-### <a name="create-the-custom-role"></a>Создание настраиваемой роли
-
-Для создания пользовательской роли можно использовать PowerShell или Azure CLI. 
+1. На портале Azure перейдите к файловому ресурсу, или [Создание файлового ресурса в службе файлов Azure](storage-how-to-create-file-share.md).
+2. Выберите **Управление доступом (IAM)** .
+3. Выберите **добавить назначение роли**
+4. В **добавить назначение роли** колонке выберите соответствующую роль встроенные (модуля чтения общего ресурса SMB хранилища файлов данных, общей папки SMB участник для хранения файла данных) из **роли** раскрывающегося списка. Сохранить **назначение доступа к** по умолчанию: «Azure AD пользователя, группы или субъекта-службы» и выберите целевой объект удостоверения Azure AD, имя или адрес электронной почты. 
+5. Наконец, выберите **Сохранить** для завершения операции назначения роли.
 
 #### <a name="powershell"></a>PowerShell
 
-Следующая команда PowerShell создает пользовательскую роль на основе одного из примеров шаблонов.
-
-```powershell
-#Create a custom role based on the sample template above
-New-AzRoleDefinition -InputFile "<custom-role-def-json-path>"
-```
-
-#### <a name="cli"></a>Интерфейс командной строки 
-
-Следующая команда Azure CLI создает пользовательскую роль на основе одного из примеров шаблонов.
-
-```azurecli-interactive
-#Create a custom role based on the sample templates above
-az role definition create --role-definition "<Custom-role-def-JSON-path>"
-```
-
-### <a name="assign-the-custom-role-to-the-target-identity"></a>Назначение пользовательской роли целевому удостоверению
-
-Затем используйте PowerShell или Azure CLI для назначения роли удостоверению Azure AD. 
-
-#### <a name="powershell"></a>PowerShell
-
-Следующая команда PowerShell демонстрирует, как перечислить доступные пользовательские роли, а затем назначить пользовательскую роль удостоверению Azure AD на основе имени для входа. Дополнительные сведения о назначении ролей RBAC с помощью PowerShell см. в статье [Управление доступом с помощью RBAC и Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
+Следующая команда PowerShell показано, как назначение роли RBAC для удостоверения Azure AD, на основе имени входа в систему. Дополнительные сведения о назначении ролей RBAC с помощью PowerShell см. в статье [Управление доступом с помощью RBAC и Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
 
 При запуске следующего примера сценария не забудьте заменить значения заполнителей, включая скобки, собственными значениями.
 
 ```powershell
 #Get the name of the custom role
-$FileShareContributorRole = Get-AzRoleDefinition "<role-name>"
+$FileShareContributorRole = Get-AzRoleDefinition "<role-name>" #Use one of the built-in roles: Storage File Data SMB Share Reader, Storage File Data SMB Share Contributor
 #Constrain the scope to the target file share
 $scope = "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/fileServices/default/fileshare/<share-name>"
 #Assign the custom role to the target identity with the specified scope.
 New-AzRoleAssignment -SignInName <user-principal-name> -RoleDefinitionName $FileShareContributorRole.Name -Scope $scope
 ```
 
-#### <a name="cli"></a>Интерфейс командной строки
+#### <a name="cli"></a>CLI
   
-Следующая команда CLI 2.0 демонстрирует, как перечислить доступные пользовательские роли, а затем назначить пользовательскую роль удостоверению Azure AD на основе имени для входа. Дополнительные сведения о назначении ролей RBAC с помощью Azure CLI см. в статье [Управление доступом с помощью RBAC и Azure CLI](../../role-based-access-control/role-assignments-cli.md). 
+Следующую команду интерфейса командной строки 2.0 показано, как назначение роли RBAC для удостоверения Azure AD, на основе имени входа в систему. Дополнительные сведения о назначении ролей RBAC с помощью Azure CLI см. в статье [Управление доступом с помощью RBAC и Azure CLI](../../role-based-access-control/role-assignments-cli.md). 
 
 При запуске следующего примера сценария не забудьте заменить значения заполнителей, включая скобки, собственными значениями.
 
 ```azurecli-interactive
-#List the custom roles
-az role definition list --custom-role-only true --output json | jq '.[] | {"roleName":.roleName, "description":.description, "roleType":.roleType}'
-#Assign the custom role to the target identity
-az role assignment create --role "<custom-role-name>" --assignee <user-principal-name> --scope "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/fileServices/default/fileshare/<share-name>"
+#Assign the built-in role to the target identity: Storage File Data SMB Share Reader, Storage File Data SMB Share Contributor
+az role assignment create --role "<role-name>" --assignee <user-principal-name> --scope "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/fileServices/default/fileshare/<share-name>"
 ```
 
 ## <a name="configure-ntfs-permissions-over-smb"></a>Настройка разрешений NTFS по протоколу SMB 
@@ -284,7 +229,7 @@ net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<
 
 Теперь вы успешно включили аутентификацию Azure AD по протоколу SMB и назначили пользовательскую роль, которая обеспечивает доступ к файловому ресурсу для удостоверения Azure AD. Чтобы предоставить доступ к файловому ресурсу для дополнительных пользователей, следуйте инструкциям, приведенным на шаге 2 и 3.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о службе файлов Azure и использовании Azure AD по протоколу SMB см. в следующих ресурсах:
 

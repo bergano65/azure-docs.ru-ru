@@ -2,17 +2,17 @@
 title: Основные понятия безопасности в Службе Azure Kubernetes (AKS)
 description: Узнайте о безопасности в Службе Azure Kubernetes (AKS), включая взаимодействие главных компонентов и узлов, политики сети и секреты Kubernetes.
 services: container-service
-author: iainfoulds
+author: mlearned
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 03/01/2019
-ms.author: iainfou
-ms.openlocfilehash: 69ec3869f7bfd74b150db537a01e604cae87570f
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.author: mlearned
+ms.openlocfilehash: 1d100f17130594ace6169f5840915c88435cb9a8
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67441999"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67615772"
 ---
 # <a name="security-concepts-for-applications-and-clusters-in-azure-kubernetes-service-aks"></a>Основные понятия безопасности приложений и кластеров в Службе Azure Kubernetes (AKS)
 
@@ -75,7 +75,7 @@ ms.locfileid: "67441999"
 
 Использование секретов уменьшает объем конфиденциальных сведений, определяемых в pod или YAML-файле манифеста службы. Вместо этого запрашивается секрет, хранимый на сервере API Kubernetes в YAML-файле манифеста. Это позволяет предоставлять секрет только определенным элементам pod. Обратите внимание: необработанные файлы секрета манифеста содержит секретные данные в формате base64 (см. в разделе [официальной документации][secret-risks] подробности). Таким образом, этот файл должен быть конфиденциальными и не зафиксированы в систему управления версиями.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы приступить к работе с защитой ваших кластерах AKS, см. в разделе [обновление кластера AKS][aks-upgrade-cluster].
 

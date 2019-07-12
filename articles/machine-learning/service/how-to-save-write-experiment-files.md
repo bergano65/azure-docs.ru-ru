@@ -7,16 +7,16 @@ ms.author: roastala
 manager: danielsc
 ms.reviewer: jmartens, jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: core
+ms.subservice: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 05/28/2019
-ms.openlocfilehash: 28d8c47db8ea9c8a51bc8e9deb0a689eb0b20177
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1f9199b5bae0c82cd46750d8ef5522a0d3579671
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66392904"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67595287"
 ---
 # <a name="where-to-save-and-write-files-for-azure-machine-learning-experiments"></a>Там, где для сохранения и записи файлов для экспериментов машинного обучения Azure
 
@@ -71,7 +71,7 @@ Your total snapshot size exceeds the limit of 300.0 MB
 
 * **Для сохранения файла письменного как журналы в журнале выполнения** записи файлов для `./logs` папки. Отправки журналов в режиме реального времени, поэтому этот метод подходит для потоковой передачи из удаленного запуска обновления в реальном времени.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о [доступ к данным из вашего хранилища данных](how-to-access-data.md).
 

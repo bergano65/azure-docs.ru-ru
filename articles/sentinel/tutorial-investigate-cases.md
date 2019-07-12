@@ -7,21 +7,22 @@ author: rkarlin
 manager: rkarlin
 editor: ''
 ms.assetid: a493cd67-dc70-4163-81b8-04a9bc0232ac
-ms.service: sentinel
+ms.service: azure-sentinel
+ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 3/6/2019
 ms.author: rkarlin
-ms.openlocfilehash: d1da180d3b30b57ca2b69985bf3d0261b8d70c39
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 82fac23fc2d718aa908f6291241abaa2aedb8815
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65205507"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621186"
 ---
-# <a name="tutorial-investigate-cases-with-azure-sentinel-preview"></a>Руководство по Изучите варианты с предварительной версией Sentinel Azure
+# <a name="tutorial-investigate-cases-with-azure-sentinel-preview"></a>Учебник. Изучите варианты с предварительной версией Sentinel Azure
 
 > [!IMPORTANT]
 > Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
@@ -71,7 +72,7 @@ Azure Sentinel предоставляет два основных вариант
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом руководстве вы узнали, как начать изучение случаев с использованием Azure Sentinel. В руководстве для [как реагировать на угрозы с помощью автоматических наборов инструкций playbook](tutorial-respond-threats-playbook.md).
 > [!div class="nextstepaction"]
 > [Реагирование на угрозы](tutorial-respond-threats-playbook.md) для автоматизации ваши ответы на угрозы.

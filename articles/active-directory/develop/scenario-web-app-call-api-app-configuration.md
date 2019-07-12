@@ -15,12 +15,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd7f393f889facf147cf25625d5c3b20f886ddf5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6c78a951258e3c279f96f44ceac469e4c38cf22c
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65784940"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67785558"
 ---
 # <a name="web-app-that-calls-web-apis---code-configuration"></a>Веб-приложения, что вызовы веб-интерфейсы API — код конфигурации
 
@@ -44,7 +44,7 @@ ms.locfileid: "65784940"
 
 В ASP.NET Core, выполняются действия в `Startup.cs` файл. Стоит подписаться на `OnAuthorizationCodeReceived` открыть Идентификатором мероприятие connect, а из этого события, вызовите MSAL. Метод NET `AcquireTokenFromAuthorizationCode` которого действует хранение в кэше маркера, маркер доступа для запрошенной области и маркер обновления, который будет использоваться для обновления маркера доступа, когда оно находится рядом истечения срока действия, чтобы получить маркер от имени одного пользователя , но для другого ресурса.
 
-Комментарии в коде ниже, поможет вам понять некоторые аспекты непросто weaving MSAL.NET и ASP.NET Core
+Комментарии в коде ниже, поможет вам понять некоторые аспекты непросто weaving MSAL.NET и ASP.NET Core. Подробные сведения приведены в [ASP.NET Core Web app добавочные учебника, Глава 2](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-1-Call-MSGraph)
 
 ```CSharp
   services.Configure<OpenIdConnectOptions>(AzureADDefaults.OpenIdScheme, options =>
@@ -151,9 +151,7 @@ private void ConfigureAuth(IAppBuilder app)
   Scope = Globals.BasicSignInScopes, // a basic set of permissions for user sign in & profile access
   TokenValidationParameters = new TokenValidationParameters
   {
-  // We'll inject our own issuer validation logic below.
-  ValidateIssuer = false,
-  NameClaimType = "name",
+   NameClaimType = "name",
   },
   Notifications = new OpenIdConnectAuthenticationNotifications()
   {
@@ -191,7 +189,7 @@ private async Task OnAuthorizationCodeReceived(AuthorizationCodeReceivedNotifica
 
 Примеры того, как использовать кэш маркеров для веб-приложений и веб-API доступны в [руководство по приложениям ASP.NET Core Web](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial) на этапе [кэш маркеров 2-2](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-2-TokenCache). Пример реализации можно изучить в папке [TokenCacheProviders](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet/tree/master/src/Microsoft.Identity.Client.Extensions.Web/TokenCacheProviders) в библиотеке [microsoft-authentication-extensions-for-dotnet](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet) (доступна из папки [ Microsoft.Identity.Client.Extensions.Web](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet/tree/master/src/Microsoft.Identity.Client.Extensions.Web)).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 На этом этапе когда пользователь выполняет вход маркера хранится в кэш маркеров. Давайте посмотрим, как он затем используется в других частях веб-приложения.
 

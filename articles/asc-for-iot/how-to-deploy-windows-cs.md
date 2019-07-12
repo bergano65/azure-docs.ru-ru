@@ -2,24 +2,25 @@
 title: Установка Windows центра безопасности Azure для Интернета вещей агент предварительной версии | Документация Майкрософт
 description: Дополнительные сведения об установке центра безопасности Azure для Интернета вещей агент на 32-разрядная или 64-разрядных устройствах Windows.
 services: asc-for-iot
-ms.service: ascforiot
+ms.service: asc-for-iot
 documentationcenter: na
 author: mlottner
 manager: rkarlin
 editor: ''
 ms.assetid: 2cf6a49b-5d35-491f-abc3-63ec24eb4bc2
+ms.subservice: asc-for-iot
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/19/2019
 ms.author: mlottner
-ms.openlocfilehash: 64fc576885bb9d9c3c46aafd808db65d2f8ff77f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b22faa6ea02a1a3d093aee1dec84ca1680da54d2
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65200617"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67616765"
 ---
 # <a name="deploy-an-azure-security-center-for-iot-c-based-security-agent-for-windows"></a>Развертывание в центр безопасности Azure для IoT C#-основе security agent для Windows
 
@@ -36,7 +37,7 @@ ms.locfileid: "65200617"
 > * Удаление агента.
 > * Устранение неполадок 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Сведения о других платформах и версиях агентов см. в [этой статье](how-to-deploy-agent.md).
 
@@ -125,7 +126,7 @@ ms.locfileid: "65200617"
      Restart-Service "ASC IoT Agent"
      ```
      
-   или
+   или диспетчер конфигурации служб
 
     **CMD**
      ```
@@ -138,7 +139,7 @@ ms.locfileid: "65200617"
    Расположение файла журнала: `%WinDir%/System32/IoTAgentLog.log`.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Просмотрите [обзор](overview.md) службы ASC для Интернета вещей.
 - Ознакомьтесь с дополнительными сведениями об [архитектуре](architecture.md) ASC для Интернета вещей.
 - Включите [службу](quickstart-onboard-iot-hub.md).

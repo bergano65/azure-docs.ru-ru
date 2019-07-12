@@ -5,17 +5,17 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: include
-ms.date: 05/28/2019
+ms.date: 07/25/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 9f7f9b1504533e0ec503e97c086c380da71671a0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 45d34297bf37a6e46bc57e95ff49def49051e32e
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66299700"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67622120"
 ---
-| Ресурс | По умолчанию и максимальные ограничения |
+| Resource | По умолчанию и максимальные ограничения |
 | --- | --- |
 | Каналы ExpressRoute для каждой подписки |10 |
 | Каналы ExpressRoute на регион на подписку, с помощью Azure Resource Manager |10 |
@@ -24,8 +24,8 @@ ms.locfileid: "66299700"
 | Максимальное количество маршрутов, объявленных из частного пиринга Azure из адресного пространства виртуальной сети для подключения ExpressRoute |200 |
 | Максимальное количество маршрутов, объявленных для Майкрософт, пиринга со стандартом ExpressRoute |200 |
 | Максимальное количество маршрутов, объявленных для Майкрософт, пиринг с надстройкой ExpressRoute Premium |200 |
-| Максимальное число каналов ExpressRoute, связанных с одной и той же виртуальной сети в одном расположении пиринга |4\. |
-| Максимальное число каналов ExpressRoute, связанных с одной и той же виртуальной сетью в разных расположениях пиринга |4\. |
+| Максимальное число каналов ExpressRoute, связанных с одной и той же виртуальной сети в одном расположении пиринга |4 |
+| Максимальное число каналов ExpressRoute, связанных с одной и той же виртуальной сетью в разных расположениях пиринга |4 |
 | Количество связей виртуальных сетей на канал ExpressRoute |См. в разделе [количество виртуальных сетей на канал ExpressRoute](#vnetpercircuit) таблицы.  |
 
 #### <a name="vnetpercircuit"></a> Количество виртуальных сетей на канал ExpressRoute
@@ -42,4 +42,4 @@ ms.locfileid: "66299700"
 | 40 Гбит/с * |10 |100 |
 | 100 Гбит/с * |10 |100 |
 
-\* Только Direct ExpressRoute
+**Только Direct ExpressRoute 100 Гбит/с*

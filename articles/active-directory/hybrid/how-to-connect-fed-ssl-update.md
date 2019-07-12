@@ -5,7 +5,7 @@ services: active-directory
 manager: daveba
 editor: billmath
 ms.assetid: 7c781f61-848a-48ad-9863-eb29da78f53c
-ms.service: active-directory  
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -16,12 +16,12 @@ author: billmath
 ms.custom: seohack1
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39ac0e9cf11a0c6c212c4beadb6635ad2b6b056d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4fcdf75586de9621bd0e42cba6fa9c80e5d30817
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60244719"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67595209"
 ---
 # <a name="update-the-ssl-certificate-for-an-active-directory-federation-services-ad-fs-farm"></a>Обновление SSL-сертификата для фермы служб федерации Active Directory (AD FS)
 
@@ -36,7 +36,7 @@ ms.locfileid: "60244719"
 >[!NOTE]
 >Дополнительные сведения о сертификатах, используемых службами AD FS, см. в статье [Общее представление о сертификатах, используемых службами федерации Active Directory](https://technet.microsoft.com/library/cc730660.aspx).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * **Ферма AD FS.** Убедитесь, что ферма AD FS работает под управлением Windows Server 2012 R2 или более поздней версии.
 * **Azure AD Connect.** Убедитесь, что используется Azure AD Connect 1.1.553.0 или более поздней версии. Вы используете задачу **Обновление SSL-сертификата AD FS**.
@@ -105,7 +105,7 @@ Azure AD Connect попытается автоматически получит�
 
     Удаление сервера из списка в Azure AD Connect не приводит к его удалению из конфигурации AD FS. Azure AD Connect обращается к AD FS (Windows Server 2016 или более поздней версии) для получения сведений о ферме. Если сервер по-прежнему присутствует в конфигурации AD FS, он будет указан в списке.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Azure AD Connect и федерация](how-to-connect-fed-whatis.md)
 - [Управление службами федерации Active Directory и их настройка с помощью Azure AD Connect](how-to-connect-fed-management.md)

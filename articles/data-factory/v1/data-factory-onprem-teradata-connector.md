@@ -13,15 +13,15 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: d22318f4d9e233a57d521fe36f0827b9fc3af3e0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8e7fcff6fa4dcea1af15efa2cb4ed3a743c9c402
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60610742"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67836120"
 ---
 # <a name="move-data-from-teradata-using-azure-data-factory"></a>Перемещение данных из Teradata с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
+> [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](data-factory-onprem-teradata-connector.md)
 > * [Версия 2 (текущая)](../connector-teradata.md)
 
@@ -32,7 +32,7 @@ ms.locfileid: "60610742"
 
 Вы можете скопировать данные из локального хранилища данных Teradata в любой поддерживаемый приемник данных. Список хранилищ данных, которые поддерживаются в качестве приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Сейчас фабрика данных поддерживает только перемещение данных из локального хранилища данных Teradata в другие хранилища данных, но не наоборот.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Фабрика данных поддерживает подключение к локальным источникам Teradata с помощью шлюза управления данными. В статье [Перемещение данных между локальными и облачными ресурсами](data-factory-move-data-between-onprem-and-cloud.md) приведены сведения о шлюзе управления данными и пошаговые инструкции по его настройке.
 
 Шлюз является обязательным, даже если база данных Teradata размещается на виртуальной машине (ВМ) Azure IaaS. Шлюз можно установить на той же ВМ IaaS, на которой размещается хранилище данных, или на другой ВМ. Важно, чтобы шлюз мог подключиться к базе данных.
@@ -43,11 +43,11 @@ ms.locfileid: "60610742"
 ## <a name="supported-versions-and-installation"></a>Поддерживаемые версии и установка
 Для подключения шлюза управления данными к базе данных Teradata необходимо установить [поставщик данных .NET для Teradata](https://go.microsoft.com/fwlink/?LinkId=278886) версии 14 и более в одной системе со шлюзом управления данными. Поддерживается Teradata версии 12 и более.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 Вы можете создать конвейер с действием копирования, которое перемещает данные из локального хранилища данных Cassandra, с помощью разных инструментов и интерфейсов API.
 
 - Проще всего создать конвейер с помощью **мастера копирования**. Пошаговые инструкции см. в [руководстве Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md), где приведено краткое пошаговое руководство по созданию конвейера с помощью мастера копирования данных.
-- Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
+- Для создания конвейера можно использовать указанные ниже средства. **Visual Studio**, **Azure PowerShell**, **шаблона Azure Resource Manager**, **.NET API**, и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги:
 
@@ -62,14 +62,14 @@ ms.locfileid: "60610742"
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 В следующей таблице содержится описание элементов JSON, которые относятся к связанной службе Teradata.
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 | --- | --- | --- |
-| type |Свойству type необходимо задать значение **OnPremisesTeradata**. |Yes |
-| server |Имя сервера Teradata. |Yes |
-| authenticationType |Тип проверки подлинности, используемый для подключения к базе данных Teradata. Возможные значения: Anonymous, Basic и Windows. |Yes |
-| имя пользователя |При использовании обычной проверки подлинности или проверки подлинности Windows укажите имя пользователя. |Нет |
+| type |Свойству type необходимо задать значение **OnPremisesTeradata**. |Да |
+| server |Имя сервера Teradata. |Да |
+| authenticationType |Тип проверки подлинности, используемый для подключения к базе данных Teradata. Возможные значения: Anonymous, Basic и Windows. |Да |
+| username |При использовании обычной проверки подлинности или проверки подлинности Windows укажите имя пользователя. |Нет |
 | password |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. |Нет |
-| gatewayName |Имя шлюза, который следует использовать службе фабрики данных для подключения к локальной базе данных Teradata. |Yes |
+| gatewayName |Имя шлюза, который следует использовать службе фабрики данных для подключения к локальной базе данных Teradata. |Да |
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 Полный список разделов и свойств, используемых для определения наборов данных, см. в статье [Наборы данных](data-factory-create-datasets.md). Разделы структуры, доступности и политики JSON набора данных одинаковы для всех типов наборов данных (SQL Azure, большие двоичные объекты Azure, таблицы Azure и т. д.).
@@ -83,12 +83,12 @@ ms.locfileid: "60610742"
 
 Если источник относится к типу **RelationalSource** (который содержит Teradata), то в разделе **typeProperties** доступны следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
+| Свойство | Описание | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
-| query |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, select * from MyTable. |Yes |
+| запрос |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, select * from MyTable. |Да |
 
 ### <a name="json-example-copy-data-from-teradata-to-azure-blob"></a>Пример JSON. Копирование данных из Teradata в большой двоичный объект Azure
-Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). Вы узнаете, как копировать данные из Teradata в хранилище BLOB-объектов Azure. Тем не менее данные можно копировать в любой из указанных [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемников. Это делается с помощью действия копирования в фабрике данных Azure.
+Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). Вы узнаете, как копировать данные из Teradata в хранилище BLOB-объектов Azure. Тем не менее данные можно копировать в любой из указанных [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемников. Это делается с помощью действия копирования в фабрике данных Azure.
 
 Образец состоит из следующих сущностей фабрики данных.
 
@@ -285,12 +285,12 @@ ms.locfileid: "60610742"
 
 | Тип базы данных Teradata | Тип .NET Framework |
 | --- | --- |
-| Char |String |
-| Clob |String |
-| Graphic |String |
-| VarChar |String |
-| VarGraphic |String |
-| BLOB-объект |Byte[] |
+| Char |Строка, |
+| Clob |Строка, |
+| Graphic |Строка, |
+| VarChar |Строка, |
+| VarGraphic |Строка, |
+| Blob |Byte[] |
 | Byte |Byte[] |
 | VarByte |Byte[] |
 | BigInt |Int64 |
@@ -301,8 +301,8 @@ ms.locfileid: "60610742"
 | Number |Double |
 | SmallInt |Int16 |
 | Дата |DateTime |
-| Время |TimeSpan |
-| Time With Time Zone |String |
+| Time |TimeSpan |
+| Time With Time Zone |Строка, |
 | Timestamp |DateTime |
 | Timestamp With Time Zone |DateTimeOffset |
 | Interval Day |TimeSpan |
@@ -315,15 +315,15 @@ ms.locfileid: "60610742"
 | Interval Minute |TimeSpan |
 | Interval Minute To Second |TimeSpan |
 | Interval Second |TimeSpan |
-| Interval Year |String |
-| Interval Year To Month |String |
-| Interval Month |String |
-| Period(Date) |String |
-| Period(Time) |String |
-| Period(Time With Time Zone) |String |
-| Period(Timestamp) |String |
-| Period(Timestamp With Time Zone) |String |
-| Xml |String |
+| Interval Year |Строка, |
+| Interval Year To Month |Строка, |
+| Interval Month |Строка, |
+| Period(Date) |Строка, |
+| Period(Time) |Строка, |
+| Period(Time With Time Zone) |Строка, |
+| Period(Timestamp) |Строка, |
+| Period(Timestamp With Time Zone) |Строка, |
+| Xml |Строка, |
 
 ## <a name="map-source-to-sink-columns"></a>Сопоставление столбцов источника и приемника
 Дополнительные сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в [этой статье](data-factory-map-columns.md).

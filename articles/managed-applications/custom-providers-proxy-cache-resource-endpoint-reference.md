@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: jobreen
 author: jjbfour
 ms.date: 06/20/2019
-ms.openlocfilehash: 6a3d570d9695516a293b601b3d34c2bcba6b058d
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 2970e69e825dacb6f548b3e66a830f221ece0b1c
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478892"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67795227"
 ---
 # <a name="custom-resource-cache-reference"></a>Справочник по кэша настраиваемого ресурса
 
@@ -234,9 +234,10 @@ Content-Type: application/json; charset=utf-8
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Общие сведения о Azure собственных поставщиков ресурсов](./custom-providers-overview.md)
-- [Учебник. Создание пользовательского поставщика ресурсов Azure и развертывание настраиваемых ресурсов](./create-custom-provider.md)
+- [Краткое руководство Создание пользовательского поставщика ресурсов Azure и развертывание настраиваемых ресурсов](./create-custom-provider.md)
+- [Учебник. Создание пользовательских действий и ресурсов в Azure](./tutorial-custom-providers-101.md)
 - [Практическое руководство. Добавление настраиваемых действий в Azure REST API](./custom-providers-action-endpoint-how-to.md)
 - [Общие сведения Справочник по настраиваемого ресурса прокси-сервера](./custom-providers-proxy-resource-endpoint-reference.md)
