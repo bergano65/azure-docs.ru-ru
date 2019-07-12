@@ -44,7 +44,7 @@
       items:
         - name: Обязательная многофакторная проверка подлинности для администраторов
           href: howto-baseline-protect-administrators.md
-        - name: Защита пользователей
+        - name: Защита конечных пользователей
           href: howto-baseline-protect-end-users.md
         - name: Блокировка устаревших методов проверки подлинности
           href: howto-baseline-protect-legacy-auth.md
@@ -52,22 +52,22 @@
           href: howto-baseline-protect-azure.md
     - name: Блокировка устаревших методов проверки подлинности
       href: block-legacy-authentication.md
-    - name: Перенос классических политик
-      href: policy-migration.md
-    - name: Элементы управления сохраняемости браузера и частотой входов
-      href: howto-conditional-access-session-lifetime.md
+    - name: Условный доступ для регистрации MFA
+      href: '../authentication/howto-registration-mfa-sspr-combined.md#conditional-access-policies-for-combined-registration'
     - name: Требование доступа из утвержденных клиентских приложений
       href: app-based-conditional-access.md
     - name: Требование политики защиты приложений
       href: app-protection-based-conditional-access.md
     - name: Требование доступа с управляемых устройств
       href: require-managed-devices.md
-    - name: Требование регистрации доверенных сетей для MFA
-      href: '../authentication/howto-registration-mfa-sspr-combined.md#conditional-access-policies-for-combined-registration'
     - name: Требование многофакторной проверки подлинности при попытках доступа из ненадежных сетей
       href: untrusted-networks.md
     - name: Обязательное применение условий использования
       href: terms-of-use.md
+    - name: Элементы управления сохраняемости браузера и частотой входов
+      href: howto-conditional-access-session-lifetime.md
+    - name: Перенос классических политик
+      href: policy-migration.md
 - name: Справочные материалы
   items:
     - name: Технический справочник

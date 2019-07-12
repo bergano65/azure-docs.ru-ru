@@ -1,7 +1,9 @@
 - name: Документация по высокопроизводительным вычислениям (HPC)
   items:
     - name: Обзор
-      href: 'https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/'
+      items:
+        - name: "HPC для виртуальных машин серии\_H"
+          href: overview.md
     - name: Конфигурация
       items:
         - name: Оптимизация Linux

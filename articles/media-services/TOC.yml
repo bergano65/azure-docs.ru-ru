@@ -3,10 +3,24 @@
   href: latest/
 - name: "Службы мультимедиа Azure, версия\_2 (прежняя версия)"
   href: previous/media-services-overview.md
-- name: Индексатор видео Служб мультимедиа Azure
+- name: Индексатор видео в Службах мультимедиа Azure
   href: video-indexer/
 - name: Проигрыватель мультимедиа Azure
   href: 'https://amp.azure.net/libs/amp/latest/docs/index.html'
+- name: Спецификации
+  items:
+    - name: Метаданные времени
+      items:
+        - name: RTMP и Smooth Streaming
+          href: media-services-specifications-live-timed-metadata.md
+    - name: Протоколы
+      items:
+        - name: Smooth Streaming (MS-SSTR)
+          items:
+            - name: Поддержка HEVC
+              href: media-services-specifications-ms-sstr-amendment-hevc.md
+            - name: Прием Smooth Streaming
+              href: media-services-fmp4-live-ingest-overview.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

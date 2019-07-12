@@ -4,16 +4,19 @@ description: Повторное размещение вашей IBM z/OS раб�
 services: virtual-machines-linux
 documentationcenter: ''
 author: njray
+ms.author: edprice
 manager: edprice
 editor: edprice
+ms.topic: conceptual
+ms.date: 05/29/2019
 tags: ''
 keywords: ''
-ms.openlocfilehash: 45d6f8606c665d78783f987c2f2b49a77801639c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: de4bdcb14aa1b5aa1f757da7be4db7d93dd13ff0
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66304613"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620301"
 ---
 # <a name="install-micro-focus-enterprise-server-40-and-enterprise-developer-40-on-azure"></a>Установка Micro Focus Enterprise Server 4.0 и Enterprise Developer 4.0 в Azure
 
@@ -25,7 +28,7 @@ ms.locfileid: "66304613"
 
 Соответствующей среды разработки для Enterprise Server — Enterprise Developer, которая выполняется на любом Microsoft Visual Studio 2017 или более поздней версии, Visual Studio Community (можно загрузить бесплатно), или Eclipse. В этой статье показано, как развернуть его с помощью виртуальной машины Windows Server 2016, который поставляется с Visual Studio 2017 или более поздней версии.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы ознакомьтесь с этих предварительных требований:
 
@@ -116,7 +119,7 @@ ms.locfileid: "66304613"
 
 При загрузке Enterprise Developer развертывания Micro Focus среды разработки и тестирования в Azure завершена!
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Настройка банка демонстрационной версии приложения](./demo.md)
 - [Запустите Enterprise Server в контейнерах Docker](./run-enterprise-server-container.md)

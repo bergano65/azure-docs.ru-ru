@@ -224,9 +224,9 @@
         - name: Где и как развернуть
           displayName: publish azure kubernetes azure container instances
           href: how-to-deploy-and-where.md
-        - name: GPU
+        - name: Вывод GPU
           href: how-to-deploy-inferencing-gpus.md
-        - name: FPGA
+        - name: Вывод ППВМ
           href: how-to-deploy-fpga-web-service.md
         - name: IoT Edge
           href: /azure/iot-edge/tutorial-deploy-machine-learning?context=azure/machine-learning/service/context/ml-context
@@ -235,7 +235,7 @@
         - name: Развертывание существующих моделей
           displayName: publish existing model
           href: how-to-deploy-existing-model.md
-        - name: Устранение неполадок
+        - name: Устранение неполадок и отладка
           href: how-to-troubleshoot-deployment.md
     - name: Использование веб-служб
       items:

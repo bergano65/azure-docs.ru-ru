@@ -41,10 +41,14 @@
   items:
     - name: Номера SKU реестра контейнеров
       href: container-registry-skus.md
+    - name: 'Реестры, репозитории и образы'
+      href: container-registry-concepts.md
     - name: Хранилище изображений
       href: container-registry-storage.md
     - name: Форматы содержимого
       href: container-registry-image-formats.md
+    - name: Управление версиями образов и добавление к ним тегов
+      href: container-registry-image-tag-version.md
     - name: Георепликация
       href: container-registry-geo-replication.md
     - name: Рекомендации по использованию реестра

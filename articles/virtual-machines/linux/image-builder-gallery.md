@@ -6,13 +6,13 @@ ms.author: cynthn
 ms.date: 04/20/2019
 ms.topic: article
 ms.service: virtual-machines-linux
-manager: jeconnoc
-ms.openlocfilehash: d29fa8700cb1f530cfe85f0bdf6852d75ec1613e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+manager: gwallace
+ms.openlocfilehash: a47c7fd60ec9ddd3fd5e5accae8849bd62bf894c
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65508155"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67671483"
 ---
 # <a name="preview-create-a-linux-image-and-distribute-it-to-a-shared-image-gallery"></a>Предварительный просмотр: Создание образа Linux и распространить его к коллекции образов Shared 
 
@@ -257,6 +257,6 @@ az sig delete -r $sigName -g $sigResourceGroup
 az group delete -n $sigResourceGroup -y
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [галерей изображений Azure Shared](shared-image-galleries.md).

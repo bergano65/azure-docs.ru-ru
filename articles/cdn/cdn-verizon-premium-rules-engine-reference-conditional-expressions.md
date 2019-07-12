@@ -3,16 +3,16 @@ title: Условные выражения обработчика правил A
 description: Справочная документация по Azure CDN от Verizon уровня "премиум" правил условия соответствия для обработчика и компоненты.
 services: cdn
 author: mdgattuso
-ms.service: cdn
+ms.service: azure-cdn
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: magattus
-ms.openlocfilehash: c6e49e6fbc0c541ce9a8cd903eb313d61413257c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f790e37ae876c0640d55ebfb51abb43c6a705f04
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66481539"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67593221"
 ---
 # <a name="azure-cdn-from-verizon-premium-rules-engine-conditional-expressions"></a>Azure CDN от Verizon уровня "премиум" правила условные выражения обработчика
 
@@ -32,10 +32,10 @@ ELSE IF| Выражение ELSE IF указывает альтернативн�
    > Последующее правило может переопределить действия, заданные предыдущим правилом.
    > Пример: Универсальное правило защищает все запросы с помощью проверки подлинности на основе маркеров. Под ним можно создать другое правило, чтобы сделать исключение для некоторых типов запросов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Общие сведения о сети доставки содержимого Azure](cdn-overview.md)
-- [Обработчик правил Azure CDN](cdn-verizon-premium-rules-engine-reference.md)
-- [Условия соответствия для обработчика правил Azure CDN](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
-- [Функции обработчика правил Azure CDN](cdn-verizon-premium-rules-engine-reference-features.md)
+- [Справочник по обработчику правил](cdn-verizon-premium-rules-engine-reference.md)
+- [Условия соответствия для обработчика правил](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
+- [Возможности обработчика правил](cdn-verizon-premium-rules-engine-reference-features.md)
 - [Переопределение стандартного поведения через HTTP с помощью обработчика правил](cdn-verizon-premium-rules-engine.md)

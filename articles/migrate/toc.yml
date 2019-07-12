@@ -3,45 +3,97 @@
 - name: Обзор
   items:
     - name: Сведения о службе "Миграция Azure"
-      href: migrate-overview.md
-- name: Руководства
+      href: migrate-services-overview.md
+    - name: Новые возможности
+      href: whats-new.md
+- name: Учебники
   items:
-    - name: Обнаружение и оценка виртуальных машин VMware
-      href: tutorial-assessment-vmware.md
+    - name: Оценка и перенос виртуальных машин VMware
+      items:
+        - name: Подготовка VMware к оценке и миграции
+          href: tutorial-prepare-vmware.md
+        - name: Оценка виртуальных машин VMware для миграции
+          href: tutorial-assess-vmware.md
+        - name: Перенос виртуальных машин VMware
+          items:
+            - name: Варианты миграции для виртуальных машин VMware
+              href: server-migrate-overview.md
+            - name: Перенос виртуальных машин VMware без агента
+              href: tutorial-migrate-vmware.md
+            - name: Перенос виртуальных машин VMware на основе агента
+              href: tutorial-migrate-vmware-agent.md
+    - name: Оценка и перенос виртуальных машин Hyper-V
+      items:
+        - name: Подготовка Hyper-V к оценке и миграции
+          href: tutorial-prepare-hyper-v.md
+        - name: Оценка виртуальных машин Hyper-V для миграции
+          href: tutorial-assess-hyper-v.md
+        - name: Перенос виртуальных машин Hyper-V
+          href: tutorial-migrate-hyper-v.md
+    - name: Перенос физических серверов и виртуальных машин
+      href: tutorial-migrate-physical-virtual-machines.md
 - name: Основные понятия
   items:
-    - name: О сборщике
-      href: concepts-collector.md
-    - name: Обновления версии сборщика
-      href: concepts-collector-upgrade.md
+    - name: Часто задаваемые вопросы
+      href: resources-faq.md
+    - name: Таблицы поддержки
+      items:
+        - name: Таблица поддержки для Миграции Azure
+          href: migrate-support-matrix.md
+        - name: Таблица поддержки для оценки и переноса виртуальных машин VMware
+          href: migrate-support-matrix-vmware.md
+        - name: Таблица поддержки для оценки и переноса виртуальных машин Hyper-V
+          href: migrate-support-matrix-hyper-v.md
+    - name: Архитектура миграции для Hyper-V
+      href: hyper-v-migration-architecture.md
+    - name: Архитектура миграции на основе агента
+      href: agent-based-migration-architecture.md
+    - name: Устройство службы "Миграция Azure"
+      href: migrate-appliance.md
+    - name: Устройство репликации в службе "Миграция Azure"
+      href: migrate-replication-appliance.md
+    - name: Рекомендации по оценке
+      href: best-practices-assessment.md
     - name: Вычисление оценок
       href: concepts-assessment-calculation.md
-    - name: Сведения о визуализации зависимостей
+    - name: Визуализация зависимостей
       href: concepts-dependency-visualization.md
 - name: Руководства
   items:
     - name: Ряд примеров по миграции Contoso
       href: contoso-migration-overview.md
-    - name: Обнаружение и оценка крупной среды
-      href: how-to-scale-assessment.md
-    - name: Группирование компьютеров
-      href: how-to-create-a-group.md
-    - name: Группирование компьютеров на основе зависимостей
-      href: how-to-create-group-machine-dependencies.md
-    - name: Уточнение группы с помощью групповых зависимостей
-      href: how-to-create-group-dependencies.md
+    - name: Развертывание устройства для оценки и переноса виртуальных машин VMware (без агента)
+      href: how-to-set-up-appliance-vmware.md
+    - name: Развертывание устройства для оценки и переноса виртуальных машин Hyper-V
+      href: how-to-set-up-appliance-hyper-v.md
+    - name: Добавление средства оценки и миграции в первый раз
+      href: how-to-add-tool-first-time.md
+    - name: Добавление средств оценки
+      href: how-to-assess.md
+    - name: Добавление средств миграции
+      href: how-to-migrate.md
+    - name: Группирование компьютеров для оценки
+      items:
+        - name: Создание группы
+          href: how-to-create-a-group.md
+        - name: Группирование компьютеров на основе зависимостей
+          href: how-to-create-group-machine-dependencies.md
+        - name: Уточнение группы с помощью групповых зависимостей
+          href: how-to-create-group-dependencies.md
     - name: Настройка оценки
       href: how-to-modify-assessment.md
-    - name: Миграция виртуальных машин после оценки
-      href: how-to-get-migration-tool.md
-    - name: Автоматизация переноса большого количества виртуальных машин
-      href: how-to-migrate-at-scale.md
+    - name: Масштабирование оценки и миграции
+      items:
+        - name: Оценка большого количества виртуальных машин VMware
+          href: scale-vmware-assessment.md
+        - name: Оценка большого количества виртуальных машин Hyper-V
+          href: scale-hyper-v-assessment.md
+        - name: Автоматизация переноса большого количества виртуальных машин
+          href: how-to-migrate-at-scale.md
     - name: Устранение неполадок в службе "Миграция Azure"
       href: troubleshooting-general.md
 - name: Ресурсы
   items:
-    - name: Часто задаваемые вопросы
-      href: resources-faq.md
     - name: Миграция с помощью Cloud Adoption Framework
       href: 'https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/index'
     - name: REST API

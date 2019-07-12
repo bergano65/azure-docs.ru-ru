@@ -1,0 +1,63 @@
+- name: Документация по Azure Lighthouse
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что собой представляет Azure Lighthouse?
+      displayName: 'management at scale, service providers'
+      href: overview.md
+- name: Примеры
+  items:
+    - name: Индекс
+      displayName: 'template, sample'
+      href: ./samples/index.md
+- name: Основные понятия
+  items:
+    - name: Делегированное управление ресурсами Azure
+      displayName: delegation
+      href: ./concepts/azure-delegated-resource-management.md
+    - name: Интерфейсы управления для различных клиентов
+      displayName: scenarios
+      href: ./concepts/cross-tenant-management-experience.md
+    - name: Предложения управляемых служб в Azure Marketplace
+      displayName: 'managed services offer, azure marketplace'
+      href: ./concepts/managed-services-offers.md
+    - name: Рекомендации по безопасности
+      displayName: 'mfa, authentication, secure, group'
+      href: ./concepts/recommended-security-practices.md
+    - name: Рекомендации по программе для поставщиков облачных решений
+      displayName: 'csp, aobo, partner'
+      href: ./concepts/cloud-solution-provider.md
+- name: Руководства
+  items:
+    - name: Подключение клиента к системе делегированного управления ресурсами Azure
+      displayName: resource management
+      href: ./how-to/onboard-customer.md
+    - name: Публикация предложений управляемых служб в Azure Marketplace
+      displayName: 'managed services offer, azure marketplace, publish'
+      href: ./how-to/publish-managed-services-offers.md
+    - name: Просмотр клиентов и управление ими
+      displayName: 'managed services offer, azure marketplace, publish'
+      href: ./how-to/view-manage-customers.md
+    - name: Просмотр поставщиков служб и управление ими
+      displayName: 'managed services offer, azure marketplace, publish'
+      href: ./how-to/view-manage-service-providers.md
+- name: Справочные материалы
+  items:
+    - name: Azure SDK для .NET
+      href: 'https://docs.microsoft.com/dotnet/api/Microsoft.Azure.Management.ManagedServices?view=azure-dotnet'
+    - name: Azure SDK для .NET (NuGet)
+      href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.ManagedServices/'
+    - name: SDK Azure для Python
+      href: 'https://docs.microsoft.com/python/api/azure-mgmt-managedservices'
+    - name: REST
+      href: 'https://docs.microsoft.com/rest/api/managedservices/'
+    - name: OpenAPI
+      href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/managedservices/resource-manager/Microsoft.ManagedServices/preview/2018-06-01-preview'
+- name: Ресурсы
+  items:
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: UserVoice
+      href: 'https://feedback.azure.com/forums/922753'

@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 05/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: e2a807bbd6baeb2f14a6d36f5d98a28d48725449
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 59a85e855c9fab9f2a3437c83c867b8076f55049
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67082720"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67607213"
 ---
 # <a name="manage-sql-server-vms-in-azure-using-the-azure-portal"></a>Управление виртуальных машин SQL Server в Azure с помощью портала Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "67082720"
 ## <a name="remarks"></a>Примечания
 
 - **Виртуальные машины SQL** ресурсов рекомендуется использовать для просмотра и управления виртуальными машинами SQL Server. Тем не менее, в настоящее время **виртуальные машины SQL** ресурс не поддерживает управление [прекращение поддержки (EOS)](virtual-machines-windows-sql-server-2008-eos-extend-support.md) виртуальных машин SQL Server. Чтобы управлять параметрами для виртуальных машин EOS SQL Server, использовать устаревший [вкладка "Конфигурация SQL Server"](#access-sql-server-configuration-tab) вместо этого. 
-- **Виртуальные машины SQL** ресурс доступен только для виртуальных машин SQL Server, имеют [зарегистрирована в поставщике ресурсов виртуальной Машины SQL](virtual-machines-windows-sql-ahb.md#register-sql-server-vm-with-the-sql-vm-resource-provider). 
+- **Виртуальные машины SQL** ресурс доступен только для виртуальных машин SQL Server, имеют [зарегистрирована в поставщике ресурсов виртуальной Машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md). 
 
 
 ## <a name="access-sql-virtual-machine-resource"></a>Ресурс виртуальной машины для доступа к SQL
@@ -60,7 +60,7 @@ ms.locfileid: "67082720"
   > **Виртуальные машины SQL** ресурс используется для специальных параметров SQL Server. Выберите имя виртуальной машины в **виртуальной машины** поля для перехода к параметрам, которые относятся к виртуальной Машине, но не является монопольной особенностью SQL Server. 
 
 ## <a name="access-sql-server-configuration-tab"></a>Вкладка конфигурации доступа к SQL Server
-На вкладке конфигурации SQL Server является устаревшим. В настоящее время он является единственным способом для управления [прекращение поддержки (EOS)](virtual-machines-windows-sql-server-2008-eos-extend-support.md) виртуальных машин SQL Server и виртуальных машин SQL Server, которые не были [зарегистрирована в поставщике ресурсов виртуальной Машины SQL](virtual-machines-windows-sql-ahb.md#register-sql-server-vm-with-the-sql-vm-resource-provider).
+На вкладке конфигурации SQL Server является устаревшим. В настоящее время он является единственным способом для управления [прекращение поддержки (EOS)](virtual-machines-windows-sql-server-2008-eos-extend-support.md) виртуальных машин SQL Server и виртуальных машин SQL Server, которые не были [зарегистрирована в поставщике ресурсов виртуальной Машины SQL](virtual-machines-windows-sql-register-with-resource-provider.md).
 
 Для доступа к вкладке устаревшие настройки SQL server, необходимо перейти к **виртуальных машин** ресурсов. Для этого выполните следующее.
 
@@ -77,7 +77,7 @@ ms.locfileid: "67082720"
 
 ![Конфигурация SQL Server](media/virtual-machines-windows-sql-manage-portal/sql-vm-configuration.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в следующих статьях: 
 

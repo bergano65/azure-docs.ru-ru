@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
-ms.openlocfilehash: a41c3f60d4b949f78c0755f97c9ef7e6302d78d8
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: 68c40cf893bf150756f0a03056473e82cff5754f
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67329999"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620961"
 ---
 # <a name="troubleshoot-azure-stream-analytics-by-using-diagnostics-logs"></a>Устранение неполадок Azure Stream Analytics с помощью журналов диагностики
 
@@ -64,7 +64,7 @@ Stream Analytics предоставляет журналы двух типов:
 
     ![Перемещение к колонке журналов диагностики](./media/stream-analytics-job-diagnostic-logs/diagnostic-logs-monitoring.png)  
 
-2.  Создайте **имя** в **параметрах диагностики** и установите флажок рядом с пунктом **Отправить в Log Analytics**. Затем добавьте имеющуюся рабочую область Log Analytics **или создайте новую**. Установите флажки **выполнения** и **разработки** в разделе **журнала**, а в разделе **метрики** — **AllMetrics**. Выберите команду **Сохранить**. Рекомендуется использовать рабочую область Log Analytics в том же регионе Azure с заданием Stream Analytics, чтобы предотвратить дополнительные затраты.
+2.  Создайте **имя** в **параметрах диагностики** и установите флажок рядом с пунктом **Отправить в Log Analytics**. Затем добавьте имеющуюся рабочую область Log Analytics **или создайте новую**. Установите флажки **выполнения** и **разработки** в разделе **журнала**, а в разделе **метрики** — **AllMetrics**. Нажмите кнопку **Сохранить**. Рекомендуется использовать рабочую область Log Analytics в том же регионе Azure с заданием Stream Analytics, чтобы предотвратить дополнительные затраты.
 
     ![Параметры журналов диагностики](./media/stream-analytics-job-diagnostic-logs/diagnostic-settings.png)
 
@@ -99,14 +99,14 @@ Azure Stream Analytics записывает две категории журна
 
 Все журналы хранятся в формате JSON. Каждая запись содержит следующие общие строковые поля.
 
-ИМЯ | ОПИСАНИЕ
+ИМЯ | Описание
 ------- | -------
-Twitter в режиме реального | Метка времени журнала (в формате UTC).
-ResourceId | Идентификатор ресурса (прописными буквами), с которым была выполнена операция. Содержит идентификатор подписки, группу ресурсов и имя задания. Например, **/SUBSCRIPTIONS/6503D296-DAC1-4449-9B03-609A1F4A1C87/RESOURCEGROUPS/MY-RESOURCE-GROUP/PROVIDERS/MICROSOFT.STREAMANALYTICS/STREAMINGJOBS/MYSTREAMINGJOB**.
+time | Метка времени журнала (в формате UTC).
+resourceId | Идентификатор ресурса (прописными буквами), с которым была выполнена операция. Содержит идентификатор подписки, группу ресурсов и имя задания. Например, **/SUBSCRIPTIONS/6503D296-DAC1-4449-9B03-609A1F4A1C87/RESOURCEGROUPS/MY-RESOURCE-GROUP/PROVIDERS/MICROSOFT.STREAMANALYTICS/STREAMINGJOBS/MYSTREAMINGJOB**.
 category | Категория журнала, **Выполнение** или **Разработка**.
 operationName | Имя операции, добавленной в журнал. Например, **Send Events: SQL Output write failure to mysqloutput** (События отправки: ошибка записи выходных данных SQL в mysqloutput).
 status | Состояние операции. Например, **Сбой** или **Успешно выполнено**.
-level | Уровень ведения журнала. Например, **Ошибка**, **Предупреждение** или **Информация**.
+уровень | Уровень ведения журнала. Например, **Ошибка**, **Предупреждение** или **Информация**.
 properties | Сведения о записи журнала, сериализованные в строку JSON. Дополнительные сведения приведены в следующем разделе этой статьи.
 
 ### <a name="execution-log-properties-schema"></a>Схема свойств журнала выполнения
@@ -117,12 +117,12 @@ properties | Сведения о записи журнала, сериализо
 
 Любая ошибка, возникающая при обработке данных в задании, находится в этой категории журналов. Чаще всего эти журналы создаются во время операций чтения, сериализации и записи. Эти журналы не содержат ошибок подключения, которые обрабатываются как универсальные события. Дополнительные сведения о причине различных разных [входные и выходные данные ошибок](https://docs.microsoft.com/azure/stream-analytics/data-errors).
 
-ИМЯ | ОПИСАНИЕ
+ИМЯ | Описание
 ------- | -------
-Источник | Имя входных или выходных данных задания, в которых произошла ошибка.
+Source | Имя входных или выходных данных задания, в которых произошла ошибка.
 Сообщение | Сообщение, связанное с ошибкой.
-type | Тип ошибки. Например **DataConversionError**, **CsvParserError** или **ServiceBusPropertyColumnMissingError**.
-Данные | Содержит данные, полезные для точного поиска источника ошибки. Значение может быть усечено в зависимости от размера.
+Тип | Тип ошибки. Например **DataConversionError**, **CsvParserError** или **ServiceBusPropertyColumnMissingError**.
+Data | Содержит данные, полезные для точного поиска источника ошибки. Значение может быть усечено в зависимости от размера.
 
 В зависимости от значения **operationName** ошибки данных имеют следующую схему:
 
@@ -138,17 +138,17 @@ type | Тип ошибки. Например **DataConversionError**, **CsvParse
 
 Остальные типы ошибок считаются универсальными событиями.
 
-ИМЯ | ОПИСАНИЕ
+ИМЯ | Описание
 -------- | --------
-Ошибка | (Необязательно.) Сведения об ошибке. Как правило, это сведения об исключении (если они доступны).
+Error | (Необязательно.) Сведения об ошибке. Как правило, это сведения об исключении (если они доступны).
 Сообщение| Сообщение журнала.
-type | Тип сообщения. Сопоставляется с внутренней классификацией ошибок. Например **JobValidationError** или **BlobOutputAdapterInitializationFailure**.
+Тип | Тип сообщения. Сопоставляется с внутренней классификацией ошибок. Например **JobValidationError** или **BlobOutputAdapterInitializationFailure**.
 Идентификатор корреляции | Идентификатор [GUID](https://en.wikipedia.org/wiki/Universally_unique_identifier), однозначно определяющий выполнение задания. Все записи журнала, зафиксированные с начала до завершения задания, имеют одинаковое значение **идентификатора корреляции**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Что такое Stream Analytics?](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий Azure Stream Analytics для повышения пропускной способности базы данных](stream-analytics-scale-jobs.md)
-* [Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx) (Справочник по языку запросов Stream Analytics)
+* [Stream Analytics Query Language Reference](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference) (Справочник по языку запросов Stream Analytics)
 * [Ошибки данных Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/data-errors)

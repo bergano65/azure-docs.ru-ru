@@ -4,7 +4,7 @@
   items:
     - name: Общие сведения об Azure DevOps Projects
       href: overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: .NET
@@ -39,9 +39,15 @@
     - name: "3.\_Развертывание в Базе данных SQL Azure"
       href: azure-devops-project-sql-database.md
       maintainContext: true
-    - name: "4.\_Развертывание в AKS."
+    - name: "4.\_Развертывание в AKS"
       href: azure-devops-project-aks.md
       maintainContext: true
-    - name: "5.\_Развертывание в Azure Service Fabric."
+    - name: "5.\_Развертывание в Azure Service Fabric"
       href: azure-devops-project-service-fabric.md
+      maintainContext: true
+    - name: "6.\_Развертывание в Azure Cosmos\_DB"
+      href: azure-devops-project-cosmos-db.md
+      maintainContext: true
+    - name: "7.\_Развертывание в решении \"Функции Azure\""
+      href: azure-devops-project-functions.md
       maintainContext: true

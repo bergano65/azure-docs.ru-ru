@@ -30,6 +30,8 @@
       items:
         - name: Правила брандмауэра для IP-адресов на уровне сервера
           href: sql-database-server-level-firewall-rule.md
+        - name: Настройка общедоступной конечной точки в Управляемом экземпляре
+          href: sql-database-managed-instance-public-endpoint-configure.md
         - name: Подключение клиентской виртуальной машины к управляемому экземпляру
           href: sql-database-managed-instance-configure-vm.md
         - name: "Подключение \"точка\_— сеть\" к управляемому экземпляру"
@@ -512,8 +514,6 @@
           href: sql-database-managed-instance-threat-detection.md
         - name: Подключение приложений
           href: sql-database-managed-instance-connect-app.md
-        - name: Настройка общедоступной конечной точки
-          href: sql-database-managed-instance-public-endpoint-configure.md
     - name: Загрузка и перемещение данных
       items:
         - name: Копирование базы данных в пределах Azure

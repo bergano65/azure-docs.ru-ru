@@ -66,6 +66,8 @@
           href: write-queries.md
         - name: Отправка запроса данных в Azure Data Lake
           href: data-lake-query-data.md
+        - name: Запрашивание данных в Azure Monitor
+          href: query-monitor-data.md
         - name: Python
           href: python-query-data.md
         - name: Анализ временных рядов и машинное обучение

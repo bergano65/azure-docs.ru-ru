@@ -7,7 +7,7 @@ metadata:
   author: ekpgh
   ms.service: fxt-edge-filer
   ms.topic: landing-page
-  ms.date: 06/20/2019
+  ms.date: 07/10/2019
   ms.author: v-erkell
 abstract:
   description: "Кэш гибридного хранилища Azure FXT Edge Filer\_— это гибридная система, которая объединяет оборудование и программное обеспечение, ускоряя доступ к данным для рабочих процессов с высокой интенсивностью чтения высокопроизводительных вычислений (HPC) на основе файлов. Используя кластер из трех или более устройств Azure FXT Edge Filer, вы можете повысить производительность хранилища для локальных систем NAS (NetApp или Dell EMC Isilon), облачного хранилища или комбинации этих решений."
@@ -39,3 +39,4 @@ sections:
         items:
           - html: <a href="fxt-specs">Характеристики оборудования</a>
           - html: <a href="fxt-additional-doc">Дополнительная документация</a>
+          - html: <a href="fxt-support-ticket">Создание запроса в службу поддержки</a>
