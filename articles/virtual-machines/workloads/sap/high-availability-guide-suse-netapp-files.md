@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/30/2019
 ms.author: radeltch
-ms.openlocfilehash: b3b5a89b43eaa5c0851962aef414ec9c9b7440da
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c8fcf4afa5a363d355f627be95dd7fe8131203ac
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66357735"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67797967"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-with-azure-netapp-files-for-sap-applications"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure в SUSE Linux Enterprise Server с файлами NetApp Azure для приложений SAP
 
@@ -80,11 +80,11 @@ ms.locfileid: "66357735"
 * примечание к SAP [1984787], содержащее общие сведения о SUSE Linux Enterprise Server 12;
 * примечание к SAP [1999351], содержащее дополнительные сведения об устранении неполадок, связанных с расширением для расширенного мониторинга Azure для SAP;
 * [вики-сайт сообщества SAP](https://wiki.scn.sap.com/wiki/display/HOME/SAPonLinuxNotes), содержащий все необходимые примечания к SAP для Linux;
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
-* [Развертывание программного обеспечения SAP на виртуальных машинах Linux в Azure][deployment-guide]
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по развертыванию СУБД][dbms-guide]
-* [Рекомендации по обеспечению высокого уровня доступности SUSE SAP][suse-ha-guide]. Эти руководства содержат всю необходимую информацию для настройки высокого уровня доступности NetWeaver и репликации системы SAP HANA в локальной среде. Придерживайтесь этих общих рекомендаций. Они содержат намного более подробные сведения.
-* [Заметки о выпуске расширения SUSE высокого уровня доступности 12 SP3][suse-ha-12sp3-relnotes]
+* [На виртуальных машинах планированию и внедрению SAP NETWEAVER на платформе Linux][planning-guide]
+* [Развертывание виртуальных машин для SAP в Linux][deployment-guide]
+* [Развертывание программного обеспечения SAP на платформе Linux для Azure виртуальные машины СУБД][dbms-guide]
+* [SUSE SAP высокого уровня ДОСТУПНОСТИ рекомендации][suse-ha-guide] руководства содержат все необходимые сведения для настройки Netweaver высокого уровня ДОСТУПНОСТИ и репликации системы SAP HANA в локальной. Придерживайтесь этих общих рекомендаций. Они содержат намного более подробные сведения.
+* [Заметки о выпуске SUSE высокого уровня доступности расширения 12 SP3][suse-ha-12sp3-relnotes]
 * [NetApp приложения SAP в Microsoft Azure, использующих службу файлов Azure NetApp][anf-sap-applications-azure]
 
 ## <a name="overview"></a>Обзор
@@ -426,7 +426,6 @@ SAP NetWeaver требует общее хранилище для каталог
    #     fs_QAS_ASCS        (ocf::heartbeat:Filesystem):    <b>Started anftstsapcl1</b>
    #     nc_QAS_ASCS        (ocf::heartbeat:anything):      <b>Started anftstsapcl1</b>
    #     vip_QAS_ASCS       (ocf::heartbeat:IPaddr2):       <b>Started anftstsapcl1</b>
-   #     rsc_sap_QAS_ASCS00 (ocf::heartbeat:SAPInstance):   <b>Started anftstsapcl1</b>
    # stonith-sbd     (stonith:external/sbd): <b>Started anftstsapcl2</b>
    </code></pre>
   
@@ -549,7 +548,7 @@ SAP NetWeaver требует общее хранилище для каталог
 
 6. **[A]** Настройте активность.
 
-   Обмен данными между сервером приложений SAP NetWeaver и ASCS/SCS происходит через программный балансировщик нагрузки. Балансировщик нагрузки отключает неактивные подключения по истечении времени ожидания, которое можно настроить. Во избежание этого необходимо задать соответствующий параметр в профиле SAP NetWeaver ASCS/SCS и изменить параметры системы Linux. Дополнительные сведения см. в [примечании к SAP 1410736][1410736].
+   Обмен данными между сервером приложений SAP NetWeaver и ASCS/SCS происходит через программный балансировщик нагрузки. Балансировщик нагрузки отключает неактивные подключения по истечении времени ожидания, которое можно настроить. Во избежание этого необходимо задать соответствующий параметр в профиле SAP NetWeaver ASCS/SCS и изменить параметры системы Linux. Чтение [примечании к SAP 1410736][1410736] Дополнительные сведения.
 
    Параметр профиля ASCS/SCS enque/encni/set_so_keepalive уже был добавлен на предыдущем шаге.
 
@@ -788,7 +787,7 @@ SAP NetWeaver требует общее хранилище для каталог
 
 ## <a name="install-database"></a>Установка базы данных
 
-В данном примере SAP NetWeaver уже установлен на SAP HANA. Для этой установки можно использовать любую поддерживаемую базу данных. Дополнительные сведения об установке SAP HANA в Azure см. в статье [Высокий уровень доступности SAP HANA на виртуальных машинах Azure][sap-hana-ha]. Список поддерживаемых баз данных см. в примечании к SAP [1928533][1928533].
+В данном примере SAP NetWeaver уже установлен на SAP HANA. Для этой установки можно использовать любую поддерживаемую базу данных. Дополнительные сведения о том, как установить SAP HANA в Azure см. в разделе [высокий уровень доступности SAP HANA на виртуальных машинах Azure (ВМ)][sap-hana-ha]. For a list of supported databases, see [SAP Note 1928533][1928533].
 
 * Запустите установку экземпляра базы данных SAP.
 
@@ -967,6 +966,9 @@ SAP NetWeaver требует общее хранилище для каталог
    # run as root
    # Remove failed actions for the ERS that occurred as part of the migration
    anftstsapcl1:~ # crm resource cleanup rsc_sap_QAS_ERS01
+   # Remove migration constraints
+   anftstsapcl1:~ # crm resource clear rsc_sap_QAS_ASCS00
+   #INFO: Removed migration constraints for rsc_sap_QAS_ASCS00
    </code></pre>
 
    Состояние ресурсов после теста:
@@ -1294,11 +1296,11 @@ SAP NetWeaver требует общее хранилище для каталог
         rsc_sap_QAS_ERS01  (ocf::heartbeat:SAPInstance):   Started anftstsapcl1
    </code></pre>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
-* [Развертывание программного обеспечения SAP на виртуальных машинах Azure][deployment-guide]
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по развертыванию СУБД][dbms-guide]
+* [На виртуальных машинах планированию и внедрению SAP NETWEAVER][planning-guide]
+* [Развертывание виртуальных машин для SAP][deployment-guide]
+* [Развертывание СУБД виртуальных машин Azure для SAP][dbms-guide]
 * Чтобы узнать, как обеспечить высокий уровень доступности и планировании аварийного восстановления SAP 
 * HANA в Azure (крупные экземпляры), см. в разделе [SAP HANA (крупные экземпляры) высокий уровень доступности и аварийное восстановление в Azure](hana-overview-high-availability-disaster-recovery.md).
-* Дополнительные сведения об установке высокого уровня доступности и плана для аварийного восстановления SAP HANA на виртуальных машинах Azure см. в статье [Высокий уровень доступности SAP HANA на виртуальных машинах Azure][sap-hana-ha].
+* Дополнительные сведения об обеспечении высокого уровня доступности и плана для аварийного восстановления SAP HANA на виртуальных машинах Azure, см. в разделе [высокий уровень доступности SAP HANA на виртуальных машинах Azure (ВМ)][sap-hana-ha]

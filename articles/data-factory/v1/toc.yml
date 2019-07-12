@@ -1,10 +1,10 @@
-- name: Документация по фабрике данных версии 1
+- name: Документация по Фабрике данных версии 1
   href: null
 - name: Переход к документации по текущей версии
   href: ../introduction.md
 - name: Обзор
   items:
-    - name: Введение в фабрику данных Azure
+    - name: Знакомство с Фабрикой данных Azure
       href: data-factory-introduction.md
     - name: Основные понятия
       items:
@@ -20,17 +20,17 @@
     - name: Создание конвейера для копирования данных
       href: data-factory-copy-data-from-azure-blob-storage-to-sql-database.md
       items:
-        - name: Мастер копирования
-          href: data-factory-copy-data-wizard-tutorial.md
         - name: Портал Azure
           href: data-factory-copy-activity-tutorial-using-azure-portal.md
+        - name: Мастер копирования
+          href: data-factory-copy-data-wizard-tutorial.md
         - name: Visual Studio
           href: data-factory-copy-activity-tutorial-using-visual-studio.md
         - name: Azure PowerShell
           href: data-factory-copy-activity-tutorial-using-powershell.md
         - name: REST API
           href: data-factory-copy-activity-tutorial-using-rest-api.md
-        - name: .NET API
+        - name: API для .NET
           href: data-factory-copy-activity-tutorial-using-dotnet-api.md
     - name: Создание конвейера для преобразования данных
       href: data-factory-build-your-first-pipeline.md
@@ -55,7 +55,7 @@
       items:
         - name: Общие сведения о действии копирования
           href: data-factory-data-movement-activities.md
-        - name: Мастер копирования фабрики данных
+        - name: Мастер копирования в Фабрике данных
           href: data-factory-azure-copy-wizard.md
           items:
             - name: "Загрузка 1\_ТБ за 15\_минут"
@@ -72,15 +72,15 @@
               href: data-factory-amazon-redshift-connector.md
             - name: Amazon S3
               href: data-factory-amazon-simple-storage-service-connector.md
-            - name: Хранилище больших двоичных объектов Azure
+            - name: Хранилище BLOB-объектов Azure
               href: data-factory-azure-blob-connector.md
             - name: Azure Cosmos DB
               href: data-factory-azure-documentdb-connector.md
-            - name: Хранилище Azure Data Lake Gen1
+            - name: Хранилище Azure Data Lake Storage 1-го поколения
               href: data-factory-azure-datalake-connector.md
             - name: Поиск Azure
               href: data-factory-azure-search-connector.md
-            - name: Базы данных SQL Azure
+            - name: База данных SQL Azure
               href: data-factory-azure-sql-connector.md
             - name: "Хранилище данных SQL\_Azure"
               href: data-factory-azure-sql-data-warehouse-connector.md
@@ -118,7 +118,7 @@
               href: data-factory-sap-hana-connector.md
             - name: SFTP
               href: data-factory-sftp-connector.md
-            - name: SQL Server;
+            - name: SQL Server
               href: data-factory-sqlserver-connector.md
             - name: Sybase
               href: data-factory-onprem-sybase-connector.md
@@ -141,13 +141,13 @@
           href: data-factory-hadoop-streaming-activity.md
         - name: Действие HDInsight Spark
           href: data-factory-spark.md
-        - name: Действие выполнения пакета в службе машинного обучения
+        - name: Действие выполнения пакета в службе Машинного обучения
           href: data-factory-azure-ml-batch-execution-activity.md
-        - name: Действие обновления ресурса в службе машинного обучения
+        - name: Действие обновления ресурса в службе Машинного обучения
           href: data-factory-azure-ml-update-resource-activity.md
         - name: Действие хранимой процедуры
           href: data-factory-stored-proc-activity.md
-        - name: Действие U-SQL в аналитике озера данных
+        - name: Действие U-SQL в Data Lake Analytics
           href: data-factory-usql-activity.md
         - name: Настраиваемое действие .NET
           href: data-factory-use-custom-activities.md
@@ -173,11 +173,11 @@
       items:
         - name: Приложение для мониторинга и управления
           href: data-factory-monitor-manage-app.md
-        - name: Конвейеры фабрики данных Azure
+        - name: Конвейеры Фабрики данных Azure
           href: data-factory-monitor-manage-pipelines.md
-        - name: Использование пакета .NET SDK
+        - name: Использование пакета SDK для .NET
           href: data-factory-create-data-factories-programmatically.md
-        - name: Устранение неполадок фабрики данных
+        - name: Устранение неполадок Фабрики данных
           href: data-factory-troubleshoot.md
         - name: Устранение неполадок в работе шлюза управления данными
           href: data-factory-troubleshoot-gateway-issues.md
@@ -211,15 +211,15 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Заметки о выпуске шлюза управления данными
       href: data-factory-gateway-release-notes.md
-    - name: Запрос функции
+    - name: Запрашивание функции
       href: 'https://feedback.azure.com/forums/270578-azure-data-factory'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=data-factory'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-data-factory'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=data-factory'
-    - name: Обработка больших наборов данных с помощью фабрики данных и пакетной службы
+    - name: Обработка больших наборов данных с помощью Фабрики данных и пакетной службы
       href: data-factory-data-processing-using-batch.md
     - name: Примеры использования
       items:
