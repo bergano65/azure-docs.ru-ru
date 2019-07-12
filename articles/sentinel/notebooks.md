@@ -7,7 +7,8 @@ author: rkarlin
 manager: rkarlin
 editor: ''
 ms.assetid: 1721d0da-c91e-4c96-82de-5c7458df566b
-ms.service: sentinel
+ms.service: azure-sentinel
+ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.custom: mvc
@@ -15,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/28/2019
 ms.author: rkarlin
-ms.openlocfilehash: ffe3ae5b6aa26d154928a74e51864a0574b82c68
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cc84db4bd3dc06d4e2dbecb3be8ceee37d554ae7
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65228635"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67619835"
 ---
 # <a name="use-jupyter-notebooks-to-hunt-for-security-threats"></a>Использование записных книжек Jupyter для слежения наличие угроз безопасности
 
@@ -95,7 +96,7 @@ ms.locfileid: "65228635"
 
 Мы рады отзывам, ли предложений запросов для функций, влияющая записных книжек, отчеты об ошибках или улучшения и дополнения к существующей записных книжек. Перейдите к [Azure Sentinel сообщества на сайте GitHub](https://github.com/Azure/Azure-Sentinel) создать информацию о проблеме или вилки и загрузить публикацию.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как приступить к использованию записные книжки Jupyter в Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 

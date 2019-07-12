@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 6/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1a9caf83c6f4cd4ed15290afc872043c11234552
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: ad0e0ca75bf3d3a8d9d1029d42f8609b3c4c627b
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67508704"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620829"
 ---
 # <a name="test-a-stream-analytics-query-with-sample-data"></a>Проверка запроса Stream Analytics с демонстрационными данными
 
@@ -50,6 +50,6 @@ ms.locfileid: "67508704"
 
 8. После проверки результатов, показанных в браузере, **сохраните** запрос. Затем **запустите** задание и позвольте ему обрабатывать входящие события.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 > [!div class="nextstepaction"]
-> [Справочник по языку запросов Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+> [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)

@@ -7,19 +7,20 @@ author: rkarlin
 manager: rkarlin
 editor: ''
 ms.assetid: d28c2264-2dce-42e1-b096-b5a234ff858a
-ms.service: sentinel
+ms.service: azure-sentinel
+ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: 7f2f85f8b68efadf1dc0a35d1a8e6bda2655f53b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 697983000f84f9e4efe7e2c8ef9dbb2f636e0735
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65207299"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620575"
 ---
 # <a name="connect-data-from-azure-security-center"></a>Подключайте данные из центра безопасности Azure
 
@@ -31,7 +32,7 @@ ms.locfileid: "65207299"
 
 Azure Sentinel позволяет подключать оповещения из [центра безопасности](../security-center/security-center-intro.md) и передает их в Azure Sentinel. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы хотите экспортировать оповещения из центра безопасности Azure, необходимо быть участником в подписке, журналы которых можно потоковую передачу.
 
@@ -49,7 +50,7 @@ Azure Sentinel позволяет подключать оповещения из
 
 4. Чтобы использовать соответствующей схемы в Log Analytics для оповещений центра безопасности Azure, поиск **SecurityEvent**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как соединиться с центра безопасности Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальные угрозы](quickstart-get-visibility.md).
 - Начало работы [обнаружение угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

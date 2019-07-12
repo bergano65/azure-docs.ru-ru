@@ -4,16 +4,19 @@ description: Развертывание IBM Z разработки и тесто
 services: virtual-machines-linux
 documentationcenter: ''
 author: njray
+ms.author: edprice
 manager: edprice
 editor: edprice
+ms.topic: conceptual
+ms.date: 04/02/2019
 tags: ''
 keywords: ''
-ms.openlocfilehash: 2f5520213e7d8792c89f5445d470987323173dc3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ad02ec75dab4cb6971d0467899d80f5f745fd94b
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60859347"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621299"
 ---
 # <a name="install-ibm-zdt-devtest-environment-on-azure"></a>Установка IBM zD & T среды разработки и тестирования в Azure
 
@@ -35,7 +38,7 @@ Azure и Azure Stack поддерживают следующие версии:
 
 В этой статье показано, как настроить Z разработки и тестовой среды (zD & T) Enterprise Edition в Azure. Затем можно использовать zD & T Enterprise Edition веб-сервер для создания и Z комплексное управление средами в Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 > [!NOTE]
 > IBM разрешает zD & T Enterprise Edition для установки в только в средах разработки и тестирования —*не* рабочих средах.
@@ -132,6 +135,6 @@ Azure и Azure Stack поддерживают следующие версии:
 
 3. Вставьте URL-адрес в веб-браузер, чтобы открыть компонент управления для вашей установки T & zD.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Задайте копии приложения разработчикам управлять распространения (ADCD) в IBM zD & T v1](./demo.md)

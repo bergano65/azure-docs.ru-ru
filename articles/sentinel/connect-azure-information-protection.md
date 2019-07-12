@@ -7,19 +7,20 @@ author: rkarlin
 manager: rkarlin
 editor: ''
 ms.assetid: bfa2eca4-abdc-49ce-b11a-0ee229770cdd
-ms.service: sentinel
+ms.service: azure-sentinel
+ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: 4b73edd10521b23fb4befbe4fe7d9f0c7b496de3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3edfdca16141726ea591c8473528fc23ee076c53
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65204303"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620602"
 ---
 # <a name="connect-data-from-azure-information-protection"></a>Подключайте данные из Azure Information Protection
 
@@ -30,7 +31,7 @@ ms.locfileid: "65204303"
 Можно осуществлять потоковую передачу журналов из [Azure Information Protection](https://docs.microsoft.com/azure/information-protection/reports-aip) в Azure Sentinel одним щелчком. Azure Information Protection помогает защитить данные ли он хранится в облаке или в локальными инфраструктурами и управления и справки для защиты электронной почты, документов и конфиденциальных данных, которые вы предоставляете общий доступ за пределами организации. Простая классификация и встроенные метки и разрешения улучшить защиту данных все время с помощью Azure Information Protection. При подключении Azure Information Protection Sentinel Azure, вы потока все оповещения из Azure Information Protection в Azure Sentinel.
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - Пользователь с глобального администратора, администратора безопасности или разрешения на защиту сведения
 
@@ -49,14 +50,14 @@ ms.locfileid: "65204303"
 
 4. Выберите рабочую область, в которую вы развернули Azure Sentinel. 
 
-5. Последовательно выберите **ОК**.
+5. Нажмите кнопку **ОК**.
 
 6. Чтобы использовать соответствующей схемы в Log Analytics для оповещений Azure Information Protection, поиск **InformationProtectionLogs_CL**.
 
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как соединиться с Azure Information Protection Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальные угрозы](quickstart-get-visibility.md).
 - Начало работы [обнаружение угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

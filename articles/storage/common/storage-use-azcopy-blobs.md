@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/14/2019
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: f95af348eb11abee5a46a89e08da5bf4eb873c42
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
+ms.openlocfilehash: 83e32a1e8f77604330a9f3aba0e011a0a0851e2f
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67566145"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67625610"
 ---
 # <a name="transfer-data-with-azcopy-and-blob-storage"></a>Передача данных с помощью AzCopy и BLOB-хранилища
 
@@ -48,7 +48,7 @@ AzCopy — программа командной строки, который м
 
 > [!div class="checklist"]
 > * Отправка файла
-> * Отправить каталог
+> * Отправка каталога
 > * Отправка файлов с использованием подстановочных знаков
 
 > [!NOTE]
@@ -65,7 +65,7 @@ AzCopy — программа командной строки, который м
 > [!NOTE]
 > По умолчанию AzCopy передает данные в блочных BLOB-объектов. Для передачи файлов, как добавочных или страничных BLOB-объектов используйте флаг `--blob-type=[BlockBlob|PageBlob|AppendBlob]`.
 
-### <a name="upload-a-directory"></a>Отправить каталог
+### <a name="upload-a-directory"></a>Отправка каталога
 
 В этом примере копирует каталог (и все файлы в этом каталоге) в контейнер больших двоичных объектов. Результат представляет собой каталог в контейнере с тем же именем.
 
@@ -84,7 +84,7 @@ AzCopy — программа командной строки, который м
 
 Если указать имя каталога, который не существует в контейнере, AzCopy создаст новый каталог с таким именем.
 
-### <a name="upload-the-contents-of-a-directory"></a>Отправьте содержимое папки
+### <a name="upload-the-contents-of-a-directory"></a>Отправка содержимого каталога
 
 Вы можете отправить содержимое каталога без копирования каталога, содержащего сам, используя подстановочный знак (*).
 
@@ -105,7 +105,7 @@ AzCopy — программа командной строки, который м
 
 > [!div class="checklist"]
 > * скачать файл;
-> * Скачать каталог
+> * Загрузка каталога
 > * Загрузка файлов с помощью подстановочных знаков
 
 > [!NOTE]
@@ -119,7 +119,7 @@ AzCopy — программа командной строки, который м
 | **Пример** | `azcopy copy "https://mystorageaccount.blob.core.windows.net/mycontainer/myTextFile.txt" "C:\myDirectory\myTextFile.txt"` |
 | **Пример** (иерархического пространства имен) | `azcopy copy "https://mystorageaccount.dfs.core.windows.net/mycontainer/myTextFile.txt" "C:\myDirectory\myTextFile.txt"` |
 
-### <a name="download-a-directory"></a>Скачать каталог
+### <a name="download-a-directory"></a>Загрузка каталога
 
 |    |     |
 |--------|-----------|
@@ -129,7 +129,7 @@ AzCopy — программа командной строки, который м
 
 В этом примере результаты в каталог с именем `C:\myDirectory\myBlobDirectory` , содержащий все загруженные файлы.
 
-### <a name="download-the-contents-of-a-directory"></a>Загрузить содержимое каталога
+### <a name="download-the-contents-of-a-directory"></a>Загрузка содержимого каталога
 
 Можно загрузить содержимое каталога без копирования каталога, содержащего сам, используя подстановочный знак (*).
 
@@ -225,7 +225,7 @@ AzCopy использует [поместить блок из URL-адрес](ht
 | **Пример** | `azcopy sync "https://mystorageaccount.blob.core.windows.net/mycontainer" "C:\myDirectory" --recursive` |
 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные примеры можно найти в любой из следующих статей:
 

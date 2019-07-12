@@ -10,12 +10,12 @@ ms.subservice: development
 ms.date: 03/15/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 06bdd21363aee8202ce7178f157f01a5c26e3a52
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c22caa4b3da69d46241dfbaa7556d0209130415c
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65851591"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67626130"
 ---
 # <a name="designing-tables-in-azure-sql-data-warehouse"></a>Проектирование таблиц в хранилище данных SQL Azure
 
@@ -107,7 +107,7 @@ ALTER TABLE SalesFact_DailyFinalLoad SWITCH PARTITION 256 TO SalesFact PARTITION
 Список функций индексов columnstore см. в статье [Новые возможности индексов columnstore](/sql/relational-databases/indexes/columnstore-indexes-what-s-new). Сведения о повышении производительности индекса columnstore см. в статье [Максимальное повышение качества группы строк для индекса columnstore](sql-data-warehouse-memory-optimizations-for-columnstore-compression.md).
 
 ## <a name="statistics"></a>Статистика
-Оптимизатор запросов использует статистику уровня столбца при создании плана выполнения запроса. Чтобы повысить производительность запросов, важно иметь статистику по отдельным столбцам, особенно столбцам, используемым в объединениях запросов. [Создание статистики](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistics#automatic-creation-of-statistics) происходит автоматически.  Однако обновление статистики не происходит автоматически. Обновите статистику после добавления или изменения значительного числа строк. Например, обновите статистику после загрузки. Дополнительные сведения см. в статье [Управление статистикой таблиц в хранилище данных SQL](sql-data-warehouse-tables-statistics.md).
+Оптимизатор запросов использует статистику уровня столбца при создании плана выполнения запроса. Чтобы повысить производительность запросов, важно иметь статистику по отдельным столбцам, особенно столбцам, используемым в объединениях запросов. [Создание статистики](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistics#automatic-creation-of-statistic) происходит автоматически.  Однако обновление статистики не происходит автоматически. Обновите статистику после добавления или изменения значительного числа строк. Например, обновите статистику после загрузки. Дополнительные сведения см. в статье [Управление статистикой таблиц в хранилище данных SQL](sql-data-warehouse-tables-statistics.md).
 
 ## <a name="commands-for-creating-tables"></a>Команды для создания таблиц
 Вы можете создать пустую таблицу. Вы также можете создать и заполнить таблицу результатами инструкции Select. Ниже приведены команды T-SQL для создания таблицы.
@@ -339,5 +339,5 @@ ORDER BY    distribution_id
 ;
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 После создания таблицы для хранилища данных загрузите данные в таблицу.  Инструкции см. в статье о [загрузке данных в хранилище данных SQL](load-data-wideworldimportersdw.md).

@@ -2,24 +2,25 @@
 title: Развертывание центра безопасности Azure для модуля IoT Edge | Документация Майкрософт
 description: Узнайте о том, как развернуть агент безопасности Интернета вещей в IoT Edge в центре безопасности Azure.
 services: asc-for-iot
-ms.service: ascforiot
+ms.service: asc-for-iot
 documentationcenter: na
 author: mlottner
 manager: rkarlin
 editor: ''
 ms.assetid: 32a9564d-16fd-4b0d-9618-7d78d614ce76
+ms.subservice: asc-for-iot
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/1/2019
 ms.author: mlottner
-ms.openlocfilehash: 85e342f08e5402e50e5b0dfd1fe2df90337f29ca
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 49ed4c6515f8fb63c3331b05e1bb29b13985e6b3
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66254295"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67618323"
 ---
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Развертывание модуля безопасности на вашем устройстве IoT Edge
 
@@ -37,7 +38,7 @@ ms.locfileid: "66254295"
 
 Выполните следующие действия для развертывания ASC для модуля безопасности Интернета вещей для IoT Edge.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительные требования
 
 - В центре Интернета вещей, убедитесь, что устройство является [зарегистрировано как устройство IoT Edge](https://docs.microsoft.com/azure/iot-edge/how-to-register-device-portal).
 
@@ -103,7 +104,7 @@ ms.locfileid: "66254295"
       }
       ```
 
-1. Выберите команду **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 1. Прокрутите до нижней части вкладки и выберите **Настройка дополнительных параметров среды выполнения Edge**.
    
    >[!Note]
@@ -130,7 +131,7 @@ ms.locfileid: "66254295"
     }
     ```
       
-1. Выберите команду **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
    
 1. Нажмите кнопку **Далее**.
 
@@ -156,7 +157,7 @@ ms.locfileid: "66254295"
    
 1. Убедитесь, что со следующими контейнерами:
    
-   | Name | ИЗОБРАЖЕНИЕ |
+   | ИМЯ | ИЗОБРАЖЕНИЕ |
    | --- | --- |
    | azureiotsecurity | mcr.Microsoft.com/ascforiot/azureiotsecurity:0.0.3 |
    | edgeHub | mcr.Microsoft.com/ascforiot/edgehub:1.0.9-Preview |
@@ -172,7 +173,7 @@ ms.locfileid: "66254295"
    
 1. Для более подробных журналов, добавьте следующую переменную среды для **azureiotsecurity** развертывание модуля: `logLevel=Debug`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о параметрах конфигурации, продолжайте практическим руководством по конфигурации модуля. 
 > [!div class="nextstepaction"]

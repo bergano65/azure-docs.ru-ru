@@ -7,19 +7,20 @@ author: rkarlin
 manager: rkarlin
 editor: ''
 ms.assetid: 8c25baa8-b93b-41da-9e6c-15bb7b5c5511
-ms.service: sentinel
+ms.service: azure-sentinel
+ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: 67e4bb2d0f308a3f20f0a29ec8b1f2a0d46fc082
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e329c8efd9b0e89f5f5eae41952cda9a45a95969
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65204361"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620649"
 ---
 # <a name="connect-data-from-azure-activity-log"></a>Подключайте данные из журнала действий Azure
 
@@ -30,7 +31,7 @@ ms.locfileid: "65204361"
 Можно осуществлять потоковую передачу журналов из [журнал действий Azure](../azure-monitor/platform/activity-logs-overview.md) в Azure Sentinel одним щелчком. Журнал действий — это журнал подписки с подробными сведениями о событиях уровня подписки, которые произошли в Azure на. Сюда входят различные данные — от операционных данных Azure Resource Manager до обновлений в событиях работоспособности службы. С помощью журнала действий можно определить "что, кто и когда" о любой записи операции (PUT, POST, DELETE), выполненной с ресурсами в вашей подписке. Вы также можете отслеживать состояние операции и другие ее свойства. Журнал действий не содержит операции чтения (GET) или операции с ресурсами, которые используют классическую модель или модель «RDFE». 
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 - Пользователь с глобальным администратором или разрешения администратора безопасности
 
@@ -48,7 +49,7 @@ ms.locfileid: "65204361"
 
  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этом документе вы узнали, как подключиться к Azure Sentinel журнал действий Azure. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [получить представление о данных и потенциальные угрозы](quickstart-get-visibility.md).
 - Начало работы [обнаружение угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

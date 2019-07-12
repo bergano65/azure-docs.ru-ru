@@ -7,7 +7,7 @@ author: barbaraselden
 manager: CelesteDG
 ms.assetid: ''
 ms.service: active-directory
-ms.component: app-mgmt
+ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: baselden
 ms.reviewer: ''
-ms.openlocfilehash: 24429c5596494082b526b9648a1405bc397b9d2f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7d40c0604f0947abe8d536eafe87545790476a98
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67108485"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67625533"
 ---
 # <a name="plan-an-azure-ad-application-proxy-deployment"></a>Планирование развертывания прокси приложения Azure AD
 
@@ -34,7 +34,7 @@ ms.locfileid: "67108485"
 
 В следующем разделе приведены широкое представление ключ, планированию элементы, которые будут задавать для использования интерфейс эффективное развертывание. 
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительные требования
 
 Необходимо выполнить следующие условия перед началом реализации. Можно просмотреть дополнительные сведения о настройке среды, включая этих требований, в этом [руководстве](application-proxy-add-on-premises-application.md).
 
@@ -70,7 +70,8 @@ ms.locfileid: "67108485"
 
 * **Открытый сертификат**: Если вы используете пользовательские доменные имена, необходимо приобрести открытый сертификат, выданный сторонних доверенным центром сертификации. В зависимости от требований организации получение сертификата может занять некоторое время, и мы рекомендуем начала процесса как можно раньше. Прокси приложения Azure поддерживает стандарт [подстановочный знак](application-proxy-wildcard.md), или сертификаты на основе SAN.
 
-* **Требования к домену**: Единый вход в опубликованные приложения через ограниченное делегирование Kerberos (KCD) требует ведущих присоединены к домену AD, в котором выполняется публикация приложения. Подробные сведения по этой теме см. в разделе [ограниченного делегирования Kerberos для единого входа](application-proxy-configure-single-sign-on-with-kcd.md) с помощью прокси приложения. Служба соединителя выполняется в контексте учетной записи local System и не должны быть настроены для использования пользовательских удостоверений.
+* **Требования к домену**: Единый вход в опубликованные приложения через ограниченное делегирование Kerberos (KCD) необходимо, сервера, на котором работает соединитель и сервер приложения к одному и тому же домена или доверенных доменов.
+Подробные сведения по этой теме см. в разделе [ограниченного делегирования Kerberos для единого входа](application-proxy-configure-single-sign-on-with-kcd.md) с помощью прокси приложения. Служба соединителя выполняется в контексте учетной записи local System и не должны быть настроены для использования пользовательских удостоверений.
 
 * **Записи DNS для URL-адресов**
 
@@ -316,7 +317,7 @@ Azure AD предоставляет дополнительные функции 
 * [Настройка единого входа в приложение](application-proxy-config-sso-how-to.md)
 * [Проблема при создании приложения на портале администрирования](application-proxy-config-problem.md)
 * [Настройка ограниченного делегирования Kerberos](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
-* [Настройка для использования PingAccess](application-proxy-back-end-ping-access-how-to.md)
+* [Настройка с использованием PingAccess](application-proxy-back-end-ping-access-how-to.md)
 * [Не удается получить доступ к корпоративному приложению](application-proxy-sign-in-bad-gateway-timeout-error.md)
 * [Проблема при установке соединителя агента Application Proxy](application-proxy-connector-installation-problem.md)
 * [Проблема входа](application-sign-in-problem-on-premises-application-proxy.md)

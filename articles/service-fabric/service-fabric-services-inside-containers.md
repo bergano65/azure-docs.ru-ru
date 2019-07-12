@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 5/23/2018
-ms.author: aljo, anmola
-ms.openlocfilehash: caed77234646654d151b64d2c80b7231342f6d8c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: anmola
+ms.openlocfilehash: 1210b34590484379ae487ad1b87e76a433e4582a
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67050476"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621818"
 ---
 # <a name="containerize-your-service-fabric-reliable-services-and-reliable-actors-on-windows"></a>Контейнеризация служб Service Fabric Reliable Services и Reliable Actors в Windows
 
@@ -147,6 +147,6 @@ Service Fabric поддерживает контейнеризацию микр�
 
 Теперь в вашем кластере работает контейнерное приложение Service Fabric.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Дополнительные сведения о запуске [контейнеров в Service Fabric](service-fabric-get-started-containers.md).
 * Дополнительные сведения о [жизненном цикле приложения](service-fabric-application-lifecycle.md) Service Fabric.

@@ -5,14 +5,14 @@ author: mattwojo
 manager: evansma
 ms.author: parthp
 ms.service: marketplace
-ms.topic: how-to
+ms.topic: conceptual
 ms.date: 05/30/2019
-ms.openlocfilehash: b0c78cbcc06de3a18f2127693a7c1b24c075e297
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f861a05bd369fb279ab82e230cad307a3569967e
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65806241"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67619377"
 ---
 # <a name="how-to-create-a-commercial-marketplace-account-in-partner-center"></a>Как создать учетную запись коммерческих решений партнеров в центре партнеров
 
@@ -27,7 +27,7 @@ ms.locfileid: "65806241"
 
 При наличии учетной записи в [портал Cloud Partner (CPP)](https://cloudpartner.azure.com) , была перенесена через Центр партнеров, необходимо создать новую учетную запись. См. в разделе [издателей, перенесенные из CPP](#publishers-migrated-from-cpp). 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы создать учетную запись в центре партнеров, убедитесь, что у вас есть:
 
@@ -72,6 +72,6 @@ ms.locfileid: "65806241"
 
 После переноса учетной записи с CPP в центре партнеров, учетной записи центра партнеров становится Главная учетная запись должна использоваться для обновления учетной записи, управление пользователями, разрешениями и управления о выплатах. Эти обновления учетной записи будут автоматически синхронизироваться обратно в учетную запись только для чтения CPP, пока на портале CPP в конечном счете является устаревшим. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Управление учетной записью коммерческих решений партнеров в центре партнеров](./manage-account.md) 
