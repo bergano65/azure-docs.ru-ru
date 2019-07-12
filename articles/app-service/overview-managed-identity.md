@@ -10,13 +10,13 @@ ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: article
 ms.date: 11/20/2018
-ms.author: mahender
-ms.openlocfilehash: 0942d5ba7b31ddb2c0dec5fe979f1331d1bf3bfd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: mahender, yevbronsh
+ms.openlocfilehash: b18d5ba303d1cf7ab637638043f9e0727437c232
+ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66136987"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67827860"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Использование управляемых удостоверений в Службе приложений и Функциях Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "66136987"
 
 3. Выберите **Управляемое удостоверение**.
 
-4. На вкладке **Назначено системой** для параметра **Состояние** установите значение **Вкл**. Выберите команду **Сохранить**.
+4. На вкладке **Назначено системой** для параметра **Состояние** установите значение **Вкл**. Нажмите кнопку **Сохранить**.
 
 ![Управляемое удостоверение в Службе приложений](media/app-service-managed-service-identity/msi-blade-system.png)
 
@@ -181,7 +181,7 @@ ms.locfileid: "66136987"
 
 5. На вкладке **Пользователь назначен (предварительная версия)** щелкните **Добавить**.
 
-6. Найдите созданное ранее удостоверение и выберите его. Щелкните **Добавить**.
+6. Найдите созданное ранее удостоверение и выберите его. Нажмите кнопку **Добавить**.
 
 ![Управляемое удостоверение в Службе приложений](media/app-service-managed-service-identity/msi-blade-user.png)
 
@@ -276,6 +276,34 @@ var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServi
 
 Дополнительные сведения о пакете Microsoft.Azure.Services.AppAuthentication и операциях, которые он предоставляет, см. в [Справочник Microsoft.Azure.Services.AppAuthentication] и [примерах службы приложений и хранилищах ключей с управляемым удостоверением службы .NET](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet).
 
+
+### <a name="using-the-azure-sdk-for-java"></a>С помощью пакета Azure SDK для Java
+
+Для приложений Java и функций, — самый простой способ работы с управляемыми удостоверениями [пакет Azure SDK для Java](https://github.com/Azure/azure-sdk-for-java). В этом разделе показано, как начать работу с библиотекой в коде.
+
+1. Добавьте ссылку на [библиотека пакета SDK Azure](https://mvnrepository.com/artifact/com.microsoft.azure/azure). Для проектов Maven, можно также добавить этот фрагмент кода в `dependencies` раздел файла POM проекта:
+
+```xml
+<dependency>
+    <groupId>com.microsoft.azure</groupId>
+    <artifactId>azure</artifactId>
+    <version>1.23.0</version>
+</dependency>
+```
+
+2. Используйте `AppServiceMSICredentials` объект для проверки подлинности. В этом примере показано, как этот механизм может использоваться для работы с хранилищем ключей Azure:
+
+```java
+import com.microsoft.azure.AzureEnvironment;
+import com.microsoft.azure.management.Azure;
+import com.microsoft.azure.management.keyvault.Vault
+//...
+Azure azure = Azure.authenticate(new AppServiceMSICredentials(AzureEnvironment.AZURE))
+        .withSubscription(subscriptionId);
+Vault myKeyVault = azure.vaults().getByResourceGroup(resourceGroup, keyvaultName);
+
+```
+
 ### <a name="using-the-rest-protocol"></a>Использование протокола REST
 
 Приложение с управляемым удостоверением содержит две заданные переменные среды:
@@ -285,11 +313,11 @@ var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServi
 
 **MSI_ENDPOINT** — это локальный URL-адрес, из которого приложение может запрашивать маркеры. Чтобы получить маркер для ресурса, отправьте запрос HTTP GET к этой конечной точке, задав следующие параметры:
 
-> |Имя параметра|В|Описание|
+> |Имя параметра|In|Описание|
 > |-----|-----|-----|
-> |resource|Запрос|Универсальный код ресурса (URI) AAD, для которого нужно получить маркер. Это может быть URI одной из [служб Azure, которая поддерживает аутентификацию Azure AD,](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) или любой другой URI ресурса.|
+> |ресурс|Запрос|Универсальный код ресурса (URI) AAD, для которого нужно получить маркер. Это может быть URI одной из [служб Azure, которая поддерживает аутентификацию Azure AD,](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) или любой другой URI ресурса.|
 > |api-version|Запрос|Версия API маркеров, которая будет использоваться. Сейчас поддерживается только одна версия: 2017-09-01.|
-> |секрет|Верхний колонтитул|Значение переменной среды MSI_SECRET. Заголовок, который используется при устранении атак с подделкой серверных запросов (SSRF).|
+> |secret|Header|Значение переменной среды MSI_SECRET. Заголовок, который используется при устранении атак с подделкой серверных запросов (SSRF).|
 > |clientid|Запрос|(Необязательно.) Идентификатор назначаемого пользователем удостоверения, который следует использовать. Если этот параметр опущен, используется назначаемое системой удостоверение.|
 
 Успешный ответ 200 — OK включает текст JSON со следующими свойствами:
@@ -298,7 +326,7 @@ var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServi
 > |-------------|----------|
 > |access_token|Запрашиваемый маркер доступа. Вызывающая веб-служба может использовать этот маркер для проверки подлинности принимающей веб-службы.|
 > |expires_on|Время истечения срока действия маркера доступа. Дата представляется как количество секунд с 1970-01-01T0:0:0Z в формате UTC до истечения срока действия. Это значение используется для определения времени существования кэшированных маркеров.|
-> |resource|URI идентификатора приложения принимающей вызов веб-службы.|
+> |ресурс|URI идентификатора приложения принимающей вызов веб-службы.|
 > |token_type|Указывает значение типа маркера. Единственный тип, поддерживаемый Azure AD — носитель. Дополнительные сведения о маркерах носителей см. в спецификации [OAuth 2.0 Authorization Framework: Bearer Token Usage (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt) (OAuth2.0 Authorization Framework: использование маркера носителя (RFC 6750)).|
 
 Этот ответ совпадает с [ответом для запроса маркера взаимного доступа между службами AAD](../active-directory/develop/v1-oauth2-client-creds-grant-flow.md#service-to-service-access-token-response).
@@ -386,7 +414,7 @@ $accessToken = $tokenResponse.access_token
 > [!NOTE]
 > Также вы можете установить параметр приложения WEBSITE_DISABLE_MSI, который отключает локальную службу маркеров. Но при этом само удостоверение сохранится, а управляемое удостоверение будет отображаться как "включенное". По этой причине мы рекомендуем не использовать такой параметр.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Безопасное подключение Базы данных Azure SQL с использованием управляемого удостоверения службы](app-service-web-tutorial-connect-msi.md)

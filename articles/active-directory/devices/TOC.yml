@@ -43,7 +43,7 @@
       href: hybrid-azuread-join-plan.md
     - name: "Контролируемая проверка гибридного присоединения к Azure\_AD"
       href: hybrid-azuread-join-control.md
-    - name: Управление удостоверением устройства
+    - name: Управление удостоверениями устройств
       href: device-management-azure-portal.md
     - name: Управление устаревшими устройствами
       href: manage-stale-devices.md

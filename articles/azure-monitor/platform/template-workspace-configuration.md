@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 02/21/2019
+ms.date: 07/11/2019
 ms.author: magoedte
-ms.openlocfilehash: 39dbb504603544a468907d87d236338cb95e39a3
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: a55a4b2f3045aac8dfe9e46a50074585ab3ef491
+ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67441633"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67827791"
 ---
 # <a name="manage-log-analytics-workspace-using-azure-resource-manager-templates"></a>Управление рабочей областью Log Analytics, с помощью шаблонов Azure Resource Manager
 
@@ -40,26 +40,19 @@ ms.locfileid: "67441633"
 В статье приведены примеры кода, иллюстрирующие некоторые конфигурации, которые можно выполнить с помощью шаблонов.
 
 ## <a name="api-versions"></a>Версии API
+
 В следующей таблице перечислены версии API для ресурсов, используемых в этом примере.
 
-| Ресурс | Тип ресурса | Версия API |
+| Resource | Тип ресурса | Версия API |
 |:---|:---|:---|
 | Рабочая область   | workspaces    | 2017-03-15-preview |
-| поиска      | savedSearches | 2015-03-20 |
+| Поиск      | savedSearches | 2015-03-20 |
 | Источник данных | datasources   | 2015-11-01-preview |
 | Решение    | solutions     | 2015-11-01-preview |
 
 ## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
-В следующем примере создается рабочая область с использованием шаблона на локальном компьютере. Шаблон в формате JSON настроен так, чтобы осталось только указать имя рабочей области и задать значения по умолчанию для других параметров, которые скорее всего будут использоваться в качестве стандартной конфигурации в вашей среде.  
 
-Для следующих параметров задаются значения по умолчанию.
-
-* Location — по умолчанию используется значение East US.
-* SKU — по умолчанию используется новый тарифный план с платой за гигабайт, выпущенный в апреле 2018 года.
-
-> [!NOTE]
->При создании или настройке рабочей области Log Analytics в подписке, использующей модель ценообразования от апреля 2018 года, доступна только ценовая категория **PerGB2018**.  
->Если у вас есть подписки с [моделью ценообразования, предшествовавшей апрелю 2018 года](https://docs.microsoft.com/azure/azure-monitor/platform/usage-estimated-costs#new-pricing-model), можно выбрать ценовую категорию **Автономный**, которая будет успешно применена для подписки с моделью ценообразования, актуальной до апреля 2018 года, и подписок в новых ценовых категориях. Ценовым категориям рабочих областей в подписках, для которых были применены новые модели ценообразования, будет задано **PerGB2018**. 
+В следующем примере создается рабочая область с использованием шаблона на локальном компьютере. Шаблон JSON настроен на требуется только имя и расположение новой рабочей области (с использованием значения по умолчанию для остальных параметров рабочей области, такие как Ценовая категория и хранения).  
 
 ### <a name="create-and-deploy-template"></a>Создание и развертывание шаблона
 
@@ -79,26 +72,35 @@ ms.locfileid: "67441633"
         "location": {
             "type": "String",
             "allowedValues": [
-              "eastus",
-              "westus"
+              "australiacentral", 
+              "australiaeast", 
+              "australiasoutheast", 
+              "brazilsouth",
+              "canadacentral", 
+              "centralindia", 
+              "centralus", 
+              "eastasia", 
+              "eastus", 
+              "eastus2", 
+              "francecentral", 
+              "japaneast", 
+              "koreacentral", 
+              "northcentralus", 
+              "northeurope", 
+              "southafricanorth", 
+              "southcentralus", 
+              "southeastasia", 
+              "uksouth", 
+              "ukwest", 
+              "westcentralus", 
+              "westeurope", 
+              "westus", 
+              "westus2" 
             ],
-            "defaultValue": "eastus",
             "metadata": {
               "description": "Specifies the location in which to create the workspace."
             }
-        },
-        "sku": {
-            "type": "String",
-            "allowedValues": [
-              "Standalone",
-              "PerNode",
-              "PerGB2018"
-            ],
-            "defaultValue": "PerGB2018",
-            "metadata": {
-            "description": "Specifies the service tier of the workspace: Standalone, PerNode, Per-GB"
         }
-          }
     },
     "resources": [
         {
@@ -107,9 +109,6 @@ ms.locfileid: "67441633"
             "apiVersion": "2015-11-01-preview",
             "location": "[parameters('location')]",
             "properties": {
-                "sku": {
-                    "Name": "[parameters('sku')]"
-                },
                 "features": {
                     "searchVersion": 1
                 }
@@ -118,26 +117,28 @@ ms.locfileid: "67441633"
        ]
     }
     ```
-2. Отредактируйте шаблон с учетом ваших требований.  Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/workspaces) с описанием поддерживаемых свойств и значений. 
+
+2. Отредактируйте шаблон с учетом ваших требований. Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/workspaces) с описанием поддерживаемых свойств и значений. 
 3. Сохраните этот файл как **deploylaworkspacetemplate.json** в локальной папке.
-4. Теперь вы можете развернуть этот шаблон. Для создания рабочей области можно использовать PowerShell или командную строку.
+4. Теперь вы можете развернуть этот шаблон. Используйте PowerShell или командной строки для создания рабочей области, указав имя рабочей области и расположение как часть команды.
 
    * Для PowerShell используйте следующие команды из папки с шаблоном.
    
         ```powershell
-        New-AzResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <resource-group-name> -TemplateFile deploylaworkspacetemplate.json
+        New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateFile deploylaworkspacetemplate.json -workspaceName <workspace-name> -location <location>
         ```
 
    * Для командной строки используйте следующие команды из папки с шаблоном.
 
         ```cmd
         azure config mode arm
-        azure group deployment create <my-resource-group> <my-deployment-name> --TemplateFile deploylaworkspacetemplate.json
+        azure group deployment create <my-resource-group> <my-deployment-name> --TemplateFile deploylaworkspacetemplate.json --workspaceName <workspace-name> --location <location>
         ```
 
 Развертывание может занять несколько минут. По завершении выполнения появится сообщение с результатами наподобие приведенного ниже.<br><br> ![Пример результатов по завершении развертывания](./media/template-workspace-configuration/template-output-01.png)
 
 ## <a name="configure-a-log-analytics-workspace"></a>Настройка рабочей области Log Analytics
+
 Этот пример шаблона иллюстрирует следующие задачи.
 
 1. Добавление решений в рабочую область
@@ -161,19 +162,21 @@ ms.locfileid: "67441633"
         "description": "Workspace name"
       }
     },
-    "serviceTier": {
+    "pricingTier": {
       "type": "string",
       "allowedValues": [
+        "PerGB2018",
         "Free",
         "Standalone",
         "PerNode",
-        "PerGB2018"
+        "Standard",
+        "Premium"
       ],
       "defaultValue": "PerGB2018",
       "metadata": {
-        "description": "Pricing tier: PerGB2018 or legacy tiers (Free, Standalone or PerNode) which are not available to all customers"
-    }
-      },
+        "description": "Pricing tier: PerGB2018 or legacy tiers (Free, Standalone, PerNode, Standard or Premium) which are not available to all customers."
+      }
+    },
     "dataRetention": {
       "type": "int",
       "defaultValue": 30,
@@ -187,17 +190,40 @@ ms.locfileid: "67441633"
     "immediatePurgeDataOn30Days": {
       "type": "bool",
       "metadata": {
-        "description": "If set to true when changing retention to 30 days, older data will be immediately deleted. This only applies when retention is being set to 30 days."
+        "description": "If set to true when changing retention to 30 days, older data will be immediately deleted. Use this with extreme caution. This only applies when retention is being set to 30 days."
       }
     },
     "location": {
       "type": "string",
       "allowedValues": [
-        "East US",
-        "West Europe",
-        "Southeast Asia",
-        "Australia Southeast"
-      ]
+        "australiacentral", 
+        "australiaeast", 
+        "australiasoutheast", 
+        "brazilsouth",
+        "canadacentral", 
+        "centralindia", 
+        "centralus", 
+        "eastasia", 
+        "eastus", 
+        "eastus2", 
+        "francecentral", 
+        "japaneast", 
+        "koreacentral", 
+        "northcentralus", 
+        "northeurope", 
+        "southafricanorth", 
+        "southcentralus", 
+        "southeastasia", 
+        "uksouth", 
+        "ukwest", 
+        "westcentralus", 
+        "westeurope", 
+        "westus", 
+        "westus2"
+      ],
+      "metadata": {
+        "description": "Specifies the location in which to create the workspace."
+      }
     },
     "applicationDiagnosticsStorageAccountName": {
         "type": "string",
@@ -235,7 +261,10 @@ ms.locfileid: "67441633"
       "location": "[parameters('location')]",
       "properties": {
         "sku": {
-          "Name": "[parameters('serviceTier')]"
+          "name": "[parameters('pricingTier')]"
+          "features": {
+            "immediatePurgeDataOn30Days": "[parameters('immediatePurgeDataOn30Days')]"
+          }
         },
     "retentionInDays": "[parameters('dataRetention')]"
       },
@@ -494,6 +523,10 @@ ms.locfileid: "67441633"
       "type": "int",
       "value": "[reference(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspaceName')), '2015-11-01-preview').retentionInDays]"
     },
+    "immediatePurgeDataOn30Days": {  
+      "type": "bool",
+      "value": "[reference(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspaceName')), '2015-11-01-preview').features.immediatePurgeDataOn30Days]"
+    },
     "portalUrl": {
       "type": "string",
       "value": "[reference(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspaceName')), '2015-11-01-preview').portalUrl]"
@@ -503,6 +536,7 @@ ms.locfileid: "67441633"
 
 ```
 ### <a name="deploying-the-sample-template"></a>Развертывание примера шаблона
+
 Чтобы развернуть этот шаблон, запустите следующую команду:
 
 1. Сохраните прилагаемый пример в файл, например с именем `azuredeploy.json` 
@@ -510,17 +544,20 @@ ms.locfileid: "67441633"
 3. Разверните итоговый шаблон с помощью PowerShell или командной строки
 
 #### <a name="powershell"></a>PowerShell
+
 ```powershell
 New-AzResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <resource-group-name> -TemplateFile azuredeploy.json
 ```
 
-#### <a name="command-line"></a>Команда
+#### <a name="command-line"></a>Командная строка
+
 ```cmd
 azure config mode arm
 azure group deployment create <my-resource-group> <my-deployment-name> --TemplateFile azuredeploy.json
 ```
 
 ## <a name="example-resource-manager-templates"></a>Примеры шаблонов Resource Manager
+
 Коллекция шаблонов Azure позволяет быстро начать работу, применяя предложенные шаблоны для Log Analytics, в том числе перечисленные ниже.
 
 * [Развертывание виртуальной машины под управлением Windows с расширением Log Analytics](https://azure.microsoft.com/documentation/templates/201-oms-extension-windows-vm/)
@@ -529,6 +566,8 @@ azure group deployment create <my-resource-group> <my-deployment-name> --Templat
 * [Мониторинг веб-приложений Azure с использованием существующей рабочей области Log Analytics](https://azure.microsoft.com/documentation/templates/101-webappazure-oms-monitoring/)
 * [Добавление существующей учетной записи хранения в Log Analytics](https://azure.microsoft.com/resources/templates/oms-existing-storage-account/)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
+
 * [Развертывание агента Windows на виртуальных машинах Azure с помощью шаблона Resource Manager](../../virtual-machines/extensions/oms-windows.md)
+
 * [Развертывание агента Linux на виртуальных машинах Azure с помощью шаблона Resource Manager](../../virtual-machines/extensions/oms-linux.md)

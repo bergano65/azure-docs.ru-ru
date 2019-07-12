@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/23/2018
 ms.author: victorh
-ms.openlocfilehash: 9b3586080f1b0d42548ed9b0d676f357dd1e4e45
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 157f7fa0979da21584550e7669a20f670aca5219
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66729592"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67785721"
 ---
 # <a name="create-an-application-gateway-with-internal-redirection-using-azure-powershell"></a>Создание шлюза приложений с перенаправлением внутреннего трафика с помощью Azure PowerShell
 
@@ -298,13 +298,13 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-В адресной строке браузера введите имя домена. Например, http://www.contoso.com.
+В адресной строке браузера введите имя домена. Например, http\:/ / www.contoso.com.
 
 ![Проверка сайта contoso в шлюзе приложений](./media/tutorial-internal-site-redirect-powershell/application-gateway-iistest.png)
 
 Измените адрес на другой домен, например http://www.contoso.org и вы увидите, что трафик перенаправляется в прослушиватель для www\. contoso.com.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Из этой статьи вы узнали, как выполнять следующие задачи:
 

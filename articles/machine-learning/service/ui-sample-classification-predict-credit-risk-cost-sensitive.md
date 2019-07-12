@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: sgilley
 ms.date: 05/10/2019
-ms.openlocfilehash: d714756c19b94eafc40cc0dbeffbc07704e8f94e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: efed981b500ff14a66c2355a1d14bd762000622f
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65787816"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67606164"
 ---
 # <a name="sample-4---classification-predict-credit-risk-cost-sensitive"></a>Пример 4 - классификация. Прогнозирования кредитного риска (стоимость конфиденциальные)
 
@@ -29,7 +29,7 @@ ms.locfileid: "65787816"
 
 [![Граф эксперимента](media/ui-sample-classification-predict-credit-risk-cost-sensitive/graph.png)](media/ui-sample-classification-predict-credit-risk-cost-sensitive/graph.png#lightbox)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [aml-ui-prereq](../../../includes/aml-ui-prereq.md)]
 
@@ -37,7 +37,7 @@ ms.locfileid: "65787816"
 
     ![Откройте эксперимент](media/ui-sample-classification-predict-credit-risk-cost-sensitive/open-sample4.png)
 
-## <a name="data"></a>Данные
+## <a name="data"></a>Data
 
 Мы используем набор данных немецкой кредитной карты из репозитория UC Irvine. Этот набор данных содержит 1000 примеры с 20 функций и 1 метка. Каждый пример представляет человека. 20 возможности числовые и категориальные компоненты. См. в разделе [веб-сайте UCI](https://archive.ics.uci.edu/ml/datasets/Statlog+%28German+Credit+Data%29) Дополнительные сведения о наборе данных. Последний столбец — это метка, которая обозначает кредитного риска и имеет только два возможных значения: высокий кредитный риск = 2 и низкого кредитного риска = 1.
 
@@ -156,7 +156,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
 [!INCLUDE [aml-ui-cleanup](../../../includes/aml-ui-cleanup.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Изучите другие примеры, доступные для визуального интерфейса:
 
@@ -164,3 +164,4 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 - [Пример 2 - регрессии. Сравнение алгоритмы для прогнозирования стоимости автомобиля](ui-sample-regression-predict-automobile-price-compare-algorithms.md)
 - [Пример 3 - классификация. Спрогнозировать кредитный риск](ui-sample-classification-predict-credit-risk-basic.md)
 - [Пример 5 - классификации. Прогнозирование оттока](ui-sample-classification-predict-churn.md)
+- [Пример 6 - классификации. Прогнозирование задержки рейсов](ui-sample-classification-predict-flight-delay.md)

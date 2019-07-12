@@ -6,13 +6,13 @@ ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
-ms.date: 06/04/2019
-ms.openlocfilehash: 0bfacc968a04f8ef9e39a31cff5e81cf4e04c6fb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 07/10/2019
+ms.openlocfilehash: cfe7d5fa82197a05ddadd08a8811dc86067a05d7
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66494626"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67806480"
 ---
 # <a name="visualize-data-using-the-azure-data-explorer-connector-for-power-bi"></a>Визуализация данных с помощью соединителя Azure Data Explorer для Power BI
 
@@ -22,7 +22,7 @@ Azure Data Explorer поддерживает три варианта подкл�
 
 Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Вам потребуется для работы с этой статьей:
 
@@ -85,6 +85,6 @@ Azure Data Explorer поддерживает три варианта подкл�
 
 Если больше не требуется отчет, который вы создали в этой статье, удалите файл Power BI Desktop (pbix).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Визуализация данных с помощью запроса импортированных в Power BI](power-bi-imported-query.md)

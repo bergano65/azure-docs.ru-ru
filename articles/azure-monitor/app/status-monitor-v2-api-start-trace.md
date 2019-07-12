@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 186324e6a93f90fd04323074e5dc883e3e271725
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: b6787134707273a76290adb723a9bc9012252ebd
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478996"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807055"
 ---
-# <a name="status-monitor-v2-api-start-applicationinsightsmonitoringtrace-v031-alpha"></a>Состояние монитора v2 API: Start-ApplicationInsightsMonitoringTrace (v0.3.1-альфа-версия)
+# <a name="status-monitor-v2-api-start-applicationinsightsmonitoringtrace-v040-alpha"></a>Состояние монитора v2 API: Start-ApplicationInsightsMonitoringTrace (v0.4.0-альфа-версия)
 
 В этой статье описывается командлет, который является членом [модуль Az.ApplicationMonitor PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
@@ -83,7 +83,7 @@ ms.locfileid: "67478996"
 
 
 
-## <a name="output"></a>Output
+## <a name="output"></a>Вывод
 
 
 ### <a name="example-of-application-startup-logs"></a>Примеры журналов запуска приложения
@@ -116,7 +116,7 @@ Timeout Reached. Stopping...
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные настройки:
 

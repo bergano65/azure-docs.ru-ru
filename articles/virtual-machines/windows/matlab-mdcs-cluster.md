@@ -4,7 +4,7 @@ description: Использование виртуальных машин Micros
 services: virtual-machines-windows
 documentationcenter: ''
 author: mscurrell
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: e9980ce9-124a-41f1-b9ec-f444c8ea5c72
 ms.service: virtual-machines-windows
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: Windows
 ms.workload: infrastructure-services
 ms.date: 05/09/2016
 ms.author: markscu
-ms.openlocfilehash: 49824741facc8822a9417306794f1028fc180e16
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 857382c09192e71d9727a91274993091f2f903b2
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60555140"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67718679"
 ---
 # <a name="create-matlab-distributed-computing-server-clusters-on-azure-vms"></a>Создание кластеров MATLAB Distributed Computing Server на виртуальных машинах Azure
 Используя виртуальные машины Microsoft Azure, вы можете создать один или несколько кластеров MATLAB Distributed Computing Server, в которых можно запускать параллельные рабочие нагрузки MATLAB для ресурсоемких вычислений. Установите программное обеспечение MATLAB Distributed Computing Server на виртуальную машину для использования в качестве базового образа. Затем примените шаблон быстрого запуска Azure или сценарий Azure PowerShell (доступный на [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/matlab-cluster)) для развертывания кластера и управления им. После развертывания подключитесь к кластеру, чтобы запустить рабочие нагрузки.
@@ -29,7 +29,7 @@ ms.locfileid: "60555140"
 
 Используя виртуальные машины Azure, можно создавать кластеры MATLAB Distributed Computing Server, в которых доступны те же механизмы для отправки параллельных рабочих нагрузок, что и в локальных кластерах. Такими рабочими нагрузками могут быть интерактивные задания, пакетные задания, независимые задачи и взаимодействующие задачи. Использование Azure в сочетании с платформой MATLAB имеет множество преимуществ по сравнению с подготовкой и использованием традиционного локального оборудования. Среди этих преимуществ: поддержка широкого диапазона размеров виртуальных машин, возможность создавать кластеры по требованию для оплаты только тех вычислительных ресурсов, которые используются, а также возможность тестировать модели в масштабе.  
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 * **Клиентский компьютер** — необходим клиентский компьютер на базе Windows для обмена данными с Azure и кластером MATLAB Distributed Computing Server после развертывания.
 * **Azure PowerShell** — ознакомьтесь с разделом [Установка и настройка Azure PowerShell](/powershell/azure/overview) , чтобы установить этот компонент на клиентском компьютере.
 * **Подписка Azure** — если ее нет, можно за пару минут создать [бесплатную учетную запись](https://azure.microsoft.com/free/) . Для больших кластеров можно использовать подписку с оплатой по мере использования или другие варианты приобретения.
@@ -70,6 +70,6 @@ ms.locfileid: "60555140"
 
 ![Диспетчер профилей кластеров](./media/matlab-mdcs-cluster/cluster_profile_manager.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Подробные инструкции по развертыванию и управлению кластерами MATLAB Distributed Computing Server в Azure см. в репозитории [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/matlab-cluster), содержащем шаблоны и сценарии.
 * Посетите [сайт MathWorks](https://www.mathworks.com/) с подробной документацией по MATLAB и MATLAB Distributed Computing Server.
