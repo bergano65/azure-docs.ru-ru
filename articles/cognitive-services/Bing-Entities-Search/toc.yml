@@ -45,7 +45,8 @@
 - name: Инструкции
   items:
     - name: Изменение размера и обрезка эскизов
-      href: resize-and-crop-thumbnails.md
+      maintainContext: true
+      href: ../bing-web-search/resize-and-crop-thumbnails.md
 - name: Основные понятия
   items:
     - name: Поиск сущностей

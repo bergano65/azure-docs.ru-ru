@@ -51,7 +51,8 @@
     - name: Страницы новостей
       href: paging-news.md
     - name: Изменение размера и обрезка эскизов
-      href: resize-and-crop-thumbnails.md
+      maintainContext: true
+      href: ../bing-web-search/resize-and-crop-thumbnails.md
     - name: Обновление API с версии 5 до версии 7
       href: bing-news-upgrade-guide-v5-to-v7.md
     - name: Работа с Visual Studio

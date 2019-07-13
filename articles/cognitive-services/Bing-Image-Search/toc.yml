@@ -55,7 +55,8 @@
     - name: Отображение изображений на страницах
       href: paging-images.md
     - name: Изменение размера и обрезка эскизов
-      href: resize-and-crop-thumbnails.md
+      maintainContext: true
+      href: ../bing-web-search/resize-and-crop-thumbnails.md
     - name: Обновление с версии 5 до версии 7
       href: bing-image-upgrade-guide-v5-to-v7.md
 - name: Основные понятия
@@ -91,7 +92,7 @@
       maintainContext: true
 - name: Ресурсы
   items:
-    - name: Вопросы и ответы
+    - name: Часто задаваемые вопросы
       href: bing-image-search-resource-faq.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/search-api/image/'

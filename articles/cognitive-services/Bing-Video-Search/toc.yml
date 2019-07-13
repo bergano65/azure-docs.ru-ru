@@ -52,7 +52,8 @@
     - name: Отображение видео на страницах
       href: paging-videos.md
     - name: Изменение размера и обрезка эскизов
-      href: resize-and-crop-thumbnails.md
+      maintainContext: true
+      href: ../bing-web-search/resize-and-crop-thumbnails.md
     - name: Обновление с версии 5 до версии 7
       href: bing-video-upgrade-guide-v5-to-v7.md
 - name: Основные понятия

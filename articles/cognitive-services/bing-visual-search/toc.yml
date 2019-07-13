@@ -58,7 +58,8 @@
     - name: Получение сведений с помощью маркеров
       href: use-insights-token.md
     - name: Изменение размера и обрезка эскизов
-      href: resize-and-crop-thumbnails.md
+      maintainContext: true
+      href: ../bing-web-search/resize-and-crop-thumbnails.md
     - name: Поиск изображения с помощью токенов аналитических сведений об изображении
       href: tutorial-visual-search-insights-token.md
     - name: Создание одностраничного веб-приложения
