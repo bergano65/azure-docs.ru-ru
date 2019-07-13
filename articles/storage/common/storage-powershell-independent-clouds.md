@@ -98,7 +98,7 @@ Get-AzEnvironment -Name AzureGermanCloud
 
 |Имя свойства|Значение|
 |----|----|
-| ИМЯ | AzureGermanCloud |
+| Name | AzureGermanCloud |
 | EnableAdfsAuthentication | False |
 | ActiveDirectoryServiceEndpointResourceI | http://management.core.cloudapi.de/ |
 | GalleryURL | https://gallery.cloudapi.de/ |
