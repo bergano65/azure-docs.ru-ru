@@ -9,13 +9,13 @@ ms.service: cognitive-services
 ms.subservice: acoustics
 ms.topic: conceptual
 ms.date: 03/20/2019
-ms.author: kylestorck
-ms.openlocfilehash: 02156f6e39c213764c35e67d8af028489d265835
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.author: kylesto
+ms.openlocfilehash: e425575c6529ac4638fc963915362e0ec03f1117
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67616350"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67849927"
 ---
 # <a name="project-acoustics-known-issues"></a>Проект шума известные проблемы
 При использовании Designer Preview для Project Acoustics вы можете столкнуться со следующими известными проблемами.
@@ -43,6 +43,6 @@ ms.locfileid: "67616350"
 ## <a name="canceling-a-bake-leaves-the-bake-tab-in-deleting-state"></a>После отмены наложения состояние вкладки Bake (Наложение) изменится на "удаление".
 Проект шума освободит все ресурсы Azure, для успешного завершения или отмены задания. Это может занять около 5 минут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Попробуйте [Unity](unity-quickstart.md) или [Unreal](unreal-quickstart.md) пример содержимого
 

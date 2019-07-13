@@ -8,13 +8,13 @@ manager: nitinme
 ms.service: cognitive-services
 ms.topic: article
 ms.date: 06/26/2018
-ms.author: rosh; v-gedod
-ms.openlocfilehash: e2911ebe9157507534717a4177d4380813dd2ff6
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.author: rosh
+ms.openlocfilehash: cf622f658208ab85fe0a0670a0e034bd58a5047d
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67541556"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67849940"
 ---
 # <a name="sending-and-using-bing-local-business-search-api-queries-and-responses"></a>Отправка и использование запросов и ответов API Bing Local Business Search
 
@@ -145,7 +145,7 @@ Expires: Tue, 16 Oct 2018 16:25:15 GMT
 [!INCLUDE [cognitive-services-bing-throttling-requests](../../../includes/cognitive-services-bing-throttling-requests.md)]
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Quickstart: Send a query to the Bing Local Business Search API in C#](quickstarts/local-quickstart.md) (Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#)
 - [Quickstart: Send a query to the Bing Local Business Search API using Java](quickstarts/local-search-java-quickstart.md) (Краткое руководство. Отправить запрос в API Bing Local Business Search с помощью Java)
 - [Краткое руководство. Использование Local Business Search с помощью Node](quickstarts/local-search-node-quickstart.md)

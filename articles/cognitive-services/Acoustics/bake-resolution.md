@@ -9,13 +9,13 @@ ms.service: cognitive-services
 ms.subservice: acoustics
 ms.topic: conceptual
 ms.date: 04/05/2019
-ms.author: KyleStorck
-ms.openlocfilehash: 8684cf16e41c763db01c064242cc5466b1c83f01
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.author: kylesto
+ms.openlocfilehash: c4f4581beb26eb63392644b40b1e5f16dae0481d
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67621412"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67849960"
 ---
 # <a name="project-acoustics-bake-resolution"></a>Разрешение распродажи шума проекта
 Этот концептуальный обзор описывает разницу между разрешением грубое и нормально при вводе шума. Этот вариант во время выполнения шага пробы получилось рабочего процесса.
@@ -35,6 +35,6 @@ ms.locfileid: "67621412"
 
 ![Снимок экрана с мелкими объемными пикселями дверного проема в Unreal](media/unreal-fine-bake.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Опробовать параметры грубое и порядке разрешения самостоятельно с помощью наших [Unreal](unreal-baking.md) или [Unity](unity-baking.md) подключаемых модулей.
