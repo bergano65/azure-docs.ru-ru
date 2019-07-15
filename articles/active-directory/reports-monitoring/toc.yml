@@ -37,13 +37,13 @@
       href: concept-risky-sign-ins.md
     - name: События риска
       href: concept-risk-events.md
-    - name: пользователи под угрозой;
+    - name: 'Пользователи, подверженные риску'
       href: concept-user-at-risk.md
-    - name: Интерфейсы API отчетов
+    - name: API отчетов
       href: concept-reporting-api.md
     - name: "Журналы Azure\_AD в Azure Monitor"
       href: concept-activity-logs-azure-monitor.md
-- name: Практические руководства
+- name: Инструкции
   expanded: true
   items:
     - name: Отчеты
@@ -58,13 +58,13 @@
           href: howto-power-bi-content-pack.md
         - name: Настройка необходимых компонентов для API отчетов
           href: howto-configure-prerequisites-for-reporting-api.md
-        - name: Как использовать книги Azure Monitor
+        - name: "Как использовать книги Azure\_AD"
           href: howto-use-azure-monitor-workbooks.md
     - name: Мониторинг
       items:
         - name: Анализ журналов действий в журналах Azure Monitor
           href: howto-analyze-activity-logs-log-analytics.md
-        - name: Установка и использование представлений Log Analytics для Azure AD
+        - name: Установка и использование представлений службы анализа журналов для Azure AD
           href: howto-install-use-log-analytics-views.md
         - name: Интеграция журналов действий с журналами Azure Monitor
           href: howto-integrate-activity-logs-with-log-analytics.md
@@ -87,6 +87,8 @@
 - name: Справочные материалы
   expanded: true
   items:
+    - name: "Командлеты Azure\_AD PowerShell для создания отчетов"
+      href: reference-powershell-reporting.md
     - name: Справочник по API журналов аудита
       href: 'https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit'
     - name: Справочник по API журналов входа

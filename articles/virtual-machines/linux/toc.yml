@@ -61,8 +61,16 @@
   items:
     - name: Azure Resource Manager
       href: ../../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
-    - name: Регионы и доступность
-      href: regions-and-availability.md
+    - name: Регионы
+      href: regions.md
+    - name: Доступность и производительность
+      items:
+        - name: Доступность
+          href: availability.md
+        - name: Совместное размещение
+          href: co-location.md
+        - name: проблемы с производительностью сети;
+          href: ../..//virtual-network/virtual-network-optimize-network-bandwidth.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
     - name: Типы и размеры виртуальных машин
       href: sizes.md
       items:
@@ -322,6 +330,8 @@
           href: ../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json
         - name: Высокий уровень доступности
           href: manage-availability.md
+        - name: Создание группы размещения близкого взаимодействия
+          href: proximity-placement-groups.md
         - name: Вертикальное масштабирование
           href: vertical-scaling-automation.md
         - name: Создание виртуальной машины в зоне доступности

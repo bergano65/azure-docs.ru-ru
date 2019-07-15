@@ -14,13 +14,30 @@ metadata:
   ms.date: 11/22/2017
   ms.author: raynew
 abstract:
-  description: 'Служба "Миграция Azure" помогает определить и оценить пригодность локальных компьютеров к переносу в Azure, а также позволяет рассчитать размер и стоимость работающих виртуальных машин Azure.'
+  description: "Служба \"Миграция Azure\" помогает клиентам перейти в облако Azure. \"Миграция Azure\"\_— это центральный узел, с помощью которого можно отслеживать обнаружение, оценку и перенос локальных рабочих нагрузок и облачных виртуальных машин. На узле \"Миграция Azure\" представлены инструменты для оценки и переноса, а также интегрированные средства от независимых поставщиков программного обеспечения."
 sections:
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
-        text: 'Узнайте, как оценить готовность виртуальных машин VMware к миграции в Azure'
+        text: 'Узнайте, как оценить и перенести виртуальные машины VMware в Azure.'
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="tutorial-prepare-vmware">Подготовка виртуальных машин VMware к оценке и переносу в Azure.</a>
+          - html: <a href="tutorial-assess-vmware">Оценка виртуальных машин VMware для переноса в Azure.</a>
+          - html: <a href="tutorial-migrate-vmware">Перенос виртуальных машин VMware в Azure без агента.</a>
+          - html: <a href="tutorial-migrate-vmware-agent">Перенос виртуальных машин VMware в Azure с использованием агента.</a>
+      - type: paragraph
+        text: 'Узнайте, как оценить и перенести виртуальные машины Hyper-V в Azure.'
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="tutorial-prepare-hyper-v">Подготовка виртуальных машин Hyper-V к оценке и переносу в Azure.</a>
+          - html: <a href="tutorial-assess-hyper-v">Оценка виртуальных машин Hyper-V для переноса в Azure.</a>
+          - html: <a href="tutorial-migrate-hyper-v">Перенос виртуальных машин Hyper-V в Azure.</a>
+      - type: paragraph
+        text: 'Узнайте, как перенести физические серверы, виртуализированные машины и облачные виртуальные машины в Azure.'
       - type: list
         style: unordered
         items:
-          - html: <a href="tutorial-assessment-vmware">Обнаружение и оценка локальных виртуальных машин VMware</a>
+          - html: <a href="tutorial-migrate-physical-virtual-machines">Перенос физических и виртуализированных серверов в Azure.</a>

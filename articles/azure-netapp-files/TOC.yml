@@ -45,8 +45,10 @@
       href: azure-netapp-files-set-up-capacity-pool.md
     - name: Делегирование подсети в Azure NetApp Files
       href: azure-netapp-files-delegate-subnet.md
-    - name: Создание тома для Azure NetApp Files
+    - name: Создание тома NFS для Azure NetApp Files
       href: azure-netapp-files-create-volumes.md
+    - name: Создание тома SMB для Azure NetApp Files
+      href: azure-netapp-files-create-volumes-smb.md
     - name: Настройка политики экспорта для тома NFS
       href: azure-netapp-files-configure-export-policy.md
     - name: Управление томами

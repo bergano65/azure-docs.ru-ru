@@ -279,7 +279,7 @@
           href: storage-blob-pageblob-overview.md
         - name: Статические веб-сайты
           href: storage-blob-static-website.md
-    - name: Руководства
+    - name: Практическое руководство
       items:
         - name: Создание учетных записей хранения и управление ими
           items:
@@ -352,8 +352,12 @@
               href: ../common/storage-initiate-account-failover.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Восстановление удаленных больших двоичных объектов
               href: storage-blob-soft-delete.md
-        - name: Использование эмулятора хранилища
-          href: ../common/storage-use-emulator.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Использование эмулятора хранения
+          items:
+            - name: 'Использование Azurite, эмулятора с открытым кодом'
+              href: ../common/storage-use-azurite.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Использование эмулятора хранения Azure
+              href: ../common/storage-use-emulator.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Задание и получение свойств и метаданных
           href: storage-properties-metadata.md
         - name: Размещение статического веб-сайта
@@ -459,7 +463,7 @@
       items:
         - name: Стратегия развития Azure
           href: 'https://azure.microsoft.com/roadmap/?product=storage'
-        - name: Клиентские средства службы хранилища Azure
+        - name: Клиентские инструменты службы хранилища Azure
           href: ../common/storage-explorers.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Форум
           href: 'https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazuredata'

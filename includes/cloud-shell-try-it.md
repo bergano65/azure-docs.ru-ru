@@ -2,25 +2,31 @@
 author: sptramer
 ms.service: azure
 ms.topic: include
-ms.date: 05/31/2019
+ms.date: 06/13/2019
 ms.author: sttramer
-ms.openlocfilehash: 977caddde316384815c8248dffe243d2a7817226
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 8b2a9561a0933e435649c81334706481531c9ce9
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341524"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67836940"
 ---
-## <a name="open-azure-cloud-shell"></a>Открытие Azure Cloud Shell
+## <a name="use-azure-cloud-shell"></a>Использование Azure Cloud Shell
 
-Azure Cloud Shell — это интерактивная среда оболочки, размещенная в Azure и работающая в браузере. Azure Cloud Shell позволяет использовать оболочку `bash` или `PowerShell`, чтобы запускать разнообразные инструменты для работы со службами Azure. Azure Cloud Shell поставляется со встроенными командами, с помощью которых можно запускать код в данной статье, не устанавливая дополнительные компоненты в локальной среде.
+В Azure есть Azure Cloud Shell, интерактивная оболочка среды, с которой можно работать в браузере. Для работы со службами Azure в Cloud Shell можно использовать `bash` и `PowerShell`. Для запуска кода из этой статьи можно использовать предварительно установленные команды Cloud Shell. Ничего дополнительного в локальной среде устанавливать не нужно.
 
-Для выполнения кода из этой статьи в Azure Cloud Shell откройте сеанс Cloud Shell, скопируйте блок кода с помощью кнопки **Копировать** и вставьте его в сеанс Cloud Shell, нажав клавиши __CTRL+SHIFT+V__ в Windows и Linux или __CMD+SHIFT+V__ в macOS. Вставленный текст не выполняется автоматически, поэтому нажмите клавишу **ВВОД** для выполнения кода.
-
-Запустить Azure Cloud Shell можно следующим образом.
+Чтобы запустить Azure Cloud Shell, сделайте вот что:
 
 | Параметр | Пример и ссылка |
 |-----------------------------------------------|---|
-| Нажмите кнопку **Попробовать** в правом верхнем углу блока с кодом. При этом __не выполняется__ автоматическое копирование текста в Cloud Shell. | ![Открытие Azure Cloud Shell с помощью кнопки "Попробовать"](./media/cloud-shell-try-it/cli-try-it.png) |
-| Откройте [Azure Cloud Shell](https://shell.azure.com) в браузере. | <a href="https://shell.azure.com" title="Запуск Azure Cloud Shell"><img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" /></a> |
-| Нажмите кнопку меню **Cloud Shell** в правом верхнем углу окна [портала Azure](https://portal.azure.com). | ![Кнопка "Cloud Shell" на портале Azure](./media/cloud-shell-try-it/cloud-shell-menu.png) |
+| Нажмите кнопку **Попробовать** в правом верхнем углу блока с кодом. При нажатии кнопки **Попробовать** код не копируется в Cloud Shell автоматически. | ![Открытие Azure Cloud Shell с помощью кнопки "Попробовать"](./media/cloud-shell-try-it/cli-try-it.png) |
+| Перейдите по адресу [https://shell.azure.com](https://shell.azure.com) или нажмите кнопку **Запуск Cloud Shell**, чтобы открыть Cloud Shell в браузере. | <a href="https://shell.azure.com" title="Запуск Azure Cloud Shell"><img name="launch-cloud-shell" src="https://docs.microsoft.com/azure/includes/media/cloud-shell-try-it/launchcloudshell.png" /></a> |
+| На [портале Azure](https://portal.azure.com) в правом верхнем углу в строке меню нажмите кнопку **Cloud Shell**. | ![Кнопка "Cloud Shell" на портале Azure](./media/cloud-shell-try-it/cloud-shell-menu.png) |
+
+Чтобы выполнить код из этой статьи в Azure Cloud Shell, сделайте вот что:
+
+1. Запустите Cloud Shell.
+1. В блоке кода нажмите кнопку **Копировать**, чтобы скопировать код. 
+1. Вставьте код в окно сеанса Cloud Shell, нажав клавиши **Ctrl**+**Shift**+**V** в Windows и Linux или **Cmd**+**Shift**+**V** в macOS. 
+1. Нажмите клавишу **ВВОД**, чтобы выполнить код.
+

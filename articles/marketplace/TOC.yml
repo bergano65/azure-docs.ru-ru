@@ -443,6 +443,13 @@
           href: ./partner-center-portal/offer-creation-checklist.md
         - name: Создание предложения SaaS
           href: ./partner-center-portal/create-new-saas-offer.md
+        - name: Контроль потребления с помощью SaaS
+          href: ./partner-center-portal/saas-metered-billing.md
+          items:
+            - name: Вопросы и ответы об API-интерфейсах службы из Marketplace для контроля потребления
+              href: ./partner-center-portal/marketplace-metering-service-apis-faq.md
+            - name: API-интерфейсы службы из Marketplace для контроля потребления
+              href: ./partner-center-portal/marketplace-metering-service-apis.md
         - name: API исполнения SaaS
           href: ./partner-center-portal/pc-saas-fulfillment-apis.md
           items:
@@ -452,6 +459,8 @@
               href: ./partner-center-portal/pc-saas-fulfillment-api-v2.md
             - name: "API исполнения SaaS версии\_1 (не рекомендуется)"
               href: ./partner-center-portal/pc-saas-fulfillment-api-v1.md
+            - name: Вопросы и ответы об API-интерфейсах исполнения SaaS
+              href: ./partner-center-portal/saas-fulfillment-apis-faq.md
     - name: Состояние публикации
       href: ./partner-center-portal/publishing-status.md
     - name: Обновление существующих предложений
