@@ -1,7 +1,7 @@
 ---
-title: Поддержка контейнеров
+title: Создать ресурс текстовая аналитика Cognitive Services
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как создать ресурс cognitive services text analytics.
+description: Узнайте, как создать ресурс текстовая аналитика Cognitive Services.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -9,31 +9,32 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 06/26/2019
 ms.author: dapine
-ms.openlocfilehash: 022ffcd806d4d4f89f8a8cf256a541518ea12602
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 7e8b4480911f00afa8524ef4b81d697bb8ee5bcc
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67455107"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67877455"
 ---
 ## <a name="create-a-cognitive-services-text-analytics-resource"></a>Создать ресурс текстовая аналитика Cognitive Services
 
-1. Войдите на [портал Azure](https://portal.azure.com).
-1. Выберите **+ создать ресурс**, перейдите к **искусственный Интеллект и машинное обучение > текстовая аналитика**, или нажмите кнопку [создать **анализа текста**](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics)
+1. Войдите на [портале Azure](https://portal.azure.com).
+1. Выберите **создать ресурс**, а затем перейдите к разделу **искусственный Интеллект и машинное Обучение** > **текстовая аналитика**.
+   Или перейдите к [создать текстовая аналитика](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics).
 1. Введите все необходимые параметры:
 
     |Параметр|Значение|
     |--|--|
-    |ИМЯ|Желаемое имя (2-64 символов)|
-    |Подписка|Выберите соответствующую подписку|
-    |Location|Выберите ближайшее расположение|
-    |Ценовая категория|`S` -уровень ценообразования standard|
-    |Группа ресурсов|Выберите группу доступных ресурсов|
+    |ИМЯ|Введите имя (2-64 символов)|
+    |Subscription|Выберите соответствующую подписку|
+    |Местоположение|Выберите ближайшее расположение|
+    |Ценовая категория| Введите **S**, уровень ценообразования standard|
+    |Resource group|Выберите группу доступных ресурсов|
 
-1. Нажмите кнопку **создать** и ожидания ресурсов должен быть создан. После его создания, браузер автоматически перенаправляет на страницу нового созданного ресурса
-1. Сбор настроен `endpoint` и ключ API:
+1. Выберите **создать** и ожидания ресурсов должен быть создан. Браузер автоматически перенаправляет на страницу нового созданного ресурса.
+1. Собирать настроенного `endpoint` и ключ API:
 
     |Вкладка ресурсов на портале|Параметр|Значение|
     |--|--|--|
-    |**Обзор набора средств Visual Studio для Unity**|Конечная точка|Копирование конечной точки. Выглядит `https://northeurope.api.cognitive.microsoft.com/text/analytics/v2.0`|
-    |**Ключи**|Ключ API|Скопируйте 1 из двух ключей. Это строка 32 буквенно-цифровых символов без пробелов и дефисов, `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.|
+    |**Обзор**|Конечная точка|Копирование конечной точки. Он должен выглядеть аналогично `https://northeurope.api.cognitive.microsoft.com/text/analytics/v2.0`|
+    |**Ключи**|Ключ API|Скопируйте один из двух ключей. Это 32-значный алфавитно-цифровую строку без пробелов и дефисов: <`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`>.|
