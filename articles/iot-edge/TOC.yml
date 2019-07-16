@@ -137,10 +137,14 @@
           href: how-to-update-iot-edge.md
     - name: Автоматическая подготовка с помощью DPS
       items:
-        - name: Linux
-          href: how-to-auto-provision-simulated-device-linux.md
-        - name: Windows
-          href: how-to-auto-provision-simulated-device-windows.md
+        - name: Аттестация симметричных ключей
+          href: how-to-auto-provision-symmetric-keys.md
+        - name: Аттестация доверенного платформенного модуля
+          items:
+            - name: Linux
+              href: how-to-auto-provision-simulated-device-linux.md
+            - name: Windows
+              href: how-to-auto-provision-simulated-device-windows.md
     - name: Разработка и отладка пользовательских модулей
       items:
         - name: "Visual Studio\_2019"
@@ -205,7 +209,7 @@
           href: /azure/iot-dps
         - name: Maps
           href: /azure/azure-maps
-        - name: Пакеты SDK для служб
+        - name: Пакеты SDK службы
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
         - name: Аналитика временных рядов
           href: /azure/time-series-insights
@@ -253,5 +257,5 @@
       href: 'https://stackoverflow.com/questions/tagged/azure-iot-hub'
     - name: Технические примеры использования
       href: 'https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=iot-hub'

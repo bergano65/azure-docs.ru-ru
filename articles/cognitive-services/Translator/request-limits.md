@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: a7621cc80a38d9a07872a94d8e5221dc04023b86
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: f9620cc5f135dd7b10da5528e5dec0f5baa70350
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67435029"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68226250"
 ---
 # <a name="request-limits-for-translator-text"></a>Ограничения запросов API перевода текстов
 
@@ -54,7 +54,7 @@ ms.locfileid: "67435029"
 
 Ограничения для [нескольких служб подписки](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication) совпадают с уровня S1.
 
-Эти ограничения, ограничены модели перевода с использованием стандартных корпорации Майкрософт. Пользовательские преобразования моделей, использующих пользовательский преобразователь ограничены 1800 символ в секунду.
+Эти ограничения, ограничены модели перевода с использованием стандартных корпорации Майкрософт. Пользовательские преобразования моделей, использующих пользовательский преобразователь ограничены 1800 символов в секунду.
 
 ## <a name="latency"></a>Задержка
 
@@ -78,7 +78,7 @@ API перевода текстов имеет максимальную заде
 > [!NOTE]
 > Это ограничение не применяется к переводам.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Цены](https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/)
 * [Доступность по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services)
