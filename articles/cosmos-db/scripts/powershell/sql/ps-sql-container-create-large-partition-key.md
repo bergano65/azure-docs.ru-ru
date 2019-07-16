@@ -1,19 +1,19 @@
 ---
-title: Azure PowerShell сценарий — создать контейнер с ключом большой секции в учетной записи Azure Cosmos
-description: Сценарий Azure PowerShell Создание контейнера с ключом большой секции в учетной записи Azure Cosmos
+title: Скрипт Azure PowerShell — создание контейнера с ключом крупного раздела в учетной записи Azure Cosmos
+description: Пример скрипта Azure PowerShell — создание контейнера с ключом крупного раздела в учетной записи Azure Cosmos
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: samples
+ms.topic: sample
 ms.date: 07/03/2019
 ms.author: mjbrown
-ms.openlocfilehash: c4e8f26c59312b5216a6834e34c5bbc2bf58563a
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
-ms.translationtype: MT
+ms.openlocfilehash: 1e61640115d1b85c69a1513b043a1a55ac720c19
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67566808"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603855"
 ---
-# <a name="create-a-container-with-a-large-partition-key-in-an-azure-cosmos-account-using-powershell"></a>Создайте контейнер с ключом большой секции в учетной записи Azure Cosmos с помощью PowerShell
+# <a name="create-a-container-with-a-large-partition-key-in-an-azure-cosmos-account-using-powershell"></a>Создание контейнера с ключом крупного раздела в учетной записи Azure Cosmos с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 
@@ -43,7 +43,7 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 

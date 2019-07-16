@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
-ms.date: 02/07/2019
+ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: 52faef37dbd9a3ce324db9665f04d6ac9b223d9c
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: 6583db5b1403f70593d586a610f4d06be15c729b
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56312401"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603361"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-ruby"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Ruby
 
@@ -28,7 +28,7 @@ ms.locfileid: "56312401"
 
 ## <a name="write-the-script"></a>Запись скрипта
 
-Создайте файл _faceDetection.rb_ и добавьте в него следующий код. Код вызывает API распознавания лиц для URL-адреса заданного изображения.
+Создайте файл _faceDetection.rb_ и добавьте в него следующий код. Этот код вызывает API распознавания лиц для URL-адреса заданного изображения.
 
 ```ruby
 require 'net/http'
@@ -260,4 +260,4 @@ ruby faceDetection.rb
 В этом кратком руководстве вы написали скрипт Ruby, который вызывает API распознавания лиц Azure для обнаружения лиц на изображении и возвращения их атрибутов. Ознакомьтесь со справочной документацией по API распознавания лиц, чтобы узнать больше.
 
 > [!div class="nextstepaction"]
-> [API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
+> [API Распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: quickstart
 ms.date: 04/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 9b126d5ccbbf3cb1f22163ffb6ac53a8aff61004
-ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
+ms.openlocfilehash: c03568ece97bdaad86f4564debf9f3b2fa14c6ed
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66357339"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67786649"
 ---
 # <a name="azure-cognitive-services-computer-vision-sdk-for-python"></a>Пакет SDK Компьютерного зрения Cognitive Services Azure для Python
 
@@ -28,7 +28,7 @@ ms.locfileid: "66357339"
 * [Получение рукописных текстов изображений](#get-text-from-image).
 * [Создание эскизов](#generate-thumbnail).
 
-Дополнительные сведения об этой службе см. в статье [Что собой представляет компьютерное зрение][computervision_docs].
+Дополнительные сведения об этой службе см. в статье [What is Computer Vision?][computervision_docs] (Что собой представляет компьютерное зрение?).
 
 Ищете дополнительную документацию?
 
@@ -38,7 +38,7 @@ ms.locfileid: "66357339"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Python 3.6+][python]
-* Бесплатный [ключ Компьютерного зрения][computervision_resource] и соответствующая конечная точка. Эти значения понадобятся при создании экземпляра клиентского объекта [ComputerVisionClient][ref_computervisionclient]. Получить справку можно с помощью одного из указанных ниже методов.
+* Бесплатный клиентский объект and associated endpoint. You need these values when you create the instance of the [ComputerVisionClient][ref_computervisionclient] [ключа Компьютерного зрения][computervision_resource]. Получить справку можно с помощью одного из указанных ниже методов.
 
 ### <a name="if-you-dont-have-an-azure-subscription"></a>Если у вас нет подписки Azure
 
@@ -84,7 +84,7 @@ source cogsrv-vision-env/bin/activate
 
 ### <a name="install-the-sdk"></a>Установка пакета SDK
 
-Установите [пакет][pypi_computervision] SDK Компьютерного зрения Cognitive Services Azure для Python с помощью [pip][pip]:
+Установите [пакет][pypi_computervision]with [pip][pip] SDK Компьютерного зрения Azure Cognitive Services для Python.
 
 ```Bash
 pip install azure-cognitiveservices-vision-computervision
@@ -154,7 +154,7 @@ client = ComputerVisionClient(endpoint, credentials)
 
 ### <a name="analyze-an-image"></a>Анализ изображения
 
-Анализировать изображение на определенные особенности можно с помощью функции [`analyze_image`][ref_computervisionclient_analyze_image]. Используйте свойство [`visual_features`][ref_computervision_model_visualfeatures], чтобы задать типы для анализа изображений. Обычными значениями являются `VisualFeatureTypes.tags` и `VisualFeatureTypes.description`.
+Вы можете анализировать изображение для определенных функций с помощью свойства [`analyze_image`][ref_computervisionclient_analyze_image]. Use the [`visual_features`][ref_computervision_model_visualfeatures], чтобы задать типы анализа, выполняемого на изображении. Обычными значениями являются `VisualFeatureTypes.tags` и `VisualFeatureTypes.description`.
 
 ```Python
 url = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Broadway_and_Times_Square_by_night.jpg/450px-Broadway_and_Times_Square_by_night.jpg"
@@ -216,7 +216,7 @@ for caption in analysis.captions:
 
 ### <a name="get-text-from-image"></a>Получение текста из изображения
 
-Из изображения можно получить любой текст: рукописный или печатный. Для этого нужно вызвать два разных метода пакета SDK: [`batch_read_file`](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-python#batch-read-file-url--mode--custom-headers-none--raw-false----operation-config-)[`get_read_operation_result` и ](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-python#get-read-operation-result-operation-id--custom-headers-none--raw-false----operation-config-). Вызов к `batch_read_file` выполняется асинхронно. Прежде чем извлекать тестовые данные, необходимо проверить результаты вызова `get_read_operation_result` на то, был ли завершен первый вызов с кодами [`TextOperationStatusCodes`][ref_computervision_model_textoperationstatuscodes]. Результаты включают текст, а также координаты ограничительной рамки для текста.
+Из изображения можно получить любой текст: рукописный или печатный. Для этого нужно вызвать два разных метода пакета SDK: [`batch_read_file`](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-python)[`get_read_operation_result` и ](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-computervision/azure.cognitiveservices.vision.computervision.computervisionclient?view=azure-python). Вызов к `batch_read_file` выполняется асинхронно. Прежде чем извлекать тестовые данные, необходимо проверить результаты вызова `get_read_operation_result` на то, был ли завершен первый вызов с кодами [`TextOperationStatusCodes`][ref_computervision_model_textoperationstatuscodes]. Результаты включают текст, а также координаты ограничительной рамки для текста.
 
 ```Python
 # import models
@@ -286,7 +286,7 @@ image.save('thumbnail.jpg')
 
 ### <a name="general"></a>Общие сведения
 
-При взаимодействии с клиентским объектом [ComputerVisionClient][ref_computervisionclient] с помощью пакета SDK для Python используется класс [`ComputerVisionErrorException`][ref_computervision_computervisionerrorexception] для возврата ошибок. Ошибки, возвращаемые службой, соответствуют тем же кодам состояния HTTP, которые возвращаются для запросов REST API.
+При взаимодействии с [ComputerVisionClient][ref_computervisionclient] класс client object using the Python SDK, the [`ComputerVisionErrorException`][ref_computervision_computervisionerrorexception] используется для возврата ошибок. Ошибки, возвращаемые службой, соответствуют тем же кодам состояния HTTP, которые возвращаются для запросов REST API.
 
 Например, при попытке проанализировать изображение с неверным ключом будет возвращена ошибка `401`. В следующем фрагменте кода [ошибка][ref_httpfailure] корректно обрабатывается путем перехвата исключения и отображения дополнительной информации об этой ошибке.
 
@@ -312,7 +312,7 @@ except HTTPFailure as e:
 
 ### <a name="handle-transient-errors-with-retries"></a>Обработка временных ошибок с помощью повторных вызовов
 
-При работе с клиентом [ComputerVisionClient][ref_computervisionclient] вы можете столкнуться с временными сбоями, вызванными [ограничениями скорости][computervision_request_units], применяемыми службой, или другими временными проблемами, такими как отказ сети. Для получения дополнительной информации об обработке этих типов сбоев ознакомьтесь со статьей [Шаблон повторов][azure_pattern_retry] в руководстве по конструктивным шаблонам облачных решений и соответствующим [шаблоном автоматического выключения][azure_pattern_circuit_breaker].
+Во время работы с [ComputerVisionClient][ref_computervisionclient] client, you might encounter transient failures caused by [rate limits][computervision_request_units] навязывается службой или другими временными проблемами, такими как перебои в работе сети. Для получения дополнительной информации об обработке этих типов сбоев ознакомьтесь со статьей [Retry pattern][azure_pattern_retry] в руководстве Cloud Design Patterns и соответствующим [шаблоном Circuit Breaker][azure_pattern_circuit_breaker].
 
 ## <a name="next-steps"></a>Дополнительная информация
 

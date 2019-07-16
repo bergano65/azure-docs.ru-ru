@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 04/26/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: ed056bf28881f391ed1ba16a875259e8e420b39d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2c173da9bfb60f74b90a17f4f3c5ea6f930ca528
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66138045"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705838"
 ---
 # <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service-on-linux"></a>Руководство. Сквозная аутентификация и авторизация в Службе приложений Azure в Linux
 
@@ -101,7 +101,7 @@ az webapp create --resource-group myAuthResourceGroup --plan myAuthAppServicePla
 
 ### <a name="configure-cors"></a>Настройка CORS
 
-Этот шаг не связан с проверкой подлинности и авторизацией. Тем не менее, это нужно для [вызова серверного API из кода внешнего браузера](#call-api-securely-from-browser-code), чтобы браузер разрешал междоменные вызовы API из приложения Angular.js. В службе приложений на платформе Linux отсутствуют встроенные функции CORS, которые есть в ее [аналоге для Windows](../app-service-web-tutorial-rest-api.md#add-cors-functionality). Поэтому для работы серверного приложения их нужно добавить вручную.
+Этот шаг не связан с проверкой подлинности и авторизацией. Тем не менее, это нужно для [вызова серверного API из кода внешнего браузера](#call-api-securely-from-browser-code), чтобы браузер разрешал междоменные вызовы API из приложения Angular.js. Служба приложений в Linux теперь поддерживает функции CORS, как и [ее аналог в Windows](../app-service-web-tutorial-rest-api.md#add-cors-functionality).
 
 В локальном репозитории откройте файл _Startup.cs_. Добавьте в метод `ConfigureServices(IServiceCollection services)` следующую строку кода:
 

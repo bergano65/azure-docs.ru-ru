@@ -2,18 +2,18 @@
 title: Руководство по Kubernetes в Azure. Подготовка приложения
 description: В этом руководстве по Службе Azure Kubernetes (AKS) вы узнаете, как подготовить и создать многоконтейнерное приложение с помощью Docker Compose, которое можно затем развернуть в AKS.
 services: container-service
-author: tylermsft
+author: mlearned
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 12/19/2018
-ms.author: twhitney
+ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 8fdc36215841348cf62cd61245950be6573a1938
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 2b4ba646a037b2f5561dabf97dee14454c07c573
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66304446"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67614230"
 ---
 # <a name="tutorial-prepare-an-application-for-azure-kubernetes-service-aks"></a>Руководство по Подготовка приложения для Службы Azure Kubernetes (AKS)
 
@@ -34,7 +34,7 @@ ms.locfileid: "66304446"
 
 Для выполнения действий, описанных в этом руководстве, необходимо базовое понимание основных понятий Docker, таких как контейнеры, образы контейнеров и команды `docker`. [Руководство по началу работы с Docker][docker-get-started] содержит базовые сведения о контейнерах.
 
-Для работы с этим руководством требуется локальная среда разработки Docker для выполнения контейнеров Linux. Docker предоставляет пакеты, которые позволяют настроить Docker в системе [Mac][docker-for-mac], [Windows][docker-for-windows] или [Linux][docker-for-linux].
+Для работы с этим руководством требуется локальная среда разработки Docker для выполнения контейнеров Linux. Docker предоставляет пакеты, которые позволяют настроить Docker в системе [Mac][docker-for-mac], [Windows][docker-for-windows] или Linux[Linux][docker-for-linux].
 
 Azure Cloud Shell не включает в себя компоненты Docker, необходимые для выполнения каждого шага этих руководств. Таким образом мы рекомендуем полную среду разработки Docker.
 
@@ -66,7 +66,7 @@ cd azure-voting-app-redis
 docker-compose up -d
 ```
 
-После завершения выполните команду [docker images][docker-images], чтобы просмотреть созданные образы. Было создано или скачано три образа. Образ *azure-vote-front* содержит интерфейсное приложение и использует образ `nginx-flask` в качестве основы. Образ `redis` используется для запуска экземпляра Redis.
+После завершения выполните команду [docker images][docker-images], чтобы увидеть созданные образы. Было создано или скачано три образа. Образ *azure-vote-front* содержит интерфейсное приложение и использует образ `nginx-flask` в качестве основы. Образ `redis` используется для запуска экземпляра Redis.
 
 ```
 $ docker images
@@ -117,7 +117,7 @@ docker-compose down
 Переходите к следующему руководству, чтобы узнать о том, как хранить образы контейнеров в Реестре контейнеров Azure.
 
 > [!div class="nextstepaction"]
-> [Принудительная отправка образов в Реестр контейнеров Azure][aks-tutorial-prepare-acr]
+> [Развертывание реестра контейнеров Azure и его использование][aks-tutorial-prepare-acr]
 
 <!-- LINKS - external -->
 [docker-compose]: https://docs.docker.com/compose/

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: quickstart
-ms.date: 02/07/2019
+ms.date: 07/03/2019
 ms.author: sajagtap
-ms.openlocfilehash: 09fd58fa33873c06ac5dab4970af199bc3030479
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: f848ea0d1c86b9c12d26c59b8f0e92d1e5d70094
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58756535"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67604061"
 ---
 # <a name="quickstart-analyze-text-content-for-objectionable-material-in-c"></a>Краткое руководство. Анализ текста для выявления нежелательного содержимого с помощью C#
 
@@ -61,7 +61,7 @@ ms.locfileid: "58756535"
 
 [!code-csharp[](~/cognitive-services-content-moderator-samples/documentation-samples/csharp/text-moderation-quickstart-dotnet.cs?range=15-19)]
 
-Вам нужно будет создать входной файл *TextFile.txt* и изменить его путь соответствующим образом (относительные пути задаются в зависимости от каталога выполнения). Откройте _TextFile.txt_ и добавьте текст для модерации. В этом руководстве используются следующие примеры текста.
+Вам нужно будет создать входной файл *TextFile.txt* и изменить его путь (пути задаются в зависимости от каталога выполнения). Откройте _TextFile.txt_ и добавьте текст для модерации. В этом руководстве используются следующие примеры текста.
 
 ```
 Is this a grabage or crap email abcdef@abcd.com, phone: 6657789887, IP: 255.255.255.255, 1 Microsoft Way, Redmond, WA 98052.

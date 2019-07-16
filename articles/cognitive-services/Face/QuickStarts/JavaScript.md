@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
-ms.date: 02/07/2019
+ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: d1aa3e3a23acf82af8435cbb075fac38353500e5
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 70c496aef0ff2f34c917fd594767d464cab3e625
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57538737"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603427"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-javascript"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и JavaScript
 
@@ -41,7 +41,7 @@ ms.locfileid: "57538737"
 </html>
 ```
 
-Добавьте следующий код в элемент `body` документа. Он создаст основной пользовательский интерфейс с полем URL-адреса, кнопкой **анализа лиц**, областями ответа и отображения изображения.
+Добавьте следующий код в элемент `body` документа. Этот код позволяет создать основной пользовательский интерфейс с полем URL-адреса, кнопкой **анализа лиц**, областями ответа и отображения изображения.
 
 ```html
 <h1>Detect Faces:</h1>
@@ -239,4 +239,4 @@ Image to analyze: <input type="text" name="inputImage" id="inputImage"
 В этом кратком руководстве вы написали скрипт JavaScript, который вызывает API распознавания лиц Azure для обнаружения лиц на изображении и возвращения их атрибутов. Ознакомьтесь со справочной документацией по API распознавания лиц, чтобы узнать больше.
 
 > [!div class="nextstepaction"]
-> [API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
+> [API Распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

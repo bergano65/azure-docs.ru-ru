@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: tutorial
-ms.date: 03/11/2019
+ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: 4a28e9f1f911e274f9a53275afa577024405b336
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: b210af2a70a3ce858d8f53102a181c75373b4176
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66474684"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67606945"
 ---
 # <a name="tutorial-video-and-transcript-moderation"></a>Руководство по Модерация видео и расшифровок речи
 
@@ -37,7 +37,7 @@ ms.locfileid: "66474684"
 - Зарегистрируйтесь на сайте Средства проверки [Content Moderator](https://contentmoderator.cognitive.microsoft.com/) и создайте пользовательские теги. Если на этом этапе вам нужна помощь, ознакомьтесь со статьей [Создание и использование тегов для модерации](Review-Tool-User-Guide/tags.md).
 
     ![Снимок экрана пользовательских тегов для модерации видео](images/video-tutorial-custom-tags.png)
-- Для запуска примера приложения необходимы учетная запись Azure, ресурс Служб мультимедиа Azure, ресурс Azure Content Moderator и учетные данные Azure Active Directory. Инструкции о том, как их получить, см. в руководстве [Анализ содержимого видео для выявления нежелательного содержимого в C#](video-moderation-api.md).
+- Для запуска примера приложения необходимы учетная запись Azure, ресурс Служб мультимедиа Azure, ресурс Azure Content Moderator и учетные данные Azure Active Directory. Инструкции по получению этих ресурсов см. в руководстве по [API модерации видео](video-moderation-api.md).
 - Скачайте [консольное приложение для просмотра видео](https://github.com/MicrosoftContentModerator/VideoReviewConsoleApp) из GitHub.
 
 ## <a name="enter-credentials"></a>Ввод учетных данных
@@ -225,7 +225,7 @@ ms.locfileid: "66474684"
 > [!NOTE]
 > В консольном приложении используется [API индексатора мультимедийных данных Azure](https://docs.microsoft.com/azure/media-services/media-services-process-content-with-indexer2) для создания расшифровок из звуковой дорожки отправленного видео. Результаты предоставляются в формате WebVTT. Дополнительные сведения об этом формате см. в статье [Web Video Text Tracks Format (WebVTT)](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API) (Формат Web Video Text Tracks (WebVTT)).
 
-## <a name="create-a-the-human-in-the-loop-review"></a>Создание проверки с вовлечением в процесс человека
+## <a name="create-a-human-review"></a>Создание пользовательской проверки
 
 Процесс модерации возвращает список ключевых кадров из видео вместе с расшифровкой его звуковых дорожек. Следующим шагом является создание проверки в средстве проверки Content Moderator для модераторов. Возвращаясь к методу `ProcessVideo()` в `Program.cs`, вы видите вызов к методу `CreateVideoReviewInContentModerator()`. Этот метод находится в классе `videoReviewApi`, который находится в `VideoReviewAPI.cs` и приведен ниже.
 

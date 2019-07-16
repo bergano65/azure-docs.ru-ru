@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
-ms.date: 03/27/2019
+ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: 57605f9bd1a39435e27a2f2c56c06cf3bfb38605
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.openlocfilehash: bf4d11a18932d20e7dcc7580ebe5aa4e060c5a88
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58630706"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67606778"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-face-net-sdk"></a>Краткое руководство. Распознавание лиц на изображении с использованием пакета SDK службы "Распознавание лиц" для .NET
 
@@ -60,13 +60,13 @@ ms.locfileid: "58630706"
 
 [!code-csharp[](~/cognitive-services-vision-csharp-sdk-quickstarts/Face/Program.cs?range=36-41)]
 
-Кроме того, в методе **Main** добавьте следующий код, чтобы использовать созданный клиент службы распознавания лиц для определения лиц на удаленном и локальном изображениях. Методы распознавания лиц будут определены в следующем разделе. 
+Кроме того, в методе **Main** добавьте следующий код, чтобы использовать созданный клиент Распознавания лиц для определения лиц на удаленном и локальном изображениях. Методы распознавания лиц будут определены в следующем разделе. 
 
 [!code-csharp[](~/cognitive-services-vision-csharp-sdk-quickstarts/Face/Program.cs?range=43-50)]
 
 ### <a name="detect-faces"></a>Распознавание лиц
 
-Добавьте следующий метод в класс **Program**. Он использует клиент службы распознавания лиц для определения лиц на удаленном изображении, указанном по URL-адресу. Обратите внимание, что он использует поле `faceAttributes` &mdash; объекты **DetectedFace**, добавленные в `faceList`, будут иметь указанные атрибуты (в этом случае возраст и пол).
+Добавьте следующий метод в класс **Program**. Он использует клиент службы распознавания лиц для определения лиц на удаленном изображении, указанном по URL-адресу. Он использует поле `faceAttributes` &mdash; объекты **DetectedFace**, добавленные в `faceList`, будут иметь указанные атрибуты (в этом случае возраст и пол).
 
 [!code-csharp[](~/cognitive-services-vision-csharp-sdk-quickstarts/Face/Program.cs?range=52-74)]
 
@@ -98,4 +98,4 @@ Male 37   Female 56
 В этом кратком руководстве вы создали простое консольное приложение .NET, которое может использовать службу API распознавания лиц для распознавания лиц на локальных и удаленных изображениях. Перейдите к более подробному руководству, чтобы узнать, как можно интуитивно понятным образом предоставлять информацию о лицах пользователю.
 
 > [!div class="nextstepaction"]
-> [Руководство Создание приложения WPF для отображения данных о лицах на изображении](../Tutorials/FaceAPIinCSharpTutorial.md)
+> [Руководство. Создание приложения WPF для отображения данных о лицах на изображении](../Tutorials/FaceAPIinCSharpTutorial.md)

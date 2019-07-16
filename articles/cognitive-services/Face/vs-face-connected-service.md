@@ -1,21 +1,21 @@
 ---
 title: Руководство по API распознавания лиц, C#
 titleSuffix: Azure Cognitive Services
-description: Создание простого приложения Windows, которое использует API распознавания лиц Cognitive Services для обнаружения особенностей лиц на изображении.
+description: Создание приложения Windows, которое использует API распознавания лиц Cognitive Services для обнаружения особенностей лиц на изображении.
 services: cognitive-services
 author: ghogen
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: tutorial
-ms.date: 05/07/2018
+ms.date: 07/03/2019
 ms.author: ghogen
-ms.openlocfilehash: 492161a9a47627db8a06686daf953e99ca652e02
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 7907a79289149d9e165dd6df0c09bee596e624e2
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65827662"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67606815"
 ---
 # <a name="connecting-to-cognitive-services-face-api-by-using-connected-services-in-visual-studio"></a>Подключение к API распознавания лиц Cognitive Services с помощью Подключенных служб в Visual Studio
 

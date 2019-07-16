@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
-ms.date: 03/27/2019
+ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: 280143d54e516fb626bb2d5afd01653e03d8a82c
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: 2ed1a20bf47771d927c0d58730fa0eb4471572af
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59490452"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603375"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-php"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и PHP
 
@@ -43,7 +43,7 @@ ms.locfileid: "59490452"
 
 ## <a name="write-the-php-script"></a>Написание скрипта PHP
 
-Добавьте следующий код в элемент `body` документа. Он создаст основной пользовательский интерфейс с полем URL-адреса, кнопкой **анализа лиц**, областями ответа и отображения изображения.
+Добавьте следующий код в элемент `body` документа. Этот код позволяет создать основной пользовательский интерфейс с полем URL-адреса, кнопкой **анализа лиц**, областями ответа и отображения изображения.
 
 ```php
 <?php

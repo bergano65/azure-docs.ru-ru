@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: tutorial
-ms.date: 02/06/2019
+ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: 6a60afc45894518f92115976876ddd50efa1e410
-ms.sourcegitcommit: f7be3cff2cca149e57aa967e5310eeb0b51f7c77
+ms.openlocfilehash: 54069fbaa8ad06d257ab835ed3b170fecb76d800
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2019
-ms.locfileid: "56310191"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603343"
 ---
 # <a name="tutorial-create-a-wpf-app-to-display-face-data-in-an-image"></a>Руководство по Создание приложения WPF для отображения данных о лицах на изображении
 
-В этом руководстве вы узнаете, как с помощью API распознавания лиц Azure, поставляемого через клиентский пакет SDK для .NET, распознавать лица на изображении, а затем представлять эти данные в пользовательском интерфейсе. Вы создадите простое приложение Windows Presentation Framework (WPF), которое распознает лица, рисует рамку вокруг них и отображает описание лица в строке состояния. 
+Из этого руководства вы узнаете, как с помощью API Распознавания лиц Azure, поставляемого через клиентский пакет SDK для .NET, распознавать лица на изображении, а затем представлять эти данные в пользовательском интерфейсе. Вы создадите приложение Windows Presentation Framework (WPF), которое распознает лица, рисует рамку вокруг них и отображает описание лица в строке состояния. 
 
 В этом учебнике описаны следующие процедуры.
 
@@ -57,7 +57,7 @@ ms.locfileid: "56310191"
 
 ### <a name="create-the-ui"></a>Создание пользовательского интерфейса
 
-Откройте файл *MainWindow.xaml* и замените его содержимое приведенным ниже кодом, который создаст окно интерфейса. Обратите внимание, что `FacePhoto_MouseMove` и `BrowseButton_Click` являются обработчиками событий, которые будут определены позже.
+Откройте файл *MainWindow.xaml* и замените его содержимое приведенным ниже кодом, который создаст окно интерфейса. Методы `FacePhoto_MouseMove` и `BrowseButton_Click` являются обработчиками событий, которые будут определены позже.
 
 [!code-xaml[](~/Cognitive-Face-CSharp-sample/FaceTutorialCS/FaceTutorialCS/MainWindow.xaml?range=1-18)]
 
@@ -67,7 +67,7 @@ ms.locfileid: "56310191"
 
 [!code-csharp[](~/Cognitive-Face-CSharp-sample/FaceTutorialCS/FaceTutorialCS/MainWindow.xaml.cs?range=1-12)]
 
-Вставьте следующий код в класс **MainWindow**. Он создает экземпляр **FaceClient** с использованием ключа подписки, который нужно ввести самостоятельно. Для параметра `faceEndpoint` нужно указать строку с правильным регионом для вашей подписки (список конечных точек для всех регионов см. в [документации по API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)).
+Вставьте следующий код в класс **MainWindow**. Этот код создает экземпляр **FaceClient** с использованием ключа подписки, который нужно ввести самостоятельно. Для параметра `faceEndpoint` нужно указать строку с правильным регионом для вашей подписки (список конечных точек для всех регионов см. в [документации по API Распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)).
 
 [!code-csharp[](~/Cognitive-Face-CSharp-sample/FaceTutorialCS/FaceTutorialCS/MainWindow.xaml.cs?range=18-46)]
 
@@ -91,13 +91,13 @@ ms.locfileid: "56310191"
 
 Ваше приложение будет распознавать лица, вызывая метод **FaceClient.Face.DetectWithStreamAsync**, который инкапсулирует REST API [обнаружения](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) для передачи локального изображения.
 
-Вставьте следующий метод в класс **MainWindow** ниже метода **FacePhoto_MouseMove**. Он определяет список атрибутов лица для извлечения и считывает представленный файл изображения в **потоке**. Затем он передает оба этих объекта в вызов метода **DetectWithStreamAsync**.
+Вставьте следующий метод в класс **MainWindow** ниже метода **FacePhoto_MouseMove**. Этот метод определяет список атрибутов лица для извлечения и считывает представленный файл изображения в параметр **Stream**. Затем он передает оба этих объекта в вызов метода **DetectWithStreamAsync**.
 
 [!code-csharp[](~/Cognitive-Face-CSharp-sample/FaceTutorialCS/FaceTutorialCS/MainWindow.xaml.cs?range=189-226)]
 
 ## <a name="draw-rectangles-around-faces"></a>Размещение прямоугольников вокруг лиц
 
-Теперь нужно вставить код, чтобы добавить прямоугольник вокруг каждого распознанного лица на изображении. В классе **MainWindow** вставьте следующий код в конце метода **BrowseButton_Click** после строки `FacePhoto.Source = bitmapSource`. Он позволяет заполнить список распознанных лиц из вызова **UploadAndDetectFaces**. Затем вокруг каждого лица рисуется прямоугольник, и измененное изображение отображается в главном окне.
+Теперь нужно вставить код, чтобы добавить прямоугольник вокруг каждого распознанного лица на изображении. В классе **MainWindow** вставьте следующий код в конце метода **BrowseButton_Click** после строки `FacePhoto.Source = bitmapSource`. Этот код позволяет передать список распознанных лиц из вызова в метод **UploadAndDetectFaces**. Затем вокруг каждого лица рисуется прямоугольник, и измененное изображение отображается в главном окне.
 
 [!code-csharp[](~/Cognitive-Face-CSharp-sample/FaceTutorialCS/FaceTutorialCS/MainWindow.xaml.cs?range=92-145)]
 

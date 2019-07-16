@@ -2,18 +2,18 @@
 title: Руководство по Kubernetes в Azure. Обновление приложения
 description: В этом руководстве по Службе Azure Kubernetes (AKS) вы узнаете, как обновить имеющееся развертывание приложения для AKS с помощью новой версии кода приложения.
 services: container-service
-author: tylermsft
+author: mlearned
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 12/19/2018
-ms.author: twhitney
+ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 05eac7e673ad01e9d3e0fb25f261444fd7bc4e6d
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: b645fc9f67229d087a5d1655f733e2f3e50d4471
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66475512"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67614382"
 ---
 # <a name="tutorial-update-an-application-in-azure-kubernetes-service-aks"></a>Руководство по Обновление приложения в Службе Azure Kubernetes (AKS)
 
@@ -31,7 +31,7 @@ ms.locfileid: "66475512"
 
 В предыдущих руководствах приложение было упаковано в образ контейнера. Этот образ был передан в Реестр контейнеров Azure, и вы создали кластер AKS. Затем приложение было развернуто в кластере AKS.
 
-Кроме того, был клонирован репозиторий приложения, включая исходный код приложения и предварительно созданный файл Docker Compose, используемый в этом руководстве. Проверьте, создали ли вы клон репозитория и изменили ли каталоги на клонированный каталог. Если вы не выполнили эти действия и хотите продолжить изучение материала, начните с раздела руководства 1 [Создание образов контейнеров][aks-tutorial-prepare-app].
+Кроме того, был клонирован репозиторий приложения, включая исходный код приложения и предварительно созданный файл Docker Compose, используемый в этом руководстве. Проверьте, создали ли вы клон репозитория и изменили ли каталоги на клонированный каталог. Если вы не выполнили эти действия и хотите продолжить изучение материала, начните с первого раздела руководства по [подготовке приложения для Службы Azure Kubernetes (AKS)][aks-tutorial-prepare-app].
 
 Для выполнения задач из этого руководства требуется Azure CLI 2.0.53 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
@@ -88,7 +88,7 @@ docker tag azure-vote-front <acrLoginServer>/azure-vote-front:v2
 Теперь используйте команду [docker push][docker-push], чтобы передать образ в реестр. Замените `<acrLoginServer>` именем сервера для входа ACR.
 
 > [!NOTE]
-> Если возникают проблемы с отправкой данных в реестр ACR, убедитесь, что вход в систему по-прежнему выполнен. Выполните команду [az acr login][az-acr-login], используя имя Реестра контейнеров Azure, который вы создали на шаге [создания реестра контейнеров Azure](tutorial-kubernetes-prepare-acr.md#create-an-azure-container-registry). Например, `az acr login --name <azure container registry name>`.
+> Если возникают проблемы с отправкой данных в реестр ACR, убедитесь, что вход в систему по-прежнему выполнен. Выполните команду [az acr login][az-acr-login], используя имя Реестра контейнеров Azure, который вы создали на шаге [создания Реестра контейнеров Azure](tutorial-kubernetes-prepare-acr.md#create-an-azure-container-registry). Например, `az acr login --name <azure container registry name>`.
 
 ```console
 docker push <acrLoginServer>/azure-vote-front:v2
@@ -163,7 +163,7 @@ kubectl get service azure-vote-front
 Перейдите к следующему руководству, чтобы узнать, как обновить кластер AKS до новой версии Kubernetes.
 
 > [!div class="nextstepaction"]
-> [Обновление Kubernetes][aks-tutorial-upgrade]
+> [Обновление Kubernetes в Службе контейнеров Azure (AKS)][aks-tutorial-upgrade]
 
 <!-- LINKS - external -->
 [docker-compose]: https://docs.docker.com/compose/

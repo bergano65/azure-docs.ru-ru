@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: tutorial
-ms.date: 01/18/2019
+ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: 5d31285ca305ba7fefdf31b4a97e3183f58b3e3b
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: dd06330e82850cc44bc0f4d36ba7caf596ace939
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65233818"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603515"
 ---
 # <a name="tutorial-moderate-facebook-posts-and-commands-with-azure-content-moderator"></a>Руководство по Модерация записей и команд Facebook с помощью Azure Content Moderator
 
@@ -48,11 +48,11 @@ ms.locfileid: "65233818"
 
 ## <a name="configure-image-moderation-workflow"></a>Настройка рабочего процесса модерации изображений
 
-Чтобы создать пользовательский рабочий процесс для изображений, ознакомьтесь со статьей [Определение, тестирование и использование рабочих процессов](review-tool-user-guide/workflows.md). Это позволит Content Moderator автоматически проверять изображения на Facebook и отправлять некоторые из них в инструмент проверки. Обратите внимание на **имя** рабочего процесса.
+Чтобы создать пользовательский рабочий процесс для изображений, ознакомьтесь со статьей [Определение, тестирование и использование рабочих процессов](review-tool-user-guide/workflows.md). Content Moderator будет автоматически использовать этот рабочий процесс для проверки изображений на Facebook и отправлять некоторые из них в инструмент проверки. Обратите внимание на **имя** рабочего процесса.
 
 ## <a name="configure-text-moderation-workflow"></a>Настройка рабочего процесса модерации текста
 
-Чтобы создать пользовательский рабочий процесс для текста, повторно обратитесь к статье [Определение, тестирование и использование рабочих процессов](review-tool-user-guide/workflows.md). Это позволит Content Moderator автоматически проверять текстовое содержимое. Обратите внимание на **имя** рабочего процесса.
+Чтобы создать пользовательский рабочий процесс для текста, повторно обратитесь к статье [Define and use moderation workflows](review-tool-user-guide/workflows.md) (Определение и использование рабочих процессов). Content Moderator будет использовать этот рабочий процесс для автоматической проверки текстового содержимого. Обратите внимание на **имя** рабочего процесса.
 
 ![Настройка рабочего процесса для текста](images/text-workflow-configure.PNG)
 

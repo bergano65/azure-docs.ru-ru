@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: c3be09c998399cdca886f207bf5fc621bf51d8dd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d44391624e29d2bdd182bb07452e0e8def2d1407
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67099598"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67656698"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-itrp"></a>Руководство по Интеграция Azure Active Directory с ITRP
 
@@ -79,7 +79,7 @@ ms.locfileid: "67099598"
 2. **[Настройка единого входа в ITRP](#configure-itrp-single-sign-on)** на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить ему использовать единый вход Azure AD.
-5. **[Создание тестового пользователя ITRP](#create-an-itrp-test-user)** , связанного с одноименным пользователем в Azure AD.
+5. **[Создание тестового пользователя ITRP](#create-an-itrp-test-user)**, связанного с одноименным пользователем в Azure AD.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться, что конфигурация работает правильно.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -153,9 +153,9 @@ ms.locfileid: "67099598"
 
     1. Щелкните **Включено**.
 
-    1. В поле  **Remote logout URL** (URL-адрес удаленного выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
+    1. В поле **Remote logout URL** (URL-адрес удаленного выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
-    1. В поле  **SAML SSO URL** (URL-адрес единого входа SAML) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
+    1. В поле **SAML SSO URL** (URL-адрес единого входа SAML) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
     1. В поле **Certificate fingerprint** (Отпечаток сертификата) вставьте значение **Отпечаток**, скопированное на портале Azure.
 
@@ -179,7 +179,7 @@ ms.locfileid: "67099598"
 
     1. В поле **Имя** введите **BrittaSimon**.
   
-    1. В поле **Имя пользователя** введите **BrittaSimon @\<ваш_домен>.\<доменная_зона>** . (Например, BrittaSimon@contoso.com).
+    1. В поле **Имя пользователя** введите **BrittaSimon @\<ваш_домен>.\<доменная_зона>**. (Например, BrittaSimon@contoso.com).
 
     1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
@@ -227,7 +227,7 @@ ms.locfileid: "67099598"
 
     ![Выбор "People" (Люди)](./media/itrp-tutorial/ic775587.png "Выбор \"People\" (Люди)")
 
-1. Щелкните знак плюса ( **+** ), чтобы добавить нового пользователя.
+1. Щелкните знак плюса (**+**), чтобы добавить нового пользователя.
 
     ![Выбор знака плюса](./media/itrp-tutorial/ic775576.png "Выбор знака плюса")
 

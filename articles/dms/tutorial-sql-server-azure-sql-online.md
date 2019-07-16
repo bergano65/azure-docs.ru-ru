@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 05/08/2019
-ms.openlocfilehash: 266e4a16a69d7200fbe8b58bc20339b6979db877
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.date: 07/09/2019
+ms.openlocfilehash: e5666a64e4160964e2c1b35707a0f064edb72460
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65415909"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706907"
 ---
 # <a name="tutorial-migrate-sql-server-to-a-single-database-or-pooled-database-in-azure-sql-database-online-using-dms"></a>Руководство по Перенос из SQL Server в отдельную базу данных или базу данных в пуле в Базе данных SQL Azure по сети с помощью DMS
 
@@ -46,7 +46,7 @@ Azure Database Migration Service можно использовать для пе
 
 Для работы с этим руководством вам потребуется следующее:
 
-- Скачайте и установите [SQL Server версии 2012 или более поздней](https://www.microsoft.com/sql-server/sql-server-downloads) (любой выпуск).
+- Скачайте и установите [SQL Server 2012 или более поздней версии](https://www.microsoft.com/sql-server/sql-server-downloads).
 - При установке SQL Server Express протокол TCP/IP отключен по умолчанию. Включите его, выполнив инструкции в статье [Включение или отключение сетевого протокола сервера](https://docs.microsoft.com/sql/database-engine/configure-windows/enable-or-disable-a-server-network-protocol#SSMSProcedure).
 - Создайте отдельную базу данных (или базу данных в составе пула) в Базе данных SQL Azure, следуя инструкциям из статьи [Краткое руководство. Создание отдельной базы данных в Базе данных SQL с помощью портала Azure](https://docs.microsoft.com/azure/sql-database/sql-database-single-database-get-started).
 
@@ -57,7 +57,7 @@ Azure Database Migration Service можно использовать для пе
 - Создайте виртуальную сеть Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения о создании виртуальной сети приведены в [документации по виртуальным сетям](https://docs.microsoft.com/azure/virtual-network/). В частности, уделите внимание кратким руководствам с пошаговыми инструкциями.
 
     > [!NOTE]
-    > Если вы используете ExpressRoute с пиринговой связью с сетью корпорации Майкрософт, во время настройки виртуальной сети добавьте в подсеть, в которой будет подготовлена служба, следующие [конечные точки службы](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview):
+    > Если вы используете ExpressRoute с пиринговой связью с сетью корпорации Майкрософт, во время настройки виртуальной сети добавьте в подсеть, в которой будет подготовлена служба, следующие [конечные точки](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview):
     > - целевую конечную точку базы данных (например, конечная точка SQL, конечная точка Cosmos DB и т. д.);
     > - конечную точку службы хранилища;
     > - конечную точку служебной шины.
@@ -125,14 +125,14 @@ Azure Database Migration Service можно использовать для пе
 
 ## <a name="assess-your-on-premises-database"></a>Оценка локальной базы данных
 
-Перед переносом данных из локального экземпляра SQL Server в отдельную базу данных или базу данных в пуле в Базе данных SQL Azure необходимо оценить Базу данных SQL Server на наличие любых проблем, связанных с блокировкой, которые могут помешать миграции. В Помощнике по миграции данных версии 3.3 или более поздней выполните инструкции по [оценке миграции SQL Server](https://docs.microsoft.com/sql/dma/dma-assesssqlonprem), чтобы завершить оценку локальной базы данных.
+Перед переносом данных из локального экземпляра SQL Server в отдельную базу данных или базу данных в составе пула в Базе данных SQL Azure необходимо оценить базу данных SQL Server на наличие любых проблем, связанных с блокировкой, которые могут помешать миграции. В Помощнике по миграции данных версии 3.3 или более поздней выполните инструкции по [оценке миграции SQL Server](https://docs.microsoft.com/sql/dma/dma-assesssqlonprem), чтобы завершить оценку локальной базы данных.
 
 Чтобы оценить локальную базу данных, сделайте следующее:
 
 1. В Помощнике по миграции данных щелкните "Создать" (значок плюса), а затем выберите тип проекта **Оценка**.
 2. Укажите имя проекта в текстовом поле **Тип исходного сервера**, выберите **SQL Server**, в текстовом поле **Тип конечного сервера** выберите **База данных SQL Azure**, а затем нажмите **Создать**, чтобы создать проект.
 
-    При оценке исходной Базы данных SQL Server, переносимой в отдельную базу данных или базу данных в пуле в Базе данных SQL Azure, можно выбрать один или несколько следующих типов отчетов об оценке:
+    При оценке исходной базы данных SQL Server, переносимой в отдельную базу данных или базу данных в составе пула в Базе данных SQL Azure, можно выбрать один или несколько следующих типов отчетов об оценке:
 
    - проверка совместимости базы данных;
    - проверка четности компонентов.
@@ -261,7 +261,7 @@ Azure Database Migration Service можно использовать для пе
     ![Создание проекта Database Migration Service](media/tutorial-sql-server-to-azure-sql-online/dms-create-project3.png)
 
     > [!NOTE]
-    > Кроме того, вы можете выбрать **Создать только проект**, чтобы сейчас создать проект по миграции и позже выполнить миграцию.
+    > Кроме того, вы можете выбрать **Создать только проект**, чтобы создать проект миграции для отложенного выполнения.
 
 6. Щелкните **Сохранить**.
 

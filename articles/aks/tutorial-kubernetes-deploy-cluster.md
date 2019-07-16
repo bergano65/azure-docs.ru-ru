@@ -2,18 +2,18 @@
 title: Руководство по Kubernetes в Azure. Развертывание кластера
 description: В этом руководстве по Службе Azure Kubernetes (AKS) вы создаете кластер AKS и используете kubectl для подключения к главному узлу Kubernetes.
 services: container-service
-author: tylermsft
+author: mlearned
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 12/19/2018
-ms.author: twhitney
+ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 020b5935595506732c1c1425179741c45f8326d7
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 27ec77e15d1289742fa40320631684d37c9660a1
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66304470"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67614255"
 ---
 # <a name="tutorial-deploy-an-azure-kubernetes-service-aks-cluster"></a>Руководство по Развертывание кластера службы Azure Kubernetes (AKS)
 
@@ -131,7 +131,7 @@ aks-nodepool1-28993262-0   Ready    agent   3m18s   v1.9.11
 Перейдите к следующему руководству, чтобы узнать, как развертывать приложения в кластер.
 
 > [!div class="nextstepaction"]
-> [Развертывание приложений в Kubernetes][aks-tutorial-deploy-app]
+> [Запуск приложений в Kubernetes][aks-tutorial-deploy-app]
 
 <!-- LINKS - external -->
 [kubectl]: https://kubernetes.io/docs/user-guide/kubectl/

@@ -2,31 +2,31 @@
 title: Руководство по Kubernetes в Azure. Развертывание приложения
 description: В этом руководстве по Службе Azure Kubernetes (AKS) выполняется развертывание многоконтейнерного приложения в кластере с помощью пользовательского образа, хранящегося в Реестре контейнеров Azure.
 services: container-service
-author: tylermsft
+author: mlearned
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 12/19/2018
-ms.author: twhitney
+ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: c579aed1acb555a82d5a04308ab4e68f4bfecb8c
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: be4d3fd298a7c08aa640585beb741bad18a840ef
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66305279"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67614326"
 ---
 # <a name="tutorial-run-applications-in-azure-kubernetes-service-aks"></a>Руководство по Запуск приложений в Службе Azure Kubernetes (AKS)
 
 Kubernetes предоставляет распределенную платформу для контейнерных приложений. Вы создаете и развертываете собственные приложения и службы в кластере Kubernetes, а также предоставляете кластеру возможность управлять доступностью и подключением. В этом руководстве (часть 4 из 7) выполняется развертывание примера приложения в кластер Kubernetes. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Обновление файлов манифестов Kubernetes.
+> * Обновление файла манифеста Kubernetes
 > * Выполнение приложения в Kubernetes.
 > * Тестирование приложения
 
 В дополнительных руководствах это приложение масштабируется и обновляется.
 
-В этом руководстве предполагается, что у вас есть некоторое представление о функциях Kubernetes. Дополнительные сведения см. в статье [Ключевые концепции Kubernetes для Службы Azure Kubernetes (AKS)][kubernetes-concepts].
+В этом руководстве предполагается, что у вас есть некоторое представление о функциях Kubernetes. Дополнительные сведения см. в статье [Ключевые концепции Kubernetes для службы Azure Kubernetes (AKS)][kubernetes-concepts].
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -129,7 +129,7 @@ azure-vote-front   10.0.34.242   52.179.23.131   80:30676/TCP   2m
 Перейдите к следующему руководству, чтобы узнать о способах масштабировании приложения Kubernetes и базовой инфраструктуре Kubernetes.
 
 > [!div class="nextstepaction"]
-> [Scale application in Azure Container Service (AKS)][aks-tutorial-scale] (Масштабирование приложений в службе контейнеров Azure (AKS))
+> [Масштабирование pod и инфраструктуры Kubernetes][aks-tutorial-scale]
 
 <!-- LINKS - external -->
 [kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply

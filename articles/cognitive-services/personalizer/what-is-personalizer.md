@@ -1,7 +1,7 @@
 ---
-title: Что такое служба "Персонализатор"
+title: Что такое служба "Персонализатор"?
 titleSuffix: Azure Cognitive Services
-description: Персонализатор Azure — это облачная служба API, которая позволяет выбирать оптимальную работу для своих пользователей, изучая их поведение в режиме реального времени.
+description: Персонализатор — это облачная служба API, с помощью которой приложение максимально удобный режим работы для своих пользователей, изучая их поведение в реальном времени.
 services: cognitive-services
 author: edjez
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: overview
 ms.date: 05/07/2019
 ms.author: edjez
-ms.openlocfilehash: 7eb85aa38815b8fcdfbe68518122563e1b579e17
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: e5781af44732782936e1e1a87bf70bd4a9d4804d
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65150393"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67722299"
 ---
 # <a name="what-is-personalizer"></a>Что такое служба "Персонализатор"?
 

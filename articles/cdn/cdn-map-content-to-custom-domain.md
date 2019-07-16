@@ -6,7 +6,7 @@ documentationcenter: ''
 author: mdgattuso
 manager: danielgi
 editor: ''
-ms.service: cdn
+ms.service: azure-cdn
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 06/11/2018
 ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: b80cb0d68e6875881f2a9fc97fa52531525c1cdc
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.openlocfilehash: 81db1a7dc01b3d60ee6384f2026ed5ce692ff140
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59579195"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67666090"
 ---
 # <a name="tutorial-add-a-custom-domain-to-your-azure-cdn-endpoint"></a>Руководство по Добавление личного домена к конечной точке Azure CDN
 Из этого руководства вы узнаете, как добавить личный домен к конечной точке сети доставки содержимого (CDN) Azure. При использовании конечной точки CDN для доставки содержимого личный домен требуется, если вы хотите обеспечить видимость своего доменного имени в URL-адресе CDN. Видимое доменное имя удобно для клиентов и эффективно используется для популяризации бренда. 
@@ -145,7 +145,7 @@ ms.locfileid: "59579195"
  
 1. Убедитесь, что общедоступное содержимое кэшируется в конечной точке. Например, если конечная точка CDN связана с учетной записью хранения, Azure CDN кэширует содержимое в общедоступном контейнере. Чтобы проверить личный домен, убедитесь, что контейнер допускает открытый доступ и содержит не менее одного файла.
 
-2. В браузере перейдите по адресу файла с помощью личного домена. Например, если вашим личным доменом является cdn.contoso.com, URL-адрес кэшированного файла будет похож на следующий URL-адрес: http:\//cdn.contoso.com/my-public-container/my-file.jpg. Убедитесь, что результат такой же, как и при доступе непосредственно к конечной точке CDN *&lt;имя узла конечной точки&gt;*.azureedge.net.
+2. В браузере перейдите по адресу файла с помощью личного домена. Например, если вашим личным доменом является www.contoso.com, URL-адрес кэшированного файла будет похож на следующий URL-адрес: http:\//www.contoso.com/my-public-container/my-file.jpg. Убедитесь, что результат такой же, как и при доступе непосредственно к конечной точке CDN *&lt;имя узла конечной точки&gt;*.azureedge.net.
 
 
 ## <a name="map-the-permanent-custom-domain"></a>Сопоставление постоянного личного домена
@@ -232,6 +232,6 @@ ms.locfileid: "59579195"
 Перейдите к следующему руководству, чтобы научиться настраивать протокол HTTPS в личном домене Azure CDN.
 
 > [!div class="nextstepaction"]
-> [Руководство по настройке протокола HTTPS для личного домена в сети доставки содержимого Azure](cdn-custom-ssl.md)
+> [Руководство. по настройке протокола HTTPS для личного домена в сети доставки содержимого Azure](cdn-custom-ssl.md)
 
 

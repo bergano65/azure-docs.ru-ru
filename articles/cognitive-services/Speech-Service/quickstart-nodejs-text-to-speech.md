@@ -8,23 +8,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 01/11/2019
+ms.date: 07/05/2019
 ms.author: erhopf
-ms.custom: seodec18
-ms.openlocfilehash: f5f777238b4682cfd5873ceeb34452218d4c46f3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: 5a218db0527a5e1d5642cb485b75df894a275764
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67068272"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67605004"
 ---
 # <a name="quickstart-convert-text-to-speech-using-nodejs"></a>Краткое руководство. Преобразование текста в речь с использованием Node.js
 
 В этом кратком руководстве описано, как преобразовать текст в речь с помощью Node.js и REST API преобразования текста в речь. Текст запроса в этом руководстве оформлен по стандарту разметки [SSML (Speech Synthesis Markup Language)](speech-synthesis-markup.md), который позволяет выбрать голос и язык для ответа.
 
-В этом кратком руководстве требуется [учетной записи Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом служб речи. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](get-started.md), чтобы получить ключ подписки.
+Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом служб "Речь". Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](get-started.md), чтобы получить ключ подписки.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
@@ -53,9 +52,9 @@ const xmlbuilder = require('xmlbuilder');
 
 ## <a name="get-an-access-token"></a>Получение маркера доступа
 
-REST API преобразования текста в речь требует предоставить маркер доступа для аутентификации. Чтобы получить маркер доступа, нужно выполнить обмен. Эта функция меняет местами ключ подписки служб речи для маркера доступа с помощью `issueToken` конечной точки.
+REST API преобразования текста в речь требует предоставить маркер доступа для аутентификации. Чтобы получить маркер доступа, нужно выполнить обмен. Эта функция меняет ключ подписки служб распознавания речи на маркер доступа через конечную точку `issueToken`.
 
-В этом примере предполагается, что подписку служб речи находится в западной части США. Если вы используете другой регион, измените значение `uri`. См. [полный список регионов](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#rest-apis).
+В этом примере предполагается, что подписка служб "Речь" размещена в регионе "Западная часть США". Если вы используете другой регион, измените значение `uri`. См. [полный список регионов](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#rest-apis).
 
 Скопируйте в проект следующий код:
 
@@ -80,7 +79,7 @@ function getAccessToken(subscriptionKey) {
 
 ## <a name="make-a-request-and-save-the-response"></a>Выполнение запроса и сохранение ответа
 
-Здесь вы создадите запрос к API преобразования текста в речь и сохраните ответ службы "Речь". В этом примере предполагается, что вы используете конечную точку в регионе "Западная часть США". Если ресурс зарегистрирован в другом регионе, обновите значение `uri`. Дополнительные сведения см. в разделе [области служб речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#text-to-speech).
+Здесь вы создадите запрос к API преобразования текста в речь и сохраните ответ службы "Речь". В этом примере предполагается, что вы используете конечную точку в регионе "Западная часть США". Если ресурс зарегистрирован в другом регионе, обновите значение `uri`. Подробные сведения см. в [списке регионов служб "Речь"](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#text-to-speech).
 
 Теперь следует добавить в запрос обязательные заголовки. Обязательно сохраните в `User-Agent` имя ресурса (размещенного на портале Azure), а в `X-Microsoft-OutputFormat` укажите нужный аудиовыход. См. [полный список форматов аудиовыхода](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis).
 
@@ -136,9 +135,9 @@ function textToSpeech(accessToken, text) {
 
 ## <a name="put-it-all-together"></a>Сборка
 
-Осталось совсем немного. Последним шагом является создание асинхронной функции. Эта функция будет считывать ключ подписки из переменной среды, запрашивать текста, получить маркер, дождитесь запроса для завершения, а затем преобразовать текст в речь и сохранить звукового файла .wav.
+Осталось совсем немного. Последним шагом является создание асинхронной функции. Эта функция считает ключ подписки из переменной среды, отобразит запрос на ввод текста, получит маркер, дождется завершения запроса, преобразует текст в речь и сохранит аудио в виде файла WAV.
 
-Если вы еще не работали с переменными среды или использовать для тестирования с помощью вашей подписки ключа жестко задано в качестве строки, замените `process.env.SPEECH_SERVICE_KEY` с ключ подписки в виде строки.
+Если вы не знакомы с переменными среды или предпочитаете выполнять проверку с помощью ключа подписки, жестко заданного в качестве строки, замените `process.env.SPEECH_SERVICE_KEY` на ключ подписки в качестве строки.
 
 ```javascript
 // Use async and await to get the token before attempting
@@ -180,7 +179,7 @@ node tts.js
 
 Удалите из исходного кода примера приложения все конфиденциальные сведения, например ключи подписки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Примеры для Node.js на сайте GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/Samples-Http/NodeJS)

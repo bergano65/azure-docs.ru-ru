@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: tutorial
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: b300c40b4a9c832a0df87f7cfc6e6a9558d766f6
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 36d85e11133e7197212ae1b37609628689b68a13
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448229"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657943"
 ---
 # <a name="tutorial-create-a-translation-app-with-wpf"></a>Руководство по Создание приложения для перевода текста с помощью WPF
 
@@ -60,9 +60,9 @@ ms.locfileid: "67448229"
 Прежде всего, настройте проект в Visual Studio.
 
 1. Откройте Visual Studio. Затем выберите **Файл > Новый > Проект**.
-2. На панели слева выберите **Visual C#** . Затем выберите на центральной панели **Приложение WPF (.NET Framework)** .
+2. На панели слева выберите **Visual C#**. Затем выберите на центральной панели **Приложение WPF (.NET Framework)**.
    ![Создание приложения WPF в Visual Studio](media/create-wpf-project-visual-studio.png)
-3. Укажите имя проекта, платформу **.NET Framework 4.5.2 или более поздней версии**, а затем нажмите кнопку **OK**.
+3. Присвойте проекту имя `MSTranslatorTextDemo`, укажите платформу **.NET Framework 4.5.2 или более поздней версии**, а затем нажмите кнопку **OK**.
 4. Вы создали проект. Обратите внимание на две открытые вкладки: `MainWindow.xaml` и `MainWindow.xaml.cs`. В рамках этого руководства мы будем добавлять код в эти два файла. Первый файл предназначен для пользовательского интерфейса приложения, а второй — для вызовов Перевода текстов и Проверки орфографии Bing.
    ![Проверка среды](media/blank-wpf-project.png)
 
@@ -82,6 +82,7 @@ ms.locfileid: "67448229"
    * [System.Runtime.Serialization](https://docs.microsoft.com/dotnet/api/system.runtime.serialization)
    * [System.Web](https://docs.microsoft.com/dotnet/api/system.web);
    * [System.Web.Extensions](https://docs.microsoft.com/dotnet/api/system.web).
+   * [System.Windows](https://docs.microsoft.com/dotnet/api/system.windows)
 3. После добавления этих ссылок в проект вы можете нажать кнопку **ОК**, чтобы закрыть **диспетчер ссылок**.
 
 > [!NOTE]
@@ -197,7 +198,7 @@ ms.locfileid: "67448229"
        // authentication options, see: https://docs.microsoft.com/azure/cognitive-services/authentication.
        const string COGNITIVE_SERVICES_KEY = "YOUR_COG_SERVICES_KEY";
        // Endpoints for Translator Text and Bing Spell Check
-       public static readonly string TEXT_TRANSLATION_API_ENDPOINT = "https://api.cognitive.microsofttranslator.com/{0}?api- version=3.0";
+       public static readonly string TEXT_TRANSLATION_API_ENDPOINT = "https://api.cognitive.microsofttranslator.com/{0}?api-version=3.0";
        const string BING_SPELL_CHECK_API_ENDPOINT = "https://westus.api.cognitive.microsoft.com/bing/v7.0/spellcheck/";
        // An array of language codes
        private string[] languageCodes;
@@ -211,7 +212,7 @@ ms.locfileid: "67448229"
        {
            Exception e = (Exception)args.ExceptionObject;
            MessageBox.Show("Caught " + e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-           System.Windows.app.Current.Shutdown();
+           System.Windows.Application.Current.Shutdown();
        }
        // MainWindow constructor
        public MainWindow()
@@ -224,7 +225,7 @@ ms.locfileid: "67448229"
                MessageBox.Show("One or more invalid API subscription keys.\n\n" +
                    "Put your keys in the *_API_SUBSCRIPTION_KEY variables in MainWindow.xaml.cs.",
                    "Invalid Subscription Key(s)", MessageBoxButton.OK, MessageBoxImage.Error);
-               System.Windows.app.Current.Shutdown();
+               System.Windows.Application.Current.Shutdown();
            }
            else
            {

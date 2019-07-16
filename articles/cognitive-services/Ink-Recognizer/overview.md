@@ -1,21 +1,21 @@
 ---
 title: Что такое Распознаватель рукописного текста? - API Распознавателя рукописного текста
-titlesuffix: Azure Cognitive Services
-description: Интегрируйте Распознаватель рукописного текста в приложения, веб-сайты, инструменты и другие решения, чтобы обеспечить...
+titleSuffix: Azure Cognitive Services
+description: Интегрируйте Распознаватель рукописного текста в приложения, веб-сайты, инструменты и другие решения, чтобы обеспечить распознавание рукописного ввода и его использование в качестве входных данных.
 services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: ink-recognizer
-ms.topic: tutorial
+ms.topic: overview
 ms.date: 05/02/2019
 ms.author: erhopf
-ms.openlocfilehash: 0ed1a72a5dc61458200b72c768ad722656b820d8
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 95121523c510e72894086740ad340bdfd33f3c32
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "65025608"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67721396"
 ---
 # <a name="what-is-the-ink-recognizer-api"></a>Что такое API Распознавателя рукописного текста?
 

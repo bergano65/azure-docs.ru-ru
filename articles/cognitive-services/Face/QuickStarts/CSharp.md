@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
-ms.date: 03/27/2019
+ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: 40c9fac27f45699d4c56e57480dcfde1b0ffb64d
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.openlocfilehash: 349ae3450b5817b5cfe9c95c41d159e3daca7a39
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58629919"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603392"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-c"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API распознавания лиц и C#
 
@@ -77,7 +77,7 @@ namespace DetectFace
 
 ### <a name="receive-image-input"></a>Получение входного изображения
 
-Добавьте следующий код в метод **Main** класса **Program**. В этом коде запрограммировано отображение в консоли приглашения, запрашивающего пользователя ввести URL-адрес изображения. Затем код вызывает другой метод, **MakeAnalysisRequest**, для обработки изображения в этом расположении.
+Добавьте следующий код в метод **Main** класса **Program**. В этом коде запрограммировано отображение в консоли запроса на ввод URL-адреса изображения пользователем. Затем код вызывает другой метод, **MakeAnalysisRequest**, для обработки изображения в этом расположении.
 
 ```csharp
         static void Main(string[] args)
@@ -351,4 +351,4 @@ namespace DetectFace
 В этом кратком руководстве вы создали простое консольное приложение .NET, которое использует вызовы REST с API распознавания лиц Azure для определения лиц на изображении и возврата их атрибутов. Затем ознакомьтесь со справочной документацией по API распознавания лиц, чтобы узнать больше о поддерживаемых сценариях.
 
 > [!div class="nextstepaction"]
-> [API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
+> [API Распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

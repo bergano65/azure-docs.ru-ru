@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: quickstart
-ms.date: 03/20/2019
+ms.date: 07/03/2019
 ms.author: sajagtap
-ms.openlocfilehash: 9cc18ce1fde5de354e3da5e384c08ada1927d097
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.openlocfilehash: d9a28dcd4af68cf9c00eb3d338c4bd83c8d89ecc
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58757229"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67604120"
 ---
 # <a name="quickstart-analyze-images-for-objectionable-content-in-c"></a>Краткое руководство. Анализ изображений на наличие нежелательного содержимого с помощью C#
 
-В этой статье содержатся сведения и примеры кода, которые помогут вам приступить к работе с [пакетом SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/). Вы узнаете, как проверять на наличие непристойного содержимого или содержимого для взрослых, извлекаемого текста или человеческих лиц с целью модерации потенциально нежелательного содержимого.
+В этой статье содержатся сведения и примеры кода, которые помогут вам приступить к работе с [пакетом SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/). Вы узнаете, как проверять наличие непристойного содержимого или содержимого для взрослых, извлекаемого текста или человеческих лиц с целью модерации потенциально нежелательного содержимого.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 
@@ -60,7 +60,7 @@ ms.locfileid: "58757229"
 
 ### <a name="set-up-input-and-output-targets"></a>Настройка целевых файлов ввода-вывода
 
-Добавьте следующие статические поля в класс **Program** в файле _Program.cs_. Это указывает файлы для входного содержимого изображения и выходного содержимого JSON.
+Добавьте следующие статические поля в класс **Program** в файле _Program.cs_. В этих полях указываются файлы для входного содержимого изображения и выходного содержимого JSON.
 
 [!code-csharp[](~/cognitive-services-content-moderator-samples/documentation-samples/csharp/image-moderation-quickstart-dotnet.cs?range=49-53)]
 
@@ -86,13 +86,13 @@ https://moderatorsampleimages.blob.core.windows.net/samples/sample5.png
 
 ### <a name="load-the-input-images"></a>Загрузка входных изображений
 
-Добавьте следующий код в метод **Main** в классе **Program**. Это настраивает программу для получения данных оценки для каждого URL-адреса изображения во входном файле. Затем он записывает эти данные в один выходной файл.
+Добавьте следующий код в метод **Main** в классе **Program**. Этот код настраивает программу для получения данных оценки для каждого URL-адреса изображения во входном файле. Затем он записывает эти данные в один выходной файл.
 
 [!code-csharp[](~/cognitive-services-content-moderator-samples/documentation-samples/csharp/image-moderation-quickstart-dotnet.cs?range=17-46)]
 
 ## <a name="run-the-program"></a>Запуск программы
 
-Программа будет записывать данные строки JSON в файл _ModerationOutput.json_. Примеры изображений, используемые в этом кратком руководстве, предоставляют следующие выходные данные. Обратите внимание, что для каждого изображения предусмотрены отдельные разделы `ImageModeration`, `FaceDetection` и `TextDetection`, которые соответствуют объектам, возвращаемым тремя вызовами API метода **EvaluateImage**.
+Программа будет записывать данные строки JSON в файл _ModerationOutput.json_. Примеры изображений, используемые в этом кратком руководстве, предоставляют следующие выходные данные. Для каждого изображения предусмотрены отдельные разделы `ImageModeration`, `FaceDetection` и `TextDetection`, которые соответствуют объектам, возвращаемым тремя вызовами API метода **EvaluateImage**.
 
 ```json
 [{

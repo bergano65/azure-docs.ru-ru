@@ -2,18 +2,18 @@
 title: Руководство по работе с Kubernetes в Azure. Создание реестра контейнеров
 description: С помощью этого руководства Azure Kubernetes Service (AKS) вы создадите экземпляр Реестра контейнеров Azure и отправите образ контейнера примера приложения.
 services: container-service
-author: tylermsft
+author: mlearned
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 12/19/2018
-ms.author: twhitney
+ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 1bd41dc464c251a2e7dab3087f3feffb15db785f
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 5089326af1d7f6e057667cd916f35de92bf517ef
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66304409"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67614243"
 ---
 # <a name="tutorial-deploy-and-use-azure-container-registry"></a>Руководство по Развертывание реестра контейнеров Azure и его использование
 
@@ -29,7 +29,7 @@ ms.locfileid: "66304409"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В [предыдущей части руководства][aks-tutorial-prepare-app] мы создали образ контейнера для простого приложения Azure для голосования. Если вы еще не создали образ приложения Azure для голосования, выполните инструкции из статьи [Подготовка приложения для Службы контейнеров Azure (AKS)][aks-tutorial-prepare-app].
+В [предыдущей части руководства][aks-tutorial-prepare-app] мы создали образ контейнера для простого приложения Azure для голосования. Если вы еще не создали образ приложения Azure для голосования, выполните инструкции из статьи [Create container images to be used with Azure Container Service][aks-tutorial-prepare-app] (Создание образов контейнеров с помощью службы контейнеров Azure).
 
 Для выполнения задач из этого руководства требуется Azure CLI 2.0.53 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
@@ -153,7 +153,7 @@ v1
 Перейдите к следующему руководству, чтобы узнать, как развертывать кластер Kubernetes в Azure.
 
 > [!div class="nextstepaction"]
-> [Развертывание кластера Kubernetes][aks-tutorial-deploy-cluster]
+> [Развертывание кластера Kubernetes в службе контейнеров Azure][aks-tutorial-deploy-cluster]
 
 <!-- LINKS - external -->
 [docker-images]: https://docs.docker.com/engine/reference/commandline/images/
