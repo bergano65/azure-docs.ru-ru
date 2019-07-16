@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: heavy
 ms.topic: tutorial
-ms.date: 05/24/2019
+ms.date: 07/03/2019
 ms.author: alkohli
-ms.openlocfilehash: f2f6b544b56977b3f1bfb6a4fb46a9f1e3bcc294
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.openlocfilehash: 3e6bfe4a93ab8c97bcffb84bda08977f8d811fa8
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66427941"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67592371"
 ---
-# <a name="tutorial-cable-and-connect-to-your-azure-data-box-heavy-preview"></a>Руководство по присоединению кабелей и подключению к устройству Azure Data Box Heavy (предварительная версия)
+# <a name="tutorial-cable-and-connect-to-your-azure-data-box-heavy"></a>Руководство по Присоединение кабелей и подключение к Azure Data Box Heavy
 
 
 В этом руководстве описывается, как присоединить кабели к устройству Azure Data Box Heavy, подключить и включить его.
@@ -79,7 +79,7 @@ ms.locfileid: "66427941"
 Выполните следующие действия с одним из узлов устройства, чтобы подключить его к сети.
 
 1. С помощью сетевого кабеля RJ-45 CAT 6 (синий кабель на фото) подсоедините главный компьютер к порту управления со скоростью 1 Гбит/с.
-2. С помощью медного твинаксиального кабеля QSFP+ (черный кабель на фото) подсоедините как минимум один сетевой интерфейс со скоростью 40 Гбит/с (предпочтительнее, чем 1 Гбит/с) для передачи данных. При использовании коммутатора на 10 Гбит/с подключите сетевой интерфейс со скоростью 40 Гбит/с для передачи данных с помощью твинаксиального медного кабеля SFP+ с адаптером QSFP+ на SFP+ (адаптер QSA).
+2. Для подключения по крайней мере одного сетевого интерфейса на 40 Гбит/с (предпочтительнее, чем на 1 Гбит/с) для передачи данных используйте кабель QSFP+ (волоконный или медный). При использовании коммутатора на 10 Гбит/с подключите сетевой интерфейс со скоростью 40 Гбит/с для передачи данных с помощью кабеля SFP+ с адаптером QSFP+ на SFP+ (адаптер QSA).
 
     ![Порты устройства Data Box Heavy с подсоединенными кабелями](media/data-box-heavy-deploy-set-up/data-box-heavy-ports-cabled.png)
 

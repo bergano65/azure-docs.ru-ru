@@ -280,8 +280,10 @@
               href: platform/custom-fields.md
         - name: Настройка приложений
           items:
-            - name: Приложения Azure
+            - name: 'Приложения, размещенные в Azure'
               items:
+                - name: Виртуальная машина Azure и масштабируемый набор виртуальных машин Azure
+                  href: app/azure-vm-vmss-apps.md
                 - name: Служба приложений Azure
                   href: app/azure-web-apps.md
                 - name: Облачные службы Azure
@@ -709,8 +711,8 @@
               href: platform/metrics-getting-started.md
             - name: Расширенные возможности обозревателя метрик
               href: platform/metrics-charts.md
-            - name: Примеры диаграмм метрик
-              href: platform/metric-chart-samples.md
+            - name: Метрики на основе журналов
+              href: platform/app-insights-metrics.md
             - name: Устранение неполадок с диаграммами метрик
               href: platform/metrics-troubleshoot.md
         - name: Журналы

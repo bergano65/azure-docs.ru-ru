@@ -4,26 +4,25 @@ titleSuffix: Azure Dev Spaces
 author: zr-msft
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
-ms.subservice: azds-kubernetes
 ms.author: zarhoads
-ms.date: 03/22/2019
+ms.date: 07/08/2019
 ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-manager: jeconnoc
-ms.openlocfilehash: bab7b4daf8b03115c73b6fbaefe352cecc761b6f
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+manager: gwallace
+ms.openlocfilehash: cc41e268678872910113c8e198bdaaac34232458
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67503007"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706320"
 ---
 # <a name="quickstart-develop-with-net-core-on-kubernetes-using-azure-dev-spaces-visual-studio-code"></a>Краткое руководство. Разработка с использованием .NET Core в Kubernetes и Azure Dev Spaces (Visual Studio Code)
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 - Настройка Azure Dev Spaces с помощью управляемого кластера Kubernetes в Azure.
-- Итеративная разработка кода в контейнерах с помощью Visual Studio Code и командной строки.
+- Итеративная разработка кода в контейнерах с помощью Visual Studio Code.
 - Отладка кода в среде разработки с помощью Visual Studio Code.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -68,95 +67,27 @@ Managed Kubernetes cluster 'MyAKS' in resource group 'MyResourceGroup' is ready 
 
 В этой статье описано, как использовать [пример приложения Azure Dev Spaces](https://github.com/Azure/dev-spaces), чтобы продемонстрировать применение Azure Dev Spaces.
 
-Клонируйте приложение из GitHub и перейдите в каталог *dev-spaces/samples/dotnetcore/getting-started/webfrontend*:
+Клонируйте приложение из GitHub.
 
 ```cmd
 git clone https://github.com/Azure/dev-spaces
-cd dev-spaces/samples/dotnetcore/getting-started/webfrontend
 ```
 
-## <a name="prepare-the-application"></a>Подготовка приложения
-
-Создайте ресурсы диаграмм Docker и Helm для выполнения приложения в Kubernetes с помощью команды `azds prep`:
-
-```cmd
-azds prep --public
-```
-
-Вы должны выполнить команду `prep` в каталоге *dev-spaces/samples/dotnetcore/getting-started/webfrontend*, чтобы правильно создать ресурсы диаграмм Docker и Helm.
-
-## <a name="build-and-run-code-in-kubernetes"></a>Сборка и запуск кода в Kubernetes
-
-Создайте код в AKS с помощью команды `azds up` и выполните его:
-
-```cmd
-$ azds up
-Synchronizing files...4s
-Using dev space 'default' with target 'MyAKS'
-Installing Helm chart...2s
-Waiting for container image build...1m 43s
-Building container image...
-Step 1/12 : FROM microsoft/dotnet:2.2-sdk
-Step 2/12 : ARG BUILD_CONFIGURATION=Debug
-Step 3/12 : ENV ASPNETCORE_ENVIRONMENT=Development
-Step 4/12 : ENV DOTNET_USE_POLLING_FILE_WATCHER=true
-Step 5/12 : EXPOSE 80
-Step 6/12 : WORKDIR /src
-Step 7/12 : COPY ["webfrontend.csproj", "./"]
-Step 8/12 : RUN dotnet restore "webfrontend.csproj"
-Step 9/12 : COPY . .
-Step 10/12 : RUN dotnet build --no-restore -c $BUILD_CONFIGURATION
-Step 11/12 : RUN echo "exec dotnet run --no-build --no-launch-profile -c $BUILD_CONFIGURATION -- \"\$@\"" > /entrypoint.sh
-Step 12/12 : ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
-Built container image in 3m 44s
-Waiting for container...13s
-Service 'webfrontend' port 'http' is available at http://webfrontend.1234567890abcdef1234.eus.azds.io/
-Service 'webfrontend' port 80 (http) is available at http://localhost:54256
-...
-```
-
-Вы можете увидеть выполнение службы, открыв общедоступный URL-адрес, который отображается в выходных данных команды `azds up`. В этом примере общедоступный URL-адрес — *http://webfrontend.1234567890abcdef1234.eus.azds.io/* .
-
-Если остановить команду `azds up` с помощью сочетания клавиш *CTRL+C*, служба продолжит выполнятся в AKS, а общедоступный URL-адрес останется доступным.
-
-## <a name="update-code"></a>Обновление кода
-
-Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните команду `azds up`. Например:
-
-1. Если `azds up` по-прежнему выполняется, нажмите клавиши *CTRL+C*.
-1. Обновите [строку 20 в `Controllers/HomeController.cs`](https://github.com/Azure/dev-spaces/blob/master/samples/dotnetcore/getting-started/webfrontend/Controllers/HomeController.cs#L20):
-    
-    ```csharp
-    ViewData["Message"] = "Your application description page in Azure.";
-    ```
-
-1. Сохраните изменения.
-1. Повторно выполните команду `azds up`:
-
-    ```cmd
-    $ azds up
-    Using dev space 'default' with target 'MyAKS'
-    Synchronizing files...1s
-    Installing Helm chart...3s
-    Waiting for container image build...
-    ...    
-    ```
-
-1. Перейдите к запущенной службе и щелкните *О программе*.
-1. Просмотрите внесенные изменения.
-1. Чтобы остановить команду `azds up`, нажмите клавиши *CTRL+C*.
-
-## <a name="enable-visual-studio-code-to-debug-in-kubernetes"></a>Включение Visual Studio Code для отладки в Kubernetes
+## <a name="prepare-the-sample-application-in-visual-studio-code"></a>Подготовка примера приложения в Visual Studio Code
 
 Откройте Visual Studio Code, щелкните *Файл*, *Открыть...* , а затем перейдите в каталог *dev-spaces/samples/dotnetcore/getting-started/webfrontend* и щелкните *Открыть*.
 
-Теперь у вас есть проект *webfrontend*, открытый в Visual Studio Code. Это та же служба, которая запускается с помощью команды `azds up`. Для отладки этой службы в AKS используйте Visual Studio Code, а не `azds up`. При этом нужно подготовить этот проект, чтобы использовать Visual Studio Code для взаимодействия с вашим рабочим пространством.
+Теперь проект *webfrontend* открыт в Visual Studio Code. Для запуска приложения в области разработки сгенерируйте активные диаграммы Docker и Helm, используя расширение Azure Dev Spaces в палитре команд.
 
 Чтобы открыть палитру команд в Visual Studio Code, щелкните *Представление*, а затем — *Палитра команд*. Начните вводить `Azure Dev Spaces` и щелкните `Azure Dev Spaces: Prepare configuration files for Azure Dev Spaces`.
 
-![](./media/common/command-palette.png)
+![Подготовка файлов конфигурации для Azure Dev Spaces](./media/common/command-palette.png)
 
-Эта команда подготавливает проект для выполнения в Azure Dev Spaces напрямую из Visual Studio Code. Она также создает каталог *.vscode* с конфигурацией отладки в корне проекта.
+При появлении в Visual Studio Code запроса на настройку общедоступной конечной точки выберите `Yes`, чтобы включить общедоступную конечную точку.
+
+![Выбор общедоступной конечной точки](media/common/select-public-endpoint.png)
+
+Эта команда подготавливает проект для запуска в Azure Dev Spaces, создавая диаграмму Helm и Dockerfile. Она также создает каталог *.vscode* с конфигурацией отладки в корне проекта.
 
 ## <a name="build-and-run-code-in-kubernetes-from-visual-studio"></a>Сборка и запуск кода в Kubernetes из Visual Studio
 
@@ -169,21 +100,42 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 > [!Note]
 > Если вы не видите никаких команд Azure Dev Spaces в *палитре команд*, убедитесь, что вы установили расширение [Visual Studio Code для Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds). Кроме того, убедитесь, что вы открыли каталог *dev-spaces/samples/dotnetcore/getting-started/webfrontend* в Visual Studio Code.
 
+Вы увидите, что служба запущена, перейдя по общедоступному URL-адресу.
+
+Щелкните *Отладка*, а затем выберите *Остановить отладку*, чтобы остановить отладчик.
+
+## <a name="update-code"></a>Обновление кода
+
+Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните команду *.NET Core Launch (AZDS)* (Запуск .NET Core (AZDS)). Например:
+
+1. Если ваше приложение по-прежнему работает, нажмите кнопку *Debug* (Отладка), а затем — *Stop Debugging* (Остановить отладку), чтобы остановить ее.
+1. Измените [строку 22 в `Controllers/HomeController.cs`](https://github.com/Azure/dev-spaces/blob/master/samples/dotnetcore/getting-started/webfrontend/Controllers/HomeController.cs#L22) на такую:
+    
+    ```csharp
+    ViewData["Message"] = "Your application description page in Azure.";
+    ```
+
+1. Сохраните изменения.
+1. Повторно выполните команду *.NET Core Launch (AZDS)* (Запуск .NET Core (AZDS)).
+1. Перейдите к запущенной службе и щелкните *О программе*.
+1. Просмотрите внесенные изменения.
+1. Нажмите кнопку *Debug* (Отладка), а затем — *Stop Debugging* (Остановить отладку), чтобы остановить приложение.
+
 ## <a name="setting-and-using-breakpoints-for-debugging"></a>Настройка и использование точек останова для отладки
 
 Запустите службу в режиме отладки с помощью команды *.NET Core Launch (AZDS)* (Запуск .NET Core (AZDS)).
 
-Вернитесь в представление *Explorer*, щелкнув *Представление*, а затем — *Explorer*. Откройте `Controllers/HomeController.cs` и щелкните строку 20, чтобы расположить в ней курсор. Чтобы задать точку останова, нажмите клавишу *F9* или щелкните *Отладка* и *Переключить точку останова*.
+Вернитесь в представление *Explorer*, щелкнув *Представление*, а затем — *Explorer*. Откройте `Controllers/HomeController.cs` и щелкните строку 22, чтобы расположить в ней курсор. Чтобы задать точку останова, нажмите клавишу *F9* или щелкните *Отладка* и *Переключить точку останова*.
 
 Откройте службу в браузере. Вы увидите, что сообщение не отображается. Вернитесь в Visual Studio Code и обратите внимание, что строка 20 выделена. Заданная вами точка останова приостановила выполнение службы на строке 20. Чтобы возобновить работу службы, нажмите клавишу *F5* или щелкните *Отладка*, а затем *Продолжить*. Вернитесь в браузер. Вы увидите, что сообщение теперь отображается.
 
 Во время выполнения службы в Kubernetes с присоединенным отладчиком у вас есть полный доступ к отладочным сведениям, включая стек вызовов, локальные переменные и данные об исключениях.
 
-Удалите точку останова, поместив курсор в строке 20 в `Controllers/HomeController.cs` и нажав клавишу *F9*.
+Удалите точку останова, поместив курсор в строке 22 в `Controllers/HomeController.cs` и нажав клавишу *F9*.
 
 ## <a name="update-code-from-visual-studio-code"></a>Обновление кода из Visual Studio Code
 
-Пока служба выполняется в режиме отладки, обновите строку 20 в `Controllers/HomeController.cs`. Например:
+Пока служба выполняется в режиме отладки, обновите строку 22 в `Controllers/HomeController.cs`. Например:
 
 ```csharp
 ViewData["Message"] = "Your application description page in Azure while debugging!";

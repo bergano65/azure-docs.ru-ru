@@ -10,18 +10,21 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: 0c8fb4eb50b5824126d2be2160dd341ed60955af
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 1f80f9b0f044fe8b32a555b0509e14cd2172dd0a
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448194"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704597"
 ---
 # <a name="quickstart-look-up-words-with-bilingual-dictionary-using-c"></a>Краткое руководство. Поиск слов в двуязычном словаре с помощью C#
 
 Из этого краткого руководства вы узнаете, как с помощью API перевода текстов и .NET Core найти варианты перевода определенного термина и примеры их использования.
 
 Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом API перевода текстов. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
+
+>[!TIP]
+> Полный исходный код для этого примера можно найти на сайте [GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-C-Sharp).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -146,7 +149,7 @@ static string PrettyPrint(string s)
 }
 ```
 
-Если вы используете подписку на несколько служб Cognitive Services, необходимо также включить `Ocp-Apim-Subscription-Region` в параметрах запроса. [Дополнительные сведения об аутентификации с использованием подписки на несколько служб](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
+Если вы используете подписку на несколько служб Cognitive Services, необходимо также включить `Ocp-Apim-Subscription-Region` в параметрах запроса. [Дополнительные сведения об аутентификации с использованием подписки на несколько служб](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication).
 
 ## <a name="put-it-all-together"></a>Сборка
 
@@ -199,10 +202,10 @@ dotnet run
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с примерами кода из этого и других кратких руководств, включая примеры для транслитерации и определения языка, а также с другими примерами проектов для API перевода текстов на сайте GitHub.
+Просмотрите справочник по API, чтобы составить представление обо всех возможностях API "Перевод текстов".
 
 > [!div class="nextstepaction"]
-> [Ознакомиться с примерами на C# на сайте GitHub](https://aka.ms/TranslatorGitHub?type=&language=c%23)
+> [Справочник по API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference)
 
 ## <a name="see-also"></a>См. также
 

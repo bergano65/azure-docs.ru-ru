@@ -1,6 +1,7 @@
 ---
-title: Краткое руководство. Обнаруживать аномалии в данных временных рядов с помощью REST API обнаружения аномалий и C# | Документация Майкрософт
-description: Используйте API обнаружения аномалий для обнаружения отклонений в ряду данных в пакетном режиме или при потоковой передаче данных.
+title: Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и C#
+titleSuffix: Azure Cognitive Services
+description: API Детектора аномалий используется для обнаружения отклонений в ряде данных как в пакетном режиме, так и при потоковой передаче.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -9,37 +10,37 @@ ms.subservice: anomaly-detector
 ms.topic: quickstart
 ms.date: 03/26/2019
 ms.author: aahi
-ms.openlocfilehash: 2a02b56c2fa0f99166cfde0f0089273ed2af4cb9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: 1b3ed38e7ce8738a0e92775915e894c6e0bbd52a
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67073212"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67721560"
 ---
-# <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-c"></a>Краткое руководство. Обнаруживать аномалии в данных временных рядов с помощью REST API обнаружения аномалий иC# 
+# <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-c"></a>Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и C# 
 
-Используйте в этом кратком руководстве, чтобы начать использовать API обнаружения аномалий два режима обнаружения для обнаружения аномалий в данных временных рядов. Это C# приложение отправляет два запроса API, содержащий данные формата JSON временных рядов и возвращает ответы.
+Используйте это краткое руководство, чтобы узнать, как начать использовать две модели API Детектора аномалий для обнаружения аномалий в данных временных рядов. Это приложение C# отправляет два запроса API, содержащие данные временных рядов в формате JSON, и получает ответы.
 
 | Запрос API                                        | Выходные данные приложения                                                                                                                         |
 |----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| Обнаруживать аномалии в пакетном режиме                        | Ответ JSON, содержащий состояние аномалий (и другие данные) для каждой точки данных в данных временных рядов и положения любые обнаруженные аномалии. |
-| Обнаружение аномалий состояние последней точки данных | Ответ JSON, содержащий состояние аномалий (и другие данные), наличие последней точки данных в данных временных рядов.                                                                                                                                         |
+| Обнаружение аномалий в пакетном режиме                        | Ответ в формате JSON содержит информацию о состоянии аномалий (и другие данные) для каждой точки в данных временного ряда, а также положения всех обнаруженных аномалий. |
+| Обнаружение состояний аномалии последней точки данных | В ответе JSON содержится состояние аномалии (и другие данные) для последней точки данных в данных временных рядов.                                                                                                                                         |
 
  Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- Любой выпуск [Visual Studio 2017 или более поздней версии](https://visualstudio.microsoft.com/downloads/),
+- Любой выпуск [Visual Studio 2017 или более поздней версии](https://visualstudio.microsoft.com/downloads/),
 
-- Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet. Установка Newtonsoft.Json в виде пакета NuGet в Visual Studio:
+- Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet. Чтобы установить Newtonsoft.Json в качестве пакета NuGet в Visual Studio, сделайте следующее.
     
     1. Щелкните правой кнопкой мыши имя проекта в **обозревателе решений**.
     2. Выберите **Manage NuGet Packages...** (Управление пакетами NuGet...).
     3. Найдите пакет *Newtonsoft.Json* и установите его.
 
-- Если вы используете Linux и Mac OS, это приложение может выполняться с помощью [Mono](https://www.mono-project.com/).
+- Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
 
-- Указывает JSON файла содержащего данных временных рядов. Данные для примера в этом кратком руководстве можно найти на [GitHub](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/request-data.json).
+- JSON-файл содержит точки данных временного ряда. Пример данных для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/request-data.json).
 
 [!INCLUDE [cognitive-services-anomaly-detector-data-requirements](../../../../includes/cognitive-services-anomaly-detector-data-requirements.md)]
 
@@ -47,7 +48,7 @@ ms.locfileid: "67073212"
 
 ## <a name="create-a-new-application"></a>Создание приложения
 
-1. В Visual Studio создайте новое решение консоли и добавьте следующие пакеты. 
+1. В Visual Studio создайте новое консольное решение и добавьте следующие пакеты. 
 
     ```csharp
     using System;
@@ -59,12 +60,12 @@ ms.locfileid: "67073212"
     using System.Threading.Tasks;
     ```
 
-2. Создайте переменные для ключ подписки и конечной точки. Ниже приведены идентификаторы URI, можно использовать для обнаружения аномалий. Они будут добавлены к конечной точке службы позднее для создания API URL-адреса запросов.
+2. Создайте переменные для ключа подписки и конечной точки. Далее приведены универсальные коды ресурса (URI), которые можно использовать для обнаружения аномалий. Для создания URL-адресов запроса API они будут добавлены в конечную точку службы позднее.
 
     |Метод обнаружения  |URI  |
     |---------|---------|
-    |Обнаружение пакета    | `/anomalydetector/v1.0/timeseries/entire/detect`        |
-    |Обнаружение на последние точки данных     | `/anomalydetector/v1.0/timeseries/last/detect`        |
+    |Пакетное обнаружение    | `/anomalydetector/v1.0/timeseries/entire/detect`        |
+    |Обнаружение в последней точке данных     | `/anomalydetector/v1.0/timeseries/last/detect`        |
     
     ```csharp
     // Replace the subscriptionKey string value with your valid subscription key.
@@ -80,11 +81,11 @@ ms.locfileid: "67073212"
 
 ## <a name="create-a-function-to-send-requests"></a>Создание функции для отправки запросов
 
-1. Создайте новую функцию async `Request` , принимающий переменные, созданные выше.
+1. Создайте новую асинхронную функцию с именем `Request`, принимающую переменные, созданные выше.
 
-2. Задать протокол безопасности и сведения заголовка с помощью клиента `HttpClient` объекта. Не забудьте добавить ключ подписки для `Ocp-Apim-Subscription-Key` заголовка. Затем создайте `StringContent` для запроса.
+2. Установите протокол безопасности клиента и информацию заголовка с помощью объекта `HttpClient`. Не забудьте добавить ключ подписки в заголовок `Ocp-Apim-Subscription-Key`. Затем создайте объект `StringContent` для запроса.
 
-3. Отправка запроса с `PostAsync()`, а затем возвращают ответ.
+3. Отправьте запрос с `PostAsync()`, а затем верните ответ.
 
 ```csharp
 static async Task<string> Request(string apiAddress, string endpoint, string subscriptionKey, string requestData){
@@ -100,15 +101,15 @@ static async Task<string> Request(string apiAddress, string endpoint, string sub
 }
 ```
 
-## <a name="detect-anomalies-as-a-batch"></a>Обнаруживать аномалии в пакетном режиме
+## <a name="detect-anomalies-as-a-batch"></a>Обнаружение аномалий в пакетном режиме
 
-1. Создайте новую функцию `detectAnomaliesBatch()`. Создать запрос и отправить его, вызвав `Request()` функцию с конечной точкой, ключ подписки, URL-адрес для обнаружения аномалий пакетной службы и данные временных рядов.
+1. Создайте новую функцию с именем `detectAnomaliesBatch()`. Создайте запрос и отправьте его, вызвав функцию `Request()` с указанием вашей конечной точки, ключа подписки, URL-адреса для пакетного обнаружения аномалий и данных временного ряда.
 
-2. Десериализовать объект JSON и вывести его на консоль.
+2. Десериализируйте объект JSON и выведите его в консоль.
 
-3. Если в ответе содержится `code` поле, печати, код ошибки и сообщение об ошибке. 
+3. Если ответ содержит поле `code`, выведите код ошибки и сообщение об ошибке. 
 
-4. В противном случае поиск позиции аномалии в наборе данных. Ответ `isAnomaly` поле содержит массив логических значений, каждое из которых указывает, является ли точка данных аномалии. Преобразовать это значение в массив строк, содержащий объект ответа `ToObject<bool[]>()` функции. Итерации в массиве и печать индекса любого `true` значения. Эти значения соответствуют индекс точки данных подозрительной активности, если любой объект найден.
+4. В противном случае найдите положения аномалий в наборе данных. Поле `isAnomaly` ответа содержит массив логических значений, каждое из которых указывает, является ли точка данных аномалией. Преобразуйте его в строковый массив с помощью функции `ToObject<bool[]>()` объекта ответа. Пройдите по массиву, а затем выведите перечень всех `true` значений. Эти значения соответствуют индексу аномальных точек данных, если они были найдены.
 
 ```csharp
 static void detectAnomaliesBatch(string requestData){
@@ -139,11 +140,11 @@ static void detectAnomaliesBatch(string requestData){
 }
 ```
 
-## <a name="detect-the-anomaly-status-of-the-latest-data-point"></a>Обнаружение аномалий состояние последней точки данных
+## <a name="detect-the-anomaly-status-of-the-latest-data-point"></a>Обнаружение состояний аномалии последней точки данных
 
-1. Создайте новую функцию `detectAnomaliesLatest()`. Создать запрос и отправить его, вызвав `Request()` функцию с конечной точкой, ключ подписки, URL-адрес для обнаружения аномалий последнюю точку и данные временных рядов.
+1. Создайте новую функцию с именем `detectAnomaliesLatest()`. Создайте запрос и отправьте его, вызвав функцию `Request()` с указанием конечной точки, ключа подписки, URL-адреса для обнаружения последней точки аномалии и данных временного ряда.
 
-2. Десериализовать объект JSON и вывести его на консоль.
+2. Десериализируйте объект JSON и выведите его в консоль.
 
 ```csharp
 static void detectAnomaliesLatest(string requestData){
@@ -159,11 +160,11 @@ static void detectAnomaliesLatest(string requestData){
 }
 ```
 
-## <a name="load-your-time-series-data-and-send-the-request"></a>Загрузить данные временных рядов и отправить запрос
+## <a name="load-your-time-series-data-and-send-the-request"></a>Загрузка данных временных рядов и отправка запроса
 
-1. В методе main приложения загрузить данные JSON временных рядов с `File.ReadAllText()`. 
+1. В методе main приложения загрузите данные временного ряда в формате JSON с помощью `File.ReadAllText()`. 
 
-2. Вызов функций обнаружения аномалий, созданной ранее. Используйте `System.Console.ReadKey()` для не закрывайте окно консоли после запуска приложения.
+2. Вызовите функции обнаружения аномалий, созданные ранее. Чтобы после выполнения приложения оставить консоль открытой, используйте `System.Console.ReadKey()`.
 
 ```csharp
 static void Main(string[] args){
@@ -179,11 +180,11 @@ static void Main(string[] args){
 
 ### <a name="example-response"></a>Пример ответа
 
-Успешный ответ возвращается в формате JSON. Щелкните ссылки ниже, чтобы просмотреть ответ JSON на сайте GitHub:
-* [Пример ответа на обнаружение](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/batch-response.json)
-* [Пример последнюю точку обнаружения ответа](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/latest-point-response.json)
+Успешный ответ возвращается в формате JSON. Перейдите по ссылками ниже, чтобы просмотреть ответ JSON на GitHub:
+* [Пример ответа при пакетном обнаружении](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/batch-response.json)
+* [Пример ответа при обнаружении последней точки](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/latest-point-response.json)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Справочник по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/AnomalyDetector/operations/post-timeseries-entire-detect)

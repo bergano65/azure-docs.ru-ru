@@ -8,12 +8,12 @@ ms.author: grhuynh
 ms.service: genomics
 ms.topic: quickstart
 ms.date: 01/11/2019
-ms.openlocfilehash: 4c8d488021ca12a704a5c0a06bb0c491588bcaed
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: b2d68f878aed5ce400214b6bdf6e1c0d713043bb
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54261695"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67670748"
 ---
 # <a name="quickstart-run-a-workflow-through-the-microsoft-genomics-service"></a>Краткое руководство. Запуск рабочего процесса в службе Microsoft Genomics
 
@@ -57,7 +57,7 @@ ms.locfileid: "54261695"
 
 ### <a name="install-python"></a>Установка Python
 
-Клиент Microsoft Genomics Python совместим с Python 2.7. 2.7.xx 12 или более поздней версии; 2.7.15 является последней версией на момент написания этой статьи; 2.7.14 является рекомендуемой версией. Файл установки можно скачать [здесь](https://www.python.org/downloads/). 
+Клиент Microsoft Genomics Python совместим с Python 2.7. 2\.7.xx 12 или более поздней версии; 2.7.15 является последней версией на момент написания этой статьи; 2.7.14 является рекомендуемой версией. Файл установки можно скачать [здесь](https://www.python.org/downloads/). 
 
 Примечание. Версия Python 3.x не совместима с версией Python 2.7.xx.  MSGen — это приложение Python 2.7. При выполнении MSGen убедитесь, что вы используете в своей среде Python версию Python 2.7.xx. При попытке использования MSGen с версией Python 3.x могут возникнуть ошибки.
 
@@ -152,7 +152,7 @@ msgen list -f “<full path where you saved the config file>”
 ![Конфигурация Genomics](./media/quickstart-run-genomics-workflow-portal/genomics-config.png "Genomics config")
 
 
-Если необходимо запустить GATK4, установите значение gatk4 или gatk4-promo для параметра `process_name`. Для дополнительных сведений о продвижении GATK4 см. [эту страницу](https://aka.ms/msgatk4).
+Если необходимо запустить GATK4, установите значение `gatk4` для параметра `process_name`.
 
 Служба Genomics записывает файлы VCF по умолчанию. Если необходимо получить выходные данные gVCF вместо выходных данных VCF (эквивалентные `-emitRefConfidence` в GATK 3.x и `emit-ref-confidence` в GATK 4.x), добавьте параметр `emit_ref_confidence` в ваш `config.txt` и установите для него `gvcf`, как показано на рисунке, приведенном выше.  Чтобы изменить выходные данные VCF, удалите их из файла `config.txt` или установите для параметра `emit_ref_confidence` значение `none`. 
 

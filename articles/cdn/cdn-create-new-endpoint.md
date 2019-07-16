@@ -7,7 +7,7 @@ author: mdgattuso
 manager: danielgi
 editor: ''
 ms.assetid: 4ca51224-5423-419b-98cf-89860ef516d2
-ms.service: cdn
+ms.service: azure-cdn
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,14 +15,14 @@ ms.topic: quickstart
 ms.date: 05/24/2018
 ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: b1e287ee949aedf084d4390fe672f0fe41899c34
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: 2a3325217c1ec854e4f6cef3facce5580fb06a57
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49091775"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67593991"
 ---
-# <a name="quickstart-create-an-azure-cdn-profile-and-endpoint"></a>Краткое руководство по созданию профиля и конечной точки Azure CDN
+# <a name="quickstart-create-an-azure-cdn-profile-and-endpoint"></a>Краткое руководство. Создание профиля и конечной точки Azure CDN
 С помощью этого краткого руководства вы включите сеть доставки содержимого (CDN) Azure, создав профиль и конечную точку CDN. Когда профиль и конечная точка будут созданы, можете приступить к доставке содержимого своим клиентам.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
@@ -53,7 +53,7 @@ ms.locfileid: "49091775"
 
     | Параметр | Значение |
     | ------- | ----- |
-    | **Имя** | В качестве имени узла конечной точки введите *my-endpoint-123*. Это имя должно быть глобально уникальным. Если оно уже используется, введите другое имя. Это имя будет использоваться для доступа к кэшированным ресурсам в домене _&lt;имя конечной точки&gt;_.azureedge.net.|
+    | **Имя** | В качестве имени узла конечной точки введите *my-endpoint-123*. Это имя должно быть глобально уникальным. Если оно уже используется, введите другое имя. Это имя будет использоваться для доступа к кэшированным ресурсам в домене _&lt;имя конечной точки&gt;_ .azureedge.net.|
     | **Тип источника** | Выберите **Хранилище**. | 
     | **Имя узла источника** | В качестве имени узла введите *mystorageacct123.blob.core.windows.net*. Это имя должно быть глобально уникальным. Если оно уже используется, введите другое имя. |
     | **Путь к источнику** | Не указывайте. |
@@ -88,6 +88,6 @@ ms.locfileid: "49091775"
 Дополнительные сведения о добавлении личного домена к конечной точке CDN см. в следующем руководстве:
 
 > [!div class="nextstepaction"]
-> [Руководство. Добавление личного домена к конечной точке CDN Azure](cdn-map-content-to-custom-domain.md)
+> [Руководство. Добавление личного домена к конечной точке Azure CDN](cdn-map-content-to-custom-domain.md)
 
 

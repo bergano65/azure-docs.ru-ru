@@ -1,19 +1,19 @@
 ---
-title: Сценарий Azure PowerShell — Azure Cosmos DB список и операции get для API таблиц
-description: Сценарий Azure PowerShell — Azure Cosmos DB список и операции get для API таблиц
+title: Скрипт Azure PowerShell — операции List и Get в Azure Cosmos DB для API таблиц
+description: Скрипт Azure PowerShell — операции List и Get в Azure Cosmos DB для API таблиц
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: samples
+ms.topic: sample
 ms.date: 05/18/2019
 ms.author: mjbrown
-ms.openlocfilehash: 320d2ff57275648657a15f843a2f32dcb6722bf9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.openlocfilehash: 28394d1a5cb09caca243ad9f3a584aa2e55f8fe9
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66247054"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603802"
 ---
-# <a name="list-and-get-tables-for-azure-cosmos-db---table-api"></a>Список и получить таблицы для Azure Cosmos DB. API таблицы
+# <a name="list-and-get-tables-for-azure-cosmos-db---table-api"></a>Операции List и Get для таблиц в Azure Cosmos DB — API таблиц
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 
@@ -43,7 +43,7 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 

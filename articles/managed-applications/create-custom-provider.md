@@ -7,20 +7,20 @@ ms.service: managed-applications
 ms.topic: tutorial
 ms.date: 05/01/2019
 ms.author: evanhi
-ms.openlocfilehash: e4196cf59537be5194ceb510a1b7b066c97de19a
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 41200139ef55fa1ae441192e2d81b5228cf29bad
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65410226"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67795318"
 ---
-# <a name="tutorial-create-custom-provider-and-deploy-custom-resources"></a>Руководство по созданию настраиваемого поставщика и развертыванию настраиваемых ресурсов
+# <a name="quickstart-create-custom-provider-and-deploy-custom-resources"></a>Краткое руководство. созданию настраиваемого поставщика и развертыванию настраиваемых ресурсов
 
-В этом руководстве вы создадите собственный поставщик ресурсов и развернете для него настраиваемые типы ресурсов. Дополнительные сведения о предварительной версии настраиваемых поставщиков Azure см. в [этой статье](custom-providers-overview.md).
+С помощью этого краткого руководства вы создадите собственного поставщика ресурсов и развернете для него настраиваемые типы ресурсов. Дополнительные сведения о предварительной версии настраиваемых поставщиков Azure см. в [этой статье](custom-providers-overview.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством требуется вызвать операции REST. Существуют [различные способы отправки запросов REST](/rest/api/azure/). Если у вас нет средства для операций REST, установите [ARMClient](https://github.com/projectkudu/ARMClient). Эта программа командной строки с открытым исходным кодом, которая упрощает вызов API Azure Resource Manager.
+Для работы с этим кратким руководством требуется вызвать операции REST. Существуют [различные способы отправки запросов REST](/rest/api/azure/). Если у вас нет средства для операций REST, установите [ARMClient](https://github.com/projectkudu/ARMClient). Эта программа командной строки с открытым исходным кодом, которая упрощает вызов API Azure Resource Manager.
 
 ## <a name="deploy-custom-provider"></a>Развертывание настраиваемого поставщика
 
@@ -122,7 +122,7 @@ armclient POST $pingURI
 
 ## <a name="create-resource-type"></a>Создание типа ресурсов
 
-Чтобы создать настраиваемый тип ресурса, можно развернуть ресурс в шаблоне. Этот подход показан в шаблоне, развернутом в этом руководстве. Вы также можете отправлять запрос PUT для типа ресурса.
+Чтобы создать настраиваемый тип ресурса, можно развернуть ресурс в шаблоне. Этот подход показан в шаблоне, развернутом в этом кратком руководстве. Вы также можете отправлять запрос PUT для типа ресурса.
 
 ```
 PUT https://management.azure.com/subscriptions/<sub-id>/resourceGroups/<rg-name>/providers/Microsoft.CustomProviders/resourceProviders/<provider-name>/users/<resource-name>?api-version=2018-09-01-preview

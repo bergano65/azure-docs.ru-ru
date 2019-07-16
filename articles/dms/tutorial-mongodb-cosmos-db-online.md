@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 05/29/2019
-ms.openlocfilehash: 0bd271dbf173885cbd5f7835c5dc6b672a3e6035
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.date: 07/04/2019
+ms.openlocfilehash: 17f1b36ba5d5b699cce621db3917ef92654047ff
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66298962"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67565583"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-online-using-dms"></a>Руководство по Перенос MongoDB в API Azure Cosmos DB для MongoDB по сети с помощью DMS
 
@@ -150,7 +150,14 @@ ms.locfileid: "66298962"
 
      * Для дампов JSON файлы в контейнере больших двоичных объектов должны размещаться в папках с именами содержащих баз данных. В каждой папке баз данных файлы данных должны быть помещены в подпапку с именем "data" и названы в формате *коллекция*.json. Файлы метаданных (если таковые имеются) должны быть помещены в подпапку с именем "metadata" и названы в том же формате: *коллекция*.json. Файлы метаданных должны быть в том же формате, что и файлы, созданные инструментом bsondump MongoDB.
 
-   Если разрешение DNS-имен невозможно, можно использовать IP-адрес.
+    > [!IMPORTANT]
+    > Не рекомендуется использовать самозаверяющий сертификат на сервере Mongo. Но если он все же применяется, подключитесь к серверу в **режиме строки подключения** и убедитесь, что в строке подключения используются двойные кавычки.
+    >
+    >```
+    >&sslVerifyCertificate=false
+    >```
+
+    Если разрешение DNS-имен невозможно, можно использовать IP-адрес.
 
    ![Указание сведений об источнике](media/tutorial-mongodb-to-cosmosdb-online/dms-specify-source1.png)
 
@@ -234,7 +241,7 @@ ms.locfileid: "66298962"
 
 ## <a name="post-migration-optimization"></a>Оптимизация после переноса
 
-Для управления данными, перенесенными из базы данных MongoDB в API Azure Cosmos DB для MongoDB, можно подключиться к Azure Cosmos DB. После переноса можно также выполнить другие действия, включая оптимизацию политики индексирования, обновление уровня согласованности по умолчанию и настройку глобального распределения для своей учетной записи Azure Cosmos DB. Дополнительные сведения см. в статье [Оптимизация после переноса](../cosmos-db/mongodb-post-migration.md).
+Для управления данными, перенесенными из базы данных MongoDB в API Azure Cosmos DB для MongoDB, можно подключиться к Azure Cosmos DB. После переноса можно также выполнить другие действия, включая оптимизацию политики индексирования, обновление уровня согласованности по умолчанию и настройку глобального распределения для своей учетной записи Azure Cosmos DB. См. подробнее об [оптимизации после переноса](../cosmos-db/mongodb-post-migration.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

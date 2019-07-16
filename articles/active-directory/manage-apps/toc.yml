@@ -59,9 +59,9 @@
           href: isv-create-sso-documentation.md
         - name: Планирование развертывания единого входа
           href: plan-sso-deployment.md
-    - name: Единый вход с помощью одного щелчка
+    - name: Единый вход одним щелчком
       items:
-        - name: Что собой представляет единый вход с помощью одного щелчка
+        - name: 'Единый вход одним щелчком: настройка'
           href: one-click-sso-tutorial.md
     - name: Подготовка пользователей и групп
       items:

@@ -1,19 +1,19 @@
 ---
-title: Сценарий Azure PowerShell — обновление учетной записи Azure Cosmos
-description: Пример сценария Azure PowerShell — обновление учетной записи Azure Cosmos с добавленных регионах
+title: Скрипт Azure PowerShell для обновления учетной записи Azure Cosmos
+description: Пример скрипта Azure PowerShell для обновления учетной записи Azure Cosmos с добавление регионов
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: samples
+ms.topic: sample
 ms.date: 05/06/2019
 ms.author: mjbrown
-ms.openlocfilehash: 4a695fd569459e6372465273675620cd40d7e6a7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.openlocfilehash: 8fad9b47b4f451f4b77f32038b26d6dc43809a60
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65078285"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67602266"
 ---
-# <a name="update-an-azure-cosmos-account-and-add-a-region-using-powershell"></a>Обновить учетную запись Azure Cosmos и добавить область с помощью PowerShell
+# <a name="update-an-azure-cosmos-account-and-add-a-region-using-powershell"></a>Обновление учетной записи Azure Cosmos и добавление региона с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 
@@ -38,14 +38,14 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 | Команда | Примечания |
 |---|---|
 |**Ресурсы Azure**| |
-| [Get-AzResource](https://docs.microsoft.com/powershell/module/az.resources/get-azresource) | Получает ресурс. |
-| [Set-AzResource](https://docs.microsoft.com/powershell/module/az.resources/set-azresource) | Обновляет ресурс. |
+| [Get-AzResource](https://docs.microsoft.com/powershell/module/az.resources/get-azresource) | Получение ресурса. |
+| [Set-AzResource](https://docs.microsoft.com/powershell/module/az.resources/set-azresource) | Обновление ресурса. |
 |**Группы ресурсов Azure**| |
 | [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 

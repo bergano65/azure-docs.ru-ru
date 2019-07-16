@@ -1,20 +1,20 @@
 ---
-title: Краткое руководство. Запрос данных в Azure Data Explorer
-description: В этом кратком руководстве вы узнаете, как запрашивать данные из обозревателя данных Azure и делиться ими.
+title: Краткое руководство. Запрос данных в пользовательском веб-интерфейсе Azure Data Explorer
+description: В этом кратком руководстве вы узнаете, как запрашивать данные из пользовательского веб-интерфейса Azure Data Explorer и предоставлять к ним общий доступ.
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: quickstart
-ms.date: 09/24/2018
-ms.openlocfilehash: 6b371cf9aeb55a92fc72357ad7dc6b2cbddcc058
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.date: 07/04/2019
+ms.openlocfilehash: 145e452a3a914e1026d6da11f2ce38e85fa724f0
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59050566"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67797190"
 ---
-# <a name="quickstart-query-data-in-azure-data-explorer"></a>Краткое руководство. Запрос данных в Azure Data Explorer
+# <a name="quickstart-query-data-in-azure-data-explorer-web-ui"></a>Краткое руководство. Запрос данных в пользовательском веб-интерфейсе Azure Data Explorer
 
 Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Обозреватель данных Azure предоставляет веб-приложение для выполнения запросов и предоставления общего доступа к ним. Приложение доступно на портале Azure и в качестве отдельного веб-приложения. В этой статье вы работаете в изолированной версии, которая позволяет подключиться к нескольким кластерам, а также совместно использовать прямые ссылки на запросы.
 
@@ -191,5 +191,4 @@ ms.locfileid: "59050566"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-> [!div class="nextstepaction"]
-> [Написание запросов для обозревателя данных Azure](write-queries.md)
+[Написание запросов для обозревателя данных Azure](write-queries.md)

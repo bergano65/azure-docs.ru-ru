@@ -102,6 +102,8 @@
           href: manage-database-permissions.md
         - name: Проверка работоспособности кластера
           href: check-cluster-health.md
+        - name: Выбор номера SKU виртуальной машины кластера
+          href: manage-cluster-choose-sku.md
         - name: Управление горизонтальным масштабированием кластера
           href: manage-cluster-horizontal-scaling.md
         - name: Управление вертикальным масштабированием кластера

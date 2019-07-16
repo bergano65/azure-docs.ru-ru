@@ -4,26 +4,25 @@ titleSuffix: Azure Dev Spaces
 author: zr-msft
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
-ms.subservice: azds-kubernetes
 ms.author: zarhoads
-ms.date: 03/22/2019
+ms.date: 07/08/2019
 ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров, микрослужб и Java в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Java, Helm, service mesh, service mesh routing, kubectl, k8s
-manager: jeconnoc
-ms.openlocfilehash: b3074fc280098d0aa55292c48a1562b8dfeb3cc0
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+manager: gwallace
+ms.openlocfilehash: b3e199f38f6f57cf10991f7e03757b8b603f74ad
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67503084"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706863"
 ---
 # <a name="quickstart-develop-with-java-on-kubernetes-using-azure-dev-spaces"></a>Краткое руководство. Разработка с помощью Java в Kubernetes с использованием Azure Dev Spaces
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 - Настройка Azure Dev Spaces с помощью управляемого кластера Kubernetes в Azure.
-- Итеративная разработка кода в контейнерах с помощью Visual Studio Code и командной строки.
+- Итеративная разработка кода в контейнерах с помощью Visual Studio Code.
 - Отладка кода в среде разработки с помощью Visual Studio Code.
 
 
@@ -70,96 +69,31 @@ Managed Kubernetes cluster 'MyAKS' in resource group 'MyResourceGroup' is ready 
 
 В этой статье описано, как использовать [пример приложения Azure Dev Spaces](https://github.com/Azure/dev-spaces), чтобы продемонстрировать применение Azure Dev Spaces.
 
-Клонируйте приложение из GitHub и перейдите в каталог *dev-spaces/samples/java/getting-started/webfrontend*:
+Клонируйте приложение из GitHub.
 
 ```cmd
 git clone https://github.com/Azure/dev-spaces
-cd dev-spaces/samples/java/getting-started/webfrontend
 ```
 
-## <a name="prepare-the-application"></a>Подготовка приложения
-
-Создайте ресурсы диаграмм Docker и Helm для выполнения приложения в Kubernetes с помощью команды `azds prep`:
-
-```cmd
-azds prep --public
-```
-
-Вы должны выполнить команду `prep` в каталоге *dev-spaces/samples/java/getting-started/webfrontend*, чтобы правильно создать ресурсы диаграмм Docker и Helm.
-
-## <a name="build-and-run-code-in-kubernetes"></a>Сборка и запуск кода в Kubernetes
-
-Создайте код в AKS с помощью команды `azds up` и выполните его:
-
-```cmd
-$ azds up
-Using dev space 'default' with target 'MyAKS'
-Synchronizing files...3s
-Installing Helm chart...8s
-Waiting for container image build...28s
-Building container image...
-Step 1/8 : FROM maven:3.5-jdk-8-slim
-Step 2/8 : EXPOSE 8080
-Step 3/8 : WORKDIR /usr/src/app
-Step 4/8 : COPY pom.xml ./
-Step 5/8 : RUN /usr/local/bin/mvn-entrypoint.sh     mvn package -Dmaven.test.skip=true -Dcheckstyle.skip=true -Dmaven.javadoc.skip=true --fail-never
-Step 6/8 : COPY . .
-Step 7/8 : RUN mvn package -Dmaven.test.skip=true -Dcheckstyle.skip=true -Dmaven.javadoc.skip=true
-Step 8/8 : ENTRYPOINT ["java","-jar","target/webfrontend-0.1.0.jar"]
-Built container image in 37s
-Waiting for container...57s
-Service 'webfrontend' port 'http' is available at http://webfrontend.1234567890abcdef1234.eus.azds.io/
-Service 'webfrontend' port 80 (http) is available at http://localhost:54256
-...
-```
-
-Вы можете увидеть выполнение службы, открыв общедоступный URL-адрес, который отображается в выходных данных команды `azds up`. В этом примере общедоступный URL-адрес — *http://webfrontend.1234567890abcdef1234.eus.azds.io/* .
-
-Если остановить команду `azds up` с помощью сочетания клавиш *CTRL+C*, служба продолжит выполнятся в AKS, а общедоступный URL-адрес останется доступным.
-
-## <a name="update-code"></a>Обновление кода
-
-Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните команду `azds up`. Например:
-
-1. Если `azds up` по-прежнему выполняется, нажмите клавиши *CTRL+C*.
-1. Измените [строку 19 в `src/main/java/com/ms/sample/webfrontend/Application.java`](https://github.com/Azure/dev-spaces/blob/master/samples/java/getting-started/webfrontend/src/main/java/com/ms/sample/webfrontend/Application.java#L19):
-    
-    ```java
-    return "Hello from webfrontend in Azure!";
-    ```
-
-1. Сохраните изменения.
-1. Повторно выполните команду `azds up`:
-
-    ```cmd
-    $ azds up
-    Using dev space 'default' with target 'MyAKS'
-    Synchronizing files...1s
-    Installing Helm chart...3s
-    Waiting for container image build...
-    ...    
-    ```
-
-1. Перейдите к запущенной службе и просмотрите внесенные изменения.
-1. Чтобы остановить команду `azds up`, нажмите клавиши *CTRL+C*.
-
-## <a name="enable-visual-studio-code-to-debug-in-kubernetes"></a>Включение Visual Studio Code для отладки в Kubernetes
+## <a name="prepare-the-sample-application-in-visual-studio-code"></a>Подготовка примера приложения в Visual Studio Code
 
 Откройте Visual Studio Code, щелкните *Файл*, *Открыть...* , а затем перейдите в каталог *dev-spaces/samples/java/getting-started/webfrontend* и щелкните *Открыть*.
 
-Теперь у вас есть проект *webfrontend*, открытый в Visual Studio Code. Это та же служба, которая запускается с помощью команды `azds up`. Для отладки этой службы в AKS используйте Visual Studio Code, а не `azds up`. При этом нужно подготовить этот проект, чтобы использовать Visual Studio Code для взаимодействия с вашим рабочим пространством.
+Теперь проект *webfrontend* открыт в Visual Studio Code. Для запуска приложения в области разработки сгенерируйте активные диаграммы Docker и Helm, используя расширение Azure Dev Spaces в палитре команд.
 
 Чтобы открыть палитру команд в Visual Studio Code, щелкните *Представление*, а затем — *Палитра команд*. Начните вводить `Azure Dev Spaces` и щелкните `Azure Dev Spaces: Prepare configuration files for Azure Dev Spaces`.
 
 ![Подготовка файлов конфигурации для Azure Dev Spaces](./media/common/command-palette.png)
 
-Когда Visual Studio Code также предложит настроить базовые образы и открытый порт, выберите значение `Azul Zulu OpenJDK for Azure (Free LTS)` для базового образа и значение `8080` для открытого порта.
+Когда Visual Studio Code предложит вам настроить базовые образы, открытый порт и общедоступную конечную точку, выберите `Azul Zulu OpenJDK for Azure (Free LTS)` для базового образа, `8080` для открытого порта и `Yes`, чтобы активировать общедоступную конечную точку.
 
 ![Выбор базового образа](media/get-started-java/select-base-image.png)
 
 ![Выбор открытого порта](media/get-started-java/select-exposed-port.png)
 
-Эта команда подготавливает проект для выполнения в Azure Dev Spaces напрямую из Visual Studio Code. Она также создает каталог *.vscode* с конфигурацией отладки в корне проекта.
+![Выбор общедоступной конечной точки](media/get-started-java/select-public-endpoint.png)
+
+Эта команда подготавливает проект для запуска в Azure Dev Spaces, создавая диаграмму Helm и Dockerfile. Она также создает каталог *.vscode* с конфигурацией отладки в корне проекта.
 
 ## <a name="build-and-run-code-in-kubernetes-from-visual-studio"></a>Сборка и запуск кода в Kubernetes из Visual Studio
 
@@ -167,16 +101,34 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 
 ![Запуск программы на Java](media/get-started-java/debug-configuration.png)
 
-Эта команда создает службы в Azure Dev Spaces и запускает их в режиме отладки. Окно *Терминал* внизу показывает выходные данные сборки и URL-адрес для службы, запущенной в Azure Dev Spaces. В *консоли отладки* показаны выходные данные журнала.
+Эта команда создает службы в Azure Dev Spaces. Окно *Терминал* внизу показывает выходные данные сборки и URL-адрес для службы, запущенной в Azure Dev Spaces. В *консоли отладки* показаны выходные данные журнала.
 
 > [!Note]
 > Если вы не видите никаких команд Azure Dev Spaces в *палитре команд*, убедитесь, что вы установили расширение [Visual Studio Code для Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds). Кроме того, убедитесь, что вы открыли каталог *dev-spaces/samples/java/getting-started/webfrontend* в Visual Studio Code.
 
+Вы увидите, что служба запущена, перейдя по общедоступному URL-адресу.
+
 Щелкните *Отладка*, а затем выберите *Остановить отладку*, чтобы остановить отладчик.
+
+## <a name="update-code"></a>Обновление кода
+
+Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните *Запуск Java Program (AZDS)* . Например:
+
+1. Если ваше приложение по-прежнему работает, нажмите кнопку *Debug* (Отладка), а затем — *Stop Debugging* (Остановить отладку), чтобы остановить ее.
+1. Измените [строку 19 в `src/main/java/com/ms/sample/webfrontend/Application.java`](https://github.com/Azure/dev-spaces/blob/master/samples/java/getting-started/webfrontend/src/main/java/com/ms/sample/webfrontend/Application.java#L19):
+    
+    ```java
+    return "Hello from webfrontend in Azure!";
+    ```
+
+1. Сохраните изменения.
+1. Повторите *Запуск Java Program (AZDS)* .
+1. Перейдите к запущенной службе и просмотрите внесенные изменения.
+1. Нажмите кнопку *Debug* (Отладка), а затем — *Stop Debugging* (Остановить отладку), чтобы остановить приложение.
 
 ## <a name="setting-and-using-breakpoints-for-debugging"></a>Настройка и использование точек останова для отладки
 
-Запустите службу в режиме отладки с помощью *Launch Java Program (AZDS)* (Запуск программы на Java (AZDS)).
+Запуск службы осуществляется с помощью *Launch Java Program (AZDS)* (Запуск программы Java (AZDS)). Таким образом служба также будет запущена в режиме отладки.
 
 Вернитесь в представление *Explorer*, щелкнув *Представление*, а затем — *Explorer*. Откройте `src/main/java/com/ms/sample/webfrontend/Application.java` и щелкните строку 19, чтобы расположить в ней курсор. Чтобы задать точку останова, нажмите клавишу *F9* или щелкните *Отладка* и *Переключить точку останова*.
 

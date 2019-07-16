@@ -5,17 +5,17 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 03/21/2018
+ms.date: 07/08/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: ae36adc78d8c87d85c64fd61cb3a50dfcae60b85
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 8f8d366961049deb3eda193718ccb553aac930e3
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185166"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67666381"
 ---
-Вы платите за каждый час использования вычислительных ресурсов шлюза виртуальной сети и за его исходящий трафик. Дополнительные сведения о ценах можно просмотреть на [этой странице](https://azure.microsoft.com/pricing/details/vpn-gateway) .
+Вы платите за каждый час использования вычислительных ресурсов шлюза виртуальной сети и за его исходящий трафик. Дополнительные сведения о ценах можно просмотреть на [этой странице](https://azure.microsoft.com/pricing/details/vpn-gateway) . Чтобы узнать цены на SKU для шлюза прежних версий, откройте [страницу с ценами на ExpressRoute](https://azure.microsoft.com/pricing/details/expressroute) и прокрутите ее до раздела**Шлюзы виртуальной сети**.
 
 **Имя шлюза виртуальной сети: VNet1GW**.<br>Плата за использование вычислительных ресурсов шлюза виртуальной сети взимается по почасовому тарифу. Тариф зависит от SKU шлюза, выбранного при создании шлюза виртуальной сети. В стоимость входит сам шлюз и трафик, который через него проходит. Конфигурации "активный — активный" и "активный — пассивный" одинаковы по стоимости установки.
 

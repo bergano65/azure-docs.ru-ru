@@ -10,12 +10,12 @@ ms.subservice: acoustics
 ms.topic: quickstart
 ms.date: 03/20/2019
 ms.author: kegodin
-ms.openlocfilehash: 691f49e9be8aabe9a3e229bfd3b35ab183f9fed9
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: a78df2d4d84487399da10ca722550639a92e71bf
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59492418"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67798139"
 ---
 # <a name="project-acoustics-unrealwwise-quickstart"></a>Краткое руководство по использованию Project Acoustics с Unreal и Wwise
 В этом кратком руководстве вы будете экспериментировать с элементами управления для проектирования Project Acoustics, используя предоставленный пример содержимого для Unreal Engine и Wwise.
@@ -50,14 +50,16 @@ ms.locfileid: "59492418"
 
     ![Снимок экрана с проводником Windows окно — скрипт для исправления проекта Wwise](media/patch-wwise-script.png)
 
-* Если у вас нет установленного пакета SDK для DirectX, вам потребуется закомментировать строку, содержащую DXSDK_DIR в `AcousticsGame\Plugins\Wwise\Source\AkAudio\AkAudio.Build.cs`.
+* Если пакет SDK DirectX не установлен, в зависимости от используемой версии Wwise, возможно, потребуется закомментировать строку, содержащую `DXSDK_DIR` в `AcousticsGame\Plugins\Wwise\Source\AkAudio\AkAudio.Build.cs`:
 
     ![Снимок экрана с редактором кода — комментирование строки DXSDK](media/directx-sdk-comment.png)
 
 ### <a name="open-the-unreal-project"></a>Откройте проект Unreal. 
 Вам будет предложено перестроить модули. Щелкните Yes (Да).
 
-Если происходит сбой открытия проекта из-за сбоев сборки, убедитесь, что для Project Acoustics установлен подключаемый модуль Wwise той же версии, которая использовалась в примере проекта Project Acoustics.
+>Если происходит сбой открытия проекта из-за сбоев сборки, убедитесь, что для Project Acoustics установлен подключаемый модуль Wwise той же версии, которая использовалась в примере проекта Project Acoustics.
+
+>Если [AudioKinetic Wwise](https://www.audiokinetic.com/products/wwise/) 2018.1.6 не используется, вам потребуется заново создать библиотеки звуков до проигрывания аудио в примере проекта.
 
 ## <a name="experiment-with-project-acoustics-design-controls"></a>Экспериментирование с элементами управления для проектирования Project Acoustics
 Послушайте, как звучит сцена, нажав кнопку воспроизведения в редакторе Unreal. На компьютере используйте для перемещения клавиши W, A, S, D и мышь. Чтобы просмотреть сочетания клавиш для дополнительных элементов управления, нажмите клавишу **F1**. Ниже приведены некоторые действия проектирования, которые можно опробовать.

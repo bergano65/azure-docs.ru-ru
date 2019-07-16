@@ -1,20 +1,21 @@
 ---
-title: Руководство по Запуск Иммерсивного средства чтения (Node.js)
+title: Руководство по Запуск Иммерсивного средства чтения с помощью Node.js
 titleSuffix: Azure Cognitive Services
 description: В этом учебнике описано, как создать приложение Node.js, которое запускает иммерсивное средство чтения.
 services: cognitive-services
 author: metanMSFT
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: immersive-reader
 ms.topic: tutorial
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: ac90496c950d8a563bf8794b4c1bb105b6c12232
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: f8697042ed46e0ff333f736454346908d76cf039
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67444065"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67718380"
 ---
 # <a name="tutorial-launch-the-immersive-reader-nodejs"></a>Руководство по Запуск Иммерсивного средства чтения (Node.js)
 
@@ -56,7 +57,7 @@ yarn add dotenv
 
 ## <a name="acquire-an-access-token"></a>Получение маркера доступа
 
-Затем напишите API серверной части для извлечения маркера доступа с использованием ключа подписки. Для выполнения следующего шага вам потребуются ключ подписки и конечная точка. Ключ подписки можно найти на странице ключей вашего ресурса иммерсивного средства чтения на портале Azure, а конечную точку — на странице "Обзор".
+Затем напишите API серверной части для извлечения маркера доступа с использованием ключа подписки. Для выполнения следующего шага вам потребуются ключ подписки и конечная точка. Ключ подписки на портале Azure вы сможете найти на странице ключей вашего ресурса иммерсивного средства чтения. а конечную точку — на странице "Обзор".
 
 Получив ключ подписки и конечную точку, создайте новый файл с именем _.env_ и вставьте в него следующий код, заменив значения `{YOUR_SUBSCRIPTION_KEY}` и `{YOUR_ENDPOINT}` на свой ключ подписки и конечную точку соответственно.
 

@@ -1,6 +1,7 @@
 ---
-title: Краткое руководство. Распознавать рукописный ввод с помощью REST API распознавания рукописного ввода и Java
-description: Используйте API распознавания рукописного ввода для запуска, распознавая цифровых рукописных штрихов.
+title: Краткое руководство. Распознавание рукописного ввода с помощью REST API Распознавателя рукописного текста и Java
+titleSuffix: Azure Cognitive Services
+description: Используйте API Распознавателя рукописного текста, чтобы начать распознавать рукописный текст.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -9,34 +10,34 @@ ms.subservice: ink-recognizer
 ms.topic: quickstart
 ms.date: 05/02/2019
 ms.author: aahi
-ms.openlocfilehash: 04f2ac17871bbaf0506fe18122507167b23869a7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: b1c739b6355d3b32063e5289720ed1d191611e65
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67060939"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67721229"
 ---
-# <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-java"></a>Краткое руководство. Распознавать рукописный ввод с помощью REST API распознавания рукописного ввода и Java
+# <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-java"></a>Краткое руководство. Распознавание рукописного ввода с помощью REST API Распознавателя рукописного текста и Java
 
-Используйте в этом кратком руководстве, чтобы начать работу с API распознавания рукописного ввода на цифровых рукописных штрихов. Это приложение Java отправляет запрос API, содержащий данные рукописного ввода на формате JSON и возвращает ответ.
+В этом кратком руководстве описано, как использовать API Распознавателя рукописного текста для росчерков пера. Это приложение Java отправляет запрос API, содержащий данные росчерка пера в формате JSON, и возвращает ответ.
 
 Хотя это приложение создано на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-Обычно будет вызов API из цифрового рукописного ввода приложения. В этом кратком руководстве отправляет данные штрихов рукописного ввода для следующего примера рукописных из JSON-файла.
+Обычно вы вызываете API из приложения для рукописного ввода. Этот краткое руководство отправляет данные росчерка пера для следующего рукописного образца из JSON-файла.
 
 ![изображение рукописного текста](../media/handwriting-sample.jpg)
 
 Исходный код для этого краткого руководства можно найти на портале [GitHub](https://go.microsoft.com/fwlink/?linkid=2089904).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- [Java&trade; 7 Kit(JDK) разработки](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) или более поздней версии.
+- Пакет разработчиков [Java&trade; (JDK) версии 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) или более поздней.
 
-- Импортируйте эти библиотеки из репозитория Maven
-    - [JSON в Java](https://mvnrepository.com/artifact/org.json/json) пакета
-    - [Apache HttpClient](https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient) пакета
+- Импортируйте из репозитория Maven следующие библиотеки:
+    - пакет [JSON в Java](https://mvnrepository.com/artifact/org.json/json);
+    - пакет [Apache HttpClient](https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient).
 
-- Данные stroke рукописного ввода для примера в этом кратком руководстве можно найти на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/InkRecognition/quickstart/example-ink-strokes.json).
+- Пример данных росчерка пера для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/InkRecognition/quickstart/example-ink-strokes.json).
 
 [!INCLUDE [cognitive-services-ink-recognizer-signup-requirements](../../../../includes/cognitive-services-ink-recognizer-signup-requirements.md)]
 
@@ -57,7 +58,7 @@ ms.locfileid: "67060939"
     import java.nio.file.Paths;
     ```
 
-2. Создайте переменные для ключ подписки и конечной точки. Ниже приведен URI, который можно использовать для распознавания рукописного ввода. Он будет добавляться к конечной точке службы позднее для создания URL-АДРЕСЕ запроса API.
+2. Создайте переменные для ключа подписки и конечной точки. Далее приведен универсальный код ресурса (URI), который можно использовать для распознавания рукописного ввода. Для создания URL-адреса запроса API он будет добавлен в конечную точку службы позднее.
 
     ```java
     // Replace the subscriptionKey string value with your valid subscription key.
@@ -71,17 +72,17 @@ ms.locfileid: "67060939"
 
 ## <a name="create-a-function-to-send-requests"></a>Создание функции для отправки запросов
 
-1. Создайте новую функцию `sendRequest()` , которая принимает переменные, созданные выше. Затем выполните следующие действия.
+1. Создайте функцию с именем `sendRequest()`, которая принимает ранее созданные переменные. Затем выполните следующие действия.
 
-2. Создание `CloseableHttpClient` объект, который может отправлять запросы к API. Отправка запроса на `HttpPut` объект запроса, объединяя конечной точки и распознавания рукописного ввода URL-адрес.
+2. Создайте объект `CloseableHttpClient`, который может отправлять запросы в API. Отправьте запрос объекту запроса `HttpPut`, объединив конечную точку и URL-адрес Распознавателя рукописного текста.
 
-3. Используйте запрос `setHeader()` функцию для задания `Content-Type` заголовок `application/json`и добавьте ключ подписки для `Ocp-Apim-Subscription-Key` заголовка.
+3. Используйте функцию запроса `setHeader()`, чтобы установить заголовок `Content-Type` в `application/json`, и добавьте ключ подписки к заголовку `Ocp-Apim-Subscription-Key`.
 
-4. Используйте запрос `setEntity()` функцию для отправки данных.   
+4. Используйте функцию запроса `setEntity()` для данных, которые необходимо отправить.   
 
-5. Использование клиента `execute()` функцию для отправки запроса и сохраните его для `CloseableHttpResponse` объекта. 
+5. Используйте клиентскую функцию `execute()`, чтобы отправить запрос, и сохраните его в объекте `CloseableHttpResponse`. 
 
-6. Создание `HttpEntity` объект для сохранения содержимого ответа. Получить содержимое с `getEntity()`. Если ответ не является пустым, вернуть его.
+6. Создайте объект `HttpEntity`, в котором будет храниться содержимое ответа. Получите содержимое с `getEntity()`. Если ответ не пустой, верните его.
     
     ```java
     static String sendRequest(String apiAddress, String endpoint, String subscriptionKey, String requestData) {
@@ -107,9 +108,9 @@ ms.locfileid: "67060939"
     }
     ```
 
-## <a name="send-an-ink-recognition-request"></a>Отправить запрос распознавания рукописного ввода
+## <a name="send-an-ink-recognition-request"></a>Отправка запроса на распознавание рукописного текста
 
-Создайте метод с именем `recognizeInk()` для распознавания рукописного ввода данных штриха. Вызовите `sendRequest()` метод, созданный ранее с помощью конечной точки, URL-адрес, ключ подписки и данных json. Получить результат и его вывода на консоль.
+Создайте метод с именем `recognizeInk()` для распознавания данных росчерка пера. С помощью конечной точки, URL-адреса, ключа подписки и данных JSON вызовите созданный метод `sendRequest()`. Получите результат и выведите его в консоль.
 
 ```java
 static void recognizeInk(String requestData) {
@@ -119,11 +120,11 @@ static void recognizeInk(String requestData) {
 }
 ```
 
-## <a name="load-your-digital-ink-data-and-send-the-request"></a>Загрузить данные рукописного ввода и отправки запроса
+## <a name="load-your-digital-ink-data-and-send-the-request"></a>Загрузка данных рукописного ввода и отправка запроса
 
-1. В методе main приложения чтения в JSON-файл, содержащий данные, которые будут добавлены на запросы.
+1. В основном методе вашего приложения считайте JSON-файл, содержащий данные, которые будут добавлены к запросам.
 
-2. Вызов функции распознавания рукописного ввода, созданной ранее.
+2. Вызовите функцию распознавания рукописного ввода, созданную ранее.
     
     ```java
     public static void main(String[] args) throws Exception {
@@ -132,11 +133,11 @@ static void recognizeInk(String requestData) {
     }
     ```
 
-## <a name="run-the-application-and-view-the-response"></a>Запустите приложение и просмотреть ответ
+## <a name="run-the-application-and-view-the-response"></a>Запуск приложения и просмотр ответа
 
-Запустите приложение. Успешный ответ возвращается в формате JSON. Можно также найти ответ JSON на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/InkRecognition/quickstart/example-response.json).
+Запустите приложение. Успешный ответ возвращается в формате JSON. Ответ JSON также можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/InkRecognition/quickstart/example-response.json).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Справочник по REST API](https://go.microsoft.com/fwlink/?linkid=2089907)

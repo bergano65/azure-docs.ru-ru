@@ -10,16 +10,19 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: 1c6db84acc2bca8e649f5f7acb1dcbdfd6d1269d
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 4b5c89d6d2066af3978845676a42a6c39ba3659e
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67445128"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705557"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-get-a-list-of-supported-languages-using-java"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью Java и API перевода текстов
 
 Из этого краткого руководства вы узнаете, как получить список поддерживаемых языков перевода и транслитерации, а также результаты поиска по словарю с помощью API перевода текстов.
+
+>[!TIP]
+> Полный исходный код для этого примера можно найти на сайте [GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-Java).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -104,7 +107,7 @@ public class GetLanguages {
 String url = "https://api.cognitive.microsofttranslator.com/languages?api-version=3.0";
 ```
 
-Если вы используете подписку на несколько служб Cognitive Services, необходимо также включить `Ocp-Apim-Subscription-Region` в параметрах запроса. [Дополнительные сведения об аутентификации с использованием подписки на несколько служб](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
+Если вы используете подписку на несколько служб Cognitive Services, необходимо также включить `Ocp-Apim-Subscription-Region` в параметрах запроса. [Дополнительные сведения об аутентификации с использованием подписки на несколько служб](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication).
 
 ## <a name="create-a-client-and-build-a-request"></a>Создание клиента и выполнение запроса
 
@@ -264,10 +267,10 @@ gradle run
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с примерами кода из этого и других кратких руководств, включая перевод и транслитерацию, а также с другими примерами проектов перевода текстов в GitHub.
+Просмотрите справочник по API, чтобы составить представление обо всех возможностях API "Перевод текстов".
 
 > [!div class="nextstepaction"]
-> [Примеры для Java на сайте GitHub](https://aka.ms/TranslatorGitHub?type=&language=java)
+> [Справочник по API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference)
 
 ## <a name="see-also"></a>См. также
 

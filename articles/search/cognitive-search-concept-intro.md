@@ -10,12 +10,12 @@ ms.topic: overview
 ms.date: 05/28/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 8af927bee11d66c473707b603951fa693f6840e3
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: 60a7a141cfcec3beced9e57baddebbc26e753141
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66299033"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672156"
 ---
 # <a name="what-is-cognitive-search-in-azure-search"></a>Что такое когнитивный поиск в службе "Поиск Azure"?
 
@@ -101,7 +101,7 @@ ms.locfileid: "66299033"
 
 + [Краткое руководство (портал)](cognitive-search-quickstart-blob.md)
 + [Руководство (HTTP-запросы)](cognitive-search-tutorial-blob.md)
-+ [Примеры пользовательских навыков (C#)](cognitive-search-create-custom-skill-example.md)
++ [Пример. Создание пользовательского навыка для Когнитивного поиска (C#)](cognitive-search-create-custom-skill-example.md)
 
 Мы рекомендуем пользоваться бесплатной версией службы в учебных целях обучения. Но учтите, что число бесплатных транзакций ограничено 20 документами в день. Чтобы выполнить краткое руководство и руководство за один день, используйте небольшой набор файлов (из 10 документов), что позволит выполнить оба упражнения.
 
@@ -111,7 +111,7 @@ ms.locfileid: "66299033"
 
 На этом шаге для создания решения когнитивного поиска используются интерфейсы REST API. Только два API-интерфейса можно добавить или расширить для когнитивного поиска. Все остальные API сохраняют тот же синтаксис, что и в общедоступной версии.
 
-| REST API | ОПИСАНИЕ |
+| REST API | ОПИСАНИЕ |
 |-----|-------------|
 | [Создание источника данных](https://docs.microsoft.com/rest/api/searchservice/create-data-source)  | Ресурс, определяющий внешний источник данных с исходными данными, которые будут применены для создания обогащенных документов.  |
 | [Создание набора навыков (api-version=2019-05-06)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)  | Ресурс, описывающий использование [стандартных навыков](cognitive-search-predefined-skills.md) и [пользовательских когнитивных навыков](cognitive-search-custom-skill-interface.md) в конвейере обогащения данных во время индексирования. |

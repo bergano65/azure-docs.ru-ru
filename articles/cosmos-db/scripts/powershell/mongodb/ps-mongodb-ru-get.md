@@ -1,19 +1,19 @@
 ---
-title: Сценарий Azure PowerShell — Azure Cosmos DB оценки пропускной способности (ЕЗ/с) для MongoDB API
-description: Сценарий Azure PowerShell — Azure Cosmos DB оценки пропускной способности (ЕЗ/с) для MongoDB API
+title: Скрипт Azure PowerShell — оценка пропускной способности (ЕЗ/с) Azure Cosmos DB для API MongoDB
+description: Скрипт Azure PowerShell — оценка пропускной способности (ЕЗ/с) Azure Cosmos DB для API MongoDB
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: samples
+ms.topic: sample
 ms.date: 07/03/2019
 ms.author: mjbrown
-ms.openlocfilehash: 57a58ae278f3df81218e50c4bc4d8b8c40315fdf
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
-ms.translationtype: MT
+ms.openlocfilehash: 91e3d8f1240e2eebb3e1d30ee18b16299f442106
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67566834"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67602286"
 ---
-# <a name="get-throughput-rus-for-a-database-or-collection-for-azure-cosmos-db---mongodb-api"></a>Получить пропускную способность (ЕЗ/с) для базы данных или коллекции для Azure Cosmos DB — MongoDB API
+# <a name="get-throughput-rus-for-a-database-or-collection-for-azure-cosmos-db---mongodb-api"></a>Оценка пропускной способности (ЕЗ/с) для базы данных или коллекции в Azure Cosmos DB — API MongoDB
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 
@@ -43,7 +43,7 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 

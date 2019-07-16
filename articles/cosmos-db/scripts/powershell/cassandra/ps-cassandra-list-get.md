@@ -1,19 +1,19 @@
 ---
-title: Сценарий Azure PowerShell — Azure Cosmos DB список и получение операций для Cassandra API
-description: Сценарий Azure PowerShell — Azure Cosmos DB список и получение операций для Cassandra API
+title: Скрипт Azure PowerShell — операции List и Get в Azure Cosmos DB для API Cassandra
+description: Скрипт Azure PowerShell — операции List и Get в Azure Cosmos DB для API Cassandra
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: samples
+ms.topic: sample
 ms.date: 05/18/2019
 ms.author: mjbrown
-ms.openlocfilehash: e275f0e1ca90a1d9385784bebcef9c70ffe6cdcf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.openlocfilehash: f426afee2ab5635cf29ee5a48a6e11e1f6d10f4e
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66247264"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603999"
 ---
-# <a name="list-and-get-keyspaces-and-tables-for-azure-cosmos-db---cassandra-api"></a>Список и получите пространств ключей и таблицы для Azure Cosmos DB. Cassandra API
+# <a name="list-and-get-keyspaces-and-tables-for-azure-cosmos-db---cassandra-api"></a>Операции List и Get для пространств ключей и таблиц в Azure Cosmos DB — API Cassandra
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 
@@ -43,7 +43,7 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 

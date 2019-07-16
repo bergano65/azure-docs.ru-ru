@@ -3,15 +3,15 @@ title: Разработка с помощью эмулятора Azure Cosmos 
 description: С помощью эмулятора Azure Cosmos вы можете бесплатно разрабатывать и тестировать приложения локально. Для этого вам не нужно создавать подписку Azure.
 ms.service: cosmos-db
 ms.topic: tutorial
-author: deborahc
-ms.author: dech
-ms.date: 06/21/2019
-ms.openlocfilehash: d7d9d62525161e6871cafd65cf5cd2c403cf0579
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+author: markjbrown
+ms.author: mjbrown
+ms.date: 07/09/2019
+ms.openlocfilehash: 9649c53f9fc11795449afd78b12fda691239bb18
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67331773"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67797328"
 ---
 # <a name="use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде
 
@@ -232,7 +232,7 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 
 ### <a name="command-line-syntax"></a>Синтаксис для командной строки
 
-    CosmosDB.Emulator.exe [/Shutdown] [/DataPath] [/Port] [/MongoPort] [/DirectPorts] [/Key] [/EnableRateLimiting] [/DisableRateLimiting] [/NoUI] [/NoExplorer] [/?]
+    CosmosDB.Emulator.exe [/Shutdown] [/DataPath] [/Port] [/MongoPort] [/DirectPorts] [/Key] [/EnableRateLimiting] [/DisableRateLimiting] [/NoUI] [/NoExplorer] [/EnableMongoDbEndpoint] [/?]
 
 Чтобы просмотреть список параметров, в командной строке введите `CosmosDB.Emulator.exe /?` .
 
@@ -244,18 +244,19 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 | Shutdown| Завершает работу эмулятора Azure Cosmos.| CosmosDB.Emulator.exe /Shutdown | |
 |DataPath | Указывает путь для сохранения файлов данных. По умолчанию имеет значение %LocalAppdata%\CosmosDBEmulator. | CosmosDB.Emulator.exe /DataPath=\<путь_к_данным\> | \<datapath:\> любой доступный путь. |
 |Порт | Указывает номер порта, который должен использоваться эмулятором. Значение по умолчанию — 8081. |CosmosDB.Emulator.exe /Port=\<порт\> | \<port:\> один номер порта. |
-| MongoPort | Указывает номер порта для использования с интерфейсом совместимости с MongoDB. Значение по умолчанию — 10255. |CosmosDB.Emulator.exe /MongoPort= \<mongoport\>|\<mongoport:\> один номер порта.|
-| CassandraPort | Указывает номер порта для конечной точки Cassandra. Значение по умолчанию — 10350. | CosmosDB.Emulator.exe /CassandraPort = \<cassandraport\> | \<cassandraport\>: один номер порта. |
 | ComputePort | Указанный номер порта для службы Compute Interop Gateway. Порт пробы для конечной точки HTTP шлюза вычисляется как ComputePort+79. Это означает, что должны быть открыты и свободны оба порта: ComputePort и ComputePort+79. По умолчанию используются значения 8900 и 8979. | CosmosDB.Emulator.exe /ComputePort = \<computeport\> | \<computeport\>: один номер порта. |
+| EnableMongoDbEndpoint | Включение API MongoDB | CosmosDB.Emulator.exe /EnableMongoDbEndpoint | |
+| MongoPort | Указывает номер порта для использования с интерфейсом совместимости с MongoDB. Значение по умолчанию — 10255. |CosmosDB.Emulator.exe /MongoPort= \<mongoport\>|\<mongoport:\> один номер порта.|
 | EnableCassandraEndpoint | Включает API Cassandra | CosmosDB.Emulator.exe /EnableCassandraEndpoint | |
+| CassandraPort | Указывает номер порта для конечной точки Cassandra. Значение по умолчанию — 10350. | CosmosDB.Emulator.exe /CassandraPort = \<cassandraport\> | \<cassandraport\>: один номер порта. |
 | EnableGremlinEndpoint | Включает API Gremlin | CosmosDB.Emulator.exe /EnableGremlinEndpoint | |
 | GremlinPort | Номер порта для конечной точки Gremlin. Значение по умолчанию — 8901. | CosmosDB.Emulator.exe /GremlinPort=\<port\> | \<port:\> один номер порта. |
+|EnableTableEndpoint | Включает API таблиц Azure | CosmosDB.Emulator.exe /EnableTableEndpoint | |
 |TablePort | Номер порта для конечной точки таблицы Azure. Значение по умолчанию — 8902. | CosmosDB.Emulator.exe /TablePort=\<port\> | \<port:\> один номер порта.|
 | KeyFile | Считывает ключ авторизации из указанного файла. Используйте параметр /GenKeyFile, чтобы сгенерировать файл ключа. | CosmosDB.Emulator.exe /KeyFile=\<file_name\> | \<file_name\>: Путь к файлу. |
 | ResetDataPath | Рекурсивно удаляет файлы по указанному пути. Если путь не указан, используется путь по умолчанию %LOCALAPPDATA%\CosmosDbEmulator | CosmosDB.Emulator.exe /ResetDataPath[=\<path>] | \<path\>: Путь к файлу  |
 | StartTraces  |  Начинает сбор журналов трассировки для отладки. | CosmosDB.Emulator.exe /StartTraces | |
 | StopTraces     | Завершает сбор журналов трассировки для отладки. | CosmosDB.Emulator.exe /StopTraces  | |
-|EnableTableEndpoint | Включает API таблиц Azure | CosmosDB.Emulator.exe /EnableTableEndpoint | |
 |FailOnSslCertificateNameMismatch | По умолчанию эмулятор повторно создает собственный самозаверяющий SSL-сертификат, если альтернативное имя субъекта этого сертификата не содержит одно из следующих значений: доменное имя узла, локальный адрес IPv4, localhost или 127.0.0.1. С таким параметром эмулятор завершится ошибкой при запуске. В этом случае следует применить параметр /GenCert, чтобы создать и установить новый самозаверяющий сертификат SSL. | CosmosDB.Emulator.exe /FailOnSslCertificateNameMismatch  | |
 | GenCert | Создает и устанавливает новый самозаверяющий сертификат SSL. Можно добавить необязательный список дополнительны DNS-имен, разделенных запятыми, для доступа к эмулятору по сети. | CosmosDB.Emulator.exe /GenCert[ \<список дополнительны DNS-имен, разделенных запятыми\>] | |
 | DirectPorts |Указывает порты, которые нужно использовать для прямого подключения. По умолчанию это порты 10251, 10252, 10253, 10254. | CosmosDB.Emulator.exe /DirectPorts:\<directports\> | \<directports:\> разделенный запятыми список из 4 портов. |
@@ -276,11 +277,11 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 
 По умолчанию можно создать до 25 контейнеров фиксированного размера (только пакеты SDK для Azure Cosmos DB) или 5 контейнеров неограниченного размера (эмулятор Azure Cosmos). Изменив значение **PartitionCount**, вы сможете создать до 250 контейнеров фиксированного размера или 50 контейнеров неограниченного размера либо любое их сочетание в пределах указанных ограничений (где один контейнер неограниченного размера приравнивается к 5 контейнерам фиксированного размера). Но мы не рекомендуем настраивать для эмулятора запуск более 200 контейнеров фиксированного размера. Дополнительное количество создаваемых ими операций ввода-вывода может привести к непредсказуемым превышениям времени ожидания при использовании API такой конечной точки.
 
-
 При попытке создать контейнер, превышающий ограничение на количество секций, эмулятор генерирует исключение ServiceUnavailable со следующим сообщением:
 
 Sorry, we are currently experiencing high demand in this region, and cannot fulfill your request at this time. We work continuously to bring more and more capacity online, and encourage you to try again.
-Please do not hesitate to email askcosmosdb@microsoft.com at any time or for any reason. ActivityId: 12345678-1234-1234-1234-123456789abc. (К сожалению, сейчас в этом регионе отмечается высокий спрос, и мы не можем выполнить ваш запрос. Мы постоянно работаем над повышением доступной емкости и рекомендуем вам попробовать еще раз. Вы можете обратиться к нам на адрес askcosmosdb@microsoft.com в любое время и по любому поводу.)
+Please do not hesitate to email askcosmosdb@microsoft.com at any time or for any reason.
+ActivityId: 12345678-1234-1234-1234-123456789abc. (К сожалению, сейчас в этом регионе отмечается высокий спрос, и мы не можем выполнить ваш запрос. Мы постоянно работаем над повышением доступной емкости и рекомендуем вам попробовать еще раз. Вы можете обратиться к нам на адрес askcosmosdb@microsoft.com в любое время и по любому поводу.)
 
 Чтобы изменить количество доступных для эмулятора Azure Cosmos DB контейнеров, сделайте следующее.
 

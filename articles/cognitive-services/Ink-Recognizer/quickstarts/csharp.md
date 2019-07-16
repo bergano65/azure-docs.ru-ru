@@ -1,6 +1,7 @@
 ---
-title: Краткое руководство. Распознавать рукописный ввод с помощью REST API распознавания рукописного ввода иC#
-description: Используйте API распознавания рукописного ввода для запуска, распознавая цифровых рукописных штрихов.
+title: Краткое руководство. Распознавание рукописного ввода с помощью REST API Распознавателя рукописного текста и C#
+titleSuffix: Azure Cognitive Services
+description: Используйте API Распознавателя рукописного текста, чтобы начать распознавать рукописный текст.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -9,43 +10,43 @@ ms.subservice: ink-recognizer
 ms.topic: quickstart
 ms.date: 05/02/2019
 ms.author: aahi
-ms.openlocfilehash: d661d6eca6e4916946944c48cc2e5411aeaf8f14
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: 6a1b4ab43a7d87ac1162a7f0a3556d6bc3bfbfab
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67060995"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67721226"
 ---
-# <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-c"></a>Краткое руководство. Распознавать рукописный ввод с помощью REST API распознавания рукописного ввода иC#
+# <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-c"></a>Краткое руководство. Распознавание рукописного ввода с помощью REST API Распознавателя рукописного текста и C#
 
-Используйте в этом кратком руководстве, чтобы начать отправку цифровых рукописных штрихов API распознавания рукописного ввода. Это C# приложение отправляет запрос API, содержащий данные рукописного ввода на формате JSON и возвращает ответ.
+Используйте сведения из этого краткого руководство, чтобы начать отправлять рукописные мазки в API Распознавателя рукописного текста. Это приложение C# отправляет запрос API, содержащий данные рукописного мазка в формате JSON, и возвращает ответ.
 
 Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-Обычно будет вызов API из цифрового рукописного ввода приложения. В этом кратком руководстве отправляет данные штрихов рукописного ввода для следующего примера рукописных из JSON-файла.
+Обычно вы вызываете API из приложения для рукописного ввода. Этот краткое руководство отправляет данные рукописного мазка для следующего рукописного образца из JSON-файла.
 
 ![изображение рукописного текста](../media/handwriting-sample.jpg)
 
 Исходный код для этого краткого руководства можно найти на портале [GitHub](https://go.microsoft.com/fwlink/?linkid=2089502).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Любой выпуск [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/).
 - [Newtonsoft.Json](https://www.newtonsoft.com/json)
-    - Установка Newtonsoft.Json в виде пакета NuGet в Visual studio:
-        1. Щелкните правой кнопкой мыши **Solution Manager**
+    - Чтобы установить Newtonsoft.Json в качестве пакета NuGet в Visual Studio, сделайте следующее.
+        1. Щелкните правой кнопкой мыши на **Solution Manager**.
         2. Щелкните **Manage NuGet Packages...**
-        3. Поиск `Newtonsoft.Json` и установить пакет
-- Если вы используете Linux и Mac OS, это приложение можно запускать с помощью [Mono](https://www.mono-project.com/).
+        3. Выполните поиск пакета `Newtonsoft.Json` и установите его.
+- Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
 
-- Данные stroke рукописного ввода для примера в этом кратком руководстве можно найти на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/InkRecognition/quickstart/example-ink-strokes.json).
+- Пример данных росчерка пера для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/InkRecognition/quickstart/example-ink-strokes.json).
 
 [!INCLUDE [cognitive-services-ink-recognizer-signup-requirements](../../../../includes/cognitive-services-ink-recognizer-signup-requirements.md)]
 
 
 ## <a name="create-a-new-application"></a>Создание приложения
 
-1. В Visual Studio создайте новое решение консоли и добавьте следующие пакеты. 
+1. В Visual Studio создайте новое консольное решение и добавьте следующие пакеты. 
 
     ```csharp
     using System;
@@ -59,7 +60,7 @@ ms.locfileid: "67060995"
     using Newtonsoft.Json.Linq;
     ```
 
-2. Создайте переменные для ключ подписки и конечной точки. Ниже приведен URI, который можно использовать для распознавания рукописного ввода. Он будет добавляться к конечной точке службы позднее для создания API URL-адрес запроса.
+2. Создайте переменные для ключа подписки и конечной точки. Далее приведен универсальный код ресурса (URI), который можно использовать для распознавания рукописного ввода. Для создания URL-адреса запроса API он будет добавлен в конечную точку службы позднее.
 
     ```csharp
     // Replace the subscriptionKey string with your valid subscription key.
@@ -75,11 +76,11 @@ ms.locfileid: "67060995"
 
 ## <a name="create-a-function-to-send-requests"></a>Создание функции для отправки запросов
 
-1. Создайте новую функцию async `Request` , принимающий переменные, созданные выше.
+1. Создайте новую асинхронную функцию с именем `Request`, принимающую переменные, созданные выше.
 
-2. Задать протокол безопасности и сведения заголовка с помощью клиента `HttpClient` объекта. Не забудьте добавить ключ подписки для `Ocp-Apim-Subscription-Key` заголовка. Затем создайте `StringContent` для запроса.
+2. Установите протокол безопасности клиента и информацию заголовка с помощью объекта `HttpClient`. Не забудьте добавить ключ подписки в заголовок `Ocp-Apim-Subscription-Key`. Затем создайте объект `StringContent` для запроса.
  
-3. Отправка запроса с `PutAsync()`. Если запрос выполнен успешно, возвращает ответ.  
+3. Отправьте запрос с помощью `PutAsync()`. Отправьте ответ при успешном выполнении запроса.  
     
     ```csharp
     static async Task<string> Request(string apiAddress, string endpoint, string subscriptionKey, string requestData){
@@ -101,11 +102,11 @@ ms.locfileid: "67060995"
     }
     ```
 
-## <a name="send-an-ink-recognition-request"></a>Отправить запрос распознавания рукописного ввода
+## <a name="send-an-ink-recognition-request"></a>Отправка запроса на распознавание рукописного текста
 
-1. Создайте новую функцию `recognizeInk()`. Создать запрос и отправить его, вызвав `Request()` функцию с конечной точкой, ключ подписки, URL-адрес API и данные рукописного ввода.
+1. Создайте новую функцию с именем `recognizeInk()`. Создайте запрос, в которой будет включена конечная точка, ключ подписки, URL-адрес API и данные мазка кисты рукописного ввода, а затем отправьте его. Чтобы это сделать используйте функцию `Request()`.
 
-2. Десериализовать объект JSON и вывести его на консоль. 
+2. Десериализируйте объект JSON и выведите его в консоль. 
     
     ```csharp
     static void recognizeInk(string requestData){
@@ -122,9 +123,9 @@ ms.locfileid: "67060995"
     }
     ```
 
-## <a name="load-your-digital-ink-data"></a>После загрузки данных рукописного ввода
+## <a name="load-your-digital-ink-data"></a>Загрузка данных рукописного ввода
 
-Создание функции с именем `LoadJson()` загрузить JSON-файл данных рукописного ввода. Используйте `StreamReader` и `JsonTextReader` для создания `JObject` и вернуть его.
+Чтобы загрузить файл JSON с данных рукописного ввода создайте функцию `LoadJson()`. Используйте `StreamReader` и `JsonTextReader` чтобы создать `JObject` и вернуть его.
     
 ```csharp
 public static JObject LoadJson(string fileLocation){
@@ -141,9 +142,9 @@ public static JObject LoadJson(string fileLocation){
 
 ## <a name="send-the-api-request"></a>Отправка запроса API
 
-1. В методе main приложения загрузки данных JSON с помощью функции, созданной ранее. 
+1. В методе main в приложении необходимо использовать созданную ранее функцию для загрузки данных JSON. 
 
-2. Вызовите `recognizeInk()` функции, созданной ранее. Используйте `System.Console.ReadKey()` для не закрывайте окно консоли после запуска приложения.
+2. Вызовите созданную ранее функцию `recognizeInk()`. Чтобы после выполнения приложения оставить консоль открытой, используйте `System.Console.ReadKey()`.
     
     ```csharp
     static void Main(string[] args){
@@ -156,12 +157,12 @@ public static JObject LoadJson(string fileLocation){
         }
     ```
 
-## <a name="run-the-application-and-view-the-response"></a>Запустите приложение и просмотреть ответ
+## <a name="run-the-application-and-view-the-response"></a>Запуск приложения и просмотр ответа
 
-Запустите приложение. Успешный ответ возвращается в формате JSON. Можно также найти ответ JSON на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/InkRecognition/quickstart/example-response.json).
+Запустите приложение. Успешный ответ возвращается в формате JSON. Ответ JSON также можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/InkRecognition/quickstart/example-response.json).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Справочник по REST API](https://go.microsoft.com/fwlink/?linkid=2089907)

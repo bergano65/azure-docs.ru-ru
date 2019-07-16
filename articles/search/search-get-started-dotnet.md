@@ -9,13 +9,13 @@ services: search
 ms.service: search
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 06/20/2019
-ms.openlocfilehash: a5cbd2036f92c27709d92d0cf415cc9837645fb8
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.date: 07/09/2019
+ms.openlocfilehash: d3236f4782cc4fd9113329f03e36515a91bad528
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67485604"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67798774"
 ---
 # <a name="quickstart-create-an-azure-search-index-in-c-using-the-net-sdk"></a>Краткое руководство. Создание индекса службы "Поиск Azure" с помощью C# и пакета SDK .NET
 > [!div class="op_single_selector"]
@@ -39,7 +39,7 @@ ms.locfileid: "67485604"
 
 + [Visual Studio](https://visualstudio.microsoft.com/downloads/) (любой выпуск). Пример кода и инструкции были протестированы с помощью бесплатного выпуска Community Edition.
 
-+ Пример индекса и документы доступны как в тексте статьи, так и в [решении Visual Studio](https://github.com/Azure-Samples/azure-search-dotnet-samples/quickstart) для этого краткого руководства.
++ Пример индекса и документы доступны как в тексте статьи, так и в [решении Visual Studio](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/quickstart) для этого краткого руководства.
 
 + [Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве.
 
@@ -550,13 +550,11 @@ ms.locfileid: "67485604"
 
 ## <a name="clean-up"></a>Очистка
 
-Если вы завершили работу с индексом и хотите удалить его, вызовите `Indexes.Delete` для `SearchServiceClient`.
+Если вы работаете в своей подписке, по окончании проекта рекомендуем решить, нужны ли вам созданные ресурсы. Работающие ресурсы могут означать лишние затраты. Можно удалить отдельные ресурсы или удалить группу ресурсов, что позволит удалить весь набор ресурсов.
 
-```csharp
-serviceClient.Indexes.Delete("hotels");
-```
+Просматривать ресурсы и управлять ими можно на портале с помощью ссылок **Все ресурсы** или **Группы ресурсов** на панели навигации слева.
 
-Если вы закончили работу со службой поиска, можно удалить ресурсы на портале Azure.
+При работе с бесплатной версией службы помните о том, что вам доступно максимум три индекса, индексатора и источника данных. Вы можете удалить отдельные элементы на портале, чтобы не превысить лимит. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: .NET Core
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: 0bf4aff8e0bae3e84e6383ec560dbfe67e30b994
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: c42066b3ac02264ee357bac7ed3fdd360e9d5d4a
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65408723"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67798418"
 ---
 # <a name="quickstart-create-a-net-core-app-with-app-configuration"></a>Краткое руководство. Создание приложения .NET Core с помощью службы "Конфигурация приложений"
 
@@ -39,7 +39,7 @@ ms.locfileid: "65408723"
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Выберите **Configuration Explorer** (Обозреватель конфигураций)  > **+ Создать**, чтобы добавить следующие пары "ключ-значение".
+6. Выберите **Configuration Explorer** (Обозреватель конфигураций)  >  **+ Создать**, чтобы добавить следующие пары "ключ-значение".
 
     | Ключ | Значение |
     |---|---|
@@ -53,15 +53,15 @@ ms.locfileid: "65408723"
 
 1. Создайте новый каталог для своего проекта
 
-2. В новой папке выполните следующую команду, чтобы создать проект веб-приложения MVC для ASP.NET Core:
+2. В новой папке выполните следующую команду, чтобы создать проект консольного приложения для ASP.NET Core:
 
         dotnet new console
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу конфигураций приложений
 
-1. Добавьте ссылку на пакет NuGet `Microsoft.Extensions.Configuration.AzureAppConfiguration`, выполнив следующую команду:
+1. Добавьте ссылку на пакет NuGet `Microsoft.Azure.AppConfiguration.AspNetCore`, выполнив следующую команду:
 
-        dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration --version 1.0.0-preview-008520001
+        dotnet add package Microsoft.Azure.AppConfiguration.AspNetCore --version 2.0.0-preview-009200001-7
 
 2. Выполните следующую команду, чтобы восстановить пакеты проекта:
 

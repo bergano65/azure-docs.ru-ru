@@ -10,18 +10,21 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: 689aa655967910c0114f50eac522df00c5659d1b
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: e12d6dfd51e297e19e3f47cd9ee32c1b4e8cfa36
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67444910"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705445"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-translate-a-string-using-python"></a>Краткое руководство. Использование API перевода текстов для перевода строки с помощью Python
 
 В этом кратком руководстве вы узнаете, как перевести строку с текстом с английского на итальянский и немецкий с помощью Python и REST API перевода текстов.
 
 Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом API перевода текстов. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
+
+>[!TIP]
+> Полный исходный код для этого примера можно найти на сайте [GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-Python).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -95,7 +98,7 @@ headers = {
 }
 ```
 
-Если вы используете подписку на несколько служб Cognitive Services, необходимо также включить `Ocp-Apim-Subscription-Region` в параметрах запроса. [Дополнительные сведения об аутентификации с использованием подписки на несколько служб](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
+Если вы используете подписку на несколько служб Cognitive Services, необходимо также включить `Ocp-Apim-Subscription-Region` в параметрах запроса. [Дополнительные сведения об аутентификации с использованием подписки на несколько служб](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication).
 
 ## <a name="create-a-request-to-translate-text"></a>Создание запроса для перевода текста
 
@@ -162,8 +165,10 @@ python translate-text.py
 
 ## <a name="next-steps"></a>Дополнительная информация
 
+Просмотрите справочник по API, чтобы составить представление обо всех возможностях API "Перевод текстов".
+
 > [!div class="nextstepaction"]
-> [Ознакомиться с примерами на Python на сайте GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-Python)
+> [Справочник по API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference)
 
 ## <a name="see-also"></a>См. также
 

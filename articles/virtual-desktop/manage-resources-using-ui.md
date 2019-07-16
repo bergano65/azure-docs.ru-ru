@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 06/04/2019
 ms.author: v-chjenk
-ms.openlocfilehash: 275fec5fb696a7e1352bbddccd288863e984b796
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: 9579db9836ef41706f2c6be09570fa7c1459e14f
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67304567"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620459"
 ---
 # <a name="tutorial-deploy-a-management-tool"></a>Руководство по Развертывание средства управления
 
@@ -57,8 +57,8 @@ ms.locfileid: "67304567"
 ### <a name="guidance-for-template-parameters"></a>Рекомендации по настройке параметров шаблона
 Введите следующие параметры для настройки средства:
 
-- URL-адрес посредника подключений к удаленному рабочему столу:  <https://rdbroker.wvd.microsoft.com/>.
-- URL-адрес ресурса:  <https://mrs-prod.ame.gbl/mrs-RDInfra-prod>.
+- URL-адрес брокера RD:  https:\//rdbroker.wvd.microsoft.com/.
+- URL-адрес ресурса:  https:\//mrs-prod.ame.gbl/mrs-RDInfra-prod.
 - Используйте свои учетные данные Azure Active Directory с отключенной Многофакторной идентификацией, чтобы войти в Azure. Дополнительные сведения см. в разделе [Предварительные требования для запуска шаблона Azure Resource Manager](#what-you-need-to-run-the-azure-resource-manager-template).
 - Укажите уникальное имя для приложения, которое будет зарегистрировано в Azure Active Directory для использования средства управления, например Apr3UX.
 

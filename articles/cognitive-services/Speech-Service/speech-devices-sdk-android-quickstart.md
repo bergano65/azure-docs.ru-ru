@@ -1,45 +1,45 @@
 ---
-title: Краткое руководство. Запуск пакета SDK для речевых устройств на Android - службы распознавания речи
+title: Краткое руководство. Запуск пакета SDK для речевых устройств в Android. Службы речи
 titleSuffix: Azure Cognitive Services
-description: Предварительные требования и инструкции по началу работы с Android Speech SDK устройства.
+description: Предварительные требования и инструкции для начала работы с пакетом SDK для речевых устройств в Android.
 services: cognitive-services
 author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: conceptual
-ms.date: 05/02/2019
+ms.topic: quickstart
+ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 5bebdd77afb9e9c77624ea4266ca217567dbf143
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: 7eea978456ed565f8fc58647dc548d1a7bc76b27
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67072394"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67606368"
 ---
-# <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-android"></a>Краткое руководство. Запуск примера приложения Speech SDK устройства в Android
+# <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-android"></a>Краткое руководство. Запуск примера приложения на базе пакета SDK для речевых устройств в Android
 
-В этом кратком руководстве вы узнаете, как построить проект с поддержкой речевых функций или используйте его как с помощью пакета SDK устройства речи для Android [расшифровка дикторского текста для диалога](conversation-transcription-service.md) устройства.
+Из этого краткого руководства вы узнаете, как использовать пакет SDK для речевых устройств в Android для разработки продукта с поддержкой речевых функций или в качестве устройства [транскрибирования бесед](conversation-transcription-service.md).
 
-С этим руководством требуется [Azure Cognitive Services](get-started.md) учетной записи с ресурсом служб речи. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
+Для этого руководства требуется [учетная запись Azure Cognitive Services](get-started.md) и ресурс службы "Речь". Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
 
 Исходный код для примера приложения входит в состав пакета SDK для речевых устройств. Он также [доступен на веб-сайте GitHub](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем начать, с помощью пакета SDK устройства речи, вам потребуется:
+Чтобы начать использовать пакет SDK для речевых устройств, необходимо:
 
-* Следуйте инструкциям, прилагаемым к [пакета средств разработки](get-speech-devices-sdk.md) питания на устройстве.
+* Включить устройство, выполнив инструкции, прилагаемым к [комплекту SDK](get-speech-devices-sdk.md).
 
-* Скачайте последнюю версию [Speech SDK устройств](https://aka.ms/sdsdk-download)и извлеките ZIP-файл в рабочий каталог.
+* Загрузить последнюю версию [пакета SDK для речевых устройств](https://aka.ms/sdsdk-download) и извлечь ZIP-файл в свой рабочий каталог.
    > [!NOTE]
-   > В Android пример Release.zip файле содержится Android примера приложения, и в этом кратком руководстве предполагается, что приложение извлечен в C:\SDSDK\Android-Sample-Release
+   > Файл Android-Sample-Release.zip содержит пример приложения для Android. В этом кратком руководстве предполагается, что приложение распаковано в папку "C:\SDSDK\Android-Sample-Release".
 
-* Чтобы получить [ключ подписки Azure для службы распознавания речи](get-started.md)
+* Получить [ключ подписки Azure для служб речи](get-started.md).
 
-* Если вы планируете использовать расшифровка дикторского текста для сообщений необходимо использовать [циклическая микрофон устройством](get-speech-devices-sdk.md) и эта функция в данный момент доступна только для «en US» и «zh-CN», в регионах, «centralus» и «eastasia». Необходимо иметь ключ речи в одном из этих регионов, для использования расшифровка дикторского текста для диалога.
+* Если планируется применять транскрибирование бесед, следует использовать [всенаправленный микрофон](get-speech-devices-sdk.md). В настоящее время эта функция доступна только для языков "en-US" и "zh-CN" в регионах "centralus" и "eastasia". Для использования транскрибирования бесед вам понадобится речевой ключ в одном из упомянутых регионов.
 
-* Если вы планируете использовать служб речи для определения намерения (или действия) из фразы для пользователя, нужно будет [службы Language Understanding (LUIS)](https://docs.microsoft.com/azure/cognitive-services/luis/azureibizasubscription) подписки. Дополнительные сведения о LUIS и распознавание сути высказывания, см. в разделе [распознавания речи намерения с помощью LUIS, C# ](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-recognize-intents-from-speech-csharp).
+* Если планируется использование служб речи для определения намерений (или действий) в высказываниях пользователей, потребуется подписка на службу [Language Understanding Service (LUIS)](https://docs.microsoft.com/azure/cognitive-services/luis/azureibizasubscription). Дополнительные сведения о службе распознавания речи и распознавании намерений см. в статье [Распознавание намерений в речи с помощью пакета SDK службы распознавания речи для C#](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-recognize-intents-from-speech-csharp).
 
     Вы можете [создать простую модель LUIS](https://docs.microsoft.com/azure/cognitive-services/luis/) или использовать пример такой модели — LUIS-example.json, доступный в пакете [SDK для речевых устройств на сайте скачивания](https://aka.ms/sdsdk-luis). Чтобы отправить файл JSON модели на [портал LUIS](https://www.luis.ai/home), выберите **Import new app** (Импорт нового приложения) и затем файл JSON.
 
@@ -72,7 +72,7 @@ ms.locfileid: "67072394"
 
 ## <a name="run-the-sample-application"></a>Запуск примера приложения
 
-Проверка настройки пакета средств разработки, построения и установите образец приложения:
+Чтобы проверить настройки комплекта SDK, создайте и установите пример приложения:
 
 1. Запустите Android Studio.
 
@@ -82,9 +82,9 @@ ms.locfileid: "67072394"
 
 1. Перейдите в каталог C:\SDSDK\Android-Sample-Release\example. Нажмите кнопку **ОК**, чтобы открыть пример проекта.
 
-1. Добавьте ключ подписки речи к исходному коду. Если вы хотите попробовать распознать намерения, также добавьте свой ключ подписки [службы "Распознавание речи"](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/) и идентификатор приложения.
+1. Добавьте свой ключ подписки на речевые службы в исходный код. Если вы хотите попробовать распознать намерения, также добавьте свой ключ подписки [службы "Распознавание речи"](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/) и идентификатор приложения.
 
-   Для распознавания речи и LUIS данные переходит в MainActivity.java:
+   При использовании служб речи и LUIS ваша информация отправляется в MainActivity.java:
 
    ```java
     // Subscription
@@ -95,7 +95,7 @@ ms.locfileid: "67072394"
     private static String LuisAppId = "<enter your LUIS AppId>";
    ```
 
-    Если вы используете расшифровка дикторского текста для диалога, голосовых ключ и области данных также нужны в conversation.java:
+    Если вы используете транскрибирование бесед, ваш речевой ключ и информация о регионе должны быть также указаны в conversation.java:
 
    ```java
     private static final String CTSKey = "<Conversation Transcription Service Key>";
@@ -107,10 +107,10 @@ ms.locfileid: "67072394"
    > [!TIP]
    > Кроме того, вы можете [создать пользовательское слово пробуждения](speech-devices-sdk-create-kws.md).
 
-    Чтобы использовать новое слово пробуждения, обновите следующие две строки в `MainActivity.java`и скопируйте пакет пробуждения word в приложение. Например, чтобы использовать wake слово «Компьютер» из kws пакета word wake-machine.zip:
+    Для использования нового слова активации обновите следующие две строки в файле `MainActivity.java` и скопируйте пакет слов активации в приложение. Например, для использования слова активации "Machine" из пакета слов активации kws-machine.zip:
 
-   * Скопируйте пакет пробуждения word в папку «C:\SDSDK\Android-Sample-Release\example\app\src\main\assets\».
-   * Обновление `MainActivity.java` с помощью ключевого слова и имя пакета:
+   * Скопируйте пакет слов активации в папку "C:\SDSDK\Android-Sample-Release\example\app\src\main\assets\".
+   * Укажите в файле `MainActivity.java` ключевое слово и имя пакета:
 
      ```java
      private static final String Keyword = "Machine";
@@ -124,7 +124,7 @@ ms.locfileid: "67072394"
    private static final String SelectedGeometry = "Circular6+1";
    ```
 
-   Ниже приведены поддерживаемые значения:
+   В таблице перечислены поддерживаемые значения:
 
    |Переменная|Значение|Доступные значения|
    |--------|-------|----------------|
@@ -145,27 +145,27 @@ ms.locfileid: "67072394"
 
    ![Пример приложения пакета SDK для речевых устройств и параметры](media/speech-devices-sdk/qsg-8.png)
 
-1. Попробуйте новую демонстрацию с использованием расшифровка дикторского текста для диалога. Запустите фотографировать с запустить сеанс. По умолчанию все является гостем. Тем не менее, при наличии участника голосовой подписи они могут быть помещены в файл `/video/participants.properties` на устройстве. Для создания подписи голоса, рассмотрим [транскрипция диалогов (SDK)](how-to-use-conversation-transcription-service.md).
+1. Попробуйте новую демоверсию транскрибирования бесед. Начните транскрибирование, выбрав "Start Session" (Начало сеанса). По умолчанию все являются гостями. Однако, если у вас есть голосовые подписи участника, их можно поместить в файл `/video/participants.properties` на устройстве. Сведения о том, как создать голосовую подпись, см. в статье о [транскрибировании бесед (пакет SDK)](how-to-use-conversation-transcription-service.md).
 
-   ![Расшифровка дикторского текста для диалога демонстрационного приложения](media/speech-devices-sdk/qsg-15.png)
+   ![Демоверсия приложения транскрибирования бесед](media/speech-devices-sdk/qsg-15.png)
 
 1. Экспериментируйте!
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-   Если не удается подключиться к устройству речи. Введите следующую команду в окне командной строки. Он возвращает список устройств:
+   Если вы не можете подключиться к службам речи, введите следующую команду в окне командной строки. Отобразится список устройств:
 
    ```powershell
     adb devices
    ```
 
    > [!NOTE]
-   > Эта команда использует Android Debug Bridge `adb.exe`, который является частью установки Android Studio. Это средство находится в каталоге C:\Users\[имя пользователя]\AppData\Local\Android\Sdk\platform-tools. Вы можете добавить этот каталог в путь, чтобы было удобнее вызывать `adb`. В противном случае нужно указывать полный путь к установке adb.exe в каждой команде, вызывающей `adb`.
+   > Эта команда использует Android Debug Bridge `adb.exe`, который входит в состав установочного пакета Android Studio. Это средство находится в каталоге C:\Users\[имя пользователя]\AppData\Local\Android\Sdk\platform-tools. Вы можете добавить этот каталог в путь, чтобы было удобнее вызывать `adb`. В противном случае нужно указывать полный путь к установке adb.exe в каждой команде, вызывающей `adb`.
    >
-   > Если появится сообщение об ошибке `no devices/emulators found` затем проверить подключение кабеля USB и убедиться, что кабель высокого качества.
+   > Если вы видите ошибку `no devices/emulators found`, проверьте, подключен ли USB-кабель, и убедитесь, что он высокого качества.
    >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Просмотр заметки о выпуске](devices-sdk-release-notes.md)

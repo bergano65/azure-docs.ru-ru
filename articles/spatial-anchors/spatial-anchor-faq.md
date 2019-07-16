@@ -8,12 +8,12 @@ ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: overview
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 73979ec3bd1d667453a186ea1f20bbeddc12db8f
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 435ad986a9f0b96d42c88d450f40e5900ad33b7c
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67273316"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67653249"
 ---
 # <a name="frequently-asked-questions-about-azure-spatial-anchors"></a>Часто задаваемые вопросы о службе "Пространственные привязки Azure"
 
@@ -120,11 +120,11 @@ ms.locfileid: "67273316"
 
 **Вопрос. Работает ли эта служба с Unreal?**
 
-**Ответ.** Мы планируем очень скоро добавить поддержку Unreal.
+**Ответ.** В будущем мы планируем реализовать поддержку Unreal.
 
 **Вопрос. Работает ли эта служба с Xamarin?**
 
-**Ответ.** Да. Мы не предоставляем пакет SDK для Xamarin, но разработчики могут применить службу "Пространственные привязки Azure" в приложениях Xamarin благодаря интеграции API Пространственных привязок Azure.
+**Ответ.** В будущем мы планируем реализовать поддержку Xamarin.
 
 **Вопрос. Какие порты и протоколы использует служба "Пространственные привязки Azure"?**
 

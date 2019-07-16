@@ -1,19 +1,19 @@
 ---
-title: Сценарий Azure PowerShell — Azure Cosmos DB получить подготовленную пропускную способность (ЕЗ/с) для SQL (Core) API
-description: Сценарий Azure PowerShell — Azure Cosmos DB получить подготовленную пропускную способность (ЕЗ/с) для SQL (Core) API
+title: Скрипт Azure PowerShell — оценка подготовленной пропускной способности (ЕЗ/с) Azure Cosmos DB для API SQL (Core)
+description: Скрипт Azure PowerShell — оценка подготовленной пропускной способности (ЕЗ/с) Azure Cosmos DB для API SQL (Core)
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: samples
+ms.topic: sample
 ms.date: 07/03/2019
 ms.author: mjbrown
-ms.openlocfilehash: f70229e22ae0ef5d761ef456e880f0e96c42643e
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
-ms.translationtype: MT
+ms.openlocfilehash: 75a8ebbb04fd3cbad9f0a1a3f302b40439adbbcc
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67566795"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67602135"
 ---
-# <a name="get-the-provisioned-throughput-rus-for-a-database-or-container-for-azure-cosmos-db---sql-core-api"></a>Получить подготовленную пропускную способность (ЕЗ/с) для базы данных или контейнер для Azure Cosmos DB — SQL (Core) API
+# <a name="get-the-provisioned-throughput-rus-for-a-database-or-container-for-azure-cosmos-db---sql-core-api"></a>Оценка подготовленной пропускной способности (ЕЗ/с) для базы данных или контейнера в Azure Cosmos DB — API SQL (Core)
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 
@@ -43,7 +43,7 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 

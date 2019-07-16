@@ -1,19 +1,19 @@
 ---
-title: Сценарий Azure PowerShell — Azure Cosmos DB обновления ЕЗ/с для Gremlin API
-description: Сценарий Azure PowerShell — Azure Cosmos DB обновления ЕЗ/с для Gremlin API
+title: Скрипт Azure PowerShell — обновление ЕЗ/с в Azure Cosmos DB для API Gremlin
+description: Скрипт Azure PowerShell — обновление ЕЗ/с в Azure Cosmos DB для API Gremlin
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: samples
+ms.topic: sample
 ms.date: 05/18/2019
 ms.author: mjbrown
-ms.openlocfilehash: 30a7b4b9151496a753d31568411e436930ec0f55
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.openlocfilehash: 70fc0f0357a091e990a2c11f39985d7b7e60cd6c
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66247474"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603916"
 ---
-# <a name="update-rus-for-a-database-or-graph-for-azure-cosmos-db---gremlin-api"></a>Обновление единиц Запросов в секунду для базы данных или graph для Azure Cosmos DB — Gremlin API
+# <a name="update-rus-for-a-database-or-graph-for-azure-cosmos-db---gremlin-api"></a>Обновление ЕЗ/с для базы данных или графа в Azure Cosmos DB — API Gremlin
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 
@@ -43,7 +43,7 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 

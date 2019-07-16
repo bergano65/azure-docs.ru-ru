@@ -1,6 +1,7 @@
 ---
-title: Краткое руководство. Обнаруживать аномалии в данных временных рядов с помощью REST API обнаружения аномалий и Java | Документация Майкрософт
-description: Используйте API обнаружения аномалий для обнаружения отклонений в ряду данных в пакетном режиме или при потоковой передаче данных.
+title: Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и Java
+titleSuffix: Azure Cognitive Services
+description: API Детектора аномалий используется для обнаружения отклонений в ряде данных как в пакетном режиме, так и при потоковой передаче.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -9,33 +10,33 @@ ms.subservice: anomaly-detector
 ms.topic: quickstart
 ms.date: 03/26/2019
 ms.author: aahi
-ms.openlocfilehash: 04ace16559a6f5b747bc735aa89265d2962a32b3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: 2a219dfac597208a2c409f76c035a1b913864245
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67073224"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67721508"
 ---
-# <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-java"></a>Краткое руководство. Обнаруживать аномалии в данных временных рядов с помощью REST API обнаружения аномалий и Java
+# <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-java"></a>Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и Java
 
-Используйте в этом кратком руководстве, чтобы начать использовать API обнаружения аномалий два режима обнаружения для обнаружения аномалий в данных временных рядов. Это приложение Java отправляет два API запросов, содержащих данные ряда времени в формате JSON и возвращает ответы.
+Используйте это краткое руководство, чтобы узнать, как начать использовать две модели API Детектора аномалий для обнаружения аномалий в данных временных рядов. Это приложение Java отправляет два запроса API, которые содержат данные временных рядов в формате JSON, и получает ответы.
 
 | Запрос API                                        | Выходные данные приложения                                                                                                                         |
 |----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| Обнаруживать аномалии в пакетном режиме                        | Ответ JSON, содержащий состояние аномалий (и другие данные) для каждой точки данных в данных временных рядов и положения любые обнаруженные аномалии. |
-| Обнаружение аномалий состояние последней точки данных | Ответ JSON, содержащий состояние аномалий (и другие данные), наличие последней точки данных в данных временных рядов.                                                                                                                                         |
+| Обнаружение аномалий в пакетном режиме                        | В ответе JSON содержится состояние аномалии (и другие данные) для каждой точки данных в данных временных рядов и расположение любых обнаруженных аномалий. |
+| Обнаружение состояний аномалии последней точки данных | В ответе JSON содержится состояние аномалии (и другие данные) для последней точки данных в данных временных рядов.                                                                                                                                         |
 
  Хотя это приложение создано на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- [Java&trade; 7 Kit(JDK) разработки](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) или более поздней версии.
+- Пакет разработчиков [Java&trade; (JDK) версии 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) или более поздней.
 
-- Импортируйте эти библиотеки из репозитория Maven
-    - [JSON в Java](https://mvnrepository.com/artifact/org.json/json) пакета
-    - [Apache HttpClient](https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient) пакета
+- Импортируйте из репозитория Maven следующие библиотеки:
+    - пакет [JSON в Java](https://mvnrepository.com/artifact/org.json/json);
+    - пакет [Apache HttpClient](https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient).
 
-- Указывает JSON файла содержащего данных временных рядов. Данные для примера в этом кратком руководстве можно найти на [GitHub](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/request-data.json).
+- JSON-файл содержит точки данных временного ряда. Пример данных для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/request-data.json).
 
 [!INCLUDE [cognitive-services-anomaly-detector-data-requirements](../../../../includes/cognitive-services-anomaly-detector-data-requirements.md)]
 
@@ -60,12 +61,12 @@ ms.locfileid: "67073224"
     import java.nio.file.Paths;
     ```
 
-2. Создайте переменные для ключ подписки и конечной точки. Ниже приведены идентификаторы URI, можно использовать для обнаружения аномалий. Они будут добавлены к конечной точке службы позднее для создания API URL-адреса запросов.
+2. Создайте переменные для ключа подписки и конечной точки. Далее приведены универсальные коды ресурса (URI), которые можно использовать для обнаружения аномалий. Для создания URL-адресов запроса API они будут добавлены в конечную точку службы позднее.
 
-    |Метод обнаружения  |URI  |
+    |Методы обнаружения  |URI  |
     |---------|---------|
-    |Обнаружение пакета    | `/anomalydetector/v1.0/timeseries/entire/detect`        |
-    |Обнаружение на последние точки данных     | `/anomalydetector/v1.0/timeseries/last/detect`        |
+    |Пакетное обнаружение    | `/anomalydetector/v1.0/timeseries/entire/detect`        |
+    |Обнаружение в последней точке данных     | `/anomalydetector/v1.0/timeseries/last/detect`        |
 
     ```java
     // Replace the subscriptionKey string value with your valid subscription key.
@@ -87,17 +88,17 @@ ms.locfileid: "67073224"
 
 ## <a name="create-a-function-to-send-requests"></a>Создание функции для отправки запросов
 
-1. Создайте новую функцию `sendRequest()` , которая принимает переменные, созданные выше. Затем выполните следующие действия.
+1. Создайте функцию с именем `sendRequest()`, которая принимает ранее созданные переменные. Затем выполните следующие действия.
 
-2. Создание `CloseableHttpClient` объект, который может отправлять запросы к API. Отправка запроса на `HttpPost` объект запроса, объединяя конечной точки и URL-адреса обнаружения аномалий.
+2. Создайте объект `CloseableHttpClient`, который может отправлять запросы в API. Отправьте запрос объекту запроса `HttpPost`, объединив конечную точку и URL-адрес детектора аномалий.
 
-3. Используйте запрос `setHeader()` функцию для задания `Content-Type` заголовок `application/json`и добавьте ключ подписки для `Ocp-Apim-Subscription-Key` заголовка.
+3. Используйте функцию запроса `setHeader()`, чтобы установить заголовок `Content-Type` в `application/json`, и добавьте ключ подписки к заголовку `Ocp-Apim-Subscription-Key`.
 
-4. Используйте запрос `setEntity()` функцию для отправки данных.
+4. Используйте функцию запроса `setEntity()` для данных, которые необходимо отправить.
 
-5. Использование клиента `execute()` функцию для отправки запроса и сохраните его для `CloseableHttpResponse` объекта.
+5. Используйте клиентскую функцию `execute()`, чтобы отправить запрос, и сохраните его в объекте `CloseableHttpResponse`.
 
-6. Создание `HttpEntity` объект для сохранения содержимого ответа. Получить содержимое с `getEntity()`. Если ответ не является пустым, вернуть его.
+6. Создайте объект `HttpEntity`, в котором будет храниться содержимое ответа. Получите содержимое с `getEntity()`. Если ответ не пустой, верните его.
 
 ```java
 static String sendRequest(String apiAddress, String endpoint, String subscriptionKey, String requestData) {
@@ -123,13 +124,13 @@ static String sendRequest(String apiAddress, String endpoint, String subscriptio
 }
 ```
 
-## <a name="detect-anomalies-as-a-batch"></a>Обнаруживать аномалии в пакетном режиме
+## <a name="detect-anomalies-as-a-batch"></a>Обнаружение аномалий в пакетном режиме
 
-1. Создайте метод с именем `detectAnomaliesBatch()` для обнаружения аномалий в данных в пакетном режиме. Вызовите `sendRequest()` метод, созданный ранее с помощью конечной точки, URL-адрес, ключ подписки и данных json. Получить результат и его вывода на консоль.
+1. Чтобы выполнить пакетное обнаружение данных, создайте метод `detectAnomaliesBatch()`. С помощью конечной точки, URL-адреса, ключа подписки и данных JSON вызовите метод `sendRequest()`, который был создан ранее. Получите результат и выведите его в консоль.
 
-2. Если в ответе содержится `code` поле, печати, код ошибки и сообщение об ошибке.
+2. Если ответ содержит поле `code`, выведите код ошибки и сообщение об ошибке.
 
-3. В противном случае поиск позиции аномалии в наборе данных. Ответ `isAnomaly` поле содержит значение типа boolean, относящиеся к ли точки данных — аномалия. Возвращает массив JSON и итерации, печать индекса любого `true` значения. Эти значения соответствуют индекс точки данных подозрительной активности, если любой объект найден.
+3. В противном случае найдите позиции аномалий в наборе данных. Поле ответа `isAnomaly` содержит логическое значение, которое зависит от того, является ли заданная точка данных аномалией. Получите массив JSON и выполните итерацию по нему, напечатав индекс любых значений `true`. Эти значения соответствуют индексу аномальных точек данных, если они были найдены.
 
 ```java
 static void detectAnomaliesBatch(String requestData) {
@@ -153,9 +154,9 @@ static void detectAnomaliesBatch(String requestData) {
 }
 ```
 
-## <a name="detect-the-anomaly-status-of-the-latest-data-point"></a>Обнаружение аномалий состояние последней точки данных
+## <a name="detect-the-anomaly-status-of-the-latest-data-point"></a>Обнаружение состояний аномалии последней точки данных
 
-* Создайте метод с именем `detectAnomaliesLatest()` для обнаружения аномалий состояние последней точки данных в наборе данных. Вызовите `sendRequest()` метод, созданный ранее с помощью конечной точки, URL-адрес, ключ подписки и данных json. Получить результат и его вывода на консоль.
+* Создайте метод с именем `detectAnomaliesLatest()`, чтобы обнаружить состояние аномалии последней точки данных в наборе данных. С помощью конечной точки, URL-адреса, ключа подписки и данных JSON вызовите метод `sendRequest()`, который был создан ранее. Получите результат и выведите его в консоль.
 
 ```java
 static void detectAnomaliesLatest(String requestData) {
@@ -165,11 +166,11 @@ static void detectAnomaliesLatest(String requestData) {
 }
 ```
 
-## <a name="load-your-time-series-data-and-send-the-request"></a>Загрузить данные временных рядов и отправить запрос
+## <a name="load-your-time-series-data-and-send-the-request"></a>Загрузка данных временных рядов и отправка запроса
 
-1. В методе main приложения чтения в JSON-файл, содержащий данные, которые будут добавлены на запросы.
+1. В основном методе вашего приложения считайте JSON-файл, содержащий данные, которые будут добавлены к запросам.
 
-2. Вызовите функции обнаружения аномалий два, созданной ранее.
+2. Вызовите две функции обнаружения аномалий, созданные выше.
 
 ```java
 public static void main(String[] args) throws Exception {
@@ -181,11 +182,11 @@ public static void main(String[] args) throws Exception {
 
 ### <a name="example-response"></a>Пример ответа
 
-Успешный ответ возвращается в формате JSON. Щелкните ссылки ниже, чтобы просмотреть ответ JSON на сайте GitHub:
-* [Пример ответа на обнаружение](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/batch-response.json)
-* [Пример последнюю точку обнаружения ответа](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/latest-point-response.json)
+Успешный ответ возвращается в формате JSON. Чтобы просмотреть ответы JSON на GitHub, перейдите по следующим ссылкам:
+* [Пример ответа обнаружения пакета](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/batch-response.json)
+* [Пример ответа последнего обнаружения точки](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/latest-point-response.json)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Справочник по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/AnomalyDetector/operations/post-timeseries-entire-detect)

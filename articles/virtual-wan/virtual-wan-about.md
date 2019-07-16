@@ -5,21 +5,23 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: overview
-ms.date: 06/11/2019
+ms.date: 06/28/2019
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to understand what Virtual WAN is and if it is the right choice for my Azure network.
-ms.openlocfilehash: 7ee6b2dd07a89de4f5347e82bde19990dbb6c995
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 46f3f87fac5b65229e03ee91d8f2b93b1a1590e8
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67077542"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67795280"
 ---
 # <a name="what-is-azure-virtual-wan"></a>Что такое Виртуальная глобальная сеть Azure?
 
 Виртуальная глобальная сеть Azure — это сетевая служба, которая обеспечивает оптимизированное и автоматизированное подключение типа "ветвь — ветвь" через Azure. Регионы Azure служат в качестве концентраторов, к которым вы можете подключить ветви. Вы можете использовать магистральную сеть Azure также для подключения ветвей и воспользоваться преимуществами подключения ветвей к виртуальной сети. Мы предоставляем список партнеров, поддерживающих автоматизацию подключения с помощью VPN Виртуальной глобальной сети Azure. Дополнительные сведения см. в статье [Virtual WAN partners and virtual hub locations](virtual-wan-locations-partners.md) (Партнеры Виртуальной глобальной сети и расположения виртуальных концентраторов).
 
-Виртуальная глобальная сеть Azure объединяет множество служб подключения к облаку Azure, таких как VPN типа "сеть — сеть" (общедоступно), ExpressRoute (предварительная версия) и пользовательский VPN типа "точка — сеть" в один интерфейс операций. Подключение к виртуальным сетям Azure устанавливается с помощью подключения по виртуальной сети.
+Виртуальная глобальная сеть Azure объединяет множество служб подключения к облаку Azure, таких как VPN типа "сеть — сеть", ExpressRoute и пользовательское VPN-подключение типа "точка — сеть", в один интерфейс операций. Подключение к виртуальным сетям Azure устанавливается с помощью подключения по виртуальной сети.
+
+ExpressRoute и пользовательское VPN-подключение типа "точка — сеть" для Виртуальной глобальной сети в настоящее время предоставляются в предварительной версии.
 
 ![Схема Виртуальной глобальной сети](./media/virtual-wan-about/virtualwan1.png)
 
