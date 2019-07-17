@@ -142,7 +142,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings APP_COMMAND_LINE="rails server -b 0.0.0.0"
 ```
 
-### <a name="set-secret_key_base-manually">настройка secret_key_base вручную</a>.
+### <a name="set-secret_key_base-manually"></a>настройка secret_key_base вручную.
 
 Чтобы использовать собственное значение `secret_key_base` вместо автоматически созданного службой приложений, присвойте желаемое значение [параметру приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) `SECRET_KEY_BASE`. Например:
 
