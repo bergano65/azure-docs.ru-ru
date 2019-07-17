@@ -81,8 +81,8 @@
       href: sample-v2-code.md
     - name: Основные понятия
       items:
-        - name: Типы приложений
-          href: v2-app-types.md
+        - name: Потоки аутентификации и сценарии приложений
+          href: authentication-flows-app-scenarios.md
         - name: Сценарии приложений
           items:
             - name: Аудитория для входа
@@ -227,6 +227,8 @@
                   href: msal-client-application-configuration.md
                 - name: Инициализация приложений (.NET)
                   href: msal-net-initializing-client-applications.md
+                - name: Утверждения клиента (.NET)
+                  href: msal-net-client-assertions.md
                 - name: Инициализация приложений (JS)
                   href: msal-js-initializing-client-applications.md
             - name: Обработка ошибок и исключений
@@ -267,10 +269,12 @@
                       href: msal-js-known-issues-ie-edge-browsers.md
                     - name: Известные проблемы c Safari
                       href: msal-js-known-issues-safari-browser.md
-        - name: Аутентификация
+        - name: Протокол аутентификации
           items:
             - name: Основные сведения об аутентификации
               href: authentication-scenarios.md
+            - name: "Типы приложений и OAuth\_2.0"
+              href: v2-app-types.md
             - name: Протоколы OAuth 2.0 и OpenID Connect
               href: active-directory-v2-protocols.md
             - name: OpenID Connect

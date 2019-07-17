@@ -303,6 +303,8 @@
           href: sql-data-warehouse-troubleshoot-connectivity.md
 - name: Справочные материалы
   items:
+    - name: Типы параметров сортировки баз данных
+      href: sql-data-warehouse-reference-collation-types.md
     - name: T-SQL
       items:
         - name: Полный справочник

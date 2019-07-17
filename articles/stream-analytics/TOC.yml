@@ -94,10 +94,12 @@
           href: stream-analytics-clean-up-your-job.md
         - name: Связывание заданий для обеспечения надежности
           href: stream-analytics-job-reliability.md
-        - name: Аутентификация на основе управляемых удостоверений
+        - name: "Аутентификация на основе управляемых удостоверений\_— выходные данные ADLS 1-го поколения"
           href: stream-analytics-managed-identities-adls.md
         - name: Использование эталонных данных SQL
           href: sql-reference-data.md
+        - name: "Аутентификация на основе управляемых удостоверений\_— выходные данные хранилища BLOB-объектов"
+          href: blob-output-managed-identity.md
     - name: Создание решений
       items:
         - name: Анализ тональности в Twitter

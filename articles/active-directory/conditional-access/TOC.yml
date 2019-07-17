@@ -68,6 +68,10 @@
       href: howto-conditional-access-session-lifetime.md
     - name: Перенос классических политик
       href: policy-migration.md
+    - name: Устранение неполадок
+      items:
+        - name: Устранение неполадок с помощью средства What If
+          href: troubleshoot-conditional-access-what-if.md
 - name: Справочные материалы
   items:
     - name: Технический справочник

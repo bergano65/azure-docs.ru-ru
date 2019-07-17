@@ -292,6 +292,8 @@
       displayName: 'module, import'
 - name: Сценарии работы с разными компонентами
   items:
+    - name: Отправка сообщения электронной почты из runbook с помощью SendGrid
+      href: automation-send-email.md
     - name: Коллекция Runbook
       href: automation-runbook-gallery.md
     - name: Мониторинг модулей runbook с помощью оповещений метрик
