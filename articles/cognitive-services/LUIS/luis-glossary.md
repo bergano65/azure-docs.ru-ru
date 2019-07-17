@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: 3fc14b821064719f39eb877aa2253f8084496a66
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a88d7de69158a54995106d45683094c9b976896b
+ms.sourcegitcommit: af58483a9c574a10edc546f2737939a93af87b73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65523500"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68302525"
 ---
 # <a name="language-understanding-glossary-of-common-vocabulary-and-concepts"></a>Основные понятия и определения глоссария Интеллектуальной службы распознавания речи (LUIS)
 В глоссарии Интеллектуальной службы распознавания речи (LUIS) объясняются термины, с которыми вы можете столкнуться при работе со службой API LUIS.
@@ -96,11 +96,11 @@ ms.locfileid: "65523500"
 
 В [пакетном тестировании](luis-interactive-test.md#batch-testing) это измерение точности теста.
 
-## <a name="false-negative"></a>Ложный отрицательный результат (TN)
+## <a name="false-negative"></a>Ложное отрицательное (FN)
 
 В [пакетном тестировании](luis-interactive-test.md#batch-testing) точка данных представляет высказывания, в которых приложение неверно спрогнозировало отсутствие целевого намерения или сущности.
 
-## <a name="false-positive"></a>Ложный положительный результат (TP)
+## <a name="false-positive"></a>Ложный положительный результат (FP)
 
 В [пакетном тестировании](luis-interactive-test.md#batch-testing) точка данных представляет высказывания, в которых приложение неверно спрогнозировало наличие целевого намерения или сущности.
 

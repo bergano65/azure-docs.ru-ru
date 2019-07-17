@@ -1,25 +1,25 @@
 ---
-title: Запустите экземпляры контейнеров Azure
+title: Запуск экземпляров контейнеров Azure
 titleSuffix: Azure Cognitive Services
-description: Развертывание контейнера распознаватель формы в экземпляре контейнера Azure и протестировать его в веб-браузере.
+description: Разверните контейнер распознавателя форм в экземпляре контейнера Azure и протестируйте его в веб-браузере.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
-ms.subservice: form-recognizer
+ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 7/5/2019
 ms.author: dapine
-ms.openlocfilehash: 3c424465678a9989940d92910c5d288fa2fb1cab
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 1fc516d309c2a51230f53e814a2dabdb774db9c2
+ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67711398"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68297709"
 ---
-# <a name="deploy-the-form-recognizer-container-to-azure-container-instances"></a>Развертывание контейнера распознаватель формы в экземпляры контейнеров Azure
+# <a name="deploy-the-form-recognizer-container-to-azure-container-instances"></a>Развертывание контейнера распознавателя форм в службе "экземпляры контейнеров Azure"
 
-Дополнительные сведения о развертывании Cognitive Services [распознаватель формы](form-recognizer-container-howto.md) контейнера в Azure [экземпляры контейнеров](https://docs.microsoft.com/azure/container-instances/). Эта процедура демонстрирует создание ресурса Azure формы распознаватель. Затем мы обсудим, получение образа связанного контейнера. Наконец рассматривается возможность выполнять оркестрацию двух из браузера. С помощью контейнеров можно сместить внимание разработчиков от управления инфраструктурой, чтобы вместо этого сосредоточиться на разработке приложений.
+Узнайте, как развернуть контейнер [распознавателя форм](form-recognizer-container-howto.md) Cognitive Services в службе " [экземпляры контейнеров](https://docs.microsoft.com/azure/container-instances/)Azure". Эта процедура демонстрирует создание ресурса распознавателя форм Azure. Затем мы обсудим извлечение связанного образа контейнера. Наконец, мы выделим возможность выполнить согласование двух из браузера. Использование контейнеров может повлечь за собой внимание разработчиков от управления инфраструктурой до того, чтобы сосредоточиться на разработке приложений.
 
 [!INCLUDE [Prerequisites](../containers/includes/container-preview-prerequisites.md)]
 
