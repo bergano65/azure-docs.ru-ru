@@ -370,7 +370,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 | _body_    | Объект, содержащий текст ответа.         |
 | _headers_ | Объект, содержащий заголовок ответа.             |
 | _isRaw_   | Указывает, что форматирование пропускается для ответа.    |
-| _состояние_  | Код состояния HTTP ответа.                     |
+| _status_  | Код состояния HTTP ответа.                     |
 
 ### <a name="accessing-the-request-and-response"></a>Доступ к запросу и ответу 
 
