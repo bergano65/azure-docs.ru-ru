@@ -5,7 +5,7 @@
     - name: Общие сведения об Azure AD B2C
       expanded: true
       href: active-directory-b2c-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Настройка входа (ASP.NET)
@@ -28,7 +28,7 @@
       href: tutorial-customize-ui.md
     - name: Аутентификация учетных записей
       items:
-        - name: 'ASP.NET:'
+        - name: ASP.NET
           href: active-directory-b2c-tutorials-web-app.md
         - name: Классические приложения
           href: active-directory-b2c-tutorials-desktop-app.md
@@ -36,7 +36,7 @@
           href: active-directory-b2c-tutorials-spa.md
     - name: Предоставление доступа через API
       items:
-        - name: 'ASP.NET:'
+        - name: ASP.NET
           href: active-directory-b2c-tutorials-web-api.md
         - name: Классические приложения
           href: active-directory-b2c-tutorials-desktop-app-webapi.md
@@ -50,13 +50,13 @@
       href: active-directory-b2c-apps.md
     - name: Протоколы проверки подлинности
       href: active-directory-b2c-reference-protocols.md
-    - name: Инфраструктура процедур идентификации
+    - name: Identity Experience Framework
       items:
         - name: Пользовательские политики
           href: active-directory-b2c-overview-custom.md
         - name: Доступ пользователей
           href: manage-user-access.md
-    - name: Использование JavaScript и контрактов страниц
+    - name: JavaScript и макеты страниц
       href: user-flow-javascript-overview.md
     - name: "OAuth\_2.0"
       href: active-directory-b2c-reference-oauth-code.md
@@ -64,7 +64,7 @@
       href: active-directory-b2c-reference-oidc.md
     - name: Одностраничный вход в систему
       href: active-directory-b2c-reference-spa.md
-    - name: Маркеры
+    - name: Токены
       href: active-directory-b2c-reference-tokens.md
     - name: Учетные записи пользователей
       href: user-overview.md
@@ -74,7 +74,7 @@
       href: active-directory-b2c-reference-policies.md
     - name: Настройка пользовательского интерфейса
       href: customize-ui-overview.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Доступ к журналам аудита
       href: active-directory-b2c-reference-audit-logs.md
@@ -96,7 +96,7 @@
       href: active-directory-b2c-reference-disable-ev.md
     - name: Включение MFA
       href: active-directory-b2c-reference-mfa.md
-    - name: Инфраструктура процедур идентификации
+    - name: Identity Experience Framework
       items:
         - name: Сбор журналов с помощью Application Insights
           href: active-directory-b2c-troubleshoot-custom.md
@@ -142,8 +142,8 @@
               href: active-directory-b2c-custom-setup-msa-idp.md
             - name: Twitter
               href: active-directory-b2c-custom-setup-twitter-idp.md
-        - name: Контракт страницы
-          href: page-contract.md
+        - name: Разметка страницы
+          href: page-layout.md
         - name: Сложность пароля
           href: active-directory-b2c-reference-password-complexity-custom.md
         - name: Изменение пароля
@@ -154,9 +154,9 @@
               href: active-directory-b2c-custom-setup-adfs2016-idp.md
             - name: Salesforce
               href: active-directory-b2c-setup-sf-app-custom.md
-        - name: Маркеры
+        - name: Токены
           items:
-            - name: Настройка маркеров
+            - name: Настройка токенов
               href: active-directory-b2c-reference-manage-sso-and-token-configuration.md
             - name: Передача маркера доступа
               href: idp-pass-through-custom.md
@@ -166,7 +166,7 @@
           items:
             - name: Арбитры утверждений
               href: claim-resolver-overview.md
-            - name: Схема инфраструктуры процедур идентификации
+            - name: Схема Identity Experience Framework
               items:
                 - name: TrustFrameworkPolicy
                   href: trustframeworkpolicy.md
@@ -184,7 +184,7 @@
                           href: date-transformations.md
                         - name: Общие сведения
                           href: general-transformations.md
-                        - name: 'Целое число '
+                        - name: Целое число
                           href: integer-transformations.md
                         - name: JSON
                           href: json-transformations.md
@@ -281,9 +281,9 @@
       href: direct-signin.md
     - name: Настройка самостоятельного сброса пароля
       href: active-directory-b2c-reference-sspr.md
-    - name: Маркеры
+    - name: Токены
       items:
-        - name: Настройка маркеров
+        - name: Конфигурирование токенов
           href: configure-tokens.md
         - name: Передача маркера доступа
           href: idp-pass-through-user-flow.md
@@ -325,9 +325,9 @@
       href: 'https://azure.microsoft.com/updates/?product=active-directory-b2c'
     - name: Обучение по решениям
       href: solution-articles.md
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-ad-b2c+identity-experience-framework'
     - name: Поддержка
       href: active-directory-b2c-support.md
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=active-directory-b2c'

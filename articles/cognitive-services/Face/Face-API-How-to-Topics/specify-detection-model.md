@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 05/16/2019
 ms.author: yluiu
-ms.openlocfilehash: fbefbea171a8559466117c55703a14268b4c4c99
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 26ab3cb247309aa21791ca5a984f39ef40ce9a78
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592929"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68249630"
 ---
 # <a name="specify-a-face-detection-model"></a>Указание модели определения лиц
 
@@ -27,7 +27,7 @@ API распознавания лиц используются моделей м
 
 Если вы не уверены, должен ли использоваться последней модели, перейдите к разделу [оценки различных моделей](#evaluate-different-models) раздел для оценки новой модели и сравнить результаты, используя текущий набор данных.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вы должны быть знакомы с концепцией обнаружение лиц искусственного Интеллекта. Если нет, см. в разделе руководства концептуальной обнаружения лиц или Практическое руководство:
 
@@ -45,8 +45,7 @@ API распознавания лиц используются моделей м
 
 URL-адрес запроса для [Лиц — обнаружения] REST API будет выглядеть следующим образом:
 
-`https://westus.api.cognitive.microsoft.com/face/v1.0/detect[?returnFaceId][&returnFaceLandmarks][&returnFaceAttributes][&recognitionModel][&returnRecognitionModel][&detectionModel]
-&subscription-key=<Subscription key>`
+`https://westus.api.cognitive.microsoft.com/face/v1.0/detect[?returnFaceId][&returnFaceLandmarks][&returnFaceAttributes][&recognitionModel][&returnRecognitionModel][&detectionModel]&subscription-key=<Subscription key>`
 
 Если вы используете клиентскую библиотеку, можно назначить значение `detectionModel` , передав соответствующую строку. Если этот параметр не назначен, API будет использовать версию модели по умолчанию (`detection_01`). См. в следующем примере кода для клиентской библиотеки .NET.
 
@@ -106,7 +105,7 @@ await client.FaceList.AddFaceFromUrlAsync(faceListId, imageUrl, detectionModel: 
 
 Лучший способ сравнения характеристиками `detection_01` и `detection_02` моделей будет использовать их в набор. Рекомендуем вызывать [Лиц — обнаружения] API для разнообразных образы, особенно образы лица или лиц, которые трудно см. в разделе, с помощью каждой модели обнаружения. Обратите внимание на количество лиц, которые возвращает каждой модели.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как указать модель обнаружения для использования с помощью различных интерфейсов API распознавания лиц. Затем следует выполните краткое руководство поможет приступить к использованию обнаружения лиц.
 

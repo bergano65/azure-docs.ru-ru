@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 03/28/2019
 ms.author: longl
-ms.openlocfilehash: 0f1069c4a3d0a841b792cedf5a5a90aec80a4cc9
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: fd60923351970dfe5aa5705a0508dbd39941ef58
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592963"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68254349"
 ---
 # <a name="specify-a-face-recognition-model"></a>Указание модели распознавания лиц
 
@@ -25,7 +25,7 @@ API распознавания лиц используются моделей м
 
 Если вы новый пользователь, мы рекомендуем использовать последней модели. Читайте дальше, чтобы узнать, как указать его в различные операции распознавания лиц, избегая конфликтов. Если вы опытный пользователь и не уверены, нужно перейти к последней модели, перейдите к [оценки различных моделей](#evaluate-different-models) раздел для оценки новой модели и сравнить результаты, используя текущий набор данных.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Вы должны быть знакомы с концепцией идентификации и обнаружения лиц искусственного Интеллекта. Если нет, см. в статье эти руководства сначала:
 
@@ -45,8 +45,7 @@ API распознавания лиц используются моделей м
 
 При необходимости можно указать _returnRecognitionModel_ параметра (по умолчанию **false**) для указания ли _recognitionModel_ должен возвращаться в ответ. Таким образом, URL-адрес запроса для [Лиц — обнаружения] REST API будет выглядеть следующим образом:
 
-`https://westus.api.cognitive.microsoft.com/face/v1.0/detect[?returnFaceId][&returnFaceLandmarks][&returnFaceAttributes][&recognitionModel][&returnRecognitionModel]
-&subscription-key=<Subscription key>`
+`https://westus.api.cognitive.microsoft.com/face/v1.0/detect[?returnFaceId][&returnFaceLandmarks][&returnFaceAttributes][&recognitionModel][&returnRecognitionModel]&subscription-key=<Subscription key>`
 
 Если вы используете клиентскую библиотеку, можно назначить значение `recognitionModel` путем передачи строки, представляющее версию.
 Если оставить ее без конкретного указания версии модели по умолчанию (_recognition_01_) будет использоваться. См. в следующем примере кода для клиентской библиотеки .NET.
@@ -104,7 +103,7 @@ await faceClient.FaceList.CreateAsync(faceListId, "My face collection", recognit
 
 При указании обычно достоверности (значение между 0 и 1, определяющее уверены, каким образом модель должна быть для идентификации грани), может потребоваться использовать разные пороговые значения для различных моделей. Пороговое значение для одной модели не предназначен для совместного использования в другой и обязательно не дают одинаковые результаты.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как указать модель распознавания для использования с другой API службы распознавания лиц. Затем следует выполните краткое руководство поможет приступить к использованию обнаружения лиц.
 

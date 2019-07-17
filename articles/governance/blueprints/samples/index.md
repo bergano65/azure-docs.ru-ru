@@ -7,12 +7,12 @@ ms.service: blueprints
 ms.topic: sample
 ms.date: 06/26/2019
 ms.author: dacoulte
-ms.openlocfilehash: 743cd27b5328cae2fe19688f6d0638d6f706d8a8
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: ccee11a9b2e5505073bac9f5cb2e9d3efb8816e1
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68225974"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68249610"
 ---
 # <a name="azure-blueprints-samples"></a>Примеры для Azure Blueprints
 
@@ -24,7 +24,7 @@ ms.locfileid: "68225974"
 |---------|---------|
 | [ISO 27001: общие службы](./iso27001-shared/index.md) | Предоставляет соответствующий требованиям набор шаблонов инфраструктуры и средства соответствия политикам, которые помогут пройти аттестацию ISO 27001. |
 | [ISO 27001: рабочая нагрузка Среды службы приложений или Базы данных SQL](./iso27001-ase-sql-workload/index.md) | Предоставляет дополнительную инфраструктуру для примера схемы [ISO 27001: общие службы](./iso27001-shared/index.md). |
-| [NIST SP 800-53, ред. 4](./nist-sp-800-53-rev4/control-mapping.md) | В этом документе описаны средства защиты для соответствия требованиям NIST SP 800-53, ред. 4. |
+| [NIST SP 800-53, ред. 4](./nist-sp-800-53-rev4/index.md) | В этом документе описаны средства защиты для соответствия требованиям NIST SP 800-53, ред. 4. |
 | [PCI-DSS версии 3.2.1](./pci-dss-3.2.1/index.md) | Предоставляет набор политик для обеспечения соответствия требованиям PCI-DSS версии 3.2.1. |
 | [Система управления UK OFFICIAL и UK NHS](./ukofficial/index.md) | Предоставляет набор соответствующих шаблонов инфраструктуры и средства, обеспечивающие соответствие политикам, для прохождения аттестации UK OFFICIAL и UK NHS |
 

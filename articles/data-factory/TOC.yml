@@ -564,6 +564,8 @@
           href: solution-template-copy-files-multiple-containers.md
         - name: Копирование новых файлов с использованием параметра LastModifiedDate
           href: solution-template-copy-new-files-lastmodifieddate.md
+        - name: Перемещение файлов
+          href: solution-template-move-files.md
         - name: Массовое копирование с использованием контрольной таблицы
           href: solution-template-bulk-copy-with-control-table.md
         - name: Разностное копирование с использованием контрольной таблицы
@@ -574,6 +576,8 @@
       items:
         - name: Устранение неполадок с действиями
           href: data-factory-troubleshoot-guide.md
+        - name: Устранение неполадок с управлением Azure-SSIS IR
+          href: ssis-integration-runtime-management-troubleshoot.md
         - name: "Устранение неполадок с выполнением пакетов в Azure-SSIS\_IR"
           href: ssis-integration-runtime-ssis-activity-faq.md
 - name: Справочные материалы
