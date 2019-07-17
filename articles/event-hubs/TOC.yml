@@ -59,6 +59,8 @@
   items:
     - name: 'Термины, касающиеся Концентраторов событий'
       href: event-hubs-features.md
+    - name: Узел обработчика событий
+      href: event-hubs-event-processor-host.md
     - name: Доступность и согласованность
       href: event-hubs-availability-and-consistency.md
     - name: Масштабируемость
@@ -90,8 +92,6 @@
           href: event-hubs-exchange-events-different-protocols.md
         - name: Руководство по программированию
           href: event-hubs-programming-guide.md
-        - name: Получение событий с помощью узла обработчика событий
-          href: event-hubs-event-processor-host.md
     - name: Обработка данных
       items:
         - name: Обработка данных с помощью Azure Stream Analytics

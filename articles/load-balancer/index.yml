@@ -6,18 +6,18 @@ metadata:
   title: Load Balancer
   meta.description: 'Learn how to use Azure Load Balancer. Quickstarts, tutorials, samples, and more, show you how to deploy a load balancer and load balance traffic to and from virtual machines and cloud resources, and in cross-premises virtual networks.'
   services: load-balancer
-  author: KumudD
+  author: asudbring
   manager: twooley
   ms.service: load-balancer
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
   ms.date: 11/14/2018
-  ms.author: kumud
+  ms.author: allensu
 abstract:
   description: 'Сведения об использовании Azure Load Balancer. В руководствах, примерах и документации показано, как развернуть подсистему балансировки нагрузки и распределять нагрузку для трафика, направляемого в виртуальные машины, облачные ресурсы, распределенные виртуальные сети и обратно.'
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Сведения о создании подсистемы балансировки нагрузки, создании виртуальных машин в качестве внутренних серверов, установке пользовательского веб-приложения на виртуальной машине и распределении нагрузки для веб-приложений между виртуальными машинами.'
@@ -34,9 +34,9 @@ sections:
             href: /azure/load-balancer/quickstart-create-basic-load-balancer-powershell
           - image:
               src: 'https://docs.microsoft.com/media/common/cli.svg'
-            text: Инфраструктура CLI Azure
+            text: Azure CLI
             href: /azure/load-balancer/quickstart-create-basic-load-balancer-cli
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: Сведения о создании подсистемы и служб балансировки нагрузки в виртуальных машинах.
@@ -45,7 +45,7 @@ sections:
         items:
           - html: <a href="/azure/load-balancer/tutorial-load-balancer-standard-manage-portal">Балансировка интернет-трафика на виртуальных машинах</a>
           - html: <a href="/azure/load-balancer/tutorial-load-balancer-basic-internal-portal">Балансировка внутреннего трафика на виртуальных машинах</a>
-          - html: <a href="/azure/load-balancer/tutorial-load-balancer-standard-public-zone-redundant-portal">Балансировка нагрузки виртуальных машин в пределах зон доступности</a>
+          - html: <a href="/azure/load-balancer/tutorial-load-balancer-standard-public-zone-redundant-portal">Распределение нагрузки виртуальных машин в пределах зон доступности</a>
           - html: <a href="/azure/load-balancer/tutorial-load-balancer-standard-public-zonal-portal">Балансировка нагрузки виртуальных машин в пределах определенной зоны доступности</a>
           - html: <a href="/azure/load-balancer/tutorial-load-balancer-port-forwarding-portal">Настройка переадресации портов в Load Balancer</a>
   - title: Развитие навыков с помощью Microsoft Learn
@@ -61,7 +61,7 @@ sections:
               href: /learn/modules/intro-to-azure-virtual-machines/5-high-availability
       - type: paragraph
         text: <a href="/learn/browse/?products=azure-virtual-machines">Другие интерактивные руководства</a>
-  - title: Бесплатные видеоуроки PluralSight
+  - title: Бесплатные видеоуроки Pluralsight
     items:
       - type: list
         style: cards
@@ -90,7 +90,7 @@ sections:
         style: unordered
         className: spaced noBullet
         items:
-          - html: <a href="/azure/load-balancer/cli-samples">Интерфейс командной строки Azure</a>
+          - html: <a href="/azure/load-balancer/cli-samples">Azure CLI</a>
           - html: <a href="/azure/load-balancer/powershell-samples">PowerShell</a>
   - title: Справочные материалы
     items:
@@ -99,8 +99,8 @@ sections:
         className: cardsD
         items:
           - title: Командная строка
-            html: '<p><a href="/powershell/module/az.network#load_balancer">PowerShell</a></p><p><a href="/cli/azure/network/lb">Интерфейс командной строки Azure</a></p>'
-          - title: Languages
+            html: '<p><a href="/powershell/module/az.network#load_balancer">PowerShell</a></p><p><a href="/cli/azure/network/lb">Azure CLI</a></p>'
+          - title: Языки
             html: '<p><a href="/dotnet/api/overview/azure/virtual-network">.NET</a></p><p><a href="/java/api/com.microsoft.azure.management.network">Java</a></p><p><a href="https://docs.microsoft.com/python/api/azure.mgmt.network.v2017_10_01.models.LoadBalancer">Node.js</a></p><p><a href="https://docs.microsoft.com/python/api/azure.mgmt.network.v2015_06_15.operations.loadbalancersoperations">Python</a></p>'
           - title: REST
-            html: <p><a href="/rest/api/load-balancer/">справочник по API REST</a></p>
+            html: <p><a href="/rest/api/load-balancer/">Справочник по REST API</a></p>
