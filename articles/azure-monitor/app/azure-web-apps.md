@@ -11,7 +11,7 @@ ms.date: 04/26/2019
 ms.author: mbullwin
 ms.openlocfilehash: 5594c1f3517bf3d3f74841493df3c683304fa3f5
 ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/02/2019
 ms.locfileid: "67502086"
@@ -100,7 +100,7 @@ ms.locfileid: "67502086"
 
 Мониторинг на стороне клиента явно согласиться на ASP.NET. Включение наблюдения на стороне клиента.
 
-* Выберите **параметры** > ** ** приложения параметры ***
+* Выберите **параметры** >** **приложения параметры****
    * В разделе "Параметры приложения" добавьте новую **имя параметра приложения** и **значение**:
 
      Имя: `APPINSIGHTS_JAVASCRIPT_ENABLED`.
