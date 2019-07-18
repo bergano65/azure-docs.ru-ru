@@ -388,18 +388,26 @@
               items:
                 - name: Веб-приложения
                   href: app/java-get-started.md
+                - name: Веб-приложения (2.5.0-BETA)
+                  href: app/java-get-started-25-beta.md
                 - name: Приложения Docker
                   href: app/docker.md
                 - name: Трассировки журналов
                   href: app/java-trace-logs.md
+                - name: Трассировки журналов (2.5.0-BETA)
+                  href: app/java-trace-logs-25-beta.md
                 - name: Метрики Unix
                   href: app/java-collectd.md
                 - name: Зависимости
                   href: app/java-agent.md
+                - name: Зависимости (2.5.0-BETA)
+                  href: app/java-agent-25-beta.md
                 - name: Фильтрация данных телеметрии
                   href: app/java-filter-telemetry.md
                 - name: Метрики Micrometer
                   href: app/micrometer-java.md
+                - name: Метрики Micrometer (2.5.0-BETA)
+                  href: app/micrometer-java-25-beta.md
                 - name: Настройка приложения Spring Boot Initializer
                   href: /java/azure/spring-framework/configure-spring-boot-java-applicationinsights
             - name: Приложения Node.js

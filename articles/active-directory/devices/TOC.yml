@@ -55,7 +55,9 @@
       items:
         - name: 'Устранение неполадок с текущими устройствами Windows, присоединенными к гибридной среде Azure AD'
           href: troubleshoot-hybrid-join-windows-current.md
-        - name: 'Устранение неполадок с устаревшими устройствами Windows, присоединенными к гибридной среде Azure AD'
+        - name: Устранение неполадок с помощью dsregcmd
+          href: troubleshoot-device-dsregcmd.md
+        - name: "Устранение неполадок с устройствами Windows нижнего уровня, присоединенными к гибридной среде Azure\_AD"
           href: troubleshoot-hybrid-join-windows-legacy.md
         - name: Устранение неполадок с Enterprise State Roaming
           href: enterprise-state-roaming-troubleshooting.md

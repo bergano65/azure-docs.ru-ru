@@ -1,13 +1,13 @@
-- name: Документация по виртуальной машине для обработки и анализа данных
+- name: Документация по Виртуальной машине для обработки и анализа данных
   href: index.yml
   items: null
 - name: Обзор
   items:
-    - name: Что такое виртуальная машина для обработки и анализа данных?
+    - name: Что такое Виртуальная машина для обработки и анализа данных?
       href: overview.md
     - name: Что такое виртуальная машина для глубокого обучения?
       href: deep-learning-dsvm-overview.md
-    - name: Что такое Geo AI Data Science VM?
+    - name: Что такое Виртуальная машина для обработки и анализа данных Geo AI?
       href: geo-ai-dsvm-overview.md
 - name: Краткие руководства
   expanded: true
@@ -20,11 +20,11 @@
       href: linux-dsvm-intro.md
     - name: Создание виртуальной машины для глубокого обучения
       href: provision-deep-learning-dsvm.md
-    - name: Создание Geo AI Data Science VM
+    - name: Создание виртуальной машины для обработки и анализа данных Geo AI
       href: provision-geo-ai-dsvm.md
 - name: Основные понятия
   items:
-    - name: Обнаружение виртуальной машины для обработки и анализа данных
+    - name: Обнаружение DSVM
       href: dsvm-tools-overview.md
     - name: Платформы глубокого обучения и искусственного интеллекта
       href: dsvm-deep-learning-ai-frameworks.md
@@ -42,7 +42,7 @@
       href: dsvm-data-platforms.md
     - name: Примеры и пошаговые руководства
       href: dsvm-samples-and-walkthroughs.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Использование виртуальной машины Windows для обработки и анализа данных
       href: vm-do-ten-things.md
@@ -50,7 +50,7 @@
       href: linux-dsvm-walkthrough.md
     - name: Использование виртуальной машины для глубокого обучения
       href: use-deep-learning-dsvm.md
-    - name: Использование Geo AI Data Science VM
+    - name: Использование виртуальной машины для обработки и анализа данных Geo AI
       href: use-geo-ai-dsvm.md
     - name: Руководство для предприятий
       items:
@@ -66,8 +66,6 @@
   items:
     - name: "Руководство по разработке на\_R"
       href: /azure/architecture/data-guide/technology-choices/r-developers-guide?context=azure/machine-learning/data-science-virtual-machine/context/ml-context
-    - name: Блог
-      href: 'https://blogs.technet.microsoft.com/machinelearning/tag/dsvm/'
     - name: Форум MSDN
       href: 'https://social.microsoft.com/Forums/en-US/home?forum=dsvm'
     - name: Stack Overflow

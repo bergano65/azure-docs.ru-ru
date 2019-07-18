@@ -564,12 +564,12 @@
           href: solution-template-copy-files-multiple-containers.md
         - name: Копирование новых файлов с использованием параметра LastModifiedDate
           href: solution-template-copy-new-files-lastmodifieddate.md
+        - name: Массовое копирование из базы данных
+          href: solution-template-bulk-copy-with-control-table.md
+        - name: Разностное копирование из базы данных
+          href: solution-template-delta-copy-with-control-table.md
         - name: Перемещение файлов
           href: solution-template-move-files.md
-        - name: Массовое копирование с использованием контрольной таблицы
-          href: solution-template-bulk-copy-with-control-table.md
-        - name: Разностное копирование с использованием контрольной таблицы
-          href: solution-template-delta-copy-with-control-table.md
         - name: Преобразование данных с помощью Databricks
           href: solution-template-databricks-notebook.md
     - name: Руководство по устранению неполадок
