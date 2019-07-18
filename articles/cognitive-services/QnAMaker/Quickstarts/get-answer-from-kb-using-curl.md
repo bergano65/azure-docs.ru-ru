@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
-ms.date: 04/16/2019
+ms.date: 07/16/2019
 ms.author: diberry
-ms.openlocfilehash: 817a19d5cabd7d20dc17154f29b4430e6b96c5fa
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: bb33e829853e1f9a975d29c7a80298b9033f0748
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67072045"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68249652"
 ---
 # <a name="quickstart-get-answer-from-knowledge-base-using-curl"></a>Краткое руководство. Получение ответа из базы знаний с помощью cURL
 
 В этом кратком руководстве описывается, как получить ответ из базы знаний с помощью cURL.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Последние [**cURL**](https://curl.haxx.se/).
 * Необходимо иметь [службу QnA Maker](../How-To/set-up-qnamaker-service-azure.md) и [базу знаний с вопросами и ответами](../Tutorials/create-publish-query-in-portal.md).
@@ -69,13 +69,13 @@ ms.locfileid: "67072045"
 
 ## <a name="use-staging-endpoint-with-curl"></a>Использование промежуточной конечной точки с помощью cURL
 
-Если вы хотите получить ответ от промежуточной конечной точки, используйте `isTest` тела свойства.
+Если вы хотите получить ответ от промежуточной конечной точки, используйте свойство текста `isTest`.
 
 ```json
 isTest:true
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 На странице публикации также предоставляются сведения для [формирования ответа](get-answer-from-kb-using-postman.md) с помощью Postman. 
 
