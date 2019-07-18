@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 07/03/2019
 ms.author: anroth
-ms.openlocfilehash: fd5e46f47169705b9d19397a6b91770beab229dd
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 28ea62ffa7a2b163b984c089649c1cd99d5e4556
+ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604077"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67827556"
 ---
 # <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-net-sdk"></a>Краткое руководство. Создание проекта классификации изображений с помощью пакета SDK Пользовательской службы визуального распознавания для .NET
 
@@ -71,6 +71,7 @@ ms.locfileid: "67604077"
 Этот код создает первую итерацию в проекте и публикует ее в конечной точке прогнозирования. Имя, присвоенное опубликованной итерации, можно использовать для отправки запросов на прогнозирование. Итерация недоступна в конечной точке прогнозирования, пока она не будет опубликована.
 
 ```csharp
+var iteration = trainingApi.TrainProject(project.Id);
 // The returned iteration will be in progress, and can be queried periodically to see when it has completed
 while (iteration.Status == "Training")
 {

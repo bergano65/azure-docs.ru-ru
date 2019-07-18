@@ -3,7 +3,7 @@ title: Пример CLI. Виртуальные машины Load Balancer в п
 description: В этом примере скрипта Azure CLI показано, как распределить нагрузку трафика на виртуальных машинах в пределах зон доступности
 services: load-balancer
 documentationcenter: load-balancer
-author: KumudD
+author: asudbring
 manager: jeconnoc
 editor: tysonn
 tags: ''
@@ -15,15 +15,15 @@ ms.topic: sample
 ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 06/14/2018
-ms.author: kumud
-ms.openlocfilehash: fff34f6a36f9c01b1f28b6b1f13189537d8c9060
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: allensu
+ms.openlocfilehash: fdfd1de3d20a275dbc19ed414a22ebe2a6864eeb
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61323493"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68273714"
 ---
-# <a name="azure-cli-script-example-load-balance-vms-across-availability-zones"></a>Пример скрипта Azure CLI. Балансировка нагрузки виртуальных машин в пределах зон доступности
+# <a name="azure-cli-script-example-load-balance-vms-across-availability-zones"></a>Пример скрипта Azure CLI. Распределение нагрузки виртуальных машин в пределах зон доступности
 
 Этот пример скрипта Azure CLI позволяет создать все необходимые компоненты для запуска нескольких виртуальных машин Ubuntu, настроенных в высокодоступной конфигурации с распределением нагрузки. После выполнения этого сценария будут созданы три виртуальные машины в пределах всех зон доступности. Доступ к ним можно будет получить через Azure Load Balancer. 
 

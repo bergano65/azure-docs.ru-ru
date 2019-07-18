@@ -5,15 +5,15 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: quickstart
-ms.date: 06/11/2019
+ms.date: 07/17/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: c0e80b1354302f227cb448391c7a92100049cc3a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1da7a2648fe8f97372f877a4e9c7894c4b2a4aed
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67053355"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68276576"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-powershell"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure в Azure PowerShell
 
@@ -34,7 +34,7 @@ ms.locfileid: "67053355"
 1. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). 
 2. Чтобы создать подключение к Azure, выполните команду `Login-AzAccount`.
 
-### <a name="resource-group"></a>Группа ресурсов
+### <a name="resource-group"></a>Resource group
 
 В Azure выделите связанные ресурсы группе ресурсов. Вы можете выбрать существующую группу ресурсов или создать новую. В этом примере вы создадите группу ресурсов с помощью командлета [New-AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup). 
 
@@ -67,7 +67,8 @@ New-AzPublicIpAddress `
   -ResourceGroupName myResourceGroupAG `
   -Location eastus `
   -Name myAGPublicIPAddress `
-  -AllocationMethod Dynamic
+  -AllocationMethod Static
+  -Sku Standard
 ```
 ### <a name="backend-servers"></a>Внутренние серверы
 
@@ -197,8 +198,8 @@ $frontendRule = New-AzApplicationGatewayRequestRoutingRule `
 
 ```azurepowershell-interactive
 $sku = New-AzApplicationGatewaySku `
-  -Name Standard_Medium `
-  -Tier Standard `
+  -Name Standard_v2 `
+  -Tier Standard_v2 `
   -Capacity 2
 New-AzApplicationGateway `
   -Name myAppGateway `

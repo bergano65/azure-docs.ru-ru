@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 06/28/2019
 ms.author: stevelas
 ms.custom: seodec18, mvc
-ms.openlocfilehash: b8b4b5fc3ec15d921ff5580aff4d0202be1d38b9
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 3502a2ec7c56d01abe2ceb9f61db9c1c2d8179a0
+ms.sourcegitcommit: af58483a9c574a10edc546f2737939a93af87b73
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67797895"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68302341"
 ---
 # <a name="introduction-to-private-docker-container-registries-in-azure"></a>Общие сведения о частных реестрах контейнеров Docker в Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "67797895"
 * **Масштабируемые системы управления**, управляющие контейнерными приложениями в кластерах узлов, в том числе [Kubernetes](https://kubernetes.io/docs/), [DC/OS](https://docs.mesosphere.com/) и [Docker Swarm](https://docs.docker.com/swarm/).
 * **Службы Azure**, поддерживающие создание и выполнение масштабированных приложений, в том числе [служба Azure Kubernetes (AKS)](../aks/index.yml), [служба приложений](../app-service/index.yml), [пакетная служба](../batch/index.yml), [Service Fabric](/azure/service-fabric/) и т. д.
 
-Разработчики также могут отправлять образы в реестр контейнеров в рамках рабочего процесса разработки контейнера. Например, цель может получить доступ к реестру контейнеров из средства доставки и обеспечения непрерывной интеграции, таких как [Azure Pipelines](/azure/devops/pipelines/get-started/what-is-azure-pipelines.md) или [Jenkins](https://jenkins.io/).
+Разработчики также могут отправлять образы в реестр контейнеров в рамках рабочего процесса разработки контейнера. Например, цель может получить доступ к реестру контейнеров из средства доставки и обеспечения непрерывной интеграции, таких как [Azure Pipelines](/azure/devops/pipelines/get-started/what-is-azure-pipelines) или [Jenkins](https://jenkins.io/).
 
 Настройте в Задачах ACR автоматическое восстановление образов приложений при обновлении базовых образов или автоматизацию сборок образов, если ваша команда фиксирует код в репозиторий Git. Создавайте многошаговые задачи для автоматизации сборки, тестирования и внедрения исправлений нескольких образов контейнеров в параллельном режиме в облаке.
 

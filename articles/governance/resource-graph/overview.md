@@ -7,12 +7,12 @@ ms.date: 05/06/2019
 ms.topic: overview
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: 4724789dd1a0893c5ef4ab112306c185f0e87da7
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: d78c640f4269c799d3d371e6dd9db477faf96694
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67274382"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807422"
 ---
 # <a name="overview-of-the-azure-resource-graph-service"></a>Обзор службы Azure Resource Graph
 
@@ -28,6 +28,8 @@ Azure Resource Graph — это служба в Azure, призванная р�
 > [!NOTE]
 > Azure Resource Graph обеспечивает работу панели поиска портала Azure, новой возможности обзора "Все ресурсы", а также _отличия визуальных элементов_ [Изменение журнала](../policy/how-to/determine-non-compliance.md#change-history-preview) политики Azure
 > . Этот компонент предназначен для клиентов, которым нужно управлять масштабными средами.
+
+[!INCLUDE [service-provider-management-toolkit](../../../includes/azure-lighthouse-supported-service.md)]
 
 ## <a name="how-does-resource-graph-complement-azure-resource-manager"></a>Как Azure Resource Graph дополняет Azure Resource Manager
 

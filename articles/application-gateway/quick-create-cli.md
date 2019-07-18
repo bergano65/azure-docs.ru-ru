@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 1/8/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: a4f6cc2af7b9e044e5a72767898f876932fbf973
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 56b655b07314d5ebc2d0cb47389988f1a89e6a56
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66133945"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68304344"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-cli"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure и Azure CLI.
 
@@ -29,7 +29,7 @@ ms.locfileid: "66133945"
 
 Если вы решили установить и использовать CLI локально, вам потребуется Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду **az --version**. Дополнительные сведения об установке или обновлении см. [здесь]( /cli/azure/install-azure-cli).
 
-### <a name="resource-group"></a>Группа ресурсов
+### <a name="resource-group"></a>Resource group
 
 В Azure выделите связанные ресурсы группе ресурсов. Создайте группу ресурсов, используя команду [az group create](/cli/azure/group#az-group-create). 
 
@@ -60,7 +60,9 @@ az network vnet subnet create \
   --address-prefix 10.0.2.0/24
 az network public-ip create \
   --resource-group myResourceGroupAG \
-  --name myAGPublicIPAddress
+  --name myAGPublicIPAddress \
+  --allocation-method Static \
+  --sku Standard
 ```
 
 ### <a name="backend-servers"></a>Внутренние серверы
@@ -147,7 +149,7 @@ az network application-gateway create \
   --location eastus \
   --resource-group myResourceGroupAG \
   --capacity 2 \
-  --sku Standard_Medium \
+  --sku Standard_v2 \
   --http-settings-cookie-based-affinity Enabled \
   --public-ip-address myAGPublicIPAddress \
   --vnet-name myVNet \

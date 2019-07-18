@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/22/2019
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 28eac814364b56f59b8edc6f59209a6d742ff403
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 590ba4b7a61fa437767d99ac6b9ae3e0fa94edc3
+ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185533"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68227802"
 ---
 ## <a name="create-the-webapi-project"></a>Создание проекта веб-API
 
@@ -158,7 +158,7 @@ ms.locfileid: "67185533"
 
 3. В списке результатов выберите **Центры уведомлений Microsoft Azure**, а затем нажмите кнопку **Установить**. Завершите установку и закройте окно диспетчера пакетов NuGet.
 
-    Это действие добавляет ссылку на пакет SDK для Центров уведомлений Azure с помощью [пакета NuGet Microsoft.Azure.Notification Hubs](http://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/).
+    Это действие добавляет ссылку на пакет SDK для Центров уведомлений Azure с помощью [пакета NuGet Microsoft.Azure.Notification Hubs](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/).
 
 4. Создайте файл класса, представляющий подключение к концентратору уведомлений, который используется для отправки уведомлений. В обозревателе решений щелкните правой кнопкой мыши папку **Модели**, выберите **Добавить**, а затем щелкните **Класс**. Назовите новый класс **Notifications.cs** и нажмите кнопку **Добавить**, чтобы создать класс.
 
@@ -170,7 +170,7 @@ ms.locfileid: "67185533"
     using Microsoft.Azure.NotificationHubs;
     ```
 
-6. Замените определение класса `Notifications` следующим кодом и замените два заполнителя строкой подключения (с полным доступом) для своего концентратора уведомлений и именем концентратора (доступно на [портале Azure](http://portal.azure.com)):
+6. Замените определение класса `Notifications` следующим кодом и замените два заполнителя строкой подключения (с полным доступом) для своего концентратора уведомлений и именем концентратора (доступно на [портале Azure](https://portal.azure.com)):
 
     ```csharp
     public class Notifications

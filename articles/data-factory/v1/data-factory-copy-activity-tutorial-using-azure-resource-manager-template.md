@@ -14,18 +14,17 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: f3ed7f64b817be64a332ebd65a94e588c836ae38
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f4d972620d03bb856f06040f0a9b2d6f53f5873b
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66163797"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67836613"
 ---
 # <a name="tutorial-use-azure-resource-manager-template-to-create-a-data-factory-pipeline-to-copy-data"></a>Руководство по Создание конвейера фабрики данных для копирования данных с использованием шаблона Azure Resource Manager 
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Мастер копирования](data-factory-copy-data-wizard-tutorial.md)
-> * [портал Azure](data-factory-copy-activity-tutorial-using-azure-portal.md)
 > * [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md)
 > * [PowerShell](data-factory-copy-activity-tutorial-using-powershell.md)
 > * [Шаблон Azure Resource Manager](data-factory-copy-activity-tutorial-using-azure-resource-manager-template.md)
@@ -352,7 +351,7 @@ ms.locfileid: "66163797"
 4. Щелкните свою фабрику данных Azure. После этого откроется домашняя страница фабрики данных.
    
     ![Домашняя страница фабрики данных](media/data-factory-copy-activity-tutorial-using-azure-resource-manager-template/data-factory-home-page.png)  
-6. Следуйте инструкциям из раздела [Отслеживание конвейера](data-factory-copy-activity-tutorial-using-azure-portal.md#monitor-pipeline) для мониторинга конвейера и баз данных, созданных при работе с этим руководством. Сейчас Visual Studio не поддерживает мониторинг конвейеров фабрики данных.
+6. Следуйте инструкциям из раздела [Отслеживание конвейера](data-factory-monitor-manage-pipelines.md) для мониторинга конвейера и баз данных, созданных при работе с этим руководством. Сейчас Visual Studio не поддерживает мониторинг конвейеров фабрики данных.
 7. Когда срез будет в состоянии **Готово**, проверьте, были ли скопированы данные в таблицу **emp** в базе данных SQL Azure.
 
 

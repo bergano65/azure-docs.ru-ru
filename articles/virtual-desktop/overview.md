@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: overview
-ms.date: 05/31/2019
+ms.date: 07/17/2019
 ms.author: helohr
-ms.openlocfilehash: 296ea271e88dfbbd91b901dc1b24d49fc31c139e
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 03105232cb92a65f8c38d6d755910739a3fc4720
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66476731"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68305048"
 ---
 # <a name="what-is-windows-virtual-desktop-preview"></a>Общие сведения о Виртуальном рабочем столе Windows (предварительная версия) 
 
@@ -105,10 +105,6 @@ ms.locfileid: "66476731"
 
 * Windows 10 Корпоративная с поддержкой нескольких сеансов
 * Windows Server 2016
-
-## <a name="provide-feedback"></a>Отзывы
-
-Посетите [техническое сообщество Виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), чтобы обсудить службу "Виртуальный рабочий стол Windows" с группой разработчиков и активными членами сообщества. В период предоставления предварительной версии Виртуального рабочего стола Windows мы не принимаем запросы в службу поддержки.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

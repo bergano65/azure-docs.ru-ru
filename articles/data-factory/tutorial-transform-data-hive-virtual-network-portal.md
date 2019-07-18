@@ -11,12 +11,12 @@ ms.date: 01/04/2018
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: 9cea3e7494ee81638923cbcaff9f1b82d08a1ad1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b6e57500da0ca863f0c5810f625d6a4b0c56d1bf
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66165245"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68277472"
 ---
 # <a name="transform-data-in-azure-virtual-network-using-hive-activity-in-azure-data-factory"></a>Преобразование данных в виртуальной сети Azure с помощью действия Hive в фабрике данных Azure
 В этом руководстве с помощью портала Azure вы создадите конвейер фабрики данных, который преобразует данные, используя действие Hive в кластере HDInsight, находящемся в виртуальной сети Azure (VNet). В этом руководстве вы выполните следующие шаги:
@@ -201,7 +201,7 @@ ms.locfileid: "66165245"
 Обратите внимание на следующие моменты.
 
 - **scriptPath** указывает путь к скрипту Hive в учетной записи хранения Azure, используемой для MyStorageLinkedService. Путь следует вводить с учетом регистра.
-- **Выходные данные** выступают в качестве аргумента, используемого в скрипте Hive. Используйте формат `wasb://<Container>@<StorageAccount>.blob.core.windows.net/outputfolder/`, который должен указывать на существующую папку в службе хранилища Azure. Путь следует вводить с учетом регистра. 
+- **Выходные данные** выступают в качестве аргумента, используемого в скрипте Hive. Используйте формат `wasbs://<Container>@<StorageAccount>.blob.core.windows.net/outputfolder/`, который должен указывать на существующую папку в службе хранилища Azure. Путь следует вводить с учетом регистра. 
 
 1. В пользовательском интерфейсе фабрики данных щелкните знак **+** (плюс) на панели слева и выберите вариант **Конвейер**. 
 
@@ -226,16 +226,16 @@ ms.locfileid: "66165245"
         ![Параметры скрипта](./media/tutorial-transform-data-using-hive-in-vnet-portal/confirm-hive-script-settings.png)
     5. На вкладке **Script** (Скрипт) разверните раздел **Advanced** (Дополнительно). 
     6. Щелкните действие **Auto-fill from script** (Заполнить автоматически из скрипта) в области **Parameters** (Параметры). 
-    7. Введите значение для параметра **Output** (Вывод) в следующем формате: `wasb://<Blob Container>@<StorageAccount>.blob.core.windows.net/outputfolder/`. Например, `wasb://adftutorial@mystorageaccount.blob.core.windows.net/outputfolder/`.
+    7. Введите значение для параметра **Output** (Вывод) в следующем формате: `wasbs://<Blob Container>@<StorageAccount>.blob.core.windows.net/outputfolder/`. Например, `wasbs://adftutorial@mystorageaccount.blob.core.windows.net/outputfolder/`.
  
         ![Аргументы сценария](./media/tutorial-transform-data-using-hive-in-vnet-portal/script-arguments.png)
 1. Чтобы опубликовать артефакты в фабрике данных, щелкните **Опубликовать**.
 
-    ![Опубликовать](./media/tutorial-transform-data-using-hive-in-vnet-portal/publish.png)
+    ![Публикация](./media/tutorial-transform-data-using-hive-in-vnet-portal/publish.png)
 
 ## <a name="trigger-a-pipeline-run"></a>Активация выполнения конвейера
 
-1. Прежде всего проверьте работу конвейера, нажав кнопку **Проверить** на панели инструментов. Закройте окно **Pipeline Validation Output** (Выходные данные проверки конвейера) щелкнув **стрелку вправо (>>)**. 
+1. Прежде всего проверьте работу конвейера, нажав кнопку **Проверить** на панели инструментов. Закройте окно **Pipeline Validation Output** (Выходные данные проверки конвейера) щелкнув **стрелку вправо (>>)** . 
 
     ![Проверка конвейера](./media/tutorial-transform-data-using-hive-in-vnet-portal/validate-pipeline.png) 
 2. Чтобы активировать конвейер, щелкните "Триггер" на панели инструментов, а затем Trigger Now (Активировать сейчас). 

@@ -14,18 +14,17 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 2d04cdfb3ec12406e60fcb265966e0271b7220d9
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 934effe585b85075a80eede4236258d4a428b9ce
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59258068"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67836571"
 ---
 # <a name="tutorial-create-a-pipeline-with-copy-activity-using-visual-studio"></a>Руководство по Создание конвейера с действием копирования с помощью Visual Studio
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Мастер копирования](data-factory-copy-data-wizard-tutorial.md)
-> * [портал Azure](data-factory-copy-activity-tutorial-using-azure-portal.md)
 > * [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md)
 > * [PowerShell](data-factory-copy-activity-tutorial-using-powershell.md)
 > * [Шаблон Azure Resource Manager](data-factory-copy-activity-tutorial-using-azure-resource-manager-template.md)
@@ -362,7 +361,7 @@ ms.locfileid: "59258068"
 4. Щелкните свою фабрику данных в списке результатов, чтобы увидеть ее домашнюю страницу.
 
     ![Домашняя страница фабрики данных](media/data-factory-copy-activity-tutorial-using-visual-studio/data-factory-home-page.png)
-5. Следуйте инструкциям из раздела [Отслеживание конвейера](data-factory-copy-activity-tutorial-using-azure-portal.md#monitor-pipeline) для мониторинга конвейера и баз данных, созданных при работе с этим руководством. Сейчас Visual Studio не поддерживает мониторинг конвейеров фабрики данных. 
+5. Следуйте инструкциям из раздела [Отслеживание конвейера](data-factory-monitor-manage-pipelines.md) для мониторинга конвейера и баз данных, созданных при работе с этим руководством. Сейчас Visual Studio не поддерживает мониторинг конвейеров фабрики данных. 
 
 ## <a name="summary"></a>Сводка
 В этом учебнике вы создали фабрику данных Azure для копирования данных из большого двоичного объекта Azure в базу данных SQL Azure. Вы использовали Visual Studio для создания фабрики данных, связанных служб, наборов данных и конвейера. Вот обобщенные действия, которые вы выполнили в этом руководстве:  
@@ -370,7 +369,7 @@ ms.locfileid: "59258068"
 1. Создание **фабрики данных Azure**.
 2. Создание **связанных служб**.
    1. **Служба хранилища Azure** — связанная служба для связи с учетной записью хранения Azure, которая содержит входные данные.     
-   2. **SQL Azure** — связанная служба для связи с базой данных SQL Azure, которая содержит выходные данные. 
+   2. **Azure SQL** — связанная служба для связи с базой данных SQL Azure, которая содержит выходные данные. 
 3. Создание **наборов данных**, описывающих входные и выходные данные для конвейеров.
 4. Создание **конвейера** с **BlobSource** в качестве источника и **SqlSink** в качестве приемника с помощью **действия копирования**. 
 

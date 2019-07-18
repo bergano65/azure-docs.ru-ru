@@ -9,16 +9,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 02/22/2019
+ms.date: 07/16/2019
 ms.author: diberry
-ms.openlocfilehash: 33541d2a61c52476f6e314f6981a623390de8fa9
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.openlocfilehash: e559d4a3366c45bd054cbf3a235805e048de3493
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57193744"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68276048"
 ---
-# <a name="tutorial-add-common-pattern-template-utterance-formats"></a>Руководство. Добавление шаблонов высказываний в стандартных форматах
+# <a name="tutorial-add-common-pattern-template-utterance-formats"></a>Руководство по Добавление шаблонов высказываний в стандартных форматах
 
 В этом руководстве используйте шаблоны для улучшения намерения и сущности прогнозирования, в то же время предоставляя меньше примеров высказываний. Шаблон предоставляется в виде примера высказывания шаблона, который включает синтаксис для идентификации сущностей и игнорируемый текст. Шаблон представляет собой сочетание сопоставления выражений и машинного обучения.  Пример высказывания шаблона вместе с высказываниями намерений дает LUIS лучшее представление о том, какие высказывания соответствуют намерениям. 
 
@@ -27,8 +27,8 @@ ms.locfileid: "57193744"
 > [!div class="checklist"]
 > * Импортировать пример приложения 
 > * Создавать намерение.
-> * Train
-> * Опубликовать
+> * Обучение
+> * Публикация
 > * Получать намерения и сущности из конечной точки.
 > * Создавать шаблон.
 > * Проверять улучшения прогнозирования для шаблона.
@@ -93,11 +93,11 @@ ms.locfileid: "57193744"
 
 [!INCLUDE [Too few examples](../../../includes/cognitive-services-luis-too-few-example-utterances.md)]
 
-## <a name="train"></a>Train
+## <a name="train"></a>Обучение
 
 [!INCLUDE [LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
-## <a name="publish"></a>Опубликовать
+## <a name="publish"></a>Публикация
 
 [!INCLUDE [LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 
@@ -197,7 +197,7 @@ ms.locfileid: "57193744"
 Не закрывайте это второе окно браузера. Вы продолжите работу с ним далее в руководстве. 
 
 ## <a name="template-utterances"></a>Высказывания шаблона
-Из-за особенностей предметной области управления персоналом существует несколько общих способов для отправки запросов о связях сотрудников в организациях. Например: 
+Из-за особенностей предметной области управления персоналом существует несколько общих способов для отправки запросов о связях сотрудников в организациях. Например:
 
 |Высказывания|
 |--|

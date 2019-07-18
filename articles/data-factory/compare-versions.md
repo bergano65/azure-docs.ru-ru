@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.topic: overview
 ms.date: 04/09/2018
 ms.author: makromer
-ms.openlocfilehash: 976724a40b604bcdc3c83ef1b3d2e95268f75304
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 4d31a134ae15e4ddbda0cc60a741f8780fec8d12
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57432708"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67838112"
 ---
 # <a name="compare-azure-data-factory-with-data-factory-version-1"></a>Сравнение Фабрики данных Azure c Фабрикой данных версии 1
 В этой статье сравниваются возможности Фабрики данных с возможностями Фабрики данных версии 1. Дополнительные сведения о Фабрике данных см. [здесь](introduction.md). Дополнительные сведения о Фабрике данных Azure версии 1 см. в [этой статье](v1/data-factory-introduction.md). 
@@ -130,11 +130,11 @@ ms.locfileid: "57432708"
 
 | &nbsp; | V2 | V1 |
 | ------ | -- | -- | 
-| Портал Azure | [Да](quickstart-create-data-factory-portal.md) | [Да](data-factory-build-your-first-pipeline-using-editor.md) |
+| Портал Azure | [Да](quickstart-create-data-factory-portal.md) | Нет |
 | Azure PowerShell | [Да](quickstart-create-data-factory-powershell.md) | [Да](data-factory-build-your-first-pipeline-using-powershell.md) |
-| ПАКЕТ SDK .NET | [Да](quickstart-create-data-factory-dot-net.md) | [Да](data-factory-build-your-first-pipeline-using-vs.md) |
+| Пакет SDK для .NET | [Да](quickstart-create-data-factory-dot-net.md) | [Да](data-factory-build-your-first-pipeline-using-vs.md) |
 | REST API | [Да](quickstart-create-data-factory-rest-api.md) | [Да](data-factory-build-your-first-pipeline-using-rest-api.md) |
-| Пакет SDK для Python | [Да](quickstart-create-data-factory-python.md) | Нет  |
+| Пакет SDK для Python | [Да](quickstart-create-data-factory-python.md) | Нет |
 | Шаблон Resource Manager | [Да](quickstart-create-data-factory-resource-manager-template.md) | [Да](data-factory-build-your-first-pipeline-using-arm.md) | 
 
 ## <a name="roles-and-permissions"></a>Роли и разрешения

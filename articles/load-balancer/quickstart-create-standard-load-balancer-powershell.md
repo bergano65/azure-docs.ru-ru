@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: В этом кратком руководстве показано, как с помощью PowerShell создать Load Balancer уровня "Стандартный"
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 manager: twooley
 Customer intent: I want to create a Standard Load balancer so that I can load balance internet traffic to VMs.
 ms.assetid: ''
@@ -14,14 +14,14 @@ ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/07/2019
-ms.author: kumud
+ms.author: allensu
 ms:custom: seodec18
-ms.openlocfilehash: 04db0232e14ccac7938d7062d77c36a54526489c
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.openlocfilehash: 0e00728e091a7d7d96cb624135519b17524d2227
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66730469"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68274109"
 ---
 # <a name="quickstart-create-a-standard-load-balancer-using-azure-powershell"></a>Краткое руководство. Создание Load Balancer ценовой категории "Стандартный" с помощью Azure PowerShell
 
@@ -149,7 +149,7 @@ $lb = New-AzLoadBalancer `
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 Прежде чем развертывать виртуальные машины и тестировать подсистему балансировки нагрузки, создайте вспомогательные ресурсы, то есть виртуальную сеть и виртуальные сетевые адаптеры. 
 
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 Создайте виртуальную сеть с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создаются виртуальная сеть *myVnet* и подсеть *mySubnet*.
 
 ```azurepowershell

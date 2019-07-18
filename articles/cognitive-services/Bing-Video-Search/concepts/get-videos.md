@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: overview
-ms.date: 06/19/2019
+ms.date: 06/24/2019
 ms.author: aahi
-ms.openlocfilehash: 71d7ebb8cb797e2166fc91fdfdefdba5f22d82ec
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: bf0f74fe76ec7a83e0ce23ca83141276a677a5df
+ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67272699"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67868086"
 ---
 # <a name="search-for-videos-with-the-bing-video-search-api"></a>Поиск видео с помощью API Поиска видео Bing
 
@@ -98,7 +98,7 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/videos/search?q=sailing+dinghi
 
 ## <a name="video-thumbnails"></a>Эскизы видео
 
-Вы можете отобразить все или подмножество эскизов видео, возвращенных API Поиска видео Bing. Если вы отобразите подмножество, предоставьте пользователю возможность просмотра оставшихся видеороликов. В соответствии с [требованиями API Bing к использованию и отображению](../UseAndDisplayRequirements.md) все видео должны отображаться в порядке, предоставленном в ответе. Сведения об изменении размера эскизов см. в [этой статье](../resize-and-crop-thumbnails.md). 
+Вы можете отобразить все или подмножество эскизов видео, возвращенных API Поиска видео Bing. Если вы отобразите подмножество, предоставьте пользователю возможность просмотра оставшихся видеороликов. В соответствии с [требованиями API Bing к использованию и отображению](../UseAndDisplayRequirements.md) все видео должны отображаться в порядке, предоставленном в ответе. Сведения об изменении размера эскизов см. в [этой статье](../../bing-web-search/resize-and-crop-thumbnails.md). 
 
 Когда пользователь наводит указатель на эскиз, можно использовать [motionThumbnailUrl](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#video-motionthumbnailurl) для воспроизведения видео в режиме эскиза. Обязательно назначьте видеоролику эскиз при его отображении.
 

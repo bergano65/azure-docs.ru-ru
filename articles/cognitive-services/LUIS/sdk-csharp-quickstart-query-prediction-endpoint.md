@@ -8,14 +8,14 @@ ms.service: cognitive-services
 services: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 02/14/2019
+ms.date: 07/16/2019
 ms.author: diberry
-ms.openlocfilehash: 086f55094474d4c06e52001d77630932cd04213c
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.openlocfilehash: af20d555a83e8d229ed5d83d3b1d3f242de1e4a8
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57404099"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68275809"
 ---
 # <a name="quickstart-query-prediction-endpoint-with-c-net-sdk"></a>Краткое руководство. Запрос конечной точки прогнозирования с помощью пакета SDK .NET для C#
 
@@ -58,7 +58,7 @@ az cognitiveservices account create \
 Создайте проект консоли .NET Core в Visual Studio Community 2017.
 
 1. Откройте Visual Studio Community 2017.
-1. Создайте проект из раздела **Visual C#**, выберите **Console App (.NET Core)** (Консольное приложение (.NET Core)).
+1. Создайте проект из раздела **Visual C#** , выберите **Console App (.NET Core)** (Консольное приложение (.NET Core)).
 1. Введите имя проекта `QueryPrediction`, оставьте остальные значения по умолчанию и выберите **ОК**.
     При этом создается простой проект с основным файлом кода с именем **Program.cs**.
 
@@ -184,4 +184,4 @@ HomeAutomation.Room:'bedroom' begins at position 12 and ends at position 18
 Дополнительные сведения о [пакете SDK для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Runtime/) и [справочной документации по .NET](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/languageunderstanding?view=azure-dotnet). 
 
 > [!div class="nextstepaction"] 
-> [Руководство Создание приложения LUIS для определения намерений пользователя](luis-quickstart-intents-only.md) 
+> [Руководство. Создание приложения LUIS для определения намерений пользователя](luis-quickstart-intents-only.md) 

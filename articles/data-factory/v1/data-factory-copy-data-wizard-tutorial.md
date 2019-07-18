@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание конвейера с помощью мастера копирования | Документация Майкрософт
+title: Руководство по Создание конвейера с помощью мастера копирования | Документация Майкрософт
 description: С помощью этого учебника вы создадите конвейер фабрики данных Azure с действием копирования при помощи мастера копирования, поддерживаемого фабрикой данных.
 services: data-factory
 documentationcenter: ''
@@ -13,18 +13,17 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: ace2ffdacf775a3c0c5a579e9a4208641c20f661
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 0d67e18182d44dc640c75d982ccb40f1d22f8b41
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54025765"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67836597"
 ---
-# <a name="tutorial-create-a-pipeline-with-copy-activity-using-data-factory-copy-wizard"></a>Руководство. Создание конвейера с действием копирования с помощью мастера копирования фабрики данных
+# <a name="tutorial-create-a-pipeline-with-copy-activity-using-data-factory-copy-wizard"></a>Руководство по Создание конвейера с действием копирования с помощью мастера копирования фабрики данных
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Мастер копирования](data-factory-copy-data-wizard-tutorial.md)
-> * [портал Azure](data-factory-copy-activity-tutorial-using-azure-portal.md)
 > * [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md)
 > * [PowerShell](data-factory-copy-activity-tutorial-using-powershell.md)
 > * [Шаблон Azure Resource Manager](data-factory-copy-activity-tutorial-using-azure-resource-manager-template.md)

@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 04/19/2018
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: a7a86c6a2661a8a1f30491391fc76f4dc5d71f54
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 367a0b1d17f8d5ebe4f46835ace963b00e75354e
+ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185912"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68229288"
 ---
 Создание Центра Интернета вещей с помощью портала Azure
 
-1. Войдите на [портале Azure](http://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 
 1. Выберите **Создать ресурс** > **Интернет вещей** > **Центр Интернета вещей**.
 
@@ -27,8 +27,8 @@ ms.locfileid: "67185912"
 
     | Параметр | Значение |
     | ------- | ----- |
-    | Подписка | Выберите подписку Azure в раскрывающемся списке. |
-    | Группа ресурсов | Создайте группу ресурсов В этом руководстве используется имя **tutorials-iot-hub-rg**. |
+    | Subscription | Выберите подписку Azure в раскрывающемся списке. |
+    | Resource group | Создайте группу ресурсов В этом руководстве используется имя **tutorials-iot-hub-rg**. |
     | Регион | В этом руководстве используется **Западная часть США**. Вы можете выбрать ближайший к вам регион. |
     | ИМЯ | На следующем снимке экрана используется имя **tutorials-iot-hub**. При создании Центра выберите собственное уникальное имя. |
 

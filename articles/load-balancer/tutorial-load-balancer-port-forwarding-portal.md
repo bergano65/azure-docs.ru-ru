@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: В этом руководстве описано, как настроить перенаправление портов с помощью Azure Load Balancer, чтобы создать подключения к виртуальным машинам в виртуальной сети Azure.
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 manager: twooley
 Customer intent: As an IT administrator, I want to configure port forwarding in Azure Load Balancer to remotely connect to VMs in an Azure virtual network.
 ms.service: load-balancer
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/26/2019
-ms.author: kumud
+ms.author: allensu
 ms.custom: seodec18
-ms.openlocfilehash: db94f1d241223a9c54a6e3d516840dd17fd0c576
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: ee4ed818364d04f03caedc8b876ea29c41cb59b7
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60007514"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68273449"
 ---
 # <a name="tutorial-configure-port-forwarding-in-azure-load-balancer-using-the-portal"></a>Руководство. Настройка перенаправления портов в Azure Load Balancer с помощью портала
 
@@ -49,8 +49,8 @@ ms.locfileid: "60007514"
 
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
-    | Подписка               | Выберите свою подписку.    |    
-    | Группа ресурсов         | Выберите **Создать** и введите *MyResourceGroupLB* в текстовом поле.|
+    | Subscription               | Выберите свою подписку.    |    
+    | Resource group         | Выберите **Создать** и введите *MyResourceGroupLB* в текстовом поле.|
     | ИМЯ                   | *myLoadBalancer*                                   |
     | Регион         | Выберите **Западная Европа**.                                        |
     | type          | Щелкните **Общедоступный**.                                        |
@@ -68,7 +68,7 @@ ms.locfileid: "60007514"
 
 Создайте виртуальную сеть с двумя виртуальными машинами и добавьте виртуальные машины для серверного пула подсистемы балансировки нагрузки. 
 
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 1. Вверху с левой стороны портала выберите **Создать ресурс** > **Сети** > **Виртуальная сеть**.
    
@@ -80,7 +80,7 @@ ms.locfileid: "60007514"
    
 1. Нажмите кнопку **Создать**.
 
-   ![Создать виртуальную сеть](./media/tutorial-load-balancer-port-forwarding-portal/2-load-balancer-virtual-network.png)
+   ![Создание виртуальной сети](./media/tutorial-load-balancer-port-forwarding-portal/2-load-balancer-virtual-network.png)
 
 ### <a name="create-vms-and-add-them-to-the-load-balancer-back-end-pool"></a>Создание виртуальных машин и их добавление во внутренний пул подсистемы балансировки нагрузки
 
@@ -116,7 +116,7 @@ ms.locfileid: "60007514"
    1. В раскрывающемся списке **Выбрать балансировщик нагрузки** выберите **MyLoadBalancer**. 
    1. В разделе **Выберите внутренний пул** выберите **Создать новый**, затем введите *MyBackendPool*, затем — **Создать**. 
    
-   ![Создать виртуальную сеть](./media/tutorial-load-balancer-port-forwarding-portal/create-vm-networking.png)
+   ![Создание виртуальной сети](./media/tutorial-load-balancer-port-forwarding-portal/create-vm-networking.png)
    
 1. Выберите вкладку **Управление** или **Далее** > **Управление**. В разделе **Мониторинг** задайте **Выкл.** для параметра **Диагностика загрузки**.
    

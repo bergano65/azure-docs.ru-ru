@@ -8,16 +8,16 @@ ms.custom: ''
 ms.devlang: go
 ms.topic: quickstart
 author: David-Engel
-ms.author: v-daveng
+ms.author: craigg
 ms.reviewer: MightyPen
 manager: craigg
 ms.date: 02/12/2019
-ms.openlocfilehash: 0014dc0edde0eafc153b40eec06c6bd6dc8446b5
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 25de6fc2d752020ea47913bf6a4666735026b96f
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58447869"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67871684"
 ---
 # <a name="quickstart-use-golang-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Golang для создания запросов к базе данных SQL Azure
 
@@ -32,9 +32,9 @@ ms.locfileid: "58447869"
   || Отдельная база данных | Управляемый экземпляр |
   |:--- |:--- |:---|
   | Создание| [Портал](sql-database-single-database-get-started.md) | [Портал](sql-database-managed-instance-get-started.md) |
-  || [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](scripts/sql-database-create-and-configure-database-cli.md) | [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
+  || [CLI](scripts/sql-database-create-and-configure-database-cli.md) | [CLI](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
   || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md) |
-  | Настройка | [Правило брандмауэра IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
+  | Настройка | [Правило брандмауэра для IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
   |||[Подключение "точка — сеть"](sql-database-managed-instance-configure-p2s.md)
   |Загрузка данных|База данных Adventure Works, загруженная для краткого руководства|[Восстановление базы данных Wide World Importers](sql-database-managed-instance-get-started-restore.md)
   |||Восстановление или импорт Adventure Works из файла [BACPAC](sql-database-import.md), размещенного на [GitHub](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works)|

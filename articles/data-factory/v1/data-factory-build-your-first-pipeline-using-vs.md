@@ -14,17 +14,16 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 2d816ab2f14be8574f77491807d4dbd071487f42
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f3c4fc379ac932e66c5d02e08e72ef4d16db638b
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66164010"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67836705"
 ---
 # <a name="tutorial-create-a-data-factory-by-using-visual-studio"></a>Руководство по Создание фабрики данных с помощью Visual Studio
 > [!div class="op_single_selector" title="Tools/SDKs"]
 > * [Обзор и предварительные требования](data-factory-build-your-first-pipeline.md)
-> * [портал Azure](data-factory-build-your-first-pipeline-using-editor.md)
 > * [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
 > * [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 > * [Шаблон Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
@@ -124,8 +123,8 @@ ms.locfileid: "66164010"
 
     Свойство | ОПИСАНИЕ
     -------- | ----------- 
-    ClusterSize (размер кластера) | Указывает размер кластера HDInsight Hadoop.
-    TimeToLive | Указывает, сколько времени может простаивать кластер HDInsight, прежде чем он будет удален.
+    clusterSize (размер кластера) | Указывает размер кластера HDInsight Hadoop.
+    timeToLive | Указывает, сколько времени может простаивать кластер HDInsight, прежде чем он будет удален.
     linkedServiceName | Указывает имя учетной записи хранения, в которой будут храниться журналы, создаваемые кластером HDInsight Hadoop. 
 
     > [!IMPORTANT]
@@ -176,9 +175,9 @@ ms.locfileid: "66164010"
     Тип |Так как данные размещаются в хранилище BLOB-объектов Azure, для свойства типа задается значение **AzureBlob**.
     linkedServiceName | Указывает созданную ранее службу AzureStorageLinkedService1.
     fileName |Это необязательное свойство. Если это свойство не указано, выбираются все файлы из папки folderPath. В этом случае обрабатывается только файл input.log.
-    Тип | Файлы журнала представлены в текстовом формате, поэтому мы используем значение TextFormat. |
+    type | Файлы журнала представлены в текстовом формате, поэтому мы используем значение TextFormat. |
     columnDelimiter | Столбцы в файлах журнала разделяются запятыми (`,`).
-    frequency и interval | Для свойства frequency задано значение Month, а для свойства interval — значение 1. Это означает, что срезы входных данных доступны ежемесячно.
+    frequency/interval | Для свойства frequency задано значение Month, а для свойства interval — значение 1. Это означает, что срезы входных данных доступны ежемесячно.
     external | Это свойство имеет значение true, если входные данные действия не создаются конвейером. Это свойство указывается только для входных наборов данных. Для входного набора данных первого действия всегда задавайте значение true.
 4. Сохраните файл **InputDataset.json** .
 

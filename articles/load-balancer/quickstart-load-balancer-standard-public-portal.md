@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: В этом кратком руководстве вы узнаете, как создать Load Balancer (цен. категория "Стандартный") с помощью портала Azure.
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 manager: twooley
 Customer intent: I want to create a Standard Load Balancer so that I can load balance internet traffic to VMs.
 ms.service: load-balancer
@@ -13,14 +13,14 @@ ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/11/2019
-ms.author: kumud
+ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 79ba86fd32248da240706fda2d8b5fcf8323263d
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: c8df0daac25a79bbbd67577c30b0a2da62d037da
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65143198"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68273843"
 ---
 # <a name="quickstart-create-a-standard-load-balancer-to-load-balance-vms-using-the-azure-portal"></a>Краткое руководство. Создание подсистемы балансировки нагрузки уровня "Стандартный" с помощью портала Azure для распределения нагрузки между виртуальными машинами
 
@@ -41,8 +41,8 @@ ms.locfileid: "65143198"
 
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
-    | Подписка               | Выберите свою подписку.    |    
-    | Группа ресурсов         | Выберите **Создать** и в текстовом поле введите *myResourceGroupSLB*.|
+    | Subscription               | Выберите свою подписку.    |    
+    | Resource group         | Выберите **Создать** и в текстовом поле введите *myResourceGroupSLB*.|
     | ИМЯ                   | *myLoadBalancer*                                   |
     | Регион         | Выберите **Западная Европа**.                                        |
     | type          | Щелкните **Общедоступный**.                                        |
@@ -105,7 +105,7 @@ ms.locfileid: "65143198"
 
 В этом разделе описано, как создать виртуальную сеть, три виртуальные машины для внутреннего пула Load Balancer и установить службы IIS на виртуальных машинах для проверки Load Balancer.
 
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 1. Вверху с левой стороны экрана последовательно выберите **Создать ресурс** > **Сети** > **Виртуальная сеть**.
 
 1. В подменю **Создать виртуальную сеть** введите или выберите следующую информацию:
@@ -114,9 +114,9 @@ ms.locfileid: "65143198"
     | ------- | ----- |
     | ИМЯ | Введите *myVNet*. |
     | Пространство адресов | Введите *10.1.0.0/16*. |
-    | Подписка | Выберите свою подписку.|
-    | Группа ресурсов | Выберите существующий ресурс *myResourceGroupSLB*. |
-    | Расположение | Выберите **Западная Европа**.|
+    | Subscription | Выберите свою подписку.|
+    | Resource group | Выберите существующий ресурс *myResourceGroupSLB*. |
+    | Location | Выберите **Западная Европа**.|
     | Имя подсети | Введите *myBackendSubnet*. |
     | Диапазон адреса подсети | Введите *10.1.0.0/24*. |
 1. Сохраните остальные значения по умолчанию и нажмите кнопку **Создать**.

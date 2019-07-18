@@ -9,16 +9,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 04/01/2019
+ms.date: 07/16/2019
 ms.author: diberry
-ms.openlocfilehash: d6a2c9d92d79bed3f0e9a9976a64f6e11debba88
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: c0e3ac1d53cda2afb2184b92b0fd0afd662101bb
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59523280"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68277501"
 ---
-# <a name="tutorial-extract-contextually-related-patterns-using-roles"></a>Руководство. Извлечение контекстуально связанных шаблонов с использованием ролей
+# <a name="tutorial-extract-contextually-related-patterns-using-roles"></a>Руководство по Извлечение контекстуально связанных шаблонов с использованием ролей
 
 В этом руководстве используйте шаблон для извлечения данных из хорошо отформатированного высказывания шаблона. Шаблон речевого фрагмента использует [простую сущность](luis-concept-entity-types.md#simple-entity) и [роли](luis-concept-roles.md) для извлечения связанных данных, таких как исходное и конечное расположения.  При использовании шаблонов для намерения требуется меньшее количество примеров высказываний.
 
@@ -29,8 +29,8 @@ ms.locfileid: "59523280"
 > * Импортировать пример приложения
 > * Добавление новых сущностей
 > * Создание нового намерения
-> * Train
-> * Опубликовать
+> * Обучение
+> * Публикация
 > * Получать намерения и сущности из конечной точки.
 > * Создавать шаблон с помощью ролей
 > * Создавать список городов
@@ -118,11 +118,11 @@ ms.locfileid: "59523280"
 
     Если сущность keyPhrase была удалена, верните ее в приложение.
 
-## <a name="train"></a>Train
+## <a name="train"></a>Обучение
 
 [!INCLUDE [LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
-## <a name="publish"></a>Опубликовать
+## <a name="publish"></a>Публикация
 
 [!INCLUDE [LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 

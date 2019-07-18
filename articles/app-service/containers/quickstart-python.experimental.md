@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 03/28/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: a386924be2f82aadafeaccbeadc68e5e27404855
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: ea247907aebc241fb8f1b266ad55bc2fc983607f
+ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59546337"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67853991"
 ---
 # <a name="create-a-python-app-in-azure-app-service-on-linux-preview"></a>Создание приложения Python в Службе приложений Azure в Linux (предварительная версия)
 
@@ -64,7 +64,7 @@ Checking connectivity... done.
 
 Перейдите в каталог, в котором содержится пример кода, и выполните команду `az webapp up`.
 
-В следующем примере замените <app_name> уникальным именем приложения.
+В следующем примере замените *\<app_name>* глобальным уникальным именем приложения (допустимые символы: `a-z`, `0-9` и `-`).
 
 ```bash
 cd python-docs-hello-world
@@ -168,10 +168,10 @@ az webapp up -n <app_name>
 Сейчас встроенный образ Python в Службе приложений на платформе Linux доступен в предварительной версии. Вы можете настроить команду для запуска приложения. Также приложения Python для рабочей среды можно создавать с помощью настраиваемого контейнера.
 
 > [!div class="nextstepaction"]
-> [Руководство по использованию приложения Python с PostgreSQL](tutorial-python-postgresql-app.md)
+> [Руководство. по использованию приложения Python с PostgreSQL](tutorial-python-postgresql-app.md)
 
 > [!div class="nextstepaction"]
 > [Настройка приложения Python](how-to-configure-python.md)
 
 > [!div class="nextstepaction"]
-> [Руководство по развертыванию из частного репозитория контейнеров](tutorial-custom-docker-image.md)
+> [Руководство. по развертыванию из частного репозитория контейнеров](tutorial-custom-docker-image.md)

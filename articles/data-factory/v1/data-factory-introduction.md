@@ -13,15 +13,15 @@ ms.topic: overview
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 9bf8c51fda6985f88ecffa60b32c1c62e364a511
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: aed073e7d65f193c4123106ba1ae3f4f442965e1
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54014936"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67836318"
 ---
-# <a name="introduction-to-azure-data-factory"></a>Введение в фабрику данных Azure 
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+# <a name="introduction-to-azure-data-factory"></a>Знакомство с Фабрикой данных Azure 
+> [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](data-factory-introduction.md)
 > * [Версия 2 (текущая)](../introduction.md)
 
@@ -72,7 +72,7 @@ ms.locfileid: "54014936"
 ### <a name="transform-and-enrich"></a>Преобразование и дополнение данных
 Обработайте или передайте данные, собранные в централизованном облачном хранилище данных, с помощью служб вычислений, например HDInsight Hadoop, Spark, Data Lake Analytics или машинного обучения. Также необходимо надежно преобразовывать данные по определенному расписанию (поддерживаемому и управляемому) для насыщения рабочих сред доверенными данными. 
 
-### <a name="publish"></a>Опубликовать 
+### <a name="publish"></a>Публикация 
 Преобразованные данные можно передавать из облака в локальные источники (например, SQL Server) или хранить в облачных источниках для бизнес-аналитики, а также использования средствами анализа и другими приложениями.
 
 ## <a name="key-components"></a>Ключевые компоненты
@@ -133,10 +133,9 @@ ms.locfileid: "54014936"
 ## <a name="get-started-with-creating-a-pipeline"></a>Начало работы — создание конвейера
 Для создания конвейеров данных в фабрике данных Azure можно использовать API-интерфейсы или одно из следующих средств: 
 
-- Портал Azure
 - Visual Studio
 - PowerShell
-- .NET API
+- API для .NET
 - REST API
 - Шаблон Azure Resource Manager
 
