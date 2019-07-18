@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: В этом руководстве показано, как создать подсистему балансировки нагрузки уровня "Стандартный" с избыточным между зонами внешним интерфейсом для балансировки нагрузки виртуальных машин между зонами доступности с помощью портала Azure
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 manager: twooley
 Customer intent: As an IT administrator, I want to create a load balancer that load balances incoming internet traffic to virtual machines across availability zones in a region, so that the customers can still access the web service if a datacenter is unavailable.
 ms.service: load-balancer
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/27/2019
-ms.author: kumud
+ms.author: allensu
 ms.custom: seodec18
-ms.openlocfilehash: 912307e6509ea66be887838e875076b7a895ca94
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 5b024321a18c6dec4f56a7cbc12c5a8fa748f903
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57888163"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68273474"
 ---
 # <a name="tutorial-load-balance-vms-across-availability-zones-with-a-standard-load-balancer-using-the-azure-portal"></a>Руководство. Распределение нагрузки виртуальных машин в пределах зон доступности с помощью Load Balancer уровня "Стандартный" и портала Azure
 
@@ -54,8 +54,8 @@ ms.locfileid: "57888163"
 
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
-    | Подписка               | Выберите свою подписку.    |    
-    | Группа ресурсов         | Выберите **Создать** и введите *MyResourceGroupLBAZ* в текстовом поле.|
+    | Subscription               | Выберите свою подписку.    |    
+    | Resource group         | Выберите **Создать** и введите *MyResourceGroupLBAZ* в текстовом поле.|
     | ИМЯ                   | *myLoadBalancer*                                   |
     | Регион         | Выберите **Западная Европа**.                                        |
     | type          | Щелкните **Общедоступный**.                                        |
@@ -69,7 +69,7 @@ ms.locfileid: "57888163"
 
 В этом разделе вы создадите виртуальную сеть, виртуальные машины в разных зонах региона, а затем установите службы IIS на виртуальных машинах для проверки подсистемы балансировки нагрузки, избыточной между зонами. Таким образом при сбое зоны происходит сбой проверки работоспособности виртуальной машины в той же зоне, а трафик продолжает обслуживаться виртуальными машинами в других зонах.
 
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 Создайте виртуальную сеть для развертывания внутренних серверов.
 
 1. В верхней левой части экрана щелкните **Создать ресурс** > **Сети** > **Виртуальная сеть**, а затем введите следующие значения для виртуальной сети:
@@ -78,7 +78,7 @@ ms.locfileid: "57888163"
     - *myBackendSubnet* — для имени подсети.
 2. Щелкните **Создать**, чтобы создать виртуальную сеть.
 
-    ![Создать виртуальную сеть](./media/load-balancer-standard-public-availability-zones-portal/2-load-balancer-virtual-network.png)
+    ![Создание виртуальной сети](./media/load-balancer-standard-public-availability-zones-portal/2-load-balancer-virtual-network.png)
 
 ## <a name="create-a-network-security-group"></a>Создание группы безопасности сети
 
@@ -89,7 +89,7 @@ ms.locfileid: "57888163"
     - *myNetworkSecurityGroup* — для имени группы безопасности сети;
     - *myResourceGroupLBAZ* — для имени имеющейся группы ресурсов.
    
-![Создать виртуальную сеть](./media/load-balancer-standard-public-availability-zones-portal/create-nsg.png)
+![Создание виртуальной сети](./media/load-balancer-standard-public-availability-zones-portal/create-nsg.png)
 
 ### <a name="create-network-security-group-rules"></a>Создание правил группы безопасности сети
 
@@ -108,7 +108,7 @@ ms.locfileid: "57888163"
     - *Разрешить HTTP* — для описания правила подсистемы балансировки нагрузки.
 4. Последовательно выберите **ОК**.
  
-   ![Создать виртуальную сеть](./media/load-balancer-standard-public-availability-zones-portal/8-load-balancer-nsg-rules.png)
+   ![Создание виртуальной сети](./media/load-balancer-standard-public-availability-zones-portal/8-load-balancer-nsg-rules.png)
 5. Еще раз выполните шаги 2–4, чтобы создать другое правило с именем *myRDPRule*, разрешающее входящее подключение по RDP через порт 3389. Введите (выберите) следующие значения:
     - *Service Tag* — для **источника**;
     - *Internet* — для **тега службы источника**;

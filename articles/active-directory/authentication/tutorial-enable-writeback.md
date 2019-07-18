@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dabe0ad1a556ee43f3e6cae0e1cd421db5cde0fd
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.openlocfilehash: 1efb67df6c31a3b03fdc45fffc0564fb09e39faf
+ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56183213"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67853043"
 ---
 # <a name="tutorial-enabling-password-writeback"></a>Руководство по Включение компонента обратной записи паролей
 
@@ -61,4 +61,4 @@ ms.locfileid: "56183213"
 В этом руководстве был включен компонент обратной записи паролей для самостоятельного сброса пароля. Не закрывайте окно портала Azure, а перейдите к следующему руководству, чтобы перед развертыванием решения в пилотном проекте настроить дополнительные параметры, связанные с самостоятельным сбросом пароля.
 
 > [!div class="nextstepaction"]
-> [Включение SSPR на экране входа в систему Windows](tutorial-sspr-windows.md)
+> [Tutorial: Use risk events to trigger Multi-Factor Authentication and password changes](tutorial-risk-based-sspr-mfa.md) (Руководство. Использование событий риска для запуска Многофакторной идентификации и изменений пароля)

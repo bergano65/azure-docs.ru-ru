@@ -3,7 +3,7 @@ title: Пример CLI. Виртуальные машины Load Balancer в п
 description: В этом примере скрипта Azure CLI показано, как распределить трафик на виртуальных машинах в пределах определенной зоны доступности
 services: load-balancer
 documentationcenter: load-balancer
-author: KumudD
+author: asudbring
 manager: jeconnoc
 editor: tysonn
 tags: ''
@@ -15,13 +15,13 @@ ms.topic: sample
 ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 06/14/2018
-ms.author: kumud
-ms.openlocfilehash: 121d3f941f3d00373bd2821534c3e601107e97e6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: allensu
+ms.openlocfilehash: 29671283a1ef2906e03685a59d62ccc13c1307fe
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60506966"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68273738"
 ---
 # <a name="azure-cli-script-example-load-balance-traffic-to-vms-for-high-availability"></a>Пример скрипта Azure CLI. Балансировка трафика на виртуальных машинах для обеспечения высокой доступности
 

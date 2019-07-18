@@ -14,17 +14,16 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 9d273886b3add43818af80915e42b4aa7ca69a89
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0f18fc8a18cbcf5d85b68ed40790eda36d653812
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66146882"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67836575"
 ---
 # <a name="tutorial-build-your-first-azure-data-factory-using-azure-powershell"></a>Руководство по Создание первой фабрики данных Azure с помощью Azure PowerShell
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-build-your-first-pipeline.md)
-> * [портал Azure](data-factory-build-your-first-pipeline-using-editor.md)
 > * [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
 > * [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 > * [Шаблон Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
@@ -164,8 +163,8 @@ ms.locfileid: "66146882"
 
    | Свойство | ОПИСАНИЕ |
    |:--- |:--- |
-   | ClusterSize (размер кластера) |Указывает размер кластера HDInsight. |
-   | TimeToLive |Указывает, сколько времени может простаивать кластер HDInsight, прежде чем он будет удален. |
+   | clusterSize |Указывает размер кластера HDInsight. |
+   | timeToLive |Указывает, сколько времени может простаивать кластер HDInsight, прежде чем он будет удален. |
    | linkedServiceName (имя связанной службы) |Указывает имя учетной записи хранения, в которой будут храниться журналы, создаваемые HDInsight. |
 
     Обратите внимание на следующие моменты.
