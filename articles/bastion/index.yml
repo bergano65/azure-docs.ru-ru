@@ -30,6 +30,6 @@ sections:
         style: unordered
         items:
           - html: <a href="/azure/bastion/bastion-create-host-portal">Создание и изменение узла Бастиона Azure</a>
-          - html: <a href="/azure/bastion/bastion-connect-vm-ssh">Подключение к виртуальной машине Windows</a>
-          - html: <a href="/azure/bastion/bastion-connect-vm-rdp">Подключение к виртуальной машине Linux</a>
+          - html: <a href="/azure/bastion/bastion-connect-vm-rdp">Подключение к виртуальной машине Windows</a>
+          - html: <a href="/azure/bastion/bastion-connect-vm-ssh">Подключение к виртуальной машине Linux</a>
           - html: <a href="/azure/bastion/bastion-faq">Ознакомьтесь с вопросами и ответами о Бастионе Azure </a>
