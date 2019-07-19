@@ -7,13 +7,13 @@ manager: nunoc
 ms.service: marketplace
 ms.topic: article
 ms.date: 10/05/2018
-ms.author: yijenj
-ms.openlocfilehash: 496fef7cfd93004e77a710942cffabbf23d6b29a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: nunoc
+ms.openlocfilehash: 1c27b85aca45f25354d6351c1a335b14cb9bc446
+ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64937697"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68297807"
 ---
 # <a name="support-for-the-marketplace"></a>Поддержка Marketplace  
 Ниже приведены варианты поддержки Marketplace.  
@@ -22,7 +22,7 @@ ms.locfileid: "64937697"
 
 ## <a name="onboarding"></a>Переход
 
-Отправьте в службу Microsoft [поддержки издателя marketplace](https://support.microsoft.com/getsupport?wf=0&tenant=classiccommercial&oaspworkflow=start_1.0.0.0&locale=en-us&supportregion=en-us&pesid=16230&forceorigin=esmc&ccsid=636595105151894820) для проблем с адаптации и Приступая к работе, или Microsoft [партнера поддержки](https://partner.microsoft.com/support) при наличии вопросов о Microsoft Partner Network.
+Откройте билет с [поддержкой издателя Microsoft Marketplace](https://support.microsoft.com/getsupport?wf=0&tenant=classiccommercial&oaspworkflow=start_1.0.0.0&locale=en-us&supportregion=en-us&pesid=16230&forceorigin=esmc&ccsid=636595105151894820) , чтобы устранить проблемы с подключением и началом работы, или обратитесь в [службу поддержки партнеров](https://partner.microsoft.com/support) Майкрософт, если у вас возникли вопросы по Microsoft Partner Network.
 
 ## <a name="cloud-partner-portal"></a>Портал Cloud Partner  
 
@@ -47,7 +47,7 @@ ms.locfileid: "64937697"
 | Эл. адрес: [cebrand@microsoft.com](mailto:cebrand@microsoft.com) | Ответы на вопросы об использовании торгового логотипа и фирменной символики Azure. |  |  
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Посетите страницу [руководства по публикации в Azure Marketplace и AppSource](./marketplace-publishers-guide.md).  
  
 ---

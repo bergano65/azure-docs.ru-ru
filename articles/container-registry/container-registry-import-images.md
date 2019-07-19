@@ -3,16 +3,17 @@ title: Импорт образов контейнеров в Реестр кон
 description: Импорт образов контейнеров в Реестр контейнеров Azure с помощью API-интерфейсов Azure без использования команд Docker.
 services: container-registry
 author: dlepow
+manager: gwallace
 ms.service: container-registry
 ms.topic: article
 ms.date: 02/06/2019
 ms.author: danlep
-ms.openlocfilehash: b8a2280fe82e0f4be8e2812f5494150927642692
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c44eabffaefe24e15f980c9871a5c65ab958f2fc
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60827295"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68310613"
 ---
 # <a name="import-container-images-to-a-container-registry"></a>Импорт образов контейнеров в реестр контейнеров
 
@@ -38,7 +39,7 @@ ms.locfileid: "60827295"
 > Если нужно распространить идентичные образы контейнеров в нескольких регионах Azure, Реестр контейнеров Azure также поддерживает [георепликацию](container-registry-geo-replication.md). Путем георепликации реестра (требуется SKU уровня "Премиум") можно обслуживать несколько регионов с одинаковыми именами образов и тегов из одного реестра.
 >
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Если у вас еще нет Реестра контейнеров Azure, создайте его. Действия описаны в [кратком руководстве по созданию закрытого реестра контейнеров с помощью Azure CLI](container-registry-get-started-azure-cli.md).
 
@@ -48,7 +49,7 @@ ms.locfileid: "60827295"
 
 ### <a name="import-from-docker-hub"></a>Импорт из центра Docker
 
-Например, используйте команду [az acr import][az-acr-import], чтобы импортировать образ `hello-world:latest` с несколькими архитектурами из центра Docker в реестр с именем *myregistry*. Так как `hello-world` — это официальный образ из центра Docker, этот образ находится в используемом по умолчанию репозитории `library`. Добавьте в значение параметра образа `--source` имя репозитория и при необходимости тег. (Вы можете дополнительно определить образ по его хэш-коду манифеста, а не по тегу, который гарантирует определенную версию образа.)
+Например, используйте команду [AZ запись контроля][az-acr-import] доступа, чтобы импортировать многоархитектурный `hello-world:latest` образ из DOCKER Hub в реестр с именем *myregistry*. Так как `hello-world` — это официальный образ из центра Docker, этот образ находится в используемом по умолчанию репозитории `library`. Добавьте в значение параметра образа `--source` имя репозитория и при необходимости тег. (Вы можете дополнительно определить образ по его хэш-коду манифеста, а не по тегу, который гарантирует определенную версию образа.)
  
 ```azurecli
 az acr import --name myregistry --source docker.io/library/hello-world:latest --image hello-world:latest
@@ -120,9 +121,9 @@ az acr import --name myregistry --source sourceregistry.azurecr.io/sourcerepo/so
 az acr import --name myregistry --source docker.io/sourcerepo/sourceimage:tag --image sourceimage:tag --username <username> --password <password>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-В этой статье вы узнали об импорте образов контейнеров в Реестр контейнеров Azure из общедоступного реестра или другого частного реестра. Сведения о дополнительных вариантах импорта см. в справочнике по командам [az acr import][az-acr-import]. 
+В этой статье вы узнали об импорте образов контейнеров в Реестр контейнеров Azure из общедоступного реестра или другого частного реестра. Дополнительные параметры импорта изображения см. в справочнике по команде [AZ запись контроля][az-acr-import] доступа. 
 
 
 <!-- LINKS - Internal -->

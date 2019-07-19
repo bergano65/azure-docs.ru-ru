@@ -8,13 +8,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.topic: conceptual
-ms.date: 05/28/2019
-ms.openlocfilehash: 351b6a8e056d22fa8f2d695a2722b39b9771c8b0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 07/15/2019
+ms.openlocfilehash: a1ff1449b5cc63c16035f8785662f250a008fbc1
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66299388"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68305533"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-apache-hadoop-apache-spark-apache-kafka-and-more"></a>Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий
 
@@ -49,7 +49,8 @@ ms.locfileid: "66299388"
 
 * [Имя группы ресурсов](#resource-group-name)
 * [Типы и конфигурация кластеров](#cluster-types) 
-* Имя входа в кластер и имя пользователя SSH
+* [Имя кластера](#cluster-name)
+* [Имя входа в кластер и имя пользователя SSH](#cluster-login-and-ssh-username)
 * [Location](#location)
 
 ## <a name="resource-group-name"></a>Имя группы ресурсов
@@ -76,12 +77,31 @@ ms.locfileid: "66299388"
 ### <a name="hdinsight-version"></a>Версия HDInsight
 Выберите версию HDInsight для этого кластера. Дополнительные сведения см. в разделе [Поддерживаемые версии HDInsight](hdinsight-component-versioning.md#supported-hdinsight-versions).
 
+## <a name="cluster-name"></a>Имя кластера
+
+Имена кластеров HDInsight имеют следующие ограничения.
+- Допустимые символы: a – z, 0-9, A – Z 
+- Максимальная длина — 59
+- Зарезервированные имена: приложения
+- Должно быть уникальным
+- Первые 6 символов должны быть уникальными в пределах виртуальной сети.
 
 ## <a name="cluster-login-and-ssh-username"></a>Имя входа в кластер и имя пользователя SSH
 Во время создания кластера HDInsight можно настроить две учетные записи пользователя.
 
 * Пользователь HTTP: Имя пользователя по умолчанию — *admin*. Эта учетная запись использует базовую конфигурацию на портале Azure. Иногда его называют "пользователем кластера".
 * Пользователь SSH: это имя пользователя используется для подключения к кластеру через SSH. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
+
+Имя пользователя HTTP имеет следующие ограничения.
+- Разрешенные специальные символы: _ и @ 
+- Недопустимые символы: #;. ""\/,: "! *? $ ({}) [] < > | &--= +% ~ ^ Space
+- Максимальная длина — 20
+
+Имя пользователя SSH имеет следующие ограничения.
+- Разрешенные специальные символы: _ и @ 
+- Недопустимые символы: #;. ""\/,: "! *? $ ({}) [] < > | &--= +% ~ ^ Space
+- Максимальная длина — 64
+- Зарезервированные имена: Hadoop, Users, Oozie, Hive, mapred, ambari-QA, Zookeeper, TEZ, HDFS, sqoop, Yarn, хкат, AMS, HBase, множество, администратор, Admin, пользователь, Пользователь1, тест, Пользователь2, test1, user3, admin1, 1, 123, a, актусер, ADM, Admin2, ASPNET, Backup, Console, Дэвид, гость, Джон, владелец, корень, сервер, SQL, поддержка, Support_388945a0, sys, test2, test3, user4, User5, Spark
 
 Пакет безопасности предприятия позволяет интегрировать HDInsight с Active Directory и Apache Ranger. При помощи пакета безопасности корпоративного уровня можно создать нескольких пользователей.
 
@@ -154,12 +174,12 @@ ms.locfileid: "66299388"
 ### <a name="number-of-nodes-for-each-cluster-type"></a>Количество узлов для каждого типа кластера
 Для каждого типа кластера используется своя терминология. Кроме того, типы отличаются количеством узлов и стандартными размерами виртуальных машин. В следующей таблице число узлов каждого типа указано в скобках.
 
-| type | Nodes | Схема |
+| Тип | Nodes | Схема |
 | --- | --- | --- |
-| Hadoop |Головной узел (2), рабочий узел (1) |![Узлы кластера HDInsight Hadoop](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hadoop-cluster-type-nodes.png) |
+| Hadoop |Головной узел (2), Рабочий узел (1 +) |![Узлы кластера HDInsight Hadoop](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hadoop-cluster-type-nodes.png) |
 | HBase |Головной сервер (2), региональный сервер (от 1), основной узел или узел Zookeeper (3) |![Узлы кластера HDInsight HBase](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hbase-cluster-type-setup.png) |
 | Storm |Узел Nimbus (2), сервер супервизора (от 1), узел Zookeeper (3) |![Узлы кластера HDInsight Storm](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-storm-cluster-type-setup.png) |
-| Spark |Головной узел (2), рабочий узел (1 +), узел ZooKeeper (3) (бесплатно для размера виртуальной Машины ZooKeeper A1) |![Узлы кластера HDInsight Spark](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-spark-cluster-type-setup.png) |
+| Spark |Головной узел (2), Рабочий узел (1 +), узел ZooKeeper (3) (бесплатно для размера виртуальной машины a1 ZooKeeper) |![Узлы кластера HDInsight Spark](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-spark-cluster-type-setup.png) |
 
 Дополнительные сведения см. в разделе [Конфигурация узлов и размеры виртуальных машин по умолчанию для кластеров](hdinsight-component-versioning.md#default-node-configuration-and-virtual-machine-sizes-for-clusters) статьи "Что представляют собой компоненты и версии Hadoop, доступные в HDInsight?"
 
@@ -168,13 +188,13 @@ ms.locfileid: "66299388"
 Кластеры разных типов отличаются типами, количеством и размерами узлов.
 * Тип кластера Hadoop по умолчанию: 
     * два *головных узла*;  
-    * Четыре *рабочих узлов*
+    * Четыре *рабочих узла*
 * Тип кластера Storm по умолчанию: 
     * два *узла Nimbus*;
     * три *узла ZooKeeper*;
     * четыре *узла супервизора*. 
 
-Если при пробном HDInsight, мы рекомендуем использовать один рабочий узел. Подробные сведения о ценах на HDInsight см. на [этой странице](https://go.microsoft.com/fwLink/?LinkID=282635&clcid=0x409).
+Если вы только используете HDInsight, мы рекомендуем использовать один рабочий узел. Подробные сведения о ценах на HDInsight см. на [этой странице](https://go.microsoft.com/fwLink/?LinkID=282635&clcid=0x409).
 
 > [!NOTE]  
 > Максимальный размер кластера зависит от подписки Azure. Чтобы увеличить лимит, обратитесь в [службу поддержки по вопросам выставления счетов Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request).
@@ -191,7 +211,7 @@ ms.locfileid: "66299388"
 Сведения о том, какие значения следует указывать для размера виртуальной машины при создании кластера с помощью различных пакетов SDK или Azure PowerShell, см. в разделе [Таблицы размеров](../cloud-services/cloud-services-sizes-specs.md#size-tables). Используйте значение из столбца **Размер** таблиц, приведенных в этой статье.
 
 > [!IMPORTANT]  
-> Если вам требуется более 32 рабочих узлов в кластере, необходимо выбрать размер головного узла, по крайней мере 8-ядерный процессор и 14 ГБ ОЗУ.
+> Если в кластере требуется более 32 рабочих узлов, необходимо выбрать размер головного узла с по крайней мере 8 ядрами и 14 ГБ ОЗУ.
 
 Дополнительные сведения см. в разделе [Размеры виртуальных машин](../virtual-machines/windows/sizes.md). Сведения о расценках на разные размеры см. [здесь](https://azure.microsoft.com/pricing/details/hdinsight).   
 
@@ -234,7 +254,7 @@ ms.locfileid: "66299388"
 Пример использования двух типов кластера в виртуальной сети Azure см. в статье об [использовании структурированного потока Apache Spark при помощи Apache Kafka](hdinsight-apache-kafka-spark-structured-streaming.md). Дополнительные сведения об использовании HDInsight в виртуальной сети, включая требования к конфигурации виртуальной сети, см. в статье [Расширение возможностей HDInsight с помощью виртуальной сети Azure](hdinsight-extend-hadoop-virtual-network.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Что такое Azure HDInsight и стек технологий Apache Hadoop](hadoop/apache-hadoop-introduction.md)
 - [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](hadoop/apache-hadoop-linux-tutorial-get-started.md)
