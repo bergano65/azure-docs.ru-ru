@@ -408,7 +408,7 @@
         - name: Критические изменения
           href: reference-breaking-changes.md
 - name: Версия 1.0
-  expanded: true
+  expanded: false
   items:
     - name: Обзор
       href: v1-overview.md

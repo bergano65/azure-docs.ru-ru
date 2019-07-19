@@ -12,16 +12,16 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/24/2019
 ms.author: lagayhar
-ms.openlocfilehash: a453e82f47bb9eed25c8d5caf986bc854085e8ac
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d3edfa1ca63560f447d2c9ea3da3588e069b7af1
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67061222"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68226827"
 ---
 # <a name="get-started-with-application-insights-in-a-java-web-project"></a>Приступая к работе с Application Insights в веб-проекте Java
 
-[Application Insights](https://azure.microsoft.com/services/application-insights/) — это расширяемая служба аналитики для разработчиков веб-ресурсов, позволяющая оценивать производительность и использование работающего приложения. С ее помощью можно [автоматически инструментирования запроса, отслеживание зависимостей и счетчики производительности, сбор](auto-collect-dependencies.md#java), диагностика проблем с производительностью и исключений, и [писать код] [ api] для отслеживания, что пользователи делают с вашим приложением. 
+[Application Insights](https://azure.microsoft.com/services/application-insights/) — это расширяемая служба аналитики для разработчиков веб-ресурсов, позволяющая оценивать производительность и использование работающего приложения. Используйте его для [автоматического инструментирования запросов, мониторинга зависимостей и сбора счетчиков производительности](auto-collect-dependencies.md#java), диагностики проблем производительности и исключений, а также для [написания кода][api] , который позволяет отслеживать действия пользователей с приложением. 
 
 ![Снимок экрана: обзор с примером данных](./media/java-get-started/overview-graphs.png)
 
@@ -91,7 +91,7 @@ ms.locfileid: "67061222"
 ```
 
 #### <a name="if-youre-using-eclipse-to-create-a-dynamic-web-project-"></a>Если вы используете Eclipse для создания динамического веб-проекта
-Используйте [пакет SDK Application Insights для подключаемого модуля Java][eclipse]. Примечание. Хотя с помощью этого подключаемого модуля и Application Insights настройка и запуск выполняются быстрее (при условии, что вы не используете Maven или Gradle), это не система управления зависимостями. Таким образом, при обновлении подключаемого модуля библиотеки Application Insights в проекте не будут обновляться автоматически.
+Используйте [Application Insights SDK для подключаемого модуля Java][eclipse]. Примечание. Хотя с помощью этого подключаемого модуля и Application Insights настройка и запуск выполняются быстрее (при условии, что вы не используете Maven или Gradle), это не система управления зависимостями. Таким образом, при обновлении подключаемого модуля библиотеки Application Insights в проекте не будут обновляться автоматически.
 
 * *Ошибки проверки сборки или контрольной суммы?* Попробуйте указать конкретную версию, например `version:'2.0.n'`. Сведения о последней версии см. в [заметках о выпуске пакета SDK](https://github.com/Microsoft/ApplicationInsights-Java#release-notes) или в [артефактах репозитория Maven](https://search.maven.org/#search%7Cga%7C1%7Capplicationinsights).
 * *Для обновления до последней версии пакета SDK* обновите зависимости проекта.
@@ -150,7 +150,7 @@ ms.locfileid: "67061222"
 
 * Ключ инструментирования пересылается вместе с каждым элементом телеметрии; служба Application Insights отобразит его в ресурсе.
 * Компонент HTTP-запросов является необязательным. Он автоматически передает на портал телеметрию о запросах и значения времени ответа.
-* Корреляция события является дополнением к компоненту HTTP-запросов. Это дополнение назначает идентификатор для каждого запроса, полученного сервером, и добавляет его в качестве свойства каждого элемента телеметрии в форме "Операция.ИД". Благодаря этому можно выделить данные телеметрии, связанные с каждым из запросов. Для этого нужно установить фильтр [Diagnostic search][diagnostic] (Поиск по журналу диагностики).
+* Корреляция события является дополнением к компоненту HTTP-запросов. Это дополнение назначает идентификатор для каждого запроса, полученного сервером, и добавляет его в качестве свойства каждого элемента телеметрии в форме "Операция.ИД". Благодаря этому можно выделить данные телеметрии, связанные с каждым из запросов, путем установки фильтра [Поиск по журналу диагностики][diagnostic].
 
 ### <a name="alternative-ways-to-set-the-instrumentation-key"></a>Другие способы задать ключ инструментирования
 Пакет SDK Application Insights ищет ключ в следующем порядке:
@@ -169,6 +169,8 @@ ms.locfileid: "67061222"
         TelemetryConfiguration.getActive().setInstrumentationKey(instrumentationKey);
     }
 ```
+
+Обратите внимание, что [динамические метрики](https://docs.microsoft.com/azure/azure-monitor/app/live-stream) не поддерживают чтение ключа инструментирования из кода.
 
 ## <a name="4-add-an-http-filter"></a>4. Добавление фильтра HTTP
 Последний шаг настройки позволяет компоненту HTTP-запросов выполнить протоколирование каждого веб-запроса. (Не обязательно, если используется только упрощенный интерфейс API.)
@@ -310,7 +312,7 @@ public class AppInsightsConfig {
 
 Щелкните любую диаграмму, чтобы увидеть более подробные агрегированные метрики.
 
-![Панель ошибок Application Insights с диаграммами](./media/java-get-started/006-barcharts.png)
+![Панель Application Insights сбоев с диаграммами](./media/java-get-started/006-barcharts.png)
 
 > Служба Application Insights предполагает, что HTTP-запросы для приложений MVC имеют следующий формат: `VERB controller/action`. Например, `GET Home/Product/f9anuh81`, `GET Home/Product/2dffwrf5` и `GET Home/Product/sdf96vws` сгруппированы в `GET Home/Product`. Это позволяет осмысленно группировать запросы, получая, например, число запросов и среднее время выполнения запросов.
 >
@@ -319,7 +321,7 @@ public class AppInsightsConfig {
 ### <a name="instance-data"></a>Данные экземпляров
 Щелкните тип запроса, чтобы просмотреть отдельные экземпляры.
 
-![Получить детализированное представление примеры](./media/java-get-started/007-instance.png)
+![Детализация конкретного примера представления](./media/java-get-started/007-instance.png)
 
 ### <a name="analytics-powerful-query-language"></a>Аналитика. Эффективный язык запросов
 По мере увеличения объема накопленных данных вы сможете использовать запросы для объедения данных и поиска отдельных экземпляров.  [Аналитика](../../azure-monitor/app/analytics.md) — это мощный инструмент, который не только позволяет изучать сведения о производительности и использовании, но и диагностировать возможные неполадки.
@@ -342,9 +344,9 @@ public class AppInsightsConfig {
 
     (Сюда входят счетчики производительности).
 
-## <a name="azure-app-service-config-spring-boot"></a>Azure config службы приложений (Spring Boot)
+## <a name="azure-app-service-config-spring-boot"></a>Конфигурация службы приложений Azure (пружинная загрузка)
 
-Приложения Spring Boot, работающие на Windows требуют дополнительной настройки для запуска в службах приложений Azure. Изменить **web.config** и добавьте следующий код:
+Приложения с пружинной загрузкой, запущенные в Windows, нуждаются в дополнительной настройке для запуска в службах приложений Azure. Измените **файл Web. config** и добавьте следующее:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -360,11 +362,11 @@ public class AppInsightsConfig {
 ```
 
 ## <a name="exceptions-and-request-failures"></a>Исключения и ошибки запросов
-Необработанные исключения автоматически фиксируются.
+Необработанные исключения автоматически собираются.
 
 Для сбора данных по другим исключениям доступны два варианта:
 
-* [вставить в код вызовы функции trackException()][apiexceptions];
+* [Вставьте в код вызовы trackException ()][apiexceptions].
 * [установить на сервере агент для Java](java-agent.md). Необходимо указать методы, которые требуется отслеживать.
 
 ## <a name="monitor-method-calls-and-external-dependencies"></a>Мониторинг вызовов методов и внешних зависимостей.
@@ -379,9 +381,9 @@ public class AppInsightsConfig {
 Конфигурация входящих параметров пакета средств разработки задана в файле [AI-Agent.xml](java-agent.md).
 
 ## <a name="performance-counters"></a>Счетчики производительности
-Откройте **исследовать**, **метрики**, чтобы отобразить диапазон счетчиков производительности.
+Откройте раздел **исследование**, **метрики**, чтобы просмотреть диапазон счетчиков производительности.
 
-![Снимок экрана: панель метрик с байтов исключительного пользования процесса выбран](./media/java-get-started/011-perf-counters.png)
+![Снимок экрана: панель метрик с выбранным байтовым частным байтом процесса](./media/java-get-started/011-perf-counters.png)
 
 ### <a name="customize-performance-counter-collection"></a>Настройка сбора данных счетчиками производительности
 Чтобы отключить сбор данных стандартным набором счетчиков производительности, добавьте следующий фрагмент кода в корневой узел файла ApplicationInsights.xml:
@@ -434,35 +436,11 @@ public class AppInsightsConfig {
 ### <a name="unix-performance-counters"></a>Счетчики производительности Unix
 * [установите collectd с подключаемым модулем Application Insights](java-collectd.md) .
 
-## <a name="local-forwarder"></a>Локальный сервер пересылки
-
-[Локальный сервер пересылки](https://docs.microsoft.com/azure/application-insights/local-forwarder) — это агент, который собирает данные телеметрии Application Insights или [OpenCensus](https://opencensus.io/) из разных платформ и пакетов SDK и направляет их в Application Insights. Он может работать под управлением Windows и Linux.
-
-```xml
-<Channel type="com.microsoft.applicationinsights.channel.concrete.localforwarder.LocalForwarderTelemetryChannel">
-<DeveloperMode>false</DeveloperMode>
-<EndpointAddress><!-- put the hostname:port of your LocalForwarder instance here --></EndpointAddress>
-<!-- The properties below are optional. The values shown are the defaults for each property -->
-<FlushIntervalInSeconds>5</FlushIntervalInSeconds><!-- must be between [1, 500]. values outside the bound will be rounded to nearest bound -->
-<MaxTelemetryBufferCapacity>500</MaxTelemetryBufferCapacity><!-- units=number of telemetry items; must be between [1, 1000] -->
-</Channel>
-```
-
-Если вы используете инициализатор SpringBoot, добавьте следующее в файл конфигурации (application.properties):
-
-```yml
-azure.application-insights.channel.local-forwarder.endpoint-address=<!--put the hostname:port of your LocalForwarder instance here-->
-azure.application-insights.channel.local-forwarder.flush-interval-in-seconds=<!--optional-->
-azure.application-insights.channel.local-forwarder.max-telemetry-buffer-capacity=<!--optional-->
-```
-
-Значения по умолчанию одинаковы для конфигурации SpringBoot application.properties и applicationinsights.xml.
-
 ## <a name="get-user-and-session-data"></a>Получение данных о пользователях и сеансах
 Итак, вы отправляете телеметрию с веб-сервера. Теперь для получения полного представления о приложении можно настроить дополнительные функции мониторинга:
 
-* [Добавьте телеметрию на веб-страницы][usage] для мониторинга просмотров страниц и метрик пользователя.
-* [Настройте веб-тесты][availability], которые помогут быть уверенными в том, что приложение остается работоспособным и правильно отвечает на запросы.
+* [Добавьте телеметрии на веб-страницы][usage] для мониторинга просмотров страниц и метрик пользователя.
+* [Настройте веб-тесты][availability] , которые помогут быть уверенными в том, что приложение остается работоспособным и правильно отвечает на запросы.
 
 ## <a name="capture-log-traces"></a>Журнал трассировки
 Службу Application Insights можно использовать для журналов продольных и поперечных срезов данных из Log4J, Logback или других платформ ведения журнала. Записи журналов можно соотносить с HTTP-запросами и другими данными телеметрии. [Подробнее][javalogs].
@@ -470,18 +448,18 @@ azure.application-insights.channel.local-forwarder.max-telemetry-buffer-capacity
 ## <a name="send-your-own-telemetry"></a>Отправка собственных данных телеметрии
 После установки пакета SDK можно использовать интерфейс API для отправки собственных данных телеметрии.
 
-* [Отслеживайте пользовательские события и метрики][api], чтобы знать, какие операции выполняют пользователи в приложении.
-* [Выполняйте поиск событий и журналов][diagnostic] для диагностики неполадок.
+* [Следите за пользовательскими событиями и метриками][api] , чтобы узнать, какие пользователи выполняются с приложением.
+* [Поиск событий и журналов][diagnostic] для диагностики неполадок.
 
 ## <a name="availability-web-tests"></a>Доступность веб-тестов
 Application Insights может тестировать ваш веб-сайт через равные промежутки времени для проверки, работает ли он и правильно ли отвечает на запросы.
 
-[Дополнительные сведения о том, как настроить веб-тесты доступности.][availability]
+[Дополнительные сведения о настройке веб-тестов доступности см. здесь.][availability]
 
 ## <a name="questions-problems"></a>Вопросы? Проблемы?
 [Устранение неполадок Java](java-troubleshoot.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Отслеживайте вызовы зависимостей.](java-agent.md)
 * [Отслеживайте счетчики производительности Unix.](java-collectd.md)
 * Добавляйте [мониторинг на веб-страницы](javascript.md), чтобы отслеживать время загрузки страниц, вызовы AJAX и исключения браузера.
