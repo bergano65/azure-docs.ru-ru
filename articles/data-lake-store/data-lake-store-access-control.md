@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: twooley
-ms.openlocfilehash: 211cb32298b17bb9e4023bf8bc74233c3916f58d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 276e691351d852d6dcb0075d47bf33af6767fc10
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60879112"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68226102"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen1"></a>Контроль доступа в Azure Data Lake Storage 1-го поколения
 
@@ -59,7 +59,7 @@ ms.locfileid: "60879112"
 |--------------|------------|------------------------|
 | 7            | `RWX`        | чтение, запись и выполнение |
 | 5            | `R-X`        | Чтение + выполнение         |
-| 4\.            | `R--`        | Чтение                   |
+| 4            | `R--`        | Чтение                   |
 | 0            | `---`        | Нет разрешений         |
 
 
@@ -75,11 +75,11 @@ ms.locfileid: "60879112"
 |-----------|---------------------|-----------|------------|-------------|----------------|
 | Чтение      | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `R--`          |
 | Добавление к | Data.txt            |   `--X`   |   `--X`    |  `--X`      | `RW-`          |
-| Delete (Удалить)    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
+| Оператор delete    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
 | Создание    | Data.txt            |   `--X`   |   `--X`    |  `-WX`      | `---`          |
-| список      | /                   |   `R-X`   |   `---`    |  `---`      | `---`          |
-| список      | /Seattle/           |   `--X`   |   `R-X`    |  `---`      | `---`          |
-| список      | /Seattle/Portland/  |   `--X`   |   `--X`    |  `R-X`      | `---`          |
+| List      | /                   |   `R-X`   |   `---`    |  `---`      | `---`          |
+| List      | /Seattle/           |   `--X`   |   `R-X`    |  `---`      | `---`          |
+| List      | /Seattle/Portland/  |   `--X`   |   `--X`    |  `R-X`      | `---`          |
 
 
 > [!NOTE]
@@ -166,7 +166,7 @@ def access_check( user, desired_perms, path ) :
   # Handle the owning user. Note that mask IS NOT used.
   entry = get_acl_entry( path, OWNER )
   if (user == entry.identity)
-      return ( (desired_perms & e.permissions) == desired_perms )
+      return ( (desired_perms & entry.permissions) == desired_perms )
 
   # Handle the named users. Note that mask IS used.
   entries = get_acl_entries( path, NAMED_USER )
@@ -216,9 +216,9 @@ def access_check( user, desired_perms, path ) :
 
 ### <a name="umask"></a>umask
 
-Когда создается файл или папка, значение umask используется для изменения того, как списки ACL по умолчанию устанавливаются для дочернего элемента. umask — это 9-битное значение для родительских папок, содержащее это значение RWX для **владельца**, **группы владельцев** и **других**.
+Когда создается файл или папка, значение umask используется для изменения того, как списки ACL по умолчанию устанавливаются для дочернего элемента. umask — это 9-битное значение для родительских папок, которое содержит значение RWX для **владельца "пользователь**", " **Группа-владелец**" и **другое**.
 
-umask для Azure Data Lake Storage 1-го поколения является константой со значением 007. Это значение преобразуется в
+Umask для Azure Data Lake Storage 1-го поколения является константой, установленной в значение 007. Это значение преобразуется в
 
 | Компонент umask     | Цифровая форма | Краткая форма | Значение |
 |---------------------|--------------|------------|---------|
@@ -250,7 +250,7 @@ def set_default_acls_for_new_child(parent, child):
 
 ### <a name="do-i-have-to-enable-support-for-acls"></a>Нужно ли мне активировать поддержку ACL?
 
-№ Контроль доступа к учетной записи Data Lake Storage 1-го поколения с помощью ACL всегда включен.
+Нет. Контроль доступа к учетной записи Data Lake Storage 1-го поколения с помощью ACL всегда включен.
 
 ### <a name="which-permissions-are-required-to-recursively-delete-a-folder-and-its-contents"></a>Какие разрешения требуются для рекурсивного удаления папки и ее содержимого?
 

@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 04/15/2019
 ms.author: ramamill
-ms.openlocfilehash: 7fab3b05429e430b444c2a14213c524fbf19a01d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 66022b5e4885c515bd6117f9a44b8108ff84ae5c
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66171680"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68250097"
 ---
 # <a name="manage-the-configuration-server-for-vmware-vm-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления виртуальных машин VMware
 
@@ -109,7 +109,7 @@ ms.locfileid: "66171680"
    ```
 
     >[!NOTE]
-    >Чтобы **извлечь новейшие сертификаты** с сервера конфигурации для горизонтального масштабирования сервера обработки, выполните команду *“<Installation Drive\Microsoft Azure Site Recovery\agent\cdpcli.exe>" --registermt*.
+    >Чтобы получить **последние сертификаты** с сервера конфигурации на сервер обработки масштабирования, выполните команду *"\<Installation дриве\микрософт Azure site рековери\ажент\кдпкли.ЕКСЕ >"--registermt*
 
 8. И, наконец, перезапустите службу OBEngine, выполнив приведенную ниже команду.
    ```
@@ -154,13 +154,13 @@ ms.locfileid: "66171680"
     ![Update](./media/vmware-azure-manage-configuration-server/update2.png)
 3. Скачайте файл установщика обновлений на сервер конфигурации.
 
-    ![Блокировка изменений](./media/vmware-azure-manage-configuration-server/update1.png)
+    ![Обновление](./media/vmware-azure-manage-configuration-server/update1.png)
 
 4. Дважды щелкните, чтобы запустить установщик.
 5. Установщик определит текущую версию на компьютере. Чтобы начать обновление, нажмите кнопку **Да**.
 6. После завершения обновления будет выполнена проверка сервера конфигурации.
 
-    ![Блокировка изменений](./media/vmware-azure-manage-configuration-server/update3.png)
+    ![Обновление](./media/vmware-azure-manage-configuration-server/update3.png)
 
 7. Чтобы закрыть установщик, нажмите кнопку **Готово**.
 8. Сведения об обновлении остальных компонентов Site Recovery см. в [руководстве по обновлению](https://aka.ms/asr_vmware_upgrades).
@@ -183,7 +183,7 @@ ms.locfileid: "66171680"
 
 ### <a name="parameters"></a>Параметры
 
-|Имя параметра| type | Описание| Значения|
+|Имя параметра| Тип | Описание| Значения|
 |-|-|-|-|
 | /ServerMode|Обязательно для заполнения|Указывает, нужно ли установить и сервер конфигурации, и сервер обработки или только север обработки.|CS<br>PS|
 |/InstallLocation|Обязательно для заполнения|Папка для установки компонентов.| Любая папка на компьютере.|
@@ -258,7 +258,7 @@ ProxyPassword="Password"
     `Remove-AzSiteRecoveryFabric -Fabric $fabric [-Force]`
 
 > [!NOTE]
-> Можно использовать **-Force** параметр в Remove-AzSiteRecoveryFabric для принудительного удаления сервера конфигурации.
+> Для принудительного удаления сервера конфигурации можно использовать параметр **-Force** в Remove-азситерековерифабрик.
 
 ## <a name="generate-configuration-server-passphrase"></a>Создание парольной фразы сервера конфигурации.
 
@@ -302,6 +302,6 @@ ProxyPassword="Password"
 
 Не забывайте регулярно создавать плановые резервные копии конфигурации сервера. Если происходит авария и сервер конфигурации утерян, необходимо сначала восстановить сервер конфигурации из резервной копии и убедиться, что он имеет тот же IP-адрес, с которым он был зарегистрирован в хранилище. Восстановление размещения не будет работать, если для восстановленного сервера конфигурации используется другой IP-адрес.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с руководствами по настройке аварийного восстановления [виртуальных машин VMware](vmware-azure-tutorial.md) в Azure.

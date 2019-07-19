@@ -7,13 +7,13 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 12/27/2018
-ms.author: lyrana
-ms.openlocfilehash: bfc73a71a0ccda5c135e6a740d6f63bd37522a9b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: lyhughes
+ms.openlocfilehash: 33e09ad52722665e6162b18159012d69ec1463bd
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60534156"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67849276"
 ---
 # <a name="role-based-access-control-in-azure-digital-twins"></a>Управление доступом на основе ролей в Azure Digital Twins
 
@@ -81,6 +81,6 @@ RBAC может использоваться разработчиком для �
 >[!IMPORTANT]
 > Дополнительные сведения о назначении ролей см. в статье [Создание назначений ролей и управление ими в Azure Digital Twins](./security-create-manage-role-assignments.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о создании и управлении назначениями ролей Azure Digital Twins см. в статье [Создание назначений ролей и управление ими в Azure Digital Twins](./security-create-manage-role-assignments.md).

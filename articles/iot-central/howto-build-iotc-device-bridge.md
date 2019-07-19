@@ -5,15 +5,15 @@ services: iot-central
 ms.service: iot-central
 author: viv-liu
 ms.author: viviali
-ms.date: 03/26/2019
+ms.date: 07/09/2019
 ms.topic: conceptual
 manager: peterpr
-ms.openlocfilehash: 246c9ad8ab3083c1b847c1c25230a7193a8192e3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c98574bc3447482429d7a028c6b47197e08e2e38
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60886872"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67850233"
 ---
 # <a name="build-the-iot-central-device-bridge-to-connect-other-iot-clouds-to-iot-central"></a>Создание моста устройства IoT Central для подключения других облаков Интернета вещей к IoT Central
 
@@ -26,9 +26,9 @@ ms.locfileid: "60886872"
 -   Приложение-функция Azure.
 -   Учетная запись хранения Azure
 -   План потребления
--   Хранилище ключей Azure
+-   Azure Key Vault
 
-Приложения-функции — это важная часть моста устройства. Оно получает запросы HTTP POST от других платформ Интернета вещей или любых настраиваемых платформ с помощью простой интеграции веб-перехватчика. Мы представили примеры подключения к облакам Sigfox, Particle и TTN. Вы можете легко расширить это решение, чтобы подключиться к пользовательскому облаку Интернета вещей, если ваша платформа может отправлять запросы HTTP POST в приложение-функцию.
+Приложение-функция является критической частью моста устройства. Оно получает запросы HTTP POST от других платформ Интернета вещей или любых настраиваемых платформ с помощью простой интеграции веб-перехватчика. Мы представили примеры подключения к облакам Sigfox, Particle и TTN. Вы можете легко расширить это решение, чтобы подключиться к пользовательскому облаку Интернета вещей, если ваша платформа может отправлять запросы HTTP POST в приложение-функцию.
 Приложение-функция преобразует данные в формат, принимаемый IoT Central, и пересылает их с помощью API DPS.
 
 ![Снимок экрана функций Azure](media/howto-build-iotc-device-bridge/azfunctions.png)
@@ -41,7 +41,7 @@ ms.locfileid: "60886872"
 ## <a name="pricing"></a>Цены
 Ресурсы Azure будут размещаться в подписке Azure. Дополнительные сведения о ценах см. в файле [README](https://aka.ms/iotcentralgithubdevicebridge).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда вы научились создавать мост устройства IoT Central, можно перейти к следующему шагу:
 
 > [!div class="nextstepaction"]

@@ -1,43 +1,44 @@
 ---
-title: Проверьте работоспособность реестр в реестре контейнеров Azure
-description: Сведения о запуске Быстрые команды диагностики для выявления распространенных проблем при использовании реестра контейнеров Azure, включая локальные конфигурации Docker и подключение к реестру
+title: Проверка работоспособности реестра в реестре контейнеров Azure
+description: Узнайте, как выполнить команду быстрой диагностики для выявления распространенных проблем при использовании реестра контейнеров Azure, включая настройку локального DOCKER и подключение к реестру.
 services: container-registry
 author: dlepow
+manager: gwallace
 ms.service: container-registry
 ms.topic: article
 ms.date: 07/02/2019
 ms.author: danlep
-ms.openlocfilehash: 3e5b5467f9fa25e23f6661c6630d346aa85e2205
-ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
+ms.openlocfilehash: 3511655d220ee85ce6b5744612e5d6fddafbe877
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67555102"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68309731"
 ---
-# <a name="check-the-health-of-an-azure-container-registry"></a>Проверьте работоспособность реестр контейнеров Azure
+# <a name="check-the-health-of-an-azure-container-registry"></a>Проверка работоспособности реестра контейнеров Azure
 
-Если вы используете реестр контейнеров Azure, иногда могут возникнуть проблемы. Например может не появиться возможность извлечь отдельный образ контейнера из-за проблемы с Docker в локальной среде. Или проблемы в сети может не позволит подключиться к реестру. 
+При использовании реестра контейнеров Azure иногда могут возникать проблемы. Например, вы не можете извлечь образ контейнера из-за проблемы с DOCKER в локальной среде. Или сетевая ошибка может препятствовать подключению к реестру. 
 
-В качестве первого шага диагностики, запустите [проверки работоспособности az acr][az-acr-check-health] command to get information about the health of the environment and optionally access to a target registry. This command is available in Azure CLI version 2.0.67 or later. If you need to install or upgrade, see [Install Azure CLI][azure-cli].
+В качестве первого шага диагностики выполните команду [AZ контролем учетных записей проверки работоспособности][az-acr-check-health] command to get information about the health of the environment and optionally access to a target registry. This command is available in Azure CLI version 2.0.67 or later. If you need to install or upgrade, see [Install Azure CLI][azure-cli].
 
-## <a name="run-az-acr-check-health"></a>Выполните проверку работоспособности az acr
+## <a name="run-az-acr-check-health"></a>Выполните команду AZ контроля доступа (проверка работоспособности)
 
-Следующие примеры демонстрируют различные способы запуска `az acr check-health` команды.
+В следующих примерах показаны различные способы выполнения `az acr check-health` команды.
 
 > [!NOTE]
-> Если вы выполняете команду в Azure Cloud Shell, локальной среде не проверяется. Тем не менее вы можете проверить доступ к папке реестра.
+> При выполнении команды в Azure Cloud Shell локальная среда не проверяется. Однако можно проверить доступ к целевому реестру.
 
-### <a name="check-the-environment-only"></a>Проверьте среду только
+### <a name="check-the-environment-only"></a>Проверка только окружения
 
-Проверяемый локальном Docker управляющей программы версии интерфейса командной строки и конфигурации клиента Helm, выполните команду без дополнительных параметров:
+Чтобы проверить локальную управляющую программу DOCKER, версию CLI и конфигурацию клиента Helm, выполните команду без дополнительных параметров:
 
 ```azurecli
 az acr check-health
 ```
 
-### <a name="check-the-environment-and-a-target-registry"></a>Проверьте среду и конечный реестр
+### <a name="check-the-environment-and-a-target-registry"></a>Проверка среды и целевого реестра
 
-Чтобы проверить доступ к реестру, а также выполнять проверки в локальной среде, передайте имя реестра целевой. Пример:
+Чтобы проверить доступ к реестру, а также выполнить проверку локальной среды, передайте имя целевого реестра. Пример:
 
 ```azurecli
 az acr check-health --name myregistry
@@ -45,9 +46,9 @@ az acr check-health --name myregistry
 
 ## <a name="error-reporting"></a>Отчеты об ошибках
 
-Команда записывает сведения в стандартный поток вывода. При обнаружении проблемы, обеспечивается код ошибки и описание. Дополнительные сведения о кодах и возможные решения см. в разделе [справочников по ошибкам](container-registry-health-error-reference.md).
+Команда записывает данные в стандартный вывод. При обнаружении проблемы она предоставляет код и описание ошибки. Дополнительные сведения о кодах и возможных решениях см. в справочнике по [ошибкам](container-registry-health-error-reference.md).
 
-По умолчанию команда останавливается при обнаружении ошибки. Чтобы на ней присутствовала выходных данных для выполнения всех проверок работоспособности, также можно выполнить команду, даже если будут обнаружены ошибки. Добавление `--ignore-errors` параметра, как показано в следующих примерах:
+По умолчанию команда останавливается при обнаружении ошибки. Можно также выполнить команду, чтобы она выпускала выходные данные для всех проверок работоспособности, даже если обнаружены ошибки. `--ignore-errors` Добавьте параметр, как показано в следующих примерах:
 
 ```azurecli
 # Check environment only
@@ -76,11 +77,11 @@ Fetch access token for registry 'myregistry.azurecr.io' : OK
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о кодах ошибок, возвращаемых [проверки работоспособности az acr][az-acr-check-health] команды, см. в разделе [справочников по ошибкам проверки работоспособности](container-registry-health-error-reference.md).
+Дополнительные сведения о кодах ошибок, возвращаемых командой [AZ контроля доступа проверки][az-acr-check-health] работоспособности, см [. в](container-registry-health-error-reference.md)этой статье.
 
-См. в разделе [часто задаваемые вопросы о](container-registry-faq.md) для часто задаваемых вопросов и других известных проблемах, о реестре контейнеров Azure.
+Часто задаваемые вопросы и другие известные проблемы реестра контейнеров Azure см. в [часто](container-registry-faq.md) задаваемых вопросах.
 
 
 

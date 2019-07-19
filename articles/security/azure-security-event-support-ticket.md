@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/13/2017
-ms.author: v-dabosl
-ms.openlocfilehash: 243b6b7846719d3f848073e3aa973c9406ca59c7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: barclayn
+ms.openlocfilehash: 80ce352a9033b2da1db16643d07eab9eff70eb0a
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60586602"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67875680"
 ---
 # <a name="how-to-log-a-security-event-support-ticket"></a>Регистрация запроса о событии, связанном с безопасностью, в службу поддержки
 
@@ -32,7 +32,7 @@ ms.locfileid: "60586602"
 
     i. В чем заключается проблема и (или) уязвимость?
 
-    ii. Для уязвимостей укажите CVE (mitre.org) или заполненный калькулятор CVSS3 версии 3 (https://www.first.org/cvss/calculator/3.0).
+    ii. Для уязвимостей укажите CVE (mitre.org) или заполненный CVSS3 v3 калькулятор (https://www.first.org/cvss/calculator/3.0).
 
     iii. Доступно ли полное или частичное решение? Если да, укажите действия по исправлению.
 

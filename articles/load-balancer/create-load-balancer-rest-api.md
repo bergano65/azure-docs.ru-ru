@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: Узнайте, как создать Azure Load Balancer с помощью REST API.
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -12,13 +12,13 @@ ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: load-balancer
 ms.date: 06/06/2018
-ms.author: kumud
-ms.openlocfilehash: 159fe9d6a891858d8d2cc2315e9544b79eb44cff
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: allensu
+ms.openlocfilehash: ae8fb4494d27d0c145963c9b32757bdb802e0cc7
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60884985"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68275548"
 ---
 # <a name="create-an-azure-basic-load-balancer-using-rest-api"></a>Создание Azure Load Balancer (цен. категория "Базовый") с помощью REST API
 
@@ -33,22 +33,22 @@ Azure Load Balancer распределяет новые входящие пот�
   ```
 ### <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
 
-|Name  |В  |Обязательно для заполнения |type |Описание |
+|ИМЯ  |In  |Обязательно для заполнения |Type |Описание |
 |---------|---------|---------|---------|--------|
-|subscriptionId   |  путь       |  Истина       |   string      |  Учетные данные подписки, позволяющие уникально идентифицировать подписку Microsoft Azure. Идентификатор подписки формирует часть URI для каждого вызова службы.      |
-|resourceGroupName     |     путь    | Истина        |  string       |   Имя группы ресурсов.     |
-|loadBalancerName     |  путь       |      Истина   |    string     |    Имя подсистемы балансировки нагрузки.    |
-|api-version    |   query     |  Истина       |     string    |  Версия API клиента.      |
+|subscriptionId   |  path       |  True       |   строка      |  Учетные данные подписки, позволяющие уникально идентифицировать подписку Microsoft Azure. Идентификатор подписки формирует часть URI для каждого вызова службы.      |
+|resourceGroupName     |     path    | True        |  строка       |   Имя группы ресурсов.     |
+|loadBalancerName     |  path       |      True   |    строка     |    Имя подсистемы балансировки нагрузки.    |
+|api-version    |   запрос     |  True       |     строка    |  Версия API клиента.      |
 
 
 
-### <a name="request-body"></a>Текст запроса
+### <a name="request-body"></a>Тело запроса
 
 Единственным обязательным параметром является `location`. Если не определить версию *SKU*, по умолчанию создается Load Balancer (цен. категория "Базовый").  Используйте [необязательные параметры](https://docs.microsoft.com/rest/api/load-balancer/loadbalancers/createorupdate#request-body) для настройки подсистемы балансировки нагрузки.
 
-| ИМЯ | Тип | Описание |
+| Имя | Тип | Описание |
 | :--- | :--- | :---------- |
-| location | string | Расположение ресурса. Получите текущий список расположений с помощью операции [List Locations](https://docs.microsoft.com/rest/api/resources/subscriptions/listlocations). |
+| location | строка | Расположение ресурса. Получите текущий список расположений с помощью операции [List Locations](https://docs.microsoft.com/rest/api/resources/subscriptions/listlocations). |
 
 
 ## <a name="example-create-and-update-a-basic-load-balancer"></a>Пример: создание и обновление Load Balancer (цен. категория "Базовый")
@@ -64,7 +64,7 @@ Azure Load Balancer распределяет новые входящие пот�
   ```HTTP    
   PUT https://management.azure.com/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb?api-version=2018-02-01
   ```
-#### <a name="request-body"></a>Текст запроса
+#### <a name="request-body"></a>Тело запроса
 
   ```JSON
    {
@@ -78,7 +78,7 @@ Azure Load Balancer распределяет новые входящие пот�
   ```HTTP    
   PUT https://management.azure.com/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb?api-version=2018-02-01
   ```
-#### <a name="request-body"></a>Текст запроса
+#### <a name="request-body"></a>Тело запроса
 
   ```JSON
 {

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: mbullwin
-ms.openlocfilehash: dd4690e27be38c3fef3053562ebee773698a70d7
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: 2ec3b620138c4ae0487c29e38062c044a5210572
+ms.sourcegitcommit: da0a8676b3c5283fddcd94cdd9044c3b99815046
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67154767"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68314795"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -50,6 +50,7 @@ ms.locfileid: "67154767"
 * Добавьте пакет SDK Application Insights в свой проект:
 
   * [проект ASP.NET;](../../azure-monitor/app/asp-net.md)
+  * [ASP.NET Core проект](../../azure-monitor/app/asp-net-core.md)
   * [проект Java;](../../azure-monitor/app/java-get-started.md)
   * [проект Node.js;](../../azure-monitor/app/nodejs.md)
   * [JavaScript на каждой веб-странице.](../../azure-monitor/app/javascript.md) 
@@ -153,7 +154,7 @@ telemetry.trackEvent({name: "WinGame"});
 
 Данные телеметрии доступны в таблице `customEvents` в [службе аналитики Application Insights](analytics.md). Каждая строка представляет собой вызов `trackEvent(..)` в приложении.
 
-Если действует [выборка](../../azure-monitor/app/sampling.md), свойство itemCount имеет значение больше 1. Например, itemCount==10 означает, что из 10 вызовов trackEvent() процесс выборки передал только один. Чтобы получить правильное количество пользовательских событий, вы должны таким образом используйте следующий код `customEvents | summarize sum(itemCount)`.
+Если действует [выборка](../../azure-monitor/app/sampling.md), свойство itemCount имеет значение больше 1. Например, itemCount==10 означает, что из 10 вызовов trackEvent() процесс выборки передал только один. Чтобы получить правильное количество пользовательских событий, необходимо использовать код, такой как `customEvents | summarize sum(itemCount)`.
 
 ## <a name="getmetric"></a>GetMetric
 
@@ -249,7 +250,7 @@ namespace User.Namespace.Example01
 ## <a name="trackmetric"></a>TrackMetric (Отслеживание метрик)
 
 > [!NOTE]
-> Microsoft.ApplicationInsights.TelemetryClient.TrackMetric не является предпочтительным для отправки метрик. Метрики всегда нужно предварительно агрегировать в течение определенного периода перед отправкой. Используйте одну из перегрузок GetMetric(..), чтобы получить объект метрики для доступа к возможностям предварительного агрегирования пакета SDK. При реализации собственной логики предварительную статистическую обработку, можно использовать метод TrackMetric() отправлять полученный статистические выражения. Если приложению требуется каждый раз отправить отдельный элемент телеметрии без агрегирования в течение определенного периода, скорее всего, у вас уже есть вариант использования телеметрии события; см. метод TelemetryClient.TrackEvent (Microsoft.ApplicationInsights.DataContracts.EventTelemetry).
+> Microsoft. ApplicationInsights. TelemetryClient. TrackMetric не является предпочтительным методом отправки метрик. Метрики всегда нужно предварительно агрегировать в течение определенного периода перед отправкой. Используйте одну из перегрузок GetMetric(..), чтобы получить объект метрики для доступа к возможностям предварительного агрегирования пакета SDK. При реализации собственной логики предварительной обработки можно использовать метод TrackMetric () для отправки итоговых статистических выражений. Если приложению требуется каждый раз отправить отдельный элемент телеметрии без агрегирования в течение определенного периода, скорее всего, у вас уже есть вариант использования телеметрии события; см. метод TelemetryClient.TrackEvent (Microsoft.ApplicationInsights.DataContracts.EventTelemetry).
 
 Application Insights может создать диаграмму метрик, не привязанных к определенным событиям. Например, можно отслеживать длину очереди через регулярные промежутки времени. Благодаря метрикам отдельные измерения менее интересны, чем вариации и тенденции, и поэтому статистические диаграммы полезны.
 
@@ -712,7 +713,7 @@ dependencies
 
 ## <a name="flushing-data"></a>Очистка данных
 
-Как правило пакет SDK отправляет данные через фиксированные промежутки времени (обычно 30 сек) или всякий раз, когда буфер полный (обычно 500 элементов). Однако в некоторых случаях может потребоваться очистить буфер, например, при использовании пакета SDK в приложении, которое завершает работу.
+Как правило, пакет SDK отправляет данные через фиксированные интервалы (обычно 30 с) или каждый раз, когда буфер полон (обычно 500 элементов). Однако в некоторых случаях может потребоваться очистить буфер, например, при использовании пакета SDK в приложении, которое завершает работу.
 
 *C#*
 
@@ -950,7 +951,7 @@ long startTime = System.currentTimeMillis();
 
 long endTime = System.currentTimeMillis();
 Map<String, Double> metrics = new HashMap<>();
-metrics.put("ProcessingTime", endTime-startTime);
+metrics.put("ProcessingTime", (double)endTime-startTime);
 
 // Setup some properties
 Map<String, String> properties = new HashMap<>();
@@ -1084,7 +1085,7 @@ TelemetryConfiguration.Active.TelemetryChannel.DeveloperMode = True
 
 *Node.js*
 
-Для Node.js, вы можете включить режим разработчика, включив ведение внутреннего журнала с помощью `setInternalLogging` и параметр `maxBatchSize` 0, что приводит данные телеметрии, отправляемых по мере их сбора.
+Для Node. js можно включить режим разработчика, включив внутреннее ведение журнала с помощью `setInternalLogging` и установив `maxBatchSize` значение 0, что приводит к отправке данных телеметрии сразу после сбора.
 
 ```js
 applicationInsights.setup("ikey")

@@ -11,13 +11,13 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
-ms.date: 07/15/2019
-ms.openlocfilehash: 229814b908861080ff56d6f4bcba25cc996f00ff
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
-ms.translationtype: HT
+ms.date: 07/18/2019
+ms.openlocfilehash: 174147aca75452dfaee02d20df5377fa1f6070c1
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68228068"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68325097"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 
@@ -278,6 +278,9 @@ ms.locfileid: "68228068"
 
 > [!NOTE]
 > Если вы создали базу данных-получатель как часть конфигурации группы отработки отказа, понижение ее уровня не рекомендуется. Это необходимо, чтобы обеспечить достаточную емкость уровня данных для обработки регулярных рабочих нагрузок после активации отработки отказа.
+
+> [!IMPORTANT]
+> Обновление или понижение уровня Управляемый экземпляр, который является членом группы отработки отказа, в настоящее время не поддерживается.
 
 ## <a name="preventing-the-loss-of-critical-data"></a>Предотвращение потери важных данных
 

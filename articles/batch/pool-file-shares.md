@@ -4,7 +4,7 @@ description: Как подключить общую папку с помощью
 services: batch
 documentationcenter: ''
 author: laurenhughes
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: batch
@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 05/24/2018
 ms.author: lahugh
 ms.custom: ''
-ms.openlocfilehash: 914bc11736b08dab6b334307dc188b5d153c7331
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 8c9d041648408b05b7cd160d5aea9dfb33ac061d
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341318"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68322381"
 ---
 # <a name="use-an-azure-file-share-with-a-batch-pool"></a>Использование общей папки Azure с пулом пакетной службы
 
@@ -52,7 +52,7 @@ ms.locfileid: "67341318"
 Например, включите команду `net use`, чтобы подключить общую папку как часть командной строки каждой задачи. Для подключения общей папки требуются следующие учетные данные:
 
 * **Имя пользователя**. AZURE\\\<имя_учетной_записи_хранения\>, например AZURE\\*mystorageaccountname*;
-* **пароль**: <ключ_учетной_записи_хранения==>, например *XXXXXXXXXXXXXXXXXXXXX==* .
+* **Пароль**. \<Сторажеаккаунткэйвхичендс в = = >, например *кскскскскскскскскскскскскскскскскскскскскс = =*
 
 Следующая команда позволяет подключить общую папку *myfileshare* в учетной записи хранения *mystorageaccountname* как диск *S:*
 
@@ -129,7 +129,7 @@ apt-get update && apt-get install cifs-utils && sudo mkdir -p /mnt/MyAzureFileSh
 Затем выполните команду `mount` для подключения общей папки, указав следующие учетные данные:
 
 * **имя пользователя**: \<имя_учетной_записи_хранения\>, например *mystorageaccountname*;
-* **пароль**: <ключ_учетной_записи_хранения==>, например *XXXXXXXXXXXXXXXXXXXXX==* .
+* **Пароль**. \<Сторажеаккаунткэйвхичендс в = = >, например *кскскскскскскскскскскскскскскскскскскскскс = =*
 
 Следующая команда позволяет подключить общую папку *myfileshare* в учетной записи хранения *mystorageaccountname* по адресу */mnt/MyAzureFileShare*: 
 
@@ -182,7 +182,7 @@ batch_service_client.task.add(job_id, task)
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Другие варианты чтения и записи данных в пакетной службе см. в [обзоре возможностей пакетной службы](batch-api-basics.md) и статье [Сохранение пакетных заданий и выходных данных задач](batch-task-output.md).
 

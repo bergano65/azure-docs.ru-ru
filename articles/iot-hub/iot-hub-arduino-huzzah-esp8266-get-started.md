@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/11/2018
 ms.author: wesmc
-ms.openlocfilehash: de4029d7c454ed590fdf974771d5f55c52590c93
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 8e97a979c37af8ade51b4ff6ca4b2c5b4eec126e
+ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67839049"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68232722"
 ---
 # <a name="connect-adafruit-feather-huzzah-esp8266-to-azure-iot-hub-in-the-cloud"></a>Подключение Adafruit Feather HUZZAH ESP8266 к Центру Интернета вещей Azure в облаке
 
@@ -49,6 +49,9 @@ ms.locfileid: "67839049"
 
 * Активная подписка Azure. Если ее нет, можно создать [бесплатную пробную учетную запись Azure](https://azure.microsoft.com/free/) всего за несколько минут.
 * ПК или компьютер Mac под управлением Windows или Ubuntu;
+* [GIT](https://git-scm.com/download)
+* [Arduino](https://www.arduino.cc/en/main/software#download)
+* [Драйвер Adafruit Huzzah ESP8266 для USB](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/using-arduino-ide)
 * беспроводная сеть, к которой подключается Feather HUZZAH ESP8266;
 * подключение к Интернету для скачивания средства настройки;
 * [Расширение Visual Studio Code для Arduino](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-arduino).
@@ -156,7 +159,7 @@ ms.locfileid: "67839049"
 
 6. В Visual Studio Code нажмите клавишу `F1`.
 
-7. Тип **Arduino** и выберите **Arduino: Board Manager** (Диспетчер плат Arduino).
+7. Введите **Arduino** и выберите **Arduino: Board Manager** (Диспетчер плат Arduino).
 
 8. На вкладке **Arduino: Board Manager** (Диспетчер плат Arduino) щелкните **Additional URLs** (Дополнительные URL-адреса).
 
@@ -180,7 +183,7 @@ ms.locfileid: "67839049"
 
     ![Завершение установки пакета ESP8266](media/iot-hub-arduino-huzzah-esp8266-get-started/13_vscode-esp8266-installed.png)
 
-13. Введите `F1`, затем введите **Arduino** и выберите **Arduino: Плата Config**.
+13. Введите `F1`, введите **Arduino** и выберите **Arduino: Конфигурация**доски.
 
 14. Установите флажок **Selected Board:** (Выбранная плата) и введите **esp8266**, а затем выберите **Adafruit HUZZAH ESP8266 (esp8266)** .
 
@@ -188,7 +191,7 @@ ms.locfileid: "67839049"
 
 ### <a name="install-necessary-libraries"></a>Установка необходимых библиотек
 
-1. В Visual Studio Code, введите `F1`, затем введите **Arduino** и выберите **Arduino: Диспетчер библиотек**.
+1. В Visual Studio Code введите `F1`, а затем введите **Arduino** и выберите **Arduino: Диспетчер**библиотек.
 
 2. Выполните поиск приведенных ниже имен библиотек по очереди. Для каждой найденной библиотеки щелкните **Установить**.
    * `AzureIoTHub`
@@ -216,9 +219,9 @@ ms.locfileid: "67839049"
 
 ### <a name="deploy-the-sample-application-to-feather-huzzah-esp8266"></a>Развертывание примера приложения для Feather HUZZAH ESP8266
 
-1. В Visual Studio Code, нажмите кнопку  **\<выберите последовательный порт >** состояния панели, а затем выберите последовательный порт для Feather HUZZAH ESP8266.
+1. В Visual Studio Code щелкните  **\<выбрать последовательный порт >** в строке состояния, а затем щелкните последовательный порт для растушевки HUZZAH ESP8266.
 
-2. Введите `F1`, затем введите **Arduino** и выберите **Arduino: Отправка** построение и развертывание примера приложения для Feather HUZZAH ESP8266.
+2. Введите `F1`, введите **Arduino** и выберите **Arduino: Отправьте** , чтобы собрать и развернуть пример приложения в растушевку HUZZAH ESP8266.
 
 ### <a name="enter-your-credentials"></a>Ввод учетных данных
 
@@ -247,11 +250,11 @@ ms.locfileid: "67839049"
 
 ![Окончательные выходные данные в интегрированной среде разработки Arduino](media/iot-hub-arduino-huzzah-esp8266-get-started/16_arduino-ide-final-output.png)
 
-## <a name="read-the-messages-received-by-your-hub"></a>Читать сообщения, отправляемые в центр
+## <a name="read-the-messages-received-by-your-hub"></a>Чтение сообщений, полученных центром
 
-— Это один из способов отслеживать сообщения, отправляемые в центр Интернета вещей с устройства с помощью средств Интернета вещей Azure для Visual Studio Code. Дополнительные сведения см. в разделе [использование средств Интернета вещей Azure для Visual Studio Code для отправки и получения сообщений между устройством и центром Интернета вещей](iot-hub-vscode-iot-toolkit-cloud-device-messaging.md).
+Одним из способов мониторинга сообщений, полученных центром Интернета вещей с устройства, является использование средств Azure IoT для Visual Studio Code. Дополнительные сведения см. в статье [использование средств Azure IOT для Visual Studio Code для отправки и получения сообщений между устройством и центром Интернета вещей](iot-hub-vscode-iot-toolkit-cloud-device-messaging.md).
 
-Дополнительные способы обработки данных, отправленные устройством перейдите к следующему разделу.
+Чтобы узнать больше о способах обработки данных, отправляемых устройством, перейдите к следующему разделу.
 
 ## <a name="next-steps"></a>Следующие шаги
 
