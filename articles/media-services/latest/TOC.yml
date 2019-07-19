@@ -93,12 +93,13 @@
           href: streaming-policy-concept.md
         - name: Коды ошибок конечной точки потоковой передачи
           href: streaming-endpoint-error-codes.md
-    - name: Динамическое шифрование и доставка ключей
+    - name: Защита содержимого
       items:
-        - name: Протоколы потоковой передачи и типы шифрования
-          displayName: 'dynamic, encryption, content protection, PlayReady, Widevine, FairPlay'
+        - name: Динамическое шифрование и доставка ключей
+          displayName: 'content protection, streaming protocols, encryption types, content protection, PlayReady, Widevine, FairPlay'
           href: content-protection-overview.md
-        - name: Система с несколькими DRM и управлением доступом
+        - name: Разработка системы с несколькими подсистемами DRM
+          displayName: 'drm, access control'
           href: design-multi-drm-system-with-access-control.md
         - name: Лицензии DRM
           items:
