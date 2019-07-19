@@ -1,5 +1,5 @@
 ---
-title: Доменные службы Azure Active Directory. Администрирование групповой политики в управляемых доменах | Документация Майкрософт
+title: Доменные службы Azure Active Directory. Администрирование групповая политика | Документация Майкрософт
 description: Администрирование групповой политики в управляемых доменах доменных служб Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/13/2019
 ms.author: iainfou
-ms.openlocfilehash: 3776ec6fd60ad888102cbc4992572516386fede2
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: c7b32885fdb3cf4f3e584c916d6b234fff54bfc4
+ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67473099"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68234041"
 ---
 # <a name="administer-group-policy-on-an-azure-ad-domain-services-managed-domain"></a>Администрирование групповой политики в управляемом домене доменных служб Azure AD
 Доменные службы Azure Active Directory включают встроенные объекты групповой политики (GPO) для контейнеров "Пользователи AADDC" и "Компьютеры AADDC". Вы можете изменять эти встроенные объекты групповой политики, чтобы настроить групповую политику для управляемого домена. Кроме того, участники группы "Администраторы контроллера домена AAD" могут создавать собственные пользовательские подразделения в управляемом домене. Они также могут создавать пользовательские объекты групповой политики и связывать их с этими пользовательскими подразделениями. Пользователи, принадлежащие к группе "Администраторы контроллера домена AAD", получают права на администрирование групповой политики в управляемом домене.
@@ -128,5 +128,5 @@ ms.locfileid: "67473099"
 ## <a name="related-content"></a>См. также
 * [Приступая к работе с доменными службами Azure AD](create-instance.md)
 * [Присоединение виртуальной машины Windows Server к управляемому домену](active-directory-ds-admin-guide-join-windows-vm.md)
-* [Управление домен доменных служб Azure AD](manage-domain.md)
+* [Управление доменом доменных служб Azure AD](manage-domain.md)
 * [Консоль управления групповой политикой](https://technet.microsoft.com/library/cc753298.aspx)

@@ -12,12 +12,12 @@ ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab
 manager: craigg
 ms.date: 01/15/2019
-ms.openlocfilehash: 5e8b385d018482d281153f1cf80f9953cb8c7f06
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d6e205c23545eb4a01ce58a8bc2b63c58200e32a
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60700502"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68228289"
 ---
 # <a name="create-a-virtual-network-for-azure-sql-database-managed-instance"></a>Создание виртуальной сети для Управляемого экземпляра Базы данных SQL Azure
 
@@ -34,8 +34,11 @@ ms.locfileid: "60700502"
 > Вы должны [определить размер подсети для Управляемого экземпляра](sql-database-managed-instance-determine-size-vnet-subnet.md) перед развертыванием первого экземпляра. Вы не можете изменить размер подсети после того, как поместите в нее ресурсы.
 >
 > Если вы планируете использовать имеющуюся виртуальную сеть, необходимо изменить ее конфигурацию, чтобы она соответствовала управляемому экземпляру. Дополнительные сведения см. в статье [Настройка имеющейся виртуальной сети для Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-configure-vnet-subnet.md).
+>
+> После создания управляемого экземпляра перемещение управляемого экземпляра или виртуальной сети в другую группу ресурсов или подписку не поддерживается.
 
-## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+
+## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 Самый простой способ создания и настройки виртуальной сети — использовать шаблон развертывания Azure Resource Manager.
 
@@ -56,7 +59,7 @@ ms.locfileid: "60700502"
 
    Вы можете изменить имена виртуальной сети и подсетей и настроить диапазоны IP-адресов, связанные с сетевыми ресурсами. После нажатия кнопки **Купить** эта форма создаст и настроит вашу среду. Если вам не нужны две подсети, можно удалить подсеть, заданную по умолчанию.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения см. в статье [Использование Управляемого экземпляра Базы данных SQL с виртуальными сетями и почти полной совместимостью](sql-database-managed-instance.md).
 - [Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md).

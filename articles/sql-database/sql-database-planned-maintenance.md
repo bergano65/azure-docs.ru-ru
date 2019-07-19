@@ -12,12 +12,12 @@ ms.author: aamalvea
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 01/30/2019
-ms.openlocfilehash: 928338a911efae051df7164239dbd19f9317338a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 235d29c876616948516bbe4309ddd630bc3f6dca
+ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60584613"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67852591"
 ---
 # <a name="planning-for-azure-maintenance-events-in-azure-sql-database"></a>Планирование событий обслуживания Azure в Базе данных SQL Azure
 
@@ -41,10 +41,10 @@ ms.locfileid: "60584613"
 
 ## <a name="resource-health"></a>Работоспособность ресурса
 
-Если в базе данных SQL возникли ошибки входа, на [портале Azure](https://portal.azure.com) просмотрите окно [Работоспособность ресурсов](../service-health/resource-health-overview.md#getting-started), чтобы узнать текущее состояние. Раздел "Работоспособность ресурсов" содержит причину простоя для каждого события (если она доступна).
+Если в базе данных SQL возникли ошибки входа, на [портале Azure](https://portal.azure.com) просмотрите окно [Работоспособность ресурсов](../service-health/resource-health-overview.md#get-started), чтобы узнать текущее состояние. Раздел "Работоспособность ресурсов" содержит причину простоя для каждого события (если она доступна).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - См. дополнительные сведения о службе [Работоспособность ресурсов](sql-database-resource-health.md) для Базы данных SQL.
 - Дополнительные сведения о логике повторных попыток см. в разделе [Логика повторных попыток для временных ошибок](sql-database-connectivity-issues.md#retry-logic-for-transient-errors).

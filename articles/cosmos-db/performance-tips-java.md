@@ -7,12 +7,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
-ms.openlocfilehash: 2ce8c0b369cd59ac61279fe3c7acd2cdecfc007c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7d6427db7090b3419fbe67535baeb4a5df6a5d65
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66225604"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68261312"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-java"></a>Советы по повышению производительности для Java и Azure Cosmos DB
 
@@ -138,7 +138,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
     Сложность запроса влияет на количество единиц запроса, потребляемых операцией. Количество предикатов и их характер, количество определяемых пользователем функций и размер набора исходных данных — все это влияет на плату за операции запроса.
 
-    Чтобы оценить расходы на любую операцию (создание, обновление или удаление), проверьте значение заголовка [x-ms-request-charge](https://docs.microsoft.com/rest/api/cosmos-db/common-cosmosdb-rest-response-headers) (или аналогичного свойства RequestCharge на вкладке [ResourceResponse<T>](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.resourceresponse) или [FeedResponse<T>](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.feedresponse)). Это значение содержит число единиц запроса, потребляемых соответствующей операцией.
+    Чтобы измерить издержки любой операции (создания, обновления или удаления), просмотрите заголовок [x-MS-Request-расход](https://docs.microsoft.com/rest/api/cosmos-db/common-cosmosdb-rest-response-headers) (или эквивалентное свойство RequestCharge в [\<ResourceResponse t >](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.resourceresponse) или [FeedResponse\<t > ](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.feedresponse)для измерения количества единиц запросов, потребляемых этими операциями.
 
     ```Java
     ResourceResponse<Document> response = client.createDocument(collectionLink, documentDefinition, null, false);

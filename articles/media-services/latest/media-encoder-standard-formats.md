@@ -1,6 +1,6 @@
 ---
 title: Стандартные форматы и кодеки кодировщика — Azure
-description: В этом разделе представлен стандартный кодировщик форматы и кодеки.
+description: В этом разделе приводятся общие сведения о стандартных форматах кодировщика и кодеках.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -12,13 +12,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/10/2019
-ms.author: juliako;anilmur
-ms.openlocfilehash: 730ff68e70999307417eea276761d56f4a44046a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: juliako
+ms.reviewer: anilmur
+ms.openlocfilehash: d4bbc83a101ba6b110ec97d5107ba3f79dd10843
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65520015"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67870938"
 ---
 # <a name="standard-encoder-formats-and-codecs"></a>Стандартные форматы и кодеки кодировщика
 
@@ -46,11 +47,11 @@ ms.locfileid: "65520015"
 
 ### <a name="audio-formats-in-input-containers"></a>Форматы аудио во входных контейнерах
 
-Стандартный кодировщик поддерживает следующие форматы аудио во входных контейнерах:
+Стандартный кодировщик поддерживает следующие звуковые форматы во входных контейнерах:
 
 * файлы MXF, GXF и QuickTime со звуковыми дорожками с чередованием стерео или форматом 5.1;
 
-или
+или диспетчер конфигурации служб
 
 * файлы MXF, GXF и QuickTime, где звук переносится как отдельные дорожки PCM, но сопоставление каналов (стерео или 5.1) можно определить по метаданным файла.
 
@@ -102,6 +103,6 @@ ms.locfileid: "65520015"
 | MP4 <br/><br/>(включая контейнеры MP4 с несколькими скоростями) |H.264 (профили High, Main и Baselin) |AAC-LC, HE-AAC v1, HE-AAC v2 |
 | MPEG2-TS |H.264 (профили High, Main и Baselin) |AAC-LC, HE-AAC v1, HE-AAC v2 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Создание преобразования с помощью настраиваемой предустановки](customize-encoder-presets-how-to.md)

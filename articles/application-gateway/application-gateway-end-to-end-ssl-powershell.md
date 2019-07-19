@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 4/8/2019
 ms.author: victorh
-ms.openlocfilehash: d9851f6b3e32d0c7ab0d7774458ba5bc4d9ba823
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d7b909bf88fde2277aa2a285bbf36916191db1f3
+ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66729676"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67973389"
 ---
 # <a name="configure-end-to-end-ssl-by-using-application-gateway-with-powershell"></a>Настройка сквозного режима связи SSL для Шлюза приложений с помощью PowerShell
 
@@ -44,7 +44,7 @@ ms.locfileid: "66729676"
 
 Чтобы настроить сквозной режим связи SSL для шлюза приложений, требуются сертификат для шлюза и сертификаты для внутренних серверов. Сертификат шлюза используется для получения симметричного ключа согласно спецификации протокола SSL. Затем используется симметричный ключ шифрования и расшифровки трафика, отправляемого на шлюз. Сертификат шлюза должен быть представлен в формате PFX (файл обмена личной информацией). Этот формат файла позволяет экспортировать закрытый ключ, необходимый шлюзу приложений для шифрования и расшифровки трафика.
 
-End-to-end SSL-шифрование серверной части должен быть явно разрешен с помощью шлюза приложений. Передайте общий сертификат серверных частей в шлюз приложения. Это гарантирует, что шлюз приложений взаимодействует только с известными экземплярами серверной части, тем самым защищая сквозной обмен данными.
+Для сквозного шифрования SSL серверная части должна быть явно разрешена шлюзом приложений. Передайте общий сертификат серверных частей в шлюз приложения. Это гарантирует, что шлюз приложений взаимодействует только с известными экземплярами серверной части, тем самым защищая сквозной обмен данными.
 
 Процесс настройки описан в следующих разделах.
 
@@ -174,7 +174,7 @@ $publicip = New-AzPublicIpAddress -ResourceGroupName appgw-rg -Name 'publicIP01'
    ```
 
    > [!NOTE]
-   > Сертификат, предоставленный на предыдущем шаге должен быть открытый ключ сертификата в формате PFX на серверной части. Экспортируйте сертификат (не корневой) в формате CER, установленный на внутреннем сервере, и используйте его на этом шаге. Это действие добавляет серверную часть в список разрешений шлюза приложений.
+   > Сертификат, указанный на предыдущем шаге, должен быть открытым ключом PFX-сертификата, присутствующего в серверной части. Экспортируйте сертификат (не корневой) в формате CER, установленный на внутреннем сервере, и используйте его на этом шаге. Это действие добавляет серверную часть в список разрешений шлюза приложений.
 
    Если вы используете номер SKU Шлюза приложений версии 2, создайте доверенный корневой сертификат, а не сертификат проверки подлинности. Дополнительные сведения см. в статье [Обзор сквозного режима связи SSL в шлюзе приложений](ssl-overview.md#end-to-end-ssl-with-the-v2-sku):
 
@@ -227,13 +227,19 @@ $publicip = New-AzPublicIpAddress -ResourceGroupName appgw-rg -Name 'publicIP01'
 
 Создайте шлюз приложений в соответствии с действиями, выполненными на предыдущих шагах. Выполнение этого процесса занимает много времени.
 
+Для номера SKU v1 используйте приведенную ниже команду.
 ```powershell
-$appgw = New-AzApplicationGateway -Name appgateway -SSLCertificates $cert -ResourceGroupName "appgw-rg" -Location "West US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku -SSLPolicy $SSLPolicy -AuthenticationCertificates $authcert -Verbose
+$appgw = New-AzApplicationGateway -Name appgateway -SSLCertificates $cert -ResourceGroupName "appgw-rg" -Location "West US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting01 -FrontendIpConfigurations $fipconfig -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku -SSLPolicy $SSLPolicy -AuthenticationCertificates $authcert -Verbose
 ```
 
-## <a name="apply-a-new-certificate-if-the-back-end-certificate-is-expired"></a>Применить новый сертификат, если срок действия сертификата серверной части
+Для SKU v2 используйте приведенную ниже команду.
+```powershell
+$appgw = New-AzApplicationGateway -Name appgateway -SSLCertificates $cert -ResourceGroupName "appgw-rg" -Location "West US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting01 -FrontendIpConfigurations $fipconfig -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku -SSLPolicy $SSLPolicy -TrustedRootCertificate $trustedRootCert01 -Verbose
+```
 
-Эта процедура используется для применения нового сертификата, если срок действия сертификата серверной части.
+## <a name="apply-a-new-certificate-if-the-back-end-certificate-is-expired"></a>Применить новый сертификат, если истек срок действия серверного сертификата
+
+Используйте эту процедуру, чтобы применить новый сертификат, если истек срок действия сертификата внутренней части.
 
 1. Получите шлюз приложений, который требуется обновить.
 
@@ -241,33 +247,33 @@ $appgw = New-AzApplicationGateway -Name appgateway -SSLCertificates $cert -Resou
    $gw = Get-AzApplicationGateway -Name AdatumAppGateway -ResourceGroupName AdatumAppGatewayRG
    ```
    
-2. Добавить новый ресурс сертификата из CER-файл, содержащий открытый ключ сертификата, а также может быть тот же сертификат, добавляемый прослушиватель для завершения запросов SSL на шлюзе приложений.
+2. Добавьте новый ресурс сертификата из CER-файла, который содержит открытый ключ сертификата, и также может быть тем же сертификатом, добавленным в прослушиватель для завершения SSL в шлюзе приложений.
 
    ```powershell
    Add-AzApplicationGatewayAuthenticationCertificate -ApplicationGateway $gw -Name 'NewCert' -CertificateFile "appgw_NewCert.cer" 
    ```
     
-3. Получите новый объект сертификата проверки подлинности в переменную (имя типа: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAuthenticationCertificate).
+3. Получите новый объект сертификата проверки подлинности в переменной (TypeName: Microsoft. Azure. Commands. Network. Models. Псаппликатионгатевайаусентикатионцертификате).
 
    ```powershell
    $AuthCert = Get-AzApplicationGatewayAuthenticationCertificate -ApplicationGateway $gw -Name NewCert
    ```
  
- 4. Назначить новый сертификат в **BackendHttp** параметр и его с переменной $AuthCert. (Укажите имя параметра HTTP, который вы хотите изменить).
+ 4. Назначьте новый сертификат параметру **баккендхттп** и используйте переменную $AuthCert. (Укажите имя параметра HTTP, которое требуется изменить.)
  
    ```powershell
    $out= Set-AzApplicationGatewayBackendHttpSetting -ApplicationGateway $gw -Name "HTTP1" -Port 443 -Protocol "Https" -CookieBasedAffinity Disabled -AuthenticationCertificates $Authcert
    ```
     
- 5. Зафиксируйте изменения в шлюз приложений и передать новую конфигурацию, содержащиеся в переменной $out.
+ 5. Зафиксируйте изменения в шлюзе приложений и передайте новую конфигурацию, содержащуюся в переменной $out.
  
    ```powershell
    Set-AzApplicationGateway -ApplicationGateway $gw  
    ```
 
-## <a name="remove-an-unused-expired-certificate-from-http-settings"></a>Удалить неиспользуемые истекший сертификат из параметров HTTP
+## <a name="remove-an-unused-expired-certificate-from-http-settings"></a>Удаление неиспользуемого сертификата с истекшим сроком действия из параметров HTTP
 
-Эта процедура позволяет удалить неиспользуемые истекший сертификат из параметров HTTP.
+Используйте эту процедуру для удаления неиспользуемого сертификата с истекшим сроком действия из параметров HTTP.
 
 1. Получите шлюз приложений, который требуется обновить.
 
@@ -275,7 +281,7 @@ $appgw = New-AzApplicationGateway -Name appgateway -SSLCertificates $cert -Resou
    $gw = Get-AzApplicationGateway -Name AdatumAppGateway -ResourceGroupName AdatumAppGatewayRG
    ```
    
-2. Выведите список имен сертификат проверки подлинности, который требуется удалить.
+2. Перечислите имя сертификата проверки подлинности, который требуется удалить.
 
    ```powershell
    Get-AzApplicationGatewayAuthenticationCertificate -ApplicationGateway $gw | select name
@@ -349,7 +355,7 @@ DnsSettings              : {
                             }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об усилении безопасности веб-приложений с помощью брандмауэра веб-приложения в шлюзе приложений см. в статье [Брандмауэр веб-приложения (WAF)](application-gateway-webapplicationfirewall-overview.md).
 

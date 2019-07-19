@@ -1,5 +1,5 @@
 ---
-title: Доменные службы Azure Active Directory. Развертывание Azure Active Directory Application Proxy | Документация Майкрософт
+title: Доменные службы Azure Active Directory. Развертывание AD Application Proxy Azure | Документация Майкрософт
 description: Использование прокси приложения Azure AD в управляемых доменах доменных служб Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/14/2019
 ms.author: iainfou
-ms.openlocfilehash: e9ccbd81a8efeb69ea073d89edd6579a6d59699a
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: eca421697081310b1bf245172b3ff125e11c8728
+ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67473608"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68234177"
 ---
 # <a name="deploy-azure-ad-application-proxy-on-an-azure-ad-domain-services-managed-domain"></a>Развертывание прокси приложения Azure AD в управляемых доменах доменных служб Azure AD
 Прокси приложения Azure Active Directory помогает организовать удаленную работу сотрудников, публикуя локальные приложения для доступа через Интернет. С помощью доменных служб Azure AD теперь можно переносить устаревшие локальные приложения в службы инфраструктуры Azure. Затем эти приложения можно опубликовать с помощью прокси приложения Azure AD, чтобы обеспечить безопасный удаленный доступ для пользователей в вашей организации.
@@ -86,7 +86,7 @@ ms.locfileid: "67473608"
     ![Успешное завершение работы средства устранения неполадок](./media/app-proxy/app-proxy-connector-troubleshooter.png)
 5. Вы увидите недавно установленный соединитель, указанный на странице прокси приложения в каталоге Azure AD.
 
-    ![](./media/app-proxy/app-proxy-connector-page.png)
+    ![В портал Azure установленный соединитель отображается как доступный.](./media/app-proxy/app-proxy-connector-page.png)
 
 > [!NOTE]
 > Соединители можно установить на нескольких серверах, чтобы обеспечить высокую доступность для аутентификации приложений, опубликованных с использованием прокси приложения Azure AD. Выполните перечисленные выше шаги, чтобы установить соединитель на других серверах, которые присоединены к управляемому домену.

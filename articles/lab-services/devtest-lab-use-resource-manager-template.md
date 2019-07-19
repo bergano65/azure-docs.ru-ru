@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/18/2019
+ms.date: 07/12/2019
 ms.author: spelluru
-ms.openlocfilehash: 533770d98b146dea01e91e1249115c4b5c074b3c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c14abf3acce0084507a03f3d34fdd59566d88c28
+ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62101577"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67854271"
 ---
 # <a name="create-virtual-machines-using-an-azure-resource-manager-template"></a>Создание виртуальных машин с использованием шаблона Azure Resource Manager 
 
@@ -30,13 +30,13 @@ ms.locfileid: "62101577"
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="multi-vm-vs-single-vm-resource-manager-templates"></a>Шаблоны Resource Manager для нескольких и одной виртуальной машины
-Существует два способа создания виртуальных машин в DevTest Labs с помощью шаблона Resource Manager: подготовить ресурс Microsoft.DevTestLab/labs/virtualmachines или подготовить ресурс Microsoft.Compute/virtualmachines. Каждый из этих ресурсов используется в различных сценариях и требует разных разрешений.
+Существует два способа создания виртуальных машин в DevTest Labs с помощью шаблона диспетчер ресурсов: подготавливает ресурс Microsoft. DevTestLab/Labs/virtualmachines или подготавливайте ресурс Microsoft. COMPUTE/virtualmachines. Каждый из этих ресурсов используется в различных сценариях и требует разных разрешений.
 
 - Шаблоны Resource Manager, использующие тип ресурса Microsoft.DevTestLab/labs/virtualmachines (как объявлено в свойстве resource в шаблоне), могут подготовить отдельные виртуальные машины лаборатории. Каждая виртуальная машина затем отображается в виде отдельного элемента в списке виртуальных машин DevTest Labs:
 
    ![Список виртуальных машин как отдельных элементов в списке виртуальных машин DevTest Labs](./media/devtest-lab-use-arm-template/devtestlab-lab-vm-single-item.png)
 
-   Этот тип шаблона Resource Manager можно подготовить через команду Azure PowerShell **New AzResourceGroupDeployment** или с помощью команды Azure CLI **Создание развертывания группы az**. Для это требуется иметь разрешения администратора, поэтому пользователи, которым назначена роль пользователя DevTest Labs, не могут выполнить развертывание. 
+   Этот тип шаблона диспетчер ресурсов можно подготовить с помощью команды Azure PowerShell **New-азресаурцеграупдеплоймент** или команды Azure CLI **AZ Group Deployment Create**. Для это требуется иметь разрешения администратора, поэтому пользователи, которым назначена роль пользователя DevTest Labs, не могут выполнить развертывание. 
 
 - Шаблоны Resource Manager, использующие тип ресурса Microsoft.Compute/virtualmachines, могут подготовить несколько виртуальных машин, которые отображаются в качестве отдельной среды в списке виртуальных машин DevTest Labs:
 
@@ -51,9 +51,8 @@ ms.locfileid: "62101577"
 ## <a name="view-and-save-a-virtual-machines-resource-manager-template"></a>Просмотр и сохранение шаблона Azure Resource Manager виртуальной машины
 1. Выполните действия, описанные в статье [Создание первой виртуальной машины в лаборатории в Azure DevTest Labs](tutorial-create-custom-lab.md#add-a-vm-to-the-lab), чтобы начать создание виртуальной машины.
 1. Введите необходимые сведения для виртуальной машины и добавьте все необходимые для нее артефакты.
+1. Свтич на вкладку **Дополнительные параметры** . 
 1. В нижней части окна настройки параметров выберите **View ARM template** (Просмотреть шаблон ARM).
-
-   ![Кнопка View ARM template (Просмотреть шаблон ARM)](./media/devtest-lab-use-arm-template/devtestlab-lab-view-rm-template.png)
 1. Скопируйте и сохраните шаблон Resource Manager, чтобы позже использовать его для создания другой виртуальной машины.
 
    ![Сохранение шаблона Resource Manager для последующего использования](./media/devtest-lab-use-arm-template/devtestlab-lab-copy-rm-template.png)
@@ -64,7 +63,12 @@ ms.locfileid: "62101577"
 
 Шаблон Resource Manager готов к использованию для [создания виртуальной машины](devtest-lab-create-environment-from-arm.md).
 
-### <a name="next-steps"></a>Дальнейшие действия
+## <a name="set-expiration-date"></a>Задание срока действия
+В таких сценариях, как обучение, демонстрации и пробные версии, вы можете создавать виртуальные машины и удалять их автоматически после фиксированной длительности, чтобы не тратить излишнее издержки. Вы можете создать виртуальную машину лаборатории с датой окончания срока действия, указав свойство **expirationDate** для виртуальной машины. Ознакомьтесь с тем же шаблоном диспетчер ресурсов в [нашем репозитории GitHub](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates/101-dtl-create-vm-username-pwd-customimage-with-expiration).
+
+
+
+### <a name="next-steps"></a>Следующие шаги
 * Дополнительные сведения см. в статье [Создание сред со множеством виртуальных машин и ресурсов PaaS с помощью шаблонов Azure Resource Manager](devtest-lab-create-environment-from-arm.md).
 * [Deploy a Resource Manager template to create a VM](devtest-lab-create-environment-from-arm.md#automate-deployment-of-environments) (Развертывание шаблона Resource Manager для создания виртуальной машины)
 * Ознакомьтесь с кратким руководством по шаблонам Resource Manager для автоматизации работы в DevTest Labs в [общедоступном репозитории DevTest Labs на сайте GitHub](https://github.com/Azure/azure-quickstart-templates).

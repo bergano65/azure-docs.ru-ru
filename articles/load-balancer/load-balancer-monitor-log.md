@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: Узнайте, как включить ведение журналов событий оповещений и проверки работоспособности для общедоступного Load Balancer ценовой категории "Базовый"
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -12,15 +12,15 @@ ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/10/2018
-ms.author: kumud
-ms.openlocfilehash: 0d7c792c5230a5d82e97f4598a5dcfb864cead74
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: allensu
+ms.openlocfilehash: 1995ad5e8179fdee11e960c2ad0e7c03602ebd31
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60861188"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68274798"
 ---
-# <a name="azure-monitor-logs-for-public-basic-load-balancer"></a>Журналы Azure Monitor для общедоступной основные подсистемы балансировки нагрузки
+# <a name="azure-monitor-logs-for-public-basic-load-balancer"></a>Azure Monitor журналов для общедоступного базового Load Balancer
 
 >[!IMPORTANT] 
 >Azure Load Balancer предлагается в двух ценовых категориях: "Базовый" и "Стандартный". В этой статье рассматривается Azure Load Balancer категории "Базовый". Дополнительные сведения о Load Balancer ценовой категории "Стандартный" см. в разделе [Обзор Azure Load Balancer уровня "Стандартный"](load-balancer-standard-overview.md), в котором предоставлены данные телеметрии с помощью многомерных метрик в Azure Monitor.
@@ -32,7 +32,7 @@ ms.locfileid: "60861188"
 * **Журналы проверки работоспособности**. Эти журналы можно использовать для просмотра проблем, обнаруженных при проверке работоспособности, включая сведения о числе экземпляров во внутреннем пуле, которые не получают запросы от подсистемы балансировки нагрузки из-за ошибок проверки работоспособности. Эти журналы записываются при изменении состояния в ходе проверки работоспособности.
 
 > [!IMPORTANT]
-> Azure Monitor регистрирует в настоящее время работает только для общедоступные основные подсистемы балансировки нагрузки. Журналы доступны только для ресурсов, развернутых в модели развертывания диспетчера ресурсов. Журналы нельзя использовать для ресурсов в классической модели развертывания. Дополнительные сведения о моделях развертывания см. в статье, посвященной [развертыванию с помощью Resource Manager и классическому развертыванию](../azure-resource-manager/resource-manager-deployment-model.md).
+> Журналы Azure Monitor в настоящее время работают только для общедоступных подсистем балансировки нагрузки. Журналы доступны только для ресурсов, развернутых в модели развертывания диспетчера ресурсов. Журналы нельзя использовать для ресурсов в классической модели развертывания. Дополнительные сведения о моделях развертывания см. в статье, посвященной [развертыванию с помощью Resource Manager и классическому развертыванию](../azure-resource-manager/resource-manager-deployment-model.md).
 
 ## <a name="enable-logging"></a>Включение ведения журналов
 
@@ -53,7 +53,7 @@ ms.locfileid: "60861188"
 5. На панели **Диагностика** в разделе **Состояние** щелкните **Вкл**.
 6. Щелкните элемент **Учетная запись хранения**.
 7. В разделе **Журналы** выберите существующую учетную запись хранения или создайте новую. С помощью ползунка определите, сколько дней данные о событиях будут храниться в журналах событий. 
-8. Выберите команду **Сохранить**.
+8. Нажмите кнопку **Сохранить**.
 
 Данные диагностики будут сохраняться в хранилище таблиц в указанной учетной записи хранения. Если журналы не сохраняются, значит соответствующие им записи не создаются.
 
@@ -148,6 +148,6 @@ ms.locfileid: "60861188"
 * [Визуализация журналов аудита Azure с помощью Power BI](https://blogs.msdn.com/b/powerbi/archive/2015/09/30/monitor-azure-audit-logs-with-power-bi.aspx) .
 * [Просмотр и анализ журналов аудита Azure с помощью Power BI и других средств](https://azure.microsoft.com/blog/analyze-azure-audit-logs-in-powerbi-more/) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Проверки балансировщика нагрузки](load-balancer-custom-probe-overview.md)

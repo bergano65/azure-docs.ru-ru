@@ -7,13 +7,13 @@ manager: pabutler
 ms.service: marketplace
 ms.topic: article
 ms.date: 09/22/2018
-ms.author: qianw211
-ms.openlocfilehash: c734461f1a57c100b4a00ab5c309659f8b0e903a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: pabutler
+ms.openlocfilehash: 3010b63c7c4c575d915789c19b60710194c79196
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65964024"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67874675"
 ---
 # <a name="iot-edge-modules"></a>Модули IoT Edge
 
@@ -78,13 +78,13 @@ Marketplace в настоящее время поддерживает **бесп
 
 [Создание предложения модуля IoT Edge](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/iot-edge-module/cpp-create-offer) — шаги для публикации нового модуля IoT Edge с помощью Портала Cloud Partner.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если это еще не сделано:
 
 - Зарегистрируйтесь в партнерской сети [Microsoft Partner Network](https://partner.microsoft.com/membership).
 - Создайте [учетную запись Майкрософт](https://account.microsoft.com/account/) (требуется для предложений типа "Транзакция" Microsoft Azure Marketplace; рекомендуется для других).
-- Подайте [форму регистрации в Marketplace](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv). См. в разделе Практическое [создать учетную запись центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) Дополнительные сведения.
+- Подайте [форму регистрации в Marketplace](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv). Дополнительные сведения см. в статье [Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) .
 
 Если вы зарегистрированы и создаете предложение или работаете над существующим,
 

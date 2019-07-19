@@ -10,18 +10,18 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: e09c4530fc6dce00e6d807908c7de598422a440b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 132dd91ba121fc5939a0f30194fe4abdd3755414
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66511843"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67847051"
 ---
 # <a name="claimsschema"></a>ClaimsSchema
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Элемент **ClaimsSchema** определяет типы утверждений, на которые можно ссылаться в рамках политики. Схема утверждений — это место, где вы объявляете свои утверждения. Утверждением может быть имя, фамилия, отображаемое имя, номер телефона и т. д. Элемент ClaimsSchema содержит список элементов **ClaimType**. Элемент **ClaimType** содержит атрибут **Id**, который является именем утверждения. 
+Элемент **ClaimsSchema** определяет типы утверждений, на которые можно ссылаться в рамках политики. Схема утверждений — это место, где вы объявляете свои утверждения. Утверждением может быть имя, фамилия, отображаемое имя, номер телефона и т. д. Элемент ClaimsSchema содержит список элементов **ClaimType**. Элемент **ClaimType** содержит атрибут **Id**, который является именем утверждения.
 
 ```XML
 <BuildingBlocks>
@@ -44,7 +44,7 @@ ms.locfileid: "66511843"
 
 | Атрибут | Обязательно для заполнения | Описание |
 | --------- | -------- | ----------- |
-| Идентификатор | Да | Идентификатор, который используется для типа утверждения. Другие элементы могут использовать этот идентификатор в политике. |
+| Id | Да | Идентификатор, который используется для типа утверждения. Другие элементы могут использовать этот идентификатор в политике. |
 
 Элемент **ClaimType** содержит следующие элементы.
 
@@ -69,7 +69,7 @@ PredicateValidationReference| 0:1 | Ссылка на элемент **Predicate
 
 Элемент **Protocol** содержит следующие атрибуты.
 
-| Атрибут | Обязательно для заполнения | ОПИСАНИЕ |
+| Атрибут | Обязательно для заполнения | Описание |
 | --------- | -------- | ----------- |
 | Name | Да | Имя действительного протокола, поддерживаемого Azure AD B2C. Возможные значения:  OAuth1, OAuth2, SAML2, OpenIdConnect, WsFed или WsTrust. |
 | PartnerClaimType | Да | Имя типа утверждения, которое будет использоваться. |
@@ -89,7 +89,7 @@ PredicateValidationReference| 0:1 | Ссылка на элемент **Predicate
 ```
 
 В результате токен JWT, выданный службой Azure AD B2C, вместо имени ClaimType **surname** порождает `family_name`.
- 
+
 ```JSON
 {
   "sub": "6fbbd70d-262b-4b50-804c-257ae1706ef2",
@@ -107,7 +107,7 @@ PredicateValidationReference| 0:1 | Ссылка на элемент **Predicate
 | Атрибут | Обязательно для заполнения | Описание |
 | --------- | -------- | ----------- |
 | `Type` | Да | Тип маски утверждения. Возможные значения: `Simple` или `Regex`. Значение `Simple` указывает, что простая текстовая маска применяется к начальной части строкового утверждения. Значение `Regex` указывает, что регулярное выражение применяется к строковому утверждению целиком.  Если указано значение `Regex`, необязательный атрибут также должен быть определен с используемым регулярным выражением. |
-| `Regex` | Нет | Если **`Type`** присваивается `Regex`, укажите регулярное выражение для использования.
+| `Regex` | Нет | Если **`Type`** параметр имеет `Regex`значение, укажите регулярное выражение для использования.
 
 В следующем примере настраивается утверждение **PhoneNumber** с маской `Simple`:
 
@@ -115,14 +115,14 @@ PredicateValidationReference| 0:1 | Ссылка на элемент **Predicate
 <ClaimType Id="PhoneNumber">
   <DisplayName>Phone Number</DisplayName>
   <DataType>string</DataType>
-  <Mask Type="Simple">XXX-XXX-</Mask>  
+  <Mask Type="Simple">XXX-XXX-</Mask>
   <UserHelpText>Your telephone number.</UserHelpText>
 </ClaimType>
 ```
 
 Инфраструктура процедур идентификации отображает номер телефона, скрывая первые шесть цифр:
 
-![Использование типа утверждения с маской](./media/claimsschema/mask.png)
+![Утверждение номера телефона отображается в браузере с первыми шестью цифрами, маскированными по XS](./media/claimsschema/mask.png)
 
 В следующем примере настраивается утверждение **AlternateEmail** с маской `Regex`:
 
@@ -137,7 +137,7 @@ PredicateValidationReference| 0:1 | Ссылка на элемент **Predicate
 
 Инфраструктура процедур идентификации отображает только первую букву адреса и имя домена электронной почты:
 
-![Использование типа утверждения с маской](./media/claimsschema/mask-regex.png)
+![Утверждение сообщения электронной почты отображается в браузере с символами, маскированными звездочками](./media/claimsschema/mask-regex.png)
 
 
 ### <a name="restriction"></a>Ограничение
@@ -161,7 +161,7 @@ PredicateValidationReference| 0:1 | Ссылка на элемент **Predicate
 
 | Атрибут | Обязательно для заполнения | Описание |
 | --------- | -------- | ----------- |
-| Text | Да | Отображаемая строка, показываемая в пользовательском интерфейсе для этого параметра. |
+| Текст | Да | Отображаемая строка, показываемая в пользовательском интерфейсе для этого параметра. |
 |Значение | Да | Значение утверждения, связанное с этим вариантом. |
 | SelectByDefault | Нет | Указывает, следует ли по умолчанию выбирать этот параметр в пользовательском интерфейсе. Возможные значения: Значение True или False. |
 
@@ -179,10 +179,10 @@ PredicateValidationReference| 0:1 | Ссылка на элемент **Predicate
   </Restriction>
 </ClaimType>
 ```
+
 Раскрывающийся список городов со значением по умолчанию — New York:
 
-![Раскрывающийся список городов](./media/claimsschema/dropdownsingleselect.png)
-
+![Элемент управления dropdown, отображаемый в браузере и отображающий значение по умолчанию](./media/claimsschema/dropdownsingleselect.png)
 
 ### <a name="pattern"></a>Модель
 
@@ -212,7 +212,7 @@ PredicateValidationReference| 0:1 | Ссылка на элемент **Predicate
 
 Инфраструктура процедур идентификации визуализирует утверждение адреса электронной почты с помощью проверки входных данных формата электронной почты:
 
-![Использование типа утверждения с шаблоном](./media/claimsschema/pattern.png)
+![Текстовое поле, отображающее сообщение об ошибке, активируемое ограничением Regex](./media/claimsschema/pattern.png)
 
 ## <a name="userinputtype"></a>UserInputType
 
@@ -222,7 +222,7 @@ Azure AD B2C поддерживает различные типы элемент
 
 Тип элемента для ввода данных пользователем **TextBox** используется для предоставления однострочного текстового поля.
 
-![Использование типа утверждения с элементом TextBox](./media/claimsschema/textbox.png)
+![Текстовое поле, отображающее свойства, указанные в типе утверждения](./media/claimsschema/textbox.png)
 
 ```XML
 <ClaimType Id="displayName">
@@ -237,7 +237,7 @@ Azure AD B2C поддерживает различные типы элемент
 
 Тип элемента для ввода данных пользователем **EmailBox** используется для предоставления базового поля для ввода электронного адреса.
 
-![Использование типа утверждения с элементом EmailBox](./media/claimsschema/emailbox.png)
+![Емаилбокс, отображающий свойства, указанные в типе утверждения](./media/claimsschema/emailbox.png)
 
 ```XML
 <ClaimType Id="email">
@@ -297,7 +297,7 @@ Azure AD B2C поддерживает различные типы элемент
     <Enumeration Text="Green " Value="Green" SelectByDefault="false" />
     <Enumeration Text="Orange" Value="Orange" SelectByDefault="true" />
   </Restriction>
-</ClaimType>    
+</ClaimType>
 ```
 
 ### <a name="dropdownsingleselect"></a>DropdownSingleSelect
@@ -375,4 +375,4 @@ Azure AD B2C поддерживает различные типы элемент
 </ClaimType>
 ```
 
-Чтобы отобразить одно из значений элемента **Enumeration** в утверждении **responseMsg**, используйте преобразование утверждений `GetMappedValueFromLocalizedCollection` или `CreateStringClaim`. Дополнительные сведения см. в разделе о [преобразовании строковых утверждений](string-transformations.md). 
+Чтобы отобразить одно из значений элемента **Enumeration** в утверждении **responseMsg**, используйте преобразование утверждений `GetMappedValueFromLocalizedCollection` или `CreateStringClaim`. Дополнительные сведения см. в разделе о [преобразовании строковых утверждений](string-transformations.md).

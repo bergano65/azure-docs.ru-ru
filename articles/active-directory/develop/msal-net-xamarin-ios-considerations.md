@@ -1,6 +1,6 @@
 ---
-title: Рекомендации по iOS Xamarin (библиотека проверки подлинности Майкрософт для .NET) | Azure
-description: Дополнительные сведения о специальные рекомендации при использовании Xamarin iOS с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).
+title: Замечания по Xamarin iOS (Библиотека проверки подлинности Microsoft для .NET) | Службы
+description: Ознакомьтесь с конкретными соображениями при использовании Xamarin iOS с библиотекой проверки подлинности Майкрософт для .NET (MSAL.NET).
 services: active-directory
 documentationcenter: dev-center-name
 author: rwike77
@@ -12,39 +12,39 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/24/2019
+ms.date: 07/16/2019
 ms.author: ryanwi
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf236bff2300129ec97d3b8946c4c2a2748bca77
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b7bb4aab4c217e20245a1f6ee9b2910a4558acad
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65602131"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68278216"
 ---
-# <a name="xamarin-ios-specific-considerations-with-msalnet"></a>Рекомендации по конкретной iOS Xamarin с помощью MSAL.NET
-В Xamarin iOS учитывать несколько моментов, которые следует принять во внимание при использовании MSAL.NET
+# <a name="xamarin-ios-specific-considerations-with-msalnet"></a>Вопросы, связанные с Xamarin iOS, с MSAL.NET
+В Xamarin iOS существует несколько аспектов, которые необходимо учитывать при использовании MSAL.NET.
 
-- [Известные проблемы с iOS 12 и проверки подлинности](#known-issues-with-ios-12-and-authentication)
-- [Переопределите и реализуйте `OpenUrl` работать в `AppDelegate`](#implement-openurl)
-- [Включение групп цепочки ключей](#enable-keychain-groups)
-- [Включить общий доступ к кэш маркеров](#enable-token-cache-sharing-across-ios-applications)
-- [Включить доступ к цепочке ключей](#enable-keychain-access)
+- [Известные проблемы с iOS 12 и аутентификацией](#known-issues-with-ios-12-and-authentication)
+- [Переопределите и реализуйте `OpenUrl` функцию в`AppDelegate`](#implement-openurl)
+- [Включение групп ключей цепочки](#enable-keychain-access)
+- [Включить общий доступ к кэшу маркеров](#enable-token-cache-sharing-across-ios-applications)
+- [Включение доступа к цепочке ключей](#enable-keychain-access)
 
-## <a name="known-issues-with-ios-12-and-authentication"></a>Известные проблемы с iOS 12 и проверки подлинности
-Корпорация Майкрософт выпустила [совет по безопасности](https://github.com/aspnet/AspNetCore/issues/4647) для предоставления сведений о несовместимости iOS12 и некоторые виды проверки подлинности. Несовместимость социального разрывы, WSFed и OIDC учетных записей. Рекомендации также предоставляет инструкции по разработчики могут использовать для удаления текущими ограничениями безопасности, добавленные ASP.NET к приложениям для обеспечения совместимости с iOS12.  
+## <a name="known-issues-with-ios-12-and-authentication"></a>Известные проблемы с iOS 12 и аутентификацией
+Корпорация Майкрософт выпустила [Советы по безопасности](https://github.com/aspnet/AspNetCore/issues/4647) , чтобы предоставить сведения о несовместимости между iOS12 и некоторыми типами проверки подлинности. Несовместимость нарушает имена входа в социальных сетях, WSFed и OIDC. В этой статье также приводятся рекомендации по удалению текущих ограничений безопасности, добавленных ASP.NET к приложениям для обеспечения совместимости с iOS12.  
 
-При разработке приложений MSAL.NET на Xamarin iOS, может появиться бесконечный цикл при попытке войти в веб-сайтов из iOS 12 (примерно [ADAL проблема](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/issues/1329). 
+При разработке MSAL.NET приложений в Xamarin iOS вы можете столкнуться с бесконечным циклом при попытке войти на веб-сайты из iOS 12 (подобно этой [ошибке ADAL](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/issues/1329). 
 
-Также возможны прерывания в работе проверки подлинности ASP.NET Core OIDC с iOS 12 Safari, как описано в этой [WebKit проблема](https://bugs.webkit.org/show_bug.cgi?id=188165).
+Вы также можете увидеть перерыв в ASP.NET Core проверки подлинности OIDC в iOS 12 Safari, как описано в этой [статье WebKit](https://bugs.webkit.org/show_bug.cgi?id=188165).
 
-## <a name="implement-openurl"></a>Реализуйте OpenUrl
+## <a name="implement-openurl"></a>Реализация OpenUrl
 
-Сначала необходимо переопределить `OpenUrl` метод `FormsApplicationDelegate` производного класса, а также вызов `AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs`.
+Сначала необходимо переопределить `OpenUrl` метод `FormsApplicationDelegate` производного класса и вызвать `AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs`метод.
 
-```csharp
+```CSharp
 public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
 {
     AuthenticationContinuationHelper.SetAuthenticationContinuationEventArgs(url);
@@ -52,24 +52,16 @@ public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
 }
 ```
 
-Необходимо также определить схему URL-адресов, требуются разрешения для вызова другого приложения, имеют определенные формы для URL-адрес перенаправления и зарегистрировать этот URL-адрес перенаправления в приложении [портала Azure](https://portal.azure.com).
+Кроме того, необходимо определить схему URL-адресов, запросить у приложения разрешения на вызов другого приложения, указать определенную форму для URL-адреса перенаправления и зарегистрировать этот URL-адрес перенаправления в [портал Azure](https://portal.azure.com)
 
-## <a name="enable-keychain-groups"></a>Включение групп цепочки ключей
+### <a name="enable-keychain-access"></a>Включение доступа к цепочке ключей
 
-Чтобы сделать маркер кэшировать рабочие и иметь `AcquireTokenSilentAsync` метод работы, необходимо выполнить несколько шагов:
-1. Включить доступ к цепочке ключей в вашей *`* Entitlements.plist* файла и укажите **групп цепочек ключей** в идентификатор пакета.
-2. Выберите *`*Entitlements.plist*`* файл **настраиваемые назначения** поле в окне параметров iOS проекта **представление подписи пакета**.
-3. При подписи сертификата, убедитесь, что XCode использует тот же идентификатор Apple.
+Чтобы включить доступ к цепочке ключей, приложение должно иметь группу доступа к цепочке ключей.
+Вы можете задать группу доступа к цепочке ключей с `WithIosKeychainSecurityGroup()` помощью API при создании приложения, как показано ниже:
 
-## <a name="enable-token-cache-sharing-across-ios-applications"></a>Включить кэш маркеров, совместное использование приложений iOS
+Чтобы включить единый вход, необходимо присвоить `PublicClientApplication.iOSKeychainSecurityGroup` свойству одно и то же значение во всех приложениях.
 
-Начиная с версии MSAL 2.x, можно указать группу безопасности цепочки ключей для сохранения кэша маркера в нескольких приложениях. Это дает возможность совместного использования кэша маркера между несколькими приложениями, иметь ту же группу безопасности цепочки ключей, в том числе разработанных с помощью [ADAL.NET](https://aka.ms/adal-net), MSAL.NET Xamarin.iOS приложений и приложений на машинном коде iOS, разработанных с помощью [ADAL.objc](https://github.com/AzureAD/azure-activedirectory-library-for-objc) или [MSAL.objc](https://github.com/AzureAD/microsoft-authentication-library-for-objc)).
-
-Совместное использование кэш маркеров, позволяет единого входа (SSO), между всеми приложениями, использующими ту же группу безопасности в цепочке ключей.
-
-Чтобы включить единый вход, необходимо задать `PublicClientApplication.iOSKeychainSecurityGroup` в соответствии с тем же значением во всех приложений.
-
-Примером этого с помощью MSAL v3.x бы:
+Примером этого является использование MSAL v3. x:
 ```csharp
 var builder = PublicClientApplicationBuilder
      .Create(ClientId)
@@ -77,34 +69,9 @@ var builder = PublicClientApplicationBuilder
      .Build();
 ```
 
-Примером этого с помощью MSAL v2.7.x бы:
+Права. plist должны быть обновлены, чтобы выглядеть так, как в следующем фрагменте XML:
 
-```csharp
-PublicClientApplication.iOSKeychainSecurityGroup = "com.microsoft.msalrocks";
-```
-
-> [!NOTE]
-> `KeychainSecurityGroup` Оно устарело. Ранее, в MSAL 2.x, разработчикам приходилось включать префикс TeamId, при использовании `KeychainSecurityGroup` свойство. 
-> 
-> Теперь, начиная с версии MSAL 2.7.x, MSAL разрешит префикс TeamId во время выполнения при использовании `iOSKeychainSecurityGroup` свойство. При использовании этого свойства, значение не должно содержать префикс TeamId. 
-> 
-> Используйте новый `iOSKeychainSecurityGroup` свойство, которое не требует от разработчиков для обеспечения TeamId. `KeychainSecurityGroup` Свойство устарело. 
-
-## <a name="enable-keychain-access"></a>Включить доступ к цепочке ключей
-
-В MSAL 2.x и ADAL 4.x TeamId используется для доступа к цепочке ключей, позволяющий библиотеки проверки подлинности для предоставления единого входа (SSO) между приложений одного издателя. 
-
-Что такое [TeamIdentifierPrefix](/xamarin/ios/deploy-test/provisioning/entitlements?tabs=vsmac) (TeamId)? Это уникальный идентификатор (компания или личное) в App Store. Идентификатор приложения является уникальным для приложения. Если у вас есть несколько приложений, TeamId для всех приложений будет таким же, но AppId будет отличаться. Группы доступа к цепочке ключей предшествует TeamId автоматически для каждой группы в системе. Это, как операционная система обеспечивает, что приложений одного издателя, можно получить доступ к общей цепочке ключей. 
-
-При инициализации `PublicClientApplication`, получив `MsalClientException` с сообщением: `TeamId returned null from the iOS keychain...`, необходимо выполните следующие действия в приложение Xamarin iOS:
-
-1. В Visual STUDIO на вкладке отладки перейти к nameOfMyApp.iOS свойства...
-2. Перейдите к подписывание пакета iOS 
-3. В разделе настраиваемые назначения, нажмите кнопку... и выберите файл Entitlements.plist из приложения
-4. В CSPROJ-файла приложения iOS вам необходимо иметь этой строки теперь включены: `<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>`
-5. **Перестроить** проекта.
-
-Это *кроме* предоставить доступ к цепочке ключей в `Entitlements.plist` файле, с использованием либо ниже группы доступа или собственные:
+Это изменение является *дополнением* к включению доступа к цепочке ключей в `Entitlements.plist` файле с помощью любой из следующих групп доступа:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -113,16 +80,44 @@ PublicClientApplication.iOSKeychainSecurityGroup = "com.microsoft.msalrocks";
 <dict>
   <key>keychain-access-groups</key>
   <array>
-    <string>$(AppIdentifierPrefix)com.microsoft.adalcache</string>
+    <string>$(AppIdentifierPrefix)com.microsoft.msalrocks</string>
   </array>
 </dict>
 </plist>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+Пример использования MSAL v4. x:
 
-Дополнительные сведения приведены в [iOS специальные рекомендации](https://github.com/azure-samples/active-directory-xamarin-native-v2#ios-specific-considerations) абзац файл readme.md в следующем примере:
+```csharp
+PublicClientApplication.iOSKeychainSecurityGroup = "com.microsoft.msalrocks";
+```
 
-Образец | платформа | Описание 
+При использовании `WithIosKeychainSecurityGroup()` API MSAL автоматически добавит группу безопасности в конец "идентификатора группы" (AppIdentifierPrefix) приложения, так как при создании приложения с помощью Xcode он сделает то же самое. [Дополнительные сведения см. в документации по](https://developer.apple.com/documentation/security/keychain_services/keychain_items/sharing_access_to_keychain_items_among_a_collection_of_apps)назначениям iOS. Поэтому необходимо обновить права для включения $ (AppIdentifierPrefix) перед группой доступа к цепочке ключей в списке прав. plist.
+
+### <a name="enable-token-cache-sharing-across-ios-applications"></a>Включение общего доступа к кэшу маркеров в приложениях iOS
+
+Из MSAL 2. x можно указать группу доступа к цепочке ключей, которая будет использоваться для сохранения кэша маркеров в нескольких приложениях. Этот параметр позволяет использовать кэш маркеров между несколькими приложениями, имеющими одну группу доступа к цепочке ключей, включая те, которые разработаны с помощью [ADAL.NET](https://aka.ms/adal-net), MSAL.NET приложения Xamarin. iOS и собственные приложения iOS, разработанные с помощью [ ADAL. ObjC](https://github.com/AzureAD/azure-activedirectory-library-for-objc) или [MSAL. ObjC](https://github.com/AzureAD/microsoft-authentication-library-for-objc)).
+
+Совместное использование кэша маркеров обеспечивает единый вход для всех приложений, использующих одну группу доступа к цепочке ключей.
+
+Чтобы включить этот общий доступ к кэшу, необходимо установить параметр с помощью метода "Висиоскэйчаинсекуритиграуп ()", чтобы задать для группы доступа к цепочке ключей одинаковое значение во всех приложениях, совместно использующих тот же кэш, как показано в примере выше.
+
+Ранее было сказано, что MSAL добавила $ (AppIdentifierPrefix) при каждом использовании `WithIosKeychainSecurityGroup()` API. Это связано с тем, что AppIdentifierPrefix или «идентификатор команды» используются, чтобы обеспечить совместное использование доступа к цепочке ключей только для приложений, созданных одним издателем.
+
+#### <a name="note-keychainsecuritygroup-property-deprecated"></a>Примечание. Нерекомендуемое свойство Кэйчаинсекуритиграуп
+
+Ранее в MSAL 2. x разработчики вынуждены включать префикс теамид при использовании `KeychainSecurityGroup` свойства.
+
+В MSAL 2.7. x при использовании нового `iOSKeychainSecurityGroup` свойства MSAL будет разрешать префикс теамид во время выполнения. При использовании этого свойства значение не должно содержать префикс Теамид.
+
+Используйте новое `iOSKeychainSecurityGroup` свойство, которое не требует от разработчиков предоставления теамид, так как предыдущее `KeychainSecurityGroup` свойство устарело.
+
+### <a name="sample-illustrating-xamarin-ios-specific-properties"></a>Пример, иллюстрирующий конкретные свойства Xamarin iOS
+
+Дополнительные сведения см. в абзаце с описанием особенностей [iOS](https://github.com/azure-samples/active-directory-xamarin-native-v2#ios-specific-considerations) в следующем примере файла readme.md:
+
+Образец | Платформа | Описание
 ------ | -------- | -----------
-[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP; | Простое приложение Xamarin Forms, с отображением использование MSAL для проверки подлинности MSA и Azure AD через конечную точку версии 2.0 AAD и получить доступ к Microsoft Graph с помощью полученного маркера. <br>![Топология](media/msal-net-xamarin-ios-considerations/topology.png)
+[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP; | Простое приложение Xamarin Forms, демонстрирующие использование MSAL для проверки подлинности MSA и Azure AD через конечную точку Azure AD версии 2.0, а также доступа к Microsoft Graph с полученным маркером.
+
+<!--- https://github.com/Azure-Samples/active-directory-xamarin-native-v2/blob/master/ReadmeFiles/Topology.png -->

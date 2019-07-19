@@ -9,13 +9,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.reviewer: trbye
-ms.date: 02/20/2019
-ms.openlocfilehash: 0d75b983ad6d3b6256852335dc523b481bbe046f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 07/12/2019
+ms.openlocfilehash: f93fdcbea103259e493399ae479cf001c1ff68db
+ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60819270"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67868808"
 ---
 # <a name="enable-logging-in-azure-machine-learning-service"></a>Настройка функции ведения журналов для Службы машинного обучения
 
@@ -27,7 +27,7 @@ ms.locfileid: "60819270"
 > * как включить ведение журнала для развернутых моделей:
 > * как задать параметры `logging` в Python.
 
-[Создайте рабочую область Службы машинного обучения Azure](setup-create-workspace.md). Используйте [руководство](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) подробнее пакета SDK.
+[Создайте рабочую область Службы машинного обучения Azure](setup-create-workspace.md). Для получения дополнительных сведений о пакете SDK воспользуйтесь [руководством](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) .
 
 ## <a name="training-models-and-compute-target-logging"></a>Ведение журнала для обучаемых моделей и целевых объектов вычислений
 
@@ -41,7 +41,7 @@ run = exp.start_logging()
 run.log("test-val", 10)
 ```
 
-См. в справочной документации по [запуска](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py) класса для функций дополнительное ведение журнала.
+Дополнительные функции ведения журнала см. в справочной документации по классу [Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py) .
 
 Чтобы сохранять сведения о состоянии приложения в ходе обучения в локальный журнал, используйте параметр `show_output`. Подробное ведение журналов позволяет получить сведения об обучении, а также об удаленных ресурсах и целевых объектах вычислений. С помощью приведенного ниже кода можно настроить сохранение данных в журнал при отправке эксперимента.
 
@@ -90,9 +90,10 @@ compute.wait_for_completion(show_output=True)
 from azureml.core.webservice import Webservice
 
 service = Webservice.deploy_from_image(deployment_config=your_config,
-                                            image=image,
-                                            name="example-image",
-                                            workspace=ws)
+                                       image=image,
+                                       name="example-image",
+                                       workspace=ws
+                                       )
 
 service.wait_for_deployment(show_output=True)
 ```

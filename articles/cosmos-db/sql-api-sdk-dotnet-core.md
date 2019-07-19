@@ -8,18 +8,19 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/22/2018
 ms.author: sngun
-ms.openlocfilehash: 14350125f88c315a813eb64e3ce2b88dbec2aa24
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: de712d63fa2315a85c6c0eaf392d9c17758e4999
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67340201"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68226180"
 ---
-# <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для .NET Core для API-интерфейса SQL
+# <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: Заметки о выпуске и материалы
 > [!div class="op_single_selector"]
+> * [.NET Core](sql-api-sdk-dotnet-core.md)
+> * [.NET Standard](sql-api-sdk-dotnet-standard.md)
 > * [.NET](sql-api-sdk-dotnet.md)
 > * [Веб-канал изменений в .NET](sql-api-sdk-dotnet-changefeed.md)
-> * [.NET Core](sql-api-sdk-dotnet-core.md)
 > * [Node.js](sql-api-sdk-node.md)
 > * [Async Java](sql-api-sdk-async-java.md)
 > * [Java](sql-api-sdk-java.md)
@@ -35,42 +36,36 @@ ms.locfileid: "67340201"
 |**Скачивание пакета SDK**| [NuGet](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/)|
 |**Документация по API**|[Справочная документация по API .NET](/dotnet/api/overview/azure/cosmosdb?view=azure-dotnet)|
 |**Примеры**|[Примеры кода для .NET](sql-api-dotnet-samples.md)|
-|**Начало работы**|[Azure Cosmos DB. Приступая к работе с API DocumentDB и .NET Core](sql-api-dotnet-core-get-started-preview.md)|
+|**Начало работы**|[Приступая к работе с Azure Cosmos DB .NET](sql-api-sdk-dotnet.md)|
 |**Учебник по веб-приложениям**|[Руководство по ASP.NET MVC. Разработка веб-приложений в Azure Cosmos DB](sql-api-dotnet-application.md)|
 |**Текущая поддерживаемая платформа**|[.NET Standard 1.6 и .NET Standard 1.5](https://www.nuget.org/packages/NETStandard.Library)|
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
-Пакет SDK .NET Core для Azure Cosmos DB функционально полностью эквивалентен последней версии [пакета SDK .NET для Azure Cosmos DB](sql-api-sdk-dotnet.md).
-
-### <a name="a-name3001-preview3001-preview"></a><a name="3.0.0.1-preview"/>3.0.0.1-preview
-* Общедоступная предварительная версия 1 пакета SDK для .NET [версии 3.0.0](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/).
-* Целевая спецификация .NET Standard, который поддерживает .NET Framework 4.6.1+ и .NET Core 2.0+.
-* Новая объектная модель и класс верхнего уровня CosmosClient с методами, разделенными между соответствующими классами (CosmosDatabases, CosmosContainers и CosmosItems).
-* Поддержка потоков.
-* Обновлен класс сервера CosmosResponseMessage. Теперь он возвращает код состояния и выдает исключение только в случае отсутствия ответа.
+> [!NOTE]
+> Если вы используете .NET Core, ознакомьтесь с последней версией [пакета SDK для .NET](sql-api-sdk-dotnet-standard.md)версии 3. x, которая предназначена для .NET Standard. 
 
 ### <a name="a-name241241"></a><a name="2.4.1"/>2.4.1
 
-* Исправления, трассировка гонки для запросов, которые вызывали пустые страницы
+* Исправляет состояние отслеживания состояния гонки для запросов, вызвавших пустые страницы
 
 ### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
 
-* Версия пакета SDK для System.Net.Http соответствует их количеству в пакете NuGet
-* Увеличен размер знаков после запятой для запросов LINQ.
-* Добавлены новые классы CompositePath, CompositePathSortOrder, SpatialSpec, SpatialType и PartitionKeyDefinitionVersion
-* Добавлена TimeToLivePropertyPath к коллекции DocumentCollection
-* Добавлена CompositeIndexes и SpatialIndexes для IndexPolicy
-* Добавлены версии для PartitionKeyDefinition
-* Добавлены None для PartitionKey
+* Версия System .NET. HTTP пакета SDK соответствует тому, что определено в пакете NuGet.
+* Увеличенный размер десятичной точности для запросов LINQ.
+* Добавлены новые классы Компоситепас, Компоситепассортордер, Спатиалспек, Спатиалтипе и Партитионкэйдефинитионверсион
+* Добавлен Тиметоливепропертипас в коллекции documentcollection
+* Добавлены Компоситеиндексес и Спатиалиндексес в Индексполици
+* Добавлена версия в Партитионкэйдефинитион
+* В PartitionKey добавлено значение None
 
 ### <a name="a-name230230"></a><a name="2.3.0"/>2.3.0
 
- * Добавлена IdleTcpConnectionTimeout, OpenTcpConnectionTimeout, MaxRequestsPerTcpConnection и MaxTcpConnectionsPerEndpoint для ConnectionPolicy.
+ * Добавлены Идлеткпконнектионтимеаут, Опенткпконнектионтимеаут, Максрекуестсперткпконнектион и MaxTcpConnectionsPerEndpoint в ConnectionPolicy.
  
 ### <a name="a-name223223"></a><a name="2.2.3"/>2.2.3
 
-* Усовершенствования диагностики
+* Улучшения диагностики
 
 ### <a name="a-name222222"></a><a name="2.2.2"/>2.2.2
 
@@ -256,10 +251,10 @@ ms.locfileid: "67340201"
 | Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
 | [2.4.1](#2.4.1) |20 июня 2019 г. |--- |
-| [2.4.0](#2.4.0) |05-мая 2019 г. |--- |
-| [2.3.0](#2.3.0) |04 апреля 2019 г. |--- |
+| [2.4.0](#2.4.0) |05 мая 2005 г., 2019 |--- |
+| [2.3.0](#2.3.0) |04, 2019 |--- |
 | [2.2.3](#2.2.3) |11 марта 2019 г. |--- |
-| [2.2.2](#2.2.2) |06 февраля 2019 г. |--- |
+| [2.2.2](#2.2.2) |06 февраля, 2019 |--- |
 | [2.2.1](#2.2.1) |24 декабря 2018 г. |--- |
 | [2.2.0](#2.2.0) |7 декабря 2018 г. |--- |
 | [2.1.3](#2.1.3) |15 октября 2018 г. |--- |

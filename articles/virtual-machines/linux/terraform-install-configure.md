@@ -14,13 +14,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/19/2018
-ms.author: echuvyrov
-ms.openlocfilehash: 30593bc874e2cd666c0af89336b26a15c944a424
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.author: gwallace
+ms.openlocfilehash: 14bbbb6581d3e6d00db532e343f8362fc44d0044
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67708659"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67876340"
 ---
 # <a name="install-and-configure-terraform-to-provision-vms-and-other-infrastructure-into-azure"></a>Установка и настройка Terraform для подготовки виртуальных машин и другой инфраструктуры в Azure
  

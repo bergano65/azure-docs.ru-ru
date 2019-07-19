@@ -10,12 +10,12 @@ ms.date: 11/20/2018
 ms.author: mhopkins
 ms.reviewer: seguler
 ms.subservice: blobs
-ms.openlocfilehash: 87651aa1fd44a831e94a00b5871faaae51f2f6a7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2d44dabe68900aa45b076f44cc38ed85d6938afa
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65148296"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68249954"
 ---
 # <a name="how-to-use-blob-storage-from-ios"></a>Использование хранилища BLOB-объектов из iOS
 
@@ -80,7 +80,7 @@ ms.locfileid: "65148296"
 #import <AZSClient/AZSClient.h>
 ```
 
-Если вы используете Swift, потребуется создать промежуточный заголовок и импортировать <AZSClient/AZSClient.h>:
+Если вы используете SWIFT, необходимо создать заголовок моста и импортировать \<AZSClient/AZSClient. h > там:
 
 1. Создайте файл заголовка `Bridging-Header.h` и добавьте приведенный выше оператор импорта.
 2. Откройте вкладку *Параметры сборки* и найдите *Заголовок Objective-C*.
@@ -375,7 +375,7 @@ ms.locfileid: "65148296"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда вы узнали, как использовать хранилище BLOB-объектов из iOS, используйте следующие ссылки, чтобы узнать больше о библиотеке iOS и службе хранилища.
 
 * [Клиентская библиотека хранилища Azure для iOS](https://github.com/azure/azure-storage-ios)

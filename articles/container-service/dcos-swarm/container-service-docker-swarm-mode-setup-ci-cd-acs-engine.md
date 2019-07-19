@@ -7,14 +7,14 @@ manager: jeconnoc
 ms.service: container-service
 ms.topic: article
 ms.date: 05/27/2017
-ms.author: diegomrtnzg
+ms.author: dimart
 ms.custom: mvc
-ms.openlocfilehash: 8aa62e4ed65f8223071786ac165f8343cb6901d5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: fd502a308d6298dc2941461632a2832ac336c45c
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60430671"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67849867"
 ---
 # <a name="deprecated-full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-acs-engine-and-docker-swarm-mode-using-azure-devops"></a>(УСТАРЕЛО) Реализация полного конвейера CI/CD для многоконтейнерного приложения в Службе контейнеров Azure с обработчиком ACS и Docker Swarm Mode при помощи Azure DevOps
 
@@ -46,7 +46,7 @@ ms.locfileid: "60430671"
 7. Docker Swarm Mode в кластере запрашивает последнюю версию образов. 
 8. Новая версия приложения развертывается с помощью Docker Stack. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством вам потребуется выполнить следующие задачи:
 
@@ -249,7 +249,7 @@ Azure DevOps позволяет [управлять выпусками в раз
 
 Теперь после выполнения настройки пришло время протестировать этот новый конвейер CI/CD. Самый простой способ сделать это — обновить исходный код и сохранить изменения в репозитории GitHub. Через несколько секунд после отправки кода в Azure DevOps появится новая сборка. После успешного выполнения новый выпуск активируется и разворачивает новую версию приложения в кластере Службы контейнеров Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о CI/CD в Azure DevOps см. на странице об [Azure Pipelines](https://www.visualstudio.com/docs/build/overview).
 * Дополнительные сведения об обработчике ACS см. в [репозитории GitHub для обработчика ACS](https://github.com/Azure/acs-engine).

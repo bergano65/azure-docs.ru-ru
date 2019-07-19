@@ -7,13 +7,13 @@ manager: pabutler
 ms.service: marketplace
 ms.topic: article
 ms.date: 11/1/2018
-ms.author: qianw211
-ms.openlocfilehash: 179775076382022b9a97e7d76bc1e0dc4fbf69db
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: pabutler
+ms.openlocfilehash: dcba2b40bdcf4558f7a06f7e14d0ce654a9c1ec1
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64937555"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67876077"
 ---
 # <a name="private-offers"></a>Частные предложения
 
@@ -51,8 +51,8 @@ ms.locfileid: "64937555"
 Частные предложения будут также отображаться в результатах поиска. Просто найдите индикатор событий "Частный".
 
 > [!Note]
-> Частные предложения не поддерживаются с подписками, установленного через торгового посредника программы поставщика облачных решений (CSP).
+> Частные предложения не поддерживаются для подписок, созданных через торгового посредника по программе поставщика облачных решений (CSP).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы хотите воспользоваться преимуществами новых возможностей, можете начать продажи в [Azure Marketplace](https://azuremarketplace.microsoft.com/sell).

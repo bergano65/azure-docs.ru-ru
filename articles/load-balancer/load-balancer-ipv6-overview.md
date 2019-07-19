@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: Основные сведения о поддержке IPv6 для Azure Load Balancer и виртуальных машин с балансировкой нагрузки.
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 keywords: IPv6, Azure Load Balancer, двойной стек, общедоступный IP-адрес, встроенная поддержка Ipv6, мобильное устройство, Интернет вещей
 ms.service: load-balancer
 ms.devlang: na
@@ -13,13 +13,13 @@ ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/24/2018
-ms.author: kumud
-ms.openlocfilehash: 894a56c2e51e8fa8a2d72253563d218416ace4cb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: allensu
+ms.openlocfilehash: b276766d69c187e2268f5896f23e3bd435ed63c3
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60861961"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68274822"
 ---
 # <a name="overview-of-ipv6-for-azure-load-balancer"></a>Общие сведения о поддержке IPv6 для Azure Load Balancer
 
@@ -38,7 +38,7 @@ ms.locfileid: "60861961"
 
 После развертывания Интернет-клиент с поддержкой IPv4 или IPv6 может взаимодействовать с общедоступными IPv4 или IPv6-адресами (или именами узлов) балансировщика нагрузки Azure Load Balancer для Интернета. Балансировщик нагрузки маршрутизирует пакеты IPv6 на частные IPv6-адреса виртуальных машин с помощью преобразования сетевых адресов (NAT). Интернет-клиент с поддержкой IPv6 не может напрямую взаимодействовать с IPv6-адресами виртуальных машин.
 
-## <a name="features"></a>Функции
+## <a name="features"></a>Компоненты
 
 Встроенная поддержка IPv6 для виртуальных машин, развернутых с помощью Azure Resource Manager, предоставляет следующие возможности:
 
@@ -80,7 +80,7 @@ ms.locfileid: "60861961"
 * Зарезервированные IP-адреса IPv6 (где IPAllocationMethod = static) **пока не поддерживаются**.
 * NAT64 (преобразование IPv6 в IPv4) не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как выполнять развертывание балансировщика нагрузки с IPv6.
 

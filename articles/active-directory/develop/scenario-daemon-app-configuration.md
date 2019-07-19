@@ -1,6 +1,6 @@
 ---
-title: Управляющая программа приложение вызова веб-API (конфигурация приложений) - платформой Microsoft identity
-description: Узнайте, как создать управляющую программу, вызовы веб-API-интерфейсы (конфигурация приложений)
+title: Приложение управляющей программы, вызывающее веб-API (Конфигурация приложения) — платформа Microsoft Identity
+description: Узнайте, как создать управляющее приложение, вызывающее веб-API (Конфигурация приложения).
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -12,63 +12,63 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 07/16/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd2da6baecdce3ab85a45347f27f573bf814445d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 705545fd5167087be1a001c45f58907d6ff225e8
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67055753"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68277823"
 ---
-# <a name="daemon-app-that-calls-web-apis---code-configuration"></a>Вызовы веб-интерфейсы API — код конфигурации приложений управляющей программы
+# <a name="daemon-app-that-calls-web-apis---code-configuration"></a>Управляющее приложение, вызывающее веб-API — конфигурация кода
 
-Узнайте, как настроить код для приложения управляющей программы, что вызовы веб-API.
+Узнайте, как настроить код для управляющего приложения, вызывающего веб-API.
 
-## <a name="msal-libraries-supporting-daemon-apps"></a>Библиотеки MSAL вспомогательных приложений управляющей программы
+## <a name="msal-libraries-supporting-daemon-apps"></a>Библиотеки MSAL, поддерживающие приложения управляющей программы
 
-Поддерживать приложения, управляющая программа библиотек Microsoft являются:
+Библиотеки Майкрософт, поддерживающие управляющие приложения:
 
   Библиотека MSAL | Описание
   ------------ | ----------
-  ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Поддерживаемые платформы для построения приложения управляющей программы — платформы .NET Framework и .NET Core (не UWP, Xamarin.iOS и Xamarin.Android, как эти платформы используются для построения общедоступных клиентских приложений)
-  ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL.Python | Разработка решений в ход выполнения — в общедоступной предварительной версии
-  ![Java](media/sample-v2-code/logo_java.png) <br/> MSAL. Java | Разработка решений в ход выполнения — в общедоступной предварительной версии
+  ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Для создания управляющего приложения поддерживаются платформы .NET Framework и платформы .NET Core (не UWP, Xamarin. iOS и Xamarin. Android, так как эти платформы используются для создания общедоступных клиентских приложений).
+  ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL. Языке | Выполняется разработка — в общедоступной предварительной версии
+  ![Java](media/sample-v2-code/logo_java.png) <br/> MSAL. Java | Выполняется разработка — в общедоступной предварительной версии
 
-## <a name="configuration-of-the-authority"></a>Конфигурации центра
+## <a name="configuration-of-the-authority"></a>Настройка центра
 
-Учитывая, что управляющая программа приложения не использовать делегированные разрешения, но разрешения приложения, их *поддерживается тип учетной записи* не может быть *учетных записей в любой организации directory и Microsoft персональных учетных записей () Например, Скайп, Xbox, Outlook.com)* . Действительно нет нет администратора клиента дать согласие приложений управляющей программы для личных учетных записей Майкрософт. Вам потребуется выбрать *учетные записи в моей организации* или *учетных записей в любой организации*.
+Учитывая, что управляющие приложения не используют делегированные разрешения, но разрешения приложений, их *поддерживаемый тип учетной записи* не могут быть *учетными записями в любом каталоге Организации и личных учетных записях Майкрософт (например, Skype, Xbox, Outlook.com)* . В действительности нет прав администратора клиента для предоставления согласия на приложение управляющей программы для личных учетных записей Майкрософт. Вам потребуется выбрать учетные *записи в моей организации* или *учетных записях в любой организации*.
 
-Поэтому центра, указанное в конфигурации приложения должно быть клиента ed (с указанием идентификатора клиента или имя домена, связанный с вашей организацией).
+Поэтому центр, указанный в конфигурации приложения, должен быть клиентом-ED (указав идентификатор клиента или доменное имя, связанное с вашей организацией).
 
-Если вы являетесь, независимых поставщиков программного обеспечения и хотите предоставляет средство несколькими клиентами, можно использовать `organizations`. Но имейте в виду, что также необходимо объяснить заказчикам описывается процесс предоставления согласия администратора. См. в разделе [запрос на получение согласия для клиента](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant) подробные сведения. Также данный момент ограничений в MSAL, `organizations` допускается только в том случае, когда учетные данные клиента, секрет приложения (а не сертификат). См. в разделе [MSAL.NET ошибка #891](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/891)
+Если вы являетесь независимым поставщиком программного обеспечения и хотите предоставить средство с несколькими клиентами, `organizations`вы можете использовать. Но помните, что вы также должны объяснить своим заказчикам, как предоставить согласие администратора. Дополнительные сведения см. [в статье запрос согласия для всего клиента](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant) . Также существует ограничение в MSAL, которое `organizations` допустимо только в том случае, если учетные данные клиента являются секретом приложения (а не сертификатом). См. раздел [MSAL.NET bug #891](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/891)
 
-## <a name="application-configuration-and-instantiation"></a>Настройка приложения и создание экземпляров
+## <a name="application-configuration-and-instantiation"></a>Настройка и создание приложений
 
-В библиотеках MSAL учетные данные клиента (секрет или сертификат), передаются как параметр конструкторе конфиденциального клиента приложения.
+В библиотеках MSAL учетные данные клиента (секрет или сертификат) передаются в качестве параметра для создания конфиденциального клиентского приложения.
 
 > [!IMPORTANT]
-> Даже если приложение является консольным приложением, выполняющиеся как службы, если это приложение управляющей программы необходимо иметь конфиденциального клиентского приложения.
+> Даже если приложение является консольным приложением, выполняемым в качестве службы, если это управляющее приложение, оно должно быть конфиденциальным клиентским приложением.
 
 ### <a name="msalnet"></a>MSAL.NET
 
-Добавить [Microsoft.IdentityClient](https://www.nuget.org/packages/Microsoft.Identity.Client) пакет NuGet для вашего приложения.
+Добавьте пакет NuGet [Microsoft. идентитиклиент](https://www.nuget.org/packages/Microsoft.Identity.Client) в приложение.
 
-Используйте пространство имен MSAL.NET
+Использовать пространство имен MSAL.NET
 
 ```CSharp
 using Microsoft.Identity.Client;
 ```
 
-Управляющее приложение веб-презентация `IConfidentialClientApplication`
+Управляющее приложение будет представлено`IConfidentialClientApplication`
 
 ```CSharp
 IConfidentialClientApplication app;
 ```
 
-Ниже приведен код, чтобы создать приложение с секрет приложения.
+Ниже приведен код для создания приложения с секретом приложения.
 
 ```CSharp
 app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
@@ -77,7 +77,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
            .Build();
 ```
 
-Ниже приведен код для создания приложения с помощью сертификата.
+Ниже приведен код для создания приложения с сертификатом.
 
 ```CSharp
 X509Certificate2 certificate = ReadCertificate(config.CertificateName);
@@ -87,7 +87,10 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
     .Build();
 ```
 
-### <a name="msalpython"></a>MSAL.Python
+Наконец, вместо секрета клиента или сертификата конфиденциальное клиентское приложение также может доказать свое удостоверение с помощью утверждений клиента. Этот расширенный сценарий подробно описан в [утверждениях клиента](msal-net-client-assertions.md) .
+
+
+### <a name="msalpython"></a>MSAL. Языке
 
 ```Python
 # Create a preferably long-lived app instance which maintains a token cache.
@@ -117,7 +120,7 @@ ConfidentialClientApplication cca = ConfidentialClientApplication
   .build();
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Управляющая программа приложение — получение маркеров для приложения](./scenario-daemon-acquire-token.md)
+> [Приложение управляющей программы — получение маркеров для приложения](./scenario-daemon-acquire-token.md)

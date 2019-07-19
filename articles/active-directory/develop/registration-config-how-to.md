@@ -1,5 +1,5 @@
 ---
-title: Выбор разрешений для заданного API | Документы Майкрософт
+title: Настройка конечных точек | Документация Майкрософт
 description: Здесь описано, как найти конечные точки проверки подлинности для пользовательского приложения, которое вы разрабатываете или регистрируете в Azure AD.
 services: active-directory
 documentationcenter: ''
@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/11/2018
+ms.date: 07/15/2019
 ms.author: ryanwi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dcfeec7e90f1c582a11889619811330bcf488bbf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.openlocfilehash: b48e19df2ea1bbf7d09ee9a2108d0f34f01a4929
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65545916"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68277847"
 ---
 # <a name="how-to-configure-endpoints"></a>Как настроить конечные точки
 
@@ -36,5 +36,5 @@ ms.locfileid: "65545916"
 
 -   Используйте соответствующую конечную точку для протокола аутентификации в сочетании с идентификатором приложения, чтобы создать запрос на аутентификацию для своего приложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Руководство разработчика по Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-developers-guide)

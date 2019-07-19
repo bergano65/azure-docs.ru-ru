@@ -1,7 +1,7 @@
 ---
-title: Настройка Azure Application Insights для моделей машинного Обучения монитора
+title: Настройка Application Insights Azure для мониторинга моделей машинного обучения
 titleSuffix: Azure Machine Learning service
-description: Мониторинг веб-служб, развернутых с помощью службы машинного обучения Azure с помощью Azure Application Insights
+description: Мониторинг веб-служб, развернутых со службой Машинное обучение Azure, с помощью Application Insights Azure
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: marthalc
 author: marthalc
-ms.date: 04/02/2019
+ms.date: 07/12/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 2e481a388d8cbd6baf66b95c74449396b2e70f7d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1c12f55228d77656ef57598da0fb002fdea29bd4
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60820232"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67871780"
 ---
 # <a name="monitor-your-azure-machine-learning-models-with-application-insights"></a>Мониторинг моделей машинного обучения в Azure с помощью Application Insights
 
@@ -28,7 +28,7 @@ ms.locfileid: "60820232"
 [Дополнительные сведения об Application Insights](../../azure-monitor/app/app-insights-overview.md). 
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
@@ -36,7 +36,7 @@ ms.locfileid: "60820232"
 * Обученная модель машинного обучения для развертывания в службе Azure Kubernetes (AKS) или в экземпляре контейнера Azure (ACI). Если у вас ее нет, см. руководство по [обучению модели классификации изображений](tutorial-train-models-with-aml.md).
 
 
-## <a name="use-sdk-to-configure"></a>Используйте пакет SDK для настройки 
+## <a name="use-sdk-to-configure"></a>Использование пакета SDK для настройки 
 
 ### <a name="update-a-deployed-service"></a>Обновление развернутой службы
 1. Найдите службу в рабочей области. Значение `ws` обозначает имя рабочей области.
@@ -131,11 +131,11 @@ ms.locfileid: "60820232"
 
 ## <a name="example-notebook"></a>Пример записной книжки
 
-В записной книжке [how-to-use-azureml/deployment/enable-app-insights-in-production-service/enable-app-insights-in-production-service.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/enable-app-insights-in-production-service/enable-app-insights-in-production-service.ipynb) демонстрируются понятия, описанные в этой статье. 
+В записной книжке [Enable-App-Insights-in-Production-Service. ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/enable-app-insights-in-production-service/enable-app-insights-in-production-service.ipynb) описываются концепции, описанные в этой статье. 
  
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Также данные можно собирать с моделей в рабочей среде. Ознакомьтесь со статьей [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md). 
 
-Также прочитайте [Azure Monitor для контейнеров](https://docs.microsoft.com/azure/monitoring/monitoring-container-insights-overview?toc=%2fazure%2fmonitoring%2ftoc.json).
+Также читайте [Azure Monitor для контейнеров](https://docs.microsoft.com/azure/monitoring/monitoring-container-insights-overview?toc=%2fazure%2fmonitoring%2ftoc.json).

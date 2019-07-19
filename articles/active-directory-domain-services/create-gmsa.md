@@ -1,6 +1,6 @@
 ---
 title: Доменные службы Azure Active Directory. Создание групповой управляемой учетной записи службы | Документация Майкрософт
-description: Администрирование управляемых доменов доменных служб Azure Active Directory
+description: Узнайте, как создать групповую управляемую учетную запись службы (gMSA) для использования с управляемыми доменами доменных служб Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
 author: iainfoulds
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/13/2019
 ms.author: iainfou
-ms.openlocfilehash: 77924fdcef18bf7304f3d9f872559be4d3405971
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 404160c895a8d0a72921fe202adba82c3d069aaf
+ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67473592"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68234116"
 ---
 # <a name="create-a-group-managed-service-account-gmsa-on-an-azure-ad-domain-services-managed-domain"></a>Создание групповой управляемой учетной записи службы в управляемом домене доменных служб AAD
 В этой статье показано, как создать управляемые учетные записи службы в управляемом домене доменных служб AAD.
@@ -67,7 +67,7 @@ http/WebFarmSvc/contoso100.com, http/WebFarmSvc/contoso100  `
 - [командлет New-ADServiceAccount](https://docs.microsoft.com/powershell/module/addsadministration/New-ADServiceAccount).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Создание подразделения в управляемом домене доменных служб Azure AD](create-ou.md)
 - [Group Managed Service Accounts Overview](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview) (Обзор групповых управляемых учетных записей служб);
 - [Getting Started with Group Managed Service Accounts](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts) (Начало работы с групповыми управляемыми учетными записями служб).

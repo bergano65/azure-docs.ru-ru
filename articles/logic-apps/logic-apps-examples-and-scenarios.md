@@ -10,16 +10,16 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.assetid: e06311bc-29eb-49df-9273-1f05bbb2395c
 ms.date: 01/31/2018
-ms.openlocfilehash: 89e0294db3178cedd3b14aada0b505787b17c75e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6d9a2929d7b8b1687b602093d0e9de35508dbd8c
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60303695"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68273091"
 ---
 # <a name="common-scenarios-examples-tutorials-and-walkthroughs-for-azure-logic-apps"></a>Распространенные сценарии, примеры, учебники и пошаговые руководства для Azure Logic Apps
 
-Служба [Azure Logic Apps](../logic-apps/logic-apps-overview.md) поможет вам интегрировать различные службы и управлять их работой. Она предоставляет [более 100 готовых к использованию соединителей](../connectors/apis-list.md) — от локальной платформы SQL Server до SAP или Cognitive Services. Служба Logic Apps работает без серверов, поэтому вам не нужно заботиться об экземплярах и масштабировании. Достаточно определить рабочий процесс с триггером и действия для него. Базовая платформа обеспечивает масштабирование, доступность и производительность. Служба Logic Apps наиболее полезна в тех случаях, когда нужно координировать несколько действий в нескольких системах.
+[Azure Logic Apps](../logic-apps/logic-apps-overview.md) помогает координировать и интегрировать различные службы, предоставляя [сотни готовых соединителей](../connectors/apis-list.md), от локальных SQL Server или SAP до Microsoft Cognitive Services. Служба Logic Apps работает без серверов, поэтому вам не нужно заботиться об экземплярах и масштабировании. Достаточно определить рабочий процесс с триггером и действия для него. Базовая платформа обеспечивает масштабирование, доступность и производительность. Служба Logic Apps наиболее полезна в тех случаях, когда нужно координировать несколько действий в нескольких системах.
 
 Ниже представлены распространенные примеры и сценарии, которые познакомят вас с методами применения и возможностями [Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
@@ -27,9 +27,9 @@ ms.locfileid: "60303695"
 
 Каждое приложение логики запускается при помощи [*триггера*](../logic-apps/logic-apps-overview.md#logic-app-concepts) (это всегда только один триггер). Он инициирует рабочий процесс приложения логики и передает в него данные. Некоторые соединители предоставляют триггер одного из следующих типов:
 
-* *Опрашивающие триггеры*: Регулярно проверяет конечную точку службы для новых данных. Когда появляются новые данные, триггер создает и запускает новый экземпляр рабочего процесса, передавая эти данные в качестве входных.
+* *Триггеры опроса*: Регулярно проверяет конечную точку службы на наличие новых данных. Когда появляются новые данные, триггер создает и запускает новый экземпляр рабочего процесса, передавая эти данные в качестве входных.
 
-* *Извещающий триггер*: Прослушивает данные в конечную точку службы и ожидает, когда происходит определенное событие. Когда происходит это событие, триггер немедленно срабатывает, то есть создает и запускает новый экземпляр рабочего процесса, передавая в качестве входных все доступные данные.
+* *Триггеры push-уведомлений*: Прослушивает данные в конечной точке службы и ожидает, пока не произойдет определенное событие. Когда происходит это событие, триггер немедленно срабатывает, то есть создает и запускает новый экземпляр рабочего процесса, передавая в качестве входных все доступные данные.
 
 Ниже приведено несколько распространенных примеров триггеров:
 
@@ -59,8 +59,8 @@ ms.locfileid: "60303695"
 * [Настройка длительных действий для запусков рабочего процесса](../logic-apps/logic-apps-create-api-app.md)
 * [Реагирование на внешние события и действия с помощью объектов webhook](../logic-apps/logic-apps-create-api-app.md)
 * [Вызов, активация или вложение рабочих процессов с использованием синхронных ответов на HTTP-запросы](../logic-apps/logic-apps-http-endpoint.md)
-* [Учебник. Создайте на основе ии панели мониторинга социальных сетей за несколько минут с помощью Logic Apps и Power BI](https://aka.ms/logicappsdemo)
-* [Video: Ответ на веб-перехватчиков Twilio SMS и отправка текстового ответа](https://channel9.msdn.com/Blogs/Windows-Azure/Azure-Logic-Apps-Walkthrough-Webhook-Functions-and-an-SMS-Bot)
+* [Учебник. Создание информационной панели социальных сетей на основе искусственного интеллекта за считаные минуты с Logic Apps и Power BI](https://aka.ms/logicappsdemo)
+* [Video: Ответ на веб-перехватчики Twilio SMS и отправка текстового ответа](https://channel9.msdn.com/Blogs/Windows-Azure/Azure-Logic-Apps-Walkthrough-Webhook-Functions-and-an-SMS-Bot)
 
 ## <a name="control-flow-error-handling-and-logging-capabilities"></a>Возможности для потока управления, обработки ошибок и ведения журнала
 
@@ -70,7 +70,7 @@ ms.locfileid: "60303695"
 * [Повторяющиеся действия или обработка элементов в массивах и коллекциях с помощью циклов](../logic-apps/logic-apps-control-flow-loops.md).
 * [Группировка действий с использованием областей](../logic-apps/logic-apps-control-flow-run-steps-group-scopes.md).
 * [Реализация обработки ошибок и исключений в рабочем процессе](../logic-apps/logic-apps-exception-handling.md)
-* [Вариант использования. Как компания в сфере здравоохранения использует обработку для рабочих процессов HL7 FHIR исключений в приложении логики](../logic-apps/logic-apps-scenario-error-and-exception-handling.md)
+* [Вариант использования. Как компания здравоохранения использует обработку исключений приложений логики для рабочих процессов FHIR HL7](../logic-apps/logic-apps-scenario-error-and-exception-handling.md)
 * [Включение мониторинга, ведения журнала и оповещений для существующих приложений логики](../logic-apps/logic-apps-monitor-your-logic-apps.md)
 * [Включение мониторинга и ведения журнала диагностики при создании приложений логики](../logic-apps/logic-apps-monitor-your-logic-apps-oms.md)
 
@@ -96,21 +96,21 @@ ms.locfileid: "60303695"
 
 * [Создание панели мониторинга сведений о клиентах в режиме реального времени с помощью Функций Azure и Azure Logic Apps](../logic-apps/logic-apps-scenario-social-serverless.md)
 * [Вызов Функций Azure из приложений логики](../logic-apps/logic-apps-azure-functions.md)
-* [Учебник. Запуск приложения логики с помощью функций Azure](../logic-apps/logic-apps-scenario-function-sb-trigger.md)
-* [Учебник. Отслеживание изменений виртуальной машины с помощью сетки событий Azure и Logic Apps](../event-grid/monitor-virtual-machine-changes-event-grid-logic-app.md)
-* [Учебник. Создание функции, интегрируемой с Azure Logic Apps и Microsoft Cognitive Services для анализа мнений пользователей Twitter post](../azure-functions/functions-twitter-email.md)
-* [Учебник. Удаленный мониторинг и Интернета уведомлений с помощью Azure Logic Apps подключения центра Интернета вещей и почтовым ящиком](../iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps.md)
+* [Учебник. Активация приложений логики с помощью функций Azure](../logic-apps/logic-apps-scenario-function-sb-trigger.md)
+* [Учебник. Мониторинг изменений виртуальной машины с помощью службы "Сетка событий Azure" и Logic Apps](../event-grid/monitor-virtual-machine-changes-event-grid-logic-app.md)
+* [Учебник. Создание функции, которая интегрируется с Azure Logic Apps и Microsoft Cognitive Services для анализа записей Twitter тональности](../azure-functions/functions-twitter-email.md)
+* [Учебник. Удаленный мониторинг Интернета вещей и уведомления с Azure Logic Apps подключением центра Интернета вещей и почтового ящика](../iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps.md)
 * [Блог. Вызов конечных точек SOAP из приложений логики](https://blogs.msdn.microsoft.com/logicapps/2016/04/07/using-soap-services-with-logic-apps/)
 
 ## <a name="end-to-end-scenarios"></a>Комплексные сценарии
 
-* [Технический документ. End-to-end case management интеграция со службами Azure, такие как Logic Apps](https://aka.ms/enterprise-integration-e2e-case-management-utilities-logic-apps)
+* [Технический документ Комплексная интеграция управления обращениями со службами Azure, например Logic Apps](https://aka.ms/enterprise-integration-e2e-case-management-utilities-logic-apps)
 
 ## <a name="customer-stories"></a>Истории клиентов
 
 Узнайте, как Azure Logic Apps, а также другие службы Azure и продукты Майкрософт помогли [этим компаниям](https://aka.ms/logic-apps-customer-stories) повысить гибкость и сосредоточиться на основных бизнес-целях благодаря упрощению, организации, автоматизации и оркестрации сложных процессов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание определений рабочих процессов для приложений логики с помощью JSON](../logic-apps/logic-apps-author-definitions.md)
 * [Обработка ошибок и исключений в приложениях логики](../logic-apps/logic-apps-exception-handling.md)

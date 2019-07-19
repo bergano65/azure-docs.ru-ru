@@ -1,7 +1,7 @@
 ---
-title: Развертывание приложения двойной стек IPv6 в Azure виртуальной сети — PowerShell
+title: Развертывание приложения двойного стека IPv6 в виртуальной сети Azure с помощью PowerShell
 titlesuffix: Azure Virtual Network
-description: В этой статье показано, как развернуть приложение двойной стек IPv6 в виртуальной сети Azure, с помощью Azure Powershell.
+description: В этой статье показано, как развернуть приложение с двумя стеками IPv6 в виртуальной сети Azure с помощью Azure PowerShell.
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -11,36 +11,39 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/22/2019
+ms.date: 07/08/2019
 ms.author: kumud
-ms.openlocfilehash: 5ef051f42f3d092cc1d88008eaa8af981684ac6c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b9a6b0ee6796acc2b9adc88480f6933af413e4e6
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66730044"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68260849"
 ---
-# <a name="deploy-an-ipv6-dual-stack-application-in-azure---powershell-preview"></a>Развертывание приложения двойной стек IPv6 в Azure с помощью PowerShell (Предварительная версия)
+# <a name="deploy-an-ipv6-dual-stack-application-in-azure---powershell-preview"></a>Развертывание приложения с двумя стеками IPv6 в Azure с помощью PowerShell (Предварительная версия)
 
-В этой статье показано, как развернуть приложение двойной стек (IPv4 + IPv6) в Azure, которая включает в себя двойной стек виртуальную сеть и подсеть, балансировщик нагрузки с интерфейсные конфигурации двумя (IPv4 + IPv6), виртуальные машины с сетевыми интерфейсами, которые имеют конфигурации с двумя IP-адрес сети Группа безопасности и общедоступные IP-адреса.
+В этой статье показано, как развернуть в Azure приложение с двойным стеком (IPv4 + IPv6), которое включает в себя виртуальную сеть и подсеть с двумя стеками, подсистему балансировки нагрузки с двумя интерфейсными конфигурациями (IPv4 + IPv6), виртуальные машины с сетевыми картами с двойной конфигурацией IP-адресов, сеть группы безопасности и общедоступные IP-адреса.
 
 > [!Important]
-> Поддержка IPv6 для виртуальной сети Azure в настоящее время находится в общедоступной предварительной версии. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Поддержка IPv6 для виртуальной сети Azure в настоящее время доступна в общедоступной предварительной версии. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать PowerShell локально, в этой статье требуется модуль Azure PowerShell версии 6.9.0 или более поздней версии. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+Если вы решили установить и использовать PowerShell локально, для работы с этой статьей требуется модуль Azure PowerShell версии 6.9.0 или более поздней. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="prerequisites"></a>Технические условия
-Перед развертыванием приложения двойного стека в Azure, необходимо настроить подписку на предварительную версию этого компонента, используя следующую команду Azure PowerShell:
+## <a name="prerequisites"></a>предварительные требования
+Перед развертыванием приложения с двойным стеком в Azure необходимо настроить подписку для этой предварительной версии, используя следующие Azure PowerShell:
 
-Зарегистрируйте следующим образом:
+Зарегистрируйтесь следующим образом:
+
 ```azurepowershell
 Register-AzProviderFeature -FeatureName AllowIPv6VirtualNetwork -ProviderNamespace Microsoft.Network
+Register-AzProviderFeature -FeatureName AllowIPv6CAOnStandardLB -ProviderNamespace Microsoft.Network
 ```
-Регистрация функции занимает до 30 минут. Можно проверить состояние регистрации, выполнив следующую команду Azure PowerShell: Проверка регистрации следующим образом:
+Регистрация функции занимает до 30 минут. Состояние регистрации можно проверить, выполнив следующую команду Azure PowerShell: Проверьте регистрацию следующим образом:
 ```azurepowershell
 Get-AzProviderFeature -FeatureName AllowIPv6VirtualNetwork -ProviderNamespace Microsoft.Network
+Get-AzProviderFeature -FeatureName AllowIPv6CAOnStandardLB -ProviderNamespace Microsoft.Network
 ```
 После регистрации выполните следующую команду:
 
@@ -50,7 +53,7 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.Network
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Перед созданием виртуальной сети двойного стека, необходимо создать группу ресурсов с помощью [New AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов, с именем *myRGDualStack* в *Восток США* расположение:
+Прежде чем можно будет создать виртуальную сеть с двумя стеками, необходимо создать группу ресурсов с помощью [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов с именем *миргдуалстакк* в расположении *Восточная часть США* :
 
 ```azurepowershell-interactive
    $rg = New-AzResourceGroup `
@@ -58,8 +61,8 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.Network
   -Location "east us"
 ```
 
-## <a name="create-ipv4-and-ipv6-public-ip-addresses"></a>Создайте общедоступный IP-адреса IPv4 и IPv6
-Для доступа к виртуальным машинам из Интернета, требуется общедоступный IP-адресов IPv4 и IPv6 для подсистемы балансировки нагрузки. Создайте общедоступный IP-адреса с [New AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress). В следующем примере создается IPv4 и IPv6 общедоступный IP-адрес с именем *dsPublicIP_v4* и *dsPublicIP_v6* в *dsRG1* группы ресурсов:
+## <a name="create-ipv4-and-ipv6-public-ip-addresses"></a>Создание общедоступных IP-адресов IPv4 и IPv6
+Для доступа к виртуальным машинам из Интернета требуются общедоступные IP-адреса IPv4 и IPv6 для балансировщика нагрузки. Создайте общедоступные IP-адреса с помощью [New-азпублиЦипаддресс](/powershell/module/az.network/new-azpublicipaddress). В следующем примере создается общедоступный IP-адрес IPv4 и IPv6 с именем *dsPublicIP_v4* и *dsPublicIP_v6* в группе ресурсов *dsRG1* :
 
 ```azurepowershell-interactive
 $PublicIP_v4 = New-AzPublicIpAddress `
@@ -76,7 +79,7 @@ $PublicIP_v6 = New-AzPublicIpAddress `
   -AllocationMethod Dynamic `
   -IpAddressVersion IPv6
 ```
-Чтобы получить доступ к виртуальным машинам через подключение удаленного рабочего СТОЛА, создайте IPV4 общедоступных IP-адресов для виртуальных машин с [New AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress).
+Чтобы получить доступ к виртуальным машинам с помощью подключения по протоколу RDP, создайте общедоступные IP-адреса IPV4 для виртуальных машин с помощью [New-азпублиЦипаддресс](/powershell/module/az.network/new-azpublicipaddress).
 
 ```azurepowershell-interactive
   $RdpPublicIP_1 = New-AzPublicIpAddress `
@@ -96,11 +99,11 @@ $PublicIP_v6 = New-AzPublicIpAddress `
 
 ## <a name="create-basic-load-balancer"></a>Создание подсистемы балансировки нагрузки уровня "Базовый"
 
-В этом разделе Настройка двух frontend IP (IPv4 и IPv6) и пула внутренних адресов для балансировщика нагрузки и затем создать основные подсистемы балансировки нагрузки.
+В этом разделе вы настроите сдвоенный интерфейсный IP-адрес (IPv4 и IPv6) и пул внутренних адресов для балансировщика нагрузки, а затем создадите базовую Load Balancer.
 
 ### <a name="create-front-end-ip"></a>Создание интерфейсного IP-адреса
 
-Создайте интерфейсный IP-адрес с помощью командлета [New-AzLoadBalancerFrontendIpConfig](/powershell/module/az.network/new-azloadbalancerfrontendipconfig). В следующем примере создается интерфейсный IPv4 и IPv6, IP-конфигурации с именем *dsLbFrontEnd_v4* и *dsLbFrontEnd_v6*:
+Создайте интерфейсный IP-адрес с помощью командлета [New-AzLoadBalancerFrontendIpConfig](/powershell/module/az.network/new-azloadbalancerfrontendipconfig). В следующем примере создаются IP-конфигурации интерфейсов IPv4 и IPv6 с именами *dsLbFrontEnd_v4* и *dsLbFrontEnd_v6*:
 
 ```azurepowershell-interactive
 $frontendIPv4 = New-AzLoadBalancerFrontendIpConfig `
@@ -115,7 +118,7 @@ $frontendIPv6 = New-AzLoadBalancerFrontendIpConfig `
 
 ### <a name="configure-back-end-address-pool"></a>Настройка серверного пула адресов
 
-Создайте серверный пул адресов с помощью командлета [New-AzLoadBalancerBackendAddressPoolConfig](/powershell/module/az.network/new-azloadbalancerbackendaddresspoolconfig). Виртуальные машины присоединяются в этот серверный пул на следующих этапах. В следующем примере создается пулы адресов серверной части с именами *dsLbBackEndPool_v4* и *dsLbBackEndPool_v6* включать виртуальные машины с конфигурациями IPV4 и IPv6 сетевого Адаптера:
+Создайте серверный пул адресов с помощью командлета [New-AzLoadBalancerBackendAddressPoolConfig](/powershell/module/az.network/new-azloadbalancerbackendaddresspoolconfig). Виртуальные машины присоединяются в этот серверный пул на следующих этапах. В следующем примере создаются пулы внутренних адресов с именами *dsLbBackEndPool_v4* и *DsLbBackEndPool_v6* для включения виртуальных машин с конфигурациями IPv4 и IPv6.
 
 ```azurepowershell-interactive
 $backendPoolv4 = New-AzLoadBalancerBackendAddressPoolConfig `
@@ -127,9 +130,9 @@ $backendPoolv6 = New-AzLoadBalancerBackendAddressPoolConfig `
 
 ### <a name="create-a-load-balancer-rule"></a>Создание правила балансировщика нагрузки
 
-Правило балансировщика нагрузки позволяет определить распределение трафика между виртуальными машинами. Вы определяете конфигурацию внешнего IP-адреса для входящего трафика и пул внутренних IP-адресов для приема трафика, а также требуемый порт источника и назначения. Чтобы убедитесь, что только работоспособные виртуальные машины получать трафик, по желанию можно задать пробу работоспособности. Основные load balancer использует пробу IPv4 для оценки работоспособности для конечных точек IPv4 и IPv6 на виртуальных машинах. Load balancer стандартный включает поддержку явно пробы работоспособности IPv6.
+Правило балансировщика нагрузки позволяет определить распределение трафика между виртуальными машинами. Вы определяете конфигурацию внешнего IP-адреса для входящего трафика и пул внутренних IP-адресов для приема трафика, а также требуемый порт источника и назначения. Чтобы убедиться в том, что трафик получает только работоспособные виртуальные машины, можно дополнительно определить проверку работоспособности. Базовая подсистема балансировки нагрузки использует проверку IPv4 для оценки работоспособности конечных точек IPv4 и IPv6 на виртуальных машинах. В стандартную подсистему балансировки нагрузки входит поддержка явной проверки работоспособности IPv6.
 
-Создайте правило подсистемы балансировки нагрузки с помощью командлета [Add-AzLoadBalancerRuleConfig](/powershell/module/az.network/add-azloadbalancerruleconfig). В следующем примере создается правила подсистемы балансировки нагрузки с именем *dsLBrule_v4* и *dsLBrule_v6* и распределяет трафик на *TCP* порт *80* для IPv4 и IPv6 интерфейса IP-конфигурации:
+Создайте правило подсистемы балансировки нагрузки с помощью командлета [Add-AzLoadBalancerRuleConfig](/powershell/module/az.network/add-azloadbalancerruleconfig). В следующем примере создаются правила подсистемы балансировки нагрузки с именами *dsLBrule_v4* и *dsLBrule_v6* , а также баланс трафика по *TCP* -порту *80* в конфигурациях интерфейсов IPv4 и IPv6.
 
 ```azurepowershell-interactive
 $lbrule_v4 = New-AzLoadBalancerRuleConfig `
@@ -151,7 +154,7 @@ $lbrule_v6 = New-AzLoadBalancerRuleConfig `
 
 ### <a name="create-load-balancer"></a>Создание подсистемы балансировки нагрузки
 
-Теперь создайте Load Balancer ценовой категории "Базовый" с помощью командлета [New-AzLoadBalancer](/powershell/module/az.network/new-azloadbalancer). В следующем примере создается общедоступный основные подсистемы балансировки нагрузки с именем *myLoadBalancer* с помощью IP внешнего интерфейса IPv4 и IPv6-конфигурации, внутренние пулы и правила балансировки нагрузки, созданные на предыдущих шагах:
+Теперь создайте Load Balancer ценовой категории "Базовый" с помощью командлета [New-AzLoadBalancer](/powershell/module/az.network/new-azloadbalancer). В следующем примере создается общедоступная базовая Load Balancer с именем *myLoadBalancer* с использованием многоинтерфейсных IP-конфигураций IPv4 и IPv6, серверных пулов и правил балансировки нагрузки, созданных на предыдущих шагах.
 
 ```azurepowershell-interactive
 $lb = New-AzLoadBalancer `
@@ -166,7 +169,7 @@ $lb = New-AzLoadBalancer `
 ```
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
-Прежде чем развертывать виртуальные машины и можно тестировать балансировщик нагрузки, поддерживающие сетевые ресурсы — необходимо создать группу доступности, группа безопасности сети, виртуальной сети и виртуальных сетевых адаптеров. 
+Перед развертыванием некоторых виртуальных машин и проверки балансировщика необходимо создать вспомогательные сетевые ресурсы — группы доступности, группу безопасности сети, виртуальную сеть и виртуальные сетевые карты. 
 ### <a name="create-an-availability-set"></a>"Создать группу доступности"
 Чтобы улучшить высокую доступность приложения, поместите виртуальные машины в группу доступности.
 
@@ -184,7 +187,7 @@ $avset = New-AzAvailabilitySet `
 
 ### <a name="create-network-security-group"></a>Создание группы безопасности сети
 
-Создайте группу безопасности сети для правил, определяющих входящие и исходящие подключения в виртуальной сети.
+Создайте группу безопасности сети для правил, которые будут управлять входящим и исходящим обменом данными в виртуальной сети.
 
 #### <a name="create-a-network-security-group-rule-for-port-3389"></a>Создание правила группы безопасности сети для порта 3389
 
@@ -205,7 +208,7 @@ $rule1 = New-AzNetworkSecurityRuleConfig `
 ```
 #### <a name="create-a-network-security-group-rule-for-port-80"></a>Создание правила группы безопасности сети для порта 80
 
-Создайте правило группы безопасности сети, чтобы разрешить подключения к Интернету через порт 80 с [New AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig).
+Создайте правило группы безопасности сети, чтобы разрешить подключения к Интернету через порт 80 с помощью [New-азнетворксекуритирулеконфиг](/powershell/module/az.network/new-aznetworksecurityruleconfig).
 
 ```azurepowershell-interactive
 $rule2 = New-AzNetworkSecurityRuleConfig `
@@ -231,7 +234,7 @@ $nsg = New-AzNetworkSecurityGroup `
 -Name "dsNSG1"  `
 -SecurityRules $rule1,$rule2
 ```
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 Создайте виртуальную сеть с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создаются виртуальная сеть *myVnet* и подсеть *mySubnet*.
 
@@ -252,7 +255,7 @@ $vnet = New-AzVirtualNetwork `
 
 ### <a name="create-nics"></a>Создание сетевых адаптеров
 
-Создание виртуальных сетевых адаптеров с [New AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface). В следующем примере создается два виртуальных сетевых адаптеров оба с конфигурациями IPv4 и IPv6. (по одной виртуальной сетевой карте для каждой виртуальной машины, используемой приложением).
+Создайте виртуальные сетевые карты с помощью [New-азнетворкинтерфаце](/powershell/module/az.network/new-aznetworkinterface). В следующем примере создаются две виртуальные сетевые карты с конфигурациями IPv4 и IPv6. (по одной виртуальной сетевой карте для каждой виртуальной машины, используемой приложением).
 
 ```azurepowershell-interactive
   $Ip4Config=New-AzNetworkInterfaceIpConfig `
@@ -305,7 +308,7 @@ $cred = get-credential -Message "DUAL STACK VNET SAMPLE:  Please enter the Admin
 $vmsize = "Standard_A2"
 $ImagePublisher = "MicrosoftWindowsServer"
 $imageOffer = "WindowsServer"
-$imageSKU = "2016-Datacenter"
+$imageSKU = "2019-Datacenter"
 
 $vmName= "dsVM1"
 $VMconfig1 = New-AzVMConfig -VMName $vmName -VMSize $vmsize -AvailabilitySetId $avset.Id 3> $null | Set-AzVMOperatingSystem -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent 3> $null | Set-AzVMSourceImage -PublisherName $ImagePublisher -Offer $imageOffer -Skus $imageSKU -Version "latest" 3> $null | Set-AzVMOSDisk -Name "$vmName.vhd" -CreateOption fromImage  3> $null | Add-AzVMNetworkInterface -Id $NIC_1.Id  3> $null 
@@ -316,8 +319,8 @@ $VMconfig2 = New-AzVMConfig -VMName $vmName -VMSize $vmsize -AvailabilitySetId $
 $VM2 = New-AzVM -ResourceGroupName $rg.ResourceGroupName  -Location $rg.Location  -VM $VMconfig2
 ```
 
-## <a name="determine-ip-addresses-of-the-ipv4-and-ipv6-endpoints"></a>Определите IP-адреса конечных точек IPv4 и IPv6
-Получение всех объектов сетевых интерфейсов в группе ресурсов, для суммирования IP-адреса, используемый в этом развертывании с `get-AzNetworkInterface`. Кроме того, получите подсистемы балансировки нагрузки переднего плана адреса IPv4 и IPv6 конечных точек с `get-AzpublicIpAddress`.
+## <a name="determine-ip-addresses-of-the-ipv4-and-ipv6-endpoints"></a>Определение IP-адресов конечных точек IPv4 и IPv6
+Получите все объекты сетевых интерфейсов в группе ресурсов, чтобы обобщить IP-адрес, используемый в этом развертывании, с `get-AzNetworkInterface`. Кроме того, получите внешние адреса Load Balancer конечных точек IPv4 и IPv6 с помощью `get-AzpublicIpAddress`.
 
 ```azurepowershell-interactive
 $rgName= "dsRG1"
@@ -351,19 +354,19 @@ foreach ($NIC in $NICsInRG) {
  
   (get-AzpublicIpAddress -resourcegroupname $rgName | where { $_.name -notlike "RdpPublicIP*" }).IpAddress
 ```
-На следующем рисунке показан пример выходных данных, в которой перечислены частных адресов IPv4 и IPv6 двух виртуальных машин и внешних IPv4 и IPv6-адресов подсистемы балансировки нагрузки.
+На следующем рисунке показан пример выходных данных, в котором перечислены частные адреса IPv4 и IPv6 двух виртуальных машин, а также IP-адреса интерфейсов IPv4 и IPv6 Load Balancer.
 
-![Сводка по IP-адрес развертывания приложения двойной стек (IPv4/IPv6) в Azure](./media/virtual-network-ipv4-ipv6-dual-stack-powershell/dual-stack-application-summary.png)
+![Сводка IP-адресов для развертывания приложений с двойным стеком (IPv4/IPv6) в Azure](./media/virtual-network-ipv4-ipv6-dual-stack-powershell/dual-stack-application-summary.png)
 
-## <a name="view-ipv6-dual-stack-virtual-network-in-azure-portal"></a>Представление IPv6 двойной стек виртуальной сети на портале Azure
-Двойной стек виртуальной сети IPv6 на портале Azure можно просмотреть следующим образом:
-1. В панели поиска портала, введите *dsVnet*.
-2. Когда в результатах поиска появится пункт **myVirtualNetwork**, выберите его. Это откроет **Обзор** страницы двойной стек виртуальной сети с именем *dsVnet*. Двойной стек виртуальной сети показано два сетевых адаптера с конфигурациями IPv4 и IPv6, расположенный в подсети двойной стек с именем *dsSubnet*.
+## <a name="view-ipv6-dual-stack-virtual-network-in-azure-portal"></a>Просмотр двух виртуальных сетей IPv6 с двумя стеками в портал Azure
+Виртуальную сеть с двумя стеками IPv6 можно просмотреть в портал Azure следующим образом:
+1. На панели поиска портала введите *дсвнет*.
+2. Когда в результатах поиска появится пункт **myVirtualNetwork**, выберите его. Откроется страница **обзора** для виртуальной сети с двумя стеками с именем *дсвнет*. В виртуальной сети с двумя стеками показаны две сетевые карты с конфигурациями IPv4 и IPv6, расположенными в подсети с двойным стеком с именем *дссубнет*.
 
-  ![IPv6 двойной стек виртуальной сети в Azure](./media/virtual-network-ipv4-ipv6-dual-stack-powershell/dual-stack-vnet.png)
+  ![Виртуальная сеть с двумя стеками IPv6 в Azure](./media/virtual-network-ipv4-ipv6-dual-stack-powershell/dual-stack-vnet.png)
 
 > [!NOTE]
-> Протокол IPv6 для виртуальной сети Azure доступен на портале Azure в этой предварительной версии только для чтения.
+> Виртуальная сеть IPv6 для виртуальной сети Azure доступна в портал Azure в режиме только для чтения для этой предварительной версии.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -373,6 +376,6 @@ foreach ($NIC in $NICsInRG) {
 Remove-AzResourceGroup -Name dsRG1
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-В этой статье вы создали основные подсистемы балансировки нагрузки с двумя внешнюю конфигурацию IP-адрес (IPv4 и IPv6). Вы также создали две виртуальные машины, которые включены сетевые карты с двумя IP-конфигурации (IPV4 + IPv6), которые были добавлены в пул серверной части подсистемы балансировки нагрузки. Дополнительные сведения о поддержке IPv6 в виртуальных сетях Azure см. в разделе [Какова IPv6 для виртуальной сети Azure?](ipv6-overview.md)
+В этой статье вы создали базовую Load Balancer с двойной интерфейсной IP-конфигурацией (IPv4 и IPv6). Вы также создали две виртуальные машины, которые включали сетевые карты с двумя IP-конфигурациями (IPV4 + IPv6), которые были добавлены в пул внутренних подсистем подсистемы балансировки нагрузки. Дополнительные сведения о поддержке IPv6 в виртуальных сетях Azure см. в статье [что такое IPv6 для виртуальной сети Azure?](ipv6-overview.md)

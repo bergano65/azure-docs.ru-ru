@@ -11,16 +11,16 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 1a505fc5ef09fe9842e72488843155af7c0888cb
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: b0f8b5efcf7e22a3f9d98d5c812ba4821a8b2124
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480813"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68254764"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-2x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 2.х
 
-> [!div class="op_single_selector" title1="Выберите версию среды выполнения функций Azure, которую вы используете: "]
+> [!div class="op_single_selector" title1="Выберите версию используемой среды выполнения функций Azure: "]
 > * [Версия 1](functions-bindings-cosmosdb.md)
 > * [Версия 2](functions-bindings-cosmosdb-v2.md)
 
@@ -196,7 +196,7 @@ namespace CosmosDBSamplesV2
 ```
 
 
-В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@CosmosDBTrigger` для параметров, значения которых будут поступать из Cosmos DB.  Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями nullable, которые необязательно использовать<T>.
+В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@CosmosDBTrigger` для параметров, значения которых будут поступать из Cosmos DB.  Эту аннотацию можно использовать с собственными типами Java, POJO или значениями, допускающими значение\<null, с помощью необязательного T >.
 
 
 Пропустить примеры триггеров
@@ -267,7 +267,7 @@ namespace CosmosDBSamplesV2
 |**leaseConnectionStringSetting** | **LeaseConnectionStringSetting** | (Необязательно.) Имя параметра приложения, содержащее строку подключения для службы, содержащей коллекцию аренды. Если значение не задано, используется значение `connectionStringSetting`. Этот параметр задается автоматически при создании привязки на портале. Строка подключения для коллекции аренд должна иметь разрешения на запись.|
 |**leaseDatabaseName** |**LeaseDatabaseName** | (Необязательно.) Имя базы данных, в которой содержится коллекция, используемая для хранения аренд. Если значение не задано, используется значение параметра `databaseName`. Этот параметр задается автоматически при создании привязки на портале. |
 |**leaseCollectionName** | **LeaseCollectionName** | (Необязательно.) Имя коллекции, используемой для хранения аренд. Если значение не задано, используется значение `leases`. |
-|**createLeaseCollectionIfNotExists** | **CreateLeaseCollectionIfNotExists** | (Необязательно.) Если задано значение `true`, коллекция аренд создается автоматически, если она не создана. По умолчанию используется значение `false`. |
+|**createLeaseCollectionIfNotExists** | **CreateLeaseCollectionIfNotExists** | (Необязательно.) Если задано значение `true`, коллекция аренд создается автоматически, если она не создана. Значение по умолчанию — `false`. |
 |**leasesCollectionThroughput**| **LeasesCollectionThroughput**| (Необязательно.) Определяет количество единиц запросов для назначения при создании коллекции аренд. Этот параметр используется, только если для `createLeaseCollectionIfNotExists` задано значение `true`. Этот параметр задается автоматически при создании привязки с помощью портала.
 |**leaseCollectionPrefix**| **LeaseCollectionPrefix**| (Дополнительно) Если параметр задан, то он добавляет префикс к созданной аренде в коллекции аренды для этой функции, позволяя двум разным функциям Azure совместно эффективно использовать коллекцию аренд с помощью различных префиксов.
 |**feedPollDelay**| **FeedPollDelay**| (Дополнительно) Если параметр задан, то он определяет задержку между опросами секции на наличие новых изменений в веб-канале, после того как все текущие изменения будут утеряны (в миллисекундах). По умолчанию это 5000 (5 секунд).
@@ -289,7 +289,7 @@ namespace CosmosDBSamplesV2
 
 Триггер не указывает, был ли документ обновлен или вставлен. Вместо этого он представляет сам документ. Если операции обновления и вставки необходимо обрабатывать по-разному, это можно сделать, внедрив поля меток времени для операций обновления и вставки.
 
-## <a name="input"></a>Вход
+## <a name="input"></a>Ввод
 
 Входная привязка Azure Cosmos DB извлекает один или несколько документов из Azure Cosmos DB и передает их входному параметру функции через API SQL. Идентификатор документа или параметры запроса можно определить по триггеру, который вызывает функцию.
 
@@ -1529,7 +1529,7 @@ public class DocByIdFromQueryString {
 }
  ```
 
-В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@CosmosDBInput` для параметров функции, значения которых будут поступать из Cosmos DB.  Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями nullable, которые необязательно использовать<T>.
+В [библиотеке среды выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `@CosmosDBInput` для параметров функции, значения которых будут поступать из Cosmos DB.  Эту аннотацию можно использовать с собственными типами Java, POJO или значениями, допускающими значение\<null, с помощью необязательного T >.
 
 #### <a name="http-trigger-look-up-id-from-query-string---pojo-parameter-java"></a>Триггер HTTP, поисковый идентификатор из строки запроса — параметр POJO (Java)
 
@@ -1732,7 +1732,7 @@ public class DocsFromRouteSqlQuery {
 
 В функциях JavaScript изменения не обрабатываются автоматически при выходе из функции. Для внесения изменений используйте `context.bindings.<documentName>In` и `context.bindings.<documentName>Out`. Ознакомьтесь с примером на языке JavaScript.
 
-## <a name="output"></a>Выход
+## <a name="output"></a>Вывод
 
 Выходная привязка Azure Cosmos DB позволяет записать новый документ в базу данных Azure Cosmos DB с помощью API SQL.
 
@@ -2320,7 +2320,7 @@ public String cosmosDbQueryById(
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка | Справочные материалы |
+| Привязка | Ссылка |
 |---|---|
 | Cosmos DB | [Коды ошибок Cosmos DB](https://docs.microsoft.com/rest/api/cosmos-db/http-status-codes-for-cosmosdb) |
 
@@ -2345,13 +2345,13 @@ public String cosmosDbQueryById(
 }
 ```  
 
-|Свойство  |значение по умолчанию | Описание |
+|Свойство  |Значение по умолчанию | Описание |
 |---------|---------|---------| 
 |GatewayMode|Шлюз|Режим подключения, используемый функцией при подключении к службе Azure Cosmos DB. Возможные значения: `Direct` и `Gateway`.|
-|Protocol|HTTPS|Протокол подключения, используемый функцией при подключении к службе Azure Cosmos DB.  [Описание обоих режимов](../cosmos-db/performance-tips.md#networking)| 
-|leasePrefix|Недоступно|Префикс аренды для использования во всех функциях приложения.| 
+|Protocol|Https|Протокол подключения, используемый функцией при подключении к службе Azure Cosmos DB.  [Описание обоих режимов](../cosmos-db/performance-tips.md#networking)| 
+|leasePrefix|Н/Д|Префикс аренды для использования во всех функциях приложения.| 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Azure Cosmos DB: обработка данных бессерверных баз данных с помощью службы "Функции Azure"](../cosmos-db/serverless-computing-database.md)
 * [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)

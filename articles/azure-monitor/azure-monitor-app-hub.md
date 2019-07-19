@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.topic: landing-page
 ms.date: 01/15/2019
 ms.author: mbullwin
-ms.openlocfilehash: 451a2d6e658c08823d1629270bb7503ebd236c02
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5571f84de5c6dd4f5dffea5869c744b7e5c02e24
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66255698"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67875287"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -66,8 +66,9 @@ ms.locfileid: "66255698"
                                                     <div class="cardText">
                                                         <h3>Новые возможности</h3>
                                                         <p>
-                                                            <a href="./app/kubernetes.md">Мониторинг приложений в Kubernetes</a><br>
-                                                            <a href="./app/status-monitor-v2-overview.md">Состояние монитора v2 для приложений IIS</a><br>
+                                                            <a href="./app/azure-vm-vmss-apps.md">Мониторинг без кода для ВИРТУАЛЬНЫХ машин Azure и приложений масштабируемых наборов виртуальной машины Azure</a><br>
+                                                            <a href="./app/kubernetes.md">Мониторинг приложений Kubernetes</a><br>
+                                                            <a href="./app/status-monitor-v2-overview.md">монитор состояния v2 для приложений IIS</a><br>
                                                         </p>
                                                         <br><br>
                                                         <h3>Краткие руководства</h3>
@@ -80,11 +81,11 @@ ms.locfileid: "66255698"
                                                             <a href="./app/website-monitoring.md">Запуск мониторинга веб-сайта</a>
                                                         </p>
                                                         <br><br>
-                                                        <h3>Руководства</h3>
+                                                        <h3>Учебники</h3>
                                                         <p>
                                                             <a href="./learn/tutorial-runtime-exceptions.md">Поиск и диагностика исключений во время выполнения</a><br>
                                                             <a href="./learn/tutorial-performance.md">Поиск и диагностика проблем производительности</a><br>
-                                                            <a href="./learn/tutorial-alert.md">Мониторинг работоспособности приложения и оповещение о ней</a><br>
+                                                            <a href="./learn/tutorial-alert.md">Мониторинг работоспособности приложения и соответствующие оповещение</a><br>
                                                             <a href="./learn/tutorial-users.md">Использование Azure Application Insights для анализа информации о том, как пользователи используют приложение</a><br>
                                                             <a href="./learn/tutorial-app-dashboards.md">Создание настраиваемых панелей мониторинга ключевых показателей эффективности с помощью Azure Application Insights</a>
                                                             </p>
@@ -110,7 +111,7 @@ ms.locfileid: "66255698"
                                                             <a href="./app/proactive-arm-config.md">Управление правилами интеллектуального обнаружения Application Insights с помощью шаблонов Azure Resource Manager</a>
                                                         </p>
                                                         <br><br>
-                                                        <h3>Справочные материалы</h3>
+                                                        <h3>Ссылка</h3>
                                                         <p>
                                                             <a href="./app/auto-collect-dependencies.md">Автоматический сбор зависимостей</a><br>
                                                             <a href="./app/correlation.md">Корреляция данных телеметрии</a><br>
@@ -146,6 +147,7 @@ ms.locfileid: "66255698"
                                                             <a href="./app/asp-net.md">Настройка Application Insights для веб-сайта ASP.NET</a><br>
                                                             <a href="./app/monitor-performance-live-website-now.md">Монитор состояния</a><br>
                                                             <a href="./app/azure-web-apps.md">Мониторинг производительности Службы приложений Azure</a><br>
+                                                            <a href="./app/azure-vm-vmss-apps.md">Мониторинг приложений масштабируемого набора виртуальной машины и виртуальных машин</a><br>
                                                             <a href="./app/api-custom-events-metrics.md">Пользовательские события и метрики</a><br>
                                                             <a href="https://github.com/Microsoft/ApplicationInsights-dotnet">Репозиторий GitHub пакета SDK для .NET с открытым кодом</a>
                                                         </p>
@@ -183,7 +185,7 @@ ms.locfileid: "66255698"
                                                     <div class="cardText">
                                                         <h3>Анализ поведения пользователей</h3>
                                                         <p>
-                                                            <a href="./app/usage-overview.md">Обзор набора средств Visual Studio для Unity</a><br>
+                                                            <a href="./app/usage-overview.md">Обзор</a><br>
                                                             <a href="./app/usage-send-user-context.md">Отправка идентификаторов контекста пользователей для обеспечения оптимальной работы в Azure Application Insights</a><br>
                                                             <a href="./app/usage-segmentation.md">Анализ пользователей, сеансов и событий в Application Insights</a><br>
                                                             <a href="./app/usage-funnels.md">Воронки</a><br>
@@ -216,12 +218,12 @@ ms.locfileid: "66255698"
                                                         <br><br>
                                                         <h3>Модель данных</h3>
                                                         <p>
-                                                            <a href="./app/data-model.md">Обзор набора средств Visual Studio для Unity</a><br>
+                                                            <a href="./app/data-model.md">Обзор</a><br>
                                                             <a href="./app/data-model-request-telemetry.md">Запрос</a><br>
-                                                            <a href="./app/data-model-dependency-telemetry.md">Dependency</a><br>
+                                                            <a href="./app/data-model-dependency-telemetry.md">Зависимость</a><br>
                                                             <a href="./app/data-model-exception-telemetry.md">Исключение</a><br>
                                                             <a href="./app/data-model-trace-telemetry.md">Трассировка</a><br>
-                                                            <a href="./app/data-model-event-telemetry.md">Event</a><br>
+                                                            <a href="./app/data-model-event-telemetry.md">Событие</a><br>
                                                             <a href="./app/data-model-metric-telemetry.md">Метрика</a><br>
                                                             <a href="./app/data-model-context.md">Контекст телеметрии. Модель данных Application Insights</a>
                                                             </p>

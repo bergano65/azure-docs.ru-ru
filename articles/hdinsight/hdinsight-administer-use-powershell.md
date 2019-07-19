@@ -7,20 +7,20 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/17/2019
-ms.author: tylerfox
-ms.openlocfilehash: f7c894bcb3183714a76578a6750c8e85493e3094
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.author: tyfox
+ms.openlocfilehash: 2035f5c7666d93068fd8007555bfe1aadae58ff1
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67508080"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67873921"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-azure-powershell"></a>Управление кластерами Apache Hadoop в HDInsight с помощью Azure PowerShell
 [!INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
 
-Azure PowerShell можно использовать для контроля и автоматизации развертывания рабочих нагрузок, а также управления ими в Azure. В этой статье вы узнаете, как управлять [Apache Hadoop](https://hadoop.apache.org/) кластеров в Azure HDInsight с помощью модуля Azure PowerShell Az. Список командлетов HDInsight PowerShell, см. в разделе [Az.HDInsight ссылку](https://docs.microsoft.com/powershell/module/az.hdinsight).
+Azure PowerShell можно использовать для контроля и автоматизации развертывания рабочих нагрузок, а также управления ими в Azure. Из этой статьи вы узнаете, как управлять кластерами [Apache Hadoop](https://hadoop.apache.org/) в Azure HDInsight с помощью модуля Azure PowerShell AZ. Список командлетов HDInsight PowerShell см. в справочнике по [AZ. HDInsight](https://docs.microsoft.com/powershell/module/az.hdinsight).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
@@ -142,7 +142,7 @@ Grant-AzHDInsightHttpServicesAccess -ClusterName $clusterName -HttpCredential $c
 > [!NOTE]  
 > Предоставляя или отменяя доступ, вы сбрасываете имя пользователя кластера и его пароль.
 
-Предоставить и отменить доступ можно также на портале. См. в разделе [управление Apache кластерами Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md).
+Предоставить и отменить доступ можно также на портале. См. раздел [Управление кластерами Apache Hadoop в HDInsight с помощью портал Azure](hdinsight-administer-use-portal-linux.md).
 
 ## <a name="update-http-user-credentials"></a>Обновление учетных данных пользователя HTTP
 Процедура та же, что и при предоставлении или отмене доступа по протоколу HTTP. Если кластеру был предоставлен доступ по протоколу HTTP, то сначала его необходимо отменить.  После этого предоставьте доступ с новыми учетными данными пользователя HTTP.
@@ -204,7 +204,7 @@ $resourceGroupName = $cluster.ResourceGroup
 
 ## <a name="upload-data-to-azure-blob-storage"></a>Отправка данных в хранилище BLOB-объектов Azure
 
-См. в разделе [отправка данных в HDInsight](hdinsight-upload-data.md).
+См. раздел [Отправка данных в HDInsight](hdinsight-upload-data.md).
 
 ## <a name="see-also"></a>См. также
 

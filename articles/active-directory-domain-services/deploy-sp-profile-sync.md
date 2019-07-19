@@ -1,5 +1,5 @@
 ---
-title: Доменные службы Azure Active Directory. Включение поддержки службы профилей пользователей SharePoint | Документация Майкрософт
+title: Доменные службы Azure Active Directory. Включение службы профилей пользователей SharePoint | Документация Майкрософт
 description: Настройте управляемые домены доменных служб Azure Active Directory для поддержки синхронизации профилей для сервера SharePoint
 services: active-directory-ds
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: iainfou
-ms.openlocfilehash: 4293052f19ad883c9df7f177456d55c0997072e1
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 4a9ee05b37a69927d70269dccef2b74a2c251722
+ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67473488"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68234103"
 ---
 # <a name="configure-a-managed-domain-to-support-profile-synchronization-for-sharepoint-server"></a>Настройка управляемого домена для поддержки синхронизации профилей для сервера SharePoint
 Сервер SharePoint содержит службу профилей пользователей, которая используется для синхронизации профилей пользователей. Для настройки службы профилей пользователей необходимо иметь соответствующее разрешение домена Active Directory. Дополнительные сведения см. в статье [Предоставление доменным службам Active Directory разрешений для синхронизации профилей в SharePoint Server 2013](https://technet.microsoft.com/library/hh296982.aspx).

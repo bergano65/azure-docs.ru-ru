@@ -7,13 +7,13 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 01/03/2019
-ms.author: dwalthermsft
-ms.openlocfilehash: cc873ad441c93a7fce54c275e9f7d52f0b044319
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: dwalther
+ms.openlocfilehash: f3239fa5d21078795e7b063cb0364e905cba25c1
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60927559"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67846621"
 ---
 # <a name="public-preview-service-limits"></a>Ограничения в общедоступной предварительной версии службы
 
@@ -72,6 +72,6 @@ ms.locfileid: "60927559"
 
 - До 100 сообщений в секунду.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Ознакомиться с примером Azure Digital Twins на практике можно в статье [Краткое руководство. Поиск свободных помещений с помощью Azure Digital Twins](./quickstart-view-occupancy-dotnet.md).

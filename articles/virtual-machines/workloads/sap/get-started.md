@@ -1,6 +1,6 @@
 ---
-title: Начало работы с SAP на виртуальных машинах Azure | Документация Майкрософт
-description: Дополнительные сведения о решениях SAP, запущенными на виртуальных машинах (ВМ) в Microsoft Azure
+title: Приступая к работе с SAP на виртуальных машинах Azure | Документация Майкрософт
+description: Сведения о решениях SAP, которые выполняются на виртуальных машинах (ВМ) в Microsoft Azure
 services: virtual-machines-linux
 documentationcenter: ''
 author: msjuergent
@@ -14,33 +14,34 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 07/10/2019
+ms.date: 07/15/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 27e12b5f33f2e3c0024d5caa6a9bee5e9576a45a
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: df12d4f7b2a06b89df1bfd7d7d904943e341ccd2
+ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67805830"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68234254"
 ---
-# <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Используйте Azure для размещения и выполнения сценариев рабочей нагрузки SAP
+# <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и запуска сценариев рабочей нагрузки SAP
 
-При использовании Microsoft Azure, можно уверенностью выполнять критически важные рабочие нагрузки SAP и сценариев на платформе масштабируемой, совместимых и проверенные многими компаниями. Вы получите масштабируемость, гибкость и гибкостью Azure. С помощью расширенному партнерству Майкрософт и SAP могут выполняться приложения SAP в сценариях разработки и тестирования и эксплуатации в Azure и полностью поддерживаются. SAP NetWeaver, SAP S/4HANA, SAP BI в Linux для Windows и SAP HANA и SQL, мы поможем вам.
+При использовании Microsoft Azure можно надежно выполнять критически важные рабочие нагрузки и сценарии SAP на масштабируемой и совместимой платформе, проверенной на предприятии. Вы получаете масштабируемость, гибкость и экономичность Azure. Благодаря расширенному взаимоотношениям между корпорацией Майкрософт и SAP вы можете запускать приложения SAP в сценариях разработки и тестирования, а также поддерживать все рабочие сценарии в Azure. Из SAP NetWeaver в SAP S/4HANA, SAP BI в Linux для Windows и SAP HANA в SQL, мы работаем над вами.
 
-Помимо размещения сценариев SAP NetWeaver с различными СУБД в Azure, вы можете размещать другие сценарии рабочей нагрузки SAP, например SAP BI в Azure. 
+Помимо размещения сценариев SAP NetWeaver с разными СУБД в Azure, можно размещать другие сценарии рабочей нагрузки SAP, например SAP BI в Azure. 
 
-Уникальность Azure для SAP HANA — это предложение, которое задает Azure друг от друга. Возможность размещения больше памяти и ЦП с ресурсоемкими SAP сценариев, использующих SAP HANA, Azure предлагает использование специализированного клиента физического оборудования. Используйте это решение для запуска развертывания SAP HANA, которые требуют до 24 ТБ (120 ТБ горизонтального масштабирования) памяти для S/4HANA или других рабочих нагрузок SAP HANA. 
+Уникальность Azure для SAP HANA — это предложение, которое задает разделение Azure. Чтобы включить размещение большего объема памяти и сценариев SAP с ресурсоемкими ресурсами, которые включают SAP HANA, Azure предлагает использование аппаратно-необычного оборудования без операционной системы. Используйте это решение для запуска SAP HANA развертываний, требующих до 24 ТБ памяти (120 ТБ) для S/4HANA или другой SAP HANA рабочей нагрузки. 
 
-Размещение сценариев рабочей нагрузки SAP в Azure также можно создать требования к интеграции удостоверений и единого входа. Это может произойти при использовании Azure Active Directory (Azure AD) для подключения различных компонентов SAP и SAP software как услуга (SaaS) или платформа как служба (PaaS) предложения. Список таких интеграции и сценариев единого входа в Azure AD и сущности SAP описанный и описано в разделе «Интеграция удостоверений AAD SAP и единый вход.»
+Размещение сценариев рабочей нагрузки SAP в Azure также может привести к созданию требований интеграции удостоверений и единого входа. Такая ситуация может возникать, если вы используете Azure Active Directory (Azure AD) для подключения различных компонентов SAP и программного обеспечения SAP или платформы как услуги (PaaS). Список сценариев интеграции и единого входа с сущностями Azure AD и SAP описан в разделе "Интеграция AAD SAP и единый вход".
 
 ## <a name="latest-changes"></a>Последние изменения
 
-- Выпуск нового руководства для [HADR IBM Db2 в Red Hat Enterprise Server](high-availability-guide-rhel-ibm-db2-luw.md)
-- Выпуск [высокий уровень доступности SAP NetWeaver в Red Hat Enterprise Linux с файлами NetApp Azure для приложений SAP](high-availability-guide-rhel-netapp-files.md)
-- Общие сведения о пути, быстро ExpressRoute и глобальным доступом для крупных экземпляров HANA в [сетевой архитектуры SAP HANA (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-network-architecture) и связанных документов
-- Выпуск [управление крупных экземпляров HANA в Azure с помощью портала Azure](hana-li-portal.md)
-- Выпуск [высокий уровень доступности для SAP NetWeaver на виртуальных машинах Azure в SUSE Linux Enterprise Server с файлами NetApp Azure для приложений SAP](high-availability-guide-suse-netapp-files.md)
+- Выпуск [групп размещения Azure с учетом расположения для оптимальной сетевой задержки с помощью приложений SAP](sap-proximity-placement-scenarios.md)
+- Выпуск нового руководством по [IBM DB2 HADR на сервере Red Hat Enterprise](high-availability-guide-rhel-ibm-db2-luw.md)
+- Выпуск [высокого уровня доступности SAP NetWeaver на Red Hat Enterprise Linux с Azure NetApp Files для приложений SAP](high-availability-guide-rhel-netapp-files.md)
+- Знакомство с быстрыми путями ExpressRoute и Global Reach для крупных экземпляров HANA в [SAP HANA (крупные экземпляры) сетевая архитектура](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-network-architecture) и связанные документы
+- Выпуски [крупных экземпляров Azure Hana с помощью портал Azure](hana-li-portal.md)
+- Выпуск [высокого уровня доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NetApp Files для приложений SAP](high-availability-guide-suse-netapp-files.md)
 
 
 
@@ -50,25 +51,25 @@ ms.locfileid: "67805830"
 
 ## <a name="sap-hana-on-azure-large-instances"></a>SAP HANA в Azure (крупные экземпляры)
 
-Серии документов проведет вас через SAP HANA в Azure (крупные экземпляры), или сокращенно крупных экземпляров HANA. Сведения о следующих областях крупных экземпляров HANA см. в разделе:
+Серия документов поможет вам SAP HANA в Azure (крупные экземпляры) или для коротких экземпляров HANA (крупные экземпляры). Сведения о следующих областях крупных экземпляров HANA см. в разделе:
 
 - [Основные сведения о SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture)
 - [Архитектура SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-architecture)
 - [Инфраструктура и подключение к SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-infrastructure-connectivity)
 - [Установка SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-installation)
-- [Обеспечение высокого уровня доступности и аварийное восстановление SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-high-availability-disaster-recovery)
+- [Высокий уровень доступности и аварийное восстановление SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-high-availability-disaster-recovery)
 - [Устранение неполадок и мониторинг SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/troubleshooting-monitoring)
 
 Дальнейшие действия:
 
-- Чтение [Обзор и описание архитектуры SAP hana в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture)
+- Ознакомьтесь [с обзором и архитектурой SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture) .
 
 
 
 ## <a name="sap-hana-on-azure-virtual-machines"></a>SAP HANA на виртуальных машинах Azure
-Этот раздел документации охватывает различные аспекты SAP HANA. Перед началом необходимо ознакомиться с помощью субъекта-службы Azure, которые предоставляют простой службы Azure IaaS. Таким образом необходимо знание вычислений Azure, хранилища и сети. Многие из этих вопросов обрабатываются в SAP NetWeaver связанные [Azure руководство по планированию](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide). 
+Этот раздел документации охватывает различные аспекты SAP HANA. Предварительные требования должны быть знакомы с основными службами Azure, которые предоставляют простейшие службы Azure IaaS. Итак, вам необходимо знание вычислений, хранилища и сети Azure. Многие из этих субъектов обрабатываются в соответствующем разделе [руководств по планированию Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide)для SAP NetWeaver. 
 
-Сведения о HANA в Azure см. следующие статьи и их subarticles:
+Сведения о HANA в Azure см. в следующих статьях и их подразделах:
 
 - [Краткое руководство установке одного экземпляра SAP HANA вручную на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-get-started)
 - [Развертывание SAP S/4HANA или BW/4HANA в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/cal-s4h)
@@ -77,42 +78,42 @@ ms.locfileid: "67805830"
 - [Доступность SAP HANA в пределах одного региона Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-availability-one-region)
 - [Доступность SAP HANA в разных регионах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-availability-across-regions)
 - [Высокий уровень доступности SAP HANA на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-high-availability)
-- [Руководство по резервному копированию SAP HANA на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-backup-guide)
+- [Инструкции по резервному копированию для SAP HANA на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-backup-guide)
 - [Резервное копирование SAP HANA в Azure на уровне файлов](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-backup-file-level)
 - [Резервное копирование SAP HANA на основе моментальных снимков хранилища](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-backup-storage-snapshots)
 
  
 
-## <a name="sap-netweaver-deployed-on-azure-virtual-machines"></a>SAP NetWeaver, развернутых на виртуальных машинах Azure
-В этом разделе перечислены в документации по планированию и развертыванию для SAP NetWeaver и Business One в Azure. Основное внимание уделяется основы и использование баз данных не относящееся к HANA с рабочей нагрузкой SAP в Azure. Документы и статьи, для обеспечения высокой доступности также являются основой для высокого уровня доступности HANA в Azure, такие как:
+## <a name="sap-netweaver-deployed-on-azure-virtual-machines"></a>SAP NetWeaver, развернутые на виртуальных машинах Azure
+В этом разделе приведена документация по планированию и развертыванию для SAP NetWeaver и бизнеса One в Azure. В этой документации основное внимание уделяется основам и использованию баз данных, отличных от HANA, с рабочей нагрузкой SAP в Azure. Документы и статьи для обеспечения высокой доступности также являются основой для обеспечения высокого уровня доступности HANA в Azure, например:
 
 - [SAP Business One на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/business-one-azure)
 - [Развертывание SAP IDES EHP7 SP3 для SAP ERP 6.0 в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/cal-ides-erp6-erp7-sp3-sql)
-- [Запустите SAP NetWeaver на виртуальных машинах SUSE Linux Microsoft Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/suse-quickstart)
+- [Запуск SAP NetWeaver на виртуальных машинах SUSE Linux Microsoft Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/suse-quickstart)
 - [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide)
 - [Развертывание виртуальных машин Azure для SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/deployment-guide)
 - [Защита многоуровневого развертывания приложения SAP NetWeaver с помощью Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-sap)
 - [Соединитель SAP LaMa для Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/lama-installation)
 
-Сведения о базах данных не относящееся к HANA в группе рабочей нагрузки SAP в Azure см. в разделе:
+Сведения о базах данных, отличных от HANA, в рабочей нагрузке SAP в Azure см. в следующих статьях:
 
 - [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general)
 - [SAP NetWeaver на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_sqlserver)
 - [Рабочие нагрузки SAP на Виртуальных машинах Azure. Руководство по развертыванию СУБД Oracle](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_oracle)
 - [Рабочие нагрузки SAP на Виртуальных машинах Azure. Руководство по развертыванию СУБД IBM DB2](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_ibm)
 - [Рабочие нагрузки SAP на Виртуальных машинах Azure. Руководство по развертыванию СУБД SAP ASE](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_sapase)
-- [SAP MaxDB, Live кэш и сервер содержимого развертывания на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_maxdb)
+- [Развертывание SAP MaxDB, Live Cache и Content Server на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_maxdb)
 
-Сведения о базах данных SAP HANA в Azure см. в разделе «SAP HANA на виртуальных машинах Azure».
+Сведения о SAP HANA базах данных в Azure см. в разделе "SAP HANA на виртуальных машинах Azure".
 
-Дополнительные сведения о высоком уровне доступности рабочих нагрузок SAP в Azure см. в разделе:
+Сведения о высокой доступности рабочей нагрузки SAP в Azure см. в следующих статьях:
 
 - [Руководство по обеспечению высокого уровня доступности SAP NetWeaver на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-guide-start)
 
-В этом документе будет указывать на различные другие документы архитектура и сценарии. В более поздних версиях сценарий предоставляются ссылки на подробные технические документы, в которых объясняется, развертывание и настройку для различных методов высокого уровня доступности. Различные документы, которые показывают, как установить и настроить высокий уровень доступности при использовании рабочей нагрузки SAP NetWeaver охватывают операционных систем Linux и Windows.
+В этом документе указываются различные документы по архитектуре и сценариям. В последующих сценариях приведены ссылки на подробные технические документы, в которых объясняется развертывание и настройка различных методов высокого уровня доступности. Различные документы, показывающие, как установить и настроить высокий уровень доступности для рабочей нагрузки SAP NetWeaver, охватывают операционные системы Linux и Windows.
 
 
-Дополнительные сведения об интеграции между Azure Active Directory (Azure AD) и службы SAP и единый вход см. в разделе:
+Сведения о интеграции между Azure Active Directory (Azure AD) и службами SAP и единым входом см. в следующих статьях:
 
 - [Учебник. по интеграции Azure Active Directory с SAP Cloud for Customer](https://docs.microsoft.com/azure/active-directory/saas-apps/sap-customer-cloud-tutorial?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json)
 - [Руководство по интеграции Azure Active Directory с приложением SAP Cloud Platform Identity Authentication](https://docs.microsoft.com/azure/active-directory/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json)
@@ -120,9 +121,9 @@ ms.locfileid: "67805830"
 - [Руководство. Интеграция Azure Active Directory с SAP NetWeaver](https://docs.microsoft.com/azure/active-directory/saas-apps/sap-netweaver-tutorial?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json)
 - [Руководство по интеграции Azure Active Directory с SAP Business ByDesign](https://docs.microsoft.com/azure/active-directory/saas-apps/sapbusinessbydesign-tutorial?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json)
 - [Руководство интеграции Azure Active Directory с SAP HANA](https://docs.microsoft.com/azure/active-directory/saas-apps/saphana-tutorial?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json)
-- [Среды S/4HANA: Fiori панель запуска SAML единого входа в Azure AD](https://blogs.sap.com/2017/02/20/your-s4hana-environment-part-7-fiori-launchpad-saml-single-sing-on-with-azure-ad/)
+- [Среда S/4HANA: Fiori панель запуска для единого входа SAML с помощью Azure AD](https://blogs.sap.com/2017/02/20/your-s4hana-environment-part-7-fiori-launchpad-saml-single-sing-on-with-azure-ad/)
 
-Дополнительные сведения об интеграции служб Azure в компонентов SAP см. в разделе:
+Сведения об интеграции служб Azure в компоненты SAP см. в следующих статьях:
 
 - [Использование SAP HANA в Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-sap-hana)
 - [DirectQuery и SAP HANA](https://docs.microsoft.com/power-bi/desktop-directquery-sap-hana)

@@ -1,5 +1,5 @@
 ---
-title: Доменные службы Azure Active Directory. Устранение неполадок при настройке защищенного протокола LDAP | Документация Майкрософт
+title: Доменные службы Azure Active Directory. Устранение неполадок защищенного протокола LDAP | Документация Майкрософт
 description: Руководство по устранению неполадок защищенного протокола LDAP для доменных служб Azure AD
 services: active-directory-ds
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: iainfou
-ms.openlocfilehash: 453018f486ca3fda91d8447208fe3d936722522e
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 8a542f7927ddd834c7273f6ef8b251ddc35e8436
+ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67473949"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68234186"
 ---
 # <a name="azure-ad-domain-services---troubleshooting-secure-ldap-configuration"></a>Доменные службы Azure AD: устранение неполадок при настройке защищенного протокола LDAP
 
@@ -46,7 +46,7 @@ ms.locfileid: "67473949"
    4. Введите "636" для диапазонов конечного порта.
    5. Выберите протокол **TCP**.
    6. Введите соответствующее имя правила, описание и приоритет. Приоритет для этого правила должен быть выше приоритета "Запретить все" (при его наличии).
-   7. Последовательно выберите **ОК**.
+   7. Нажмите кнопку **ОК**.
 5. Убедитесь, что вы создали правило.
 6. Проверьте работоспособность домена через два часа, чтобы убедиться, что шаги выполнены правильно.
 

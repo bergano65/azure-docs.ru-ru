@@ -11,12 +11,12 @@ ms.date: 01/04/2019
 author: gauravmalhot
 ms.author: gamal
 manager: craigg
-ms.openlocfilehash: 4bd38991b2452bdda65a7647f844dcc17fdfb125
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d239e44364c3a4879f2f131717511385a4bd7037
+ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60786976"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68234442"
 ---
 # <a name="templates"></a>Шаблоны
 
@@ -40,15 +40,17 @@ ms.locfileid: "60786976"
 
 ### <a name="out-of-the-box-data-factory-templates"></a>Готовые шаблоны Фабрики данных
 
-Фабрика данных использует шаблоны Azure Resource Manager для сохранения шаблонов конвейера фабрики данных. Вы увидите все шаблоны Resource Manager, а также файл манифеста, используемые для шаблонов фабрики данных поле, в [официальный репозиторий GitHub фабрики данных Azure](https://github.com/Azure/Azure-DataFactory/tree/master/templates). Предварительно определенные шаблоны, предоставляемые корпорацией Майкрософт, включают, в частности, следующие элементы:
+Фабрика данных использует шаблоны Azure Resource Manager для сохранения шаблонов конвейера фабрики данных. Вы можете просмотреть все шаблоны диспетчер ресурсов, а также файл манифеста, используемый для использования шаблонов фабрики данных, в [официальном репозитории GitHub фабрики данных Azure](https://github.com/Azure/Azure-DataFactory/tree/master/templates). Предварительно определенные шаблоны, предоставляемые корпорацией Майкрософт, включают, в частности, следующие элементы:
 
 -   Шаблоны копирования:
 
     -   [Массовое копирование из базы данных](solution-template-bulk-copy-with-control-table.md)
     
-    -   [Копировать новые файлы, Дата последнего изменения](solution-template-copy-new-files-lastmodifieddate.md)
+    -   [Копировать новые файлы по LastModifiedDate](solution-template-copy-new-files-lastmodifieddate.md)
 
     -   [Копирование нескольких контейнеров файлов между файловыми хранилищами](solution-template-copy-files-multiple-containers.md)
+
+    -   [Перемещение файлов](solution-template-move-files.md)
 
     -   [Разностное копирование из базы данных](solution-template-delta-copy-with-control-table.md)
 

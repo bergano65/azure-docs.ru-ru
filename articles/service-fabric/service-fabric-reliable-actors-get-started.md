@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 03/16/2018
+ms.date: 07/10/2019
 ms.author: vturecek
-ms.openlocfilehash: b6ca4810d86bb3c8413f0a740ac4483a848b8e10
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d870690416f96a2e1c24e6de16bdc8faa060f6bd
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60726388"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68225165"
 ---
 # <a name="getting-started-with-reliable-actors"></a>Приступая к работе с Reliable Actors
 > [!div class="op_single_selector"]
@@ -28,17 +28,17 @@ ms.locfileid: "60726388"
 
 В этой статье описывается создание и отладка простого приложения Reliable Actor в Visual Studio. Дополнительные сведения о Reliable Actors см. в статье [Общие сведения о надежных субъектах Service Fabric](service-fabric-reliable-actors-introduction.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Приступая к работе, убедитесь, что на вашем компьютере установлена и настроена среда разработки Service Fabric, включая Visual Studio. Дополнительные сведения см. в разделе [Подготовка среды разработки в Linux](service-fabric-get-started.md).
 
 ## <a name="create-a-new-project-in-visual-studio"></a>Создание проекта в Visual Studio
 
-Запустите Visual Studio 2015 или более поздней версии от имени администратора и создайте **проект приложения Service Fabric**.
+Запустите Visual Studio 2019 или более поздней версии с правами администратора, а затем создайте новый проект **приложения Service Fabric** .
 
 ![Средства Service Fabric для Visual Studio — новый проект][1]
 
-В следующем диалоговом окне выберите **служба субъектов** под **.NET Core 2.0** и введите имя для службы.
+В следующем диалоговом окне выберите **службу субъектов** в разделе **.NET Core 2,0** и введите имя службы.
 
 ![Шаблоны проекта Service Fabric][5]
 
@@ -116,7 +116,7 @@ internal class HelloWorld : Actor, IHelloWorld
 
     Пакет NuGet и все его зависимости будут установлены в проект ActorClient.
 
-5. В проекте клиента также требуется ссылка на проект интерфейсов.  В проекте ActorClient щелкните правой кнопкой мыши **Зависимости** и выберите **Добавить ссылку**.  Выберите **Проекты > Решение** (если не выбрали ранее), затем установите флажок рядом с проектом **HelloWorld.Interfaces**.  Последовательно выберите **ОК**.
+5. В проекте клиента также требуется ссылка на проект интерфейсов.  В проекте ActorClient щелкните правой кнопкой мыши **Зависимости** и выберите **Добавить ссылку**.  Выберите **Проекты > Решение** (если не выбрали ранее), затем установите флажок рядом с проектом **HelloWorld.Interfaces**.  Нажмите кнопку **ОК**.
     
     ![Диалоговое окно "Добавление ссылки"][7]
 
@@ -157,7 +157,7 @@ internal class HelloWorld : Actor, IHelloWorld
 > [!TIP]
 > В среде выполнения субъектов Service Fabric предусмотрены некоторые [события и счетчики производительности, связанные с методами субъекта](service-fabric-reliable-actors-diagnostics.md#actor-method-events-and-performance-counters). Они полезны при диагностике и мониторинге производительности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Узнайте больше о том, [как Reliable Actors использует платформу Service Fabric](service-fabric-reliable-actors-platform.md).
 
 

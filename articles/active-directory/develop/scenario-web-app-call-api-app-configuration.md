@@ -1,6 +1,6 @@
 ---
-title: Веб-приложения, что вызовы веб-API (Настройка кода) — платформе Microsoft identity
-description: Узнайте, как создать веб-приложение, вызовы веб-API-интерфейсы (конфигурации кода приложения)
+title: Веб-приложение, вызывающее веб-API (конфигурация кода) — платформа Microsoft Identity
+description: Узнайте, как создать веб-приложение, вызывающее веб-API (конфигурация кода приложения).
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -11,40 +11,40 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 07/16/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c78a951258e3c279f96f44ceac469e4c38cf22c
-ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
+ms.openlocfilehash: 15c12aebccf34957db8442034ebbcd6ac7c107e1
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67785558"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68276726"
 ---
-# <a name="web-app-that-calls-web-apis---code-configuration"></a>Веб-приложения, что вызовы веб-интерфейсы API — код конфигурации
+# <a name="web-app-that-calls-web-apis---code-configuration"></a>Веб-приложение, вызывающее веб-API — конфигурация кода
 
-Как видно из [сценарий входа в систему пользователей веб-приложения](scenario-web-app-sign-user-overview.md)при условии, что вход пользователя делегируется Open ID connect (OIDC) по промежуточного слоя, чтобы ловушка вверх в процессе OIDC. Способ сделать это различается в зависимости от платформы вы использовали (здесь ASP.NET и ASP.NET Core), но в итоге будет подписаться на события по промежуточного слоя OIDC. Принцип является то, что:
+Как видно в сценарии входа в [веб-приложение](scenario-web-app-sign-user-overview.md), учитывая, что вход пользователя делегируется по промежуточного слоя Open ID Connect (OIDC), который требуется подключить в процессе OIDC. Это отличается в зависимости от используемой платформы (здесь ASP.NET и ASP.NET Core), но в конце вы будете подписываться на события промежуточного слоя OIDC. Принцип состоит в том, что:
 
-- Вы разрешаете ASP.NET или ASP.NET core запрос кода авторизации. Во время работы этого ASP.NET/ASP.NET core сообщит пользователю вход и с согласия пользователя
-- Веб-приложением, будет подписаться на получение кода авторизации.
-- Получив код проверки подлинности, вы используете библиотеки MSAL для активировать код и полученных маркеров доступа и обновите хранилище токенов в кэше токенов. После этого кэша можно использовать в других частях приложения для получения других маркеров без вмешательства пользователя.
+- Вы разрешите ASP.NET или ASP.NET Core запросить код авторизации. Выполняя эту ASP.NET/ASP.NET ядро, вы сможете войти в систему и дать согласие на вход,
+- Вы будете подписываться на получение кода авторизации веб-приложением.
+- После получения кода проверки подлинности вы будете использовать библиотеки MSAL для активации кода и результирующих маркеров доступа и хранилища маркеров обновления в кэше маркеров. После этого кэш можно использовать в других частях приложения для получения других маркеров автоматически.
 
-## <a name="libraries-supporting-web-app-scenarios"></a>Библиотеки, поддерживая сценарии веб-приложения
+## <a name="libraries-supporting-web-app-scenarios"></a>Библиотеки, поддерживающие сценарии веб-приложений
 
-Ниже приведены библиотеки, которые поддерживают поток кода авторизации для веб-приложений.
+Библиотеки, поддерживающие поток кода авторизации для веб-приложений:
 
 | Библиотека MSAL | Описание |
 |--------------|-------------|
-| ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Поддерживаемыми платформами являются платформы .NET Framework и .NET Core (не UWP, Xamarin.iOS и Xamarin.Android, как эти платформы используются для построения общедоступных клиентских приложений) |
-| ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL.Python | Разработка решений в ход выполнения — в общедоступной предварительной версии |
-| ![Java](media/sample-v2-code/logo_java.png) <br/> MSAL. Java | Разработка решений в ход выполнения — в общедоступной предварительной версии |
+| ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Поддерживаемыми платформами являются .NET Framework и платформы .NET Core (не UWP, Xamarin. iOS и Xamarin. Android, так как эти платформы используются для создания общедоступных клиентских приложений). |
+| ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL. Языке | Выполняется разработка — в общедоступной предварительной версии |
+| ![Java](media/sample-v2-code/logo_java.png) <br/> MSAL. Java | Выполняется разработка — в общедоступной предварительной версии |
 
-## <a name="aspnet-core-configuration"></a>Конфигурации ASP.NET Core
+## <a name="aspnet-core-configuration"></a>Конфигурация ASP.NET Core
 
-В ASP.NET Core, выполняются действия в `Startup.cs` файл. Стоит подписаться на `OnAuthorizationCodeReceived` открыть Идентификатором мероприятие connect, а из этого события, вызовите MSAL. Метод NET `AcquireTokenFromAuthorizationCode` которого действует хранение в кэше маркера, маркер доступа для запрошенной области и маркер обновления, который будет использоваться для обновления маркера доступа, когда оно находится рядом истечения срока действия, чтобы получить маркер от имени одного пользователя , но для другого ресурса.
+В ASP.NET Core вещи происходят в `Startup.cs` файле. Вам нужно оформить подписываться на `OnAuthorizationCodeReceived` событие Open ID Connect и из этого события вызвать MSAL. Метод `AcquireTokenFromAuthorizationCode` NET, который оказывает воздействие на хранение в кэше маркеров, маркер доступа для запрошенных областей и маркер обновления, который будет использоваться для обновления маркера доступа, когда он близок к истечению срока действия, или для получения маркера от имени того же пользователя. , но для другого ресурса.
 
-Комментарии в коде ниже, поможет вам понять некоторые аспекты непросто weaving MSAL.NET и ASP.NET Core. Подробные сведения приведены в [ASP.NET Core Web app добавочные учебника, Глава 2](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-1-Call-MSGraph)
+Комментарии в приведенном ниже коде помогут вам разобраться в некоторых незамысловатых аспектах MSAL.NET и ASP.NET Core. Подробные сведения см. в [разделе Пошаговое руководство по ASP.NET Core веб-приложения, глава 2](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-1-Call-MSGraph)
 
 ```CSharp
   services.Configure<OpenIdConnectOptions>(AzureADDefaults.OpenIdScheme, options =>
@@ -88,7 +88,7 @@ ms.locfileid: "67785558"
    };
 ```
 
-В ASP.NET Core конфиденциальные клиентское приложение использует данные, в HttpContext. Этот HttpContext знает об URL-адрес для веб-приложения, а также вошедшего в систему пользователя (в `ClaimsPrincipal`). Он также использует конфигурации ASP.NET Core, который имеет раздел «AzureAD», и который связан с `_applicationOptions` структуру данных. Наконец, приложение должно поддерживать кэши маркеров.
+В ASP.NET Core сборка конфиденциального клиентского приложения использует сведения, содержащиеся в HttpContext. Этот объект HttpContext знает о URL-адресе приложения и вошедшем в него `ClaimsPrincipal`пользователе (в). Он также использует конфигурацию ASP.NET Core, которая содержит раздел "AzureAD" и привязан к `_applicationOptions` структуре данных. Наконец, приложению необходимо поддерживать кэши маркеров.
 
 ```CSharp
 /// <summary>
@@ -128,11 +128,11 @@ private IConfidentialClientApplication BuildConfidentialClientApplication(HttpCo
 }
 ```
 
-`AcquireTokenByAuthorizationCode` действительно активирует код авторизации, автор запроса ASP.NET и получает маркеры, которые добавляются в кэш маркеров MSAL.NET пользователя. После этого они затем используется, контроллеры ASP.NET Core.
+`AcquireTokenByAuthorizationCode`фактически активирует код авторизации, запрошенный ASP.NET, и получает маркеры, которые добавляются в кэш пользовательских маркеров MSAL.NET. После этого они будут использоваться в контроллерах ASP.NET Core.
 
 ## <a name="aspnet-configuration"></a>Конфигурация ASP.NET
 
-Способ ASP.NET обрабатывает действия аналогичен предыдущему, за исключением того, что конфигурация OpenIdConnect и подписка на `OnAuthorizationCodeReceived` событие происходит в `App_Start\Startup.Auth.cs` файл. Вы увидите подобные концепции, за исключением того, что здесь нужно будет указать URI перенаправления в файле конфигурации, который является менее надежной:
+Метод ASP.NET обрабатывает вещи, за исключением того, что конфигурация OpenIdConnect и подписка на `OnAuthorizationCodeReceived` событие происходит `App_Start\Startup.Auth.cs` в файле. Вы найдете аналогичные концепции, за исключением того, что здесь необходимо указать RedirectUri в файле конфигурации, что немного менее надежно:
 
 ```CSharp
 private void ConfigureAuth(IAppBuilder app)
@@ -180,18 +180,21 @@ private async Task OnAuthorizationCodeReceived(AuthorizationCodeReceivedNotifica
 }
 ```
 
-### <a name="msalnet-token-cache-for-a-aspnet-core-web-app"></a>Токен MSAL.NET кэша для приложения веб-ASP.NET (ядра)
+Наконец, вместо секрета клиента конфиденциальное клиентское приложение также может доказать свою личность с помощью сертификата клиента или утверждения клиента.
+Использование утверждений клиента является расширенным сценарием, подробно описанным в [проверочных утверждениях клиента](msal-net-client-assertions.md) .
 
-В веб-приложений (или веб-API, что это случится), реализацию кэша маркеров отличается от реализации кэша маркера настольных приложений (которые часто являются [файла](scenario-desktop-acquire-token.md#file-based-token-cache). Его можно использовать сеанс ASP.NET/ASP.NET Core, кэш Redis, или базу данных или даже хранилище BLOB-объектов Azure. В коде фрагмент кода выше это — объект `EnablePersistence(HttpContext, clientApp.UserTokenCache, clientApp.AppTokenCache);` вызов метода, который привязывает службы кэша. Сведения о том, что произойдет, здесь выходит за рамки данного руководства сценария, но ниже приводятся ссылки.
+### <a name="msalnet-token-cache-for-a-aspnet-core-web-app"></a>Кэш маркеров MSAL.NET для веб-приложения ASP.NET (Core)
+
+В веб-приложениях (или веб-API) реализация кэша маркеров отличается от реализации кэша маркеров настольных приложений (которые часто [основаны на файлах](scenario-desktop-acquire-token.md#file-based-token-cache)). Он может использовать сеанс ASP.NET/ASP.NET Core, кэш Redis или базу данных или даже хранилище BLOB-объектов Azure. В приведенном выше фрагменте кода это объект `EnablePersistence(HttpContext, clientApp.UserTokenCache, clientApp.AppTokenCache);` вызова метода, который привязывает службу кэша. Подробные сведения о том, что здесь происходит, выходит за рамки этого сценария, но ссылки приведены ниже.
 
 > [!IMPORTANT]
-> — Это очень важно осознавать, что для веб-приложений и веб-API, должен быть один кэш маркеров на пользователя (в учетной записи). Сериализацию кэша маркеров также следует выполнять отдельно для каждой учетной записи.
+> Очень важно понимать, что для веб-приложений и веб-API должен существовать один кэш маркеров на пользователя (на учетную запись). Сериализацию кэша маркеров также следует выполнять отдельно для каждой учетной записи.
 
-Примеры того, как использовать кэш маркеров для веб-приложений и веб-API доступны в [руководство по приложениям ASP.NET Core Web](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial) на этапе [кэш маркеров 2-2](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-2-TokenCache). Пример реализации можно изучить в папке [TokenCacheProviders](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet/tree/master/src/Microsoft.Identity.Client.Extensions.Web/TokenCacheProviders) в библиотеке [microsoft-authentication-extensions-for-dotnet](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet) (доступна из папки [ Microsoft.Identity.Client.Extensions.Web](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet/tree/master/src/Microsoft.Identity.Client.Extensions.Web)).
+Примеры использования кэшей маркеров для веб-приложений и веб-API см. в [руководстве по ASP.NET Core веб-приложения](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial) в [кэше маркеров](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-2-TokenCache)на этапе 2-2. Пример реализации можно изучить в папке [TokenCacheProviders](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet/tree/master/src/Microsoft.Identity.Client.Extensions.Web/TokenCacheProviders) в библиотеке [microsoft-authentication-extensions-for-dotnet](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet) (доступна из папки [ Microsoft.Identity.Client.Extensions.Web](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet/tree/master/src/Microsoft.Identity.Client.Extensions.Web)).
 
 ## <a name="next-steps"></a>Следующие шаги
 
-На этом этапе когда пользователь выполняет вход маркера хранится в кэш маркеров. Давайте посмотрим, как он затем используется в других частях веб-приложения.
+На этом этапе, когда пользователь входит в маркер, он хранится в кэше маркеров. Давайте посмотрим, как он используется в других частях веб-приложения.
 
 > [!div class="nextstepaction"]
-> [Войдите в веб-приложение](scenario-web-app-call-api-sign-in.md)
+> [Вход в веб-приложение](scenario-web-app-call-api-sign-in.md)

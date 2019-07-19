@@ -8,16 +8,16 @@ ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
 author: AyoOlubeko
-ms.author: ayolubek
+ms.author: craigg
 ms.reviewer: sstein
 manager: craigg
 ms.date: 01/14/2019
-ms.openlocfilehash: c96f2dc2b44ea2118d9f0dd6c988017efcba5800
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d6977f9f957aba2c01265f750f82847e16d299ee
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60557075"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67872036"
 ---
 # <a name="use-geo-restore-to-recover-a-multitenant-saas-application-from-database-backups"></a>Использование геовосстановления для восстановления мультитенантного приложения SaaS из резервных копий базы данных
 
@@ -363,7 +363,7 @@ ms.locfileid: "60557075"
 
 В ходе возвращения в исходное расположение базы данных клиентов еще некоторое время могут быть распределены между регионом восстановления и исходным регионом. Для каждой базы данных приложение ищет регион, в котором размещена база данных, выполняя поиск DNS по имени сервера клиента. В базе данных SQL имя сервера является псевдонимом. Псевдоним имени сервера содержит имя региона. Если приложение не находится в том же регионе, что и база данных, оно перенаправляется к экземпляру в том же регионе, где находится сервер базы данных. Перенаправление к экземпляру в том же регионе, где расположена база данных, минимизирует задержку между приложением и базой данных.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы узнали, как:
 > [!div class="checklist"]

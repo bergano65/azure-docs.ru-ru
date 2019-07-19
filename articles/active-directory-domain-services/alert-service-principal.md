@@ -1,5 +1,5 @@
 ---
-title: Доменные службы Azure Active Directory. Устранение неполадок при настройке субъекта-службы | Документация Майкрософт
+title: Доменные службы Azure Active Directory. Устранение неполадок субъектов-служб | Документация Майкрософт
 description: Устранение неполадок конфигурации субъекта-службы для доменных служб Azure AD
 services: active-directory-ds
 documentationcenter: ''
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/14/2019
 ms.author: iainfou
-ms.openlocfilehash: 5b94fca6087da61fe10d6c80b3fe7cfb5798f2d3
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 9e5fa8c84f5e7ca58117666846b603a118826150
+ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67473902"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68234143"
 ---
-# <a name="troubleshoot-invalid-service-principal-configuration-for-your-managed-domain"></a>Устранение неполадок с недопустимой конфигурацией субъекта-службы для управляемого домена
+# <a name="troubleshoot-invalid-service-principal-configurations-for-azure-active-directory-domain-services"></a>Устранение недопустимых конфигураций субъекта-службы для Azure Active Directory доменных служб
 
 Эта статья поможет вам определить и устранить ошибки конфигурации субъекта-службы, которые приводят к появлению следующего оповещения.
 

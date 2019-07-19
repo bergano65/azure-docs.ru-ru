@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: Сведения о создании общедоступной подсистемы Load Balancer (цен. категория "Стандартный") с избыточным интерфейсным общедоступным IP-адресом между зонами с помощью интерфейса командной строки Azure
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 manager: twooley
 ms.service: load-balancer
 ms.devlang: na
@@ -13,13 +13,13 @@ ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/22/2018
-ms.author: kumud
-ms.openlocfilehash: 40396a8ef62553dd3ec721e97fe08bf8aa51c731
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: allensu
+ms.openlocfilehash: 2dcd7d2cffa567307e1d6eb4326a379bc2d409be
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66122115"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68275170"
 ---
 #  <a name="create-a-standard-load-balancer-with-zone-redundant-frontend-using-azure-cli"></a>Создание экземпляра Load Balancer (цен. категория "Стандартный") с избыточным между зонами интерфейсным сервером с помощью Azure CLI
 
@@ -78,7 +78,7 @@ az network lb rule create --resource-group myResourceGroup --lb-name myLoadBalan
   --backend-pool-name myBackEndPool --probe-name myHealthProbe
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Дополнительные сведения см. в статье [Azure Load Balancer уровня "Стандартный" и зоны доступности](load-balancer-standard-availability-zones.md).
 
 

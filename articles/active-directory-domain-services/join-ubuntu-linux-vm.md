@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: iainfou
-ms.openlocfilehash: b21c5c517b1f4a1cbcbf2028a079793c70996d58
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 29a6cb69a818ed11e5f20dddd7299c01fbefbf47
+ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67473120"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68234018"
 ---
 # <a name="join-an-ubuntu-virtual-machine-in-azure-to-a-managed-domain"></a>Присоединение виртуальной машины Ubuntu к управляемому домену в Azure
 Из этой статьи вы узнаете, как присоединить виртуальную машину Ubuntu Linux к управляемому домену доменных служб Azure AD.
@@ -57,15 +57,16 @@ ms.locfileid: "67473120"
 ## <a name="configure-the-hosts-file-on-the-linux-virtual-machine"></a>Настройка файла hosts на виртуальной машине Linux
 В окне терминала SSH откройте файл /etc/hosts для редактирования, чтобы изменить в нем IP-адрес и имя узла вашего компьютера.
 
-```
+```console
 sudo vi /etc/hosts
 ```
 
 Добавьте следующее значение в файл hosts:
 
-```
+```console
 127.0.0.1 contoso-ubuntu.contoso100.com contoso-ubuntu
 ```
+
 В этом примере contoso100.com — это DNS-имя управляемого домена, а contoso-ubuntu — это имя узла виртуальной машины Ubuntu, присоединяемой к управляемому домену.
 
 
@@ -74,12 +75,13 @@ sudo vi /etc/hosts
 
 1.  В терминале SSH введите команду ниже, чтобы загрузить списки пакетов из репозиториев. Эта команда обновляет списки пакетов для получения сведений о последних версиях пакетов и их зависимостях.
 
-    ```
+    ```console
     sudo apt-get update
     ```
 
 2. Введите следующую команду, чтобы установить необходимые пакеты.
-    ```
+
+    ```console
       sudo apt-get install krb5-user samba sssd sssd-tools libnss-sss libpam-sss ntp ntpdate realmd adcli
     ```
 
@@ -87,27 +89,26 @@ sudo vi /etc/hosts
 
     > [!TIP]
     > Например, если управляемый домен имеет имя contoso100.com, введите название области CONTOSO100.COM. Не забывайте, что имя должно быть в ВЕРХНЕМ РЕГИСТРЕ.
-    >
-    >
 
 
 ## <a name="configure-the-ntp-network-time-protocol-settings-on-the-linux-virtual-machine"></a>Настройка параметров протокола NTP на виртуальной машине Linux
 Дата и время на виртуальной машине Ubuntu должны синхронизироваться с управляемым доменом. Добавьте имя узла NTP из управляемого домена в файл /etc/ntp.conf.
 
-```
+```console
 sudo vi /etc/ntp.conf
 ```
 
 Добавьте следующее значение в файл ntp.conf и сохраните этот файл:
 
-```
+```console
 server contoso100.com
 ```
+
 В этом примере contoso100.com — это DNS-имя управляемого домена.
 
 Теперь на виртуальной машине Ubuntu выполните синхронизацию даты и времени с NTP-сервером, а затем запустите службу NTP.
 
-```
+```console
 sudo systemctl stop ntp
 sudo ntpdate contoso100.com
 sudo systemctl start ntp
@@ -119,7 +120,7 @@ sudo systemctl start ntp
 
 1. Выполните поиск управляемого домена доменных служб AAD. В окне терминала SSH введите следующую команду:
 
-    ```
+    ```console
     sudo realm discover CONTOSO100.COM
     ```
 
@@ -136,7 +137,7 @@ sudo systemctl start ntp
     > * Введите доменное имя заглавными буквами, иначе операция с использованием kinit завершится ошибкой.
     >
 
-    ```
+    ```console
     kinit bob@CONTOSO100.COM
     ```
 
@@ -144,9 +145,8 @@ sudo systemctl start ntp
 
     > [!TIP]
     > Используйте ту же учетную запись пользователя, которую вы указали на предыдущем шаге (kinit).
-    >
 
-    ```
+    ```console
     sudo realm join --verbose CONTOSO100.COM -U 'bob@CONTOSO100.COM' --install=/
     ```
 
@@ -155,29 +155,34 @@ sudo systemctl start ntp
 
 ## <a name="update-the-sssd-configuration-and-restart-the-service"></a>Обновление конфигурации SSSD и перезапуск службы
 1. В окне терминала SSH введите команду ниже. Откройте файл sssd.conf и внесите в него следующее изменение:
-    ```
+    
+    ```console
     sudo vi /etc/sssd/sssd.conf
     ```
 
 2. Закомментируйте строку **use_fully_qualified_names = True** и сохраните файл.
-    ```
+    
+    ```console
     # use_fully_qualified_names = True
     ```
 
 3. Перезапустите службу SSHD.
-    ```
+    
+    ```console
     sudo service sssd restart
     ```
 
 
 ## <a name="configure-automatic-home-directory-creation"></a>Настройка автоматического создания домашнего каталога
 Чтобы включить автоматическое создание домашнего каталога при первом входе пользователя, введите следующие команды в окне терминала PuTTY:
-```
+
+```console
 sudo vi /etc/pam.d/common-session
 ```
 
 В этом файле под строкой session optional pam_sss.so добавьте новую строку с указанными ниже данными и сохраните файл.
-```
+
+```console
 session required pam_mkhomedir.so skel=/etc/skel/ umask=0077
 ```
 
@@ -186,17 +191,20 @@ session required pam_mkhomedir.so skel=/etc/skel/ umask=0077
 Проверьте, присоединена ли виртуальная машина к управляемому домену. Подключитесь к виртуальной машине Ubuntu, присоединенной к домену, используя другое SSH-подключение. Используйте учетную запись пользователя домена и проверьте, правильно ли разрешится эта учетная запись.
 
 1. В окне терминала SSH введите команду ниже, чтобы подключиться по протоколу SSH к виртуальной машине Ubuntu, присоединенной к домену. Используйте учетную запись домена, которая принадлежит к управляемому домену (в нашем примере — bob@CONTOSO100.COM).
-    ```
+    
+    ```console
     ssh -l bob@CONTOSO100.COM contoso-ubuntu.contoso100.com
     ```
 
 2. Чтобы проверить, правильно ли инициализирован корневой каталог, в окне терминала SSH введите следующую команду:
-    ```
+    
+    ```console
     pwd
     ```
 
 3. Чтобы проверить, правильно ли определено членство в группе, в окне терминала SSH введите следующую команду:
-    ```
+    
+    ```console
     id
     ```
 
@@ -205,12 +213,14 @@ session required pam_mkhomedir.so skel=/etc/skel/ umask=0077
 Вы можете предоставить всем членам группы "Администраторы контроллера домена AAD" административные привилегии на виртуальной машине Ubuntu. Файл sudo хранится в файле /etc/sudoers. Члены групп AD, добавленных в этот файл, имеют право выполнять команду sudo.
 
 1. Убедитесь, что в терминале SSH вы имеете права суперпользователя. Для этого можно использовать учетную запись локального администратора, которую вы указали при создании виртуальной машины. Выполните следующую команду:
-    ```
+    
+    ```console
     sudo vi /etc/sudoers
     ```
 
 2. Добавьте следующую запись в файл /etc/sudoers и сохраните его:
-    ```
+    
+    ```console
     # Add 'AAD DC Administrators' group members as admins.
     %AAD\ DC\ Administrators ALL=(ALL) NOPASSWD:ALL
     ```

@@ -3,20 +3,20 @@ title: Извлечение метрик через REST API
 titlesuffix: Azure Load Balancer
 description: Azure REST API позволяет собирать метрики работоспособности и использования Load Balancer за определенный диапазон времени и дат.
 services: sql-database
-author: KumudD
+author: asudbring
 ms.reviewer: routlaw
 manager: jeconnoc
 ms.service: load-balancer
 ms.custom: REST, seodec18
 ms.topic: article
 ms.date: 06/06/2017
-ms.author: KumudD
-ms.openlocfilehash: 9f5206ef5348ee8fd7b3fe981a9cfe4afc1367fb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: allensu
+ms.openlocfilehash: 0d12dc04aff58dd6273d8d29d422bdbd9e7c886b
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60734547"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68274526"
 ---
 # <a name="get-load-balancer-utilization-metrics-using-the-rest-api"></a>Получение метрик использования Load Balancer с помощью REST API
 
@@ -53,7 +53,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 | Интервал времени | Временной диапазон запроса. Это строка в формате `startDateTime_ISO/endDateTime_ISO`. Этот необязательный параметр имеет значение для возврата суточных данных в примере. |
 | &nbsp; | &nbsp; |
 
-### <a name="request-body"></a>Текст запроса
+### <a name="request-body"></a>Тело запроса
 
 Для этой операции текст запроса не требуется.
 

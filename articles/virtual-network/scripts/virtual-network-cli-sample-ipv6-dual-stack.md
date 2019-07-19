@@ -1,7 +1,7 @@
 ---
-title: Пример скрипта Azure CLI — Настройка IPv6 конечных точек виртуальной сети (Предварительная версия)
+title: Пример скрипта Azure CLI. Настройка конечных точек виртуальной сети IPv6 (Предварительная версия)
 titlesuffix: Azure Virtual Network
-description: Включить конечные точки IPv6, с помощью Azure CLI в виртуальной сети Azure
+description: Включение конечных точек IPv6 с помощью Azure CLI в виртуальной сети Azure
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -12,31 +12,33 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 04/23/2019
 ms.author: kumud
-ms.openlocfilehash: a1c8f151a4c6459064d92ff2efb44fa8b74f8fc1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3df475ce89a3b1f5a1acfb20dc427fdb7a9b7d16
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "63761463"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68248901"
 ---
-# <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-preview"></a>Настройте конечные точки IPv6 в примере сценария виртуальной сети (Предварительная версия)
+# <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-preview"></a>Пример настройки конечных точек IPv6 в сценарии виртуальной сети (Предварительная версия)
 
-В этой статье показано, как развернуть приложение в Azure, которая включает в себя двойной стек виртуальной сети с подсетью двойной стек, подсистему балансировки нагрузки с помощью интерфейсные конфигурации двумя (IPv4 + IPv6), виртуальные машины с сетевыми интерфейсами, которые имеют два IP-конфигурацию, двойной стек (IPv4 + IPv6) правила группы безопасности сети с двумя и два общедоступных IP-адресов.
+В этой статье показано, как развернуть приложение с двойным стеком (IPv4 + IPv6) в Azure, включающее в себя виртуальную сеть с двумя стеками с двойной подсетью, подсистемой балансировки нагрузки с двумя интерфейсными конфигурациями (IPv4 + IPv6), виртуальными машинами с двумя сетевыми картами, которые имеют сдвоенную конфигурацию IP два правила группы безопасности сети и два общедоступных IP-адреса.
 
 Вы можете выполнить скрипт из Azure [Cloud Shell](https://shell.azure.com/bash) или из локальной установки Azure CLI. Если вы используете CLI локально, для этого скрипта требуется версия 2.0.28 или выше. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). Если интерфейс командной строки запущен локально, необходимо также выполнить командлет `az login`, чтобы создать подключение к Azure.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Технические условия
-Чтобы использовать IPv6 для компонентов виртуальной сети Azure, необходимо настроить подписку только один раз следующим образом:
+## <a name="prerequisites"></a>предварительные требования
+Чтобы использовать функцию IPv6 для виртуальной сети Azure, необходимо настроить подписку только один раз следующим образом.
 
 ```azurecli
 az feature register --name AllowIPv6VirtualNetwork --namespace Microsoft.Network
+az feature register --name AllowIPv6CAOnStandardLB --namespace Microsoft.Network
 ```
-Регистрация функции занимает до 30 минут. Можно проверить состояние регистрации, выполнив следующую команду Azure CLI:
+Регистрация функции занимает до 30 минут. Состояние регистрации можно проверить, выполнив следующую команду Azure CLI:
 
 ```azurelci
 az feature show --name AllowIPv6VirtualNetwork --namespace Microsoft.Network
+az feature show --name AllowIPv6CAOnStandardLB --namespace Microsoft.Network
 ```
 После регистрации выполните следующую команду:
 
@@ -271,7 +273,7 @@ az group delete --name <resourcegroupname> --yes
 
 Для создания группы ресурсов, виртуальной машины, группы доступности, балансировщика нагрузки и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Command | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet#az-network-vnet-create) | Создает виртуальную сеть и подсеть Azure. |
@@ -287,7 +289,7 @@ az group delete --name <resourcegroupname> --yes
 | [az vm create](/cli/azure/vm#az-vm-create) | Создает виртуальную машину и подключает ее к сетевой карте, виртуальной сети, подсети и группе безопасности сети. Эта команда также указывает образ виртуальной машины, который будет использоваться, и учетные данные администратора.  |
 | [az group delete](https://docs.microsoft.com/cli/azure/vm/extension#az-vm-extension-set) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 

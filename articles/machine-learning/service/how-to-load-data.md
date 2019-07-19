@@ -10,35 +10,35 @@ ms.author: sihhu
 author: MayMSFT
 manager: cgronlun
 ms.reviewer: jmartens
-ms.date: 02/22/2019
+ms.date: 07/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: fef3281f1f4e727b58878439e3f6456fee3b6241
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0fa60198af66154e0ddc703f90224adf5be89447
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66752932"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67876408"
 ---
-# <a name="load-and-read-data-with-the-azure-machine-learning-data-prep-sdk"></a>Загрузить и считывание данных с помощью пакета SDK Azure Machine Learning данных подготовки
-В этой статье вы узнаете, различных методов загрузки данных с помощью пакета SDK Azure Machine Learning данных подготовки.  Этот пакет SDK поддерживает несколько функций приема данных, включая:
+# <a name="load-and-read-data-with-the-azure-machine-learning-data-prep-sdk"></a>Загрузка и чтение данных с помощью Машинное обучение Azure пакета SDK для подготовки данных
+В этой статье вы узнаете о различных методах загрузки данных с помощью Машинное обучение Azure пакета SDK для подготовки данных.  Этот пакет SDK поддерживает несколько функций приема данных, включая:
 
 * загрузка из файлов многих типов с автоматическим обнаружением параметров для синтаксического анализа (кодировка, разделитель, заголовки);
 * преобразование типов на основе зависимостей во время загрузки файла;
 * поддержка подключений к MS SQL Server и хранилищу Azure Data Lake.
 
 > [!Important]
-> Если вы создаете новое решение, попробуйте [наборы данных обучения машины Azure](how-to-explore-prepare-data.md) (Предварительная версия) для просмотра данных и подготовки. Наборы данных — следующая версия пакета SDK, предлагая расширенными функциональными возможностями по управлению наборов данных в решения искусственного Интеллекта подготовки данных.
-> Если вы используете `azureml-dataprep` пакет, чтобы создать поток данных с помощью преобразования вместо использования `azureml-datasets` пакета для создания набора данных, вы не сможете использовать моментальные снимки или наборов данных с версией более поздней версии.
+> Если вы создаете новое решение, попробуйте просмотреть и подготовить данные с помощью [машинное обучение Azure наборов](how-to-explore-prepare-data.md) данных (Предварительная версия). Наборы данных — это следующая версия пакета SDK для подготовки данных, предлагающая расширенную функциональность для управления наборами в решениях искусственного интеллекта.
 
-В следующей таблице показаны несколько функций, используемых для загрузки данных из распространенных типов файлов.
 
-| Тип файла | Функция | Ссылка на |
+В следующей таблице приведены выборки функций, используемых для загрузки данных из типов файлов.
+
+| Тип файла | Функция | Ссылка на ссылку |
 |-------|-------|-------|
-|Любой|`auto_read_file()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep?view=azure-dataprep-py#auto-read-file-path--filepath--include-path--bool---false-----azureml-dataprep-api-dataflow-dataflow)|
-|Text|`read_lines()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep#read-lines-path--filepath--header--azureml-dataprep-api-dataflow-promoteheadersmode----promoteheadersmode-none--0---encoding--azureml-dataprep-api-engineapi-typedefinitions-fileencoding----fileencoding-utf8--0---skip-rows--int---0--skip-mode--azureml-dataprep-api-dataflow-skipmode----skipmode-none--0---comment--str---none--include-path--bool---false--verify-exists--bool---true-----azureml-dataprep-api-dataflow-dataflow)|
-|CSV|`read_csv()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep#read-csv-path--filepath--separator--str--------header--azureml-dataprep-api-dataflow-promoteheadersmode----promoteheadersmode-constantgrouped--3---encoding--azureml-dataprep-api-engineapi-typedefinitions-fileencoding----fileencoding-utf8--0---quoting--bool---false--inference-arguments--azureml-dataprep-api-builders-inferencearguments---none--skip-rows--int---0--skip-mode--azureml-dataprep-api-dataflow-skipmode----skipmode-none--0---comment--str---none--include-path--bool---false--archive-options--azureml-dataprep-api--archiveoption-archiveoptions---none--infer-column-types--bool---false--verify-exists--bool---true-----azureml-dataprep-api-dataflow-dataflow)|
+|Any|`auto_read_file()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep?view=azure-dataprep-py#auto-read-file-path--filepath--include-path--bool---false-----azureml-dataprep-api-dataflow-dataflow)|
+|Текст|`read_lines()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep#read-lines-path--filepath--header--azureml-dataprep-api-dataflow-promoteheadersmode----promoteheadersmode-none--0---encoding--azureml-dataprep-api-engineapi-typedefinitions-fileencoding----fileencoding-utf8--0---skip-rows--int---0--skip-mode--azureml-dataprep-api-dataflow-skipmode----skipmode-none--0---comment--str---none--include-path--bool---false--verify-exists--bool---true-----azureml-dataprep-api-dataflow-dataflow)|
+|-|`read_csv()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep#read-csv-path--filepath--separator--str--------header--azureml-dataprep-api-dataflow-promoteheadersmode----promoteheadersmode-constantgrouped--3---encoding--azureml-dataprep-api-engineapi-typedefinitions-fileencoding----fileencoding-utf8--0---quoting--bool---false--inference-arguments--azureml-dataprep-api-builders-inferencearguments---none--skip-rows--int---0--skip-mode--azureml-dataprep-api-dataflow-skipmode----skipmode-none--0---comment--str---none--include-path--bool---false--archive-options--azureml-dataprep-api--archiveoption-archiveoptions---none--infer-column-types--bool---false--verify-exists--bool---true-----azureml-dataprep-api-dataflow-dataflow)|
 |Excel|`read_excel()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep#read-excel-path--filepath--sheet-name--str---none--use-column-headers--bool---false--inference-arguments--azureml-dataprep-api-builders-inferencearguments---none--skip-rows--int---0--include-path--bool---false--infer-column-types--bool---false--verify-exists--bool---true-----azureml-dataprep-api-dataflow-dataflow)|
-|Фиксированной ширины|`read_fwf()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep#read-fwf-path--filepath--offsets--typing-list-int---header--azureml-dataprep-api-dataflow-promoteheadersmode----promoteheadersmode-constantgrouped--3---encoding--azureml-dataprep-api-engineapi-typedefinitions-fileencoding----fileencoding-utf8--0---inference-arguments--azureml-dataprep-api-builders-inferencearguments---none--skip-rows--int---0--skip-mode--azureml-dataprep-api-dataflow-skipmode----skipmode-none--0---include-path--bool---false--infer-column-types--bool---false--verify-exists--bool---true-----azureml-dataprep-api-dataflow-dataflow)|
+|Фиксированная ширина|`read_fwf()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep#read-fwf-path--filepath--offsets--typing-list-int---header--azureml-dataprep-api-dataflow-promoteheadersmode----promoteheadersmode-constantgrouped--3---encoding--azureml-dataprep-api-engineapi-typedefinitions-fileencoding----fileencoding-utf8--0---inference-arguments--azureml-dataprep-api-builders-inferencearguments---none--skip-rows--int---0--skip-mode--azureml-dataprep-api-dataflow-skipmode----skipmode-none--0---include-path--bool---false--infer-column-types--bool---false--verify-exists--bool---true-----azureml-dataprep-api-dataflow-dataflow)|
 |JSON|`read_json()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep?view=azure-dataprep-py#read-json-path--filepath--encoding--azureml-dataprep-api-engineapi-typedefinitions-fileencoding----fileencoding-utf8--0---flatten-nested-arrays--bool---false--include-path--bool---false-----azureml-dataprep-api-dataflow-dataflow)|
 
 ## <a name="load-data-automatically"></a>Автоматическая загрузка данных
@@ -57,7 +57,7 @@ dflow = dprep.auto_read_file(path='./data/any-file.txt')
 * пропуск пустых записей в начале файла;
 * определение и настройка строки заголовка.
 
-Кроме того Если вы знаете файле введите заранее и явным образом контролировать способ ее анализе, используются функции относящихся к файлу.
+Кроме того, если вы уже знакомы с типом файла заранее и хотите явно управлять способом синтаксического анализа, используйте функции для конкретного файла.
 
 ## <a name="load-text-line-data"></a>Загрузка строковых текстовых данных
 
@@ -128,7 +128,7 @@ dflow.dtypes
 
 По умолчанию SDK службы "Машинное обучение Azure" для подготовки данных не меняет тип данных. Сейчас мы считываем данные из текстового файла, поэтому пакет SDK считает все значения строковыми. Но в этом примере числовые столбцы нужно анализировать как числа. Задайте для параметра `inference_arguments` значение `InferenceArguments.current_culture()`, чтобы автоматически определять и преобразовывать типы столбцов во время чтения файлов.
 
-```
+```python
 dflow = dprep.read_csv(path='https://dpreptestfiles.blob.core.windows.net/testfiles/read_csv_duplicate_headers.csv',
                           skip_rows=1,
                           inference_arguments=dprep.InferenceArguments.current_culture())
@@ -162,8 +162,8 @@ dflow.head(5)
 |0|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет| |
 |1|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет| |
 |2|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет| |
-|3|RANK;|Название|Студия|Весь мир|Эта страна / %|Column1|Другие страны / %|Column2|Год ^| |
-|4\.|1|Аватар|Фокс|2788|760,5|0,273|2027,5|0,727|2009^|5|
+|3|RANK;|Заголовок|Студия|Весь мир|Эта страна / %|Column1|Другие страны / %|Column2|Год ^| |
+|4|1|Аватар|Фокс|2788|760,5|0,273|2027,5|0,727|2009^|5|
 
 Эти выходные данные показывают, что данные на втором листе содержат три пустых строки перед заголовками. Функция `read_excel()` принимает необязательные параметры для пропуска строк и использование заголовков. Запустите следующий код, который пропускает первые три строки и использует четвертую для получения заголовков.
 
@@ -171,14 +171,14 @@ dflow.head(5)
 dflow = dprep.read_excel(path='./data/excel.xlsx', sheet_name='Sheet2', use_column_headers=True, skip_rows=3)
 ```
 
-||RANK;|Название|Студия|Весь мир|Эта страна / %|Column1|Другие страны / %|Column2|Год ^|
+||RANK;|Заголовок|Студия|Весь мир|Эта страна / %|Column1|Другие страны / %|Column2|Год ^|
 |------|------|------|-----|------|-----|-------|----|-----|-----|
 |0|1|Аватар|Фокс|2788|760,5|0,273|2027,5|0,727|2009^|
 |1|2|Титаник|Par.|2186,8|658,7|0,301|1528,1|0,699|1997^|
 
 ## <a name="load-fixed-width-data-files"></a>Использование файлов данных с фиксированной шириной
 
-Для загрузки файлов с фиксированной шириной, укажите список смещения знаков. Предполагается, что первый столбец всегда начинается со смещения 0.
+Чтобы загрузить файлы фиксированной ширины, необходимо указать список смещений символов. Предполагается, что первый столбец всегда начинается со смещения 0.
 
 ```python
 dflow = dprep.read_fwf('./data/fixed_width_file.txt', offsets=[7, 13, 43, 46, 52, 58, 65, 73])
@@ -207,7 +207,7 @@ dflow = dprep.read_fwf('./data/fixed_width_file.txt',
 
 ## <a name="load-sql-data"></a>Загрузка данных SQL
 
-Этот пакет SDK умеет загружать данные из источника SQL. В настоящее время поддерживается только Microsoft SQL Server. Чтобы считать данные из SQL server, создайте [ `MSSQLDataSource` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.mssqldatasource?view=azure-dataprep-py) объект, который содержит параметры подключения. Параметр пароля `MSSQLDataSource` принимает [ `Secret` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep?view=azure-dataprep-py#register-secret-value--str--id--str---none-----azureml-dataprep-api-engineapi-typedefinitions-secret) объекта. Объект секрета можно создать двумя способами.
+Этот пакет SDK умеет загружать данные из источника SQL. В настоящее время поддерживается только Microsoft SQL Server. Чтобы считать данные из SQL Server, создайте [`MSSQLDataSource`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.mssqldatasource?view=azure-dataprep-py) объект, содержащий параметры соединения. Параметр `MSSQLDataSource` [пароля`Secret`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep?view=azure-dataprep-py#register-secret-value--str--id--str---none-----azureml-dataprep-api-engineapi-typedefinitions-secret) принимает объект. Объект секрета можно создать двумя способами.
 
 * Зарегистрируйте секрет и его значение в подсистеме выполнения.
 * Чтобы создать секрет только с полем `id` (если значение секрета уже зарегистрировано в среде выполнения), выполнив команду `dprep.create_secret("[SECRET-ID]")`.
@@ -228,7 +228,7 @@ dflow = dprep.read_sql(ds, "SELECT top 100 * FROM [SalesLT].[Product]")
 dflow.head(5)
 ```
 
-| |ProductID|Name|ProductNumber|Color|StandardCost|ListPrice|Размер|Вес|ProductCategoryID|ProductModelID|SellStartDate|SellEndDate|DiscontinuedDate|ThumbNailPhoto|ThumbnailPhotoFileName|rowguid|ModifiedDate| |
+| |ProductID|ИМЯ|ProductNumber|Color|StandardCost|ListPrice|Size|Вес|ProductCategoryID|ProductModelID|SellStartDate|SellEndDate|DiscontinuedDate|ThumbNailPhoto|ThumbnailPhotoFileName|rowguid|ModifiedDate| |
 |-|---------|----|-------------|-----|------------|---------|----|------|-----------------|--------------|-------------|-----------|----------------|--------------|----------------------|-------|------------|-|
 |0|680|HL Road Frame - Black, 58|FR-R92B-58|Черный|1059.3100|1431.50|58|1016.04|18|6|2002-06-01 00:00:00+00:00|Нет|Нет|b'GIF89aP\x001\x00\xf7\x00\x00\x00\x00\x00\x80...|no_image_available_small.gif|43dd68d6-14a4-461f-9069-55309d90ea7e|2008-03-11 |0:01:36.827000+00:00|
 |1|706|HL Road Frame - Red, 58|FR-R92R-58|Красный|1059.3100|1431.50|58|1016.04|18|6|2002-06-01 00:00:00+00:00|Нет|Нет|b'GIF89aP\x001\x00\xf7\x00\x00\x00\x00\x00\x80...|no_image_available_small.gif|9540ff17-2712-4c90-a3d1-8ce5568b2462|2008-03-11 |10:01:36.827000+00:00|
@@ -294,7 +294,7 @@ servicePrincipalAppId = "8dd38f34-1fcb-4ff9-accd-7cd60b757174"
 
 ### <a name="acquire-an-oauth-access-token"></a>Получение маркера доступа OAuth
 
-Используйте пакет `adal` (`pip install adal`), чтобы создать контекст аутентификации на клиенте MSFT и получить маркер доступа OAuth. Сведения об использовании adls ресурс в запросе маркера должен быть для "https:\//datalake.azure.net", который отличается от большинства других ресурсов Azure.
+Используйте пакет `adal` (`pip install adal`), чтобы создать контекст аутентификации на клиенте MSFT и получить маркер доступа OAuth. Для ADLS ресурс в запросе маркера должен быть указан для "https:\//datalake.Azure.NET", который отличается от большинства других ресурсов Azure.
 
 ```python
 import adal
@@ -312,8 +312,8 @@ dflow.to_pandas_dataframe().head()
 |1|1011871|Stearns Homestead Farmers' Market|http://Stearnshomestead.com |6975 Ridge Road|Парма|Кайахога|
 |2|1011878|100 Mile Market|https://www.pfcmarkets.com |507 Harrison St|Каламазу|Каламазу|
 |3|1009364|106 S. Main Street Farmers Market|http://thetownofsixmile.wordpress.com/ |106 S. Main Street|Сикс Майл|||
-|4\.|1010691|10th Steet Community Farmers Market|https://agrimissouri.com/... |10th Street and Poplar|Ламар|Бартон|
+|4|1010691|10th Steet Community Farmers Market|https://agrimissouri.com/... |10th Street and Poplar|Ламар|Бартон|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* См. в Azure Machine Learning данных подготовки SDK [руководстве](tutorial-data-prep.md) пример решения в определенной ситуации
+* Пример решения определенного сценария см. в [руководстве](tutorial-data-prep.md) по пакету SDK для подготовки данных машинное обучение Azure.

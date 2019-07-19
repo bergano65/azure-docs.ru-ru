@@ -1,5 +1,5 @@
 ---
-title: Доменные службы Azure Active Directory. Присоединение виртуальной машины CoreOS Linux к управляемому домену | Документация Майкрософт
+title: Доменные службы Azure Active Directory. Присоединение к виртуальной машине CoreOS Linux | Документация Майкрософт
 description: Присоединение виртуальной машины CoreOS Linux к доменным службам Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: iainfou
-ms.openlocfilehash: 93d8279c07c936d7e5ce2c7e756baadfbe4a1b0a
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 78a6c5262cd6668712beac1e041fa4f25c05a724
+ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67473306"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68234067"
 ---
 # <a name="join-a-coreos-linux-virtual-machine-to-a-managed-domain"></a>Присоединение виртуальной машины CoreOS Linux к управляемому домену
 Из этой статьи вы узнаете, как присоединить виртуальную машину CoreOS Linux в Azure к управляемому домену доменных служб Azure AD.
@@ -59,54 +59,56 @@ ms.locfileid: "67473306"
 ## <a name="configure-the-hosts-file-on-the-linux-virtual-machine"></a>Настройка файла hosts на виртуальной машине Linux
 В окне терминала SSH откройте файл /etc/hosts для редактирования, чтобы изменить в нем IP-адрес и имя узла вашего компьютера.
 
-```
+```console
 sudo vi /etc/hosts
 ```
 
 Добавьте следующее значение в файл hosts:
 
-```
+```console
 127.0.0.1 contoso-coreos.contoso100.com contoso-coreos
 ```
+
 В этом примере contoso100.com — это DNS-имя управляемого домена. contoso-coreos — это имя узла виртуальной машины CoreOS, присоединяемой к управляемому домену.
 
 
 ## <a name="configure-the-sssd-service-on-the-linux-virtual-machine"></a>Настройка службы SSSD на виртуальной машине Linux
 Обновите файл конфигурации SSSD (/etc/sssd/sssd.conf) в соответствии со следующим примером:
 
- ```
- [sssd]
- config_file_version = 2
- services = nss, pam
- domains = CONTOSO100.COM
+```console
+[sssd]
+config_file_version = 2
+services = nss, pam
+domains = CONTOSO100.COM
 
- [domain/CONTOSO100.COM]
- id_provider = ad
- auth_provider = ad
- chpass_provider = ad
+[domain/CONTOSO100.COM]
+id_provider = ad
+auth_provider = ad
+chpass_provider = ad
 
- ldap_uri = ldap://contoso100.com
- ldap_search_base = dc=contoso100,dc=com
- ldap_schema = rfc2307bis
- ldap_sasl_mech = GSSAPI
- ldap_user_object_class = user
- ldap_group_object_class = group
- ldap_user_home_directory = unixHomeDirectory
- ldap_user_principal = userPrincipalName
- ldap_account_expire_policy = ad
- ldap_force_upper_case_realm = true
- fallback_homedir = /home/%d/%u
+ldap_uri = ldap://contoso100.com
+ldap_search_base = dc=contoso100,dc=com
+ldap_schema = rfc2307bis
+ldap_sasl_mech = GSSAPI
+ldap_user_object_class = user
+ldap_group_object_class = group
+ldap_user_home_directory = unixHomeDirectory
+ldap_user_principal = userPrincipalName
+ldap_account_expire_policy = ad
+ldap_force_upper_case_realm = true
+fallback_homedir = /home/%d/%u
 
- krb5_server = contoso100.com
- krb5_realm = CONTOSO100.COM
- ```
+krb5_server = contoso100.com
+krb5_realm = CONTOSO100.COM
+```
+
 Замените CONTOSO100.COM DNS-именем управляемого домена. В файле конфигураций имя домена должно быть указано прописными буквами.
 
 
 ## <a name="join-the-linux-virtual-machine-to-the-managed-domain"></a>Присоединение виртуальной машины Linux к управляемому домену
 Теперь, когда все требуемые пакеты установлены на виртуальной машине Linux, мы готовы присоединить виртуальную машину к управляемому домену.
 
-```
+```console
 sudo adcli join -D CONTOSO100.COM -U bob@CONTOSO100.COM -K /etc/krb5.keytab -H contoso-coreos.contoso100.com -N coreos
 ```
 
@@ -118,26 +120,30 @@ sudo adcli join -D CONTOSO100.COM -U bob@CONTOSO100.COM -K /etc/krb5.keytab -H c
 >   * Проверьте, обновлены ли параметры DNS-сервера для виртуальной сети — должны быть указаны контроллеры управляемого домена.
 
 Запустите службу SSSD. В окне терминала SSH введите следующую команду:
-  ```
-  sudo systemctl start sssd.service
-  ```
+  
+```console
+sudo systemctl start sssd.service
+```
 
 
 ## <a name="verify-domain-join"></a>Проверка присоединения к домену
 Проверьте, присоединена ли виртуальная машина к управляемому домену. Подключитесь к виртуальной машине CoreOS, присоединенной к домену, используя другое SSH-подключение. Используйте учетную запись пользователя домена и проверьте, правильно ли разрешится эта учетная запись.
 
 1. В окне терминала SSH введите следующую команду, чтобы подключиться по протоколу SSH к виртуальной машине CoreOS, присоединенной к домену. Используйте учетную запись домена, которая принадлежит к управляемому домену (в нашем примере — bob@CONTOSO100.COM).
-    ```
+    
+    ```console
     ssh -l bob@CONTOSO100.COM contoso-coreos.contoso100.com
     ```
 
 2. Чтобы проверить, правильно ли инициализирован корневой каталог, в окне терминала SSH введите следующую команду:
-    ```
+    
+    ```console
     pwd
     ```
 
 3. Чтобы проверить, правильно ли определено членство в группе, в окне терминала SSH введите следующую команду:
-    ```
+   
+    ```console
     id
     ```
 

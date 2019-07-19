@@ -1,7 +1,7 @@
 ---
-title: Пример сценария Azure PowerShell — настроить IPv6 конечных точек виртуальной сети (Предварительная версия)
+title: Пример скрипта Azure PowerShell. Настройка конечных точек виртуальной сети IPv6 (Предварительная версия)
 titlesuffix: Azure Virtual Network
-description: Включить конечные точки IPv6, с помощью Powershell в виртуальной сети Azure
+description: Включение конечных точек IPv6 с помощью PowerShell в виртуальной сети Azure
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -10,33 +10,35 @@ ms.service: virtual-network
 ms.devlang: NA
 ms.topic: article
 ms.workload: infrastructure-services
-ms.date: 04/22/2019
+ms.date: 07/15/2019
 ms.author: kumud
-ms.openlocfilehash: 627ff40361b562630f05c70823e9ad2c7ef711e0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4f07aae0e8baae44ade152cf3fe20facc7fe6770
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66002234"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68248810"
 ---
-# <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-preview"></a>Настройте конечные точки IPv6 в примере сценария виртуальной сети (Предварительная версия)
+# <a name="configure-ipv6-endpoints-in-virtual-network-script-sample-preview"></a>Пример настройки конечных точек IPv6 в сценарии виртуальной сети (Предварительная версия)
 
-В этой статье показано, как развернуть приложение в Azure, которая включает в себя двойной стек виртуальной сети с подсетью двойной стек, подсистему балансировки нагрузки с помощью интерфейсные конфигурации двумя (IPv4 + IPv6), виртуальные машины с сетевыми интерфейсами, которые имеют два IP-конфигурацию, двойной стек (IPv4 + IPv6) правила группы безопасности сети с двумя и два общедоступных IP-адресов.
+В этой статье показано, как развернуть приложение с двойным стеком (IPv4 + IPv6) в Azure, включающее в себя виртуальную сеть с двумя стеками с двойной подсетью, подсистемой балансировки нагрузки с двумя интерфейсными конфигурациями (IPv4 + IPv6), виртуальными машинами с двумя сетевыми картами, которые имеют сдвоенную конфигурацию IP два правила группы безопасности сети и два общедоступных IP-адреса.
 
-Вы можете выполнить скрипт из Azure [Cloud Shell](https://shell.azure.com/powershell) или из локальной установки PowerShell. Если вы используете PowerShell локально, для этого сценария требуется Az модуль Azure PowerShell версии 1.0.0 или более поздней версии. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+Вы можете выполнить скрипт из Azure [Cloud Shell](https://shell.azure.com/powershell) или из локальной установки PowerShell. Если вы используете PowerShell локально, для этого скрипта требуется модуль Azure AZ PowerShell версии 1.0.0 или более поздней. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Технические условия
-Перед развертыванием приложения двойного стека в Azure, необходимо настроить подписку только один раз на предварительную версию этого компонента, используя следующую команду Azure PowerShell:
+## <a name="prerequisites"></a>Предварительные требования
+Перед развертыванием приложения с двойным стеком в Azure необходимо настроить подписку только один раз для этой предварительной версии, используя следующие Azure PowerShell:
 
-Зарегистрируйте следующим образом:
+Зарегистрируйтесь следующим образом:
 ```azurepowershell
 Register-AzProviderFeature -FeatureName AllowIPv6VirtualNetwork -ProviderNamespace Microsoft.Network
+Register-AzProviderFeature -FeatureName AllowIPv6CAOnStandardLB -ProviderNamespace Microsoft.Network
 ```
-Регистрация функции занимает до 30 минут. Можно проверить состояние регистрации, выполнив следующую команду Azure PowerShell: Проверка регистрации следующим образом:
+Регистрация функции занимает до 30 минут. Состояние регистрации можно проверить, выполнив следующую команду Azure PowerShell: Проверьте регистрацию следующим образом:
 ```azurepowershell
 Get-AzProviderFeature -FeatureName AllowIPv6VirtualNetwork -ProviderNamespace Microsoft.Network
+Get-AzProviderFeature -FeatureName AllowIPv6CAOnStandardLB -ProviderNamespace Microsoft.Network
 ```
 После регистрации выполните следующую команду:
 
@@ -248,7 +250,7 @@ Remove-AzResourceGroup -Name <resourcegroupname> -Force
 
 Для создания группы ресурсов, виртуальной машины, группы доступности, балансировщика нагрузки и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Command | Примечания |
 |---|---|
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig) | Создает конфигурацию подсети. Эта конфигурация используется в процессе создания виртуальной сети. |
@@ -260,12 +262,12 @@ Remove-AzResourceGroup -Name <resourcegroupname> -Force
 | [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup) | Создает группу безопасности сети (NSG), которая выполняет роль периметра безопасности между Интернетом и виртуальной машиной. |
 | [New-AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig) | Создает правило NSG, разрешающее входящий трафик. В этом примере открывается порт 22 для трафика SSH. |
 | [New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface) | Создает виртуальную сетевую карту и подключает ее к виртуальной сети, подсети и группе безопасности сети. |
-| [New-AzAvailabilitySet](/powershell/module/az.compute/new-azavailabilityset) | Создает группу доступности. Группы доступности обеспечивают непрерывную работу приложения, распределяя виртуальные машины по физическим ресурсам, таким образом, что в случае сбоя всего набора не затрагивается. |
+| [New-AzAvailabilitySet](/powershell/module/az.compute/new-azavailabilityset) | Создает группу доступности. Группы доступности обеспечивают бесперебойную работу приложений за счет распределения виртуальных машин между физическими ресурсами таким, что при возникновении сбоя весь набор не затрагивается. |
 | [New-AzVMConfig](/powershell/module/az.compute/new-azvmconfig) | Создает конфигурацию виртуальной машины. Эта конфигурация включает в себя такие сведения, как имя виртуальной машины, операционную систему и учетные данные администратора. Данная конфигурации используется при создании виртуальной машины. |
 | [New-AzVM](/powershell/module/az.compute/new-azvm)  | Создает виртуальную машину и подключает ее к сетевой карте, виртуальной сети, подсети и группе безопасности сети. Эта команда также указывает образ виртуальной машины, который будет использоваться, и учетные данные администратора.  |
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
 

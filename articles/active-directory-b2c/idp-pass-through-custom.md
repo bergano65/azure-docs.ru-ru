@@ -10,26 +10,26 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: d9420398c012b8da18e3b035cb845db6ce8c942d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2253e9f6331662f0ead0251f9affd7996e02aa31
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66511065"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67846879"
 ---
 # <a name="pass-an-access-token-through-a-custom-policy-to-your-application-in-azure-active-directory-b2c"></a>Передача маркера доступа с помощью пользовательской политики в приложение в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-[Пользовательская политика](active-directory-b2c-get-started-custom.md) в Azure Active Directory (Azure AD) B2C предоставляет пользователям вашего приложения возможность зарегистрироваться или войти в систему с помощью поставщика удостоверений. При этом Azure AD B2C получает [маркер доступа](active-directory-b2c-reference-tokens.md) от поставщика удостоверений. Azure AD B2C использует этот маркер для извлечения сведений о пользователе. Вы добавляете тип утверждения и исходящее утверждение в пользовательскую политику для передачи маркера приложениям, зарегистрированным в Azure AD B2C. 
+[Пользовательская политика](active-directory-b2c-get-started-custom.md) в Azure Active Directory (Azure AD) B2C предоставляет пользователям вашего приложения возможность зарегистрироваться или войти в систему с помощью поставщика удостоверений. При этом Azure AD B2C получает [маркер доступа](active-directory-b2c-reference-tokens.md) от поставщика удостоверений. Azure AD B2C использует этот маркер для извлечения сведений о пользователе. Вы добавляете тип утверждения и исходящее утверждение в пользовательскую политику для передачи маркера приложениям, зарегистрированным в Azure AD B2C.
 
 Azure AD B2C поддерживает передачу маркеров доступа от поставщиков удостоверений по протоколу [OAuth 2.0](active-directory-b2c-reference-oauth-code.md) и стандарту [Подключение OpenID](active-directory-b2c-reference-oidc.md). Для остальных поставщиков удостоверений утверждение возвращается пустым.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Ваша пользовательская политика поддерживает поставщиков удостоверений OAuth 2.0 или Подключение OpenID.
 
-## <a name="add-the-claim-elements"></a>Добавление элементов утверждения 
+## <a name="add-the-claim-elements"></a>Добавление элементов утверждения
 
 1. Откройте файл *TrustframeworkExtensions.xml* и добавьте элемент **ClaimType** с идентификатором `identityProviderAccessToken` в элемент **ClaimsSchema**:
 
@@ -102,13 +102,8 @@ Azure AD B2C поддерживает передачу маркеров дост
 
     Должен отобразиться результат, аналогичный следующему примеру:
 
-    ![Декодированный маркер](./media/idp-pass-through-custom/idp-pass-through-custom-token.png)
+    ![Декодированный токен в jwt.ms с выделенным блоком idp_access_token](./media/idp-pass-through-custom/idp-pass-through-custom-token.PNG)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в [справочнике по маркерам Azure Active Directory](active-directory-b2c-reference-tokens.md).
-
-
-
-
-

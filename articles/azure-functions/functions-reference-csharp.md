@@ -11,12 +11,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 12/12/2017
 ms.author: glenga
-ms.openlocfilehash: 4de308f57d59720610eb9ee30ab67b569a5656d5
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 3ac9d8d64e4f16a4d6268606e723b14e32d8c16e
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442243"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68261769"
 ---
 # <a name="azure-functions-c-script-csx-developer-reference"></a>Справочник разработчика скрипта C# (CSX) по решению "Функции Azure"
 
@@ -242,7 +242,7 @@ public static void Run(ICollector<string> myQueue, ILogger log)
 }
 ```
 
-## <a name="logging"></a>Ведение журналов
+## <a name="logging"></a>Ведение журнала
 
 Для записи выходных данных в потоковые журналы в C# включите аргумент с типом [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger). Рекомендуем присвоить ему имя `log`. Не используйте `Console.Write` в Функциях Azure.
 
@@ -376,7 +376,7 @@ public static Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger log)
 Каталог, содержащий файл сценария функции, автоматически отслеживает изменения в сборках. Чтобы отслеживать изменения сборки в других каталогах, добавьте их в список `watchDirectories` в [host.json](functions-host-json.md).
 
 ## <a name="using-nuget-packages"></a>Использование пакетов NuGet
-Чтобы использовать пакеты NuGet в версии 2.x C# функцию, отправьте *function.proj* файл в папку соответствующей функции в файловой системе приложения-функции. Ниже приведен пример файла *function.proj*, который добавляет ссылку на *Microsoft.ProjectOxford.Face* версии *1.1.0*.
+Чтобы использовать пакеты NuGet в функции 2. x C# , передайте файл *Function. proj* в папку функции в файловой системе приложения-функции. Ниже приведен пример файла *function.proj*, который добавляет ссылку на *Microsoft.ProjectOxford.Face* версии *1.1.0*.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -393,9 +393,9 @@ public static Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger log)
 Чтобы использовать настраиваемые веб-каналы NuGet, укажите веб-канал в файле *Nuget.Config* в корне приложения-функции. Дополнительные сведения см. в статье [Configuring NuGet behavior](/nuget/consume-packages/configuring-nuget-behavior) (Настройка поведения NuGet). 
 
 > [!NOTE]
-> В версии 1.x C# функции, пакеты NuGet указываются в атрибуте *project.json* файл вместо *function.proj* файла.
+> В функциях 1 C# . x ссылки на пакеты NuGet указываются в файле *Project. JSON* вместо файла *Function. proj* .
 
-Функции 1.x, используйте *project.json* вместо этого файла. Вот пример *project.json* файла: 
+Для функций 1. x используйте вместо него файл *Project. JSON* . Ниже приведен пример файла *Project. JSON* . 
 
 ```json
 {
@@ -409,11 +409,11 @@ public static Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger log)
 }
 ```
 
-### <a name="using-a-functionproj-file"></a>С помощью файла function.proj
+### <a name="using-a-functionproj-file"></a>Использование файла Function. proj
 
 1. Откройте функцию на портале Azure. На вкладке "Журналы" отображаются выходные данные установки пакета.
-2. Чтобы отправить *function.proj* файла следует использовать один из методов, описанных в [как обновить файлы приложения-функции](functions-reference.md#fileupdate) в справочном разделе разработчиков функций Azure.
-3. После *function.proj* отправить файл, вы увидите выходные данные как в следующем примере в функции потоковом журнале:
+2. Чтобы передать файл *Function. proj* , используйте один из методов, описанных в статье [как обновить файлы приложения-функции](functions-reference.md#fileupdate) в справочнике разработчика по функциям Azure.
+3. После отправки файла *Function. proj* вы увидите в журнале потоковой передачи функции выходные данные, как в следующем примере:
 
 ```
 2018-12-14T22:00:48.658 [Information] Restoring packages.
@@ -465,7 +465,7 @@ using (var output = await binder.BindAsync<T>(new BindingTypeAttribute(...)))
 }
 ```
 
-где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). Например, выходная привязка таблицы мобильных приложений поддерживает [шесть выходных типов](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), но для `T` можно использовать только [ICollector<T>](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [IAsyncCollector<T>](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs).
+где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). Например, выходная привязка таблицы мобильных приложений поддерживает [шесть типов выходных данных](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), но можно использовать только [ICollector\<t >](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [IAsyncCollector\<t >](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) для. `T`
 
 ### <a name="single-attribute-example"></a>Пример с одним атрибутом
 
@@ -514,17 +514,17 @@ public static async Task Run(string input, Binder binder)
 > [!div class="mx-codeBreakAll"]
 > | Привязка | Атрибут | Ссылка, которую нужно добавить |
 > |------|------|------|
-> | База данных Cosmos | [`Microsoft.Azure.WebJobs.DocumentDBAttribute`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.CosmosDB/CosmosDBAttribute.cs) | `#r "Microsoft.Azure.WebJobs.Extensions.CosmosDB"` |
-> | Центры событий; | [`Microsoft.Azure.WebJobs.ServiceBus.EventHubAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/EventHubs/EventHubAttribute.cs), [`Microsoft.Azure.WebJobs.ServiceBusAccountAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/ServiceBusAccountAttribute.cs) | `#r "Microsoft.Azure.Jobs.ServiceBus"` |
+> | Cosmos DB | [`Microsoft.Azure.WebJobs.DocumentDBAttribute`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.CosmosDB/CosmosDBAttribute.cs) | `#r "Microsoft.Azure.WebJobs.Extensions.CosmosDB"` |
+> | Центры событий | [`Microsoft.Azure.WebJobs.ServiceBus.EventHubAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/EventHubs/EventHubAttribute.cs), [`Microsoft.Azure.WebJobs.ServiceBusAccountAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/ServiceBusAccountAttribute.cs) | `#r "Microsoft.Azure.Jobs.ServiceBus"` |
 > | Мобильные приложения | [`Microsoft.Azure.WebJobs.MobileTableAttribute`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs) | `#r "Microsoft.Azure.WebJobs.Extensions.MobileApps"` |
 > | Центры уведомлений | [`Microsoft.Azure.WebJobs.NotificationHubAttribute`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions.NotificationHubs/NotificationHubAttribute.cs) | `#r "Microsoft.Azure.WebJobs.Extensions.NotificationHubs"` |
-> | Служебная шина Azure | [`Microsoft.Azure.WebJobs.ServiceBusAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/ServiceBusAttribute.cs), [`Microsoft.Azure.WebJobs.ServiceBusAccountAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/ServiceBusAccountAttribute.cs) | `#r "Microsoft.Azure.WebJobs.ServiceBus"` |
+> | Служебная шина | [`Microsoft.Azure.WebJobs.ServiceBusAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/ServiceBusAttribute.cs), [`Microsoft.Azure.WebJobs.ServiceBusAccountAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.ServiceBus/ServiceBusAccountAttribute.cs) | `#r "Microsoft.Azure.WebJobs.ServiceBus"` |
 > | Очередь службы хранилища | [`Microsoft.Azure.WebJobs.QueueAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/QueueAttribute.cs), [`Microsoft.Azure.WebJobs.StorageAccountAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/StorageAccountAttribute.cs) | |
 > | Большой двоичный объект службы хранилища | [`Microsoft.Azure.WebJobs.BlobAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/BlobAttribute.cs), [`Microsoft.Azure.WebJobs.StorageAccountAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/StorageAccountAttribute.cs) | |
 > | Таблица службы хранилища | [`Microsoft.Azure.WebJobs.TableAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/TableAttribute.cs), [`Microsoft.Azure.WebJobs.StorageAccountAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/StorageAccountAttribute.cs) | |
 > | Twilio | [`Microsoft.Azure.WebJobs.TwilioSmsAttribute`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.Twilio/TwilioSMSAttribute.cs) | `#r "Microsoft.Azure.WebJobs.Extensions.Twilio"` |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о триггерах и привязках](functions-triggers-bindings.md)

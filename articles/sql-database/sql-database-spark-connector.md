@@ -12,18 +12,18 @@ ms.author: xiwu
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 09/25/2018
-ms.openlocfilehash: 8e531de34302ef8aee571c960955d33a4832aa11
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 192387958785e4032a1cb549d0ba071fa406a60e
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60331526"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68228223"
 ---
 # <a name="accelerate-real-time-big-data-analytics-with-spark-connector-for-azure-sql-database-and-sql-server"></a>Ускорение анализа больших данных в режиме реального времени с помощью Базы данных SQL Azure и SQL Server
 
 Соединитель Spark для Базы данных SQL Azure и SQL Server разрешает использовать базы данных SQL, включая Базу данных SQL Azure и SQL Server, в качестве источника входных данных или приемника выходных данных для заданий Spark. Это позволяет использовать данные о транзакциях в реальном времени при анализе больших данных и сохранять результаты нерегламентированных запросов или отчетов. По сравнению со встроенным соединителем JDBC этот соединитель обеспечивает возможность массовой вставки данных в базы данных SQL. Он может в 10-20 раз превосходить по производительности вставку по строкам. Соединитель Spark для Базы данных SQL Azure и SQL Server также поддерживает аутентификацию AAD. Это позволяет безопасно подключаться к базе данных SQL Azure из Azure Databricks, используя учетную запись AAD. Она предоставляет аналогичные интерфейсы со встроенным соединителем JDBC. Имеющиеся задания Spark можно легко перенести, чтобы использовать этот соединитель.
 
-## <a name="download"></a>Download (Скачать)
+## <a name="download"></a>Загрузить
 Чтобы приступить к работе, скачайте соединитель Spark для базы данных SQL из репозитория [azure-sqldb-spark](https://github.com/Azure/azure-sqldb-spark) на сайте GitHub.
 
 ## <a name="official-supported-versions"></a>Официальные поддерживаемые версии
@@ -202,7 +202,6 @@ val bulkCopyConfig = Config(Map(
   "databaseName"      -> "MyDatabase",
   "user"              -> "username",
   "password"          -> "*********",
-  "databaseName"      -> "zeqisql",
   "dbTable"           -> "dbo.Clients",
   "bulkCopyBatchSize" -> "2500",
   "bulkCopyTableLock" -> "true",
@@ -213,7 +212,7 @@ df.bulkCopyToSqlDB(bulkCopyConfig, bulkCopyMetadata)
 //df.bulkCopyToSqlDB(bulkCopyConfig) if no metadata is specified.
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Если это еще не сделано, скачайте соединитель для Базы данных SQL Azure и SQL Server из [репозитория GitHub azure-sqldb-spark](https://github.com/Azure/azure-sqldb-spark) и изучите дополнительные ресурсы в репозитории:
 
 -   [Примеры записных книжек Azure Databricks](https://github.com/Azure/azure-sqldb-spark/tree/master/samples/notebooks).

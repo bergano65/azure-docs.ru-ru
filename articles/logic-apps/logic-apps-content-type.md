@@ -1,21 +1,20 @@
 ---
-title: Обработка типов содержимого в Azure Logic Apps | Документация Майкрософт
+title: Работа с типами содержимого — Azure Logic Apps
 description: Узнайте, как служба Logic Apps обрабатывает типы содержимого во время разработки и при выполнении
 services: logic-apps
 ms.service: logic-apps
+ms.suite: integration
 author: ecfan
 ms.author: estfan
-manager: jeconnoc
-ms.topic: article
-ms.date: 07/20/2018
 ms.reviewer: klam, LADocs
-ms.suite: integration
-ms.openlocfilehash: 2a9318317d5a01136a42b4fb6d580bafaf53ec4e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.topic: conceptual
+ms.date: 07/20/2018
+ms.openlocfilehash: 97897da13c70c29834b1fc276829b316416efd8d
+ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60685771"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67868910"
 ---
 # <a name="handle-content-types-in-azure-logic-apps"></a>Обработка типов содержимого в Azure Logic Apps
 
@@ -140,15 +139,16 @@ ms.locfileid: "60685771"
 
 Ниже приводится список преобразований службой Logic Apps содержимого при использовании этих [функций](../logic-apps/workflow-definition-language-functions-reference.md).
 
-* `json()`: Приведение типов данных `application/json`
-* `xml()`: Приведение типов данных `application/xml`
-* `binary()`: Приведение типов данных `application/octet-stream`
-* `string()`: Приведение типов данных `text/plain`
-* `base64()`: Преобразует содержимое в строку base64
-* `base64toString()`: Преобразует строку в кодировке base64 `text/plain`
-* `base64toBinary()`: Преобразует строку в кодировке base64 `application/octet-stream`
-* `encodeDataUri()`: Кодирует строку в виде массива байтов dataUri
-* `decodeDataUri()`: Декодирует `dataUri` в массив байтов
+* `json()`. Приводит данные к`application/json`
+* `xml()`. Приводит данные к`application/xml`
+* `binary()`. Приводит данные к`application/octet-stream`
+* `string()`. Приводит данные к`text/plain`
+* `base64()`. Преобразует содержимое в строку в кодировке Base64
+* `base64toString()`. Преобразует строку в кодировке Base64 в`text/plain`
+* `base64toBinary()`. Преобразует строку в кодировке Base64 в`application/octet-stream`
+* `dataUri()`. Преобразует строку в универсальный код ресурса (URI) данных
+* `dataUriToBinary()`. Преобразует универсальный код ресурса (URI) данных в двоичную строку
+* `dataUriToString()`. Преобразует универсальный код ресурса (URI) данных в строку
 
 Например, при получении HTTP-запроса, где `Content-Type` установлено как `application/xml`, как в этом содержимом.
 

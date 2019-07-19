@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/11/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 0f87b122f81fbd04767354e623dcb808466ee1be
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 508d13356a7dd221b0767a0cedd60b4f1402baf4
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67673499"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68286332"
 ---
 ## <a name="supported-operating-systems-and-drivers"></a>Поддерживаемые операционные системы и драйверы
 
@@ -32,9 +32,9 @@ ms.locfileid: "67673499"
 
 ### <a name="nvidia-grid-drivers"></a>Драйверы NVIDIA GRID
 
-Корпорация Майкрософт распространяет установщики драйверов NVIDIA GRID для виртуальных машин серии NV и NVv2, используемых в качестве виртуальных рабочих станций или виртуальных приложений. Эти драйверы GRID следует устанавливать только на виртуальные машины Azure серии NV под управлением операционных систем, перечисленных в следующей таблице. Эти драйверы содержат лицензии на ПО виртуального графического процессора GRID в Azure. Вам не нужно настраивать сервер лицензий программного обеспечения vGPU NVIDIA.
+Корпорация Майкрософт повторно распространяет установщики драйверов сетки NVIDIA для виртуальных машин серии NV и NVv3, используемых в качестве виртуальных рабочих станций или для виртуальных приложений. Устанавливайте только эти драйверы сетки на виртуальных машинах Azure серии NV только в операционных системах, перечисленных в следующей таблице. Эти драйверы содержат лицензии на ПО виртуального графического процессора GRID в Azure. Вам не нужно настраивать сервер лицензий на программное обеспечение NVIDIA GPU.
 
 | OS | Драйвер |
 | -------- |------------- |
-| Windows Server 2019<br/><br/>Windows Server 2016<br/><br/>Windows 10 (до версии 1809. Без исправлений и уровень исправления 0 1809 не поддерживается). | [Сетка 8.0 (425.31)](https://go.microsoft.com/fwlink/?linkid=874181) (.exe) |
-| Windows Server 2012 R2 | [Сетка 8.0 (425.31)](https://go.microsoft.com/fwlink/?linkid=874184) (.exe)  |
+| Windows Server 2019<br/><br/>Windows Server 2016<br/><br/>Windows 10 | [Сетка 9,0 (431,02)](https://go.microsoft.com/fwlink/?linkid=874181) (. exe) |
+| Windows Server 2012 R2<br/><br/>Windows Server 2008 R2<br/><br/>Windows 8<br/><br/>Windows 7 | [Сетка 9,0 (431,02)](https://go.microsoft.com/fwlink/?linkid=874184) (. exe)  |

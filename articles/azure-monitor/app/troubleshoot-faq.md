@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 12/17/2018
 ms.author: mbullwin
-ms.openlocfilehash: ab1327b42a76a6e76183d84cb1750cce8b85228f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 778a95db8ce462d06e2464db56b542f8113a4960
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65604277"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67875375"
 ---
 # <a name="application-insights-frequently-asked-questions"></a>Application Insights. Часто задаваемые вопросы
 
@@ -37,6 +37,7 @@ ms.locfileid: "65604277"
 
 ## <a name="can-i-use-application-insights-with-"></a>Можно ли использовать Application Insights с...?
 
+* [Веб-приложения на сервере IIS в ВИРТУАЛЬНОЙ машине Azure или в масштабируемом наборе виртуальных машин Azure](azure-vm-vmss-apps.md)
 * [Веб-приложения на сервере IIS — локальном или в виртуальной машине](asp-net.md)
 * [Веб-приложения Java](java-get-started.md)
 * [Приложения Node.js](nodejs.md)
@@ -83,7 +84,7 @@ ms.locfileid: "65604277"
 
   * Web.config
   * packages.config
-* (Только для новых проектов. Если нужно [добавить Application Insights в существующий проект][start], придется делать это вручную.) Вставляет фрагменты кода в код клиента и сервера для их инициализации с идентификатором ресурса Application Insights. Например, в приложении MVC код вставляется в файл главной страницы Views/Shared/_Layout.cshtml.
+* (Только для новых проектов. при [добавлении Application Insights в существующий проект][start]это необходимо сделать вручную.) Вставляет фрагменты кода в код клиента и сервера для их инициализации с идентификатором ресурса Application Insights. Например, в приложении MVC код вставляется в файл главной страницы Views/Shared/_Layout.cshtml.
 
 ## <a name="how-do-i-upgrade-from-older-sdk-versions"></a>Как обновить предыдущие версии пакета SDK?
 Информацию для пакета SDK, соответствующего типу вашего приложения, см. в статье с [заметками о выпуске](release-notes.md).
@@ -104,7 +105,7 @@ ms.locfileid: "65604277"
 * HTTP-запросы;
 * [зависимости](asp-net-dependencies.md); вызовы к базам данных SQL, Azure Cosmos DB, таблице, хранилищу BLOB-объектов и очереди; HTTP-вызовы к внешним службам; 
 * [исключения](asp-net-exceptions.md) и трассировки стека;
-* [счетчики производительности](performance-counters.md) — если вы используете [монитор состояния](monitor-performance-live-website-now.md), [мониторинг Azure](azure-web-apps.md) или [средство записи collectd Application Insights](java-collectd.md);
+* [Счетчики производительности](performance-counters.md) — при использовании [Монитор состояния](monitor-performance-live-website-now.md), [мониторинга Azure для служб приложений](azure-web-apps.md), [мониторинга Azure для виртуальной машины или масштабируемого набора виртуальных машин](azure-vm-vmss-apps.md)или [Application Insights собранного модуля записи](java-collectd.md).
 * [пользовательские события и метрики](api-custom-events-metrics.md), которые вы создаете в коде;
 * [журналы трассировки](asp-net-trace-logs.md), если вы настраиваете соответствующий сборщик.
 
@@ -132,7 +133,7 @@ ms.locfileid: "65604277"
 
 Дополнительные сведения об [ASP.NET](api-filtering-sampling.md) или [Java](java-filter-telemetry.md).
 
-## <a name="how-are-city-countryregion-and-other-geo-location-data-calculated"></a>Как вычисляются города, страны или региона и другие данные по географическому расположению?
+## <a name="how-are-city-countryregion-and-other-geo-location-data-calculated"></a>Как рассчитывается город, страна или регион и другие данные географического расположения?
 
 Мы определяем IP-адрес (IPv4 или IPv6) веб-клиента с помощью [GeoLite2](https://dev.maxmind.com/geoip/geoip2/geolite2/).
 
@@ -145,7 +146,7 @@ ms.locfileid: "65604277"
 
 
 ## <a name="data"></a>Как долго данные хранятся на портале? Защищены ли они?
-Ознакомьтесь с разделом [Хранение данных и конфиденциальность][data].
+Ознакомьтесь с хранением [и конфиденциальностью данных][data].
 
 ## <a name="could-personal-data-be-sent-in-the-telemetry"></a>Могут ли персональные данные отправляться с данными телеметрии?
 
@@ -153,7 +154,7 @@ ms.locfileid: "65604277"
 
 Для **всех** октетов веб-адреса клиента всегда задается значение 0 после подстановки атрибутов географического расположения.
 
-## <a name="my-instrumentation-key-is-visible-in-my-web-page-source"></a>Ключ инструментирования будет отображена в источнике веб-страницы. 
+## <a name="my-instrumentation-key-is-visible-in-my-web-page-source"></a>Мой ключ инструментирования отображается в моем источнике веб-страницы. 
 
 * Это обычная ситуация в решениях для мониторинга.
 * С его помощью нельзя похитить ваши данные.
@@ -162,7 +163,7 @@ ms.locfileid: "65604277"
 
 Вы можете:
 
-* Используйте две отдельные ключи инструментирования (отдельные ресурсы Application Insights), для данных клиента и сервера. или
+* Используйте два отдельных ключа инструментирования (отдельные ресурсы Application Insights) для данных клиента и сервера. или
 * создать прокси-сервер, работающий на вашем сервере, и передавать данные веб-клиента через него.
 
 ## <a name="post"></a>Как просмотреть данные POST в колонке «Поиск по журналу диагностики»?
@@ -257,7 +258,7 @@ ms.locfileid: "65604277"
 
 Разрешите веб-серверу отправлять данные телеметрии в наши конечные точки. 
 
-### <a name="gateway-redirect"></a>Шлюз перенаправления
+### <a name="gateway-redirect"></a>Перенаправление шлюза
 
 Маршрутизация трафика с сервера в шлюз интрасети выполняется путем перезаписи конечных точек в конфигурации.
 Если эти свойства "Конечная точка" отсутствуют в вашей конфигурации, эти классы будут использовать значения по умолчанию, показанные в примере ApplicationInsights.config, приведенном ниже. 
@@ -288,12 +289,12 @@ ms.locfileid: "65604277"
 
 _Примечание. ApplicationIdProvider доступен, начиная с версии 2.6.0_
 
-### <a name="proxy-passthrough"></a>Сквозной прокси-сервера
+### <a name="proxy-passthrough"></a>Транзитный прокси-сервер
 
-Сквозной прокси-сервера может осуществляться путем настройки на уровне приложения или уровне компьютера прокси-сервера.
-Дополнительные сведения см. статье dotnet [DefaultProxy](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings).
+Пересылка прокси-сервера может быть достигнута путем настройки уровня компьютера или прокси уровня приложения.
+Дополнительные сведения см. в статье DotNet в [DefaultProxy](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings).
  
- Пример Web.config:
+ Пример файла Web. config:
  ```xml
 <system.net>
     <defaultProxy>
