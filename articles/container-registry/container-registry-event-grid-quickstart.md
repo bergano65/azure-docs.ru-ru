@@ -3,17 +3,18 @@ title: Краткое руководство. Отправка событий Р
 description: В этом кратком руководстве описано, как включить события Сетки событий для реестра контейнеров, передать образ контейнера, отправить события в пример приложения и удалить их из него.
 services: container-registry
 author: dlepow
+manager: gwallace
 ms.service: container-registry
 ms.topic: article
 ms.date: 08/23/2018
 ms.author: danlep
 ms.custom: seodec18
-ms.openlocfilehash: f5c075942a29968ea57c684cd817e578df951989
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 49ee9a7f12601b0d93e320ab797be4a1ada41c04
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60427697"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68309803"
 ---
 # <a name="quickstart-send-events-from-private-container-registry-to-event-grid"></a>Краткое руководство. Отправка событий из частного реестра контейнеров в службу "Сетка событий"
 
@@ -23,7 +24,7 @@ ms.locfileid: "60427697"
 
 ![Веб-браузер, где отображается пример веб-приложения с тремя полученными событиями][sample-app-01]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][azure-account], прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][azure-account], прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -31,7 +32,7 @@ ms.locfileid: "60427697"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов Azure — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. В следующем примере с помощью команды [az group create][az-group-create] создается группа ресурсов с именем *myResourceGroup* в регионе *eastus*. Если вы хотите использовать другое имя для своей группы ресурсов, установите другое значение для `RESOURCE_GROUP_NAME`.
+Группа ресурсов Azure — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Следующая команда [AZ Group Create][az-group-create] создает группу ресурсов с именем *myResourceGroup* в регионе *eastus* . Если вы хотите использовать другое имя для своей группы ресурсов, установите другое значение для `RESOURCE_GROUP_NAME`.
 
 ```azurecli-interactive
 RESOURCE_GROUP_NAME=myResourceGroup
@@ -41,7 +42,7 @@ az group create --name $RESOURCE_GROUP_NAME --location eastus
 
 ## <a name="create-a-container-registry"></a>Создание реестра контейнеров
 
-Затем разверните реестр контейнеров в группе ресурсов с помощью следующих команд. Прежде чем выполнить команду [az acr create][az-acr-create], задайте `ACR_NAME` в качестве имени вашего реестра. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов.
+Затем разверните реестр контейнеров в группе ресурсов с помощью следующих команд. Перед выполнением команды [AZ запись контроля][az-acr-create] доступа укажите `ACR_NAME` имя реестра. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов.
 
 ```azurecli-interactive
 ACR_NAME=<acrName>
@@ -100,7 +101,7 @@ az group deployment create \
 
 ## <a name="subscribe-to-registry-events"></a>Подписка на события реестра
 
-Подпишитесь на *раздел*, чтобы определить в Сетке событий Azure, какие события необходимо отслеживать и куда их отправлять. Следующая команда[az eventgrid event-subscription create][az-eventgrid-event-subscription-create] подписывается на созданный вами реестр контейнеров и указывает URL-адрес вашего веб-приложения как конечную точку, в которую он должен отправлять события. Переменные среды, которые вы заполнили в предыдущих разделах, используются здесь повторно, поэтому никаких изменений не требуется.
+Подпишитесь на *раздел*, чтобы определить в Сетке событий Azure, какие события необходимо отслеживать и куда их отправлять. Приведенная ниже команда [AZ eventgrid Event-Subscription создает][az-eventgrid-event-subscription-create] подписку на созданный реестр контейнеров и указывает URL-адрес приложения в качестве конечной точки, в которую он должен отсылать события. Переменные среды, которые вы заполнили в предыдущих разделах, используются здесь повторно, поэтому никаких изменений не требуется.
 
 ```azurecli-interactive
 ACR_REGISTRY_ID=$(az acr show --name $ACR_NAME --query id --output tsv)
@@ -185,7 +186,7 @@ $ az acr repository show-tags --name $ACR_NAME --repository myimage
 
 ### <a name="delete-the-image"></a>Удаление образа
 
-Теперь сгенерируйте событие `ImageDeleted`, удалив образ с помощью команды [az acr repository delete][az-acr-repository-delete]:
+Теперь создайте `ImageDeleted` событие, удалив образ с помощью команды [AZ контроля репозитория Delete][az-acr-repository-delete] :
 
 ```azurecli-interactive
 az acr repository delete --name $ACR_NAME --image myimage:v1
@@ -225,7 +226,7 @@ az group delete --name $RESOURCE_GROUP_NAME
 
 [Схема событий службы "Сетка событий Azure" для Реестра контейнеров](../event-grid/event-schema-container-registry.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом кратком руководстве вы развернули реестр контейнеров, создали образ с помощью задач ACR, удалили его и использовали события реестра из Сетки событий с помощью примера приложения. Теперь перейдите к руководству по задачам ACR, чтобы узнать больше о создании образов контейнеров в облаке, включая автоматическую сборку при обновлении базового образа:
 

@@ -6,14 +6,14 @@ author: richcar
 ms.service: expressroute
 ms.topic: article
 ms.date: 10/10/2016
-ms.author: richcar
+ms.author: ricarlse
 ms.custom: seodec18
-ms.openlocfilehash: a03ab7bbdadad2728f54127583583c22bd2ec07a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a3bd48f32dfcee1a666ff842cfcab2384a5459ec
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60367597"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67849264"
 ---
 # <a name="expressroute-for-cloud-solution-providers-csp"></a>ExpressRoute для поставщиков облачных решений (CSP)
 Корпорация Майкрософт предоставляет традиционным торговым посредникам и распространителям (CSP) гипермасштабируемые службы, с помощью которых вы сможете быстро подготавливать к работе новые службы и решения для своих клиентов, не вкладывая средства в их разработку. Чтобы разрешить CSP управлять новыми службами напрямую, корпорация Майкрософт предоставляет программы и API, позволяющие CSP управлять ресурсами Microsoft Azure от имени клиентов. Один из этих ресурсов — ExpressRoute. Благодаря ExpressRoute CSP может подключать существующие ресурсы клиента к службам Azure. ExpressRoute представляет собой высокоскоростной частный канал связи со службами в среде Azure. 
@@ -124,7 +124,7 @@ ExpressRoute подключается к сети Azure через шлюз ви
 
 ![замещающий текст](./media/expressroute-for-cloud-solution-providers/expressroute-security.png)  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Служба Cloud Solution Provider позволяет вам повысить эффективность взаимодействия с клиентом без необходимости приобретать дорогостоящие инфраструктуру и возможности. При этом вы продолжаете выполнять функции основного поставщика услуг аутсорсинга. API CSP обеспечивает простую интеграцию со средой Microsoft Azure, позволяя интегрировать управление Microsoft Azure в существующую платформу управления.  
 
 Дополнительные сведения см. по ссылкам ниже:

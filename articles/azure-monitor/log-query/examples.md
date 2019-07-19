@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 10/03/2018
 ms.author: bwren
-ms.openlocfilehash: 2c35bc4026c81cbc8b95225e688a3922bc320554
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d50a680ed2b054f87a9cf36e761bd16d79677fb3
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60759917"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68304699"
 ---
 # <a name="azure-monitor-log-query-examples"></a>Примеры запроса журнала Azure Monitor
 Эта статья содержит несколько примеров [запросов](log-query-overview.md), составленных на основе [языка запросов Kusto](/azure/kusto/query/) для получения разных типов данных журнала из Azure Monitor. Для консолидации и анализа данных используются разные методы, и на основе этих примеров вы сможете определить, какие стратегии лучше всего подойдут под ваши конкретные требования.  
@@ -34,7 +34,7 @@ ms.locfileid: "60759917"
 Event
 | where EventLog == "Application" 
 | where TimeGenerated > ago(24h) 
-| where RenderedDescription == "cryptographic"
+| where RenderedDescription contains "cryptographic"
 ```
 
 ### <a name="search-events-related-to-unmarshaling"></a>Поиск событий, связанных с демаршалингом
@@ -437,7 +437,7 @@ Update
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о языке можно получить в [справочнике по языку Kusto](/azure/kusto/query).
 - Ознакомьтесь со статьей [Начало работы с запросами журнала Azure Monitor](get-started-queries.md).

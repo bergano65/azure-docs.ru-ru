@@ -11,15 +11,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 09/10/2018
-ms.author: rclaus
+ms.date: 07/12/2019
+ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 05bd09d3ab05f3ce426126e5629523fba087dad9
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 4a1df7406ab4f4d7137d12dd7131a4c26b617cb2
+ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67707307"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67869220"
 ---
 # <a name="sap-hana-large-instances-deployment"></a>Развертывание SAP HANA (крупные экземпляры) 
 
@@ -37,6 +37,7 @@ ms.locfileid: "67707307"
 - Для каждого региона развертывания Azure:
     - диапазон IP-адресов с маской /29 для подключений ER-P2P между виртуальными сетями Azure и крупными экземплярами HANA;
     - блок CIDR с маской /24 (используется для пула IP-адресов серверов крупных экземпляров HANA).
+    - Необязательно. при использовании [Global REACH ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-global-reach) для прямой маршрутизации между единицами крупных экземпляров Hana или между единицами крупных экземпляров Hana в разных регионах Azure необходимо зарезервировать еще один или 29 диапазон IP-адресов. Этот диапазон может не перекрываться с любыми другими диапазонами IP-адресов, определенными ранее.
 - Значения диапазона IP-адресов, используемые в атрибуте адресного пространства виртуальной сети, каждой виртуальной сети Azure, которая будет подключаться к крупным экземплярам HANA.
 - Данные для каждой системы крупных экземпляров HANA:
   - Требуемое имя узла (в идеале с полным доменным именем).

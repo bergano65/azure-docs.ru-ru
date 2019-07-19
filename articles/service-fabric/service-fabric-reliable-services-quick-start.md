@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/16/2018
+ms.date: 07/10/2019
 ms.author: vturecek
-ms.openlocfilehash: d27702983a4378becdbc67f3f156c92be3dc3af6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f3b3d5c3dcea7d190724ae946a27c47b34a26c31
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62130098"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68225049"
 ---
 # <a name="get-started-with-reliable-services"></a>Приступая к работе с надежными службами
 > [!div class="op_single_selector"]
@@ -41,11 +41,11 @@ ms.locfileid: "62130098"
 ## <a name="create-a-stateless-service"></a>Создание службы без отслеживания состояния
 Сейчас в облачных приложениях обычно используются службы без отслеживания состояния. Термин "без отслеживания состояния" означает, что сама служба не содержит данные, которым требуется надежное хранение или обеспечение высокого уровня доступности. Когда экземпляр службы без отслеживания состояния завершает работу, все данные о его внутреннем состоянии будут утрачены. Чтобы обеспечить высокую доступность и надежность в службах этого типа, состояния должны сохраняться во внешнее хранилище, например в таблицы Azure или базу данных SQL.
 
-Запустите Visual Studio 2015 или Visual Studio 2017 от имени администратора и создайте проект приложения Service Fabric с именем *HelloWorld*.
+Запустите Visual Studio 2017 или Visual Studio 2019 с правами администратора и создайте новый проект Service Fabric приложения с именем *HelloWorld*:
 
 ![Создание нового приложения Service Fabric с помощью диалогового окна "Создание проекта"](media/service-fabric-reliable-services-quick-start/hello-stateless-NewProject.png)
 
-Затем создайте проект службы без отслеживания состояния с помощью **.NET Core 2.0** с именем *HelloWorldStateless*:
+Затем создайте проект службы без отслеживания состояния с помощью **.NET Core 2,0** с именем *HelloWorldStateless*:
 
 ![Во втором диалоговом окне создайте проект службы без отслеживания состояния](media/service-fabric-reliable-services-quick-start/hello-stateless-NewProject2.png)
 
@@ -127,7 +127,7 @@ Service Fabric представляет новый вид службы с отс
 
 ![Добавление службы в приложение Service Fabric](media/service-fabric-reliable-services-quick-start/hello-stateful-NewService.png)
 
-Выберите **.NET Core 2.0 -> служба с отслеживанием состояния** и назовите его *HelloWorldStateful*. Последовательно выберите **ОК**.
+Выберите **.NET Core 2,0-> службу с отслеживанием состояния** и назовите ее *HelloWorldStateful*. Нажмите кнопку **ОК**.
 
 ![Создание службы с отслеживанием состояния в Service Fabric с помощью диалогового окна "Создание проекта"](media/service-fabric-reliable-services-quick-start/hello-stateful-NewProject.png)
 
@@ -214,7 +214,7 @@ using (ITransaction tx = this.StateManager.CreateTransaction())
 
 ![Просмотр событий диагностики в Visual Studio](media/service-fabric-reliable-services-quick-start/hello-stateful-Output.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Отладка приложения Service Fabric с помощью Visual Studio](service-fabric-debugging-your-application.md)
 
 [Начало работы. Службы веб-API Service Fabric с саморазмещением OWIN](service-fabric-reliable-services-communication-webapi.md)

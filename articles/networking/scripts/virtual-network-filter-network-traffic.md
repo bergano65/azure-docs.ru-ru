@@ -14,13 +14,13 @@ ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 07/07/2017
-ms.author: jdial
-ms.openlocfilehash: 6045cabdc97dad72a54e28a6f4fbee3126056d2e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: timlt
+ms.openlocfilehash: 5f33490a360089a301b28479b7707d4b62c7dd83
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60624043"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67875471"
 ---
 # <a name="filter-inbound-and-outbound-vm-network-traffic"></a>Фильтрация входящего и исходящего сетевого трафика виртуальной машины
 
@@ -47,7 +47,7 @@ az group delete --name MyResourceGroup --yes
 
 Для создания группы ресурсов, виртуальной сети и групп безопасности сети этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Команда | Примечания |
+| Command | Примечания |
 |---|---|
 | [az group create](/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az network vnet create](/cli/azure/network/vnet) | Создает виртуальную сеть Azure и интерфейсную подсеть. |
@@ -60,7 +60,7 @@ az group delete --name MyResourceGroup --yes
 | [az vm create](/cli/azure/vm) | Создает виртуальные машины и присоединяет сетевой адаптер к каждой из них. Эта команда также указывает образ виртуальной машины и учетные данные администратора. |
 | [az group delete](/cli/azure/group) | Удаляет группу ресурсов и все содержащиеся в ней ресурсы. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 

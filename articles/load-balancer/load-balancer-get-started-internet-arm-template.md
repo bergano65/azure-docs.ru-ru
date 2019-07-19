@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: Узнайте, как создать общедоступную подсистему балансировки нагрузки в диспетчере ресурсов с помощью шаблона
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -12,13 +12,13 @@ ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
-ms.author: kumud
-ms.openlocfilehash: 7d8997b6c4ee68ae6857d2a1605277fc7d5f7a0a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: allensu
+ms.openlocfilehash: a94c7d1b5d1ecd11dd213eccf2354e943a96cabd
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66122213"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68275292"
 ---
 # <a name="creating-a-public-load-balancer-using-a-template"></a>Создание общедоступной подсистемы балансировки нагрузки с помощью шаблона
 
@@ -43,7 +43,7 @@ ms.locfileid: "66122213"
 Чтобы развернуть шаблон, загруженный с помощью PowerShell, выполните описанные ниже действия.
 
 1. Если вы ранее не использовали Azure PowerShell, следуйте инструкциям в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview) , чтобы выполнить вход в Azure и выбрать подписку.
-2. Запустите **New AzResourceGroupDeployment** командлет, чтобы создать группу ресурсов с помощью шаблона.
+2. Выполните командлет **New-азресаурцеграупдеплоймент** , чтобы создать группу ресурсов с помощью шаблона.
 
     ```powershell
     New-AzResourceGroupDeployment -Name TestRG -Location uswest `
@@ -73,7 +73,7 @@ ms.locfileid: "66122213"
     azure group create --name TestRG --location westus --template-file 'https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json' --parameters-file 'c:\lb\azuredeploy.parameters.json'
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Приступая к настройке внутренней подсистемы балансировки нагрузки](load-balancer-get-started-ilb-arm-ps.md)
 

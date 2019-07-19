@@ -7,12 +7,12 @@ ms.author: sngun
 ms.topic: conceptual
 ms.date: 05/23/2019
 ms.reviewer: sngun
-ms.openlocfilehash: eea4366ca19c01af1f79566a5ca6bcae8805b6c3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3a955060eb5f19544860c1c97abe1577084bef24
+ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66242496"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67985544"
 ---
 # <a name="connect-qlik-sense-to-azure-cosmos-db-and-visualize-your-data"></a>Подключение Qlik Sense к Azure Cosmos DB и визуализация данных
 
@@ -34,7 +34,7 @@ ms.locfileid: "66242496"
 
 В этой статье подробно описан процесс подключения к API SQL для Cosmos DB с помощью соединителя ODBC.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Перед выполнением инструкций, приведенных в этой статье, обеспечьте наличие следующих ресурсов:
 
@@ -44,7 +44,7 @@ ms.locfileid: "66242496"
 
 * Создайте учетную запись API SQL Azure Cosmos DB, следуя инструкциям в [этом разделе](create-sql-api-dotnet.md#create-account) краткого руководства.
 
-* [Создайте базу данных и коллекцию](create-sql-api-dotnet.md#create-collection-database), установив для коллекции пропускную способность 1000 ЕЗ/с. 
+* [Создайте базу данных и коллекцию](create-sql-api-java.md#add-a-container), установив для коллекции пропускную способность 1000 ЕЗ/с. 
 
 * Загрузите пример данных о продаже видеоигр в учетную запись Cosmos DB. Для импорта данных можно использовать [последовательный](import-data.md#SQLSeqTarget) или [массовый импорт](import-data.md#SQLBulkTarget) данных в средстве переноса данных Azure Cosmos DB. Импорт данных в учетную запись Cosmos DB занимает около 3–5 минут.
 
@@ -70,7 +70,7 @@ ms.locfileid: "66242496"
 
 6. Теперь щелкните **Add data** (Добавить данные), чтобы загрузить данные в Qlik Sense. Загрузив данные в Qlik Sense, вы сможете извлекать из них полезные сведения и выполнять анализ. Можно использовать стандартные средства или создать собственное приложение для анализа данных о продажах видеоигр. Пример приведен на следующем рисунке. 
 
-   ![Визуализация данных](./media/visualize-qlik-sense/visualize-data.png)
+   ![Визуализируйте данные](./media/visualize-qlik-sense/visualize-data.png)
 
 ### <a name="limitations-when-connecting-with-odbc"></a>Ограничения при подключении с помощью ODBC 
 

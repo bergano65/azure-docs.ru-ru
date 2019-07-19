@@ -6,148 +6,148 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 7/9/2019
 ms.author: tomfitz
-ms.openlocfilehash: 093c20407cb6210125106189f36566f539de0dcc
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 22493ad7998e9014c88c79e6ac5eee3bf1216119
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721116"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68226818"
 ---
 # <a name="move-operation-support-for-resources"></a>Поддержка операции перемещения для ресурсов
-В этой статье указано, поддерживается ли для тех или иных типов ресурсов Azure операция перемещения. Он также предоставляет сведения о специальные условия, которые следует учитывать при перемещении ресурса.
+В этой статье указано, поддерживается ли для тех или иных типов ресурсов Azure операция перемещения. В нем также содержатся сведения о специальных условиях, которые следует учитывать при перемещении ресурса.
 
-Перейти к пространству имен поставщика ресурсов:
+Переход к пространству имен поставщика ресурсов:
 > [!div class="op_single_selector"]
 > - [Microsoft.AAD](#microsoftaad)
-> - [microsoft.aadiam](#microsoftaadiam)
-> - [Microsoft.AlertsManagement](#microsoftalertsmanagement)
-> - [Microsoft.AnalysisServices](#microsoftanalysisservices)
+> - [Microsoft. аадиам](#microsoftaadiam)
+> - [Microsoft. Алертсманажемент](#microsoftalertsmanagement)
+> - [Microsoft. AnalysisServices](#microsoftanalysisservices)
 > - [Microsoft.ApiManagement](#microsoftapimanagement)
-> - [Microsoft.AppConfiguration](#microsoftappconfiguration)
-> - [Microsoft.AppService](#microsoftappservice)
+> - [Microsoft. Аппконфигуратион](#microsoftappconfiguration)
+> - [Microsoft. AppService](#microsoftappservice)
 > - [Microsoft.Authorization](#microsoftauthorization)
 > - [Microsoft.Automation](#microsoftautomation)
-> - [Microsoft.AzureActiveDirectory](#microsoftazureactivedirectory)
-> - [Microsoft.AzureStack](#microsoftazurestack)
-> - [Microsoft.Backup](#microsoftbackup)
-> - [Microsoft.Batch](#microsoftbatch)
-> - [Microsoft.BatchAI](#microsoftbatchai)
-> - [Microsoft.BingMaps](#microsoftbingmaps)
-> - [Microsoft.BizTalkServices](#microsoftbiztalkservices)
-> - [Microsoft.Blockchain](#microsoftblockchain)
-> - [Microsoft.Blueprint](#microsoftblueprint)
-> - [Microsoft.BotService](#microsoftbotservice)
+> - [Microsoft. AzureActiveDirectory](#microsoftazureactivedirectory)
+> - [Microsoft. AzureStack](#microsoftazurestack)
+> - [Microsoft. Backup](#microsoftbackup)
+> - [Microsoft. Batch](#microsoftbatch)
+> - [Microsoft. BatchAI](#microsoftbatchai)
+> - [Microsoft. BingMaps](#microsoftbingmaps)
+> - [Microsoft. Бизталксервицес](#microsoftbiztalkservices)
+> - [Microsoft. Блокчейн](#microsoftblockchain)
+> - [Microsoft. чертеж](#microsoftblueprint)
+> - [Microsoft. Ботсервице](#microsoftbotservice)
 > - [Microsoft.Cache](#microsoftcache)
 > - [Microsoft.Cdn](#microsoftcdn)
-> - [Microsoft.CertificateRegistration](#microsoftcertificateregistration)
-> - [Microsoft.ClassicCompute](#microsoftclassiccompute)
-> - [Microsoft.ClassicNetwork](#microsoftclassicnetwork)
-> - [Microsoft.ClassicStorage](#microsoftclassicstorage)
-> - [Microsoft.CognitiveServices](#microsoftcognitiveservices)
-> - [Microsoft.Compute](#microsoftcompute)
-> - [Microsoft.Container](#microsoftcontainer)
-> - [Microsoft.ContainerInstance](#microsoftcontainerinstance)
+> - [Microsoft. Цертификатерегистратион](#microsoftcertificateregistration)
+> - [Microsoft. ClassicCompute](#microsoftclassiccompute)
+> - [Microsoft. ClassicNetwork](#microsoftclassicnetwork)
+> - [Microsoft. Классикстораже](#microsoftclassicstorage)
+> - [Microsoft. CognitiveServices](#microsoftcognitiveservices)
+> - [Microsoft. COMPUTE](#microsoftcompute)
+> - [Microsoft. Container](#microsoftcontainer)
+> - [Microsoft. Контаинеринстанце](#microsoftcontainerinstance)
 > - [Microsoft.ContainerRegistry](#microsoftcontainerregistry)
 > - [Microsoft.ContainerService](#microsoftcontainerservice)
-> - [Microsoft.ContentModerator](#microsoftcontentmoderator)
-> - [Microsoft.CortanaAnalytics](#microsoftcortanaanalytics)
-> - [Microsoft.CostManagement](#microsoftcostmanagement)
-> - [Microsoft.CustomerInsights](#microsoftcustomerinsights)
-> - [Microsoft.DataBox](#microsoftdatabox)
-> - [Microsoft.DataBoxEdge](#microsoftdataboxedge)
-> - [Microsoft.Databricks](#microsoftdatabricks)
-> - [Microsoft.DataCatalog](#microsoftdatacatalog)
-> - [Microsoft.DataConnect](#microsoftdataconnect)
-> - [Microsoft.DataExchange](#microsoftdataexchange)
+> - [Microsoft. Контентмодератор](#microsoftcontentmoderator)
+> - [Microsoft. Кортанааналитикс](#microsoftcortanaanalytics)
+> - [Microsoft. Костманажемент](#microsoftcostmanagement)
+> - [Microsoft. Кустомеринсигхтс](#microsoftcustomerinsights)
+> - [Microsoft. Датабокс](#microsoftdatabox)
+> - [Microsoft. Датабокседже](#microsoftdataboxedge)
+> - [Microsoft. кирпичы](#microsoftdatabricks)
+> - [Каталог Microsoft.](#microsoftdatacatalog)
+> - [Microsoft. соединение](#microsoftdataconnect)
+> - [Microsoft. Обмен](#microsoftdataexchange)
 > - [Microsoft.DataFactory](#microsoftdatafactory)
-> - [Microsoft.DataLake](#microsoftdatalake)
+> - [Microsoft. Data Lake](#microsoftdatalake)
 > - [Microsoft.DataLakeAnalytics](#microsoftdatalakeanalytics)
 > - [Microsoft.DataLakeStore](#microsoftdatalakestore)
-> - [Microsoft.DataMigration](#microsoftdatamigration)
-> - [Microsoft.DBforMariaDB](#microsoftdbformariadb)
-> - [Microsoft.DBforMySQL](#microsoftdbformysql)
-> - [Microsoft.DBforPostgreSQL](#microsoftdbforpostgresql)
-> - [Microsoft.DeploymentManager](#microsoftdeploymentmanager)
+> - [Microsoft. Перенос](#microsoftdatamigration)
+> - [Microsoft. Дбформариадб](#microsoftdbformariadb)
+> - [Microsoft. Дбформискл](#microsoftdbformysql)
+> - [Microsoft. Дбфорпостгрескл](#microsoftdbforpostgresql)
+> - [Microsoft. Деплойментманажер](#microsoftdeploymentmanager)
 > - [Microsoft.Devices](#microsoftdevices)
-> - [Microsoft.DevSpaces](#microsoftdevspaces)
+> - [Microsoft. Девспацес](#microsoftdevspaces)
 > - [Microsoft.DevTestLab](#microsoftdevtestlab)
-> - [microsoft.dns](#microsoftdns)
+> - [Microsoft. DNS](#microsoftdns)
 > - [Microsoft.DocumentDB](#microsoftdocumentdb)
-> - [Microsoft.DomainRegistration](#microsoftdomainregistration)
-> - [Microsoft.EnterpriseKnowledgeGraph](#microsoftenterpriseknowledgegraph)
-> - [Microsoft.EventGrid](#microsofteventgrid)
+> - [Microsoft. Домаинрегистратион](#microsoftdomainregistration)
+> - [Microsoft. Ентерприсекновледжеграф](#microsoftenterpriseknowledgegraph)
+> - [Microsoft. EventGrid](#microsofteventgrid)
 > - [Microsoft.EventHub](#microsofteventhub)
-> - [Microsoft.Genomics](#microsoftgenomics)
-> - [Microsoft.HanaOnAzure](#microsofthanaonazure)
+> - [Microsoft. Genomics](#microsoftgenomics)
+> - [Microsoft. Ханаоназуре](#microsofthanaonazure)
 > - [Microsoft.HDInsight](#microsofthdinsight)
-> - [Microsoft.HealthcareApis](#microsofthealthcareapis)
-> - [Microsoft.HybridCompute](#microsofthybridcompute)
-> - [Microsoft.HybridData](#microsofthybriddata)
-> - [Microsoft.ImportExport](#microsoftimportexport)
-> - [Microsoft.Insights](#microsoftinsights)
-> - [Microsoft.IoTCentral](#microsoftiotcentral)
-> - [Microsoft.IoTSpaces](#microsoftiotspaces)
+> - [Microsoft. Хеалскареапис](#microsofthealthcareapis)
+> - [Microsoft. Хибридкомпуте](#microsofthybridcompute)
+> - [Microsoft. Хибриддата](#microsofthybriddata)
+> - [Microsoft. ImportExport](#microsoftimportexport)
+> - [Microsoft. Insights](#microsoftinsights)
+> - [Microsoft. Иотцентрал](#microsoftiotcentral)
+> - [Microsoft. Иотспацес](#microsoftiotspaces)
 > - [Microsoft.KeyVault](#microsoftkeyvault)
-> - [Microsoft.Kusto](#microsoftkusto)
-> - [Microsoft.LabServices](#microsoftlabservices)
-> - [Microsoft.LocationBasedServices](#microsoftlocationbasedservices)
-> - [Microsoft.LocationServices](#microsoftlocationservices)
+> - [Microsoft. Kusto](#microsoftkusto)
+> - [Microsoft. Лабсервицес](#microsoftlabservices)
+> - [Microsoft. Локатионбаседсервицес](#microsoftlocationbasedservices)
+> - [Microsoft. файл locationservices](#microsoftlocationservices)
 > - [Microsoft.Logic](#microsoftlogic)
-> - [Microsoft.MachineLearning](#microsoftmachinelearning)
-> - [Microsoft.MachineLearningCompute](#microsoftmachinelearningcompute)
-> - [Microsoft.MachineLearningExperimentation](#microsoftmachinelearningexperimentation)
-> - [Microsoft.MachineLearningModelManagement](#microsoftmachinelearningmodelmanagement)
-> - [Microsoft.MachineLearningOperationalization](#microsoftmachinelearningoperationalization)
-> - [Microsoft.MachineLearningServices](#microsoftmachinelearningservices)
-> - [Microsoft.ManagedIdentity](#microsoftmanagedidentity)
-> - [Microsoft.Maps](#microsoftmaps)
-> - [Microsoft.MarketplaceApps](#microsoftmarketplaceapps)
+> - [Microsoft. MachineLearning](#microsoftmachinelearning)
+> - [Microsoft. Мачинелеарнингкомпуте](#microsoftmachinelearningcompute)
+> - [Microsoft. Мачинелеарнинжекспериментатион](#microsoftmachinelearningexperimentation)
+> - [Microsoft. Мачинелеарнингмоделманажемент](#microsoftmachinelearningmodelmanagement)
+> - [Microsoft. Мачинелеарнингоператионализатион](#microsoftmachinelearningoperationalization)
+> - [Microsoft. Мачинелеарнингсервицес](#microsoftmachinelearningservices)
+> - [Microsoft. ManagedIdentity](#microsoftmanagedidentity)
+> - [Microsoft. Maps](#microsoftmaps)
+> - [Microsoft. Маркетплацеаппс](#microsoftmarketplaceapps)
 > - [Microsoft.Media](#microsoftmedia)
-> - [Microsoft.Migrate](#microsoftmigrate)
-> - [Microsoft.NetApp](#microsoftnetapp)
-> - [Microsoft.Network](#microsoftnetwork)
+> - [Microsoft. migrate](#microsoftmigrate)
+> - [Microsoft. NetApp](#microsoftnetapp)
+> - [Microsoft. Network](#microsoftnetwork)
 > - [Microsoft.NotificationHubs](#microsoftnotificationhubs)
-> - [Microsoft.OperationalInsights](#microsoftoperationalinsights)
-> - [Microsoft.OperationsManagement](#microsoftoperationsmanagement)
-> - [Microsoft.Peering](#microsoftpeering)
-> - [Microsoft.Portal](#microsoftportal)
-> - [Microsoft.PortalSdk](#microsoftportalsdk)
-> - [Microsoft.PowerBI](#microsoftpowerbi)
-> - [Microsoft.PowerBIDedicated](#microsoftpowerbidedicated)
-> - [Microsoft.ProjectOxford](#microsoftprojectoxford)
+> - [Microsoft. OperationalInsights](#microsoftoperationalinsights)
+> - [Microsoft. OperationsManagement](#microsoftoperationsmanagement)
+> - [Microsoft. пиринг](#microsoftpeering)
+> - [Microsoft. Portal](#microsoftportal)
+> - [Microsoft. Порталсдк](#microsoftportalsdk)
+> - [Microsoft. PowerBI](#microsoftpowerbi)
+> - [Microsoft. Повербидедикатед](#microsoftpowerbidedicated)
+> - [Microsoft. Прожектоксфорд](#microsoftprojectoxford)
 > - [Microsoft.RecoveryServices](#microsoftrecoveryservices)
-> - [Microsoft.Relay](#microsoftrelay)
-> - [Microsoft.SaaS](#microsoftsaas)
+> - [Microsoft. Relay](#microsoftrelay)
+> - [Microsoft. SaaS](#microsoftsaas)
 > - [Microsoft.Scheduler](#microsoftscheduler)
 > - [Microsoft.Search](#microsoftsearch)
 > - [Microsoft.Security](#microsoftsecurity)
-> - [Microsoft.ServerManagement](#microsoftservermanagement)
+> - [Microsoft. Серверманажемент](#microsoftservermanagement)
 > - [Microsoft.ServiceBus](#microsoftservicebus)
 > - [Microsoft.ServiceFabric](#microsoftservicefabric)
-> - [Microsoft.ServiceFabricMesh](#microsoftservicefabricmesh)
-> - [Microsoft.SignalRService](#microsoftsignalrservice)
-> - [Microsoft.SiteRecovery](#microsoftsiterecovery)
-> - [Microsoft.Solutions](#microsoftsolutions)
+> - [Microsoft. Сервицефабрикмеш](#microsoftservicefabricmesh)
+> - [Microsoft. Сигналрсервице](#microsoftsignalrservice)
+> - [Microsoft. SiteRecovery](#microsoftsiterecovery)
+> - [Microsoft. Solutions](#microsoftsolutions)
 > - [Microsoft.Sql](#microsoftsql)
-> - [Microsoft.SqlVirtualMachine](#microsoftsqlvirtualmachine)
-> - [Microsoft.SqlVM](#microsoftsqlvm)
+> - [Microsoft. Склвиртуалмачине](#microsoftsqlvirtualmachine)
+> - [Microsoft. SqlVM](#microsoftsqlvm)
 > - [Microsoft.Storage](#microsoftstorage)
-> - [Microsoft.StorageCache](#microsoftstoragecache)
-> - [Microsoft.StorageSync](#microsoftstoragesync)
-> - [Microsoft.StorageSyncDev](#microsoftstoragesyncdev)
-> - [Microsoft.StorageSyncInt](#microsoftstoragesyncint)
-> - [Microsoft.StorSimple](#microsoftstorsimple)
-> - [Microsoft.StreamAnalytics](#microsoftstreamanalytics)
-> - [Microsoft.StreamAnalyticsExplorer](#microsoftstreamanalyticsexplorer)
-> - [Microsoft.TerraformOSS](#microsoftterraformoss)
-> - [Microsoft.TimeSeriesInsights](#microsofttimeseriesinsights)
-> - [Microsoft.Token](#microsofttoken)
-> - [Microsoft.VirtualMachineImages](#microsoftvirtualmachineimages)
-> - [microsoft.visualstudio](#microsoftvisualstudio)
-> - [Microsoft.VMwareCloudSimple](#microsoftvmwarecloudsimple)
+> - [Microsoft. Сторажекаче](#microsoftstoragecache)
+> - [Microsoft. StorageSync](#microsoftstoragesync)
+> - [Microsoft. Сторажесинкдев](#microsoftstoragesyncdev)
+> - [Microsoft. СторажесинЦинт](#microsoftstoragesyncint)
+> - [Microsoft. StorSimple](#microsoftstorsimple)
+> - [Microsoft. StreamAnalytics](#microsoftstreamanalytics)
+> - [Microsoft. Стреаманалитиксексплорер](#microsoftstreamanalyticsexplorer)
+> - [Microsoft. Терраформосс](#microsoftterraformoss)
+> - [Microsoft. TimeSeriesInsights](#microsofttimeseriesinsights)
+> - [Microsoft. Token](#microsofttoken)
+> - [Microsoft. Виртуалмачинеимажес](#microsoftvirtualmachineimages)
+> - [Microsoft. VisualStudio](#microsoftvisualstudio)
+> - [Microsoft. Вмвареклаудсимпле](#microsoftvmwarecloudsimple)
 > - [Microsoft.Web](#microsoftweb)
-> - [Microsoft.WindowsIoT](#microsoftwindowsiot)
-> - [Microsoft.WindowsVirtualDesktop](#microsoftwindowsvirtualdesktop)
+> - [Microsoft. Виндовсиот](#microsoftwindowsiot)
+> - [Microsoft. Виндовсвиртуалдесктоп](#microsoftwindowsvirtualdesktop)
 
 ## <a name="microsoftaad"></a>Microsoft.AAD
 | Тип ресурса | Resource group | Subscription |
@@ -162,7 +162,7 @@ ms.locfileid: "67721116"
 ## <a name="microsoftalertsmanagement"></a>Microsoft.AlertsManagement
 | Тип ресурса | Resource group | Subscription |
 | ------------- | ----------- | ---------- |
-| actionrules | Да | Да |
+| актионрулес | Да | Да |
 
 ## <a name="microsoftanalysisservices"></a>Microsoft.AnalysisServices
 | Тип ресурса | Resource group | Subscription |
@@ -174,10 +174,10 @@ ms.locfileid: "67721116"
 | ------------- | ----------- | ---------- |
 | служба | Да | Да |
 
-## <a name="microsoftappconfiguration"></a>Microsoft.AppConfiguration
+## <a name="microsoftappconfiguration"></a>Microsoft. Аппконфигуратион
 | Тип ресурса | Resource group | Subscription |
 | ------------- | ----------- | ---------- |
-| configurationstores | Да | Да |
+| конфигуратионсторес | Да | Да |
 
 ## <a name="microsoftappservice"></a>Microsoft.AppService
 | Тип ресурса | Resource group | Subscription |
@@ -187,7 +187,7 @@ ms.locfileid: "67721116"
 | gateways | Нет | Нет |
 
 > [!IMPORTANT]
-> См. в разделе [службы приложений переместить рекомендации](./move-limitations/app-service-move-limitations.md).
+> См. [руководство по перемещению службы приложений](./move-limitations/app-service-move-limitations.md).
 
 ## <a name="microsoftauthorization"></a>Microsoft.Authorization
 | Тип ресурса | Resource group | Subscription |
@@ -202,7 +202,7 @@ ms.locfileid: "67721116"
 | automationaccounts/runbooks | Да | Да |
 
 > [!IMPORTANT]
-> Модули Runbook должен существовать в той же группе ресурсов, что учетная запись службы автоматизации.
+> Модули Runbook должны находиться в той же группе ресурсов, что и учетная запись службы автоматизации.
 
 ## <a name="microsoftazureactivedirectory"></a>Microsoft.AzureActiveDirectory
 | Тип ресурса | Resource group | Subscription |
@@ -263,7 +263,7 @@ ms.locfileid: "67721116"
 | redis | Да | Да |
 
 > [!IMPORTANT]
-> Если настройки кэша Azure для экземпляра Redis в виртуальной сети, экземпляр невозможно переместить в другую подписку. См. в разделе [виртуальные сети переместить ограничения](./move-limitations/virtual-network-move-limitations.md).
+> Если для экземпляра кэша Azure для Redis настроена виртуальная сеть, экземпляр нельзя переместить в другую подписку. См. раздел [ограничения на перемещение виртуальных сетей](./move-limitations/virtual-network-move-limitations.md).
 
 ## <a name="microsoftcdn"></a>Microsoft.Cdn
 | Тип ресурса | Resource group | Subscription |
@@ -277,7 +277,7 @@ ms.locfileid: "67721116"
 | certificateorders | Да | Да |
 
 > [!IMPORTANT]
-> См. в разделе [службы приложений переместить рекомендации](./move-limitations/app-service-move-limitations.md).
+> См. [руководство по перемещению службы приложений](./move-limitations/app-service-move-limitations.md).
 
 ## <a name="microsoftclassiccompute"></a>Microsoft.ClassicCompute
 | Тип ресурса | Resource group | Subscription |
@@ -286,7 +286,7 @@ ms.locfileid: "67721116"
 | virtualmachines | Да | Нет |
 
 > [!IMPORTANT]
-> См. в разделе [классической модели развертывания переместить рекомендации](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с определенной операцией по соответствующему сценарию.
+> См. [руководство по перемещению классической модели развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
 
 ## <a name="microsoftclassicnetwork"></a>Microsoft.ClassicNetwork
 | Тип ресурса | Resource group | Subscription |
@@ -296,7 +296,7 @@ ms.locfileid: "67721116"
 | virtualnetworks | Нет | Нет |
 
 > [!IMPORTANT]
-> См. в разделе [классической модели развертывания переместить рекомендации](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с определенной операцией по соответствующему сценарию.
+> См. [руководство по перемещению классической модели развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
 
 ## <a name="microsoftclassicstorage"></a>Microsoft.ClassicStorage
 | Тип ресурса | Resource group | Subscription |
@@ -304,7 +304,7 @@ ms.locfileid: "67721116"
 | storageaccounts | Да | Нет |
 
 > [!IMPORTANT]
-> См. в разделе [классической модели развертывания переместить рекомендации](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с определенной операцией по соответствующему сценарию.
+> См. [руководство по перемещению классической модели развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
 
 ## <a name="microsoftcognitiveservices"></a>Microsoft.CognitiveServices
 | Тип ресурса | Resource group | Subscription |
@@ -319,8 +319,8 @@ ms.locfileid: "67721116"
 | galleries | Нет | Нет |
 | galleries/images | Нет | Нет |
 | galleries/images/versions | Нет | Нет |
-| hostgroups | Нет | Нет |
-| hostgroups/hosts | Нет | Нет |
+| хостграупс | Нет | Нет |
+| хостграупс и узлы | Нет | Нет |
 | images | Да | Да |
 | proximityplacementgroups | Нет | Нет |
 | restorepointcollections | Нет | Нет |
@@ -332,7 +332,7 @@ ms.locfileid: "67721116"
 | virtualmachinescalesets | Да | Да |
 
 > [!IMPORTANT]
-> См. в разделе [рекомендации переместить виртуальные машины](./move-limitations/virtual-machines-move-limitations.md).
+> См. [руководство по перемещению виртуальных машин](./move-limitations/virtual-machines-move-limitations.md).
 
 ## <a name="microsoftcontainer"></a>Microsoft.Container
 | Тип ресурса | Resource group | Subscription |
@@ -399,7 +399,7 @@ ms.locfileid: "67721116"
 | Тип ресурса | Resource group | Subscription |
 | ------------- | ----------- | ---------- |
 | catalogs | Да | Да |
-| datacatalogs | Нет | Нет |
+| каталоги | Нет | Нет |
 
 ## <a name="microsoftdataconnect"></a>Microsoft.DataConnect
 | Тип ресурса | Resource group | Subscription |
@@ -485,7 +485,7 @@ ms.locfileid: "67721116"
 | ------------- | ----------- | ---------- |
 | labcenters | Нет | Нет |
 | labs | Да | Нет |
-| лабораторные занятия и сред | Да | Да |
+| лаборатории и среды | Да | Да |
 | labs/servicerunners | Да | Да |
 | labs/virtualmachines | Да | Нет |
 | schedules | Да | Да |
@@ -513,7 +513,7 @@ ms.locfileid: "67721116"
 | ------------- | ----------- | ---------- |
 | domains | Да | Да |
 
-## <a name="microsoftenterpriseknowledgegraph"></a>Microsoft.EnterpriseKnowledgeGraph
+## <a name="microsoftenterpriseknowledgegraph"></a>Microsoft. Ентерприсекновледжеграф
 | Тип ресурса | Resource group | Subscription |
 | ------------- | ----------- | ---------- |
 | services; | Да | Да |
@@ -550,15 +550,15 @@ ms.locfileid: "67721116"
 >
 > При перемещении кластера HDInsight в новую подписку сначала необходимо переместить другие ресурсы (такие как учетная запись хранения). А затем переместить сам кластер HDInsight.
 
-## <a name="microsofthealthcareapis"></a>Microsoft.HealthcareApis
+## <a name="microsofthealthcareapis"></a>Microsoft. Хеалскареапис
 | Тип ресурса | Resource group | Subscription |
 | ------------- | ----------- | ---------- |
 | services; | Да | Да |
 
-## <a name="microsofthybridcompute"></a>Microsoft.HybridCompute
+## <a name="microsofthybridcompute"></a>Microsoft. Хибридкомпуте
 | Тип ресурса | Resource group | Subscription |
 | ------------- | ----------- | ---------- |
-| Машины | Нет | Нет |
+| виртуальных | Нет | Нет |
 
 ## <a name="microsofthybriddata"></a>Microsoft.HybridData
 | Тип ресурса | Resource group | Subscription |
@@ -588,7 +588,7 @@ ms.locfileid: "67721116"
 | workbooks | Да | Да |
 
 > [!IMPORTANT]
-> Убедитесь, что переход на новую подписку не превышает [квоты для подписки](../azure-subscription-service-limits.md#azure-monitor-limits).
+> Убедитесь, что перемещение в новую подписку не превышает [квоты подписки](../azure-subscription-service-limits.md#azure-monitor-limits).
 
 ## <a name="microsoftiotcentral"></a>Microsoft.IoTCentral
 | Тип ресурса | Resource group | Subscription |
@@ -608,7 +608,7 @@ ms.locfileid: "67721116"
 | vaults | Да | Да |
 
 > [!IMPORTANT]
-> Ключ хранилища, используемый для шифрования дисков невозможно переместить группу ресурсов в той же подписке или между подписками.
+> Хранилища ключей, используемые для шифрования дисков, нельзя переместить в группу ресурсов в одной и той же подписке или в рамках подписок.
 
 ## <a name="microsoftkusto"></a>Microsoft.Kusto
 | Тип ресурса | Resource group | Subscription |
@@ -718,7 +718,7 @@ ms.locfileid: "67721116"
 | Тип ресурса | Resource group | Subscription |
 | ------------- | ----------- | ---------- |
 | applicationgateways | Нет | Нет |
-| applicationgatewaywebapplicationfirewallpolicies | Нет | Нет |
+| аппликатионгатевайвебаппликатионфиреваллполиЦиес | Нет | Нет |
 | applicationsecuritygroups | Да | Да |
 | azurefirewalls | Да | Да |
 | bastionhosts | Нет | Нет |
@@ -732,7 +732,7 @@ ms.locfileid: "67721116"
 | expressrouteports | Нет | Нет |
 | frontdoors | Нет | Нет |
 | frontdoorwebapplicationfirewallpolicies | Нет | Нет |
-| loadbalancers | Да - SKU "базовый"<br>No - SKU "стандартный" | Да - SKU "базовый"<br>No - SKU "стандартный" |
+| loadbalancers | Да — SKU "базовый"<br>SKU No-Standard | Да — SKU "базовый"<br>SKU No-Standard |
 | localnetworkgateways | Да | Да |
 | natgateways | Да | Да |
 | networkintentpolicies | Да | Да |
@@ -744,11 +744,11 @@ ms.locfileid: "67721116"
 | networkwatchers/lenses | Да | Да |
 | networkwatchers/pingmeshes | Да | Да |
 | p2svpngateways | Нет | Нет |
-| privatednszones | Да | Да |
-| privatednszones/virtualnetworklinks | Да | Да |
-| privateendpoints | Нет | Нет |
+| приватеднсзонес | Да | Да |
+| приватеднсзонес/виртуалнетворклинкс | Да | Да |
+| приватиндпоинтс | Нет | Нет |
 | privatelinkservices | Нет | Нет |
-| publicipaddresses | Да - SKU "базовый"<br>No - SKU "стандартный" | Да - SKU "базовый"<br>No - SKU "стандартный" |
+| publicipaddresses | Да — SKU "базовый"<br>SKU No-Standard | Да — SKU "базовый"<br>SKU No-Standard |
 | publicipprefixes | Да | Да |
 | routefilters | Нет | Нет |
 | routetables | Да | Да |
@@ -765,7 +765,7 @@ ms.locfileid: "67721116"
 | webapplicationfirewallpolicies | Да | Да |
 
 > [!IMPORTANT]
-> См. в разделе [виртуальные сети переместить рекомендации](./move-limitations/virtual-network-move-limitations.md).
+> См. [руководство по перемещению виртуальных сетей](./move-limitations/virtual-network-move-limitations.md).
 
 ## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
 | Тип ресурса | Resource group | Subscription |
@@ -779,7 +779,7 @@ ms.locfileid: "67721116"
 | workspaces | Да | Да |
 
 > [!IMPORTANT]
-> Убедитесь, что переход на новую подписку не превышает [квоты для подписки](../azure-subscription-service-limits.md#azure-monitor-limits).
+> Убедитесь, что перемещение в новую подписку не превышает [квоты подписки](../azure-subscription-service-limits.md#azure-monitor-limits).
 
 ## <a name="microsoftoperationsmanagement"></a>Microsoft.OperationsManagement
 | Тип ресурса | Resource group | Subscription |
@@ -788,7 +788,7 @@ ms.locfileid: "67721116"
 | solutions | Да | Да |
 | узел "Представления" | Да | Да |
 
-## <a name="microsoftpeering"></a>Microsoft.Peering
+## <a name="microsoftpeering"></a>Microsoft. пиринг
 | Тип ресурса | Resource group | Subscription |
 | ------------- | ----------- | ---------- |
 | пиринги | Нет | Нет |
@@ -824,7 +824,7 @@ ms.locfileid: "67721116"
 | vaults | Да | Да |
 
 > [!IMPORTANT]
-> См. в разделе [служб восстановления переместить рекомендации](../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json).
+> См. [руководство по перемещению служб восстановления](../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json).
 
 ## <a name="microsoftrelay"></a>Microsoft.Relay
 | Тип ресурса | Resource group | Subscription |
@@ -848,12 +848,12 @@ ms.locfileid: "67721116"
 | searchservices | Да | Да |
 
 > [!IMPORTANT]
-> Невозможно переместить несколько ресурсов для поиска в разных регионах в рамках одной операции. Переместите их в отдельных операциях.
+> В одной операции невозможно переместить несколько ресурсов поиска в разных регионах. Переместите их в отдельных операциях.
 
 ## <a name="microsoftsecurity"></a>Microsoft.Security
 | Тип ресурса | Resource group | Subscription |
 | ------------- | ----------- | ---------- |
-| iotsecuritysolutions | Да | Да |
+| иотсекуритисолутионс | Да | Да |
 
 ## <a name="microsoftservermanagement"></a>Microsoft.ServerManagement
 | Тип ресурса | Resource group | Subscription |
@@ -899,7 +899,7 @@ ms.locfileid: "67721116"
 | siterecoveryvault | Нет | Нет |
 
 > [!IMPORTANT]
-> См. в разделе [служб восстановления переместить рекомендации](../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json).
+> См. [руководство по перемещению служб восстановления](../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json).
 
 ## <a name="microsoftsolutions"></a>Microsoft.Solutions
 | Тип ресурса | Resource group | Subscription |
@@ -913,16 +913,16 @@ ms.locfileid: "67721116"
 ## <a name="microsoftsql"></a>Microsoft.Sql
 | Тип ресурса | Resource group | Subscription |
 | ------------- | ----------- | ---------- |
-| instancepools | Да | Да |
-| managedinstances | Да | Да |
-| managedinstances/databases | Да | Да |
+| инстанцепулс | Нет | Нет |
+| managedinstances | Нет | Нет |
+| managedinstances/databases | Нет | Нет |
 | servers | Да | Да |
 | servers/databases | Да | Да |
 | servers/elasticpools | Да | Да |
 | virtualclusters | Да | Да |
 
 > [!IMPORTANT]
-> Базы данных и сервер должны находиться в той же группе ресурсов. При перемещении сервера SQL Server все его базы данных также перемещаются. Такое поведение также характерно для баз данных SQL Azure и баз данных хранилища данных SQL Azure.
+> База данных и сервер должны находиться в одной группе ресурсов. При перемещении сервера SQL Server все его базы данных также перемещаются. Такое поведение также характерно для баз данных SQL Azure и баз данных хранилища данных SQL Azure.
 
 ## <a name="microsoftsqlvirtualmachine"></a>Microsoft.SqlVirtualMachine
 | Тип ресурса | Resource group | Subscription |
@@ -940,10 +940,10 @@ ms.locfileid: "67721116"
 | ------------- | ----------- | ---------- |
 | storageaccounts | Да | Да |
 
-## <a name="microsoftstoragecache"></a>Microsoft.StorageCache
+## <a name="microsoftstoragecache"></a>Microsoft. Сторажекаче
 | Тип ресурса | Resource group | Subscription |
 | ------------- | ----------- | ---------- |
-| Кэши | Нет | Нет |
+| кэширует | Нет | Нет |
 
 ## <a name="microsoftstoragesync"></a>Microsoft.StorageSync
 | Тип ресурса | Resource group | Subscription |
@@ -971,7 +971,7 @@ ms.locfileid: "67721116"
 | streamingjobs | Да | Да |
 
 > [!IMPORTANT]
-> Stream Analytics, задания невозможно переместить при выполнении в состоянии.
+> Невозможно переместить задания Stream Analytics в состоянии выполнения.
 
 ## <a name="microsoftstreamanalyticsexplorer"></a>Microsoft.StreamAnalyticsExplorer
 | Тип ресурса | Resource group | Subscription |
@@ -995,10 +995,10 @@ ms.locfileid: "67721116"
 | environments/eventsources | Да | Да |
 | environments/referencedatasets | Да | Да |
 
-## <a name="microsofttoken"></a>Microsoft.Token
+## <a name="microsofttoken"></a>Microsoft. Token
 | Тип ресурса | Resource group | Subscription |
 | ------------- | ----------- | ---------- |
-| хранит | Нет | Нет |
+| сохраняют | Нет | Нет |
 
 ## <a name="microsoftvirtualmachineimages"></a>Microsoft.VirtualMachineImages
 | Тип ресурса | Resource group | Subscription |
@@ -1013,13 +1013,13 @@ ms.locfileid: "67721116"
 | account/project | Да | Да |
 
 > [!IMPORTANT]
-> Чтобы изменить подписку для DevOps в Azure, см. в разделе [изменить подписку Azure, используемой для выставления счетов](/azure/devops/organizations/billing/change-azure-subscription?toc=/azure/azure-resource-manager/toc.json).
+> Чтобы изменить подписку на Azure DevOps, см. статью [изменение подписки Azure, используемой для выставления счетов](/azure/devops/organizations/billing/change-azure-subscription?toc=/azure/azure-resource-manager/toc.json).
 
-## <a name="microsoftvmwarecloudsimple"></a>Microsoft.VMwareCloudSimple
+## <a name="microsoftvmwarecloudsimple"></a>Microsoft. Вмвареклаудсимпле
 | Тип ресурса | Resource group | Subscription |
 | ------------- | ----------- | ---------- |
-| dedicatedcloudnodes | Да | Да |
-| dedicatedcloudservices | Да | Да |
+| дедикатедклауднодес | Да | Да |
+| дедикатедклаудсервицес | Да | Да |
 | virtualmachines | Да | Да |
 
 ## <a name="microsoftweb"></a>Microsoft.Web
@@ -1036,18 +1036,18 @@ ms.locfileid: "67721116"
 | sites/slots | Да | Да |
 
 > [!IMPORTANT]
-> См. в разделе [службы приложений переместить рекомендации](./move-limitations/app-service-move-limitations.md).
+> См. [руководство по перемещению службы приложений](./move-limitations/app-service-move-limitations.md).
 
 ## <a name="microsoftwindowsiot"></a>Microsoft.WindowsIoT
 | Тип ресурса | Resource group | Subscription |
 | ------------- | ----------- | ---------- |
 | deviceservices | Нет | Нет |
 
-## <a name="microsoftwindowsvirtualdesktop"></a>Microsoft.WindowsVirtualDesktop
+## <a name="microsoftwindowsvirtualdesktop"></a>Microsoft. Виндовсвиртуалдесктоп
 | Тип ресурса | Resource group | Subscription |
 | ------------- | ----------- | ---------- |
-| applicationgroups | Нет | Нет |
-| hostpools | Нет | Нет |
+| аппликатионграупс | Нет | Нет |
+| хостпулс | Нет | Нет |
 | workspaces | Нет | Нет |
 
 ## <a name="third-party-services"></a>Сторонние службы

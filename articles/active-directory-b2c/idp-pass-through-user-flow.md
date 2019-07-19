@@ -1,5 +1,5 @@
 ---
-title: Передавать маркер доступа потоке пользователя в приложение — Azure Active Directory B2C | Документация Майкрософт
+title: Передача маркера доступа через поток пользователя в приложение — Azure Active Directory B2C | Документация Майкрософт
 description: Сведения о передаче маркера доступа для поставщиков удостоверений OAuth2.0 в качестве утверждения через поток пользователя в Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: db4b799aa31a4132609b0dd158b65070fb2474b7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8e9019699d8a81d31d2b20f674fd76fcb70021d6
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66510950"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67846822"
 ---
 # <a name="pass-an-access-token-through-a-user-flow-to-your-application-in-azure-active-directory-b2c"></a>Передача маркера доступа с помощью потока пользователя в приложение в Azure Active Directory B2C
 
@@ -26,7 +26,7 @@ ms.locfileid: "66510950"
 
 В настоящее время Azure AD B2C поддерживает только передачу маркера доступа поставщиков удостоверений [OAuth 2.0](active-directory-b2c-reference-oauth-code.md), в том числе [Facebook](active-directory-b2c-setup-fb-app.md) и [Google](active-directory-b2c-setup-goog-app.md). Для остальных поставщиков удостоверений утверждение возвращается пустым.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Приложение должно использовать [поток пользователя версии 2](user-flow-versions.md).
 - Ваш поток пользователя настроен с поставщиком удостоверений OAuth 2.0.
@@ -34,13 +34,13 @@ ms.locfileid: "66510950"
 ## <a name="enable-the-claim"></a>Включение утверждения
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
-2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите **фильтр каталога и подписки** в верхнем меню и выберите каталог, содержащий вашего клиента.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. В верхнем меню выберите **каталог и фильтр подписок** и выберите каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
-4. Выберите **маршруты пользователей (политики)** , а затем выберите пользователей. Например **B2C_1_signupsignin1**.
+4. Выберите **потоки пользователей (политики)** , а затем выберите пользовательский поток. Например, **B2C_1_signupsignin1**.
 5. Выберите элемент **Утверждения приложения**.
-6. Включить **токена доступа поставщика удостоверений** утверждения.
+6. Включите утверждение **маркера доступа поставщика удостоверений** .
 
-    ![Включить утверждения токена доступа поставщика удостоверений](./media/idp-pass-through-user-flow/idp-pass-through-user-flow-app-claim.png)
+    ![Включение утверждения маркера доступа поставщика удостоверений](./media/idp-pass-through-user-flow/idp-pass-through-user-flow-app-claim.png)
 
 7. Нажмите кнопку **Сохранить**, чтобы сохранить поток пользователя.
 
@@ -54,12 +54,8 @@ ms.locfileid: "66510950"
 
     Должен отобразиться результат, аналогичный следующему примеру:
 
-    ![Декодированный маркер](./media/idp-pass-through-user-flow/idp-pass-through-user-flow-token.png)
+    ![Декодированный токен в jwt.ms с выделенным блоком idp_access_token](./media/idp-pass-through-user-flow/idp-pass-through-user-flow-token.PNG)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения см. в [Обзор Azure AD B2C маркеры](active-directory-b2c-reference-tokens.md).
-
-
-
-
+Дополнительные сведения см. в [обзоре маркеров Azure AD B2C](active-directory-b2c-reference-tokens.md).

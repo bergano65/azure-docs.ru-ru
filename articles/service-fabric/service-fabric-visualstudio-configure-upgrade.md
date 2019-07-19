@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 06/29/2017
-ms.author: mikkelhegn
-ms.openlocfilehash: 79120371ca2a62e5ef9f2bf38476635db12e9fcc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: mikhegn
+ms.openlocfilehash: 5979541146b7cd7b854f35c5bf204e71208f066b
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61082851"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67876761"
 ---
 # <a name="configure-the-upgrade-of-a-service-fabric-application-in-visual-studio"></a>Настройка обновления приложения Service Fabric в Visual Studio
 Средства Visual Studio для Azure Service Fabric обеспечивают поддержку обновления для публикации на локальных и удаленных кластерах. Существуют три сценария, в которых следует обновить приложение до более новой версии, а не заменить его, во время тестирования и отладки:
@@ -31,7 +31,7 @@ ms.locfileid: "61082851"
 ## <a name="parameters-needed-to-upgrade"></a>Параметры, необходимые для обновления
 Существует два типа развертывания: обычное или обновление. При обычном развертывании стираются все предыдущие сведения о развертывании и данные в кластере, а при обновлении они сохраняются. При обновлении приложения Service Fabric в Visual Studio необходимо указать параметры обновления приложения и политики проверки работоспособности. Параметры обновления приложения помогают управлять обновлением, а политики проверки работоспособности определяют, было обновление успешным или нет. Дополнительные сведения см. в статье [Параметры обновления приложений](service-fabric-application-upgrade-parameters.md).
 
-Существует три режима обновления: *Мониторинг*, *UnmonitoredAuto*, и *UnmonitoredManual*.
+Существует три режима обновления: *Отслеживаемые*, *UnmonitoredAuto*и *UnmonitoredManual*.
 
 * При отслеживаемом обновлении процесс обновления и проверка работоспособности приложения автоматизируются.
 * При неотслеживаемом автоматическом обновлении процесс обновления автоматизируется, но проверка работоспособности приложения пропускается.
@@ -86,5 +86,5 @@ ms.locfileid: "61082851"
     </HealthPolicy>
 </Policies>
 ```
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения см. в статье об [обновлении приложения с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md).

@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: Узнайте, как создать внутренний балансировщик нагрузки в диспетчере ресурсов с помощью шаблона.
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -12,13 +12,13 @@ ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
-ms.author: kumud
-ms.openlocfilehash: 339183dabf67abb43d6fc99bbe5258a39f12b14a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: allensu
+ms.openlocfilehash: f05c90948fe95f204f268d84c01e1e8773bec468
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66122288"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68275383"
 ---
 # <a name="create-an-internal-load-balancer-using-a-template"></a>Создайте внутренний балансировщик нагрузки с помощью шаблона
 
@@ -45,7 +45,7 @@ ms.locfileid: "66122288"
 1. Если вы ранее не использовали Azure PowerShell, следуйте указаниям в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview) до этапа входа в Azure и выбора подписки.
 2. Скачайте файл параметров на локальный диск.
 3. Измените и сохраните файл.
-4. Запустите **New AzResourceGroupDeployment** командлет, чтобы создать группу ресурсов с помощью шаблона.
+4. Выполните командлет **New-азресаурцеграупдеплоймент** , чтобы создать группу ресурсов с помощью шаблона.
 
     ```azurepowershell-interactive
     New-AzResourceGroupDeployment -Name TestRG -Location westus `
@@ -75,7 +75,7 @@ ms.locfileid: "66122288"
     azure group create --name TestRG --location westus --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-internal-load-balancer/azuredeploy.json --parameters-file parameters.json
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Настройка режима распределения балансировщика нагрузки с помощью соответствия исходному IP-адресу](load-balancer-distribution-mode.md)
 

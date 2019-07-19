@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: Сведения о создании внутренней подсистемы балансировки нагрузки с помощью Azure CLI.
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -12,13 +12,13 @@ ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/27/2018
-ms.author: kumud
-ms.openlocfilehash: cb01aa84201c1e0727414215974a343e8cf3b724
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: allensu
+ms.openlocfilehash: e38cc4e6da574e0c3be490cf5d9cd929624343e5
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66475903"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68275455"
 ---
 # <a name="create-an-internal-load-balancer-to-load-balance-vms-using-azure-cli"></a>Создание внутренней подсистемы балансировки нагрузки с помощью Azure CLI для распределения нагрузки между виртуальными машинами
 
@@ -39,7 +39,7 @@ ms.locfileid: "66475903"
     --name myResourceGroupILB \
     --location eastus
 ```
-## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 С помощью команды [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet) создайте виртуальную сеть с именем *myVnet*, содержащую подсеть *mySubnet*, в группе ресурсов *myResourceGroup*.
 
@@ -60,7 +60,7 @@ ms.locfileid: "66475903"
 
 ### <a name="create-the-load-balancer"></a>Создание подсистемы балансировки нагрузки
 
-Создание внутренней подсистемы балансировки нагрузки с [создать балансировки нагрузки сети az](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) с именем **myLoadBalancer** , включает в себя внешнюю IP-конфигурацию с именем **myFrontEnd**, пулу серверной части с именем **myBackEndPool** связанный с частным IP-адресом ** 10.0.0.7.
+Создайте внутренний Load Balancer с помощью команды [AZ Network фунтов Create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) с именем **myLoadBalancer** , которая включает внешнюю IP-конфигурацию с именем **myFrontEnd**, внутренний пул с именем **myBackEndPool** , связанный с частным IP-адресом * 10.0.0.7.
 
 ```azurecli-interactive
   az network lb create \
@@ -233,5 +233,5 @@ for i in `seq 1 2`; do
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этой статье вы создали внутреннюю подсистему балансировки нагрузки уровня "Базовый", подключили к ней виртуальные машины, настроили правило трафика подсистемы балансировки нагрузки, зонд работоспособности, а также проверили работу подсистемы балансировки нагрузки. Дополнительные сведения о подсистемах балансировки нагрузки и связанных с ними ресурсах см. в статьях с инструкциями.

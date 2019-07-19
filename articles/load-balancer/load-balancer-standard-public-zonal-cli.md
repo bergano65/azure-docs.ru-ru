@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: Сведения о создании общедоступной подсистемы Load Balancer (цен. категория "Стандартный") с зональным внешним интерфейсом с общедоступным IP-адресом с помощью Azure CLI
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 ms.custom: seodec18
 ms.service: load-balancer
 ms.devlang: na
@@ -12,13 +12,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2018
-ms.author: kumud
-ms.openlocfilehash: 7f5aa65b055669a8a4047dffa72d456fed0714f8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: allensu
+ms.openlocfilehash: 7da41456a4f4bb88d402d27b42b31f6d4adfa7f6
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66111587"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68274316"
 ---
 #  <a name="create-a-standard-load-balancer-with-zonal-frontend-using-azure-cli"></a>Создание экземпляра Load Balancer (цен. категория "Стандартный") с зональным интерфейсным сервером с помощью Azure CLI
 
@@ -113,7 +113,7 @@ az network lb rule create \
 ## <a name="configure-virtual-network"></a>Настройка виртуальной сети
 Прежде чем развертывать виртуальные машины и тестировать подсистему балансировки нагрузки, создайте вспомогательные ресурсы виртуальной сети.
 
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 С помощью команды [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create) в группе ресурсов myResourceGroup создайте виртуальную сеть с именем *myVnet*, содержащую подсеть *mySubnet*.
 
@@ -249,7 +249,7 @@ done
 
 Чтобы увидеть, как подсистема балансировки нагрузки распределяет трафик на виртуальные машины в зоне 1, на которых выполняется приложение, принудительно обновите веб-браузер.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Узнайте больше об [Azure Load Balancer уровня "Стандартный"](./load-balancer-standard-overview.md).
 
 
