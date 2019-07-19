@@ -4,27 +4,29 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 06/24/2019
 ms.author: aahi
-ms.openlocfilehash: ad1527a5e7f1cb2ff1beb9ddace5460f41bb8a87
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: 674dd30ff3e493ec4c4036f032f82624a6ca5749
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67461510"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68334258"
 ---
-## <a name="azure-cognitive-service-subscription-types"></a>Типы подписки Azure Cognitive Service
+## <a name="azure-cognitive-service-resource-types"></a>Типы ресурсов службы "служба Azure для себя"
 
 > [!NOTE]
-> Владелец подписки может отключить создание учетной записи Cognitive Services для группы ресурсов или подписки с помощью [политики Azure](https://docs.microsoft.com/azure/governance/policy/overview#policy-definition), присвоив определение политики "Недопустимые типы ресурсов" и указав **Microsoft.CognitiveServices/accounts** в качестве целевого типа ресурсов.
+> Владельцы подписки могут отключить создание Cognitive Services ресурсов для групп ресурсов и подписок, применив [политику Azure](https://docs.microsoft.com/azure/governance/policy/overview#policy-definition), назначив определение политики "запрещенные типы ресурсов" и указав  **Microsoft. CognitiveServices/Accounts** как тип целевого ресурса.
 
-Azure Cognitive Services можно обращаться из двух разных подписках: Подписка нескольких служб или одной службой один. Эти подписки позволяют подключаться к одной службы или несколько служб, за один раз.
+Вы можете получить доступ к Cognitive Services Azure с помощью двух разных ресурсов: Ресурс с несколькими службами или один сервис. Эти подписки позволяют одновременно подключиться к одной службе или нескольким службам.
 
-### <a name="multi-service-subscription"></a>Подписка на несколько служб
+### <a name="multi-service-resource"></a>Ресурс с несколькими службами
 
 >[!WARNING]
-> Сейчас некоторые службы **не** поддерживают ключи для нескольких служб: QnA Maker, речью, пользовательской службе визуального распознавания и обнаружения аномалий.
+> Сейчас некоторые службы **не** поддерживают ключи для нескольких служб: QnA Maker, службы речи, Пользовательское визуальное распознавание и детектор аномалий.
 
-Нескольких служб подписки для Azure Cognitive Services позволяет использовать одной подписки и ресурсов Azure для большинства служб Azure Cognitive Services и объединяет выставления счетов от служб, которые можно использовать. Дополнительные сведения см. на странице [Цены на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/).
+Подписка на ресурс Cognitive Services с несколькими службами:
+* Позволяет использовать один ресурс Azure для большинства Cognitive Services Azure.
+* Консолидация счетов из используемых вами служб. Дополнительные сведения см. на странице [Цены на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/).
 
-### <a name="single-service-subscription"></a>Подписка на одну службу
+### <a name="single-service-resource"></a>Ресурс с одной службой
 
-Подписка на одну службу, например компьютерного или служб речи. Подписка на одну службу распространяется только на соответствующий ресурс. 
+Ресурсы одной службы (например, Компьютерное зрение или службы речи) ограничены указанной службой.

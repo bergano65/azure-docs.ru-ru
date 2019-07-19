@@ -1,5 +1,5 @@
 ---
-title: Как настроить контейнер для распознавателя формы
+title: Настройка контейнера для распознавателя форм
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как настраивать контейнер Распознавателя документов для синтаксического анализа данных форм и таблиц.
 author: IEvangelist
@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: 7752b09dd1bf20d796b19d03e62426b098486c39
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 4a490e8a9f111985df9c9e8c9f73bc36d686cc2a
+ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67718456"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68348692"
 ---
 # <a name="configure-form-recognizer-containers"></a>Настройка контейнера Распознавателя документов
 
@@ -74,10 +74,10 @@ ms.locfileid: "67718456"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того, расположение подключения на [главном компьютере](form-recognizer-container-howto.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и разрешениями для расположения подключения к узлу.
 
-|Необязательно| Имя | Тип данных | Описание |
+|Необязательно| ИМЯ | Тип данных | Описание |
 |-------|------|-----------|-------------|
-|Обязательно для заполнения| `Input` | Строка, | Цель входного подключения. По умолчанию используется значение `/input`.    <br><br>Пример:<br>`--mount type=bind,src=c:\input,target=/input`|
-|Обязательно для заполнения| `Output` | Строка, | Цель выходного подключения. По умолчанию используется значение `/output`.  <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Обязательно для заполнения| `Input` | Строка, | Цель входного подключения. Значение по умолчанию — `/input`.    <br><br>Пример:<br>`--mount type=bind,src=c:\input,target=/input`|
+|Обязательно для заполнения| `Output` | Строка, | Цель выходного подключения. Значение по умолчанию — `/output`.  <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run
 
@@ -90,8 +90,8 @@ ms.locfileid: "67718456"
 
 | Placeholder | Значение |
 |-------------|-------|
-|{BILLING_KEY} | Этот ключ используется для запуска контейнера. Ключ можно найти на странице ключей Распознавателя документов на портале Azure.  |
-|{BILLING_ENDPOINT_URI} | Значение URI конечной точки выставления счетов доступно на странице общих сведений о Распознавателе документов на портале Azure.|
+|{FORM_RECOGNIZER_API_KEY} | Этот ключ используется для запуска контейнера. Ключ можно найти на странице ключей Распознавателя документов на портале Azure.  |
+|{FORM_RECOGNIZER_ENDPOINT_URI} | Значение URI конечной точки выставления счетов доступно на странице общих сведений о Распознавателе документов на портале Azure.|
 |{COMPUTER_VISION_API_KEY}| Ключ можно найти на странице ключей API Компьютерного зрения на портале Azure.|
 |{COMPUTER_VISION_ENDPOINT_URI}|Конечная точка выставления счетов. При использовании облачного ресурса Компьютерного зрения значение URI доступно на странице общих сведений об API Компьютерного зрения на портале Azure. При использовании контейнера *cognitive-services-recognize-text* URL-адрес конечной точки выставления счетов можно получить в контейнере с помощью команды `docker run`.|
 
@@ -113,8 +113,8 @@ docker run --rm -it -p 5000:5000 --memory 8g --cpus 2 \
 --mount type=bind,source=c:\output,target=/output \
 containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer \
 Eula=accept \
-Billing={BILLING_ENDPOINT_URI} \
-ApiKey={BILLING_KEY} \
+Billing={FORM_RECOGNIZER_ENDPOINT_URI} \
+ApiKey={FORM_RECOGNIZER_API_KEY} \
 FormRecognizer:ComputerVisionApiKey={COMPUTER_VISION_API_KEY} \
 FormRecognizer:ComputerVisionEndpointUri={COMPUTER_VISION_ENDPOINT_URI}
 ```
@@ -127,13 +127,12 @@ docker run --rm -it -p 5000:5000 --memory 8g --cpus 2 \
 --mount type=bind,source=c:\output,target=/output \
 containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer \
 Eula=accept \
-Billing={BILLING_ENDPOINT_URI} \
-ApiKey={BILLING_KEY} \
+Billing={FORM_RECOGNIZER_ENDPOINT_URI} \
+ApiKey={FORM_RECOGNIZER_API_KEY} \
 FormRecognizer:ComputerVisionApiKey={COMPUTER_VISION_API_KEY} \
 FormRecognizer:ComputerVisionEndpointUri={COMPUTER_VISION_ENDPOINT_URI}
 Logging:Console:LogLevel:Default=Information
 ```
-
 
 ## <a name="next-steps"></a>Следующие шаги
 
