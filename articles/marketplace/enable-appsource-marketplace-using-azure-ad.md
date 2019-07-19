@@ -7,13 +7,13 @@ manager: pabutler
 ms.service: marketplace
 ms.topic: article
 ms.date: 09/12/2018
-ms.author: qianw211
-ms.openlocfilehash: 950371fd92d255ed01dfa89d5c2fcbded686a971
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.author: pabutler
+ms.openlocfilehash: 0b68687a2bbaa817f2776757ccab9571638c0fd5
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67443082"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67875998"
 ---
 # <a name="enable-an-appsource-and-marketplace-listing-by-using-azure-active-directory"></a>Включение описания в AppSource и Marketplace с помощью Azure Active Directory
 
@@ -86,7 +86,7 @@ ms.locfileid: "67443082"
 - Разработайте тестовый выпуск для одного клиента.
 - Создайте демонстрационное мультитенантное приложение, использующее единый вход.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Убедитесь, что была выполнена [регистрация в Azure Marketplace](https://azuremarketplace.microsoft.com/sell).
-- См. в разделе [как создать учетную запись центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) Дополнительные сведения о том, как создать или завершить свое предложение.
+- Дополнительные сведения о том, как создать или завершить предложение, см. в статье [Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) .

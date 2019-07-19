@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 04/05/2018
 ms.author: danlep
 ms.custom: ''
-ms.openlocfilehash: 87263d11828ff5122122ef36850fade87949bcac
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 6bdbc566215fb7e68109b523fb2af9bca16c328c
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671610"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67849702"
 ---
 # <a name="create-a-linux-virtual-machine-in-an-availability-zone-with-the-azure-cli"></a>Создание виртуальной машины Linux в зоне доступности с помощью Azure CLI
 
@@ -102,7 +102,7 @@ az vm create --resource-group myResourceGroupVM --name myVM --location eastus2 -
 
 При развертывании виртуальной машины в зоне доступности диск виртуальной машины создается в той же зоне доступности. По умолчанию общедоступный IP-адрес также создается в этой зоне. В примерах ниже содержатся сведения об этих ресурсах.
 
-Чтобы убедиться, что управляемого диска виртуальной Машины в зоне доступности, используйте [az vm show](/cli/azure/vm) команду, чтобы получить идентификатор диска. В этом примере идентификатор диска хранится в переменной, которая используется на более позднем этапе. 
+Чтобы убедиться, что управляемый диск виртуальной машины находится в зоне доступности, используйте команду [AZ VM](/cli/azure/vm) -Command, чтобы получить идентификатор диска. В этом примере идентификатор диска хранится в переменной, которая будет использоваться на более позднем этапе. 
 
 ```azurecli-interactive
 osdiskname=$(az vm show -g myResourceGroupVM -n myVM --query "storageProfile.osDisk.name" -o tsv)
@@ -198,7 +198,7 @@ az network public-ip show --resource-group myResourceGroupVM --name $ipaddressna
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Из этой статье вы узнали, как создать виртуальную машину в зоне доступности. Узнайте о [регионах и доступности](regions-and-availability.md) виртуальных машин Azure.
+Из этой статье вы узнали, как создать виртуальную машину в зоне доступности. Дополнительные сведения о [доступности](availability.md) для виртуальных машин Azure.
 
 
 

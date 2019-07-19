@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: Узнайте, как реализовать поддержку IPv6 для Azure Load Balancer и виртуальных машин с балансировкой нагрузки.
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 keywords: IPv6, Azure Load Balancer, двойной стек, общедоступный IP-адрес, встроенная поддержка Ipv6, мобильное устройство, Интернет вещей
 ms.service: load-balancer
 ms.devlang: na
@@ -13,13 +13,13 @@ ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
-ms.author: kumud
-ms.openlocfilehash: 4a8c7309a07238ef3410e42c3d631ad525f023cc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: allensu
+ms.openlocfilehash: 4286879dc53cc835532c7a8243eaf88813545265
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61216857"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68274999"
 ---
 # <a name="deploy-an-internet-facing-load-balancer-solution-with-ipv6-using-a-template"></a>Развертывание решения балансировки нагрузки для Интернета с поддержкой IPv6 с помощью шаблона
 
@@ -134,6 +134,6 @@ Azure Load Balancer является балансировщиком нагруз
 
 Остальные переменные в шаблоне содержат производные значения, которые назначаются, когда Azure создает ресурсы. Не изменяйте эти переменные.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Синтаксис JSON и свойства подсистемы балансировки нагрузки в шаблоне, см. в разделе [Microsoft.Network/loadBalancers](/azure/templates/microsoft.network/loadbalancers).

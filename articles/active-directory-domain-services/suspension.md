@@ -15,14 +15,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: iainfou
-ms.openlocfilehash: f50d16687632224a21d6ae294f4070485fb4eead
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 781a81589032c290cef7342e7210ee36f388b22a
+ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67472506"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68233988"
 ---
-# <a name="suspended-domains"></a>Приостановленные домены
+# <a name="understand-the-suspended-states-for-an-azure-active-directory-domain-services-managed-domain"></a>Сведения о состоянии приостановки для управляемого домена Azure Active Directory доменных служб
+
 Когда доменные службы Azure Active Directory (Azure AD DS) в течение длительного периода времени не обслуживают управляемый домен, его работа приостанавливается. Эта статья о том, почему работа управляемых доменов приостанавливается и каким образом можно ее возобновить.
 
 
@@ -110,7 +111,7 @@ ms.locfileid: "67472506"
 Управляемый домен может быть восстановлен только в состоянии на дату создания последней резервной копии. Дата создания последней резервной копии вашего управляемого домена отображается на странице "Работоспособность". Любые изменения, произошедшие после создания последней резервной копии, не подлежат восстановлению. Резервные копии для управляемого домена хранятся в течение 30 дней. Резервные копии, которым больше 30 дней, удаляются.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Сведения о разрешении оповещений об управляемом домене](troubleshoot-alerts.md)
 - [Подробнее о доменных службах Azure Active Directory](overview.md)
 - [Связь с группой разработчиков продукта](contact-us.md)

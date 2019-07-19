@@ -6,14 +6,15 @@ author: cherylmc
 ms.service: expressroute
 ms.topic: article
 ms.date: 02/20/2019
-ms.author: ganesr;cherylmc
+ms.author: cherylmc
+ms.reviewer: ganesr
 ms.custom: seodec18
-ms.openlocfilehash: 06f49dc00b83ee2190f6361ebb8e6f052384402a
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: 2ff22a3c0087ff7e24517f792ba9abacbae76e3a
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67657308"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67846643"
 ---
 # <a name="create-and-modify-an-expressroute-circuit-using-powershell"></a>Создание и изменение канала ExpressRoute с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -45,7 +46,7 @@ ms.locfileid: "67657308"
 ### <a name="2-get-the-list-of-supported-providers-locations-and-bandwidths"></a>2. Получение списка поддерживаемых поставщиков, расположений и значений пропускной способности
 Перед созданием канала ExpressRoute потребуется список поддерживаемых поставщиков услуг подключения, расположений и вариантов пропускной способности.
 
-Командлет PowerShell **Get AzExpressRouteServiceProvider** возвращает эти сведения, которые будут использоваться на последующих этапах:
+Командлет PowerShell **Get-азекспрессраутесервицепровидер** возвращает эти сведения, которые будут использоваться в последующих шагах:
 
 ```azurepowershell-interactive
 Get-AzExpressRouteServiceProvider
@@ -53,7 +54,7 @@ Get-AzExpressRouteServiceProvider
 
 Проверьте, указан ли в списке поставщик услуг подключения. Запишите следующие сведения, которые потребуются позднее при создании канала:
 
-* ИМЯ
+* Имя
 * PeeringLocations
 * BandwidthsOffered
 
@@ -90,7 +91,7 @@ get-help New-AzExpressRouteCircuit -detailed
 
 
 ### <a name="4-list-all-expressroute-circuits"></a>4. Получение списка всех каналов ExpressRoute
-Чтобы получить список всех созданных вами каналов ExpressRoute, выполните **Get AzExpressRouteCircuit** команды:
+Чтобы получить список всех созданных каналов ExpressRoute, выполните команду **Get-азекспрессраутеЦиркуит** :
 
 ```azurepowershell-interactive
 Get-AzExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
@@ -216,7 +217,7 @@ Get-AzExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "Exp
 Теперь свяжите виртуальную сеть с каналом ExpressRoute. При работе с моделью развертывания Resource Manager пользуйтесь статьей [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md) .
 
 ## <a name="getting-the-status-of-an-expressroute-circuit"></a>Получение состояния канала ExpressRoute
-Вы можете получить эти сведения в любое время с помощью **Get AzExpressRouteCircuit** командлета. Если командлет вызывается без параметров, выводится список всех каналов.
+Эти сведения можно получить в любое время с помощью командлета **Get-азекспрессраутеЦиркуит** . Если командлет вызывается без параметров, выводится список всех каналов.
 
 ```azurepowershell-interactive
 Get-AzExpressRouteCircuit

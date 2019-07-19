@@ -3,16 +3,17 @@ title: Аутентификация с помощью реестра конте�
 description: Узнайте, как обеспечить доступ к образам в закрытом реестре контейнеров из службы "Экземпляры контейнеров Azure" с помощью субъекта-службы Azure Active Directory.
 services: container-registry
 author: dlepow
+manager: gwallace
 ms.service: container-registry
 ms.topic: article
 ms.date: 04/23/2018
 ms.author: danlep
-ms.openlocfilehash: 8a2d19a09233e510055e147fa1cf95dd4471768b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d2099de9ad909b23b79a92a831d7730b1cf126e3
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61333589"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68311639"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-container-instances"></a>Аутентификация с помощью реестра контейнеров Azure из службы "Экземпляры контейнеров Azure"
 
@@ -44,14 +45,14 @@ az container create \
     --registry-password <service-principal-password>
 ```
 
-## <a name="sample-scripts"></a>Примеры скриптов
+## <a name="sample-scripts"></a>Примеры сценариев
 
 На GitHub можно найти предыдущие примеры сценариев для Azure CLI, а также версии для Azure PowerShell:
 
-* [Azure CLI][acr-scripts-cli]
+* [Интерфейс командной строки Azure][acr-scripts-cli]
 * [Azure PowerShell][acr-scripts-psh]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В следующих статьях приводятся дополнительные сведения о работе с субъектами-службами и реестром контейнеров Azure.
 

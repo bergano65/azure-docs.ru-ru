@@ -3,16 +3,17 @@ title: Аутентификация в реестре контейнеров Azu
 description: Предоставление доступа к образам, размещенным в закрытом реестре контейнеров, с помощью субъекта-службы Azure Active Directory.
 services: container-registry
 author: dlepow
+manager: gwallace
 ms.service: container-registry
 ms.topic: article
 ms.date: 12/13/2018
 ms.author: danlep
-ms.openlocfilehash: 5d8904b5906adbdab68989b3a5cf9c3975c23533
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 97c45a009b155eea7bc61a9dd337090b9e3c1b42
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61347087"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68309946"
 ---
 # <a name="azure-container-registry-authentication-with-service-principals"></a>Аутентификация в реестре контейнеров Azure с помощью субъектов-служб
 
@@ -34,18 +35,18 @@ ms.locfileid: "61347087"
 
 Субъект-службы следует очень удобны для предоставления доступа к реестру при работе со **сценариями с автоматическим доступом**. Это позволяет приложениям, службам и (или) скриптам передавать или получать образы контейнеров в полностью автоматическом режиме или без участия оператора.
 
-Для отдельных обращений к реестру, например, чтобы вручную извлечь отдельный образ контейнера на рабочую станцию разработки, лучше войти в реестр с собственным [удостоверением Azure AD](container-registry-authentication.md#individual-login-with-azure-ad) (например, с помощью команды [az acr login][az-acr-login]).
+Для отдельного доступа к реестру, например, при ручном извлекать образ контейнера на рабочую станцию разработки, вместо этого следует использовать собственное [удостоверение Azure AD](container-registry-authentication.md#individual-login-with-azure-ad) для доступа к реестру (например, с помощью команды [AZ контроля учетных записей][az-acr-login]).
 
 [!INCLUDE [container-registry-service-principal](../../includes/container-registry-service-principal.md)]
 
-## <a name="sample-scripts"></a>Примеры скриптов
+## <a name="sample-scripts"></a>Примеры сценариев
 
 На GitHub можно найти предыдущие примеры сценариев для Azure CLI, а также версии для Azure PowerShell:
 
-* [Azure CLI][acr-scripts-cli]
+* [Интерфейс командной строки Azure][acr-scripts-cli]
 * [Azure PowerShell][acr-scripts-psh]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Создав субъект-службу и предоставив ему доступ к реестру контейнеров, вы сможете применять его учетные данные в приложениях и службах для автономного взаимодействия с реестром. Учетные данные субъекта-службы можно использовать из любой службы Azure, которая может выполнить проверку подлинности в реестре контейнеров Azure. Примеры приведены ниже.
 

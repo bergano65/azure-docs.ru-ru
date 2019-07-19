@@ -8,16 +8,17 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/09/2018
 ms.author: sngun
-ms.openlocfilehash: 4f502984a09f81b5aaf0568c84b75832f8164151
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: d68e957ece5c634ed1ce069218df717a4fe0952f
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67541049"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68261271"
 ---
 # <a name="azure-cosmos-db-net-sdk-for-sql-api-download-and-release-notes"></a>Пакет SDK .NET для Azure Cosmos DB для API SQL: скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-sdk-dotnet.md)
+> * [.NET](sql-api-sdk-dotnet-standard.md)
 > * [Веб-канал изменений в .NET](sql-api-sdk-dotnet-changefeed.md)
 > * [.NET Core](sql-api-sdk-dotnet-core.md)
 > * [Node.js](sql-api-sdk-node.md)
@@ -34,46 +35,42 @@ ms.locfileid: "67541049"
 |---|---|
 |**Скачивание пакета SDK**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/)|
 |**Документация по API**|[Справочная документация по API .NET](/dotnet/api/overview/azure/cosmosdb?view=azure-dotnet)|
-|**Примеры**|[Примеры кода для .NET](sql-api-dotnet-samples.md)|
+|**Примеры**|[Примеры кода для .NET](https://github.com/Azure/azure-cosmos-dotnet-v2/tree/master/samples)|
 |**Начало работы**|[Azure Cosmos DB. Приступая к работе с API DocumentDB](sql-api-get-started.md)|
 |**Учебник по веб-приложениям**|[Руководство по ASP.NET MVC. Разработка веб-приложений в Azure Cosmos DB](sql-api-dotnet-application.md)|
 |**Текущая поддерживаемая платформа**|[Microsoft .NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)|
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
-### <a name="a-name3001-preview3001-preview"></a><a name="3.0.0.1-preview"/>3.0.0.1-preview
-* Общедоступная предварительная версия 1 пакета SDK для .NET [версии 3.0.0](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/).
-* Целевая спецификация .NET Standard, который поддерживает .NET Framework 4.6.1+ и .NET Core 2.0+.
-* Новая объектная модель и класс верхнего уровня CosmosClient с методами, разделенными между соответствующими классами (CosmosDatabases, CosmosContainers и CosmosItems). 
-* Поддержка потоков. 
-* Обновлен класс сервера CosmosResponseMessage. Теперь он возвращает код состояния и выдает исключение только в случае отсутствия ответа. 
+> [!NOTE]
+> Если вы используете .NET Framework, ознакомьтесь с последней версией [пакета SDK для .NET](sql-api-sdk-dotnet-standard.md)версии 3. x, которая предназначена для .NET Standard. 
 
 ### <a name="a-name251251"></a><a name="2.5.1"/>2.5.1
 
-* Версия пакета SDK для System.Net.Http теперь соответствует их количеству в пакете NuGet.
-* Разрешить запросы записи для возврата в другом регионе в случае сбоя исходного одного.
+* Версия System .NET. HTTP пакета SDK теперь соответствует тому, что определено в пакете NuGet.
+* Разрешить запросы на запись в другой регион в случае сбоя исходного.
 * Добавьте политику повтора сеанса для запроса на запись.
 
 ### <a name="a-name241241"></a><a name="2.4.1"/>2.4.1
 
-* Исправления, трассировка гонки для запросов, которые вызывали пустые страницы
+* Исправляет состояние отслеживания состояния гонки для запросов, вызвавших пустые страницы
 
 ### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
 
-* Увеличен размер знаков после запятой для запросов LINQ.
-* Добавлены новые классы CompositePath, CompositePathSortOrder, SpatialSpec, SpatialType и PartitionKeyDefinitionVersion
-* Добавлена TimeToLivePropertyPath к коллекции DocumentCollection
-* Добавлена CompositeIndexes и SpatialIndexes для IndexPolicy
-* Добавлены версии для PartitionKeyDefinition
-* Добавлены None для PartitionKey
+* Увеличенный размер десятичной точности для запросов LINQ.
+* Добавлены новые классы Компоситепас, Компоситепассортордер, Спатиалспек, Спатиалтипе и Партитионкэйдефинитионверсион
+* Добавлен Тиметоливепропертипас в коллекции documentcollection
+* Добавлены Компоситеиндексес и Спатиалиндексес в Индексполици
+* Добавлена версия в Партитионкэйдефинитион
+* В PartitionKey добавлено значение None
 
 ### <a name="a-name230230"></a><a name="2.3.0"/>2.3.0
 
- * Добавлена IdleTcpConnectionTimeout, OpenTcpConnectionTimeout, MaxRequestsPerTcpConnection и MaxTcpConnectionsPerEndpoint для ConnectionPolicy.
+ * Добавлены Идлеткпконнектионтимеаут, Опенткпконнектионтимеаут, Максрекуестсперткпконнектион и MaxTcpConnectionsPerEndpoint в ConnectionPolicy.
 
 ### <a name="a-name223223"></a><a name="2.2.3"/>2.2.3
 
-* Усовершенствования диагностики
+* Улучшения диагностики
 
 ### <a name="a-name222222"></a><a name="2.2.2"/>2.2.2
 
@@ -346,7 +343,7 @@ ms.locfileid: "67541049"
 ### <a name="a-name130130"></a><a name="1.3.0"/>1.3.0
 * Добавлена поддержка изменения политики индексации.
   * Новый метод ReplaceDocumentCollectionAsync в классе DocumentClient.
-  * Новое свойство IndexTransformationProgress в ResourceResponse<T> для отслеживания процесса изменения политики индексирования (в процентах).
+  * Новое свойство IndexTransformationProgress в ResourceResponse\<T > для отслеживания процента изменения политики индекса
   * Свойство DocumentCollection.IndexingPolicy теперь является изменяемым.
 * Добавлена поддержка индексирования и создания запросов к пространственным типам данных.
   * Новое пространство имен Microsoft.Azure.Documents.Spatial для сериализации и десериализации пространственных типов, таких как Point и Polygon.
@@ -386,9 +383,9 @@ ms.locfileid: "67541049"
 | --- | --- | --- |
 | [2.5.1](#2.5.1) |02 июля 2019 г. |--- |
 | [2.4.1](#2.4.1) |20 июня 2019 г. |--- |
-| [2.4.0](#2.4.0) |05-мая 2019 г. |--- |
-| [2.3.0](#2.3.0) |04 апреля 2019 г. |--- |
-| [2.2.3](#2.2.3) |11 февраля 2019 г. |--- |
+| [2.4.0](#2.4.0) |05 мая 2005 г., 2019 |--- |
+| [2.3.0](#2.3.0) |04, 2019 |--- |
+| [2.2.3](#2.2.3) |11 февраля, 2019 |--- |
 | [2.2.2](#2.2.2) |6 февраля 2019 г. |--- |
 | [2.2.1](#2.2.1) |24 декабря 2018 г. |--- |
 | [2.2.0](#2.2.0) |7 декабря 2018 г. |--- |

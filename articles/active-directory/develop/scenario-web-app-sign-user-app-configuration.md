@@ -1,6 +1,6 @@
 ---
-title: Веб-приложение, которое поддерживает вход пользователей (Настройка кода) — платформе Microsoft identity
-description: Узнайте, как создать веб-приложение, которое поддерживает вход пользователей (код конфигурации)
+title: Веб-приложение, которое подписывает пользователей (конфигурация кода) — платформа Microsoft Identity
+description: Узнайте, как создать веб-приложение, которое входит в систему пользователей (конфигурация кода)
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -15,37 +15,37 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7484b627d3bc3f26fa01d4c38ee96047c70d007
-ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
+ms.openlocfilehash: c962e95b3d213c4089b51f58139cab17a3332cbd
+ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67785483"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67853069"
 ---
-# <a name="web-app-that-signs-in-users---code-configuration"></a>Веб-приложение, выполняет вход пользователей - код конфигурации
+# <a name="web-app-that-signs-in-users---code-configuration"></a>Веб-приложение, которое входит в систему пользователей — конфигурация кода
 
-Узнайте, как настроить код для веб-приложения, где пользователи, впервые входящий в систему.
+Узнайте, как настроить код для веб-приложения, которое входит в систему пользователей.
 
-## <a name="libraries-used-to-protect-web-apps"></a>Библиотеки, которые используются для защиты веб-приложений
+## <a name="libraries-used-to-protect-web-apps"></a>Библиотеки, используемые для защиты веб-приложений
 
 <!-- This section can be in an include for Web App and Web APIs -->
-Ниже приведены библиотеки, используемые для защиты веб-приложения (и веб-API).
+Библиотеки, используемые для защиты веб-приложения (и веб-API):
 
 | Платформа | Библиотека | Описание |
 |----------|---------|-------------|
-| ![.NET](media/sample-v2-code/logo_net.png) | [Расширения модели удостоверения для .NET](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) | Расширения Microsoft Identity для .NET используется напрямую, ASP.NET и ASP.NET Core, и предлагает набор файлы DLL, запускаемые на .NET Framework и .NET Core. Из приложения веб-Core ASP.NET/ASP.NET, можно управлять с помощью проверки маркера **TokenValidationParameters** класса (в частности, в некоторых сценариях независимого поставщика программного обеспечения) |
+| ![.NET](media/sample-v2-code/logo_net.png) | [Расширения модели удостоверений для .NET](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) | Службы Microsoft Identity Extensions для .NET предлагают набор библиотек DLL, работающих как в .NET Framework, так и в .NET Core, непосредственно с помощью ASP.NET и ASP.NET Core. Из веб-приложения ASP.NET/ASP.NET Core можно управлять проверкой маркера с помощью класса **TokenValidationParameters** (в частности, в некоторых сценариях ISV). |
 
-## <a name="aspnet-core-configuration"></a>Конфигурации ASP.NET Core
+## <a name="aspnet-core-configuration"></a>Конфигурация ASP.NET Core
 
-Фрагменты кода в этой статье и следующих извлекаются из [веб-ASP.NET Core app добавочные учебника, Глава 1](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-1-MyOrg). Может потребоваться ссылаться на этот учебник для все детали реализации.
+Фрагменты кода в этой статье и следующие извлекаются из пошагового [руководства по ASP.NET Core веб-приложению, главе 1](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-1-MyOrg). Для получения подробных сведений о реализации может потребоваться обратиться к этому учебнику.
 
-### <a name="application-configuration-files"></a>Файлы конфигурации приложений
+### <a name="application-configuration-files"></a>Файлы конфигурации приложения
 
-В ASP.NET Core, веб-приложения вход в систему пользователей с платформой Microsoft identity настраивается с помощью `appsettings.json` файл. Ниже перечислены параметры, которые необходимы для заполнения.
+В ASP.NET Core для входа в веб-приложение пользователей с платформой Microsoft Identity настраивается с помощью `appsettings.json` файла. Параметры, которые необходимо заполнить:
 
-- облаке `Instance` Если вы хотите, чтобы ваше приложение для запуска в национальных облаках
-- аудитории в `tenantId`
-- `clientId` для вашего приложения, скопированный на портале Azure.
+- облако `Instance` , если вы хотите, чтобы приложение запускалось в национальных облаках
+- аудитория в`tenantId`
+- `clientId` для приложения, скопированное из портал Azure.
 
 ```JSon
 {
@@ -58,7 +58,7 @@ ms.locfileid: "67785483"
     "Instance": "https://login.microsoftonline.com/",
 
     // Azure AD Audience among:
-    // - the tenant Id as a a GUID obtained from the azure portal to sign-in users in your organization
+    // - the tenant Id as a GUID obtained from the azure portal to sign-in users in your organization
     // - "organizations" to sign-in users in any work or school accounts
     // - "common" to sign-in users with any work and school account or Microsoft personal account
     // - "consumers" to sign-in users with Microsoft personal account only
@@ -72,7 +72,7 @@ ms.locfileid: "67785483"
 }
 ```
 
-В ASP.NET Core, уже имеется другой файл, содержащий URL-адрес (`applicationUrl`) и порт SSL (`sslPort`) для приложения, а также различные профили.
+В ASP.NET Core есть еще один файл, содержащий URL-адрес (`applicationUrl`) и порт SSL (`sslPort`) для приложения, а также различные профили.
 
 ```JSon
 {
@@ -104,16 +104,16 @@ ms.locfileid: "67785483"
 }
 ```
 
-На портале Azure, ответ URI, которые необходимо зарегистрировать в **проверки подлинности** странице вашего приложения должен соответствовать следующим URL-адресам; таким образом, для двух файлов конфигурации выше, они не `https://localhost:44321/signin-oidc` как applicationUrl — `http://localhost:3110` , но `sslPort` является указанным (44321) и `CallbackPath` — `/signin-oidc` как определено в `appsettings.json`.
+В портал Azure идентификаторы URI ответа, которые необходимо зарегистрировать на странице **проверки** подлинности для вашего приложения, должны соответствовать этим URL-адресам. Таким образом, для двух файлов конфигурации, приведенных выше, они `https://localhost:44321/signin-oidc` бы были как `http://localhost:3110` applicationUrl, но `sslPort` задано значение (44321) `appsettings.json`, а `CallbackPath` — `/signin-oidc` как определено в.
   
-Таким же образом, будет иметь значение выхода URI `https://localhost:44321/signout-callback-oidc`.
+Таким же образом URI выхода будет иметь значение `https://localhost:44321/signout-callback-oidc`.
 
 ### <a name="initialization-code"></a>Код инициализации
 
-В веб-приложений ASP.NET Core (и веб-API), код, выполнив инициализации приложения находится в `Startup.cs` файл, и явным образом, чтобы добавить проверку подлинности с помощью платформы (прежнее название — Azure AD) версии 2.0 Microsoft Identity, необходимо добавить следующий код. Комментарии в коде должно быть говорит само за себя.
+В ASP.NET Core веб-приложениях (и веб-API) код, выполняющий инициализацию приложения, находится `Startup.cs` в файле, и для добавления проверки подлинности с платформой Microsoft Identity (прежнее название — Azure AD) версии 2.0 необходимо добавить следующий код. Комментарии в коде должны быть описательными.
 
   > [!NOTE]
-  > При запуске проекта с по умолчанию и веб-проекта ASP.NET core в Visual studio или с помощью `dotnet new mvc` метод `AddAzureAD` доступна по умолчанию, так как связанные пакеты загружаются автоматически. Тем не менее если построить проект с нуля и пытаетесь использовать ниже кода мы рекомендуем добавить пакет NuGet **«Microsoft.AspNetCore.Authentication.AzureAD.UI»** в проект, чтобы сделать `AddAzureAD` из доступных методов.
+  > Если вы запускаете проект с веб-проектом ASP.NET Core по умолчанию в Visual `dotnet new mvc` Studio или `AddAzureAD` с помощью метода, он доступен по умолчанию, так как связанные пакеты автоматически загружаются. Однако если вы создаете проект с нуля и пытаетесь использовать приведенный ниже код, мы рекомендуем добавить пакет NuGet **Microsoft. AspNetCore. Authentication. AzureAD. UI** в проект, чтобы сделать этот `AddAzureAD` метод доступным.
   
 ```CSharp
  services.AddAuthentication(AzureADDefaults.AuthenticationScheme)
@@ -142,7 +142,7 @@ ms.locfileid: "67785483"
 
 ## <a name="aspnet-configuration"></a>Конфигурация ASP.NET
 
-В ASP.NET, приложение настраивается с помощью `Web.Config` файла
+В ASP.NET приложение настраивается с помощью `Web.Config` файла.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -164,7 +164,7 @@ ms.locfileid: "67785483"
   </appSettings>
 ```
 
-Код, связанные с проверкой подлинности, в веб-приложение ASP.NET или веб-API находится в `App_Start/Startup.Auth.cs` файл.
+Код, связанный с проверкой подлинности в ASP.NET веб-приложениях и веб `App_Start/Startup.Auth.cs` -интерфейсах API, находится в файле.
 
 ```CSharp
  public void ConfigureAuth(IAppBuilder app)
@@ -191,4 +191,4 @@ ms.locfileid: "67785483"
 ## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Входа систему и выхода](scenario-web-app-sign-user-sign-in.md)
+> [Вход и выход](scenario-web-app-sign-user-sign-in.md)

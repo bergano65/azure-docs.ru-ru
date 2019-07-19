@@ -1,7 +1,7 @@
 ---
-title: Docker compose рецепты контейнера
+title: Развертывание нескольких контейнеров с помощью Docker Compose
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как развертывание нескольких контейнеров Cognitive Services. Эта процедура показано, как координировать несколько образов контейнеров Docker с помощью Docker Compose.
+description: Узнайте, как развернуть несколько контейнеров Cognitive Services. В этой статье показано, как управлять несколькими образами контейнера DOCKER с помощью Docker Compose.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -10,43 +10,43 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 06/26/2019
 ms.author: dapine
-ms.openlocfilehash: 8afb7e866bc2a5fefe28a71653c4a2a87fdc7a5b
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 95ec80af88e0b89f61bebed08f4b96a09947f401
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67445796"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68311555"
 ---
-# <a name="use-multiple-containers-in-a-private-network-with-docker-compose"></a>Использовать несколько контейнеров в частной сети с помощью Docker Compose
+# <a name="use-docker-compose-to-deploy-multiple-containers"></a>Развертывание нескольких контейнеров с помощью Docker Compose
 
-Узнайте, как развертывание нескольких контейнеров Cognitive Services. Эта процедура показано, как координировать несколько образов контейнеров Docker с помощью Docker Compose.
+В этой статье показано, как развернуть несколько контейнеров Azure Cognitive Services. В частности, вы узнаете, как использовать Docker Compose для координации нескольких образов контейнеров DOCKER.
 
-> [Docker Compose](https://docs.docker.com/compose/) — это средство для определения и выполнения многоконтейнерных приложений Docker. Решение Compose используется файл YAML для настройки служб приложения. Затем с помощью одной команды, создания и запуска всех служб из конфигурации.
+> [DOCKER Compose](https://docs.docker.com/compose/) — это средство для определения и запуска приложений DOCKER с несколькими контейнерами. В процессе составления для настройки служб приложения используется файл YAML. Затем создайте и запустите все службы из конфигурации, выполнив одну команду.
 
-При необходимости, выполняя несколько образов контейнеров на одном компьютере может оказаться привлекательной. В этой статье мы будем объединяют службы распознавания текста и распознаватель формы.
+Может оказаться полезным управлять несколькими образами контейнеров на одном хост-компьютере. В этой статье мы будем объединять контейнеры Распознавание текста и распознавателей форм.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
-Для выполнения этой процедуры необходимо установить и запустить несколько средств локально.
+Для этой процедуры требуется несколько средств, которые необходимо установить и запустить локально:
 
-* Используйте подписку Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
-* [Модуль Docker](https://www.docker.com/products/docker-engine), для которого нужно проверить работоспособность Docker CLI в окне консоли.
-* Ресурс Azure с правильной ценовой категорией. Не все ценовые категории поддерживают этот контейнер.
-  * **Компьютерное зрение** только на уровнях ресурс с F0 или стандартных цен.
-  * **Форме распознаватель** только на уровнях ресурс с F0 или стандартных цен.
+* Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
+* [Подсистема DOCKER](https://www.docker.com/products/docker-engine). Убедитесь, что интерфейс командной строки DOCKER работает в окне консоли.
+* Ресурс Azure с правильной ценовой категорией. Для этого контейнера работает только Следующая ценовая категория:
+  * **Компьютерное зрениеный** ресурс только для ценовой категории F0 или Standard.
+  * Ресурс **распознавателя форм** с F0 или "Стандартная ценовая категория".
   * Ресурс **Cognitive Services** с ценовой категорией S0.
 
 ## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
 
-Заполнить и отправить [форму запроса контейнеры речи Cognitive Services](https://aka.ms/speechcontainerspreview/) чтобы запросить доступ к контейнеру. 
+Завершите и отправьте [форму запроса Cognitive Services речевых контейнеров](https://aka.ms/speechcontainerspreview/). 
 
 [!INCLUDE [Request access to the container registry](../../../includes/cognitive-services-containers-request-access-only.md)]
 
 [!INCLUDE [Authenticate to the container registry](../../../includes/cognitive-services-containers-access-registry.md)]
 
-## <a name="docker-compose-file"></a>Файл docker compose
+## <a name="docker-compose-file"></a>Файл Docker Compose
 
-Файл YAML определяет все службы должны быть развернуты. Эти службы используют либо `DockerFile` или имеющийся образ контейнера, в данном случае мы будем использовать два изображения предварительного просмотра. Скопируйте и вставьте следующий yaml-файл и сохраните его как *docker-compose.yaml*. Обеспечивает соответствующее _apikey_, _выставления счетов_, и _URI конечной точки_ значения в _docker-compose.yml_ ниже файла.
+Файл YAML определяет все службы для развертывания. Эти службы зависят от `DockerFile` либо существующего образа контейнера. В этом случае мы будем использовать два изображения предварительной версии. Скопируйте и вставьте следующий файл YAML и сохраните его как *DOCKER-сформируйте. YAML*. Укажите соответствующие значения **apiKey**, **выставления счетов**и **EndpointUri** в файле.
 
 ```yaml
 version: '3.7'
@@ -61,10 +61,10 @@ services:
        FormRecognizer__ComputerVisionEndpointUri: # < Your form recognizer URI >
     volumes:
        - type: bind
-         source: e:\publicpreview\output
+         source: E:\publicpreview\output
          target: /output
        - type: bind
-         source: e:\publicpreview\input
+         source: E:\publicpreview\input
          target: /input
     ports:
       - "5010:5000"
@@ -80,22 +80,22 @@ services:
 ```
 
 > [!IMPORTANT]
-> Создайте каталоги на хост-компьютере, которые указаны в разделе `volumes` узла. Это необходимо, как каталоги должен существовать прежде чем подключение ISO-образа с привязками тома.
+> Создайте каталоги на размещающем компьютере, которые указаны в узле **тома** . Этот подход необходим, поскольку каталоги должны существовать до попытки подключения образа с помощью привязок томов.
 
-## <a name="start-the-configured-docker-compose-services"></a>Начало настроенных docker compose служб
+## <a name="start-the-configured-docker-compose-services"></a>Запуск настроенных служб Docker Compose
 
-Docker compose файл включает управление все определенные службы жизненного цикла; Запуск и остановку и перестроение служб, просмотр состояния службы и потоковая передача журналов. Откройте интерфейс командной строки из каталога проекта (где *docker-compose.yaml* файл документа).
+Файл Docker Compose обеспечивает управление всеми этапами в жизненном цикле определенной службы: запуск, остановка и перестроение служб; Просмотр состояния службы; и потоковая передача журналов. Откройте интерфейс командной строки из каталога проекта (где находится файл DOCKER-сформируйте. YAML).
 
 > [!NOTE]
-> Чтобы избежать ошибок, убедитесь, что хост-компьютере правильно совместное использование дисков с помощью **подсистема Docker**. Например если *e:\publicpreview* используется в качестве каталога в *docker-compose.yaml* совместно использовать *диска E* с помощью docker.
+> Чтобы избежать ошибок, убедитесь, что главный компьютер правильно использует диски с подсистемой DOCKER. Например, если Е:\публикпревиев используется в качестве каталога в файле DOCKER-сформируйте. YAML, предоставьте общий доступ к диску E с помощью DOCKER.
 
-Из интерфейса командной строки, выполните следующую команду для запуска (или перезапуска) всех служб, определенных в *docker-compose.yaml*:
+В интерфейсе командной строки выполните следующую команду, чтобы запустить (или перезапустить) все службы, определенные в файле DOCKER-сформируйте. YAML:
 
 ```console
 docker-compose up
 ```
 
-Первого выполнения время `docker-compose up` команду с этой конфигурацией **Docker** будет извлекать образы, настроенные в разделе `services` узла — Загрузка/подключение их:
+Первый раз, когда DOCKER выполняет команду **DOCKER-создания up** с помощью этой конфигурации, он извлекает образы, настроенные в узле **службы** , а затем загружает и подключает их:
 
 ```console
 Pulling forms (containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer:)...
@@ -126,7 +126,7 @@ c56511552241: Waiting
 e91d2aa0f1ad: Downloading [==============================================>    ]  162.2MB/176.1MB
 ```
 
-Изображения загружаются, то изображение службы запущены.
+После скачивания образов запускаются службы образов.
 
 ```console
 Starting docker_ocr_1   ... done
@@ -158,11 +158,11 @@ ocr_1    | Now listening on: http://0.0.0.0:5000
 ocr_1    | Application started. Press Ctrl+C to shut down.
 ```
 
-## <a name="verify-the-service-availability"></a>Проверьте доступность службы
+## <a name="verify-the-service-availability"></a>Проверка доступности службы
 
 [!INCLUDE [Tip for using docker list](../../../includes/cognitive-services-containers-docker-list-tip.md)]
 
-Ниже приведен пример вывода:
+Вот пример выходных данных:
 
 ```
 IMAGE ID            REPOSITORY                                                                 TAG
@@ -170,19 +170,19 @@ IMAGE ID            REPOSITORY                                                  
 4be104c126c5        containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text    latest
 ```
 
-### <a name="test-the-recognize-text-container"></a>Проверка контейнера текста recognize
+### <a name="test-the-recognize-text-container"></a>Тестирование контейнера Распознавание текста
 
-Откройте браузер на хост-компьютере и перейдите к `localhost` с указанный порт из *docker-compose.yaml*, например `http://localhost:5021/swagger/index.html`. Можно использовать Try, его функции API-интерфейса для проверки конечной точки текста recognize.
+Откройте браузер на главном компьютере и перейдите на узел **localhost** , используя указанный порт из файла DOCKER-сформируйте. YAML, например http://localhost:5021/swagger/index.html. Для проверки конечной точки Распознавание текста можно использовать функцию "попробовать" в API.
 
-![Распознавание текста Swagger](media/recognize-text-swagger-page.png)
+![Контейнер Распознавание текста](media/recognize-text-swagger-page.png)
 
-### <a name="test-the-form-recognizer-container"></a>Проверка контейнера распознаватель формы
+### <a name="test-the-form-recognizer-container"></a>Тестирование контейнера распознавателя форм
 
-Откройте браузер на хост-компьютере и перейдите к `localhost` с указанный порт из *docker-compose.yaml*, например `http://localhost:5010/swagger/index.html`. Можно использовать Try, его функции API-интерфейса для проверки конечной точки распознаватель формы.
+Откройте браузер на главном компьютере и перейдите на узел **localhost** , используя указанный порт из файла DOCKER-сформируйте. YAML, например http://localhost:5010/swagger/index.html. Для проверки конечной точки распознавателя форм можно использовать функцию "попробовать" в API.
 
-![Форма распознаватель Swagger](media/form-recognizer-swagger-page.png)
+![Контейнер распознавателя форм](media/form-recognizer-swagger-page.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Контейнеры Cognitive Services](../cognitive-services-container-support.md)

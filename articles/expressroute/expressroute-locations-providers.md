@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/10/2019
-ms.author: jaredr80
-ms.openlocfilehash: 21d06dfaecb0448194355f13978483779a2ff6be
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.date: 07/17/2019
+ms.author: cherylmc
+ms.openlocfilehash: 331a554332db8c05d4ece1a1df5d6557d6e86906
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67805702"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68310358"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -43,15 +43,15 @@ ExpressRoute поддерживается во всех регионах и ра
 | **Геополитический регион** | **Зона** | **Регионы Azure** | **Расположения ExpressRoute** |
 | --- | --- | --- | --- |
 | **Государственные организации Австралии** | 1 | Центральная Австралия, Центральная Австралия 2 |Канберра, Канберра 2 |
-| **Европа** | 1 |Центральная Франция, Южная Франция, Северная Европа, Западная Европа, западная часть Соединенного Королевства, южная часть Соединенного Королевства |Амстердам, Amsterdam2, Дублин, Франкфурт, Лондон, London2, Марселе, ньюпорт (Уэльс), Париж, Цюрих |
-| **Северная Америка** | 1 |Восточная часть США, западная часть США, восточная часть США 2, западная часть США 2, центральная часть США, центрально-южная часть США, центрально-северная часть США, центрально-западная часть США, Центральная Канада, Восточная Канада |Атланта, Чикаго, Даллас, Денвер, Лас-Вегас, Лос-Анджелес, Майами, Нью-Йорк, Сан-Антонио, Сиэтл, кремниевая Долина, кремниевая Valley2, DC2 Вашингтон Округ Колумбия, штат Вашингтон, Монреаль, Квебек, Торонто |
-| **Азия** | 2 |Восточная Азия, Юго-Восточная Азия |Гонконг (САР), Куала-Лумпур, Сингапур, Сингапур 2, Тайбэй |
+| **Европа** | 1 |Центральная Франция, Южная Франция, Северная Европа, Западная Европа, западная часть Соединенного Королевства, южная часть Соединенного Королевства |Амстердам, Amsterdam2, Дублин, Франкфурт, Лондон, London2, Марселе, Ньюпорт (), Париж, Цюрих |
+| **Северная Америка** | 1 |Восточная часть США, западная часть США, восточная часть США 2, западная часть США 2, центральная часть США, центрально-южная часть США, центрально-северная часть США, центрально-западная часть США, Центральная Канада, Восточная Канада |Атланта, Чикаго, Далласе, Денвер, Лас-, Лос-Анджелес, Майами, Нью-Йорк, Сан Сан Антонио, Сиэтл, впадина, Silicon Valley2, Вашингтон (округ Колумбия), штат Вашингтон, округ DC2, Монреаль, Квебек, Москва, Торонто |
+| **Азия** | 2 |Восточная Азия, Юго-Восточная Азия |Гонконг, САР, Куала, Сингапур, Сингапур 2, Тайбэй |
 | **Индия** | 2 |Западная Индия, Центральная Индия, Южная Индия |Ченнаи, Ченнаи 2, Мумбаи, Мумбаи 2 |
 | **Япония** | 2 |Западная Япония, Восточная Япония |Осака, Токио |
-| **Океания** | 2 |Восточная Австралия, Юго-Восточная Австралия |Окленд, Мельбурн, ПЕРТ, Сидней | 
+| **Океания** | 2 |Восточная Австралия, Юго-Восточная Австралия |Г., Мельбурн, Перт, Сидней | 
 | **Южная Корея** | 2 |Центральная Корея, Южная Корея |Пусан, Сеул|
-| **ОБЪЕДИНЕННЫЕ АРАБСКИЕ ЭМИРАТЫ** | 3 | Центральная часть ОАЭ, Северная часть ОАЭ | Дубаи, Dubai2 |
-| **ЮАР** | 3 |Запад ЮАР, Север ЮАР |Кейптаун, Йоханнесбург |
+| **ЧАСТЬ ОАЭ** | 3 | Центральная часть ОАЭ, Север ОАЭ | Дубаи, Dubai2 |
+| **ЮАР** | 3 |Южно-Африканская Республика, Юго-Африканская Республика, Северная Африка |Кейптаун, Йоханнесбург |
 | **Южная Америка** | 3 |Южная часть Бразилии |Сан-Паулу |
 
 ### <a name="regions-and-geopolitical-boundaries-for-national-clouds"></a>Регионы и геополитические границы для национальных облаков
@@ -70,63 +70,63 @@ ExpressRoute поддерживается во всех регионах и ра
 
 В таблице ниже приведены расположения для подключения и поставщики услуг в каждом расположении. Поставщики услуг и расположения, в которых они предоставляют услуги, перечислены в разделе [Расположения поставщиков услуг подключения](expressroute-locations.md#locations). 
 
-**Локальных регионах Azure** — те, [ExpressRoute локальной](expressroute-faqs.md) в каждом расположении пиринга можно получить доступ к. **н/д** указывает, что в этом расположении пиринга ExpressRoute локальной недоступна.
+**Локальные регионы Azure** — это те, к которым может получить доступ локальная служба [ExpressRoute](expressroute-faqs.md) в каждом одноранговом расположении. **н/д** указывает, что локальная сеть ExpressRoute недоступна в этом расположении.
 
 
 ### <a name="production-azure"></a>Рабочая среда Azure
-| **Location** | **Владелец однорангового расположения** | **Локальных регионах Azure** | **Поставщики услуг** |
+| **Location** | **Владелец однорангового расположения** | **Локальные регионы Azure** | **Поставщики услуг** |
 | --- | --- | --- | --- |
 | **Амстердам** | Equinix | Западная Европа | Aryaka Networks, AT&T NetBond, British Telecom, Colt, Equinix, euNetworks, GÉANT, InterCloud, Interxion, KPN, IX Reach, Level 3 Communications, Megaport, NTT Communications, Orange, Tata Communications, TeleCity Group, Telefonica, Telenor, Telia Carrier, Verizon, Zayo |
-| **Амстердам 2** | Interxion | Западная Европа | CenturyLink Cloud Connect, DE-CIX, Interxion, Vodafone |
+| **Амстердам 2** | Interxion | Западная Европа | CenturyLink Cloud Connect, DE-ЦИКС, Interxion, Vodafone |
 | **Атланта** | Equinix | Н/Д | Equinix, Megaport |
-| **Окленд** | Vocus | Н/Д | Megaport Devoli Kordia, |
+| **Окленд** | Вокус Group NZ | Н/Д | Деволи, Кордиа, Orange, Вокус Group NZ |
 | **Пусан** |LG CNS | Южная Корея | LG CNS |
 | **Канберра** | CDC | Центральная Австралия | CDC |
 | **Канберра 2** | CDC | Центральная Австралия 2| CDC |
 | **Кейптаун** | Teraco | Запад ЮАР | Internet Solutions - Cloud Connect, Liquid Telecom, Teraco |
 | **Ченнай** | Tata Communications | Южная Индия | Global CloudXchange (GCX), SIFY, Tata Communications |
 | **Chennai2** | Airtel | Южная Индия | Airtel |
-| **Чикаго** | Equinix | Центрально-северная часть США | Aryaka Networks, AT & T NetBond, CenturyLink Cloud Connect, Cologix, Comcast, Coresite, Equinix, InterCloud, Internet2, Level 3 Communications, Megaport, PacketFabric, PCCW глобального ограниченное, спринта, Telia перевозчика, Verizon, Zayo |
-| **Даллас** | Equinix | Н/Д | Aryaka Networks, AT&T NetBond, Cologix, Equinix, Internet2, Level 3 Communications, Megaport, Neutrona Networks, Telmex Uninet, Telia Carrier, Transtelco, Verizon, Zayo|
-| **Денвер** | CoreSite | Западно-центральная часть США | CoreSite, Megaport, Zayo |
-| **Дубаи** | Etisalat ОАЭ | Северная часть ОАЭ | Etisalat ОАЭ |
-| **Dubai2** | du datamena | Северная часть ОАЭ | du datamena, Orixcom |
+| **Чикаго** | Equinix | Центрально-северная часть США | Aryaka сети, в & T NetBond, CenturyLink Cloud Connect, Кологикс, Comcast, Коресите, Equinix, в облаке, Internet2, связи уровня 3, Orange, Паккетфабрик, ПККВ Global Limited, спринт, Телиа, Verizon, Zayo |
+| **Даллас** | Equinix | Н/Д | Aryaka Networks, AT & T NetBond, Кологикс, Equinix, Internet2, уровень 3, взаимодействие, Orange, Неутрона сети, Телмекс Унинет, Телиа перевозчик, Telco, Verizon, Zayo|
+| **Денвер** | CoreSite | Западно-центральная часть США | Коресите, Orange, Zayo |
+| **Дубаи** | Етисалат ОАЭ | Северная часть ОАЭ | Етисалат ОАЭ |
+| **Dubai2** | Du датамена | Северная часть ОАЭ | Du датамена, Орикском |
 | **Дублин** | Equinix | Северная Европа | Colt, eir, Equinix, Interxion, Megaport |
-| **Франкфурт** | Interxion | Н/Д | DE-CIX, Interxion |
-| **Гонконг (САР)** | Equinix | Восточная Азия | Aryaka сетей, British Telecom, CenturyLink Cloud Connect, руководитель затратами на телекоммуникации, затратами на телекоммуникации Китае глобального, Equinix, Megaport, NTT Communications, Orange, ограниченный PCCW глобального, Tata Communications, Telia перевозчика, Verizon |
-| **Йоханнесбург** | Teraco | Север ЮАР | British Telecom, Internet Solutions — Cloud Connect, Liquid затратами на телекоммуникации, Teraco |
+| **Франкфурт** | Interxion | Н/Д | DE-ЦИКС, Interxion |
+| **Гонконг, САР** | Equinix | Восточная Азия | Aryaka сети, Британская телекоммуникации, CenturyLink Cloud Connect, главный телекоммуникации, Международная телекоммуникации, Глобальная, Equinix, Orange, NTT Communications, оранжевый, ПККВ глобально ограниченный, Tata обмен данными, Телиа, Verizon |
+| **Йоханнесбург** | Teraco | Север ЮАР | Британская телекоммуникации, Интернет-решения — Cloud Connect, жидкостный телекоммуникации, Терако |
 | **Куала-Лумпур** | TIME dotCom | Н/Д | TIME dotCom |
 | **Лас-Вегас** | Параметр | Н/Д | CenturyLink Cloud Connect, Megaport |
 | **Лондон** | Equinix | Южная часть Великобритании | AT&T NetBond, British Telecom, Colt, Equinix, InterCloud, Internet Solutions - Cloud Connect, Interxion, Jisc, Level 3 Communications, Megaport, MTN, NTT Communications, Orange, PCCW Global Limited, Tata Communications, Telehouse — KDDI, Telenor, Telia Carrier, Verizon, Vodafone, Zayo |
-| **Лондон 2** | Telehouse | Южная часть Великобритании | IX Reach, Equinix |
+| **Лондон 2** | Telehouse | Южная часть Великобритании | Доступ IX, Equinix |
 | **Лос-Анджелес** | CoreSite | Н/Д | CoreSite, Equinix, Megaport, Neutrona Networks, NTT, Zayo |
-| **Марсель** |Interxion | Южная Франция | DE-CIX, Interxion, мышь сети |
-| **Мельбурн** | NextDC | Юго-Восточная часть Австралии | AARNet, Devoli, Equinix, Megaport, NEXTDC, Optus, Telstra Corporation, TPG Telecom |
+| **Марсель** |Interxion | Южная Франция | DE-ЦИКС, Interxion, Жагуар Network |
+| **Мельбурн** | NextDC | Юго-Восточная часть Австралии | Аарнет, Деволи, Equinix, Orange, НЕКСТДК, ОПТУС, Телстра Corporation, ТПГ телекоммуникации |
 | **Майами** | Equinix | Н/Д | C3ntro+, Equinix, Megaport, Neutrona Networks |
 | **Монреаль** | Cologix | Н/Д | Bell Canada, Cologix, Telus, Zayo |
-| **Мумбай** | Tata Communications | Западная Индия | Глобальный CloudXchange (GCX), Jio зависимость, Sify, Tata Communications, Verizon |
+| **Мумбай** | Tata Communications | Западная Индия | Global Клаудксчанже (ГККС), зависимость ЖИО, Сифи, Tata Communications, Verizon |
 | **Мумбаи 2** | Airtel | Западная Индия | Airtel, Sify, Vodafone Idea |
-| **Нью-Йорк** | Equinix | Н/Д | CenturyLink Cloud Connect, Coresite, Equinix, InterCloud, Megaport, пакетов, Zayo |
-| **Ньюпорт (Уэльс)** | Next Generation Data | Западная часть Великобритании | British Telecom, Colt, Level 3 Communications, следующего поколения данных |
-| **Осака** | Equinix | Западная часть Японии | Colt, Equinix, Internet Initiative Japan Inc. — IIJ, NTT Communications, NTT SmartConnect, Softbank |
-| **Париж** | Interxion | Центральная Франция | CenturyLink Cloud Connect, Colt, Equinix, Intercloud, Interxion, Orange, Telia Carrier, Zayo |
-| **Перт** | NextDC | Н/Д | Megaport, NextDC |
+| **Нью-Йорк** | Equinix | Н/Д | CenturyLink Cloud Connect, Коресите, Equinix, recloud, Orange, пакет, Zayo |
+| **Ньюпорт (Уэльс)** | Next Generation Data | Западная часть Великобритании | Британская телекоммуникации, Colt, связь уровня 3, данные следующего поколения |
+| **Осака** | Equinix | Западная часть Японии | Colt, Equinix, Интернет-инициатива Япония Inc. — IIJ, NTT Communications, NTT Смартконнект, Softbank " |
+| **Париж** | Interxion | Центральная Франция | CenturyLink Cloud Connect, Colt, Equinix, в облаке, Interxion, оранжевый, Телиа, Zayo |
+| **Перт** | NextDC | Н/Д | Orange, Некстдк |
 | **Квебек** | 4Degrees | Восточная Канада | Bell Canada, Megaport |
 | **Сан-Антонио** | CyrusOne | Центрально-южная часть США | CenturyLink Cloud Connect, Megaport |
 | **Сан-Паулу** | Equinix | Южная часть Бразилии | Aryaka Networks, Ascenty Data Centers, British Telecom, Equinix, Level 3 Communications, Neutrona Networks, Orange, Tata Communications, Telefonica, UOLDIVEO |
-| **Сиэтл;** | Equinix | Западный регион США 2 | Aryaka Networks, Equinix, Level 3 Communications, Megaport, поддержкой, Zayo |
+| **Сиэтл;** | Equinix | Западный регион США 2 | Aryaka сети, Equinix, связь уровня 3, Orange, Телус, Zayo |
 | **Сеул** | KINX | Центральная Корея | KINX, LG CNS, Sejong Telecom |
-| **Кремниевая долина** | Equinix | Запад США | Aryaka Networks, AT & T NetBond, British Telecom, CenturyLink Cloud Connect, Comcast, Coresite, Equinix, InterCloud, достигают IX, пакетов, PacketFabric, Level 3 Communications, Megaport, оранжевый, спринта, Tata Communications, Verizon, Zayo |
-| **Кремниевая Valley2** | Coresite | Запад США | Coresite | 
+| **Кремниевая долина** | Equinix | Запад США | Aryaka Networks, AT & T NetBond, Британская телекоммуникации, CenturyLink Cloud Connect, Comcast, Коресите, Equinix, в облаке, IX REACH, пакет, Паккетфабрик, связь уровня 3, Orange, оранжевый, спринт, Tata Communications, Verizon, Zayo |
+| **Полупроводниковая Valley2** | Coresite | Запад США | Coresite | 
 | **Сингапур** | Equinix | Юго-Восточная Азия | Aryaka Networks, AT&T NetBond, British Telecom, Epsilon Global Communications, Equinix, InterCloud, Level 3 Communications, Megaport, NTT Communications, Orange, SingTel, Tata Communications, Telstra Corporation, Verizon, Vodafone |
-| **Сингапур 2** | Global Switch | Юго-Восточная Азия | Colt, Epsilon Global Communications, Megaport, SingTel |
-| **Сидней** | Equinix | Восточная часть Австралии | AARNet, AT&T NetBond, British Telecom, Devoli, Equinix, Kordia, Megaport, NEXTDC, NTT Communications, Optus, Orange, Telstra Corporation, TPG Telecom, Verizon |
-| **Тайбэй** | Chief Telecom | Н/Д | Руководитель затратами на телекоммуникации, FarEasTone |
+| **Сингапур 2** | Global Switch | Юго-Восточная Азия | Colt, Эпсилон Global Communications, Orange, SingTel |
+| **Сидней** | Equinix | Восточная часть Австралии | Аарнет, AT & T NetBond, Британская телекоммуникации, Деволи, Equinix, Кордиа, Orange, НЕКСТДК, NTT Communications, ОПТУС, оранжевый, Spark NZ, Телстра Corporation, ТПГ Communications, Verizon, Вокус Group NZ |
+| **Тайбэй** | Chief Telecom | Н/Д | Главный телекоммуникации, Фареастоне |
 | **Токио** | Equinix | Восточная часть Японии | Aryaka Networks, AT&T NetBond, British Telecom, CenturyLink Cloud Connect, Colt, Equinix, Internet Initiative Japan Inc. - IIJ, NTT Communications, NTT EAST, Orange, Softbank, Verizon |
 | **Торонто** | Cologix | Центральная Канада | AT&T NetBond, Bell Canada, CenturyLink Cloud Connect, Cologix, Equinix, IX Reach Megaport, Telus, Verizon, Zayo |
-| **Вашингтон, округ Колумбия** | Equinix | Восточная часть США, восточная часть США 2 | Aryaka Networks, AT & T NetBond, British Telecom, CenturyLink Cloud Connect, Cologix, Comcast, Coresite, Equinix, Internet2, InterCloud, Level 3 Communications, Megaport, Neutrona сетей, NTT Communications, Orange, PacketFabric, спринта, Tata Связи, Telia перевозчика, Verizon, Zayo |
-| **Вашингтон, округ Колумбия 2** | Coresite | Восточная часть США, восточная часть США 2 |Coresite | 
-| **Цюрих** | Interxion | Н/Д | Intercloud, Interxion |
+| **Вашингтон, округ Колумбия** | Equinix | Восточная часть США, Восточная часть США 2 | Aryaka сети, AT & T NetBond, Британская телекоммуникации, CenturyLink Cloud Connect, Кологикс, Comcast, Коресите, Equinix, Internet2, между облаком, связь уровня 3, Orange, Неутрона сети, NTT Communications, оранжевый, Паккетфабрик, спринт, Tata Связь, перевозчик Телиа, Verizon, Zayo |
+| **Вашингтон, округ Колумбия 2** | Coresite | Восточная часть США, Восточная часть США 2 |Coresite | 
+| **Цюрих** | Interxion | Н/Д | В облаке, Interxion |
 
  **+** означает "скоро"
 
@@ -138,7 +138,7 @@ ExpressRoute поддерживается во всех регионах и ра
 | **Чикаго** |AT&T NetBond, Equinix, Level 3 Communications, Verizon |
 | **Даллас** |Equinix, Megaport, Verizon |
 | **Нью-Йорк** |Equinix, CenturyLink Cloud Connect, Verizon |
-| **Phoenix** | AT&T NetBond, CenturyLink Cloud Connect, Megaport |
+| **Phoenix** | В & T NetBond, CenturyLink Cloud Connect, Orange |
 | **Сан-Антонио** | CenturyLink Cloud Connect, Megaport |
 | **Кремниевая долина** | Equinix, Level 3 Communications, Verizon |
 | **Сиэтл;** | Equinix, Megaport |
@@ -148,9 +148,9 @@ ExpressRoute поддерживается во всех регионах и ра
 | **Location** | **Поставщики услуг** |
 | --- | --- |
 | **Пекин** |China Telecom |
-| **Пекин 2** | Китай затратами на телекоммуникации, GDS |
+| **Пекин 2** | Телекоммуникации в Китае, GDS |
 | **Шанхай** |China Telecom |
-| **Шанхай 2** | Китай затратами на телекоммуникации, GDS |
+| **Шанхай 2** | Телекоммуникации в Китае, GDS |
 
 Дополнительные сведения см. на странице [ExpressRoute в Китае](http://www.windowsazure.cn/home/features/expressroute/).
 
@@ -180,31 +180,31 @@ ExpressRoute поддерживается во всех регионах и ра
 ## <a name="c1partners"></a>Подключение через дополнительных поставщиков услуг
 | **Location** | **Exchange** | **Поставщики услуг подключения** |
 | --- | --- | --- |
-| **Амстердам** | Equinix, Telecity | BICS, CloudXpress, Eurofiber, Fastweb S.p.A, Gulf Bridge International, MainOne, Nianet, Post, Proximus, TDC Erhverv, Telecom Italia Sparkle, Telia |
-| **Атланта** | Equinix| Королевская Castle
+| **Амстердам** | Equinix, Interxion, связь уровня 3, город | Бикс, Клаудкспресс, Еурофибер, Фаствеб S. p. A, залива Bridge International, Калаам телекоммуникации Бахрейн B. S. C, Маиноне, Нианет, POST, Проксимус, TDC Ерхверв, коммуникационное Italia живы, Telekom Deutschland GmbH, Телиа |
+| **Атланта** | Equinix| Самые Castle
 | **Кейптаун** | Teraco | MTN |
-| **Чикаго** | Equinix | Castle корона, Enterprise спектра Windstream |
-| **Даллас** | Equinix, Megaport | Axtel C3ntro затратами на телекоммуникации, Кокс бизнеса, Castle корона данных Foundry Enterprise спектра Transtelco |
-| **Франкфурт** | Telecity | BICS, Cinia, Nianet, QSC AG |
+| **Чикаго** | Equinix| Самые Castle, спектр для предприятий, Виндстреам |
+| **Даллас** | Equinix, Megaport | Акстел, C3ntro, телекоммуникации, Кокс Business, самые Castle, обнаруженные данные, спектр предприятий, |
+| **Франкфурт** | Interxion, город проживания | Бикс, Циниа, Нианет, КСК AG, Telekom Deutschland GmbH |
 | **Гамбург** | Equinix | Cinia |
-| **Гонконг (САР)** | Equinix | Chief, Macroview Telecom |
+| **Гонконг, САР** | Equinix | Chief, Macroview Telecom |
 | **Йоханнесбург** | Teraco | MTN |
-| **Лондон** | BICS, Equinix, euNetworks, Telecity | Bezeq International Ltd., CoreAzure Эпсилон телекоммуникаций Limited, экспоненциального E, HSO, NexGen сетей, Proximus, Tamares затратами на телекоммуникации, Набулси |
-| **Лос-Анджелес** | Equinix |Castle корона, Enterprise спектра Transtelco |
+| **Лондон** | BICS, Equinix, euNetworks, Telecity | Безек International Ltd., Кореазуре, Эпсилон, ограниченная, экспоненциальная E, ХСО, Нексжен сетей, Проксимус, Тамарес телекоммуникации, Заину |
+| **Лос-Анджелес** | Equinix |Самые Castle, спектр для предприятий, переtelco |
 | **Мадрид** | Level3 | Zertia |
 | **Монреаль** | Cologix, Equinix | Airgate Technologies, Inc. Cogeco Peer 1, Rogers, Zirro |
-| **Нью-Йорк** |Equinix, Megaport | Altice, Castle корона спектра для предприятий, Webair |
+| **Нью-Йорк** |Equinix, Megaport | Алтице Business, самые Castle, спектр предприятий, Вебаир |
 | **Париж** | Equinix | Proximus |
 | **Квебек** | Megaport | Fibrenoire |
 | **Сан-Паулу** | Equinix | Venha Pra Nuvem |
 | **Сиэтл;** |Equinix | Alaska Communications |
-| **Кремниевая долина** |Coresite, Equinix | Cox Business, Spectrum Enterprise, Windstream, X2nsat Inc. |
+| **Кремниевая долина** |Коресите, Equinix | Кокс Business, спектр предприятий, Виндстреам, X2nsat Inc. |
 | **Сингапур** |Equinix |1CLOUDSTAR, BICS, Epsilon Telecommunications Limited, LGA Telecom, United Information Highway (UIH) |
 | **Slough** | Equinix | HSO|
 | **Сидней** | Megaport | Macquarie Telecom Group|
 | **Токио** | Equinix | ARTERIA Networks Corporation, BroadBand Tower, Inc. |
-| **Торонто** | Equinix, Megaport | Airgate Technologies Inc., Beanfield Metroconnect, Cogeco Peer 1, IVedha Inc, Rogers, Thinktel, Zirro|
-| **Вашингтон, округ Колумбия** |Equinix | Windstream Limited, Masergy, телекоммуникаций Эпсилон Altice бизнеса, BICS, Кокс бизнеса, Главная Castle, Gtt Communications Inc, |
+| **Торонто** | Equinix, Megaport | Технологии аиргате Inc., Беанфиелд Метроконнект, Кожеко Peer 1, Иведха Inc, Рожерс, Синктел, Зирро|
+| **Вашингтон, округ Колумбия** |Equinix | Алтице бизнес, Бикс, Кокс Business, самые Castle, ГТТ коммуникации Inc, Эпсилон, ограниченная телекоммуникации, Масерги, Виндстреам |
 
 ## <a name="expressroute-system-integrators"></a>Системные интеграторы ExpressRoute
 Возможность частного подключения, соответствующего вашим потребностям, будет зависеть от масштаба сети. Чтобы упростить переход на ExpressRoute, вы можете обратиться к одному из системных интеграторов, указанных в таблице ниже.

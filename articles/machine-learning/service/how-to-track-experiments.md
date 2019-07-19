@@ -1,32 +1,33 @@
 ---
-title: Метрики журнала во время учебные запуски
+title: Метрики журнала во время учебных запусков
 titleSuffix: Azure Machine Learning service
-description: Узнайте, как добавить ведение журнала в сценарий обучения, отправить эксперимент, проверить прогресс выполняемого задания и просмотреть результаты выполнения. Можно отслеживать ваши эксперименты и отслеживать метрики для усовершенствования процесса создания модели.
+description: Вы можете отслеживать эксперименты и отслеживать метрики, чтобы улучшить процесс создания модели. Узнайте, как добавить ведение журнала в сценарий обучения, как отправить эксперимент, как проверить ход выполнения задания и как просмотреть записанные результаты выполнения.
 services: machine-learning
 author: heatherbshapiro
 ms.author: hshapiro
+ms.reviewer: sgilley
 ms.service: machine-learning
 ms.subservice: core
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 12/04/2018
+ms.date: 07/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: d3cbc2d5be1f7addf833162b23c5db0786e9d361
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 269568c172ff6c65c9877f9ad22067a11125b339
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66297479"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67847465"
 ---
-# <a name="log-metrics-during-training-runs-in-azure-machine-learning"></a>Метрики журнала во время обучения выполняется в машинном обучении Azure
+# <a name="log-metrics-during-training-runs-in-azure-machine-learning"></a>Метрики журнала во время обучения выполняются в Машинное обучение Azure
 
-В этой статье вы научитесь Добавление ведения журнала в скрипте обучения, отправить выполнения эксперимента, мониторинг выполнения и просмотра результатов выполнения в службе машинного обучения Azure. Улучшения в процессе создания модели, отслеживая экспериментов и метрики мониторинга. 
+Улучшите процесс создания модели, отслеживая эксперименты и контрольные метрики. В этой статье вы узнаете, как добавить ведение журнала в сценарий обучения, отправить запуск эксперимента, отслеживать выполнение и просмотреть результаты выполнения в службе Машинное обучение Azure.
 
 ## <a name="list-of-training-metrics"></a>Список метрик обучения 
 
 Следующие метрики можно добавить к выполнению во время обучения эксперимента. Чтобы просмотреть подробный список того, что можно отслеживать при выполнении, ознакомьтесь со [справочной документацией по классу Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py).
 
-|type| Функция Python | Примечания|
+|Type| Функция Python | Примечания|
 |----|:----|:----|
 |Скалярные значения |Функция:<br>`run.log(name, value, description='')`<br><br>Пример:<br>run.log("accuracy", 0.95) |Запишите числовое или строковое значение в выполнение с заданным именем. Запись метрики в выполнение приводит к тому, что метрика будет сохранена в записи о выполнении в эксперименте.  Одну и ту же метрику можно несколько раз записать в рамках выполнения. Результат будет считаться вектором этой метрики.|
 |Списки|Функция:<br>`run.log_list(name, value, description='')`<br><br>Пример:<br>run.log_list("accuracies", [0.6, 0.7, 0.87]) | Запишите список значений в выполнение с заданным именем.|
@@ -48,15 +49,13 @@ ms.locfileid: "66297479"
 ## <a name="set-up-the-workspace"></a>Настройка рабочей области
 Перед тем, как включать ведение журнала и отправлять эксперимент, необходимо настроить рабочую область.
 
-1. Загрузите рабочую область. Дополнительные сведения о настройке конфигурации рабочей области, выполните действия, описанные в [создать рабочую область службы машинного обучения Azure](setup-create-workspace.md#sdk).
+1. Загрузите рабочую область. Чтобы узнать больше о настройке конфигурации рабочей области, выполните действия, описанные в разделе [Создание рабочей области службы машинное обучение Azure](setup-create-workspace.md#sdk).
 
    ```python
    from azureml.core import Experiment, Run, Workspace
    import azureml.core
   
-   ws = Workspace(workspace_name = <<workspace_name>>,
-               subscription_id = <<subscription_id>>,
-               resource_group = <<resource_group>>)
+   ws = Workspace.from_config()
    ```
   
 ## <a name="option-1-use-startlogging"></a>Вариант 1. Использование start_logging
@@ -92,38 +91,40 @@ ms.locfileid: "66297479"
 2. Добавьте отслеживание эксперимента с помощью пакета SDK для службы "Машинное обучение Azure" и отправьте сохраненную модель в запись о выполнении для эксперимента. Следующий код добавляет теги, журналы и отправляет файл модели в выполнение эксперимента.
 
    ```python
-   # Get an experiment object from Azure Machine Learning
-   experiment = Experiment(workspace = ws, name = "train-within-notebook")
-  
-   # Create a run object in the experiment
-   run = experiment.start_logging()# Log the algorithm parameter alpha to the run
-   run.log('alpha', 0.03)
-
-   # Create, fit, and test the scikit-learn Ridge regression model
-   regression_model = Ridge(alpha=0.03)
-   regression_model.fit(data['train']['X'], data['train']['y'])
-   preds = regression_model.predict(data['test']['X'])
-
-   # Output the Mean Squared Error to the notebook and to the run
-   print('Mean Squared Error is', mean_squared_error(data['test']['y'], preds))
-   run.log('mse', mean_squared_error(data['test']['y'], preds))
-
-   # Save the model to the outputs directory for capture
-   joblib.dump(value=regression_model, filename='outputs/model.pkl')
-
-   # Take a snapshot of the directory containing this notebook
-   run.take_snapshot('./')
-
-   # Complete the run
-   run.complete()
-  
+    # Get an experiment object from Azure Machine Learning
+    experiment = Experiment(workspace=ws, name="train-within-notebook")
+    
+    # Create a run object in the experiment
+    run =  experiment.start_logging()
+    # Log the algorithm parameter alpha to the run
+    run.log('alpha', 0.03)
+    
+    # Create, fit, and test the scikit-learn Ridge regression model
+    regression_model = Ridge(alpha=0.03)
+    regression_model.fit(data['train']['X'], data['train']['y'])
+    preds = regression_model.predict(data['test']['X'])
+    
+    # Output the Mean Squared Error to the notebook and to the run
+    print('Mean Squared Error is', mean_squared_error(data['test']['y'], preds))
+    run.log('mse', mean_squared_error(data['test']['y'], preds))
+    
+    # Save the model to the outputs directory for capture
+    model_file_name = 'outputs/model.pkl'
+    
+    joblib.dump(value = regression_model, filename = model_file_name)
+    
+    # upload the model file explicitly into artifacts 
+    run.upload_file(name = model_file_name, path_or_stream = model_file_name)
+    
+    # Complete the run
+    run.complete()
    ```
 
-Сценарий оканчивается на ```run.complete()```, что помечает выполнение как завершенное.  Обычно эта функция используется в сценариях интерактивной записной книжки.
+    Сценарий оканчивается на ```run.complete()```, что помечает выполнение как завершенное.  Обычно эта функция используется в сценариях интерактивной записной книжки.
 
 ## <a name="option-2-use-scriptrunconfig"></a>Вариант 2. Использование ScriptRunConfig
 
-[**ScriptRunConfig** ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py) — это класс, для настройки конфигурации для скрипта выполняется. С использованием этого параметра можно добавить код мониторинга, чтобы получать уведомления о завершении или получить визуальное мини-приложение для мониторинга.
+[**Скриптрунконфиг**](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrunconfig?view=azure-ml-py) — это класс для настройки конфигураций для выполнения сценариев. С использованием этого параметра можно добавить код мониторинга, чтобы получать уведомления о завершении или получить визуальное мини-приложение для мониторинга.
 
 В этом примере расширяется указанная выше базовая модель sklearn Ridge. В нем выполняется простая замена параметров по альфа-значениям модели для записи метрик и обученных моделей в выполнениях в рамках эксперимента. Пример запускается локально в управляемой пользователем среде. 
 
@@ -196,30 +197,31 @@ ms.locfileid: "66297479"
 3. Настройте управляемую пользователем локальную среду.
 
    ```python
-   from azureml.core.runconfig import RunConfiguration
-
+   from azureml.core import Environment
+    
    # Editing a run configuration property on-fly.
-   run_config_user_managed = RunConfiguration()
-
-   run_config_user_managed.environment.python.user_managed_dependencies = True
-
+   user_managed_env = Environment("user-managed-env")
+    
+   user_managed_env.python.user_managed_dependencies = True
+    
    # You can choose a specific Python environment by pointing to a Python path 
-   #run_config.environment.python.interpreter_path = '/home/user/miniconda3/envs/sdk2/bin/python'
+   #user_managed_env.python.interpreter_path = '/home/johndoe/miniconda3/envs/myenv/bin/python'
    ```
 
 4. Отправьте сценарий ```train.py``` для выполнения в среде, управляемой пользователем. Вся папка сценария отправляется для обучения, в том числе файл ```mylib.py```.
 
    ```python
    from azureml.core import ScriptRunConfig
-  
-   experiment = Experiment(workspace=ws, name="train-on-local")
-   src = ScriptRunConfig(source_directory = './', script = 'train.py', run_config = run_config_user_managed)
-   run = experiment.submit(src)
+    
+   exp = Experiment(workspace=ws, name="train-on-local")
+   src = ScriptRunConfig(source_directory='./', script='train.py')
+   src.run_config.environment = user_managed_env
+   run = exp.submit(src)
    ```
 
-## <a name="manage-a-run"></a>Управление запуска
+## <a name="manage-a-run"></a>Управление запуском
 
-[Start "," монитор "и" Отмена учебные запуски](how-to-manage-runs.md) статье указаны конкретные рабочие процессы машинного обучения Azure, сведения об управлении экспериментов.
+В статье [Запуск, мониторинг и Отмена обучения выполняется](how-to-manage-runs.md) выделение конкретных рабочих процессов машинное обучение Azure для управления экспериментами.
 
 ## <a name="view-run-details"></a>Просмотр сведений о выполнении
 
@@ -233,9 +235,9 @@ ms.locfileid: "66297479"
    RunDetails(run).show()
    ```
 
-   ![Снимок экрана. Мини-приложение записной книжки Jupyter](./media/how-to-track-experiments/widgets.PNG)
+   ![Снимок экрана. Мини-приложение записной книжки Jupyter](./media/how-to-track-experiments/run-details-widget.png)
 
-2. **[Для автоматических запусков машинного обучения]** Доступ к диаграммам из предыдущего выполнения. Замените `<<experiment_name>>` с именем соответствующего эксперимента:
+2. **[Для автоматических запусков машинного обучения]** Доступ к диаграммам из предыдущего выполнения. Замените `<<experiment_name>>` на имя соответствующего эксперимента:
 
    ``` 
    from azureml.widgets import RunDetails
@@ -263,14 +265,14 @@ ms.locfileid: "66297479"
 <a name="view-the-experiment-in-the-web-portal"></a>
 ## <a name="view-the-experiment-in-the-azure-portal"></a>Просмотр эксперимента на портале Azure
 
-После завершения эксперимента можно просмотреть записи о выполнении в эксперименте. Обращаться к журналу можно двумя способами.
+После завершения эксперимента можно просмотреть записи о выполнении в эксперименте. Доступ к журналу можно получить двумя способами:
 
 * Получить URL-адрес для перехода к выполнению напрямую: ```print(run.get_portal_url())```.
 * Просмотреть сведения о выполнении, отправив имя выполнения (в этом случае ```run```). Вы получите имя эксперимента, идентификатор, тип, состояние, страницу сведений, ссылку на портал Azure и ссылку на документацию.
 
 Ссылка для выполнения переведет вас на страницу сведений о выполнении на портале Azure. Здесь отображаются все свойства, отслеживаемые метрики, изображения и диаграммы, которые были зарегистрированы во время эксперимента. В этом случае мы регистрируем MSE и альфа-значения.
 
-  ![Сведения о выполнении на портале Azure](./media/how-to-track-experiments/run-details-page-web.PNG)
+  ![Сведения о выполнении на портале Azure](./media/how-to-track-experiments/run-details-page.png)
 
 Вы также можете просмотреть любые выходные данные или журналы выполнения, а также скачать моментальный снимок отправленного эксперимента для предоставления общего доступа к папке эксперимента.
 
@@ -302,19 +304,19 @@ ms.locfileid: "66297479"
 
 1. Выберите **Эксперименты** на крайней левой панели рабочей области.
 
-   ![Снимок экрана с меню эксперимента](./media/how-to-track-experiments/azure-machine-learning-auto-ml-experiment_menu.PNG)
+   ![Снимок экрана с меню эксперимента](./media/how-to-track-experiments/azure-machine-learning-auto-ml-experiment-menu.png)
 
 1. Выберите эксперимент, который вас интересует.
 
-   ![Список экспериментов](./media/how-to-track-experiments/azure-machine-learning-auto-ml-experiment_list.PNG)
+   ![Список экспериментов](./media/how-to-track-experiments/azure-machine-learning-auto-ml-experiment-list.png)
 
 1. Выберите номер выполнения в таблице.
 
-   ![Запуск эксперимента](./media/how-to-track-experiments/azure-machine-learning-auto-ml-experiment_run.PNG)
+   ![Запуск эксперимента](./media/how-to-track-experiments/azure-machine-learning-auto-ml-experiment-run.png)
 
 1. Выберите в таблице номер итерации для модели, которую вы хотите изучить подробнее.
 
-   ![Модель эксперимента](./media/how-to-track-experiments/azure-machine-learning-auto-ml-experiment_model.PNG)
+   ![Модель эксперимента](./media/how-to-track-experiments/azure-machine-learning-auto-ml-experiment-model.png)
 
 
 
@@ -334,9 +336,9 @@ ms.locfileid: "66297479"
 
 Для решения проблем с классификацией Машинное обучение Azure автоматически предоставляет матрицу неточностей для каждой созданной модели. В каждой матрице неточностей автоматическое ML отображает зеленым цветом правильно классифицированные метки, а красным — неправильно классифицированные метки. Размер каждого круга соответствует количеству выборок для этой ячейки. Кроме того, в смежной линейчатой диаграмме представлены данные о частоте для каждой прогнозируемой и реальной метки. 
 
-Пример 1 Модель классификации с низкой точностью ![Модель классификации с низкой точностью](./media/how-to-track-experiments/azure-machine-learning-auto-ml-confusion_matrix1.PNG)
+Пример 1 Модель классификации с низкой точностью ![Модель классификации с низкой точностью](./media/how-to-track-experiments/azure-machine-learning-auto-ml-confusion-matrix1.png)
 
-Пример 2 Модель классификации с высокой (идеальной) точностью ![Модель классификации с высокой точностью](./media/how-to-track-experiments/azure-machine-learning-auto-ml-confusion_matrix2.PNG)
+Пример 2 Модель классификации с высокой (идеальной) точностью ![Модель классификации с высокой точностью](./media/how-to-track-experiments/azure-machine-learning-auto-ml-confusion-matrix2.png)
 
 
 #### <a name="precision-recall-chart"></a>Диаграмма соотношения полноты и точности
@@ -345,17 +347,17 @@ ms.locfileid: "66297479"
 
 Термин "точность" здесь обозначает способность классификатора правильно назначить метки всем экземплярам. Термин "полнота" обозначает способность классификатора найти все экземпляры для определенной метки. Кривая соотношения полноты и точности демонстрирует связь между этими двумя параметрами. В идеальном случае модель демонстрирует 100 % точность и полноту.
 
-Пример 1 Модель классификации с низкой точностью и низкой полнотой ![Модель классификации с низкой точностью и низкой полнотой](./media/how-to-track-experiments/azure-machine-learning-auto-ml-precision_recall1.PNG)
+Пример 1 Модель классификации с низкой точностью и низкой полнотой ![Модель классификации с низкой точностью и низкой полнотой](./media/how-to-track-experiments/azure-machine-learning-auto-ml-precision-recall1.png)
 
-Пример 2 Модель классификации с близкими к 100 % точностью и полнотой (идеальный вариант) ![Модель классификации с высокой точностью и высокой полнотой](./media/how-to-track-experiments/azure-machine-learning-auto-ml-precision_recall2.PNG)
+Пример 2 Модель классификации с близкими к 100 % точностью и полнотой (идеальный вариант) ![Модель классификации с высокой точностью и высокой полнотой](./media/how-to-track-experiments/azure-machine-learning-auto-ml-precision-recall2.png)
 
 #### <a name="roc"></a>ROC
 
 Кривая ROC отображает правильно и неправильно классифицированные метки для конкретной модели. Кривая ROC может быть недостаточно информативной, если обучение моделей выполняется по наборам данных с высоким уровнем смещения, так как она не отображает ложноположительные метки.
 
-Пример 1 Модель классификации с небольшим количеством правильных меток и большим количеством неправильных меток![Модель классификации с небольшим количеством правильных меток и большим количеством неправильных меток](./media/how-to-track-experiments/azure-machine-learning-auto-ml-roc1.PNG)
+Пример 1 Модель классификации с небольшим количеством правильных меток и большим количеством неправильных меток![Модель классификации с небольшим количеством правильных меток и большим количеством неправильных меток](./media/how-to-track-experiments/azure-machine-learning-auto-ml-roc-1.png)
 
-Пример 2 Модель классификации с большим количеством правильных меток и небольшим количеством неправильных меток![Модель классификации с большим количеством правильных меток и небольшим количеством неправильных меток](./media/how-to-track-experiments/azure-machine-learning-auto-ml-roc2.PNG)
+Пример 2 Модель классификации с большим количеством правильных меток и небольшим количеством неправильных меток![Модель классификации с большим количеством правильных меток и небольшим количеством неправильных меток](./media/how-to-track-experiments/azure-machine-learning-auto-ml-roc-2.png)
 
 #### <a name="lift-curve"></a>Диаграмма точности прогнозов
 
@@ -363,9 +365,9 @@ ms.locfileid: "66297479"
 
 Диаграммы точности прогнозов используются для оценки эффективности модели классификации. Они демонстрируют, насколько улучшаются результаты с применением модели по сравнению с результатами без модели. 
 
-Пример 1 Модель демонстрирует результаты хуже, чем у модели случайного выбора ![Модель классификации с результатами хуже, чем у модели случайного выбора](./media/how-to-track-experiments/azure-machine-learning-auto-ml-lift_curve1.PNG)
+Пример 1 Модель демонстрирует результаты хуже, чем у модели случайного выбора ![Модель классификации с результатами хуже, чем у модели случайного выбора](./media/how-to-track-experiments/azure-machine-learning-auto-ml-lift-curve1.png)
 
-Пример 2 Модель демонстрирует результаты лучше, чем у модели случайного выбора ![Модель классификации с результатами лучше, чем у модели случайного выбора](./media/how-to-track-experiments/azure-machine-learning-auto-ml-lift_curve2.PNG)
+Пример 2 Модель демонстрирует результаты лучше, чем у модели случайного выбора ![Модель классификации с результатами лучше, чем у модели случайного выбора](./media/how-to-track-experiments/azure-machine-learning-auto-ml-lift-curve2.png)
 
 #### <a name="gains-curve"></a>Кривая прироста
 
@@ -373,9 +375,9 @@ ms.locfileid: "66297479"
 
 Использование диаграммы суммарного прироста позволяет выбрать параметры отсечения для классификации по процентному уровню, который соответствующий требуемому приросту для модели. Здесь представлена та же информация, что и на диаграмме точности прогнозов, но в другом режиме отображения.
 
-Пример 1 Модель классификации с минимальным приростом ![Модель классификации с минимальным приростом](./media/how-to-track-experiments/azure-machine-learning-auto-ml-gains_curve1.PNG)
+Пример 1 Модель классификации с минимальным приростом ![Модель классификации с минимальным приростом](./media/how-to-track-experiments/azure-machine-learning-auto-ml-gains-curve1.png)
 
-Пример 2 Модель классификации с существенным приростом ![Модель классификации с существенным приростом](./media/how-to-track-experiments/azure-machine-learning-auto-ml-gains_curve2.PNG)
+Пример 2 Модель классификации с существенным приростом ![Модель классификации с существенным приростом](./media/how-to-track-experiments/azure-machine-learning-auto-ml-gains-curve2.png)
 
 #### <a name="calibration-plot"></a>График калибровки
 
@@ -383,9 +385,9 @@ ms.locfileid: "66297479"
 
 График калибровки отображает достоверность прогнозной модели. На нем отображается зависимость между прогнозируемой и фактической вероятностями, где "вероятность" обозначает шанс принадлежности конкретного экземпляра к определенной метке. Хорошо откалиброванная модель дает результаты, близкие к графику y=x, где обеспечивается высокая надежность прогнозов. Модель с высокой степенью достоверности приближается к графику y=0, где присутствует прогнозируемая вероятность, но отсутствует фактическая.
 
-Пример 1 Относительно неплохо откалиброванная модель ![ Относительно неплохо откалиброванная модель](./media/how-to-track-experiments/azure-machine-learning-auto-ml-calib_curve1.PNG)
+Пример 1 Относительно неплохо откалиброванная модель ![ Относительно неплохо откалиброванная модель](./media/how-to-track-experiments/azure-machine-learning-auto-ml-calib-curve1.png)
 
-Пример 2 Модель с высокой степенью достоверности ![Модель с высокой степенью достоверности](./media/how-to-track-experiments/azure-machine-learning-auto-ml-calib_curve2.PNG)
+Пример 2 Модель с высокой степенью достоверности ![Модель с высокой степенью достоверности](./media/how-to-track-experiments/azure-machine-learning-auto-ml-calib-curve2.png)
 
 ### <a name="regression"></a>Регрессия
 Для каждой модели регрессии, которую вы создаете с помощью автоматического машинного обучения в Машинном обучении Azure, отображаются следующие графики: 
@@ -394,15 +396,15 @@ ms.locfileid: "66297479"
 
 <a name="pvt"></a>
 
-#### <a name="predicted-vs-true"></a>Прогнозируемые и Истина
+#### <a name="predicted-vs-true"></a>Прогнозируемые и True
 
 Прогнозируемые и истинные значения. Эта диаграмма отображает зависимость между прогнозируемым значением для проблемы регрессии. Эта диаграмма позволяет оценить эффективность модели: чем ближе прогнозируемые значения к графику y=x, тем выше точность прогнозной модели.
 
 После каждого запуска для каждой модели регрессии отображается диаграмма прогнозируемых и истинных значений. Для обеспечения конфиденциальности данных значения группируются по ячейкам, размер каждой из которых отображается в виде линейчатой диаграммы в нижней части области диаграммы. Вы можете сравнить результаты прогнозной модели с более светлой областью, которая отображает идеальные значения, требуемые для этой модели, с учетом допусков.
 
-Пример 1 Модель регрессии с низкой точностью прогнозирования ![Модель регрессии с низкой точностью прогнозирования](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression1.PNG)
+Пример 1 Модель регрессии с низкой точностью прогнозирования ![Модель регрессии с низкой точностью прогнозирования](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression1.png)
 
-Пример 2 Модель регрессии с высокой точностью прогнозирования ![Модель регрессии с высокой точностью прогнозирования](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression2.PNG)
+Пример 2 Модель регрессии с высокой точностью прогнозирования ![Модель регрессии с высокой точностью прогнозирования](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression2.png)
 
 <a name="histo"></a>
 
@@ -410,15 +412,15 @@ ms.locfileid: "66297479"
 
 Гистограмма остатков отображает разность между наблюдаемыми и прогнозируемыми значениями y. Чтобы отобразить допуск ошибок с низким смещением, гистограмма остатков должна иметь форму колокола с центром около 0. 
 
-Пример 1 Модель регрессии с заметным смещением ошибок![Модель регрессии с заметным смещением ошибок](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression3.PNG)
+Пример 1 Модель регрессии с заметным смещением ошибок![Модель регрессии с заметным смещением ошибок](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression3.png)
 
-Пример 2 Модель регрессии с более равномерным распределением ошибок ![Модель регрессии с более равномерным распределением ошибок](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression4.PNG)
+Пример 2 Модель регрессии с более равномерным распределением ошибок ![Модель регрессии с более равномерным распределением ошибок](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression4.png)
 
 ### <a name="model-explain-ability-and-feature-importance"></a>Возможность объяснить модель и важность компонентов
 
 Важность компонентов дает оценку ценности для каждого компонента, который использовался при построении модели. Вы можете просмотреть оценки важности компонентов для модели в целом, а также отдельно для каждого класса прогнозной модели. Для каждого компонента демонстрируется его важность для каждого класса и для модели в целом.
 
-![Возможность объяснения компонентов](./media/how-to-track-experiments/azure-machine-learning-auto-ml-feature_explain1.PNG)
+![Возможность объяснения компонентов](./media/how-to-track-experiments/azure-machine-learning-auto-ml-feature-explain1.png)
 
 ## <a name="example-notebooks"></a>Примеры записных книжек
 Основные понятия, описанные в этой статье, демонстрируют следующие записные книжки:
@@ -428,7 +430,7 @@ ms.locfileid: "66297479"
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Попробуйте следующие шаги, чтобы узнать, как использовать пакет SDK службы "Машинное обучение Azure" для Python:
 

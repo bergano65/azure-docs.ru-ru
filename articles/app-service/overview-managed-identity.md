@@ -10,13 +10,14 @@ ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: article
 ms.date: 11/20/2018
-ms.author: mahender, yevbronsh
-ms.openlocfilehash: b18d5ba303d1cf7ab637638043f9e0727437c232
-ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
+ms.author: mahender
+ms.reviewer: yevbronsh
+ms.openlocfilehash: 8bc30d50772dffddca32d9f6e22c3d7cec566c70
+ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67827860"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68297156"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Использование управляемых удостоверений в Службе приложений и Функциях Azure
 
@@ -277,11 +278,11 @@ var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServi
 Дополнительные сведения о пакете Microsoft.Azure.Services.AppAuthentication и операциях, которые он предоставляет, см. в [Справочник Microsoft.Azure.Services.AppAuthentication] и [примерах службы приложений и хранилищах ключей с управляемым удостоверением службы .NET](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet).
 
 
-### <a name="using-the-azure-sdk-for-java"></a>С помощью пакета Azure SDK для Java
+### <a name="using-the-azure-sdk-for-java"></a>Использование пакета Azure SDK для Java
 
-Для приложений Java и функций, — самый простой способ работы с управляемыми удостоверениями [пакет Azure SDK для Java](https://github.com/Azure/azure-sdk-for-java). В этом разделе показано, как начать работу с библиотекой в коде.
+Для приложений и функций Java проще всего работать с управляемым удостоверением с помощью [пакета Azure SDK для Java](https://github.com/Azure/azure-sdk-for-java). В этом разделе показано, как начать работу с библиотекой в коде.
 
-1. Добавьте ссылку на [библиотека пакета SDK Azure](https://mvnrepository.com/artifact/com.microsoft.azure/azure). Для проектов Maven, можно также добавить этот фрагмент кода в `dependencies` раздел файла POM проекта:
+1. Добавьте ссылку на [библиотеку Azure SDK](https://mvnrepository.com/artifact/com.microsoft.azure/azure). Для проектов Maven этот фрагмент кода можно добавить в `dependencies` раздел файл POM проекта:
 
 ```xml
 <dependency>
@@ -291,7 +292,7 @@ var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServi
 </dependency>
 ```
 
-2. Используйте `AppServiceMSICredentials` объект для проверки подлинности. В этом примере показано, как этот механизм может использоваться для работы с хранилищем ключей Azure:
+2. `AppServiceMSICredentials` Используйте объект для проверки подлинности. В этом примере показано, как можно использовать этот механизм для работы с Azure Key Vault.
 
 ```java
 import com.microsoft.azure.AzureEnvironment;

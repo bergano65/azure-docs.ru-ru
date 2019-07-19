@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/05/2019
 ms.author: allensu
-ms.openlocfilehash: a74af002dfdad5df9640be4b5fdd7f657b183bd4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 281e1e591d7c3cc31b77a116fb42af49dc27798c
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67071191"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68312149"
 ---
 # <a name="how-traffic-manager-works"></a>Как работает диспетчер трафика
 
@@ -69,8 +69,31 @@ ms.locfileid: "67071191"
 
 Рекурсивная служба DNS кэширует все полученные ответы DNS. Сопоставитель DNS на клиентском устройстве также кэширует результат. Это позволяет быстрее отвечать на последующие запросы DNS, используя данные из кэша, а не результаты запросов к другим серверам доменных имен. Длительность хранения записей DNS в кэше определяется свойством time-to-live (срок жизни, TTL). Чем меньше это значение, тем быстрее запись в кэше будет считаться истекшей, следовательно, сервера доменных имен, используемые диспетчером трафика, будут получать больше запросов. Более высокие значения приведут к тому, что при сбое конечной точки потребуется больше времени, чтобы переключить трафик на другие конечные точки. Диспетчер трафика позволяет настраивать срок жизни, используемый в ответах службы доменных имен (DNS) диспетчера трафика, в диапазоне от 0 до 2 147 483 647 секунд (максимальный диапазон в соответствии с [RFC-1035](https://www.ietf.org/rfc/rfc1035.txt)), позволяя вам выбрать значение, которое лучше всего соответствует требованиям приложения.
 
+## <a name="faqs"></a>Часто задаваемые вопросы
 
-## <a name="next-steps"></a>Дальнейшие действия
+* [Какой IP-адрес используется диспетчером трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-ip-address-does-traffic-manager-use)
+
+* [Какие типы трафика могут маршрутизироваться с помощью диспетчера трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-types-of-traffic-can-be-routed-using-traffic-manager)
+
+* [Поддерживает ли диспетчер трафика "прикрепленные" сеансы?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-traffic-manager-support-sticky-sessions)
+
+* [Почему при использовании диспетчера трафика отображается ошибка HTTP?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#why-am-i-seeing-an-http-error-when-using-traffic-manager)
+
+* [Каковы последствия производительности при использовании диспетчера трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-is-the-performance-impact-of-using-traffic-manager)
+
+* [Какие протоколы приложений можно использовать с диспетчером трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-application-protocols-can-i-use-with-traffic-manager)
+
+* [Можно ли использовать диспетчер трафика с именем домена "naked"?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-with-a-naked-domain-name)
+
+* [Учитывает ли диспетчер трафика адрес подсети клиента при обработке запросов DNS?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-traffic-manager-consider-the-client-subnet-address-when-handling-dns-queries)
+
+* [Что такое срок жизни DNS и как он влияет на пользователей?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-is-dns-ttl-and-how-does-it-impact-my-users)
+
+* [Насколько высокий или низкий можно задать TTL для ответов диспетчера трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-high-or-low-can-i-set-the-ttl-for-traffic-manager-responses)
+
+* [Как понять объем запросов, поступающих в мой профиль?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-understand-the-volume-of-queries-coming-to-my-profile)
+
+## <a name="next-steps"></a>Следующие шаги
 
 См. дополнительные сведения в статье [Мониторинг и отработка отказов конечной точки диспетчера трафика](traffic-manager-monitoring.md).
 

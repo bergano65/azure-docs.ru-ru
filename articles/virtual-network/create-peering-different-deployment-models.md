@@ -14,13 +14,14 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/15/2018
-ms.author: kumud;anavin
-ms.openlocfilehash: 56474ee56051c3b0b7482e81b0174b7945537654
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: kumud
+ms.reviewer: anavin
+ms.openlocfilehash: 720351463a9f8d5712c76401f3fbba64c3177e84
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64694709"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67871974"
 ---
 # <a name="create-a-virtual-network-peering---different-deployment-models-same-subscription"></a>Создание пиринга виртуальных сетей с разными моделями развертывания в одной подписке
 
@@ -70,7 +71,7 @@ ms.locfileid: "64694709"
      - **Имя**: *myVnet1ToMyVnet2*.
      - **Модель развертывания виртуальной сети**:  выберите **Классическая**.
      - **Подписка**: Выберите свою подписку.
-     - **Виртуальная сеть**.  Щелкните **Выбор виртуальной сети**, затем выберите **myVnet2**.
+     - **Виртуальная сеть.**  Щелкните **Выбор виртуальной сети**, затем выберите **myVnet2**.
      - **Разрешить доступ к виртуальным сетям**: выберите значение **Включено**.
     Другие параметры в этом руководстве не используются. Чтобы узнать о всех параметрах пиринга, прочитайте раздел [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md#create-a-peering).
 12. После нажатия кнопки **ОК** на предыдущем шаге колонка **Добавить пиринг** закроется, и вы снова увидите колонку **myVnet1 — пиринги**. Через несколько секунд созданный пиринг отобразится в этой колонке. В столбце **Состояние пиринга** для созданного пиринга **myVnet1ToMyVnet2** указано состояние **Подключено**.
@@ -144,7 +145,7 @@ ms.locfileid: "64694709"
 
 ## <a name="powershell"></a>Создание пиринга с помощью PowerShell
 
-1. Установите последнюю версию PowerShell [Azure](https://www.powershellgallery.com/packages/Azure) и [Az](https://www.powershellgallery.com/packages/Az/) модулей. Если вы еще не работали с Azure PowerShell, ознакомьтесь со статьей [Overview of Azure PowerShell](/powershell/azure/overview?toc=%2fazure%2fvirtual-network%2ftoc.json) (Общие сведения об Azure PowerShell).
+1. Установите последнюю версию модулей PowerShell [Azure](https://www.powershellgallery.com/packages/Azure) и [AZ](https://www.powershellgallery.com/packages/Az/) . Если вы еще не работали с Azure PowerShell, ознакомьтесь со статьей [Overview of Azure PowerShell](/powershell/azure/overview?toc=%2fazure%2fvirtual-network%2ftoc.json) (Общие сведения об Azure PowerShell).
 2. Запустите сеанс PowerShell.
 3. В PowerShell войдите в Azure, выполнив команду `Add-AzureAccount`. У учетной записи, используемой для входа, должны быть необходимые разрешения для создания пиринга виртуальных сетей. Список разрешений см. в разделе [Создание, изменение и удаление пиринга в виртуальной сети](virtual-network-manage-peering.md#requirements-and-constraints).
 4. Чтобы создать классическую виртуальную сеть с помощью PowerShell, необходимо создать новый или изменить существующий файл конфигурации сети. Узнайте, как [экспортировать, обновлять и импортировать файлы конфигурации сети](virtual-networks-using-network-configuration-file.md). Файл должен содержать приведенный ниже элемент **VirtualNetworkSite** для виртуальной сети, используемой в этом руководстве.
@@ -257,7 +258,7 @@ ms.locfileid: "64694709"
     > [!WARNING]
     > Импорт измененного файла конфигурации сети может привести к изменениям в классических виртуальных сетях в вашей подписке. Убедитесь, что вы удалили только указанную выше виртуальную сеть и не изменили или удалили другие виртуальные сети в своей подписке.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Внимательно ознакомьтесь с важными [ограничениями и особенностями работы пиринга виртуальных сетей](virtual-network-manage-peering.md#requirements-and-constraints), прежде чем создавать пиринг виртуальных сетей для рабочей среды.
 - Узнайте о [параметрах пиринга виртуальных сетей](virtual-network-manage-peering.md#create-a-peering).

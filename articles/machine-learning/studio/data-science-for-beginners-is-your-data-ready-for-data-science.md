@@ -7,15 +7,15 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
 author: sdgilley
-ms.author: sgilleye
+ms.author: sgilley
 ms.custom: seodec18
 ms.date: 03/22/2019
-ms.openlocfilehash: d38a5066304a11ff2cd53a0168e51a0d74fda555
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1d9475b49b3ef8a2e672e1ce505a7d94d19cb14f
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60751489"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67875328"
 ---
 # <a name="is-your-data-ready-for-data-science"></a>Готовы ли ваши данные к обработке и анализу?
 ## <a name="video-2-data-science-for-beginners-series"></a>Видео 2. Обработка и анализ данных для начинающих
@@ -102,6 +102,6 @@ ms.locfileid: "60751489"
 
 Ознакомьтесь с другими четырьмя видео из цикла *Обработка и анализ данных для начинающих*, посвященного Студии машинного обучения Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Выполните первый эксперимент по обработке и анализу данных с использованием Студии машинного обучения Microsoft Azure.](create-experiment.md)
 * [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](/azure/machine-learning/preview/overview-what-is-azure-ml)

@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/29/2017
-ms.author: suchiagicha
-ms.openlocfilehash: 01430c40ec9fcf1af3a463f8f86d646d15b6dd49
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: chackdan
+ms.openlocfilehash: 4e9aa2bbb99cac2ffc2b57ccb9299bf4ee7a729e
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64925941"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67876256"
 ---
 # <a name="diagnostics-and-performance-monitoring-for-reliable-service-remoting"></a>Диагностика и мониторинг производительности в модели Reliable Service Remoting
 Среда выполнения Reliable ServiceRemoting генерирует [счетчики производительности](https://msdn.microsoft.com/library/system.diagnostics.performancecounter.aspx). Они содержат полезную информацию о работоспособности ServiceRemoting и помогают устранять неполадки и контролировать производительность.
@@ -99,6 +99,6 @@ ms.locfileid: "64925941"
 | Service Fabric Service |Среднее время десериализации запроса (мс) |Время десериализации сообщения запроса службы при получении его службой (мс) |
 | Service Fabric Service |Среднее время сериализации ответа (мс) |Время сериализации ответного сообщения службы в службе до отправки ответа клиенту (мс) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Пример кода](https://azure.microsoft.com/resources/samples/?service=service-fabric&sort=0)
 * [Поставщики EventSource в PerfView](https://blogs.msdn.microsoft.com/vancem/2012/07/09/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource/)

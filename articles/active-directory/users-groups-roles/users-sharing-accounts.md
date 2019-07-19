@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: jeffsta
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 902696e35a2447b67dab74b73794b80ad5e26511
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5638710c4c01d361d108cfef69869fad1a7dad1a
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67083730"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68304375"
 ---
 # <a name="sharing-accounts-with-azure-ad"></a>Совместное использование учетных записей в Azure AD
 ## <a name="overview"></a>Обзор
@@ -67,7 +67,6 @@ Azure AD поддерживает общие учетные записи для 
 * Добавьте приложение из [коллекции приложений](https://azure.microsoft.com/marketplace/active-directory/) или [пользовательское приложение](https://cloudblogs.microsoft.com/enterprisemobility/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-now-in-preview/).
 * настройте приложение для единого входа по паролю;
 * Выполните [назначение на основе групп](groups-saasapps.md) и выберите способ ввода общих учетных данных.
-* Необязательно: в некоторых приложениях, таких как Facebook, Twitter или LinkedIn, можно включить [автоматическое изменение пароля Azure AD](https://cloudblogs.microsoft.com/enterprisemobility/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview/)
 
 Можно также сделать свою общую учетную запись более безопасной с помощью службы Многофакторной идентификации (MFA) (ознакомьтесь с дополнительными сведениями о [защите приложений с помощью Azure AD](../authentication/concept-mfa-whichversion.md)). Кроме того, можно делегировать возможность управления доступом к приложению с помощью функции управления группами в компоненте [самообслуживания Azure AD](groups-self-service-management.md).
 

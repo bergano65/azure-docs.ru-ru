@@ -9,12 +9,12 @@ ms.date: 02/11/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 94a385b7e41dd4a7664dc40418456b304ebef509
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 51e0379607c49019590a99c9fb7304f28be2afe5
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65150013"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68305742"
 ---
 # <a name="initiate-a-storage-account-failover-preview"></a>Инициация отработки отказа учетной записи хранения (предварительная версия)
 
@@ -27,7 +27,7 @@ ms.locfileid: "65150013"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Перед выполнением отработки отказа учетной записи на вашей учетной записи хранения убедитесь, что выполнены следующие действия.
 
@@ -67,7 +67,7 @@ ms.locfileid: "65150013"
 1. Удалите все ранее установленные версии Azure PowerShell.
 
     - Удалите все предыдущие установки Azure PowerShell из Windows с помощью параметра **Apps & features** (Приложения и компоненты) в разделе **Параметры**.
-    - Удалите все модули **Azure*** из `%Program Files%\WindowsPowerShell\Modules`.
+    - Удалите все модули **Azure** из `%Program Files%\WindowsPowerShell\Modules`.
     
 1. Убедитесь, что у вас установлена последняя версия PowerShellGet. Откройте окно Windows PowerShell и выполните следующую команду, чтобы установить последнюю версию:
  
@@ -105,7 +105,7 @@ az storage account show \ --name accountName \ --expand geoReplicationStats
 az storage account failover \ --name accountName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Disaster recovery and storage account failover (preview) in Azure Storage](storage-disaster-recovery-guidance.md) (Аварийное восстановление и отработка отказа учетной записи хранения (предварительная версия) в службе хранилища Azure)
 - [Проектирование высокодоступных приложений с использованием RA-GRS](storage-designing-ha-apps-with-ragrs.md)
