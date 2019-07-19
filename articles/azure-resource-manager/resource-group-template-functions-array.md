@@ -17,7 +17,7 @@ ms.locfileid: "67206376"
 
 Resource Manager предоставляет ряд функций для работы с массивами и объектами.
 
-* [array](#array).
+* [array](#array)
 * [coalesce](#coalesce)
 * [concat](#concat)
 * [contains](#contains)
@@ -27,13 +27,14 @@ Resource Manager предоставляет ряд функций для раб�
 * [intersection](#intersection)
 * [json](#json)
 * [last](#last)
-* [длина](#length)
+* [length](#length)
 * [max](#max)
 * [min](#min)
 * [range](#range)
 * [skip](#skip)
 * [take](#take)
 * [union](#union)
+
 
 Чтобы получить массив строковых значений, разделенных определенным значением, используйте [split](resource-group-template-functions-string.md#split).
 
