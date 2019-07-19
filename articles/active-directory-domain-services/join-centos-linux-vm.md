@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: iainfou
-ms.openlocfilehash: d34f6c9ea014759ec2ba310786cd524ff69094af
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: c4a04f55f4f69521f00ed450a2d3d1a80b56761c
+ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67473338"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68234084"
 ---
 # <a name="join-a-centos-linux-virtual-machine-to-a-managed-domain"></a>Присоединение виртуальной машины CentOS к управляемому домену
 Из этой статьи вы узнаете, как присоединить виртуальную машину CentOS в Azure к управляемому домену доменных служб Azure AD.
@@ -57,24 +57,25 @@ ms.locfileid: "67473338"
 ## <a name="configure-the-hosts-file-on-the-linux-virtual-machine"></a>Настройка файла hosts на виртуальной машине Linux
 В окне терминала SSH откройте файл /etc/hosts для редактирования, чтобы изменить в нем IP-адрес и имя узла вашего компьютера.
 
-```
+```console
 sudo vi /etc/hosts
 ```
 
 Добавьте следующее значение в файл hosts:
 
-```
+```console
 127.0.0.1 contoso-centos.contoso100.com contoso-centos
 ```
+
 В этом примере contoso100.com — это DNS-имя управляемого домена. contoso-centos — это имя узла виртуальной машины CentOS, присоединяемой к управляемому домену.
 
 
 ## <a name="install-required-packages-on-the-linux-virtual-machine"></a>Установка требуемых пакетов на виртуальную машину Linux
 После этого установите на виртуальную машину пакеты, необходимые для присоединения к домену. В окне терминала SSH введите следующую команду, чтобы установить необходимые пакеты:
 
-    ```
-    sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir samba-common-tools
-    ```
+```console
+sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir samba-common-tools
+```
 
 
 ## <a name="join-the-linux-virtual-machine-to-the-managed-domain"></a>Присоединение виртуальной машины Linux к управляемому домену
@@ -82,7 +83,7 @@ sudo vi /etc/hosts
 
 1. Выполните поиск управляемого домена доменных служб AAD. В окне терминала SSH введите следующую команду:
 
-    ```
+    ```console
     sudo realm discover CONTOSO100.COM
     ```
 
@@ -97,9 +98,8 @@ sudo vi /etc/hosts
     > [!TIP]
     > * Укажите пользователя, который принадлежит к группе администраторов доменных служб AAD.
     > * Введите доменное имя заглавными буквами, иначе операция с использованием kinit завершится ошибкой.
-    >
 
-    ```
+    ```console
     kinit bob@CONTOSO100.COM
     ```
 
@@ -107,9 +107,8 @@ sudo vi /etc/hosts
 
     > [!TIP]
     > Используйте ту же учетную запись пользователя, которую вы указали на предыдущем шаге (kinit).
-    >
 
-    ```
+    ```console
     sudo realm join --verbose CONTOSO100.COM -U 'bob@CONTOSO100.COM'
     ```
 
@@ -120,17 +119,20 @@ sudo vi /etc/hosts
 Проверьте, присоединена ли виртуальная машина к управляемому домену. Подключитесь к виртуальной машине CentOS, присоединенной к домену, используя другое SSH-подключение. Используйте учетную запись пользователя домена и проверьте, правильно ли разрешится эта учетная запись.
 
 1. В окне терминала SSH введите команду ниже, чтобы подключиться по протоколу SSH к виртуальной машине CentOS, присоединенной к домену. Используйте учетную запись домена, которая принадлежит к управляемому домену (в нашем примере — bob@CONTOSO100.COM).
-    ```
+    
+    ```console
     ssh -l bob@CONTOSO100.COM contoso-centos.contoso100.com
     ```
 
 2. Чтобы проверить, правильно ли инициализирован корневой каталог, в окне терминала SSH введите следующую команду:
-    ```
+   
+    ```console
     pwd
     ```
 
 3. Чтобы проверить, правильно ли определено членство в группе, в окне терминала SSH введите следующую команду:
-    ```
+    
+    ```console
     id
     ```
 

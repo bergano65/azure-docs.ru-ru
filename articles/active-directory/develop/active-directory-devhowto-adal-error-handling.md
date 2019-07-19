@@ -8,19 +8,19 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.service: active-directory
 ms.subservice: develop
+ms.custom: aaddev
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/27/2017
-ms.custom: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e125adebfcd110f814b112544004220d2e54e08
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: e1d478bbb2f8645703299c8fe37c2117f492c3f8
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67483218"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68324811"
 ---
 # <a name="error-handling-best-practices-for-azure-active-directory-authentication-library-adal-clients"></a>Руководство по обработке ошибок для клиентов библиотеки аутентификации Active Directory (ADAL)
 
@@ -579,14 +579,14 @@ window.Logging = {
 ```
 ## <a name="related-content"></a>Связанная информация
 
-* [Руководство разработчика Azure AD][AAD-Dev-Guide]
-* [Библиотеки проверки подлинности Azure AD][AAD-Auth-Libraries]
-* [Сценарии аутентификации в Azure AD][AAD-Auth-Scenarios]
+* [Инструкции для разработчиков Azure AD][AAD-Dev-Guide]
+* [Библиотеки аутентификация Azure AD][AAD-Auth-Libraries]
+* [Сценарии аутентификация Azure AD][AAD-Auth-Scenarios]
 * [Интеграция приложений с Azure Active Directory][AAD-Integrating-Apps]
 
 Оставляйте свои замечания и пожелания в разделе ниже. Они помогают нам улучшать содержимое веб-сайта.
 
-[![Отображает кнопку «Войти в Майкрософт»][AAD-Sign-In]][AAD-Sign-In]
+[![Отображает кнопку "Войдите с помощью учетной записи Майкрософт"][AAD-Sign-In]][AAD-Sign-In]
 <!--Reference style links -->
 
 [AAD-Auth-Libraries]: ./active-directory-authentication-libraries.md

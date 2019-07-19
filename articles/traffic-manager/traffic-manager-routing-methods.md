@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: allensu
-ms.openlocfilehash: 9068cb0dad742ac6e5eeae0b3a1b801d08d4734c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: dd4b9f88e61396003a209b1b8edabb8c1564c761
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67070996"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68320088"
 ---
 # <a name="traffic-manager-routing-methods"></a>Методы маршрутизации диспетчера трафика
 
@@ -123,6 +123,28 @@ ms.locfileid: "67070996"
 
 Как описано в статье [Как работает диспетчер трафика](traffic-manager-how-it-works.md), запросы DNS поступают к нему не напрямую от клиентов. Обычно запросы DNS отправляет рекурсивная служба DNS, которую используют клиенты. Поэтому для определения региона используется не IP-адрес клиента, а IP-адрес рекурсивной службы DNS. На практике такая замена адреса обычно дает неплохой результат.
 
+### <a name="faqs"></a>Часто задаваемые вопросы
+
+* [В каких случаях полезно использовать географическую маршрутизацию?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-some-use-cases-where-geographic-routing-is-useful)
+
+* [Разделы справки решить, следует ли использовать метод маршрутизации производительности или метод географической маршрутизации?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-do-i-decide-if-i-should-use-performance-routing-method-or-geographic-routing-method)
+
+* [Какие регионы поддерживаются диспетчером трафика для географической маршрутизации?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-the-regions-that-are-supported-by-traffic-manager-for-geographic-routing)
+
+* [Как диспетчер трафика определяет, откуда выполняется запрос пользователя?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-manager-determine-where-a-user-is-querying-from)
+
+* [Гарантируется ли диспетчер трафика правильно определять точное географическое расположение пользователя в каждом случае?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#is-it-guaranteed-that-traffic-manager-can-correctly-determine-the-exact-geographic-location-of-the-user-in-every-case)
+
+* [Должна ли конечная точка быть физически размещена в том же регионе, что и конфигурация для географической маршрутизации?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-an-endpoint-need-to-be-physically-located-in-the-same-region-as-the-one-it-is-configured-with-for-geographic-routing)
+
+* [Можно ли назначить географические регионы конечным точкам в профиле, не настроенном для географической маршрутизации?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-assign-geographic-regions-to-endpoints-in-a-profile-that-is-not-configured-to-do-geographic-routing)
+
+* [Почему я получаю сообщение об ошибке при попытке изменить метод маршрутизации существующего профиля на географический?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#why-am-i-getting-an-error-when-i-try-to-change-the-routing-method-of-an-existing-profile-to-geographic)
+
+* [Почему настоятельно рекомендуется, чтобы клиенты создали вложенные профили вместо конечных точек в профиле с включенной географической маршрутизацией?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#why-is-it-strongly-recommended-that-customers-create-nested-profiles-instead-of-endpoints-under-a-profile-with-geographic-routing-enabled)
+
+* [Существуют ли какие-либо ограничения на версию API, которая поддерживает этот тип маршрутизации?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#are-there-any-restrictions-on-the-api-version-that-supports-this-routing-type)
+
 ## <a name = "multivalue"></a>Метод маршрутизации трафика "Многозначный"
 Метод маршрутизации трафика **Многозначный** позволяет получить несколько работоспособных конечных точек в одном ответе на запрос DNS. Таким образом, вызывающий объект может совершать повторные попытки на стороне клиента с другими конечными точками, если возвращенная конечная точка не отвечает. Этот шаблон может повысить доступность службы и сократить задержки, связанные с новым запросом DNS на получение работоспособной конечной точки. Метод маршрутизации "Многозначный" работает только в том случае, если все конечные точки внешние и являются IPv4- или IPv6-адресами. При получении запроса для этого профиля все работоспособные конечные точки возвращаются на основе настраиваемого максимального числа записей в ответе.
 
@@ -134,7 +156,7 @@ IP-адрес для сопоставления с конечной точкой
 
 Маршрутизацию подсети можно использовать для предоставления различных возможностей для пользователей, подключающихся из определенного пространства IP-адресов. Например, с помощью маршрутизации типа "Подсеть" клиент может перенаправлять все запросы из своего офиса к другой конечной точке, в которой с помощью запросов можно протестировать внутреннюю версию приложения. Другой сценарий — если вы хотите указать другие возможности для пользователей, подключающихся из конкретного поставщика услуг Интернета (например, заблокировать пользователей данного поставщика услуг Интернета).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как разрабатывать высокодоступные приложения с помощью [мониторинга конечных точек диспетчером трафика](traffic-manager-monitoring.md)
 

@@ -9,21 +9,21 @@ ms.date: 03/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: f6422bf2ccc42c12d8f2d20a5a7ece8d37e8b48e
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 398b2236caa77e4aef5b471079407a5edeeeee2d
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67449726"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68326937"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
 Служба хранилища Azure предоставляет многоуровневую модель безопасности. Эта модель обеспечивает безопасность учетных записей хранения, открывая доступ к ним только по определенным поддерживаемым сетям. После настройки правил сети доступ к учетной записи хранения могут получать только приложения, запрашивающие данные из этого ограниченного числа сетей.
 
-При этом приложению, получающему доступ к учетной записи хранения с активными правилами сети, необходима надлежащая авторизация. Авторизация поддерживается с учетными данными Azure Active Directory (Azure AD) для больших двоичных объектов и очередей, допустимый ключ доступа учетной записи или маркером SAS.
+При этом приложению, получающему доступ к учетной записи хранения с активными правилами сети, необходима надлежащая авторизация. Авторизация поддерживается с учетными данными Azure Active Directory (Azure AD) для больших двоичных объектов и очередей с допустимым ключом доступа к учетной записи или маркером SAS.
 
 > [!IMPORTANT]
-> Служба синхронизации файлов Azure пока не поддерживает брандмауэры и виртуальные сети. Если вы используете службу синхронизации файлов Azure на вашей учетной записи хранения, включить эти службы синхронизации файлов Azure не будут синхронизироваться.
+> Синхронизация файлов Azure еще не поддерживает брандмауэры и виртуальные сети. Если вы используете Синхронизация файлов Azure в учетной записи хранения и включаете их, Синхронизация файлов Azure не будет синхронизироваться.
 >
 > Включение правил брандмауэра для учетной записи хранения блокирует доступ для входящих запросов к данным по умолчанию, за исключением запросов от служб, работающих внутри виртуальной сети Azure (VNet). Запросы от других служб Azure, в том числе портала Azure, служб метрики и ведения журналов, блокируются.
 >
@@ -350,18 +350,19 @@ ms.locfileid: "67449726"
 
 При активном исключении **Разрешить доверенным службам Майкрософт...** доступ к учетной записи хранения предоставляется таким службам (при регистрации в вашей подписке):
 
-|Service|Имя поставщика ресурсов|Назначение|
+|Service|Имя поставщика ресурсов|Цель|
 |:------|:---------------------|:------|
-|Служба архивации Azure|Microsoft.RecoveryServices|Резервное копирование и восстановление неуправляемых дисков в виртуальных машинах IAAS. (Не требуется для управляемых дисков.) [Узнайте больше](/azure/backup/backup-introduction-to-azure-backup).|
-|Azure Data Box|Microsoft.DataBox|Включает Импорт данных в Azure с помощью Data Box. [Узнайте больше](/azure/databox/data-box-overview).|
+|Azure Backup|Microsoft.RecoveryServices|Резервное копирование и восстановление неуправляемых дисков в виртуальных машинах IAAS. (Не требуется для управляемых дисков.) [Узнайте больше](/azure/backup/backup-introduction-to-azure-backup).|
+|Azure Data Box|Microsoft.DataBox|Позволяет импортировать данные в Azure с помощью Data Box. [Узнайте больше](/azure/databox/data-box-overview).|
 |Azure DevTest Labs|Microsoft.DevTestLab|Создание пользовательских образов и установка артефактов. [Узнайте больше](/azure/devtest-lab/devtest-lab-overview).|
 |Сетка событий Azure|Microsoft.EventGrid|Включение публикации событий в хранилище BLOB-объектов и предоставление службе "Сетка событий" разрешения на публикацию в хранилище очередей. См. дополнительные сведения о [событиях хранилища BLOB-объектов](/azure/event-grid/event-sources) и [публикации в хранилище очередей](/azure/event-grid/event-handlers).|
 |Центры событий Azure|Microsoft.EventHub|Архивация данных с помощью функции "Сбор" в Центрах событий. [Подробнее](/azure/event-hubs/event-hubs-capture-overview)|
-|Azure HDInsight|Microsoft.HDInsight|Подготовьте исходные данные в файловой системы по умолчанию для нового кластера HDInsight. [Узнайте больше](https://azure.microsoft.com/blog/enhance-hdinsight-security-with-service-endpoints/).|
+| Служба синхронизации файлов Azure| Microsoft.StorageSync| Позволяет преобразовать локальный файловый сервер в кэш для файловых ресурсов Azure. Обеспечивается многосайтовая синхронизация, быстрое аварийное восстановление и резервное копирование на стороне облака. [Подробнее](../files/storage-sync-files-planning.md)|
+|Azure HDInsight|Microsoft.HDInsight|Подготавливает начальное содержимое файловой системы по умолчанию для нового кластера HDInsight. [Узнайте больше](https://azure.microsoft.com/blog/enhance-hdinsight-security-with-service-endpoints/).|
 |Azure Monitor|Microsoft.Insights|Позволяет записывать данные мониторинга в защищенную учетную запись. [Дополнительные сведения](/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security).|
 |Сеть Azure|Microsoft.Network.|Хранение и анализ журналов сетевого трафика. [Узнайте больше](/azure/network-watcher/network-watcher-packet-capture-overview).|
 |Azure Site Recovery|Microsoft.SiteRecovery |Настройка аварийного восстановления путем включения репликации для виртуальных машин Azure IaaS. Эта процедура необходима при использовании учетных записей хранения кэша, источника или целевой учетной записи хранения со включенным брандмауэром.  [Узнайте больше](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication).|
-|Хранилище данных SQL Azure|Microsoft.Sql|Позволяет импортировать и экспортировать сценариев из некоторых экземпляров баз данных SQL с помощью PolyBase. [Узнайте больше](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview).|
+|Хранилище данных SQL Azure|Microsoft.Sql|Разрешает сценарии импорта и экспорта из конкретных экземпляров баз данных SQL с помощью Polybase. [Узнайте больше](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview).|
 
 ### <a name="storage-analytics-data-access"></a>Доступ к данным аналитики хранилища
 
@@ -433,7 +434,7 @@ ms.locfileid: "67449726"
 > [!IMPORTANT]
 > Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе исключение не будет действовать.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о конечных точках службы сети Azure см. в статье [Конечные точки службы виртуальной сети](/azure/virtual-network/virtual-network-service-endpoints-overview).
 

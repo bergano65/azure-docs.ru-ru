@@ -1,6 +1,6 @@
 ---
-title: Схема журнала входа в Azure Active Directory в Azure Monitor | Документация Майкрософт
-description: Описания входа в Azure AD в схеме журнала для использования в Azure Monitor
+title: Azure Active Directory схемы журнала входа в систему Azure Monitor | Документация Майкрософт
+description: Опишите схему журнала входа Azure AD для использования в Azure Monitor
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -17,14 +17,14 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8ac6c56dca100ea9836158f46881c4eb12213e1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0e7ae7e90642a6adfd35e71765e2753334660c56
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60285199"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68261859"
 ---
-# <a name="interpret-the-azure-ad-sign-in-logs-schema-in-azure-monitor"></a>Интерпретировать схему журналы входа Azure AD в Azure Monitor
+# <a name="interpret-the-azure-ad-sign-in-logs-schema-in-azure-monitor"></a>Анализ схемы журналов входа в Azure AD в Azure Monitor
 
 В этой статье описывается схема журналов входа Azure Active Directory (Azure AD) в Azure Monitor. Большая часть информации об операциях входа предоставляется в атрибуте *Properties* объекта `records`.
 
@@ -145,8 +145,8 @@ ms.locfileid: "60285199"
 
 | Имя поля | Описание |
 |------------|-------------|
-| Время | Дата и время в формате UTC. |
-| ResourceId | Это значение не сопоставлено, и его можно игнорировать.  |
+| Time | Дата и время в формате UTC. |
+| resourceId | Это значение не сопоставлено, и его можно игнорировать.  |
 | OperationName | Для операций входа это поле всегда имеет значение *Sign-in activity*. |
 | OperationVersion | Запрошенная клиентом версия REST API. |
 | Категория | Для операций входа это поле всегда имеет значение *SignIn*. | 
@@ -154,15 +154,20 @@ ms.locfileid: "60285199"
 | ResultType | Результатом операции входа может быть *Success* или *Failure*. | 
 | ResultSignature | Содержит код ошибки, которая возникла во время входа. |
 | ResultDescription | Содержит описание ошибки, которая возникла во время входа. |
-| DurationMs |  Это значение не сопоставлено, и его можно игнорировать.|
+| рискдетаил | рискдетаил | Предоставляет "причину" для определенного состояния рискованного пользователя, входа или события риска. Возможные значения `none`:, `adminGeneratedTemporaryPassword`, `userPerformedSecuredPasswordChange`, `userPerformedSecuredPasswordReset`, ,,`aiConfirmedSigninSafe`,, ,`adminConfirmedSigninCompromised`. `userPassedMFADrivenByRiskBasedPolicy` `adminConfirmedSigninSafe` `adminDismissedAllRiskForUser` `unknownFutureValue` Это значение `none` означает, что для пользователя или входа не было выполнено никаких действий. <br>**Примечание.** Для получения сведений об этом свойстве требуется лицензия Azure AD Premium P2. Другие лицензии возвращают значение `hidden`. |
+| рискевенттипес | рискевенттипес | Типы событий риска, связанные с входом. Возможные значения `unlikelyTravel`:, `anonymizedIPAddress`, `maliciousIPAddress`, `unfamiliarFeatures`, ,,`suspiciousIPAddress`,, и`generic`. `leakedCredentials` `malwareInfectedIPAddress` `investigationsThreatIntelligence` `unknownFutureValue` |
+| рисклевелаггрегатед | рисклевел | Агрегированный уровень риска. `none`Возможные значения:, `low`, `medium`, `high`, и`hidden`. `unknownFutureValue` Значение `hidden` означает, что пользователь или вход не был включен для Защита идентификации Azure AD. **Примечание.** Сведения для этого свойства доступны только для клиентов Azure AD Premium P2. Будут возвращены `hidden`все остальные клиенты. |
+| рисклевелдурингсигнин | рисклевел | Уровень риска во время входа. `none`Возможные значения:, `low`, `medium`, `high`, и`hidden`. `unknownFutureValue` Значение `hidden` означает, что пользователь или вход не был включен для Защита идентификации Azure AD. **Примечание.** Сведения для этого свойства доступны только для клиентов Azure AD Premium P2. Будут возвращены `hidden`все остальные клиенты. |
+| рискстате | рискстате | Сообщает состояние рискованного пользователя, входа в систему или события риска. `none`Возможные значения:, `confirmedSafe`, `remediated`, `dismissed`, ,`atRisk` ,`unknownFutureValue`. `confirmedCompromised` |
+| DurationMs |  Это значение не сопоставлено, и его можно игнорировать. |
 | CallerIpAddress | IP-адрес отправившего запрос клиента. | 
 | CorrelationId | Необязательный код GUID, который передал клиент. Это значение может помочь найти связь между операциями на стороне клиента и операциями на стороне сервера. Кроме того, оно может пригодиться при отслеживании журналов, в которые записываются данные о многих службах. |
-| Удостоверение | Удостоверение из маркера, предоставленное при выполнении запроса. Это может быть учетная запись пользователя, системная учетная запись или субъект-служба. |
+| идентификации | Удостоверение из маркера, предоставленное при выполнении запроса. Это может быть учетная запись пользователя, системная учетная запись или субъект-служба. |
 | Уровень | Предоставляет тип сообщения. Для операций аудита это поле всегда имеет значение *Informational*. |
-| Расположение | Содержит сведения о местонахождении, в котором выполнялась операция входа. |
-| properties | Содержит все свойства, связанные с операциями входа. Дополнительные сведения см. в [этой статье](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin). Для удобства чтения в этой схеме используются имена атрибутов, отображаемые в ресурсе входа.
+| Местоположение | Содержит сведения о местонахождении, в котором выполнялась операция входа. |
+| Свойства | Содержит все свойства, связанные с операциями входа. Дополнительные сведения см. в [этой статье](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin). Для удобства чтения в этой схеме используются имена атрибутов, отображаемые в ресурсе входа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Interpret the Azure AD audit logs schema in Azure Monitor (preview)](reference-azure-monitor-audit-log-schema.md) (Интерпретация схемы журналов аудита Azure Active Directory в Azure Monitor (предварительная версия))
 * [Дополнительные сведения о журналах диагностики Azure](../../azure-monitor/platform/diagnostic-logs-overview.md).

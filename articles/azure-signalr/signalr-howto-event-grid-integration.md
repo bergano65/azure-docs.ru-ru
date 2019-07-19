@@ -1,22 +1,22 @@
 ---
-title: Как отправлять события служба Azure SignalR "Сетка событий"
-description: Структуру, чтобы показать, как включить события сетки событий для службы SignalR, отправить клиентское подключение подключен или отключен события к примеру приложения.
-services: azure-signalr
+title: Отправка событий службы Azure SignalR в службу "Сетка событий"
+description: Руководство по включению событий сетки событий для службы SignalR, а также по отправке подключенных или отключенных событий подключения клиента к образцу приложения.
+services: signalr
 author: chenyl
 ms.service: azure-signalr
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.author: chenyl
-ms.openlocfilehash: 2d782306938136ce6d21a331185f591316f58a29
-ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
+ms.openlocfilehash: 52e4194acd6a3abfed3fabadb892b0de76025b7e
+ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67789180"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68296862"
 ---
-# <a name="how-to-send-events-from-azure-signalr-service-to-event-grid"></a>Как отправлять события из Azure SignalR службы "Сетка событий"
+# <a name="how-to-send-events-from-azure-signalr-service-to-event-grid"></a>Отправка событий из службы Azure SignalR в службу "Сетка событий"
 
-Сетка событий Azure — это полностью управляемая служба маршрутизации событий, обеспечивает равномерное потребление событий с помощью модели публикации подписки. В этом руководстве используется Azure CLI создать службу Azure SignalR, подписаться на события соединения, а затем развернуть пример веб-приложения для отправки событий. Наконец можно подключиться и отключиться и см. в разделе полезных данных события в приложении-примере.
+Сетка событий Azure — это полностью управляемая служба маршрутизации событий, которая обеспечивает унифицированное потребление событий с помощью модели Pub-подтипа. В этом пошаговом окне вы используете Azure CLI для создания службы Azure SignalR, подписки на события подключения, а затем развертывания примера веб-приложения для получения событий. Наконец, можно подключаться и отключаться и просматривать полезные данные события в примере приложения.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][azure-account], прежде чем начинать работу.
 
@@ -26,7 +26,7 @@ ms.locfileid: "67789180"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов Azure — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Следующие [Создание группы az][az-group-create] команда создает группу ресурсов с именем *myResourceGroup* в *eastus* регион. Если вы хотите использовать другое имя для своей группы ресурсов, установите другое значение для `RESOURCE_GROUP_NAME`.
+Группа ресурсов Azure — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Следующая команда [AZ Group Create][az-group-create] создает группу ресурсов с именем *myResourceGroup* в регионе *eastus* . Если вы хотите использовать другое имя для своей группы ресурсов, установите другое значение для `RESOURCE_GROUP_NAME`.
 
 ```azurecli-interactive
 RESOURCE_GROUP_NAME=myResourceGroup
@@ -36,14 +36,14 @@ az group create --name $RESOURCE_GROUP_NAME --location eastus
 
 ## <a name="create-a-signalr-service"></a>Создание службы SignalR
 
-Теперь можно разверните в службе Azure Signalr в группе ресурсов, выполнив следующие команды.
+Затем разверните службу Azure SignalR в группе ресурсов с помощью следующих команд.
 ```azurecli-interactive
 SIGNALR_NAME=SignalRTestSvc
 
 az signalr create --resource-group $RESOURCE_GROUP_NAME --name $SIGNALR_NAME --sku Free_F1
 ```
 
-После создания службы SignalR, Azure CLI возвращает выходные данные следующего вида:
+После создания службы SignalR Azure CLI возвращает выходные данные, аналогичные следующим:
 
 ```json
 {
@@ -86,7 +86,7 @@ az group deployment create \
     --parameters siteName=$SITE_NAME hostingPlanName=$SITE_NAME-plan
 ```
 
-После успешного развертывания (может занять несколько минут), откройте браузер и перейдите к веб-приложения, чтобы убедиться, что он работает:
+После завершения развертывания (может занять несколько минут) откройте браузер и перейдите к веб-приложению, чтобы убедиться, что оно работает:
 
 `http://<your-site-name>.azurewebsites.net`
 
@@ -94,7 +94,7 @@ az group deployment create \
 
 ## <a name="subscribe-to-registry-events"></a>Подписка на события реестра
 
-Подпишитесь на *раздел*, чтобы определить в Сетке событий Azure, какие события необходимо отслеживать и куда их отправлять. Следующие [az eventgrid-подписки на события создания][az-eventgrid-event-subscription-create] команда подписывается на службу Azure SignalR, вы создали и задает URL-адрес веб приложения в качестве конечной точки, к которому необходимо отправлять события. Переменные среды, которые вы заполнили в предыдущих разделах, используются здесь повторно, поэтому никаких изменений не требуется.
+Подпишитесь на *раздел*, чтобы определить в Сетке событий Azure, какие события необходимо отслеживать и куда их отправлять. Следующая команда [AZ eventgrid Event-Subscription создает][az-eventgrid-event-subscription-create] подписку на созданную службу Azure SignalR и указывает URL-адрес вашего веб приложения в качестве конечной точки, в которую он должен отправить события. Переменные среды, которые вы заполнили в предыдущих разделах, используются здесь повторно, поэтому никаких изменений не требуется.
 
 ```azurecli-interactive
 SIGNALR_SERVICE_ID=$(az signalr show --resource-group $RESOURCE_GROUP_NAME --name $SIGNALR_NAME --query id --output tsv)
@@ -141,7 +141,7 @@ az eventgrid event-subscription create \
 
 ## <a name="trigger-registry-events"></a>Активация событий реестра
 
-Переключиться в режим службы для `Serverless Mode` и настройте подключение клиента к службе SignalR. Рекомендуем ознакомиться с [Бессерверных пример](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/Serverless) как ссылка.
+Переключитесь в режим `Serverless Mode` службы и настройте клиентское подключение к службе SignalR. В качестве образца можно использовать бессерверный [Пример](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/Serverless) .
 
 ```bash
 git clone git@github.com:aspnet/AzureSignalR-samples.git
@@ -162,7 +162,7 @@ dotnet run
 
 ## <a name="view-registry-events"></a>Просмотр событий реестра
 
-Клиент теперь подключен к службе SignalR. Перейдите в средство просмотра сетки событий веб-приложение, и вы увидите `ClientConnectionConnected` событий. Если вы завершения работы клиента, вы также увидите `ClientConnectionDisconnected` событий.
+Теперь вы подключили клиента к службе SignalR. Перейдите к веб-приложению средства просмотра сетки событий, и вы увидите `ClientConnectionConnected` событие. Если вы завершите работу клиента, вы увидите также `ClientConnectionDisconnected` событие.
 
 <!-- LINKS - External -->
 [azure-account]: https://azure.microsoft.com/free/?WT.mc_id=A261C142F

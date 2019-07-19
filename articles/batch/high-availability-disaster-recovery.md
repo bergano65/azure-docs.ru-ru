@@ -4,7 +4,7 @@ description: Узнайте, как разработать приложение 
 services: batch
 documentationcenter: ''
 author: laurenhughes
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: batch
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/29/2019
 ms.author: lahugh
-ms.openlocfilehash: b863785575263fedd144b3d599962a8e1559e0a3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3c76a5100e6ac1db067ccdbd582ddf9adba946c1
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60549758"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68322585"
 ---
 # <a name="design-your-application-for-high-availability"></a>Обеспечение высокого уровня доступности при проектировании приложения
 
@@ -48,7 +48,7 @@ ms.locfileid: "60549758"
 - В приложении, вызывающем пакетные службы, хранилище и любых других службах можно легко переключать клиентов или загружать данные в другой регион.
 - Наилучшим способом обеспечения успешного переключения при сбое является частое переключение на альтернативный регион в рамках нормальной работы. Например, при двух развертываниях в отдельных регионах переключайтесь на альтернативный регион каждый месяц.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения см. в статьях [Создание учетной записи пакетной службы на портале Azure](batch-account-create-portal.md), [Примеры использования Azure CLI для пакетной службы Azure](cli-samples.md), [Управление ресурсами пакетной службы с помощью командлетов PowerShell](batch-powershell-cmdlets-get-started.md) или [Управление учетными записями и квотами пакетной службы с помощью клиентской библиотеки .NET для управления пакетной службой](batch-management-dotnet.md).
 - Квоты по умолчанию связаны с учетной записью пакетной службы. В [этой статье](batch-quota-limit.md) подробно описываются значения квот по умолчанию и то, как их можно увеличить.

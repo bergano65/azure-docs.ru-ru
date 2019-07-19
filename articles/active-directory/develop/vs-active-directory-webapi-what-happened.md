@@ -4,6 +4,8 @@ description: В этой статье описывается, что проис�
 services: active-directory
 author: ghogen
 manager: douge
+ms.service: active-directory
+ms.subservice: develop
 ms.assetid: 57630aee-26a2-4326-9dbb-ea2a66daa8b0
 ms.prod: visual-studio-dev15
 ms.technology: vs-azure
@@ -13,17 +15,17 @@ ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f4946251cf72d7869ec5fc2f0fd844b9c06ac34
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 19a36ca4b194d8031b4a263a092ecb52be74cdd0
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60353284"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68324274"
 ---
 # <a name="what-happened-to-my-webapi-project-visual-studio-azure-active-directory-connected-service"></a>Что произошло с моим проектом WebApi в подключенной службе Visual Studio Azure Active Directory
 
 > [!div class="op_single_selector"]
-> - [Приступая к работе](vs-active-directory-webapi-getting-started.md)
+> - [Начало работы](vs-active-directory-webapi-getting-started.md)
 > - [Что произошло?](vs-active-directory-webapi-what-happened.md)
 
 В этой статье описаны конкретные изменения, которые вносятся в проекты ASP.NET WebAPI, одностраничного приложения ASP.NET и API-интерфейса Azure ASP.NET при добавлении [подключенной службы Azure Active Directory с помощью Visual Studio](vs-active-directory-add-connected-service.md). Это также касается и проектов мобильной службы Azure ASP.NET в Visual Studio 2015.
@@ -34,7 +36,7 @@ ms.locfileid: "60353284"
 
 Это изменение влияет на файлы проекта (ссылки \*.NET) и `packages.config` (ссылки NuGet).
 
-| type | Справочные материалы |
+| Тип | Ссылка |
 | --- | --- |
 | .NET; NuGet | Microsoft.Owin |
 | .NET; NuGet | Microsoft.Owin.Host.SystemWeb |
@@ -47,7 +49,7 @@ ms.locfileid: "60353284"
 
 Дополнительные ссылки, если выбран параметр **Чтение данных каталога**
 
-| type | Справочные материалы |
+| Тип | Ссылка |
 | --- | --- |
 | .NET; NuGet | EntityFramework |
 | .NET        | EntityFramework.SqlServer (только для Visual Studio 2015) |
@@ -61,7 +63,7 @@ ms.locfileid: "60353284"
 
 Следующие ссылки удалены (только для проектов ASP.NET 4, например в Visual Studio 2015):
 
-| type | Справочные материалы |
+| Type | Ссылка |
 | --- | --- |
 | .NET; NuGet | Microsoft.AspNet.Identity.Core |
 | .NET; NuGet | Microsoft.AspNet.Identity.EntityFramework |
@@ -128,7 +130,7 @@ ms.locfileid: "60353284"
 
 [Подробнее об Azure Active Directory](https://azure.microsoft.com/services/active-directory/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md)
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v1-aspnet-webapp.md)

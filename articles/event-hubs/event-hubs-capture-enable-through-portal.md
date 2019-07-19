@@ -15,20 +15,20 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/06/2019
 ms.author: shvija
-ms.openlocfilehash: 9108c52529319288fba48dbad3c6f8aa6cb5f725
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 18dea8e8e4cfcabec63e35dd302f6a5259721a8a
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60822543"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68320313"
 ---
 # <a name="enable-capturing-of-events-streaming-through-azure-event-hubs"></a>Включение сбора событий, передающихся потоком из Центров событий Azure
 
-[Функция "Сбор" в Центрах событий][capture-overview] Azure позволяет автоматически доставлять данные потоковой передачи из Центров событий в выбранную учетную запись [хранилища BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/) или [Azure Data Lake Store](https://azure.microsoft.com/services/data-lake-store/).
+[Запись концентраторов событий][capture-overview] Azure позволяет автоматически доставлять потоковые данные в концентраторах событий в [хранилище BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/) или [Azure Data Lake Store](https://azure.microsoft.com/services/data-lake-store/) выбранной учетной записи.
 
 Запись можно настроить при создании концентратора событий с помощью [портала Azure](https://portal.azure.com). Данные можно записывать в контейнер [хранилища BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/) или в учетную запись [Azure Data Lake Store](https://azure.microsoft.com/services/data-lake-store/).
 
-Подробнее см. в статье [Общие сведения о функции "Сбор" в Центрах событий Azure][capture-overview].
+Дополнительные сведения см. в разделе [Общие сведения о записи концентраторов событий][capture-overview].
 
 ## <a name="capture-data-to-an-azure-storage-account"></a>Запись данных в учетную запись службы хранилища Azure  
 
@@ -47,10 +47,8 @@ ms.locfileid: "60822543"
 
 ### <a name="create-an-azure-data-lake-store-account-and-folders"></a>Создание учетной записи и папок Azure Data Lake Store
 
-> [!NOTE]
-> В настоящее время функция записи концентраторов событий поддерживает только Gen 1 из Azure Data Lake Store, не Gen 2. 
 
-1. Создать учетную запись Data Lake Store Gen 1, следуя указаниям в [приступить к работе с Azure Data Lake Store, с помощью портала Azure](../data-lake-store/data-lake-store-get-started-portal.md).
+1. Создайте учетную запись Data Lake Store, следуя инструкциям в статье [Начало работы с Azure Data Lake Store с помощью портала Azure](../data-lake-store/data-lake-store-get-started-portal.md).
 2. Следуйте инструкциям по [назначению разрешений для Центров событий](../data-lake-store/data-lake-store-archive-eventhub-capture.md#assign-permissions-to-event-hubs), чтобы создать папку в рамках учетной записи Data Lake Store, в которой нужно собирать данные из концентраторов событий. Затем назначьте разрешения для Центров событий, чтобы разрешить запись данных в вашу учетную запись Data Lake Store.  
 
 
@@ -79,9 +77,9 @@ ms.locfileid: "60822543"
 [3]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture3.png
 [4]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture4.png
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Дополнительные сведения о функции "Сбор" в Центрах событий см. в [этой статье][capture-overview].
+- Дополнительные сведения о записи концентраторов событий см. в [обзоре записи концентраторов событий][capture-overview].
 - Функцию "Сбор" в Центрах событий можно также настроить с помощью шаблонов Azure Resource Manager. См. дополнительные сведения [о включении записи с помощью шаблона Azure Resource Manager](event-hubs-resource-manager-namespace-event-hub-enable-capture.md).
 - [Узнайте, как создать подписку на Сетку событий Azure с пространством имен Центров событий в качестве источника](store-captured-data-data-warehouse.md)
 - [Начало работы с Azure Data Lake Store с помощью портала Azure](../data-lake-store/data-lake-store-get-started-portal.md)

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: fdfd7794961b0254526b124525c6e978d13b0114
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 109ecc671b43365c433a626ff8d9fe55a5a626b5
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65800261"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68310296"
 ---
 # <a name="message-expiration-time-to-live"></a>Срок действия сообщения (срок жизни)
 
@@ -26,7 +26,7 @@ ms.locfileid: "65800261"
 
 Для среды разработки и тестовой среды, в которых очереди и разделы часто используются в контексте частичного запуска приложений или частей приложений, желательно также выполнять автоматическую сборку мусора для удаления потерянных тестовых сообщений, чтобы следующий тест можно было выполнить "с чистого листа".
 
-Истечением срока действия любого отдельного сообщения можно управлять, задав системное свойство [TimeToLive](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive), которое указывает относительный срок. Срок действия истекает мгновенно, когда сообщение помещается в очередь в сущности. В этот момент свойство [ExpiresAtUtc](/dotnet/api/microsoft.azure.servicebus.message.expiresatutc) принимает значение [ **(EnqueuedTimeUtc**](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.enqueuedtimeutc#Microsoft_ServiceBus_Messaging_BrokeredMessage_EnqueuedTimeUtc) + [**TimeToLive**)](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive). Параметр срока жизни (TTL) не применяется к сообщению в брокере, если нет хотя бы одного клиента, активно ожидающего передачу данных.
+Истечением срока действия любого отдельного сообщения можно управлять, задав системное свойство [TimeToLive](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive), которое указывает относительный срок. Срок действия истекает мгновенно, когда сообщение помещается в очередь в сущности. В этот момент свойство [ExpiresAtUtc](/dotnet/api/microsoft.azure.servicebus.message.expiresatutc) принимает значение [ **(EnqueuedTimeUtc**](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.enqueuedtimeutc#Microsoft_ServiceBus_Messaging_BrokeredMessage_EnqueuedTimeUtc) + [**TimeToLive**)](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive). Параметр срока жизни (TTL) для сообщения через посредника не применяется, если клиенты не ожидают активного прослушивания.
 
 После того, как момент **ExpiresAtUtc** пройдет, сообщения станут недоступными для получения. Срок действия не влияет на сообщения, доставка которых в настоящий момент заблокирована. Эти сообщения по-прежнему обрабатываются обычным образом. Если срок действия блокировки истекает или сообщение отбрасывается, его срок действия вступает в силу немедленно.
 
@@ -37,9 +37,9 @@ ms.locfileid: "65800261"
 Для всех сообщений, отправленных в очередь или раздел, применяется срок действия по умолчанию, который задается на уровне сущности с помощью свойства [defaultMessageTimeToLive](/azure/templates/microsoft.servicebus/namespaces/queues). Его можно также указать на портале во время создания и затем изменить. Срок действия по умолчанию используется для всех сообщений, отправленных в сущность, для которой значение [TimeToLive](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive) не задано явным образом. Срок действия по умолчанию задает максимальное значение для **TimeToLive**. Для сообщений, значение **TimeToLive** которых превышает срок действия по умолчанию, автоматически применяется значение **defaultMessageTimeToLive**, прежде чем они попадают в очередь.
 
 > [!NOTE]
-> Значение по умолчанию [TimeToLive](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive) значение для передаваемого сообщения равно [TimeSpan.Max](https://docs.microsoft.com/dotnet/api/system.timespan.maxvalue) Если не указано иное.
+> Значение [TimeToLive](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive) по умолчанию для сообщения с посредником — [TimeSpan. Max](https://docs.microsoft.com/dotnet/api/system.timespan.maxvalue) , если не указано иное.
 >
-> Для обмена сообщениями сущностей (очередей и разделов), время окончания срока действия по умолчанию является также [TimeSpan.Max](https://docs.microsoft.com/dotnet/api/system.timespan.maxvalue) для уровней "стандартный" и "премиум" служебной шины.  Для уровня "базовый" по умолчанию срок хранения равен 14 дням.
+> Для сущностей обмена сообщениями (очередей и разделов) время истечения срока действия по умолчанию равно также [TimeSpan. Max](https://docs.microsoft.com/dotnet/api/system.timespan.maxvalue) для уровней "Стандартный" и "Премиум" служебной шины.  Для уровня "базовый" срок действия по умолчанию составляет 14 дней.
 
 Просроченные сообщения при необходимости можно переместить в [очередь недоставленных сообщений](service-bus-dead-letter-queues.md), задав свойство [EnableDeadLetteringOnMessageExpiration](/dotnet/api/microsoft.servicebus.messaging.queuedescription.enabledeadletteringonmessageexpiration#Microsoft_ServiceBus_Messaging_QueueDescription_EnableDeadLetteringOnMessageExpiration) или установив соответствующий флажок на портале. Если этот параметр оставить отключенным, то просроченные сообщения будут удаляться. Просроченные сообщения, перемещенные в очередь недоставленных сообщений, можно отличить от других недоставленных сообщений, оценивая свойство [DeadletterReason](service-bus-dead-letter-queues.md#moving-messages-to-the-dlq), которое брокер сохраняет в разделе свойств пользователя. В данном случае оно имеет значение [TTLExpiredException](service-bus-dead-letter-queues.md#moving-messages-to-the-dlq).
 
@@ -82,7 +82,7 @@ ms.locfileid: "65800261"
  
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

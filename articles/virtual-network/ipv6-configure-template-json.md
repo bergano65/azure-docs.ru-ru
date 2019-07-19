@@ -1,7 +1,7 @@
 ---
-title: Развертывание приложения двойной стек IPv6 в виртуальной сети Azure - шаблон диспетчера ресурсов (Предварительная версия)
+title: Развертывание приложения двойного стека IPv6 с базовыми Load Balancer в виртуальной сети Azure шаблон Resource Manager (Предварительная версия)
 titlesuffix: Azure Virtual Network
-description: В этой статье показано, как развернуть приложение двойной стек IPv6 в виртуальной сети Azure, с помощью шаблонов виртуальных Машин Azure Resource Manager.
+description: В этой статье показано, как развернуть приложение с двумя стеками IPv6 в виртуальной сети Azure с помощью Azure Resource Manager шаблонов виртуальных машин.
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -10,26 +10,26 @@ ms.service: virtual-network
 ms.devlang: NA
 ms.topic: article
 ms.workload: infrastructure-services
-ms.date: 04/22/2019
+ms.date: 06/26/2019
 ms.author: kumud
-ms.openlocfilehash: ae90bc4a12763803f38224d917c4644a68ae7d6b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e97a5a478871d94e074b59558a11df1ec752b0f9
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62131033"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68249847"
 ---
-# <a name="deploy-an-ipv6-dual-stack-application-in-azure---template-preview"></a>Развертывание приложения двойной стек IPv6 в Azure - шаблон (Предварительная версия)
+# <a name="deploy-an-ipv6-dual-stack-application-with-basic-load-balancer-in-azure---template-preview"></a>Развертывание приложения с двойным стеком IPv6 с помощью базового Load Balancer в Azure — шаблон (Предварительная версия)
 
-В этой статье список задач настройки IPv6 с помощью части шаблона виртуальной Машины Azure Resource Manager, который применяется для. Используйте шаблон, описанный в этой статье для развертывания приложения двойной стек (IPv4 + IPv6) в Azure, которая включает в себя двойной стек виртуальной сети с подсетями IPv4 и IPv6, подсистему балансировки нагрузки с помощью интерфейсные конфигурации двумя (IPv4 + IPv6), виртуальные машины с сетевыми интерфейсами, которые два IP-адрес конфигурации группы безопасности сети и общедоступные IP-адреса. 
+В этой статье представлен список задач настройки IPv6 с частью шаблона Azure Resource Manager виртуальной машины, которая применяется к. Используйте шаблон, описанный в этой статье, чтобы развернуть приложение с двойным стеком (IPv4 + IPv6) в Azure, включающее в себя виртуальную сеть с двумя стеками с подсетями IPv4 и IPv6, подсистемой балансировки нагрузки с двумя интерфейсными конфигурациями (IPv4 + IPv6), виртуальными машинами с сдвоенным IP-адресом. Конфигурация, группа безопасности сети и общедоступные IP-адреса. 
 
-## <a name="required-configurations"></a>Требуемые настройки
+## <a name="required-configurations"></a>Требуемые конфигурации
 
-Поиск в разделах шаблона в шаблоне, чтобы увидеть, где они должны происходить.
+Найдите разделы шаблона в шаблоне, чтобы узнать, где они должны происходить.
 
-### <a name="ipv6-addressspace-for-the-virtual-network"></a>AddressSpace IPv6 для виртуальной сети
+### <a name="ipv6-addressspace-for-the-virtual-network"></a>Аддрессспаце IPv6 для виртуальной сети
 
-Раздел шаблона, чтобы добавить:
+Добавляемый раздел шаблона:
 
 ```JSON
         "addressSpace": {
@@ -38,9 +38,9 @@ ms.locfileid: "62131033"
             "[variables('vnetv6AddressRange')]"    
 ```
 
-### <a name="ipv6-subnet-within-the-ipv6-virtual-network-addressspace"></a>Подсеть IPv6 в addressSpace виртуальной сети IPv6
+### <a name="ipv6-subnet-within-the-ipv6-virtual-network-addressspace"></a>Подсеть IPv6 в виртуальной сети IPv6 Аддрессспаце
 
-Раздел шаблона, чтобы добавить:
+Добавляемый раздел шаблона:
 ```JSON
           {
             "name": "V6Subnet",
@@ -50,9 +50,9 @@ ms.locfileid: "62131033"
 
 ```
 
-### <a name="ipv6-configuration-for-the-nic"></a>Настройка IPv6 для сетевой КАРТЫ
+### <a name="ipv6-configuration-for-the-nic"></a>Конфигурация IPv6 для сетевой карты
 
-Раздел шаблона, чтобы добавить:
+Добавляемый раздел шаблона:
 ```JSON
           {
             "name": "ipconfig-v6",
@@ -68,7 +68,7 @@ ms.locfileid: "62131033"
                 }
 ```
 
-### <a name="ipv6-network-security-group-nsg-rules"></a>Правила группы безопасности сети IPv6
+### <a name="ipv6-network-security-group-nsg-rules"></a>Правила группы безопасности сети (NSG) IPv6
 
 ```JSON
           {
@@ -86,9 +86,9 @@ ms.locfileid: "62131033"
             }
 ```
 
-## <a name="conditional-configuration"></a>Условный конфигурации
+## <a name="conditional-configuration"></a>Условная конфигурация
 
-Если вы используете виртуальный сетевой модуль, добавьте маршруты IPv6 в таблице маршрутов. В противном случае эта конфигурация является необязательным.
+Если вы используете виртуальный сетевой модуль, добавьте IPv6-маршруты в таблицу маршрутов. В противном случае эта конфигурация является необязательной.
 
 ```JSON
     {
@@ -107,9 +107,9 @@ ms.locfileid: "62131033"
             }
 ```
 
-## <a name="optional-configuration"></a>Необязательная конфигурация
+## <a name="optional-configuration"></a>Дополнительные настройки
 
-### <a name="ipv6-internet-access-for-the-virtual-network"></a>Доступ к Интернету IPv6 для виртуальной сети
+### <a name="ipv6-internet-access-for-the-virtual-network"></a>Доступ к Интернету по протоколу IPv6 для виртуальной сети
 
 ```JSON
 {
@@ -120,7 +120,7 @@ ms.locfileid: "62131033"
               }
 ```
 
-### <a name="ipv6-public-ip-addresses"></a>Общедоступный IP-адресов IPv6
+### <a name="ipv6-public-ip-addresses"></a>Общедоступные IP-адреса IPv6
 
 ```JSON
     {
@@ -134,7 +134,7 @@ ms.locfileid: "62131033"
       }
 ```
 
-### <a name="ipv6-front-end-for-load-balancer"></a>IPv6 интерфейса для подсистемы балансировки нагрузки
+### <a name="ipv6-front-end-for-load-balancer"></a>Внешний интерфейс IPv6 для Load Balancer
 
 ```JSON
           {
@@ -145,7 +145,7 @@ ms.locfileid: "62131033"
               }
 ```
 
-### <a name="ipv6-back-end-address-pool-for-load-balancer"></a>Пул адресов серверной части IPv6 для подсистемы балансировки нагрузки
+### <a name="ipv6-back-end-address-pool-for-load-balancer"></a>Пул адресов серверной части IPv6 для Load Balancer
 
 ```JSON
               "backendAddressPool": {
@@ -158,7 +158,7 @@ ms.locfileid: "62131033"
             "name": "lbrule-v6"
 ```
 
-### <a name="ipv6-load-balancer-rules-to-associate-incoming-and-outgoing-ports"></a>IPv6 правил load balancer связываемый входящие и исходящие порты
+### <a name="ipv6-load-balancer-rules-to-associate-incoming-and-outgoing-ports"></a>Правила балансировщика нагрузки IPv6 для связывания входящих и исходящих портов
 
 ```JSON
           {
@@ -175,9 +175,9 @@ ms.locfileid: "62131033"
                 }
 ```
 
-## <a name="sample-vm-template-json"></a>Пример JSON-ФАЙЛ шаблона виртуальной Машины
-Нажмите кнопку [здесь](https://azure.microsoft.com/resources/templates/ipv6-in-vnet/) для развертывания приложения двойной стек IPv6 в виртуальной сети Azure, с помощью шаблона Azure Resource Manager.
+## <a name="sample-vm-template-json"></a>Пример шаблона виртуальной машины JSON
+Чтобы развернуть приложение с двойным стеком IPv6 в виртуальной сети Azure с помощью шаблона Azure Resource Manager, просмотрите пример шаблона [здесь](https://azure.microsoft.com/resources/templates/ipv6-in-vnet/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Сведения о ценах на [общедоступные IP-адреса](https://azure.microsoft.com/pricing/details/ip-addresses/), [пропускной способности сети](https://azure.microsoft.com/pricing/details/bandwidth/), или [подсистемы балансировки нагрузки](https://azure.microsoft.com/pricing/details/load-balancer/).
+Вы можете узнать о ценах на общедоступные [IP-адреса](https://azure.microsoft.com/pricing/details/ip-addresses/), пропускную [способность сети](https://azure.microsoft.com/pricing/details/bandwidth/)или [Load Balancer](https://azure.microsoft.com/pricing/details/load-balancer/).

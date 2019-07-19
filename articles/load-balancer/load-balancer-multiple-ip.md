@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: Балансировка нагрузки между основной и дополнительной IP-конфигурациями.
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -12,20 +12,20 @@ ms.custom: se0dec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
-ms.author: kumud
-ms.openlocfilehash: 0cf5aa45e1e8a28dfcdadac0ea32658e5993d06c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: allensu
+ms.openlocfilehash: dbf8cdd326d3e1c8f32f6dc2bd3486146993e06b
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60591676"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68274734"
 ---
 # <a name="load-balancing-on-multiple-ip-configurations-by-using-the-azure-portal"></a>Балансировка нагрузки в конфигурациях с несколькими IP-адресами с помощью портала Azure
 
 > [!div class="op_single_selector"]
 > * [Портал](load-balancer-multiple-ip.md)
 > * [PowerShell](load-balancer-multiple-ip-powershell.md)
-> * [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](load-balancer-multiple-ip-cli.md)
+> * [CLI](load-balancer-multiple-ip-cli.md)
 
 
 В этой статье описывается, как использовать Azure Load Balancer в конфигурации, когда каждому дополнительному адаптеру сетевого интерфейса (сетевой адаптер) назначено несколько IP-адресов. На схеме ниже показан наш сценарий.
@@ -42,7 +42,7 @@ ms.locfileid: "60591676"
 - Azure Load Balancer используется, чтобы предоставить два интерфейсных IP-адреса, по одному для каждого веб-сайта. Интерфейсные IP-адреса позволяют направить трафик в соответствующую IP-конфигурацию для каждого веб-сайта.
 - Один и тот же номер порта используется для обоих внешних интерфейсов, как и для обоих IP-адресов внутренних пулов.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В нашем примере сценария предполагается, что у вас есть группа ресурсов с именем **contosofabrikam** со следующей конфигурацией.
 
@@ -192,6 +192,6 @@ ms.locfileid: "60591676"
 
 На последнем шаге необходимо настроить записи ресурсов DNS, чтобы они указывали на соответствующие интерфейсные IP-адреса подсистемы балансировки нагрузки. Домены можно разместить в Azure DNS. Дополнительные сведения об использовании Azure DNS с подсистемой балансировки нагрузки см. в разделе [Использование Azure DNS с другими службами Azure](../dns/dns-for-azure-services.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Узнайте больше о том, как объединять службы балансировки нагрузки, в статье [Использование служб балансировки нагрузки в Azure](../traffic-manager/traffic-manager-load-balancing-azure.md).
-- Узнайте, как можно использовать различные виды журналов, управление и устранение неполадок подсистемы балансировки нагрузки в [журналы Azure Monitor для Azure Load Balancer](../load-balancer/load-balancer-monitor-log.md).
+- Узнайте, как можно использовать различные типы журналов для управления подсистемой балансировки нагрузки и устранения неполадок в [журналах Azure Monitor для Azure Load Balancer](../load-balancer/load-balancer-monitor-log.md).

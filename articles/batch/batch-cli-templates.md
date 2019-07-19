@@ -3,7 +3,7 @@ title: Комплексное выполнение заданий с помощ�
 description: Создайте пулы, задания и задачи пакетной службы с помощью файлов шаблона и Azure CLI.
 services: batch
 author: laurenhughes
-manager: jeconnoc
+manager: gwallace
 ms.assetid: ''
 ms.service: batch
 ms.devlang: na
@@ -12,12 +12,12 @@ ms.workload: big-compute
 ms.date: 12/07/2018
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: 80d2e995a18a2d6dafbb8d92fdd5996b10eab17c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5e5ed8a69d5140814899c24e96eded6dc61e5908
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60783744"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68323672"
 ---
 # <a name="use-azure-batch-cli-templates-and-file-transfer"></a>Использование шаблонов интерфейса командной строки для пакетной службы Azure и передачи файлов
 
@@ -291,7 +291,7 @@ az batch file download --file-group ffmpeg-output --local-path
 
 Попробуйте использовать расширение пакетной службы для Azure CLI и оставьте отзыв или предложения в комментариях к этой статье или в [репозитории по пакетной службе](https://github.com/Azure/Batch).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Подробная документация по установке и использованию, примеры и исходный код доступны в [репозитории GitHub Azure](https://github.com/Azure/azure-batch-cli-extensions).
 

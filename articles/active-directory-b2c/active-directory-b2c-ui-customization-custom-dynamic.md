@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/20/2017
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a798b766d09428e7ebebc04d969d63a542de3808
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 43c0da3ca8fa4b2f74d48b0e202cc56bc8b9406c
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835713"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68227224"
 ---
 # <a name="azure-active-directory-b2c-configure-the-ui-with-dynamic-content-by-using-custom-policies"></a>Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики
 
@@ -89,7 +89,7 @@ ms.locfileid: "67835713"
 ### <a name="step-22-add-the-mvc-view"></a>Шаг 2.2. Добавление представления MVC
 1. Щелкните правой кнопкой мыши папку Views/Home, а затем выберите **Добавить** > **Новый элемент**.
 
-    ![Добавление нового элемента меню в Visual Studio](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-view1.png)
+    ![Добавление элемента меню "добавить новый элемент" в Visual Studio](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-view1.png)
 
 2. В окне **Добавление нового элемента — Contoso.AADB2C.UI** выберите **Интернет > ASP.NET**.
 
@@ -99,7 +99,7 @@ ms.locfileid: "67835713"
 
 5. Выберите **Добавить**.
 
-    ![Новый диалоговое окно добавления элемента в Visual Studio с выделенным страница представления MVC](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-view2.png)
+    ![Диалоговое окно "Добавление нового элемента" в Visual Studio с выделенной страницей представления MVC](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-view2.png)
 
 6. Если файл *unified.cshtml* еще не открыт, дважды щелкните его, чтобы открыть, и очистите его содержимое.
 
@@ -123,7 +123,7 @@ ms.locfileid: "67835713"
 
 Найдите элемент `<img>` со значением `ID` *background_background_image* и замените `src` на **https://kbdevstorage1.blob.core.windows.net/asset-blobs/19889_en_1** или любое другое необходимое изображение фона.
 
-![Изменение фона страницы](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-static-background.png)
+![элемент img с пользовательским значением src background_background_image](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-static-background.png)
 
 ### <a name="step-24-add-your-view-to-the-mvc-controller"></a>Шаг 2.4. Добавление представления в контроллер MVC
 
@@ -174,7 +174,7 @@ ms.locfileid: "67835713"
 
 2. В разделе **Параметры** в области **API** выберите **CORS**.
 
-    ![Пункт меню CORS в службе приложений меню на портале Azure](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-CORS2.png)
+    ![В портал Azure меню службы приложений выбран пункт меню CORS](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-CORS2.png)
 
 3. В окне **CORS** в поле **Разрешенные источники** выполните одно из следующих действий.
 
@@ -183,7 +183,7 @@ ms.locfileid: "67835713"
 
 4. Щелкните **Сохранить**.
 
-    ![Страница параметров CORS с звездочка, они выделены разрешенные источники](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-CORS3.png)
+    ![Страница параметров CORS с выделенной звездочкой в разрешенных источниках](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-CORS3.png)
 
     После нажатия кнопки **Сохранить** приложение API начнет принимать вызовы JavaScript с указанных URL-адресов.
 
@@ -196,7 +196,7 @@ ms.locfileid: "67835713"
     >Чтобы проверить, что на сайте, где вы размещаете содержимое, включен механизм CORS и можно тестировать запросы CORS, перейдите на веб-сайт [test-cors.org](https://test-cors.org/).
 
 * Обслуживаемое содержимое защищено с помощью **HTTPS**.
-* При использовании *абсолютные URL-адреса*, такие как `https://yourdomain/content`, для всех ссылок, содержимого CSS и изображений.
+* Вы используете *абсолютные URL-адреса*, `https://yourdomain/content`такие как, для всех ссылок, содержимого CSS и изображений.
 
 ## <a name="step-5-configure-your-content-definition"></a>Шаг 5. Настройка определения содержимого
 Чтобы настроить `ContentDefinition`, сделайте следующее:
@@ -213,7 +213,7 @@ ms.locfileid: "67835713"
 6. Измените значение `LoadUri` с _~/tenant/default/unified_ на _https://<имя_приложения>.azurewebsites.net/home/unified_.
     Пользовательская политика должна выглядеть следующим образом:
 
-    ![Пример XML-фрагмент с выделенным элементом LoadUri](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-content-definition.png)
+    ![Пример фрагмента XML с выделенным элементом LoadUri](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-content-definition.png)
 
 ## <a name="step-6-upload-the-policy-to-your-tenant"></a>Шаг 6. Отправка политики в клиент
 1. На [портале Azure](https://portal.azure.com) переключитесь в [контекст клиента Azure AD B2C](active-directory-b2c-navigate-to-b2c-context.md) и выберите **Azure AD B2C**.
@@ -306,16 +306,16 @@ ms.locfileid: "67835713"
 
 5. Добавьте параметр строки запроса _campaignId_ в универсальный код ресурса (URI). Например, добавьте `&campaignId=hawaii`, как показано на следующем рисунке:
 
-    ![URI выделен параметр строки запроса campaignId](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-campaignId-param.png)
+    ![URI с выделенным параметром строки запроса campaignId](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-campaignId-param.png)
 
 6. Нажмите клавишу **ВВОД**, чтобы отобразить фон Гавайев.
 
-    ![Зарегистрируйтесь на страницу входа с помощью пользовательского образа отобразится фон гавайев:](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-demo2.png)
+    ![Страница входа в систему с пользовательским фоном Гавайи Image](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-demo2.png)
 
 7. Измените значение на *Tokyo* и нажмите клавишу **ВВОД**.
     В браузере отобразится фон Токио.
 
-    ![Страница регистрации входа в систему с настраиваемый фон Токио образа](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-demo3.png)
+    ![Страница входа в систему с пользовательским фоном в Токио](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-demo3.png)
 
 ## <a name="step-9-change-the-rest-of-the-user-journey"></a>Шаг 9. Изменение остальной части пути взаимодействия пользователя
 Если выбрать ссылку **Зарегистрироваться сейчас** на странице входа, в браузере отобразится фоновое изображение по умолчанию, а не определенное изображение. Это связано с тем, что вы изменили только страницу регистрации или входа в систему. Чтобы изменить остальную часть определений содержимого с самостоятельным утверждением, сделайте следующее:

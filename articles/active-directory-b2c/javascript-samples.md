@@ -10,25 +10,25 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 9e19df7c50ca9d2c57ab385a567f4911b200c5e2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5dfc1ef732c8456356de82f7fe026476fdfc075b
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66510890"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68227132"
 ---
 # <a name="javascript-samples-for-use-in-azure-active-directory-b2c"></a>Примеры JavaScript для Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-К приложениям Azure Active Directory (Azure AD) B2C можно добавить собственный код JavaScript на стороне клиента. Чтобы включить JavaScript для приложений, необходимо добавить элемент к вашей [настраиваемой политики](active-directory-b2c-overview-custom.md)выберите [контракта страницы](page-contract.md)и использовать [b2clogin.com](b2clogin.md) в запросах. Этой статье описывается, как можно изменить пользовательских политик для разрешения выполнения сценариев.
+К приложениям Azure Active Directory (Azure AD) B2C можно добавить собственный код JavaScript на стороне клиента. Чтобы включить JavaScript для приложений, необходимо добавить элемент в [настраиваемую политику](active-directory-b2c-overview-custom.md), выбрать [Макет страницы](page-layout.md)и использовать [b2clogin.com](b2clogin.md) в запросах. В этой статье описывается, как изменить пользовательскую политику, чтобы включить выполнение скрипта.
 
 > [!NOTE]
-> Если вы хотите включить JavaScript для пользователя потоков, см. в разделе [JavaScript и странице контракта версии в Azure Active Directory B2C](user-flow-javascript-overview.md).
+> Если вы хотите включить JavaScript для потоков пользователей, см. раздел [версии JavaScript и страницы в Azure Active Directory B2C](user-flow-javascript-overview.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Выберите контракт страница для элементов пользовательского интерфейса приложения. Если вы планируете использовать JavaScript, нужно определить версию контракта страницы для всех определений содержимого в настраиваемой политике.
+Выберите макет страницы для элементов пользовательского интерфейса приложения. Если вы планируете использовать JavaScript, необходимо определить версию макета страницы для всех определений содержимого в пользовательской политике.
 
 ## <a name="add-the-scriptexecution-element"></a>Добавление элемента ScriptExecution
 
@@ -143,8 +143,8 @@ function addTermsOfUseLink() {
 }
 ```
 
-Замените `termsOfUseUrl` ссылкой на ваше соглашение об условиях использования. Для каталога, создайте новый атрибут пользователя **termsOfUse** и включите **termsOfUse** как атрибут пользователя.
+Замените `termsOfUseUrl` ссылкой на ваше соглашение об условиях использования. Для каталога создайте новый атрибут пользователя с именем **термсофусе** , а затем включите **термсофусе** в качестве атрибута пользователя.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о настройке пользовательского интерфейса приложений см. в статье [Настройка пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C](active-directory-b2c-ui-customization-custom.md).

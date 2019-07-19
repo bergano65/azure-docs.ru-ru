@@ -12,18 +12,18 @@ ms.author: aamalvea
 ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 02/26/2019
-ms.openlocfilehash: c3b9fecd3ad404385732e55a9cf3aa65a6e388b8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4757236d179e4d6ceb626f58f12cfe48799eed7a
+ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61483067"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67854362"
 ---
 # <a name="use-resource-health-to-troubleshoot-connectivity-for-azure-sql-database"></a>Устранение неполадок подключения к базе данных SQL Azure с помощью службы "Работоспособность ресурсов Azure"
 
 ## <a name="overview"></a>Обзор
 
-[Работоспособность ресурсов Azure](../service-health/resource-health-overview.md#getting-started) для Базы данных SQL поможет выполнить диагностику и получить необходимую поддержку, если неполадки Azure влияют на ресурсы SQL. Она представляет сведения о текущем состоянии работоспособности ресурсов и о состоянии работоспособности ресурсов за прошедший период, а также помогает устранить проблемы. Служба работоспособности ресурсов обеспечивает поддержку, если вам необходима помощь в решении проблемы со службой Azure.
+[Работоспособность ресурсов Azure](../service-health/resource-health-overview.md#get-started) для Базы данных SQL поможет выполнить диагностику и получить необходимую поддержку, если неполадки Azure влияют на ресурсы SQL. Она представляет сведения о текущем состоянии работоспособности ресурсов и о состоянии работоспособности ресурсов за прошедший период, а также помогает устранить проблемы. Служба работоспособности ресурсов обеспечивает поддержку, если вам необходима помощь в решении проблемы со службой Azure.
 
 ![Обзор](./media/sql-database-resource-health/sql-resource-health-overview.jpg)
 
@@ -73,7 +73,7 @@ ms.locfileid: "61483067"
 
 Перенастройки считаются временными условиями и возникают время от времени. Эти события могут запускаться при балансировке нагрузки или сбоях оборудования и программного обеспечения. Любое клиентское рабочее приложение, которое подключается к облачной базе данных, должно реализовывать надежную [логику повторных подключений](./sql-database-connectivity-issues.md#retry-logic-for-transient-errors). Это поможет устранить такие ситуации и сделает эти ошибки прозрачными для пользователя.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте подробнее о [логике повторных попыток для временных ошибок](./sql-database-connectivity-issues.md#retry-logic-for-transient-errors)
 - [Устранение, диагностика и предотвращение ошибок подключения SQL и временных ошибок для базы данных SQL](./sql-database-connectivity-issues.md)

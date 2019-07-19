@@ -1,6 +1,6 @@
 ---
-title: Проблемы с входом в приложение из коллекции Azure AD, для которого настроен единый вход по паролю | Документы Майкрософт
-description: Описание проблемных областей и рекомендаций по устранению неполадок, связанных с входом в приложения из коллекции Azure AD, для которых настроен единый вход по паролю.
+title: Использование единого входа на основе пароля на панели доступа | Документация Майкрософт
+description: Описание проблемных областей, которые предоставляют рекомендации по устранению неполадок, связанных с входом в приложения из коллекции Azure AD, для которых настроен единый вход по паролю.
 services: active-directory
 documentationcenter: ''
 author: msmimart
@@ -16,12 +16,12 @@ ms.date: 07/11/2017
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d95703166c3e1ed8034ea8c0d813c54759603fce
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c020f3ab3ea7ed96b72d0490b717225d44c4fac1
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65825047"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68277742"
 ---
 # <a name="problems-signing-in-to-an-azure-ad-gallery-application-configured-for-password-single-sign-on"></a>Проблемы с входом в приложение из коллекции Azure AD, для которого настроен единый вход по паролю
 
@@ -198,6 +198,6 @@ ms.locfileid: "65825047"
 
 -   трассировки Fiddler.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Реализация единого входа в приложения с помощью прокси приложения](application-proxy-configure-single-sign-on-with-kcd.md)
 

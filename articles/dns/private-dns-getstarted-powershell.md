@@ -1,18 +1,18 @@
 ---
 title: Создание частной зоны Azure DNS с помощью Azure PowerShell
-description: В этой статье создавать и тестировать частную зону DNS и записи в Azure DNS. Это пошаговое руководство по созданию первой частной зоны DNS и записи DNS, а также управлению ими с помощью PowerShell.
+description: В этой статье вы создадите и проверите частную зону DNS и запись в Azure DNS. Это пошаговое руководство по созданию первой частной зоны DNS и записи DNS, а также управлению ими с помощью PowerShell.
 services: dns
 author: vhorne
 ms.service: dns
 ms.topic: article
 ms.date: 06/14/2019
 ms.author: victorh
-ms.openlocfilehash: 9d79ed28bd331b723755e1c17233aa82421ad1d7
-ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.openlocfilehash: 6603929fa7b4c597a846fc299577a9682d8f54e0
+ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67147875"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67854120"
 ---
 # <a name="create-an-azure-dns-private-zone-using-azure-powershell"></a>Создание частной зоны Azure DNS с помощью Azure PowerShell
 
@@ -22,7 +22,7 @@ ms.locfileid: "67147875"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Зона DNS используется для размещения DNS-записей определенного домена. Чтобы разместить свой домен в Azure DNS, необходимо создать зону DNS для этого доменного имени. Каждая запись DNS для вашего домена создается внутри этой зоны DNS. Чтобы опубликовать частную зону DNS в виртуальной сети, укажите список виртуальных сетей, которые могут разрешать записи в зоне.  Они называются *связанного* виртуальных сетей. При включенной автоматической регистрацией Azure DNS также обновляет записи зоны, каждый раз, когда создается виртуальная машина, изменения его "IP-адрес или удаляется.
+Зона DNS используется для размещения DNS-записей определенного домена. Чтобы разместить свой домен в Azure DNS, необходимо создать зону DNS для этого доменного имени. Каждая запись DNS для вашего домена создается внутри этой зоны DNS. Чтобы опубликовать частную зону DNS в виртуальной сети, укажите список виртуальных сетей, которые могут разрешать записи в зоне.  Они называются *связанными* виртуальными сетями. Когда автоматическая регистрация включена, Azure DNS также обновляет записи зоны при каждом создании виртуальной машины, изменении ее IP-адреса или удалении.
 
 В этой статье раскрываются следующие темы:
 
@@ -50,9 +50,11 @@ New-AzResourceGroup -name MyAzureResourceGroup -location "eastus"
 
 Зона DNS создается с помощью командлета `New-AzPrivateDnsZone`.
 
-В следующем примере создается виртуальная сеть с именем **myAzureVNet**. Затем он создает зону DNS с именем **private.contoso.com** в **MyAzureResourceGroup** группу ресурсов, связывает зоны DNS, которую **MyAzureVnet** виртуальной сети и Включение автоматической регистрации.
+В следующем примере создается виртуальная сеть с именем **myAzureVNet**. Затем он создает зону DNS с именем **Private.contoso.com** в группе ресурсов **мязурересаурцеграуп** , связывает зону DNS с виртуальной сетью **MyAzureVnet** и включает автоматическую регистрацию.
 
 ```azurepowershell
+Install-Module -Name Az.PrivateDns -force
+
 $backendSubnet = New-AzVirtualNetworkSubnetConfig -Name backendSubnet -AddressPrefix "10.2.0.0/24"
 $vnet = New-AzVirtualNetwork `
   -ResourceGroupName MyAzureResourceGroup `
@@ -68,7 +70,7 @@ $link = New-AzPrivateDnsVirtualNetworkLink -ZoneName private.contoso.com `
   -VirtualNetworkId $vnet.id -EnableRegistration
 ```
 
-Если вы хотите создать зону для разрешения имен (регистрация не автоматическое имя узла), можно опустить `-EnableRegistration` параметра.
+Если вы хотите создать зону только для разрешения имен (без автоматической регистрации имени узла), `-EnableRegistration` параметр можно опустить.
 
 ### <a name="list-dns-private-zones"></a>Список частных зон DNS
 
@@ -199,15 +201,15 @@ Get-AzPrivateDnsRecordSet -ZoneName private.contoso.com -ResourceGroupName MyAzu
 
 ## <a name="delete-all-resources"></a>Удаление всех ресурсов
 
-Если больше не нужен, удалите **MyAzureResourceGroup** группу ресурсов, чтобы удалить ресурсы, созданные в этой статье.
+Удалите группу ресурсов **мязурересаурцеграуп** , которая больше не нужна, чтобы удалить ресурсы, созданные в этой статье.
 
 ```azurepowershell
 Remove-AzResourceGroup -Name MyAzureResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-В этой статье развернутый частную зону DNS, созданную запись DNS и протестировать зоны.
+В этой статье вы развернули закрытую зону DNS, создали запись DNS и проверили зону.
 Далее можно получить дополнительные сведения о частных зонах DNS.
 
 * [Использование Azure DNS для частных доменов](private-dns-overview.md)

@@ -1,6 +1,6 @@
 ---
-title: 'Application Insights: языки программирования, платформы, интеграция | Документация Майкрософт'
-description: Языки программирования, платформы и варианты интеграции для Application Insights
+title: 'Application Insights: языки, платформы и интеграции | Документация Майкрософт'
+description: Языки, платформы и интеграции, доступные для Application Insights
 services: application-insights
 documentationcenter: ''
 author: mrbullwinkle
@@ -13,32 +13,36 @@ ms.topic: conceptual
 ms.date: 07/06/2019
 ms.reviewer: olegan
 ms.author: mbullwin
-ms.openlocfilehash: 100f1f8875dd53f954e99c50f0bc5b9cd3fee31b
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: db79f2b1d3857aac2f71d2e18a3949f068b746eb
+ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67617822"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67990063"
 ---
-# <a name="languages---officially-supported-by-application-insights-team"></a>Языки программирования, официально поддерживаемые командой Application Insights
+# <a name="languages---officially-supported-by-application-insights-team"></a>Языки — официально поддерживается группой Application Insights
+
 * [C#|VB (.NET)](../../azure-monitor/app/asp-net.md)
 * [Java](../../azure-monitor/app/java-get-started.md)
 * [Веб-страницы JavaScript](../../azure-monitor/app/javascript.md)
 * [Node.JS](../../azure-monitor/app/nodejs.md)
 
-## <a name="languages---community-supported"></a>Языки программирования, поддерживаемые сообществом
+## <a name="community-sdks"></a>Пакеты SDK сообщества
 
-Существует ряд поддерживается сообществом пакеты SDK Application Insights, многие из которых были изначально созданы корпорацией Майкрософт. Поддерживается сообществом пакетов SDK не поддерживаются официально корпорацией Майкрософт, и мы не можем предоставить поддержку для любого пакета SDK, который отсутствует в списке официально поддерживаемых. Эти пакеты SDK, считаются экспериментальных и не рекомендуются для использования в рабочей среде.
+Существует ряд пакетов SDK Azure Application Insights для сообщества, многие из которых изначально были созданы корпорацией Майкрософт. Пакеты SDK сообщества официально не обслуживаются корпорацией Майкрософт. Не удалось предоставить поддержку для пакета SDK, который не входит в список официально поддерживаемых. Эти пакеты SDK считаются экспериментальными и не рекомендуются для использования в рабочей среде.
 
 ## <a name="platforms-and-frameworks"></a>Платформы и среды
-* [ASP.NET](../../azure-monitor/app/asp-net.md)
+### <a name="instrumentation-for-already-deployed-applications-codeless-agent-based"></a>Инструментирование для уже развернутых приложений (без кода, на основе агентов)
+* [Виртуальные машины Azure и масштабируемые наборы виртуальных машин Azure](../../azure-monitor/app/azure-vm-vmss-apps.md)
+* [Служба приложений Azure](../../azure-monitor/app/azure-web-apps.md)
 * [ASP.NET — для приложений, которые уже доступны в Интернете](../../azure-monitor/app/monitor-performance-live-website-now.md)
+* [Облачные службы Azure](../../azure-monitor/app/cloudservices.md), в том числе рабочие и веб-роли;
+* [Функции Azure](https://docs.microsoft.com/azure/azure-functions/functions-monitoring)
+### <a name="instrumentation-through-code-sdks"></a>Инструментирование с помощью кода (пакеты SDK)
+* [ASP.NET](../../azure-monitor/app/asp-net.md)
 * [ASP.NET Core](../../azure-monitor/app/asp-net-core.md)
 * [Android](../../azure-monitor/learn/mobile-center-quickstart.md) (Центр приложений)
 * [Android](https://github.com/Microsoft/ApplicationInsights-Android) (Центр приложений)
-* [Служба приложений Azure](../../azure-monitor/app/azure-web-apps.md)
-* [Облачные службы Azure](../../azure-monitor/app/cloudservices.md) (рабочих и веб-роли)
-* [Функции Azure](https://docs.microsoft.com/azure/azure-functions/functions-monitoring)
 * [iOS](../../azure-monitor/learn/mobile-center-quickstart.md) (Центр приложений)
 * [Java EE](../../azure-monitor/app/java-get-started.md)
 * [Node.JS](https://www.npmjs.com/package/applicationinsights)

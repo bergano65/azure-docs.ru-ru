@@ -10,12 +10,12 @@ ms.service: active-directory
 ms.subservice: msi
 manager: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca461f3be740c3b0bac18795991bb721a5305240
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: e6869602b7d4aff6d779d189f0b6444dde2055d4
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67611536"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68261898"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -79,10 +79,10 @@ ms.locfileid: "67611536"
 | Назначено системой | Предварительный просмотр | Недоступно | Недоступно | Недоступно |
 | Назначено пользователем | Предварительный просмотр | Недоступно | Недоступно | Недоступно |
 
-См. следующий список, чтобы использовать управляемое удостоверение с [чертежей Azure](../../governance/blueprints/overview.md):
+Чтобы использовать управляемое удостоверение с помощью проектов [Azure](../../governance/blueprints/overview.md), см. следующий список:
 
-- [Портал Azure — назначение плана](../../governance/blueprints/create-blueprint-portal.md#assign-a-blueprint)
-- [REST API — назначения схемы](../../governance/blueprints/create-blueprint-rest-api.md#assign-a-blueprint)
+- [Портал Azure-назначение чертежей](../../governance/blueprints/create-blueprint-portal.md#assign-a-blueprint)
+- [REST API-назначение чертежей](../../governance/blueprints/create-blueprint-rest-api.md#assign-a-blueprint)
 
 ### <a name="azure-functions"></a>Функции Azure
 
@@ -155,7 +155,7 @@ ms.locfileid: "67611536"
 | Назначено системой | Доступна | Недоступно | Недоступно | Недоступно |
 | Назначено пользователем | Предварительный просмотр | Недоступно | Недоступно | Недоступно |
 
-См. следующий список, чтобы настроить управляемое удостоверение для задач реестра контейнеров Azure (в регионах при наличии):
+См. следующий список, чтобы настроить управляемое удостоверение для задач реестра контейнеров Azure (в регионах, где это возможно):
 
 - [Интерфейс командной строки Azure](~/articles/container-registry/container-registry-tasks-authentication-managed-identity.md)
 
@@ -165,11 +165,11 @@ ms.locfileid: "67611536"
 
 ### <a name="azure-resource-manager"></a>Azure Resource Manager
 
-См. следующий список, чтобы настроить доступ к Azure Resource Manager:
+Чтобы настроить доступ к Azure Resource Manager, обратитесь к следующему списку:
 
-- [Назначение доступа с помощью портала Azure](howto-assign-access-portal.md)
-- [Назначение доступа с помощью Powershell](howto-assign-access-powershell.md)
-- [Назначение доступа через интерфейс командной строки Azure](howto-assign-access-CLI.md)
+- [Назначение доступа через портал Azure](howto-assign-access-portal.md)
+- [Назначение доступа с помощью PowerShell](howto-assign-access-powershell.md)
+- [Назначение доступа через Azure CLI](howto-assign-access-CLI.md)
 - [Назначение доступа с помощью шаблона Azure Resource Manager](../../role-based-access-control/role-assignments-template.md)
 
 | Облако | Идентификатор ресурса | Status |
@@ -224,14 +224,14 @@ ms.locfileid: "67611536"
 | Azure для Германии |   | Недоступно |
 | Azure China 21Vianet |  | Недоступно |
 
-### <a name="azure-storage-blobs-and-queues"></a>Хранилище BLOB-объектов Azure и очереди
+### <a name="azure-storage-blobs-and-queues"></a>Большие двоичные объекты и очереди службы хранилища Azure
 
 | Облако | Идентификатор ресурса | Status |
 |--------|------------|--------|
-| Azure (глобальный) | `https://storage.azure.com/` | Доступна |
-| Azure для государственных организаций | `https://storage.azure.com/` | Доступна |
-| Azure для Германии | `https://storage.azure.com/` | Доступна |
-| Azure China 21Vianet | `https://storage.azure.com/` | Доступна |
+| Azure (глобальный) | `https://storage.azure.com/` <br /><br />`https://<account>.blob.core.windows.net` <br /><br />`https://<account>.queue.core.windows.net` | Доступна |
+| Azure для государственных организаций | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.windows.net` <br /><br />`https://<account>.queue.core.windows.net` | Доступна |
+| Azure для Германии | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.windows.net` <br /><br />`https://<account>.queue.core.windows.net` | Доступна |
+| Azure China 21Vianet | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.windows.net` <br /><br />`https://<account>.queue.core.windows.net` | Доступна |
 
 ### <a name="azure-analysis-services"></a>Службы Azure Analysis Services
 

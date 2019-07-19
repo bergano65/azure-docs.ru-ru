@@ -1,6 +1,6 @@
 ---
 title: включение файла
-description: включаемый файл для сценария конфиденциальный клиент целевых страницах (управляющей программы, веб-приложения, веб-API)
+description: включить файл для целевых страниц сценария конфиденциального клиента (управляющая программа, веб-приложение, веб-API)
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -14,31 +14,33 @@ ms.workload: identity
 ms.date: 04/18/2018
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: 9ee7422b372993d60c629524eb036b9678e5776c
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: cd37880be6d518105e880b93a0bd748f7c729d88
+ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185469"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68286207"
 ---
-## <a name="registration-of-secrets-or-certificates"></a>Регистрация секретами и сертификатами
+## <a name="registration-of-secrets-or-certificates"></a>Регистрация секретов или сертификатов
 
-Как и для любого конфиденциального клиента приложения, необходимо зарегистрировать секрет или сертификат. Можно зарегистрировать свои секреты приложения либо с помощью интерактивного интерфейса в [портала Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredAppsPreview), или с помощью средства командной строки (например, PowerShell)
+Как и для любого конфиденциального клиентского приложения, необходимо зарегистрировать секрет или сертификат. Вы можете зарегистрировать секреты приложения с помощью интерактивного интерфейса в [портал Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredAppsPreview)или с помощью средств командной строки (например, PowerShell).
 
-### <a name="registering-client-secrets-using-the-application-registration-portal"></a>Регистрация секреты клиента на портале регистрации приложений
+### <a name="registering-client-secrets-using-the-application-registration-portal"></a>Регистрация секретов клиента с помощью портала регистрации приложений
 
-Управление учетных данных клиента происходит в **сертификаты и секреты** страница для приложения:
+Управление учетными данными клиента происходит на странице **сертификаты & секреты** для приложения:
 
 ![image](../articles/active-directory/develop/media/quickstart-update-azure-ad-app-preview/credentials-certificates-secrets-expanded.png)
 
-- секрет приложения (также именованным клиентом секрет) для создания Azure AD, во время регистрации конфиденциального клиентского приложения. Это поколение происходит при выборе **новый секрет клиента**. На этом этапе необходимо скопировать Секретная строка в буфере обмена для использования в приложении, прежде чем выбирать **Сохранить**. Эта строка не будет представлять больше.
-- сертификат в регистрации приложения с помощью **отправка сертификата** кнопки
+- Секрет приложения (также называется секретом клиента) создается Azure AD во время регистрации конфиденциального клиентского приложения. Это поколение происходит при выборе **нового секрета клиента**. На этом этапе необходимо скопировать строку секрета в буфер обмена для использования в приложении перед нажатием кнопки **сохранить**. Эта строка больше не будет представлена.
+- сертификат отправляется в регистрации приложения с помощью кнопки **отправить сертификат** . Azure AD поддерживает только сертификаты, которые непосредственно зарегистрированы в приложении, и не подчиняются цепочкам сертификатов.
 
-Дополнительные сведения см. в разделе [краткое руководство: Настройка клиентского приложения для доступа к веб-API | Добавление учетных данных в приложении](../articles/active-directory/develop/quickstart-configure-app-access-web-apis.md#add-credentials-to-your-web-application)
+Дополнительные сведения см. [в разделе Краткое руководство. Настройка клиентского приложения для доступа к веб-API | Добавление учетных данных в приложение](../articles/active-directory/develop/quickstart-configure-app-access-web-apis.md#add-credentials-to-your-web-application)
 
-### <a name="registering-client-secrets-using-powershell"></a>Регистрация секреты клиента с помощью PowerShell
 
-Кроме того можно зарегистрировать приложение с Azure AD, с помощью средства командной строки. [Active-directory-dotnetcore-daemon-v2](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) примере показано, как зарегистрировать секрет приложения или сертификат с приложением Azure AD:
 
-- Дополнительные сведения о том, как зарегистрировать секрет приложения, см. в разделе [AppCreationScripts/Configure.ps1](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/5199032b352a912e7cc0fce143f81664ba1a8c26/AppCreationScripts/Configure.ps1#L190)
-- Дополнительные сведения о том, как зарегистрировать сертификат с приложением, см. в разделе [AppCreationScripts-withCert/Configure.ps1](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/5199032b352a912e7cc0fce143f81664ba1a8c26/AppCreationScripts-withCert/Configure.ps1#L162-L178)
+### <a name="registering-client-secrets-using-powershell"></a>Регистрация секретов клиента с помощью PowerShell
+
+Кроме того, вы можете зарегистрировать приложение в Azure AD с помощью программ командной строки. В примере [Active-Directory-команда dotnetcore-демон-v2](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) показано, как зарегистрировать секрет приложения или сертификат в приложении Azure AD:
+
+- Дополнительные сведения о регистрации секрета приложения см. в разделе [аппкреатионскриптс/configure. ps1.](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/5199032b352a912e7cc0fce143f81664ba1a8c26/AppCreationScripts/Configure.ps1#L190)
+- Дополнительные сведения о регистрации сертификата в приложении см. в разделе [аппкреатионскриптс-висцерт/configure. ps1.](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/5199032b352a912e7cc0fce143f81664ba1a8c26/AppCreationScripts-withCert/Configure.ps1#L162-L178)

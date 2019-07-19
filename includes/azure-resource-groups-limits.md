@@ -2,26 +2,26 @@
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: include
-ms.date: 04/19/2019
+ms.date: 07/12/2019
 ms.author: tomfitz
-ms.openlocfilehash: 8bd16378e9c82a011309c12cf241b59d03405a77
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 5e251402a89f84a0aa67eee676c1794207dd24fb
+ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185653"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67869886"
 ---
-| Ресурс | Ограничение по умолчанию | Максимальное ограничение |
+| Resource | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
-| Ресурсы на [группы ресурсов](../articles/azure-resource-manager/resource-group-overview.md#resource-groups), каждого типа ресурсов |800 |Зависит от типа ресурса |
+| Ресурсов на [группу ресурсов](../articles/azure-resource-manager/resource-group-overview.md#resource-groups)на каждый тип ресурсов |800 |Зависит от типа ресурса |
 | Развертываний на группу ресурсов в журнале развертывания |800<sup>1</sup> |800 |
 | Ресурсов в развертывании |800 |800 |
-| Блокировки управления на уникальную область |20 |20 |
+| Блокировок управления на уникальную область |20 |20 |
 | Число тегов на ресурс или группу ресурсов |15 |15 |
 | Длина ключа тега |512 |512 |
 | Длина значения тега |256 |256 |
 
-<sup>1</sup>Если вы достигли предела в 800 развертываний на группу ресурсов, удаление развертываний из журнала, больше не требуются. Удаление записи из журнала развертывания не влияет на развернутых ресурсов. Вы можете удалить записи из журнала с помощью команды [az group deployment delete](/cli/azure/group/deployment) в Azure CLI или с помощью командлета [Remove-AzResourceGroupDeployment](/powershell/module/az.resources/remove-azresourcegroupdeployment) в PowerShell.  PowerShell сценарий, автоматизирующий удаление развертываний в непрерывной интеграции и непрерывной поставки (CI/CD) сценарий, см. в разделе [remove-deployments.ps1](https://gist.github.com/bmoore-msft/ed33fb940dafb09380174b7fca57651f).
+<sup>1</sup> Если достигнут предел в 800 развертываний на группу ресурсов, удалите из журнала развертывания, которые больше не нужны. Удаление записи из журнала развертывания не влияет на развернутые ресурсы. Вы можете удалить записи из журнала с помощью команды [az group deployment delete](/cli/azure/group/deployment) в Azure CLI или с помощью командлета [Remove-AzResourceGroupDeployment](/powershell/module/az.resources/remove-azresourcegroupdeployment) в PowerShell.  Сценарий PowerShell, автоматизирующий удаление развертываний в сценарии непрерывной интеграции и непрерывной поставки (CI/CD), см. в разделе [ремове-деплойментс. ps1](https://gist.github.com/bmoore-msft/ed33fb940dafb09380174b7fca57651f).
 
 #### <a name="template-limits"></a>Ограничения шаблонов
 
@@ -33,7 +33,7 @@ ms.locfileid: "67185653"
 | outputs |64 |64 |
 | Выражение шаблона |24 576 символов |24 576 символов |
 | Ресурсы в экспортированных шаблонах |200 |200 | 
-| Размер шаблона |1 МБ |1 МБ |
+| Размер шаблона |4 МБ |4 МБ |
 | Размер файла параметров |64 КБ |64 КБ |
 
-Некоторые ограничения можно превысить, используя вложенные шаблоны. Дополнительные сведения см. в разделе [использование связанных шаблонов при развертывании ресурсов Azure](../articles/azure-resource-manager/resource-group-linked-templates.md). Чтобы уменьшить число параметров, переменных или выходных данных, можно объединить несколько значений в объект. См. дополнительные сведения об [использовании объектов как параметров](../articles/azure-resource-manager/resource-manager-objects-as-parameters.md).
+Некоторые ограничения можно превысить, используя вложенные шаблоны. Дополнительные сведения см. в статье [Использование связанных шаблонов при развертывании ресурсов Azure](../articles/azure-resource-manager/resource-group-linked-templates.md). Чтобы уменьшить число параметров, переменных или выходных данных, можно объединить несколько значений в объект. См. дополнительные сведения об [использовании объектов как параметров](../articles/azure-resource-manager/resource-manager-objects-as-parameters.md).

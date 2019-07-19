@@ -4,7 +4,7 @@ description: Ознакомьтесь с командами интерфейса
 services: batch
 documentationcenter: ''
 author: laurenhughes
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: fcd76587-1827-4bc8-a84d-bba1cd980d85
 ms.service: batch
@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 07/24/2018
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e2bd67ebb977a37c75631f16fbbf4c7dbd6bf250
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6e541ef82b7fe63042adf84733dd86fdd3eabdf1
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60782569"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68323717"
 ---
 # <a name="manage-batch-resources-with-azure-cli"></a>Управление ресурсами пакетной службы с помощью Azure CLI
 
@@ -130,7 +130,7 @@ az batch pool create my_batch_pool.json
 
 Хотя большинство ресурсов пакетной службы можно создавать только с помощью параметров командной строки, для некоторых функций необходимо указать файл формата JSON, содержащий сведения о ресурсе. Например, JSON-файл следует использовать, если нужно указать файлы ресурсов для задачи запуска.
 
-Синтаксис JSON, необходимый для создания ресурса, см. в [справочной документации по REST API пакетной службы][rest_api]. В каждой статье о добавлении *определенного типа ресурса* приведены примеры скриптов JSON для создания этого ресурса. Вы можете использовать эти примеры скриптов как шаблоны файлов JSON, которые можно использовать с Azure CLI. Например, синтаксис JSON для создания пула см. в статье [Add a pool to an account][rest_add_pool] (Добавление учетной записи пула).
+Чтобы просмотреть синтаксис JSON, необходимый для создания ресурса, обратитесь к справочной документации по пакетной службе [REST API][rest_api] . В каждой статье о добавлении *определенного типа ресурса* приведены примеры скриптов JSON для создания этого ресурса. Вы можете использовать эти примеры скриптов как шаблоны файлов JSON, которые можно использовать с Azure CLI. Например, чтобы просмотреть синтаксис JSON для создания пула, см. раздел [Добавление пула к учетной записи][rest_add_pool].
 
 Пример скрипта указания файла JSON см. в статье [Выполнение заданий в пакетной службе Azure с помощью Azure CLI](./scripts/batch-cli-sample-run-job.md).
 
@@ -171,7 +171,7 @@ az batch task list --job-id job001
 * Вы можете просмотреть **выходные данные команды в виде JSON** с помощью параметра `--json`. Например, параметр `az batch pool show pool001 --json` отображает свойства элемента pool001 в формате JSON. Затем вы можете скопировать и изменить эти выходные данные для использования в параметре `--json-file` (см. выше раздел, посвященный JSON-файлам).
 <!---Loc Comment: Please, check link [JSON files] since it's not redirecting to any location.--->
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 * Дополнительные сведения о ресурсах пакетной службы см. в статье [Разработка решений для крупномасштабных параллельных вычислений с использованием пакетной службы](batch-api-basics.md).

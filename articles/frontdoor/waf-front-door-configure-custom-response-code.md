@@ -1,6 +1,6 @@
 ---
-title: Настройка ответ для брандмауэра веб-приложения на входной двери Azure
-description: Узнайте, как настроить код настраиваемый ответ и сообщение, когда запрос блокирует брандмауэр веб-приложения (WAF).
+title: Настройка пользовательского ответа для брандмауэра веб-приложения на передней дверце Azure
+description: Узнайте, как настроить пользовательский код ответа и сообщение, когда брандмауэр веб-приложения (WAF) блокирует запрос.
 services: frontdoor
 author: KumudD
 ms.service: frontdoor
@@ -9,17 +9,18 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/21/2019
-ms.author: tyao;kumud
-ms.openlocfilehash: 146d17fe457751fb950f723c34826e43516e4e86
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.author: kumud
+ms.reviewer: tyao
+ms.openlocfilehash: 657dc3a43302d16bc403d790bf2c34c2d147dd6c
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165371"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67846373"
 ---
-# <a name="configure-a-custom-response-for-azure-web-application-firewall"></a>Настройка ответ для брандмауэра Azure веб-приложения
+# <a name="configure-a-custom-response-for-azure-web-application-firewall"></a>Настройка пользовательского ответа для брандмауэра веб-приложения Azure
 
-По умолчанию, когда брандмауэр Azure веб-приложения (WAF) с входной двери Azure блокирует запрос из-за соответствующих правило, она возвращает код состояния 403 с **запрос блокирован** сообщения. В этой статье описываются способы настройки код состояния настраиваемый ответ и ответное сообщение, когда запрос блокируется WAF.
+По умолчанию, когда брандмауэр веб-приложения Azure (WAF) с передней дверцей Azure блокирует запрос из-за сопоставленного правила, он возвращает код состояния 403 с **запросом блокирует** сообщение. В этой статье описывается, как настроить код состояния пользовательского ответа и ответное сообщение, если запрос заблокирован WAF.
 
 ## <a name="set-up-your-powershell-environment"></a>Настройка среды PowerShell
 В Azure PowerShell доступен набор командлетов, которые используют модель [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) для управления ресурсами Azure. 
@@ -44,15 +45,15 @@ Install-Module -Name Az.FrontDoor
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-В Azure выделите связанные ресурсы группе ресурсов. В этом примере создайте группу ресурсов с помощью [New AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup).
+В Azure выделите связанные ресурсы группе ресурсов. В этом примере создается группа ресурсов с помощью команды [New-азресаурцеграуп](/powershell/module/Az.resources/new-Azresourcegroup).
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name myResourceGroupWAF
 ```
 
-## <a name="create-a-new-waf-policy-with-custom-response"></a>Создать новую политику WAF с настраиваемый ответ 
+## <a name="create-a-new-waf-policy-with-custom-response"></a>Создание новой политики WAF с настраиваемым ответом 
 
-Ниже приведен пример создания новой политики WAF с кодом состояния настраиваемый ответ, значение 405, а сообщение **заблокировано.** с помощью [New AzFrontDoorWafPolicy](/powershell/module/az.frontdoor/new-azfrontdoorwafpolicy).
+Ниже приведен пример создания новой политики WAF с кодом состояния настраиваемого ответа, равным 405, а сообщение **— заблокировано.** с помощью [New-азфронтдурвафполици](/powershell/module/az.frontdoor/new-azfrontdoorwafpolicy).
 
 ```azurepowershell
 # WAF policy setting
@@ -65,7 +66,7 @@ New-AzFrontDoorWafPolicy `
 -CustomBlockResponseBody "<html><head><title>You are blocked.</title></head><body></body></html>"
 ```
 
-Изменить настраиваемый ответ кода или настройки тело ответа существующей политики WAF, с помощью [AzFrontDoorFireWallPolicy обновления](/powershell/module/az.frontdoor/Update-AzFrontDoorWafPolicy).
+Измените пользовательский код ответа или параметры текста ответа существующей политики WAF с помощью [Update-азфронтдурфиреваллполици](/powershell/module/az.frontdoor/Update-AzFrontDoorWafPolicy).
 
 ```azurepowershell
 # modify WAF response code
@@ -85,5 +86,5 @@ Update-AzFrontDoorFireWallPolicy `
 -CustomBlockResponseBody "<html><head><title> Forbidden</title></head><body></body></html>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-- Дополнительные сведения о [двери](front-door-overview.md)
+## <a name="next-steps"></a>Следующие шаги
+- Дополнительные сведения о [передней дверце](front-door-overview.md)

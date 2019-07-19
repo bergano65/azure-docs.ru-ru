@@ -1,6 +1,6 @@
 ---
 title: Автоматические обновления образа ОС при использовании масштабируемых наборов виртуальных машин Azure | Документация Майкрософт
-description: Узнайте, как выполнять автоматическое обновление образа операционной системы на экземплярах виртуальных машин в масштабируемом наборе
+description: Узнайте, как автоматически обновить образ ОС на экземплярах виртуальных машин в масштабируемом наборе
 services: virtual-machine-scale-sets
 documentationcenter: ''
 author: mayanknayar
@@ -13,14 +13,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/25/2019
+ms.date: 07/16/2019
 ms.author: manayar
-ms.openlocfilehash: 007f2801efed8da4964808056563418dec7f64d5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: eeb689f90197830dad98c213849b2e82ba43bbf1
+ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60328822"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68296357"
 ---
 # <a name="azure-virtual-machine-scale-set-automatic-os-image-upgrades"></a>Автоматические обновления образа ОС масштабируемого набора виртуальных машин Azure
 
@@ -35,6 +35,7 @@ ms.locfileid: "60328822"
 - Автоматические обновления можно в любое время отключить (обновление ОС также можно инициировать вручную).
 - Диск ОС виртуальной машины заменяется новым диском ОС с последней версией образа. Запускаются настраиваемые расширения и сценарии пользовательских данных, а сохраненные диски данных сохраняются.
 - Поддерживается [расширение виртуализации](virtual-machine-scale-sets-extension-sequencing.md).
+- Автоматическое обновление образа ОС можно включить в масштабируемом наборе любого размера.
 
 ## <a name="how-does-automatic-os-image-upgrade-work"></a>Как работает автоматическое обновление образа ОС?
 
@@ -42,9 +43,9 @@ ms.locfileid: "60328822"
 
 Процесс обновления работает следующим образом:
 1. Перед началом процесса обновления оркестратор убедится, что не более чем 20 % экземпляров во всем масштабируемом наборе являются неработоспособными (по любой причине).
-2. Этот оркестратор обновления определит пакет экземпляров виртуальных машин для обновления. При этом любой пакет должен содержать максимум 20 % от общего количества экземпляров.
-3. Диск ОС выбранного пакета экземпляров виртуальной машины заменяется новым диском ОС, созданным из последнего образа. Все указанные разрешения и конфигурации в модели масштабируемого набора применяются к обновленному экземпляру.
-4. Если масштабируемые наборы настроены с помощью проверок работоспособности приложения или расширения работоспособности приложения, обновление останавливается на 5 минут, чтобы экземпляр стал работоспособным, прежде чем перейти к обновлению нового пакета.
+2. Этот оркестратор обновления определит пакет экземпляров виртуальных машин для обновления. При этом любой пакет должен содержать максимум 20 % от общего количества экземпляров. Для небольших масштабируемых наборов с 5 или менее экземплярами размер пакета для обновления — это один экземпляр виртуальной машины.
+3. Диск ОС выбранного пакета экземпляров виртуальных машин заменяется новым диском ОС, созданным на основе последнего образа. Все указанные расширения и конфигурации в модели масштабируемого набора применяются к обновленному экземпляру.
+4. Если масштабируемые наборы настроены с помощью проверок работоспособности приложения или расширения работоспособности приложения, обновление останавливается на 5 минут, чтобы экземпляр стал работоспособным, прежде чем перейти к обновлению нового пакета. Если экземпляр не восстанавливает работоспособность в течение 5 минут после обновления, по умолчанию восстанавливается предыдущий диск операционной системы для экземпляра.
 5. Оркестратор обновления также отслеживает процент экземпляров, которые становятся неработоспособными после обновления. Обновление будет прервано, если более чем 20 % обновленных экземпляров утрачивают работоспособность во время обновления.
 6. Описанный выше процесс продолжается, пока все экземпляры в масштабируемом наборе не будут обновлены.
 
@@ -66,7 +67,7 @@ ms.locfileid: "60328822"
 | Корпорация Майкрософт   | WindowsServer | 2016-Datacenter-Smalldisk |
 | Корпорация Майкрософт   | WindowsServer | 2016-Datacenter-with-Containers |
 | Корпорация Майкрософт   | WindowsServer | 2019-Datacenter |
-| Корпорация Майкрософт   | WindowsServer | 2019-Datacenter-Smalldisk |
+| Корпорация Майкрософт   | WindowsServer | 2019 — центр обработки данных — Смаллдиск |
 | Корпорация Майкрософт   | WindowsServer | 2019-Datacenter-with-Containers |
 
 
@@ -74,7 +75,18 @@ ms.locfileid: "60328822"
 
 - Для свойства *version* образа платформы следует установить значение *latest*.
 - Используйте проверки работоспособности приложений или [расширения работоспособности приложения](virtual-machine-scale-sets-health-extension.md) для масштабируемых наборов, не связанных с Service Fabric.
+- Используйте API вычислений версии 2018-10-01 или более поздней.
 - Убедитесь, что внешние ресурсы, указанные в модели масштабируемого набора, доступны и обновлены. Примеры включают универсальный код ресурса (URI) SAS для начальной загрузки полезных данных в свойствах расширения виртуальной машины, полезные данные в учетной записи хранения, ссылки на секреты в модели и многое другое.
+- Для масштабируемых наборов, использующих виртуальные машины Windows, начиная с API вычислений версии 2019-03-01, свойство *virtualMachineProfile. osProfile. виндовсконфигуратион. енаблеаутоматикупдатес* должно иметь значение *false* в модели масштабируемого набора. макроопределения. Приведенное выше свойство позволяет выполнять обновления в виртуальной машине, когда "Центр обновления Windows" применяет исправления операционной системы без замены диска ОС. Если в масштабируемом наборе включено автоматическое обновление образа ОС, дополнительное обновление с помощью "Центр обновления Windows" не требуется.
+
+### <a name="service-fabric-requirements"></a>Требования к Service Fabric
+
+При использовании Service Fabric убедитесь, что выполняются следующие условия.
+-   Service Fabric [уровень устойчивости](../service-fabric/service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster) — серебро или Gold, а не бронзовый.
+-   Расширение Service Fabric в определении модели масштабируемого набора должно иметь TypeHandlerVersion 1,1 или более поздней версии.
+-   Уровень устойчивости должен быть одинаковым для кластера Service Fabric и Service Fabricного расширения в определении модели масштабируемого набора.
+
+Убедитесь, что параметры устойчивости не совпадают на Service Fabric кластере и Service Fabricном расширении, так как несоответствие приведет к ошибкам обновления. Уровни устойчивости можно изменять в соответствии с рекомендациями, изложенными на [этой странице](../service-fabric/service-fabric-cluster-capacity.md#changing-durability-levels).
 
 ## <a name="configure-automatic-os-image-upgrade"></a>Настройка автоматического обновления образа ОС
 Чтобы настроить автоматическое обновление образа ОС, убедитесь, что свойство *automaticOSUpgradePolicy.enableAutomaticOSUpgrade* установлено как *true* в определении модели масштабируемого набора.
@@ -99,17 +111,17 @@ PUT or PATCH on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/p
 ```
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-Используйте командлет [Update-AzVmss](/powershell/module/az.compute/update-azvmss), чтобы проверить журнал обновлений ОС для масштабируемого набора. В следующем примере настраивается автоматическое обновление масштабируемого набора *myVMSS* в группе ресурсов *myResourceGroup*.
+Используйте командлет [Update-AzVmss](/powershell/module/az.compute/update-azvmss), чтобы проверить журнал обновлений ОС для масштабируемого набора. В следующем примере выполняется настройка автоматического обновления для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
 
 ```azurepowershell-interactive
 Update-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -AutomaticOSUpgrade $true
 ```
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
-Используйте командлет [az vmss update](/cli/azure/vmss#az-vmss-update), чтобы проверить журнал обновления ОС масштабируемого набора. Использование Azure CLI 2.0.47 или более поздней версии В следующем примере настраивается автоматическое обновление масштабируемого набора *myVMSS* в группе ресурсов *myResourceGroup*.
+Используйте командлет [az vmss update](/cli/azure/vmss#az-vmss-update), чтобы проверить журнал обновления ОС масштабируемого набора. Использование Azure CLI 2.0.47 или более поздней версии В следующем примере выполняется настройка автоматического обновления для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
 
 ```azurecli-interactive
-az vmss update --name myVMSS --resource-group myResourceGroup --set UpgradePolicy.AutomaticOSUpgradePolicy.EnableAutomaticOSUpgrade=true
+az vmss update --name myScaleSet --resource-group myResourceGroup --set UpgradePolicy.AutomaticOSUpgradePolicy.EnableAutomaticOSUpgrade=true
 ```
 
 ## <a name="using-application-health-probes"></a>Использование проверок работоспособности приложений
@@ -139,7 +151,7 @@ az vmss update --name myVMSS --resource-group myResourceGroup --set UpgradePolic
 > При использовании автоматического обновления ОС с помощью Service Fabric домен обновления развертывает новый образ ОС, чтобы обеспечить высокий уровень доступности для служб, работающих в Service Fabric. Для использования автоматических обновлений ОС в Service Fabric ваш кластер должен быть настроен на использование уровня надежности Silver или выше. Дополнительные сведения о характеристиках устойчивости кластера Service Fabric см. в [этой документации](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#the-durability-characteristics-of-the-cluster).
 
 ### <a name="keep-credentials-up-to-date"></a>Поддержание актуальности учетных данных
-Если ваш масштабируемый набор использует любые учетные данные для доступа к внешним ресурсам, например, если настроено расширение виртуальной машины, которое использует маркер SAS для учетной записи хранения, убедитесь, что учетные данные обновлены. Если срок действия всех учетных данных, в том числе сертификатов и маркеров, истек, обновление завершится сбоем, а первый пакет виртуальных машин останется в состоянии сбоя.
+Если в масштабируемом наборе используются учетные данные для доступа к внешним ресурсам, например расширение виртуальной машины, настроенное для использования маркера SAS для учетной записи хранения, убедитесь, что учетные данные обновлены. Если срок действия учетных данных, включая сертификаты и токены, истек, обновление завершится ошибкой, а первый пакет виртуальных машин останется в состоянии сбоя.
 
 В случае сбоя аутентификации ресурса рекомендуем выполнить следующие шаги по восстановлению виртуальных машин и повторному включению автоматического обновления ОС.
 
@@ -159,7 +171,7 @@ az vmss update --name myVMSS --resource-group myResourceGroup --set UpgradePolic
 Вы можете проверить журнал последнего обновления ОС масштабируемого набора с помощью Azure PowerShell, Azure CLI 2.0 или интерфейсов REST API. Можно просмотреть журнал для последних пяти попыток обновлений операционной системы в течение последних двух месяцев.
 
 ### <a name="rest-api"></a>REST API
-В следующем примере используется [REST API](/rest/api/compute/virtualmachinescalesets/getosupgradehistory) для проверки состояния масштабируемого набора *myVMSS* в группе ресурсов *myResourceGroup*.
+В следующем примере используется [REST API](/rest/api/compute/virtualmachinescalesets/getosupgradehistory) для проверки состояния масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
 
 ```
 GET on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet/osUpgradeHistory?api-version=2018-10-01`
@@ -203,22 +215,22 @@ GET on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/
 ```
 
 ### <a name="azure-powershell"></a>Azure PowerShell
-Используйте командлет [Get-AzVmss](/powershell/module/az.compute/get-azvmss), чтобы проверить журнал обновлений ОС для масштабируемого набора. В следующем примере показано, как просмотреть состояние обновления ОС масштабируемого набора *myVMSS* в группе ресурсов *myResourceGroup*:
+Используйте командлет [Get-AzVmss](/powershell/module/az.compute/get-azvmss), чтобы проверить журнал обновлений ОС для масштабируемого набора. В следующем примере показано, как проверить состояние обновления ОС для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
 
 ```azurepowershell-interactive
-Get-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myVMSS" -OSUpgradeHistory
+Get-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -OSUpgradeHistory
 ```
 
 ### <a name="azure-cli-20"></a>Azure CLI 2.0
-Используйте командлет [az vmss get-os-upgrade-history](/cli/azure/vmss#az-vmss-get-os-upgrade-history), чтобы проверить журнал обновления ОС масштабируемого набора. Использование Azure CLI 2.0.47 или более поздней версии В следующем примере показано, как просмотреть состояние обновления ОС масштабируемого набора *myVMSS* в группе ресурсов *myResourceGroup*:
+Используйте командлет [az vmss get-os-upgrade-history](/cli/azure/vmss#az-vmss-get-os-upgrade-history), чтобы проверить журнал обновления ОС масштабируемого набора. Использование Azure CLI 2.0.47 или более поздней версии В следующем примере показано, как проверить состояние обновления ОС для масштабируемого набора с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
 
 ```azurecli-interactive
-az vmss get-os-upgrade-history --resource-group myResourceGroup --name myVMSS
+az vmss get-os-upgrade-history --resource-group myResourceGroup --name myScaleSet
 ```
 
 ## <a name="how-to-get-the-latest-version-of-a-platform-os-image"></a>Как получить последнюю версию образа платформы ОС?
 
-Вы можете получить версии образов для автоматического обновления ОС (для поддерживаемых номеров SKU) с помощью приведенных ниже примеров:
+Вы можете получить доступные версии образов для автоматического обновления операционной системы, используя приведенные ниже примеры.
 
 ### <a name="rest-api"></a>REST API
 ```
@@ -235,11 +247,40 @@ Get-AzVmImage -Location "westus" -PublisherName "Canonical" -Offer "UbuntuServer
 az vm image list --location "westus" --publisher "Canonical" --offer "UbuntuServer" --sku "16.04-LTS" --all
 ```
 
+## <a name="manually-trigger-os-image-upgrades"></a>Активация обновления образа ОС вручную
+Если в масштабируемом наборе включено автоматическое обновление образа ОС, вам не нужно вручную запускать обновления образов в масштабируемом наборе. Orchestrator Upgrade (обновление ОС) автоматически применит последнюю доступную версию образа к экземплярам масштабируемого набора без вмешательства вручную.
+
+В конкретных случаях, когда не нужно ждать, пока Orchestrator применит последнюю версию образа, можно запустить обновление образа ОС вручную, используя приведенные ниже примеры.
+
+> [!NOTE]
+> Ручное срабатывание обновления образа ОС не предоставляет возможности автоматического отката. Если экземпляр не восстанавливает работоспособность после операции обновления, его предыдущий диск ОС восстановить невозможно.
+
+### <a name="rest-api"></a>REST API
+Используйте вызов API [обновления операционной системы](/rest/api/compute/virtualmachinescalesetrollingupgrades/startosupgrade) для запуска последовательного обновления, чтобы переместить все экземпляры масштабируемых наборов виртуальных машин в последнюю доступную версию ОС образа платформы. Экземпляры, которые уже используют последнюю доступную версию ОС, не затрагиваются. В следующем примере показано, как можно запустить пошаговое обновление ОС в масштабируемом наборе с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
+
+```
+POST on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet/osRollingUpgrade?api-version=2018-10-01`
+```
+
+### <a name="azure-powershell"></a>Azure PowerShell
+Используйте командлет [Start-азвмссроллингосупграде](/powershell/module/az.compute/Start-AzVmssRollingOSUpgrade) , чтобы проверить журнал обновления ОС для масштабируемого набора. В следующем примере показано, как можно запустить пошаговое обновление ОС в масштабируемом наборе с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
+
+```azurepowershell-interactive
+Start-AzVmssRollingOSUpgrade -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet"
+```
+
+### <a name="azure-cli-20"></a>Azure CLI 2.0
+Чтобы проверить журнал обновления операционной системы для масштабируемого набора, выполните команду [AZ vmss чередующегося обновления](/cli/azure/vmss/rolling-upgrade#az-vmss-rolling-upgrade-start) . Использование Azure CLI 2.0.47 или более поздней версии В следующем примере показано, как можно запустить пошаговое обновление ОС в масштабируемом наборе с именем *myScaleSet* в группе ресурсов с именем *myResourceGroup*:
+
+```azurecli-interactive
+az vmss rolling-upgrade start --resource-group "myResourceGroup" --name "myScaleSet" --subscription "subscriptionId"
+```
+
 ## <a name="deploy-with-a-template"></a>Развертывание с помощью шаблона
 
 Вы можете использовать шаблоны для развертывания масштабируемого набора с автоматическими обновлениями ОС для поддерживаемых образов, таких как [Ubuntu 16.04-LTS](https://github.com/Azure/vm-scale-sets/blob/master/preview/upgrade/autoupdate.json).
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fvm-scale-sets%2Fmaster%2Fpreview%2Fupgrade%2Fautoupdate.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"/></a>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные примеры использования автоматических обновлений ОС с масштабируемыми наборами см. в [репозитории GitHub](https://github.com/Azure/vm-scale-sets/tree/master/preview/upgrade).

@@ -3,17 +3,18 @@ title: Использование управляемого удостовере�
 description: Узнайте, как использовать управляемое удостоверение для проверки подлинности в других службах Azure из службы "Экземпляры контейнеров Azure".
 services: container-instances
 author: dlepow
+manager: gwallace
 ms.service: container-instances
 ms.topic: article
 ms.date: 10/22/2018
 ms.author: danlep
 ms.custom: ''
-ms.openlocfilehash: c14c3aaf2a5d648572fdc251540264e8057a00f9
-ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.openlocfilehash: 773650e5e5e85d4a5fca0b3755f3730921cc5f2e
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67144308"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68325940"
 ---
 # <a name="how-to-use-managed-identities-with-azure-container-instances"></a>Использование управляемых удостоверений для службы "Экземпляры контейнеров Azure"
 
@@ -252,7 +253,7 @@ token=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=
 
 ```
 
-Теперь примените маркер доступа для проверки подлинности в Key Vault и получения секрета. Не забудьте подставить имя хранилища ключей в URL-адрес (*https:\//mykeyvault.vault.azure.net/...* ):
+Теперь примените маркер доступа для проверки подлинности в Key Vault и получения секрета. Обязательно замените имя хранилища ключей URL-адресом (*https:\//mykeyvault.Vault.Azure.NET/...* ):
 
 ```bash
 curl https://mykeyvault.vault.azure.net/secrets/SampleSecret/?api-version=2016-10-01 -H "Authorization: Bearer $token"
@@ -351,7 +352,7 @@ identity:
    {'myResourceID1':{}}
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Из этой статьи вы узнали, как использовать управляемые удостоверения в службе "Экземпляры контейнеров Azure" и выполнять следующие действия:
 

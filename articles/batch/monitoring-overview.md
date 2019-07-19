@@ -3,7 +3,7 @@ title: Мониторинг пакетной службы Azure | Докумен
 description: Сведения о службах, метриках, журналах диагностики и других функциях мониторинга для пакетной службы Azure.
 services: batch
 author: laurenhughes
-manager: jeconnoc
+manager: gwallace
 ms.assetid: ''
 ms.service: batch
 ms.devlang: multiple
@@ -11,12 +11,12 @@ ms.topic: article
 ms.workload: na
 ms.date: 04/05/2018
 ms.author: lahugh
-ms.openlocfilehash: b0243b37f725fc977337b72998d610e9bda71a86
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 77fcfed125104588e27e6a0e80cdb4a92a744083
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62128861"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68322451"
 ---
 # <a name="monitor-batch-solutions"></a>Мониторинг решений пакетной службы
 
@@ -41,7 +41,7 @@ Azure и пакетная служба предоставляют широкий
 
 ## <a name="batch-resource-monitoring"></a>Мониторинг ресурсов пакетной службы
 
-В приложениях пакетной службы вы можете применить API-интерфейсы пакетной службы для отслеживания и запроса состояний ресурсов, таких как задания, задачи, узлы и пулы. Например:
+В приложениях пакетной службы вы можете применить API-интерфейсы пакетной службы для отслеживания и запроса состояний ресурсов, таких как задания, задачи, узлы и пулы. Пример:
 
 * [получение количества задач и вычислительных узлов с учетом состояния](batch-get-resource-counts.md);
 * [эффективное создание запросов на вывод списка ресурсов пакетной службы](batch-efficient-list-queries.md);
@@ -66,7 +66,7 @@ Azure и пакетная служба предоставляют широкий
 * [Batch Explorer](https://github.com/Azure/BatchExplorer) — это бесплатный автономный клиентский инструмент с множеством функций для создания, отладки и мониторинга приложений пакетной службы Azure. Скачайте [пакет установки](https://azure.github.io/BatchExplorer/) для Mac, Linux или Windows. (Необязательно.) Настройте в решении пакетной службы [отображение данных из Application Insights](https://github.com/Azure/batch-insights), таких как счетчики производительности виртуальных машин в Batch Explorer.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * См. дополнительные сведения об [API-интерфейсах и средствах пакетной службы](batch-apis-tools.md) для сборки решений пакетной службы.
 * Узнайте больше о [ведении журналов диагностики](batch-diagnostics.md) для пакетной службы.

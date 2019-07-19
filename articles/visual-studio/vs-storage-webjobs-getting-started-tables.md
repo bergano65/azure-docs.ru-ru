@@ -12,12 +12,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
-ms.openlocfilehash: a9a4475465fefb01ec53e6e0eb814f9b8f192a1b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 481c2f1eaf20e317c8efa4f21f337f4073af898f
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60390834"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68260744"
 ---
 # <a name="getting-started-with-azure-storage-azure-webjob-projects"></a>Начало работы со службой хранилища Azure (проекты веб-заданий Azure)
 [!INCLUDE [storage-try-azure-tools-tables](../../includes/storage-try-azure-tools-tables.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "60390834"
 В некоторых фрагментах кода демонстрируется использование атрибута **Table** в функциях, вызванных вручную, т. е. без использования атрибутов активации.
 
 ## <a name="how-to-add-entities-to-a-table"></a>Как добавить сущность в таблицу
-Чтобы добавить сущности в таблицу, используйте атрибут **Table** с параметром **ICollector<T>** или **IAsyncCollector<T>** , где **T** обозначает схему сущностей, которые нужно добавить. Конструктор атрибута принимает строковый параметр, который указывает имя таблицы.
+Чтобы добавить сущности в таблицу, используйте атрибут **Table** с параметром **ICollector\<t >** или **IAsyncCollector\<> t** , где **t** указывает схему сущностей, которую необходимо добавить. Конструктор атрибута принимает строковый параметр, который указывает имя таблицы.
 
 Следующий пример кода добавляет сущности **Person** в таблицу с именем *Ingress*.
 
@@ -79,7 +79,7 @@ ms.locfileid: "60390834"
 ![Функция входа выполнена](./media/vs-storage-webjobs-getting-started-tables/ingresssuccess.png)
 
 ## <a name="how-to-read-multiple-entities-from-a-table"></a>Как выполнять чтение нескольких сущностей из таблицы
-Для чтения таблиц используйте атрибут **Table** с параметром **IQueryable<T>** , где тип **T** является производным от **TableEntity** или реализует **ITableEntity**.
+Для чтения таблицы используйте атрибут **Table** с параметром **\<IQueryable T >** , где тип **t** является производным от **TableEntity** или реализует **ITableEntity**.
 
 Следующий пример кода считывает и записывает все строки таблицы **Ingress** .
 
@@ -144,6 +144,6 @@ ms.locfileid: "60390834"
 ## <a name="related-topics-covered-by-the-queues-how-to-article"></a>Связанные разделы, которые описаны в практическом руководстве по работе с очередями
 Дополнительную информацию об управлении обработкой таблиц, которая инициируется сообщением очереди, а также несвязанные с обработкой таблиц сценарии применения пакета SDK для веб-заданий см. в статье [Приступая к работе с подключенными службами хранилища очередей Azure и Visual Studio (проекты веб-заданий)](../storage/vs-storage-webjobs-getting-started-queues.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этой статье предоставлены примеры кода обработки обычных сценариев для работы с таблицами Azure. Дополнительная информация об использовании веб-заданий Azure и пакета SDK для веб-заданий доступна в [ресурсах с документацией по веб-заданиям Azure](https://go.microsoft.com/fwlink/?linkid=390226).
 

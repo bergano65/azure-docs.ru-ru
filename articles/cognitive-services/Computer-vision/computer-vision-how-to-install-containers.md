@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
 ms.custom: seodec18
-ms.openlocfilehash: d72b47d375b8e50cde43e263261551d3010ba013
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: efde223061a873a57595bc4a577b7de55b1d8a46
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67704713"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68321461"
 ---
 # <a name="install-and-run-recognize-text-containers"></a>Установка и запуск контейнеров распознавания текста
 
@@ -26,15 +26,15 @@ ms.locfileid: "67704713"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Прежде чем использовать контейнеры Распознавания текста, необходимо выполнить следующие условия.
 
-|Обязательно для заполнения|Назначение|
+|Обязательно для заполнения|Цель|
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
-|Azure `Cognitive Services` ресурсов |Для использования контейнера необходимо следующее:<br><br>Объект _Cognitive Services_ ресурсов Azure и соответствующее выставление счетов ключа выставления счетов URI конечной точки. Оба значения доступны на страницах Обзор и ключи для ресурса и необходимые для запуска контейнера. Необходимо добавить `vision/v2.0` маршрутизации URI конечной точки, как показано в следующем примере BILLING_ENDPOINT_URI. <br><br>**{BILLING_KEY}** : ключ ресурса<br><br>**{BILLING_ENDPOINT_URI}** : пример URI конечной точки: `https://westus.api.cognitive.microsoft.com/vision/v2.0`|
+|Ресурс Компьютерное зрение |Для использования контейнера необходимо следующее:<br><br>Ресурс Azure **компьютерное зрение** и соответствующий ключ API для конечной точки. Оба значения доступны на страницах обзора и ключей для ресурса и необходимы для запуска контейнера.<br><br>**{API_KEY}** : Один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}** : Конечная точка, указанная на странице **обзора**|
 
 ## <a name="request-access-to-the-private-container-registry"></a>Запрос доступа к частному реестру контейнеров
 
@@ -44,14 +44,13 @@ ms.locfileid: "67704713"
 
 [!INCLUDE [Host Computer requirements](../../../includes/cognitive-services-containers-host-computer.md)]
 
-
 ### <a name="container-requirements-and-recommendations"></a>Требования к контейнеру и рекомендации
 
 В следующей таблице описаны минимальное и рекомендуемое число ядер ЦП и памяти для каждого контейнера Распознавания текста.
 
-| Контейнер | Минимальная | Рекомендуется |ТРАНЗАКЦИЙ В СЕКУНДУ<br>(Минимум, максимум)|
+| Контейнер | Минимальная | Рекомендуется |ПЛАТЫ<br>(Минимум, максимум)|
 |-----------|---------|-------------|--|
-|Распознавание текста|1 ядро, 8 ГБ памяти, 0,5 TPS|2 ядра, 8 ГБ памяти, 1 TPS|0.5, 1|
+|Распознавание текста|1 ядро, 8 ГБ памяти, 0,5 TPS|2 ядра, 8 ГБ памяти, 1 Техническая спецификация|0,5, 1|
 
 * Частота каждого ядра должна быть минимум 2,6 ГГц.
 * TPS — транзакций в секунду.
@@ -90,10 +89,10 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-recognize-t
 
 | Placeholder | Значение |
 |-------------|-------|
-|{BILLING_KEY} | Этот ключ используется для запуска контейнера, а также доступна в Azure `Cognitive Services` страницы "ключи".  |
-|{BILLING_ENDPOINT_URI} | Значение URI конечной точки выставления счетов. Ниже приведен пример: `https://westus.api.cognitive.microsoft.com/vision/v2.0`|
+|{API_KEY} | Этот ключ используется для запуска контейнера и доступен на странице ключей Azure `Cognitive Services` .  |
+|{ENDPOINT_URI} | Значение URI конечной точки выставления счетов. Пример:`https://westus.api.cognitive.microsoft.com/vision/v2.0`|
 
-Необходимо добавить `vision/v2.0` маршрутизации URI конечной точки, как показано в следующем примере BILLING_ENDPOINT_URI.
+Необходимо добавить `vision/v2.0` маршрутизацию к универсальному коду ресурса (URI) конечной точки, как показано в следующем примере BILLING_ENDPOINT_URI.
 
 В следующем примере команды `docker run` замените имена параметров собственными значениями.
 
@@ -101,8 +100,8 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-recognize-t
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
 containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text \
 Eula=accept \
-Billing={BILLING_ENDPOINT_URI} \
-ApiKey={BILLING_KEY}
+Billing={ENDPOINT_URI} \
+ApiKey={API_KEY}
 ```
 
 Эта команда:
@@ -132,7 +131,7 @@ ApiKey={BILLING_KEY}
 
 ### <a name="synchronous-text-recognition"></a>Синхронное распознавание текста
 
-С помощью операции `POST /vision/v2.0/recognizeTextDirect` можно синхронно распознавать печатный текст на изображении. Так как эта операция является синхронной, текст запроса для нее будет таким же, как и для операции `POST /vision/v2.0/recognizeText`, но текст отклика для этой нее будет таким же, как и для операции `GET /vision/v2.0/textOperations/*{id}*`.
+С помощью операции `POST /vision/v2.0/recognizeTextDirect` можно синхронно распознавать печатный текст на изображении. Так как эта операция является синхронной, текст запроса для этой операции `POST /vision/v2.0/recognizeText` совпадает с текстом операции, но текст ответа для этой операции совпадает с текстом, возвращенным `GET /vision/v2.0/textOperations/*{id}*` операцией.
 
 <!--  ## Validate container is running -->
 
@@ -156,7 +155,7 @@ ApiKey={BILLING_KEY}
 
 Дополнительные сведения об этих параметрах см. в статье [Настройка контейнеров](./computer-vision-resource-container-config.md).
 
-<!--blogs/samples/video coures -->
+<!--blogs/samples/video course -->
 
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
@@ -173,7 +172,7 @@ ApiKey={BILLING_KEY}
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например анализируемые изображения или тексты).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Ознакомьтесь со статьей о [конфигурации контейнеров](computer-vision-resource-container-config.md).
 * Дополнительные сведения о распознавании печатного и рукописного текста см. в статье [Обзор компьютерного зрения](Home.md).  

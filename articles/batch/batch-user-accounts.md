@@ -3,7 +3,7 @@ title: Выполнение задач с учетными записями по
 description: Настройка учетных записей пользователей для выполнения задач в пакетной службе Azure.
 services: batch
 author: laurenhughes
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: ''
 ms.assetid: ''
@@ -15,15 +15,15 @@ ms.workload: big-compute
 ms.date: 05/22/2017
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: bd5c16d755ef9b71f36b3d499838b12e6099ba6d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 93b3004303dd1587340b467c2fd52cb7233c95fd
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65595382"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68322697"
 ---
 > [!NOTE] 
-> Учетные записи пользователей, описанные в этой статье, отличаются от пользователей, учетные записи, используемые для протокола удаленного рабочего стола (RDP) или Secure Shell (SSH), по соображениям безопасности. 
+> Учетные записи пользователей, описанные в этой статье, отличаются от учетных записей пользователей, используемых для протокол удаленного рабочего стола (RDP) или Secure Shell (SSH) по соображениям безопасности. 
 >
 > Подключение к узлу с конфигурацией виртуальной машины Linux по протоколу SSH описывается в разделе [Установка и настройка удаленного рабочего стола для подключения к виртуальной машине Linux в Azure](../virtual-machines/virtual-machines-linux-use-remote-desktop.md). Подключение к узлам под управлением Windows по протоколу RDP описывается в разделе [Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее](../virtual-machines/windows/connect-logon.md).<br /><br />
 > Чтобы подключиться к узлу, на котором выполняется конфигурация облачной службы, по протоколу RDP, ознакомьтесь с разделом [Включение подключения к удаленному рабочему столу для роли в облачных службах Azure](../cloud-services/cloud-services-role-enable-remote-desktop-new-portal.md).
@@ -334,6 +334,6 @@ task.UserIdentity = new UserIdentity(AdminUserAccountName);
 | Свойство `run_elevated` не указано | Обновление не требуется.                                                                                                                                  |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Исчерпывающий обзор пакетной службы см. в статье [Разработка решений для крупномасштабных параллельных вычислений с использованием пакетной службы](batch-api-basics.md).

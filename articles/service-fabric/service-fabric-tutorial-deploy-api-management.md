@@ -12,15 +12,15 @@ ms.devlang: dotNet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 9/26/2018
+ms.date: 07/10/2019
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: fc2c23d93a1800232b81c5eb2f861e8b71c3e437
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c290b13ccb65c68c32d63638b15e8a3f59ef8010
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66428069"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68228102"
 ---
 # <a name="integrate-api-management-with-service-fabric-in-azure"></a>Развертывание управления API с помощью Service Fabric в Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "66428069"
 > [!IMPORTANT]
 > Эта функция доступна в ценовой категории **Премиум** и **Разработка** управления API, так как необходима поддержка виртуальной сети.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы
 
@@ -77,7 +77,7 @@ az account set --subscription <guid>
  1. В Visual Studio выберите последовательно «Файл» -> «Создать проект».
  2. Выберите шаблон приложения Service Fabric в облаке и присвойте ему имя **ApiApplication**.
  3. Выберите шаблон службы ASP.NET Core без отслеживания состояния и присвойте проекту имя **WebApiService**.
- 4. Выберите шаблон проекта ASP.NET Core 2.0 для веб-API.
+ 4. Выберите шаблон проекта веб-API ASP.NET Core 2,1.
  5. После создания проекта откройте файл `PackageRoot\ServiceManifest.xml` и удалите атрибут `Port` из конфигурации ресурса конечной точки:
 
     ```xml
@@ -88,7 +88,7 @@ az account set --subscription <guid>
     </Resources>
     ```
 
-    Удаление порта позволяет Service Fabric указать порт динамически из диапазона портов приложения, открыт через группы безопасности сети в шаблоне Resource Manager кластера направляться трафик к нему с помощью управления API.
+    Удаление порта позволяет Service Fabric указать порт динамически из диапазона портов приложения, который открывается через группу безопасности сети в шаблоне диспетчер ресурсов кластера, что позволяет передавать трафик в него из управления API.
 
  6. Нажмите клавишу F5 в Visual Studio, чтобы убедиться, что веб-API доступен локально.
 
@@ -108,10 +108,10 @@ az account set --subscription <guid>
 
 Загрузите и сохраните следующие шаблоны Resource Manager и файл параметров:
 
-* [network-apim.json][network-arm]
-* [network-apim.parameters.json][network-parameters-arm]
-* [apim.json][apim-arm]
-* [apim.parameters.json][apim-parameters-arm]
+* [Network-apim. JSON][network-arm]
+* [Network-apim. parameters. JSON][network-parameters-arm]
+* [apim. JSON][apim-arm]
+* [apim. parameters. JSON][apim-parameters-arm]
 
 Шаблон *network-apim.json* развертывает новую подсеть и группу безопасности сети в виртуальной сети, где развертывается кластер Service Fabric.
 
@@ -145,7 +145,7 @@ az account set --subscription <guid>
 
 * Для параметра **displayName** можно указать любое имя API-интерфейса. Для этой статьи используйте имя Service Fabric App.
 * Параметр **name** содержит уникальное описательное имя для API-интерфейса, например service-fabric-app. Оно выводится на порталах разработчика и издателя.
-* Параметр **serviceUrl** определяет HTTP-службу, которая реализует API-интерфейс. Портал управления API направит запросы по этому адресу. Для серверных систем Service Fabric это значение URL-адреса не используется. Здесь вы можете использовать любое значение. Для этой статьи, например «http:\//servicefabric».
+* Параметр **serviceUrl** определяет HTTP-службу, которая реализует API-интерфейс. Портал управления API направит запросы по этому адресу. Для серверных систем Service Fabric это значение URL-адреса не используется. Здесь вы можете использовать любое значение. Для этой статьи, например "http:\//сервицефабрик".
 * Значение **path** добавляется к основному URL-адресу вашей службы управления API. Основной URL-адрес является общим для всех интерфейсов API, размещенных в экземпляре службы API Management. API Management отличает интерфейсы API по их суффиксу. Следовательно, суффикс должен быть уникальным для каждого API для заданного издателя.
 * Параметр **protocols** определяет, какие протоколы можно использовать для доступа к API. Для этой статьи укажите протоколы **http** и **https**.
 * Параметр **path** содержит суффикс для API-интерфейса. Для этой статьи используйте суффикс myapp.
@@ -288,7 +288,7 @@ az group deployment create --name ApiMgmtDeployment --resource-group $ResourceGr
 
 Помимо собственных ресурсов кластер содержит другие ресурсы Azure. Чтобы удалить кластер и все ресурсы, который он использует, проще всего удалить группу ресурсов.
 
-Войдите в Azure и выберите идентификатор подписки, в которой вы хотите удалить кластер.  Идентификатор подписки можно узнать, войдя на [портал Azure](https://portal.azure.com). Удалить группу ресурсов и все ресурсы кластера, с помощью [командлет Remove-AzResourceGroup](/en-us/powershell/module/az.resources/remove-azresourcegroup).
+Войдите в Azure и выберите идентификатор подписки, в которой вы хотите удалить кластер.  Идентификатор подписки можно узнать, войдя на [портал Azure](https://portal.azure.com). Удалите группу ресурсов и все ресурсы кластера с помощью командлета [Remove-азресаурцеграуп](/en-us/powershell/module/az.resources/remove-azresourcegroup).
 
 ```powershell
 $ResourceGroupName = "sfclustertutorialgroup"
@@ -300,7 +300,7 @@ ResourceGroupName="sfclustertutorialgroup"
 az group delete --name $ResourceGroupName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об использовании [управления API](/azure/api-management/import-and-publish).
 
@@ -314,7 +314,7 @@ az group delete --name $ResourceGroupName
 
 <!-- pics -->
 [sf-apim-topology-overview]: ./media/service-fabric-tutorial-deploy-api-management/sf-apim-topology-overview.png
-vice-Fabric-Scripts-and-Templates/BLOB/master/Templates/Service-Integration/Network-apim.Parameters.JSONn
+вице-фабрик-скриптс-Анд-темплатес/BLOB/Master/Templates/сервице-интегратион/Нетворк-апим. parameters. JSONn
 
 <!-- pics -->
 [sf-apim-topology-overview]: ./media/service-fabric-tutorial-deploy-api-management/sf-apim-topology-overview.png

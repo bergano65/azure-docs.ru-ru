@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/30/2017
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 466d5eff27d9a8105fb840ce4ba79571b6207092
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: ed26c4d90738e10f3eb5a9a486cd2734090abd0e
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835515"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68227254"
 ---
 # <a name="integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-as-validation-of-user-input"></a>Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных
 
@@ -53,7 +53,7 @@ Azure AD B2C позволяет добавлять собственную биз
 * обратная отправка номера лояльности;
 * добавление номера лояльности в JSON Web Token (JWT).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 Выполните шаги, описанные в статье [Azure Active Directory B2C. Приступая к работе с настраиваемыми политиками](active-directory-b2c-get-started-custom.md).
 
 ## <a name="step-1-create-an-aspnet-web-api"></a>Шаг 1. Создание веб-API ASP.NET
@@ -68,7 +68,7 @@ Azure AD B2C позволяет добавлять собственную биз
 
 4. В окне **Создание веб-приложения ASP.NET** выберите шаблон **Веб-API** или **Приложение Azure API**.
 
-    ![Выбор веб-API шаблон в Visual Studio](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-select-web-api.png)
+    ![Выбор шаблона веб-API в Visual Studio](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-select-web-api.png)
 
 5. Обязательно выберите **Без проверки аутентификации** в параметрах проверки подлинности.
 
@@ -84,7 +84,7 @@ Azure AD B2C позволяет добавлять собственную биз
 1. Если обозреватель решений еще не открыт, выберите **Просмотр** > **Обозреватель решений**.
 2. В обозревателе решений щелкните правой кнопкой мыши папку **Модели**, выберите **Добавить**, а затем щелкните **Класс**.
 
-    ![Добавление модели](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-add-model.png)
+    ![Пункт меню "добавить класс", выбранный в Visual Studio](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-add-model.png)
 
 3. Назовите класс `InputClaimsModel`, а затем добавьте следующие свойства в класс `InputClaimsModel`.
 
@@ -138,15 +138,15 @@ Azure AD B2C позволяет добавлять собственную биз
 
 1. В обозревателе решений щелкните правой кнопкой мыши папку **Контроллеры**, выберите **Добавить**, а затем щелкните **Контроллер**.
 
-    ![Добавлении нового контроллера в Visual Studio](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-add-controller-1.png)
+    ![Добавление нового контроллера в Visual Studio](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-add-controller-1.png)
 
 2. В окне **Добавление шаблона** выберите **Web API Controller - Empty** (Контроллер веб-API — пустой) и нажмите кнопку **Добавить**.
 
-    ![Выбор веб-API 2 контроллер - пустой в Visual Studio](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-add-controller-2.png)
+    ![Выбор контроллера веб-API 2 — пустой в Visual Studio](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-add-controller-2.png)
 
 3. В окне **Добавление контроллера** присвойте контроллеру имя **IdentityController** и нажмите кнопку **Добавить**.
 
-    ![Введите имя контроллера в Visual Studio](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-add-controller-3.png)
+    ![Ввод имени контроллера в Visual Studio](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-add-controller-3.png)
 
     В результате формирования шаблона создается файл с именем *IdentityController.cs* в папке *Controllers*.
 
@@ -210,7 +210,7 @@ Azure AD B2C позволяет добавлять собственную биз
 
 2. В окне **Публикация** выберите **Служба приложений Microsoft Azure**, а затем — **Опубликовать**.
 
-    ![Создание новой службы приложений Microsoft Azure с помощью Visual Studio](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-publish-to-azure-2.png)
+    ![Создание новой Microsoft Azure службы приложений с помощью Visual Studio](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-publish-to-azure-2.png)
 
     Откроется окно **Создать службу приложений**. В этом окне можно создать все необходимые ресурсы Azure для запуска веб-приложения ASP.NET в Azure.
 
@@ -347,12 +347,12 @@ Azure AD B2C позволяет добавлять собственную биз
 
 2. Откройте **B2C_1A_signup_signin**, отправленную вами пользовательскую политику проверяющей стороны, а затем выберите **Run Now** (Запустить сейчас).
 
-    ![На странице B2C_1A_signup_signin пользовательские политики на портале Azure](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-run.png)
+    ![Страница настраиваемой политики B2C_1A_signup_signin в портал Azure](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-run.png)
 
 3. Проверьте процесс, введя **Test** в поле **Имя**.
     В верхней части страницы Azure AD B2C отобразится сообщение об ошибке.
 
-    ![Тестирование проверки входных данных заданным именем на страницу регистрации входа в систему](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-test.png)
+    ![Проверка указанной проверки ввода имени на странице входа для входа](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-test.png)
 
 4. В поле **Имя** введите имя, отличное от Test.
     Azure AD B2C зарегистрирует нового пользователя и отправит в ваше приложение номер лояльности. Запишите номер в этом JWT.

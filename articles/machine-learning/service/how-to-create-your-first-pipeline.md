@@ -1,7 +1,7 @@
 ---
 title: Создание, запуск и отслеживание конвейеров машинного обучения
 titleSuffix: Azure Machine Learning service
-description: Создание и запуск конвейера машинного обучения с помощью пакета SDK Машинного обучения Azure для Python. Конвейеры используются для создания рабочих процессов, которые совмещают этапы машинного обучения, и управления ими. В число которых входят подготовки данных, обучения модели, модели развертывания и определение и оценка.
+description: Создание и запуск конвейера машинного обучения с помощью пакета SDK Машинного обучения Azure для Python. Конвейеры используются для создания рабочих процессов, которые совмещают этапы машинного обучения, и управления ими. Эти этапы включают подготовку данных, обучение модели, развертывание модели и выведение/оценка.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,12 +11,12 @@ ms.author: sanpil
 author: sanpil
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 564f71c9d90a0fa2721389c09388445149d49787
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: b1e45f89cd557281399c86ae75898d99e0d4d381
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67795505"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68327008"
 ---
 # <a name="create-and-run-a-machine-learning-pipeline-by-using-azure-machine-learning-sdk"></a>Создание и запуск конвейера машинного обучения с помощью пакета SDK для машинного обучения Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "67795505"
 
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию службы машинного обучения Azure](https://aka.ms/AMLFree).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * [Настройте среду разработки](how-to-configure-environment.md) для установки пакета SDK для Машинного обучения Azure.
 
@@ -58,17 +58,17 @@ ms.locfileid: "67795505"
 ### <a name="set-up-a-datastore"></a>Настройка хранилища данных
 Хранилище данных содержит данные, которые использует конвейер. У каждой рабочей области есть хранилище данных по умолчанию. Вы можете зарегистрировать дополнительные хранилища данных. 
 
-При создании рабочей области к ней по умолчанию подключаются [служба файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) и [хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction). Хранилище BLOB-объектов — это хранилище данных по умолчанию для рабочей области, но можно также использовать хранилище BLOB-объектов как хранилище данных. Дополнительные сведения см. в статье [Выбор между большими двоичными объектами Azure, службой файлов Azure и дисками Azure](https://docs.microsoft.com/azure/storage/common/storage-decide-blobs-files-disks). 
+При создании рабочей области к ней по умолчанию подключаются [служба файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) и [хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction). Хранилище файлов Azure является хранилищем данных по умолчанию для рабочей области, но вы также можете использовать хранилище BLOB-объектов в качестве хранилища данных. Дополнительные сведения см. в статье [Выбор между большими двоичными объектами Azure, службой файлов Azure и дисками Azure](https://docs.microsoft.com/azure/storage/common/storage-decide-blobs-files-disks). 
 
 ```python
-# Default datastore (Azure file storage)
+# Default datastore (Azure blob storage)
 def_data_store = ws.get_default_datastore() 
 
 # The above call is equivalent to this 
-def_data_store = Datastore(ws, "workspacefilestore")
+def_data_store = Datastore(ws, "workspaceblobstore")
 
-# Get blob storage associated with the workspace
-def_blob_store = Datastore(ws, "workspaceblobstore")
+# Get file storage associated with the workspace
+def_file_store = Datastore(ws, "workspacefileblobstore")
 ```
 
 Передайте файлы данных или каталоги в хранилище данных, чтобы они были доступны из конвейеров. В этом примере используется хранилище BLOB-объектов.
@@ -123,14 +123,15 @@ output_data1 = PipelineData(
 from azureml.core.compute import ComputeTarget, AmlCompute
 
 compute_name = "aml-compute"
- if compute_name in ws.compute_targets:
+vm_size = "STANDARD_NC6"
+if compute_name in ws.compute_targets:
     compute_target = ws.compute_targets[compute_name]
     if compute_target and type(compute_target) is AmlCompute:
         print('Found compute target: ' + compute_name)
 else:
     print('Creating a new compute target...')
-    provisioning_config = AmlCompute.provisioning_configuration(vm_size = vm_size, # NC6 is GPU-enabled
-                                                                min_nodes = 1, 
+    provisioning_config = AmlCompute.provisioning_configuration(vm_size = vm_size, # STANDARD_NC6 is GPU-enabled
+                                                                min_nodes = 0, 
                                                                 max_nodes = 4)
      # create the compute target
     compute_target = ComputeTarget.create(ws, compute_name, provisioning_config)
@@ -189,7 +190,7 @@ except ComputeTargetException:
     databricks_compute.wait_for_completion(True)
 ```
 
-Более подробный пример см. в разделе [пример записной книжки](https://aka.ms/pl-databricks) на сайте GitHub.
+Более подробный пример см. в [примере записной книжки](https://aka.ms/pl-databricks) на сайте GitHub.
 
 ### <a id="adla"></a>Azure Data Lake Analytics
 
@@ -236,14 +237,14 @@ except ComputeTargetException:
     adla_compute.wait_for_completion(True)
 ```
 
-Более подробный пример см. в разделе [пример записной книжки](https://aka.ms/pl-adla) на сайте GitHub.
+Более подробный пример см. в [примере записной книжки](https://aka.ms/pl-adla) на сайте GitHub.
 
 > [!TIP]
 > Конвейеры машинного обучения Azure работают только с хранимыми данными в хранилище данных учетной записи Data Lake Analytics по умолчанию. Если данные, с которыми нужно работать, находятся в хранилище не по умолчанию, то для копирования данных перед обучением можно использовать [`DataTransferStep`](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.data_transfer_step.datatransferstep?view=azure-ml-py).
 
 ## <a id="steps"></a>Создание шагов конвейера
 
-После создания и присоединения целевого объекта вычисления к вашей рабочей области все готово для определения шага конвейера. В пакете SDK для Машинного обучения Azure доступно много встроенных шагов. Основная из этих действий является [PythonScriptStep](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.python_script_step.pythonscriptstep?view=azure-ml-py), который запускает скрипт Python, в указанный целевой объект:
+После создания и присоединения целевого объекта вычисления к вашей рабочей области все готово для определения шага конвейера. В пакете SDK для Машинного обучения Azure доступно много встроенных шагов. Наиболее простым из этих шагов является [писонскриптстеп](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.python_script_step.pythonscriptstep?view=azure-ml-py), который запускает скрипт Python в указанном целевом объекте вычислений:
 
 ```python
 trainStep = PythonScriptStep(
@@ -256,7 +257,7 @@ trainStep = PythonScriptStep(
 )
 ```
 
-Повторное использование предыдущих результатов (`allow_reuse`) является ключом, при использовании конвейеры в среде совместной работы, так как устранения ненужных повторных выполнений обеспечивает гибкость. Это поведение по умолчанию, когда script_name, входные данные и параметры шага не изменяются. При повторном использовании выходных данных шага, задание не будет отправлено для вычислительных ресурсов, вместо этого результаты из предыдущего запуска сразу становятся доступными для выполнения следующего шага. Если задано значение false, новое выполнение всегда будет создаваться для этого шага во время выполнения конвейера. 
+Повторное использование предыдущих результатов`allow_reuse`() является ключом при использовании конвейеров в среде совместной работы, поскольку устранение ненужных повторных запусков обеспечивает гибкость. Это поведение по умолчанию, когда SCRIPT_NAME, входные и параметры шага остаются неизменными. При повторном использовании выходных данных шага задание не отправляется в вычисление, а результаты предыдущего запуска немедленно становятся доступными для выполнения следующего шага. Если задано значение false, то во время выполнения конвейера для этого шага всегда будет создаваться новый запуск. 
 
 После определения шагов следует создать конвейер, добавив в него некоторые созданные шаги (или все).
 
@@ -292,14 +293,14 @@ steps = [dbStep]
 pipeline1 = Pipeline(workspace=ws, steps=steps)
 ```
 
-Дополнительные сведения см. в разделе [пакета azure конвейера действия](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py) и [конвейера класс](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline%28class%29?view=azure-ml-py) ссылки.
+Дополнительные сведения см. в справочнике по классам пакета и [конвейера](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline%28class%29?view=azure-ml-py) [Azure-Pipeline-этапах](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py) .
 
 ## <a name="submit-the-pipeline"></a>Отправка конвейера
 
-При отправке конвейера служба машинного обучения Azure проверяет зависимости для каждого шага и отправляет моментальный снимок указанного исходного каталога. Если исходный каталог не указан, передается текущий локальный каталог. Моментальный снимок также сохраняется как часть эксперимента в рабочей области.
+При отправке конвейера служба машинного обучения Azure проверяет зависимости для каждого шага и отправляет моментальный снимок указанного исходного каталога. Если исходный каталог не указан, передается текущий локальный каталог. Моментальный снимок также хранится в рамках эксперимента в рабочей области.
 
 > [!IMPORTANT]
-> Чтобы заблокировать развертывание файлов, включаемого в моментальном снимке, создайте [.gitignore](https://git-scm.com/docs/gitignore) или `.amlignore` в каталоге и добавьте файлы к нему. `.amlignore` Файл использует тот же синтаксис и шаблоны как [.gitignore](https://git-scm.com/docs/gitignore) файла. Если существуют оба файла, `.amlignore` файл имеет приоритет.
+> Чтобы предотвратить включение файлов в моментальный снимок, создайте [gitignore](https://git-scm.com/docs/gitignore) или `.amlignore` файл в каталоге и добавьте в него файлы. Файл использует тот же синтаксис и шаблоны, что и файл [gitignore.](https://git-scm.com/docs/gitignore) `.amlignore` Если оба файла существуют, `.amlignore` приоритет имеет файл.
 >
 > Дополнительные сведения см. в разделе о [моментальных снимках](concept-azure-machine-learning-architecture.md#snapshots).
 
@@ -320,11 +321,11 @@ pipeline_run1.wait_for_completion()
 
 ![Схема запуска эксперимента в виде конвейера](./media/how-to-create-your-first-pipeline/run_an_experiment_as_a_pipeline.png)
 
-Дополнительные сведения см. в разделе [поэкспериментировать класс](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment?view=azure-ml-py) ссылки.
+Дополнительные сведения см. в справочнике по [классу эксперимента](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment.experiment?view=azure-ml-py) .
 
-## <a name="github-tracking-and-integration"></a>Отслеживание GitHub и интеграции
+## <a name="github-tracking-and-integration"></a>Отслеживание и интеграция GitHub
 
-При запуске обучения, выполните, где исходный каталог является локальный репозиторий Git, сведения о хранилище хранятся в журнале выполнения. Например текущих Идентификаторов фиксаций репозитория, регистрируется как часть журнала.
+При запуске обучающего запуска, в котором исходный каталог является локальным репозиторием Git, сведения о репозитории хранятся в журнале выполнения. Например, текущий идентификатор фиксации для репозитория регистрируется как часть журнала.
 
 ## <a name="publish-a-pipeline"></a>Публикация конвейера
 
@@ -381,14 +382,14 @@ response = requests.post(published_pipeline1.endpoint,
  
 1. Выберите конкретный конвейер, чтобы просмотреть результаты его запуска.
 
-## <a name="caching--reuse"></a>Кэширование и повторное использование  
+## <a name="caching--reuse"></a>Повторное использование кэширования &  
 
-Чтобы оптимизировать и настроить поведение конвейеров можно выполнить ряд действий по кэширование и повторное использование. Например вы можете:
-+ **Отключить повторное использование по умолчанию выходные данные запуска шага** , задав `allow_reuse=False` во время [шаг определения](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py). Повторное использование является ключом, при использовании конвейеры в среде совместной работы, так как исключая ненужные запусков обеспечивает гибкость. Тем не менее можно отказаться от этого.
-+ **Расширить хэширования за пределами скрипта**, включив в абсолютный путь или относительные пути к исходный_каталог на другие файлы и каталоги с помощью `hash_paths=['<file or directory']` 
-+ **Выполните принудительное пересоздание выходные данные для всех шагов в сеансе** с `pipeline_run = exp.submit(pipeline, regenerate_outputs=False)`
+Чтобы оптимизировать и настроить поведение конвейеров, можно выполнить несколько действий по кэшированию и повторному использованию. Например, можно выбрать один из следующих способов:
++ **Отключите повторное использование по умолчанию выходных данных шага выполнения** , `allow_reuse=False` задав во время [определения шага](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py). Повторное использование является ключом при использовании конвейеров в среде совместной работы, поскольку удаление ненужных запусков обеспечивает гибкость. Однако вы можете отказаться от этого.
++ **Расширение хэширования за пределы скрипта**для включения абсолютного или относительного пути к элементу исходный_каталог в другие файлы и каталоги с помощью`hash_paths=['<file or directory']` 
++ Принудительное повторное **Создание выходных данных для всех шагов в запуске** с`pipeline_run = exp.submit(pipeline, regenerate_outputs=False)`
 
-По умолчанию `allow-reuse` для включения действия и хэшируется только основного файла сценария. Таким образом, если скрипт для данного шага остается неизменным (`script_name`, входные данные и параметры), выходные данные предыдущего выполнения шага используется повторно, задание не будет отправлено для вычислительных ресурсов и результаты из предыдущего запуска сразу к следующему шагу вместо них доступны .  
+По умолчанию `allow-reuse` для шагов включена поддержка хэширования только основного файла скрипта. Таким образом, если скрипт для данного шага остается неизменным (`script_name`, входами и параметрами), то выходные данные предыдущего шага запускаются повторно, задание не отправляется в вычисление, а результаты предыдущего запуска сразу же становятся доступными для следующего шага. .  
 
 ```python
 step = PythonScriptStep(name="Hello World", 

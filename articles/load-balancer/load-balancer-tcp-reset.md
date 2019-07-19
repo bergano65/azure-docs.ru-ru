@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: Load Balancer с двунаправленными TCP-пакетами RST при истечении времени ожидания простоя
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 ms.custom: seodec18
 ms.service: load-balancer
 ms.devlang: na
@@ -12,13 +12,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/03/2019
-ms.author: kumud
-ms.openlocfilehash: 4a09492fcb8a7985fa27b6daae89aa5dec0fa6e0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: allensu
+ms.openlocfilehash: 8485f4b6e8d4ff55de4930b3cfb7a07802cf1d41
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65413861"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68274161"
 ---
 # <a name="load-balancer-with-tcp-reset-on-idle-public-preview"></a>Load Balancer со сбросом TCP-подключений при простое (общедоступная предварительная версия)
 
@@ -27,7 +27,7 @@ ms.locfileid: "65413861"
 ![Сброс TCP-подключений в Load Balancer](media/load-balancer-tcp-reset/load-balancer-tcp-reset.png)
 
 >[!NOTE] 
->Балансировщик нагрузки с помощью сброса на функциональные возможности времени ожидания простоя TCP доступна в общедоступной предварительной версии в настоящее время. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+>В настоящее время в данный момент в качестве общедоступной предварительной версии можно использовать Load Balancer с сбросом TCP в режиме ожидания простоя. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
  
 Изменить это поведение по умолчанию и включить отправку признаков TCP Reset при истечении времени ожидания простоя можно в правилах NAT для входящего трафика, правилах балансировки нагрузки и [правилах для исходящего трафика](https://aka.ms/lboutboundrules).  Если эта функция включена для отдельного правила, Load Balancer отправляет двунаправленные признаки TCP Reset (TCP-пакеты RST) клиентским и серверным конечным точкам при истечении времени ожидания простоя для всех соответствующих потоков.
 
@@ -74,9 +74,9 @@ ms.locfileid: "65413861"
 ## <a name="limitations"></a>Ограничения
 
 - С помощью портала нельзя настраивать или просматривать состояние функции сброса TCP-подключений.  Вместо этого используйте шаблоны, REST API, Azure CLI 2.0 или PowerShell.
-- TCP RST отправлено только во время соединения TCP в состоянии УСТАНОВЛЕНО.
+- TCP RST отправлен только во время TCP-соединения в УСТАНОВЛЕНном состоянии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения о [Load Balancer ценовой категории "Стандартный"](load-balancer-standard-overview.md).
 - Сведения о [правилах для исходящих подключений](load-balancer-outbound-rules-overview.md).

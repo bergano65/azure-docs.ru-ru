@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: В рамках этого краткого руководства вы узнаете, как создать общедоступную подсистему балансировки нагрузки уровня "Базовый" с помощью портала Azure.
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 manager: twooley
 Customer intent: I want to create a Basic Load balancer so that I can load balance internet traffic to VMs.
 ms.service: load-balancer
@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/26/2019
-ms.author: kumud
+ms.author: allensu
 ms.custom: seodec18
-ms.openlocfilehash: db781899a3fe0d13d030943ed3ab4ebd3d105ad1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9819111c8264493648233f40252db4fb4410aaf1
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64727570"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68274082"
 ---
 # <a name="quickstart-create-a-basic-load-balancer-by-using-the-azure-portal"></a>Краткое руководство. Создание Load Balancer категории "Базовый" на портале Azure
 
@@ -39,15 +39,15 @@ ms.locfileid: "64727570"
 
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
-    | Подписка               | Выберите свою подписку.    |    
-    | Группа ресурсов         | Выберите **Создать** и введите *MyResourceGroupLB* в текстовом поле.|
-    | Name                   | *myLoadBalancer*                                   |
+    | Subscription               | Выберите свою подписку.    |    
+    | Resource group         | Выберите **Создать** и введите *MyResourceGroupLB* в текстовом поле.|
+    | ИМЯ                   | *myLoadBalancer*                                   |
     | Регион         | Выберите **Западная Европа**.                                        |
-    | type          | Щелкните **Общедоступный**.                                        |
-    | SKU           | Выберите **Базовый**.                          |
+    | Type          | Щелкните **Общедоступный**.                                        |
+    | номер SKU           | Выберите **Базовый**.                          |
     | Общедоступный IP-адрес | Выберите **Создать**. |
     | Имя общедоступного IP-адреса              | *MyPublicIP*   |
-    | Назначение| Статическое|
+    | Назначение| Статические|
 
 3. На вкладке **Отзыв и создание** щелкните **Создать**.   
 
@@ -56,7 +56,7 @@ ms.locfileid: "64727570"
 
 Далее создайте виртуальную сеть и две виртуальные машины для серверного пула подсистемы балансировки нагрузки уровня "Базовый". 
 
-### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
 1. Вверху с левой стороны портала выберите **Создать ресурс** > **Сети** > **Виртуальная сеть**.
    
@@ -68,7 +68,7 @@ ms.locfileid: "64727570"
    
 1. Нажмите кнопку **Создать**.
 
-   ![Создать виртуальную сеть](./media/load-balancer-get-started-internet-portal/2-load-balancer-virtual-network.png)
+   ![Создание виртуальной сети](./media/load-balancer-get-started-internet-portal/2-load-balancer-virtual-network.png)
 
 ### <a name="create-virtual-machines"></a>Создание виртуальных машин
 
@@ -270,7 +270,7 @@ ms.locfileid: "64727570"
 
 Чтобы удалить подсистему балансировки нагрузки и все связанные ресурсы, если они больше не нужны, откройте группу ресурсов **MyResourceGroupLB** и выберите **Удалить группу ресурсов**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом кратком руководстве вы создали подсистему балансировки нагрузки уровня "Базовый". Вы создали и настроили группу ресурсов, сетевые ресурсы, внутренние серверы, пробу работоспособности и правила для использования с подсистемой балансировки нагрузки. Вы установили службы IIS на виртуальных машинах и использовали их для проверки подсистемы балансировки нагрузки. 
 

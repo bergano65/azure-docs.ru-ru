@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d6c8bdb27e9e976a7a490c2a824e994242378641
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 7e798b4316b8ccdc2f76512d4651365f5bb151ce
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671217"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68278327"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-linux"></a>Установка драйверов GPU NVIDIA на виртуальные машины серии N под управлением Linux
 
@@ -170,9 +170,9 @@ sudo reboot
 
 * **HPC версии 7.4 на основе CentOS.** Драйверы RDMA и Intel MPI 5.1 будут установлены на виртуальной машине.
 
-## <a name="install-grid-drivers-on-nv-or-nvv2-series-vms"></a>Установка драйверов GRID на виртуальные машины серии NV или NVv2
+## <a name="install-grid-drivers-on-nv-or-nvv3-series-vms"></a>Установка драйверов сетки для виртуальных машин серии NV или NVv3
 
-Чтобы установить драйверы NVIDIA GRID на виртуальных машинах серии NV или NVv2, подключитесь по протоколу SSH к каждой виртуальной машине и выполните действия, необходимые для дистрибутива Linux. 
+Чтобы установить драйверы NVIDIA GRID на виртуальных машинах NV или NVv3, установите SSH-подключение к каждой виртуальной машине и выполните действия для дистрибутива Linux. 
 
 ### <a name="ubuntu"></a>Ubuntu 
 
@@ -188,8 +188,10 @@ sudo reboot
    sudo apt-get dist-upgrade -y
 
    sudo apt-get install build-essential ubuntu-desktop -y
+   
+   sudo apt-get install linux-azure -y
    ```
-3. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (На виртуальных машинах NV или NVv2 используйте только драйвер NVIDIA.) Чтобы сделать это, создайте файл в `/etc/modprobe.d` с именем `nouveau.conf` со следующим содержимым:
+3. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (На виртуальных машинах NV или NVv2 используйте только драйвер NVIDIA.) Для этого создайте файл `/etc/modprobe.d` с именем `nouveau.conf` со следующим содержимым:
 
    ```
    blacklist nouveau
@@ -226,8 +228,15 @@ sudo reboot
  
    ```
    IgnoreSP=FALSE
+   EnableUI=FALSE
    ```
-9. Перезапустите виртуальную машину и приступите к проверке установки.
+   
+9. Удалите следующие из `/etc/nvidia/gridd.conf` , если она есть:
+ 
+   ```
+   FeatureType=0
+   ```
+10. Перезапустите виртуальную машину и приступите к проверке установки.
 
 
 ### <a name="centos-or-red-hat-enterprise-linux"></a>CentOS или Red Hat Enterprise Linux 
@@ -242,9 +251,11 @@ sudo reboot
    sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
  
    sudo yum install dkms
+   
+   sudo yum install hyperv-daemons
    ```
 
-2. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (На виртуальных машинах NV или NV2 используйте только драйвер NVIDIA.) Чтобы сделать это, создайте файл в `/etc/modprobe.d` с именем `nouveau.conf` со следующим содержимым:
+2. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (На виртуальных машинах NV или NV2 используйте только драйвер NVIDIA.) Для этого создайте файл `/etc/modprobe.d` с именем `nouveau.conf` со следующим содержимым:
 
    ```
    blacklist nouveau
@@ -290,8 +301,15 @@ sudo reboot
  
    ```
    IgnoreSP=FALSE
+   EnableUI=FALSE 
    ```
-9. Перезапустите виртуальную машину и приступите к проверке установки.
+9. Удалите следующие из `/etc/nvidia/gridd.conf` , если она есть:
+ 
+   ```
+   FeatureType=0
+   ```
+10. Перезапустите виртуальную машину и приступите к проверке установки.
+
 
 ### <a name="verify-driver-installation"></a>Проверка установки драйверов
 

@@ -2,6 +2,8 @@
 title: Изменения, вносимые в проект MVC при подключении к Azure AD
 description: Описывает, что происходит с проектом MVC при подключении к приложению Azure AD с помощью подключенных служб Visual Studio
 services: active-directory
+ms.service: active-directory
+ms.subservice: develop
 author: ghogen
 manager: douge
 ms.assetid: 8b24adde-547e-4ffe-824a-2029ba210216
@@ -13,12 +15,12 @@ ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e40a1fd72adf353d5c4d856544482cb7bd68f43
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d8a2b73276dd6acc99e91df768ebf613b9e70477
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65413989"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68320744"
 ---
 # <a name="what-happened-to-my-mvc-project-visual-studio-azure-active-directory-connected-service"></a>Что произошло с моим проектом MVC в подключенной службе Visual Studio Azure Active Directory?
 
@@ -34,7 +36,7 @@ ms.locfileid: "65413989"
 
 Это изменение влияет на файлы проекта (ссылки \*.NET) и `packages.config` (ссылки NuGet).
 
-| type | Справочные материалы |
+| Type | Ссылка |
 | --- | --- |
 | .NET; NuGet | Microsoft.IdentityModel.Protocol.Extensions |
 | .NET; NuGet | Microsoft.Owin |
@@ -49,7 +51,7 @@ ms.locfileid: "65413989"
 
 Дополнительные ссылки, если выбран параметр **Чтение данных каталога**
 
-| type | Справочные материалы |
+| Тип | Ссылка |
 | --- | --- |
 | .NET; NuGet | EntityFramework |
 | .NET        | EntityFramework.SqlServer (только для Visual Studio 2015) |
@@ -63,7 +65,7 @@ ms.locfileid: "65413989"
 
 Следующие ссылки удалены (только для проектов ASP.NET 4, например в Visual Studio 2015):
 
-| type | Справочные материалы |
+| Type | Ссылка |
 | --- | --- |
 | .NET; NuGet | Microsoft.AspNet.Identity.Core |
 | .NET; NuGet | Microsoft.AspNet.Identity.EntityFramework |
@@ -145,7 +147,7 @@ ms.locfileid: "65413989"
 
 ### <a name="file-backup-visual-studio-2015"></a>Резервные копии файлов (для Visual Studio 2015)
 
-При добавлении подключенной службы Visual Studio 2015 создает резервные копии всех измененных и удаленных файлов. Все эти файлы сохраняются в папке `Backup/AzureAD`. Visual Studio 2017 и более поздних версий не создает резервные копии.
+При добавлении подключенной службы Visual Studio 2015 создает резервные копии всех измененных и удаленных файлов. Все эти файлы сохраняются в папке `Backup/AzureAD`. Visual Studio 2017 и более поздние версии не создают резервные копии.
 
 - `Startup.cs`
 - `App_Start\IdentityConfig.cs`
@@ -163,7 +165,7 @@ ms.locfileid: "65413989"
 
 [Подробнее об Azure Active Directory](https://azure.microsoft.com/services/active-directory/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md)
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v1-aspnet-webapp.md)

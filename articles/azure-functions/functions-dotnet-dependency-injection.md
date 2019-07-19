@@ -1,6 +1,6 @@
 ---
-title: Использовать внедрение зависимостей в функциях Azure .NET
-description: Узнайте, как использовать внедрение зависимостей для регистрации и использования служб в функциях .NET
+title: Использование внедрения зависимостей в функциях Azure .NET
+description: Узнайте, как использовать внедрение зависимостей для регистрации и использования служб в функциях .NET.
 services: functions
 documentationcenter: na
 author: craigshoemaker
@@ -10,37 +10,38 @@ ms.service: azure-functions
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 05/28/2019
-ms.author: jehollan, cshoe
-ms.openlocfilehash: 781bcdc158cb362b7c46e1ba9771b6a92ebc56a8
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.author: cshoe
+ms.reviewer: jehollan
+ms.openlocfilehash: 1ebb2fd77830074648a580dddad98e05e10c9c75
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67479622"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67850021"
 ---
-# <a name="use-dependency-injection-in-net-azure-functions"></a>Использовать внедрение зависимостей в функциях Azure .NET
+# <a name="use-dependency-injection-in-net-azure-functions"></a>Использование внедрения зависимостей в функциях Azure .NET
 
-Функции Azure поддерживают шаблон внедрения зависимостей (DI) программного обеспечения конструктора, который является способ достижения [Inversion of Control (IoC)](https://docs.microsoft.com/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) между классами и их зависимости.
+Функции Azure поддерживают шаблон проектирования программного обеспечения внедрения зависимостей (DI), который является методом для обеспечения [инверсии управления (IOC)](https://docs.microsoft.com/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) между классами и их зависимостями.
 
-Функции Azure строится на основе функции внедрения зависимостей ASP.NET Core. Оповещения службы, время существования и шаблоны проектирования [внедрения зависимостей ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) перед использованием функции внедрения Зависимостей в функциях Azure рекомендуется использовать приложение.
+Функции Azure строятся на основе функций внедрения зависимостей ASP.NET Core. Прежде чем использовать функции DI в приложении "функции Azure", необходимо знать о службах, времени жизни и шаблонах разработки [ASP.NET Core внедрения зависимостей](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) .
 
-Поддержка внедрения зависимостей начинается с помощью функций Azure версии 2.x.
+Поддержка внедрения зависимостей начинается с функций Azure 2. x.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
-Прежде чем использовать внедрение зависимостей, необходимо установить следующие пакеты NuGet:
+Прежде чем можно будет использовать внедрение зависимостей, необходимо установить следующие пакеты NuGet:
 
-- [Microsoft.Azure.Functions.Extensions](https://www.nuget.org/packages/Microsoft.Azure.Functions.Extensions/)
+- [Microsoft. Azure. functions. Extensions](https://www.nuget.org/packages/Microsoft.Azure.Functions.Extensions/)
 
-- [Пакет Microsoft.NET.Sdk.Functions](https://www.nuget.org/packages/Microsoft.NET.Sdk.Functions/) версии 1.0.28 или более поздней версии
+- [Пакет Microsoft. NET. SDK. functions](https://www.nuget.org/packages/Microsoft.NET.Sdk.Functions/) Version 1.0.28 или более поздней версии
 
-- Необязательно: [Microsoft.Extensions.Http](https://www.nuget.org/packages/Microsoft.Extensions.Http/) только необходимые для регистрации HttpClient при запуске
+- Необязательно: [Microsoft. Extensions. http](https://www.nuget.org/packages/Microsoft.Extensions.Http/) требуется только для регистрации HttpClient при запуске
 
 ## <a name="register-services"></a>Регистрация служб
 
-Чтобы зарегистрировать службы, можно создать метод для настройки и добавить компоненты к списку `IFunctionsHostBuilder` экземпляра.  Узел функций Azure создает экземпляр класса `IFunctionsHostBuilder` и передает его непосредственно в методе.
+Для регистрации служб можно создать метод для настройки и добавления компонентов в `IFunctionsHostBuilder` экземпляр.  Узел функций Azure создает экземпляр `IFunctionsHostBuilder` и передает его непосредственно в метод.
 
-Чтобы зарегистрировать метод, добавьте `FunctionsStartup` атрибута сборки, который задает имя типа, используемый при запуске системы. Также код ссылается на предварительную версию [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) в Nuget.
+Чтобы зарегистрировать метод, добавьте `FunctionsStartup` атрибут Assembly, указывающий имя типа, используемое при запуске. Кроме того, код ссылается на предварительный выпуск [Microsoft. Azure. Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) в NuGet.
 
 ```csharp
 using System;
@@ -68,9 +69,9 @@ namespace MyNamespace
 }
 ```
 
-## <a name="use-injected-dependencies"></a>Использовать внедренный зависимости
+## <a name="use-injected-dependencies"></a>Использовать внедренные зависимости
 
-ASP.NET Core использует внедрение через конструктор для создания зависимостей, доступных в функцию. В следующем образце показано как `IMyService` и `HttpClient` зависимостей внедряются в функцию, активируемую HTTP.
+ASP.NET Core использует внедрение конструктора, чтобы сделать зависимости доступными для вашей функции. В следующем примере показано, как `IMyService` зависимости `HttpClient` и вставляются в функцию, активируемую HTTP.
 
 ```csharp
 using System;
@@ -111,43 +112,43 @@ namespace MyNamespace
 }
 ```
 
-Использование внедрение через конструктор означает, что не следует использовать статические функции Если вы хотите воспользоваться преимуществами внедрения зависимостей.
+Использование внедрения конструктора означает, что не следует использовать статические функции, если вы хотите воспользоваться преимуществами внедрения зависимостей.
 
 ## <a name="service-lifetimes"></a>Время существования службы
 
-Приложения функций Azure обеспечивают же времени существования службы как [внедрения зависимостей ASP.NET](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection#service-lifetimes): временными, областью действия и singleton.
+Приложения функций Azure предоставляют те же времена жизни службы, что и [внедрение зависимостей ASP.NET](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection#service-lifetimes): временные, с областями и одноэлементные.
 
-В приложение функций время существования ограниченная служба соответствует времени существования выполнения функции. Ограниченные службы создаются один раз для каждого выполнения. Последующие запросы для этой службы во время выполнения повторно использовать существующий экземпляр службы. Время существования службы одноэлементный соответствует времени существования узла и многоцелевое выполнений этой функции в этом экземпляре.
+В приложении-функции время существования службы соответствует времени существования для выполнения функции. Службы с заданной областью создаются один раз для каждого выполнения. Последующие запросы для этой службы во время выполнения повторно используют существующий экземпляр службы. Время существования одноэлементной службы соответствует времени существования узла и повторно используется в ходе выполнения функций на этом экземпляре.
 
-Одноэлементные службы времени существования рекомендуется использовать для подключения и клиентов, например `SqlConnection`, `CloudBlobClient`, или `HttpClient` экземпляров.
+Для подключений и клиентов рекомендуется использовать службы времени жизни Singleton, `SqlConnection` `CloudBlobClient`например экземпляры, или `HttpClient` .
 
-Просмотреть или скачать [образец существования другой службой](https://aka.ms/functions/di-sample) на сайте GitHub.
+Просмотр или Загрузка [образца различных жизненных циклов обслуживания](https://aka.ms/functions/di-sample) на GitHub.
 
-## <a name="logging-services"></a>Службы ведения журнала
+## <a name="logging-services"></a>Службы ведения журналов
 
-Если вам нужна поставщика ведения журнала, рекомендуется зарегистрировать `ILoggerProvider` экземпляра. Application Insights будет автоматически добавляться функциями Azure.
+Если вам нужен собственный регистратор, рекомендуется зарегистрировать `ILoggerProvider` экземпляр. Application Insights автоматически добавляется функциями Azure.
 
 > [!WARNING]
-> Не добавляйте `AddApplicationInsightsTelemetry()` в коллекцию служб, так как он регистрирует службы конфликтующие со службами, предоставляемую средой.
+> Не добавляйте `AddApplicationInsightsTelemetry()` в коллекцию служб, так как она регистрирует службы, конфликтующие со службами, предоставляемыми средой.
 
-## <a name="function-app-provided-services"></a>Службы приложений, которые предоставляются функции
+## <a name="function-app-provided-services"></a>Службы, предоставляемые приложением функции
 
-Функция основное приложение регистрирует многие службы. Следующие службы можно безопасно получать в качестве зависимости в приложении:
+Узел функции регистрирует множество служб. Следующие службы являются надежными для использования в качестве зависимости в приложении:
 
 |Тип службы|Срок действия|Описание|
 |--|--|--|
-|`Microsoft.Extensions.Configuration.IConfiguration`|одноэлементный|Конфигурация среды выполнения|
-|`Microsoft.Azure.WebJobs.Host.Executors.IHostIdProvider`|одноэлементный|Отвечает за предоставление идентификатор экземпляра узла|
+|`Microsoft.Extensions.Configuration.IConfiguration`|Единый|Конфигурация среды выполнения|
+|`Microsoft.Azure.WebJobs.Host.Executors.IHostIdProvider`|Единый|Отвечает за предоставление идентификатора экземпляра узла|
 
-При наличии других служб, которые вы хотите использовать зависимость от, [создать проблему и предложить их на сайте GitHub](https://github.com/azure/azure-functions-host).
+Если существуют другие службы, от которых требуется зависимость, [Создайте вопрос и предложите их на GitHub](https://github.com/azure/azure-functions-host).
 
-### <a name="overriding-host-services"></a>Переопределение размещения служб
+### <a name="overriding-host-services"></a>Переопределение служб узла
 
-Переопределение служб, предоставляемых ведущим приложением в настоящее время не поддерживается.  При наличии служб, необходимо переопределить, [создать проблему и предложить их на сайте GitHub](https://github.com/azure/azure-functions-host).
+Переопределение служб, предоставляемых узлом, в настоящее время не поддерживается.  Если имеются службы, которые необходимо переопределить, [создайте ошибку и предложите их на GitHub](https://github.com/azure/azure-functions-host).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для получения дополнительных сведений см. следующие ресурсы:
 
-- [Как отслеживать ваше приложение-функция](functions-monitoring.md)
+- [Мониторинг приложения функции](functions-monitoring.md)
 - [Рекомендации по функциям](functions-best-practices.md)

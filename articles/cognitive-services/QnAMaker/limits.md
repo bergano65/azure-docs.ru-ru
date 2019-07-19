@@ -8,22 +8,23 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 05/22/2019
+ms.date: 07/18/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 43d0e7566102c882d4a2819237a795fdff425f75
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: b366352d19b3f1e03e32e5fbddf0cb2816fa1ba3
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67446494"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68320285"
 ---
 # <a name="qna-maker-knowledge-base-limits-and-boundaries"></a>Лимиты и границы базы данных QnA Maker
-Полный список ограничений в QnA Maker.
+
+Приведенные ниже ограничения QnA Maker являются сочетанием [ограничений ценовой категории службы поиска Azure](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity) и [ограничений ценовой категории QnA Maker](https://azure.microsoft.com/pricing/details/cognitive-services/qna-maker/). Необходимо знать оба набора ограничений, чтобы понять, сколько баз знаний можно создать для каждого ресурса, а также сколько может расти каждая база знаний.
 
 ## <a name="knowledge-bases"></a>Базы знаний
 
-* Максимальное число баз знаний основано на [ограничениях категорий службы поиска Azure](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity)
+Максимальное число баз знаний основано на ограничениях [уровня поиска Azure](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity).
 
 |**Категория службы поиска Azure** | **Бесплатный** | **базовая;** |**S1** | **S2**| **S3** |**S3 HD**|
 |---|---|---|---|---|---|----|
@@ -32,11 +33,18 @@ ms.locfileid: "67446494"
  Например, если для уровня допускается 15 индексов, можно опубликовать 14 баз знаний (1 индекс для каждой опубликованной базы знаний). Пятнадцатый индекс (`testkb`) используется для разработки и тестирования всех баз знаний. 
 
 ## <a name="extraction-limits"></a>Ограничения на извлечение
-* Сведения о максимальном числе файлов, которые можно извлечь, и максимальном размере файла см. на странице [цен на QnAMaker](https://azure.microsoft.com/pricing/details/cognitive-services/qna-maker/).
-* Максимальное число прямых ссылок, обход которых можно выполнить для извлечения вопросов и ответов из HTML-страниц часто задаваемых вопросов: 20
+
+### <a name="maximum-number-of-files"></a>Максимальное число файлов
+
+Максимальное число файлов, которые можно извлечь, и максимальный размер файла основаны на QnA Makerных **[ограничениях ценовой](https://azure.microsoft.com/pricing/details/cognitive-services/qna-maker/)** категории.
+
+### <a name="maximum-number-of-deep-links-from-url"></a>Максимальное число глубоких ссылок из URL-адреса
+
+Максимальное число глубоких ссылок, которые можно просканировать для извлечения QnA из страницы URL-адреса, равно **20**.
 
 ## <a name="metadata-limits"></a>Ограничения на метаданные
-* Максимальное число полей метаданных на одну базу знаний основано на [ограничениях категорий службы поиска Azure](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity)
+
+Максимальное число полей метаданных в базе знаний основано на ограничениях **[уровня поиска Azure](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity)** .
 
 |**Категория службы поиска Azure** | **Бесплатный** | **базовая;** |**S1** | **S2**| **S3** |**S3 HD**|
 |---|---|---|---|---|---|----|
@@ -52,7 +60,7 @@ ms.locfileid: "67446494"
 * Длина имени файла: 200
 * Поддерживаемые форматы файлов: TSV, PDF, TXT, DOCX, XLSX.
 * Максимальное число альтернативных вопросов: 300
-* Максимальное число пар "вопрос — ответ": Зависит от [уровень поиска Azure](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity#document-limits) выбран. В документ в индекс службы поиска Azure сопоставляет пары вопросов и ответов. 
+* Максимальное число пар "вопрос — ответ": Зависит от выбранных **[ограничений уровня поиска Azure](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity#document-limits)** . Пара вопросов и ответов — это документ в индексе службы поиска Azure. 
 
 ## <a name="create-knowledge-base-call-limits"></a>Ограничения на вызовы создания базы знаний
 Эти значения представляют ограничения для каждого действия создания базы знаний, то есть нажатия кнопки *Создать базу знаний* или вызова API CreateKnowledgeBase.
@@ -67,10 +75,10 @@ ms.locfileid: "67446494"
 * Максимальное число добавленных или удаленных полей метаданных: 10
 * Максимальное число URL-адресов, которые можно обновить: 5
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, когда и как можно изменять уровни служб.
 
-* [QnA Maker](how-to/upgrade-qnamaker-service.md#upgrade-qna-maker-management-sku): При необходимо иметь несколько исходных файлов или больше документов в базе знаний, помимо на текущем уровне, обновите службу QnA Maker ценового уровня.
+* [QnA Maker](how-to/upgrade-qnamaker-service.md#upgrade-qna-maker-management-sku): Если вам требуется больше исходных файлов или документов большего размера в базе знаний, помимо текущего уровня, обновите ценовую категорию службы QnA Maker.
 * [Служба приложений](how-to/upgrade-qnamaker-service.md#upgrade-app-service): Если потребуется, чтобы база знаний обслуживала большее количество запросов из клиентского приложения, перейдите на ценовую категорию службы приложений.
 * [Поиск Azure](how-to/upgrade-qnamaker-service.md#upgrade-azure-search-service): Если вы планируете использовать несколько баз знаний, перейдите на ценовую категорию службы поиска Azure.

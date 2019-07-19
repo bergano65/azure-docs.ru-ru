@@ -1,6 +1,6 @@
 ---
-title: 'Монитор состояния v2 Справочник по API Azure: Отключить ядра инструментирования | Документация Майкрософт'
-description: Справочник по API v2 монитор состояния. Disable-InstrumentationEngine. Мониторинг производительности веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложений ASP.NET, размещенным на предприятиях, на виртуальных машинах или в Azure.
+title: 'Справочник по API Azure монитор состояния v2: Отключить модуль инструментирования | Документация Майкрософт'
+description: Справочник по API монитор состояния v2. Disable-Инструментатионенгине. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
 services: application-insights
 documentationcenter: .net
 author: MS-TimothyMothra
@@ -12,25 +12,20 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: cd35af6ead2d734fa68b85b199aac219daf8dcd9
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 827f8555718a22979617c9b0794dce3bd92207f4
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67807155"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68326387"
 ---
-# <a name="status-monitor-v2-api-disable-instrumentationengine-v040-alpha"></a>Состояние монитора v2 API: Disable-InstrumentationEngine (v0.4.0-альфа-версия)
+# <a name="status-monitor-v2-api-disable-instrumentationengine"></a>API монитор состояния v2: Disable-Инструментатионенгине
 
-В этой статье описывается командлет, который является членом [модуль Az.ApplicationMonitor PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
-
-> [!IMPORTANT]
-> Состояние монитора v2 в настоящее время находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания, и мы не рекомендуем для рабочих нагрузок. Некоторые функции могут не поддерживаться, а некоторые могут иметь ограниченные возможности.
-> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+В этой статье описывается командлет, который является членом [модуля PowerShell AZ. аппликатионмонитор](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
 ## <a name="description"></a>Описание
-Отключает ядро инструментирования, удаляя некоторые разделы реестра.
-Перезапустите службы IIS, чтобы изменения вступили в силу.
+Отключает модуль инструментирования, удаляя некоторые разделы реестра.
+Перезапустите IIS, чтобы изменения вступили в силу.
 
 > [!IMPORTANT] 
 > Для этого командлета требуется сеанс PowerShell с разрешениями администратора.
@@ -44,12 +39,12 @@ PS C:\> Disable-InstrumentationEngine
 ## <a name="parameters"></a>Параметры 
 
 ### <a name="-verbose"></a>-Verbose
-**Общий параметр.** Этот параметр можно используйте для вывода подробных журналов.
+**Общий параметр.** Используйте этот параметр для вывода подробных журналов.
 
 ## <a name="output"></a>Вывод
 
 
-#### <a name="example-output-from-successfully-disabling-the-instrumentation-engine"></a>Пример выходных данных успешно отключать подсистему инструментирования
+#### <a name="example-output-from-successfully-disabling-the-instrumentation-engine"></a>Пример выходных данных для успешного отключения модуля инструментирования
 
 ```
 Configuring IIS Environment for instrumentation engine...
@@ -62,5 +57,5 @@ Configuring registry for instrumentation engine...
 
 ## <a name="next-steps"></a>Следующие шаги
 
- Новые возможности в версии 2 монитор состояния:
- - Используйте наше руководство по [Устранение](status-monitor-v2-troubleshoot.md) v2 монитор состояния.
+ Дополнительные возможности монитор состояния версии 2:
+ - Воспользуйтесь нашим руководством по [устранению неполадок](status-monitor-v2-troubleshoot.md) монитор состояния v2.

@@ -12,27 +12,24 @@ ms.author: srbozovi
 ms.reviewer: sstein, carlrab
 manager: craigg
 ms.date: 12/04/2018
-ms.openlocfilehash: b7eb9ecd6b94aad263346ad6b5c45b694e0bd46f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c5304c62b29d842f9beeadb34eba1cb53048d179
+ms.sourcegitcommit: af58483a9c574a10edc546f2737939a93af87b73
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60700014"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68302276"
 ---
 # <a name="determine-the-management-endpoint-ip-address"></a>Определение IP-адреса конечной точки управления
 
 Виртуальный кластер Управляемого экземпляра Базы данных SQL Azure содержит конечную точку управления, которую корпорация Майкрософт использует для операций управления. Конечная точка управления защищена с помощью встроенного брандмауэра на уровне сети и взаимной проверкой сертификатов на уровне приложения. Вы можете определить IP-адрес конечной точки управления, но вы не можете получить доступ к этой конечной точке.
 
-## <a name="determine-ip-address"></a>Определение IP-адреса
+Чтобы определить IP-адрес управления, выполните поиск DNS в полном доменном имени управляемого `mi-name.zone_id.database.windows.net`экземпляра:. Будет возвращена запись DNS, аналогичная `trx.region-a.worker.vnet.database.windows.net`. После этого можно выполнить поиск DNS для этого полного доменного имени с удаленным именем ". vnet". Будет возвращен IP-адрес управления. 
 
-Предположим, что узел Управляемого экземпляра — `mi-demo.xxxxxx.database.windows.net`. Запустите `nslookup` с использованием имени узла.
-
-![Разрешение имени внутреннего узла](./media/sql-database-managed-instance-management-endpoint/01_find_internal_host.png)
-
-Теперь снова выполните команду `nslookup` для выделенного имени, удалив сегмент `.vnet.`. При выполнении этой команды вы получите общедоступный IP-адрес.
-
-![Разрешение общедоступного IP-адреса](./media/sql-database-managed-instance-management-endpoint/02_find_public_ip.png)
-
-## <a name="next-steps"></a>Дальнейшие действия
+Если вы заменили \<полное доменное имя\> MI на запись DNS управляемого экземпляра `mi-name.zone_id.database.windows.net`, это сделает это.
+  
+``` powershell
+  $MIFQDN = "<MI FQDN>"
+  resolve-dnsname $MIFQDN | select -first 1  | %{ resolve-dnsname $_.NameHost.Replace(".vnet","")}
+```
 
 Дополнительные сведения об Управляемых экземплярах и подключениях см. в статье [Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md).

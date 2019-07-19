@@ -7,12 +7,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
-ms.openlocfilehash: fa6ab58de09e26683cdd958ef77b0fa01d88e2e0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2c2d776012e702469be4fd3217fb89be0ad419bf
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66225593"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68261619"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-async-java"></a>Советы по повышению производительности для Azure Cosmos DB и Async Java
 
@@ -198,7 +198,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
     Сложность запроса влияет на количество единиц запроса, потребляемых операцией. Число предикатов и их характер, количество определяемых пользователем функций и размер набора исходных данных — все это влияет на плату за операции запроса.
 
-    Чтобы оценить расходы на любую операцию (создание, обновление или удаление), проверьте значение заголовка [x-ms-request-charge](https://docs.microsoft.com/rest/api/cosmos-db/common-cosmosdb-rest-request-headers). Это значение содержит число единиц запроса, потребляемых соответствующей операцией. Также можно проверить аналогичное свойство RequestCharge в ResourceResponse<T> или FeedResponse<T>.
+    Чтобы оценить расходы на любую операцию (создание, обновление или удаление), проверьте значение заголовка [x-ms-request-charge](https://docs.microsoft.com/rest/api/cosmos-db/common-cosmosdb-rest-request-headers). Это значение содержит число единиц запроса, потребляемых соответствующей операцией. Вы также можете просмотреть эквивалентное свойство RequestCharge в ResourceResponse\<t > или FeedResponse\<t >.
 
     ```Java
     ResourceResponse<Document> response = asyncClient.createDocument(collectionLink, documentDefinition, null,

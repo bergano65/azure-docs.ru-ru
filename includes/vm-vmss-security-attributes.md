@@ -4,37 +4,37 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 07/10/2019
 ms.author: mbaldwin
-ms.openlocfilehash: df11493fa9663d3fcbf0a2f74a5acbead55a25fb
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 642f63966533416be7b86bae362d24cd286706b3
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67800280"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68306127"
 ---
 ## <a name="preventative"></a>профилактическая;
 
 | Атрибут безопасности | Да/нет | Примечания |
 |---|---|--|
-| Шифрование неактивных данных (например, шифрование на стороне сервера, шифрование на стороне сервера с управляемыми клиентом ключами и другие функции шифрования) | Да | См. в разделе [шифрование виртуальной машины Linux в Azure](/azure/virtual-machines/linux/encrypt-disks.md) и [шифрование дисков на виртуальной Машине Windows](/azure/virtual-machines/windows/encrypt-disks.md). |
-| Шифрование при обмене данными (например, шифрование ExpressRoute в виртуальной сети шифрования и шифрование между сетями)| Да | Azure поддерживает виртуальные машины [ExpressRoute](/azure/expressroute) и шифрование виртуальной сети. См. в разделе [шифрования на виртуальных машинах во время передачи](/azure/security/security-azure-encryption-overview.md#in-transit-encryption-in-vms). |
-| Управление ключами шифрования (CMK, BYOK, и т.д.)| Да | Управляемые клиентом ключи — это сценарий поддерживается шифрование в Azure; см. в разделе [Общие сведения о шифровании Azure](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms.md).|
+| Шифрование неактивных (таких как шифрование на стороне сервера, шифрование на стороне сервера с помощью управляемых клиентом ключей и другие функции шифрования). | Да | Узнайте, [как зашифровать виртуальную машину Linux в Azure](/azure/virtual-machines/linux/encrypt-disks) и зашифровать [Виртуальные диски на виртуальной машине Windows](/azure/virtual-machines/windows/encrypt-disks). |
+| Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Да | Виртуальные машины Azure поддерживают шифрование [ExpressRoute](/azure/expressroute) и виртуальной сети. См. раздел [Шифрование транзитного пути в виртуальных машинах](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms). |
+| Обработка ключа шифрования (CMK, BYOK и т. д.)| Да | Ключи, управляемые клиентом, являются поддерживаемым сценарием шифрования Azure. см. раздел [Общие сведения о шифровании Azure](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms).|
 | Шифрование на уровне столбцов (службы данных Azure)| Н/Д | |
-| Вызовы API в зашифрованном виде| Да | С помощью HTTPS и SSL. |
+| Вызовы API в зашифрованном виде| Да | Через HTTPS и SSL. |
 
 ## <a name="network-segmentation"></a>сегментация сети;
 
 | Атрибут безопасности | Да/нет | Примечания |
 |---|---|--|
-| Поддержка конечной точки службы| Да | |
-| Внедрение поддержки виртуальной сети| Да | . |
-| Поддержка сетевой изоляции и Firewalling| Да |  |
-| Принудительного туннелирования поддержки| Да | См. в разделе [Настройка принудительного туннелирования с помощью модели развертывания Azure Resource Manager](/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm.md). |
+| Поддержка конечных точек службы| Да | |
+| Поддержка внедрения виртуальной сети| Да | . |
+| Поддержка сетевой изоляции и брандмауэров| Да |  |
+| Поддержка принудительного туннелирования| Да | См. раздел [Настройка принудительного туннелирования с помощью модели развертывания Azure Resource Manager](/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm). |
 
 ## <a name="detection"></a>Обнаружение
 
 | Атрибут безопасности | Да/нет | Примечания|
 |---|---|--|
-| Azure Monitor поддержки (Log analytics, Application insights, и т.д.)| Да | См. в разделе [мониторинг и обновление виртуальной машины Linux в Azure](/azure/virtual-machines/linux/tutorial-monitoring.md) и [мониторинг и обновление виртуальной машины Windows в Azure](/azure/virtual-machines/windows/tutorial-monitoring.md). |
+| Поддержка мониторинга Azure (log Analytics, App Insights и т. д.)| Да | См. статью [мониторинг и обновление виртуальной машины Linux в Azure](/azure/virtual-machines/linux/tutorial-monitoring) и [Отслеживание и обновление виртуальной машины Windows в Azure](/azure/virtual-machines/windows/tutorial-monitoring). |
 
 ## <a name="identity-and-access-management"></a>Управление удостоверениями и доступом
 
@@ -48,11 +48,11 @@ ms.locfileid: "67800280"
 
 | Атрибут безопасности | Да/нет | Примечания|
 |---|---|--|
-| Управление и ведение журнала и аудит| Да |  |
-| Ведение журнала данных и аудита | Нет |  |
+| Ведение журнала и аудит в плоскости управления и управления| Да |  |
+| Ведение журнала и аудит в плоскости данных | Нет |  |
 
 ## <a name="configuration-management"></a>Управление конфигурацией
 
 | Атрибут безопасности | Да/нет | Примечания|
 |---|---|--|
-| Поддержка конфигурации management (Управление версиями конфигурации и т. д.)| Да |  | 
+| Поддержка управления конфигурацией (управление версиями конфигураций и т. д.)| Да |  | 

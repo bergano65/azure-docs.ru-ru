@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 07/10/2018
+ms.date: 07/17/2019
 ms.author: juliako
-ms.openlocfilehash: c599bc2bba27a3b3603d8d67e2c6049dc2a8b08b
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 6157f59d96770298d947a1cf6ca28aa343e1a0d4
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67840154"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68311823"
 ---
 # <a name="azure-media-player-overview"></a>Обзор Проигрывателя мультимедиа Azure
 
@@ -24,13 +24,16 @@ ms.locfileid: "67840154"
 
 Службы мультимедиа Microsoft Azure поддерживают форматы потоковой передачи HLS, DASH и Smooth Streaming для воспроизведения содержимого. Проигрыватель мультимедиа Azure учитывает эти различные форматы и автоматически воспроизводит наиболее подходящую ссылку в зависимости от возможностей платформы или браузера. Службы мультимедиа также позволяют динамически шифровать ресурсы с использованием PlayReady или 128-битного шифрования AES. Проигрыватель мультимедиа Azure поддерживает расшифровку содержимого, зашифрованного с помощью PlayReady и 128-битного алгоритма шифрования AES, если заданы соответствующие параметры. 
 
+> [!NOTE]
+> Для зашифрованного содержимого Widevine требуется воспроизведение HTTPS.
+
 [Начните бесплатное пробное использование](https://azure.microsoft.com/pricing/free-trial/)
 
 ## <a name="use-azure-media-player-demo-page"></a>Использование демонстрационной страницы Проигрывателя мультимедиа Azure
 
 ### <a name="start-using"></a>Начать использовать
 
-[Демонстрационную страницу Проигрывателя мультимедиа Azure](http://aka.ms/azuremediaplayer) можно использовать для воспроизведения примеров Служб мультимедиа Azure или собственного потока.  
+[Демонстрационную страницу Проигрывателя мультимедиа Azure](https://aka.ms/azuremediaplayer) можно использовать для воспроизведения примеров Служб мультимедиа Azure или собственного потока.  
 
 Чтобы воспроизвести новое видео, вставьте другой URL-адрес и нажмите кнопку **Обновить**.
 
@@ -40,7 +43,7 @@ ms.locfileid: "67840154"
 
 ### <a name="monitor-diagnostics-of-a-video-stream"></a>Мониторинг диагностики видеопотока
 
-Для отслеживания диагностики видеопотока можно использовать [демонстрационную страницу Проигрывателя мультимедиа Azure](http://aka.ms/azuremediaplayer). 
+Для отслеживания диагностики видеопотока можно использовать [демонстрационную страницу Проигрывателя мультимедиа Azure](https://aka.ms/azuremediaplayer). 
 
 ![Диагностика Проигрывателя мультимедиа Azure Media Player](./media/azure-media-player/diagnostics.png)
 

@@ -2,6 +2,7 @@
 title: Приступая к работе с Azure AD в проектах .NET MVC в Visual Studio
 description: Как приступить к использованию Azure Active Directory в проектах .NET MVC после подключения или создания Azure AD с помощью подключенных служб Visual Studio
 services: active-directory
+ms.subservice: develop
 author: ghogen
 manager: douge
 ms.assetid: 1c8b6a58-5144-4965-a905-625b9ee7b22b
@@ -13,17 +14,17 @@ ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6bbbef3f48eb55c863fdd286113297d79f9b9e02
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ab641aa93d926f64216694c689d8d28e407195d0
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60296849"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68326079"
 ---
 # <a name="getting-started-with-azure-active-directory-aspnet-mvc-projects"></a>Приступая к работе с Azure Active Directory (проекты ASP.NET MVC)
 
 > [!div class="op_single_selector"]
-> - [Приступая к работе](vs-active-directory-dotnet-getting-started.md)
+> - [Начало работы](vs-active-directory-dotnet-getting-started.md)
 > - [Что произошло?](vs-active-directory-dotnet-what-happened.md)
 
 В этой статье приведены дополнительные рекомендации, которые потребуются вам после того, как вы добавите Active Directory в проект ASP.NET MVC, щелкнув **Проект > Подключенные службы** в Visual Studio. Если вы еще не добавили службу в проект, это можно сделать в любое время.
@@ -83,7 +84,7 @@ ms.locfileid: "60296849"
 </html>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md)
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v1-aspnet-webapp.md)

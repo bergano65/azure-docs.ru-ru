@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: Узнайте, как настроить DHCPv6 для виртуальных машин Linux.
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 keywords: IPv6, Azure Load Balancer, двойной стек, общедоступный IP-адрес, встроенная поддержка Ipv6, мобильное устройство, Интернет вещей
 ms.service: load-balancer
 ms.devlang: na
@@ -13,13 +13,13 @@ ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/22/2019
-ms.author: kumud
-ms.openlocfilehash: 66777ec314e95d81a4be57082f06ef16dc170186
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: allensu
+ms.openlocfilehash: 3e987b6718ead6b7014ec302d1a186dabef11126
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60516557"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68274915"
 ---
 # <a name="configure-dhcpv6-for-linux-vms"></a>Настройка DHCPv6 для виртуальных машин Linux
 
@@ -54,9 +54,9 @@ ms.locfileid: "60516557"
     ```bash
     sudo ifdown eth0 && sudo ifup eth0
     ```
-Начиная с Ubuntu 17.10, механизм настройки сети по умолчанию является [NETPLAN]( https://netplan.io).  Во время установки или создания экземпляра NETPLAN считывает конфигурацию сети из файлов конфигурации YAML в этом месте: / {lib,etc,run}/netplan/*.yaml.
+Начиная с Ubuntu 17,10, механизмом сетевой конфигурации по умолчанию является [нетплан]( https://netplan.io).  При установке или создании экземпляра НЕТПЛАН считывает конфигурацию сети из файлов конфигурации YAML в этом расположении:/{Либ, т. е. Run}/нетплан/*. YAML.
 
-Пожалуйста, включите *dhcp6:true* инструкции для каждого интерфейса ethernet в конфигурации.  Пример:
+Для каждого интерфейса Ethernet в конфигурации необходимо включить инструкцию *dhcp6: true* .  Пример:
   
         network:
           version: 2
@@ -64,7 +64,7 @@ ms.locfileid: "60516557"
             eno1:
               dhcp6: true
 
-Во время ранней загрузки netplan «сетевой модуль подготовки отчетов» записывает конфигурацию на/run для передачи управления устройствами, указанной сети управляющей программе справочные сведения о NETPLAN, см. в разделе https://netplan.io/reference.
+Во время раннего запуска нетплан "модуль подготовки отчетов" записывает конфигурацию в/Run для передачи управления устройствами в указанную сетевую управляющую программу для справочных сведений об НЕТПЛАН https://netplan.io/reference, см. в разделе.
  
 ## <a name="debian"></a>Debian
 

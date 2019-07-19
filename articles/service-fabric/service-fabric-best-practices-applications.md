@@ -1,6 +1,6 @@
 ---
-title: Azure Service Fabric разработки рекомендации приложений | Документация Майкрософт
-description: Рекомендации по разработке приложений Service Fabric.
+title: Рекомендации по проектированию приложений Service Fabric Azure | Документация Майкрософт
+description: Рекомендации по разработке Service Fabric приложений.
 services: service-fabric
 documentationcenter: .net
 author: markfussell
@@ -13,83 +13,83 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/18/2019
-ms.author: msfussell
-ms.openlocfilehash: 30d696337061ade6b79c7ec0e4c4de67651f0dad
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.author: mfussell
+ms.openlocfilehash: 06af1f4326e3f6a6dcb53c8710a126f43e2d2f6a
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203456"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67875102"
 ---
-# <a name="azure-service-fabric-application-design-best-practices"></a>Azure Service Fabric разработки рекомендации приложений
+# <a name="azure-service-fabric-application-design-best-practices"></a>Рекомендации по проектированию приложений Service Fabric Azure
 
-Эта статья содержит рекомендации по созданию приложений и служб в Service Fabric.
+В этой статье приводятся рекомендации по созданию приложений и служб в Azure Service Fabric.
  
-## <a name="get-familiar-with-service-fabric"></a>Ознакомиться с Service Fabric
-* Чтение [, вы хотите узнать о Service Fabric?](service-fabric-content-roadmap.md) статьи.
-* Узнайте о [сценарии приложений Service Fabric](service-fabric-application-scenarios.md).
-* Понять модель вариантами в программировании, считывая [Общие сведения о модели программирования Service Fabric](service-fabric-choose-framework.md).
+## <a name="get-familiar-with-service-fabric"></a>Знакомство с Service Fabric
+* Ознакомьтесь с тем, [что вы хотите узнать о Service Fabric?](service-fabric-content-roadmap.md)
+* Ознакомьтесь с [Service Fabric сценариями приложений](service-fabric-application-scenarios.md).
+* Сведения о выборе модели программирования см. в статье [Service Fabric модель программирования](service-fabric-choose-framework.md).
 
 
 
 ## <a name="application-design-guidance"></a>Руководство по проектированию приложений
-Ознакомиться с [общей архитектуре](https://docs.microsoft.com/azure/architecture/reference-architectures/microservices/service-fabric) приложений Service Fabric и их [рекомендации по проектированию](https://docs.microsoft.com/azure/architecture/reference-architectures/microservices/service-fabric#design-considerations).
+Ознакомьтесь с [общей архитектурой](https://docs.microsoft.com/azure/architecture/reference-architectures/microservices/service-fabric) Service Fabric приложений и [соображениями проектирования](https://docs.microsoft.com/azure/architecture/reference-architectures/microservices/service-fabric#design-considerations).
 
-### <a name="choose-an-api-gateway"></a>Выберите шлюз API
-Используйте службу шлюза API, который взаимодействует с серверными службами, которые можно легко масштабировать. Ниже приведены наиболее распространенные службы шлюза API, используемые.
+### <a name="choose-an-api-gateway"></a>Выбор шлюза API
+Используйте службу шлюза API, которая взаимодействует со службами серверной части, которые затем можно масштабировать. Ниже перечислены наиболее часто используемые службы шлюза API.
 
-- [Служба управления API Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-api-management-overview), который является [интегрируется с Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-tutorial-deploy-api-management).
-- [Центр Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/) или [концентраторов событий](https://docs.microsoft.com/azure/event-hubs/), с использованием [ServiceFabricProcessor](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/ServiceFabricProcessor) для чтения из разделов в концентраторе событий.
-- [Træfik обратный прокси-сервер](https://blogs.msdn.microsoft.com/azureservicefabric/2018/04/05/intelligent-routing-on-service-fabric-with-traefik/), с использованием [поставщик Azure Service Fabric](https://docs.traefik.io/configuration/backends/servicefabric/).
+- [Управление API Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-api-management-overview), интегрированное [с Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-tutorial-deploy-api-management).
+- [Центр Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/) или [концентраторы событий Azure](https://docs.microsoft.com/azure/event-hubs/), использующие [Сервицефабрикпроцессор](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/ServiceFabricProcessor) для чтения из разделов концентратора событий.
+- [Трæфик обратный прокси-сервер](https://blogs.msdn.microsoft.com/azureservicefabric/2018/04/05/intelligent-routing-on-service-fabric-with-traefik/)с помощью [поставщика Service Fabric Azure](https://docs.traefik.io/configuration/backends/servicefabric/).
 - [Шлюз приложений Azure.](https://docs.microsoft.com/azure/application-gateway/)
 
    > [!NOTE] 
-   > Шлюз приложений Azure не интегрирован с Service Fabric напрямую. Служба управления API Azure обычно является предпочтительным вариантом.
-- Собственные пользовательские [ASP.NET Core](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication-aspnetcore) шлюз веб-приложения.
+   > Шлюз приложений Azure не интегрируется напрямую с Service Fabric. Управление API Azure обычно является предпочтительным вариантом.
+- Собственный пользовательский шлюз веб-приложений [ASP.NET Core](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication-aspnetcore) .
 
 ### <a name="stateless-services"></a>Службы без отслеживания состояния
-Мы рекомендуем всегда запускать при создании службы без отслеживания состояния с помощью [Reliable Services](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction) и сохранение состояния в базе данных Azure, Azure Cosmos DB или службы хранилища Azure. Реализованное состояние знакомую подход для большинства разработчиков. Этот подход также позволяет воспользоваться преимуществами возможности запросов в хранилище.  
+Рекомендуется всегда начинать с создания служб без отслеживания состояния, используя [Reliable Services](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction) и сохраняя состояние в базе данных azure, Azure Cosmos DB или службе хранилища Azure. Внешнее состояние — это более привычный подход для большинства разработчиков. Такой подход также позволяет использовать возможности запросов в магазине.  
 
-### <a name="when-to-use-stateful-services"></a>Использование служб с отслеживанием состояния
-Если сценарий для обеспечения минимальной задержки и должны хранить данные близко к вычислительных ресурсов, рассмотрите возможность служб с отслеживанием состояния. Примеры сценариев включают цифровой двойник устройства Интернета вещей, состояния игры, состояния сеанса, кэширование данных из базы данных и длительных рабочих процессов для отслеживания вызовов к другим службам.
+### <a name="when-to-use-stateful-services"></a>Когда следует использовать службы с отслеживанием состояния
+Рекомендуется использовать службы с отслеживанием состояния, если имеется сценарий с низкой задержкой и необходимо, чтобы данные были близки к вычислению. В число примеров сценариев входят устройства Интернета вещей Digital двойника, состояние игры, состояние сеанса, кэширование данных из базы данных и длительные рабочие процессы для отслеживания вызовов других служб.
 
-Определите значения интервала времени хранения данных.
+Определите срок хранения данных:
 
-- **Кэшированные данные**. Используйте кэширование, когда задержка в внешнего хранилища. Использовать как свой собственный кэш данных службы с отслеживанием состояния или рассмотрите возможность использования [SoCreate Service Fabric распределенного кэша с открытым исходным](https://github.com/SoCreate/service-fabric-distributed-cache). В этом случае не нужно заниматься при потере всех данных в кэше.
-- **Привязанный ко времени данных**. В этом случае вам нужно хранить данные рядом для вычисления в течение заданного времени для задержки, но вы можете позволить себе потерять данные в *аварийного*. К примеру во многих решениях Интернета вещей, информация должна быть close для вычислений, например когда Вычисление средней температуры за последние несколько дней, но при потере данным в определенных точках данных записаны не важных. Кроме того в этом сценарии вас не интересуют обычно резервное копирование отдельных точках данных. Только резервное копирование вычисляемых средних значений, которые периодически записываются во внешнее хранилище.  
-- **Долгосрочного хранения данных**. Reliable collections можно хранить данные без возможности восстановления. Но в этом случае необходимо [Подготовка к аварийному восстановлению](https://docs.microsoft.com/azure/service-fabric/service-fabric-disaster-recovery), в том числе [Настройка периодического резервного копирования политик](https://docs.microsoft.com/azure/service-fabric/service-fabric-backuprestoreservice-configure-periodic-backup) для кластеров. По сути настройкой, что происходит при удалении кластера в случае аварии, где необходимо создать новый кластер и способ развертывания новых экземпляров приложения и восстановить из последней резервной копии.
+- **Кэшированные данные**. При возникновении проблем с задержкой во внешних хранилищах используйте кэширование. Используйте службу с отслеживанием состояния в качестве собственного кэша данных или воспользуйтесь [Service Fabric сокреатеом распределенного кэша с открытым кодом](https://github.com/SoCreate/service-fabric-distributed-cache). В этом случае вам не нужно беспокоиться о потере всех данных в кэше.
+- **Данные, привязанные к времени**. В этом случае необходимо, чтобы данные закрылись для вычислений в течение определенного времени задержки, но можно позволить себе потерять данные в случае *аварии*. Например, во многих решениях IoT данные должны быть близко к вычислению, например при вычислении средней температуры за последние несколько дней, но если эти данные потеряны, то зафиксированные точки данных не важны. Кроме того, в этом сценарии обычно не требуется создавать резервные копии отдельных точек данных. Вы только выполняете резервное копирование вычисленных средних значений, которые периодически записываются во внешнее хранилище.  
+- **Долгосрочные данные**. Надежные коллекции могут хранить данные постоянно. Но в этом случае необходимо подготовиться [к аварийному восстановлению](https://docs.microsoft.com/azure/service-fabric/service-fabric-disaster-recovery), включая [настройку периодических политик архивации](https://docs.microsoft.com/azure/service-fabric/service-fabric-backuprestoreservice-configure-periodic-backup) для кластеров. По сути, вы настраиваете то, что произойдет, если кластер уничтожается в случае аварии, где потребуется создать новый кластер, а также как развернуть новые экземпляры приложения и выполнить восстановление из последней резервной копии.
 
-Сократить расходы и повысить уровень доступности:
-- Можно сократить затраты с помощью служб с отслеживанием состояния, так как не взималась доступ к данным и стоимость операций из удаленного хранилища и так как не нужно использовать другую службу, например Azure кэша для Redis.
-- С помощью служб с отслеживанием состояния, в первую очередь для хранилища, а не для вычислительных ресурсов и не рекомендуется. Считать служб с отслеживанием состояния вычислительных ресурсов с помощью недорогих локального хранилища.
-- Путем удаления зависимости от других служб, можно повысить доступность службы. Управление состоянием с высоким уровнем ДОСТУПНОСТИ в кластере, можно изолировать от других время простоя службы или проблем с задержкой.
+Экономьте расходы и повышайте доступность:
+- Вы можете сократить затраты, используя службы с отслеживанием состояния, так как вы не будете получать расходы на доступ к данным и транзакции из удаленного хранилища, а также не хотите использовать другую службу, например кэш Azure для Redis.
+- Использование служб с отслеживанием состояния, в основном для хранения, а не для вычислений, является дорогостоящим и не рекомендуется. Выдумайте о службах с отслеживанием состояния в виде вычислений с недорогым локальным хранилищем.
+- Путем удаления зависимостей от других служб можно повысить доступность службы. Управление состоянием с высоким уровнем доступности в кластере изолирует вас от других простоев служб или проблем задержки.
 
 ## <a name="how-to-work-with-reliable-services"></a>Работа с Reliable Services
-Service Fabric Reliable Services позволяет легко создавать службы с отслеживанием и без отслеживания состояния. Дополнительные сведения см. в разделе [Обзор надежных служб](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction).
-- Всегда учитывает [токен отмены](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-lifecycle#stateful-service-primary-swaps) в `RunAsync()` метод для служб без отслеживания состояния и с отслеживанием состояния и `ChangeRole()` метод для служб с отслеживанием состояния. Если этого не сделать, Service Fabric не знает, если служба может быть закрыт. Например если не учитывает маркер отмены, может возникнуть гораздо более длительное время обновления приложения.
--   Открывающие и закрывающие [прослушивателей связи](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication) вовремя и могут получать токены отмены.
--   Запрещается совместное использование кода синхронизации с помощью асинхронного кода. Например, не используйте `.GetAwaiter().GetResult()` в асинхронных вызовах. Использование async *вплоть* через стек вызовов.
+Service Fabric Reliable Services позволяет легко создавать службы без отслеживания состояния и с отслеживанием состояния. Дополнительные сведения см. в статье [Введение в Reliable Services](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction).
+- Всегда соблюдайте [токен отмены](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-lifecycle#stateful-service-primary-swaps) в `RunAsync()` методе для служб без отслеживания состояния и с отслеживанием состояния, а также `ChangeRole()` метод для служб с отслеживанием состояния. В противном случае Service Fabric не знает, можно ли закрыть службу. Например, если вы не принимаете маркер отмены, может произойти значительно больше времени обновления приложения.
+-   Открывайте и закрывайте [прослушиватели связи](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication) своевременно и соблюдайте токены отмены.
+-   Никогда не смешивать код синхронизации с асинхронным кодом. Например, не используйте `.GetAwaiter().GetResult()` в асинхронных вызовах. Используйте в стеке *вызовов Async.*
 
 ## <a name="how-to-work-with-reliable-actors"></a>Работа с Reliable Actors
-Service Fabric Reliable Actors позволяет легко создавать субъекты с отслеживанием состояния, виртуальный. Дополнительные сведения см. в разделе [Общие сведения о надежных субъектах](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction).
+Service Fabric Reliable Actors позволяет легко создавать виртуальные субъекты с отслеживанием состояния. Дополнительные сведения см. в статье [Введение в Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction).
 
-- Рассмотрите возможность с помощью pub/sub, обмен сообщениями между субъекты для масштабирования приложения. Инструменты, предоставляющие этой службы включить [Service Fabric открытым исходным кодом SoCreate Pub/Sub](https://service-fabric-pub-sub.socreate.it/) и [служебной шины Azure](https://docs.microsoft.com/azure/service-bus/).
-- Состояния субъекта, как сделать [детализированные максимально](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-state-management#best-practices).
-- Управление [субъекта жизненного цикла](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-state-management#best-practices). Удаление субъектов, если вы не собираетесь их использовать. Удаление ненужных субъектов особенно важна при использовании [Непостоянное состояние поставщика](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-state-management#state-persistence-and-replication), так как все состояние сохраняется в памяти.
-- Из-за их [Поочередный параллелизм](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction#concurrency), субъекты лучше всего использовать в качестве независимые объекты. Не создать графы вызовов нескольких субъектов, синхронный метод (каждый из которых скорее всего, становится отдельной сетевой вызов) или запросов циклическая субъекта. Они будут существенно повлиять на производительность и масштабируемость.
-- Не следует смешивать кода синхронизации с помощью асинхронного кода. Используйте async последовательно во избежание проблем с производительностью.
-- Не выполнять длительные вызовы в субъектов. Долго действующие вызовы заблокирует других вызовов одного субъекта, из-за Поочередный параллелизм.
-- Если вы обмен данными с другими службами с использованием [удаленное взаимодействие Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication-remoting) и вы создаете `ServiceProxyFactory`, создать фабрику в [субъекта службы](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-using) уровень и *не* на уровне субъектов.
+- Серьезно рассмотрите возможность использования обмена сообщениями между субъектами для масштабирования приложения. Средства, предоставляющие эту службу, включают в себя [сокреате с открытым исходным кодом Service Fabric Pub/](https://service-fabric-pub-sub.socreate.it/) подпрограммы и [служебная шина Azure](https://docs.microsoft.com/azure/service-bus/).
+- Сделайте так, чтобы состояние субъекта было как [можно](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-state-management#best-practices)более детализированным.
+- Управление [жизненным циклом субъекта](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-state-management#best-practices). Удалите субъекты, если они не будут использоваться повторно. Удаление ненужных субъектов особенно важно, если вы используете [Временный поставщик состояний](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-state-management#state-persistence-and-replication), так как все состояния хранятся в памяти.
+- Из-за [параллелизма, основанной на](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction#concurrency)поочередности, субъекты лучше использовать как независимые объекты. Не создавайте графы синхронных вызовов методов с несколькими субъектами (каждый из которых, скорее всего, станет отдельным сетевым вызовом) или создайте запросы с циклическими субъектами. Это значительно повлияет на производительность и масштабируемость.
+- Не смешивать код синхронизации с асинхронным кодом. Используйте асинхронный режим для предотвращения проблем с производительностью.
+- Не делайте долго выполняющихся вызовов в субъектах. Длительные вызовы будут блокировать другие вызовы одного и того же субъекта из-за параллелизма, основанной на последующей блокировке.
+- Если вы обмениваетесь данными с другими службами с помощью [Service Fabric удаленного взаимодействия](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication-remoting) и `ServiceProxyFactory`создаете, Создайте фабрику на уровне [службы субъекта](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-using) , а *не* на уровне субъекта.
 
 
 ## <a name="application-diagnostics"></a>Диагностика приложения
-Тщательно о добавлении [ведение журнала приложения](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-event-generation-app) в вызовов службы. Он поможет диагностировать сценариев, в которых службы вызывать друг друга. Например когда вызывает B вызывает C вызывает D, вызов может завершиться ошибкой в любом месте. Если у вас недостаточно ведения журнала, сбои, трудно диагностировать. Если службы вход слишком многое из-за количества обращений, убедитесь, что по крайней мере ведения журнала ошибок и предупреждений.
+Будьте в полной мере добавим [ведение журнала приложений](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-event-generation-app) в вызовах служб. Она поможет в диагностике сценариев, в которых службы вызывают друг друга. Например, если вызов метода B вызывает C, то вызов может завершиться ошибкой в любом месте. Если ведение журнала не имеет достаточного количества, трудно диагностировать сбои. Если службы имеют слишком много записей из-за вызова томов, убедитесь, что по крайней мере ошибки в журнале и предупреждения.
 
-## <a name="iot-and-messaging-applications"></a>Интернет вещей и приложений обмена сообщениями
-Когда вы читаете сообщения от [центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/) или [концентраторов событий](https://docs.microsoft.com/azure/event-hubs/), использовать [ServiceFabricProcessor](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/ServiceFabricProcessor). ServiceFabricProcessor интегрируется с Service Fabric Reliable Services для поддержания состояния чтения из концентратора событий, разделы и помещает новые сообщения к службам по `IEventProcessor::ProcessEventsAsync()` метод.
+## <a name="iot-and-messaging-applications"></a>Приложения IoT и Messaging
+При чтении сообщений из [центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/) или [концентраторов событий Azure](https://docs.microsoft.com/azure/event-hubs/)используйте [сервицефабрикпроцессор](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/ServiceFabricProcessor). Сервицефабрикпроцессор интегрируется с Service Fabric Reliable Services для поддержания состояния чтения из разделов концентратора событий и отправки новых сообщений службам с помощью `IEventProcessor::ProcessEventsAsync()` метода.
 
 
 ## <a name="design-guidance-on-azure"></a>Руководство по проектированию в Azure
-* Посетите [Центр архитектуры Azure](https://docs.microsoft.com/azure/architecture/microservices/) инструкции по проектированию на [создания микрослужб в Azure](https://docs.microsoft.com/azure/architecture/microservices/).
+* Руководство по проектированию [микрослужб в Azure](https://docs.microsoft.com/azure/architecture/microservices/)см. в [центре архитектуры Azure](https://docs.microsoft.com/azure/architecture/microservices/) .
 
-* Посетите [начало работы с Azure для игр](https://docs.microsoft.com/gaming/azure/) инструкции по проектированию на [с помощью Service Fabric в службах игр](https://docs.microsoft.com/gaming/azure/reference-architectures/multiplayer-synchronous-sf).
+* Руководство по проектированию [с использованием Service Fabric в игровых службах](https://docs.microsoft.com/gaming/azure/reference-architectures/multiplayer-synchronous-sf)см. в статье [Начало работы с Azure для игр](https://docs.microsoft.com/gaming/azure/) .

@@ -1,18 +1,19 @@
 ---
-title: 'Создание канала ExpressRoute - шаблон Resource Manager: Azure | Документация Майкрософт'
-description: Создание, подготовка, удалить и отозвать канал ExpressRoute.
+title: 'Создайте шаблон диспетчер ресурсов канала ExpressRoute: Azure | Документация Майкрософт'
+description: Создание, инициализация, удаление и Реинициализация канала ExpressRoute.
 services: expressroute;azure-resource-manager
 author: cherylmc
 ms.service: expressroute
 ms.topic: article
 ms.date: 07/05/2019
-ms.author: cherylmc;ganesr
-ms.openlocfilehash: bf56145d0a8cd3b01d0d74fcaf3348c1916cee5a
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.author: cherylmc
+ms.reviewer: ganesr
+ms.openlocfilehash: 103c61b6ad244bf4b140f897c070ce5bfd54cded
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659688"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67849219"
 ---
 # <a name="create-an-expressroute-circuit-by-using-azure-resource-manager-template"></a>Создание канала ExpressRoute с помощью шаблона Azure Resource Manager
 
@@ -25,7 +26,7 @@ ms.locfileid: "67659688"
 > * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
 >
 
-Узнайте, как создать канал ExpressRoute, развернув шаблон диспетчера ресурсов Azure с помощью Azure PowerShell. Дополнительные сведения о разработке шаблонов Resource Manager см. в разделе [Документация по Azure Resource Manager](/azure/azure-resource-manager/) и в [справочнике по шаблонам](/azure/templates/microsoft.network/expressroutecircuits).
+Узнайте, как создать канал ExpressRoute путем развертывания шаблона Azure Resource Manager с помощью Azure PowerShell. Дополнительные сведения о разработке шаблонов Resource Manager см. в разделе [Документация по Azure Resource Manager](/azure/azure-resource-manager/) и в [справочнике по шаблонам](/azure/templates/microsoft.network/expressroutecircuits).
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -35,15 +36,15 @@ ms.locfileid: "67659688"
 
 ## <a name="create"></a>Создание и подготовка канала ExpressRoute
 
-[Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/) есть хороший набор шаблона Resource Manager. Используйте один из [существующие шаблоны](https://azure.microsoft.com/resources/templates/101-expressroute-circuit-create/) для создания канала ExpressRoute.
+[Шаблоны](https://azure.microsoft.com/resources/templates/) быстрого запуска Azure имеют хорошую коллекцию шаблонов диспетчер ресурсов. Для создания канала ExpressRoute используется один из [существующих шаблонов](https://azure.microsoft.com/resources/templates/101-expressroute-circuit-create/) .
 
 [!code-json[create-azure-expressroute-circuit](~/quickstart-templates/101-expressroute-circuit-create/azuredeploy.json)]
 
-Чтобы просмотреть другие шаблоны, выберите [здесь](https://azure.microsoft.com/resources/templates/?term=expressroute).
+Чтобы просмотреть дополнительные связанные шаблоны, выберите [здесь](https://azure.microsoft.com/resources/templates/?term=expressroute).
 
-Чтобы создать канал ExpressRoute, развернув шаблон:
+Чтобы создать канал ExpressRoute путем развертывания шаблона, выполните следующие действия.
 
-1. Выберите **попробовать** из следующих блок кода и следуйте инструкциям для входа в Azure Cloud shell.
+1. Выберите вариант **попробовать** в следующем блоке кода, а затем следуйте инструкциям по входу в Azure Cloud Shell.
 
     ```azurepowershell-interactive
     $circuitName = Read-Host -Prompt "Enter a circuit name"
@@ -70,18 +71,18 @@ ms.locfileid: "67659688"
      > [!IMPORTANT]
      > Параметр "Расположение пиринга" определяет [физическое расположение](expressroute-locations.md) пиринга с корпорацией Майкрософт. Оно **не** связано со свойством Location, которое ссылается на географический регион, в котором находится поставщик сетевых ресурсов Azure. Хотя они не связаны, рекомендуется выбрать поставщик сетевых ресурсов, находящийся недалеко от расположения пиринга канала.
 
-    Имя группы ресурсов — это имя пространства имен служебной шины с **rg** добавляется.
+    Имя группы ресурсов — это имя пространства имен служебной шины с добавленным **RG** .
 
 2. Нажмите кнопку **Копировать**, чтобы скопировать сценарий PowerShell.
-3. Щелкните правой кнопкой мыши в консоли оболочки, а затем выберите **вставить**.
+3. Щелкните правой кнопкой мыши консоль оболочки и выберите команду **Вставить**.
 
-Занимает несколько секунд, чтобы создать концентратор событий.
+Создание концентратора событий займет несколько секунд.
 
-Чтобы развернуть шаблон в этом руководстве используется Azure PowerShell. Другие методы развертывания для шаблонов см. в разделе:
+Azure PowerShell используется для развертывания шаблона в этом руководстве. Другие методы развертывания шаблонов см. в следующих статьях:
 
-* [С помощью портала Azure](../azure-resource-manager/resource-group-template-deploy-portal.md).
-* [С помощью Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md).
-* [С помощью REST API](../azure-resource-manager/resource-group-template-deploy-rest.md).
+* С [помощью портал Azure](../azure-resource-manager/resource-group-template-deploy-portal.md).
+* С [помощью Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md).
+* С [помощью REST API](../azure-resource-manager/resource-group-template-deploy-rest.md).
 
 ## <a name="delete"></a>Отзыв и удаление канала ExpressRoute
 
@@ -91,7 +92,7 @@ ms.locfileid: "67659688"
 * Если подготовка поставщика услуг канала ExpressRoute находится в состоянии **Идет подготовка** или **Подготовлено** то свяжитесь с поставщиком услуг, чтобы отозвать канал с его стороны. Мы будем резервировать ресурсы и выставлять вам счета до тех пор, пока поставщик услуг не завершит отзыв канала и не отправит нам соответствующее уведомление.
 * Если поставщик услуг отзовет канал (состояние подготовки поставщика услуг изменится на **Не подготовлено**), вы можете удалить такой канал. Это приостанавливает выставление счетов для канала.
 
-Цепь ExpressRoute можно удалить, выполнив следующую команду PowerShell:
+Вы можете удалить канал ExpressRoute, выполнив следующую команду PowerShell:
 
 ```azurepowershell-interactive
 $circuitName = Read-Host -Prompt "Enter the same circuit name that you used earlier"

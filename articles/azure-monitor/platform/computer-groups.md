@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/05/2019
 ms.author: bwren
-ms.openlocfilehash: c2babb5a86d69881b6a76c6dceae80a24a891f6c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae423b6fb141cab4038e65ba85c6067f1c23aee0
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60741000"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68320678"
 ---
-# <a name="computer-groups-in-azure-monitor-log-queries"></a>Группы компьютеров в Azure Monitor журнал запросов
+# <a name="computer-groups-in-azure-monitor-log-queries"></a>Группы компьютеров в Azure Monitor запросы журналов
 В Azure Monitor вы можете ограничить [запросы к журналам](../log-query/log-query-overview.md) определенной группой компьютеров.  Каждая группа заполняется компьютерами с помощью определяемого запроса или при импорте групп из разных источников.  Если в запрос к журналам включена группа, в результатах возвращаются только те записи, которые относятся к компьютерам в этой группе.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "60741000"
 | Запрос журнала |Создание запроса к журналам, который возвращает список компьютеров. |
 | API поиска по журналам |Использование API поиска по журналам для создания группы компьютеров программными средствами на основе результатов запроса к журналам. |
 | Active Directory |Автоматическая проверка членства в группе на компьютерах агента, которые являются членами домена Active Directory, и создание группы в Azure Monitor для каждой группы безопасности. (Только для компьютеров Windows.)|
-| Менеджер конфигураций | Импорт коллекций из System Center Configuration Manager и создание группы в службе Azure Monitor для каждой из коллекций. |
+| Диспетчер конфигураций | Импорт коллекций из System Center Configuration Manager и создание группы в службе Azure Monitor для каждой из коллекций. |
 | Службы обновления Windows Server |Автоматическая проверка целевых групп на клиентах или серверах WSUS и создание для каждой из них группы в Azure Monitor. |
 
 ### <a name="log-query"></a>Запрос журнала
@@ -53,7 +53,7 @@ ms.locfileid: "60741000"
 
 В приведенной ниже таблице описаны свойства, которые есть у группы компьютеров.
 
-| Свойство | Описание |
+| Свойство | Description |
 |:---|:---|
 | ИМЯ   | Имя группы, которое отображается на портале. |
 | Псевдоним функции | Уникальный псевдоним для идентификации группы компьютеров в запросе. |
@@ -84,7 +84,7 @@ ms.locfileid: "60741000"
 ### <a name="system-center-configuration-manager"></a>System Center Configuration Manager
 Если вы настроите в Azure Monitor импорт данных о членстве в коллекциях Configuration Manager, служба создаст отдельную группу компьютеров для каждой коллекции.  Данные о членстве в коллекциях извлекаются каждые три часа, чтобы поддерживать актуальность групп компьютеров. 
 
-Перед импортом коллекций Configuration Manager следует [подключить Configuration Manager к Azure Monitor](collect-sccm.md).  После этого вы сможете настроить импорт в разделе **Дополнительные параметры** в рабочей области Log Analytics на портале Azure.  Последовательно выберите **Группы компьютеров**, **SCCM** и **Импортировать членства в коллекциях Configuration Manager**.  Дополнительная настройка не требуется.
+Перед импортом коллекций Configuration Manager следует [подключить Configuration Manager к Azure Monitor](collect-sccm.md).  
 
 ![Группы компьютеров из SCCM](media/computer-groups/configure-sccm.png)
 
@@ -125,7 +125,7 @@ ms.locfileid: "60741000"
 ## <a name="computer-group-records"></a>Записи группы компьютеров
 Запись создается в рабочей области Log Analytics для каждого членства в группе компьютеров, создаваемого в Active Directory или WSUS.  Записи о производительности имеют тип **ComputerGroup**. Их свойства описаны в таблице ниже.  Для групп компьютеров, созданных с помощью запроса к журналам, записи не создаются.
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 |:--- |:--- |
 | `Type` |*ComputerGroup* |
 | `SourceSystem` |*SourceSystem* |
@@ -137,6 +137,6 @@ ms.locfileid: "60741000"
 | `ManagementGroupName` |Имя группы управления для агентов SCOM.  Для других агентов это AOI-\<идентификатор_рабочей_области\>. |
 | `TimeGenerated` |Дата и время создания или изменения группы компьютеров. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.  
 

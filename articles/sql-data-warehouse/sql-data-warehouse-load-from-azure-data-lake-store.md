@@ -1,28 +1,28 @@
 ---
-title: Учебник нагрузки из хранилища Озера данных Azure в хранилище данных Azure SQL | Документация Майкрософт
-description: Используйте внешние таблицы PolyBase для загрузки данных из хранилища Озера данных Azure в хранилище данных SQL Azure.
+title: Руководство по загрузке из Azure Data Lake Storage в хранилище данных SQL Azure | Документация Майкрософт
+description: Используйте внешние таблицы Polybase для загрузки данных из Azure Data Lake Storage в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: kevinvngo
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: load-data
-ms.date: 04/26/2019
+ms.date: 07/17/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: c69382ee0bec5586fc247cd0e568f5f48f0eda08
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: cbf642b47e4233cec2e2d860288b3bb35b419cf2
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67588602"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68304163"
 ---
-# <a name="load-data-from-azure-data-lake-storage-to-sql-data-warehouse"></a>Загрузка данных из хранилища Озера данных Azure в хранилище данных SQL
-Используйте внешние таблицы PolyBase для загрузки данных из хранилища Озера данных Azure в хранилище данных SQL Azure. Несмотря на то, что можно запускать специальные запросы к данным, хранящимся в хранилище Озера данных, мы рекомендуем импортировать данные в хранилище данных SQL для достижения оптимальной производительности.
+# <a name="load-data-from-azure-data-lake-storage-to-sql-data-warehouse"></a>Загрузка данных из Azure Data Lake Storage в хранилище данных SQL
+Используйте внешние таблицы Polybase для загрузки данных из Azure Data Lake Storage в хранилище данных SQL Azure. Несмотря на то, что вы можете выполнять нерегламентированные запросы к данным, хранящимся в Data Lake Storage, мы рекомендуем импортировать данные в хранилище данных SQL для лучшей производительности.
 
 > [!div class="checklist"]
-> * Создание объектов базы данных, требуемых для загрузки из хранилища Озера данных.
-> * Подключитесь к каталог хранилища Озера данных.
+> * Создание объектов базы данных, необходимых для загрузки из Data Lake Storage.
+> * Подключитесь к каталогу Data Lake Storage.
 > * Загрузка данных в хранилище данных SQL Azure.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
@@ -32,18 +32,18 @@ ms.locfileid: "67588602"
 
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
-* Приложение Azure Active Directory для использования проверки подлинности в службе при загрузке из поколение 1. Создать его помогут инструкции из [этой статьи](../data-lake-store/data-lake-store-authenticate-using-active-directory.md).
+* Azure Active Directory приложение, используемое для проверки подлинности между службами при загрузке из Gen1. Создать его помогут инструкции из [этой статьи](../data-lake-store/data-lake-store-authenticate-using-active-directory.md).
 
 >[!NOTE] 
-> При загрузке из Gen1 хранилища Озера данных Azure, требуется идентификатор клиента, ключ и значение маркера конечной точки OAuth 2.0 приложения Active Directory для подключения к вашей учетной записи хранения из хранилища данных SQL. Чтобы узнать, как получить эти значения, см. статью по приведенной выше ссылке. Для регистрации приложения Azure Active Directory используйте идентификатор приложения как идентификатор клиента.
+> Если вы загружаете из Azure Data Lake размер хранилища Gen1, вам потребуется идентификатор клиента, ключ и Active Directory значение конечной точки маркера OAuth 2.0 для подключения к учетной записи хранения из хранилища данных SQL. Чтобы узнать, как получить эти значения, см. статью по приведенной выше ссылке. Для регистрации приложения Azure Active Directory используйте идентификатор приложения как идентификатор клиента.
 > 
 
 * Хранилище данных SQL Azure Ознакомьтесь со статьей [Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md).
 
-* Учетная запись хранения Озера данных. См. в разделе [приступить к работе с хранилищем Озера данных Azure](../data-lake-store/data-lake-store-get-started-portal.md). 
+* Учетная запись Data Lake Storage. См. статью [Приступая к работе с Azure Data Lake Storage](../data-lake-store/data-lake-store-get-started-portal.md). 
 
 ##  <a name="create-a-credential"></a>Создание учетных данных
-Для доступа к вашей учетной записи хранения Озера данных, необходимо будет создать главный ключ базы данных для шифрования секрета учетных данных используется на следующем шаге. Затем создайте учетные данные базы данных с заданной областью. Для Gen1 Database Scoped Credential хранит службы субъекта учетные данные, настроенные в AAD. Необходимо использовать ключ учетной записи хранения в Database Scoped Credential для 2-го поколения. 
+Чтобы получить доступ к учетной записи Data Lake Storage, необходимо создать главный ключ базы данных, чтобы зашифровать секрет учетных данных, используемый на следующем шаге. Затем создайте учетные данные для базы данных. Для Gen1 учетные данные для базы данных хранят учетные данные субъекта-службы, настроенные в AAD. Необходимо использовать ключ учетной записи хранения в учетных данных уровня базы данных для Gen2. 
 
 Для подключения к Data Lake Storage 1-го поколения необходимо **сначала** создать приложение Azure Active Directory, затем создать ключ доступа и предоставить этому приложению доступ к ресурсу Data Lake Storage 1-го поколения. Инструкции см. в статье [Аутентификация между службами в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory](../data-lake-store/data-lake-store-authenticate-using-active-directory.md).
 
@@ -109,13 +109,13 @@ WITH (
 CREATE EXTERNAL DATA SOURCE AzureDataLakeStorage
 WITH (
     TYPE = HADOOP,
-    LOCATION='abfs://<container>@<AzureDataLake account_name>.dfs.core.windows.net', -- Please note the abfs endpoint
+    LOCATION='abfss://<container>@<AzureDataLake account_name>.dfs.core.windows.net', -- Please note the abfs endpoint
     CREDENTIAL = ADLSCredential
 );
 ```
 
 ## <a name="configure-data-format"></a>Настройка формата данных
-Чтобы импортировать данные из хранилища Озера данных, необходимо указать формат внешнего файла. Этот объект определяет, каким образом файлы записываются в хранилище Озера данных.
+Чтобы импортировать данные из Data Lake Storage, необходимо указать формат внешнего файла. Этот объект определяет, как файлы записываются в Data Lake Storage.
 Полный список форматов, доступных для команды [CREATE EXTERNAL FILE FORMAT](/sql/t-sql/statements/create-external-file-format-transact-sql), см. в документации по T-SQL.
 
 ```sql
@@ -176,7 +176,7 @@ WITH
 Хранилище Data Lake Storage 1-го поколения использует управление доступом на основе ролей (RBAC) для управления доступом к данным. Это означает, что субъект-служба должна иметь разрешения на чтение для каталогов, указанных в параметре расположения, и для дочерних элементов конечного каталога и файлов. Это позволяет PolyBase выполнять аутентификацию и загрузку данных. 
 
 ## <a name="load-the-data"></a>Загрузка данных
-Для загрузки данных из хранилища Озера данных с помощью [CREATE TABLE AS SELECT (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) инструкции. 
+Чтобы загрузить данные из Data Lake Storage используйте инструкцию [CREATE TABLE как SELECT (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) . 
 
 Компонент CTAS создает новую таблицу и заполняет ее результатам инструкции Select. CTAS определяет новую таблицу так, чтобы в ней содержались те же столбцы и типы данных, которые были выведены инструкцией Select. Если вы выбираете все столбцы из внешней таблицы, новая таблица получает точную копию всех столбцов и типов данных этой внешней таблицы.
 

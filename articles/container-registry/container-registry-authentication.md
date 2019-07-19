@@ -3,18 +3,18 @@ title: Аутентификация в реестре контейнеров Azu
 description: Варианты проверки подлинности для реестра контейнеров Azure, включая вход с помощью удостоверения Azure Active Directory, с помощью субъектов-служб и с помощью необязательных учетных данных администратора.
 services: container-registry
 author: dlepow
-manager: jeconnoc
+manager: gwallace
 ms.service: container-registry
 ms.topic: article
 ms.date: 12/21/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9682b9b832a8fd7374cb84e8cc6faad69df15945
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 82fe80e098ee95c09c4a1400068ab813910e0e1a
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61333879"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68309832"
 ---
 # <a name="authenticate-with-a-private-docker-container-registry"></a>Аутентификация с помощью частного реестра контейнеров Docker
 
@@ -95,7 +95,7 @@ az acr update -n <acrName> --admin-enabled true
 
 ![Включение учетной записи администратора на портале Azure][auth-portal-01]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Отправка первого образа с помощью Azure CLI](container-registry-get-started-azure-cli.md)
 

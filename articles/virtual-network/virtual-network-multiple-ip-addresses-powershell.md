@@ -1,6 +1,6 @@
 ---
 title: Назначение виртуальным машинам Azure нескольких IP-адресов с помощью PowerShell | Документация Майкрософт
-description: Дополнительные сведения о назначении нескольких IP-адресов к виртуальной машине с помощью PowerShell. | Resource Manager
+description: Узнайте, как назначить виртуальной машине несколько IP-адресов с помощью PowerShell. | диспетчер ресурсов
 services: virtual-network
 documentationcenter: na
 author: KumudD
@@ -14,13 +14,14 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/24/2017
-ms.author: kumud;annahar
-ms.openlocfilehash: f4ecc9a0b41cf3b287f7601101de3aa9d077b0d5
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.author: kumud
+ms.reviewer: annahar
+ms.openlocfilehash: e9bad6ad614855c543ee6d75d4e6f4dc8e2255aa
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "64730420"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67876224"
 ---
 # <a name="assign-multiple-ip-addresses-to-virtual-machines-using-powershell"></a>Назначение виртуальным машинам нескольких IP-адресов с помощью PowerShell
 
@@ -96,7 +97,7 @@ ms.locfileid: "64730420"
 
 6. Определите основную конфигурацию IP для сетевого адаптера. Замените 10.0.0.4 действительным адресом в созданной подсети, если вы не использовали значение, определенное ранее. Прежде чем назначать статический IP-адрес, рекомендуем сначала убедиться, что он не используется. Введите команду `Test-AzPrivateIPAddressAvailability -IPAddress 10.0.0.4 -VirtualNetwork $VNet`. Если адрес доступен, в выходных данных возвращается значение *True*, а если нет — значение *False* и список доступных адресов. 
 
-    В следующих командах **замените \<replace с your-unique-name > уникальным именем DNS для использования.** Имя должно быть уникальным для всех общедоступных IP-адресов в регионе Azure. Данный параметр является необязательным. Его можно удалить, если вам нужно подключаться к виртуальной машине, используя только общедоступный IP-адрес.
+    В следующих командах  **\<замените Replace-with-Unique-name > уникальным DNS-именем для использования.** Имя должно быть уникальным для всех общедоступных IP-адресов в регионе Azure. Данный параметр является необязательным. Его можно удалить, если вам нужно подключаться к виртуальной машине, используя только общедоступный IP-адрес.
 
     ```powershell
     

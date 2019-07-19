@@ -1,6 +1,6 @@
 ---
-title: Создавать, просматривать и управлять ими с помощью Azure Monitor оповещения журнала | Документация Майкрософт
-description: Azure Monitor позволяет создавать, просматривать и управлять правилами генерации оповещений журнала в Azure.
+title: Создание, просмотр и Управление оповещениями журнала с помощью Azure Monitor | Документация Майкрософт
+description: Используйте Azure Monitor для создания и просмотра правил генерации оповещений журнала в Azure, а также для управления ими.
 author: msvijayn
 services: azure-monitor
 ms.service: azure-monitor
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/30/2019
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: f758007a0fa0d7fb619873d94d762e7019077e05
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1ee4f89885bd10a116963d42e87766bcd05cc0b4
+ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66427445"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67852725"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor
 
@@ -23,16 +23,17 @@ ms.locfileid: "66427445"
 - Критерии: определенное условие или логика в сигнале, которые должны вызывать действие.
 - Действие: конкретный вызов, отправленный получателю уведомления — электронное сообщение, текстовое сообщение, веб-перехватчик и т. д.
 
-Термин **оповещений журнала** для описания оповещений, в которых сигналом выступает запроса по журналам в [рабочей области Log Analytics](../learn/tutorial-viewdata.md) или [Application Insights](../app/analytics.md). Дополнительные сведения о функциях, терминологии и типах см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](alerts-unified-log.md).
+Термин **оповещения журнала** для описания предупреждений, в которых сигнал является запросом журнала в [log Analytics рабочей области](../learn/tutorial-viewdata.md) или [Application Insights](../app/analytics.md). Дополнительные сведения о функциях, терминологии и типах см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](alerts-unified-log.md).
 
 > [!NOTE]
-> Данных популярных журналов из [рабочую область Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md) теперь также доступна на платформе метрик в Azure Monitor. Более подробную информацию см. в статье [Create Metric Alerts for Logs in Azure Monitor](alerts-metric-logs.md) (Создание оповещений метрик для журналов в Azure Monitor).
+> Популярные данные журнала из [log Analytics рабочей области](../../azure-monitor/learn/tutorial-viewdata.md) теперь также доступны на платформе метрик в Azure Monitor. Более подробную информацию см. в статье [Create Metric Alerts for Logs in Azure Monitor](alerts-metric-logs.md) (Создание оповещений метрик для журналов в Azure Monitor).
 
 ## <a name="managing-log-alerts-from-the-azure-portal"></a>Управление оповещениями журнала на портале Azure
 
 Ниже приводится пошаговое руководство по использованию оповещений журнала с помощью интерфейса портала Azure.
 
 ### <a name="create-a-log-alert-rule-with-the-azure-portal"></a>Создание правила генерации оповещений журнала с помощью портала Azure
+
 1. На [портале](https://portal.azure.com/) выберите **Мониторинг**, а затем в разделе "Мониторинг" выберите **Оповещения**.
 
     ![Мониторинг](media/alerts-log/AlertsPreviewMenu.png)
@@ -48,7 +49,6 @@ ms.locfileid: "66427445"
 1. Определите условие оповещения, для этого используйте ссылку **Выбор ресурса** и укажите цель путем выбора ресурса. Отфильтруйте, выбрав _Подписку_, _Тип ресурса_, и нужный _Ресурс_.
 
    > [!NOTE]
-   > 
    > Прежде чем продолжить, убедитесь, что сигнал **журнала** доступен для выбранного ресурса, чтобы создать оповещения журнала.
    >  ![Выбор ресурса](media/alerts-log/Alert-SelectResourceLog.png)
 
@@ -58,7 +58,7 @@ ms.locfileid: "66427445"
 
    > [!NOTE]
    > 
-   > Списки интерфейса оповещений могут импортировать запрос аналитических данных как тип сигнала — **Log (Saved Query)** (Журнал (сохраненный запрос)), как показано на приведенном выше изображении. Чтобы пользователи могли усовершенствовать ваш запрос в Analytics и затем сохранить их для дальнейшего использования в оповещениях - Дополнительные сведения о сохранении запросов см. в [с помощью запроса журнала в Azure Monitor](../log-query/log-query-overview.md) или [общий запрос в аналитике application insights ](../log-query/log-query-overview.md).
+   > Списки интерфейса оповещений могут импортировать запрос аналитических данных как тип сигнала — **Log (Saved Query)** (Журнал (сохраненный запрос)), как показано на приведенном выше изображении. Так что пользователи могут выполнить запрос в аналитике, а затем сохранить их для дальнейшего использования в оповещениях. Дополнительные сведения об использовании сохранения запросов с [помощью запроса журнала в Azure Monitor](../log-query/log-query-overview.md) или [общем запросе в аналитике Application Insights](../log-query/log-query-overview.md).
 
 1. *Оповещения журналов.* После выбора запрос для оповещения можно указать в поле **Search Query** (Поисковой запрос). Если синтаксис запроса неверен, в поле отображается ошибка, выделенная красным цветом. Если синтаксис запроса верен, появятся исторические данные указанного запроса для справки в виде графика с возможностью настройки временного интервала от последних шести часов до последней недели.
 
@@ -142,7 +142,6 @@ ms.locfileid: "66427445"
     "variables": {
         "alertLocation": "southcentralus",
         "alertName": "samplelogalert",
-        "alertTag": "hidden-link:/subscriptions/a123d7efg-123c-1234-5678-a12bc3defgh4/resourceGroups/myRG/providers/microsoft.insights/components/sampleAIapplication",
         "alertDescription": "Sample log search alert",
         "alertStatus": "true",
         "alertSource":{
@@ -172,7 +171,6 @@ ms.locfileid: "66427445"
         "type":"Microsoft.Insights/scheduledQueryRules",
         "apiVersion": "2018-04-16",
         "location": "[variables('alertLocation')]",
-        "tags":{"[variables('alertTag')]": "Resource"},
         "properties":{
             "description": "[variables('alertDescription')]",
             "enabled": "[variables('alertStatus')]",
@@ -204,9 +202,6 @@ ms.locfileid: "66427445"
 
 ```
 
-> [!IMPORTANT]
-> Тег со скрытым ссылкой на целевой ресурс является обязательным значением. При использовании [запланированного правила запроса позволяют](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) шаблона вызова или ресурса API.
-
 В приведенном выше примере JSON можно сохранить как sampleScheduledQueryRule.json, чтобы использовать его в данном пошаговом руководстве. Его можно развернуть с помощью [Azure Resource Manager на портале Azure](../../azure-resource-manager/resource-group-template-deploy-portal.md#deploy-resources-from-custom-template).
 
 
@@ -226,7 +221,6 @@ ms.locfileid: "66427445"
         "alertName": "sample log alert",
         "alertDescr": "Sample log search alert",
         "alertStatus": "true",
-        "alertTag": "hidden-link:/subscriptions/a123d7efg-123c-1234-5678-a12bc3defgh4/resourceGroups/contosoRG/providers/microsoft.OperationalInsights/workspaces/servicews",
         "alertSource":{
             "Query":"union workspace(\"servicews\").Update, app('serviceapp').requests | summarize AggregatedValue = count() by bin(TimeGenerated,1h), Classification",
             "Resource1": "/subscriptions/a123d7efg-123c-1234-5678-a12bc3defgh4/resourceGroups/contosoRG/providers/microsoft.OperationalInsights/workspaces/servicews",
@@ -263,7 +257,6 @@ ms.locfileid: "66427445"
         "type":"Microsoft.Insights/scheduledQueryRules",
         "apiVersion": "2018-04-16",
         "location": "[variables('alertLocation')]",
-        "tags":{"[variables('alertTag')]": "Resource"},
         "properties":{
             "description": "[variables('alertDescr')]",
             "enabled": "[variables('alertStatus')]",
@@ -304,7 +297,7 @@ ms.locfileid: "66427445"
 ```
 
 > [!IMPORTANT]
-> Тег со скрытым ссылкой на целевой ресурс является обязательным значением. При использовании [запланированного правила запроса позволяют](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) шаблона вызова или ресурса API. При выполнении запроса между ресурсами в оповещениях журнала использование [authorizedResources](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/createorupdate#source) является обязательным и у пользователя должен быть доступ к списку заявленных ресурсов.
+> При выполнении запроса между ресурсами в оповещениях журнала использование [authorizedResources](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/createorupdate#source) является обязательным и у пользователя должен быть доступ к списку заявленных ресурсов.
 
 В приведенном выше примере JSON можно сохранить как sampleScheduledQueryRule.json, чтобы использовать его в данном пошаговом руководстве. Его можно развернуть с помощью [Azure Resource Manager на портале Azure](../../azure-resource-manager/resource-group-template-deploy-portal.md#deploy-resources-from-custom-template).
 
@@ -312,32 +305,32 @@ ms.locfileid: "66427445"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Azure Monitor - [API правил запроса Scheduled](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) является полностью совместимы с REST API Azure Resource Manager и REST API. Они доступны для использования перечисленных ниже командлеты PowerShell [запланированного правила запроса API](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/).
+Azure Monitor- [API правил запросов](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) по расписанию — это REST API и полностью совместимый с Azure Resource Manager REST API. Ниже перечислены командлеты PowerShell, которые можно использовать для использования [API запланированных правил запросов](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/).
 
-1. [Новый AzScheduledQueryRule](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryrule) : Командлет PowerShell, чтобы создать новое правило генерации оповещений журнала.
-1. [SET-AzScheduledQueryRule](https://docs.microsoft.com/powershell/module/az.monitor/set-azscheduledqueryrule) : Командлет PowerShell для обновления существующего правила генерации оповещений журнала.
-1. [Новый AzScheduledQueryRuleSource](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryrulesource) : Командлет PowerShell, чтобы создать или обновить объект, задающий параметры источника для оповещения журнала. Используется в качестве входных данных, [New AzScheduledQueryRule](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryrule) и [AzScheduledQueryRule набора](https://docs.microsoft.com/powershell/module/az.monitor/set-azscheduledqueryrule) командлета.
-1. [Новый AzScheduledQueryRuleSchedule](https://docs.microsoft.com/powershell/module/az.monitor/New-AzScheduledQueryRuleSchedule): Командлет PowerShell, чтобы создать или обновить объект Указание параметров расписания для оповещения журнала. Используется в качестве входных данных, [New AzScheduledQueryRule](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryrule) и [AzScheduledQueryRule набора](https://docs.microsoft.com/powershell/module/az.monitor/set-azscheduledqueryrule) командлета.
-1. [Новый AzScheduledQueryRuleAlertingAction](https://docs.microsoft.com/powershell/module/az.monitor/New-AzScheduledQueryRuleAlertingAction) : Командлет PowerShell, чтобы создать или обновить объект, указывающий параметров действия для оповещения журнала. Используется в качестве входных данных, [New AzScheduledQueryRule](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryrule) и [AzScheduledQueryRule набора](https://docs.microsoft.com/powershell/module/az.monitor/set-azscheduledqueryrule) командлета.
-1. [Новый AzScheduledQueryRuleAznsActionGroup](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryruleaznsactiongroup) : Командлет PowerShell, чтобы создать или обновить объект, указывающий действие группирует параметры оповещения журнала. Используется в качестве входных данных, [New AzScheduledQueryRuleAlertingAction](https://docs.microsoft.com/powershell/module/az.monitor/New-AzScheduledQueryRuleAlertingAction) командлета.
-1. [Новый AzScheduledQueryRuleTriggerCondition](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryruletriggercondition) : Командлет PowerShell, чтобы создать или обновить объект, указав параметры условие триггера для оповещения журнала. Используется в качестве входных данных, [New AzScheduledQueryRuleAlertingAction](https://docs.microsoft.com/powershell/module/az.monitor/New-AzScheduledQueryRuleAlertingAction) командлета.
-1. [Новый AzScheduledQueryRuleLogMetricTrigger](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryrulelogmetrictrigger) : Командлет PowerShell, чтобы создать или обновить объект, указывающий параметры условие триггера метрики для [оповещения об измерении метрики тип журнала](../../azure-monitor/platform/alerts-unified-log.md#metric-measurement-alert-rules). Используется в качестве входных данных, [New AzScheduledQueryRuleTriggerCondition](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryruletriggercondition) командлета.
-1. [Get-AzScheduledQueryRule](https://docs.microsoft.com/powershell/module/az.monitor/get-azscheduledqueryrule) : Командлет PowerShell, чтобы список существующих журналов правила генерации оповещений или правило генерации оповещений определенного журнала
-1. [Обновление AzScheduledQueryRule](https://docs.microsoft.com/powershell/module/az.monitor/update-azscheduledqueryrule) : Командлет PowerShell, чтобы включить или отключить правило генерации оповещений журнала
-1. [Remove-AzScheduledQueryRule](https://docs.microsoft.com/powershell/module/az.monitor/remove-azscheduledqueryrule): Командлет PowerShell, чтобы удалить существующее правило генерации оповещений журнала
+1. [New-азсчедуледкуерируле](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryrule) : Командлет PowerShell для создания нового правила оповещения журнала.
+1. [Set-азсчедуледкуерируле](https://docs.microsoft.com/powershell/module/az.monitor/set-azscheduledqueryrule) : Командлет PowerShell для обновления существующего правила оповещения журнала.
+1. [New-азсчедуледкуерирулесаурце](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryrulesource) : Командлет PowerShell для создания или обновления объекта, указывающего параметры источника для оповещения журнала. Используется в качестве входных данных командлетами [New-азсчедуледкуерируле](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryrule) и [Set-азсчедуледкуерируле](https://docs.microsoft.com/powershell/module/az.monitor/set-azscheduledqueryrule) .
+1. [New-азсчедуледкуерирулесчедуле](https://docs.microsoft.com/powershell/module/az.monitor/New-AzScheduledQueryRuleSchedule): Командлет PowerShell для создания или обновления объекта, указывающего параметры расписания для оповещения журнала. Используется в качестве входных данных командлетами [New-азсчедуледкуерируле](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryrule) и [Set-азсчедуледкуерируле](https://docs.microsoft.com/powershell/module/az.monitor/set-azscheduledqueryrule) .
+1. [New-азсчедуледкуерирулеалертингактион](https://docs.microsoft.com/powershell/module/az.monitor/New-AzScheduledQueryRuleAlertingAction) : Командлет PowerShell для создания или обновления объекта, указывающего параметры действия для оповещения журнала. Используется в качестве входных данных командлетами [New-азсчедуледкуерируле](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryrule) и [Set-азсчедуледкуерируле](https://docs.microsoft.com/powershell/module/az.monitor/set-azscheduledqueryrule) .
+1. [New-азсчедуледкуерирулеазнсактионграуп](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryruleaznsactiongroup) : Командлет PowerShell для создания или обновления объекта, указывающего параметры групп действий для оповещения журнала. Используется в качестве входных данных командлетом [New-азсчедуледкуерирулеалертингактион](https://docs.microsoft.com/powershell/module/az.monitor/New-AzScheduledQueryRuleAlertingAction) .
+1. [New-азсчедуледкуерирулетригжеркондитион](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryruletriggercondition) : Командлет PowerShell для создания или обновления объекта, указывающего параметры условия триггера для оповещения журнала. Используется в качестве входных данных командлетом [New-азсчедуледкуерирулеалертингактион](https://docs.microsoft.com/powershell/module/az.monitor/New-AzScheduledQueryRuleAlertingAction) .
+1. [New-азсчедуледкуерирулелогметриктригжер](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryrulelogmetrictrigger) : Командлет PowerShell для создания или обновления объекта, указывающего параметры условия триггера метрик для [оповещения журнала типа измерения "измерение](../../azure-monitor/platform/alerts-unified-log.md#metric-measurement-alert-rules)". Используется в качестве входных данных командлетом [New-азсчедуледкуерирулетригжеркондитион](https://docs.microsoft.com/powershell/module/az.monitor/new-azscheduledqueryruletriggercondition) .
+1. [Get-азсчедуледкуерируле](https://docs.microsoft.com/powershell/module/az.monitor/get-azscheduledqueryrule) : Командлет PowerShell для перечисления существующих правил генерации оповещений журнала или определенного правила генерации оповещений журнала
+1. [Обновление — азсчедуледкуерируле](https://docs.microsoft.com/powershell/module/az.monitor/update-azscheduledqueryrule) : Командлет PowerShell для включения или отключения правила генерации оповещений журнала
+1. [Remove-азсчедуледкуерируле](https://docs.microsoft.com/powershell/module/az.monitor/remove-azscheduledqueryrule): Командлет PowerShell для удаления существующего правила оповещения журнала
 
 > [!NOTE]
-> Командлеты ScheduledQueryRules PowerShell можно управлять только правила, созданные командлетом сам или с помощью Azure Monitor - [запланированного правила запроса API](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/). Правила генерации оповещений, созданных с помощью прежних версий журнала [API оповещений Log Analytics](api-alerts.md) и устаревшие шаблоны [Log Analytics сохраненные поиски и оповещения](../insights/solutions-resources-searches-alerts.md) можно управлять с помощью командлетов ScheduledQueryRules PowerShell только после того, как пользователь [переключается предпочтений API для оповещений Log Analytics](alerts-log-api-switch.md).
+> Командлеты PowerShell для Счедуледкуерирулес могут управлять только самим командлетом или с помощью [API-интерфейса правил запросов](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/), запланированных Azure Monitor. Правила генерации оповещений журнала, созданные с помощью устаревшего [log Analytics API предупреждений](api-alerts.md) и устаревшие шаблоны [log Analytics сохраненных поисковых запросов](../insights/solutions-resources-searches-alerts.md) и предупреждений, можно управлять с помощью командлетов счедуледкуерирулес PowerShell только после [настройки пользовательского интерфейса API для журнала. Оповещения аналитики](alerts-log-api-switch.md).
 
 ## <a name="managing-log-alerts-using-cli-or-api"></a>Управление оповещениями журнала с помощью интерфейса командной строки или API
 
-Azure Monitor - [API правил запроса Scheduled](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) является полностью совместимы с REST API Azure Resource Manager и REST API. Поэтому он может использоваться с помощью Powershell, с помощью команды Resource Manager для Azure CLI.
+Azure Monitor- [API правил запросов](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) по расписанию — это REST API и полностью совместимый с Azure Resource Manager REST API. Поэтому его можно использовать с помощью PowerShell, используя команды диспетчер ресурсов для Azure CLI.
 
 
 > [!NOTE]
 > Управлять оповещениями журналов для Log Analytics также можно с помощью устаревшего [API оповещений Log Analytics](api-alerts.md), а также устаревших шаблонов [сохраненных поисковых запросов и оповещений Log Analytics](../insights/solutions-resources-searches-alerts.md). Дополнительные сведения об использовании нового API ScheduledQueryRules см. в статье [Switch to new API for Log Analytics Alerts](alerts-log-api-switch.md) (Переход на API для оповещений журнала).
 
-Оповещения журнала в настоящее время не команды выделенного CLI; но, как показано ниже можно использовать с помощью команды интерфейса командной строки Azure Resource Manager для примера выше шаблона ресурсов (sampleScheduledQueryRule.json) в разделе Resource шаблона:
+В настоящее время оповещения журнала не имеют выделенных команд CLI; но, как показано ниже, можно использовать команду интерфейса командной строки Azure Resource Manager для примера шаблона ресурса, показанного ранее (Самплесчедуледкуерируле. JSON) в разделе шаблона ресурсов:
 
 ```azurecli
 az group deployment create --resource-group contosoRG --template-file sampleScheduledQueryRule.json
@@ -345,9 +338,9 @@ az group deployment create --resource-group contosoRG --template-file sampleSche
 
 После успешного выполнения возвращается код 201, который означает, что новое правило создано. Если было изменено существующее правило генерации оповещений, то возвращается код 200.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](../../azure-monitor/platform/alerts-unified-log.md).
 * Общие сведения о [действиях веб-перехватчиков для оповещений журнала](../../azure-monitor/platform/alerts-log-webhook.md)
 * Дополнительные сведения об [Application Insights](../../azure-monitor/app/analytics.md)
-* Дополнительные сведения о [журнал запросов](../log-query/log-query-overview.md).
+* Дополнительные сведения о [запросах журналов](../log-query/log-query-overview.md).
