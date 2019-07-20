@@ -11,32 +11,32 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
 ms.author: dapine
-ms.openlocfilehash: c4ef58f35b3d038f360ff962c70e92711bc205ce
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 7f178152fb5b6d540c2cecdfa42687469dfe3881
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67446513"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68356989"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>Установка и запуск контейнеров API анализа текста
 
-Контейнеры API анализа текста предоставляют расширенную обработку необработанного текста на естественных языках и включают в себя три основные функции: анализ тональности, извлечение ключевых фраз и определение языка. Связывание сущностей в настоящее время не поддерживается в контейнере.
+Контейнеры Анализ текста обеспечивают расширенную обработку естественного языка по необработанному тексту и включают три основные функции: анализ тональностиности, извлечение ключевых фраз и определение языка. Связывание сущностей в настоящее время не поддерживается в контейнере.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Для запуска любой из контейнеров анализа текста, необходимо иметь компьютер и контейнер сред размещения.
+Чтобы запустить любой из Анализ текста контейнеров, необходимо иметь главный компьютер и среды контейнеров.
 
 ## <a name="preparation"></a>Подготовка
 
 Прежде чем использовать контейнеры Анализа текста, необходимо выполнить следующие условия:
 
-|Обязательно для заполнения|Назначение|
+|Обязательно для заполнения|Цель|
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
-|`Cognitive Services` Ресурс |Для использования контейнера необходимо следующее:<br><br>Объект [ _Cognitive Services_ ](text-analytics-how-to-access-key.md) ресурсов Azure, чтобы получить связанный ключ выставления счетов и выставления счетов URI конечной точки. Оба значения доступны на страницах Общие сведения о Cognitive Services и ключей на портале Azure и необходимые для запуска контейнера. Необходимо добавить `text/analytics/v2.0` маршрутизации URI конечной точки, как показано в следующем примере BILLING_ENDPOINT_URI.<br><br>**{BILLING_KEY}** : ключ ресурса<br><br>**{BILLING_ENDPOINT_URI}** : пример URI конечной точки: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1`|
+|Ресурс API анализа текста |Для использования контейнера необходимо следующее:<br><br>Ресурс Azure [анализ текста](text-analytics-how-to-access-key.md) для получения соответствующего ключа API и URI конечной точки. Оба значения доступны на страницах "Обзор" и "Ключи" API анализа текста на портале Azure и необходимы для запуска контейнера.<br><br>**{API_KEY}** : Один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}** : Конечная точка, указанная на странице **обзора**|
 
 ### <a name="the-host-computer"></a>Главный компьютер
 
@@ -46,7 +46,7 @@ ms.locfileid: "67446513"
 
 В следующей таблице описаны минимальные и рекомендуемые требования к ЦП (минимум 2,6 ГГц или быстрее) и памяти, в ГБ, для выделения для каждого контейнера Анализа текста.
 
-| Контейнер | Минимальная | Рекомендуется | ТРАНЗАКЦИЙ В СЕКУНДУ<br>(Минимум, максимум)|
+| Контейнер | Минимальная | Рекомендуется | ПЛАТЫ<br>(Минимум, максимум)|
 |-----------|---------|-------------|--|
 |Извлечение ключевых фраз | 1 ядро, 2 ГБ памяти | 1 ядро, 4 ГБ памяти |15, 30|
 |Распознавание языка | 1 ядро, 2 ГБ памяти | 1 ядро, 4 ГБ памяти |15, 30|
@@ -67,7 +67,7 @@ ms.locfileid: "67446513"
 |Распознавание языка | `mcr.microsoft.com/azure-cognitive-services/language` |
 |Анализ тональности | `mcr.microsoft.com/azure-cognitive-services/sentiment` |
 
-Используйте [ `docker pull` ](https://docs.docker.com/engine/reference/commandline/pull/) команду, чтобы скачать образ контейнера из реестра контейнеров Microsoft.
+[`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/) Используйте команду, чтобы скачать образ контейнера из реестра контейнеров Майкрософт.
 
 Полное описание доступных тегов для контейнеров Анализа текста см. в следующих контейнерах в центре Docker:
 
@@ -76,7 +76,6 @@ ms.locfileid: "67446513"
 * [Анализ тональности](https://go.microsoft.com/fwlink/?linkid=2018654).
 
 Воспользуйтесь командой [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/), чтобы скачать образ контейнера.
-
 
 ### <a name="docker-pull-for-the-key-phrase-extraction-container"></a>docker pull для контейнера извлечения ключевой фразы
 
@@ -112,10 +111,8 @@ docker pull mcr.microsoft.com/azure-cognitive-services/sentiment:latest
 
 | Placeholder | Значение |
 |-------------|-------|
-|{BILLING_KEY} | Этот ключ используется для запуска контейнера, а также доступна на портале Azure `Cognitive Services` страницы "ключи".  |
-|{BILLING_ENDPOINT_URI} | Выставления счетов значение URI конечной точки можно найти в Azure `Cognitive Services` странице "Обзор". <br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/text/analytics/v2.0`|
-
-Необходимо добавить `text/analytics/v2.0` маршрутизации URI конечной точки, как показано в приведенном выше примере BILLING_ENDPOINT_URI.
+|{API_KEY} | Этот ключ используется для запуска контейнера и доступен на странице `Text Analytics` ключей портал Azure. |
+|{ENDPOINT_URI} | Значение URI конечной точки выставления счетов доступно на странице `Text Analytics` обзора Azure. |
 
 В следующем примере команды `docker run` замените имена параметров собственными значениями.
 
@@ -123,8 +120,8 @@ docker pull mcr.microsoft.com/azure-cognitive-services/sentiment:latest
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
 mcr.microsoft.com/azure-cognitive-services/keyphrase \
 Eula=accept \
-Billing={BILLING_ENDPOINT_URI} \
-ApiKey={BILLING_KEY}
+Billing={ENDPOINT_URI} \
+ApiKey={API_KEY}
 ```
 
 Эта команда:
@@ -161,13 +158,13 @@ ApiKey={BILLING_KEY}
 
 ## <a name="billing"></a>Выставление счетов
 
-Отправить контейнеры анализа текста, выставления счетов в Azure, с помощью _Cognitive Services_ ресурсов на учетную запись Azure. 
+Контейнеры API анализа текста отправляют данные для выставления счетов в Azure с помощью ресурса _API анализа текста_ в учетной записи Azure. 
 
 [!INCLUDE [Container's Billing Settings](../../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 
 Дополнительные сведения об этих параметрах см. в статье [Настройка контейнеров](../text-analytics-resource-container-config.md).
 
-<!--blogs/samples/video coures -->
+<!--blogs/samples/video course -->
 
 [!INCLUDE [Discoverability of more container information](../../../../includes/cognitive-services-containers-discoverability.md)]
 
@@ -184,8 +181,7 @@ ApiKey={BILLING_KEY}
 > [!IMPORTANT]
 > Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например, анализируемые изображения или тексты).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Ознакомьтесь со статьей о [конфигурации контейнеров](../text-analytics-resource-container-config.md).
 * Чтобы решить проблемы, связанные с функциональностью, ознакомьтесь с [часто задаваемыми вопросами](../text-analytics-resource-faq.md).
-

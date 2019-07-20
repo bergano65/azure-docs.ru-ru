@@ -11,12 +11,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 06/20/2019
 ms.author: dapine
-ms.openlocfilehash: 604b17bc3d4696ff0bf2be1759a53927a531fe13
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 2a9b9ce5109315d940d6dcadf395489612faddec
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67296025"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68356942"
 ---
 # <a name="configure-text-analytics-docker-containers"></a>Настройка контейнеров Docker API анализа текста
 
@@ -31,11 +31,11 @@ ms.locfileid: "67296025"
 
 ## <a name="apikey-configuration-setting"></a>Параметр конфигурации ApiKey
 
-Параметр `ApiKey` определяет ключ ресурса Azure, который используется для отслеживания данных для выставления счетов для контейнера. Необходимо указать значение для ApiKey и оно должно быть допустимый ключ для _Cognitive Services_ ресурс, заданный для [ `Billing` ](#billing-configuration-setting) параметр конфигурации.
+Параметр `ApiKey` определяет ключ ресурса Azure, который используется для отслеживания данных для выставления счетов для контейнера. Значение ApiKey является обязательным и должно содержать допустимый ключ ресурса службы _Анализ текста_, который определяется в параметре конфигурации [`Billing`](#billing-configuration-setting).
 
 Этот параметр можно найти в следующем месте.
 
-* Портал Azure: **Cognitive Services** управления ресурсами в разделе **ключи**
+* Портал Azure: **Анализ текста** управление ресурсами в разделе **ключи**
 
 ## <a name="applicationinsights-setting"></a>Параметр ApplicationInsights.
 
@@ -43,17 +43,15 @@ ms.locfileid: "67296025"
 
 ## <a name="billing-configuration-setting"></a>Параметр конфигурации выставления счетов
 
-`Billing` Параметр указывает URI конечной точки из _Cognitive Services_ ресурсов в Azure позволяет контролировать использование выставления счетов для контейнера. Необходимо указать значение для этого параметра конфигурации, а значение должно быть допустимым URI конечной точки для __Cognitive Services_ ресурсов в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
+Параметр `Billing` определяет URI конечной точки ресурса _Анализа текста_ на Azure, используемый, чтобы измерять данные для выставления счетов для контейнера. Для этого параметра конфигурации необходимо задать значение, которое должно быть допустимым URI конечной точки для ресурса _Анализа текста_ в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
 
 Этот параметр можно найти в следующем месте.
 
-* Портал Azure: **Cognitive Services** Обзор, с меткой `Endpoint`
+* Портал Azure: **Анализ текста** Общие сведения, помеченные`Endpoint`
 
-Необходимо добавить `text/analytics/v2.0` маршрутизации URI конечной точки, как показано в следующем примере BILLING_ENDPOINT_URI.
-
-|Обязательно для заполнения| Name | Тип данных | Описание |
+|Обязательно для заполнения| Имя | Тип данных | Описание |
 |--|------|-----------|-------------|
-|Да| `Billing` | String | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/text/analytics/v2.1` |
+|Да| `Billing` | Строка, | Требуемый URI конечной точки выставления счетов |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -79,45 +77,43 @@ ms.locfileid: "67296025"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того,расположение подключения на [главном компьютере](how-tos/text-analytics-how-to-install-containers.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположения подключения к узлу. 
 
-|Необязательно| Name | Тип данных | Описание |
+|Необязательно| ИМЯ | Тип данных | Описание |
 |-------|------|-----------|-------------|
-|Не разрешено| `Input` | String | Контейнеры API анализа текста не используют этот элемент.|
-|Необязательно| `Output` | String | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Не разрешено| `Input` | Строка, | Контейнеры API анализа текста не используют этот элемент.|
+|Необязательно| `Output` | Строка, | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 
 В следующих примерах параметры конфигурации иллюстрируют процесс написания и использования команд `docker run`.  После запуска контейнер продолжает работу, пока вы его не [остановите](how-tos/text-analytics-how-to-install-containers.md#stop-the-container).
 
 * **Символ продолжения строки**. В командах Docker в следующих разделах используется обратная косая черта (`\`) как символ продолжения строки. Замените или удалите ее в соответствии с требованиями вашей операционной системы. 
-* **Порядок аргументов**. Не изменяйте порядок аргументов, если вы не являетесь уверенным пользователем контейнеров Docker.
-
-Необходимо добавить `text/analytics/v2.0` маршрутизации URI конечной точки, как показано в следующем примере BILLING_ENDPOINT_URI.
+* **Порядок аргументов**. Не изменяйте порядок аргументов, если вы еще не очень хорошо знакомы с контейнерами Docker.
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
 | Placeholder | Значение | Формат или пример |
 |-------------|-------|---|
-|{BILLING_KEY} | Ключ конечной точки `Cognitive Services` ресурсов, доступных на Azure `Cognitive Services` страницы "ключи". |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
-|{BILLING_ENDPOINT_URI} | Значение конечной точки выставления счетов можно найти в Azure `Cognitive Services` странице "Обзор".|`https://westus.api.cognitive.microsoft.com/text/analytics/v2.1`|
+|{API_KEY} | Ключ `Text Analytics` конечной точки ресурса, доступный на странице ключей Azure `Text Analytics` . |`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`|
+|{ENDPOINT_URI} | Значение конечной точки выставления счетов доступно на странице `Text Analytics` обзора Azure.|`https://westus.api.cognitive.microsoft.com/text/analytics/v2.1`|
 
 > [!IMPORTANT]
 > Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](how-tos/text-analytics-how-to-install-containers.md#billing).
-> Значение ApiKey **ключ** от Azure `Cognitive Services` страницу ключей ресурсов. 
+> Значение apiKey является **ключом** на странице ключей ресурсов Azure `Text Analytics` . 
 
-## <a name="key-phrase-extraction-container-docker-examples"></a>Примеры docker контейнера извлечение ключевых фраз
+## <a name="key-phrase-extraction-container-docker-examples"></a>Примеры DOCKER контейнера для извлечения ключевых фраз
 
-В следующих примерах docker предназначены для контейнера извлечение ключевых фраз. 
+Следующие примеры DOCKER предназначены для контейнера извлечения ключевых фраз. 
 
 ### <a name="basic-example"></a>Простой пример 
 
   ```
-  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 mcr.microsoft.com/azure-cognitive-services/keyphrase Eula=accept Billing={BILLING_ENDPOINT_URI} ApiKey={BILLING_KEY} 
+  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 mcr.microsoft.com/azure-cognitive-services/keyphrase Eula=accept Billing={ENDPOINT_URI} ApiKey={API_KEY} 
   ```
 
-### <a name="logging-example"></a>Пример журнала 
+### <a name="logging-example"></a>Пример ведения журнала 
 
   ```
-  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 mcr.microsoft.com/azure-cognitive-services/keyphrase Eula=accept Billing={BILLING_ENDPOINT_URI} ApiKey={BILLING_KEY} Logging:Console:LogLevel:Default=Information
+  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 mcr.microsoft.com/azure-cognitive-services/keyphrase Eula=accept Billing={ENDPOINT_URI} ApiKey={API_KEY} Logging:Console:LogLevel:Default=Information
   ```
 
 ## <a name="language-detection-container-docker-examples"></a>Примеры контейнеров Docker для определения языка
@@ -127,13 +123,13 @@ ms.locfileid: "67296025"
 ### <a name="basic-example"></a>Простой пример
 
   ```
-  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 mcr.microsoft.com/azure-cognitive-services/language Eula=accept Billing={BILLING_ENDPOINT_URI} ApiKey={BILLING_KEY} 
+  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 mcr.microsoft.com/azure-cognitive-services/language Eula=accept Billing={ENDPOINT_URI} ApiKey={API_KEY} 
   ```
 
-### <a name="logging-example"></a>Пример журнала
+### <a name="logging-example"></a>Пример ведения журнала
 
   ```
-  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 mcr.microsoft.com/azure-cognitive-services/language Eula=accept Billing={BILLING_ENDPOINT_URI} ApiKey={BILLING_KEY} Logging:Console:LogLevel:Default=Information
+  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 mcr.microsoft.com/azure-cognitive-services/language Eula=accept Billing={ENDPOINT_URI} ApiKey={API_KEY} Logging:Console:LogLevel:Default=Information
   ```
  
 ## <a name="sentiment-analysis-container-docker-examples"></a>Примеры контейнеров Docker для анализа тональности
@@ -143,16 +139,16 @@ ms.locfileid: "67296025"
 ### <a name="basic-example"></a>Простой пример
 
   ```
-  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 mcr.microsoft.com/azure-cognitive-services/sentiment Eula=accept Billing={BILLING_ENDPOINT_URI} ApiKey={BILLING_KEY} 
+  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 mcr.microsoft.com/azure-cognitive-services/sentiment Eula=accept Billing={ENDPOINT_URI} ApiKey={API_KEY} 
   ```
 
-### <a name="logging-example"></a>Пример журнала
+### <a name="logging-example"></a>Пример ведения журнала
 
   ```
-  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 mcr.microsoft.com/azure-cognitive-services/sentiment Eula=accept Billing={BILLING_ENDPOINT_URI} ApiKey={BILLING_KEY} Logging:Console:LogLevel:Default=Information
+  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 mcr.microsoft.com/azure-cognitive-services/sentiment Eula=accept Billing={ENDPOINT_URI} ApiKey={API_KEY} Logging:Console:LogLevel:Default=Information
   ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Изучите статью об [установке и запуске контейнеров](how-tos/text-analytics-how-to-install-containers.md).
 * Воспользуйтесь [дополнительными контейнерами Cognitive Services](../cognitive-services-container-support.md)
