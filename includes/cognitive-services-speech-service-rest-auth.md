@@ -4,16 +4,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/29/2019
 ms.author: erhopf
-ms.openlocfilehash: 5f06ca04b0b6ea48ebb49952df71cb02946777fa
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: 22a95be43f06e95a6067b179b3023ba94ee5795d
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67333389"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68362614"
 ---
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Проверка подлинности
 
-Каждый запрос требует заголовок авторизации. В этой таблице показано, какие заголовки поддерживаются для каждой службы:
+Для каждого запроса требуется заголовок Authorization. В этой таблице показано, какие заголовки поддерживаются для каждой службы:
 
 | Поддерживаемые заголовки авторизации | Преобразование речи в текст | Преобразование текста в речь |
 |------------------------|----------------|----------------|
@@ -26,7 +26,7 @@ ms.locfileid: "67333389"
 'Ocp-Apim-Subscription-Key': 'YOUR_SUBSCRIPTION_KEY'
 ```
 
-При использовании заголовка `Authorization: Bearer` необходимо выполнять запрос к конечной точке `issueToken`. В этом запросе ключ подписки обменивается на маркер доступа, действительный в течение 10 минут. В следующих разделах вы узнаете, как получить токен и использовать маркер.
+При использовании заголовка `Authorization: Bearer` необходимо выполнять запрос к конечной точке `issueToken`. В этом запросе ключ подписки обменивается на маркер доступа, действительный в течение 10 минут. В следующих нескольких разделах вы узнаете, как получить маркер и использовать маркер.
 
 ### <a name="how-to-get-an-access-token"></a>Как получить маркер доступа
 
@@ -129,6 +129,7 @@ public class Authentication
 import requests
 
 subscription_key = 'REPLACE_WITH_YOUR_KEY'
+
 
 def get_token(subscription_key):
     fetch_token_url = 'https://westus.api.cognitive.microsoft.com/sts/v1.0/issueToken'
