@@ -311,7 +311,7 @@ return SDK.CreateRecognizerWithCustomAudioSource(
 | Path | `telemetry` |
 | X-Timestamp | Клиентская метка времени UTC в формате ISO 8601 |
 | Content-Type | `application/json` |
-| Текст | Структура JSON, которая содержит информацию о клиенте |
+| Body | Структура JSON, которая содержит информацию о клиенте |
 
 Схема для текста сообщения `telemetry` определена в разделе [схемы телеметрии](#telemetry-schema).
 
