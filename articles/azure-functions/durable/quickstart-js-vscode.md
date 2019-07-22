@@ -65,7 +65,7 @@ ms.locfileid: "67612922"
 
     ![Выбор шаблона начального объекта HTTP](./media/quickstart-js-vscode/create-function-choose-template.png)
 
-3. Оставьте имя по умолчанию `DurableFunctionsHttpStart` и нажмите клавишу ****ВВОД**, после чего укажите способ аутентификации **Анонимно**.
+3. Оставьте имя по умолчанию `DurableFunctionsHttpStart` и нажмите клавишу ** **ВВОД**, после чего укажите способ аутентификации **Анонимно**.
 
     ![Анонимная аутентификация](./media/quickstart-js-vscode/create-function-anonymous-auth.png)
 
