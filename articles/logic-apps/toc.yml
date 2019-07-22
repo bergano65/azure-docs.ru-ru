@@ -41,6 +41,8 @@
           href: logic-apps-create-logic-apps-from-templates.md
         - name: Миграция из служб BizTalk
           href: logic-apps-move-from-mabs.md
+        - name: Экспорт потоков из Microsoft Flow и их развертывание в Azure Logic Apps
+          href: export-from-microsoft-flow-logic-app-template.md
         - name: Управление выполнением рабочих процессов
           items:
             - name: Условные операторы

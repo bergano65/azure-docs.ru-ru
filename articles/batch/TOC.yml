@@ -61,6 +61,8 @@
           href: batch-account-create-portal.md
         - name: Управление учетными записями пакетной службы с помощью библиотеки .NET для управления пакетной службой
           href: batch-management-dotnet.md
+        - name: Анализ затрат и бюджеты
+          href: budget.md
     - name: "Аутентификация с помощью Azure\_AD"
       items:
         - name: Azure AD и пакетная служба

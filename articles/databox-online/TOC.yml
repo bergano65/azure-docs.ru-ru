@@ -47,6 +47,8 @@
           href: data-box-gateway-monitor.md
         - name: Устранение неполадок
           href: data-box-gateway-troubleshoot.md
+        - name: Обращение в службу поддержки Майкрософт
+          href: data-box-edge-contact-microsoft-support.md
     - name: Заметки о выпуске
       items:
         - name: "1905\_— текущая версия"
@@ -105,9 +107,11 @@
               href: data-box-edge-connect-powershell-interface.md
         - name: Устранение неполадок
           href: data-box-edge-troubleshoot.md
+        - name: Обращение в службу поддержки Майкрософт
+          href: data-box-edge-contact-microsoft-support.md
         - name: Мониторинг
           href: data-box-edge-monitor.md
-        - name: Возврат устройства
+        - name: Возврат или замена устройства
           href: data-box-edge-return-device.md
     - name: Заметки о выпуске
       items:

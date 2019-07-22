@@ -56,8 +56,6 @@
           href: best-practices-distributive-collaborative-development-environment.md
         - name: Интеграция с Azure DevOps
           href: devtest-lab-dev-ops.md
-        - name: Использование возможностей запросов
-          href: devtest-lab-use-claim-capabilities.md
         - name: Сценарии
           items:
             - name: Распространенные сценарии использования DevTest Labs
@@ -68,7 +66,9 @@
               href: devtest-lab-test-env.md
             - name: Использование лабораторий для обучения
               href: devtest-lab-training-lab.md
-- name: Практические руководства
+            - name: Сценарии использования запрашиваемых виртуальных машин
+              href: devtest-lab-use-claim-capabilities.md
+- name: Руководства
   items:
     - name: Лаборатории для аудитории
       items:
@@ -160,7 +160,7 @@
               href: devtest-lab-add-vm.md
             - name: Создание виртуальной машины с помощью Azure PowerShell
               href: devtest-lab-vm-powershell.md
-            - name: Создание виртуальных машин и управление ими с помощью Azure CLI
+            - name: "Создание виртуальной машины с помощью Azure\_CLI"
               href: devtest-lab-vmcli.md
             - name: Создание виртуальной машины с помощью шаблона Resource Manager
               href: devtest-lab-use-resource-manager-template.md
@@ -172,6 +172,8 @@
               href: devtest-lab-resize-vm.md
             - name: Повторное развертывание виртуальной машины
               href: devtest-lab-redeploy-vm.md
+            - name: Настройка автозавершения работы виртуальной машины
+              href: devtest-lab-auto-shutdown-vm.md
             - name: Создание запрашиваемых виртуальных машин и управление ими
               href: devtest-lab-add-claimable-vm.md
             - name: Настройка секретов
