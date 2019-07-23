@@ -54,7 +54,7 @@ ms.locfileid: "65788670"
 [MapReduce](transform-data-using-hadoop-map-reduce.md) | HDInsight [Hadoop]
 [Потоковая передача Hadoop](transform-data-using-hadoop-streaming.md) | HDInsight [Hadoop]
 [Spark](transform-data-using-spark.md) | HDInsight [Hadoop]
-[Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](transform-data-using-machine-learning.md) | Azure
+[Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](transform-data-using-machine-learning.md) | Azure VM
 [Хранимая процедура](transform-data-using-stored-procedure.md) | Azure SQL, хранилище данных Azure SQL или SQL Server
 [U-SQL](transform-data-using-data-lake-analytics.md) | Azure Data Lake Analytics
 [Пользовательский код](transform-data-using-dotnet-custom-activity.md) | Пакетная служба Azure
