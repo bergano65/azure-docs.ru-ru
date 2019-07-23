@@ -1,21 +1,21 @@
 ---
-title: Руководство по ASP.NET MVC для Azure Cosmos DB. Разработка веб-приложений
-description: Это руководство по MVC для ASP.NET поможет вам создать веб-приложение MVC с использованием Azure Cosmos DB. С помощью этого руководства по ASP NET MVC вы сможете сохранить файл JSON и получить доступ к данным из приложения "Список дел", размещенного на веб-сайтах Azure.
+title: Руководство по ASP.NET Core MVC для Azure Cosmos DB. Разработка веб-приложений
+description: Это руководство по MVC Core для ASP.NET поможет вам создать веб-приложение MVC с использованием Azure Cosmos DB. С помощью этого руководства по ASP NET Core MVC вы сможете сохранить файл JSON и получить доступ к данным из приложения "Список дел", размещенного в Службе приложений Azure.
 author: SnehaGunda
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 05/21/2019
+ms.date: 06/24/2019
 ms.author: sngun
-ms.openlocfilehash: 15cf3b1316cc35e22538ca353302c4a82d2d418b
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.openlocfilehash: 85d9cbe7d0807ca0e7951e1e12d1edbbf7c921db
+ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65979014"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67985889"
 ---
-# <a name="_Toc395809351"></a>Руководство по ASP.NET MVC. Разработка веб-приложений в Azure Cosmos DB
+# <a name="tutorial-develop-an-aspnet-core-mvc-web-application-with-azure-cosmos-db-by-using-net-sdk"></a>Руководство по Разработка веб-приложения ASP.NET Core MVC с использованием Azure Cosmos DB с помощью пакета SDK для .NET 
 
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-dotnet-application.md)
@@ -23,161 +23,134 @@ ms.locfileid: "65979014"
 > * [Node.js](sql-api-nodejs-application.md)
 > * [Python](sql-api-python-application.md)
 > * [Xamarin](mobile-apps-with-xamarin.md)
-> 
 
-Чтобы показать, как эффективно использовать Azure Cosmos DB для хранения документов JSON и их запроса, в этой статье приведена пошаговая инструкция для создания приложения со списком задач с помощью Azure Cosmos DB. Задачи будут храниться в виде документов JSON в Azure Cosmos DB.
 
-![Снимок экрана: веб-приложение MVC "Список дел", созданное с помощью этого учебника по ASP.NET MVC](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-image01.png)
+В этом руководстве показано, как использовать Azure Cosmos DB для хранения данных и обеспечения доступа к ним из приложения ASP.NET MVC, размещенного в Azure. В этом руководстве используется пакет SDK для .NET версии 3. На следующем рисунке показана веб-страница, которая создается с помощью примера в этой статье:
+ 
+![Снимок экрана: список дел веб-приложения MVC, созданный с помощью этого руководства по ASP.NET Core MVC](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-image01.png)
 
-В этом пошаговом руководстве показан пример использования службы Azure Cosmos DB для хранения данных и доступа к ним из веб-приложения MVC для ASP.NET, размещенного на платформе Azure. Если вы ищете руководство, в котором рассматривается только Azure Cosmos DB, а не компоненты ASP.NET MVC, дополнительные сведения см. в статье о [создании консольного приложения Azure Cosmos DB на языке C#](sql-api-get-started.md).
+Если у вас нет времени для работы с руководством, можно скачать полный пример проекта с [GitHub][GitHub].
+
+Темы, рассматриваемые в этом руководстве:
+
+> [!div class="checklist"]
+> * Создание учетной записи Azure Cosmos.
+> * Создание приложения ASP.NET Core MVC
+> * Подключение приложения к Azure Cosmos DB. 
+> * Выполнение операций CRUD с данными.
 
 > [!TIP]
-> Предполагается, что у вас есть опыт использования ASP.NET MVC и веб-сайтов Azure. Если вы никогда не работали с ASP.NET или [необходимыми инструментами](#_Toc395637760), мы рекомендуем скачать полный пример проекта с портала [GitHub][GitHub] и следовать инструкциям в этом примере. После выполнения сборки вы можете просмотреть эту статью, чтобы разобраться в коде этого проекта.
-> 
-> 
+> Предполагается, что у вас есть опыт использования ASP.NET Core MVC и службы приложений Azure. Если вы никогда не работали с ASP.NET Core или [необходимыми инструментами](#prerequisites), мы рекомендуем скачать полный пример проекта с портала [GitHub][GitHub], добавить требуемые пакеты NuGet и запустить его. Когда создадите проект, вы можете просмотреть эту статью, чтобы разобраться в коде этого проекта.
 
-## <a name="_Toc395637760"></a>Предварительные требования для изучения этого учебника по базам данных
-Перед выполнением инструкций, приведенных в этой статье, следует убедиться, что установлены следующие компоненты:
+## <a name="prerequisites"></a>Предварительные требования 
 
-* Активная учетная запись Azure.  Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
+Перед выполнением инструкций, приведенных в этой статье, обеспечьте наличие следующих ресурсов:
+
+* **Активная учетная запись Azure**. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу. 
 
   [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
 
 * [!INCLUDE [cosmos-db-emulator-vs](../../includes/cosmos-db-emulator-vs.md)]  
-* Пакет Microsoft Azure SDK для .NET (Visual Studio 2017), доступный через Visual Studio Installer.
 
-Все снимки экранов в этой статье сделаны с помощью Microsoft Visual Studio Community 2017. Если система настроена с помощью другой версии, то вполне вероятно, что ваши экраны и параметры не будут соответствовать полностью, но если выполнить все вышеуказанные требования, то это решение должно работать.
+Все снимки экранов в этой статье сделаны с помощью Microsoft Visual Studio Community 2019. Если система настроена с помощью другой версии, то вполне вероятно, что ваши экраны и параметры могут не соответствовать полностью, но если выполнить все вышеуказанные требования, то это решение должно работать.
 
-## <a name="_Toc395637761"></a>Шаг 1. Создание учетной записи базы данных Azure Cosmos DB
-Давайте сначала создадим учетную запись Azure Cosmos DB. Если у вас уже есть учетная запись SQL для Azure Cosmos DB или вы используете эмулятор Azure Cosmos DB для этого руководства, то вы можете перейти к разделу [Создание нового приложения ASP.NET MVC](#_Toc395637762).
+## <a name="create-an-azure-cosmos-account"></a>Шаг 1. Создание учетной записи Azure Cosmos
+
+Давайте сначала создадим учетную запись Azure Cosmos. Если у вас уже есть учетная запись API SQL Azure Cosmos DB или вы используете эмулятор Azure Cosmos DB для этого руководства, то вы можете перейти к разделу [Создание приложения ASP.NET MVC](#create-a-new-mvc-application).
 
 [!INCLUDE [create-dbaccount](../../includes/cosmos-db-create-dbaccount.md)]
 
 [!INCLUDE [keys](../../includes/cosmos-db-keys.md)]
 
-<br/>
- Теперь рассмотрим создание нового приложения ASP.NET MVC с нуля. 
+В следующем разделе вы создадите приложение ASP.NET Core MVC. 
 
-## <a name="_Toc395637762"></a>Шаг 2. Создание приложения ASP.NET MVC
+## <a name="create-a-new-mvc-application"></a>Шаг 2. Создание приложения ASP.NET Core MVC
 
-1. В меню Visual Studio **Файл** выберите **Создать**, а затем щелкните **Проект**. Откроется диалоговое окно **Новый проект** .
+1. В Visual Studio откройте меню **Файл** и выберите **Создать**, а затем — **Проект**. Откроется диалоговое окно **Новый проект** .
 
-2. На панели **Типы проектов** разверните **Шаблоны**, **Visual C#**, **Веб**, а затем выберите **Веб-приложение ASP.NET**.
+2. В окне **Новый проект**  используйте поле ввода **Поиск шаблонов**, чтобы выполнить поиск "Веб", а затем выберите **Веб-приложение ASP.NET Core**. 
 
-      ![Снимок экрана: диалоговое окно "Новый проект" с выделенным типом проекта веб-приложения ASP.NET](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-new-project-dialog.png)
+   ![Создание проекта веб-приложения ASP.NET Core](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-new-project-dialog.png)
 
-3. В поле **Имя** введите имя проекта. В этом учебнике используется имя todo. Если вы решили использовать другое имя, в ситуациях, когда будет идти речь о пространстве имен todo, вы должны будете откорректировать представленные образцы кода, используя имя своего приложения. 
-4. Щелкните **Обзор**, чтобы перейти к папке, в которой вы хотите создать проект, и нажмите кнопку **ОК**.
-   
-      Отобразится диалоговое окно **Создание веб-приложения ASP.NET**.
-   
-    ![Снимок экрана: диалоговое окно "Создание веб-приложения ASP.NET" с выделенным шаблоном приложения MVC](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-MVC.png)
-5. На панели «Шаблоны» выберите **MVC**.
+3. В поле **Имя** введите имя проекта. В этом учебнике используется имя todo. Если вы решили использовать другое имя, в ситуациях, когда будет идти речь о пространстве имен todo, откорректируйте представленные образцы кода, используя имя своего приложения. 
 
-6. Нажмите кнопку **OK** , и Visual Studio создаст пустой шаблон ASP.NET MVC. 
+4. Выберите **Обзор**, чтобы перейти к папке, в которой вы хотите создать проект. Нажмите кнопку **Создать**. 
 
-          
+5. Появится диалоговое окно **Создание нового веб-приложения ASP.NET Core**. В списке шаблонов выберите **Веб-приложение (модель-представление-контроллер)** .
+
+6. Выберите **Создать**, и Visual Studio сформирует пустой шаблон ASP.NET Core MVC. 
+
 7. После того как Visual Studio закончит создание шаблонного приложения MVC, у вас будет пустое приложение ASP.NET, которое можно запустить локально.
-   
-    Мы не станем запускать этот проект локально, потому что я уверена, что мы все видели приложение ASP.NET "Hello World". Давайте перейдем к добавлению Azure Cosmos DB в этот проект и созданию приложения.
 
-## <a name="_Toc395637767"></a>Шаг 3. Добавление Azure Cosmos DB в проект веб-приложения MVC
-Теперь, когда мы установили большую часть коммуникаций MVC для ASP.NET, необходимых для этого решения, перейдем к основной цели этого руководства, т. е. к добавлению Azure Cosmos DB в веб-приложение MVC.
+## <a name="add-nuget-packages"></a>Шаг 3. Добавление пакета Azure Cosmos DB NuGet в проект
+
+Теперь, когда у нас есть большая часть кода платформы ASP.NET Core MVC, необходимого для этого решения, давайте добавим пакеты NuGet, требуемые для подключения к Azure Cosmos DB.
 
 1. Пакет .NET SDK для Azure Cosmos DB комплектуется и распространяется как пакет NuGet. Чтобы получить пакет NuGet в Visual Studio, используйте диспетчер пакетов NuGet в Visual Studio: щелкните правой кнопкой мыши проект в **обозревателе решений** и выберите **Управление пакетами NuGet**.
    
-    ![Снимок экрана: параметры контекстного меню проекта веб-приложения в обозревателе решений с выделенным параметром "Управление пакетами NuGet"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-manage-nuget.png)
+   ![Снимок экрана: параметры контекстного меню проекта веб-приложения в обозревателе решений с выделенным параметром "Управление пакетами NuGet"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-manage-nuget.png)
    
-    Откроется диалоговое окно **Управление пакетами NuGet** .
-2. В окне NuGet в поле **Обзор** введите ***Azure DocumentDB***. (Имя пакета не обновлено для Azure Cosmos DB.)
+2. Откроется диалоговое окно **Управление пакетами NuGet** . В поле **обзора** NuGet введите **Microsoft.Azure.Cosmos**. В результатах поиска выберите пакет **Microsoft.Azure.Cosmos** и установите его. Загрузится и установится пакет Azure Cosmos DB, а также все зависимости. Чтобы завершить установку, выберите **Я принимаю** в окне **Принятие условий лицензионного соглашения**.
    
-    В результатах поиска найдите пакет **Microsoft.Azure.DocumentDB от корпорации Майкрософт** и установите его. При этом будет загружен и установлен пакет Azure Cosmos DB, а также все зависимости, такие как Newtonsoft.Json. В окне **предварительного просмотра** щелкните **ОК**, после чего в окне **Принятие условий лицензионного соглашения** выберите **Принять**. Установка будет завершена.
+   Для установки пакета NuGet можно также воспользоваться консолью диспетчера пакетов. Для этого в меню **Инструменты** выберите **Диспетчер пакетов NuGet**, а затем — **Консоль диспетчера пакетов**. При появлении запроса введите следующую команду:
    
-    ![Снимок экрана: окно "Управление пакетами NuGet" с выделенной библиотекой клиента Microsoft Azure Cosmos DB](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-install-nuget.png)
-   
-      Для установки пакета можно также воспользоваться консолью диспетчера пакетов. Для этого в меню **Инструменты** щелкните **Диспетчер пакетов NuGet**, а затем выберите **Консоль диспетчера пакетов**. Когда появится запрос, введите следующую команду.
-   
-        Install-Package Microsoft.Azure.DocumentDB
-        
-3. После установки пакета в решение Visual Studio будут добавлены две ссылки, Microsoft.Azure.Documents.Client и Newtonsoft.Json, и оно будет выглядеть следующим образом.
-   
-    ![Снимок экрана: две ссылки, добавленные в проект данных JSON в обозревателе решений](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-added-references.png)
+   ```bash
+   Install-Package Microsoft.Azure.Cosmos
+   ```        
 
-## <a name="_Toc395637763"></a>Шаг 4. Настройка приложения ASP.NET MVC
+3. После установки пакета проект Visual Studio будет содержать ссылку на библиотеку Microsoft.Azure.Cosmos.
+  
+## <a name="set-up-the-mvc-application"></a>Шаг 4. Настройка приложения ASP.NET Core MVC
+
 Теперь добавим модели, представления и контроллеры в это приложение MVC.
 
-* [Добавление модели](#_Toc395637764).
-* [Добавление контроллера](#_Toc395637765).
-* [Добавление представлений](#_Toc395637766).
+* [Добавление модели](#add-a-model).
+* [Добавление контроллера](#add-a-controller).
+* [Добавление представлений](#add-views).
 
-### <a name="_Toc395637764"></a>Добавление модели данных JSON
-Давайте начнем с буквы **M** из аббревиатуры MVC, с модели (Model). 
+### <a name="add-a-model"></a> Добавление модели
 
-1. В **обозревателе решений** щелкните правой кнопкой мыши папку **Модели**, выберите **Добавить**, а затем щелкните **Класс**.
-   
-      Откроется диалоговое окно **Добавление нового элемента** .
-2. Назовите новый класс **Item.cs** и нажмите кнопку **Добавить**. 
-3. В этом новом файле **Item.cs** добавьте следующий код после последнего *оператора using*.
-   
-        using Newtonsoft.Json;
-4. Теперь замените этот код 
-   
-        public class Item
-        {
-        }
-   
-    следующим кодом:
-   
-        public class Item
-        {
-            [JsonProperty(PropertyName = "id")]
-            public string Id { get; set; }
-   
-            [JsonProperty(PropertyName = "name")]
-            public string Name { get; set; }
-   
-            [JsonProperty(PropertyName = "description")]
-            public string Description { get; set; }
-   
-            [JsonProperty(PropertyName = "isComplete")]
-            public bool Completed { get; set; }
-        }
-   
-    Все данные в Azure Cosmos DB передаются по сети и сохраняются в виде JSON-файлов. Для управления сериализацией и десериализацией объектов с помощью JSON.NET можно использовать атрибут **JsonProperty**, как показано на примере только что созданного класса **Item**. Вам **не обязательно** это делать, но, присваивая имена свойствам, я придерживаюсь правил наименования camelCase JSON. 
-   
-    Можно не только контролировать формат имени свойства при его поступлении в JSON, но и полностью переименовывать свойства .NET, как мы сделали со свойством **Description**. 
+1. В **обозревателе решений** щелкните правой кнопкой мыши папку **Модели**, выберите **Добавить**, а затем щелкните **Класс**. Откроется диалоговое окно **Добавление нового элемента** .
 
-### <a name="_Toc395637765"></a>Добавление контроллера
-С буквой **M** (моделями) разобрались, теперь займемся **C**, т. е. классом контроллера.
+1. Назовите новый класс **Item.cs** и выберите **Добавить**. 
 
-1. В **обозревателе решений** щелкните правой кнопкой мыши папку **Контроллеры**, выберите **Добавить**, а затем щелкните **Контроллер**.
-   
-    Откроется диалоговое окно **Добавление элемента формирования шаблонов** .
-2. Выберите **Контроллер MVC 5 — пустой** и нажмите кнопку **Добавить**.
-   
-    ![Снимок экрана: диалоговое окно "Добавление шаблона" с выделенным параметром "Контроллер MVC 5 — пустой"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-controller-add-scaffold.png)
-3. Назовите новый контроллер **ItemController.**
-   
-    ![Снимок экрана: диалоговое окно "Добавление контроллера"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-add-controller.png)
-   
-    После создания файла решение Visual Studio с новым файлом ItemController.cs в **Обозревателе решений**должно выглядеть следующим образом. Новый файл Item.cs, созданный ранее, также отображается.
-   
-    ![Снимок экрана решения Visual Studio: обозреватель решений с выделенным новым файлом ItemController.cs и файлом Item.cs](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-new-item-solution-explorer.png)
-   
-    Можно закрыть файл ItemController.cs, мы вернемся к нему позже. 
+1. Далее замените код в классе "Item.cs" следующим кодом.
 
-### <a name="_Toc395637766"></a>Добавление представлений
-И наконец, займемся буквой **V** из аббревиатуры MVC, т. е. представлениями.
+   [!code-csharp[Main](~/samples-cosmosdb-dotnet-core-web-app/src/Models/Item.cs)]
+   
+   Хранимые данные в Azure Cosmos DB передаются по сети и сохраняются в виде JSON-файлов. Для управления сериализацией и десериализацией объектов с помощью JSON.NET можно использовать атрибут **JsonProperty**, как показано на примере созданного класса **Item**. Вы можете не только контролировать формат имени свойства при его поступлении в JSON, но также и переименовывать свойства .NET, как вы сделали со свойством **Completed**. 
 
-* [Добавление представления «Индекс элементов»](#AddItemIndexView).
-* [Добавление представления «Создание элементов»](#AddNewIndexView).
-* [Добавление представления «Редактирование элементов»](#_Toc395888515).
+### <a name="add-a-controller"></a>Добавление контроллера
 
-#### <a name="AddItemIndexView"></a>Добавление представления «Индекс элементов»
+1. В **обозревателе решений** щелкните правой кнопкой мыши папку **Контроллеры**, выберите **Добавить**, а затем щелкните **Контроллер**. Откроется диалоговое окно **Добавление элемента формирования шаблонов** .
+
+1. Выберите **Контроллер MVC — пустой** и нажмите кнопку **Добавить**.
+
+   ![Снимок экрана: диалоговое окно "Добавление шаблона" с выделенным параметром "Контроллер MVC — пустой"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-controller-add-scaffold.png)
+
+1. Назовите новый контроллер **ItemController** и замените код в этом файле следующим:
+
+   [!code-csharp[Main](~/samples-cosmosdb-dotnet-core-web-app/src/Controllers/ItemController.cs)]
+
+   Атрибут **ValidateAntiForgeryToken** используется здесь для защиты этого приложения от атак с подделкой межсайтовых запросов. Кроме добавления этого атрибута представления также должны работать с данным маркером защиты от подделки запросов. Дополнительные сведения об этом и примеры правильной реализации этой технологии см. в статье [Preventing Cross-Site Request Forgery (CSRF) Attacks in ASP.NET MVC Application][Preventing Cross-Site Request Forgery]. The source code provided on [GitHub][GitHub] (Предотвращение атак с подделкой межсайтовых запросов в приложениях ASP.NET MVC) имеет полную реализацию.
+
+   Для защиты от атак overposting также используется атрибут **Bind** в параметре метода. Дополнительные сведения см. в записи блога [Implementing Basic CRUD Functionality with the Entity Framework in ASP.NET MVC Application][Basic CRUD Operations in ASP.NET MVC] (Реализация базовых функций CRUD с помощью Entity Framework в приложении ASP.NET MVC).
+
+### <a name="add-views"></a>Добавление представлений
+
+Теперь давайте создадим следующие три представления. 
+
+* [Добавление представления "Элемент списка"](#AddItemIndexView).
+* [Добавление представления "Создание элементов"](#AddNewIndexView).
+* [Добавление представления "Редактирование элементов"](#AddEditIndexView).
+
+#### <a name="AddItemIndexView"></a>Добавление представления "Элемент списка"
+
 1. В **обозревателе решений** разверните папку **Представления**, щелкните правой кнопкой мыши пустую папку **Элемент**, созданную Visual Studio при добавлении **ItemController** ранее, выберите **Добавить**, а затем щелкните **Представление**.
    
-    ![Снимок экрана: обозреватель решений, отображающий папку "Элемент", созданную Visual Studio, с выделенными командами "Добавление представления"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-add-view.png)
-2. В диалоговом окне **Добавление представления** выполните следующие действия.
+   ![Снимок экрана: обозреватель решений, отображающий папку "Элемент", созданную Visual Studio, с выделенными командами "Добавления представления"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-add-view.png)
+
+2. В диалоговом окне **Добавление представления** обновите следующие значения.
    
    * В поле **Имя представления** введите ***Индекс***.
    * В поле **Шаблон** выберите ***Список***.
@@ -185,364 +158,153 @@ ms.locfileid: "65979014"
    * В поле страницы макета введите ***~/Views/Shared/_Layout.cshtml***.
      
    ![Снимок экрана: диалоговое окно "Добавление представления"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-add-view-dialog.png)
-3. После установки этих значений нажмите **Добавить** , и Visual Studio создаст представление. После этого откроется созданный CSHTML-файл. Можно закрыть этот файл в Visual Studio, мы вернемся к нему позже.
 
-#### <a name="AddNewIndexView"></a>Добавление представления «Создание элементов»
-Точно так же, как мы создали представление **Индекс элементов**, теперь мы создадим новое представление для создания новых **элементов**.
+3. После добавления этих значений выберите **Добавить**, и Visual Studio создаст представление. После этого откроется созданный CSHTML-файл. Вы можете закрыть этот файл в Visual Studio и вернуться к нему позже.
 
-1. В **обозревателе решений** снова щелкните правой кнопкой мыши папку **Элемент**, выберите **Добавить**, а затем щелкните **Представление**.
-2. В диалоговом окне **Добавление представления** выполните следующие действия.
+#### <a name="AddNewIndexView"></a>Добавление представления "Создание элементов"
+
+Аналогично тому, как вы создали представление для вывода списка элементов, создайте представление для создания элементов, выполнив следующие действия:
+
+1. В **обозревателе решений**, щелкните правой кнопкой мыши папку **Элемент**, выберите **Добавить**, а затем щелкните **Представление**.
+
+1. В диалоговом окне **Добавление представления** обновите следующие значения.
    
    * В поле **Имя представления** введите ***Создать***.
    * В поле **Шаблон** выберите ***Создать***.
    * В поле **Класс модели** выберите ***Item (todo.Models)*** (Элемент (todo.Models)).
    * В поле страницы макета введите ***~/Views/Shared/_Layout.cshtml***.
-   * Щелкните **Добавить**.
+   * Выберите **Добавить**.
    
-#### <a name="_Toc395888515"></a>Добавление представления «Редактирование элементов»
-И, наконец, добавим последнее представление для редактирования **элементов** , как мы делали это ранее.
+#### <a name="AddEditIndexView"></a>Добавление представления "Редактирование элементов"
 
-1. В **обозревателе решений** снова щелкните правой кнопкой мыши папку **Элемент**, выберите **Добавить**, а затем щелкните **Представление**.
-2. В диалоговом окне **Добавление представления** выполните следующие действия.
+И наконец, добавьте представление для редактирования элемента, сделав следующее:
+
+1. В **обозревателе решений**, щелкните правой кнопкой мыши папку **Элемент**, выберите **Добавить**, а затем щелкните **Представление**.
+
+1. В диалоговом окне **Добавление представления** выполните следующие действия.
    
    * В поле **Имя представления** введите ***Изменить***.
    * В поле **Шаблон** выберите ***Изменить***.
    * В поле **Класс модели** выберите ***Item (todo.Models)*** (Элемент (todo.Models)).
    * В поле страницы макета введите ***~/Views/Shared/_Layout.cshtml***.
-   * Щелкните **Добавить**.
+   * Выберите **Добавить**.
 
-Как только все будет готово, закройте документы cshtml в Visual Studio, мы вернемся к этим представлениям позже.
+Как только все будет готово, закройте документы cshtml в Visual Studio, вы вернетесь к ним позже.
 
-## <a name="_Toc395637769"></a>Шаг 5. Подключение Azure Cosmos DB
-Теперь, когда мы позаботились об основных ресурсах MVC, давайте рассмотрим добавление кода для Azure Cosmos DB. 
+## <a name="connect-to-cosmosdb"></a>Шаг 5. Подключение к Azure Cosmos DB 
 
-В этом разделе мы добавим код для обработки следующих команд
+Теперь, когда мы позаботились об основных ресурсах MVC, давайте рассмотрим добавление кода для подключения к Azure Cosmos DB и выполнения операций CRUD. 
 
-* [Вывод списка незавершенных элементов](#_Toc395637770).
-* [Добавление элементов](#_Toc395637771).
-* [Редактирование элементов](#_Toc395637772).
+### <a name="perform-crud-operations"></a> Выполнение операций CRUD с данными
 
-### <a name="_Toc395637770"></a>Отображение незавершенных элементов в веб-приложении MVC
-Прежде всего следует добавить класс, который содержит всю необходимую логику для подключения к службе Azure Cosmos DB и ее использования. В этом учебнике мы оформим всю эту логику в класс репозитория с именем DocumentDBRepository. 
+Прежде всего следует добавить класс, который содержит необходимую логику для подключения к службе Azure Cosmos DB и ее использования. В этом руководстве мы инкапсулируем эту логику в класс с именем `CosmosDBService` и интерфейсом с именем `ICosmosDBService`. Эта служба выполняет CRUD и операции веб-каналов, такие как отображение незавершенных элементов, а также создание, редактирование и удаление элементов. 
 
-1. В **обозревателе решений** щелкните правой кнопкой мыши проект, выберите **Добавить**, а затем щелкните **Класс**. Назовите новый класс **DocumentDBRepository** и нажмите кнопку **Добавить**.
-2. В только что созданном классе **DocumentDBRepository** добавьте следующие *операторы using* над объявлением *namespace*.
-   
-        using Microsoft.Azure.Documents; 
-        using Microsoft.Azure.Documents.Client; 
-        using Microsoft.Azure.Documents.Linq; 
-        using System.Configuration;
-        using System.Linq.Expressions;
-        using System.Threading.Tasks;
-        using System.Net;
-        
-    Теперь замените этот код 
-   
-        public class DocumentDBRepository
-        {
-        }
-   
-    следующим кодом:
-   
-        public static class DocumentDBRepository<T> where T : class
-        {
-            private static readonly string DatabaseId = ConfigurationManager.AppSettings["database"];
-            private static readonly string CollectionId = ConfigurationManager.AppSettings["collection"];
-            private static DocumentClient client;
-   
-            public static void Initialize()
-            {
-                client = new DocumentClient(new Uri(ConfigurationManager.AppSettings["endpoint"]), ConfigurationManager.AppSettings["authKey"]);
-                CreateDatabaseIfNotExistsAsync().Wait();
-                CreateCollectionIfNotExistsAsync().Wait();
-            }
-   
-            private static async Task CreateDatabaseIfNotExistsAsync()
-            {
-                try
-                {
-                    await client.ReadDatabaseAsync(UriFactory.CreateDatabaseUri(DatabaseId));
-                }
-                catch (DocumentClientException e)
-                {
-                    if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
-                    {
-                        await client.CreateDatabaseAsync(new Database { Id = DatabaseId });
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-            }
-   
-            private static async Task CreateCollectionIfNotExistsAsync()
-            {
-                try
-                {
-                    await client.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId));
-                }
-                catch (DocumentClientException e)
-                {
-                    if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
-                    {
-                        await client.CreateDocumentCollectionAsync(
-                            UriFactory.CreateDatabaseUri(DatabaseId),
-                            new DocumentCollection { Id = CollectionId },
-                            new RequestOptions { OfferThroughput = 1000 });
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-            }
-        }
-   
-    
-3. Некоторые значения будут считываться из конфигурации, поэтому нужно открыть файл **Web.config** и добавить следующие строки в разделе `<AppSettings>`.
-   
-        <add key="endpoint" value="enter the URI from the Keys blade of the Azure Portal"/>
-        <add key="authKey" value="enter the PRIMARY KEY, or the SECONDARY KEY, from the Keys blade of the Azure  Portal"/>
-        <add key="database" value="ToDoList"/>
-        <add key="collection" value="Items"/>
-4. Теперь обновите значения для параметров *endpoint* и *authKey*, используя колонку "Ключи" на портале Azure. Используйте **URI** из колонки "Ключи" в качестве значения параметра endpoint. Что касается значения параметра authKey, то в этом качестве используйте значение **первичного ключа** или **вторичного** из колонки "Ключи".
+1. В **обозревателе решений** создайте папку в проекте с именем **Services**.
 
-    Это касается подключения репозитория Azure Cosmos DB. Теперь можно добавить логику приложения.
+1. Щелкните правой кнопкой мыши папку **Services**, выберите **Добавить**, а затем — **Класс**. Назовите новый класс **CosmosDBService** и выберите **Добавить**.
 
-1. Первое, что мы хотим сделать с приложением списка заданий, — отображение незавершенных элементов.  Скопируйте и вставьте следующий фрагмент кода в любом месте в класса **DocumentDBRepository** .
-   
-        public static async Task<IEnumerable<T>> GetItemsAsync(Expression<Func<T, bool>> predicate)
-        {
-            IDocumentQuery<T> query = client.CreateDocumentQuery<T>(
-                UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId))
-                .Where(predicate)
-                .AsDocumentQuery();
-   
-            List<T> results = new List<T>();
-            while (query.HasMoreResults)
-            {
-                results.AddRange(await query.ExecuteNextAsync<T>());
-            }
-   
-            return results;
-        }
-2. Откройте **ItemController** , который мы добавили ранее, и добавьте следующие *операторы using* перед декларацией namespace.
-   
-        using System.Net;
-        using System.Threading.Tasks;
-        using todo.Models;
-   
-    Если проект не называется todo, необходимо выполнить обновление с помощью todo.Models в соответствии с именем проекта.
-   
-    Теперь замените этот код
-   
-        //GET: Item
-        public ActionResult Index()
-        {
-            return View();
-        }
-   
-    следующим кодом:
-   
-        [ActionName("Index")]
-        public async Task<ActionResult> IndexAsync()
-        {
-            var items = await DocumentDBRepository<Item>.GetItemsAsync(d => !d.Completed);
-            return View(items);
-        }
-3. Откройте файл **Global.asax.cs** и добавьте в метод **Application_Start** следующую строку: 
-   
-        DocumentDBRepository<todo.Models.Item>.Initialize();
+1. Добавьте следующий код в класс **CosmosDBService** и замените код в этом файле на такой:
 
-На данном этапе ваше решение должно компилироваться без каких-либо ошибок.
+   [!code-csharp[Main](~/samples-cosmosdb-dotnet-core-web-app/src/Services/CosmosDbService.cs)]
 
-Чтобы запустить приложение сейчас, нужно перейти к **главному контроллеру** и представлению **индекса** в этом контроллере. Это поведение по умолчанию для шаблона проекта MVC мы выбрали вначале, но нам нужно кое-что другое! Давайте изменим маршрутизацию в данном приложении MVC, чтобы изменить это поведение.
+1. Повторно выполните 2-3 этап, но на этот раз для класса с именем **ICosmosDBService**, и добавьте указанный ниже код.
 
-Откройте файл ***App\_Start\RouteConfig.cs***, найдите строку, начинающуюся с defaults:, и измените ее следующим образом:
+   [!code-csharp[Main](~/samples-cosmosdb-dotnet-core-web-app/src/Services/ICosmosDbService.cs)]
+ 
+1. Предыдущий код получает `CosmosClient` как часть конструктора. После конвейера ASP.NET Core нужно перейти в **Startup.cs** проекта и инициализировать клиента на основе конфигурации как одноэлементный экземпляр, который будет внедрен с помощью [внедрения зависимостей](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection). В обработчике **ConfigureServices** определяется:
 
-        defaults: new { controller = "Item", action = "Index", id = UrlParameter.Optional }
+    ```csharp
+    services.AddSingleton<ICosmosDbService>(InitializeCosmosClientInstanceAsync(Configuration.GetSection("CosmosDb")).GetAwaiter().GetResult());
+    ```
 
-Теперь приложение ASP.NET MVC будет знать, что, если вы не указали значение в поле URL-адреса для управления поведением маршрутизации, вместо **главной страницы** нужно использовать **Элемент** в качестве контроллера, а пользовательский **индекс** — в качестве представления.
+1. В этом же файле определяется вспомогательный метод **InitializeCosmosClientInstanceAsync**, с помощью которого выполняется чтение конфигурации, а также инициализация клиента.
 
-Теперь при запуске приложения оно будет вызывать **ItemController**, который вызывает класс репозитория и использует метод GetItems, чтобы возвратить все незавершенные элементы в представлении **Представления**\\**Элемент**\\**Индекс**. 
+    ```csharp
+    private static async Task<CosmosDbService> InitializeCosmosClientInstanceAsync(IConfigurationSection configurationSection)
+    {
+        string databaseName = configurationSection.GetSection("DatabaseName").Value;
+        string containerName = configurationSection.GetSection("ContainerName").Value;
+        string account = configurationSection.GetSection("Account").Value;
+        string key = configurationSection.GetSection("Key").Value;
+        CosmosClientBuilder clientBuilder = new CosmosClientBuilder(account, key);
+        CosmosClient client = clientBuilder
+                            .WithConnectionModeDirect()
+                            .Build();
+        CosmosDbService cosmosDbService = new CosmosDbService(client, databaseName, containerName);
+        Database database = await client.CreateDatabaseIfNotExistsAsync(databaseName);
+        await database.CreateContainerIfNotExistsAsync(containerName, "/id");
 
-Если создать и запустить этот проект сейчас, отобразится примерно следующие данные.    
+        return cosmosDbService;
+    }
+    ```
+
+1. Конфигурация определяется в файле проекта **appsettings.json**. Откройте его и добавьте раздел с именем **CosmosDb**.
+
+   ```csharp
+     "CosmosDb": {
+        "Account": "<enter the URI from the Keys blade of the Azure Portal>",
+        "Key": "<enter the PRIMARY KEY, or the SECONDARY KEY, from the Keys blade of the Azure  Portal>",
+        "DatabaseName": "Tasks",
+        "ContainerName": "Items"
+      }
+   ```
+ 
+Теперь, если вы запустите приложение, конвейер ASP.NET Core будет создавать экземпляр **CosmosDbService** и поддерживать один экземпляр как одноэлементный. Когда **ItemController** используется для обработки запросов на стороне клиента, он получает этот отдельный экземпляр и сможет использовать его, чтобы выполнять операции CRUD.
+
+Если создать и запустить этот проект сейчас, отобразятся примерно следующие данные.
 
 ![Снимок экрана: веб-приложение "Список дел", созданное с помощью этого учебника по базе данных](./media/sql-api-dotnet-application/build-and-run-the-project-now.png)
 
-### <a name="_Toc395637771"></a>Добавление элементов
-Добавим несколько элементов в нашу базу данных, чтобы не смотреть на пустую сетку.
 
-Добавим код в репозиторий Azure Cosmos DBRepository и ItemController, чтобы сохранить запись в Azure Cosmos DB.
+## <a name="run-the-application"></a>Шаг 6. Локальный запуск приложения
 
-1. Добавьте следующий метод в класс **DocumentDBRepository** .
-   
-       public static async Task<Document> CreateItemAsync(T item)
-       {
-           return await client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId), item);
-       }
-   
-   Этот метод просто принимает любой объект, переданный ему, и сохраняет его в Azure Cosmos DB.
-2. Откройте файл ItemController.cs и добавьте следующий фрагмент кода в класс. Теперь приложение ASP.NET MVC будет знать, что делать с действием **Создать** . В этом случае просто выводится связанное представление Create.cshtml, которое было создано ранее.
-   
-        [ActionName("Create")]
-        public async Task<ActionResult> CreateAsync()
-        {
-            return View();
-        }
-   
-    Теперь нам нужно добавить еще немного кода в этом контроллере, который будет принимать данные из представления **Создание** .
-3. Добавьте следующий блок кода в класс ItemController.cs, который указывает приложению ASP.NET MVC, что нужно делать с формой POST для этого контроллера.
-   
-        [HttpPost]
-        [ActionName("Create")]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> CreateAsync([Bind(Include = "Id,Name,Description,Completed")] Item item)
-        {
-            if (ModelState.IsValid)
-            {
-                await DocumentDBRepository<Item>.CreateItemAsync(item);
-                return RedirectToAction("Index");
-            }
-   
-            return View(item);
-        }
-   
-    Этот код вызывает DocumentDBRepository и использует метод CreateItemAsync для сохранения нового элемента списка дел в базе данных. 
-   
-    **Примечание по безопасности.** Атрибут **ValidateAntiForgeryToken** используется здесь для защиты этого приложения от атак с подделкой межсайтовых запросов. Кроме добавления этого атрибута представления также должны работать с данным маркером защиты от подделки запросов. Дополнительные сведения об этом и примеры правильной реализации этой технологии см. в записи блога [Предотвращение атак с подделкой межсайтовых запросов][Preventing Cross-Site Request Forgery]. Исходный код, предоставленный на [GitHub][GitHub], имеет полную реализацию.
-   
-    **Примечание по безопасности.** Для защиты от атак overposting также используется атрибут **Bind** в параметре метода. Дополнительные сведения см. в записи блога [Основные операции CRUD в ASP.NET MVC][Basic CRUD Operations in ASP.NET MVC].
-
-На этом мы завершаем написание кода, необходимого для добавления новых элементов в нашу базу данных.
-
-### <a name="_Toc395637772"></a>Редактирование элементов
-И последнее, необходимо обеспечить возможность изменить **Элементы** в базе данных и отмечать их как завершенные. Представление изменения уже добавлено в проект, поэтому просто нужно еще раз добавить дополнительный код в контроллер и класс **DocumentDBRepository**.
-
-1. Добавьте следующие методы в класс **DocumentDBRepository** .
-   
-        public static async Task<Document> UpdateItemAsync(string id, T item)
-        {
-            return await client.ReplaceDocumentAsync(UriFactory.CreateDocumentUri(DatabaseId, CollectionId, id), item);
-        }
-   
-        public static async Task<T> GetItemAsync(string id)
-        {
-            try
-            {
-                Document document = await client.ReadDocumentAsync(UriFactory.CreateDocumentUri(DatabaseId, CollectionId, id));
-                return (T)(dynamic)document;
-            }
-            catch (DocumentClientException e)
-            {
-                if (e.StatusCode == HttpStatusCode.NotFound)
-                {
-                    return null;
-                }
-                else
-                {
-                    throw;
-                }
-            }
-        }
-   
-    Первый из этих двух методов, **GetItem**, извлекает элемент из Azure Cosmos DB, который передается обратно в **ItemController**, а затем — в представление **Изменить**.
-   
-    Второй метод, который мы только что добавили, заменяет **документ** в Azure Cosmos DB версией **документа**, переданного из **ItemController**.
-2. Добавьте следующие методы в класс **ItemController** .
-   
-        [HttpPost]
-        [ActionName("Edit")]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> EditAsync([Bind(Include = "Id,Name,Description,Completed")] Item item)
-        {
-            if (ModelState.IsValid)
-            {
-                await DocumentDBRepository<Item>.UpdateItemAsync(item.Id, item);
-                return RedirectToAction("Index");
-            }
-   
-            return View(item);
-        }
-   
-        [ActionName("Edit")]
-        public async Task<ActionResult> EditAsync(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-   
-            Item item = await DocumentDBRepository<Item>.GetItemAsync(id);
-            if (item == null)
-            {
-                return HttpNotFound();
-            }
-   
-            return View(item);
-        }
-   
-    Первый метод обрабатывает команду HTTP GET, формирующуюся, когда пользователь выбирает ссылку **Изменить** в представлении **Индекс**. Этот метод извлекает [**документ**](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.document.aspx) из Azure Cosmos DB и передает его в представление **Изменить**.
-   
-    Представление **Изменить** отправляет команду HTTP POST в **IndexController**. 
-   
-    Второй метод, который мы добавили, обрабатывает передачу обновленного объекта в Azure Cosmos DB, чтобы сохранить его в базе данных.
-
-Вот и все, что необходимо для запуска приложения, отображения списка незавершенных **элементов**, добавления новых **элементов** и изменения **элементов**.
-
-## <a name="_Toc395637773"></a>Шаг 6. Локальный запуск приложения
-Для проверки приложения на локальном компьютере выполните следующие действия.
+Для проверки приложения на локальном компьютере выполните следующие действия:
 
 1. Чтобы создать приложение в режиме отладки, откройте Visual Studio и нажмите клавишу F5. После этого будет создано приложение и откроется окно браузера с пустой сеткой, которую мы уже видели:
    
-    ![Снимок экрана: веб-приложение "Список дел", созданное с помощью этого учебника по базе данных](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-create-an-item-a.png)
+   ![Снимок экрана: веб-приложение "Список дел", созданное с помощью этого руководства](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-create-an-item-a.png)
+       
+2. Щелкните ссылку **Создать**, введите значения в поля **Имя** и **Описание**. Не устанавливайте флажок **Выполнено**, иначе новый элемент добавится ​​в завершенном состоянии и не отобразится в начальном списке.
    
-     
-2. Щелкните ссылку **Создать**, введите значения в поля **Имя** и **Описание**. Не устанавливайте флажок **Выполнено**, иначе новый **элемент** будет добавлен ​​в завершенном состоянии и не будет отображаться в начальном списке.
-   
-    ![Снимок экран: представление "Создать"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-create-new-item.png)
-3. Щелкните **Создать**. Вы будете перенаправлены в представление **Индекс**, а в списке появится ваш **элемент**.
-   
-    ![Снимок экран: представление "Индекс"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-create-an-item.png)
-   
-    Вы можете добавить еще несколько **Элементов** в список задач.
-    
-4. Нажмите кнопку **Изменить** рядом с **Элемент**. Вы будете перенаправлены в представление **Изменить**, где сможете изменить любое свойство объекта, в том числе флажок **Выполнено**. Если установить флажок **Выполнено** и нажать кнопку **Сохранить**, **Элемент** будет удален из списка незавершенных задач.
-   
-    ![Снимок экрана: представление "Индекс" с установленным флажком возле параметра "Завершено"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-completed-item.png)
-5. После проверки приложения нажмите клавиши CONTROL+F5, чтобы остановить отладку приложения. Теперь все готово к развертыванию.
+3. Щелкните **Создать**. Вы будете перенаправлены в представление **Индекс**, а в списке появится ваш элемент. Вы можете добавить еще несколько элементов в список задач.
 
-## <a name="_Toc395637774"></a>Шаг 7. Развертывание приложения в Службе приложений Azure 
+    ![Снимок экрана: представление "Индекс"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-create-an-item.png)
+  
+4. Нажмите кнопку **Изменить** рядом с **Элемент**. Вы будете перенаправлены в представление **Изменить**, где сможете изменить любое свойство объекта, в том числе флажок **Выполнено**. Если установить флажок **Выполнено** и нажать кнопку **Сохранить**, **Элемент** будет отображен в списке как завершенный.
+   
+   ![Снимок экрана: представление "Индекс" с установленным флажком возле параметра "Завершено"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-completed-item.png)
+
+5. В любой момент можно проверить состояние данных в службе Azure Cosmos DB с помощью [обозревателя Cosmos](https://cosmos.azure.com) или обозревателя данных эмулятора Azure Cosmos DB.
+
+6. После проверки приложения нажмите клавиши CONTROL+F5, чтобы остановить отладку приложения. Теперь все готово к развертыванию.
+
+## <a name="deploy-the-application-to-azure"></a>Шаг 7. Развертывание приложения 
 Теперь, когда у вас есть готовое приложение, которое корректно работает в Azure Cosmos DB, мы собираемся развернуть его в службу приложений Azure.  
 
-1. Чтобы опубликовать это приложение, щелкните правой кнопкой мыши проект в **обозревателе решений** и выберите **Опубликовать**.
+1. Чтобы опубликовать это приложение, щелкните проект правой кнопкой мыши в **обозревателе решений** и выберите действие **Опубликовать**.
    
-    ![Снимок экрана: параметр "Публикация" в обозревателе решений](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-publish.png)
+2. В диалоговом окне **Публикация** выберите **Служба приложений**, затем выберите **Создать**, чтобы создать профиль службы приложений, или щелкните **Выбрать существующий**, чтобы использовать имеющийся профиль.
 
-2. В диалоговом окне **Публикация** щелкните **Служба приложений Microsoft Azure**, затем выберите **Создать**, чтобы создать профиль службы приложений, или щелкните **Выбрать существующий**, чтобы использовать существующий профиль.
-
-    ![Диалоговое окно "Публикация" в Visual Studio](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-publish-to-existing.png)
-
-3. При наличии существующего профиля службы приложений Azure введите имя своей подписки. Используйте фильтр **Просмотр** для сортировки по группе ресурсов или типу ресурсов, а затем выберите службу приложений Azure. 
+3. При наличии профиля Службы приложений Azure выберите **подписку** из раскрывающегося списка. Используйте фильтр **Просмотр** для сортировки по группе ресурсов или типу ресурсов. Затем выполните поиск необходимой Службы приложений Azure и нажмите кнопку **ОК**.
    
-    ![Диалоговое окно "Служба приложений" в Visual Studio](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-app-service.png)
+   ![Диалоговое окно "Служба приложений" в Visual Studio](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-app-service.png)
 
-4. Чтобы создать профиль службы приложений Azure, в диалоговом окне **Публикация** выберите **Создать**. В окне **Создать службу приложений** введите имя веб-приложения и соответствующие подписку, группу ресурсов и план службы приложений, а затем нажмите кнопку **Создать**.
+4. Чтобы создать профиль службы приложений Azure, в диалоговом окне **Публикация** выберите **Создать**. В диалоговом окне **Создать службу приложений** введите имя веб-приложения и соответствующую подписку, группу ресурсов и план службы приложений, а затем нажмите кнопку **Создать**.
 
-    ![Диалоговое окно "Создать службу приложений" в Visual Studio](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-create-app-service.png)
+   ![Диалоговое окно "Создать службу приложений" в Visual Studio](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-create-app-service.png)
 
-Через несколько секунд Visual Studio завершит публикацию вашего веб-приложения и запустит браузер, где вы увидите свое творение, запущенное в Azure!
+Через несколько секунд Visual Studio опубликует ваше веб-приложение и запустит браузер, где вы увидите свой проект, запущенный в Azure!
 
+## <a name="next-steps"></a>Дополнительная информация
+В этом руководстве вы узнали, как создать веб-приложение ASP.NET Core MVC, которое может получить доступ к хранимым данным в Azure Cosmos DB. Теперь вы можете перейти к следующей статье:
 
+* [Partitioning in Azure Cosmos DB](./partitioning-overview.md) (Секционирование в Azure Cosmos DB)
+* [Getting started with SQL queries](./how-to-sql-query.md) (Начало работы с запросами SQL)
+* [How to model and partition data on Azure Cosmos DB using a real-world example](./how-to-model-partition-example.md) (Моделирование и секционирование данных в базе данных Azure Cosmos на реальных примерах)
 
-## <a name="_Toc395637775"></a>Дальнейшие действия
-Поздравляем! Вы только что создали свое первое веб-приложение ASP.NET MVC с помощью Azure Cosmos DB и опубликовали его в Azure. Исходный код полного приложения, включая функции детализации и удаления, не описанные в этом руководстве, можно скачать или клонировать с портала [GitHub][GitHub]. Поэтому, если вы хотите добавить эти функции в приложение, скопируйте код и добавьте его в это приложение.
-
-Чтобы добавить дополнительные функции в приложение, ознакомьтесь с API-интерфейсами, доступными в [библиотеке .NET для Azure Cosmos DB](/dotnet/api/overview/azure/cosmosdb?view=azure-dotnet). Вы также можете стать соавтором библиотеки .NET для Azure Cosmos DB на портале [GitHub][GitHub]. 
 
 [Visual Studio Express]: https://www.visualstudio.com/products/visual-studio-express-vs.aspx
 [Microsoft Web Platform Installer]: https://www.microsoft.com/web/downloads/platform.aspx
 [Preventing Cross-Site Request Forgery]: https://go.microsoft.com/fwlink/?LinkID=517254
 [Basic CRUD Operations in ASP.NET MVC]: https://go.microsoft.com/fwlink/?LinkId=317598
-[GitHub]: https://github.com/Azure-Samples/documentdb-net-todo-app
+[GitHub]: https://github.com/Azure-Samples/cosmos-dotnet-core-todo-app

@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 6824cc84c24b41fd82afd39ead3029a212173948
-ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
+ms.openlocfilehash: 496cf801a44638af61306b43791abce9466e2cb2
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67624796"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67835688"
 ---
 # <a name="tutorial-enable-authentication-in-a-single-page-application-using-azure-active-directory-b2c"></a>Руководство по Включение в одностраничном приложении аутентификации с помощью Azure Active Directory B2C
 
@@ -91,7 +91,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
 
 ## <a name="run-the-sample"></a>Запуск примера
 
-1. Откройте окно консоли и перейдите в каталог, содержащий этот пример. Например: 
+1. Откройте окно консоли и перейдите в каталог, содержащий этот пример. Например:
 
     ```console
     cd active-directory-b2c-javascript-msal-singlepageapp
@@ -121,7 +121,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
 
     Используйте действительный адрес электронной почты и подтвердите его с помощью кода проверки. Задайте пароль. Введите значения запрашиваемых атрибутов.
 
-    ![Рабочий процесс регистрации](media/active-directory-b2c-tutorials-desktop-app/sign-up-workflow.png)
+    ![Страница регистрации, представленная потоком входа и регистрации пользователя](./media/active-directory-b2c-tutorials-desktop-app/sign-up-workflow.PNG)
 
 1. Щелкните **Создать**, чтобы создать локальную учетную запись в каталоге Azure AD B2C.
 

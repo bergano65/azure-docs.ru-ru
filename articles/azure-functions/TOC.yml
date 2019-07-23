@@ -53,6 +53,8 @@
       href: functions-twitter-email.md
     - name: Создание бессерверного API
       href: functions-create-serverless-api.md
+    - name: Развертывание функций Python с помощью VS Code
+      href: tutorial-vs-code-serverless-python.md
     - name: Создание определения OpenAPI
       href: functions-openapi-definition.md
     - name: Подключение к виртуальной сети

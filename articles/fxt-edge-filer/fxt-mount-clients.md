@@ -6,12 +6,12 @@ ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 06/20/2019
 ms.author: v-erkell
-ms.openlocfilehash: b48d8d74843947c3e40dc80234560b0147be6eea
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: 5471bf4041275d5988414def99dd2130f51fbb80
+ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67542970"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828034"
 ---
 # <a name="tutorial-mount-the-cluster"></a>Руководство по подключению кластера
 
@@ -43,7 +43,7 @@ ms.locfileid: "67542970"
 
 Более простой метод для выполнения небольших установок — использовать сценарий для назначения IP-адресов в диапазоне во время подключения клиента. 
 
-Для больших или сложных систем могут подходить другие методы балансировки нагрузки. Чтобы получить справку, обратитесь к представителю Майкрософт или откройте запрос на поддержку. (Azure Load Balancer сейчас *не поддерживается* для Azure FXT Edge Filer.)
+Для больших или сложных систем могут подходить другие методы балансировки нагрузки. Чтобы получить справку, обратитесь к представителю Майкрософт или создайте [запрос на поддержку](fxt-support-ticket.md). (Azure Load Balancer сейчас *не поддерживается* для Azure FXT Edge Filer.)
 
 ## <a name="create-the-mount-command"></a>Создание команды подключения 
 

@@ -10,12 +10,12 @@ ms.date: 03/24/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 6ec429bc7c1598e947b798c30e7992e3d357d00c
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: d75e4c3e2b6f28dfbde670406854ac87790dd090
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66303812"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67850118"
 ---
 # <a name="tutorial-develop-and-deploy-a-python-iot-edge-module-for-linux-devices"></a>Руководство по разработке модуля IoT Edge на языке Python и его развертыванию на устройствах Linux
 
@@ -69,25 +69,15 @@ ms.locfileid: "66303812"
 
 ### <a name="create-a-new-project"></a>Создание нового проекта
 
-С помощью пакета Python **cookiecutter** создайте шаблон решений Python, на основе которого можно выполнить сборку. 
+С помощью VS Code создайте шаблон решений Python, на основе которого можно выполнить сборку. 
 
 1. В Visual Studio Code выберите **Вид** > **Терминал**, чтобы открыть интегрированный терминал VS Code.
 
-2. В окне терминала введите следующую команду для установки (или обновления) пакета **cookiecutter**, который вы используете для создания шаблона решения IoT Edge:
+1. Выберите **Представление** > **Палитра команд** для открытия палитры команд VS Code. 
 
-    ```cmd/sh
-    pip install --upgrade --user cookiecutter
-    ```
-   >[!Note]
-   >Убедитесь, каталог установки Cookiecutter будет включен в переменную PATH среды, чтобы его можно было вызвать из командной строки. Каталог является частью результата выполнения скрипта установки, например `C:\Users\{user}\AppData\Roaming\Python\Python{version}\Scripts`.
-   >
-   >Чтобы применить изменения для переменной PATH, перезапустите Visual Studio Code. 
+1. В палитре команд введите и выполните команду **Azure: Sign in** (Azure: войти). Следуйте инструкциям, чтобы войти в свою учетную запись Azure. Если вход был выполнен, то этот шаг можно пропустить.
 
-3. Выберите **Представление** > **Палитра команд** для открытия палитры команд VS Code. 
-
-4. В палитре команд введите и выполните команду **Azure: Sign in** (Azure: войти). Следуйте инструкциям, чтобы войти в свою учетную запись Azure. Если вход был выполнен, то этот шаг можно пропустить.
-
-5. В палитре команд введите и выполните команду **Azure IoT Edge: New IoT Edge Solution** (Azure IoT Edge: создать решение IoT Edge). Выполняя инструкции, укажите следующие сведения для создания решения:
+1. В палитре команд введите и выполните команду **Azure IoT Edge: New IoT Edge Solution** (Azure IoT Edge: создать решение IoT Edge). Выполняя инструкции, укажите следующие сведения для создания решения:
 
    | Поле | Значение |
    | ----- | ----- |

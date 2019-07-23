@@ -9,16 +9,16 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/21/2018
+ms.date: 07/16/2018
 ms.author: diberry
-ms.openlocfilehash: 87e006cc5d56e0c7eb5455147c5ce9eb40afc162
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 189514c51451dedfaab7b07f28d79f674b32f83a
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58086621"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68277545"
 ---
-# <a name="tutorial-identify-common-intents-and-entities"></a>Руководство. Определение общих намерений и сущностей
+# <a name="tutorial-identify-common-intents-and-entities"></a>Руководство по Определение общих намерений и сущностей
 
 В этом руководстве добавляются предварительно созданные намерения и сущности в учебное приложение Human Resources, чтобы быстро осуществлять прогнозирование намерений и извлекать данные. Вам не нужно указывать какие-либо высказывания с заранее созданными сущностями, потому что они обнаруживаются автоматически.
 
@@ -30,8 +30,8 @@ ms.locfileid: "58086621"
 > * Создание приложения
 > * Добавление предварительно созданных намерений 
 > * Добавление предварительно созданных сущностей 
-> * Train 
-> * Опубликовать 
+> * Обучение 
+> * Публикация 
 > * Получать намерения и сущности из конечной точки.
 
 [!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
@@ -61,7 +61,7 @@ ms.locfileid: "58086621"
    * Utilities.StartOver
    * Utilities.Stop
 
-     Эти намерения могут быть полезны при определении того, где находится пользователь в диалоге и что он просит выполнить. 
+     Эти намерения могут быть полезны при определении того, где находится пользователь в диалоге и что он просит выполнить. Эти намерения включают использование сущностей. Следующие сущности автоматически добавляются в приложение LUIS: номер, порядковый номер и Utilities.DirectionalReference. 
 
 
 ## <a name="add-prebuilt-entities-to-help-with-common-data-type-extraction"></a>Добавление предварительно созданных сущностей для помощи в извлечении распространенных типов данных

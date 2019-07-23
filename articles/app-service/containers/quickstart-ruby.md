@@ -13,30 +13,30 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 03/27/2019
+ms.date: 07/11/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 29126171a2d808153c7578d911e0725641ec39ff
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: f9f142543140be3348bf7cd94894cc9e88278368
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59545151"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67849487"
 ---
 # <a name="create-a-ruby-on-rails-app-in-app-service-on-linux"></a>Создание приложения Ruby on Rails в Службе приложений на платформе Linux
 
-[Служба приложений Azure на платформе Linux](app-service-linux-intro.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом кратком руководстве показано, как создать базовое приложение [Ruby on Rails](https://rubyonrails.org/) и развернуть его в Azure в качестве веб-приложения на платформе Linux.
+[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как развернуть приложение Ruby on Rails в Службе приложений в Linux с помощью [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
 > [!NOTE]
 > Сейчас стек разработки на Ruby поддерживает только Ruby on Rails. Если требуется использовать другую платформу, например Sinatra, или [неподдерживаемую версию Ruby](app-service-linux-intro.md), вам нужно [запустить ее в пользовательском контейнере](quickstart-docker-go.md).
 
-![Приложение Hello World](./media/quickstart-ruby/hello-world-updated.png)
+![Приложение Hello World](./media/quickstart-ruby/hello-world-configured.png)
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* <a href="https://www.ruby-lang.org/en/documentation/installation/#rubyinstaller" target="_blank">Установите Ruby 2.3 или более поздней версии</a>.
+* <a href="https://www.ruby-lang.org/en/documentation/installation/#rubyinstaller" target="_blank">установите Ruby 2.6 или последующей версии</a>;
 * <a href="https://git-scm.com/" target="_blank">установите Git</a>;
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
@@ -51,7 +51,7 @@ git clone https://github.com/Azure-Samples/ruby-docs-hello-world
 
 Запустите приложение локально, чтобы увидеть, как оно будет выглядеть после развертывания в Azure. Откройте окно терминала, измените каталог `hello-world` и выполните команду `rails server` для запуска сервера.
 
-Первый этап — установка необходимых пакетов. Пример содержит `Gemfile`, поэтому вам не нужно указывать все пакеты для установки. Для этого мы будем использовать средство увязки в пакеты.
+Первый этап — установка необходимых пакетов. В пример добавлен `Gemfile`, поэтому просто выполните следующую команду:
 
 ```bash
 bundle install
@@ -65,7 +65,7 @@ bundle exec rails server
 
 С помощью веб-браузера перейдите к `http://localhost:3000`, чтобы протестировать приложение локально.
 
-![Приложение Hello World настроено](./media/quickstart-ruby/hello-world-configured.png)
+![Приложение Hello World настроено](./media/quickstart-ruby/hello-world-updated.png)
 
 [!INCLUDE [Try Cloud Shell](../../../includes/cloud-shell-try-it.md)]
 
@@ -79,7 +79,7 @@ bundle exec rails server
 
 [!INCLUDE [Create web app](../../../includes/app-service-web-create-web-app-ruby-linux-no-h.md)] 
 
-Перейдите на сайт, чтобы просмотреть созданное веб-приложение со встроенным образом. Замените _&lt;имя_приложения>_ уникальным именем веб-приложения.
+Перейдите к приложению, чтобы просмотреть созданное веб-приложение со встроенным образом. Замените _&lt;имя_приложения>_ уникальным именем веб-приложения.
 
 ```bash
 http://<app_name>.azurewebsites.net
@@ -91,47 +91,42 @@ http://<app_name>.azurewebsites.net
 
 ## <a name="deploy-your-application"></a>Развертывание приложения
 
-Выполните следующие команды, чтобы развернуть локальное приложение на веб-сайте Azure.
+Выполните следующие команды, чтобы развернуть локальное приложение в веб-приложение Azure.
 
 ```bash
 git remote add azure <Git deployment URL from above>
-git add -A
-git commit -m "Initial deployment commit"
 git push azure master
 ```
 
 Убедитесь, что операции удаленного развертывания успешно выполнены. Выходные данные команд будут выглядеть следующим образом:
 
 ```bash
-remote: Using sass-rails 5.0.6
-remote: Updating files in vendor/cache
-remote: Bundle gems are installed into ./vendor/bundle
-remote: Updating files in vendor/cache
-remote: ~site/repository
+remote: Using turbolinks 5.2.0
+remote: Using uglifier 4.1.20
+remote: Using web-console 3.7.0
+remote: Bundle complete! 18 Gemfile dependencies, 78 gems now installed.
+remote: Bundled gems are installed into `/tmp/bundle`
+remote: Zipping up bundle contents
+remote: .......
+remote: ~/site/repository
 remote: Finished successfully.
 remote: Running post deployment command(s)...
 remote: Deployment successful.
-To https://<your web app name>.scm.azurewebsites.net/<your web app name>.git
-  579ccb....2ca5f31  master -> master
-myuser@ubuntu1234:~workspace/<app name>$
+remote: App container will begin restart within 10 seconds.
+To https://<app-name>.scm.azurewebsites.net/<app-name>.git
+   a6e73a2..ae34be9  master -> master
 ```
 
-После завершения развертывания перезапустите веб-приложение, чтобы изменения вступили в силу, выполнив команду [`az webapp restart`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-restart), как показано ниже.
-
-```azurecli-interactive
-az webapp restart --name <app name> --resource-group myResourceGroup
-```
-
-Перейдите на свой сайт и проверьте результаты.
+После завершения развертывания подождите около 10 секунд пока веб-приложение перезапустится, а затем перейдите к нему и проверьте результаты.
 
 ```bash
-http://<app name>.azurewebsites.net
+http://<app-name>.azurewebsites.net
 ```
 
-![Обновленное веб-приложение](./media/quickstart-ruby/hello-world-updated.png)
+![Обновленное веб-приложение](./media/quickstart-ruby/hello-world-configured.png)
 
 > [!NOTE]
-> Во время перезапуска приложения попытка просмотреть сайт приведет к ошибке с кодом состояния HTTP `Error 503 Server unavailable`. На полный перезапуск может потребоваться несколько минут.
+> Во время перезапуска приложения в браузере можете отображаться код состояния HTTP `Error 503 Server unavailable` или страница по умолчанию `Hey, Ruby developers!`. На полный перезапуск приложения может потребоваться несколько минут.
 >
 
 [!INCLUDE [Clean-up section](../../../includes/cli-script-clean-up.md)]
@@ -139,7 +134,7 @@ http://<app name>.azurewebsites.net
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по Ruby on Rails с Postgres](tutorial-ruby-postgres-app.md)
+> [Руководство. по Ruby on Rails с Postgres](tutorial-ruby-postgres-app.md)
 
 > [!div class="nextstepaction"]
 > [Настройка приложения Ruby](configure-language-ruby.md)

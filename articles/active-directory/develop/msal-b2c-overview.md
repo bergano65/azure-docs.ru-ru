@@ -1,6 +1,6 @@
 ---
-title: Узнайте, как выполнять интеграцию с Azure AD B2C с помощью библиотеки аутентификации Майкрософт (MSAL)
-description: Библиотека аутентификации Майкрософт (MSAL) позволяет разработчикам приложений выполнять интеграцию с Azure AD B2C и получать маркеры для вызова защищенных веб-API. Это могут быть веб-API Microsoft Graph, другие API Майкрософт, сторонние веб-API или ваши собственные веб-API.
+title: Узнайте, как приложения могут взаимодействовать с Azure AD B2C с помощью библиотеки проверки подлинности Майкрософт
+description: Библиотека аутентификации Майкрософт (MSAL) позволяет приложениям взаимодействовать с Azure AD B2C и получать маркеры для вызова защищенных веб-API. Этими веб-API могут быть Microsoft Graph, другие интерфейсы Microsoft API, веб-API других пользователей или ваш собственный веб-API.
 services: active-directory
 documentationcenter: dev-center-name
 author: negoe
@@ -17,79 +17,79 @@ ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6af78a593fb8fadb836d2dc4c02115d95a7f2712
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: db05f59faf945e425761fe7a20bad3e263246a39
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65546034"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67849337"
 ---
-# <a name="integrate-microsoft-authentication-library-msal-with-azure-active-directory-b2c"></a>Интеграция библиотеки аутентификации Майкрософт (MSAL) с Azure Active Directory B2C
+# <a name="use-microsoft-authentication-library-to-interoperate-with-azure-active-directory-b2c"></a>Использование библиотеки проверки подлинности Майкрософт для взаимодействия с Azure Active Directory B2C
 
-Библиотека аутентификации Майкрософт (MSAL) позволяет разработчикам приложений аутентифицировать пользователей с помощью удостоверений социальных сетей и локальных удостоверений, используя [Azure Active Directory (Azure AD) B2C](https://docs.microsoft.com/azure/active-directory-b2c/). Azure Active Directory (Azure AD) B2C — это служба управления идентификацией, которая позволяет настраивать и администрировать процессы входа и регистрации пользователей, а также управлять их профилями при использовании приложений.
+Библиотека аутентификации Майкрософт (MSAL) позволяет разработчикам приложений аутентифицировать пользователей с помощью удостоверений социальных сетей и локальных удостоверений, используя [Azure Active Directory B2C (Azure AD B2C)](https://docs.microsoft.com/azure/active-directory-b2c/). Azure AD B2C — это служба управления удостоверениями. С его помощью вы можете настраивать и контролировать процесс регистрации, входа и управления профилями клиентов при использовании ими ваших приложений.
 
-Azure Active Directory (Azure AD) B2C также поддерживает настройку пользовательского интерфейса приложений с использованием фирменной символики для обеспечения эффективного взаимодействия клиентов.
+Azure AD B2C также поддерживает настройку пользовательского интерфейса приложений с использованием фирменной символики для обеспечения эффективного взаимодействия клиентов.
 
-В этом руководстве описано, как интегрировать библиотеку аутентификации Майкрософт (MSAL) с Azure Active Directory (Azure AD) B2C.
-
+В этом руководстве показано, как использовать MSAL для взаимодействия с Azure AD B2C.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Если вы еще не создали собственный [клиент Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant), создайте его сейчас. Вы можете использовать имеющийся клиент Azure Active Directory B2C. 
+Если вы еще не создали собственный [Арендатор Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant), создайте его сейчас. Вы также можете использовать имеющийся арендатор Azure AD B2C.
 
 ## <a name="javascript"></a>JavaScript
 
-В этом примере показано, как использовать Azure AD B2C в одностраничном приложении для регистрации и входа пользователя, а также вызова защищенного веб-API.
+В этом примере показано, как использовать Azure AD B2C в одностраничном приложении для регистрации и входа, а также вызова защищенного веб-API.
 
 ### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 
-Чтобы реализовать аутентификацию, сначала необходимо зарегистрировать приложение. Чтобы зарегистрировать приложение, следуйте [этим инструкциям](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp#step-4-register-your-own-web-application-with-azure-ad-b2c).
+Чтобы выполнить аутентификацию, сначала необходимо зарегистрировать приложение. Подробные шаги описаны в статье [Register your application](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp#step-4-register-your-own-web-application-with-azure-ad-b2c) (Регистрация вашего приложения).
 
-### <a name="steps-2-download-applications"></a>Шаг 2. Скачивание приложений
+### <a name="step-2-download-the-sample-application"></a>Шаг 2. Загрузка примера приложения
 
-Скачайте ZIP-файл или клонируйте пример с GitHub.
->git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp.git
+Скачайте пример в виде ZIP-файла или скопируйте его из GitHub:
 
-### <a name="steps-3-authentication"></a>Шаг 3. Аутентификация
-
-1. Откройте файл index.html в примере.
-
-2. Укажите для примера идентификатор приложения и ключ, которые вы записали ранее при регистрации приложения. Измените следующие строки кода, заменив значения именами используемого каталога и API:
-
-```javascript
-// The current application coordinates were pre-registered in a B2C directory.
-
-const msalConfig = {
-    auth:{
-        clientId: "Enter_the_Application_Id_here",
-        authority: "https://login.microsoftonline.com/tfp/<your-tenant-name>.onmicrosoft.com/<your-sign-in-sign-up-policy>",
-        b2cScopes: ["https://<your-tenant-name>.onmicrosoft.com/hello/demo.read"],
-        webApi: 'http://localhost:5000/hello',
-  };
-
-// create UserAgentApplication instance
-const myMSALObj = new UserAgentApplication(msalConfig);
+```
+git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp.git
 ```
 
-Имя [сценария поведения пользователя](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-policies), используемое в этом руководстве, — B2C_1_signupsignin1. Если вы используете другое имя сценария поведения пользователя, укажите его в значении authority.
+### <a name="step-3-configure-authentication"></a>Шаг 3. Настройка аутентификации
 
+1. Откройте файл **index.html** в примере.
 
-### <a name="configure-application-to-use-b2clogincom"></a>Настройка приложения для использования `b2clogin.com`
+1. Укажите для примера идентификатор приложения и ключ, которые вы записали ранее при регистрации приложения. Измените следующие строки кода, заменив значения именами используемого каталога и API:
 
-Вы можете использовать `b2clogin.com` вместо `login.microsoftonline.com` в качестве URL-адреса перенаправления при настройке поставщика удостоверений для регистрации и входа в приложение Azure Active Directory (Azure AD) B2C.
+   ```javascript
+   // The current application coordinates were pre-registered in a B2C directory.
 
-**`b2clogin.com`**, например 
-`https://your-tenant-name.b2clogin.com/your-tenant-guid` используется в следующих целях:
+   const msalConfig = {
+       auth:{
+           clientId: "Enter_the_Application_Id_here",
+           authority: "https://login.microsoftonline.com/tfp/<your-tenant-name>.onmicrosoft.com/<your-sign-in-sign-up-policy>",
+           b2cScopes: ["https://<your-tenant-name>.onmicrosoft.com/hello/demo.read"],
+           webApi: 'http://localhost:5000/hello',
+     };
 
-- Пространство, используемое службами Майкрософт в заголовке файлов cookie, уменьшается.
-- URL-адреса больше не содержат ссылку на корпорацию Майкрософт. Например, приложение Azure AD B2C, вероятно, относится к домену login.microsoftonline.com.
+   // create UserAgentApplication instance
+   const myMSALObj = new UserAgentApplication(msalConfig);
+   ```
 
+Название [потока пользователя](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-policies), используемое в этом руководстве, — **B2C_1_signupsignin1**. Если вы используете другое название потока пользователей, установите для параметра **Центр** значение с таким названием.
 
- Чтобы использовать b2clogin.com, необходимо обновить конфигурацию приложения.  
+### <a name="step-4-configure-your-application-to-use-b2clogincom"></a>Шаг 4. Настройте приложение для использования `b2clogin.com`
 
-1. Укажите для **validateAuthority** значение `false`. Если вы укажете для **ValidateAuthority** значение false, для b2clogin.com будет разрешено перенаправление.
+Вы можете использовать `b2clogin.com` вместо `login.microsoftonline.com` в качестве URL-адреса перенаправления. Это можно сделать в приложении Azure AD B2C, когда вы настраиваете поставщик удостоверений для регистрации и входа.
+
+Использование `b2clogin.com` в контексте `https://your-tenant-name.b2clogin.com/your-tenant-guid` имеет следующие последствия.
+
+- Службы Майкрософт потребляют меньше пространства в заголовке файла cookie.
+- URL-адреса больше не содержат ссылку на корпорацию Майкрософт. Например, приложение Azure AD B2C, скорее всего, ссылается на `login.microsoftonline.com`.
+
+ Чтобы использовать `b2clogin.com` необходимо обновить конфигурацию приложения.  
+
+- Установите свойство **validateAuthority** в значение `false`, чтобы можно было выполнять перенаправление с помощью `b2clogin.com`.
 
 Далее приведен пример установки свойства.
+
 ```javascript
 // The current application coordinates were pre-registered in a B2C directory.
 
@@ -107,9 +107,9 @@ const myMSALObj = new UserAgentApplication(msalConfig);
 ```
 
 > [!NOTE]
-> Скорее всего приложение Azure AD B2C ссылается на login.microsoftonline.com в нескольких местах, например, в ссылках на потоки пользователя и маркерах утверждений. Убедитесь, что конечная точка авторизации, конечная точка маркера и издателя были обновлены для использования имя_клиента.b2clogin.com.
+> Скорее всего приложение Azure AD B2C ссылается на `login.microsoftonline.com` в нескольких местах, например, в ссылках на потоки пользователя и маркерах утверждений. Убедитесь, что конечная точка авторизации, конечная точка маркера и издателя были обновлены для использования `your-tenant-name.b2clogin.com`.
 
-Выполните этот [пример кода JS для MSAL](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp#single-page-application-built-on-msaljs-with-azure-ad-b2c), чтобы узнать, как использовать предварительную версию библиотеки аутентификации Майкрософт для JavaScript (msal.js) для получения маркера доступа и вызова API, защищенного с помощью Azure AD B2C.
+Следуйте этому [примеру сценария MSAL JavaScript](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp#single-page-application-built-on-msaljs-with-azure-ad-b2c), чтобы узнать, как использовать MSAL Preview for JavaScript (MSAL.js). Образец получает маркер доступа и вызывает API, защищенный Azure AD B2C.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

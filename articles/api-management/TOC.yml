@@ -1,10 +1,10 @@
-- name: Документация по службе управления API в Azure
+- name: Документация по Управлению API в Azure
   href: index.yml
 - name: Обзор
   items:
-    - name: Сведения о службе управления API
+    - name: Сведения об Управлении API
       href: api-management-key-concepts.md
-    - name: Доступность функций службы управления API
+    - name: Доступность функций службы "Управление API"
       href: api-management-features.md
 - name: Краткие руководства
   expanded: true
@@ -13,7 +13,7 @@
       href: get-started-create-service-instance.md
     - name: Создание экземпляра (PowerShell)
       href: powershell-create-service-instance.md
-- name: Руководства
+- name: Учебники
   items:
     - name: 1. Импорт вашего первого API
       href: import-and-publish.md
@@ -47,7 +47,7 @@
       items:
         - name: Обзор
           href: api-management-howto-policies.md
-        - name: Справочные указатели по политикам
+        - name: Индекс справочника по политикам
           href: api-management-policies.md
     - name: Подписки
       href: api-management-subscriptions.md
@@ -59,7 +59,7 @@
       href: api-management-api-import-restrictions.md
     - name: Общие атрибуты безопасности Azure
       href: api-management-security-attributes.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Определение интерфейсов API
       items:
@@ -111,7 +111,7 @@
           href: api-management-using-with-vnet.md
         - name: Подключение к внутренней виртуальной сети
           href: api-management-using-with-internal-vnet.md
-        - name: Интеграция шлюза приложений с внутренней виртуальной сетью
+        - name: Интеграция Шлюза приложений с внутренней виртуальной сетью
           href: api-management-howto-integrate-internal-vnet-appgateway.md
         - name: Взаимная проверка подлинности на основе сертификата
           href: api-management-howto-mutual-certificates.md
@@ -169,11 +169,11 @@
       items:
         - name: Шаблоны
           href: api-management-developer-portal-templates-reference.md
-        - name: API
+        - name: Программные интерфейсы
           href: api-management-api-templates.md
         - name: Продукты
           href: api-management-product-templates.md
-        - name: ПРИЛОЖЕНИЯ
+        - name: Приложения
           href: api-management-application-templates.md
         - name: Проблемы
           href: api-management-issue-templates.md
@@ -203,7 +203,7 @@
           href: api-management-howto-create-or-invite-developers.md
         - name: Настройка с помощью Git
           href: api-management-configuration-repository-git.md
-        - name: Использование контроля доступа на основе ролей
+        - name: Использование управления доступом на основе ролей
           href: api-management-role-based-access-control.md
         - name: Использование управляемых удостоверений для ресурсов Azure
           href: api-management-howto-use-managed-service-identity.md
@@ -211,7 +211,7 @@
           items:
             - name: Обзор
               href: ../service-fabric/service-fabric-api-management-overview.md
-            - name: Руководство
+            - name: Учебник
               href: ../service-fabric/service-fabric-tutorial-deploy-api-management.md
 - name: Справочные материалы
   items:
@@ -225,13 +225,13 @@
       href: /azure/templates/microsoft.apimanagement/allversions
 - name: Ресурсы
   items:
-    - name: Вопросы и ответы
+    - name: Часто задаваемые вопросы
       href: api-management-faq.md
     - name: Цены
       href: 'https://aka.ms/apimpricing'
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
-    - name: Стратегия развития
+    - name: Стратегия
       href: 'https://aka.ms/apimroadmap'
     - name: Запросы функций
       href: 'https://aka.ms/apimwish'
@@ -245,3 +245,5 @@
       href: 'https://docs.microsoft.com/azure/architecture/best-practices/api-design?toc=%2Fazure%2Fapi-management%2Ftoc.json'
     - name: Руководство по реализации API
       href: 'https://docs.microsoft.com/azure/architecture/best-practices/api-implementation?toc=%2Fazure%2Fapi-management%2Ftoc.json'
+    - name: Устранение неполадок с обновлением имен узлов
+      href: api-management-troubleshoot-cannot-add-custom-domain.md

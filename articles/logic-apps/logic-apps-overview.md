@@ -11,12 +11,12 @@ ms.reviewer: klam, LADocs
 ms.topic: overview
 ms.custom: mvc
 ms.date: 6/29/2018
-ms.openlocfilehash: 2892dc3b8f25624e7925c9b4aa86110c167ad616
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: 90287ab45341f203905aaf32eb6325edd3687231
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66299114"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68273142"
 ---
 # <a name="what-is-azure-logic-apps"></a>Что такое Azure Logic Apps
 
@@ -29,7 +29,7 @@ ms.locfileid: "66299114"
 * перемещение переданных файлов с сервера SFTP или FTP в службу хранилища Azure; 
 * отслеживание твитов на определенную тему, анализ тональности, а также создание предупреждений и задач для элементов, которые требуется проверять.
 
-Для создания корпоративных решений интеграции с помощью Azure Logic Apps воспользуйтесь растущей коллекцией соединителей, включающей [более 200 соединителей](../connectors/apis-list.md). Эта коллекция содержит соединители для других служб, таких как служебная шина Azure, "Функции" и служба хранилища, а также соединители для SQL, Office 365, Dynamics, Salesforce, BizTalk, SAP, Oracle DB, общих папок и другие. [Соединители](#logic-app-concepts) предоставляют [триггеры](#logic-app-concepts) и [действия](#logic-app-concepts), позволяющие создавать приложения логики, которые безопасно обращаются к данным и обрабатывают их в режиме реального времени.
+Для создания корпоративных решений интеграции с помощью Azure Logic Apps используйте увеличивающуюся коллекцию с [сотнями готовых к использованию соединителей](../connectors/apis-list.md). Это соединители для таких служб, как Служебная шина Azure, Функции и служба хранилища, а также соединители для SQL, Office 365, Dynamics, Salesforce, BizTalk, SAP, Oracle DB, общих папок и др. [Соединители](#logic-app-concepts) предоставляют [триггеры](#logic-app-concepts) и [действия](#logic-app-concepts), позволяющие создавать приложения логики, которые безопасно обращаются к данным и обрабатывают их в режиме реального времени.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/Azure/Introducing-Azure-Logic-Apps/player]
 

@@ -4,15 +4,16 @@ ms.service: api-management
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: vlvinogr
-ms.openlocfilehash: 5224f11cba621da384be23d3ec402f17cb29f317
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: ace11adbaaeebd3101ac621f44408e27ba7d18ab
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185804"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67849584"
 ---
 ## <a name="related-topics"></a>Связанные разделы
 
+* [Ограничения импорта API](../articles/api-management/api-management-api-import-restrictions.md)
 * [Импорт спецификации OpenAPI](../articles/api-management/import-api-from-oas.md)
 * [Импорт SOAP API](../articles/api-management/import-soap-api.md)
 * [Импорт SOAP API и его преобразование в REST](../articles/api-management/restify-soap-api.md)

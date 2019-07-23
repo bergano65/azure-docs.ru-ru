@@ -12,15 +12,15 @@ ms.devlang: dotNet
 ms.topic: quickstart
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 01/31/2019
+ms.date: 07/10/2019
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: 4795952faa91d62b76f267795660db5ab4075e79
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: ebc3d988afd9257bbdf045814877ab70012836aa
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66734497"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68225112"
 ---
 # <a name="quickstart-deploy-windows-containers-to-service-fabric"></a>Краткое руководство. Развертывание контейнеров Windows в Service Fabric
 
@@ -44,7 +44,7 @@ Azure Service Fabric — это платформа распределенных 
 
 * Подписка Azure. Вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Компьютер для разработки, на котором установлено ПО, перечисленное ниже.
-  * Visual Studio 2015 или Windows 2019.
+  * Visual Studio 2019 или Windows 2019.
   * [Пакет SDK и средства для Service Fabric](service-fabric-get-started.md).
 
 ## <a name="package-a-docker-image-container-with-visual-studio"></a>Упаковка контейнера образов Docker с помощью Visual Studio
@@ -53,7 +53,7 @@ Azure Service Fabric — это платформа распределенных 
 
 Запустите Visual Studio от имени администратора.  Выберите **Файл** > **Создать** > **Проект**.
 
-Выберите **Приложение Service Fabric**, назовите его MyFirstContainer и нажмите кнопку **ОК**.
+Выберите **Приложение Service Fabric**, назовите его MyFirstContainer и щелкните **Создать**.
 
 Выберите **Контейнер** в шаблонах **размещенных контейнеров и приложений**.
 

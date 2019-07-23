@@ -14,12 +14,12 @@ ms.workload: infrastructure-services
 ms.date: 05/11/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 1c1317726cf29f23e4729c67a5a5794fa459220b
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: fb35cc99164cc8da047e8309d63bf7909abf4815
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65410854"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67846034"
 ---
 # <a name="quickstart-create-a-sql-server-2017-windows-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины SQL Server 2017 на платформе Windows с помощью портала Azure
 
@@ -59,12 +59,12 @@ ms.locfileid: "65410854"
 
 1. В разделе **Сведения о проекте** выберите подписку Azure, а затем выберите **Создать**, чтобы создать группу ресурсов. В качестве имени введите _SQLVM-RG_.
 
-   ![Подписка](media/quickstart-sql-vm-create-portal/basics-project-details.png)
+   ![Subscription](media/quickstart-sql-vm-create-portal/basics-project-details.png)
 
 1. В разделе **Сведения об экземпляре**:
     1. Введите _SQLVM_ для параметра **Имя виртуальной машины**. 
     1. Выберите расположение для параметра **Регион**. 
-    1. В этом кратком руководстве оставьте для **параметров доступности** значение _Избыточность инфраструктуры не требуется_. Дополнительные сведения о параметрах доступности см. в статье [Регионы и доступность виртуальных машин в Azure](../../windows/regions-and-availability.md). 
+    1. В этом кратком руководстве оставьте для **параметров доступности** значение _Избыточность инфраструктуры не требуется_. См. подробнее о [регионах и доступности виртуальных машин в Azure](../../windows/availability.md). 
     1. В списке **Образ** выберите _Free SQL Server License: SQL Server 2017 Developer on Windows Server 2016_ (Бесплатная лицензия на SQL Server: SQL Server 2017 Developer на базе Windows Server 2016). 
     1. Выберите **Изменить размер** для параметра **Размер** виртуальной машины, а затем выберите предложение **A2 Basic**. Обязательно очистите ресурсы после завершения работы с ними, чтобы предотвратить любые непредвиденные расходы. 
 

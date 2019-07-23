@@ -212,7 +212,7 @@
       items:
         - name: Внутренняя подсистема балансировки нагрузки со Средой службы приложений
           href: create-gateway-internal-load-balancer-app-service-environment.md
-        - name: Перенаправление на URL-адрес Службы приложений
+        - name: Неполадки со службой приложений
           href: troubleshoot-app-service-redirection-app-service-url.md
         - name: Проблемы со сходством сеансов
           href: how-to-troubleshoot-application-gateway-session-affinity-issues.md

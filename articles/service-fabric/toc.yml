@@ -19,7 +19,7 @@
           href: service-fabric-quickstart-java-spring-boot.md
         - name: Развертывание приложения Reliable Services
           href: service-fabric-quickstart-java-reliable-services.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Развертывание приложения .NET
       items:
@@ -99,7 +99,7 @@
       href: service-fabric-best-practices-capacity-scaling.md
     - name: Инфраструктура как код
       href: service-fabric-best-practices-infrastructure-as-code.md
-    - name: Мониторинг и диагностика.
+    - name: Мониторинг и диагностика
       href: service-fabric-best-practices-monitoring.md
     - name: Проектирование приложений
       href: service-fabric-best-practices-applications.md
@@ -161,7 +161,7 @@
               href: service-fabric-reliable-services-lifecycle-java.md
             - name: Жизненный цикл реплики и экземпляра
               href: service-fabric-concepts-replica-lifecycle.md
-            - name: Reliable Collections
+            - name: Надежные коллекции
               href: service-fabric-reliable-services-reliable-collections.md
             - name: 'Reliable Collections: инструкции и рекомендации'
               href: service-fabric-reliable-services-reliable-collections-guidelines.md
@@ -274,7 +274,7 @@
           items:
             - name: Общие сведения о кластерах Azure
               href: service-fabric-azure-clusters-overview.md
-            - name: Типы узлов и Масштабируемые наборы виртуальных машин
+            - name: Типы узлов и масштабируемые наборы виртуальных машин
               href: service-fabric-cluster-nodetypes.md
             - name: Обновление кластеров в Azure
               href: service-fabric-cluster-upgrade.md
@@ -320,7 +320,7 @@
               href: service-fabric-cluster-resource-manager-movement-cost.md
             - name: Автоматическое масштабирование служб
               href: service-fabric-cluster-resource-manager-autoscaling.md
-    - name: Мониторинг и диагностика.
+    - name: Мониторинг и диагностика
       items:
         - name: Обзор мониторинга
           href: service-fabric-diagnostics-overview.md
@@ -350,7 +350,7 @@
           href: service-fabric-diagnostics-partners.md
     - name: Интеграция со службой управления API
       href: service-fabric-api-management-overview.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Настройка среды разработки
       items:
@@ -414,7 +414,7 @@
               href: service-fabric-networking-modes.md
         - name: Создание службы Reliable Services
           items:
-            - name: Reliable Collections
+            - name: Надежные коллекции
               items:
                 - name: Работа с Reliable Collections
                   href: service-fabric-work-with-reliable-collections.md
@@ -539,7 +539,7 @@
               href: service-fabric-develop-csharp-applications-with-vs-code.md
             - name: Разработка приложений Service Fabric на Java с помощью VS Code
               href: service-fabric-develop-java-applications-with-vs-code.md
-    - name: Миграция из облачных служб
+    - name: Миграция из Облачных служб
       items:
         - name: Сравнение облачных служб и Service Fabric
           href: service-fabric-cloud-services-migration-differences.md
@@ -547,8 +547,8 @@
           href: service-fabric-cloud-services-migration-worker-role-stateless-service.md
         - name: Рекомендации
           href: /azure/architecture/service-fabric/migrate-from-cloud-services
-        - name: Рефакторинг перенесенного приложения
-          href: /azure/architecture/service-fabric/refactor-migrated-app
+        - name: Модернизация приложений
+          href: /azure/architecture/service-fabric/modernize-app-azure-service-fabric
     - name: Управление жизненным циклом приложения
       items:
         - name: Создание пакета приложения

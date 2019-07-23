@@ -6,17 +6,17 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
-author: sihhu
-ms.author: MayMSFT
+author: MayMSFT
+ms.author: sihhu
 ms.reviewer: trbye
-ms.date: 03/29/2019
+ms.date: 07/16/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8b7bf5a0ece3927c7dbafdec9716b7c6f8dfbc0e
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 55bece47ad2a9965e5137ad720631d9b5f5add48
+ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66474705"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68297887"
 ---
 # <a name="tutorial-prepare-data-for-regression-modeling"></a>Руководство по Подготовка данных для моделирования регрессии
 
@@ -112,6 +112,9 @@ yellow_df_raw = dprep.auto_read_file(path=yellow_path)
 display(green_df_raw.head(5))
 display(yellow_df_raw.head(5))
 ```
+
+> [!Note]
+> URL-адрес в этом примере не является полным URL-адресом. Он ссылается на пример папки с в большом двоичном объекте. Полный URL-адрес для некоторых данных: https://dprepdata.blob.core.windows.net/demo/green-small/green_tripdata_2013-08.csv.
 
 Объект `Dataflow` похож на кадр данных и представляет собой ряд неизменяемых операций с данными с отложенным вычислением. Операции могут быть добавлены путем вызова различных доступных методов преобразования и фильтрации. Результатом добавления операции к `Dataflow` всегда будет новый объект `Dataflow`.
 
@@ -240,7 +243,7 @@ green_df.head(5)
       <td>3.25</td>
     </tr>
     <tr>
-      <th>4.</th>
+      <th>4\.</th>
       <td>2</td>
       <td>2013-08-01 11:51:45</td>
       <td>2013-08-01 12:03:52</td>
@@ -788,7 +791,7 @@ time_split_df.head(5)
       <td>3.3</td>
     </tr>
     <tr>
-      <th>4.</th>
+      <th>4\.</th>
       <td>2</td>
       <td>2013-08-06 13:27:53</td>
       <td>2013-08-06</td>
@@ -1002,7 +1005,7 @@ transformed_features_df.head(5)
       <td>3.3</td>
     </tr>
     <tr>
-      <th>4.</th>
+      <th>4\.</th>
       <td>2</td>
       <td>2013-08-06 13:27:53</td>
       <td>Вторник</td>

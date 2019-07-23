@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 03/27/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: c0dde4c59c2fe9cde23a9f88c69f3e2673942812
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 7976dcafe8bb3f787465e72b6a61bbc48daf4086
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59546817"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67849548"
 ---
 # <a name="create-a-php-app-in-app-service-on-linux"></a>Создание приложения PHP в Службе приложений Azure в Linux
 
@@ -28,7 +28,7 @@ ms.locfileid: "59546817"
 > В этой статье мы развернем приложение в службе приложений на платформе Linux. Сведения о развертывании в Службе приложений на платформе _Windows_ см. в статье [Создание веб-приложения PHP в Azure](../app-service-web-get-started-php.md).
 >
 
-[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. Из этого краткого руководства вы узнаете, как развернуть приложение PHP в службе приложений Azure на платформе Linux. Создайте приложение со встроенным образом при помощи [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) в Cloud Shell и разверните пример кода PHP в приложении в Службе приложений.
+[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как развернуть приложение PHP в Службе приложений Azure в Linux с помощью [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
 ![Пример приложения, выполняющегося в Azure](media/quickstart-php/hello-world-in-browser.png)
 
@@ -169,7 +169,7 @@ git push azure master
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по приложению PHP с MySQL](tutorial-php-mysql-app.md)
+> [Руководство. по приложению PHP с MySQL](tutorial-php-mysql-app.md)
 
 > [!div class="nextstepaction"]
 > [Настройка приложения PHP](configure-language-php.md)

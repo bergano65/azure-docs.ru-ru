@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 04/01/2019
+ms.date: 07/16/2019
 ms.author: diberry
-ms.openlocfilehash: ea9a2df1f06ba6836ef88bc57dc3f95fd31e1ee9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a03a1224451411617f38c8cecafbef008aa08916
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66124161"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68276207"
 ---
 # <a name="tutorial-extract-names-with-simple-entity-and-a-phrase-list"></a>Руководство по Извлечение имен с использованием простой сущности и списка фраз
 
@@ -31,8 +31,8 @@ ms.locfileid: "66124161"
 > * Импорт примера приложения
 > * Добавление простой сущности 
 > * Добавление списка фраз для усиления сигнальных слов
-> * Train 
-> * Опубликовать 
+> * Обучение 
+> * Публикация 
 > * Получать намерения и сущности из конечной точки.
 
 [!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
@@ -58,7 +58,7 @@ ms.locfileid: "66124161"
 |Отправить резюме на должность инженера.|инженеры|
 |Заполните заявку для задания 123456|123456|
 
-Название должности сложно определить, так как оно может быть существительным, глаголом или фразой из нескольких слов. Например: 
+Название должности сложно определить, так как оно может быть существительным, глаголом или фразой из нескольких слов. Например:
 
 |Задания|
 |--|
@@ -229,7 +229,7 @@ ms.locfileid: "66124161"
 
 1. Выберите **Create new phrase list** (Создать список фраз). 
 
-1. Присвойте списку фраз имя `JobNames` и скопируйте список из файла jobs-phrase-list.csv в текстовое поле **Значения**. Нажмите клавишу "ВВОД". 
+1. Присвойте списку фраз имя `JobNames` и скопируйте список из файла jobs-phrase-list.csv в текстовое поле **Значения**.
 
     [![Снимок экрана, на котором показано всплывающее диалоговое окно для создания списка фраз](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-1.png "Screenshot of create new phrase list dialog pop-up")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-1.png#lightbox)
 
@@ -237,7 +237,7 @@ ms.locfileid: "66124161"
 
     Не снимайте флажок **These values are interchangeable** (Эти значения взаимозаменяемы), так как эти значения должны рассматриваться как синонимы для заданий. Подробнее о [концепциях взаимозаменяемых и невзаимозаменяемых списков фраз](luis-concept-feature.md#how-to-use-phrase-lists).
 
-1. Выберите **Сохранить**, чтобы активировать список фраз.
+1. Щелкните **Готово**, чтобы активировать список фраз.
 
     [![Снимок экрана, на котором показано всплывающее диалоговое окно для создания списка фраз со словами в области значений списка фраз](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png "Screenshot of create new phrase list dialog pop-up with words in phrase list values box")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png#lightbox)
 

@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: e9e497c8f10108b8e05314f35546345f7f812524
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.openlocfilehash: 041bcf32035ab6cdc3ee4df06050f75186759f5e
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66507804"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67835650"
 ---
 # <a name="tutorial-enable-authentication-in-a-web-application-using-azure-active-directory-b2c"></a>Руководство по Включение в веб-приложении аутентификации с помощью Azure Active Directory B2C
 
@@ -32,7 +32,7 @@ ms.locfileid: "66507804"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Создайте потоки пользователя](tutorial-create-user-flows.md), чтобы обеспечить взаимодействие с пользователями в приложении. 
+- [Создайте потоки пользователя](tutorial-create-user-flows.md), чтобы обеспечить взаимодействие с пользователями в приложении.
 - Установите [Visual Studio 2019](https://www.visualstudio.com/downloads/) с рабочей нагрузкой **ASP.NET и веб-разработка**.
 
 ## <a name="update-the-application"></a>Обновление приложения
@@ -76,9 +76,9 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-an
 
 1. Выберите **Sign up / Sign in** (Вход в службу или регистрация), чтобы зарегистрироваться как пользователь приложения. Используется поток пользователя **b2c_1_signupsignin1**.
 2. Появляется страница входа в Azure AD B2C со ссылкой для регистрации. Щелкните ссылку **Зарегистрироваться сейчас**, так как у вас нет учетной записи. В рамках рабочего процесса регистрации появляется страница для сбора данных и проверки личности пользователя с использованием адреса электронной почты. Рабочий процесс регистрации также собирает пароль пользователя и запрашиваемые атрибуты, определенные в потоке пользователя.
-3. Используйте действительный адрес электронной почты и подтвердите его с помощью кода проверки. Задайте пароль. Введите значения запрашиваемых атрибутов. 
+3. Используйте действительный адрес электронной почты и подтвердите его с помощью кода проверки. Задайте пароль. Введите значения запрашиваемых атрибутов.
 
-    ![Рабочий процесс регистрации](media/active-directory-b2c-tutorials-web-app/sign-up-workflow.png)
+    ![Страница регистрации, отображаемая как часть рабочего процесса входа и регистрации](media/active-directory-b2c-tutorials-web-app/sign-up-workflow.PNG)
 
 4. Щелкните **Создать**, чтобы создать локальную учетную запись в клиенте Azure AD B2C.
 

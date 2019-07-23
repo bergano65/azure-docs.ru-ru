@@ -11,13 +11,13 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlr
 manager: craigg
-ms.date: 03/25/2019
-ms.openlocfilehash: ec0007e2d53a3fd3cae158375b696379d923b4b3
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.date: 07/11/2019
+ms.openlocfilehash: c2a468507c598c38b0b6b3b9f9c6a58a6ef4eff2
+ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447770"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67826973"
 ---
 # <a name="getting-started-with-azure-sql-database-managed-instance"></a>Начало работы с управляемым экземпляром Базы данных SQL Azure
 
@@ -33,12 +33,14 @@ ms.locfileid: "67447770"
 
 - [Создание Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-get-started.md). На портале Azure вы настраиваете необходимые параметры (имя пользователя, пароль, число ядер и максимальный объем хранилища) и автоматически создаете сетевую среду Azure. Для этого вам не нужно иметь опыт работы с сетями или знать о требованиях к инфраструктуре. Вам нужен только [тип подписки](sql-database-managed-instance-resource-limits.md#supported-subscription-types), позволяющий в данный момент создать управляемый экземпляр. Если вы хотите настроить сеть или использовать собственную, см. статью [Настройка имеющейся виртуальной сети для Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-configure-vnet-subnet.md) или [Создание виртуальной сети для Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-create-vnet-subnet.md).
 - Управляемый экземпляр создается в вашей виртуальной сети без общедоступной конечной точки. Для доступа клиентских приложений вы можете **создать виртуальную машину в той же виртуальной сети (в другой подсети)** или **VPN-подключение типа "точка — сеть" к виртуальной сети для клиентского компьютера** с помощью одного из этих кратких руководств.
-
+  - Включите [общедоступную конечную точку](sql-database-managed-instance-public-endpoint-configure.md) в Управляемом экземпляре, чтобы получить доступ к данным непосредственно из своей среды.
   - Создайте [виртуальную машину Azure в управляемом экземпляре виртуальной сети](sql-database-managed-instance-configure-vm.md), чтобы обеспечить возможность подключения клиентского приложения, включая SQL Server Management Studio.
   - Настройте [VPN-подключение типа "точка — сеть" к управляемому экземпляру](sql-database-managed-instance-configure-p2s.md) для клиентского компьютера, на котором установлено ПО SQL Server Management Studio и подключаемые клиентские приложения. Это другой из двух вариантов подключения к управляемому экземпляру и его виртуальной сети.
 
   > [!NOTE]
   > Вы также можете использовать ExpressRoute или подключение типа "сеть — сеть" из локальной сети, но эти подходы не описаны в этих кратких руководствах.
+
+В качестве альтернативы созданию Управляемого экземпляра вручную вы можете использовать [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md), [PowerShell с шаблоном Resource Manager](scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md) или [Azure CLI](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-create) для автоматизации этого процесса и его выполнения с помощью скрипта.
 
 ### <a name="migrate-your-databases"></a>Миграция баз данных
 
@@ -59,20 +61,17 @@ ms.locfileid: "67447770"
 
 В качестве альтернативы можно также использовать этот [скрипт PowerShell](https://www.powershellmagazine.com/2018/07/23/configuring-azure-environment-to-set-up-azure-sql-database-managed-instance-preview/) для автоматизации создания сети.
 
-Если у вас уже есть виртуальная сеть и подсеть, в которой вы хотите развернуть управляемый экземпляр, нужно убедиться, что они соответствуют [требованиям к сети](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Чтобы убедиться, что подсеть настроена должным образом, воспользуйтесь этим [скриптом PowerShell](sql-database-managed-instance-configure-vnet-subnet.md). Скрипт проверяет сеть, уведомляет о проблемах, необходимых изменениях и предлагает внести требуемые изменения в виртуальную сеть или подсеть. Выполните этот скрипт, если не хотите вручную настраивать виртуальную сеть или подсеть. Его также можно выполнять после масштабной перенастройки сетевой инфраструктуры. Если вы хотите создать и настроить собственную сеть, см. статью [Архитектура подключения к управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md) и [это руководство](https://medium.com/azure-sqldb-managed-instance/the-ultimate-guide-for-creating-and-configuring-azure-sql-managed-instance-environment-91ff58c0be01).
+Если у вас уже есть виртуальная сеть и подсеть, в которой вы хотите развернуть управляемый экземпляр, нужно убедиться, что они соответствуют [требованиям к сети](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Чтобы убедиться, что подсеть настроена должным образом, воспользуйтесь этим [скриптом PowerShell](sql-database-managed-instance-configure-vnet-subnet.md). Скрипт проверяет сеть, уведомляет о проблемах, необходимых изменениях и предлагает внести требуемые изменения в виртуальную сеть или подсеть. Выполните этот скрипт, если не хотите вручную настраивать виртуальную сеть или подсеть. Его также можно выполнять после масштабной перенастройки сетевой инфраструктуры. Если вы хотите создать и настроить собственную сеть, см. статью [Connectivity architecture for a managed instance in Azure SQL Database](sql-database-managed-instance-connectivity-architecture.md) (Архитектура подключения к управляемому экземпляру Базы данных SQL Azure) и [это руководство](https://medium.com/azure-sqldb-managed-instance/the-ultimate-guide-for-creating-and-configuring-azure-sql-managed-instance-environment-91ff58c0be01).
 
-## <a name="automating-creation-of-a-managed-instance"></a>Автоматическое создание управляемого экземпляра
+## <a name="migrate-to-a-managed-instance"></a>Миграция в управляемый экземпляр
 
- Если вы не создавали сетевую среду, как описано на предыдущем шаге, портал Azure может сделать это за вас. Единственным недостатком является то, что сетевая среда будет настроена с некоторыми параметрами по умолчанию, которые невозможно впоследствии изменить. В качестве альтернативы можно использовать:
+Эти краткие руководства позволяют быстро настроить управляемый экземпляр и переместить базы данных с помощью встроенной функции `RESTORE`. Это хорошая отправная точка, если вы хотите быстро подтвердить концепции и убедиться, что ваше решение может работать в Управляемом экземпляре. 
 
-- [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md)
-- [PowerShell с шаблоном Resource Manager](scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md);
-- [Azure CLI](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/11/14/create-azure-sql-managed-instance-using-azure-cli/).
-- [Шаблон Resource Manager](sql-database-single-database-get-started-template.md)
+Но для переноса производственной базы данных или даже баз данных разработки и тестирования, которые вы хотите использовать для тестирования производительности, вам потребуется воспользоваться дополнительными техниками, например такими:
+- Тестирование производительности — вам необходимо замерить базовые показатели производительности на исходном экземпляре SQL Server и сравнить их с показателями производительности целевого Управляемого экземпляра, в который была перенесена база данных. Подробные сведения см. в статье с [рекомендациями по сравнению показателей производительности](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/The-best-practices-for-performance-comparison-between-Azure-SQL/ba-p/683210).
+- Миграция по сети — при использовании встроенной функции `RESTORE`, которая описана в этой статье, вам придется подождать восстановления баз данных (и их копирования в хранилище BLOB-объектов Azure, если их там нет). Это приведет к некоторому простою приложения, особенно в случае больших баз данных. Для переноса рабочей базы данных используйте [Azure Database Migration Service (DMS)](https://docs.microsoft.com/azure/dms/tutorial-sql-server-to-managed-instance?toc=/azure/sql-database/toc.json), чтобы минимизировать время ее простоя. DMS выполняет постепенную принудительную отправку изменений, внесенных в базу данных-источник, в восстанавливаемую базу данных управляемого экземпляра. С ее помощью вы можете быстро перевести приложение с исходной базы данных на целевую с минимальным временем простоя.
 
-## <a name="migrating-to-a-managed-instance-with-minimal-downtime"></a>Перенос в управляемый экземпляр с минимальным временем простоя
-
-Эти краткие руководства позволяют быстро настроить управляемый экземпляр и переместить базы данных с помощью встроенной функции `RESTORE`. Но при использовании встроенной функции `RESTORE` вам придется подождать восстановления баз данных (и их копирования в хранилище BLOB-объектов Azure, если их там нет). Это приведет к некоторому простою приложения, особенно в случае больших баз данных. Для переноса рабочей базы данных используйте [Azure Database Migration Service (DMS)](https://docs.microsoft.com/azure/dms/tutorial-sql-server-to-managed-instance?toc=/azure/sql-database/toc.json), чтобы минимизировать время ее простоя. DMS выполняет постепенную принудительную отправку изменений, внесенных в базу данных-источник, в восстанавливаемую базу данных управляемого экземпляра. С ее помощью вы можете быстро перевести приложение с исходной базы данных на целевую с минимальным временем простоя.
+Подробные сведения см. в статье [SQL Server instance migration to Azure SQL Database managed instance](sql-database-managed-instance-migrate.md) (Перенос экземпляра SQL Server в управляемый экземпляр Базы данных SQL Azure).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
