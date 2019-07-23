@@ -14,7 +14,7 @@
     - name: "Создание кластера Apache Kafka\_— шаблон"
       displayName: 'resource manager template, arm template, resource manager group'
       href: apache-kafka-quickstart-resource-manager-template.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Использование API объекта-производителя и объекта-получателя Apache Kafka
       href: apache-kafka-producer-consumer-api.md
@@ -38,7 +38,7 @@
       href: ../hdinsight-component-versioning.md
     - name: "HDInsight\_4.0"
       href: ../hdinsight-version-release.md
-- name: Руководства
+- name: Практическое руководство
   items:
     - name: Включение автоматического создания разделов
       href: apache-kafka-auto-create-topics.md
@@ -220,8 +220,6 @@
           href: ../hdinsight-virtual-network-architecture.md
         - name: Ограничение исходящего трафика с помощью брандмауэра
           href: ../hdinsight-restrict-outbound-traffic.md
-        - name: HDInsight в виртуальной сети Azure
-          href: ../hdinsight-extend-hadoop-virtual-network.md
         - name: Подключение HDInsight к локальной сети
           href: ../connect-on-premises-network.md
     - name: Мониторинг с использованием журналов Azure Monitor
