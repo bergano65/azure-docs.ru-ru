@@ -1,7 +1,7 @@
 ---
-title: Запускать службы Azure Kubernetes
+title: Запуск службы Kubernetes Azure
 titleSuffix: Text Analytics - Azure Cognitive Services
-description: Развертывание контейнеров analytics текста с учетом образа анализа тональности в службы Azure Kubernetes и протестировать его в веб-браузере.
+description: Разверните Анализ текста контейнеры с образом анализа тональности в службе Kubernetes Azure и протестируйте их в веб-браузере.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -10,66 +10,66 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
 ms.author: dapine
-ms.openlocfilehash: a419ed3b9c0d2c4db9c552642dc5c662786f6730
-ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
+ms.openlocfilehash: 290a01e7e478f718607c0550702474cd31979a63
+ms.sourcegitcommit: b49431b29a53efaa5b82f9be0f8a714f668c38ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67561252"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68377400"
 ---
-# <a name="deploy-a-sentiment-analysis-container-to-azure-kubernetes-services-aks"></a>Развертывание контейнера анализ тональности для службы Azure Kubernetes (AKS)
+# <a name="deploy-a-sentiment-analysis-container-to-azure-kubernetes-service"></a>Развертывание контейнера тональности Analysis Service в службе Kubernetes Azure
 
-Дополнительные сведения о развертывании Cognitive Services [текстовая аналитика](https://docs.microsoft.com/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-install-containers) контейнера с помощью образа анализ тональности для службы Azure Kubernetes (AKS). Эта процедура служит отличным примером создания ресурса анализа текста, создания связанное изображение анализ тональности, а также для выполнения этой оркестрацией двух из браузера. С помощью контейнеров можно сместить внимание разработчиков от управления инфраструктурой, чтобы вместо этого сосредоточиться на разработке приложений.
+Узнайте, как развернуть контейнер [Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-install-containers) Cognitive Services Azure с помощью образа анализа тональности в службе Kubernetes Azure (AKS). В этой процедуре показано, как создать ресурс Анализ текста, как создать связанный образ анализа тональности и как выполнить это согласование этих двух элементов из браузера. С помощью контейнеров можно не только управлять инфраструктурой, но и сосредоточиться на разработке приложений.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
-Для выполнения этой процедуры необходимо установить и запустить несколько средств локально. Не используйте Azure CloudShell.
+Для выполнения этой процедуры необходимо установить и запустить несколько средств локально. Не используйте Azure Cloud Shell. Кроме этого, вам потребуются:
 
-* Используйте подписку Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
-* Текстовый редактор, например: [Visual Studio Code](https://code.visualstudio.com/download).
-* Установка [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
-* Установка [интерфейс командной строки Kubernetes](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
+* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* Текстовый редактор, например [Visual Studio Code](https://code.visualstudio.com/download).
+* [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) установлен.
+* Установленная [CLI Kubernetes](https://kubernetes.io/docs/tasks/tools/install-kubectl/) .
 * Ресурс Azure с правильной ценовой категорией. Не все ценовые категории поддерживают этот контейнер.
-    * Ресурс **Анализ текста** с ценовой категорией F0 или "Стандартный".
-    * Ресурс **Cognitive Services** с ценовой категорией S0.
+    * **Анализ текста ресурс Azure** только с ценовыми категориями F0 или Standard.
+    * Ресурс **Azure Cognitive Services** с ценовой категорией S0.
 
 [!INCLUDE [Create a Cognitive Services Text Analytics resource](../includes/create-text-analytics-resource.md)]
 
-[!INCLUDE [Create a Text Analytics Containers on Azure Kubernetes Services (AKS)](../../containers/includes/create-aks-resource.md)]
+[!INCLUDE [Create a Text Analytics container on Azure Kubernetes Service (AKS)](../../containers/includes/create-aks-resource.md)]
 
-## <a name="deploy-text-analytics-container-to-an-aks-cluster"></a>Развертывание контейнера текста аналитики в кластере AKS
+## <a name="deploy-a-text-analytics-container-to-an-aks-cluster"></a>Развертывание контейнера Анализ текста в кластере AKS
 
-1. Откройте Azure CLI и войдите в Azure
+1. Откройте Azure CLI и войдите в Azure.
 
     ```azurecli
     az login
     ```
 
-1. Войдите в кластер AKS (Замените `your-cluster-name` и `your-resource-group` с соответствующими значениями)
+1. Войдите в кластер AKS. Замените `your-cluster-name` и`your-resource-group` соответствующими значениями.
 
     ```azurecli
     az aks get-credentials -n your-cluster-name -g -your-resource-group
     ```
 
-    После выполнения этой команды, он выводит сообщение, аналогичное приведенному ниже:
+    После выполнения этой команды будет выводится сообщение следующего вида:
 
     ```console
     Merged "your-cluster-name" as current context in /home/username/.kube/config
     ```
 
     > [!WARNING]
-    > Если у вас есть несколько подписок, доступные для учетной записи Azure и `az aks get-credentials` команда возвращает ошибку, распространенной проблемой является то, что вы используете неправильную подписку. Просто задать контекст в сеансе Azure CLI для использования той же подписке, который вы создали ресурсы с и повторите попытку.
+    > Если в учетной записи Azure доступно несколько подписок, а `az aks get-credentials` команда возвращает ошибку, то распространенной проблемой является то, что вы используете неправильную подписку. Задайте контекст сеанса Azure CLI, чтобы использовать ту же подписку, в которой были созданы ресурсы, и повторите попытку.
     > ```azurecli
     >  az account set -s subscription-id
     > ```
 
-1. Откройте текстовый редактор по выбору, (в этом примере используется __Visual Studio Code__):
+1. Откройте текстовый редактор по желанию. В этом примере используется Visual Studio Code.
 
     ```azurecli
     code .
     ```
 
-1. В текстовом редакторе создайте файл с именем _sentiment.yaml_ и вставьте в него следующий yaml-ФАЙЛ. Не забудьте заменить `billing/value` и `apikey/value` на собственные.
+1. В текстовом редакторе создайте новый файл с именем _тональности. YAML_и вставьте в него следующий YAML. Обязательно замените `billing/value` и `apikey/value` собственными сведениями.
 
     ```yaml
     apiVersion: apps/v1beta1
@@ -109,38 +109,38 @@ ms.locfileid: "67561252"
     ```
 
 1. Сохраните файл и закройте текстовый редактор.
-1. Выполнение Kubernetes `apply` с _sentiment.yaml_ целевым объектом:
+1. Выполните команду Kubernetes `apply` с параметром _тональности. YAML_ в качестве целевого объекта:
 
     ```console
     kuberctl apply -f sentiment.yaml
     ```
 
-    После команды успешно применил конфигурацию развертывания, сообщение, аналогичное приведенному ниже:
+    После того как команда успешно применит конфигурацию развертывания, появится сообщение следующего вида:
 
     ```
     deployment.apps "sentiment" created
     service "sentiment" created
     ```
-1. Убедитесь, что была развернута POD:
+1. Убедитесь, что модуль был развернут:
 
     ```console
     kubectl get pods
     ```
 
-    При этом будет выведено состояние выполнения POD:
+    Выходные данные для состояния выполнения Pod:
 
     ```
     NAME                         READY     STATUS    RESTARTS   AGE
     sentiment-5c9ccdf575-mf6k5   1/1       Running   0          1m
     ```
 
-1. Убедитесь, что служба доступна и получите IP-адрес:
+1. Убедитесь, что служба доступна, и получите IP-адрес.
 
     ```console
     kubectl get services
     ```
 
-    При этом будет выведено состояние выполнения _тональности_ службы в POD:
+    Выходные данные для состояния выполнения службы _тональности_ в Pod:
 
     ```
     NAME         TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)          AGE
@@ -148,9 +148,9 @@ ms.locfileid: "67561252"
     sentiment    LoadBalancer   10.0.100.64   168.61.156.180   5000:31234/TCP   2m
     ```
 
-[!INCLUDE [Verify the Sentiment Analysis container instance](../includes/verify-sentiment-analysis-container.md)]
+[!INCLUDE [Verify the sentiment analysis container instance](../includes/verify-sentiment-analysis-container.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Воспользуйтесь [дополнительными контейнерами Cognitive Services](../../cognitive-services-container-support.md)
-* Используйте [текстовая аналитика подключенной службы](../vs-text-connected-service.md)
+* Использование большего числа [контейнеров Cognitive Services](../../cognitive-services-container-support.md)
+* Использование [подключенной службы анализ текста](../vs-text-connected-service.md)

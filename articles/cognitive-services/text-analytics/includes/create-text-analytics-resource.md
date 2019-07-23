@@ -1,7 +1,7 @@
 ---
-title: Создать ресурс текстовая аналитика Cognitive Services
+title: Создание ресурса Анализ текста Cognitive Services
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как создать ресурс текстовая аналитика Cognitive Services.
+description: Узнайте, как создать ресурс Анализ текста Cognitive Services.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -9,32 +9,32 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 06/26/2019
 ms.author: dapine
-ms.openlocfilehash: 7e8b4480911f00afa8524ef4b81d697bb8ee5bcc
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 6a9363472e1d5770232ca9a0b151fb309d9c4c75
+ms.sourcegitcommit: b49431b29a53efaa5b82f9be0f8a714f668c38ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67877455"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68377419"
 ---
-## <a name="create-a-cognitive-services-text-analytics-resource"></a>Создать ресурс текстовая аналитика Cognitive Services
+## <a name="create-a-cognitive-services-text-analytics-resource"></a>Создание ресурса Анализ текста Cognitive Services
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-1. Выберите **создать ресурс**, а затем перейдите к разделу **искусственный Интеллект и машинное Обучение** > **текстовая аналитика**.
-   Или перейдите к [создать текстовая аналитика](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics).
+1. Выберите **создать ресурс**, а затем перейдите в**анализ текста** **AI + машинное обучение** > .
+   Или перейдите к разделу [создание анализ текста](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics).
 1. Введите все необходимые параметры:
 
     |Параметр|Значение|
     |--|--|
-    |ИМЯ|Введите имя (2-64 символов)|
-    |Subscription|Выберите соответствующую подписку|
-    |Местоположение|Выберите ближайшее расположение|
-    |Ценовая категория| Введите **S**, уровень ценообразования standard|
-    |Resource group|Выберите группу доступных ресурсов|
+    |Имя|Введите имя (2-64 символов).|
+    |Подписка|Выберите подходящую подписку.|
+    |Местоположение|Выберите ближайшее расположение.|
+    |Ценовая категория| Введите **S**, ценовую категорию "Стандартный".|
+    |Группа ресурсов|Выберите доступную группу ресурсов.|
 
-1. Выберите **создать** и ожидания ресурсов должен быть создан. Браузер автоматически перенаправляет на страницу нового созданного ресурса.
-1. Собирать настроенного `endpoint` и ключ API:
+1. Выберите **создать**и дождитесь создания ресурса. Браузер автоматически перенаправит на созданную страницу ресурсов.
+1. Собирайте настроенный `endpoint` и ключ API:
 
     |Вкладка ресурсов на портале|Параметр|Значение|
     |--|--|--|
-    |**Обзор**|Конечная точка|Копирование конечной точки. Он должен выглядеть аналогично `https://northeurope.api.cognitive.microsoft.com/text/analytics/v2.0`|
-    |**Ключи**|Ключ API|Скопируйте один из двух ключей. Это 32-значный алфавитно-цифровую строку без пробелов и дефисов: <`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`>.|
+    |**Обзор**|Конечная точка|Скопируйте конечную точку. Он выглядит примерно так `https://northeurope.api.cognitive.microsoft.com/text/analytics/v2.0`:.|
+    |**Ключи**|Ключ API|Скопируйте один из двух ключей. Это буквенно-цифровая строка, состоящая из 32 символов без пробелов`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`или дефисов: < >.|

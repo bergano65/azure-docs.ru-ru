@@ -52,8 +52,6 @@
           href: howto-provide-risk-event-feedback.md
         - name: Настройка политик риска
           href: howto-configure-risk-policies.md
-        - name: Повышение точности обнаружения
-          href: howto-improve-detection-accuracy.md
         - name: Часто задаваемые вопросы и известные проблемы
           href: known-issues.md
 - name: Справочные материалы
