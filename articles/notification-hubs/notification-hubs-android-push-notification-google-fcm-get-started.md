@@ -14,14 +14,14 @@ ms.tgt_pltfrm: mobile-android
 ms.devlang: java
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 04/30/2019
+ms.date: 07/15/2019
 ms.author: jowargo
-ms.openlocfilehash: f2efa9b7e1e534f93e4ea01ba52740c8c5ac7b02
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: a01a71190f6de4bd08ee306f0175b01fee3db3d5
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67653841"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68227881"
 ---
 # <a name="tutorial-push-notifications-to-android-devices-by-using-azure-notification-hubs-and-google-firebase-cloud-messaging"></a>Руководство по Отправка push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Google Firebase Cloud Messaging
 
@@ -100,7 +100,6 @@ ms.locfileid: "67653841"
     ![Диспетчер пакетов SDK для Android с выбранными Сервисами Google Play](./media/notification-hubs-android-studio-add-google-play-services/google-play-services-selected.png)
 3. Если вы видите диалоговое окно **Подтвердить изменение**, выберите **ОК**. Установщик компонентов устанавливает запрошенные компоненты. После установки компонентов выберите **Готово**.
 4. Выберите **ОК**, чтобы закрыть диалоговое окно **Settings for New Projects** (Параметры для новых проектов).  
-5. Выберите значок **Синхронизировать сейчас** на панели инструментов.
 1. Откройте файл AndroidManifest.xml, а затем добавьте следующий тег для тега *приложения*.
 
     ```xml
@@ -115,7 +114,6 @@ ms.locfileid: "67653841"
 
     ```gradle
     implementation 'com.microsoft.azure:notification-hubs-android-sdk:0.6@aar'
-    implementation 'com.microsoft.azure:azure-notifications-handler:1.0.1@aar'
     ```
 
 2. После раздела dependencies добавьте следующий репозиторий.
@@ -146,7 +144,7 @@ ms.locfileid: "67653841"
 
 ### <a name="update-the-androidmanifestxml-file"></a>Обновите файл AndroidManifest.xml
 
-1. После получения маркера регистрации в FCM используйте его для [регистрации в Центрах уведомлений Azure](notification-hubs-push-notification-registration-management.md). Регистрация в фоновом режиме выполняется с помощью службы `IntentService` с именем `RegistrationIntentService`. Эта служба также обновит ваш маркер регистрации FCM.
+1. После получения маркера регистрации в FCM используйте его для [регистрации в Центрах уведомлений Azure](notification-hubs-push-notification-registration-management.md). Регистрация в фоновом режиме выполняется с помощью службы `IntentService` с именем `RegistrationIntentService`. Эта служба также обновит ваш маркер регистрации FCM. Также создается класс с именем `FirebaseService` в качестве подкласса `FirebaseMessagingService` и переопределяется метод `onMessageReceived` для получения и обработки уведомлений. 
 
     Добавьте приведенное ниже определение службы внутри тега `<application>` в файле AndroidManifest.xml.
 
@@ -155,22 +153,14 @@ ms.locfileid: "67653841"
         android:name=".RegistrationIntentService"
         android:exported="false">
     </service>
-    ```
-
-2. Вам также необходимо определить получателя для получения уведомлений. Добавьте следующее определение получателя внутри тега `<application>` в файле AndroidManifest.xml. 
-
-    ```xml
-    <receiver android:name="com.microsoft.windowsazure.notifications.NotificationsBroadcastReceiver"
-        android:permission="com.google.android.c2dm.permission.SEND">
+    <service
+        android:name=".FirebaseService"
+        android:exported="false">
         <intent-filter>
-            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-            <category android:name="<your package name>" />
+            <action android:name="com.google.firebase.MESSAGING_EVENT" />
         </intent-filter>
-    </receiver>
+    </service>
     ```
-
-    > [!IMPORTANT]
-    > Замените заполнитель `<your package NAME>` фактическим именем своего пакета, который отображается в верхней части файла AndroidManifest.xml.
 3. Добавьте следующие разрешения, связанные с FCM, под тегом `</application>`.
 
     ```xml
@@ -307,7 +297,6 @@ ms.locfileid: "67653841"
     ```java
     import com.google.android.gms.common.ConnectionResult;
     import com.google.android.gms.common.GoogleApiAvailability;
-    import com.microsoft.windowsazure.notifications.NotificationsManager;
     import android.content.Intent;
     import android.util.Log;
     import android.widget.TextView;
@@ -373,6 +362,7 @@ ms.locfileid: "67653841"
 
         mainActivity = this;
         registerWithNotificationHubs();
+        FirebaseService.createChannelAndHandleNotifications(getApplicationContext());
     }
     ```
 
@@ -421,11 +411,14 @@ ms.locfileid: "67653841"
     android:id="@+id/text_hello"
     ```
 
-11. Затем добавьте подкласс для получателя, определенного в AndroidManifest.xml. Добавьте еще один новый класс в проект `MyHandler`.
+11. Затем добавьте подкласс для получателя, определенного в AndroidManifest.xml. Добавьте еще один новый класс в проект `FirebaseService`.
 
-12. Добавьте в начало файла `MyHandler.java` следующие операторы импорта:
+12. Добавьте в начало файла `FirebaseService.java` следующие операторы импорта:
 
     ```java
+    import com.google.firebase.messaging.FirebaseMessagingService;
+    import com.google.firebase.messaging.RemoteMessage;
+    import android.util.Log;
     import android.app.NotificationChannel;
     import android.app.NotificationManager;
     import android.app.PendingIntent;
@@ -436,16 +429,17 @@ ms.locfileid: "67653841"
     import android.os.Build;
     import android.os.Bundle;
     import android.support.v4.app.NotificationCompat;
-    import com.microsoft.windowsazure.notifications.NotificationsHandler;    
-    import com.microsoft.windowsazure.notifications.NotificationsManager;
     ```
 
-13. Добавьте в класс `MyHandler` следующий код, чтобы сделать его подклассом класса `com.microsoft.windowsazure.notifications.NotificationsHandler`.
+13. Добавьте в класс `FirebaseService` следующий код, чтобы сделать его подклассом класса `FirebaseMessagingService`.
 
-    Этот код переопределяет метод `OnReceive` так, чтобы обработчик сообщал о полученных уведомлениях. Кроме того, обработчик отправляет push-уведомление в диспетчер уведомлений Android с помощью метода `sendNotification()` . Вызовите метод `sendNotification()`, если приложение не запущено и получено уведомление.
+    Этот код переопределяет метод `onMessageReceived` и сообщает о полученных уведомлениях. Кроме того, он отправляет push-уведомление в диспетчер уведомлений Android с помощью метода `sendNotification()`. Вызовите метод `sendNotification()`, если получено уведомление, а приложение не запущено.
 
     ```java
-    public class MyHandler extends NotificationsHandler {
+    public class FirebaseService extends FirebaseMessagingService
+    {
+        private String TAG = "FirebaseService";
+    
         public static final String NOTIFICATION_CHANNEL_ID = "nh-demo-channel-id";
         public static final String NOTIFICATION_CHANNEL_NAME = "Notification Hubs Demo Channel";
         public static final String NOTIFICATION_CHANNEL_DESCRIPTION = "Notification Hubs Demo Channel";
@@ -453,16 +447,33 @@ ms.locfileid: "67653841"
         public static final int NOTIFICATION_ID = 1;
         private NotificationManager mNotificationManager;
         NotificationCompat.Builder builder;
-        Context ctx;
+        static Context ctx;
     
         @Override
-        public void onReceive(Context context, Bundle bundle) {
-            ctx = context;
-            String nhMessage = bundle.getString("message");
-            sendNotification(nhMessage);
+        public void onMessageReceived(RemoteMessage remoteMessage) {
+            // ...
+    
+            // TODO(developer): Handle FCM messages here.
+            // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
+            Log.d(TAG, "From: " + remoteMessage.getFrom());
+    
+            String nhMessage;
+            // Check if message contains a notification payload.
+            if (remoteMessage.getNotification() != null) {
+                Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
+    
+                nhMessage = remoteMessage.getNotification().getBody();
+            }
+            else {
+                nhMessage = remoteMessage.getData().values().iterator().next();
+            }
+    
+            // Also if you intend on generating your own notifications as a result of a received FCM
+            // message, here is where that should be initiated. See sendNotification method below.
             if (MainActivity.isVisible) {
                 MainActivity.mainActivity.ToastNotify(nhMessage);
             }
+            sendNotification(nhMessage);
         }
     
         private void sendNotification(String msg) {
@@ -490,6 +501,8 @@ ms.locfileid: "67653841"
         }
     
         public static void createChannelAndHandleNotifications(Context context) {
+            ctx = context;
+    
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 NotificationChannel channel = new NotificationChannel(
                         NOTIFICATION_CHANNEL_ID,
@@ -500,8 +513,7 @@ ms.locfileid: "67653841"
     
                 NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
                 notificationManager.createNotificationChannel(channel);
-                NotificationsManager.handleNotifications(context, "", MyHandler.class);
-            }
+             }
         }
     }
     ```
@@ -538,7 +550,7 @@ Push-уведомления с [портал Azure] можно отправит�
 ### <a name="run-the-mobile-app-on-emulator"></a>Запуск мобильного приложения в эмуляторе
 Перед проверкой отправки push-уведомлений в эмуляторе, убедитесь, что образ эмулятора поддерживает уровень API Google, выбранный для приложения. Если образ не поддерживает собственные API-интерфейсы Google, создается исключение **SERVICE\_NOT\_AVAILABLE**.
 
-Кроме того, добавьте учетную запись Google в запущенный эмулятор. Для этого щелкните **Settings** > **Accounts**. В противном случае попытки регистрации в FCM могут привести к исключению **AUTHENTICATION\_FAILED**.
+Кроме того, добавьте учетную запись Google в запущенный эмулятор. Для этого щелкните **Settings** (Параметры) > **Accounts** (Учетные записи). В противном случае попытки регистрации в FCM могут привести к исключению **AUTHENTICATION\_FAILED**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 В этом руководстве вы использовали Firebase Cloud Messaging, для отправки уведомлений на все устройства Android, зарегистрированных в службе. Чтобы узнать, как отправлять push-уведомления на конкретные устройства, перейдите к следующему руководству:

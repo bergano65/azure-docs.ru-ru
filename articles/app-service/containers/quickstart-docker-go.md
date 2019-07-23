@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 03/28/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 88c9996ce3f2d89ae58881c913f6bd4e549b5814
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: ec2b974e008ea4c7e266f5ae0d46cd67d2133e54
+ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59547310"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67853999"
 ---
 # <a name="run-a-custom-linux-container-in-azure-app-service"></a>Запуск пользовательского контейнера Linux в Службе приложений Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "59547310"
 
 ## <a name="create-a-web-app"></a>Создание веб-приложения
 
-Создайте [веб-приложение](../overview.md) в рамках плана `myAppServicePlan` службы приложений с помощью команды [az webapp create](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create). Не забудьте указать глобально уникальное имя приложения вместо `<app name>`.
+Создайте [веб-приложение](../overview.md) в рамках плана `myAppServicePlan` службы приложений с помощью команды [az webapp create](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create). Замените `<app name>` глобальным уникальным именем приложения (допустимые символы: `a-z`, `0-9` и `-`).
 
 ```azurecli-interactive
 az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app name> --deployment-container-image-name microsoft/azure-appservices-go-quickstart
@@ -75,10 +75,10 @@ http://<app_name>.azurewebsites.net/hello
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по развертыванию из частного репозитория контейнеров](tutorial-custom-docker-image.md)
+> [Руководство. по развертыванию из частного репозитория контейнеров](tutorial-custom-docker-image.md)
 
 > [!div class="nextstepaction"]
 > [Настройка пользовательского контейнера](configure-custom-container.md)
 
 > [!div class="nextstepaction"]
-> [Руководство по приложению WordPress с несколькими контейнерами](tutorial-multi-container-app.md)
+> [Руководство. по приложению WordPress с несколькими контейнерами](tutorial-multi-container-app.md)

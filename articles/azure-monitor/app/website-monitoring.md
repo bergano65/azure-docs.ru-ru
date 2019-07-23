@@ -5,17 +5,17 @@ services: application-insights
 keywords: ''
 author: mrbullwinkle
 ms.author: mbullwin
-ms.date: 10/29/2018
+ms.date: 07/15/2019
 ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: ece51892522721f7be3cdcadbb3b79705c9f83e4
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 9845329d30da40243751c00f7c0fa62fdcfe5a0d
+ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66384098"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67990088"
 ---
 # <a name="start-monitoring-your-website"></a>Запуск мониторинга веб-сайта
 
@@ -41,12 +41,14 @@ Application Insights может собирать данные телеметри
 
 1. Выберите **Создать ресурс** > **Средства управления** > **Application Insights**.
 
+   > [!NOTE]
+   >См. подробнее о [создании ресурса Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource).
+
    Откроется окно настроек, в котором нужно заполнить все поля в соответствии с приведенной ниже таблицей.
 
     | Параметры        | Значение           | ОПИСАНИЕ  |
    | ------------- |:-------------|:-----|
    | **Имя**      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
-   | **Тип приложения** | Общее приложение | Тип отслеживаемого приложения |
    | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных App Insights |
    | **Местоположение.** | Восточная часть США | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
 

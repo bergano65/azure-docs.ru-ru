@@ -14,12 +14,12 @@ ms.devlang: multiple
 ms.topic: tutorial
 ms.date: 05/14/2019
 ms.author: spelluru
-ms.openlocfilehash: b7dbc7dbc0b670de81a3f4603b0d52bce7559af8
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.openlocfilehash: f31e014cf242675577bedd29a3a79332ede32bf5
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66428319"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68304238"
 ---
 # <a name="respond-to-azure-service-bus-events-received-via-azure-event-grid-by-using-azure-functions-and-azure-logic-apps"></a>Реагирование на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps
 Узнайте, как отвечать на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps. Вы сделаете следующее:
@@ -235,7 +235,7 @@ ms.locfileid: "66428319"
         ![Получение профиля публикации для функции](./media/service-bus-to-event-grid-integration-example/function-download-publish-profile.png)
     4. Сохраните файл в папку проекта. 
 4. Затем в Visual Studio щелкните правой кнопкой мыши **SBEventGridIntegration** и выберите **Опубликовать**. 
-5. Щелкните *Запустить** на странице **Публикация**. 
+5. Щелкните **Запустить** на странице **Публикация**. 
 6. На странице **Выбор целевого объекта публикации** щелкните **Импорт профиля**. 
 
     ![Visual Studio — кнопка импорта профиля](./media/service-bus-to-event-grid-integration-example/visual-studio-import-profile-button.png)

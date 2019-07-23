@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 21c7e996cfe2f07d9a5b056d8cbc22f238bb48fd
-ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
+ms.openlocfilehash: e787366694b55d3dcd61eec2c5a5b42dd187ec55
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66357618"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68226838"
 ---
 # <a name="search-nearby-points-of-interest-using-azure-maps"></a>Поиск ближайшей точки интереса с помощью службы "Карты Azure"
 
@@ -239,9 +239,9 @@ API элементов управления картой — это удобна
     map.events.add('mouseover', resultLayer, showPopup);
     ```
 
-    `sup` API предоставляет информационное окно, которое можно привязать к нужной позиции на карте. 
+    `*atlas.Popup` API предоставляет информационное окно, которое можно привязать к нужной позиции на карте. 
 
-2. В теге *script* после функции `GetMap` добавьте следующий код для отображения во всплывающем окне событий наведения указателя мыши поверх сведений о результатах.
+2. В функции `GetMap` добавьте следующий код для отображения во всплывающем окне событий наведения указателя мыши поверх сведений о результатах.
 
     ```JavaScript
     function showPopup(e) {

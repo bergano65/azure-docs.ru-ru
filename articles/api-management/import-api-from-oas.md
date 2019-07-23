@@ -11,14 +11,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 11/22/2017
+ms.date: 07/12/2019
 ms.author: apimpm
-ms.openlocfilehash: b1602af59cd46b4bbcefa6f1df3cd84c0d342b71
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: a2d71330dcdac7054b20e0a6222b542fd8815705
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52959705"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67849567"
 ---
 # <a name="import-an-openapi-specification"></a>Импорт спецификации OpenAPI
 
@@ -60,6 +60,9 @@ ms.locfileid: "52959705"
     |**Продукты**|*Unlimited*| Чтобы опубликовать API, его нужно связать с определенным продуктом. Чтобы добавить новый API к продукту (необязательно), введите здесь название продукта. Этот шаг можно повторить несколько раз, чтобы добавить API в несколько продуктов.<br/>Продуктами называют ассоциации из одного или нескольких API. Вы можете объединить в них определенное количество API и предлагать их разработчикам через портал разработчика. Чтобы получить доступ к API, разработчикам необходимо сначала подписаться на продукт. После этого они получат ключ подписки, который подходит для любого API в этом продукте. Создавая экземпляр службы управления API, вы автоматически становитесь его администратором. Поэтому вы по умолчанию будете подписаны на все продукты.<br/> По умолчанию каждый экземпляр API управления поставляется с двумя демонстрационными продуктами: **Starter** и **Unlimited**. |
 
 4. Нажмите кнопку **Создать**.
+
+> [!NOTE]
+> См. подробнее об [ограничении импорта API](api-management-api-import-restrictions.md).
 
 ## <a name="test-the-new-apim-api-in-the-azure-portal"></a>Проверка нового API службы управления API на портале Azure
 

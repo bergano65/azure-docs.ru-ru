@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: yexu
-ms.openlocfilehash: 1d8b31e55a2a230385730c924d3e6bcc6072e7ea
-ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
+ms.openlocfilehash: 87b5b30738451800da21736d7f139c4ba85ff998
+ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65520439"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68233697"
 ---
 # <a name="incrementally-load-data-from-a-source-data-store-to-a-destination-data-store"></a>Добавочная загрузка данных из исходного хранилища данных в целевое
 
@@ -29,9 +29,11 @@ ms.locfileid: "65520439"
 ![Рабочий процесс использования предела](media/tutorial-incremental-copy-overview/workflow-using-watermark.png)
 
 Пошаговые инструкции представлены в следующих статьях: 
-
-- [Пошаговая загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure](tutorial-incremental-copy-powershell.md)
+- [Пошаговая загрузка данных из Базы данных SQL Azure в хранилище BLOB-объектов Azure](tutorial-incremental-copy-powershell.md)
 - [Добавочная загрузка данных из нескольких таблиц в SQL Server в базу данных SQL Azure](tutorial-incremental-copy-multiple-tables-powershell.md)
+
+См. шаблоны:
+- [Разностное копирование с использованием контрольной таблицы](solution-template-delta-copy-with-control-table.md)
 
 ## <a name="delta-data-loading-from-sql-db-by-using-the-change-tracking-technology"></a>Разностная загрузка данных из базы данных SQL с помощью технологии отслеживания изменений
 Технология отслеживания изменений — это упрощенное решение в SQL Server и Базе данных SQL Azure, которое предоставляет эффективный механизм отслеживания изменений для приложений. Эта технология позволяет приложению легко идентифицировать вставленные, обновленные или удаленные данные. 
@@ -41,22 +43,25 @@ ms.locfileid: "65520439"
 ![Рабочий процесс для использования отслеживания изменений](media/tutorial-incremental-copy-overview/workflow-using-change-tracking.png)
 
 Пошаговые инструкции представлены в следующем руководстве: <br/>
-[Добавочная загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживании изменений](tutorial-incremental-copy-change-tracking-feature-powershell.md)
+- [Добавочная загрузка данных из Базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживании изменений](tutorial-incremental-copy-change-tracking-feature-powershell.md)
 
 ## <a name="loading-new-and-changed-files-only-by-using-lastmodifieddate"></a>Загрузка новых и измененных файлов только с использованием LastModifiedDate
 Новые и измененные файлы можно скопировать в целевое хранилище только с помощью LastModifiedDate. ADF проверит все файлы из исходного хранилища, применит фильтр файла по LastModifiedDate и скопирует только новые и обновленные файлы (с момента последнего копирования) в целевое хранилище.  Имейте в виду, если разрешить ADF проверять огромное число файлов, но копировать только несколько из них в место назначения, это будет долго, так как проверка файлов также занимает много времени.   
 
 Пошаговые инструкции представлены в следующем руководстве: <br/>
-[Incrementally copy new and changed files based on LastModifiedDate by using the Copy Data tool](tutorial-incremental-copy-lastmodified-copy-data-tool.md) (Добавочное копирование новых и измененных файлов на основе параметра LastModifiedDate с помощью средства "Копирование данных")
+- [Incrementally copy new and changed files based on LastModifiedDate by using the Copy Data tool](tutorial-incremental-copy-lastmodified-copy-data-tool.md) (Добавочное копирование новых и измененных файлов на основе параметра LastModifiedDate с помощью средства "Копирование данных")
+
+См. шаблоны:
+- [Копирование новых файлов с использованием параметра LastModifiedDate](solution-template-copy-new-files-lastmodifieddate.md)
 
 ## <a name="loading-new-files-only-by-using-time-partitioned-folder-or-file-name"></a>Загрузка новых файлов только с использованием имен папок или файлов, секционированных по времени
 Можно скопировать только новые файлы или папки, если они секционированы по времени и информация о временной секции указана в имени файла или папки (например, /yyyy/mm/dd/file.csv). Это самый оптимальный с точки зрения производительности подход к поэтапной загрузке новых файлов. 
 
 Пошаговые инструкции представлены в следующем руководстве: <br/>
-[Incrementally copy new files based on time partitioned file name by using the Copy Data tool](tutorial-incremental-copy-partitioned-file-name-copy-data-tool.md) (Добавочное копирование новых файлов на основе имени файла, секционированного по времени, с помощью средства "Копирование данных")
+- [Incrementally copy new files based on time partitioned file name by using the Copy Data tool](tutorial-incremental-copy-partitioned-file-name-copy-data-tool.md) (Добавочное копирование новых файлов на основе имени файла, секционированного по времени, с помощью средства "Копирование данных")
 
 ## <a name="next-steps"></a>Дополнительная информация
 Перейдите к следующему руководству: 
 
 > [!div class="nextstepaction"]
->[Пошаговая загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure](tutorial-incremental-copy-powershell.md)
+>[Пошаговая загрузка данных из Базы данных SQL Azure в хранилище BLOB-объектов Azure](tutorial-incremental-copy-powershell.md)

@@ -5,17 +5,17 @@ services: application-insights
 keywords: ''
 author: mrbullwinkle
 ms.author: mbullwin
-ms.date: 04/01/2019
+ms.date: 07/12/2019
 ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: c6979ce5cade09d4daa4e6eddd79fb69175ec902
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: d92a96f928c859fba056f1d98c07ee4852aad0f1
+ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58849391"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68002748"
 ---
 # <a name="start-monitoring-your-nodejs-web-application"></a>Запуск мониторинга веб-приложения Node.js
 
@@ -45,16 +45,15 @@ ms.locfileid: "58849391"
 
    ![Добавления ресурса Application Insights](./media/nodejs-quick-start/1createresourseappinsights.png)
 
-   ![Добавления ресурса Application Insights](./media/nodejs-quick-start/2createnodejs.png)
+   > [!NOTE]
+   >Если вы создаете ресурс Application Insights впервые, ознакомьтесь с дополнительными сведениями в статье [Create an Application Insights resource](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource) (Создание ресурса Application Insights).
 
-
-   Откроется окно настроек, в котором нужно заполнить все поля в соответствии с приведенной ниже таблицей.
+   Откроется страница с параметрами, на которой нужно заполнить все поля в соответствии с приведенной ниже таблицей. 
 
     | Параметры        | Значение           | ОПИСАНИЕ  |
    | ------------- |:-------------|:-----|
    | **Имя**      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
    | **Тип приложения** | Приложение Node.js | Тип отслеживаемого приложения |
-   | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных App Insights |
    | **Местоположение.** | Восточная часть США | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
 
 2. Нажмите кнопку **Создать**.
@@ -91,7 +90,7 @@ ms.locfileid: "58849391"
 
 2. Щелкните **схему приложений**, чтобы получить визуальный макет отношений зависимости между компонентами приложения. Каждый компонент показывает ключевой показатель эффективности, такие как производительность, сбои и оповещения.
 
-   ![Схема сопоставления приложений](./media/nodejs-quick-start/5appmap.png)
+   ![Схема приложений](./media/nodejs-quick-start/5appmap.png)
 
 3. Щелкните значок **аналитики приложений** > ![значок схемы приложений](./media/nodejs-quick-start/006.png) > **Просмотр в службе Analytics**.  Откроется окно **Application Insights Analytics** (Application Insights — аналитика), которое предоставляет полнофункциональный язык запросов для анализа всех данных, собранных Application Insights. В этом случае создается запрос, который преобразовывает число запросов для просмотра в виде диаграммы. Вы можете записывать собственные запросы для анализа других данных.
 

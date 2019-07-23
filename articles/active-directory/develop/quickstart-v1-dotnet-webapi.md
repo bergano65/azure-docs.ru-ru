@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 05/21/2019
+ms.date: 07/15/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur, andret
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83f5b08e5fee17c0ea5577d4d56d4d3208a818e3
-ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
+ms.openlocfilehash: 5375d47c1b012a1c808a1115b7c902d99b05bf9d
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67625305"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68304718"
 ---
 # <a name="quickstart-build-a-net-web-api-that-integrates-with-azure-ad-for-authentication-and-authorization"></a>Краткое руководство. Создание веб-интерфейса API для .NET, который интегрируется с Azure AD для аутентификации и авторизации
 
@@ -59,12 +59,21 @@ ms.locfileid: "67625305"
 
 3. В области навигации слева выберите **Azure Active Directory**.
 4. Щелкните **Регистрация приложений** и выберите **Новая регистрация**.
-5. Когда откроется страница **Register an application** (Регистрация приложения), введите имя приложения.
+5. Когда откроется страница **Register an application** (Регистрация приложения), введите имя приложения. Например, To Do List Service.
 В разделе **Поддерживаемые типы учетных записей** выберите **Accounts in any organizational directory and personal Microsoft accounts** (Учетные записи в любом каталоге организации и личные учетные записи Майкрософт).
 6. Для платформы выберите тип **Веб** в разделе **URI перенаправления** и установите значение `https://localhost:44321/` (расположение, в которое Azure AD будет возвращать маркеры).
 7. По завершении щелкните **Зарегистрировать**. На странице приложения **Обзор** запишите **идентификатор приложения (клиента)** .
-6. Выберите **Предоставление API**, а затем обновите URI идентификатора приложения, щелкнув **Задать**. Введите идентификатор конкретного клиента. Например, введите `https://contoso.onmicrosoft.com/TodoListService`.
-7. Сохраните конфигурацию. Не закрывайте портал, так как через некоторое время потребуется зарегистрировать клиентское приложение.
+8. Выберите **Предоставление API** и щелкните **Добавить группу**.
+9. Примите предложенный URI идентификатора приложения (api://{clientId}), выбрав **Сохранить и продолжить**.
+10. Задайте следующие параметры:
+    1. В поле **Имя области**введите access_as_user.
+    1. Убедитесь, что для параметра **Кто может давать согласие?** выбран вариант **Администраторы и пользователи**.
+    1. В поле **Отображаемое имя согласия администратора** введите "Access TodoListService as a user" (Доступ к TodoListService в качестве пользователя).
+    1. В поле **Описание согласия администратора** введите "Accesses the TodoListService Web API as a user" (Доступ к веб-API TodoListService в качестве пользователя).
+    1. В поле **Отображаемое имя согласия пользователя** введите "Access TodoListService as a user" (Доступ к TodoListService в качестве пользователя).
+    1. В поле **Описание согласия пользователя** введите "Accesses the TodoListService Web API as a user" (Доступ к веб-API TodoListService в качестве пользователя).
+    1. Параметру **Состояние** задайте состояние **Включено**.
+11. Выберите **Добавить область**, чтобы сохранить конфигурацию. Не закрывайте портал, так как через некоторое время потребуется зарегистрировать клиентское приложение.
 
 ## <a name="step-2-set-up-the-app-to-use-the-owin-authentication-pipeline"></a>Шаг 2. Настройка приложения для использования конвейера аутентификации OWIN
 
@@ -73,8 +82,8 @@ ms.locfileid: "67625305"
 1. Для начала откройте решение и добавьте пакеты NuGet для ПО промежуточного слоя OWIN в проект TodoListService с помощью консоли диспетчера пакетов.
 
     ```
-    PM> Install-Package Microsoft.Owin.Security.ActiveDirectory -ProjectName TodoListService
-    PM> Install-Package Microsoft.Owin.Host.SystemWeb -ProjectName TodoListService
+    Install-Package Microsoft.Owin.Security.ActiveDirectory -ProjectName TodoListService
+    Install-Package Microsoft.Owin.Host.SystemWeb -ProjectName TodoListService
     ```
 
 2. Добавьте класс OWIN Startup в проект TodoListService под именем `Startup.cs`.  Щелкните проект правой кнопкой мыши и выберите **Добавить > Новый элемент**, после чего найдите **OWIN**. При запуске вашего приложения промежуточный слой OWIN вызовет метод `Configuration(…)` .
@@ -94,7 +103,7 @@ ms.locfileid: "67625305"
 4. Откройте файл `App_Start\Startup.Auth.cs` и реализуйте метод `ConfigureAuth(…)`. Параметры, указанные в `WindowsAzureActiveDirectoryBearerAuthenticationOptions`, будут служить координатами приложения для взаимодействия с Azure AD. Для их использования необходимо использовать классы в пространстве имен `System.IdentityModel.Tokens`.
 
     ```csharp
-    using System.IdentityModel.Tokens;
+    using Microsoft.IdentityModel.Tokens;
     ```
 
     ```csharp
@@ -148,9 +157,9 @@ ms.locfileid: "67625305"
 Чтобы увидеть службу списка дел в действии, необходимо настроить клиент списка дел для получения токенов от Azure AD и выполнения вызовов службы.
 
 1. Вернитесь на [портал Azure](https://portal.azure.com).
-1. Создайте регистрацию приложения в клиенте Azure AD.  Введите **имя**, описывающее ваше приложение для пользователей, введите `http://TodoListClient/` в качестве **URI перенаправления** и выберите в раскрывающемся списке пункт **Общедоступный клиент (мобильный и классический)** .
+1. Создайте регистрацию приложения в клиенте Azure AD.  Введите **имя**, описывающее ваше приложение для пользователей, введите `https://TodoListClient/` в качестве **URI перенаправления** и выберите в раскрывающемся списке пункт **Общедоступный клиент (мобильный и классический)** .
 1. Когда вы завершите регистрацию, Azure AD присвоит приложению уникальный идентификатор приложения. Это значение вам понадобится для следующих действий, поэтому скопируйте его на странице приложения.
-1. Выберите **Разрешения API приложения**, а затем — **Добавить разрешение**.  Найдите и выберите службу списка дел, добавьте разрешение **user_impersonation Access TodoListService** в списке **Делегированные разрешения**, а затем щелкните **Добавить разрешения**.
+1. Выберите **Разрешения API приложения**, а затем — **Добавить разрешение**.  Найдите и выберите **To Do List Service**, добавьте разрешение **user_impersonation Access TodoListService** в списке **Делегированные разрешения**, а затем щелкните **Добавить разрешения**.
 1. В Visual Studio откройте файл `App.config` в проекте TodoListClient и введите значения конфигурации в раздел `<appSettings>`.
 
     * `ida:Tenant` — это имя вашего клиента Azure AD, например contoso.onmicrosoft.com.

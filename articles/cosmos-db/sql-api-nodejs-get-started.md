@@ -9,20 +9,17 @@ ms.topic: tutorial
 ms.date: 06/05/2019
 ms.author: dech
 Customer intent: As a developer, I want to build a Node.js console application to access and manage SQL API account resources in Azure Cosmos DB, so that customers can better use the service.
-ms.openlocfilehash: 61569159d83493bb5338f8eda5b9201ef9164143
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: ba1ec821bd25e3b9f4479c3d09fdf5ab981ab0a7
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66734588"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68305512"
 ---
 # <a name="tutorial-build-a-nodejs-console-app-with-the-javascript-sdk-to-manage-azure-cosmos-db-sql-api-data"></a>Руководство. Создание консольного приложения Node.js с помощью пакета SDK JavaScript для управления данными API SQL для Azure Cosmos DB
 
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-get-started.md)
-> * [.NET (предварительная версия)](sql-api-dotnet-get-started-preview.md)
-> * [.NET Core](sql-api-dotnetcore-get-started.md)
-> * [.NET Core (предварительная версия)](sql-api-dotnet-core-get-started-preview.md)
 > * [Java](sql-api-java-get-started.md)
 > * [Async Java](sql-api-async-java-get-started.md)
 > * [Node.js](sql-api-nodejs-get-started.md)
@@ -102,7 +99,7 @@ ms.locfileid: "66734588"
 
    Пакет SDK для JavaScript использует универсальные термины: *контейнер* и *элемент*. Контейнер может представлять собой коллекцию, граф или таблицу. Элемент может представлять собой документ, ребро, вершину или запись и является содержимым внутри контейнера. 
    
-   Код `module.exports = config;` предназначен для экспорта объекта ```config```, чтобы на него можно было ссылаться в файле ```app.js```.
+   Код `module.exports = config;` используется для экспорта объекта ```config```. Вы можете ссылаться на него в файле ```app.js```.
 
 ## <a id="Connect"></a>Подключение к учетной записи Azure Cosmos DB
 
@@ -130,8 +127,9 @@ ms.locfileid: "66734588"
 > [!Note]
 > При подключении к **эмулятору Cosmos DB** отключите проверку SSL, создав пользовательскую политику подключения.
 >   ```
->   const connectionPolicy = new cosmos.ConnectionPolicy ()
->   connectionPolicy.DisableSSLVerification = true
+>   const ConnectionPolicy = require('@azure/cosmos').ConnectionPolicy;
+>   const connectionPolicy = new ConnectionPolicy();
+>   connectionPolicy.DisableSSLVerification = true;
 >
 >   const client = new CosmosClient({ endpoint: endpoint, auth: { masterKey: masterKey }, connectionPolicy });
 >   ```
@@ -155,7 +153,7 @@ ms.locfileid: "66734588"
 
    Вы можете создать базу данных с помощью метода `createIfNotExists` или функции create класса **Databases**. База данных представляет собой логический контейнер элементов, разделенных между контейнерами. 
 
-2. Скопируйте и вставьте методы **createDatabase** и **readDatabase** в файл app.js в определениях ```databaseId``` и ```containerId```. Функция **createDatabase** создаст базу данных с идентификатором ```FamilyDatabase```, указанным из объекта ```config```, если она не была создана ранее. Функция **readDatabase** считает определение базы данных, чтобы удостовериться в ее наличии.
+2. Скопируйте и вставьте методы **createDatabase** и **readDatabase** в файл app.js в определениях ```databaseId``` и ```containerId```. Функция **createDatabase** создаст базу данных с идентификатором ```FamilyDatabase```, взятым из объекта ```config```, если она не была создана ранее. Функция **readDatabase** считает определение базы данных, чтобы удостовериться в ее наличии.
 
    ```javascript
    /**
@@ -383,7 +381,7 @@ ms.locfileid: "66734588"
 
 Элемент можно создать с помощью функции create класса **Items**. При использовании API SQL элементы проецируются как документы, которые являются содержимым JSON, определенным пользователем (произвольным). Теперь можно вставить элемент в Azure Cosmos DB.
 
-1. Скопируйте и вставьте функцию **createFamilyItem** после функции **readContainer**. Функция **createFamilyItem** создает элементы, содержащие данные JSON, сохраненные в объекте ```config```. Перед созданием элемента нужно проверить, нет ли элемента с таким же идентификатором.
+1. Скопируйте и вставьте функцию **createFamilyItem** после функции **readContainer**. Функция **createFamilyItem** создает элементы, содержащие данные JSON, сохраненные в объекте ```config```. Перед созданием элемента нужно проверить, нет ли другого элемента с таким же идентификатором.
 
    ```javascript
    /**
@@ -660,7 +658,7 @@ node app.js
 
 Чтобы запустить решение по началу работы, которое содержит все коды из этой статьи, вам понадобится следующее: 
 
-* [Учетная запись Azure Cosmos DB][create-account] 
+* [Учетная запись Azure Cosmos DB][create-account]. 
 * Решение для [начала работы](https://github.com/Azure-Samples/azure-cosmos-db-sql-api-nodejs-getting-started), доступное на GitHub. 
 
 Установите зависимости проекта с помощью npm. Используйте следующую команду: 

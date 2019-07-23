@@ -29,6 +29,8 @@
       href: publish-service-catalog-app.md
     - name: Публикация приложения из marketplace
       href: publish-marketplace-app.md
+    - name: Создание управляемого приложения с настраиваемого поставщика
+      href: tutorial-create-managed-app-with-custom-provider.md
 - name: Примеры
   items:
     - name: Интерфейс командной строки Azure
@@ -83,6 +85,14 @@
           href: custom-providers-proxy-cache-resource-endpoint-reference.md
         - name: Справочник по конечной точке RESTful настраиваемого поставщика
           href: reference-custom-providers-csharp-endpoint.md
+    - name: Артефакты приложения
+      items:
+        - name: Элементы пользовательского интерфейса
+          href: reference-createuidefinition-artifact.md
+        - name: Шаблон развертывания
+          href: reference-main-template-artifact.md
+        - name: Просмотр определений
+          href: reference-view-definition-artifact.md
     - name: Инфраструктура CLI Azure
       href: /cli/azure/managedapp
     - name: PowerShell

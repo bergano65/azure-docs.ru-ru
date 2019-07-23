@@ -6,12 +6,12 @@ ms.service: data-share
 ms.topic: tutorial
 ms.date: 07/10/2019
 ms.author: joanpo
-ms.openlocfilehash: ebd60607f9a24074e0fa985973dfc35674f0d66c
-ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
+ms.openlocfilehash: 01888f3656765b922c1b646e7ca8e07d81e799f3
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67788456"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67838421"
 ---
 # <a name="tutorial-share-your-data-using-azure-data-share-preview"></a>Руководство по Совместное использование данных с помощью предварительной версии Azure Data Share
 
@@ -29,6 +29,8 @@ ms.locfileid: "67788456"
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * Учетная запись хранилища Azure: Если у вас ее еще нет, вы можете создать [Учетную запись службі хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account)
+* Разрешение на добавление назначения ролей в учетную запись хранения с разрешением *Microsoft.Authorization/role assignments/write*. Это разрешение назначено роли владельца. 
+* Адрес электронной почты для входа получателей в Azure (псевдонимы электронной почты не поддерживаются).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
@@ -49,9 +51,9 @@ ms.locfileid: "67788456"
      **Параметр** | **Рекомендуемое значение** | **Описание поля**
     |---|---|---|
     | ИМЯ | *datashareacount* | Укажите имя вашей учетной записи Data Share. |
-    | Подписка | Ваша подписка | Выберите подписку Azure, которую нужно использовать для своей учетной записи Data Share.|
-    | Группа ресурсов | *test-resource-group* | Воспользуйтесь существующей группой ресурсов или создайте новую. |
-    | Расположение | *Восточная часть США 2* | Выберите регион для учетной записи Data Share.
+    | Subscription | Ваша подписка | Выберите подписку Azure, которую нужно использовать для своей учетной записи Data Share.|
+    | Resource group | *test-resource-group* | Воспользуйтесь существующей группой ресурсов или создайте новую. |
+    | Location | *Восточная часть США 2* | Выберите регион для учетной записи Data Share.
     | | |
 
 1. Выберите команду **Создать**, чтобы подготовить учетную запись Data Share. Подготовка новой учетной записи для общего доступа к данным обычно занимает около 2 минут или меньше. 

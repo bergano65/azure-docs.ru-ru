@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-image-search
 ms.topic: tutorial
-ms.date: 03/04/2019
+ms.date: 07/12/2019
 ms.author: aahi
-ms.openlocfilehash: 10bcbb4c1957735b0ddad6c97325c32be19ddcdb
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 7b530b3d415761956cbdb45fdc92bfed55a1bae5
+ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66383400"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67868259"
 ---
 # <a name="tutorial-create-a-single-page-app-using-the-bing-image-search-api"></a>Руководство. Создание одностраничного веб-приложения с помощью API Bing для поиска изображений
 
@@ -369,7 +369,7 @@ searchItemRenderers = {
     }, // relatedSearches renderer omitted
 ```
 
-Параметры `height` и `width` эскиза изображения указываются в теге `<img>` и в полях `h` и `w` в URL-адресе эскиза. Это позволяет Bing вернуть [эскиз](resize-and-crop-thumbnails.md) точно такого размера.
+Параметры `height` и `width` эскиза изображения указываются в теге `<img>` и в полях `h` и `w` в URL-адресе эскиза. Это позволяет Bing вернуть [эскиз](../bing-web-search/resize-and-crop-thumbnails.md) точно такого размера.
 
 ## <a name="persisting-client-id"></a>Сохранение идентификатора клиента
 
@@ -386,7 +386,7 @@ searchItemRenderers = {
 > [!NOTE]
 > В рабочем веб-приложении запрос следует всегда выполнять на стороне сервера. В противном случае вам придется включать в веб-страницу ключ API поиска Bing, где он будет доступен для всех, кто просматривает исходный код. С вас будет взиматься плата за любое использование ресурсов в рамках вашего ключа подписки API, включая запросы, выполненные неавторизованными сторонами, поэтому важно не предоставлять доступ к своему ключу.
 
-В целях разработки запрос к API Bing для поиска в Интернете можно выполнить через прокси-сервер CORS. Ответ от прокси-сервера содержит заголовок `Access-Control-Expose-Headers`, который вносит заголовки ответов в список разрешений и делает их доступными для JavaScript.
+В целях разработки запрос к API Bing для поиска в Интернете можно выполнить через прокси-сервер CORS. Ответ от прокси-сервера содержит заголовок `Access-Control-Expose-Headers`, который поддерживает заголовки ответов и делает их доступными для JavaScript.
 
 Установить прокси-сервер CORS довольно просто. Это позволит нашему учебному приложению иметь доступ к заголовку идентификатора клиента. Для начала [установите платформу Node.js](https://nodejs.org/en/download/), если она еще не установлена. Затем введите следующую команду в командном окне:
 

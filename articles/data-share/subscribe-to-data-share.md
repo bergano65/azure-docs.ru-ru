@@ -6,12 +6,12 @@ ms.service: data-share
 ms.topic: tutorial
 ms.date: 07/10/2019
 ms.author: joanpo
-ms.openlocfilehash: 2dc4994d88fc03c23a6d5722d6018c926e7d6b8c
-ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
+ms.openlocfilehash: fc63c1a0b3b496de8e5ecea58f79f1db9d872e80
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67788366"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67838440"
 ---
 # <a name="tutorial-accept-and-receive-data-using-azure-data-share-preview"></a>Руководство по принятию приглашения и получению данных с помощью службы Azure Data Share (предварительная версия)
 
@@ -31,6 +31,8 @@ ms.locfileid: "67788366"
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * Учетная запись хранения Azure. Если у вас еще нет учетной записи хранения Azure, вы можете [создать ее](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account). 
 * Приглашение Data Share. Приглашение от Microsoft Azure с темой "Приглашение Azure Data Share от **<yourdataprovider@domain.com>** ".
+* Разрешение на добавление назначения ролей в учетную запись хранения с разрешением *Microsoft.Authorization/role assignments/write*. Это разрешение назначено роли владельца. 
+* Регистрация поставщика ресурсов для Microsoft.DataShare. См. подробнее о [поставщиках ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
 
 > [!IMPORTANT]
 > Чтобы получить данные Azure Data Share, сначала необходимо зарегистрировать поставщик ресурсов Microsoft.DataShare и стать владельцем учетной записи хранения, где вы будете получать данные. Следуйте инструкциям, изложенным в статье [Устранение распространенных неполадок в предварительной версии Azure Data Share](data-share-troubleshoot.md), чтобы зарегистрировать поставщик ресурсов для общего ресурса данных, а также добавить себя в качестве владельца учетной записи хранения. 

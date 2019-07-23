@@ -334,8 +334,6 @@
           href: cognitive-search-skill-keyphrases.md
         - name: Распознавание языка
           href: cognitive-search-skill-language-detection.md
-        - name: Распознавание именованных сущностей
-          href: cognitive-search-skill-named-entity-recognition.md
         - name: Распознавание сущностей
           href: cognitive-search-skill-entity-recognition.md
         - name: Слияние текста
@@ -344,6 +342,8 @@
           href: cognitive-search-skill-textsplit.md
         - name: Мнение
           href: cognitive-search-skill-sentiment.md
+        - name: Перевод текста (предварительная версия)
+          href: cognitive-search-skill-text-translation.md
         - name: Анализ изображений
           href: cognitive-search-skill-image-analysis.md
         - name: Распознавание текста
@@ -352,12 +352,15 @@
           href: cognitive-search-skill-shaper.md
         - name: Условная логика
           href: cognitive-search-skill-conditional.md
-        - name: Устаревшие навыки
-          href: cognitive-search-skill-deprecated.md
     - name: Пользовательские навыки
       items:
         - name: Пользовательские веб-API
           href: cognitive-search-custom-skill-web-api.md
+    - name: Устаревшие навыки
+      href: cognitive-search-skill-deprecated.md
+      items:
+        - name: Распознавание именованных сущностей
+          href: cognitive-search-skill-named-entity-recognition.md
 - name: Ресурсы
   items:
     - name: Поддержка сообщества Azure

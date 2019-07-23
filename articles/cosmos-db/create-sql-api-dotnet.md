@@ -1,236 +1,468 @@
 ---
-title: Создание веб-приложения .NET при помощи Azure Cosmos DB с использованием API SQL
-description: В рамках этого краткого руководства с помощью портала Azure и веб-приложения .NET вы создадите ресурсы учетной записи API SQL в Azure Cosmos DB и научитесь управлять ими.
+title: Создание консольного приложения .NET для управления ресурсами API SQL для Azure Cosmos DB
+description: Сведения о создании консольного приложения .NET для управления ресурсами учетной записи API SQL для Azure Cosmos DB.
 author: SnehaGunda
 ms.author: sngun
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 06/06/2019
-ms.openlocfilehash: e39440a46228d82b0722f7d9d349d11fb2417b42
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.date: 07/12/2019
+ms.openlocfilehash: 1687a81952418c0b751fe0b9ec0ec560ae0b2b2b
+ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66754601"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68297613"
 ---
-# <a name="quickstart-build-a-net-web-app-using-sql-api-account-in-azure-cosmos-db"></a>Краткое руководство. Создание веб-приложения .NET с помощью учетной записи API SQL в Azure Cosmos DB
+# <a name="quickstart-build-a-net-console-app-to-manage-azure-cosmos-db-sql-api-resources"></a>Краткое руководство. Создание консольного приложения .NET для управления ресурсами API SQL для Azure Cosmos DB
 
 > [!div class="op_single_selector"]
 > * [.NET](create-sql-api-dotnet.md)
-> * [.NET (предварительная версия)](create-sql-api-dotnet-preview.md)
 > * [Java](create-sql-api-java.md)
 > * [Node.js](create-sql-api-nodejs.md)
 > * [Python](create-sql-api-python.md)
 > * [Xamarin](create-sql-api-xamarin-dotnet.md)
 >  
-> 
 
-Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. С помощью Azure Cosmos DB вы можете быстро создавать базы данных с парами "ключ-значение", документами и графами, которые используют возможности глобального распределения и горизонтального масштабирования ядра Azure Cosmos DB, а также выполнять запросы к таким базам данных. 
+Azure Cosmos DB. Руководство по началу работы с клиентской библиотекой API SQL для .NET. Следуйте инструкциям в этом документе, чтобы установить пакет .NET, создайте приложение и опробуйте пример кода для основных операций CRUD с данными, хранящимися в базе данных Azure Cosmos. 
 
-В этом кратком руководстве показано, как с помощью портала Azure создать учетную запись [API SQL](sql-api-introduction.md) в Azure Cosmos DB, создать базу данных документов и коллекцию, а также добавить пример данных в эту коллекцию. После этого вы примените веб-приложение на основе [пакета SDK .NET для SQL](sql-api-sdk-dotnet.md), чтобы добавить в коллекцию дополнительные данные. 
+Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. С помощью Azure Cosmos DB вы можете быстро создавать базы данных с парами "ключ — значение", документами, графами и обращаться к ним. Клиентскую библиотеку API SQL для Azure Cosmos DB для .NET можно использовать для выполнения таких задач:
 
-В рамках этого краткого руководстве вы создадите базу данных и коллекцию с помощью средства обозревателя данных на портале Azure. Кроме того, базу данных и коллекцию можно создать с помощью примера кода .NET. Дополнительные сведения см. в [описании кода .NET](#review-the-net-code). 
+* Создание базы данных Azure Cosmos и контейнера.
+* Добавление демонстрационных данных в контейнер.
+* Запрос данных 
+* Удаление базы данных
+
+[Справочная документация по API](/dotnet/api/overview/azure/cosmosdb?view=azure-dotnet) | [Исходный код библиотеки](https://github.com/Azure/azure-cosmos-dotnet-v3) | [Пакет (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Cosmos).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Visual Studio 2019 с установленной рабочей нагрузкой разработки для Azure
-- Вы можете скачать и использовать **бесплатную** версию [Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**. 
+* Подписка Azure — [можно создать](https://azure.microsoft.com/free/) или [воспользоваться бесплатной пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure, оплаты и каких-либо обязательств. 
+* [Пакет SDK для .NET Core 2.1 или более поздней версии](https://dotnet.microsoft.com/download/dotnet-core/2.1).
+* [Интерфейс командной строки Azure](/cli/azure/install-azure-cli?view=azure-cli-latest)
 
-Подписка Azure или бесплатная пробная учетная запись Azure Cosmos DB.
-- [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] 
-- [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]  
+## <a name="setting-up"></a>Настройка
 
-<a id="create-account"></a>
-## <a name="create-an-azure-cosmos-db-account"></a>создание учетной записи Azure Cosmos DB;
+В этом разделе описывается создание учетной записи Azure Cosmos и настройка проекта, для управления ресурсами которого используется клиентская библиотека API SQL для Azure Cosmos DB для. NET. Пример кода, описанный в этой статье, создает базу данных `FamilyDatabase` и членов семьи (каждый член семьи является элементом) в этой базе данных. Каждый член семьи имеет такие свойства, как `Id, FamilyName, FirstName, LastName, Parents, Children, Address,`. Свойство `LastName` используется в качестве ключа секции для контейнера. 
 
-[!INCLUDE [cosmos-db-create-dbaccount](../../includes/cosmos-db-create-dbaccount.md)]
+### <a id="create-account"></a>Создание учетной записи Azure Cosmos
 
-<a id="create-collection-database"></a>
-## <a name="add-a-database-and-a-collection"></a>Добавление базы данных и коллекции 
+Следующий код создаст учетную запись Azure Cosmos с согласованностью сеанса. Учетная запись реплицируется в `South Central US` и в `North Central US`. Нажмите кнопку **Попробовать** и вставьте код, чтобы выполнить его в Azure Cloud Shell. 
 
-Теперь вы можете создать базу данных и коллекцию с помощью обозревателя данных на портале Azure. 
+```azurecli-interactive
 
-1.  Выберите **Обозреватель данных** в области навигации слева на странице учетной записи Azure Cosmos DB, а затем щелкните **Новый контейнер**. 
-    
-    Возможно, потребуется прокрутить страницу вправо, чтобы отобразилось окно **Добавить контейнер**.
-    
-    ![Область "Добавление коллекции" в обозревателе данных на портале Azure](./media/create-sql-api-dotnet/azure-cosmosdb-data-explorer-dotnet.png)
-    
-1.  В области **Добавить контейнер** введите параметры для новой коллекции.
-    
-    |Параметр|Рекомендуемое значение|ОПИСАНИЕ
-    |---|---|---|
-    |**Идентификатор базы данных**|ToDoList|Введите *ToDoList* в качестве имени новой базы данных. Имена баз данных должны быть длиной от 1 до 255 символов и не могут содержать символы `/, \\, #, ?` или пробел в конце. Проверьте параметр **Provision database throughput** (Подготовка пропускной способности базы данных), который позволяет предоставить общий доступ к пропускной способности, подготовленной для базы данных всех контейнеров в пределах базы данных. Этот параметр также способствует экономии денежных средств. |
-    |**Пропускная способность**|400|Для пропускной способности сохраните значение в 400 единиц запроса в секунду. Чтобы сократить задержку, позже вы можете увеличить масштаб пропускной способности.| 
-    |**Идентификатор контейнера**|Items|Введите *Элементы* в качестве имени новой коллекции. Для идентификаторов коллекций предусмотрены те же требования к символам, что и для имен баз данных.|
-    |**Ключ секции**| /category| В примере, описанном в этой статье, используется ключ секции */category*.|
+# Set variables for the new SQL API account, database, and container
+resourceGroupName='myResourceGroup'
+location='southcentralus'
+accountName='mysqlapicosmosdb' 
+databaseName='FamilyDatabase'
+containerName='FamilyContainer'
 
-    
-    Не добавляйте **уникальные ключи** для этого примера. Уникальные ключи позволяют создать в базе данных дополнительный слой целостности данных, отслеживая уникальность одного или нескольких значений по каждому ключу секции. Дополнительные сведения см. в статье об [уникальных ключах в Azure Cosmos DB](unique-keys.md).
-    
-1.  Нажмите кнопку **ОК**. В обозревателе данных отображается новая база данных и контейнер, который вы создали.
-    
+# Create a resource group
+az group create \
+    --name $resourceGroupName \
+    --location $location
 
-## <a name="add-data-to-your-database"></a>Добавление данных в базу данных
+# Create a SQL API Cosmos DB account with session consistency and multi-master enabled
+az cosmosdb create \
+    --resource-group $resourceGroupName \
+    --name $accountName \
+    --kind GlobalDocumentDB \
+    --locations regionName="South Central US" failoverPriority=0 --locations regionName="North Central US" failoverPriority=1 \
+    --default-consistency-level "Session" \
+    --enable-multiple-write-locations true
 
-Теперь вы можете добавить данные в созданную базу данных с помощью обозревателя данных.
+```
 
-1. В **Обозревателе данных** разверните базу данных**ToDoList**, а затем контейнер **Элементы**. Далее выберите **Элементы**, а потом — **Новый элемент**. 
-   
-   ![Создание документов в обозревателе данных на портале Azure](./media/create-sql-api-dotnet/azure-cosmosdb-new-document.png)
-   
-1. Добавьте следующую структуру в документ в правой части панели **Документы**:
+### <a id="create-dotnet-core-app"></a>Создание приложения .NET
 
-     ```json
-     {
-         "id": "1",
-         "category": "personal",
-         "name": "groceries",
-         "description": "Pick up apples and strawberries.",
-         "isComplete": false
-     }
-     ```
+Создайте консольное приложение .NET на C# в предпочитаемой интегрированной среде разработки или редакторе. В окне консоли выполните следующую команду dotnet new, чтобы создать приложение с именем `todo`.
 
-1. Щелкните **Сохранить**.
-   
-   ![Копирование данных в формате JSON и нажатие кнопки "Сохранить" в обозревателе данных на портале Azure](./media/create-sql-api-dotnet/azure-cosmosdb-save-document.png)
-   
-1. Снова щелкните **Новый документ**, создайте и сохраните другой документ с уникальным значением `id`, присвоив ему все нужные свойства и значения. Документы могут иметь любую структуру, так как Azure Cosmos DB не требует использовать определенные схемы данных.
+```console
+dotnet new console --langVersion 7.1 -n todo
+```
 
-## <a name="query-your-data"></a>Обращение к данным
+Измените каталог на созданную папку приложения. Чтобы создать приложение, выполните следующую команду:
 
-[!INCLUDE [cosmos-db-create-sql-api-query-data](../../includes/cosmos-db-create-sql-api-query-data.md)]
+```console
+cd todo
+dotnet build
+```
 
-## <a name="use-the-net-web-app-to-manage-data"></a>Использование веб-приложения .NET для управления данными
+Ожидаемые выходные данные сборки будут выглядеть примерно следующим образом:
 
-Чтобы оценить простоту программной работы с данными в Azure Cosmos DB, клонируйте пример приложения SQL API .NET из GitHub, отредактируйте строку подключения и запустите приложение, чтобы обновить данные. 
+```console
+  Restore completed in 100.37 ms for C:\Users\user1\Downloads\CosmosDB_Samples\todo\todo.csproj.
+  todo -> C:\Users\user1\Downloads\CosmosDB_Samples\todo\bin\Debug\netcoreapp2.2\todo.dll
+  todo -> C:\Users\user1\Downloads\CosmosDB_Samples\todo\bin\Debug\netcoreapp2.2\todo.Views.dll
 
-Базу данных и контейнер также можно создать с помощью примера кода .NET. Дополнительные сведения см. в [описании кода .NET](#review-the-net-code).
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
 
-### <a name="clone-the-sample-app"></a>Клонирования примера приложения
+Time Elapsed 00:00:34.17
+```
 
-Сначала клонируйте [интерфейсное приложение SQL](https://github.com/Azure-Samples/documentdb-dotnet-todo-app) на C# из GitHub. 
+### <a id="install-package"></a>Установка пакета для Azure Cosmos DB
 
-1. Откройте окно терминала Git, например Git Bash, создайте каталог с именем *git-samples* и откройте его: 
-   
-   ```bash
-   mkdir /c/git-samples/
-   cd /c/git-samples/
-   ```
-   
-1. Выполните следующую команду, чтобы клонировать пример из репозитория на локальный компьютер:
-   
-   ```bash
-   git clone https://github.com/Azure-Samples/documentdb-dotnet-todo-app.git
-   ```
+Оставаясь в каталоге приложения, установите клиентскую библиотеку Azure Cosmos DB для .NET Core с помощью команды.
 
-### <a name="update-the-connection-string"></a>Обновление строки подключения 
+```console
+dotnet add package Microsoft.Azure.Cosmos
+```
 
-1. Найдите файл *todo.sln* в папке клонированного приложения и откройте его в Visual Studio. 
+### <a name="copy-your-azure-cosmos-account-credentials-from-the-azure-portal"></a>Копирование учетных данных Azure Cosmos с портала Azure
 
-1. В **обозревателе решений** Visual Studio откройте файл *web.config*. 
+Чтобы использовать пример приложения, нужно выполнить проверку подлинности доступа к вашей учетной записи хранения Azure Cosmos. Для проверки подлинности необходимо передать учетную запись Azure Cosmos в приложение. Чтобы просмотреть учетные данные учетной записи Azure Cosmos, сделайте следующее:
 
-1. Вернитесь на портал Azure и скопируйте данные строки подключения. Затем вставьте их в файл *web.config*.
-   
-   1. На навигационной панели слева для учетной записи Azure Cosmos DB выберите элемент **Ключи**.
-      
-      ![Просмотр и копирование ключа доступа на портале Azure, колонка "Ключи"](./media/create-sql-api-dotnet/keys.png)
-      
-   1. В разделе **Ключи для чтения и записи** скопируйте значение **URI** с помощью кнопки копирования справа и вставьте его в ключ `endpoint` в файле *web.config*. Например: 
-      
-      `<add key="endpoint" value="https://mysqlapicosmosdb.documents.azure.com:443/" />`
-      
-   1. Скопируйте значение **первичного ключа** и вставьте его в ключ `authKey` в файле *web.config*. Например:
-      
-      `<add key="authKey" value="19ZDNJAiYL26tmnRvoez6hmtIfBGwjun50PWRjNYMC2ig8Ob9hYk7Fq1RYSv8FcIYnh1TdBISvCh7s6yyb0000==" />`
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
-       
-1. Убедитесь, что значения базы данных и коллекции (другое название — контейнер) в *web.config* совпадают с созданными ранее именами. 
+1. Перейдите к своей учетной записи Azure Cosmos. 
 
-   ```csharp
-   <add key="database" value="ToDoList"/>
-   <add key="collection" value="Items"/>
-   ```
- 
-1. Сохраните файл *web.config*. Теперь приложение содержит все сведения, необходимые для взаимодействия с Azure Cosmos DB.
+1. Откройте панель **Ключи** и скопируйте **URI** и **первичный ключ** своей учетной записи. На следующем этапе вы добавите значение URI и ключа в переменную среды.
 
-### <a name="run-the-web-app"></a>Запуск веб-приложения
+### <a name="set-the-environment-variables"></a>Настройка переменных среды
 
-1. В Visual Studio в **обозревателе решений** щелкните проект **todo** правой кнопкой мыши и выберите **Управление пакетами NuGet**. 
+После того, как вы скопировали **URI** и **первичный ключ** своей учетной записи, сохраните их в новой переменной среды на локальном компьютере, на котором запущено приложение. Чтобы установить переменную среды, откройте окно консоли и выполните следующую команду. Обязательно замените значения `<Your_Azure_Cosmos_account_URI>` и `<Your_Azure_Cosmos_account_PRIMARY_KEY>`.
 
-1. В окне NuGet в поле **Обзор** введите *DocumentDB*.
+```console
+setx EndpointUrl <Your_Azure_Cosmos_account_URI>
+setx PrimaryKey <Your_Azure_Cosmos_account_PRIMARY_KEY>
+```
 
-1. Из списка результатов поиска установите **версию 2.2.3** библиотеки **Microsoft.Azure.DocumentDB**, если она еще не установлена. С помощью этого действия устанавливается пакет [Microsoft.Azure.DocumentDB](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/) и все его зависимости.
-   
-   Если в диспетчере пакетов NuGet отобразится сообщение о том, что в решении отсутствуют некоторые пакеты, выберите действие **Восстановить**, чтобы установить их из внутренних источников. 
+ ## <a id="object-model"></a>Объектная модель
 
-1. Запустите приложение в браузере с помощью сочетания клавиш **CTRL**+**F5**. 
+Прежде чем приступить к созданию приложения, рассмотрим иерархию ресурсов в Azure Cosmos DB и объектную модель, используемую для создания и доступа к этим ресурсам. Azure Cosmos DB создает ресурсы в следующем порядке:
 
-1. Щелкните **Создать** в приложении списка задач и создайте несколько произвольных задач.
+* Учетная запись Azure Cosmos 
+* Базы данных 
+* Контейнеры 
+* Items
 
-   ![Приложение со списком задач с демонстрационными данными](./media/create-sql-api-dotnet/azure-comosdb-todo-app-list.png)
+Дополнительные сведения об иерархии различных объектов см. в статье [Work with databases, containers, and items in Azure Cosmos DB](databases-containers-items.md) (Работа с базами данных, контейнерами и элементами в Azure Cosmos DB). Вы будете использовать следующие классы .NET для взаимодействия с этими ресурсами:
 
-Вернитесь к обозревателю данных на портале Azure. Здесь вы можете просматривать, запрашивать, изменять и обрабатывать новые данные. 
+* [CosmosClient](). Этот класс является логическим представлением службы баз данных Azure Cosmos DB на стороне клиента. Этот клиентский объект позволяет настраивать и выполнять запросы к службе.
 
-## <a name="review-the-net-code"></a>Изучение кода .NET
+* [CreateDatabaseIfNotExistsAsync](). Этот метод создает (если не существует) или получает (если уже существует) ресурс базы данных в качестве асинхронной операции. 
 
-Этот шаг не является обязательным. В рамках этого краткого руководства вы создали базу данных и контейнер на портале Azure и добавили тестовые данные с помощью примера кода .NET. Тем не менее, базу данных и контейнер можно также создать с помощью примера кода .NET. Если вы хотите узнать, как создать в коде ресурсы базы данных, изучите приведенные ниже фрагменты кода. Все эти фрагменты взяты из файла *DocumentDBRepository.cs* проекта **todo**.
+* [CreateContainerIfNotExistsAsync](). Этот метод создает (если не существует) или получает (если уже существует) контейнер данных в качестве асинхронной операции. Вы можете проверить код состояния из ответа, чтобы определить, был ли контейнер вновь создан (201) или возвращен имеющийся контейнер (200). 
+* [CreateItemAsync](). Этот метод создает элемент в контейнере. 
 
-* С помощью этого кода инициализируется `DocumentClient`: 
+* [QueryItemsAsync](). Выполняет запрос, чтобы получить необходимые элементы. В этом методе передается запрос SQL. 
 
-    ```csharp
-    client = new DocumentClient(new Uri(ConfigurationManager.AppSettings["endpoint"]), ConfigurationManager.AppSettings["authKey"]);
-    ```
+* [DeleteAsync](). Удаляет указанную базу данных из вашей учетной записи Azure Cosmos. Метод `DeleteAsync` только удаляет базу данных. Удаление экземпляра `Cosmosclient` должно происходить отдельно (что происходит в методе DeleteDatabaseAndCleanupAsync). 
 
-* С помощью этого кода создается база данных с использованием метода `CreateDatabaseAsync`:
+ ## <a id="code-examples"></a>Примеры кода
 
-    ```csharp
-    await client.CreateDatabaseAsync(new Database { Id = DatabaseId });
-    ```
+Пример кода, описанный в этой статье, создает семейную базу данных в Azure Cosmos DB. База данных семьи содержит сведения о семье, такие как имя, адрес, местоположение, родители, дети и домашние животные. Перед заполнением данных в своей учетной записи Azure Cosmos определите свойства элемента семьи. Создайте класс с именем `Family.cs` на корневом уровне вашего примера приложения и добавьте в него следующий код:
 
-* С помощью этого кода создается коллекция с использованием метода `CreateDocumentCollectionAsync`:
+```csharp
+using Newtonsoft.Json;
 
-    ```csharp
-    private static async Task CreateCollectionIfNotExistsAsync(string partitionkey)
+namespace todo
+{
+    public class Family
     {
-       try
-       {       
-        await client.ReadDocumentCollectionAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId), new RequestOptions { PartitionKey = new PartitionKey(partitionkey) });
-       }
-        catch (DocumentClientException e)
+        [JsonProperty(PropertyName = "id")]
+        public string Id { get; set; }
+        public string LastName { get; set; }
+        public Parent[] Parents { get; set; }
+        public Child[] Children { get; set; }
+        public Address Address { get; set; }
+        public bool IsRegistered { get; set; }
+        public override string ToString()
         {
-           if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
-            {
-                await client.CreateDocumentCollectionAsync(
-                  UriFactory.CreateDatabaseUri(DatabaseId),
-                   new DocumentCollection
-                    {
-                      Id = CollectionId,
-                      PartitionKey = new PartitionKeyDefinition
-                       {
-                           Paths = new System.Collections.ObjectModel.Collection<string>(new List<string>() { partitionkey })
-                        }
-                    },
-                      new RequestOptions { OfferThroughput = 400 });
-            }
-            else
-            {
-                throw;
-            }
+            return JsonConvert.SerializeObject(this);
         }
     }
-    ```
+
+    public class Parent
+    {
+        public string FamilyName { get; set; }
+        public string FirstName { get; set; }
+    }
+
+    public class Child
+    {
+        public string FamilyName { get; set; }
+        public string FirstName { get; set; }
+        public string Gender { get; set; }
+        public int Grade { get; set; }
+        public Pet[] Pets { get; set; }
+    }
+
+    public class Pet
+    {
+        public string GivenName { get; set; }
+    }
+
+    public class Address
+    {
+        public string State { get; set; }
+        public string County { get; set; }
+        public string City { get; set; }
+    }
+}
+```
+
+### <a name="add-the-using-directives--define-the-client-object"></a>Добавление директив using и определение объекта клиента
+
+В каталоге проекта откройте файл `Program.cs` в редакторе и добавьте следующие директивы using в верхней части приложения:
+
+```csharp
+
+using System;
+using System.Threading.Tasks;
+using System.Configuration;
+using System.Collections.Generic;
+using System.Net;
+using Microsoft.Azure.Cosmos;
+```
+
+К `program.cs file` добавьте код для чтения переменных среды, которые вы установили на предыдущем шаге. Определите объекты `CosmosClient`, `Database` и `Container`. Затем добавьте код в метод main, который вызывает метод `GetStartedDemoAsync`, где вы управляете ресурсами учетной записи Azure Cosmos. 
+
+```csharp
+namespace todo
+{
+public class Program
+{
+
+    /// The Azure Cosmos DB endpoint for running this GetStarted sample.
+    private string EndpointUrl = Environment.GetEnvironmentVariable("EndpointUrl");
+
+    /// The primary key for the Azure DocumentDB account.
+    private string PrimaryKey = Environment.GetEnvironmentVariable("PrimaryKey");
+
+    // The Cosmos client instance
+    private CosmosClient cosmosClient;
+
+    // The database we will create
+    private Database database;
+
+    // The container we will create.
+    private Container container;
+
+    // The name of the database and container we will create
+    private string databaseId = "FamilyDatabase";
+    private string containerId = "FamilyContainer";
+
+    public static async Task Main(string[] args)
+    {
+       try
+       {
+           Console.WriteLine("Beginning operations...\n");
+           Program p = new Program();
+           await p.GetStartedDemoAsync();
+
+        }
+        catch (CosmosException de)
+        {
+           Exception baseException = de.GetBaseException();
+           Console.WriteLine("{0} error occurred: {1}", de.StatusCode, de);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Error: {0}", e);
+        }
+        finally
+        {
+            Console.WriteLine("End of demo, press any key to exit.");
+            Console.ReadKey();
+        }
+    }
+}
+}
+```
+
+### <a name="create-a-database"></a>Создание базы данных 
+
+Определите метод `CreateDatabaseAsync` в классе `program.cs`. Этот метод создает `FamilyDatabase`, если она не существует. 
+
+```csharp
+private async Task CreateDatabaseAsync()
+{
+    // Create a new database
+    this.database = await this.cosmosClient.CreateDatabaseIfNotExistsAsync(databaseId);
+    Console.WriteLine("Created Database: {0}\n", this.database.Id);
+}
+```
+
+### <a name="create-a-container"></a>Создание контейнера
+
+Определите метод `CreateContainerAsync` в классе `program.cs`. Этот метод создает `FamilyContainer`, если он еще не существует. 
+
+```csharp
+/// Create the container if it does not exist. 
+/// Specifiy "/LastName" as the partition key since we're storing family information, to ensure good distribution of requests and storage.
+private async Task CreateContainerAsync()
+{
+    // Create a new container
+    this.container = await this.database.CreateContainerIfNotExistsAsync(containerId, "/LastName");
+    Console.WriteLine("Created Container: {0}\n", this.container.Id);
+}
+```
+
+### <a name="create-an-item"></a>Создание элемента
+
+Создайте элемент семейства, добавив в метод `AddItemsToContainerAsync` следующий код:
+
+```csharp
+private async Task AddItemsToContainerAsync()
+{
+    // Create a family object for the Andersen family
+    Family andersenFamily = new Family
+    {
+        Id = "Andersen.1",
+        LastName = "Andersen",
+        Parents = new Parent[]
+        {
+           new Parent { FirstName = "Thomas" },
+           new Parent { FirstName = "Mary Kay" }
+        },
+        Children = new Child[]
+        {
+           new Child
+            {
+                FirstName = "Henriette Thaulow",
+                Gender = "female",
+                Grade = 5,
+                Pets = new Pet[]
+                {
+                    new Pet { GivenName = "Fluffy" }
+                }
+            }
+        },
+        Address = new Address { State = "WA", County = "King", City = "Seattle" },
+        IsRegistered = false
+ };
+
+try
+{
+    // Read the item to see if it exists. ReadItemAsync will throw an exception if the item does not exist and return status code 404 (Not found).
+    ItemResponse<Family> andersenFamilyResponse = await this.container.ReadItemAsync<Family>(andersenFamily.Id, new PartitionKey(andersenFamily.LastName));
+    Console.WriteLine("Item in database with id: {0} already exists\n", andersenFamilyResponse.Resource.Id);
+}
+catch(CosmosException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
+{
+    // Create an item in the container representing the Andersen family. Note we provide the value of the partition key for this item, which is "Andersen"
+    ItemResponse<Family> andersenFamilyResponse = await this.container.CreateItemAsync<Family>(andersenFamily, new PartitionKey(andersenFamily.LastName));
+
+    // Note that after creating the item, we can access the body of the item with the Resource property off the ItemResponse. We can also access the RequestCharge property to see the amount of RUs consumed on this request.
+    Console.WriteLine("Created item in database with id: {0} Operation consumed {1} RUs.\n", andersenFamilyResponse.Resource.Id, andersenFamilyResponse.RequestCharge);
+}
+
+```
+
+### <a name="query-the-items"></a>Запрос элементов
+
+После вставки элемента вы можете выполнить запрос, чтобы получить подробную информацию о семействе "Андерсен". В следующем коде показано, как выполнить запрос, используя запрос SQL напрямую. SQL-запрос для получения сведений о семействе "Андерсон": `SELECT * FROM c WHERE c.LastName = 'Andersen'`. Определите метод `QueryItemsAsync` в классе `program.cs` и добавьте в него следующий код:
+
+
+```csharp
+private async Task QueryItemsAsync()
+{
+    var sqlQueryText = "SELECT * FROM c WHERE c.LastName = 'Andersen'";
+
+    Console.WriteLine("Running query: {0}\n", sqlQueryText);
+
+    QueryDefinition queryDefinition = new QueryDefinition(sqlQueryText);
+    FeedIterator<Family> queryResultSetIterator = this.container.GetItemQueryIterator<Family>(queryDefinition);
+
+    List<Family> families = new List<Family>();
+
+    while (queryResultSetIterator.HasMoreResults)
+    {
+        FeedResponse<Family> currentResultSet = await queryResultSetIterator.ReadNextAsync();
+        foreach (Family family in currentResultSet)
+        {
+            families.Add(family);
+            Console.WriteLine("\tRead {0}\n", family);
+        }
+    }
+}
+
+```
+
+### <a name="delete-the-database"></a>Удаление базы данных 
+
+Наконец, вы можете удалить базу данных, добавив в метод `DeleteDatabaseAndCleanupAsync` следующий код:
+
+```csharp
+private async Task DeleteDatabaseAndCleanupAsync()
+{
+   DatabaseResponse databaseResourceResponse = await this.database.DeleteAsync();
+   // Also valid: await this.cosmosClient.Databases["FamilyDatabase"].DeleteAsync();
+
+   Console.WriteLine("Deleted Database: {0}\n", this.databaseId);
+
+   //Dispose of CosmosClient
+    this.cosmosClient.Dispose();
+}
+```
+
+### <a name="execute-the-crud-operations"></a>Выполнение операций CRUD
+
+После того как вы определили все необходимые методы, выполните их с помощью метода `GetStartedDemoAsync`. Метод `DeleteDatabaseAndCleanupAsync` закомментирован в этом коде, поэтому вы не увидите никаких ресурсов, если этот метод выполняется. Вы можете раскомментировать его после проверки того, что ваши ресурсы Azure Cosmos DB созданы на портале Azure. 
+
+```csharp
+public async Task GetStartedDemoAsync()
+{
+    // Create a new instance of the Cosmos Client
+    this.cosmosClient = new CosmosClient(EndpointUri, PrimaryKey);
+    await this.CreateDatabaseAsync();
+    await this.CreateContainerAsync();
+    await this.AddItemsToContainerAsync();
+    await this.QueryItemsAsync();
+    await this.ReplaceFamilyItemAsync();
+    await this.DeleteFamilyItemAsync();
+    //await this.DeleteDatabaseAndCleanupAsync();
+}
+```
+
+После добавления всех необходимых методов сохраните файл `Program.cs`. 
+
+## <a name="run-the-code"></a>Выполнение кода
+
+Затем создайте и запустите приложение, чтобы создать ресурсы Azure Cosmos DB. Обязательно откройте новое окно командной строки, не используйте тот же экземпляр, который вы использовали для установки переменных среды, так как переменные среды не установлены в текущем открытом окне. Вам нужно будет открыть новую командную строку, чтобы увидеть обновления. 
+
+```console
+dotnet build
+```
+
+```console
+dotnet run
+```
+
+Следующие выходные данные генерируются при запуске приложения. Вы также можете войти на портал Azure и проверить, созданы ли ресурсы:
+
+```console
+Created Database: FamilyDatabase
+
+Created Container: FamilyContainer
+
+Created item in database with id: Andersen.1 Operation consumed 11.62 RUs.
+
+Running query: SELECT * FROM c WHERE c.LastName = 'Andersen'
+
+        Read {"id":"Andersen.1","LastName":"Andersen","Parents":[{"FamilyName":null,"FirstName":"Thomas"},{"FamilyName":null,"FirstName":"Mary Kay"}],"Children":[{"FamilyName":null,"FirstName":"Henriette Thaulow","Gender":"female","Grade":5,"Pets":[{"GivenName":"Fluffy"}]}],"Address":{"State":"WA","County":"King","City":"Seattle"},"IsRegistered":false}
+
+End of demo, press any key to exit.
+```
+
+Вы можете проверить, что данные созданы, войдя на портал Azure и просмотрев необходимые элементы в своей учетной записи Azure Cosmos. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-[!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
+Если ресурсы больше не нужны, вы можете использовать интерфейс командной строки Azure или Azure PowerShell, чтобы удалить учетную запись Azure Cosmos и соответствующую группу ресурсов. Следующая команда показывает, как удалить группу ресурсов с помощью интерфейса командной строки Azure:
+
+```azurecli
+az group delete -g "myResourceGroup" -l "southcentralus"
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого краткого руководства вы узнали, как создать учетную запись Azure Cosmos DB, базу данных и контейнер с помощью обозревателя данных и как запустить веб-приложение .NET для обновления данных. Теперь можно импортировать дополнительные данные в учетную запись Azure Cosmos DB. 
+В этом кратком руководстве вы узнали, как создать учетную запись Azure Cosmos, базу данных и контейнер с помощью приложения .NET Core. Теперь вы можете импортировать дополнительные данные в свою учетную запись Azure Cosmos, следуя инструкциям в следующей статье. 
 
 > [!div class="nextstepaction"]
 > [Импорт данных в DocumentDB с помощью средства миграции базы данных](import-data.md)
-

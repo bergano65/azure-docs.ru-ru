@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 03/11/2019
+ms.date: 07/15/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 844d2ca9c2aa0e6a79eb7abebbec986f0fd5c5bc
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: a28dd94f32eac3cba3443761671b3c846e52798c
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604258"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68277624"
 ---
 # <a name="quickstart-extract-printed-text-ocr-using-the-computer-vision-rest-api-and-php"></a>Краткое руководство. Извлечение печатного текста (OCR) с помощью REST API "Компьютерное зрение" и PHP
 
@@ -219,7 +219,7 @@ catch (HttpException $ex)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если файл больше не нужен, удалите его, а затем удалите пакет `HTTP_Request2` на PHP5. Чтобы удалить пакет, сделайте следующее:
+Если файл больше не нужен, удалите его, а затем удалите пакет `HTTP_Request2` PHP5. Чтобы удалить пакет, сделайте следующее:
 
 1. Откройте окно командной строки с правами администратора.
 2. Выполните следующую команду:

@@ -13,12 +13,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 06/03/2019
 ms.author: mbullwin
-ms.openlocfilehash: cdaae4e539d5216cf4950c15349f01b54ae8acd2
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.openlocfilehash: 5e42c36e6a321775e6017a2318857e20b7dcaf0d
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66496373"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67876459"
 ---
 # <a name="what-is-application-insights"></a>Что такое Azure Application Insights?
 Application Insights — это расширяемая служба управления производительностью приложений (APM) для веб-разработчиков на нескольких платформах. Используйте ее для мониторинга вашего работающего веб-приложения. Она автоматически обнаруживает аномалии производительности. Эта служба включает мощные аналитические средства, которые помогут вам диагностировать проблемы и понять, что пользователи фактически делают в вашем приложении.  Эта служба помогает постоянно улучшать производительность и удобство использования. Application Insights работает с приложениями на самых разнообразных платформах, включая .NET, Node.js и Java EE, с локальным, гибридным или общедоступным облачным размещением. Эта служба интегрируется с процессом DevOps и содержит точки подключения ко многим инструментам разработки. Она может выполнять мониторинг и анализ данных телеметрии из мобильных приложений благодаря интеграции с Центром приложений Visual Studio.
@@ -71,8 +71,8 @@ Application Insights — это расширяемая служба управл
 | [**Работа с Application Insights в Visual Studio**](../../azure-monitor/app/visual-studio.md)<br/>Просматривайте данные производительности в коде. Перейдите к коду из трассировки стека.|![Visual studio](./media/app-insights-overview/visual-studio-tn.png) |
 | [**Debug Snapshots on Exceptions in .NET Apps**](../../azure-monitor/app/snapshot-debugger.md) (Отладка моментальных снимков при исключениях в приложениях .NET)<br/>Отладка моментальных снимков, выбранных из активных операций со значениями параметров.|![Visual studio](./media/app-insights-overview/snapshot.png) |
 | [**Использование данных Application Insights в Power BI**](../../azure-monitor/app/export-power-bi.md )<br/>Интегрируйте метрики использования с другими метриками бизнес-аналитики.| ![Power BI](./media/app-insights-overview/power-bi.png)|
-| [**Use the Application Insights REST API to build custom solutions**](https://dev.applicationinsights.io/) (Использование интерфейса REST API Application Insights для создания пользовательских решений)<br/>Напишите код для выполнения запросов с помощью метрик и необработанных данных.| ![REST API](./media/app-insights-overview/rest-tn.png) |
-| [**Экспорт данных телеметрии из Application Insights**](../../azure-monitor/app/export-telemetry.md)<br/>Выполняйте массовый экспорт необработанных данных в хранилище по мере их поступления. |![экспорт.](./media/app-insights-overview/export-tn.png) |
+| [**Use the Application Insights REST API to build custom solutions**](https://dev.applicationinsights.io/) (Использование интерфейса REST API Application Insights для создания пользовательских решений)<br/>Напишите код для выполнения запросов с помощью метрик и необработанных данных.| ![REST API](./media/app-insights-overview/rest-tn.png) |
+| [**Экспорт данных телеметрии из Application Insights**](../../azure-monitor/app/export-telemetry.md)<br/>Выполняйте массовый экспорт необработанных данных в хранилище по мере их поступления. |![Экспорт](./media/app-insights-overview/export-tn.png) |
 
 ## <a name="how-do-i-use-application-insights"></a>Как использовать Application Insights?
 
@@ -103,8 +103,9 @@ Application Insights — одна из многих служб, размещен
 Начать работу можно несколькими способами. Начните с того, который вам лучше подходит. Остальные можно использовать позже.
 
 * **Во время выполнения — инструментирование веб-приложения на сервере.** Идеально подходит для приложений, которые уже развернуты. Не допускает обновление кода.
-  * [**Приложения ASP.NET, размещенные в IIS локально или на виртуальной машине**](../../azure-monitor/app/monitor-performance-live-website-now.md)
   * [**Приложения ASP.NET или ASP.NET Core, размещенные в веб-приложениях Azure**](../../azure-monitor/app/azure-web-apps.md)
+  * [**Приложения ASP.NET, размещенные в IIS на виртуальной машине Azure или в масштабируемом наборе виртуальных машин Azure**](../../azure-monitor/app/azure-vm-vmss-apps.md)
+  * [**Приложения ASP.NET, размещенные в IIS локально на виртуальной машине**](../../azure-monitor/app/monitor-performance-live-website-now.md)
 * **Во время разработки — добавление Application Insights в код.** Позволяет настроить сбор данных телеметрии и отправлять дополнительные данные телеметрии.
   * [Приложения ASP.NET](../../azure-monitor/app/asp-net.md)
   * [Приложения ASP.NET Core](../../azure-monitor/app/asp-net-core.md)
@@ -119,6 +120,7 @@ Application Insights — одна из многих служб, размещен
 ## <a name="next-steps"></a>Дополнительная информация
 Приступите к работе во время выполнения с помощью:
 
+* [Приложения, размещенные в IIS на виртуальной машине Azure или в масштабируемом наборе виртуальных машин Azure](../../azure-monitor/app/azure-vm-vmss-apps.md)
 * [сервера IIS;](../../azure-monitor/app/monitor-performance-live-website-now.md)
 * [Веб-приложения Azure](../../azure-monitor/app/azure-web-apps.md)
 
