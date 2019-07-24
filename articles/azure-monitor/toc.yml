@@ -7,7 +7,6 @@
     - name: Изменения в терминологии
       href: terminology.md
 - name: Краткие руководства
-  expanded: true
   items:
     - name: Приложения
       items:
@@ -96,9 +95,9 @@
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
           href: app/data-retention-privacy.md
-    - name: Реагирование на инциденты
+    - name: Оповещения
       items:
-        - name: Оповещения
+        - name: Обзор
           href: platform/alerts-overview.md
         - name: Классические оповещения
           href: platform/alerts-classic.overview.md
@@ -114,8 +113,6 @@
           href: platform/alerts-action-rules.md
         - name: Смарт-группы
           href: platform/alerts-smartgroups-overview.md
-        - name: Автомасштабирование
-          href: platform/autoscale-overview.md
         - name: Анализ изменений
           href: app/change-analysis.md
     - name: Визуализация данных
@@ -954,6 +951,8 @@
       items:
         - name: Автомасштабирование
           items:
+            - name: Обзор
+              href: platform/autoscale-overview.md
             - name: Пошаговое руководство
               href: platform/autoscale-get-started.md
             - name: Параметры

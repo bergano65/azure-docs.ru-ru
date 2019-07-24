@@ -1,6 +1,6 @@
 ---
 title: Конечные точки Пользовательского поиска Bing
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Сводные сведения о конечной точке API пользовательского поиска.
 services: cognitive-services
 author: aahill
@@ -10,12 +10,12 @@ ms.subservice: bing-custom-search
 ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: bc33d65972e12591130389e0c3cb8697898d1da9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e3b544d8d655b653383cc999de233e2163433d85
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66390348"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68405072"
 ---
 # <a name="custom-search"></a>Пользовательский поиск
 Служба "Пользовательский поиск Bing" позволяет создавать специально адаптированные интерфейсы поиска по темам, которые действительно важны для вас. Ваши пользователи увидят результаты поиска, адаптированные к интересующей их информации, вместо того, чтобы пролистывать результаты поиска с ненужным содержимым.
@@ -57,7 +57,7 @@ https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/images/search
 
 Сведения о настройке экземпляра пользовательского поиска см. в [этой статье](https://docs.microsoft.com/azure/cognitive-services/bing-custom-search/define-your-custom-view).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Интерфейсы API **Bing** поддерживают действия поиска, которые возвращают результаты определенного типа. Все конечные точки поиска возвращают результаты в виде объектов ответа JSON.  Все конечные точки поддерживают запросы, которые возвращают результаты с учетом языка и (или) местоположения по значениям долготы, широты и радиуса поиска.
 
 Полные сведения о параметрах, поддерживаемых каждой конечной точкой, см. в справочной документации по каждому типу.

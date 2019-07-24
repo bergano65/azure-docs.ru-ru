@@ -1,6 +1,6 @@
 ---
 title: Определение пользовательских предложений автозаполнения (Пользовательский поиск Bing)
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Узнайте, как настроить пользовательское автозаполнение с использованием пользовательских предложений
 services: cognitive-services
 author: aahill
@@ -10,12 +10,12 @@ ms.subservice: bing-custom-search
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: maheshb
-ms.openlocfilehash: bbad72b41a177bdbafd6cf98bfd2025190d98b16
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b08eb49b0c4f9655326d2ab09ce39210205e28a9
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62128963"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68405107"
 ---
 # <a name="configure-your-custom-autosuggest-experience"></a>Настройка пользовательского автозаполнения
 
@@ -86,7 +86,7 @@ GET https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/Suggestions
 Если пользователь выберет предложенную строку запроса из раскрывающегося списка, то при вызове [API пользовательского поиска Bing](overview.md) будет использована строка запроса из поля `query`.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Get custom suggestion](./get-custom-suggestions.md) (Получение пользовательских предложений)
 - [Search your custom instance](./search-your-custom-view.md) (Поиск в пользовательском экземпляре)

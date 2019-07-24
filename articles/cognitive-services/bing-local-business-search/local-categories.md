@@ -1,20 +1,20 @@
 ---
-title: Поиск категорий для API Bing Local Business Search | Документация Майкрософт
+title: Поиск категорий для API Bing Local Business Search
 titleSuffix: Azure Cognitive Services
 description: В этой статье вы узнаете, как задавать поиск категорий для конечной точки API Bing Local Business Search.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
-ms.topic: article
+ms.topic: quickstart
 ms.date: 11/01/2018
 ms.author: rosh
-ms.openlocfilehash: 7e5515aeee319464a65088653ad5e2bfe5b0b1f8
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
-ms.translationtype: MT
+ms.openlocfilehash: e7088ac11556d8810c744ab4b56d2639865fb2f5
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592813"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68423417"
 ---
 # <a name="search-categories-for-the-bing-local-business-search-api"></a>Поиск категорий для API Bing Local Business Search
 
@@ -215,7 +215,7 @@ X-MSEdge-Ref: Ref A: 68AFB51807C6485CAB8AAF20E232EFFF Ref B: CO1EDGE0108 Ref C: 
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 - [Use geographic boundaries to filter results from the Bing Local Business Search API](specify-geographic-search.md) (Использование географических границ для фильтрации результатов API Bing Local Business Search)
 - [Sending and using Bing Local Business Search API queries and responses](local-search-query-response.md) (Отправление и использование запросов и ответов API Bing Local Business Search)
 - [Quickstart: Send a query to the Bing Local Business Search API in C#](quickstarts/local-quickstart.md) (Краткое руководство. Отправление запроса API Bing Local Business Search в C#)

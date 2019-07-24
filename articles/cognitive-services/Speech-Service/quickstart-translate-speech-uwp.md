@@ -3,19 +3,18 @@ title: Краткое руководство. Перевод речи с пом�
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы создадите простое приложение универсальной платформы Windows (UWP) для записи речи пользователя, перевода ее на другой язык и вывода текста в командную строку. Это руководство предназначено для пользователей Windows.
 services: cognitive-services
-author: wolfma61
+author: lisaweixu
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: quickstart
-ms.date: 07/05/2019
+ms.date: 07/23/2019
 ms.author: erhopf
-ms.openlocfilehash: 108edfeb7bfe24184219e0011f054c36c22c9890
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
-ms.translationtype: HT
+ms.openlocfilehash: dafcbd6bbe7f542d4eabc6b7cf858ac4871caae8
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67602781"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68404905"
 ---
 # <a name="quickstart-translate-speech-with-the-speech-sdk-for-c-uwp"></a>Краткое руководство. Перевод речи с помощью пакета SDK службы "Речь" для C# (UWP)
 
@@ -28,7 +27,7 @@ ms.locfileid: "67602781"
 > [!NOTE]
 > UWP позволяет разрабатывать приложения, работающие на любом устройстве, которое поддерживает Windows 10, включая компьютеры, Xbox, Surface Hub и другие устройства.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
@@ -73,7 +72,7 @@ ms.locfileid: "67602781"
 
     ![Снимок экрана пользовательского интерфейса распознавания речи](media/sdk/qs-translate-csharp-uwp-ui-result.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Примеры для C# на сайте GitHub](https://aka.ms/csspeech/samples)

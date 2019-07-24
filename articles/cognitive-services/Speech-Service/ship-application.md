@@ -3,20 +3,20 @@ title: Разработка приложений с помощью пакета 
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как создавать приложения с помощью пакета SDK службы "Речь".
 services: cognitive-services
-author: wolfma61
+author: jhakulin
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/05/2019
-ms.author: wolfma
+ms.date: 07/23/2019
+ms.author: jhakulin
 ms.custom: seodec18
-ms.openlocfilehash: 7c698abb133c14f32b60b22acbbccc37a191a02e
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 8fc27002af4ebef0825b23c806cfedbe7adf9642
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604846"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68404810"
 ---
 # <a name="ship-an-application"></a>Доставка приложения
 
@@ -28,7 +28,7 @@ ms.locfileid: "67604846"
 
 Пакет SDK для службы "Речь" в Cognitive Services протестирован для Windows 10 и Windows Server 2016.
 
-Требуется Cognitive Speech SDK служб [Microsoft Visual C++ распространяемый пакет для Visual Studio 2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads) в системе. Установщики для последней версии `Microsoft Visual C++ Redistributable for Visual Studio 2019` можно скачать здесь:
+Для работы Cognitive Services Speech SDK требуется [распространяемый C++ компонент Microsoft Visual Studio 2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads) в системе. Установщики для последней версии `Microsoft Visual C++ Redistributable for Visual Studio 2019` можно скачать здесь:
 
 - [Win32](https://aka.ms/vs/16/release/vc_redist.x86.exe)
 - [x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
@@ -39,25 +39,25 @@ ms.locfileid: "67604846"
 
 Необходимые файлы пакета SDK для службы "Речь" можно развернуть в том же каталоге, что и приложение. Таким образом, приложение сможет получать прямой доступ к библиотекам. Убедитесь, что выбрана правильная версия (Win32/x64), соответствующая приложению.
 
-| ИМЯ | Функция
+| Название | Функция
 |:-----|:----|
 | `Microsoft.CognitiveServices.Speech.core.dll` | Основной пакет SDK, необходимый для развертывания управляемого и машинного кода
 | `Microsoft.CognitiveServices.Speech.csharp.dll` | Требуется для развертывания управляемого кода
 
 >[!NOTE]
-> Начиная с версии 1.3.0 файл `Microsoft.CognitiveServices.Speech.csharp.bindings.dll` (поставляется в предыдущих выпусках) больше не требуется. Функциональные возможности теперь интегрирован в пакет SDK для core.
+> Начиная с выпуска 1.3.0 файл `Microsoft.CognitiveServices.Speech.csharp.bindings.dll` (отгружен в предыдущих выпусках) больше не требуется. Теперь функциональность интегрирована в пакет SDK для Core.
 
 >[!NOTE]
-> Для приложения Windows Forms (.NET Framework) C# проекта, убедитесь, что библиотеки включаются в параметрах развертывания проекта. Это можно проверить в разделе `Properties -> Publish Section`. Щелкните `Application Files` кнопку и найти соответствующие библиотеки из прокрутите вниз список. Убедитесь, что значение присваивается `Included`. Visual Studio будет включать файл, при публикации и развертывания проекта.
+> Для проекта Windows Forms приложения (.NET Framework) C# убедитесь, что библиотеки включены в параметры развертывания проекта. Это можно проверить в разделе `Properties -> Publish Section`. `Application Files` Нажмите кнопку и найдите соответствующие библиотеки в списке Прокрутка вниз. Убедитесь, что для `Included`параметра задано значение. Visual Studio будет включать файл при публикации или развертывании проекта.
 
 ## <a name="linux"></a>Linux
 
-Speech SDK в настоящее время поддерживает дистрибутивы Ubuntu 16.04, Ubuntu 18.04 и Debian 9.
+В настоящее время пакет SDK для распознавания речи поддерживает дистрибутивы Ubuntu 16,04, Ubuntu 18,04 и Debian 9.
 Для собственных приложений необходимо доставить библиотеку пакета SDK для службы "Речь", `libMicrosoft.CognitiveServices.Speech.core.so`.
 Убедитесь, что выбрана правильная версия (x86, x64), соответствующая приложению. В зависимости от версии Linux может потребоваться включить следующие зависимости:
 
 * общие библиотеки в библиотеке GNU C (включая библиотеку программирования потоков POSIX `libpthreads`);
-* Библиотеки OpenSSL (`libssl.so.1.0.0` или `libssl.so.1.0.2`)
+* Библиотека OpenSSL (`libssl.so.1.0.0` или `libssl.so.1.0.2`)
 * общую библиотеку для приложений ALSA (`libasound.so.2`)
 
 В Ubuntu библиотеки GNU C должны быть уже установлены по умолчанию. Последние три библиотеки можно установить с помощью следующих команд:
@@ -67,14 +67,14 @@ sudo apt-get update
 sudo apt-get install libssl1.0.0 libasound2
 ```
 
-В Debian 9 установки этих пакетов:
+На Debian 9 Установите следующие пакеты:
 
 ```sh
 sudo apt-get update
 sudo apt-get install libssl1.0.2 libasound2
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 * [Распознавание речи в C#](quickstart-csharp-dotnet-windows.md)

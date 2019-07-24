@@ -1,20 +1,20 @@
 ---
-title: Отправка и использование запросов и ответов API Bing Local Business Search | Документация Майкрософт
+title: Отправка и использование запросов и ответов API Bing Local Business Search
 titleSuffix: Azure Cognitive Services
 description: В этой статье вы узнаете, как с помощью API Bing Local Business Search отправлять и использовать запросы поиска.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
-ms.topic: article
+ms.topic: quickstart
 ms.date: 06/26/2018
 ms.author: rosh
-ms.openlocfilehash: cf622f658208ab85fe0a0670a0e034bd58a5047d
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
-ms.translationtype: MT
+ms.openlocfilehash: 5a26324f22ed46d0c06ecb0eb7ecaf74f589051e
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67849940"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68423443"
 ---
 # <a name="sending-and-using-bing-local-business-search-api-queries-and-responses"></a>Отправка и использование запросов и ответов API Bing Local Business Search
 
@@ -22,7 +22,7 @@ ms.locfileid: "67849940"
 
 ## <a name="creating-a-request"></a>Создание запроса
 
-Чтобы отправить запрос к API Bing Local Business Search, добавьте условие поиска для параметра `q=`, прежде чем добавлять его в конечную точку API и включать в заголовок `Ocp-Apim-Subscription-Key`. Пример:
+Чтобы отправить запрос к API Bing Local Business Search, добавьте условие поиска для параметра `q=`, прежде чем добавлять его в конечную точку API и включать в заголовок `Ocp-Apim-Subscription-Key`. Например:
 
 `https://api.cognitive.microsoft.com/bing/localbusinesses/v7.0/search?q=restaurant+in+Bellevue`
 
@@ -145,7 +145,7 @@ Expires: Tue, 16 Oct 2018 16:25:15 GMT
 [!INCLUDE [cognitive-services-bing-throttling-requests](../../../includes/cognitive-services-bing-throttling-requests.md)]
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дополнительная информация
 - [Quickstart: Send a query to the Bing Local Business Search API in C#](quickstarts/local-quickstart.md) (Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#)
 - [Quickstart: Send a query to the Bing Local Business Search API using Java](quickstarts/local-search-java-quickstart.md) (Краткое руководство. Отправить запрос в API Bing Local Business Search с помощью Java)
 - [Краткое руководство. Использование Local Business Search с помощью Node](quickstarts/local-search-node-quickstart.md)
