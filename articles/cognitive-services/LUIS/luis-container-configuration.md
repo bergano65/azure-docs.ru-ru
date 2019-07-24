@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 06/11/2019
 ms.author: dapine
-ms.openlocfilehash: 4a9f7762b7960c74acad8203f70bc1e7c7cbd90f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7858d94b6e2a9ef07da9121cb84ffaf6adaa24d3
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67063221"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68360543"
 ---
 # <a name="configure-language-understanding-docker-containers"></a>Настройка контейнеров Docker Интеллектуальной службы распознавания речи 
 
@@ -26,7 +26,7 @@ ms.locfileid: "67063221"
 
 К контейнеру применяются следующие параметры конфигурации.
 
-|Обязательно для заполнения|Параметр|Назначение|
+|Обязательно для заполнения|Параметр|Цель|
 |--|--|--|
 |Да|[ApiKey](#apikey-setting)|Используется для отслеживания данных для выставлении счетов.|
 |Нет|[ApplicationInsights](#applicationinsights-setting)|Позволяет добавить в контейнер поддержку телеметрии [Azure Application Insights](https://docs.microsoft.com/azure/application-insights).|
@@ -42,11 +42,11 @@ ms.locfileid: "67063221"
 
 ## <a name="apikey-setting"></a>Параметр ApiKey
 
-Параметр `ApiKey` определяет ключ ресурса Azure, который используется для отслеживания данных для выставления счетов для контейнера. Необходимо указать значение для ApiKey и оно должно быть допустимый ключ для _Cognitive Services_ ресурс, заданный для [ `Billing` ](#billing-setting) параметр конфигурации.
+Параметр `ApiKey` определяет ключ ресурса Azure, который используется для отслеживания данных для выставления счетов для контейнера. Необходимо указать значение для параметра apiKey, а значение должно быть допустимым ключом для ресурса _Cognitive Services_ , указанного для [`Billing`](#billing-setting) параметра конфигурации.
 
 Этот параметр можно найти в следующих местах.
 
-* Портал Azure: **Cognitive Services** управления ресурсами в разделе **ключи**
+* Портал Azure: **Cognitive Services** Управление ресурсами в разделе **ключи**
 * На портале LUIS. На странице **параметров ключей и конечной точки**. 
 
 Не используйте начальный ключ или ключ разработки. 
@@ -57,26 +57,25 @@ ms.locfileid: "67063221"
 
 ## <a name="billing-setting"></a>Настройка выставления счетов
 
-`Billing` Параметр указывает URI конечной точки из _Cognitive Services_ ресурсов в Azure позволяет контролировать использование выставления счетов для контейнера. Необходимо указать значение для этого параметра конфигурации, а значение должно быть допустимым URI конечной точки для _Cognitive Services_ ресурсов в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
+Параметр указывает URI конечной точки ресурса Cognitive Services в Azure, который используется для отслеживания сведений о выставлении счетов для контейнера.  `Billing` Необходимо указать значение для этого параметра конфигурации, а значение должно быть допустимым URI конечной точки для ресурса _Cognitive Services_ в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
 
 Этот параметр можно найти в следующих местах.
 
-* Портал Azure: **Cognitive Services** Обзор, с меткой `Endpoint`
+* Портал Azure: **Cognitive Services** Общие сведения, помеченные`Endpoint`
 * На портале LUIS. На странице **параметров ключей и конечной точки**, в составе URI конечной точки.
 
-Не забудьте включить `luis/v2.0` маршрутизации в URL-адрес, как показано в следующей таблице:
+Не забудьте включить `luis/v2.0` в URL-адрес маршрутизацию, как показано в следующей таблице.
 
 
-|Обязательно для заполнения| Name | Тип данных | Описание |
+|Обязательно для заполнения| ИМЯ | Тип данных | Описание |
 |--|------|-----------|-------------|
-|Да| `Billing` | String | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/luis/v2.0` |
+|Да| `Billing` | Строка, | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/luis/v2.0` |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
 [!INCLUDE [Container shared configuration eula settings](../../../includes/cognitive-services-containers-configuration-shared-settings-eula.md)]
 
 ## <a name="fluentd-settings"></a>Параметры Fluentd
-
 
 [!INCLUDE [Container shared configuration fluentd settings](../../../includes/cognitive-services-containers-configuration-shared-settings-fluentd.md)]
 
@@ -88,7 +87,6 @@ ms.locfileid: "67063221"
  
 [!INCLUDE [Container shared configuration logging settings](../../../includes/cognitive-services-containers-configuration-shared-settings-logging.md)]
 
-
 ## <a name="mount-settings"></a>Параметры подключения
 
 Используйте подключения привязок для чтения данных из контейнера и записи в него. Вы можете указать входное или выходное подключение, указав параметр `--mount` в команде [docker run](https://docs.docker.com/engine/reference/commandline/run/). 
@@ -99,31 +97,31 @@ ms.locfileid: "67063221"
 
 В следующей таблице описаны поддерживаемые параметры.
 
-|Обязательно для заполнения| Name | Тип данных | Описание |
+|Обязательно для заполнения| Имя | Тип данных | Описание |
 |-------|------|-----------|-------------|
-|Да| `Input` | String | Цель входного подключения. По умолчанию используется значение `/input`. Это расположение файлов из пакета LUIS. <br><br>Пример:<br>`--mount type=bind,src=c:\input,target=/input`|
-|Нет| `Output` | String | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда относятся журналы запросов LUIS и журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Да| `Input` | Строка, | Цель входного подключения. Значение по умолчанию — `/input`. Это расположение файлов из пакета LUIS. <br><br>Пример:<br>`--mount type=bind,src=c:\input,target=/input`|
+|Нет| `Output` | Строка, | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда относятся журналы запросов LUIS и журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run
 
 В следующих примерах параметры конфигурации иллюстрируют процесс написания и использования команд `docker run`.  После запуска контейнер продолжает работу, пока вы его не [остановите](luis-container-howto.md#stop-the-container).
 
-* В этих примерах используется каталог `c:` диска, чтобы избежать конфликтов разрешение на Windows. Если вам нужен конкретный каталог для входных данных, может потребоваться предоставить соответствующие разрешения службе Docker. 
+* В этих примерах используется каталог `c:` на диске, чтобы избежать конфликтов разрешений в Windows. Если вам нужен конкретный каталог для входных данных, может потребоваться предоставить соответствующие разрешения службе Docker. 
 * Не изменяйте порядок аргументов, если вы не являетесь уверенным пользователем контейнеров Docker.
-* Если вы используете другой операционной системы, используйте правильный консоли/терминалов, синтаксис папку для подключений, а символ продолжения строки для вашей системы. В этих примерах предполагается консоли Windows с символ продолжения строки `^`. Так как контейнер — это операционная система Linux, целевой объект подключения использует синтаксис папку стиле Linux.
+* Если используется другая операционная система, используйте правильную консоль или терминал, синтаксис папок для подключений и символ продолжения строки для вашей системы. В этих примерах предполагается наличие в консоли Windows символа `^`продолжения строки. Так как контейнер является операционной системой Linux, целевое подключение использует синтаксис папки в формате Linux.
 
-Не забудьте включить `luis/v2.0` маршрутизации в URL-адрес, как показано в следующей таблице.
+Не забудьте включить `luis/v2.0` в URL-адрес маршрутизацию, как показано в следующей таблице.
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
 | Placeholder | Значение | Формат или пример |
 |-------------|-------|---|
-|{ENDPOINT_KEY} | Ключ конечной точки обученного приложения LUIS. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
-|{BILLING_ENDPOINT} | Значение конечной точки выставления счетов можно найти в Azure `Cognitive Services` странице "Обзор". |https://westus.api.cognitive.microsoft.com/luis/v2.0|
+|{API_KEY} | Ключ конечной точки обученного приложения LUIS. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
+|{ENDPOINT_URL} | Значение конечной точки выставления счетов доступно на странице `Cognitive Services` обзора Azure. |https://westus.api.cognitive.microsoft.com/luis/v2.0|
 
 > [!IMPORTANT]
 > Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](luis-container-howto.md#billing).
-> Значение ApiKey **ключ** доступна также на Azure и из ключей и конечные точки страницы на портале LUIS `Cognitive Services` страницу ключей ресурсов. 
+> Значение apiKey — это **ключ** на странице "ключи и конечные точки" на портале Luis. Он также доступен на `Cognitive Services` странице "ключи ресурсов Azure". 
 
 ### <a name="basic-example"></a>Простой пример
 
@@ -135,8 +133,8 @@ docker run --rm -it -p 5000:5000 --memory 4g --cpus 2 ^
 --mount type=bind,src=c:\output,target=/output ^
 mcr.microsoft.com/azure-cognitive-services/luis:latest ^
 Eula=accept ^
-Billing={BILLING_ENDPOINT} ^
-ApiKey={ENDPOINT_KEY}
+Billing={ENDPOINT_URL} ^
+ApiKey={API_KEY}
 ```
 
 ### <a name="applicationinsights-example"></a>Пример ApplicationInsights
@@ -149,12 +147,12 @@ docker run --rm -it -p 5000:5000 --memory 6g --cpus 2 ^
 --mount type=bind,src=c:\output,target=/output ^
 mcr.microsoft.com/azure-cognitive-services/luis:latest ^
 Eula=accept ^
-Billing={BILLING_ENDPOINT} ^
-ApiKey={ENDPOINT_KEY} ^
+Billing={ENDPOINT_URL} ^
+ApiKey={API_KEY} ^
 InstrumentationKey={INSTRUMENTATION_KEY}
 ```
 
-### <a name="logging-example"></a>Пример журнала 
+### <a name="logging-example"></a>Пример ведения журнала 
 
 Следующая команда задает уровень ведения журнала `Logging:Console:LogLevel`, чтобы настроить уровень ведения журнала [`Information`](https://msdn.microsoft.com). 
 
@@ -164,12 +162,12 @@ docker run --rm -it -p 5000:5000 --memory 6g --cpus 2 ^
 --mount type=bind,src=c:\output,target=/output ^
 mcr.microsoft.com/azure-cognitive-services/luis:latest ^
 Eula=accept ^
-Billing={BILLING_ENDPOINT} ^
-ApiKey={ENDPOINT_KEY} ^
+Billing={ENDPOINT_URL} ^
+ApiKey={API_KEY} ^
 Logging:Console:LogLevel:Default=Information
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Изучите статью об [установке и запуске контейнеров](luis-container-howto.md).
 * Ознакомьтесь со статьей об [устранение неполадок](troubleshooting.md), чтобы устранить проблемы, связанные с функциональностью LUIS.

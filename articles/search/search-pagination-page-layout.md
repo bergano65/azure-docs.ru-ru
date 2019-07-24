@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 06/13/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 73f0dc98d7d2c3e7aa77f6414cbd58e58599eae7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: bb86a75be464cb78a16170626bc96778d43bb8b6
+ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67068826"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67974623"
 ---
 # <a name="how-to-work-with-search-results-in-azure-search"></a>Как работать с результатами поиска в службе "Поиск Azure"
 В данной статье приводятся рекомендации по реализации стандартных элементов страницы результатов поиска, например, общего подсчета, извлечения документа, порядка сортировки и навигации. Связанные со страницей параметры, добавляющие данные или информацию к результатам поиска, задаются в запросах [поиска в документе](https://docs.microsoft.com/rest/api/searchservice/Search-Documents), отправляемых службе "Поиск Azure". 
@@ -25,7 +25,7 @@ ms.locfileid: "67068826"
 В некоторых примерах кода предусмотрен пользовательский веб-интерфейс, который можно найти здесь: [демонстрационное приложение New York City Jobs](https://azjobsdemo.azurewebsites.net/) и [CognitiveSearchFrontEnd](https://github.com/LuisCabrer/CognitiveSearchFrontEnd).
 
 > [!NOTE]
-> Допустимый запрос содержит несколько элементов, например URL-адрес службы и путь, HTTP-команду, `api-version` и т. д. Для краткости в примерах указывается только синтаксис, касающийся разбивки на страницы. Дополнительные сведения о синтаксисе запроса см. в разделе [REST службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice).
+> Допустимый запрос содержит несколько элементов, например URL-адрес службы и путь, HTTP-команду, `api-version` и т. д. Для краткости в примерах указывается только синтаксис, касающийся разбивки на страницы. Дополнительные сведения о синтаксисе запросов см. в статье [Azure служба поиска RESTful](https://docs.microsoft.com/rest/api/searchservice).
 >
 
 ## <a name="total-hits-and-page-counts"></a>Общее количество совпадений и страниц
@@ -34,21 +34,21 @@ ms.locfileid: "67068826"
 
 ![][1]
 
-В поиске Azure используйте параметры `$count`, `$top` и `$skip` для вывода этих значений. В следующем примере показан образец запроса для всего попаданий в индексе, который называется «-каталог в сети», возвращаются в виде `@odata.count`:
+В поиске Azure используйте параметры `$count`, `$top` и `$skip` для вывода этих значений. В следующем примере показан пример запроса на общее число попаданий в индексе с именем "Online-Catalog", `@odata.count`возвращенный как:
 
     GET /indexes/online-catalog/docs?$count=true
 
 Получать документы группами по 15, а также показывать общее количество совпадений, начиная с первой страницы:
 
-    GET /indexes/online-catalog/docs?search=*$top=15&$skip=0&$count=true
+    GET /indexes/online-catalog/docs?search=*&$top=15&$skip=0&$count=true
 
 Разбивка результатов на страницы требует наличия как `$top`, так и `$skip`, где `$top` показывает количество выводимых элементов на странице, а `$skip` — количество элементов, которые нужно пропустить. В следующем примере на каждой странице отображаются очередные 15 элементов, на что указывает пошаговое увеличение параметра `$skip` .
 
-    GET /indexes/online-catalog/docs?search=*$top=15&$skip=0&$count=true
+    GET /indexes/online-catalog/docs?search=*&$top=15&$skip=0&$count=true
 
-    GET /indexes/online-catalog/docs?search=*$top=15&$skip=15&$count=true
+    GET /indexes/online-catalog/docs?search=*&$top=15&$skip=15&$count=true
 
-    GET /indexes/online-catalog/docs?search=*$top=15&$skip=30&$count=true
+    GET /indexes/online-catalog/docs?search=*&$top=15&$skip=30&$count=true
 
 ## <a name="layout"></a>Макет
 
@@ -56,7 +56,7 @@ ms.locfileid: "67068826"
 
  ![][2]
 
-В службе поиска Azure используется `$select` и [запроса API поиска](https://docs.microsoft.com/rest/api/searchservice/search-documents) для реализации данного интерфейса.
+В службе поиска Azure можно использовать `$select` и [запрос API поиска](https://docs.microsoft.com/rest/api/searchservice/search-documents) для реализации этого интерфейса.
 
 Чтобы получить подмножество полей для мозаичного макета:
 
@@ -96,7 +96,7 @@ ms.locfileid: "67068826"
 
 ## <a name="filters-at-the-page-level"></a>Фильтры на уровне страницы
 
-Если проекту решения страниц выделенной службы поиска для определенных типов содержимого (например, Интернет-магазина приложения отделов в верхней части страницы), можно вставить [критерий фильтра](search-filters.md) вместе с **onClick** событие, чтобы открыть страницу в отфильтрованное состоянии.
+Если структура решения включала выделенные страницы поиска для конкретных типов содержимого (например, Интернет-приложение розничной торговли, в котором есть подразделения, перечисленные в верхней части страницы), можно вставить [выражение фильтра](search-filters.md) вместе с  событием OnClick, чтобы Откройте страницу в предварительно отфильтрованном состоянии.
 
 Можно отправлять фильтр с выражением поиска или без него. Например, следующий запрос осуществляет фильтрацию по имени бренда, выводя только те документы, которые соответствуют ему.
 

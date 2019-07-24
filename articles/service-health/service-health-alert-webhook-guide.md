@@ -1,75 +1,73 @@
 ---
-title: Настройка уведомлений о работоспособности службы Azure для существующих систем управления проблемами, с помощью веб-перехватчика
-description: Передача персонализированных уведомлений о событиях работоспособности служб в существующую систему управления проблемами.
+title: Настройка уведомлений о работоспособности служб Azure для существующих систем управления проблемами с помощью веб-перехватчика
+description: Отправка персонализированных уведомлений о событиях работоспособности служб в существующую систему управления проблемами.
 author: stephbaron
 ms.author: stbaron
 ms.topic: conceptual
 ms.service: service-health
 ms.workload: Supportability
 ms.date: 3/27/2018
-ms.openlocfilehash: 3e9a564310d750e63c9cf81d19f698e75712d09a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8f84b43519c197797b39397cfd15c4f90444177c
+ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67067177"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67854384"
 ---
-# <a name="configure-health-notifications-for-existing-problem-management-systems-using-a-webhook"></a>Настройка уведомлений о работоспособности для существующих систем управления проблемами с помощью веб-перехватчика
+# <a name="use-a-webhook-to-configure-health-notifications-for-problem-management-systems"></a>Использование веб-перехватчика для настройки уведомлений о работоспособности для систем управления проблемами
 
-В этой статье показано, как настроить оповещения о работоспособности служб для отправки данных через веб-перехватчики в существующую систему уведомлений.
+В этой статье показано, как настроить оповещения о работоспособности служб Azure для отправки данных через веб-перехватчики в существующую систему уведомлений.
 
-Сейчас можно настроить оповещения о работоспособности службы таким образом, чтобы в случае, если вас затронет инцидент со службой Azure, вы получили уведомление в сообщении SMS или по электронной почте.
-Однако у вас уже может быть установлена внешняя система уведомлений, которую вы хотите использовать.
-В этом документе показаны наиболее важные части полезных данных веб-перехватчика, а также способы создания пользовательских оповещений для получения уведомлений в случае, если вас затронут проблемы со службами.
+Вы можете настроить оповещения о работоспособности службы, чтобы уведомить вас по текстовому сообщению или электронной почте, когда на вас влияет обращение к службе Azure.
 
-Если вы хотите использовать предварительно настроенную интеграцию, см. следующие инструкции:
+Но у вас уже может быть существующая внешняя система уведомлений, которую вы предпочитаете использовать. В этой статье указаны наиболее важные части полезных данных веб-перехватчика. В нем описывается создание настраиваемых оповещений для уведомления при возникновении соответствующих проблем службы.
+
+Если вы хотите использовать предварительно настроенную интеграцию, см.:
 * [Настройка оповещений с помощью ServiceNow](service-health-alert-webhook-servicenow.md).
 * [Настройка оповещений с помощью PagerDuty](service-health-alert-webhook-pagerduty.md).
 * [Настройка оповещений с помощью OpsGenie](service-health-alert-webhook-opsgenie.md).
 
-### <a name="watch-an-introductory-video"></a>Просмотрите видео с вводной информацией
+**Просмотрите вступительное видео:**
 
 >[!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2OtUV]
 
-## <a name="configuring-a-custom-notification-using-the-service-health-webhook-payload"></a>Настройка пользовательского уведомления с помощью полезных данных веб-перехватчика работоспособности служб
-Если вы хотите настроить собственную интеграцию пользовательского веб-перехватчика, необходимо проанализировать полезные данные JSON, которые отправляются во время уведомлений о работоспособности служб.
+## <a name="configure-a-custom-notification-by-using-the-service-health-webhook-payload"></a>Настройка пользовательского уведомления с помощью полезных данных веб-перехватчика службы работоспособности служб
+Чтобы настроить собственную интеграцию с веб-перехватчиком, необходимо проанализировать полезные данные JSON, которые отправляются через уведомление о работоспособности службы.
 
-Просмотрите [пример](../azure-monitor/platform/activity-log-alerts-webhook.md) того, как выглядят полезные данные веб-перехватчика `ServiceHealth`.
+См. [Пример](../azure-monitor/platform/activity-log-alerts-webhook.md) `ServiceHealth` полезных данных веб-перехватчика.
 
-Оповещение о работоспособности службы можно распознать по `context.eventSource == "ServiceHealth"`. Наиболее значимые свойства для приема:
- * `data.context.activityLog.status`
- * `data.context.activityLog.level`
- * `data.context.activityLog.subscriptionId`
- * `data.context.activityLog.properties.title`
- * `data.context.activityLog.properties.impactStartTime`
- * `data.context.activityLog.properties.communication`
- * `data.context.activityLog.properties.impactedServices`
- * `data.context.activityLog.properties.trackingId`
+Чтобы убедиться, что это предупреждение о работоспособности службы, просмотрите `context.eventSource == "ServiceHealth"`. Наиболее актуальны следующие свойства:
+- **Data. Context. activityLog. status**
+- **Data. Context. activityLog. Level**
+- **Data. Context. activityLog. subscriptionId**
+- **Data. Context. activityLog. Properties. Title**
+- **Data. Context. activityLog. Properties. Импактстарттиме**
+- **Data. Context. activityLog. Properties. Обмен данными**
+- **Data. Context. activityLog. Properties. Импактедсервицес**
+- **Data. Context. activityLog. Properties. trackingId**
 
-## <a name="creating-a-direct-link-to-the-service-health-dashboard-for-an-incident"></a>Создание прямой ссылки на панель мониторинга "Работоспособность служб" для инцидента
-Можно добавить прямую ссылку на панель мониторинга "Работоспособность служб" на рабочем столе или мобильном устройстве, создав специализированный URL-адрес. Используйте `trackingId`, а также первую и последние три цифры вашего `subscriptionId`, чтобы создать такой адрес:
-```
-https://app.azure.com/h/<trackingId>/<first and last three digits of subscriptionId>
-```
+## <a name="create-a-link-to-the-service-health-dashboard-for-an-incident"></a>Создание ссылки на панель мониторинга работоспособности службы для инцидента
+Вы можете создать прямую ссылку на панель мониторинга работоспособности службы на настольном или мобильном устройстве, создав специальный URL-адрес. Используйте *trackingId* и первые три и последние три цифры *SubscriptionId* в следующем формате:
 
-Например если `subscriptionId` = `bba14129-e895-429b-8809-278e836ecdb3`, а `trackingId` = `0DET-URB`, то URL-адресом панели мониторинга "Работоспособность служб" будет:
+HTTPS<i></i>://App.Azure.com/h/ *&lt;trackingId&gt;* /*первые три и последние три цифры SubscriptionId&gt; &lt;*
 
-```
-https://app.azure.com/h/0DET-URB/bbadb3
-```
+Например, если значение *SubscriptionId* — bba14129-e895-429b-8809-278e836ecdb3, а *trackingId* — 0DET-УРБ, URL-адрес работоспособности службы будет следующим:
 
-## <a name="using-the-level-to-detect-the-severity-of-the-issue"></a>Использование уровня для выявления серьезности проблемы
-Свойство `level` в полезных данных может иметь любое из значений — `Informational`, `Warning`, `Error` или `Critical` — в порядке от самой низкой серьезности к самой высокой.
+HTTPS<i></i>://App.Azure.com/h/0DET-URB/bbadb3
 
-## <a name="parsing-the-impacted-services-to-understand-the-full-scope-of-the-incident"></a>Анализ затронутых служб для определения полного масштаба инцидента
-Оповещения о работоспособности служб могут информировать вас о проблемах, затрагивающих несколько регионов и служб. Чтобы получить полные сведения, необходимо проанализировать значение `impactedServices`.
-Внутреннее содержимое представляет собой [экранированную строку JSON](https://json.org/). После разэкранирования она будет содержать еще один объект JSON, который можно проанализировать обычным образам.
+## <a name="use-the-level-to-detect-the-severity-of-the-issue"></a>Используйте уровень, чтобы определить серьезность проблемы.
+Свойство **Level** в полезных данных от низкого до высокого уровня может быть информационным, предупреждением , *ошибкой*или критическим .
+
+## <a name="parse-the-impacted-services-to-determine-the-incident-scope"></a>Анализ затронутых служб для определения области инцидента
+Оповещения о работоспособности служб могут сообщать о проблемах в нескольких регионах и службах. Чтобы получить полные сведения, необходимо выполнить синтаксический анализ значения `impactedServices`.
+
+Содержимое, которое находится внутри, представляет собой экранированную строку [JSON](https://json.org/) , которая, в случае неэкранирования, содержит другой объект JSON, который можно регулярно анализировать. Пример:
 
 ```json
 {"data.context.activityLog.properties.impactedServices": "[{\"ImpactedRegions\":[{\"RegionName\":\"Australia East\"},{\"RegionName\":\"Australia Southeast\"}],\"ServiceName\":\"Alerts & Metrics\"},{\"ImpactedRegions\":[{\"RegionName\":\"Australia Southeast\"}],\"ServiceName\":\"App Service\"}]"}
 ```
 
-превращается в
+обретает
 
 ```json
 [
@@ -95,13 +93,17 @@ https://app.azure.com/h/0DET-URB/bbadb3
 ]
 ```
 
-Это указывает на наличие проблем со службой Alerts & Metrics (Оповещения и метрики) в Восточной и Юго-Восточной Австралии, а также проблем со службой App Service (Служба приложений) в Юго-Восточной Австралии.
+В этом примере показаны проблемы для:
+- "Оповещения & метрики" в Восточная Австралия и Юго-Восточной Австралии.
+- "Служба приложений" в Юго-Восточной Австралии.
 
+## <a name="test-your-webhook-integration-via-an-http-post-request"></a>Тестирование интеграции веб-перехватчика с помощью запроса HTTP POST
 
-## <a name="testing-your-webhook-integration-via-an-http-post-request"></a>Проверка интеграции с веб-перехватчиком с помощью запроса HTTP POST
-1. Создайте полезные данные о работоспособности служб, которые хотите отправить. Пример полезных данных для веб-перехватчика службы работоспособности служб см. в статье [Веб-перехватчики для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md).
+Выполните следующие действия.
 
-2. Создайте запрос HTTP POST следующим образом:
+1. Создайте полезные данные работоспособности службы, которые необходимо отправить. См. пример полезных данных веб-перехватчика работоспособности службы на [веб-перехватчиках оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md).
+
+1. Создайте запрос HTTP POST следующим образом:
 
     ```
     POST        https://your.webhook.endpoint
@@ -110,11 +112,11 @@ https://app.azure.com/h/0DET-URB/bbadb3
 
     BODY        <service health payload>
     ```
-3. Вы должны получить ответ `2XX - Successful`.
+   Вы должны получить ответ "2XX-успех".
 
-4. Откройте [PagerDuty](https://www.pagerduty.com/) и убедитесь, что интеграция настроена успешно.
+1. Откройте [PagerDuty](https://www.pagerduty.com/) и убедитесь, что интеграция настроена успешно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Просмотрите схему веб-перехватчика оповещений журнала действий в статье [Объекты webhook для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md). 
 - Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../azure-monitor/platform/service-notifications.md).
 - Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../azure-monitor/platform/action-groups.md).

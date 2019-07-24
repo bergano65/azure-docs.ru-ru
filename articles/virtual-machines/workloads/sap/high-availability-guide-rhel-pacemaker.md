@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/17/2018
 ms.author: sedusch
-ms.openlocfilehash: e082afb212be46c40566eb643d01bc37eababfa6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dc703f02ecf5dbaf5eb69e8e20918415e76ba469
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65992146"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68228379"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 
@@ -39,8 +39,8 @@ ms.locfileid: "65992146"
 
 [virtual-machines-linux-maintenance]:../../linux/maintenance-and-updates.md#maintenance-that-doesnt-require-a-reboot
 
-> [!NOTE]
-> Pacemaker в Red Hat Enterprise Linux использует агент Azure Fence для ограждения узла кластера, если это необходимо. Отработка отказа может занять до 15 минут, если не удается выполнить остановку ресурсов или узлам кластера не удается связаться друг с другом. Дополнительные сведения см. в статье [Ограждение виртуальной машины Azure, входящей в кластер высокой доступности RHEL, занимает много времени, завершается сбоем или таймаутом до завершения работы виртуальной машины](https://access.redhat.com/solutions/3408711).
+> [!TIP]
+> Pacemaker в Red Hat Enterprise Linux использует агент Azure Fence для ограждения узла кластера, если это необходимо. Доступна новая версия агента ограждения Azure, и отработка отказа больше не занимает длительное время, если происходит сбой ресурса или узлы кластера не могут обмениваться данными друг с другом. Дополнительные сведения см. в статье [Ограждение виртуальной машины Azure, входящей в кластер высокой доступности RHEL, занимает много времени, завершается сбоем или таймаутом до завершения работы виртуальной машины](https://access.redhat.com/solutions/3408711).
 
 Прежде всего прочитайте следующие примечания и документы SAP:
 
@@ -57,17 +57,18 @@ ms.locfileid: "65992146"
 * примечание к SAP [2243692], содержащее сведения о лицензировании SAP в Linux в Azure;
 * примечание к SAP [1999351], содержащее дополнительные сведения об устранении неполадок, связанных с расширением для расширенного мониторинга Azure для SAP;
 * [вики-сайт сообщества SAP](https://wiki.scn.sap.com/wiki/display/HOME/SAPonLinuxNotes), содержащий все необходимые примечания к SAP для Linux;
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
-* [Развертывание программного обеспечения SAP на виртуальных машинах Linux в Azure (эта статья)][deployment-guide]
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по развертыванию СУБД][dbms-guide]
+* [Планирование и реализация виртуальных машин Azure для SAP в Linux][planning-guide]
+* [Развертывание виртуальных машин Azure для SAP в Linux (Эта статья)][deployment-guide]
+* [Развертывание СУБД на виртуальных машинах Azure для SAP в Linux][dbms-guide]
 * [Репликация системы SAP HANA в кластере pacemaker](https://access.redhat.com/articles/3004101)
 * Общая документация по RHEL
   * [Общие сведения о надстройке для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_overview/index)
   * [Администрирование надстройки для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_administration/index)
   * [Справочник по надстройке для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_reference/index)
-* Документация по RHEL для Azure:
+* Документация по RHEL, относящаяся к Azure:
   * [Политики поддержки для кластеров высокой доступности RHEL — виртуальные машины Microsoft Azure как члены кластера](https://access.redhat.com/articles/3131341)
   * [Установка и настройка кластера высокой доступности Red Hat Enterprise Linux 7.4 (и более поздних версий) в Microsoft Azure](https://access.redhat.com/articles/3252491)
+  * [Настройка SAP S/4HANA ASCS/ERS с автономным сервером очереди 2 (ENSA2) в Pacemaker на RHEL 7,6](https://access.redhat.com/articles/3974941)
 
 ## <a name="cluster-installation"></a>Установка кластера
 
@@ -85,7 +86,7 @@ ms.locfileid: "65992146"
    sudo subscription-manager attach --pool=&lt;pool id&gt;
    </code></pre>
 
-   Обратите внимание, что путем присоединения пула к образ RHEL (PAYG) Azure Marketplace, можно эффективно двойной оплате за использование в RHEL: один раз для образа (PAYG) и один раз для назначением RHEL в пуле при подключении. Чтобы избежать этого, Azure теперь предоставляет BYOS RHEL образы. Дополнительные сведения можно найти [здесь](https://aka.ms/rhel-byos).
+   Обратите внимание, что, присоединив пул к образу PAYG RHEL для Azure Marketplace, вы будете эффективно выставлять счет за использование RHEL: один раз для образа PAYG и один раз для назначения RHEL в присоединенном пуле. Чтобы устранить эту проблемы, Azure теперь предоставляет образы BYOS RHEL. Дополнительные сведения можно найти [здесь](https://aka.ms/rhel-byos).
 
 1. **[A]** Включение RHEL для репозиториев SAP
 
@@ -94,12 +95,25 @@ ms.locfileid: "65992146"
    <pre><code>sudo subscription-manager repos --disable "*"
    sudo subscription-manager repos --enable=rhel-7-server-rpms
    sudo subscription-manager repos --enable=rhel-ha-for-rhel-7-server-rpms
-   sudo subscription-manager repos --enable="rhel-sap-for-rhel-7-server-rpms"
+   sudo subscription-manager repos --enable=rhel-sap-for-rhel-7-server-rpms
+   sudo subscription-manager repos --enable=rhel-ha-for-rhel-7-server-eus-rpms
    </code></pre>
 
 1. **[A]** Установка надстройки для обеспечения высокой доступности RHEL
 
    <pre><code>sudo yum install -y pcs pacemaker fence-agents-azure-arm nmap-ncat
+   </code></pre>
+
+   > [!IMPORTANT]
+   > Мы рекомендуем использовать следующие версии агента ограждения Azure (или более поздней версии), чтобы клиенты могли использовать преимущества более быстрого перехода на другой ресурс, если происходит сбой ресурса или узлы кластера не могут обмениваться данными друг с другом.  
+   > RHEL 7,6: фенце-ажентс-4.2.1 -11. el7 _ 6.8  
+   > RHEL 7,5: фенце-ажентс-4.0.11 -86. el7 _ 5.8  
+   > RHEL 7,4: фенце-ажентс-4.0.11 -66. el7 _ 4.12  
+   > Дополнительные сведения см. в разделе [Виртуальная машина Azure, работающая в качестве члена кластера высокой доступности RHEL, может занять очень много времени, или если не удается закрыть виртуальную машину](https://access.redhat.com/solutions/3408711) .
+
+   Проверьте версию агента ограждения Azure. При необходимости обновите его до версии, равной или более поздней, чем указано выше.
+   <pre><code># Check the version of the Azure Fence Agent
+    sudo yum info fence-agents-azure-arm
    </code></pre>
 
 1. **[A]** Установите разрешения имен.
@@ -181,15 +195,17 @@ ms.locfileid: "65992146"
 Устройство STONITH использует субъект-службу для авторизации в Microsoft Azure. Чтобы создать субъект-службу, выполните следующее.
 
 1. Перейдите на сайт <https://portal.azure.com>.
-1. Откройте колонку Azure Active Directory перейдите к свойствам и запишите идентификатор каталога. Это **идентификатор клиента**.
+1. Откройте колонку "Azure Active Directory".  
+   Перейдите в колонку "Свойства" и запишите идентификатор каталога. Это **идентификатор клиента**.
 1. Щелкните "Регистрация приложений".
-1. Нажмите "Добавить"
-1. Введите имя, выберите тип приложения «Веб-приложение или API», введите URL-адрес входа (например, http:\//localhost) и нажмите кнопку Создать
-1. URL-адрес входа не используется и может быть любым допустимым URL-адресом.
-1. Выберите новое приложение и щелкните "Ключи" на вкладке "Параметры".
-1. Введите описание нового ключа, выберите "Срок действия не ограничен" и нажмите кнопку "Сохранить".
+1. Нажмите кнопку "создать регистрацию"
+1. Введите имя, выберите "учетные записи только в каталоге организации" 
+2. Выберите тип приложения "Интернет", введите URL-адрес входа (например, http:/ЛОКАЛХОСТ\/) и нажмите кнопку "Добавить".  
+   URL-адрес входа не используется и может быть любым допустимым URL-адресом.
+1. Выберите Сертификаты и секреты, а затем — новый секрет клиента.
+1. Введите описание нового ключа, выберите "никогда не истекает" и нажмите кнопку "Добавить".
 1. Запишите его значение. Он используется в качестве **пароля** субъекта-службы.
-1. Запишите идентификатор приложения. Он используется в качестве имени пользователя (**идентификатора для входа** в следующих шагах) субъекта-службы.
+1. Выберите Обзор. Запишите идентификатор приложения. Он используется в качестве имени пользователя (**идентификатора для входа** в следующих шагах) субъекта-службы.
 
 ### <a name="1-create-a-custom-role-for-the-fence-agent"></a>**[1]** Создайте пользовательскую роль для агента ограждения.
 
@@ -252,9 +268,9 @@ sudo pcs property set stonith-timeout=900
 <pre><code>sudo pcs property set stonith-enabled=true
 </code></pre>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
-* [Развертывание программного обеспечения SAP на виртуальных машинах Azure][deployment-guide]
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по развертыванию СУБД][dbms-guide]
-* Дополнительные сведения об установке высокого уровня доступности и плана для аварийного восстановления SAP HANA на виртуальных машинах Azure см. в статье [Высокий уровень доступности SAP HANA на виртуальных машинах Azure][sap-hana-ha].
+* [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
+* [Развертывание виртуальных машин Azure для SAP][deployment-guide]
+* [Развертывание СУБД виртуальных машин Azure для SAP][dbms-guide]
+* Сведения о том, как установить высокий уровень доступности и спланировать аварийное восстановление SAP HANA на виртуальных машинах Azure, см. в статье [высокий уровень доступности SAP HANA на виртуальные машины Azure][sap-hana-ha] .

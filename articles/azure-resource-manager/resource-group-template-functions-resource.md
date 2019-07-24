@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 07/11/2019
 ms.author: tomfitz
-ms.openlocfilehash: 0b65c7a9b6d4f025c574c2dddace6fa45b77398c
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 7d967f0bb0b7a811d4db7836cdbffdad91088a2c
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835786"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68311689"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Функции для работы с ресурсами в шаблонах Azure Resource Manager
 
@@ -37,7 +37,7 @@ ms.locfileid: "67835786"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | Type | Описание |
+| Параметр | Обязательно для заполнения | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | имя_ресурса или идентификатор_ресурса |Да |строка |Уникальный идентификатор ресурса. |
 | версия_API |Да |строка |Версия API для состояния среды выполнения ресурса. Как правило, указывается в формате **гггг-мм-дд**. |
@@ -50,13 +50,13 @@ ms.locfileid: "67835786"
 | Тип ресурса | Имя функции |
 | ------------- | ------------- |
 | Microsoft.AnalysisServices/servers | [listGatewayStatus](/rest/api/analysisservices/servers/listgatewaystatus) |
-| Microsoft.AppConfiguration/configurationStores | listKeys |
+| Microsoft. Аппконфигуратион/Конфигуратионсторес | ListKeys |
 | Microsoft.Automation/automationAccounts | [listKeys](/rest/api/automation/keys/listbyautomationaccount) |
 | Microsoft.Batch/batchAccounts | [listkeys](/rest/api/batchmanagement/batchaccount/getkeys) |
 | Microsoft.BatchAI/workspaces/experiments/jobs | [listoutputfiles](/rest/api/batchai/jobs/listoutputfiles) |
-| Microsoft.Blockchain/blockchainMembers | [listApiKeys](/rest/api/blockchain/2019-06-01-preview/blockchainmembers/listapikeys) |
-| Microsoft.Blockchain/blockchainMembers/transactionNodes | [listApiKeys](/rest/api/blockchain/2019-06-01-preview/transactionnodes/listapikeys) |
-| Microsoft.BotService/botServices/channels | listChannelWithKeys |
+| Microsoft. Блокчейн/Блоккчаинмемберс | [листапикэйс](/rest/api/blockchain/2019-06-01-preview/blockchainmembers/listapikeys) |
+| Microsoft. Блокчейн/Блоккчаинмемберс/Трансактионнодес | [листапикэйс](/rest/api/blockchain/2019-06-01-preview/transactionnodes/listapikeys) |
+| Microsoft. Ботсервице/Ботсервицес/каналы | листчаннелвискэйс |
 | Microsoft.Cache/redis | [listKeys](/rest/api/redis/redis/listkeys) |
 | Microsoft.CognitiveServices/accounts | [listKeys](/rest/api/cognitiveservices/accountmanagement/accounts/listkeys) |
 | Microsoft.ContainerRegistry/registries | [listBuildSourceUploadUrl](/rest/api/containerregistry/registries%20(tasks)/getbuildsourceuploadurl) |
@@ -64,12 +64,12 @@ ms.locfileid: "67835786"
 | Microsoft.ContainerRegistry/registries | [listPolicies](/rest/api/containerregistry/registries/listpolicies) |
 | Microsoft.ContainerRegistry/registries | [listUsages](/rest/api/containerregistry/registries/listusages) |
 | Microsoft.ContainerRegistry/registries/webhooks | [listEvents](/rest/api/containerregistry/webhooks/listevents) |
-| Microsoft.ContainerRegistry/registries/runs | [listLogSasUrl](/rest/api/containerregistry/runs/getlogsasurl) |
-| Microsoft.ContainerRegistry/registries/tasks | [listDetails](/rest/api/containerregistry/tasks/getdetails) |
+| Microsoft. ContainerRegistry/реестров/запуски | [листлогсасурл](/rest/api/containerregistry/runs/getlogsasurl) |
+| Microsoft. ContainerRegistry/реестра/задачи | [листдетаилс](/rest/api/containerregistry/tasks/getdetails) |
 | Microsoft.ContainerService/managedClusters | [listClusterAdminCredential](/rest/api/aks/managedclusters/listclusteradmincredentials) |
 | Microsoft.ContainerService/managedClusters | [listClusterUserCredential](/rest/api/aks/managedclusters/listclusterusercredentials) |
-| Microsoft.ContainerService/managedClusters/accessProfiles | [listCredential](/rest/api/aks/managedclusters/getaccessprofile) |
-| Microsoft.DataBox/jobs | listCredentials |
+| Microsoft. ContainerService/Манажедклустерс/Акцесспрофилес | [листкредентиал](/rest/api/aks/managedclusters/getaccessprofile) |
+| Microsoft. Датабокс/задания | листкредентиалс |
 | Microsoft.DataFactory/datafactories/gateways | listauthkeys |
 | Microsoft.DataFactory/factories/integrationruntimes | [listauthkeys](/rest/api/datafactory/integrationruntimes/listauthkeys) |
 | Microsoft.DataLakeAnalytics/accounts/storageAccounts/Containers | [listSasTokens](/rest/api/datalakeanalytics/storageaccounts/listsastokens) |
@@ -84,14 +84,14 @@ ms.locfileid: "67835786"
 | Microsoft.DocumentDB/databaseAccounts | [listKeys](/rest/api/cosmos-db-resource-provider/databaseaccounts/listkeys) |
 | Microsoft.DomainRegistration | [listDomainRecommendations](/rest/api/appservice/domains/listrecommendations) |
 | Microsoft.DomainRegistration/topLevelDomains | [listAgreements](/rest/api/appservice/topleveldomains/listagreements) |
-| Microsoft.EventGrid/domains | [listKeys](/rest/api/eventgrid/domains/listsharedaccesskeys) |
+| Microsoft. EventGrid/Domains | [listKeys](/rest/api/eventgrid/domains/listsharedaccesskeys) |
 | Microsoft.EventGrid/topics | [listKeys](/rest/api/eventgrid/topics/listsharedaccesskeys) |
 | Microsoft.EventHub/namespaces/authorizationRules | [listkeys](/rest/api/eventhub/namespaces/listkeys) |
 | Microsoft.EventHub/namespaces/disasterRecoveryConfigs/authorizationRules | [listkeys](/rest/api/eventhub/disasterrecoveryconfigs/listkeys) |
 | Microsoft.EventHub/namespaces/eventhubs/authorizationRules | [listkeys](/rest/api/eventhub/eventhubs/listkeys) |
 | Microsoft.ImportExport/jobs | [listBitLockerKeys](/rest/api/storageimportexport/bitlockerkeys/list) |
-| Microsoft.LabServices/users | [ListEnvironments](/rest/api/labservices/globalusers/listenvironments) |
-| Microsoft.LabServices/users | [ListLabs](/rest/api/labservices/globalusers/listlabs) |
+| Microsoft. Лабсервицес/пользователи | [листенвиронментс](/rest/api/labservices/globalusers/listenvironments) |
+| Microsoft. Лабсервицес/пользователи | [листлабс](/rest/api/labservices/globalusers/listlabs) |
 | Microsoft.Logic/integrationAccounts/agreements | [listContentCallbackUrl](/rest/api/logic/agreements/listcontentcallbackurl) |
 | Microsoft.Logic/integrationAccounts/assemblies | [listContentCallbackUrl](/rest/api/logic/integrationaccountassemblies/listcontentcallbackurl) |
 | Microsoft.Logic/integrationAccounts | [listCallbackUrl](/rest/api/logic/integrationaccounts/getcallbackurl) |
@@ -101,8 +101,8 @@ ms.locfileid: "67835786"
 | Microsoft.Logic/integrationAccounts/schemas | [listContentCallbackUrl](/rest/api/logic/schemas/listcontentcallbackurl) |
 | Microsoft.Logic/workflows | [listCallbackUrl](/rest/api/logic/workflows/listcallbackurl) |
 | Microsoft.Logic/workflows | [listSwagger](/rest/api/logic/workflows/listswagger) |
-| Microsoft.Logic/workflows/triggers | [listCallbackUrl](/rest/api/logic/workflowtriggers/listcallbackurl) |
-| Microsoft.Logic/workflows/versions/triggers | [listCallbackUrl](/rest/api/logic/workflowversions/listcallbackurl) |
+| Microsoft. Logic/рабочие процессы/триггеры | [listCallbackUrl](/rest/api/logic/workflowtriggers/listcallbackurl) |
+| Microsoft. Logic/рабочие процессы/версии/триггеры | [listCallbackUrl](/rest/api/logic/workflowversions/listcallbackurl) |
 | Microsoft.MachineLearning/webServices | [listkeys](/rest/api/machinelearning/webservices/listkeys) |
 | Microsoft.MachineLearning/Workspaces | listworkspacekeys |
 | Microsoft.MachineLearningServices/workspaces/computes | listKeys |
@@ -112,12 +112,12 @@ ms.locfileid: "67835786"
 | Microsoft.Media/mediaservices/assets | [listStreamingLocators](/rest/api/media/assets/liststreaminglocators) |
 | Microsoft.Media/mediaservices/streamingLocators | [listContentKeys](/rest/api/media/streaminglocators/listcontentkeys) |
 | Microsoft.Media/mediaservices/streamingLocators | [listPaths](/rest/api/media/streaminglocators/listpaths) |
-| Microsoft.Network/applicationSecurityGroups | listIpConfigurations |
+| Microsoft. Network/Аппликатионсекуритиграупс | листипконфигуратионс |
 | Microsoft.NotificationHubs/Namespaces/authorizationRules | [listkeys](/rest/api/notificationhubs/namespaces/listkeys) |
 | Microsoft.NotificationHubs/Namespaces/NotificationHubs/authorizationRules | [listkeys](/rest/api/notificationhubs/notificationhubs/listkeys) |
 | Microsoft.OperationalInsights/workspaces | [listKeys](/rest/api/loganalytics/workspaces%202015-03-20/listkeys) |
 | Microsoft.Relay/namespaces/authorizationRules | [listkeys](/rest/api/relay/namespaces/listkeys) |
-| Microsoft.Relay/namespaces/disasterRecoveryConfigs/authorizationRules | listkeys |
+| Microsoft. Relay/Namespaces/Дисастеррековериконфигс/authorizationRules | listkeys |
 | Microsoft.Relay/namespaces/HybridConnections/authorizationRules | [listkeys](/rest/api/relay/hybridconnections/listkeys) |
 | Microsoft.Relay/namespaces/WcfRelays/authorizationRules | [listkeys](/rest/api/relay/wcfrelays/listkeys) |
 | Microsoft.Search/searchServices | [listAdminKeys](/rest/api/searchmanagement/adminkeys/get) |
@@ -138,8 +138,8 @@ ms.locfileid: "67835786"
 | microsoft.web/connections | listconsentlinks |
 | Microsoft.Web/customApis | listWsdlInterfaces |
 | microsoft.web/locations | listwsdlinterfaces |
-| Microsoft.Web/apimanagementaccounts/APIs/Connections | listconnectionkeys |
-| Microsoft.Web/apimanagementaccounts/APIs/Connections | listsecrets |
+| Microsoft. Web/апиманажементаккаунтс/API/подключения | листконнектионкэйс |
+| Microsoft. Web/апиманажементаккаунтс/API/подключения | листсекретс |
 | microsoft.web/sites/functions | [listsecrets](/rest/api/appservice/webapps/listfunctionsecrets) |
 | microsoft.web/sites/hybridconnectionnamespaces/relays | [listkeys](/rest/api/appservice/webapps/listhybridconnectionkeys) |
 | microsoft.web/sites | [listsyncfunctiontriggerstatus](/rest/api/appservice/webapps/listsyncfunctiontriggers) |
@@ -186,13 +186,13 @@ ms.locfileid: "67835786"
 
 Укажите ресурс с помощью его имени или [функции resourceId](#resourceid). Если эта функция списка задана в том же шаблоне, с помощью которого выполняется развертывание ресурса, на который указывает ссылка, следует использовать имя ресурса.
 
-Если вы используете **списка** вычисляется функция в ресурс, который развертывается по условию, функции, даже если ресурс не был развернут. Отобразится сообщение об ошибке, если **списка** функция ссылается на ресурс, который не существует. Используйте **Если** функции, чтобы убедиться в том, функция вычисляется только в том случае, когда ресурс развернут. См. в разделе [Если функция](resource-group-template-functions-logical.md#if) пример шаблона, который используется, если и список с условно развернутого ресурса.
+При использовании функции **List** в ресурсе, который условно развернут, функция вычисляется, даже если ресурс не развернут. Если функция **List** ссылается на несуществующий ресурс, возникает ошибка. Используйте функцию **If** , чтобы убедиться, что функция вычисляется только при развертывании ресурса. См. [функцию if](resource-group-template-functions-logical.md#if) для примера шаблона, который использует if и List с условно развернутым ресурсом.
 
 ### <a name="example"></a>Пример
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/listkeys.json) показано, как получить в разделе выходных данных первичный и вторичный ключи из учетной записи хранения. Он также возвращает маркер SAS для учетной записи хранения. 
 
-Чтобы получить маркер SAS, передайте объект для окончания срока действия. Время окончания срока действия должно быть в будущем. В этом примере показано, как использовать функции перечисления. Как правило, нужно использовать токен SAS в значении ресурса, а не возвращать его в качестве выходного значения. Выходные значения хранятся в истории развертывания и не являются безопасными.
+Чтобы получить маркер SAS, передайте объект для времени окончания срока действия. Время окончания срока действия должно быть в будущем. В этом примере показано, как использовать функции перечисления. Как правило, нужно использовать токен SAS в значении ресурса, а не возвращать его в качестве выходного значения. Выходные значения хранятся в истории развертывания и не являются безопасными.
 
 ```json
 {
@@ -354,11 +354,13 @@ ms.locfileid: "67835786"
 
 Эталонная функция извлекает состояние среды выполнения ранее развернутого ресурса или ресурса, развернутого в текущем шаблоне. В этой статье приведены примеры для обоих сценариев. При указании ссылки на ресурс в текущем шаблоне укажите в качестве параметра только имя ресурса. При указании ссылки на ранее развернутый ресурс укажите идентификатор ресурса и версию API ресурса. Вы можете определить действительные версии API своего ресурса в [справочнике по шаблонам](/azure/templates/).
 
-Эталонную функцию можно использовать только в свойствах определения ресурса и в разделе выходных данных шаблона или развертывания. При использовании с [итерации свойства](resource-group-create-multiple.md#property-iteration), можно использовать функции reference для `input` поскольку свойствам присваивается выражение. Его нельзя использовать с `count` так, как счетчик должен быть определен, прежде чем функция reference разрешается.
+Эталонную функцию можно использовать только в свойствах определения ресурса и в разделе выходных данных шаблона или развертывания. При использовании с [итерацией свойства](resource-group-create-multiple.md#property-iteration)можно использовать функцию Reference для `input` , так как выражение назначается свойству ресурса. Его нельзя использовать с `count` , так как счетчик должен быть определен до разрешения функции Reference.
+
+Нельзя использовать функцию Reference в выходных данных [вложенного шаблона](resource-group-linked-templates.md#nested-template) для возврата ресурса, развернутого во вложенном шаблоне. Вместо этого используйте [связанный шаблон](resource-group-linked-templates.md#external-template-and-external-parameters).
 
 С помощью функции reference вы прямо объявляете, что один ресурс зависит от другого, если ресурс, на который указывает ссылка, предоставляется в том же шаблоне и вы ссылаетесь, используя его имя (а не идентификатор). При этом свойство dependsOn использовать не нужно. Расчет функции выполняется только после развертывания ресурса, на который указывает ссылка.
 
-Если вы используете **ссылку** вычисляется функция в ресурс, который развертывается по условию, функции, даже если ресурс не был развернут.  Отобразится сообщение об ошибке, если **ссылку** функция ссылается на ресурс, который не существует. Используйте **Если** функции, чтобы убедиться в том, функция вычисляется только в том случае, когда ресурс развернут. См. в разделе [Если функция](resource-group-template-functions-logical.md#if) пример шаблона, который используется, если и ссылка с условно развернутого ресурса.
+При использовании функции **Reference** в ресурсе, который условно развернут, функция вычисляется, даже если ресурс не развернут.  Если ссылочная функция ссылается на  несуществующий ресурс, возникает ошибка. Используйте функцию **If** , чтобы убедиться, что функция вычисляется только при развертывании ресурса. См. [функцию if](resource-group-template-functions-logical.md#if) для примера шаблона, который использует оператор If и ссылку с условно развернутым ресурсом.
 
 Чтобы просмотреть имена и значения свойств для типа ресурса, создайте в разделе outputs шаблон, который возвращает объект. Если ресурс этого типа уже существует, то шаблон возвращает объект, не развертывая новых ресурсов. 
 
@@ -564,6 +566,8 @@ ms.locfileid: "67835786"
 ]
 ```
 
+Кроме того, функцию resourceGroup можно использовать для применения тегов из группы ресурсов к ресурсу. Дополнительные сведения см. в статье [применение тегов из группы ресурсов](resource-group-using-tags.md#apply-tags-from-resource-group).
+
 ### <a name="example"></a>Пример
 
 Следующий [пример шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/resourcegroup.json) возвращает свойства группы ресурсов.
@@ -603,7 +607,7 @@ ms.locfileid: "67835786"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | Type | Описание |
+| Параметр | Обязательно для заполнения | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | subscriptionId |Нет |строка (в формате GUID) |Значение по умолчанию — текущая подписка. Укажите это значение, если нужно получить ресурс из другой подписки. |
 | resourceGroupName |Нет |строка |Значение по умолчанию — текущая группа ресурсов. Укажите это значение, если нужно получить ресурс из другой группы ресурсов. |

@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/11/2019
 ms.author: dapine
-ms.openlocfilehash: 2dd1769d2d0a940176fb51954f44859cb42f30d9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8a8b0e18c1db7a2e2fc08819aa2f2d64d650ded6
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67072439"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68321366"
 ---
-# <a name="configure-speech-service-containers"></a>Настройка контейнеров службы распознавания речи
+# <a name="configure-speech-service-containers"></a>Настройка контейнеров службы речи
 
-Контейнеры речи Предоставьте клиентам возможность создавать один архитектура приложения речи, оптимизированный для преимущества надежные облачные возможности и Населенный пункт edge. Два речи контейнеры, мы теперь поддерживаем — **речи в текст** и **преобразования текста в речь**. 
+Речевые контейнеры позволяют клиентам создавать одну архитектуру приложения для распознавания речи, оптимизированную для использования преимуществ как надежных облачных возможностей, так и пограничных локализации. Теперь мы поддерживаем два речевых контейнера: преобразование **речи в текст** и преобразование **текста в речь**. 
 
-**Речи** среду выполнения контейнера настраивается с помощью `docker run` аргументы команды. Контейнер поддерживает несколько обязательных и несколько необязательных параметров. Доступны несколько [примеров](#example-docker-run-commands) этой команды. Для конкретного контейнера настраиваются входные параметры выставления счетов. 
+Среда  выполнения речевого контейнера настраивается с `docker run` помощью аргументов команды. Контейнер поддерживает несколько обязательных и несколько необязательных параметров. Доступны несколько [примеров](#example-docker-run-commands) этой команды. Для конкретного контейнера настраиваются входные параметры выставления счетов. 
 
 # <a name="configuration-settings"></a>Параметры конфигурации
 
@@ -32,11 +32,11 @@ ms.locfileid: "67072439"
 
 ## <a name="apikey-configuration-setting"></a>Параметр конфигурации ApiKey
 
-Параметр `ApiKey` определяет ключ ресурса Azure, который используется для отслеживания данных для выставления счетов для контейнера. Необходимо указать значение для ApiKey и оно должно быть допустимый ключ для _речи_ ресурс, заданный для [ `Billing` ](#billing-configuration-setting) параметр конфигурации.
+Параметр `ApiKey` определяет ключ ресурса Azure, который используется для отслеживания данных для выставления счетов для контейнера. Необходимо указать значение для параметра apiKey, а значение должно быть допустимым ключом для ресурса _речи_ , указанного для [`Billing`](#billing-configuration-setting) параметра конфигурации.
 
 Этот параметр можно найти в следующем месте.
 
-* Портал Azure: **В речи** управления ресурсами в разделе **ключи**
+* Портал Azure: **Речь** Управление ресурсами в разделе **ключи**
 
 ## <a name="applicationinsights-setting"></a>Параметр ApplicationInsights.
 
@@ -44,15 +44,15 @@ ms.locfileid: "67072439"
 
 ## <a name="billing-configuration-setting"></a>Параметр конфигурации выставления счетов
 
-`Billing` Параметр указывает URI конечной точки из _речи_ ресурсов в Azure позволяет контролировать использование выставления счетов для контейнера. Необходимо указать значение для этого параметра конфигурации, а значение должно быть допустимым URI конечной точки для _речи_ ресурсов в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
+Параметр указывает URI конечной точки для ресурса речи в Azure, который используется для сбора сведений о выставлении счетов для контейнера.  `Billing` Необходимо указать значение для этого параметра конфигурации, а значение должно быть допустимым URI конечной точки для ресурса _речи_ в Azure. Отчеты об использовании контейнера примерно каждые 10—15 минут.
 
 Этот параметр можно найти в следующем месте.
 
-* Портал Azure: **В речи** Обзор, с меткой `Endpoint`
+* Портал Azure: **Речь** Общие сведения, помеченные`Endpoint`
 
-|Обязательно для заполнения| Name | Тип данных | Описание |
+|Обязательно для заполнения| Имя | Тип данных | Описание |
 |--|------|-----------|-------------|
-|Да| `Billing` | String | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/sts/v1.0` |
+|Да| `Billing` | Строка, | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/sts/v1.0` |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -74,14 +74,14 @@ ms.locfileid: "67072439"
 
 Используйте подключения привязок для чтения данных из контейнера и записи в него. Вы можете указать входное или выходное подключение, указав параметр `--mount` в команде [docker run](https://docs.docker.com/engine/reference/commandline/run/).
 
-Контейнеры речи не используются входные данные или подключает выходных данных для хранения обучения или службы данных. 
+Контейнеры распознавания речи не используют входные или выходные подключения для хранения данных для обучения или службы. 
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того,расположение подключения на [главном компьютере](speech-container-howto.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположения подключения к узлу. 
 
 |Необязательно| ИМЯ | Тип данных | Описание |
 |-------|------|-----------|-------------|
-|Не разрешено| `Input` | String | Контейнеры речи не следует использовать.|
-|Необязательно| `Output` | String | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Не разрешено| `Input` | Строка, | Контейнеры распознавания речи этого не используют.|
+|Необязательно| `Output` | Строка, | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 
@@ -94,46 +94,46 @@ ms.locfileid: "67072439"
 
 | Placeholder | Значение | Формат или пример |
 |-------------|-------|---|
-|{BILLING_KEY} | Ключ конечной точки ресурса речи. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
-|{BILLING_ENDPOINT_URI} | Количество выставленных счетов за конечную точку, включая регион.|`https://westus.api.cognitive.microsoft.com/sts/v1.0`|
+|{API_KEY} | Ключ API для речевого ресурса. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
+|{ENDPOINT_URI} | Значение конечной точки, включая регион.|`https://westus.api.cognitive.microsoft.com/sts/v1.0`|
 
 > [!IMPORTANT]
 > Для запуска контейнера необходимо указать параметры `Eula`, `Billing` и `ApiKey`. В противном случае контейнер не запустится.  Дополнительные сведения см. в [разделе о выставлении счетов](#billing-configuration-setting).
-> Значение ApiKey **ключ** на странице ключей Azure речи ресурсов. 
+> Значение ApiKey является **ключом** на странице ключей ресурсов речевого ввода Azure. 
 
-## <a name="speech-container-docker-examples"></a>Примеры Docker для контейнеров речи
+## <a name="speech-container-docker-examples"></a>Примеры DOCKER контейнеров речи
 
-В следующих примерах Docker предназначены для контейнера речи. 
+Следующие примеры DOCKER предназначены для контейнера речи. 
 
-### <a name="basic-example-for-speech-to-text"></a>Простой пример для распознавания речи в текст
+### <a name="basic-example-for-speech-to-text"></a>Базовый пример перевода речи в текст
 
 ```Docker
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 2 \
 containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text \
 Eula=accept \
-Billing={BILLING_ENDPOINT_URI} \
-ApiKey={BILLING_KEY}   
+Billing={ENDPOINT_URI} \
+ApiKey={API_KEY}
 ```
 
-### <a name="basic-example-for-text-to-speech"></a>Простой пример для преобразования текста в речь
+### <a name="basic-example-for-text-to-speech"></a>Базовый пример преобразования текста в речь
 
 ```Docker
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 2 \
 containerpreview.azurecr.io/microsoft/cognitive-services-text-to-speech \
 Eula=accept \
-Billing={BILLING_ENDPOINT_URI} \
-ApiKey={BILLING_KEY}  
+Billing={ENDPOINT_URI} \
+ApiKey={API_KEY}
 ```
 
-### <a name="logging-example-for-speech-to-text"></a>Пример ведения журнала для распознавания речи в текст
+### <a name="logging-example-for-speech-to-text"></a>Пример ведения журнала для речи в текст
 
 ```Docker
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 2 \
 containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text \
 Eula=accept \
-Billing={BILLING_ENDPOINT_URI} \
-ApiKey={BILLING_KEY}   
-  Logging:Console:LogLevel:Default=Information
+Billing={ENDPOINT_URI} \
+ApiKey={API_KEY} \
+Logging:Console:LogLevel:Default=Information
 ```
 
 ### <a name="logging-example-for-text-to-speech"></a>Пример ведения журнала для преобразования текста в речь
@@ -142,11 +142,11 @@ ApiKey={BILLING_KEY}
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 2 \
 containerpreview.azurecr.io/microsoft/cognitive-services-text-to-speech \
 Eula=accept \
-Billing={BILLING_ENDPOINT_URI} \
-ApiKey={BILLING_KEY}  
-  Logging:Console:LogLevel:Default=Information
+Billing={ENDPOINT_URI} \
+ApiKey={API_KEY} \
+Logging:Console:LogLevel:Default=Information
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Изучите статью об [установке и запуске контейнеров](speech-container-howto.md).
