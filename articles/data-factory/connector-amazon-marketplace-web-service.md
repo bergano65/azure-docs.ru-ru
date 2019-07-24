@@ -46,7 +46,7 @@ ms.locfileid: "61262306"
 |:--- |:--- |:--- |
 | type | Свойству type необходимо задать следующее значение: **AmazonMWS** | Да |
 | endpoint точка | Конечная точка сервера Amazon MWS (то есть mws.amazonservices.com).  | Да |
-| marketplaceID | Идентификатор Amazon Marketplace, из которого нужно получать данные. Для получения данных из нескольких идентификаторов Marketplace, разделите их запятой (`,`). (То есть A2EUQ1WTGCTBG2.)  | Да |
+| marketplaceID | Amazon Marketplace ID, из которого нужно получать данные. Для получения данных из нескольких идентификаторов Marketplace, разделите их запятой (`,`). (То есть A2EUQ1WTGCTBG2.)  | Да |
 | sellerID | Идентификатор продавца Amazon.  | Да |
 | mwsAuthToken | Маркер проверки подлинности Amazon MWS. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | accessKeyId | Идентификатор ключа доступа, используемый для доступа к данным.  | Да |
