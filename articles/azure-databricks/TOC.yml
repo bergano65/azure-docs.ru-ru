@@ -4,7 +4,7 @@
   items:
     - name: Что такое Azure Databricks?
       href: what-is-azure-databricks.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание рабочей области Databricks с помощью портала
@@ -17,6 +17,8 @@
   items:
     - name: 'Отправка запроса к платформе SQL Server, запущенной в контейнере Docker'
       href: vnet-injection-sql-server.md
+    - name: Получение доступа к хранилищу с помощью Azure Key Vault
+      href: store-secrets-azure-key-vault.md
     - name: "Использование конечной точки службы Cosmos\_DB"
       href: service-endpoint-cosmosdb.md
     - name: Выполнение операций ETL
@@ -27,7 +29,7 @@
       href: databricks-sentiment-analysis-cognitive-services.md
     - name: Потоковая передача данных из HDInsight Kafka
       href: 'https://docs.azuredatabricks.net/spark/latest/structured-streaming/kafka.html'
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Создание кластера Spark
       href: 'https://docs.azuredatabricks.net/user-guide/clusters/index.html'
@@ -72,9 +74,9 @@
       href: 'https://azure.microsoft.com/roadmap/?category=analytics'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/databricks/'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-databricks'
-    - name: Регионы доступности
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Варианты поддержки
       href: 'https://azure.microsoft.com/support/options/'
