@@ -1,6 +1,6 @@
 ---
 title: Использование ранжирования для отображения ответов (Поиск сущностей Bing)
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Сведения об использовании ранжирования для отображения ответов, возвращаемых API Bing для поиска сущностей.
 services: cognitive-services
 author: aahill
@@ -10,12 +10,12 @@ ms.subservice: bing-entity-search
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: aahi
-ms.openlocfilehash: 9e2a4075436145a0cc185b7ab1b406fa8d27b8e3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 110cef117683b20170649a231226c8193496edf3
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60309340"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68423916"
 ---
 # <a name="using-ranking-to-display-entity-search-results"></a>Использование ранжирования для отображения результатов поиска сущностей  
 
@@ -69,7 +69,7 @@ ms.locfileid: "60309340"
 
 Боковая панель с учетом ответа ранжирования отображает две сущности из результатов, имеющие отношение к Джимми Хендриксу.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Создание одностраничного веб-приложения](tutorial-bing-entities-search-single-page-app.md)

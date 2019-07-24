@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 07/18/2019
+ms.date: 07/22/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: b366352d19b3f1e03e32e5fbddf0cb2816fa1ba3
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: b90b4806e86ed0ba33500cf31a6ed892241ceabe
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68320285"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68423456"
 ---
 # <a name="qna-maker-knowledge-base-limits-and-boundaries"></a>Лимиты и границы базы данных QnA Maker
 
@@ -60,7 +60,8 @@ ms.locfileid: "68320285"
 * Длина имени файла: 200
 * Поддерживаемые форматы файлов: TSV, PDF, TXT, DOCX, XLSX.
 * Максимальное число альтернативных вопросов: 300
-* Максимальное число пар "вопрос — ответ": Зависит от выбранных **[ограничений уровня поиска Azure](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity#document-limits)** . Пара вопросов и ответов — это документ в индексе службы поиска Azure. 
+* Максимальное число пар "вопрос — ответ": Зависит от выбранного **[уровня поиска Azure](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity#document-limits)** . Пара вопросов и ответов сопоставляется с документом в индексе поиска Azure. 
+* Страница URL-адреса или HTML: 1 000 000 символов
 
 ## <a name="create-knowledge-base-call-limits"></a>Ограничения на вызовы создания базы знаний
 Эти значения представляют ограничения для каждого действия создания базы знаний, то есть нажатия кнопки *Создать базу знаний* или вызова API CreateKnowledgeBase.

@@ -1,5 +1,5 @@
 ---
-title: Фильтрация результатов из API Bing Local Business Search с помощью географических границ | Документация Майкрософт
+title: Фильтрация результатов из API Bing Local Business Search с помощью географических границ
 titleSuffix: Azure Cognitive Services
 description: Из этой статьи вы узнаете, как фильтровать результаты поиска из API Bing Local Business Search.
 services: cognitive-services
@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: article
 ms.date: 11/01/2018
 ms.author: rosh
-ms.openlocfilehash: 6da8e9e08f84fa16f22d2a061be28398d064dc8c
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: e47a2ab8db17089773fd9a439b6dff225d6a8a29
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592694"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68423295"
 ---
 # <a name="use-geographic-boundaries-to-filter-results-from-the-bing-local-business-search-api"></a>Фильтрация результатов из API Bing Local Business Search с помощью географических границ
 
@@ -48,7 +48,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search?q=restauran
 https://api.cognitive.microsoft.com/bing/v7.0/localbusinesses/search?q=restaurant&localMapView=47.619987,-122.181671,47.6421,-122.13715&appid=0123456789ABCDEF&mkt=en-us&form=monitr
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Краткое руководство. Использование Local Business Search с помощью Java](quickstarts/local-search-java-quickstart.md)
 - [Краткое руководство. Использование Local Business Search с помощью C#](quickstarts/local-quickstart.md)
 - [Quickstart: Send a query to the Bing Local Business Search API using Node.js](quickstarts/local-search-node-quickstart.md) (Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью Node.js)
