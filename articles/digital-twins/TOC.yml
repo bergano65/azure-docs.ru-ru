@@ -5,6 +5,7 @@
     - name: Сведения об Azure Digital Twins
       href: about-digital-twins.md
 - name: Краткие руководства
+  expanded: true
   items:
     - name: Поиск доступных помещений
       href: quickstart-view-occupancy-dotnet.md

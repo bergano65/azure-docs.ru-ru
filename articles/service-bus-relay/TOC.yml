@@ -6,7 +6,7 @@
       href: relay-what-is-it.md
 - name: Учебники
   items:
-    - name: через гибридные подключения
+    - name: Гибридные подключения
       items:
         - name: 'Отправка и получение сообщений: соединения WebSocket в .NET'
           href: relay-hybrid-connections-dotnet-get-started.md
@@ -26,7 +26,7 @@
           href: service-bus-relay-rest-tutorial.md
 - name: Примеры
   items:
-    - name: через гибридные подключения
+    - name: Гибридные подключения
       href: 'https://github.com/Azure/azure-relay/tree/master/samples/hybrid-connections'
     - name: Ретранслятор WCF
       href: 'https://github.com/Azure/azure-relay/tree/master/samples/wcf-relay'
@@ -48,8 +48,6 @@
       items:
         - name: Создание пространства имен
           href: relay-create-namespace-portal.md
-        - name: Предоставление доступа к службам WCF внешним клиентам с помощью Ретранслятора WCF
-          href: relay-wcf-dotnet-get-started.md
         - name: Доступные API
           href: relay-api-overview.md
           items:
@@ -57,7 +55,7 @@
               href: relay-hybrid-connections-dotnet-api-overview.md
             - name: Узел
               href: relay-hybrid-connections-node-ws-api-overview.md
-    - name: управление
+    - name: Управление
       items:
         - name: Мониторинг Azure Relay с помощью Azure Monitor
           href: relay-metrics-azure-monitor.md
@@ -87,5 +85,5 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Примеры
       href: 'https://github.com/azure/azure-relay/tree/master/samples'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-servicebusrelay'

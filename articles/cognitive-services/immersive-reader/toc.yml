@@ -9,10 +9,14 @@
   items:
     - name: 'Использование C#'
       href: Quickstart.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Запуск Иммерсивного средства чтения (Node.js)
       href: tutorial.md
+- name: Инструкции
+  items:
+    - name: Аутентификация Azure Active Directory
+      href: azure-active-directory-authentication.md
 - name: Справочные материалы
   items:
     - name: Справочник по пакету SDK

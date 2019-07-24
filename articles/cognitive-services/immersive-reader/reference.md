@@ -1,7 +1,7 @@
 ---
-title: Справочник по пакету SDK иммерсивных чтения
+title: Справочник по пакету SDK для иммерсивного чтения
 titleSuffix: Azure Cognitive Services
-description: Ссылка для Иммерсивных модуля чтения пакета SDK
+description: Справочник по пакету SDK для иммерсивное средство чтения
 services: cognitive-services
 author: metanMSFT
 manager: nitinme
@@ -10,51 +10,51 @@ ms.subservice: immersive-reader
 ms.topic: reference
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: 485e8626af4266492e02d4f9fbe4af486e10c082
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 67da7d67a3165583a872c2b435c3cdca9763d4dd
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67718386"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68443806"
 ---
-# <a name="immersive-reader-sdk-reference"></a>Справочник по пакету SDK иммерсивных чтения
+# <a name="immersive-reader-sdk-reference"></a>Справочник по пакету SDK для иммерсивного чтения
 
-Иммерсивных пакета SDK для чтения — это библиотека JavaScript, которая позволяет интегрировать Иммерсивных чтения в веб-приложения.
+Пакет SDK для иммерсивное средство чтения — это библиотека JavaScript, которая позволяет интегрировать иммерсивное средство чтения в веб-приложение.
 
 ## <a name="functions"></a>Функции
 
-Пакет SDK предоставляет одну функцию, `ImmersiveReader.launchAsync(token, resourceName, content, options)`.
+Пакет SDK предоставляет одну функцию `ImmersiveReader.launchAsync(token, subdomain, content, options)`.
 
-### <a name="launchasync"></a>launchAsync
+### <a name="launchasync"></a>лаунчасинк
 
-Запускает Иммерсивных чтения в `iframe` веб-приложения.
+Запускает иммерсивное средство чтения `iframe` в веб-приложении.
 
 ```typescript
-launchAsync(token: string, resourceName: string, content: Content, options?: Options): Promise<HTMLDivElement>;
+launchAsync(token: string, subdomain: string, content: Content, options?: Options): Promise<HTMLDivElement>;
 ```
 
 #### <a name="parameters"></a>Параметры
 
-| ИМЯ | Тип | Описание |
+| Имя | Тип | Описание |
 | ---- | ---- |------------ |
-| `token` | строка | Маркер доступа, полученный из вызова `issueToken` конечной точки. |
-| `resourceName` | строка | Зарезервировано. Нужно задать значение `null`. |
-| `content` | [Содержимое](#content) | Объект, содержащий содержимое для отображения в Иммерсивных средство чтения. |
-| `options` | [Варианты](#options) | Параметры настройки определенными параметрами этих Иммерсивных средство чтения. Необязательный элемент. |
+| `token` | строка | Маркер проверки подлинности Azure AD. См. [руководство по проверке подлинности Azure AD](./azure-active-directory-authentication.md). |
+| `subdomain` | строка | Пользовательский поддомен для иммерсивного ресурса чтения в Azure. См. [руководство по проверке подлинности Azure AD](./azure-active-directory-authentication.md). |
+| `content` | [Содержимое](#content) | Объект, содержащий содержимое, которое должно отображаться в иммерсивное средство чтения. |
+| `options` | [Варианты](#options) | Параметры для настройки определенного поведения иммерсивное средство чтения. Необязательный элемент. |
 
-#### <a name="returns"></a>Результаты
+#### <a name="returns"></a>Возвращает
 
-Возвращает `Promise<HTMLDivElement>` который разрешается при загрузке Иммерсивных средство чтения. `Promise` Разрешается `div` , единственным дочерним элементом является элемент `iframe` элемент, содержащий Иммерсивных чтения страницы.
+Возвращает объект `Promise<HTMLDivElement>` , который разрешается при загрузке иммерсивное средство чтения. Объект `Promise` разрешается `div` в элемент, единственным дочерним `iframe` элементом которого является элемент, содержащий страницу иммерсивного чтения.
 
 #### <a name="exceptions"></a>Исключения
 
-Возвращенный `Promise` отклоняются с [ `Error` ](#error) объекта, если Иммерсивных средство чтения не загружается. Дополнительные сведения см. в разделе [коды ошибок](#error-codes).
+Возвращенный `Promise` [`Error`](#error) объект будет отклонен с объектом, если не удается загрузить иммерсивное средство чтения. Дополнительные сведения см. в [кодах ошибок](#error-codes).
 
 ## <a name="types"></a>Типы
 
 ### <a name="content"></a>Content
 
-С содержимым для отображения в Иммерсивных средство чтения.
+Содержит содержимое, отображаемое в иммерсивное средство чтения.
 
 ```typescript
 {
@@ -72,11 +72,11 @@ launchAsync(token: string, resourceName: string, content: Content, options?: Opt
 | Тип MIME | Описание |
 | --------- | ----------- |
 | text/plain | Обычный текст. |
-| приложения/mathml + xml | Математические Markup Language (MathML). [Узнайте больше](https://developer.mozilla.org/en-US/docs/Web/MathML).
+| Application/масмл + XML | Язык математической разметки (Масмл). [Узнайте больше](https://developer.mozilla.org/en-US/docs/Web/MathML).
 
 ### <a name="options"></a>Параметры
 
-Содержит свойства, которые настраивают определенными параметрами этих Иммерсивных средство чтения.
+Содержит свойства, которые настраивают определенное поведение иммерсивное средство чтения.
 
 ```typescript
 {
@@ -102,13 +102,13 @@ launchAsync(token: string, resourceName: string, content: Content, options?: Opt
 
 | Код | Описание |
 | ---- | ----------- |
-| BadArgument | Предоставленный аргумент является недопустимым, см. в разделе `message` подробные сведения. |
-| Время ожидания | Не удалось загрузить в течение заданного времени ожидания Иммерсивных средство чтения. |
-| TokenExpired| Истек срок действия предоставленного токена. |
+| бадаргумент | Указан недопустимый аргумент, `message` см. Дополнительные сведения. |
+| Время ожидания | Не удалось загрузить иммерсивное средство чтения в течение указанного времени ожидания. |
+| TokenExpired| Срок действия заданного маркера истек. |
 
-## <a name="launching-the-immersive-reader"></a>Запуск Иммерсивных чтения
+## <a name="launching-the-immersive-reader"></a>Запуск иммерсивное средство чтения
 
-Пакет SDK предоставляет стилем по умолчанию для кнопки для запуска Иммерсивных средство чтения. Используйте `immersive-reader-button` класс атрибута, чтобы включить эти действия со стилями.
+Пакет SDK предоставляет стиль по умолчанию для кнопки запуска иммерсивное средство чтения. Для включения этого стиля используйте атрибут класса.`immersive-reader-button`
 
 ```html
 <div class='immersive-reader-button'></div>
@@ -116,25 +116,25 @@ launchAsync(token: string, resourceName: string, content: Content, options?: Opt
 
 ### <a name="optional-attributes"></a>Необязательные атрибуты
 
-Используйте следующие атрибуты, чтобы настроить внешний вид кнопки.
+Используйте следующие атрибуты, чтобы настроить внешний вид и поведение кнопки.
 
 | Атрибут | Описание |
 | --------- | ----------- |
 | `data-button-style` | Задает стиль кнопки. Возможные значения: `icon`, `text` или `iconAndText`. По умолчанию — `icon`. |
-| `data-locale` | Задает языковой стандарт, например `en-US`, `fr-FR`. По умолчанию используется английский. |
-| `data-icon-px-size` | Задает размер значка в пикселях. По умолчанию 20px. |
+| `data-locale` | Задает языковой стандарт, например `en-US`, `fr-FR`. По умолчанию используется английский язык. |
+| `data-icon-px-size` | Задает размер значка в пикселях. По умолчанию используется 20px. |
 
 ## <a name="browser-support"></a>Поддержка браузеров
 
-Используйте последние версии следующих браузеров для получения наилучших результатов с помощью мощных средства чтения.
+Используйте последние версии следующих браузеров, чтобы получить лучшие впечатления от работы с иммерсивное средство чтения.
 
 * Microsoft Edge
-* Internet Explorer 11;
+* Internet Explorer 11
 * Google Chrome
 * Mozilla Firefox
 * Apple Safari;
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* Изучите [Иммерсивных чтения SDK на сайте GitHub](https://github.com/Microsoft/immersive-reader-sdk)
-* [Краткое руководство Создание веб-приложения, который запускает Иммерсивных чтения (C#)](./quickstart.md)
+* Изучите [пакет SDK иммерсивного средства чтения на сайте GitHub](https://github.com/Microsoft/immersive-reader-sdk).
+* [Краткое руководство Создание веб-приложения, запускающего иммерсивное средство чтения (C#)](./quickstart.md)

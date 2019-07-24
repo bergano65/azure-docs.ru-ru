@@ -5,6 +5,7 @@
     - name: Сведения о службе "Пространственные привязки"
       href: overview.md
 - name: Краткие руководства
+  expanded: true
   items:
     - name: Создание приложения Unity
       href: unity-overview.yml
