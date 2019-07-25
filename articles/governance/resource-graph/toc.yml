@@ -36,11 +36,14 @@
     - name: Руководство по регулируемым запросам
       displayName: 'pagination, batching, throttling, parallel'
       href: ./concepts/guidance-for-throttled-requests.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Получение данных об изменении ресурса
       displayName: 'resource, change, history, snapshot, details'
       href: ./how-to/get-resource-changes.md
+- name: Устранение неполадок
+  displayName: 'errors, violation'
+  href: ./troubleshoot/general.md
 - name: Справочные материалы
   items:
     - name: Azure CLI

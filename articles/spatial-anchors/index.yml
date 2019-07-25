@@ -17,7 +17,7 @@ metadata:
 abstract:
   description: "\"Пространственные привязки\"\_— это-кросс-платформенная служба для разработки, которая позволяет создавать среды смешанной реальности, используя объекты, расположение которых на устройствах не меняется с течением времени."
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Узнайте, как создать первое приложение с помощью службы "Пространственные привязки Azure":'
@@ -54,12 +54,12 @@ sections:
               alt: null
             text: Unity iOS
             href: quickstarts/get-started-unity-ios.md
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Узнайте, как настроить, скомпилировать и развернуть приложение, а также управлять им с помощью службы "Пространственные привязки Azure".'
       - type: list
-        style: ordered
+        style: unordered
         items:
           - html: <a href="/azure/spatial-anchors/tutorials/tutorial-share-anchors-across-devices">Совместное использование в Unity.</a>
           - html: "<a href=\"/azure/spatial-anchors/tutorials/tutorial-use-cosmos-db-to-store-anchors\">Совместное использование в Unity с помощью Azure Cosmos\_DB.</a>"

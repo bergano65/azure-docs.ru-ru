@@ -137,9 +137,7 @@
           href: Tutorials/java-tutorial.md
         - name: JavaScript
           href: Tutorials/javascript-tutorial.md
-        - name: Python
-          href: Tutorials/PythonTutorial.md
-    - name: Вызов API Компьютерного зрения
+    - name: Вызов API компьютерного зрения
       href: Vision-API-How-to-Topics/HowToCallVisionAPI.md
     - name: Использование контейнеров
       items:
