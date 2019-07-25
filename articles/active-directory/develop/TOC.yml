@@ -193,6 +193,18 @@
                   href: scenario-mobile-overview.md
                 - name: Регистрация приложения
                   href: scenario-mobile-app-registration.md
+                - name: Конфигурация кода
+                  href: scenario-mobile-app-configuration.md
+                - name: Конфигурация для конкретных мобильных платформ
+                  items:
+                    - name: Xamarin Android
+                      href: msal-net-xamarin-android-considerations.md
+                    - name: Системный браузер в Android
+                      href: msal-net-system-browser-android-considerations.md
+                    - name: Xamarin iOS
+                      href: msal-net-xamarin-ios-considerations.md
+                    - name: Универсальная платформа Windows
+                      href: msal-net-uwp-considerations.md
                 - name: Получение маркера для приложения
                   href: scenario-mobile-acquire-token.md
                 - name: Вызов веб-API
@@ -255,14 +267,6 @@
                   items:
                     - name: Веб-браузеры
                       href: msal-net-web-browsers.md
-                    - name: Xamarin Android
-                      href: msal-net-xamarin-android-considerations.md
-                    - name: Системный браузер в Android
-                      href: msal-net-system-browser-android-considerations.md
-                    - name: Xamarin iOS
-                      href: msal-net-xamarin-ios-considerations.md
-                    - name: Универсальная платформа Windows
-                      href: msal-net-uwp-considerations.md
                 - name: MSAL.js
                   items:
                     - name: Рекомендации по использованию Internet Explorer

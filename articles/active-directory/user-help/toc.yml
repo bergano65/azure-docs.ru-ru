@@ -10,9 +10,9 @@
       href: multi-factor-authentication-end-user-manage-settings.md
     - name: Получение справки
       href: multi-factor-authentication-end-user-troubleshoot.md
-    - name: Управление паролями приложений
+    - name: Управление паролями приложения
       href: multi-factor-authentication-end-user-app-passwords.md
-    - name: Вход
+    - name: Как войти
       href: user-help-sign-in.md?toc=./toc.json
 - name: Справка по сбросу пароля
   items:
@@ -74,13 +74,15 @@
           href: security-info-setup-text-msg.md
         - name: Настройка телефонных звонков
           href: security-info-setup-phone-number.md
+        - name: Настройка ключа безопасности
+          href: security-info-setup-security-key.md
         - name: Настройка адреса электронной почты
           href: security-info-setup-email.md
         - name: Настройка контрольных вопросов
           href: security-info-setup-questions.md
-    - name: Управление паролями приложений
+    - name: Управление паролями приложения
       href: security-info-app-passwords.md
-    - name: Вход
+    - name: Как войти
       href: user-help-sign-in.md?toc=./toc.json
 - name: Справка по управлению устройствами
   items:

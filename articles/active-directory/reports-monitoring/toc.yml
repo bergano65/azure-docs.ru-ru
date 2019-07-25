@@ -27,6 +27,8 @@
       href: tutorial-azure-monitor-stream-logs-to-event-hub.md
 - name: Основные понятия
   items:
+    - name: Планирование развертывания отчетов и мониторинга
+      href: plan-monitoring-and-reporting.md
     - name: Журналы аудита
       href: concept-audit-logs.md
     - name: Журналы входа

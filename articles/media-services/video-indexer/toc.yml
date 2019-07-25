@@ -21,6 +21,8 @@
       href: compare-video-indexer-with-media-services-presets.md
     - name: Управление несколькими арендаторами
       href: manage-multiple-tenants.md
+    - name: Модель идентификации языка
+      href: language-identification-model.md
     - name: Настройка моделей содержимого
       items:
         - name: Обзор

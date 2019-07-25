@@ -98,8 +98,6 @@
           href: sisense.md
     - name: Управление
       items:
-        - name: Управление разрешениями базы данных
-          href: manage-database-permissions.md
         - name: Проверка работоспособности кластера
           href: check-cluster-health.md
         - name: Выбор номера SKU виртуальной машины кластера
@@ -108,6 +106,10 @@
           href: manage-cluster-horizontal-scaling.md
         - name: Управление вертикальным масштабированием кластера
           href: manage-cluster-vertical-scaling.md
+        - name: Управление безопасностью кластера
+          href: manage-cluster-security.md
+        - name: Управление разрешениями базы данных
+          href: manage-database-permissions.md
         - name: Удаление данных
           href: delete-data.md
         - name: Обработка дублированных данных

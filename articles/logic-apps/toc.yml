@@ -303,10 +303,12 @@
           href: test-logic-apps-mock-data-static-results.md
     - name: Развертывание
       items:
+        - name: Обзор. Автоматизация развертывания приложения логики
+          href: logic-apps-azure-resource-manager-templates-overview.md
         - name: Создание шаблонов приложений логики
-          href: logic-apps-create-deploy-template.md
+          href: logic-apps-create-azure-resource-manager-templates.md
         - name: Развертывание шаблонов приложений логики
-          href: logic-apps-create-deploy-azure-resource-manager-templates.md
+          href: logic-apps-deploy-azure-resource-manager-templates.md
     - name: Мониторинг
       items:
         - name: Мониторинг приложений логики
@@ -377,7 +379,7 @@
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=azurelogicapps'
+      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=azurelogicapps'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-logic-apps'
     - name: Twitter

@@ -216,10 +216,14 @@
       items:
         - name: Архитектура виртуальной сети HDInsight
           href: ../hdinsight-virtual-network-architecture.md
+        - name: Планирование виртуальных сетей для HDInsight
+          href: ../hdinsight-plan-virtual-network-deployment.md
+        - name: Создание виртуальных сетей для HDInsight
+          href: ../hdinsight-create-virtual-network.md
+        - name: Необходимые IP-адреса для групп безопасности сети и определяемых пользователем маршрутов
+          href: ../hdinsight-management-ip-addresses.md
         - name: Ограничение исходящего трафика с помощью брандмауэра
           href: ../hdinsight-restrict-outbound-traffic.md
-        - name: HDInsight в виртуальной сети Azure
-          href: ../hdinsight-extend-hadoop-virtual-network.md
         - name: Подключение HDInsight к локальной сети
           href: ../connect-on-premises-network.md
     - name: Мониторинг с использованием журналов Azure Monitor
