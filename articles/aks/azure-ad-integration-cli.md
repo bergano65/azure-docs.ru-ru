@@ -1,6 +1,6 @@
 ---
 title: rbИнтеграция Azure Active Directory со службой Azure Kubernetes
-description: Узнайте, как использовать Azure CLI для создания и кластер службы Kubernetes с поддержкой Azure Active Directory Azure (AKS)
+description: Узнайте, как использовать Azure CLI для создания кластера Azure Kubernetes Service (AKS) с поддержкой Azure Active Directory.
 services: container-service
 author: mlearned
 ms.service: container-service
@@ -8,19 +8,19 @@ ms.topic: article
 ms.date: 04/16/2019
 ms.author: mlearned
 ms.openlocfilehash: 5b99d76ef20c288d6ae0bd33e1e2b6a75a359d3a
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
+ms.lasthandoff: 07/25/2019
 ms.locfileid: "67616270"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli"></a>Интеграция Azure Active Directory со службой Azure Kubernetes с помощью Azure CLI
 
-Службу Azure Kubernetes (AKS) можно настроить на использование Azure Active Directory (AD) для проверки подлинности пользователей. В этой конфигурации вы можете войти в кластер AKS с помощью маркера проверки подлинности Azure AD. Операторы кластера можно также настроить на основе участия пользователя удостоверения или directory группе управления Kubernetes доступа на основе ролей (RBAC).
+Службу Azure Kubernetes (AKS) можно настроить на использование Azure Active Directory (AD) для проверки подлинности пользователей. В этой конфигурации вы можете войти в кластер AKS с помощью маркера проверки подлинности Azure AD. Операторы кластера также могут настраивать Kubernetes управления доступом на основе ролей (RBAC) на основе удостоверения пользователя или членства в группе каталогов.
 
-В этой статье показано, как создать необходимые компоненты Azure AD, затем развертывание Azure AD с поддержкой кластера и создать базовый роль RBAC в кластере AKS. Вы также можете [выполните следующие действия, с помощью портала Azure][azure-ad-portal].
+В этой статье показано, как создать необходимые компоненты Azure AD, а затем развернуть кластер с поддержкой Azure AD и создать базовую роль RBAC в кластере AKS. [Эти действия также можно выполнить с помощью портал Azure][azure-ad-portal].
 
-Полный пример сценария, используемом в этой статье, см. в разделе [примеры Azure CLI - AKS интеграции с Azure AD][complete-script].
+Полный пример скрипта, используемый в этой статье, см. в разделе [Azure CLI Samples AKS Integration by Azure AD][complete-script].
 
 Действительны следующие ограничения.
 
@@ -28,28 +28,28 @@ ms.locfileid: "67616270"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Требуется Azure CLI версии 2.0.61 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
+Требуется Azure CLI версии 2.0.61 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
-Для согласованности и выполните команды в этой статье создайте переменную для желаемого имени кластера AKS. В следующем примере используется имя *myakscluster*:
+Для обеспечения согласованности и для выполнения команд в этой статье создайте переменную для нужного имени кластера AKS. В следующем примере используется имя *myakscluster*:
 
 ```azurecli-interactive
 aksname="myakscluster"
 ```
 
-## <a name="azure-ad-authentication-overview"></a>Обзор проверки подлинности Azure AD
+## <a name="azure-ad-authentication-overview"></a>Обзор аутентификации Azure AD
 
-Кластеры AKS проходят аутентификацию Azure AD с помощью OpenID Connect. OpenID Connect представляет собой уровень идентификации на основе протокола OAuth 2.0. Дополнительные сведения об OpenID Connect, см. в разделе [Open ID connect документации][open-id-connect].
+Кластеры AKS проходят аутентификацию Azure AD с помощью OpenID Connect. OpenID Connect представляет собой уровень идентификации на основе протокола OAuth 2.0. Дополнительные сведения о OpenID Connect Connect см. в [документации по Open ID Connect][open-id-connect].
 
-Внутри кластера Kubernetes проверка подлинности на основе маркера веб-перехватчика используется для проверки маркеров проверки подлинности. Настройка такой проверка подлинности и ее управление являются частью кластера AKS. Дополнительные сведения о веб-перехватчика токена проверки подлинности, см. в разделе [документации проверки подлинности веб-перехватчика][kubernetes-webhook].
+Внутри кластера Kubernetes проверка подлинности на основе маркера веб-перехватчика используется для проверки маркеров проверки подлинности. Настройка такой проверка подлинности и ее управление являются частью кластера AKS. Дополнительные сведения о проверке подлинности маркеров веб-перехватчика см. в [документации по проверке подлинности веб][kubernetes-webhook]-перехватчика.
 
 > [!NOTE]
 > При настройке Azure AD для аутентификации AKS настраиваются два приложения Azure AD. Эту операцию должен выполнять администратор клиента Azure.
 
 ## <a name="create-azure-ad-server-component"></a>Создание компонента сервера Azure AD
 
-Чтобы интегрировать с AKS, создайте и используйте приложение Azure AD, который выступает в качестве конечной точки для идентификации запросов. Первое приложение Azure AD, что нужно получает членства в группе Azure AD для пользователя.
+Для интеграции с AKS вы создаете и используете приложение Azure AD, которое выступает в качестве конечной точки для запросов на идентификацию. Первое необходимое приложение Azure AD получает членство в группе Azure AD для пользователя.
 
-Создание компонента приложения сервера с помощью [az ad app создайте][az-ad-app-create] command, then update the group membership claims using the [az ad app update][az-ad-app-update] команды. В следующем примере используется *aksname* переменная, определенная в [перед началом](#before-you-begin) , при этом создается переменная
+Создайте компонент серверного приложения с помощью команды [AZ AD App Create][az-ad-app-create] , а затем обновите утверждения членства в группе с помощью команды [AZ AD App Update][az-ad-app-update] . В следующем примере используется переменная *акснаме* , определенная в разделе [перед началом](#before-you-begin) выполнения, и создается переменная.
 
 ```azurecli-interactive
 # Create the Azure AD application
@@ -62,7 +62,7 @@ serverApplicationId=$(az ad app create \
 az ad app update --id $serverApplicationId --set groupMembershipClaims=All
 ```
 
-Теперь создайте субъект-службу для сервера приложений с помощью [создать az ad sp][az-ad-sp-create] command. This service principal is used to authenticate itself within the Azure platform. Then, get the service principal secret using the [az ad sp credential reset][az-ad-sp-credential-reset] команды и присвоить переменной с именем *serverApplicationSecret* для использования в одном из следующих действий:
+Теперь создайте субъект-службу для серверного приложения с помощью команды [AZ AD SP Create][az-ad-sp-create] . Этот субъект-служба используется для проверки подлинности в платформе Azure. Затем получите секрет субъекта-службы с помощью команды [AZ AD SP Credential Reset][az-ad-sp-credential-reset] и назначьте переменной с именем *сервераппликатионсекрет* для использования в одном из следующих шагов:
 
 ```azurecli-interactive
 # Create a service principal for the Azure AD application
@@ -75,12 +75,12 @@ serverApplicationSecret=$(az ad sp credential reset \
     --query password -o tsv)
 ```
 
-Azure AD необходимы разрешения для выполнения следующих действий:
+Azure AD требуются разрешения для выполнения следующих действий:
 
-* Прочитать данные каталога
-* Вход в систему и чтение профиля пользователя.
+* Чтение данных каталога
+* Вход и чтение профиля пользователя
 
-Назначить эти разрешения, используя [добавьте az ad app разрешение][az-ad-app-permission-add] команды:
+Назначьте эти разрешения с помощью команды [AZ AD App Permission Add][az-ad-app-permission-add] :
 
 ```azurecli-interactive
 az ad app permission add \
@@ -89,16 +89,16 @@ az ad app permission add \
     --api-permissions e1fe6dd8-ba31-4d61-89e7-88639da4683d=Scope 06da0dbc-49e2-44d2-8312-53f166ab848a=Scope 7ab1d382-f21e-4acd-a863-ba3e13f7da61=Role
 ```
 
-Наконец, предоставить разрешения, назначенные в предыдущем шаге для сервера приложений с помощью [az ad app разрешение][az-ad-app-permission-grant] command. This step fails if the current account is not a tenant admin. You also need to add permissions for Azure AD application to request information that may otherwise require administrative consent using the [az ad app permission admin-consent][az-ad-app-permission-admin-consent]:
+Наконец, предоставьте разрешения, назначенные на предыдущем шаге для серверного приложения, с помощью команды [AZ AD App Grant][az-ad-app-permission-grant] . Этот шаг завершается ошибкой, если текущая учетная запись не является администратором клиента. Кроме того, необходимо добавить разрешения для приложения Azure AD, чтобы запросить сведения, которые в противном случае требуют согласия администратора, с помощью команды [AZ AD App Permission Permissions с согласия администратора][az-ad-app-permission-admin-consent]:
 
 ```azurecli-interactive
 az ad app permission grant --id $serverApplicationId --api 00000003-0000-0000-c000-000000000000
 az ad app permission admin-consent --id  $serverApplicationId
 ```
 
-## <a name="create-azure-ad-client-component"></a>Создание компонента клиента Azure AD
+## <a name="create-azure-ad-client-component"></a>Создание клиентского компонента Azure AD
 
-Второе приложение Azure AD используется в том случае, когда пользователь входит в кластер AKS с помощью интерфейса командной строки Kubernetes (`kubectl`). Это клиентское приложение принимает запрос на аутентификацию от пользователя и проверяет их учетные данные и разрешения. Создание приложения Azure AD для клиента компонент с помощью [az ad app создайте][az-ad-app-create] команды:
+Второе приложение Azure AD используется, когда пользователь входит в кластер AKS с помощью интерфейса командной строки Kubernetes (`kubectl`). Это клиентское приложение принимает запрос на проверку подлинности от пользователя и проверяет свои учетные данные и разрешения. Создайте приложение Azure AD для клиентского компонента с помощью команды [AZ AD App Create][az-ad-app-create] .
 
 ```azurecli-interactive
 clientApplicationId=$(az ad app create \
@@ -108,19 +108,19 @@ clientApplicationId=$(az ad app create \
     --query appId -o tsv)
 ```
 
-Создайте субъект-службу для клиентское приложение, использующее [создать az ad sp][az-ad-sp-create] команды:
+Создайте субъект-службу для клиентского приложения с помощью команды [AZ AD SP Create][az-ad-sp-create] .
 
 ```azurecli-interactive
 az ad sp create --id $clientApplicationId
 ```
 
-Получить идентификатор oAuth2 для серверного приложения на разрешение потока проверки подлинности между двумя компонентами приложения с помощью [az ad app show][az-ad-app-show] команды. Этот идентификатор oAuth2 используется на следующем шаге.
+Получите идентификатор oAuth2 для серверного приложения, чтобы разрешить поток проверки подлинности между двумя компонентами приложения с помощью команды [AZ AD App демонстрация][az-ad-app-show] . Этот идентификатор oAuth2 используется на следующем шаге.
 
 ```azurecli-interactive
 oAuthPermissionId=$(az ad app show --id $serverApplicationId --query "oauth2Permissions[0].id" -o tsv)
 ```
 
-Добавление разрешений для клиентского приложения и серверные компоненты приложения для использования oAuth2 по протоколу потока с помощью [добавьте az ad app разрешение][az-ad-app-permission-add] command. Then, grant permissions for the client application to communication with the server application using the [az ad app permission grant][az-ad-app-permission-grant] команды:
+Добавьте разрешения для клиентских приложений и компонентов серверного приложения, чтобы использовать поток обмена данными oAuth2 с помощью команды [AZ AD App Permission Add][az-ad-app-permission-add] . Затем предоставьте разрешения на обмен данными между клиентским приложением и серверным приложением с помощью команды [AZ AD App Grant][az-ad-app-permission-grant] .
 
 ```azurecli-interactive
 az ad app permission add --id $clientApplicationId --api $serverApplicationId --api-permissions $oAuthPermissionId=Scope
@@ -129,15 +129,15 @@ az ad app permission grant --id $clientApplicationId --api $serverApplicationId
 
 ## <a name="deploy-the-cluster"></a>Развертывание кластера
 
-С помощью создания два приложения Azure AD Теперь создайте самого кластера AKS. Сначала создайте группу ресурсов с помощью [Создание группы az][az-group-create] команды. В следующем примере создается группа ресурсов в *EastUS* региона:
+Создав два приложения Azure AD, создадим сам кластер AKS. Сначала создайте группу ресурсов с помощью команды [AZ Group Create][az-group-create] . В следующем примере создается группа ресурсов в регионе *EastUS* :
 
-Создайте группу ресурсов для кластера:
+Создайте группу ресурсов для кластера.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location EastUS
 ```
 
-Получение идентификатора клиента из своей подписки Azure с помощью [az учетной записи, отображают][az-account-show] command. Then, create the AKS cluster using the [az aks create][az-aks-create] команды. Команду, чтобы создать кластер AKS предоставляет сервер и клиент, идентификаторы приложений, секрет субъекта-сервера приложения службы и идентификатор клиента:
+Получите идентификатор клиента подписки Azure с помощью команды [AZ Account показывать][az-account-show] . Затем создайте кластер AKS с помощью команды [AZ AKS Create][az-aks-create] . Команда для создания кластера AKS предоставляет идентификаторы серверных и клиентских приложений, секрет субъекта службы серверного приложения и идентификатор клиента:
 
 ```azurecli-interactive
 tenantId=$(az account show --query tenantId -o tsv)
@@ -153,7 +153,7 @@ az aks create \
     --aad-tenant-id $tenantId
 ```
 
-Наконец, получить кластера с помощью учетных данных администратора [az aks get-credentials][az-aks-get-credentials] команды. В одном из следующих действий, вы получаете стандартным *пользователя* учетных данных для проверки подлинности Azure AD см. в разделе кластера потока в действии.
+Наконец, получите учетные данные администратора кластера с помощью команды [AZ AKS Get-Credential][az-aks-get-credentials] . В одном из следующих шагов вы получите учетные данные регулярного кластера *пользователей* , чтобы увидеть последовательность проверки подлинности Azure AD в действии.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name $aksname --admin
@@ -161,18 +161,18 @@ az aks get-credentials --resource-group myResourceGroup --name $aksname --admin
 
 ## <a name="create-rbac-binding"></a>Создание привязки RBAC
 
-Прежде чем использовать учетную запись Azure Active Directory с кластером AKS, необходимо создать привязку роли или привязку роли кластера. *Роли* определяют разрешения для предоставления, а *привязки* применяют их к желаемым пользователям. Эти назначения могут применяться для определенного пространства имен или в масштабах всего кластера. Дополнительные сведения см. в разделе [авторизации с помощью RBAC][rbac-authorization].
+Прежде чем использовать учетную запись Azure Active Directory с кластером AKS, необходимо создать привязку роли или привязку роли кластера. *Роли* определяют разрешения для предоставления, а *привязки* применяют их к желаемым пользователям. Эти назначения могут применяться для определенного пространства имен или в масштабах всего кластера. Дополнительные сведения см. [в разделе Использование авторизации RBAC][rbac-authorization].
 
-Получить имя участника-пользователя (UPN), для пользователь в настоящее время выполнил вход с помощью [az ad войдете в систему пользователя show][az-ad-signed-in-user-show] команды. Эта учетная запись пользователя включена для интеграции с Azure AD на следующем шаге.
+Получите имя участника-пользователя (UPN) для пользователя, вошедшего в систему, с помощью команды [AZ AD выполнившего вход — User демонстрация][az-ad-signed-in-user-show] . В следующем шаге эта учетная запись пользователя включена для интеграции с Azure AD.
 
 ```azurecli-interactive
 az ad signed-in-user show --query userPrincipalName -o tsv
 ```
 
 > [!IMPORTANT]
-> Если вы предоставляете привязки RBAC для пользователя в одном клиенте Azure AD, назначать разрешения на основе *userPrincipalName*. Если пользователь находится в другой каталог Azure AD клиента, запрашивать и использовать *objectId* свойство вместо этого.
+> Если пользователь, которому вы предоставляете привязку RBAC для, находится в том же клиенте Azure AD, назначьте разрешения на основе *userPrincipalName*. Если пользователь находится в другом клиенте Azure AD, вместо него следует запрашивать и использовать свойство *ObjectID* .
 
-Создание yaml-ФАЙЛ манифеста с именем `basic-azure-ad-binding.yaml` и вставьте следующее содержимое. В последней строке, замените *userPrincipalName_or_objectId* с выходными данными идентификатор имени участника-пользователя или объекта из предыдущей команды:
+Создайте манифест YAML с именем `basic-azure-ad-binding.yaml` и вставьте следующее содержимое. В последней строке замените *userPrincipalName_or_objectId* на выходные данные имени участника-пользователя или идентификатора объекта из предыдущей команды:
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -189,7 +189,7 @@ subjects:
   name: userPrincipalName_or_objectId
 ```
 
-Создается при помощи ClusterRoleBinding [kubectl применить][kubectl-apply] команду и укажите имя файла yaml-ФАЙЛ манифеста:
+Создайте Клустерролебиндинг с помощью команды [kubectl Apply][kubectl-apply] и укажите имя файла манифеста YAML:
 
 ```console
 kubectl apply -f basic-azure-ad-binding.yaml
@@ -197,19 +197,19 @@ kubectl apply -f basic-azure-ad-binding.yaml
 
 ## <a name="access-cluster-with-azure-ad"></a>Доступ к кластеру с помощью Azure AD
 
-Теперь давайте протестируем интеграции проверки подлинности Azure AD в кластере AKS. Задайте `kubectl` контекста конфигурации для использования учетных данных для обычных пользователей. Этот контекст передает все запросы проверки подлинности через Azure AD.
+Теперь давайте протестируем интеграцию аутентификации Azure AD для кластера AKS. Задайте для контекста конфигурации использование обычных учетных данных пользователя. `kubectl` Этот контекст передает все запросы проверки подлинности обратно через Azure AD.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name $aksname --overwrite-existing
 ```
 
-Теперь с помощью [kubectl get pods][kubectl-get] команду, чтобы просматривать модулей для всех пространств имен:
+Теперь используйте команду [kubectl Get][kubectl-get] Pod для просмотра модулей Pod во всех пространствах имен:
 
 ```console
 kubectl get pods --all-namespaces
 ```
 
-Появляется знак в строке для проверки подлинности, используя учетные данные Azure AD в веб-браузере. После вы успешно прошли проверку подлинности, `kubectl` команда отображает POD, содержащихся в кластере AKS, как показано в следующем примере выходных данных:
+Вы получаете запрос на вход для аутентификации с помощью учетных данных Azure AD с помощью веб-браузера. После успешной проверки подлинности `kubectl` команда отображает модули Pod в кластере AKS, как показано в следующем примере выходных данных:
 
 ```console
 $ kubectl get pods --all-namespaces
@@ -228,27 +228,27 @@ kube-system   metrics-server-7b97f9cd9-btxzz          1/1     Running   0       
 kube-system   tunnelfront-6ff887cffb-xkfmq            1/1     Running   0          23h
 ```
 
-Полученный маркер проверки подлинности для `kubectl` кэшируется. Кроме того, являются только reprompted для входа при истечении срока действия токена или файле конфигурации Kubernetes создается заново.
+Токен проверки подлинности `kubectl` , полученный для, кэшируется. После истечения срока действия маркера или повторного создания файла конфигурации Kubernetes будет предложено только выполнить вход.
 
-Если вы видите сообщение об ошибке авторизации, после успешного входа в браузере, как показано в следующем примере выходных данных, проверьте следующие возможные причины:
+Если вы видите сообщение об ошибке авторизации после успешного входа с помощью веб-браузера, как показано в следующем примере выходных данных, проверьте следующие возможные проблемы.
 
 ```console
 error: You must be logged in to the server (Unauthorized)
 ```
 
-* Соответствующий идентификатор объекта или имя участника-пользователя, зависимости, является ли учетная запись пользователя в одном клиенте Azure AD или не определен.
+* Вы определили соответствующий идентификатор объекта или имя участника-пользователя в зависимости от того, находится ли учетная запись пользователя в том же клиенте Azure AD или нет.
 * Пользователь не может быть членом более чем 200 групп.
-* Секрет, определенные в регистрации приложения для сервера совпадает со значением, настроенные с помощью `--aad-server-app-secret`
+* Секрет, определенный в регистрации приложения для сервера, соответствует значению, заданному с помощью`--aad-server-app-secret`
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Полный скрипт, который содержит команды, показанные в этой статье, см. в разделе [сценарий интеграции Azure AD в AKS примеры репозитория][complete-script].
+Полный сценарий, содержащий команды, приведенные в этой статье, см. в разделе [сценарий интеграции Azure AD в репозитории примеров AKS][complete-script].
 
-Чтобы использовать Azure AD — пользователи и группы для управления доступом к ресурсам кластера, см. в разделе [управления доступом к ресурсам кластера, с помощью управления доступом и удостоверениями Azure AD в AKS][azure-ad-rbac].
+Сведения об использовании пользователей и групп Azure AD для управления доступом к ресурсам кластера см. [в статье Управление доступом к ресурсам кластера с помощью управления доступом на основе ролей и удостоверений Azure AD в AKS][azure-ad-rbac].
 
-Дополнительные сведения о защите кластеров Kubernetes см. в разделе [параметры доступа и удостоверений для AKS)][rbac-authorization].
+Дополнительные сведения о защите кластеров Kubernetes см. в разделе [параметры доступа и удостоверений для AKS][rbac-authorization].
 
-Советы и рекомендации для управления удостоверениями и ресурсов, см. в разделе [советы и рекомендации для проверки подлинности и авторизации в AKS][operator-best-practices-identity].
+Рекомендации по управлению удостоверениями и ресурсами см. [в разделе рекомендации по проверке подлинности и авторизации в AKS][operator-best-practices-identity].
 
 <!-- LINKS - external -->
 [kubernetes-webhook]:https://kubernetes.io/docs/reference/access-authn-authz/authentication/#webhook-token-authentication
