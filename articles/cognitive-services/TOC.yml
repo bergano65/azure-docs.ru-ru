@@ -5,6 +5,8 @@
   items:
     - name: Что такое Cognitive Services?
       href: Welcome.md
+    - name: Пользовательские поддомены для Cognitive Services
+      href: cognitive-services-custom-subdomains.md
     - name: Cognitive Services и Машинное обучение
       href: cognitive-services-and-machine-learning.md
     - name: Поддержка языков

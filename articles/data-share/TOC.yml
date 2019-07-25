@@ -13,7 +13,7 @@
       href: subscribe-to-data-share.md
 - name: Основные понятия
   items:
-    - name: Терминология по Azure Data Share
+    - name: Терминология Azure Data Share
       href: terminology.md
     - name: Роли и требования
       href: concepts-roles-permissions.md

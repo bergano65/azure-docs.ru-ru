@@ -63,18 +63,18 @@
       href: template-best-practices.md
     - name: Шаблоны для обеспечения согласованности данных в облаке
       href: templates-cloud-consistency.md
-    - name: Поставщики и типы ресурсов
-      href: resource-manager-supported-services.md
-    - name: Диспетчер развертывания
-      displayName: adm
-      href: deployment-manager-overview.md
-    - name: Проверка работоспособности диспетчера развертывания
-      displayName: adm
-      href: deployment-manager-health-check.md
     - name: Режимы развертывания
       href: deployment-modes.md
     - name: Удаление ресурсов
       href: resource-group-delete.md
+    - name: Диспетчер развертывания
+      items:
+        - name: Обзор
+          displayName: 'adm, deployment manager'
+          href: deployment-manager-overview.md
+        - name: Проверка работоспособности
+          displayName: 'adm, deployment manager'
+          href: deployment-manager-health-check.md
     - name: Развертывание с помощью Azure Resource Manager и классическая модель развертывания
       href: resource-manager-deployment-model.md
     - name: Общие атрибуты безопасности Azure
@@ -228,6 +228,8 @@
           href: resource-manager-sku-not-available-errors.md
         - name: Проблемы с развертыванием в Windows
           href: ../virtual-machines/windows/troubleshoot-deploy-vm.md
+    - name: Поставщики и типы ресурсов
+      href: resource-manager-supported-services.md
     - name: Запросы на регулирование
       href: resource-manager-request-limits.md
     - name: Отслеживание асинхронных операций

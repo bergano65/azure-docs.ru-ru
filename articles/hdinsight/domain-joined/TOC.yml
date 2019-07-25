@@ -2,8 +2,8 @@
   href: /azure/hdinsight
 - name: Обзор
   items:
-    - name: Общие сведения о Корпоративном пакете безопасности в HDInsight
-      href: apache-domain-joined-introduction.md
+    - name: Что собой представляет система корпоративной безопасности в HDInsight?
+      href: hdinsight-security-overview.md
 - name: Учебники
   items:
     - name: Apache HBase RBAC и Apache Ranger

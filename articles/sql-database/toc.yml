@@ -19,7 +19,7 @@
       href: sql-database-managed-instance-quickstart-guide.md
     - name: Создание
       items:
-        - name: "Отдельная база данных\_— портал"
+        - name: Отдельная база данных
           href: sql-database-single-database-get-started.md
         - name: "Отдельная база данных\_— шаблон"
           displayName: 'Azure Resource Manager template, ARM'
@@ -91,10 +91,18 @@
       items:
         - name: Миграция в отдельную базу данных или базу данных в пуле с помощью DMS
           href: ../dms/tutorial-sql-server-to-azure-sql.md?toc=/azure/sql-database/toc.json
+        - name: Добавление группы отработки отказа
+          href: sql-database-single-database-failover-group-tutorial.md
         - name: Реализация географически распределенной базы данных
           href: sql-database-implement-geo-distributed-database.md
+        - name: Настройка активной георепликации
+          href: sql-database-active-geo-replication-portal.md
         - name: "Настройка Синхронизации данных SQL\_Azure"
           href: sql-database-get-started-sql-data-sync.md
+    - name: Эластичный пул
+      items:
+        - name: Добавление группы отработки отказа
+          href: sql-database-elastic-pool-failover-group-tutorial.md
     - name: Управляемый экземпляр
       items:
         - name: Онлайн-миграция с помощью DMS
@@ -245,8 +253,6 @@
               href: sql-database-active-geo-replication.md
             - name: Группы автоматической отработки отказа
               href: sql-database-auto-failover-group.md
-            - name: Настройка активной георепликации с помощью портала
-              href: sql-database-active-geo-replication-portal.md
             - name: Настройка параметров безопасности для реплик
               href: sql-database-geo-replication-security-config.md
         - name: Варианты восстановления базы данных
@@ -516,6 +522,8 @@
           href: sql-database-managed-instance-connect-app.md
     - name: Загрузка и перемещение данных
       items:
+        - name: Перемещение ресурса в новый регион
+          href: sql-database-move-resources-across-regions.md
         - name: Копирование базы данных в пределах Azure
           href: sql-database-copy.md
         - name: Импорт базы данных из BACPAC-файла

@@ -1,24 +1,25 @@
 ---
 layout: HubPage
-title: Документация по службам Azure Cognitive Services
+title: Документация по службам Cognitive Services в Azure
 description: Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные алгоритмы, позволяющие видеть, слышать, говорить, понимать и интерпретировать потребности клиентов с помощью естественных способов общения. Руководства, краткие руководства, справочники по API и примеры использования API.
 services: cognitive-services
 author: nitinme
 manager: nitinme
 ms.service: cognitive-services
 ms.author: nitinme
-ms.date: 06/20/2019
+ms.date: 07/22/2019
 ms.topic: hub-page
-ms.openlocfilehash: 1e78c31c19bdbc8ea223c504a53f1df73caa5d44
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: ad403b58a0f6aad37e9d8d547d269b9f45566559
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295387"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68442822"
 ---
 <div id="main" class="v2">
-<h1>Документация по службам Azure Cognitive Services</h1>
-        <p style="font-size: 1.12rem;margin-bottom: 1rem;">Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные алгоритмы, которые могут видеть, слышать, говорить и понимать потребности клиентов с помощью обычных средств связи. Руководства, краткие инструкции, справочники по API и примеры использования.</p>
+<h1>Документация по службам Cognitive Services в Azure</h1>
+        <p style="font-size: 1.12rem;margin-bottom: 1rem;">Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные алгоритмы, позволяющие видеть, слышать, говорить и понимать потребности клиентов с помощью обычных средств связи. Руководства, краткие инструкции, справочники по API и примеры использования.</p>
+        <p> У каждой службы собственные <a href="/azure/cognitive-services/language-support">требования к модели данных</a> и <a href="/azure/cognitive-services/cognitive-services-and-machine-learning#service-requirements-for-the-data-model">поддержка языков</a> — от полностью обученной до полностью настраиваемой модели. 
 
 
 <h2>API-интерфейсы Cognitive Services</h2>
@@ -28,10 +29,10 @@ ms.locfileid: "67295387"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>API компьютерного зрения</h3>
+                        <h3>API Компьютерного зрения</h3>
                         <p><a href="/azure/cognitive-services/computer-vision/">Компьютерное зрение</a></p>
                         <p><a href="/azure/cognitive-services/Custom-Vision-Service/">Пользовательское визуальное распознавание</a></p>
-                        <p><a href="/azure/cognitive-services/face/">API распознавания лиц</a></p>
+                        <p><a href="/azure/cognitive-services/face/">API Распознавания лиц</a></p>
                         <p><a href="https://go.microsoft.com/fwlink/?linkid=2088514"><span>Распознаватель документов&nbsp;<sup style="font-size:70%">предварительная версия</sup></span></a></p>
                         <p><a href="https://go.microsoft.com/fwlink/?linkid=2088323"><span>Распознаватель рукописного текста&nbsp;<sup style="font-size:70%">предварительная версия</sup></span></a></p>
                         <p><a href="/azure/cognitive-services/video-indexer/video-indexer-overview">Индексатор видео</a></p>
@@ -47,8 +48,8 @@ ms.locfileid: "67295387"
                     <div class="cardText">
                         <h3>SAPI</h3>
                         <p><a href="/azure/cognitive-services/speech-service">Службы "Речь"</a></p>
-                        <p><a href="/azure/cognitive-services/speaker-recognition/home"><span>API распознавания говорящего&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
-                        <p><a href="/azure/cognitive-services/speech/home"><span>API распознавания речи Bing&nbsp;<sup style="font-size:70%">на этапе прекращения использования</sup></span></a></p>
+                        <p><a href="/azure/cognitive-services/speaker-recognition/home"><span>API Распознавания говорящего&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
+                        <p><a href="/azure/cognitive-services/speech/home"><span>API Распознавания речи Bing&nbsp;<sup style="font-size:70%">на этапе прекращения использования</sup></span></a></p>
                         <p><a href="/azure/cognitive-services/translator-speech/"><span>Перевод речи&nbsp;<sup style="font-size:70%">на этапе прекращения использования</sup></span></a></p>
                      </div>
                 </div>
@@ -85,7 +86,7 @@ ms.locfileid: "67295387"
                         <p><a href="/azure/cognitive-services/bing-image-search">Поиск изображений Bing</a></p>
                         <p><a href="/azure/cognitive-services/bing-visual-search">Визуальный поиск Bing</a></p>
                         <p><a href="/azure/cognitive-services/bing-spell-check/">Проверка орфографии Bing</a></p>
-                        <p><a href="/azure/cognitive-services/bing-local-business-search"><span>Bing Local Business Search&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
+                        <p><a href="/azure/cognitive-services/bing-local-business-search"><span>Поиск местных компаний Bing&nbsp;<sup style="font-size:70%">Предварительная версия</sup></span></a></p>
                     </div>
                 </div>
             </div>
@@ -97,7 +98,7 @@ ms.locfileid: "67295387"
                 <div class="card">
                     <div class="cardText">
                         <h3>API принятия решений</h3>
-                        <p><a href="/azure/cognitive-services/anomaly-detector/"><span>Детектор аномалий&nbsp;<sup style="font-size:70%">ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ</sup></span></a></p>
+                        <p><a href="/azure/cognitive-services/anomaly-detector/"><span>Детектор аномалий&nbsp;<sup style="font-size:70%">предварительная версия</sup></span></a></p>
                         <p><a href="/azure/cognitive-services/content-moderator/">Content Moderator</a></p>
                         <p><a href="https://go.microsoft.com/fwlink/?linkid=2088324"><span>Персонализатор&nbsp;<sup style="font-size:70%">предварительная версия</sup></span></a></p>
                     </div>
@@ -123,6 +124,25 @@ ms.locfileid: "67295387"
                             <div class="cardText">
                                 <h3>Что такое Cognitive Services?</h3>
                                 <p>Узнайте о службах Azure Cognitive Services и о том, как использовать различные интерфейсы API для создания интеллектуальных приложений.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="/azure/cognitive-services/cognitive-services-and-machine-learning/">
+                <div class="cardSize">
+                    <div class="cardPadding">
+                        <div class="card">
+                            <div class="cardImageOuter">
+                                <div class="cardImage">
+                                    <img src="media/index/i_get-started.svg" alt="" />
+                                </div>
+                            </div>
+                            <div class="cardText">
+                                <h3>Cognitive Services и машинное обучение</h3>
+                                <p>Узнайте, в чем заключается сходство Azure Cognitive Services с другими предложениями Azure для машинного обучения.</p>
                             </div>
                         </div>
                     </div>
@@ -218,7 +238,7 @@ ms.locfileid: "67295387"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Анализ изображения с помощью API компьютерного зрения</h3>
+                        <h3>Анализ изображения с помощью API Компьютерного зрения</h3>
                         <p><a href="/azure/cognitive-services/Computer-vision/quickstarts-sdk/csharp-analyze-sdk">С использованием C#</a></p>
                         <p><a href="/azure/cognitive-services/bing-visual-search/quickstarts/java">С использованием Java</a></p>
                         <p><a href="/azure/cognitive-services/Computer-vision/Quickstarts/node-analyze">Использование Node.js</a></p>
@@ -278,7 +298,7 @@ ms.locfileid: "67295387"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Определение языка и анализ тональности с помощью API анализа текста</h3>
+                        <h3>Определение языка и анализ тональности с помощью API Анализа текста</h3>
                         <p><a href="/azure/cognitive-services/Text-Analytics/quickstarts/csharp">С использованием C#</a></p>
                         <p><a href="/azure/cognitive-services/Text-Analytics/quickstarts/java">С использованием Java</a></p>
                         <p><a href="/azure/cognitive-services/Text-Analytics/quickstarts/nodejs">Использование Node.js</a></p>
@@ -298,7 +318,7 @@ ms.locfileid: "67295387"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Получение релевантных веб-запросов с помощью API Bing для поиска в Интернете</h3>
+                        <h3>Получение релевантных веб-запросов с помощью API Поиска в Интернете Bing</h3>
                         <p><a href="/azure/cognitive-services/bing-web-search/quickstarts/csharp">С использованием C#</a></p>
                         <p><a href="/azure/cognitive-services/bing-web-search/quickstarts/java">С использованием Java</a></p>
                         <p><a href="/azure/cognitive-services/bing-web-search/quickstarts/nodejs">Использование Node.js</a></p>
@@ -318,7 +338,7 @@ ms.locfileid: "67295387"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Получение релевантных запросов изображений с помощью API Bing для поиска изображений</h3>
+                        <h3>Получение релевантных запросов изображений с помощью API Поиска изображений Bing</h3>
                         <p><a href="/azure/cognitive-services/bing-image-search/quickstarts/csharp">С использованием C#</a></p>
                         <p><a href="/azure/cognitive-services/bing-image-search/quickstarts/java">С использованием Java</a></p>
                         <p><a href="/azure/cognitive-services/bing-image-search/quickstarts/nodejs">Использование Node.js</a></p>
@@ -330,19 +350,19 @@ ms.locfileid: "67295387"
     </li>
 </ul>
 
-<h2>Пошаговые руководства</h2>
+<h2>Пошаговые инструкции</h2>
 <ul class="cardsM panelContent singlePanelContent cols cols3" style="display:flex!important;">
     <li>
         <a class="card" href="/azure/cognitive-services/Computer-vision/tutorials/csharptutorial" data-linktype="external"><img class="cardImage" alt="" src="media/index/i_tasks.svg" data-linktype="external">
             <div class="cardText">
-                <h3>Создание приложения с помощью API компьютерного зрения</h3>
+                <h3>Создание приложения с помощью API Компьютерного зрения</h3>
             </div>
         </a>
     </li>
     <li>
         <a class="card" href="/azure/cognitive-services/speech-service/how-to-recognize-intents-from-speech-csharp" data-linktype="external"><img class="cardImage" alt="" src="media/index/i_tasks.svg" data-linktype="external">
             <div class="cardText" >
-                <h3>Распознавание намерений с помощью пакета SDK для распознавания речи и LUIS</h3>
+                <h3>Распознавание намерений с помощью пакета SDK для службы "Речь" и LUIS</h3>
             </div>
         </a>
     </li>
@@ -356,14 +376,14 @@ ms.locfileid: "67295387"
     <li>
         <a class="card" href="/azure/cognitive-services/Text-Analytics/tutorials/tutorial-power-bi-key-phrases" data-linktype="external"><img class="cardImage" alt="" src="media/index/i_tasks.svg" data-linktype="external">
             <div class="cardText">
-                <h3>Использование API анализа текста с Power BI</h3>
+                <h3>Использование API Анализа текста с Power BI</h3>
             </div>
         </a>
     </li>
     <li>
         <a class="card" href="/azure/cognitive-services/bing-web-search/tutorial-bing-web-search-single-page-app" data-linktype="external"><img class="cardImage" alt="" src="media/index/i_tasks.svg" data-linktype="external">
             <div class="cardText">
-                <h3>Создание приложения для Поиска в Интернете Bing</h3>
+                <h3>Создание приложения Поиска в Интернете Bing</h3>
             </div>
         </a>
     </li>

@@ -6,6 +6,12 @@
       href: home.md
 - name: Краткие руководства
   items:
+    - name: Использование веб-портала
+      items:
+        - name: Построение классификатора
+          href: getting-started-build-a-classifier.md
+        - name: Создание средства обнаружения объектов
+          href: get-started-build-detector.md
     - name: С помощью пакета SDK для .NET
       items:
         - name: Классификация изображений
@@ -40,10 +46,8 @@
   items:
     - name: Средство обнаружения логотипов для мобильных устройств
       href: logo-detector-mobile.md
-- name: Инструкции
+- name: Руководства
   items:
-    - name: Построение классификатора
-      href: getting-started-build-a-classifier.md
     - name: Тестирование модели
       href: test-your-model.md
     - name: Усовершенствование классификатора
