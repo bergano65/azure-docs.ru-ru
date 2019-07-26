@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: ca2a7edff4b8c06b2838474449360b4b14b3e393
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d26e8a21865304b2065a28da5e241f58cb5ab34c
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67092961"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68383220"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-reflektive"></a>Руководство по Интеграция Azure Active Directory с Reflektive
 
@@ -138,7 +138,7 @@ ms.locfileid: "67092961"
 
 ### <a name="configure-reflektive-single-sign-on"></a>Настройка единого входа в Reflektive
 
-Чтобы настроить единый вход на стороне **Reflektive**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Reflektive](mailto: https://support@reflektive.com/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Reflektive**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Reflektive](mailto:support@reflektive.com/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -192,7 +192,7 @@ ms.locfileid: "67092961"
 
 ### <a name="create-reflektive-test-user"></a>Создание тестового пользователя Reflektive
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Reflektive. Чтобы добавить пользователей на платформу Reflektive, обратитесь к [группе поддержки Reflektive](mailto: https://support@reflektive.com/). Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Reflektive. Чтобы добавить пользователей на платформу Reflektive, обратитесь к [группе поддержки Reflektive](mailto:support@reflektive.com/). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -206,5 +206,5 @@ ms.locfileid: "67092961"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

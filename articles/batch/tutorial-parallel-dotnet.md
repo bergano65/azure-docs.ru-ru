@@ -3,7 +3,7 @@ title: Запуск параллельной рабочей нагрузки с 
 description: Руководство. Перекодировка медиафайлов параллельно с ffmpeg в пакетной службе с помощью клиентской библиотеки пакетной службы для .NET
 services: batch
 author: laurenhughes
-manager: jeconnoc
+manager: gwallace
 ms.assetid: ''
 ms.service: batch
 ms.devlang: dotnet
@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 12/21/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: e450ca0ff2578c4ec2ce95c14a17735860044b59
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 4350cc215c776317d3bde24c7561c317a31fb4c3
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65595244"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68321869"
 ---
 # <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-net-api"></a>Руководство по Запуск параллельной рабочей нагрузки с помощью пакетной службы Azure с использованием .NET API
 
@@ -71,7 +71,7 @@ git clone https://github.com/Azure-Samples/batch-dotnet-ffmpeg-tutorial.git
 
 Перейдите в каталог, в котором содержится файл решения Visual Studio `BatchDotNetFfmpegTutorial.sln`.
 
-Откройте файл решения в Visual Studio и замените строки учетных данных в `Program.cs` значениями, полученными для своих учетных записей. Например: 
+Откройте файл решения в Visual Studio и замените строки учетных данных в `Program.cs` значениями, полученными для своих учетных записей. Например:
 
 ```csharp
 // Batch account credentials

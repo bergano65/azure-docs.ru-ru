@@ -1,6 +1,6 @@
 ---
 title: Использование API "Проверка орфографии Bing"
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: В этой статье описаны режимы проверки орфографии Bing, параметры и другие сведения, относящиеся к API.
 services: cognitive-services
 author: aahill
@@ -10,12 +10,12 @@ ms.subservice: bing-spell-check
 ms.topic: overview
 ms.date: 02/20/2019
 ms.author: aahi
-ms.openlocfilehash: b847615e8440a8992c8130d12cd6111afe3d33d2
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 7fd528b5f21622051bdad67c6ffcb6dd8500386a
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66390236"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68423640"
 ---
 # <a name="using-the-bing-spell-check-api"></a>Использование API "Проверка орфографии Bing"
 
@@ -123,4 +123,4 @@ text=when+its+your+turn+turn,+john,+come+runing
 ## <a name="next-steps"></a>Дополнительная информация
 
 - [Что такое API проверки орфографии Bing?](../overview.md)
-- [Справочник по API проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)
+- [Справочник по API Проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)

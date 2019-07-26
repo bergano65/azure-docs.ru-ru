@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" с помощью C# | Документация Майкрософт
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Используйте это краткое руководство, чтобы начать запрос результатов поиска из Пользовательского поиска Bing в C#.
 services: cognitive-services
 author: aahill
@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-custom-search
 ms.topic: quickstart
-ms.date: 06/18/2018
+ms.date: 07/15/2019
 ms.author: maheshb
-ms.openlocfilehash: 87c6744dd9ee0a921a422320563f10acff9ed875
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: c1b118ec08e00705ad3eab9141d116fb9e6ef257
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67206222"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68405191"
 ---
 # <a name="quickstart-call-your-bing-custom-search-endpoint-using-c"></a>Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" с помощью C# 
 

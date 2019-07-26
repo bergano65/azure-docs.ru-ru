@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Проверка орфографии с помощью REST API проверки орфографии Bing и Python
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Приступите к работе с REST API проверки орфографии Bing для проверки орфографии и грамматики.
 services: cognitive-services
 author: aahill
@@ -10,12 +10,12 @@ ms.subservice: bing-spell-check
 ms.topic: quickstart
 ms.date: 02/20/2019
 ms.author: aahi
-ms.openlocfilehash: e74cc01d9104ed4f26d857f3a99eb21e312a7f59
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 90d026c12007d74de176d222e11b48d15c174855
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66389734"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68500980"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-rest-api-and-python"></a>Краткое руководство. Проверка орфографии с помощью REST API проверки орфографии Bing и Python
 
@@ -133,4 +133,4 @@ ms.locfileid: "66389734"
 > [Создание одностраничного веб-приложения](../tutorials/spellcheck.md)
 
 - [Что такое API проверки орфографии Bing?](../overview.md)
-- [Справочник по API проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)
+- [Справочник по API Проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)

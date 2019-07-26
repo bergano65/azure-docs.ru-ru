@@ -8,12 +8,12 @@ ms.author: tarcher
 manager: jeconnoc
 ms.topic: tutorial
 ms.date: 11/15/2018
-ms.openlocfilehash: 90f89f9ffb1d55e7621c87f168375251c78d9730
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 019c4a8f77f2664c68dcc6499fb2f27cc0d1447c
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57533499"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68326926"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-with-jenkins-continuous-integration-and-deployment"></a>Руководство. Развертывание из GitHub в Службе приложений Azure с использованием непрерывной интеграции и непрерывного развертывания Jenkins
 
@@ -61,7 +61,7 @@ ms.locfileid: "57533499"
 
 1. На вкладке **Available** (Доступные) выберите такие подключаемые модули:
 
-   - [службе приложений Azure](https://plugins.jenkins.io/azure-app-service)
+   - [Служба приложений Azure](https://plugins.jenkins.io/azure-app-service)
    - [GitHub Branch Source](https://plugins.jenkins.io/github-branch-source);
    - [Environment Injector](https://plugins.jenkins.io/envinject);
    - [Azure Credentials](https://plugins.jenkins.io/azure-credentials).
@@ -122,7 +122,7 @@ ms.locfileid: "57533499"
 
 ## <a name="create-service-principal"></a>Создание субъекта-службы
 
-В одном из следующих разделов вы создадите задание конвейера Jenkins, чтобы выполнить сборку приложения из GitHub и развернуть его в Службе приложений Azure. Чтобы обеспечить доступ Jenkins к Azure без ввода учетных данных, создайте [субъект-службу](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals) в Azure Active Directory для Jenkins. Субъект-служба — это отдельное удостоверение, которое Jenkins может использовать для проверки подлинности при доступе к ресурсам Azure. Чтобы создать такой субъект-службу, выполните команду Azure CLI [**`az ad sp create-for-rbac`**](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest) из локальной командной строки или Azure Cloud Shell, например: 
+В одном из следующих разделов вы создадите задание конвейера Jenkins, чтобы выполнить сборку приложения из GitHub и развернуть его в Службе приложений Azure. Чтобы обеспечить доступ Jenkins к Azure без ввода учетных данных, создайте [субъект-службу](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals) в Azure Active Directory для Jenkins. Субъект-служба — это отдельное удостоверение, которое Jenkins может использовать для проверки подлинности при доступе к ресурсам Azure. Чтобы создать такой субъект-службу, выполните команду Azure CLI [ **`az ad sp create-for-rbac`** ](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest) из локальной командной строки или Azure Cloud Shell, например: 
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourSecurePassword
@@ -130,7 +130,7 @@ az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourS
 
 Обязательно заключите имя субъекта-службы в кавычки. Также создайте надежный пароль, учитывая [правила и ограничения для паролей в Azure Active Directory](/azure/active-directory/active-directory-passwords-policy). Если не указать пароль, Azure CLI создаст его автоматически. 
 
-Ниже приведены выходные данные команды **`create-for-rbac`**. 
+Ниже приведены выходные данные команды **`create-for-rbac`** . 
 
 ```json
 {
@@ -169,7 +169,6 @@ az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourS
    | **Секрет клиента** | <*yourSecurePassword*> | Значение `password` или секрет, который вы указали для субъекта-службы Azure. | 
    | **Идентификатор клиента** | <*yourAzureActiveDirectoryTenant-ID*> | Значение GUID `tenant` для клиента Azure Active Directory. | 
    | **Идентификатор** | <*yourAzureServicePrincipalName*> | Значение `displayName` для субъекта-службы Azure. | 
-   |||| 
 
 1. Чтобы проверить, работает ли субъект-служба, выберите **Verify Service Principal** (Проверить субъект-службу). Когда все будет готово, нажмите кнопку **ОК**.
 

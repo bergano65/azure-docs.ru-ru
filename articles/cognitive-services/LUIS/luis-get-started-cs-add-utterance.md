@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 07/16/2019
 ms.author: diberry
-ms.openlocfilehash: 01fd5b06a2e534a85c88d5c1a706713f07f40106
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: d44877e35687745ddba51d4d015729e62106c9ca
+ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68277553"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68348448"
 ---
 # <a name="quickstart-change-model-using-c"></a>Краткое руководство. Изменение модели с помощью C#
 
@@ -57,7 +57,7 @@ ms.locfileid: "68277553"
 ### <a name="write-the-c-code"></a>Написание кода C#
 Файл **Program.cs** должен выглядеть так:
 
-```C#
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;

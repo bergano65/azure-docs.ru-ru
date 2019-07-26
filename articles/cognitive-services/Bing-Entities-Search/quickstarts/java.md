@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Отправка запросов для поиска в REST API Bing для поиска сущностей с помощью Java
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве показано, как отправлять запросы в REST API Bing для поиска сущностей с помощью Java и получать ответы в формате JSON.
 services: cognitive-services
 author: aahill
@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
-ms.date: 02/01/2019
+ms.date: 07/24/2019
 ms.author: aahi
-ms.openlocfilehash: a8b25252e861d707568876f75aadd6f436441f8f
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 1f7d9620198042adc7f96e7c4aaa269f73870df0
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66389438"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68478993"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-java"></a>Краткое руководство. Отправка запросов для поиска в REST API Bing для поиска сущностей с помощью Java
 

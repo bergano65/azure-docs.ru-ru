@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 07/08/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 3510c0505a5a3c1353642baf5060a83d13fdd43a
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 885c877f219f59ab5049cf7b8e01243077d6d3eb
+ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67808114"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68348389"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>Миграция виртуальных машин VMware в Azure (без агента)
 
@@ -104,7 +104,7 @@ ms.locfileid: "67808114"
 **Действие** | **Дополнительные сведения** | **Указания**
 --- | --- | ---
 Убедитесь, что тома Windows в виртуальной машине Azure используют те же назначения букв дисков, что и на локальной виртуальной машине. | Для политики SAN выберите значение "Перевод всего в состояние «в сети»". | 1. Войдите в виртуальную машину с помощью учетной записи администратора и откройте командное окно.<br/> 2. Введите **diskpart** для запуска служебной программы Diskpart.<br/> 3. Введите **SAN POLICY=OnlineAll**<br/> 4. Введите Exit, чтобы выйти из Diskpart, и закройте командную строку.
-Включение консоли последовательного доступа Azure для виртуальной машины Azure | Это помогает при устранении неполадок. Перезагружать виртуальную машину не нужно. Виртуальная машина Azure будет загружаться с использованием образа диска, что эквивалентно перезагрузке новой виртуальной машины. | Чтобы включить, следуйте [этим инструкциям](https://docs.microsoft.com/azure/virtual-machines/windows/serial-console#enable-serial-console-in-custom-or-older-images).
+Включение консоли последовательного доступа Azure для виртуальной машины Azure | Это помогает при устранении неполадок. Перезагружать виртуальную машину не нужно. Виртуальная машина Azure будет загружаться с использованием образа диска, что эквивалентно перезагрузке новой виртуальной машины. | Чтобы включить, следуйте [этим инструкциям](https://docs.microsoft.com/azure/virtual-machines/windows/serial-console).
 Установка гостевой интеграции Hyper-V | Если вы переносите машины под управлением Windows Server 2003, установите Hyper-V Guest Integration Services в операционной системе виртуальной машины. | [Узнайте больше](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#install-or-update-integration-services).
 Удаленный рабочий стол | Включите удаленный рабочий стол на виртуальной машине и убедитесь, что брандмауэр Windows не блокирует доступ к удаленному рабочему столу ни в одном сетевом профиле. | [Узнайте больше](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access).
 

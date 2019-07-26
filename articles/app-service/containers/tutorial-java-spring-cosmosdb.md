@@ -8,13 +8,13 @@ ms.service: app-service-web
 ms.devlang: java
 ms.topic: tutorial
 ms.date: 12/10/2018
-ms.custom: seodec18
-ms.openlocfilehash: 069bc213695de813ad6b878db54f38a909efd1df
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.custom: seodec18, seo-java-july2019
+ms.openlocfilehash: 625e40b4dcb8ac558831508b292fd5cbcfb90b5b
+ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65956036"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68489458"
 ---
 # <a name="tutorial-build-a-java-web-app-using-spring-and-azure-cosmos-db"></a>Руководство. Создание веб-приложения Java с использованием Spring и Azure Cosmos DB
 
@@ -169,7 +169,7 @@ bash-3.2$ mvn package spring-boot:run
 
 После запуска приложения со списком задач Spring к нему можно получить доступ локально с помощью этой ссылки: [http://localhost:8080/](http://localhost:8080/).
 
- ![](./media/tutorial-java-spring-cosmosdb/spring-todo-app-running-locally.jpg)
+ ![Приложение Java, работающее в службе приложений Azure](./media/tutorial-java-spring-cosmosdb/spring-todo-app-running-locally.jpg)
 
 Если вместо сообщения "Приложение со списком задач запущено" отображаются исключения, убедитесь, что скрипт `bash` на предыдущем шаге правильно экспортировал переменные среды и что значения для созданной базы данных Azure Cosmos DB верны.
 
@@ -263,7 +263,7 @@ open https://spring-todo-app.azurewebsites.net
 
 Вы должны увидеть приложение, которое выполняется с удаленным URL-адресом, в адресной строке:
 
- ![](./media/tutorial-java-spring-cosmosdb/spring-todo-app-running-in-app-service.jpg)
+ ![Приложение Java, работающее в службе приложений Azure](./media/tutorial-java-spring-cosmosdb/spring-todo-app-running-in-app-service.jpg)
 
 ## <a name="stream-diagnostic-logs"></a>Потоковая передача журналов диагностики
 

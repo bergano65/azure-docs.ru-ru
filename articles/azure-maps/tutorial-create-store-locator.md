@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 0d7ca38ecb66dbf92678eae4da7d8706f68cbaa2
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 4cc21a4dbab7d5114eed8414c6530eab5f42bb00
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67273821"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68478859"
 ---
 # <a name="create-a-store-locator-by-using-azure-maps"></a>Создание указателя магазинов с помощью Azure Maps
 
@@ -139,7 +139,7 @@ ms.locfileid: "67273821"
 1. Добавьте ссылку на модуль служб Azure Maps. Модуль — это библиотека JavaScript, которая является оболочкой для служб REST Azure Maps и обеспечивает удобство их использования в JavaScript. Этот модуль полезен для поддержки функций поиска.
 
     ```HTML
-    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas-service.min.js"></script>
+    <script src="https://atlas.microsoft.com/sdk/javascript/service/2/atlas-service.min.js"></script>
     ```
 
 1. Добавьте ссылки на *index.js* и  *index.css*.

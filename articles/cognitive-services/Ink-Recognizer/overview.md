@@ -8,21 +8,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: ink-recognizer
 ms.topic: overview
-ms.date: 05/02/2019
+ms.date: 07/24/2019
 ms.author: erhopf
-ms.openlocfilehash: 95121523c510e72894086740ad340bdfd33f3c32
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: c90d656539a2ed64b416dc9b8e7e11e205b98ee6
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721396"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68478375"
 ---
 # <a name="what-is-the-ink-recognizer-api"></a>Что такое API Распознавателя рукописного текста?
 
 
 Распознаватель рукописного текста Cognitive Service предоставляет облачный REST API для анализа и распознавания содержимого рукописного фрагмента. В отличие от служб, использующих оптическое распознавание символов (OCR), API требует ввода росчерка пера в качестве входных данных. Росчерк пера — это хронологический набор двумерных точек (координаты X, Y), которые представляют перемещение инструментов ввода, таких как цифровое перо или пальцы. Затем он распознает введенные фигуры и рукописное содержимое и возвращает ответ JSON, который содержит все распознанные объекты.
 
-![Блок-схема, описывающая отправку введенного рукописного содержимого в API](media/ink-recognizer-pen-graph.png)
+![Блок-схема, описывающая отправку введенного рукописного содержимого в API](media/ink-recognizer-pen-graph.svg)
 
 ## <a name="features"></a>Функции
 

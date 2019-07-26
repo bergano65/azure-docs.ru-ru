@@ -6,14 +6,14 @@ metadata:
   title: "Документация по Azure Active Directory Identity Governance\_| Документация Майкрософт"
   description: 'Узнайте о системе управления жизненным циклом удостоверений и доступа, а также о том, как обеспечить безопасное администрирование для сотрудников и партнеров.'
   services: active-directory
-  author: rolyon
-  manager: mtillman
+  author: msaburnley
+  manager: daveba
   ms.service: active-directory
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
   ms.date: 04/18/2019
-  ms.author: rolyon
+  ms.author: ajburnle
 abstract:
   description: "С помощью Azure Active Directory (Azure\_AD) Identity Governance организации могут управлять жизненным циклом удостоверений и доступа, а также обеспечить безопасное администрирование для сотрудников и партнеров."
   aside:

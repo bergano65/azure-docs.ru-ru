@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Создание первого экземпляра Пользовательского поиска Bing | Документация Майкрософт
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: В этой статье показано, как создать пользовательский экземпляр Bing, который может выполнять поиск в доменах и на веб-страницах, которые вы определяете.
 services: cognitive-services
 author: aahill
@@ -10,12 +10,12 @@ ms.subservice: bing-custom-search
 ms.topic: quickstart
 ms.date: 06/18/2019
 ms.author: aahi
-ms.openlocfilehash: 6949824f598194456837544526223b823dcfc3e5
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 2806ca6f7079ffac3d2222363cd5b3839ef8f97d
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67273350"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68405018"
 ---
 # <a name="quickstart-create-your-first-bing-custom-search-instance"></a>Краткое руководство. Создание первого экземпляра Пользовательского поиска Bing
 

@@ -3,7 +3,7 @@ title: Параллельное моделирование на R с помощ�
 description: Руководство. Пошаговые инструкции по запуску финансового моделирования методом Монте-Карло в пакетной службе Azure с помощью пакета doAzureParallel на языке R
 services: batch
 author: laurenhughes
-manager: jeconnoc
+manager: gwallace
 ms.assetid: ''
 ms.service: batch
 ms.devlang: r
@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 01/23/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: a3f760f31bcd27c5f3d3289aa799d6886df17e15
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 7fad37af268d3dcd3d4d974d8e839ac47f171b50
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65779973"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68321907"
 ---
 # <a name="tutorial-run-a-parallel-r-simulation-with-azure-batch"></a>Руководство. Параллельное моделирование на R с помощью пакетной службы Azure 
 

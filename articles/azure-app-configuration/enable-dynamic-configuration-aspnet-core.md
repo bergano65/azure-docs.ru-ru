@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 02/24/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 78c64786f523aa424e8a9816e42db70e2a2997c2
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 9eccb4ca505dac312dd22123a3585863c67f3ad7
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67798465"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359854"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-an-aspnet-core-app"></a>Руководство по Использование динамической конфигурации в приложении ASP.NET Core
 
@@ -193,9 +193,9 @@ ASP.NET Core имеет подключаемую систему конфигур
 
     | Ключ | Значение |
     |---|---|
-    | TestAppSettings:BackgroundColor | green |
-    | TestAppSettings:FontColor | lightGray |
-    | TestAppSettings:Message | Данные из Azure App Configuration — теперь с обновлениями в реальном времени! |
+    | TestApp:Settings:BackgroundColor | green |
+    | TestApp:Settings:FontColor | lightGray |
+    | TestApp:Settings:FontSize | Данные из Azure App Configuration — теперь с обновлениями в реальном времени! |
 
 6. Обновите страницу браузера, чтобы просмотреть новые параметры конфигурации. Чтобы отразить изменения, может потребоваться более одного обновления страницы браузера.
 

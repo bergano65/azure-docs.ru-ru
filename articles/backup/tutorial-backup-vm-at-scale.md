@@ -1,7 +1,6 @@
 ---
 title: Резервное копирование виртуальных машин Azure в больших масштабах
 description: Одновременная архивация нескольких виртуальных машин в Azure
-services: backup
 keywords: архивация виртуальных машин; резервное копирование виртуальных машин; резервное копирование виртуальной машины; архивация виртуальной машины; архивация виртуальной машины Azure; архивация и аварийное восстановление
 author: rayne-wiselman
 ms.author: raynew
@@ -9,12 +8,12 @@ ms.date: 01/31/2019
 ms.topic: tutorial
 ms.service: backup
 ms.custom: mvc
-ms.openlocfilehash: 99f5b09d0b5dfc144dca7f19efff3f0656a82b35
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: da2a9e634567dbe657410a61e5bfe0526197309d
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58093251"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68467123"
 ---
 # <a name="use-azure-portal-to-back-up-multiple-virtual-machines"></a>Архивация нескольких виртуальных машин с помощью портала Azure
 
@@ -116,7 +115,7 @@ ms.locfileid: "58093251"
 
     ![Задание резервного копирования активировано](./media/tutorial-backup-vm-at-scale/initial-backup-context-menu.png)
 
-3. В списке **Элементы архивации** нажмите кнопку с многоточием **...**, чтобы открыть контекстное меню.
+3. В списке **Элементы архивации** нажмите кнопку с многоточием **...** , чтобы открыть контекстное меню.
 
 4. В контекстном меню выберите **Моментальная архивация**.
 

@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 6b93a7848e5c8516507c825d3064fb61a404e3cf
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.openlocfilehash: 339b118e48a01469312a40e6b0652a4ffb90291a
+ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66507767"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68347129"
 ---
 # <a name="tutorial-grant-access-to-an-aspnet-web-api-using-azure-active-directory-b2c"></a>Руководство по Предоставление доступа к веб-API ASP.NET с помощью Azure Active Directory B2C
 
@@ -91,13 +91,13 @@ ms.locfileid: "66507767"
 2. Откройте **Web.config** в проекте **TaskWebApp**.
 3. Для запуска API-интерфейса в локальной среде используйте параметр localhost для **api:TaskServiceUrl**. Измените файл Web.config следующим образом: 
 
-    ```C#
+    ```csharp
     <add key="api:TaskServiceUrl" value="https://localhost:44332/"/>
     ```
 
 3. Настройте URI API-интерфейса. Это URI, который веб-приложение использует для выполнения запроса API. Кроме того, настройте запрошенные разрешения.
 
-    ```C#
+    ```csharp
     <add key="api:ApiIdentifier" value="https://<Your tenant name>.onmicrosoft.com/api/" />
     <add key="api:ReadScope" value="Hello.Read" />
     <add key="api:WriteScope" value="Hello.Write" />
@@ -108,25 +108,25 @@ ms.locfileid: "66507767"
 1. Откройте **Web.config** в проекте **TaskService**.
 2. Настройте API-интерфейс для использования клиента.
 
-    ```C#
+    ```csharp
     <add key="ida:Tenant" value="<Your tenant name>.onmicrosoft.com" />
     ```
 
 3. Установите для идентификатора клиента зарегистрированный идентификатор приложения API-интерфейса.
 
-    ```C#
+    ```csharp
     <add key="ida:ClientId" value="<application-ID>"/>
     ```
 
 4. Обновите параметр потока пользователя, указав имя для потока регистрации и входа пользователя.
 
-    ```C#
+    ```csharp
     <add key="ida:SignUpSignInUserFlowId" value="B2C_1_signupsignin1" />
     ```
 
 5. Настройте параметр области в соответствии с тем, что вы создали на портале.
 
-    ```C#
+    ```csharp
     <add key="api:ReadScope" value="Hello.Read" />
     <add key="api:WriteScope" value="Hello.Write" />
     ```

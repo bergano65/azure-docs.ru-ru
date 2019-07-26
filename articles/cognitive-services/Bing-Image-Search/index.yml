@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по API Bing для поиска изображений
+title: Документация по API Поиска изображений Bing
 metadata:
   document_id: ce69fd12-adf8-11e7-abc4-cec278b6b50a
-  title: "Документация по API Bing для поиска изображений. Руководства, краткие руководства и справочники по API\_| Документация Майкрософт"
-  description: 'Узнайте, как с помощью API Bing для поиска изображений найти нужные изображения в Интернете.'
+  title: "Документация по API Поиска изображений Bing. Руководства, краткие руководства и справочники по API\_| Документация Майкрософт"
+  description: 'Узнайте, как с помощью API Поиска изображений Bing найти нужные изображения в Интернете.'
   services: cognitive-services
   author: nitinme
   manager: cgronlun
@@ -13,10 +13,10 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 1/16/2019
+  ms.date: 7/25/2019
   ms.author: nitinme
 abstract:
-  description: 'API Bing для поиска изображений позволяет вам интегрировать возможности поиска изображений Bing в свое приложение. Отправляя пользовательские поисковые запросы с помощью API, вы сможете получить и отобразить релевантные и высококачественные изображения, как и при использовании bing.com/images.'
+  description: 'API Поиска изображений Bing позволяет вам интегрировать возможности поиска изображений Bing в свое приложение. Отправляя пользовательские поисковые запросы с помощью API, вы сможете получить и отобразить релевантные и высококачественные изображения, как и при использовании bing.com/images.'
 sections:
   - items:
       - type: list
@@ -25,17 +25,17 @@ sections:
         columns: 3
         items:
           - href: /azure/cognitive-services/bing-image-search/overview
-            html: <p>Узнайте об API Bing для поиска изображений.</p>
+            html: <p>Сведения об API Поиска изображений Bing</p>
             image:
               src: ../media/index/i_overview.svg
-            title: Знакомство с API Bing для поиска изображений
+            title: Что из себя представляет API Поиска изображений Bing
           - href: /azure/cognitive-services/bing-image-search/concepts/bing-image-search-sending-queries
-            html: '<p>Узнайте, как отправлять запросы на поиск изображений в API Bing для поиска изображений</p>'
+            html: '<p>Узнайте, как отправлять запросы на поиск изображений в API Поиска изображений Bing</p>'
             image:
               src: ../media/index/i_guidelines.svg
             title: Запросы к Поиску изображений
           - href: /azure/cognitive-services/bing-image-search/concepts/bing-image-search-get-images
-            html: <p>Основные сведения об ответе API Bing для поиска изображений</p>
+            html: <p>Основные сведения об ответе API Поиска изображений Bing</p>
             image:
               src: ../media/index/i_guidelines.svg
             title: Ответ Поиска изображений
@@ -70,19 +70,19 @@ sections:
               src: media/index/logo_ruby.svg
             href: quickstarts/ruby
             text: Ruby
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
-        text: Инструкции по разработке приложений с использованием API Bing для поиска изображений.
+        text: 'Инструкции по разработке приложений с использованием API Поиска изображений Bing:'
       - type: list
         style: unordered
         items:
           - html: <a href="tutorial-bing-image-search-single-page-app">Одностраничное веб-приложение</a>
-          - html: <a href="tutorial-image-post">Отправка изображений Bing для аналитики</a>
+          - html: <a href="tutorial-image-post">Отправка изображений Bing для получения аналитических сведений</a>
   - title: Примеры
     items:
       - type: paragraph
-        text: 'Ознакомьтесь с примерами для API Bing для поиска изображений:'
+        text: 'Ознакомьтесь с примерами для API Поиска изображений Bing:'
       - type: list
         style: unordered
         items:
@@ -94,10 +94,10 @@ sections:
         className: cardsD
         items:
           - title: REST
-            html: '<p><a href="https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference">API Bing для поиска изображений версии 7</a></p><p><a href="https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v5-reference/">API Bing для поиска изображений версии 5</p>'
+            html: '<p><a href="https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference">API Поиска изображений Bing версии 7</a></p><p><a href="https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v5-reference/">API Поиска изображений Bing версии 5</p>'
           - title: Пакеты SDK
-            html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingimagesearch?view=azure-dotnet">.NET</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/imagesearch?view=azure-java-stable">Java</a></p> <p><a href="https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/imagesearch?view=azure-python">Python</a></p> <p><a href="https://docs.microsoft.com/javascript/api/azure-cognitiveservices-imagesearch?view=azure-node-latest">Node.js</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/imagesearch">Go</a></p>'
+            html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingimagesearch?view=azure-dotnet">.NET</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/bingimagesearch?view=azure-java-stable">Java</a></p> <p><a href="https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/imagesearch?view=azure-python">Python</a></p> <p><a href="https://docs.microsoft.com/javascript/api/azure-cognitiveservices-imagesearch?view=azure-node-latest">Node.js</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/imagesearch">GO</a></p>'
           - title: PowerShell
             html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
           - title: CLI
-            html: "<p><a href=\"https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest\">Azure\_CLI</a></p>"
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Azure CLI</a></p>'

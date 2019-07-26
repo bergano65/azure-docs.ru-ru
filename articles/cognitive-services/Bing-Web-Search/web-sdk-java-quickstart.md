@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 03/12/2019
+ms.date: 07/25/2019
 ms.author: aahi
-ms.openlocfilehash: 7209df902f03a7055e142dcbbb7743b6832958b6
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0d2c1ca439dbbbd79ddabd2ea7a4eb5298d1071a
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57863786"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68500966"
 ---
 # <a name="quickstart-use-the-bing-web-search-sdk-for-java"></a>Краткое руководство. Использование пакета SDK Поиска в Интернете Bing для Java
 
@@ -127,7 +127,7 @@ import com.microsoft.azure.cognitiveservices.search.websearch.models.VideoObject
 import com.microsoft.azure.cognitiveservices.search.websearch.models.WebPage;
 ```
 
-Если вы создали проект с помощью Maven, пакет будет уже объявлен. В противном случае объявите пакет. Например: 
+Если вы создали проект с помощью Maven, пакет будет уже объявлен. В противном случае объявите пакет. Например:
 
 ```java
 package com.bingwebsearch.app
@@ -300,4 +300,4 @@ mvn compile exec:java
 
 ## <a name="see-also"></a>См. также
 
-* [Ссылка на пакет SDK для Java в Azure](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/websearch)
+* [Ссылка на пакет SDK для Java в Azure](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/bingwebsearchapi?view=azure-java-stable)

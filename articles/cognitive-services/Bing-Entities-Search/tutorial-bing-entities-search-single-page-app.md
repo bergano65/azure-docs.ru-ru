@@ -1,6 +1,6 @@
 ---
 title: Руководство по Одностраничное веб-приложение для службы Поиск сущностей Bing
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: В этой статье показано, как использовать API Bing для поиска сущностей в одностраничном веб-приложении.
 services: cognitive-services
 author: aahill
@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: tutorial
-ms.date: 02/01/2019
+ms.date: 07/15/2019
 ms.author: aahi
-ms.openlocfilehash: 1b8cf36c631755458bc0c531773a6b2aba7f1038
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 5a8276f06207eb69ffec0e21c6d92794973f3b83
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65406379"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68423990"
 ---
-# <a name="tutorial-single-page-web-app"></a>Руководство по Одностраничные веб-приложения
+# <a name="tutorial-single-page-web-app"></a>Руководство по Одностраничное веб-приложение
 
 API Bing для поиска сущностей позволяет выполнять в Интернете поиск сведений о *сущностях* и *местах*. В каждом запросе можно запросить один из типов результатов или оба типа. Определения мест и сущностей приводятся ниже.
 
@@ -535,7 +535,7 @@ searchItemRenderers = {
 
 После этого в HTML-файле измените конечную точку службы "Поиск в Интернете Bing" на следующую:
 
-    https://localhost:9090/httpss://api.cognitive.microsoft.com/bing/v7.0/search
+    http://localhost:9090/https://api.cognitive.microsoft.com/bing/v7.0/search
 
 И наконец, запустите прокси-сервер CORS с помощью следующей команды:
 

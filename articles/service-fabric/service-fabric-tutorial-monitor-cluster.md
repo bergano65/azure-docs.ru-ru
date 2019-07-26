@@ -12,15 +12,15 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 03/13/2019
+ms.date: 07/22/2019
 ms.author: srrengar
 ms.custom: mvc
-ms.openlocfilehash: 9838c6e31e3bb7031d98e615fd96049f22dd8d30
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 63069dcdebf19c64d7bcde298fa234622a6d9a2b
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66158053"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68385277"
 ---
 # <a name="tutorial-monitor-a-service-fabric-cluster-in-azure"></a>Руководство по Мониторинг кластера Service Fabric в Azure
 
@@ -62,7 +62,7 @@ Azure Monitor собирает и анализирует данные телем
 
 Чтобы получить доступ к решению Service Fabric Analytics, на [портале Azure](https://portal.azure.com) перейдите в группу ресурсов, в которой вы создали решение "Аналитика Service Fabric".
 
-Выберите ресурс **ServiceFabric(mysfomsworkspace)**.
+Выберите ресурс **ServiceFabric(mysfomsworkspace)** .
 
 На вкладке **Обзор** вы увидите плитки в форме графа для каждого включенного решения, в том числе одну для Service Fabric. Щелкните граф **Service Fabric**, чтобы продолжить решение службы Fabric Analytics.
 
@@ -236,7 +236,7 @@ ServiceFabricReliableActorEvent
 ## <a name="view-performance-counters-with-azure-monitor-logs"></a>Просмотр счетчиков производительности с использованием журналов Azure Monitor
 Чтобы просмотреть счетчики производительности на [портале Azure](https://portal.azure.com), перейдите в группу ресурсов, в которой вы создали решение "Аналитика Service Fabric". 
 
-Выберите ресурс **ServiceFabric(mysfomsworkspace)**, **Рабочая область Log Analytics**, а затем — **Дополнительные параметры**.
+Выберите ресурс **ServiceFabric(mysfomsworkspace)** , **Рабочая область Log Analytics**, а затем — **Дополнительные параметры**.
 
 Нажмите кнопку **Данные**, а затем щелкните **Счетчики производительности Windows**. Существует список счетчиков по умолчанию, которые можно выбрать. Вы также можете задать интервал коллекции. Можно также выбрать [дополнительные счетчики производительности](service-fabric-diagnostics-event-generation-perf.md), чтобы они выполняли сбор данных. Правильный формат см. в [этой статье](/windows/desktop/PerfCtrs/specifying-a-counter-path). Нажмите кнопку **Сохранить**, затем нажмите кнопку **ОК**.
 

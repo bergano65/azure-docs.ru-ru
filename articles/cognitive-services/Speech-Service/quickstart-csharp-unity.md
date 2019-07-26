@@ -3,19 +3,19 @@ title: Краткое руководство. Распознавание реч�
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве объясняется, как создать приложение для преобразования речи в текст, использующее Unity и пакет SDK службы "Речь" для Unity (бета-версия). После завершения вы сможете преобразовывать речь в текст в режиме реального времени с использованием микрофона компьютера.
 services: cognitive-services
-author: wolfma61
+author: jhakulin
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 07/05/2019
-ms.author: wolfma
-ms.openlocfilehash: b55c6535184a905790f575b98c1b5a60a83f5daf
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.date: 07/23/2019
+ms.author: jhakulin
+ms.openlocfilehash: 425cacb22865e64a996c653477120a5f7f410c9a
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606387"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68405938"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-unity-beta"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для Unity (бета-версия)
 
