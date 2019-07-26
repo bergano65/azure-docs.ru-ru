@@ -6,7 +6,7 @@ metadata:
   title: 'Распознавание речи (LUIS). Краткие руководства, справочники по API и другие материалы'
   description: 'Сведения об использовании службы "Распознавание речи", которая позволяет приложению распознавать желания людей на основе их собственных слов.'
   author: nitinme
-  manager: cgronlun
+  manager: nitinme
   ms.service: cognitive-services
   ms.tgt_pltfrm: na
   ms.devlang: na
@@ -32,7 +32,7 @@ sections:
         columns: 3
         items:
           - href: /azure/cognitive-services/luis/what-is-luis
-            html: <p>Узнайте об Интеллектуальной службе распознавания речи (LUIS).</p>
+            html: <p>Узнайте об службе "Распознавание речи" (LUIS).</p>
             image:
               src: ../media/index/i_overview.svg
             title: Что такое LUIS?
@@ -46,7 +46,7 @@ sections:
             image:
               src: ../media/index/i_guidelines.svg
             title: Рекомендации по приложению LUIS
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: table
         style: dataMatrix
@@ -72,7 +72,7 @@ sections:
               - href: luis-get-started-java-add-utterance
               - href: luis-get-started-node-add-utterance
               - href: luis-get-started-python-add-utterance
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: list
         style: ordered
@@ -91,24 +91,24 @@ sections:
         style: unordered
         items:
           - html: '<a href="https://aka.ms/luis-code-samples">Примеры на GitHub</a><br/>'
-  - title: Видеоролики
+  - title: Видео
     items:
       - type: list
         style: unordered
         items:
-          - html: '<a href="https://channel9.msdn.com/Shows/Azure-Friday/At-Build-2018-Cognitive-Services-Language-LUIS/player" > Build 2018: серия "Пятница с Azure". Cognitive Services и Language Understanding (LUIS)</a>'
-          - html: '<a href="https://channel9.msdn.com/events/Build/2018/BRK3208" >Build 2018. Интеллектуальные функции ботов, функции распознавания речи и рекомендации по использованию NLU</a>'
+          - html: '<a href="https://channel9.msdn.com/Shows/Azure-Friday/At-Build-2018-Cognitive-Services-Language-LUIS/player" > Build 2018: серия "Пятница с Azure". Cognitive Services и служба "Распознавание речи" (LUIS)</a>'
+          - html: "<a href=\"https://channel9.msdn.com/events/Build/2018/BRK3208\" >Build\_2018. Интеллектуальные функции ботов, возможности службы \"Речь\" и рекомендации по использованию NLU</a>"
   - title: Справочные материалы
     items:
       - type: list
         style: cards
         className: cardsD
         items:
-          - title: Интерфейсы API REST версии 2
+          - title: Интерфейсы REST API версии 2
             html: '<p><a href="https://go.microsoft.com/fwlink/?linkid=2092356"> API конечной точки</a></p><p><a href="https://go.microsoft.com/fwlink/?linkid=2092087"> Разработка API</a></p>'
           - title: Пакеты SDK
             html: '<p><a href="https://aka.ms/luis-endpoint-sdk"> Пакет SDK для .NET (конечная точка)</a></p><p><a href="https://aka.ms/luis-authoring-sdk"> Пакет SDK для .NET (создание)</a></p>'
           - title: PowerShell
             html: '<p><a href=https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: Интерфейс командной строки
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices">Интерфейс командной строки Azure</a></p>'
+          - title: CLI
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices">Azure CLI</a></p>'

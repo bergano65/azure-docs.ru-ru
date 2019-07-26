@@ -6,7 +6,7 @@ metadata:
   description: "API Анализа текста\_— это облачная служба, которая обеспечивает расширенную обработку необработанного текста на естественных языках и включает в себя четыре основные функции: анализ тональности, извлечение ключевых фраз, распознавание именованных сущностей и определение языка."
   services: cognitive-services
   author: nitinme
-  manager: cgronlun
+  manager: nitinme
   layout: LandingPage
   ms.service: cognitive-services
   ms.subservice: text-analytics

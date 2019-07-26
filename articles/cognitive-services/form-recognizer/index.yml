@@ -6,7 +6,7 @@ metadata:
   description: "Сведения об использовании Распознавателя документов для интеллектуального извлечения данных пар \"ключ\_— значение\" из ваших документов формы."
   services: cognitive-services
   author: PatrickFarley
-  manager: cgronlun
+  manager: nitinme
   ms.service: cognitive-services
   ms.subservice: forms-recognizer
   ms.tgt_pltfrm: na

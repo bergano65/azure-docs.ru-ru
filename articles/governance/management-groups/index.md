@@ -7,12 +7,12 @@ ms.service: governance
 ms.date: 04/22/2019
 ms.author: rithorn
 ms.topic: overview
-ms.openlocfilehash: 1958a829df2643bd218d4e8d7f6dd563b5b395e8
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 6ca8351e7294c5a9cdd9f594eb4524d04a27b5c1
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66237167"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68516973"
 ---
 # <a name="organize-your-resources-with-azure-management-groups"></a>Упорядочивание ресурсов с помощью групп управления Azure
 
@@ -98,9 +98,9 @@ ms.locfileid: "66237167"
 |Читатель                      |        |        |        |        |               |               | X     |
 |Читатель группы управления*                  |        |        |        |        |               |               | X     |
 |Участник политики ресурсов |        |        |        |        |               | X             |       |
-|Администратор доступа пользователей   |        |        |        |        | X             |               |       |
+|Администратор доступа пользователей   |        |        |        |        | X             | X             |       |
 
-* Роли участника и читателя группы управления позволяют выполнять указанные выше действия только в области действия группы управления.  
+\* Роли участника и читателя группы управления позволяют выполнять указанные выше действия только в области действия группы управления.  
 ** Чтобы переместить подписку или группу управления в корневую группу управления или из нее, в корневой группе не требуется назначать роли.  Сведения о перемещении элементов в пределах иерархии см. в статье [Manage your resources with management groups](manage.md) (Управление ресурсами с помощью групп управления).
 
 ### <a name="custom-rbac-role-definition-and-assignment"></a>Пользовательское определение и назначение роли RBAC

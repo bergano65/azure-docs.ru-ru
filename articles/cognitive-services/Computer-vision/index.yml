@@ -6,7 +6,7 @@ metadata:
   description: 'Сведения об использовании Компьютерного зрения для обработки изображений и получения сведений. В руководствах описано, как создавать приложения, использующие API.'
   services: cognitive-services
   author: nitinme
-  manager: cgronlun
+  manager: nitinme
   ms.service: cognitive-services
   ms.subservice: computer-vision
   ms.tgt_pltfrm: na

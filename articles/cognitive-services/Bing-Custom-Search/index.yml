@@ -6,7 +6,7 @@ metadata:
   description: 'Узнайте, как с помощью портала и API Пользовательского поиска Bing создавать пользовательские экземпляры службы поиска'
   services: cognitive-services
   author: v-deken
-  manager: cgronlun
+  manager: nitinme
   layout: LandingPage
   ms.service: cognitive-services
   ms.tgt_pltfrm: na

@@ -1,12 +1,12 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по API пользовательского визуального распознавания
+title: Документация по API Пользовательского визуального распознавания
 metadata:
-  title: 'Документация по API пользовательского визуального распознавания. Краткие руководства, учебные материалы и справочник по API. Azure Cognitive Services | Документация Майкрософт'
-  description: 'Сведения о создании, развертывании и улучшении классификаторов пользовательских изображений с помощью Пользовательской службы визуального распознавания. В руководствах описано, как создавать приложения, использующие API.'
+  title: 'Документация по API Пользовательского визуального распознавания. Краткие руководства, учебные материалы и справочник по API. Azure Cognitive Services | Документация Майкрософт'
+  description: 'Сведения о создании, развертывании и улучшении классификаторов пользовательских изображений с помощью Пользовательского визуального распознавания. В руководствах описано, как создавать приложения, использующие API.'
   services: cognitive-services
   author: nitinme
-  manager: cgronlun
+  manager: nitinme
   ms.service: cognitive-services
   ms.subservice: custom-vision
   ms.tgt_pltfrm: na
@@ -15,7 +15,7 @@ metadata:
   ms.date: 12/20/2018
   ms.author: nitinme
 abstract:
-  description: 'Облачный API-интерфейс Пользовательской службы визуального распознавания предоставляет разработчикам возможность создавать, развертывать и улучшать классификаторы пользовательских изображений. Классификатор изображений — это служба искусственного интеллекта, которая сортирует изображения по тегам в соответствии с определенными характеристиками.'
+  description: 'Облачный API Пользовательского визуального распознавания предоставляет разработчикам возможность создавать, развертывать и улучшать классификаторы пользовательских изображений. Классификатор изображений — это служба искусственного интеллекта, которая сортирует изображения по тегам в соответствии с определенными характеристиками.'
   aside:
     image:
       alt: null
@@ -33,7 +33,7 @@ sections:
         columns: 3
         items:
           - href: /azure/cognitive-services/Custom-Vision-Service/home
-            html: <p>Подробнее об API пользовательского визуального распознавания.</p>
+            html: <p>Подробнее об API Пользовательского визуального распознавания.</p>
             image:
               src: ../media/index/i_overview.svg
             title: Что собой представляет Пользовательское визуальное распознавание
@@ -47,10 +47,10 @@ sections:
             image:
               src: ../media/index/i_tasks.svg
             title: Экспорт моделей на мобильные устройства
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
-        text: 'Узнайте, как приступить к работе с Пользовательской службой визуального распознавания, щелкнув ссылку в виде стрелки <img src="media/index/link.jpg" height="15" width="15"></img>'
+        text: 'Узнайте, как приступить к работе с Пользовательским визуальным распознаванием, щелкнув ссылку в виде стрелки <img src="media/index/link.jpg" height="15" width="15"></img>'
       - type: table
         style: dataMatrix
         columns:
@@ -74,7 +74,7 @@ sections:
   - title: Примеры
     items:
       - type: paragraph
-        text: 'Поиск примеров для API пользовательского визуального распознавания:'
+        text: 'Поиск примеров для API Пользовательского визуального распознавания:'
       - type: list
         style: unordered
         items:
@@ -85,11 +85,11 @@ sections:
         style: cards
         className: cardsD
         items:
-          - title: Интерфейсы API
+          - title: Программные интерфейсы
             html: '<p><a href="https://go.microsoft.com/fwlink/?linkid=865446">Обучение</a></p> <p><a href="https://go.microsoft.com/fwlink/?linkid=865445">Прогнозирование</a></p>'
           - title: SDK
             html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/customvision?view=azure-dotnet">.NET</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/customvision?view=azure-java-stable">Java</a></p> <p><a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-customvision/?view=azure-python">Python</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/customvision/training">Go — обучение</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.1/customvision/prediction">Go — прогнозирование</a></p>'
           - title: PowerShell
             html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: Интерфейс командной строки
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Интерфейс командной строки Azure</a></p>'
+          - title: CLI
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Azure CLI</a></p>'

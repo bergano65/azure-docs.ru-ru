@@ -6,7 +6,7 @@ metadata:
   description: 'API Детектора аномалий позволяет динамически отслеживать данные и обнаруживать аномалии с помощью машинного обучения. Получайте представление о данных независимо от тома, отрасли или сценария.'
   services: cognitive-services
   author: aahill
-  manager: cgronlun
+  manager: nitinme
   layout: LandingPage
   ms.service: cognitive-services
   ms.tgt_pltfrm: na
@@ -38,7 +38,7 @@ sections:
             image:
               src: ../media/index/i_guidelines.svg
             title: Использование API обнаружения аномалий
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Обнаруживайте аномалии в данных временных рядов с помощью:'
@@ -69,5 +69,5 @@ sections:
             html: '<p><a href="https://aka.ms/anomaly-detector-dotnet-ref">.NET</a></p> <p><a href="https://go.microsoft.com/fwlink/?linkid=2089915">GO</a></p> <p><a href="https://go.microsoft.com/fwlink/?linkid=2090370">Python</a></p> <p><a href="https://go.microsoft.com/fwlink/?linkid=2090788">Node.js</a></p>'
           - title: PowerShell
             html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: Интерфейс командной строки
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Интерфейс командной строки Azure</a></p>'
+          - title: CLI
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Azure CLI</a></p>'

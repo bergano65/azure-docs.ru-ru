@@ -4,9 +4,9 @@ title: Документация по Персонализатору
 metadata:
   document_id: null
   title: 'Персонализатор. Учебники, краткие руководства, справочные материалы по API'
-  description: 'Сведения о том, как использовать службу "Персонализатор", которая позволяет вашему приложению выбирать оптимальную работу для своих пользователей, изучая их поведение в режиме реального времени.'
+  description: 'Сведения о том, как использовать службу "Персонализатор", с помощью которой приложение максимально удобный режим работы для своих пользователей, изучая их поведение в реальном времени.'
   author: nitinme
-  manager: cgronlun
+  manager: nitinme
   ms.service: cognitive-services
   ms.tgt_pltfrm: na
   ms.devlang: na
@@ -14,7 +14,7 @@ metadata:
   ms.date: 05/07/2019
   ms.author: nitinme
 abstract:
-  description: "Персонализатор Azure\_— это облачная служба API, которая позволяет выбирать оптимальную работу для своих пользователей, изучая их поведение в режиме реального времени."
+  description: "Персонализатор Azure\_— это облачная служба API, с помощью которой приложение максимально удобный режим работы для своих пользователей, изучая их поведение в реальном времени."
 sections:
   - items:
       - type: list
@@ -37,7 +37,7 @@ sections:
             image:
               src: ../media/index/i_guidelines.svg
             title: Этика и ответственность
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: ''
@@ -54,9 +54,9 @@ sections:
         style: cards
         className: cardsD
         items:
-          - title: Интерфейсы API REST
+          - title: Интерфейсы REST API
             html: '<p><a href="https://go.microsoft.com/fwlink/?linkid=2092082">API Персонализатора</a></p>'
           - title: PowerShell
             html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: Интерфейс командной строки
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list">Интерфейс командной строки Azure</a></p>'
+          - title: CLI
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list">Azure CLI</a></p>'

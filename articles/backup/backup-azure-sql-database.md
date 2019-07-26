@@ -1,19 +1,18 @@
 ---
 title: Резервное копирование баз данных SQL Server в Azure | Документация Майкрософт
 description: Узнайте, как выполнить резервное копирование SQL Server в Azure. Здесь также описывается восстановление SQL Server.
-services: backup
 author: rayne-wiselman
 manager: carmonm
 ms.service: backup
 ms.topic: tutorial
 ms.date: 06/18/2019
 ms.author: raynew
-ms.openlocfilehash: 2957e784540f7c6450235d26da43121db2458dd1
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 42a99c1be348a24a9325173dc275d0c416b975a2
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68249529"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68465426"
 ---
 # <a name="about-sql-server-backup-in-azure-vms"></a>Сведения о резервном копировании SQL Server на виртуальных машинах Azure
 
@@ -135,7 +134,7 @@ ms.locfileid: "68249529"
 
 Если вы не создавали виртуальную машину SQL Server в Azure Marketplace или если вы используете SQL 2008 и SQL 2008 R2, может появиться ошибка **UserErrorSQLNoSysadminMembership**.
 
-Сведения о предоставленных разрешениях для **SQL 2008** и **SQL 2008 R2** используемых в Windows 2008 R2, см. в статье [ ](#give-sql-sysadmin-permissions-for-sql-2008-and-sql-2008-r2).
+Сведения о предоставленных разрешениях для **SQL 2008** и **SQL 2008 R2** используемых в Windows 2008 R2, см. в [статье](#give-sql-sysadmin-permissions-for-sql-2008-and-sql-2008-r2).
 
 Для всех остальных версий следует исправить разрешения с помощью следующих шагов.
 

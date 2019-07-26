@@ -6,7 +6,7 @@ metadata:
   description: 'Узнайте, как с помощью Content Moderator проверить текст, изображение или видео на наличие материалов, которые являются потенциально оскорбительными, опасными или нежелательными по иным причинам.'
   services: cognitive-services
   author: nitinme
-  manager: cgronlun
+  manager: nitinme
   ms.service: cognitive-services
   ms.subservice: content-moderator
   ms.tgt_pltfrm: na
@@ -47,7 +47,7 @@ sections:
             image:
               src: ../media/index/i_overview.svg
             title: API модерации изображений
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Узнайте, как приступить к работе с Content Moderator, щелкнув ссылку в виде стрелки <img src="images/index/link.jpg" height="15" width="15"></img>.'
@@ -71,7 +71,7 @@ sections:
               - href: null
               - href: image-moderation-quickstart-dotnet
               - href: null
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Узнайте, как разрабатывать приложения с использованием Content Moderator:'
@@ -93,11 +93,11 @@ sections:
         style: cards
         className: cardsD
         items:
-          - title: Интерфейсы API
+          - title: Программные интерфейсы
             html: '<p><a href="https://docs.microsoft.com/azure/cognitive-services/content-moderator/api-reference">REST API</a></p>'
           - title: Пакеты SDK
             html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/contentmoderator?view=azure-dotnet">.NET</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/contentmoderator?view=azure-java-stable">Java</a></p> <p><a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-contentmoderator/?view=azure-python">Python</a></p> <p><a href="https://docs.microsoft.com/javascript/api/azure-cognitiveservices-contentmoderator/?view=azure-node-latest">Node.js</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/contentmoderator">GO</a></p>'
           - title: PowerShell
             html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: Интерфейс командной строки
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Интерфейс командной строки Azure</a></p>'
+          - title: CLI
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Azure CLI</a></p>'

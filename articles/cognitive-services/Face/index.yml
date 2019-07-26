@@ -1,12 +1,12 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по API распознавания лиц
+title: Документация по API Распознавания лиц
 metadata:
-  title: 'Документация по API распознавания лиц. Краткие руководства, учебные материалы и справочник по API. Azure Cognitive Services | Документация Майкрософт'
-  description: 'Узнайте, как использовать API распознавания лиц для обнаружения и идентификации лиц на изображениях и возвращении сведений о них. В руководствах описано, как создавать приложения, использующие API.'
+  title: 'Документация по API Распознавания лиц. Краткие руководства, учебные материалы и справочник по API. Azure Cognitive Services | Документация Майкрософт'
+  description: 'Узнайте, как использовать API Распознавания лиц для обнаружения и идентификации лиц на изображениях и возвращении сведений о них. В руководствах описано, как создавать приложения, использующие API.'
   services: cognitive-services
   author: PatrickFarley
-  manager: cgronlun
+  manager: nitinme
   ms.service: cognitive-services
   ms.subservice: face-api
   ms.tgt_pltfrm: na
@@ -15,7 +15,7 @@ metadata:
   ms.date: 12/20/2018
   ms.author: nitinme
 abstract:
-  description: 'Облачный API распознавания лиц предоставляет разработчикам доступ к расширенным алгоритмам распознавания лиц. Алгоритмы распознавания лиц от Майкрософт позволяют выполнять обнаружение атрибутов, определяемых по лицам, и распознавание лиц. Узнайте, как анализировать содержимое разными способами с помощью кратких руководств, примеров и других материалов.'
+  description: 'Облачный API Распознавания лиц предоставляет разработчикам доступ к расширенным алгоритмам распознавания лиц. Алгоритмы Распознавания лиц от Майкрософт позволяют выполнять обнаружение атрибутов, определяемых по лицам, и распознавание лиц. Узнайте, как анализировать содержимое разными способами с помощью кратких руководств, примеров и других материалов.'
 sections:
   - items:
       - type: list
@@ -24,21 +24,21 @@ sections:
         columns: 3
         items:
           - href: /azure/cognitive-services/face/overview
-            html: <p>Дополнительные сведения об API распознавания лиц.</p>
+            html: <p>Дополнительные сведения об API Распознавания лиц.</p>
             image:
               src: ../media/index/i_overview.svg
-            title: Что собой представляет API распознавания лиц
+            title: Что собой представляет API Распознавания лиц
           - href: /azure/cognitive-services/face/face-api-how-to-topics/howtodetectfacesinimage
             html: '<p>Узнайте, как обнаруживать лица на изображении.</p>'
             image:
               src: ../media/index/i_tasks.svg
             title: Обнаружение лиц на изображении
           - href: /azure/cognitive-services/face/face-how-to-install-containers
-            html: '<p>Узнайте, как использовать API распознавания лиц в контейнерах.</p>'
+            html: '<p>Узнайте, как использовать API Распознавания лиц в контейнерах.</p>'
             image:
               src: ../media/index/i_tasks.svg
-            title: Использование API распознавания лиц в контейнерах
-  - title: 5-минутные руководства по началу работы
+            title: Использование API Распознавания лиц в контейнерах
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Анализ изображений, создание эскизов и извлечение текста из изображений с помощью:'
@@ -47,7 +47,7 @@ sections:
         items:
           - image:
               src: media/index/logo_Csharp.svg
-            text: 'C&#35;'
+            text: 'C#'
             href: QuickStarts/CSharp
           - image:
               src: media/index/logo_java.svg
@@ -65,10 +65,10 @@ sections:
               src: media/index/logo_go.svg
             text: Go
             href: QuickStarts/Go
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
-        text: 'Инструкции по разработке приложений с использованием API распознавания лиц:'
+        text: 'Инструкции по разработке приложений с использованием API Распознавания лиц:'
       - type: list
         style: unordered
         items:
@@ -77,7 +77,7 @@ sections:
   - title: Примеры
     items:
       - type: paragraph
-        text: 'Поиск примеров для API распознавания лиц:'
+        text: 'Поиск примеров для API Распознавания лиц:'
       - type: list
         style: unordered
         items:
@@ -88,11 +88,11 @@ sections:
         style: cards
         className: cardsD
         items:
-          - title: Интерфейсы API
-            html: <p><a href="APIReference">API распознавания лиц</a></p>
+          - title: Программные интерфейсы
+            html: <p><a href="APIReference">API Распознавания лиц</a></p>
           - title: Пакеты SDK
             html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/face?view=azure-dotnet">.NET</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/faceapi?view=azure-java-stable">Java</a></p> <p><a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-face/?view=azure-python">Python</a></p> <p><a href="https://docs.microsoft.com/javascript/api/azure-cognitiveservices-face/?view=azure-node-latest">Node</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/face">GO</a></p> <p><a href="https://github.com/Microsoft/Cognitive-Face-iOS">iOS</a></p>'
           - title: PowerShell
             html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: Интерфейс командной строки
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Интерфейс командной строки Azure</a></p>'
+          - title: CLI
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Azure CLI</a></p>'
