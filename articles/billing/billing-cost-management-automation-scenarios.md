@@ -3,7 +3,7 @@ title: Сценарии автоматизации для выставления
 description: Узнайте, как соотносятся распространенные сценарии выставления счетов и управления затратами с разными API.
 services: billing
 documentationcenter: ''
-author: Erikre
+author: bandersmsft
 manager: dougeby
 editor: ''
 tags: billing
@@ -14,13 +14,13 @@ ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: billing
 ms.date: 6/13/2018
-ms.author: erikre
-ms.openlocfilehash: cb7a13d9abcf7c677d51f03df002ea06b543014e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: banders
+ms.openlocfilehash: 3d06df9b9a90f26b39afc17b8fcd02c85da567a1
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65232482"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68443255"
 ---
 # <a name="automation-scenarios-for-billing-and-cost-management"></a>Сценарии автоматизации для выставления счетов и управления затратами
 
@@ -44,17 +44,17 @@ API-интерфейсы выставления счетов и управлен
 
 ## <a name="scenario-to-api-mapping"></a>Сопоставление сценариев с интерфейсами API
 
-|         API        | Сверка счетов    | Взаимозачет    | Оптимизация затрат    | Отслеживание расходов.    | Затраты за полмесяца    | Оповещения    |
+|         API        | Сверка счетов    | Взаимозачет    | Оптимизация затрат    | Отслеживание расходов.    | Затраты за полмесяца    | Предупреждения    |
 |:---------------------------:|:-------------------------:|:----------------:|:--------------------:|:----------------:|:------------------:|:---------:|
-| сведения о бюджете;                     |                           |                  |           X          |                  |                    |     X     |
+| Бюджеты                     |                           |                  |           X          |                  |                    |     X     |
 | сведения о расходах на Marketplace;                |             X             |         X        |           X          |         X        |          X         |     X     |
 | Прейскурант                 |             X             |         X        |           X          |         X        |          X         |           |
 | рекомендации по резервированию; |                           |                  |           X          |                  |                    |           |
 | Сведения о резервировании         |                           |                  |           X          |         X        |                    |           |
 | Сводные данные о резервировании       |                           |                  |           X          |         X        |                    |           |
-| сведения о потреблении;               |             X             |         X        |           X          |         X        |          X         |     X     |
+| Сведения об использовании               |             X             |         X        |           X          |         X        |          X         |     X     |
 | Расчетный период             |             X             |         X        |           X          |         X        |                    |           |
-| Счета                    |             X             |         X        |           X          |         X        |                    |           |
+| Накладные                    |             X             |         X        |           X          |         X        |                    |           |
 | RateCard                    |             X             |                  |           X          |         X        |          X         |           |
 | Неоплачиваемое потребление               |             X             |                  |           X          |                  |          X         |           |
 
@@ -137,10 +137,10 @@ API-интерфейсы выставления счетов и управлен
 
 - [API RateCard](/previous-versions/azure/reference/mt219005(v=azure.100)) предоставляет общие цены, которые применяются к клиентам Web Direct.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения по использованию API Azure для получения аналитики о потреблении Azure программными средствами см. в [обзоре API потребления ресурсов Azure](billing-consumption-api-overview.md) и [обзоре API выставления счетов Azure](billing-usage-rate-card-overview.md).
 
 - Чтобы сравнить счет и файл с подробными данными о ежедневном использовании, а также отчеты об управлении затратами на портале Azure, ознакомьтесь со статьей [Расшифровка счета за использование Microsoft Azure](billing-understand-your-bill.md).
 
-- Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
+- Если у вас возникли вопросы или вам нужна помощь, [Создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

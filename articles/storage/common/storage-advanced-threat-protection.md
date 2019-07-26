@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/03/2019
 ms.author: tamram
 ms.reviewer: cbrooks
-ms.openlocfilehash: fb221d774d9d00a5dc7b0d94edc35a5651443a5b
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 5d0b41344f4a77f3205799be7c30526e2a150523
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67874056"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479914"
 ---
 # <a name="advanced-threat-protection-for-azure-storage"></a>Расширенная защита от угроз для службы хранилища Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "67874056"
 1. В главном меню щелкните **цены & параметры**.
 1. Щелкните подписку, для которой необходимо включить или отключить защиту от угроз для учетных записей хранения.
 
-    ![Выберите подписку.](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-subscription.png)
+    ![Выбрать подписку](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-subscription.png)
 
 1. Щелкните **Ценовая категория**.
 1. В разделе **Выбор ценовой категории по типу ресурса** в строке учетные **записи хранения** щелкните **включено** или отключено .
@@ -66,7 +66,7 @@ ms.locfileid: "67874056"
 
 Используйте политику Azure, чтобы включить расширенную защиту от угроз для учетных записей хранения в определенной подписке или группе ресурсов.
 
-1. Страница " **политики Azure — определения** " на обед.
+1. Откройте страницу **определения политики** Azure.
 
 1. Выполните поиск по запросу политика **развертывания Advanced Threat Protection в учетных записях хранения** .
 

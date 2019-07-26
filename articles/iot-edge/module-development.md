@@ -4,17 +4,17 @@ description: Разработка пользовательских модуле�
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 02/25/2019
+ms.date: 07/22/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 5285490ca1a27494cbcd3ea3d6527b78c7d38c8c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dc17cb48f7e06757dacdca5f291ed4604bfc10ee
+ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65833435"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68414403"
 ---
 # <a name="develop-your-own-iot-edge-modules"></a>Разработка собственных модулей IoT Edge
 
@@ -62,12 +62,40 @@ ms.locfileid: "65833435"
 
 Создайте экземпляр ModuleClient для подключения модуля к центру IoT Edge, запущенному на устройстве, аналогично тому, как экземпляры DeviceClient подключают устройства Интернета вещей к Центру Интернета вещей. Дополнительные сведения о классе ModuleClient и его методах обмена данными см. в справочнике по API для предпочитаемого языка пакета SDK: [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet), [C и Python](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h), [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable) или [Node.js](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
 
+## <a name="language-and-architecture-support"></a>Поддержка языков и архитектур
 
-## <a name="next-steps"></a>Дальнейшие действия
+IoT Edge поддерживает несколько операционных систем, архитектур устройств и языки разработки, чтобы вы могли создать сценарий, соответствующий вашим потребностям. В этом разделе вы ознакомитесь с вариантами разработки пользовательских модулей IoT Edge. Дополнительные сведения о поддержке средств и требованиях для каждого языка можно узнать в статье [Подготовка среды разработки и тестирования для IOT Edge](development-environment.md).
 
-[Подготовьте разработки и тестовой среды для IoT Edge](development-environment.md)
+### <a name="linux"></a>Linux
 
-[Использовать Visual Studio для разработки C# модули Edge Интернета вещей](how-to-visual-studio-develop-module.md)
+Для всех языков, перечисленных в следующей таблице, IoT Edge поддерживает разработку для устройств с поддержкой AMD64 и ARM32 Linux. 
 
-[Использование Visual Studio Code для разработки модулей IoT Edge](how-to-vs-code-develop-module.md)
+| Язык разработки | Средства разработки |
+| -------------------- | ----------------- |
+| В | Visual Studio Code<br>Visual Studio 2017 или 2019 |
+| C# | Visual Studio Code<br>Visual Studio 2017 или 2019 |
+| Java | Visual Studio Code |
+| Node.js | Visual Studio Code |
+| Python | Visual Studio Code |
 
+>[!NOTE]
+>Поддержка разработки и отладки для устройств ARM64 Linux доступна в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Дополнительные сведения см. [в разделе Разработка и отладка модулей ARM64 IOT EDGE в Visual Studio Code (Предварительная версия)](https://devblogs.microsoft.com/iotdev/develop-and-debug-arm64-iot-edge-modules-in-visual-studio-code-preview).
+
+### <a name="windows"></a>Windows
+
+Для всех языков, перечисленных в следующей таблице, IoT Edge поддерживает разработку для устройств Windows AMD64.
+
+| Язык разработки | Средства разработки |
+| -------------------- | ----------------- |
+| В | Visual Studio 2017 или 2019 |
+| C# | Visual Studio Code (без возможностей отладки)<br>Visual Studio 2017 или 2019 |
+
+## <a name="next-steps"></a>Следующие шаги
+
+[Подготовка среды разработки и тестирования для IoT Edge](development-environment.md)
+
+[Разработка C# модулей для IOT Edge с помощью Visual Studio](how-to-visual-studio-develop-module.md)
+
+[Использование Visual Studio Code для разработки модулей для IoT Edge](how-to-vs-code-develop-module.md)
+
+[Изучение и использование пакетов SDK для центра Интернета вещей Azure](/iot-hub/iot-hub-devguide-sdks.md)

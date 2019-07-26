@@ -3,23 +3,18 @@ title: Создание и развертывание приложения Node.
 description: Создание и развертывание приложения Express.js в Node.js в облачных службах Azure
 services: cloud-services
 documentationcenter: nodejs
-author: jpconnock
-manager: timlt
-editor: ''
-ms.assetid: 24f8e7ef-e90d-4554-9b1e-a9b31d5824e5
+author: georgewallace
 ms.service: cloud-services
-ms.workload: tbd
-ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 08/17/2017
-ms.author: jeconnoc
-ms.openlocfilehash: b212eaffb977846d40270a5f2abc76192aee4c0d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: gwallace
+ms.openlocfilehash: b3d8e364a982f85ad9df6e48dc4d28da1e8efb40
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60528147"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359062"
 ---
 # <a name="build-and-deploy-a-nodejs-web-application-using-express-on-an-azure-cloud-services"></a>Создание и развертывание веб-приложения Node.js с использованием модуля Express в облачных службах Azure
 
@@ -98,7 +93,7 @@ Node.js включает минимальный набор функционал�
    
    ![Содержимое файла index.jade.](./media/cloud-services-nodejs-develop-deploy-express-app/getting-started-19.png)
    
-   Jade — это обработчик представлений по умолчанию, используемый приложениями Express. Дополнительные сведения об обработчике представлений Jade см. на сайте [http://jade-lang.com][http://jade-lang.com].
+   Jade — это обработчик представлений по умолчанию, используемый приложениями Express. Дополнительные сведения о подсистеме представлений Jade см. [http://jade-lang.com][http://jade-lang.com]в разделе.
 2. Измените последнюю строку текста, добавив слова **in Azure**.
    
    ![Файл index.jade, последняя строка содержит текст: p Welcome to \#{title} in Azure.](./media/cloud-services-nodejs-develop-deploy-express-app/node31.png)
@@ -118,7 +113,7 @@ Node.js включает минимальный набор функционал�
 
 ![В веб-браузере отображается страница Express. URL-адрес указывает, что страница теперь размещается в Azure.](./media/cloud-services-nodejs-develop-deploy-express-app/node36.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительную информацию см. в [центре разработчиков Node.js](https://docs.microsoft.com/javascript/azure/?view=azure-node-latest).
 
 [Node.js Web Application]: https://www.windowsazure.com/develop/nodejs/tutorials/getting-started/

@@ -10,12 +10,12 @@ ms.date: 05/11/2017
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: d04c1e137a190b01554106c041853aa2fd6786d7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cd8ba51b960703fa25371d874ed2bb50e7df2fde
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65146911"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68360040"
 ---
 # <a name="client-side-encryption-with-python-for-microsoft-azure-storage"></a>Шифрование на стороне клиента с помощью Python для службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-client-side-encryption-include](../../../includes/storage-selector-client-side-encryption-include.md)]
@@ -67,7 +67,7 @@ ms.locfileid: "65146911"
 
 Только блочные и страничные BLOB-объекты могут быть зашифрованы и расшифрованы с помощью этой схемы. В настоящее время не поддерживается шифрование добавочных BLOB-объектов.
 
-### <a name="queues"></a>Очереди
+### <a name="queues"></a>Списки ожидания
 Поскольку очередь сообщений может иметь любой формат, клиентская библиотека определяет нестандартный формат, который включает вектор инициализации IV и зашифрованный ключ шифрования содержимого CEK в текст сообщения.
 
 Во время шифрования клиентская библиотека создает случайный ключ IV размером 16 байт, случайный ключ CEK размером 32 байта и выполняет конвертное шифрование текста сообщения очереди, используя полученную информацию. Зашифрованный ключ CEK и дополнительные метаданные шифрования добавляются в зашифрованное сообщение очереди. Это измененное сообщение (показано ниже) сохраняется в службе.
@@ -139,7 +139,7 @@ KEK должен реализовывать следующие методы дл
   * Сопоставитель ключа вызывается, если он нужен для получения ключа. Если сопоставитель указан, но он не имеет данных, сопоставимых с идентификатором ключа, возникает ошибка.
   * Если сопоставитель не указан, но указан ключ, ключ используется, если его идентификатор соответствует требуемому идентификатору ключа. Если идентификатор не совпадает, выдается ошибка.
 
-    В примерах шифрования azure.storage.samples демонстрируются подробный сценарий end-to-end для больших двоичных объектов, очередей и таблиц.
+    Примеры шифрования в Azure. Storage. Samples демонстрируют более подробный комплексный сценарий для больших двоичных объектов, очередей и таблиц.
       Примеры реализации KEK и сопоставителя ключей предоставлены среди примеров файлов. Это KeyWrapper и KeyResolver, соответственно.
 
 ### <a name="requireencryption-mode"></a>Режим RequireEncryption
@@ -151,7 +151,7 @@ KEK должен реализовывать следующие методы дл
 ```python
 # Create the KEK used for encryption.
 # KeyWrapper is the provided sample implementation, but the user may use their own object as long as it implements the interface above.
-kek = KeyWrapper('local:key1') # Key identifier
+kek = KeyWrapper('local:key1')  # Key identifier
 
 # Create the key resolver used for decryption.
 # KeyResolver is the provided sample implementation, but the user may use whatever implementation they choose so long as the function set on the service object behaves appropriately.
@@ -163,7 +163,8 @@ my_block_blob_service.key_encryption_key = kek
 my_block_blob_service.key_resolver_funcion = key_resolver.resolve_key
 
 # Upload the encrypted contents to the blob.
-my_block_blob_service.create_blob_from_stream(container_name, blob_name, stream)
+my_block_blob_service.create_blob_from_stream(
+    container_name, blob_name, stream)
 
 # Download and decrypt the encrypted contents from the blob.
 blob = my_block_blob_service.get_blob_to_bytes(container_name, blob_name)
@@ -175,7 +176,7 @@ blob = my_block_blob_service.get_blob_to_bytes(container_name, blob_name)
 ```python
 # Create the KEK used for encryption.
 # KeyWrapper is the provided sample implementation, but the user may use their own object as long as it implements the interface above.
-kek = KeyWrapper('local:key1') # Key identifier
+kek = KeyWrapper('local:key1')  # Key identifier
 
 # Create the key resolver used for decryption.
 # KeyResolver is the provided sample implementation, but the user may use whatever implementation they choose so long as the function set on the service object behaves appropriately.
@@ -201,7 +202,7 @@ retrieved_message_list = my_queue_service.get_messages(queue_name)
 ```python
 # Create the KEK used for encryption.
 # KeyWrapper is the provided sample implementation, but the user may use their own object as long as it implements the interface above.
-kek = KeyWrapper('local:key1') # Key identifier
+kek = KeyWrapper('local:key1')  # Key identifier
 
 # Create the key resolver used for decryption.
 # KeyResolver is the provided sample implementation, but the user may use whatever implementation they choose so long as the function set on the service object behaves appropriately.
@@ -209,10 +210,13 @@ key_resolver = KeyResolver()
 key_resolver.put_key(kek)
 
 # Define the encryption resolver_function.
+
+
 def my_encryption_resolver(pk, rk, property_name):
     if property_name == 'foo':
         return True
     return False
+
 
 # Set the KEK and key resolver on the service object.
 my_table_service.key_encryption_key = kek
@@ -224,7 +228,8 @@ my_table_service.insert_entity(table_name, entity)
 
 # Retrieve Entity
 # Note: No need to specify an encryption resolver for retrieve, but it is harmless to leave the property set.
-my_table_service.get_entity(table_name, entity['PartitionKey'], entity['RowKey'])
+my_table_service.get_entity(
+    table_name, entity['PartitionKey'], entity['RowKey'])
 ```
 
 ### <a name="using-attributes"></a>Использование атрибутов
@@ -237,6 +242,6 @@ encrypted_property_1 = EntityProperty(EdmType.STRING, value, encrypt=True)
 ## <a name="encryption-and-performance"></a>Шифрование и производительность
 Обратите внимание, что шифрование результатов анализа данных хранилища отрицательно влияет на производительность. Ключ содержимого и ключ IV необходимо создать, само содержимое — зашифровать, а дополнительные метаданные — отформатировать и передать. Эти издержки зависят от объема шифруемых данных. Мы рекомендуем клиентам всегда тестировать свои приложения для повышения производительности во время разработки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Скачайте [клиентскую библиотеку службы хранилища Azure для пакета PyPi Java](https://pypi.python.org/pypi/azure-storage)
 * Скачайте [клиентскую библиотеку службы хранилища Azure для исходного кода Python с портала GitHub](https://github.com/Azure/azure-storage-python)

@@ -1,7 +1,6 @@
 ---
 title: 'Azure Backup: создание хранилищ Служб восстановления с помощью REST API'
 description: Управление операциями восстановления и резервного копирования виртуальной машины Azure с помощью REST API
-services: backup
 author: pvrk
 manager: shivamg
 keywords: REST API; Azure VM backup; Azure VM restore;
@@ -10,12 +9,12 @@ ms.topic: conceptual
 ms.date: 08/21/2018
 ms.author: pullabhk
 ms.assetid: e54750b4-4518-4262-8f23-ca2f0c7c0439
-ms.openlocfilehash: 4f18b10ee3f4148badc8e53a9660c9f5c998aef7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0373098dd344df79be79871227f20c8a995958fa
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60646713"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466940"
 ---
 # <a name="create-azure-recovery-services-vault-using-rest-api"></a>Создание хранилища Служб восстановления Azure с помощью REST API
 
@@ -35,8 +34,8 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 | Заголовок запроса   | Описание |
 |------------------|-----------------|
-| *Content-Type:*  | Обязательный элемент. Задайте значение `application/json`. |
-| *Authorization:* | Обязательный элемент. Задайте в качестве значения [допустимый токен доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |
+| *Content-Type:*  | Обязательный. Задайте значение `application/json`. |
+| *Authorization:* | Обязательный. Задайте в качестве значения [допустимый токен доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |
 
 Дополнительные сведения по созданию запросов см. в разделе [Components of a REST API request/response](/rest/api/azure/#components-of-a-rest-api-requestresponse) (Компоненты запроса или ответа REST API).
 
@@ -44,11 +43,11 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Для создания текста запроса используются следующие общие определения.
 
-|Name  |Обязательно для заполнения  |type  |Описание  |
+|Название  |Обязательное значение  |Тип  |Описание  |
 |---------|---------|---------|---------|
-|eTag     |         |   String      |  Необязательный eTag       |
-|location     |  Да       |String         |   Расположение ресурса      |
-|properties     |         | [VaultProperties](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#vaultproperties)        |  Свойства хранилища       |
+|eTag     |         |   Строковое      |  Необязательный eTag       |
+|расположение     |  true       |Строковое         |   Расположение ресурса      |
+|свойства     |         | [VaultProperties](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#vaultproperties)        |  Свойства хранилища       |
 |sku     |         |  [SKU](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#sku)       |    В этом столбце указан уникальный системный идентификатор для каждого ресурса Azure.     |
 |теги     |         | Object        |     Теги ресурсов    |
 
@@ -72,10 +71,10 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Есть два успешных ответа для операции по созданию или обновлению хранилища Служб восстановления:
 
-|ИМЯ  |Тип  |Описание  |
+|Название  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |   [Хранилище](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#vault)      | OК        |
-|201 Создано     | [Хранилище](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#vault)        |   Создано      |
+|200 ОК     |   [Хранилище](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#vault)      | OK        |
+|201 Создано     | [Хранилище](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#vault)        |   Дата создания      |
 
 Дополнительные сведения об ответах REST API можно узнать в разделе [Process the response message](/rest/api/azure/#process-the-response-message) (Обработка ответного сообщения).
 
@@ -98,7 +97,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Create Azure Recovery Services backup policies using REST API](backup-azure-arm-userestapi-createorupdatepolicy.md) (Создание политик резервного копирования Служб восстановления Azure с помощью REST API)
 

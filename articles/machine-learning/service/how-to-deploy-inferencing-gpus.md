@@ -9,44 +9,61 @@ ms.topic: conceptual
 ms.author: vaidyas
 author: csteegz
 ms.reviewer: larryfr
-ms.date: 06/01/2019
-ms.openlocfilehash: eeb1bc35e0438a7e99ea5ed8284f0c8611108da0
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.date: 07/24/2019
+ms.openlocfilehash: 520e7fe953256e4c489e4c540493d9f74dda3aef
+ms.sourcegitcommit: 5604661655840c428045eb837fb8704dca811da0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68326991"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68494357"
 ---
 # <a name="deploy-a-deep-learning-model-for-inference-with-gpu"></a>Развертывание модели глубокого обучения для вывода с помощью GPU
 
-В этой статье рассказывается, как использовать службу Машинное обучение Azure для развертывания модели глубокого обучения Tensorflow с поддержкой GPU в качестве веб-службы.
+В этой статье объясняется, как использовать службу Машинное обучение Azure для развертывания модели с поддержкой GPU в качестве веб-службы. Сведения в этой статье основаны на развертывании модели в службе Azure Kubernetes Service (AKS). Кластер AKS предоставляет ресурс GPU, который используется моделью для вывода.
 
-Разверните модель в кластере Azure Kubernetes Service (AKS), чтобы в ней можно было выводить ссылку на GPU. Выработка или оценка модели — это этап, в котором развернутая модель используется для прогнозирования. Использование графических процессоров вместо процессоров обеспечивает преимущества производительности при параллелизуемыеных вычислениях.
+Вывод или оценка модели — это этап, в котором для создания прогнозов используется развернутая модель. Использование графических процессоров вместо ЦП обеспечивает преимущества производительности при параллелизуемыеных вычислениях.
 
-Хотя в этом примере используется модель TensorFlow, вы можете применить следующие действия к любой платформе машинного обучения, которая поддерживает GPU, внося небольшие изменения в файл оценки и файл среды. 
-
-Ниже перечислены действия, которые вы выполните в этой статье.
-
-* Создание кластера AKS с поддержкой GPU
-* Развертывание модели GPU Tensorflow
-* Выдача примера запроса в развернутую модель
+> [!TIP]
+> Хотя фрагменты кода в этой статье Уси модель TensorFlow, эту информацию можно применить к любой платформе машинного обучения, которая поддерживает GPU.
 
 ## <a name="prerequisites"></a>предварительные требования
 
-* Рабочая область служб Машинное обучение Azure.
-* Дистрибутив Python.
-* Зарегистрированная Tensorflow сохраненная модель.
+* Рабочая область службы машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области службы машинное обучение Azure](setup-create-workspace.md).
+
+* Среда разработки Python с установленным пакетом SDK для Машинное обучение Azure. Дополнительные сведения см. в разделе о [пакете Python SDK](setup-create-workspace.md#sdk) статьи Создание рабочей области.
+
+* Зарегистрированная модель, использующая GPU.
+
     * Дополнительные сведения о регистрации моделей см. в разделе [Развертывание моделей](../service/how-to-deploy-and-where.md#registermodel).
 
-Вы можете пройти одну из этих инструкций, [как обучить модель TensorFlow](how-to-train-tensorflow.md)для выполнения необходимых условий.
+    * Сведения о создании и регистрации модели Tensorflow, используемой для создания этого документа, см. в разделе [обучение модели Tensorflow](how-to-train-tensorflow.md).
 
-## <a name="provision-an-aks-cluster-with-gpus"></a>Подготавливает кластер AKS с помощью GPU
+* Общее представление [о том, как и где развертываются модели](how-to-deploy-and-where.md).
 
-В Azure предусмотрено множество различных параметров GPU. Для этого можно использовать любой из них. Полный список возможностей и затрат см. [в списке виртуальных машин серии N](https://azure.microsoft.com/pricing/details/virtual-machines/linux/#n-series) .
+## <a name="connect-to-your-workspace"></a>Подключение к рабочей области
 
-Дополнительные сведения об использовании AKS со службой Машинное обучение Azure см. [в разделе Развертывание и размещение](../service/how-to-deploy-and-where.md#deploy-aks).
+Чтобы подключиться к существующей рабочей области, используйте следующий код:
 
-```Python
+> [!IMPORTANT]
+> Этот фрагмент кода ждет, что конфигурация рабочей области будет сохранена в текущем или родительском каталоге. Дополнительные сведения о создании рабочей области и сохранении конфигурации в файле см. в разделе [Создание рабочей области службы машинное обучение Azure](setup-create-workspace.md).
+
+```python
+from azureml.core import Workspace
+
+# Connect to the workspace
+ws = Workspace.from_config()
+```
+
+## <a name="create-a-kubernetes-cluster-with-gpus"></a>Создание кластера Kubernetes с помощью GPU
+
+Служба Azure Kubernetes предоставляет множество различных параметров GPU. Для определения модели можно использовать любой из них. Полный список возможностей и затрат см. [в списке виртуальных машин серии N](https://azure.microsoft.com/pricing/details/virtual-machines/linux/#n-series) .
+
+В следующем коде показано, как создать новый кластер AKS для рабочей области.
+
+```python
+from azureml.core.compute import ComputeTarget, AksCompute
+from azureml.exceptions import ComputeTargetException
+
 # Choose a name for your cluster
 aks_name = "aks-gpu"
 
@@ -68,11 +85,16 @@ except ComputeTargetException:
 ```
 
 > [!IMPORTANT]
-> При подготовке кластера AKS в Azure будет взиматься плата. Не забудьте удалить кластер AKS после завершения работы с ним.
+> В Azure будет взиматься плата, если существует кластер AKS. Не забудьте удалить кластер AKS после завершения работы с ним.
+
+Дополнительные сведения об использовании службы Azure Kubernetes с Машинное обучение Azure Service см. в разделе [развертывание и размещение](how-to-deploy-and-where.md#deploy-aks).
 
 ## <a name="write-the-entry-script"></a>Написание сценария записи
 
-Сохраните следующий код в рабочем каталоге как `score.py`. Этот файл оценивает изображения по мере их отправки в службу. Он загружает сохраненную модель TensorFlow, передает входной образ в сеанс TensorFlow в каждом запросе POST, а затем возвращает результирующие результаты. Другим платформам, для которых требуются другие платформы, необходимы разные файлы оценки.
+Сценарий записи получает данные, отправленные в веб-службу, передает их в модель и возвращает результаты оценки. Следующий скрипт загружает модель Tensorflow при запуске, а затем использует модель для оценки данных.
+
+> [!TIP]
+> Сценарий записи зависит от модели. Например, сценарий должен быть уверен, что платформа будет использоваться с моделью, форматами данных и т. д.
 
 ```python
 import json
@@ -82,16 +104,19 @@ import tensorflow as tf
 
 from azureml.core.model import Model
 
+
 def init():
     global X, output, sess
     tf.reset_default_graph()
     model_root = Model.get_model_path('tf-dnn-mnist')
-    saver = tf.train.import_meta_graph(os.path.join(model_root, 'mnist-tf.model.meta'))
+    saver = tf.train.import_meta_graph(
+        os.path.join(model_root, 'mnist-tf.model.meta'))
     X = tf.get_default_graph().get_tensor_by_name("network/X:0")
     output = tf.get_default_graph().get_tensor_by_name("network/output/MatMul:0")
-    
+
     sess = tf.Session()
     saver.restore(sess, os.path.join(model_root, 'mnist-tf.model'))
+
 
 def run(raw_data):
     data = np.array(json.loads(raw_data)['data'])
@@ -99,11 +124,13 @@ def run(raw_data):
     out = output.eval(session=sess, feed_dict={X: data})
     y_hat = np.argmax(out, axis=1)
     return y_hat.tolist()
-
 ```
+
+Этот файл называется `score.py`. Дополнительные сведения о сценариях входа см. [в разделе как и где развертывать](how-to-deploy-and-where.md).
+
 ## <a name="define-the-conda-environment"></a>Определение среды conda
 
-Создайте файл среды conda с именем `myenv.yml` , чтобы указать зависимости для службы. Важно указать, что вы используете `tensorflow-gpu` для достижения ускоренной производительности.
+Файл среды conda определяет зависимости для службы. Он включает зависимости, необходимые как для модели, так и для скрипта записи. Следующая YAML определяет среду для модели Tensorflow. Он указывает `tensorflow-gpu`, что будет использовать GPU, используемый в этом развертывании:
 
 ```yaml
 name: project_environment
@@ -120,60 +147,102 @@ channels:
 - conda-forge
 ```
 
-## <a name="define-the-gpu-inferenceconfig-class"></a>Определение класса GPU Инференцеконфиг
+В этом примере файл сохраняется как `myenv.yml`.
 
-`InferenceConfig` Создайте объект, который включает графические процессоры и обеспечивает установку CUDA вместе с образом DOCKER.
+## <a name="define-the-deployment-configuration"></a>Определение конфигурации развертывания
+
+Конфигурация развертывания определяет среду службы Azure Kubernetes, используемую для запуска веб-службы:
 
 ```python
-from azureml.core.model import Model
+from azureml.core.webservice import AksWebservice
+
+gpu_aks_config = AksWebservice.deploy_configuration(autoscale_enabled=False,
+                                                    num_replicas=3,
+                                                    cpu_cores=2,
+                                                    memory_gb=4)
+```
+
+Дополнительные сведения см. в справочной документации по [акссервице. deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aks.akswebservice?view=azure-ml-py#deploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none--gpu-cores-none--period-seconds-none--initial-delay-seconds-none--timeout-seconds-none--success-threshold-none--failure-threshold-none--namespace-none-).
+
+## <a name="define-the-inference-configuration"></a>Определение конфигурации вывода
+
+Конфигурация вывода указывает на сценарий записи и файл среды conda. Он также включает поддержку GPU, которая устанавливает CUDA в образе DOCKER, созданном для веб-службы:
+
+```python
 from azureml.core.model import InferenceConfig
 
-aks_service_name ='aks-dnn-mnist'
-gpu_aks_config = AksWebservice.deploy_configuration(autoscale_enabled = False, 
-                                                    num_replicas = 3, 
-                                                    cpu_cores=2, 
-                                                    memory_gb=4)
-model = Model(ws,"tf-dnn-mnist")
-
-inference_config = InferenceConfig(runtime= "python", 
+inference_config = InferenceConfig(runtime="python",
                                    entry_script="score.py",
-                                   conda_file="myenv.yml", 
+                                   conda_file="myenv.yml",
                                    enable_gpu=True)
 ```
 
-Дополнительные сведения можно найти в разделе
-
-- [Класс Инференцеконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py)
-- [Класс Акссервицедеплойментконфигуратион](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aks.aksservicedeploymentconfiguration?view=azure-ml-py)
+Дополнительные сведения см. в справочной документации по [инференцеконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py).
 
 ## <a name="deploy-the-model"></a>Развертывание модели
 
 Разверните модель в кластере AKS и подождите, пока она создаст службу.
 
 ```python
+from azureml.core.model import Model
+
+# Name of the web service that is deployed
+aks_service_name = 'aks-dnn-mnist'
+# Get the registerd model
+model = Model(ws, "tf-dnn-mnist")
+# Deploy the model
 aks_service = Model.deploy(ws,
                            models=[model],
-                           inference_config=inference_config, 
+                           inference_config=inference_config,
                            deployment_config=gpu_aks_config,
                            deployment_target=aks_target,
                            name=aks_service_name)
 
-aks_service.wait_for_deployment(show_output = True)
+aks_service.wait_for_deployment(show_output=True)
 print(aks_service.state)
 ```
 
 > [!NOTE]
-> Машинное обучение Azure служба не развертывает модель с `InferenceConfig` объектом, который должен включать графический процессор в кластер без графического процессора.
+> Если объект `InferenceConfig` имеет `enable_gpu=True`значение, `deployment_target` параметр должен ссылаться на кластер, который предоставляет GPU. В противном случае развертывание завершится ошибкой.
 
-Дополнительные сведения см. в разделе [класс Model](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py).
+Дополнительные сведения см. в справочной документации по [модели](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py).
 
-## <a name="issue-a-sample-query-to-your-model"></a>Выдача примера запроса в модель
+## <a name="issue-a-sample-query-to-your-service"></a>Выдача примера запроса в службу
 
-Отправка тестового запроса в развернутую модель. При отправке изображения JPEG в модель она оценивает изображение. В следующем примере кода для загрузки изображений используется внешняя служебная функция. Соответствующий код можно найти по адресу PIR [TensorFlow Sample на сайте GitHub](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-tensorflow/utils.py). 
+Отправка тестового запроса в развернутую модель. При отправке изображения JPEG в модель она оценивает изображение. Следующий пример кода скачивает тестовые данные, а затем выбирает случайное тестовое изображение для отправки в службу. 
 
 ```python
 # Used to test your webservice
-from utils import load_data 
+import os
+import urllib
+import gzip
+import numpy as np
+import struct
+import requests
+
+# load compressed MNIST gz files and return numpy arrays
+def load_data(filename, label=False):
+    with gzip.open(filename) as gz:
+        struct.unpack('I', gz.read(4))
+        n_items = struct.unpack('>I', gz.read(4))
+        if not label:
+            n_rows = struct.unpack('>I', gz.read(4))[0]
+            n_cols = struct.unpack('>I', gz.read(4))[0]
+            res = np.frombuffer(gz.read(n_items[0] * n_rows * n_cols), dtype=np.uint8)
+            res = res.reshape(n_items[0], n_rows * n_cols)
+        else:
+            res = np.frombuffer(gz.read(n_items[0]), dtype=np.uint8)
+            res = res.reshape(n_items[0], 1)
+    return res
+
+# one-hot encode a 1-D array
+def one_hot_encode(array, num_of_classes):
+    return np.eye(num_of_classes)[array.reshape(-1)]
+
+# Download test data
+os.makedirs('./data/mnist', exist_ok=True)
+urllib.request.urlretrieve('http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz', filename='./data/mnist/test-images.gz')
+urllib.request.urlretrieve('http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz', filename='./data/mnist/test-labels.gz')
 
 # Load test data from model training
 X_test = load_data('./data/mnist/test-images.gz', False) / 255.0
@@ -184,19 +253,18 @@ random_index = np.random.randint(0, len(X_test)-1)
 input_data = "{\"data\": [" + str(list(X_test[random_index])) + "]}"
 
 api_key = aks_service.get_keys()[0]
-headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
+headers = {'Content-Type': 'application/json',
+           'Authorization': ('Bearer ' + api_key)}
 resp = requests.post(aks_service.scoring_uri, input_data, headers=headers)
 
 print("POST to url", aks_service.scoring_uri)
-#print("input data:", input_data)
 print("label:", y_test[random_index])
 print("prediction:", resp.text)
 ```
 
-> [!IMPORTANT]
-> Чтобы сократить задержку и оптимизировать пропускную способность, убедитесь, что клиент находится в том же регионе Azure, что и конечная точка. В этом примере интерфейсы API создаются в регионе Azure "Восточная часть США".
+Дополнительные сведения о создании клиентского приложения см. в разделе [Создание клиента для использования развернутой веб-службы](how-to-consume-web-service.md).
 
-## <a name="clean-up-the-resources"></a>Очистка ресурсов
+## <a name="clean-up-the-resources"></a>очищать ресурсы.
 
 Если вы создали кластер AKS специально для этого примера, удалите ресурсы после завершения работы.
 

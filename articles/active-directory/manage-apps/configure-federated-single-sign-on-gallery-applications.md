@@ -15,12 +15,13 @@ ms.topic: conceptual
 ms.date: 07/11/2017
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b692c593dc134d9b24faeb9de8d3cd2e9a3521b6
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ROBOTS: NOINDEX
+ms.openlocfilehash: bb5d2c693047dd0aa53430ba531dfd246cc77be9
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67190204"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68422534"
 ---
 # <a name="how-to-configure-federated-single-sign-on-for-an-azure-ad-gallery-application"></a>Настройка федеративного единого входа для приложения из коллекции Azure AD
 
@@ -144,7 +145,7 @@ ms.locfileid: "67190204"
   
    1. Нажмите кнопку **Добавить атрибут**. Введите **Имя** и выберите **Значение** из раскрывающегося списка.
 
-   2. Выберите команду **Сохранить**. Новый атрибут появится в таблице.
+   2. Нажмите кнопку **Сохранить**. Новый атрибут появится в таблице.
 
 ## <a name="download-the-azure-ad-metadata-or-certificate"></a>Скачивание метаданных Azure AD или сертификата
 
@@ -212,7 +213,7 @@ Azure AD также предоставляет URL-адрес для получ�
 
 Чтобы узнать, как настроить утверждения атрибута SAML, отправляемые в приложение, ознакомьтесь с разделом [Сопоставление утверждений в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-claims-mapping).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Реализация единого входа в приложения с помощью прокси приложения](application-proxy-configure-single-sign-on-with-kcd.md)
 
 

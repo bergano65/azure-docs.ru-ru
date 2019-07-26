@@ -1,6 +1,6 @@
 ---
 title: Постраничное отображение доступных видео — Поиск видео Bing
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Узнайте, как разбить на страницы список видео, возвращаемый API Bing для поиска видео, для удобного просмотра.
 services: cognitive-services
 author: swhite-msft
@@ -10,12 +10,12 @@ ms.subservice: bing-video-search
 ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: scottwhi
-ms.openlocfilehash: 12549bb53a21dd657f51a4a02460ddc82c47bef8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c3570d8772734595c6707ca8103006867a8eb47a
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66386389"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68500706"
 ---
 # <a name="paging-through-video-search-results"></a>Разбиение на страницы результатов поиска видео
 
@@ -74,7 +74,7 @@ Host: api.cognitive.microsoft.com
 > [!NOTE]
 > Поле `TotalEstimatedAnswers` содержит приблизительное общее число результатов поиска, которые вы можете получить для текущего запроса.  При задании параметров `count` и `offset` число `TotalEstimatedAnswers` может измениться. 
   
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Получение полезных сведений о видео](video-insights.md)

@@ -9,12 +9,12 @@ services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 10/06/2017
-ms.openlocfilehash: af35a84c299544e43988547771ddce75fd71bd90
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a3a07f54d77577085951b2bccfa1213adef5b20d
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67065788"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68403918"
 ---
 # <a name="schedule-and-broadcast-jobs-node"></a>Планирование и трансляция заданий (Node)
 
@@ -30,9 +30,9 @@ ms.locfileid: "67065788"
 
 Дополнительные сведения о каждой из этих возможностей см. в следующих статьях:
 
-* Двойник устройства и свойства: [Начало работы с двойниками устройств](iot-hub-node-node-twin-getstarted.md) и [руководства: Практическое использование свойств двойников устройств](tutorial-device-twins.md)
+* Двойник устройства и свойства: [Начало работы с двойниковами устройств](iot-hub-node-node-twin-getstarted.md) и [учебником: Использование свойств двойникаа устройства](tutorial-device-twins.md)
 
-* Прямые методы: [Руководство разработчика для центра Интернета вещей — прямые методы](iot-hub-devguide-direct-methods.md) и [учебник: прямые методы](quickstart-control-device-node.md)
+* Прямые методы: [Руководство разработчика для центра Интернета вещей. прямые методы](iot-hub-devguide-direct-methods.md) и [учебник. прямые методы](quickstart-control-device-node.md)
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
 
@@ -50,17 +50,13 @@ ms.locfileid: "67065788"
 
 Для работы с этим учебником требуется:
 
-* Node.js версии 10.0.x или более поздней версии [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) описывается установка Node.js в этом руководстве в ОС Windows или Linux.
+* Node. js версии 10.0. x или более поздней версии [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md) описывает установку Node. js для этого руководства в Windows или Linux.
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
-
-### <a name="retrieve-connection-string-for-iot-hub"></a>Получение строки подключения для центра Интернета вещей
-
-[!INCLUDE [iot-hub-include-find-connection-string](../../includes/iot-hub-include-find-connection-string.md)]
 
 [!INCLUDE [iot-hub-get-started-create-device-identity](../../includes/iot-hub-get-started-create-device-identity.md)]
 
@@ -134,6 +130,12 @@ ms.locfileid: "67065788"
 > [!NOTE]
 > Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повторных попыток (например, с экспоненциальной задержкой), как указано в статье [Обработка временных сбоев](/azure/architecture/best-practices/transient-faults).
 >
+
+## <a name="get-the-iot-hub-connection-string"></a>Получение строки подключения для центра Интернета вещей
+
+[!INCLUDE [iot-hub-howto-schedule-jobs-shared-access-policy-text](../../includes/iot-hub-howto-schedule-jobs-shared-access-policy-text.md)]
+
+[!INCLUDE [iot-hub-include-find-registryrw-connection-string](../../includes/iot-hub-include-find-registryrw-connection-string.md)]
 
 ## <a name="schedule-jobs-for-calling-a-direct-method-and-updating-a-device-twins-properties"></a>Планирование заданий для вызова прямого метода и обновления свойств двойника устройства
 
@@ -279,10 +281,10 @@ ms.locfileid: "67065788"
 
 3. В консоли отобразится ответ устройства на прямой метод.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом учебнике описано использование задания для планирования прямого метода на устройстве и обновления свойств двойника устройства.
 
-Чтобы продолжить знакомство с центром Интернета вещей и шаблонами управления устройствами, такими как удаленное обновление встроенного по воздуху по, см. в разделе [руководства: Как обновить встроенное по](tutorial-firmware-update.md).
+Чтобы продолжить знакомство с центром Интернета вещей и шаблонами управления устройствами, такими как удаленный через обновление встроенного [по Air, см. раздел учебник. Как обновить](tutorial-firmware-update.md)встроенное по.
 
-Чтобы продолжить знакомство с центром Интернета вещей, см. в разделе [Приступая к работе с Azure IoT Edge](../iot-edge/tutorial-simulate-device-linux.md).
+Чтобы продолжить знакомство с центром Интернета вещей, см. статью Приступая к [работе с Azure IOT Edge](../iot-edge/tutorial-simulate-device-linux.md).

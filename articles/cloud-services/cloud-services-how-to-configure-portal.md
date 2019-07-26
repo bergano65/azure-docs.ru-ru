@@ -3,23 +3,17 @@ title: Настройка облачной службы с помощью пор
 description: Узнайте, как настроить облачные службы в Azure. Как обновить конфигурацию облачной службы и настроить удаленный доступ к экземплярам роли. В этих примерах используется портал Azure.
 services: cloud-services
 documentationcenter: ''
-author: jpconnock
-manager: timlt
-editor: ''
-ms.assetid: 7308f3c0-825e-499d-bfa5-c60f86371921
+author: georgewallace
 ms.service: cloud-services
-ms.workload: tbd
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 12/07/2016
-ms.author: jeconnoc
-ms.openlocfilehash: 4d8d3b93ef2a6347076fada53932b5fc56838d20
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: gwallace
+ms.openlocfilehash: 8b60a81e06b95c69a02f88ff3275743b056c191d
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61435873"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359655"
 ---
 # <a name="how-to-configure-cloud-services"></a>Настройка облачных служб
 
@@ -50,7 +44,7 @@ ms.locfileid: "61435873"
 >[!IMPORTANT]
 > В случае выбора конкретной версии ОС автоматические обновления операционной системы отключаются, а ответственность за установку исправлений ложится на вас. Вы должны обеспечить установку обновлений в экземплярах роли, иначе система безопасности вашего приложения будет уязвима.
 
-## <a name="monitoring"></a>Мониторинг
+## <a name="monitoring"></a>Отслеживание
 
 Вы можете включить оповещения в облачной службе. Щелкните **Параметры** > **Правила оповещений** > **Добавить оповещение**.
 
@@ -58,11 +52,11 @@ ms.locfileid: "61435873"
 
 Здесь можно настроить оповещение. Раскрывающийся список **Метрика** позволяет настроить оповещение для следующих типов данных.
 
-* Скорость чтения с диска
+* Чтение с диска
 * Скорость записи на диск
 * Входящая скорость сети
 * Исходящая скорость сети
-* Процент использования ЦП
+* Процент ЦП
 
 ![](./media/cloud-services-how-to-configure-portal/cs-alert-item.png)
 
@@ -98,13 +92,13 @@ ms.locfileid: "61435873"
     ![Колонка «Конфигурация»](./media/cloud-services-how-to-configure-portal/cs-settings-config.png)
 3. Нажмите кнопку **Загрузить** .
 
-    ![Download (Скачать)](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-download.png)
+    ![Загрузить](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-download.png)
 4. Чтобы применить обновления конфигурации, передайте новый файл в службу:
 
     ![Отправьте](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-upload.png)
 5. Выберите файл .cscfg и нажмите **ОК**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте, как [развернуть облачную службу](cloud-services-how-to-create-deploy-portal.md).
 * Настройте [пользовательское доменное имя](cloud-services-custom-domain-name-portal.md).

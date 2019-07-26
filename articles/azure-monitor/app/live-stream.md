@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: 607da7983cabe4c36c01171ba8d88c752b99ce3d
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: f8203cade1d2e34a9852e945df03dc2fddc1fbe5
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67303811"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359413"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>Live Metrics Stream: мониторинг и диагностика с задержкой в 1 секунду
 
-Держите руку на пульсе работы веб-приложения с помощью Live Metrics Stream в [Application Insights](../../azure-monitor/app/app-insights-overview.md). Выбирайте и фильтруйте метрики и счетчики производительности для отслеживания в режиме реального времени, не нарушая работу служб. Проверяйте трассировки стека на основе образцов неудавшихся запросов и исключений. Вместе с [Profiler](../../azure-monitor/app/profiler.md), [Snapshot debugger](../../azure-monitor/app/snapshot-debugger.md). Live Stream метрик предоставляет мощный и не мешает работе средство диагностики для веб-сайт live.
+Держите руку на пульсе работы веб-приложения с помощью Live Metrics Stream в [Application Insights](../../azure-monitor/app/app-insights-overview.md). Выбирайте и фильтруйте метрики и счетчики производительности для отслеживания в режиме реального времени, не нарушая работу служб. Проверяйте трассировки стека на основе образцов неудавшихся запросов и исключений. Вместе с [профилировщиком](../../azure-monitor/app/profiler.md)— [отладчик моментальных снимков](../../azure-monitor/app/snapshot-debugger.md). Live Metrics Stream предоставляет мощный и неагрессивный диагностический инструмент для веб-сайта.
 
 С помощью Live Metrics Stream можно выполнять следующие действия:
 
@@ -36,9 +36,9 @@ ms.locfileid: "67303811"
 
 [![Видео, посвященное Live Metrics Stream](./media/live-stream/youtube.png)](https://www.youtube.com/watch?v=zqfHf1Oi5PY)
 
-Динамические метрики в настоящее время поддерживаются для приложений ASP.NET, ASP.NET Core, функции Azure, Java и Node.js.
+В настоящее время динамические метрики поддерживаются для ASP.NET, ASP.NET Core, функций Azure, Java и приложений Node. js.
 
-## <a name="get-started"></a>Начало работы
+## <a name="get-started"></a>Начать работу
 
 1. Если вы еще не [установили Application Insights в своем веб-приложении](../../azure-monitor/azure-monitor-app-hub.md), сделайте это сейчас.
 2. В дополнение к стандартным пакетам Application Insights пакет [Microsoft.ApplicationInsights.PerfCounterCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.PerfCounterCollector/) также требуется, чтобы включить Live Metrics Stream.
@@ -52,7 +52,7 @@ ms.locfileid: "67303811"
 
 ### <a name="nodejs"></a>Node.js
 
-Для использования Live Metrics с помощью Node.js, необходимо обновить до версии 1,30 или более поздней версии, пакета SDK. Live Metrics отключена по умолчанию в пакете SDK для Node.js. Чтобы включить Live Metrics добавьте `setSendLiveMetrics(true)` для вашей [методы конфигурации](https://github.com/Microsoft/ApplicationInsights-node.js#configuration) как инициализации пакета SDK.
+Чтобы использовать динамические метрики с Node. js, необходимо обновить пакет SDK до версии 1,30 или более поздней. По умолчанию динамические метрики отключены в пакете SDK для Node. js. Чтобы включить динамические метрики, `setSendLiveMetrics(true)` добавьте их в [методы конфигурации](https://github.com/Microsoft/ApplicationInsights-node.js#configuration) при инициализации пакета SDK.
 
 ### <a name="no-data-check-your-server-firewall"></a>Данные отсутствуют? Проверьте брандмауэр сервера
 
@@ -65,7 +65,7 @@ ms.locfileid: "67303811"
 |Задержка|Данные отображаются в течение одной секунды|Агрегирование выполняется в течение нескольких минут|
 |Нет сохранения|Данные сохраняются, только пока они отображаются на диаграмме, а затем удаляются.|[Данные сохраняются 90 дней](../../azure-monitor/app/data-retention-privacy.md#how-long-is-the-data-kept)|
 |По запросу|Данные передаются, пока открыта служба Live Metrics|Данные отправляются, когда пакет SDK установлен и включен|
-|Free|Плата за данные Live Stream не взимается|Действуют [расценки](../../azure-monitor/app/pricing.md)
+|Бесплатно|Плата за данные Live Stream не взимается|Действуют [расценки](../../azure-monitor/app/pricing.md)
 |Выборка|Передаются все выбранные метрики и счетчики. Производится выборка сбоев и трассировок стека. TelemetryProcessors не применяются.|Может производиться [выборка](../../azure-monitor/app/api-filtering-sampling.md) событий.|
 |Канал управления|В пакет SDK отправляются управляющие сигналы фильтрации. Мы советуем защитить этот канал.|Взаимодействие является односторонним (в сторону портала)|
 
@@ -175,13 +175,13 @@ using Microsoft.ApplicationInsights.Extensibility;
 
 Сначала добавьте приведенный ниже код.
 
-``` C#
+```csharp
 using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPulse;
 ```
 
 Затем в методе ConfigureServices добавьте:
 
-``` C#
+```csharp
 services.ConfigureTelemetryModule<QuickPulseTelemetryModule> ((module, o) => module.AuthenticationApiKey = "YOUR-API-KEY-HERE");
 ```
 
@@ -199,7 +199,7 @@ services.ConfigureTelemetryModule<QuickPulseTelemetryModule> ((module, o) => mod
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Отслеживание использования Application Insights.](../../azure-monitor/app/usage-overview.md)
 * [Использование диагностического поиска](../../azure-monitor/app/diagnostic-search.md)
 * [Профилировщик](../../azure-monitor/app/profiler.md)

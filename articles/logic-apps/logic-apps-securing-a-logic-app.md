@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 06/28/2019
-ms.openlocfilehash: d69861beb5848679aa00c8b39f0caa84c7c5d847
-ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
+ms.openlocfilehash: f27dfd1f907d106ddb3b1b9dd7534d56380149c2
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67986854"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68385498"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Безопасный доступ и данные в Azure Logic Apps
 
@@ -193,9 +193,9 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
   Этот параметр позволяет защитить доступ к журналу выполнения на основе запросов из определенного диапазона IP-адресов.
 
-* [Скрытие входных и выходных данных в журнале выполнения с помощью функции запутывания](#obfuscate).
+* [Скрыть данные из журнала выполнения с помощью функции запутывания](#obfuscate).
 
-  Этот параметр позволяет скрывать входы и выходы в журнале выполнения на основе триггера или действия.
+  Во многих триггерах и действиях их входные и выходные данные могут быть скрыты из журнала выполнения приложения логики.
 
 <a name="restrict-ip"></a>
 
@@ -258,7 +258,11 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
 <a name="obfuscate"></a>
 
-### <a name="hide-inputs-and-outputs-in-run-history-by-using-obfuscation"></a>Скрытие входных и выходных данных в журнале выполнения с помощью функции запутывания
+### <a name="hide-data-from-run-history-by-using-obfuscation"></a>Скрытие данных из журнала выполнения с помощью функции запутывания
+
+Многие триггеры и действия имеют параметры для скрытия входов, выходов или и того и другого из журнала выполнения приложения логики. Ниже приведены некоторые [рекомендации, которые следует рассмотреть](#obfuscation-considerations) при использовании этих параметров для защиты этих данных.
+
+#### <a name="secure-inputs-and-outputs-in-the-designer"></a>Защита входных и выходных данных в конструкторе
 
 1. Если приложение логики еще не открыто в [портал Azure](https://portal.azure.com), откройте приложение логики в конструкторе приложений логики.
 
@@ -290,9 +294,38 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 
       ![Скрытые данные в журнале выполнения](media/logic-apps-securing-a-logic-app/hidden-data-run-history.png)
 
+<a name="secure-data-code-view"></a>
+
+#### <a name="secure-inputs-and-outputs-in-code-view"></a>Защита входных и выходных данных в представлении кода
+
+В базовом триггере или определении действия добавьте или обновите `runtimeConfiguration.secureData.properties` массив одним из следующих значений:
+
+* `"inputs"`. Обеспечивает защиту входных данных в журнале выполнения.
+* `"outputs"`. Обеспечивает защиту выходных данных в журнале выполнения.
+
+Ниже приведены некоторые [рекомендации, которые следует рассмотреть](#obfuscation-considerations) при использовании этих параметров для защиты этих данных.
+
+```json
+"<trigger-or-action-name>": {
+   "type": "<trigger-or-action-type>",
+   "inputs": {
+      <trigger-or-action-inputs>
+   },
+   "runtimeConfiguration": {
+      "secureData": {
+         "properties": [
+            "inputs",
+            "outputs"
+         ]
+      }
+   },
+   <other-attributes>
+}
+```
+
 <a name="obfuscation-considerations"></a>
 
-#### <a name="considerations-when-securing-inputs-and-outputs"></a>Рекомендации по защите входных и выходных данных
+#### <a name="considerations-when-hiding-inputs-and-outputs"></a>Рекомендации по скрытию входных и выходных данных
 
 * При защите входных или выходных данных триггера или действия Logic Apps не отправляет защищенные данные в Azure Log Analytics. Кроме того, вы не можете добавлять [отслеживаемые свойства](logic-apps-monitor-your-logic-apps.md#azure-diagnostics-event-settings-and-details) к этому триггеру или действию для мониторинга.
 
@@ -564,3 +597,4 @@ POST /subscriptions/<Azure-subscription-ID>/resourceGroups/<Azure-resource-group
 * [Создание шаблонов развертывания](logic-apps-create-deploy-template.md)  
 * [См. статью Мониторинг приложений логики.](logic-apps-monitor-your-logic-apps.md)  
 * [Диагностика и устранение сбоев рабочих процессов в Azure Logic Apps](logic-apps-diagnosing-failures.md)  
+* [Автоматизация развертывания приложений логики](logic-apps-azure-resource-manager-templates-overview.md)

@@ -7,15 +7,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: manage
-ms.date: 04/12/2019
+ms.date: 07/23/2019
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: ff1f613dfdfb5c43b727bcc9c7f7a1f0afca0975
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f2dab34ea0ef64f4062819e9b2d475e6a226856b
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60748784"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68405434"
 ---
 # <a name="monitor-your-workload-using-dmvs"></a>Мониторинг рабочей нагрузки с помощью динамических административных представлений
 В этой статье объясняется, как отслеживать рабочую нагрузку с помощью динамических административных представлений (DMV). Она включает в себя анализ выполнения запросов в хранилище данных SQL Azure.
@@ -59,18 +59,13 @@ SELECT TOP 10 *
 FROM sys.dm_pdw_exec_requests 
 ORDER BY total_elapsed_time DESC;
 
--- Find a query with the Label 'My Query'
--- Use brackets when querying the label column, as it it a key word
-SELECT  *
-FROM    sys.dm_pdw_exec_requests
-WHERE   [label] = 'My Query';
 ```
 
 **Запишите идентификатор запроса**, который вы хотите исследовать. Он указан в приведенных выше результатах запроса.
 
-Запросы в **Suspended** могут быть поставлены в очередь состояния из-за большого числа активных рабочих запросов. Эти запросы также отображаются в [sys.dm_pdw_waits](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-waits-transact-sql) ожиданий запрос с типом UserConcurrencyResourceType. Сведения об ограничениях параллелизма см. в статье об [уровнях производительности](performance-tiers.md) или [классах ресурсов для управления рабочей нагрузкой](resource-classes-for-workload-management.md). Запросы также могут быть отложены по другим причинам, в том числе из-за блокировки объектов.  Если запрос ожидает ресурс, ознакомьтесь с разделом [Исследование запросов, ожидающих ресурсы][Investigating queries waiting for resources] далее в этой статье.
+Запросы в **приостановленном** состоянии могут быть поставлены в очередь из-за большого количества активных выполняющихся запросов. Эти запросы также отображаются в запросе ожиданий [sys. DM _pdw_waits](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-waits-transact-sql) с типом усерконкурренциресаурцетипе. Сведения об ограничениях параллелизма см. в статье об [уровнях производительности](performance-tiers.md) или [классах ресурсов для управления рабочей нагрузкой](resource-classes-for-workload-management.md). Запросы также могут быть отложены по другим причинам, в том числе из-за блокировки объектов.  Если запрос ожидает ресурс, ознакомьтесь с разделом [Исследование запросов, ожидающих ресурсы][Investigating queries waiting for resources] далее в этой статье.
 
-Чтобы упростить поиск запроса в [sys.dm_pdw_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql) таблицы, используйте [МЕТКА] [ LABEL] Чтобы добавить комментарий к запросу, который можно найти в sys.dm_pdw_exec_ представления запросов.
+Чтобы упростить поиск запроса в таблице [sys. DM _pdw_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql) , используйте [Label][LABEL] , чтобы назначить комментарий для запроса, который можно найти в представлении sys. DM _pdw_exec_requests.
 
 ```sql
 -- Query with Label
@@ -78,6 +73,12 @@ SELECT *
 FROM sys.tables
 OPTION (LABEL = 'My Query')
 ;
+
+-- Find a query with the Label 'My Query'
+-- Use brackets when querying the label column, as it it a key word
+SELECT  *
+FROM    sys.dm_pdw_exec_requests
+WHERE   [label] = 'My Query';
 ```
 
 ### <a name="step-2-investigate-the-query-plan"></a>Шаг 2. Изучение плана запроса
@@ -170,10 +171,10 @@ ORDER BY waits.object_name, waits.object_type, waits.state;
 Если запрос активно ожидает ресурсы из другого запроса, то его состоянием будет **AcquireResources**.  Если запрос содержит все необходимые ресурсы, то его состоянием будет **Granted**.
 
 ## <a name="monitor-tempdb"></a>Мониторинг tempdb
-База данных tempdb используется для хранения промежуточных результатов во время выполнения запроса. Высокий уровень использования базы данных tempdb может привести к снизить производительность запроса. Каждый узел в хранилище данных SQL Azure имеет около 1 ТБ свободного места для базы данных tempdb. Ниже приведены советы для наблюдения за использованием базы данных tempdb, а также для уменьшения использования базы данных tempdb в запросах. 
+База данных tempdb используется для хранения промежуточных результатов во время выполнения запроса. Высокий уровень использования базы данных tempdb может привести к снижению производительности запросов. Каждый узел в хранилище данных SQL Azure имеет примерно 1 ТБ необработанного пространства для tempdb. Ниже приведены советы по мониторингу использования tempdb и снижению использования базы данных tempdb в запросах. 
 
-### <a name="monitoring-tempdb-with-views"></a>Мониторинг tempdb с представлениями
-Чтобы отслеживать использование базы данных tempdb, сначала нужно установить [microsoft.vw_sql_requests](https://github.com/Microsoft/sql-data-warehouse-samples/blob/master/solutions/monitoring/scripts/views/microsoft.vw_sql_requests.sql) просмотра из [набор средств Microsoft для хранилища данных SQL](https://github.com/Microsoft/sql-data-warehouse-samples/tree/master/solutions/monitoring). Затем можно выполнить следующий запрос, чтобы просмотреть использование базы данных tempdb на каждый узел для всех выполненных запросов:
+### <a name="monitoring-tempdb-with-views"></a>Мониторинг tempdb с помощью представлений
+Чтобы отслеживать использование tempdb, сначала установите представление [Microsoft. vw_sql_requests](https://github.com/Microsoft/sql-data-warehouse-samples/blob/master/solutions/monitoring/scripts/views/microsoft.vw_sql_requests.sql) из [набора средств Microsoft для хранилища данных SQL](https://github.com/Microsoft/sql-data-warehouse-samples/tree/master/solutions/monitoring). Затем можно выполнить следующий запрос, чтобы просмотреть использование tempdb на каждом узле для всех выполненных запросов:
 
 ```sql
 -- Monitor tempdb
@@ -205,9 +206,9 @@ WHERE DB_NAME(ssu.database_id) = 'tempdb'
 ORDER BY sr.request_id;
 ```
 
-При наличии запроса, который потребляет большой объем памяти или получили сообщение об ошибке, связанные с распределения базы данных tempdb, часто бывает из-за очень больших [CREATE TABLE AS SELECT (CTAS)](https://docs.microsoft.com/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) или [INSERT SELECT](https://docs.microsoft.com/sql/t-sql/statements/insert-transact-sql) Произошел сбой инструкции, выполняющего в окончательный операции перемещения. Это обычно определяется как операция ShuffleMove в плане распределенный запрос прямо перед окончательной INSERT SELECT.
+Если у вас есть запрос, который потребляет большой объем памяти или получил сообщение об ошибке, связанное с выделением базы данных tempdb, это часто происходит из-за очень большого CREATE TABLE в том случае, если инструкция [SELECT (CTAS)](https://docs.microsoft.com/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) или [INSERT SELECT](https://docs.microsoft.com/sql/t-sql/statements/insert-transact-sql) выполняется с ошибкой в Окончательная операция перемещения данных. Обычно это может быть определено как операция Шуффлемове в плане распределенного запроса непосредственно перед завершающим ВЫДЕЛЕНИЕм INSERT.
 
-Разбить на несколько инструкций нагрузки инструкцию CTAS или INSERT SELECT, чтобы объем данных не может превышать 1 ТБ на ограничение на число узлов базы данных tempdb является наиболее распространенных устранение рисков. Также можно масштабировать кластер до большего размера, который будет распространяться размера tempdb между большим количеством узлов, уменьшая tempdb на каждый отдельный узел. 
+Наиболее распространенный способ устранения проблемы состоит в том, чтобы разбить инструкцию CTAS или INSERT SELECT на несколько инструкций Load, чтобы объем данных не превышал ограничение в 1 ТБ на узел. Можно также масштабировать кластер до большего размера, который будет распределять размер базы данных tempdb между большим количеством узлов, уменьшая базу данных tempdb на каждом отдельном узле. 
 
 ## <a name="monitor-memory"></a>Мониторинг памяти
 
@@ -261,8 +262,8 @@ JOIN sys.dm_pdw_nodes nod ON t.pdw_node_id = nod.pdw_node_id
 GROUP BY t.pdw_node_id, nod.[type]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о динамических административных представлениях см. в статье о [системных представлениях][System views].
+## <a name="next-steps"></a>Следующие шаги
+Дополнительные сведения о динамических административных представлениях см. в разделе [System views][System views].
 
 
 <!--Image references-->

@@ -9,20 +9,20 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 10/28/2017
-ms.openlocfilehash: b6b61ee44d252f76cd1aa5e1790456acb3d7bae5
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 6c590ae62e080a6681e49c87264089f9a5f4ce2f
+ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67620913"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68489537"
 ---
-# <a name="azure-stream-analytics-javascript-user-defined-aggregates-preview"></a>Пользовательские статистические выражения JavaScript в Azure Stream Analytics (предварительная версия)
+# <a name="azure-stream-analytics-javascript-user-defined-aggregates"></a>Azure Stream Analytics определяемые пользователем статистические функции JavaScript
  
 Azure Stream Analytics поддерживает пользовательские статистические выражения (UDA) на языке JavaScript, что позволяет реализовывать сложную бизнес-логику с отслеживанием состояния. Внутри пользовательского статистического выражения предоставляется полный контроль над структурой данных состояния, накоплением состояния, сокращением состояния и вычислением статистических результатов. В этой статье представлены два разных интерфейса пользовательских статистических выражений (UDA) JavaScript, а также инструкции по созданию пользовательского статистического выражения и способы его использования в операциях на основе окна в запросе Stream Analytics.
 
 ## <a name="javascript-user-defined-aggregates"></a>Пользовательские статистические выражения JavaScript
 
-Пользовательское статистическое выражение используется в указанном временном окне для выполнения статистического вычисления и создания одиночного результирующего значения. Существуют два типа интерфейсов UDA, поддерживаемых Stream Analytics в настоящее: AccumulateOnly и AccumulateDeaccumulate. Оба типа пользовательских статистических выражений можно использовать для "переворачивающегося" окна, "прыгающего" окна и скользящего окна. Пользовательское статистическое выражение AccumulateDeaccumulate работает быстрее, чем AccumulateOnly, при использовании с "прыгающим" окном и скользящим окном. Можно выбрать один из двух типов в зависимости от используемого алгоритма.
+Пользовательское статистическое выражение используется в указанном временном окне для выполнения статистического вычисления и создания одиночного результирующего значения. Существуют два типа интерфейсов UDA, поддерживаемых Stream Analytics в настоящее: AccumulateOnly и AccumulateDeaccumulate. Оба типа UDA могут использоваться "переворачивающегося", прыгающее», скользящего и сеансового окна. AccumulateDeaccumulate UDA работает лучше, чем AccumulateOnly UDA, когда используется вместе с прыгающее», скользящей и окном сеанса. Можно выбрать один из двух типов в зависимости от используемого алгоритма.
 
 ### <a name="accumulateonly-aggregates"></a>Статистические выражения AccumulateOnly
 
@@ -92,7 +92,7 @@ function main() {
 
 ### <a name="function-name"></a>Имя функции
 
-Имя этого объекта функции. Имя функции должно буквально совпадать с псевдонимом пользовательского статистического выражения (данная реакция на событие используется в предварительной версии; мы рассматриваем поддержку анонимной функции в общедоступной версии).
+Имя этого объекта функции. Имя функции должно соответствовать псевдониму UDA.
 
 ### <a name="method---init"></a>Метод init()
 
@@ -100,11 +100,11 @@ function main() {
 
 ### <a name="method--accumulate"></a>Метод accumulate()
 
-Метод accumulate() определяет состояние пользовательского статистического выражения на основе значений предыдущего состояния и текущего события. Этот метод вызывается, когда событие попадает во временное окно (TUMBLINGWINDOW, HOPPINGWINDOW или SLIDINGWINDOW).
+Метод accumulate() определяет состояние пользовательского статистического выражения на основе значений предыдущего состояния и текущего события. Этот метод вызывается, когда событие попадает в временное окно (TUMBLINGWINDOW, HOPPINGWINDOW, SLIDINGWINDOW или СЕССИОНВИНДОВ).
 
 ### <a name="method--deaccumulate"></a>Метод deaccumulate()
 
-Метод deaccumulate() повторно определяет состояние на основе значений предыдущего состояния и текущего события. Этот метод вызывается, когда событие покидает окно SLIDINGWINDOW.
+Метод deaccumulate() повторно определяет состояние на основе значений предыдущего состояния и текущего события. Этот метод вызывается, когда событие покидает SLIDINGWINDOW или СЕССИОНВИНДОВ.
 
 ### <a name="method--deaccumulatestate"></a>Метод deaccumulateState()
 
@@ -112,7 +112,7 @@ function main() {
 
 ### <a name="method--computeresult"></a>Метод computeResult()
 
-Метод computeResult() возвращает результат статистического выражения на основе текущего состояния. Этот метод вызывается в конце временного окна (TUMBLINGWINDOW, HOPPINGWINDOW или SLIDINGWINDOW).
+Метод computeResult() возвращает результат статистического выражения на основе текущего состояния. Этот метод вызывается в конце временного окна (TUMBLINGWINDOW, HOPPINGWINDOW, SLIDINGWINDOW или СЕССИОНВИНДОВ).
 
 ## <a name="javascript-uda-supported-input-and-output-data-types"></a>Поддерживаемые типы входных и выходных данных для пользовательских статистических выражений JavaScript
 Типы данных для пользовательских статистических выражений JavaScript приведены в разделе **Преобразование типов Stream Analytics и JavaScript** статьи [Определяемые пользователем функции JavaScript в Azure Stream Analytics](stream-analytics-javascript-user-defined-functions.md).
@@ -225,7 +225,7 @@ GROUP BY TumblingWindow(minute, 5)
 ]
 ```
 
-## <a name="get-help"></a>Получение справки
+## <a name="get-help"></a>Справка
 
 Дополнительную помощь и поддержку вы можете получить на нашем [форуме Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
 

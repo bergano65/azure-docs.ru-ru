@@ -4,15 +4,15 @@ description: Узнайте, как устранять неполадки с п�
 services: data-share
 author: joannapea
 ms.service: data-share
-ms.topic: overview
+ms.topic: troubleshooting
 ms.date: 07/10/2019
 ms.author: joanpo
-ms.openlocfilehash: c02f72d6a327c4dcb94ac8844005613cfe316986
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
-ms.translationtype: HT
+ms.openlocfilehash: 386a5e34dccafa61859cd13c3e0ad88cd3a7ffac
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67838380"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68421470"
 ---
 # <a name="troubleshoot-common-issues-in-azure-data-share-preview"></a>Устранение распространенных неполадок в предварительной версии Azure Data Share
 
@@ -56,7 +56,7 @@ ms.locfileid: "67838380"
 1. Щелкните **Добавить**.
 1. Добавьте себя в качестве владельца.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы узнать, как приступить к обмену данными, перейдите к [этому](share-your-data.md) руководству.
 

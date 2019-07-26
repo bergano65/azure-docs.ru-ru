@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 392699182859a090c13304f63d28a78b95a65ec7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 87e5ec82299ef9ddc8bc8756196bb2ace3d1f6f3
+ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65024024"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68414243"
 ---
 # <a name="search-explorer-for-querying-data-in-azure-search"></a>Проводник поиска для запроса в Поиске Azure 
 
@@ -85,7 +85,7 @@ ms.locfileid: "65024024"
 Поиск Azure возвращает первые 50 совпадений в соответствии с рейтингом поиска. Чтобы получить следующий набор соответствующих документов, добавьте в запрос **$top=100,&$skip=50**. Это позволит увеличить результирующий набор до 100 документов (значение по умолчанию — 50, максимальное значение — 1000), пропустив первые 50 документов. Как вы помните, чтобы получить ранжированные результаты, необходимо указать критерии поиска, например термин запроса или выражение. Обратите внимание на то, что рейтинг поиска уменьшается по мере углубления в результаты поиска.
 
    ```Input
-   search=seattle condo&$select=listingId,beds,baths,description,street,city,price&$count=true&$top=100,&$skip=50
+   search=seattle condo&$select=listingId,beds,baths,description,street,city,price&$count=true&$top=100&$skip=50
    ```
 
    **Результаты**
@@ -94,13 +94,25 @@ ms.locfileid: "65024024"
 
 ## <a name="filter-expressions-greater-than-less-than-equal-to"></a>Выражения фильтра (больше, меньше, равно)
 
-Используйте параметр **$filter**, если вы хотите указать точные условия, а не произвольный текст для поиска. В этом примере выполняется поиск квартир, в которых больше 3 спален: `search=seattle condo&$filter=beds gt 3&$count=true`
+Используйте параметр **$filter**, если вы хотите указать точные условия, а не произвольный текст для поиска. В этом примере выполняется поиск спальнями больше 3:
+
+   ```Input
+   search=seattle condo&$filter=beds gt 3&$count=true
+   ```
+   
+   **Результаты**
 
    ![Выражение фильтра](./media/search-explorer/search-explorer-example-filter.png "Фильтрация по условию")
 
 ## <a name="order-by-expressions"></a>Выражения OrderBy
 
-Добавьте параметр **$orderby**, чтобы отсортировать результаты не только по рейтингу поиска, а и по другому полю. Пример выражения, который можно использовать, чтобы протестировать этот параметр: `search=seattle condo&$select=listingId,beds,price&$filter=beds gt 3&$count=true&$orderby=price asc`
+Добавьте параметр **$orderby**, чтобы отсортировать результаты не только по рейтингу поиска, а и по другому полю. Пример выражения, который можно использовать для проверки:
+
+   ```Input
+   search=seattle condo&$select=listingId,beds,price&$filter=beds gt 3&$count=true&$orderby=price asc
+   ```
+   
+   **Результаты**
 
    ![Выражение OrderBy](./media/search-explorer/search-explorer-example-ordery.png "Изменение порядка сортировки")
 
@@ -137,7 +149,7 @@ ms.locfileid: "65024024"
 + Синтаксис выражений запросов и фильтров должен поддерживаться Поиском Azure. По умолчанию используется [простой синтаксис](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search), но при необходимости можно использовать [полный запрос Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search), чтобы создавать более эффективные запросы. Для [выражений фильтров](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search) используется синтаксис OData.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о синтаксисе запросов и примеры см. в следующих ресурсах.
 

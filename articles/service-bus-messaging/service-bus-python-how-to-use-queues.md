@@ -14,44 +14,44 @@ ms.devlang: python
 ms.topic: article
 ms.date: 04/10/2019
 ms.author: aschhab
-ms.openlocfilehash: b74238ee49fe0d96d218f1800a33a9d60badc6d5
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: fa3aedf138564fedafe555adfbaf6c56efc1813e
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341711"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68360844"
 ---
 # <a name="how-to-use-service-bus-queues-with-python"></a>Как использовать очереди служебной шины с Python
 
 [!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
 
-В этом руководстве вы узнаете, как создавать приложения Python, чтобы отправлять и получать сообщения из очереди служебной шины. 
+В этом руководстве вы узнаете, как создавать приложения Python для отправки сообщений в очередь служебной шины и получать сообщения из нее. 
 
-## <a name="prerequisites"></a>Технические условия
-1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать ваши [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-2. Выполните шаги [с помощью портала Azure создать очередь служебной шины](service-bus-quickstart-portal.md) статьи.
-    1. Чтение быстрого **Обзор** служебной шины **очереди**. 
-    2. Чтобы создать служебную шину **пространства имен**. 
-    3. Получить **строку подключения**. 
+## <a name="prerequisites"></a>предварительные требования
+1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+2. Выполните действия, описанные в разделе [использование портал Azure для создания очереди служебной шины](service-bus-quickstart-portal.md) .
+    1. Ознакомьтесь с кратким **обзором** **очередей**служебной шины. 
+    2. Создайте **пространство имен**служебной шины. 
+    3. Возвращает **строку подключения**. 
 
         > [!NOTE]
-        > Вы создадите **очереди** в пространстве имен служебной шины с помощью Python в этом руководстве. 
-1. Установить Python или [пакет служебной шины Azure Python][Python Azure Service Bus package], см. в разделе [руководство по установке Python](../python-how-to-install.md). Полную документацию пакета SDK Python для служебной шины см. в разделе [здесь](/python/api/overview/azure/servicebus?view=azure-python).
+        > Вы создадите **очередь** в пространстве имен служебной шины с помощью Python в этом руководстве. 
+1. Установка Python или [пакета служебной шины Azure для Python][Python Azure Service Bus package]см. в разделе [руководства по установке Python](../python-how-to-install.md). Полную документацию по пакету SDK для Python служебной шины см. [здесь](/python/api/overview/azure/servicebus?view=azure-python).
 
-## <a name="create-a-queue"></a>Создание очереди
-**ServiceBusClient** объект позволяет работать с очередями. Добавьте следующий код в начало любого файла Python, из которого планируется получать доступ к служебной шине программным способом.
+## <a name="create-a-queue"></a>Создать очередь
+Объект **сервицебусклиент** позволяет работать с очередями. Добавьте следующий код в начало любого файла Python, из которого планируется получать доступ к служебной шине программным способом.
 
 ```python
 from azure.servicebus import ServiceBusClient
 ```
 
-Следующий код создает **ServiceBusClient** объекта. Замените `<CONNECTION STRING>` с вашей connectionstring служебной шины.
+Следующий код создает объект **сервицебусклиент** . Замените `<CONNECTION STRING>` на servicebus ConnectionString.
 
 ```python
 sb_client = ServiceBusClient.from_connection_string('<CONNECTION STRING>')
 ```
 
-Значения для имени ключа SAS и значение можно найти в [портала Azure][Azure portal] сведения о соединении, или в Visual Studio **свойства** панели при выборе пространства имен служебной шины в обозревателе сервера (как) показано в предыдущем разделе).
+Значения для имени и значения ключа SAS можно найти в [портал Azure][Azure portal] сведения о подключении или в области **свойств** Visual Studio при выборе пространства имен служебной шины в обозреватель сервера (как показано в предыдущем разделе).
 
 ```python
 sb_client.create_queue("taskqueue")
@@ -60,21 +60,23 @@ sb_client.create_queue("taskqueue")
 Метод `create_queue` также поддерживает дополнительные параметры, позволяющие переопределить настройки очереди по умолчанию, такие как срок жизни сообщения или максимальный размер очереди. В следующем примере показано, как установить максимальный размер очереди 5 ГБ и срок жизни в 1 минуту:
 
 ```python
-sb_client.create_queue("taskqueue", max_size_in_megabytes=5120, default_message_time_to_live=datetime.timedelta(minutes=1))
+sb_client.create_queue("taskqueue", max_size_in_megabytes=5120,
+                       default_message_time_to_live=datetime.timedelta(minutes=1))
 ```
 
-Дополнительные сведения см. в разделе [документации Python шины службы Azure](/python/api/overview/azure/servicebus?view=azure-python).
+Дополнительные сведения см. в [документации по Python служебной шины Azure](/python/api/overview/azure/servicebus?view=azure-python).
 
 ## <a name="send-messages-to-a-queue"></a>Отправка сообщений в очередь
-Чтобы отправить сообщение в очередь служебной шины, приложение вызывает `send` метод `ServiceBusClient` объекта.
+Чтобы отправить сообщение в очередь служебной шины, приложение вызывает `send` метод `ServiceBusClient` для объекта.
 
 В следующем примере показано, как отправить тестовое сообщение в очередь с именем `taskqueue` с помощью метода `send_queue_message`:
 
 ```python
 from azure.servicebus import QueueClient, Message
 
-# Create the QueueClient 
-queue_client = QueueClient.from_connection_string("<CONNECTION STRING>", "<QUEUE NAME>")
+# Create the QueueClient
+queue_client = QueueClient.from_connection_string(
+    "<CONNECTION STRING>", "<QUEUE NAME>")
 
 # Send a test message to the queue
 msg = Message(b'Test Message')
@@ -83,18 +85,19 @@ queue_client.send(msg)
 
 Очереди служебной шины поддерживают максимальный размер сообщения 256 КБ для [уровня "Стандартный"](service-bus-premium-messaging.md) и 1 МБ для [уровня Premium](service-bus-premium-messaging.md). Максимальный размер заголовка, который содержит стандартные и настраиваемые свойства приложения, — 64 КБ. Ограничения на количество сообщений в очереди нет, но есть максимальный общий размер сообщений, содержащихся в очереди. Этот размер очереди, определяемый в момент ее создания, не должен превышать 5 ГБ. Дополнительные сведения о квотах см. в статье [Квоты на служебную шину][Service Bus quotas].
 
-Дополнительные сведения см. в разделе [документации Python шины службы Azure](/python/api/overview/azure/servicebus?view=azure-python).
+Дополнительные сведения см. в [документации по Python служебной шины Azure](/python/api/overview/azure/servicebus?view=azure-python).
 
 ## <a name="receive-messages-from-a-queue"></a>Получение сообщений из очереди
-Сообщения извлекаются из очереди с помощью `get_receiver` метод `ServiceBusService` объекта:
+Сообщения получаются из очереди с помощью `get_receiver` метода `ServiceBusService` для объекта:
 
 ```python
 from azure.servicebus import QueueClient, Message
 
-# Create the QueueClient 
-queue_client = QueueClient.from_connection_string("<CONNECTION STRING>", "<QUEUE NAME>")
+# Create the QueueClient
+queue_client = QueueClient.from_connection_string(
+    "<CONNECTION STRING>", "<QUEUE NAME>")
 
-## Receive the message from the queue
+# Receive the message from the queue
 with queue_client.get_receiver() as queue_receiver:
     messages = queue_receiver.fetch_next(timeout=3)
     for message in messages:
@@ -102,7 +105,7 @@ with queue_client.get_receiver() as queue_receiver:
         message.complete()
 ```
 
-Дополнительные сведения см. в разделе [документации Python шины службы Azure](/python/api/overview/azure/servicebus?view=azure-python).
+Дополнительные сведения см. в [документации по Python служебной шины Azure](/python/api/overview/azure/servicebus?view=azure-python).
 
 
 Прочитанные сообщения будут удаляться из очереди, если для параметра `peek_lock` задано значение **False**. Вы можете прочитать (извлечь) и заблокировать сообщение, не удаляя его из очереди, присвоив параметру `peek_lock` значение **True**.
@@ -120,12 +123,12 @@ msg.delete()
 
 Кроме того, с сообщением, заблокированным в очереди, связано время ожидания. Если приложение не сможет обработать сообщение в течение времени ожидания (например, при сбое приложения), служебная шина разблокирует сообщение автоматически и сделает его доступным для приема.
 
-Если в приложении происходит сбой после обработки сообщения, но перед вызовом метода **delete**, сообщение будет повторно доставлено в приложение после его перезапуска. Часто это называется **по крайней мере одну обработку**, то есть каждое сообщение будет обрабатываться по крайней мере один раз, но в некоторых случаях это же сообщение может быть доставлено повторно. Если повторная обработка недопустима, разработчики приложения должны добавить дополнительную логику для обработки повторной доставки сообщений. Часто это достигается с помощью свойства **MessageId** сообщения, которое остается постоянным для различных попыток доставки.
+Если в приложении происходит сбой после обработки сообщения, но перед вызовом метода **delete**, сообщение будет повторно доставлено в приложение после его перезапуска. Это часто вызывается **по крайней мере один раз при обработке**, то есть каждое сообщение будет обрабатываться по крайней мере один раз, но в некоторых случаях одно и то же сообщение может быть доставлено снова. Если повторная обработка недопустима, разработчики приложения должны добавить дополнительную логику для обработки повторной доставки сообщений. Часто это достигается с помощью свойства **MessageId** сообщения, которое остается постоянным для различных попыток доставки.
 
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Вы ознакомились с основными сведениями об очередях служебной шины. Дополнительные сведения см. в статье:
 
 * [Очереди, разделы и подписки][Queues, topics, and subscriptions]

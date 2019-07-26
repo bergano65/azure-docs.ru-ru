@@ -2,29 +2,24 @@
 title: Процедуры входа с защитой идентификации Azure AD | Документация Майкрософт
 description: Содержит обзор того, как система взаимодействует с пользователем, когда защита идентификации уменьшает риск или восстанавливает скомпрометированного пользователя либо когда многофакторная проверка подлинности установлена политикой.
 services: active-directory
-keywords: защита удостоверений Azure Active Directory, Cloud App Discovery, управление приложениями, безопасность, риск, уровень риска, уязвимость, политика безопасности
-documentationcenter: ''
-author: MicrosoftGuyJFlo
-manager: daveba
-ms.assetid: de5bf637-75a7-4104-b6d8-03686372a319
 ms.service: active-directory
 ms.subservice: identity-protection
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/15/2018
 ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 449f808e98c4e0db2972071e160f5335153a88f2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1e513027eed44ec7649f41f8786882aed8511bc6
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60295355"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68335492"
 ---
 # <a name="sign-in-experiences-with-azure-ad-identity-protection"></a>Процедуры входа с защитой идентификации Azure AD
+
 С помощью защиты идентификации Azure Active Directory можно:
 
 * требовать от пользователей регистрации для многофакторной проверки подлинности;
@@ -104,11 +99,11 @@ ms.locfileid: "60295355"
 
 ![Исправление](./media/flows/104.png "Исправление")
 
-## <a name="reset-password"></a>Сброс пароля
+## <a name="reset-password"></a>Сбросить пароль
 Если для скомпрометированных пользователей заблокирован вход, администратор может создать для них временный пароль. Пользователям нужно будет изменить пароль при следующем входе.
 
 ![Исправление](./media/flows/160.png "Исправление")
 
 ## <a name="see-also"></a>См. также
-* [Защита идентификации Azure Active Directory.](../active-directory-identityprotection.md) 
 
+* [Защита идентификации Azure Active Directory.](../active-directory-identityprotection.md) 

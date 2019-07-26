@@ -6,36 +6,36 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 07/02/2019
-ms.openlocfilehash: 46aca2c1a7d40df69b89e15917ff07b983f5ff5f
-ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
+ms.openlocfilehash: 7a6c42da3fb92dc7dda014faa64fb8daa8c58774
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67561468"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359448"
 ---
 # <a name="configure-ssl-connectivity-in-your-application-to-securely-connect-to-azure-database-for-mysql"></a>Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MySQL
 База данных Azure для MySQL поддерживает подключение сервера базы данных Azure для MySQL к клиентским приложениям с помощью протокола SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
 
-## <a name="step-1-obtain-ssl-certificate"></a>Шаг 1. Получение SSL-сертификата
+## <a name="step-1-obtain-ssl-certificate"></a>Шаг 1.: Получение SSL-сертификата
 Скачайте сертификат, который необходим для взаимодействия с сервером базы данных Azure для MySQL по протоколу SSL ([https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem)), и сохраните файл сертификата на локальном диске (в этом руководстве для примера мы использовали папку C:\SSL).
 **Для браузеров Microsoft Internet Explorer и Microsoft Edge:** после завершения скачивания переименуйте сертификат в BaltimoreCyberTrustRoot.crt.pem.
 
-## <a name="step-2-bind-ssl"></a>Шаг 2. Привязка SSL
+## <a name="step-2-bind-ssl"></a>Шаг 2.: Привязка SSL
 
-Определенные программирования строки подключения языка, см. в статье [пример кода](howto-configure-ssl.md#sample-code) ниже.
+Сведения о строках подключения для конкретных языков программирования см. в приведенном ниже [образце кода](howto-configure-ssl.md#sample-code) .
 
 ### <a name="connecting-to-server-using-mysql-workbench-over-ssl"></a>Подключение к серверу с помощью MySQL Workbench по протоколу SSL
 Настройте MySQL Workbench, чтобы безопасно подключаться по протоколу SSL. 
 
 1. В диалоговом окне Setup New Connection (Настройка нового подключения) откройте вкладку **SSL**. 
 
-1. Обновление **использовать SSL** поле «Требовать».
+1. Обновите поле " **использовать SSL** " для "обязательно".
 
 1. Введите расположение файла BaltimoreCyberTrustRoot.crt.pem в поле **SSL CA File:** (Файл центра сертификации SSL-сертификата). 
     
     ![Сохранить конфигурацию SSL](./media/howto-configure-ssl/mysql-workbench-ssl.png)
 
-Для существующих подключений можно привязать SSL, щелкнув правой кнопкой мыши значок подключения и щелкните "Изменить". Откройте вкладку **SSL** и привяжите файл сертификата.
+Для существующих подключений можно привязать SSL, щелкнув правой кнопкой мыши значок подключения и выбрав пункт изменить. Откройте вкладку **SSL** и привяжите файл сертификата.
 
 ### <a name="connecting-to-server-using-the-mysql-cli-over-ssl"></a>Подключение к серверу с помощью интерфейса командной строки MySQL по протоколу SSL
 Кроме того, можно привязать SSL-сертификат при помощи интерфейса командной строки MySQL, выполнив следующие команды. 
@@ -77,7 +77,7 @@ if (mysqli_connect_errno($conn)) {
 die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
 ```
-### <a name="php-using-pdo"></a>PHP (с помощью PDO)
+### <a name="php-using-pdo"></a>PHP (с использованием PDO)
 ```phppdo
 $options = array(
     PDO::MYSQL_ATTR_SSL_CA => '/var/www/html/BaltimoreCyberTrustRoot.crt.pem'
@@ -87,25 +87,25 @@ $db = new PDO('mysql:host=mydemoserver.mysql.database.azure.com;port=3306;dbname
 ### <a name="python-mysqlconnector-python"></a>Python (MySQLConnector Python)
 ```python
 try:
-    conn=mysql.connector.connect(user='myadmin@mydemoserver', 
-        password='yourpassword', 
-        database='quickstartdb', 
-        host='mydemoserver.mysql.database.azure.com', 
-        ssl_ca='/var/www/html/BaltimoreCyberTrustRoot.crt.pem')
+    conn = mysql.connector.connect(user='myadmin@mydemoserver',
+                                   password='yourpassword',
+                                   database='quickstartdb',
+                                   host='mydemoserver.mysql.database.azure.com',
+                                   ssl_ca='/var/www/html/BaltimoreCyberTrustRoot.crt.pem')
 except mysql.connector.Error as err:
     print(err)
 ```
 
 ### <a name="python-pymysql"></a>Python (PyMySQL)
 ```python
-conn = pymysql.connect(user = 'myadmin@mydemoserver', 
-        password = 'yourpassword', 
-        database = 'quickstartdb', 
-        host = 'mydemoserver.mysql.database.azure.com', 
-        ssl = {'ssl': {'ssl-ca': '/var/www/html/BaltimoreCyberTrustRoot.crt.pem'}})
+conn = pymysql.connect(user='myadmin@mydemoserver',
+                       password='yourpassword',
+                       database='quickstartdb',
+                       host='mydemoserver.mysql.database.azure.com',
+                       ssl={'ssl': {'ssl-ca': '/var/www/html/BaltimoreCyberTrustRoot.crt.pem'}})
 ```
 
-### <a name="django-pymysql"></a>Django (PyMySQL)
+### <a name="django-pymysql"></a>Django (Пимискл)
 ```python
 DATABASES = {
     'default': {
@@ -172,7 +172,7 @@ properties.setProperty("user", 'myadmin@mydemoserver');
 properties.setProperty("password", 'yourpassword');
 conn = DriverManager.getConnection(url, properties);
 ```
-### <a name="java-mariadb-connector-for-java"></a>Java (соединителю MariaDB для Java)
+### <a name="java-mariadb-connector-for-java"></a>Java (соединитель MariaDB для Java)
 ```java
 # generate truststore and keystore in code
 String importCert = " -import "+
@@ -217,5 +217,5 @@ using (var connection = new MySqlConnection(builder.ConnectionString))
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Сведения о вариантах подключения приложений см. в статье [Библиотеки подключений для базы данных Azure для MySQL](concepts-connection-libraries.md).

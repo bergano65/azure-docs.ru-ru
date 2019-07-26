@@ -1,5 +1,5 @@
 ---
-title: Настройка утверждений, добавляемых в токены для определенных служб в клиенте Azure AD (общедоступная предварительная версия)
+title: Настройка утверждений для приложения в клиенте Azure AD (общедоступная Предварительная версия)
 description: На этой странице описываются сопоставления утверждений Azure Active Directory.
 services: active-directory
 author: rwike77
@@ -15,12 +15,12 @@ ms.date: 03/28/2019
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e923cde3cfcffe594226f6b8b665053d1fc584f6
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 97de45ef94afa9da8a5e928a3d4a8911db052107
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68324993"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68381066"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Практическое руководство. Настройка утверждений, добавляемых в токены для определенных служб в клиенте (предварительная версия)
 
@@ -179,7 +179,7 @@ ms.locfileid: "68324993"
 | unique_name |
 | upn |
 | user_setting_sync_url |
-| username пользователя |
+| username |
 | uti |
 | ver |
 | verified_primary_email |
@@ -290,14 +290,14 @@ ms.locfileid: "68324993"
 |-----|-----|-----|
 | пользователя | surname | Фамилия |
 | пользователя | givenname | Заданное имя |
-| пользователя | displayname | Отображаемое имя |
+| пользователя | displayname | Название |
 | пользователя | objectid | ObjectID |
-| пользователя | mail | Электронная почта |
+| пользователя | почта | Электронная почта |
 | пользователя | userprincipalname | Имя участника-пользователя |
 | пользователя | department|Department|
 | пользователя | onpremisessamaccountname | Имя локальной учетной записи SAM |
 | пользователя | netbiosname| NetBIOS-имя |
-| пользователя | dnsdomainname | DNS-имя домена |
+| пользователя | dnsdomainname | Доменное имя DNS |
 | пользователя | onpremisesecurityidentifier | Локальный идентификатор безопасности |
 | пользователя | companyname| Название организации |
 | пользователя | streetaddress | Почтовый адрес |
@@ -323,13 +323,13 @@ ms.locfileid: "68324993"
 | пользователя | othermail | Остальные сообщения |
 | пользователя | country | Country |
 | пользователя | city | City |
-| пользователя | state | Состояние |
+| пользователя | state | Область |
 | пользователя | jobtitle | Должность |
 | пользователя | employeeid | Код сотрудника |
 | пользователя | facsimiletelephonenumber | Номер телефона, факса |
-| application, resource, audience | displayName | Отображаемое имя |
+| application, resource, audience | displayName | Название |
 | application, resource, audience | objected | ObjectID |
-| application, resource, audience | tags | Тег субъекта-службы |
+| application, resource, audience | теги | Тег субъекта-службы |
 | Компания | tenantcountry | Страна клиента |
 
 **TransformationID:** элемент TransformationID нужно указывать, только если для элемента "Источник" задано значение "transformation".
@@ -362,8 +362,8 @@ ms.locfileid: "68324993"
 
 |TransformationMethod|Ожидаемые входные данные|Ожидаемые выходные данные|Описание|
 |-----|-----|-----|-----|
-|Объединение|строка 1, строка 2, разделитель|outputClaim|Объединение входных строк с помощью разделителя между ними. Например, результатом строка 1:"foo@bar.com", строка 2:"sandbox", разделитель:"." будет outputClaim:"foo@bar.com.sandbox"|
-|ExtractMailPrefix|mail|outputClaim|Извлекает локальную часть адреса электронной почты. Например, результатом mail:"foo@bar.com" будет outputClaim:"foo". Если символ \@ отсутствует, то исходная входная строка возвращается в состоянии "как есть".|
+|Присоединиться|строка 1, строка 2, разделитель|outputClaim|Объединение входных строк с помощью разделителя между ними. Например, результатом строка 1:"foo@bar.com", строка 2:"sandbox", разделитель:"." будет outputClaim:"foo@bar.com.sandbox"|
+|ExtractMailPrefix|почта|outputClaim|Извлекает локальную часть адреса электронной почты. Например, результатом mail:"foo@bar.com" будет outputClaim:"foo". Если символ \@ отсутствует, то исходная входная строка возвращается в состоянии "как есть".|
 
 **InputClaims:** элемент InputClaims используется для передачи данных из записи схемы утверждения в преобразование. Он имеет два атрибута: **ClaimTypeReferenceId** и **TransformationClaimType**.
 
@@ -388,7 +388,7 @@ ms.locfileid: "68324993"
 
 |Source|id|Описание|
 |-----|-----|-----|
-| пользователя | mail|Электронная почта|
+| пользователя | почта|Электронная почта|
 | пользователя | userprincipalname|Имя участника-пользователя|
 | пользователя | onpremisessamaccountname|Имя локальной учетной записи SAM|
 | пользователя | employeeid|Код сотрудника|
@@ -412,8 +412,8 @@ ms.locfileid: "68324993"
 
 | TransformationMethod | Ограничения |
 | ----- | ----- |
-| ExtractMailPrefix | Нет |
-| Объединение | Присоединяемый суффикс должен быть подтвержденным доменом клиента ресурса. |
+| ExtractMailPrefix | Отсутствуют |
+| Присоединиться | Присоединяемый суффикс должен быть подтвержденным доменом клиента ресурса. |
 
 ### <a name="custom-signing-key"></a>Пользовательский ключ подписывания
 
@@ -449,7 +449,7 @@ ms.locfileid: "68324993"
    Get-AzureADPolicy
    ```
 
-#### <a name="example-create-and-assign-a-policy-to-omit-the-basic-claims-from-tokens-issued-to-a-service-principal"></a>Пример: Создание и назначение политики для пропуска базовых утверждений от маркеров, выданных субъекту-службе
+#### <a name="example-create-and-assign-a-policy-to-omit-the-basic-claims-from-tokens-issued-to-a-service-principal"></a>Пример Создание и назначение политики для пропуска базовых утверждений от маркеров, выданных субъекту-службе
 
 В этом примере мы создадим политику, которая удаляет набор базовых утверждений из токенов, выданных связанным субъектам-службам.
 
@@ -472,7 +472,7 @@ ms.locfileid: "68324993"
       Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
       ```
 
-#### <a name="example-create-and-assign-a-policy-to-include-the-employeeid-and-tenantcountry-as-claims-in-tokens-issued-to-a-service-principal"></a>Пример: создание и назначение политики для добавления элементов EmployeeID и TenantCountry в качестве утверждений в токены, выданные субъекту-службе.
+#### <a name="example-create-and-assign-a-policy-to-include-the-employeeid-and-tenantcountry-as-claims-in-tokens-issued-to-a-service-principal"></a>Пример создание и назначение политики для добавления элементов EmployeeID и TenantCountry в качестве утверждений в токены, выданные субъекту-службе.
 
 В этом примере мы создадим политику, которая добавляет элементы EmployeeID и TenantCountry в токены, выданные связанным субъектам-службам. Элемент EmployeeID добавляется как тип утверждения имени в токены SAML и JWT. Элемент TenantCountry добавляется как тип утверждения страны в токены SAML и JWT. В этом примере мы продолжаем включать набор базовых утверждений в токены.
 
@@ -496,7 +496,7 @@ ms.locfileid: "68324993"
       Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
       ```
 
-#### <a name="example-create-and-assign-a-policy-that-uses-a-claims-transformation-in-tokens-issued-to-a-service-principal"></a>Пример: создание и назначение политики, которая использует преобразование утверждений в токенах, выданных субъекту-службе.
+#### <a name="example-create-and-assign-a-policy-that-uses-a-claims-transformation-in-tokens-issued-to-a-service-principal"></a>Пример создание и назначение политики, которая использует преобразование утверждений в токенах, выданных субъекту-службе.
 
 В этом примере мы создадим политику, которая добавляет пользовательское утверждение "JoinedData" в токены JWT, выданные связанным субъектам-службам. Это утверждение содержит значение, созданное путем объединения данных, хранящихся в атрибуте extensionattribute1 в объекте пользователя с элементом ".sandbox". В этом примере мы исключим набор базовых утверждений из токенов.
 

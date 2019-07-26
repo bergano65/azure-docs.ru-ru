@@ -1,19 +1,18 @@
 ---
 title: 'Azure Backup: восстановление состояния системы в Windows Server'
 description: Это пошаговое руководство по восстановлению состояния системы Windows Server из резервной копии в Azure.
-services: backup
 author: saurabhsensharma
 manager: shivamg
 ms.service: backup
 ms.topic: conceptual
 ms.date: 8/18/2017
 ms.author: saurse
-ms.openlocfilehash: 6619611bee96089e465feb6f50d38caeada06dd9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 48eb9fce7b9863c84518546270a6566bb0cec711
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65472492"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68465652"
 ---
 # <a name="restore-system-state-to-windows-server"></a>Восстановление состояния системы в Windows Server
 
@@ -93,7 +92,7 @@ ms.locfileid: "65472492"
 6. В области "Выбор резервного сервера" из списка компьютеров выберите *исходный компьютер*.
 7. В области "Выбор режима восстановления" выберите **Состояние системы** и нажмите кнопку **Далее**.
 
-    ![поиска](./media/backup-azure-restore-system-state/recover-type-selection.png)
+    ![Поиск](./media/backup-azure-restore-system-state/recover-type-selection.png)
 
 8. В календаре в области **Выбор тома и даты** выберите точку восстановления. Можно восстановить данные на любой момент времени. Даты **полужирным** шрифтом означают доступность по крайней мере одной точки восстановления. Если после выбора даты доступно несколько точек восстановления, выберите конкретную точку восстановления из раскрывающегося меню **Время**.
 
@@ -211,5 +210,5 @@ ms.locfileid: "65472492"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Теперь после восстановления файлов и папок можно [управлять резервными копиями](backup-azure-manage-windows-server.md).

@@ -1,19 +1,18 @@
 ---
 title: Резервное копирование рабочих нагрузок в Azure с помощью Azure Backup Server
 description: Узнайте, как с помощью Azure Backup Server защитить рабочие нагрузки или выполнить для них резервное копирование на портале Azure.
-services: backup
 author: kasinh
 manager: vvithal
 ms.service: backup
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: kasinh
-ms.openlocfilehash: 12ec1ce4a774178be621d7d8626ead7f1b106189
-ms.sourcegitcommit: 20bb149fe74459e59b648361235324b0674fe55b
+ms.openlocfilehash: bf0e964c46088947fa50d1eadbcc12b78978251f
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68298527"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466375"
 ---
 # <a name="install-and-upgrade-azure-backup-server"></a>Установка и обновление Azure Backup Server
 > [!div class="op_single_selector"]
@@ -51,8 +50,8 @@ Azure Backup Server наследует большую часть функцио�
 
 | Операционная система | платформа | номер SKU |
 |:--- | --- |:--- |
-| Windows Server 2019 |64-разрядная |Standard, Datacenter, Essentials (с версии MABS V3) |
-| Windows Server 2016 и последние пакеты обновления |64-разрядная |Standard, Datacenter, Essentials (с версии MABS V2) |
+| Windows Server 2019 |64-разрядная версия |Standard, Datacenter, Essentials (с версии MABS V3) |
+| Windows Server 2016 и последние пакеты обновления |64-разрядная версия |Standard, Datacenter, Essentials (с версии MABS V2) |
 | Windows Server 2012 R2 и последние пакеты обновления |64-разрядная |Standard, Datacenter, Foundation |
 | Windows Storage Server 2012 R2 и последние пакеты обновления |64-разрядная |Standard, Workgroup |
 | Windows Storage Server 2012 и последние пакеты обновления |64-разрядная |Standard, Workgroup |

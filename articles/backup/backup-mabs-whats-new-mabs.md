@@ -1,19 +1,18 @@
 ---
 title: Новые возможности в Microsoft Azure Backup Server
 description: Microsoft Azure Backup Server предоставляет расширенные возможности резервного копирования для защиты виртуальных машин, файлов и папок, рабочих нагрузок и т. д. Узнайте, как установить Azure Backup Server версии 3 или выполнить обновление до этой версии.
-services: backup
 author: rayne-wiselman
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: adigan
-ms.openlocfilehash: a858ac84ec9181cef4703c8fe236b9a3513af9f5
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 131f5ae31649bd1973a3048b8b52a451f27522b4
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234734"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68465009"
 ---
 # <a name="whats-new-in-microsoft-azure-backup-server"></a>Новые возможности в Microsoft Azure Backup Server
 

@@ -2,24 +2,17 @@
 title: Автомасштабирование облачной службы на портале | Документация Майкрософт
 description: Узнайте, как с помощью портала настроить правила автомасштабирования для веб-роли или рабочей роли облачной службы в Azure.
 services: cloud-services
-documentationcenter: ''
-author: jpconnock
-manager: timlt
-editor: ''
-ms.assetid: 701d4404-5cc0-454b-999c-feb94c1685c0
+author: georgewallace
 ms.service: cloud-services
-ms.workload: tbd
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/18/2017
-ms.author: jeconnoc
-ms.openlocfilehash: f5597773b3127852481d5e14844bed889c4d6f83
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: gwallace
+ms.openlocfilehash: 7e106dbd237be79be924afadbe893669c4f3daf8
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61435322"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359624"
 ---
 # <a name="how-to-configure-auto-scaling-for-a-cloud-service-in-the-portal"></a>Как настроить автомасштабирование для облачной службы на портале
 
@@ -48,7 +41,7 @@ ms.locfileid: "61435322"
 После выбора облачной службы должна появиться колонка облачной службы.
 
 1. В колонке облачной службы в элементе **Roles and Instances** (Роли и экземпляры) выберите имя облачной службы.   
-   **ВАЖНО!** Убедитесь в том, что щелкните роль облачной службы, не экземпляр роли, который расположен под ней.
+   **ВАЖНО!** Выберите роль облачная служба, а не экземпляр роли, который находится ниже роли.
 
     ![](./media/cloud-services-how-to-scale-portal/roles-instances.png)
 2. Выберите элемент **scale** (масштаб).

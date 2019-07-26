@@ -1,7 +1,6 @@
 ---
 title: Заметки о выпуске Microsoft Azure Backup Server версии 3
 description: В этой статье представлены сведения об известных проблемах и их решениях для MABS версии 3.
-services: backup
 author: JYOTHIRMAISURI
 manager: vvithal
 ms.service: backup
@@ -9,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/22/2018
 ms.author: v-jysur
 ms.asset: 0c4127f2-d936-48ef-b430-a9198e425d81
-ms.openlocfilehash: 39f91838a3b5ae360c47d38b22f63e6d94e8850f
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: e0bcdeeda2f8517b85059817669c19d66c723902
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67655767"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68465064"
 ---
 # <a name="release-notes-for-microsoft-azure-backup-server"></a>Заметки о выпуске Microsoft Azure Backup Server
 В этой статье представлены известные проблемы и их решения для Microsoft Azure Backup Server (MABS) версии 3.

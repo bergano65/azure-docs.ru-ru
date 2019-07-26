@@ -12,12 +12,12 @@ ms.date: 03/15/2018
 author: sharonlo101
 ms.author: shlo
 manager: craigg
-ms.openlocfilehash: 8036a8694bb8c8d0db236eba831f13dc2bf47d0a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2bc8b84d4b98036acc93788dee88444786df139e
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60311671"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68335858"
 ---
 # <a name="transform-data-by-running-a-databricks-notebook"></a>Преобразование данных с помощью записной книжки Databricks
 
@@ -57,7 +57,7 @@ ms.locfileid: "60311671"
 
 В следующей таблице приведено описание свойств, используемых в определении JSON.
 
-|Свойство|ОПИСАНИЕ|Обязательно для заполнения|
+|Свойство|Описание|Обязательное значение|
 |---|---|---|
 |name|Имя действия в конвейере.|Да|
 |description|Описание действия.|Нет|
@@ -70,7 +70,7 @@ ms.locfileid: "60311671"
 
 ## <a name="supported-libraries-for-databricks-activities"></a>Поддерживаемые библиотеки для действий Databricks
 
-В приведенном выше определении действия Databricks необходимо указать следующие типы библиотек: *jar*, *egg*, *maven*, *pypi*, *cran*.
+В приведенном выше определении действия "кирпичы данных" указываются следующие типы библиотек: *JAR*, *Egg*, *WHL*, *Maven*, *PyPI*, *Cran*.
 
 ```json
 {
@@ -80,6 +80,12 @@ ms.locfileid: "60311671"
         },
         {
             "egg": "dbfs:/mnt/libraries/library.egg"
+        },
+    {
+            "whl": "dbfs:/mnt/libraries/mlflow-0.0.1.dev0-py2-none-any.whl"
+        },
+        {
+            "whl": "dbfs:/mnt/libraries/wheel-libraries.wheelhouse.zip"
         },
         {
             "maven": {

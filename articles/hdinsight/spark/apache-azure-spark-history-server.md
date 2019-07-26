@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 09/14/2018
-ms.openlocfilehash: 716c60cf5155bf0583b2d602e8f46f8ba7c1cfcd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 641fc41c25746a67b4b1fe3d5316df17f14f113c
+ms.sourcegitcommit: b49431b29a53efaa5b82f9be0f8a714f668c38ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64726817"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68377247"
 ---
 # <a name="use-extended-apache-spark-history-server-to-debug-and-diagnose-apache-spark-applications"></a>Отладка и диагностика приложений Apache Spark с использованием расширенного сервера журнала Apache Spark
 
@@ -319,16 +319,16 @@ ms.locfileid: "64726817"
 
 ## <a name="known-issues"></a>Известные проблемы
 
-1.  Сейчас это работает только для кластера Spark 2.3.
+1.  В настоящее время он работает только для кластера Spark 2,3 и 2,4.
 
 2.  Входные и выходные данные с использованием устойчивого распределенного набора данных не будут отображаться на вкладке "Данные".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Управление ресурсами для кластера Apache Spark в HDInsight](apache-spark-resource-manager.md)
 * [Настройка параметров Apache Spark](apache-spark-settings.md)
 
 
-## <a name="contact-us"></a>Свяжитесь с нами
+## <a name="contact-us"></a>Наши координаты
 
 С любыми отзывами, а также в случае возникновения проблем при работе с этим инструментом обращайтесь по электронному адресу ([hdivstool@microsoft.com](mailto:hdivstool@microsoft.com)).

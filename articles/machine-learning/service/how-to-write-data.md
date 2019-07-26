@@ -12,20 +12,20 @@ manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6206ad1a7356221bf94134e5d293c27d778cc187
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6753be5613b10b64936cddaafbb9859aad837b02
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66752869"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68358642"
 ---
-# <a name="write-and-configure-data--with-the-azure-machine-learning-data-prep-sdk"></a>Запись и настроить данные с помощью пакета SDK Azure Machine Learning данных подготовки
+# <a name="write-and-configure-data--with-the-azure-machine-learning-data-prep-sdk"></a>Запись и Настройка данных с помощью Машинное обучение Azure пакета SDK для подготовки данных
 
-В этой статье вы узнаете, различные методы для записи данных с помощью [машины обучения данные подготовки пакета SDK Azure Python](https://aka.ms/data-prep-sdk) и настройке этих данных для экспериментов с [Azure Machine Learning и пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).  Выходные данные могут быть написаны в любой момент в потоке данных. Записи добавляются в результирующий поток данных и эти шаги выполнения каждый раз запусков потока данных. Если разрешить параллельные операции записи, данные будут записываться в несколько файлов раздела.
+В этой статье вы узнаете о различных методах записи данных с помощью [пакета SDK для средства подготовки данных машинное обучение Azure для Python](https://aka.ms/data-prep-sdk) и о том, как настроить эти данные для экспериментов с помощью [пакета SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).  Выходные данные могут быть записаны в любой точке потока данных. Операции записи добавляются в результирующий поток данных в качестве шагов, и эти действия выполняются при каждом выполнении потока данных. Если разрешить параллельные операции записи, данные будут записываться в несколько файлов раздела.
 
 > [!Important]
-> Если вы создаете новое решение, попробуйте [наборы данных обучения машины Azure](how-to-explore-prepare-data.md) (Предварительная версия) для преобразования данных, данные моментального снимка и хранения определений с версией набора данных. Наборы данных — следующая версия пакета SDK, предлагая расширенными функциональными возможностями для управления наборами данных в решения искусственного Интеллекта подготовки данных.
-> Если вы используете `azureml-dataprep` пакет, чтобы создать поток данных с помощью преобразования вместо использования `azureml-datasets` пакета для создания набора данных, вы не сможете использовать моментальные снимки или наборов данных с версией более поздней версии.
+> Если вы создаете новое решение, попытайтесь преобразовать данные, моментальные снимки и сохранить версии определений наборов данных с помощью [машинное обучение Azure наборов](how-to-explore-prepare-data.md) данных (Предварительная версия). Наборы данных — это следующая версия пакета SDK для подготовки к данным, предлагающая расширенные функциональные возможности для управления DataSet-наборами в решениях искусственного интеллекта.
+> Если вы используете `azureml-dataprep` пакет для создания потока данных с преобразованиями вместо того, чтобы использовать этот `azureml-datasets` пакет для создания DataSet, вы не сможете использовать моментальные снимки или версии данных с более поздними версиями.
 
 Так как нет никаких ограничений по количеству шагов записи в конвейере, можно легко добавить дополнительные шаги записи, чтобы устранить неполадки или передать их для других конвейеров.
 
@@ -37,10 +37,10 @@ ms.locfileid: "66752869"
 -   файлы с разделителями (CSV, TSV и т. д.);
 -   файлы Parquet;
 
-Пакет SDK данных подготовки Python Azure Machine Learning может записывать данные:
+С помощью Машинное обучение Azure пакета SDK Python для подготовки данных можно записывать данные в:
 + локальную файловую систему;
 + Хранилище BLOB-объектов Azure
-+ Azure Data Lake Storage
++ Azure Data Lake Storage
 
 ## <a name="spark-considerations"></a>Рекомендации для Spark
 
@@ -52,7 +52,7 @@ ms.locfileid: "66752869"
 
 ## <a name="example-write-code"></a>Пример кода записи
 
-Например, начните с загрузки данных в поток данных с помощью `auto_read_file()`. Эти данные будут повторно использоваться в разных форматах.
+Для этого примера Начните с загрузки данных в поток данных с помощью `auto_read_file()`. Эти данные будут повторно использоваться в разных форматах.
 
 ```python
 import azureml.dataprep as dprep
@@ -65,18 +65,18 @@ t.head(5)
 
 | | Column1 | Column2 | Column3 | Column4 | Column5 | Column6 | Column7 | Column8 | Column9 |
 | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
-|0| 10000,0 | 99999,0 | Нет | НЕТ | НЕТ | ENRS | NaN | NaN | NaN |   
-|1| 10003,0 | 99999,0 | Нет | НЕТ | НЕТ | ENSO | NaN | NaN | NaN |   
-|2| 10010,0 | 99999,0 | Нет | НЕТ | JN | ENJA | 70933,0 | –8667,0 | 90,0 |
-|3| 10013,0 | 99999,0 | Нет | НЕТ | НЕТ |      | NaN | NaN | NaN |
-|4\.| 10014,0 | 99999,0 | Нет | НЕТ | НЕТ | ENSO | 59783,0 | 5350,0 |  500,0|
+|0| 10000,0 | 99999,0 | Отсутствуют | НЕТ | НЕТ | ENRS | NaN | NaN | NaN |   
+|1| 10003,0 | 99999,0 | Отсутствуют | НЕТ | НЕТ | ENSO | NaN | NaN | NaN |   
+|2| 10010,0 | 99999,0 | Отсутствуют | НЕТ | JN | ENJA | 70933,0 | –8667,0 | 90,0 |
+|3| 10013,0 | 99999,0 | Отсутствуют | НЕТ | НЕТ |      | NaN | NaN | NaN |
+|4| 10014,0 | 99999,0 | Отсутствуют | НЕТ | НЕТ | ENSO | 59783,0 | 5350,0 |  500,0|
 
 ### <a name="delimited-file-example"></a>Пример файла с разделителями
 
-В следующем коде используется [ `write_to_csv()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow#write-to-csv-directory-path--datadestination--separator--str--------na--str----na---error--str----error------azureml-dataprep-api-dataflow-dataflow) функцию для записи данных в файл с разделителями.
+В следующем коде [`write_to_csv()`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow#write-to-csv-directory-path--datadestination--separator--str--------na--str----na---error--str----error------azureml-dataprep-api-dataflow-dataflow) функция используется для записи данных в файл с разделителями.
 
 ```python
-# Create a new data flow using `write_to_csv` 
+# Create a new data flow using `write_to_csv`
 write_t = t.write_to_csv(directory_path=dprep.LocalFileOutput('./test_out/'))
 
 # Run the data flow to begin the write operation.
@@ -94,14 +94,14 @@ written_files.head(5)
 |1| 10003,0 | 99999,0 | ОШИБКА | НЕТ | НЕТ | ENSO |    NaN | NaN | NaN |   
 |2| 10010,0 | 99999,0 | ОШИБКА | НЕТ | JN | ENJA |    70933,0 | –8667,0 | 90,0 |
 |3| 10013,0 | 99999,0 | ОШИБКА | НЕТ | НЕТ |     | NaN | NaN | NaN |
-|4\.| 10014,0 | 99999,0 | ОШИБКА | НЕТ | НЕТ | ENSO |    59783,0 | 5350,0 |  500,0|
+|4| 10014,0 | 99999,0 | ОШИБКА | НЕТ | НЕТ | ENSO |    59783,0 | 5350,0 |  500,0|
 
 В предыдущих выходных данных в числовых столбцах есть несколько ошибок из-за чисел, которые не были правильно проанализированы. При записи в CSV-файл эти значения NULL заменяются строкой ERROR (Ошибка) по умолчанию.
 
 Можно добавить параметры как часть вызова записи и указать строки, которые используются для представления значений NULL.
 
 ```python
-write_t = t.write_to_csv(directory_path=dprep.LocalFileOutput('./test_out/'), 
+write_t = t.write_to_csv(directory_path=dprep.LocalFileOutput('./test_out/'),
                          error='BadData',
                          na='NA')
 write_t.run_local()
@@ -117,15 +117,15 @@ written_files.head(5)
 |1| 10003,0 | 99999,0 | BadData | НЕТ | НЕТ | ENSO |  NaN | NaN | NaN |   
 |2| 10010,0 | 99999,0 | BadData | НЕТ | JN | ENJA |  70933,0 | –8667,0 | 90,0 |
 |3| 10013,0 | 99999,0 | BadData | НЕТ | НЕТ |   | NaN | NaN | NaN |
-|4\.| 10014,0 | 99999,0 | BadData | НЕТ | НЕТ | ENSO |  59783,0 | 5350,0 |  500,0|
+|4| 10014,0 | 99999,0 | BadData | НЕТ | НЕТ | ENSO |  59783,0 | 5350,0 |  500,0|
 
 ### <a name="parquet-file-example"></a>Пример файла PARQUET
 
-Аналогичную `write_to_csv()`, [ `write_to_parquet()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow#write-to-parquet-file-path--typing-union--datadestination--nonetype----none--directory-path--typing-union--datadestination--nonetype----none--single-file--bool---false--error--str----error---row-groups--int---0-----azureml-dataprep-api-dataflow-dataflow) функция возвращает поток данных с помощью записи Parquet шаг, который выполняется при выполнения потока данных.
+Аналогично `write_to_csv()` [`write_to_parquet()`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow#write-to-parquet-file-path--typing-union--datadestination--nonetype----none--directory-path--typing-union--datadestination--nonetype----none--single-file--bool---false--error--str----error---row-groups--int---0-----azureml-dataprep-api-dataflow-dataflow) , функция возвращает новый поток данных с шагом Write Parquet, который выполняется при выполнении потока данных.
 
 ```python
 write_parquet_t = t.write_to_parquet(directory_path=dprep.LocalFileOutput('./test_parquet_out/'),
-error='MiscreantData')
+                                     error='MiscreantData')
 ```
 
 Запустите поток данных, чтобы начать операцию записи.
@@ -145,13 +145,13 @@ written_parquet_files.head(5)
 |1| 10003,0 | 99999,0 | MiscreantData | НЕТ | НЕТ | ENSO | MiscreantData | MiscreantData | MiscreantData |   
 |2| 10010,0 | 99999,0 | MiscreantData | НЕТ| JN| ENJA|   70933,0|    –8667,0 |90,0|
 |3| 10013,0 | 99999,0 | MiscreantData | НЕТ| НЕТ| |   MiscreantData|    MiscreantData|    MiscreantData|
-|4\.| 10014,0 | 99999,0 | MiscreantData | НЕТ| НЕТ| ENSO|   59783,0|    5350,0| 500,0|
+|4| 10014,0 | 99999,0 | MiscreantData | НЕТ| НЕТ| ENSO|   59783,0|    5350,0| 500,0|
 
-## <a name="configure-data-for-automated-machine-learning-training"></a>Настройка данных для автоматических машины обучения
+## <a name="configure-data-for-automated-machine-learning-training"></a>Настройка данных для автоматического обучения машинного обучения
 
-Передайте файл данные, записываемые в [ `AutoMLConfig` ](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py#automlconfig) объекта в процессе подготовки к автоматической машины обучения. 
+Передайте новый файл [`AutoMLConfig`](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py#automlconfig) данных в объект при подготовке к автоматическому обучению машинного обучения. 
 
-В следующем примере кода показано, как преобразование потока данных в таблице данных Pandas, впоследствии, разбив ее на обучающий и проверочный наборы данных для обучения автоматических машины.
+В приведенном ниже примере кода показано, как преобразовать поток данных в Pandas кадровое, а затем разделить его на обучающие и проверочные наборы для автоматического обучения машинного обучения.
 
 ```Python
 from azureml.train.automl import AutoMLConfig
@@ -180,7 +180,7 @@ automated_ml_config = AutoMLConfig(task = 'regression',
 
 ```
 
-Если все действия по подготовке интеллектуальному анализу данных, такие как в предыдущем примере не требуется, вы можете передать потока данных непосредственно в `AutoMLConfig`.
+Если не требуются промежуточные этапы подготовки данных, как в предыдущем примере, можно передать поток данных непосредственно в `AutoMLConfig`.
 
 ```Python
 automated_ml_config = AutoMLConfig(task = 'regression', 
@@ -192,6 +192,6 @@ automated_ml_config = AutoMLConfig(task = 'regression',
                    )
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-* Пакет SDK см. в разделе [Обзор](https://aka.ms/data-prep-sdk) конструктивные шаблоны и примеры использования 
-* Автоматические машинного обучения см. в разделе [руководстве](tutorial-auto-train-models.md) пример модели регрессии
+## <a name="next-steps"></a>Следующие шаги
+* Ознакомьтесь с [обзором](https://aka.ms/data-prep-sdk) пакета SDK для шаблонов разработки и примеры использования. 
+* Пример модели регрессии см. в [руководстве](tutorial-auto-train-models.md) по автоматизированному машинному обучению.

@@ -1,19 +1,18 @@
 ---
 title: Резервное копирование рабочих нагрузок SQL Server в Azure Stack
 description: Использование сервера Azure Backup Server для защиты рабочей нагрузки SQL Server в Azure Stack.
-services: backup
 author: adigan
 manager: shivamg
 ms.service: backup
 ms.topic: conceptual
 ms.date: 6/8/2018
 ms.author: adigan
-ms.openlocfilehash: fb064c39fa014515fb2a3f4ccc96ce216f2f7b2e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 11d03a9c5cc81b915f48bc66f5a0e5ab034662ed
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60254476"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68465159"
 ---
 # <a name="back-up-sql-server-on-stack"></a>Резервное копирование SQL Server в Stack
 Эта статья может помочь при настройке Microsoft Azure Backup Server (MABS) для защиты баз данных SQL Server в Azure Stack.
@@ -24,7 +23,7 @@ ms.locfileid: "60254476"
 2. Создание резервных копий по запросу
 3. Восстановление базы данных с дисков и из Azure
 
-## <a name="before-you-start"></a>Перед началом работы
+## <a name="before-you-start"></a>Перед началом
 
 [Установка и подготовка Azure Backup Server](backup-mabs-install-azure-stack.md).
 
@@ -33,7 +32,7 @@ ms.locfileid: "60254476"
 
 2. На ленте инструментов щелкните **Создать** , чтобы создать новую группу защиты.
 
-    ![Создание группы защиты](./media/backup-azure-backup-sql/protection-group.png)
+    ![Создайте группу защиты](./media/backup-azure-backup-sql/protection-group.png)
 
     Azure Backup Server запускает мастер группы защиты, который позволяет создать **Группу защиты**. Нажмите кнопку **Далее**.
 
@@ -66,7 +65,7 @@ ms.locfileid: "60254476"
 
 8. В меню **Выбор метода создания реплики** выберите способ создания первой точки восстановления. Начальную резервную копию можно передать вручную (не по сети), чтобы не перегружать полосу пропускания, либо по сети. При выборе ожидания передачи первой резервной копии можно указать время для начальной передачи. Нажмите кнопку **Далее**.
 
-    ![Метод начальной репликации](./media/backup-azure-backup-sql/pg-manual.png)
+    ![Метод первичной репликации](./media/backup-azure-backup-sql/pg-manual.png)
 
     Для создания начальной резервной копии необходимо полностью перенести источник данных (базу данных SQL Server) с производственного сервера (компьютера SQL Server) на Azure Backup Server. Объем этих данных может быть велик, и их передача по сети может превысить пропускную способность. Поэтому вы можете выбрать передачу начальной резервной копии **вручную** (с помощью съемного носителя), чтобы избежать перегрузки пропускной способности сети, или **автоматически по сети** (в указанное время).
 

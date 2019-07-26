@@ -10,12 +10,12 @@ ms.reviewer: estfan, LADocs
 ms.assetid: d565873c-6b1b-4057-9250-cf81a96180ae
 ms.topic: article
 ms.date: 03/15/2018
-ms.openlocfilehash: 29d56e64f118fe36fb4905dca20d9fba2f210665
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 6f0176253d0f1953e9c779a317cfe7bf453acb8f
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295922"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68385444"
 ---
 # <a name="create-streaming-customer-insights-dashboard-with-azure-logic-apps-and-azure-functions"></a>Создание панели мониторинга потоковой передачи сведений о клиентах с помощью Функций Azure и Azure Logic Apps
 
@@ -26,7 +26,7 @@ Azure Logic Apps представляет беcсерверный обработ
 
 В этом случае вы создаете приложение логики, которое запускает поиск отзывов клиентов. К некоторым соединителям, которые помогают реагировать на отзывы от клиентов, относятся Outlook.com, Office 365, Survey Monkey, Twitter и [HTTP-запрос из веб-формы](https://blogs.msdn.microsoft.com/logicapps/2017/01/30/calling-a-logic-app-from-an-html-form/). Рабочий процесс, который вы создаете, отслеживает хэштег в Twitter.
 
-Вы можете [создать все решение в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md) и [развернуть решение с помощью шаблона Azure Resource Manager](../logic-apps/logic-apps-create-deploy-template.md). Пошаговые инструкции по созданию этого решения см. [в этом видео Channel 9](https://aka.ms/logicappsdemo). 
+Вы можете [создать все решение в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md) и [развернуть решение с помощью шаблона Azure Resource Manager](../logic-apps/logic-apps-deploy-azure-resource-manager-templates.md). Пошаговые инструкции по созданию этого решения см. [в этом видео Channel 9](https://aka.ms/logicappsdemo). 
 
 ## <a name="trigger-on-customer-data"></a>Триггер, срабатываемый при получении данных клиента
 
@@ -100,17 +100,17 @@ Azure Logic Apps представляет беcсерверный обработ
 * Откройте Visual Studio Cloud Explorer. Найдите ваше приложение логики и откройте контекстное меню приложения. Щелкните **Открыть журнал запусков**.
 
   > [!TIP]
-  > Если у вас нет этой команды в Visual Studio 2019 г., проверьте, что установлены последние обновления для Visual Studio.
+  > Если у вас нет этой команды в Visual Studio 2019, убедитесь, что установлены последние обновления для Visual Studio.
 
 * Найдите приложение логики на портале Azure. В меню приложения логики щелкните **Обзор**. 
 
 ## <a name="create-automated-deployment-templates"></a>Создание шаблонов для автоматического развертывания
 
-После создания решения приложения логики вы можете сохранить и развернуть его в качестве [шаблона Azure Resource Manager](../azure-resource-manager/resource-group-overview.md#template-deployment) в любом регионе Azure в мире. Вы можете использовать эту возможность, чтобы изменить параметры как для создания различных версий вашего приложения, так и для интеграции вашего решения в Azure Pipelines. Функции Azure также можно включить в шаблон развертывания таким образом, чтобы всем решением вместе со всеми зависимостями можно было управлять как одним шаблоном. Дополнительные сведения см. в статье [Создание шаблонов для развертывания приложений логики и управления выпусками](../logic-apps/logic-apps-create-deploy-template.md).
+После создания решения приложения логики вы можете сохранить и развернуть его в качестве [шаблона Azure Resource Manager](../azure-resource-manager/resource-group-overview.md#template-deployment) в любом регионе Azure в мире. Вы можете использовать эту возможность, чтобы изменить параметры как для создания различных версий вашего приложения, так и для интеграции вашего решения в Azure Pipelines. Функции Azure также можно включить в шаблон развертывания таким образом, чтобы всем решением вместе со всеми зависимостями можно было управлять как одним шаблоном. Узнайте, как [автоматизировать развертывание приложений логики](logic-apps-azure-resource-manager-templates-overview.md).
 
 Пример шаблона развертывания с функцией Azure можно найти в [репозитории шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-function-app-create-dynamic).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Распространенные сценарии, примеры, учебники и пошаговые руководства для Azure Logic Apps](logic-apps-examples-and-scenarios.md)
 

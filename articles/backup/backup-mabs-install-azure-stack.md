@@ -1,7 +1,6 @@
 ---
 title: Установка Azure Backup Server в Azure Stack | Документация Майкрософт
 description: Узнайте, как с помощью Azure Backup Server защитить рабочие нагрузки или выполнить для них резервное копирование в Azure Stack.
-services: backup
 author: rayne-wiselman
 manager: carmonm
 ms.service: backup
@@ -10,12 +9,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: raynew
-ms.openlocfilehash: d3a2ffdedda7f541fb1a3f37a8b40bc7af3dcb57
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 77f418a37c47850cf8a763dc399109d86925feff
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60852145"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68465259"
 ---
 # <a name="install-azure-backup-server-on-azure-stack"></a>Установка Azure Backup Server в Azure Stack
 
@@ -354,7 +353,7 @@ Azure Backup Server предоставляет Data Protection Manager общи�
 Если на этапе установки, резервного копирования или восстановления происходит сбой сервера Microsoft Azure Backup с указанием кода ошибки, см. [документ с кодами ошибок](https://support.microsoft.com/kb/3041338).
 Вы также можете изучить [часто задаваемые вопросы, связанные с резервным копированием в Azure](backup-azure-backup-faq.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Статья [Подготовка среды для System Center 2012 R2 Data Protection Manager (DPM)](https://docs.microsoft.com/system-center/dpm/prepare-environment-for-dpm?view=sc-dpm-1801) содержит сведения о поддерживаемых конфигурациях Azure Backup Server.
 

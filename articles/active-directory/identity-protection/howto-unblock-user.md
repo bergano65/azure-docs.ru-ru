@@ -2,33 +2,28 @@
 title: Разблокирование пользователей при использовании защиты идентификации Azure Active Directory | Документы Майкрософт
 description: Узнайте, как разблокировать пользователей, заблокированных политикой защиты идентификации Azure Active Directory.
 services: active-directory
-keywords: защита идентификации Azure Active Directory, разблокирование пользователей
-documentationcenter: ''
-author: MicrosoftGuyJFlo
-manager: daveba
-ms.assetid: a953d425-a3ef-41f8-a55d-0202c3f250a7
 ms.service: active-directory
 ms.subservice: identity-protection
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d22fa7fd3964f99c426e8e21d34dcfdea6d1b36
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c28e30b8e44b6888cdb7416b9c7b563b955a68ce
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60294429"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68335375"
 ---
 # <a name="how-to-unblock-users"></a>Как Разблокировка пользователей
 
 С помощью защиты идентификации Azure Active Directory можно настроить политики для блокирования пользователей при выполнении заданных условий. Как правило, заблокированный пользователь обращается в службу технической поддержки, чтобы его разблокировали. В этой статье показано, как разблокировать заблокированного пользователя.
 
 ## <a name="determine-the-reason-for-blocking"></a>Определение причины блокировки
+
 Чтобы разблокировать пользователя, сначала необходимо определить тип политики, которая его заблокировала, так как от этого зависят следующие действия.
 В рамках защиты идентификации Azure Active Directory пользователь может быть заблокирован политикой риска входа или политикой риска пользователя.
 
@@ -45,6 +40,7 @@ ms.locfileid: "60294429"
 * политикой риска пользователя, это также называется "учетная запись под угрозой".
 
 ## <a name="unblocking-suspicious-sign-ins"></a>Разблокирование подозрительных входов
+
 Для разблокирования подозрительного входа доступны следующие варианты.
 
 1. **Вход из знакомого расположения или устройства.** Распространенная причина блокировки подозрительного входа — попытки входа с незнакомого расположения или устройства. Пользователи могут быстро определить, является ли это причиной блокировки, выполнив попытку входа из знакомого расположения или устройства.
@@ -52,6 +48,7 @@ ms.locfileid: "60294429"
 3. **Отключение политики**. Если вы считаете, что конфигурация политики является причиной проблем всех пользователей, то ее можно отключить. Дополнительные сведения см. в статье [Защита идентификации Azure Active Directory](../active-directory-identityprotection.md).
 
 ## <a name="unblocking-accounts-at-risk"></a>Разблокирование учетных записей под угрозой
+
 Для разблокирования учетной записи под угрозой доступны следующие варианты.
 
 1. **Смена пароля**. Вы можете сбросить пароль пользователя. 
@@ -59,6 +56,6 @@ ms.locfileid: "60294429"
 3. **Исключение из политики**. Если вы считаете, что текущая конфигурация политики входа является причиной проблем для определенных пользователей, то их можно исключить из политики. Дополнительные сведения см. в статье [Защита идентификации Azure Active Directory](../active-directory-identityprotection.md).
 4. **Отключение политики**. Если вы считаете, что конфигурация политики является причиной проблем всех пользователей, то ее можно отключить. Дополнительные сведения см. в статье [Защита идентификации Azure Active Directory](../active-directory-identityprotection.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
  
 Хотите узнать больше о защите идентификации Azure AD? Ознакомьтесь со статьей [Защита идентификации Azure Active Directory](../active-directory-identityprotection.md).

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/22/2018
 ms.author: allensu
-ms.openlocfilehash: 3c5459d0474ecd45501e634c4777fa178386183c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8815d852ad9f8a1823e1c21cc2d233409518da33
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67071156"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68333789"
 ---
 # <a name="nested-traffic-manager-profiles"></a>Вложенные профили диспетчера трафика
 
@@ -95,7 +95,21 @@ ms.locfileid: "67071156"
 
 ![Мониторинг диспетчером трафика конечных точек с индивидуальными параметрами][10]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="faqs"></a>Часто задаваемые вопросы
+
+* [Разделы справки настроить вложенные профили?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#traffic-manager-endpoint-monitoring)
+
+* [Сколько уровней вложенности поддерживает диспетчер трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-many-layers-of-nesting-does-traffic-manger-support)
+
+* [Можно ли смешивать другие типы конечных точек с вложенными дочерними профилями в том же профиле диспетчера трафика?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-mix-other-endpoint-types-with-nested-child-profiles-in-the-same-traffic-manager-profile)
+
+* [Как применяется модель выставления счетов для вложенных профилей?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-the-billing-model-apply-for-nested-profiles)
+
+* [Влияет ли на производительность вложенных профилей?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#is-there-a-performance-impact-for-nested-profiles)
+
+* [Как диспетчер трафика рассчитывает работоспособность вложенной конечной точки в родительском профиле?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-manager-compute-the-health-of-a-nested-endpoint-in-a-parent-profile)
+
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о [профилях диспетчера трафика](traffic-manager-overview.md).
 

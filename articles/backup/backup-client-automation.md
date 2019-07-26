@@ -1,28 +1,27 @@
 ---
 title: Использование PowerShell для архивации Windows Server в Azure
 description: Узнайте о том, как развернуть службу архивации Azure и управлять ею с помощью PowerShell
-services: backup
 author: pvrk
 manager: shivamg
 ms.service: backup
 ms.topic: conceptual
 ms.date: 5/24/2018
 ms.author: shivamg
-ms.openlocfilehash: f29acfc58c281622973f2f16ea36763a78751ed0
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 5533b52ab984510b0e860f7fdfded8ac9005e5a8
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67704918"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68465238"
 ---
 # <a name="deploy-and-manage-backup-to-azure-for-windows-serverwindows-client-using-powershell"></a>Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell
 
 В этой статье описано, как использовать PowerShell для настройки службы архивации Azure на сервере Windows Server или клиенте Windows, а также для управления резервным копированием и восстановлением данных.
 
-## <a name="install-azure-powershell"></a>Установите Azure PowerShell
+## <a name="install-azure-powershell"></a>Установить Azure PowerShell
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Чтобы начать работу, [установить последнюю версию PowerShell](/powershell/azure/install-az-ps).
+Чтобы приступить к работе, [установите последнюю версию PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 
@@ -40,7 +39,7 @@ ms.locfileid: "67704918"
     New-AzResourceGroup –Name "test-rg" –Location "WestUS"
     ```
 
-3. Используйте **New AzRecoveryServicesVault** командлет, чтобы создать новое хранилище. Разместите хранилище там же, где находится группа ресурсов.
+3. Используйте командлет **New-азрековерисервицесваулт** , чтобы создать новое хранилище. Разместите хранилище там же, где находится группа ресурсов.
 
     ```powershell
     New-AzRecoveryServicesVault -Name "testvault" -ResourceGroupName " test-rg" -Location "WestUS"
@@ -60,9 +59,9 @@ ms.locfileid: "67704918"
 
 ## <a name="view-the-vaults-in-a-subscription"></a>Просмотр хранилищ в подписке
 
-Используйте **Get-AzRecoveryServicesVault** Чтобы просмотреть список всех хранилищ в текущей подписке. Он позволяет убедиться в том, что хранилище создано, и увидеть, какие хранилища доступны в подписке.
+Используйте **Get-азрековерисервицесваулт** для просмотра списка всех хранилищ в текущей подписке. Он позволяет убедиться в том, что хранилище создано, и увидеть, какие хранилища доступны в подписке.
 
-Выполните команду, **Get-AzRecoveryServicesVault**, и всех хранилищ в подписке.
+Выполните команду **Get-азрековерисервицесваулт**и в списке всех хранилищ в подписке отобразится список.
 
 ```powershell
 Get-AzRecoveryServicesVault
@@ -116,7 +115,7 @@ MARSAgentInstaller.exe /?
 
 Доступны следующие параметры.
 
-| Параметр | Сведения | Значение по умолчанию |
+| Параметр | Подробнее | Значение по умолчанию |
 | --- | --- | --- |
 | /q |Позволяет выполнить тихую установку. |- |
 | /p:"расположение" |Путь к папке установки для агента архивации Azure. |C:\Program Files\Microsoft Azure Recovery Services Agent |
@@ -200,7 +199,7 @@ Server properties updated successfully.
 
 Для защиты конфиденциальности данных резервные копии данных, отправляемые в службу архивации Azure, зашифровываются. Используемая для шифрования парольная фраза является "паролем" для расшифровки данных во время их восстановления.
 
-Необходимо создать ПИН-код безопасности, выбрав **формирования**в разделе **параметры** > **свойства** > **ПИН-код безопасности** в **хранилище служб восстановления** раздела на портале Azure. Затем используйте его в виде `generatedPIN` в команде:
+Чтобы создать ПИН-код безопасности, выберите **создать**в разделе **Параметры** > **Свойства** > **ПИН-код** в **хранилище служб восстановления** портал Azure. Затем используйте его `generatedPIN` в качестве в команде:
 
 ```powershell
 $PassPhrase = ConvertTo-SecureString -String "Complex!123_STRING" -AsPlainText -Force
@@ -393,20 +392,20 @@ PolicyState     : Valid
 ```
 ## <a name="back-up-windows-server-system-state-in-mabs-agent"></a>Резервное копирование состояния системы Windows Server в агенте MABS
 
-В этом разделе рассматриваются команду PowerShell для настройки состояния системы в агент MABS
+В этом разделе описывается команда PowerShell для настройки состояния системы в агенте MABS.
 
 ### <a name="schedule"></a>Расписание
 ```powershell
 $sched = New-OBSchedule -DaysOfWeek Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday -TimesOfDay 2:00
 ```
 
-### <a name="retention"></a>Сохранение
+### <a name="retention"></a>Удержание
 
 ```powershell
 $rtn = New-OBRetentionPolicy -RetentionDays 32 -RetentionWeeklyPolicy -RetentionWeeks 13 -WeekDaysOfWeek Sunday -WeekTimesOfDay 2:00  -RetentionMonthlyPolicy -RetentionMonths 13 -MonthDaysOfMonth 1 -MonthTimesOfDay 2:00
 ```
 
-### <a name="configuring-schedule-and-retention"></a>Настройка расписания и хранения
+### <a name="configuring-schedule-and-retention"></a>Настройка расписания и срока хранения
 
 ```powershell
 New-OBPolicy | Add-OBSystemState |  Set-OBRetentionPolicy -RetentionPolicy $rtn | Set-OBSchedule -Schedule $sched | Set-OBSystemStatePolicy

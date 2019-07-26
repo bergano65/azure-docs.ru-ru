@@ -1,5 +1,5 @@
 ---
-title: Проблема сохранения учетных данных администратора при настройке подготовки пользователей для приложения из коллекции Azure AD | Документация Майкрософт
+title: Проблема при сохранении учетных данных администратора Настройка приложения из коллекции Azure AD | Документация Майкрософт
 description: Решение распространенных проблем при настройке подготовки пользователей для приложения из коллекции приложений Azure AD
 services: active-directory
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.date: 02/21/2018
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e4af70ae8628f612b8858b99c0d5ae57e78ace4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 152b704ca597fb473a820124ee6147d6d9bc7845
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65963606"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68381477"
 ---
 # <a name="problem-saving-administrator-credentials-while-configuring-user-provisioning-to-an-azure-active-directory-gallery-application"></a>Проблема сохранения учетных данных администратора при настройке подготовки пользователей для приложения из коллекции Azure Active Directory 
 
@@ -45,5 +45,5 @@ ms.locfileid: "65963606"
 
 2. **Уменьшить объем хранимых данных конфигурации**. Все данные, введенные в разделе [Учетные данные администратора](user-provisioning.md#how-do-i-set-up-automatic-provisioning-to-an-application) на вкладке подготовки, хранятся в том же месте, что и сертификат SAML. Хотя уменьшить длину всех этих данных иногда невозможно, некоторые необязательные поля конфигурации, такие как **Адрес электронной почты для уведомлений**, можно удалить.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](user-provisioning.md)

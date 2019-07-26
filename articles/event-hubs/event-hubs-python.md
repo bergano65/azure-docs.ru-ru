@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/26/2018
 ms.author: shvija
-ms.openlocfilehash: 88fdaec9e19c082a6fe981dc4d9a0e015335f1e2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f86dc92b4df45119930970acfe9e173f32f894fb
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60202979"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68356054"
 ---
 # <a name="how-to-use-azure-event-hubs-from-a-python-application"></a>Как использовать Центры событий Azure из приложения Python
 Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Дополнительные сведения см. в статье [Центры событий Azure представляют собой платформу потоковой передачи и службу приема событий.](event-hubs-what-is-event-hubs.md) 
@@ -31,7 +31,7 @@ ms.locfileid: "60202979"
 - [получение событий из концентратора событий](#receive-events-from-event-hubs);
 - чтение собранных данных о событиях из хранилища Azure. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 - Создайте концентратор событий, используя одно из кратких руководств в зависимости от используемого средства: [портал Azure](event-hubs-create.md), [Azure CLI](event-hubs-quickstart-cli.md), [Azure PowerShell](event-hubs-quickstart-powershell.md), [шаблон Azure Resource Manager](event-hubs-resource-manager-namespace-event-hub.md). 
 - Python 3.4 или более поздней версии, установленный на компьютере.
 
@@ -94,7 +94,8 @@ pip install azure-eventhub
 client = EventHubClient(ADDRESS, debug=False, username=USER, password=KEY)
 
 # Add a receiver to the client
-receiver = client.add_receiver(CONSUMER_GROUP, PARTITION, prefetch=5000, offset=OFFSET)
+receiver = client.add_receiver(
+    CONSUMER_GROUP, PARTITION, prefetch=5000, offset=OFFSET)
 
 # Run the Event Hubs client
 client.run()
@@ -156,7 +157,6 @@ def startProcessing(accountName, key, container):
             os.remove(cleanName)
         block_blob_service.delete_blob(container, blob.name)
 startProcessing('YOUR STORAGE ACCOUNT NAME', 'YOUR KEY', 'capture')
-
 ```
 
 Полное руководство по чтению собранных данных Центров событий в хранилище BLOB-объектов из приложения, написанного на Python, см. в [этой статье](event-hubs-capture-python.md).
@@ -164,5 +164,5 @@ startProcessing('YOUR STORAGE ACCOUNT NAME', 'YOUR KEY', 'capture')
 ## <a name="github-samples"></a>Примеры GitHub
 Вы можете просмотреть больше примеров Python в репозитории Git [azure-event-hubs-python](https://github.com/Azure/azure-event-hubs-python/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь со статьями в разделе "Основные понятия" статьи [об общих сведениях о возможностях Центров событий](event-hubs-features.md).

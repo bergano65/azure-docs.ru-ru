@@ -8,22 +8,22 @@ ms.service: hdinsight
 ms.custom: hdiseo17may2017
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: fceea6273f00fdf16d8934533f08bc3494795bc4
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: f75933940aa97606ca33ab6bfc18fe5871811eef
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67433278"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68441973"
 ---
 # <a name="upload-data-for-apache-hadoop-jobs-in-hdinsight"></a>Отправка данных для заданий Apache Hadoop в HDInsight
 
-Служба Azure HDInsight — это полнофункциональная распределенная файловая система Hadoop (HDFS), в основе которой лежит служба хранилища Azure и Azure Data Lake Storage (1-го и 2-го поколения). Служба хранилища Azure и Data Lake Storage 1-го и 2-го поколения, разработанные в качестве расширений HDFS, обеспечивают клиентам высочайшее удобство работы. Благодаря им все компоненты экосистемы Hadoop работают непосредственно с данными, управляемыми службой. Служба хранилища Azure, а также Data Lake Storage 1-го и 2-го поколения — это разные файловые системы, оптимизированные для хранения и обработки данных. Сведения о преимуществах использования службы хранилища Azure, см. в разделе [использование хранилища Azure с HDInsight](hdinsight-hadoop-use-blob-storage.md), [Gen1 хранилища Озера данных используется с HDInsight](hdinsight-hadoop-use-data-lake-store.md), и [Gen2 хранилища Озера данных использования с HDInsight](hdinsight-hadoop-use-data-lake-storage-gen2.md).
+Служба Azure HDInsight — это полнофункциональная распределенная файловая система Hadoop (HDFS), в основе которой лежит служба хранилища Azure и Azure Data Lake Storage (1-го и 2-го поколения). Служба хранилища Azure и Data Lake Storage 1-го и 2-го поколения, разработанные в качестве расширений HDFS, обеспечивают клиентам высочайшее удобство работы. Благодаря им все компоненты экосистемы Hadoop работают непосредственно с данными, управляемыми службой. Служба хранилища Azure, а также Data Lake Storage 1-го и 2-го поколения — это разные файловые системы, оптимизированные для хранения и обработки данных. Сведения о преимуществах использования службы хранилища Azure см. в статьях [Использование службы хранилища Azure с hdinsight](hdinsight-hadoop-use-blob-storage.md), [Использование Data Lake Storage 1-го поколения с hdinsight](hdinsight-hadoop-use-data-lake-store.md)и [Использование Data Lake Storage 2-го поколения с hdinsight](hdinsight-hadoop-use-data-lake-storage-gen2.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Перед началом работы необходимо ознакомиться со следующими требованиями:
 
-* Кластер Azure HDInsight. Инструкции см. в разделе [приступить к работе с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md) или [кластеров HDInsight, создайте](hdinsight-hadoop-provision-linux-clusters.md).
+* Кластер Azure HDInsight. Инструкции см. в статье Начало [работы с Azure hdinsight](hadoop/apache-hadoop-linux-tutorial-get-started.md) или [Создание кластеров hdinsight](hdinsight-hadoop-provision-linux-clusters.md).
 * Изучите следующие статьи:
 
     - [Использование службы хранилища Azure с HDInsight](hdinsight-hadoop-use-blob-storage.md)
@@ -32,10 +32,10 @@ ms.locfileid: "67433278"
 
 ## <a name="upload-data-to-azure-storage"></a>Отправка данных в службу хранилища Azure
 
-## <a name="utilities"></a>Техническое оборудование
+## <a name="utilities"></a>Коммунальные службы
 Корпорация Майкрософт предоставляет следующие служебные программы для работы со службой хранилища Azure:
 
-| Средство | Linux | OS X | Windows |
+| Tool | Linux | OS X | Windows |
 | --- |:---:|:---:|:---:|
 | [портал Azure](../storage/blobs/storage-quickstart-blobs-portal.md) |✔ |✔ |✔ |
 | [Интерфейс командной строки Azure](../storage/blobs/storage-quickstart-blobs-cli.md) |✔ |✔ |✔ |
@@ -51,21 +51,21 @@ ms.locfileid: "67433278"
 ## <a id="commandline"></a>Командная строка Hadoop
 Командная строка Hadoop полезна только для хранения данных в большом двоичном объекте службы хранилища Azure, когда данные уже присутствуют на головном узле кластера.
 
-Чтобы использовать команду Hadoop, необходимо сначала подключиться к головному узлу с помощью [SSH или PuTTY](hdinsight-hadoop-linux-use-ssh-unix.md).
+Чтобы использовать команду Hadoop, необходимо сначала подключиться к головного узла с помощью [SSH или](hdinsight-hadoop-linux-use-ssh-unix.md)получения.
 
 После подключения можно использовать следующий синтаксис для отправки файла в хранилище.
 
 ```bash
-hadoop -copyFromLocal <localFilePath> <storageFilePath>
+hadoop fs -copyFromLocal <localFilePath> <storageFilePath>
 ```
 
 Например: `hadoop fs -copyFromLocal data.txt /example/data/data.txt`
 
-Так как файловая система по умолчанию для HDInsight находится в службе хранилища Azure, файл /example/data.txt фактически располагается там же. Можно также использовать следующую ссылку на файл:
+Так как файловая система по умолчанию для HDInsight находится в службе хранилища Azure,/ексампле/Дата/дата.ткст на самом деле находится в службе хранилища Azure. Можно также использовать следующую ссылку на файл:
 
     wasbs:///example/data/data.txt
 
-или
+или диспетчер конфигурации служб
 
     wasbs://<ContainerName>@<StorageAccountName>.blob.core.windows.net/example/data/davinci.txt
 
@@ -96,14 +96,14 @@ hadoop -copyFromLocal <localFilePath> <storageFilePath>
 
 |Тип хранилища|Документация|
 |----|----|
-|Хранилище больших двоичных объектов Azure|[Копирование данных в хранилище BLOB-объектов Azure и обратно с помощью фабрики данных Azure](../data-factory/connector-azure-blob-storage.md)|
-|Хранилище Azure Data Lake Storage 1-го поколения|[Копирование данных в Azure Data Lake Storage 1-го поколения и из него с помощью фабрики данных Azure](../data-factory/connector-azure-data-lake-store.md)|
-|Azure Data Lake Storage 2-го поколения |[Загрузка данных в Azure Data Lake Storage 2-го поколения с помощью Фабрики данных Azure](../data-factory/load-azure-data-lake-storage-gen2.md)|
+|Хранилище BLOB-объектов Azure|[Копирование данных в хранилище BLOB-объектов Azure и обратно с помощью фабрики данных Azure](../data-factory/connector-azure-blob-storage.md)|
+|Azure Data Lake Storage 1-го поколения|[Копирование данных в Azure Data Lake Storage 1-го поколения и из него с помощью фабрики данных Azure](../data-factory/connector-azure-data-lake-store.md)|
+|Azure Data Lake Storage 2-го поколения |[Загрузка данных в Azure Data Lake Storage 2-го поколения с помощью Фабрики данных Azure](../data-factory/load-azure-data-lake-storage-gen2.md)|
 
 ### <a id="sqoop"></a>Apache Sqoop
 Sqoop — это средство, предназначенное для передачи данных между Hadoop и реляционными базами данных. С его помощью можно импортировать данные из системы управления реляционными базами данных (РСУБД), например SQL Server, MySQL или Oracle, в распределенную файловую систему Hadoop (HDFS), преобразовать данные в системе Hadoop с использованием MapReduce или Hive, а затем экспортировать данные обратно в РСУБД.
 
-Дополнительные сведения см. в разделе [использование Sqoop с HDInsight](hadoop/hdinsight-use-sqoop.md).
+Дополнительные сведения см. в статье [Использование Sqoop с HDInsight](hadoop/hdinsight-use-sqoop.md).
 
 ### <a name="development-sdks"></a>Пакеты SDK для разработки
 Доступ к службе хранилища Azure также можно получить с помощью пакета Azure SDK со следующих языков программирования:
@@ -151,7 +151,7 @@ hadoop -fs -D fs.azure.write.request.size=4194304 -copyFromLocal test_large_file
 
 Можно также глобально увеличить значение `fs.azure.write.request.size` с помощью Apache Ambari. Чтобы изменить значение в веб-интерфейсе Ambari, сделайте следующее:
 
-1. В браузере перейдите к веб-интерфейсу Ambari для кластера Это `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — это имя вашего кластера.
+1. В браузере перейдите к веб-интерфейсу Ambari для кластера Это, где `CLUSTERNAME` — имя кластера. `https://CLUSTERNAME.azurehdinsight.net`
 
     При появлении запроса введите имя и пароль администратора для кластера.
 2. В левой части экрана выберите **HDFS**, а затем перейдите на вкладку **Configs** (Конфигурации).
@@ -162,7 +162,7 @@ hadoop -fs -D fs.azure.write.request.size=4194304 -copyFromLocal test_large_file
 
 Подробные сведения об использовании Ambari см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда вы знаете, как передавать данные в HDInsight, узнайте, как их можно анализировать.
 
 * [Приступая к работе с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md)

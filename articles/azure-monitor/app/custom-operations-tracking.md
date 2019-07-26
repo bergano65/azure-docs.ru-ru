@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 06/30/2017
 ms.reviewer: sergkanz
 ms.author: mbullwin
-ms.openlocfilehash: 2c33c481d96a9edecc6360a9a91c095c2bca220b
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 841c55e9aa05e6b627716b084ad7685683f9faec
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67798347"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68498351"
 ---
 # <a name="track-custom-operations-with-application-insights-net-sdk"></a>Отслеживание пользовательских операций с помощью пакета SDK Application Insights для .NET
 
@@ -210,7 +210,7 @@ public async Task Process(BrokeredMessage message)
 В следующем примере показано, как отслеживать операции [очереди службы хранилища Azure](../../storage/queues/storage-dotnet-how-to-use-queues.md) и сопоставлять данные телеметрии производителя, потребителя и службы хранилища Azure. 
 
 Очередь службы хранилища использует API HTTP. Все вызовы, отправляемые к очереди, отслеживаются сборщиком зависимостей Application Insights на наличие HTTP-запросов.
-Она настроена по умолчанию для приложений ASP.NET и ASP.NET Core, с помощью других видов приложений, можно ссылаться на [консоли документации по приложениям](../../azure-monitor/app/console.md)
+Он по умолчанию настроен для ASP.NET и ASP.NET Core приложений с другими типами приложений, которые можно найти в [документации по консольным приложениям](../../azure-monitor/app/console.md) .
 
 Кроме того, может потребоваться сопоставить идентификатор операции Application Insights с идентификатором запроса службы хранилища. Сведения о том, как настроить и получить идентификатор клиента для запроса службы хранилища и идентификатор запроса сервера, см. в разделе [Мониторинг, диагностика и устранение неполадок с хранилищем Azure](../../storage/common/storage-monitoring-diagnosing-troubleshooting.md#end-to-end-tracing).
 
@@ -484,6 +484,13 @@ public async Task RunAllTasks()
     await Task.WhenAll(task1, task2);
 }
 ```
+
+## <a name="applicationinsights-operations-vs-systemdiagnosticsactivity"></a>Операции ApplicationInsights и System. Diagnostics. Activity
+`System.Diagnostics.Activity`представляет распределенный контекст трассировки и используется платформами и библиотеками для создания и распространения контекста внутри и вне процесса и корреляции элементов телеметрии. Действие совместно с `System.Diagnostics.DiagnosticSource` — механизм уведомления между платформой или библиотекой для уведомления о интересных событиях (входящие или исходящие запросы, исключения и т. д.).
+
+Действия являются привилегированными гражданами в Application Insights и автоматическая зависимость и сбор запросов в значительной степени полагаются `DiagnosticSource` на них вместе с событиями. При создании действия в приложении это не приведет к созданию Application Insights телеметрии. Application Insights необходимо получить события DiagnosticSource и выяснить имена и полезные данные событий для преобразования действия в телеметрию.
+
+Каждая операция Application Insights (запрос или зависимость) включает `Activity` в себя `StartOperation` — когда вызывается, она создает действие под. `StartOperation`является рекомендуемым способом отслеживать телеметрии запроса или зависимости вручную и гарантировать, что все согласовано.
 
 ## <a name="next-steps"></a>Следующие шаги
 

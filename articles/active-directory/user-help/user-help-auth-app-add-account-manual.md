@@ -12,14 +12,15 @@ ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 696b6b14b2a369e8b80ac615fc77fa7f48f51c57
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7f2145811338200b38e84766459844b4c83e5a80
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60474305"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68382772"
 ---
 # <a name="manually-add-an-account-to-the-app"></a>Добавление учетной записи в приложение вручную
+
 Если камере не удается сканировать QR-код, вы можете вручную добавить сведения о своей учетной записи в приложение Microsoft Authenticator для двухфакторной проверки подлинности. Это подходит для рабочих или учебных учетных записей и учетных записей сторонних производителей.
 
 Коды, предоставляемые для ваших учетных записей, не учитывают регистр и не требуют пробелов при добавлении в приложение Microsoft Authenticator.
@@ -30,7 +31,7 @@ ms.locfileid: "60474305"
 ## <a name="add-your-work-or-school-account"></a>Добавление рабочей или учебной учетной записи
 
 1. На компьютере запишите **код** и **URL-адрес** на странице **Настроить мобильное приложение**. Не закрывайте эту страницу для просмотра кода и URL-адреса.
-    
+
     ![Окно с QR-кодом](./media/user-help-auth-app-add-account-manual/auth-app-barcode.png)
 
 2. Откройте приложение Microsoft Authenticator, выберите **Добавить учетную запись** в меню значка **Customize and control** (Настройка и управление) в правом верхнем углу, а затем выберите **Рабочая или учебная учетная запись**.
@@ -38,7 +39,7 @@ ms.locfileid: "60474305"
 3. Выберите **Или введите код вручную**.
 
     ![Окно для сканирования QR-кода](./media/user-help-auth-app-add-account-manual/auth-app-manual-code.png)
-   
+
 4. Введите **Код** и **URL-адрес** из шага 1, а затем выберите **Готово**.
 
     ![Окно ввода кода и URL-адреса](./media/user-help-auth-app-add-account-manual/auth-app-code-url.png)
@@ -78,6 +79,7 @@ ms.locfileid: "60474305"
     >Дополнительные сведения о двухфакторной проверке подлинности и учетной записи Facebook см. в статье [Что такое двухфакторная аутентификация и как она работает?](https://www.facebook.com/help/148233965247823)
 
 ## <a name="add-your-amazon-account"></a>Добавление учетной записи Amazon
+
 Вы можете добавить учетную запись Amazon, включив двухфакторную проверку подлинности и добавив учетную запись в приложение.
 
 1. На компьютере выберите **Can't scan the barcode** (Невозможно сканировать штрих-код) на странице **Choose how you'll receive codes** (Выберите способ получения кодов) с QR-кодом.
@@ -99,10 +101,10 @@ ms.locfileid: "60474305"
     >[!NOTE]
     >Дополнительные сведения о двухфакторной проверке подлинности и учетной записи Amazon см. в статьях [About Two-Step Verification](https://www.amazon.com/gp/help/customer/display.html?nodeId=201596330) (О двухфакторной проверке подлинности) и [Signing in with Two-Step Verification](https://www.amazon.com/gp/help/customer/display.html?nodeId=201962440) (Вход с использованием двухфакторной проверки подлинности).    
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Добавив учетные записи в приложение, вы можете использовать их для входа с помощью приложения Microsoft Authenticator на мобильном устройстве. Дополнительные сведения см. в статье [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md).
 
-- Если удается получить код подтверждения для личной учетной записи Майкрософт, см. в разделе **проблемах, связанных с использованием кода проверки** раздел [Провер & ка сведения для защиты учетной записи Майкрософт коды](https://support.microsoft.com/en-us/help/12428/microsoft-account-security-info-verification-codes) статьи.
+- Если у вас возникли проблемы с получением кода проверки для личного учетная запись Майкрософт, см. раздел **Устранение неполадок с кодом проверки** в [учетная запись Майкрософт сведения о безопасности & коды проверки](https://support.microsoft.com/en-us/help/12428/microsoft-account-security-info-verification-codes) .
 
 - Для устройств под управлением iOS вы можете также выполнить резервное копирование в облако учетных данных и связанных с ними параметров приложений (например, порядок учетных записей). Дополнительные сведения см. в статье [Резервное копирование и восстановление учетных данных с помощью приложения Microsoft Authenticator](user-help-auth-app-backup-recovery.md).

@@ -5,15 +5,15 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 03/20/2019
-ms.author: mialdrid
+ms.date: 07/23/2019
+ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: afe8d3971a51d57498e3e32b7e1cf5bf5a3263d6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f16f797afca6d60029c1f39fea7235ce84e4f954
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60883279"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68442209"
 ---
 # <a name="expressroute-prerequisites--checklist"></a>Предварительные требования и контрольный список для ExpressRoute
 Чтобы подключиться к службам Microsoft Cloud через ExpressRoute, вам нужно выполнить условия в следующих разделах.
@@ -30,14 +30,14 @@ ms.locfileid: "60883279"
 * Если ваш поставщик не является партнером по подключению ExpressRoute, вы можете подключиться к Microsoft Cloud через [поставщика облачных служб Exchange](expressroute-locations.md#connectivity-through-exchange-providers).
 
 ## <a name="network-requirements"></a>Требования к сети
-* **Избыточность в каждом расположении пиринга**: Корпорация Майкрософт требует избыточные сеансы BGP между маршрутизаторами Майкрософт и маршрутизаторами для каждого канала ExpressRoute (даже если у вас есть только [одно физическое подключение к cloud exchange](expressroute-faqs.md#onep2plink)).
-* **Избыточность для аварийного восстановления**: Корпорация Майкрософт рекомендует настроить по крайней мере два канала ExpressRoute в разных расположениях пиринга во избежание возникновения единой точки отказа.
+* **Избыточность в каждом одноранговом расположении**: Корпорации Майкрософт требуются избыточные сеансы BGP для настройки маршрутизаторов корпорации Майкрософт и маршрутизаторов пиринга в каждом канале ExpressRoute (даже при наличии всего [одного физического подключения к облачному Exchange](expressroute-faqs.md#onep2plink)).
+* **Избыточность для аварийного восстановления**: Корпорация Майкрософт настоятельно рекомендует настроить по крайней мере две цепи ExpressRoute в разных расположениях пиринга, чтобы избежать единой точки отказа.
 * **Маршрутизация**. В зависимости от способа подключения к Microsoft Cloud вам или вашему поставщику необходимо настроить и администрировать сеансы BGP для [доменов маршрутизации](expressroute-circuit-peerings.md). Некоторые поставщики подключений Ethernet или облачных услуг Exchange могут предлагать управление BGP в качестве услуги с добавленной стоимостью.
 * **Преобразование сетевых адресов (NAT).** Корпорация Майкрософт принимает только общедоступные IP-адреса через пиринг. Если в локальной сети используются частные IP-адреса, вам или вашему поставщику услуг необходимо преобразовать их в общедоступные IP-адреса [с помощью NAT](expressroute-nat.md).
 * **Качество обслуживания.** Skype для бизнеса предоставляет различные услуги (например, передача голоса, видео, текста), которые требуют дифференцированного подхода к качеству обслуживания. Вам и вашему поставщику услуг необходимо соблюдать [требования к качеству обслуживания](expressroute-qos.md).
 * **Сетевая безопасность.** При подключении к Microsoft Cloud через ExpressRoute необходимо помнить о [сетевой безопасности](../best-practices-network-security.md).
 
-## <a name="office-365"></a>Office 365
+## <a name="office-365"></a>Office 365
 Если вы планируете включить Office 365 через ExpressRoute, просмотрите следующие документы для получения дополнительных сведений о требованиях к Office 365.
 
 * [Azure ExpressRoute для Office 365](https://support.office.com/article/Azure-ExpressRoute-for-Office-365-6d2534a2-c19c-4a99-be5e-33a0cee5d3bd)
@@ -50,12 +50,9 @@ ms.locfileid: "60883279"
 * [Расширенные учебные видеоматериалы об использовании ExpressRoute в Office 365](https://channel9.msdn.com/series/aer/)
 
 ## <a name="dynamics-365"></a>Dynamics 365
-Если вы планируете включить Dynamics 365 через ExpressRoute, просмотрите следующие документы для получения дополнительных сведений о требованиях к Dynamics 365.
+Если вы планируете включить Dynamics 365 в ExpressRoute, проверьте [URL-адреса](https://support.microsoft.com/kb/2655102) и [диапазоны IP-адресов](https://support.microsoft.com/kb/2728473)Dynamics 365.
 
-* [Документация по Dynamics 365 и ExpressRoute](https://download.microsoft.com/download/B/2/8/B2896B38-9832-417B-9836-9EF240C0A212/Microsoft%20Dynamics%20365%20and%20ExpressRoute.pdf)
-* [URL-адреса Dynamics 365](https://support.microsoft.com/kb/2655102) и [Диапазоны IP-адресов](https://support.microsoft.com/kb/2728473)
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).
 * Найдите поставщика услуг подключения ExpressRoute. См. статью [Партнеры и одноранговые расположения ExpressRoute](expressroute-locations.md).
 * Ознакомьтесь с требованиями к [маршрутизации](expressroute-routing.md), [NAT](expressroute-nat.md) и [качеству обслуживания](expressroute-qos.md).

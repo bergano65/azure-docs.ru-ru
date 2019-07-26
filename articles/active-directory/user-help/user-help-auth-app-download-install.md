@@ -13,14 +13,15 @@ ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 67393e19a72777d105f1f35a16986c52f52133be
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d1ee54fac5a4c325ea5db3b97522fd2772b8dbd4
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60473827"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68382431"
 ---
 # <a name="download-and-install-the-microsoft-authenticator-app"></a>Скачивание и установка приложения Microsoft Authenticator
+
 >[!Important]
 >Эти материалы предназначены для пользователей. Администраторы могут найти дополнительные сведения о том, как настроить и контролировать среду Azure Active Directory (Azure AD), в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory).
 
@@ -36,13 +37,14 @@ ms.locfileid: "60473827"
 
 > [!Important]
 > Приложение Microsoft Authenticator работает с любой учетной записью, которая использует двухфакторную проверку подлинности и поддерживает стандарты одноразовых паролей с ограниченным сроком действия (TOTP).
-> 
+>
 > В вашей организации для входа и доступа к данным и документации может быть необходимо использовать приложение проверки подлинности. Хотя в этом приложении может быть указано ваше имя пользователя, учетную запись нельзя использовать как метод проверки, пока не выполнена процедура регистрации. Дополнительные сведения см. в статье [Добавление рабочей или учебной учетной записи](user-help-auth-app-add-work-school-account.md).
 > 
 > [!NOTE]
 > Если у вас возникли проблемы при входе в учетную запись, ознакомьтесь со статьей [Не удается войти в учетную запись Майкрософт](https://support.microsoft.com/help/12429).  Получите дополнительную информацию о том, что делать, если при попытке входа в свою учетную запись Майкрософт вы получили сообщение [Такая учетная запись Майкрософт не существует](https://support.microsoft.com/help/13811).
 
 ## <a name="download-and-install-the-app"></a>Скачивание и установка приложения
+
 Установите последнюю версию приложения Microsoft Authenticator, в зависимости от операционной системы.
 
 - **Google Android.** На устройстве Android перейдите к Google Play, чтобы [скачать и установить приложение Microsoft Authenticator](https://app.adjust.com/e3rxkc_7lfdtm?fallback=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.azure.authenticator).
@@ -50,8 +52,8 @@ ms.locfileid: "60473827"
 - **Apple iOS.** На устройстве Apple iOS перейдите к App Store, чтобы [скачать и установить приложение Microsoft Authenticator](https://app.adjust.com/e3rxkc_7lfdtm?fallback=https%3A%2F%2Fitunes.apple.com%2Fus%2Fapp%2Fmicrosoft-authenticator%2Fid983156458).
 
 >[!Important]
->Если вы не в настоящее время на мобильном устройстве, приложение Microsoft Authenticator можно получить, отправив себе ссылку для скачивания из [странице Microsoft Authenticator](https://www.microsoft.com/en-us/account/authenticator).
+>Если вы не находитесь на мобильном устройстве, вы по-прежнему можете получить Microsoft Authenticatorное приложение, отправив на [странице Microsoft Authenticator](https://www.microsoft.com/en-us/account/authenticator)ссылку для скачивания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - После скачивания и установки приложения необходимо добавить различные учетные записи. Дополнительные сведения см. в статье о [добавлении учетных записей](user-help-auth-app-add-account-overview.md).

@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/24/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 49b8554f6064f036d4305cf7a5c1450c2f18c48d
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 318a9c2df7902ae89a731ca45b24b8bb6241faa1
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67798491"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68498380"
 ---
 # <a name="manage-azure-automation-run-as-accounts"></a>Управление учетными записями запуска от имени службы автоматизации Azure
 
@@ -24,58 +24,58 @@ ms.locfileid: "67798491"
 
 Есть два типа учетных записей запуска от имени:
 
-* **Azure Run As Account** -эта учетная запись используется для управления [модели развертывания Resource Manager](../azure-resource-manager/resource-manager-deployment-model.md) ресурсы.
+* **Учетная запись запуска от имени Azure** . Эта учетная запись используется для управления ресурсами [модели развертывания Диспетчер ресурсов](../azure-resource-manager/resource-manager-deployment-model.md) .
   * Создается приложение Azure AD с самозаверяющим сертификатом, учетная запись субъекта-службы для этого приложения в Azure AD, а также назначается роль участника для учетной записи в текущей подписке. Вместо этой роли можно использовать роль владельца или любую другую роль. Дополнительные сведения см. в статье [Управление доступом на основе ролей в службе автоматизации Azure](automation-role-based-access-control.md).
   * Ресурс сертификатов службы автоматизации с именем *AzureRunAsCertificate* в указанной учетной записи службы автоматизации. Этот ресурс содержит закрытый ключ сертификата, используемый в приложении Azure AD.
   * Ресурс подключений службы автоматизации с именем *AzureRunAsConnection* в указанной учетной записи службы автоматизации. Этот ресурс содержит идентификаторы приложения, клиента и подписки, а также отпечаток сертификата.
 
-* **Azure классической учетной записи запуска от** -эта учетная запись используется для управления [классической модели развертывания](../azure-resource-manager/resource-manager-deployment-model.md) ресурсы.
-  * Создает сертификат управления в подписке
+* **Классическая учетная запись запуска от имени Azure** . Эта учетная запись используется для управления ресурсами [классической модели развертывания](../azure-resource-manager/resource-manager-deployment-model.md) .
+  * Создает сертификат управления в подписке.
   * Ресурс сертификатов службы автоматизации с именем *AzureClassicRunAsCertificate* в указанной учетной записи службы автоматизации. Этот ресурс содержит закрытый ключ сертификата, используемый в сертификате управления.
   * Ресурс подключений службы автоматизации с именем *AzureClassicRunAsConnection* в указанной учетной записи службы автоматизации. Этот ресурс содержит имя подписки, идентификатор подписки и имя ресурса сертификатов.
-  * Должно быть соадминистратора для подписки для создания или обновления
-  
+  * Для создания или продления подписки необходимо быть соадминистратором в подписке.
+
   > [!NOTE]
   > Подписки поставщика облачных решений Azure (Azure CSP) поддерживают только модель Azure Resource Manager; в этой программе отсутствуют все службы, созданные с помощью других моделей. При использовании подписки CSP учетная запись запуска от имени Azure не создается. Учетная запись запуска от имени Azure по-прежнему создается. Дополнительные сведения о подписках CSP см. в разделе [Доступные службы в подписках CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services#comments).
 
   > [!NOTE]
-  > Субъект-службу для запуска от имени учетной записи нет разрешения на чтение Azure Active Directory по умолчанию. Если вы хотите добавить разрешения на чтение или управлять Azure Active directory, нужно будет предоставлять ему такое разрешение участника в группе службы **разрешения API**. Дополнительные сведения см. в разделе [добавить разрешения для доступа к веб-API](../active-directory/develop/quickstart-configure-app-access-web-apis.md#add-permissions-to-access-web-apis).
+  > Субъект-служба для учетной записи запуска от имени не имеет разрешений на чтение Azure Active Directory по умолчанию. Если вы хотите добавить разрешения для чтения или управления Azure Active Directory, необходимо предоставить это разрешение для субъекта-службы в разделе **разрешения API**. Дополнительные сведения см. в разделе [Добавление разрешений для доступа к веб-API](../active-directory/develop/quickstart-configure-app-access-web-apis.md#add-permissions-to-access-web-apis).
 
 ## <a name="permissions"></a>Разрешения для настройки учетных записей запуска от имени
 
-Чтобы создать или обновить учетную запись запуска от имени, необходимо иметь привилегии и разрешения. Все задачи можно выполнить глобальным администратором в Azure Active Directory и владельца в подписке. В следующей таблице показаны списки задач, эквивалентный командлет и необходимые разрешения для ситуаций, когда присутствует разделение обязанностей:
+Чтобы создать или обновить учетную запись запуска от имени, необходимо иметь привилегии и разрешения. Глобальный администратор в Azure Active Directory и владелец в подписке могут выполнять все задачи. В следующей таблице показаны списки задач, эквивалентный командлет и необходимые разрешения для ситуаций, когда присутствует разделение обязанностей:
 
 |Задача|Командлет  |Минимальные разрешения  |Где необходимо установить разрешения|
 |---|---------|---------|---|
 |Создание приложения Azure AD|[New-AzureRmADApplication](/powershell/module/azurerm.resources/new-azurermadapplication)     | Роль разработчика приложения<sup>1</sup>        |[Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions)</br>"Начальная страница > Azure Active Directory > Регистрация приложений" |
 |Добавление учетных данных приложения|[New-AzureRmADAppCredential](/powershell/module/AzureRM.Resources/New-AzureRmADAppCredential)     | Администратор приложения или глобальный администратор<sup>1</sup>         |[Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions)</br>"Начальная страница > Azure Active Directory > Регистрация приложений"|
 |Создание или получение субъекта-службы AAD|[New-AzureRMADServicePrincipal](/powershell/module/AzureRM.Resources/New-AzureRmADServicePrincipal)</br>[Get-AzureRmADServicePrincipal](/powershell/module/AzureRM.Resources/Get-AzureRmADServicePrincipal)     | Администратор приложения или глобальный администратор<sup>1</sup>        |[Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions)</br>"Начальная страница > Azure Active Directory > Регистрация приложений"|
-|Назначение или получение роли RBAC для указанного субъекта|[New-AzureRMRoleAssignment](/powershell/module/AzureRM.Resources/New-AzureRmRoleAssignment)</br>[Get-AzureRMRoleAssignment](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)      | Необходимо иметь следующие разрешения:</br></br><code>Microsoft.Authorization/Operations/read</br>Microsoft.Authorization/permissions/read</br>Microsoft.Authorization/roleDefinitions/read</br>Microsoft.Authorization/roleAssignments/write</br>Microsoft.Authorization/roleAssignments/read</br>Microsoft.Authorization/roleAssignments/delete</code></br></br>Или быть:</br></br>Администратор доступа пользователей или владелец        | [Подписка](../role-based-access-control/role-assignments-portal.md)</br>"Начальная страница > Подписки > \<имя подписки\> — Управление доступом (IAM)"|
+|Назначение или получение роли RBAC для указанного субъекта|[New-AzureRMRoleAssignment](/powershell/module/AzureRM.Resources/New-AzureRmRoleAssignment)</br>[Get-AzureRMRoleAssignment](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)      | Необходимо иметь следующие разрешения.</br></br><code>Microsoft.Authorization/Operations/read</br>Microsoft.Authorization/permissions/read</br>Microsoft.Authorization/roleDefinitions/read</br>Microsoft.Authorization/roleAssignments/write</br>Microsoft.Authorization/roleAssignments/read</br>Microsoft.Authorization/roleAssignments/delete</code></br></br>Или быть:</br></br>Администратор доступа пользователей или владелец        | [Подписка](../role-based-access-control/role-assignments-portal.md)</br>"Начальная страница > Подписки > \<имя подписки\> — Управление доступом (IAM)"|
 |Создание или удаление сертификата службы автоматизации|[New-AzureRmAutomationCertificate](/powershell/module/AzureRM.Automation/New-AzureRmAutomationCertificate)</br>[Remove-AzureRmAutomationCertificate](/powershell/module/AzureRM.Automation/Remove-AzureRmAutomationCertificate)     | Участник группы ресурсов         |Группа ресурсов учетной записи службы автоматизации|
 |Создание или удаление подключения службы автоматизации|[New-AzureRmAutomationConnection](/powershell/module/AzureRM.Automation/New-AzureRmAutomationConnection)</br>[Remove-AzureRmAutomationConnection](/powershell/module/AzureRM.Automation/Remove-AzureRmAutomationConnection)|Участник группы ресурсов |Группа ресурсов учетной записи службы автоматизации|
 
-<sup>1</sup> Пользователи без прав администратора в клиенте Azure Active Directory могут [регистрировать приложения домена приложения](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions), если в нем для параметра **Пользователи могут регистрировать приложения** на странице **параметров пользователя** установлено значение **Да**. Если задано значение параметра регистрации приложений **нет**, пользователь, выполняющий это действие должно быть того, что определено в предыдущей таблице.
+<sup>1</sup> Пользователи без прав администратора в клиенте Azure Active Directory могут [регистрировать приложения домена приложения](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions), если в нем для параметра **Пользователи могут регистрировать приложения** на странице **параметров пользователя** установлено значение **Да**. Если параметр регистрации приложений имеет значение **нет**, то пользователь, выполняющий это действие, должен быть определен в предыдущей таблице.
 
-Если вы не являетесь членом экземпляра подписки Active Directory, прежде чем вы будете добавлены **глобального администратора** роли подписки, вы будете добавлены как Гость. В этом случае вы получите предупреждение `You do not have permissions to create…` на странице **добавления учетной записи службы автоматизации**. Пользователи, добавленные к **глобального администратора** роль сначала может быть удален из экземпляра подписки Active Directory и повторно добавить, чтобы предоставить им полный в Active Directory. Чтобы проверить это, на портале Azure в области **Azure Active Directory** выберите **Пользователи и группы** и **Все пользователи**. Выбрав нужного пользователя, щелкните **Профиль**. Значение атрибута **Тип пользователя** в профиле пользователя не должно соответствовать значению **Гость**.
+Если вы не являетесь членом Active Directory экземпляра подписки, прежде чем добавить роль **глобального администратора** в подписке, вы будете добавлены в качестве гостя. В этом случае вы получите предупреждение `You do not have permissions to create…` на странице **добавления учетной записи службы автоматизации**. Пользователи, которые были добавлены в роль **глобального администратора** , можно удалить из экземпляра Active Directory подписки и повторно добавить, чтобы сделать их полными пользователями в Active Directory. Чтобы проверить это, на портале Azure в области **Azure Active Directory** выберите **Пользователи и группы** и **Все пользователи**. Выбрав нужного пользователя, щелкните **Профиль**. Значение атрибута **Тип пользователя** в профиле пользователя не должно соответствовать значению **Гость**.
 
-## <a name="permissions-classic"></a>Разрешения для настройки классического запуска от имени учетных записей
+## <a name="permissions-classic"></a>Разрешения для настройки классической учетной записи запуска от имени
 
-Чтобы настроить или обновить классической запуска от имени учетных записей, необходимо иметь **соадминистратора** роли на уровне подписки. Дополнительные сведения о классическом разрешения, см. в разделе [Azure классические Администраторы подписки](../role-based-access-control/classic-administrators.md#add-a-co-administrator).
+Чтобы настроить или обновить Классические учетные записи запуска от имени, необходимо  иметь роль соадминистратора на уровне подписки. Дополнительные сведения о классических разрешениях см. в статье [Администраторы классической подписки Azure](../role-based-access-control/classic-administrators.md#add-a-co-administrator).
 
 ## <a name="create-a-run-as-account-in-the-portal"></a>Создание учетной записи запуска от имени на портале
 
-В этом разделе указаны действия, с помощью которых на портале Azure можно обновить учетную запись службы автоматизации Azure. Учетные записи запуска от имени и классические учетные записи запуска от имени создаются отдельно. Если вам не нужно управлять классическими ресурсами, достаточно создать учетную запись запуска от имени Azure.  
+В этом разделе указаны действия, с помощью которых на портале Azure можно обновить учетную запись службы автоматизации Azure. Учетные записи запуска от имени и классические учетные записи запуска от имени создаются отдельно. Если вам не нужно управлять классическими ресурсами, достаточно создать учетную запись запуска от имени Azure.
 
 1. Войдите на портал Azure с помощью учетной записи, которая является участником роли "Администраторы подписки" и соадминистратором подписки.
 2. На портале Azure щелкните **Все службы**. В списке ресурсов выберите **Автоматизация**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите элемент **Учетные записи службы автоматизации**.
 3. На странице **учетных записей службы автоматизации** выберите в списке свою учетную запись.
-4. В области слева выберите **Учетные записи запуска от имени** в разделе **Настройки учетной записи**.  
-5. В зависимости от того, какую учетную запись необходимо создать, выберите **Учетная запись запуска от имени Azure** или **Классическая учетная запись запуска от имени Azure**. После выбора отобразится панель **Добавить учетную запись запуска от имени Azure** или **Добавить классическую учетную запись запуска от имени Azure**. Просмотрев общие сведения, нажмите кнопку **Создать**, чтобы продолжить создание учетной записи запуска от имени.  
-6. Ход создания учетной записи запуска от имени в Azure можно отслеживать в разделе **Уведомления** в меню. Отображается также баннер с уведомлением о создании учетной записи. Процесс создания может занять несколько минут.  
+4. В области слева выберите **Учетные записи запуска от имени** в разделе **Настройки учетной записи**.
+5. В зависимости от того, какую учетную запись необходимо создать, выберите **Учетная запись запуска от имени Azure** или **Классическая учетная запись запуска от имени Azure**. После выбора отобразится панель **Добавить учетную запись запуска от имени Azure** или **Добавить классическую учетную запись запуска от имени Azure**. Просмотрев общие сведения, нажмите кнопку **Создать**, чтобы продолжить создание учетной записи запуска от имени.
+6. Ход создания учетной записи запуска от имени в Azure можно отслеживать в разделе **Уведомления** в меню. Отображается также баннер с уведомлением о создании учетной записи. Процесс создания может занять несколько минут.
 
 ## <a name="create-run-as-account-using-powershell"></a>Создание учетной записи запуска от имени с помощью PowerShell
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В следующем списке приведены требования для создания учетной записи запуска от имени в PowerShell:
 
@@ -87,7 +87,7 @@ ms.locfileid: "67798491"
 Чтобы получить значения для параметров *SubscriptionID*, *ResourceGroup* и *AutomationAccountName*, которые являются обязательными для скрипта, выполните следующие шаги:
 
 1. На портале Azure щелкните **Все службы**. В списке ресурсов выберите **Автоматизация**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите элемент **Учетные записи службы автоматизации**.
-1. На странице учетных записей службы автоматизации выберите нужную учетную запись, а затем в разделе **Настройки учетной записи** выберите пункт **Свойства**.  
+1. На странице учетных записей службы автоматизации выберите нужную учетную запись, а затем в разделе **Настройки учетной записи** выберите пункт **Свойства**.
 1. Запишите значения **идентификатора подписки**, **имени** и **группы ресурсов** на странице **свойств**.
 
    ![Страница "Свойства" учетной записи службы автоматизации](media/manage-runas-account/automation-account-properties.png)
@@ -104,7 +104,7 @@ ms.locfileid: "67798491"
 
 1. Сохраните приведенный ниже сценарий на компьютере. В этом примере используйте имя файла *New-RunAsAccount.ps1*.
 
-   Для создания ресурсов сценарий использует несколько командлетов Azure Resource Manager. Предыдущий [разрешения](#permissions) таблице показаны командлетов и их разрешения, необходимые.
+   Для создания ресурсов сценарий использует несколько командлетов Azure Resource Manager. В приведенной выше таблице [разрешений](#permissions) показаны командлеты и необходимые разрешения.
 
     ```powershell
     #Requires -RunAsAdministrator
@@ -158,18 +158,18 @@ ms.locfileid: "67798491"
         Export-Certificate -Cert ("Cert:\localmachine\my\" + $Cert.Thumbprint) -FilePath $certPathCer -Type CERT | Write-Verbose
     }
 
-    function CreateServicePrincipal([System.Security.Cryptography.X509Certificates.X509Certificate2] $PfxCert, [string] $applicationDisplayName) {  
+    function CreateServicePrincipal([System.Security.Cryptography.X509Certificates.X509Certificate2] $PfxCert, [string] $applicationDisplayName) {
         $keyValue = [System.Convert]::ToBase64String($PfxCert.GetRawCertData())
         $keyId = (New-Guid).Guid
 
         # Create an Azure AD application, AD App Credential, AD ServicePrincipal
 
         # Requires Application Developer Role, but works with Application administrator or GLOBAL ADMIN
-        $Application = New-AzureRmADApplication -DisplayName $ApplicationDisplayName -HomePage ("http://" + $applicationDisplayName) -IdentifierUris ("http://" + $keyId) 
+        $Application = New-AzureRmADApplication -DisplayName $ApplicationDisplayName -HomePage ("http://" + $applicationDisplayName) -IdentifierUris ("http://" + $keyId)
         # Requires Application administrator or GLOBAL ADMIN
         $ApplicationCredential = New-AzureRmADAppCredential -ApplicationId $Application.ApplicationId -CertValue $keyValue -StartDate $PfxCert.NotBefore -EndDate $PfxCert.NotAfter
         # Requires Application administrator or GLOBAL ADMIN
-        $ServicePrincipal = New-AzureRMADServicePrincipal -ApplicationId $Application.ApplicationId 
+        $ServicePrincipal = New-AzureRMADServicePrincipal -ApplicationId $Application.ApplicationId
         $GetServicePrincipal = Get-AzureRmADServicePrincipal -ObjectId $ServicePrincipal.Id
 
         # Sleep here for a few seconds to allow the service principal application to become active (ordinarily takes a few seconds)
@@ -187,7 +187,7 @@ ms.locfileid: "67798491"
     }
 
     function CreateAutomationCertificateAsset ([string] $resourceGroup, [string] $automationAccountName, [string] $certifcateAssetName, [string] $certPath, [string] $certPlainPassword, [Boolean] $Exportable) {
-        $CertPassword = ConvertTo-SecureString $certPlainPassword -AsPlainText -Force   
+        $CertPassword = ConvertTo-SecureString $certPlainPassword -AsPlainText -Force
         Remove-AzureRmAutomationCertificate -ResourceGroupName $resourceGroup -AutomationAccountName $automationAccountName -Name $certifcateAssetName -ErrorAction SilentlyContinue
         New-AzureRmAutomationCertificate -ResourceGroupName $resourceGroup -AutomationAccountName $automationAccountName -Path $certPath -Name $certifcateAssetName -Password $CertPassword -Exportable:$Exportable  | write-verbose
     }
@@ -212,7 +212,7 @@ ms.locfileid: "67798491"
     # Enable-AzureRmAlias
 
 
-    Connect-AzureRmAccount -Environment $EnvironmentName 
+    Connect-AzureRmAccount -Environment $EnvironmentName
     $Subscription = Select-AzureRmSubscription -SubscriptionId $SubscriptionId
 
     # Create a Run As account by using a service principal
@@ -289,29 +289,29 @@ ms.locfileid: "67798491"
     > **Add-AzureRmAccount** теперь является псевдонимом для **Connect-AzureRMAccount**. Если при поиске элементов библиотеки вы не видите командлет **Connect-AzureRMAccount**, можно использовать командлет **Add-AzureRmAccount** или [обновить модули](automation-update-azure-modules.md) в своей учетной записи службы автоматизации.
 
 1. На компьютере запустите с повышенными правами **Windows PowerShell** с **начального** экрана.
-1. Из оболочки командной строки с повышенными привилегиями перейдите в папку, которая содержит сценарий, созданный на этапе 1.  
+1. Из оболочки командной строки с повышенными привилегиями перейдите в папку, которая содержит сценарий, созданный на этапе 1.
 1. Выполните этот сценарий, установив значения параметров в зависимости от требуемой конфигурации.
 
-    **Создание учетной записи запуска от имени с использованием самозаверяющего сертификата**  
+    **Создание учетной записи запуска от имени с использованием самозаверяющего сертификата**
 
     ```powershell
     .\New-RunAsAccount.ps1 -ResourceGroup <ResourceGroupName> -AutomationAccountName <NameofAutomationAccount> -SubscriptionId <SubscriptionId> -ApplicationDisplayName <DisplayNameofAADApplication> -SelfSignedCertPlainPassword <StrongPassword> -CreateClassicRunAsAccount $false
     ```
 
-    **Создание учетной записи запуска от имени и классической учетной записи запуска от имени с использованием самозаверяющего сертификата**  
+    **Создание учетной записи запуска от имени и классической учетной записи запуска от имени с использованием самозаверяющего сертификата**
 
     ```powershell
     .\New-RunAsAccount.ps1 -ResourceGroup <ResourceGroupName> -AutomationAccountName <NameofAutomationAccount> -SubscriptionId <SubscriptionId> -ApplicationDisplayName <DisplayNameofAADApplication> -SelfSignedCertPlainPassword <StrongPassword> -CreateClassicRunAsAccount $true
     ```
 
-    **Создание учетной записи запуска от имени и классической учетной записи запуска от имени Azure с использованием корпоративного сертификата**  
+    **Создание учетной записи запуска от имени и классической учетной записи запуска от имени Azure с использованием корпоративного сертификата**
 
     ```powershell
     .\New-RunAsAccount.ps1 -ResourceGroup <ResourceGroupName> -AutomationAccountName <NameofAutomationAccount> -SubscriptionId <SubscriptionId> -ApplicationDisplayName <DisplayNameofAADApplication>  -SelfSignedCertPlainPassword <StrongPassword> -CreateClassicRunAsAccount $true -EnterpriseCertPathForRunAsAccount <EnterpriseCertPfxPathForRunAsAccount> -EnterpriseCertPlainPasswordForRunAsAccount <StrongPassword> -EnterpriseCertPathForClassicRunAsAccount <EnterpriseCertPfxPathForClassicRunAsAccount> -EnterpriseCertPlainPasswordForClassicRunAsAccount <StrongPassword>
     ```
 
     **Создание учетной записи запуска от имени и классической учетной записи запуска от имени с использованием самозаверяющего сертификата в облаке Azure для государственных организаций**
-  
+
     ```powershell
     .\New-RunAsAccount.ps1 -ResourceGroup <ResourceGroupName> -AutomationAccountName <NameofAutomationAccount> -SubscriptionId <SubscriptionId> -ApplicationDisplayName <DisplayNameofAADApplication> -SelfSignedCertPlainPassword <StrongPassword> -CreateClassicRunAsAccount $true  -EnvironmentName AzureUSGovernment
     ```
@@ -368,16 +368,53 @@ ms.locfileid: "67798491"
 
 1. Ход обновления сертификата можно отслеживать в разделе **Уведомления** в меню.
 
-## <a name="limiting-run-as-account-permissions"></a>Ограничение разрешений запуска от имени учетной записи
+## <a name="auto-cert-renewal"></a>Настройка автоматического продления сертификата с помощью модуля Runbook службы автоматизации
 
-Чтобы управлять автоматическими действиями с ресурсами в Azure, можно запустить [AutomationRunAsAccountRoleAssignments.ps1 обновления](https://aka.ms/AA5hug8) сценария в коллекции PowerShell для изменения существующего субъекта-службы учетной записи запуска в Создайте и используйте определение пользовательской роли. Эта роль получат разрешения для всех ресурсов, кроме [Key Vault](https://docs.microsoft.com/azure/key-vault/). 
+Для автоматического обновления сертификатов можно использовать модуль Runbook службы автоматизации. Следующий скрипт в [GitHub](https://github.com/ikanni/PowerShellScripts/blob/master/AzureAutomation/RunAsAccount/GrantPermissionToRunAsAccountAADApplication-ToRenewCertificateItself-CreateSchedule.ps1) включает эту функцию в учетной записи службы автоматизации.
+
+- `GrantPermissionToRunAsAccountAADApplication-ToRenewCertificateItself-CreateSchedule.ps1` Скрипт создает еженедельное расписание для продления сертификатов учетных записей запуска от имени.
+- Скрипт добавляет модуль Runbook **Update-аутоматионрунаскредентиал** в учетную запись службы автоматизации.
+  - Код модуля Runbook также можно просмотреть на сайте GitHub в скрипте: [Упдате-аутоматионрунаскредентиал. ps1](https://github.com/azureautomation/runbooks/blob/master/Utility/ARM/Update-AutomationRunAsCredential.ps1).
+  - Можно также использовать код PowerShell в файле для обновления сертификатов вручную по мере необходимости.
+
+Чтобы немедленно протестировать процесс продления, выполните следующие действия.
+
+1. Измените модуль Runbook **Update-аутоматионрунаскредентиал** и поместите символ комментария (`#`) в строке 122 перед `Exit(1)` командой, как показано ниже.
+
+   ```powershell
+   #Exit(1)
+   ```
+
+2. Опубликуйте модуль Runbook.
+3. Запустите модуль Runbook.
+4. Проверьте успешность обновления с помощью следующего кода:
+
+   ```powershell
+   (Get-AzAutomationCertificate -AutomationAccountName TestAA
+                                -Name AzureRunAsCertificate
+                                -ResourceGroupName TestAutomation).ExpiryTime.DateTime
+   ```
+
+   ```Output
+   Thursday, November 7, 2019 7:00:00 PM
+   ```
+
+5. После теста измените модуль Runbook и удалите символ комментария, добавленный на **шаге 1**.
+6. **Опубликуйте** модуль Runbook.
+
+> [!NOTE]
+> Чтобы выполнить сценарий, необходимо  быть глобальным администратором или **администратором компании** в Azure Active Directory.
+
+## <a name="limiting-run-as-account-permissions"></a>Ограничение разрешений учетной записи запуска от имени
+
+Чтобы управлять назначением автоматизации для ресурсов в Azure, можно выполнить скрипт [упдате-аутоматионрунасаккаунтролеассигнментс. ps1](https://aka.ms/AA5hug8) в коллекции PowerShell, чтобы изменить существующий субъект-службу учетной записи запуска от имени для создания и использования настраиваемой роли. макроопределения. Эта роль будет иметь разрешения для всех ресурсов, кроме [Key Vault](https://docs.microsoft.com/azure/key-vault/).
 
 > [!IMPORTANT]
-> После выполнения команды `Update-AutomationRunAsAccountRoleAssignments.ps1` скрипт, модулей Runbook, доступ к хранилищу ключей с помощью учетных записей запуска от имени больше не будет работать. Необходимо просмотреть модули Runbook в учетной записи для вызовов в хранилище ключей Azure.
+> После выполнения `Update-AutomationRunAsAccountRoleAssignments.ps1` скрипта модули Runbook, которые обращаются к KeyVault с помощью учетных записей запуска от имени, больше не будут работать. Вы должны ознакомиться с модулями Runbook в вашей учетной записи для вызовов Azure KeyVault.
 >
-> Чтобы разрешить доступ к хранилищу ключей с помощью модулей Runbook службы автоматизации Azure, вам потребовалось бы [добавьте учетную запись запуска от имени для разрешений в KeyVault](#add-permissions-to-key-vault).
+> Чтобы разрешить доступ к KeyVault из модулей Runbook службы автоматизации Azure, необходимо [Добавить учетную запись запуска от имени в разрешения KeyVault](#add-permissions-to-key-vault).
 
-Если нужно ограничить субъекта-службы RunAs возможности дальнейшего, можно добавить другие типы ресурсов, чтобы `NotActions` определения пользовательской роли. Следующий пример ограничивает доступ к `Microsoft.Compute`. При добавлении этой для **NotActions** определения роли, этой роли нельзя будет получить доступ к любому ресурсу вычислений. Дополнительные сведения об определениях ролей, см. в разделе [понимать определения ролей для ресурсов Azure](../role-based-access-control/role-definitions.md).
+Если необходимо ограничить действия, которые может выполнить субъект-служба запуска от имени, можно добавить другие типы `NotActions` ресурсов в определение пользовательской роли. В следующем примере доступ `Microsoft.Compute`к ограничен. Если добавить это значение в неизменность определения роли, эта роль не сможет получить доступ к ресурсам вычислений. Дополнительные сведения об определениях ролей см. в статье Общие сведения о [определениях ролей для ресурсов Azure](../role-based-access-control/role-definitions.md).
 
 ```powershell
 $roleDefinition = Get-AzureRmRoleDefinition -Name 'Automation RunAs Contributor'
@@ -385,20 +422,20 @@ $roleDefinition.NotActions.Add("Microsoft.Compute/*")
 $roleDefinition | Set-AzureRMRoleDefinition
 ```
 
-Чтобы определить, является ли субъекта-службы, используемые вашей учетной записи запуска в **участник** определение пользовательской роли перейти к учетной записи службы автоматизации, так и в разделе **параметры учетной записи**выберите **Запуск от имени учетные записи** > **Azure запись запуска от имени**. В разделе **роли** вы найдете определения роли, который используется. 
+Чтобы определить, является ли субъект-служба, используемая вашей учетной записью запуска от имени, участником или определением пользовательской роли, перейдите к учетной записи службы автоматизации и в разделе **Параметры учетной записи** **выберите** > учетные записи запуска от имени  **Azure.** . В разделе **роль** можно найти используемое определение роли.
 
-[![](media/manage-runas-account/verify-role.png "Проверьте роль запись запуска от имени")](media/manage-runas-account/verify-role-expanded.png#lightbox)
+[![](media/manage-runas-account/verify-role.png "Проверка роли учетной записи запуска от имени")](media/manage-runas-account/verify-role-expanded.png#lightbox)
 
-Чтобы определить, определение роли, используемое для учетных записей запуска от имени службы автоматизации для нескольких подписок или учетные записи службы автоматизации, можно использовать [AutomationRunAsAccountRoleAssignments.ps1 проверка](https://aka.ms/AA5hug5) сценария в коллекции PowerShell.
+Чтобы определить определение роли, используемое учетными записями запуска от имени службы автоматизации для нескольких подписок или учетных записей автоматизации, можно использовать скрипт [чекк-аутоматионрунасаккаунтролеассигнментс. ps1](https://aka.ms/AA5hug5) в коллекция PowerShell.
 
-### <a name="add-permissions-to-key-vault"></a>Добавление разрешений в хранилище ключей
+### <a name="add-permissions-to-key-vault"></a>Добавление разрешений в Key Vault
 
-Если вы хотите разрешить службе автоматизации Azure для управления хранилищем ключей и запись запуска от имени субъекта-службы использует определение пользовательской роли, вам потребуется выполнить дополнительные действия, чтобы разрешить это поведение:
+Если вы хотите разрешить службе автоматизации Azure управлять Key Vault а субъект-служба учетной записи запуска от имени использует определение пользовательской роли, потребуется выполнить дополнительные действия, чтобы разрешить такое поведение:
 
-* GRANT, предоставление разрешений в хранилище ключей
+* Предоставление разрешений Key Vault
 * Настройка политики доступа
 
-Можно использовать [расширить AutomationRunAsAccountRoleAssignmentToKeyVault.ps1](https://aka.ms/AA5hugb) сценария в коллекции PowerShell, чтобы предоставить разрешения вашей учетной записи запуска в хранилище ключей или посетите [предоставление приложениям доступа к хранилищу ключей ](../key-vault/key-vault-group-permissions-for-apps.md) Дополнительные сведения о параметрах разрешений на хранилище ключей.
+Вы можете использовать сценарий [екстенд-аутоматионрунасаккаунтролеассигнменттокэйваулт. ps1](https://aka.ms/AA5hugb) в коллекция PowerShell предоставить разрешения учетной записи запуска от имени KeyVault или посетить страницу [предоставление приложений доступ к хранилищу ключей](../key-vault/key-vault-group-permissions-for-apps.md) для получения дополнительных сведений о параметрах. разрешения на KeyVault.
 
 ## <a name="misconfiguration"></a>Неправильные настройки
 

@@ -1,24 +1,23 @@
 ---
-title: Мониторинг оповещений вопросы и ответы по Azure Backup
-description: Ответы на часто задаваемые вопросы о Оповещения мониторинга Azure резервного копирования
-services: backup
+title: Оповещение мониторинга Azure Backup вопросы и ответы
+description: Ответы на часто задаваемые вопросы о Оповещение мониторинга Azure Backup
 author: srinathvasireddy
 manager: sivan
 ms.service: backup
 ms.topic: conceptual
 ms.date: 07/08/2019
 ms.author: srinathv
-ms.openlocfilehash: bb684f65539b4429862b2dce0e378d8f659d2975
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: dc68b68ffa0ae2ee4f1bdd8f2c7ac0d7ff5ebb8c
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705029"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68465858"
 ---
-# <a name="azure-backup-monitoring-alert---faq"></a>Служба Azure Backup, мониторинг, оповещение — часто задаваемые вопросы
-В этой статье содержатся ответы на часто задаваемые вопросы о Azure предупреждение системы мониторинга.
+# <a name="azure-backup-monitoring-alert---faq"></a>Оповещение мониторинга Azure Backup — часто задаваемые вопросы
+В этой статье содержатся ответы на часто задаваемые вопросы о предупреждении мониторинга Azure.
 
-## <a name="configure-azure-backup-reports"></a>Настройка отчетов службы Azure Backup
+## <a name="configure-azure-backup-reports"></a>Настройка отчетов службы архивации Azure
 
 ### <a name="how-do-i-check-if-reporting-data-has-started-flowing-into-a-storage-account"></a>Как проверить, поступают ли данные отчетов в учетную запись хранения?
 Откройте учетную запись хранения, которую вы здесь настроили, и выберите контейнеры. Если в контейнере есть запись insights-logs-azurebackupreport, это указывает, что данные отчетов начали поступать.

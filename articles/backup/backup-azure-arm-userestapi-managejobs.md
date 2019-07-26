@@ -1,7 +1,6 @@
 ---
-title: 'Azure Backup: Управление заданиями архивации с помощью REST API'
+title: 'Azure Backup: Управление заданиями резервного копирования с помощью REST API'
 description: Управление заданиями архивации и восстановления Azure Backup с помощью REST API
-services: backup
 author: pvrk
 manager: shivamg
 keywords: REST API; Azure VM backup; Azure VM restore;
@@ -10,12 +9,12 @@ ms.topic: conceptual
 ms.date: 08/03/2018
 ms.author: pullabhk
 ms.assetid: b234533e-ac51-4482-9452-d97444f98b38
-ms.openlocfilehash: eb8b7dc77d180eb56c2585e93e60a36742f6c84c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d497fc714e0ad5f61873d4c1f95ab35837532646
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60646628"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466774"
 ---
 # <a name="track-backup-and-restore-jobs-using-rest-api"></a>Отслеживание заданий резервного копирования и восстановления с помощью REST API
 
@@ -23,7 +22,7 @@ ms.locfileid: "60646628"
 
 ## <a name="fetch-job-information-from-operations"></a>Получение информации о задании из операций
 
-Операция, такая как активация резервного копирования, будет всегда возвращать jobID. Для eg: Окончательный ответ [активировать операции резервного копирования REST API](backup-azure-arm-userestapi-backupazurevms.md#example-responses-3) выглядит следующим образом:
+Операция, такая как активация резервного копирования, будет всегда возвращать jobID. Пример: Окончательный ответ [триггера REST API операции резервного копирования](backup-azure-arm-userestapi-backupazurevms.md#example-responses-3) выглядит следующим образом:
 
 ```http
 {
@@ -49,11 +48,11 @@ GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 Имя задания `{jobName}` — JobId, упомянутое выше. Ответ — всегда 200 OК с полем status, указывающим текущее состояние задания. Когда вы получите состояние Completed или CompletedWithWarnings, в разделе extendedInfo отобразятся дополнительные сведения о задании.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
-|ИМЯ  |Тип  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     | [JobResource](https://docs.microsoft.com/rest/api/backup/jobdetails/get#jobresource)        | OК        |
+|200 ОК     | [JobResource](https://docs.microsoft.com/rest/api/backup/jobdetails/get#jobresource)        | OK        |
 
 #### <a name="example-response"></a>Пример ответа
 

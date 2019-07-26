@@ -1,5 +1,5 @@
 ---
-title: Примеры PowerShell для управления группами и предварительной версии группы обратной записи — Локальная среда — Azure Active Directory | Документация Майкрософт
+title: Примеры PowerShell для управления группами и обратной записи групп в локальную среду — Azure Active Directory | Документация Майкрософт
 description: На этой странице представлены примеры командлетов PowerShell, которые помогут вам управлять группами в Azure Active Directory.
 keywords: Azure AD, Azure Active Directory, PowerShell, группы, управление группами
 services: active-directory
@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9817d63990b390cfbb0002423c1ff8f19fcd27f7
-ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.openlocfilehash: 2e22baabda901a34f624cf27c25037ff3ba94e90
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67147269"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68381844"
 ---
 # <a name="azure-active-directory-version-2-cmdlets-for-group-management"></a>Командлеты Azure Active Directory версии 2 для управления группами
 
@@ -170,9 +170,10 @@ ms.locfileid: "67147269"
     PS C:\Windows\system32> Set-AzureADGroup -ObjectId 31f1ff6c-d48c-4f8a-b2e1-abca7fd399df -Description "Intune Device Administrators"
 ```
 
-Если эта проблема обнаружиться группе мы посмотрим, что свойство Description будет обновлена с учетом новое значение:
+Теперь при повторном обнаружении группы мы видим, что свойство Description Обновлено, чтобы отразить новое значение:
 
-'''powershell PS C:\Windows\system32 > Get-AzureADGroup-фильтр «DisplayName eq «Intune Администраторы»»
+```powershell
+    PS C:\Windows\system32> Get-AzureADGroup -Filter "DisplayName eq 'Intune Administrators'"
 
     DeletionTimeStamp            :
     ObjectId                     : 31f1ff6c-d48c-4f8a-b2e1-abca7fd399df
@@ -190,15 +191,15 @@ ms.locfileid: "67147269"
     SecurityEnabled              : True
 ```
 
-## Delete groups
+## <a name="delete-groups"></a>Удаление групп
 
-To delete groups from your directory, use the Remove-AzureADGroup cmdlet as follows:
+Для удаления групп из каталога используйте командлет Remove-AzureADGroup, как показано ниже:
 
 ```powershell
     PS C:\Windows\system32> Remove-AzureADGroup -ObjectId b11ca53e-07cc-455d-9a89-1fe3ab24566b
 ```
 
-## <a name="manage-group-membership"></a>Управление членством в группах
+## <a name="manage-group-membership"></a>Управление членством в группе
 
 ### <a name="add-members"></a>Добавление членов
 
@@ -223,7 +224,7 @@ To delete groups from your directory, use the Remove-AzureADGroup cmdlet as foll
                           8120cc36-64b4-4080-a9e8-23aa98e8b34f User
 ```
 
-### <a name="remove-members"></a>Удаление членов
+### <a name="remove-members"></a>Удалить членов
 
 Чтобы удалить члена, ранее добавленного в группу, используйте командлет Remove-AzureADGroupMember, как показано здесь:
 
@@ -283,7 +284,7 @@ To delete groups from your directory, use the Remove-AzureADGroup cmdlet as foll
     PS C:\Windows\system32> Add-AzureADGroupOwner -ObjectId 31f1ff6c-d48c-4f8a-b2e1-abca7fd399df -RefObjectId 72cd4bbd-2594-40a2-935c-016f3cfeeeea
 ```
 
-Параметр - ObjectId — это идентификатор объекта группы, к которому требуется добавить владельца, а - RefObjectId — это идентификатор объекта пользователя или участника, мы хотим добавить в качестве владельца группы службы.
+Параметр-ObjectId — это идентификатор объекта группы, к которой нужно добавить владельца, а параметр-RefObjectId — идентификатор объекта пользователя или субъекта службы, который нужно добавить в качестве владельца группы.
 
 Для получения сведений о владельцах группы используйте командлет Get-AzureADGroupOwner:
 
@@ -291,7 +292,7 @@ To delete groups from your directory, use the Remove-AzureADGroup cmdlet as foll
     PS C:\Windows\system32> Get-AzureADGroupOwner -ObjectId 31f1ff6c-d48c-4f8a-b2e1-abca7fd399df
 ```
 
-Командлет возвращает список владельцев (пользователи и субъекты-службы) для указанной группы.
+Командлет возвращает список владельцев (пользователей и субъектов-служб) для указанной группы:
 
 ```powershell
     DeletionTimeStamp ObjectId                             ObjectType
@@ -321,17 +322,17 @@ To delete groups from your directory, use the Remove-AzureADGroup cmdlet as foll
 * ssl-admin
 * webmaster
 
-## <a name="group-writeback-to-on-premises-preview"></a>Обратная запись групп в локальную (Предварительная версия)
+## <a name="group-writeback-to-on-premises-preview"></a>Обратная запись групп в локальную среду (Предварительная версия)
 
-В настоящее время многие группы по-прежнему управляются в локальной Active Directory. Для ответа на запросы для синхронизации групп облака к обратной записи групп Office 365 на предприятии, функция для Azure AD теперь доступна для предварительной версии.
+Сегодня многие группы по-прежнему управляются в локальной Active Directory. Чтобы ответить на запросы на синхронизацию облачных групп обратно в локальную среду, теперь доступна предварительная версия функции обратной записи в группах Office 365 для Azure AD.
 
-Группы Office 365 создаются и управляются в облаке. Возможности обратной записи дает возможность обратной записи групп Office 365 как группы распространения в лесу Active Directory с установленным Exchange. Пользователи с локальной службы Exchange почтовые ящики можно отправлять и получать сообщения электронной почты из этих групп. Функция обратной записи группы не поддерживает группы безопасности Azure AD или группы рассылки.
+Группы Office 365 создаются и управляются в облаке. Возможность обратной записи позволяет записывать резервные группы Office 365 в качестве групп рассылки в лес Active Directory с установленным Exchange. Пользователи с локальными почтовыми ящиками Exchange могут отправлять и получать сообщения электронной почты из этих групп. Функция обратной записи групп не поддерживает группы безопасности Azure AD или группы рассылки.
 
-Для получения дополнительных сведений обратитесь к документации для [службы синхронизации Azure AD Connect](../hybrid/how-to-connect-syncservice-features.md).
+Дополнительные сведения см. в документации по [службе синхронизации Azure AD Connect](../hybrid/how-to-connect-syncservice-features.md).
 
-Обратная запись групп Office 365 — это функция предварительной версии Azure Active Directory (Azure AD) и доступны с любым оплачивается план лицензирования Azure AD. Некоторые юридические сведения о предварительных версиях, см. в разделе [дополнительные условия использования предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+Обратная запись групп Office 365 — это общедоступная Предварительная версия функции Azure Active Directory (Azure AD) и доступна с любым платным планом лицензирования Azure AD. Некоторые юридические сведения о предварительных версиях см. в разделе Дополнительные [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительную документацию по PowerShell Azure Active Directory см. в разделе [Azure Active Directory Cmdlets](/powershell/azure/install-adv2?view=azureadps-2.0) (Командлеты Azure Active Directory).
 

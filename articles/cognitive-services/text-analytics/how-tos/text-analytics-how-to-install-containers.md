@@ -11,12 +11,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
 ms.author: dapine
-ms.openlocfilehash: 7f178152fb5b6d540c2cecdfa42687469dfe3881
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 39f15cf8d1374ca95b10ccbddb8a59ec3e98f4f8
+ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68356989"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68488738"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>Установка и запуск контейнеров API анализа текста
 
@@ -24,7 +24,7 @@ ms.locfileid: "68356989"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы запустить любой из Анализ текста контейнеров, необходимо иметь главный компьютер и среды контейнеров.
 
@@ -32,11 +32,13 @@ ms.locfileid: "68356989"
 
 Прежде чем использовать контейнеры Анализа текста, необходимо выполнить следующие условия:
 
-|Обязательно для заполнения|Цель|
+|Обязательное значение|Цель|
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
 |Ресурс API анализа текста |Для использования контейнера необходимо следующее:<br><br>Ресурс Azure [анализ текста](text-analytics-how-to-access-key.md) для получения соответствующего ключа API и URI конечной точки. Оба значения доступны на страницах "Обзор" и "Ключи" API анализа текста на портале Azure и необходимы для запуска контейнера.<br><br>**{API_KEY}** : Один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}** : Конечная точка, указанная на странице **обзора**|
+
+[!INCLUDE [Gathering required parameters](../../containers/includes/container-gathering-required-parameters.md)]
 
 ### <a name="the-host-computer"></a>Главный компьютер
 
@@ -46,7 +48,7 @@ ms.locfileid: "68356989"
 
 В следующей таблице описаны минимальные и рекомендуемые требования к ЦП (минимум 2,6 ГГц или быстрее) и памяти, в ГБ, для выделения для каждого контейнера Анализа текста.
 
-| Контейнер | Минимальная | Рекомендуется | ПЛАТЫ<br>(Минимум, максимум)|
+| Контейнер | Минимум | Рекомендуется | ПЛАТЫ<br>(Минимум, максимум)|
 |-----------|---------|-------------|--|
 |Извлечение ключевых фраз | 1 ядро, 2 ГБ памяти | 1 ядро, 4 ГБ памяти |15, 30|
 |Распознавание языка | 1 ядро, 2 ГБ памяти | 1 ядро, 4 ГБ памяти |15, 30|
@@ -107,14 +109,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/sentiment:latest
 
 ## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью команды `docker run`
 
-Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска любого из трех контейнеров. В команде используются следующие параметры:
-
-| Placeholder | Значение |
-|-------------|-------|
-|{API_KEY} | Этот ключ используется для запуска контейнера и доступен на странице `Text Analytics` ключей портал Azure. |
-|{ENDPOINT_URI} | Значение URI конечной точки выставления счетов доступно на странице `Text Analytics` обзора Azure. |
-
-В следующем примере команды `docker run` замените имена параметров собственными значениями.
+Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска любого из трех контейнеров. Дополнительные сведения о том, как получить значения и `{API_Key}` , `{Endpoint_URI}` см. в разделе [сбор обязательных параметров](#gathering-required-parameters) .
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
