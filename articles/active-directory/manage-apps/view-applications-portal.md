@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: arvinh
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ae5e16aa00147d6ea434090720b51af06e8e0c5
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 764c7c048dd0398b495ee31421a8e2bc9f8169ee
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67807569"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68477196"
 ---
 # <a name="view-your-azure-active-directory-tenant-applications"></a>Просмотр клиентских приложений в Azure Active Directory
 
@@ -79,4 +79,4 @@ ms.locfileid: "67807569"
 Теперь, когда вы нашли нужное приложение, можете продолжать [добавлять дополнительные приложения в клиенте](add-application-portal.md). Кроме того, вы можете выбрать приложение для просмотра или изменить свойства и параметры конфигурации. Например, можно настроить единый вход.
 
 > [!div class="nextstepaction"]
-> [Настройка единого входа](configure-single-sign-on-portal.md)
+> [Настройка единого входа](configure-single-sign-on-non-gallery-applications.md)

@@ -12,14 +12,15 @@ ms.topic: overview
 ms.date: 02/13/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9c6faff10f68d720bc3c86a191e4cd1b1f9abdc
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c20256fb712d9381ba2adc90e2e68ce4fdc8911a
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58123612"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68382777"
 ---
 # <a name="set-up-your-security-info-preview-from-the-sign-in-page-prompt"></a>Настройка сведений для защиты (предварительная версия) в приглашении на странице входа
+
 Вы можете выполнить следующие действия при получении приглашения настроить сведения для защиты сразу после входа в рабочую или учебную учетную запись.
 
 Это приглашение появится, только если вы еще не настроили сведения для защиты, требуемые вашей организации. Если вы настроили сведения для защиты, но хотите внести изменения, то можете выполнить действия, описанные в различных руководствах, основанных на методах. Дополнительные сведения см. в статье о [добавлении или обновлении сведений для защиты](security-info-add-update-methods-overview.md).
@@ -27,11 +28,13 @@ ms.locfileid: "58123612"
 [!INCLUDE [preview-notice](../../../includes/active-directory-end-user-preview-notice-security-info.md)]
 
 ## <a name="sign-in-to-your-work-or-school-account"></a>Вход в рабочую или учебную учетную запись
+
 После входа в рабочую или учебную учетную запись до получения к ней доступа вы увидите приглашение предоставить дополнительную информацию.
 
 ![Приглашение предоставить дополнительные сведения](media/security-info/securityinfo-prompt.png)
 
 ## <a name="set-up-your-security-info-using-the-wizard"></a>Настройка сведений для защиты с помощью мастера
+
 Выполните следующие действия, чтобы настроить сведения для защиты для рабочей или учебной учетной записи в приглашении.
 
 >[!Important]
@@ -41,7 +44,7 @@ ms.locfileid: "58123612"
 
    > [!Note]
    > Если вы хотите использовать приложение для проверки подлинности, отличное от Microsoft Authenticator, щелкните ссылку **I want to use a different authenticator app** (Я хочу использовать другое приложение для проверки подлинности).
-   > 
+   >
    > Если ваша организация позволяет выбрать другой метод помимо приложения для проверки подлинности, можете перейти по ссылке **I want to set up a different method link** (Я хочу установить другой метод).
 
     ![Мастер безопасности учетной записи, показывающий страницу скачивания приложения проверки подлинности](media/security-info/securityinfo-prompt-get-auth-app.png)

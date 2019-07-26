@@ -3,17 +3,18 @@ title: Краткое руководство. Развертывание кон�
 description: В этом кратком руководстве описано, как быстро развернуть контейнерное веб-приложение, выполняющееся в изолированном экземпляре контейнера Azure
 services: container-instances
 author: dlepow
+manager: gwallace
 ms.service: container-instances
 ms.topic: quickstart
 ms.date: 04/17/2019
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 008d6d2a9a4a20e9fd083e9e2f009396a7f14df2
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: bf3bea07fa2fcb67a467d4087ea9e2ccbfd95206
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59995920"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68325796"
 ---
 # <a name="quickstart-deploy-a-container-instance-in-azure-using-the-azure-portal"></a>Краткое руководство. Развертывание экземпляра контейнера в Azure с помощью портала Azure
 
@@ -27,7 +28,7 @@ ms.locfileid: "59995920"
 
 Войдите на портал Azure по адресу https://portal.azure.com.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][azure-free-account], прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][azure-free-account], прежде чем начинать работу.
 
 ## <a name="create-a-container-instance"></a>Создание экземпляра контейнера
 

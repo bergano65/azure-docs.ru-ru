@@ -3,18 +3,18 @@ title: Об экземплярах контейнеров Azure
 description: Служба "Экземпляры контейнеров Azure" предоставляет быстрый и простой способ запуска изолированных контейнеров в Azure без необходимости управления виртуальными машинами и применения оркестратора более высокого уровня.
 services: container-instances
 author: dlepow
-manager: jeconnoc
+manager: gwallace
 ms.service: container-instances
 ms.topic: overview
 ms.date: 04/25/2019
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 0ec0280ab2a39674a1b41120f0a8791dfb8b1922
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: a07eda709c813e68bc3e4f08b6aab3f93dec65a6
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65073289"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68325748"
 ---
 # <a name="what-is-azure-container-instances"></a>Об экземплярах контейнеров Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "65073289"
 Эта функция Экземпляров контейнеров Azure сейчас доступна в виде предварительной версии. Она позволяет [развертывать экземпляры контейнеров в виртуальную сеть Azure](container-instances-vnet.md). Экземпляры контейнеров, развернутые в подсети виртуальной сети, могут безопасно взаимодействовать с другими ресурсами виртуальной сети, включая локальные ресурсы. Взаимодействие происходит через [шлюз VPN ](../vpn-gateway/vpn-gateway-about-vpngateways.md) или [ExpressRoute](../expressroute/expressroute-introduction.md).
 
 > [!IMPORTANT]
-> Некоторые функции Экземпляров контейнеров Azure доступны в предварительной версии с некоторыми [ограничениями](container-instances-vnet.md#preview-limitations). Предварительные версии предоставляются только в том случае, если вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые характеристики этих функций могут измениться до выхода общедоступной версии.
+> Некоторые функции Экземпляров контейнеров Azure доступны в предварительной версии с некоторыми [ограничениями](container-instances-vnet.md#preview-limitations). Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые характеристики этих функций могут измениться до выхода общедоступной версии.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

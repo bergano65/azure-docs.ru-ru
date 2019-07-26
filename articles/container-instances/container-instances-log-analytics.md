@@ -3,16 +3,17 @@ title: Ведение журнала для экземпляров контей�
 description: Узнайте, как отправлять данные журналов из экземпляров контейнеров Azure в журналы Azure Monitor.
 services: container-instances
 author: dlepow
+manager: gwallace
 ms.service: container-instances
 ms.topic: overview
 ms.date: 07/09/2019
 ms.author: danlep
-ms.openlocfilehash: cab0bc4d2d0491c70a1d2f11f3a5d5d831ade6cf
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 4099bc0b15f02faade02f47aeb00fb7c4b4a3332
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722650"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68325884"
 ---
 # <a name="container-instance-logging-with-azure-monitor-logs"></a>Ведение журнала для экземпляров контейнеров с помощью Журналов Azure Monitor
 

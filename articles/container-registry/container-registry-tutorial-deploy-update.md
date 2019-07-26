@@ -3,17 +3,18 @@ title: Руководство. Отправка обновленного обр�
 description: Отправьте измененный образ Docker в геореплицируемый реестр контейнеров Azure, а затем просмотрите изменения, автоматически развернутые в веб-приложениях, которые выполняются в нескольких регионах. Это третья часть руководства из трех частей.
 services: container-registry
 author: dlepow
+manager: gwallace
 ms.service: container-registry
 ms.topic: tutorial
 ms.date: 04/30/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: d9faa89d33dde7da35ad4490b78b9a1d023274ae
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: e01fdc41d0cc2e65951bd92378eb59f0fd35816a
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53256627"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68310429"
 ---
 # <a name="tutorial-push-an-updated-container-image-to-a-geo-replicated-container-registry-for-regional-web-app-deployments"></a>Руководство. Отправка обновленного образа контейнера в геореплицируемый реестр контейнеров для развертывания в региональных веб-приложениях
 
