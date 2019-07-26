@@ -1,5 +1,5 @@
 ---
-title: Автоматическая инициализация устройств с помощью DPS с использованием симметричного ключа аттестации — Azure IoT Edge | Документация Майкрософт
+title: Автоинициализация устройств с помощью DPS с использованием симметричного ключа аттестации — Azure IoT Edge | Документация Майкрософт
 description: Использование аттестации симметричных ключей для тестирования автоматической подготовки устройств для Azure IoT Edge с помощью службы подготовки устройств
 author: kgremban
 manager: philmea
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: a91162271bf36e1d68e087a60723497e7fc261ec
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
-ms.translationtype: HT
+ms.openlocfilehash: 3c21c0bdce6f6a5cd3c8f634bf400600b30a8ead
+ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68275743"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68414588"
 ---
 # <a name="create-and-provision-an-iot-edge-device-using-symmetric-key-attestation"></a>Создание и инициализация устройства IoT Edge с помощью аттестации симметричных ключей
 
@@ -165,8 +165,7 @@ Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
 
 Следуйте инструкциям по архитектуре вашего устройства. Среда выполнения IoT Edge должна быть настроена на автоматическую подготовку, а не подготовку вручную.
 
-* [Установка среды выполнения Azure IoT Edge в Linux (x64)](how-to-install-iot-edge-linux.md)
-* [Установка среды выполнения Azure IoT Edge в Linux (ARM32v7/армхф)](how-to-install-iot-edge-linux-arm.md)
+[Установка среды выполнения Azure IoT Edge в Linux](how-to-install-iot-edge-linux.md)
 
 Раздел файла конфигурации для подготовки симметричного ключа выглядит следующим образом:
 
@@ -188,7 +187,7 @@ provisioning:
 
 Следуйте инструкциям по установке среды выполнения IoT Edge на устройстве, для которого создан производный ключ устройства. Среда выполнения IoT Edge должна быть настроена на автоматическую подготовку, а не подготовку вручную.
 
-[Установка и автоматическая подготовка IoT Edge](how-to-install-iot-edge-windows.md#option-2-install-and-automatically-provision)
+[Установка и автоматическая инициализация IoT Edge в Windows](how-to-install-iot-edge-windows.md#option-2-install-and-automatically-provision)
 
 ## <a name="verify-successful-installation"></a>Проверка установки
 

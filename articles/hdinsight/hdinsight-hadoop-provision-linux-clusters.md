@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.topic: conceptual
 ms.date: 07/15/2019
-ms.openlocfilehash: a1ff1449b5cc63c16035f8785662f250a008fbc1
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: 4159eed04ff1a4e81ea36a4d7f06f342a63fe367
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68305533"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68442028"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-apache-hadoop-apache-spark-apache-kafka-and-more"></a>Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий
 
@@ -155,7 +155,7 @@ ms.locfileid: "68305533"
  
 ## <a name="enterprise-security-package"></a>Пакет безопасности корпоративного уровня
 
-Для кластеров типа Hadoop, Spark, HBase, Kafka и Interactive Query вы можете включить **Корпоративный пакет безопасности**. Этот пакет содержит параметр для более безопасной настройки кластера с помощью Apache Ranger и интеграции с Azure Active Directory. Дополнительные сведения см. в статье о [корпоративном пакете безопасности в Azure HDInsight](./domain-joined/apache-domain-joined-introduction.md).
+Для кластеров типа Hadoop, Spark, HBase, Kafka и Interactive Query вы можете включить **Корпоративный пакет безопасности**. Этот пакет содержит параметр для более безопасной настройки кластера с помощью Apache Ranger и интеграции с Azure Active Directory. Дополнительные сведения см. [в статье обзор корпоративной безопасности в Azure HDInsight](./domain-joined/hdinsight-security-overview.md).
 
 ![hdinsight create options choose enterprise security package](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-creation-enterprise-security-package.png)
 
@@ -177,7 +177,7 @@ ms.locfileid: "68305533"
 | Тип | Nodes | Схема |
 | --- | --- | --- |
 | Hadoop |Головной узел (2), Рабочий узел (1 +) |![Узлы кластера HDInsight Hadoop](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hadoop-cluster-type-nodes.png) |
-| HBase |Головной сервер (2), региональный сервер (от 1), основной узел или узел Zookeeper (3) |![Узлы кластера HDInsight HBase](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hbase-cluster-type-setup.png) |
+| Hbase |Головной сервер (2), региональный сервер (от 1), основной узел или узел Zookeeper (3) |![Узлы кластера HDInsight HBase](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hbase-cluster-type-setup.png) |
 | Storm |Узел Nimbus (2), сервер супервизора (от 1), узел Zookeeper (3) |![Узлы кластера HDInsight Storm](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-storm-cluster-type-setup.png) |
 | Spark |Головной узел (2), Рабочий узел (1 +), узел ZooKeeper (3) (бесплатно для размера виртуальной машины a1 ZooKeeper) |![Узлы кластера HDInsight Spark](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-spark-cluster-type-setup.png) |
 
@@ -215,7 +215,7 @@ ms.locfileid: "68305533"
 
 Дополнительные сведения см. в разделе [Размеры виртуальных машин](../virtual-machines/windows/sizes.md). Сведения о расценках на разные размеры см. [здесь](https://azure.microsoft.com/pricing/details/hdinsight).   
 
-## <a name="advanced-settings-script-actions"></a>Расширенные параметры. Действия сценария
+## <a name="advanced-settings-script-actions"></a>Расширенные параметры. Действия скрипта
 
 Можно установить дополнительные компоненты или настроить конфигурацию кластера с помощью сценариев во время создания. Такие скрипты вызываются с помощью **действия скрипта** — параметра конфигурации, который может использоваться с помощью портала Azure, командлетов HDInsight PowerShell или пакета SDK для HDInsight .NET. Дополнительные сведения см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).
 
@@ -249,9 +249,9 @@ ms.locfileid: "68305533"
 ## <a name="advanced-settings-extend-clusters-with-a-virtual-network"></a>Расширенные параметры. Расширение кластеров с помощью виртуальной сети
 Если для решения нужны технологии, распределенные по нескольким типам кластеров HDInsight, [виртуальная сеть Azure](https://docs.microsoft.com/azure/virtual-network) может объединять необходимые типы кластеров. Благодаря такой конфигурации кластеры и любой развернутый в них код могут взаимодействовать друг с другом напрямую.
 
-Подробные сведения об использовании виртуальных сетей Azure в HDInsight см. в статье [Расширение возможностей HDInsight с помощью виртуальной сети Azure](hdinsight-extend-hadoop-virtual-network.md).
+Дополнительные сведения об использовании виртуальной сети Azure с HDInsight см. в статье [планирование виртуальной сети для hdinsight](hdinsight-plan-virtual-network-deployment.md).
 
-Пример использования двух типов кластера в виртуальной сети Azure см. в статье об [использовании структурированного потока Apache Spark при помощи Apache Kafka](hdinsight-apache-kafka-spark-structured-streaming.md). Дополнительные сведения об использовании HDInsight в виртуальной сети, включая требования к конфигурации виртуальной сети, см. в статье [Расширение возможностей HDInsight с помощью виртуальной сети Azure](hdinsight-extend-hadoop-virtual-network.md).
+Пример использования двух типов кластера в виртуальной сети Azure см. в статье об [использовании структурированного потока Apache Spark при помощи Apache Kafka](hdinsight-apache-kafka-spark-structured-streaming.md). Дополнительные сведения об использовании HDInsight с виртуальной сетью, включая конкретные требования к конфигурации для виртуальной сети, см. в статье [планирование виртуальной сети для HDInsight](hdinsight-plan-virtual-network-deployment.md).
 
 
 ## <a name="next-steps"></a>Следующие шаги

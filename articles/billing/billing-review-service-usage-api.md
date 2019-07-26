@@ -12,13 +12,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/15/2018
-ms.author: erikre
-ms.openlocfilehash: d3db4166810da981ff0117536d8550a6b2203924
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: banders
+ms.openlocfilehash: 47e19fae26d6e3bc465799980c587d7bb7ed5e92
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60370991"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68443065"
 ---
 # <a name="review-azure-resource-usage-using-the-rest-api"></a>Просмотр использования ресурса службы Azure с помощью REST API
 
@@ -45,8 +45,8 @@ Authorization: Bearer
 
 |Заголовок запроса|Описание|  
 |--------------------|-----------------|  
-|*Content-Type:*| Обязательный элемент. Задайте значение `application/json`. |  
-|*Authorization:*| Обязательный элемент. Для токена `Bearer` необходимо задать допустимое значение. |
+|*Content-Type:*| Обязательный. Задайте значение `application/json`. |  
+|*Authorization:*| Обязательный. Для токена `Bearer` необходимо задать допустимое значение. |
 
 В теле запроса HTTP необходимо настроить параметры отчета. В приведенном ниже примере отчет настроен для ежедневного создания, представляет собой файл CSV, записанный в контейнер больших двоичных объектов хранилища Azure, и содержит почасовую информацию о стоимости всех ресурсов в группе ресурсов `westus`.
 
@@ -156,5 +156,5 @@ Authorization: Bearer
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Начало работы с Azure REST API](https://docs.microsoft.com/rest/api/azure/)   

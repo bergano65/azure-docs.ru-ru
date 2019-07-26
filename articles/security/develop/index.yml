@@ -34,6 +34,13 @@ sections:
             image:
               src: /media/common/i_learn-about.svg
             title: Развитие навыков с помощью Microsoft Learn
+  - title: Защита примеров приложений
+    items:
+      - type: list
+        style: unordered
+        className: spaced noBullet
+        items:
+          - html: <a href="/azure/security/develop/secure-web-app">Веб-приложение в контейнере Linux</a>
   - title: Основные понятия
     items:
       - type: list

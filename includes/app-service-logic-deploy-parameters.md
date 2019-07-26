@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/03/2016
 ms.author: cephalin
 ms.openlocfilehash: f188f2c7bea511f1109d37ef49563e0f745a770e
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185706"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68385744"
 ---
 С помощью Azure Resource Manager можно определить параметры для значений, используемых при развертывании шаблона. В шаблоне есть раздел `parameters`, содержащий все значения параметров. Значение каждого параметра в шаблоне определяет развертываемые ресурсы.
 

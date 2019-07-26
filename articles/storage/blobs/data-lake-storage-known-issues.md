@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: conceptual
 ms.date: 07/18/2019
 ms.author: normesta
-ms.openlocfilehash: 4a8c69dc06b2de08016ae282413402061cdb89d1
-ms.sourcegitcommit: da0a8676b3c5283fddcd94cdd9044c3b99815046
+ms.openlocfilehash: fc2d7e4f611e1eee9c369ef26aa7bf66feb7c888
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314403"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68385681"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -54,20 +54,9 @@ API-интерфейсы хранилища BLOB-объектов отключе
 
 В этом разделе описываются проблемы и ограничения использования API больших двоичных объектов и Data Lake Storage 2-го поколения API-интерфейсов для обработки одних и тех же данных.
 
-API-интерфейсы RESTFUL для больших двоичных объектов не поддерживаются:
-
-* [Разместить BLOB-объект (страница)](https://docs.microsoft.com/rest/api/storageservices/put-blob)
-* [Put Page](https://docs.microsoft.com/rest/api/storageservices/put-page)
-* [Получить диапазоны страниц](https://docs.microsoft.com/rest/api/storageservices/get-page-ranges)
-* [Добавочное копирование большого двоичного объекта](https://docs.microsoft.com/rest/api/storageservices/incremental-copy-blob)
-* [Размещение страницы по URL-адресу](https://docs.microsoft.com/rest/api/storageservices/put-page-from-url)
-* [Размещение большого двоичного объекта (добавление)](https://docs.microsoft.com/rest/api/storageservices/put-blob)
-* [Append Block](https://docs.microsoft.com/rest/api/storageservices/append-block)
-* [Добавить блок из URL-адреса](https://docs.microsoft.com/rest/api/storageservices/append-block-from-url)
-
 * Для записи в один и тот же экземпляр файла нельзя использовать интерфейсы API BLOB и Data Lake Storage API.
 
-* При записи в файл с помощью Data Lake Storage 2-го поколения API, блоки этого файла не будут видны для вызовов API [получения списка блоков](https://docs.microsoft.comrest/api/storageservices/get-block-list) .
+* При записи в файл с помощью Data Lake Storage 2-го поколения API, блоки этого файла не будут видны для вызовов API [получения списка блоков](https://docs.microsoft.com/rest/api/storageservices/get-block-list) .
 
 * Файл можно перезаписать с помощью Data Lake Storage 2-го поколения API или API больших двоичных объектов. Это не повлияет на свойства файла.
 
@@ -79,6 +68,17 @@ API-интерфейсы RESTFUL для больших двоичных объе
 
   Это означает, что вы не сможете рекурсивно использовать API удаления каталогов.
 
+API-интерфейсы RESTFUL для больших двоичных объектов не поддерживаются:
+
+* [Разместить BLOB-объект (страница)](https://docs.microsoft.com/rest/api/storageservices/put-blob)
+* [Put Page](https://docs.microsoft.com/rest/api/storageservices/put-page)
+* [Получить диапазоны страниц](https://docs.microsoft.com/rest/api/storageservices/get-page-ranges)
+* [Добавочное копирование большого двоичного объекта](https://docs.microsoft.com/rest/api/storageservices/incremental-copy-blob)
+* [Размещение страницы по URL-адресу](https://docs.microsoft.com/rest/api/storageservices/put-page-from-url)
+* [Размещение большого двоичного объекта (добавление)](https://docs.microsoft.com/rest/api/storageservices/put-blob)
+* [Append Block](https://docs.microsoft.com/rest/api/storageservices/append-block)
+* [Добавить блок из URL-адреса](https://docs.microsoft.com/rest/api/storageservices/append-block-from-url)
+
 ## <a name="issues-with-unmanaged-virtual-machine-vm-disks"></a>Проблемы с дисками неуправляемой виртуальной машины (ВМ)
 
 Неуправляемые диски виртуальной машины не поддерживаются в учетных записях, имеющих иерархическое пространство имен. Если вы хотите включить иерархическое пространство имен в учетной записи хранения, разместите неуправляемые диски виртуальной машины в учетной записи хранения, для которой не включена функция иерархического пространства имен.
@@ -88,18 +88,19 @@ API-интерфейсы RESTFUL для больших двоичных объе
 
 В следующей таблице перечислены все другие функции и средства, которые еще не поддерживаются или поддерживаются только частично с учетными записями хранения с иерархическим пространством имен (Azure Data Lake Storage 2-го поколения).
 
-| Компонент или средство    | Дополнительные сведения    |
+| Компонент или средство    | Дополнительная информация    |
 |--------|-----------|
 | **API для учетных записей хранения Data Lake Storage 2-го поколения** | Частично поддерживаются <br><br>доступ с несколькими протоколами на Data Lake Storage в настоящее время находится в общедоступной предварительной версии. Эта предварительная версия позволяет использовать API больших двоичных объектов в пакетах SDK для .NET, Java и Python с учетными записями с иерархическим пространством имен.  Пакеты SDK еще не содержат интерфейсы API, которые позволяют взаимодействовать с каталогами или задавать списки управления доступом (ACL). Для выполнения этих функций можно **использовать Data Lake Storage 2-го поколения интерфейсы** API. |
 | **AzCopy** | Поддержка конкретных версий <br><br>Используйте только последнюю версию AzCopy ([AzCopy V10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2ftables%2ftoc.json)). Более ранние версии AzCopy, например AzCopy v 8.1, не поддерживаются.|
 | **Политики управления жизненным циклом хранилища BLOB-объектов Azure** | Поддерживается только в том случае, если вы зарегистрировались в режиме многопротокольного [доступа Data Lake Storage](data-lake-storage-multi-protocol-access.md) предварительной версии. Уровни доступа "крутой" и "архивный" поддерживаются только в предварительной версии. Удаление моментальных снимков BLOB-объектов пока не поддерживается. |
 | **Сеть доставки содержимого (CDN) Azure** | Еще не поддерживается|
-| **Поиск Azure** |Еще не поддерживается|
+| **Поиск Azure** |Поддерживается только в том случае, если вы зарегистрировались в режиме многопротокольного [доступа Data Lake Storage](data-lake-storage-multi-protocol-access.md) предварительной версии.|
 | **Azure Storage Explorer;** | Поддержка конкретных версий <br><br>Используйте только версию `1.6.0` или более позднюю. <br>Версия `1.6.0` доступна для [бесплатной загрузки](https://azure.microsoft.com/features/storage-explorer/).|
 | **Списки ACL контейнера больших двоичных объектов** |Еще не поддерживается|
 | **Blobfuse** |Еще не поддерживается|
 | **Личные домены** |Еще не поддерживается|
 | **Обозреватель файловой системы** | Ограниченная поддержка |
+| **Журнал ведения диагностики** |Поддерживается только в том случае, если вы зарегистрировались в режиме многопротокольного [доступа Data Lake Storage](data-lake-storage-multi-protocol-access.md) предварительной версии.|
 | **Неизменяемое хранилище** |Еще не поддерживается <br><br>Неизменяемое хранилище дает возможность хранить данные в черве [(запись один раз, чтение из множества)](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutable-storage) .|
 | **Уровни уровня объектов** |Уровни "крутой" и "архивный" поддерживаются только в том случае, если вы зарегистрировались в режиме многопротокольного [доступа Data Lake Storage](data-lake-storage-multi-protocol-access.md) предварительной версии. <br><br> Все остальные уровни доступа пока не поддерживаются.|
 | **Поддержка PowerShell и интерфейса командной строки** | Ограниченная функциональность <br><br>Поддерживаются такие операции управления, как создание учетной записи. Операции с плоскостью данных, такие как отправка и скачивание файлов, доступны в общедоступной предварительной версии в рамках многопротокольного [доступа к Data Lake Storage](data-lake-storage-multi-protocol-access.md). Работа с каталогами и Настройка списков управления доступом (ACL) пока не поддерживаются. |

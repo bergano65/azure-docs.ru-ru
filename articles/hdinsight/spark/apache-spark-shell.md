@@ -2,18 +2,18 @@
 title: Использование интерактивной оболочки Spark в Azure HDInsight
 description: Интерактивная оболочка Spark предоставляет процесс чтения, выполнения и вывода для поочередного выполнения команд Spark и просмотра результатов.
 ms.service: hdinsight
-author: maxluk
-ms.author: maxluk
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/09/2018
-ms.openlocfilehash: 9044ed3ad9cf9ffa2f54d130bb50b37df121b86f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7aac2812787a7c14d99377754a4f85e699ef3f09
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64696807"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68441890"
 ---
 # <a name="run-apache-spark-from-the-spark-shell"></a>Запуск Apache Spark из оболочки Spark
 
@@ -66,7 +66,7 @@ Spark предоставляет оболочки для Scala (spark-shell), Py
 | --packages MAVEN_COORDS | Список разделенных запятыми координат Maven для JAR-файлов, которые добавляются в пути к классам драйвера и исполнителя. Выполняет поиск локального репозитория Maven, затем центрального репозитория Maven или же любого дополнительного удаленного репозитория, заданного с помощью параметра `--repositories`. Формат координат: *groupId*:*artifactId*:*version*. | `--packages "com.microsoft.azure:azure-eventhubs:0.14.0"`|
 | --py-files LIST | (Только для Python.) Список разделенных запятыми ZIP-, EGG- или PY-файлов, которые размещаются в PYTHONPATH. | `--pyfiles "samples.py"` |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Вводную информацию см. в статье [Общие сведения об Apache Spark в Azure HDInsight](apache-spark-overview.md).
 - Сведения о работе со SparkSQL и кластерами Spark см. в статье [Создание кластера Apache Spark в Azure HDInsight](apache-spark-jupyter-spark-sql.md).

@@ -1,19 +1,18 @@
 ---
 title: Обзор хранилищ Служб восстановления
 description: Обзор и сравнение хранилищ служб восстановления и резервных хранилищ Azure.
-services: backup
 author: rayne-wiselman
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 8/10/2018
 ms.author: raynew
-ms.openlocfilehash: 924b36701ecf21f6bd84938aeefbf25e47fcbaa7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 21ce9f411bf9c80e44614c6f7a6d123d49634a8f
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60699256"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68465618"
 ---
 # <a name="recovery-services-vaults-overview"></a>Обзор хранилищ служб восстановления
 

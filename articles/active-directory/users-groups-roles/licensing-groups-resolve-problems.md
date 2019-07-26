@@ -1,5 +1,5 @@
 ---
-title: Устранение проблем назначения лицензий для группы — Azure Active Directory | Документация Майкрософт
+title: Устранение проблем с назначением лицензий группы в Azure Active Directory | Документация Майкрософт
 description: Узнайте, как с помощью группового лицензирования Azure Active Directory определить и устранить проблемы при назначении лицензий
 services: active-directory
 keywords: Лицензирование Azure AD
@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4060c90af3825122c871696a5555e8579d0ad0a
-ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
+ms.openlocfilehash: 2129405dfdc2585d29c35a0982c9823a4cd57f71
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67358087"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359994"
 ---
 # <a name="identify-and-resolve-license-assignment-problems-for-a-group-in-azure-active-directory"></a>Определение и устранение проблем назначения лицензий для группы в Azure Active Directory
 
@@ -35,19 +35,19 @@ ms.locfileid: "67358087"
 
 1. Чтобы найти пользователей с состоянием ошибки в определенной группе, откройте панель этой группы. Если есть пользователи с состоянием ошибки, в разделе **Лицензии** появится уведомление.
 
-   ![Группы и ошибка сообщение уведомления](./media/licensing-groups-resolve-problems/group-error-notification.png)
+   ![Сообщение о группах и уведомлениях об ошибках](./media/licensing-groups-resolve-problems/group-error-notification.png)
 
 2. Чтобы открыть список всех пользователей с состоянием, описанным выше, щелкните уведомление. Для просмотра дополнительных сведений можно выбрать отдельного пользователя.
 
-   ![список пользователей в группы с состоянием ошибки лицензирования](./media/licensing-groups-resolve-problems/list-of-users-with-errors.png)
+   ![список пользователей в состоянии ошибки лицензирования групп](./media/licensing-groups-resolve-problems/list-of-users-with-errors.png)
 
 3. Чтобы найти все группы, в которых есть по крайней мере одна ошибка, в колонке **Azure Active Directory** выберите **Лицензии**, а затем — **Обзор**. Если есть группы, требующие внимания, отображается поле сведений.
 
-   ![Обзор и сведения о группах в состоянии ошибки](./media/licensing-groups-resolve-problems/group-errors-widget.png)
+   ![Общие сведения и сведения о группах в состоянии ошибки](./media/licensing-groups-resolve-problems/group-errors-widget.png)
 
 4. Щелкните это поле, чтобы просмотреть список всех групп с ошибками. Для получения подробных сведений можно выбрать каждую группу отдельно.
 
-   ![Общие сведения и список групп с ошибками](./media/licensing-groups-resolve-problems/list-of-groups-with-errors.png)
+   ![Обзор и список групп с ошибками](./media/licensing-groups-resolve-problems/list-of-groups-with-errors.png)
 
 
 В следующих разделах описываются все возможные проблемы и способы их устранения.
@@ -111,11 +111,11 @@ ms.locfileid: "67358087"
 
 После устранения проблем с прокси-адресами для соответствующих пользователей повторно выполните обработку лицензий для группы, чтобы проверить, что лицензии можно применять.
 
-## <a name="azure-ad-mail-and-proxyaddresses-attribute-change"></a>Изменение атрибута AD Mail и ProxyAddresses Azure
+## <a name="azure-ad-mail-and-proxyaddresses-attribute-change"></a>Изменение атрибута почты и ProxyAddresses в Azure AD
 
-**Проблема.** При обновлении назначение лицензий на пользователя или группы, вы можете увидеть, что атрибут почты Azure AD и ProxyAddresses некоторые пользователи изменяются.
+**Проблема.** При обновлении назначения лицензий для пользователя или группы вы можете увидеть, что изменился атрибут "почта" и "ProxyAddresses" некоторых пользователей Azure AD.
 
-Обновляется назначение лицензии на пользователя причины, вычисления будут активироваться адреса прокси-сервера, который можно изменить атрибуты пользователя. Чтобы определить точную причину изменения и устранить проблему, см. в статье [заполнением атрибуте proxyAddresses в Azure AD](https://support.microsoft.com/help/3190357/how-the-proxyaddresses-attribute-is-populated-in-azure-ad).
+Обновление назначения лицензий для пользователя вызывает срабатывание вычисления адреса прокси-сервера, что может изменить атрибуты пользователя. Чтобы понять точную причину изменения и решить проблему, см. статью о [заполнении атрибута proxyAddresses в Azure AD](https://support.microsoft.com/help/3190357/how-the-proxyaddresses-attribute-is-populated-in-azure-ad).
 
 ## <a name="what-happens-when-theres-more-than-one-product-license-on-a-group"></a>Что происходит, если в группе более одной лицензии продукта?
 
@@ -172,7 +172,7 @@ Microsoft Workplace Analytics является надстройкой. Она с
 
 К примеру, устранив для пользователя проблему продублированного адреса прокси-сервера, необходимо активировать обработку пользователя. Для повторной обработки пользователя перейдите в область пользователя, откройте **Лицензии**, а потом нажмите кнопку **Повторная обработка** на панели инструментов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы получить дополнительные сведения о сценариях управления лицензиями с помощью групп, см. ссылки ниже.
 

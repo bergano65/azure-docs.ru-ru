@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 12/14/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: ecb3ef82196c3b6febd44850b47f467ba37facc2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f3a741216b50811868687b124463e10e65355094
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64701596"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68360069"
 ---
 # <a name="develop-for-azure-files-with-python"></a>Разработка для файлов Azure с помощью Python
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
@@ -90,7 +90,7 @@ for file_or_dir in generator:
     print(file_or_dir.name)
 ```
 
-## <a name="upload-a-file"></a>Отправка файла 
+## <a name="upload-a-file"></a>Отправить файл 
 Файловый ресурс Azure содержит как минимум корневой каталог, в котором могут храниться файлы. В этом разделе вы узнаете, как отправить файл из локального хранилища в корневой каталог общего ресурса.
 
 Для создания файла и передачи данных используйте методы `create_file_from_path`, `create_file_from_stream`, `create_file_from_bytes` или `create_file_from_text`. Это высокоуровневые методы, которые выполняют необходимое фрагментирование данных, если их размер превышает 64 МБ.
@@ -103,13 +103,13 @@ for file_or_dir in generator:
 from azure.storage.file import ContentSettings
 file_service.create_file_from_path(
     'myshare',
-    None, # We want to create this blob in the root directory, so we specify None for the directory_name
+    None,  # We want to create this blob in the root directory, so we specify None for the directory_name
     'myfile',
     'sunset.png',
     content_settings=ContentSettings(content_type='image/png'))
 ```
 
-## <a name="download-a-file"></a>скачать файл;
+## <a name="download-a-file"></a>Скачать файл
 Чтобы загрузить данные из файла, используйте методы `get_file_to_path`, `get_file_to_stream`, `get_file_to_bytes` или `get_file_to_text`. Это высокоуровневые методы, которые выполняют необходимое фрагментирование данных, если их размер превышает 64 МБ.
 
 В следующем примере показано использование метода `get_file_to_path` для загрузки содержимого файла **myfile** и его сохранения в файл **out-sunset.png**.
@@ -151,7 +151,8 @@ shares = list(file_service.list_shares(include_snapshots=True))
 Вы можете просмотреть содержимое каждого моментального снимка общих ресурсов для извлечения файлов и каталогов с этого момента времени.
 
 ```python
-directories_and_files = list(file_service.list_directories_and_files(share_name, snapshot=snapshot_id))
+directories_and_files = list(
+    file_service.list_directories_and_files(share_name, snapshot=snapshot_id))
 ```
 
 ## <a name="get-file-from-share-snapshot"></a>Получение файлов из моментальных снимков общих ресурсов
@@ -159,7 +160,8 @@ directories_and_files = list(file_service.list_directories_and_files(share_name,
 
 ```python
 with open(FILE_PATH, 'wb') as stream:
-    file = file_service.get_file_to_stream(share_name, directory_name, file_name, stream, snapshot=snapshot_id)
+    file = file_service.get_file_to_stream(
+        share_name, directory_name, file_name, stream, snapshot=snapshot_id)
 ```
 
 ## <a name="delete-a-single-share-snapshot"></a>Удаление одного моментального снимка общих ресурсов  
@@ -176,7 +178,7 @@ file_service.delete_share(share_name, snapshot=snapshot_id)
 file_service.delete_share(share_name, delete_snapshots=DeleteSnapshot.Include)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда вы узнали, как работать с файлами Azure с помощью Python, воспользуйтесь следующими ссылками для получения дополнительных сведений.
 
 * [Центр по разработке для Python](https://azure.microsoft.com/develop/python/)

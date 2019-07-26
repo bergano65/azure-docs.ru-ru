@@ -1,5 +1,10 @@
 - name: Документация по безопасной разработке
   href: index.yml
+- name: Примеры приложений
+  expanded: true
+  items:
+    - name: Веб-приложение в контейнере Linux
+      href: secure-web-app.md
 - name: Основные понятия
   expanded: true
   items:

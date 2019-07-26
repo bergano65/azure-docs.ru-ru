@@ -9,12 +9,12 @@ ms.devlang: python
 ms.topic: conceptual
 ms.date: 02/16/2019
 ms.author: kgremban
-ms.openlocfilehash: c15db0766da3b4c18c306106ffdd5fc75a9143aa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f4a7cbb5c4f8f4a019cbf5d63a6f2ffe8092546e
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64569301"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68405892"
 ---
 # <a name="schedule-and-broadcast-jobs-python"></a>Планирование и трансляция заданий (Python)
 
@@ -30,9 +30,9 @@ ms.locfileid: "64569301"
 
 Дополнительные сведения о каждой из этих возможностей см. в следующих статьях:
 
-* Двойник устройства и свойства: [Начало работы с двойниками устройств](iot-hub-python-twin-getstarted.md) и [руководства: Практическое использование свойств двойников устройств](tutorial-device-twins.md)
+* Двойник устройства и свойства: [Начало работы с двойниковами устройств](iot-hub-python-twin-getstarted.md) и [учебником: Использование свойств двойникаа устройства](tutorial-device-twins.md)
 
-* Прямые методы: [Руководство разработчика для центра Интернета вещей — прямые методы](iot-hub-devguide-direct-methods.md) и [учебник: прямые методы](quickstart-control-device-python.md)
+* Прямые методы: [Руководство разработчика для центра Интернета вещей. прямые методы](iot-hub-devguide-direct-methods.md) и [учебник. прямые методы](quickstart-control-device-python.md)
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
 
@@ -50,7 +50,7 @@ ms.locfileid: "64569301"
 
 Для работы с этим учебником требуется:
 
-* [Python 2.x или 3.x](https://www.python.org/downloads/). Обязательно используйте 32-разрядную или 64-разрядную версию установки согласно требованиям программы настройки. При появлении запроса во время установки обязательно добавьте Python в переменную среды соответствующей платформы. Если вы используете Python 2.x, может потребоваться [установка или обновление *pip* — системы управления пакетами Python](https://pip.pypa.io/en/stable/installing/).
+* [Python 2. x или 3. x](https://www.python.org/downloads/). Обязательно используйте 32-разрядную или 64-разрядную версию установки согласно требованиям программы настройки. При появлении запроса во время установки обязательно добавьте Python в переменную среды соответствующей платформы. Если вы используете Python 2.x, может потребоваться [установка или обновление *pip* — системы управления пакетами Python](https://pip.pypa.io/en/stable/installing/).
 
 * Если вы работаете с ОС Windows, потребуется [распространяемый пакет Visual C++](https://www.microsoft.com/download/confirmation.aspx?id=48145), чтобы разрешить использовать собственные библиотеки DLL из Python.
 
@@ -63,10 +63,6 @@ ms.locfileid: "64569301"
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
-
-### <a name="retrieve-connection-string-for-iot-hub"></a>Получение строки подключения для центра Интернета вещей
-
-[!INCLUDE [iot-hub-include-find-connection-string](../../includes/iot-hub-include-find-connection-string.md)]
 
 ## <a name="register-a-new-device-in-the-iot-hub"></a>Регистрация нового устройства в центре Интернета вещей
 
@@ -162,6 +158,12 @@ ms.locfileid: "64569301"
 > [!NOTE]
 > Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повторных попыток (например, с экспоненциальной задержкой), как указано в статье [Обработка временных сбоев](/azure/architecture/best-practices/transient-faults).
 >
+
+## <a name="get-the-iot-hub-connection-string"></a>Получение строки подключения для центра Интернета вещей
+
+[!INCLUDE [iot-hub-howto-schedule-jobs-shared-access-policy-text](../../includes/iot-hub-howto-schedule-jobs-shared-access-policy-text.md)]
+
+[!INCLUDE [iot-hub-include-find-registryrw-connection-string](../../includes/iot-hub-include-find-registryrw-connection-string.md)]
 
 ## <a name="schedule-jobs-for-calling-a-direct-method-and-updating-a-device-twins-properties"></a>Планирование заданий для вызова прямого метода и обновления свойств двойника устройства
 
@@ -319,12 +321,12 @@ ms.locfileid: "64569301"
 
 3. В консоли отобразятся ответы устройства на прямой метод и двойники устройства.
 
-    ![Пример заданий с помощью центра Интернета вещей 1--выходные данные устройства](./media/iot-hub-python-python-schedule-jobs/sample1-deviceoutput.png)
+    ![Пример задания центра Интернета вещей 1 — выходные данные устройства](./media/iot-hub-python-python-schedule-jobs/sample1-deviceoutput.png)
 
-    ![Выходные данные устройства IoT Hub Job образец 2:](./media/iot-hub-python-python-schedule-jobs/sample2-deviceoutput.png)
+    ![Пример 2 задания центра Интернета вещей — выходные данные устройства](./media/iot-hub-python-python-schedule-jobs/sample2-deviceoutput.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом учебнике описано использование задания для планирования прямого метода на устройстве и обновления свойств двойника устройства.
 
-Чтобы продолжить знакомство с центром Интернета вещей и шаблонами управления устройствами, такими как удаленное обновление встроенного по воздуху по, см. в разделе [как обновление встроенного по](tutorial-firmware-update.md).
+Чтобы продолжить знакомство с центром Интернета вещей и шаблонами управления устройствами, такими как удаленный через обновление встроенного по Air, см. статью [как выполнить обновление встроенного по](tutorial-firmware-update.md).

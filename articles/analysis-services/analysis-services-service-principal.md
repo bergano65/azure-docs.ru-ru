@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: c034ed7164e67183b9a848d5210dcaf377476c6a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4bfa969089407a35658160cf05a6407f8c717714
+ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65518162"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68347969"
 ---
 # <a name="automation-with-service-principals"></a>Автоматизация с помощью субъектов-служб
 
@@ -21,7 +21,7 @@ ms.locfileid: "65518162"
 
 В Analysis Services субъекты-службы применяются для автоматизации типичных задач с использованием службы автоматизации Azure, автоматического режима PowerShell, настраиваемых клиентских приложений и веб-приложений. Например, подготовка серверов, развертывание моделей, обновление данных, увеличение и уменьшение масштаба, остановка и возобновление могут быть автоматизированы с помощью субъектов-служб. Разрешения присваиваются субъектам-службам через членство в ролях, так же как и в обычных учетных записях Azure AD UPN.
 
-Службы Analysis Services также поддерживают операции, выполняемые управляемыми удостоверениями с помощью субъектов-служб. Дополнительные сведения см. в разделе [управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md) и [служб Azure, поддерживающие аутентификацию Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-analysis-services).
+Analysis Services также поддерживает операции, выполняемые управляемыми удостоверениями с помощью субъектов-служб. Дополнительные сведения см. в статье [управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md) и [служб Azure, поддерживающих аутентификацию Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-analysis-services).
 
 ## <a name="create-service-principals"></a>Создание субъектов-служб
  
@@ -49,11 +49,11 @@ ms.locfileid: "65518162"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-#### <a name="a-nameazmodule-using-azanalysisservices-module"></a><a name="azmodule" />С помощью модуля Az.AnalysisServices
+#### <a name="a-nameazmodule-using-azanalysisservices-module"></a><a name="azmodule" />Использование модуля AZ. AnalysisServices
 
-При использовании субъекта-службы для операций управления ресурсами с помощью [Az.AnalysisServices](/powershell/module/az.analysisservices) модуля, используйте `Connect-AzAccount` командлета. 
+При использовании субъекта-службы для операций управления ресурсами с помощью модуля [AZ. AnalysisServices](/powershell/module/az.analysisservices) используйте `Connect-AzAccount` командлет. 
 
-В следующем примере appID и пароль используются для выполнения операции уровня управления для синхронизации реплик только для чтения и масштабирования вверх/out:
+В следующем примере appID и пароль используются для выполнения операций плоскости управления для синхронизации с репликами только для чтения и увеличения/уменьшения.
 
 ```powershell
 Param (
@@ -74,7 +74,7 @@ Sync-AzAnalysisServicesInstance -Instance "asazure://westus.asazure.windows.net/
 Set-AzAnalysisServicesServer -Name "testsvr" -ResourceGroupName "testRG" -Sku "S1" -ReadonlyReplicaCount 2 -DefaultConnectionMode Readonly
 ```
 
-#### <a name="using-sqlserver-module"></a>С помощью модуля SQLServer
+#### <a name="using-sqlserver-module"></a>Использование модуля SQLServer
 
 В следующем примере идентификатор приложения и пароль используются для выполнения операции обновления шаблона базы данных:
 
@@ -97,7 +97,7 @@ Invoke-ProcessTable -Server "asazure://westcentralus.asazure.windows.net/myserve
 
 В следующем примере `appID` и `password` используются для выполнения операции обновления шаблона базы данных:
 
-```C#
+```csharp
 string appId = "xxx";
 string authKey = "yyy";
 string connString = $"Provider=MSOLAP;Data Source=asazure://westus.asazure.windows.net/<servername>;User ID=app:{appId};Password={authKey};";
@@ -109,6 +109,6 @@ tbl.RequestRefresh(RefreshType.Full);
 db.Model.SaveChanges();
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Sign in with Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps)  (Вход в Azure PowerShell)  
 [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md)   

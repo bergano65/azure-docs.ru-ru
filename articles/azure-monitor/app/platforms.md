@@ -10,28 +10,25 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 07/06/2019
+ms.date: 07/18/2019
 ms.reviewer: olegan
 ms.author: mbullwin
-ms.openlocfilehash: db79f2b1d3857aac2f71d2e18a3949f068b746eb
-ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
+ms.openlocfilehash: dd2fb0c9ef157e3706ca3d902f7feebaf4c2f279
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67990063"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68478915"
 ---
-# <a name="languages---officially-supported-by-application-insights-team"></a>Языки — официально поддерживается группой Application Insights
+# <a name="supported-languages"></a>Поддерживаемые языки
 
 * [C#|VB (.NET)](../../azure-monitor/app/asp-net.md)
 * [Java](../../azure-monitor/app/java-get-started.md)
-* [Веб-страницы JavaScript](../../azure-monitor/app/javascript.md)
+* [JavaScript](../../azure-monitor/app/javascript.md)
 * [Node.JS](../../azure-monitor/app/nodejs.md)
 
-## <a name="community-sdks"></a>Пакеты SDK сообщества
+## <a name="supported-platforms-and-frameworks"></a>Поддерживаемые платформы и среды
 
-Существует ряд пакетов SDK Azure Application Insights для сообщества, многие из которых изначально были созданы корпорацией Майкрософт. Пакеты SDK сообщества официально не обслуживаются корпорацией Майкрософт. Не удалось предоставить поддержку для пакета SDK, который не входит в список официально поддерживаемых. Эти пакеты SDK считаются экспериментальными и не рекомендуются для использования в рабочей среде.
-
-## <a name="platforms-and-frameworks"></a>Платформы и среды
 ### <a name="instrumentation-for-already-deployed-applications-codeless-agent-based"></a>Инструментирование для уже развернутых приложений (без кода, на основе агентов)
 * [Виртуальные машины Azure и масштабируемые наборы виртуальных машин Azure](../../azure-monitor/app/azure-vm-vmss-apps.md)
 * [Служба приложений Azure](../../azure-monitor/app/azure-web-apps.md)
@@ -59,3 +56,7 @@ ms.locfileid: "67990063"
 ## <a name="export-and-data-analysis"></a>Экспорт и анализ данных
 * [Power BI](https://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx)
 * [Stream Analytics](../../azure-monitor/app/export-power-bi.md)
+
+## <a name="unsupported-community-sdks"></a>Неподдерживаемые пакеты SDK сообщества
+
+Существует ряд Application Insightsных пакетов SDK для сообщества. Пакеты SDK сообщества официально не поддерживаются и не обслуживаются корпорацией Майкрософт. Не удалось предоставить поддержку для пакета SDK, который не входит в список официально поддерживаемых. 

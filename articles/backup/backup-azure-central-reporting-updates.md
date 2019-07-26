@@ -1,19 +1,18 @@
 ---
 title: Обновление пакета содержимого централизованных отчетов службы Azure Backup
 description: Сведения об обновлениях к пакету содержимого службы Azure Backup в Power BI
-services: backup
 author: kasinh
 manager: vvithal
 ms.service: backup
 ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: kasinh
-ms.openlocfilehash: 87bc7ed3bb59266484858f534080fa87a7230981
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 984f87a514aa55fc18a92c6912145bc65cf21f4c
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60641967"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466606"
 ---
 # <a name="update-the-azure-backup-central-reporting-content-pack"></a>Обновление пакета содержимого централизованных отчетов службы Azure Backup 
 
@@ -28,7 +27,7 @@ ms.locfileid: "60641967"
 Рекомендуется импортировать пакет содержимого в [настраиваемую рабочую область](https://youtu.be/26zyOtyHPJM?t=1m57s). Теперь отчеты можно редактировать.
 Как упоминалось ранее, при изменении пакета содержимого в Power BI появится уведомление. Можно выбрать вариант с задержкой получения пакета содержимого. 
 
-## <a name="coming-soon"></a>Скоро
+## <a name="coming-soon"></a>Скоро выходит
    
 Обновление пакета содержимого службы Azure Backup выполняется для того, чтобы поддерживать дополнительные рабочие нагрузки. В рабочие нагрузки включена архивация виртуальных машин Базы данных SQL Azure для IaaS и System Center Data Protection Manager. Данная поддержка будет добавлена для службы Azure Backup и архивных копий виртуальных машин Azure. Это значит, что просмотр и анализ всех данных архивации можно выполнять в одном централизованном месте. [Отчеты также можно настроить](https://youtu.be/26zyOtyHPJM) в соответствии с потребностями организации.
 
@@ -42,27 +41,27 @@ ms.locfileid: "60641967"
 
 ![Выставление счетов](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-Billing.png)
 
-### <a name="compliance"></a>Соответствие требованиям
+### <a name="compliance"></a>Соответствие
 
-![Соответствие требованиям](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-Compliance.png)
+![Соответствие](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-Compliance.png)
 
-### <a name="storage"></a>Хранилище
+### <a name="storage"></a>Служба хранилища
 
-![Хранилище](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-Storage.png)
+![Служба хранилища](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-Storage.png)
 
-### <a name="backup-items"></a>Архивные элементы
-![Архивные элементы](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-BackupItem.png)
+### <a name="backup-items"></a>Элементы архивации
+![Элементы архивации](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-BackupItem.png)
 
-### <a name="alerts"></a>Оповещения
+### <a name="alerts"></a>Предупреждения
 
-![Оповещения](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-Alerts.png)
+![Предупреждения](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-Alerts.png)
 
 ### <a name="jobs"></a>Задания
 
 ![Задания](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-Jobs.png)
     
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Видеоролик [How to share reports using email | Azure Backup Tips and Tricks](https://youtu.be/26zyOtyHPJM) (Как обмениваться отчетами по электронной почте | Советы и хитрости службы Azure Backup)
 * [Часто задаваемые вопросы о службе архивации Azure](backup-azure-backup-faq.md)

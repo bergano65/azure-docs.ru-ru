@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/15/2017
 ms.author: anmola
-ms.openlocfilehash: ceb6ad1a6a1182d78c473b8b0387c365eb660065
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bbb89b66231c949627c7ffbf99ebe9b5dd379ca2
+ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60865278"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68348722"
 ---
 # <a name="simulate-failures-during-service-workloads"></a>Моделирование ошибок во время рабочих нагрузок службы
 Сценарии тестирования в Azure Service Fabric позволяют разработчикам не беспокоиться об обработке отдельных ошибок. Однако есть сценарии, в которых может потребоваться явное чередование клиентской рабочей нагрузки и сбоев. Чередование клиентской рабочей нагрузки и сбоев обеспечивает выполнение службой необходимых действий в случае сбоя. Учитывая уровень управления тестированием, эти сбои могут наблюдаться именно в точках выполнения рабочей нагрузки. Вызывая таким образом ошибки при различных состояниях приложения, можно находить ошибки и улучшить качество.
@@ -27,12 +27,12 @@ ms.locfileid: "60865278"
 ## <a name="sample-custom-scenario"></a>Пример пользовательского сценария
 В этом тесте показан сценарий чередования рабочей нагрузки бизнеса с [нормальными и ненормальными сбоями](service-fabric-testability-actions.md#graceful-vs-ungraceful-fault-actions). Для получения оптимальных результатов сбои следует вызывать во время выполнения операций службы или вычислений.
 
-Давайте подробно рассмотрим пример службы, которая предоставляет четыре рабочих нагрузки: A, B, C и D. Каждый соответствует набору рабочих процессов и может быть вычислений, хранения или их сочетание. Для простоты рабочие нагрузки в нашем примере абстрагированы. Различные сбои, выполненные в этом примере:
+Давайте рассмотрим пример службы, которая предоставляет четыре рабочие нагрузки: A, B, C и D. Каждый из них соответствует набору рабочих процессов и может быть вычислением, хранилищем или смесью. Для простоты рабочие нагрузки в нашем примере абстрагированы. Различные сбои, выполненные в этом примере:
 
-* RestartNode: Ненормальный сбой для моделирования перезагрузки компьютера.
-* RestartDeployedCodePackage: Ненормальный сбой для моделирования хост-процессе аварийно завершает работу.
-* RemoveReplica: Нормальный сбой для моделирования удаления реплики.
-* Операция MovePrimary: Нормальный сбой для моделирования перемещения реплик перемещает активированные подсистемой балансировки нагрузки Service Fabric.
+* RestartNode Нельготный сбой для имитации перезапуска компьютера.
+* Рестартдеплойедкодепаккаже: Нельготная ошибка для имитации сбоев процесса узла службы.
+* RemoveReplica Корректное завершение имитации удаления реплики.
+* Операция moveprimary Корректность имитации перемещений реплики, активируемых Service Fabric подсистемой балансировки нагрузки.
 
 ```csharp
 // Add a reference to System.Fabric.Testability.dll and System.Fabric.dll.
@@ -116,7 +116,7 @@ class Test
             // Run the selected random fault.
             await RunFaultAsync(applicationName, fault, replicaSelector, fabricClient);
             // Validate the health and stability of the service.
-            await fabricClient.ServiceManager.ValidateServiceAsync(serviceName, maxServiceStabilizationTime);
+            await fabricClient.TestManager.ValidateServiceAsync(serviceName, maxServiceStabilizationTime);
 
             // Wait for the workload to finish successfully.
             await workloadTask;
@@ -128,16 +128,16 @@ class Test
         switch (fault)
         {
             case ServiceFabricFaults.RestartNode:
-                await client.ClusterManager.RestartNodeAsync(selector, CompletionMode.Verify);
+                await client.FaultManager.RestartNodeAsync(selector, CompletionMode.Verify);
                 break;
             case ServiceFabricFaults.RestartCodePackage:
-                await client.ApplicationManager.RestartDeployedCodePackageAsync(applicationName, selector, CompletionMode.Verify);
+                await client.FaultManager.RestartDeployedCodePackageAsync(applicationName, selector, CompletionMode.Verify);
                 break;
             case ServiceFabricFaults.RemoveReplica:
-                await client.ServiceManager.RemoveReplicaAsync(selector, CompletionMode.Verify, false);
+                await client.FaultManager.RemoveReplicaAsync(selector, CompletionMode.Verify, false);
                 break;
             case ServiceFabricFaults.MovePrimary:
-                await client.ServiceManager.MovePrimaryAsync(selector.PartitionSelector);
+                await client.FaultManager.MovePrimaryAsync(selector.PartitionSelector);
                 break;
         }
     }

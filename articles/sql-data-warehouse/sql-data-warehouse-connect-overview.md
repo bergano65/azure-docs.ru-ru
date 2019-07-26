@@ -2,7 +2,7 @@
 title: Подключение к хранилищу данных SQL Azure | Документация Майкрософт
 description: Подключитесь к хранилищу данных SQL Azure.
 services: sql-data-warehouse
-author: XiaoyuL-Preview
+author: XiaoyuMSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.subservice: development
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 2c937285b9c54072c6d1e1b0628c3d5fbfe786f3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 71f5c8ca56bc188c0664604a78c38a05be3c3b01
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65873664"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479750"
 ---
 # <a name="connect-to-azure-sql-data-warehouse"></a>Подключение к хранилищу данных SQL Azure
 Подключитесь к хранилищу данных SQL Azure.
@@ -31,7 +31,7 @@ ms.locfileid: "65873664"
     ![Полное имя сервера][1]
 
 ## <a name="supported-drivers-and-connection-strings"></a>Поддерживаемые драйверы и строки подключения
-Хранилище данных SQL Azure поддерживает драйверы [ADO.NET][ADO.NET], [ODBC][ODBC], [PHP][PHP] и [JDBC][JDBC]. Щелкните один из указанных типов драйверов для получения информации об обновлениях и документации. Чтобы автоматически создать строку подключения используемого драйвера на портале Azure, щелкните **Показать строки подключения к базам данных** на странице из предыдущего примера. Ниже приведены примеры синтаксиса строк подключения для каждого драйвера.
+Хранилище данных SQL Azure поддерживает [ADO.NET][ADO.NET], [ODBC][ODBC], [PHP][PHP]и [JDBC][JDBC]. Щелкните один из указанных типов драйверов для получения информации об обновлениях и документации. Чтобы автоматически создать строку подключения используемого драйвера на портале Azure, щелкните **Показать строки подключения к базам данных** на странице из предыдущего примера. Ниже приведены примеры синтаксиса строк подключения для каждого драйвера.
 
 > [!NOTE]
 > Рекомендуем задать время ожидания подключения, равное 300 секундам, чтобы подключение могло выдерживать короткие периоды недоступности.
@@ -63,13 +63,13 @@ jdbc:sqlserver://yourserver.database.windows.net:1433;database=yourdatabase;user
 
 | Параметр базы данных | Значение |
 |:--- |:--- |
-| [ANSI_NULLS][ANSI_NULLS] |ВКЛ |
-| [QUOTED_IDENTIFIERS][QUOTED_IDENTIFIERS] |ВКЛ |
+| [ANSI_NULLS][ANSI_NULLS] |ВКЛ. |
+| [QUOTED_IDENTIFIERS][QUOTED_IDENTIFIERS] |ВКЛ. |
 | [DATEFORMAT][DATEFORMAT] |мдг |
 | [DATEFIRST][DATEFIRST] |7 |
 
-## <a name="next-steps"></a>Дальнейшие действия
-Чтобы подключиться и отправить запрос с помощью Visual Studio, см. инструкции в статье [Подключение к хранилищу данных SQL с помощью Visual Studio и SSDT][Query with Visual Studio]. Подробные сведения о способах проверки подлинности см. в статье [Проверка подлинности в хранилище данных SQL Azure][Authentication to Azure SQL Data Warehouse].
+## <a name="next-steps"></a>Следующие шаги
+Сведения о подключении и выполнении запросов с помощью Visual Studio см. в разделе [запросы с помощью Visual Studio][Query with Visual Studio]. To learn more about authentication options, see [Authentication to Azure SQL Data Warehouse][Authentication to Azure SQL Data Warehouse].
 
 <!--Articles-->
 [Query with Visual Studio]: ./sql-data-warehouse-query-visual-studio.md

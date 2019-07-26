@@ -2,7 +2,7 @@
 title: Назначение переменных в хранилище данных SQL Azure | Документация Майкрософт
 description: Советы по присваиванию значений переменных T-SQL в хранилище данных SQL Azure для разработки решений.
 services: sql-data-warehouse
-author: XiaoyuL-Preview
+author: XiaoyuMSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.subservice: development
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 62c4273a02e02aff268a96e1b13483088ba33f87
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6c943478f3904aac17a572f012f2b2b69ffa2223
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65861679"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479560"
 ---
 # <a name="assigning-variables-in-azure-sql-data-warehouse"></a>Назначение переменных в хранилище данных SQL Azure
 
@@ -63,8 +63,8 @@ SET     @v +=1;
 
 ## <a name="limitations"></a>Ограничения
 
-Нельзя использовать UPDATE для присваивания значения переменной.
+Нельзя использовать UPDATE для назначения переменных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные советы по разработке приведены в [обзоре разработки](sql-data-warehouse-overview-develop.md).

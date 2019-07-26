@@ -10,12 +10,12 @@ ms.author: robreed
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: a5d4657f87b0a6cbae0699c5a2f95773ff55f633
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 3f6d15e67122afcbea3cc294c803a302e961bdbd
+ms.sourcegitcommit: 57a7d4f67635212f5bf0c56e58fd87c8ec366f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67798449"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372547"
 ---
 # <a name="azure-automation-state-configuration-overview"></a>Обзор службы "Настройка состояния службы автоматизации Azure"
 
@@ -39,17 +39,17 @@ ms.locfileid: "67798449"
 
 ### <a name="import-reporting-data-into-azure-monitor-logs"></a>Импорт данных отчетов в журналы Azure Monitor
 
-Узлы, управление которыми осуществляется с помощью "Настройка состояния службы автоматизации Azure", отправляют подробные отчеты с данными о состоянии на встроенный опрашивающий сервер. В службе "Настройка состояния службы автоматизации Azure" можно настроить отправку этих данных в рабочую область Log Analytics. Чтобы узнать, как отправлять данные о состоянии конфигурации состояния в рабочую область Log Analytics, см. в разделе [вперед автоматизации настройки состояния Azure данные отчетов Azure Monitor журналы](automation-dsc-diagnostics.md).
+Узлы, управление которыми осуществляется с помощью "Настройка состояния службы автоматизации Azure", отправляют подробные отчеты с данными о состоянии на встроенный опрашивающий сервер. В службе "Настройка состояния службы автоматизации Azure" можно настроить отправку этих данных в рабочую область Log Analytics. Сведения о том, как отправлять данные о состоянии конфигурации состояния в рабочую область Log Analytics, см. в разделе [пересылка данных отчетов о настройке состояния службы автоматизации Azure в журналы Azure Monitor](automation-dsc-diagnostics.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Рассмотрите следующие требования при использовании конфигурации состояния службы автоматизации Azure (DSC).
+При использовании конфигурации состояния службы автоматизации Azure (DSC) учитывайте следующие требования.
 
 ### <a name="operating-system-requirements"></a>Требования к операционной системе
 
 Для узлов под управлением Windows поддерживаются следующие версии:
 
-- Windows Server 2019
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012R2
 - Windows Server 2012
@@ -58,43 +58,43 @@ ms.locfileid: "67798449"
 - Windows 8.1
 - Windows 7
 
-Для узлов под управлением Linux поддерживаются следующих дистрибутивах и версиях:
+Для узлов под управлением Linux поддерживаются следующие дистрибутивов и версии:
 
-Расширение DSC Linux поддерживает все дистрибутивы Linux [рекомендованные в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros) за исключением:
+Расширение DSC для Linux поддерживает все дистрибутивы Linux, которые были [включены в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros) , за исключением следующих:
 
-Дистрибутив | Version
+Распространение | Version
 -|-
 Debian  | Все версии.
 Ubuntu  | 18,04
 
 ### <a name="dsc-requirements"></a>Требования к DSC
 
-Для всех узлов Windows, запущенных в Azure [WMF 5.1](https://docs.microsoft.com/powershell/wmf/setup/install-configure) устанавливается во время подключения.  Для узлов под управлением Windows Server 2012 и Windows 7 [включается WinRM](https://docs.microsoft.com/powershell/dsc/troubleshooting/troubleshooting#winrm-dependency).
+Для всех узлов Windows, работающих в Azure, во время адаптации будет установлен [WMF 5,1](https://docs.microsoft.com/powershell/wmf/setup/install-configure) .  Для узлов под Windows Server 2012 и Windows 7 [Служба WinRM будет включена](https://docs.microsoft.com/powershell/dsc/troubleshooting/troubleshooting#winrm-dependency).
 
-Для всех узлов Linux, работающих в Azure [PowerShell DSC для Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux) устанавливается во время подключения.
+Для всех узлов Linux, работающих в Azure, [POWERSHELL DSC для Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux) будет установлен во время адаптации.
 
-### <a name="network-planning"></a>Настройка частных сетях
+### <a name="network-planning"></a>Настройка частных сетей
 
-Если узлы находятся в частной сети, следующие порт и URL-адреса необходимы для состояния Configuration (DSC) для взаимодействия со службой автоматизации:
+Если узлы находятся в частной сети, для взаимодействия с автоматизацией требуется следующий порт и URL-адреса для настройки состояния (DSC):
 
 * Порт: только исходящий интернет-трафик через TCP-порт 443.
 * Глобальный URL-адрес: *.azure-automation.net.
 * Глобальный URL-адрес US Gov (Вирджиния): *.azure automation.us
 * Служба агента: https://\<ИД рабочей области\>.agentsvc.azure-automation.net
 
-Это обеспечивает подключение к сети для управляемого узла для взаимодействия со службой автоматизации Azure.
-Если вы используете ресурсы DSC, которые обмениваются данными между узлами, такие как [ресурсы WaitFor *](https://docs.microsoft.com/powershell/dsc/reference/resources/windows/waitForAllResource), также необходимо разрешить трафик между узлами.
-См. в документации для каждого ресурса DSC понять эти требования к сети.
+Это обеспечивает сетевое подключение для управляемого узла для взаимодействия со службой автоматизации Azure.
+При использовании ресурсов DSC, взаимодействующих между узлами, например с [ресурсами WAITFOR *](https://docs.microsoft.com/powershell/dsc/reference/resources/windows/waitForAllResource), необходимо также разрешить трафик между узлами.
+Сведения о требованиях к сети см. в документации по каждому ресурсу DSC.
 
 #### <a name="proxy-support"></a>Поддержка прокси-сервера
 
-Поддержка прокси-сервера для агента DSC доступна в Windows 1809 и более поздних версий.
-Чтобы настроить этот параметр, задайте значение для **ProxyURL** и **ProxyCredential** в [метаконфигурации скрипт](automation-dsc-onboarding.md#generating-dsc-metaconfigurations) использовать регистрацию узлов.
+Поддержка прокси-сервера для агента DSC доступна в Windows версии 1809 и более поздних версиях.
+Чтобы настроить этот параметр, задайте значение для **прокси** и **ProxyCredential** в скрипте [метаконфигурации](automation-dsc-onboarding.md#generating-dsc-metaconfigurations) , используемом для регистрации узлов.
 Прокси-сервер недоступен в DSC для предыдущих версий Windows.
 
-Для узлов Linux агент DSC поддерживает прокси-сервера и будет использовать переменную http_proxy, чтобы определить URL-адрес.
+Для узлов Linux агент DSC поддерживает прокси-сервер и будет использовать переменную http_proxy для определения URL-адреса.
 
-#### <a name="azure-state-configuration-network-ranges-and-namespace"></a>Диапазоны сетей Azure состояние конфигурации и пространства имен
+#### <a name="azure-state-configuration-network-ranges-and-namespace"></a>Диапазоны и пространство имен сети конфигурации состояния Azure
 
 При определении исключений рекомендуется использовать адреса из списка. Если вам нужны IP-адреса, вы можете скачать [список диапазонов IP-адресов центров обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653). Файл обновляется еженедельно и содержит развернутые в настоящее время диапазоны и все предстоящие изменения диапазонов IP-адресов.
 
@@ -102,18 +102,19 @@ Ubuntu  | 18,04
 
 | **Регион** | **Запись DNS** |
 | --- | --- |
-| Западно-центральная часть США | wcus-jobruntimedata-prod-su1.azure-automation.net</br>wcus-agentservice-prod-1.azure-automation.net |
+| Центрально-западная часть США | wcus-jobruntimedata-prod-su1.azure-automation.net</br>wcus-agentservice-prod-1.azure-automation.net |
 | Центрально-южная часть США |scus-jobruntimedata-prod-su1.azure-automation.net</br>scus-agentservice-prod-1.azure-automation.net |
-| Восток США 2 |eus2-jobruntimedata-prod-su1.azure-automation.net</br>eus2-agentservice-prod-1.azure-automation.net |
+| East US   | eus-jobruntimedata-prod-su1.azure-automation.net</br>eus-agentservice-prod-1.azure-automation.net |
+| Восточная часть США 2 |eus2-jobruntimedata-prod-su1.azure-automation.net</br>eus2-agentservice-prod-1.azure-automation.net |
 | Центральная Канада |cc-jobruntimedata-prod-su1.azure-automation.net</br>cc-agentservice-prod-1.azure-automation.net |
 | Западная Европа |we-jobruntimedata-prod-su1.azure-automation.net</br>we-agentservice-prod-1.azure-automation.net |
 | Северная Европа |ne-jobruntimedata-prod-su1.azure-automation.net</br>ne-agentservice-prod-1.azure-automation.net |
 | Юго-Восточная Азия |sea-jobruntimedata-prod-su1.azure-automation.net</br>sea-agentservice-prod-1.azure-automation.net|
 | Центральная Индия |cid-jobruntimedata-prod-su1.azure-automation.net</br>cid-agentservice-prod-1.azure-automation.net |
-| Восточная часть Японии |jpe-jobruntimedata-prod-su1.azure-automation.net</br>jpe-agentservice-prod-1.azure-automation.net |
+| Восточная Япония |jpe-jobruntimedata-prod-su1.azure-automation.net</br>jpe-agentservice-prod-1.azure-automation.net |
 | Юго-Восточная Австралия |ase-jobruntimedata-prod-su1.azure-automation.net</br>ase-agentservice-prod-1.azure-automation.net |
-| Южная часть Великобритании | uks-jobruntimedata-prod-su1.azure-automation.net</br>uks-agentservice-prod-1.azure-automation.net |
-| Правительство штата Вирджиния | usge-jobruntimedata-prod-su1.azure-automation.us<br>usge-agentservice-prod-1.azure-automation.us |
+| Южная часть Соединенного Королевства | uks-jobruntimedata-prod-su1.azure-automation.net</br>uks-agentservice-prod-1.azure-automation.net |
+| US Gov (Вирджиния) | usge-jobruntimedata-prod-su1.azure-automation.us<br>usge-agentservice-prod-1.azure-automation.us |
 
 Для списка IP-адресов региона вместо его имен скачайте XML-файл [IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653) из Центра загрузки Майкрософт и ознакомьтесь с ним.
 

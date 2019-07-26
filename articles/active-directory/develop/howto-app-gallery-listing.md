@@ -13,17 +13,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/08/2019
+ms.date: 07/04/2019
 ms.author: ryanwi
 ms.reviewer: elisol, bryanla
 ms.custom: aaddev, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e1b0ea2f808c982a587392edbe57eb75c532ee2
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 0198e5f5df3d25ef825248ff78db95326dc755c2
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68324711"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68477056"
 ---
 # <a name="how-to-list-your-application-in-the-azure-active-directory-application-gallery"></a>Практическое руководство. Добавление приложения в коллекцию приложений Azure Active Directory
 
@@ -49,6 +49,8 @@ ms.locfileid: "68324711"
 - Для выполнения единого входа с защитой паролем приложение должно поддерживать аутентификацию с помощью формы, чтобы обеспечить хранение паролей для правильной работы функции единого входа.
 
 - Для автоматических запросов на подготовку пользователей приложение должно находиться в коллекции со включенной функцией единого входа, использующей SAML 2.0/WS-Fed. Вы можете запросить функции единого входа и подготовки пользователей на портале, если они еще не указаны.
+
+- Необходима постоянная учетная запись для тестирования с зарегистрированным по крайней мере двумя пользователями.
 
 >[!NOTE]
 >Мы работаем с большим количеством запросов соединителя SCIM, поэтому мы перестали создавать новые запросы на портале. Следите за запросами, пока не появится уведомление. Мы извинения эту задержку и все неудобства, которые могли быть вызваны.
@@ -123,7 +125,7 @@ ms.locfileid: "68324711"
 
 ![Показывает поток запрошенных приложений клиента](./media/howto-app-gallery-listing/customer-request.png)
 
-## <a name="timelines"></a>График выполнения процессов
+## <a name="timelines"></a>Временные шкалы
 
 Процесс включения приложения SAML 2.0 или WS-Fed в коллекцию занимает 7–10 рабочих дней.
 

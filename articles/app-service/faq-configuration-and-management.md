@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: ec2580f0c71c98c7a03f3326cb1b8ff539109ee0
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 6f86a8465bcbd3d88ffb7909cac53c3fd38c3af6
+ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67720024"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68489436"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure
 
@@ -148,16 +148,13 @@ ms.locfileid: "67720024"
 Exception: System.Data.Entity.Core.EntityException: The underlying provider failed on Open. —> System.OverflowException: Arithmetic operation resulted in an overflow. or (64 bit Web app) System.OverflowException: Array dimensions exceeded supported range, at System.Data.SqlClient.TdsParser.ConsumePreLoginHandshake
 ```
 
-### <a name="resolution"></a>Способы устранения:
+### <a name="resolution"></a>Разрешение
 
 Исключение было порождено из-за проблемы с диспетчером гибридных подключений, которая затем была исправлена. Не забудьте [обновить диспетчер гибридных подключений](https://go.microsoft.com/fwlink/?LinkID=841308), чтобы устранить эту проблему.
 
-## <a name="how-do-i-add-or-edit-a-url-rewrite-rule"></a>Как добавить или изменить правило переопределения URL-адреса?
+## <a name="how-do-i-add-a-url-rewrite-rule"></a>Разделы справки добавить правило переопределения URL-адресов?
 
-Добавление или изменение правила переопределения URL-адреса
-
-1. Настройте диспетчер IIS для подключения к веб-приложению службы приложений. Сведения о подключении диспетчера IIS к службе приложения см. в записи блога [Remote administration of Azure websites by using IIS Manager](https://azure.microsoft.com/blog/remote-administration-of-windows-azure-websites-using-iis-manager/) (Удаленное администрирование веб-сайтов Azure с помощью диспетчера IIS).
-2. В диспетчере IIS добавьте или измените правило переопределения URL-адреса. Чтобы узнать, как добавить или изменить правило переопределения URLL-адреса, см. статью [Create rewrite rules for the URL rewrite module](https://www.iis.net/learn/extensions/url-rewrite-module/creating-rewrite-rules-for-the-url-rewrite-module) (Создание правил для модуля переопределения URL-адреса).
+Чтобы добавить правило переопределения URL-адресов, создайте файл Web. config с соответствующими записями конфигурации в папке **wwwroot** . Дополнительные сведения см [. в статье службы приложений Azure: Основные сведения о перезаписи](https://blogs.msdn.microsoft.com/madhurabharadwaj/2018/06/01/azure-app-services-understanding-url-re-write/)URL-адресов.
 
 ## <a name="how-do-i-control-inbound-traffic-to-app-service"></a>Как контролировать входящий трафик в службе приложений?
 

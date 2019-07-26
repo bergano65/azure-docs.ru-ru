@@ -6,28 +6,32 @@ keywords: ''
 author: shizn
 manager: philmea
 ms.author: xshi
-ms.date: 06/25/2019
+ms.date: 07/23/2019
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: 2d190edfac71705590135988b64ed043784125ec
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
-ms.translationtype: HT
+ms.openlocfilehash: a9c38d82c4b460564077690d3cddd731ec6c2b89
+ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68305562"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68414508"
 ---
 # <a name="use-visual-studio-code-to-develop-and-debug-modules-for-azure-iot-edge"></a>Использование Visual Studio Code для разработки и отладки модулей для Azure IoT Edge
 
 Вы можете превратить бизнес-логику в модули для Azure IoT Edge. В этой статье описано использование Visual Studio Code в качестве основного средства разработки и отладки модулей.
 
+Для модулей, написанных на языках C#, Node.js или Java, существует два способа отладки в Visual Studio Code: Вы можете подключить процесс в контейнере модуля или запустить код модуля в режиме отладки. Для модулей, написанных на языке Python или C, отладку можно выполнить только путем присоединения к процессу в контейнерах amd64 Linux.
+
+С возможностями отладки Visual Studio Code можно ознакомиться в [этой статье](https://code.visualstudio.com/Docs/editor/debugging).
+
+В этой статье приводятся инструкции по разработке и отладке модулей на нескольких языках для нескольких архитектур. В настоящее время Visual Studio Code обеспечивает поддержку модулей, написанных на C#языках, C, Python, Node. js и Java. Поддерживаемые архитектуры устройств: x64 и ARM32. Дополнительные сведения о поддерживаемых операционных системах, языках и архитектурах см. в разделе [Поддержка языков и архитектур](module-development.md#language-and-architecture-support).
+
+>[!NOTE]
+>Поддержка разработки и отладки для устройств Linux ARM64 доступна в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Дополнительные сведения см. [в разделе Разработка и отладка модулей ARM64 IOT EDGE в Visual Studio Code (Предварительная версия)](https://devblogs.microsoft.com/iotdev/develop-and-debug-arm64-iot-edge-modules-in-visual-studio-code-preview).
+
 ## <a name="prerequisites"></a>предварительные требования
 
 Для разработки вы должны использовать компьютер или виртуальную машину под управлением Windows, macOS или Linux. Устройство IoT Edge может быть другим физическим устройством.
-
-Для модулей, написанных на языках C#, Node.js или Java, существует два способа отладки в Visual Studio Code: Вы можете подключить процесс в контейнере модуля или запустить код модуля в режиме отладки. Для модулей, написанных на языке Python или C, отладку можно выполнить только путем присоединения к процессу в контейнерах amd64 Linux.
-
-> [!TIP]
-> С возможностями отладки Visual Studio Code можно ознакомиться в [этой статье](https://code.visualstudio.com/Docs/editor/debugging).
 
 Сначала установите [Visual Studio Code](https://code.visualstudio.com/), а затем добавьте следующие расширения:
 
@@ -66,8 +70,7 @@ ms.locfileid: "68305562"
 > [!NOTE]
 > Если у вас есть несколько Python, включая предварительно установленный Python 2,7 (например, в Ubuntu или macOS), убедитесь, что используется правильный `pip` параметр `pip3` или для установки **иотеджехубдев** .
 
-> [!NOTE]
-> Для тестирования модуля на устройстве потребуется действующий центр Интернета вещей по крайней мере с одним устройством IoT Edge. Чтобы использовать компьютер в качестве устройства IoT Edge, выполните инструкции в кратком руководстве для [Linux](quickstart-linux.md) или [Windows](quickstart.md). Если вы запустили управляющую программу IoT Edge на компьютере разработки, может потребоваться остановить EdgeHub и EdgeAgent, прежде чем перейти к следующему шагу.
+Для тестирования модуля на устройстве потребуется действующий центр Интернета вещей по крайней мере с одним устройством IoT Edge. Чтобы использовать компьютер в качестве устройства IoT Edge, выполните инструкции в кратком руководстве для [Linux](quickstart-linux.md) или [Windows](quickstart.md). Если вы запустили управляющую программу IoT Edge на компьютере разработки, может потребоваться остановить EdgeHub и EdgeAgent, прежде чем перейти к следующему шагу.
 
 ## <a name="create-a-new-solution-template"></a>Создайте новый шаблон решения
 

@@ -321,7 +321,19 @@
     - name: Справочник по предварительно созданным доменам
       href: luis-reference-prebuilt-domains.md
       displayName: 'Calendar, Communication,Email,HomeAutomation,Note,Places, RestaurantReservation,ToDo,Utilities,Weather,Web'
-    - name: Azure CLI
+    - name: Справочник по настраиваемым сущностям
+      items:
+        - name: Составная сущность
+          href: reference-entity-composite.md
+        - name: Сущность списка
+          href: reference-entity-list.md
+        - name: Сущность Pattern.any
+          href: reference-entity-pattern-any.md
+        - name: Сущность регулярного выражения
+          href: reference-entity-regular-expression.md
+        - name: Простая сущность
+          href: reference-entity-simple.md
+    - name: Инфраструктура CLI Azure
       href: 'https://go.microsoft.com/fwlink/?linkid=2092156'
     - name: Azure RM PowerShell
       href: 'https://go.microsoft.com/fwlink/?linkid=2092157'

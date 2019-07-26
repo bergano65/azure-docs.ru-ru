@@ -3,23 +3,18 @@ title: Использование приложения Node.js с Socket.IO в A
 description: Узнайте, как использовать socket.io в приложении Node.js, размещенном в Azure.
 services: cloud-services
 documentationcenter: nodejs
-author: jpconnock
-manager: timlt
-editor: ''
-ms.assetid: 7f9435e0-7732-4aa1-a4df-ea0e894b847f
+author: georgewallace
 ms.service: cloud-services
-ms.workload: tbd
-ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 08/17/2017
-ms.author: jeconnoc
-ms.openlocfilehash: cd0bceae770182e778410d8065d34dfeed055acc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: gwallace
+ms.openlocfilehash: 251fd8ec3708ed154e12b0511be24eb776a48fbf
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61433201"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359080"
 ---
 # <a name="build-a-nodejs-chat-application-with-socketio-on-an-azure-cloud-service"></a>Создание приложения чата Node.js с помощью Socket.IO в облачной службе Azure
 
@@ -29,7 +24,7 @@ Socket.IO обеспечивает связь в режиме реального
 
 ![Окно браузера со службой, размещенной в Azure][completed-app]  
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Убедитесь, что следующие продукты и версии установлены для успешного завершения примера, описанного в этой статье.
 
 * установить [Visual Studio](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx);
@@ -109,9 +104,9 @@ Socket.IO обеспечивает связь в режиме реального
        PS C:\node\chatapp\WorkerRole1> Start-AzureEmulator -Launch
    
    > [!NOTE]
-   > При возникновении проблем с запуском эмулятора, например.: Start-AzureEmulator: Произошла непредвиденная ошибка.  Сведения. Произошла непредвиденная ошибка Коммуникационный объект System.ServiceModel.Channels.ServiceChannel нельзя применить для обмена данными, так как он находится в состоянии Faulted.
+   > Если возникли проблемы с запуском эмулятора, например: Start-AzureEmulator: Произошла непредвиденная ошибка.  Сведения: Обнаружена непредвиденная ошибка: коммуникационный объект System. ServiceModel. Channels. ServiceChannel нельзя использовать для связи, так как он находится в состоянии Faulted.
    > 
-   > Переустановите azureauthoringtools версии 2.7.1 и azurecomputeemulator версии 2.7 - убедитесь, что версии совпадают.
+   > Переустановите Азуреаусорингтулс v 2.7.1 и Азурекомпутимулатор v 2,7. Убедитесь, что версия соответствует.
 
 2. Откройте веб-браузер и перейдите по адресу **http://127.0.0.1** .
 3. В открывшемся окне браузера введите псевдоним, а затем нажмите клавишу ВВОД.
@@ -146,8 +141,8 @@ Socket.IO обеспечивает связь в режиме реального
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
-В этом учебнике было рассмотрено создание базового приложения для разговора, размещаемого в облачной службе Azure. Чтобы узнать, как разместить это приложение на веб-сайте Azure, см. статью [Создание приложения для разговора Node.js с Socket.IO на веб-сайте Azure][chatwebsite].
+## <a name="next-steps"></a>Следующие шаги
+В этом учебнике было рассмотрено создание базового приложения для разговора, размещаемого в облачной службе Azure. Сведения о размещении этого приложения на веб-сайте Azure см. в статье [Создание приложения для разговора на Node. js с Socket.IO на веб-сайте Azure][chatwebsite].
 
 Дополнительные сведения см. также в [центре по разработке для Node.js](https://docs.microsoft.com/javascript/azure/?view=azure-node-latest).
 

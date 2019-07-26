@@ -1,19 +1,18 @@
 ---
 title: Защита фермы SharePoint в Azure с помощью DPM или сервера службы архивации Azure
 description: В этой статье описывается защита фермы SharePoint в Azure с помощью DPM или сервера службы архивации Azure
-services: backup
 author: kasinh
 manager: vvithal
 ms.service: backup
 ms.topic: conceptual
 ms.date: 07/09/2019
 ms.author: kasinh
-ms.openlocfilehash: dd38ed8119e2879c4a1e4c6a52ad283043f067bf
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 91b3105bc2aafba10f4bf105bee851743dcf5282
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705239"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466665"
 ---
 # <a name="back-up-a-sharepoint-farm-to-azure"></a>Архивация фермы SharePoint в Azure
 Архивация SharePoint в Microsoft Azure с помощью System Center Data Protection Manager (DPM) во многом напоминает архивацию других источников данных. Служба архивации Azure позволяет гибко планировать архивацию, задавая ежедневные, еженедельные, ежемесячные или ежегодные точки архивации, и предоставляет параметры политики хранения для любой из этих точек. DPM дает возможность сохранять копии локальных дисков для краткосрочных целей времени восстановления, а также сохранять копии в Azure для экономичного и длительного хранения.
@@ -25,7 +24,7 @@ ms.locfileid: "67705239"
 | --- | --- | --- | --- | --- | --- |
 | SharePoint |SharePoint 2013, SharePoint 2010, SharePoint 2007, SharePoint 3.0 |SharePoint разворачивается как физический сервер или виртуальная машина Hyper-V/VMware <br> -------------- <br> SQL AlwaysOn |Физический сервер или локальная виртуальная машина Hyper-V |Поддерживает архивацию в Azure, начиная с накопительного пакета обновления 5 |Параметры восстановления фермы SharePoint: ферма, база данных, файл или элемент списка для восстановления из точек восстановления диска.  Восстановление фермы и базы данных из точек восстановления Azure. |
 
-## <a name="before-you-start"></a>Перед началом работы
+## <a name="before-you-start"></a>Перед началом
 Перед архивацией фермы SharePoint в Azure необходимо выполнить некоторые действия.
 
 ### <a name="prerequisites"></a>Предварительные требования

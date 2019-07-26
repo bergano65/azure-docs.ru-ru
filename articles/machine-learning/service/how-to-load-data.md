@@ -12,12 +12,12 @@ manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 07/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0fa60198af66154e0ddc703f90224adf5be89447
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: bd60d9f9bee55ef1342fe344e8b4f2f64e313331
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876408"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68360974"
 ---
 # <a name="load-and-read-data-with-the-azure-machine-learning-data-prep-sdk"></a>Загрузка и чтение данных с помощью Машинное обучение Azure пакета SDK для подготовки данных
 В этой статье вы узнаете о различных методах загрузки данных с помощью Машинное обучение Azure пакета SDK для подготовки данных.  Этот пакет SDK поддерживает несколько функций приема данных, включая:
@@ -36,7 +36,7 @@ ms.locfileid: "67876408"
 |-------|-------|-------|
 |Any|`auto_read_file()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep?view=azure-dataprep-py#auto-read-file-path--filepath--include-path--bool---false-----azureml-dataprep-api-dataflow-dataflow)|
 |Текст|`read_lines()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep#read-lines-path--filepath--header--azureml-dataprep-api-dataflow-promoteheadersmode----promoteheadersmode-none--0---encoding--azureml-dataprep-api-engineapi-typedefinitions-fileencoding----fileencoding-utf8--0---skip-rows--int---0--skip-mode--azureml-dataprep-api-dataflow-skipmode----skipmode-none--0---comment--str---none--include-path--bool---false--verify-exists--bool---true-----azureml-dataprep-api-dataflow-dataflow)|
-|-|`read_csv()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep#read-csv-path--filepath--separator--str--------header--azureml-dataprep-api-dataflow-promoteheadersmode----promoteheadersmode-constantgrouped--3---encoding--azureml-dataprep-api-engineapi-typedefinitions-fileencoding----fileencoding-utf8--0---quoting--bool---false--inference-arguments--azureml-dataprep-api-builders-inferencearguments---none--skip-rows--int---0--skip-mode--azureml-dataprep-api-dataflow-skipmode----skipmode-none--0---comment--str---none--include-path--bool---false--archive-options--azureml-dataprep-api--archiveoption-archiveoptions---none--infer-column-types--bool---false--verify-exists--bool---true-----azureml-dataprep-api-dataflow-dataflow)|
+|CSV|`read_csv()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep#read-csv-path--filepath--separator--str--------header--azureml-dataprep-api-dataflow-promoteheadersmode----promoteheadersmode-constantgrouped--3---encoding--azureml-dataprep-api-engineapi-typedefinitions-fileencoding----fileencoding-utf8--0---quoting--bool---false--inference-arguments--azureml-dataprep-api-builders-inferencearguments---none--skip-rows--int---0--skip-mode--azureml-dataprep-api-dataflow-skipmode----skipmode-none--0---comment--str---none--include-path--bool---false--archive-options--azureml-dataprep-api--archiveoption-archiveoptions---none--infer-column-types--bool---false--verify-exists--bool---true-----azureml-dataprep-api-dataflow-dataflow)|
 |Excel|`read_excel()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep#read-excel-path--filepath--sheet-name--str---none--use-column-headers--bool---false--inference-arguments--azureml-dataprep-api-builders-inferencearguments---none--skip-rows--int---0--include-path--bool---false--infer-column-types--bool---false--verify-exists--bool---true-----azureml-dataprep-api-dataflow-dataflow)|
 |Фиксированная ширина|`read_fwf()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep#read-fwf-path--filepath--offsets--typing-list-int---header--azureml-dataprep-api-dataflow-promoteheadersmode----promoteheadersmode-constantgrouped--3---encoding--azureml-dataprep-api-engineapi-typedefinitions-fileencoding----fileencoding-utf8--0---inference-arguments--azureml-dataprep-api-builders-inferencearguments---none--skip-rows--int---0--skip-mode--azureml-dataprep-api-dataflow-skipmode----skipmode-none--0---include-path--bool---false--infer-column-types--bool---false--verify-exists--bool---true-----azureml-dataprep-api-dataflow-dataflow)|
 |JSON|`read_json()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep?view=azure-dataprep-py#read-json-path--filepath--encoding--azureml-dataprep-api-engineapi-typedefinitions-fileencoding----fileencoding-utf8--0---flatten-nested-arrays--bool---false--include-path--bool---false-----azureml-dataprep-api-dataflow-dataflow)|
@@ -93,22 +93,22 @@ dflow.head(5)
 | |stnam|fipst|leaid|leanm10|ncessch|MAM_MTH00numvalid_1011|
 |-----|-------|---------| -------|------|-----|------|-----|
 |0|stnam|fipst|leaid|leanm10|ncessch|MAM_MTH00numvalid_1011|
-|1|АЛАБАМА|1|101710|Округ Хейл|10171002158| |
-|2|АЛАБАМА|1|101710|Округ Хейл|10171002162| |
+|1|Алабама|1|101710|Округ Хейл|10171002158| |
+|2|Алабама|1|101710|Округ Хейл|10171002162| |
 
 
 Чтобы исключить строки во время загрузки, определите параметр `skip_rows`. Этот параметр пропускает загрузку из CSV-файле всех строк ниже указанной (по индексу строк, начиная с единицы).
 
 ```python
 dflow = dprep.read_csv(path='https://dpreptestfiles.blob.core.windows.net/testfiles/read_csv_duplicate_headers.csv',
-                          skip_rows=1)
+                       skip_rows=1)
 dflow.head(5)
 ```
 
 | |stnam|fipst|leaid|leanm10|ncessch|MAM_MTH00numvalid_1011|
 |-----|-------|---------| -------|------|-----|------|
-|0|АЛАБАМА|1|101710|Округ Хейл|10171002158|29|
-|1|АЛАБАМА|1|101710|Округ Хейл|10171002162|40 |
+|0|Алабама|1|101710|Округ Хейл|10171002158|29|
+|1|Алабама|1|101710|Округ Хейл|10171002162|40 |
 
 Выполните следующий код, чтобы отобразить типы данных для столбцов.
 
@@ -159,19 +159,20 @@ dflow.head(5)
 
 | |Column1|Column2|Column3|Column4|Column5|Column6|Column7|Column8| | |
 |-|-------|-------|-------|-------|-------|-------|-------|-------|-|-|
-|0|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет| |
-|1|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет| |
-|2|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет| |
-|3|RANK;|Заголовок|Студия|Весь мир|Эта страна / %|Column1|Другие страны / %|Column2|Год ^| |
+|0|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют| |
+|1|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют| |
+|2|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют| |
+|3|Ранг|Заголовок|Студия|Весь мир|Эта страна / %|Column1|Другие страны / %|Column2|Год ^| |
 |4|1|Аватар|Фокс|2788|760,5|0,273|2027,5|0,727|2009^|5|
 
 Эти выходные данные показывают, что данные на втором листе содержат три пустых строки перед заголовками. Функция `read_excel()` принимает необязательные параметры для пропуска строк и использование заголовков. Запустите следующий код, который пропускает первые три строки и использует четвертую для получения заголовков.
 
 ```python
-dflow = dprep.read_excel(path='./data/excel.xlsx', sheet_name='Sheet2', use_column_headers=True, skip_rows=3)
+dflow = dprep.read_excel(path='./data/excel.xlsx',
+                         sheet_name='Sheet2', use_column_headers=True, skip_rows=3)
 ```
 
-||RANK;|Заголовок|Студия|Весь мир|Эта страна / %|Column1|Другие страны / %|Column2|Год ^|
+||Ранг|Заголовок|Студия|Весь мир|Эта страна / %|Column1|Другие страны / %|Column2|Год ^|
 |------|------|------|-----|------|-----|-------|----|-----|-----|
 |0|1|Аватар|Фокс|2788|760,5|0,273|2027,5|0,727|2009^|
 |1|2|Титаник|Par.|2186,8|658,7|0,301|1528,1|0,699|1997^|
@@ -181,7 +182,8 @@ dflow = dprep.read_excel(path='./data/excel.xlsx', sheet_name='Sheet2', use_colu
 Чтобы загрузить файлы фиксированной ширины, необходимо указать список смещений символов. Предполагается, что первый столбец всегда начинается со смещения 0.
 
 ```python
-dflow = dprep.read_fwf('./data/fixed_width_file.txt', offsets=[7, 13, 43, 46, 52, 58, 65, 73])
+dflow = dprep.read_fwf('./data/fixed_width_file.txt',
+                       offsets=[7, 13, 43, 46, 52, 58, 65, 73])
 dflow.head(5)
 ```
 
@@ -195,8 +197,8 @@ dflow.head(5)
 
 ```python
 dflow = dprep.read_fwf('./data/fixed_width_file.txt',
-                          offsets=[7, 13, 43, 46, 52, 58, 65, 73],
-                          header=dprep.PromoteHeadersMode.NONE)
+                       offsets=[7, 13, 43, 46, 52, 58, 65, 73],
+                       header=dprep.PromoteHeadersMode.NONE)
 ```
 
 ||Column1|Column2|Column3|Column4|Column5|Column6|Column7|Column8|Column9|
@@ -228,11 +230,11 @@ dflow = dprep.read_sql(ds, "SELECT top 100 * FROM [SalesLT].[Product]")
 dflow.head(5)
 ```
 
-| |ProductID|ИМЯ|ProductNumber|Color|StandardCost|ListPrice|Size|Вес|ProductCategoryID|ProductModelID|SellStartDate|SellEndDate|DiscontinuedDate|ThumbNailPhoto|ThumbnailPhotoFileName|rowguid|ModifiedDate| |
+| |ProductID|Имя|ProductNumber|Color|StandardCost|ListPrice|Size|Вес|ProductCategoryID|ProductModelID|SellStartDate|SellEndDate|DiscontinuedDate|ThumbNailPhoto|ThumbnailPhotoFileName|rowguid|ModifiedDate| |
 |-|---------|----|-------------|-----|------------|---------|----|------|-----------------|--------------|-------------|-----------|----------------|--------------|----------------------|-------|------------|-|
-|0|680|HL Road Frame - Black, 58|FR-R92B-58|Черный|1059.3100|1431.50|58|1016.04|18|6|2002-06-01 00:00:00+00:00|Нет|Нет|b'GIF89aP\x001\x00\xf7\x00\x00\x00\x00\x00\x80...|no_image_available_small.gif|43dd68d6-14a4-461f-9069-55309d90ea7e|2008-03-11 |0:01:36.827000+00:00|
-|1|706|HL Road Frame - Red, 58|FR-R92R-58|Красный|1059.3100|1431.50|58|1016.04|18|6|2002-06-01 00:00:00+00:00|Нет|Нет|b'GIF89aP\x001\x00\xf7\x00\x00\x00\x00\x00\x80...|no_image_available_small.gif|9540ff17-2712-4c90-a3d1-8ce5568b2462|2008-03-11 |10:01:36.827000+00:00|
-|2|707|Шлем Sport-100, красный|HL-U509-R|Красный|13.0863|34.99|Нет|Нет|35|33|2005-07-01 00:00:00+00:00|Нет|Нет|b'GIF89aP\x001\x00\xf7\x00\x00\x00\x00\x00\x80...|no_image_available_small.gif|2e1ef41a-c08a-4ff6-8ada-bde58b64a712|2008-03-11 |10:01:36.827000+00:00|
+|0|680|HL Road Frame - Black, 58|FR-R92B-58|Черный|1059.3100|1431.50|58|1016.04|18|6|2002-06-01 00:00:00+00:00|Отсутствуют|Отсутствуют|b'GIF89aP\x001\x00\xf7\x00\x00\x00\x00\x00\x80...|no_image_available_small.gif|43dd68d6-14a4-461f-9069-55309d90ea7e|2008-03-11 |0:01:36.827000+00:00|
+|1|706|HL Road Frame - Red, 58|FR-R92R-58|Красный|1059.3100|1431.50|58|1016.04|18|6|2002-06-01 00:00:00+00:00|Отсутствуют|Отсутствуют|b'GIF89aP\x001\x00\xf7\x00\x00\x00\x00\x00\x80...|no_image_available_small.gif|9540ff17-2712-4c90-a3d1-8ce5568b2462|2008-03-11 |10:01:36.827000+00:00|
+|2|707|Шлем Sport-100, красный|HL-U509-R|Красный|13.0863|34.99|Отсутствуют|Отсутствуют|35|33|2005-07-01 00:00:00+00:00|Отсутствуют|Отсутствуют|b'GIF89aP\x001\x00\xf7\x00\x00\x00\x00\x00\x80...|no_image_available_small.gif|2e1ef41a-c08a-4ff6-8ada-bde58b64a712|2008-03-11 |10:01:36.827000+00:00|
 
 
 ## <a name="use-azure-data-lake-storage"></a>Использование Azure Data Lake Storage
@@ -300,13 +302,16 @@ servicePrincipalAppId = "8dd38f34-1fcb-4ff9-accd-7cd60b757174"
 import adal
 from azureml.dataprep.api.datasources import DataLakeDataSource
 
-ctx = adal.AuthenticationContext('https://login.microsoftonline.com/microsoft.onmicrosoft.com')
-token = ctx.acquire_token_with_client_certificate('https://datalake.azure.net/', servicePrincipalAppId, certificate, certThumbprint)
-dflow = dprep.read_csv(path = DataLakeDataSource(path='adl://dpreptestfiles.azuredatalakestore.net/farmers-markets.csv', accessToken=token['accessToken']))
+ctx = adal.AuthenticationContext(
+    'https://login.microsoftonline.com/microsoft.onmicrosoft.com')
+token = ctx.acquire_token_with_client_certificate(
+    'https://datalake.azure.net/', servicePrincipalAppId, certificate, certThumbprint)
+dflow = dprep.read_csv(path=DataLakeDataSource(
+    path='adl://dpreptestfiles.azuredatalakestore.net/farmers-markets.csv', accessToken=token['accessToken']))
 dflow.to_pandas_dataframe().head()
 ```
 
-||FMID|MarketName|Веб-сайт|street|city|Округ|
+||FMID|MarketName|Веб-сайт|street|city|Графство|
 |----|------|-----|----|----|----|----|
 |0|1012063|Caledonia Farmers Market Association, Дэнвилл|https://sites.google.com/site/caledoniafarmers... ||Дэнвилл|Каледония|
 |1|1011871|Stearns Homestead Farmers' Market|http://Stearnshomestead.com |6975 Ridge Road|Парма|Кайахога|

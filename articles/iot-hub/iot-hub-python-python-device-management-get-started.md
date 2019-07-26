@@ -9,12 +9,12 @@ ms.devlang: python
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: kgremban
-ms.openlocfilehash: 04fc1da04d9da715acfed8ca9d26e9c325afb403
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c4c8957e8d9b355216e10503d58915977c3b9b1a
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64569432"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68403405"
 ---
 # <a name="get-started-with-device-management-python"></a>Начало работы с управлением устройствами (Python)
 
@@ -36,11 +36,11 @@ ms.locfileid: "64569432"
 
 Для работы с этим учебником требуется:
 
-* [Python 2.x или 3.x](https://www.python.org/downloads/). Обязательно используйте 32-разрядную или 64-разрядную версию установки согласно требованиям программы настройки. При появлении запроса во время установки обязательно добавьте Python в переменную среды соответствующей платформы. Если вы используете Python 2.x, может потребоваться [установка или обновление *pip* — системы управления пакетами Python](https://pip.pypa.io/en/stable/installing/).
+* [Python 2. x или 3. x](https://www.python.org/downloads/). Обязательно используйте 32-разрядную или 64-разрядную версию установки согласно требованиям программы настройки. При появлении запроса во время установки обязательно добавьте Python в переменную среды соответствующей платформы. Если вы используете Python 2.x, может потребоваться [установка или обновление *pip* — системы управления пакетами Python](https://pip.pypa.io/en/stable/installing/).
 
-* Установка [azure-iothub-device-client](https://pypi.org/project/azure-iothub-device-client/) упаковки, с помощью команды       `pip install azure-iothub-device-client`
+* Установите пакет [Azure-iothub-Device-Client](https://pypi.org/project/azure-iothub-device-client/) с помощью команды.`pip install azure-iothub-device-client`
 
-* Установка [azure-iothub-service-client](https://pypi.org/project/azure-iothub-service-client/) упаковки, с помощью команды       `pip install azure-iothub-service-client`
+* Установите пакет [Azure-iothub-Service-Client](https://pypi.org/project/azure-iothub-service-client/) с помощью команды.`pip install azure-iothub-service-client`
 
 * Если вы работаете с ОС Windows, потребуется [распространяемый пакет Visual C++](https://www.microsoft.com/download/confirmation.aspx?id=48145), чтобы разрешить использовать собственные библиотеки DLL из Python.
 
@@ -50,9 +50,7 @@ ms.locfileid: "64569432"
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
-### <a name="retrieve-connection-string-for-iot-hub"></a>Получение строки подключения для центра Интернета вещей
-
-[!INCLUDE [iot-hub-include-find-connection-string](../../includes/iot-hub-include-find-connection-string.md)]
+[!INCLUDE [iot-hub-get-started-create-device-identity](../../includes/iot-hub-get-started-create-device-identity.md)]
 
 ## <a name="create-a-simulated-device-app"></a>Создание приложения виртуального устройства
 
@@ -162,6 +160,11 @@ ms.locfileid: "64569432"
 > [!NOTE]
 > Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повторных попыток (например, с экспоненциальной задержкой), как указано в статье [Обработка временных сбоев](/azure/architecture/best-practices/transient-faults).
 
+## <a name="get-the-iot-hub-connection-string"></a>Получение строки подключения для центра Интернета вещей
+
+[!INCLUDE [iot-hub-howto-device-management-shared-access-policy-text](../../includes/iot-hub-howto-device-management-shared-access-policy-text.md)]
+
+[!INCLUDE [iot-hub-include-find-service-connection-string](../../includes/iot-hub-include-find-service-connection-string.md)]
 
 ## <a name="trigger-a-remote-reboot-on-the-device-using-a-direct-method"></a>Активация удаленной перезагрузки на устройстве с помощью прямого метода
 

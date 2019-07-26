@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 9bdeb91b145f8c7f31be8c1dcd5c5158d50ff2f6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: eed6113442b4080341ff08b3983880f3afe66c00
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64712311"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68385121"
 ---
 # <a name="expressroute-qos-requirements"></a>Требования к качеству обслуживания для ExpressRoute
 В Skype для бизнеса имеются различные рабочие нагрузки, требующие дифференцированного подхода к качеству обслуживания. Если вы планируете использовать голосовые службы с помощью ExpressRoute, то необходимо соблюдать указанные ниже требования.
@@ -25,21 +25,21 @@ ms.locfileid: "64712311"
 > 
 > 
 
-Следующая таблица предоставляет список пометок DSCP, используемые Microsoft Teams и Скайп для бизнеса. Дополнительные сведения см. в статье [Управление качеством обслуживания для Skype для бизнеса](https://docs.microsoft.com/SkypeForBusiness/manage/network-management/qos/managing-quality-of-service-QoS).
+В следующей таблице приведен список меток DSCP, используемых Microsoft Teams и Skype для бизнеса. Дополнительные сведения см. в статье [Управление качеством обслуживания для Skype для бизнеса](https://docs.microsoft.com/SkypeForBusiness/manage/network-management/qos/managing-quality-of-service-QoS).
 
-| **Класс трафика** | **Обработка (пометки DSCP)** | **Microsoft Teams и Скайп рабочих нагрузок** |
+| **Класс трафика** | **Обработка (пометки DSCP)** | **Рабочие нагрузки Microsoft Teams и Skype для бизнеса** |
 | --- | --- | --- |
-| **Голосовая связь** |EF (46) |Голосовая связь Skype и Lync |
+| **Голосовая связь** |EF (46) |Skype, Microsoft Teams или Lync Voice |
 | **Интерактивный** |AF41 (34) |Видео, VBSS |
 | |AF21 (18) |Совместный доступ к приложениям | 
-| **По умолчанию** |AF11 (10) |Передача файлов |
+| **Default** |AF11 (10) |Передача файлов |
 | |CS0 (0) |Другие варианты |
 
 * Вам необходимо классифицировать рабочие нагрузки и пометить правильные значения DSCP. Следуйте указанным [здесь](https://docs.microsoft.com/SkypeForBusiness/manage/network-management/qos/configuring-port-ranges-for-your-skype-clients#configure-quality-of-service-policies-for-clients-running-on-windows-10) инструкциям по настройке пометок DSCP в сети.
 * Вам необходимо настроить и поддерживать несколько очередей качества обслуживания в сети. Голосовая связь должна быть изолированным классом и использовать обработку EF согласно документу [RFC 3246](https://www.ietf.org/rfc/rfc3246.txt). 
 * Вы можете решить, какие механизм очередей, политику обнаружения перегрузки и пропускную способность использовать для каждого класса трафика. Тем не менее необходимо сохранить пометки DSCP для рабочих нагрузок Skype для бизнеса. Если вы используете пометки DSCP, которых нет в списке выше, например AF31 (26), то перед отправкой пакета в корпорацию Майкрософт необходимо перезаписать это значение DSCP и сделать его равным 0. Корпорация Майкрософт отправляет только те пакеты, которые помечены значениями DSCP, указанными в таблице выше. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * См. сведения о требованиях для [маршрутизации](expressroute-routing.md) и [преобразования сетевых адресов (NAT)](expressroute-nat.md).
 * Чтобы настроить подключение ExpressRoute, см. следующие статьи:
   

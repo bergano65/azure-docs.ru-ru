@@ -2,7 +2,7 @@
 title: Подключение к хранилищу данных SQL Azure — SSMS | Документация Майкрософт
 description: Подключайтесь к хранилищу данных SQL Azure и создавайте запросы к нему с помощью SQL Server Management Studio (SSMS).
 services: sql-data-warehouse
-author: XiaoyuL-Preview
+author: XiaoyuMSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.subservice: development
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 64ea7c175b733f974eba6c081ee2c98814cbcda2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 67707b64bb6018b322ba980535651c126a526eb7
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65873704"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479532"
 ---
 # <a name="connect-to-sql-data-warehouse-with-sql-server-management-studio-ssms"></a>Подключение к хранилищу данных SQL Azure с помощью SQL Server Management Studio (SSMS)
 > [!div class="op_single_selector"]
@@ -29,12 +29,12 @@ ms.locfileid: "65873704"
 
 Подключайтесь к хранилищу данных SQL Azure и создавайте запросы к нему с помощью SQL Server Management Studio (SSMS). 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
-* Существующее хранилище данных SQL. Сведения о его создании см. в статье [Создание хранилища данных SQL Azure][Create a SQL Data Warehouse].
-* Установленный SQL Server Management Studio (SSMS). [Установите SSMS][Install SSMS] бесплатно, если вы еще этого не сделали.
-* Полное имя сервера SQL Server. Эти сведения можно узнать в статье [Подключение к хранилищу данных SQL Azure][Connect to SQL Data Warehouse].
+* Существующее хранилище данных SQL. Чтобы создать его, см. раздел [Создание хранилища данных SQL][Create a SQL Data Warehouse].
+* Установленный SQL Server Management Studio (SSMS). [Установите SSMS][Install SSMS] бесплатно, если у вас его еще нет.
+* Полное имя сервера SQL Server. Чтобы найти это, см. раздел [Подключение к хранилищу данных SQL][Connect to SQL Data Warehouse].
 
 ## <a name="1-connect-to-your-sql-data-warehouse"></a>1. Подключение к хранилищу данных SQL
 1. Откройте среду SSMS.
@@ -72,10 +72,10 @@ ms.locfileid: "65873704"
    
     ![Результаты запроса][6]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда вы можете подключаться к базе данных и отправлять запросы, попробуйте [визуализировать данные с помощью PowerBI][visualizing the data with PowerBI].
 
-Сведения о том, как настроить проверку подлинности Azure Active Directory в своей среде, см. в статье [Проверка подлинности в хранилище данных SQL Azure][Authenticate to SQL Data Warehouse].
+Сведения о настройке среды для проверки подлинности Azure Active Directory см. в статье Проверка подлинности [в хранилище данных SQL][Authenticate to SQL Data Warehouse].
 
 <!--Arcticles-->
 [Connect to SQL Data Warehouse]: sql-data-warehouse-connect-overview.md

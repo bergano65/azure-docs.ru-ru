@@ -2,7 +2,7 @@
 title: Руководство по проектированию распределенных таблиц в хранилище данных SQL Azure | Документация Майкрософт
 description: Рекомендации по проектированию хэш-распределенных таблиц и таблиц с распределением методом циклического перебора в хранилище данных SQL Azure.
 services: sql-data-warehouse
-author: XiaoyuL-Preview
+author: XiaoyuMSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.subservice: development
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: b101a4e19d00d44805c7eb5f44d449a18d756804
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4b322415592a7202387cb6776d2c040cda765b27
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65851615"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479350"
 ---
 # <a name="guidance-for-designing-distributed-tables-in-azure-sql-data-warehouse"></a>Руководство по проектированию распределенных таблиц в хранилище данных SQL Azure
 Рекомендации по проектированию хэш-распределенных таблиц и таблиц с распределением методом циклического перебора в хранилище данных SQL Azure.
@@ -212,7 +212,7 @@ RENAME OBJECT [dbo].[FactInternetSales] TO [FactInternetSales_ProductKey];
 RENAME OBJECT [dbo].[FactInternetSales_CustomerKey] TO [FactInternetSales];
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Чтобы создать распределенную таблицу, воспользуйтесь одной из следующих инструкций:
 

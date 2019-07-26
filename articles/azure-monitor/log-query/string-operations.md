@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
-ms.openlocfilehash: 4b2763629a3036551cb3d362e609c72737436f4a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f53d3bd64b4f837fe29baa338cd338158d59d95d
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61424709"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466952"
 ---
 # <a name="work-with-strings-in-azure-monitor-log-queries"></a>Работа со строками в запросах журнала Azure Monitor
 
 
 > [!NOTE]
-> Следует выполнить [приступить к работе с Azure Monitor Log Analytics](get-started-portal.md) и [Приступая к работе с Azure Monitor запросов к журналу](get-started-queries.md) до завершения работы с учебником.
+> Прежде чем приступить к работе с этим руководством, приступайте к [работе с Azure Monitor log Analytics](get-started-portal.md) и [начните работу с Azure Monitor запросами](get-started-queries.md) к журналу.
 
 [!INCLUDE [log-analytics-demo-environment](../../../includes/log-analytics-demo-environment.md)]
 
@@ -38,6 +38,10 @@ ms.locfileid: "61424709"
 
 ```Kusto
 print "this is a 'string' literal in double \" quotes"
+```
+
+```Kusto
+print 'this is a "string" literal in single \' quotes'
 ```
 
 Чтобы символ \\ не интерпретировался как escape-символ, добавьте \@ в качестве префикса к строке:
@@ -98,7 +102,7 @@ countof(text, search [, kind])
 - `search` — текстовая строка или регулярное выражение, которое проверяется на вхождение в text.
 - `kind` - _normal_ | _regex_ (по умолчанию: normal).
 
-### <a name="returns"></a>Результаты
+### <a name="returns"></a>Возвращает
 
 Количество совпадений для строки поиска в контейнере. Совпадения для текстовых строк могут перекрывать друг друга, при этом для регулярных выражений — не могут.
 
@@ -140,7 +144,7 @@ extract(regex, captureGroup, text [, typeLiteral])
 - `text` — строка для поиска.
 - `typeLiteral` — необязательный литерал типа (например, typeof(long)). Если указан, то извлеченная подстрока преобразуется в этот тип.
 
-### <a name="returns"></a>Результаты
+### <a name="returns"></a>Возвращает
 Возвращается подстрока, которая сравнивалась с указанной в группе записи captureGroup, при необходимости преобразованная в тип typeLiteral.
 Если соответствия нет или не удается выполнить преобразование типа, возвращается NULL.
 
@@ -260,7 +264,7 @@ SecurityEvent
 
 Можно получить следующие результаты:
 
-Действие                                        |заменена
+Действия                                        |заменена
 ------------------------------------------------|----------------------------------------------------------
 4663 — была предпринята попытка доступа к объекту.  |Идентификатор действия 4663: была предпринята попытка доступа к объекту.
 
@@ -364,7 +368,7 @@ print toupper("hello"); // result: "HELLO"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь с дополнительными руководствами по следующим ссылкам:
 * [Статистические функции в запросах Log Analytics](aggregations.md)
 * [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)

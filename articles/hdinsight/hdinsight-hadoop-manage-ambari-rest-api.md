@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/07/2019
 ms.author: hrasheed
-ms.openlocfilehash: 4ab30f5f737b0f5188958c4686f82a0084c3ac35
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 301ad4f940e6bd4eedb3a4df64e4740d29effe03
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67059354"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68406220"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-rest-api"></a>Управление кластерами HDInsight с помощью Apache Ambari REST API
 
@@ -23,33 +23,33 @@ ms.locfileid: "67059354"
 
 ## <a id="whatis"></a>Что такое Apache Ambari
 
-[Apache Ambari](https://ambari.apache.org) упрощает управление и мониторинг кластеров Hadoop, предоставляя простой в использовании веб-Интерфейс его [интерфейсов REST API](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).  Ambari предоставляется по умолчанию с кластерами HDInsight на платформе Linux.
+[Apache Ambari](https://ambari.apache.org) упрощает управление кластерами Hadoop и их мониторинг, предоставляя простой в использовании интерфейс веб-интерфейса, поддерживаемый его [интерфейсами API](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).  Ambari предоставляется по умолчанию с кластерами HDInsight на платформе Linux.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * **Кластер Hadoop в HDInsight**. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
-* **Bash на Ubuntu в Windows 10**.  В примерах в этой статье используется оболочка Bash в Windows 10. См. в разделе [подсистемы Windows для руководство по установке Linux для Windows 10](https://docs.microsoft.com/windows/wsl/install-win10) для действия по установке.  Другие [оболочек Unix](https://www.gnu.org/software/bash/) также будут работать.  Примеры с некоторыми небольшими изменениями можно работать на командную строку Windows.  Кроме того можно использовать Windows PowerShell.
+* **Bash на Ubuntu в Windows 10**.  В примерах, приведенных в этой статье, используется оболочка Bash в Windows 10. Шаги установки см. в статье [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/windows/wsl/install-win10) (Подсистема Windows для Linux в Windows 10).  Другие [оболочки Unix](https://www.gnu.org/software/bash/) также будут работать.  Примеры с некоторыми незначительными изменениями могут работать в командной строке Windows.  Кроме того, можно использовать Windows PowerShell.
 
-* **jq**, обработчик командной строки JSON.  Дополнительные сведения см. на странице [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/).
+* **JQ**, процессор командной строки JSON.  Дополнительные сведения см. на странице [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/).
 
 * **Windows PowerShell**.  Кроме того, можно использовать [Bash](https://www.gnu.org/software/bash/).
 
 ## <a name="base-uri-for-ambari-rest-api"></a>Базовый универсальный код ресурса для REST API Ambari
 
- Базовый универсальный код ресурса (URI) для REST API Ambari в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME`, где `CLUSTERNAME` — это имя вашего кластера.  Имена кластеров в URI, **с учетом регистра**.  Хотя имя кластера в полное доменное имя (FQDN) части URI (`CLUSTERNAME.azurehdinsight.net`) не учитывает регистр, другие вхождения этого URI учитывают регистр.
+ Базовый универсальный код ресурса (URI) для REST API Ambari в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME`, где `CLUSTERNAME` — это имя кластера.  В именах кластеров в URI **учитывается регистр**.  Хотя имя кластера в части URI (`CLUSTERNAME.azurehdinsight.net`) в полном доменном имени () не учитывает регистр, другие вхождения в URI учитывают регистр.
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Проверка подлинности
 
 Подключение к Ambari в HDInsight выполняется по протоколу HTTPS. Используйте имя учетной записи администратора (по умолчанию — **admin**) и пароль, указанные при создании кластера.
 
 ## <a name="examples"></a>Примеры
 
-### <a name="setup-preserve-credentials"></a>Программа установки (сохранять учетные данные)
-Сохранить свои учетные данные, чтобы избежать повторного ввода их для каждого примера.  Имя кластера будет сохранен в рамках отдельного шага.
+### <a name="setup-preserve-credentials"></a>Установка (сохранение учетных данных)
+Сохраните свои учетные данные, чтобы избежать их повторного ввода для каждого примера.  Имя кластера будет сохранено на отдельном шаге.
 
-**A. Bash**  
-Измените приведенный ниже скрипт, заменив `PASSWORD` на ваш фактический пароль.  Введите команду.
+**A. Bug**  
+Измените приведенный ниже сценарий, `PASSWORD` заменив его фактическим паролем.  Затем введите команду.
 
 ```bash
 export password='PASSWORD'
@@ -61,10 +61,10 @@ export password='PASSWORD'
 $creds = Get-Credential -UserName "admin" -Message "Enter the HDInsight login"
 ```
 
-### <a name="identify-correctly-cased-cluster-name"></a>Определить имя правильно верблюжьим кластера
-Фактический регистр имени кластера может отличаться от ожидаемого, в зависимости от способа создания кластера.  При выполнении этих шагов будет Показать фактический регистр и затем сохранить ее в переменной для всех последующих примерах.
+### <a name="identify-correctly-cased-cluster-name"></a>Выявление правильного имени кластера с учетом регистра
+Фактический регистр имени кластера может отличаться от ожидаемого, в зависимости от способа создания кластера.  В этих шагах будет показан фактический регистр, а затем сохранен в переменной для всех последующих примеров.
 
-Изменение скриптов ниже, чтобы заменить `CLUSTERNAME` именем кластера. Введите команду. (Имя кластера для полного доменного ИМЕНИ выполняется без учета регистра.)
+Измените приведенные ниже сценарии, `CLUSTERNAME` чтобы они заменили имя кластера. Затем введите команду. (Имя кластера для FQDN не учитывает регистр.)
 
 ```bash
 export clusterName=$(curl -u admin:$password -sS -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters" | jq -r '.items[].Clusters.cluster_name')
@@ -83,7 +83,7 @@ $clusterName
 
 ### <a name="parsing-json-data"></a>Анализ данных JSON
 
-В следующем примере используется [jq](https://stedolan.github.io/jq/) или [ConvertFrom-Json](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json) для синтаксического анализа документа ответа JSON и отображения только `health_report` сведения из результатов.
+В следующем примере используется [JQ](https://stedolan.github.io/jq/) или [ConvertFrom-JSON](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json) для анализа документа ответа JSON и `health_report` вывода только сведений из результатов.
 
 ```bash
 curl -u admin:$password -sS -G "https://$clusterName.azurehdinsight.net/api/v1/clusters/$clusterName" \
@@ -97,7 +97,7 @@ $respObj = ConvertFrom-Json $resp.Content
 $respObj.Clusters.health_report
 ```
 
-### <a name="example-get-the-fqdn-of-cluster-nodes"></a> Получите полное ДОМЕННОЕ имя кластера узлов
+### <a name="example-get-the-fqdn-of-cluster-nodes"></a>Получение полного доменного имени узлов кластера
 
 При работе с HDInsight вам может потребоваться полное доменное имя (FQDN) узла кластера. FQDN можно легко получить для разных узлов в кластере с помощью следующих команд.
 
@@ -157,11 +157,11 @@ $respObj = ConvertFrom-Json $resp.Content
 $respObj.host_components.HostRoles.host_name
 ```
 
-### <a name="example-get-the-internal-ip-address-of-cluster-nodes"></a> Получить внутренний IP-адрес из узлов кластера
+### <a name="example-get-the-internal-ip-address-of-cluster-nodes"></a>Получение внутреннего IP-адреса узлов кластера
 
 IP-адреса, возвращенные в примерах из этого раздела, недоступны напрямую через Интернет. Они доступны только в пределах виртуальной сети Azure, содержащей кластер HDInsight.
 
-Дополнительные сведения о работе с виртуальными сетями и HDInsight см. в статье [Расширение возможностей HDInsight с помощью виртуальной сети Azure](hdinsight-extend-hadoop-virtual-network.md).
+Дополнительные сведения о работе с HDInsight и виртуальными сетями см. в статье [планирование виртуальной сети для hdinsight](hdinsight-plan-virtual-network-deployment.md).
 
 Чтобы найти IP-адрес, необходимо знать внутренние полные доменные имена (FQDN) узлов кластера. Если у вас есть полное доменное имя, вы можете получить IP-адрес узла. В следующих примерах у Ambari сначала запрашивается полное доменное имя для всех узлов, а затем — IP-адрес каждого узла.
 
@@ -249,9 +249,9 @@ $respObj.items.configurations.properties.'fs.defaultFS'
     Вернется похожее значение: `/clusters/CLUSTERNAME/`. Это значение представляет путь в учетной записи Data Lake Storage. Путь является корнем совместимой файловой системы HDFS для кластера.  
 
 > [!NOTE]  
-> [Get-AzHDInsightCluster](https://docs.microsoft.com/powershell/module/az.hdinsight/get-azhdinsightcluster) командлет, предоставляемые [Azure PowerShell](/powershell/azure/overview) также возвращает сведения о хранилище для кластера.
+> Командлет [Get-аздинсигхтклустер](https://docs.microsoft.com/powershell/module/az.hdinsight/get-azhdinsightcluster) , предоставляемый [Azure PowerShell](/powershell/azure/overview) , также возвращает сведения о хранилище для кластера.
 
-### <a name="get-all-configurations"></a> Получить все конфигурации
+### <a name="get-all-configurations"></a>Получить все конфигурации
 
 Получите конфигурации, которые доступны для кластера.
 
@@ -282,7 +282,7 @@ $respObj.Content
 },
 ```
 
-### <a name="get-configuration-for-specific-component"></a>Получить конфигурацию для определенного компонента
+### <a name="get-configuration-for-specific-component"></a>Получение конфигурации для конкретного компонента
 
 Извлеките конфигурацию для интересующего вас компонента. В следующем примере замените `INITIAL` значением тега, возвращенным из предыдущего запроса.
 
@@ -301,19 +301,19 @@ $resp.Content
 ### <a name="update-configuration"></a>Обновление конфигурации
 
 1. Создайте `newconfig.json`.  
-   Изменения, а затем введите следующие команды:
+   Измените, а затем введите следующие команды:
 
-   * Замените `livy2-conf` с нужного компонента.
-   * Замените `INITIAL` с фактическим значением, полученные для `tag` из [получить все конфигурации](#get-all-configurations).
+   * Замените `livy2-conf` на нужный компонент.
+   * Замените `INITIAL` на фактическое значение, `tag` полученное для из параметра [получить все конфигурации](#get-all-configurations).
 
-     **A. Bash**  
+     **A. Bug**  
      ```bash
      curl -u admin:$password -sS -G "https://$clusterName.azurehdinsight.net/api/v1/clusters/$clusterName/configurations?type=livy2-conf&tag=INITIAL" \
      | jq --arg newtag $(echo version$(date +%s%N)) '.items[] | del(.href, .version, .Config) | .tag |= $newtag | {"Clusters": {"desired_config": .}}' > newconfig.json
      ```
 
      **B. PowerShell**  
-     Сценарий PowerShell использует [jq](https://stedolan.github.io/jq/).  Изменить `C:\HD\jq\jq-win64` ниже, чтобы они соответствовали реальным путем и версию [jq](https://stedolan.github.io/jq/).
+     Сценарий PowerShell использует [JQ](https://stedolan.github.io/jq/).  Измените `C:\HD\jq\jq-win64` ниже, чтобы отразить фактический путь и версию [JQ](https://stedolan.github.io/jq/).
 
      ```powershell
      $epoch = Get-Date -Year 1970 -Month 1 -Day 1 -Hour 0 -Minute 0 -Second 0
@@ -363,7 +363,7 @@ $resp.Content
 
     После завершения работы сохраните файл.
 
-3. Отправить `newconfig.json`.  
+3. Отправка `newconfig.json`.  
    Выполните следующие команды, чтобы отправить обновленную конфигурацию в Ambari:
 
     ```bash
@@ -386,7 +386,7 @@ $resp.Content
 
 На этом этапе веб-интерфейс Ambari указывает на то, что вам необходимо перезапустить службу Spark, чтобы новая конфигурация вступила в силу. Для перезапуска службы выполните приведенные ниже действия.
 
-1. Используйте следующие параметры для включения режима обслуживания для службы Spark2.
+1. Используйте следующую команду, чтобы включить режим обслуживания для службы Spark2:
 
     ```bash
     curl -u admin:$password -sS -H "X-Requested-By: ambari" \
@@ -421,7 +421,7 @@ $resp.Content
 
     Возвращается значение `ON`.
 
-3. Затем выполните следующие для выключения службы Spark2.
+3. Затем используйте следующую команду, чтобы отключить службу Spark2:
 
     ```bash
     curl -u admin:$password -sS -H "X-Requested-By: ambari" \
@@ -451,10 +451,10 @@ $resp.Content
     ```
 
     > [!IMPORTANT]  
-    > Значение `href` , возвращенное этим универсальным кодом ресурса (URI), использует внутренний IP-адрес узла кластера. Чтобы использовать его извне кластера, замените `10.0.0.18:8080` часть с полным доменным ИМЕНЕМ кластера.  
+    > Значение `href` , возвращенное этим универсальным кодом ресурса (URI), использует внутренний IP-адрес узла кластера. Чтобы использовать его вне кластера, замените `10.0.0.18:8080` часть с полным доменным именем кластера.  
 
 4. Проверьте запрос.  
-    Измените указанную ниже команду, заменив `29` с фактическим значением для `id` возвращается из предыдущего шага.  Например, следующие команды получают состояние запроса:
+    Измените приведенную ниже команду, `29` заменив фактическим `id` значением, полученным на предыдущем шаге.  Например, следующие команды получают состояние запроса:
 
     ```bash
     curl -u admin:$password -sS -H "X-Requested-By: ambari" \
@@ -471,7 +471,7 @@ $resp.Content
 
     Ответ `COMPLETED` указывает, что запрос завершен.
 
-5. После завершения предыдущего запроса, используйте следующее для запуска службы Spark2.
+5. После завершения предыдущего запроса используйте следующий пример, чтобы запустить службу Spark2.
 
     ```bash
     curl -u admin:$password -sS -H "X-Requested-By: ambari" \
@@ -506,6 +506,6 @@ $resp.Content
         -Body '{"RequestInfo": {"context": "turning off maintenance mode for SPARK2"},"Body": {"ServiceInfo": {"maintenance_state":"OFF"}}}'
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Полный справочник по REST API см. [здесь](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).

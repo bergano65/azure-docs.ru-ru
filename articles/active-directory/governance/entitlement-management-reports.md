@@ -1,10 +1,10 @@
 ---
-title: Просмотр отчетов и журналов в управление правами Azure AD (Предварительная версия) — Azure Active Directory
-description: Узнайте, как просматривать отчет назначения пользователей и журналы аудита на управление правами Azure Active Directory (Предварительная версия).
+title: Просмотр отчетов и журналов в управлении назначениями Azure AD (Предварительная версия) — Azure Active Directory
+description: Узнайте, как просматривать отчеты о назначениях пользователей и журналы аудита в Azure Active Directory управления назначением (Предварительная версия).
 services: active-directory
 documentationCenter: ''
-author: rolyon
-manager: mtillman
+author: msaburnley
+manager: daveba
 editor: jocastel-MSFT
 ms.service: active-directory
 ms.workload: identity
@@ -13,70 +13,70 @@ ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
 ms.date: 04/19/2019
-ms.author: rolyon
+ms.author: ajburnle
 ms.reviewer: jocastel
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60a61a581574c77a57939ea23fdadc7b060b82af
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d33b4751b421f5af1536af9a88d15e060ab59bdb
+ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64541545"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68489058"
 ---
-# <a name="view-reports-and-logs-in-azure-ad-entitlement-management-preview"></a>Просмотр отчетов и журналов в управление правами Azure AD (Предварительная версия)
+# <a name="view-reports-and-logs-in-azure-ad-entitlement-management-preview"></a>Просмотр отчетов и журналов в управлении назначениями Azure AD (Предварительная версия)
 
 > [!IMPORTANT]
 > Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="view-resources-a-user-has-access-to"></a>Просмотр ресурсов, которым пользователь имеет доступ
+## <a name="view-resources-a-user-has-access-to"></a>Просмотр ресурсов, к которым у пользователя есть доступ
 
 1. Щелкните **Azure Active Directory** и выберите **Управление удостоверениями**.
 
-1. В меню слева щелкните **отчет назначения пользователей**.
+1. В меню слева щелкните **отчет о назначениях пользователей**.
 
-1. Нажмите кнопку **выберите пользователей** чтобы открыть область выбранных пользователей.
+1. Щелкните **выбрать пользователей** , чтобы открыть панель Выбор пользователей.
 
-1. Найдите пользователя в списке, который вы хотите просмотреть ресурсы, к которым они имеют доступ.
+1. Найдите пользователя в списке, к которому требуется просмотреть ресурсы, к которым у них есть доступ.
 
-1. Выберите пользователя, а затем нажмите кнопку **выберите**.
+1. Щелкните пользователя и нажмите кнопку **выбрать**.
 
-    Отображается список ресурсов, к которым пользователь имеет доступ к. Он включает в себя пакет доступа, политики и дат.
+    Отображается список ресурсов, к которым имеет доступ пользователь. Он включает в себя пакет доступа, политику и даты.
 
-    ![Отчет назначения пользователей](./media/entitlement-management-reports/user-assignments-report.png)
+    ![Отчет о назначениях пользователей](./media/entitlement-management-reports/user-assignments-report.png)
 
-## <a name="determine-the-status-of-a-users-request"></a>Определить состояние запроса пользователя
+## <a name="determine-the-status-of-a-users-request"></a>Определение состояния запроса пользователя
 
-Чтобы получить дополнительные сведения о запрошенных и получили доступ к пакету доступ пользователя, можно использовать журнал аудита Azure AD. В частности, можно использовать записи журнала в `EntitlementManagement` и `UserManagement` категории, чтобы получить дополнительные сведения об этапах обработки для каждого запроса.  
+Чтобы получить дополнительные сведения о том, как пользователь запрашивает и получил доступ к пакету Access, можно использовать журнал аудита Azure AD. В частности, можно использовать записи журнала в `EntitlementManagement` категориях и `UserManagement` для получения дополнительных сведений о шагах обработки для каждого запроса.  
 
-1. Нажмите кнопку **Azure Active Directory** и нажмите кнопку **журналы аудита**.
+1. Щелкните **Azure Active Directory** и выберите **журналы аудита**.
 
-1. В верхней, измените **категории** либо `EntitlementManagement` или `UserManagement`в зависимости от записи аудита, который вы ищете.  
+1. В верхней части измените **категорию** на `EntitlementManagement` или `UserManagement`, в зависимости от записи аудита, которую вы ищете.  
 
 1. Нажмите кнопку **Применить**.
 
-1. Чтобы скачать журналы, щелкните **загрузить**.
+1. Чтобы скачать журналы, нажмите кнопку **скачать**.
 
-Когда Azure AD получает новый запрос, он записывает записи аудита, в котором **категории** — `EntitlementManagement` и **действия** обычно `User requests access package assignment`.  В случае прямого назначения, созданные на портале Azure **действия** поле запись аудита имеет `Administrator directly assigns user to access package`, и пользователь, выполняющий назначения идентифицируется по **ActorUserPrincipalName**.
+Когда Azure AD получает новый запрос, он записывает запись аудита, в которой **Категория** является `EntitlementManagement` , а **действие** — обычно `User requests access package assignment`.  В случае прямого назначения, созданного в портал Azure, поле **действия** записи аудита имеет `Administrator directly assigns user to access package`значение, а пользователь, выполняющий назначение, идентифицируется с помощью **акторусерпринЦипалнаме**.
 
-Azure AD будет записывать дополнительные записи запроса во время выполнения, включая:
+Azure AD будет записывать дополнительные записи аудита во время выполнения запроса, в том числе:
 
-| Категория | Действие | Request status (Состояние запроса) |
+| Категория | Действия | Состояние запроса |
 | :---- | :------------ | :------------ |
 | `EntitlementManagement` | `Auto approve access package assignment request` | Запрос не требует утверждения |
 | `UserManagement` | `Create request approval` | Запрос требует утверждения |
 | `UserManagement` | `Add approver to request approval` | Запрос требует утверждения |
 | `EntitlementManagement` | `Approve access package assignment request` | Запрос утвержден |
-| `EntitlementManagement` | `Ready to fulfill access package assignment request` |Запрос утвержден, или не требует утверждения |
+| `EntitlementManagement` | `Ready to fulfill access package assignment request` |Запрос утвержден или не требует утверждения |
 
-При назначении доступ пользователя Azure AD записывает записи аудита для `EntitlementManagement` категории с **действия** `Fulfill access package assignment`.  Пользователь, который получил доступ определяется **ActorUserPrincipalName** поля.
+Когда пользователю назначается доступ, Azure AD записывает запись аудита для `EntitlementManagement` категории с **действием** `Fulfill access package assignment`.  Пользователь, получивший доступ, идентифицируется по полю **акторусерпринЦипалнаме** .
 
-Если доступ не было присвоено, то Azure AD записывает записи аудита для `EntitlementManagement` категории с **действия** либо `Deny access package assignment request`, если запрос был отклонен, утверждающее лицо или `Access package assignment request timed out (no approver action taken)`, если запрос истекло время ожидания перед Утверждающее лицо может утвердить.
+Если доступ не был назначен, `EntitlementManagement` Azure AD записывает запись аудита для категории с **действием** либо `Deny access package assignment request`, если запрос был отклонен утверждающим, либо `Access package assignment request timed out (no approver action taken)`, если время ожидания запроса истекло до утверждения утверждающего.
 
-По истечении срока действия пакетное назначение доступа пользователя отменена пользователем, или удалено администратором, а затем Azure AD записывает записи аудита для `EntitlementManagement` категории с **действия** из `Remove access package assignment`.
+По истечении срока действия назначения пакета доступа пользователем или после его удаления администратором Azure AD записывает запись аудита для `EntitlementManagement` категории с **действием** . `Remove access package assignment`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- [Устранение неполадок управления прав Azure AD](entitlement-management-troubleshoot.md)
+- [Устранение неполадок управления назначениями Azure AD](entitlement-management-troubleshoot.md)
 - [Распространенные сценарии](entitlement-management-scenarios.md)

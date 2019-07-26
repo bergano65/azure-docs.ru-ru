@@ -1,19 +1,18 @@
 ---
 title: Часто задаваемые вопросы о службе Azure Backup
 description: 'Ответы на часто задаваемые вопросы о возможностях службы Azure Backup, в частности о хранилищах служб восстановления, объектах, для которых можно создавать резервные копии, принципе работы, шифровании и ограничениях. '
-services: backup
 author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 07/07/2019
 ms.author: dacurwin
-ms.openlocfilehash: aecad4273493cd573935c78cae51bd0f59461e2e
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: c60b2bfae0d974d454c03b7eba655cbdacab5943
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67806970"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466691"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Часто задаваемые вопросы по Azure Backup
 Эта статья содержит ответы на часто задаваемые вопросы о службе Azure Backup.
@@ -40,7 +39,7 @@ ms.locfileid: "67806970"
 
 ### <a name="can-i-do-an-item-level-restore-ilr-for-vms-backed-up-to-a-recovery-services-vault"></a>Могу ли я выполнить восстановление на уровне элементов (ILR) для виртуальных машин, для которых созданы резервные копии в хранилище Служб восстановления?
 - Восстановление на уровне элементов поддерживается для виртуальных машин Azure, резервные копии которых были созданы с помощью соответствующей функции Azure. Дополнительные сведения см. в этой [статье](backup-azure-restore-files-from-vm.md).
-- На уровне Элементов не поддерживается для точек оперативного восстановления локальных виртуальных машин резервного копирования Azure backup Server или System Center DPM.
+- ILR не поддерживается для точек оперативного восстановления локальных виртуальных машин, резервное копирование которых осуществляется с помощью Azure Backup Server или System Center DPM.
 
 
 ## <a name="azure-backup-agent"></a>Агент Azure Backup
@@ -70,7 +69,7 @@ Windows 8.1, 64-разрядная версия | Корпоративная, П
 Windows 8, 64-разрядная версия | Корпоративная, Профессиональная | На компьютерах должны быть установлены последние пакеты обновления и отдельные обновления.
 Windows 7, 64-разрядная версия | Максимальная, Корпоративная, Профессиональная, Домашняя расширенная, Домашняя базовая, Начальная | На компьютерах должны быть установлены последние пакеты обновления и отдельные обновления.
 Сервер | |
-Windows Server 2019 64 разрядная | Standard, Datacenter, Essentials | Со всеми последними пакетами и обновлениями.
+Windows Server 2019 64, бит | Standard, Datacenter, Essentials | Со всеми последними пакетами и обновлениями.
 Windows Server 2016, 64-разрядная версия | Standard, Datacenter, Essentials | Со всеми последними пакетами и обновлениями.
 Windows Server 2012 R2, 64-разрядная версия | Standard, Datacenter, Foundation | Со всеми последними пакетами и обновлениями.
 Windows Server 2012, 64-разрядная версия | Datacenter, Foundation, Standard | Со всеми последними пакетами и обновлениями.
@@ -154,7 +153,7 @@ Exchange |Сумма размеров всех баз данных Exchange на
 - См. дополнительные сведения о [резервном копировании и восстановлении](./backup-overview.md#backup-and-retention).
 
 
-### <a name="how-many-times-can-i-recover-data-thats-backed-up-to-azure"></a>Сколько раз можно восстановить данные, подвергаемого резервному копированию в Azure?
+### <a name="how-many-times-can-i-recover-data-thats-backed-up-to-azure"></a>Сколько раз можно восстановить данные, которые архивируются в Azure?
 Ограничение на количество операций восстановления из службы архивации Azure отсутствует.
 
 ### <a name="when-restoring-data-do-i-pay-for-the-egress-traffic-from-azure"></a>Осуществляется ли оплата за исходящий трафик из Azure при восстановлении данных?

@@ -12,12 +12,12 @@ ms.date: 07/17/2019
 ms.author: mimart
 ms.reviewer: arvindh, japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f3b23aa7db29390ef50a72f73fb153fef5301b92
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: ddbb233bb9d0970169f040e3040b44a0b75aa1f8
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68304834"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68477179"
 ---
 # <a name="single-sign-on-to-applications-in-azure-active-directory"></a>Единый вход в приложениях в Azure Active Directory
 
@@ -71,9 +71,9 @@ ms.locfileid: "68304834"
 - SAML 2.0
 - WS-Federation
 
-Чтобы настроить приложение SaaS для единого входа на основе SAML, см. статью [Настройка единого входа на основе SAML](configure-single-sign-on-portal.md). Кроме того, многие приложения SaaS имеют руководства [для определенных приложений](../saas-apps/tutorial-list.md), которые позволяют пошагово выполнить настройку единого входа на основе SAML.
+Чтобы настроить приложение SaaS для единого входа на основе SAML, см. статью [Настройка единого входа на основе SAML](configure-single-sign-on-non-gallery-applications.md). Кроме того, многие приложения SaaS имеют руководства [для определенных приложений](../saas-apps/tutorial-list.md), которые позволяют пошагово выполнить настройку единого входа на основе SAML.
 
-Чтобы настроить приложение для WS-Federation, следуйте тем же инструкциям по настройке приложения для единого входа на основе SAML. см. раздел [Настройка единого входа на основе SAML](configure-single-sign-on-portal.md). На этапе настройки приложения для использования Azure AD необходимо заменить URL-адрес входа в Azure AD для конечной точки `https://login.microsoftonline.com/<tenant-ID>/wsfed`WS-Federation.
+Чтобы настроить приложение для WS-Federation, следуйте тем же инструкциям по настройке приложения для единого входа на основе SAML. см. раздел [Настройка единого входа на основе SAML](configure-single-sign-on-non-gallery-applications.md). На этапе настройки приложения для использования Azure AD необходимо заменить URL-адрес входа в Azure AD для конечной точки `https://login.microsoftonline.com/<tenant-ID>/wsfed`WS-Federation.
 
 Сведения о настройке локального приложения для единого входа на основе SAML см. в статье [единый вход SAML для локальных приложений с помощью прокси приложения](application-proxy-configure-single-sign-on-on-premises-apps.md).
 
@@ -100,7 +100,7 @@ ms.locfileid: "68304834"
 - Chrome в Windows 7 или более поздней версии и в Mac OS X;
 - Firefox 26.0 или более поздней версии в Windows XP с пакетом обновления 2 (SP2) или более поздней версии и в Mac OS X 10.6 или более поздней версии.
 
-Сведения о том, как настроить облачное приложение для единого входа на основе паролей, см. в разделе [Настройка приложения для единого входа на основе паролей](application-sign-in-problem-password-sso-gallery.md#configure-the-app-for-password-sso).
+Чтобы настроить облачное приложение для единого входа на основе пароля, см. статью [Настройка единого входа](configure-password-single-sign-on-non-gallery-applications.md)по паролю.
 
 Сведения о том, как настроить локальное приложение для единого входа через прокси приложения, см. в статье [Хранение паролей для единого входа с помощью прокси приложения](application-proxy-configure-single-sign-on-password-vaulting.md).
 
@@ -127,8 +127,7 @@ ms.locfileid: "68304834"
 - администраторы по-прежнему могут задавать новые учетные данные для приложения.
 
 ## <a name="linked-sign-on"></a>Связанный единый вход
-
-Связанный единый вход позволяет службе Azure AD добавлять возможность единого входа в приложение, которое уже настроено для единого входа в другой службе. Связанное приложение может быть видно пользователям на портале Office 365 или портале Azure AD MyApps. Например, пользователь может запустить приложение, настроенное для единого входа в службах федерации Active Directory 2.0 (AD FS) на портале Office 365. Для связанных приложений, запускаемых с портала Office 365 или Azure AD MyApps, также доступна дополнительная отчетность.
+Связанный единый вход позволяет службе Azure AD добавлять возможность единого входа в приложение, которое уже настроено для единого входа в другой службе. Связанное приложение может быть видно пользователям на портале Office 365 или портале Azure AD MyApps. Например, пользователь может запустить приложение, настроенное для единого входа в службах федерации Active Directory 2.0 (AD FS) на портале Office 365. Для связанных приложений, запускаемых с портала Office 365 или Azure AD MyApps, также доступна дополнительная отчетность. Сведения о настройке приложения для связанного входа см. в разделе [Настройка связанного входа](configure-linked-sign-on.md).
 
 ### <a name="linked-sign-on-for-application-migration"></a>Связанный вход для миграции приложений
 
@@ -176,7 +175,7 @@ ms.locfileid: "68304834"
 
 Сведения о настройке аутентификации на основе заголовков см. в статье [Публикация приложений с поддержкой аутентификации на основе заголовков с использованием прокси приложения Azure AD и PingAccess](application-proxy-configure-single-sign-on-with-ping-access.md).
 
-### <a name="what-is-pingaccess-for-azure-ad"></a>Что такое PingAccess для Azure AD?
+### <a name="what-is-pingaccess-for-azure-ad"></a>Что такое PingAccess для Azure AD?
 
 Используя PingAccess для Azure AD, пользователи могут получать доступ и выполнять единый вход в приложения, использующие заголовки для проверки подлинности. Прокси приложения обрабатывает такие приложения, как и любые другие, используя Azure AD для аутентификации доступа и передавая трафик через службу соединителя. После проверки подлинности служба PingAccess переводит маркер доступа Azure AD в формат заголовка, отправляемого приложению.
 
@@ -189,8 +188,9 @@ ms.locfileid: "68304834"
 Дополнительные сведения см. в разделе [Выпуски Azure Active Directory](../fundamentals/active-directory-whatis.md).
 
 ## <a name="related-articles"></a>Связанные статьи
-
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](../saas-apps/tutorial-list.md)
-- [Руководство по настройке единого входа](configure-single-sign-on-portal.md)
-- [Введение в управление доступом к приложениям](what-is-access-management.md)
-- Ссылка для скачивания: [План развертывания единого входа](https://aka.ms/SSODeploymentPlan)
+* [Руководства по интеграции приложений SaaS с Azure Active Directory](../saas-apps/tutorial-list.md)
+* [Настройка единого входа на основе SAML](configure-single-sign-on-non-gallery-applications.md)
+* [Настройка единого входа на основе пароля](configure-password-single-sign-on-non-gallery-applications.md)
+* [Настройка связанного входа](configure-linked-sign-on.md)
+* [Введение в управление доступом к приложениям](what-is-access-management.md)
+* Ссылка для скачивания: [План развертывания единого входа](https://aka.ms/SSODeploymentPlan).

@@ -74,7 +74,7 @@
         - name: Apache Hive с Apache Hadoop
           href: hdinsight-use-hive.md
           items:
-            - name: Использование средств HDInsight для Visual Studio Code
+            - name: "Использование инструментов Spark и Hive для VS\_Code"
               href: ../hdinsight-for-vscode.md
               maintainContext: true
             - name: Использование средств HDInsight для Visual Studio

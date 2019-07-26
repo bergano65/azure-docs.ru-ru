@@ -10,14 +10,14 @@ ms.reviewer: LADocs
 ms.assetid: 63b0b843-f6b0-4d9a-98d0-17500be17385
 ms.topic: article
 ms.date: 07/29/2016
-ms.openlocfilehash: d57a65bd7c9e5eefdf35b53b210585001be8a2a8
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: ec01f738ee4943659de1b49ab8d52218e6a8fb79
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876770"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68385462"
 ---
-# <a name="scenario-exception-handling-and-error-logging-for-logic-apps"></a>Сценарий. Сценарий обработки исключений и ведения журнала ошибок для приложений логики
+# <a name="scenario-exception-handling-and-error-logging-for-logic-apps"></a>Сценарий: Сценарий обработки исключений и ведения журнала ошибок для приложений логики
 
 В этом сценарии описано, как улучшить поддержку для обработки исключений в приложении логики. Мы положились на реальный вариант использования, чтобы ответить на вопрос: "Поддерживает ли Azure Logic Apps обработку ошибок и исключений?"
 
@@ -93,7 +93,7 @@ ms.locfileid: "67876770"
 ```
 
 
-## <a name="steps"></a>Действия
+## <a name="steps"></a>Шаги
 
 Необходимо записать в журнал источник (запрос) записи пациента, полученный с портала Dynamics CRM Online.
 
@@ -485,4 +485,4 @@ ms.locfileid: "67876770"
 
 * [Примеры приложений логики и распространенные сценарии](../logic-apps/logic-apps-examples-and-scenarios.md)
 * [Мониторинг приложений логики](../logic-apps/logic-apps-monitor-your-logic-apps.md)
-* [Создание шаблона развертывания приложения логики](../logic-apps/logic-apps-create-deploy-template.md)
+* [Автоматизация развертывания приложений логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)

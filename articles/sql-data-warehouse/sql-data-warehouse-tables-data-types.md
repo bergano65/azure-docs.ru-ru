@@ -2,7 +2,7 @@
 title: Определение типов данных. Хранилище данных SQL Azure | Документация Майкрософт
 description: Рекомендации по определению типов данных таблицы в хранилище данных SQL Azure.
 services: sql-data-warehouse
-author: XiaoyuL-Preview
+author: XiaoyuMSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.subservice: development
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 06a273d3bfd5d416039a992e36bd4b0f72a85f78
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 61bb977271186699b0a72389e1538573f978c56b
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65851551"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479374"
 ---
 # <a name="table-data-types-in-azure-sql-data-warehouse"></a>Типы данных таблицы в хранилище данных SQL Azure
 Рекомендации по определению типов данных таблицы в хранилище данных SQL Azure. 
@@ -66,5 +66,5 @@ WHERE y.[name] IN ('geography','geometry','hierarchyid','image','text','ntext','
 | Значения по умолчанию | Значения по умолчанию поддерживают только литералы и константы. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о разработке таблиц см. в статье [Общие сведения о проектировании таблиц в хранилище данных SQL Azure](sql-data-warehouse-tables-overview.md).

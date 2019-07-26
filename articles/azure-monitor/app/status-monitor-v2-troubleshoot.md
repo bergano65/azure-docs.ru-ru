@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: c61d54fc49ddd0a8a9ac5063c1a2a3edea66a899
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
-ms.translationtype: HT
+ms.openlocfilehash: e34beba32eace370664893225dd85b6f4b79c886
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68326228"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68424101"
 ---
 # <a name="troubleshooting-status-monitor-v2"></a>Устранение неполадок монитор состояния v2
 
@@ -78,11 +78,13 @@ ms.locfileid: "68326228"
 
 ### <a name="iis-nested-applications"></a>Вложенные приложения IIS
 
-Мы не инструментирован вложенные приложения в IIS версии 1,0. Мы отслеживаем эту ошибку [здесь](https://github.com/microsoft/ApplicationInsights-Home/issues/369).
+Мы не инструментирован вложенные приложения в IIS версии 1,0.
+Мы отслеживаем эту ошибку [здесь](https://github.com/microsoft/ApplicationInsights-Home/issues/369).
 
 ### <a name="advanced-sdk-configuration-isnt-available"></a>Расширенная конфигурация пакета SDK недоступна.
 
-Конфигурация пакета SDK не предоставляется конечному пользователю в версии 1,0. Мы отслеживаем эту ошибку [здесь](https://github.com/microsoft/ApplicationInsights-Home/issues/375).
+Конфигурация пакета SDK не предоставляется конечному пользователю в версии 1,0.
+Мы отслеживаем эту ошибку [здесь](https://github.com/microsoft/ApplicationInsights-Home/issues/375).
 
     
     
@@ -116,7 +118,7 @@ Cmdlet          Start-ApplicationInsightsMonitoringTrace           0.4.0      Az
 ```
 
 #### <a name="determine-the-current-version-of-the-status-monitor-v2-module"></a>Определение текущей версии модуля монитор состояния v2
-`Get-ApplicationInsightsMonitoringStatus` Выполните команду, чтобы отобразить следующие сведения о модуле:
+`Get-ApplicationInsightsMonitoringStatus -PowerShellModule` Выполните команду, чтобы отобразить следующие сведения о модуле:
    - Версия модуля PowerShell
    - Версия пакета SDK Application Insights
    - Пути к файлам модуля PowerShell
@@ -148,7 +150,7 @@ Cmdlet          Start-ApplicationInsightsMonitoringTrace           0.4.0      Az
 5. Задайте следующие **дополнительные поставщики**:`61f6ca3b-4b5f-5602-fa60-759a2a2d1fbd,323adc25-e39b-5c87-8658-2c1af1a92dc5,925fa42b-9ef6-5fa7-10b8-56449d7a2040,f7d60e07-e910-5aca-bdd2-9de45b46c560,7c739bb9-7861-412e-ba50-bf30d95eae36,61f6ca3b-4b5f-5602-fa60-759a2a2d1fbd,323adc25-e39b-5c87-8658-2c1af1a92dc5,252e28f4-43f9-5771-197a-e8c7e750a984`
 
 
-#### <a name="collecting-logs"></a>Сбор журналов
+#### <a name="collecting-logs"></a>Собираем журналы
 
 1. В командной консоли с правами администратора выполните `iisreset /stop` команду, чтобы отключить службы IIS и все веб-приложения.
 2. В PerfView выберите **начать сбор**.

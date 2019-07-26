@@ -1,19 +1,18 @@
 ---
 title: Устранение неполадок System Center Data Protection Manager с помощью Azure Backup
 description: Устранение неполадок при работе с System Center Data Protection Manager.
-services: backup
 author: kasinh
 manager: vvithal
 ms.service: backup
 ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: kasinh
-ms.openlocfilehash: 4108616e3ae41e2c88b74bb08d5f846c0035101f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5e4aa113eda6ea53c520e6de52e4fa17d75f4095
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60236201"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68465380"
 ---
 # <a name="troubleshoot-system-center-data-protection-manager"></a>Устранение неполадок при работе с System Center Data Protection Manager
 
@@ -22,7 +21,7 @@ ms.locfileid: "60236201"
 Последние заметки о выпуске System Center Data Protection Manager приведены в [документации по System Center](https://docs.microsoft.com/system-center/dpm/dpm-release-notes?view=sc-dpm-2016). Узнать больше о поддержке Data Protection Manager можно из [этой матрицы](https://docs.microsoft.com/system-center/dpm/dpm-protection-matrix?view=sc-dpm-2016).
 
 
-## <a name="error-replica-is-inconsistent"></a>Ошибка: Несогласованная реплика.
+## <a name="error-replica-is-inconsistent"></a>Ошибка: Реплика не согласована
 
 Реплика может быть несогласованной по следующим причинам.
 - Ошибка задания создания реплики.
@@ -42,7 +41,7 @@ ms.locfileid: "60236201"
 - Убедитесь, что диск работоспособен и содержит достаточно места для реплики.
 - Проверьте, нет ли выполняющихся параллельно аналогичных заданий резервного копирования.
 
-## <a name="error-online-recovery-point-creation-failed"></a>Ошибка: Сбой при создании точки восстановления в сети.
+## <a name="error-online-recovery-point-creation-failed"></a>Ошибка: Сбой при создании точки восстановления в сети
 
 Чтобы устранить эту проблему, выполните описанные ниже действия.
 - Убедитесь, что вы используете самую последнюю версию агента Azure Backup.
@@ -53,7 +52,7 @@ ms.locfileid: "60236201"
 - Убедитесь, что реплика существует.
 - Убедитесь, что реплика содержит достаточно места для создания журнала номеров последовательных обновлений (USN).
 
-## <a name="error-unable-to-configure-protection"></a>Ошибка: Не удалось настроить защиту.
+## <a name="error-unable-to-configure-protection"></a>Ошибка: Не удалось настроить защиту
 
 Эта ошибка возникает, когда серверу Data Protection Manager не удается связаться с защищенным сервером. 
 

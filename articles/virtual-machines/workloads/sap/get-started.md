@@ -14,15 +14,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 07/15/2019
+ms.date: 07/24/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: df12d4f7b2a06b89df1bfd7d7d904943e341ccd2
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 8f4352a1f6a065d1e9be78f01bde95c8f00593a3
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234254"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479771"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Использование Azure для размещения и запуска сценариев рабочей нагрузки SAP
 
@@ -34,8 +34,9 @@ ms.locfileid: "68234254"
 
 Размещение сценариев рабочей нагрузки SAP в Azure также может привести к созданию требований интеграции удостоверений и единого входа. Такая ситуация может возникать, если вы используете Azure Active Directory (Azure AD) для подключения различных компонентов SAP и программного обеспечения SAP или платформы как услуги (PaaS). Список сценариев интеграции и единого входа с сущностями Azure AD и SAP описан в разделе "Интеграция AAD SAP и единый вход".
 
-## <a name="latest-changes"></a>Последние изменения
+## <a name="change-log"></a>Журнал изменений
 
+- Изменения в [кластере экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью файлового ресурса в Azure](sap-high-availability-guide-wsfc-file-share.md) для отражения поддержки прямого дискового пространства службами Azure Site Recovery Services
 - Выпуск [групп размещения Azure с учетом расположения для оптимальной сетевой задержки с помощью приложений SAP](sap-proximity-placement-scenarios.md)
 - Выпуск нового руководством по [IBM DB2 HADR на сервере Red Hat Enterprise](high-availability-guide-rhel-ibm-db2-luw.md)
 - Выпуск [высокого уровня доступности SAP NetWeaver на Red Hat Enterprise Linux с Azure NetApp Files для приложений SAP](high-availability-guide-rhel-netapp-files.md)

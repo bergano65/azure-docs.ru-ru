@@ -10,12 +10,12 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: 5c1b1e15-3b6c-49dc-98a6-bdbe7cb75339
 ms.date: 07/21/2017
-ms.openlocfilehash: 851943ad967a79a6800a899b31d0cf9f90a6889b
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 840124a35ed4389699757e011aaf5d05a9400836
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68312242"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68385524"
 ---
 # <a name="monitor-status-set-up-diagnostics-logging-and-turn-on-alerts-for-azure-logic-apps"></a>Мониторинг состояния, настройка ведения журнала диагностики и включение предупреждений для Azure Logic Apps
 
@@ -293,6 +293,6 @@ ms.locfileid: "68312242"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* [Создание шаблонов для развертывания приложений логики и управления выпусками](../logic-apps/logic-apps-create-deploy-template.md)
+* [Автоматизация развертывания приложений логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)
 * [Сценарии B2B с пакетом интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md)
 * [Мониторинг сообщений B2B](../logic-apps/logic-apps-monitor-b2b-message.md)
