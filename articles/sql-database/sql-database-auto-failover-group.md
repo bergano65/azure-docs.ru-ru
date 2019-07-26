@@ -12,12 +12,12 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 07/18/2019
-ms.openlocfilehash: 174147aca75452dfaee02d20df5377fa1f6070c1
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: bd68909f51ff6cead8484ae4ab9f2557e9d6554e
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325097"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68443326"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Использование групп автоматической отработки отказа для включения прозрачной и согласованной отработки отказа в нескольких базах данных
 
@@ -31,7 +31,7 @@ ms.locfileid: "68325097"
 Во время работы с группами автоматической отработки отказа с политикой автоматической отработки отказа любой сбой, который влияет на базы данных на сервере Базы данных SQL или в управляемом экземпляре, приведет к автоматической отработки отказа. Управляйте группами автоматической отработки отказа используя:
 
 - [портал Azure](sql-database-implement-geo-distributed-database.md).
-- [PowerShell: группа отработки отказа](scripts/sql-database-setup-geodr-failover-database-failover-group-powershell.md);
+- [PowerShell: группа отработки отказа](scripts/sql-database-add-single-db-to-failover-group-powershell.md);
 - [REST API: группа отработки отказа](https://docs.microsoft.com/rest/api/sql/failovergroups).
 
 После отработки отказа убедитесь, что для новой базы данных-источника настроены требования аутентификации ваших сервера и базы данных. Дополнительные сведения см. в разделе [Безопасность базы данных SQL после аварийного восстановления](sql-database-geo-replication-security-config.md).
@@ -310,7 +310,7 @@ ms.locfileid: "68325097"
 |  | |
 
 > [!IMPORTANT]
-> Пример сценария см. в статье [Use PowerShell to configure an active geo-replication failover group for a single Azure SQL database](scripts/sql-database-setup-geodr-failover-database-failover-group-powershell.md) (Использование PowerShell для настройки группы отработки отказа активной георепликации для отдельной базы данных SQL Azure).
+> Пример сценария см. в статье [Use PowerShell to configure an active geo-replication failover group for a single Azure SQL database](scripts/sql-database-add-single-db-to-failover-group-powershell.md) (Использование PowerShell для настройки группы отработки отказа активной георепликации для отдельной базы данных SQL Azure).
 >
 
 ### <a name="powershell-managing-failover-groups-with-managed-instances-preview"></a>PowerShell: Управление группами отработки отказа с помощью Управляемого экземпляра (предварительная версия)
@@ -371,7 +371,7 @@ ms.locfileid: "68325097"
 - Ознакомьтесь с примерами скриптов в следующих статьях:
   - [Настройка активной георепликации для отдельной базы данных SQL Azure с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-database-powershell.md)
   - [Настройка активной георепликации для базы данных SQL Azure в пуле с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-pool-powershell.md)
-  - [Настройка и отработка отказа для группы отработки отказа для отдельной базы данных](scripts/sql-database-setup-geodr-failover-database-failover-group-powershell.md)
+  - [Настройка и отработка отказа для группы отработки отказа для отдельной базы данных](scripts/sql-database-add-single-db-to-failover-group-powershell.md)
 - Сведения об обеспечении непрерывности бизнес-процессов и возможные сценарии описаны в [обзоре непрерывности бизнес-процессов](sql-database-business-continuity.md)
 - Чтобы узнать об автоматически создаваемых резервных копиях базы данных SQL Azure, ознакомьтесь с разделом [Общие сведения об автоматическом резервном копировании базы данных SQL](sql-database-automated-backups.md).
 - Чтобы узнать об использовании автоматически создаваемых резервных копий для восстановления, ознакомьтесь с [восстановлением базы данных из резервных копий, инициируемых службой](sql-database-recovery-using-backups.md).

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: b298d73620990dd8f6c6577818adaef9788122e9
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 50703ede205b42032e9618c1b16b0de2bd7f3a23
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68326318"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68424138"
 ---
 # <a name="status-monitor-v2-api-get-applicationinsightsmonitoringstatus"></a>API монитор состояния v2: Get-Аппликатионинсигхтсмониторингстатус
 
@@ -34,12 +34,11 @@ ms.locfileid: "68326318"
 
 ## <a name="examples"></a>Примеры
 
-### <a name="example-application-status"></a>Пример: Состояние приложения
+### <a name="example-application-status"></a>Пример Состояние приложения
 
 Выполните команду `Get-ApplicationInsightsMonitoringStatus` , чтобы отобразить состояние мониторинга веб-сайтов.
 
 ```
-Machine Identifier:
 PS C:\Windows\system32> Get-ApplicationInsightsMonitoringStatus
 Machine Identifier:
 811D43F7EC807E389FEA2E732381288ACCD70AFFF9F569559AC3A75F023FA639
@@ -81,7 +80,7 @@ AppAlreadyInstrumented : true
 - **DemoWebApp333** был вручную инструментирован с помощью пакета SDK для Application Insights. Монитор состояния обнаружил пакет SDK и не отслеживает этот сайт.
 
 
-### <a name="example-powershell-module-information"></a>Пример: Сведения о модуле PowerShell
+### <a name="example-powershell-module-information"></a>Пример Сведения о модуле PowerShell
 
 Выполните команду `Get-ApplicationInsightsMonitoringStatus -PowerShellModule` , чтобы отобразить сведения о текущем модуле:
 
@@ -135,7 +134,7 @@ ApplicationInsightsSdkPath (Exists: True)
 C:\Program Files\WindowsPowerShell\Modules\Az.ApplicationMonitor\content\Runtime\Microsoft.ApplicationInsights.dll
 ```
 
-### <a name="example-runtime-status"></a>Пример: Состояние среды выполнения
+### <a name="example-runtime-status"></a>Пример Состояние среды выполнения
 
 Вы можете проверить процесс на инструментированном компьютере, чтобы узнать, загружены ли все библиотеки DLL. Если наблюдение работает, необходимо загрузить не менее 12 библиотек DLL.
 

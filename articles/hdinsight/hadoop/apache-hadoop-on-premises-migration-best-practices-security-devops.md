@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: hrasheed
-ms.openlocfilehash: 1d13b52d253562a24946e6df2fc069f41b485fef
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0e7db970bee44d40831c05e8911b72841d027211
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64707888"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68442089"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---security-and-devops-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по обеспечению безопасности и операциям DevOps
 
@@ -52,7 +52,7 @@ ms.locfileid: "64707888"
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Общие сведения об обеспечении безопасности Apache Hadoop с помощью Корпоративного пакета безопасности](../domain-joined/apache-domain-joined-introduction.md)
+- [Общие сведения об обеспечении безопасности Apache Hadoop с помощью Корпоративного пакета безопасности](../domain-joined/hdinsight-security-overview.md)
 
 - [Корпоративный пакет безопасности для HDInsight](../domain-joined/apache-domain-joined-architecture.md)
 - [Настройка кластера HDInsight с Корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](../domain-joined/apache-domain-joined-configure-using-azure-adds.md)
@@ -122,6 +122,6 @@ ms.locfileid: "64707888"
 2. **Выполнение тестов**. Выполните функциональные тесты и тесты производительности в итеративном режиме.
 3. **Оптимизация**. Устраните любые проблемы с производительностью на основе вышеуказанных результатов тестов, а затем выполните повторное тестирование для подтверждения повышения производительности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Сведения об HDInsight 4.0](https://docs.microsoft.com/azure/hdinsight/hadoop/apache-hadoop-introduction).

@@ -1,19 +1,19 @@
 ---
 title: Структурированная потоковая передача Spark в Azure HDInsight
 description: Инструкции по использованию приложений структурированной потоковой передачи Spark в кластерах HDInsight Spark.
-author: maxluk
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/05/2018
-ms.author: maxluk
-ms.openlocfilehash: 0e9d87e5b344b7091a2a0cf41d6f7fa3484dfcf3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: hrasheed
+ms.openlocfilehash: 0aaca127fec82d35da0ba943e97221834c2e42ed
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64711325"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68441914"
 ---
 # <a name="overview-of-apache-spark-structured-streaming"></a>Обзор структурированной потоковой передачи Apache Spark
 
@@ -137,7 +137,7 @@ ms.locfileid: "64711325"
 
 Состояние всех приложений можно также проверить с помощью запроса GET к конечной точке LIVY. Наконец, можно закрыть работающее приложение, выполнив запрос DELETE к конечной точке LIVY. Дополнительные сведения об API LIVY см. в статье [Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](apache-spark-livy-rest-interface.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md)
 * [Руководство по программированию структурированной потоковой передачи Apache Spark](https://spark.apache.org/docs/2.1.0/structured-streaming-programming-guide.html)

@@ -1,25 +1,24 @@
 ---
 title: Устранение ошибок при резервном копировании баз данных SAP HANA с помощью Azure Backup | Документация Майкрософт
 description: Описание способов устранения распространенных ошибок, которые могут возникнуть при использовании Azure Backup для резервного копирования SAP HANA баз данных.
-services: backup
 author: pvrk
 manager: vijayts
 ms.service: backup
 ms.topic: conceptual
-ms.date: 06/28/2019
+ms.date: 07/22/2019
 ms.author: pullabhk
-ms.openlocfilehash: 32e814ea83f30b48af5ce507ce250f37a34390da
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 221b669c141681749709d6a5a406c78499f21032
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68249486"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68465477"
 ---
 # <a name="troubleshoot-backup-of-sap-hana-databases-on-azure"></a>Устранение неполадок резервного копирования баз данных SAP HANA в Azure
 
 В этой статье содержатся сведения об устранении неполадок при резервном копировании баз данных SAP HANA на виртуальных машинах Azure.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В рамках [необходимых условий](backup-azure-sap-hana-database.md#prerequisites)убедитесь, что сценарий предварительной регистрации был запущен на виртуальной машине, где установлен Hana.
 

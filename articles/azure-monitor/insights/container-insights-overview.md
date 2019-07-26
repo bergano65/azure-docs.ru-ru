@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/12/2019
+ms.date: 07/22/2019
 ms.author: magoedte
-ms.openlocfilehash: 7d8fb7bc0e837ba78d86a39524d869c9bb01895d
-ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
+ms.openlocfilehash: 96a312630c92048f36f79e3bec18f83ed5a445ff
+ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67867568"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68414128"
 ---
 # <a name="azure-monitor-for-containers-overview"></a>Обзор службы "Azure Monitor для контейнеров"
 
@@ -44,12 +44,18 @@ Azure Monitor для контейнеров — это комплексный п
 >В настоящее время поддержка Prometheus является функцией в общедоступной предварительной версии.
 >
 
+Ознакомьтесь со следующим видео, в котором приведен подробный обзор промежуточного уровня, который поможет вам узнать о мониторинге кластера AKS с помощью Azure Monitor для контейнеров.
+
+> [!VIDEO https://www.youtube.com/embed/RjsNmapggPU]
+
 ## <a name="how-do-i-access-this-feature"></a>Как получить доступ к этому компоненту?
+
 Вы можете получить доступ к Azure Monitor для контейнеров двумя способами: из Azure Monitor или непосредственно из выбранного кластера AKS. С Azure Monitor Вы имеете глобальную перспективу по всем развернутым контейнерам, которые отслеживаются и не позволяют выполнять поиск и фильтрацию по подпискам и группам ресурсов, а затем детализировать Azure Monitor для контейнеров из выбранный контейнер.  В противном случае доступ к функции можно получить непосредственно из выбранного контейнера AKS на странице AKS.  
 
 ![Общие сведения о методах доступа к Azure Monitor для контейнеров](./media/container-insights-overview/azmon-containers-experience.png)
 
-Если вы заинтересованы мониторинге узлов контейнеров Docker и Windows и управлении ими для просмотра конфигурации, аудита и изучения данных об использовании ресурсов, ознакомьтесь с разделом [Решение для мониторинга контейнеров в Log Analytics](../../azure-monitor/insights/containers.md).
+Если вы заинтересованы в мониторинге и управлении узлами контейнеров DOCKER и Windows, запущенными за пределами AKS для просмотра конфигурации, аудита и использования ресурсов, см. раздел [решение для мониторинга контейнеров](../../azure-monitor/insights/containers.md).
 
 ## <a name="next-steps"></a>Следующие шаги
+
 Чтобы начать мониторинг кластера AKS, ознакомьтесь со сведениями о том, [как включить Azure Monitor для контейнеров](container-insights-onboard.md) , чтобы понять требования и доступные методы для включения мониторинга.  

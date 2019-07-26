@@ -1,19 +1,18 @@
 ---
 title: Резервное копирование фермы SharePoint в облако Azure с помощью Azure Backup Server
 description: Резервное копирование данных SharePoint с помощью Azure Backup Server. Эта статья содержит информацию о настройке фермы SharePoint для сохранения нужных данных в Azure. Защищенные данные SharePoint можно восстановить с диска или из Azure.
-services: backup
 author: kasinh
 manager: vvithal
 ms.service: backup
 ms.topic: conceptual
 ms.date: 6/8/2018
 ms.author: kasinh
-ms.openlocfilehash: 7c0a39ab09a52d61e51d297c5018eac6b00d7ad4
-ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
+ms.openlocfilehash: cc7a5f6703d8d6fcec800071e75b7ca42c8f1cef
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67625170"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466696"
 ---
 # <a name="back-up-a-sharepoint-farm-to-azure"></a>Архивация фермы SharePoint в Azure
 Резервное копирование SharePoint в Microsoft Azure с помощью Microsoft Azure Backup Server (MABS) во многом напоминает резервное копирование других источников данных. Служба архивации Azure позволяет гибко планировать архивацию, задавая ежедневные, еженедельные, ежемесячные или ежегодные точки архивации, и предоставляет параметры политики хранения для любой из этих точек. Также она позволяет сохранять копии локальных дисков для краткосрочных целей времени восстановления, а также сохранять копии в Azure для экономичного и длительного хранения.
@@ -25,7 +24,7 @@ ms.locfileid: "67625170"
 | --- | --- | --- | --- |
 | SharePoint |SharePoint 2016, SharePoint 2013, SharePoint 2010, SharePoint 2007, SharePoint 3.0 |SharePoint разворачивается как физический сервер или виртуальная машина Hyper-V/VMware <br> -------------- <br> SQL AlwaysOn | Параметры восстановления фермы SharePoint: ферма, база данных, файл или элемент списка для восстановления из точек восстановления диска.  Восстановление фермы и базы данных из точек восстановления Azure. |
 
-## <a name="before-you-start"></a>Перед началом работы
+## <a name="before-you-start"></a>Перед началом
 Перед архивацией фермы SharePoint в Azure необходимо выполнить некоторые действия.
 
 ### <a name="prerequisites"></a>предварительные требования

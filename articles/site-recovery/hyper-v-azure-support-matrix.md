@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 05/30/2019
 ms.author: raynew
-ms.openlocfilehash: bce9f3b3a574d27e2fb47fb9b2da9470c43fd2eb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 78a531c769612af0597e732f0dc539286dd7cdac
+ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66399431"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68489876"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Таблица поддержки аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -33,8 +33,8 @@ Hyper-V без Virtual Machine Manager | Вы можете выполнять а
 
 **Server** | **Требования** | **Сведения**
 --- | --- | ---
-Hyper-V (без Virtual Machine Manager) |  2019 сервера Windows, Windows Server 2016 (включая server core installation) Windows Server 2012 R2 с последними обновлениями. | Если вы уже настроили Windows Server 2012 R2 или SCVMM 2012 R2 с помощью Azure Site Recovery и планируете обновить операционную систему, следуйте указаниям в [документации.](upgrade-2012R2-to-2016.md) 
-Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2019 г., 2016 Virtual Machine Manager 2012 R2 Virtual Machine Manager | Если используется Virtual Machine Manager, узлы Windows Server 2019 должны управляться в Virtual Machine Manager 2019. Аналогичным образом узлы Windows Server 2016 должны управляться в Virtual Machine Manager 2016.<br/><br/>
+Hyper-V (без Virtual Machine Manager) |  Windows Server 2019, Windows Server 2016 (включая установку Server Core), Windows Server 2012 R2 с последними обновлениями | Если вы уже настроили Windows Server 2012 R2 или SCVMM 2012 R2 с помощью Azure Site Recovery и планируете обновить операционную систему, следуйте указаниям в [документации.](upgrade-2012R2-to-2016.md) 
+Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2019, Virtual Machine Manager 2016, Virtual Machine Manager 2012 R2 | Если используется Virtual Machine Manager, узлы Windows Server 2019 должны управляться в Virtual Machine Manager 2019. Аналогичным образом узлы Windows Server 2016 должны управляться в Virtual Machine Manager 2016.<br/><br/>
 
 
 ## <a name="replicated-vms"></a>Реплицированные виртуальные машины
@@ -92,7 +92,7 @@ IPv4 | Да | Да
 
 **Хранилище** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
 --- | --- | --- 
-NFS | Нет данных | Нет данных
+NFS | Н/Д | Н/Д
 SMB 3.0 | Да | Да
 Сеть SAN (iSCSI) | Да | Да
 Многопутевое (Multipath I/O). Протестировано с использованием:<br></br> Microsoft DSM, EMC PowerPath 5.7 SP4<br/><br/> EMC PowerPath DSM для CLARiiON | Да | Да
@@ -101,37 +101,37 @@ SMB 3.0 | Да | Да
 
 **Хранилище** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
 --- | --- | ---
-VMDK | Нет данных | Нет данных
+VMDK | Н/Д | Н/Д
 VHD (VHDX) | Да | Да
 Виртуальная машина поколения 2 | Да | Да
 UEFI (EFI)| Да | Да
 Общий диск кластера | Нет | Нет
 Зашифрованный диск | Нет | Нет
-NFS | Нет данных | Нет данных
+NFS | Н/Д | Н/Д
 SMB 3.0 | Нет | Нет
-RDM | Нет данных | Нет данных
+RDM | Н/Д | Н/Д
 Диски размером более 1 ТБ | Да, до 4095 ГБ | Да, до 4095 ГБ
 Диск: логический и физический сектор размером 4 КБ | Не поддерживается: поколение 1, поколение 2 | Не поддерживается: поколение 1, поколение 2
 Диск: логический сектор размером 4 КБ и физический сектор размером 512 байт | Да |  Да
 Управление логическими томами (LVM). LVM поддерживается только на дисках данных. Azure предоставляет только один диск с ОС. | Да | Да
 Том с чередующимся диском размером более 1 ТБ | Да | Да
-Дисковые пространства | Да | Да
+Дисковые пространства | Нет | Нет
 "Горячее" добавление или удаление диска | Нет | Нет
 Исключение диска | Да | Да
 Многопутевой (MPIO) | Да | Да
 
-## <a name="azure-storage"></a>Хранилище Azure
+## <a name="azure-storage"></a>Служба хранилища Azure
 
 **Компонент** | **Hyper-V с Virtual Machine Manager** | **Hyper-V без Virtual Machine Manager**
 --- | --- | ---
 Локально избыточное хранилище | Да | Да
-Гео-избыточное хранилище | Да | Да
+Геоизбыточное хранилище | Да | Да
 Геоизбыточное хранилище с доступом для чтения | Да | Да
 "Холодное" хранилище | Нет | Нет
 "Горячее" хранилище| Нет | Нет
-Блочные BLOB-объекты | Нет | Нет
+Blob-блоки | Нет | Нет
 Шифрование неактивных данных (SSE)| Да | Да
-Хранилище класса Premium | Да | Да
+Хранилище уровня "Премиум" | Да | Да
 Служба импорта и экспорта | Нет | Нет
 Брандмауэры службы хранилища Azure для виртуальных сетей, настроенные в целевой учетной записи хранения или кэширования (используемой для хранения данных репликации) | Нет | Нет
 
@@ -161,7 +161,7 @@ RDM | Нет данных | Нет данных
 Диск FC | Не поддерживается | Если не поддерживается, проверка на соответствие обязательным требованиям завершается ошибкой.
 Формат жесткого диска | VHD <br/><br/> VHDX | Служба Site Recovery автоматически преобразует формат VHDX в VHD при отработке отказа в Azure. При восстановлении до локальной системы виртуальные машины продолжают использовать формат VHDX.
 BitLocker | Не поддерживается | Прежде чем включать репликацию для виртуальной машины, необходимо отключить BitLocker.
-имя виртуальной машины; | От 1 до 63 символов, при этом допустимы только буквы, цифры и дефисы Имя виртуальной машины должно начинаться и заканчиваться буквой или цифрой. | Обновите значение в свойствах виртуальной машины в службе Site Recovery.
+Имя виртуальной машины | От 1 до 63 символов, при этом допустимы только буквы, цифры и дефисы Имя виртуальной машины должно начинаться и заканчиваться буквой или цифрой. | Обновите значение в свойствах виртуальной машины в службе Site Recovery.
 Тип виртуальной машины | Поколение 1<br/><br/> Поколение 2 — Windows | Поддерживаются виртуальные машины второго поколения с диском ОС типа "Базовый" (включая один или два тома данных в формате VHDX) и объемом менее 300 ГБ.<br></br>Виртуальные машины Linux второго поколения не поддерживаются. [Узнайте больше](https://azure.microsoft.com/blog/2015/04/28/disaster-recovery-to-azure-enhanced-and-were-listening/).|
 
 ## <a name="recovery-services-vault-actions"></a>Действия хранилища служб восстановления
@@ -179,7 +179,7 @@ BitLocker | Не поддерживается | Прежде чем включа
 
 Чтобы обеспечить совместимость развертывания с параметрами, описанными в этой статье, используйте последние версии поставщика и агента.
 
-**Имя** | **Описание** | **Сведения**
+**Name** | **Описание** | **Сведения**
 --- | --- | --- 
 Поставщик Azure Site Recovery | Координирует взаимодействие между локальными серверами и Azure <br/><br/> Hyper-V с Virtual Machine Manager: установлено на серверы Virtual Machine Manager<br/><br/> Hyper-V без Virtual Machine Manager: установлено на узлах Hyper-V| Последняя версия: 5.1.2700.1 (доступна на портале Azure)<br/><br/> [Новейшие функции и последние исправления](https://support.microsoft.com/help/4091311/update-rollup-23-for-azure-site-recovery)
 Агент служб восстановления Microsoft Azure | Координирует репликацию между виртуальными машинами Hyper-V и Azure.<br/><br/> Устанавливается на локальных серверах Hyper-V (с или без Virtual Machine Manager). | Последняя версия агента, доступная на портале
@@ -189,5 +189,5 @@ BitLocker | Не поддерживается | Прежде чем включа
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Узнайте, как [подготовить Azure](tutorial-prepare-azure.md) для аварийного восстановления локальных виртуальных машин Hyper-V.

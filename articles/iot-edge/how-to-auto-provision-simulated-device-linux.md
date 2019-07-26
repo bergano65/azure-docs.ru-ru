@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 1a13c130c45c746a42c0acf1ec2646f3c8f9bc51
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
-ms.translationtype: HT
+ms.openlocfilehash: b48455b6ea9c1cd74e94c10d8f9f938c20512c02
+ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68227531"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68414578"
 ---
 # <a name="create-and-provision-an-iot-edge-device-with-a-virtual-tpm-on-a-linux-virtual-machine"></a>Создание и инициализация устройства IoT Edge с помощью виртуального доверенного платформенного модуля на виртуальной машине Linux
 
@@ -162,8 +162,7 @@ Azure IoT Edge устройства можно автоматически под
 
 Узнайте **область идентификатора** Службы подготовки устройств к добавлению в Центр Интернета вещей и **идентификатор регистрации** устройства, прежде чем переходить к статье, соответствующей типу вашего устройства. Если был установлен приведенный в примере Ubuntu server, то используйте инструкции **x64**. Среда выполнения IoT Edge должна быть настроена на автоматическую подготовку, а не подготовку вручную. 
 
-* [Установка среды выполнения Azure IoT Edge в Linux (x64)](how-to-install-iot-edge-linux.md)
-* [Установка среды выполнения Azure IoT Edge в Linux (ARM32v7/армхф)](how-to-install-iot-edge-linux-arm.md)
+[Установка среды выполнения Azure IoT Edge в Linux](how-to-install-iot-edge-linux.md)
 
 ## <a name="give-iot-edge-access-to-the-tpm"></a>Предоставление доступа IoT Edge доверенному платформенному модулю
 

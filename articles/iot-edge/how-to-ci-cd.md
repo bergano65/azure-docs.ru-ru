@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: f449449c542ce6ac04daa58ff37a3577f0d75aee
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 659a6f5acaac848084ed1e9590a414191542b54a
+ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61222059"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68414631"
 ---
 # <a name="continuous-integration-and-continuous-deployment-to-azure-iot-edge"></a>Непрерывная интеграция и непрерывное развертывание в Azure IoT Edge
 
@@ -25,7 +25,7 @@ ms.locfileid: "61222059"
 ![Схема ветвей CI и CD для разработки и эксплуатации](./media/how-to-ci-cd/cd.png)
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Репозиторий Azure Repos. Если у вас его нет, вы можете [создать репозиторий Git в проекте](https://docs.microsoft.com/azure/devops/repos/git/create-new-repo?view=vsts&tabs=new-nav).
 * Решение IoT Edge, зафиксированное и отправленное в репозиторий. Если вы хотите создать пример решения для тестирования инструкций в этой статье, следуйте шагам, изложенным в статье [Использование Visual Studio Code для разработки и отладки модулей для Azure IoT Edge](how-to-vs-code-develop-module.md) или [Сведения об использовании Visual Studio 2017 для разработки и отладки модулей C# для Azure IoT Edge (предварительная версия)](how-to-visual-studio-develop-csharp-module.md).
@@ -47,7 +47,7 @@ ms.locfileid: "61222059"
 >
 >Дополнительные сведения см. в разделе о [создании конвейера сборки](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer?view=vsts&tabs=new-nav#create-a-build-pipeline).
 
-1. Вход в вашей организации DevOps в Azure (**https:\//dev.azure.com/{your организации} /** ) и откройте проект, который содержит репозиторий решения IoT Edge.
+1. Войдите в свою организацию Azure DevOps (**https:\//дев.Азуре.ком/{йоур Organization}/** ) и откройте проект, содержащий репозиторий решения для IOT Edge.
 
    В этой статье мы создали репозиторий, который называется **IoTEdgeRepo**. Этот репозиторий содержит **IoTEdgeSolution** с кодом для модуля под названием **filtermodule**. 
 
@@ -73,7 +73,7 @@ ms.locfileid: "61222059"
 
    * Если вы хотите создавать модули на платформе amd64 для контейнеров Windows 1809, вам необходимо [настроить агента в Windows в локальной среде](https://docs.microsoft.com/azure/devops/pipelines/agents/v2-windows?view=vsts).
 
-   * Если вы хотите компилировать модули на платформе arm32v7 для контейнеров Linux, вам необходимо [настроить агента в Linux в локальной среде](https://blogs.msdn.microsoft.com/iotdev/2018/11/13/setup-azure-iot-edge-ci-cd-pipeline-with-arm-agent/).
+   * Если вы хотите создать модули на платформе platform arm32v7 или arm64 для контейнеров Linux, необходимо [настроить самостоятельный агент в Linux](https://blogs.msdn.microsoft.com/iotdev/2018/11/13/setup-azure-iot-edge-ci-cd-pipeline-with-arm-agent/).
     
      ![Настройка пула агентов сборки](./media/how-to-ci-cd/configure-env.png)
 
@@ -210,7 +210,7 @@ ms.locfileid: "61222059"
 
 3. Выберите задание сборки, чтобы просмотреть ход его выполнения. Если конвейер сборки завершится успешно, он активирует выпуск для этапа **QA**. 
 
-    ![Журналы сборки](./media/how-to-ci-cd/build-logs.png)
+    ![Создать журналы](./media/how-to-ci-cd/build-logs.png)
 
 4. Успешное развертывание для этапа **QA** активирует отправку уведомления утверждающему. Убедитесь, что модули успешно развернуты в одно или несколько устройств, на которые нацелен этап контроля качества. Затем перейдите к конвейеру выпуска и дайте разрешение на переход к этапу PROD, нажав кнопку **PROD**, а затем выбрав **Подтвердить**. 
 
@@ -218,7 +218,7 @@ ms.locfileid: "61222059"
 
 5. После того, как утверждающий утвердит изменение, его можно развернуть в **PROD**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Основные сведения о развертывании IoT Edge см. в статье [Understand IoT Edge deployments for single devices or at scale](module-deployment-monitoring.md) (Основные сведения о развертываниях IoT Edge для отдельных устройств или в требуемом масштабе).
 * Ознакомьтесь со статьей [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-monitor.md), чтобы узнать, как создавать, обновлять или удалять развертывание.
