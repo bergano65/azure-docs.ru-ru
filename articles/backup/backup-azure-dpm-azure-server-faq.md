@@ -1,22 +1,21 @@
 ---
-title: Azure резервного копирования сервера и DPM часто задаваемые вопросы
+title: 'Azure Backup Server и DPM: вопросы и ответы'
 description: Ответы на часто задаваемые вопросы о Azure Backup Server и DPM.
-services: backup
 author: srinathvasireddy
 manager: sivan
 ms.service: backup
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: srinathv
-ms.openlocfilehash: 7a598038ee435b67b9ad8f06bdec2490bc1c53c3
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 54727daa158172ae44379b847c70602ca998c65d
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705106"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466414"
 ---
 # <a name="azure-backup-server-and-dpm---faq"></a>Azure Backup Server и DPM — часто задаваемые вопросы
-В этой статье содержатся ответы на часто задаваемые вопросы об Azure Backup Server и DPM.
+В этой статье содержатся ответы на часто задаваемые вопросы о Azure Backup Server и DPM.
 
 ### <a name="can-i-use-azure-backup-server-to-create-a-bare-metal-recovery-bmr-backup-for-a-physical-server-br"></a>Можно ли использовать Azure Backup Server, чтобы создать резервную копию для восстановления исходного состояния физического сервера? <br/>
 Да.
@@ -42,7 +41,7 @@ ms.locfileid: "67705106"
 - См. дополнительные сведения о [поддерживаемых версиях](backup-mabs-protection-matrix.md).
 - См. [инструкции по резервному копированию сервера VMware](backup-azure-backup-server-vmware.md).
 
-### <a name="do-i-need-a-separate-license-to-recover-a-full-on-premises-vmwarehyper-v-cluster"></a>Требуется отдельная лицензия для восстановления полной локальный кластер VMware или Hyper-V?
+### <a name="do-i-need-a-separate-license-to-recover-a-full-on-premises-vmwarehyper-v-cluster"></a>Требуется ли отдельная лицензия для восстановления всего локального кластера VMware или Hyper-V?
 Для защиты VMware или Hyper-V отдельная лицензия не требуется.
 
 - Если вы являетесь клиентом System Center, для защиты виртуальных машин VMware используйте System Center Data Protection Manager (DPM).
@@ -61,5 +60,5 @@ ms.locfileid: "67705106"
 
 См. другие статьи с вопросами и ответами:
 
-- [Дополнительные сведения](backup-support-matrix-mabs-dpm.md) Матрица поддержки о Azure Backup Server и DPM.
-- [Дополнительные сведения](backup-azure-mabs-troubleshoot.md) о Azure Backup Server и DPM рекомендации по устранению неполадок.
+- Дополнительные [сведения](backup-support-matrix-mabs-dpm.md) о Azure Backup Server и матрице поддержки DPM.
+- Дополнительные [сведения](backup-azure-mabs-troubleshoot.md) о Azure Backup Server и рекомендациях по устранению неполадок DPM.

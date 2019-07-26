@@ -255,6 +255,8 @@
               href: devtest-lab-guidance-prescriptive-adoption.md
             - name: Эталонная архитектура
               href: devtest-lab-reference-architecture.md
+            - name: Подтверждение концепции
+              href: deliver-proof-concept.md
             - name: Увеличение масштаба развертывания DevTest Labs
               href: devtest-lab-guidance-scale.md
             - name: Планирование внедрения DevTest Labs

@@ -15,12 +15,12 @@ ms.workload: multiple
 ms.date: 06/20/2017
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 489a3935605432b485f7b0866668f6dbfaac686b
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 431212b2b0ac7bba209130e511e3510e3008a6c4
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68323755"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68500041"
 ---
 # <a name="create-an-automatic-scaling-formula-for-scaling-compute-nodes-in-a-batch-pool"></a>Создание формулы автоматического масштабирования для масштабирования вычислительных узлов в пуле пакетной службы
 
@@ -40,7 +40,7 @@ ms.locfileid: "68323755"
 >
 
 ## <a name="automatic-scaling-formulas"></a>Формулы автоматического масштабирования
-Формула автоматического масштабирования представляет собой определяемое пользователем строковое значение, которое содержит один или несколько операторов. Формула автомасштабирования назначается свойству [autoScaleFormula][rest_autoscaleformula] element (Batch REST) or [CloudPool.AutoScaleFormula][net_cloudpool_autoscaleformula] пула (пакетной службы .NET). С помощью этой формулы пакетная служба определяет целевое количество вычислительных узлов в пуле для следующего интервала обработки. Размер строки формулы не может превышать 8 КБ, а сама строка может содержать до 100 операторов, разделенных точкой с запятой, а также разрывы строк и комментарии.
+Формула автоматического масштабирования представляет собой определяемое пользователем строковое значение, которое содержит один или несколько операторов. Формула автомасштабирования присваивается элементу [autoScaleFormula][rest_autoscaleformula] пула (остальные пакеты) или свойству [CloudPool. autoScaleFormula][net_cloudpool_autoscaleformula] (пакетная обработка .NET). С помощью этой формулы пакетная служба определяет целевое количество вычислительных узлов в пуле для следующего интервала обработки. Размер строки формулы не может превышать 8 КБ, а сама строка может содержать до 100 операторов, разделенных точкой с запятой, а также разрывы строк и комментарии.
 
 Вы можете представить, что формулы автоматического масштабирования — это язык автомасштабирования пакетной службы. Инструкции в формуле представляют собой выражения свободной формы, которые могут включать служебные (определяемые службой пакетной обработки) и пользовательские переменные (определяемые пользователем). С этими переменными могут выполняться различные операции с помощью встроенных типов, операторов и функций. Например, инструкция может принимать следующую форму:
 
@@ -63,7 +63,7 @@ $variable2 = function2($OtherServiceDefinedVariable, $variable1);
 
 Ниже приведены примеры двух формул автомасштабирования, которые можно настроить для работы в большинстве сценариев. Переменные `startingNumberOfVMs` и`maxNumberofVMs` в примерах формул могут быть скорректированы в соответствии с потребностями.
 
-#### <a name="pending-tasks"></a>Ожидающие задачи
+#### <a name="pending-tasks"></a>Ожидание задач
 ```
 startingNumberOfVMs = 1;
 maxNumberofVMs = 25;
@@ -141,7 +141,7 @@ $TargetLowPriorityNodes = min(maxNumberofVMs , maxNumberofVMs - $TargetDedicated
 * строка
 * timestamp. timestamp является комплексной структурой, которая содержит следующие элементы:
 
-  * year
+  * год
   * month (1-12)
   * day (1-31)
   * weekday (в формате числа, например 1 — понедельник)
@@ -364,15 +364,19 @@ $totalDedicatedNodes =
 $TargetDedicatedNodes = min(400, $totalDedicatedNodes)
 ```
 
-## <a name="create-an-autoscale-enabled-pool-with-net"></a>Создание пула с поддержкой автомасштабирования с помощью .NET
+## <a name="create-an-autoscale-enabled-pool-with-batch-sdks"></a>Создание пула с поддержкой автомасштабирования с помощью пакетов SDK пакетной службы
+
+Автомасштабирование пула можно настроить с помощью любого [пакета SDK пакетной](batch-apis-tools.md#azure-accounts-for-batch-development)службы, [пакетной REST API](https://docs.microsoft.com/rest/api/batchservice/) [командлетов PowerShell](batch-powershell-cmdlets-get-started.md)для пакетной службы и [интерфейса командной строки пакетной](batch-cli-get-started.md)службы. В этом разделе можно увидеть примеры для .NET и Python.
+
+### <a name="net"></a>.NET
 
 Чтобы создать пул с поддержкой автомасштабирования в .NET, выполните указанные ниже действия.
 
 1. Создайте пул с помощью метода [BatchClient.PoolOperations.CreatePool](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.pooloperations.createpool).
-2. Задайте для свойства [CloudPool.AutoScaleEnabled](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.autoscaleenabled) значение `true`.
-3. Задайте свойство [CloudPool.AutoScaleFormula](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.autoscaleformula) с помощью формулы автомасштабирования.
-4. (Необязательно.) Задайте свойство [CloudPool.AutoScaleEvaluationInterval](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.autoscaleevaluationinterval) (значение по умолчанию — 15 минут).
-5. Зафиксируйте пул с помощью метода [CloudPool.Commit](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.commit) или [CommitAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.commitasync).
+1. Задайте для свойства [CloudPool.AutoScaleEnabled](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.autoscaleenabled) значение `true`.
+1. Задайте свойство [CloudPool.AutoScaleFormula](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.autoscaleformula) с помощью формулы автомасштабирования.
+1. (Необязательно.) Задайте свойство [CloudPool.AutoScaleEvaluationInterval](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.autoscaleevaluationinterval) (значение по умолчанию — 15 минут).
+1. Зафиксируйте пул с помощью метода [CloudPool.Commit](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.commit) или [CommitAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool.commitasync).
 
 В следующем фрагменте кода создается пул с поддержкой автомасштабирования в .NET. Формула автомасштабирования пула устанавливает целевое количество выделенных узлов равным 5 по понедельникам и равным 1 в остальные дни недели. [Интервал автомасштабирования](#automatic-scaling-interval) составляет 30 минут. В этом и других C# фрагментах, приведенных в этой `myBatchClient` статье, является правильно инициализированным экземпляром класса [BatchClient][net_batchclient] .
 
@@ -392,10 +396,8 @@ await pool.CommitAsync();
 >
 >
 
-Кроме библиотеки .NET пакетной службы, для настройки автомасштабирования можно использовать любые другие [пакеты SDK пакетной службы](batch-apis-tools.md#azure-accounts-for-batch-development), [Batch REST](https://docs.microsoft.com/rest/api/batchservice/), [командлеты PowerShell пакетной службы](batch-powershell-cmdlets-get-started.md) и [интерфейс командной строки пакетной службы](batch-cli-get-started.md).
+#### <a name="automatic-scaling-interval"></a>Интервал автоматического масштабирования
 
-
-### <a name="automatic-scaling-interval"></a>Интервал автоматического масштабирования
 По умолчанию пакетная служба изменяет размер пула по указанной формуле автомасштабирования каждые 15 минут. Этот интервал можно настроить с помощью следующих свойств пула:
 
 * [CloudPool. AutoScaleEvaluationInterval][net_cloudpool_autoscaleevalinterval] (пакетная платформа .NET)
@@ -405,6 +407,50 @@ await pool.CommitAsync();
 
 > [!NOTE]
 > В настоящее время автоматическое масштабирование предназначено не для реагирования на изменения в течение нескольких секунд, а для постепенного изменения размера пула в ходе выполнения рабочей нагрузки.
+>
+>
+
+### <a name="python"></a>Python
+
+Аналогичным образом можно создать пул с поддержкой автомасштабирования с помощью пакета SDK для Python:
+
+1. Создайте пул и укажите его конфигурацию.
+1. Добавьте пул в клиент службы.
+1. Включите Автомасштабирование в пуле с написанной формулой.
+
+```python
+# Create a pool; specify configuration
+new_pool = batch.models.PoolAddParameter(
+    id="autoscale-enabled-pool",
+    virtual_machine_configuration=batchmodels.VirtualMachineConfiguration(
+        image_reference=batchmodels.ImageReference(
+          publisher="Canonical",
+          offer="UbuntuServer",
+          sku="18.04-LTS",
+          version="latest"
+            ),
+        node_agent_sku_id="batch.node.ubuntu 18.04"),
+    vm_size="STANDARD_D1_v2",
+    target_dedicated_nodes=0,
+    target_low_priority_nodes=0
+)
+batch_service_client.pool.add(new_pool) # Add the pool to the service client
+
+formula = """$curTime = time();
+             $workHours = $curTime.hour >= 8 && $curTime.hour < 18; 
+             $isWeekday = $curTime.weekday >= 1 && $curTime.weekday <= 5; 
+             $isWorkingWeekdayHour = $workHours && $isWeekday; 
+             $TargetDedicated = $isWorkingWeekdayHour ? 20:10;""";
+
+# Enable autoscale; specify the formula
+response = batch_service_client.pool.enable_auto_scale(pool_id, auto_scale_formula=formula,
+                                            auto_scale_evaluation_interval=datetime.timedelta(minutes=10), 
+                                            pool_enable_auto_scale_options=None, 
+                                            custom_headers=None, raw=False)
+```
+
+> [!TIP]
+> Дополнительные примеры использования пакета SDK для Python можно найти в репозитории быстрого запуска [пакета Python](https://github.com/Azure-Samples/batch-python-quickstart) на сайте GitHub.
 >
 >
 

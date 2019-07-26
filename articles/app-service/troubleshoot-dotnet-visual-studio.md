@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/29/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: cbf6a44f1a3210906ec7ab0d04eecb997bc2c470
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 13ba1ced2d14ed22c89e7df594f3b2a44eea983f
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65412816"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359954"
 ---
 # <a name="troubleshoot-an-app-in-azure-app-service-using-visual-studio"></a>Устранение неполадок приложения в Cлужбе приложений Azure с помощью Visual Studio
 ## <a name="overview"></a>Обзор
@@ -38,7 +38,7 @@ ms.locfileid: "65412816"
 Если у вас установлена Visual Studio Ultimate, вы также можете использовать [IntelliTrace](/visualstudio/debugger/intellitrace) для отладки. Использование IntelliTrace не рассматривается в этом учебнике.
 
 ## <a name="prerequisites"></a>Предварительные требования
-В этом руководстве речь идет о среде разработки, веб-проекте и Службе приложений, которые вы настроили, следуя инструкциям статьи [Создание веб-приложения ASP.NET Framework в Azure](app-service-web-get-started-dotnet-framework.md). Для разделов, посвященных веб-заданиям, вам понадобится приложение, созданное при изучении руководства [Начало работы с пакетом SDK для Azure для веб-заданий][GetStartedWJ].
+В этом руководстве речь идет о среде разработки, веб-проекте и Службе приложений, которые вы настроили, следуя инструкциям статьи [Создание веб-приложения ASP.NET Framework в Azure](app-service-web-get-started-dotnet-framework.md). Для разделов веб-заданий вам потребуется приложение, созданное в разделе Начало [работы с пакетом SDK][GetStartedWJ]для веб-заданий Azure.
 
 В этом учебнике приводятся примеры кода для веб-приложения C# MVC, однако в приложениях Visual Basic и веб-форм применяются те же процедуры устранения неполадок.
 
@@ -121,18 +121,18 @@ Visual Studio обеспечивает доступ к сокращенному 
 
 1. Откройте веб-проект, созданный после выполнения инструкций статьи [Создание веб-приложения ASP.NET Framework в Azure](app-service-web-get-started-dotnet-framework.md).
 
-2. Откройте файл *Controllers\HomeController.cs*.
+1. Откройте файл *Controllers\HomeController.cs*.
 
-3. Удалите метод `About()` и вставьте вместо него следующий код.
+1. Удалите метод `About()` и вставьте вместо него следующий код.
 
-``` c#
-public ActionResult About()
-{
-    string currentTime = DateTime.Now.ToLongTimeString();
-    ViewBag.Message = "The current time is " + currentTime;
-    return View();
-}
-```
+    ```csharp
+    public ActionResult About()
+    {
+        string currentTime = DateTime.Now.ToLongTimeString();
+        ViewBag.Message = "The current time is " + currentTime;
+        return View();
+    }
+    ```
 
 1. [Задайте точку останова](https://docs.microsoft.com/visualstudio/debugger/) в строке `ViewBag.Message`.
 
@@ -181,7 +181,7 @@ public ActionResult About()
 
 Удаленная отладка работает только с непрерывными веб-заданиями. Веб-задания по расписанию и по требованию не поддерживают отладку.
 
-1. Откройте веб-проект, созданный в разделе [Информация о пакете SDK веб-заданий][GetStartedWJ].
+1. Откройте веб-проект, созданный в [начале работы с пакетом SDK веб-заданий Azure][GetStartedWJ].
 
 2. В проекте ContosoAdsWebJob откройте *Functions.cs*.
 
@@ -244,12 +244,12 @@ public ActionResult About()
 * Во время отладки сервер отправляет данные в среду Visual Studio, что может повлиять на расходы, связанные с пропускной способностью. Сведения о тарифах на пропускную способность см. в разделе [Цены на Azure](https://azure.microsoft.com/pricing/calculator/).
 * Убедитесь, что атрибут `debug` элемента `compilation` в файле *Web.config* имеет значение true. По умолчанию при публикации отладочной конфигурации сборки для него задано значение true.
 
-``` xml
-<system.web>
-  <compilation debug="true" targetFramework="4.5" />
-  <httpRuntime targetFramework="4.5" />
-</system.web>
-```
+    ```xml
+    <system.web>
+      <compilation debug="true" targetFramework="4.5" />
+      <httpRuntime targetFramework="4.5" />
+    </system.web>
+    ```
 * Если вы обнаружите, что отладчик не осуществляет пошаговое выполнение кода, который требуется отладить, может потребоваться изменить параметр "Только мой код".  Дополнительные сведения см. в разделе [Укажите, следует ли отладка пользовательского кода, с помощью "только мой код" в Visual Studio](https://docs.microsoft.com/visualstudio/debugger/just-my-code).
 * При активации функции удаленной отладки на сервере запускается таймер, который автоматически отключает эту функцию по истечении 48 часов. Это 48-часовое ограничение установлено в целях повышения безопасности и производительности. Вы можете в любое время снова активировать эту функцию. Если вы не ведете отладку, эту функцию рекомендуется оставить отключенной.
 * Вы можете вручную присоединить отладчик к любому процессу, а не только к процессу приложения (w3wp.exe). Дополнительные сведения о том, как использовать режим отладки в Visual Studio, см. в разделе [Отладка в Visual Studio](/visualstudio/debugger/debugging-in-visual-studio).
@@ -282,34 +282,34 @@ public ActionResult About()
 ### <a name="add-tracing-statements-to-the-application"></a>Добавление инструкций трассировки в приложение
 1. Откройте файл *Controllers\HomeController.cs* и замените методы `Index`, `About` и `Contact` приведенным ниже кодом, чтобы добавить инструкции `Trace` и инструкцию `using` для `System.Diagnostics`.
 
-```c#
-public ActionResult Index()
-{
-    Trace.WriteLine("Entering Index method");
-    ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-    Trace.TraceInformation("Displaying the Index page at " + DateTime.Now.ToLongTimeString());
-    Trace.WriteLine("Leaving Index method");
-    return View();
-}
-
-public ActionResult About()
-{
-    Trace.WriteLine("Entering About method");
-    ViewBag.Message = "Your app description page.";
-    Trace.TraceWarning("Transient error on the About page at " + DateTime.Now.ToShortTimeString());
-    Trace.WriteLine("Leaving About method");
-    return View();
-}
-
-public ActionResult Contact()
-{
-    Trace.WriteLine("Entering Contact method");
-    ViewBag.Message = "Your contact page.";
-    Trace.TraceError("Fatal error on the Contact page at " + DateTime.Now.ToLongTimeString());
-    Trace.WriteLine("Leaving Contact method");
-    return View();
-}        
-```
+    ```csharp
+    public ActionResult Index()
+    {
+        Trace.WriteLine("Entering Index method");
+        ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+        Trace.TraceInformation("Displaying the Index page at " + DateTime.Now.ToLongTimeString());
+        Trace.WriteLine("Leaving Index method");
+        return View();
+    }
+    
+    public ActionResult About()
+    {
+        Trace.WriteLine("Entering About method");
+        ViewBag.Message = "Your app description page.";
+        Trace.TraceWarning("Transient error on the About page at " + DateTime.Now.ToShortTimeString());
+        Trace.WriteLine("Leaving About method");
+        return View();
+    }
+    
+    public ActionResult Contact()
+    {
+        Trace.WriteLine("Entering Contact method");
+        ViewBag.Message = "Your contact page.";
+        Trace.TraceError("Fatal error on the Contact page at " + DateTime.Now.ToLongTimeString());
+        Trace.WriteLine("Leaving Contact method");
+        return View();
+    }        
+    ```
 
 1. Добавьте в начало файла инструкцию `using System.Diagnostics;` .
 
@@ -321,32 +321,32 @@ public ActionResult Contact()
     ![Трассировка в окне отладки](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-debugtracing.png)
 
     Ниже показано, как просмотреть выходные данные трассировки на веб-странице без компиляции в режиме отладки.
-2. Откройте файл Web.config приложения (находится в папке проекта) и добавьте элемент `<system.diagnostics>` в конец файла непосредственно перед закрывающим элементом `</configuration>`:
+1. Откройте файл Web.config приложения (находится в папке проекта) и добавьте элемент `<system.diagnostics>` в конец файла непосредственно перед закрывающим элементом `</configuration>`:
 
-``` xml
-<system.diagnostics>
-<trace>
-  <listeners>
-    <add name="WebPageTraceListener"
-        type="System.Web.WebPageTraceListener,
-        System.Web,
-        Version=4.0.0.0,
-        Culture=neutral,
-        PublicKeyToken=b03f5f7f11d50a3a" />
-  </listeners>
-</trace>
-</system.diagnostics>
-```
+    ``` xml
+    <system.diagnostics>
+    <trace>
+      <listeners>
+        <add name="WebPageTraceListener"
+            type="System.Web.WebPageTraceListener,
+            System.Web,
+            Version=4.0.0.0,
+            Culture=neutral,
+            PublicKeyToken=b03f5f7f11d50a3a" />
+      </listeners>
+    </trace>
+    </system.diagnostics>
+    ```
 
 `WebPageTraceListener` позволяет просматривать результаты трассировки, открыв `/trace.axd`.
 1. Добавьте <a href="https://msdn.microsoft.com/library/vstudio/6915t83k(v=vs.100).aspx">элемент трассировки</a> под `<system.web>` в файле Web.config, например так:
 
-``` xml
-<trace enabled="true" writeToDiagnosticsTrace="true" mostRecent="true" pageOutput="false" />
-```       
+    ``` xml
+    <trace enabled="true" writeToDiagnosticsTrace="true" mostRecent="true" pageOutput="false" />
+    ```
 
 1. Для запуска приложения нажмите сочетание клавиш CTRL+F5.
-1. В адресной строке окна браузера добавьте *trace.axd* URL-адрес, и нажмите клавишу ВВОД (URL-адрес аналогичен `http://localhost:53370/trace.axd`).
+1. В адресной строке окна браузера добавьте *Trace. axd* к URL-адресу и нажмите клавишу ВВОД (URL-адрес похож на `http://localhost:53370/trace.axd`).
 1. На странице **Трассировка приложения** щелкните **Просмотр сведений** в первой строке (не в строке BrowserLink).
 
     ![trace.axd](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-traceaxd1.png)
@@ -586,7 +586,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 
 5. В новом окне браузера перейдите по URL-адресу, показанному в поле **Имя узла FTP** или **Имя узла FTPS** на странице **Обзор** для вашего приложения.
 
-6. Выполните вход с использованием учетных данных FTP, созданных ранее (включая имя приложения в виде префикса к имени пользователя).
+6. Выполните вход с использованием учетных данных FTP, созданных ранее (включая префикс имени приложения для имени пользователя).
 
     В браузере отображается корневая папка приложения.
 
@@ -659,17 +659,17 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 * [Трассировка в представлениях ASP.NET MVC Razor](https://blogs.msdn.com/b/webdev/archive/2013/07/16/tracing-in-asp-net-mvc-razor-views.aspx)<br/>
   Помимо трассировки в представлениях Razor, в этом посте также описывается, как создать фильтр ошибок, чтобы регистрировать все необработанные исключения в приложении MVC. Сведения о записи в журнал всех необработанных исключений в приложении Web Forms представлены в примере Global.asax в разделе [Полный пример для обработчиков ошибок](/previous-versions/bb397417(v=vs.140)) на сайте MSDN. Если в MVC или Web Forms понадобится зарегистрировать определенные исключения, но позволить платформе их обрабатывать, можно перехватить и повторно создать элементы, как показано на следующем примере:
 
-``` c#
-try
-{
-   // Your code that might cause an exception to be thrown.
-}
-catch (Exception ex)
-{
-    Trace.TraceError("Exception: " + ex.ToString());
-    throw;
-}
-```
+    ```csharp
+    try
+    {
+       // Your code that might cause an exception to be thrown.
+    }
+    catch (Exception ex)
+    {
+        Trace.TraceError("Exception: " + ex.ToString());
+        throw;
+    }
+    ```
 
 * [Потоковая передача диагностических журналов трассировки из командной строки Azure (включая Glimpse!)](https://www.hanselman.com/blog/StreamingDiagnosticsTraceLoggingFromTheAzureCommandLinePlusGlimpse.aspx)<br/>
   Как использовать командную строку, чтобы сделать все, что показано в этом руководстве на примере Visual Studio. [Glimpse](https://www.hanselman.com/blog/IfYoureNotUsingGlimpseWithASPNETForDebuggingAndProfilingYoureMissingOut.aspx) – это средство для отладки приложений ASP.NET.
@@ -685,7 +685,7 @@ catch (Exception ex)
 
 * [LogParser](https://www.microsoft.com/download/details.aspx?id=24659)<br/>
   Инструмент для просмотра данных в журналах веб-сервера (*LOG* -файлов).
-* [Устранение проблем с производительностью IIS и приложений с помощью LogParser ошибок](https://www.iis.net/learn/troubleshoot/performance-issues/troubleshooting-iis-performance-issues-or-application-errors-using-logparser)<br/>
+* [Устранение проблем производительности IIS или ошибок приложений с помощью LogParser](https://www.iis.net/learn/troubleshoot/performance-issues/troubleshooting-iis-performance-issues-or-application-errors-using-logparser)<br/>
   Введение в средство LogParser, которое можно использовать для анализа журналов веб-сервера.
 * [Записи блога Роберта Мак-Мюррея (Robert McMurray), посвященные использованию LogParser](https://blogs.msdn.com/b/robert_mcmurray/archive/tags/logparser/)<br/>
 * [Код состояния HTTP в IIS 7.0, IIS 7.5 и IIS 8.0](https://support.microsoft.com/kb/943891)

@@ -2,24 +2,17 @@
 title: Что такое модель и пакет облачной службы | Документация Майкрософт
 description: Описание модели (CSDEF-файл, CSCFG-файл) и пакета облачной службы (CSPKG-файл) в Azure
 services: cloud-services
-documentationcenter: ''
-author: jpconnock
-manager: timlt
-editor: ''
-ms.assetid: 4ce2feb5-0437-496c-98da-1fb6dcb7f59e
+author: georgewallace
 ms.service: cloud-services
-ms.workload: tbd
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
-ms.author: jeconnoc
-ms.openlocfilehash: 6c8833dc0db80dde96dda92c426c7840c44c1f1b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: gwallace
+ms.openlocfilehash: 47d031e339b3677e0bf6ddcbad9456041c53c6e2
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67080763"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359559"
 ---
 # <a name="what-is-the-cloud-service-model-and-how-do-i-package-it"></a>Что такое модель облачных служб и как создать ее пакет?
 Облачная служба создается из трех компонентов: определения службы *(CSDEF-файл)* , конфигурации службы *(CSCFG-файл)* и пакета службы *(CSPKG-файл)* . Файлы **ServiceDefinition.csdef** и **ServiceConfig.cscfg** являются XML-файлами, которые описывают структуру облачной службы и ее конфигурацию. В совокупности это называется моделью. **ServicePackage.cspkg** — это ZIP-файл, который создается на основе файла **ServiceDefinition.csdef** и который, помимо прочего, содержит все необходимые зависимости в двоичном формате. Azure создает облачную службу из двух файлов: **ServicePackage.cspkg** и **ServiceConfig.cscfg**.
@@ -31,10 +24,10 @@ ms.locfileid: "67080763"
 * Я уже знаю об этих файлах, покажите мне [примеры](#next-steps) того, что я могу настроить.
 * Я хочу создать файл [ServicePackage.cspkg](#cspkg).
 * Я использую Visual Studio и хочу выполнить следующие действия.
-  * [Создать облачную службу.][vs_create]
-  * [Изменить конфигурацию существующей облачной службы.][vs_reconfigure]
-  * [Развернуть проект облачной службы.][vs_deploy]
-  * [Настроить удаленный рабочий стол для экземпляра облачной службы.][remotedesktop]
+  * [Создание облачной службы][vs_create]
+  * [Перенастройка существующей облачной службы][vs_reconfigure]
+  * [Развертывание проекта облачной службы][vs_deploy]
+  * [Удаленный рабочий стол в экземпляре облачной службы][remotedesktop]
 
 <a name="csdef"></a>
 
@@ -277,18 +270,18 @@ cspack [DirectoryName]\[ServiceDefinition]
 | \[PhysicalPath\] |Физические каталоги содержимого для каждого виртуального пути, заданного в узле «Сайт» определения службы. |
 | \[RoleAssemblyName\] |Имя двоичного файла для роли. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Я создаю пакет облачной службы и я хочу выполнить следующие действия.
 
-* [Настроить удаленный рабочий стол для экземпляра облачной службы.][remotedesktop]
-* [Развернуть проект облачной службы.][deploy]
+* [Настройка удаленного рабочего стола для экземпляра облачной службы][remotedesktop]
+* [Развертывание проекта облачной службы][deploy]
 
 Я использую Visual Studio и хочу выполнить следующие действия.
 
-* [Создать новую облачную службу.][vs_create]
-* [Изменить конфигурацию существующей облачной службы.][vs_reconfigure]
-* [Развернуть проект облачной службы.][vs_deploy]
-* [Настроить удаленный рабочий стол для экземпляра облачной службы.][vs_remote]
+* [Создание новой облачной службы][vs_create]
+* [Перенастройка существующей облачной службы][vs_reconfigure]
+* [Развертывание проекта облачной службы][vs_deploy]
+* [Настройка удаленного рабочего стола для экземпляра облачной службы][vs_remote]
 
 [deploy]: cloud-services-how-to-create-deploy-portal.md
 [remotedesktop]: cloud-services-role-enable-remote-desktop-new-portal.md
