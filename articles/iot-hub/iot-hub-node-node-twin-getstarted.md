@@ -8,12 +8,12 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 08/25/2017
 ms.author: elioda
-ms.openlocfilehash: 20b804f3d15543d0cf415d00dc81a6f55a348260
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8dd5269532e9eb6139d8debb0ee9b503cd2e4354
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65597416"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68404019"
 ---
 # <a name="get-started-with-device-twins-node"></a>Начало работы с двойниками устройств (Node)
 
@@ -31,7 +31,7 @@ ms.locfileid: "65597416"
 
 Для работы с этим учебником требуется:
 
-* Node.js версии 10.0.x или более поздней версии.
+* Node. js версии 10.0. x или более поздней.
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
@@ -39,11 +39,13 @@ ms.locfileid: "65597416"
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
-### <a name="retrieve-connection-string-for-iot-hub"></a>Получение строки подключения для центра Интернета вещей
-
-[!INCLUDE [iot-hub-include-find-connection-string](../../includes/iot-hub-include-find-connection-string.md)]
-
 [!INCLUDE [iot-hub-get-started-create-device-identity](../../includes/iot-hub-get-started-create-device-identity.md)]
+
+## <a name="get-the-iot-hub-connection-string"></a>Получение строки подключения для центра Интернета вещей
+
+[!INCLUDE [iot-hub-howto-twin-shared-access-policy-text](../../includes/iot-hub-howto-twin-shared-access-policy-text.md)]
+
+[!INCLUDE [iot-hub-include-find-custom-connection-string](../../includes/iot-hub-include-find-custom-connection-string.md)]
 
 ## <a name="create-the-service-app"></a>Создание приложения службы
 
@@ -63,7 +65,7 @@ ms.locfileid: "65597416"
 
 3. В текстовом редакторе создайте файл **AddTagsAndQuery.js** в папке **addtagsandqueryapp**.
 
-4. Добавьте следующий код в файл **AddTagsAndQuery.js** и замените заполнитель **{iot hub connection string}** на строку подключения Центра Интернета вещей, скопированную при создании центра:
+4. Добавьте следующий код в файл **AddTagsAndQuery. js** и замените значение заполнителя **{строка подключения центра Интернета вещей}** строкой подключения центра Интернета вещей, скопированной ранее в поле [Получение строки подключения к центру Интернета вещей](#get-the-iot-hub-connection-string):
 
    ``` javascript
         'use strict';
@@ -136,7 +138,7 @@ ms.locfileid: "65597416"
 
    В результатах запроса на все устройства, расположенные на фабрике **Redmond43**, отобразится одно устройство, а для запроса на ограничение результатов устройствами, использующими сеть мобильной связи, не отобразится ни одного устройства.
    
-    ![См. в разделе одно устройство в результатах запроса](media/iot-hub-node-node-twin-getstarted/service1.png)
+    ![Просмотр одного устройства в результатах запроса](media/iot-hub-node-node-twin-getstarted/service1.png)
 
 В следующем разделе рассказывается о том, как создать приложение устройства, которое сообщает сведения о подключении и изменяет результат запроса, описанного в предыдущем разделе.
 
@@ -216,16 +218,16 @@ ms.locfileid: "65597416"
 
     На этот раз **myDeviceId** должен появиться в результатах обоих запросов.
 
-    ![Показать myDeviceId в результатах обоих запросов](media/iot-hub-node-node-twin-getstarted/service2.png)
+    ![Показывать myDeviceId в обоих результатах запроса](media/iot-hub-node-node-twin-getstarted/service2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве мы настроили новый Центр Интернета вещей на портале Azure и создали удостоверение устройства в реестре удостоверений Центра Интернета вещей. Вы добавили метаданные устройства в качестве тегов из внутреннего приложения и написали код приложения имитации устройства, чтобы сообщить сведения о подключении в двойнике устройства. Вы также узнали, как запрашивать эти сведения, используя похожий на SQL язык запросов Центра Интернета вещей.
 
 Ознакомьтесь со следующими материалами, чтобы узнать как:
 
-* Отправить данные телеметрии с устройств [приступить к работе с центром Интернета вещей](quickstart-send-telemetry-node.md) руководства
+* Отправка данных телеметрии с устройств с помощью учебника Приступая к [работе с центром Интернета вещей](quickstart-send-telemetry-node.md)
 
 * настроить устройства с помощью требуемых свойств двойника устройства ([Руководство. Настройка устройств из внутренней службы](tutorial-device-twins.md));
 
-* Управлять устройствами в интерактивном режиме (например включить вентилятор из управляемого пользователем приложения), с помощью [использование прямых методов](quickstart-control-device-node.md) руководства.
+* Управление устройствами в интерактивном режиме (например, включение вентилятора из управляемого пользователем приложения) с помощью учебника [Использование прямых методов](quickstart-control-device-node.md) .

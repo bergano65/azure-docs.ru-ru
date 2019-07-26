@@ -2,7 +2,7 @@
 title: Использование хранимых процедур в хранилище данных SQL | Документация Майкрософт
 description: Советы по реализации хранимых процедур в хранилище данных SQL Azure для разработки решений.
 services: sql-data-warehouse
-author: XiaoyuL-Preview
+author: XiaoyuMSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
@@ -10,17 +10,17 @@ ms.subservice: development
 ms.date: 04/02/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 200433d95d62edf2e878e58e5089a6baff290775
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2c12a679ed5f0a1574deb34df8c0151e737d2d01
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65850585"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479588"
 ---
 # <a name="using-stored-procedures-in-sql-data-warehouse"></a>Использование хранимых процедур в хранилище данных SQL
 Советы по реализации хранимых процедур в хранилище данных SQL Azure для разработки решений.
 
-## <a name="what-to-expect"></a>Основные принципы
+## <a name="what-to-expect"></a>Чего следует ожидать
 
 Хранилище данных SQL Azure поддерживает многие функции T-SQL, которые используются в SQL Server. Что более важно, в нем есть специальные функции горизонтального масштабирования, с помощью которых можно максимально увеличить производительность решения.
 
@@ -71,7 +71,7 @@ EXEC prc_nesting
 ## <a name="limitations"></a>Ограничения
 Существуют некоторые аспекты хранимых процедур Transact-SQL, которые не реализованы в хранилище данных SQL.
 
-К ним относятся:
+Подробные сведения.
 
 * временные хранимые процедуры;
 * нумерованные хранимые процедуры;
@@ -85,6 +85,6 @@ EXEC prc_nesting
 * контекст выполнения;
 * инструкция Return.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные советы по разработке приведены в [обзоре разработки](sql-data-warehouse-overview-develop.md).
 

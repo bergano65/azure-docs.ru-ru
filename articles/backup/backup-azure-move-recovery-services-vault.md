@@ -1,19 +1,18 @@
 ---
 title: Перемещение хранилища Служб восстановления между подписками Azure или в другую группу ресурсов
 description: Инструкции по перемещению хранилища Служб восстановления между подписками Azure и группами ресурсов.
-services: backup
 author: sogup
 manager: vijayts
 ms.service: backup
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: sogup
-ms.openlocfilehash: 57263dfd1e226f2ff4321b2d097d30106fae87fa
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: 0e351a842a303430e66a52a87305cba23f774ef2
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68304921"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68465817"
 ---
 # <a name="move-a-recovery-services-vault-across-azure-subscriptions-and-resource-groups"></a>Перемещение хранилища служб восстановления между подписками Azure и группами ресурсов
 
@@ -99,7 +98,7 @@ ms.locfileid: "68304921"
 5. Из раскрывающегося списка **Подписка** выберите целевую подписку, в которую следует переместить хранилище.
 6. Чтобы добавить целевую группу ресурсов, в раскрывающемся списке **Группа ресурсов** выберите имеющуюся группу ресурсов или щелкните параметр **Создать группу**.
 
-   ![Добавление подписки](./media/backup-azure-move-recovery-services/add-subscription.png)
+   ![Добавить подписку](./media/backup-azure-move-recovery-services/add-subscription.png)
 
 7. Установите флажок **Я понимаю, что инструменты и скрипты, связанные с перемещенными ресурсами, не будут работать, пока не будут обновлены используемые ими идентификаторы ресурсов**, а затем нажмите кнопку **OК**.
 

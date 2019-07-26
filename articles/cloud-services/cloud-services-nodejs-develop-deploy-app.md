@@ -3,23 +3,18 @@ title: Руководство по началу работы с Node.js
 description: Сведения о создании простого веб-приложения Node.js и его развертывании в облачной службе Azure.
 services: cloud-services
 documentationcenter: nodejs
-author: jpconnock
-manager: timlt
-editor: ''
-ms.assetid: 50951a87-fed4-48e0-bcfa-453b9e50452e
+author: georgewallace
 ms.service: cloud-services
-ms.workload: tbd
-ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 08/17/2017
-ms.author: jeconnoc
-ms.openlocfilehash: e235af8ae35a6ff8e310bac802484e6c3d0f5397
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: gwallace
+ms.openlocfilehash: 81ad3bce6c7e331fd67fba60b35de6b8a37c5da9
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65506938"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359527"
 ---
 # <a name="build-and-deploy-a-nodejs-application-to-an-azure-cloud-service"></a>Построение и развертывание приложения Node.js в облачной службе Azure
 
@@ -36,7 +31,7 @@ ms.locfileid: "65506938"
 
 ![В окне браузера отображается веб-страница "Hello World"][A web browser displaying the Hello World web page]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 > [!NOTE]
 > В этом учебнике используется Azure PowerShell, для которого требуется операционная система Windows.
 
@@ -159,7 +154,7 @@ ms.locfileid: "65506938"
    > [!NOTE]
    > При удалении службы учетная запись хранения, созданная при первоначальной публикации службы, не удаляется. Оплата за использование хранилища будет насчитываться. Если хранилище не используется другими объектами, его можно удалить.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительную информацию см. в [Центр разработчика Node.js].
 
 <!-- URL List -->

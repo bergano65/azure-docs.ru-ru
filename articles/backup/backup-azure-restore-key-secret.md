@@ -1,19 +1,18 @@
 ---
 title: Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы архивации Azure
 description: Узнайте, как восстановить ключ и секрет хранилища ключей в службе архивации Azure с помощью PowerShell
-services: backup
 author: geetha
 manager: vijayts
 ms.service: backup
 ms.topic: conceptual
 ms.date: 08/28/2017
 ms.author: geg
-ms.openlocfilehash: 63c492f502634c6c60a6f9ec0f0d7003e56ac0a2
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: bdc732ef02e9995e3d6dc17aa1f79eb97d895a73
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705023"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68465579"
 ---
 # <a name="restore-key-vault-key-and-secret-for-encrypted-vms-using-azure-backup"></a>Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы архивации Azure
 
@@ -52,7 +51,7 @@ Get-AzStorageBlobContent -Blob $encryptedBlobName -Container $containerName -Des
 $encryptionObject = Get-Content -Path $destination_path  | ConvertFrom-Json
 ```
 
-## <a name="restore-key"></a>Ключ восстановления
+## <a name="restore-key"></a>Восстановить ключ
 
 Когда JSON-файл создан в упомянутом выше конечном пути, создайте из этого JSON-файла ключ в виде файла большого двоичного объекта и укажите его при выполнении командлета восстановления ключа, чтобы поместить ключ (KEK) обратно в хранилище ключей.
 
@@ -108,7 +107,7 @@ Restore-AzureKeyVaultSecret -VaultName '<target_key_vault_name>' -InputFile $sec
 
 Описанный выше подход подойдет для всех точек восстановления. Однако более старый подход получения сведений о ключе и секрете из точки восстановления можно по-прежнему использовать для точек восстановления, созданных до 11 июля 2017 г. (для виртуальных машин, зашифрованных с помощью BEK и KEK). После выполнения задания восстановления диска для зашифрованной виртуальной машины с помощью [PowerShell](backup-azure-vms-automation.md#restore-an-azure-vm) убедитесь, что переменная $rp заполняется допустимым значением.
 
-### <a name="restore-key"></a>Ключ восстановления
+### <a name="restore-key"></a>Восстановить ключ
 
 Используйте следующие командлеты для получения из точки восстановления сведений о ключе (KEK) и укажите его при выполнении командлета восстановления ключа, чтобы поместить его обратно в хранилище ключей.
 

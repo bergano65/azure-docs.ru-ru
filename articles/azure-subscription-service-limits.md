@@ -1,6 +1,6 @@
 ---
 title: Ограничения и квоты подписки Azure
-description: В этой статье приводится перечень наиболее распространенных ограничений, относящихся к подписке Azure и различным службам, квот и границ. Эта статья содержит сведения о том, как увеличить лимиты и максимальные значения.
+description: В этой статье приводится перечень наиболее распространенных ограничений, относящихся к подписке Azure и различным службам, квот и границ. Эта статья содержит сведения о том, как увеличить пределы и максимальное значение.
 services: multiple
 author: rothja
 manager: jeffreyg
@@ -10,33 +10,33 @@ ms.service: billing
 ms.topic: article
 ms.date: 05/30/2019
 ms.author: byvinyal
-ms.openlocfilehash: d1043f254d2a2cc2804ab8a4d68770b6d57cbed4
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 1c30d9e70facaf9ab47bd33e5ca1fc1d35c6c979
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295964"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68405861"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
-В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет расширен и обновлен, чтобы охватить больше служб.
+В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет развернут и обновлен, чтобы охватить больше служб.
 
-Дополнительные сведения о ценах на Azure, см. в разделе [Azure, общие сведения о ценах](https://azure.microsoft.com/pricing/). Там вы сможете оценить затраты с помощью [калькулятором цен](https://azure.microsoft.com/pricing/calculator/). Вы также можете перейти к странице с ценами для конкретной службы, например, [виртуальных машин Windows](https://azure.microsoft.com/pricing/details/virtual-machines/#Windows). Советы по управлению затратами приведены в статье [Предотвращение непредвиденных расходов с помощью функции выставления счетов и управления затратами в Azure](billing/billing-getting-started.md).
-
-> [!NOTE]
-> Если вы хотите вызвать ограничение или квоту выше ограничение по умолчанию, [откройте запрос в службу поддержки бесплатно](azure-resource-manager/resource-manager-quota-errors.md). Ограничения не могут быть увеличены выше максимальное значение, показанное в следующих таблицах. Если столбец не максимальный предел, ресурс не имеет настраиваемого ограничения.
->
-> [Бесплатная пробная версия подписки](https://azure.microsoft.com/offers/ms-azr-0044p) не предусмотрена возможность увеличения ограничения и квоты. При наличии [бесплатной пробной версии подписки](https://azure.microsoft.com/offers/ms-azr-0044p) ее можно обновить до подписки [с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/). Дополнительные сведения см. в разделе [обновление бесплатной пробной версии Azure подписки на подписку с оплатой по мере использования](billing/billing-upgrade-azure-subscription.md) и [бесплатную пробную версию подписки часто задаваемые вопросы о](https://azure.microsoft.com/free/free-account-faq).
->
-
-## <a name="limits-and-azure-resource-manager"></a>Ограничения и диспетчер ресурсов Azure
-Теперь можно объединить несколько ресурсов Azure в одной группы ресурсов Azure. При использовании групп ресурсов ограничения, которые были глобальными, становятся управляемыми на региональном уровне с помощью Azure Resource Manager. Дополнительные сведения о группах ресурсов Azure см. в разделе [обзоре Azure Resource Manager](azure-resource-manager/resource-group-overview.md).
-
-В следующем списке ограничений новая таблица отражает все различия ограничений при использовании Azure Resource Manager. Например, имеется **ограничения подписки** таблицы и **ограничения подписки — Azure Resource Manager** таблицы. Если ограничение применяется в обоих случаях, он отображается только в первой таблице. Если не указано иное, ограничения глобальны во всех областях.
+Дополнительные сведения о ценах Azure см. в статье [Общие сведения о ценах на Azure](https://azure.microsoft.com/pricing/). Здесь вы можете оценить затраты с помощью [калькулятора цен](https://azure.microsoft.com/pricing/calculator/). Вы также можете посетить страницу сведений о ценах для конкретной службы, например [виртуальных машин Windows](https://azure.microsoft.com/pricing/details/virtual-machines/#Windows). Советы по управлению затратами приведены в статье [Предотвращение непредвиденных расходов с помощью функции выставления счетов и управления затратами в Azure](billing/billing-getting-started.md).
 
 > [!NOTE]
-> Квоты для ресурсов в группах ресурсов Azure доступны для каждого региона по подписке, а не каждой подписки как квоты управления службами. В качестве примера используем квоты виртуальных процессоров. Чтобы запросить увеличение квоты с поддержкой виртуальных процессоров, необходимо решить, сколько виртуальных процессоров, будет использоваться в каких регионах. Затем отправить запрос на квоты виртуальных процессоров группы ресурсов Azure для суммы и областей, которые должны. Если необходимо использовать 30 виртуальных процессоров в Западной Европе для запуска приложения, специально запрашивать 30 виртуальных процессоров в Западной Европе. В любом другом регионе — не увеличить квоту на виртуальные ЦП, только Западной Европе имеет квоты 30 виртуальных процессоров.
+> Если вы хотите увеличить лимит или квоту выше предельного значения по умолчанию, отправьте [запрос в службу поддержки клиентов через Интернет](azure-resource-manager/resource-manager-quota-errors.md)бесплатно. Ограничения не могут быть вызваны над максимальным предельным значением, показанным в следующих таблицах. Если столбец максимального ограничения отсутствует, ресурс не имеет регулируемых ограничений.
+>
+> [Бесплатные пробные подписки](https://azure.microsoft.com/offers/ms-azr-0044p) не подходят для увеличения лимита или квоты. При наличии [бесплатной пробной версии подписки](https://azure.microsoft.com/offers/ms-azr-0044p) ее можно обновить до подписки [с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/). Дополнительные сведения см. в статье [Обновление бесплатной пробной подписки Azure до подписки с оплатой по мере использования](billing/billing-upgrade-azure-subscription.md) и [бесплатной пробной подписки](https://azure.microsoft.com/free/free-account-faq).
+>
+
+## <a name="limits-and-azure-resource-manager"></a>Ограничения и Azure Resource Manager
+Теперь можно объединить несколько ресурсов Azure в одну группу ресурсов Azure. При использовании групп ресурсов ограничения, которые однажды были глобальными, становятся управляемыми на региональном уровне с Azure Resource Manager. Дополнительные сведения о группах ресурсов Azure см. в разделе [Azure Resource Manager обзор](azure-resource-manager/resource-group-overview.md).
+
+В следующем списке ограничений в новой таблице отражены все различия в ограничениях при использовании Azure Resource Manager. Например, таблица **ограничивается подпиской** на подписку, а **Azure Resource Manager** таблицей. Если ограничение применяется к обоим сценариям, оно отображается только в первой таблице. Если не указано иное, ограничения глобальны во всех областях.
+
+> [!NOTE]
+> Квоты для ресурсов в группах ресурсов Azure доступны для каждого региона, а не для подписки, так как квоты на управление службами. В качестве примера используем квоты виртуальных процессоров. Чтобы запросить увеличение квоты с поддержкой виртуальных ЦП, необходимо решить, сколько виртуальных ЦП вы хотите использовать в разных регионах. Затем вы выполните Специальный запрос квоты виртуальных ЦП для группы ресурсов Azure для нужных вам объемов и регионов. Если вам нужно использовать 30 виртуальных ЦП в Западной Европе для запуска приложения, вы запрашиваете 30 виртуальных ЦП в Западной Европе. Квота виртуальных ЦП не увеличивается в любом другом регионе. в Западной Европе есть 30-виртуальных цпная квота.
 > <!-- -->
-> Таким образом решите, каким вашей квоты группы ресурсов Azure необходимо для вашей рабочей нагрузки в любой из одного региона. Затем запросите эти ресурсы в каждом регионе, в которую вы хотите развернуть. Помощь в определении текущих квот для конкретных регионов см. в разделе [Устранение неполадок в развертывании](resource-manager-common-deployment-errors.md).
+> В результате определите, какие квоты группы ресурсов Azure должны быть для вашей рабочей нагрузки в одном регионе. Затем запросите эту сумму в каждом регионе, в котором требуется выполнить развертывание. Сведения о том, как определить текущие квоты для конкретных регионов, см. в разделе [Устранение неполадок развертывания](resource-manager-common-deployment-errors.md).
 >
 >
 
@@ -45,7 +45,7 @@ ms.locfileid: "67295964"
 * [Управление API](#api-management-limits)
 * [Служба приложений](#app-service-limits)
 * [Шлюз приложений](#application-gateway-limits)
-* [Автоматизация](#automation-limits)
+* [Служба автоматизации](#automation-limits)
 * [Кэш Azure для Redis](#azure-cache-for-redis-limits)
 * [Облачные службы Azure](#azure-cloud-services-limits)
 * [Azure Cosmos DB](#azure-cosmos-db-limits)
@@ -56,12 +56,12 @@ ms.locfileid: "67295964"
 * [Функции Azure](#functions-limits)
 * [Служба Azure Kubernetes (AKS)](#azure-kubernetes-service-limits)
 * [Служба "Машинное обучение Azure"](#azure-machine-learning-service-limits)
-* [служба "Карты Azure"](#azure-maps-limits);
+* [Azure Maps](#azure-maps-limits)
 * [Azure Monitor](#azure-monitor-limits)
 * [Политика Azure](#azure-policy-limits)
 * [Поиск Azure;](#azure-search-limits)
 * [Служба Azure SignalR](#azure-signalr-service-limits)
-* [Архивация](#backup-limits)
+* [Azure Backup](#backup-limits)
 * [Пакетная служба](#batch-limits)
 * [Службы BizTalk](#biztalk-services-limits)
 * [Экземпляры контейнеров](#container-instances-limits)
@@ -73,10 +73,10 @@ ms.locfileid: "67295964"
 * [Database Migration Service](#database-migration-service-limits)
 * [Сетка событий](#event-grid-limits)
 * [Центры событий](#event-hubs-limits)
-* [Входной двери службы](#azure-front-door-service-limits)
-* [Identity Manager](#identity-manager-limits)
+* [Служба "Передняя дверь"](#azure-front-door-service-limits)
+* [Диспетчер удостоверений](#identity-manager-limits)
 * [Центр Интернета вещей](#iot-hub-limits)
-* [Служба подготовки устройств для Центра Интернета вещей](#iot-hub-device-provisioning-service-limits)
+* [Служба подготовки устройств к добавлению в Центр Интернета вещей](#iot-hub-device-provisioning-service-limits)
 * [хранилище ключей;](#key-vault-limits)
 * [Службы мультимедиа](#media-services-limits)
 * [Мобильные службы](#mobile-services-limits)
@@ -84,10 +84,10 @@ ms.locfileid: "67295964"
 * [Сеть](#networking-limits)
   * [Шлюз приложений](#application-gateway-limits)
   * [Azure DNS](#azure-dns-limits)
-  * [Служба Azure двери](#azure-front-door-service-limits)
+  * [Служба "Передняя дверца Azure"](#azure-front-door-service-limits)
   * [Брандмауэр Azure](#azure-firewall-limits)
   * [ExpressRoute](#expressroute-limits)
-  * [Балансировщик нагрузки](#load-balancer)
+  * [Load Balancer](#load-balancer)
   * [Общедоступный IP-адрес](#publicip-address)
   * [Наблюдатель за сетями](#network-watcher-limits)
   * [Диспетчер трафика](#traffic-manager-limits)
@@ -108,11 +108,11 @@ ms.locfileid: "67295964"
 * [Масштабируемые наборы виртуальных машин](#virtual-machine-scale-sets-limits)
 
 ### <a name="subscription-limits"></a>Ограничения подписки
-#### <a name="subscription-limits---azure-service-management-classic-deployment-model"></a>Ограничения подписки — управление службами Azure (Классическая модель развертывания)
+#### <a name="subscription-limits---azure-service-management-classic-deployment-model"></a>Ограничения подписки — Управление службами Azure (классическая модель развертывания)
 [!INCLUDE [azure-subscription-limits](../includes/azure-subscription-limits.md)]
 
 #### <a name="subscription-limits---azure-resource-manager"></a>Ограничения подписки — Azure Resource Manager
-При использовании Azure Resource Manager и групп ресурсов Azure, применяются следующие ограничения. Не указаны ограничения, которые не были изменены с помощью Azure Resource Manager. См. в предыдущей таблице эти ограничения.
+При использовании Azure Resource Manager и групп ресурсов Azure действуют следующие ограничения. Ограничения, которые не были изменены Azure Resource Manager, отсутствуют в списке. Эти ограничения приведены в предыдущей таблице.
 
 Сведения об ограничениях на операции записи и чтения API Resource Manager см. в разделе [Регулирование запросов Resource Manager](resource-manager-request-limits.md).
 
@@ -126,18 +126,18 @@ ms.locfileid: "67295964"
 [!INCLUDE [azure-virtual-machines-limits](../includes/azure-virtual-machines-limits.md)]
 
 #### <a name="virtual-machines-limits---azure-resource-manager"></a>Ограничения виртуальных машин — диспетчер ресурсов Azure
-При использовании Azure Resource Manager и групп ресурсов Azure, применяются следующие ограничения. Не указаны ограничения, которые не были изменены с помощью Azure Resource Manager. См. в предыдущей таблице эти ограничения.
+При использовании Azure Resource Manager и групп ресурсов Azure действуют следующие ограничения. Ограничения, которые не были изменены Azure Resource Manager, отсутствуют в списке. Эти ограничения приведены в предыдущей таблице.
 
 [!INCLUDE [azure-virtual-machines-limits-azure-resource-manager](../includes/azure-virtual-machines-limits-azure-resource-manager.md)]
 
-#### <a name="shared-image-gallery-limits"></a>Общие ограничения коллекции образов
+#### <a name="shared-image-gallery-limits"></a>Ограничения общей коллекции образов
 
-Существуют ограничения на одну подписку, для развертывания ресурсов с помощью Shared галерей изображений:
-- 100 общего образа разделом «галереи» на подписку в регионе
-- 1000 определения изображения, на подписку в регионе
-- 10 000 версии образов, на подписку в регионе
+Существуют ограничения на подписку для развертывания ресурсов с помощью общих коллекций образов.
+- 100 коллекций общих образов на подписку для каждого региона
+- 1 000 определений образов для каждой подписки на регион
+- 10 000. версии образов на подписку на регион
 
-### <a name="virtual-machine-scale-sets-limits"></a>Ограничения наборов масштабирования виртуальных машин
+### <a name="virtual-machine-scale-sets-limits"></a>Ограничения для масштабируемых наборов виртуальных машин
 [!INCLUDE [virtual-machine-scale-sets-limits](../includes/azure-virtual-machine-scale-sets-limits.md)]
 
 ### <a name="container-instances-limits"></a>Ограничения для экземпляров контейнеров Azure
@@ -151,8 +151,8 @@ ms.locfileid: "67295964"
 ### <a name="azure-kubernetes-service-limits"></a>Ограничения службы Kubernetes Azure
 [!INCLUDE [container-service-limits](../includes/container-service-limits.md)]
 
-### <a name="azure-machine-learning-service-limits"></a>Ограничения службы машинного обучения Azure
-Последние значения квот вычислений машинного обучения Azure можно найти в [страницу квот для машинного обучения Azure](../articles/machine-learning/service/how-to-manage-quotas.md)
+### <a name="azure-machine-learning-service-limits"></a>Ограничения службы Машинное обучение Azure
+Последние значения квоты на Машинное обучение Azure вычислений можно найти на [странице квота машинное обучение Azure](../articles/machine-learning/service/how-to-manage-quotas.md) .
 
 ### <a name="networking-limits"></a>Ограничения сети
 [!INCLUDE [azure-virtual-network-limits](../includes/azure-virtual-network-limits.md)]
@@ -184,7 +184,7 @@ ms.locfileid: "67295964"
 <!--like # storage accts -->
 [!INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
 
-Дополнительные сведения об ограничениях учетных записей хранения см. в разделе [целевые показатели масштабируемости и производительности службы хранилища Azure](storage/common/storage-scalability-targets.md).
+Дополнительные сведения об ограничениях учетной записи хранения см. в статье целевые показатели [масштабируемости и производительности службы хранилища Azure](storage/common/storage-scalability-targets.md).
 
 #### <a name="storage-resource-provider-limits"></a>Ограничения поставщика ресурсов хранилища 
 
@@ -194,7 +194,7 @@ ms.locfileid: "67295964"
 [!INCLUDE [storage-blob-scale-targets](../includes/storage-blob-scale-targets.md)]
 
 #### <a name="azure-files-limits"></a>Ограничения службы "Файлы Azure"
-Дополнительные сведения об ограничениях службы файлов Azure см. в разделе [целевые показатели масштабируемости и производительности службы файлов Azure](storage/files/storage-files-scale-targets.md).
+Дополнительные сведения об ограничениях для файлов Azure см. в статье целевые показатели [масштабируемости и производительности службы файлов Azure](storage/files/storage-files-scale-targets.md).
 
 [!INCLUDE [storage-files-scale-targets](../includes/storage-files-scale-targets.md)]
 
@@ -211,7 +211,7 @@ ms.locfileid: "67295964"
 #### <a name="virtual-machine-disk-limits"></a>Ограничения для дисков виртуальной машины
 [!INCLUDE [azure-storage-limits-vm-disks](../includes/azure-storage-limits-vm-disks.md)]
 
-Дополнительные сведения см. в разделе [размеры виртуальных машин](virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Дополнительные сведения см. в статье [размеры виртуальных машин](virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 #### <a name="managed-virtual-machine-disks"></a>Управляемые диски виртуальной машины
 
@@ -246,7 +246,7 @@ ms.locfileid: "67295964"
 [!INCLUDE [biztalk-services-service-limits](../includes/biztalk-services-service-limits.md)]
 
 ### <a name="azure-cosmos-db-limits"></a>Ограничения Azure Cosmos DB
-Ограничения Azure Cosmos DB, см. в разделе [ограничения в Azure Cosmos DB](cosmos-db/concepts-limits.md).
+Ограничения Azure Cosmos DB см. [в разделе ограничения в Azure Cosmos DB](cosmos-db/concepts-limits.md).
 
 ### <a name="azure-database-for-mysql"></a>База данных Azure для MySQL
 Дополнительные сведения об ограничениях базы данных Azure для MySQL см. в статье [Ограничения базы данных Azure для MySQL](mysql/concepts-limits.md).
@@ -254,12 +254,12 @@ ms.locfileid: "67295964"
 ### <a name="azure-database-for-postgresql"></a>База данных Azure для PostgreSQL
 Сведения об ограничениях базы данных Azure для PostgreSQL см. в статье [Ограничения базы данных Azure для PostgreSQL](postgresql/concepts-limits.md).
 
-### <a name="azure-search-limits"></a>Поиск Azure ограничивает
+### <a name="azure-search-limits"></a>Ограничения поиска Azure
 Ценовые категории определяют емкость и ограничения службы поиска. Существуют следующие категории:
 
-* **Бесплатный** мультитенантная служба, совместно с другими подписчиками Azure и предназначен для оценки и разработки небольших проектов.
+* **Бесплатная** многоклиентская служба, совместно используемая с другими подписчиками Azure, предназначена для оценки и небольших проектов разработки.
 * **Базовый** предоставляет выделенные вычислительные ресурсы для небольших рабочих нагрузок в рабочей среде, поддерживая до трех реплик для обработки запросов с высоким уровнем доступности.
-* **Стандартный**, включающее S1, S2 и S3 и S3 высокой плотности, предназначен для более ресурсоемкие рабочие нагрузки. Существует несколько уровней в рамках уровня "стандартный", в котором можно выбрать конфигурацию ресурсов, которая лучше всего подходит для вашего профиля рабочей нагрузки.
+* **Стандартная**, включающая высокую плотность S1, S2, S3 и S3, предназначена для больших рабочих нагрузок. На уровне Standard существует несколько уровней, чтобы можно было выбрать конфигурацию ресурсов, которая лучше соответствует профилю рабочей нагрузки.
 
 **Ограничения на одну подписку**
 
@@ -274,7 +274,7 @@ ms.locfileid: "67295964"
 ### <a name="media-services-limits"></a>Ограничения служб мультимедиа
 [!INCLUDE [azure-mediaservices-limits](../includes/azure-mediaservices-limits.md)]
 
-### <a name="content-delivery-network-limits"></a>Ограничивает сети доставки содержимого
+### <a name="content-delivery-network-limits"></a>Ограничения сети доставки содержимого
 [!INCLUDE [cdn-limits](../includes/cdn-limits.md)]
 
 ### <a name="mobile-services-limits"></a>Ограничения мобильных служб
@@ -282,13 +282,17 @@ ms.locfileid: "67295964"
 
 ### <a name="azure-monitor-limits"></a>Ограничения Azure Monitor
 
-#### <a name="alerts"></a>Оповещения
+#### <a name="alerts"></a>Предупреждения
 
 [!INCLUDE [monitoring-limits](../includes/azure-monitor-limits-alerts.md)]
 
 #### <a name="action-groups"></a>Группы действий
 
 [!INCLUDE [monitoring-limits](../includes/azure-monitor-limits-action-groups.md)]
+
+#### <a name="log-queries-and-language"></a>Ведение журнала запросов и языка
+
+[!INCLUDE [monitoring-limits](../includes/azure-monitor-limits-log-queries.md)]
 
 #### <a name="log-analytics-workspaces"></a>Рабочие области Log Analytics
 
@@ -349,7 +353,7 @@ ms.locfileid: "67295964"
 ### <a name="backup-limits"></a>Ограничения резервного копирования
 [!INCLUDE [azure-backup-limits](../includes/azure-backup-limits.md)]
 
-### <a name="azure-signalr-service-limits"></a>Ограничивает служба Azure SignalR
+### <a name="azure-signalr-service-limits"></a>Ограничения службы Azure SignalR
 [!INCLUDE [signalr-service-limits](../includes/signalr-service-limits.md)]
 
 ### <a name="site-recovery-limits"></a>Ограничения Site Recovery
@@ -364,25 +368,25 @@ ms.locfileid: "67295964"
 ### <a name="key-vault-limits"></a>Ограничения хранилища ключей
 [!INCLUDE [key-vault-limits](../includes/key-vault-limits.md)]
 
-### <a name="multi-factor-authentication-limits"></a>Ограничивает многофакторной проверки подлинности
+### <a name="multi-factor-authentication-limits"></a>Ограничения многофакторной проверки подлинности
 [!INCLUDE [azure-mfa-service-limits](../includes/azure-mfa-service-limits.md)]
 
 ### <a name="automation-limits"></a>Ограничения автоматизации
 [!INCLUDE [automation-limits](../includes/azure-automation-service-limits.md)]
 
-### <a name="identity-manager-limits"></a>Ограничения Identity Manager
+### <a name="identity-manager-limits"></a>Ограничения диспетчера удостоверений
 [!INCLUDE [automation-limits](~/includes/managed-identity-limits.md)]
 
 ### <a name="role-based-access-control-limits"></a>Ограничения управления доступа на основе ролей
 [!INCLUDE [role-based-access-control-limits](../includes/role-based-access-control-limits.md)]
 
 ### <a name="sql-database-limits"></a>Ограничения базы данных SQL
-Ограничения базы данных SQL, см. в разделе [ограничения ресурсов базы данных SQL для отдельных баз данных](sql-database/sql-database-vcore-resource-limits-single-databases.md), [ограничения ресурсов базы данных SQL для эластичных пулов и базы данных в составе](sql-database/sql-database-vcore-resource-limits-elastic-pools.md), и [ограничения ресурсов базы данных SQL для управляемых экземпляров](sql-database/sql-database-managed-instance-resource-limits.md).
+Ограничения для базы данных SQL см. в разделе [ограничения ресурсов базы данных SQL для отдельных баз данных](sql-database/sql-database-vcore-resource-limits-single-databases.md), [ограничения ресурсов базы данных SQL для эластичных пулов и баз данных](sql-database/sql-database-vcore-resource-limits-elastic-pools.md)в составе пула, а [ограничения ресурсов базы данных SQL для управляемых экземпляров](sql-database/sql-database-managed-instance-resource-limits.md).
 
 ### <a name="sql-data-warehouse-limits"></a>Ограничения хранилища данных SQL
-Ограничения хранилища данных SQL, см. в разделе [ограничения ресурсов хранилища данных SQL](sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md).
+Ограничения для хранилища данных SQL см. в статье [ограничения ресурсов хранилища данных](sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md)SQL.
 
 ## <a name="see-also"></a>См. также
-- [Ознакомьтесь с Azure ограничениями и увеличения](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
-- [Размеры виртуальных машин и облачных служб Azure](virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+- [Общие сведения об ограничениях и росте Azure](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
+- [Размеры виртуальных машин и облачных служб для Azure](virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 - [Размеры для облачных служб Azure](cloud-services/cloud-services-sizes-specs.md)

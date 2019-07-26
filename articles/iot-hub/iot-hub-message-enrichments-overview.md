@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: robinsh
-ms.openlocfilehash: b815ba80ac0860a4248b27e4013da4a8a9d12e18
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
-ms.translationtype: HT
+ms.openlocfilehash: 8e24489ad2909879b035a08316e66788034e99bc
+ms.sourcegitcommit: b49431b29a53efaa5b82f9be0f8a714f668c38ab
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68321298"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68377199"
 ---
 # <a name="message-enrichments-for-device-to-cloud-iot-hub-messages-preview"></a>Дополнения сообщений для сообщений центра Интернета вещей, отправляемых с устройства в облако (Предварительная версия)
 
@@ -41,6 +41,8 @@ ms.locfileid: "68321298"
 
    > [!NOTE]
    > В настоящее время только $iothubname, $Twin. tagss, $Twin. Properties. и $Twin. Properties. reсообщаемые переменные для обогащения сообщений.
+
+Дополнения сообщений добавляются в виде свойств приложения в сообщения, отправляемые в выбранные конечные точки.  
 
 ## <a name="applying-enrichments"></a>Применение дополнений
 
