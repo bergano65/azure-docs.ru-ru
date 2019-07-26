@@ -1,19 +1,18 @@
 ---
 title: Резервное копирование виртуальных машин VMware с помощью Azure Backup Server
 description: Для резервного копирования виртуальных машин VMware, запущенных на серверах VMWare vCenter и ESXi, используйте Azure Backup Server.
-services: backup
 author: rayne-wiselman
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 12/11/2018
 ms.author: raynew
-ms.openlocfilehash: f034f31f2c8c49bbdfb88e2ba0a009ff5b795fa2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: adb8cb6a5740b7d09848c792093ea62f69f521a7
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65789601"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466799"
 ---
 # <a name="back-up-vmware-vms-with-azure-backup-server"></a>Резервное копирование виртуальных машин VMware с помощью Azure Backup Server
 
@@ -27,7 +26,7 @@ ms.locfileid: "65789601"
 - добавить сервер vCenter или ESXi в Azure Backup Server;
 - настроить группу защиты, которая содержит необходимые для резервного копирования виртуальные машины VMware, указать параметры резервного копирования и планировать его выполнение.
 
-## <a name="before-you-start"></a>Перед началом работы
+## <a name="before-you-start"></a>Перед началом
 - Убедитесь, что версия vCenter или ESXi поддерживает резервное копирование (версии 6.5, 6.0 и 5.5).
 - Убедитесь, что Azure Backup Server настроено. Если это еще не сделано, перед началом изучите [это](backup-azure-microsoft-azure-backup.md). Azure Backup Server следует запускать с последними обновлениями.
 
@@ -37,9 +36,9 @@ ms.locfileid: "65789601"
 По умолчанию Azure Backup Server взаимодействует с серверами VMware по протоколу HTTPS. Чтобы настроить соединение HTTPS, скачайте сертификат Центра сертификации (ЦС) VMware и импортируйте его в Azure Backup Server.
 
 
-### <a name="before-you-start"></a>Перед началом работы
+### <a name="before-you-start"></a>Перед началом
 
-- Если вы не хотите использовать протокол HTTPS вы можете [отключить проверку сертификатов HTTPS для всех серверов VMware](backup-azure-backup-server-vmware.md#disable-https-certificate-validation).
+- Если вы не хотите использовать протокол HTTPS, можно [отключить проверку сертификата HTTPS для всех серверов VMware](backup-azure-backup-server-vmware.md#disable-https-certificate-validation).
 - Обычно к серверу vCenter или ESXi можно подключиться из браузера на компьютере Azure Backup Server через веб-клиент vSphere. Соединение не защищено, когда делаете это в первый раз, и отобразится следующее.
 - Важно понимать, как Azure Backup Server обрабатывает резервные копии.
     - Первым шагом будет создание Azure Backup Server резервной копии данных в локальном хранилище дисков. Azure Backup Server использует пул хранилища, набор дисков и томов, на которых Azure Backup Server хранит точки восстановления диска для защищенных данных. Пул хранения может быть хранилищем, подключенным напрямую (DAS), оптоволоконным каналом сети SAN или устройством или сетью хранения данных iSCSI. Важно убедиться, что хранилище имеет достаточный объем для создания локальной резервной копии данных виртуальной машины VMware.
@@ -101,7 +100,7 @@ ms.locfileid: "65789601"
 
 
 
-### <a name="disable-https-certificate-validation"></a>Отключить проверку сертификатов HTTPS
+### <a name="disable-https-certificate-validation"></a>Отключить проверку сертификата HTTPS
 
 Если в вашей организации есть границы безопасности, или вы не хотите использовать протокол HTTPS между серверами VMware и компьютером Azure Backup Server, отключите HTTPS следующим образом.
 1. Скопируйте приведенный ниже текст и вставьте его в TXT-файл.
@@ -124,11 +123,11 @@ ms.locfileid: "65789601"
 1. Войдите на сервер vCenter Server (или, если вы не используете vCenter Server, на узел ESXi).
 2. На панели **Навигатор** щелкните **Администрирование**.
 
-    ![Администрирование](./media/backup-azure-backup-server-vmware/vmware-navigator-panel.png)
+    ![Управление](./media/backup-azure-backup-server-vmware/vmware-navigator-panel.png)
 
 3. В **Администрирование** > **Роли** щелкните значок добавления роли (символ "+").
 
-    ![Добавление роли](./media/backup-azure-backup-server-vmware/vmware-define-new-role.png)
+    ![Добавить роль](./media/backup-azure-backup-server-vmware/vmware-define-new-role.png)
 
 
 4. В разделе**Создание роли** > **Имя роли** введите *BackupAdminRole*. Это может быть любое имя, описывающее назначение этой роли.
@@ -140,7 +139,7 @@ ms.locfileid: "65789601"
 
      ![Иерархия привилегий родителей-потомков](./media/backup-azure-backup-server-vmware/cert-add-privilege-expand.png)
 
-### <a name="role-permissions"></a>Разрешения ролей
+### <a name="role-permissions"></a>Разрешения роли
 **6.5 или 6.0** | **5.5**
 --- | ---
 Datastore.AllocateSpace | Datastore.AllocateSpace
@@ -171,7 +170,7 @@ VirtualMachine.State.RemoveSnapshot | VirtualMachine.State.RemoveSnapshot
 
     ![Пользователи и группы](./media/backup-azure-backup-server-vmware/vmware-userandgroup-panel.png)
 
-    **VCenter пользователей и групп** отображаются панели.
+    Появится панель **Пользователи и группы vCenter** .
 
 
 2. На панели **vCenter Users and Groups** (Пользователи и группы vCenter) выберите вкладку **Users** (Пользователи), а затем щелкните значок добавления пользователей (знак "+").
@@ -353,27 +352,27 @@ VirtualMachine.State.RemoveSnapshot | VirtualMachine.State.RemoveSnapshot
 
      ![Сводка параметров и элементов группы защиты](./media/backup-azure-backup-server-vmware/protection-group-summary.png)
 
-## <a name="vmware-vsphere-67"></a>VMWare vSphere 6.7
+## <a name="vmware-vsphere-67"></a>VMWare vSphere 6,7
 
-Для резервного копирования vSphere 6.7 выполните следующее:
+Чтобы выполнить резервное копирование vSphere 6,7, выполните следующие действия.
 
-- Включение протокола TLS 1.2 на сервере DPM
+- Включение TLS 1,2 на сервере DPM
   >[!Note]
-  >VMWare 6.7 и более поздних версий включены TLS в качестве протокола связи.
+  >В VMWare 6,7 включены протокол TLS в качестве протокола связи.
 
-- Задайте разделы реестра следующим образом:  
+- Задайте следующие разделы реестра:  
 
-  Редактор реестра Windows, версия 5.00
+  Редактор реестра Windows версии 5,00
 
-  [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\\.NETFramework\v2.0.50727] "SystemDefaultTlsVersions"=dword:00000001 "SchUseStrongCrypto"=dword:00000001
+  [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\\. NETFramework\v2.0.50727] "Системдефаулттлсверсионс" = DWORD: 00000001 "SchUseStrongCrypto" = DWORD: 00000001
 
-  [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\\.NETFramework\v4.0.30319] "SystemDefaultTlsVersions"=dword:00000001 "SchUseStrongCrypto"=dword:00000001
+  [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\\. NETFramework\v4.0.30319] "Системдефаулттлсверсионс" = DWORD: 00000001 "SchUseStrongCrypto" = DWORD: 00000001
 
-  [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\.NETFramework\v2.0.50727] "SystemDefaultTlsVersions"=dword:00000001 "SchUseStrongCrypto"=dword:00000001
+  [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework\v2.0.50727] "Системдефаулттлсверсионс" = DWORD: 00000001 "SchUseStrongCrypto" = DWORD: 00000001
 
-  [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework\v4.0.30319] «SystemDefaultTlsVersions» = DWORD: 00000001 s «SchUseStrongCrypto» = DWORD: 00000001
+  [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework\v4.0.30319] "Системдефаулттлсверсионс" = DWORD: 00000001 s "SchUseStrongCrypto" = DWORD: 00000001
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Для решения проблем с устранением неполадок при настройке резервного копирования см. статью [Устранение неполадок Azure Backup Server](./backup-azure-mabs-troubleshoot.md).

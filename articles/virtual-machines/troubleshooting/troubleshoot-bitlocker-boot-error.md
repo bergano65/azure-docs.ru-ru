@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 03/25/2019
 ms.author: genli
-ms.openlocfilehash: e60188496e060eeea14fc7b7f1cc9a662551b286
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 27a675982711f8d8f0b36ea0cc2600de45e97a6e
+ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67485158"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68348459"
 ---
 # <a name="bitlocker-boot-errors-on-an-azure-vm"></a>Ошибки загрузки BitLocker на виртуальной машине Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "67485158"
 Если с помощью этого метода не удается устранить проблему, выполните следующие действия для восстановления BEK-файла вручную.
 
 1. Сделайте снимок системного диска затронутой виртуальной машины в качестве резервной копии. Дополнительные сведения см. в статье [Создание моментального снимка](../windows/snapshot-copy-managed-disk.md).
-2. [Подключите системный диск к виртуальной машине восстановления](troubleshoot-recovery-disks-portal-windows.md). Для запуска [готов](https://docs.microsoft.com/windows-server/administration/windows-commands/manage-bde) команду на шаге 7, **шифрования диска BitLocker** функция должна быть включена в виртуальной Машине восстановления.
+2. [Подключите системный диск к виртуальной машине восстановления](troubleshoot-recovery-disks-portal-windows.md). Чтобы выполнить команду [Manage-bde](https://docs.microsoft.com/windows-server/administration/windows-commands/manage-bde) на шаге 7, на виртуальной машине восстановления должна быть включена функция **Шифрование диска BitLocker** .
 
     Когда вы подключаете управляемый диск, может появиться сообщение об ошибке "диск содержит параметры шифрования и поэтому не может использоваться в качестве диска данных". В этом случае запустите следующий сценарий, чтобы повторить попытку подключения этого диска.
 
@@ -83,7 +83,7 @@ ms.locfileid: "67485158"
     ```powershell
     $vmName = "myVM"
     $vault = "myKeyVault"
-    Get-AzureKeyVaultSecret -VaultName $vault | where {($_.Tags.MachineName -eq $vmName) -and ($_.ContentType -match 'BEK')} `
+    Get-AzKeyVaultSecret -VaultName $vault | where {($_.Tags.MachineName -eq $vmName) -and ($_.ContentType -match 'BEK')} `
             | Sort-Object -Property Created `
             | ft  Created, `
                 @{Label="Content Type";Expression={$_.ContentType}}, `
@@ -112,22 +112,22 @@ ms.locfileid: "67485158"
 
     ```powershell
     $vault = "myKeyVault"
-    $bek = " EF7B2F5A-50C6-4637-9F13-7F599C12F85C.BEK"
-    $keyVaultSecret = Get-AzureKeyVaultSecret -VaultName $vault -Name $bek
+    $bek = " EF7B2F5A-50C6-4637-9F13-7F599C12F85C"
+    $keyVaultSecret = Get-AzKeyVaultSecret -VaultName $vault -Name $bek
     $bekSecretBase64 = $keyVaultSecret.SecretValueText
     $bekFileBytes = [Convert]::FromBase64String($bekSecretbase64)
     $path = "C:\BEK\DiskEncryptionKeyFileName.BEK"
     [System.IO.File]::WriteAllBytes($path,$bekFileBytes)
     ```
 
-7.  Чтобы разблокировать присоединенный диск с помощью BEK-файл, выполните следующую команду.
+7.  Чтобы разблокировать подключенный диск с помощью файла BEK, выполните следующую команду.
 
     ```powershell
     manage-bde -unlock F: -RecoveryKey "C:\BEK\EF7B2F5A-50C6-4637-9F13-7F599C12F85C.BEK
     ```
     В этом примере диск F является подключенным диском ОС. Выберите правильное имя диска. 
 
-    - Если диск был разблокирован с помощью BEK ключа Мы рассмотрим проблему BitLocker разрешаться. 
+    - Если диск был разблокирован с помощью BEK ключа Мы можем рассмотреть проблему с BitLocker, которую необходимо устранить. 
 
     - Если диск не разблокируется с помощью BEK-ключа, можно использовать приостановку защиты, чтобы временно отключить BitLocker, выполнив следующую команду.
     
@@ -254,7 +254,7 @@ ms.locfileid: "67485158"
     ```
     В этом примере диск F является подключенным диском ОС. Выберите правильное имя диска. 
 
-    - Если диск был разблокирован с помощью BEK ключа Мы рассмотрим проблему BitLocker разрешаться. 
+    - Если диск был разблокирован с помощью BEK ключа Мы можем рассмотреть проблему с BitLocker, которую необходимо устранить. 
 
     - Если диск не разблокируется с помощью BEK-ключа, можно использовать приостановку защиты, чтобы временно отключить BitLocker, выполнив следующую команду.
     

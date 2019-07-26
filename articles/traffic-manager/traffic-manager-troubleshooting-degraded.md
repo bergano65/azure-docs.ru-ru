@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/03/2017
 ms.author: genli
-ms.openlocfilehash: f01dfe78d5d5e322258b0ee98cec314f9afe33c0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 19a654215377ba0fac7dacf800bf87a3481679c0
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60329757"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68357225"
 ---
 # <a name="troubleshooting-degraded-state-on-azure-traffic-manager"></a>Устранение неполадок, связанных со сбоем диспетчера трафика
 
-В этой статье описывается устранение неполадок в профиле диспетчера трафика Azure, который находится в состоянии пониженной функциональности. Для этого сценария предположим, что вы настроили профиль диспетчера трафика, указывающего на некоторые из размещенных служб .cloudapp.net. Если в диспетчере трафика отображается состояние **Деградация**, одна или несколько конечных точек также могут иметь состояние **Деградация**.
+В этой статье описывается устранение неполадок в профиле диспетчера трафика Azure, который находится в состоянии пониженной функциональности. В качестве первого шага при устранении неполадок в состоянии пониженной работоспособности диспетчера трафика Azure необходимо включить ведение журнала диагностики.  Дополнительные сведения см. в статье [Включение журналов диагностики](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-diagnostic-logs) . Для этого сценария предположим, что вы настроили профиль диспетчера трафика, указывающего на некоторые из размещенных служб .cloudapp.net. Если в диспетчере трафика отображается состояние **Деградация**, одна или несколько конечных точек также могут иметь состояние **Деградация**.
 
 ![состояние "Деградация" конечной точки](./media/traffic-manager-troubleshooting-degraded/traffic-manager-degradedifonedegraded.png)
 
@@ -47,7 +47,7 @@ ms.locfileid: "60329757"
 
 Кроме того, для просмотра ответа HTTP можно воспользоваться вкладкой "Сеть" средств отладки F12 в Internet Explorer.
 
-В этом примере мы хотим видеть ответа от нашей URL-адрес пробы: http:\//watestsdp2008r2.cloudapp.net:80/Probe. Проблема продемонстрирована в приведенном ниже примере PowerShell.
+В этом примере мы хотим увидеть ответ от нашего URL-адреса пробы: HTTP\/:/watestsdp2008r2.cloudapp.NET:80/Probe. Проблема продемонстрирована в приведенном ниже примере PowerShell.
 
 ```powershell
 Invoke-WebRequest 'http://watestsdp2008r2.cloudapp.net/Probe' -MaximumRedirection 0 -ErrorAction SilentlyContinue | Select-Object StatusCode,StatusDescription
@@ -86,7 +86,7 @@ public class TrustAllCertsPolicy : ICertificatePolicy {
 
 [Облачные службы](https://go.microsoft.com/fwlink/?LinkId=314074)
 
-[службе приложений Azure](https://azure.microsoft.com/documentation/services/app-service/web/)
+[Служба приложений Azure](https://azure.microsoft.com/documentation/services/app-service/web/)
 
 [Операции с диспетчером трафика (справочник по REST API)](https://go.microsoft.com/fwlink/?LinkId=313584)
 

@@ -1,24 +1,23 @@
 ---
 title: Резервное копирование сервера Exchange Server в службу Azure Backup с помощью Azure Backup Server
 description: Узнайте, как выполнить резервное копирование сервера Exchange Server в службу Azure Backup с помощью Azure Backup Server.
-services: backup
 author: kasinh
 manager: vvithal
 ms.service: backup
 ms.topic: conceptual
 ms.date: 03/24/2017
 ms.author: kasinh
-ms.openlocfilehash: 40541596b4da9e0590d497785afd7d6d7f4cbcb4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0eacd295e279a3b3bcfbdad2c67cac7160f8dcb3
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60641505"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466400"
 ---
 # <a name="back-up-an-exchange-server-to-azure-with-azure-backup-server"></a>Резервное копирование сервера Exchange Server в Azure с помощью Azure Backup Server
 В этой статье описывается, как настроить Microsoft Azure Backup Server (MABS) для резервного копирования сервера Microsoft Exchange Server в Azure.  
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Прежде чем продолжить, убедитесь, что Azure Backup Server [установлен и подготовлен](backup-azure-microsoft-azure-backup.md).
 
 ## <a name="mabs-protection-agent"></a>Агент защиты MABS
@@ -104,5 +103,5 @@ ms.locfileid: "60641505"
 
     ![Выбор оперативной репликации](./media/backup-azure-backup-exchange-server/choose-online-replication.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Часто задаваемые вопросы о службе архивации Azure](backup-azure-backup-faq.md)

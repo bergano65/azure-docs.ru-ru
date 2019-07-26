@@ -1,7 +1,6 @@
 ---
 title: Что можно защищать с помощью Azure Backup Server
 description: В этой статье приводится матрица поддержки, в которой перечислены все рабочие нагрузки, типы данных и установки, которые защищает Azure Backup Server.
-services: backup
 author: rayne-wiselman
 ms.service: backup
 keywords: ''
@@ -9,12 +8,12 @@ ms.date: 11/13/2018
 ms.topic: conceptual
 ms.author: raynew
 manager: carmonm
-ms.openlocfilehash: ad6d1b067e396b8f46578484d3c960372e51176c
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 2e8004b07542efed3ddc2b5a390cfb12fd48cc1b
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234763"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68465055"
 ---
 # <a name="azure-backup-server-protection-matrix"></a>Таблица защиты посредством Azure Backup Server
 
@@ -43,7 +42,7 @@ ms.locfileid: "68234763"
 |Серверы (32- и 64-разрядные)|Windows Server 2008 с пакетом обновления 2 (SP2)|Физический сервер<br /><br />Локальная виртуальная машина Hyper-V<br /> <br /> Azure Stack|в|в|Том, общая папка, папка, файл, состояние системы или исходное состояние системы|
 |Серверы (32- и 64-разрядные)|Windows Server 2008 с пакетом обновления 2 (SP2)|Виртуальная машина Windows в VMWare (защищает рабочие нагрузки, выполняющихся в виртуальной машине Windows в VMWare)<br /> <br /> Azure Stack|Y|Y|Том, общая папка, папка, файл, состояние системы или исходное состояние системы|
 |Серверы (32- и 64-разрядные)|Windows Storage Server 2008|Физический сервер<br /><br />Локальная виртуальная машина Hyper-V<br /> <br /> Azure Stack|Y|Y|Том, общая папка, папка, файл, состояние системы или исходное состояние системы|
-|SQL Server|SQL Server 2017|Физический сервер <br /><br /> Локальная виртуальная машина Hyper-V <br /> <br /> Виртуальная машина Azure <br /><br /> Виртуальная машина Windows в VMWare (защищает рабочие нагрузки, выполняющихся в виртуальной машине Windows в VMWare)<br /> <br /> Azure Stack|Y|в|Все сценарии развертывания: база данных|
+|SQL Server|SQL Server 2017|Физический сервер <br /><br /> Локальная виртуальная машина Hyper-V <br /> <br /> Виртуальная машина Azure <br /><br /> Виртуальная машина Windows в VMWare (защищает рабочие нагрузки, выполняющихся в виртуальной машине Windows в VMWare)<br /> <br /> Azure Stack|Y|в|Все сценарии развертывания: база данных|
 |SQL Server|SQL Server 2016 с пакетом обновления 2 (SP2)|Физический сервер <br /><br /> Локальная виртуальная машина Hyper-V <br /> <br /> Виртуальная машина Azure <br /><br /> Виртуальная машина Windows в VMWare (защищает рабочие нагрузки, выполняющихся в виртуальной машине Windows в VMWare)<br /> <br /> Azure Stack|Y|Y|Все сценарии развертывания: база данных|
 |SQL Server|SQL Server 2016 SP1|Физический сервер <br /><br /> Локальная виртуальная машина Hyper-V <br /> <br /> Виртуальная машина Azure <br /><br /> Виртуальная машина Windows в VMWare (защищает рабочие нагрузки, выполняющихся в виртуальной машине Windows в VMWare)<br /> <br /> Azure Stack|Y|Y|Все сценарии развертывания: база данных|
 |SQL Server|SQL Server 2016|Физический сервер <br /><br /> Локальная виртуальная машина Hyper-V <br /> <br /> Виртуальная машина Azure <br /><br /> Виртуальная машина Windows в VMWare (защищает рабочие нагрузки, выполняющихся в виртуальной машине Windows в VMWare)<br /> <br /> Azure Stack|Y|Y |Все сценарии развертывания: база данных|
@@ -55,8 +54,8 @@ ms.locfileid: "68234763"
 |SQL Server|SQL Server 2012, SQL Server 2012 с пакетом обновления 1 (SP1)|Физический сервер<br /><br />Локальная виртуальная машина Hyper-V<br /> <br /> Azure Stack|Y|Y|Все сценарии развертывания: база данных|
 |SQL Server|SQL Server 2012, SQL Server 2012 с пакетом обновления 1 (SP1)|Виртуальная машина Azure (если рабочая нагрузка выполняется как виртуальная машина Azure)<br /> <br /> Azure Stack|Y|Y|Все сценарии развертывания: база данных|
 |SQL Server|SQL Server 2012, SQL Server 2012 с пакетом обновления 1 (SP1)|Виртуальная машина Windows в VMWare (защищает рабочие нагрузки, выполняющихся в виртуальной машине Windows в VMWare)<br /> <br /> Azure Stack|Y|Y|Все сценарии развертывания: база данных|
-|SQL Server|SQL Server 2008 R2|Физический сервер<br /><br />Локальная виртуальная машина Hyper-V<br /> <br /> Azure Stack|Y|Y|Все сценарии развертывания: база данных|
-|SQL Server|SQL Server 2008 R2|Виртуальная машина Azure (если рабочая нагрузка выполняется как виртуальная машина Azure)<br /> <br /> Azure Stack|Y|Y|Все сценарии развертывания: база данных|
+|SQL Server|SQL Server 2008 R2|Физический сервер<br /><br />Локальная виртуальная машина Hyper-V<br /> <br /> Azure Stack|Y|Y|Все сценарии развертывания: база данных|
+|SQL Server|SQL Server 2008 R2|Виртуальная машина Azure (если рабочая нагрузка выполняется как виртуальная машина Azure)<br /> <br /> Azure Stack|Y|Y|Все сценарии развертывания: база данных|
 |SQL Server|SQL Server 2008 R2|Виртуальная машина Windows в VMWare (защищает рабочие нагрузки, выполняющихся в виртуальной машине Windows в VMWare)<br /> <br /> Azure Stack|Y|Y|Все сценарии развертывания: база данных|
 |SQL Server|SQL Server 2008|Физический сервер<br /><br />Локальная виртуальная машина Hyper-V<br /> <br /> Azure Stack|Y|Y|Все сценарии развертывания: база данных|
 |SQL Server|SQL Server 2008|Виртуальная машина Azure (если рабочая нагрузка выполняется как виртуальная машина Azure)<br /> <br /> Azure Stack|Y|Y|Все сценарии развертывания: база данных|

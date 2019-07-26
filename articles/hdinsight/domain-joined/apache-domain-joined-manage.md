@@ -8,19 +8,19 @@ ms.reviewer: mamccrea
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/24/2018
-ms.openlocfilehash: 951bd74c67c77c944a17e41646c4fe49ef46b33f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7fa215f843fd025d26ba0f583b96f3bb7e63c9ed
+ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64725664"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68488727"
 ---
 # <a name="manage-hdinsight-clusters-with-enterprise-security-package"></a>Управление кластерами HDInsight с помощью корпоративного пакета безопасности
 Познакомьтесь с пользователями и ролями в корпоративном пакете безопасности (ESP) HDInsight, а также с тем, как управлять кластерами ESP.
 
 ## <a name="use-vscode-to-link-to-domain-joined-cluster"></a>Использование Visual Studio Code для связывания присоединенного к домену кластера
 
-Вы можете связать обычный кластер с помощью управляемого имени пользователя Apache Ambari, а кластер безопасности Apache Hadoop — с помощью имени пользователя домена (например user1@contoso.com).
+Вы можете связать обычный кластер с помощью управляемого имени пользователя Apache Ambari, а кластер безопасности Apache Hadoop — с помощью имени пользователя домена (например `user1@contoso.com`).
 1. Откройте палитру команд, нажав кнопки **CTRL+SHIFT+P**, и введите **HDInsight: Link a cluster** (HDInsight: связать кластер).
 
    ![команда связывания кластера](./media/apache-domain-joined-manage/link-cluster-command.png)
@@ -40,7 +40,7 @@ ms.locfileid: "64725664"
 
 ## <a name="use-intellij-to-link-to-domain-joined-cluster"></a>Использование IntelliJ для связывания присоединенного к домену кластера
 
-Вы можете связать обычный кластер с помощью управляемого имени пользователя Ambari, а кластер безопасности — с помощью имени пользователя домена (например, user1@contoso.com). 
+Вы можете связать обычный кластер с помощью управляемого имени пользователя Ambari, а кластер безопасности — с помощью имени пользователя домена (например, `user1@contoso.com`). 
 1. Щелкните **Link a cluster** (Связывание кластера) в **обозревателе Azure**.
 
    ![контекстное меню связывания кластера](./media/apache-domain-joined-manage/link-a-cluster-context-menu.png)
@@ -64,7 +64,7 @@ ms.locfileid: "64725664"
 
 ## <a name="use-eclipse-to-link-to-domain-joined-cluster"></a>Использование Eclipse для связывания присоединенного к домену кластера
 
-Вы можете связать обычный кластер с помощью управляемого имени пользователя Ambari, а кластер безопасности — с помощью имени пользователя домена (например, user1@contoso.com).
+Вы можете связать обычный кластер с помощью управляемого имени пользователя Ambari, а кластер безопасности — с помощью имени пользователя домена (например, `user1@contoso.com`).
 1. Щелкните **Link a cluster** (Связывание кластера) в **обозревателе Azure**.
 
    ![контекстное меню связывания кластера](./media/apache-domain-joined-manage/link-a-cluster-context-menu.png)
@@ -96,8 +96,8 @@ ms.locfileid: "64725664"
 |Apache Hadoop|Hive — интерактивные задания и запросы  |<ul><li>[Beeline](#beeline)</li><li>[Представление Hive](../hadoop/apache-hadoop-use-hive-ambari-view.md)</li><li>[ODBC/JDBC – Power BI](../hadoop/apache-hadoop-connect-hive-power-bi.md)</li><li>[Инструменты Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md)</li></ul>|
 |Apache Spark|Интерактивные задания и запросы, интерактивные задания PySpark|<ul><li>[Beeline](#beeline)</li><li>[Zeppelin с Livy](../spark/apache-spark-zeppelin-notebook.md)</li><li>[Представление Hive](../hadoop/apache-hadoop-use-hive-ambari-view.md)</li><li>[ODBC/JDBC – Power BI](../hadoop/apache-hadoop-connect-hive-power-bi.md)</li><li>[Инструменты Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md)</li></ul>|
 |Apache Spark|Сценарии пакетной службы — отправка Spark, PySpark|<ul><li>[Livy](../spark/apache-spark-livy-rest-interface.md)</li></ul>|
-|Интерактивный запрос (LLAP)|Interactive|<ul><li>[Beeline](#beeline)</li><li>[Представление Hive](../hadoop/apache-hadoop-use-hive-ambari-view.md)</li><li>[ODBC/JDBC – Power BI](../hadoop/apache-hadoop-connect-hive-power-bi.md)</li><li>[Инструменты Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md)</li></ul>|
-|Любой|Установка пользовательского приложения|<ul><li>[Действия скрипта](../hdinsight-hadoop-customize-cluster-linux.md)</li></ul>|
+|Интерактивный запрос (LLAP)|Интерактивный|<ul><li>[Beeline](#beeline)</li><li>[Представление Hive](../hadoop/apache-hadoop-use-hive-ambari-view.md)</li><li>[ODBC/JDBC – Power BI](../hadoop/apache-hadoop-connect-hive-power-bi.md)</li><li>[Инструменты Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md)</li></ul>|
+|Any|Установка пользовательского приложения|<ul><li>[Действия скрипта](../hdinsight-hadoop-customize-cluster-linux.md)</li></ul>|
 
    > [!NOTE]  
    > В Корпоративном пакете безопасности записная книжка Jupyter не установлена или не поддерживается.
@@ -142,7 +142,7 @@ ms.locfileid: "64725664"
 ## <a name="users-of-hdinsight-clusters-with-esp"></a>Пользователи кластеров HDInsight с корпоративным пакетом безопасности
 При создании кластера HDInsight без ESP в нем создаются две учетные записи пользователя:
 
-* **Администратор Ambari**. Эта учетная запись называется также *Пользователь Hadoop* или *Пользователь HTTP*. Эта учетная запись может использоваться для входа в Ambari на https://&lt;имя_кластера >. azurehdinsight.net. Он также может использоваться для выполнения запросов по представлениям Ambari, выполнения заданий с помощью внешних средств (например, PowerShell, Templeton, Visual Studio) и проверку подлинности с помощью драйвера Hive ODBC и средств бизнес-Аналитики (например, Excel, Power BI или Tableau).
+* **Администратор Ambari**. Эта учетная запись называется также *Пользователь Hadoop* или *Пользователь HTTP*. Эту учетную запись можно использовать для входа в Ambari по адресу https://&lt;имя_кластера >. azurehdinsight. NET. Его также можно использовать для выполнения запросов к представлениям Ambari, выполнения заданий через внешние средства (например, PowerShell, Templeton, Visual Studio) и проверки подлинности с помощью драйвера Hive ODBC и средств бизнес-аналитики (например, Excel, Power BI или Tableau).
 
 В кластере HDInsight с корпоративным пакетом безопасности, кроме администратора Ambari, создаются еще три пользователя.
 
@@ -180,7 +180,7 @@ ms.locfileid: "64725664"
 1. Выполните вход на [портал Azure](https://portal.azure.com).
 2. Откройте кластер HDInsight.
 3. В меню сверху щелкните **Панель мониторинга**, чтобы открыть Ambari.
-4. Войдите в Ambari, используя имя пользователя домена администратора кластера и пароль.
+4. Войдите в Ambari с помощью имени пользователя домена администратора кластера и пароля.
 5. Щелкните раскрывающееся меню **Администратор** в правом верхнем углу, затем нажмите кнопку **Управление Ambari**.
 
     ![Управление Ambari для HDInsight с корпоративным пакетом безопасности](./media/apache-domain-joined-manage/hdinsight-domain-joined-manage-ambari.png)
@@ -220,6 +220,6 @@ ms.locfileid: "64725664"
 2. В меню слева щелкните **Роли**.
 3. Щелкните **Добавить пользователя** или **Добавить группу**, чтобы назначить роли для пользователей и групп.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Описание настройки кластера HDInsight с Корпоративным пакетом безопасности см. в статье [Настройка кластера HDInsight с Корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure.md).
 * Описание настройки политик Hive и выполнения запросов Hive см. в статье [Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности](apache-domain-joined-run-hive.md).

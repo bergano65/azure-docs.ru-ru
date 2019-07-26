@@ -12,14 +12,14 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: 6022c016b83ffe1362db4d826a5ee4397afd4128
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a5be3efa5544e47f40ab9f0a31f6658b134977e2
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60338995"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68444522"
 ---
-# <a name="tutorial-implement-a-geo-distributed-database"></a>Руководство по Реализация географически распределенной базы данных
+# <a name="tutorial-implement-a-geo-distributed-database"></a>Учебник. Реализация географически распределенной базы данных
 
 Настройте базу данных SQL Azure и приложение для отработки отказа в удаленный регион, а затем протестируйте план отработки отказа. Вы узнаете, как выполнять следующие задачи:
 
@@ -30,16 +30,16 @@ ms.locfileid: "60338995"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
 Для работы с этим руководством необходимо убедиться, что установлены следующие компоненты:
 
 - [Azure PowerShell](/powershell/azureps-cmdlets-docs)
-- База данных SQL Azure. Чтобы создать ее, можно использовать:
+- Отдельная база данных в базе данных SQL Azure. Чтобы создать ее, можно использовать:
   - [Портал](sql-database-single-database-get-started.md)
   - [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](sql-database-cli-samples.md)
   - [PowerShell](sql-database-powershell-samples.md)
@@ -330,7 +330,7 @@ ms.locfileid: "60338995"
       -FailoverGroupName $myfailovergroupname
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы настроили базу данных SQL Azure и приложение для отработки отказа в удаленный регион и протестировали план отработки отказа. Вы научились выполнять следующие задачи:
 

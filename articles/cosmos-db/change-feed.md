@@ -5,15 +5,15 @@ author: rimman
 ms.author: rimman
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 07/23/2019
 ms.reviewer: sngun
 ms.custom: seodec18
-ms.openlocfilehash: e450c0682a22a6e667a2bca153ce5d706a5bea96
-ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
+ms.openlocfilehash: 40caea40637c57aedb6315ff6fc032898ff07af7
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67986240"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68467948"
 ---
 # <a name="change-feed-in-azure-cosmos-db---overview"></a>Канал изменений в Azure Cosmos DB. Обзор
 
@@ -35,10 +35,10 @@ Azure Cosmos DB используется для приложений Интер�
 
 | **Клиентские драйверы**; | **Интерфейс командной строки Azure** | **API SQL**; | **API Cassandra**; | **API Azure Cosmos DB для MongoDB** | **API Gremlin**;|**API таблицы**; |
 | --- | --- | --- | --- | --- | --- | --- |
-| .NET | Нет данных | Да | Нет | Нет | Да | Нет |
-|Java|Нет данных|Да|Нет|Нет|Да|Нет|
-|Python|Нет данных|Да|Нет|Нет|Да|Нет|
-|Node/JS|Нет данных|Да|Нет|Нет|Да|Нет|
+| .NET | Н/Д | Да | Нет | Нет | Да | Нет |
+|Java|Н/Д|Да|Нет|Нет|Да|Нет|
+|Python|Н/Д|Да|Нет|Нет|Да|Нет|
+|Node/JS|Н/Д|Да|Нет|Нет|Да|Нет|
 
 ## <a name="change-feed-and-different-operations"></a>Канал изменений и разные операции
 

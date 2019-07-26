@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: cf23ef5df3bdcaad23841da111fa06cc36b4cd57
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2f18b4793d205cfa019f501549dedfcd62f501e7
+ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61459242"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68348589"
 ---
 # <a name="securely-push-notifications-from-azure-notification-hubs"></a>Безопасная отправка push-уведомлений из Центров уведомлений Azure
 
@@ -57,12 +57,12 @@ ms.locfileid: "61459242"
 
 1. В проекте **NotifyUserWindowsPhone** добавьте следующий код в App.xaml.cs, чтобы зарегистрировать фоновую задачу push-уведомления. В конце метода `OnLaunched()` добавьте следующую строку кода:
 
-    ```c#
+    ```csharp
     RegisterBackgroundTask();
     ```
 2. Находясь в App.xaml.cs, добавьте следующий код сразу после метода `OnLaunched()` :
 
-    ```c#
+    ```csharp
     private async void RegisterBackgroundTask()
     {
         if (!Windows.ApplicationModel.Background.BackgroundTaskRegistration.AllTasks.Any(i => i.Value.Name == "PushBackgroundTask"))
@@ -79,7 +79,7 @@ ms.locfileid: "61459242"
     ```
 3. Добавьте в начало файла App.xaml.cs следующие операторы `using` :
 
-    ```c#
+    ```csharp
     using Windows.Networking.PushNotifications;
     using Windows.ApplicationModel.Background;
     ```
@@ -147,7 +147,7 @@ ms.locfileid: "61459242"
 9. Вернитесь к полю NuGet **Поиск** и введите **Json.net**. Установите пакет **Json.NET** , затем закройте окно диспетчера пакетов NuGet.
 10. Добавьте следующие инструкции `using` в начало файла `PushBackgroundTask.cs`.
 
-    ```c#
+    ```csharp
     using Windows.ApplicationModel.Background;
     using Windows.Networking.PushNotifications;
     using System.Net.Http;

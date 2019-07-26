@@ -10,14 +10,14 @@ ms.service: log-analytics
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 01/24/2019
+ms.date: 07/18/2019
 ms.author: bwren
-ms.openlocfilehash: d508ce217e3a97b3399435cb63295eb28965359a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cdd1c8348acac37acbe8ad15199f3953bfe95a8e
+ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65605604"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68370666"
 ---
 # <a name="log-data-ingestion-time-in-azure-monitor"></a>Время приема данных журнала в Azure Monitor
 Azure Monitor — это высокомасштабируемая служба, которая обслуживает тысячи клиентов, ежемесячно отправляющих стремительными темпами терабайты данных. Часто возникают вопросы о времени, в течение которого собранные данные журнала становятся доступными. В этой статье объясняются факторы, влияющие на эту задержку.
@@ -63,7 +63,7 @@ Azure Monitor — это высокомасштабируемая служба,
 Частоту сбора данных решением см. в документации к каждому решению.
 
 ### <a name="pipeline-process-time"></a>Время обработки конвейером
-После добавления в конвейер Azure Monitor записи журнала заносятся во временное хранилище, что позволяет обеспечить изоляцию клиента и сохранность данных. Как правило, этот процесс добавляет еще около 5–15 секунд задержки. В некоторых решениях по управлению реализованы более сложные алгоритмы по объединению данных и получению аналитических сведений по мере потокового поступления данных. Например, решение по мониторингу производительности сети собирает входящие данные через 3-минутные интервалы, добавляя тем самым 3-минутную задержку. Другой процесс, который приводит к увеличению задержки — это процесс, который обрабатывает пользовательские журналы. В некоторых случаях этот процесс может добавить задержку в несколько минут для журналов, собранных из файлов с помощью агента.
+После того как записи журнала поступают в конвейер Azure Monitor (как определено в свойстве [_TimeReceived](log-standard-properties.md#_timereceived) ), они записываются во временное хранилище, чтобы обеспечить изоляцию клиентов и убедиться, что данные не теряются. Как правило, этот процесс добавляет еще около 5–15 секунд задержки. В некоторых решениях по управлению реализованы более сложные алгоритмы по объединению данных и получению аналитических сведений по мере потокового поступления данных. Например, решение по мониторингу производительности сети собирает входящие данные через 3-минутные интервалы, добавляя тем самым 3-минутную задержку. Другой процесс, который приводит к увеличению задержки — это процесс, который обрабатывает пользовательские журналы. В некоторых случаях этот процесс может добавить задержку в несколько минут для журналов, собранных из файлов с помощью агента.
 
 ### <a name="new-custom-data-types-provisioning"></a>Подготовка новых типов пользовательских данных
 При создании нового типа пользовательских данных из [настраиваемого журнала](data-sources-custom-logs.md) или [API сборщика данных](data-collector-api.md) система формирует выделенный контейнер хранилища. Это однократное увеличение нагрузки, которое возникает только при первом входе этого типа данных.
@@ -79,10 +79,16 @@ Azure Monitor — это высокомасштабируемая служба,
 
 
 ## <a name="checking-ingestion-time"></a>Проверка времени приема
-В различных условиях время приема может меняться для разных ресурсов. Запросы журналов можно использовать для идентификации конкретного поведения среды.
+В различных условиях время приема может меняться для разных ресурсов. Запросы журналов можно использовать для идентификации конкретного поведения среды. В следующей таблице показано, как можно определить разное время для записи, когда она создается и отправляется в Azure Monitor.
+
+| Шаг | Свойство или функция | Комментарии |
+|:---|:---|:---|
+| Запись, созданная в источнике данных | [TimeGenerated](log-standard-properties.md#timegenerated-and-timestamp) <br>Если источник данных не задает это значение, он будет установлен в то же время, что и _TimeReceived. |
+| Запись, полученная конечной точкой приема Azure Monitor | [_TimeReceived](log-standard-properties.md#_timereceived) | |
+| Запись, сохраненная в рабочей области и доступная для запросов | [ingestion_time()](/azure/kusto/query/ingestiontimefunction) | |
 
 ### <a name="ingestion-latency-delays"></a>Задержки приема данных
-Вы можете измерить задержку конкретной записи, сравнив результат функции [ingestion_time()](/azure/kusto/query/ingestiontimefunction) с полем _TimeGenerated_. Эти данные можно использовать в различных агрегатах, чтобы определить поведение при задержке приема данных. Изучите некоторый процентиль времени приема для получения аналитических сведений по большому объему данных. 
+Можно измерять задержку конкретной записи, сравнивая результат функции [ingestion_time ()](/azure/kusto/query/ingestiontimefunction) со свойством _timegenerated_ . Эти данные можно использовать в различных агрегатах, чтобы определить поведение при задержке приема данных. Изучите некоторый процентиль времени приема для получения аналитических сведений по большому объему данных. 
 
 Например, в следующем запросе вы увидите компьютеры с наибольшим временем приема за текущий день. 
 
@@ -90,27 +96,30 @@ Azure Monitor — это высокомасштабируемая служба,
 Heartbeat
 | where TimeGenerated > ago(8h) 
 | extend E2EIngestionLatency = ingestion_time() - TimeGenerated 
-| summarize percentiles(E2EIngestionLatency,50,95) by Computer 
-| top 20 by percentile_E2EIngestionLatency_95 desc  
+| extend AgentLatency = _TimeReceived - TimeGenerated 
+| summarize percentiles(E2EIngestionLatency,50,95), percentiles(AgentLatency,50,95) by Computer 
+| top 20 by percentile_E2EIngestionLatency_95 desc
 ```
  
 Если вы хотите детализировать время приема для определенного компьютера за период времени, используйте следующий запрос, который также позволяет визуализировать данные в виде графа. 
 
 ``` Kusto
 Heartbeat 
-| where TimeGenerated > ago(24h) and Computer == "ContosoWeb2-Linux"  
+| where TimeGenerated > ago(24h) //and Computer == "ContosoWeb2-Linux"  
 | extend E2EIngestionLatencyMin = todouble(datetime_diff("Second",ingestion_time(),TimeGenerated))/60 
-| summarize percentiles(E2EIngestionLatencyMin,50,95) by bin(TimeGenerated,30m) 
-| render timechart  
+| extend AgentLatencyMin = todouble(datetime_diff("Second",_TimeReceived,TimeGenerated))/60 
+| summarize percentiles(E2EIngestionLatencyMin,50,95), percentiles(AgentLatencyMin,50,95) by bin(TimeGenerated,30m) 
+| render timechart
 ```
  
-Используйте следующий запрос для отображения времени приема компьютера по странам и регионам, что они расположены в основанной на их IP-адреса: 
+Используйте следующий запрос, чтобы отобразить время приема компьютера по стране или региону, в котором они находятся, на основе их IP-адреса: 
 
 ``` Kusto
 Heartbeat 
 | where TimeGenerated > ago(8h) 
 | extend E2EIngestionLatency = ingestion_time() - TimeGenerated 
-| summarize percentiles(E2EIngestionLatency,50,95) by RemoteIPCountry 
+| extend AgentLatency = _TimeReceived - TimeGenerated 
+| summarize percentiles(E2EIngestionLatency,50,95),percentiles(AgentLatency,50,95) by RemoteIPCountry 
 ```
  
 У различных типов данных, исходящих от агента, может быть разное время задержки приема, поэтому предыдущие запросы могут использоваться с другими типами. Используйте следующий запрос для изучения времени приема разных служб Azure. 
@@ -119,7 +128,8 @@ Heartbeat
 AzureDiagnostics 
 | where TimeGenerated > ago(8h) 
 | extend E2EIngestionLatency = ingestion_time() - TimeGenerated 
-| summarize percentiles(E2EIngestionLatency,50,95) by ResourceProvider
+| extend AgentLatency = _TimeReceived - TimeGenerated 
+| summarize percentiles(E2EIngestionLatency,50,95), percentiles(AgentLatency,50,95) by ResourceProvider
 ```
 
 ### <a name="resources-that-stop-responding"></a>Ресурсы, которые перестали отвечать на запросы 
@@ -134,6 +144,6 @@ Heartbeat
 | top 20 by NoHeartbeatPeriod desc 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Ознакомьтесь со страницей [Соглашение об уровне обслуживания для Log Analytics](https://azure.microsoft.com/support/legal/sla/log-analytics/v1_1/).
 

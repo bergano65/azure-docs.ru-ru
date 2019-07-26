@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: f52f5200f33d11db44d94b5a5f26d246f711e224
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f950bea4ea32ecc95b1721c6930903c3afaee848
+ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65023804"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68347655"
 ---
 #   <a name="sentiment-cognitive-skill"></a>Когнитивный навык тональности
 
@@ -33,7 +33,7 @@ ms.locfileid: "65023804"
 Microsoft.Skills.Text.SentimentSkill
 
 ## <a name="data-limits"></a>Ограничения данных
-Максимальный размер записи — 5000 знаков, как определено в `String.Length`. Если вам нужно разбить данные перед отправкой в анализатор тональности, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
+Максимальный размер записи должен составлять 5000 символов, [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length)измеряемый. Если вам нужно разбить данные перед отправкой в анализатор тональности, можно воспользоваться [навыком разделения текста](cognitive-search-skill-textsplit.md).
 
 
 ## <a name="skill-parameters"></a>Параметры навыков
@@ -48,7 +48,7 @@ Microsoft.Skills.Text.SentimentSkill
 
 | Ввод имени | Описание |
 |--------------------|-------------|
-| Text | Анализируемый текст.|
+| text | Анализируемый текст.|
 | languageCode  |  (Дополнительно.) Строка, указывающая язык записей. Если этот параметр не задан, используется значение по умолчанию "en". <br/>Ознакомьтесь с [полным списком поддерживаемых языков](../cognitive-services/text-analytics/text-analytics-supported-languages.md).|
 
 ## <a name="skill-outputs"></a>Выходные данные навыка

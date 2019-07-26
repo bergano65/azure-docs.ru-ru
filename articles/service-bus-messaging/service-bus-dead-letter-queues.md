@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/21/2019
 ms.author: aschhab
-ms.openlocfilehash: af67b27dacf3bb86c2dd5c878a2751e027a53acb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 79bc5e640498788ef805d07a26dd29e943117b58
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66003132"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68476977"
 ---
 # <a name="overview-of-service-bus-dead-letter-queues"></a>Обзор очередей недоставленных сообщений служебной шины
 
@@ -49,7 +49,7 @@ ms.locfileid: "66003132"
 | !TopicDescription.<br />EnableFilteringMessagesBeforePublishing and SubscriptionDescription.<br />EnableDeadLetteringOnFilterEvaluationExceptions |exception.GetType().Name |exception.Message |
 | EnableDeadLetteringOnMessageExpiration |TTLExpiredException |Время жизни сообщения истекло, и оно было перемещено в очередь недоставленных. |
 | SubscriptionDescription.RequiresSession |Идентификатор сеанса имеет значение null. |Сущность, поддерживающая сеансы, не допускает использование сообщений, идентификатор сеанса которых имеет значение null. |
-| !очередь недоставленных сообщений |MaxTransferHopCountExceeded |Null |
+| !очередь недоставленных сообщений | MaxTransferHopCountExceeded | Максимальное количество допустимых прыжков при пересылке между очередями. Значение равно 4. |
 | Явное перемещение приложением в очередь недоставленных сообщений |Задается приложением |Задается приложением |
 
 ## <a name="exceeding-maxdeliverycount"></a>Превышено значение MaxDeliveryCount
@@ -103,18 +103,18 @@ while(true)
 }
 ```
 
-## <a name="path-to-the-dead-letter-queue"></a>Путь к очереди недоставленных сообщений-
-Очередь недоставленных доступны с помощью следующего синтаксиса:
+## <a name="path-to-the-dead-letter-queue"></a>Путь к очереди недоставленных сообщений
+Доступ к очереди недоставленных сообщений можно получить с помощью следующего синтаксиса:
 
 ```
 <queue path>/$deadletterqueue
 <topic path>/Subscription/<subscription path>/$deadletterqueue
 ```
 
-Если вы используете пакет SDK для .NET, можно получить путь к очереди недоставленных сообщений-с помощью метода SubscriptionClient.FormatDeadLetterPath(). Этот метод принимает имя или имя существующей подписки раздела и суффиксами с **/$DeadLetterQueue**.
+Если вы используете пакет SDK для .NET, можно получить путь к очереди недоставленных сообщений с помощью метода SubscriptionClient. FormatDeadLetterPath (). Этот метод принимает имя раздела, имя подписки и суффиксы с **/$DeadLetterQueue**.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об очередях служебной шины см. в следующих статьях:
 

@@ -1,6 +1,6 @@
 ---
-title: С помощью модуля службы - "карты Azure" | Документация Майкрософт
-description: Узнайте, как использовать модуль службы "карты Azure".
+title: Использование модуля "службы"-Azure Maps | Документация Майкрософт
+description: Узнайте, как использовать модуль служб Azure Maps Services.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 03/25/2019
@@ -8,40 +8,40 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
-ms.openlocfilehash: b56191bc93a91f944bb313b4ab9ad602da17dcf0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e7baacd3bb64ad234e478d4c1f75e793c46ec321
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66357639"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68476768"
 ---
-# <a name="use-the-azure-maps-services-module"></a>С помощью модуля службы "карты Azure"
+# <a name="use-the-azure-maps-services-module"></a>Использование модуля Azure Maps Services
 
-SDK веб-карты Azure предоставляет *модуль служб*. Этот модуль является вспомогательную библиотеку, которая позволяет легко использовать службы Azure Maps REST в или веб-приложений Node.js с помощью JavaScript или TypeScript.
+Веб-пакет SDK для Azure Maps предоставляет *Модуль служб*. Этот модуль представляет собой вспомогательную библиотеку, которая упрощает использование служб Azure Maps RESTFUL в веб-приложениях или в приложении Node. js с помощью JavaScript или TypeScript.
 
-## <a name="use-the-services-module-in-a-webpage"></a>Использование модуля службы в веб-страницы
+## <a name="use-the-services-module-in-a-webpage"></a>Использование модуля "службы" на веб-странице
 
 1. Создайте HTML-файл.
-1. Загрузка модуля службы "карты Azure". В него можно загрузить в одном из двух способов:
-    - Используйте глобально размещенной сети доставки содержимого Azure версию модуля службы "карты Azure". Добавьте ссылку на скрипт `<head>` элемент файла:
+1. Загрузите модуль служб Azure Maps Services. Загрузить его можно одним из двух способов:
+    - Используйте глобально размещенную версию сети доставки содержимого Azure модуля Azure Maps Services. Добавьте ссылку на скрипт в `<head>` элемент файла:
 
         ```html
-        <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas-service.min.js"></script>
+        <script src="https://atlas.microsoft.com/sdk/javascript/service/2/atlas-service.min.js"></script>
         ```
 
-    - Кроме того, загрузить исходный код SDK веб-сопоставляет Azure локально с помощью [azure maps-rest](https://www.npmjs.com/package/azure-maps-rest) npm пакета, а затем разместить его с вашим приложением. Этот пакет также включает определения TypeScript. Используйте следующую команду:
+    - Кроме того, можно загрузить исходный код веб-пакета SDK Azure Maps локально с помощью пакета [Azure-Maps-](https://www.npmjs.com/package/azure-maps-rest) NPM, а затем разместить его в приложении. Этот пакет также включает определения TypeScript. Используйте следующую команду:
     
-        > **npm install azure-maps-rest**
+        > **NPM установка Azure-Maps-RESTful**
     
-        Затем добавьте ссылку на скрипт `<head>` элемент файла:
+        Затем добавьте ссылку на скрипт в `<head>` элемент файла:
 
          ```html
         <script src="node_modules/azure-maps-rest/dist/js/atlas-service.min.js"></script>
          ```
 
-1. Создание конвейера проверки подлинности. Прежде чем вы можете инициализировать конечную точку службы URL-адрес клиента необходимо создать конвейер. Используйте собственный ключ учетной записи службы карт Azure или Azure Active Directory (Azure AD) учетные данные для проверки подлинности клиент службы поиска Azure Maps. В этом примере будет создан клиент URL-адрес службы поиска. 
+1. Создайте конвейер проверки подлинности. Прежде чем можно будет инициализировать конечную точку клиента URL-адреса службы, необходимо создать конвейер. Используйте собственный ключ учетной записи Azure Maps или учетные данные Azure Active Directory (Azure AD) для проверки подлинности клиента службы поиска Azure Maps. В этом примере будет создан клиент URL-адреса службы поиска. 
 
-    Если вы используете ключ подписки для проверки подлинности:
+    При использовании ключа подписки для проверки подлинности:
 
     ```javascript
     // Get an Azure Maps key at https://azure.com/maps.
@@ -59,7 +59,7 @@ SDK веб-карты Azure предоставляет *модуль служб*
     var searchURL = new atlas.service.SearchURL(pipeline);
     ```
 
-    Если вы используете Azure AD для проверки подлинности:
+    Если для проверки подлинности используется Azure AD:
 
     ```javascript
     // Enter your Azure AD client ID.
@@ -122,9 +122,9 @@ SDK веб-карты Azure предоставляет *модуль служб*
     }
     ```
 
-    Дополнительные сведения см. в разделе [проверки подлинности с помощью Azure Maps](azure-maps-authentication.md).
+    Дополнительные сведения см. [в статье Проверка подлинности с помощью Azure Maps](azure-maps-authentication.md).
 
-1. В следующем коде используется только что созданный клиент URL-адрес службы поиска Azure выполним геокодирование адрес: «1 Microsoft Way, Redmond, WA». Код использует `searchAddress` функцию и отображает результаты в виде таблицы в основной области страницы.
+1. Следующий код использует только что созданный клиент URL-адреса службы поиска Azure для геокодирования адреса. "1 Microsoft Way, Редмонд, штат Вашингтон". Код использует `searchAddress` функцию и отображает результаты в виде таблицы в тексте страницы.
 
     ```javascript
     // Search for "1 microsoft way, redmond, wa".
@@ -154,37 +154,37 @@ SDK веб-карты Azure предоставляет *модуль служб*
     });
     ```
 
-    Ниже приведен полный, выполнив пример кода.
+    Ниже приведен полный пример кода с кодом:
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="С помощью модуля служб" src="//codepen.io/azuremaps/embed/zbXGMR/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. в разделе пера <a href='https://codepen.io/azuremaps/pen/zbXGMR/'>с помощью модуля службы</a> по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Использование модуля "службы"" src="//codepen.io/azuremaps/embed/zbXGMR/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Посмотрите перо <a href='https://codepen.io/azuremaps/pen/zbXGMR/'>с помощью модуля службы</a> , Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [MapsURL](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.mapsurl?view=azure-maps-typescript-latest)
+> [мапсурл](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.mapsurl?view=azure-maps-typescript-latest)
 
 > [!div class="nextstepaction"]
-> [SearchURL](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.searchurl?view=azure-maps-typescript-latest)
+> [сеарчурл](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.searchurl?view=azure-maps-typescript-latest)
 
 > [!div class="nextstepaction"]
 > [RouteURL](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.routeurl?view=azure-maps-typescript-latest)
 
 > [!div class="nextstepaction"]
-> [SubscriptionKeyCredential](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.subscriptionkeycredential?view=azure-maps-typescript-latest)
+> [субскриптионкэйкредентиал](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.subscriptionkeycredential?view=azure-maps-typescript-latest)
 
 > [!div class="nextstepaction"]
-> [tokenCredential](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.tokencredential?view=azure-maps-typescript-latest)
+> [токенкредентиал](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.tokencredential?view=azure-maps-typescript-latest)
 
-Дополнительные примеры кода для использования модуля служб см. в статьях:
+Дополнительные примеры кода, в которых используется модуль служб, см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Показать результаты поиска на карте](./map-search-location.md)
+> [Отображение результатов поиска на карте](./map-search-location.md)
 
 > [!div class="nextstepaction"]
 > [Получение сведений на основе координат](./map-get-information-from-coordinate.md)

@@ -12,12 +12,12 @@ manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 07/16/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6c5d60bb51a96725f766c6b49d61ac20fb2a1b58
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 08cf646d63e1a295a1bc2ff28180983cc462f084
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68297924"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68360933"
 ---
 # <a name="transform-data-with-the-azure-machine-learning-data-prep-sdk"></a>Преобразование данных с помощью пакета SDK для подготовки данных машинного обучения Azure
 
@@ -46,7 +46,7 @@ dflow = dprep.read_csv(path=r'data\crime0-10.csv')
 dflow.head(3)
 ```
 
-||id|Серийный номер|Дата|Блок|IUCR|Основной тип|Описание|Описание расположения|Фикс.|Дом|...|Административный район|Жилой микрорайон|Код ФБР|Координата X|Координата Y|Год|Обновлено|Широта|Долгота|Местоположение|
+||id|Серийный номер|Дата|Заблокировать|IUCR|Основной тип|Описание|Описание расположения|Фикс.|Дом|...|Административный район|Жилой микрорайон|Код ФБР|Координата X|Координата Y|Год|Обновлено|Широта|Долгота|Местоположение|
 |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
 |0|10140490|HY329907|05.07.2015 23:50:00|050XX N NEWLAND AVE|0820|КРАЖА|500 ДОЛЛ. США И МЕНЬШЕ|УЛИЦА|False|False|...|41|10|06|1129230|1933315|2015|12.07.2015 12:42:46|41.973309466|-87.800174996|(41.973309466, -87.800174996)|
 |1|10139776|HY329265|05.07.2015 23:30:00|011XX W MORSE AVE|0460|АККУМУЛЯТОР|ПРОСТОЙ|УЛИЦА|False|true|...|49|1|08B|1167370|1946271|2015|12.07.2015 12:42:46|42.008124017|-87.65955018|(42.008124017, -87.65955018)|
@@ -63,7 +63,7 @@ case_category = dflow.add_column(new_column_name='Case Category',
 case_category.head(3)
 ```
 
-||id|Серийный номер|Категория регистра|Дата|Блок|IUCR|Основной тип|Описание|Описание расположения|Фикс.|Дом|...|Административный район|Жилой микрорайон|Код ФБР|Координата X|Координата Y|Год|Обновлено|Широта|Долгота|Местоположение|
+||id|Серийный номер|Категория регистра|Дата|Заблокировать|IUCR|Основной тип|Описание|Описание расположения|Фикс.|Дом|...|Административный район|Жилой микрорайон|Код ФБР|Координата X|Координата Y|Год|Обновлено|Широта|Долгота|Местоположение|
 |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|------|
 |0|10140490|HY329907|HY|05.07.2015 23:50:00|050XX N NEWLAND AVE|0820|КРАЖА|500 ДОЛЛ. США И МЕНЬШЕ|УЛИЦА|False|False|...|41|10|06|1129230|1933315|2015|12.07.2015 12:42:46|41.973309466|-87.800174996|(41.973309466, -87.800174996)|
 |1|10139776|HY329265|HY|05.07.2015 23:30:00|011XX W MORSE AVE|0460|АККУМУЛЯТОР|ПРОСТОЙ|УЛИЦА|False|true|...|49|1|08B|1167370|1946271|2015|12.07.2015 12:42:46|42.008124017|-87.65955018|(42.008124017, -87.65955018)|
@@ -106,9 +106,9 @@ dflow.head(3)
 
 ```python
 dflow_mean = dflow.summarize(group_by_columns=['Arrest'],
-                       summary_columns=[dprep.SummaryColumnsValue(column_id='Latitude',
-                                                                 summary_column_name='Latitude_MEAN',
-                                                                 summary_function=dprep.SummaryFunction.MEAN)])
+                             summary_columns=[dprep.SummaryColumnsValue(column_id='Latitude',
+                                                                        summary_column_name='Latitude_MEAN',
+                                                                        summary_function=dprep.SummaryFunction.MEAN)])
 dflow_mean = dflow_mean.filter(dprep.col('Arrest') == 'false')
 dflow_mean.head(1)
 ```
@@ -130,7 +130,7 @@ impute_custom = dprep.ImputeColumnArguments(column_id='Longitude',
                                             custom_impute_value=42)
 # get instance of ImputeMissingValuesBuilder
 impute_builder = dflow.builders.impute_missing_values(impute_columns=[impute_mean, impute_custom],
-                                                   group_by_columns=['Arrest'])
+                                                      group_by_columns=['Arrest'])
 
 impute_builder.learn()
 dflow_imputed = impute_builder.to_dataflow()
@@ -156,7 +156,8 @@ assert imputed_longitude == 42
 
 ```python
 import azureml.dataprep as dprep
-dflow = dprep.read_csv(path='https://dpreptestfiles.blob.core.windows.net/testfiles/BostonWeather.csv')
+dflow = dprep.read_csv(
+    path='https://dpreptestfiles.blob.core.windows.net/testfiles/BostonWeather.csv')
 dflow.head(4)
 ```
 
@@ -170,9 +171,11 @@ dflow.head(4)
 Предположим, что вам потребуется объединить этот файл с набором данных, в которых формат даты и времени — "10 марта 2018 г. 2:00–4:00".
 
 ```python
-builder = dflow.builders.derive_column_by_example(source_columns=['DATE'], new_column_name='date_timerange')
-builder.add_example(source_data=dflow.iloc[1], example_value='Jan 1, 2015 12AM-2AM')
-builder.preview(count=5) 
+builder = dflow.builders.derive_column_by_example(
+    source_columns=['DATE'], new_column_name='date_timerange')
+builder.add_example(
+    source_data=dflow.iloc[1], example_value='Jan 1, 2015 12AM-2AM')
+builder.preview(count=5)
 ```
 
 ||DATE|date_timerange|
@@ -207,7 +210,8 @@ builder.preview(skip=30, count=5)
 Здесь вы можете увидеть проблему со сгенерированной программой. Так как она основана исключительно на одном примере, который вы указали выше, программа выбрала формат синтаксической проверки даты "день/месяц/год", который не является тем, который вам нужен в этом варианте. Чтобы устранить эту проблему, выберите конкретный индекс записи и укажите другой пример с помощью `add_example()` функции `builder` для переменной.
 
 ```python
-builder.add_example(source_data=dflow.iloc[3], example_value='Jan 2, 2015 12AM-2AM')
+builder.add_example(
+    source_data=dflow.iloc[3], example_value='Jan 2, 2015 12AM-2AM')
 builder.preview(skip=30, count=5)
 ```
 
@@ -230,12 +234,13 @@ builder.preview(skip=75, count=5)
 |-----|-----|-----|
 |0|1/3/2015 7:00|3 января, 2015 06:00-8:00|
 |1|1/3/2015 7:54|3 января, 2015 06:00-8:00|
-|2|1/29/2015 6:54|Нет|
-|3|1/29/2015 7:00|Нет|
-|4|1/29/2015 7:54|Нет|
+|2|1/29/2015 6:54|Отсутствуют|
+|3|1/29/2015 7:00|Отсутствуют|
+|4|1/29/2015 7:54|Отсутствуют|
 
 ```python
-builder.add_example(source_data=dflow.iloc[77], example_value='Jan 29, 2015 6AM-8AM')
+builder.add_example(
+    source_data=dflow.iloc[77], example_value='Jan 29, 2015 6AM-8AM')
 builder.preview(skip=75, count=5)
 ```
 
@@ -274,23 +279,24 @@ df = dflow.to_pandas_dataframe()
 
 Пакет SDK включает методы [`drop_columns()`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#drop-columns-columns--multicolumnselection-----azureml-dataprep-api-dataflow-dataflow) и [`filter()`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py) позволяет отфильтровывать столбцы или строки.
 
-### <a name="initial-setup"></a>Начальная настройка
+### <a name="initial-setup"></a>Первоначальная настройка
 
 > [!Note]
-> URL-адрес в этом же примере не является полным URL-адресом. Вместо этого он ссылается на демонстрационную папку в большом двоичном объекте. Полный URL-адрес данных https://dprepdata.blob.core.windows.net/demo/green-small/green_tripdata_2013-08.csv
+> URL-адрес в этом примере не является полным URL-адресом. Он ссылается на пример папки с в большом двоичном объекте. Полный URL-адрес данных https://dprepdata.blob.core.windows.net/demo/green-small/green_tripdata_2013-08.csv
 
 В этом руководстве мы выполним загрузку всех файлов внутри папки и агрегирование результатов в green_df_raw и yellow_df_raw.
 
 ```python
 import azureml.dataprep as dprep
 from datetime import datetime
-dflow = dprep.read_csv(path='https://dprepdata.blob.core.windows.net/demo/green-small/*')
+dflow = dprep.read_csv(
+    path='https://dprepdata.blob.core.windows.net/demo/green-small/*')
 dflow.head(5)
 ```
 
 ||lpep_pickup_datetime|Lpep_dropoff_datetime|store_and_fwd_flag|RateCodeID|Pickup_longitude|Pickup_latitude|Dropoff_longitude|Dropoff_latitude|Passenger_count|Trip_distance|Tip_amount|Tolls_amount|Total_amount|
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-|0|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|
+|0|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|
 |1|2013-08-01 08:14:37|2013-08-01 09:09:06|в|1|0|0|0|0|1|.00|0|0|21.25|
 |2|2013-08-01 09:13:00|2013-08-01 11:38:00|в|1|0|0|0|0|2|.00|0|0|75|
 |3|2013-08-01 09:48:00|2013-08-01 09:49:00|в|5|0|0|0|0|1|.00|0|1|2,1|
@@ -311,7 +317,7 @@ dflow.head(2)
 
 ||lpep_pickup_datetime|Lpep_dropoff_datetime|Pickup_longitude|Pickup_latitude|Dropoff_longitude|Dropoff_latitude|Passenger_count|Trip_distance|Tip_amount|Tolls_amount|Total_amount|
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-|0|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|
+|0|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|
 |1|2013-08-01 08:14:37|2013-08-01 09:09:06|0|0|0|0|1|.00|0|0|21.25|
 
 #### <a name="filtering-columns-with-regex"></a>Фильтрация столбцов с регулярным выражением
@@ -319,13 +325,14 @@ dflow.head(2)
 Кроме того, для удаления столбцов, соответствующих регулярному выражению, можно использовать выражение `ColumnSelector`. В этом примере мы удаляем все столбцы, соответствующие выражению `Column*|.*longitude|.*latitude`.
 
 ```python
-dflow = dflow.drop_columns(dprep.ColumnSelector('Column*|.*longitud|.*latitude', True, True))
+dflow = dflow.drop_columns(dprep.ColumnSelector(
+    'Column*|.*longitud|.*latitude', True, True))
 dflow.head(2)
 ```
 
 ||lpep_pickup_datetime|Lpep_dropoff_datetime|Passenger_count|Trip_distance|Tip_amount|Tolls_amount|Total_amount|
 |-----|-----|-----|-----|-----|-----|-----|-----|
-|0|Нет|Нет|Нет|Нет|Нет|Нет|Нет|
+|0|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|Отсутствуют|
 |1|2013-08-01 08:14:37|2013-08-01 09:09:06|1|.00|0|0|21.25|
 
 ## <a name="filtering-rows"></a>Фильтрация строк
@@ -360,7 +367,8 @@ dflow.head(2)
 
 ```python
 dflow = dflow.to_number(['Passenger_count', 'Tolls_amount'])
-dflow = dflow.filter(dprep.f_and(dprep.col('Passenger_count') < 5, dprep.col('Tolls_amount') > 0))
+dflow = dflow.filter(dprep.f_and(
+    dprep.col('Passenger_count') < 5, dprep.col('Tolls_amount') > 0))
 dflow.head(2)
 ```
 
@@ -375,9 +383,10 @@ dflow.head(2)
 > `lpep_pickup_datetime` и `Lpep_dropoff_datetime` сначала преобразуются в дату и время (DateTime), что позволяет нам построить выражение, сравнивая его с другими значениями даты и времени (DateTime).
 
 ```python
-dflow = dflow.to_datetime(['lpep_pickup_datetime', 'Lpep_dropoff_datetime'], ['%Y-%m-%d %H:%M:%S'])
+dflow = dflow.to_datetime(
+    ['lpep_pickup_datetime', 'Lpep_dropoff_datetime'], ['%Y-%m-%d %H:%M:%S'])
 dflow = dflow.to_number(['Total_amount', 'Trip_distance'])
-mid_2013 = datetime(2013,7,1)
+mid_2013 = datetime(2013, 7, 1)
 dflow = dflow.filter(
     dprep.f_and(
         dprep.f_or(
@@ -412,28 +421,31 @@ dflow.head(2)
 import azureml.dataprep as dprep
 col = dprep.col
 
-dflow = dprep.read_csv(path='https://dpreptestfiles.blob.core.windows.net/testfiles/read_csv_duplicate_headers.csv', skip_rows=1)
+dflow = dprep.read_csv(
+    path='https://dpreptestfiles.blob.core.windows.net/testfiles/read_csv_duplicate_headers.csv', skip_rows=1)
 dflow.head(2)
 ```
 
 | |stnam|fipst|leaid|leanm10|ncessch|MAM_MTH00numvalid_1011|
 |-----|-------|---------| -------|------|-----|------|
-|0|АЛАБАМА|1|101710|Округ Хейл|10171002158| |
-|1|АЛАБАМА|1|101710|Округ Хейл|10171002162| |
+|0|Алабама|1|101710|Округ Хейл|10171002158| |
+|1|Алабама|1|101710|Округ Хейл|10171002162| |
 
 Обрежьте набор данных и выполните некоторые базовые преобразования, включая удаление столбцов, замену значений и преобразование типов.
 
 ```python
-dflow = dflow.keep_columns(['stnam', 'leanm10', 'ncessch', 'MAM_MTH00numvalid_1011'])
-dflow = dflow.replace_na(columns=['leanm10', 'MAM_MTH00numvalid_1011'], custom_na_list='.')
+dflow = dflow.keep_columns(
+    ['stnam', 'leanm10', 'ncessch', 'MAM_MTH00numvalid_1011'])
+dflow = dflow.replace_na(
+    columns=['leanm10', 'MAM_MTH00numvalid_1011'], custom_na_list='.')
 dflow = dflow.to_number(['ncessch', 'MAM_MTH00numvalid_1011'])
 dflow.head(2)
 ```
 
 | |stnam|leanm10|ncessch|MAM_MTH00numvalid_1011|
 |-----|-------|---------| -------|------|
-|0|АЛАБАМА|Округ Хейл|1,017100e+10|Нет|
-|1|АЛАБАМА|Округ Хейл|1,017100e+10|Нет|
+|0|Алабама|Округ Хейл|1,017100e+10|Отсутствуют|
+|1|Алабама|Округ Хейл|1,017100e+10|Отсутствуют|
 
 С помощью указанного ниже фильтра найдите значения NULL.
 
@@ -443,8 +455,8 @@ dflow.filter(col('MAM_MTH00numvalid_1011').is_null()).head(2)
 
 | |stnam|leanm10|ncessch|MAM_MTH00numvalid_1011|
 |-----|-------|---------| -------|------|
-|0|АЛАБАМА|Округ Хейл|1,017100e+10|Нет|
-|1|АЛАБАМА|Округ Хейл|1,017100e+10|Нет|
+|0|Алабама|Округ Хейл|1,017100e+10|Отсутствуют|
+|1|Алабама|Округ Хейл|1,017100e+10|Отсутствуют|
 
 ### <a name="transform-partition"></a>Преобразование секции
 
@@ -463,8 +475,8 @@ df.head(2)
 
 ||stnam|leanm10|ncessch|MAM_MTH00numvalid_1011|
 |-----|-------|---------| -------|------|
-|0|АЛАБАМА|Округ Хейл|1,017100e+10|0,0|
-|1|АЛАБАМА|Округ Хейл|1,017100e+10|0,0|
+|0|Алабама|Округ Хейл|1,017100e+10|0,0|
+|1|Алабама|Округ Хейл|1,017100e+10|0,0|
 
 ### <a name="new-script-column"></a>Столбец нового скрипта
 
@@ -482,8 +494,8 @@ dflow.head(2)
 
 ||stnam|leanm10|county_state|ncessch|MAM_MTH00numvalid_1011|
 |-----|-------|---------| -------|------|-----|
-|0|АЛАБАМА|Округ Хейл|Округ Хейл, штат Алабама|1,017100e+10|0,0|
-|1|АЛАБАМА|Округ Хейл|Округ Хейл, штат Алабама|1,017100e+10|0,0|
+|0|Алабама|Округ Хейл|Округ Хейл, штат Алабама|1,017100e+10|0,0|
+|1|Алабама|Округ Хейл|Округ Хейл, штат Алабама|1,017100e+10|0,0|
 
 ### <a name="new-script-filter"></a>Фильтр нового скрипта
 
@@ -500,8 +512,8 @@ dflow.head(2)
 
 ||stnam|leanm10|county_state|ncessch|MAM_MTH00numvalid_1011|
 |-----|-------|---------| -------|------|-----|
-|0|АЛАБАМА|Округ Джефферсон|Округ Джефферсон, штат Алабама|1.019200e+10|1.0|
-|1|АЛАБАМА|Округ Джефферсон|Округ Джефферсон, штат Алабама|1.019200e+10|0,0|
+|0|Алабама|Округ Джефферсон|Округ Джефферсон, штат Алабама|1.019200e+10|1.0|
+|1|Алабама|Округ Джефферсон|Округ Джефферсон, штат Алабама|1.019200e+10|0,0|
 
 ## <a name="next-steps"></a>Следующие шаги
 

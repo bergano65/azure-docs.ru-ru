@@ -1,26 +1,25 @@
 ---
 title: Удаление хранилища служб восстановления в Azure
 description: Описывает, как удалить хранилище служб восстановления.
-services: backup
 author: rayne-wiselman
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 07/11/2019
 ms.author: raynew
-ms.openlocfilehash: 3d3a77b43babb7fa3666dbbc9e4334f61ae612f8
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: f98b9a02d12cc53ba23857b203ee3eaed9dd7cfa
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68232665"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466653"
 ---
 # <a name="delete-a-recovery-services-vault"></a>Удаление хранилища Служб восстановления
 
 В этой статье описывается, как удалить хранилище служб восстановления [Azure Backup](backup-overview.md) . В нем содержатся инструкции по удалению зависимостей, а также удалению хранилища.
 
 
-## <a name="before-you-start"></a>Перед началом работы
+## <a name="before-you-start"></a>Перед началом
 
 Нельзя удалить хранилище служб восстановления с зависимостями, такими как защищенные серверы или серверы управления архивацией, связанные с хранилищем.<br/>
 Невозможно удалить хранилище, содержащее данные резервного копирования (даже если вы остановили защиту, но сохранили данные резервной копии).
@@ -77,7 +76,7 @@ ms.locfileid: "68232665"
 - [Шаг 2. Из портала удаление Azure Backup агент](#step-1-delete-backup-items-from-mars-management-console)
 
 
-#### <a name="step-1-delete-backup-items-from-mars-management-console"></a>Шаг 1. Удаление элементов архивации из консоли управления MARS
+#### <a name="step-1-delete-backup-items-from-mars-management-console"></a>Шаг 1.: Удаление элементов архивации из консоли управления MARS
 
 Если вы не можете выполнить этот шаг из-за недоступности сервера, обратитесь в службу поддержки Майкрософт.
 
@@ -103,7 +102,7 @@ ms.locfileid: "68232665"
 
 Теперь, когда архивные элементы удалены из локальной среды, выполните следующие действия на портале.
 
-#### <a name="step-2-from-portal-remove-azure-backup-agent"></a>Шаг 2. Из портала удаление Azure Backup агент
+#### <a name="step-2-from-portal-remove-azure-backup-agent"></a>Шаг 2.: Из портала удаление Azure Backup агент
 
 Прежде чем продолжить, убедитесь, что [Шаг 1](#step-1-delete-backup-items-from-mars-management-console) завершен.
 
@@ -146,7 +145,7 @@ ms.locfileid: "68232665"
 - [Шаг 1. Удаление архивных элементов из консоли управления MABS](#step-1-delete-backup-items-from-mabs-management-console)
 - [Шаг 2. Удаление Azure Backup серверов управления с портала](#step-2-from-portal-remove-azure-backup-agent)
 
-#### <a name="step-1-delete-backup-items-from-mabs-management-console"></a>Шаг 1. Удаление архивных элементов из консоли управления MABS
+#### <a name="step-1-delete-backup-items-from-mabs-management-console"></a>Шаг 1.: Удаление архивных элементов из консоли управления MABS
 
 Если вы не можете выполнить этот шаг из-за недоступности сервера, обратитесь в службу поддержки Майкрософт.
 
@@ -174,7 +173,7 @@ ms.locfileid: "68232665"
 
 Теперь, когда архивные элементы удалены из локальной среды, выполните следующие действия на портале.
 
-#### <a name="step-2-from-portal-remove-azure-backup-management-servers"></a>Шаг 2. Удаление Azure Backup серверов управления с портала
+#### <a name="step-2-from-portal-remove-azure-backup-management-servers"></a>Шаг 2.: Удаление Azure Backup серверов управления с портала
 
 Прежде чем продолжить, убедитесь, что [Шаг 1](#step-1-delete-backup-items-from-mabs-management-console) завершен.
 

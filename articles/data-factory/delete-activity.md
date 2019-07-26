@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/25/2019
-ms.openlocfilehash: 606cab09debf760d1b101390b2a19a1a090bb4c3
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: e749138cd28f7bd8faf10ca1087a73f323533a25
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234560"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68335666"
 ---
 # <a name="delete-activity-in-azure-data-factory"></a>Действие Delete в Фабрике данных Azure
 
@@ -79,17 +79,17 @@ ms.locfileid: "68234560"
 
 ## <a name="type-properties"></a>Свойства типа
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Описание | Обязательное значение |
 | --- | --- | --- |
 | dataset | Предоставляет ссылку на набор данных, чтобы определить, какие файлы или папки должны быть удалены. | Да |
 | recursive | Указывает, откуда файлы удаляются рекурсивно: из вложенных папок или только из указанной папки.  | Нет. Значение по умолчанию — `false`. |
 | maxConcurrentConnections | Количество одновременных подключений к хранилищу с целью удаления папок или файлов.   |  Нет. Значение по умолчанию — `1`. |
 | enablelogging | Указывает, нужно ли записывать имена удаленных папок или файлов. Если значение равно true, необходимо дополнительно предоставить учетную запись хранения для сохранения файла журнала, чтобы можно было в нем отслеживать поведение действия Delete. | Нет |
 | logStorageSettings | Это свойство применимо, только если для параметра enablelogging установлено значение true.<br/><br/>Группа свойств хранилища, в котором будет храниться файл журнала, содержащий имена файлов и папок, которые были удалены действием Delete. | Нет |
-| linkedServiceName | Это свойство применимо, только если для параметра enablelogging установлено значение true.<br/><br/>Связанная служба [хранилища Azure](connector-azure-blob-storage.md#linked-service-properties), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md#linked-service-properties)или [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md#linked-service-properties) для хранения файла журнала, содержащего имя папки или файла, которые были удалены действием удаления. | Нет |
+| linkedServiceName | Это свойство применимо, только если для параметра enablelogging установлено значение true.<br/><br/>Связанная служба [хранилища Azure](connector-azure-blob-storage.md#linked-service-properties), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md#linked-service-properties)или [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md#linked-service-properties) для хранения файла журнала, содержащего имя папки или файла, которые были удалены действием удаления. Следует иметь в виду, что для удаления файлов необходимо настроить тот же тип Integration Runtime из того, который использовался действием DELETE. | Нет |
 | path | Это свойство применимо, только если для параметра enablelogging установлено значение true.<br/><br/>Путь, по которому хранится файл журнала в учетной записи хранения. Если путь не указан, служба создаст контейнер самостоятельно. | Нет |
 
-## <a name="monitoring"></a>Мониторинг
+## <a name="monitoring"></a>Отслеживание
 
 Отслеживать результаты действия Delete можно в двух местах: 
 -   выходные данные действия Delete;
@@ -115,12 +115,12 @@ ms.locfileid: "68234560"
 
 ### <a name="sample-log-file-of-the-delete-activity"></a>Пример файла журнала действия Delete
 
-| ИМЯ | Категория | Status | Error |
+| Название | Категория | Сообщение о состоянии | Error |
 |:--- |:--- |:--- |:--- |
-| test1/yyy. JSON | Файл | Deleted |  |
-| test2/hello789. txt | Файл | Deleted |  |
-| test2/test3/hello000. txt | Файл | Deleted |  |
-| test2/test3/ZZZ. JSON | Файл | Deleted |  |
+| test1/yyy. JSON | Файл | Удален |  |
+| test2/hello789. txt | Файл | Удален |  |
+| test2/test3/hello000. txt | Файл | Удален |  |
+| test2/test3/ZZZ. JSON | Файл | Удален |  |
 
 ## <a name="examples-of-using-the-delete-activity"></a>Примеры использования действия Delete
 

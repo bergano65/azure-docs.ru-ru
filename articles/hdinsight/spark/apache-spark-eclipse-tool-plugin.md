@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/30/2017
 ms.author: hrasheed
-ms.openlocfilehash: cd5839520a5b85f31cbe677ad6691a3d6bacd0b0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6e8f8e7d8324f23a81cd6ae3284bd6d7cff24117
+ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67066371"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68489844"
 ---
 # <a name="use-azure-toolkit-for-eclipse-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for Eclipse
 
@@ -28,7 +28,7 @@ ms.locfileid: "67066371"
 > 
 > 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
 * Комплект разработчика Oracle Java версии 8, который используется для среды выполнения интегрированной среды разработки Eclipse. Его можно скачать с [веб-сайта Oracle](https://aka.ms/azure-jdks).
@@ -48,7 +48,7 @@ ms.locfileid: "67066371"
 
 Пользователь может [войти в подписку Azure](#sign-in-to-your-azure-subscription) или [связать кластер HDInsight](#link-a-cluster) с помощью имени пользователя и пароля Ambari или учетных данных присоединения к домену. 
 
-## <a name="sign-in-to-your-azure-subscription"></a>Войдите в свою подписку Azure.
+## <a name="sign-in-to-your-azure-subscription"></a>Войдите в подписку Azure
 1. Запустите интегрированную среду разработки Eclipse и откройте Azure Explorer. В меню **Window** (Окно) выберите пункт **Show View** (Показать представление) и щелкните **Other** (Другие). В открывшемся диалоговом окне разверните **Azure** и щелкните **Azure Explorer**, а затем нажмите кнопку **ОК**.
 
    ![Диалоговое окно Show View (Показать представление)](./media/apache-spark-eclipse-tool-plugin/view-explorer-1.png)
@@ -67,7 +67,7 @@ ms.locfileid: "67066371"
    ![Развертывание имени кластера для просмотра ресурсов](./media/apache-spark-eclipse-tool-plugin/view-explorer-4.png)
 
 ## <a name="link-a-cluster"></a>Связывание кластера
-Можно связать обычный кластер с помощью управляемого имени пользователя Ambari. Аналогичным образом, присоединенный к домену кластер HDInsight можно связать с помощью домена и имени пользователя, например user1@contoso.com.
+Можно связать обычный кластер с помощью управляемого имени пользователя Ambari. Аналогичным образом, присоединенный к домену кластер HDInsight можно связать с помощью домена и имени пользователя, например `user1@contoso.com`.
 
 1. Выберите **Link a cluster** (Связывание кластера) в **обозревателе Azure**.
 
@@ -137,7 +137,7 @@ ms.locfileid: "67066371"
         }
 1. Запустите приложение в кластере HDInsight Spark.
    
-   a. В обозревателе пакетов щелкните имя проекта правой кнопкой мыши и выберите пункт **Submit Spark Application to HDInsight** (Отправить приложение Spark в HDInsight).        
+   1\. В обозревателе пакетов щелкните имя проекта правой кнопкой мыши и выберите пункт **Submit Spark Application to HDInsight** (Отправить приложение Spark в HDInsight).        
    2\. В диалоговом окне **Spark Submission** (Отправка в Spark) введите следующие значения и нажмите кнопку **Submit** (Отправить).
       
    * В поле **Cluster Name**(Имя кластера) выберите кластер HDInsight Spark, в котором вы хотите запустить приложение.
@@ -203,7 +203,7 @@ ms.locfileid: "67066371"
 ## <a name="run-a-spark-scala-application-locally"></a>Запуск приложения Spark Scala на локальном компьютере
 Средства HDInsight в наборе средств Azure для Eclipse позволяют запускать приложения Spark Scala локально на рабочей станции. Как правило, такие приложения не требуют доступа к ресурсам кластера, таким как контейнер хранилища, и могут запускаться и тестироваться локально.
 
-### <a name="prerequisite"></a>Предварительные требования
+### <a name="prerequisite"></a>Предварительное требование
 При запуске локального приложения Spark Scala на компьютере с Windows может возникнуть исключение, описанное в [SPARK-2356](https://issues.apache.org/jira/browse/SPARK-2356). Это исключение возникает, так как в Windows отсутствует файл **WinUtils.exe**. 
 
 Чтобы устранить эту ошибку, необходимо [скачать исполняемый файл](https://public-repo-1.hortonworks.com/hdp-win-alpha/winutils.exe), например, в папку **C:\WinUtils\bin**, а затем добавить переменную среды **HADOOP_HOME** и задать **C\WinUtils** в качестве значения переменной.
@@ -227,56 +227,56 @@ ms.locfileid: "67066371"
    ![Результат локального запуска приложения Spark](./media/apache-spark-eclipse-tool-plugin/hdi-spark-app-local-run-result.png)
 
 ## <a name="reader-only-role"></a>Роль только для чтения
-Когда пользователи отправки задания в кластер с разрешением роли только для чтения, Ambari учетные данные не требуется.
+Когда пользователи отправляют задания в кластер с разрешением на роль только для чтения, требуются учетные данные Ambari.
 
-### <a name="link-cluster-from-context-menu"></a>Кластер ссылку в контекстном меню
+### <a name="link-cluster-from-context-menu"></a>Связывание кластера из контекстного меню
 
-1. Вход с учетной записью, роли только для чтения.
+1. Войдите с помощью учетной записи роли только для чтения.
        
-2. Из **Azure Explorer**, разверните **HDInsight** Чтобы просмотреть кластеры HDInsight в подписке. Кластеры помечены **«Роли: Читатель»** только иметь разрешение роли только для чтения.
+2. В **Azure Explorer** разверните **HDInsight**, чтобы просмотреть кластеры HDInsight в своей подписке. Кластеры с пометкой **Role:Reader**, имеют только разрешение роли только для чтения.
 
     ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-6.png)
 
-3. Правой кнопкой мыши щелкните кластер, с разрешением роли только для чтения. Выберите **связать этот кластер** из контекстного меню для связывания кластера. Введите имя пользователя Ambari и пароль.
+3. Щелкните правой кнопкой мыши кластер с разрешением роль только для чтения. Выберите **Link this cluster** (Связать этот кластер) из контекстного меню, чтобы связать кластер. Введите имя пользователя и пароль Ambari.
 
     ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-7.png)
 
-4. Если кластер связан успешно, будет обновляться HDInsight.
-   Этап кластера будет становятся связанными.
+4. Если кластер связан успешно, HDInsight будет обновлен.
+   Этап кластера станет связанным.
   
     ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-8.png)
 
 
 
-### <a name="link-cluster-by-expanding-jobs-node"></a>Связь кластера, развернув узел "задания"
+### <a name="link-cluster-by-expanding-jobs-node"></a>Связывание кластера путем развертывания узла "Задания"
 
-1. Нажмите кнопку **заданий** узел, **кластера задания отказано в доступе** всплывающее окно.
+1. Щелкните узел **Задания** и появится всплывающее окно **Cluster Job Access Denied** (Доступ к заданию кластера запрещен).
    
-2. Нажмите кнопку **связать этот кластер** для связывания кластера.
+2. Щелкните **Link this cluster** (Связать этот кластер), чтобы связать кластер.
    
     ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-9.png)
 
-### <a name="link-cluster-from-spark-submission-window"></a>Кластера ссылку на окно отправки Spark
+### <a name="link-cluster-from-spark-submission-window"></a>Связывание кластера с окном отправки Spark
 
 1. Создайте проект HDInsight.
 
-2. Щелкните правой кнопкой мыши пакет. Затем выберите **отправить приложение Spark в HDInsight**.
+2. Щелкните пакет правой кнопкой мыши. Затем выберите **отправить приложение Spark в HDInsight**.
    
    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-11.png)
 
-3. Выберите кластер, которая имеет разрешение роли только для чтения для **имя кластера**. Предупреждающее сообщение показано. Можно щелкнуть **связать этот кластер** для связывания кластера.
+3. Выберите кластер с разрешением роль только для чтения для **имени кластера**. Появится сообщение с предупреждением. Можно щелкнуть **связать этот кластер** с кластером.
    
    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-15.png)
    
-### <a name="view-storage-accounts"></a>Просмотреть учетные записи хранения
+### <a name="view-storage-accounts"></a>Просмотр учетных записей хранения
 
-* Для кластеров с разрешением роли только для чтения, нажмите кнопку **учетные записи хранения** узел, **отказано в доступе хранилища** всплывающее окно. 
+* Для кластеров с разрешением роли только для чтения щелкните узел **Учетные записи хранения** и появится всплывающее окно **Storage Access Denied** (Доступ к хранилищу запрещен). 
      
    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-13.png)
 
    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-12.png)
 
-* Для связанного кластеров щелкните **учетные записи хранения** узел, **отказано в доступе хранилища** всплывающее окно. 
+* Для связанных кластеров щелкните узел **Учетные записи хранения** и появится всплывающее окно **Storage Access Denied** (Доступ к хранилищу запрещен). 
      
    ![Кластеры HDInsight Spark в Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-14.png)
 

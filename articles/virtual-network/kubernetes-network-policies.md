@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 9/25/2018
 ms.author: aanandr
 ms.custom: ''
-ms.openlocfilehash: a5c367402bd1e61485095fd1d565a8582acc3a9e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ff6fd45e0a68a3e93e4c62eb31a566a6dffa2344
+ms.sourcegitcommit: 5604661655840c428045eb837fb8704dca811da0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60824905"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68494949"
 ---
 # <a name="azure-kubernetes-network-policies-overview"></a>Обзор политик сети Azure Kubernetes
 
@@ -32,7 +32,7 @@ ms.locfileid: "60824905"
 Политики сети Azure работают в сочетании с ПО CNI Azure, которое обеспечивает интеграцию виртуальной сети для контейнеров. Сегодня эта функция поддерживается только для узлов Linux. Для обеспечения фильтрации трафика в реализациях настраиваются правила таблицы IP-адресов Linux на основе определенных политик.
 
 ## <a name="planning-security-for-your-kubernetes-cluster"></a>Планирование безопасности для кластера Kubernetes
-При реализации безопасности для кластера используйте группы безопасности сети (NSG) для фильтрации трафика "с севера на юг", то есть трафика, который входит и выходит из подсети кластера, и политики сети Kubernetes для трафика "с востока на запад", то есть трафика между модулями и кластером.
+При реализации безопасности для кластера используйте группы безопасности сети (группы безопасности сети), чтобы отфильтровать трафик с высокой налево, то есть трафик, поступающий в подсеть кластера и исходящий из нее, и использовать политики сети Kubernetes для трафика уровня "Восток-Западная", т. е. трафик между модулями Pod в ваш кластер.
 
 ## <a name="using-azure-kubernetes-network-policies"></a>Использование политик сети Azure Kubernetes
 Чтобы обеспечить микросегментацию для модулей, политики сети Azure можно использовать следующими способами.
@@ -99,7 +99,7 @@ ms.locfileid: "60824905"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Дополнительные сведения о [Службе Azure Kubernetes](../aks/intro-kubernetes.md).
 -  Дополнительные сведения о [работе с контейнерами в сети](container-networking-overview.md).
 - [Развертывание подключаемого модуля](deploy-container-networking.md) для кластеров Kubernetes и контейнеров Docker.

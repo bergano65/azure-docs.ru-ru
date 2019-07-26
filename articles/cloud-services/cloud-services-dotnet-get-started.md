@@ -3,23 +3,19 @@ title: Начало работы с облачными службами Azure и
 description: 'Узнайте, как можно создать многоуровневое приложение с помощью ASP.NET MVC и Azure. Такое приложение выполняется в облачной службе и обладает веб-ролью и рабочей ролью. В его работе используются: Entity Framework, база данных SQL, очереди и BLOB-объекты службы хранилища Azure.'
 services: cloud-services, storage
 documentationcenter: .net
-author: jpconnock
-manager: timlt
-editor: ''
-ms.assetid: d7aa440d-af4a-4f80-b804-cc46178df4f9
+author: georgewallace
+manager: carmonm
 ms.service: cloud-services
-ms.workload: tbd
-ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.author: jeconnoc
-ms.openlocfilehash: 3082ca34f2bcb71dd7aa02b4539899997374cfc0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: gwallace
+ms.openlocfilehash: 802ece106099e8a475b83c820130c3c238d330d2
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65595161"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359209"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
 
@@ -46,16 +42,16 @@ ms.locfileid: "65595161"
 * Как отправлять файлы и хранить их в службе BLOB-объектов Azure.
 * Как использовать службу очередей Azure для связи между уровнями.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 В руководстве предполагается, что вы понимаете [базовые концепции облачной службы Azure](cloud-services-choose-me.md), такие как термины *веб-роль* и *рабочая роль*.  Кроме того, предполагается, что вы знаете, как работать с проектами [ASP.NET MVC](https://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started) или [веб-форм](https://www.asp.net/web-forms/tutorials/aspnet-45/getting-started-with-aspnet-45-web-forms/introduction-and-overview) в Visual Studio. Пример приложения использует MVC, но многое в руководство также применимо к веб-формам.
 
 Вы можете запускать приложение локально без подписки Azure, но она понадобится для развертывания приложения в облаке. Если у вас нет учетной записи, можно [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A55E3C668) или [подписаться на бесплатную пробную версию](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A55E3C668).
 
-Инструкции руководства применимы с любым из следующих продуктов:
+Инструкции учебника работают со следующими продуктами:
 
 * Visual Studio 2013
-* Visual Studio 2015
-* Visual Studio 2017
+* Visual Studio 2015
+* Visual Studio 2017
 * Visual Studio 2019
 
 Если у вас нет ни одного из этих продуктов, Visual Studio может быть установлен автоматически при установке пакета SDK для Azure.
@@ -329,7 +325,7 @@ ms.locfileid: "65595161"
 2. В диалоговом окне **Создание проекта** в области слева разверните раздел **Visual C#** , выберите шаблоны **Облако** и шаблон **Облачная служба Azure**.
 3. Присвойте проекту имя ContosoAdsCloudService и нажмите кнопку **ОК**.
 
-    ![Новый проект](./media/cloud-services-dotnet-get-started/newproject.png)
+    ![Создать проект](./media/cloud-services-dotnet-get-started/newproject.png)
 4. В диалоговом окне **Новая облачная служба Azure** добавьте веб-роль и рабочую роль. Присвойте веб-роли имя ContosoAdsWeb, а рабочей роли — ContosoAdsWorker. (Используйте значок карандаша на правой панели для изменения имен ролей по умолчанию.)
 
     ![Проект новой облачной службы](./media/cloud-services-dotnet-get-started/newcsproj.png)
@@ -391,8 +387,8 @@ ms.locfileid: "65595161"
 7. Следуйте этой же процедуре для добавления строки подключения хранилища в свойства роли ContosoAdsWorker.
 8. Там же в окне свойств **ContosoAdsWorker [роль]** добавьте другую строку подключения:
 
-   * Имя: ContosoAdsDbConnectionString.
-   * Тип: String
+   * имя: ContosoAdsDbConnectionString.
+   * Тип: Строковое
    * Значение: вставьте ту же строку подключения, которая была использована для проекта веб-роли. (Этот пример предназначен для Visual Studio 2013. Не забудьте изменить источник данных при копировании этого примера для Visual Studio 2015 или более поздней версии.)
 
        ```
@@ -762,7 +758,7 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 
 Для запуска приложения с полным эмулятором следует открыть Visual Studio с правами администратора.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Приложение Contoso Ads намеренно сделано простым для руководства по началу работы. Например, оно не реализует [вставку зависимостей](https://www.asp.net/mvc/tutorials/hands-on-labs/aspnet-mvc-4-dependency-injection) или [репозиторий и блок рабочих шаблонов](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application#repo), не использует [интерфейс для журналов](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry#log), не использует [EF Code First Migrations](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application) для управления изменениями модели данных или [EF Connection Resiliency](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application) для управления кратковременными ошибками сети и т. д.
 
 Есть несколько примеров приложений облачной службы, которые демонстрируют более жизненные примеры кодирования — от менее сложных к более сложным:

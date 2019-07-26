@@ -2,7 +2,7 @@
 title: Элементы языка T-SQL, поддерживаемые в хранилище данных SQL Azure | Документация Майкрософт
 description: Ссылки на документацию по инструкциям T-SQL, поддерживаемым в хранилище данных SQL Azure.
 services: sql-data-warehouse
-author: XiaoyuL-Preview
+author: XiaoyuMSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.subservice: query
 ms.date: 06/13/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 95c5b592d5ca46aed5f7123ff2b3eb688c5c0caf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5d623ebbb5434338e2d7263ca63dd545230a612d
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65873487"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479417"
 ---
 # <a name="t-sql-language-elements-supported-in-azure-sql-data-warehouse"></a>Элементы языка T-SQL, поддерживаемые в хранилище данных SQL Azure
 Ссылки на документацию по элементам языка T-SQL, поддерживаемым в хранилище данных SQL Azure.
@@ -81,7 +81,7 @@ ms.locfileid: "65873487"
 * [|= (битовый OR EQUALS)](https://msdn.microsoft.com/library/cc627409.aspx)
 * [&= (битовый AND EQUALS)](https://msdn.microsoft.com/library/cc627427.aspx)
 
-## <a name="functions"></a>Функции Azure
+## <a name="functions"></a>Функции
 * [@@DATEFIRST](https://msdn.microsoft.com/library/ms187766.aspx)
 * [@@ERROR](https://msdn.microsoft.com/library/ms188790.aspx)
 * [@@LANGUAGE](https://msdn.microsoft.com/library/ms177557.aspx)
@@ -276,6 +276,6 @@ ms.locfileid: "65873487"
 * [SET TRANSACTION ISOLATION LEVEL](https://msdn.microsoft.com/library/ms173763.aspx)
 * [SET XACT_ABORT](https://msdn.microsoft.com/library/ms188792.aspx)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные справочные сведения см. в разделах [Инструкции T-SQL, поддерживаемые в хранилище данных SQL Azure](sql-data-warehouse-reference-tsql-statements.md) и [System views supported in Azure SQL Data Warehouse](sql-data-warehouse-reference-tsql-system-views.md) (Системные представления в хранилище данных SQL Azure).
 

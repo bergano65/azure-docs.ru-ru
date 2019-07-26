@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/17/2017
 ms.author: cynthn
-ms.openlocfilehash: 2bc7eef9c4633b6064f2be251bc436c103f4e4a0
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: b88bade886bf8cf22387e8733b8710414c944988
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67718696"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68361132"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-c"></a>Развертывание виртуальной машины Azure с помощью C# #
 
@@ -85,9 +85,9 @@ ms.locfileid: "67718696"
 
 ### <a name="create-the-management-client"></a>Создание клиента управления
 
-1. Откройте файл Program.cs для созданного проекта. Затем добавьте в начало файла следующие операторы к существующим операторам using:
+1. Откройте файл Program.cs для созданного проекта. Затем добавьте эти операторы using в существующие инструкции в начале файла:
 
-    ```
+    ```csharp
     using Microsoft.Azure.Management.Compute.Fluent;
     using Microsoft.Azure.Management.Compute.Fluent.Models;
     using Microsoft.Azure.Management.Fluent;
@@ -97,7 +97,7 @@ ms.locfileid: "67718696"
 
 2. Чтобы создать клиент управления, добавьте следующий код в метод Main:
 
-    ```
+    ```csharp
     var credentials = SdkContext.AzureCredentialsFactory
         .FromFile(Environment.GetEnvironmentVariable("AZURE_AUTH_LOCATION"));
 
@@ -108,7 +108,7 @@ ms.locfileid: "67718696"
         .WithDefaultSubscription();
     ```
 
-## <a name="create-resources"></a>Создание ресурсов
+## <a name="create-resources"></a>Создать ресурсы
 
 ### <a name="create-the-resource-group"></a>Создание группы ресурсов
 
@@ -116,7 +116,7 @@ ms.locfileid: "67718696"
 
 Чтобы определить значения для приложения и создать группу ресурсов, добавьте следующий код в метод Main:
 
-```
+```csharp
 var groupName = "myResourceGroup";
 var vmName = "myVM";
 var location = Region.USWest;
@@ -133,7 +133,7 @@ var resourceGroup = azure.ResourceGroups.Define(groupName)
 
 Чтобы создать группу доступности, добавьте следующий код в метод Main:
 
-```
+```csharp
 Console.WriteLine("Creating availability set...");
 var availabilitySet = azure.AvailabilitySets.Define("myAVSet")
     .WithRegion(location)
@@ -148,7 +148,7 @@ var availabilitySet = azure.AvailabilitySets.Define("myAVSet")
 
 Чтобы создать общедоступный IP-адрес виртуальной машины, добавьте следующий код в метод Main:
    
-```
+```csharp
 Console.WriteLine("Creating public IP address...");
 var publicIPAddress = azure.PublicIPAddresses.Define("myPublicIP")
     .WithRegion(location)
@@ -163,7 +163,7 @@ var publicIPAddress = azure.PublicIPAddresses.Define("myPublicIP")
 
 Чтобы создать подсеть и виртуальную сеть, добавьте следующий код в метод Main:
 
-```
+```csharp
 Console.WriteLine("Creating virtual network...");
 var network = azure.Networks.Define("myVNet")
     .WithRegion(location)
@@ -179,7 +179,7 @@ var network = azure.Networks.Define("myVNet")
 
 Чтобы создать сетевой интерфейс, добавьте следующий код в метод Main:
 
-```
+```csharp
 Console.WriteLine("Creating network interface...");
 var networkInterface = azure.NetworkInterfaces.Define("myNIC")
     .WithRegion(location)
@@ -197,7 +197,7 @@ var networkInterface = azure.NetworkInterfaces.Define("myNIC")
 
 Чтобы создать виртуальную машину, добавьте следующий код в метод Main:
 
-```
+```csharp
 Console.WriteLine("Creating virtual machine...");
 azure.VirtualMachines.Define(vmName)
     .WithRegion(location)
@@ -219,7 +219,7 @@ azure.VirtualMachines.Define(vmName)
 
 Если вы хотите использовать имеющийся диск вместо образа Marketplace, используйте следующий код:
 
-```
+```csharp
 var managedDisk = azure.Disks.Define("myosdisk")
     .WithRegion(location)
     .WithExistingResourceGroup(groupName)
@@ -244,7 +244,7 @@ azure.VirtualMachines.Define("myVM")
 
 Если необходимо выполнить любые действия с виртуальной машиной, необходимо получить ее экземпляр:
 
-```
+```csharp
 var vm = azure.VirtualMachines.GetByResourceGroup(groupName, vmName);
 ```
 
@@ -252,7 +252,7 @@ var vm = azure.VirtualMachines.GetByResourceGroup(groupName, vmName);
 
 Чтобы получить сведения о виртуальной машине, добавьте следующий код в метод Main:
 
-```
+```csharp
 Console.WriteLine("Getting information about the virtual machine...");
 Console.WriteLine("hardwareProfile");
 Console.WriteLine("   vmSize: " + vm.Size);
@@ -324,7 +324,7 @@ Console.ReadLine();
 
 Чтобы остановить виртуальную машину без ее освобождения, добавьте следующий код в метод Main:
 
-```
+```csharp
 Console.WriteLine("Stopping vm...");
 vm.PowerOff();
 Console.WriteLine("Press enter to continue...");
@@ -333,7 +333,7 @@ Console.ReadLine();
 
 Если вы хотите отменить распределение виртуальной машины, измените вызов PowerOff на следующий код:
 
-```
+```csharp
 vm.Deallocate();
 ```
 
@@ -341,7 +341,7 @@ vm.Deallocate();
 
 Чтобы запустить виртуальную машину, добавьте следующий код в метод Main:
 
-```
+```csharp
 Console.WriteLine("Starting vm...");
 vm.Start();
 Console.WriteLine("Press enter to continue...");
@@ -354,7 +354,7 @@ Console.ReadLine();
 
 Чтобы изменить размер виртуальной машины, добавьте следующий код в метод Main:
 
-```
+```csharp
 Console.WriteLine("Resizing vm...");
 vm.Update()
     .WithSize(VirtualMachineSizeTypes.StandardDS2) 
@@ -365,9 +365,9 @@ Console.ReadLine();
 
 ### <a name="add-a-data-disk-to-the-vm"></a>Добавление диска данных в виртуальную машину
 
-Чтобы добавить диск данных к виртуальной машине, добавьте следующий код в метод Main. В этом примере добавляет диск данных 2 ГБ, размер которого, Хан LUN 0 и тип кэширования ReadWrite:
+Чтобы добавить диск данных к виртуальной машине, добавьте этот код в метод Main. В этом примере добавляется диск данных размером 2 ГБ, т. е. LUN 0 и тип кэширования ReadWrite:
 
-```
+```csharp
 Console.WriteLine("Adding data disk to vm...");
 vm.Update()
     .WithNewDataDisk(2, 0, CachingTypes.ReadWrite) 
@@ -382,7 +382,7 @@ Console.ReadLine();
 
 Чтобы удалить группу ресурсов, добавьте следующий код в метод Main:
 
-```
+```csharp
 azure.ResourceGroups.DeleteByName(groupName);
 ```
 
@@ -397,4 +397,3 @@ azure.ResourceGroups.DeleteByName(groupName);
 ## <a name="next-steps"></a>Следующие шаги
 * Используйте преимущества шаблонов для создания виртуальной машины, ориентируясь на сведения в статье [Развертывание виртуальной машины Azure с помощью C# и шаблона Resource Manager](csharp-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 * Дополнительные сведения об использовании [библиотек Azure для .NET](https://docs.microsoft.com/dotnet/azure/?view=azure-dotnet).
-

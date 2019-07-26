@@ -10,16 +10,16 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.assetid: e06311bc-29eb-49df-9273-1f05bbb2395c
 ms.date: 01/31/2018
-ms.openlocfilehash: 6d9a2929d7b8b1687b602093d0e9de35508dbd8c
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 95eca4c7f3e8170f6559799fc4c706e95df70e9e
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68273091"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68385519"
 ---
 # <a name="common-scenarios-examples-tutorials-and-walkthroughs-for-azure-logic-apps"></a>Распространенные сценарии, примеры, учебники и пошаговые руководства для Azure Logic Apps
 
-[Azure Logic Apps](../logic-apps/logic-apps-overview.md) помогает координировать и интегрировать различные службы, предоставляя [сотни готовых соединителей](../connectors/apis-list.md), от локальных SQL Server или SAP до Microsoft Cognitive Services. Служба Logic Apps работает без серверов, поэтому вам не нужно заботиться об экземплярах и масштабировании. Достаточно определить рабочий процесс с триггером и действия для него. Базовая платформа обеспечивает масштабирование, доступность и производительность. Служба Logic Apps наиболее полезна в тех случаях, когда нужно координировать несколько действий в нескольких системах.
+[Azure Logic Apps](../logic-apps/logic-apps-overview.md) помогает управлять и интегрировать различные службы, предоставляя [сотни готовых соединителей](../connectors/apis-list.md), от локальных SQL Server или SAP до Azure Cognitive Services. Служба Logic Apps работает без серверов, поэтому вам не нужно заботиться об экземплярах и масштабировании. Достаточно определить рабочий процесс с триггером и действия для него. Базовая платформа обеспечивает масштабирование, доступность и производительность. Служба Logic Apps наиболее полезна в тех случаях, когда нужно координировать несколько действий в нескольких системах.
 
 Ниже представлены распространенные примеры и сценарии, которые познакомят вас с методами применения и возможностями [Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
@@ -80,7 +80,7 @@ ms.locfileid: "68273091"
 
 * [Создание и развертывание приложений логики в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md)
 * [Включение мониторинга, ведения журнала и оповещений для существующих приложений логики](../logic-apps/logic-apps-monitor-your-logic-apps.md)
-* [Создание шаблона для автоматического развертывания](../logic-apps/logic-apps-create-deploy-template.md)
+* [Автоматизация развертывания приложений логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)
 
 ## <a name="content-types-conversions-and-transformations-within-a-run"></a>Типы содержимого и их преобразование во время выполнения
 
@@ -98,7 +98,7 @@ ms.locfileid: "68273091"
 * [Вызов Функций Azure из приложений логики](../logic-apps/logic-apps-azure-functions.md)
 * [Учебник. Активация приложений логики с помощью функций Azure](../logic-apps/logic-apps-scenario-function-sb-trigger.md)
 * [Учебник. Мониторинг изменений виртуальной машины с помощью службы "Сетка событий Azure" и Logic Apps](../event-grid/monitor-virtual-machine-changes-event-grid-logic-app.md)
-* [Учебник. Создание функции, которая интегрируется с Azure Logic Apps и Microsoft Cognitive Services для анализа записей Twitter тональности](../azure-functions/functions-twitter-email.md)
+* [Учебник. Создание функции, которая интегрируется с Azure Logic Apps и Azure Cognitive Services для анализа записей Twitter тональности](../azure-functions/functions-twitter-email.md)
 * [Учебник. Удаленный мониторинг Интернета вещей и уведомления с Azure Logic Apps подключением центра Интернета вещей и почтового ящика](../iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps.md)
 * [Блог. Вызов конечных точек SOAP из приложений логики](https://blogs.msdn.microsoft.com/logicapps/2016/04/07/using-soap-services-with-logic-apps/)
 

@@ -2,7 +2,7 @@
 title: Подключение к хранилищу данных SQL Azure (sqlcmd) | Документация Майкрософт
 description: Подключайтесь к хранилищу данных SQL Azure и создавайте запросы к нему с помощью служебной программы командной строки sqlcmd.
 services: sql-data-warehouse
-author: XiaoyuL-Preview
+author: XiaoyuMSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.subservice: development
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 72760c5123703a664695c1be4d286a38e96ecc3f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f3b93660fb9f8f3b0bfdddc37105b9e998ed9eee
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65873321"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479501"
 ---
 # <a name="connect-to-sql-data-warehouse-with-sqlcmd"></a>Подключение к хранилищу данных SQL с помощью sqlcmd
 > [!div class="op_single_selector"]
@@ -27,7 +27,7 @@ ms.locfileid: "65873321"
 > 
 > 
 
-Подключайтесь к хранилищу данных SQL Azure и создавайте запросы к нему с помощью служебной программы командной строки [sqlcmd][sqlcmd].  
+Используйте программу командной строки [sqlcmd][sqlcmd] для подключения к хранилищу данных SQL Azure и выполнения запросов к нему.  
 
 ## <a name="1-connect"></a>1. Подключение
 Чтобы начать использовать [sqlcmd][sqlcmd], откройте командную строку и введите **sqlcmd** и строку подключения к базе данных хранилища данных SQL. В строке подключения обязательно укажите следующие параметры.
@@ -82,8 +82,8 @@ sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -U myuser -P myP@sswor
 "SELECT name FROM sys.tables;" | sqlcmd -S MySqlDw.database.windows.net -d Adventure_Works -U myuser -P myP@ssword -I > .\tables.out
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о параметрах, доступных в sqlcmd, см. в [документации по sqlcmd][sqlcmd].
+## <a name="next-steps"></a>Следующие шаги
+Дополнительные сведения о параметрах, доступных в программе sqlcmd, см. в [документации по sqlcmd][sqlcmd] .
 
 <!--Image references-->
 

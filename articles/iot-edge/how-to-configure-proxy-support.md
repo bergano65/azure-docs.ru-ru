@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 1bf66fdb18398aaf233980ee7f2fd45fe1cc543b
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 47d3018015d05d0587e841c216a5eb89f2a0ae20
+ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68260509"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68414553"
 ---
 # <a name="configure-an-iot-edge-device-to-communicate-through-a-proxy-server"></a>Настройка устройства IoT Edge для обмена данными через прокси-сервер
 
@@ -64,7 +64,7 @@ URL-адрес прокси-сервера имеет такой формат: *
 
 ### <a name="linux"></a>Linux
 
-При установке среды выполнения IoT Edge на устройстве Linux настройте в диспетчере пакетов прохождение через прокси-сервер для доступа к пакету установки. Например, [настройте apt-get для использования прокси-сервера HTTP](https://help.ubuntu.com/community/AptGet/Howto/#Setting_up_apt-get_to_use_a_http-proxy). Настроив диспетчер пакетов, следуйте инструкциям в статье [Установка среды выполнения Azure IoT Edge в Linux (ARM32v7/armhf)](how-to-install-iot-edge-linux-arm.md) или [Установка среды выполнения Azure IoT Edge в Linux (x64)](how-to-install-iot-edge-linux.md) как обычно.
+При установке среды выполнения IoT Edge на устройстве Linux настройте в диспетчере пакетов прохождение через прокси-сервер для доступа к пакету установки. Например, [настройте apt-get для использования прокси-сервера HTTP](https://help.ubuntu.com/community/AptGet/Howto/#Setting_up_apt-get_to_use_a_http-proxy). После настройки диспетчера пакетов следуйте инструкциям в [статье Установка среды выполнения Azure IOT EDGE в Linux](how-to-install-iot-edge-linux.md) в обычном режиме.
 
 ### <a name="windows"></a>Windows
 
@@ -212,7 +212,7 @@ Restart-Service iotedge
 
 Этот шаг выполняется в течение всего жизненного цикла устройства IoT Edge. 
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портала Azure
 
 Когда вы создаете развертывания для устройств IoT Edge с помощью мастера **Настройка модулей**, каждый модуль включает раздел **Переменные среды**, который можно использовать для настройки подключений прокси-сервера. 
 

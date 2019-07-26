@@ -2,27 +2,21 @@
 title: Включение защиты идентификации Azure Active Directory | Документация Майкрософт
 description: Узнайте, как включить защиту идентификации Azure Active Directory.
 services: active-directory
-keywords: защита удостоверений Azure Active Directory, Cloud App Discovery, управление приложениями, безопасность, риск, уровень риска, уязвимость, политика безопасности
-documentationcenter: ''
-author: MicrosoftGuyJFlo
-manager: daveba
-ms.assetid: f7a7ffaf-76bf-4cc7-96a1-86c944275c82
 ms.service: active-directory
 ms.subservice: identity-protection
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/02/2018
 ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5d33c5c3fe970ee8e5d70e0ba358462d5bdf2bbd
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 304ba16985d5abfc4d385b3f1150cfa544c20b2a
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60295115"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68335510"
 ---
 # <a name="enabling-azure-active-directory-identity-protection"></a>Включение защиты идентификации Azure Active Directory
 
@@ -30,7 +24,7 @@ ms.locfileid: "60295115"
 
 - Получить консолидированное представление помеченных пользователей и событий риска, определенных с помощью алгоритмов Машинного обучения.
 - Настроить политики условного доступа на основе рисков для автоматической защиты пользователей.
-- Улучшить безопасность путем выполнения действий, связанных с уязвимостями. 
+- Улучшить безопасность путем реагирования на уязвимости. 
 
 Дополнительные сведения см. в статье [Защита идентификации Azure Active Directory](../active-directory-identityprotection.md).
 
@@ -58,4 +52,3 @@ ms.locfileid: "60295115"
 
 ## <a name="next-steps"></a>Следующие шаги
 * [Защита идентификации Azure Active Directory.](../active-directory-identityprotection.md)
-
