@@ -9,28 +9,28 @@ ms.author: robreed
 ms.date: 12/04/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 27dd9888d83e01ea522b2532fc1d65284f2fe8d1
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: c129391c0830e0194c32a041853482f92340bbb9
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67476927"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68405790"
 ---
 # <a name="runbook-output-and-messages-in-azure-automation"></a>Выходные данные и сообщения Runbook в службе автоматизации Azure
 В большинстве модулей runbook в службе автоматизации Azure используются выходные данные определенного типа. Например, сообщение об ошибке для пользователя или сложный объект, предназначенный для использования с другим модулем runbook. Windows PowerShell предоставляет [несколько потоков](/powershell/module/microsoft.powershell.core/about/about_redirection) для отправки выходных данных из сценария или рабочего процесса. Служба автоматизации Azure работает с каждым из этих потоков по-разному. Необходимо следовать рекомендациям по их использованию при создании модуля runbook.
 
 Следующая таблица содержит краткое описание каждого из потоков и их поведения на портале Azure при выполнении опубликованного модуля runbook и при [тестировании runbook](automation-testing-runbook.md). В последующих разделах приведены дополнительные сведения о каждом потоке.
 
-| Поток | Описание | Опубликовано | Тест |
+| Stream | Описание | Опубликовано | Тест |
 |:--- |:--- |:--- |:--- |
-| Output |Объекты, предназначенные для использования другими Runbook. |Записывается в журнал заданий. |Отображается в области вывода теста. |
+| Вывод |Объекты, предназначенные для использования другими Runbook. |Записывается в журнал заданий. |Отображается в области вывода теста. |
 | Предупреждение |Предупреждающее сообщение, предназначенное для пользователя. |Записывается в журнал заданий. |Отображается в области вывода теста. |
-| Ошибка |Сообщение об ошибке, предназначенное для пользователя. В отличие от исключения, по умолчанию Runbook продолжит работу после сообщения об ошибке. |Записывается в журнал заданий. |Отображается в области вывода теста. |
-| Подробная информация |Сообщения, содержащие общую или отладочную информацию. |Записывается в журнал заданий только в том случае, если для Runbook включено подробное ведение журнала. |Отображается в области вывода теста только в том случае, если в Runbook для $VerbosePreference задано значение Continue. |
+| Error |Сообщение об ошибке, предназначенное для пользователя. В отличие от исключения, по умолчанию Runbook продолжит работу после сообщения об ошибке. |Записывается в журнал заданий. |Отображается в области вывода теста. |
+| Verbose |Сообщения, содержащие общую или отладочную информацию. |Записывается в журнал заданий только в том случае, если для Runbook включено подробное ведение журнала. |Отображается в области вывода теста только в том случае, если в Runbook для $VerbosePreference задано значение Continue. |
 | Выполнение |До и после каждого действия в Runbook автоматически создаются записи. Модулю runbook не следует пытаться создать свои собственные записи хода выполнения, так как они предназначены для интерактивного пользователя. |Записывается в журнал заданий только в том случае, если для Runbook включено ведение журнала хода выполнения. |Не отображается в области вывода теста. |
 | Отладка |Сообщения, предназначенные для интерактивного пользователя. Не следует использовать в модулях runbook. |Не записывается в журнал заданий. |Не записывается в область вывода теста. |
 
-## <a name="output-stream"></a>Поток вывода
+## <a name="output-stream"></a>Выходной поток
 Поток вывода предназначен для вывода объектов, созданных сценарием или рабочим процессом, когда он работает правильно. В службе автоматизации Azure этот поток в основном используется для объектов, которые предназначены для использования [родительским Runbook, вызывающим текущий Runbook](automation-child-runbooks.md). Если вы [используете встроенный вызов Runbook](automation-child-runbooks.md#invoking-a-child-runbook-using-inline-execution) из родительского Runbook, он возвращает данные из потока вывода в родительский Runbook. Для передачи информации пользователю следует использовать только поток вывода, если известно, что один модуль runbook никогда не вызывается другим. Однако в обычном случае для передачи информации пользователю рекомендуется использовать [подробный поток](#verbose-stream) .
 
 Можно записать данные в поток вывода с помощью [Write-Output](https://technet.microsoft.com/library/hh849921.aspx) или поместив объект в отдельную строку в Runbook.
@@ -160,22 +160,22 @@ Windows PowerShell использует [привилегированные пе
 
 В следующей таблице перечислены привилегированные переменные, которые могут использоваться в модулях Runbook, а также их допустимые значения и значения по умолчанию. Эта таблица содержит только значения, которые являются допустимыми в runbook. Дополнительные значения привилегированных переменных допускаются при использовании в Windows PowerShell за пределами службы автоматизации Azure.
 
-| Переменная | Значение по умолчанию | Допустимые значения |
+| Переменная | Default Value | Допустимые значения |
 |:--- |:--- |:--- |
-| WarningPreference |Continue |Остановить<br>Continue<br>SilentlyContinue |
-| ErrorActionPreference |Continue |Остановить<br>Continue<br>SilentlyContinue |
-| VerbosePreference |SilentlyContinue |Остановить<br>Continue<br>SilentlyContinue |
+| WarningPreference |Continue |Остановить<br>Далее<br>SilentlyContinue |
+| ErrorActionPreference |Далее |Остановить<br>Далее<br>SilentlyContinue |
+| VerbosePreference |SilentlyContinue |Остановить<br>Далее<br>SilentlyContinue |
 
 В следующей таблице представлено поведение для соответствующих значений привилегированных переменных, допустимых в Runbook.
 
 | Значение | Поведение |
 |:--- |:--- |
-| Continue |Записывает сообщение в журнал и продолжает выполнение Runbook. |
+| Далее |Записывает сообщение в журнал и продолжает выполнение Runbook. |
 | SilentlyContinue |Продолжает выполнение Runbook без добавления сообщения в журнал. При таком значении сообщение игнорируется. |
 | Остановить |Записывает сообщение в журнал и приостанавливает выполнение Runbook. |
 
 ## <a name="runbook-output"></a>Извлечение выходных данных и сообщений runbook
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портала Azure
 На портале Azure на вкладке "Задания" Runbook можно просмотреть подробную информацию о задании Runbook. Помимо общей информации о задании, сводка задания содержит входные параметры и [поток вывода](#output-stream), а также все возникшие исключения. Кроме [подробного потока](#verbose-stream) и [записей о ходе выполнения](#progress-records), журнал содержит сообщения из [потока вывода](#output-stream) и [потоков предупреждений и ошибок](#warning-and-error-streams), если для runbook настроено добавление в журнал подробных сообщений и записей о ходе выполнения.
 
 ### <a name="windows-powershell"></a>Windows PowerShell
@@ -184,23 +184,23 @@ Windows PowerShell использует [привилегированные пе
 В следующем примере запускается пример Runbook и ожидается его завершение. После завершения его поток вывода собирается из задания.
 
 ```powershell
-$job = Start-AzureRmAutomationRunbook -ResourceGroupName "ResourceGroup01" `
+$job = Start-AzAutomationRunbook -ResourceGroupName "ResourceGroup01" `
   –AutomationAccountName "MyAutomationAccount" –Name "Test-Runbook"
 
 $doLoop = $true
 While ($doLoop) {
-  $job = Get-AzureRmAutomationJob -ResourceGroupName "ResourceGroup01" `
+  $job = Get-AzAutomationJob -ResourceGroupName "ResourceGroup01" `
     –AutomationAccountName "MyAutomationAccount" -Id $job.JobId
   $status = $job.Status
   $doLoop = (($status -ne "Completed") -and ($status -ne "Failed") -and ($status -ne "Suspended") -and ($status -ne "Stopped"))
 }
 
-Get-AzureRmAutomationJobOutput -ResourceGroupName "ResourceGroup01" `
+Get-AzAutomationJobOutput -ResourceGroupName "ResourceGroup01" `
   –AutomationAccountName "MyAutomationAccount" -Id $job.JobId –Stream Output
 
-# For more detailed job output, pipe the output of Get-AzureRmAutomationJobOutput to Get-AzureRmAutomationJobOutputRecord
-Get-AzureRmAutomationJobOutput -ResourceGroupName "ResourceGroup01" `
-  –AutomationAccountName "MyAutomationAccount" -Id $job.JobId –Stream Any | Get-AzureRmAutomationJobOutputRecord
+# For more detailed job output, pipe the output of Get-AzAutomationJobOutput to Get-AzAutomationJobOutputRecord
+Get-AzAutomationJobOutput -ResourceGroupName "ResourceGroup01" `
+  –AutomationAccountName "MyAutomationAccount" -Id $job.JobId –Stream Any | Get-AzAutomationJobOutputRecord
 ``` 
 
 ### <a name="graphical-authoring"></a>Графическая разработка
@@ -220,8 +220,8 @@ Get-AzureRmAutomationJobOutput -ResourceGroupName "ResourceGroup01" `
    
    ![Страница ведения журналов и трассировки графической разработки](media/automation-runbook-output-and-messages/logging-and-tracing-settings-blade.png)
 
-### <a name="microsoft-azure-monitor-logs"></a>Журналы Microsoft Azure Monitor
-Служба автоматизации может отправлять состояние задания runbook и потоки заданий в рабочую область Log Analytics. С помощью журналов Azure Monitor можно,
+### <a name="microsoft-azure-monitor-logs"></a>Журналы мониторинга Microsoft Azure
+Служба автоматизации может отправлять состояние задания runbook и потоки заданий в рабочую область Log Analytics. С помощью журналов Azure Monitor можно
 
 * получить информацию о заданиях службы автоматизации; 
 * активировать отправку электронного сообщения или оповещения в соответствии с состоянием задания Runbook (например, сбой или приостановка); 
@@ -229,9 +229,9 @@ Get-AzureRmAutomationJobOutput -ResourceGroupName "ResourceGroup01" `
 * коррелировать задания и учетные записи службы автоматизации; 
 * визуализировать журнал задания по прошествии времени.    
 
-Дополнительные сведения о том, как настроить интеграцию с Azure Monitor журналы для сбора, корреляции и действия по данным заданий см. в разделе [пересылка состояния задания и потоков заданий из службы автоматизации в Azure Monitor журналы](automation-manage-send-joblogs-log-analytics.md).
+Дополнительные сведения о настройке интеграции с журналами Azure Monitor для получения, сопоставления и действия данных задания см. в разделе Пересылка [состояния задания и потоков заданий из службы автоматизации в журналы Azure Monitor](automation-manage-send-joblogs-log-analytics.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Чтобы узнать больше о выполнении модулей Runbook, отслеживании заданий Runbook и других технических деталях, ознакомьтесь с [отслеживанием задания Runbook](automation-runbook-execution.md)
 * Дополнительные сведения о создании и использовании дочерних модулей Runbook см. в статье [Дочерние модули Runbook в службе автоматизации Azure](automation-child-runbooks.md).
 

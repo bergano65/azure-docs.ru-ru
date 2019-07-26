@@ -2,24 +2,17 @@
 title: Подключение облачной службы к пользовательскому контроллеру домена | Документация Майкрософт
 description: Сведения о подключении веб-ролей и рабочих ролей к личному домену AD с помощью PowerShell и расширения домена AD
 services: cloud-services
-documentationcenter: ''
-author: jpconnock
-manager: timlt
-editor: ''
-ms.assetid: 1e2d7c87-d254-4e7a-a832-67f84411ec95
+author: georgewallace
 ms.service: cloud-services
-ms.workload: tbd
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2017
-ms.author: jeconnoc
-ms.openlocfilehash: 8bee2e2038ee39c777e1ca09994ad21872d2029a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: gwallace
+ms.openlocfilehash: 97a24720e65539a68745a5a1bb3f13ce1cafb9be
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60337346"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359185"
 ---
 # <a name="connecting-azure-cloud-services-roles-to-a-custom-ad-domain-controller-hosted-in-azure"></a>Подключение ролей облачных служб Azure к контроллеру личного домена AD, размещенному в Azure
 Сначала настройте виртуальную сеть в Azure. Затем добавьте к ней контроллер домена Active Directory (размещенный на виртуальной машине Azure). После этого добавьте имеющиеся роли облачных служб в заранее созданную виртуальную сеть и подключите их к контроллеру домена.
@@ -33,7 +26,7 @@ ms.locfileid: "60337346"
 
 Сеть, на которую ссылается облачная служба, должна быть **классической виртуальной сетью**.
 
-## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
+## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
 Создать виртуальную сеть в Azure можно с помощью портала Azure или PowerShell. В этом руководстве используется PowerShell. Сведения о создании виртуальной сети с помощью портала Azure см. в статье [Создание виртуальной сети с помощью портала Azure](../virtual-network/quick-create-portal.md). В ней описано создание виртуальной сети (Resource Manager), но вам необходимо создать виртуальную сеть (классическую) для облачных служб. Для этого на портале выберите **Создать ресурс**, введите *виртуальная сети* в **поле поиска** и нажмите клавишу **ВВОД**. В результатах поиска в разделе **Все** выберите **Виртуальная сеть**. В разделе **Выбор модели развертывания** щелкните **Классическая** и щелкните **Создать**. Следуйте инструкциям в этой статье.
 
 ```powershell

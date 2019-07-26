@@ -1,5 +1,5 @@
 ---
-title: Проблемы при входе в локальное приложение с помощью прокси приложения Azure AD | Документация Майкрософт
+title: Проблема входа в локальное приложение с помощью прокси приложения Azure AD | Документация Майкрософт
 description: Устранение типичных проблем, препятствующих выполнению входа в локальное приложение, интегрированное с Azure AD, с использованием прокси приложения Azure AD.
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.date: 05/21/2018
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0adc2effb27ffcd870ec543ee7b353a092808797
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4483dc75d116e75521cb348b56dac418b3e012a8
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65825261"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68381323"
 ---
 # <a name="problems-signing-in-to-an-on-premises-application-using-the-azure-ad-application-proxy"></a>Проблемы при входе в локальное приложение с помощью прокси приложения Azure AD
 
@@ -56,7 +56,7 @@ ms.locfileid: "65825261"
 
 ## <a name="im-having-a-problem-with-the-application-proxy-agent-connector"></a>Возникла проблема с соединителем агента прокси приложения
   Приведенные ниже документы помогут устранить некоторые из наиболее распространенных проблем в этой категории.
-  * [У меня проблемы при установке соединителя агента прокси приложения](application-proxy-connector-installation-problem.md)
+  * [Возникла проблема с установкой соединителя агента Application Proxy](application-proxy-connector-installation-problem.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Как обеспечить безопасный удаленный доступ к локальным приложениям](application-proxy.md)

@@ -11,16 +11,16 @@ ms.author: jordane
 author: jpe316
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 601a6139b81e45fa5005b7510189eac594c29fb0
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: a82a44127a470b6366eeffc60c73f762d5a8f525
+ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67475999"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68348579"
 ---
 # <a name="use-the-cli-extension-for-azure-machine-learning-service"></a>Использование расширения интерфейса командной строки для Службы машинного обучения Azure
 
-CLI для Машинного обучения Azure является расширением кроссплатформенного интерфейса командной строки для платформы Azure ([Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)). Это расширение предоставляет команды для работы со службой машинного обучения Azure. Он позволяет автоматизировать машинного обучения действий. В следующем списке приведены некоторые действия, которые можно выполнять с расширением интерфейса командной строки в примере:
+CLI для Машинного обучения Azure является расширением кроссплатформенного интерфейса командной строки для платформы Azure ([Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)). Это расширение предоставляет команды для работы со службой Машинное обучение Azure. Она позволяет автоматизировать действия машинного обучения. В следующем списке приведены некоторые примеры действий, которые можно выполнить с помощью расширения CLI.
 
 + выполнять эксперименты для создания моделей машинного обучения;
 
@@ -28,19 +28,19 @@ CLI для Машинного обучения Azure является расши
 
 + упаковывать, развертывать и отслеживать жизненный цикл моделей машинного обучения.
 
-Интерфейс командной строки не является заменой пакета SDK для Машинного обучения Azure. Это средство, оптимизированный для обработки высокой параметризованные задачи, которые сами соответствия для автоматизации.
+Интерфейс командной строки не является заменой пакета SDK для Машинного обучения Azure. Это дополнительный инструмент, оптимизированный для обработки строго параметризованных задач, которые прекрасно подходят для автоматизации.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Для использования интерфейса командной строки необходима подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
 * [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
 
-## <a name="full-reference-docs"></a>Полная справочная документация
+## <a name="full-reference-docs"></a>Полные справочные документы
 
-Найти [Полная справочная документация по azure-cli-ml расширение Azure CLI](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/?view=azure-cli-latest).
+Найдите [полную справочную документацию по расширению Azure-CLI-ml Azure CLI](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/?view=azure-cli-latest).
 
-## <a name="install-the-extension"></a>Установка расширения
+## <a name="install-the-extension"></a>Установить расширение
 
 Чтобы установить расширение интерфейса командной строки Машинного обучения, выполните следующую команду:
 
@@ -49,7 +49,7 @@ az extension add -n azure-cli-ml
 ```
 
 > [!TIP]
-> Примеры файлов, которые можно использовать с помощью приведенных ниже команд можно найти [здесь](https://aka.ms/azml-deploy-cloud).
+> Примеры файлов, которые можно использовать с приведенными ниже командами, можно найти [здесь](https://aka.ms/azml-deploy-cloud).
 
 При появлении запроса выберите `y`, чтобы установить расширение.
 
@@ -61,7 +61,7 @@ az ml -h
 
 ## <a name="update-the-extension"></a>Обновление расширения
 
-Чтобы обновить расширение Machine Learning CLI, используйте следующую команду:
+Чтобы обновить расширение CLI Машинное обучение, используйте следующую команду:
 
 ```azurecli-interactive
 az extension update -n azure-cli-ml
@@ -80,7 +80,7 @@ az extension remove -n azure-cli-ml
 
 Следующие команды демонстрируют использование интерфейса командной строки для управления ресурсами, используемыми службой "Машинное обучение Azure".
 
-+ Если вы не сделали этого, создайте группу ресурсов:
++ Создайте группу ресурсов, если она еще не создана.
 
     ```azurecli-interactive
     az group create -n myresourcegroup -l westus2
@@ -92,67 +92,67 @@ az extension remove -n azure-cli-ml
     az ml workspace create -w myworkspace -g myresourcegroup
     ```
 
-    Дополнительные сведения см. в разделе [az рабочей области машинного обучения создайте](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-create).
+    Дополнительные сведения см. в разделе о [создании рабочей области AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-create).
 
-+ Присоединение конфигурации рабочей области в папку, чтобы включить отслеживание контекста интерфейса командной строки.
++ Подключите конфигурацию рабочей области к папке, чтобы включить отображение контекста CLI.
 
     ```azurecli-interactive
     az ml folder attach -w myworkspace -g myresourcegroup
     ```
 
-    Эта команда создает `.azureml` подкаталог, который содержит файлы примеров runconfig и conda среды. Он также содержит `config.json` файл, который используется для связи с рабочей областью машинного обучения Azure.
+    Эта команда создает `.azureml` подкаталог, содержащий примеры файлов среды runconfig и conda. Он также содержит `config.json` файл, который используется для взаимодействия с рабочей областью машинное обучение Azure.
 
-    Дополнительные сведения см. в разделе [присоединить az ml папку](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/folder?view=azure-cli-latest#ext-azure-cli-ml-az-ml-folder-attach).
+    Дополнительные сведения см. в разделе [AZ ML Folder Attach](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/folder?view=azure-cli-latest#ext-azure-cli-ml-az-ml-folder-attach).
 
-+ Свяжите контейнер BLOB-объектов Azure в хранилище данных.
++ Подключите контейнер больших двоичных объектов Azure в качестве хранилища данных.
 
     ```azurecli-interactive
     az ml datastore attach-blob  -n datastorename -a accountname -c containername
     ```
 
-    Дополнительные сведения см. в разделе [az ml хранилище данных присоединения-BLOB-объектов](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/datastore?view=azure-cli-latest#ext-azure-cli-ml-az-ml-datastore-attach-blob).
+    Дополнительные сведения см. в разделе [AZ ML DataStore Attach-BLOB](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/datastore?view=azure-cli-latest#ext-azure-cli-ml-az-ml-datastore-attach-blob).
 
     
-+ Подключите кластер службы контейнеров AZURE в качестве целевого объекта вычислений.
++ Подключите кластер AKS в качестве целевого объекта вычислений.
 
     ```azurecli-interactive
     az ml computetarget attach aks -n myaks -i myaksresourceid -g myresourcegroup -w myworkspace
     ```
 
-    Дополнительные сведения см. в разделе [az ml computetarget присоединить aks](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/attach?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-attach-aks)
+    Дополнительные сведения см. в статье [AZ ML computetarget Attach AKS](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/attach?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-attach-aks)
 
-+ Создайте новую цель AMLcompute.
++ Создайте новый целевой объект Амлкомпуте.
 
     ```azurecli-interactive
     az ml computetarget create amlcompute -n cpu --min-nodes 1 --max-nodes 1 -s STANDARD_D3_V2
     ```
 
-    Дополнительные сведения см. в разделе [az ml computetarget создать amlcompute](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute).
+    Дополнительные сведения см. в разделе [AZ ML computetarget Create амлкомпуте](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute).
 
-## <a id="experiments"></a>Запускать эксперименты
+## <a id="experiments"></a>Запуск экспериментов
 
-* Запустите выполнение эксперимента. При использовании этой команды, укажите имя файла runconfig (текста до \*.runconfig, если вы ищете систему) для параметра - c.
+* Запустите выполнение эксперимента. При использовании этой команды укажите имя файла runconfig (текст до \*. runconfig, если вы ищете файловую систему) в параметре-c.
 
     ```azurecli-interactive
     az ml run submit-script -c sklearn -e testexperiment train.py
     ```
 
     > [!TIP]
-    > `az ml folder attach` Команда создает `.azureml` подкаталог, который содержит два файла runconfig в примере. 
+    > `az ml folder attach` Команда`.azureml` создает подкаталог, который содержит два примера файлов runconfig. 
     >
-    > Если у вас есть скрипт Python, который создает объект конфигурации при запуске программными средствами, можно использовать [RunConfig.save()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py#save-path-none--name-none--separate-environment-yaml-false-) сохранить объект как runconfig-файл.
+    > При наличии скрипта Python, который создает объект конфигурации запуска программно, можно использовать [RunConfig. Save ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py#save-path-none--name-none--separate-environment-yaml-false-) , чтобы сохранить его как файл RunConfig.
     >
-    > Дополнительные примеры runconfig файлов, см. в разделе [ https://github.com/MicrosoftDocs/pipelines-azureml/tree/master/.azureml ](https://github.com/MicrosoftDocs/pipelines-azureml/tree/master/.azureml).
+    > Дополнительные примеры файлов runconfig см. в [https://github.com/MicrosoftDocs/pipelines-azureml/tree/master/.azureml](https://github.com/MicrosoftDocs/pipelines-azureml/tree/master/.azureml)разделе.
 
-    Дополнительные сведения см. в разделе [az ml запуска отправить сценарий](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/run?view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-submit-script).
+    Дополнительные сведения см. в разделе [AZ ML Run Submit-Script](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/run?view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-submit-script).
 
-* Просмотрите в списке экспериментов:
+* Просмотреть список экспериментов:
 
     ```azurecli-interactive
     az ml experiment list
     ```
 
-    Дополнительные сведения см. в разделе [az ml поэкспериментировать списка](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/experiment?view=azure-cli-latest#ext-azure-cli-ml-az-ml-experiment-list).
+    Дополнительные сведения см. в статье [AZ ML эксперимент List](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/experiment?view=azure-cli-latest#ext-azure-cli-ml-az-ml-experiment-list).
 
 ## <a name="model-registration-profiling-deployment"></a>Регистрация модели, профилирование, развертывание
 
@@ -164,46 +164,50 @@ az extension remove -n azure-cli-ml
     az ml model register -n mymodel -p sklearn_regression_model.pkl
     ```
 
-    Дополнительные сведения см. в разделе [az ml модели register](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-register).
+    Дополнительные сведения см. в статье [AZ ML Model Register](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-register).
 
-+ **НЕОБЯЗАТЕЛЬНЫЙ** профиля вашей модели, чтобы получить оптимальные значения ЦП и памяти для развертывания.
++ **Необязательно** Профиле модели, чтобы получить оптимальные значения ЦП и памяти для развертывания.
     ```azurecli-interactive
     az ml model profile -n myprofile -m mymodel:1 --ic inferenceconfig.json -d "{\"data\": [[1,2,3,4,5,6,7,8,9,10],[10,9,8,7,6,5,4,3,2,1]]}" -t myprofileresult.json
     ```
 
-    Дополнительные сведения см. в разделе [профиль модели az ml](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-profile).
+    Дополнительные сведения см. в статье [AZ ML Model Profile](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-profile).
 
 + Развертывание модели в AKS
     ```azurecli-interactive
     az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.json --ct akscomputetarget
     ```
     
-    Ниже приведен пример `inferenceconfig.json` документа:
-    ```json
-    {
-    "entryScript": "score.py",
-    "runtime": "python",
-    "condaFile": "myenv.yml",
-    "extraDockerfileSteps": null,
-    "sourceDirectory": null,
-    "enableGpu": false,
-    "baseImage": null,
-    "baseImageRegistry": null
-    }
-    ```
-    Ниже приведен пример документа «deploymentconfig.json»:
-    ```json
-    {
-    "computeType": "aks",
-    "ComputeTarget": "akscomputetarget"
-    }
-    ```
+    Дополнительные сведения о схеме файла конфигурации вывода см. в разделе [Схема конфигурации вывода](#inferenceconfig).
+    
+    Дополнительные сведения о схеме файла конфигурации развертывания см. в разделе [Схема конфигурации развертывания](#deploymentconfig).
 
-    Дополнительные сведения см. в разделе [развертывание модели машинного обучения az](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-deploy).
+    Дополнительные сведения см. в разделе [AZ ML Model Deploy](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-deploy).
 
+<a id="inferenceconfig"></a>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="inference-configuration-schema"></a>Схема конфигурации вывода
 
-* [Справочник по расширению Machine Learning CLI команду](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest).
+[!INCLUDE [inferenceconfig](../../../includes/machine-learning-service-inference-config.md)]
 
-* [Обучать и развертывать модели машинного обучения с помощью Azure конвейеров](/azure/devops/pipelines/targets/azure-machine-learning)
+<a id="deploymentconfig"></a>
+
+## <a name="deployment-configuration-schema"></a>Схема конфигурации развертывания
+
+### <a name="local-deployment-configuration-schema"></a>Схема конфигурации локального развертывания
+
+[!INCLUDE [deploymentconfig](../../../includes/machine-learning-service-local-deploy-config.md)]
+
+### <a name="azure-container-instance-deployment-configuration-schema"></a>Схема конфигурации развертывания экземпляра контейнера Azure 
+
+[!INCLUDE [deploymentconfig](../../../includes/machine-learning-service-aci-deploy-config.md)]
+
+### <a name="azure-kubernetes-service-deployment-configuration-schema"></a>Схема конфигурации развертывания службы Kubernetes Azure
+
+[!INCLUDE [deploymentconfig](../../../includes/machine-learning-service-aks-deploy-config.md)]
+
+## <a name="next-steps"></a>Следующие шаги
+
+* [Справочник по командам для машинное обучение расширения CLI](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest).
+
+* [Обучение и развертывание моделей машинного обучения с помощью Azure Pipelines](/azure/devops/pipelines/targets/azure-machine-learning)

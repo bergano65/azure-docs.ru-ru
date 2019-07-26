@@ -14,12 +14,12 @@ ms.devlang: python
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: aschhab
-ms.openlocfilehash: cd75ba9d407399703a382596019d5f370808b20a
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: d294ceaaf77175a3010131b18864b71c7b26b88b
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67543664"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68360833"
 ---
 # <a name="how-to-use-service-bus-topics-and-subscriptions-with-python"></a>Как использовать разделы и подписки служебной шины с Python
 
@@ -33,15 +33,15 @@ ms.locfileid: "67543664"
 - получение сообщений из подписки;
 - удаление разделов и подписок.
 
-## <a name="prerequisites"></a>Технические условия
-1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать ваши [преимущества для подписчиков Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-2. Выполните шаги [краткое руководство: Чтобы создать раздел служебной шины и подписок для раздела с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md) для создания служебной шины **пространства имен** и получить **строку подключения**.
+## <a name="prerequisites"></a>предварительные требования
+1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества Visual Studio или подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+2. Выполните действия, [описанные в кратком руководстве: Используйте портал Azure для создания раздела служебной шины и подписки на раздел](service-bus-quickstart-topics-subscriptions-portal.md) , чтобы создать **пространство имен** служебной шины и получить **строку подключения**.
 
     > [!NOTE]
-    > Вы создадите **разделе** и **подписки** в раздел с помощью **Python** в этом кратком руководстве. 
-3. Установка [пакет Azure Python][Azure Python package]. См. в разделе [руководство по установке Python](../python-how-to-install.md).
+    > Вы создадите **раздел** и подписку на  раздел с помощью **Python** в этом кратком руководстве. 
+3. Установите [пакет Azure Python][Azure Python package]. См. раздел [руководства по установке Python](../python-how-to-install.md).
 
-## <a name="create-a-topic"></a>Создание раздела
+## <a name="create-a-topic"></a>Создать раздел
 
 Объект **ServiceBusService** позволяет работать с разделами. Добавьте следующий код в начало любого файла Python, из которого планируется получать доступ к служебной шине программным способом.
 
@@ -79,9 +79,9 @@ bus_service.create_topic('mytopic', topic_options)
 Подписки на разделы также создаются с помощью объекта **ServiceBusService**. Подписки имеют имена и могут использовать дополнительный фильтр, который ограничивает набор сообщений, доставляемых в виртуальную очередь подписки.
 
 > [!NOTE]
-> По умолчанию подписки являются постоянными и продолжают существовать до их или раздел, в который они подписаны, удаляются.
+> По умолчанию подписки остаются постоянными и будут существовать до тех пор, пока не будет удалена подписка или раздел, на который они подписаны.
 > 
-> У вас есть подписки, автоматически удаляется, задав [auto_delete_on_idle свойство](https://docs.microsoft.com/python/api/azure-mgmt-servicebus/azure.mgmt.servicebus.models.sbsubscription?view=azure-python).
+> Вы можете автоматически удалить подписки, задав [свойство auto_delete_on_idle](https://docs.microsoft.com/python/api/azure-mgmt-servicebus/azure.mgmt.servicebus.models.sbsubscription?view=azure-python).
 
 ### <a name="create-a-subscription-with-the-default-matchall-filter"></a>Создание подписки с фильтром по умолчанию (MatchAll)
 
@@ -140,7 +140,8 @@ bus_service.delete_rule('mytopic', 'LowMessages', DEFAULT_RULE_NAME)
 
 ```python
 for i in range(5):
-    msg = Message('Msg {0}'.format(i).encode('utf-8'), custom_properties={'messagenumber':i})
+    msg = Message('Msg {0}'.format(i).encode('utf-8'),
+                  custom_properties={'messagenumber': i})
     bus_service.send_topic_message('mytopic', msg)
 ```
 
@@ -151,7 +152,8 @@ for i in range(5):
 Сообщения извлекаются из подписки с помощью метода `receive_subscription_message` для объекта **ServiceBusService**.
 
 ```python
-msg = bus_service.receive_subscription_message('mytopic', 'LowMessages', peek_lock=False)
+msg = bus_service.receive_subscription_message(
+    'mytopic', 'LowMessages', peek_lock=False)
 print(msg.body)
 ```
 
@@ -174,11 +176,11 @@ msg.delete()
 
 Кроме того, при блокировке сообщения в подписке предусмотрено определенное время ожидания. Если приложение не может обработать сообщение до истечения времени блокировки (например, аварийно завершит работу), то служебная шина автоматически разблокирует сообщение и оно станет доступным для повторного получения.
 
-Если в приложении происходит сбой после обработки сообщения, но перед вызовом метода `delete`, сообщение будет повторно доставлено в приложение после его перезапуска. Часто такой подход называют По крайней мере одну обработку\*; то есть каждое сообщение будет обрабатываться по крайней мере один раз, но в некоторых случаях это же сообщение может быть доставлено повторно. Если повторная обработка недопустима, разработчики приложения должны добавить дополнительную логику для обработки повторной доставки сообщений. Для этого вы можете использовать свойство сообщения **MessageId**, которое остается постоянным в ходе разных попыток доставки.
+Если в приложении происходит сбой после обработки сообщения, но перед вызовом метода `delete`, сообщение будет повторно доставлено в приложение после его перезапуска. Часто такой подход называют По крайней мере\*один раз обработка каждого сообщения обрабатывается по крайней мере один раз, но в некоторых ситуациях такое же сообщение может быть доставлено снова. Если повторная обработка недопустима, разработчики приложения должны добавить дополнительную логику для обработки повторной доставки сообщений. Для этого вы можете использовать свойство сообщения **MessageId**, которое остается постоянным в ходе разных попыток доставки.
 
 ## <a name="delete-topics-and-subscriptions"></a>Удаление разделов и подписок
 
-Разделы и подписки хранятся постоянно Если [auto_delete_on_idle свойство](https://docs.microsoft.com/python/api/azure-mgmt-servicebus/azure.mgmt.servicebus.models.sbsubscription?view=azure-python) имеет значение. Они могут быть удалены, либо через [портала Azure][Azure portal] или программным способом. В следующем примере показано, как удалить раздел с именем `mytopic`
+Разделы и подписки являются постоянными, если не задано [свойство auto_delete_on_idle](https://docs.microsoft.com/python/api/azure-mgmt-servicebus/azure.mgmt.servicebus.models.sbsubscription?view=azure-python) . Их можно удалить либо с помощью [портал Azure][Azure portal] , либо программным способом. В следующем примере показано, как удалить раздел с именем `mytopic`
 
 ```python
 bus_service.delete_topic('mytopic')
@@ -193,7 +195,7 @@ bus_service.delete_subscription('mytopic', 'HighMessages')
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы узнали основные сведения о разделах служебной шины. Для получения дополнительных сведений используйте следующие ссылки.
 

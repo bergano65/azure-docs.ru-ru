@@ -4,22 +4,17 @@ description: Узнайте, что делать, если прерывание 
 services: cloud-services
 documentationcenter: ''
 author: mmccrory
-manager: timlt
-editor: ''
-ms.assetid: e52634ab-003d-4f1e-85fa-794f6cd12ce4
 ms.service: cloud-services
 ms.workload: cloud-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 04/04/2017
 ms.author: memccror
-ms.openlocfilehash: 976bb43fd3e6d6fdb19c733affd4afa2e49e482c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 269bb59210e24623a16b27d21d7276c084e4cca7
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65967680"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359674"
 ---
 # <a name="what-to-do-in-the-event-of-an-azure-service-disruption-that-impacts-azure-cloud-services"></a>Что делать, если прерывание работы службы Azure влияет на облачные службы Azure
 Корпорация Майкрософт прилагает все усилия для того, чтобы наши службы всегда были доступны. Иногда по независящим от нас обстоятельствам происходят незапланированные нарушения работы служб.
@@ -36,7 +31,7 @@ ms.locfileid: "65967680"
 >
 
 
-## <a name="option-1-use-a-backup-deployment-through-azure-traffic-manager"></a>Вариант 1. Использование резервного развертывания через диспетчер трафика Azure
+## <a name="option-1-use-a-backup-deployment-through-azure-traffic-manager"></a>Вариант 1. Использование развертывания резервного копирования с помощью диспетчера трафика Azure
 Самое надежное решение аварийного восстановления заключается в поддержке нескольких развертываний приложения в разных регионах и в направлении трафика между ними с помощью [диспетчера трафика Azure](../traffic-manager/traffic-manager-overview.md). Диспетчер трафика Azure предоставляет несколько [методов маршрутизации](../traffic-manager/traffic-manager-routing-methods.md), поэтому вы можете управлять развертываниями, используя основную или резервную модель или разделяя трафик между ними.
 
 ![Балансировка облачных служб Azure по регионам с помощью диспетчера трафика Azure](./media/cloud-services-disaster-recovery-guidance/using-azure-traffic-manager.png)
@@ -51,13 +46,13 @@ ms.locfileid: "65967680"
 В зависимости от источников данных приложения может потребоваться проверка процедур восстановления для источника данных приложения.
 
 * Для источников данных службы хранилища Azure обратитесь к разделу [Репликация службы хранилища Azure](../storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage) , чтобы узнать, какие варианты действий доступны на основе выбранной модели репликации приложения.
-* Источники базы данных SQL. в статье [Обзор: Business непрерывности аварийное восстановление облака с базой данных SQL](../sql-database/sql-database-business-continuity.md) на доступные параметры на основе выбранной репликации модели для вашего приложения.
+* Сведения об источниках баз данных [SQL см. в статье Обзор: Непрерывность облачных бизнес-процессов и аварийное восстановление](../sql-database/sql-database-business-continuity.md) базы данных с помощью базы данных SQL для проверки параметров, доступных на основе выбранной модели репликации для вашего приложения.
 
 
 ## <a name="option-3-wait-for-recovery"></a>Вариант 3. Ожидание восстановления
 В этом случае вам не нужно ничего делать. Однако служба будет недоступна до восстановления региона. Текущее состояние службы можно просмотреть на [панели мониторинга работоспособности служб Azure](https://azure.microsoft.com/status/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Чтобы больше узнать о том, как реализовать стратегию обеспечения аварийного восстановления и высокого уровня доступности, ознакомьтесь с разделом [Аварийное восстановление и высокий уровень доступности для приложений на платформе Azure](../resiliency/resiliency-disaster-recovery-high-availability-azure-applications.md).
 
 Возможности облачной платформы подробно описаны в [техническом руководстве по обеспечению непрерывности бизнес-процессов Azure](../resiliency/resiliency-technical-guidance.md).

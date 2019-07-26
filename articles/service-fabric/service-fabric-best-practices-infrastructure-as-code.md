@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: 2dfe1493c6611fb69a417895aaa1028ad5881b9c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae1cd0912733116dce1b550dd937cc9fc5f8737b
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66237420"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359771"
 ---
 # <a name="infrastructure-as-code"></a>Инфраструктура как код
 
@@ -86,19 +86,21 @@ New-AzResourceGroupDeployment -Name $ResourceGroupName -TemplateFile $Template -
 
 ```python
 # Create SFPKG that needs to be uploaded to Azure Storage Blob Container
-microservices_sfpkg = zipfile.ZipFile(self.microservices_app_package_name, 'w', zipfile.ZIP_DEFLATED)
+microservices_sfpkg = zipfile.ZipFile(
+    self.microservices_app_package_name, 'w', zipfile.ZIP_DEFLATED)
 package_length = len(self.microservices_app_package_path)
 
 for root, dirs, files in os.walk(self.microservices_app_package_path):
     root_folder = root[package_length:]
     for file in files:
-        microservices_sfpkg.write(os.path.join(root, file), os.path.join(root_folder, file))
+        microservices_sfpkg.write(os.path.join(
+            root, file), os.path.join(root_folder, file))
 
 microservices_sfpkg.close()
 ```
 
 ## <a name="azure-virtual-machine-operating-system-automatic-upgrade-configuration"></a>Конфигурация автоматического обновления операционной системы виртуальной машины Azure 
-Обновление виртуальных машин — это операция инициированной пользователем, и рекомендуется использовать [обновление ОС виртуальной машины масштабируемого задать автоматическое](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) для кластеров Azure Service Fabric управление исправлениями узла; Приложение для управления исправлениями — это альтернативное решение, предназначенное для при размещении за пределами Azure, несмотря на то, что им можно использовать в Azure, с издержками, на котором размещается Реализовано в Azure, выполняется Наиболее частая причина использовать автоматическое обновление виртуальной машины операционной системы над Реализовано. Ниже приведены свойства шаблона вычислений виртуальной машины масштабируемого задать Resource Manager для включения операционной системы автоматического обновления.
+Обновление виртуальных машин — это операция, инициированная пользователем, поэтому рекомендуется использовать [масштабируемый набор виртуальных машин автоматическое обновление операционной системы](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) для Azure Service Fabric кластеры управления обновлениями узла. Приложение для управления исправлениями — это альтернативное решение, которое предназначено для размещения за пределами Azure, хотя ВЕХ можно использовать в Azure, и при этом издержки на размещение ВЕХ в Azure являются распространенной причиной для автоматического обновления операционной системы виртуальной машины. Over ВЕХ. Ниже приведены свойства шаблона "вычисление масштабируемого набора виртуальных машин" диспетчер ресурсов для включения автоматического обновления ОС.
 
 ```json
 "upgradePolicy": {
@@ -109,11 +111,11 @@ microservices_sfpkg.close()
     }
 },
 ```
-При использовании автоматического обновления ОС с помощью Service Fabric, новый образ ОС разворачивается в одном домене обновления за раз, чтобы обеспечить высокий уровень доступности служб, работающих в Service Fabric. Для использования автоматических обновлений ОС в Service Fabric ваш кластер должен быть настроен на использование уровня надежности Silver или выше.
+При использовании автоматических обновлений ОС с Service Fabric новый образ ОС помещается в один домен обновления за раз, чтобы обеспечить высокий уровень доступности служб, работающих в Service Fabric. Для использования автоматических обновлений ОС в Service Fabric ваш кластер должен быть настроен на использование уровня надежности Silver или выше.
 
-Убедитесь, что следующий раздел реестра имеет значение false, чтобы предотвратить запуск несогласованных обновлений хост-компьютерах windows: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU.
+Убедитесь, что для следующего раздела реестра установлено значение false, чтобы предотвратить запуск несогласованных обновлений на компьютерах размещения Windows: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU.
 
-Ниже приведены свойства шаблона вычислений виртуальной машины масштабируемого задать Resource Manager настроить ключ реестра WindowsUpdate значение false.
+Ниже приведены свойства шаблона "вычисленный масштабируемый набор виртуальных машин" диспетчер ресурсов, чтобы задать для раздела реестра WindowsUpdate значение false:
 ```json
 "osProfile": {
         "computerNamePrefix": "{vmss-name}",
@@ -126,19 +128,19 @@ microservices_sfpkg.close()
       },
 ```
 
-## <a name="azure-service-fabric-cluster-upgrade-configuration"></a>Обновление конфигурации кластера Azure Service Fabric
-Ниже приведен свойство шаблона Resource Manager, чтобы включить автоматическое обновление кластера Service Fabric.
+## <a name="azure-service-fabric-cluster-upgrade-configuration"></a>Конфигурация обновления кластера Azure Service Fabric
+Ниже приведено свойство шаблона диспетчер ресурсов кластера Service Fabric для включения автоматического обновления.
 ```json
 "upgradeMode": "Automatic",
 ```
-Чтобы вручную обновить кластер, скачайте cab/deb распространения к виртуальной машине кластера, а затем вызывать следующую команду PowerShell:
+Чтобы вручную обновить кластер, скачайте CAB-файл или debное распределение на виртуальную машину кластера, а затем запустите следующую команду PowerShell:
 ```powershell
 Copy-ServiceFabricClusterPackage -Code -CodePackagePath <"local_VM_path_to_msi"> -CodePackagePathInImageStore ServiceFabric.msi -ImageStoreConnectionString "fabric:ImageStore"
 Register-ServiceFabricClusterPackage -Code -CodePackagePath "ServiceFabric.msi"
 Start-ServiceFabricClusterUpgrade -Code -CodePackageVersion <"msi_code_version">
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Создание кластера на основе виртуальных машин или компьютеров под управлением Windows Server: [Создание изолированного кластера под управлением Windows Server](service-fabric-tutorial-create-vnet-and-windows-cluster.md)
 * Создание кластера на основе виртуальных машин или компьютеров под управлением Linux: [Создание кластера Service Fabric в Azure с помощью портала Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md)

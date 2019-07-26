@@ -1,5 +1,5 @@
 ---
-title: Использование единого входа на основе пароля на панели доступа | Документация Майкрософт
+title: Единый вход на основе пароля (SSO) на панели доступа | Документация Майкрософт
 description: Описание проблемных областей, которые предоставляют рекомендации по устранению неполадок, связанных с входом в приложения из коллекции Azure AD, для которых настроен единый вход по паролю.
 services: active-directory
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.date: 07/11/2017
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c020f3ab3ea7ed96b72d0490b717225d44c4fac1
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 9ca192c28757df189e531aee0ba2d8da288ba7e6
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68277742"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68381237"
 ---
 # <a name="problems-signing-in-to-an-azure-ad-gallery-application-configured-for-password-single-sign-on"></a>Проблемы с входом в приложение из коллекции Azure AD, для которого настроен единый вход по паролю
 

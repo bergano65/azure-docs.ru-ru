@@ -8,12 +8,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 07/08/2019
 ms.author: mlearned
-ms.openlocfilehash: 554eba87efc56e2dadb3fb2d0cb78cd8b7ea7237
-ms.sourcegitcommit: af58483a9c574a10edc546f2737939a93af87b73
+ms.openlocfilehash: 7aff0fe47d1586b63157d5df7882fc338637f714
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68302726"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68381962"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Вопросы и ответы о Службе Azure Kubernetes (AKS)
 
@@ -120,7 +120,7 @@ AKS поддерживает следующие [контроллеры][admissi
 
 В AKS можно задать `maxPods` значение при создании кластера с помощью шаблонов Azure CLI и Azure Resource Manager. Однако для Кубенет и Azure CNI требуется *минимальное значение* (проверка во время создания):
 
-| Сеть | Минимальная | Максимальная |
+| Сети | Минимум | Максимум |
 | -- | :--: | :--: |
 | Azure CNI | 30 | 250 |
 | кубенет | 30 | 110 |
@@ -140,6 +140,50 @@ AKS поддерживает следующие [контроллеры][admissi
 ## <a name="can-i-movemigrate-my-cluster-between-subscriptions"></a>Можно ли переместить или перенести кластер между подписками?
 
 Перемещение кластеров между подписками в настоящее время не поддерживается.
+
+## <a name="can-i-move-my-aks-clusters-from-the-current-azure-subscription-to-another"></a>Можно ли переместить кластеры AKS из текущей подписки Azure в другую? 
+
+Перемещение кластера AKS и связанных с ним ресурсов между подписками Azure не поддерживается.
+
+## <a name="why-is-my-cluster-delete-taking-so-long"></a>Почему Удаление кластера занимает так много времени? 
+
+Большинство кластеров удаляются по запросу пользователя. в некоторых случаях, особенно если клиенты используют собственную группу ресурсов или выполнение RG задач может занять дополнительное время или завершиться сбоем. Если у вас возникли проблемы с удалением, убедитесь, что у вас нет блокировок на RG, что все ресурсы за пределами RG не связаны с RG и т. д.
+
+## <a name="if-i-have-pod--deployments-in-state-nodelost-or-unknown-can-i-still-upgrade-my-cluster"></a>Если у меня есть модуль Pod/развертывания в состоянии "Ноделост" или "неизвестно", можно ли по-прежнему обновить кластер?
+
+Вы можете, но AKS не рекомендует. В идеале следует выполнять обновления, если состояние кластера известно и является работоспособным.
+
+## <a name="if-i-have-a-cluster-with-one-or-more-nodes-in-an-unhealthy-state-or-shut-down-can-i-perform-an-upgrade"></a>Если у меня есть кластер с одним или несколькими узлами в неработоспособном состоянии или завершение работы, можно ли выполнить обновление?
+
+Нет, удалите или удалите все узлы в состоянии сбоя или в противном случае удалено из кластера перед обновлением.
+
+## <a name="i-ran-a-cluster-delete-but-see-the-error-errno-11001-getaddrinfo-failed"></a>При выполнении удаления кластера отображается сообщение об ошибке`[Errno 11001] getaddrinfo failed` 
+
+Чаще всего это вызвано тем, что пользователи, имеющие одну или несколько групп безопасности сети (группы безопасности сети), все еще используются и связаны с кластером.  Удалите их и повторите попытку удаления.
+
+## <a name="i-ran-an-upgrade-but-now-my-pods-are-in-crash-loops-and-readiness-probes-fail"></a>Я запустил обновление, но теперь модули Pod находятся в циклах аварийного восстановления, и проверки готовности не пройдены?
+
+Убедитесь, что срок действия субъекта-службы не истек.  См.: [AKS субъекта-службы](https://docs.microsoft.com/azure/aks/kubernetes-service-principal) и [AKS учетные данные обновления](https://docs.microsoft.com/azure/aks/update-credentials).
+
+## <a name="my-cluster-was-working-but-suddenly-can-not-provision-loadbalancers-mount-pvcs-etc"></a>Мой кластер работал, но внезапно не может подготавливать LoadBalancers, подключать постоянные виртуальные каналы и т. д.? 
+
+Убедитесь, что срок действия субъекта-службы не истек.  См.: [AKS субъекта-службы](https://docs.microsoft.com/azure/aks/kubernetes-service-principal) и [AKS учетные данные обновления](https://docs.microsoft.com/azure/aks/update-credentials).
+
+## <a name="can-i-use-the-virtual-machine-scale-set-apis-to-scale-manually"></a>Можно ли использовать API-интерфейсы масштабируемого набора виртуальных машин для масштабирования вручную?
+
+Нет, операции масштабирования с использованием API-интерфейсов масштабируемого набора виртуальных машин не поддерживаются. Используйте API-интерфейсы AKS`az aks scale`().
+
+## <a name="can-i-use-virtual-machine-scale-sets-to-manually-scale-to-0-nodes"></a>Можно ли использовать масштабируемые наборы виртуальных машин для ручного масштабирования в 0 узлов?
+
+Нет, операции масштабирования с использованием API-интерфейсов масштабируемого набора виртуальных машин не поддерживаются.
+
+## <a name="can-i-stop-or-de-allocate-all-my-vms"></a>Можно ли отменить или отменить выделение всех виртуальных машин?
+
+Хотя AKS обладает механизмами устойчивости для защиты таких конфигураций и восстановления из нее, это не рекомендуемая конфигурация.
+
+## <a name="can-i-use-custom-vm-extensions"></a>Можно ли использовать пользовательские расширения виртуальной машины?
+
+AKS не является управляемой службой, и управление ресурсами IaaS не поддерживается. Установка пользовательских компонентов и т. д. Используйте API-интерфейсы и механизмы kubernetes. Например, используйте Daemonset для установки необходимых компонентов.
 
 <!-- LINKS - internal -->
 

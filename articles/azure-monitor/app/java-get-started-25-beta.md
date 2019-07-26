@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/24/2019
 ms.author: lagayhar
-ms.openlocfilehash: 189b201f9cbdeb728e334f2ff5da3ebd32839e37
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: c56b979bf5a4f1e0868dd0542cb71c2da6a85df7
+ms.sourcegitcommit: 5604661655840c428045eb837fb8704dca811da0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68298312"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68494471"
 ---
 # <a name="get-started-with-application-insights-in-a-java-web-project-250-beta"></a>Начало работы с Application Insights в веб-проекте Java (2.5.0-BETA)
 
@@ -143,8 +143,6 @@ ms.locfileid: "68298312"
         TelemetryConfiguration.getActive().setInstrumentationKey(instrumentationKey);
     }
 ```
-
-Обратите внимание, что [динамические метрики](https://docs.microsoft.com/azure/azure-monitor/app/live-stream) не поддерживают чтение ключа инструментирования из кода.
 
 ## <a name="4-add-agent"></a>4. Добавить агент
 
@@ -304,7 +302,7 @@ Application Insights может тестировать ваш веб-сайт ч
 
 [Дополнительные сведения о настройке веб-тестов доступности см. здесь.][availability]
 
-## <a name="questions-problems"></a>Вопросы? Проблемы?
+## <a name="questions-problems"></a>Есть вопрос? Проблемы?
 [Устранение неполадок Java](java-troubleshoot.md)
 
 ## <a name="next-steps"></a>Следующие шаги

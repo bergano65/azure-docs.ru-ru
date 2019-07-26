@@ -10,22 +10,25 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 03/20/2019
+ms.date: 07/18/2019
 ms.author: bwren
-ms.openlocfilehash: 50804e1f6ab4f352239d3f405e5b41e4e0c58d14
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: b9a4a0a18e120a2843e23d44b03c0fe53b0d84fc
+ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67292818"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68370675"
 ---
-# <a name="standard-properties-in-azure-monitor-logs"></a>Стандартные свойства в журналов Azure Monitor
-Данные в журналов Azure Monitor [сохраняется в виде набора записей в рабочей области Log Analytics или Application Insights приложения](../log-query/logs-structure.md), каждый с типом данных, который имеет уникальный набор свойств. Большинство типов данных имеют стандартные свойства, которые являются общими для нескольких типов. В этой статье описаны эти свойства и приведены примеры по их использованию в запросах.
+# <a name="standard-properties-in-azure-monitor-logs"></a>Стандартные свойства в журналах Azure Monitor
+Данные в журналах Azure Monitor [хранятся в виде набора записей в log Analytics рабочей области или в Application Insights приложении](../log-query/logs-structure.md), каждый из которых имеет определенный тип данных, имеющий уникальный набор свойств. Большинство типов данных имеют стандартные свойства, которые являются общими для нескольких типов. В этой статье описаны эти свойства и приведены примеры по их использованию в запросах.
 
-Некоторые из этих свойств еще находятся в процессе реализации, поэтому они могут отображаться только для отдельных типов данных.
+> [!NOTE]
+> Некоторые стандартные значения по мере использования не отображаются в представлении схемы или IntelliSense в Log Analytics и не отображаются в результатах запроса, если только в выходных данных не указано явное свойство.
 
-## <a name="timegenerated-and-timestamp"></a>TimeGenerated и отметку времени
-**TimeGenerated** (рабочей области Log Analytics) и **timestamp** свойства (приложение Application Insights) содержат дату и время создания записи. Это общее свойство позволяет фильтровать и суммировать данные по времени. Если выбран диапазон времени для представления или панели мониторинга на портале Azure, в нем TimeGenerated или метки времени для фильтрации результатов.
+## <a name="timegenerated-and-timestamp"></a>TimeGenerated и timestamp
+Свойства **TimeGenerated** log Analytics (Рабочая область) и **timestamp** (Application Insights приложение) содержат дату и время создания записи источником данных. Дополнительные сведения см. [в разделе время приема данных журнала в Azure Monitor](data-ingestion-time.md) .
+
+**Timegenerated** и **timestamp** предоставляют общее свойство, используемое для фильтрации или суммирования по времени. При выборе диапазона времени для представления или панели мониторинга в портал Azure для фильтрации результатов используется TimeGenerated или метка времени. 
 
 ### <a name="examples"></a>Примеры
 
@@ -39,7 +42,7 @@ Event
 | sort by TimeGenerated asc 
 ```
 
-Следующий запрос возвращает количество исключения, созданные за каждый день предыдущей недели.
+Следующий запрос возвращает количество исключений, созданных для каждого дня предыдущей недели.
 
 ```Kusto
 exceptions
@@ -48,8 +51,22 @@ exceptions
 | sort by timestamp asc 
 ```
 
+## <a name="timereceived"></a>\_тимерецеивед
+Свойство тимерецеивед содержит дату и время получения записи Azure Monitor точкой приема в облаке Azure.  **\_** Это может быть полезно для выявления проблем задержки между источником данных и облаком. Примером может быть проблема с сетью, вызывающая задержку данных, отправляемых агентом. Дополнительные сведения см. [в разделе время приема данных журнала в Azure Monitor](data-ingestion-time.md) .
+
+Следующий запрос возвращает среднюю задержку на час для записей событий агента. Сюда входит время от агента до облака и общее время, в течение которого запись будет доступна для запросов журнала.
+
+```Kusto
+Event
+| where TimeGenerated > ago(1d) 
+| project TimeGenerated, TimeReceived = _TimeReceived, IngestionTime = ingestion_time() 
+| extend AgentLatency = toreal(datetime_diff('Millisecond',TimeReceived,TimeGenerated)) / 1000
+| extend TotalLatency = toreal(datetime_diff('Millisecond',IngestionTime,TimeGenerated)) / 1000
+| summarize avg(AgentLatency), avg(TotalLatency) by bin(TimeGenerated,1hr)
+``` 
+
 ## <a name="type-and-itemtype"></a>Тип и itemType
-**Тип** (рабочей области Log Analytics) и **itemType** удержание свойства (приложение Application Insights) имя таблицы, что запись была восстановлена из которых может также рассматриваться как запись тип. Это свойство можно использовать в запросах, где объединяются записи из нескольких таблиц, например использующих оператор `search`, чтобы различать записи разных типов. В некоторых случаях вместо **Type** можно использовать **$table**.
+Свойства **тип** (log Analytics Рабочая область) и **ItemType** (Application Insights Application) содержат имя таблицы, из которой была получена запись, которая также может рассматриваться как тип записи. Это свойство можно использовать в запросах, где объединяются записи из нескольких таблиц, например использующих оператор `search`, чтобы различать записи разных типов. В некоторых случаях вместо **Type** можно использовать **$table**.
 
 ### <a name="examples"></a>Примеры
 Указанный ниже запрос возвращает количество записей по типу, собранных за последний час.
@@ -58,7 +75,11 @@ exceptions
 search * 
 | where TimeGenerated > ago(1h)
 | summarize count() by Type
+
 ```
+## <a name="itemid"></a>\_ItemId
+Свойство ItemId содержит уникальный идентификатор записи.  **\_**
+
 
 ## <a name="resourceid"></a>\_ResourceId
 Свойство **\_ResourceId** содержит уникальный идентификатор для ресурса, с которым связана запись. Это стандартное свойство можно использовать, чтобы выполнить запрос только к записям из определенного ресурса или объединить связанные данные из нескольких таблиц.
@@ -94,7 +115,7 @@ AzureActivity
 ) on _ResourceId  
 ```
 
-В следующем запросе анализирует **_ResourceId** и статистические выражения в счет тома данных на одну подписку Azure.
+Следующий запрос анализирует **_ResourceId** и суммирует объемы данных, выставленных в подписке Azure.
 
 ```Kusto
 union withsource = tt * 
@@ -136,6 +157,7 @@ union withsource = tt *
 ## <a name="billedsize"></a>\_BilledSize
 Свойство **\_BilledSize** определяет размер данных в байтах, которые будут оплачиваться в вашей учетной записи Azure, если свойство **\_IsBillable** имеет значение true.
 
+
 ### <a name="examples"></a>Примеры
 Чтобы увидеть размер оплачиваемых событий для каждого компьютера, используйте свойство `_BilledSize`, которое предоставляет размер в байтах.
 
@@ -145,7 +167,7 @@ union withsource = tt *
 | summarize Bytes=sum(_BilledSize) by  Computer | sort by Bytes nulls last 
 ```
 
-Чтобы просмотреть размер оплаты события, принятые на подписку, используйте следующий запрос:
+Чтобы просмотреть размер оплачиваемых событий, принимаемых на подписку, используйте следующий запрос:
 
 ```Kusto
 union withsource=table * 
@@ -154,7 +176,7 @@ union withsource=table *
 | summarize Bytes=sum(_BilledSize) by  SubscriptionId | sort by Bytes nulls last 
 ```
 
-Чтобы просмотреть размер оплачиваемых событий, принятых на одну группу ресурсов, используйте следующий запрос:
+Чтобы просмотреть размер оплачиваемых событий, принимаемых на группу ресурсов, используйте следующий запрос:
 
 ```Kusto
 union withsource=table * 
@@ -180,7 +202,7 @@ union withsource = tt *
 | summarize count() by Computer  | sort by count_ nulls last
 ```
 
-Чтобы увидеть число платных типов данных с конкретного компьютера, используйте следующий запрос:
+Чтобы просмотреть число оплачиваемых типов данных с определенного компьютера, используйте следующий запрос:
 
 ```Kusto
 union withsource = tt *
@@ -189,7 +211,7 @@ union withsource = tt *
 | summarize count() by tt | sort by count_ nulls last 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения см. в статье [Анализ данных журнала в Azure Monitor](../log-query/log-query-overview.md).
 - Изучите статью [Начало работы с запросами журналов Azure Monitor](../../azure-monitor/log-query/get-started-queries.md).

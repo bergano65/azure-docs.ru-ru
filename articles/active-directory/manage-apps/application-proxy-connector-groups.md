@@ -1,5 +1,5 @@
 ---
-title: Публикация приложений в отдельных сетях и расположениях с помощью групп соединителей в прокси приложения Azure AD | Документация Майкрософт
+title: Публикация приложений в отдельных сетях с помощью групп соединителей Azure AD App прокси-сервера | Документация Майкрософт
 description: Этот раздел описывает создание групп соединителей в прокси приложения Azure AD и управление ими.
 services: active-directory
 author: msmimart
@@ -14,12 +14,12 @@ ms.date: 11/08/2018
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 574ce6def407f302439f6c53356fe69259240b2e
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: dae4eea3e08818d43482c995595cc9fbc3f91910
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67702481"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68381487"
 ---
 # <a name="publish-applications-on-separate-networks-and-locations-using-connector-groups"></a>Публикация приложений в отдельных сетях и расположениях с помощью групп соединителей
 
@@ -44,7 +44,7 @@ ms.locfileid: "67702481"
 1. Выберите **Azure Active Directory** > **Корпоративные приложения** > **Прокси приложения**.
 1. Выберите **Новая группа соединителей**. Появится колонка "New Connector Group" (Новая группа соединителей).
 
-   ![Появится экран для выбора новая группа соединителей](./media/application-proxy-connector-groups/new-group.png)
+   ![Отображает экран для выбора новой группы соединителей](./media/application-proxy-connector-groups/new-group.png)
 
 1. Присвойте имя новой группе соединителей, затем из раскрывающегося меню выберите соединители, принадлежащие этой группе.
 1. Щелкните **Сохранить**.
@@ -77,11 +77,11 @@ ms.locfileid: "67702481"
 
 В качестве примера можно рассмотреть организацию с несколькими виртуальными машинами, которые подключены к собственной виртуальной сети, размещенной в IaaS. Чтобы сотрудники могли использовать эти приложения, данные частные сети подключены к корпоративной сети с помощью VPN типа "сеть — сеть". Это удобно для сотрудников, компьютеры которых находятся в локальной среде. Но такое решение может быть неудобным для удаленных сотрудников, так как требуется дополнительная локальная инфраструктура для маршрутизации доступа. Это показано на схеме ниже:
 
-![Схема, иллюстрирующая сети Azure AD IaaS](./media/application-proxy-connector-groups/application-proxy-iaas-network.png)
+![Схема, иллюстрирующая сеть IaaS в Azure AD](./media/application-proxy-connector-groups/application-proxy-iaas-network.png)
   
 Используя группы соединителей прокси приложений Azure AD, вы можете обеспечить общую службу для безопасного доступа к приложениям, не создавая дополнительную зависимость для корпоративной сети.
 
-![Azure AD IaaS несколько поставщиков облачных решений](./media/application-proxy-connector-groups/application-proxy-multiple-cloud-vendors.png)
+![Azure AD IaaS несколько поставщиков облачных служб](./media/application-proxy-connector-groups/application-proxy-multiple-cloud-vendors.png)
 
 ### <a name="multi-forest--different-connector-groups-for-each-forest"></a>Несколько лесов: отдельная группа соединителей для каждого леса
 
@@ -108,7 +108,7 @@ ms.locfileid: "67702481"
 
 Если вы не используете группы соединителей, конфигурации будет выглядеть следующим образом.
 
-![Пример Azure AD без групп соединителей](./media/application-proxy-connector-groups/application-proxy-sample-config-1.png)
+![Пример Azure AD. нет групп соединителей](./media/application-proxy-connector-groups/application-proxy-sample-config-1.png)
 
 Этой конфигурации достаточно для небольших развертываний и проведения тестов. Она также отлично подойдет, если в вашей организация используется плоская топология сети.
 
@@ -116,7 +116,7 @@ ms.locfileid: "67702481"
 
 Эта конфигурация является развитием конфигурации по умолчанию. В ней есть определенное приложение, которое выполняется в изолированной сети, например виртуальной сети IaaS.
 
-![Группы соединителей нет пример Azure AD и изолированной сети](./media/application-proxy-connector-groups/application-proxy-sample-config-2.png)
+![Пример Azure AD. нет групп соединителей и изолированной сети](./media/application-proxy-connector-groups/application-proxy-sample-config-2.png)
 
 ### <a name="recommended-configuration--several-specific-groups-and-a-default-group-for-idle"></a>Рекомендуемая конфигурация — несколько отдельных групп и группа по умолчанию для неактивных соединителей
 
@@ -124,7 +124,7 @@ ms.locfileid: "67702481"
 
 В следующем примере в компании есть два центра обработки данных, А и Б, и два соединителя, которые обслуживают каждый из сайтов. На каждом узле имеются различные приложения, которые на нем выполняются.
 
-![Пример компании 2 центрах обработки данных и 2](./media/application-proxy-connector-groups/application-proxy-sample-config-3.png)
+![Пример компании с 2 центрами обработки данных и 2 соединителями](./media/application-proxy-connector-groups/application-proxy-sample-config-3.png)
 
 ## <a name="next-steps"></a>Следующие шаги
 

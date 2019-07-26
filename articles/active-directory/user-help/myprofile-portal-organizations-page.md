@@ -12,14 +12,15 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6053313c6971f1bcf66bc447b4f4f5fe5817666
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6a0ff4190a1712b91bf58fafd80a03fc2737e7a4
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60475556"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68383001"
 ---
 # <a name="manage-your-organizations-from-the-my-profile-preview-portal"></a>Управление организациями с портала "Мой профиль" (предварительная версия)
+
 Вы можете управлять организациями со страницы **Организации** на портале **Мой профиль**.
 
 На странице **Организации** отображаются два типа организаций.
@@ -31,6 +32,7 @@ ms.locfileid: "60475556"
 [!INCLUDE [preview-notice](../../../includes/active-directory-end-user-preview-notice-myprofile.md)]
 
 ## <a name="view-your-organizations"></a>Просмотр ваших организаций
+
 1. Войдите в рабочую или учебную учетную запись, а затем перейдите на страницу https://myprofile.microsoft.com/.
 
 2. Выберите на панели навигации слева **Организации** или из блока **Организации** выберите ссылку **Управление организациями**.
@@ -41,9 +43,10 @@ ms.locfileid: "60475556"
 
     ![Страница "Организации"](media/myprofile-portal/myprofile-portal-organization-page.png)
 
-3. Проверьте ваши другие организации и убедитесь, что вы узнаете все организации, с которыми связана ваша учетная запись.
+4. Проверьте ваши другие организации и убедитесь, что вы узнаете все организации, с которыми связана ваша учетная запись.
 
 ## <a name="leave-an-organization"></a>Выход из организации
+
 Вы можете выйти из любой организации, кроме домашней.
 
 >[!Important]
@@ -55,6 +58,6 @@ ms.locfileid: "60475556"
 
     ![Страница "Организации" со ссылкой на выход из организации](media/myprofile-portal/myprofile-portal-organizations-leave.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- После просмотра вашей организации, можно выбрать для просмотра и управления вашей [сведения о безопасности](user-help-security-info-overview.md), в ходе [устройств](myprofile-portal-devices-page.md), или представление как организации [использует ваши данные](myprofile-portal-privacy-page.md).
+- После просмотра организаций можно просмотреть [сведения о безопасности](user-help-security-info-overview.md), подключенные [устройства](myprofile-portal-devices-page.md)или управлять ими, а также просмотреть, как ваша организация [использует ваши данные](myprofile-portal-privacy-page.md).

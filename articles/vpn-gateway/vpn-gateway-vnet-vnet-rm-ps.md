@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: cherylmc
-ms.openlocfilehash: 6ea919a4c9554584e0da79739d3465586ae43227
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: dbf59740af64bf8d403b6596a17646304c0f1eb0
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60456383"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68385787"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-powershell"></a>Настройка подключения VPN-шлюза между виртуальными сетями с помощью PowerShell
 
@@ -32,7 +32,7 @@ ms.locfileid: "60456383"
 
 Подключить виртуальные сети можно несколькими способами. В следующих разделах описаны различные способы подключения виртуальных сетей.
 
-### <a name="vnet-to-vnet"></a>Подключение типа "виртуальная сеть — виртуальная сеть"
+### <a name="vnet-to-vnet"></a>Виртуальная сеть — виртуальная сеть
 
 Чтобы легко подключать виртуальные сети, рекомендуем настроить подключение "виртуальная сеть — виртуальная сеть". Подключение "виртуальная сеть — виртуальная сеть" (VNet2VNet) между виртуальными сетями похоже на создание подключения "сеть — сеть" (IPsec) к локальному расположению.  В обоих типах подключений применяется VPN-шлюз для создания защищенного туннеля, использующего IPsec/IKE. При обмене данными оба типа подключений работают одинаково. Различие между этими типами заключается в способе настройки шлюза локальной сети. При создании подключения "виртуальная сеть — виртуальная сеть" диапазон адресов для шлюза локальной сети не отображается. Он создается и заполняется автоматически. Если вы обновите диапазон адресов для одной виртуальной сети, другая виртуальная сеть автоматически определит маршрут к обновленному диапазону адресов. Как правило, намного проще и быстрее создать подключение "виртуальная сеть — виртуальная сеть", чем подключение "сеть — сеть" между виртуальными сетями.
 
@@ -40,7 +40,7 @@ ms.locfileid: "60456383"
 
 При работе со сложной конфигурацией сети можно подключить виртуальные сети с помощью подключения [сеть — сеть](vpn-gateway-create-site-to-site-rm-powershell.md), а не "виртуальная сеть — виртуальная сеть". Используя подключение "сеть — сеть", вы вручную создаете и настраиваете локальные сетевые шлюзы. Шлюз локальной сети для каждой виртуальной сети воспринимает другую виртуальную сеть как локальный сайт. Это позволит вам указать дополнительный диапазон адресов для шлюза локальной сети, чтобы маршрутизировать трафик. Если диапазон адресов для виртуальной сети изменится, вам потребуется обновить соответствующий шлюз локальной сети, чтобы отразить эти изменения. Он не обновляется автоматически.
 
-### <a name="vnet-peering"></a>Пиринговая связь между виртуальными сетями
+### <a name="vnet-peering"></a>Пиринг VNet
 
 Вы можете подключить виртуальные сети с помощью пиринга виртуальных сетей. При пиринге виртуальных сетей не используется VPN-шлюз и применяются другие ограничения. Кроме того, [цены на пиринг виртуальных сетей](https://azure.microsoft.com/pricing/details/virtual-network) рассчитываются не так, как [цены на VPN-шлюз "виртуальная сеть — виртуальная сеть"](https://azure.microsoft.com/pricing/details/vpn-gateway). Дополнительную информацию см. в статье [Пиринговая связь между виртуальными сетями](../virtual-network/virtual-network-peering-overview.md).
 
@@ -93,7 +93,7 @@ ms.locfileid: "60456383"
 
 * Имя виртуальной сети: TestVNet1
 * Группа ресурсов: TestRG1
-* Расположение. Восточная часть США
+* Расположение: East US
 * TestVNet1: 10.11.0.0/16 и 10.12.0.0/16
 * Внешний интерфейс: 10.11.0.0/24
 * Серверная часть: 10.12.0.0/24
@@ -113,7 +113,7 @@ ms.locfileid: "60456383"
 * Серверная часть: 10.42.0.0/24
 * Подсеть шлюза: 10.42.255.0/27
 * Группа ресурсов: TestRG4
-* Расположение. Запад США
+* Расположение: Западная часть США
 * Имя шлюза: VNet4GW
 * Общедоступный IP-адрес: VNet4GWIP
 * Тип VPN: RouteBased
@@ -150,7 +150,6 @@ ms.locfileid: "60456383"
    $VNetName1 = "TestVNet1"
    $FESubName1 = "FrontEnd"
    $BESubName1 = "Backend"
-   $GWSubName1 = "GatewaySubnet"
    $VNetPrefix11 = "10.11.0.0/16"
    $VNetPrefix12 = "10.12.0.0/16"
    $FESubPrefix1 = "10.11.0.0/24"
@@ -167,14 +166,14 @@ ms.locfileid: "60456383"
    ```azurepowershell-interactive
    New-AzResourceGroup -Name $RG1 -Location $Location1
    ```
-4. Создайте конфигурации подсети для TestVNet1. В этом примере создается виртуальная сеть с именем TestVNet1 и три подсети: GatewaySubnet, FrontEnd и Backend. При замене значений важно, чтобы вы назвали подсеть шлюза именем GatewaySubnet. Если вы используете другое имя, создание шлюза завершится сбоем.
+4. Создайте конфигурации подсети для TestVNet1. В этом примере создается виртуальная сеть с именем TestVNet1 и три подсети: GatewaySubnet, FrontEnd и Backend. При замене значений важно, чтобы вы назвали подсеть шлюза именем GatewaySubnet. Если вы используете другое имя, создание шлюза завершится сбоем. По этой причине она не назначается с помощью переменной ниже.
 
    В следующем примере используются переменные, заданные ранее. В этом примере в подсети шлюза используется длина префикса /27. Хотя можно создать подсеть шлюза размером /29, рекомендуется создать подсеть большего размера, включающую несколько адресов, выбрав по крайней мере значение /28 или /27. Таким образом, у вас будет достаточно адресов, чтобы добавить дополнительные конфигурации в будущем.
 
    ```azurepowershell-interactive
    $fesub1 = New-AzVirtualNetworkSubnetConfig -Name $FESubName1 -AddressPrefix $FESubPrefix1
    $besub1 = New-AzVirtualNetworkSubnetConfig -Name $BESubName1 -AddressPrefix $BESubPrefix1
-   $gwsub1 = New-AzVirtualNetworkSubnetConfig -Name $GWSubName1 -AddressPrefix $GWSubPrefix1
+   $gwsub1 = New-AzVirtualNetworkSubnetConfig -Name "GatewaySubnet" -AddressPrefix $GWSubPrefix1
    ```
 5. Создайте TestVNet1.
 
@@ -218,7 +217,6 @@ ms.locfileid: "60456383"
    $VnetName4 = "TestVNet4"
    $FESubName4 = "FrontEnd"
    $BESubName4 = "Backend"
-   $GWSubName4 = "GatewaySubnet"
    $VnetPrefix41 = "10.41.0.0/16"
    $VnetPrefix42 = "10.42.0.0/16"
    $FESubPrefix4 = "10.41.0.0/24"
@@ -239,7 +237,7 @@ ms.locfileid: "60456383"
    ```azurepowershell-interactive
    $fesub4 = New-AzVirtualNetworkSubnetConfig -Name $FESubName4 -AddressPrefix $FESubPrefix4
    $besub4 = New-AzVirtualNetworkSubnetConfig -Name $BESubName4 -AddressPrefix $BESubPrefix4
-   $gwsub4 = New-AzVirtualNetworkSubnetConfig -Name $GWSubName4 -AddressPrefix $GWSubPrefix4
+   $gwsub4 = New-AzVirtualNetworkSubnetConfig -Name "GatewaySubnet" -AddressPrefix $GWSubPrefix4
    ```
 4. Создайте TestVNet4.
 
@@ -314,7 +312,7 @@ ms.locfileid: "60456383"
 
 * Имя виртуальной сети: TestVNet5
 * Группа ресурсов: TestRG5
-* Расположение. Восточная часть Японии
+* Расположение: Восточная Япония
 * TestVNet5: 10.51.0.0/16 и 10.52.0.0/16
 * Внешний интерфейс: 10.51.0.0/24
 * Серверная часть: 10.52.0.0/24
@@ -483,7 +481,7 @@ ms.locfileid: "60456383"
 
 [!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-faq-vnet-vnet-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительную информацию см. в [документации по виртуальным машинам](https://docs.microsoft.com/azure/).
 * Сведения о BGP см. в статьях [Обзор использования BGP с VPN-шлюзами Azure](vpn-gateway-bgp-overview.md) и [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md).

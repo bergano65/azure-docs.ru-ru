@@ -3,8 +3,8 @@ title: Затраты на резервирование программного
 description: Узнайте, какие счетчики программного обеспечения не учитываются в затратах на зарезервированные экземпляры виртуальных машин Azure.
 services: billing
 documentationcenter: ''
-author: manish-shukla01
-manager: manshuk
+author: yashar
+manager: yashar
 editor: ''
 tags: billing
 ms.service: billing
@@ -14,20 +14,20 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/30/2019
 ms.author: banders
-ms.openlocfilehash: 340cba65a1faac247678cd187f106157ba566f3e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 52e2e2503303c2a7525a3a6c156f648c097b27dd
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60371178"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68478628"
 ---
 # <a name="software-costs-not-included-with-azure-reserved-vm-instances"></a>Затраты на программное обеспечение, которые не включены в стоимость экземпляров Azure Reserved Virtual Machine Instances
 
-Если не применяется Преимущество гибридного использования Azure для своих экземпляров зарезервированной виртуальной машины, плата за единицы измерения программного обеспечения, приведенные в следующем разделе.
+Зарезервированные экземпляры виртуальных машин и зарезервированные скидки SQL применяются только к стоимости инфраструктуры, а не к затратам на программное обеспечение. Если вы используете виртуальную машину Windows и у вас нет Преимущество гибридного использования Azure на зарезервированных экземплярах виртуальных машин, вы платите за программные счетчики, перечисленные в следующем разделе. Для развертываний SQL PaaS плата за использование IP-адресов будет продолжена с помощью отдельного счетчика, если Преимущество гибридного использования Azure не выбрана.
 
 ## <a name="windows-software-meters-not-included-in-reservation-cost"></a>Единицы измерения программного обеспечения Windows, не учитываемые в затратах на резервирование
 
-| Значение MeterId | Значение MeterName в файле использования | Какой виртуальной машиной используется |
+| ИД единицы измерения | Значение MeterName в файле использования | Какой виртуальной машиной используется |
 | ------- | ------------------------| --- |
 | e7e152ac-f29c-4cce-ad6e-026192c01ef2 | Зарезервированные экземпляры с Windows Server (1 ядро) — пакетная передача | Серия B |
 | cac255a2-9f0f-4c62-8bd6-f0fa449c5f76 | Зарезервированные экземпляры с Windows Server (2 ядра) — пакетная передача | Серия B |
@@ -52,7 +52,7 @@ ms.locfileid: "60371178"
 
 ## <a name="cloud-services-software-meters-not-included-in-reservation-cost"></a>Единицы измерения программного обеспечения Windows, не учитываемые в затратах на резервирование
 
-| Значение MeterId | Значение MeterName в файле использования |
+| ИД единицы измерения | Значение MeterName в файле использования |
 | ------- | ------------------------|
 |ac9d47ff-ff68-4afc-a145-0c321cf8d0d5|Лицензия на использование 1 виртуального ЦП облачных служб|
 |e0434559-19ee-4132-9c46-05ad4044f3f7|Лицензия на использование 2 виртуальных ЦП облачных служб|
@@ -68,16 +68,16 @@ ms.locfileid: "60371178"
 
 Стоимость каждой из этих единиц измерения можно узнать с помощью API Azure RateCard. Сведения о том, как узнать тарифы на единицы измерения в Azure, см. в статье [Get price and metadata information for resources used in an Azure subscription](/previous-versions/azure/reference/mt219004(v=azure.100)) (Получение сведений о ценах и метаданных для ресурсов, используемых в подписке Azure).
 
-## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о резервировании для Azure, см. в разделе со следующими статьями:
+## <a name="next-steps"></a>Следующие шаги
+Дополнительные сведения о резервировании для Azure см. в следующих статьях:
 
 - [Что такое резервирования для Azure?](billing-save-compute-costs-reservations.md)
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../virtual-machines/windows/prepay-reserved-vm-instances.md)
-- [Управление резервирования для Azure](billing-manage-reserved-vm-instance.md)
+- [Управление резервированиями для Azure](billing-manage-reserved-vm-instance.md)
 - [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](billing-understand-vm-reservation-charges.md)
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
 - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
+## <a name="need-help-contact-us"></a>Нужна помощь? Наши координаты
 
-Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
+Если у вас возникли вопросы или вам нужна помощь, [Создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

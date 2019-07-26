@@ -12,19 +12,21 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dbfcab7900a1552a46341ec71b8b0ea4b41b0bce
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 31847f3cc47ddf1ed784263a543e94ebca454222
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60474727"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68382969"
 ---
 # <a name="view-your-privacy-related-info-from-the-my-profile-preview-portal"></a>Просмотр конфиденциальной информации из портала "Мой профиль" (предварительная версия)
+
 Можно просмотреть, как ваша организация использует данные на странице **Конфиденциальности** портала **Мой профиль**.
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-end-user-preview-notice-myprofile.md)]
 
 ## <a name="view-your-privacy-related-info"></a>Просмотр сведений, связанных с конфиденциальностью
+
 1. Войдите в рабочую или учебную учетную запись, а затем перейдите на страницу https://myprofile.microsoft.com/.
 
 2. Выберите **Конфиденциальность** на левой панели навигации или выберите ссылку **Просмотр конфиденциальности** в блоке **Конфиденциальность**.
@@ -37,6 +39,6 @@ ms.locfileid: "60474727"
 
     - **Условия использования**. Условия использования в вашей организации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- После просмотра, как ваша организация использует ваши данные, можно выбрать для просмотра и управления вашей [сведения о безопасности](user-help-security-info-overview.md), подключенный [устройств](myprofile-portal-devices-page.md), или ваше [организаций](myprofile-portal-organizations-page.md).
+- После просмотра того, как ваша организация использует ваши данные, вы можете просматривать [сведения о безопасности](user-help-security-info-overview.md), подключенные [устройства](myprofile-portal-devices-page.md)или [Организации](myprofile-portal-organizations-page.md), а также управлять ими.

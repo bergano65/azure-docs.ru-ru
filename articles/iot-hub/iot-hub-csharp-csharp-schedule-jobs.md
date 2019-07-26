@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 03/06/2018
 ms.author: robinsh
-ms.openlocfilehash: f21f1eed6babee52f30c6eccc79f88dc7bee5d58
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: aceb90dbaf87ba621837c047eb114bc9be4b822e
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65864482"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68402668"
 ---
 # <a name="schedule-and-broadcast-jobs-netnet"></a>Планирование и трансляция заданий (.NET и .NET)
 
@@ -29,9 +29,9 @@ ms.locfileid: "65864482"
 
 Дополнительные сведения об этих возможностях см. в указанных ниже статьях.
 
-* Двойник устройства и свойства: [Начало работы с двойниками устройств](iot-hub-csharp-csharp-twin-getstarted.md) и [руководства: Практическое использование свойств двойников устройств](tutorial-device-twins.md)
+* Двойник устройства и свойства: [Начало работы с двойниковами устройств](iot-hub-csharp-csharp-twin-getstarted.md) и [учебником: Использование свойств двойникаа устройства](tutorial-device-twins.md)
 
-* Прямые методы: [Руководство разработчика для центра Интернета вещей — прямые методы](iot-hub-devguide-direct-methods.md) и [руководства: Использование прямых методов](quickstart-control-device-dotnet.md)
+* Прямые методы: [Руководство разработчика для центра Интернета вещей. прямые методы](iot-hub-devguide-direct-methods.md) и [Учебник: Использование прямых методов](quickstart-control-device-dotnet.md)
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
 
@@ -55,10 +55,6 @@ ms.locfileid: "65864482"
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
-
-### <a name="retrieve-connection-string-for-iot-hub"></a>Получение строки подключения для центра Интернета вещей
-
-[!INCLUDE [iot-hub-include-find-connection-string](../../includes/iot-hub-include-find-connection-string.md)]
 
 ## <a name="register-a-new-device-in-the-iot-hub"></a>Регистрация нового устройства в центре Интернета вещей
 
@@ -151,6 +147,12 @@ ms.locfileid: "65864482"
 > Для простоты в этом руководстве не реализуются политики повтора. В рабочем коде следует реализовать политики повтора (например, повторную попытку подключения), как указано в статье [Обработка временных сбоев](/azure/architecture/best-practices/transient-faults).
 > 
 
+## <a name="get-the-iot-hub-connection-string"></a>Получение строки подключения для центра Интернета вещей
+
+[!INCLUDE [iot-hub-howto-schedule-jobs-shared-access-policy-text](../../includes/iot-hub-howto-schedule-jobs-shared-access-policy-text.md)]
+
+[!INCLUDE [iot-hub-include-find-registryrw-connection-string](../../includes/iot-hub-include-find-registryrw-connection-string.md)]
+
 ## <a name="schedule-jobs-for-calling-a-direct-method-and-sending-device-twin-updates"></a>Планирование заданий для вызова прямого метода и обновления свойств двойника устройства
 
 В этом разделе вы создадите консольное приложение .NET на языке C#, которое использует задания для вызова прямого метода **LockDoor** и для обновления свойств на нескольких устройствах.
@@ -179,7 +181,7 @@ ms.locfileid: "65864482"
     using System.Threading.Tasks;
     ```
 
-6. Добавьте следующие поля в класс **Program** . Замените заполнители строкой подключения Центра Интернета вещей, созданной в предыдущем разделе, и именем устройства.
+6. Добавьте следующие поля в класс **Program** . Замените заполнители строкой подключения центра Интернета вещей, скопированным ранее в [поле получение строки подключения центра Интернета вещей](#get-the-iot-hub-connection-string) и имени устройства.
 
     ```csharp
     static JobClient jobClient;
@@ -287,10 +289,10 @@ ms.locfileid: "65864482"
 
     ![Выполнение приложений для планирования заданий](./media/iot-hub-csharp-csharp-schedule-jobs/schedulejobs.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом учебнике описано использование задания для планирования прямого метода на устройстве и обновления свойств двойника устройства.
 
-Чтобы продолжить знакомство с центром Интернета вещей и шаблонами управления устройствами, такими как удаленное обновление встроенного по воздуху по, прочитайте [руководства: Как обновить встроенное по](tutorial-firmware-update.md).
+Чтобы продолжить знакомство с центром Интернета вещей и шаблонами управления устройствами, такими как удаленный доступ через обновление встроенного по Air, ознакомьтесь [с руководством: Как обновить](tutorial-firmware-update.md)встроенное по.
 
 Сведения о развертывании решений на базе искусственного интеллекта на пограничных устройствах с помощью Azure IoT Edge см. в руководстве [Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md).

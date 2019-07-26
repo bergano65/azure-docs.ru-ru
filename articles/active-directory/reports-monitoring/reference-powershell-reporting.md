@@ -17,21 +17,18 @@ ms.date: 07/12/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 27fa3d7be5238527f86e9dfde3be70ae09259d69
-ms.sourcegitcommit: af58483a9c574a10edc546f2737939a93af87b73
+ms.openlocfilehash: 2d9d5fdb9091d51c67fd5d778bac189c08647741
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68302736"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68359753"
 ---
 # <a name="azure-ad-powershell-cmdlets-for-reporting"></a>Командлеты Azure AD PowerShell для создания отчетов
 
-Функция отчетов в Azure Active Directory (Azure AD) позволяет получать всю необходимую информацию о работе среды. Данные отчета можно получить с помощью командлетов Azure AD PowerShell для создания отчетов.
+С помощью отчетов Azure Active Directory (Azure AD) можно получить сведения о действиях, связанных со всеми операциями записи в вашем направлении (журналы аудита) и данными проверки подлинности (журналы входа). Хотя сведения доступны с помощью MS API Graph, теперь вы можете получить те же данные с помощью командлетов Azure AD PowerShell для создания отчетов.
 
-В этой статье приводятся общие сведения о командлете.
-
-
-
+В этой статье приводятся общие сведения о командлетах PowerShell, используемых для журналов аудита и журналов входа.
 
 ## <a name="audit-logs"></a>Журналы аудита
 
@@ -65,7 +62,7 @@ ms.locfileid: "68302736"
 | :--                           | :--                |
 | Отображаемое имя пользователя             | Get-Азуреадаудитсигнинлогс-Filter "userDisplayName EQ" Тимоти Перкинс "" |
 | Создать дату и время              | Get-Азуреадаудитсигнинлогс-Filter "Креатеддатетиме gt 2019-04-18T17:30:00.0 Z" (все, начиная с 5:30 PM на 4/18) |
-| Status                        | Get-Азуреадаудитсигнинлогс — Filter "Status/errorCode EQ 50105" |
+| Сообщение о состоянии                        | Get-Азуреадаудитсигнинлогс — Filter "Status/errorCode EQ 50105" |
 | Отображаемое имя приложения      | Get-Азуреадаудитсигнинлогс-Filter «appDisplayName EQ ' Сторефронтстудио [WSFED Enabled] '» |
 | все вышеперечисленное.              | Get-Азуреадаудитсигнинлогс-Filter "userDisplayName EQ" Тимоти Перкинс "and Status/errorCode Ne 0 и appDisplayName EQ" Сторефронтстудио [WSFED Enabled] "" |
 

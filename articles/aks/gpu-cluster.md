@@ -8,39 +8,39 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/16/2019
 ms.author: zarhoads
-ms.openlocfilehash: c92762b53b0f5b50ea08f2f78998a3ccecbed990
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4eef31a050072c0413421a5490b35b765cb9557d
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67061055"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68381831"
 ---
 # <a name="use-gpus-for-compute-intensive-workloads-on-azure-kubernetes-service-aks"></a>Использование процессоров GPU для интенсивных вычислительных рабочих нагрузок в Службе Azure Kubernetes (AKS)
 
-Графические процессоры (GPU) обычно используются для ресурсоемких рабочих нагрузок, например графической обработки и визуализаций. AKS поддерживает создание пулов узлов с поддержкой GPU для выполнения этих ресурсоемких рабочих нагрузок в Kubernetes. Дополнительные сведения о доступных виртуальных машинах с поддержкой GPU см. в разделе [Размеры виртуальных машин, оптимизированных для GPU][gpu-skus]. Для узлов AKS мы рекомендуем использовать как минимум размер *Standard_NC6*.
+Графические процессоры (GPU) обычно используются для ресурсоемких рабочих нагрузок, например графической обработки и визуализаций. AKS поддерживает создание пулов узлов с поддержкой GPU для выполнения этих ресурсоемких рабочих нагрузок в Kubernetes. Дополнительные сведения о доступных виртуальных машинах с поддержкой GPU см. [в статье размеры виртуальных машин][gpu-skus], оптимизированных для GPU в Azure. Для узлов AKS мы рекомендуем использовать как минимум размер *Standard_NC6*.
 
 > [!NOTE]
-> Виртуальные машины с поддержкой GPU содержат специализированное оборудование, на которое предусмотрена более высокая цена и которое зависит от доступности в регионе. Дополнительные сведения можно получить с помощью [калькулятора цен][azure-pricing] и данных о [доступности в регионах][azure-availability].
+> Виртуальные машины с поддержкой GPU содержат специализированное оборудование, на которое предусмотрена более высокая цена и которое зависит от доступности в регионе. Дополнительные сведения см. на странице [цен][azure-pricing] tool and [region availability][azure-availability].
 
-В настоящее время с помощью пулов узлов с поддержкой GPU доступна только для Linux пулы узлов.
+В настоящее время использование пулов узлов с поддержкой GPU доступно только для пулов узлов Linux.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
 В этой статье предполагается, что у вас есть кластер AKS с узлами, поддерживающими процессоры GPU. Кластер AKS должен работать на платформе Kubernetes 1.10 или более поздней версии. Если вам нужен кластер AKS, соответствующий этим требованиям, обратитесь к первой части этой статьи, чтобы [создать кластер AKS](#create-an-aks-cluster).
 
-Вам также понадобится Azure CLI версии 2.0.64 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Также требуется Azure CLI версии 2.0.64 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если необходимо установить или обновить, см. раздел [install Azure CLI][install-azure-cli].
 
 ## <a name="create-an-aks-cluster"></a>Создание кластера AKS
 
-Если вам нужен кластер AKS, соответствующий минимальным требованиям (узел с поддержкой GPU и Kubernetes 1.10 или более поздней версии), выполните приведенные ниже действия. Если у вас уже есть кластер AKS, который отвечает этим требованиям [перейдите к следующему разделу](#confirm-that-gpus-are-schedulable).
+Если вам нужен кластер AKS, соответствующий минимальным требованиям (узел с поддержкой GPU и Kubernetes 1.10 или более поздней версии), выполните приведенные ниже действия. Если у вас уже есть кластер AKS, соответствующий этим требованиям, [перейдите к следующему разделу](#confirm-that-gpus-are-schedulable).
 
-Сначала создайте группу ресурсов для кластера, выполнив команду [az group create][az-group-create]. В следующем примере создается группа ресурсов *myResourceGroup* в регионе *eastus*.
+Сначала создайте группу ресурсов для кластера с помощью команды [AZ Group Create][az-group-create] . В следующем примере создается группа ресурсов *myResourceGroup* в регионе *eastus*.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
 ```
 
-Теперь выполните команду [az aks create][az-aks-create], чтобы создать кластер AKS. В следующем примере создается кластер с одним узлом размера `Standard_NC6`:
+Теперь создайте кластер AKS с помощью команды [AZ AKS Create][az-aks-create] . В следующем примере создается кластер с одним узлом размером `Standard_NC6`:
 
 ```azurecli-interactive
 az aks create \
@@ -50,7 +50,7 @@ az aks create \
     --node-count 1
 ```
 
-Получите учетные данные для кластера AKS с помощью команды [az aks get-credentials][az-aks-get-credentials].
+Получите учетные данные для кластера AKS с помощью команды [AZ AKS Get-Credential][az-aks-get-credentials] :
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
@@ -58,15 +58,15 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 
 ## <a name="install-nvidia-drivers"></a>Установка драйверов nVidia
 
-Прежде чем можно будет использовать GPU в узлах, необходимо развернуть DaemonSet для подключаемого модуля устройства NVIDIA. Этот DaemonSet запускает pod на каждом узле, чтобы предоставить необходимые драйверы для процессоров GPU.
+Прежде чем можно будет использовать GPU на узлах, необходимо развернуть управляющий набор для подключаемого модуля устройства NVIDIA. Этот DaemonSet запускает pod на каждом узле, чтобы предоставить необходимые драйверы для процессоров GPU.
 
-Сначала с помощью команды [kubectl create namespace][kubectl-create] создайте пространство имен, например *gpu-resources*.
+Сначала создайте пространство имен с помощью команды [kubectl Create Namespace][kubectl-create] , например *GPU-* Resources:
 
 ```console
 kubectl create namespace gpu-resources
 ```
 
-Создайте файл *nvidia-device-plugin-ds.yaml* и вставьте в него приведенный ниже манифест YAML. Этот манифест предоставляется как часть [подключаемый модуль устройства NVIDIA для проекта Kubernetes][nvidia-github].
+Создайте файл *nvidia-device-plugin-ds.yaml* и вставьте в него приведенный ниже манифест YAML. Этот манифест предоставляется как часть [подключаемого модуля устройства NVIDIA для проекта Kubernetes][nvidia-github].
 
 ```yaml
 apiVersion: extensions/v1beta1
@@ -111,7 +111,7 @@ spec:
             path: /var/lib/kubelet/device-plugins
 ```
 
-Теперь с помощью [применить kubectl] [ kubectl-apply] команду, чтобы создать DaemonSet и подтвердить подключаемый модуль устройства nVidia успешно создан, как показано в следующем примере выходных данных:
+Теперь используйте команду [kubectl Apply][kubectl-apply] , чтобы создать управляющую программу и убедиться, что подключаемый модуль устройства NVIDIA успешно создан, как показано в следующем примере выходных данных:
 
 ```console
 $ kubectl apply -f nvidia-device-plugin-ds.yaml
@@ -121,7 +121,7 @@ daemonset "nvidia-device-plugin" created
 
 ## <a name="confirm-that-gpus-are-schedulable"></a>Подтверждение того, что процессоры GPU доступны для планирования
 
-Создав кластер AKS, убедитесь, что процессоры GPU доступны для планирования в Kubernetes. Сначала получите список узлов в кластере с помощью команды [kubectl get nodes][kubectl-get].
+Создав кластер AKS, убедитесь, что процессоры GPU доступны для планирования в Kubernetes. Сначала перечислите узлы в кластере с помощью команды [kubectl Get Nodes][kubectl-get] :
 
 ```console
 $ kubectl get nodes
@@ -130,7 +130,7 @@ NAME                       STATUS   ROLES   AGE   VERSION
 aks-nodepool1-28993262-0   Ready    agent   13m   v1.12.7
 ```
 
-Теперь с помощью команды [kubectl describe node][kubectl-describe] подтвердите, что процессоры GPU доступны для планирования. В разделе *Емкость* PU должен отображаться как `nvidia.com/gpu:  1`.
+Теперь используйте команду [описания узла kubectl][kubectl-describe] , чтобы убедиться, что графические процессоры поддерживают планирование. В разделе *Емкость* PU должен отображаться как `nvidia.com/gpu:  1`.
 
 В следующем сокращенном примере показано, что GPU доступен на узле *aks-nodepool1-18821093-0*.
 
@@ -184,7 +184,7 @@ Non-terminated Pods:         (9 in total)
 
 ## <a name="run-a-gpu-enabled-workload"></a>Запуск рабочей нагрузки с поддержкой GPU
 
-Чтобы увидеть, как используется GPU, запланируйте рабочую нагрузку с поддержкой GPU с помощью соответствующего запроса ресурса. В этом примере давайте выполним задание [Tensorflow](https://www.tensorflow.org/versions/r1.1/get_started/mnist/beginners) с [набором данных MNIST](http://yann.lecun.com/exdb/mnist/).
+Чтобы увидеть, как используется GPU, запланируйте рабочую нагрузку с поддержкой GPU с помощью соответствующего запроса ресурса. В этом примере давайте выполним задание [Tensorflow](https://www.tensorflow.org/) с [набором данных MNIST](http://yann.lecun.com/exdb/mnist/).
 
 Создайте файл *samples-tf-mnist-demo.yaml* и вставьте в него приведенный ниже манифест YAML. Следующий манифест задания включает в себя ограничение ресурсов: `nvidia.com/gpu: 1`.
 
@@ -215,7 +215,7 @@ spec:
       restartPolicy: OnFailure
 ```
 
-Используйте команду [kubectl apply][kubectl-apply], чтобы запустить задание. Эта команда анализирует файл манифеста и создает заданные объекты Kubernetes.
+Используйте команду [kubectl Apply][kubectl-apply] , чтобы запустить задание. Эта команда анализирует файл манифеста и создает заданные объекты Kubernetes.
 
 ```console
 kubectl apply -f samples-tf-mnist-demo.yaml
@@ -223,7 +223,7 @@ kubectl apply -f samples-tf-mnist-demo.yaml
 
 ## <a name="view-the-status-and-output-of-the-gpu-enabled-workload"></a>Просмотр состояния и выходных данных рабочей нагрузки с поддержкой GPU
 
-Отслеживайте ход выполнения задания с помощью команды [kubectl get jobs][kubectl-get] с аргументом `--watch`. Извлечение изображения и последующая обработка набора данных может занять несколько минут. Когда *ЗАВЕРШЕНИЙ* показан столбец *1/1*, задание будет успешно завершено. Выход `kubetctl --watch` с *Ctrl-C*:
+Отслеживайте ход выполнения задания с помощью команды [kubectl Get Jobs][kubectl-get] с `--watch` аргументом. Извлечение изображения и последующая обработка набора данных может занять несколько минут. Когда в столбце *завершения* отображается *1/1*, задание успешно завершено. Выйдите из  командыспомощьюклавишCTRL-`kubetctl --watch` C:
 
 ```console
 $ kubectl get jobs samples-tf-mnist-demo --watch
@@ -234,7 +234,7 @@ samples-tf-mnist-demo   0/1           3m29s      3m29s
 samples-tf-mnist-demo   1/1   3m10s   3m36s
 ```
 
-Чтобы просмотреть выходные данные рабочей нагрузки с поддержкой GPU, сначала необходимо получить имя модуля с помощью [kubectl get pods] [ kubectl-get] команды:
+Чтобы просмотреть выходные данные рабочей нагрузки с поддержкой GPU, сначала получите имя Pod с помощью команды [kubectl Get][kubectl-get] Pod:
 
 ```console
 $ kubectl get pods --selector app=samples-tf-mnist-demo
@@ -243,7 +243,7 @@ NAME                          READY   STATUS      RESTARTS   AGE
 samples-tf-mnist-demo-mtd44   0/1     Completed   0          4m39s
 ```
 
-Теперь выполните команду [kubectl logs][kubectl-logs], чтобы просмотреть журналы pod. В следующем примере журналов pod указано, что обнаружено соответствующее устройство GPU, `Tesla K80`. Укажите имя собственного pod.
+Теперь используйте команду [kubectl logs][kubectl-logs] для просмотра журналов Pod. В следующем примере журналов pod указано, что обнаружено соответствующее устройство GPU, `Tesla K80`. Укажите имя собственного pod.
 
 ```console
 $ kubectl logs samples-tf-mnist-demo-smnr6
@@ -322,17 +322,17 @@ Adding run metadata for 499
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Чтобы удалить связанные объекты Kubernetes, созданные в этой статье, выполните команду [kubectl delete job][kubectl delete], как показано ниже.
+Чтобы удалить связанные объекты Kubernetes, созданные в этой статье, используйте команду [kubectl Delete][kubectl delete] , как показано ниже.
 
 ```console
 kubectl delete jobs samples-tf-mnist-demo
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Чтобы выполнять задания Apache Spark, ознакомьтесь с разделом [Запуск заданий Apache Spark в AKS][aks-spark].
+Сведения о выполнении заданий Apache Spark см. в разделе [выполнение заданий Apache Spark в AKS][aks-spark].
 
-Чтобы получить дополнительные сведения о выполнении рабочих нагрузок машинного обучения машины в Kubernetes, ознакомьтесь с [лабораториями Kubeflow][kubeflow-labs].
+Дополнительные сведения о выполнении рабочих нагрузок машинного обучения (ML) в Kubernetes см. в статье [Kubeflow Labs][kubeflow-labs].
 
 <!-- LINKS - external -->
 [kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
