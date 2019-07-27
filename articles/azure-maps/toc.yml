@@ -1,14 +1,15 @@
-- name: Документация по службе "Карты Azure"
+- name: Документация по службе Azure Maps
   href: index.yml
 - name: Обзор
   items:
     - name: Что такое Azure Maps?
       href: about-azure-maps.md
 - name: Краткие руководства
+  expanded: true
   items:
     - name: Создание веб-приложения
       href: quick-demo-map-app.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Учебные материалы по веб-пакетам SDK
       items:
@@ -50,13 +51,13 @@
       href: supported-map-styles.md
     - name: 'Браузеры, поддерживаемые в веб-пакетах SDK'
       href: supported-browsers.md
-    - name: Уровни увеличения и параметры сетки
+    - name: Уровни увеличения и сетка фрагментов
       href: zoom-levels-and-tile-grid.md
     - name: Структура данных Службы мобильности
       href: mobility-service-data-structure.md
-- name: Практические руководства
+- name: Руководства
   items:
-    - name: Управление учетными записями службы "Карты"
+    - name: Управление учетными записями службы Maps
       items:
         - name: Управление учетными записями
           href: how-to-manage-account-keys.md
@@ -80,7 +81,7 @@
           href: how-to-request-real-time-data.md
     - name: Разработка с помощью веб-пакета SDK
       items:
-        - name: Управление картами
+        - name: Элемент управления картой
           items:
             - name: Начало работы с элементами управления веб-картой
               href: how-to-use-map-control.md
@@ -120,7 +121,7 @@
           items:
             - name: Использование модуля служб
               href: how-to-use-services-module.md
-            - name: Показать результаты поиска
+            - name: Отображение результатов поиска
               href: map-search-location.md
             - name: Получение сведений из координат
               href: map-get-information-from-coordinate.md
@@ -172,7 +173,7 @@
           href: 'https://docs.microsoft.com/rest/api/maps-management'
     - name: JavaScript
       items:
-        - name: Управление картами
+        - name: Элемент управления картой
           href: 'https://docs.microsoft.com/javascript/api/azure-maps-javascript/'
         - name: Инструменты для рисования
           href: 'https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/'
@@ -198,7 +199,7 @@
       href: glossary.md
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates'
-    - name: Центр разработчиков Azure IoT
+    - name: Центр разработчика Azure IoT
       href: 'https://azure.microsoft.com/develop/iot/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=iot'
@@ -222,7 +223,7 @@
           href: /azure/iot-dps
         - name: Maps
           href: /azure/azure-maps
-        - name: Пакеты SDK для служб
+        - name: Пакеты SDK службы
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
         - name: Аналитика временных рядов
           href: /azure/time-series-insights
