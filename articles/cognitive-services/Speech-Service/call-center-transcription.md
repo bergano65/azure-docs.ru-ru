@@ -1,5 +1,5 @@
 ---
-title: Транскрибирование звонков в центре обработки вызовов. Службы речи
+title: Транскрипция центра обработки вызовов — служба речи
 titleSuffix: Azure Cognitive Services
 description: Функция преобразования речи в текст часто применяется для транскрибирования больших объемов данных телефонии, которые могут поступать из различных систем, включая системы интерактивного речевого ответа. Это может быть стерео- или монофонический звуковой сигнал в необработанном виде или с минимальной пост-обработкой. С помощью Служб речи и единой модели речи организации могут получить расшифровки высокого качества от разных систем аудиозаписи.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 37d68a4d2b7658542ebcfdb5d22a10676a8e4d52
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: b7c7bfffb5ddf947dc9bd25e6828e2816a7325cd
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603302"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68559745"
 ---
 # <a name="speech-services-for-telephony-data"></a>Службы речи для данных телефонии
 

@@ -1,6 +1,6 @@
 ---
-title: Предварительно созданные сущности dimension
-titleSuffix: Azure
+title: Предварительно созданные сущности измерения — LUIS
+titleSuffix: Azure Cognitive Services
 description: В этой статье описана готовая сущность dimension в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 ms.custom: seodec18
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: e77cd2290981de62ba7fce7f04174cd0c5ec2af3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2a2654947ab43000613cb1076b41d2ff5c2180e9
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65072182"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560259"
 ---
 # <a name="dimension-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность dimension для приложения LUIS
 Предварительно созданная сущность dimension обнаруживает различные типы измерений, независимо от языка и региональных параметров LUIS. Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие сущности dimension, не нужно. Сущность dimension поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md). 
@@ -28,7 +28,7 @@ ms.locfileid: "65072182"
 
 ## <a name="resolution-for-dimension-entity"></a>Разрешение для сущности dimension
 
-### <a name="api-version-2x"></a>API версии 2.x
+### <a name="api-version-2x"></a>API версии 2. x
 
 В следующем примере показано разрешение сущности **builtin.dimension**.
 
@@ -60,9 +60,9 @@ ms.locfileid: "65072182"
 }
 ```
 
-### <a name="preview-api-version-3x"></a>Предварительная версия API 3.x
+### <a name="preview-api-version-3x"></a>Предварительная версия API версии 3. x
 
-Приведенный ниже код JSON является с `verbose` параметру присвоить `false`:
+Следующий код JSON имеет `verbose` параметр со `false`значением:
 
 ```json
 {
@@ -87,7 +87,7 @@ ms.locfileid: "65072182"
 }
 ```
 
-Приведенный ниже код JSON является с `verbose` параметру присвоить `true`:
+Следующий код JSON имеет `verbose` параметр со `true`значением:
 
 ```json
 {
@@ -124,6 +124,6 @@ ms.locfileid: "65072182"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 См. дополнительные сведения о сущностях [email](luis-reference-prebuilt-email.md), [number](luis-reference-prebuilt-number.md) и [ordinal](luis-reference-prebuilt-ordinal.md). 

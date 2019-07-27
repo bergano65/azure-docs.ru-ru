@@ -1,5 +1,5 @@
 ---
-title: Предварительно созданные намерения
+title: Готовые намерения для Language Understanding
 titleSuffix: Azure Cognitive Services
 description: Служба LUIS включает набор предварительно созданных намерений для быстрого добавления общих разговорных сценариев.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/24/2019
 ms.author: diberry
-ms.openlocfilehash: 8e11b6d5a9c9df10e789c8e0be3a90d94ecf3d23
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b3cac3f173cadc8fc24df50f51771d248ab85b2e
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60505682"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563525"
 ---
 # <a name="add-prebuilt-intents-for-common-intents"></a>Добавление предварительно созданных типичных намерений 
 
@@ -50,6 +50,6 @@ ms.locfileid: "60505682"
 
     ![Тестирование предварительно созданного намерения](./media/luis-prebuilt-intents/test.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 > [!div class="nextstepaction"]
 > [Предварительно созданные сущности](./luis-prebuilt-entities.md)

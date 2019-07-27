@@ -1,5 +1,5 @@
 ---
-title: 'Службы распознавания речи: документация по Swagger'
+title: Документация по Swagger — служба речи
 titleSuffix: Azure Cognitive Services
 description: Документацию по Swagger можно использовать для автоматического создания пакетов SDK для различных языков программирования. Все операции в нашей службе поддерживаются Swagger.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: reference
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: f6420ea8918816f7356e567ec48cb0f7456065e0
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 232435a424d2461bce4598356a986473cb1d3644
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604766"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68552577"
 ---
 # <a name="swagger-documentation"></a>Документация по Swagger
 
@@ -44,7 +44,7 @@ ms.locfileid: "67604766"
 * [REST API: Преобразование речи в текст](rest-speech-to-text.md)
 * [REST API: Преобразование текста в речь](rest-text-to-speech.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Примеры для служб распознавания речи на портале GitHub](https://aka.ms/csspeech/samples)
 * [Получите ключ подписки для Служб речи бесплатно](get-started.md)

@@ -1,6 +1,6 @@
 ---
-title: Преобразование данных
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Преобразование данных — LUIS
+titleSuffix: Azure Cognitive Services
 description: Узнайте, как изменить высказывания перед прогнозами в службе "Распознавание речи" (LUIS)
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/16/2019
 ms.author: diberry
-ms.openlocfilehash: a148c849d0935978f049e01dd254c4c18800ee3b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bdce1a49ce6c6531ce344de5aa157717fe72c609
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66496980"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560811"
 ---
 # <a name="convert-data-format-of-utterances"></a>Преобразование формата данных высказываний
 LUIS использует службу Cognitive Services Speech, чтобы преобразовать высказывания из произнесенной речи в текст перед получением прогноза. 
@@ -33,7 +33,7 @@ LUIS использует службу Cognitive Services Speech, чтобы п�
 ### <a name="quota-usage"></a>Использование квоты
 Информацию вы найдете в разделе об [ограничениях для ключей](luis-boundaries.md#key-limits). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Извлечение данных](luis-concept-data-extraction.md)

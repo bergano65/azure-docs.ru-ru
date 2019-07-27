@@ -1,6 +1,6 @@
 ---
-title: Предварительно созданная сущность percentage
-titleSuffix: Azure
+title: Процент предварительно построенной сущности — LUIS
+titleSuffix: Azure Cognitive Services
 description: В этой статье описана готовая сущность percentage в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: 75538519b7d43aa702e15ce3c22ea4acc73ade87
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9daaa78003b3d789c3c7b746e6c0689b96e89428
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65072199"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563388"
 ---
 # <a name="percentage-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность percentage для приложения LUIS
 Процентное соотношение может выражаться в виде дроби (`3 1/2`) или в процентах (`2%`). Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие сущности percentage, не нужно. Сущность percentage поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md). 
@@ -26,7 +26,7 @@ ms.locfileid: "65072199"
 
 ## <a name="resolution-for-prebuilt-percentage-entity"></a>Разрешение для предварительно созданной сущности percentage
 
-### <a name="api-version-2x"></a>API версии 2.x
+### <a name="api-version-2x"></a>API версии 2. x
 
 В следующем примере показано разрешение сущности **builtin.percentage**.
 
@@ -57,9 +57,9 @@ ms.locfileid: "65072199"
 }
 ```
 
-### <a name="preview-api-version-3x"></a>Предварительная версия API 3.x
+### <a name="preview-api-version-3x"></a>Предварительная версия API версии 3. x
 
-Приведенный ниже код JSON является с `verbose` параметру присвоить `false`:
+Следующий код JSON имеет `verbose` параметр со `false`значением:
 
 ```json
 {
@@ -81,7 +81,7 @@ ms.locfileid: "65072199"
 }
 ```
 
-Приведенный ниже код JSON является с `verbose` параметру присвоить `true`:
+Следующий код JSON имеет `verbose` параметр со `true`значением:
 
 ```json
 {
@@ -115,6 +115,6 @@ ms.locfileid: "65072199"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о сущностях [порядковый номер](luis-reference-prebuilt-ordinal.md), [номер](luis-reference-prebuilt-number.md) и [температура](luis-reference-prebuilt-temperature.md). 

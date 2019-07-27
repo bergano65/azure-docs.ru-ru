@@ -1,6 +1,6 @@
 ---
 title: Модерация текстового содержимого с использованием API модерации текста — Content Moderator
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Опробуйте модерацию текста с помощью API модерации текста в веб-консоли.
 services: cognitive-services
 author: sanjeev3
@@ -10,16 +10,16 @@ ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 05/29/2019
-ms.openlocfilehash: a3eb134d655f2a25acb45e0d249aa421667d1520
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 49047c21f86530aac6ed3e0138a643fd08c35af8
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67621385"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561174"
 ---
 # <a name="moderate-text-from-the-api-console"></a>Модерация текста с помощью консоли API
 
-Используйте [API модерации текста](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f) в Azure Content Moderator проверять содержимое текста для ненормативной лексики и сопоставить ее с пользовательским и общим списки.
+Используйте [API-интерфейс](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f) для контроля текста в Azure Content Moderator, чтобы проверить текстовое содержимое на ненормативную лексику и сравнить его с настраиваемыми и общими списками.
 
 ## <a name="get-your-api-key"></a>Получение ключа API
 
@@ -73,7 +73,7 @@ Also, 999-99-9999 looks like a social security number (SSN).
 
 ## <a name="analyze-the-response"></a>Анализ ответа
 
-Приведенный ниже ответ показывает различные важные сведения из API. Он содержит ненормативную лексику, персональные данные, классификации (Предварительная версия) и версии исправлены автоматически.
+Приведенный ниже ответ показывает различные важные сведения из API. Она содержит потенциально ненормативную лексику, персональные данные, классификацию (Предварительная версия) и автоматическую исправленную версию.
 
 > [!NOTE]
 > Функция машинной классификации находится в режиме предварительной версии и поддерживает только английский язык.
@@ -172,8 +172,8 @@ Also, 999-99-9999 looks like a social security number (SSN).
 }
 ```
 
-Подробное описание всех разделов в ответе JSON, см. в разделе [Модерация текста](text-moderation-api.md) концептуальное руководство по.
+Подробное описание всех разделов в ответе JSON см. в концептуальном руководстве по поиску [текста](text-moderation-api.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Используйте REST API в коде или начинаться с [краткого руководства по .NET для модерации текста](text-moderation-quickstart-dotnet.md) для интеграции с приложением.
+Используйте REST API в коде или начните с [краткого руководства по тексту .NET](text-moderation-quickstart-dotnet.md) для интеграции с приложением.

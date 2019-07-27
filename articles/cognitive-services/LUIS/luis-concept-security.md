@@ -1,6 +1,6 @@
 ---
-title: Безопасность при совместной работе
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Безопасность при совместной работе — LUIS
+titleSuffix: Azure Cognitive Services
 description: Доступ к возможностям разработки предоставляется владельцам и участникам совместной работы. В частных приложениях доступ к конечным точкам имеют владельцы и участники совместной работы.
 services: cognitive-services
 author: diberry
@@ -11,15 +11,15 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 06/12/2019
 ms.author: diberry
-ms.openlocfilehash: b52b0fffe9c32ab14600a3e296852faa626d794d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 25f6b675846f028b4ba9d49cce9e075bc79eece9
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67058535"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560672"
 ---
 # <a name="authoring-and-endpoint-user-access"></a>Доступ пользователей к возможностям разработки и конечным точкам
-Доступ к возможностям разработки предоставляется владельцам и участникам совместной работы. В частных приложениях доступ к конечным точкам имеют владельцы и участники совместной работы. Для открытого приложения, доступ к конечной точке доступен всем, что имеет свои собственные Azure [Cognitive Service](../cognitive-services-apis-create-account.md) или [LUIS](luis-how-to-azure-subscription.md#create-prediction-endpoint-runtime-resource-in-the-azure-portal) ресурсов, и имеет идентификатор общедоступному приложению. 
+Доступ к возможностям разработки предоставляется владельцам и участникам совместной работы. В частных приложениях доступ к конечным точкам имеют владельцы и участники совместной работы. Для общедоступного приложения доступ к конечной точке предоставляется всем, у кого есть собственный ресурс [службы](../cognitive-services-apis-create-account.md) "Поиск Azure" или [Luis](luis-how-to-azure-subscription.md#create-prediction-endpoint-runtime-resource-in-the-azure-portal) , а также идентификатор общедоступного приложения. 
 
 ## <a name="access-to-authoring"></a>Доступ к возможностям разработки
 Доступ к приложению с веб-сайта [LUIS](luis-reference-regions.md#luis-website) или из [API-интерфейсов разработки](https://go.microsoft.com/fwlink/?linkid=2092087) контролируется владельцем приложения. 
@@ -34,7 +34,7 @@ ms.locfileid: "67058535"
 |Импорт версии||
 |Предоставление к приложению общего доступа|Если приложение является общедоступным, запросить его может любой пользователь с ключом разработки или ключом конечной точки.|
 |Изменение модели|
-|Публикация|
+|Опубликовать|
 |Проверка высказываний конечной точки для [активного обучения](luis-how-to-review-endpoint-utterances.md)|
 |Обучение|
 
@@ -86,6 +86,6 @@ ms.locfileid: "67058535"
  
 [!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-security-compliance.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Сведения об использовании намерений и сущностей для максимально точного прогнозирования см. в документе с [рекомендациями](luis-concept-best-practices.md).

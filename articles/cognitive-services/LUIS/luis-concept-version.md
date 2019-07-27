@@ -1,6 +1,6 @@
 ---
-title: Управление версиями
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Управление версиями — LUIS
+titleSuffix: Azure Cognitive Services
 description: Версии в LUIS аналогичны версиям в традиционном программировании. Каждая версия является моментальным снимком приложения. Перед внесением изменений в приложение создайте новую версию. Перейти к точному моментальному снимку приложения гораздо проще, чем пытаться по шагам вернуть намерение и фразы приложения в предыдущее состояние.
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/15/2019
 ms.author: diberry
-ms.openlocfilehash: 9da79e5b744f8ba70c0e265f0d1f0126b37eba49
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 75e82cf8a9da7b75f372f35270b16b10ec6e3da6
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60509691"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563865"
 ---
 # <a name="understand-how-and-when-to-use-a-luis-version"></a>Основные принципы работы с версиями LUIS
 
@@ -35,7 +35,7 @@ ms.locfileid: "60509691"
 
 Имя текущей активной версии отображается на верхней левой панели после имени приложения. 
 
-[![Изменение активной версии](./media/luis-concept-version/version-in-nav-bar-inline.png)](./media/luis-concept-version/version-in-nav-bar-expanded.png#lightbox)
+[![Изменить активную версию](./media/luis-concept-version/version-in-nav-bar-inline.png)](./media/luis-concept-version/version-in-nav-bar-expanded.png#lightbox)
 
 ## <a name="versions-and-publishing-slots"></a>Версии и слоты публикации
 Публикация выполняется в промежуточный или рабочий слоты. У слотов могут быть разные или одинаковые версии. Это полезно для проверки изменений в версиях модели с помощью конечной точки, которая доступна ботам или другим вызывающим приложениям LUIS. 
@@ -62,7 +62,7 @@ ms.locfileid: "60509691"
 ## <a name="collaborators"></a>Участники совместной работы
 Владелец и [участники совместной работы](luis-how-to-collaborate.md) имеют полный доступ ко всем версиям приложения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как добавить [управление версиями](luis-how-to-manage-versions.md) на странице параметров приложения. 
 

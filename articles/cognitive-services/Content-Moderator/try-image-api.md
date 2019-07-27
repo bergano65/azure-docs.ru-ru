@@ -1,6 +1,6 @@
 ---
 title: Модерация изображений с помощью консоли API — Content Moderator
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Используйте API модерации изображений в Azure Content Moderator для запуска рабочих процессов модерации "поиск и проверка" для графического содержимого.
 services: cognitive-services
 author: sanjeev3
@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 1e4efa5e06525194bfdc7d1932fcfec5ec9f8c6b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 20353d488cba255925d21017b77d1def2d06b30b
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60607482"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561249"
 ---
 # <a name="moderate-images-from-the-api-console"></a>Модерация изображений с помощью консоли API
 
@@ -100,6 +100,6 @@ API модерации изображений можно использоват�
 
    ![Пример поля "Response content" (Содержимое ответа) в консоли "Image - OCR" (Изображение — OCR)](images/try-image-api-ocr.PNG)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Используйте в коде REST API или начните с [краткого руководства по модерации изображений с помощью .NET](image-moderation-quickstart-dotnet.md), чтобы интегрировать эту функцию в приложение.

@@ -1,6 +1,6 @@
 ---
-title: Импорт высказываний с использованием Node.js
-titleSuffix: Azure
+title: Импорт фразы продолжительностью с помощью Node. js-LUIS
+titleSuffix: Azure Cognitive Services
 description: Сведения о создании приложения LUIS программным образом из существующих данных в формате CSV с помощью API разработки LUIS.
 services: cognitive-services
 author: diberry
@@ -11,18 +11,18 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/30/2019
 ms.author: diberry
-ms.openlocfilehash: 314d121e8964ba1cdbb457260826d85bf8505fbc
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9ca04bdd7f4ed577ad571e6a715201f8c3e2b6ee
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60494903"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68559967"
 ---
 # <a name="build-a-luis-app-programmatically-using-nodejs"></a>Создание приложения LUIS программным способом с помощью Node.js
 
 Служба LUIS предоставляет программный API, выполняющий те же задачи, что и веб-сайт [LUIS](luis-reference-regions.md). Это позволит сэкономить время при уже имеющихся данных, поэтому создавать приложение LUIS программным способом можно быстрее, чем путем ввода информации вручную. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Войдите на веб-сайт [LUIS](luis-reference-regions.md) и на странице "Параметры учетной записи" найдите [ключ разработки](luis-concept-keys.md#authoring-key). Этот ключ используется для вызова API разработки.
 * Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
@@ -132,7 +132,7 @@ const LUIS_versionId = "0.1";
 > node index.js
 ```
 
-или
+или диспетчер конфигурации служб
 
 ```console
 > npm start
@@ -172,7 +172,7 @@ upload done
 ![Намерение TurnOn](./media/luis-tutorial-node-import-utterances-csv/imported-utterances-661.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Проверьте и обучите свое приложение на веб-сайте LUIS](luis-interactive-test.md)

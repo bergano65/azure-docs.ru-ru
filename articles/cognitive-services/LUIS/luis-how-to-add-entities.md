@@ -1,7 +1,7 @@
 ---
-title: Добавление сущностей
-titleSuffix: Language Understanding - Azure Cognitive Services
-description: Создайте сущности для извлечения данных ключа из фразы пользователя в приложениях Language Understanding (LUIS).
+title: Добавление сущностей — LUIS
+titleSuffix: Azure Cognitive Services
+description: Создание сущностей для извлечения данных ключей из фразы продолжительностью пользователей в приложениях Language Understanding (LUIS).
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -11,24 +11,24 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: diberry
-ms.openlocfilehash: 241e89ac7fa78184e7c55f9e8065e1534cea9143
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fdf60a454aeb19b83ce455a771b8399c90af3bce
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65148729"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563742"
 ---
 # <a name="create-entities-without-utterances"></a>Создание сущностей без высказываний
 
-Сущность представляет подлежащее извлечению слово или фразу в высказывании. Сущность представляет класс, включая коллекцию схожие объекты (места, вещи, людьми, события или концепции). Сущности описывают информацию, относящуюся к намерению, и иногда они необходимы приложению для выполнения поставленной задачи. Вы можете создавать сущности, при добавлении utterance к объекту intent или друг от друга (до или после) Добавление utterance к объекту intent.
+Сущность представляет подлежащее извлечению слово или фразу в высказывании. Сущность представляет класс, включая коллекцию схожих объектов (мест, вещей, людей, событий или концепций). Сущности описывают информацию, относящуюся к намерению, и иногда они необходимы приложению для выполнения поставленной задачи. Сущности можно создавать при добавлении utterance к намерениям или помимо них (до или после) добавления utterance к намерению.
 
 Добавлять, изменять или удалять сущности в приложении LUIS можно с помощью **Списка сущностей** на странице **Сущности**. LUIS предоставляет два основных типа сущностей: [предварительно созданные сущности](luis-reference-prebuilt-entities.md) и [пользовательские сущности](luis-concept-entity-types.md#types-of-entities).
 
-После создания сущности, результаты обучения компьютера, необходимо пометить все utterance примере всех способов, которые он находится в этой сущности.
+После создания сущности, предназначенной для компьютера, необходимо пометить эту сущность во всех примерах utterance всех целей.
 
 <a name="add-prebuilt-entity"></a>
 
-## <a name="add-a-prebuilt-entity-to-your-app"></a>Добавление предварительно созданных сущностей в приложение
+## <a name="add-a-prebuilt-entity-to-your-app"></a>Добавление предварительно созданной сущности в приложение
 
 Общие предварительно созданные сущности, добавляемые в приложение: *number* и *datetimeV2*. 
 
@@ -42,7 +42,7 @@ ms.locfileid: "65148729"
 
 <a name="add-simple-entities"></a>
 
-## <a name="add-simple-entities-for-single-concepts"></a>Добавление простой сущностей для одного основные понятия
+## <a name="add-simple-entities-for-single-concepts"></a>Добавление простых сущностей для отдельных концепций
 
 Простая сущность описывает одно понятие. Создайте сущность, чтобы извлекать названия отделов компаний, например *Отдел кадров* или *Производственный отдел*, с помощью следующей процедуры.   
 
@@ -56,7 +56,7 @@ ms.locfileid: "65148729"
 
 <a name="add-regular-expression-entities"></a>
 
-## <a name="add-regular-expression-entities-for-highly-structured-concepts"></a>Добавление сущностей регулярное выражение для структурированного основные понятия
+## <a name="add-regular-expression-entities-for-highly-structured-concepts"></a>Добавление сущностей регулярных выражений для очень структурированных концепций
 
 Сущность регулярного выражения используется для извлечения данных из выражения на основе указанного регулярного выражения. 
 
@@ -64,11 +64,11 @@ ms.locfileid: "65148729"
 
 1. Во всплывающем диалоговом окне введите `Human resources form name` в поле **Имя сущности**, выберите **Регулярное выражение** в списке **Тип сущности**, введите регулярное выражение `hrf-[0-9]{6}`, а затем выберите **Готово**. 
 
-    Это регулярное выражение соответствует литеральными символами `hrf-`, затем 6 цифр для представления формы номеров для формы отдела кадров.
+    Это регулярное выражение соответствует литеральным символам `hrf-`, а затем 6 цифрам для представления номера формы для формы отдела кадров.
 
 <a name="add-composite-entities"></a>
 
-## <a name="add-composite-entities-to-group-into-a-parent-child-relationship"></a>Добавьте составной сущности для группировки в родительско дочернее отношение
+## <a name="add-composite-entities-to-group-into-a-parent-child-relationship"></a>Добавление составных сущностей в группу в связи типа «родители-потомки»
 
 Создавая составные сущности, можно определить связь между различными видами сущностей. В приведенном ниже примере сущность содержит регулярные выражения, а также предварительно созданные сущности имени.  
 
@@ -92,7 +92,7 @@ ms.locfileid: "65148729"
 
 <a name="add-pattern-any-entities"></a>
 
-## <a name="add-patternany-entities-to-capture-free-form-entities"></a>Добавление сущностей Pattern.any для записи сущности в свободной форме
+## <a name="add-patternany-entities-to-capture-free-form-entities"></a>Добавление шаблона. все сущности для захвата сущностей в свободной форме
 
 Сущности [Pattern.any](luis-concept-entity-types.md) допустимы только в [шаблонах](luis-how-to-model-intent-pattern.md), но не в намерениях. Этот вид сущности помогает службе LUIS найти конец сущностей различной длины и выбора машинного слова. Так как эта сущность используется в шаблоне, служба LUIS знает, где конец сущности в шаблоне высказывания.
 
@@ -110,11 +110,11 @@ ms.locfileid: "65148729"
 
 <a name="add-a-role-to-pattern-based-entity"></a>
 
-## <a name="add-a-role-to-distinguish-different-contexts"></a>Добавление роли для различения разных контекстах
+## <a name="add-a-role-to-distinguish-different-contexts"></a>Добавление роли для различения разных контекстов
 
-Роль — именованный подтип, исходя из контекста. Он доступен всем сущностям, включая сущности, предварительно созданные и узнали без машин. 
+Роль — это именованный подтип, основанный на контексте. Он доступен во всех сущностях, включая предварительно созданные и не являющиеся машинами сущности. 
 
-Синтаксис для роли **`{Entityname:Rolename}`** где имя сущности следует двоеточие, а затем имя роли. Например, `Move {personName} from {LocationUsingRoles:Origin} to {LocationUsingRoles:Destination}`.
+Синтаксис роли заключается **`{Entityname:Rolename}`** в том, где за именем сущности следует двоеточие, а затем имя роли. Например, `Move {personName} from {LocationUsingRoles:Origin} to {LocationUsingRoles:Destination}`.
 
 1. В разделе **Сборка** на левой панели выберите **Сущности**.
 
@@ -128,7 +128,7 @@ ms.locfileid: "65148729"
 
 <a name="add-list-entities"></a>
 
-## <a name="add-list-entities-for-exact-matches"></a>Добавление списка сущностей для точных совпадений
+## <a name="add-list-entities-for-exact-matches"></a>Добавление сущностей списка для точных совпадений
 
 Сущности списка — это фиксированный закрытый набор связанных машинных слов. 
 
@@ -179,7 +179,7 @@ ms.locfileid: "65148729"
 
 <a name="create-a-pattern-from-an-utterance"></a>
 
-## <a name="create-a-pattern-from-an-example-utterance"></a>Создать шаблон из utterance пример
+## <a name="create-a-pattern-from-an-example-utterance"></a>Создание шаблона на основе примера utterance
 
 Дополнительные сведения см. в разделе [Добавление шаблона на основе существующего фрагмента речи на странице сущности или намерения](luis-how-to-model-intent-pattern.md#add-pattern-from-existing-utterance-on-intent-or-entity-page).
 
@@ -187,7 +187,7 @@ ms.locfileid: "65148729"
 
 После добавления, изменения и удаления сущностей выполните [обучение](luis-how-to-train.md) и [публикацию](luis-how-to-publish-app.md) приложения, чтобы применить изменения к запросам конечной точки. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о предварительно созданных сущностях см. в проекте [Распознаватели текста](https://github.com/Microsoft/Recognizers-Text). 
 

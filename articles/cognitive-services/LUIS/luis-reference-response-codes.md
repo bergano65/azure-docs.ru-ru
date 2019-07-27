@@ -1,6 +1,6 @@
 ---
-title: Коды отклика HTTP, возвращаемые API
-titleSuffix: Azure
+title: Коды HTTP-ответов API — LUIS
+titleSuffix: Azure Cognitive Services
 description: Сведения о том, какие коды ответов HTTP возвращаются API-интерфейсами разработки и конечных точек LUIS
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 03/04/2019
 ms.author: diberry
-ms.openlocfilehash: f6742bf64ce26e6cce93dfcdfd06756f3c340d9e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c92bcf55b571c37efa308d9121ee4aee714e684a
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65522969"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560085"
 ---
 # <a name="common-api-response-codes-and-their-meaning"></a>Стандартные коды ответа API и их значение
 
@@ -40,6 +40,6 @@ API-интерфейсы [разработки](https://go.microsoft.com/fwlink/
 |414|Конечная точка|В запросе превышено максимально допустимое количество символов|
 |429|Разработки, конечных точек|Превышено ограничение скорости (запросов в секунду)|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Документация по [разработке](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c2f) и [конечной точке](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee78) REST API

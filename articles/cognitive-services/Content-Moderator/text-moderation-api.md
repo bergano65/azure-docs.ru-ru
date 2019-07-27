@@ -1,5 +1,6 @@
 ---
 title: Модерация текста — Content Moderator
+titleSuffix: Azure Cognitive Services
 description: Модерация текста используется для обнаружения нежелательных текстов, персональных данных и совпадений со списком терминов.
 services: cognitive-services
 author: sanjeev3
@@ -9,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 5a1007f2408b48c96f5eeaf585b94c8caa7ceb45
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e1d5224d8dc86c82624613b0d2a984ceef3ae5bf
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60607123"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564376"
 ---
 # <a name="learn-text-moderation-concepts"></a>Изучение концепций модерации текста
 
@@ -48,7 +49,7 @@ ms.locfileid: "60607123"
 >
 > Для обнаружения **ненормативной лексики** укажите [код ISO 639-3](http://www-01.sil.org/iso639-3/codes.asp) для поддерживаемых языков, которые перечислены в этой статье, или оставьте это поле пустым.
 
-## <a name="classification"></a>классификация;
+## <a name="classification"></a>Классификация
 
 **Функция классификации текста** Content Moderator с машинными алгоритмами поддерживает **только английский язык** и используется для обнаружения потенциально нежелательного содержимого. С ее помощью оценивается содержимое, которое может считаться недопустимым в определенном контексте. Она выдает вероятность для каждой категории и может рекомендовать пользовательскую проверку. Она использует обученную модель для выявления лексики оскорбительного, неуважительного или дискриминационного характера. Сюда входят сленговые и сокращенные выражения, оскорбления и специально искаженные слова, которые нужно проверять. 
 
@@ -164,6 +165,6 @@ ms.locfileid: "60607123"
 
 Content Moderator предоставляет [API списка терминов](https://westus.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f67f) с операциями для управления пользовательскими списками терминов. Начните работу с изучения [консоли API для списков терминов](try-terms-list-api.md) и примеров кода для REST API. Также изучите [краткое руководство по спискам терминов для .NET](term-lists-quickstart-dotnet.md), если вы уже знакомы с C# и Visual Studio.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Проверьте в работе [консоль API для списков терминов](try-text-api.md) и примеры кода для REST API. Также изучите [краткое руководство по модерации текста для .NET](text-moderation-quickstart-dotnet.md), если вы уже знакомы с C# и Visual Studio.

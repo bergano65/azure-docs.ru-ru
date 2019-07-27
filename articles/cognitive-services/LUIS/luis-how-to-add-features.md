@@ -1,6 +1,6 @@
 ---
-title: Списки фраз
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Списки фраз — LUIS
+titleSuffix: Azure Cognitive Services
 description: Использование Интеллектуальной службы распознавания речи для добавления функций приложения, которые улучшают обнаружение или прогнозирование намерений и сущностей, которые относятся к категориям и шаблонам
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/16/2019
 ms.author: diberry
-ms.openlocfilehash: 0723c3730ca0ae6325d828fbb5f41698cb807dd3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 75764fd0a3f862157d9377d7dc886334ef1231db
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60195937"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563710"
 ---
 # <a name="use-phrase-lists-to-boost-signal-of-word-list"></a>Используйте списки фраз для повышения эффективности работы списка слов.
 
@@ -46,7 +46,7 @@ LUIS позволяет добавлять до 10 списков фраз в о
 
     ![Назначение предложенных значений списка фраз взаимозаменяемыми](./media/luis-add-features/interchangeable.png)
 
-6. Выберите команду **Сохранить**. Список фраз "Города" добавляется на страницу **Список фраз**.
+6. Нажмите кнопку **Сохранить**. Список фраз "Города" добавляется на страницу **Список фраз**.
 
 <a name="edit-phrase-list"></a>
 <a name="delete-phrase-list"></a>
@@ -55,6 +55,6 @@ LUIS позволяет добавлять до 10 списков фраз в о
 > [!Note]
 > Вы можете отключить или удалить список фраз из контекстной панели на **этой** странице.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После добавления, редактирования, удаления или отключения списка фраз обучите и протестируйте приложение повторно, чтобы увидеть, улучшилась ли производительность. Дополнительные сведения см. в разделе [Тестирование приложения LUIS](luis-interactive-test.md).

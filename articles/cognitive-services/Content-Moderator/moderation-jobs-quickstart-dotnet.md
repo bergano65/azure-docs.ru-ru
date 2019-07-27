@@ -1,7 +1,7 @@
 ---
-title: Использование заданий "умеренность", с помощью .NET - Content Moderator
-titlesuffix: Azure Cognitive Services
-description: Пакет SDK для .NET модератора содержимого используется для запуска заданий модерации содержимого end-to-end для изображения или текстового содержимого в Azure Content Moderator.
+title: Использование заданий контроля использования .NET — Content Moderator
+titleSuffix: Azure Cognitive Services
+description: Используйте пакет SDK для Content Moderator .NET, чтобы инициировать сквозные задания содержимого для образа или текстового содержимого в Content Moderator Azure.
 services: cognitive-services
 author: sanjeev3
 manager: nitinme
@@ -10,25 +10,25 @@ ms.subservice: content-moderator
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: sajagtap
-ms.openlocfilehash: 24d5483cf3b418cada3c5b7f03eedbff13cc36d6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d98c88a6e1d6dfa23f53c32c85c013b4cf2c468d
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62113874"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565591"
 ---
-# <a name="define-and-use-moderation-jobs-net"></a>Определение и использование Модерация заданий (.NET)
+# <a name="define-and-use-moderation-jobs-net"></a>Определение и использование заданий по созадачам (.NET)
 
-Задание "умеренность" выступает в качестве оболочки для модерации содержимого, рабочие процессы и проверки функциональности. Это руководство содержит сведения и примеры кода, которые помогут вам приступить к использованию [содержимого модератора пакет SDK для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) для:
+Задание по созадаче служит разновидностью оболочки для функций контроля содержимого, рабочих процессов и проверок. Это руководство содержит сведения и примеры кода, которые помогут приступить к работе с [пакетом SDK для Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) :
 
 - запуск задания модерации для проверки содержимого и создания проверок для модераторов-пользователей;
 - получение состояния ожидающей проверки;
 - отслеживание и получение окончательного состояния проверки;
-- Отправлять результаты проверки URL-адрес обратного вызова
+- Отправка результатов проверки в URL-адрес обратного вызова
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- Войдите или создайте учетную запись на Content Moderator [средство проверки](https://contentmoderator.cognitive.microsoft.com/) сайта.
+- Войдите или создайте учетную запись на сайте [средства проверки](https://contentmoderator.cognitive.microsoft.com/) Content Moderator.
 
 ## <a name="ensure-your-api-key-can-call-the-review-api-for-review-creation"></a>Проверка, может ли ключ API вызвать API проверки для создания соответствующих заданий
 
@@ -322,6 +322,6 @@ Get review details.
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для выполнения инструкций из этого и других кратких руководств по Content Moderator для .NET и приступите к интеграции.

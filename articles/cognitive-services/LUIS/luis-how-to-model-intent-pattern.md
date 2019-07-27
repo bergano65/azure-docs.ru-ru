@@ -1,7 +1,7 @@
 ---
-title: Добавление шаблонов для повышения точности
-titleSuffix: Language Understanding - Azure Cognitive Services
-description: Добавьте шаблон шаблоны для повышения точности прогнозов в приложениях Language Understanding (LUIS).
+title: Шаблоны добавляют точность — LUIS
+titleSuffix: Azure Cognitive Services
+description: Добавьте шаблоны шаблонов для повышения точности прогнозов в приложениях Language Understanding (LUIS).
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -11,15 +11,15 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: diberry
-ms.openlocfilehash: 202b9632b7a7faaf955874a0300edbe5134b7fa1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f0e801afde240d8b2d6e0798e6894b2e83f9c5cb
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60196703"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560429"
 ---
 # <a name="how-to-add-patterns-to-improve-prediction-accuracy"></a>Добавление шаблонов для повышения точности прогнозов
-После того как приложения LUIS получает фразы конечной точки, используйте [шаблон](luis-concept-patterns.md) для повышения точности прогнозов для фразы, которые раскрывают шаблон в порядок слов и выбора слов. Шаблоны используются определенные [синтаксис](luis-concept-patterns.md#pattern-syntax) для указания расположения: [сущностей](luis-concept-entity-types.md), сущности [ролей](luis-concept-roles.md)и необязательный текст.
+После того как приложение LUIS получит конечную точку фразы продолжительностью, используйте [шаблон](luis-concept-patterns.md) , чтобы улучшить точность прогнозов для фразы продолжительностью, чтобы показать шаблон в порядке слов и выбрать слово. В шаблонах используется специальный [синтаксис](luis-concept-patterns.md#pattern-syntax) для указания расположения [сущностей](luis-concept-entity-types.md), [ролей](luis-concept-roles.md)сущностей и необязательного текста.
 
 ## <a name="add-template-utterance-to-create-pattern"></a>Добавление фрагмента речи шаблона для создания шаблона
 1. Откройте приложение, выбрав его имя на странице **Мои приложения**, а затем выберите **Patterns** (Шаблоны) на левой панели в разделе **Improve app performance** (Повышение производительности приложений).
@@ -34,7 +34,7 @@ ms.locfileid: "60196703"
 
     ![Снимок экрана сущности для шаблона](./media/luis-how-to-model-intent-pattern/patterns-3.png)
 
-    Если ваше учреждение включает [роли](luis-concept-roles.md), содержать информацию о роли с одним знаком двоеточия, `:`, когда имя сущности, такие как `{Location:Origin}`. Список ролей для сущностей появится в списке. Выберите роль и нажмите клавишу ВВОД. 
+    Если сущность содержит [роль](luis-concept-roles.md), укажите ее с одним двоеточием `:`, после `{Location:Origin}`имени сущности, например. Список ролей для сущностей появится в списке. Выберите роль и нажмите клавишу ВВОД. 
 
     ![Снимок экрана сущности с ролью](./media/luis-how-to-model-intent-pattern/patterns-4.png)
 
@@ -58,20 +58,20 @@ ms.locfileid: "60196703"
 
 ## <a name="use-contextual-toolbar"></a>Использовать контекстную панель инструментов
 
-Контекстные панели инструментов над списком шаблонов позволяет:
+Контекстная панель инструментов над списком «шаблоны» позволяет выполнять следующие задачи:
 
 * Поиск шаблонов
 * Редактирование шаблона
 * Переназначение отдельного шаблона другому намерению
 * Переназначение нескольких шаблонов другому намерению
-* DELETE a один шаблон
+* Удалить один шаблон
 * Удаление нескольких шаблонов
 * Фильтрация списка шаблонов по сущности
-* Фильтр шаблон list с только для чтения
+* Фильтр-шаблон — список по намерениям
 * Удаление фильтра сущности или намерения
 * Добавление шаблона на основе существующего фрагмента речи на странице сущности или намерения
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Узнайте, как [создавать шаблон](luis-tutorial-pattern.md) с pattern.any и ролями с руководством.
+* Узнайте, как [создать шаблон](luis-tutorial-pattern.md) с помощью шаблона. любые роли и с учебником.
 * Сведения об [обучении](luis-how-to-train.md) приложений.

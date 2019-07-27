@@ -1,6 +1,6 @@
 ---
-title: Устаревшие предварительно созданные сущности
-titleSuffix: Azure
+title: Устаревшие предварительно созданные сущности — LUIS
+titleSuffix: Azure Cognitive Services
 description: В этой статье описана готовая сущность deprecated в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 02/28/2019
 ms.author: diberry
-ms.openlocfilehash: 653fbd65e5ccfbc65781f2332b35d10237f718d5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 17693b7dff1df1d538f2f4a180be025e0de67c82
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60712786"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563485"
 ---
 # <a name="deprecated-prebuilt-entities-in-a-luis-app"></a>Устаревшие предварительно созданные сущности
 Перечисленные ниже предварительно созданные сущности являются нерекомендуемыми, поэтому их нельзя добавлять в новые приложения LUIS.
@@ -161,7 +161,7 @@ ms.locfileid: "60712786"
 `builtin.encyclopedia.finance.stock_exchange`| `builtin.encyclopedia.finance.stock_exchange`| `tokyo stock exchange`|
 `builtin.encyclopedia.film.festival`| `builtin.encyclopedia.film.festival`| `berlin international film festival`|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о сущностях [dimension](luis-reference-prebuilt-dimension.md), [email](luis-reference-prebuilt-email.md) и [number](luis-reference-prebuilt-number.md). 
 

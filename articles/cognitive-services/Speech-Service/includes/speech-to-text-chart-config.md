@@ -1,7 +1,7 @@
 ---
-title: Установить контейнеры речи
+title: Установка речевых контейнеров
 titleSuffix: Azure Cognitive Services
-description: Сведения о параметрах конфигурации диаграмма helm речи в текст.
+description: Подробные сведения о параметрах конфигурации диаграммы "речь-текст Helm".
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -11,31 +11,31 @@ ms.topic: include
 ms.date: 06/26/2019
 ms.author: dapine
 ms.openlocfilehash: 1b46c58d3f3c804052e637f7bde2e1a456764dba
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67717223"
 ---
-### <a name="speech-to-text-sub-chart-chartsspeechtotext"></a>Преобразование речи в текст (вложенные диаграммы: диаграммы/speechToText)
+### <a name="speech-to-text-sub-chart-chartsspeechtotext"></a>Преобразование речи в текст (диаграмма/Спичтотекст)
 
-Чтобы переопределить диаграмма «общий», добавьте префикс `speechToText.` на любой параметр, чтобы сделать его более конкретным. Например, она переопределит соответствующего параметра например `speechToText.numberOfConcurrentRequest` переопределяет `numberOfConcurrentRequest`.
+Чтобы переопределить диаграмму "тег", добавьте префикс `speechToText.` для любого параметра, чтобы сделать его более конкретным. Например, он переопределит соответствующий параметр, например `speechToText.numberOfConcurrentRequest` Overrides. `numberOfConcurrentRequest`
 
 |Параметр|Описание|Значение по умолчанию|
 | -- | -- | -- |
-| `enabled` | Ли **речи в текст** включена служба. | `false` |
-| `numberOfConcurrentRequest` | Число одновременных запросов для **речи в текст** службы. Эта диаграмма автоматически вычисляет ресурсы ЦП и памяти, на основе этого значения. | `2` |
-| `optimizeForAudioFile`| Должен ли служба для оптимизации для звукового ввода через звуковые файлы. Если `true`, эта диаграмма будет выделять дополнительные ресурсы ЦП для службы. | `false` |
-| `image.registry`| **Речи в текст** реестр образов docker. | `containerpreview.azurecr.io` |
-| `image.repository` | **Речи в текст** репозиторий образов docker. | `microsoft/cognitive-services-speech-to-text` |
-| `image.tag` | **Речи в текст** тега образа docker. | `latest` |
-| `image.pullSecrets` | Секреты образ за получение **речи в текст** образа docker. | |
-| `image.pullByHash`| Ли по хэшу будет отображен образ docker. Если `true`, `image.hash` является обязательным. | `false` |
-| `image.hash`| **Речи в текст** хэш изображения docker. Используется, только если `image.pullByHash: true`.  | |
-| `image.args.eula` (обязательно) | Указывает, что вы приняли лицензии. Единственным допустимым значением является `accept` | |
-| `image.args.billing` (обязательно) | Выставления счетов значение URI конечная точка доступна на странице обзора речи на портале Azure. | |
-| `image.args.apikey` (обязательно) | Используется для отслеживания данных для выставлении счетов. ||
-| `service.type` | Тип объекта службы Kubernetes **речи в текст** службы. См. в разделе [службы Kubernetes типы инструкции](https://kubernetes.io/docs/concepts/services-networking/service/) подробности и сведения о поддержке поставщика облака. | `LoadBalancer` |
-| `service.port`|  Порт **речи в текст** службы. | `80` |
-| `service.autoScaler.enabled` | Ли [горизонтальной автомасштабирования Pod](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) включен. Если `true`, `speech-to-text-autoscaler` будут развернуты в кластере Kubernetes. | `true` |
-| `service.podDisruption.enabled` | Ли [бюджета перебоев в работе Pod](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/) включен. Если `true`, `speech-to-text-poddisruptionbudget` будут развернуты в кластере Kubernetes. | `true` |
+| `enabled` | Включена ли служба **распознавания речи в текст** . | `false` |
+| `numberOfConcurrentRequest` | Количество одновременных запросов для службы преобразования **речи в текст** . Эта диаграмма автоматически вычисляет ресурсы ЦП и памяти на основе этого значения. | `2` |
+| `optimizeForAudioFile`| Должна ли служба оптимизировать входные данные с помощью звуковых файлов. Если `true`значение равно, эта диаграмма будет выделять больше ресурсов ЦП для службы. | `false` |
+| `image.registry`| Реестр образа DOCKER **для преобразования речи в текст** . | `containerpreview.azurecr.io` |
+| `image.repository` | Репозиторий образов DOCKER **для преобразования речи в текст** . | `microsoft/cognitive-services-speech-to-text` |
+| `image.tag` | Тег образа DOCKER **для преобразования речи в текст** . | `latest` |
+| `image.pullSecrets` | Секреты образа для получения образа DOCKER для преобразования **речи в текст** . | |
+| `image.pullByHash`| Указывает, извлекается ли образ DOCKER по хэшу. Если `true`значение—является обязательным.`image.hash` | `false` |
+| `image.hash`| Хэш образа DOCKER **для преобразования речи в текст** . Используется, только `image.pullByHash: true`если.  | |
+| `image.args.eula`необходимости | Указывает, что вы приняли условия лицензии. Единственное допустимое значение:`accept` | |
+| `image.args.billing`необходимости | Значение URI конечной точки выставления счетов доступно на странице обзора речи портал Azure. | |
+| `image.args.apikey`необходимости | Используется для отслеживания данных для выставлении счетов. ||
+| `service.type` | Тип службы Kubernetes для службы преобразования **речи в текст** . Дополнительные сведения и проверка поддержки поставщика облачных служб см. в инструкциях по [типам службы Kubernetes](https://kubernetes.io/docs/concepts/services-networking/service/) . | `LoadBalancer` |
+| `service.port`|  Порт службы преобразования **речи в текст** . | `80` |
+| `service.autoScaler.enabled` | Включен ли [Горизонтальный Автомасштабирование Pod](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) . Если `true`значение равно `speech-to-text-autoscaler` , то будет развернут в кластере Kubernetes. | `true` |
+| `service.podDisruption.enabled` | Включен ли [бюджет на прерывание Pod](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/) . Если `true`значение равно `speech-to-text-poddisruptionbudget` , то будет развернут в кластере Kubernetes. | `true` |

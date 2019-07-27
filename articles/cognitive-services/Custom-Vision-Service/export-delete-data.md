@@ -1,6 +1,6 @@
 ---
 title: Экспорт и удаление данных — пользовательская служба визуального распознавания
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Узнайте, как экспортировать и удалять данные в пользовательской службе визуального распознавания.
 services: cognitive-services
 author: PatrickFarley
@@ -10,22 +10,22 @@ ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: pafarley
-ms.openlocfilehash: e662e61a9df45cf3d57d5698337a26b7b8fc55a3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b885f359d9416fbc5f778b094610260342a75f65
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60605473"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564221"
 ---
 # <a name="export-or-delete-user-data-in-custom-vision"></a>Экспорт и удаление данных пользователя в Пользовательской службе визуального распознавания
 
-Custom Vision собирает данные пользователя для работы службы, но у клиента есть полный контроль над Просмотр, экспорт и удаление своих данных с помощью Custom Vision [API-интерфейсы обучения](https://go.microsoft.com/fwlink/?linkid=865446).
+Пользовательское визуальное распознавание собирает данные пользователя для работы со службой, но клиенты имеют полный контроль над просмотром, экспортом и удалением данных с помощью [API](https://go.microsoft.com/fwlink/?linkid=865446)-интерфейсов для обучения пользовательское визуальное распознавание.
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
 
-Чтобы узнать, как экспортировать и удалять данные пользователей в Custom Vision, см. в разделе ниже.
+Сведения о том, как экспортировать и удалять данные пользователей в Пользовательское визуальное распознавание, см. в следующей таблице.
 
-| Данные | Операция экспорта | Операция удаления. |
+| Data | Операция экспорта | Операция удаления |
 | ---- | ---------------- | ---------------- |
 | Сведения об учетной записи (ключи подписки) | [GetAccountInfo](https://go.microsoft.com/fwlink/?linkid=865446) | Удаляются с помощью портала Azure (подписки Azure) или с помощью кнопки "Удалить учетную запись" на странице параметров CustomVision.ai (подписки учетной записи Майкрософт) | 
 | Сведения об итерациях | [GetIteration](https://go.microsoft.com/fwlink/?linkid=865446) | [DeleteIteration](https://go.microsoft.com/fwlink/?linkid=865446) |

@@ -1,6 +1,6 @@
 ---
-title: Параметры контейнера Docker
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Параметры контейнера DOCKER — LUIS
+titleSuffix: Azure Cognitive Services
 description: Среда выполнения контейнера LUIS настраивается с помощью аргументов команды `docker run`. LUIS поддерживает несколько обязательных и несколько необязательных параметров.
 services: cognitive-services
 author: IEvangelist
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 06/11/2019
 ms.author: dapine
-ms.openlocfilehash: 7858d94b6e2a9ef07da9121cb84ffaf6adaa24d3
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: e6a13688bba1c3a0e62e427e078e78c8f8dd4e70
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360543"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560615"
 ---
 # <a name="configure-language-understanding-docker-containers"></a>Настройка контейнеров Docker Интеллектуальной службы распознавания речи 
 
@@ -26,7 +26,7 @@ ms.locfileid: "68360543"
 
 К контейнеру применяются следующие параметры конфигурации.
 
-|Обязательно для заполнения|Параметр|Цель|
+|Обязательное значение|Параметр|Цель|
 |--|--|--|
 |Да|[ApiKey](#apikey-setting)|Используется для отслеживания данных для выставлении счетов.|
 |Нет|[ApplicationInsights](#applicationinsights-setting)|Позволяет добавить в контейнер поддержку телеметрии [Azure Application Insights](https://docs.microsoft.com/azure/application-insights).|
@@ -67,9 +67,9 @@ ms.locfileid: "68360543"
 Не забудьте включить `luis/v2.0` в URL-адрес маршрутизацию, как показано в следующей таблице.
 
 
-|Обязательно для заполнения| ИМЯ | Тип данных | Описание |
+|Обязательное значение| Имя | Тип данных | Описание |
 |--|------|-----------|-------------|
-|Да| `Billing` | Строка, | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/luis/v2.0` |
+|Да| `Billing` | Строковое | URI конечной точки выставления счетов<br><br>Пример<br>`Billing=https://westus.api.cognitive.microsoft.com/luis/v2.0` |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -97,10 +97,10 @@ ms.locfileid: "68360543"
 
 В следующей таблице описаны поддерживаемые параметры.
 
-|Обязательно для заполнения| Имя | Тип данных | Описание |
+|Обязательное значение| Имя | Тип данных | Описание |
 |-------|------|-----------|-------------|
-|Да| `Input` | Строка, | Цель входного подключения. Значение по умолчанию — `/input`. Это расположение файлов из пакета LUIS. <br><br>Пример:<br>`--mount type=bind,src=c:\input,target=/input`|
-|Нет| `Output` | Строка, | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда относятся журналы запросов LUIS и журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Да| `Input` | Строковое | Цель входного подключения. Значение по умолчанию — `/input`. Это расположение файлов из пакета LUIS. <br><br>Пример<br>`--mount type=bind,src=c:\input,target=/input`|
+|Нет| `Output` | Строковое | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда относятся журналы запросов LUIS и журналы контейнера. <br><br>Пример<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run
 
@@ -114,7 +114,7 @@ ms.locfileid: "68360543"
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
-| Placeholder | Значение | Формат или пример |
+| Местозаполнитель | Значение | Формат или пример |
 |-------------|-------|---|
 |{API_KEY} | Ключ конечной точки обученного приложения LUIS. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
 |{ENDPOINT_URL} | Значение конечной точки выставления счетов доступно на странице `Cognitive Services` обзора Azure. |https://westus.api.cognitive.microsoft.com/luis/v2.0|

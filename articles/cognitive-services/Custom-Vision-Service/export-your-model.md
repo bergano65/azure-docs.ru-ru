@@ -1,6 +1,6 @@
 ---
 title: Экспорт модели в мобильные приложения — пользовательская служба визуального распознавания
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Узнайте, как экспортировать модель для использования при создании мобильных приложений.
 services: cognitive-services
 author: anrothMSFT
@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: anroth
-ms.openlocfilehash: 7bf8217f5076c0a95d4db6c1c7cbea7bc93b91f3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 554a392a7f815a6e646927f137b1e6c2856099bd
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65550536"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561077"
 ---
 # <a name="export-your-model-for-use-with-mobile-devices"></a>Экспорт модели для использования на мобильных устройствах
 
@@ -67,12 +67,12 @@ ms.locfileid: "65550536"
 
 2. Выберите формат экспорта, а затем выберите __Export__ (Экспорт), чтобы скачать модель.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Интегрируйте экспортированного модели в приложение путем просмотра одного из следующих статей или примеры:
+Интегрируйте экспортированную модель в приложение, изучив одну из следующих статей или примеров:
 
-* [Использовать модель Tensorflow с Python](export-model-python.md)
-* [Использование модели ONNX с помощью машинного обучения Windows](custom-vision-onnx-windows-ml.md)
-* Ознакомьтесь с примером для [модели CoreML в приложении iOS](https://go.microsoft.com/fwlink/?linkid=857726) для классификации изображений в режиме реального времени с помощью Swift.
-* Ознакомьтесь с примером для [модели Tensorflow в приложении Android](https://github.com/Azure-Samples/cognitive-services-android-customvision-sample) для классификации изображений в режиме реального времени на устройстве Android.
-* Ознакомьтесь с примером для [CoreML модели с помощью Xamarin](https://github.com/xamarin/ios-samples/tree/master/ios11/CoreMLAzureModel) для классификации изображений в режиме реального времени в приложении Xamarin iOS.
+* [Использование модели Tensorflow с Python](export-model-python.md)
+* [Использование модели ONNX с Windows Машинное обучение](custom-vision-onnx-windows-ml.md)
+* См. пример [модели CoreML в приложении iOS](https://go.microsoft.com/fwlink/?linkid=857726) для классификации изображений в режиме реального времени с помощью SWIFT.
+* См. пример [модели Tensorflow в приложении Android](https://github.com/Azure-Samples/cognitive-services-android-customvision-sample) для классификации образов в режиме реального времени в Android.
+* См. пример [модели CoreML с Xamarin](https://github.com/xamarin/ios-samples/tree/master/ios11/CoreMLAzureModel) для классификации изображений в реальном времени в приложении Xamarin iOS.

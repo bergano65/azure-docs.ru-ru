@@ -1,6 +1,6 @@
 ---
-title: Предварительно созданные сущности phonenumber
-titleSuffix: Azure
+title: Предварительно созданные сущности с номером телефона — LUIS
+titleSuffix: Azure Cognitive Services
 description: В этой статье описана готовая сущность phonenumber в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
@@ -11,22 +11,22 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: 43d0b855c25ed10b074d99b247ee56dc2ba7769b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a640412fb98fb1d4215bd34c205d4fba253cd7e0
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65146174"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560166"
 ---
-# <a name="phone-number-prebuilt-entity-for-a-luis-app"></a>Телефонный номер предварительно созданные сущности для приложения LUIS
+# <a name="phone-number-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность номера телефона для приложения LUIS
 Сущность `phonenumber` извлекает различные номера телефонов, в том числе код страны. Так как эта сущность уже обучена, добавлять в приложение примеры фраз не нужно. Сущность `phonenumber` поддерживается только в языке `en-us`. 
 
-## <a name="types-of-a-phone-number"></a>Типы телефонного номера
-`Phonenumber` управляется из [средства распознавания текста](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/Base-PhoneNumbers.yaml) репозитория GitHub
+## <a name="types-of-a-phone-number"></a>Типы телефонных номеров
+`Phonenumber`управляется из репозитория [распознаваемого текста](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/Base-PhoneNumbers.yaml) GitHub
 
-## <a name="resolution-for-this-prebuilt-entity"></a>Разрешения для этого готовые сущности
+## <a name="resolution-for-this-prebuilt-entity"></a>Разрешение для этой предварительно созданной сущности
 
-### <a name="api-version-2x"></a>API версии 2.x
+### <a name="api-version-2x"></a>API версии 2. x
 
 В следующем примере показано разрешение сущности **builtin.phonenumber**.
 
@@ -58,9 +58,9 @@ ms.locfileid: "65146174"
 }
 ```
 
-### <a name="preview-api-version-3x"></a>Предварительная версия API 3.x
+### <a name="preview-api-version-3x"></a>Предварительная версия API версии 3. x
 
-Приведенный ниже код JSON является с `verbose` параметру присвоить `false`:
+Следующий код JSON имеет `verbose` параметр со `false`значением:
 
 ```json
 {
@@ -82,7 +82,7 @@ ms.locfileid: "65146174"
 }
 ```
 
-Приведенный ниже код JSON является с `verbose` параметру присвоить `true`:
+Следующий код JSON имеет `verbose` параметр со `true`значением:
 
 ```json
 {
@@ -117,6 +117,6 @@ ms.locfileid: "65146174"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о сущностях [percentage](luis-reference-prebuilt-percentage.md), [number](luis-reference-prebuilt-number.md) и [temperature](luis-reference-prebuilt-temperature.md). 

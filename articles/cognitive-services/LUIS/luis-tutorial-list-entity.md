@@ -1,21 +1,21 @@
 ---
-title: Сущности точного совпадения текста
+title: Сущности екстакт Text Match-LUIS
+titleSuffix: Azure Cognitive Services
 description: Узнайте, как добавить сущность списка, чтобы помочь LUIS присвоить метки вариантам слов или фраз.
 services: cognitive-services
 author: diberry
-titleSuffix: Azure
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: 929dc7a86d141446a2070b046c6febfda4a07f0f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 60364e864a8b35cf5f39bb8c0a0f86ae611a3c70
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62117454"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563248"
 ---
 # <a name="use-a-list-entity-to-increase-entity-detection"></a>Использование сущности списка, чтобы увеличить обнаружение сущностей 
 В этом руководстве показано, как использовать [сущность списка](luis-concept-entity-types.md), чтобы увеличить обнаружение сущностей. Сущности списков не обязательно должны быть помечены как они точно соответствуют терминам.  
@@ -27,7 +27,7 @@ ms.locfileid: "62117454"
 > * Добавлять нормализованные значения и синонимы
 > * Проверять идентификацию улучшенной сущности
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 > [!div class="checklist"]
 > * [Node.js](https://nodejs.org) последней версии
@@ -218,6 +218,6 @@ node train.js
 |2|подать тепло|тепло| DevicesList |Терморегулятор|
 |3|охладить|охладитель|DevicesList|Терморегулятор|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Можно создать другую сущность списка для расширения расположения устройств в комнатах, этажах или зданиях. 

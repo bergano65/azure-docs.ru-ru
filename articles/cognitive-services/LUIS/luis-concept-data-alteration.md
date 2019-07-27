@@ -1,6 +1,6 @@
 ---
-title: Изменение данных
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Изменение данных — LUIS
+titleSuffix: Azure Cognitive Services
 description: Узнайте, как изменить данные перед прогнозированием в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: 0648dd9bc93097d3c2433943f983b5e9d22f0279
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 67b56f09663aca35ed0843f50e2420b531c82833
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66473503"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560823"
 ---
 # <a name="alter-utterance-data-before-or-during-prediction"></a>Изменение данных высказываний до или во время прогнозирования
 LUIS предоставляет способы управления высказыванием до или во время прогнозирования. К ним относятся исправление орфографических ошибок или ошибок с часовым поясом для предварительно созданной сущности datetimeV2. 
@@ -32,7 +32,7 @@ LUIS предоставляет способы управления высказ
 
 |Параметр|Значение|
 |--|--|
-|`spellCheck`|Логическое|
+|`spellCheck`|Логический|
 |`bing-spell-check-subscription-key`|Ключ конечной точки [API проверки орфографии Bing версии 7](https://azure.microsoft.com/services/cognitive-services/spell-check/)|
 
 Когда [API проверки орфографии Bing версии 7](https://azure.microsoft.com/services/cognitive-services/spell-check/) обнаруживает ошибку, из конечной точки возвращаются исходное выражение, исправленное выражение и прогнозирование.
@@ -90,7 +90,7 @@ DateTime cstDatetime = TimeZoneInfo.ConvertTimeFromUtc(utcDatetime, targetZone);
 int timezoneOffset = (int)((cstDatetime - utcDatetime).TotalMinutes);
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Исправление орфографических ошибок с помощью этого руководства](luis-tutorial-bing-spellcheck.md)

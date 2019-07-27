@@ -1,6 +1,6 @@
 ---
-title: контейнеры Docker;
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Контейнеры DOCKER — LUIS
+titleSuffix: Azure Cognitive Services
 description: Контейнер LUIS загружает обученное или опубликованное приложение в контейнер Docker и предоставляет доступ к прогнозам запросов из конечных точек API контейнера.
 services: cognitive-services
 author: IEvangelist
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 07/02/2019
 ms.author: dapine
-ms.openlocfilehash: ae2f24c83cb0de054cc97bf0be8ada35a568ad82
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 2b87f9bcbaa0fd9d8a23d774e0765e1eb5b56633
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360547"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563904"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
@@ -28,11 +28,11 @@ ms.locfileid: "68360547"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для запуска контейнера LUIS требуется следующее: 
 
-|Обязательно для заполнения|Цель|
+|Обязательное значение|Цель|
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
@@ -53,7 +53,7 @@ ms.locfileid: "68360547"
 
 Этот контейнер поддерживает минимальные и рекомендуемые значения для параметров:
 
-|Контейнер| Минимальная | Рекомендуется | ПЛАТЫ<br>(Минимум, максимум)|
+|Контейнер| Минимум | Рекомендуется | ПЛАТЫ<br>(Минимум, максимум)|
 |-----------|---------|-------------|--|
 |LUIS|1 ядро, 2 ГБ памяти|1 ядро, 4 ГБ памяти|20, 40|
 
@@ -109,8 +109,8 @@ docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 |Тип пакета|Запрос API конечной точки|Запрос доступности|Формат имени файла пакета|
 |--|--|--|--|
 |Обучение пройдено|Get, Post|Только контейнер|`{APPLICATION_ID}_v{APPLICATION_VERSION}.gz`|
-|Промежуточная|Get, Post|Azure и контейнер|`{APPLICATION_ID}_STAGING.gz`|
-|Производство|Get, Post|Azure и контейнер|`{APPLICATION_ID}_PRODUCTION.gz`|
+|Промежуточное хранение|Get, Post|Azure и контейнер|`{APPLICATION_ID}_STAGING.gz`|
+|Рабочая среда|Get, Post|Azure и контейнер|`{APPLICATION_ID}_PRODUCTION.gz`|
 
 > [!IMPORTANT]
 > Не переименовывайте, не изменяйте, перезаписывают или распаковывает файлы пакетов LUIS.
@@ -119,7 +119,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 
 Перед упаковкой приложения LUIS потребуется следующее:
 
-|Требования к упаковке|Сведения|
+|Требования к упаковке|Подробнее|
 |--|--|
 |Экземпляр ресурса _Cognitive Services_ Azure|Поддерживаемые регионы:<br><br>Западная часть США (```westus```)<br>Западная Европа (```westeurope```)<br>Восточная Австралия (```australiaeast```)|
 |Обученное или опубликованное приложение LUIS|Без [неподдерживаемых зависимостей](#unsupported-dependencies). |
@@ -168,7 +168,7 @@ Host: {AZURE_REGION}.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 ```
 
-| Placeholder | Значение |
+| Местозаполнитель | Значение |
 |-------------|-------|
 |{APPLICATION_ID} | Идентификатор опубликованного приложения LUIS. |
 |{APPLICATION_ENVIRONMENT} | Среда опубликованного приложения LUIS. Используйте одно из следующих значений:<br/>```PRODUCTION```<br/>```STAGING``` |
@@ -187,7 +187,7 @@ Host: {AZURE_REGION}.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 ```
 
-| Placeholder | Значение |
+| Местозаполнитель | Значение |
 |-------------|-------|
 |{APPLICATION_ID} | Идентификатор обученного приложения LUIS. |
 |{APPLICATION_VERSION} | Версия обученного приложения LUIS. |
@@ -200,7 +200,7 @@ Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 
 Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. В команде используются следующие параметры:
 
-| Placeholder | Значение |
+| Местозаполнитель | Значение |
 |-------------|-------|
 |{API_KEY} | Этот ключ используется для запуска контейнера. Не используйте ключ starter. |
 |{ENDPOINT_URI} | Значение конечной точки доступно на странице `Cognitive Services` обзора портал Azure. |
@@ -250,7 +250,7 @@ ApiKey={API_KEY}
 
 Используйте узел `https://localhost:5000` для API контейнера. 
 
-|Тип пакета|Метод|Маршрутизация|Параметры запроса|
+|Тип пакета|Метод|Маршрут|Параметры запроса|
 |--|--|--|--|
 |Опубликовано|[Get](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee78), [Post](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee79)|/luis/v2.0/apps/{appId}?|q={q}<br>&staging<br>[&timezoneOffset]<br>[&verbose]<br>[&log]<br>|
 |Обучение пройдено|Get, Post|/luis/v2.0/apps/{appId}/versions/{versionId}?|q={q}<br>[&timezoneOffset]<br>[&verbose]<br>[&log]|
@@ -260,7 +260,7 @@ ApiKey={API_KEY}
 |Параметр запроса|Тип|Цель|
 |--|--|--|
 |`q`|строка|Фраза пользователя.|
-|`timezoneOffset`|number|Параметр timezoneOffset позволяет [изменить часовой пояс](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity), используемый предварительно созданной сущностью datetimeV2.|
+|`timezoneOffset`|номер|Параметр timezoneOffset позволяет [изменить часовой пояс](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity), используемый предварительно созданной сущностью datetimeV2.|
 |`verbose`|Логический|Возвращает все намерения и их оценки, если задано значение true. По умолчанию задано значение false, при котором возвращается только верхнее намерение.|
 |`staging`|Логический|Возвращает запрос из результатов промежуточной среды, если задано значение true. |
 |`log`|Логический|Записывает запросы в журнал, который затем можно использовать для [активного обучения](luis-how-to-review-endpoint-utterances.md). Значение по умолчанию — true.|
@@ -339,13 +339,13 @@ curl -X GET \
 
 Приложение LUIS можно использовать, если оно **не содержит** следующие зависимости:
 
-Неподдерживаемые конфигурации приложения|Сведения|
+Неподдерживаемые конфигурации приложения|Подробнее|
 |--|--|
 |Неподдерживаемые языки и региональные параметры контейнеров| Нидерландский (nl-NL)<br>Японский (ja-JP)<br>Немецкий поддерживается только с помощью подсчета [1.0.2](luis-language-support.md#custom-tokenizer-versions).|
 |Неподдерживаемые сущности для всех языков и региональных параметров|Предварительно созданная сущность [KeyPhrase](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-keyphrase) для всех языков и региональных параметров|
 |Неподдерживаемые сущности для языка и региональных параметров "Английский (en-US)"|Предварительно созданные сущности [GeographyV2](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-geographyv2)|
 |Подготовка речи|Внешние зависимости не поддерживаются в контейнере.|
-|Анализ мнений|Внешние зависимости не поддерживаются в контейнере.|
+|Анализ тональности|Внешние зависимости не поддерживаются в контейнере.|
 
 <!--blogs/samples/video courses -->
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]

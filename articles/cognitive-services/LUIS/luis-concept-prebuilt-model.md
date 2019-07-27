@@ -1,6 +1,6 @@
 ---
-title: Предварительно созданные модели
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Предварительно созданные модели — LUIS
+titleSuffix: Azure Cognitive Services
 description: Предварительно созданные модели предусмотрены для предметных областей, намерений, фраз и сущностей. Вы можете запустить приложение с предварительно созданной предметной областью или добавить соответствующую предметную область в приложение позднее.
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/24/2019
 ms.author: diberry
-ms.openlocfilehash: 5d2ea9d971eff22ddeed4122c9697ca3096697b0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: be0ac73b1e225612fedb93c59a90380d67c6de92
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60813880"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560708"
 ---
 # <a name="prebuilt-domain-intent-and-entity-models"></a>Предварительно созданные модели предметной области, намерения и сущности
 
@@ -63,6 +63,6 @@ ms.locfileid: "60813880"
 > [!NOTE]
 > Сущность **builtin.datetime** не рекомендуется. Она заменяется на [**builtin.datetimeV2**](luis-reference-prebuilt-datetimev2.md), которая обеспечивает распознавание диапазонов дат и времени, а также улучшенное распознавание неоднозначных дат и времени.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте, как [добавить предварительно созданные сущности](luis-prebuilt-entities.md) в приложение.

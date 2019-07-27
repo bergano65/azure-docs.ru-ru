@@ -1,6 +1,6 @@
 ---
-title: Список типов сущностей
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Тип сущности List — LUIS
+titleSuffix: Azure Cognitive Services
 description: Сущности списка представляют фиксированный, закрытый набор связанных слов вместе с их синонимами. LUIS не обнаруживает дополнительные значения для сущностей списка. Используйте функцию "рекомендовать", чтобы просмотреть предложения для новых слов на основе текущего списка.
 services: cognitive-services
 author: diberry
@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 07/24/2019
 ms.author: diberry
-ms.openlocfilehash: c278a72327d476be8963b10db5e8231b6d859a4a
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: ca9f8b570ee28b1913c8ec81c66a5b70827c04d6
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68480190"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68559950"
 ---
 # <a name="list-entity"></a>Сущность списка 
 

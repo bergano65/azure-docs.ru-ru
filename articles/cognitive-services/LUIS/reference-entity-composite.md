@@ -1,6 +1,6 @@
 ---
-title: Тип составной сущности
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Составной объект типа-LUIS
+titleSuffix: Azure Cognitive Services
 description: Составная сущность состоит из других сущностей, например готовых сущностей, простых, регулярных выражений и сущностей списка. Эти отдельные сущности формируют единую сущность.
 services: cognitive-services
 author: diberry
@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 07/24/2019
 ms.author: diberry
-ms.openlocfilehash: 55dcc5666e63b8a87ddcb13696991fe02843fbbd
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: ea258275cf954bc6e06da03324c2ae93de0e7fde
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68480157"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563237"
 ---
 # <a name="composite-entity"></a>Составная сущность 
 

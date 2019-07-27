@@ -1,5 +1,5 @@
 ---
-title: Сведения о пакете SDK службы "Речь" — служба "Речь"
+title: О пакете SDK для распознавания речи — речевая служба
 titleSuffix: Azure Cognitive Services
 description: Пакет средств разработки программного обеспечения (SDK) для службы "Речь" предоставляет приложениям встроенный доступ к функциям службы "Речь", что облегчает разработку программного обеспечения. Эта статья содержит дополнительные сведения о пакете SDK для Windows, Linux и Android.
 services: cognitive-services
@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: wolfma
-ms.openlocfilehash: 120dd4a6a342732f3e07d87786009779d23be829
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: c5e12812a4305493be2cdc234946796b21dd26d8
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606424"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68558932"
 ---
 # <a name="about-the-speech-sdk"></a>Сведения о пакете SDK службы "Речь"
 
-Речи Software Development Kit (SDK) предоставляет приложениям получать доступ к функциям служб речи, облегчая процесс разработки программного обеспечения с поддержкой речевых функций. В настоящее время пакеты SDK предоставляют доступ к **речи в текст**, **преобразования текста в речь**, **перевода речи**, **распознавание сути высказывания**, и **Канала прямой линии речи bot Framework**. Общие сведения о возможностях и поддерживаемых платформ можно найти в документации по [страницы записи](https://aka.ms/csspeech).
+Пакет средств разработки речевых программ (SDK) предоставляет приложениям доступ к функциям речевых служб, что упрощает разработку программ с поддержкой речи. В настоящее время пакеты SDK предоставляют доступ к речевым трансляциям, преобразованию **текста в речь**, **распознаванию** **речи**и каналу **голосовой речи прямой линии**. Общий обзор возможностей и поддерживаемых платформ можно найти на [странице записи](https://aka.ms/csspeech)документации.
 
 [!INCLUDE [Speech SDK Platforms](../../../includes/cognitive-services-speech-service-speech-sdk-platforms.md)]
 
@@ -38,9 +38,9 @@ ms.locfileid: "67606424"
 ### <a name="linux"></a>Linux
 
 > [!NOTE]
-> Сейчас поддерживается только Ubuntu 16.04, Ubuntu 18.04 и Debian 9 на ПК (x86 или x64 для C++ разработки и x64 для .NET Core, Java и Python).
+> Сейчас мы поддерживаем только Ubuntu 16,04, Ubuntu 18,04 и Debian 9 на ПК (x86 или x64 для C++ разработки и x64 для .NET Core, Java и Python).
 
-Убедитесь, что у вас есть необходимые библиотеки, установку, выполнив следующие команды оболочки:
+Убедитесь, что установлены необходимые библиотеки, выполнив следующие команды оболочки:
 
 Для Ubuntu.
 
@@ -98,7 +98,7 @@ sudo apt-get install libssl1.0.2 libasound2
 
 [!INCLUDE [Get the samples](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 * [Распознавание речи в C#](quickstart-csharp-dotnet-windows.md)

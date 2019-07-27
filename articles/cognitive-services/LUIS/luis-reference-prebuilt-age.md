@@ -1,6 +1,6 @@
 ---
-title: Предварительно созданная сущность age
-titleSuffix: Azure
+title: Предварительно созданная сущность Age — LUIS
+titleSuffix: Azure Cognitive Services
 description: В этой статье описана готовая сущность age в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: b8239688000f0ce32ca2c2be054b1443bbb698b5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 77290790342c1159eca049108e1c9fadd5d4bbf3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65069133"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560296"
 ---
 # <a name="age-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность age для приложения LUIS
 Предварительно созданная сущность age фиксирует значение возраста как в цифровом выражении, так и в виде количества дней, недель, месяцев или лет. Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие сущности age, не нужно. Сущность age поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md). 
@@ -26,7 +26,7 @@ ms.locfileid: "65069133"
 
 ## <a name="resolution-for-prebuilt-age-entity"></a>Разрешение для предварительно созданной сущности age
 
-### <a name="api-version-2x"></a>API версии 2.x
+### <a name="api-version-2x"></a>API версии 2. x
 
 В следующем примере показано разрешение сущности **builtin.age**.
 
@@ -52,9 +52,9 @@ ms.locfileid: "65069133"
 }
 ```
 
-### <a name="preview-api-version-3x"></a>Предварительная версия API 3.x
+### <a name="preview-api-version-3x"></a>Предварительная версия API версии 3. x
 
-Приведенный ниже код JSON является с `verbose` параметру присвоить `false`:
+Следующий код JSON имеет `verbose` параметр со `false`значением:
 
 ```json
 {
@@ -79,7 +79,7 @@ ms.locfileid: "65069133"
 }
 ```
 
-Приведенный ниже код JSON является с `verbose` параметру присвоить `true`:
+Следующий код JSON имеет `verbose` параметр со `true`значением:
 
 ```json
 {
@@ -116,6 +116,6 @@ ms.locfileid: "65069133"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 См. дополнительные сведения о сущностях [currency](luis-reference-prebuilt-currency.md), [datetimeV2](luis-reference-prebuilt-datetimev2.md) и [dimension](luis-reference-prebuilt-dimension.md). 

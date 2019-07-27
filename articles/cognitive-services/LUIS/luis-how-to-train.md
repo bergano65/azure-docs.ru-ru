@@ -1,6 +1,6 @@
 ---
-title: Обучать приложения
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Обучение App-LUIS
+titleSuffix: Azure Cognitive Services
 description: Обучение версии приложения Интеллектуальной службы распознавания речи (LUIS) позволяет улучшить распознавание естественного языка. Следует обучать приложение LUIS после обновления модели, например добавления, изменения, пометки или удаления сущностей, намерений или фраз.
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 04/07/2019
 ms.author: diberry
-ms.openlocfilehash: ba0db22437961a33b0b415ec7cb60ad3df12821c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 70c29769da2ec092b2b27b83f2f83200d4e727af
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60195863"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560359"
 ---
 # <a name="train-your-active-version-of-the-luis-app"></a>Обучение активной версии приложения LUIS 
 
@@ -44,9 +44,9 @@ When you train a LUIS app by example, LUIS generalizes from the examples you hav
 >[!NOTE]
 >Если в приложении есть одно или несколько намерений, которые не содержат примеров фраз, такое приложение обучить нельзя. Добавьте фразы для всех намерений. Дополнительные сведения см. в статье о [добавлении примеров фраз](luis-how-to-add-example-utterances.md).
 
-## <a name="training-date-and-time"></a>Обучение даты и времени
+## <a name="training-date-and-time"></a>Дата и время обучения
 
-Обучение даты и времени — GMT + 2. 
+Дата и время обучения — GMT + 2. 
 
 ## <a name="train-with-all-data"></a>Обучение на основе всех данных
 
@@ -62,7 +62,7 @@ When you train a LUIS app by example, LUIS generalizes from the examples you hav
 
 Чтобы узнать о завершении обучения, необходимо выполнять опрос состояния до тех пор, пока все модели не будут успешно обучены. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Label suggested utterances with LUIS](luis-how-to-review-endpoint-utterances.md) (Добавление меток к предлагаемым фразам в LUIS) 
 * [Use features to improve your LUIS app's performance](luis-how-to-add-features.md) (Использование функций для повышения производительности приложения LUIS) 

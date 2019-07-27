@@ -1,6 +1,6 @@
 ---
-title: Установка и запуск контейнеров
-titlesuffix: Face - Azure Cognitive Services
+title: Установка и запуск контейнеров — API распознавания лиц
+titleSuffix: Azure Cognitive Services
 description: Загрузка, установка и запуск контейнеров для лиц в этом пошаговом руководстве.
 services: cognitive-services
 author: IEvangelist
@@ -11,12 +11,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: f4abf17c774fb75a0314c8890f5f4383058e37fd
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 93a6d0a42d6d7f07dd8947ce9f8ae99a39d44475
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68321384"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564148"
 ---
 # <a name="install-and-run-face-containers"></a>Установка и запуск контейнеров лиц
 
@@ -24,11 +24,11 @@ ms.locfileid: "68321384"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем использовать контейнеры API распознавания лиц, необходимо выполнить следующие предварительные требования.
 
-|Обязательно для заполнения|Цель|
+|Обязательное значение|Цель|
 |--|--|
 |Модуль Docker| Подсистема DOCKER должна быть установлена на [главном компьютере](#the-host-computer). Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> В Windows DOCKER также должен быть настроен для поддержки контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Вам потребуется базовое понимание концепций DOCKER, таких как реестры, репозитории, контейнеры и образы контейнеров. Также необходимо знание основных `docker` команд.| 
@@ -46,7 +46,7 @@ ms.locfileid: "68321384"
 
 В следующей таблице описаны минимальное и рекомендуемое число ядра ЦП и памяти для каждого контейнера API распознавания лиц.
 
-| Контейнер | Минимальная | Рекомендуется | Транзакций в секунду<br>(Минимум, максимум)|
+| Контейнер | Минимум | Рекомендуется | Транзакций в секунду<br>(Минимум, максимум)|
 |-----------|---------|-------------|--|
 |Распознавание лиц | 1 ядро, 2 ГБ памяти | 1 ядро, 4 ГБ памяти |10, 20|
 
@@ -82,7 +82,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-face:latest
 
 Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска любого из трех контейнеров. Команда использует следующие параметры.
 
-| Placeholder | Значение |
+| Местозаполнитель | Значение |
 |-------------|-------|
 |{API_KEY} | Этот ключ используется для запуска контейнера и доступен на странице `Cognitive Services` **ключей** Azure. |
 |{ENDPOINT_URI} | Значение URI конечной точки выставления счетов доступно на странице `Cognitive Services` **обзора** Azure. Например, `https://westus.api.cognitive.microsoft.com/face/v1.0`.|

@@ -1,6 +1,6 @@
 ---
-title: Разработка итеративного приложения
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Разработка итеративных приложений — LUIS
+titleSuffix: Azure Cognitive Services
 description: LUIS лучше всего обучается на итеративных циклах изменения моделей, примерах высказываний, публикации содержимого и сборе данных из запросов к конечным точкам.
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: diberry
-ms.openlocfilehash: 67bcb33727bc808f5e5bea701daffc77dde736ff
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7ecc595a398ce7d18fbc708a1de175fe4aa22177
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60813765"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564053"
 ---
 # <a name="authoring-cycle-for-your-luis-app"></a>Цикл разработки приложения LUIS
 LUIS лучше всего обучается на итеративных циклах изменения моделей, примерах высказываний, публикации содержимого и сборе данных из запросов к конечным точкам. 
@@ -47,6 +47,6 @@ LUIS лучше всего обучается на итеративных цик
 ## <a name="batch-testing"></a>Пакетное тестирование
 Пакетное тестирование позволяет узнать, сколько примеров высказывания получили оценку LUIS. Примеры должны быть новыми для LUIS, в них должны быть правильно помечены намерения и сущности, которые требуется найти LUIS. Из результатов теста можно узнать, насколько успешно LUIS будет работать с этим набором высказываний. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте о принципах [совместной работы](luis-concept-collaborator.md).

@@ -1,7 +1,7 @@
 ---
 title: Внешнее содержимое и материалы сообщества для API анализа текста
 titleSuffix: Azure Cognitive Services
-description: Блоги партнеров, видео на YouTube, учебные материалы по API анализа текста Microsoft Cognitive Services в Azure.
+description: Блоги партнеров, видео YouTube, обучение для Azure Cognitive Services API анализа текста.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: aahi
-ms.openlocfilehash: b46acb2f0fe04c37e73a69a09ee6ede9110864ca
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 51263af978ed599d7a7b8a2159c0c9c3c25b33a0
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60827941"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68558812"
 ---
 # <a name="external--community-content-for-the-text-analytics-cognitive-service"></a>Внешнее содержимое и материалы сообщества для API анализа текста (Cognitive Service)
 
@@ -43,7 +43,7 @@ ms.locfileid: "60827941"
 
 + [Анализ текста с извлечением ключевых фраз с помощью Power BI и Microsoft Cognitive Services](https://www.youtube.com/watch?v=R_-1TB2BF14)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ищете сведения о функции или примере использования, о которых мы не упомянули? Вы можете оставить запрос или участвовать в голосовании на сайте [User Voice](https://cognitive.uservoice.com/forums/555922-text-analytics). 
 

@@ -1,5 +1,5 @@
 ---
-title: Новые возможности - Language Understanding
+title: Новые возможности Language Understanding (LUIS)
 titleSuffix: Azure Cognitive Services
 description: Эта статья содержит новости о Language Understanding.
 author: diberry
@@ -11,31 +11,31 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 06/25/2019
 ms.author: diberry
-ms.openlocfilehash: 2efc48df906117a8d01ea8c309f001d2f623444f
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 63a898bd807b168ae17ec90e442c6ee6c001c715
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67485073"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68559882"
 ---
-# <a name="whats-new-in-language-understanding"></a>Новые возможности в Language Understanding
+# <a name="whats-new-in-language-understanding"></a>Новые возможности Language Understanding
 
-Узнайте о новых возможностях в службе. Эти элементы могут заметки о выпуске, видео, сообщения в блогах и другие сведения. Добавьте в закладки эту страницу, чтобы поддерживать актуальное состояние, в службе.  
+Узнайте о новых возможностях службы. Эти элементы могут выпустить заметки, видео, записи в блоге и другие типы информации. Закладка этой страницы для обновления со службой.  
 
 ## <a name="release-notes"></a>Заметки о выпуске 
 
 ### <a name="june-24-2019"></a>24 июня 2019 г.
 
-* [OrdinalV2 предварительно созданные сущности](luis-reference-prebuilt-ordinal-v2.md) поддержка упорядочения, такие как следующего, предыдущего и последнего. Английский язык и региональные параметры только.
+* [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md) предварительно созданную сущность для поддержки упорядочивания, например следующего, предыдущего и последнего. Только английский язык.
 
-### <a name="may-6-2019---build-conference"></a>6 мая 2019 г.-конференции //Build
+### <a name="may-6-2019---build-conference"></a>6 мая, 2019-//Build Конференция
 
-На конференции 2019 сборки были выпущены следующие функции:
+Следующие функции были выпущены на Конференции Build 2019:
 
-* [Предварительную версию V3 API руководство по миграции](luis-migration-api-v3.md)
-* [Улучшенные панели мониторинга](luis-how-to-use-dashboard.md)
-* [Улучшенная предварительно созданных доменов](luis-reference-prebuilt-domains.md) 
-* [Динамический список сущностей](luis-migration-api-v3.md#dynamic-lists-passed-in-at-prediction-time)
+* [Предварительная версия инструкции по миграции API V3](luis-migration-api-v3.md)
+* [Улучшенная панель мониторинга аналитики](luis-how-to-use-dashboard.md)
+* [Улучшенные предварительно созданные домены](luis-reference-prebuilt-domains.md) 
+* [Сущности динамического списка](luis-migration-api-v3.md#dynamic-lists-passed-in-at-prediction-time)
 * [Внешние сущности](luis-migration-api-v3.md#external-entities-passed-in-at-prediction-time)
 
 ## <a name="blogs"></a>Блоги
@@ -44,10 +44,10 @@ ms.locfileid: "67485073"
 
 ## <a name="videos"></a>Видео
 
-### <a name="2019-build-videos"></a>Видео с конференции build 2019 г.
+### <a name="2019-build-videos"></a>видео о сборке 2019
 
-[Как масштабируйте бизнес, для следующего поколения с помощью естественного искусственного Интеллекта Azure](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
+[Как использовать службу искусственного интеллекта Azure для масштабирования вашего бизнеса для следующего поколения](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
 
 ## <a name="service-updates"></a>Обновления службы
 
-[Об обновлении Azure для Cognitive Services](https://azure.microsoft.com/updates/?product=cognitive-services)
+[Объявления об обновлении Azure для Cognitive Services](https://azure.microsoft.com/updates/?product=cognitive-services)

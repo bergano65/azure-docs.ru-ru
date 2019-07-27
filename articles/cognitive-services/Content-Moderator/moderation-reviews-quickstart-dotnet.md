@@ -1,6 +1,6 @@
 ---
 title: Создание проверок с помощью .NET — Content Moderator
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Как создавать проверки с помощью пакета SDK Azure Content Moderator для .NET.
 services: cognitive-services
 author: sanjeev3
@@ -10,23 +10,23 @@ ms.subservice: content-moderator
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: sajagtap
-ms.openlocfilehash: 153d42bf4ce4322536d6837be3058d1f9bfb49a2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9938c79c2ba1b2f80c8f147fafe6ce79e247df43
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60607197"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564462"
 ---
-# <a name="create-human-reviews-net"></a>Создание пользовательской проверки (.NET)
+# <a name="create-human-reviews-net"></a>Создание пользовательских рецензий (.NET)
 
-Обзоры, хранения и отображения содержимого для человека модераторов для оценки. Когда пользователь завершает проверку, результаты отправляются в конечную точку заданный обратный вызов. Это руководство содержит сведения и примеры кода, которые помогут вам приступить к использованию [содержимого модератора пакет SDK для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) для:
+Проверяет хранение и отображение содержимого для оценки человеческим модератором. Когда пользователь завершает проверку, результаты отправляются в указанную конечную точку обратного вызова. Это руководство содержит сведения и примеры кода, которые помогут приступить к работе с [пакетом SDK для Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) :
 
 - создание набора проверок для модераторов-пользователей;
 - получение состояния существующих проверок для модераторов-пользователей.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
-- Войдите или создайте учетную запись на Content Moderator [средство проверки](https://contentmoderator.cognitive.microsoft.com/) сайта.
+- Войдите или создайте учетную запись на сайте [средства проверки](https://contentmoderator.cognitive.microsoft.com/) Content Moderator.
 
 ## <a name="ensure-your-api-key-can-call-the-review-api-for-review-creation"></a>Проверка, может ли ключ API вызвать API проверки для создания соответствующих заданий
 
@@ -159,7 +159,7 @@ public static class Clients
 >
 > Для ключа бесплатного уровня предусмотрен лимит в один запрос в секунду.
 
-#### <a name="add-the-following-constants-to-the-program-class-in-programcs"></a>Добавьте следующие константы для **программы** класс в файле Program.cs
+#### <a name="add-the-following-constants-to-the-program-class-in-programcs"></a>Добавьте следующие константы в класс **Program** в Program.CS
 
 ```csharp
 /// <summary>
@@ -181,7 +181,7 @@ public static class Clients
     private const string OutputFile = "OutputLog.txt";
 ```
 
-#### <a name="add-the-following-constants-and-static-fields-to-the-program-class-in-programcs"></a>Добавьте следующие константы и статические поля для **программы** класс в файле Program.cs
+#### <a name="add-the-following-constants-and-static-fields-to-the-program-class-in-programcs"></a>Добавьте следующие константы и статические поля в класс **Program** в Program.CS
 
 Измените эти значения с учетом данных своей подписки и команды.
 
@@ -238,7 +238,7 @@ private const string MetadataKey = "sc";
 private const string MetadataValue = "true";
 ```
 
-#### <a name="add-the-following-static-fields-to-the-program-class-in-programcs"></a>Добавьте следующие статические поля для **программы** класс в файле Program.cs
+#### <a name="add-the-following-static-fields-to-the-program-class-in-programcs"></a>Добавьте следующие статические поля в класс **Program** в Program.CS
 
 Эти поля используются для отслеживания состояния приложения.
 
@@ -382,7 +382,7 @@ private static void CreateReviews(ContentModeratorClient client)
 
 Добавьте следующий код в метод **Main**.
 
-Этот код моделирует многие операции, выполняемые для определения списка и управления им, а также для проверки изображений с его помощью. Средства ведения журнала позволяют просматривать созданные вызовы пакета SDK для службы содержимого mModerator объектов ответа.
+Этот код моделирует многие операции, выполняемые для определения списка и управления им, а также для проверки изображений с его помощью. Функции ведения журнала позволяют просматривать объекты ответов, формируемые пакетами SDK, в службу Content Ммодератор.
 
 ```csharp
 using (TextWriter outputWriter = new StreamWriter(OutputFile, false))
@@ -534,6 +534,6 @@ Creating reviews for the following images:
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Получить [содержимого пакета SDK для .NET Moderator](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и загрузите [решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для этого и другие краткие руководства Content Moderator для .NET и начать работу над интеграцией.
+Получите [пакет SDK для .net Content Moderator](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и скачайте [решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для этого и других Content Moderator кратких руководств по .NET, а также приступайте к интеграции.

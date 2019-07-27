@@ -1,6 +1,6 @@
 ---
-title: Совместная работа с другими пользователями
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Совместная работа с другими пользователями — LUIS
+titleSuffix: Azure Cognitive Services
 description: Владелец приложения может добавлять в приложение участников совместной работы. Они могут изменять модель, обучать и публиковать приложение.
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 02/12/2019
 ms.author: diberry
-ms.openlocfilehash: f23212a854fb37dda89fd2bf6b223cf0dc69526b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 004bb979adcc0d7ba4860a917242e2219d7f1379
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60198774"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560465"
 ---
 # <a name="how-to-manage-authors-and-collaborators"></a>Как управлять авторами и участниками совместной работы 
 

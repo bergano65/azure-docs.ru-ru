@@ -1,6 +1,6 @@
 ---
-title: Настройка контейнеров
-titlesuffix: Text Analytics - Azure Cognitive Services
+title: Настройка контейнеров — Анализ текста
+titleSuffix: Azure Cognitive Services
 description: Анализ текста предоставляет контейнер с общей платформой конфигурации, что позволяет легко настроить хранилище, ведение журнала, данные телеметрии и параметры безопасности для контейнеров, а также управлять ими.
 services: cognitive-services
 author: IEvangelist
@@ -11,12 +11,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 06/20/2019
 ms.author: dapine
-ms.openlocfilehash: 2a9b9ce5109315d940d6dcadf395489612faddec
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 65d88e6c201f633a260e31544444341e636e9941
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68356942"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68552262"
 ---
 # <a name="configure-text-analytics-docker-containers"></a>Настройка контейнеров Docker API анализа текста
 
@@ -49,9 +49,9 @@ ms.locfileid: "68356942"
 
 * Портал Azure: **Анализ текста** Общие сведения, помеченные`Endpoint`
 
-|Обязательно для заполнения| Имя | Тип данных | Описание |
+|Обязательное значение| Название | Тип данных | Описание |
 |--|------|-----------|-------------|
-|Да| `Billing` | Строка, | Требуемый URI конечной точки выставления счетов |
+|Да| `Billing` | Строковое | Требуемый URI конечной точки выставления счетов |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -77,10 +77,10 @@ ms.locfileid: "68356942"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того,расположение подключения на [главном компьютере](how-tos/text-analytics-how-to-install-containers.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположения подключения к узлу. 
 
-|Необязательно| ИМЯ | Тип данных | Описание |
+|Необязательный| Имя | Тип данных | Описание |
 |-------|------|-----------|-------------|
-|Не разрешено| `Input` | Строка, | Контейнеры API анализа текста не используют этот элемент.|
-|Необязательно| `Output` | Строка, | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Не разрешено| `Input` | Строковое | Контейнеры API анализа текста не используют этот элемент.|
+|Необязательный| `Output` | Строковое | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 
@@ -91,7 +91,7 @@ ms.locfileid: "68356942"
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
-| Placeholder | Значение | Формат или пример |
+| Местозаполнитель | Значение | Формат или пример |
 |-------------|-------|---|
 |{API_KEY} | Ключ `Text Analytics` конечной точки ресурса, доступный на странице ключей Azure `Text Analytics` . |`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`|
 |{ENDPOINT_URI} | Значение конечной точки выставления счетов доступно на странице `Text Analytics` обзора Azure.|`https://westus.api.cognitive.microsoft.com/text/analytics/v2.1`|

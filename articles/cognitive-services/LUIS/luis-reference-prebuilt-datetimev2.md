@@ -1,6 +1,6 @@
 ---
-title: Предварительно созданные сущности datetimeV2
-titleSuffix: Azure
+title: DatetimeV2 предварительно построенные сущности — LUIS
+titleSuffix: Azure Cognitive Services
 description: В этой статье описана готовая сущность datetimeV2 в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: e7577dcf4859b1192121fe0406d0efb63a9f5990
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1a19ab6e02249bad689f1a05c5761150b7a817df
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65148639"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560285"
 ---
 # <a name="datetimev2-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность datetimeV2 для приложения LUIS
 
@@ -82,7 +82,7 @@ ms.locfileid: "65148639"
 |Имя свойства|Описание свойства|
 |--|--|
 |timex|Время, дата или диапазон дат, выраженные в формате TIMEX, который соответствует [стандарту ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), и в атрибутах TIMEX3 заметки с помощью языка TimeML. Эта заметка описана в [рекомендациях TIMEX](http://www.timeml.org/tempeval2/tempeval2-trial/guidelines/timex3guidelines-072009.pdf).|
-|type|Подтип, может принимать одно из следующих элементов: `datetime`, `date`, `time`, `daterange`, `timerange`, `datetimerange`, `duration`, `set`.|
+|type|Подтип может иметь один из следующих элементов: `datetime`, `date`, `time`, `daterange` `datetimerange` `timerange`,,, `duration`, `set`.|
 |value|**Необязательный параметр.** Объект datetime в формате гггг:ММ:дд (дата), ЧЧ:мм:сс (время) гггг:ММ:дд ЧЧ:мм:сс (дата и время). Если свойство `type` имеет значение `duration`, в качестве значения указывается количество секунд (длительность). <br/> Используется, только если свойство `type` имеет значение `datetime` или `date`, `time` или `duration.|
 
 ## <a name="valid-date-values"></a>Допустимые значения даты
@@ -206,15 +206,15 @@ ms.locfileid: "65148639"
   ]
 ```
 
-## <a name="preview-api-version-3x"></a>Предварительная версия API 3.x
+## <a name="preview-api-version-3x"></a>Предварительная версия API версии 3. x
 
-Ответ DatetimeV2 JSON изменений в API версии 3. 
+В API V3 изменен ответ DatetimeV2 JSON. 
 
-Изменения с API версии 2.
-* `datetimeV2.timex.type` так как он выполняется на родительском уровне, больше не возвращается свойство `datetimev2.type`. 
-* `datetimeV2.timex` Свойство было изменено на `datetimeV2.value`.
+Изменения из API версии 2:
+* `datetimeV2.timex.type`свойство больше не возвращается, так как оно возвращается на родительском уровне, `datetimev2.type`. 
+* Свойство было переименовано в `datetimeV2.value`. `datetimeV2.timex`
 
-Для utterance `8am on may 2nd 2017`, V3 DatetimeV2 версия:
+Для utterance `8am on may 2nd 2017`версия DatetimeV2 версии 3 имеет следующие преимущества:
 
 ```JSON
 {
@@ -244,7 +244,7 @@ ms.locfileid: "65148639"
 }
 ```
 
-Приведенный ниже код JSON является с `verbose` параметру присвоить `false`:
+Следующий код JSON имеет `verbose` параметр со `false`значением:
 
 ```json
 {
@@ -300,7 +300,7 @@ ms.locfileid: "65148639"
 3. Щелкните **Add prebuilt entity** (Добавить предварительно созданную сущность).
 4. Выберите **datetimeV2** и нажмите кнопку **Сохранить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Узнайте больше о сущностях [dimension](luis-reference-prebuilt-dimension.md), [email](luis-reference-prebuilt-email.md) и [number](luis-reference-prebuilt-number.md). 
 

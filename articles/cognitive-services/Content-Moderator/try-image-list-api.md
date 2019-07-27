@@ -1,6 +1,6 @@
 ---
 title: Модерация изображений с помощью настраиваемых списков в консоли API — Content Moderator
-titlesuffix: Azure Content Moderator
+titleSuffix: Azure Content Moderator
 description: С помощью API управления списками в Azure Content Moderator можно создавать настраиваемые списки изображений.
 services: cognitive-services
 author: sanjeev3
@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 7efa5114a903ba88010ec44f2f1038331df62948
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2b2ab138945d32ca874dc20576d412c862965dc9
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62097986"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564355"
 ---
 # <a name="moderate-with-custom-image-lists-in-the-api-console"></a>Модерация с помощью настраиваемых списков изображений в консоли API
 
@@ -164,6 +164,6 @@ API управления списками можно использовать д
    ![Внесение изменений в поле "Request body" (Текст запроса) в консоли "Image Lists - Update Details" (Списки изображений — обновление сведений)](images/try-terms-list-change-1.png)
  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Используйте в коде REST API или начните с [краткого руководства по работе со списками изображений с помощью .NET](image-lists-quickstart-dotnet.md), чтобы интегрировать эту функцию в приложение.

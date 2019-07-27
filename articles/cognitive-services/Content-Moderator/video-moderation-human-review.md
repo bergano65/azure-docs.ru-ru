@@ -1,6 +1,6 @@
 ---
 title: Модерация видео с помощью пользовательских проверок — Content Moderator
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Использование машинной модерации видео и инструментов пользовательской проверки для модерации неуместного содержимого.
 services: cognitive-services
 author: sanjeev3
@@ -10,16 +10,16 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 04/30/2019
 ms.author: sajagtap
-ms.openlocfilehash: a6c467d3153400815e37a5d461766140abd1fa32
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 69075f6b36a0be7cd4d0dd4453ea9cdfc08d77dc
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65228130"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561161"
 ---
 # <a name="video-moderation-with-human-review"></a>Модерация видео с помощью пользовательских проверок
 
-Машинная использование Content Moderator [модерации видео](video-moderation-api.md) и [средства пользовательской проверки](Review-Tool-User-Guide/human-in-the-loop.md) Модерация видео и табель для взрослых (явно) и носящих непристойный характер (непристойные) для получения наилучших результатов для вашего бизнеса.
+Используйте Content Moderator, контролируемое компьютером, [и](video-moderation-api.md) [средство проверки](Review-Tool-User-Guide/human-in-the-loop.md) пользователей на умеренные видео и записи для взрослых (явных) и носящих непристойный характер (предполагающее определенную) содержимого, чтобы получить лучшие результаты для вашего бизнеса.
 
 ## <a name="video-trained-classifier-preview"></a>Классификатор, обученный с помощью видео, (предварительная версия)
 
@@ -100,7 +100,7 @@ ms.locfileid: "65228130"
 
 ![Представление расшифровки инструмента проверки видео](images/video-review-transcript-view.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Приступите к работе с помощью [краткого руководства по модерации видео](video-moderation-api.md).
 - Узнайте, как создать [проверки видео](video-reviews-quickstart-dotnet.md) на основе прошедших модерацию выходных данных для рецензентов-пользователей.

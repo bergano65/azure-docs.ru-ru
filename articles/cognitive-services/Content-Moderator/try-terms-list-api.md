@@ -1,6 +1,6 @@
 ---
 title: Модерация текста с помощью настраиваемых списков терминов — Content Moderator
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Используйте API управления списками, чтобы создавать настраиваемые списки терминов, используемые в API модерации текста.
 services: cognitive-services
 author: sanjeev3
@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 28029fe92a207dba85e2ab5a22c08879b7172925
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0a4e9b7925c2309a9682156934e9d94fa83c0d4b
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62097952"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564401"
 ---
 # <a name="moderate-with-custom-term-lists-in-the-api-console"></a>Модерация с помощью настраиваемых списков терминов в консоли API
 
@@ -170,6 +170,6 @@ API управления списками можно использовать д
    ![Внесение изменений в поле "Request body" (Текст запроса) в консоли "Term Lists - Update Details" (Списки терминов — обновление сведений)](images/try-terms-list-change-1.png)
  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Используйте в коде REST API или начните с [краткого руководства по работе со списками терминов с помощью .NET](term-lists-quickstart-dotnet.md), чтобы интегрировать эту функцию в приложение.

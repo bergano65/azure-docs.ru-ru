@@ -1,6 +1,6 @@
 ---
 title: Настройка контейнеров — компьютерное зрение
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Настройка различных параметров для контейнеров распознавания текста в функции компьютерного зрения.
 services: cognitive-services
 author: IEvangelist
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
 ms.custom: seodec18
-ms.openlocfilehash: 90358d54077a0c320e8d3186e806b8a61d951c82
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 3e1dc68ec67e8a7a24c3459519df80a8faf2fc01
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68321340"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565648"
 ---
 # <a name="configure-recognize-text-docker-containers"></a>Настройка контейнера Распознавания текста в Docker
 
@@ -51,9 +51,9 @@ ms.locfileid: "68321340"
 
 Не забудьте добавить `vision/v1.0` маршрут к универсальному коду ресурса (URI) конечной точки, как показано в следующей таблице. 
 
-|Обязательно для заполнения| Имя | Тип данных | Описание |
+|Обязательное значение| Имя | Тип данных | Описание |
 |--|------|-----------|-------------|
-|Да| `Billing` | Строка, | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0` |
+|Да| `Billing` | Строковое | URI конечной точки выставления счетов<br><br>Пример<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0` |
 
 ## <a name="eula-setting"></a>Параметр Eula
 
@@ -79,10 +79,10 @@ ms.locfileid: "68321340"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того, расположение подключения на [главном компьютере](computer-vision-how-to-install-containers.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположением подключения к узлу. 
 
-|Необязательно| ИМЯ | Тип данных | Описание |
+|Необязательный| Название | Тип данных | Описание |
 |-------|------|-----------|-------------|
-|Не разрешено| `Input` | Строка, | Контейнеры API компьютерного зрения не используют этот элемент.|
-|Необязательно| `Output` | Строка, | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Не разрешено| `Input` | Строковое | Контейнеры API компьютерного зрения не используют этот элемент.|
+|Необязательный| `Output` | Строковое | Цель выходного подключения. Значение по умолчанию — `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Примеры команд docker run 
 
@@ -95,7 +95,7 @@ ms.locfileid: "68321340"
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
-| Placeholder | Значение | Формат или пример |
+| Местозаполнитель | Значение | Формат или пример |
 |-------------|-------|---|
 |{API_KEY} | Ключ конечной точки ресурса Cognitive Services. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
 |{ENDPOINT_URI} | Количество выставленных счетов за конечную точку, включая регион.|`https://westcentralus.api.cognitive.microsoft.com/vision/v1.0`|

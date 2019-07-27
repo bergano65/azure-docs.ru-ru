@@ -1,6 +1,6 @@
 ---
-title: Сценарии доступности - службы распознавания речи
-titlesuffix: Azure Cognitive Services
+title: Доступность сценария — служба речи
+titleSuffix: Azure Cognitive Services
 description: Справочник по регионам службы "Речь".
 services: cognitive-services
 author: chrisbasoglu
@@ -10,40 +10,40 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: cbasoglu
-ms.openlocfilehash: 7aa2c72a01f1887ea9680f8d5706b825a49039a1
-ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
+ms.openlocfilehash: 94fd415909e86a43916ee2f510732a6a6d9c5ed3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67561290"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68552948"
 ---
-# <a name="scenario-availability"></a>Сценарии доступности
+# <a name="scenario-availability"></a>Доступность сценариев
 
-Пакет SDK для служб речи функции во многих сценариях различных языков и сред программирования.  Не все сценарии еще настоящее время недоступны на всех языках программирования или ко всем средам.  Ниже приведен доступность каждого сценария.
+В пакете SDK службы речевых функций реализовано множество сценариев в различных языках программирования и средах.  Не все сценарии сейчас доступны на всех языках программирования или в всех средах.  Ниже приведена доступность каждого сценария.
 
-- **Распознавания речи (SR), списка фраз, цель, перевод и локальных контейнеров**
-  - Все программирования языков и сред там, где ссылку со стрелкой <img src="media/index/link.jpg" height="15" width="15"></img> в таблице быстрого запуска [здесь](https://aka.ms/csspeech).
+- **Распознавание речи (SR), список фраз, намерения, перевод и локальные контейнеры**
+  - Все языки программирования и среды, в которых есть ссылка со стрелкой <img src="media/index/link.jpg" height="15" width="15"></img> в таблице краткого руководства [здесь](https://aka.ms/csspeech).
 - **Преобразование текста в речь (TTS)**
-  - C++/ Windows и Linux
-  - C#/ Windows и универсальной платформы Windows и Unity
-  - В любой другой ситуации можно использовать REST API преобразования текста в РЕЧЬ.
-- **Настроить слово (ключевое слово Spotter/KWS)**
-  - C++/ Windows и Linux
-  - C#/ Windows и Linux
-  - Python/Windows и Linux
-  - Java/Windows и Linux, Android (пакет SDK для речевых устройств)
-  - Функциональные возможности пробуждения Word (ключевое слово Spotter/KWS) смогут работать с любым типом "микрофон", официальной поддержки KWS, однако в настоящее время ограничен массивы "микрофон" найден в оборудования Azure Kinect DK или пакет SDK для устройств речи
-- **Виртуальные помощники Voice-First**
-  - C++/ Windows, Linux и macOS
-  - C#/ Windows
-  - Java/Windows & Linux & macOS и Android (Speech SDK устройств)
+  - C++/Виндовс & Linux
+  - C#/Виндовс & UWP & Unity
+  - REST API TTS можно использовать в любой другой ситуации.
+- **Пробуждение слова (ключевое слово корректировщик/КВС)**
+  - C++/Виндовс & Linux
+  - C#/Виндовс & Linux
+  - Python и Windows & Linux
+  - Java и Windows & Linux & Android (пакет SDK для речевых устройств)
+  - Функция Wake Word (ключевое слово корректировщик/КВС) может работать с любым типом микрофона, официальная поддержка КВС, однако, в настоящее время ограничена только массивами микрофонов, находящихся на оборудовании Azure Kinect DK или в пакете SDK для речевых устройств.
+- **Первый виртуальный помощник**
+  - C++/Виндовс & Linux & macOS
+  - C#/виндовс
+  - Java/Windows & Linux & macOS & Android (пакет SDK для речевых устройств)
 - **Транскрибирование бесед**
-  - C++/ Windows и Linux
-  - C#(Framework и .NET Core) или Windows и универсальной платформы Windows и Linux
-  - Java/Windows и Linux, Android (пакет SDK для речевых устройств)
-- **Расшифровка дикторского текста для центра обработки вызовов**
-  - REST API и могут использоваться в любой ситуации
-- **Кодек сжатия аудио вход**
-  - C++/ Linux
-  - C#/ Linux
-  - Java или Linux и Android
+  - C++/Виндовс & Linux
+  - C#(Платформа & .NET Core)/Виндовс & UWP & Linux
+  - Java и Windows & Linux & Android (пакет SDK для речевых устройств)
+- **Транскрипция центра обработки вызовов**
+  - REST API и могут использоваться в любой ситуации.
+- **Звуковые входные данные, сжатые кодеком**
+  - C++/линукс
+  - C#/линукс
+  - Java/Linux & Android

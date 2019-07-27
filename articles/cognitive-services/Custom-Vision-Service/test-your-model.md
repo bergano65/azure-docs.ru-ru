@@ -1,6 +1,6 @@
 ---
 title: Тестирование и переобучение модели — пользовательская служба визуального распознавания
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Узнайте, как протестировать изображение и затем использовать его для переобучения модели.
 services: cognitive-services
 author: anrothMSFT
@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: anroth
-ms.openlocfilehash: d516cee81aef66ec58399cb5ff23c89db16bf2ab
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3f78f0b992581a44b030387f1bd0e37664df4cfd
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60816678"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560908"
 ---
 # <a name="test-and-retrain-a-model-with-custom-vision-service"></a>Тестирование и переобучение модели с помощью Пользовательской службы визуального распознавания
 
@@ -35,7 +35,7 @@ ms.locfileid: "60816678"
 
 Теперь вы можете добавить протестированное изображение в модель и затем переобучить ее.
 
-## <a name="use-the-predicted-image-for-training"></a>Использование прогнозируемых изображение для обучения
+## <a name="use-the-predicted-image-for-training"></a>Использование прогнозируемого образа для обучения
 
 Чтобы использовать отправленное ранее изображение для обучения, выполните следующие действия.
 
@@ -57,6 +57,6 @@ ms.locfileid: "60816678"
 
 3. Нажмите кнопку __Train__ (Обучение), чтобы переобучить классификатор.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Усовершенствование классификатора](getting-started-improving-your-classifier.md)

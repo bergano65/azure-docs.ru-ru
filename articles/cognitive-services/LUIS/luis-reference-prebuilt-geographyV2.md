@@ -1,5 +1,5 @@
 ---
-title: Предварительно созданная сущность GeographyV2
+title: Предварительно созданная сущность географического уровня 2 (LUIS)
 titleSuffix: Azure Cognitive Services
 description: В этой статье описана предварительно созданная сущность GeographyV2 в службе "Распознавание речи" (LUIS).
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: 5b9ace8a2402d96c4bb54864eb59a56b46d04067
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2628dd30e09f4c52517ccb0a284cda235fb0c33f
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65071968"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560232"
 ---
 # <a name="geographyv2-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность GeographyV2 для приложения LUIS
 Предварительно созданная сущность GeographyV2 определяет расположения. Так как эта сущность уже обучена, добавлять примеры высказываний, содержащие сущность GeographyV2, в намерения приложения не нужно. Сущность GeographyV2 поддерживает английский [язык и региональные параметры](luis-reference-prebuilt-entities.md).
@@ -24,7 +24,7 @@ ms.locfileid: "65071968"
 ## <a name="subtypes"></a>Подтипы
 Географические расположения имеют подтипы.
 
-|Subtype|Назначение|
+|Subtype|Цель|
 |--|--|
 |`poi`|достопримечательность|
 |`city`|название города|
@@ -35,7 +35,7 @@ ms.locfileid: "65071968"
 
 ## <a name="resolution-for-geographyv2-entity"></a>Разрешение для сущности GeographyV2
 
-### <a name="api-version-2x"></a>API версии 2.x
+### <a name="api-version-2x"></a>API версии 2. x
 
 В следующем примере показано разрешение для сущности **builtin.geographyV2**.
 
@@ -93,9 +93,9 @@ ms.locfileid: "65071968"
 } 
 ```
 
-### <a name="preview-api-version-3x"></a>Предварительная версия API 3.x
+### <a name="preview-api-version-3x"></a>Предварительная версия API версии 3. x
 
-Приведенный ниже код JSON является с `verbose` параметру присвоить `false`:
+Следующий код JSON имеет `verbose` параметр со `false`значением:
 
 ```json
 {
@@ -121,7 +121,7 @@ ms.locfileid: "65071968"
 }
 ```
 
-Приведенный ниже код JSON является с `verbose` параметру присвоить `true`:
+Следующий код JSON имеет `verbose` параметр со `true`значением:
 
 ```json
 {
@@ -191,6 +191,6 @@ ms.locfileid: "65071968"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 См. дополнительные сведения о сущностях [email](luis-reference-prebuilt-email.md), [number](luis-reference-prebuilt-number.md) и [ordinal](luis-reference-prebuilt-ordinal.md). 

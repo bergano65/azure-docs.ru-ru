@@ -1,6 +1,6 @@
 ---
-title: Ключи подписки
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Ключи подписки — LUIS
+titleSuffix: Azure Cognitive Services
 description: 'LUIS использует два ключа: бесплатный ключ разработки для создания модели и ключ конечной точки с тарифным планом для выполнения запросов к конечной точке прогнозирования с использованием фраз пользователя.'
 services: cognitive-services
 author: diberry
@@ -11,17 +11,17 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/18/2019
 ms.author: diberry
-ms.openlocfilehash: feb4622be14b51cfa72c33cda6c2477f799758c6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0d52445d82965973c2d1e0f4fca2ef463312ad5f
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66473593"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560735"
 ---
 # <a name="authoring-and-query-prediction-endpoint-keys-in-luis"></a>Ключи разработки и запрашивания конечной точки прогнозирования в LUIS
 В LUIS используются два ключа: [разработки](#programmatic-key) и [конечных точек](#endpoint-key). Ключ разработки формируется автоматически при создании учетной записи LUIS. Когда вы будете готовы опубликовать свое приложение LUIS, потребуется [создать ключ конечной точки](luis-how-to-azure-subscription.md), [назначить его](luis-how-to-azure-subscription.md) приложению LUIS и [использовать его в запросе к конечной точке](#use-endpoint-key-in-query). 
 
-|Ключ|Назначение|
+|Ключ|Цель|
 |--|--|
 |[Ключ разработки](#programmatic-key)|Разработка, публикация, управление участниками совместной работы, управление версиями|
 |[Ключ конечной точки](#endpoint-key)| Выполнение запроса|
@@ -83,6 +83,6 @@ API-интерфейсы LUIS используют заголовок `Ocp-Apim-
 Вы можете [назначить](luis-how-to-azure-subscription.md) ключ конечной точки на [портале LUIS](https://www.luis.ai) или с помощью соответствующих API. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Ознакомьтесь с [понятиями](luis-how-to-azure-subscription.md), связанными с ключами разработки и конечных точек.

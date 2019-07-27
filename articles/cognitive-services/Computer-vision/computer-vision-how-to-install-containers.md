@@ -1,6 +1,6 @@
 ---
 title: Установка и запуск контейнеров — API компьютерного зрения
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: В этом пошаговом руководстве показано, как скачивать, устанавливать и выполнять контейнеры компьютерного зрения.
 services: cognitive-services
 author: IEvangelist
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
 ms.custom: seodec18
-ms.openlocfilehash: efde223061a873a57595bc4a577b7de55b1d8a46
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: afccce5ca9101ed1e30f69264abae7ad85b4902b
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68321461"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564581"
 ---
 # <a name="install-and-run-recognize-text-containers"></a>Установка и запуск контейнеров распознавания текста
 
@@ -26,11 +26,11 @@ ms.locfileid: "68321461"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем использовать контейнеры Распознавания текста, необходимо выполнить следующие условия.
 
-|Обязательно для заполнения|Цель|
+|Обязательное значение|Цель|
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
@@ -48,7 +48,7 @@ ms.locfileid: "68321461"
 
 В следующей таблице описаны минимальное и рекомендуемое число ядер ЦП и памяти для каждого контейнера Распознавания текста.
 
-| Контейнер | Минимальная | Рекомендуется |ПЛАТЫ<br>(Минимум, максимум)|
+| Контейнер | Минимум | Рекомендуется |ПЛАТЫ<br>(Минимум, максимум)|
 |-----------|---------|-------------|--|
 |Распознавание текста|1 ядро, 8 ГБ памяти, 0,5 TPS|2 ядра, 8 ГБ памяти, 1 Техническая спецификация|0,5, 1|
 
@@ -87,7 +87,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-recognize-t
 
 Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. В команде используются следующие параметры:
 
-| Placeholder | Значение |
+| Местозаполнитель | Значение |
 |-------------|-------|
 |{API_KEY} | Этот ключ используется для запуска контейнера и доступен на странице ключей Azure `Cognitive Services` .  |
 |{ENDPOINT_URI} | Значение URI конечной точки выставления счетов. Пример:`https://westus.api.cognitive.microsoft.com/vision/v2.0`|

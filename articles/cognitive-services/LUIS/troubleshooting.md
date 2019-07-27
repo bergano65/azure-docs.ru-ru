@@ -1,5 +1,5 @@
 ---
-title: Часто задаваемые вопросы
+title: Часто задаваемые вопросы — LUIS
 titleSuffix: Azure Cognitive Services
 description: В этой статье приведены ответы на часто задаваемые вопросы о службе "Распознавание речи" (LUIS).
 author: diberry
@@ -11,20 +11,20 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 06/18/2019
 ms.author: diberry
-ms.openlocfilehash: 7e1e61d96b066c395668ce1dd9cdba4cb4ecb2be
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: bccdcce52b9e62048d7eb307a4783abda0f9d17c
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204102"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563171"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
 В этой статье приведены ответы на часто задаваемые вопросы о службе "Распознавание речи" (LUIS).
 
-## <a name="whats-new"></a>Новые возможности
+## <a name="whats-new"></a>Что нового
 
-[Дополнительные сведения](whats-new.md) о новинках в Language Understanding.
+Дополнительные [сведения](whats-new.md) о новых возможностях в Language Understanding.
 
 <a name="luis-authoring"></a>
 
@@ -68,13 +68,13 @@ ms.locfileid: "67204102"
 ### <a name="how-do-i-transfer-ownership-of-a-luis-app"></a>Как передавать права владельца приложения LUIS?
 Чтобы переместить приложение LUIS в другую подписку Azure, экспортируйте приложение LUIS и импортируйте его, используя новую учетную запись. Обновите идентификатор приложения LUIS в клиентском приложении, которое его вызывает. Возвращаемые новым приложением оценки LUIS могут немного отличаться от оценок исходного приложения.
 
-### <a name="a-prebuilt-entity-is-tagged-in-an-example-utterance-instead-of-my-custom-entity-how-do-i-fix-this"></a>Предварительно созданные сущности помечается в примере utterance вместо моей настраиваемой сущности. Как это исправить? 
+### <a name="a-prebuilt-entity-is-tagged-in-an-example-utterance-instead-of-my-custom-entity-how-do-i-fix-this"></a>Предварительно созданная сущность помечается в примере utterance вместо моей пользовательской сущности. Как это исправить? 
 
-См. в разделе [Устранение неполадок предварительно созданных сущностей](luis-concept-entity-types.md#troubleshooting-prebuilt-entities).
+См. раздел [Устранение неполадок готовых сущностей](luis-concept-entity-types.md#troubleshooting-prebuilt-entities).
 
-### <a name="i-tried-to-import-an-app-or-version-file-but-i-got-an-error-what-happened"></a>Я пытался выполнить импорт файла приложения или версии, но поступило сообщение об ошибке, что произошло? 
+### <a name="i-tried-to-import-an-app-or-version-file-but-i-got-an-error-what-happened"></a>При попытке импортировать файл приложения или версии возникла ошибка, что случилось? 
 
-Дополнительные сведения о [ошибки импорта версии](luis-how-to-manage-versions.md#import-errors) и [ошибки импорта приложения](luis-how-to-start-new-app.md#import-errors).
+Узнайте больше о [ошибках импорта версий](luis-how-to-manage-versions.md#import-errors) и [ошибках импорта приложений](luis-how-to-start-new-app.md#import-errors).
 
 <a name="luis-collaborating"></a>
 
@@ -189,11 +189,11 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 ### <a name="i-got-an-error-about-being-out-of-quota-how-do-i-fix-it"></a>Я получил ошибку с сообщением об отсутствии квоты. Как ее исправить? 
 
-См. в разделе, [код состояния HTTP, исправить 403 и 429](luis-how-to-azure-subscription.md#fix-http-status-code-403-and-429) для получения дополнительных сведений.
+Дополнительные сведения см. в разделе [исправление кода состояния HTTP 403 и 429](luis-how-to-azure-subscription.md#fix-http-status-code-403-and-429) .
 
 ### <a name="i-need-to-handle-more-endpoint-queries-how-do-i-do-that"></a>Мне нужно обрабатывать больше запросов конечной точки. Как это сделать? 
 
-См. в разделе, [код состояния HTTP, исправить 403 и 429](luis-how-to-azure-subscription.md#fix-http-status-code-403-and-429) для получения дополнительных сведений.
+Дополнительные сведения см. в разделе [исправление кода состояния HTTP 403 и 429](luis-how-to-azure-subscription.md#fix-http-status-code-403-and-429) .
 
 
 
@@ -286,27 +286,27 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 Да. Вы можете использовать [контейнер](luis-container-howto.md) LUIS в таких сценариях, если у вас есть подключение для измерения использования. 
 
-## <a name="migrating-to-the-next-version"></a>Переход к следующей версии
+## <a name="migrating-to-the-next-version"></a>Переход на следующую версию
 
-### <a name="how-do-i-migrate-to-preview-v3-api"></a>Как выполнить перенос для предварительного просмотра V3 API? 
+### <a name="how-do-i-migrate-to-preview-v3-api"></a>Разделы справки перейти на предварительную версию API V3? 
 
-См. в разделе [руководство по API версии 2 для миграции v3 для приложения LUIS](luis-migration-api-v3.md)
+См. [инструкции по миграции для приложений Luis в API версии 2 и 3](luis-migration-api-v3.md)
 
-## <a name="build-2019-conference-announcements"></a>Объявления конференции Build 2019 г.
+## <a name="build-2019-conference-announcements"></a>Объявления о конференции для сборки 2019
 
-На конференции 2019 сборки были выпущены следующие функции:
+Следующие функции были выпущены на Конференции Build 2019:
 
-* [Предварительную версию V3 API руководство по миграции](luis-migration-api-v3.md)
-* [Улучшенные панели мониторинга](luis-how-to-use-dashboard.md)
-* [Улучшенная предварительно созданных доменов](luis-reference-prebuilt-domains.md) 
-* [Динамический список сущностей](luis-migration-api-v3.md#dynamic-lists-passed-in-at-prediction-time)
+* [Предварительная версия инструкции по миграции API V3](luis-migration-api-v3.md)
+* [Улучшенная панель мониторинга аналитики](luis-how-to-use-dashboard.md)
+* [Улучшенные предварительно созданные домены](luis-reference-prebuilt-domains.md) 
+* [Сущности динамического списка](luis-migration-api-v3.md#dynamic-lists-passed-in-at-prediction-time)
 * [Внешние сущности](luis-migration-api-v3.md#external-entities-passed-in-at-prediction-time)
 
 Видеоролики:
 
-* [Как масштабируйте бизнес, для следующего поколения с помощью естественного искусственного Интеллекта Azure](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
+* [Как использовать службу искусственного интеллекта Azure для масштабирования вашего бизнеса для следующего поколения](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительную информацию о LUIS см. в следующих ресурсах:
 * [Вопросы Stack Overflow, помеченные LUIS](https://stackoverflow.com/questions/tagged/luis)

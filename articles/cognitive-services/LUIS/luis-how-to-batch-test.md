@@ -1,6 +1,6 @@
 ---
-title: Пакетное тестирование
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Пакетный тест — LUIS
+titleSuffix: Azure Cognitive Services
 description: Использование наборов высказываний для пакетного тестирования Интеллектуальной службы распознавание речи (LUIS) для поиска фрагментов речи с неправильными намерениями и сущностями.
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 03/29/2019
 ms.author: diberry
-ms.openlocfilehash: d615eb2a23b953bad5e41859357d9ae9e9be2ba6
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: bd0910fedc9fd27af198f6a2b94b34daf57c050f
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60197700"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563674"
 ---
 # <a name="batch-testing-with-a-set-of-example-utterances"></a>Пакетное тестирование с помощью набора примеров высказываний
 
@@ -52,7 +52,7 @@ ms.locfileid: "60197700"
 
 Скачиваемый набор данных — это тот же файл, который был отправлен для пакетного тестирования.
 
-|Состояние|Значение|
+|Область|Значение|
 |--|--|
 |![Зеленый круглый значок успешного выполнения теста](./media/luis-how-to-batch-test/batch-test-result-green.png)|Все высказывания успешно протестированы.|
 |![Красный значок x неудачно выполненного теста](./media/luis-how-to-batch-test/batch-test-result-red.png)|По меньшей мере одно намерение высказывания не соответствует прогнозированию.|
@@ -98,7 +98,7 @@ ms.locfileid: "60197700"
 
 [!INCLUDE [Entity roles in batch testing - currently not supported](../../../includes/cognitive-services-luis-roles-not-supported-in-batch-testing.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если тестирование показывает, что приложение LUIS не распознает правильные намерения и сущности, вы можете повысить производительность приложения LUIS, пометив дополнительные высказывания или добавив компоненты. 
 

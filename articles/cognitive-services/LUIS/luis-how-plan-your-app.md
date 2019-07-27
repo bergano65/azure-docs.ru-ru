@@ -1,6 +1,6 @@
 ---
-title: Планирование приложения
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Планирование приложения — LUIS
+titleSuffix: Azure Cognitive Services
 description: Определяйте соответствующие приложению намерения и сущности, а затем создавайте планы приложений в Интеллектуальной службе распознавания речи (LUIS).
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/02/2019
 ms.author: diberry
-ms.openlocfilehash: 9d54cff81f39f41b60800e9b33f3b4da1a735d85
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 121423682bbd9bbb32f2ab1d02e48d3237ee830d
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60196241"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563771"
 ---
 # <a name="plan-your-luis-app-with-subject-domain-intents-and-entities"></a>Планирование приложения LUIS с предметной областью, намерениями и сущностями
 
@@ -47,7 +47,7 @@ ms.locfileid: "60196241"
 
 При определении сущностей, которые будут использоваться в приложении, имейте в виду, что для отражения связей между типами объектов существуют разные типы сущностей. [Сущности в LUIS](luis-concept-entity-types.md) предоставляют больше сведений о различных типах.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 После обучения и публикации приложения, а также когда оно получит выражения конечной точки, следует реализовать усовершенствования прогнозирования с помощью [активного обучения](luis-how-to-review-endpoint-utterances.md), [списков фраз](luis-concept-feature.md) и [шаблонов](luis-concept-patterns.md). 
 

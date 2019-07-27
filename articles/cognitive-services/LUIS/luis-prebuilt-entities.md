@@ -1,5 +1,5 @@
 ---
-title: Предварительно созданные сущности
+title: Предварительно созданные сущности для Language Understanding
 titleSuffix: Azure Cognitive Services
 description: Интеллектуальная служба распознавания речи (LUIS) включает набор предварительно созданных сущностей для распознавания общих типов информации, таких как даты, время, цифры, измерения и валюта. Поддержка предварительно созданной сущности зависит от языка и региональных параметров приложения LUIS.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 03/11/2019
 ms.author: diberry
-ms.openlocfilehash: 0cfc4ff58cfeb65f80f9ac5ce2dd532defde5ef8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: db0fb8962030b536b6ea73f4141da551434cd528
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60596120"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560353"
 ---
 # <a name="prebuilt-entities-to-recognize-common-data-types"></a>Предварительно созданные сущности для распознавания распространенных типов данных
 
@@ -62,6 +62,6 @@ ms.locfileid: "60596120"
 
  В качестве еще одного примера рассмотрим это высказывание как список предпочтений. `I want first year spanish, second year calculus, and fourth year english lit.` Если в приложение LUIS добавлена предварительно созданная сущность ordinal, `first`, `second` и `fourth` уже будут маркированы с помощью порядковых номеров. Если необходимо соединить маркер порядкового номера и класса, то можно создать составной объект и поместить в него сущность ordinal и настраиваемую сущность для имени класса.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 > [!div class="nextstepaction"]
 > [Entities per culture](./luis-reference-prebuilt-entities.md) (Язык и региональные параметры сущностей).

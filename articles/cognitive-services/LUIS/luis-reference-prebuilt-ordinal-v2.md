@@ -1,7 +1,7 @@
 ---
-title: Порядковый номер версии 2 предварительно созданных сущностей
-titleSuffix: Language Understanding - Azure Cognitive Services
-description: Эта статья содержит порядковый номер версии 2 сведения о предварительно созданных сущностей в Language Understanding (LUIS).
+title: Порядковый номер V2 предварительно созданная сущность — LUIS
+titleSuffix: Azure Cognitive Services
+description: В этой статье содержатся сведения о предварительно построенных сущностях с порядковым номером v2 в Language Understanding (LUIS).
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -11,21 +11,21 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 06/25/2019
 ms.author: diberry
-ms.openlocfilehash: 862b962f5642e01d7ed8250f49d51a6132447083
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 972f75fd1c977e79a2fa70c44bb3069e2c69a2c5
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67486143"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563407"
 ---
-# <a name="ordinal-v2-prebuilt-entity-for-a-luis-app"></a>Порядковый номер версии 2 предварительно созданных сущностей для приложения LUIS
-Порядковый номер версии 2 расширяет [порядковый номер](luis-reference-prebuilt-ordinal.md) предоставляет относительных ссылок, такие как `next`, `last`, и `previous`. Они не извлекаются с помощью порядкового номера предварительно созданные сущности.
+# <a name="ordinal-v2-prebuilt-entity-for-a-luis-app"></a>Порядковый номер V2 предварительно созданной сущности для приложения LUIS
+Порядковый номер V2 расширяет [порядковый](luis-reference-prebuilt-ordinal.md) номер для предоставления относительных `last`ссылок, `previous`таких как `next`, и. Они не извлекаются с использованием порядкового номера предварительно построенной сущности.
 
-## <a name="resolution-for-prebuilt-ordinal-v2-entity"></a>Разрешение для предварительно созданных сущностей порядковый номер версии 2
+## <a name="resolution-for-prebuilt-ordinal-v2-entity"></a>Разрешение для предварительно построенной сущности с порядковым номером v2
 
-### <a name="api-version-2x"></a>API версии 2.x
+### <a name="api-version-2x"></a>API версии 2. x
 
-В следующем примере показано разрешение **builtin.ordinalV2** сущности.
+В следующем примере показано разрешение встроенной сущности **. ordinalV2** .
 
 ```json
 {
@@ -55,9 +55,9 @@ ms.locfileid: "67486143"
 }
 ```
 
-### <a name="preview-api-version-3x"></a>Предварительная версия API 3.x
+### <a name="preview-api-version-3x"></a>Предварительная версия API версии 3. x
 
-Приведенный ниже код JSON является с `verbose` параметру присвоить `false`:
+Следующий код JSON имеет `verbose` параметр со `false`значением:
 
 ```json
 {
@@ -82,7 +82,7 @@ ms.locfileid: "67486143"
 }
 ```
 
-Приведенный ниже код JSON является с `verbose` параметру присвоить `true`:
+Следующий код JSON имеет `verbose` параметр со `true`значением:
 
 ```json
 {
@@ -122,6 +122,6 @@ ms.locfileid: "67486143"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о [процент](luis-reference-prebuilt-percentage.md), [номер телефона](luis-reference-prebuilt-phonenumber.md), и [температуры](luis-reference-prebuilt-temperature.md) сущностей. 
+Сведения о [процентах](luis-reference-prebuilt-percentage.md), [номере телефона](luis-reference-prebuilt-phonenumber.md)и [температуре](luis-reference-prebuilt-temperature.md) . 
