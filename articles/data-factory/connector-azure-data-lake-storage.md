@@ -70,7 +70,7 @@ Azure Data Lake хранения 2-го поколения — это набор
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **AzureBlobFS**. |Yes |
-| url | Конечная точка для Gen2 хранилища Озера данных с шаблоном `https://<accountname>.dfs.core.windows.net`. | Да |
+| url | Конечная точка для Gen2 хранилища Озера данных с шаблоном `https://<accountname>.dfs.core.windows.net`. | true |
 | accountKey | Ключ учетной записи для Gen2 хранилища Озера данных. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Yes |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если хранилище данных расположено в частной сети можно использовать среду выполнения интеграции Azure или локальную среду выполнения интеграции. Если это свойство не задано, используется среда выполнения интеграции Azure по умолчанию. |Нет |
 
@@ -122,10 +122,10 @@ Azure Data Lake хранения 2-го поколения — это набор
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **AzureBlobFS**. |Yes |
-| url | Конечная точка для Gen2 хранилища Озера данных с шаблоном `https://<accountname>.dfs.core.windows.net`. | Да |
-| servicePrincipalId | Укажите идентификатора клиента приложения. | Да |
-| servicePrincipalKey | Укажите ключ приложения. Пометьте это поле как `SecureString` чтобы безопасно хранить его в фабрике данных. Вы также можете [ссылка на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
-| клиент | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Его получить, наведя указатель мыши в правом верхнем углу портала Azure. | Да |
+| url | Конечная точка для Gen2 хранилища Озера данных с шаблоном `https://<accountname>.dfs.core.windows.net`. | true |
+| servicePrincipalId | Укажите идентификатора клиента приложения. | true |
+| servicePrincipalKey | Укажите ключ приложения. Пометьте это поле как `SecureString` чтобы безопасно хранить его в фабрике данных. Вы также можете [ссылка на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | true |
+| клиент | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Его получить, наведя указатель мыши в правом верхнем углу портала Azure. | true |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если хранилище данных расположено в частной сети можно использовать среду выполнения интеграции Azure или локальную среду выполнения интеграции. Если не указан, используется среда выполнения интеграции Azure по умолчанию. |Нет |
 
 **Пример.**
@@ -179,7 +179,7 @@ Azure Data Lake хранения 2-го поколения — это набор
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **AzureBlobFS**. |Yes |
-| url | Конечная точка для Gen2 хранилища Озера данных с шаблоном `https://<accountname>.dfs.core.windows.net`. | Да |
+| url | Конечная точка для Gen2 хранилища Озера данных с шаблоном `https://<accountname>.dfs.core.windows.net`. | true |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если хранилище данных расположено в частной сети можно использовать среду выполнения интеграции Azure или локальную среду выполнения интеграции. Если не указан, используется среда выполнения интеграции Azure по умолчанию. |Нет |
 
 **Пример.**
@@ -213,7 +213,7 @@ Azure Data Lake хранения 2-го поколения — это набор
 
 | Свойство   | ОПИСАНИЕ                                                  | Обязательно для заполнения |
 | ---------- | ------------------------------------------------------------ | -------- |
-| type       | Свойство типа в списке `location` в наборе данных должно быть присвоено **AzureBlobFSLocation**. | Да      |
+| type       | Свойство типа в списке `location` в наборе данных должно быть присвоено **AzureBlobFSLocation**. | true      |
 | fileSystem | Имя файловой системы Gen2 хранилища Озера данных.                              | Нет       |
 | folderPath | Путь к папке данной файловой системе. Если вы хотите использовать подстановочные знаки для фильтрации папок, пропустите этот параметр и укажите его в параметрах исходного действия. | Нет       |
 | fileName   | Имя файла, в категории заданной файловой системы и folderPath. Если вы хотите использовать подстановочные знаки для фильтрации файлов, пропустите этот параметр и указать его в параметрах исходного действия. | Нет       |
@@ -516,9 +516,9 @@ Azure Data Lake хранения 2-го поколения — это набор
 
 | recursive | copyBehavior | Структура папок источника | Результаты цели |
 |:--- |:--- |:--- |:--- |
-| Да |preserveHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая "Папка1" создается с такой же структурой, как и исходная папка:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 |
-| Да |flattenHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл1"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл2"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл3"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл4"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл5" |
-| Да |mergeFiles | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Содержимое файлов "Файл1", "Файл2", "Файл3", "Файл4" и "Файл5" объединяется в один файл с автоматически созданным именем. |
+| true |preserveHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая "Папка1" создается с такой же структурой, как и исходная папка:<br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 |
+| true |flattenHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл1"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл2"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл3"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл4"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл5" |
+| true |mergeFiles | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Содержимое файлов "Файл1", "Файл2", "Файл3", "Файл4" и "Файл5" объединяется в один файл с автоматически созданным именем. |
 | false |preserveHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/><br/>С файлами "файл3", "файл4" и "файл5" не вложенная_папка1. |
 | false |flattenHierarchy | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл1"<br/>&nbsp;&nbsp;&nbsp;&nbsp;автоматически созданное имя для "Файл2"<br/><br/>С файлами "файл3", "файл4" и "файл5" не вложенная_папка1. |
 | false |mergeFiles | Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5 | Целевая папка "Папка1" создается со следующей структурой: <br/><br/>Папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Содержимое файлов "Файл1" и "Файл2" объединяется в один файл с автоматически созданным именем. автоматически созданное имя для "Файл1"<br/><br/>С файлами "файл3", "файл4" и "файл5" не вложенная_папка1. |
