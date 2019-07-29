@@ -3,18 +3,18 @@ title: Форматы документов и соглашения об имен
 titleSuffix: Azure Cognitive Services
 description: Руководство по форматам документов и соглашениям об именовании в Custom Translator. Эта концепция помогает лучше управлять именованием документов, избегая конфликтов имен.
 author: swmachan
-manager: christw
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 2f7a83be510e608bb3f630a2fb1860502d8e4475
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 41b15cc998a7bacd033ef2fe083fc99f1bff0286
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67443425"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68595853"
 ---
 # <a name="document-formats-and-naming-convention-guidance"></a>Руководство по форматам документов и соглашениям об именовании
 
@@ -37,7 +37,7 @@ ms.locfileid: "67443425"
 
 ## <a name="dictionary-formats"></a>Форматы словарей
 
-В словарях пользовательский преобразователь поддерживает все форматы файлов, которые поддерживаются для обучающих наборов. Если вы используете словарю Excel, первая строка / строки электронной таблицы должно быть кодов языков.
+Для словарей пользовательский Переводчик поддерживает все форматы файлов, поддерживаемые в учебных наборах. Если используется словарь Excel, то первой строкой или строкой таблицы должны быть коды языка.
 
 ## <a name="zip-file-formats"></a>Форматы ZIP-файлов
 
@@ -51,6 +51,6 @@ ms.locfileid: "67443425"
 
 Файлы памяти перевода (TMX, XLF, XLIFF, LCL, XLSX) не должны соответствовать соглашению об именовании для определенного языка.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте о создании [проектов](workspace-and-project.md#what-is-a-custom-translator-project) и управлении ими.

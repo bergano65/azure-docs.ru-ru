@@ -1,6 +1,6 @@
 ---
 title: Создание Cognitive Services ресурса в портал Azure
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Начните работу с Cognitive Services Azure, создав подписку на ресурс в портал Azure.
 services: cognitive-services
 author: aahill
@@ -9,18 +9,18 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 07/16/2019
 ms.author: aahi
-ms.openlocfilehash: e9616f3014288e4b2580f474c49c646928db5a08
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: 4a74133a4a34f07db3813d3b9f9a47794c05ec49
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68334252"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68594647"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-portal"></a>Создание Cognitive Services ресурса с помощью портал Azure
 
 Используйте это краткое руководство, чтобы приступить к работе с Azure Cognitive Services с помощью портал Azure. Cognitive Services представлены [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal) Azure, созданными в подписке Azure. После создания ресурса используйте ключи и конечную точку, созданные для проверки подлинности приложений. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Допустимая подписка Azure. [создайте ее бесплатно](https://azure.microsoft.com/free/) .
 

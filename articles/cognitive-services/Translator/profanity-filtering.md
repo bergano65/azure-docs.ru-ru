@@ -1,6 +1,6 @@
 ---
 title: Фильтр ненормативной лексики — API перевода текстов
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Используйте фильтр ненормативной лексики в API перевода текстов.
 services: cognitive-services
 author: swmachan
@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: cc6bf9766912aa55d7869d90976d3089cfd6cf4c
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 114dea098db5c824a1235ba1635f547383bf6743
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448260"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68595199"
 ---
 # <a name="add-profanity-filtering-with-the-translator-text-api"></a>Добавление фильтра ненормативной лексики в API перевода текстов
 
@@ -26,12 +26,12 @@ ms.locfileid: "67448260"
 Метод Translate() принимает параметр "options", который содержит новый элемент ProfanityAction. Принятыми значениями для элемента ProfanityAction являются "NoAction" (пропущено), "Marked" (помечено) и "Deleted" (удалено).
 
 ## <a name="accepted-values-of-profanityaction-and-examples"></a>Принятые значения ProfanityAction и примеры
-|Значение ProfanityAction | Действие | Пример: Исходный язык — японский | Пример: Целевой язык — английский|
+|Значение ProfanityAction | Action | Пример Исходный язык — японский | Пример Целевой язык — английский|
 | :---|:---|:---|:---|
 | NoAction | По умолчанию. Аналогично отсутствию параметра. Ненормативная лексика переходит из источника в целевой объект. | 彼は変態です。 | Он подонок. |
 | Marked | Оскорбительные слова выделены XML тегами \<profanity> ... \</profanity>. | 彼は変態です。 | Он \<нецензурная лексика>jerk\</profanity >. |
 | Deleted | Оскорбительные слова удаляются из выходных данных без замены. | 彼は。 | Он — . |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 > [!div class="nextstepaction"]
 > [Применение фильтра ненормативной лексики с помощью вызова API переводчика](reference/v3-0-translate.md)

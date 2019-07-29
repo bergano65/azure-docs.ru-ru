@@ -1,6 +1,6 @@
 ---
 title: Переход на API перевода текстов версии 3
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Узнайте, как перейти с API перевода текстов версии 2 на версию 3.
 services: cognitive-services
 author: swmachan
@@ -10,19 +10,19 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: swmachan
-ms.openlocfilehash: 8a2530a4eb4365a022ab11279b344a5d2852430b
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 9ce9dc330ec1b0c32ce045437fadb5d8c191529e
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448301"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68595242"
 ---
 # <a name="translator-text-api-v2-to-v3-migration"></a>Переход с API перевода текстов версии 2 на версию 3
 
 > [!NOTE]
-> Версии 2 был объявлен устаревшим с 30 апреля 2018 г. Выполните миграцию приложения для версии 3, чтобы воспользоваться преимуществами новых функциональных возможностей, доступных только в версии 3.
+> Версия 2 устарела до 30 апреля 2018 г. Перенесите приложения на версию 3, чтобы воспользоваться преимуществами новых функций, доступных исключительно в версии 3.
 > 
-> Центр Microsoft Translator будет прекращено 17 мая 2019 г. [Просмотреть сведения о важных миграции и даты](https://www.microsoft.com/translator/business/hub/).  
+> Центр Microsoft Translator будет снят с учета 17 мая 2019. [Просмотр важных сведений о миграции и дат](https://www.microsoft.com/translator/business/hub/).  
 
 Команда разработчиков Microsoft Translator выпустила API перевода текстов версии 3. Этот выпуск включает новые возможности и новый формат отправки данных в службу Microsoft Translator и получения их из нее. Кроме того, в этом выпуске исключены некоторые устаревшие методы. В этом документе содержатся сведения об изменении конфигурации приложений с целью реализации поддержки версии 3. 
 
@@ -86,7 +86,7 @@ Microsoft Translator V3 имеет такую же модель ценообра
 
 ## <a name="v3-end-points"></a>Конечные точки версии 3
 
-Глобальные
+Глобальный
 
 * api.cognitive.microsofttranslator.com
 
@@ -110,7 +110,7 @@ Microsoft Translator V3 имеет такую же модель ценообра
 
 > [!NOTE]
 > 
-> Центр Microsoft Translator будет прекращено 17 мая 2019 г. [Просмотреть сведения о важных миграции и даты](https://www.microsoft.com/translator/business/hub/).   
+> Центр Microsoft Translator будет снят с учета 17 мая 2019. [Просмотр важных сведений о миграции и дат](https://www.microsoft.com/translator/business/hub/).   
 
 По умолчанию служба Microsoft Translator версии 3 использует технологию нейронного машинного перевода. Поэтому она не может использоваться центром Microsoft Translator Hub. Translator Hub поддерживает только устаревший статистический машинный перевод. Функцию перевода с использованием нейронных сетей можно настроить с помощью пользовательского переводчика. [Узнайте больше о настройке нейронного машинного перевода](custom-translator/overview.md)
 
@@ -143,7 +143,7 @@ Microsoft Translator V3 имеет такую же модель ценообра
 * [Юридическая информация о платформе Microsoft Azure](https://azure.microsoft.com/support/legal)
 * [Условия служб Online Services](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [API перевода текстов версии 3.0](reference/v3-0-reference.md)

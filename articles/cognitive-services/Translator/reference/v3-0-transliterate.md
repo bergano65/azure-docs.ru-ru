@@ -1,6 +1,6 @@
 ---
 title: Метод транслитерации в API перевода текстов
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Использование метода транслитерации в API перевода текстов
 services: cognitive-services
 author: swmachan
@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: swmachan
-ms.openlocfilehash: ddf4ca1939e09f5f63999657e7a751c9e53693e2
-ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
+ms.openlocfilehash: 0be56bbd421bcd12e3c494a671db2f322e07c575
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357659"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68594942"
 ---
 # <a name="translator-text-api-30-transliterate"></a>API перевода текстов 3.0: Транслитерация
 
 Преобразует текст на одном языке из одного набора символов в другой.
 
-## <a name="request-url"></a>Request URL (URL-адрес запроса)
+## <a name="request-url"></a>URL-адрес запроса
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -98,9 +98,9 @@ https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
 
 Успешный ответ возвращается в формате массива JSON с одним результатом для каждого элемента входного массива. Объект результата содержит следующие свойства.
 
-  * `text`: строка, являющаяся результатом преобразования входной строки в выходной набор символов.
+  * `text`. строка, являющаяся результатом преобразования входной строки в выходной набор символов.
   
-  * `script`: строка, указывающая набор символов, используемый в выходных данных.
+  * `script`. строка, указывающая набор символов, используемый в выходных данных.
 
 Пример ответа в формате JSON:
 
@@ -139,7 +139,7 @@ https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
   </tr>
   <tr>
     <td>401</td>
-    <td>Не удалось выполнить аутентификацию запроса. Убедитесь, что указаны допустимые учетные данные.</td>
+    <td>Не удалось выполнить проверку подлинности запроса. Убедитесь, что указаны допустимые учетные данные.</td>
   </tr>
   <tr>
     <td>403</td>
@@ -147,7 +147,7 @@ https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0
   </tr>
   <tr>
     <td>429</td>
-    <td>Сервер отклонил запрос, так как клиент превысило ограничения запросов.</td>
+    <td>Сервер отклонил запрос, так как клиент превысил лимиты запросов.</td>
   </tr>
   <tr>
     <td>500</td>

@@ -1,6 +1,6 @@
 ---
 title: Метод Detect в API перевода текстов
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Использование метода Detect в API перевода текстов.
 services: cognitive-services
 author: swmachan
@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: swmachan
-ms.openlocfilehash: 6e90626759b3c78d98c8c0f6e32d37c1440385cd
-ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
+ms.openlocfilehash: ed4a57a791c88ae7df0337a0c1cc74dde14a13d8
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357736"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68595089"
 ---
-# <a name="translator-text-api-30-detect"></a>API перевода текстов 3.0: Определение
+# <a name="translator-text-api-30-detect"></a>API перевода текстов 3.0: Обнаружить
 
 Определяет язык для фрагмента текста.
 
-## <a name="request-url"></a>Request URL (URL-адрес запроса)
+## <a name="request-url"></a>URL-адрес запроса
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -85,15 +85,15 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 
 Успешный ответ возвращается в формате массива JSON с одним результатом для каждой строки входного массива. Объект результата содержит следующие свойства.
 
-  * `language`: код распознанного языка.
+  * `language`. код распознанного языка.
 
-  * `score`: значение с плавающей запятой, обозначающее достоверность результата. Может принимать ноль или единицу, где низкая оценка обозначает низкую достоверность.
+  * `score`. значение с плавающей запятой, обозначающее достоверность результата. Может принимать ноль или единицу, где низкая оценка обозначает низкую достоверность.
 
-  * `isTranslationSupported`: логическое значение, которое имеет значение True, если обнаруженный язык поддерживается для перевода текста.
+  * `isTranslationSupported`. логическое значение, которое имеет значение True, если обнаруженный язык поддерживается для перевода текста.
 
-  * `isTransliterationSupported`: логическое значение, которое имеет значение True, если обнаруженный язык поддерживается для транслитерации.
+  * `isTransliterationSupported`. логическое значение, которое имеет значение True, если обнаруженный язык поддерживается для транслитерации.
   
-  * `alternatives`: массив других возможных языков. Каждый элемент этого массива содержит другой объект с такими же свойствами, как перечислено выше: `language`, `score`, `isTranslationSupported` и `isTransliterationSupported`.
+  * `alternatives`. массив других возможных языков. Каждый элемент этого массива содержит другой объект с такими же свойствами, как перечислено выше: `language`, `score`, `isTranslationSupported` и `isTransliterationSupported`.
 
 Пример ответа в формате JSON:
 
@@ -150,7 +150,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
   </tr>
   <tr>
     <td>401</td>
-    <td>Не удалось выполнить аутентификацию запроса. Убедитесь, что указаны допустимые учетные данные.</td>
+    <td>Не удалось выполнить проверку подлинности запроса. Убедитесь, что указаны допустимые учетные данные.</td>
   </tr>
   <tr>
     <td>403</td>
@@ -158,7 +158,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
   </tr>
   <tr>
     <td>429</td>
-    <td>Сервер отклонил запрос, так как клиент превысило ограничения запросов.</td>
+    <td>Сервер отклонил запрос, так как клиент превысил лимиты запросов.</td>
   </tr>
   <tr>
     <td>500</td>

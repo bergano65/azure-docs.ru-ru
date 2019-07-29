@@ -9,14 +9,14 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 06/18/2019
+ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: bccdcce52b9e62048d7eb307a4783abda0f9d17c
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 5122a5a88f5a0d67799930999236f2993bc43f8f
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68563171"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68609763"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
@@ -123,7 +123,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 ``` 
 
 ### <a name="my-luis-app-was-working-yesterday-but-today-im-getting-403-errors-i-didnt-change-the-app-how-do-i-fix-it"></a>Вчера приложение LUIS работало, но сейчас отображаются ошибки 403. Я не изменял приложение. Как ее исправить?
-Выполните [инструкции](#how-do-i-create-and-assign-a-luis-endpoint-key) в следующем разделе часто задаваемых вопросов, чтобы создать ключ конечной точки LUIS и назначить его приложению. Затем необходимо изменить HTTP-запрос к конечной точке, чтобы [использовать новый ключ конечной точки](luis-concept-keys.md#use-endpoint-key-in-query).
+Выполните эти [инструкции](#how-do-i-create-and-assign-a-luis-endpoint-key) , чтобы создать ключ КОНЕЧНОЙ точки Luis и назначить его приложению. Затем необходимо изменить HTTP-запрос клиентского приложения на конечную точку, чтобы [использовать новый ключ конечной точки](luis-concept-keys.md#use-endpoint-key-in-query). Если вы создали новый ресурс в другом регионе, измените регион запроса клиента HTTP.
 
 ### <a name="how-do-i-secure-my-luis-endpoint"></a>Как включить защиту конечной точки LUIS?
 Сведения об этом можно просмотреть в разделе [Защита конечной точки](luis-concept-security.md#securing-the-endpoint).

@@ -1,6 +1,6 @@
 ---
 title: Создание Cognitive Services ресурса с помощью Azure CLI
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Приступая к работе с Azure Cognitive Services, создав и подпишитесь на ресурс с помощью интерфейса командной строки Azure.
 services: cognitive-services
 author: aahill
@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: aahi
-ms.openlocfilehash: 05b679fd969dc766d697070979416312c3bad622
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: c0a89a61f50d245389c9cdbd8a0aa9ba09eec004
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68334269"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68594609"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Создание Cognitive Services ресурса с помощью интерфейса командной строки Azure (CLI)
 
@@ -23,7 +23,7 @@ ms.locfileid: "68334269"
 
 В этом кратком руководстве вы узнаете, как зарегистрироваться в Azure Cognitive Services и создать учетную запись с одной или несколькими службами, используя [интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Эти службы представлены [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)Azure, которые позволяют подключиться к одному или нескольким API-интерфейсы Cognitive Services Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Допустимая подписка Azure — [создайте ее](https://azure.microsoft.com/free/) бесплатно.
 * [Интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
@@ -77,50 +77,50 @@ az group create \
 > [!NOTE]
 > Многие службы для работы с назначением имеют бесплатный уровень, который можно использовать для пробного использования службы. Чтобы использовать уровень "бесплатный", `F0` используйте в качестве номера SKU для ресурса.
 
-### <a name="vision"></a>Зрение
+### <a name="vision"></a>Визуальное распознавание
 
-| Service                    | Вид                      |
+| Служба                    | Kind                      |
 |----------------------------|---------------------------|
-| API Компьютерного зрения            | `ComputerVision`          |
+| Компьютерное зрение            | `ComputerVision`          |
 | Прогнозирование Пользовательское визуальное распознавание | `CustomVision.Prediction` |
 | Пользовательское визуальное распознавание обучение   | `CustomVision.Training`   |
-| API Распознавания лиц                   | `Face`                    |
+| API распознавания лиц                   | `Face`                    |
 | Распознаватель документов            | `FormRecognizer`          |
 | Распознаватель рукописного текста             | `InkRecognizer`           |
 
 ### <a name="search"></a>Поиск
 
-| Service            | Вид                  |
+| Служба            | Kind                  |
 |--------------------|-----------------------|
-| API Автозаполнения Bing   | `Bing.Autosuggest.v7` |
+| Автозаполнение Bing   | `Bing.Autosuggest.v7` |
 | Пользовательский поиск Bing | `Bing.CustomSearch`   |
-| API Поиска сущностей Bing | `Bing.EntitySearch`   |
+| Поиск сущностей Bing | `Bing.EntitySearch`   |
 | Поиск Bing        | `Bing.Search.v7`      |
-| API Проверки орфографии Bing   | `Bing.SpellCheck.v7`  |
+| Проверка орфографии Bing   | `Bing.SpellCheck.v7`  |
 
 ### <a name="speech"></a>Речь
 
-| Service            | Вид                 |
+| Служба            | Kind                 |
 |--------------------|----------------------|
 | Службы "Речь"    | `SpeechServices`     |
 | Распознавание речи | `SpeakerRecognition` |
 
 ### <a name="language"></a>Язык
 
-| Service            | Вид                |
+| Служба            | Kind                |
 |--------------------|---------------------|
 | Основные сведения о форме | `FormUnderstanding` |
 | LUIS               | `LUIS`              |
 | QnA Maker          | `QnAMaker`          |
-| Анализ текста     | `TextAnalytics`     |
-| Перевод текста   | `TextTranslation`   |
+| Текстовая аналитика     | `TextAnalytics`     |
+| Перевод текстов   | `TextTranslation`   |
 
 ### <a name="decision"></a>Решение
 
-| Service           | Вид               |
+| Служба           | Kind               |
 |-------------------|--------------------|
 | Детектор аномалий  | `AnomalyDetector`  |
-| Content Moderator | `ContentModerator` |
+| Модератор контента | `ContentModerator` |
 | Персонализатор      | `Personalizer`     |
 
 Список доступных типов "виды" можно найти с помощью команды [AZ cognitiveservices Account List-видах](https://docs.microsoft.com/cli/azure/cognitiveservices/account?view=azure-cli-latest#az-cognitiveservices-account-list-kinds) :

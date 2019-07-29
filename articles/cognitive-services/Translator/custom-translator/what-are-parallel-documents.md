@@ -3,18 +3,18 @@ title: Что такое параллельные документы Custom Tran
 titleSuffix: Azure Cognitive Services
 description: Параллельные документы — это пары документов, среди которых один является переводом другого. Один документ в паре содержит предложения на исходном языке, а другой — эти же предложения, переведенные на целевой язык.
 author: swmachan
-manager: christw
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 3b7997adfa38fa24bdf41f22c99f06e9a0ba1bf0
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: fb54df2e1eb89d30e62ae80355635356343994ee
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447395"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68595447"
 ---
 # <a name="what-are-parallel-documents"></a>Что такое параллельные документы
 
@@ -23,7 +23,7 @@ ms.locfileid: "67447395"
 
 ## <a name="requirements"></a>Требования
 
-Вам потребуется не менее 10 000 уникальных параллельных предложений для обучения в системе. Рекомендуется постоянно добавлять больше параллельного содержимого и переобучать систему, чтобы улучшить качество системы перевода.
+Для обучения системы потребуется не менее 10 000 уникальных параллельных предложений. Рекомендуется постоянно добавлять больше параллельного содержимого и переобучать систему, чтобы улучшить качество системы перевода.
 
 Корпорация Майкрософт требует, чтобы документы, передаваемые в Custom Translator, не нарушали авторские права или интеллектуальную собственность третьих лиц. Дополнительные сведения см. в статье [об условиях использования](https://azure.microsoft.com/support/legal/cognitive-services-terms/).
 Передача документа с помощью портала не изменяет права на интеллектуальную собственность в самом документе.
@@ -44,6 +44,6 @@ ms.locfileid: "67447395"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения об использовании [словаря](what-is-dictionary.md) в Custom Translator.

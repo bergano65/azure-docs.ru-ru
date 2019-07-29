@@ -3,18 +3,18 @@ title: Глоссарий. Custom Translator
 titleSuffix: Azure Cognitive Services
 description: Глоссарий Custom Translator
 author: swmachan
-manager: christw
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: reference
-ms.openlocfilehash: 3781969f74b8314ebb4633697b922f47c12196ae
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: b00e38259bc3fe8cb6998c64ec453a17963a5ee5
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67443395"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68595786"
 ---
 # <a name="glossary"></a>Глоссарий
 

@@ -1,6 +1,6 @@
 ---
 title: Динамический словарь API перевода текстов
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Использование функции динамического словаря API перевода текстов.
 services: cognitive-services
 author: swmachan
@@ -10,14 +10,14 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: a815434cb8797acf6b92a8fe4a4f1ff69508975d
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: f586702350b38c6d546767f64a8e2f6115b59817
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67839218"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68595287"
 ---
-# <a name="how-to-use-a-dynamic-dictionary"></a>Как использовать динамический словарь
+# <a name="how-to-use-a-dynamic-dictionary"></a>Использование динамического словаря
 
 Если вы уже знаете перевод, который хотите применить к слову или фразе, вы можете указать его в запросе как исправление. Динамический словарь безопасен только для составных существительных, таких как имена собственные и названия продуктов.
 
@@ -25,10 +25,10 @@ ms.locfileid: "67839218"
 
 <mstrans:dictionary translation="перевод фразы">фраза</mstrans:dictionary>
 
-**Требования:**
+**Необходимость**
 
-* `From` И `To` языки должны быть разными. 
-* Необходимо включить `From` запрос перевода API вместо того чтобы использовать функцию автоопределения параметра. 
+* Языки `From` и`To` должны быть разными. 
+* `From` Параметр необходимо включить в запрос перевода API вместо использования функции автоматического обнаружения. 
 
 **Пример: en-de:**
 

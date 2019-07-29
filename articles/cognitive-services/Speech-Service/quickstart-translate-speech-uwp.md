@@ -9,18 +9,18 @@ ms.service: cognitive-services
 ms.subservice: speech-service
 ms.date: 07/23/2019
 ms.author: erhopf
-ms.openlocfilehash: e73f15525aa679a3ba0242dab897adf999fe7e09
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 71f8ecfaa11538cf43284d2aafff61cbf9655c0e
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68559260"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68607763"
 ---
 # <a name="quickstart-translate-speech-with-the-speech-sdk-for-c-uwp"></a>Краткое руководство. Перевод речи с помощью пакета SDK службы "Речь" для C# (UWP)
 
 Кроме того, доступны краткие руководства по [преобразованию речи в текст](quickstart-csharp-uwp.md), [текста в речь](quickstart-text-to-speech-csharp-uwp.md) и [виртуальному помощнику для обработки голоса](quickstart-virtual-assistant-csharp-uwp.md).
 
-В этом кратком руководстве вы создадите простое приложение универсальной платформы Windows (UWP), которое записывает речь пользователя с микрофона компьютера, переводит речь и расшифровывает переведенный текст в командную строку в режиме реального времени. Приложение предназначено для работы в 64-разрядной версии Windows с использованием [пакета NuGet SDK службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017.
+В этом кратком руководстве вы создадите простое приложение универсальной платформы Windows (UWP), которое записывает речь пользователя с микрофона компьютера, переводит речь и расшифровывает переведенный текст в командную строку в режиме реального времени. Это приложение предназначено для работы в 64-разрядной ОС Windows и построено с помощью [пакета NUGET SDK для распознавания речи](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017 или более поздней версии.
 
 Полный список языков для перевода речи см. в статье, посвященной [поддержке языков](language-support.md).
 
@@ -31,7 +31,7 @@ ms.locfileid: "68559260"
 
 Для работы с этим кратким руководством вам понадобится:
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) или более поздней версии
 * Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio

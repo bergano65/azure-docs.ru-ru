@@ -544,6 +544,9 @@
         - name: Индексатор видео
           tocHref: /azure/media-services/video-indexer/
           topicHref: /azure/media-services/video-indexer/
+    - name: Миграция
+      tocHref: /azure/migrate/
+      topicHref: /azure/migrate/
     - name: Службы мобильного взаимодействия
       tocHref: /azure/mobile-engagement/
       topicHref: /azure/mobile-engagement/

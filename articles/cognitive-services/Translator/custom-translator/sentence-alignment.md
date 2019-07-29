@@ -3,18 +3,18 @@ title: Связывание и сопоставление предложений
 titleSuffix: Azure Cognitive Services
 description: Во время выполнения обучения предложения, присутствующие в параллельных документах, связываются или сопоставляются. Custom Translator анализирует перевод по одному предложению за раз, читая предложение и его перевод. Затем он сопоставляет слова и фразы в этих двух предложениях друг с другом.
 author: swmachan
-manager: christw
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: f73c40704e10a8e2368ee1eb369ee3dccdf269ee
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: e9bc5c876da6bd2be1b22b389b819e51330b2e50
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448314"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68595458"
 ---
 # <a name="sentence-pairing-and-alignment-in-parallel-documents"></a>Связывание и сопоставление предложений в параллельных документах
 
@@ -41,6 +41,6 @@ Custom Translator анализирует перевод по одному пре
 | Тестирование    | 2 000                                      | 500                                      | 2500                          |
 | Словарь | 0                                          | 0                                        | Верхнее ограничение отсутствует                 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения об использовании [словаря](what-is-dictionary.md) в Custom Translator.
