@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: sngun
 ms.openlocfilehash: 25ac3da36727c33cc916a208f1e7974a35c545ad
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67185041"
 ---
   Теперь перейдите на страницу учетной записи Azure Cosmos DB и щелкните **Ключи**. Эти значения понадобятся в веб-приложении, которое вы создадите далее.

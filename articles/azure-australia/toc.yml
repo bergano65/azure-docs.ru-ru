@@ -1,0 +1,54 @@
+- name: Документация по Azure в Австралии
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Azure в Австралии
+      href: australia-overview.md
+- name: Основные понятия
+  items:
+    - name: Безопасность в Azure в Австралии
+      items:
+        - name: Защита данных
+          href: secure-your-data.md
+        - name: Конфигурация VPN-шлюза Azure
+          href: vpn-gateway.md
+        - name: Azure Key Vault
+          href: azure-key-vault.md
+        - name: Федерация удостоверений
+          href: identity-federation.md
+        - name: RBAC и PIM
+          href: role-privileged.md
+        - name: Site Recovery и Backup (Essential Eight)
+          href: recovery-backup.md
+        - name: Мониторинг системы Azure
+          href: system-monitor.md
+        - name: Политика Azure и Azure Blueprints
+          href: azure-policy.md
+    - name: Шлюзы в Azure в Австралии
+      items:
+        - name: 'Ведение журналов, аудит и видимость шлюзов'
+          href: gateway-log-audit-visibility.md
+        - name: Безопасное удаленное администрирование шлюза
+          href: gateway-secure-remote-administration.md
+        - name: Элемент управления входящим трафиком шлюза
+          href: gateway-ingress-traffic.md
+        - name: Элемент управления исходящим трафиком шлюза
+          href: gateway-egress-traffic.md
+- name: Ресурсы
+  items:
+    - name: Сведения о безопасности в Azure в Австралии
+      href: security-explained.md
+    - name: Дополнительные ресурсы по Azure в Австралии
+      href: reference-library.md
+    - name: Веб-сайт Центра кибербезопасности Австралии (ACSC)
+      href: 'https://cyber.gov.au/'
+    - name: 'Список облачных служб, сертифицированных для Австралии (CCSL)'
+      href: 'https://acsc.gov.au/infosec/irap/certified_clouds.htm'
+    - name: 'Страница, посвященная Австралии, на портале Microsoft Service Trust Portal'
+      href: 'https://aka.ms/au-irap'
+    - name: Azure Blueprints для Австралии со статусом PROTECTED (Защищено) для веб-приложений IaaS и PaaS
+      href: 'https://aka.ms/au-protected'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'

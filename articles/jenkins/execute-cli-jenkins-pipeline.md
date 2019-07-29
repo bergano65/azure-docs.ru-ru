@@ -49,7 +49,7 @@ sudo apt-get install -y maven
 
 Для выполнения Azure CLI необходимы учетные данные Azure.
 
-* На панели мониторинга Jenkins выберите **Credentials -> System ->**(Учетные данные -> Система). Щелкните **Global credentials (unrestricted)** (Глобальные учетные данные (неограниченные)).
+* На панели мониторинга Jenkins выберите **Credentials -> System ->** (Учетные данные -> Система). Щелкните **Global credentials (unrestricted)** (Глобальные учетные данные (неограниченные)).
 * Щелкните **Add Credentials** (Добавить учетные данные), чтобы добавить [субъект-службу Microsoft Azure](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json) путем ввода следующих значений: идентификатор подписки, идентификатор клиента, секрет клиента и конечная точка маркера OAuth 2.0. Укажите идентификатор, который будет использоваться в следующем шаге.
 
 ![Добавить учетные данные](./media/execute-cli-jenkins-pipeline/add-credentials.png)

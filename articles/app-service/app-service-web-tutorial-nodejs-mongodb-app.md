@@ -195,7 +195,7 @@ az cosmosdb list-keys --name <cosmosdb_name> --resource-group myResourceGroup
 <a name="devconfig"></a>
 ### <a name="configure-the-connection-string-in-your-nodejs-application"></a>Настройка строки подключения в приложении Node.js
 
-В локальном репозитории MEAN.js создайте файл с именем _local-production.js_ в папке _config/env/_. По умолчанию, чтобы этот файл хранился вне репозитория, настраивается _.gitignore_. 
+В локальном репозитории MEAN.js создайте файл с именем _local-production.js_ в папке _config/env/_ . По умолчанию, чтобы этот файл хранился вне репозитория, настраивается _.gitignore_. 
 
 Скопируйте в него следующий код: Замените два заполнителя *\<cosmosdb_name>* именем базы данных Cosmos DB, а заполнитель *\<primary_master_key>*  — ключом, скопированным на предыдущем шаге.
 
@@ -272,7 +272,7 @@ MEAN.JS version: 0.5.0
 
 Чтобы задать параметры приложения, выполните команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. 
 
-В следующем примере настраивается параметр приложения `MONGODB_URI` в приложении Azure. Замените заполнители *\<app_name>*, *\<cosmosdb_name>* и *\<primary_master_key>*.
+В следующем примере настраивается параметр приложения `MONGODB_URI` в приложении Azure. Замените заполнители *\<app_name>* , *\<cosmosdb_name>* и *\<primary_master_key>* .
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app_name> --resource-group myResourceGroup --settings MONGODB_URI="mongodb://<cosmosdb_name>:<primary_master_key>@<cosmosdb_name>.documents.azure.com:10250/mean?ssl=true"
@@ -447,7 +447,7 @@ node server.js
 
 Откройте в браузере адрес `http://localhost:8443` и убедитесь, что вход выполнен.
 
-Выберите **Администрирование > Управление статьями** и добавьте статью, нажав кнопку **+**.
+Выберите **Администрирование > Управление статьями** и добавьте статью, нажав кнопку **+** .
 
 Должно появиться новое текстовое поле `Comment`.
 

@@ -308,7 +308,13 @@
               displayname: 'live, quickpulse, quick pulse, live metrics'
               href: app/live-stream.md
             - name: Метрики
-              href: app/metrics-explorer.md
+              items:
+                - name: Метрики на основе журналов и предварительно агрегированные метрики
+                  href: app/pre-aggregated-metrics-log-metrics.md
+                - name: Определения метрик на основе журнала
+                  href: platform/app-insights-metrics.md
+                - name: Классический обозреватель метрик
+                  href: app/metrics-explorer.md
             - name: Поиск
               href: app/diagnostic-search.md
             - name: Profiler
@@ -425,8 +431,6 @@
                   href: app/asp-net-dependencies.md
                 - name: ApplicationInsights.config
                   href: app/configuration-with-applicationinsights-config.md
-                - name: Метрики на основе журналов и предварительно агрегированные метрики
-                  href: app/pre-aggregated-metrics-log-metrics.md
                 - name: Диагностика транзакции
                   href: app/transaction-diagnostics.md
                 - name: Корреляция пользовательских источников данных
@@ -659,15 +663,13 @@
                 - name: Сбор данных в журналы
                   href: platform/diagnostic-logs-stream-log-store.md
                 - name: Сбор данных из службы хранилища Azure
-                  href: platform/collect-azure-metrics-logs.md
+                  href: platform/azure-storage-iis-table.md
                 - name: Архивирование в хранилище
                   href: platform/archive-diagnostic-logs.md
                 - name: Потоковая передача данных в Центры событий
                   href: platform/diagnostic-logs-stream-event-hubs.md
                 - name: Включение с помощью шаблонов Resource Manager
                   href: platform/diagnostic-logs-stream-template.md
-                - name: Сбор метрик и журналов служб
-                  href: platform/azure-storage-iis-table.md
             - name: Потоковая передача данных в Центры событий
               href: platform/stream-monitoring-data-event-hubs.md
             - name: Аналитика Key Vault
@@ -736,8 +738,8 @@
               href: platform/metrics-getting-started.md
             - name: Расширенные возможности обозревателя метрик
               href: platform/metrics-charts.md
-            - name: Метрики на основе журналов
-              href: platform/app-insights-metrics.md
+            - name: Примеры диаграмм метрик
+              href: platform/metric-chart-samples.md
             - name: Устранение неполадок с диаграммами метрик
               href: platform/metrics-troubleshoot.md
         - name: Журналы

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 99c94792f48db7a932e670f05216bcea0e90a27c
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 34d3a7fb299ba143eee01b6b7184f1c566d41aba
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67672808"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68515455"
 ---
 # <a name="tutorial-configure-zscaler-zscloud-for-automatic-user-provisioning"></a>Руководство по Настройка Zscaler ZSCloud для автоматической подготовки пользователей
 
@@ -28,8 +28,7 @@ ms.locfileid: "67672808"
 
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на основе службы подготовки пользователей Azure AD. Подробные сведения о том, какие функции выполняет эта служба и каков принцип ее работы, а также ответы на часто задаваемые вопросы см. в статье об [автоматизации подготовки и отзыва пользователей в приложениях SaaS с помощью Azure Active Directory](../active-directory-saas-app-provisioning.md).
->
-> Сейчас этот соединитель предоставляется в общедоступной предварительной версии. Дополнительные сведения об общих условиях использования продуктов в предварительной версии см. в документе [Дополнительные условия использования Предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 
 ## <a name="prerequisites"></a>Предварительные требования
 

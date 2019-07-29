@@ -555,7 +555,21 @@
       items:
         - name: Анализ данных с помощью Databricks
           href: ../blobs/data-lake-storage-quickstart-create-databricks-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-    - name: Руководства
+        - name: Управление большими двоичными объектами без кода
+          items:
+            - name: PowerShell
+              href: storage-quickstart-blobs-powershell.md
+            - name: CLI
+              href: storage-quickstart-blobs-cli.md
+        - name: Разработка с использованием больших двоичных объектов
+          items:
+            - name: .NET
+              href: storage-quickstart-blobs-dotnet.md
+            - name: Java
+              href: storage-quickstart-blobs-java-v10.md
+            - name: Python
+              href: storage-quickstart-blobs-python.md
+    - name: Учебники
       items:
         - name: 'Извлечение, преобразование и загрузка данных с помощью Azure Databricks'
           href: ../../azure-databricks/databricks-extract-load-sql-data-warehouse.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
@@ -667,6 +681,12 @@
               href: ../blobs/data-lake-storage-performance-tuning-mapreduce.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Оптимизация Storm в HDInsight
               href: ../blobs/data-lake-storage-performance-tuning-storm.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Управление файлами (BLOB-объектами)
+          items:
+            - name: PowerShell
+              href: /powershell/module/azure.storage
+            - name: Инфраструктура CLI Azure
+              href: ../common/storage-azure-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Перенос данных
           items:
             - name: Обновление Data Lake Storage 1-го поколения
@@ -675,8 +695,37 @@
               href: ../blobs/data-lake-storage-migrate-on-premises-HDFS-cluster.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: Справочные материалы
       items:
+        - name: PowerShell
+          href: /powershell/module/azure.storage
+        - name: Azure CLI
+          href: /cli/azure/storage
+        - name: .NET
+          items:
+            - name: 'Большие двоичные объекты, очереди, таблицы и файлы'
+              href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/client'
+            - name: Перемещение данных
+              href: /dotnet/api/microsoft.azure.storage.datamovement
+            - name: Resource Manager
+              href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/management'
+        - name: Java
+          items:
+            - name: 'BLOB-объекты, очереди, таблицы и файлы (версия 7)'
+              href: 'https://docs.microsoft.com/java/api/overview/azure/storage/client?view=azure-java-stable'
+            - name: Пакет SDK для хранилища BLOB-объектов (версия 10)
+              href: 'https://docs.microsoft.com/java/api/overview/azure/storage/client?view=azure-java-preview'
         - name: REST
-          href: 'https://docs.microsoft.com/rest/api/storageservices/data-lake-storage-gen2'
+          items:
+            - name: 'Большие двоичные объекты, очереди, таблицы и файлы'
+              href: /rest/api/storageservices
+            - name: Data Lake Storage 2-го поколения
+              href: 'https://docs.microsoft.com/rest/api/storageservices/data-lake-storage-gen2'
+            - name: Поставщик ресурсов
+              href: /rest/api/storagerp
+            - name: Импорт и экспорт
+              href: /rest/api/storageimportexport
+        - name: Шаблон Resource Manager
+          displayName: ARM
+          href: /azure/templates/microsoft.storage/allversions
     - name: Ресурсы
       items:
         - name: Известные проблемы

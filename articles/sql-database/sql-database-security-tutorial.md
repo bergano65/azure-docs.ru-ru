@@ -8,15 +8,14 @@ ms.topic: tutorial
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 02/08/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: d09af0a4c2d09004d5c1bbf3261a14850eef7714
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: ce9ba7c197bb604b9d71e2bf501ca67d32865f38
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59496443"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566872"
 ---
 # <a name="tutorial-secure-a-single-or-pooled-database"></a>Руководство по Защита отдельной базы данных или базы данных в пуле
 
@@ -141,11 +140,11 @@ ms.locfileid: "59496443"
 
 Сведения о настройке Azure AD см. в статьях:
 
-- [Интеграция локальных удостоверений с помощью Azure AD](../active-directory/hybrid/whatis-hybrid-identity.md)
-- [Добавление имени личного домена в Azure AD](../active-directory/active-directory-domains-add-azure-portal.md)
-- [Теперь Microsoft Azure поддерживает федерацию с Windows Server AD](https://azure.microsoft.com/blog/20../../windows-azure-now-supports-federation-with-windows-server-active-directory/)
+- [Что собой представляет гибридная идентификация](../active-directory/hybrid/whatis-hybrid-identity.md)
+- [Добавление имени личного домена с помощью портала Azure Active Directory](../active-directory/active-directory-domains-add-azure-portal.md)
+- [Windows Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/20../../windows-azure-now-supports-federation-with-windows-server-active-directory/) (Теперь Microsoft Azure поддерживает федерацию с Windows Server AD)
 - [Администрирование каталога Azure AD](../active-directory/fundamentals/active-directory-administer.md)
-- [Управление Azure AD с помощью PowerShell](/powershell/azure/overview?view=azureadps-2.0)
+- [Общие сведения об Azure PowerShell](/powershell/azure/overview?view=azureadps-2.0)
 - [Порты и протоколы, необходимые для гибридной идентификации](../active-directory/hybrid/reference-connect-ports.md)
 
 ## <a name="manage-database-access"></a>Управление доступом к базе данных

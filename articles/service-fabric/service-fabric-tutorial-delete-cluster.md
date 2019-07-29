@@ -3,7 +3,7 @@ title: Удаление кластера Service Fabric в Azure | Докуме�
 description: Из этого руководства вы узнаете, как удалить размещенный в Azure кластер Service Fabric и все его ресурсы. Можно удалить группу ресурсов, содержащую кластер, или выборочно удалить его ресурсы.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: ''
 ms.assetid: ''
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 07/22/2019
-ms.author: aljo
+ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: 660b8cc8ec142c1c0710480020f103215359987f
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: c6fd4234257cbb19580a5b406750cc72d03609c0
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68385061"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68598865"
 ---
 # <a name="tutorial-remove-a-service-fabric-cluster-running-in-azure"></a>Руководство по Удаление кластера Service Fabric, работающего в Azure
 
