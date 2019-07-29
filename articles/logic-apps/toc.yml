@@ -155,6 +155,8 @@
           href: logic-apps-enterprise-integration-b2b-business-continuity.md
     - name: Подключение к виртуальным сетям с изолированными средами
       href: connect-virtual-network-vnet-isolated-environment.md
+    - name: Добавление артефактов в среды службы интеграции
+      href: add-artifacts-integration-service-environment-ise.md
     - name: Доступ к локальным данным
       items:
         - name: Установка шлюза данных
@@ -295,6 +297,8 @@
           href: manage-logic-apps-with-visual-studio.md
         - name: Управление учетными записями интеграции
           href: logic-apps-enterprise-integration-accounts.md
+        - name: Управление средами службы интеграции
+          href: ise-manage-integration-service-environment.md
         - name: Переход на последнюю схему
           href: ../connectors/connectors-schema-migration.md
     - name: Тест

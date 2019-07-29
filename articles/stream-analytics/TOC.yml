@@ -148,6 +148,8 @@
               href: stream-analytics-scale-jobs.md
         - name: Масштабирование с помощью функций Машинного обучения
           href: stream-analytics-scale-with-machine-learning-functions.md
+        - name: Масштабирование с помощью повторного секционирования
+          href: repartition.md
     - name: Автоматизация
       items:
         - name: Использование пакета .NET SDK
