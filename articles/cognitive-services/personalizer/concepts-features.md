@@ -3,19 +3,19 @@ title: 'Функции: Действия и контекст. Персонали
 titleSuffix: Azure Cognitive Services
 description: Для улучшения предложений относительно ранжирования Персонализатор использует признаки — сведения действиях и контексте. Признаки могут быть как универсальными, так и характерными для элемента.
 services: cognitive-services
-author: edjez
+author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 06/24/2019
-ms.author: edjez
-ms.openlocfilehash: 2dab7447e6051d4559f7f3985579cac9376ac7be
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.author: diberry
+ms.openlocfilehash: 1960856ce2f15945d1b1bfa093f349771d481ffc
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68423292"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68663845"
 ---
 # <a name="features-are-information-about-actions-and-context"></a>Признаки — сведения о действиях и контексте
 

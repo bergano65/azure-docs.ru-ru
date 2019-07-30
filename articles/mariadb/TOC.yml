@@ -145,6 +145,8 @@
           href: howto-data-in-replication.md
         - name: Создание реплик чтения с помощью портала Azure
           href: howto-read-replicas-portal.md
+        - name: Создание реплик чтения с помощью Azure CLI
+          href: howto-read-replicas-cli.md
     - name: Устранение неполадок
       items:
         - name: Устранение ошибок подключения

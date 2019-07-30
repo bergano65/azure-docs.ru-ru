@@ -7,6 +7,7 @@
     - name: Интеграция с мобильными приложениями службы приложений
       href: notification-hubs-app-service.md
 - name: Краткие руководства
+  expanded: true
   items:
     - name: Создание центра уведомлений на портале Azure
       href: create-notification-hub-portal.md

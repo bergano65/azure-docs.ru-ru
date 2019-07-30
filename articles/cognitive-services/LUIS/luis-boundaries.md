@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 04/18/2019
+ms.date: 07/29/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 5dd49035414c7e717c3d60ab9bc185f42dcac408
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 6d4991a0a05bbdd7143987bfa227cc40732cda35
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68560858"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639250"
 ---
 # <a name="boundaries-for-your-luis-model-and-keys"></a>Границы модели LUIS и ключи
 У LUIS есть несколько областей границ. Первая — [граница модели](#model-boundaries), которая управляет намерениями, сущностями и возможностями в LUIS. Вторая область — [пределы квот](#key-limits) на основе типа ключа. Третья область границ — [сочетания клавиш](#keyboard-controls) для управления веб-сайтом LUIS. Четвертая область — [сопоставление региона мира](luis-reference-regions.md) между веб-сайтом разработки LUIS и API-интерфейсами [конечной точки](luis-glossary.md#endpoint) LUIS. 
@@ -76,7 +76,7 @@ ms.locfileid: "68560858"
 |Language Understanding [Subscription][pricing] -S0 — базовый уровень|недопустимо|50/с|Запрос конечной точки LUIS|
 |[Подписка][pricing] на автообслуживание — S0 — уровень Standard|недопустимо|50/с|Запрос конечной точки LUIS|
 |[Интеграция анализа тональности](luis-how-to-publish-app.md#enable-sentiment-analysis)|недопустимо|бесплатно|Добавление сведений о тональности, включая извлечение данных ключевой фразы |
-|Интеграция речи|недопустимо|5,5 долл. США/1 тыс. запросов конечной точки|Преобразование голосового высказывания в текстовое и возвращение результатов LUIS|
+|[Интеграция с речью](../speech-service/how-to-recognize-intents-from-speech-csharp.md)|недопустимо|5,5 долл. США/1 тыс. запросов конечной точки|Преобразование голосового высказывания в текстовое и возвращение результатов LUIS|
 
 ## <a name="keyboard-controls"></a>Элементы управления клавиатуры
 
@@ -84,7 +84,7 @@ ms.locfileid: "68560858"
 |--|--|
 |CTRL+E|Переключение между токенами и сущностями в списке высказываний|
 
-## <a name="website-sign-in-time-period"></a>Период времени для входа на веб-сайт
+## <a name="website-sign-in-time-period"></a>Период времени входа веб-сайта
 
 Выполнять вход можно в течение **60 минут**. По истечении этого времени возникнет ошибка. Необходимо снова выполнить вход.
 

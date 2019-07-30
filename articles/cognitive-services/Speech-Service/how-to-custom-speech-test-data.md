@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 8821ce46c65ac8bca36f006ef77bcaf475b0573d
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: fad0fada4d9dd888b0b2a37b59e4eac1e016aec4
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68559614"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68663601"
 ---
 # <a name="prepare-data-for-custom-speech"></a>Подготовка данных для Пользовательское распознавание речи
 
@@ -29,7 +29,7 @@ ms.locfileid: "68559614"
 |-----------|-----------------|----------|-------------------|----------|
 | [Звук:](#audio-data-for-testing) | Да<br>Используется для визуальной проверки | более 5 звуковых файлов | Нет | Н/д |
 | [Звуковые и пользовательские записи с метками](#audio--human-labeled-transcript-data-for-testingtraining) | Да<br>Используется для вычисления точности | 0,5 – 5 часов звука | Да | 1 – 1 000 часов звука |
-| [Связанный текст](##related-text-data-for-training) | Нет | Н/д | Да | 1-200 МБ связанного текста |
+| [Связанный текст](#related-text-data-for-training) | Нет | Н/д | Да | 1-200 МБ связанного текста |
 
 Файлы должны быть сгруппированы по типу в набор данных и переданы в виде ZIP-файла. Каждый набор данных может содержать только один тип данных.
 

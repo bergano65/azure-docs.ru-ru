@@ -1,21 +1,21 @@
 ---
-title: Масштабируемость и производительность - Personalizer
+title: Масштабируемость и производительность — Персонализация
 titleSuffix: Azure Cognitive Services
 description: 'Для высокопроизводительных веб-сайтов и приложений с большой пропускной способностью два стоит учесть два основных фактора, касающихся Персонализатора и обеспечения масштабируемости и производительности: задержка и пропускная способность обучения.'
 services: cognitive-services
-author: edjez
+author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 06/07/2019
-ms.author: edjez
-ms.openlocfilehash: 06c2e65c723e18acc515dd7effc61aae0564f411
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.author: diberry
+ms.openlocfilehash: d116f6bd389b1404ea723c965111cd05880e6c30
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722417"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68662823"
 ---
 # <a name="scalability-and-performance"></a>Масштабируемость и производительность
 

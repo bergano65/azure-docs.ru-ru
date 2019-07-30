@@ -1,33 +1,33 @@
 ---
-title: Устранение неполадок — Personalizer
+title: Устранение неполадок — Персонализация
 titleSuffix: Azure Cognitive Services
-description: Устранение неполадок вопросы о Personalizer можно найти в этой статье.
-author: edjez
+description: Сведения об устранении неполадок, связанных с персонализацией, можно найти в этой статье.
+author: diberry
 manager: nitinme
 services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: article
 ms.date: 06/15/2019
-ms.author: edjez
-ms.openlocfilehash: be6119d96b89622f45db1099a47e858a5893c2cb
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.author: diberry
+ms.openlocfilehash: 7f7a6a08b86d21287c644f6a851d465d97f32e74
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722248"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68663679"
 ---
-# <a name="personalizer-troubleshooting"></a>Устранение неполадок personalizer
+# <a name="personalizer-troubleshooting"></a>Устранение неполадок персонализации
 
-Эта статья содержит ответы на часто задаваемые вопросы об устранении неполадок, о Personalizer.
+Эта статья содержит ответы на часто задаваемые вопросы об устранении неполадок персонализации.
 
 ## <a name="learning-loop"></a>Цикл обучения
 
-### <a name="the-learning-loop-doesnt-seem-to-learn-how-do-i-fix-this"></a>Кажется, что цикл обучения не узнать. Как это исправить?
+### <a name="the-learning-loop-doesnt-seem-to-learn-how-do-i-fix-this"></a>В цикле обучения не рассматривается. Как это исправить?
 
-Цикл обучения требуется несколько тысяч вызовы Reward Rank вызовы эффективно определять приоритеты. 
+В цикле обучения требуется несколько тысяч вызовов наград, прежде чем Ранжированные вызовы упорядочивают приоритеты. 
 
-Если вы не знаете о том, как цикл обучения в настоящее время работает, запустите [автономной оценки](concepts-offline-evaluation.md)и примените политику исправленный обучения. 
+Если вы не уверены в том, как работает цикл обучения, запустите [автономную оценку](concepts-offline-evaluation.md)и примените исправленную политику обучения. 
 
 ## <a name="next-steps"></a>Следующие шаги
 

@@ -2,49 +2,59 @@
 author: wolfma61
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 09/13/2018
+ms.date: 07/05/2019
 ms.author: wolfma
-ms.openlocfilehash: afe6f1493c7fa8272c67f23d6708ad6e4eea9381
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 308ee2ef121648cb45152948926c5fd7fb934744
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185580"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68362603"
 ---
-1. Запустите Visual Studio 2017.
+1. Откройте Visual Studio 2019.
 
-1. В строке меню в Visual Studio выберите **Инструменты > Get Tools** (Получить инструменты) и убедитесь, что доступна рабочая нагрузка **Разработка классических приложений .NET**. Если рабочая нагрузка не была установлена, установите флажок, а затем щелкните **Изменить**, чтобы начать установку. Скачивание и установка может занять несколько минут.
+1. В окне "Период запуска" выберите **Создать новый проект**. 
+
+1. Выберите **Console App (.NET Framework)** (Консольное приложение (.NET Framework)), а затем нажмите кнопку**Далее**.
+
+1. В окне**Имя проекта** введите `helloworld`, а затем выберите **Создать**.
+
+1. В строке меню в Visual Studio выберите **Инструменты** > **Get Tools and Features** (Получить средства и компоненты), и проверьте, доступна ли рабочая нагрузка для **Разработка классических приложений .NET**. Если рабочая нагрузка не была установлена, установите флажок, а затем выберите **Изменить**, чтобы начать установку. Скачивание и установка может занять несколько минут.
 
    Если теперь флажок рядом с полем **Разработка классических приложений .NET** установлен, можно закрыть диалоговое окно.
 
-   ![Включение рабочей нагрузки "Разработка классического приложения .NET"](~/articles/cognitive-services/speech-service/media/sdk/vs-enable-net-desktop-workload.png)
+   ![Включение рабочей нагрузки "Разработка классического приложения .NET"](../articles/cognitive-services/speech-service/media/sdk/vs-enable-net-desktop-workload.png)
 
-1. Теперь давайте создадим проект. В строке меню выберите **Файл > Создать > Проект**. В открывшемся диалоговом окне в левой области разверните разделы **Установленные > Visual C# > Классическое приложение Windows** и выберите **Консольное приложение (.NET Framework)** . Назовите этот проект *helloworld*.
+Следующим шагом является установка [Speech SDK NuGet package](https://aka.ms/csspeech/nuget) (Речевой пакет SDK NuGet), чтобы вы могли ссылаться на него в коде.
 
-    ![Создание консольного приложения Visual C# (.NET Framework)](~/articles/cognitive-services/speech-service/media/sdk/qs-csharp-dotnet-windows-01-new-console-app.png "Create Visual C# Console App (.NET Framework)")
+1. В Обозревателе решений щелкните правой кнопкой мыши на `helloworld` и выберите **NuGet Packages** (Управление пакетами NuGet), чтобы отобразить Диспетчер пакетов NuGet.
 
-1. Теперь, когда проект настроен, нам нужно установить [пакет SDK для распознавания речи для NuGet](https://aka.ms/csspeech/nuget) и сослаться на него в своем коде. Найдите обозреватель решений и щелкните правой кнопкой мыши проект helloworld. В меню выберите **Управление пакетами NuGet...**
+   ![Диспетчер пакетов NuGet](../articles/cognitive-services/speech-service/media/sdk/vs-nuget-package-manager.png)
 
-   ![Щелкните правой кнопкой мыши Управление пакетами NuGet для решения](~/articles/cognitive-services/speech-service/media/sdk/qs-csharp-dotnet-windows-02-manage-nuget-packages.png "Управление пакетами NuGet для решения")
+1. В правом верхнем углу найдите раскрывающийся список **Источник пакета** и убедитесь, что выбран параметр **NuGet.org**.
 
-1. В правом верхнем углу диспетчера пакетов NuGet найдите раскрывающийся список **Источник пакета** и убедитесь, что выбран вариант **nuget.org**. Затем выберите **Обзор**, выполните поиск пакета `Microsoft.CognitiveServices.Speech` и установите последнюю стабильную версию.
+1. В левом верхнем углу нажмите кнопку **Просмотреть**.
 
-   ![Установка пакета NuGet Microsoft.CognitiveServices.Speech](~/articles/cognitive-services/speech-service/media/sdk/qs-csharp-dotnet-windows-03-nuget-install-1.0.0.png "Install NuGet package")
+1. В поле поиска введите `Microsoft.CognitiveServices.Speech` и нажмите клавишу ВВОД.
+
+1. Выберите `Microsoft.CognitiveServices.Speech` и нажмите кнопку **Установка**, чтобы установить последнюю стабильную версию.
+
+   ![Установка пакета Microsoft.CognitiveServices.Speech NuGet](../articles/cognitive-services/speech-service/media/sdk/qs-csharp-dotnet-windows-03-nuget-install-1.0.0.png)
 
 1. Примите все соглашения и лицензии для запуска установки.
 
-   ![Принять лицензию](~/articles/cognitive-services/speech-service/media/sdk/qs-csharp-dotnet-windows-04-nuget-license.png "Принять лицензию")
+   После установки пакета на **Консоли диспетчера пакетов** появится подтверждение.
 
-    После установки пакета в консоли диспетчера пакетов появится подтверждение.
+Теперь, чтобы создать и запустить консольное приложение, создайте конфигурацию платформы, соответствующую архитектуре компьютера.
 
-1. Далее нужно создать конфигурацию платформы, соответствующую архитектуре компьютера, который вы используете для создания и запуска консольного приложения. В строке меню выберите **Создать** > **Диспетчер конфигураций...**
+1. В строке меню выберите **Сборка** > **Configuration Manager** (Диспетчер конфигураций). Откроется диалоговое окно**ConfigurationManager** (Диспетчер конфигураций).
 
-    ![Запуск диспетчера конфигураций](~/articles/cognitive-services/speech-service/media/sdk/qs-csharp-dotnet-windows-05-cfg-manager-click.png "Запуск диспетчера конфигураций")
+   ![Диалоговое окно Configuration Manager (Диспетчер конфигураций)](../articles/cognitive-services/speech-service/media/sdk/vs-configuration-manager-dialog-box.png)
 
-1. В диалоговом окне **Диспетчер конфигураций** найдите раскрывающийся список **Активная платформа решения** и выберите **Создать**.
+1. В раскрывающемся списке **Активная платформа решения** выберите команду **Новый**. Откроется диалоговое окно **Создание платформы решения**.
 
-    ![Добавление новой платформы в окне диспетчера конфигураций](~/articles/cognitive-services/speech-service/media/sdk/qs-csharp-dotnet-windows-06-cfg-manager-new.png "Добавление новой платформы в окне диспетчера конфигураций")
+1. В раскрывающемся списке **Введите или выберите новую платформу**.
+   - Если вы используете 64-разрядную версию Windows, выберите **x64**.
+   - Если вы используете 32-разрядную версию Windows, выберите **x86**.
 
-1. Если вы используете 64-разрядную версию Windows, при появлении запроса **Type or select the new platform** (Введите или выберите новую платформу) выберите `x64`. Если вы используете 32-разрядную версию Windows, выберите `x86`. Закончив, нажмите кнопку **ОК**.
-
-    ![Добавление новой платформы с именем "64" в 64-разрядной версии Windows](~/articles/cognitive-services/speech-service/media/sdk/qs-csharp-dotnet-windows-07-cfg-manager-add-x64.png "Добавление 64-разрядной платформы")
+1. Нажмите **ОК**, а затем **Закрыть**.

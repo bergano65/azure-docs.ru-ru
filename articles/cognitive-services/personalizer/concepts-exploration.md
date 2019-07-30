@@ -3,19 +3,19 @@ title: Алгоритм анализа в Персонализаторе
 titleSuffix: Azure Cognitive Services
 description: Алгоритм анализа в Персонализаторе улучшает результаты персонализации даже после изменения поведения пользователя. Параметр анализа позволяет определить долю исследуемых взаимодействий пользователей, что улучшает саму модель.
 services: cognitive-services
-author: edjez
+author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 05/13/2019
-ms.author: edjez
-ms.openlocfilehash: ebb59b6bb7c36f4558b2bd63d2d55fa95823c4c3
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.author: diberry
+ms.openlocfilehash: cfecea6a64301d86aa657420dc300c26d4ed6f1e
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722477"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68663401"
 ---
 # <a name="exploration-and-exploitation"></a>Анализ и расшифровка
 

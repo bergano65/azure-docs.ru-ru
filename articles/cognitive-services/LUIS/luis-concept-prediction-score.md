@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 03/11/2019
+ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: ccbdb60687bd81de57ff675634f9d124f10784e1
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 34ec5588a510574f4ea9f01bd23c6f6487e288da
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68563947"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638355"
 ---
 # <a name="prediction-scores-indicate-prediction-accuracy-for-intent-and-entities"></a>Оценки прогнозирования отражают точность прогнозирования намерения и сущностей
 
@@ -69,7 +69,7 @@ ms.locfileid: "68563947"
 
 ## <a name="punctuation"></a>Пунктуация
 
-В LUIS пунктуация является отдельным маркером. Utterance, содержащий точку в конце, а utterance, не содержащий точку в конце, два отдельных фразы продолжительностью и могут получить два разных прогноза. Убедитесь, что модель обрабатывает пунктуацию согласно [примерам высказываний](luis-concept-utterance.md) (имеющих и не имеющих пунктуации) или как [pattern](luis-concept-patterns.md), в котором пунктуацию легче игнорировать с помощью специального синтаксиса: `I am applying for the {Job} position[.]`.
+Дополнительные [сведения](luis-concept-utterance.md#punctuation-marks) об использовании и игнорировании знаков препинания. 
 
 ## <a name="next-steps"></a>Следующие шаги
 

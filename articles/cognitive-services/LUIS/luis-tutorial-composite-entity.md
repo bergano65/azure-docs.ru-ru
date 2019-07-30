@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 02/19/2019
+ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: 6d54b46ff8b0c8a987653b4fc0344377c0115b58
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 610a7ee677771777c9bd88e5747ff766f284ae3e
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68560092"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68637918"
 ---
 # <a name="tutorial-group-and-extract-related-data"></a>Учебник. Группирование и извлечение связанных данных
 В этом руководстве описывается добавление составной сущности для объединения извлеченных данных различных типов в содержащую сущность. Клиентское приложение может легко извлекать связанные данные разных типов путем их объединения.

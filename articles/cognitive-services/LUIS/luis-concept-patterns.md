@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 04/01/2019
+ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: acbcaa7e5588c0fecf2c20751e69442e1373cbb5
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: bad3bdc2b4508c082ca50647d5de5e7265c763a1
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68563988"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639195"
 ---
 # <a name="patterns-improve-prediction-accuracy"></a>Шаблоны повышают точность прогнозирования
 Шаблоны предназначены для повышения точности, когда несколько фраз очень похожи.  Шаблон обеспечивает более высокую точность при определении намерения без необходимости предоставлять большое число дополнительных фраз. 
@@ -95,7 +95,7 @@ ms.locfileid: "68563988"
 
 ## <a name="nesting-limits-for-groups-with-optional-syntax"></a>Ограничения вложенности для групп с необязательным синтаксисом
 
-Сочетание группирования  с необязательным синтаксисом имеет ограничение в 3 уровня вложенности.
+Сочетание группирования с необязательным синтаксисом имеет ограничение в 3 уровня вложенности.
 
 |Allowed|Пример|
 |--|--|
@@ -104,7 +104,7 @@ ms.locfileid: "68563988"
 
 ## <a name="nesting-limits-for-groups-with-or-ing-syntax"></a>Ограничения вложенности для групп с помощью синтаксиса или
 
-Сочетание группирования  с синтаксисом **или** путем признака имеет ограничение в 2 вертикальных полосы.
+Сочетание группирования с синтаксисом **или** путем признака имеет ограничение в 2 вертикальных полосы.
 
 |Allowed|Пример|
 |--|--|

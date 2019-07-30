@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 04/01/2019
+ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: f02f50eef971e774236f534c0d664dfcf090dcae
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 04f0944173df59989745ee9167984b493f202b14
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68563740"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638217"
 ---
 # <a name="add-an-entity-to-example-utterances"></a>Добавление сущности к примерам высказываний 
 
@@ -159,4 +159,4 @@ Are there any SQL server jobs?
 
 ## <a name="next-steps"></a>Следующие шаги
 
-После добавления метки в фразы продолжительностью можно создать [составную сущность](luis-how-to-add-entities.md).
+После добавления метки в фразы продолжительностью можносоздать [составную сущность](luis-how-to-add-entities.md).

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 04/01/2019
+ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: fdf60a454aeb19b83ce455a771b8399c90af3bce
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 1b42ab9155f5b9719ef6477934722021e3fbac99
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68563742"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638265"
 ---
 # <a name="create-entities-without-utterances"></a>Создание сущностей без высказываний
 
@@ -114,13 +114,13 @@ ms.locfileid: "68563742"
 
 Роль — это именованный подтип, основанный на контексте. Он доступен во всех сущностях, включая предварительно созданные и не являющиеся машинами сущности. 
 
-Синтаксис роли заключается **`{Entityname:Rolename}`** в том, где за именем сущности следует двоеточие, а затем имя роли. Например, `Move {personName} from {LocationUsingRoles:Origin} to {LocationUsingRoles:Destination}`.
+Синтаксис роли заключается **`{Entityname:Rolename}`** в том, где за именем сущности следует двоеточие, а затем имя роли. Например, `Move {personName} from {Location:Origin} to {Location:Destination}`.
 
 1. В разделе **Сборка** на левой панели выберите **Сущности**.
 
-1. Нажмите кнопку **Создать сущность**. Укажите имя `LocationUsingRoles`. Выберите тип **Простой** и выберите **Готово**. 
+1. Нажмите кнопку **Создать сущность**. Укажите имя `Location`. Выберите тип **Простой** и выберите **Готово**. 
 
-1. На левой панели выберите **Сущности**, а затем выберите новую сущность **LocationUsingRoles**, созданную на предыдущем шаге.
+1. Выберите **сущности** на левой панели, а затем выберите новое **Расположение** сущности, созданное на предыдущем шаге.
 
 1. В текстовом поле **Имя роли** введите имя роли `Origin` и нажмите клавишу ВВОД. Добавьте имя второй роли `Destination`. 
 

@@ -3,19 +3,19 @@ title: Оценка вознаграждения (Персонализатор)
 titleSuffix: Azure Cognitive Services
 description: Оценка вознаграждения указывает, насколько хорошо подходит пользователю выбор персонализации RewardActionID. Значение оценки вознаграждения определяется бизнес-логикой, основанной на наблюдении за поведением пользователей. Персонализатор обучает свои модели машинного обучения, оценивая вознаграждения.
 services: cognitive-services
-author: edjez
+author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 06/07/2019
-ms.author: edjez
-ms.openlocfilehash: 39db28cd7e11d77362a2aefcf4ad8d2748db59c2
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.author: diberry
+ms.openlocfilehash: 72c425a1ec9fb83cc2e9dd1bae2c4f521109f162
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722510"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68663375"
 ---
 # <a name="reward-scores-indicate-success-of-personalization"></a>Оценки вознаграждения демонстрируют успешность персонализации
 

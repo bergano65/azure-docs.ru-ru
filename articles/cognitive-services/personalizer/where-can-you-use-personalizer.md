@@ -3,19 +3,19 @@ title: Оценка сценария. Персонализатор
 titleSuffix: Azure Cognitive Services
 description: Персонализатор можно применять в любой ситуации, где ваше приложение может выбрать правильный элемент, действие или продукт для отображения, чтобы улучшить опыт использования, достигать лучших результатов в бизнесе или увеличить производительность.
 services: cognitive-services
-author: edjez
+author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 05/07/2019
-ms.author: edjez
-ms.openlocfilehash: a5bf0d7d0478ad836ed1921b302ab01b004ec73c
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.author: diberry
+ms.openlocfilehash: 465fba3a466aceaf9ef7b71e4b1957bfdbcad766
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722216"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68663643"
 ---
 # <a name="where-can-you-use-personalizer"></a>Где можно использовать Персонализатор
 

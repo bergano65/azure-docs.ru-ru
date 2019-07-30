@@ -1,21 +1,21 @@
 ---
-title: Автономная оценка - Personalizer
+title: Автономная Оценка — Персонализация
 titleSuffix: Azure Cognitive Services
 description: Сведения об использовании автономной оценки для анализа цикла обучения
 services: cognitive-services
-author: edjez
+author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 05/07/2019
-ms.author: edjez
-ms.openlocfilehash: b719e6e693471415350007a4f4fabed917b8e12d
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.author: diberry
+ms.openlocfilehash: f14403422e2c783d75634bb929d8c2130bd505b6
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722313"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68663877"
 ---
 # <a name="how-to-analyze-your-learning-loop-with-an-offline-evaluation"></a>Как проанализировать цикл обучения, используя автономную оценку
 
@@ -27,7 +27,7 @@ ms.locfileid: "67722313"
 Дополнительные сведения см. в разделе [Автономные оценки](concepts-offline-evaluation.md).
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Необходимо настроить цикл Персонализатора.
 1. Цикл Персонализатора должен содержать в журналах не менее 50 000 событий для значимых результатов оценки.
