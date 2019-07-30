@@ -1,28 +1,29 @@
 ---
-title: Извлечение ключевой фразы с помощью REST API Анализа текста | Документация Майкрософт
-description: Узнайте, как извлечь ключевые фразы с помощью REST API Анализа текста из Azure Cognitive Services.
+title: Извлечение ключевой фразы с помощью REST API Анализа текста
+titleSuffix: Azure Cognitive Services
+description: Узнайте, как извлечь ключевые фразы с помощью REST API Анализа текста из Azure Cognitive Services.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
-ms.topic: sample
-ms.date: 06/05/2019
+ms.topic: article
+ms.date: 07/29/2019
 ms.author: raymondl
-ms.openlocfilehash: c803c85a0900a09b18909e2c81d52915a12cff1a
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
-ms.translationtype: HT
+ms.openlocfilehash: dd3f0c5b82c1898d6e4bbe564556ee26e872dc94
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67304071"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619681"
 ---
 # <a name="example-how-to-extract-key-phrases-using-text-analytics"></a>Пример: Извлечение ключевых фраз с помощью Анализа текста
 
-[API извлечения ключевых фраз](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6) оценивает неструктурированный текст и для каждого документа JSON возвращает список ключевых фраз. 
+[API извлечения ключевых фраз](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6) оценивает неструктурированный текст и для каждого документа JSON возвращает список ключевых фраз.
 
 Эта возможность полезна, если необходимо быстро определить основные тезисы в коллекции документов. Например, данный входной текст "Еда была вкусной, и были замечательные сотрудники", служба вернет основные тезисы в записи: "еда" и "замечательные сотрудники".
 
-Дополнительные сведения см. в статье о [поддерживаемых языках](../text-analytics-supported-languages.md). 
+Дополнительные сведения см. в [списке поддерживаемых языков](../text-analytics-supported-languages.md).
 
 > [!TIP]
 > API анализа текста также предоставляет образ контейнера Docker под управлением Linux для извлечения ключевых фраз, поэтому вы можете [установить и запустить контейнер API анализа текста](text-analytics-how-to-install-containers.md) в непосредственной близости к своим данным.
@@ -31,7 +32,7 @@ ms.locfileid: "67304071"
 
 Извлечение ключевых фраз лучше всего работает с большими фрагментами текста, в отличие от анализа тональности, который эффективнее работает на маленьких блоках текста. Для получения наилучших результатов обеих операций советуем реструктуризировать входные данные соответствующим образом.
 
-Необходимо иметь документы JSON в следующем формате: "идентификатор","текст","язык"
+Необходимо иметь документы JSON в следующем формате: "идентификатор","текст","язык".
 
 Документ должен содержать менее 5120 символов и иметь до 1000 элементов (идентификаторов) в коллекции. Коллекция передается в тексте запроса. Ниже приведен пример иллюстрации содержимого, которое можно отправлять для извлечения ключевых фраз.
 
@@ -57,7 +58,7 @@ ms.locfileid: "67304071"
                 "language": "en",
                 "id": "4",
                 "text": "It was foggy so we missed the spectacular views, but the trail was ok. Worth checking out if you are in the area."
-            },                
+            },
             {
                 "language": "en",
                 "id": "5",
@@ -65,26 +66,26 @@ ms.locfileid: "67304071"
             }
         ]
     }
-```    
-    
+```
+
 ## <a name="step-1-structure-the-request"></a>Шаг 1. Структурирование запроса
 
-Сведения об определении запроса можно найти в статье [How to call the Text Analytics REST API](text-analytics-how-to-call-api.md) (Способ вызова REST API анализа текста). Для удобства повторим следующие моменты.
+Дополнительные сведения об определении запроса см. в статье [How to call the Text Analytics API](text-analytics-how-to-call-api.md) (Как вызвать REST API службы "Анализ текста"). Для удобства повторим следующие моменты.
 
-+ Создайте запрос **POST**. Ознакомьтесь с документацию по API для этого запроса: [API для поиска ключевых фраз](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6)
++ Создайте запрос **POST**. Ознакомьтесь с документацию по API для этого запроса: [API для поиска ключевых фраз](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6).
 
-+ Задайте конечную точку HTTP для извлечения ключевых фраз с помощью ресурса API анализа текста в Azure или экземпляра [контейнера API анализа текста](text-analytics-how-to-install-containers.md). Она должна включать ресурс `/keyPhrases`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/keyPhrases`
++ Задайте конечную точку HTTP для извлечения ключевых фраз с помощью ресурса Анализа текста в Azure или экземпляра [контейнера Анализа текста](text-analytics-how-to-install-containers.md). Он должен включать в себя ресурс `/keyPhrases`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/keyPhrases`.
 
 + Задайте заголовок запроса, чтобы включить ключ доступа для операций Анализа текста. Дополнительные сведения см. в статье [о поиске конечных точек и ключей доступа](text-analytics-how-to-access-key.md).
 
-+ В тексте запроса укажите набор документов JSON, которые подготовлены для этого анализа
++ В тексте запроса укажите набор документов JSON, которые подготовлены для этого анализа.
 
 > [!Tip]
 > Используйте [Postman](text-analytics-how-to-call-api.md) или откройте **консоль тестирования API** в [документации](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6), чтобы структурировать запрос и передать его (используя метод POST) в службу.
 
 ## <a name="step-2-post-the-request"></a>Шаг 2. Передача запроса
 
-Анализ выполняется при получении запроса. Сведения о размере и числе запросов, которые можно отправлять в минуту и секунду, см. в разделе об [ограничениях данных](../overview.md#data-limits).
+Анализ выполняется при получении запроса. Сведения о размере и количестве запросов, которые можно отправлять в минуту и секунду, см. в разделе об [ограничениях данных](../overview.md#data-limits).
 
 Не забывайте, что эта служба работает без отслеживания состояния. Данные не хранятся в учетной записи. Результаты возвращаются немедленно в ответе.
 
@@ -97,66 +98,69 @@ ms.locfileid: "67304071"
 Далее показан пример выходных данных для извлечения ключевой фразы:
 
 ```json
-    "documents": [
-        {
-            "keyPhrases": [
-                "year",
-                "trail",
-                "trip",
-                "views"
-            ],
-            "id": "1"
-        },
-        {
-            "keyPhrases": [
-                "marked trails",
-                "Worst hike",
-                "goners"
-            ],
-            "id": "2"
-        },
-        {
-            "keyPhrases": [
-                "trail",
-                "small children",
-                "family"
-            ],
-            "id": "3"
-        },
-        {
-            "keyPhrases": [
-                "spectacular views",
-                "trail",
-                "area"
-            ],
-            "id": "4"
-        },
-        {
-            "keyPhrases": [
-                "places",
-                "beautiful views",
-                "favorite trail"
-            ],
-            "id": "5"
-        }
+    {
+        "documents": [
+            {
+                "keyPhrases": [
+                    "year",
+                    "trail",
+                    "trip",
+                    "views"
+                ],
+                "id": "1"
+            },
+            {
+                "keyPhrases": [
+                    "marked trails",
+                    "Worst hike",
+                    "goners"
+                ],
+                "id": "2"
+            },
+            {
+                "keyPhrases": [
+                    "trail",
+                    "small children",
+                    "family"
+                ],
+                "id": "3"
+            },
+            {
+                "keyPhrases": [
+                    "spectacular views",
+                    "trail",
+                    "area"
+                ],
+                "id": "4"
+            },
+            {
+                "keyPhrases": [
+                    "places",
+                    "beautiful views",
+                    "favorite trail"
+                ],
+                "id": "5"
+            }
+        ],
+        "errors": []
+    }
 ```
 
-Как уже отмечалось, анализатор находит и отбрасывает слова, которые не представляют смысла и сохраняет одиночные термины или фразы, которые могут быть темой или объектом предложения. 
+Как уже отмечалось, анализатор находит и отбрасывает слова, которые не представляют смысла и сохраняет одиночные термины или фразы, которые могут быть темой или объектом предложения.
 
 ## <a name="summary"></a>Сводка
 
-В этой статье рассматриваются основные понятия и рабочий процесс извлечения ключевой фразы с помощью анализа текста в Cognitive Services. В разделе "Сводка" сделайте следующее.
+В этой статье рассматриваются основные понятия и рабочий процесс извлечения ключевой фразы с помощью Анализа текста в Cognitive Services. В разделе "Сводка" сделайте следующее.
 
 + [API извлечения ключевых фраз](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6) доступен для некоторых языков.
 + В тексте запроса передаются документы JSON, которые содержат идентификатор, текст и код языка.
 + Запрос POST передается в конечную точку `/keyphrases`, используя личный [ключ доступа и конечную точку](text-analytics-how-to-access-key.md), допустимые для вашей подписки.
-+ Выходные данные ответа, состоящие из ключевых слов и фраз для каждого идентификатора документа, могут передаваться в любое приложение, поддерживающее формат JSON, например Excel и Power BI.
++ Выходные данные ответа, состоящие из ключевых слов и фраз для каждого идентификатора документа, могут передаваться в любое приложение, поддерживающее формат JSON, например Microsoft Office Excel и Power BI.
 
-## <a name="see-also"></a>См. также 
+## <a name="see-also"></a>См. также
 
- [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)  
- [Часто задаваемые вопросы](../text-analytics-resource-faq.md)</br>
- [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712) 
+ API анализа текста: [общие сведения](../overview.md) и [вопросы и ответы](../text-analytics-resource-faq.md)</br>
+ [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

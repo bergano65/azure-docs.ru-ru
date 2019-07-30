@@ -77,6 +77,8 @@
       items:
         - name: Ограничение доступа с помощью виртуальной сети (предварительная версия)
           href: container-registry-vnet.md
+        - name: Доступ за брандмауэром
+          href: container-registry-firewall-access-rules.md
         - name: Аутентификация
           items:
             - name: Общие сведения об аутентификации

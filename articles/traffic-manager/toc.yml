@@ -4,12 +4,14 @@
   items:
     - name: Что такое диспетчер трафика
       href: traffic-manager-overview.md
-- name: Быстрый запуск
+- name: Краткое руководство
   items:
     - name: Создание профиля диспетчера трафика (портал)
       href: quickstart-create-traffic-manager-profile.md
     - name: Создание профиля диспетчера трафика (PowerShell)
       href: quickstart-create-traffic-manager-profile-powershell.md
+    - name: "Создание профиля диспетчера трафика (Azure\_CLI)"
+      href: quickstart-create-traffic-manager-profile-cli.md
 - name: Учебники
   items:
     - name: Перенаправление трафика для обеспечения минимальной задержки
@@ -45,7 +47,7 @@
       href: traffic-manager-endpoint-types.md
     - name: Мониторинг конечных точек
       href: traffic-manager-monitoring.md
-    - name: Реальные измерения пользователя
+    - name: Измерения на стороне пользователей
       href: traffic-manager-rum-overview.md
     - name: Представление трафика
       href: traffic-manager-traffic-view-overview.md
@@ -61,11 +63,11 @@
   items:
     - name: Настройка маршрутизации для повышения производительности в диспетчере трафика
       href: traffic-manager-configure-performance-routing-method.md
-    - name: Настройка метода маршрутизации MultiValue в Диспетчере трафика
+    - name: Настройка метода маршрутизации MultiValue в диспетчере трафика
       href: traffic-manager-configure-multivalue-routing-method.md
-    - name: Настройка метода маршрутизации Subnet в Диспетчере трафика
+    - name: Настройка метода маршрутизации Subnet в диспетчере трафика
       href: traffic-manager-configure-subnet-routing-method.md
-    - name: Отправка реальных измерений пользователя в диспетчер трафика
+    - name: Отправка измерений на стороне пользователей в диспетчер трафика
       items:
         - name: Использование пакета SDK для Visual Studio
           href: traffic-manager-create-rum-visual-studio.md
@@ -97,7 +99,7 @@
       href: 'https://azure.microsoft.com/resources/samples/?service=traffic-manager'
     - name: Azure PowerShell
       href: /powershell/module/az.trafficmanager
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/network/traffic-manager
     - name: Java
       href: /java/api/com.microsoft.azure.management.trafficmanager
@@ -131,11 +133,11 @@
       href: 'https://azure.microsoft.com/pricing/details/traffic-manager/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Ограничения служб
+    - name: Ограничения службы
       href: '../azure-subscription-service-limits.md#traffic-manager-limits'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=traffic-manager'
     - name: Соглашение об уровне обслуживания
       href: 'https://azure.microsoft.com/support/legal/sla/traffic-manager/'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=traffic-manager'

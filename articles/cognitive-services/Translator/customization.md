@@ -1,6 +1,6 @@
 ---
 title: Настройка перевода — API перевода текстов
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Используйте Microsoft Translator Hub для создания собственной системы машинного перевода с нужными вам терминами и стилем.
 services: cognitive-services
 author: swmachan
@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: 87c47fc970ccb96419818e3b3e39c939201708f0
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: e6771a0d72592f1952853642ceea196b02774ada
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447323"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68595312"
 ---
 # <a name="customize-your-text-translations"></a>Настройка переводов текста
 
@@ -43,7 +43,7 @@ Custom Translator позволяет создавать нейронные си�
 ## <a name="microsoft-translator-hub"></a>Microsoft Translator Hub
 
 > [!NOTE]
-> 17 мая 2019 г. будет прекращено устаревших центров Microsoft Translator. [Просмотреть сведения о важных миграции и даты](https://www.microsoft.com/translator/business/hub/).  
+> Устаревший центр Microsoft Translator будет снят с 17 мая 2019 г. [Просмотр важных сведений о миграции и дат](https://www.microsoft.com/translator/business/hub/).  
 
 ## <a name="custom-translator-versus-hub"></a>Сравнение Custom Translator и центра
 
@@ -61,7 +61,7 @@ Custom Translator позволяет создавать нейронные си�
 > [!NOTE]
 > По состоянию на 1 февраля 2018 г. AddTranslation() и AddTranslationArray() больше не доступны для использования в API перевода текстов версии 2.0. Эти методы возвращают ошибку и ничего не записывают. API перевода текстов версии 3.0 не поддерживает эти методы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Настройка системы с учетом особенностей языка с помощью Custom Translator](https://aka.ms/CustomTranslatorDocs)

@@ -7,22 +7,22 @@
 - name: Краткие руководства
   expaned: true
   items:
-    - name: Обучение пользовательской модели и извлечение данных
+    - name: Использование REST API
       items:
-        - name: Использование REST API
+        - name: Обучение пользовательской модели и извлечение данных
           items:
             - name: cURL
               href: quickstarts/curl-train-extract.md
             - name: Python
               href: quickstarts/python-train-extract.md
-    - name: Использование предварительно созданной модели для обработки товарных чеков
-      items:
-        - name: Использование REST API
+        - name: Использование предварительно созданной модели для обработки товарных чеков
           items:
             - name: cURL
               href: quickstarts/curl-receipts.md
             - name: Python
               href: quickstarts/python-receipts.md
+    - name: С помощью пакета SDK для .NET
+      href: quickstarts/dotnet-sdk.md
 - name: Руководства
   items:
     - name: Создание набора данных для обучения

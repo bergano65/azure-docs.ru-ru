@@ -1,4 +1,4 @@
-- name: Документация по предварительной версии Центра безопасности Azure (ASC) для Интернета вещей
+- name: Документация по Центру безопасности Azure для Интернета вещей
   href: index.yml
 - name: Обзор
   href: overview.md
@@ -11,16 +11,21 @@
       href: security-edge-architecture.md
     - name: Предварительные требования службы
       href: service-prerequisites.md
-    - name: Начало работы с ASC для Интернета вещей
+    - name: Начало работы с Центром безопасности Azure для Интернета вещей
       href: getting-started.md
-- name: Быстрое начало работы
+      items:
+        - name: Центр Интернета вещей
+          href: iot-hub-integration.md
+        - name: Агенты безопасности
+          href: security-agents.md
+- name: Краткие руководства
   expanded: true
   items:
-    - name: Включение ASC для Интернета вещей в Центре Интернета вещей
+    - name: Включение Центра безопасности Azure для Интернета вещей в Центре Интернета вещей
       href: quickstart-onboard-iot-hub.md
     - name: Настройка решения
       href: quickstart-configure-your-solution.md
-    - name: Создание ASC для двойника модуля Интернета вещей
+    - name: Создание двойника модуля для Центра безопасности Azure для Интернета вещей
       href: quickstart-create-security-twin.md
     - name: Создание пользовательских оповещений системы безопасности
       href: quickstart-create-custom-alerts.md
@@ -34,9 +39,11 @@
       href: concept-security-alerts.md
     - name: Рекомендации по обеспечению безопасности
       href: concept-recommendations.md
+    - name: Агрегация событий
+      href: event-aggregation.md
     - name: Цены и связанные затраты
       href: concept-pricing.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Какой агент нужно развернуть?
       items:
@@ -48,11 +55,19 @@
           href: how-to-deploy-linux-cs.md
         - name: Развертывание агента безопасности на основе C на устройстве Linux
           href: how-to-deploy-linux-c.md
+    - name: Устранение неполадок в работе агента безопасности
+      items:
+        - name: Устранение неполадок в работе агента Центра безопасности Azure для Интернета вещей (Linux)
+          href: troubleshoot-agent.md
+        - name: Локальная конфигурация C
+          href: azure-iot-security-local-configuration-c.md
+        - name: 'Локальная конфигурация C#'
+          href: azure-iot-security-local-configuration-csharp.md
     - name: Развертывание модуля безопасности Edge
       href: how-to-deploy-edge.md
     - name: Настройка агентов безопасности
       href: how-to-agent-configuration.md
-    - name: Отправить собственных сообщений безопасности
+    - name: Отправка собственных сообщений безопасности
       href: how-to-send-security-messages.md
     - name: Доступ к необработанным данным безопасности
       href: how-to-security-data-access.md
@@ -66,5 +81,5 @@
       href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
     - name: 'Блог по безопасности, конфиденциальности и соответствию нормам Azure'
       href: 'https://blogs.msdn.com/b/azuresecurity/'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'

@@ -72,6 +72,8 @@
               href: connect-cisco.md
         - name: Подключение анализа угроз
           href: connect-threat-intelligence.md
+        - name: Подключение виртуальных машин Azure Stack
+          href: connect-azure-stack.md
     - name: Поиск
       href: hunting.md
       items:

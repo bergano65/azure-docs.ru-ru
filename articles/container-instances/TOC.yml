@@ -61,7 +61,7 @@
           href: container-instances-restart-policy.md
         - name: Настройка переменных среды (env)
           href: container-instances-environment-variables.md
-        - name: Переопределение точки входа контейнера
+        - name: Настройка команды запуска контейнера (точка входа)
           href: container-instances-start-command.md
         - name: Выполнение команды (exec)
           href: container-instances-exec.md

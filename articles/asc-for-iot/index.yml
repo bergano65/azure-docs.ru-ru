@@ -1,9 +1,9 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по предварительной версии Центра безопасности Azure для Интернета вещей
+title: Документация по Центру безопасности Azure для Интернета вещей
 metadata:
-  title: "Документация по предварительной версии Центра безопасности Azure для Интернета вещей. Руководства и краткие инструкции\_| Документация Майкрософт"
-  meta.description: Azure Security Center for IoT unifies your security management and enables advanced threat protection across your IoT solution.
+  title: "Документация по Центру безопасности Azure для Интернета вещей. Руководства и краткие инструкции\_| Документация Майкрософт"
+  meta.description: Azure Security Center for IoT unifies your device security management and enables advanced threat detection and security posture management across your IoT solution.
   services: asc-for-iot
   author: mlottner
   manager: rkarlin
@@ -11,25 +11,25 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 03/26/19
+  ms.date: 07/23/19
   ms.author: rkarlin
 abstract:
-  description: "Предварительная версия Центра безопасности Azure (ASC) для Интернета поможет составить четкое представление о кибербезопасности в масштабах всего решения Интернета вещей. Получите подробные и достоверные сведения о безопасности всех своих ресурсов, связанных с Azure. Параметры быстрого развертывания и полная интеграция с двойниками модулей Центра Интернета вещей предоставляют широкий спектр возможностей настройки и упрощают интеграцию с используемыми средствами управления устройствами.\_"
+  description: "Центр безопасности Azure для Интернета поможет составить четкое представление о кибербезопасности в масштабах всего решения Интернета вещей. Получите подробные и достоверные сведения о безопасности всех своих ресурсов, связанных с Azure. Параметры быстрого развертывания и полная интеграция с двойниками модулей Центра Интернета вещей предоставляют широкий спектр возможностей настройки и упрощают интеграцию с используемыми средствами управления устройствами.\_"
 sections:
   - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
-        text: 'Узнайте, как включить в Центре Интернета вещей ASC для Интернета вещей, установить ASC для агентов Интернета вещей и получить представление о данных и потенциальных угрозах.'
+        text: 'Узнайте, как подключить Центр Интернета вещей к Центру безопасности Azure для Интернета вещей, установить агенты безопасности и получать сведения о потенциальных угрозах.'
       - type: list
         style: icon48
         items:
           - image:
               src: media/index/deploy.svg
-            text: Включение ASC для Интернета вещей
+            text: Подключение Центра безопасности Azure для Интернета вещей
             href: /azure/asc-for-iot/quickstart-onboard-iot-hub
           - image:
               src: media/index/get-started.svg
-            text: Начало работы с ASC для Интернета вещей
+            text: Начало работы с Центром безопасности Azure для Интернета вещей
             href: /azure/asc-for-iot/getting-started
   - title: Руководства
     items:
@@ -38,7 +38,7 @@ sections:
       - type: list
         style: unordered
         items:
-          - html: <a href="/azure/asc-for-iot/how-to-investigate-device">Обнаружение угроз с помощью ASC для Интернета вещей</a>
+          - html: <a href="/azure/asc-for-iot/how-to-investigate-device">Обнаружение угроз с помощью Центра безопасности Azure для Интернета вещей</a>
   - title: Развитие навыков с помощью Microsoft Learn
     items:
       - type: list
@@ -50,8 +50,17 @@ sections:
             image:
               src: media/index/tutorial.svg
               href: 'https://docs.microsoft.com/learn/azure'
-      - type: paragraph
-        text: <a href="/learn/browse/?term=security">Другие интерактивные руководства</a>
+  - title: Видео Центре безопасности Azure для Интернета вещей
+    items:
+      - type: list
+        style: cards
+        className: cardsFTitle
+        items:
+          - title: Общие сведение о Центр безопасности Azure для Интернета вещей (Майкрософт)
+            href: 'https://youtu.be/pq5uSp9u_x0'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_video.svg'
+              href: 'https://youtu.be/pq5uSp9u_x0'
   - title: Справочные материалы
     items:
       - type: list

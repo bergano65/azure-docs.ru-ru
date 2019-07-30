@@ -249,6 +249,8 @@
               href: devtest-lab-integrate-ci-cd-vsts.md
             - name: Интеграция сред с конвейером CI/CD в Azure DevOps
               href: integrate-environments-devops-pipeline.md
+            - name: Использование DevTest Labs в конвейерах сборки и выпуска в Azure DevOps
+              href: use-devtest-labs-build-release-pipelines.md
         - name: Использование DevTest Labs на предприятии
           items:
             - name: DevTest Labs в масштабе предприятия
