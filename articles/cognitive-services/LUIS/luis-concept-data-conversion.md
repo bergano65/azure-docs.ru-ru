@@ -9,19 +9,25 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 01/16/2019
+ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: bdce1a49ce6c6531ce344de5aa157717fe72c609
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: aeb9094db83b14af988f70485788934a7854200c
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68560811"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619802"
 ---
 # <a name="convert-data-format-of-utterances"></a>Преобразование формата данных высказываний
-LUIS использует службу Cognitive Services Speech, чтобы преобразовать высказывания из произнесенной речи в текст перед получением прогноза. 
+LUIS предоставляет следующие преобразования пользователя utterance до прогноза "
 
-## <a name="speech-to-intent-conversion-concepts"></a>Принципы преобразования речи в намерения
+* Преобразование речи в текст с помощью службы [Cognitive Services Speech](../Speech-Service/overview.md) . 
+
+## <a name="speech-to-text"></a>Преобразование речи в текст
+
+Речь в тексте предоставляется как интеграция с LUIS. 
+
+### <a name="intent-conversion-concepts"></a>Основные понятия преобразования намерения
 Преобразование речи в текст в LUIS позволяет отправить на конечную точку произнесенные высказывания и получить от LUIS ответ с прогнозом. Этот процесс выполняется за счет интеграции LUIS со службой [Речь](https://docs.microsoft.com/azure/cognitive-services/Speech). Дополнительные сведения о преобразовании речи в намерения см. в [руководстве](../speech-service/how-to-recognize-intents-from-speech-csharp.md).
 
 ### <a name="key-requirements"></a>Основные требования

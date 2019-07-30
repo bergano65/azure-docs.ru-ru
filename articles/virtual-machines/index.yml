@@ -1,19 +1,19 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по виртуальным машинам
+title: Документация по Виртуальным машинам
 metadata:
   document_id: na
   title: Документация по виртуальным машинам Linux в Azure. Руководства и справочник по API | Документация Майкрософт
   meta.description: 'Learn how to create, deploy, and manage Windows or Linux virtual machines. Tutorials, API references, and other documentation.'
   services: virtual-machines
-  author: czeumault
-  manager: carolz
+  author: georgewallace
+  manager: gwallace
   ms.service: virtual-machines
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
   ms.date: 01/23/2017
-  ms.author: carolz
+  ms.author: gwallace
 abstract:
   description: 'Сведения о создании виртуальных машин Azure. В руководствах, справочниках по API и другой документации объясняется, как создавать и развертывать виртуальные машины Windows и Linux, а также шаблоны виртуальных машин.'
 sections:
@@ -23,12 +23,12 @@ sections:
         style: cards
         className: cardsFTitle
         items:
-          - title: Начало работы с виртуальными машинами Windows
+          - title: Начало работы с Виртуальными машинами Windows
             href: /azure/virtual-machines/windows
             image:
               src: media/index/virtual-machines.svg
               href: /azure/virtual-machines/windows
-          - title: Начало работы с виртуальными машинами Linux
+          - title: Начало работы с Виртуальными машинами Linux
             href: /azure/virtual-machines/linux
             image:
               src: media/index/get-started.svg
@@ -42,7 +42,7 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/azure/virtual-machines/linux/media/index/cli.svg'
-            text: Инфраструктура CLI Azure
+            text: Azure CLI
             href: 'https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-quick-create-cli?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json'
           - image:
               src: 'https://docs.microsoft.com/azure/virtual-machines/linux/media/index/portal.svg'
@@ -69,7 +69,7 @@ sections:
             href: 'https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-quick-create-portal?toc=/azure/virtual-machines/windows/toc.json'
           - image:
               src: 'https://docs.microsoft.com/azure/virtual-machines/windows/media/index/cli.svg'
-            text: Инфраструктура CLI Azure
+            text: Azure CLI
             href: 'https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-quick-create-cli?toc=/azure/virtual-machines/windows/toc.json'
   - title: Развитие навыков с помощью Microsoft Learn
     items:
@@ -94,7 +94,7 @@ sections:
               href: /learn/modules/add-and-size-disks-in-azure-virtual-machines/
       - type: paragraph
         text: <a href="/learn/browse/?products=azure-virtual-machines">Другие интерактивные руководства</a>
-  - title: Бесплатные видеоуроки PluralSight
+  - title: Бесплатные видеоуроки Pluralsight
     items:
       - type: list
         style: cards
@@ -112,8 +112,8 @@ sections:
         className: cardsD
         items:
           - title: Командная строка
-            html: <p><a href="/cli/azure/vm">Интерфейс командной строки Azure</a></p><p><a href="/powershell/azureps-cmdlets-docs">Azure PowerShell</a></p>
+            html: <p><a href="/cli/azure/vm">Azure CLI</a></p><p><a href="/powershell/azureps-cmdlets-docs">Azure PowerShell</a></p>
           - title: Языки
             html: '<p><a href="/dotnet/api/microsoft.azure.management.compute">.NET</a></p><p><a href="/java/api">Java</a></p><p><a href="https://azure.microsoft.com/develop/nodejs/#azure-sdk">Node.js</a></p><p><a href="https://azure.microsoft.com/develop/python/">Python</a></p>'
           - title: REST
-            html: <p><a href="/rest/api/compute">справочник по API REST</a></p>
+            html: <p><a href="/rest/api/compute">Справочник по REST API</a></p>

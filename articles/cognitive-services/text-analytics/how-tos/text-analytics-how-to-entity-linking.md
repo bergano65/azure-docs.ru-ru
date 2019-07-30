@@ -10,20 +10,20 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 04/16/2019
 ms.author: aahi
-ms.openlocfilehash: ff4f9af82024e9d39ad89a39bcb2fe4130de9101
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: 5a5787504d72259354f9c5eba2e2f4e22402ef0b
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67304183"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619728"
 ---
-# <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованной сущности в текстовой аналитики
+# <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Как использовать распознавание именованных сущностей в Анализ текста
 
-[С именем API распознавания сущностей](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634) принимает неструктурированного текста и для каждого документа JSON, возвращает список сущностей, которые отличаются, со ссылками на дополнительные сведения в Интернете (Википедия и Bing). 
+[Именованный API распознавания сущностей](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634) принимает неструктурированный текст, и для каждого документа JSON возвращает список неоднозначности сущностей со ссылками на дополнительные сведения в Интернете (Википедии и Bing).
 
 ## <a name="entity-linking-and-named-entity-recognition"></a>Связывание сущностей и распознавание именованных сущностей
 
-Текстовая аналитика `entities` конечная точка поддерживает оба именованных распознавание сущностей (NER) и связывания сущностей.
+`entities` Конечная точка анализ текста поддерживает как распознавание имен сущностей (NER), так и связывание сущностей.
 
 ### <a name="entity-linking"></a>Связывание сущностей
 Связывание сущностей позволяет идентифицировать сущности, обнаруженные в тексте, и устранить неоднозначности (например, упоминание слова "Марс" может обозначать планету или римского бога войны). Этот процесс требует наличия базы знаний, с которыми будут связываться распознанные сущности. Например, конечная точка `entities` Текстовой аналитики использует в качестве такой базы знаний сайт Википедии.
@@ -31,7 +31,7 @@ ms.locfileid: "67304183"
 ### <a name="named-entity-recognition-ner"></a>Распознавание именованных сущностей (NER)
 Распознавание именованных сущностей (NER) позволяет идентифицировать различные сущности в тексте и классифицировать их в предварительно определенные классы. Ниже перечислены поддерживаемые классы сущностей.
 
-В текстовой аналитики [версии 2.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634), связывание сущностей и распознавания именованных сущностей (NER) доступны для нескольких языков. См. в разделе [языковая поддержка](../language-support.md#sentiment-analysis-key-phrase-extraction-and-named-entity-recognition) для получения дополнительной информации. 
+В Анализ текста [версии 2,1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)для нескольких языков доступны как связывание сущностей, так и распознавание имен сущностей (NER). Дополнительные сведения см. в статье [Поддержка языков](../language-support.md#sentiment-analysis-key-phrase-extraction-and-named-entity-recognition) .
 
 ### <a name="language-support"></a>Поддержка языков
 
@@ -39,31 +39,31 @@ ms.locfileid: "67304183"
 
 ## <a name="supported-types-for-named-entity-recognition"></a>Поддерживаемые типы распознанных именованных сущностей
 
-| type  | SubType | Пример |
+| Тип  | SubType | Пример |
 |:-----------   |:------------- |:---------|
-| Модель Person        | Недоступно\*         | "Джеф", "Билл Гейтс"     |
-| Расположение      | Недоступно\*         | "Редмонд, штат Вашингтон", "Париж"  |
-| План  | Недоступно\*         | "Майкрософт"   |
-| Количество      | Число        | "6", "шесть"     | 
-| Количество      | Процент    | "50 %", "пятьдесят процентов"| 
-| Количество      | Порядковый номер       | "2-й", "второй"     | 
-| Количество      | Диапазон чисел   | "4–8"     | 
-| Количество      | Age           | "90 дней", "30 лет"    | 
-| Количество      | Валюта      | "10,99 долл. США"     | 
-| Количество      | Измерение     | "10 миль", "40 см"     | 
+| Пользователь        | Недоступно\*         | "Джеф", "Билл Гейтс"     |
+| Местоположение      | Недоступно\*         | "Редмонд, штат Вашингтон", "Париж"  |
+| Организация  | Недоступно\*         | "Майкрософт"   |
+| Количество      | Число        | "6", "шесть"     |
+| Количество      | Процент    | "50 %", "пятьдесят процентов"|
+| Количество      | Порядковый номер       | "2-й", "второй"     |
+| Количество      | Диапазон чисел   | "4–8"     |
+| Количество      | Время существования           | "90 дней", "30 лет"    |
+| Количество      | Валюта      | "10,99 долл. США"     |
+| Количество      | Измерение     | "10 миль", "40 см"     |
 | Количество      | Температура   | "32 градуса"    |
-| DateTime      | Недоступно\*         | "18:30 4 февраля 2012 г."      | 
-| DateTime      | Дата          | "2 мая 2017 г.", "02.05.2017"   | 
-| DateTime      | Время          | "8 утра", "8:00"  | 
-| DateTime      | Диапазон дат     | "с 2 по 5 мая"    | 
-| DateTime      | Диапазон времени     | "6:00–17:00"     | 
-| DateTime      | Duration      | "1 минута и 45 секунд"   | 
-| DateTime      | Набор           | "каждый вторник"     | 
-| DateTime      | TimeZone      |    | 
-| URL-адрес           | Недоступно\*         | «https:\//www.bing.com»    |
-| Email         | Недоступно\*         | "support@contoso.com" |
+| DateTime      | Недоступно\*         | "18:30 4 февраля 2012 г."      |
+| DateTime      | Дата          | "2 мая 2017 г.", "02.05.2017"   |
+| DateTime      | Time          | "8 утра", "8:00"  |
+| DateTime      | Диапазон дат     | "с 2 по 5 мая"    |
+| DateTime      | Диапазон времени     | "6:00–17:00"     |
+| DateTime      | Продолжительность      | "1 минута и 45 секунд"   |
+| DateTime      | Набор           | "каждый вторник"     |
+| DateTime      | Часовой пояс      |    |
+| URL           | Недоступно\*         | "https:\//www.Bing.com"    |
+| Адрес эл. почты         | Недоступно\*         | "support@contoso.com" |
 
-\* Некоторые сущности могут опускать `SubType` в зависимости от входных и извлеченных сущностей.  Все поддерживаемые типы сущностей в списке доступны только для английского языка, китайский (упрощенное письмо), французский, немецкий и испанский языки.
+\* Некоторые сущности могут опускать `SubType` в зависимости от входных и извлеченных сущностей.  Все поддерживаемые типы сущностей доступны только для английского, упрощенного, французского, немецкого и испанского языков.
 
 
 
@@ -75,20 +75,24 @@ ms.locfileid: "67304183"
 
 Документ должен содержать менее 5120 символов и иметь до 1000 элементов (идентификаторов) в коллекции. Коллекция передается в тексте запроса. Ниже приведен пример иллюстрации содержимого, который можно отправлять для связывания сущностей.
 
-```
-{"documents": [{"id": "1",
+```json
+    {
+        "documents": [
+            {
+                "id": "1",
                 "language": "en",
                 "text": "Jeff bought three dozen eggs because there was a 50% discount."
-                },
-               {"id": "2",
+            },
+            {
+                "id": "2",
                 "language": "en",
                 "text": "The Great Depression began in 1929. By 1933, the GDP in America fell by 25%."
-                }
-               ]
-}
-```    
-    
-## <a name="step-1-structure-the-request"></a>Шаг 1. Структурирование запроса
+            }
+        ]
+    }
+```
+
+## <a name="step-1-structure-the-request"></a>Шаг 1.: Структурирование запроса
 
 Сведения об определении запроса можно найти в статье [How to call the Text Analytics REST API](text-analytics-how-to-call-api.md) (Способ вызова REST API анализа текста). Для удобства повторим следующие моменты.
 
@@ -105,7 +109,7 @@ ms.locfileid: "67304183"
 
 ## <a name="step-2-post-the-request"></a>Шаг 2. Передача запроса
 
-Анализ выполняется при получении запроса. См. в разделе [ограничения данных](../overview.md#data-limits) раздел в обзоре сведения о размере и числе запросов, вы можете отправлять в минуту и секунду.
+Анализ выполняется при получении запроса. Сведения о размере и числе запросов, которые можно отправлять в минуту и секунду, см. в разделе об [ограничениях данных](../overview.md#data-limits).
 
 Не забывайте, что эта служба работает без отслеживания состояния. Данные не хранятся в учетной записи. Результаты возвращаются немедленно в ответе.
 
@@ -118,161 +122,160 @@ ms.locfileid: "67304183"
 Далее показан пример выходных данных для связывания сущностей:
 
 ```json
-{
-    "Documents": [
-        {
-            "Id": "1",
-            "Entities": [
-                {
-                    "Name": "Jeff",
-                    "Matches": [
-                        {
-                            "Text": "Jeff",
-                            "Offset": 0,
-                            "Length": 4
-                        }
-                    ],
-                    "Type": "Person"
-                },
-                {
-                    "Name": "three dozen",
-                    "Matches": [
-                        {
-                            "Text": "three dozen",
-                            "Offset": 12,
-                            "Length": 11
-                        }
-                    ],
-                    "Type": "Quantity",
-                    "SubType": "Number"
-                },
-                {
-                    "Name": "50",
-                    "Matches": [
-                        {
-                            "Text": "50",
-                            "Offset": 49,
-                            "Length": 2
-                        }
-                    ],
-                    "Type": "Quantity",
-                    "SubType": "Number"
-                },
-                {
-                    "Name": "50%",
-                    "Matches": [
-                        {
-                            "Text": "50%",
-                            "Offset": 49,
-                            "Length": 3
-                        }
-                    ],
-                    "Type": "Quantity",
-                    "SubType": "Percentage"
-                }
-            ]
-        },
-        {
-            "Id": "2",
-            "Entities": [
-                {
-                    "Name": "Great Depression",
-                    "Matches": [
-                        {
-                            "Text": "The Great Depression",
-                            "Offset": 0,
-                            "Length": 20
-                        }
-                    ],
-                    "WikipediaLanguage": "en",
-                    "WikipediaId": "Great Depression",
-                    "WikipediaUrl": "https://en.wikipedia.org/wiki/Great_Depression",
-                    "BingId": "d9364681-98ad-1a66-f869-a3f1c8ae8ef8"
-                },
-                {
-                    "Name": "1929",
-                    "Matches": [
-                        {
-                            "Text": "1929",
-                            "Offset": 30,
-                            "Length": 4
-                        }
-                    ],
-                    "Type": "DateTime",
-                    "SubType": "DateRange"
-                },
-                {
-                    "Name": "By 1933",
-                    "Matches": [
-                        {
-                            "Text": "By 1933",
-                            "Offset": 36,
-                            "Length": 7
-                        }
-                    ],
-                    "Type": "DateTime",
-                    "SubType": "DateRange"
-                },
-                {
-                    "Name": "Gross domestic product",
-                    "Matches": [
-                        {
-                            "Text": "GDP",
-                            "Offset": 49,
-                            "Length": 3
-                        }
-                    ],
-                    "WikipediaLanguage": "en",
-                    "WikipediaId": "Gross domestic product",
-                    "WikipediaUrl": "https://en.wikipedia.org/wiki/Gross_domestic_product",
-                    "BingId": "c859ed84-c0dd-e18f-394a-530cae5468a2"
-                },
-                {
-                    "Name": "United States",
-                    "Matches": [
-                        {
-                            "Text": "America",
-                            "Offset": 56,
-                            "Length": 7
-                        }
-                    ],
-                    "WikipediaLanguage": "en",
-                    "WikipediaId": "United States",
-                    "WikipediaUrl": "https://en.wikipedia.org/wiki/United_States",
-                    "BingId": "5232ed96-85b1-2edb-12c6-63e6c597a1de",
-                    "Type": "Location"
-                },
-                {
-                    "Name": "25",
-                    "Matches": [
-                        {
-                            "Text": "25",
-                            "Offset": 72,
-                            "Length": 2
-                        }
-                    ],
-                    "Type": "Quantity",
-                    "SubType": "Number"
-                },
-                {
-                    "Name": "25%",
-                    "Matches": [
-                        {
-                            "Text": "25%",
-                            "Offset": 72,
-                            "Length": 3
-                        }
-                    ],
-                    "Type": "Quantity",
-                    "SubType": "Percentage"
-                }
-            ]
-        }
-    ],
-    "Errors": []
-}
+    {
+        "Documents": [
+            {
+                "Id": "1",
+                "Entities": [
+                    {
+                        "Name": "Jeff",
+                        "Matches": [
+                            {
+                                "Text": "Jeff",
+                                "Offset": 0,
+                                "Length": 4
+                            }
+                        ],
+                        "Type": "Person"
+                    },
+                    {
+                        "Name": "three dozen",
+                        "Matches": [
+                            {
+                                "Text": "three dozen",
+                                "Offset": 12,
+                                "Length": 11
+                            }
+                        ],
+                        "Type": "Quantity",
+                        "SubType": "Number"
+                    },
+                    {
+                        "Name": "50",
+                        "Matches": [
+                            {
+                                "Text": "50",
+                                "Offset": 49,
+                                "Length": 2
+                            }
+                        ],
+                        "Type": "Quantity",
+                        "SubType": "Number"
+                    },
+                    {
+                        "Name": "50%",
+                        "Matches": [
+                            {
+                                "Text": "50%",
+                                "Offset": 49,
+                                "Length": 3
+                            }
+                        ],
+                        "Type": "Quantity",
+                        "SubType": "Percentage"
+                    }
+                ]
+            },
+            {
+                "Id": "2",
+                "Entities": [
+                    {
+                        "Name": "Great Depression",
+                        "Matches": [
+                            {
+                                "Text": "The Great Depression",
+                                "Offset": 0,
+                                "Length": 20
+                            }
+                        ],
+                        "WikipediaLanguage": "en",
+                        "WikipediaId": "Great Depression",
+                        "WikipediaUrl": "https://en.wikipedia.org/wiki/Great_Depression",
+                        "BingId": "d9364681-98ad-1a66-f869-a3f1c8ae8ef8"
+                    },
+                    {
+                        "Name": "1929",
+                        "Matches": [
+                            {
+                                "Text": "1929",
+                                "Offset": 30,
+                                "Length": 4
+                            }
+                        ],
+                        "Type": "DateTime",
+                        "SubType": "DateRange"
+                    },
+                    {
+                        "Name": "By 1933",
+                        "Matches": [
+                            {
+                                "Text": "By 1933",
+                                "Offset": 36,
+                                "Length": 7
+                            }
+                        ],
+                        "Type": "DateTime",
+                        "SubType": "DateRange"
+                    },
+                    {
+                        "Name": "Gross domestic product",
+                        "Matches": [
+                            {
+                                "Text": "GDP",
+                                "Offset": 49,
+                                "Length": 3
+                            }
+                        ],
+                        "WikipediaLanguage": "en",
+                        "WikipediaId": "Gross domestic product",
+                        "WikipediaUrl": "https://en.wikipedia.org/wiki/Gross_domestic_product",
+                        "BingId": "c859ed84-c0dd-e18f-394a-530cae5468a2"
+                    },
+                    {
+                        "Name": "United States",
+                        "Matches": [
+                            {
+                                "Text": "America",
+                                "Offset": 56,
+                                "Length": 7
+                            }
+                        ],
+                        "WikipediaLanguage": "en",
+                        "WikipediaId": "United States",
+                        "WikipediaUrl": "https://en.wikipedia.org/wiki/United_States",
+                        "BingId": "5232ed96-85b1-2edb-12c6-63e6c597a1de",
+                        "Type": "Location"
+                    },
+                    {
+                        "Name": "25",
+                        "Matches": [
+                            {
+                                "Text": "25",
+                                "Offset": 72,
+                                "Length": 2
+                            }
+                        ],
+                        "Type": "Quantity",
+                        "SubType": "Number"
+                    },
+                    {
+                        "Name": "25%",
+                        "Matches": [
+                            {
+                                "Text": "25%",
+                                "Offset": 72,
+                                "Length": 3
+                            }
+                        ],
+                        "Type": "Quantity",
+                        "SubType": "Percentage"
+                    }
+                ]
+            }
+        ],
+        "Errors": []
+    }
 ```
-
 
 ## <a name="summary"></a>Сводка
 
@@ -283,11 +286,11 @@ ms.locfileid: "67304183"
 + Запрос POST передается в конечную точку `/entities`, используя личный [ключ доступа и конечную точку](text-analytics-how-to-access-key.md), допустимые для вашей подписки.
 + Ответ будет содержать выходные данные, содержащие связанные сущности (включая оценки уверенности, смещения и веб-ссылки для каждого идентификатора документа), которые можно использовать в любом приложении
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [API анализа текста](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
 
-* [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)  
+* [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)
 * [Часто задаваемые вопросы](../text-analytics-resource-faq.md)</br>
-* [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712) 
+* [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712)

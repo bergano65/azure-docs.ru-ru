@@ -5,6 +5,7 @@
     - name: Сведения о службе "Аналитика временных рядов"
       href: time-series-insights-update-overview.md
 - name: Краткие руководства
+  expanded: true
   items:
     - name: Аналитика временных рядов Azure (общедоступная версия)
       items:
@@ -14,7 +15,7 @@
       items:
         - name: Обзор службы "Аналитика временных рядов" (предварительная версия)
           href: time-series-insights-update-quickstart.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Изучение клиентской библиотеки JavaScript для службы "Аналитика временных рядов Azure"
       href: tutorial-explore-js-client-lib.md
@@ -22,7 +23,7 @@
       href: tutorial-create-tsi-sample-spa.md
     - name: Аналитика временных рядов Azure (общедоступная версия)
       items:
-        - name: создать среду службы "Аналитика временных рядов";
+        - name: Создание среды службы "Аналитика временных рядов"
           href: tutorial-create-populate-tsi-environment.md
     - name: Аналитика временных рядов Azure (предварительная версия)
       items:
@@ -54,7 +55,7 @@
       items:
         - name: Планирование среды
           href: time-series-insights-update-plan.md
-        - name: Хранилище данных и входящие данные
+        - name: Хранилище данных и входящий трафик
           href: time-series-insights-update-storage-ingress.md
         - name: Варианты использования
           href: time-series-insights-update-use-cases.md
@@ -68,9 +69,9 @@
           items:
             - name: Проверка подлинности и авторизация
               href: time-series-insights-authentication-and-authorization.md
-            - name: 'Запрос данных с помощью C#'
+            - name: 'Запрашивание данных с помощью C#'
               href: time-series-insights-update-query-data-csharp.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Предоставление доступа к данным
       href: time-series-insights-data-access.md
@@ -84,7 +85,7 @@
       items:
         - name: Создание среды
           href: time-series-insights-get-started.md
-        - name: Настройка времени хранения данных
+        - name: Настройка срока хранения данных
           href: time-series-insights-how-to-configure-retention.md
         - name: Создание набора эталонных данных
           href: time-series-insights-add-reference-data-set.md
@@ -129,7 +130,7 @@
         - name: Аналитика временных рядов Azure (предварительная версия)
           href: /rest/api/time-series-insights/preview
           items:
-            - name: Запрос временных рядов
+            - name: Запрашивание временных рядов
               href: /rest/api/time-series-insights/preview-query
             - name: Модель временных рядов
               href: /rest/api/time-series-insights/preview-model
@@ -157,7 +158,7 @@
           href: /azure/iot-dps
         - name: Maps
           href: /azure/azure-maps
-        - name: Пакеты SDK для служб
+        - name: Пакеты SDK службы
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
         - name: Аналитика временных рядов
           href: /azure/time-series-insights
@@ -165,7 +166,7 @@
       items:
         - name: IoT Edge
           href: /azure/iot-edge
-        - name: Пакеты SDK для устройств IoT
+        - name: Пакеты SDK для устройств Интернета вещей
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
     - name: Azure Stream Analytics
       href: /azure/stream-analytics/

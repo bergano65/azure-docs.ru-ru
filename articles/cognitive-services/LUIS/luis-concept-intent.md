@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 01/02/2019
+ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: 2b574e0a545091263fce7949f997a3ba2dc8e5a8
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: bb7fa9d930f4c1ab3c241048804060e17fe5a8e4
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68563967"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619919"
 ---
 # <a name="concepts-about-intents-in-your-luis-app"></a>Основные сведения о намерениях в приложении LUIS
 
@@ -42,12 +42,15 @@ ms.locfileid: "68563967"
 ## <a name="intent-compared-to-entity"></a>Сравнение намерения и сущности
 Намерение представляет действие, которое должен выполнить бот для пользователя, и основано на всем высказывании. Сущность представляет слова или фразы, содержащиеся в высказывании. Высказывание может иметь только одно намерение с максимальной оценкой и может иметь несколько сущностей. 
 
-<a name="how-do-intents-relate-to-entities"></a> Создайте намерение в том случае, когда _намерение_ пользователя вызывает выполнения действия в вашем клиентском приложении, например вызов функции checkweather(). Затем создайте сущность, представляющую параметры, необходимые для выполнения действия. 
+<a name="how-do-intents-relate-to-entities"></a>
+
+Создайте намерение, когда пользователь _намеренно_ запустит действие в клиентском приложении, например вызов функции чекквеасер (). Затем создайте сущность, представляющую параметры, необходимые для выполнения действия. 
 
 |Пример намерения   | Сущность | Сущность в примерах высказываний   | 
 |------------------|------------------------------|------------------------------|
 | CheckWeather | { "type": "location", "entity": "seattle" }<br>{ "type": "builtin.datetimeV2.date","entity": "tomorrow","resolution":"2018-05-23" } | What's the weather like in (Какая сейчас погода в) `Seattle` `tomorrow`? |
 | CheckWeather | { "type": "date_range", "entity": "this weekend" } | Show me the forecast for (Покажите мне прогноз на) `this weekend` | 
+||||
 
 ## <a name="custom-intents"></a>Пользовательские намерения
 

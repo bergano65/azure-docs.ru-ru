@@ -5,18 +5,16 @@ metadata:
   title: Документация по службе "Экземпляры контейнеров Azure". Руководства | Документация Майкрософт
   description: Служба "Экземпляры контейнеров Azure" предоставляет быстрый и простой способ запуска контейнера в Azure без подготовки виртуальных машин и применения службы более высокого уровня.
   services: container-instances
-  author: czeumault
-  manager: carolz
+  author: georgewallace
+  manager: gwallace
   ms.service: container-instances
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
   ms.date: 07/26/2017
-  ms.author: carolz
+  ms.author: gwallace
 abstract:
   description: 'Служба "Экземпляры контейнеров Azure" предоставляет быстрый и простой способ запуска контейнера в Azure без подготовки виртуальных машин и применения службы более высокого уровня. Узнайте, как создавать экземпляры контейнеров и управлять ими, используя наши краткие инструкции, примеры и руководства.<p>Если вам требуется полнофункциональное решение для оркестрации контейнеров, см. <a href="/azure/aks/">документацию по службе Azure Kubernetes (AKS)</a>.</p>'
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Узнайте, как развертывать образы контейнеров при помощи службы "Экземпляры контейнеров Azure".'
@@ -25,7 +23,7 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/media/common/i_cligeneric.svg'
-            text: Инфраструктура CLI Azure
+            text: Azure CLI
             href: /azure/container-instances/container-instances-quickstart
           - image:
               src: 'https://docs.microsoft.com/media/common/i_portal.svg'
@@ -35,7 +33,7 @@ sections:
               src: 'https://docs.microsoft.com/media/logos/logo_powershell.svg'
             text: Azure PowerShell
             href: /azure/container-instances/container-instances-quickstart-powershell
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Узнайте, как упаковать код в образ контейнера и выполнить его в службе "Экземпляры контейнеров Azure".'
@@ -64,8 +62,8 @@ sections:
         className: cardsD
         items:
           - title: Командная строка
-            html: <p><a href="/cli/azure/container">Интерфейс командной строки Azure</a></p><p><a href="/powershell/module/az.containerinstance">PowerShell</a></p>
-          - title: Languages
+            html: <p><a href="/cli/azure/container">Azure CLI</a></p><p><a href="/powershell/module/az.containerinstance">PowerShell</a></p>
+          - title: Языки
             html: <p><a href="/dotnet/api/overview/azure/containerinstance">.NET</a></p><p><a href="/python/api/overview/azure/containerinstance">Python</a></p><p><a href="/java/api/overview/azure/containerinstance">Java</a></p><p><a href="/javascript/api/overview/azure/containerinstances">Node.js</a></p>
           - title: REST
-            html: <p><a href="/rest/api/container-instances">справочник по API REST</a></p><p><a href="/azure/templates/microsoft.containerinstance/containergroups">Шаблон Resource Manager</a></p>
+            html: <p><a href="/rest/api/container-instances">Справочник по REST API</a></p><p><a href="/azure/templates/microsoft.containerinstance/containergroups">Шаблон Resource Manager</a></p>

@@ -5,6 +5,7 @@
     - name: Что такое Центр Интернета вещей в Azure?
       href: about-iot-hub.md
 - name: Краткие руководства
+  expanded: true
   items:
     - name: Отправка данных телеметрии
       items:

@@ -1,21 +1,19 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по службе приложений
+title: Документация по Службе приложений
 metadata:
   document_id: 6c8db72a-cdb7-8fb7-ed57-ed75afcca4d0
   title: Документация по Службе приложений Azure. Руководства и справочник по API
   meta.description: 'Learn how to use App Service to build and host websites and web applications, including RESTful APIs and mobile back ends.'
   services: app-service
-  author: czeumault
-  manager: carolz
+  author: georgewallace
+  manager: gwallace
   ms.service: app-service
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
   ms.date: 01/23/2017
-  ms.author: carolz
+  ms.author: gwallace
 abstract:
-  description: 'Служба приложений Azure позволяет создавать и размещать веб-приложения, серверные части мобильных решений и API RESTful на любых языках без необходимости управлять инфраструктурой. Служба обеспечивает автоматическое масштабирование и высокий уровень доступности, поддерживает Windows и Linux и обеспечивает автоматическое развертывание из GitHub, Azure DevOps или любого репозитория Git. Узнайте, как использовать службу приложений Azure, изучив краткие инструкции, примеры и руководства.'
+  description: 'Служба приложений Azure позволяет создавать и размещать веб-приложения, серверные части мобильных решений и API RESTful на любых языках без необходимости управлять инфраструктурой. Служба обеспечивает автоматическое масштабирование и высокий уровень доступности, поддерживает Windows и Linux и обеспечивает автоматическое развертывание из GitHub, Azure DevOps или любого репозитория Git. Узнайте, как использовать Службу приложений Azure, изучив краткие инструкции, примеры и руководства.'
   aside:
     image:
       alt: null
@@ -26,10 +24,10 @@ abstract:
     href: 'https://azure.microsoft.com/resources/videos/create-a-web-app-with-nodejs-and-azure-app-service/'
     width: 250
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
-        text: 'Узнайте, как развернуть свое первое приложение в облаке с помощью службы приложений:'
+        text: 'Узнайте, как развернуть свое первое приложение в облаке с помощью Службы приложений:'
       - type: list
         style: icon48
         items:
@@ -76,7 +74,7 @@ sections:
             href: deploy-ftp.md
           - image:
               src: media/index/git-icon.svg
-            text: локальный репозиторий Git;
+            text: Локальный репозиторий Git
             href: deploy-local-git.md
           - image:
               src: 'https://docs.microsoft.com/azure/media/index/logo_vs-team-services.svg'
@@ -88,7 +86,7 @@ sections:
             href: deploy-continuous-deployment.md
           - image:
               src: media/index/bitbucket.svg
-            text: Bitbucket;
+            text: Bitbucket
             href: deploy-continuous-deployment.md
           - image:
               src: media/index/dropbox.svg
@@ -98,7 +96,7 @@ sections:
               src: media/index/onedrive.svg
             text: Синхронизация OneDrive
             href: deploy-content-sync.md
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Сведения о развертывании, администрировании и мониторинге защищенных веб-приложений на платформе Azure'
@@ -106,8 +104,8 @@ sections:
         style: ordered
         items:
           - html: Создание приложения с помощью <a href="/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase">.NET с базой данных SQL Azure</a> или <a href="/azure/app-service/app-service-web-tutorial-nodejs-mongodb-app">Node.js с MongoDB</a>
-          - html: <a href="/azure/app-service/app-service-web-tutorial-custom-domain">Сопоставление имени личного домена DNS с веб-приложением Azure</a>
-          - html: <a href="/azure/app-service/app-service-web-tutorial-custom-SSL">Bind an existing custom SSL certificate to Azure Web Apps</a> (Привязка существующего SSL-сертификата к приложению)
+          - html: <a href="/azure/app-service/app-service-web-tutorial-custom-domain">Сопоставление имени личного домена с приложением</a>
+          - html: <a href="/azure/app-service/app-service-web-tutorial-custom-SSL">Привязка существующего SSL-сертификата к приложению</a>
           - html: <a href="/azure/app-service/app-service-web-tutorial-content-delivery-network">Добавление CDN в приложение</a>
   - title: Развитие навыков с помощью Microsoft Learn
     items:
@@ -115,14 +113,14 @@ sections:
         style: cards
         className: cardsFTitle
         items:
-          - title: Размещение веб-приложения в службе Azure
+          - title: Размещение веб-приложения в Службе приложений Azure
             href: /learn/modules/host-a-web-app-with-azure-app-service/
             image:
               src: /learn/achievements/host-a-web-app-with-azure-app-service.svg
               href: /learn/modules/host-a-web-app-with-azure-app-service/
       - type: paragraph
         text: <a href="/learn/browse/">Другие интерактивные руководства</a>
-  - title: Бесплатные видеоуроки PluralSight
+  - title: Бесплатные видеоуроки Pluralsight
     items:
       - type: list
         style: cards
@@ -141,13 +139,13 @@ sections:
   - title: Примеры
     items:
       - type: paragraph
-        text: Поиск скриптов для выполнения типовых задач.
+        text: Найдите скрипты для выполнения типовых задач.
       - type: list
         style: unordered
         className: spaced noBullet
         items:
           - html: <a href="/powershell/azureps-cmdlets-docs">Azure PowerShell</a>
-          - html: <a href="/cli/azure/appservice">Интерфейс командной строки Azure</a>
+          - html: <a href="/cli/azure/appservice">Azure CLI</a>
   - title: Справочные материалы
     items:
       - type: list
@@ -155,8 +153,8 @@ sections:
         className: cardsD
         items:
           - title: Командная строка
-            html: <p><a href="/powershell/azureps-cmdlets-docs">Azure PowerShell</a></p><p><a href="/cli/azure/appservice">Интерфейс командной строки Azure</a></p>
-          - title: Languages
+            html: <p><a href="/powershell/azureps-cmdlets-docs">Azure PowerShell</a></p><p><a href="/cli/azure/appservice">Azure CLI</a></p>
+          - title: Языки
             html: <p><a href="/dotnet/api">.NET</a></p><p><a href="/java/api/">Java</a></p>
           - title: REST
-            html: <p><a href="/rest/api/appservice">справочник по API REST</a></p>
+            html: <p><a href="/rest/api/appservice">Справочник по REST API</a></p>

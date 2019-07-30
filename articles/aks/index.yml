@@ -6,27 +6,25 @@ metadata:
   title: "Документация по службе Azure Kubernetes (AKS). Руководства и справочник по API\_| Документация Майкрософт"
   meta.description: 'AKS allows you to quickly deploy a production ready Kubernetes cluster in Azure. Learn how to use AKS with these quickstarts, tutorials, and samples.'
   services: container-service
-  author: carolz
-  manager: carolz
+  author: georgewallace
+  manager: gwallace
   ms.service: container-service
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
   ms.date: 07-21-2017
-  ms.author: carolz
+  ms.author: gwallace
 abstract:
   description: 'Служба Azure Kubernetes (AKS) управляет размещенной средой Kubernetes, позволяя быстро и легко развертывать контейнерные приложения и управлять ими, даже если вы никогда не оркестрировали контейнеры. Также вам не нужно выполнять текущие операции и обслуживание, так как эта служба подготавливает, обновляет и масштабирует ресурсы по требованию, не отключая приложения от сети.'
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
-        text: Дополнительные сведения о развертывании кластера AKS
+        text: 'Дополнительные сведения о развертывании кластера AKS:'
       - type: list
         style: icon48
         items:
           - image:
               src: 'https://docs.microsoft.com/media/common/i_cligeneric.svg'
-            text: Инфраструктура CLI Azure
+            text: Azure CLI
             href: /azure/aks/kubernetes-walkthrough
           - image:
               src: 'https://docs.microsoft.com/media/common/i_portal.svg'
@@ -53,7 +51,7 @@ sections:
               src: 'https://docs.microsoft.com/media/logos/logo_nodejs.svg'
             text: Node.js
             href: ../dev-spaces/quickstart-nodejs.md
-  - title: Пошаговые руководства
+  - title: Пошаговые инструкции
     items:
       - type: paragraph
         text: 'Сведения о развертывании, администрировании и обновлении приложений в кластере AKS.'
@@ -61,7 +59,7 @@ sections:
         style: ordered
         items:
           - html: <a href="/azure/aks/tutorial-kubernetes-prepare-app">Создание образов контейнеров из приложения</a>
-          - html: <a href="/azure/aks/tutorial-kubernetes-prepare-acr">Передача образов контейнеров в реестр контейнеров Azure</a>
+          - html: <a href="/azure/aks/tutorial-kubernetes-prepare-acr">Передача образов контейнеров в Реестр контейнеров Azure</a>
           - html: <a href="/azure/aks/tutorial-kubernetes-deploy-cluster">Развертывание кластера AKS</a>
           - html: <a href="/azure/aks/tutorial-kubernetes-deploy-application">Запуск образов контейнеров в Kubernetes</a>
           - html: <a href="/azure/aks/tutorial-kubernetes-scale">Масштабирование приложений и инфраструктуры Kubernetes</a>
@@ -96,9 +94,9 @@ sections:
         style: cards
         className: cardsD
         items:
-          - title: Команда
-            html: <p><a href="/cli/azure/aks">Интерфейс командной строки Azure</a></p>
-          - title: Languages
+          - title: Командная строка
+            html: <p><a href="/cli/azure/aks">Azure CLI</a></p>
+          - title: Языки
             html: <p><a href="/dotnet/api/overview/azure/containerservice">.NET</a></p><p><a href="/python/api/overview/azure/containerservice">Python</a></p><p><a href="/java/api/overview/azure/containerservice">Java</a></p><p><a href="/javascript/api/overview/azure/container-service">Node.js</a></p>
           - title: REST
             html: <p><a href="/rest/api/aks">REST API</a></p>

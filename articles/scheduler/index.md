@@ -1,23 +1,20 @@
 ---
 title: Документация по планировщику Azure. Руководства и справочник по API | Документация Майкрософт
-description: Узнайте, как использовать планировщик для планирования и вызова заданий, таких как повторяющиеся действия в приложениях и плановое обслуживание. Руководства, справочники по API и другие документы.
+description: Узнайте, как использовать планировщик для планирования и вызова заданий, таких как повторяющиеся действия в приложениях и плановое обслуживание. Учебники, справочники по API и другие документы.
 services: scheduler
-author: carolz
-manager: carolz
+author: carmonmills
+manager: carmonm
 layout: LandingPage
-ms.assetid: ''
 ms.service: scheduler
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
-ms.author: carolz
-ms.openlocfilehash: 74f40578ee155eaa7289cfc3e79cdf4c36540af2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: carmonm
+ms.openlocfilehash: ddf335d0c2b165ae98feab0b42e60527f87de59c
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60532082"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68610332"
 ---
 # <a name="scheduler-documentation"></a>Документация по планировщику
 
@@ -53,7 +50,7 @@ ms.locfileid: "60532082"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Видеотека планировщика Azure</h3>
+                        <h3>Библиотека видео по планировщику Azure</h3>
                     </div>
                 </div>
             </div>
@@ -102,7 +99,7 @@ ms.locfileid: "60532082"
                 <div class="card">
                     <div class="cardText">
                         <h3>REST</h3>
-                        <p><a href="/rest/api/scheduler">справочник по API REST</a></p>
+                        <p><a href="/rest/api/scheduler">Справочник по REST API</a></p>
                     </div>
                 </div>
             </div>

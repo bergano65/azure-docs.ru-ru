@@ -2,21 +2,20 @@
 title: Docker в Azure
 description: Развертывание и интеграция Docker в Azure
 services: multiple
-author: czeumault
-manager: carolz
+author: georgewallace
+manager: gwallace
 layout: LandingPage
 ms.service: multiple
-ms.tgt_pltfrm: na
 ms.devlang: devops
 ms.topic: landing-page
 ms.date: 06/19/2017
-ms.author: carolz
-ms.openlocfilehash: f3e26701a5764169b6d459d28c5d70227386c6bf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: gwallace
+ms.openlocfilehash: 33f18722c26decb117a476a9d3adb562a7a726ed
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61456536"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68610449"
 ---
 <div class="content">
    <h1>Docker в Azure</h1>   
@@ -26,10 +25,10 @@ ms.locfileid: "61456536"
 Docker — это популярная платформа управления контейнерами и работы с образами, которая позволяет быстро работать с контейнерами в Linux и Windows.  Узнайте, как использовать Docker в Azure с помощью наших материалов и кратких руководств.
     </div>
     </div>
-<h2>5-минутные руководства по началу работы</h2>
+<h2>Пятиминутные руководства по началу работы</h2>
 <p>Дополнительные сведения о развертывании Docker в Azure:</p>
 <a href="https://azure.microsoft.com/resources/templates/docker-simple-on-ubuntu/">Шаблон быстрого запуска: развертывание Docker в Ubuntu</a><br/>
-<h2>Пошаговые руководства</h2>
+<h2>Пошаговые инструкции</h2>
 <p>Дополнительные сведения об использовании Docker в приложении и в качестве части конвейера CI/CD:</p>
 <ol>
   <li><a href="/azure/app-service/containers/tutorial-python-postgresql-app">Создание решений Python и PostgreSQL с помощью Docker</a></li>

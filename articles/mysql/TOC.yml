@@ -11,7 +11,7 @@
       href: quickstart-create-mysql-server-database-using-azure-portal.md
     - name: Создание базы данных с помощью Azure CLI
       href: quickstart-create-mysql-server-database-using-azure-cli.md
-    - name: "Создание базы данных с помощью команды up в Azure\_CLI"
+    - name: "Создание базы данных с помощью команды az mysql up в Azure\_CLI"
       href: quickstart-create-server-up-azure-cli.md
     - name: Подключение и запросы
       items:
@@ -19,7 +19,7 @@
           href: connect-php.md
         - name: Java
           href: connect-java.md
-        - name: .NET
+        - name: .Net
           href: connect-csharp.md
         - name: Python
           href: connect-python.md
@@ -33,13 +33,13 @@
           href: connect-go.md
         - name: MySQL Workbench
           href: connect-workbench.md
-- name: Руководства
+- name: Учебники
   items:
     - name: "1.\_Проектирование базы данных"
       items:
         - name: Портал Azure
           href: tutorial-design-database-using-portal.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: tutorial-design-database-using-cli.md
         - name: Шаблон Azure Resource Manager
           href: tutorial-provision-mysql-server-using-Azure-Resource-Manager-templates.md
@@ -111,7 +111,7 @@
           href: concepts-database-application-development.md
         - name: Устойчивость подключения
           href: concepts-connectivity.md
-        - name: Разработка с помощью Службы Azure Kubernetes (AKS)
+        - name: Разработка с помощью службы Azure Kubernetes (AKS)
           href: concepts-aks.md
         - name: Java
           items:
@@ -125,7 +125,7 @@
           href: concepts-data-in-replication.md
         - name: Реплики чтения
           href: concepts-read-replicas.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Управление сервером
       items:
@@ -143,7 +143,7 @@
           href: howto-restore-server-portal.md
         - name: Azure CLI
           href: howto-restore-server-cli.md
-    - name: Миграция базы данных
+    - name: Перенос базы данных
       items:
         - name: Дамп и восстановление
           href: concepts-migrate-dump-restore.md
@@ -197,7 +197,7 @@
           href: howto-read-replicas-cli.md
     - name: Устранение неполадок
       items:
-        - name: Устранение неполадок с подключением
+        - name: Устранение ошибок подключения
           href: howto-troubleshoot-common-connection-issues.md
         - name: Решение проблем с производительностью запросов
           href: howto-troubleshoot-query-performance.md
@@ -217,7 +217,7 @@
       items:
         - name: Портал Azure
           href: howto-restart-server-portal.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: howto-restart-server-cli.md
 - name: Справочные материалы
   items:
@@ -243,7 +243,7 @@
       href: 'https://stackoverflow.com/questions/tagged/azure-database-mysql'
     - name: Видео
       items:
-        - name: Видеоролики о продукте
+        - name: Видео о продукте
           href: videos.md
         - name: Серия видеоинструкций
           items:
@@ -255,7 +255,7 @@
               href: 'https://aka.ms/mysql-webapps-vid'
             - name: Подключение контейнеров с помощью OSBA
               href: 'https://aka.ms/mysql-osba-vid'
-    - name: Запрос функции
+    - name: Запрашивание функции
       href: 'https://feedback.azure.com/forums/597982-azure-database-for-mysql'
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
@@ -265,5 +265,5 @@
       href: 'https://customers.microsoft.com/en-us/search?sq="Azure%20Database%20for%20MySQL%20"'
     - name: Партнеры
       href: partners-migration-mysql.md
-    - name: Руководство по миграции баз данных
+    - name: Руководство по переносу баз данных
       href: 'https://datamigration.microsoft.com/'

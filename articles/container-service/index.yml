@@ -1,64 +1,56 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 64d2ad6990b41c7c9ff28a667b4fd51729877670
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46986937"
 documentType: LandingData
-title: Документация по службе контейнеров
+title: Документация по Службе контейнеров
 metadata:
-  document_id: 
+  document_id: null
   title: Документация по Службе контейнеров Azure. Руководства и справочник по API | Документация Майкрософт
-  meta.description: Azure Container Service allows you to quickly deploy a production ready Kubernetes, DC/OS, or Docker Swarm cluster. Learn how to use Azure Container Service with these quickstarts, tutorials, and samples.
+  meta.description: 'Azure Container Service allows you to quickly deploy a production ready Kubernetes, DC/OS, or Docker Swarm cluster. Learn how to use Azure Container Service with these quickstarts, tutorials, and samples.'
   services: container-service
-  author: czeumault
-  manager: carolz
+  author: georgewallace
+  manager: gwallace
   ms.service: container-service
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
   ms.date: 07-21-2017
-  ms.author: carolz
+  ms.author: gwallace
 abstract:
-  description: Служба контейнера Azure позволяет быстро развертывать готовые к работе кластеры Kubernetes, DC/OS или Docker Swarm. Узнайте, как использовать службы контейнеров Azure с помощью наших шаблонов быстрого запуска, руководств и примеров.
+  description: 'Служба контейнера Azure позволяет быстро развертывать готовые к работе кластеры Kubernetes, DC/OS или Docker Swarm. Узнайте, как использовать Службу контейнеров Azure с помощью наших кратких руководств, учебников и примеров.'
 sections:
-- title: 
-  items:
-  - type: list
-    style: cards
-    className: cardsFTitle
+  - title: null
     items:
-    - title: Начало работы с кластерами Kubernetes
-      href: /azure/container-service/kubernetes
-      image:
-        src: media/index/get-started.svg
-        href: /azure/container-service/kubernetes
-    - title: Начало работы с кластерами DC/OS и Docker Swarm
-      href: /azure/container-service/dcos-swarm
-      image:
-        src: media/index/get-started.svg
-        href: /azure/container-service/dcos-swarm
-- title: Развитие навыков с помощью Microsoft Learn
-  items:
-  - type: list
-    style: cards
-    className: cardsFTitle
+      - type: list
+        style: cards
+        className: cardsFTitle
+        items:
+          - title: Начало работы с кластерами Kubernetes
+            href: /azure/container-service/kubernetes
+            image:
+              src: media/index/get-started.svg
+              href: /azure/container-service/kubernetes
+          - title: Начало работы с кластерами DC/OS и Docker Swarm
+            href: /azure/container-service/dcos-swarm
+            image:
+              src: media/index/get-started.svg
+              href: /azure/container-service/dcos-swarm
+  - title: Развитие навыков с помощью Microsoft Learn
     items:
-    - title: Общие сведения о контейнерах в Azure
-      href: /learn/modules/intro-to-containers/
-      image:
-        src: /learn/achievements/intro-to-containers.svg
-        href: /learn/modules/intro-to-containers/
-    - title: Запуск контейнеров Docker с помощью службы "Экземпляры контейнеров Azure"
-      href: /learn/modules/run-docker-with-azure-container-instances/
-      image:
-        src: /learn/achievements/run-docker-with-azure-container-instances.svg
-        href: /learn/modules/run-docker-with-azure-container-instances/
-    - title: Создание и хранение образов контейнеров с помощью службы "Реестр контейнеров Azure"
-      href: /learn/modules/build-and-store-container-images/
-      image:
-        src: /learn/achievements/build-and-store-container-images.svg
-        href: /learn/modules/build-and-store-container-images/
-  - type: paragraph
-    text: <a href="/learn/browse/?products=azure-container-registry%2Cazure-container-instances">Дополнительные интерактивные руководства…</a>
+      - type: list
+        style: cards
+        className: cardsFTitle
+        items:
+          - title: Общие сведения о контейнерах в Azure
+            href: /learn/modules/intro-to-containers/
+            image:
+              src: /learn/achievements/intro-to-containers.svg
+              href: /learn/modules/intro-to-containers/
+          - title: Запуск контейнеров Docker с помощью службы "Экземпляры контейнеров Azure"
+            href: /learn/modules/run-docker-with-azure-container-instances/
+            image:
+              src: /learn/achievements/run-docker-with-azure-container-instances.svg
+              href: /learn/modules/run-docker-with-azure-container-instances/
+          - title: Создание и хранение образов контейнеров с помощью службы "Реестр контейнеров Azure"
+            href: /learn/modules/build-and-store-container-images/
+            image:
+              src: /learn/achievements/build-and-store-container-images.svg
+              href: /learn/modules/build-and-store-container-images/
+      - type: paragraph
+        text: <a href="/learn/browse/?products=azure-container-registry%2Cazure-container-instances">Дополнительные интерактивные руководства…</a>

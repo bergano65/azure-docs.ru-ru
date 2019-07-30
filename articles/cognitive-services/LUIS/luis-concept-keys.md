@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 01/18/2019
+ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: 0d52445d82965973c2d1e0f4fca2ef463312ad5f
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 69b4a92470b33ab6615eead16be044a88436d64e
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68560735"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619764"
 ---
 # <a name="authoring-and-query-prediction-endpoint-keys-in-luis"></a>Ключи разработки и запрашивания конечной точки прогнозирования в LUIS
 В LUIS используются два ключа: [разработки](#programmatic-key) и [конечных точек](#endpoint-key). Ключ разработки формируется автоматически при создании учетной записи LUIS. Когда вы будете готовы опубликовать свое приложение LUIS, потребуется [создать ключ конечной точки](luis-how-to-azure-subscription.md), [назначить его](luis-how-to-azure-subscription.md) приложению LUIS и [использовать его в запросе к конечной точке](#use-endpoint-key-in-query). 
@@ -29,6 +29,7 @@ ms.locfileid: "68560735"
 Важно разрабатывать приложение LUIS в [том же регионе](luis-reference-regions.md#publishing-regions), в котором вы хотите опубликовать его и выполнять запросы.
 
 <a name="programmatic-key" ></a>
+
 ## <a name="authoring-key"></a>Ключ разработки
 
 Ключ разработки, который также называется начальным ключом, создается автоматически при создании учетной записи LUIS и является бесплатным. У вас есть по одному ключу разработки для всех приложений LUIS в каждом [регионе](luis-reference-regions.md) разработки. Ключ разработки предоставляется для разработки приложения LUIS или для проверки отправки запросов к конечным точкам. 

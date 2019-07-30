@@ -1,27 +1,24 @@
 ---
 title: Документация по мобильным приложениям Azure. Руководства и справочник по API | Документация Майкрософт
-description: Узнайте, как использовать мобильные приложения в службе приложений Azure для создания и размещения собственных приложений iOS, Android и Windows, а также кроссплатформенных приложений с помощью Xamarin или Cordova.
+description: Узнайте, как использовать мобильные приложения в Службе приложений Azure для создания и размещения собственных приложений iOS, Android и Windows, а также кроссплатформенных приложений с помощью Xamarin или Cordova.
 services: app-service-mobile
-author: czeumault
-manager: carolz
+author: georgewallace
+manager: gwallace
 layout: LandingPage
-ms.assetid: ''
 ms.service: app-service-mobile
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: landing-page
 ms.date: 05/25/2018
-ms.author: carolz
-ms.openlocfilehash: 5adf1f12bd2c7757bfde1408c52b0753bff64797
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: gwallace
+ms.openlocfilehash: 5526f7ce11722469909adfaad11773bc2c8e4b66
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60851573"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68610211"
 ---
 # <a name="mobile-apps-documentation"></a>Документация по мобильным приложениям
 
-Узнайте, как использовать мобильные приложения в службе приложений Azure для создания собственных приложений iOS, Android и Windows, а также кроссплатформенных приложений с помощью Xamarin или Cordova. Руководства, видеоролики, документация по пакету SDK и другие ресурсы, в которых показано, как создавать и размещать серверные ресурсы для любого мобильного приложения.
+Узнайте, как использовать мобильные приложения в Службе приложений Azure для создания собственных приложений iOS, Android и Windows, а также кроссплатформенных приложений с помощью Xamarin или Cordova. Руководства, видео, документация по пакету SDK и другие ресурсы, в которых показано, как создавать и размещать серверные ресурсы для любого мобильного приложения.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -53,7 +50,7 @@ ms.locfileid: "60851573"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Видеотека по службе приложений</h3>
+                        <h3>Библиотека видео по Службе приложений</h3>
                     </div>
                 </div>
             </div>
@@ -197,7 +194,7 @@ ms.locfileid: "60851573"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>Languages</h3>
+                        <h3>Языки</h3>
                         <p><a href="https://msdn.microsoft.com/library/azure/dn961176.aspx">Серверный пакет SDK для .NET</a></p>
                         <p><a href="https://azure.github.io/azure-mobile-apps-node/">Серверный пакет SDK для Node.js</a></p>
                         <p><a href="https://azure.github.io/azure-mobile-apps-android-client/">Клиентский пакет SDK для Android</a></p>

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 01/24/2019
+ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: f4b97dce3e0790596acc15005a0522953ae9cbed
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: a6b89b315c4cdb1438fc8256cfc01793b3c0f920
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68560691"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619743"
 ---
 # <a name="concepts-for-enabling-active-learning-by-reviewing-endpoint-utterances"></a>Основные сведения о включении активного обучения путем проверки фраз конечной точки
 Активное обучение является одной из трех стратегий повышения точности прогнозов, при этом самой простой в реализации. Чтобы применить активное обучение, вам нужно проверить фразы конечной точки и убедиться в правильности намерений и сущности. Служба LUIS выбирает фразы конечной точки, в правильности которых она не уверена.
@@ -37,7 +37,7 @@ ms.locfileid: "68560691"
 Проверку предлагаемых фрагментов речи необязательно выполнять ежедневно, однако эту задачу необходимо включить в регулярное обслуживание LUIS. 
 
 ## <a name="delete-review-items-programmatically"></a>Удаление элементов проверки программным способом
-Используйте **[удаление фраз без названия](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/58b6f32139e2bb139ce823c9)** API. Создайте резервную копию этих высказываний перед удалением путем **[экспорта файлов журнала](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36)** .
+Используйте API **[удаления без метки фразы продолжительностью](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/58b6f32139e2bb139ce823c9)** . Создайте резервную копию этих высказываний перед удалением путем **[экспорта файлов журнала](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36)** .
 
 ## <a name="next-steps"></a>Следующие шаги
 
