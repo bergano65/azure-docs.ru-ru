@@ -3,17 +3,18 @@ title: Краткое руководство. Развертывание кон�
 description: В этом кратком руководстве описано, как быстро развернуть контейнерное веб-приложение, выполняющееся в изолированном экземпляре контейнера Azure с помощью Azure CLI
 services: container-instances
 author: dlepow
+manager: gwallace
 ms.service: container-instances
 ms.topic: quickstart
 ms.date: 03/21/2019
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 8e504a081f8685107871aed920077dd75a70dfa7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7a4a1c24211e644a796b4e60537978c327501383
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65908097"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68325784"
 ---
 # <a name="quickstart-deploy-a-container-instance-in-azure-using-the-azure-cli"></a>Краткое руководство. Развертывание экземпляра контейнера в Azure с помощью Azure CLI
 
@@ -23,7 +24,7 @@ ms.locfileid: "65908097"
 
 ![Приложение, развернутое в службе "Экземпляры контейнеров Azure" (просмотр в браузере)][aci-app-browser]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][azure-account], прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][azure-account], прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -51,7 +52,7 @@ az group create --name myResourceGroup --location eastus
 az container create --resource-group myResourceGroup --name mycontainer --image mcr.microsoft.com/azuredocs/aci-helloworld --dns-name-label aci-demo --ports 80
 ```
 
-Через несколько секунд вы должны получить ответ из интерфейса командной строки Azure, указывающий, что развертывание завершено. Проверьте состояние контейнера с помощью команды [az container show][az-container-show]:
+Через несколько секунд вы должны получить ответ из интерфейса командной строки Azure, указывающий, что развертывание завершено. Проверьте состояние с помощью команды [az container show][az-container-show]:
 
 ```azurecli-interactive
 az container show --resource-group myResourceGroup --name mycontainer --query "{FQDN:ipAddress.fqdn,ProvisioningState:provisioningState}" --out table
@@ -138,7 +139,7 @@ az container list --resource-group myResourceGroup --output table
 
 Контейнер **mycontainer** не должен отображаться в выходных данных этой команды. Если у вас нет других контейнеров в группе ресурсов, выходные данные будут отсутствовать.
 
-После завершения работы с группой ресурсов *myResourceGroup* и всеми ресурсами, которые она содержит, удалите эту группу ресурсов с помощью команды [az group delete][az-group-delete]:
+После завершения работы с группой ресурсов *myResourceGroup* и всеми ресурсами, которые она содержит, удалите ее с помощью команды [az group delete][az-group-delete]:
 
 ```azurecli-interactive
 az group delete --name myResourceGroup
@@ -151,7 +152,7 @@ az group delete --name myResourceGroup
 > [!div class="nextstepaction"]
 > [Руководство по использованию службы "Экземпляры контейнеров Azure"](./container-instances-tutorial-prepare-app.md)
 
-Чтобы проверить параметры запуска контейнеров в системе оркестрации Azure, см. краткие руководства по [Службе Azure Kubernetes (AKS)][container-service].
+Сведения о том, как проверить параметры запуска контейнеров в системе оркестрации Azure, см. в кратких руководствах по [Службе Azure Kubernetes (AKS)][container-service].
 
 <!-- IMAGES -->
 [aci-app-browser]: ./media/container-instances-quickstart/aci-app-browser.png

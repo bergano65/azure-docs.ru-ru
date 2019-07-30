@@ -12,15 +12,15 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 3/25/2019
+ms.date: 07/22/2019
 ms.author: v-vasuke
 ms.custom: mvc
-ms.openlocfilehash: b5f2f77b3caed483aed1736bd510096d44329284
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: d9db71a1b64ea6bf2dc73500160ce8e5e6022ef6
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67276192"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68385025"
 ---
 # <a name="tutorial-create-azure-vm-infrastructure-to-host-a-service-fabric-cluster"></a>Руководство по созданию инфраструктуры виртуальных машин Azure для размещения кластера Service Fabric
 
@@ -86,9 +86,9 @@ ms.locfileid: "67276192"
 
 2. На вкладке **Обзор** запишите *частный* IP-адрес. Щелкните **Подключить**.
 
-3. Обратите внимание, что на вкладке **RDP** мы используем общедоступный IP-адрес и порт 3389, специально открытые ранее. Загрузите RDP-файл
+3. На вкладке **RDP** обратите внимание, что мы используем общедоступный IP-адрес и порт 3389, который мы специально открыли ранее. Скачайте RDP-файл.
  
-4. Откройте RDP-файл и при появлении запроса введите имя пользователя и пароль, которые вы указали в настройке виртуальной машины.
+4. Откройте RDP-файл и при появлении запроса введите имя пользователя и пароль, указанные в программе установки виртуальной машины.
 
 5. После подключения к экземпляру вам нужно будет проверить, запущен ли удаленный реестр, включен ли SMB и открыты ли необходимые порты для SMB и удаленного реестра.
 

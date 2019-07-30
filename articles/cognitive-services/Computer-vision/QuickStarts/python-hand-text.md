@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Извлечение рукописного текста — REST, Python
+title: Краткое руководство. Извлечение печатного и рукописного текста — REST, Python
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве вы узнаете, как извлечь рукописный текст из изображения с помощью API компьютерного зрения на Python.
+description: Из этого краткого руководства вы узнаете, как использовать API Компьютерного зрения для извлечения печатного и рукописного текста из изображений с помощью Python.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -11,16 +11,16 @@ ms.topic: quickstart
 ms.date: 07/03/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: ec58617556ff54bd2273160bb4af80e473ac1693
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 729228b224bdf708fbcf9caf4742f9bb7ad5cff3
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603560"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68311981"
 ---
-# <a name="quickstart-extract-handwritten-text-using-the-computer-vision-rest-api-and-python"></a>Краткое руководство. Извлечение рукописного текста с помощью REST API "Компьютерное зрение" и Python
+# <a name="quickstart-extract-printed-and-handwritten-text-using-the-computer-vision-rest-api-and-python"></a>Краткое руководство. Извлечение печатного и рукописного текста с помощью REST API Компьютерного зрения и Python
 
-Из этого краткого руководства вы узнаете, как извлечь рукописный текст из изображения с помощью REST API компьютерного зрения. С помощью API [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) и [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d) можно определить рукописный текст на изображении, а потом извлечь распознанные знаки в поток знаков, пригодный для машинной обработки.
+Из этого краткого руководства вы узнаете, как извлечь печатный и рукописный текст из изображения с помощью REST API Компьютерного зрения. С помощью методов [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) и [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d) вы можете обнаружить текст на изображении и извлечь распознанные символы в поток машиночитаемых символов. API определит, какую модель распознавания следует использовать для каждой строки текста, так как он поддерживает изображения с печатным и рукописным текстом.
 
 > [!IMPORTANT]
 > В отличие от метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) метод [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) выполняется асинхронно. Этот метод не возвращает никаких данных в текст успешного ответа. Вместо этого метод Batch Read возвращает URI в значение поля заголовка ответа `Operation-Content`. Затем можно вызвать этот URI, который представляет API [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d), чтобы проверить состояние и вернуть результаты вызова метода Batch Read.
@@ -44,10 +44,10 @@ ms.locfileid: "67603560"
 1. При необходимости внесите в код следующие изменения.
     1. Замените значение `subscription_key` своим ключом подписки.
     1. Замените значение `vision_base_url` URL-адресом конечной точки ресурса Компьютерного зрения в регионе Azure, где вы получили ключи подписки, если это необходимо.
-    1. При необходимости замените значение `image_url` URL-адресом другого изображения, из которого вы хотите извлечь рукописный текст.
-1. Сохраните код как файл с расширением `.py`. Например, `get-handwritten-text.py`.
+    1. При необходимости замените значение `image_url` URL-адресом другого изображения, из которого вы хотите извлечь текст.
+1. Сохраните код как файл с расширением `.py`. Например, `get-text.py`.
 1. Откройте окно командной строки.
-1. В командной строке выполните пример кода с помощью команды `python`. Например, `python get-handwritten-text.py`.
+1. В командной строке выполните пример кода с помощью команды `python`. Например, `python get-text.py`.
 
 ```python
 import requests
@@ -83,7 +83,7 @@ response = requests.post(
     text_recognition_url, headers=headers, json=data)
 response.raise_for_status()
 
-# Extracting handwritten text requires two API calls: One call to submit the
+# Extracting text requires two API calls: One call to submit the
 # image for processing, the other to retrieve the text found in the image.
 
 # Holds the URI used to retrieve the recognized text.

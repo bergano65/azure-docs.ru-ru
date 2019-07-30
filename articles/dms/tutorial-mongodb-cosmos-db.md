@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
 ms.date: 07/04/2019
-ms.openlocfilehash: 2ff5ebefbe379edda94dcf8ac066027398e2f3f4
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
+ms.openlocfilehash: baf3c372d0c84d4daf439fdc92fa6eeac5d12d0b
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67565543"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68501024"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-offline-using-dms"></a>Руководство по Миграция MongoDB в API Azure Cosmos DB для MongoDB в автономном режиме с помощью DMS
 
@@ -107,7 +107,7 @@ ms.locfileid: "67565543"
 
 3. Выберите **+ Новый проект миграции**.
 
-4. На экране **Новый проект миграции** задайте имя для проекта, в текстовом поле **Тип исходного сервера** выберите **MongoDB**, в текстовом поле **Тип целевого сервера** выберите **CosmosDB (MongoDB API)**, а затем для параметра **Выберите тип действия** выберите значение **Автономная миграция данных**. 
+4. На экране **Новый проект миграции** задайте имя для проекта, в текстовом поле **Тип исходного сервера** выберите **MongoDB**, в текстовом поле **Тип целевого сервера** выберите **CosmosDB (MongoDB API)** , а затем для параметра **Выберите тип действия** выберите значение **Автономная миграция данных**. 
 
     ![Создание проекта Database Migration Service](media/tutorial-mongodb-to-cosmosdb/dms-create-project.png)
 
@@ -128,6 +128,8 @@ ms.locfileid: "67565543"
      https://blobnameurl/container?SASKEY
      ```
 
+     Эту строку подключения SAS к контейнеру BLOB-объектов можно найти в обозревателе хранилища Azure Storage. Создание SAS для нужного контейнера позволит вам получить URL-адрес в запрошенном выше формате.
+     
      Кроме того, учитывайте следующие сведения, соответствующие данным о типе дампа в хранилище Azure.
 
      * Для дампов BSON данные в контейнере больших двоичных объектов должны быть в формате bsondump так, чтобы файлы данных помещались в папках с именами содержащих баз данных в формате "коллекция.bson". Файлы метаданных (если таковые имеются) должны быть названы в формате *коллекция*.metadata.json.

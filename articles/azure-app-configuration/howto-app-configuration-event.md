@@ -13,24 +13,20 @@ ms.topic: tutorial
 ms.date: 05/30/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 2cb9ad28a21842987f8c0f7c75151ab8c7fe6fa0
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: d41ce06279536e3479b96d8d7afedf81624dbc9b
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66735813"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68326601"
 ---
 # <a name="quickstart-route-azure-app-configuration-events-to-a-web-endpoint-with-azure-cli"></a>Краткое руководство. Направляйте события Конфигурации приложений Azure в конечную веб-точку с помощью Azure CLI
 
-Пользователи Конфигурации приложений Azure могут подписаться на события, которые создаются при изменении значений ключа. Эти события могут активировать веб-перехватчиков, функции Azure, очереди хранилища Azure или любой другой обработчик событий, который поддерживается [Сеткой событий Azure](https://docs.microsoft.com/azure/event-grid/event-handlers). Из этой статьи вы узнаете, как использовать Azure CLI для создания подписки на события Конфигурации приложений Azure.
+Из этого краткого руководства вы узнаете, как настроить подписки на события Конфигурации приложений Azure для отправки событий изменения значения ключа в конечную веб-точку. Пользователи Конфигурации приложений Azure могут подписаться на события, которые создаются при изменении значений ключа. Эти события могут активировать веб-перехватчики, Функции Azure, очереди службы хранилища Azure или любой другой обработчик событий, который поддерживается Сеткой событий Azure. Как правило, события отправляются на конечную точку, которая обрабатывает данные событий и выполняет соответствующие действия. Но в этой статье для простоты события отправляются в веб-приложение, которое собирает и отображает сообщения.
 
-Как правило, события отправляются на конечную точку, которая обрабатывает данные событий и выполняет соответствующие действия. Но в этой статье для простоты события отправляются в веб-приложение, которое собирает и отображает сообщения.
+## <a name="prerequisites"></a>Предварительные требования
 
-Выполнив действия, описанные в этой статье, вы увидите, что данные событий отправлены в веб-приложение.
-
-![Просмотр события подписки](./media/quickstarts/event-grid/view-results.png)
-
-[!INCLUDE [quickstarts-free-trial-note.md](../../includes/quickstarts-free-trial-note.md)]
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/). При желании вы также можете использовать Azure Cloud Shell.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -144,3 +140,4 @@ az group delete --name <resource_group_name>
 
 - [Реагирование на события конфигурации приложения Azure](concept-app-configuration-event.md)
 - [An introduction to Azure Event Grid](../event-grid/overview.md) (Общие сведения о службе "Сетка событий Azure")
+- [Обработчики Сетки событий Azure](../event-grid/event-handlers.md)

@@ -14,26 +14,22 @@ ms.tgt_pltfrm: Azure Functions
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: a4900964fb6feeb4c7cb0f147d3681031cac6a7b
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 5eb9d0631a4d5f4221b5184198290a5109655408
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67798429"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68326580"
 ---
-# <a name="quickstart-create-an-azure-function-with-app-configuration"></a>Краткое руководство. Создание функции Azure с использованием службы "Конфигурация приложений"
+# <a name="quickstart-create-an-azure-function-with-azure-app-configuration"></a>Краткое руководство. Создание функции Azure с использованием службы "Конфигурация приложений Azure"
 
-Конфигурация приложений Azure — это служба для управления конфигурациями в Azure. С ее помощью вы можете централизовано хранить и администрировать все параметры приложения отдельно от кода. В этом кратком руководстве показано, как интегрировать эту службу в функцию Azure. 
-
-Шаги из этого краткого руководства можно выполнять в любом редакторе кода. [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, который доступен на платформах Windows, macOS и Linux.
-
-![Полное руководство для локальной среды](./media/quickstarts/dotnet-core-function-launch-local.png)
+В этом кратком руководстве описано, как добавить службу "Конфигурация приложений Azure" в функцию Azure, чтобы обеспечить централизованное хранение всех параметров приложения и управление ими отдельно от кода.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством установите [Visual Studio 2019](https://visualstudio.microsoft.com/vs). Убедитесь, что рабочая нагрузка **Разработка для Azure** также установлена. Также установите [новейшие инструменты Функций Azure](../azure-functions/functions-develop-vs.md#check-your-tools-version).
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+- [Visual Studio 2019](https://visualstudio.microsoft.com/vs) с рабочей нагрузкой **разработки Azure**.
+- [Инструменты Функций Azure](../azure-functions/functions-develop-vs.md#check-your-tools-version)
 
 ## <a name="create-an-app-configuration-store"></a>Создание хранилища конфигураций приложений
 

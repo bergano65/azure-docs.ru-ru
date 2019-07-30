@@ -14,24 +14,22 @@ ms.tgt_pltfrm: .NET
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: f5837e06f347a4f822ac007dfe54c99fc7457dbb
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 8aa8c8132220965d55097c4fed8ba1b2e9501301
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65872974"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68326529"
 ---
 # <a name="quickstart-create-a-net-framework-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения на .NET Framework с помощью службы конфигурации приложений Azure
 
-Конфигурация приложений Azure — это служба для управления конфигурациями в Azure. С ее помощью вы можете централизовано хранить и администрировать все параметры приложения отдельно от кода. В этом кратком руководстве показано, как внедрить службу в классическое консольное приложении Windows на основе .NET Framework.
-
-![Полное руководство для локальной среды](./media/quickstarts/dotnet-fx-app-run.png)
+В этом кратком руководстве описано, как добавить службу конфигурации приложений Azure в консольное приложение .NET Framework, чтобы обеспечить централизованное хранение параметров приложения и управление ими отдельно от кода.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством установите [Visual Studio 2019](https://visualstudio.microsoft.com/vs) и [.NET Framework 4.7.1](https://dotnet.microsoft.com/download) или более поздней версии (если вы еще не сделали этого).
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+- [Visual Studio 2019](https://visualstudio.microsoft.com/vs)
+- [.NET Framework 4.7.1](https://dotnet.microsoft.com/download)
 
 ## <a name="create-an-app-configuration-store"></a>Создание хранилища конфигураций приложений
 

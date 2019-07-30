@@ -1,5 +1,5 @@
 ---
-title: Изменение учетных записей, поддерживаемых предложением, зарегистрированным с помощью платформы удостоверений Майкрософт | Azure
+title: Изменение учетных записей приложений, зарегистрированных на платформе удостоверений Майкрософт | Azure
 description: Настройте приложение, зарегистрированное с помощью платформы удостоверений Майкрософт, чтобы изменить пользователей или учетные записи, которые могут работать с приложением.
 services: active-directory
 documentationcenter: ''
@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: aragra, lenalepa, sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 00d99ae48abfcb3e4d4abc0d63565994df45f746
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: be62dabc01e00465fa5227c5531fa18a16cf10a9
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65545726"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68380779"
 ---
 # <a name="quickstart-modify-the-accounts-supported-by-an-application"></a>Краткое руководство. Изменение учетных записей, поддерживаемых приложением
 

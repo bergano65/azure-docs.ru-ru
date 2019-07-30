@@ -11,12 +11,12 @@ ms.custom: mvc
 ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.date: 04/25/2019
-ms.openlocfilehash: a8857d62b3078d78bdd0a339ebadf766ddb2fb43
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 51d1af24a22f7ed86b01b1c7c79b204cd552a7ea
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295821"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68385417"
 ---
 # <a name="quickstart-create-automated-tasks-processes-and-workflows-with-azure-logic-apps---visual-studio"></a>Краткое руководство. Создание автоматизированных задач, операций и рабочих процессов с помощью Azure Logic Apps в Visual Studio
 
@@ -64,6 +64,8 @@ ms.locfileid: "67295821"
   Например, если вы используете соединитель Dynamics CRM Online, конструктор проверяет экземпляр CRM и получает информацию для отображения свойств по умолчанию и пользовательских свойств.
 
 * Учетная запись, поддерживаемая Logic Apps, например Office 365 Outlook, Outlook.com или Gmail. Сведения о дополнительных поставщиках см. в [списке соединителей](https://docs.microsoft.com/connectors/). В этом примере используется Office 365 Outlook. Если вы используете другой поставщик, общие шаги те же, но пользовательский интерфейс может немного отличаться.
+
+<a name="create-resource-group-project"></a>
 
 ## <a name="create-azure-resource-group-project"></a>Создание проекта группы ресурсов Azure
 
@@ -141,6 +143,8 @@ ms.locfileid: "67295821"
 
 1. Сохраните решение Visual Studio. (Или нажмите клавиши Ctrl + S.)
 
+<a name="deploy-to-Azure"></a>
+
 ## <a name="deploy-logic-app-to-azure"></a>Развертывание приложения логики в Azure
 
 Перед запуском и тестированием приложения логики разверните приложение из Visual Studio в Azure.
@@ -173,6 +177,22 @@ ms.locfileid: "67295821"
    ![Outlook отправляет сообщение электронной почты для каждого нового элемента RSS](./media/quickstart-create-logic-apps-with-visual-studio/outlook-email.png)
 
 Итак, вы успешно создали и развернули приложение логики с помощью Visual Studio. Чтобы управлять приложением логики и просматривать его журнал выполнения, ознакомьтесь со статьей [Manage logic apps with Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md) (Управление приложениями логики в Visual Studio).
+
+## <a name="add-new-logic-app"></a>Добавление нового приложения логики
+
+Если у вас уже есть проект группы ресурсов Azure, вы можете добавить в него новое пустое приложение логики в окне "Структура JSON".
+
+1. В обозревателе решений откройте файл `<logic-app-name>.json`.
+
+1. В меню **Вид** выберите **Другие окна** > **Структура JSON**.
+
+1. Чтобы добавить ресурс в файл шаблона, нажмите **Добавить ресурс** в верхней части окна "Структура JSON". Также можно щелкнуть правой кнопкой мыши **ресурсы** в окне "Структура JSON", а затем выбрать пункт **Добавить новый ресурс**.
+
+   ![Окно "Структура JSON"](./media/quickstart-create-logic-apps-with-visual-studio/jsonoutline.png)
+
+1. В диалоговом окне **Добавление ресурса** найдите и выберите **Приложение логики**. Присвойте имя приложению логики и выберите **Добавить**.
+
+   ![Добавление ресурса](./media/quickstart-create-logic-apps-with-visual-studio/addresource.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

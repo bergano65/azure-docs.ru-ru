@@ -8,12 +8,12 @@ ms.custom: hdinsightactive,seodec18
 ms.topic: tutorial
 ms.date: 05/22/2019
 ms.author: hrasheed
-ms.openlocfilehash: 51f84234ac35be5f60d1aaa5dac661ad9ce5e0c2
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: da31b6a880344de918a3b3e0f89f60d985db2ce7
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66257902"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68406019"
 ---
 # <a name="tutorial-use-apache-spark-structured-streaming-with-apache-kafka-on-hdinsight"></a>Руководство. Использование структурированной потоковой передачи Apache Spark с Apache Kafka в HDInsight
 
@@ -44,7 +44,7 @@ ms.locfileid: "66257902"
 > 
 > Для удобства в этом документе есть ссылка на шаблон, с помощью которого можно создать все необходимые ресурсы Azure. 
 >
-> Дополнительные сведения об использовании HDInsight в виртуальной сети см. в статье [Расширение возможностей HDInsight с помощью виртуальной сети Azure](hdinsight-extend-hadoop-virtual-network.md).
+> Дополнительные сведения об использовании HDInsight в виртуальной сети см. в статье о[планирование виртуальной сети для Azure HDInsight](hdinsight-plan-virtual-network-deployment.md).
 
 ## <a name="structured-streaming-with-apache-kafka"></a>Структурированная потоковая передача с помощью Apache Kafka
 
@@ -142,9 +142,9 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
     | Параметр | Значение |
     | --- | --- |
-    | Подписка | Ваша подписка Azure. |
-    | Группа ресурсов | Группа ресурсов, в которой содержатся ресурсы. |
-    | Расположение | Регион Azure, в котором создаются ресурсы. |
+    | Subscription | Ваша подписка Azure. |
+    | Resource group | Группа ресурсов, в которой содержатся ресурсы. |
+    | Location | Регион Azure, в котором создаются ресурсы. |
     | Spark Cluster Name (Имя кластера Spark) | Имя кластера Spark. Первые шесть символов должны отличаться от имени кластера Kafka. |
     | Kafka Cluster Name (Имя кластера Kafka) | Имя кластера Kafka. Первые шесть символов должны отличаться от имени кластера Spark. |
     | Имя пользователя для входа в кластер | Имя администратора кластеров. |

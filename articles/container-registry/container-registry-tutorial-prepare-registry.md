@@ -3,17 +3,18 @@ title: Руководство. Создание геореплицированн
 description: Создайте реестр контейнеров Azure, настройте георепликацию, подготовьте образ Docker и разверните его в реестре. Первая часть руководства из трех частей.
 services: container-registry
 author: dlepow
+manager: gwallace
 ms.service: container-registry
 ms.topic: tutorial
 ms.date: 04/30/2017
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 7aec257335e3380fa99669c1191ee89857ec975d
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 87746bd39e624699612bf5221258ad757cd462b3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57533670"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68309583"
 ---
 # <a name="tutorial-prepare-a-geo-replicated-azure-container-registry"></a>Руководство. Подготовка геореплицированного реестра контейнеров Azure
 
@@ -99,7 +100,7 @@ az acr login --name <acrName>
 
 ## <a name="get-application-code"></a>Получение кода приложения
 
-Пример в этом руководстве включает небольшое веб-приложение, созданное на базе [ASP.NET Core][aspnet-core]. Приложение обслуживает страницу HTML, отображающую регион, из которого был развернут образ с помощью реестра контейнеров Azure.
+Пример в этом руководстве включает небольшое веб-приложение, созданное с помощью [ASP.NET Core][aspnet-core]. Приложение обслуживает страницу HTML, отображающую регион, из которого был развернут образ с помощью реестра контейнеров Azure.
 
 ![Приложение из руководства, отображающееся в браузере][tut-app-01]
 
@@ -114,7 +115,7 @@ cd acr-helloworld
 
 ## <a name="update-dockerfile"></a>Обновление Dockerfile
 
-Файл Dockerfile в примере репозитория демонстрирует, как создается контейнер. Он запускается из официального образа [aspnetcore][dockerhub-aspnetcore], копирует файлы приложения в контейнер, устанавливает зависимости, компилирует выходные данные с помощью официального образа [aspnetcore-build][dockerhub-aspnetcore-build] и, наконец компилирует оптимизированный образ aspnetcore.
+Файл Dockerfile в примере репозитория демонстрирует, как создается контейнер. Он запускается из официального образа [aspnetcore][dockerhub-aspnetcore], копирует файлы приложения в контейнер, устанавливает зависимости, компилирует выходные данные с помощью официального образа [aspnetcore-build][dockerhub-aspnetcore-build] и, наконец, оптимизирует образ aspnetcore.
 
 [Dockerfile][dockerfile] расположен в каталоге `./AcrHelloworld/Dockerfile` клонированного источника.
 

@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: quickstart
 ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: 3bfffc94bc11f9da2336d6edaeb96bf2e471c4ce
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: b6af9e512d5df7f4701ad981a0db89278873ec7e
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67602602"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68442891"
 ---
 # <a name="quickstart-train-a-form-recognizer-model-and-extract-form-data-by-using-the-rest-api-with-curl"></a>Краткое руководство. Обучение модели Распознавателя документов и извлечение данных форм с помощью REST API и cURL
 
@@ -26,7 +26,7 @@ ms.locfileid: "67602602"
 Для работы с этим кратким руководством требуется следующее:
 - Доступ к предварительной версии Распознавателя документов с ограниченным доступом. Чтобы получить доступ к предварительной версии, заполните и отправьте [форму запроса на доступ к Распознавателю документов](https://aka.ms/FormRecognizerRequestAccess).
 - Установленная программа [cURL](https://curl.haxx.se/windows/).
-- Минимум пять документов одного типа. Вы будете использовать эти данные для обучения модели. Для работы с этим кратким руководством вы можете использовать [пример набора данных](https://go.microsoft.com/fwlink/?linkid=2090451). Передайте данные в корневой каталог учетной записи хранения хранилища BLOB-объектов Azure.
+- Минимум пять документов одного типа. Вы будете использовать эти данные для обучения модели. Для работы с этим кратким руководством вы можете использовать [пример набора данных](https://go.microsoft.com/fwlink/?linkid=2090451). Передайте данные в корневой каталог контейнера хранилища BLOB-объектов учетной записи хранения Azure.
 
 ## <a name="create-a-form-recognizer-resource"></a>Создание ресурса Распознавателя документов
 

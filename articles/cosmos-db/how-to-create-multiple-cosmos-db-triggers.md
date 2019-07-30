@@ -1,33 +1,33 @@
 ---
-title: Создание нескольких независимых триггеров Azure Cosmos DB
-description: Из этой статьи вы узнаете, как настроить несколько независимых триггеров Azure Cosmos DB для создания архитектур на основе событий с помощью решения "Функции Azure".
+title: Создание нескольких независимых активаций функций Azure для Cosmos DB
+description: Из этой статьи вы узнаете, как настроить несколько независимых активаций функций Azure для Cosmos DB, чтобы создать архитектуры на основе событий.
 author: ealsur
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 05/23/2019
+ms.date: 07/17/2019
 ms.author: maquaran
-ms.openlocfilehash: 722da9f0112d63af52be8c9c3a746f6da9638bac
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 315ac1025a2b05ec7b16f7f0b14b66f224905d92
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66241944"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68335673"
 ---
-# <a name="create-multiple-azure-cosmos-db-triggers"></a>Создание нескольких триггеров Azure Cosmos DB
+# <a name="create-multiple-azure-functions-triggers-for-cosmos-db"></a>Создание несколько активаций функций Azure для Cosmos DB
 
-В этой статье описывается, как настроить несколько триггеров Cosmos DB для работы в параллельном режиме и независимого реагирования на изменения.
+В этой статье описывается, как настроить несколько активаций функций Azure для Cosmos DB, чтобы работать в параллельном режиме и независимого реагирования на изменения.
 
-![Бессерверные функции на основе событий, которые работают с триггером Azure Cosmos DB и совместно используют контейнер аренды](./media/change-feed-functions/multi-trigger.png)
+![Бессерверные функции на основе событий, которые работают с активацией функций Azure для Cosmos DB и совместно используют контейнер аренды](./media/change-feed-functions/multi-trigger.png)
 
 ## <a name="event-based-architecture-requirements"></a>Требования к архитектуре на основе событий
 
 Если вы создаете бессерверные архитектуры с помощью решения [Функции Azure](../azure-functions/functions-overview.md), мы [рекомендуем](../azure-functions/functions-best-practices.md#avoid-long-running-functions) создавать небольшие наборы функций, которые работают совместно (а не крупные длительные функции).
 
-Создавая бессерверные потоки на основе событий с помощью [триггера Azure Cosmos DB](./change-feed-functions.md), вы можете столкнуться с ситуацией, когда нужно выполнить несколько действий при появлении нового события в определенном [контейнере Azure Cosmos](./databases-containers-items.md#azure-cosmos-containers). Если действия, которые нужно активировать, не зависят друг от друга, лучше всего **создать по одному триггеру Cosmos DB на каждое действие**. Каждый из этих триггеров будет прослушивать изменения в одном и том же контейнере Azure Cosmos.
+Создавая бессерверные потоки на основе событий с помощью [активации функций Azure для Cosmos DB](./change-feed-functions.md), вы можете столкнуться с ситуацией, когда нужно выполнить несколько действий при появлении нового события в определенном [контейнере Azure Cosmos](./databases-containers-items.md#azure-cosmos-containers). Если действия, которые нужно активировать, не зависят друг от друга, лучше всего **создать по одной активации функций Azure для Cosmos DB на каждое действие**. Каждый из этих триггеров будет прослушивать изменения в одном и том же контейнере Azure Cosmos.
 
 ## <a name="optimizing-containers-for-multiple-triggers"></a>Оптимизация контейнеров для нескольких триггеров
 
-Учитывая *требования* к триггеру Cosmos DB, нам потребуется второй контейнер для хранения состояния, который называется *контейнером аренды*. Означает ли это, что для каждой функции Azure требуется отдельный контейнер аренды?
+Учитывая *требования* к активации функций Azure для Cosmos DB, нам потребуется второй контейнер для хранения состояния, который называется *контейнером аренды*. Означает ли это, что для каждой функции Azure требуется отдельный контейнер аренды?
 
 В этом случае существует два подхода.
 
@@ -108,6 +108,6 @@ public static void MaterializedViews([CosmosDBTrigger(
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* См. полную конфигурацию [триггера Azure Cosmos DB](../azure-functions/functions-bindings-cosmosdb-v2.md#trigger---configuration).
+* См. полную конфигурацию [активации функций Azure для Cosmos DB](../azure-functions/functions-bindings-cosmosdb-v2.md#trigger---configuration).
 * Ознакомьтесь с расширенным [списком примеров](../azure-functions/functions-bindings-cosmosdb-v2.md#trigger---example) для всех языков.
 * Изучите другие примеры сценариев бессерверных вычислений с Функциями Azure и Azure Cosmos DB в [репозитории GitHub](https://github.com/ealsur/serverless-recipes/tree/master/cosmosdbtriggerscenarios).

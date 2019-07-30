@@ -6,16 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 06/25/2019
+ms.date: 07/23/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 7e7a1f119a2f2b0e60645cb776b26c124910cacb
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: ca42532fe6ba954180ce06ed0e3561e42f1fb447
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448214"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68424239"
 ---
+::: zone target="docs"
+
 # <a name="tutorial-return-azure-data-box-disk-and-verify-data-upload-to-azure"></a>Руководство по Возврат Диска Azure Data Box и проверка передачи данных в Azure
 
 Это последнее руководство из серии "Развертывание диска Azure Data Box". Из этого учебника вы узнаете следующее:
@@ -28,6 +30,7 @@ ms.locfileid: "67448214"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом нужно убедиться, что выполнены действия, описанные в статье [Руководство. Копирование данных на диск Microsoft Azure Data Box и проверка](data-box-disk-deploy-copy-data.md).
+
 
 ## <a name="ship-data-box-disk-back"></a>Отправка диска Data Box обратно
 
@@ -229,5 +232,41 @@ ms.locfileid: "67448214"
 
 > [!div class="nextstepaction"]
 > [Use Azure portal to administer your Data Box (Preview)](./data-box-portal-ui-admin.md) (Использование портала Azure для управления диском Data Box (предварительная версия))
+
+::: zone-end
+
+
+::: zone target="chromeless"
+
+# <a name="return-the-disk-and-verify-upload-to-azure"></a>Возвращение диска и проверка переданных данных в Azure
+
+## <a name="ship-to-azure"></a>Отправка в Azure
+
+1. Как только проверка данных будет завершена, отключите диски. Отсоедините кабели подключения.
+2. Оберните все диски и кабели подключения с помощью пузырьковой обертки и поместите их в коробку для транспортировки. При отсутствии комплектующих может взиматься плата.
+    - Повторно используйте оригинальную упаковку из посылки.  
+    - Для упаковки дисков мы рекомендуем использовать надежную воздушно-пузырчатую пленку.
+    - Убедитесь, что содержимое плотно и без зазоров упаковано в коробке.
+3. Дальнейшие действия зависят от того, в каком регионе вы возвращаете устройство.
+    - [Запланируйте отправку UPS, если вы возвращаете устройство в США и Канаду](data-box-disk-deploy-picked-up.md#pick-up-in-us-canada).
+    - [Запланируйте отправку DHL для Европы](data-box-disk-deploy-picked-up.md#pick-up-in-europe), посетив соответствующий веб-сайт и указав номер транспортной накладной.
+    - [Запросите доставку для Австралии и стран Тихоокеанского региона](data-box-disk-deploy-picked-up.md#pick-up-in-asia-pacific-region), например Австралии, Японии, Корее и Сингапура.
+4. Как только диски будут приняты оператором, статус заказа на портале обновится и отобразится идентификатор для отслеживания.
+
+## <a name="verify-upload-to-azure"></a>Проверка передачи данных в Azure
+
+Когда данные будут переданы в Azure, убедитесь, что они сохранены в учетной записи хранения, прежде чем удалять их из источника. Данные могут находится в следующих расположениях.
+
+- Учетная запись службы хранения Azure. При копировании через Data Box данные передаются в одно из следующих расположений в учетной записи службы хранилища Azure в зависимости от типа данных.
+
+    - **Для блочных и страничных BLOB-объектов**: https://<имя_учетной_записи_хранения>.blob.core.windows.net/<containername>/files/a.txt.
+
+    - **Для Файлов Azure**: https://<имя_учетной_записи_хранения>.file.core.windows.net/<sharename>/files/a.txt
+
+    Кроме того, вы можете перейти к этим данным из учетной записи хранения Azure на портале Azure.
+
+- Группа ресурсов управляемого диска. При создании управляемых дисков виртуальные жесткие диски передаются в виде страничных BLOB-объектов, а затем преобразуются в управляемые диски. Управляемые диски присоединяются к группам ресурсов, указанным во время создания заказа.
+
+::: zone-end
 
 

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание конвейера CI/CD для Java с помощью Azure DevOps Projects
+title: Краткое руководство. Создание конвейера CI/CD для Java — Azure DevOps Projects
 description: Служба DevOps Projects позволяет быстро приступить к работе с Azure. Это поможет вам запустить приложение в службе Azure по вашему выбору за несколько быстрых шагов.
 ms.prod: devops
 ms.technology: devops-cicd
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 07/09/2018
 ms.author: mlearned
-ms.custom: mvc
+ms.custom: mvc, seo-java-july2019
 monikerRange: vsts
-ms.openlocfilehash: 38be92a006ae6dbb7a550d2d91d886df820fb883
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 87090e205f4aa3e6b2886e6384921ddd46ea717d
+ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58093571"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68489512"
 ---
 # <a name="create-a-cicd-pipeline-for-java-with-azure-devops-projects"></a>Создание конвейера CI/CD для Java с помощью Azure DevOps Projects
 

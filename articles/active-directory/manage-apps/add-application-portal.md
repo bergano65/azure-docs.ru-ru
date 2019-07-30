@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 04/09/2019
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3de6a2cbdfe7a6d006a3bbfab16792376eda0d07
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 466660a1e064ef41eb330b36107dbdcb1d097498
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67702536"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68477308"
 ---
 # <a name="quickstart-add-an-application-to-your-azure-active-directory-tenant"></a>Краткое руководство. Добавление приложения в клиент Azure Active Directory
 
@@ -137,9 +137,8 @@ Azure Active Directory (Azure AD) имеет галерею, содержащу�
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого краткого руководства вы узнали, как добавить приложение коллекции в клиент Azure AD. А также, как изменить свойства приложения.
+После добавления приложения в организацию Azure AD [выберите метод единого входа](what-is-single-sign-on.md#choosing-a-single-sign-on-method), который вы хотите использовать, и обратитесь к соответствующей статье ниже:
 
-Теперь все готово для настройки единого входа.
-
-> [!div class="nextstepaction"]
-> [Настройка единого входа](configure-single-sign-on-portal.md)
+- [Настройка единого входа на основе SAML](configure-single-sign-on-non-gallery-applications.md)
+- [Настройка пароля единого входа](configure-password-single-sign-on-non-gallery-applications.md)
+- [Настройка связанного единого входа](configure-linked-sign-on.md)

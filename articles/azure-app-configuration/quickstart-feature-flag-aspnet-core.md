@@ -14,26 +14,23 @@ ms.tgt_pltfrm: ASP.NET Core
 ms.workload: tbd
 ms.date: 04/19/2019
 ms.author: yegu
-ms.openlocfilehash: 38b404ec10fb7b66b5e276665b0c9047d0576c15
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 41947de18ae27b41d046fd4358f0039a1b56374d
+ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67798391"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68347914"
 ---
 # <a name="quickstart-add-feature-flags-to-an-aspnet-core-app"></a>Краткое руководство. Добавление флагов функций в приложение ASP.NET Core
 
-Чтобы управлять функциями в ASP.NET Core, можно подключить свое приложение к Конфигурации приложений Azure. С помощью этой управляемой службы можно централизованно хранить все флаги функций и управлять их состояниями. В этом кратком руководстве показано, как внедрить Конфигурацию приложений в веб-приложение ASP.NET Core, чтобы реализовать комплексное управление функциями.
+В этом кратком руководстве описано, как внедрить Конфигурацию приложений Azure в веб-приложение ASP.NET Core, чтобы реализовать комплексное управление функциями. Вы можете использовать службу "Конфигурация приложений" для централизованного хранения всех флагов функций и управления их состояниями. 
 
 Библиотеки управления функциями .NET Core расширяют возможности платформы за счет всесторонней поддержки флагов функций. Эти библиотеки создаются на основе системы конфигурации .NET Core. Они легко интегрируются с Конфигурацией приложений посредством поставщика конфигураций .NET Core.
 
-Шаги из этого краткого руководства можно выполнять в любом редакторе кода. [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, который доступен на платформах Windows, macOS и Linux.
-
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством установите [пакет SDK для .NET Core](https://dotnet.microsoft.com/download).
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+- [пакет SDK для .NET Core](https://dotnet.microsoft.com/download);
 
 ## <a name="create-an-app-configuration-store"></a>Создание хранилища Конфигурации приложений
 
@@ -135,7 +132,7 @@ ms.locfileid: "67798391"
 1. Откройте файл *Startup.cs* и добавьте в него ссылки на диспетчер функций .NET Core.
 
     ```csharp
-    using Microsoft.FeatureManagement.AspNetCore;
+    using Microsoft.FeatureManagement;
     ```
 
 1. Обновите метод `ConfigureServices`, добавив поддержку флагов функций с помощью вызова метода `services.AddFeatureManagement()`. При необходимости можно добавить любой фильтр для флагов функций, вызвав `services.AddFeatureFilter<FilterType>()`.

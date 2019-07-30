@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: b958711c498f0826f2a48d92d4892eb43ec8d18a
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 23a005ebb16f4786c7dde9ec5b2a7ae7c5685cb8
+ms.sourcegitcommit: b49431b29a53efaa5b82f9be0f8a714f668c38ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67446076"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68377239"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-c-proxy-application-preview"></a>Краткое руководство. Подключение по протоколу SSH и RDP через поток устройств центра Интернета вещей с помощью прокси-приложения C (предварительная версия)
 
@@ -149,7 +149,7 @@ ms.locfileid: "67446076"
 
 ### <a name="run-the-device-local-proxy-application"></a>Запуск приложения локального прокси-сервера устройства
 
-1. Отредактируйте исходный файл *iothub_client_c2d_streaming_sample.c* в папке *iothub_client/samples/iothub_client_c2d_streaming_sample* и укажите строку подключения устройства, IP-адрес/имя хоста целевого устройства и порт 22 SSH.
+1. Отредактируйте исходный файл *iothub_client_c2d_streaming_proxy_sample.c* в папке *iothub_client/samples/iothub_client_c2d_streaming_proxy_sample*, укажите строку подключения устройства, IP-адрес и имя узла целевого устройства, а также порт 22 SSH.
 
    ```C
    /* Paste in your iothub connection string  */

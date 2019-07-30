@@ -10,24 +10,24 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.date: 05/08/2019
 ms.custom: mvc
-ms.openlocfilehash: 43133810c6f8b7cb9fdacb2503103e09f345acfc
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.openlocfilehash: 3da0e5bb9ecb8557ac8b51b3aa6faf60a52dddf9
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65551203"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68312116"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-portal"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure
 
-Это краткое руководство содержит сведения о создании рабочей области Azure Databricks и кластера Apache Spark в этой рабочей области. Наконец, вы узнаете, как выполнить задание Spark на кластере Databricks. Дополнительные сведения об Azure Databricks см. в статье [Что такое Azure Databricks?](what-is-azure-databricks.md).
+Это краткое руководство содержит сведения об использовании портала Azure для создания рабочей области Azure Databricks с кластером Apache Spark. Вы запустите задание в кластере и воспользуетесь пользовательскими диаграммами для получения отчетов в режиме реального времени на основе набора Boston Safety Data.
 
-При помощи этого краткого руководства в рамках задания Spark вы проанализируете данные из набора Boston Safety Data, чтобы получить сведения о различных методах сообщения о проблеме.
+## <a name="prerequisites"></a>Предварительные требования
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com).
+Войдите на [портале Azure](https://portal.azure.com). Инструкции из этого руководства нельзя выполнять с бесплатной пробной версией подписки Azure. Чтобы использовать бесплатную учетную запись для создания кластера Azure Databricks, перед созданием кластера перейдите в свой профиль и измените свою подписку на **оплату по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
 ## <a name="create-an-azure-databricks-workspace"></a>Создание рабочей области Azure Databricks
 

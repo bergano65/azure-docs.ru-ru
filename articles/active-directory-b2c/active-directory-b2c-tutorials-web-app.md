@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 041bcf32035ab6cdc3ee4df06050f75186759f5e
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: bcfd1ef02c68de7709cb8642b94f23a6884ea156
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835650"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68464761"
 ---
 # <a name="tutorial-enable-authentication-in-a-web-application-using-azure-active-directory-b2c"></a>Руководство по Включение в веб-приложении аутентификации с помощью Azure Active Directory B2C
 
@@ -64,8 +64,9 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-an
 Для использования приложения, зарегистрированного в клиенте, измените данные в примере, в частности укажите идентификатор приложения и ключ, записанные ранее. Кроме того, необходимо также настроить созданные потоки пользователя. Пример определяет значения конфигурации, такие как параметры, в файле Web.config. Чтобы изменить параметры:
 
 1. Откройте решение **B2C-WebAPI-DotNet** в Visual Studio.
-2. В проекте **TaskWebApp** откройте файл **Web.config**. Замените значение `ida:Tenant` именем клиента, которого вы создали. Замените значение `ida:ClientId` идентификатором приложения, которого вы записали. Замените значение `ida:ClientSecret` ключом, который вы записали.
+2. В проекте **TaskWebApp** откройте файл **Web.config**. Замените значение `ida:Tenant` именем клиента, которого вы создали. Замените значение `ida:ClientId` идентификатором приложения, которого вы записали. Замените значение `ida:ClientSecret` ключом, который вы записали. Перед добавлением секрета клиента в файл Web. config необходимо выполнить его кодирование в формате XML.
 3. В файле **Web.config** замените значение для `ida:SignUpSignInPolicyId` значением `b2c_1_signupsignin1`. Замените значение для `ida:EditProfilePolicyId` значением `b2c_1_profileediting1`. Замените значение для `ida:ResetPasswordPolicyId` значением `b2c_1_passwordreset1`.
+
 
 ## <a name="run-the-sample"></a>Запуск примера
 

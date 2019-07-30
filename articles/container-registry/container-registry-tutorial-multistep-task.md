@@ -3,17 +3,18 @@ title: Руководство. Многошаговые контейнерные
 description: Из этого руководства вы узнаете, как настроить задачу Реестра контейнеров Azure, чтобы автоматически активировать многошаговый рабочий процесс для сборки, запуска и отправки в облако образов контейнера при фиксации исходного кода в репозитории Git.
 services: container-registry
 author: dlepow
+manager: gwallace
 ms.service: container-registry
 ms.topic: tutorial
 ms.date: 05/09/2019
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 09b8e5d31bc6a4ec24633889920e2768bb7ce538
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: c78c2c8279972108aee12b9b386175d0f27b7fee
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65546558"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68310418"
 ---
 # <a name="tutorial-run-a-multi-step-container-workflow-in-the-cloud-when-you-commit-source-code"></a>Руководство по Запуск многошагового рабочего процесса в облаке при фиксации исходного кода
 
@@ -323,7 +324,7 @@ steps:
 
 ### <a name="task-command"></a>Командная строка задачи
 
-Используя определенные ранее переменные среды, создайте задачу, выполнив следующую команду [az acr task create][az-acr-task-create]: Замените значение *mycontainerregistrydate* именем реального реестра.
+Используя определенные ранее переменные среды, создайте задачу, выполнив следующую команду [az acr task create][az-acr-task-create]. Замените значение *mycontainerregistrydate* именем реального реестра.
 
 ```azurecli-interactive
 az acr task create \
@@ -356,7 +357,7 @@ az acr task credential add --name example2 \
 
 ### <a name="test-the-multi-step-workflow"></a>Тестирование многошагового рабочего процесса
 
-Как и в предыдущем примере, чтобы протестировать многошаговую задачу, запустите ее вручную, выполнив команду [​​az acr task run][az-acr-task-run]: Чтобы задача запускалась при фиксации в репозитории Git, выполните инструкции из раздела [Trigger a build with a commit](#trigger-a-build-with-a-commit) (Активация сборки с помощью фиксации).
+Как и в предыдущем примере, чтобы протестировать многошаговую задачу, запустите ее вручную, выполнив команду [​​az acr task run][az-acr-task-run]. Чтобы задача запускалась при фиксации в репозитории Git, выполните инструкции из раздела [Trigger a build with a commit](#trigger-a-build-with-a-commit) (Активация сборки с помощью фиксации).
 
 ```azurecli-interactive
 az acr task run --registry $ACR_NAME --name example2

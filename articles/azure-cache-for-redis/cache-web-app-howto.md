@@ -15,28 +15,21 @@ ms.topic: quickstart
 ms.date: 03/26/2018
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: bac43ef17116dcb2d6a6bb3dd7c1617d91a010d9
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 7cca9d020d5e999bda2c494853295957da5cca1a
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65864823"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68326498"
 ---
-# <a name="quickstart-create-an-aspnet-web-app"></a>Краткое руководство. Создание веб-приложения ASP.NET 
+# <a name="quickstart-use-azure-cache-for-redis-with-an-aspnet-web-app"></a>Краткое руководство. Использование кэша Azure для Redis с веб-приложением ASP.NET 
 
-## <a name="introduction"></a>Введение
-
-В этом кратком руководстве описано, как создать и развернуть веб-приложение ASP.NET в Службе приложений Azure с помощью Visual Studio 2019. Пример приложения подключается к кэшу Azure для Redis для хранения и извлечения данных. Завершив работу с кратким руководством, вы получите рабочее веб-приложение, размещенное в Azure, которое выполняет чтение и запись в кэш Azure для Redis.
-
-![Выполнение простого теста в Azure](./media/cache-web-app-howto/cache-simple-test-complete-azure.png)
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+Из этого краткого руководства вы узнаете, как с помощью Visual Studio 2019 создать веб-приложение ASP.NET, которое подключается к кэшу Azure для Redis для хранения и извлечения данных из кэша. После этого вы можете развернуть приложение в Службе приложений Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством необходимо установить [Visual Studio 2019](https://www.visualstudio.com/downloads/) с указанными ниже средами:
-* ASP.NET и веб-разработка.
-* разработка Azure;
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+- [Visual Studio 2019](https://www.visualstudio.com/downloads/) с рабочими нагрузками **ASP.NET и веб-разработка** и **Разработка Azure**.
 
 ## <a name="create-the-visual-studio-project"></a>Создание проекта Visual Studio
 
@@ -266,7 +259,7 @@ ms.locfileid: "65864823"
 
 1. В Visual Studio щелкните узел проекта правой кнопкой мыши в обозревателе решений. Затем щелкните **Опубликовать**.
 
-    ![Опубликовать](./media/cache-web-app-howto/cache-publish-app.png)
+    ![Публикация](./media/cache-web-app-howto/cache-publish-app.png)
 
 2. Выберите **Служба приложений Microsoft Azure**, **Создать**, а затем щелкните **Опубликовать**.
 
@@ -326,7 +319,7 @@ ms.locfileid: "65864823"
 
 2. Введите имя группы ресурсов в поле **Фильтровать по имени...** В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources*. В своей группе ресурсов в списке результатов щелкните **...** , а затем выберите **Удалить группу ресурсов**.
 
-    ![Delete (Удалить)](./media/cache-web-app-howto/cache-delete-resource-group.png)
+    ![Удаление](./media/cache-web-app-howto/cache-delete-resource-group.png)
 
 Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов, которую необходимо удалить, и щелкните **Удалить**.
 

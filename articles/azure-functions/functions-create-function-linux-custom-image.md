@@ -5,26 +5,26 @@ services: functions
 keywords: ''
 author: ggailey777
 ms.author: glenga
-ms.date: 02/25/2019
+ms.date: 06/25/2019
 ms.topic: tutorial
 ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: azure-cli
 manager: jeconnoc
-ms.openlocfilehash: 03e1ec58b0ef3ad50a04f82ced7d20119ab3ef5b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: a8a216a7d2ce048ed5131997df762942998aaa88
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59491463"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68444132"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-image"></a>Создание функции на Linux с помощью пользовательского образа
 
 Решение "Функции Azure" позволяет размещать в Linux собственные функции в пользовательском контейнере. Кроме того, вы можете [использовать для размещения контейнер по умолчанию в службе приложений Azure](functions-create-first-azure-function-azure-cli-linux.md). Эта функциональность требует [среды выполнения Функций 2.x](functions-versions.md).
 
-Из этого руководства вы узнаете, как развернуть функции в Azure в виде пользовательского образа Docker. Этот метод полезен, если вам нужно настроить встроенный образ контейнера службы приложений. Пользовательский образ может быть удобен, если вы используете конкретную версию языка или особые зависимости и (или) конфигурации, не поддерживаемые в рамках встроенного образа. Поддерживаемые базовые образы для Функций Azure находятся в [репозитории базовых образов Функций Azure](https://hub.docker.com/_/microsoft-azure-functions-base). Сейчас [Поддержка Python](functions-reference-python.md) находится в предварительной версии.
+Из этого руководства вы узнаете, как развернуть функции в Azure в виде пользовательского образа Docker. Этот метод полезен, если вам нужно настроить встроенный образ контейнера. Пользовательский образ может быть удобен, если вы используете конкретную версию языка или особые зависимости и (или) конфигурации, не поддерживаемые в рамках встроенного образа. Поддерживаемые базовые образы для Функций Azure находятся в [репозитории базовых образов Функций Azure](https://hub.docker.com/_/microsoft-azure-functions-base). Сейчас [Поддержка Python](functions-reference-python.md) находится в предварительной версии.
 
-Из этого руководства вы узнаете, как с помощью Azure Functions Core Tools создать функцию в пользовательском образе Linux. Вы публикуете этот образ в приложении-функции Azure, которое было создано с помощью Azure CLI.
+Из этого руководства вы узнаете, как с помощью Azure Functions Core Tools создать функцию в пользовательском образе Linux. Вы публикуете этот образ в приложении-функции Azure, которое было создано с помощью Azure CLI. Позже вы обновите функцию для подключения к Хранилищу очередей Azure. Вы также включите.  
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -33,12 +33,13 @@ ms.locfileid: "59491463"
 > * Сборка пользовательского образа с помощью Docker.
 > * Публикация пользовательского образа в реестре контейнеров.
 > * Создание учетной записи хранения Azure.
-> * Создание плана службы приложений Linux.
+> * Создание плана размещения "Премиум".
 > * Развертывание приложения-функции из концентратора Docker.
 > * Добавление параметров приложения в приложение-функцию.
-> * Включение непрерывного развертывания
+> * Включение непрерывного развертывания.
+> * Включение мониторинга Application Insights.
 
-Описанные далее действия можно выполнять на компьютерах с Mac, Windows или Linux.  
+Описанные далее действия можно выполнять на компьютерах с Mac, Windows или Linux. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -65,7 +66,7 @@ func init MyFunctionProj --docker
 
 При появлении запроса выберите среду выполнения рабочей роли из следующих языков:
 
-* `dotnet`. Создает проект библиотеки классов .NET (CSPROJ-файл).
+* `dotnet`. Создает проект библиотеки классов .NET Core (.csproj).
 * `node`. Создает проект JavaScript.
 * `python`. Создает проект Python.
 
@@ -87,8 +88,6 @@ cd MyFunctionProj
 ```
 
 [!INCLUDE [functions-create-function-core-tools](../../includes/functions-create-function-core-tools.md)]
-
-[!INCLUDE [functions-update-function-code](../../includes/functions-update-function-code.md)]
 
 [!INCLUDE [functions-run-function-test-local](../../includes/functions-run-function-test-local.md)]
 
@@ -189,41 +188,26 @@ v1.0.0: digest: sha256:be080d80770df71234eb893fbe4d... size: 1796
 
 [!INCLUDE [functions-create-storage-account](../../includes/functions-create-storage-account.md)]
 
-## <a name="create-a-linux-app-service-plan"></a>Создание плана службы приложений Linux
+## <a name="create-a-premium-plan"></a>Создание плана "Премиум"
 
-Сейчас размещение функций на платформе Linux не поддерживается в планах потребления. Приложения-контейнеры Linux необходимо размещать в плане службы приложений Linux. Дополнительные сведения о размещении см. в статье [Сравнение планов размещения для решения "Функции Azure"](functions-scale.md).
+Размещение в Linux пользовательских контейнеров поддерживается в [выделенных планах (Службы приложений)](functions-scale.md#app-service-plan) и [планах "Премиум"](functions-scale.md#premium-plan). В этом руководстве описано, как использовать план "Премиум", который можно масштабировать по мере необходимости. Дополнительные сведения о размещении см. в статье [Сравнение планов размещения для решения "Функции Azure"](functions-scale.md).
 
-[!INCLUDE [app-service-plan-no-h](../../includes/app-service-web-create-app-service-plan-linux-no-h.md)]
+В следующем примере создается план "Премиум" с именем `myPremiumPlan` в ценовой категории **Эластичный премиум 1** (`--sku EP1`) в регионе "Западная часть США" (`-location WestUS`) в контейнере Linux (`--is-linux`).
+
+```azurecli-interactive
+az functionapp plan create --resource-group myResourceGroup --name myPremiumPlan \
+--location WestUS --number-of-workers 1 --sku EP1 --is-linux
+```
 
 ## <a name="create-and-deploy-the-custom-image"></a>Создание и развертывание пользовательского образа
 
-Выполнение функций происходит с помощью приложения-функции. Чтобы создать приложение-функцию из образа, размещенного в концентраторе Docker, используйте команду [az functionapp create](/cli/azure/functionapp#az-functionapp-create).
+Приложение-функция управляет выполнением функций в плане размещения. Чтобы создать приложение-функцию из образа, размещенного в концентраторе Docker, используйте команду [az functionapp create](/cli/azure/functionapp#az-functionapp-create).
 
 В следующей команде замените `<app_name>` уникальным именем вашего приложения функции, а `<storage_name>` — именем учетной записи хранения. `<app_name>` используется по умолчанию в качестве домена DNS для приложения-функции. Поэтому это имя должно быть уникальным для всех приложений в Azure. Как и раньше, `<docker-id>` обозначает имя учетной записи Docker.
 
 ```azurecli-interactive
 az functionapp create --name <app_name> --storage-account  <storage_name>  --resource-group myResourceGroup \
---plan myAppServicePlan --deployment-container-image-name <docker-id>/mydockerimage:v1.0.0
-```
-
-После создания приложения-функции в Azure CLI отображаются следующие сведения:
-
-```json
-{
-  "availabilityState": "Normal",
-  "clientAffinityEnabled": true,
-  "clientCertEnabled": false,
-  "containerSize": 1536,
-  "dailyMemoryTimeQuota": 0,
-  "defaultHostName": "quickstart.azurewebsites.net",
-  "enabled": true,
-  "enabledHostNames": [
-    "quickstart.azurewebsites.net",
-    "quickstart.scm.azurewebsites.net"
-  ],
-   ....
-    // Remaining output has been truncated for readability.
-}
+--plan myPremiumPlan --deployment-container-image-name <docker-id>/mydockerimage:v1.0.0
 ```
 
 Параметр _deployment-container-image-name_ определяет образ, размещенный в концентраторе Docker, из которого нужно создать приложение-функцию. Используйте команду[az functionapp config container show](/cli/azure/functionapp/config/container#az-functionapp-config-container-show), чтобы просмотреть сведения об образе, используемом для развертывания. Используйте команду[az functionapp config container set](/cli/azure/functionapp/config/container#az-functionapp-config-container-set),чтобы развернуть из другого образа.
@@ -256,16 +240,6 @@ AzureWebJobsStorage=$storageConnectionString
 
 [!INCLUDE [functions-test-function-code](../../includes/functions-test-function-code.md)]
 
-## <a name="enable-application-insights"></a>Включение Application Insights
-
-Рекомендуемый способ наблюдения за выполнением этой функции — интеграция приложения-функции в Azure Application Insights. При создании приложения-функции на портале Azure эта интеграция выполняется по умолчанию. Тем не менее при создании приложения-функции с помощью Azure CLI его интеграции в Azure не происходит.
-
-Чтобы настроить Application Insights для приложения-функции, сделайте следующее:
-
-[!INCLUDE [functions-connect-new-app-insights.md](../../includes/functions-connect-new-app-insights.md)]
-
-Дополнительные сведения см. в статье [Мониторинг Функций Azure](functions-monitoring.md).
-
 ## <a name="enable-continuous-deployment"></a>Включение непрерывного развертывания
 
 Одним из преимуществ использования контейнеров является возможность автоматического развертывания обновлений при обновлении контейнеров в реестре. Включите непрерывное развертывание с помощью команды [az functionapp deployment container config](/cli/azure/functionapp/deployment/container#az-functionapp-deployment-container-config).
@@ -278,11 +252,21 @@ az functionapp deployment container config --enable-cd \
 
 Эта команда возвращает URL-адрес веб-перехватчика после включения непрерывного развертывания. Чтобы вернуть этот URL-адрес, вы также можете использовать команду [az functionapp deployment container show-cd-url](/cli/azure/functionapp/deployment/container#az-functionapp-deployment-container-show-cd-url). 
 
-Скопируйте URL-адрес развертывания и перейдите в репозиторий DockerHub. Выберите вкладку **Веб-перехватчики**, введите **Имя веб-перехватчика**, вставьте свой URL-адрес в **URL-адрес веб-перехватчика**, а затем выберите знак плюс (**+**).
+Скопируйте URL-адрес развертывания и перейдите в репозиторий DockerHub. Выберите вкладку **Веб-перехватчики**, введите **Имя веб-перехватчика**, вставьте свой URL-адрес в **URL-адрес веб-перехватчика**, а затем выберите знак плюс ( **+** ).
 
 ![Добавление веб-перехватчика в репозиторий DockerHub](media/functions-create-function-linux-custom-image/dockerhub-set-continuous-webhook.png)  
 
 При установленном веб-перехватчике любые обновления связанного образа в DockerHub приводят к тому, что приложение-функция скачивает и устанавливает последний образ.
+
+## <a name="enable-application-insights"></a>Включение Application Insights
+
+Рекомендуемый способ наблюдения за выполнением этой функции — интеграция приложения-функции в Azure Application Insights. При создании приложения-функции на портале Azure эта интеграция выполняется по умолчанию. Тем не менее при создании приложения-функции с помощью Azure CLI его интеграции в Azure не происходит.
+
+Чтобы настроить Application Insights для приложения-функции, сделайте следующее:
+
+[!INCLUDE [functions-connect-new-app-insights.md](../../includes/functions-connect-new-app-insights.md)]
+
+Дополнительные сведения см. в статье [Мониторинг Функций Azure](functions-monitoring.md).
 
 [!INCLUDE [functions-cleanup-resources](../../includes/functions-cleanup-resources.md)]
 
@@ -295,11 +279,11 @@ az functionapp deployment container config --enable-cd \
 > * Сборка пользовательского образа с помощью Docker.
 > * Публикация пользовательского образа в реестре контейнеров.
 > * Создание учетной записи хранения Azure.
-> * Создание плана службы приложений Linux.
+> * Создание плана "Премиум" для Linux.
 > * Развертывание приложения-функции из концентратора Docker.
 > * Добавление параметров приложения в приложение-функцию.
-
-Узнайте, как включить функцию непрерывной интеграции, встроенную в основную платформу службы приложений. Вы можете настроить приложение-функцию, чтобы контейнер повторно развертывался при обновлении образа в центре Docker.
+> * Включение непрерывного развертывания.
+> * Включение мониторинга Application Insights.
 
 > [!div class="nextstepaction"] 
-> [Непрерывное развертывание с использованием платформы Azure "Веб-приложение для контейнеров"](../app-service/containers/app-service-linux-ci-cd.md).
+> См. подробнее о [параметрах развертывания функций в Azure](functions-deployment-technologies.md).

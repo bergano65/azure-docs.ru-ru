@@ -4,14 +4,14 @@ description: Узнайте, как настроить политики упра
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 05/23/2019
+ms.date: 07/25/2019
 ms.author: mjbrown
-ms.openlocfilehash: 24ebc7eb4c9abc72a89419611e4b4b3fa2db88b4
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 0b8ad6c5addbff293e9f7e9b8af6ed34d4dd274b
+ms.sourcegitcommit: 5604661655840c428045eb837fb8704dca811da0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66241963"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68494875"
 ---
 # <a name="configure-ip-firewall-in-azure-cosmos-db"></a>Настройка брандмауэра IP-адресов в Azure Cosmos DB
 
@@ -94,21 +94,24 @@ IP-адреса для виртуальных машин можно узнать
 
 ## <a id="configure-ip-firewall-arm"></a>Настройка брандмауэра IP-адресов с помощью шаблона Resource Manager
 
-Чтобы настроить контроль доступа к учетной записи Azure Cosmos DB, обязательно укажите в шаблоне Resource Manager атрибут **ipRangeFilter** со списком диапазонов разрешеннных IP-адресов. Например, добавьте в шаблон следующий код JSON:
+Чтобы настроить контроль доступа к учетной записи Azure Cosmos DB, обязательно укажите в шаблоне Resource Manager атрибут **ipRangeFilter** со списком диапазонов разрешеннных IP-адресов. При настройке брандмауэра для IP-адресов в уже развернутой учетной записи Cosmos убедитесь, что массив `locations` соответствует ей. Вы не можете одновременно изменять массив `locations` и другие свойства. Подробные сведения и примеры шаблонов ARM для Azure Cosmos DB см. в статье [Azure Resource Manager templates for Azure Cosmos DB](resource-manager-samples.md) (Шаблоны Azure Resource Manager для Azure Cosmos DB).
 
 ```json
-   {
-     "apiVersion": "2015-04-08",
-     "type": "Microsoft.DocumentDB/databaseAccounts",
-     "kind": "GlobalDocumentDB",
-     "name": "[parameters('databaseAccountName')]",
-     "location": "[resourceGroup().location]",
-     "properties": {
-       "databaseAccountOfferType": "Standard",
-       "name": "[parameters('databaseAccountName')]",
-       "ipRangeFilter":"183.240.196.255,104.42.195.92,40.76.54.131,52.176.6.30,52.169.50.45,52.187.184.26"
-     }
-   }
+{
+  "type": "Microsoft.DocumentDB/databaseAccounts",
+  "name": "[variables('accountName')]",
+  "apiVersion": "2016-03-31",
+  "location": "[parameters('location')]",
+  "kind": "GlobalDocumentDB",
+  "properties": {
+    "consistencyPolicy": "[variables('consistencyPolicy')[parameters('defaultConsistencyLevel')]]",
+    "locations": "[variables('locations')]",
+    "databaseAccountOfferType": "Standard",
+    "enableAutomaticFailover": "[parameters('automaticFailover')]",
+    "enableMultipleWriteLocations": "[parameters('multipleWriteLocations')]",
+    "ipRangeFilter":"183.240.196.255,104.42.195.92,40.76.54.131,52.176.6.30,52.169.50.45,52.187.184.26"
+  }
+}
 ```
 
 ## <a id="configure-ip-firewall-cli"></a>Настройка политики контроля доступа на основе IP-адресов с помощью интерфейса командной строки Azure

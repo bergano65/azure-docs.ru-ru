@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Извлечение рукописного текста — REST, C#
+title: Краткое руководство. Извлечение печатного и рукописного текста — REST, C#
 titleSuffix: Azure Cognitive Services
-description: Из этого краткого руководства вы узнаете, как, используя API компьютерного зрения, извлекать рукописный текст из изображения с помощью C#.
+description: Из этого краткого руководства вы узнаете, как использовать API Компьютерного зрения для извлечения печатного и рукописного текста из изображений с помощью C#.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -11,19 +11,19 @@ ms.topic: quickstart
 ms.date: 07/03/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 04c3c255e4218ef2fcd0bbd1d33da1abe3fc0c7f
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 7646a079d9cbc2f6362a38c5ac12371d3f32d4e5
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604478"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68312024"
 ---
-# <a name="quickstart-extract-handwritten-text-using-the-computer-vision-rest-api-and-c"></a>Краткое руководство. Извлечение рукописного текста с помощью REST API "Компьютерное зрение" и C#
+# <a name="quickstart-extract-printed-and-handwritten-text-using-the-computer-vision-rest-api-and-c"></a>Краткое руководство. Извлечение печатного и рукописного текста с помощью REST API Компьютерного зрения и C#
 
-Из этого краткого руководства вы узнаете, как извлечь рукописный текст из изображения с помощью REST API компьютерного зрения. С помощью API [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) и API [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d) можно обнаружить рукописный текст на изображении и извлечь распознанные символы в поток машиночитаемых символов.
+Из этого краткого руководства вы узнаете, как извлечь печатный и рукописный текст из изображения с помощью REST API Компьютерного зрения. С помощью методов [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) и [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d) вы можете обнаружить текст на изображении и извлечь распознанные символы в поток машиночитаемых символов. API определит, какую модель распознавания следует использовать для каждой строки текста, так как он поддерживает изображения с печатным и рукописным текстом.
 
 > [!IMPORTANT]
-> В отличие от метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) метод [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) выполняется асинхронно. Этот метод не возвращает никаких данных в текст успешного ответа. Вместо этого метод Read возвращает URI в поле заголовка ответа `Operation-Location`. Затем можно вызвать этот URI, который представляет метод [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d), чтобы проверить состояние и вернуть результаты вызова метода Batch Read.
+> Метод [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) выполняется асинхронно. Этот метод не возвращает никаких данных в текст успешного ответа. Вместо этого метод Read возвращает URI в поле заголовка ответа `Operation-Location`. Затем можно использовать этот URI, который представляет метод [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d), чтобы проверить состояние и получить результаты вызова метода Batch Read.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 
@@ -77,16 +77,16 @@ namespace CSHttpClientSample
         static void Main()
         {
             // Get the path and filename to process from the user.
-            Console.WriteLine("Handwriting Recognition:");
+            Console.WriteLine("Text Recognition:");
             Console.Write(
-                "Enter the path to an image with handwritten text you wish to read: ");
+                "Enter the path to an image with text you wish to read: ");
             string imageFilePath = Console.ReadLine();
 
             if (File.Exists(imageFilePath))
             {
                 // Call the REST API method.
                 Console.WriteLine("\nWait a moment for the results to appear.\n");
-                ReadHandwrittenText(imageFilePath).Wait();
+                ReadText(imageFilePath).Wait();
             }
             else
             {
@@ -97,11 +97,11 @@ namespace CSHttpClientSample
         }
 
         /// <summary>
-        /// Gets the handwritten text from the specified image file by using
+        /// Gets the text from the specified image file by using
         /// the Computer Vision REST API.
         /// </summary>
-        /// <param name="imageFilePath">The image file with handwritten text.</param>
-        static async Task ReadHandwrittenText(string imageFilePath)
+        /// <param name="imageFilePath">The image file with text.</param>
+        static async Task ReadText(string imageFilePath)
         {
             try
             {
@@ -116,7 +116,7 @@ namespace CSHttpClientSample
 
                 HttpResponseMessage response;
 
-                // Two REST API methods are required to extract handwritten text.
+                // Two REST API methods are required to extract text.
                 // One method to submit the image for processing, the other method
                 // to retrieve the text found in the image.
 
@@ -161,9 +161,9 @@ namespace CSHttpClientSample
                 // If the first REST API method completes successfully, the second 
                 // REST API method retrieves the text written in the image.
                 //
-                // Note: The response may not be immediately available. Handwriting
+                // Note: The response may not be immediately available. Text
                 // recognition is an asynchronous operation that can take a variable
-                // amount of time depending on the length of the handwritten text.
+                // amount of time depending on the length of the text.
                 // You may need to wait or retry this operation.
                 //
                 // This example checks once per second for ten seconds.

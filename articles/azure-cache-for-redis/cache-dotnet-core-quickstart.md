@@ -15,31 +15,22 @@ ms.topic: quickstart
 ms.date: 05/18/2018
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: df615b940873cd59341424d0b40a9e399d710126
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: cf241b788c0027c6905c6898352bb3352da64825
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57896251"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68326512"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-a-net-core-app"></a>Краткое руководство. Использование кэша Azure для Redis в приложениях .NET Core
 
-
-
-В этом кратком руководстве объясняется, как начать работу с кэшем Microsoft Azure для Redis на платформе .NET Core. Кэш Microsoft Azure для Redis основан на популярном продукте с открытым кодом — кэше Azure для Redis. Таким образом, предоставляется доступ к безопасному выделенному кэшу Azure для Redis, управляемому корпорацией Майкрософт. Кэш, созданный с использованием кэша Azure для Redis, доступен из любого приложения в Microsoft Azure.
-
-В этом кратком руководстве описано, как запустить клиента [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) с помощью кода C\# в консольном приложении .NET Core. Затем вы создадите кэш и настроите клиентское приложение .NET Core. После этого вы добавите в кэш объекты и обновите их. 
-
-Вы можете использовать любой редактор кода для выполнения шагов в этом кратком руководстве. Однако [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, доступным на платформах Windows, MacOS и Linux.
-
-![Готовое консольное приложение](./media/cache-dotnet-core-quickstart/cache-console-app-complete.png)
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+Из этого краткого руководства вы узнаете, как реализовать кэш Azure для Redis в приложении .NET Core для обеспечения доступа к защищенному выделенному кэшу, к которому может обращаться любое приложение в Azure. Вы будете использовать клиент [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) с кодом C# в консольном приложении .NET Core. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Пакет SDK для .NET версии 2.0](https://www.microsoft.com/net/learn/get-started/windows) или более поздней.
-* Для клиента StackExchange.Redis требуется [.NET Framework 4 или более новая версия](https://www.microsoft.com/net/download/dotnet-framework-runtime).
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+- [Базовый пакет SDK для .NET](https://dotnet.microsoft.com/download)
+- [.NET Framework 4 или более поздней версии](https://www.microsoft.com/net/download/dotnet-framework-runtime) для работы клиента StackExchange.Redis.
 
 ## <a name="create-a-cache"></a>Создание кэша
 [!INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
@@ -313,9 +304,9 @@ dotnet run
 
 Войдите на [портал Azure](https://portal.azure.com) и щелкните **Группы ресурсов**.
 
-Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...**. В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources*. В своей группе ресурсов в списке результатов щелкните **...**, а затем **Удалить группу ресурсов**.
+Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...** . В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources*. В своей группе ресурсов в списке результатов щелкните **...** , а затем **Удалить группу ресурсов**.
 
-![Delete (Удалить)](./media/cache-dotnet-core-quickstart/cache-delete-resource-group.png)
+![Удаление](./media/cache-dotnet-core-quickstart/cache-delete-resource-group.png)
 
 Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов и нажмите кнопку **Удалить**.
 

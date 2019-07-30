@@ -15,27 +15,21 @@ ms.workload: tbd
 ms.date: 05/11/2018
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 73c14b3d3023dcca113589d63276216fcfdd17f1
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: 70a8e4cd694a90e83bf78e00a7c725a8c887b2eb
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67513440"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68324075"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-python"></a>Краткое руководство. Использование кэша Redis для Azure с приложениями Python
 
-
-## <a name="introduction"></a>Введение
-
-Из этого краткого руководства вы узнаете, как подключиться к кэшу Redis для Azure с помощью Python, чтобы выполнять операции чтения и записи. 
-
-![Выполненный тест Python](./media/cache-python-get-started/cache-python-completed.png)
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+Из этого краткого руководства вы узнаете, как реализовать кэш Azure для Redis в приложении Python для обеспечения доступа к защищенному выделенному кэшу, к которому может обращаться любое приложение в Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Среда Python 2 или Python 3](https://www.python.org/downloads/), установленная с помощью [pip](https://pypi.org/project/pip/). 
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+- [Python версии 2 или 3](https://www.python.org/downloads/)
 
 ## <a name="create-an-azure-cache-for-redis-on-azure"></a>Создание экземпляра кэша Redis для Azure в Azure
 [!INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
@@ -127,13 +121,10 @@ for c in result:
 
 Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
 
-
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Создание простого веб-приложения ASP.NET, в котором используется кэш Redis для Azure](./cache-web-app-howto.md)
-
-
 
 <!--Image references-->
 [1]: ./media/cache-python-get-started/redis-cache-new-cache-menu.png

@@ -15,32 +15,21 @@ ms.workload: tbd
 ms.date: 05/23/2018
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 047350fa957d9ca1fdec50f97a590ba90a42e1b2
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 01fb6f66ce71599a70a127a2b73eba6f848bf365
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56237772"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68324144"
 ---
-# <a name="quickstart-how-to-use-azure-cache-for-redis-with-java"></a>Краткое руководство. Использование кэша Redis для Azure с приложениями Java
+# <a name="quickstart-use-azure-cache-for-redis-with-java"></a>Краткое руководство. Использование кэша Azure для Redis с приложениями Java
 
-
-Кэш Redis для Azure дает доступ к выделенному кэшу Azure для Redis, управляемому Майкрософт. Кэш доступен из любого приложения в Microsoft Azure.
-
-В этой статье показано, как приступить к работе с кэшем Redis для Azure с помощью клиентского клиента Redis [Jedis](https://github.com/xetorthio/jedis) в Java.
-
-![Готовое приложение с кэшем](./media/cache-java-get-started/cache-app-complete.png)
-
-Вы можете использовать любой редактор кода для выполнения шагов в этом кратком руководстве. Однако [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, доступным на платформах Windows, MacOS и Linux.
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
-
+Из этого краткого руководства вы узнаете, как реализовать кэш Azure для Redis в приложении Java с помощью клиента Redis [Jedis](https://github.com/xetorthio/jedis) для обеспечения доступа к защищенному выделенному кэшу, к которому может обращаться любое приложение в Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[Apache Maven](https://maven.apache.org/)
-
-
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+- [Apache Maven](https://maven.apache.org/download.cgi)
 
 ## <a name="create-an-azure-cache-for-redis"></a>Создание экземпляра кэша Redis для Azure
 
@@ -50,7 +39,7 @@ ms.locfileid: "56237772"
 
 Добавление переменных среды для **ИМЯ_УЗЛА** и **Основного** ключа доступа. Вместо включения конфиденциальных данных непосредственно в код использоваться будут эти переменные из вашего кода.
 
-```
+```CMD 
 set REDISCACHEHOSTNAME=contosoCache.redis.cache.windows.net
 set REDISCACHEKEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
@@ -59,7 +48,7 @@ set REDISCACHEKEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 Используя Maven, создайте новое приложение.
 
-```
+```CMD
 mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.3 -DgroupId=example.demo -DartifactId=redistest -Dversion=1.0
 ```
 
@@ -139,7 +128,7 @@ public class App
 
 Выполните следующую команду Maven для построения и запуска приложения:
 
-```
+```CMD
 mvn compile
 mvn exec:java -D exec.mainClass=example.demo.App
 ```
@@ -147,7 +136,6 @@ mvn exec:java -D exec.mainClass=example.demo.App
 В приведенном ниже примере видно, что ключ `Message` ранее содержал кэшированное значение, установленное через консоль Redis на портале Azure. Приложение обновило кэшированное значение. Кроме того, оно выполнило команды `PING` и `CLIENT LIST`.
 
 ![Готовое приложение с кэшем](./media/cache-java-get-started/cache-app-complete.png)
-
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -161,15 +149,13 @@ mvn exec:java -D exec.mainClass=example.demo.App
 
 Войдите на [портал Azure](https://portal.azure.com) и щелкните **Группы ресурсов**.
 
-Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...**. В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources*. В своей группе ресурсов в списке результатов щелкните **...**, а затем **Удалить группу ресурсов**.
+Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...** . В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources*. В своей группе ресурсов в списке результатов щелкните **...** , а затем **Удалить группу ресурсов**.
 
-![Delete (Удалить)](./media/cache-java-get-started/cache-delete-resource-group.png)
+![Удаление](./media/cache-java-get-started/cache-delete-resource-group.png)
 
 Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов и нажмите кнопку **Удалить**.
 
 Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
-
-
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -177,6 +163,3 @@ mvn exec:java -D exec.mainClass=example.demo.App
 
 > [!div class="nextstepaction"]
 > [Создание веб-приложения ASP.NET, в котором используется кэш Azure для Redis](./cache-web-app-howto.md)
-
-
-

@@ -3,17 +3,18 @@ title: Руководство. Автоматизация сборок обра�
 description: Из этого руководства вы узнаете, как настроить задачу Реестра контейнеров Azure, чтобы автоматически активировать сборки образов контейнера в облаке при фиксации исходного кода в репозитории Git.
 services: container-registry
 author: dlepow
+manager: gwallace
 ms.service: container-registry
 ms.topic: tutorial
 ms.date: 05/04/2019
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 7a9a1e3d3c92f43d19a75e7cd0e10b3fd395a9b5
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: ea3f4f295da747b3a53956c0888797a5f8607d6e
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65544994"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68310473"
 ---
 # <a name="tutorial-automate-container-image-builds-in-the-cloud-when-you-commit-source-code"></a>Руководство. Автоматизация создания образов контейнеров в облаке при фиксации исходного кода
 
@@ -33,7 +34,7 @@ ms.locfileid: "65544994"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы хотите использовать Azure CLI локально, установите Azure CLI версии **2.0.46** или более поздней и выполните вход с помощью [az login][az-login]. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, см. статью [Установка Azure CLI][azure-cli].
+Если вы хотите использовать Azure CLI локально, установите Azure CLI **2.0.46** или более поздней версии и выполните вход с помощью команды [az login][az-login]. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, см. статью [Установка Azure CLI][azure-cli].
 
 [!INCLUDE [container-registry-task-tutorial-prereq.md](../../includes/container-registry-task-tutorial-prereq.md)]
 

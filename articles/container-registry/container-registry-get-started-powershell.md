@@ -3,17 +3,18 @@ title: Краткое руководство. Создание частного 
 description: Быстрый способ изучить создание частного реестра контейнеров Docker в Azure с помощью Azure PowerShell.
 services: container-registry
 author: dlepow
+manager: gwallace
 ms.service: container-registry
 ms.topic: quickstart
 ms.date: 01/22/2019
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 82771d005ce38972cdb1484a02e071a30e577a06
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f99b4ee6dd11a109d1c563c84debc2157cb03337
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66152158"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68309494"
 ---
 # <a name="quickstart-create-a-private-container-registry-using-azure-powershell"></a>Краткое руководство. Создание частного реестра контейнеров Docker с помощью Azure PowerShell
 
@@ -25,7 +26,7 @@ ms.locfileid: "66152158"
 
 Для работы с этим быстрым началом требуется модуль Azure PowerShell. Выполните команду `Get-Module -ListAvailable Az`, чтобы определить установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
-Также необходим локально установленный модуль Docker. Docker предоставляет пакеты для систем [macOS][docker-mac], [Windows][docker-windows] и [Linux][docker-linux].
+Также необходим локально установленный модуль Docker. Docker предоставляет пакет для систем [macOS][docker-mac], [Windows][docker-windows] и [Linux][docker-linux].
 
 Та как в службе Azure Cloud Shell нет всех необходимых компонентов Docker (управляющая программа `dockerd`), ее нельзя использовать в этом руководстве.
 
@@ -55,17 +56,17 @@ New-AzResourceGroup -Name myResourceGroup -Location EastUS
 $registry = New-AzContainerRegistry -ResourceGroupName "myResourceGroup" -Name "myContainerRegistry007" -EnableAdminUser -Sku Basic
 ```
 
-В этом кратком руководстве описано, как создать реестр ценовой категории *Базовый*. Это оптимальный (недорогой) вариант для разработчиков, которые знакомятся с Реестром контейнеров Azure. См. дополнительные сведения об уровнях служб в статье [Номера SKU реестра контейнеров][container-registry-skus].
+В этом кратком руководстве описано, как создать реестр ценовой категории *Базовый*. Это оптимальный (недорогой) вариант для разработчиков, которые знакомятся с Реестром контейнеров Azure. Дополнительные сведения об уровнях служб см. в статье [Номера SKU реестра контейнеров][container-registry-skus].
 
 ## <a name="log-in-to-registry"></a>Вход в раздел реестра
 
-Перед отправкой и извлечением образов контейнеров необходимо войти в реестр. В рабочих сценариях для доступа к реестру контейнеров следует использовать индивидуальное удостоверение или субъект-службу, но чтобы не усложнять это быстрое начало, включите администратора в реестре с помощью команды [Get-AzContainerRegistryCredential][Get-AzContainerRegistryCredential]:
+Перед отправкой и извлечением образов контейнеров необходимо войти в реестр. В рабочих сценариях для доступа к реестру контейнеров следует использовать индивидуальное удостоверение или субъект-службу, но чтобы упростить работу с этим кратким руководством, включите администратора в реестре с помощью команды [Get-AzContainerRegistryCredential][Get-AzContainerRegistryCredential]:
 
 ```powershell
 $creds = Get-AzContainerRegistryCredential -Registry $registry
 ```
 
-Затем выполните команду [docker login][docker-login], чтобы войти в систему.
+Затем выполните команду [docker login][docker-login], чтобы войти в систему:
 
 ```powershell
 $creds.Password | docker login $registry.LoginServer -u $creds.Username --password-stdin
@@ -79,7 +80,7 @@ $creds.Password | docker login $registry.LoginServer -u $creds.Username --passwo
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-После завершения работы с ресурсами, созданными в этом быстром начале, с помощью команды [Remove-AzResourceGroup][Remove-AzResourceGroup] вы можете удалить группу ресурсов, реестр контейнеров и сохраненные образы контейнеров:
+После завершения работы с ресурсами, созданными в этом кратком руководстве, с помощью команды [Remove-AzResourceGroup][Remove-AzResourceGroup] вы можете удалить группу ресурсов, реестр контейнеров и сохраненные образы контейнеров:
 
 ```powershell
 Remove-AzResourceGroup -Name myResourceGroup

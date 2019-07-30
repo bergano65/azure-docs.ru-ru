@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 09/04/2018
 ms.author: glenga
-ms.openlocfilehash: c20f86fe7fdcfc7ecc940923a8c98fa1fbf4cf65
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: a2994602f857c2c8ff9f935b649a8d3e94c10dca
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185063"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68444112"
 ---
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -21,4 +21,5 @@ ms.locfileid: "67185063"
 ```azurecli-interactive
 az group create --name myResourceGroup --location westeurope
 ```
-Обычно группа ресурсов и ресурсы создаются в ближайших регионах. Чтобы просмотреть все поддерживаемые расположения для планов службы приложений, выполните команду [az appservice list-locations](/cli/azure/appservice#az-appservice-list-locations).
+
+Группу ресурсов и ресурсы целесообразно создавать в ближайшем к вам [регионе](https://azure.microsoft.com/global-infrastructure/regions/). 

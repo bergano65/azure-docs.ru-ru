@@ -3,16 +3,17 @@ title: Мониторинг контейнеров в службе "Экземп
 description: Как отслеживать потребление контейнерами вычислительных ресурсов, таких как ЦП и память, в службе "Экземпляры контейнеров Azure".
 services: container-instances
 author: dlepow
+manager: gwallace
 ms.service: container-instances
 ms.topic: overview
 ms.date: 04/24/2019
 ms.author: danlep
-ms.openlocfilehash: 7b46ea0518038eeb908591b8438acc2a9095242c
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 4c1208d8cbc795e53128df0ccf93e79dc427abad
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64570894"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68325854"
 ---
 # <a name="monitor-container-resources-in-azure-container-instances"></a>Мониторинг ресурсов контейнеров в службе "Экземпляры контейнеров Azure"
 
@@ -21,7 +22,7 @@ ms.locfileid: "64570894"
 В этом документе описывается, как происходит сбор метрик Azure Monitor для экземпляров контейнеров с помощью портала Azure и Azure CLI.
 
 > [!IMPORTANT]
-> Метрики Azure Monitor в Экземплярах контейнеров Azure сейчас доступны в предварительной версии с некоторыми [ограничениями](#preview-limitations). Предварительные версии предоставляются только в том случае, если вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
+> Метрики Azure Monitor в Экземплярах контейнеров Azure сейчас доступны в предварительной версии с некоторыми [ограничениями](#preview-limitations). Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
 
 ## <a name="preview-limitations"></a>Ограничения предварительной версии
 
@@ -136,9 +137,9 @@ Timestamp            Name          Containername             Average
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о мониторинге в Azure вы найдете [в этой статье][azure-monitoring].
+Подробные сведения о мониторинге в Azure вы найдете [в этой статье][azure-monitoring].
 
-Сведения о создании [оповещения о метриках][metric-alert] для получения уведомлений, когда значение метрики для Экземпляров контейнеров Azure достигает порогового значения.
+Из этой статьи вы узнаете, как создать [оповещения о метриках][metric-alert] для получения уведомлений, когда значение метрики для Экземпляров контейнеров Azure достигает порогового значения.
 
 <!-- IMAGES -->
 [cpu-chart]: ./media/container-instances-monitor/cpu-multi.png

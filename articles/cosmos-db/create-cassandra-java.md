@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-cassandra
 ms.devlang: java
 ms.topic: quickstart
 ms.date: 09/24/2018
-ms.openlocfilehash: c3bfcffacee7df8a5abf59676a1c47fa283dee7b
-ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
+ms.openlocfilehash: 968c43ed78c59e5c1f147aaaa5bb33484d95c7a9
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65519023"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68325482"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-java-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для Java и Azure Cosmos DB
 
@@ -71,7 +71,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="review-the-code"></a>Просмотр кода
 
-Этот шаг не является обязательным. Если вы хотите узнать, как создавать ресурсы базы данных в коде, изучите приведенные ниже фрагменты кода. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string). Эти фрагменты кода взяты из файла `src/main/java/com/azure/cosmosdb/cassandra/util/CassandraUtils.java`.  
+Этот шаг не является обязательным. Если вы хотите узнать, как создавать ресурсы базы данных в коде, изучите приведенные ниже фрагменты кода. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string). Эти фрагменты кода взяты из файла *src/main/java/com/azure/cosmosdb/cassandra/util/CassandraUtils.java*.  
 
 * Здесь для Cassandra задаются узел, порт, имя пользователя, пароль и параметры SSL. Строку подключения вы можете получить на странице строки подключения на портале Azure.
 
@@ -85,7 +85,7 @@ Azure Cosmos DB — это глобально распределенная мн
     return cluster.connect();
     ```
 
-Приведенные ниже фрагменты кода взяты из файла `src/main/java/com/azure/cosmosdb/cassandra/repository/UserRepository.java`.
+Следующие фрагменты кода взяты из файла *src/main/java/com/azure/cosmosdb/cassandra/repository/UserRepository.java*.
 
 * Создайте пространство ключей.
 

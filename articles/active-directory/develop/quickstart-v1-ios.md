@@ -1,5 +1,5 @@
 ---
-title: Построение приложения iOS, которое интегрируется в Azure AD для входа в систему и вызывает защищенные API по протоколу OAuth 2.0 | Документация Майкрософт
+title: Создание приложения iOS, интегрированного с Azure Active Directory, для входа с помощью OAuth 2.0 | Документация Майкрософт
 description: Узнайте, как регистрировать пользователей для входа в систему и вызывать API Microsoft Graph из собственного приложения iOS.
 services: active-directory
 documentationcenter: ios
@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: brandwe
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6274557ede35d7640eba37e5777cb0cb67d459a
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.openlocfilehash: 8a82a7cad9b9176589824b6febb5cfdde89fce8a
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66497085"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68380876"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из приложения iOS
 

@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 11/13/2018
 ms.author: jafreebe
 ms.custom: seodec18
-ms.openlocfilehash: dcd1ef5c54885b758ac9a301616d79a163999bc9
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: 2d26d9e145030e5972289c224dc2f76078d67527
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509632"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68498483"
 ---
 # <a name="tutorial-build-a-java-ee-and-postgres-web-app-in-azure"></a>Руководство. Создание веб-приложения Java EE с подключением к базе данных Postgres в Azure
 
@@ -169,7 +169,7 @@ az postgres server create \
 
 - **postgresql-42.2.5.jar:** JAR-файл, представляющий собой драйвер JDBC для Postgres. Дополнительные сведения см. [на официальном веб-сайте](https://jdbc.postgresql.org/index.html).
 - **postgres-module.xml:** XML-файл, объявляющий имя модуля Postgres (org.postgres). Он также указывает ресурсы и зависимости, необходимые для использования модуля.
-- **jboss_cli_commands.cl:** файл, содержащий команды конфигурации, которые будут выполняться с помощью интерфейса командной строки JBoss. Эти команды добавляют модуль Postgres в сервер приложений WildFly, предоставляют учетные данные, объявляют имя JNDI, устанавливают порог времени ожидания и т. д. Сведения об интерфейсе командной строки JBoss см. [здесь](https://access.redhat.com/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/management_cli_guide/#how_to_cli).
+- **jboss_cli_commands.cli:** файл, содержащий команды конфигурации, которые будут выполняться с помощью интерфейса командной строки JBoss. Эти команды добавляют модуль Postgres в сервер приложений WildFly, предоставляют учетные данные, объявляют имя JNDI, устанавливают порог времени ожидания и т. д. Сведения об интерфейсе командной строки JBoss см. [здесь](https://access.redhat.com/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/management_cli_guide/#how_to_cli).
 - **startup_script.sh:** сценарий оболочки, который будет выполняться каждый раз, когда запускается экземпляр Службы приложений. Сценарий выполняет только одну функцию — передача команд в файле *jboss_cli_commands.cli* в интерфейс командной строки JBoss.
 
 Мы настоятельно рекомендуем ознакомиться с содержимым этих файлов, особенно *jboss_cli_commands.cli*.
@@ -194,7 +194,7 @@ az postgres server create \
 mvn clean install -DskipTests azure-webapp:deploy
 ```
 
-Поздравляем! Теперь ваше приложение использует базу данных Postgres, а все записи, созданные в приложении, сохраняются в Postgres, а не в выполняющейся в памяти базе данных H3, использованной ранее. Чтобы проверить это, создайте запись и перезапустите службу приложений. После перезагрузки приложения записи останутся там же.
+Поздравляем! Теперь ваше приложение использует базу данных Postgres, а все записи, созданные в приложении, сохраняются в Postgres, а не в выполняющейся в памяти базе данных H2, использовавшейся прежде. Чтобы проверить это, создайте запись и перезапустите службу приложений. После перезагрузки приложения записи останутся там же.
 
 ## <a name="clean-up"></a>Очистка
 

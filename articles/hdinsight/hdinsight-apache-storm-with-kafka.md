@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 06/25/2019
-ms.openlocfilehash: b6ef08be346aebd220b7234253ce45c4615e38a9
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 53a46c6137c3336c405eb62dc7b254ac26c13d9e
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67445510"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68406012"
 ---
 # <a name="tutorial-use-apache-storm-with-apache-kafka-on-hdinsight"></a>Руководство по Использование Apache Storm с Apache Kafka в HDInsight
 
@@ -58,7 +58,7 @@ ms.locfileid: "67445510"
 > 
 > Для удобства в этом документе есть ссылка на шаблон, с помощью которого можно создать все необходимые ресурсы Azure. 
 >
-> Дополнительные сведения об использовании HDInsight в виртуальной сети см. в статье [Расширение возможностей HDInsight с помощью виртуальной сети Azure](hdinsight-extend-hadoop-virtual-network.md).
+> Дополнительные сведения об использовании HDInsight в виртуальной сети см. в статье о[планирование виртуальной сети для Azure HDInsight](hdinsight-plan-virtual-network-deployment.md).
 
 ## <a name="storm-and-kafka"></a>Использование Storm и Kafka
 
@@ -408,9 +408,9 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
       | Параметр | Значение |
       | --- | --- |
-      | Подписка | Ваша подписка Azure. |
-      | Группа ресурсов | Группа ресурсов, в которой содержатся ресурсы. |
-      | Расположение | Регион Azure, в котором создаются ресурсы. |
+      | Subscription | Ваша подписка Azure. |
+      | Resource group | Группа ресурсов, в которой содержатся ресурсы. |
+      | Location | Регион Azure, в котором создаются ресурсы. |
       | Kafka Cluster Name (Имя кластера Kafka) | Имя кластера Kafka. |
       | Имя кластера Storm | Имя кластера Storm. |
       | Имя пользователя для входа в кластер | Имя администратора кластеров. |

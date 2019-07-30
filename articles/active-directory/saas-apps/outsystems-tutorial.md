@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 05/30/2019
+ms.date: 07/18/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5c689c6624a47a01e8e85c8aec33b956459981f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7f631a641ab63d33d27d1e4520a000b4b01132be
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67095367"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68478569"
 ---
 # <a name="tutorial-integrate-outsystems-azure-ad-with-azure-active-directory"></a>Руководство по Интеграция OutSystems Azure AD с Azure Active Directory
 
@@ -101,7 +101,7 @@ ms.locfileid: "67095367"
 
 ### <a name="configure-outsystems-azure-ad"></a>Настройка единого входа в OutSystems Azure AD
 
-Чтобы настроить единый вход на стороне **OutSystems**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки OutSystems](mailto:support@outsystems.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне OutSystems, вам нужно скачать компонент [IdP из Forge](https://www.outsystems.com/forge/component-overview/599/idp) и настроить его в соответствии с [инструкциями](https://success.outsystems.com/Documentation/Development_FAQs/How_to_configure_OutSystems_to_use_identity_providers_using_SAML#Configure_your_application_to_use_IdP_connector). После установки компонента и внесения необходимых изменений в код настройте Azure AD скачайте XML-файл метаданных федерации на портале Azure и отправьте его в компонент OutSystems IdP в соответствии с [инструкциями](https://success.outsystems.com/Documentation/Development_FAQs/How_to_configure_OutSystems_to_use_identity_providers_using_SAML#Azure_AD_.2F_ADFS).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -135,7 +135,7 @@ ms.locfileid: "67095367"
 
 ### <a name="create-outsystems-azure-ad-test-user"></a>Создание тестового пользователя OutSystems Azure AD
 
-В этом разделе вы создадите в OutSystems пользователя с именем Britta Simon. OutSystems поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в OutSystems, он создается после выполнения аутентификации.
+В этом разделе вы создадите в OutSystems пользователя с именем B. Simon. OutSystems поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в OutSystems, он создается после выполнения аутентификации.
 
 ### <a name="test-sso"></a>Проверка единого входа
 
@@ -147,4 +147,4 @@ ms.locfileid: "67095367"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/11/2018
 ms.author: yexu
-ms.openlocfilehash: 6a9d6ec651cd365995ce63a8dff6d60c8b23dec1
-ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.openlocfilehash: 52cb11b015bb231b91184a2270e333e4c9aa8303
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67312643"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68424293"
 ---
 # <a name="incrementally-load-data-from-an-azure-sql-database-to-azure-blob-storage"></a>Пошаговая загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure
 В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из таблицы в базе данных SQL Azure в хранилище BLOB-объектов Azure. 
@@ -238,7 +238,7 @@ END
 
         ![Второе действие поиска — новый набор данных](./media/tutorial-incremental-copy-portal/source-dataset-connection.png)
 17. Перейдите в редактор конвейера, щелкнув вкладку конвейера вверху или имя конвейера в представлении в виде дерева слева. В окне свойств для действия **Поиск**, убедитесь, что в поле **Исходный набор данных** выбран вариант **SourceDataset**. 
-18. Выберите **Запрос** в поле **Использовать запрос** и введите следующий запрос, который выбирает максимальное значение **LastModifytime** из таблицы **data_source_table**. Убедитесь, что установлен флажок **Fist row only** (Только первая строка).
+18. Выберите **Запрос** в поле **Использовать запрос** и введите следующий запрос, который выбирает максимальное значение **LastModifytime** из таблицы **data_source_table**. Убедитесь, что установлен флажок **First row only** (Только первая строка).
 
     ```sql
     select MAX(LastModifytime) as NewWatermarkvalue from data_source_table

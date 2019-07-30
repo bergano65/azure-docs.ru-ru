@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: a0ab928ef3b8551e3e20ff3c4b16533c80ee4b7d
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 061bd94a839d83f75566412ac546ab3208543780
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65149248"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68467633"
 ---
 # <a name="tutorial-extract-contextually-related-data-from-an-utterance"></a>Руководство по Извлечение из речевого фрагмента данных, связанных с контекстом
 
@@ -30,8 +30,8 @@ ms.locfileid: "65149248"
 > * Создание приложения
 > * Добавление намерения 
 > * Получение сведений об источнике и назначении с помощью ролей.
-> * Train
-> * Опубликовать
+> * Обучение
+> * Публикация
 > * Получение намерений и ролей сущностей из конечной точки.
 
 [!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
@@ -91,7 +91,7 @@ ms.locfileid: "65149248"
 1. Добавьте две роли, `Origin` и `Destination`. 
 
     ![Добавление ролей в предварительно созданную сущность](media/tutorial-entity-roles/add-roles-to-prebuilt-entity.png)
-1. Выберите **Intents** (Намерения) в области навигации слева, затем выберите намерение **MoveEmployeeToCity**. Обратите внимание на то, что названия городов помечены с использованием предварительно созданной сущности **geogrpahyV2**.
+1. Выберите **Intents** (Намерения) в области навигации слева, затем выберите намерение **MoveEmployeeToCity**. Обратите внимание на то, что названия городов помечены с использованием предварительно созданной сущности **geographyV2**.
 1. В первом речевом фрагменте списка выберите исходное расположение. Откроется раскрывающееся меню. Выберите **geographyV2** из списка, затем проведите указателем мыши по меню, чтобы выбрать **Origin** (Источник).
 1. Используя метод из предыдущего шага, пометьте все роли расположений во всех речевых фрагментах. 
 

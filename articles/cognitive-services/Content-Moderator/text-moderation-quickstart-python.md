@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: quickstart
 ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: 0fef3bffd30c19d0313e5fce7eb610ae7f6349f5
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: bb0e44f83e2101a7b21e7b7ec6fdc75974c6d6d8
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606992"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68333612"
 ---
 # <a name="quickstart-analyze-text-content-for-objectionable-material-in-python"></a>Краткое руководство. Анализ текста для выявления нежелательного содержимого с помощью Python
 
@@ -38,41 +38,34 @@ pip install azure-cognitiveservices-vision-contentmoderator
 
 ## <a name="import-modules"></a>Импорт модулей
 
-Создайте новый скрипт Python с именем _ContentModeratorQS.py_ и добавьте следующий код, чтобы импортировать необходимые части пакета SDK.
+Создайте новый скрипт Python с именем _ContentModeratorQS.py_ и добавьте следующий код, чтобы импортировать необходимые части пакета SDK. Модуль печати pretty включен, чтобы было удобнее читать ответ JSON.
 
-[!code-python[](~/cognitive-services-content-moderator-samples/documentation-samples/python/text-moderation-quickstart-python.py?range=1-10)]
-
-Можно также импортировать функцию "Качественная печать" для обработки окончательных выходных данных.
-
-[!code-python[](~/cognitive-services-content-moderator-samples/documentation-samples/python/text-moderation-quickstart-python.py?range=12)]
+[!code-python[](~/cognitive-services-content-moderator-samples/documentation-samples/python/content_moderator_quickstart.py?name=imports)]
 
 
 ## <a name="initialize-variables"></a>Инициализация переменных
 
-Далее добавьте переменные для ключа подписки и URL-адреса конечной точки Content Moderator. Замените `<your subscription key>` фактическим значением ключа. Вам также может потребоваться изменить значение `endpoint_url`, чтобы использовать идентификатор региона, соответствующий ключу подписки. Ключи бесплатной пробной подписки создаются в регионе **westus**.
+Далее добавьте переменные для ключа подписки и URL-адреса конечной точки Content Moderator. Добавьте имя `CONTENT_MODERATOR_SUBSCRIPTION_KEY` в переменные среды, используя в качестве значения ключ подписки. Для базового URL-адреса добавьте `CONTENT_MODERATOR_ENDPOINT` в переменные среды, используя в качестве значения URL-адрес конкретного региона, например `https://westus.api.cognitive.microsoft.com`. Ключи бесплатной пробной подписки создаются в регионе **westus**.
 
-[!code-python[](~/cognitive-services-content-moderator-samples/documentation-samples/python/text-moderation-quickstart-python.py?range=14-16)]
+[!code-python[](~/cognitive-services-content-moderator-samples/documentation-samples/python/content_moderator_quickstart.py?name=authentication)]
 
+Строка многострочного текста из файла будет модерироваться. Включите файл [content_moderator_text_moderation.txt](https://github.com/Azure-Samples/cognitive-services-content-moderator-samples/blob/master/documentation-samples/python/content_moderator_text_moderation.txt) в локальную корневую папку и добавьте имя файла в переменные:
 
-Для простоты проанализируйте текст непосредственно из скрипта. Определите новую строку текстового содержимого для модерации:
-
-[!code-python[](~/cognitive-services-content-moderator-samples/documentation-samples/python/text-moderation-quickstart-python.py?range=18-21)]
-
+[!code-python[](~/cognitive-services-content-moderator-samples/documentation-samples/python/content_moderator_quickstart.py?name=textModerationFile)]
 
 ## <a name="query-the-moderator-service"></a>Отправка запроса к службе модератора
 
-Создайте экземпляр **ContentModeratorClient** с использованием нужных ключа подписки и URL-адреса конечной точки. Затем используйте экземпляр **TextModerationOperations** (член предыдущего экземпляра) для вызова API модерации. Дополнительные сведения о том, как вызывать его, см. в документации с описанием метода **[screen_text](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-contentmoderator/azure.cognitiveservices.vision.contentmoderator.operations.textmoderationoperations?view=azure-python)** .
+Создайте экземпляр **ContentModeratorClient** с использованием нужных ключа подписки и URL-адреса конечной точки. 
 
-[!code-python[](~/cognitive-services-content-moderator-samples/documentation-samples/python/text-moderation-quickstart-python.py?range=23-36)]
+[!code-python[](~/cognitive-services-content-moderator-samples/documentation-samples/python/content_moderator_quickstart.py?name=client)]
 
-## <a name="print-the-response"></a>Вывод ответа
+Затем используйте клиент с экземпляром **TextModerationOperations** его члена для вызова API модерации с помощью функции `screen_text`. Дополнительные сведения о том, как вызывать его, см. в документации с описанием метода **[screen_text](https://docs.microsoft.com/python/api/azure-cognitiveservices-vision-contentmoderator/azure.cognitiveservices.vision.contentmoderator.operations.textmoderationoperations?view=azure-python)** .
 
-Наконец, проверьте, что вызов успешно завершен и возвращен экземпляр **Screen**. Далее выведите возвращенные данные на консоль.
+[!code-python[](~/cognitive-services-content-moderator-samples/documentation-samples/python/content_moderator_quickstart.py?name=textModeration)]
 
-[!code-python[](~/cognitive-services-content-moderator-samples/documentation-samples/python/text-moderation-quickstart-python.py?range=38-39)]
+## <a name="check-the-printed-response"></a>Проверка напечатанного ответа
 
-
-Пример текста, используемый в этом кратком руководстве, дает следующий результат:
+Запустите пример и подтвердите ответ. После успешного завершения будет получен экземпляр **Screen**. Успешный результат показан ниже:
 
 ```console
 {'auto_corrected_text': '" Is this a garbage email abide@ abed. com, phone: '

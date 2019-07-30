@@ -3,17 +3,18 @@ title: Руководство. Создание образов контейне�
 description: В этом руководстве описывается, как создать образ контейнеров Docker в Azure с помощью службы "Задачи Реестра контейнеров Azure" ("Задачи ACR"), а затем развернуть его в службу "Экземпляры контейнеров Azure".
 services: container-registry
 author: dlepow
+manager: gwallace
 ms.service: container-registry
 ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: ed5df09d492bbf6123e76f73717a1738a23a066c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a9e84210427612143bffe33efe4a5da5364b7a22
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66152132"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68310439"
 ---
 # <a name="tutorial-build-and-deploy-container-images-in-the-cloud-with-azure-container-registry-tasks"></a>Руководство. Создание и развертывание образов контейнера в облаке с помощью службы "Задачи Реестра контейнеров Azure"
 
@@ -34,7 +35,7 @@ ms.locfileid: "66152132"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы хотите использовать Azure CLI локально, установите Azure CLI версии **2.0.46** или более поздней и выполните вход с помощью [az login][az-login]. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, см. статью [Установка Azure CLI][azure-cli].
+Если вы хотите использовать Azure CLI локально, установите Azure CLI **2.0.46** или более поздней версии и выполните вход с помощью команды [az login][az-login]. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, см. статью [Установка Azure CLI][azure-cli].
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -191,7 +192,7 @@ az keyvault create --resource-group $RES_GROUP --name $AKV_NAME
 
 Теперь вам нужно создать субъект-службу и сохранить его учетные данные в хранилище ключей.
 
-Используйте команду [az ad sp create-for-rbac][az-ad-sp-create-for-rbac] для создания субъекта-службы и [az keyvault secret set][az-keyvault-secret-set] для сохранения **пароля** субъекта-службы в хранилище:
+Используйте команду [az ad sp create-for-rbac][az-ad-sp-create-for-rbac] command to create the service principal, and [az keyvault secret set][az-keyvault-secret-set], чтобы сохранить **пароль** субъекта-службы в хранилище:
 
 ```azurecli-interactive
 # Create service principal, store its password in AKV (the registry *password*)

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/09/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 2554501ecf6d4ef115e3283fa635c24510b8c797
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 728bf785edebcd17599b6a56edea1e26ed2d2fbc
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68249586"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68311793"
 ---
 # <a name="migrate-physical-or-virtualized-servers-to-azure"></a>Перенос физических и виртуализированных серверов в Azure 
 
@@ -214,7 +214,7 @@ ms.locfileid: "68249586"
 4. Скопируйте файл установщика на компьютер, который вы хотите перенести.
 5. Убедитесь, что у вас есть пароль, сгенерированный при развертывании устройства.
     - Сохраните файл во временный текстовый файл на компьютере.
-    - На устройстве репликации можно получить парольную фразу. Из командной строки выполните **C:\ProgramData\ASR\svsystems\bin\genpassphrase.exe -v**, чтобы просмотреть текущую парольную фразу.
+    - На устройстве репликации можно получить парольную фразу. В командной строке выполните **C:\ProgramData\ASR\home\svsystems\bin\genpassphrase.exe -v**, чтобы просмотреть текущую парольную фразу.
     - Не создавайте парольную фразу повторно. Это нарушит соединение и вам придется перерегистрировать устройство репликации.
 
 

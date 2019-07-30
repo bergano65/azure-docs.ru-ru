@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/01/2019
 ms.author: jeedes
-ms.openlocfilehash: 607e5aded52375190878de6b48ffa4aa2ab49767
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5c7d6116ed2925e57f094a67f27a11f9e2d61831
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67104087"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68499245"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-docusign"></a>Руководство. Интеграция Azure Active Directory с DocuSign
 
@@ -47,7 +47,7 @@ ms.locfileid: "67104087"
 
 * DocuSign поддерживает единый вход, инициированный **поставщиком службы**.
 
-* DocuSign поддерживает **JIT**-подготовку пользователей.
+* DocuSign поддерживает [автоматическую подготовку пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/dropboxforbusiness-provisioning-tutorial).
 
 ## <a name="adding-docusign-from-the-gallery"></a>Добавление DocuSign из коллекции
 
@@ -272,7 +272,7 @@ ms.locfileid: "67104087"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 <!--Image references-->
 

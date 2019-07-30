@@ -12,15 +12,15 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 03/13/2019
+ms.date: 07/22/2019
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: dabbefa8ca2073e30948f1c70782f730bceae030
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3e98b159443cec868040298d76e87a8de6b507ae
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66158096"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68385091"
 ---
 # <a name="tutorial-deploy-a-service-fabric-cluster-running-windows-into-an-azure-virtual-network"></a>Руководство по развертыванию кластера Service Fabric на платформе Windows в виртуальной сети Azure
 
@@ -183,7 +183,7 @@ ms.locfileid: "66158096"
 ### <a name="create-azure-ad-applications-and-assign-users-to-roles"></a>Создание приложения Azure AD и назначение ролей пользователям
 Создайте два приложения Azure AD для управления доступом к кластеру: одно веб-приложение и одно собственное приложение. Создав приложения, представляющие кластер, назначьте пользователям [роли, поддерживаемые Service Fabric](service-fabric-cluster-security-roles.md): с правами только на чтение и администратора.
 
-Запустите `SetupApplications.ps1` и укажите идентификатор клиента, имя кластера и URL-адрес ответа веб-приложения в качестве параметров. Укажите имена пользователей и пароли для пользователей. Например: 
+Запустите `SetupApplications.ps1` и укажите идентификатор клиента, имя кластера и URL-адрес ответа веб-приложения в качестве параметров. Укажите имена пользователей и пароли для пользователей. Например:
 
 ```powershell
 $Configobj = .\SetupApplications.ps1 -TenantId '<MyTenantID>' -ClusterName 'mysfcluster123' -WebApplicationReplyUrl 'https://mysfcluster123.eastus.cloudapp.azure.com:19080/Explorer/index.html' -AddResourceAccess
@@ -260,7 +260,7 @@ https://&lt;cluster_domain&gt;:19080/Explorer
 }
 ```
 
-Добавьте значения параметров в файл параметров [azuredeploy.parameters.json][parameters]. Например: 
+Добавьте значения параметров в файл параметров [azuredeploy.parameters.json][parameters]. Например:
 
 ```json
 "aadTenantId": {
@@ -280,7 +280,7 @@ https://&lt;cluster_domain&gt;:19080/Explorer
 
 Один из способов отправки и сбора журналов заключается в использовании расширения "Диагностика Azure", которое отправляет журналы в службу хранилища Azure или (опционально) в Azure Application Insights или Центры событий Azure. Вы также можете использовать внешний процесс, чтобы считывать события из хранилища и передавать их в платформу обработки, например в журналы Azure Monitor или другое решение для анализа журналов.
 
-Если вы строго придерживаетесь инструкций в этом учебнике, сбор диагностических сведений уже настроен в [шаблоне][template].
+Если вы строго придерживаетесь инструкций в этом руководстве, сбор диагностических сведений уже настроен в [шаблоне][template].
 
 Если у вас есть кластер, в котором еще не развернута система диагностики, вы можете добавить или обновить систему диагностики с помощью шаблона кластера. Измените шаблон Resource Manager, который используется для создания существующего кластера, или скачайте шаблон на портале. Измените файл template.json, выполнив следующие действия.
 

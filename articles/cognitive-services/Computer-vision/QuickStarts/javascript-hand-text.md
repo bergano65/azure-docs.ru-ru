@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Извлечение рукописного текста — JavaScript
+title: Краткое руководство. Извлечение печатного и рукописного текста — REST, JavaScript
 titleSuffix: Azure Cognitive Services
-description: Из этого краткого руководства вы узнаете, как, используя API компьютерного зрения, извлекать рукописный текст из изображения с помощью JavaScript.
+description: Из этого краткого руководства вы узнаете, как использовать API компьютерного зрения для извлечения печатного и рукописного текста из изображения с помощью JavaScript.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -11,16 +11,16 @@ ms.topic: quickstart
 ms.date: 07/03/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: f4e627286f6a32816eafa84e860cb8eb49111f67
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 42bb85b5dfab6c9799d89ff92ab5e5b3c0230019
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604344"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68311992"
 ---
-# <a name="quickstart-extract-handwritten-text-using-the-computer-vision-rest-api-and-javascript"></a>Краткое руководство. Извлечение рукописного текста с помощью REST API "Компьютерное зрение" и JavaScript
+# <a name="quickstart-extract-printed-and-handwritten-text-using-the-computer-vision-rest-api-and-javascript"></a>Краткое руководство. Извлечение печатного и рукописного текста с помощью REST API "Компьютерное зрение" и JavaScript
 
-Из этого краткого руководства вы узнаете, как извлечь рукописный текст из изображения с помощью REST API компьютерного зрения. С помощью API [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) и [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d) можно определить рукописный текст на изображении, а потом извлечь распознанные знаки в поток знаков, пригодный для машинной обработки.
+Из этого краткого руководства вы узнаете, как извлечь печатный и рукописный текст из изображения с помощью REST API компьютерного зрения. С помощью методов [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) и [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d) вы можете обнаружить текст на изображении и извлечь распознанные символы в поток машиночитаемых символов. API определит, какую модель распознавания следует использовать для каждой строки текста, так как он поддерживает изображения с печатным и рукописным текстом.
 
 > [!IMPORTANT]
 > В отличие от метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) метод [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) выполняется асинхронно. Этот метод не возвращает никаких данных в текст успешного ответа. Вместо этого метод Batch Read возвращает URI в значение поля заголовка ответа `Operation-Content`. Затем можно вызвать этот URI, который представляет метод [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d), чтобы проверить состояние и вернуть результаты вызова метода Batch Read.
@@ -39,8 +39,8 @@ ms.locfileid: "67604344"
 1. При необходимости внесите в код следующие изменения.
     1. Замените значение `subscriptionKey` своим ключом подписки.
     1. Замените значение `uriBase` URL-адресом конечной точки для метода [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) из региона Azure, где вы получили ключи подписки, если это необходимо.
-    1. при необходимости замените значение атрибута `value` для элемента управления `inputImage` URL-адресом другого изображения, из которого вы хотите извлечь рукописный текст.
-1. Сохраните код как файл с расширением `.html`. Например, `get-handwriting.html`.
+    1. При необходимости замените значение атрибута `value` для элемента управления `inputImage` URL-адресом другого изображения, из которого вы хотите извлечь текст.
+1. Сохраните код как файл с расширением `.html`. Например, `get-text.html`.
 1. Откройте окно браузера.
 1. В браузере перетащите файл в окно браузера.
 1. При отображении веб-страницы в браузере нажмите кнопку **Read image** (Распознать изображение).
@@ -49,7 +49,7 @@ ms.locfileid: "67604344"
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Handwriting Sample</title>
+    <title>Text Recognition Sample</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 </head>
 <body>
@@ -99,10 +99,10 @@ ms.locfileid: "67604344"
 
         .done(function(data, textStatus, jqXHR) {
             // Show progress.
-            $("#responseTextArea").val("Handwritten text submitted. " +
+            $("#responseTextArea").val("Text submitted. " +
                 "Waiting 10 seconds to retrieve the recognized text.");
 
-            // Note: The response may not be immediately available. Handwriting
+            // Note: The response may not be immediately available. Text
             // recognition is an asynchronous operation that can take a variable
             // amount of time depending on the length of the text you want to
             // recognize. You may need to wait or retry the GET operation.
@@ -160,8 +160,8 @@ ms.locfileid: "67604344"
         });
     };
 </script>
-<h1>Read handwritten image:</h1>
-Enter the URL to an image of handwritten text, then click
+<h1>Read text from image:</h1>
+Enter the URL to an image of text, then click
 the <strong>Read image</strong> button.
 <br><br>
 Image to read:

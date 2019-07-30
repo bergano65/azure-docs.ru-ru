@@ -1,20 +1,20 @@
 ---
-title: Краткое руководство Azure. Создание большого двоичного объекта в хранилище объектов с помощью пакета SDK службы хранилища для Java версии 10 | Документация Майкрософт
+title: Краткое руководство. Создание большого двоичного объекта с помощью пакета SDK службы хранилища для Java
 description: В этом кратком руководстве описано создание контейнера в хранилище объектов (большой двоичный объект Azure), отправку файла, объекты списка и скачивание с помощью пакета SDK службы хранилища для Java.
 services: storage
 author: mhopkins-msft
-ms.custom: mvc
+ms.custom: mvc, seo-java-july2019
 ms.service: storage
 ms.topic: quickstart
 ms.date: 11/14/2018
 ms.author: mhopkins
 ms.reviewer: seguler
-ms.openlocfilehash: f023f3fdbc82960f3994f8e5763310dc95ca1c2f
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 96da1f8903896f932fa63aa8497eaff69f893559
+ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65152796"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68489669"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-by-using-the-java-storage-sdk-v10"></a>Краткое руководство. Отправка, скачивание и отображение больших двоичных объектов с помощью пакета SDK службы хранилища для Java версии 10
 
@@ -50,14 +50,14 @@ git clone https://github.com/Azure-Samples/storage-blobs-java-v10-quickstart.git
 
 ### <a name="linux-example"></a>Пример Linux
 
-```
+```bash
 export AZURE_STORAGE_ACCOUNT="<youraccountname>"
 export AZURE_STORAGE_ACCESS_KEY="<youraccountkey>"
 ```
 
 ### <a name="windows-example"></a>Пример Windows
 
-```
+```CMD
 setx AZURE_STORAGE_ACCOUNT "<youraccountname>"
 setx AZURE_STORAGE_ACCESS_KEY "<youraccountkey>"
 ```
@@ -74,7 +74,7 @@ setx AZURE_STORAGE_ACCESS_KEY "<youraccountkey>"
 
 В этом примере показаны выходные данные при запуске приложения на системе Windows.
 
-```
+```Output
 Created quickstart container
 Enter a command
 (P)utBlob | (L)istBlobs | (G)etBlob | (D)eleteBlobs | (E)xitSample

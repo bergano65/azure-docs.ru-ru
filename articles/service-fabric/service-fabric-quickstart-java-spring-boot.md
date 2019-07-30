@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 01/29/2019
 ms.author: suhuruli
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 2c98b069e042f9cbd07ccee643028ac84b3471c6
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f7cf3f4cc0ceba89c031f5c36e90bbd6ef3dd20a
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57886700"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68327160"
 ---
 # <a name="quickstart-deploy-a-java-spring-boot-application-to-service-fabric"></a>Краткое руководство. Развертывание приложения Java Spring Boot в Service Fabric
 
@@ -90,7 +90,7 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
     java -jar gs-spring-boot-0.1.0.jar
     ```
 
-1. Добавьте ресурс **Конечные точки** в файл `gs-spring-boot/SpringServiceFabric/SpringServiceFabric/SpringGettingStartedPkg/ServiceManifest.xml`
+1. Добавьте ресурс **Endpoints** в файл *gs-spring-boot/SpringServiceFabric/SpringServiceFabric/SpringGettingStartedPkg/ServiceManifest.xml*.
 
     ```xml 
         <Resources>
@@ -145,7 +145,7 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
     docker run --name sftestcluster -d -p 19080:19080 -p 19000:19000 -p 25100-25200:25100-25200 -p 8080:8080 mysfcluster
     ```
 
-    Запуск локального кластера занимает некоторое время. Чтобы убедиться, что кластер является рабочим, откройте Service Fabric Explorer по адресу **http://localhost:19080**. Наличие пяти работоспособных узлов означает, что локальный кластер запущен и работает. 
+    Запуск локального кластера занимает некоторое время. Чтобы убедиться, что кластер является рабочим, откройте Service Fabric Explorer по адресу **http://localhost:19080** . Наличие пяти работоспособных узлов означает, что локальный кластер запущен и работает. 
     
     ![Работоспособное состояние локального кластера](./media/service-fabric-quickstart-java-spring-boot/sfxlocalhost.png)
 

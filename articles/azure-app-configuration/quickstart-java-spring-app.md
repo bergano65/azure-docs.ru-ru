@@ -14,24 +14,22 @@ ms.tgt_pltfrm: Spring
 ms.workload: tbd
 ms.date: 01/08/2019
 ms.author: yidon
-ms.openlocfilehash: a91c61edd773b5742b092f5d72a5a22f1d90e63b
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: e27635d153e58f96dad7db6870ed1dc3f640236a
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66393547"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68326484"
 ---
-# <a name="quickstart-create-a-java-spring-app-with-app-configuration"></a>Краткое руководство. Создание приложения Java Spring с помощью службы конфигурации приложений Azure
+# <a name="quickstart-create-a-java-spring-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения Java Spring с помощью службы "Конфигурация приложений Azure"
 
-Конфигурация приложений Azure — это служба для управления конфигурациями в Azure. С ее помощью вы можете централизовано хранить и администрировать все параметры приложения отдельно от кода. В этом руководстве показано, как интегрировать службу с приложением Java Spring.
-
-Шаги из этого краткого руководства можно выполнять в любом редакторе кода. [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, который доступен на платформах Windows, macOS и Linux.
+В этом кратком руководстве описано, как добавить службу "Конфигурация приложений Azure" в приложение Java Spring, чтобы обеспечить централизованное хранение параметров приложения и управление ими отдельно от кода.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством установите поддерживаемую версию [комплекта разработчика Java (JDK)](https://docs.microsoft.com/java/azure/jdk) версии 8 и [Apache Maven](https://maven.apache.org/) версии 3.0 или выше.
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+- Поддерживаемый [комплект разработчика Java (JDK)](https://docs.microsoft.com/java/azure/jdk) версии 8.
+- [Apache Maven](https://maven.apache.org/download.cgi) версии 3.0 или более поздней.
 
 ## <a name="create-an-app-configuration-store"></a>Создание хранилища конфигураций приложений
 

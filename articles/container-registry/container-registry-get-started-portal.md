@@ -3,17 +3,18 @@ title: Краткое руководство. Создание частного 
 description: Быстрый способ изучить создание частного реестра контейнеров Docker с помощью портала Azure.
 services: container-registry
 author: dlepow
+manager: gwallace
 ms.service: container-registry
 ms.topic: quickstart
 ms.date: 01/22/2019
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: f41d51981c4da9ee089282da8b8d4cc5f37a4aed
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: c9e8c7fe4d32a44e8c0831154f02eda1f82aaff3
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59682990"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68309473"
 ---
 # <a name="quickstart-create-a-private-container-registry-using-the-azure-portal"></a>Краткое руководство. Создание частного реестра контейнеров с помощью портала Azure
 
@@ -37,7 +38,7 @@ ms.locfileid: "59682990"
 
 ![Создание реестра контейнеров на портале Azure][qs-portal-03]
 
-В этом кратком руководстве описано, как создать реестр ценовой категории *Базовый*. Это оптимальный (недорогой) вариант для разработчиков, которые знакомятся с Реестром контейнеров Azure. См. дополнительные сведения об уровнях служб в статье [Номера SKU реестра контейнеров][container-registry-skus].
+В этом кратком руководстве описано, как создать реестр ценовой категории *Базовый*. Это оптимальный (недорогой) вариант для разработчиков, которые знакомятся с Реестром контейнеров Azure. Дополнительные сведения об уровнях служб см. в статье [Номера SKU реестра контейнеров][container-registry-skus].
 
 Когда появится сообщение **Развертывание прошло успешно**, выберите реестр контейнеров на портале. 
 

@@ -15,35 +15,23 @@ ms.workload: tbd
 ms.date: 05/21/2018
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 739f0bd6381e872b5f989f9ecb4dd97fdbdb52c9
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: dc629133a393c4ff8f9193b02e9080d7f08f4958
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56238102"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68326461"
 ---
-# <a name="quickstart-how-to-use-azure-cache-for-redis-with-nodejs"></a>Краткое руководство. Использование кэша Redis для Azure с Node.js
+# <a name="quickstart-use-azure-cache-for-redis-with-nodejs"></a>Краткое руководство. Использование кэша Azure для Redis с Node.js
 
-
-
-Кэш Redis для Azure предоставляет доступ к безопасному выделенному кэшу Redis для Azure, управляемому корпорацией Майкрософт. Кэш доступен из любого приложения в Microsoft Azure.
-
-В этой статье показано, как приступить к работе с кэшем Redis для Azure, используя Node.js. 
-
-Вы можете использовать любой редактор кода для выполнения шагов в этом кратком руководстве. Однако [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, доступным на платформах Windows, MacOS и Linux.
-
-![Готовое приложение с кэшем](./media/cache-nodejs-get-started/cache-app-complete.png)
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
-
+Из этого краткого руководства вы узнаете, как реализовать кэш Azure для Redis в приложении Node.js для обеспечения доступа к защищенному выделенному кэшу, к которому может обращаться любое приложение в Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
-Установите [node_redis](https://github.com/mranney/node_redis).
 
-    npm install redis
+- Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+- [node_redis](https://github.com/mranney/node_redis), который вы можете установить с помощью команды `npm install redis`. 
 
-В этом руководстве используется [node_redis](https://github.com/mranney/node_redis). Примеры использования других клиентов Node.js см. в отдельных документах по [клиентам Node.js для Redis](https://redis.io/clients#nodejs).
-
+Примеры использования других клиентов Node.js см. в отдельных документах по [клиентам Node.js для Redis](https://redis.io/clients#nodejs).
 
 ## <a name="create-a-cache"></a>Создание кэша
 [!INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
@@ -57,7 +45,6 @@ ms.locfileid: "56238102"
 set REDISCACHEHOSTNAME=contosoCache.redis.cache.windows.net
 set REDISCACHEKEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
-
 
 ## <a name="connect-to-the-cache"></a>Подключение к кэшу
 
@@ -128,7 +115,6 @@ node redistest.js
 
 ![Готовое приложение с кэшем](./media/cache-nodejs-get-started/cache-app-complete.png)
 
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 При переходе к следующему руководству в нем можно использовать ресурсы, созданные в этом руководстве.
@@ -141,15 +127,13 @@ node redistest.js
 
 Войдите на [портал Azure](https://portal.azure.com) и щелкните **Группы ресурсов**.
 
-Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...**. В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources*. В своей группе ресурсов в списке результатов щелкните **...**, а затем **Удалить группу ресурсов**.
+Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...** . В инструкциях в этой статье использовалась группа ресурсов с именем *TestResources*. В своей группе ресурсов в списке результатов щелкните **...** , а затем **Удалить группу ресурсов**.
 
-![Delete (Удалить)](./media/cache-nodejs-get-started/cache-delete-resource-group.png)
+![Удаление](./media/cache-nodejs-get-started/cache-delete-resource-group.png)
 
 Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов и нажмите кнопку **Удалить**.
 
 Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
-
-
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -157,6 +141,3 @@ node redistest.js
 
 > [!div class="nextstepaction"]
 > [Создание веб-приложения ASP.NET, в котором используется кэш Azure для Redis](./cache-web-app-howto.md)
-
-
-

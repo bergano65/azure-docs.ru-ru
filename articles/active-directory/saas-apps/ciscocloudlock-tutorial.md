@@ -1,6 +1,6 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Cloud Security Fabric | Документация Майкрософт
-description: Узнайте, как настроить единый вход Azure Active Directory в Cloud Security Fabric.
+title: Руководство. Интеграция Azure Active Directory с The Cloud Security Fabric | Документация Майкрософт
+description: Узнайте, как настроить единый вход Azure Active Directory в The Cloud Security Fabric.
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -13,98 +13,75 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 04/15/2019
+ms.date: 07/18/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 70f4b900a1ccc2769e397c32b452ef939da00099
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: af98633e1dfdbe6392199ade282a918c6134a033
+ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67105536"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68347405"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cloud-security-fabric"></a>Руководство по Интеграция Azure Active Directory с Cloud Security Fabric
+# <a name="tutorial-integrate-the-cloud-security-fabric-with-azure-active-directory"></a>Руководство по Интеграция Azure Active Directory с The Cloud Security Fabric
 
-В этом руководстве описано, как интегрировать Cloud Security Fabric с Azure Active Directory (Azure AD).
-Интеграция Azure AD с Cloud Security Fabric обеспечивает следующие преимущества.
+В этом руководстве описано, как интегрировать The Cloud Security Fabric с Azure Active Directory (Azure AD). Возможности интеграции The Cloud Security Fabric с Azure AD.
 
-* С помощью Azure AD вы можете контролировать доступ к Cloud Security Fabric.
-* Вы можете включить автоматический вход пользователей в Cloud Security Fabric (единый вход) с помощью учетных записей Azure AD.
-* Вы можете управлять учетными записями централизованно на портале Azure.
+* Контроль с помощью Azure AD доступа к The Cloud Security Fabric.
+* Включение автоматического входа пользователей в The Cloud Security Fabric с помощью учетных записей Azure AD.
+* Централизованное управление учетными записями через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы настроить интеграцию Azure AD с Cloud Security Fabric, вам потребуется:
+Чтобы приступить к работе, потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
-* подписка Cloud Security Fabric с поддержкой единого входа.
+* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* подписка с поддержкой единого входа на The Cloud Security Fabric.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* Cloud Security Fabric поддерживает единый вход, инициируемый **поставщиком услуг**.
+* The Cloud Security Fabric поддерживает единый вход, инициированный **поставщиком услуг**.
 
-## <a name="adding-cloud-security-fabric-from-the-gallery"></a>Добавление Cloud Security Fabric из коллекции
+## <a name="adding-the-cloud-security-fabric-from-the-gallery"></a>Добавление The Cloud Security Fabric из коллекции
 
-Чтобы настроить интеграцию Cloud Security Fabric с Azure AD, нужно добавить Cloud Security Fabric из коллекции в список управляемых приложений SaaS.
+Чтобы настроить интеграцию The Cloud Security Fabric с Azure AD, вам нужно добавить The Cloud Security Fabric из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Cloud Security Fabric из коллекции, сделайте следующее.**
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. В области навигации слева выберите службу **Azure Active Directory**.
+1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+1. Чтобы добавить новое приложение, выберите **Новое приложение**.
+1. В разделе **Добавление из коллекции** в поле поиска введите **The Cloud Security Fabric**.
+1. Выберите **The Cloud Security Fabric** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
-
-    ![Кнопка Azure Active Directory](common/select-azuread.png)
-
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
-
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
-
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
-
-    ![Кнопка "Создать приложение"](common/add-new-app.png)
-
-4. В поле поиска введите **Cloud Security Fabric**, выберите **Cloud Security Fabric** в области результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
-
-    ![Cloud Security Fabric в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Cloud Security Fabric с использованием тестового пользователя **Britta Simon**.
-Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Cloud Security Fabric.
+Настройте и проверьте единый вход Azure AD в The Cloud Security Fabric с помощью тестового пользователя **B.Simon**. Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в The Cloud Security Fabric.
 
-Чтобы настроить и проверить единый вход Azure AD в Cloud Security Fabric, вам потребуется выполнить действия в следующих стандартных блоках.
+Чтобы настроить и проверить единый вход Azure AD в The Cloud Security Fabric, выполните действия в следующих стандартных блоках.
 
-1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в Cloud Security Fabric](#configure-cloud-security-fabric-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя Cloud Security Fabric](#create-cloud-security-fabric-test-user)** требуется для того, чтобы в Cloud Security Fabric существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в The Cloud Security Fabric](#configure-the-cloud-security-fabric-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя The Cloud Security Fabric](#create-the-cloud-security-fabric-test-user)** требуется для того, чтобы в The Cloud Security Fabric существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
-### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
+### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
-В этом разделе описано включение единого входа Azure AD на портале Azure.
+Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-Чтобы настроить единый вход Azure AD в Cloud Security Fabric, выполните следующие действия.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **The Cloud Security Fabric** найдите раздел **Управление** и выберите **Единый вход**.
+1. На странице **Выбрать метод единого входа** выберите **SAML**.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Cloud Security Fabric** щелкните **Единый вход**.
-
-    ![Ссылка "Настройка единого входа"](common/select-sso.png)
-
-2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
-
-    ![Режим выбора единого входа](common/select-saml-option.png)
-
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
-
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
-
-    ![Сведения о домене и URL-адресах единого входа для Cloud Security Fabric](common/sp-identifier.png)
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес:
 
@@ -123,83 +100,66 @@ ms.locfileid: "67105536"
     > [!NOTE]
     > Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Чтобы получить это значение, обратитесь в [службу поддержки The Cloud Security Fabric](mailto:support@cloudlock.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
+4. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и нажмите кнопку **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-6. Требуемые URL-адреса можно скопировать из раздела **Настройка Cloud Security Fabric**.
+5. Чтобы изменить параметры в разделе **Подпись**  в соответствии со своими требованиями, нажмите кнопку  **Изменить** , чтобы открыть диалоговое окно  **Сертификат подписи SAML** .
+
+    ![Ответ знака](./media/ciscocloudlock-tutorial/saml.png)
+
+    a. Для параметра **Вариант подписывания** выберите значение **Ответ знака SAML и утверждение**.
+
+    b. Выберите параметр **SHA-256** для **алгоритма подписывания**
+
+    c. Выберите команду **Сохранить**.  
+
+6. Требуемые URL-адреса можно скопировать из раздела **Настройка The Cloud Security Fabric**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+### <a name="configure-the-cloud-security-fabric-sso"></a>Настройка единого входа The Cloud Security Fabric
 
-    b. Идентификатор Azure AD
-
-    c. URL-адрес выхода.
-
-### <a name="configure-cloud-security-fabric-single-sign-on"></a>Настройка единого входа в Cloud Security Fabric
-
-Чтобы настроить единый вход на стороне **Cloud Security Fabric**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Cloud Security Fabric](mailto:support@cloudlock.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
-
+Чтобы настроить единый вход на стороне **The Cloud Security Fabric**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки The Cloud Security Fabric](mailto:support@cloudlock.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
-
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
-
-2. В верхней части экрана выберите **Новый пользователь**.
-
-    ![Кнопка "Новый пользователь"](common/new-user.png)
-
-3. В разделе свойств пользователя сделайте следующее:
-
-    ![Диалоговое окно "Пользователь"](common/user-properties.png)
-
-    а. В поле **Имя** введите **BrittaSimon**.
-  
-    b. В поле **Имя пользователя** введите `brittasimon@yourcompanydomain.extension`. Например BrittaSimon@contoso.com.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
-
-    d. Нажмите кнопку **Создать**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. В верхней части экрана выберите **Новый пользователь**.
+1. В разделе **Свойства пользователя** выполните следующие действия.
+   1. В поле **Имя** введите `B.Simon`.  
+   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
+   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+   1. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Cloud Security Fabric.
+В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к The Cloud Security Fabric.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Cloud Security Fabric**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. В списке приложений выберите **The Cloud Security Fabric**.
+1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-2. Из списка приложений выберите **Cloud Security Fabric**.
+1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка на The Cloud Security Fabric в списке приложений](common/all-applications.png)
+    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+### <a name="create-the-cloud-security-fabric-test-user"></a>Создание тестового пользователя The Cloud Security Fabric
 
-4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+В этом разделе описано, как создать пользователя B.Simon в приложении The Cloud Security Fabric. Чтобы добавить пользователей на платформе The Cloud Security Fabric, обратитесь в  [службу поддержки The Cloud Security Fabric](mailto:support@cloudlock.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
-    ![Область "Добавление назначения"](common/add-assign-user.png)
-
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
-
-6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
-
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-
-### <a name="create-cloud-security-fabric-test-user"></a>Создание тестового пользователя Cloud Security Fabric
-
-В этом разделе описано, как создать пользователя Britta Simon в приложении Cloud Security Fabric. Чтобы добавить пользователей на платформу Cloud Security Fabric, обратитесь к  [группе поддержки Cloud Security Fabric](mailto:support@cloudlock.com). Перед использованием единого входа необходимо создать и активировать пользователей.
-
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-sso"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент "Cloud Security Fabric" на Панели доступа, вы автоматически войдете в приложение Cloud Security Fabric, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув элемент "The Cloud Security Fabric" на Панели доступа, вы автоматически войдете в приложение The Cloud Security Fabric, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -207,5 +167,4 @@ ms.locfileid: "67105536"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

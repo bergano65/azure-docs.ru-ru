@@ -17,12 +17,12 @@ ms.date: 07/16/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe90e5a70779857f0045baf27abc59a75289c39c
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: c407ca9f7d28f1a74f0037931d83dd64fe7fc801
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68276820"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68335547"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-windows-desktop-app"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из классического приложения Windows
 
@@ -175,3 +175,7 @@ authResult = await App.PublicClientApp.AcquireTokenSilent(scopes, firstAccount)
 > [!div class="nextstepaction"]
 > [Руководство по вызову API Graph](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-windesktop)
 
+Помогите нам улучшить платформу Microsoft Identity. Поделитесь своим мнением, ответив на два вопроса.
+
+> [!div class="nextstepaction"]
+> [Опрос по платформе удостоверений Майкрософт](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyKrNDMV_xBIiPGgSvnbQZdUQjFIUUFGUE1SMEVFTkdaVU5YT0EyOEtJVi4u)

@@ -1,21 +1,21 @@
 ---
-title: Краткое руководство. Пакет SDK Поиска сущностей Bing для Python
-titlesuffix: Azure Cognitive Services
-description: Настройка консольного приложения, созданного с помощью пакета SDK для API Bing для поиска сущностей.
+title: Краткое руководство. Поиск сущностей с помощью пакета SDK Поиска сущностей Bing для Python
+titleSuffix: Azure Cognitive Services
+description: Из этого руководства вы узнаете, как выполнить поиск сущностей с помощью пакета SDK Поиска сущностей Bing для Python.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
-ms.date: 02/01/2019
+ms.date: 07/24/2019
 ms.author: aahi
-ms.openlocfilehash: 9a66df03ceb03885ba5f61b4adeb54cb1876338d
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 0a4a4e3ce6f318a693b8ee760a0d892eaecb2c82
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65813616"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479017"
 ---
 # <a name="quickstart-bing-entity-search-sdk-with-python"></a>Краткое руководство. Пакет SDK Поиска сущностей Bing для Python
 
@@ -27,7 +27,7 @@ ms.locfileid: "65813616"
 
 * [Пакет SDK Поиска сущностей Bing для Python](https://pypi.org/project/azure-cognitiveservices-search-entitysearch/)
 
-Мы советуем использовать виртуальное окружение Python. Вы можете установить и инициализировать виртуальное окружение с помощью модуля venv. Вы можете установить virtualenv для Python 2.7 с помощью следующей команды:
+Мы советуем использовать виртуальное окружение Python. Вы можете установить и инициализировать виртуальное окружение с помощью модуля venv. Вы можете установить virtualenv с помощью следующей команды:
 
 ```Console
 python -m venv mytestenv

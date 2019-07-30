@@ -5,17 +5,17 @@ services: active-directory-b2c
 author: mmacy
 manager: celestedg
 ms.author: marsma
-ms.date: 07/08/2019
+ms.date: 07/24/2019
 ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 496cf801a44638af61306b43791abce9466e2cb2
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 6884cb7b10da3996977f2aea7693625bc45c3139
+ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835688"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68369580"
 ---
 # <a name="tutorial-enable-authentication-in-a-single-page-application-using-azure-active-directory-b2c"></a>Руководство по Включение в одностраничном приложении аутентификации с помощью Azure Active Directory B2C
 
@@ -41,7 +41,7 @@ ms.locfileid: "67835688"
 Кроме того, вам понадобятся следующие компоненты в локальной среде разработки:
 
 * редактор кода, например [код Visual Studio](https://code.visualstudio.com/) или [Visual Studio 2019](https://www.visualstudio.com/downloads/);
-* [.NET Core SDK 2.0.0](https://www.microsoft.com/net/core) или более поздней версии.
+* [.NET Core SDK 2.2](https://dotnet.microsoft.com/download) или более поздней версии.
 * [Node.js](https://nodejs.org/en/download/)
 
 ## <a name="update-the-application"></a>Обновление приложения
@@ -115,7 +115,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
 
 ### <a name="sign-up-using-an-email-address"></a>Регистрация с помощью адреса электронной почты
 
-1. Щелкните **Войти**, чтобы зарегистрироваться как пользователь приложения. При этом используется маршрут пользователей **B2C_1_signupsignin1**, указанный на предыдущем шаге.
+1. Щелкните **Войти**, чтобы инициировать поток пользователя *B2C_1_signupsignin1*, указанный на предыдущем шаге.
 1. Появляется страница входа в Azure AD B2C со ссылкой для регистрации. Щелкните ссылку **Зарегистрироваться сейчас**, так как у вас нет учетной записи.
 1. В рамках рабочего процесса регистрации появляется страница для сбора данных и проверки личности пользователя с использованием адреса электронной почты. Рабочий процесс регистрации также собирает пароль пользователя и запрашиваемые атрибуты, определенные в потоке пользователя.
 
@@ -133,11 +133,15 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
 
 После входа в приложении отображается сообщение об ошибке, информирующее о недостаточности прав. Это **ожидаемое поведение**.
 
-`ServerError: AADB2C90205: This application does not have sufficient permissions against this web resource to perform the operation.`
+```Output
+ServerError: AADB2C90205: This application does not have sufficient permissions against this web resource to perform the operation.
+Correlation ID: ce15bbcc-0000-0000-0000-494a52e95cd7
+Timestamp: 2019-07-20 22:17:27Z
+```
 
-Данная ошибка возникает, так как вы пытаетесь получить доступ к ресурсу в демонстрационном каталоге, но маркер доступа действителен только для вашего каталога Azure AD. Поэтому вызов API не авторизован.
+Эта ошибка возникает, так как веб-приложение пытается получить доступ к веб-API, защищенному с помощью демонстрационного каталога *fabrikamb2c*. Так как маркер доступа действителен только для вашего каталога Azure AD, вызов API считается неавторизованным.
 
-Перейдите к следующему учебнику из этой серии (см. [Следующий шаг](#next-steps)), чтобы узнать, как создать защищенный веб-API для своего каталога.
+Чтобы устранить эту ошибку, перейдите к следующему руководству из этой серии (см. [Дальнейшие действия](#next-steps)), чтобы узнать, как создать защищенный веб-API для своего каталога.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -151,4 +155,4 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
 Теперь перейдите к следующему руководству из этой серии, чтобы предоставить доступ к защищенному веб-API из SPA:
 
 > [!div class="nextstepaction"]
-> [Руководство. Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения с помощью Azure Active Directory B2C](active-directory-b2c-tutorials-spa-webapi.md)
+> [Руководство. Предоставление доступа к веб-API ASP.NET Core из одностраничного приложения с помощью Azure AD B2C >](active-directory-b2c-tutorials-spa-webapi.md)

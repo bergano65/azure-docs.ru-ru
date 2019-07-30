@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: e4b2f9eaa243c0cbef66f88544be769481dd6722
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: a3d2b51824f4293dc790979ca2513d011b60fd9c
+ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67798657"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68414438"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-linux-device"></a>Краткое руководство. Развертывание модуля IoT Edge на устройстве под управлением ОС Linux
 
@@ -66,7 +66,7 @@ Azure IoT Edge переносит мощь облака на ваши устро
 
    При создании новой виртуальной машины запишите для нее значение **publicIpAddress** (общедоступный IP-адрес), которое содержится в выходных данных команды create. Используйте этот общедоступный IP-адрес для подключения к виртуальной машине далее в этом кратком руководстве.
 
-* Если вам необходимо запустить среду выполнения Azure IoT Edge на своем устройстве, следуйте инструкциям из статьи [Установка среды выполнения Azure IoT Edge в Linux (x64)](how-to-install-iot-edge-linux.md) или [Установка среды выполнения Azure IoT Edge в Linux (ARM32v7/armhf)](how-to-install-iot-edge-linux-arm.md).
+* Если вы хотите запустить среду выполнения Azure IoT Edge на своем устройстве, выполните инструкции, приведенные в статье [Install the Azure IoT Edge runtime on Debian-based Linux systems](how-to-install-iot-edge-linux.md) (Установка среды выполнения Azure IoT Edge в системах Linux на основе Debian).
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -130,7 +130,7 @@ Azure IoT Edge переносит мощь облака на ваши устро
    az vm run-command invoke -g IoTEdgeResources -n EdgeVM --command-id RunShellScript --script "/etc/iotedge/configedge.sh '{device_connection_string}'"
    ```
 
-Если вы используете IoT Edge на локальном компьютере или устройстве ARM32, нужно установить среду выполнения IoT Edge и необходимые компоненты на устройство. Следуйте инструкциям в статье [Установка среды выполнения Azure IoT Edge в Linux (x64)](how-to-install-iot-edge-linux.md) или [Установка среды выполнения Azure IoT Edge в Linux (ARM32v7/armhf)](how-to-install-iot-edge-linux-arm.md), а затем вернитесь к этому краткому руководству.
+Если вы используете IoT Edge на локальном компьютере или устройстве ARM32/ARM64, вам нужно установить среду выполнения IoT Edge и необходимые компоненты на устройство. Выполните инструкции из статьи [Install the Azure IoT Edge runtime on Linux](how-to-install-iot-edge-linux.md) (Установка среды выполнения Azure IoT Edge в системах Linux на основе Debian) и вернитесь к этому краткому руководству.
 
 ### <a name="view-the-iot-edge-runtime-status"></a>Просмотр состояния среды выполнения IoT Edge
 

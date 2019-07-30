@@ -3,7 +3,7 @@ title: Краткое руководство. Использование при�
 description: Узнайте, как приложения Android могут вызывать API, которому требуются маркеры доступа от конечной точки платформы удостоверений Майкрософт.
 services: active-directory
 documentationcenter: dev-center-name
-author: danieldobalian
+author: rwike77
 manager: CelesteDG
 editor: ''
 ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/26/2019
+ms.date: 07/17/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 547eafac8cc1acf2b60416f93804e819a1c549b0
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 1c22d93d39f086aaa6e2f103d3becbe9376b49b0
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67702760"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68324544"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из приложения Android
 
@@ -104,8 +104,10 @@ ms.locfileid: "67702760"
 >          }
 >       ]
 >    }
-> 1. Inside **app** > **manifests**, open  **AndroidManifest.xml**.
-> 1. Paste the following activity to the **manifest\application** node: 
+>    ```
+> 
+> 1. В разделе **app** > **manifests** откройте файл **AndroidManifest.xml**.
+> 1. Добавьте показанное ниже действие в узел **manifest\application**. 
 >    ```xml
 >    <!--Intent filter to catch Microsoft's callback after Sign In-->
 >    <activity
@@ -120,7 +122,11 @@ ms.locfileid: "67702760"
 >        </intent-filter>
 >    </activity>
 >    ```
-> > 1. Запустите приложение. 
+> 1. Запустите приложение. 
+
+> [!div class="sxs-lookup" renderon="portal"]
+> > [!NOTE]
+> > В этом кратком руководстве поддерживается Enter_the_Supported_Account_Info_Here.
 
 > [!div renderon="docs"]
 > 1. Извлеките и откройте проект в Android Studio.
@@ -247,3 +253,8 @@ sampleApp.acquireToken(this, SCOPES, getAuthInteractiveCallback());
 > [MSAL для вики-сайта библиотеки Android](https://github.com/AzureAD/microsoft-authentication-library-for-android/wiki)
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
+
+Помогите нам улучшить платформу Microsoft Identity. Поделитесь своим мнением, ответив на два вопроса.
+
+> [!div class="nextstepaction"]
+> [Опрос по платформе удостоверений Майкрософт](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyKrNDMV_xBIiPGgSvnbQZdUQjFIUUFGUE1SMEVFTkdaVU5YT0EyOEtJVi4u)

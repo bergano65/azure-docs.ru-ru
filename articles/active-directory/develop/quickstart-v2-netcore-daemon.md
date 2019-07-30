@@ -17,12 +17,12 @@ ms.date: 07/16/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5955be5670759329e42ec24999d73df977c665e
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: fd29c24aa0da83b67f0c0d943312adc5c2558f8f
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68276840"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68335577"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-console-app-using-apps-identity"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения с помощью удостоверения приложения
 
@@ -236,3 +236,8 @@ result = await app.AcquireTokenForClient(scopes)
 
 > [!div class="nextstepaction"]
 > [Потоки учетных данных клиента с использованием MSAL.NET](https://aka.ms/msal-net-client-credentials)
+
+Помогите нам улучшить платформу Microsoft Identity. Поделитесь своим мнением, ответив на два вопроса.
+
+> [!div class="nextstepaction"]
+> [Опрос по платформе удостоверений Майкрософт](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyKrNDMV_xBIiPGgSvnbQZdUQjFIUUFGUE1SMEVFTkdaVU5YT0EyOEtJVi4u)

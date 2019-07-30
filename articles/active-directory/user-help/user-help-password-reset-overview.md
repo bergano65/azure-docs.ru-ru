@@ -12,12 +12,12 @@ ms.topic: overview
 ms.date: 05/15/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f1dae1b8577c4f90211c3b377dbf88efe6907326
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 66cb7218b5217565529e1e15d875c23dff10e06f
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66243887"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68382268"
 ---
 # <a name="reset-your-own-work-or-school-password-overview"></a>Общие сведения о сбросе пароля рабочей или учебной учетной записи
 
@@ -34,5 +34,5 @@ ms.locfileid: "66243887"
 
 |Статья |ОПИСАНИЕ |
 |------|------------|
-|[Регистрация для самостоятельного сброса пароля](active-directory-passwords-reset-register.md)| Инструкции по тому, как проверить методы проверки подлинности и зарегистрироваться для самостоятельного сброса пароля, чтобы иметь возможность сбросить свой пароль.|
-|[Сброс пароля к рабочей или учебной учетной записи](user-help-reset-password.md)| Инструкции по тому, как сбросить пароль или разблокировать свою рабочую или учебную учетную запись.|
+| [Регистрация для самостоятельного сброса пароля](active-directory-passwords-reset-register.md) ] В этой статье приведены инструкции по тому, как проверить методы аутентификации и зарегистрироваться для самостоятельного сброса пароля, чтобы иметь возможность сбросить свой пароль.|
+| [Сброс пароля](user-help-reset-password.md) ] В этой статье приведены инструкции по тому, как сбросить пароль или разблокировать свою рабочую или учебную учетную запись.|

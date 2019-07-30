@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 02/03/2019
-ms.openlocfilehash: 7a1132b5857cf6c54d0566ca29bb76ce1ef88513
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ad4706ce038feb316d238c1cabc12b27621c8085
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66150240"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68443328"
 ---
 # <a name="azure-cli-samples-for-azure-sql-database"></a>Примеры Azure CLI для Базы данных SQL Azure
 
@@ -41,6 +41,8 @@ ms.locfileid: "66150240"
 |**Масштабирование отдельной базы данных и эластичного пула**||
 | [Масштабирование отдельной базы данных](scripts/sql-database-monitor-and-scale-database-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Этот пример сценария интерфейса командной строки масштабирует отдельную базу данных SQL Azure до другого объема вычислительных ресурсов после запроса на получение сведений о размере базы данных. |
 | [Масштабирование эластичного пула](scripts/sql-database-scale-pool-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Этот пример сценария интерфейса командной строки масштабирует эластичный пул SQL, изменяя объем его вычислительных ресурсов.  |
+|**Группы отработки отказа**||
+| [Добавление отдельных баз данных в группу отработки отказа](scripts/sql-database-add-single-db-to-failover-group-cli.md?toc=%2fcli%2fazure%2ftoc.json)| Этот скрипт CLI создает базу данных и группу отработки отказа, добавляет базу данных в эту группу и тестирует отработку отказа на сервер-получатель.|
 |||
 
 См. дополнительные сведения об [API управления отдельной базой данных с помощью Azure CLI](sql-database-single-databases-manage.md#azure-cli-manage-sql-database-servers-and-single-databases).

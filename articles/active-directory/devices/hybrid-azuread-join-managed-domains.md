@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b24888934d7e89a13b1b07b7138be476575fc306
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: c7781651536275eba60bfde49e00a450dde6d3e1
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204619"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68357030"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для управляемых доменов
 
@@ -45,7 +45,7 @@ ms.locfileid: "67204619"
 В данном руководстве предполагается, что вы ознакомлены со следующими статьями:
 
 - [Что такое удостоверение устройства?](overview.md)
-- [Как планировать реализации гибридного присоединения к Azure AD](hybrid-azuread-join-plan.md)
+- [How to plan your hybrid Azure AD join implementation](hybrid-azuread-join-plan.md) (Как планировать реализацию гибридного присоединения к Azure AD)
 - [Как выполнить контролируемую проверку гибридного присоединения к Azure AD](hybrid-azuread-join-control.md)
 
 > [!NOTE]
@@ -92,7 +92,7 @@ ms.locfileid: "67204619"
 
    ![Дополнительные задачи](./media/hybrid-azuread-join-managed-domains/12.png)
 
-1. На странице **обзора** выберите **Далее**.
+1. На странице **обзора** нажмите кнопку **Далее**.
 
    ![Обзор](./media/hybrid-azuread-join-managed-domains/13.png)
 
@@ -100,7 +100,7 @@ ms.locfileid: "67204619"
 
    ![Подключение к Azure AD](./media/hybrid-azuread-join-managed-domains/14.png)
 
-1. На странице **Параметры устройств** выберите **Настроить гибридное присоединение к Azure AD**, а затем **Далее**.
+1. На странице **Параметры устройств** выберите **Настроить гибридное присоединение к Azure AD** и выберите **Далее**.
 
    ![Параметры устройств](./media/hybrid-azuread-join-managed-domains/15.png)
 
@@ -120,7 +120,7 @@ ms.locfileid: "67204619"
 
    ![Готово к настройке](./media/hybrid-azuread-join-managed-domains/19.png)
 
-1. На странице **Конфигурация завершена** выберите**Выйти**.
+1. На странице **Конфигурация завершена** выберите **Выйти**.
 
    ![Завершение настройки](./media/hybrid-azuread-join-managed-domains/20.png)
 
@@ -134,7 +134,7 @@ ms.locfileid: "67204619"
 
 ### <a name="configure-the-local-intranet-settings-for-device-registration"></a>Настройка параметров локальной интрасети для регистрации устройств.
 
-Чтобы успешно выполнить гибридное присоединение устройств Windows нижнего уровня к Azure AD и избежать запросов на предоставление сертификатов при аутентификации этих устройств в Azure AD, можно отправить на присоединенные к домену устройства политику для добавления следующих URL-адресов в зону локальной интрасети в Internet Explorer:
+Чтобы успешно выполнить гибридное присоединение устройств Windows нижнего уровня к Azure AD и избежать запросов на предоставление сертификатов при аутентификации этих устройств в Azure AD, можно отправить на присоединенные к домену устройства политику для добавления следующих URL-адресов в зону локальной интрасети в Internet Explorer:
 
 - `https://device.login.microsoftonline.com`
 - `https://autologon.microsoftazuread-sso.com`
@@ -143,9 +143,9 @@ ms.locfileid: "67204619"
 
 ### <a name="configure-seamless-sso"></a>Настройка простого единого входа
 
-Чтобы успешно завершить гибридное присоединение к Azure AD устройств Windows нижнего уровня в управляемом домене, использующем [PHS]../hybrid/whatis-phs.md или [PTA](../hybrid/how-to-connect-pta.md) (сквозную проверку подлинности) [ для проверки подлинности в Azure AD, необходимо также включить простой единый вход](../hybrid/how-to-connect-sso-quick-start.md#step-2-enable-the-feature).
+Чтобы успешно завершить гибридное присоединение к Azure AD устройств Windows нижнего уровня в управляемом домене, использующем [PHS](../hybrid/whatis-phs.md) или [PTA](../hybrid/how-to-connect-pta.md) (сквозную проверку подлинности) для аутентификации в Azure AD, необходимо также [настроить простой единый вход](../hybrid/how-to-connect-sso-quick-start.md#step-2-enable-the-feature).
 
-### <a name="install-microsoft-workplace-join-for-windows-downlevel-computers"></a>Установка Microsoft Workplace Join для компьютеров Windows нижнего уровня
+### <a name="install-microsoft-workplace-join-for-windows-downlevel-computers"></a>Установка Microsoft Workplace Join для компьютеров Windows нижнего уровня.
 
 Чтобы зарегистрировать устройства Windows нижнего уровня, необходимо установить в организации [Microsoft Workplace Join для компьютеров, на которых не используется Windows 10](https://www.microsoft.com/download/details.aspx?id=53554). Microsoft Workplace Join для компьютеров не на базе Windows 10 доступна в центре загрузки Майкрософт.
 
@@ -157,13 +157,13 @@ ms.locfileid: "67204619"
 
 Чтобы проверить состояние регистрации устройства в клиенте Azure, можно использовать командлет **[Get-MsolDevice](/powershell/msonline/v1/get-msoldevice)** в [модуле PowerShell для Azure Active Directory](/powershell/azure/install-msonlinev1?view=azureadps-2.0).
 
-Командлет **Get-MSolDevice** можно использовать, чтобы получить сведения о службе:
+Когда вы используете командлет **Get-MSolDevice**, чтобы получить сведения о службе:
 
 - Должен существовать объект с **идентификатором устройства**, который совпадает с идентификатором в клиенте Windows.
 - Значением **DeviceTrustType** должно быть **Присоединено к домену**. Этот параметр является эквивалентным состоянию **Гибридные устройства, присоединенные к Azure AD** на странице **Устройства** на портале Azure AD.
 - Для устройств, которые используются при условном доступе, значением **Включено** должно быть **True**, а значением **DeviceTrustLevel** — **Управляемый**.
 
-**Вот как можно просмотреть сведения о службе.** :
+**Чтобы просмотреть сведения о службе**:
 
 1. Откройте Windows PowerShell от имени администратора.
 1. Введите `Connect-MsolService`, чтобы подключится к своему клиенту Azure.  
@@ -172,10 +172,10 @@ ms.locfileid: "67204619"
 
 ## <a name="troubleshoot-your-implementation"></a>Устранение неполадок реализации
 
-Если возникают проблемы с настройкой гибридного присоединения к Azure AD для устройств Windows, присоединенных к домену, ознакомьтесь со следующими разделами:
+Если возникают проблемы с настройкой гибридного присоединения к Azure AD для устройств Windows, присоединенных к домену, ознакомьтесь со следующими статьями:
 
-- [Устранение неполадок с гибридным присоединением для текущих устройств Windows](troubleshoot-hybrid-join-windows-current.md)
-- [Устранение неполадок на устройствах под управлением Windows с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-legacy.md)
+- [Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-current.md)
+- [Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-legacy.md)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -3,17 +3,18 @@ title: Краткое руководство. Создание частного 
 description: Быстрый способ изучить создание частного реестра контейнеров Docker с помощью Azure CLI.
 services: container-registry
 author: dlepow
+manager: gwallace
 ms.service: container-registry
 ms.topic: quickstart
 ms.date: 01/22/2019
 ms.author: danlep
 ms.custom: seodec18, H1Hack27Feb2017, mvc
-ms.openlocfilehash: 24bdd52673c65d039166dc28f9f0a0a784569a1a
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: 6c511c56ab8df14cc6ea81363772ae0fd6d61272
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59678706"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68309533"
 ---
 # <a name="quickstart-create-a-private-container-registry-using-the-azure-cli"></a>Краткое руководство. Создание закрытого реестра контейнеров с помощью Azure CLI
 
@@ -21,7 +22,7 @@ ms.locfileid: "59678706"
 
 Для этого руководства требуется Azure CLI (рекомендуется версия 2.0.55 и выше). Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli].
 
-Также необходим локально установленный модуль Docker. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в любой системе: [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
+Также необходим локально установленный модуль Docker. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в любой системе [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
 
 Та как в службе Azure Cloud Shell нет всех необходимых компонентов Docker (управляющая программа `dockerd`), ее нельзя использовать в этом руководстве.
 
@@ -37,7 +38,7 @@ az group create --name myResourceGroup --location eastus
 
 ## <a name="create-a-container-registry"></a>Создание реестра контейнеров
 
-В этом кратком руководстве описано, как создать реестр ценовой категории *Базовый*. Это оптимальный (недорогой) вариант для разработчиков, которые знакомятся с Реестром контейнеров Azure. См. дополнительные сведения об уровнях служб в статье [Номера SKU реестра контейнеров][container-registry-skus].
+В этом кратком руководстве описано, как создать реестр ценовой категории *Базовый*. Это оптимальный (недорогой) вариант для разработчиков, которые знакомятся с Реестром контейнеров Azure. Дополнительные сведения об уровнях служб см. в статье [Номера SKU реестра контейнеров][container-registry-skus].
 
 Создайте экземпляр ACR с помощью команды [az acr create][az-acr-create]. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов. В следующем примере используется имя *myContainerRegistry007*. Замените его уникальным значением.
 

@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: tutorial
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: f8697042ed46e0ff333f736454346908d76cf039
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 73f9ee597682cc995f3a2cc783abeee92bf11bd2
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67718380"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68501143"
 ---
 # <a name="tutorial-launch-the-immersive-reader-nodejs"></a>Руководство по Запуск Иммерсивного средства чтения (Node.js)
 
@@ -33,7 +33,7 @@ ms.locfileid: "67718380"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Ключ подписки иммерсивного средства чтения. Получите ключ, следуя [этим инструкциям](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account).
+* Ресурс "Иммерсивное средство чтения", настроенный для проверки подлинности Azure Active Directory (Azure AD). Инструкции по настройке см. [здесь](./azure-active-directory-authentication.md). Вам потребуются некоторые значения, созданные здесь при настройке свойств среды. Сохраните результаты своего сеанса в текстовом файле для использования в будущем.
 * [Node.js](https://nodejs.org/) и [Yarn](https://yarnpkg.com).
 * Интегрированная среда разработки, такая как [Visual Studio Code](https://code.visualstudio.com/).
 
@@ -55,20 +55,31 @@ yarn add request
 yarn add dotenv
 ```
 
-## <a name="acquire-an-access-token"></a>Получение маркера доступа
+## <a name="acquire-an-azure-ad-authentication-token"></a>Получение маркера проверки подлинности Azure AD
 
-Затем напишите API серверной части для извлечения маркера доступа с использованием ключа подписки. Для выполнения следующего шага вам потребуются ключ подписки и конечная точка. Ключ подписки на портале Azure вы сможете найти на странице ключей вашего ресурса иммерсивного средства чтения. а конечную точку — на странице "Обзор".
+Затем напишите API серверной части, чтобы получить токен проверки подлинности Azure AD.
 
-Получив ключ подписки и конечную точку, создайте новый файл с именем _.env_ и вставьте в него следующий код, заменив значения `{YOUR_SUBSCRIPTION_KEY}` и `{YOUR_ENDPOINT}` на свой ключ подписки и конечную точку соответственно.
+Для этой части потребуются некоторые значения из описанного выше предварительного требования конфигурации проверки подлинности Azure AD. Вернитесь к текстовому файлу, который вы сохранили в этом сеансе.
+
+````text
+TenantId     => Azure subscription TenantId
+ClientId     => Azure AD ApplicationId
+ClientSecret => Azure AD Application Service Principal password
+Subdomain    => Immersive Reader resource subdomain (resource 'Name' if the resource was created in the Azure portal, or 'CustomSubDomain' option if the resource was created with Azure CLI Powershell. Check the Azure portal for the subdomain on the Endpoint in the resource Overview page, for example, 'https://[SUBDOMAIN].cognitiveservices.azure.com/')
+````
+
+Получив эти значения, создайте новый файл с именем _.env_ и вставьте в него следующий код, указав значения пользовательских свойств сверху.
 
 ```text
-SUBSCRIPTION_KEY={YOUR_SUBSCRIPTION_KEY}
-ENDPOINT={YOUR_ENDPOINT}
+TENANT_ID={YOUR_TENANT_ID}
+CLIENT_ID={YOUR_CLIENT_ID}
+CLIENT_SECRET={YOUR_CLIENT_SECRET}
+SUBDOMAIN={YOUR_SUBDOMAIN}
 ```
 
 Не забудьте зафиксировать этот файл в системе управления версиями, так как он содержит секреты, для которых не следует предоставлять открытый доступ.
 
-Затем откройте файл _app.js_ и добавьте следующее в его начало. Этот код загружает ключ подписки и конечную точку в качестве переменных среды в Node.
+Затем откройте файл _app.js_ и добавьте следующее в его начало. В Node загрузятся свойства, указанные в файле .env в качестве переменных среды.
 
 ```javascript
 require('dotenv').config();
@@ -80,31 +91,45 @@ require('dotenv').config();
 var request = require('request');
 ```
 
-Затем добавьте следующий код непосредственно под этой строкой. Этот код создает конечную точку API, которая получает маркер доступа с помощью вашего ключа подписки, а затем возвращает этот маркер.
+Затем добавьте следующий код непосредственно под этой строкой. Этот код создает конечную точку API, которая получает токен проверки подлинности Azure AD, используя пароль субъект-службы, а затем возвращает этот токен. Существует также вторая конечная точка для получения поддомена.
 
 ```javascript
-router.get('/token', function(req, res, next) {
-  request.post({
-    headers: {
-        'Ocp-Apim-Subscription-Key': process.env.SUBSCRIPTION_KEY,
-        'content-type': 'application/x-www-form-urlencoded'
-    },
-    url: process.env.ENDPOINT
-  },
-  function(err, resp, token) {
-    return res.send(token);
-  });
+router.get('/getimmersivereadertoken', function(req, res) {
+  request.post ({
+          headers: {
+              'content-type': 'application/x-www-form-urlencoded'
+          },
+          url: `https://login.windows.net/${process.env.TENANT_ID}/oauth2/token`,
+          form: {
+              grant_type: 'client_credentials',
+              client_id: process.env.CLIENT_ID,
+              client_secret: process.env.CLIENT_SECRET,
+              resource: 'https://cognitiveservices.azure.com/'
+          }
+      },
+      function(err, resp, token) {
+          if (err) {
+              return res.status(500).send('CogSvcs IssueToken error');
+          }
+
+          return res.send(JSON.parse(token).access_token);
+      }
+  );
+});
+
+router.get('/subdomain', function (req, res) {
+    return res.send(process.env.SUBDOMAIN);
 });
 ```
 
-Эта конечная точка API должна быть защищена с помощью одного из методов аутентификации (например, [OAuth](https://oauth.net/2/)). Это выходит за рамки данного учебника.
+Конечная точка API **getimmersivereadertoken** должна быть защищена с помощью формы проверки подлинности (например, [OAuth](https://oauth.net/2/)), чтобы предотвратить получение неавторизованными пользователями токенов для использования относительно службы "Иммерсивное средство чтения" и выставления счетов. Эти сведения выходят за рамки этого руководства.
 
 ## <a name="launch-the-immersive-reader-with-sample-content"></a>Запуск иммерсивного средства чтения с примером содержимого
 
 1. Откройте файл _views\layout.pug_ и добавьте следующий код под тег `head` перед тегом `body`. Эти теги `script` загрузят [пакет SDK для иммерсивного средства чтения](https://github.com/Microsoft/immersive-reader-sdk) и jQuery.
 
     ```pug
-    script(src='https://contentstorage.onenote.office.net/onenoteltir/immersivereadersdk/immersive-reader-sdk.0.0.1.js')
+    script(src='https://contentstorage.onenote.office.net/onenoteltir/immersivereadersdk/immersive-reader-sdk.0.0.2.js')
     script(src='https://code.jquery.com/jquery-3.3.1.min.js')
     ```
 
@@ -118,21 +143,47 @@ router.get('/token', function(req, res, next) {
       p(id='content') The study of Earth's landforms is called physical geography. Landforms can be mountains and valleys. They can also be glaciers, lakes or rivers.
       div(class='immersive-reader-button' data-button-style='iconAndText' data-locale='en-US' onclick='launchImmersiveReader()')
       script.
-        function launchImmersiveReader() {
-          // First, get a token using our /token endpoint
-          $.ajax('/token', { success: token => {
-            // Second, grab the content from the page
+
+        function getImmersiveReaderTokenAsync() {
+            return new Promise((resolve, reject) => {
+                $.ajax({
+                    url: '/getimmersivereadertoken',
+                    type: 'GET',
+                    success: token => {
+                        resolve(token);
+                    },
+                    error: err => {
+                        console.log('Error in getting token!', err);
+                        reject(err);
+                    }
+                });
+            });
+        }
+
+        function getSubdomainAsync() {
+            return new Promise((resolve, reject) => {
+                $.ajax({
+                    url: '/subdomain',
+                    type: 'GET',
+                    success: subdomain => { resolve(subdomain); },
+                    error: err => { reject(err); }
+                });
+            });
+        }
+
+        async function launchImmersiveReader() {
             const content = {
-              title: document.getElementById('title').innerText,
-              chunks: [ {
-                content: document.getElementById('content').innerText + '\n\n',
-                lang: 'en'
-              } ]
+                title: document.getElementById('title').innerText,
+                chunks: [{
+                    content: document.getElementById('content').innerText + '\n\n',
+                    lang: 'en'
+                }]
             };
 
-            // Third, launch the Immersive Reader
-            ImmersiveReader.launchAsync(token, content);
-          }});
+            const token = await getImmersiveReaderTokenAsync();
+            const subdomain = await getSubdomainAsync();
+
+            ImmersiveReader.launchAsync(token, subdomain, content);
         }
     ```
 
@@ -214,4 +265,4 @@ router.get('/token', function(req, res, next) {
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/Microsoft/immersive-reader-sdk) и [справочнике по этому пакету](./reference.md).
-* Просмотрите примеры кода на сайте [GitHub](https://github.com/microsoft/immersive-reader-sdk/samples/advanced-csharp).
+* Просмотрите примеры кода на сайте [GitHub](https://github.com/microsoft/immersive-reader-sdk/tree/master/samples/advanced-csharp).

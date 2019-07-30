@@ -6,16 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 06/13/2019
+ms.date: 07/23/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 688c33a098bb34a6b39937579e2e25591786c531
-ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.openlocfilehash: 49f3f608ff34847905b219047af843db00da78c4
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67147488"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68480046"
 ---
+::: zone target="docs"
+
 # <a name="tutorial-unpack-connect-and-unlock-azure-data-box-disk"></a>Руководство по Распаковка, подключение и разблокировка Диска Azure Data Box
 
 Это руководство описывает, как распаковать, подключить и разблокировать диск Azure Data Box.
@@ -173,7 +175,7 @@ ms.locfileid: "67147488"
  
 5. Введите `y`, чтобы продолжить установку. Скрипт устанавливает следующие пакеты: 
    - **epel-release** — репозиторий, содержащий следующие три пакета. 
-   - **dislocker и fuse-dislocker** — эта служебная программа помогает расшифровать зашифрованные диски BitLocker. 
+   - **dislocker и fuse-dislocker** — эти служебные программы помогают расшифровывать зашифрованные диски BitLocker. 
    - **ntfs-3g** — пакет, который помогает подключать тома с файловой системой NTFS. 
  
      После успешной установки пакетов в терминале отобразится соответствующее уведомление.     
@@ -259,6 +261,54 @@ ms.locfileid: "67147488"
 
 Если вы столкнетесь с проблемами при разблокировке дисков, ознакомьтесь со сведениями об [устранении неполадок при разблокировке](data-box-disk-troubleshoot-unlock.md). 
 
+::: zone-end
+
+::: zone target="chromeless"
+
+1. Распакуйте диски и используйте прилагаемый кабель, чтобы подключить диск к клиентскому компьютеру.
+2. Загрузите и извлеките набор средств Data Box Disk на тот же компьютер, который будет использоваться для копирования данных.
+
+    > [!div class="nextstepaction"]
+    > [Скачать набор средств для диска Data Box для Windows](https://aka.ms/databoxdisktoolswin)
+
+    или
+    > [!div class="nextstepaction"]
+    > [Скачать набор средств для диска Data Box для Linux](https://aka.ms/databoxdisktoolslinux) 
+
+3. Чтобы разблокировать диски на клиенте Windows, откройте окно командной строки или запустите Windows PowerShell от имени администратора на том же компьютере.
+
+    - Введите следующую команду в той же папке, где установлено средство разблокировки Data Box Disk.
+
+        ``` 
+        .\DataBoxDiskUnlock.exe
+        ```
+    -  Укажите ключ доступа, полученный из **Общие сведения > Сведения об устройстве** на портале Azure. Отобразится буква диска, присвоенная диску. 
+4. Откройте терминал, чтобы разблокировать диски на клиенте Linux. Перейдите в папку со скачанным программным обеспечением. Введите следующие команды для изменения разрешения для файлов, чтобы можно было их выполнить. 
+
+    ```
+    chmod +x DataBoxDiskUnlock_x86_64
+    chmod +x DataBoxDiskUnlock_Prep.sh
+    ``` 
+    Выполните скрипт, чтобы установить все необходимые двоичные файлы.
+
+    ```
+    sudo ./DataBoxDiskUnlock_Prep.sh
+    ```
+    Запустите средство разблокировки диска Data Box. Укажите ключ доступа на портале Azure, перейдя в раздел **Общие сведения > Сведения об устройстве**. При необходимости укажите список томов, зашифрованных BitLocker, в одинарных кавычках, чтобы разблокировать их.
+
+    ```
+    sudo ./DataBoxDiskUnlock_x86_64 /PassKey:’<Your passkey from Azure portal>’
+    ```      
+5. Повторяйте шаги по разблокировке при любых будущих повторных вставках диска. Используйте команду справки, если требуется помощь со средством разблокировки диска Data Box.
+
+Когда диск будет разблокирован, можно просмотреть содержимое диска.
+
+Чтобы ознакомиться с дополнительными сведениями о том, как настроить и разблокировать диски, перейдите в раздел [Руководство. Распаковка, подключение и разблокировка Диска Azure Data Box](data-box-disk-deploy-set-up.md).
+
+::: zone-end
+
+::: zone target="docs"
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 В этом руководстве раскрыты следующие сведения о диске Azure Data Box.
@@ -274,4 +324,6 @@ ms.locfileid: "67147488"
 
 > [!div class="nextstepaction"]
 > [Tutorial: Copy data to Azure Data Box Disk and verify](./data-box-disk-deploy-copy-data.md) (Руководство. Копирование данных на диск Data Box)
+
+::: zone-end
 
