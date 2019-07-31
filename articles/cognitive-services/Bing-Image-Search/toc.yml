@@ -115,6 +115,7 @@
     - name: Поддержка языков и региональных параметров
       href: language-support.md
     - name: Аналитика для API Поиска изображений Bing
-      href: bing-image-stats.md
+      maintainContext: true
+      href: ../bing-web-search/bing-web-stats.md
     - name: Соответствие требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

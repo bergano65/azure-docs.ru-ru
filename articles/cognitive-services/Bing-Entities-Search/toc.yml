@@ -93,6 +93,7 @@
     - name: Конечная точка API Поиска сущностей Bing
       href: entity-search-endpoint.md
     - name: Аналитика для API Поиска сущностей Bing
-      href: bing-entity-stats.md
+      maintainContext: true
+      href: ../bing-web-search/bing-web-stats.md
     - name: Соответствие требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

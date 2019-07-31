@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 07/22/2019
+ms.date: 07/30/2019
 ms.author: diberry
-ms.openlocfilehash: edaa36cf22e63d42eb347aea3da1816e2c93b45e
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: a61f196a509c3e84b518fffb4eb78f5f7430cb28
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68479221"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68667582"
 ---
 # <a name="preview-migrate-to-api-version-3x-for-luis-apps"></a>Предварительный просмотр: Переход на API версии 3. x для приложений LUIS
 
@@ -80,7 +80,7 @@ API конечной точки прогнозирования запросов 
 
 API V3 имеет разные параметры строки запроса.
 
-|Имя параметра|Type|Version|Значение по умолчанию|Цель|
+|Имя параметра|Тип|Version|Значение по умолчанию|Цель|
 |--|--|--|--|--|
 |`log`|Логический|V2 & V3|False|Сохранить запрос в файле журнала.| 
 |`query`|строка|Только версия 3|Нет значения по умолчанию — оно требуется в запросе GET.|**В версии 2**utterance для прогнозирования находится в `q` параметре. <br><br>**В версии 3**функции передаются в `query` параметре.|
@@ -150,7 +150,9 @@ API V3 имеет разные параметры строки запроса.
 }
 ```
 
-`normalizedQuery` Содержит исправления правописания. Это соответствует свойству `alteredQuery`API v2.  
+<!--
+The `alteredQuery` contains spelling corrections. This corresponds to the V2 API property `alteredQuery`.  
+-->
 
 `intents` Объект является неупорядоченным списком. Не считайте, что первый дочерний `intents` элемент в соответствует `topIntent`. Вместо этого используйте `topIntent` значение, чтобы найти оценку:
 
@@ -380,7 +382,7 @@ const associatedMetadata = entities.$instance.my_list_entity[item];
 
 #### <a name="resolution"></a>Разрешение
 
-Необязательное  `resolution` свойство возвращает в ответе прогноза, что позволяет передать метаданные, связанные с внешней сущностью, а затем получить ее обратно в ответе. 
+Необязательное `resolution` свойство возвращает в ответе прогноза, что позволяет передать метаданные, связанные с внешней сущностью, а затем получить ее обратно в ответе. 
 
 Основной целью является расширение предварительно созданных сущностей, но оно не ограничивается этим типом сущности. 
 

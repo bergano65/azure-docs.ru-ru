@@ -52,7 +52,8 @@
     - name: Использование аналитики Bing
       href: bing-insights-usage.md
     - name: Аналитика для API Визуального поиска
-      href: bing-visual-search-stats.md
+      maintainContext: true
+      href: ../bing-web-search/bing-web-stats.md
 - name: Инструкции
   items:
     - name: Получение сведений с помощью маркеров
