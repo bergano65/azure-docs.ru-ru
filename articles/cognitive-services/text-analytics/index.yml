@@ -13,7 +13,7 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 09/24/2018
+  ms.date: 07/29/2019
   ms.author: nitinme
 abstract:
   description: "API Анализа текста\_— это облачная служба, которая обеспечивает расширенную обработку необработанного текста на естественных языках и включает в себя четыре основные функции: анализ тональности, извлечение ключевых фраз, распознавание именованных сущностей и определение языка. Узнайте, как анализировать содержимое разными способами, ознакомившись с нашими краткими руководствами, примерами и учебниками."
@@ -34,11 +34,11 @@ sections:
             image:
               src: ../media/index/i_get-started.svg
             title: Регистрация для использования API Анализа текста
-          - href: /azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-access-key
-            html: '<p>Узнайте, как получить ключи доступа и конечные точки для API Анализа текста.</p>'
+          - href: /azure/cognitive-services/text-analytics/whats-new
+            html: <p>Оставайтесь в курсе последних нововведений в API "Анализ текста".</p>
             image:
               src: ../media/index/i_tasks.svg
-            title: Ключи доступа для API Анализа текста
+            title: Новые возможности в API "Анализ текста"
   - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph

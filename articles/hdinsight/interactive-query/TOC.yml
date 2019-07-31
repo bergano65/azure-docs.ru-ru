@@ -22,6 +22,12 @@
     - name: Планирование ресурсов
       href: ../hdinsight-capacity-planning.md
       maintainContext: true
+    - name: Устранение неполадок
+      items:
+        - name: Исключение OutOfMemoryError
+          items:
+            - name: Превышено ограничение на накладные расходы при сборке мусора
+              href: ./interactive-query-troubleshoot-outofmemory-overhead-exceeded.md
 - name: Практическое руководство
   items:
     - name: "Перенос рабочих нагрузок Hive в HDInsight\_4.0"

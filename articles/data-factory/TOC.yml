@@ -526,6 +526,8 @@
           href: create-shared-self-hosted-integration-runtime-powershell.md
     - name: Запуск пакетов служб Integration Services в Azure
       items:
+        - name: Запуск пакетов Integration Services в Azure из SSDT
+          href: how-to-invoke-ssis-package-ssdt.md
         - name: Запуск пакетов Integration Services с помощью действия выполнения пакета Integration Services
           href: how-to-invoke-ssis-package-ssis-activity.md
         - name: Запуск пакетов Integration Services с помощью действия хранимой процедуры

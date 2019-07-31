@@ -231,9 +231,11 @@
           href: cognitive-search-resources-documentation.md
     - name: Хранилище знаний (предварительная версия)
       items:
-        - name: Как приступить к работе
+        - name: "Подключение с помощью Power\_BI"
+          href: knowledge-store-connect-powerbi.md
+        - name: Создание с помощью REST и Postman
           href: knowledge-store-howto.md
-    - name: Запрос данных
+    - name: Запрашивание данных
       items:
         - name: Создание простого запроса
           href: search-query-overview.md

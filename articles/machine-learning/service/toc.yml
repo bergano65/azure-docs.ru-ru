@@ -33,6 +33,12 @@
   items:
     - name: Пакет SDK для Python
       items:
+        - name: Создание первого эксперимента машинного обучения
+          items:
+            - name: 1. Настройка рабочей области и среды разработки
+              href: tutorial-1st-experiment-sdk-setup.md
+            - name: 2. Обучение первой модели
+              href: tutorial-1st-experiment-sdk-train.md
         - name: Классификация изображений (данные MNIST)
           items:
             - name: 1. Обучение модели

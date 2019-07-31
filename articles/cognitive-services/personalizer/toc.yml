@@ -43,6 +43,8 @@
         - name: Автономная оценка
           href: concepts-offline-evaluation.md
           displayName: 'learning policy, Counterfactual, features'
+        - name: Оценка возможностей
+          href: concept-feature-evaluation.md
     - name: Масштабируемость и производительность
       href: concepts-scalability-performance.md
 - name: Руководства

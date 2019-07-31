@@ -105,8 +105,14 @@
           href: container-registry-tasks-multi-step.md
         - name: Сборка образа с помощью пакетов сборок (предварительная версия)
           href: container-registry-tasks-pack-build.md
-        - name: Использование с управляемым удостоверением
-          href: container-registry-tasks-authentication-managed-identity.md
+        - name: Доступ к защищенным ресурсам с помощью управляемых удостоверений
+          items:
+            - name: Включение управляемого удостоверения в задаче
+              href: container-registry-tasks-authentication-managed-identity.md
+            - name: Проверка подлинности в разных реестрах с помощью задачи
+              href: container-registry-tasks-cross-registry-authentication.md
+            - name: Внешняя проверка подлинности с помощью хранилища ключей
+              href: container-registry-tasks-authentication-key-vault.md
     - name: Реестры и другие службы Azure
       items:
         - name: Экземпляры контейнеров Azure
