@@ -10,10 +10,10 @@ ms.date: 07/13/2017
 ms.author: robb
 ms.subservice: diagnostic-extension
 ms.openlocfilehash: c5fc2199de8623dd3a9f2bc5faf23c7c40d67d75
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 07/31/2019
 ms.locfileid: "64922826"
 ---
 # <a name="streaming-azure-diagnostics-data-in-the-hot-path-by-using-event-hubs"></a>Потоковая передача данных системы диагностики Azure по критическому пути с помощью Центров событий
@@ -34,7 +34,7 @@ ms.locfileid: "64922826"
 * Как просмотреть данные потока Центров событий.
 * Как устранить неполадки подключения.  
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Прием данных из системы диагностики Azure с помощью Центров событий поддерживается для облачных служб, виртуальных машин, Масштабируемых наборов виртуальных машин и Service Fabric, начиная с выпуска пакета SDK для Azure 2.9 и соответствующих средств Azure для Visual Studio.
 
 * Расширение системы диагностики Azure версии 1.6 (в[пакете SDK для Azure для .NET 2.9 или более поздней версии](https://azure.microsoft.com/downloads/) оно используется по умолчанию).
@@ -318,7 +318,7 @@ namespace EventHubListener
 
     Попробуйте найти в службе хранилища Azure таблицу, которая содержит журналы и ошибки для самой системы диагностики Azure: **WADDiagnosticInfrastructureLogsTable**. Для этого можно использовать, например, [обозреватель хранилищ Azure](https://www.storageexplorer.com). Подключитесь к соответствующей учетной записи хранения, просмотрите эту таблицу и выполните запрос по метке времени за последние 24 часа. С помощью этого инструмента можно экспортировать информацию в CSV-файл и открыть его в таком приложении, как Microsoft Excel. Excel упрощает поиск строк телефонных карточек, таких как **EventHubs**, чтобы узнать, какая обнаружена ошибка.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 •    [Дополнительные сведения о Центрах событий](https://azure.microsoft.com/services/event-hubs/)
 
 ## <a name="appendix-complete-azure-diagnostics-configuration-file-wadcfgx-example"></a>Приложение. Полный пример файла конфигурации системы диагностики Azure (WADCFGX-файл)
@@ -505,7 +505,7 @@ namespace EventHubListener
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о Центрах событий см. в следующих источниках:
 
 * [Общие сведения о Центрах событий](../../event-hubs/event-hubs-about.md)

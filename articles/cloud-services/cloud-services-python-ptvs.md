@@ -10,28 +10,28 @@ ms.topic: conceptual
 ms.date: 07/18/2017
 ms.author: gwallace
 ms.openlocfilehash: 981b1cc4a7adb98ba68ebf3a7673b7116479e704
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
+ms.lasthandoff: 07/31/2019
 ms.locfileid: "68359572"
 ---
 # <a name="python-web-and-worker-roles-with-python-tools-for-visual-studio"></a>Использование веб-ролей и рабочих ролей Python с помощью средств Python для Visual Studio
 
 В этой статье представлен обзор способов использования веб-ролей и рабочих ролей Python с помощью [инструментов Python для Visual Studio][Python Tools for Visual Studio]. Узнайте, как с помощью Visual Studio создать и развернуть базовую облачную службу, которая использует Python.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 * [Visual Studio 2013, 2015 или 2017](https://www.visualstudio.com/)
 * [Инструменты Python для Visual Studio][Python Tools for Visual Studio] (PTVS).
-* [Azure SDK Tools для VS 2013][Azure SDK Tools for VS 2013] or  
-[Azure SDK Tools for VS 2015][Azure SDK Tools for VS 2015] или  
-[Azure SDK Tools для VS 2017] [Azure SDK Tools для VS 2017]
+* [Azure SDK Tools для VS 2013][Azure SDK Tools for VS 2013] или  
+[Azure SDK Tools для VS 2015][Azure SDK Tools for VS 2015] или  
+[Azure SDK Tools для VS 2017][Azure SDK Tools for VS 2017]
 * [Python 2.7 (32-разрядный)][Python 2.7 32-bit] или [Python 3.5 (32-разрядный)][Python 3.5 32-bit].
 
 [!INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ## <a name="what-are-python-web-and-worker-roles"></a>Что такое веб-роли и рабочие роли Python?
-Azure предоставляет три модели вычислений для запуска приложений: [Функция веб-приложений в службе][execution model-web sites], [Azure Virtual Machines][execution model-vms]приложений Azure и модель выполнения [облачных служб Azure][— облачные службы]. Все три модели поддерживают Python. Облачные службы, которые включают в себя веб-роли и рабочие роли, предоставляют *платформу как службу (PaaS)* . В рамках облачной службы веб-роль предоставляет выделенный веб-сервер IIS для размещения внешних веб-приложений, тогда как рабочая роль может выполнять асинхронные, долгосрочные или постоянные задачи, не зависящие от пользовательских действий и пользовательского ввода.
+Azure предоставляет три модели вычислений для запуска приложений: [Функция веб-приложений в службе приложений Azure][execution model-web sites], [виртуальные машины Azure][execution model-vms]и [облачные службы Azure][execution model-cloud services]. Все три модели поддерживают Python. Облачные службы, которые включают в себя веб-роли и рабочие роли, предоставляют *платформу как службу (PaaS)* . В рамках облачной службы веб-роль предоставляет выделенный веб-сервер IIS для размещения внешних веб-приложений, тогда как рабочая роль может выполнять асинхронные, долгосрочные или постоянные задачи, не зависящие от пользовательских действий и пользовательского ввода.
 
 Дополнительные сведения см. в разделе [Информация об облачных службах].
 

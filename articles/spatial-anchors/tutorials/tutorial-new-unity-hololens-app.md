@@ -8,12 +8,12 @@ ms.author: pmorgan
 ms.date: 07/05/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 57244dd9f3365b3899bcc1dde6382cc3b51719d9
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 7e7d4a542146fb8d342cce6c34f9d97e72349f84
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722924"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561381"
 ---
 # <a name="tutorial-step-by-step-instructions-to-create-a-new-hololens-unity-app-using-azure-spatial-anchors"></a>Руководство по созданию приложения HoloLens Unity с использованием Пространственных привязок Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "67722924"
 
 В рамках этого руководства вам потребуются:
 
-1. Компьютер Windows с установленной программой <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2017+</a> с рабочей нагрузкой **Разработка приложений для универсальной платформы Windows** и компонентом **Пакет SDK для Windows 10 (10.0.17763.0 или более поздняя версия)** , а также <a href="https://git-scm.com/download/win" target="_blank">Git для Windows</a>.
+1. Компьютер Windows с установленной программой <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2017 и более поздних версий</a> с рабочей нагрузкой **Разработка приложений для универсальной платформы Windows** и компонентом **Пакет SDK для Windows 10 (10.0.18362.0 или более поздней версии)** , а также <a href="https://git-scm.com/download/win" target="_blank">Git для Windows</a>.
 2. Установленное [расширение Visual Studio C++/WinRT](https://aka.ms/cppwinrt/vsix) из [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 3. Устройство HoloLens с включенным [режимом разработчика](https://docs.microsoft.com/windows/mixed-reality/using-visual-studio). Для этой статьи требуется устройство HoloLens с [обновлением Windows 10 за октябрь 2018 г.](https://docs.microsoft.com/windows/mixed-reality/release-notes-october-2018 ) (также известным как RS5). Чтобы обновить HoloLens до последней версии, откройте приложение **Параметры**, перейдите в раздел **Обновление и безопасность**, а затем нажмите кнопку **Проверить обновления**.
 
@@ -57,10 +57,10 @@ ms.locfileid: "67722924"
 > [!NOTE]
 > Если значок "Магазин Windows" не отображается, проверьте все еще раз, чтобы убедится, что перед установкой вы выбрали серверную часть сценариев .NET Магазина Windows. В противном случае может потребоваться переустановить Unity с правильной установкой Windows.
 
-**Проверка конфигурации .NET**
+**Проверка конфигурации серверной платформы для написания скриптов**
 1. Выберите **Изменить** > **Параметры проекта** > **Проигрыватель** (**Проигрыватель** все еще может быть открыт из предыдущего шага).
 2. На панели **Инспектор** для параметра **Настройки проигрывателя** выберите значок **Магазин Windows**.
-3. В разделе конфигурации **Другие параметры** убедитесь, что для параметра **Scripting Backend** (Серверная часть сценария) установлено значение **.NET**.
+3. В разделе конфигурации **Other Settings** (Другие параметры) убедитесь, что для параметра **Scripting Backend** (Серверная платформа для написания скриптов) установлено значение **IL2CPP**.
 
 **Установка возможностей**
 1. Выберите **Изменить** > **Параметры проекта** > **Проигрыватель** (**Проигрыватель** все еще может быть открыт из предыдущего шага).

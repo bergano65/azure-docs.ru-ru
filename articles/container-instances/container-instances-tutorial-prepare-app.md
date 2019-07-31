@@ -10,10 +10,10 @@ ms.date: 03/21/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
 ms.openlocfilehash: 719237f63d387cf56ab7947f8f168e0aa4351376
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68325584"
 ---
 # <a name="tutorial-create-a-container-image-for-deployment-to-azure-container-instances"></a>Руководство. Создание образа контейнера для развертывания в службе "Экземпляры контейнеров Azure"
@@ -49,7 +49,7 @@ git clone https://github.com/Azure-Samples/aci-helloworld.git
 
 ## <a name="build-the-container-image"></a>Создание образа контейнера
 
-На примере файла Dockerfile в примере приложения показано, как создается контейнер. Он запускается из [официального образа Node.js][docker-hub-nodeimage] based on [Alpine Linux][alpine-linux], небольшого дистрибутива, который хорошо подходит для использования с контейнерами. Затем файлы приложения копируются в контейнер, при помощи диспетчера пакетов узла устанавливаются зависимости, после чего запускается приложение.
+На примере файла Dockerfile в примере приложения показано, как создается контейнер. Он запускается из [официального образа Node.js][docker-hub-nodeimage] на основе [Alpine Linux][alpine-linux], небольшого дистрибутива, который хорошо подходит для использования с контейнерами. Затем файлы приложения копируются в контейнер, при помощи диспетчера пакетов узла устанавливаются зависимости, после чего запускается приложение.
 
 ```Dockerfile
 FROM node:8.9.3-alpine

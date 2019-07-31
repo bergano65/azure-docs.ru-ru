@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 05/22/2017
 ms.author: gwallace
 ms.openlocfilehash: 5f2ec77452b90d4270de043955fc0b443f045d5b
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
+ms.lasthandoff: 07/31/2019
 ms.locfileid: "68359686"
 ---
 # <a name="enabling-azure-diagnostics-in-azure-cloud-services"></a>Включение системы диагностики Azure в облачных службах Azure
@@ -24,7 +24,7 @@ ms.locfileid: "68359686"
 В этом пошаговом руководстве описывается, как реализовать рабочую роль Azure, которая передает данные телеметрии с помощью класса EventSource .NET. Система диагностики Azure используется для сбора данных телеметрии и хранения их в учетной записи хранения Azure. При создании рабочей роли Visual Studio автоматически включает систему диагностики 1.0 как часть решения в пакетах SDK Azure для .NET версии 2.4 или более поздней. В следующих указаниях описывается процесс создания рабочей роли, отключение системы диагностики 1.0 в решении и развертывание системы диагностики 1.2 или 1.3 в рабочей роли.
 
 ### <a name="prerequisites"></a>предварительные требования
-В данной статье предполагается, что у вас есть подписка Azure и вы используете Visual Studio с пакетом SDK для Azure. Если у вас нет подписки Azure, вы можете зарегистрироваться для получения [бесплатной пробной версии][Free Trial]. Make sure to [Install and configure Azure PowerShell version 0.8.7 or later][Install and configure Azure PowerShell version 0.8.7 or later].
+В данной статье предполагается, что у вас есть подписка Azure и вы используете Visual Studio с пакетом SDK для Azure. Если у вас нет подписки Azure, можно зарегистрироваться для получения [бесплатной пробной версии][Free Trial]. Следует обязательно [установить и настроить Azure PowerShell версии 0.8.7 или более поздней][Install and configure Azure PowerShell version 0.8.7 or later].
 
 ### <a name="step-1-create-a-worker-role"></a>Шаг 1.: Создание рабочей роли
 1. Запустите **Visual Studio**.

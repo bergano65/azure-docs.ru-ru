@@ -9,10 +9,10 @@ ms.topic: tutorial
 ms.date: 06/24/2019
 ms.author: sngun
 ms.openlocfilehash: 85d9cbe7d0807ca0e7951e1e12d1edbbf7c921db
-ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67985889"
 ---
 # <a name="tutorial-develop-an-aspnet-core-mvc-web-application-with-azure-cosmos-db-by-using-net-sdk"></a>Руководство по Разработка веб-приложения ASP.NET Core MVC с использованием Azure Cosmos DB с помощью пакета SDK для .NET 
@@ -132,7 +132,7 @@ ms.locfileid: "67985889"
 
    [!code-csharp[Main](~/samples-cosmosdb-dotnet-core-web-app/src/Controllers/ItemController.cs)]
 
-   Атрибут **ValidateAntiForgeryToken** используется здесь для защиты этого приложения от атак с подделкой межсайтовых запросов. Кроме добавления этого атрибута представления также должны работать с данным маркером защиты от подделки запросов. Дополнительные сведения об этом и примеры правильной реализации этой технологии см. в статье [Preventing Cross-Site Request Forgery (CSRF) Attacks in ASP.NET MVC Application][Preventing Cross-Site Request Forgery]. The source code provided on [GitHub][GitHub] (Предотвращение атак с подделкой межсайтовых запросов в приложениях ASP.NET MVC) имеет полную реализацию.
+   Атрибут **ValidateAntiForgeryToken** используется здесь для защиты этого приложения от атак с подделкой межсайтовых запросов. Кроме добавления этого атрибута представления также должны работать с данным маркером защиты от подделки запросов. Дополнительные сведения об этом и примеры правильной реализации этой технологии см. в статье [Preventing Cross-Site Request Forgery (CSRF) Attacks in ASP.NET MVC Application][Preventing Cross-Site Request Forgery] (Предотвращение атак с подделкой межсайтовых запросов в приложениях ASP.NET MVC). Исходный код, предоставленный на [GitHub][GitHub], имеет полную реализацию.
 
    Для защиты от атак overposting также используется атрибут **Bind** в параметре метода. Дополнительные сведения см. в записи блога [Implementing Basic CRUD Functionality with the Entity Framework in ASP.NET MVC Application][Basic CRUD Operations in ASP.NET MVC] (Реализация базовых функций CRUD с помощью Entity Framework в приложении ASP.NET MVC).
 

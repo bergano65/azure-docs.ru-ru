@@ -10,10 +10,10 @@ ms.date: 06/12/2019
 ms.author: danlep
 ms.custom: seodec18, mvc
 ms.openlocfilehash: 496aa065b3b10eac546dbe41f5a2650acc112d29
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68310516"
 ---
 # <a name="tutorial-automate-container-image-builds-when-a-base-image-is-updated-in-an-azure-container-registry"></a>Руководство. автоматизации сборок образов контейнера при обновлении базового образа в службе "Реестр контейнеров Azure" 
@@ -62,7 +62,7 @@ GIT_PAT=<personal-access-token> # The PAT you generated in the second tutorial
 
 ## <a name="base-images"></a>Базовые образы
 
-Файлы Docker, определяющие большинство образов контейнера, указывают родительский образ, на котором они основаны и который часто называют их *базовым образом*. Базовые образы обычно содержат операционную систему, например [Alpine Linux][base-alpine] or [Windows Nano Server][base-windows], к которой применяются остальные слои контейнера. Они также могут включать в себя платформы приложений, например [Node.js][base-node] или [.NET Core][base-dotnet].
+Файлы Docker, определяющие большинство образов контейнера, указывают родительский образ, на котором они основаны и который часто называют их *базовым образом*. Базовые образы обычно содержат операционную систему, например [Alpine Linux][base-alpine] или [Windows Nano Server][base-windows], к которой применяются остальные слои контейнера. Они также могут включать в себя платформы приложений, например [Node.js][base-node] или [.NET Core][base-dotnet].
 
 ### <a name="base-image-updates"></a>Обновления базового образа
 

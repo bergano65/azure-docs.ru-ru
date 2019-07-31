@@ -10,10 +10,10 @@ ms.date: 09/24/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
 ms.openlocfilehash: a9e84210427612143bffe33efe4a5da5364b7a22
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68310439"
 ---
 # <a name="tutorial-build-and-deploy-container-images-in-the-cloud-with-azure-container-registry-tasks"></a>Руководство. Создание и развертывание образов контейнера в облаке с помощью службы "Задачи Реестра контейнеров Azure"
@@ -192,7 +192,7 @@ az keyvault create --resource-group $RES_GROUP --name $AKV_NAME
 
 Теперь вам нужно создать субъект-службу и сохранить его учетные данные в хранилище ключей.
 
-Используйте команду [az ad sp create-for-rbac][az-ad-sp-create-for-rbac] command to create the service principal, and [az keyvault secret set][az-keyvault-secret-set], чтобы сохранить **пароль** субъекта-службы в хранилище:
+Используйте команду [az ad sp create-for-rbac][az-ad-sp-create-for-rbac] для создания субъекта-службы и [az keyvault secret set][az-keyvault-secret-set] для сохранения **пароля** субъекта-службы в хранилище:
 
 ```azurecli-interactive
 # Create service principal, store its password in AKV (the registry *password*)

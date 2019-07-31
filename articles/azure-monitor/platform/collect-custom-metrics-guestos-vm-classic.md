@@ -9,10 +9,10 @@ ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: ''
 ms.openlocfilehash: 57212da1a8da7ee6c57faf2413b88a413df04817
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 07/31/2019
 ms.locfileid: "66129527"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-data-store-for-a-windows-virtual-machine-classic"></a>Отправка метрик ОС для виртуальной машины Windows (классическая) в хранилище данных Azure Monitor
@@ -27,7 +27,7 @@ ms.locfileid: "66129527"
 
 Процесс, описанный в этой статье, применим только к классическим виртуальным машинам под управлением ОС Windows.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Вам необходимы права [администратора службы или соадминистратора](../../billing/billing-add-change-azure-subscription-administrator.md) в подписке Azure. 
 
@@ -201,6 +201,6 @@ ms.locfileid: "66129527"
    ![График метрик](./media/collect-custom-metrics-guestos-vm-classic/plot-metrics.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
 

@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 06/10/2019
+ms.date: 07/26/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 456c984e577e3427ce8cd62d6f63987118f2c8ed
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: e0725988ff88baea2458f0a5e459440874e66088
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67164154"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68596438"
 ---
 # <a name="tutorial-integrate-oracle-cloud-infrastructure-console-with-azure-active-directory"></a>Руководство по интеграции консоли Oracle Cloud Infrastructure Console с Azure Active Directory
 
@@ -165,7 +165,7 @@ ms.locfileid: "67164154"
 
       ![Конфигурация](./media/oracle-cloud-tutorial/config09.png)
 
-   1. В полях раздела **Identity provider group** (Группа поставщиков удостоверений) введите имя и идентификатор группы, настроенные на портале Azure. Группу необходимо сопоставить с соответствующей группой в поле **Oci group** (Группа OCI).
+   1. В качестве пользовательской группы нужно выбрать **Identity provider group** (Группа поставщиков удостоверений). Для идентификатора группы нужно использовать GUID группы Azure Active Directory. Группу необходимо сопоставить с соответствующей группой в поле **Oci group** (Группа OCI).
 
    1. Вы можете сопоставить несколько групп в соответствии с настройками на портале Azure и потребностями вашей организации. Щелкните **+ Add mapping** (+ Добавить сопоставление), чтобы добавить столько групп, сколько вам требуется.
 

@@ -14,18 +14,18 @@ ms.workload: tbd
 ms.date: 09/05/2018
 ms.author: mbullwin
 ms.openlocfilehash: 64995ad0560efd06bfa0084c948527e8a01e1890
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
+ms.lasthandoff: 07/31/2019
 ms.locfileid: "67443336"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Использование Application Insights для облачных служб Azure
-[Application Insights][start] можно отслеживать [облачных службы приложений Azure](https://azure.microsoft.com/services/cloud-services/) для доступности, производительности, сбоев и использования, объединяя данные из пакеты SDK Application Insights с [системы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics)данных из облачных служб. Благодаря получаемым данным о производительности и эффективности работы приложения на практике вы можете принимать осознанные решения о направлении разработки в каждом жизненном цикле.
+[Application Insights][start] можете отслеживать [приложения облачных служб Azure](https://azure.microsoft.com/services/cloud-services/) на предмет доступности, производительности, сбоев и использования, объединяя данные из Application Insights SDK с [система диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) данными из облачных служб. Благодаря получаемым данным о производительности и эффективности работы приложения на практике вы можете принимать осознанные решения о направлении разработки в каждом жизненном цикле.
 
 ![Панель мониторинга с общими сведениями](./media/cloudservices/overview-graphs.png)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Для этого потребуются следующие компоненты.
 
 * Подписка [Azure](https://azure.com). Войдите с помощью учетной записи Майкрософт для Windows, XBox Live или других облачных служб Майкрософт. 
@@ -41,7 +41,7 @@ ms.locfileid: "67443336"
 
 Возможно, вас удовлетворит только этот вариант. 
 
-Выполните следующие действия, [Просмотр метрик приложения](../../azure-monitor/app/metrics-explorer.md), [запрос данных с помощью Analytics](../../azure-monitor/app/analytics.md). 
+Дальнейшие действия — [Просмотр метрик из приложения](../../azure-monitor/app/metrics-explorer.md), [запрос данных с помощью аналитики](../../azure-monitor/app/analytics.md). 
 
 Чтобы отслеживать производительность в браузере, вы можете [настроить тесты доступности](../../azure-monitor/app/monitor-web-app-availability.md) и [добавить код в веб-страницы](../../azure-monitor/app/javascript.md).
 
@@ -80,7 +80,7 @@ ms.locfileid: "67443336"
 
 Если вы решили создать отдельный ресурс для каждой роли и, возможно, отдельный набор для каждой конфигурации сборки, проще это сделать на портале Application Insights. Если создается много ресурсов, можно [автоматизировать этот процесс](../../azure-monitor/app/powershell.md).
 
-1. В [портала Azure][portal]выберите **New** > **служб для разработчиков** > **Application Insights**.  
+1. В [портал Azure][portal]выберите **новые** > **службы** > для разработчиков**Application Insights**.  
 
     ![Панель Application Insights](./media/cloudservices/01-new.png)
 
@@ -112,7 +112,7 @@ ms.locfileid: "67443336"
 
 1. Чтобы настроить **рабочие ролей**, сделайте следующее: 
 
-    a. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами Nuget**.
+    1\. Щелкните проект правой кнопкой мыши и выберите **Управление пакетами Nuget**.
 
     2\. Добавьте [Application Insights для Windows Servers](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/).
 
@@ -120,7 +120,7 @@ ms.locfileid: "67443336"
 
 1. Чтобы настроить пакет SDK для отправки данных в ресурс Application Insights, сделайте следующее:
 
-    a. В соответствующей функции запуска задайте ключ инструментирования, указанный в параметре конфигурации из файла *.cscfg*.
+    1\. В соответствующей функции запуска задайте ключ инструментирования, указанный в параметре конфигурации из файла *.cscfg*.
  
     ```csharp
    
@@ -136,11 +136,11 @@ ms.locfileid: "67443336"
 1. Настройте для файла *ApplicationInsights.config* копирование в выходной каталог.  
     В сообщении в файле *.config* будет предложено поместить в него ключ инструментирования. Но для облачных приложений лучше задать его в файле *.cscfg*. Такой подход позволит правильно идентифицировать роли на портале.
 
-## <a name="set-up-status-monitor-to-collect-full-sql-queries-optional"></a>Настроить монитор состояния для сбора полный SQL-запросы (необязательно)
+## <a name="set-up-status-monitor-to-collect-full-sql-queries-optional"></a>Настройка монитор состояния для получения полных запросов SQL (необязательно)
 
-Этот шаг требуется только в том случае, если вы хотите собирать полный SQL-запросы на платформе .NET Framework. 
+Этот шаг необходим только в том случае, если требуется захватить полные SQL-запросы на .NET Framework. 
 
-1. В `\*.csdef` файл добавить [задачи запуска](https://docs.microsoft.com/azure/cloud-services/cloud-services-startup-tasks) для каждой роли, аналогичную 
+1. В `\*.csdef` меню файл добавьте [задачу запуска](https://docs.microsoft.com/azure/cloud-services/cloud-services-startup-tasks) для каждой роли, аналогичной 
 
     ```xml
     <Startup>
@@ -155,9 +155,9 @@ ms.locfileid: "67443336"
     </Startup>
     ```
     
-2. Скачайте [InstallAgent.bat](https://github.com/microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent/InstallAgent.bat) и [InstallAgent.ps1](https://github.com/microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent/InstallAgent.ps1), поместить их в `AppInsightsAgent` папку на каждый проект роли. Не забудьте скопировать их в выходной каталог, с помощью Visual Studio файл свойств или создавать скрипты.
+2. Скачайте [инсталлажент. bat](https://github.com/microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent/InstallAgent.bat) и [инсталлажент. ps1](https://github.com/microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent/InstallAgent.ps1), вставьте `AppInsightsAgent` их в папку в каждом проекте роли. Не забудьте скопировать их в выходной каталог с помощью свойств файла Visual Studio или скриптов сборки.
 
-3. На всех рабочих ролей добавьте переменные среды: 
+3. Добавьте переменные среды для всех рабочих ролей: 
 
     ```xml
       <Environment>
@@ -177,7 +177,7 @@ ms.locfileid: "67443336"
 1. Добавьте дополнительные данные телеметрии (как описано в следующем разделе), а затем опубликуйте приложение для оперативного получения данных диагностики и сведений об использовании. 
 
 Если данные не отображаются, сделайте следующее:
-1. Чтобы просмотреть отдельные события, откройте [поиска][diagnostic] плитку.
+1. Чтобы просмотреть отдельные события, откройте плитку [Поиск][diagnostic] .
 1. В приложении откройте несколько разных страниц, чтобы создать некоторый объем данных телеметрии.
 1. Подождите несколько секунд и щелкните **Обновить**.  
     Дополнительные сведения см. в разделе [Устранение неполадок][qna].
@@ -254,10 +254,10 @@ ms.locfileid: "67443336"
 * Добавьте пользовательский инициализатор телеметрии. Это можно сделать в файле *ApplicationInsights.config* или [в коде](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L233).
 
 ## <a name="client-telemetry"></a>Данные телеметрии клиента
-Чтобы получить Браузерные данные телеметрии, например просмотров страниц, время загрузки страницы или исключения сценариев и записывать настраиваемую телеметрию в скрипты страниц, см. в разделе [добавьте пакет SDK JavaScript на веб-страницы][client].
+Чтобы получить данные телеметрии на основе браузера, такие как количество просмотров страниц, время загрузки страницы или исключения скрипта, а также написать пользовательскую телеметрию в скриптах страницы, см. статью [Добавление пакета SDK для JavaScript на][client]веб-страницы.
 
 ## <a name="availability-tests"></a>Тесты доступности
-Чтобы убедиться в том, остается приложения live и отвечает на запросы, [веб-тестов][availability].
+Чтобы убедиться, что приложение остается активным и быстрым, [Настройте веб-тесты][availability].
 
 ## <a name="display-everything-together"></a>Отображение всей информации вместе
 Чтобы получить общее представление о системе, можно отобразить ключевые диаграммы мониторинга на одной [панели мониторинга](../../azure-monitor/app/overview-dashboard.md). Например, можно закрепить количество запросов и сбоев для каждой роли. 
@@ -276,7 +276,7 @@ ms.locfileid: "67443336"
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Настройка системы диагностики Azure для отправки данных в Application Insights](../../azure-monitor/platform/diagnostics-extension-to-application-insights.md)
 * [Создание ресурсов Application Insights с помощью PowerShell](../../azure-monitor/app/powershell.md)
 * [Настройка Application Insights для веб-приложения Azure с помощью PowerShell](../../azure-monitor/app/powershell-azure-diagnostics.md)

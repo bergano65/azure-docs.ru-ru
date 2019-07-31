@@ -8,12 +8,12 @@ ms.author: rgarcia
 ms.date: 04/03/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 9838add4f83434848d61f3ae86db71765efdc59a
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 499b08dbdc8e798a884b721bcba51be1f6973df6
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59995733"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68562387"
 ---
 # <a name="tutorial-step-by-step-instructions-to-create-a-new-android-app-using-azure-spatial-anchors"></a>Руководство по Пошаговые инструкции по созданию нового приложения Android с использованием Пространственных привязок Azure
 
@@ -23,12 +23,12 @@ ms.locfileid: "59995733"
 
 В рамках этого руководства вам потребуются:
 
-- Компьютер под управлением macOS или Windows с <a href="https://developer.android.com/studio/" target="_blank">Android Studio 3.3+</a>.
+- Компьютер под управлением macOS или Windows с <a href="https://developer.android.com/studio/" target="_blank">Android Studio 3.4 или более поздних версий</a>.
 - Устройство Android с включенным <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">режимом разработчика</a> и поддержкой <a href="https://developers.google.com/ar/discover/supported-devices" target="_blank">ARCore</a>.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
-Запустите Android Studio. В окне **приветствия Android Studio** щелкните **Start a new Android Studio project** (Создать проект Android Studio). Если у вас уже есть открытый проект, выберите **File (Файл)**->**New Project (Создать проект)**.
+Запустите Android Studio. В окне **приветствия Android Studio** щелкните **Start a new Android Studio project** (Создать проект Android Studio). Если у вас уже есть открытый проект, выберите **File (Файл)** ->**New Project (Создать проект)** .
 
 В окне **создания нового проекта** в разделе **Phone and Tablet** (Телефоны и планшеты) выберите **Empty Activity** (Пустое действие) и щелкните **Далее**. Затем для параметра **Minimum API level** (Минимальный уровень API) выберите значение `API 26: Android 8.0 (Oreo)` и убедитесь, что для параметра **Language** (Язык) указано значение `Java`. Вы можете изменить имя и расположение проекта или имя пакета. Сохраните значения остальных параметров неизменными. Нажмите кнопку **Готово** Запустится **установщик компонентов**. Когда он завершит свою работу, щелкните **Готово**. После некоторой подготовки Android Studio откроет интегрированную среду разработки.
 
@@ -57,12 +57,12 @@ ms.locfileid: "59995733"
 </application>
 ```
 
-Измените `Gradle Scripts\build.gradle (Module: app)`, добавив указанный ниже фрагмент. Этот код обеспечит использование приложением ARCore версии 1.7. Если после этого изменения вы получите уведомление из Gradle с предложением выполнить синхронизацию, щелкните **Sync now** (Синхронизировать сейчас).
+Измените `Gradle Scripts\build.gradle (Module: app)`, добавив указанный ниже фрагмент. Этот код обеспечит использование приложением ARCore версии 1.8. Если после этого изменения вы получите уведомление из Gradle с предложением выполнить синхронизацию, щелкните **Sync now** (Синхронизировать сейчас).
 
 ```
 dependencies {
     ...
-    implementation 'com.google.ar:core:1.7.0'
+    implementation 'com.google.ar:core:1.8.0'
     ...
 }
 ```
@@ -71,7 +71,7 @@ dependencies {
 
 <a href="https://developers.google.com/ar/develop/java/sceneform/" target="_blank">_Sceneform_</a> упрощает отрисовку реалистичных объемных сцен в приложениях дополненной реальности, не требуя при этом изучать OpenGL.
 
-Измените `Gradle Scripts\build.gradle (Module: app)`, добавив указанный ниже фрагмент. Этот код позволяет приложению использовать языковые конструкции из Java 8, что необходимо для `Sceneform`. Также он обеспечит использование приложением `Sceneform` версии 1.7 в соответствии с версией ARCore, используемой вашим приложением. Если после этого изменения вы получите уведомление из Gradle с предложением выполнить синхронизацию, щелкните **Sync now** (Синхронизировать сейчас).
+Измените `Gradle Scripts\build.gradle (Module: app)`, добавив указанный ниже фрагмент. Этот код позволяет приложению использовать языковые конструкции из Java 8, что необходимо для `Sceneform`. Также он обеспечит использование приложением `Sceneform` версии 1.8 в соответствии с используемой версией ARCore. Если после этого изменения вы получите уведомление из Gradle с предложением выполнить синхронизацию, щелкните **Sync now** (Синхронизировать сейчас).
 
 ```
 android {
@@ -85,7 +85,7 @@ android {
 
 dependencies {
     ...
-    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.7.0'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.8.0'
     ...
 }
 ```
@@ -123,13 +123,13 @@ dependencies {
 
 ## <a name="attach-a-local-azure-spatial-anchor"></a>Присоединение локальной пространственной привязки Azure
 
-Измените `Gradle Scripts\build.gradle (Module: app)`, добавив указанный ниже фрагмент. Этот код обеспечит использование приложением Пространственных привязок Azure версии 1.0.2. Впрочем, здесь подойдет любая актуальная версия Пространственных привязок Azure.
+Измените `Gradle Scripts\build.gradle (Module: app)`, добавив указанный ниже фрагмент. Этот код обеспечит использование приложением Пространственных привязок Azure версии 1.3.0. Впрочем, здесь подойдет любая актуальная версия Пространственных привязок Azure.
 
 ```
 dependencies {
     ...
-    implementation "com.microsoft.azure.spatialanchors:spatialanchors_jni:[1.0.2]"
-    implementation "com.microsoft.azure.spatialanchors:spatialanchors_java:[1.0.2]"
+    implementation "com.microsoft.azure.spatialanchors:spatialanchors_jni:[1.3.0]"
+    implementation "com.microsoft.azure.spatialanchors:spatialanchors_java:[1.3.0]"
     ...
 }
 ```

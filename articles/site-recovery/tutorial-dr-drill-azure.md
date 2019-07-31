@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 4ed66e3a0237eced852c806e78a8af6bdf8d8579
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: b8c8d1a867f6872c5e3ec9e1b48dac8f80c84950
+ms.sourcegitcommit: 15f7b641a67f3d6cf4fb4b4c11eaee18cf335923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66417825"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68602139"
 ---
 # <a name="run-a-disaster-recovery-drill-to-azure"></a>Отработка аварийного восстановления в Azure
 
@@ -88,6 +88,6 @@ ms.locfileid: "66417825"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Отработка отказа и восстановление размещения виртуальных машин VMware и физических серверов, реплицированных в Azure](vmware-azure-tutorial-failover-failback.md).
-> [Отработка отказа и восстановление размещения виртуальных машин Hyper-V, реплицированных в Azure](hyper-v-azure-failover-failback-tutorial.md).
-> [Run a failover and failback for physical machines](physical-to-azure-failover-failback.md) (Выполнение отработки отказа и восстановления размещения для физических компьютеров)
+> [Выполнение отработки отказа и восстановления для виртуальных машин VMware](vmware-azure-tutorial-failover-failback.md)
+> [Выполнение отработки отказа и восстановления для виртуальных машин Hyper-V](hyper-v-azure-failover-failback-tutorial.md)
+> [Выполнение отработки отказа и восстановления для физических компьютеров](physical-to-azure-failover-failback.md)

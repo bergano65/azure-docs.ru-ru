@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: robb
 ms.openlocfilehash: 99ac4ffc288773e52183d371ef2c20f6153bc0f3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 07/31/2019
 ms.locfileid: "65471781"
 ---
 # <a name="azure-diagnostics-troubleshooting"></a>Устранение неполадок с помощью системы диагностики Azure
@@ -29,7 +29,7 @@ ms.locfileid: "65471781"
 В таблицах ниже приведены расположения некоторых важных журналов и артефактов. Эти сведения используются в остальной части документа.
 
 ### <a name="azure-cloud-services"></a>Облачные службы Azure
-| Артефакт | Путь |
+| Артефакт | Path |
 | --- | --- |
 | **Файл конфигурации системы диагностики Azure** | %SystemDrive%\Packages\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics\<версия>\Config.txt |
 | **Файлы журналов** | C:\Logs\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics\<версия>\ |
@@ -39,8 +39,8 @@ ms.locfileid: "65471781"
 | **Путь к служебной программе сбора журналов** | %SystemDrive%\Packages\GuestAgent\ |
 | **Файл журнала MonAgentHost** | C:\Resources\Directory\<ИД_разверт._облачн._службы>.\<имя_роли>.DiagnosticStore\WAD0107\Configuration\MonAgentHost.<текущ._номер>.log |
 
-### <a name="virtual-machines"></a>Виртуальные машины
-| Артефакт | Путь |
+### <a name="virtual-machines"></a>ВМ
+| Артефакт | Path |
 | --- | --- |
 | **Файл конфигурации системы диагностики Azure** | C:\Packages\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<версия>\RuntimeSettings |
 | **Файлы журналов** | C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<DiagnosticsVersion>\ |
@@ -48,7 +48,7 @@ ms.locfileid: "65471781"
 | **Файл конфигурации агента мониторинга** | C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<версия_системы_диагностики>\WAD0107\Configuration\MaConfig.xml |
 | **Состояние файла** | C:\Packages\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<версия>\Status |
 | **Пакет расширений системы диагностики Azure** | C:\Packages\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<версия_системы_диагностики>|
-| **Путь к служебной программе сбора журналов** | C:\WindowsAzure\Logs\WaAppAgent.log |
+| **Путь к служебной программе сбора журналов** | к:\виндовсазуре\логс\вааппажент.лог |
 | **Файл журнала MonAgentHost** | C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<версия_системы_диагностики>\WAD0107\Configuration\MonAgentHost.<текущ._номер>.log |
 
 ## <a name="metric-data-doesnt-appear-in-the-azure-portal"></a>Данные метрик не отображается на портале Azure
@@ -81,7 +81,7 @@ ms.locfileid: "65471781"
 Если конфигурация настроена правильно, но данные метрики все равно не отображаются, следуйте инструкциям ниже для устранения ошибок.
 
 
-## <a name="azure-diagnostics-is-not-starting"></a>Система диагностики Azure не запускается
+## <a name="azure-diagnostics-is-not-starting"></a>система диагностики Azure не запускается
 Сведения о том, почему система диагностики Azure не запускается, см. в файлах **DiagnosticsPluginLauncher.log** и **DiagnosticsPlugin.log** в расположение файлов журнала, указанном выше.
 
 Если эти журналы указывают `Monitoring Agent not reporting success after launch`, это означает, что произошел сбой запуска MonAgentHost.exe. Просмотрите журналы в расположении, указанном для `MonAgentHost log file` в предыдущем разделе.
@@ -104,15 +104,15 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 
 Решение. Исправьте файл конфигурации системы диагностики и переустановите систему диагностики.
 
-Если учетная запись хранения настроена правильно, удаленный доступ к компьютеру и убедитесь, что *DiagnosticsPlugin.exe* и *MonAgentCore.exe* запущены. Если они не выполняются, выполните действия в разделе [Система диагностики Azure не запускается](#azure-diagnostics-is-not-starting).
+Если учетная запись хранения настроена правильно, удаленный доступ к компьютеру и убедитесь, что *DiagnosticsPlugin. exe* и *MonAgentCore. exe* работают. Если они не выполняются, выполните действия в разделе [Система диагностики Azure не запускается](#azure-diagnostics-is-not-starting).
 
 Если процессы выполняются, перейдите к разделу [Сохраняются ли собранные данные локально?](#is-data-getting-captured-locally) и следуйте инструкциям в нем.
 
-Если это не решает проблему, попробуйте:
+Если проблема не устранена, попробуйте:
 
 1. Удаление агента
-2. Удалить каталог C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics
-3. Установить агент еще раз
+2. Удаление каталога C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics
+3. Установить агент повторно
 
 
 ### <a name="part-of-the-data-is-missing"></a>Отсутствует часть данных
@@ -214,7 +214,7 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 | provider=”prov1” &lt;DefaultEvents /&gt; |WADDefault+MD5(“prov1”) |
 | provider=”prov2” &lt;DefaultEvents eventDestination=”dest2” /&gt; |WADdest2 |
 
-## <a name="references"></a>Справочники
+## <a name="references"></a>Ссылки
 
 ### <a name="how-to-check-diagnostics-extension-configuration"></a>Как проверить конфигурацию расширения системы диагностики
 Самый простой способ проверить конфигурацию расширения — перейти в [обозреватель ресурсов Azure](http://resources.azure.com) и выбрать виртуальную машину или облачную службу, где выполняется расширение системы диагностики Azure (IaaSDiagnostics или PaaDiagnostics).
@@ -230,7 +230,7 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 ### <a name="azure-diagnostics-plugin-exit-codes"></a>Коды выхода подключаемого модуля системы диагностики Azure
 Подключаемый модуль возвращает следующие коды выхода:
 
-| Код выхода | Описание |
+| Код завершения | Описание |
 | --- | --- |
 | 0 |Успешно. |
 | -1 |Общая ошибка. |

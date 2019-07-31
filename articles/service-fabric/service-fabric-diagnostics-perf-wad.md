@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 11/21/2018
 ms.author: srrengar
 ms.openlocfilehash: 20fa8945f01a3431d2fd78d545c43d6215c83f56
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 07/31/2019
 ms.locfileid: "66110302"
 ---
 # <a name="performance-monitoring-with-the-windows-azure-diagnostics-extension"></a>Мониторинг производительности с помощью расширения для Диагностики Azure для Windows
@@ -203,7 +203,7 @@ ms.locfileid: "66110302"
 
 1. По завершении обновления (оно занимает 15–45 минут в зависимости от ряда факторов, в частности от размера группы ресурсов и того, первый ли раз выполняется развертывание) система диагностики Microsoft Azure должна собирать данные счетчиков производительности и отправлять их в таблицу с именем WADPerformanceCountersTable в учетной записи хранения, связанной с вашим кластером. Просматривайте данные счетчиков производительности в Application Insights, [добавив приемник AI в шаблон Resource Manager](service-fabric-diagnostics-event-aggregation-wad.md#add-the-application-insights-sink-to-the-resource-manager-template).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Собирайте данные дополнительных счетчиков производительности для кластера. Список счетчиков, данные которых следует собирать, см. в статье [Метрики производительности](service-fabric-diagnostics-event-generation-perf.md).
 * [Используйте мониторинг и систему диагностики с виртуальной машиной Windows и шаблонами Azure Resource Manager](../virtual-machines/windows/extensions-diagnostics-template.md), чтобы внести изменения в раздел `WadCfg`, включая настройку дополнительных учетных записей хранения для отправки данных диагностики.
-* Посетите [WadCfg построитель](https://azure.github.io/azure-diagnostics-tools/config-builder/) для создания шаблона с самого начала и проверьте правильность синтаксиса. () https://azure.github.io/azure-diagnostics-tools/config-builder/) для создания шаблона с самого начала и проверьте правильность синтаксиса.
+* Посетите [Построитель WadCfg](https://azure.github.io/azure-diagnostics-tools/config-builder/) , чтобы создать шаблон с нуля и убедиться в правильности синтаксиса. (https://azure.github.io/azure-diagnostics-tools/config-builder/) чтобы создать шаблон с нуля и убедиться в правильности синтаксиса.

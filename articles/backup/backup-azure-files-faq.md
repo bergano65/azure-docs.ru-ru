@@ -3,16 +3,16 @@ title: Часто задаваемые вопросы о резервном ко
 description: Эта статья содержит сведения о том, как защитить файловые ресурсы Azure.
 author: dcurwin
 ms.author: dacurwin
-ms.date: 01/31/2019
+ms.date: 07/29/2019
 ms.topic: tutorial
 ms.service: backup
 manager: carmonm
-ms.openlocfilehash: e3f94badb3af2e3f26a857f27f0b68a78338db92
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: 35a41abb156326612c2d60829980f73457cde881
+ms.sourcegitcommit: 15f7b641a67f3d6cf4fb4b4c11eaee18cf335923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68466310"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68601767"
 ---
 # <a name="questions-about-backing-up-azure-files"></a>Вопросы о резервном копировании файлов Azure
 В этой статье содержатся ответы на часто задаваемые вопросы о резервном копировании файлов Azure. В некоторых ответах приведены ссылки на статьи, содержащие более подробные сведения. Кроме того, их также можно задать на [форуме для обсуждений](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
@@ -33,7 +33,7 @@ ms.locfileid: "68466310"
 ### <a name="when-trying-to-back-up-file-shares-i-clicked-on-a-storage-account-for-discovering-the-file-shares-in-it-however-i-did-not-protect-them-how-do-i-protect-these-file-shares-with-any-other-vault"></a>При попытке создать резервную копию общих файловых ресурсов я выбираю учетную запись хранения для обнаружения файловых ресурсов. Но я не могу защитить эти ресурсы. Как защитить эти общие файловые ресурсы с помощью другого хранилища?
 Если во время создания резервной копии выбрать учетную запись хранения для обнаружения файловых ресурсов в ней, учетная запись хранения регистрируется в хранилище, из которого выбирается учетная запись. Если вы выбираете для защиты файловые ресурсы в другом хранилище, [отмените регистрацию](troubleshoot-azure-files.md#configuring-backup) выбранной учетной записи хранения в этом хранилище.
 
-### <a name="can-i-change-the-vault-to-which-i-backup-my-file-shares"></a>Можно ли изменить хранилище, в котором создана резервная копия моих файловых ресурсов?
+### <a name="can-i-change-the-vault-to-which-i-back-up-my-file-shares"></a>Можно ли изменить хранилище, в котором создана резервная копия моих файловых ресурсов?
 Да. Но вам потребуется [остановить защиту](backup-azure-files.md#stop-protecting-an-azure-file-share) из подключенного хранилища, [отменить регистрацию](troubleshoot-azure-files.md#configuring-backup) этой учетной записи хранения и защитить ее из другого хранилища.
 
 ### <a name="in-which-geos-can-i-back-up-azure-file-shares-br"></a>В каких географических областях можно выполнять резервное копирование файловых ресурсов Azure? <br/>
@@ -76,6 +76,9 @@ ms.locfileid: "68466310"
 № Все файловые ресурсы в учетной записи хранения могут быть защищены только одним хранилищем.
 
 ## <a name="backup"></a>Azure Backup
+
+### <a name="how-many-scheduled-backups-can-i-configure-per-file-share"></a>Сколько запланированных задач резервного копирования можно настроить для файлового ресурса?
+Сейчас Azure Backup поддерживает настройку ежедневного резервного копирования для файловых ресурсов Azure. 
 
 ### <a name="how-many-on-demand-backups-can-i-take-per-file-share-br"></a>Сколько раз можно выполнить резервное копирование по запросу для каждого файлового ресурса? <br/>
 В любое время вы можете хранить до 200 моментальных снимков для файлового ресурса. При этом учитываются моментальные снимки, сделанные службой Azure Backup в соответствии с политикой. Если операции резервного копирования завершаются сбоем после достижения этого ограничения, удалите точки восстановления по запросу для успешной архивации.
