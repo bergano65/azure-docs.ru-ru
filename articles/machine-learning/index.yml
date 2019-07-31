@@ -34,7 +34,6 @@ sections:
       - items:
           - html: <a href="service/quickstart-run-cloud-notebook">Запуск эксперимента в облаке</a> (установка не требуется).
           - html: <a href="service/quickstart-run-local-notebook">Запуск эксперимента с использованием сервера записных книжек</a> (локальная установка пакета SDK).
-          - html: <a href="service/ui-quickstart-run-experiment">Запуск эксперимента в визуальном интерфейсе</a> (без необходимости писать код)
         style: unordered
         type: list
       - text: <b>Руководство. Классификация изображений данных MNIST с помощью пакета SDK</b>
