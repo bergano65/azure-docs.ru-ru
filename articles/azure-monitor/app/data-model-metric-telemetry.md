@@ -13,10 +13,10 @@ ms.date: 04/25/2017
 ms.reviewer: sergkanz
 ms.author: mbullwin
 ms.openlocfilehash: 0973c86d055ff4ebbe7e5a3c4a2ca4e3dcabc6a0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 07/31/2019
 ms.locfileid: "60900466"
 ---
 # <a name="metric-telemetry-application-insights-data-model"></a>Телеметрия метрик. Модель данных Application Insights
@@ -41,7 +41,7 @@ ms.locfileid: "60900466"
 | `\ASP.NET Applications(??APP_W3SVC_PROC??)\Request Execution Time`   | Ведется работа... | [requestExecutionTime](https://dev.applicationinsights.io/apiexplorer/metrics?appId=DEMO_APP&apiKey=DEMO_KEY&metricId=performanceCounters%2FrequestExecutionTime) | Среднее время выполнения запросов
 | `\ASP.NET Applications(??APP_W3SVC_PROC??)\Requests In Application Queue` | Ведется работа... | [requestsInQueue](https://dev.applicationinsights.io/apiexplorer/metrics?appId=DEMO_APP&apiKey=DEMO_KEY&metricId=performanceCounters%2FrequestsInQueue) | Количество запросов в очереди, ожидающих обработки
 
-## <a name="name"></a>ИМЯ
+## <a name="name"></a>Название
 
 Имя метрики, которое нужно отобразить на портале Application Insights и в пользовательском интерфейсе. 
 
@@ -49,7 +49,7 @@ ms.locfileid: "60900466"
 
 Отдельное значение для измерения. Сумма отдельных измерений для агрегата.
 
-## <a name="count"></a>Количество
+## <a name="count"></a>Count
 
 Вес вычисленной метрики. Не следует задавать для измерения.
 
@@ -71,7 +71,7 @@ ms.locfileid: "60900466"
 
 [!INCLUDE [application-insights-data-model-properties](../../../includes/application-insights-data-model-properties.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Вы можете узнать, как использовать [API Application Insights для пользовательских событий и метрик](../../azure-monitor/app/api-custom-events-metrics.md#trackmetric).
 - В [этой статье](data-model.md) представлены типы данных и модель данных для Application Insights.

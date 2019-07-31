@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/05/2018
 ms.author: spelluru
 ms.openlocfilehash: e490c7c24ed38e2988c1f097b09b508746f08178
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 07/31/2019
 ms.locfileid: "60591789"
 ---
 # <a name="sqlfilter-syntax"></a>Синтаксис SQLFilter
@@ -119,9 +119,9 @@ ms.locfileid: "60591789"
   
 Свойство `<pattern>` должно быть выражением, которое будет вычисляться как строка. Оно используется в качестве шаблона для оператора LIKE.      Оно может содержать следующие подстановочные знаки:  
   
--   `%`:  Любая строка без знаков или с несколькими знаками.  
+-   `%`.  Любая строка без знаков или с несколькими знаками.  
   
--   `_`: Любой отдельный знак.  
+-   `_`. Любой отдельный знак.  
   
 ## <a name="escapechar"></a>escape_char  
   
@@ -136,7 +136,7 @@ ms.locfileid: "60591789"
   
  Например, `property LIKE 'ABC\%' ESCAPE '\'` соответствует `ABC%`, а не строке, начинающейся с `ABC`.  
   
-## <a name="constant"></a>константа  
+## <a name="constant"></a>constant  
   
 ```  
 <constant> ::=  
@@ -279,7 +279,7 @@ ms.locfileid: "60591789"
   
 -   Арифметические операторы, такие как `+`, `-`, `*`, `/` и `%` следуют той же семантике, что и операторы C#: связываются повышения типов данных и неявные преобразования.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Класс SQLFilter (.NET Framework)](/dotnet/api/microsoft.servicebus.messaging.sqlfilter)
 - [Класс SQLFilter (.NET Standard)](/dotnet/api/microsoft.azure.servicebus.sqlfilter)

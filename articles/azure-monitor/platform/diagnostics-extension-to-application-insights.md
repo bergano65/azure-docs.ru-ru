@@ -9,10 +9,10 @@ ms.date: 03/19/2016
 ms.author: robb
 ms.subservice: diagnostic-extension
 ms.openlocfilehash: f7e21b805c64522005dce3e7d04aa158e1c21032
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 07/31/2019
 ms.locfileid: "60396144"
 ---
 # <a name="send-cloud-service-virtual-machine-or-service-fabric-diagnostic-data-to-application-insights"></a>Отправка в Application Insights диагностических данных облачной службы, виртуальной машины или Service Fabric
@@ -67,11 +67,11 @@ ms.locfileid: "60396144"
 - Элемент **Channels** содержит один или несколько элементов **Channel**.
     - Атрибут *name* однозначно ссылается на этот канал.
     - Атрибут *Loglevel* позволяет указать уровень ведения журнала для канала. Доступны следующие уровни ведения журнала (от наиболее к наименее информативным):
-        - Подробная информация
+        - Verbose
         - Информация
         - Предупреждение
-        - Ошибка
-        - критические ошибки.
+        - Error
+        - Critical
 
 Канал действует как фильтр и позволяет выбрать конкретные уровни ведения журнала для отправки в приемник. Например, можно собирать подробные журналы и отправлять их в хранилище, а в приемник отправлять только журнал ошибок.
 

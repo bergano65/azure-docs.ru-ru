@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/05/2018
 ms.author: aschhab
 ms.openlocfilehash: 0f9365b72da1cec81eed82756097d32b1d72ca71
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 07/31/2019
 ms.locfileid: "60307484"
 ---
 # <a name="sqlruleaction-syntax"></a>Синтаксис SQLRuleAction
@@ -123,9 +123,9 @@ ms.locfileid: "60307484"
   
  Свойство `<pattern>` должно быть выражением, которое будет вычисляться как строка. Оно используется в качестве шаблона для оператора LIKE.      Оно может содержать следующие подстановочные знаки:  
   
--   `%`:  Любая строка без знаков или с несколькими знаками.  
+-   `%`.  Любая строка без знаков или с несколькими знаками.  
   
--   `_`: Любой отдельный знак.  
+-   `_`. Любой отдельный знак.  
   
 ## <a name="escapechar"></a>escape_char  
   
@@ -140,7 +140,7 @@ ms.locfileid: "60307484"
   
  Например, `property LIKE 'ABC\%' ESCAPE '\'` соответствует `ABC%`, а не строке, начинающейся с `ABC`.  
   
-## <a name="constant"></a>константа  
+## <a name="constant"></a>constant  
   
 ```  
 <constant> ::=  
@@ -220,7 +220,7 @@ ms.locfileid: "60307484"
 - Если ссылка указывает на несуществующие свойства пользователя, действие не завершается сбоем.
 - Несуществующее свойство пользователя вычисляется внутри системы как неизвестное значение с использованием той же семантики, что и [SQLFilter](/dotnet/api/microsoft.servicebus.messaging.sqlfilter) при вычислении операторов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [SQLRuleAction class](/dotnet/api/microsoft.servicebus.messaging.sqlruleaction) (Класс SQLRuleAction)
 - [SQLFilter class](/dotnet/api/microsoft.servicebus.messaging.sqlfilter) (Класс SQLFilter)
