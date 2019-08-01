@@ -175,7 +175,7 @@
           href: sql-database-service-tier-hyperscale-faq.md
     - name: Отдельные базы данных
       items:
-        - name: Общие сведения об отдельных базах данных
+        - name: Документация по отдельных базах данных
           href: sql-database-single-index.yml
         - name: Возможности отдельной базы данных
           href: sql-database-single-database.md
@@ -215,7 +215,7 @@
           href: sql-database-elastic-pool-manage.md
     - name: Управляемые экземпляры
       items:
-        - name: Общие сведения об управляемых экземплярах
+        - name: Документация по управляемому экземпляру
           href: sql-database-managed-instance-index.yml
         - name: Возможности управляемого экземпляра
           href: sql-database-managed-instance.md
@@ -235,7 +235,7 @@
           href: sql-database-managed-instance-public-endpoint-securely.md
     - name: Платформа как услуга
       items:
-        - name: Обзор платформы как услуги (PaaS)
+        - name: Документация по платформе как услуге
           href: sql-database-paas.yml
         - name: Непрерывность бизнес-процессов
           href: sql-database-business-continuity.md
@@ -324,7 +324,7 @@
           href: sql-database-feature-restrictions.md
     - name: Масштабируемость
       items:
-        - name: Общие сведения о масштабируемости
+        - name: Документация по масштабируемости
           href: sql-database-scalability-index.yml
         - name: Увеличение и уменьшение масштаба
           href: sql-database-scale-resources.md
@@ -354,7 +354,7 @@
           href: sql-database-elastic-transactions-overview.md
     - name: Мониторинг и настройка
       items:
-        - name: Общие сведения о мониторинге и настройке
+        - name: Документация по мониторингу и настройке
           href: sql-database-monitoring-tuning-index.yml
         - name: Мониторинг и настройка производительности
           href: sql-database-monitor-tune-overview.md
@@ -378,7 +378,7 @@
               href: sql-database-advisor.md
     - name: Функции баз данных
       items:
-        - name: Обзор
+        - name: Документация по функциям Базы данных SQL
           href: sql-database-features-index.yml
         - name: Сравнение возможностей SQL
           href: sql-database-features.md

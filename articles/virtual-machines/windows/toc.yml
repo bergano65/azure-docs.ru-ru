@@ -108,6 +108,8 @@
           href: compute-benchmark-scores.md
         - name: Квоты на виртуальные ЦП
           href: quotas.md
+    - name: Выделенные узлы
+      href: dedicated-hosts.md
     - name: Обслуживание и обновления
       href: maintenance-and-updates.md
     - name: Дисковый накопитель
@@ -146,6 +148,12 @@
   items:
     - name: Создание виртуальных машин
       items:
+        - name: Использование выделенных узлов
+          items:
+            - name: PowerShell
+              href: dedicated-hosts-powershell.md
+            - name: Портал
+              href: dedicated-hosts-portal.md
         - name: 'Использование C#'
           href: csharp.md
         - name: Использование специализированного диска

@@ -28,6 +28,8 @@
           items:
             - name: Превышено ограничение на накладные расходы при сборке мусора
               href: ./interactive-query-troubleshoot-outofmemory-overhead-exceeded.md
+        - name: Производительность запросов в LLAP Apache Hive
+          href: ./interactive-query-troubleshoot-query-performance.md
 - name: Практическое руководство
   items:
     - name: "Перенос рабочих нагрузок Hive в HDInsight\_4.0"

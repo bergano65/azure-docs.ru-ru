@@ -58,6 +58,8 @@
               href: ./apache-spark-troubleshoot-outofmemory-heap.md
             - name: Размер кучи Java
               href: ./apache-spark-troubleshoot-outofmemory-heap-space.md
+            - name: Сбой при запуске сервера Livy
+              href: ./apache-spark-troubleshoot-outofmemory-native-thread.md
         - name: "Медленное выполнение заданий Apache Spark\_— контейнер хранилища"
           href: ./apache-spark-troubleshoot-job-slowness-container.md
         - name: Исключение IllegalArgumentException
@@ -68,6 +70,8 @@
           href: ./apache-spark-troubleshoot-rpctimeoutexception.md
         - name: Блокировка междоменных запросов API
           href: ./apache-spark-troubleshoot-blocking-cross-origin.md
+        - name: Сбой сериализации Kryo
+          href: ./apache-spark-troubleshoot-sparkexception-kryo-serialization-failed.md
 - name: Практическое руководство
   items:
     - name: Использование системы хранения данных кластера

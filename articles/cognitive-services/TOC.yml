@@ -51,8 +51,10 @@
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Соответствие требованиям
+    - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
+    - name: Соглашение об уровне обслуживания (SLA)
+      href: 'https://azure.microsoft.com/support/legal/sla/cognitive-services/v1_1/'
     - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=cognitive-services'
     - name: Блог

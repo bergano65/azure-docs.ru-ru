@@ -105,10 +105,14 @@
           href: sizes-previous-gen.md
         - name: Единицы вычислений Azure (ACU)
           href: acu.md
+        - name: Квоты на виртуальные ЦП
+          href: quotas.md
         - name: Результаты теста производительности
           href: compute-benchmark-scores.md
     - name: Рекомендуемые дистрибутивы
       href: endorsed-distros.md
+    - name: Выделенные узлы
+      href: dedicated-hosts.md
     - name: Обслуживание и обновления
       href: maintenance-and-updates.md
     - name: Дисковый накопитель
@@ -139,12 +143,8 @@
       href: monitor.md
     - name: Резервное копирование и восстановление
       href: backup-recovery.md
-    - name: Рекомендации по развертыванию
-      items:
-        - name: Рекомендации по инфраструктуре
-          href: infrastructure-example.md
-        - name: Квоты на виртуальные ЦП
-          href: quotas.md
+    - name: Рекомендации по инфраструктуре
+      href: infrastructure-example.md
     - name: Атрибуты безопасности
       href: virtual-machines-linux-security-attributes.md
 - name: Руководства
@@ -160,6 +160,12 @@
           href: create-vm-rest-api.md
         - name: Копирование или клонирование виртуальной машины
           href: copy-vm.md
+        - name: Использование выделенных узлов
+          items:
+            - name: CLI
+              href: dedicated-hosts-cli.md
+            - name: Портал
+              href: dedicated-hosts-portal.md
     - name: Защита виртуальных машин
       items:
         - name: JIT-доступ
