@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: aahi
-ms.openlocfilehash: c0a89a61f50d245389c9cdbd8a0aa9ba09eec004
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 8f3d30866ac6db0cdece9af8144fcfa266871172
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68594609"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68697886"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Создание Cognitive Services ресурса с помощью интерфейса командной строки Azure (CLI)
 
@@ -23,7 +23,7 @@ ms.locfileid: "68594609"
 
 В этом кратком руководстве вы узнаете, как зарегистрироваться в Azure Cognitive Services и создать учетную запись с одной или несколькими службами, используя [интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Эти службы представлены [ресурсами](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal)Azure, которые позволяют подключиться к одному или нескольким API-интерфейсы Cognitive Services Azure.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Допустимая подписка Azure — [создайте ее](https://azure.microsoft.com/free/) бесплатно.
 * [Интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
@@ -162,6 +162,14 @@ az login
 ```
 
 [!INCLUDE [cognitive-services-environment-variables](../../includes/cognitive-services-environment-variables.md)]
+
+## <a name="pricing-tiers-and-billing"></a>Ценовые категории и выставление счетов
+
+Ценовые категории (и сумма, за которую взимается плата) основываются на количестве отправленных вами транзакций с использованием данных проверки подлинности. Каждая ценовая категория определяет:
+* Максимальное число разрешенных транзакций в секунду (TPS).
+* функции службы, включенные в ценовой категории.
+* Стоимость предопределенного количества транзакций. При превышении этого объема взимается плата за дополнительную плату, указанную в [сведениях о ценах](https://azure.microsoft.com/pricing/details/cognitive-services/custom-vision-service/) для вашей службы.
+
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

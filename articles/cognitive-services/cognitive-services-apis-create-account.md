@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 07/16/2019
 ms.author: aahi
-ms.openlocfilehash: 4a74133a4a34f07db3813d3b9f9a47794c05ec49
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: af01c0c2586ce7df1902a0bcc502c6fd06a5215d
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68594647"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68697910"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-portal"></a>Создание Cognitive Services ресурса с помощью портал Azure
 
@@ -65,6 +65,13 @@ ms.locfileid: "68594647"
 После создания ресурса вы можете получить к нему доступ на панели мониторинга Azure, если она закреплена. В противном случае его можно найти в **Группе ресурсов**. Выбрав ресурс, можно получить ключи, выбрав **ключи** в разделе **Управление ресурсами**.
 
 [!INCLUDE [cognitive-services-environment-variables](../../includes/cognitive-services-environment-variables.md)]
+
+## <a name="pricing-tiers-and-billing"></a>Ценовые категории и выставление счетов
+
+Ценовые категории (и сумма, за которую взимается плата) основываются на количестве отправленных вами транзакций с использованием данных проверки подлинности. Каждая ценовая категория определяет:
+* Максимальное число разрешенных транзакций в секунду (TPS).
+* функции службы, включенные в ценовой категории.
+* Стоимость предопределенного количества транзакций. При превышении этого объема взимается плата за дополнительную плату, указанную в [сведениях о ценах](https://azure.microsoft.com/pricing/details/cognitive-services/custom-vision-service/) для вашей службы.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
