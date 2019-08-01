@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: tutorial
-ms.date: 07/24/2019
+ms.date: 07/30/2019
 ms.author: aahi
-ms.openlocfilehash: e56926b9a23e0dd649fb85347e521a6dda7863a3
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: dba65e68e7c2204a4d4d7f80a603de607bba7609
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68479876"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68697347"
 ---
 # <a name="tutorial-integrate-power-bi-with-the-text-analytics-cognitive-service"></a>Руководство по Интеграция Power BI с Анализом текста в Cognitive Services
 
@@ -36,7 +36,7 @@ Microsoft Power BI Desktop — бесплатное приложение, поз
 - Microsoft Power BI Desktop ([скачать бесплатно](https://powerbi.microsoft.com/get-started/)).
 - Учетная запись Microsoft Azure. ([начните работу в бесплатной пробной версии](https://azure.microsoft.com/free/) или [войдите в существующую](https://portal.azure.com/)).
 - Учетная запись API Cognitive Services с API анализа текста. Если у вас ее нет, вы можете [зарегистрироваться](../../cognitive-services-apis-create-account.md) и выбрать ценовую категорию "Бесплатный", обеспечивающую 5000 транзакций в месяц (ознакомьтесь со [сведениями о ценах](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/) для работы с этим руководством).
-- [Ключ доступа к Анализу текста](../how-tos/text-analytics-how-to-access-key.md), созданный автоматически во время регистрации.
+- [Ключ доступа к Анализу текста](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource), созданный автоматически во время регистрации.
 - Отзывы пользователей. Можно использовать [наш пример данных](https://aka.ms/cogsvc/ta) или собственные данные. В этом руководстве предполагается, что вы используете наш пример данных.
 
 ## <a name="load-customer-data"></a>Загрузка данных пользователей

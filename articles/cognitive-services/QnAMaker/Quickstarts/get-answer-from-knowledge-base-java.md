@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Получение ответа из базы знаний в QnA Maker с помощью REST (Java)
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве по Java REST описывается, как получить ответ из базы знаний программными средствами.
 services: cognitive-services
 author: diberry
@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 02/28/2019
 ms.author: diberry
-ms.openlocfilehash: 6d49ce71959f80a96731046475c3de5737bf7d46
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 2b888a275b08c7011c6e0b60ff1cd1d70b42f465
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65796195"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68559838"
 ---
 # <a name="get-answers-to-a-question-from-a-knowledge-base-with-java"></a>Получение ответов на вопрос из базы знаний с помощью Java
 

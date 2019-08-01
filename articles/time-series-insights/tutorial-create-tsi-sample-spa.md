@@ -8,12 +8,12 @@ ms.date: 06/29/2019
 ms.author: dpalled
 manager: cshankar
 ms.custom: seodec18
-ms.openlocfilehash: 8ee4cd30d5742896df96ccfd714d85ebbab194f9
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: bd50fb4a28aa0ab71c1fb0aeba772a2bd7d1df9d
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67595699"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68677725"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-single-page-web-app"></a>Руководство по Создание одностраничного веб-приложения службы "Аналитика временных рядов Azure"
 
@@ -30,9 +30,9 @@ ms.locfileid: "67595699"
 > * Исходный код этого руководства приведен на [GitHub](https://github.com/Microsoft/tsiclient/tree/tutorial/pages/tutorial).
 > * [Пример клиентского приложения](https://insights.timeseries.azure.com/clientsample) Аналитики временных рядов размещено, чтобы показать готовое приложение, используемое в этом руководстве.
 
-## <a name="prerequisites"></a>Предварительные требования
+Зарегистрируйтесь для [бесплатной подписки Azure](https://azure.microsoft.com/free/), если у вас ее еще нет.
 
-* Зарегистрируйтесь для [бесплатной подписки Azure](https://azure.microsoft.com/free/), если у вас ее еще нет.
+## <a name="prerequisites"></a>Предварительные требования
 
 * Бесплатная копия Visual Studio. Скачайте [версии 2017 или 2019 Community](https://www.visualstudio.com/downloads/), чтобы приступить к работе.
 
@@ -57,7 +57,7 @@ ms.locfileid: "67595699"
 1. Создайте каталог для сохранения файлов проекта приложения. Затем перейдите к каждому из следующих URL-адресов. Щелкните правой кнопкой мыши ссылку **Необработанный** в правом верхнем углу страницы, а затем выберите **Сохранить как**, чтобы сохранить файлы в каталоге проекта.
 
    - [*index.html*](https://github.com/Microsoft/tsiclient/blob/tutorial/pages/tutorial/index.html): код HTML и JavaScript для страницы
-   - [*sampleStyles.css*]( https://github.com/Microsoft/tsiclient/blob/tutorial/pages/tutorial/sampleStyles.css): таблицы стилей CSS
+   - [*sampleStyles.css*](https://github.com/Microsoft/tsiclient/blob/tutorial/pages/tutorial/sampleStyles.css): таблицы стилей CSS
 
    > [!NOTE]
    > В зависимости от браузера перед сохранением файла может потребоваться изменить расширения файла на HTML или CSS.

@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательской службы визуального распознавания для Python
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Создайте проект, добавьте теги, передайте изображения, обучите свой проект и найдите объекты с помощью пакетов SDK для Python.
 services: cognitive-services
 author: areddish
@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 07/03/2019
 ms.author: areddish
-ms.openlocfilehash: 623bf0b054544d2c25f3542043afe20d778fdd24
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 2994d696f463c32ed05fd42b694f29fa2035b9d2
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603498"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564161"
 ---
 # <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-python-sdk"></a>Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательской службы визуального распознавания для Python
 
@@ -214,7 +214,7 @@ for prediction in results.predictions:
 python sample.py
 ```
 
-Выходные данные приложения должны появиться в консоли. Вы можете убедиться, что тестовое изображение (в **samples/vision/images/Test/**) помечено соответствующим образом и что область обнаружения верна.
+Выходные данные приложения должны появиться в консоли. Вы можете убедиться, что тестовое изображение (в **samples/vision/images/Test/** ) помечено соответствующим образом и что область обнаружения верна.
 
 [!INCLUDE [clean-od-project](includes/clean-od-project.md)]
 

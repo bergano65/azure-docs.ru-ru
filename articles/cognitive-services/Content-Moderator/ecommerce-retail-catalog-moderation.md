@@ -1,6 +1,6 @@
 ---
 title: Руководство по Модерация изображений товаров для электронной коммерции с помощью Content Moderator
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Настройка приложения, которое анализирует изображения товаров, и классифицирует их по указанным меткам (с использованием Компьютерного зрения Azure и Пользовательского визуального распознавания). Добавляйте теги к изображениям, нежелательным для дальнейшего просмотра (с помощью Azure Content Moderator).
 services: cognitive-services
 author: PatrickFarley
@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: ec17f9f0206ef639bd47d694880c064a012ea1cf
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: b118a509f72af2146abf854b881fa34d8de302a1
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604190"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564928"
 ---
 # <a name="tutorial-moderate-e-commerce-product-images-with-azure-content-moderator"></a>Руководство по Модерация изображений товаров для электронной коммерции с помощью Azure Content Moderator
 
@@ -53,7 +53,7 @@ ms.locfileid: "67604190"
 
 ## <a name="create-visual-studio-project"></a>Создание проекта Visual Studio
 
-1. В Visual Studio откройте диалоговое окно "Новый проект". Разверните узел **Установленные**, затем — **Visual C#** и выберите **Консольное приложение (платформа .NET)**.
+1. В Visual Studio откройте диалоговое окно "Новый проект". Разверните узел **Установленные**, затем — **Visual C#** и выберите **Консольное приложение (платформа .NET)** .
 1. Присвойте приложению имя **EcommerceModeration** и щелкните **ОК**.
 1. Если вы добавляете проект в уже существующее решение, определите его как один запускаемый проект.
 

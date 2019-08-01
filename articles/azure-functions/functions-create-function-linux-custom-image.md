@@ -11,12 +11,12 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: azure-cli
 manager: jeconnoc
-ms.openlocfilehash: a8a216a7d2ce048ed5131997df762942998aaa88
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 66effb095edf7927a38fca53b2ff317e9bad468e
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68444132"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619610"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-image"></a>Создание функции на Linux с помощью пользовательского образа
 
@@ -190,7 +190,7 @@ v1.0.0: digest: sha256:be080d80770df71234eb893fbe4d... size: 1796
 
 ## <a name="create-a-premium-plan"></a>Создание плана "Премиум"
 
-Размещение в Linux пользовательских контейнеров поддерживается в [выделенных планах (Службы приложений)](functions-scale.md#app-service-plan) и [планах "Премиум"](functions-scale.md#premium-plan). В этом руководстве описано, как использовать план "Премиум", который можно масштабировать по мере необходимости. Дополнительные сведения о размещении см. в статье [Сравнение планов размещения для решения "Функции Azure"](functions-scale.md).
+Размещение в Linux пользовательских контейнеров поддерживается в [выделенных планах (Службы приложений)](functions-scale.md#app-service-plan) и [планах "Премиум"](functions-premium-plan.md#features). В этом руководстве описано, как использовать план "Премиум", который можно масштабировать по мере необходимости. Дополнительные сведения о размещении см. в статье [Сравнение планов размещения для решения "Функции Azure"](functions-scale.md).
 
 В следующем примере создается план "Премиум" с именем `myPremiumPlan` в ценовой категории **Эластичный премиум 1** (`--sku EP1`) в регионе "Западная часть США" (`-location WestUS`) в контейнере Linux (`--is-linux`).
 

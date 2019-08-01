@@ -10,18 +10,18 @@ ms.subservice: immersive-reader
 ms.topic: quickstart
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: 6386c22044483a0ac4a324397cf2f9d22e83b579
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 978b56f5c38a154c79544c7deb5d49396b1deff9
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68442859"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688869"
 ---
 # <a name="quickstart-create-a-web-app-that-launches-the-immersive-reader-c"></a>Краткое руководство. Создание веб-приложения, которое запускает иммерсивное средство чтения (C#)
 
 [Иммерсивное средство чтения](https://www.onenote.com/learningtools) — это включительно разработанное решение, в котором реализованы проверенные методы, улучшающие понимание при чтении.
 
-В рамках этого краткого руководства вы создадите веб-приложение с нуля и интегрируете иммерсивное средство чтения с помощью пакета SDK иммерсивного средства чтения. Полностью рабочий пример этого краткого руководства доступен [здесь](https://github.com/microsoft/immersive-reader-sdk/tree/master/samples/quickstart-csharp).
+В рамках этого краткого руководства вы создадите веб-приложение с нуля и интегрируете иммерсивное средство чтения с помощью пакета SDK иммерсивного средства чтения. Полностью рабочий пример этого краткого руководства доступен [здесь](https://github.com/microsoft/immersive-reader-sdk/tree/master/js/samples/quickstart-csharp).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -224,4 +224,4 @@ namespace QuickstartSampleWebApp.Controllers
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Ознакомьтесь с [учебником](./tutorial.md), чтобы узнать, что еще можно сделать с помощью пакета SDK иммерсивного средства чтения.
-* Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/Microsoft/immersive-reader-sdk) и [справочнике по этому пакету](./reference.md).
+* Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk) и [справочнике по этому пакету](./reference.md).

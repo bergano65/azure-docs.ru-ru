@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Создание приложения на портале LUIS
-titleSuffix: Language Understanding - Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: С помощью этого краткого руководства вы создадите приложение на портале LUIS. Вы создадите основные части приложения, намерения и сущности, а также протестируете приложение, предоставив образец пользовательского речевого фрагмента на интерактивной тестовой панели, чтобы получить прогнозируемое намерение. Создание приложения является бесплатным; для этого не требуется подписка Azure.
 services: cognitive-services
 author: diberry
@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: 2e4ff7dc97e3ee72336bd4c081caf1aa1a62bc56
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: f54643883028d93b56c7e122f43db95bb6d0b8c1
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65146554"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560876"
 ---
 # <a name="quickstart-create-a-new-app-in-the-luis-portal"></a>Краткое руководство. Создание приложения на портале LUIS
 
@@ -81,7 +81,7 @@ ms.locfileid: "65146554"
 |1|Ищу hrf-123456|
 |2|Где находится форма hrf-234591 отдела кадров?|
 |3|Где находится hrf-345623?|
-|4.|Можно ли выслать мне hrf-345794?|
+|4\.|Можно ли выслать мне hrf-345794?|
 |5|Нужна ли мне форма hrf-234695, чтобы подать заявку на внутреннюю работу?|
 |6|Должен ли мой менеджер знать, что я подаю заявку на работу с hrf-234091?|
 |7|Куда я могу отправить hrf-234918? Получу ли я ответ по электронной почте, что форма была получена?|

@@ -2,17 +2,17 @@
 title: Устранение неполадок резервного копирования файловых ресурсов Azure
 description: Сведения об устранении неполадок, возникающих при защите файловых ресурсов в Azure.
 ms.service: backup
-author: rayne-wiselman
-ms.author: raynew
+author: dcurwin
+ms.author: dacurwin
 ms.date: 07/22/2019
 ms.topic: tutorial
 manager: carmonm
-ms.openlocfilehash: c44819bfda2f48195c25ad6be7608383162f3c61
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: 486c0ae674f1549206b7aa3110faf31132c22f2a
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68467114"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639395"
 ---
 # <a name="troubleshoot-problems-backing-up-azure-file-shares"></a>Устранение неполадок с резервным копированием файловых ресурсов Azure
 Для устранения неполадок и ошибок, обнаруженных в ходе резервного копирования файловых ресурсов Azure, можно использовать информацию в таблицах ниже.

@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.topic: tutorial
 ms.date: 12/13/2018
 ms.reviewer: sngun
-ms.openlocfilehash: 372f2ffc6b64cefb93f8dfa17e1ba752fd81b538
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 8562d37d81ce02e150e6ad1cc2a440cf7bb1e5e3
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66477847"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68693361"
 ---
 # <a name="set-up-azure-cosmos-db-global-distribution-using-the-table-api"></a>Настройка глобального распределения Azure Cosmos DB с помощью API таблицы
 
@@ -28,7 +28,7 @@ ms.locfileid: "66477847"
 
 ## <a name="connecting-to-a-preferred-region-using-the-table-api"></a>Подключение к предпочтительному региону с помощью API таблицы
 
-Чтобы воспользоваться преимуществами [глобального распределения](distribute-data-globally.md), клиентские приложения могут указать упорядоченный список предпочитаемых регионов, который будет использоваться для операций с документами. Это можно сделать, задав свойство [TableConnectionPolicy.PreferredLocations](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.table.tableconnectionpolicy.preferredlocations?view=azure-dotnet#Microsoft_Azure_CosmosDB_Table_TableConnectionPolicy_PreferredLocations). Пакет SDK для API таблиц в Azure Cosmos DB выбирает лучшую конечную точку для взаимодействия на основе конфигурации учетной записи, текущей доступности региона и указанного списка предпочтений.
+Чтобы воспользоваться преимуществами [глобального распределения](distribute-data-globally.md), клиентские приложения могут указать упорядоченный список предпочитаемых регионов, который будет использоваться для операций с документами. Это можно сделать, задав свойство [TableConnectionPolicy.PreferredLocations](/dotnet/api/microsoft.azure.documents.client.connectionpolicy.preferredlocations?view=azure-dotnet). Пакет SDK для API таблиц в Azure Cosmos DB выбирает лучшую конечную точку для взаимодействия на основе конфигурации учетной записи, текущей доступности региона и указанного списка предпочтений.
 
 Список PreferredLocations должен содержать разделенные запятыми предпочтительные расположения (множественная адресация) для операций чтения. Каждый экземпляр клиента может указать подмножество этих регионов в порядке предпочтения, чтобы обеспечить низкую задержку операций чтения. Регионам необходимо присвоить их [отображаемые имена](https://msdn.microsoft.com/library/azure/gg441293.aspx), например `West US`.
 

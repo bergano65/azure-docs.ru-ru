@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Развертывание приложения на портале LUIS
-titleSuffix: Language Understanding - Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Сведения о развертывании приложения LUIS в конечной точке прогнозирования после того, как оно будет готово возвращать прогнозы касательно речевых фрагментов в клиентское приложение, например в чат-бот. В рамках этого краткого руководства вы узнаете, как развернуть приложение путем создания ресурса конечной точки прогнозирования, назначения ресурса для приложения, обучения и публикации приложения.
 services: cognitive-services
 author: diberry
@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: db2b543fa8e5429cc8d50d7789b03239173f563d
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 5c310c1943eaf23423be873c6172e27c621fe109
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65154533"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564076"
 ---
 # <a name="quickstart-deploy-an-app-in-the-luis-portal"></a>Краткое руководство. Развертывание приложения на портале LUIS
 
@@ -41,10 +41,10 @@ ms.locfileid: "65154533"
    |Параметр|Значение|Назначение|
    |--|--|--|
    |ИМЯ|`my-cognitive-service-resource`|Имя ресурса Azure. Это имя понадобится при назначении ресурса для приложения на портале LUIS.|
-   |Подписка|Ваша подписка|Выберите одну из подписок, связанных с вашей учетной записью.|
-   |Расположение|**Западная часть США**|Регион Azure для ресурса.|
-   |Ценовой уровень|**S0**|Ценовая категория по умолчанию для этого ресурса.|
-   |Группа ресурсов|`my-cognitive-service-resource-group`|Создайте группу ресурсов для всех ресурсов Cognitive Services. Выполнив все необходимые действия с ресурсами, вы можете удалить группу ресурсов, чтобы очистить подписку. |
+   |Subscription|Ваша подписка|Выберите одну из подписок, связанных с вашей учетной записью.|
+   |Location|**Западная часть США**|Регион Azure для ресурса.|
+   |Ценовая категория|**S0**|Ценовая категория по умолчанию для этого ресурса.|
+   |Resource group|`my-cognitive-service-resource-group`|Создайте группу ресурсов для всех ресурсов Cognitive Services. Выполнив все необходимые действия с ресурсами, вы можете удалить группу ресурсов, чтобы очистить подписку. |
    | | | |
 
    ![Выбор API Azure](./media/get-started-portal-deploy-app/create-cognitive-services-resource.png)

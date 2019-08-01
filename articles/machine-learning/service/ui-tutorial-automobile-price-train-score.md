@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/21/2019
-ms.openlocfilehash: 09d81e281b92b662572cefc220f2227651b69838
-ms.sourcegitcommit: 83a89c45253b0d432ce8dcd70084c18e9930b1fd
+ms.openlocfilehash: b0d227b71677db1d6b4ce8386b02cf957ca259f7
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68371719"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68668409"
 ---
 # <a name="tutorial-predict-automobile-price-with-the-visual-interface"></a>Руководство по прогнозированию цены на автомобили с помощью графического интерфейса
 
@@ -94,8 +94,6 @@ ms.locfileid: "68371719"
 ## <a name="run-the-experiment"></a>Выполнение эксперимента
 
 Щелкните выходной порт набора данных или модуля, чтобы увидеть, как выглядят данные в этой точке потока данных. Если параметр **Визуализировать** отключен, сначала нужно запустить эксперимент.
-
-Эксперимент выполняется с целевым объектом вычислений. который является вычислительным ресурсом, подключенным к вашей рабочей области. После создания целевого объекта вычислений его можно повторно использовать при последующих запусках.
 
 [!INCLUDE [aml-ui-create-training-compute](../../../includes/aml-ui-create-training-compute.md)]
 

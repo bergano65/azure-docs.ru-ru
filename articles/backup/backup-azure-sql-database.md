@@ -1,18 +1,18 @@
 ---
 title: Резервное копирование баз данных SQL Server в Azure | Документация Майкрософт
 description: Узнайте, как выполнить резервное копирование SQL Server в Azure. Здесь также описывается восстановление SQL Server.
-author: rayne-wiselman
+author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: tutorial
 ms.date: 06/18/2019
-ms.author: raynew
-ms.openlocfilehash: 42a99c1be348a24a9325173dc275d0c416b975a2
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.author: dacurwin
+ms.openlocfilehash: cddb540eb0d6892426c4857b152ab6caa746f6da
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68465426"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639797"
 ---
 # <a name="about-sql-server-backup-in-azure-vms"></a>Сведения о резервном копировании SQL Server на виртуальных машинах Azure
 

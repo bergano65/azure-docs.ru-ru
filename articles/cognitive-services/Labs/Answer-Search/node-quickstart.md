@@ -9,12 +9,12 @@ ms.subservice: answer-search
 ms.topic: quickstart
 ms.date: 04/13/2018
 ms.author: rosh
-ms.openlocfilehash: c44be9779cf2b856ac2f5e9e017fd9d1040a018b
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.openlocfilehash: 21dda323cf465f56fb3f43160dd04c27a81d5590
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58294048"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698076"
 ---
 # <a name="quickstart-project-answer-search-with-node"></a>Краткое руководство. Служба поиска ответов в проекте с использованием Node.js
 
@@ -22,7 +22,7 @@ ms.locfileid: "58294048"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Получите ключ доступа для бесплатной пробной версии [Cognitive Services Labs](https://aka.ms/answersearchsubscription).
+Получите ключ доступа для бесплатной пробной версии [Cognitive Services Labs](https://labs.cognitive.microsoft.com/en-us/project-answer-search).
 
 В этом примере используется Node версии 8.9.4.
 

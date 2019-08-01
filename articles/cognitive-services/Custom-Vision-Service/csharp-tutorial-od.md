@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK для Пользовательского визуального распознавания для C#
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Создайте проект, добавьте теги, загрузите изображения, обучите проект и удаляйте объекты с помощью .NET SDK с C#.
 services: cognitive-services
 author: areddish
@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: quickstart
 ms.date: 07/03/2019
 ms.author: areddish
-ms.openlocfilehash: 63f5853199e3ee266df298b9599c2933b7da0826
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: a21c535597110b8dac823888ec2a8e689a9c57e8
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606923"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561141"
 ---
 # <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-net-sdk"></a>Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK для Пользовательской службы визуального распознавания для .NET
 
@@ -133,7 +133,7 @@ Making a prediction:
         scissors: 1.2% [ 0.112389535, 0.119195729, 0.658031344, 0.7023591 ]
 ```
 
-Вы можете убедиться, что тестовое изображение (в **Images/Test/**) помечено соответствующим образом и что область обнаружения верна. На этом этапе нажмите любую клавишу для выхода из приложения.
+Вы можете убедиться, что тестовое изображение (в **Images/Test/** ) помечено соответствующим образом и что область обнаружения верна. На этом этапе нажмите любую клавишу для выхода из приложения.
 
 [!INCLUDE [clean-od-project](includes/clean-od-project.md)]
 

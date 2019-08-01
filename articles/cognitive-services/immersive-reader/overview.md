@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: overview
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: 4500b6213c549ab9977fe8f2d849ffa8089d04b9
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: f84804fbad07357706e786fc449fce9e42a5ec4a
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67718435"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688331"
 ---
 # <a name="what-is-immersive-reader"></a>Что собой представляет Иммерсивное средство чтения?
 
@@ -60,5 +60,5 @@ ms.locfileid: "67718435"
 Начало работы с Иммерсивным средством чтения:
 
 * Перейдите к [краткому руководству](./quickstart.md).
-* Изучите [пакет SDK иммерсивного средства чтения на сайте GitHub](https://github.com/Microsoft/immersive-reader-sdk).
+* Изучите [пакет SDK иммерсивного средства чтения на сайте GitHub](https://github.com/microsoft/immersive-reader-sdk).
 * Ознакомьтесь со справочной документацией о [пакете SDK для иммерсивного средства чтения](./reference.md).

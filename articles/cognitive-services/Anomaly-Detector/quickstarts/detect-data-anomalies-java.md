@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: quickstart
-ms.date: 03/26/2019
+ms.date: 07/26/2019
 ms.author: aahi
-ms.openlocfilehash: 2a219dfac597208a2c409f76c035a1b913864245
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 001d53cbd7e2a57615ea3da71d128bd210a79921
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721508"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565859"
 ---
 # <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-java"></a>Краткое руководство. Обнаружение аномалий в данных временных рядов с использованием REST API Детектора аномалий и Java
 
@@ -23,7 +23,7 @@ ms.locfileid: "67721508"
 
 | Запрос API                                        | Выходные данные приложения                                                                                                                         |
 |----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| Обнаружение аномалий в пакетном режиме                        | В ответе JSON содержится состояние аномалии (и другие данные) для каждой точки данных в данных временных рядов и расположение любых обнаруженных аномалий. |
+| Обнаружение аномалий в пакетном режиме                        | Ответ в формате JSON содержит информацию о состоянии аномалий (и другие данные) для каждой точки в данных временного ряда, а также положения всех обнаруженных аномалий. |
 | Обнаружение состояний аномалии последней точки данных | В ответе JSON содержится состояние аномалии (и другие данные) для последней точки данных в данных временных рядов.                                                                                                                                         |
 
  Хотя это приложение создано на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
@@ -63,7 +63,7 @@ ms.locfileid: "67721508"
 
 2. Создайте переменные для ключа подписки и конечной точки. Далее приведены универсальные коды ресурса (URI), которые можно использовать для обнаружения аномалий. Для создания URL-адресов запроса API они будут добавлены в конечную точку службы позднее.
 
-    |Методы обнаружения  |URI  |
+    |Метод обнаружения  |URI  |
     |---------|---------|
     |Пакетное обнаружение    | `/anomalydetector/v1.0/timeseries/entire/detect`        |
     |Обнаружение в последней точке данных     | `/anomalydetector/v1.0/timeseries/last/detect`        |
@@ -182,9 +182,9 @@ public static void main(String[] args) throws Exception {
 
 ### <a name="example-response"></a>Пример ответа
 
-Успешный ответ возвращается в формате JSON. Чтобы просмотреть ответы JSON на GitHub, перейдите по следующим ссылкам:
-* [Пример ответа обнаружения пакета](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/batch-response.json)
-* [Пример ответа последнего обнаружения точки](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/latest-point-response.json)
+Успешный ответ возвращается в формате JSON. Перейдите по ссылками ниже, чтобы просмотреть ответ JSON на GitHub:
+* [Пример ответа при пакетном обнаружении](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/batch-response.json)
+* [Пример ответа при обнаружении последней точки](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/latest-point-response.json)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

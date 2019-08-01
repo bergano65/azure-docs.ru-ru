@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: tutorial
-ms.date: 06/24/2019
+ms.date: 07/31/2019
 ms.author: diberry
-ms.openlocfilehash: 1d475d988847bd4cc9e37b91a0c5d28678cb05f2
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 4bb987a5a091871bec2c0cc8cec6d9ab804bb244
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67446656"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68697993"
 ---
 # <a name="tutorial-create-a-qna-bot-with-azure-bot-service-v4"></a>Руководство по Создание бота QnA с помощью службы Azure Bot версии 4
 
@@ -50,9 +50,9 @@ ms.locfileid: "67446656"
     |Параметр|Значение|Назначение|
     |--|--|--|
     |Имя бота|`my-tutorial-kb-bot`|Это — имя ресурса Azure для бота.|
-    |Подписка|Просмотрите назначение.|Выберите ту же подписку, которую вы использовали для создания ресурсов QnA Maker.|
-    |Группа ресурсов|`my-tutorial-rg`|Группа ресурсов, используемая для всех ресурсов Azure, связанных с ботами.|
-    |Расположение|`west us`|Расположение ресурса Azure бота.|
+    |Subscription|Просмотрите назначение.|Выберите ту же подписку, которую вы использовали для создания ресурсов QnA Maker.|
+    |Resource group|`my-tutorial-rg`|Группа ресурсов, используемая для всех ресурсов Azure, связанных с ботами.|
+    |Location|`west us`|Расположение ресурса Azure бота.|
     |Ценовая категория|`F0`|Уровень "Бесплатный" для службы ботов Azure.|
     |Имя приложения.|`my-tutorial-kb-bot-app`|Это — веб-приложение для поддержки только вашего бота. Оно не должно совпадать с именем приложения, которое уже используется службой QnA Maker. Общий доступ к веб-приложению QnA Maker ни с каким другим ресурсом не поддерживается.|
     |Язык пакета SDK|C#|Это — основной язык программирования, используемый в пакете SDK Bot Framework. Возможны следующие варианты: [C#](https://github.com/Microsoft/botbuilder-dotnet) или [Node.js](https://github.com/Microsoft/botbuilder-js).|
@@ -101,7 +101,7 @@ ms.locfileid: "67446656"
 
 ## <a name="related-to-qna-maker-bots"></a>Связанные с ботами QnA Maker
 
-* Бот раздела справки QnA Maker, используемый на портале QnA Maker, доступен в виде [примера бота](https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/csharp_dotnetcore/qnamaker-support-bot).
+* Бот раздела справки QnA Maker, используемый на портале QnA Maker, доступен в виде [примера бота](https://github.com/microsoft/BotBuilder-Samples/tree/master/experimental/qnamaker-support).
     ![Значок бота справки QnA Maker — красный робот](../media/qnamaker-tutorials-create-bot/answer-bot-icon.PNG)
 * [Боты оценки работоспособности](https://docs.microsoft.com/HealthBot/qna_model_howto) используют QnA Maker в качестве одной из [языковых моделей](https://docs.microsoft.com/HealthBot/qna_model_howto).
 

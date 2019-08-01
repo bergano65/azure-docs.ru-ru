@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/05/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 05fd9f06bec2a68455d42bfd460f0a5a419a255e
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 25160c50cd4844fdb5b3a3454213b2067ef91d01
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67708036"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68608027"
 ---
 # <a name="tutorial-monitor-and-update-a-windows-virtual-machine-in-azure"></a>Руководство по Мониторинг и обновление виртуальных машин Windows в Azure
 
@@ -300,4 +300,4 @@ Set-AzVMExtension -ResourceGroupName "myResourceGroupMonitor" `
 Перейдите к следующему руководству, чтобы узнать о центре безопасности Azure.
 
 > [!div class="nextstepaction"]
-> [Мониторинг защиты виртуальных машин с помощью центра безопасности Azure](./tutorial-azure-security.md)
+> [Мониторинг защиты виртуальных машин с помощью центра безопасности Azure](../../security/fundamentals/overview.md)

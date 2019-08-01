@@ -10,12 +10,12 @@ ms.subservice: bing-visual-search
 ms.topic: overview
 ms.date: 03/27/2019
 ms.author: scottwhi
-ms.openlocfilehash: 4da4340176259265fd36c55d2b81ecfc3f4ed5f8
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: 15abbfd8892464f3a2c21a85c07bc5b8e94e47ad
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67657699"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68594706"
 ---
 # <a name="what-is-the-bing-visual-search-api"></a>Знакомство с API Визуального поиска Bing
 
@@ -47,7 +47,7 @@ API Визуального поиска Bing возвращает аналити
 
 API визуального поиска Bing является веб-службой RESTful, которую легко вызвать с любого языка программирования, поддерживающего выполнение HTTP-запросов и анализ JSON. Для этой службы вы можете использовать REST API или пакет SDK.
 
-1. Создайте [учетную запись Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить доступ к API Поиска Bing. Если у вас нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/). Ключ подписки можно получить на [портале Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#get-the-keys-for-your-subscription), создав учетную запись, или на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis) после активации бесплатной пробной версии.
+1. Создайте [учетную запись Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить доступ к API Поиска Bing. Если у вас нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/). Ключ подписки можно получить на [портале Azure](../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource), создав учетную запись, или на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis) после активации бесплатной пробной версии.
 2. Отправьте запрос к API с допустимым поисковым запросом.
 3. Обработайте ответ API путем анализа возвращенного сообщения JSON.
 

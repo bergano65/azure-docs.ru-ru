@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 06/28/2019
+ms.date: 07/28/2019
 ms.author: aahi
-ms.openlocfilehash: 69f22d92cc586942d3e368a164d6e95f52aa3eea
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 3987441ea7c28136750149d3fa66afe061b7d783
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68356894"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68697248"
 ---
 # <a name="quickstart-using-the-python-rest-api-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Вызов API "Анализ текста" в Cognitive Services с помощью REST API Python 
 <a name="HOLTop"></a>
@@ -27,8 +27,6 @@ ms.locfileid: "68356894"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Python 3.x](https://python.org)
-
-* [Конечная точка и ключ доступа](../How-tos/text-analytics-how-to-access-key.md), созданный автоматически во время регистрации.
 
 * Библиотека запросов Python
     

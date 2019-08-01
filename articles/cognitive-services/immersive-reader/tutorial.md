@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: tutorial
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: 73f9ee597682cc995f3a2cc783abeee92bf11bd2
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: ea9728ac54ae357925bd666ffecf270172137f77
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68501143"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688301"
 ---
 # <a name="tutorial-launch-the-immersive-reader-nodejs"></a>Руководство по Запуск Иммерсивного средства чтения (Node.js)
 
@@ -126,7 +126,7 @@ router.get('/subdomain', function (req, res) {
 
 ## <a name="launch-the-immersive-reader-with-sample-content"></a>Запуск иммерсивного средства чтения с примером содержимого
 
-1. Откройте файл _views\layout.pug_ и добавьте следующий код под тег `head` перед тегом `body`. Эти теги `script` загрузят [пакет SDK для иммерсивного средства чтения](https://github.com/Microsoft/immersive-reader-sdk) и jQuery.
+1. Откройте файл _views\layout.pug_ и добавьте следующий код под тег `head` перед тегом `body`. Эти теги `script` загрузят [пакет SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk) и jQuery.
 
     ```pug
     script(src='https://contentstorage.onenote.office.net/onenoteltir/immersivereadersdk/immersive-reader-sdk.0.0.2.js')
@@ -264,5 +264,5 @@ router.get('/subdomain', function (req, res) {
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/Microsoft/immersive-reader-sdk) и [справочнике по этому пакету](./reference.md).
-* Просмотрите примеры кода на сайте [GitHub](https://github.com/microsoft/immersive-reader-sdk/tree/master/samples/advanced-csharp).
+* Ознакомьтесь с разделом о [пакете SDK для иммерсивного средства чтения](https://github.com/microsoft/immersive-reader-sdk) и [справочнике по этому пакету](./reference.md).
+* Просмотрите примеры кода на сайте [GitHub](https://github.com/microsoft/immersive-reader-sdk/tree/master/js/samples/advanced-csharp).

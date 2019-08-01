@@ -10,12 +10,12 @@ ms.subservice: answer-search
 ms.topic: quickstart
 ms.date: 04/13/2018
 ms.author: rosh
-ms.openlocfilehash: dce13636cce299098c988ccea3a059f0f0e12acd
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: fe6758cb6b8d120862cbbe593574360c1bc7b17b
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65823256"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698111"
 ---
 # <a name="quickstart-project-answer-search-query-in-c"></a>Краткое руководство. Запрос для поиска ответов в проектах на C#
 
@@ -25,7 +25,7 @@ ms.locfileid: "65823256"
 
 Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/downloads/). (Будет работать бесплатный выпуск Community Edition.)
 
-Получите ключ доступа для бесплатной пробной версии [Cognitive Services Labs](https://aka.ms/answersearchsubscription).
+Получите ключ доступа для бесплатной пробной версии [Cognitive Services Labs](https://labs.cognitive.microsoft.com/en-us/project-answer-search).
 
 ## <a name="code-scenario"></a>Сценарий кода
 

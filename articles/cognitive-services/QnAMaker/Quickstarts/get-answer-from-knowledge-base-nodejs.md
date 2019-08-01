@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Получение ответа из базы знаний в QnA Maker с помощью REST (Node.js)
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве по Node.js для REST описывается, как программным способом получить ответ из базы знаний.
 services: cognitive-services
 author: diberry
@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 02/28/2019
 ms.author: diberry
-ms.openlocfilehash: 389d6ed369de513125a2bcd0d0de881f524dcd82
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: e80f852a48d7da9480e6c0eddc675e6bcf524eb7
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65791540"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68562973"
 ---
 # <a name="get-answers-to-a-question-from-a-knowledge-base-with-nodejs"></a>Получение ответов на вопрос из базы знаний с помощью Node.js
 

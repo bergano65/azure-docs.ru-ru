@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: quickstart
 ms.date: 04/16/2019
 ms.author: aahi
-ms.openlocfilehash: 56a482ae4eab4cde3cf39fcc187b703f253e0cbb
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: cc6f0a4c3fda2c5e474295704f3edddb678e9ed2
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65990263"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68697223"
 ---
 # <a name="quickstart-using-ruby-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Использование Ruby для вызова API анализа текста Cognitive Services
 <a name="HOLTop"></a>
@@ -27,8 +27,6 @@ ms.locfileid: "65990263"
 ## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [cognitive-services-text-analytics-signup-requirements](../../../../includes/cognitive-services-text-analytics-signup-requirements.md)]
-
-Также требуются [конечная точка и ключ доступа](../How-tos/text-analytics-how-to-access-key.md), созданный автоматически во время регистрации. 
 
 <a name="Detect"></a>
 

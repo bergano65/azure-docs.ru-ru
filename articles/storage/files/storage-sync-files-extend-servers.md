@@ -1,19 +1,18 @@
 ---
 title: Руководство. Расширение файловых серверов Windows с использованием службы "Синхронизация файлов Azure" | Документация Майкрософт
 description: Узнайте, как расширить файловые серверы Windows с помощью службы "Синхронизация файлов Azure" от начала до конца.
-services: storage
 author: roygara
 ms.service: storage
 ms.topic: tutorial
 ms.date: 10/23/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: df3850a839ac789957a9adffb7122a0b58987781
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: f71a27ea4da6bce5832287e948e0731672280196
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64705071"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699486"
 ---
 # <a name="tutorial-extend-windows-file-servers-with-azure-file-sync"></a>Руководство по Расширение файловых серверов Windows с использованием службы "Синхронизация файлов Azure"
 
@@ -100,7 +99,7 @@ ms.locfileid: "64705071"
    1. В разделе **Диски** в списке **Disk options** (Параметры диска) оставьте значения по умолчанию.
    1. В разделе **Диски данных** выберите **Create and attach a new disk** (Создать и подключить новый диск).
 
-   1. Используйте параметры по умолчанию, за исключением параметра **Размер диска (ГиБ)**. Измените его значение на **1 ГБ** для этого руководства.
+   1. Используйте параметры по умолчанию, за исключением параметра **Размер диска (ГиБ)** . Измените его значение на **1 ГБ** для этого руководства.
 
       ![Сведения о диске данных](./media/storage-sync-files-extend-servers/vm-create-new-disk-details.png)
 

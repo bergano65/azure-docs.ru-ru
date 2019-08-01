@@ -1,6 +1,6 @@
 ---
 title: 'Пример: Анализ видео в режиме реального времени с помощью API компьютерного зрения'
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Узнайте, как выполнить анализ практически в реальном времени по кадрам, взятым из видеотрансляции, с помощью API компьютерного зрения.
 services: cognitive-services
 author: KellyDF
@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 03/21/2019
 ms.author: kefre
 ms.custom: seodec18
-ms.openlocfilehash: feafb983a7b9e4aea6091753842b03a65ccd3ca5
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 3432ea20f9fb59524940258e13c46ee6f4c4e890
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60001564"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565707"
 ---
 # <a name="how-to-analyze-videos-in-real-time"></a>Анализ видео в реальном времени
 
@@ -137,7 +137,7 @@ while (true)
 
 ## <a name="implementing-the-solution"></a>Реализация решения
 
-### <a name="getting-started"></a>Приступая к работе
+### <a name="getting-started"></a>Начало работы
 
 Чтобы как можно быстрее запустить приложение, мы реализовали описанную выше систему, спроектировав ее достаточно гибкой для реализации множества сценариев и одновременно для простоты использования. Получить код можно отсюда: [https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis).
 
@@ -203,7 +203,7 @@ namespace VideoFrameConsoleApplication
 1. Получите ключи API-интерфейсов зрения в разделе [Подписки](https://azure.microsoft.com/try/cognitive-services/). Для анализа кадров видео можно использовать следующие API-интерфейсы:
     - [API компьютерного зрения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home)
     - [API распознавания эмоций](https://docs.microsoft.com/azure/cognitive-services/emotion/home)
-    - [API распознавания лиц](https://docs.microsoft.com/azure/cognitive-services/face/overview)
+    - [API Распознавания лиц](https://docs.microsoft.com/azure/cognitive-services/face/overview)
 2. Клонируйте репозиторий GitHub [Cognitive-Samples-VideoFrameAnalysis](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/).
 
 3. Откройте пример в Visual Studio 2015, создайте и запустите примеры приложений:

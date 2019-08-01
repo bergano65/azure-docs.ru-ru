@@ -1,6 +1,6 @@
 ---
 title: Что представляет собой API компьютерного зрения — API компьютерного зрения
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Служба API компьютерного зрения предоставляет разработчикам доступ к расширенным алгоритмам обработки изображений и возврата данных.
 services: cognitive-services
 author: PatrickFarley
@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 07/03/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 523c839ad274b8234a79a89ec45be9a9a4551bf5
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 4f823b62237e8018f092d7a94fb479f7fbdd38da
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68312044"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565771"
 ---
 # <a name="what-is-computer-vision"></a>Что собой представляет Компьютерное зрение
 
