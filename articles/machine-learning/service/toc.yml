@@ -91,6 +91,9 @@
       href: /azure/open-datasets/samples?context=azure/machine-learning/service/context/ml-context
 - name: Основные понятия
   items:
+    - name: Глубокое обучение
+      displayName: 'deep learning vs machine learning, deep learning, vs, versus'
+      href: concept-deep-learning-vs-machine-learning.md
     - name: Рабочая область
       displayName: concept definitions architecture
       href: concept-workspace.md
@@ -115,8 +118,6 @@
       href: concept-accelerate-with-fpgas.md
     - name: Open Neural Network Exchange и среда выполнения ONNX
       href: concept-onnx.md
-    - name: Мониторинг смещения данных
-      href: concept-data-drift.md
     - name: Безопасность
       items:
         - name: Общие сведения об обеспечении безопасности на уровне предприятия

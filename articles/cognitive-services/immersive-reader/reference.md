@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: reference
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: 22860e0798ec852b6d25da27e108befe8a3089a2
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 1a616bce8c161825853b1966769d9505595d95de
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68488833"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688313"
 ---
 # <a name="immersive-reader-sdk-reference"></a>Справочник по пакету SDK для иммерсивного чтения
 
@@ -136,5 +136,5 @@ launchAsync(token: string, subdomain: string, content: Content, options?: Option
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* Изучите [пакет SDK иммерсивного средства чтения на сайте GitHub](https://github.com/Microsoft/immersive-reader-sdk).
+* Изучите [пакет SDK иммерсивного средства чтения на сайте GitHub](https://github.com/microsoft/immersive-reader-sdk).
 * [Краткое руководство Создание веб-приложения, запускающего иммерсивное средство чтения (C#)](./quickstart.md)
