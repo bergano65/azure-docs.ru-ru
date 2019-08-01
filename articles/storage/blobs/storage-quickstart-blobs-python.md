@@ -9,16 +9,18 @@ ms.topic: quickstart
 ms.date: 12/14/2018
 ms.author: mhopkins
 ms.reviewer: seguler
-ms.openlocfilehash: 5fe011d740b1c08ae3b9cf4e3ea67d2cdd4fee66
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: f96d1956fececbe00bf9f33bd146056836c2c4c0
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360098"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564993"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-with-python"></a>Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью Python
 
 Из этого краткого руководства вы узнаете, как использовать Python для отправки, скачивания и перечисления блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure. Большие двоичные объекты — это просто объекты, которые могут содержать любое количество текстовых или двоичных данных (например, изображения, документы, потоковые данные мультимедиа, архивные данные и т. д.). Они отличаются от общих папок, бессхемных таблиц и очередей сообщений в службе хранилища Azure. (Дополнительную информацию см. в разделе [Общие сведения о службе хранилища Azure](/azure/storage/common/storage-introduction).)
+
+[!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 

@@ -1,19 +1,18 @@
 ---
 title: Краткое руководство по управлению файловыми ресурсами Azure с помощью Azure CLI
 description: Используйте это краткое руководство, чтобы узнать, как управлять файловыми ресурсами Azure с помощью Azure CLI.
-services: storage
 author: roygara
 ms.service: storage
 ms.topic: quickstart
 ms.date: 10/26/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 43a5a72ac32d8ed3510cecb505f5e62cf91d7106
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 93baf275e93c28283836a92c71eb9b24151392fc
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64710818"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699597"
 ---
 # <a name="quickstart-create-and-manage-azure-file-shares-using-azure-cli"></a>Краткое руководство. Создание файловых ресурсов Azure и управление ими с помощью Azure CLI
 В этом руководстве рассматриваются основы работы с [файловыми ресурсами Azure](storage-files-introduction.md) с помощью Azure CLI. Общие файловые ресурсы Azure отличаются от других ресурсов тем, что хранятся в облаке и поддерживаются платформой Azure. Общие файловые ресурсы Azure поддерживают отраслевой протокол SMB и позволяют совместно использовать файлы на нескольких компьютерах, а также в нескольких приложениях и экземплярах. 

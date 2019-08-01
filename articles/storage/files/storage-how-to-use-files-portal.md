@@ -1,19 +1,18 @@
 ---
 title: Краткое руководство по управлению общими файловыми ресурсами Azure с помощью портала Azure
 description: Используйте это краткое руководство, чтобы узнать, как управлять службой файлов Azure с помощью портала Azure.
-services: storage
 author: roygara
 ms.service: storage
 ms.topic: quickstart
 ms.date: 10/18/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 69e7dba06fce14c2411a82dfade344ba1b14a6d3
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 7d7618d2542b1c1d83ed7328c8a32d80f2d0e66a
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64698751"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699525"
 ---
 # <a name="quickstart-create-and-manage-azure-file-shares-with-the-azure-portal"></a>Краткое руководство. Создание общих файловых ресурсов Azure и управление ими с помощью портала Azure 
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Файловые ресурсы Azure можно подключить в Windows, Linux и macOS. В этом руководстве рассматриваются основы работы с файловыми ресурсами Azure с помощью [портала Azure](https://portal.azure.com/).

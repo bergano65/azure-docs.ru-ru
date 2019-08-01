@@ -5,14 +5,14 @@ ms.subservice: single-database
 ms.topic: include
 ms.date: 06/19/2019
 ms.author: mathoma
-ms.openlocfilehash: ae2dd7d88f07d75115eabd6a0069a981936f1b47
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: dd511375c6b007222185f25610aecbd9931a742b
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68444424"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640056"
 ---
-На этом этапе вы создадите группу ресурсов и отдельную базу данных в службе "База данных SQL Azure". 
+На этом этапе вы создадите группу ресурсов и отдельную базу данных в службе "База данных SQL Azure".
 
 > [!IMPORTANT]
 > Убедитесь, что правила брандмауэра настроены для использования общедоступного IP-адреса компьютера, на котором выполняются действия из этой статьи. 
@@ -20,7 +20,8 @@ ms.locfileid: "68444424"
 > Дополнительные сведения см. в статье [sp_set_database_firewall_rule (Azure SQL Database)](/sql/relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database) (sp_set_database_firewall_rule (база данных SQL Azure)). Чтобы определить IP-адрес, используемый для правила брандмауэра уровня сервера для компьютера, обратитесь к статье [Краткое руководство. Создание правила брандмауэра на уровне сервера для базы данных SQL с помощью портала Azure](../sql-database-server-level-firewall-rule.md).  
 
 # <a name="azure-portaltabazure-portal"></a>[портал Azure](#tab/azure-portal)
-Создайте группу ресурсов и отдельную базу данных с помощью портала Azure. 
+
+Создайте группу ресурсов и отдельную базу данных с помощью портала Azure.
 
 1. Щелкните **Создать ресурс** в верхнем левом углу окна портала Azure.
 2. Выберите **Базы данных**, **База данных SQL**, чтобы открыть страницу **Создать базу данных SQL**.
@@ -47,7 +48,7 @@ ms.locfileid: "68444424"
 
       > [!IMPORTANT]
       > Запомните или запишите имя входа и пароль администратора сервера, чтобы можно было войти на сервер и в базы данных для выполнения действий, описанных в этом и других кратких руководствах. Если вы забыли имя входа или пароль, получить имя входа или сбросить пароль можно на странице **сервера SQL server**. Чтобы открыть страницу **сервера SQL**, выберите имя сервера на странице **Обзор** для базы данных после создания базы данных.
-        
+
    - **Хотите использовать пул эластичных БД SQL?** Выберите **Нет**.
    - **Вычисления и хранилище**. Выберите **Настройка базы данных**. 
 
@@ -62,7 +63,7 @@ ms.locfileid: "68444424"
    - Нажмите кнопку **Применить**.
 
 5. Перейдите на вкладку **Дополнительные параметры**. 
-6. В разделе **Источник данных** для параметра **Использовать имеющиеся данные** выберите `Sample`. 
+6. В разделе **Источник данных** для параметра **Использовать имеющиеся данные** выберите `Sample`.
 
    ![Дополнительные параметры Базы данных SQL](../media/sql-database-get-started-portal/create-sql-database-additional-settings.png)
 
@@ -78,7 +79,7 @@ ms.locfileid: "68444424"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Создайте группу ресурсов и отдельную базу данных с помощью PowerShell. 
+Создайте группу ресурсов и отдельную базу данных с помощью PowerShell.
 
    ```powershell-interactive
    # Set variables for your server and database
@@ -89,8 +90,7 @@ ms.locfileid: "68444424"
    $password = "PWD27!"+(New-Guid).Guid
    $serverName = "mysqlserver-$(Get-Random)"
    $databaseName = "mySampleDatabase"
-   
-   
+
    # The ip address range that you want to allow to access your server 
    # (leaving at 0.0.0.0 will prevent outside-of-azure connections to your DB)
    $startIp = "0.0.0.0"
@@ -100,18 +100,18 @@ ms.locfileid: "68444424"
    Write-host "Resource group name is" $resourceGroupName 
    Write-host "Password is" $password  
    Write-host "Server name is" $serverName 
-   
+
    # Connect to Azure
    Connect-AzAccount
 
    # Set subscription ID
    Set-AzContext -SubscriptionId $subscriptionId 
-   
+
    # Create a resource group
    Write-host "Creating resource group..."
    $resourceGroup = New-AzResourceGroup -Name $resourceGroupName -Location $location -Tag @{Owner="SQLDB-Samples"}
    $resourceGroup
-   
+
    # Create a server with a system wide unique server name
    Write-host "Creating primary logical server..."
    $server = New-AzSqlServer -ResourceGroupName $resourceGroupName `
@@ -120,14 +120,14 @@ ms.locfileid: "68444424"
       -SqlAdministratorCredentials $(New-Object -TypeName System.Management.Automation.PSCredential `
       -ArgumentList $adminLogin, $(ConvertTo-SecureString -String $password -AsPlainText -Force))
    $server
-   
+
    # Create a server firewall rule that allows access from the specified IP range
    Write-host "Configuring firewall for primary logical server..."
    $serverFirewallRule = New-AzSqlServerFirewallRule -ResourceGroupName $resourceGroupName `
       -ServerName $serverName `
       -FirewallRuleName "AllowedIPs" -StartIpAddress $startIp -EndIpAddress $endIp
    $serverFirewallRule
-   
+
    # Create General Purpose Gen4 database with 1 vCore
    Write-host "Creating a gen5 2 vCore database..."
    $database = New-AzSqlDatabase  -ResourceGroupName $resourceGroupName `
@@ -142,8 +142,8 @@ ms.locfileid: "68444424"
    ```
 
 # <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
-Создайте группу ресурсов и отдельную базу данных с помощью Azure CLI. 
 
+Создайте группу ресурсов и отдельную базу данных с помощью Azure CLI.
 
    ```azurecli-interactive
    #!/bin/bash
@@ -158,7 +158,7 @@ ms.locfileid: "68444424"
    drLocation=NorthEurope
    drServerName=mysqlsecondary-$RANDOM
    failoverGroupName=failovergrouptutorial-$RANDOM
-   
+
    # The ip address range that you want to allow to access your DB. 
    # Leaving at 0.0.0.0 will prevent outside-of-azure connections to your DB
    startip=0.0.0.0
@@ -169,14 +169,14 @@ ms.locfileid: "68444424"
 
    # Set the subscription context for the Azure account
    az account set -s $subscriptionID
-   
+
    # Create a resource group
    echo "Creating resource group..."
    az group create \
       --name $resourceGroupName \
       --location $location \
       --tags Owner[=SQLDB-Samples]
-   
+
    # Create a logical server in the resource group
    echo "Creating primary logical server..."
    az sql server create \
@@ -185,7 +185,7 @@ ms.locfileid: "68444424"
       --location $location  \
       --admin-user $adminLogin \
       --admin-password $password
-   
+
    # Configure a firewall rule for the server
    echo "Configuring firewall..."
    az sql server firewall-rule create \
@@ -194,7 +194,7 @@ ms.locfileid: "68444424"
       -n AllowYourIp \
       --start-ip-address $startip \
       --end-ip-address $endip
-   
+
    # Create a gen5 1vCore database in the server 
    echo "Creating a gen5 2 vCore database..."
    az sql db create \

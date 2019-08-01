@@ -1,19 +1,18 @@
 ---
 title: Краткое руководство по управлению файловыми ресурсами Azure с помощью Обозревателя службы хранилища Azure
 description: Используйте это краткое руководство, чтобы узнать, как управлять файловыми ресурсами Azure с помощью Обозревателя службы хранилища Azure.
-services: storage
 author: roygara
 ms.service: storage
 ms.topic: quickstart
 ms.date: 10/18/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: bf87704a8055b5725178c846df71ed4d873417e3
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: b034b3e7aa5fcb61cf83565f3e4c3b1c83f3610c
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64713872"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699460"
 ---
 # <a name="quickstart-create-and-manage-azure-file-shares-with-azure-storage-explorer"></a>Краткое руководство. Создание общих файловых ресурсов Azure и управление ими с помощью Обозревателя службы хранилища Azure
 В этом руководстве рассматриваются основы работы с [файловыми ресурсами Azure](storage-files-introduction.md) с помощью Обозревателя службы хранилища Azure. Общие файловые ресурсы Azure отличаются от других ресурсов тем, что хранятся в облаке и поддерживаются платформой Azure. Общие файловые ресурсы Azure поддерживают отраслевой протокол SMB и позволяют совместно использовать файлы на нескольких компьютерах, а также в нескольких приложениях и экземплярах. 

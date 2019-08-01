@@ -2,23 +2,23 @@
 title: Создание простой группы и добавление в нее участников с помощью Azure Active Directory | Документация Майкрософт
 description: Инструкции по созданию простой группы с помощью Azure Active Directory.
 services: active-directory
-author: eross-msft
+author: msaburnley
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: quickstart
 ms.date: 03/01/2019
-ms.author: lizross
+ms.author: ajburnle
 ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d47c742e4f6d2ba8a96e9897f43231e509e8aa63
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 011f49596550ef4d515e0261419ab81c990e23cd
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67476073"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561944"
 ---
 # <a name="create-a-basic-group-and-add-members-using-azure-active-directory"></a>Создание простой группы и добавление в нее участников с помощью Azure Active Directory
 Можно создать простую группу с помощью портала Azure Active Directory (Azure AD). В целях этой статьи простая группа добавляется для отдельного ресурса владельцем этого ресурса (администратором) и включает в себя конкретных участников (сотрудников), которым требуется доступ к этому ресурсу. Более сложные сценарии, включая динамическое членство и создание правил, описываются в [документации по управлению пользователями Azure Active Directory](../users-groups-roles/index.yml).

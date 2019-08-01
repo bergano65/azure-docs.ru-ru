@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: brandwe, jmprieur, saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6023e4bd4028cf1679051b6665297afd00b1eba7
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: f1ebfce2b96da51b9c33646c1626495d280d7b8a
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67482657"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68592243"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из приложения Android
 
@@ -30,7 +30,7 @@ ms.locfileid: "67482657"
 
 Корпорация Майкрософт предлагает простые и понятные средства регистрации пользователей Azure Active Directory (Azure AD) для разработчиков приложений для Android. Azure AD позволяет вашему приложению обращаться к данным пользователя через Microsoft Graph или с помощью собственного защищенного веб-API.
 
-Библиотека проверки подлинности Active Directory (ADAL) для Android позволяет вашему приложению использовать [Microsoft Azure Cloud](https://cloud.microsoft.com) и [API Microsoft Graph](https://developer.microsoft.com/graph) благодаря включенной поддержке [учетных записей Microsoft Azure Active Directory](https://azure.microsoft.com/services/active-directory/) с использованием отраслевых стандартов OAuth версии 2.0 и OpenID Connect.
+Библиотека проверки подлинности Active Directory (ADAL) для Android позволяет вашему приложению использовать [Microsoft Azure Cloud](https://azure.microsoft.com/free/cloud-services/) и [API Microsoft Graph](https://developer.microsoft.com/graph) благодаря включенной поддержке [учетных записей Microsoft Azure Active Directory](https://azure.microsoft.com/services/active-directory/) с использованием отраслевых стандартов OAuth версии 2.0 и OpenID Connect.
 
 В этом кратком руководстве описано следующее:
 

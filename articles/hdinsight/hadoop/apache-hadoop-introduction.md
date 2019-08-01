@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017,mvc,seodec18
 ms.topic: overview
 ms.date: 06/11/2019
-ms.openlocfilehash: 5e36a4691c485472b1e0b43b9d8c551790bc68e9
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 0c1aaa86726465dee5e12416d999c70245ea0844
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68442135"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68598077"
 ---
 # <a name="what-is-apache-hadoop-in-azure-hdinsight"></a>Что такое Apache Hadoop в Azure HDInsight?
 
@@ -86,7 +86,7 @@ HDInsight включает определенные типы кластеров 
 
 |Тип кластера | ОПИСАНИЕ |
 |---|---|
-|[Apache Hadoop](https://wiki.apache.org/hadoop)|Платформа, в которой используется управление ресурсами HDFS и YARN, а также простая модель программирования MapReduce для параллельной обработки и анализа пакетных данных.|
+|[Apache Hadoop](https://hadoop.apache.org/)|Платформа, в которой используется управление ресурсами HDFS и YARN, а также простая модель программирования MapReduce для параллельной обработки и анализа пакетных данных.|
 |[Apache Spark](https://spark.apache.org/)|Платформа параллельной обработки с открытым кодом, которая поддерживает обработку в памяти, чтобы повысить производительность приложений для анализа больших данных. Дополнительные сведения см. в обзоре по [Apache Spark в HDInsight](../spark/apache-spark-overview.md).|
 |[Apache HBase](https://hbase.apache.org/)|База данных NoSQL, созданная на основе Hadoop и обеспечивающая прямой доступ и строгую согласованность для больших объемов неструктурированных и частично структурированных данных (с потенциальным размером таблиц в миллиарды строк и миллионы столбцов). Дополнительные сведения см. в статье [Что такое HBase в HDInsight: база данных NoSQL, которая предоставляет возможности, схожие BigTable, для Hadoop](../hbase/apache-hbase-overview.md).|
 |[Службы машинного обучения](https://docs.microsoft.com/machine-learning-server/rebranding-microsoft-r-server)|Сервер для размещения параллельных и распределенных процессов на языке R и управления ими. Благодаря ему специалисты по обработке и анализу данных, статистики и программисты на R могут получать доступ к масштабируемым, распределенным методам аналитики в HDInsight по требованию. Дополнительные сведения см. в статье [Основные сведения об R Server и возможностях открытого кода R в HDInsight](../r-server/r-server-overview.md).|

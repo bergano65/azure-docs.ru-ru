@@ -9,18 +9,18 @@ ms.topic: include
 ms.date: 04/16/2019
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: 3cfa36331f8f4ad45f3bf8ff32eee7d89c7d8852
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: ba3cf3e77e5414804e881e0cddb151fb14fb7fd5
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67608345"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68669797"
 ---
 ## <a name="publish-the-project-to-azure"></a>Публикация проекта в Azure
 
 Visual Studio Code позволяет опубликовать проект функций непосредственно в Azure. При этом вы создаете приложение-функцию и связанные ресурсы в своей подписке Azure. Приложение-функция обеспечивает контекст выполнения функций. Проект упаковывается и развертывается в новом приложении-функции в вашей подписке Azure.
 
-По умолчанию Visual Studio создает все ресурсы Azure, необходимые для создания приложения-функции. Имена этих ресурсов основаны на выбранном имени приложения-функции. Если необходим полный контроль над созданными ресурсами, можно вместо этого [выполнить публикацию с использованием расширенных параметров](../articles/azure-functions/functions-develop-vs-code.md#enabled-publishing-with-advanced-create-options).
+По умолчанию Visual Studio создает все ресурсы Azure, необходимые для создания приложения-функции. Имена этих ресурсов основаны на выбранном имени приложения-функции. Если необходим полный контроль над созданными ресурсами, можно вместо этого [выполнить публикацию с использованием расширенных параметров](../articles/azure-functions/functions-develop-vs-code.md#enable-publishing-with-advanced-create-options).
 
 В этом разделе предполагается, что вы создаете новое приложение-функцию в Azure.
 

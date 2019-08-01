@@ -11,14 +11,13 @@ ms.topic: quickstart
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 03/25/2019
-ms.openlocfilehash: 8901855ad68a5edb4710853dcde9311216fa2d61
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: d8f12e699c17787d897a7f5ed23eccdbf3659921
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59357118"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68569129"
 ---
 # <a name="quickstart-use-visual-studio-code-to-connect-and-query-an-azure-sql-database"></a>Краткое руководство. Подключение и запрос базы данных SQL Azure с помощью Visual Studio Code
 
@@ -31,9 +30,9 @@ ms.locfileid: "59357118"
   || Отдельная база данных | Управляемый экземпляр |
   |:--- |:--- |:---|
   | Создание| [Портал](sql-database-single-database-get-started.md) | [Портал](sql-database-managed-instance-get-started.md) |
-  || [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](scripts/sql-database-create-and-configure-database-cli.md) | [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
+  || [CLI](scripts/sql-database-create-and-configure-database-cli.md) | [CLI](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44) |
   || [PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) | [PowerShell](scripts/sql-database-create-configure-managed-instance-powershell.md) |
-  | Настройка | [Правило брандмауэра IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
+  | Настройка | [Правило брандмауэра для IP-адресов на уровне сервера](sql-database-server-level-firewall-rule.md)| [Подключение из виртуальной машины](sql-database-managed-instance-configure-vm.md)|
   |||[Подключение "точка — сеть"](sql-database-managed-instance-configure-p2s.md)
   |Загрузка данных|База данных Adventure Works, загруженная для краткого руководства|[Восстановление базы данных Wide World Importers](sql-database-managed-instance-get-started-restore.md)
   |||Восстановление или импорт Adventure Works из файла [BACPAC](sql-database-import.md), размещенного на [GitHub](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works)|
@@ -110,7 +109,7 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
    | ------------ | ------------------ | ------------------------------------------------- |
    | **Server name** (Имя сервера) | Полное имя сервера | Примерно такое: **mynewserver20170313.database.windows.net**. |
    | **Database name** (Имя базы данных) | mySampleDatabase | База данных для подключения. |
-   | **Проверка подлинности** | Имя для входа в SQL| В этом руководстве используется проверка подлинности SQL. |
+   | **Аутентификация** | Имя для входа в SQL| В этом руководстве используется проверка подлинности SQL. |
    | **Имя пользователя** | Имя пользователя | Имя пользователя учетной записи администратора сервера, используемое для создания сервера. |
    | **Password (SQL Login)** (Пароль для входа в SQL) | Пароль | Пароль учетной записи администратора сервера, используемый для создания сервера. |
    | **Save Password?** (Сохранить пароль?) | "Да" или "Нет" | Выберите **Да**, если вы не хотите вводить пароль каждый раз. |
@@ -118,7 +117,7 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
    В случае успешного выполнения появится уведомление о том, что профиль создан и подключен.
 
-## <a name="query-data"></a>Запрос данных
+## <a name="query-data"></a>Запрашивание данных
 
 Выполните указанную нижу инструкцию Transact-SQL [SELECT](https://msdn.microsoft.com/library/ms189499.aspx), чтобы запросить 20 основных продуктов из категории.
 

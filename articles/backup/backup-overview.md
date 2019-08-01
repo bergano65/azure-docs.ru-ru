@@ -1,19 +1,19 @@
 ---
 title: Что такое Azure Backup?
 description: Обзор службы Azure Backup и ее роль в стратегии непрерывности бизнес-процессов и аварийного восстановления (BCDR).
-author: rayne-wiselman
+author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: overview
 ms.date: 04/24/2019
-ms.author: raynew
+ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: 9e926ca2625f98522652ae7e7d245ecf2ed576c4
-ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
+ms.openlocfilehash: e3577a1a0da7809298697c55c84662bc15b0f1e7
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66688714"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639635"
 ---
 # <a name="what-is-azure-backup"></a>Что такое Azure Backup?
 
@@ -100,7 +100,7 @@ Azure Backup может создавать резервные копии и ло
 
 ## <a name="which-backup-agent-should-i-use"></a>Какой агент резервного копирования следует использовать?
 
-**Архивация** | **Решение** | **Ограничения**
+**Azure Backup** | **Решение** | **Ограничения**
 --- | --- | ---
 **Я хочу выполнить резервное копирование всей виртуальной машины Azure** | Включите резервное копирование для виртуальной машины. Расширение резервного копирования будет автоматически настроено на виртуальной машине Azure под управлением Windows или Linux. | Выполняется резервное копирование всей виртуальной машины <br/><br/> На виртуальных машинах Windows резервное копирование поддерживает согласованность на уровне приложений, а на виртуальных машинах Linux — на уровне файлов. Если вам требуется резервное копирование с учетом приложений для виртуальных машин Linux, его необходимо настроить с помощью пользовательских скриптов.
 **Я хочу выполнить резервное копирование конкретных файлов или папок на виртуальной машине Azure** | Разверните агент MARS на виртуальной машине.

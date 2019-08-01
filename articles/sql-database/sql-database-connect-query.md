@@ -10,14 +10,13 @@ ms.topic: quickstart
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: f1eac83f2b5460bf56ddff1bf15d9180adb49a48
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 63ed2c5c334aef8f6281ee34ec4ed6e47ca8521a
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66382277"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68569109"
 ---
 # <a name="quickstarts-azure-sql-database-connect-and-query"></a>Краткие руководства: Подключение и создание запросов к Базе данных SQL Azure
 
@@ -33,7 +32,7 @@ ms.locfileid: "66382277"
 |[Visual Studio Code](sql-database-connect-query-vscode.md)|В этом кратком руководстве показано, как, используя Visual Studio Code, подключиться к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос, вставку, обновление и удаление данных в базе данных.|
 |[.NET с Visual Studio](sql-database-connect-query-dotnet-visual-studio.md)|В этом кратком руководстве показано, как использовать платформу .NET Framework для создания программы C# с помощью Visual Studio, которая подключается к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|
 |[.NET Core](sql-database-connect-query-dotnet-core.md)|В этом кратком руководстве показано, как использовать .NET Core в Windows, Linux и Mac OS для создания программы C#, которая подключается к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|
-|[Go](sql-database-connect-query-go.md)|В этом кратком руководстве показано, как использовать Go для подключения к базе данных SQL Azure. Также демонстрируется применение инструкций Transact-SQL для запроса и изменения данных.|
+|[GO](sql-database-connect-query-go.md)|В этом кратком руководстве показано, как использовать Go для подключения к базе данных SQL Azure. Также демонстрируется применение инструкций Transact-SQL для запроса и изменения данных.|
 |[Java](sql-database-connect-query-java.md)|В этом кратком руководстве показано, как использовать Java для подключения к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|
 |[Node.js](sql-database-connect-query-nodejs.md)|В этом кратком руководстве показано, как использовать Node.js для создания программы, которая подключается к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|
 |[PHP](sql-database-connect-query-php.md)|В этом кратком руководстве показано, как использовать PHP для создания программы, которая подключается к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|
@@ -60,7 +59,7 @@ ms.locfileid: "66382277"
 
 В следующей таблице перечислены библиотеки подключений или *драйверы*, которые клиентские приложения могут применять с помощью различных языков для подключения и использования сервера SQL Server, работающего локально или в облаке. Эти библиотеки и драйверы можно использовать в среде Linux, Windows или Docker, а также при подключении к базе данных SQL Azure и хранилищу данных SQL Azure. 
 
-| Язык | платформа | Дополнительные ресурсы | Download (Скачать) | Начало работы |
+| Язык | платформа | Дополнительные ресурсы | Скачивание | Начало работы |
 | :-- | :-- | :-- | :-- | :-- |
 | C# | Windows, Linux, macOS | [Microsoft ADO.NET для SQL Server](https://docs.microsoft.com/sql/connect/ado-net/microsoft-ado-net-for-sql-server) | [Загрузить](https://www.microsoft.com/net/download/) | [Начало работы](https://www.microsoft.com/sql-server/developer-get-started/csharp/ubuntu)
 | Java | Windows, Linux, macOS | [Microsoft JDBC Driver для SQL Server](https://msdn.microsoft.com/library/mt484311.aspx) | [Загрузить](https://go.microsoft.com/fwlink/?linkid=852460) |  [Начало работы](https://www.microsoft.com/sql-server/developer-get-started/java/ubuntu)
@@ -94,8 +93,8 @@ ms.locfileid: "66382277"
   - [Подключение к базе данных SQL с помощью Python](sql-database-connect-query-python.md)
   - [Подключение к базе данных SQL с помощью Ruby](sql-database-connect-query-ruby.md)
 - Примеры кода логики повторов:
-  - [Step 4: Connect resiliently to SQL with ADO.NET][step-4-connect-resiliently-to-sql-with-ado-net-a78n] (Шаг 4. Выполнение устойчивого подключения к SQL с помощью ADO.NET)
-  - [Step 4: Connect resiliently to SQL with PHP][step-4-connect-resiliently-to-sql-with-php-p42h] (Шаг 4. Выполнение устойчивого подключения к SQL с помощью PHP)
+  - [Отказоустойчивое подключение к SQL с помощью ADO.NET][step-4-connect-resiliently-to-sql-with-ado-net-a78n]
+  - [Отказоустойчивое подключение к SQL с помощью PHP][step-4-connect-resiliently-to-sql-with-php-p42h]
 
 <!-- Link references. -->
 

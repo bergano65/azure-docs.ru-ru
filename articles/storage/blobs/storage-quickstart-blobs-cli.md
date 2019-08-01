@@ -9,16 +9,18 @@ ms.topic: quickstart
 ms.date: 11/14/2018
 ms.author: tamram
 ms.reviewer: seguler
-ms.openlocfilehash: 0b74876d153a775993678ad50ed311c524480f76
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 6a0aef9b2fc7a99183ebd6991691245731e00200
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65149596"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565949"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-the-azure-cli"></a>Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью Azure CLI
 
 Azure CLI — это интерфейс командной строки Azure для управления ресурсами Azure. Вы можете использовать его в браузере с Azure Cloud Shell. Его также можно установить в macOS, Linux или Windows и запускать из командной строки. В этом кратком руководстве содержатся сведения об использовании Azure CLI для отправки и скачивания данных в хранилище BLOB-объектов Azure и обратно.
+
+[!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 

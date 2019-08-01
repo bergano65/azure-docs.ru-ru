@@ -9,16 +9,18 @@ ms.topic: quickstart
 ms.date: 11/14/2018
 ms.author: mhopkins
 ms.reviewer: seguler
-ms.openlocfilehash: 96da1f8903896f932fa63aa8497eaff69f893559
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 12507ba87148bef6378542feb4ebde3b1c291a72
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489669"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565918"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-by-using-the-java-storage-sdk-v10"></a>Краткое руководство. Отправка, скачивание и отображение больших двоичных объектов с помощью пакета SDK службы хранилища для Java версии 10
 
 Из этого краткого руководства вы узнаете, как передать, скачать и создать список блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure с помощью нового пакета SDK службы хранилища для Java. Новый пакет SDK службы хранилища для Java использует модель реактивного программирования RxJava, которое обеспечивает асинхронные операции. Дополнительные сведения о RxJava см. в разделе [RxJava: Reactive Extensions for the JVM](https://github.com/ReactiveX/RxJava) (RxJava. Реактивные расширения для виртуальной машины Java). 
+
+[!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 

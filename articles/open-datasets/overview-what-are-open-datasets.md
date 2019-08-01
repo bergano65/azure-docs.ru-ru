@@ -7,12 +7,12 @@ ms.topic: overview
 author: cjgronlund
 ms.author: cgronlun
 ms.date: 05/02/2019
-ms.openlocfilehash: b01ad5a4fd8808c1e841ba2fb47ea06ece011010
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7fa8562c466c81ebc05360bf06cdde1ee29bed9e
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67051040"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68598988"
 ---
 # <a name="what-are-azure-open-datasets-preview-and-how-can-you-use-them"></a>Что представляют собой открытые наборы данных Azure (предварительная версия) и как их использовать?
 
@@ -58,4 +58,4 @@ ms.locfileid: "67051040"
 ## <a name="next-steps"></a>Дополнительная информация
 * [Пример записной книжки](samples.md)
 * [Руководство. по моделированию регрессии с данными о такси Нью-Йорка](tutorial-opendatasets-automl.md)
-* [Пакет SDK для Python для открытых наборов данных](https://aka.ms/open-datasets-api)
+* [Пакет SDK для Python для открытых наборов данных](/python/api/azureml-opendatasets/?view=azure-ml-py)

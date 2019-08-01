@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 370771d44e2fbbf0fca7af453f7425ebc1b1bdcd
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 99d17b354e267d003e23e507ca190b951e3ed4a0
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67612616"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68608097"
 ---
 # <a name="what-is-conditional-access"></a>Что собой представляет условный доступ
 
@@ -73,7 +73,7 @@ ms.locfileid: "67612616"
 
 ## <a name="azure-ad-conditional-access-and-federated-authentication"></a>Условный доступ Azure AD и федеративная проверка подлинности
 
-Политики условного доступа могут выполняться вместе с [федеративной проверкой подлинности](../../security/azure-ad-choose-authn.md#federated-authentication). Поддерживаются все применимые условия и элементы управления, а [отчеты Azure AD](../reports-monitoring/concept-sign-ins.md) обеспечивают видимость применения политики к операциям входа, которые выполняет активный пользователь.
+Политики условного доступа могут выполняться вместе с [федеративной проверкой подлинности](../../security/fundamentals/choose-ad-authn.md#federated-authentication). Поддерживаются все применимые условия и элементы управления, а [отчеты Azure AD](../reports-monitoring/concept-sign-ins.md) обеспечивают видимость применения политики к операциям входа, которые выполняет активный пользователь.
 
 *Федеративная проверка подлинности с помощью Azure AD* означает, что доверенная служба аутентификации осуществляет проверку подлинности пользователя в Azure AD. Доверенной службой аутентификации могут выступать службы федерации Active Directory (AD FS) или любая другая служба федерации. В этой конфигурации основная проверка подлинности пользователя осуществляется в службе, а затем Azure AD используется для выполнения входа в отдельные приложения. Условный доступ Azure AD применяется перед предоставлением пользователю доступа к запрашиваемому приложению. 
 
