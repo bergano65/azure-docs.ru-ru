@@ -10,14 +10,14 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 07/29/2019
 ms.author: raymondl
-ms.openlocfilehash: dd3f0c5b82c1898d6e4bbe564556ee26e872dc94
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.openlocfilehash: 1d94cff3eb3299692fc4172f5bb5211532ef1002
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68619681"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68697819"
 ---
-# <a name="example-how-to-extract-key-phrases-using-text-analytics"></a>Пример: Извлечение ключевых фраз с помощью Анализа текста
+# <a name="example-how-to-extract-key-phrases-using-text-analytics"></a>Пример Извлечение ключевых фраз с помощью Анализа текста
 
 [API извлечения ключевых фраз](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6) оценивает неструктурированный текст и для каждого документа JSON возвращает список ключевых фраз.
 
@@ -68,7 +68,7 @@ ms.locfileid: "68619681"
     }
 ```
 
-## <a name="step-1-structure-the-request"></a>Шаг 1. Структурирование запроса
+## <a name="step-1-structure-the-request"></a>Шаг 1.: Структурирование запроса
 
 Дополнительные сведения об определении запроса см. в статье [How to call the Text Analytics API](text-analytics-how-to-call-api.md) (Как вызвать REST API службы "Анализ текста"). Для удобства повторим следующие моменты.
 
@@ -76,7 +76,7 @@ ms.locfileid: "68619681"
 
 + Задайте конечную точку HTTP для извлечения ключевых фраз с помощью ресурса Анализа текста в Azure или экземпляра [контейнера Анализа текста](text-analytics-how-to-install-containers.md). Он должен включать в себя ресурс `/keyPhrases`: `https://westus.api.cognitive.microsoft.com/text/analytics/v2.1/keyPhrases`.
 
-+ Задайте заголовок запроса, чтобы включить ключ доступа для операций Анализа текста. Дополнительные сведения см. в статье [о поиске конечных точек и ключей доступа](text-analytics-how-to-access-key.md).
++ Задайте заголовок запроса, чтобы включить [ключ доступа](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) для операций анализ текста.
 
 + В тексте запроса укажите набор документов JSON, которые подготовлены для этого анализа.
 
@@ -154,7 +154,7 @@ ms.locfileid: "68619681"
 
 + [API извлечения ключевых фраз](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6) доступен для некоторых языков.
 + В тексте запроса передаются документы JSON, которые содержат идентификатор, текст и код языка.
-+ Запрос POST передается в конечную точку `/keyphrases`, используя личный [ключ доступа и конечную точку](text-analytics-how-to-access-key.md), допустимые для вашей подписки.
++ Запрос POST передается в конечную точку `/keyphrases`, используя личный [ключ доступа и конечную точку](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource), допустимые для вашей подписки.
 + Выходные данные ответа, состоящие из ключевых слов и фраз для каждого идентификатора документа, могут передаваться в любое приложение, поддерживающее формат JSON, например Microsoft Office Excel и Power BI.
 
 ## <a name="see-also"></a>См. также
@@ -162,7 +162,7 @@ ms.locfileid: "68619681"
  API анализа текста: [общие сведения](../overview.md) и [вопросы и ответы](../text-analytics-resource-faq.md)</br>
  [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [API анализа текста](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/56f30ceeeda5650db055a3c6)

@@ -11,17 +11,17 @@
       href: quick-start.md
     - name: С помощью клиентского пакета SDK
       items:
-        - name: 'C#'
+        - name: С помощью пакета SDK для .NET
           items:
             - name: Анализ графического содержимого
               href: image-moderation-quickstart-dotnet.md
             - name: Анализ текстового содержимого
               href: text-moderation-quickstart-dotnet.md
-        - name: Python
-          items:
-            - name: Анализ текстового содержимого
-              href: text-moderation-quickstart-python.md
-- name: Руководства
+        - name: С помощью пакета SDK для Python
+          href: python-sdk-quickstart.md
+        - name: Использование пакета SDK для Java
+          href: java-sdk-quickstart.md
+- name: Учебники
   items:
     - name: Модерация изображений для электронной коммерции
       href: ecommerce-retail-catalog-moderation.md

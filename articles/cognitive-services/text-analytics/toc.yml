@@ -50,12 +50,8 @@
     - name: 'Использование Flask для перевода текста, анализа тональности и синтезирования речи'
       maintainContext: true
       href: 'https://docs.microsoft.com/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis'
-- name: Инструкции
+- name: Руководства
   items:
-    - name: Регистрация
-      href: How-tos/text-analytics-how-to-signup.md
-    - name: Получение ключа доступа
-      href: How-tos/text-analytics-how-to-access-key.md
     - name: Вызов API "Анализ текста"
       href: How-tos/text-analytics-how-to-call-api.md
     - name: Определение языка
@@ -98,6 +94,8 @@
           href: 'https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/textanalytics?view=azure-dotnet'
         - name: Python
           href: 'https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/textanalytics?view=azure-python'
+        - name: Java
+          href: 'https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/textanalytics?view=azure-java-stable'
         - name: Node.js
           href: 'https://docs.microsoft.com/javascript/api/overview/azure/cognitiveservices/textanalytics?view=azure-node-latest'
         - name: Go
