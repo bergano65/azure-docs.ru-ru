@@ -15,6 +15,8 @@
               href: QuickStarts/csharp-detect-sdk.md
             - name: Python
               href: Tutorials/FaceAPIinPythonTutorial.md
+        - name: Пакет SDK для Python
+          href: QuickStarts/python-sdk.md
     - name: Использование REST API
       items:
         - name: Определение лиц на изображении
