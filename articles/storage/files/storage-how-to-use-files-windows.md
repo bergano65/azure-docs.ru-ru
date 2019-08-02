@@ -1,19 +1,18 @@
 ---
 title: Использование общей папки Azure в Windows | Документация Майкрософт
 description: Узнайте, как использовать общую папку Azure в Windows и Windows Server.
-services: storage
 author: roygara
 ms.service: storage
 ms.topic: conceptual
 ms.date: 06/07/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 02a8b825a513c75ef7c037348ccaecdf5026ded2
-ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
+ms.openlocfilehash: d2bad808d0bcbbd5dc8052db0f8fd32fc4c1180a
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67560475"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699478"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Общие папки Azure можно легко использовать в Windows и Windows Server. В этой статье рассматриваются рекомендации по использованию общей папки Azure в Windows и Windows Server.
@@ -24,15 +23,15 @@ ms.locfileid: "67560475"
 
 | Версия Windows        | Версия SMB | Возможность подключения на виртуальной машине Azure | Возможность подключения в локальной среде |
 |------------------------|-------------|-----------------------|----------------------|
-| Windows Server 2019    | SMB 3.0 | Да | Да |
+| Windows Server 2019    | SMB 3.0 | Да | Да |
 | Windows 10<sup>1</sup> | SMB 3.0 | Да | Да |
 | Semi-Annual Channel<sup>2</sup> для Windows Server | SMB 3.0 | Да | Да |
-| Windows Server 2016    | SMB 3.0     | Да                   | Да                  |
+| Windows Server 2016    | SMB 3.0     | Да                   | Да                  |
 | Windows 8.1            | SMB 3.0     | Да                   | Да                  |
 | Windows Server 2012 R2 | SMB 3.0     | Да                   | Да                  |
 | Windows Server 2012    | SMB 3.0     | Да                   | Да                  |
 | Windows 7              | SMB 2.1     | Да                   | Нет                   |
-| Windows Server 2008 R2 | SMB 2.1     | Да                   | Нет                   |
+| Windows Server 2008 R2 | SMB 2.1     | Да                   | Нет                   |
 
 <sup>1</sup> Windows 10 версий 1507, 1607, 1703, 1709, 1803 и 1809.  
 <sup>3</sup> Windows Server версий 1709 и 1803.
@@ -43,14 +42,14 @@ ms.locfileid: "67560475"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия 
+## <a name="prerequisites"></a>Предварительные требования 
 * **Имя учетной записи хранения**. Чтобы подключить общую папку Azure, вам понадобится имя учетной записи хранения.
 
 * **Ключ учетной записи хранения**. Чтобы подключить общую папку Azure, вам понадобится первичный (или вторичный) ключ учетной записи хранения. В настоящее время ключи SAS для подключения не поддерживаются.
 
-* **Открытый порт 445**. Для протокола SMB требуется, чтобы TCP-порт 445 был открыт. В противном случае установить подключение не получится. Вы можете проверить, блокирует ли ваш брандмауэр порт 445, с помощью командлета `Test-NetConnection`. Вы можете узнать о [различные способы обходной путь заблокирован порт 445 здесь](https://docs.microsoft.com/azure/storage/files/storage-troubleshoot-windows-file-connection-problems#cause-1-port-445-is-blocked).
+* **Открытый порт 445**. Для протокола SMB требуется, чтобы TCP-порт 445 был открыт. В противном случае установить подключение не получится. Вы можете проверить, блокирует ли ваш брандмауэр порт 445, с помощью командлета `Test-NetConnection`. Вы можете узнать о [различных способах решения заблокированного порта 445 здесь](https://docs.microsoft.com/azure/storage/files/storage-troubleshoot-windows-file-connection-problems#cause-1-port-445-is-blocked).
 
-    Следующая команда PowerShell кода предполагается, что вы установили модуль Azure PowerShell, см. в разделе [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) Дополнительные сведения. Не забудьте заменить `<your-storage-account-name>` и `<your-resource-group-name>` соответствующими именами для вашей учетной записи хранения.
+    В следующем коде PowerShell предполагается, что у вас установлен модуль Azure PowerShell, дополнительные сведения см. в разделе [установка Azure PowerShell Module](https://docs.microsoft.com/powershell/azure/install-az-ps) . Не забудьте заменить `<your-storage-account-name>` и `<your-resource-group-name>` соответствующими именами для вашей учетной записи хранения.
 
     ```powershell
     $resourceGroupName = "<your-resource-group-name>"
@@ -234,19 +233,19 @@ Remove-PSDrive -Name <desired-drive-letter>
 
 | Версия Windows                           | Состояние SMB 1 по умолчанию | Метод удаления или отключения       | 
 |-------------------------------------------|----------------------|-----------------------------|
-| Windows Server 2019                       | Отключено             | Удаление с помощью функции Windows |
-| Windows Server версии 1709 или выше            | Отключено             | Удаление с помощью функции Windows |
-| Windows 10 версии 1709 или выше                | Отключено             | Удаление с помощью функции Windows |
-| Windows Server 2016                       | Enabled              | Удаление с помощью функции Windows |
+| Windows Server 2019                       | отключено             | Удаление с помощью функции Windows |
+| Windows Server версии 1709 или выше            | отключено             | Удаление с помощью функции Windows |
+| Windows 10 версии 1709 или выше                | отключено             | Удаление с помощью функции Windows |
+| Windows Server 2016                       | Enabled              | Удаление с помощью функции Windows |
 | Windows 10 версии 1507, 1607 и 1703 | Enabled              | Удаление с помощью функции Windows |
 | Windows Server 2012 R2                    | Enabled              | Удаление с помощью функции Windows | 
 | Windows 8.1                               | Enabled              | Удаление с помощью функции Windows | 
 | Windows Server 2012                       | Enabled              | Отключение с помощью реестра       | 
-| Windows Server 2008 R2                    | Enabled              | Отключение с помощью реестра       |
+| Windows Server 2008 R2                    | Enabled              | Отключение с помощью реестра       |
 | Windows 7                                 | Enabled              | Отключение с помощью реестра       | 
 
 ### <a name="auditing-smb-1-usage"></a>Аудит использования SMB 1
-> Применяется к Windows Server 2019, Windows Server полугодовой канал (версии 1709 и 1803), Windows Server 2016, Windows 10 (версии 1507, 1607, 1703, 1709 и 1803), Windows Server 2012 R2 и Windows 8.1
+> Относится к Windows Server 2019, полугодовой канал Windows Server (версии 1709 и 1803), Windows Server 2016, Windows 10 (версии 1507, 1607, 1703, 1709 и 1803), Windows Server 2012 R2 и Windows 8.1
 
 Прежде чем удалять SMB 1 в вашей среде, можете провести аудит использования SMB 1, чтобы узнать, повлияет ли это изменение на работу каких-либо клиентов. Если какие-либо запросы к папкам SMB выполняются с помощью SMB 1, событие аудита будет регистрироваться в журнале событий в разделе `Applications and Services Logs > Microsoft > Windows > SMBServer > Audit`. 
 
@@ -260,7 +259,7 @@ Set-SmbServerConfiguration –AuditSmb1Access $true
 ```
 
 ### <a name="removing-smb-1-from-windows-server"></a>Удаление SMB 1 из Windows Server
-> Применяется к 2019 Windows Server, Windows Server полугодовой канал (версии 1709 и 1803), Windows Server 2016, Windows Server 2012 R2
+> Применяется к Windows Server 2019, полугодому каналу Windows Server (версии 1709 и 1803), Windows Server 2016, Windows Server 2012 R2
 
 Чтобы удалить SMB 1 из экземпляра Windows Server, выполните следующий командлет в сеансе PowerShell с повышенными правами:
 
@@ -303,7 +302,7 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 - [Запись блога об обнаружении SMB 1 в своей среде с помощью DSCEA](https://blogs.technet.microsoft.com/ralphkyttle/2017/04/07/discover-smb1-in-your-environment-with-dscea/)
 - [Запись блога об отключении SMB 1 в групповой политике](https://blogs.technet.microsoft.com/secguide/2017/06/15/disabling-smbv1-through-group-policy/)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о службе файлов Azure см. по следующим ссылкам.
 - [Планирование развертывания службы файлов Azure](storage-files-planning.md)
 - [Часто задаваемые вопросы](../storage-files-faq.md)

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 50d91c03ac33c32577ddf3838ed6b10024133333
-ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
+ms.openlocfilehash: a91860e9ec8d503a01d079925466093d19bbbccf
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68414534"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698603"
 ---
 # <a name="configure-an-iot-edge-device-to-act-as-a-transparent-gateway"></a>Настройка устройства IoT Edge в качестве прозрачного шлюза
 
@@ -47,11 +47,11 @@ ms.locfileid: "68414534"
 
 Следующие шаги описывают процесс создания сертификатов и их установки в нужных местах шлюза. Можно создать сертификаты с помощью любого компьютера и затем скопировать их на устройство IoT Edge. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Устройство Azure IoT Edge, настраиваемое в качестве шлюза. Используйте IoT Edge шаги установки для одной из следующих операционных систем:
-  * [Windows](/how-to-install-iot-edge-windows.md)
-  * [Linux](/how-to-install-iot-edge-linux.md)
+  * [Windows](how-to-install-iot-edge-windows.md)
+  * [Linux](how-to-install-iot-edge-linux.md)
 
 В этой статье *имя узла шлюза* содержится в нескольких точках. Имя узла шлюза объявляется в параметре **HostName** файла config. YAML на устройстве шлюза IOT Edge. Он используется для создания сертификатов в этой статье и упоминается в строке подключения подчиненных устройств. Имя узла шлюза необходимо разрешить в IP-адрес, используя DNS или запись файла узла.
 

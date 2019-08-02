@@ -1,6 +1,6 @@
 ---
 title: Управление псевдонимом DNS для базы данных SQL Azure с помощью PowerShell | Документация Майкрософт
-description: Командлеты PowerShell, таких как New-AzSqlServerDNSAlias позволяют перенаправлять новые клиентские подключения на другой сервер базы данных SQL Azure без необходимости конфигурацию клиента.
+description: Командлеты PowerShell, такие как New-Азсклсерверднсалиас, позволяют перенаправлять новые клиентские подключения на другой сервер базы данных SQL Azure, не настраивая клиентскую конфигурацию.
 keywords: dns sql database
 services: sql-database
 ms.service: sql-database
@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: oslake
 ms.author: moslake
 ms.reviewer: genemi,amagarwa,maboja, jrasnick
-manager: craigg
 ms.date: 05/14/2019
-ms.openlocfilehash: 4318e6557dc72dff7200beb8783575131659b77f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5afa25a9a92b45c48c30d56428f5cf4e1d2f5d49
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65797706"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561360"
 ---
 # <a name="powershell-for-dns-alias-to-azure-sql-database"></a>Управление псевдонимом DNS для Базы данных SQL Azure с помощью PowerShell
 
@@ -27,10 +26,10 @@ ms.locfileid: "65797706"
 
 В примере кода используются следующие командлеты:
 
-- [New-AzSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/az.Sql/New-azSqlServerDnsAlias): Создает псевдоним DNS в системе службы "База данных SQL Azure". Псевдоним ссылается на сервер 1 Базы данных SQL Azure.
-- [Get-AzSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/az.Sql/Get-azSqlServerDnsAlias): Получает и выводит все псевдонимы DNS, назначенные серверу 1 базы данных SQL.
-- [Set-AzSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/az.Sql/Set-azSqlServerDnsAlias): Изменяет имя сервера базы данных SQL, на который ссылается псевдоним, с "Сервер 1" на "Сервер 2".
-- [Remove-AzSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/az.Sql/Remove-azSqlServerDnsAlias): С помощью имени псевдонима удаляет псевдоним DNS с сервера 2 базы данных SQL.
+- [New-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/New-azSqlServerDnsAlias): Создает псевдоним DNS в системе службы "База данных SQL Azure". Псевдоним ссылается на сервер 1 Базы данных SQL Azure.
+- [Get-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/Get-azSqlServerDnsAlias): Получает и выводит все псевдонимы DNS, назначенные серверу 1 базы данных SQL.
+- [Set-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/Set-azSqlServerDnsAlias): Изменяет имя сервера базы данных SQL, на который ссылается псевдоним, с "Сервер 1" на "Сервер 2".
+- [Remove-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/Remove-azSqlServerDnsAlias): С помощью имени псевдонима удаляет псевдоним DNS с сервера 2 базы данных SQL.
 
 ## <a name="dns-alias-in-connection-string"></a>Использование псевдонима DNS в строке подключения
 
@@ -38,12 +37,12 @@ ms.locfileid: "65797706"
 
 - Пример строки сервера: `any-unique-alias-name.database.windows.net`.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы выполнить пример скрипта PowerShell, приведенный в этой статье, потребуются следующие компоненты:
 
-- Подписка и учетная запись Azure. Для получения бесплатной пробной версии, щелкните ссылку [https://azure.microsoft.com/free/][https://azure.microsoft.com/free/].
-- Модуль Azure PowerShell, с помощью командлета **New AzSqlServerDNSAlias**.
+- Подписка и учетная запись Azure. Для получения бесплатной пробной версии [https://azure.microsoft.com/free/][https://azure.microsoft.com/free/]щелкните.
+- Модуль Azure PowerShell с командлетом **New-азсклсерверднсалиас**.
   - Чтобы выполнить установку или обновление, см. статью [Установка и настройка Azure PowerShell][install-Az-ps-84p].
   - Выполните `Get-Module -ListAvailable Az;` в файле powershell\_ise.exe, чтобы узнать версию.
 - Два сервера Базы данных SQL Azure.
@@ -152,9 +151,9 @@ gm-rg-dns-2       gm-sqldb-dns-2     unique-alias-name-food
 >>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Полное описание функции псевдонима DNS для Базы данных SQL см. в статье [Псевдоним DNS для базы данных SQL Azure][dns-alias-overview-37v].
+Полное описание функции псевдонима DNS для базы данных SQL см. в статье [псевдоним DNS для базы данных SQL Azure][dns-alias-overview-37v].
 
 <!-- Article links. -->
 

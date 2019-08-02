@@ -1,26 +1,17 @@
 ---
 title: Управляемые диски Azure. Преобразование виртуальной машины Windows с неуправляемыми дисками для использования управляемых дисков | Документация Майкрософт
 description: Переключение виртуальной машины Windows, развернутой в рамках модели Resource Manager, с неуправляемых дисков на управляемые диски с помощью PowerShell.
-services: virtual-machines-windows
-documentationcenter: ''
 author: roygara
-manager: twooley
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-windows
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/12/2018
 ms.author: rogarana
-ms.openlocfilehash: 9cbee4f9f4f694510e852fe3790c8242ef346576
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d43ad941fe68707bca873fa969fbc27806ba96a5
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66416051"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698808"
 ---
 # <a name="convert-a-windows-virtual-machine-from-unmanaged-disks-to-managed-disks"></a>Переключение виртуальной машины Windows с неуправляемых дисков на управляемые диски
 
@@ -37,7 +28,7 @@ ms.locfileid: "66416051"
 
 [!INCLUDE [virtual-machines-common-convert-disks-considerations](../../../includes/virtual-machines-common-convert-disks-considerations.md)]
 
-* Исходные VHD и учетная запись хранилища, используемые виртуальной машиной перед преобразованием, не удаляются. За их использование будет и дальше взиматься плата. Чтобы избежать выставления счетов за эти артефакты, удалите исходные большие двоичные объекты VHD, когда убедитесь, что преобразование завершено. Если вам нужно найти эти неподключенные диски, чтобы удалить их, см. в нашей статье [найти и удалить неподключенные управляемые и неуправляемые диски](find-unattached-disks.md).
+* Исходные VHD и учетная запись хранилища, используемые виртуальной машиной перед преобразованием, не удаляются. За их использование будет и дальше взиматься плата. Чтобы избежать выставления счетов за эти артефакты, удалите исходные большие двоичные объекты VHD, когда убедитесь, что преобразование завершено. Если вам нужно найти эти неподключенные диски для их удаления, см. статью [Поиск и удаление неподключенных управляемых и неуправляемых дисков Azure](find-unattached-disks.md).
 
 
 ## <a name="convert-single-instance-vms"></a>Преобразование одноэкземплярных виртуальных машин
@@ -111,7 +102,7 @@ ms.locfileid: "66416051"
 
 Виртуальная машина будет остановлена и перезапущена после завершения миграции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Преобразование управляемых дисков уровня "Стандартный" в диски уровня "Премиум"](convert-disk-storage.md)
 

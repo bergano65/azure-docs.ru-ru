@@ -4,14 +4,14 @@ description: Описывает функции, используемые в ша
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 07/11/2019
+ms.date: 07/31/2019
 ms.author: tomfitz
-ms.openlocfilehash: 7d967f0bb0b7a811d4db7836cdbffdad91088a2c
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 7548b75f201c896e3a5248cb9d0154a9a676a86f
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68311689"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698196"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Функции для работы с ресурсами в шаблонах Azure Resource Manager
 
@@ -37,11 +37,11 @@ ms.locfileid: "68311689"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | Тип | Описание |
+| Параметр | Обязательное значение | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | имя_ресурса или идентификатор_ресурса |Да |строка |Уникальный идентификатор ресурса. |
 | версия_API |Да |строка |Версия API для состояния среды выполнения ресурса. Как правило, указывается в формате **гггг-мм-дд**. |
-| functionValues |Нет |object | Объект, содержащий значения для функции. Предоставляйте этот объект только для функций, которые поддерживают прием объекта с параметрами, например **listAccountSas** в учетной записи хранения. В этой статье показан пример передачи значения функции. | 
+| functionValues |Нет |объект | Объект, содержащий значения для функции. Предоставляйте этот объект только для функций, которые поддерживают прием объекта с параметрами, например **listAccountSas** в учетной записи хранения. В этой статье показан пример передачи значения функции. | 
 
 ### <a name="implementations"></a>Варианты реализации решения
 
@@ -265,7 +265,7 @@ ms.locfileid: "68311689"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | Тип | Описание |
+| Параметр | Обязательное значение | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | пространство_имен_поставщика |Да |строка |Пространство имен поставщика. |
 | resourceType |Нет |строка |Тип ресурса в указанном пространстве имен. |
@@ -340,7 +340,7 @@ ms.locfileid: "68311689"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | Тип | Описание |
+| Параметр | Обязательное значение | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | имя_ресурса или идентификатор_ресурса |Да |строка |Имя или уникальный идентификатор ресурса. |
 | apiVersion |Нет |строка |Версия API для указанного ресурса. Если ресурс не предоставляется в рамках того же шаблона, необходимо включить этот параметр. Как правило, указывается в формате **гггг-мм-дд**. |
@@ -360,7 +360,7 @@ ms.locfileid: "68311689"
 
 С помощью функции reference вы прямо объявляете, что один ресурс зависит от другого, если ресурс, на который указывает ссылка, предоставляется в том же шаблоне и вы ссылаетесь, используя его имя (а не идентификатор). При этом свойство dependsOn использовать не нужно. Расчет функции выполняется только после развертывания ресурса, на который указывает ссылка.
 
-При использовании функции **Reference** в ресурсе, который условно развернут, функция вычисляется, даже если ресурс не развернут.  Если ссылочная функция ссылается на  несуществующий ресурс, возникает ошибка. Используйте функцию **If** , чтобы убедиться, что функция вычисляется только при развертывании ресурса. См. [функцию if](resource-group-template-functions-logical.md#if) для примера шаблона, который использует оператор If и ссылку с условно развернутым ресурсом.
+При использовании функции **Reference** в ресурсе, который условно развернут, функция вычисляется, даже если ресурс не развернут.  Если ссылочная функция ссылается на несуществующий ресурс, возникает ошибка. Используйте функцию **If** , чтобы убедиться, что функция вычисляется только при развертывании ресурса. См. [функцию if](resource-group-template-functions-logical.md#if) для примера шаблона, который использует оператор If и ссылку с условно развернутым ресурсом.
 
 Чтобы просмотреть имена и значения свойств для типа ресурса, создайте в разделе outputs шаблон, который возвращает объект. Если ресурс этого типа уже существует, то шаблон возвращает объект, не развертывая новых ресурсов. 
 
@@ -607,7 +607,7 @@ ms.locfileid: "68311689"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | Тип | Описание |
+| Параметр | Обязательное значение | Тип | Описание |
 |:--- |:--- |:--- |:--- |
 | subscriptionId |Нет |строка (в формате GUID) |Значение по умолчанию — текущая подписка. Укажите это значение, если нужно получить ресурс из другой подписки. |
 | resourceGroupName |Нет |строка |Значение по умолчанию — текущая группа ресурсов. Укажите это значение, если нужно получить ресурс из другой группы ресурсов. |
@@ -733,12 +733,12 @@ ms.locfileid: "68311689"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | Тип | Значение |
+| Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| sameRGOutput | Строка, | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| differentRGOutput | Строка, | /subscriptions/{ИД_текущей_подписки}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| differentSubOutput | Строка, | /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| nestedResourceOutput | Строка, | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.SQL/servers/serverName/databases/databaseName |
+| sameRGOutput | Строковое | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| differentRGOutput | Строковое | /subscriptions/{ИД_текущей_подписки}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| differentSubOutput | Строковое | /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| nestedResourceOutput | Строковое | /subscriptions/{ИД_текущей_подписки}/resourceGroups/examplegroup/providers/Microsoft.SQL/servers/serverName/databases/databaseName |
 
 ## <a name="subscription"></a>подписка
 

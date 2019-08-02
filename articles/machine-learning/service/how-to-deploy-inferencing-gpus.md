@@ -10,12 +10,12 @@ ms.author: vaidyas
 author: csteegz
 ms.reviewer: larryfr
 ms.date: 07/24/2019
-ms.openlocfilehash: 520e7fe953256e4c489e4c540493d9f74dda3aef
-ms.sourcegitcommit: 5604661655840c428045eb837fb8704dca811da0
+ms.openlocfilehash: 06194537a0c0cce3a52510e6f426a9c2904387b2
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68494357"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68694339"
 ---
 # <a name="deploy-a-deep-learning-model-for-inference-with-gpu"></a>Развертывание модели глубокого обучения для вывода с помощью GPU
 
@@ -26,7 +26,10 @@ ms.locfileid: "68494357"
 > [!TIP]
 > Хотя фрагменты кода в этой статье Уси модель TensorFlow, эту информацию можно применить к любой платформе машинного обучения, которая поддерживает GPU.
 
-## <a name="prerequisites"></a>предварительные требования
+> [!NOTE]
+> Сведения в этой статье основаны на сведениях в статье [развертывание в службе Azure Kubernetes Service](how-to-deploy-azure-kubernetes-service.md) . Когда эта статья обычно охватывает развертывание в AKS, в этой статье рассматривается развертывание GPU.
+
+## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочая область службы машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области службы машинное обучение Azure](setup-create-workspace.md).
 
@@ -87,7 +90,7 @@ except ComputeTargetException:
 > [!IMPORTANT]
 > В Azure будет взиматься плата, если существует кластер AKS. Не забудьте удалить кластер AKS после завершения работы с ним.
 
-Дополнительные сведения об использовании службы Azure Kubernetes с Машинное обучение Azure Service см. в разделе [развертывание и размещение](how-to-deploy-and-where.md#deploy-aks).
+Дополнительные сведения об использовании AKS со службой Машинное обучение Azure см. в статье [развертывание в службе Kubernetes Azure](how-to-deploy-azure-kubernetes-service.md).
 
 ## <a name="write-the-entry-script"></a>Написание сценария записи
 
@@ -162,7 +165,7 @@ gpu_aks_config = AksWebservice.deploy_configuration(autoscale_enabled=False,
                                                     memory_gb=4)
 ```
 
-Дополнительные сведения см. в справочной документации по [акссервице. deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aks.akswebservice?view=azure-ml-py#deploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none--gpu-cores-none--period-seconds-none--initial-delay-seconds-none--timeout-seconds-none--success-threshold-none--failure-threshold-none--namespace-none-).
+Дополнительные сведения см. в справочной документации по [акссервице. deploy_configuration](/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py#deploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none--gpu-cores-none--period-seconds-none--initial-delay-seconds-none--timeout-seconds-none--success-threshold-none--failure-threshold-none--namespace-none--token-auth-enabled-none-).
 
 ## <a name="define-the-inference-configuration"></a>Определение конфигурации вывода
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 01/16/2018
 ms.author: menchi
-ms.openlocfilehash: 6b1029c5532e106c269b47e6e184b9c93faf8d09
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 93efd6e53470fb78bb6d823652437e7a37c33732
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60399629"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640573"
 ---
 # <a name="use-the-iot-extension-for-azure-cli-for-azure-iot-hub-device-management"></a>Управление устройствами центра Интернета вещей Azure с помощью расширения Интернета вещей для Azure CLI
 
@@ -23,7 +23,7 @@ ms.locfileid: "60399629"
 
 [!INCLUDE [iot-hub-get-started-note](../../includes/iot-hub-get-started-note.md)]
 
-[Расширение центра Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension) является новым расширением центра Интернета вещей с открытым кодом, увеличивающим возможности [Azure CLI](https://docs.microsoft.com/cli/azure/overview?view=azure-cli-latest). Azure CLI содержит команды для взаимодействия с Azure Resource Manager и конечными точками управления. Например, Azure CLI можно использовать для создания центра Интернета вещей или виртуальной машины Azure. Расширение CLI включает службу Azure для ускорения работы Azure CLI, за счет чего вы получаете доступ к дополнительным определенным функциям службы. Расширение Интернета вещей обеспечивает для разработчиков решений Интернета вещей доступ ко всем возможностям Центра Интернета вещей, IoT Edge и службе "Подготовка устройств к добавлению в Центр Интернета вещей" из командной строки.
+[Расширение IOT для Azure CLI](https://github.com/Azure/azure-iot-cli-extension) — это новое расширение IOT с открытым кодом, которое добавляет к возможностям [Azure CLI](https://docs.microsoft.com/cli/azure/overview?view=azure-cli-latest). Azure CLI включает команды для взаимодействия с конечными точками Azure Resource Manager и управления. Например, Azure CLI можно использовать для создания центра Интернета вещей или виртуальной машины Azure. Расширение CLI включает службу Azure для ускорения работы Azure CLI, за счет чего вы получаете доступ к дополнительным определенным функциям службы. Расширение IoT предоставляет разработчикам Интернета вещей доступ для командной строки ко всем центрам Интернета вещей, IoT Edge и возможностям службы подготовки устройств для центра Интернета вещей.
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
 
@@ -33,7 +33,7 @@ ms.locfileid: "60399629"
 | Требуемые свойства двойников    | Перевод устройства в определенные состояния, например включение зеленого светодиодного индикатора или установка 30-минутного интервала отправки данных телеметрии.         |
 | Сообщаемые свойства двойника   | Получение зарегистрированного состояния устройства, например данных о том, что сейчас на устройстве мигает индикатор.                                    |
 | Теги двойников                  | Хранение метаданных для конкретного устройства в облаке. Например, расположение развертывания торгового автомата.                         |
-| Запросы двойника устройства        | Запрос всех двойников устройства для получения тех из них, которые соответствуют произвольным условиям, например для определения устройств, которые доступны для использования. |
+| Запросы двойника устройства        | Запросите все двойникови устройств, чтобы получить эти двойников с произвольными условиями, такими как идентификация доступных устройств для использования. |
 
 Более подробное объяснение различий и рекомендации по использованию этих параметров см. в статьях [Руководство по обмену данными между устройством и облаком](iot-hub-devguide-d2c-guidance.md) и [Руководство по обмену данными между облаком и устройством](iot-hub-devguide-c2d-guidance.md).
 
@@ -41,7 +41,7 @@ ms.locfileid: "60399629"
 
 ## <a name="what-you-learn"></a>Что вы узнаете
 
-Вы узнаете, как использовать расширение Интернета вещей для Azure CLI с разными параметрами управления на компьютере разработки.
+Вы узнаете, как использовать расширение Интернета вещей для Azure CLI с различными вариантами управления на компьютере разработки.
 
 ## <a name="what-you-do"></a>Что нужно сделать
 
@@ -49,7 +49,7 @@ ms.locfileid: "60399629"
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
-* Завершить [онлайн-симулятор Raspberry Pi](iot-hub-raspberry-pi-web-simulator-get-started.md) руководства или одним из руководств устройства; например, [Raspberry Pi с помощью node.js](iot-hub-raspberry-pi-kit-node-get-started.md). Они охватывают следующие требования:
+* Заполните учебник [Raspberry Pi Online Simulator](iot-hub-raspberry-pi-web-simulator-get-started.md) или одно из учебников по устройствам. Например, [Raspberry Pi с Node. js](iot-hub-raspberry-pi-kit-node-get-started.md). Эти элементы охватывают следующие требования.
 
   - Активная подписка Azure.
   - Центр Интернета вещей Azure в подписке;
@@ -59,11 +59,14 @@ ms.locfileid: "60399629"
 
 * [Python 2.7x или Python 3.x](https://www.python.org/downloads/)
 
-* Azure CLI. Если вам необходимо выполнить установку, см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Вам понадобится как минимум Azure CLI версии 2.0.24 или более поздней. Для проверки используйте `az –version`. 
+<!-- I'm not sure we need all this info, so comment out this include for now. Robin 7.26.2019
+[!INCLUDE [iot-hub-include-python-installation-notes](../../includes/iot-hub-include-python-installation-notes.md)] -->
+
+* Azure CLI. Если вам необходимо выполнить установку, см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Вам понадобится как минимум Azure CLI версии 2.0.24 или более поздней. Для проверки используйте `az –version`.
 
 * Установите расширение Интернета вещей. Проще всего запустить `az extension add --name azure-cli-iot-ext`. В [файле сведений расширения Интернета вещей](https://github.com/Azure/azure-iot-cli-extension/blob/master/README.md) описывается несколько способов установки расширения.
 
-## <a name="log-in-to-your-azure-account"></a>Вход в учетную запись Azure
+## <a name="sign-in-to-your-azure-account"></a>Вход в учетную запись Azure
 
 Войдите в свою учетную запись Azure с помощью следующей команды:
 
@@ -99,7 +102,7 @@ az iot hub device-twin update -n <your hub name> \
 az iot hub device-twin show -n <your hub name> -d <your device id>
 ```
 
-Одно из сообщаемых свойств ($metadata.$lastUpdated) указывает время последнего обновления набора передаваемых свойств приложением для устройства.
+Одно из сообщаемых свойств двойника — $metadata. $lastUpdated, в котором показано время последнего обновления приложением устройства набора сообщаемых свойств.
 
 ## <a name="device-twin-tags"></a>Теги двойника устройства
 
@@ -134,7 +137,7 @@ az iot hub query --hub-name <your hub name> \
   --query-command "SELECT * FROM devices WHERE tags.role != 'temperature&humidity'"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы узнали, как отслеживать сообщения, отправляемые из устройства Интернета вещей в облако Центра Интернета вещей, и отправлять сообщения из этого облака на устройство.
 

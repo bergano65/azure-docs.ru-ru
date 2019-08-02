@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 9e5e6594a74219a22d67af18827bfe2b7cbd0fb8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: a18d4c31da4ffeefebd4bda9aa441fdfec062be9
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66385273"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705268"
 ---
 # <a name="how-to-teach-with-conversation-learner"></a>Использование приложения Conversation Learner (Обучение диалогам) 
 
@@ -52,8 +53,8 @@ ms.locfileid: "66385273"
 Является ли это первым случаем | 1 |
 Точное совпадение слов в текущей фразе пользователя | 2 | 
 Слова со схожим значением в текущей фразе пользователя | 3 | 
-Действия системы перед предыдущим случаем | 4\. |
-Сущности, присутствующие в предыдущих случаях | 4\. | 
+Действия системы перед предыдущим случаем | 4 |
+Сущности, присутствующие в предыдущих случаях | 4 | 
 Пользовательские фразы до текущего случая | 5 | 
 
 > [!NOTE]
@@ -72,7 +73,7 @@ ms.locfileid: "66385273"
 
 Так как обучение выполняется асинхронно, возможно, что внесенные вами изменения отразятся не сразу.  Если извлечение сущности или выбор действия работают не так, как ожидалось, в зависимости от изменений, внесенных за последние 5–10 секунд, причиной может быть именно это.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Default values and boundaries](./cl-values-and-boundaries.md) (Значение и границы по умолчанию)

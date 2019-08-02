@@ -3,25 +3,23 @@ title: Создание шлюза приложений с завершение�
 description: Узнайте, как создать шлюз приложений и добавить сертификат для завершения SSL-запросов с помощью Azure PowerShell.
 services: application-gateway
 author: vhorne
-tags: azure-resource-manager
 ms.service: application-gateway
-ms.topic: tutorial
-ms.workload: infrastructure-services
-ms.date: 7/13/2018
+ms.topic: article
+ms.date: 7/31/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: a5f9797572e0f78ce8cc83c5c1a1aadd46a234a1
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
-ms.translationtype: HT
+ms.openlocfilehash: 70447e01fc248e889662c5ec15cb65b1c0cc4848
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65198365"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688103"
 ---
 # <a name="create-an-application-gateway-with-ssl-termination-using-azure-powershell"></a>Создание шлюза приложений с завершением SSL-запросов с помощью Azure PowerShell
 
 С помощью Azure PowerShell можно создать [шлюз приложений](overview.md) с сертификатом для [завершения SSL-запросов](ssl-overview.md), в котором используется [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) для внутренних серверов. В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию. 
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
 > * Создание самозаверяющего сертификата
@@ -33,11 +31,11 @@ ms.locfileid: "65198365"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Для работы с этим руководством требуется модуль Azure PowerShell версии 1.0.0 и выше. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
+Для работы с этой статьей требуется модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Login-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
 
-Для использования в рабочей среде следует импортировать действительный сертификат, подписанный доверенным поставщиком. В этом руководстве мы создадим самозаверяющий сертификат с помощью [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/new-selfsignedcertificate). Вы можете использовать [Export-PfxCertificate](https://docs.microsoft.com/powershell/module/pkiclient/export-pfxcertificate) с возвращенным отпечатком, чтобы экспортировать PFX-файл из сертификата.
+Для использования в рабочей среде следует импортировать действительный сертификат, подписанный доверенным поставщиком. В этой статье вы создадите самозаверяющий сертификат с помощью команды [New-SelfSignedCertificate](https://docs.microsoft.com/powershell/module/pkiclient/new-selfsignedcertificate). Вы можете использовать [Export-PfxCertificate](https://docs.microsoft.com/powershell/module/pkiclient/export-pfxcertificate) с возвращенным отпечатком, чтобы экспортировать PFX-файл из сертификата.
 
 ```powershell
 New-SelfSignedCertificate `
@@ -66,7 +64,7 @@ Export-PfxCertificate `
   -Password $pwd
 ```
 
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
+## <a name="create-a-resource-group"></a>Создать группу ресурсов
 
 Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов Azure с именем *myResourceGroupAG*, используя [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). 
 
@@ -98,7 +96,8 @@ $pip = New-AzPublicIpAddress `
   -ResourceGroupName myResourceGroupAG `
   -Location eastus `
   -Name myAGPublicIPAddress `
-  -AllocationMethod Dynamic
+  -AllocationMethod Static `
+  -Sku Standard
 ```
 
 ## <a name="create-an-application-gateway"></a>Создание шлюза приложений
@@ -183,8 +182,8 @@ $frontendRule = New-AzApplicationGatewayRequestRoutingRule `
 
 ```azurepowershell-interactive
 $sku = New-AzApplicationGatewaySku `
-  -Name Standard_Medium `
-  -Tier Standard `
+  -Name Standard_v2 `
+  -Tier Standard_v2 `
   -Capacity 2
 
 $appgw = New-AzApplicationGateway `
@@ -297,15 +296,6 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 Remove-AzResourceGroup -Name myResourceGroupAG
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
-
-> [!div class="checklist"]
-> * Создание самозаверяющего сертификата
-> * настройка сети;
-> * создание шлюза приложений с сертификатом;
-> * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
-
-> [!div class="nextstepaction"]
-> [Создание шлюза приложений для размещения нескольких веб-сайтов](./tutorial-multiple-sites-powershell.md)
+[Создание шлюза приложений для размещения нескольких веб-сайтов](./tutorial-multiple-sites-powershell.md)

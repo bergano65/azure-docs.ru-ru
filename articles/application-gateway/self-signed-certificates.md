@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 07/23/2019
 ms.author: victorh
-ms.openlocfilehash: 0b97f2f6df87255e10faaf58c40ea9136354bff6
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 9966164ec1b6a37538a24d2ef8cb80007e6f6d29
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68386308"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698231"
 ---
 # <a name="generate-an-azure-application-gateway-self-signed-certificate-with-a-custom-root-ca"></a>Создание самозаверяющего сертификата шлюза приложений Azure с помощью пользовательского корневого ЦС
 
@@ -29,7 +29,7 @@ ms.locfileid: "68386308"
 - Создание самозаверяющего сертификата, подписанного пользовательским центром сертификации
 - Отправка самозаверяющего корневого сертификата в шлюз приложений для проверки подлинности внутреннего сервера
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - **[OpenSSL](https://www.openssl.org/) на компьютере под управлением Windows или Linux** 
 
@@ -161,7 +161,7 @@ CSR — это открытый ключ, предоставляемый ЦС п
    ![Доверенные корневые сертификаты](media/self-signed-certificates/trusted-root-cert.png)
 
    > [!NOTE]
-   > Предполагается, что DNS настроена на указание имени веб-сервера (в данном примере — www.fabrikam.com) на IP-адрес вашего сервера. В противном случае можно изменить [файл hosts](https://answers.microsoft.com/windows/forum/windows_10-other_settings-winpc/how-to-edit-host-file-in-windows-10/7696f204-2aaf-4111-913b-09d6917f7f3d) , чтобы разрешить имя.
+   > Предполагается, что DNS настроена на указание имени веб-сервера (в данном примере — www.fabrikam.com) на IP-адрес вашего сервера. В противном случае можно изменить [файл hosts](https://answers.microsoft.com/en-us/windows/forum/all/how-to-edit-host-file-in-windows-10/7696f204-2aaf-4111-913b-09d6917f7f3d) , чтобы разрешить имя.
 1. Перейдите на свой веб-сайт и щелкните значок замка в поле адреса вашего браузера, чтобы проверить сведения о сайте и сертификате.
 
 ## <a name="verify-the-configuration-with-openssl"></a>Проверка конфигурации с помощью OpenSSL

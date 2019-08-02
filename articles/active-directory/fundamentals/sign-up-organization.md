@@ -1,24 +1,24 @@
 ---
-title: Регистрация организации — Azure Active Directory | Документация Майкрософт
+title: Регистрация в Организации — Azure Active Directory | Документация Майкрософт
 description: Инструкции по регистрации организации для использования Azure и Azure Active Directory.
 services: active-directory
-author: eross-msft
+author: msaburnley
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 09/14/2018
-ms.author: lizross
+ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bec4385b77ce44e87ed1f947a5a7a3e3d0d52fc6
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: eb306e1ecbbdf2142d88b837b9750bbd2166cfda
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60246902"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561619"
 ---
 # <a name="sign-up-your-organization-to-use-azure-active-directory"></a>Регистрация организации для использования Azure Active Directory
 Зарегистрируйтесь в службе Azure Active Directory (Azure AD) или в новой подписке Microsoft Azure, используя:
@@ -30,7 +30,7 @@ ms.locfileid: "60246902"
   > [!Note]
   >   Мы рекомендуем использовать рабочую или учебную учетную запись, если у вас уже есть доступ к Azure AD. В любом случае следует использовать тип учетной записи, связанный с вашей подпиской Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Приобретение Azure](https://azure.microsoft.com/pricing/purchase-options/)
 

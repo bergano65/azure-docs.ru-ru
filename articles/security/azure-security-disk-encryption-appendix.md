@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2872d106eea56a37c362195e7a3250058336768b
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 7cbddc4b7af546396a1a5a4c86d349a96054a6f3
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295056"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68726270"
 ---
 # <a name="appendix-for-azure-disk-encryption"></a>Приложение к статье о шифровании дисков Azure 
 
@@ -104,17 +104,17 @@ ms.locfileid: "67295056"
      ```
 
 ### <a name="bkmk_prereq-script"></a> Выполнение сценария PowerShell для установки компонентов, необходимых при шифровании дисков Azure
-Если вы уже знакомы с предварительными требованиями для шифрования дисков Azure, можно использовать [соответствующий сценарий PowerShell предварительных требований](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1 ). Пример использования этого сценария PowerShell см. в статье [Краткое руководство. Шифрование виртуальной машины IaaS под управлением Windows с помощью Azure PowerShell](quick-encrypt-vm-powershell.md). Вы можете удалить комментарии из раздела сценария, начиная со строки 211, чтобы шифровать все диски имеющихся виртуальных машин в имеющейся группе ресурсов. 
+Если вы уже знакомы с предварительными требованиями для шифрования дисков Azure, можно использовать [соответствующий сценарий PowerShell предварительных требований](https://raw.githubusercontent.com/Azure/azure-powershell/master/src/Compute/Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1 ). Пример использования этого сценария PowerShell см. в статье [Краткое руководство. Шифрование виртуальной машины IaaS под управлением Windows с помощью Azure PowerShell](azure-disk-encryption-linux-powershell-quickstart.md). Вы можете удалить комментарии из раздела сценария, начиная со строки 211, чтобы шифровать все диски имеющихся виртуальных машин в имеющейся группе ресурсов. 
 
 В следующей таблице показано, какие параметры могут использоваться в сценарии PowerShell: 
 
 
 |Параметр|Описание|Необязательно|
 |------|------|------|
-|$resourceGroupName| Имя группы ресурсов, к которой принадлежит хранилище ключей.  При отсутствии группы ресурсов с таким именем — она будет создана.| Истина|
-|$keyVaultName|Имя хранилища ключей, в котором будут размещаться ключи шифрования. При отсутствии хранилища ключей с таким именем — оно будет создано.| Истина|
-|$location|Расположение хранилища ключей. Убедитесь, что хранилище ключей и виртуальные машины, которые предстоит зашифровать, находятся в одном расположении. Получите список расположений с помощью команды `Get-AzLocation`.|Истина|
-|$subscriptionId|Идентификатор подписки Azure для использования.  Вы можете получить идентификатор подписки с помощью команды `Get-AzSubscription`.|Истина|
+|$resourceGroupName| Имя группы ресурсов, к которой принадлежит хранилище ключей.  При отсутствии группы ресурсов с таким именем — она будет создана.| True|
+|$keyVaultName|Имя хранилища ключей, в котором будут размещаться ключи шифрования. При отсутствии хранилища ключей с таким именем — оно будет создано.| True|
+|$location|Расположение хранилища ключей. Убедитесь, что хранилище ключей и виртуальные машины, которые предстоит зашифровать, находятся в одном расположении. Получите список расположений с помощью команды `Get-AzLocation`.|True|
+|$subscriptionId|Идентификатор подписки Azure для использования.  Вы можете получить идентификатор подписки с помощью команды `Get-AzSubscription`.|True|
 |$aadAppName|Имя приложения Azure AD, которое будет использоваться для записи секретов в хранилище ключей. Будет создано приложение с таким именем (если оно еще не создано). Если это приложение уже есть, передайте параметр aadClientSecret в сценарий.|False|
 |$aadClientSecret|Секрет клиента приложения Azure AD, который был создан ранее.|False|
 |$keyEncryptionKeyName|Имя дополнительного ключа шифрования ключа в хранилище ключей. При отсутствии ключа с таким именем — он будет создан.|False|
@@ -133,15 +133,15 @@ ms.locfileid: "67295056"
   - [Отключение шифрования на работающей виртуальной машине Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-running-linux-vm-without-aad) 
     - Для виртуальных машин Linux отключение шифрования возможно только для томов данных.  
 
-### <a name="encrypt-or-decrypt-virtual-machine-scale-sets"></a>Шифровать или расшифровывать масштабируемые наборы виртуальных машин
+### <a name="encrypt-or-decrypt-virtual-machine-scale-sets"></a>Шифрование или расшифровка масштабируемых наборов виртуальных машин
 
 - [Включение шифрования диска в запущенном масштабируемом наборе виртуальных машин Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-vmss-linux)
 
 - [Включение шифрования диска в запущенном масштабируемом наборе виртуальных машин Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-vmss-windows)
 
-  - [Развертывание виртуальной машины масштабируемый набор виртуальных машин Linux с основную виртуальную машину и включает шифрование на масштабируемого набора виртуальных МАШИН Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-linux-jumpbox)
+  - [Развертывание масштабируемого набора виртуальных машин Linux с помощью Jumpbox и включение шифрования в VMSS Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-linux-jumpbox)
 
-  - [Развертывание виртуальной машины масштабируемый набор виртуальных машин Windows с основную виртуальную машину и включает шифрование на масштабируемого набора виртуальных МАШИН Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-windows-jumpbox)
+  - [Развертывание масштабируемого набора виртуальных машин Windows с помощью Jumpbox и включение шифрования в VMSS Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-windows-jumpbox)
 
 - [Отключение шифрования диска в запущенном масштабируемом наборе виртуальных машин Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-vmss-linux)
 
@@ -206,13 +206,13 @@ ms.locfileid: "67295056"
 
 ### <a name="prerequisites-for-os-disk-encryption"></a>Предварительные требования для шифрования диска ОС
 
-* Виртуальная машина должна использовать дистрибутив, который совместим с шифрованием диска ОС, перечисленные в [шифрования дисков Azure поддерживаемые операционные системы: Linux](azure-security-disk-encryption-prerequisites.md#linux) 
+* Виртуальная машина должна использовать дистрибутив, совместимый с шифрованием дисков ОС, как [указано в операционных системах, поддерживаемых шифрованием дисков Azure: Linux](azure-security-disk-encryption-prerequisites.md#linux) 
 * Виртуальная машина должна быть создана из образа Marketplace в Azure Resource Manager.
 * Виртуальная машина Azure по крайней мере с 4 ГБ ОЗУ (рекомендуемый размер — 7 ГБ).
 * (Для RHEL и CentOS.) Отключите SELinux. Чтобы отключить SELinux на виртуальной машине, ознакомьтесь с разделом "4.4.2. Disabling SELinux" (4.4.2. Отключение SELinux) [руководства пользователя и администратора SELinux](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/SELinux_Users_and_Administrators_Guide/sect-Security-Enhanced_Linux-Working_with_SELinux-Changing_SELinux_Modes.html#sect-Security-Enhanced_Linux-Enabling_and_Disabling_SELinux-Disabling_SELinux).
 * После отключения SELinux перезагрузите виртуальную машину по крайней мере один раз.
 
-### <a name="steps"></a>Действия
+### <a name="steps"></a>Шаги
 1. Создайте виртуальную машину с помощью одного из дистрибутивов, указанных ранее.
 
    Для CentOS 7.2 шифрование диска операционной системы можно включить через специальный образ. Чтобы использовать этот образ, задайте при создании виртуальной машины для параметра SKU значение 7.2n.
@@ -234,7 +234,7 @@ ms.locfileid: "67295056"
 
 5. Периодически отслеживайте ход выполнения шифрования, следуя инструкциям из [следующего раздела](#monitoring-os-encryption-progress).
 
-6. Когда Get-AzVmDiskEncryptionStatus покажет «VMRestartPending», перезапустите виртуальную Машину, войдя в нее или с помощью портала, PowerShell или интерфейса командной строки.
+6. После того как Get-Азвмдискенкриптионстатус выводит "VMRestartPending", перезапустите виртуальную машину, войдя на нее или используя портал, PowerShell или CLI.
     ```powershell
     C:\> Get-AzVmDiskEncryptionStatus  -ResourceGroupName $ResourceGroupName -VMName $VMName
     -ExtensionName $ExtensionName
@@ -498,7 +498,7 @@ ms.locfileid: "67295056"
    ```bash
     if [ -z "$DRACUT_SYSTEMD" ]; then
    ```
-   до
+   to
    ```bash
     if [ 1 ]; then
    ```
@@ -546,7 +546,7 @@ ms.locfileid: "67295056"
 ``` 
 
 ### <a name="bkmk_SecretnoKEK"></a> Секрет шифрования дисков, не зашифрованный с помощью ключа шифрования ключей
-Чтобы настроить секрет в хранилище ключей, используйте [AzKeyVaultSecret набора](/powershell/module/az.keyvault/set-azkeyvaultsecret). Если вы используете виртуальную машину Windows, то с помощью командлета `Set-AzKeyVaultSecret` можно закодировать BEK-файл как строку Base64 и передать его в хранилище ключей. Если используется виртуальная машина Linux, то парольную фразу можно закодировать как строку Base64, а затем передать в хранилище ключей. Убедитесь также, что при создании секрета в хранилище ключей были установлены следующие теги.
+Чтобы настроить секрет в хранилище ключей, используйте [Set-азкэйваултсекрет](/powershell/module/az.keyvault/set-azkeyvaultsecret). Если вы используете виртуальную машину Windows, то с помощью командлета `Set-AzKeyVaultSecret` можно закодировать BEK-файл как строку Base64 и передать его в хранилище ключей. Если используется виртуальная машина Linux, то парольную фразу можно закодировать как строку Base64, а затем передать в хранилище ключей. Убедитесь также, что при создании секрета в хранилище ключей были установлены следующие теги.
 
 #### <a name="windows-bek-file"></a>BEK-файл для Windows
 ```powershell

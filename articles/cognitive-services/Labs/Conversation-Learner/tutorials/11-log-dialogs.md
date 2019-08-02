@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: f1e161fa05a77682d0b5eb1c6c21975ac87028a3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 388942e8195048d7528a54e5a290f1724c8e876b
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66387667"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68703972"
 ---
 # <a name="how-to-log-dialogs-in-a-conversation-learner-model"></a>Запись диалогов в модели Conversation Learner
 
@@ -32,10 +33,10 @@ ms.locfileid: "66387667"
 
 Также необходима модель погоды, созданная в предыдущих руководствах.
 
-## <a name="details"></a>Сведения
+## <a name="details"></a>Подробнее
 Записываемые диалоги — это записанные журналы взаимодействия вашего бота с конечными пользователями. С их помощью вы можете исправить метки сущностей и выбранные действия, чтобы повысить производительность модели и системы в целом.
 
-## <a name="steps"></a>Действия
+## <a name="steps"></a>Шаги
 
 В веб-интерфейсе щелкните Import Tutorials (Импорт учебников) и выберите модель Tutorial-11-LogDialogs.
 
@@ -60,7 +61,7 @@ ms.locfileid: "66387667"
 
 Последнее замечание. В зависимости от потребностей бизнеса функцию записи беседы можно отключить. Для этого в разделе параметров нужно снять флажок Log Conversations (Записывать беседы).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Обратный вызов обнаружения сущностей](./12-entity-detection-callback.md)

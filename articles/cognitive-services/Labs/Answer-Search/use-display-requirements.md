@@ -10,12 +10,13 @@ ms.subservice: answer-search
 ms.topic: conceptual
 ms.date: 04/13/2018
 ms.author: rosh
-ms.openlocfilehash: 085cb20e4dad92ed55b5ba0914c677aa50f3ac97
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ROBOTS: NOINDEX
+ms.openlocfilehash: 2b42d61fd887f166a08b78510d5eaacb8a7cdcb8
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60345759"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706707"
 ---
 # <a name="project-answer-search-use-and-display-requirements"></a>Требования к использованию и отображению для API поиска ответов в проекте
 
@@ -36,7 +37,7 @@ ms.locfileid: "60345759"
 - К интерфейсам API для поиска относятся API пользовательского поиска Bing, API Bing для поиска сущностей, API Bing для поиска изображений, API Bing для поиска новостей, API Bing для поиска видео, API Bing для визуального поиска и API Bing для поиска в Интернете. 
 
 
-## <a name="3-search-apis"></a>3. Интерфейсы API для поиска
+## <a name="3-search-apis"></a>3. Поиск по API
 
 Требования в разделе 3 относятся к интерфейсам API для поиска.
 
@@ -105,5 +106,5 @@ ms.locfileid: "60345759"
 - Необходимо обеспечить соблюдение действующих законов и прав третьих лиц при применении данных (включая URL-адреса), полученных с помощью интерфейсов API поиска.
 - Нельзя использовать данные (включая URL-адреса), полученные из API поиска, в рамках индексации поиска, машинного обучения или аналогичного алгоритмического действия для обучения, оценки либо улучшения ваших или сторонних служб.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Общие сведения о поиске ответов](overview.md)

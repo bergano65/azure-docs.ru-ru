@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 01/04/2019
 ms.author: jowargo
 ms.openlocfilehash: 129127a2a43cd9a86e0a1e1cf538358b62381257
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67706232"
 ---
 # <a name="sending-push-notifications-with-azure-notification-hubs-and-nodejs"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure и Node.js
@@ -46,7 +46,7 @@ ms.locfileid: "67706232"
 
 ## <a name="create-a-nodejs-application"></a>Создание приложения Node.js
 
-Первый шаг этого руководства представляет собой создание пустого приложения Node.js. Инструкции по созданию приложения Node.js, см. в разделе [Создание и развертывание приложения Node.js на веб-сайте Azure][nodejswebsite] , [Node.js Cloud Service][Node.js Cloud Service] с помощью Windows PowerShell, или [веб-сайт с WebMatrix] [webmatrix].
+Первый шаг этого руководства представляет собой создание пустого приложения Node.js. Инструкции по созданию приложения Node. js см. в статье [Создание и развертывание приложения Node. js на веб-сайте Azure][nodejswebsite], в [облачной службе Node. js][Node.js Cloud Service] с помощью Windows PowerShell или [на веб-сайте с WebMatrix][webmatrix].
 
 ## <a name="configure-your-application-to-use-notification-hubs"></a>Настройка приложения для использования центров уведомлений
 
@@ -80,7 +80,7 @@ var notificationHubService = azure.createNotificationHubService('hubname','conne
 Получите значение `connectionstring` подключения на [портал Azure], выполнив следующие действия.
 
 1. В области навигации слева щелкните **Обзор**.
-2. Выберите **Центры уведомлений**, затем щелкните центр, который хотите использовать. Можно ссылаться на [учебнике Приступая к работе Windows Store](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md) Если вам нужна помощь с созданием нового центра уведомлений.
+2. Выберите **Центры уведомлений**, затем щелкните центр, который хотите использовать. Если вам нужна помощь по созданию нового центра уведомлений, см. [руководство по начало работы магазина Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md) .
 3. Выберите элемент **Параметры**.
 4. Щелкните **Политики доступа**. Вы увидите строки подключения как для общего, так и для полного доступа.
 
@@ -106,7 +106,7 @@ var notificationHubService = azure.createNotificationHubService('hubname','conne
 - **Payload** — полезные данные JSON или строковые полезные данные сообщения.
 - **Callback** — функция обратного вызова.
 
-Дополнительные сведения о формате полезных данных, см. в разделе [полезных данных документации](https://distriqt.github.io/ANE-PushNotifications/m.FCM-GCM%20Payload).
+Дополнительные сведения о формате полезных данных см. в [документации по полезной нагрузке](https://distriqt.github.io/ANE-PushNotifications/m.FCM-GCM%20Payload).
 
 В следующем коде для отправки push-уведомления всем зарегистрированным клиентам используется экземпляр `GcmService`, предоставляемый `NotificationHubService`.
 

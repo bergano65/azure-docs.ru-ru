@@ -12,17 +12,20 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/29/2016
+ms.date: 07/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 9f6e5b606caa661429a3c4d4a53e2021d57730aa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2ff987448e3900c2a533789b2f38fd3ced71ce72
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62116961"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68516667"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-virtual-array"></a>Развертывание службы диспетчера устройств StorSimple для виртуального массива StorSimple
+
 ## <a name="overview"></a>Обзор
+
+[!INCLUDE [storsimple-virtual-array-eol-banner](../../includes/storsimple-virtual-array-eol-banner.md)]
 
 Служба диспетчера устройств StorSimple выполняется в Microsoft Azure и подключается к нескольким устройствам StorSimple. После создания службы вы можете использовать ее для управления этими устройствами на портале Microsoft Azure, запущенном в браузере. Это позволит отследить все устройства, которые подключены к службе диспетчера устройств StorSimple из одного центрального расположения, таким образом, снизив административную нагрузку.
 
@@ -119,7 +122,7 @@ ms.locfileid: "62116961"
    
    Скопируйте этот ключ и сохраните его для регистрации новых устройств в службе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте, как [приступить к работе](storsimple-virtual-array-deploy1-portal-prep.md) с виртуальным массивом StorSimple.
 * Узнайте, как [администрировать устройство StorSimple](storsimple-ova-web-ui-admin.md).
 

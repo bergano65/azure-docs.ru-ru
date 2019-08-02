@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 22a2a3472a54188f9298c580a95d53ac681822aa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 3ec839c1a930ffbe73989149360f1b02866a3c50
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66385418"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705308"
 ---
 ## <a name="control-flow"></a>Поток управления
 
@@ -38,7 +39,7 @@ ms.locfileid: "66385418"
 1. Затем выполняется вызов нейронной сети для определения следующего действия на основе предыдущего шага.
 1. Нейронная сеть затем прогнозирует следующий набор возможных действий, а выбранное действие представляется пользователю — в этом примере в виде вопроса Anything else? (Что-нибудь еще?).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Практическое обучение с помощью диалога ученика](./how-to-teach-cl.md)
+> [Обучение с помощью Conversation Learner](./how-to-teach-cl.md)

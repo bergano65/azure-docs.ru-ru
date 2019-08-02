@@ -1,5 +1,5 @@
 ---
-title: Как использовать разделы служебной шины Azure с помощью Java | Документация Майкрософт
+title: Использование разделов и подписок служебной шины Azure с Java
 description: Использование разделов и подписок служебной шины в Azure.
 services: service-bus-messaging
 documentationcenter: java
@@ -14,27 +14,28 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: aschhab
-ms.openlocfilehash: 578fd0caa8986c48b3fd50a7890bb66b14bee2f4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.custom: seo-java-july2019
+ms.openlocfilehash: 822fadb661fd9fcdde8ff75fa4f9e60dfa44c97b
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65991730"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68663417"
 ---
 # <a name="how-to-use-service-bus-topics-and-subscriptions-with-java"></a>Как использовать разделы и подписки служебной шины с Java
 
 [!INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
 
-В этом кратком руководстве вы напишете код Java для отправки сообщений в раздел служебной шины и затем получить сообщения из подписок на этот раздел. 
+В этом кратком руководстве вы напишете код Java для отправки сообщений в раздел служебной шины, а затем получаете сообщения из подписок на этот раздел. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать ваши [преимущества для подписчиков Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрируйте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-2. Выполните шаги [краткое руководство: Создание раздела служебной шины и подписок на него с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md). Так вы сделаете следующее:
-    1. Чтобы создать служебную шину **пространства имен**.
-    2. Получить **строку подключения**.
-    3. Создание **разделе** в пространстве имен.
-    4. Создание **тремя подписками** в раздел, в пространстве имен.
+1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества Visual Studio или подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+2. Выполните действия, [описанные в кратком руководстве: Создание раздела служебной шины и подписок на него с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md). Так вы сделаете следующее:
+    1. Создайте **пространство имен**служебной шины.
+    2. Возвращает **строку подключения**.
+    3. Создайте **раздел** в пространстве имен.
+    4. Создайте **три подписки** на раздел в пространстве имен.
 3. [Пакет Azure SDK для Java][Azure SDK for Java].
 
 ## <a name="configure-your-application-to-use-service-bus"></a>Настройка приложения для использования служебной шины
@@ -457,8 +458,8 @@ Message sending: Id = 9
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
 
-## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения см. в статье об [очередях, разделах и подписках Служебной шины][Service Bus queues, topics, and subscriptions].
+## <a name="next-steps"></a>Следующие шаги
+Дополнительные сведения см. в статье [очереди, разделы и подписки служебной шины][Service Bus queues, topics, and subscriptions].
 
 [Azure SDK for Java]: https://docs.microsoft.com/java/api/overview/azure/
 [Azure Toolkit for Eclipse]: https://docs.microsoft.com/java/azure/eclipse/azure-toolkit-for-eclipse

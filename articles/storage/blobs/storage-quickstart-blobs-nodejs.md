@@ -1,20 +1,18 @@
 ---
 title: Создание большого двоичного объекта в службе хранилища Azure с использованием клиентской библиотеки для Node.js версии 2
 description: Создайте учетную запись хранения и контейнер в хранилище объектов (больших двоичных объектов). Затем с помощью клиентской библиотеки Службы хранилища Azure для Node.js версии 2 передайте BLOB-объект в Службу хранилища Azure, скачайте его и перечислите все BLOB-объекты в контейнере.
-services: storage
 author: mhopkins-msft
-ms.custom: mvc
-ms.service: storage
-ms.topic: conceptual
-ms.date: 02/04/2019
 ms.author: mhopkins
-ms.reviewer: seguler
-ms.openlocfilehash: 7ca1eacd1add7453833b4b9ad1d4bd0fbef13ca7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 02/04/2019
+ms.service: storage
+ms.subservice: blobs
+ms.topic: conceptual
+ms.openlocfilehash: 89dbd6cc9a03398427b157fa207adb898d3bfc56
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65149420"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68721967"
 ---
 # <a name="how-to-upload-download-and-list-blobs-using-the-client-library-for-nodejs-v2"></a>Отправка, скачивание и перечисление больших двоичных объектов с использованием клиентской библиотеки для Node.js версии 2
 
@@ -23,7 +21,7 @@ ms.locfileid: "65149420"
 > [!TIP]
 > Последняя версия клиентской библиотеки службы хранилища для Node.js — версия 10. Корпорация Майкрософт рекомендует по возможности использовать последнюю версию клиентской библиотеки. Чтобы начать работу с использованием версии 10, перейдите к [краткому руководству по передаче, скачиванию, перечислению и удалению больших двоичных объектов с использованием клиентской библиотеки службы хранилища Azure для JavaScript версии 10 (предварительная версия)](storage-quickstart-blobs-nodejs-v10.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -130,7 +128,7 @@ const listContainers = async () => {
 
 Размер групп можно настроить с помощью [ListContainersOptions](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice.listcontaineroptions?view=azure-node-latest). Вызов *listContainersSegmented* возвращает метаданные большого двоичного объекта в виде массива экземпляров [ContainerResult](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice.containerresult?view=azure-node-latest). Результаты возвращаются в 5000 пакетов увеличения (сегментов). Если в контейнере имеется более чем 5000 больших двоичных объектов, то результаты включают в себя значение для маркера *continuationToken*. Чтобы вывести список последующих сегментов из контейнера больших двоичных объектов, можно передать маркер продолжения обратно в *listContainersSegment* в качестве второго аргумента.
 
-### <a name="create-a-container"></a>Создание контейнера
+### <a name="create-a-container"></a>Создать контейнер
 
 Функция *CreateContainer* вызывает команду [createContainerIfNotExists](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest) и задает соответствующий уровень доступа для большого двоичного объекта.
 
@@ -357,7 +355,7 @@ console.log(`Container "${containerName}" is deleted`);
 - Подробные сведения о клиентской библиотеке Node.js см. в [справочнике по API-интерфейсу Node.js](https://docs.microsoft.com/javascript/api/overview/azure/storage).
 - Изучите [примеры для хранилища BLOB-объектов](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=nodejs&term=blob), написанные с использованием клиентской библиотеки Node.js.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Из этой статьи вы узнали, как передавать файл между локальным диском и хранилищем BLOB-объектов Azure с помощью Node.js. Дополнительные сведения о работе с хранилищем BLOB-объектов см. в соответствующем репозитории GitHub.
 

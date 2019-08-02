@@ -3,18 +3,18 @@ title: Обработка событий мыши с помощью службы
 description: Как создать интерактивную карту Javascript с использованием событий карты
 author: jingjing-z
 ms.author: jinzh
-ms.date: 11/29/2018
+ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 4fce8eae25942d098bb3f3277938bfaa3dafa00b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: da6b183155de0fbc370751254a6842343d280874
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60770454"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638967"
 ---
 # <a name="interact-with-the-map---mouse-events"></a>Взаимодействие с картой — события мыши
 
@@ -41,7 +41,7 @@ ms.locfileid: "60770454"
 
 Приведенный выше код добавляет события карты Javascript в маркер HTML. Он также выделяет название событий, которые запускаются при взаимодействии с маркером HTML.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
@@ -51,7 +51,7 @@ ms.locfileid: "60770454"
 Полные примеры кода см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [С помощью модуля службы Azure Maps](./how-to-use-services-module.md)
+> [Использование модуля Azure Maps Services](./how-to-use-services-module.md)
 
 > [!div class="nextstepaction"]
 > [Страница с примерами кода](https://aka.ms/AzureMapsSamples)

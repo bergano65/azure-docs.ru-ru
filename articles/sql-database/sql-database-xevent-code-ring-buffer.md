@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
 ms.reviewer: jrasnik
-manager: craigg
 ms.date: 12/19/2018
-ms.openlocfilehash: bb493fc0a9d3a9173ef4faf17b3cdd4e3781a557
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f1ec9cd3a4256597ade409fb3e04d44171277554
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60331032"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566158"
 ---
 # <a name="ring-buffer-target-code-for-extended-events-in-sql-database"></a>Код целевого объекта "Кольцевой буфер" для расширенных событий в базе данных SQL
 
@@ -41,7 +40,7 @@ ms.locfileid: "60331032"
 7. Удаляет целевой объект "Кольцевой буфер" для освобождения ресурсов.
 8. Удаляет сеанс событий и демонстрационную таблицу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * Учетная запись и подписка Azure. Вы можете зарегистрироваться, чтобы получить [бесплатную пробную версию](https://azure.microsoft.com/pricing/free-trial/).
 * Любая база данных, позволяющая создать таблицу.
@@ -223,7 +222,7 @@ GO
 
 Затем в области результатов мы щелкнули ячейку под заголовком столбца **target_data_XML**. В результате в файле ssms.exe была создана дополнительная вкладка, на которой в виде XML-кода отображается содержимое итоговой ячейки.
 
-Выходные данные показаны в приведенном ниже блоке. Он выглядит длинным, но содержит всего два  **\<событий >** элементов.
+Выходные данные показаны в приведенном ниже блоке. Он выглядит слишком долго, но это просто два  **\<элемента > событий** .
 
 &nbsp;
 
@@ -340,7 +339,7 @@ ALTER EVENT SESSION eventsession_gm_azuresqldb51
 ```
 
 
-## <a name="more-information"></a>Дополнительные сведения
+## <a name="more-information"></a>Дополнительная информация
 
 Основная статья о расширенных событиях в Базе данных SQL Azure:
 

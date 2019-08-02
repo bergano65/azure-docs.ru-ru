@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: allenwux
 ms.author: xiwu
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 12/20/2018
-ms.openlocfilehash: adb8917605a00208b328e7fd15f96d28c7838988
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: de7858be4ac4e392b4fb92cacf55882378ba9813
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60201669"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568975"
 ---
 # <a name="data-sync-agent-for-azure-sql-data-sync"></a>Агент синхронизации данных для синхронизации данных SQL Azure
 
@@ -26,7 +25,7 @@ ms.locfileid: "60201669"
 > [!IMPORTANT]
 > Служба "Синхронизация данных SQL Azure" пока **не** поддерживает Управляемый экземпляры Базы данных SQL Azure.
 
-## <a name="download-and-install"></a>Загрузка и установка
+## <a name="download-and-install"></a>Скачать и установить
 
 Загрузить Агент синхронизации данных можно на странице [SQL Azure Data Sync Agent](https://www.microsoft.com/download/details.aspx?id=27693) (Агент синхронизации данных SQL Azure).
 
@@ -148,10 +147,10 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
 - **Способы устранения**. Обновите пароль агента до текущего пароля сервера.
 
   1. Найдите службу агента клиента синхронизации данных SQL.  
-    a. Щелкните **Запуск**.  
+    1\. Щелкните **Запуск**.  
     2\. В поле поиска введите **services.msc**.  
-    c. В результатах поиска щелкните **Службы**.  
-    d. В окне **Службы** прокрутите список до записи **Агент синхронизации данных SQL**.  
+    В. В результатах поиска щелкните **Службы**.  
+    Г. В окне **Службы** прокрутите список до записи **Агент синхронизации данных SQL**.  
   1. Щелкните правой кнопкой мыши **Агент синхронизации данных SQL**, а затем выберите **Остановить**.
   1. Щелкните правой кнопкой мыши **Агент синхронизации данных SQL**, а затем выберите **Свойства**.
   1. В окне **Свойства агента синхронизации данных SQL** щелкните вкладку **Вход**.
@@ -214,7 +213,7 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
 
   1. Выйдите из приложения.  
   1. Откройте панель "Службы компонентов".  
-    a. В поле поиска на панели задач введите **services.msc**.  
+    1\. В поле поиска на панели задач введите **services.msc**.  
     2\. В результатах поиска дважды щелкните **Службы**.  
   1. Остановите работу службы **синхронизации данных SQL**.
   1. Перезапустите службу **синхронизации данных SQL**.  
@@ -299,7 +298,7 @@ SqlDataSyncAgentCommand.exe -action unregisterdatabase -servername [on-premisesd
 SqlDataSyncAgentCommand.exe -action "unregisterdatabase" -serverName localhost -databaseName testdb
 ```
 
-### <a name="update-credentials"></a>Обновление учетных данных
+### <a name="update-credentials"></a>Обновить учетные данные
 
 #### <a name="usage"></a>Использование
 
@@ -315,7 +314,7 @@ SqlDataSyncAgentCommand.exe -action "updatecredential" -serverName localhost -da
 SqlDataSyncAgentCommand.exe -action "updatecredential" -serverName localhost -databaseName testdb -authentication windows -encryption true
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о Синхронизации данных SQL см. в следующих статьях:
 

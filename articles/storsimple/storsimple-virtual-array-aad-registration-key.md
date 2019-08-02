@@ -12,18 +12,20 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/28/2018
+ms.date: 07/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 080f49ca1078858462264f229e9acfee6fad17d1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 723d5e969ba2f635724ffa50d562a7abaf936dcf
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61387654"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68517137"
 ---
 # <a name="use-the-new-authentication-for-your-storsimple"></a>Использование нового режима аутентификации для StorSimple
 
 ## <a name="overview"></a>Обзор
+
+[!INCLUDE [storsimple-virtual-array-eol-banner](../../includes/storsimple-virtual-array-eol-banner.md)]
 
 Служба диспетчера устройств StorSimple работает в Microsoft Azure и подключается к нескольким виртуальным массивам StorSimple. Сейчас в службе диспетчера устройств StorSimple используется служба контроля доступа (ACS) для аутентификации службы на устройстве StorSimple. Механизм ACS скоро устареет. Он будет заменен аутентификацией Azure Active Directory (AAD).
 
@@ -90,6 +92,6 @@ ms.locfileid: "61387654"
 
     ![Подтверждение повторного создания](./media/storsimple-virtual-array-aad-registration-key/aad-registration-key2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Ознакомьтесь с дополнительными сведениями о развертывании [виртуального массива StorSimple](storsimple-virtual-array-deploy1-portal-prep.md).

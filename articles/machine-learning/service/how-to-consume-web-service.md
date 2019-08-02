@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 07/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 070dd07aa6705e97a532bdc5f53a08a9abe0f83d
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 7799b62b2c330610663e361bbb3930340b1ebdaf
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68361013"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68726285"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Использование модели Машинного обучения Azure, развернутой в качестве веб-службы
 
@@ -37,8 +37,10 @@ ms.locfileid: "68361013"
 
 Класс [azureml.core.Webservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py) предоставляет необходимые сведения для создания клиента. Следующие свойства `Webservice` могут быть полезны при создании клиентского приложения:
 
-* `auth_enabled` — если включена проверка подлинности, имеет значение `True`; в противном случае `False`;
+* `auth_enabled`— Если включена `True`проверка подлинности ключа; `False`в противном случае — значение.
+* `token_auth_enabled`— Если включена `True`проверка подлинности токенов; `False`в противном случае — значение.
 * `scoring_uri` — адрес REST API.
+
 
 Эти сведения для развернутой веб-службы можно получить тремя способами.
 
@@ -67,7 +69,15 @@ ms.locfileid: "68361013"
     print(service.scoring_uri)
     ```
 
-### <a name="authentication-key"></a>ключ проверки подлинности;
+### <a name="authentication-for-services"></a>Проверка подлинности для служб
+
+Машинное обучение Azure предоставляет два способа управления доступом к веб-службам. 
+
+|Способ проверки подлинности|ACI|AKS|
+|---|---|---|
+|Ключ|Отключено по умолчанию| Включено по умолчанию|
+|Токен| Недоступен| Отключено по умолчанию |
+#### <a name="authentication-with-keys"></a>Проверка подлинности с помощью ключей
 
 При включении проверки подлинности для развертывания автоматически создаются ключи проверки подлинности.
 
@@ -85,6 +95,26 @@ print(primary)
 
 > [!IMPORTANT]
 > Если вам нужно повторно создать ключ, используйте [`service.regen_key`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py).
+
+
+#### <a name="authentication-with-tokens"></a>Аутентификация с помощью токенов
+
+При включении проверки подлинности с помощью маркеров для веб-службы пользователь должен предоставить веб-службе маркер JWT Машинное обучение Azure, чтобы получить к нему доступ. 
+
+* При развертывании в службе Kubernetes Azure проверка подлинности по маркеру отключена по умолчанию.
+* При развертывании в службе "экземпляры контейнеров Azure" Проверка подлинности с помощью маркеров не поддерживается.
+
+Чтобы управлять проверкой подлинности `token_auth_enabled` на маркере, используйте параметр при создании или обновлении развертывания.
+
+Если включена проверка подлинности на маркере, `get_token` можно использовать метод для получения токена носителя и срока действия маркеров:
+
+```python
+token, refresh_by = service.get_tokens()
+print(token)
+```
+
+> [!IMPORTANT]
+> После `refresh_by` времени маркера потребуется запросить новый токен. 
 
 ## <a name="request-data"></a>Данные запроса
 

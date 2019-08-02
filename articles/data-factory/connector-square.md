@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: f22311af277f860c1501287b5be0f5dc149880b9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a88c58bd52ea816aaef1c628913ccbd7fcf1cd35
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61462366"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68720635"
 ---
 # <a name="copy-data-from-square-using-azure-data-factory-preview"></a>Копирование данных из Square с помощью фабрики данных Azure (предварительная версия)
 
@@ -42,13 +42,13 @@ ms.locfileid: "61462366"
 
 Для связанной службы Square поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **Square** | Да |
 | host | URL-адрес экземпляра Square. (т. е. mystore.mysquare.com)  | Да |
-| clientid | Идентификатор клиента, связанный с приложением Square.  | Да |
+| clientId | Идентификатор клиента, связанный с приложением Square.  | Да |
 | clientSecret | Секрет клиента, связанный с приложением Square. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
-| redirectUri | URL-адрес перенаправления, назначенный на панели мониторинга приложения Square. (т. е. http:\//localhost:2500)  | Да |
+| redirectUri | URL-адрес перенаправления, назначенный на панели мониторинга приложения Square. (т. е.\/http:/ЛОКАЛХОСТ: 2500)  | Да |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет |
 | useHostVerification | Указывает, следует ли требовать, чтобы имя узла в сертификате сервера совпадало с именем узла сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет |
 | usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет |
@@ -79,7 +79,7 @@ ms.locfileid: "61462366"
 
 Чтобы скопировать данные из Square, установите свойство type набора данных **SquareObject**. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойство type для набора данных должно иметь значение **SquareObject** | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
@@ -91,11 +91,12 @@ ms.locfileid: "61462366"
     "name": "SquareDataset",
     "properties": {
         "type": "SquareObject",
+        "typeProperties": {},
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<Square linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {}
+        }
     }
 }
 ```
@@ -108,10 +109,10 @@ ms.locfileid: "61462366"
 
 Чтобы скопировать данные из Square, задайте тип источника **SquareSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойство type источника действия копирования должно иметь значение **SquareSource** | Да |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Business"`. | Нет (если для набора данных задано свойство tableName) |
+| запрос | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Business"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 
@@ -145,5 +146,5 @@ ms.locfileid: "61462366"
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

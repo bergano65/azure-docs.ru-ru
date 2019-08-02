@@ -8,12 +8,12 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 07/02/2019
 ms.author: danlep
-ms.openlocfilehash: 672d446fa8dc27612c7b046cac109bfa4ca5fec5
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 4585749c83432c19b6e62f57c1d954b3afc5ee33
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68309371"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68608403"
 ---
 # <a name="health-check-error-reference"></a>Ссылка на ошибку проверки работоспособности
 
@@ -63,7 +63,7 @@ ms.locfileid: "68309371"
 
 ## <a name="connectivityforbiddenerror"></a>CONNECTIVITY_FORBIDDEN_ERROR
 
-Эта ошибка означает, что конечная точка вызова для данного реестра ответила с состоянием HTTP, которым запрещено 403. Эта ошибка означает, что пользователи не имеют доступа к реестру, скорее всего, из-за конфигурации виртуальной сети.
+Эта ошибка означает, что конечная точка вызова для данного реестра ответила с состоянием HTTP, которым запрещено 403. Эта ошибка означает, что пользователи не имеют доступа к реестру, скорее всего, из-за конфигурации виртуальной сети. Чтобы просмотреть настроенные в настоящее время правила брандмауэра `az acr show --query networkRuleSet --name <registry>`, выполните команду.
 
 *Возможные решения*: Удалите правила виртуальной сети или добавьте текущий IP-адрес клиента в список разрешенных.
 

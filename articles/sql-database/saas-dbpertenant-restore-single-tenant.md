@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: billgib
-manager: craigg
 ms.date: 12/04/2018
-ms.openlocfilehash: 4059b0f979e7e6856905f1759129167d62d7b5f5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0776935215b608211ad4f6cd66112fb92e33a34b
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60326368"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570387"
 ---
 # <a name="restore-a-single-tenant-with-a-database-per-tenant-saas-application"></a>Восстановление отдельного клиента приложения SaaS, использующего одну базу данных на клиент
 
@@ -54,7 +53,7 @@ ms.locfileid: "60326368"
 
 Скрипты и исходный код приложения SaaS Wingtip Tickets c мультитенантной базой данных размещены в репозитории GitHub [WingtipTicketsSaaS-DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant). Инструкции по скачиванию и разблокированию скриптов приложения SaaS Wingtip Tickets см. в статье [Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets](saas-tenancy-wingtip-app-guidance-tips.md).
 
-## <a name="before-you-start"></a>Перед началом работы
+## <a name="before-you-start"></a>Перед началом
 
 После создания базы данных может пройти 10–15 минут, прежде чем станет возможным ее восстановление из первой полной резервной копии. Если вы только что установили приложение, подождите несколько минут, прежде чем применять этот сценарий.
 
@@ -124,7 +123,7 @@ ms.locfileid: "60326368"
 
 После восстановления базы данных нужно снова подождать 10–15 минут, прежде чем появится полная резервная копия, доступная для восстановления данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы узнали, как:
 
@@ -137,5 +136,5 @@ ms.locfileid: "60326368"
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Руководства по SaaS Wingtip базы данных SQL](saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials)
-* [Обзор обеспечения непрерывности бизнес-процессов с помощью базы данных SQL Azure](sql-database-business-continuity.md)
+* [Обзор обеспечения непрерывности бизнес-процессов с помощью Базы данных SQL Azure](sql-database-business-continuity.md)
 * [Подробнее о резервном копировании базы данных SQL](sql-database-automated-backups.md)

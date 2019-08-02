@@ -1,21 +1,19 @@
 ---
-title: Как использовать хранилище очередей из PHP - хранилища Azure
+title: Использование хранилища очередей из PHP в службе хранилища Azure
 description: Узнайте, как создавать и удалять очереди, а также вставлять, получать и удалять сообщения с помощью службы хранилища очередей Azure. Примеры написаны на PHP.
-services: storage
 author: mhopkins-msft
-ms.service: storage
-ms.devlang: php
-ms.topic: article
-ms.date: 01/11/2018
 ms.author: mhopkins
-ms.reviewer: cbrooks
+ms.date: 01/11/2018
+ms.service: storage
 ms.subservice: queues
-ms.openlocfilehash: 4ff54f9ca20c101de55bec2c7acf914c17bd7709
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.topic: conceptual
+ms.reviewer: cbrooks
+ms.openlocfilehash: b175c34f131a7a0f172c7be0dda083fbfda3dc1e
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65951210"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68721448"
 ---
 # <a name="how-to-use-queue-storage-from-php"></a>Использование хранилища очередей из PHP
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -23,14 +21,14 @@ ms.locfileid: "65951210"
 [!INCLUDE [storage-try-azure-tools-queues](../../../includes/storage-try-azure-tools-queues.md)]
 
 ## <a name="overview"></a>Обзор
-В этом руководстве показано, как реализовать типичные сценарии с использованием службы хранилища очередей Azure. Примеры написаны через классы из [клиентской библиотеки службы хранилища Azure для PHP][download]. Здесь описаны такие сценарии, как вставка, просмотр, получение и удаление сообщений очереди, а также создание и удаление очередей.
+В этом руководстве показано, как реализовать типичные сценарии с использованием службы хранилища очередей Azure. Примеры написаны с помощью классов из [клиентской библиотеки службы хранилища Azure для PHP][download]. Здесь описаны такие сценарии, как вставка, просмотр, получение и удаление сообщений очереди, а также создание и удаление очередей.
 
 [!INCLUDE [storage-queue-concepts-include](../../../includes/storage-queue-concepts-include.md)]
 
 [!INCLUDE [storage-create-account-include](../../../includes/storage-create-account-include.md)]
 
 ## <a name="create-a-php-application"></a>Создание приложения PHP
-Единственным требованием для создания приложения PHP, которое получает доступ к хранилищу очередей Azure, является привязка к классам в [клиентской библиотеке службы хранилища Azure для PHP][download] непосредственно из кода. Можно использовать любые средства разработки для создания приложения, включая программу "Блокнот".
+Единственным требованием для создания приложения PHP, обращающегося к хранилищу очередей Azure, является ссылка на классы в [клиентской библиотеке службы хранилища Azure для PHP][download] из кода. Можно использовать любые средства разработки для создания приложения, включая программу "Блокнот".
 
 В этом руководстве будут использоваться компоненты службы хранилища очередей, которые могут быть вызваны локально в приложении PHP или в коде, работающем в веб-роли, рабочей роли или на веб-сайте Azure.
 
@@ -45,14 +43,14 @@ ms.locfileid: "65951210"
       }
     }
     ```
-2. Скачайте **[composer.phar][composer-phar]** в корневой каталог проекта.
+2. Скачайте файл **[Composer. Phar][composer-phar]** в корневую папку проекта.
 3. Откройте командную строку и выполните следующую команду в корневом каталоге проекта.
    
     ```
     php composer.phar install
     ```
 
-Также можно перейти в [клиентскую библиотеку службы хранилища Azure для PHP][download] на GitHub, чтобы клонировать исходный код.
+Также можно воспользоваться [клиентской библиотекой PHP службы хранилища Azure][download] на GitHub, чтобы клонировать исходный код.
 
 ## <a name="configure-your-application-to-access-queue-storage"></a>Настройка приложения для доступа к хранилищу очередей
 Чтобы использовать интерфейсы API для хранилища очередей Azure, требуется:
@@ -99,7 +97,7 @@ $connectionString = "DefaultEndpointsProtocol=http;AccountName=<accountNameHere>
 $queueClient = QueueRestProxy::createQueueService($connectionString);
 ```
 
-## <a name="create-a-queue"></a>Создание очереди
+## <a name="create-a-queue"></a>Создать очередь
 Объект **QueueRestProxy** позволяет создать очередь с помощью метода **createQueue**. При создании очереди можно задать ее параметры, однако это не является обязательным. (В приведенном ниже примере показано, как задать метаданные в очереди.)
 
 ```php
@@ -410,7 +408,7 @@ catch(ServiceException $e){
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Вы изучили основную информацию о хранилище очередей Azure. Дополнительную информацию о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
 * [Справочник по API для клиентской библиотеки службы хранилища Azure для PHP](https://azure.github.io/azure-storage-php/)

@@ -9,18 +9,19 @@ manager: barbkess
 editor: ''
 ms.assetid: cd906856-f4f9-4ddc-9249-c998386f4085
 ms.service: security
+ms.subservice: security-develop
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: terrylan
-ms.openlocfilehash: 66719d43db277e6c82d89ee17c602309d16140f8
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 0683c065285a6ddf8d966bbd3d22e88c39b34d5c
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489982"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68728801"
 ---
 # <a name="develop-a-secure-web-app"></a>Разработка безопасного веб-приложения
 
@@ -137,7 +138,7 @@ ms.locfileid: "68489982"
 - [Git](https://git-scm.com/) в вашей системе. Git используется для локального клонирования исходного кода.
 - [JQ](https://stedolan.github.io/jq/), средство UNIX для запроса JSON в удобном для пользователя виде.
 
-Для развертывания ресурсов примера приложения необходима подписка Azure. Если у вас нет подписки Azure, можно [создать бесплатную учетную запись](https://azure.microsoft.com/en-us/free/) для тестирования примера приложения.
+Для развертывания ресурсов примера приложения необходима подписка Azure. Если у вас нет подписки Azure, можно [создать бесплатную учетную запись](https://azure.microsoft.com/free/) для тестирования примера приложения.
 
 После установки этих средств все готово к развертыванию приложения в Azure.
 
@@ -353,7 +354,7 @@ $$ LANGUAGE PLPGSQL;
 Корневой сертификат входит в контейнер. Ниже приведены действия по получению сертификата.
 
 1. Скачайте файл сертификата из [центра сертификации](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt).
-2. [Скачайте и установите OpenSSL на своем компьютере](https://docs.microsoft.com/en-us/azure/postgresql/concepts-ssl-connection-security#download-and-install-openssl-on-your-machine).
+2. [Скачайте и установите OpenSSL на своем компьютере](https://docs.microsoft.com/en-us/azure/postgresql/concepts-ssl-connection-security).
 3. Декодирование файла сертификата:
 
    ```powershell

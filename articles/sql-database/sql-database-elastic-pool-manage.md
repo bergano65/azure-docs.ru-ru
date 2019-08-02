@@ -1,5 +1,5 @@
 ---
-title: Управление эластичными пулами - базы данных Azure SQL | Документация Майкрософт
+title: Управление пулами эластичных БД в базе данных SQL Azure | Документация Майкрософт
 description: Создание эластичных пулов в базе данных SQL Azure и управление ими.
 services: sql-database
 ms.service: sql-database
@@ -10,16 +10,15 @@ ms.topic: conceptual
 author: oslake
 ms.author: moslake
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: debf91f04cff3cb9705ebc5915e2e665679230a9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6b2a2029dec917672d6f4ee8db24aed60e4f5bc5
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66143299"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568655"
 ---
-# <a name="manage-elastic-pools-in-azure-sql-database"></a>Управление эластичными пулами базы данных SQL Azure
+# <a name="manage-elastic-pools-in-azure-sql-database"></a>Управление эластичными пулами в базе данных SQL Azure
 
 С эластичным пулом вы определяете количество ресурсов, которое необходимо эластичному пулу для обработки рабочей нагрузки баз данных, входящих в пул, и количество ресурсов для каждой базы данных в пуле.
 
@@ -41,7 +40,7 @@ ms.locfileid: "66143299"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
 Для создания эластичных пулов и баз данных в пуле для базы данных SQL и управления ими с помощью Azure PowerShell используйте приведенные ниже командлеты PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Сведения о создании серверов Базы данных SQL для эластичного пула и управлении ими см. в [этой статье](sql-database-servers.md). Сведения о создании правил брандмауэра и управлении ими с помощью PowerShell см. в [этой статье](sql-database-firewall-configure.md#manage-server-level-ip-firewall-rules-using-azure-powershell).
 
@@ -49,13 +48,13 @@ ms.locfileid: "66143299"
 > Образцы скриптов PowerShell см. в статьях [Создание эластичных пулов и перемещение баз данных между пулами и из пула с помощью PowerShell](scripts/sql-database-move-database-between-pools-powershell.md) и [Отслеживание и масштабирование эластичного пула SQL в Базе данных SQL Azure с помощью PowerShell](scripts/sql-database-monitor-and-scale-pool-powershell.md).
 >
 
-| Командлет | ОПИСАНИЕ |
+| Командлет | Описание |
 | --- | --- |
 |[New-AzSqlElasticPool](/powershell/module/az.sql/new-azsqlelasticpool)|Создает эластичный пул.|
-|[Get-AzSqlElasticPool](/powershell/module/az.sql/get-azsqlelasticpool)|Получает эластичные пулы и значения их свойств.|
+|[Get-Азсклеластикпул](/powershell/module/az.sql/get-azsqlelasticpool)|Получает эластичные пулы и значения их свойств.|
 |[Set-AzSqlElasticPool](/powershell/module/az.sql/set-azsqlelasticpool)|Изменяет свойства эластичного пула. Например, используйте свойство **StorageMB** для изменения максимального размера хранилища эластичного пула.|
-|[Remove-AzSqlElasticPool](/powershell/module/az.sql/remove-azsqlelasticpool)|Удаляет эластичный пул.|
-|[Get-AzSqlElasticPoolActivity](/powershell/module/az.sql/get-azsqlelasticpoolactivity)|Получает состояние операций в эластичном пуле.|
+|[Remove-Азсклеластикпул](/powershell/module/az.sql/remove-azsqlelasticpool)|Удаляет эластичный пул.|
+|[Get-Азсклеластикпулактивити](/powershell/module/az.sql/get-azsqlelasticpoolactivity)|Получает состояние операций в эластичном пуле.|
 |[New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase)|Создает новую базу данных в существующем пуле или отдельную базу данных. |
 |[Get-AzSqlDatabase](/powershell/module/az.sql/get-azsqldatabase)|Получает одну или несколько баз данных.|
 |[Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase)|Определяет свойства базы данных или перемещает ее в эластичный пул, из пула либо между пулами.|
@@ -72,7 +71,7 @@ ms.locfileid: "66143299"
 > Примеры скриптов для Azure CLI см. в статьях [Перемещение базы данных Azure SQL в эластичном пуле SQL с помощью интерфейса командной строки](scripts/sql-database-move-database-between-pools-cli.md) и [Масштабирование эластичного пула SQL в Базе данных SQL Azure с помощью Azure CLI](scripts/sql-database-scale-pool-cli.md).
 >
 
-| Командлет | ОПИСАНИЕ |
+| Командлет | Описание |
 | --- | --- |
 |[az sql elastic-pool create](/cli/azure/sql/elastic-pool#az-sql-elastic-pool-create)|Создает эластичный пул.|
 |[az sql elastic-pool list](/cli/azure/sql/elastic-pool#az-sql-elastic-pool-list)|Возвращает список эластичных пулов на сервере.|
@@ -89,7 +88,7 @@ ms.locfileid: "66143299"
 > С помощью Transact-SQL невозможно создать, обновить или удалить пул эластичных баз данных SQL Azure. Вы можете добавить или удалить базы данных из эластичного пула, а также вернуть сведения о существующих эластичных пулах, используя динамические административные представления.
 >
 
-| Команда | ОПИСАНИЕ |
+| Command | Описание |
 | --- | --- |
 |[CREATE DATABASE (база данных SQL Azure)](/sql/t-sql/statements/create-database-azure-sql-database)|Создает новую базу данных в существующем пуле или отдельную базу данных. Для создания базы данных требуется подключение к базе данных master.|
 | [ALTER DATABASE (база данных SQL Azure)](/sql/t-sql/statements/alter-database-azure-sql-database) |Перемещает базы данных из, в или между эластичными пулами.|
@@ -101,7 +100,7 @@ ms.locfileid: "66143299"
 
 Для создания эластичных пулов и баз данных в пуле для базы данных SQL и управления ими используйте эти запросы REST API.
 
-| Команда | ОПИСАНИЕ |
+| Command | Описание |
 | --- | --- |
 |[Создание или обновление эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/createorupdate)|Создает эластичный пул или обновляет имеющийся.|
 |[Удаление эластичных пулов](https://docs.microsoft.com/rest/api/sql/elasticpools/delete)|Удаляет эластичный пул.|
@@ -116,7 +115,7 @@ ms.locfileid: "66143299"
 |[Базы данных: вывод списка по серверу](https://docs.microsoft.com/rest/api/sql/databases/listbyserver)|Возвращает список баз данных на сервере.|
 |[Базы данных: обновление](https://docs.microsoft.com/rest/api/sql/databases/update)|Обновляет имеющуюся базу данных.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Дополнительные сведения о шаблонах разработки для приложений SaaS, использующих пулы эластичных БД, см. в статье [Шаблоны разработки для мультитенантных приложений SaaS с использованием Базы данных Azure SQL](sql-database-design-patterns-multi-tenancy-saas-applications.md).
 * Дополнительные сведения об эластичных пулах см. в статье [Общие сведения о приложении SaaS Wingtip](sql-database-wtp-overview.md).

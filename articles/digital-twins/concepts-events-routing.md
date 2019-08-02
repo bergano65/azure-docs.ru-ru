@@ -6,14 +6,14 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 12/14/2018
+ms.date: 07/29/2019
 ms.author: alinast
-ms.openlocfilehash: 7dfda00aca403f7f95f0c56d1db28c3c609bebd2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a013525109fe85ad70e5aaa5895da20f5abc3237
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67080655"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638530"
 ---
 # <a name="routing-events-and-messages"></a>Маршрутизация событий и сообщений
 
@@ -21,7 +21,7 @@ ms.locfileid: "67080655"
 
 ## <a name="route-types"></a>Типы маршрутов  
 
-Azure цифровой двойниками предлагает два способа для подключения событий Интернета вещей с другими службами Azure или бизнес-приложений.
+Azure Digital двойников предлагает два способа подключения событий Интернета вещей к другим службам Azure или бизнес-приложениям.
 
 * **Маршрутизация событий Azure Digital Twins.** Объект пространственного графа, который изменяет полученные данные телеметрии, или определяемая пользователем функция, которая создает уведомление на основе предварительно определенных условий, может создать события Azure Digital Twins. Пользователи могут отправлять эти события в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/), [разделы служебной шины Azure](https://azure.microsoft.com/services/service-bus/) или [Сетку событий Azure](https://azure.microsoft.com/services/event-grid/) для дальнейшей обработки.
 
@@ -55,14 +55,14 @@ Digital Twins в настоящее время поддерживает след
 
 |             | DeviceMessages | TopologyOperation | SpaceChange | SensorChange | UdfCustom |
 | ----------- | -------------- | ----------------- | ----------- | ------------ | --------- |
-| концентратор событий.|     X          |         X         |     X       |      X       |   X       |
+| EventHub|     X          |         X         |     X       |      X       |   X       |
 | Служебная шина|              |         X         |     X       |      X       |   X       |
 | Сетка событий|               |         X         |     X       |      X       |   X       |
 
 >[!NOTE]  
 >Дополнительные сведения о создании конечных точек и примеры использования схемы событий см. в статье, посвященной [конечным точкам и исходящему трафику](how-to-egress-endpoints.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Чтобы узнать об ограничениях общедоступной предварительной версии Azure Digital Twins, ознакомьтесь с [этой статьей](concepts-service-limits.md).
 

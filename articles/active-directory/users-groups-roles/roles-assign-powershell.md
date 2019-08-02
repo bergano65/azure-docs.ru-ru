@@ -1,6 +1,6 @@
 ---
-title: Назначение и удаление назначения роли администратора с помощью Azure PowerShell, Azure Active Directory | Документация Майкрософт
-description: Для тех, кто часто управлять назначением ролей теперь вы можете управлять членами роли администратора Azure AD с помощью Azure PowerShell.
+title: Назначение и удаление ролей администратора с помощью Azure PowerShell-Azure Active Directory | Документация Майкрософт
+description: Для тех, кто часто управляет назначениями ролей, теперь вы можете управлять членами роли администратора Azure AD с помощью Azure PowerShell.
 services: active-directory
 author: curtand
 manager: mtillman
@@ -8,21 +8,21 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 04/15/2019
+ms.date: 07/31/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f6877c3e547d625cf58129a546dae798b37a24ae
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: aa4bddf84720265afe361dff665f10ff8184f6f6
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60469100"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706484"
 ---
 # <a name="assign-azure-active-directory-admin-roles-using-powershell"></a>Назначение ролей администратора Azure Active Directory с помощью PowerShell
 
-Как назначить роли для учетных записей пользователей с помощью Azure PowerShell можно автоматизировать. В этой статье используется [Azure Active Directory PowerShell версии 2](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#directory_roles) модуля.
+Способ назначения ролей учетным записям пользователей можно автоматизировать с помощью Azure PowerShell. В этой статье используется модуль [Azure Active Directory PowerShell версии 2](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#directory_roles) .
 
 ## <a name="prepare-powershell"></a>Подготовка PowerShell
 
@@ -50,11 +50,11 @@ get-module azuread
 
 ## <a name="permissions-required"></a>Необходимые разрешения
 
-Соединиться с вашим клиентом Azure AD, используя учетную запись глобального администратора назначить или удалить роли.
+Подключитесь к клиенту Azure AD с помощью учетной записи глобального администратора, чтобы назначить или удалить роли.
 
-## <a name="assign-a-single-role"></a>Назначить одной роли
+## <a name="assign-a-single-role"></a>Назначение одной роли
 
-Чтобы назначить роль, сначала необходимо получить его отображаемое имя и имя роли, которой назначается. При наличии отображаемое имя учетной записи и имя роли, используйте следующие командлеты, чтобы назначить роль пользователю.
+Чтобы назначить роль, сначала необходимо получить ее отображаемое имя и имя назначаемой роли. Если у вас есть отображаемое имя учетной записи и имя роли, используйте следующие командлеты для назначения роли пользователю.
 
 ``` PowerShell
 # Fetch user to assign to role
@@ -82,7 +82,7 @@ Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId | Get-AzureADUser
 
 ## <a name="assign-a-role-to-a-service-principal"></a>Назначение роли субъекту-службе.
 
-Пример того, назначение субъекта-службы роли.
+Пример назначения роли субъекту-службе.
 
 ```powershell
 # Fetch a service principal to assign to role
@@ -103,7 +103,7 @@ Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId | Get-AzureADServicePrin
 
 ## <a name="multiple-role-assignments"></a>Несколько назначений ролей
 
-Примеры назначение и удаление нескольких ролей за один раз.
+Примеры назначения и удаления нескольких ролей одновременно.
 
 ```powershell
 #File name
@@ -149,19 +149,19 @@ $roleMember = Get-AzureADUser -ObjectId "username@contoso.com"
 
 #Fetch list of all directory roles with object id
 Get-AzureADDirectoryRole
- 
+
 # Fetch a directory role by id
 $role = Get-AzureADDirectoryRole -ObjectId "5b3fe201-fa8b-4144-b6f1-875829ff7543"
- 
+
 # Remove user from role
 Remove-AzureADDirectoryRoleMember -ObjectId $role.ObjectId -MemberId $roleMember.ObjectId 
 
 # Fetch role membership for role to confirm
 Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId | Get-AzureADUser
- 
+
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Вы можете оставить комментарий на [форуме об административных ролях Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 * Дополнительные сведения о ролях и назначении роли администратора см. в разделе [Назначение ролей администратора](directory-assign-admin-roles.md).

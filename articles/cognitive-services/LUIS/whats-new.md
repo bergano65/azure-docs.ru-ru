@@ -9,20 +9,31 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 06/25/2019
+ms.date: 07/22/2019
 ms.author: diberry
-ms.openlocfilehash: 63a898bd807b168ae17ec90e442c6ee6c001c715
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: ab30e201dc5e4e9a226e23a37e8dbd63f17dd742
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68559882"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68717435"
 ---
 # <a name="whats-new-in-language-understanding"></a>Новые возможности Language Understanding
 
 Узнайте о новых возможностях службы. Эти элементы могут выпустить заметки, видео, записи в блоге и другие типы информации. Закладка этой страницы для обновления со службой.  
 
 ## <a name="release-notes"></a>Заметки о выпуске 
+
+### <a name="july-23-2019"></a>23 июля 2019 г.
+
+* Обновление [распознавателей — текст](https://github.com/microsoft/Recognizers-Text/releases/tag/dotnet-v1.2.3) на 1.2.3
+    * Распознаватели Age, температуре, измерений и валют на итальянском языке.
+    * Улучшение распознавания праздников на английском языке для правильного вычисления дат на основе благодарения.
+    * Улучшения на французском языке DateTime для сокращения количества ложных срабатываний сущностей, не являющихся датами и не являющихся временными.
+    * Поддержка календарного, учебного и финансового года и акронимов на английском DateRange.
+    * Улучшенное распознавание PhoneNumber в китайском и японском языках.
+    * Улучшенная поддержка Нумберранже на английском языке.
+    * Повышение производительности.
 
 ### <a name="june-24-2019"></a>24 июня 2019 г.
 

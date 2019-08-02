@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
 ms.reviewer: sstein
-manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: 758cb47760f4a15e262a4d682089ac7d9fee64e8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6c14fd69521be85dbda5ec4ceda991dfdff54ae0
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60326300"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570062"
 ---
 # <a name="general-guidance-for-working-with-wingtip-tickets-sample-saas-apps"></a>Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets
 
@@ -35,7 +34,7 @@ ms.locfileid: "60326300"
 3. Выберите **Download ZIP** (Скачать ZIP-файл) и сохраните файл.
 4. Щелкните правой кнопкой мыши этот ZIP-файл и выберите **Свойства**. Имя ZIP-файла будет соответствовать имени репозитория. (Например, _WingtipTicketsSaaS-DbPerTenant-master.zip_.)
 5. На вкладке **Общие** выберите **Разблокировать**.
-6. Последовательно выберите **ОК**.
+6. Нажмите кнопку **ОК**.
 7. Извлеките файлы.
 
 Файлы сценариев находятся в папке *..\\Learning Modules*.
@@ -94,7 +93,7 @@ ms.locfileid: "60326300"
 
    ![сервер каталога](media/saas-tenancy-wingtip-app-guidance-tips/connect.png)
 
-3. Используйте следующие демонстрационные учетные данные: Имя входа = *разработчика*, Password = *P\@ssword1*
+3. Используйте следующие демонстрационные учетные данные: Имя для входа — *разработчик*, пароль — *P\@ssword1*
 
     На следующем рисунке показано имя для входа для шаблона *однотенантной базы данных*. 
     ![подключение](media/saas-tenancy-wingtip-app-guidance-tips/tenants1-connect.png)
@@ -115,7 +114,7 @@ ms.locfileid: "60326300"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Развертывание изолированного приложения SaaS Wingtip Tickets](saas-standaloneapp-get-started-deploy.md)
 - [Развертывание приложения SaaS Wingtip Tickets для однотенантной базы данных](saas-dbpertenant-get-started-deploy.md)
 - [Развертывание приложения SaaS Wingtip Tickets для мультитенантной базы данных](saas-multitenantdb-get-started-deploy.md)

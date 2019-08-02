@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/17/2019
 ms.author: kumud
-ms.openlocfilehash: 9fb7fc9b4f0e5af0847876ff41b6a307f8a09749
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 857b38693ca85d6ab397cbe850f0cd530fefc88c
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68348044"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68598389"
 ---
 # <a name="azure-networking"></a>Сетевые подключения Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "68348044"
 |[VPN-шлюз](#vpngateway)|Отправляет зашифрованный трафик между виртуальной сетью Azure и локальным расположением через общедоступный Интернет.|<p>[Подключения "сеть — сеть"](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md)</p> <p>[Подключения между виртуальными сетями](../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)</p> <p>[Подключения "точка — сеть"](../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md)</p>|
 |[Виртуальная глобальная сеть](#virtualwan)|Оптимизирует и автоматизирует подключение филиала к, и через Azure. Регионы Azure служат в качестве концентраторов, к которым вы можете подключить ветви.|<p>Подключения " [сеть — сеть](../virtual-wan/virtual-wan-site-to-site-portal.md)", [подключения ExpressRoute](../virtual-wan/virtual-wan-expressroute-portal.md)</p>|
 |[Azure DNS](#dns)|Размещает домены DNS, предоставляющие разрешение имен, с помощью инфраструктуры Microsoft Azure.|<p>[Размещение домена в Azure DNS](../dns/dns-delegate-domain-azure-dns.md)</p><p>[Создание записей DNS для веб-приложения](../dns/dns-web-sites-custom-domain.md)</p> <p>[Создание записи псевдонима для диспетчера трафика](../dns/tutorial-alias-tm.md)</p> <p>[Создание записи псевдонима для общедоступного IP-адреса](../dns/tutorial-alias-pip.md)</p> <p>[Создание записи псевдонима для записи ресурса зоны](../dns/tutorial-alias-rr.md)</p>|
-|[Azure бастиона (Предварительная версия)](#bastion)|Настраивайте безопасное и бесперебойное подключение RDP или SSH к виртуальным машинам непосредственно на портале Azure по протоколу SSL. При подключении через Azure бастиона виртуальным машинам не требуется общедоступный IP-адрес|<p>[Создание узла бастиона Azure](../bastion/bastion-create-host-portal.md)</p><p>[Подключение по протоколу SSH к виртуальной машине Linux](../bastion/bastion-connect-vm-ssh.md)</p><p>[Подключение по протоколу RDP к виртуальной машине Windows](/bastion/bastion-connect-vm-rdp.md)</p>|
+|[Azure бастиона (Предварительная версия)](#bastion)|Настраивайте безопасное и бесперебойное подключение RDP или SSH к виртуальным машинам непосредственно на портале Azure по протоколу SSL. При подключении через Azure бастиона виртуальным машинам не требуется общедоступный IP-адрес|<p>[Создание узла бастиона Azure](../bastion/bastion-create-host-portal.md)</p><p>[Подключение по протоколу SSH к виртуальной машине Linux](../bastion/bastion-connect-vm-ssh.md)</p><p>[Подключение по протоколу RDP к виртуальной машине Windows](../bastion/bastion-connect-vm-rdp.md)</p>|
 ||||
 
 
@@ -74,7 +74,7 @@ VPN-шлюз помогает создавать зашифрованные ра
 Azure DNS является службой размещения доменов DNS, осуществляющей разрешение имен на базе инфраструктуры Microsoft Azure. Размещая домены в Azure, вы можете управлять своими записями DNS с помощью тех же учетных данных, API и инструментов и оплачивать использование, как и другие службы Azure. Дополнительные сведения см. в разделе [что такое Azure DNS?](../dns/dns-overview.md).
 
 ### <a name="bastion"></a>Azure бастиона (Предварительная версия)
-Служба Бастион Azure — это новая полностью управляемая платформой PaaS-служба, которая подготавливается в виртуальной сети. В ней предоставляется безопасное и бесперебойное подключение RDP или SSH к виртуальным машинам непосредственно на портале Azure по протоколу SSL. При подключении с помощью Бастиона Azure виртуальным машинам не требуются общедоступные IP-адреса. Дополнительные сведения см. в статье [что такое Azure бастиона?](/bastion/bastion-overview.md).
+Служба Бастион Azure — это новая полностью управляемая платформой PaaS-служба, которая подготавливается в виртуальной сети. В ней предоставляется безопасное и бесперебойное подключение RDP или SSH к виртуальным машинам непосредственно на портале Azure по протоколу SSL. При подключении с помощью Бастиона Azure виртуальным машинам не требуются общедоступные IP-адреса. Дополнительные сведения см. в статье [что такое Azure бастиона?](../bastion/bastion-overview.md).
 
 ![Архитектура Azure бастиона](./media/networking-overview/architecture.png)
 

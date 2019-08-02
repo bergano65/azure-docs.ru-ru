@@ -12,18 +12,18 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0a482ae44c796e1519ffad0a604510166b1ac63c
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 4f2bb4a6d10f9e45a27b8b5e082b3cbec475b531
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165605"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68677818"
 ---
-# <a name="manage-ga-reference-data-for-an-azure-time-series-insights-environment-by-using-c"></a>Управление эталонными данными общедоступной версии для среды Azure Time Series Insights с помощьюC#
+# <a name="manage-ga-reference-data-for-an-azure-time-series-insights-environment-by-using-c"></a>Управление эталонными данными на основе общедоступной версии для среды службы "аналитика временных рядов Azure" с помощьюC#
 
 В этой статье описан пример проекта C#, который вы можете компилировать, чтобы управлять эталонными данными для среды службы "Аналитика временных рядов Azure".
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Перед компиляцией и запуском примера кода выполните следующие шаги.
 
@@ -36,7 +36,7 @@ ms.locfileid: "67165605"
 1. Измените пример кода, заменив константы, указанные в **#DUMMY#** в начале кода.
 
 > [!NOTE]
-> Просмотреть код примера общедоступной версии в [ https://github.com/Azure-Samples/Azure-Time-Series-Insights ](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample).
+> Просмотрите код на странице общедоступного примера по адресу [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample).
 
 ## <a name="project-dependencies"></a>Зависимости проекта
 
@@ -245,6 +245,6 @@ namespace TimeSeriesInsightsReferenceDataSampleApp
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Чтение [ссылочные данные API](/rest/api/time-series-insights/ga-reference-data-api).
+- Прочтите [API эталонных данных](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api).

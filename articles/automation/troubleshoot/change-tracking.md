@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 01/31/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 3f733db97f79282bfc255e3ac4b9991a3b6abc18
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: beb0b89bdbf143c89a83c0813313a8bbda7235d4
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67477543"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564846"
 ---
 # <a name="troubleshoot-change-tracking-and-inventory"></a>Устранение неполадок в службах "Отслеживание изменений" и "Учет"
 
@@ -22,7 +22,7 @@ ms.locfileid: "67477543"
 
 ### <a name="records-not-showing-windows"></a>Сценарий. Записи Отслеживания изменений не отображаются для компьютеров Windows
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Вы не видите никаких результатов от служб "Учет" или "Отслеживание изменений" для компьютеров Windows, которые подключены к Отслеживанию изменений.
 
@@ -35,7 +35,7 @@ ms.locfileid: "67477543"
 3. Не скачаны пакеты управления для Отслеживания изменений.
 4. Подключенная виртуальная машина, возможно, поступила с клонированного компьютера, необработанного командой Sysprep с помощью установленного Microsoft Monitoring Agent.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Разрешение
 
 1. Убедитесь, выполняется ли на компьютере **Microsoft Monitoring Agent** (HealthService.exe).
 1. Проверьте компонент **Просмотр событий** на компьютере, а также найдите любые события, которые содержат слово `changetracking`.
@@ -51,7 +51,7 @@ ms.locfileid: "67477543"
 На компьютере агента, перейдите к `C:\Program Files\Microsoft Monitoring Agent\Agent\Tools` и выполните следующие команды:
 
 ```cmd
-set stop healthservice
+net stop healthservice
 StopTracing.cmd
 StartTracing.cmd VER
 net start healthservice
@@ -60,7 +60,7 @@ net start healthservice
 > [!NOTE]
 > По умолчанию трассировка ошибок включена. Если вы намерены включить подробные сообщения об ошибках, как в предыдущем примере, используйте параметр `VER`. Для трассировки информации используйте `INF` при вызове `StartTracing.cmd`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 

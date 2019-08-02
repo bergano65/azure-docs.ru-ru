@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 05/17/2019
 ms.author: mlearned
 ms.openlocfilehash: 72f34d9711e1ba4658288bfdeb847632d32d0fcf
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68478325"
 ---
 # <a name="preview---create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Предварительная версия. Создание пулов нескольких узлов для кластера в службе Kubernetes Azure (AKS) и управление ими
@@ -32,7 +32,7 @@ ms.locfileid: "68478325"
 
 ### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки aks-preview
 
-Чтобы использовать несколько нодепулс, требуется расширение CLI *AKS-Preview* версии 0.4.1 или более поздней. Установите расширение Azure CLI *AKS-Preview* с помощью команды [AZ Extension Add][az-extension-add] command, then check for any available updates using the [az extension update][az-extension-update] ::
+Чтобы использовать несколько нодепулс, требуется расширение CLI *AKS-Preview* версии 0.4.1 или более поздней. Установите расширение Azure CLI *AKS-Preview* с помощью команды [AZ Extension Add][az-extension-add] , а затем проверьте наличие доступных обновлений с помощью команды [AZ Extension Update][az-extension-update] :
 
 ```azurecli-interactive
 # Install the aks-preview extension
@@ -289,7 +289,7 @@ aks-nodepool1-28993262-vmss000000    Ready    agent   115m    v1.13.5
 
 Дополнительные сведения о том, как использовать расширенные функции Kubernetes Schedule, см. в статье рекомендации [по использованию расширенных функций планировщика в AKS][taints-tolerations] .
 
-В этом примере примените таинт к узлу на основе GPU с помощью команды [kubectl таинт node][kubectl-taint] . Укажите имя узла на основе GPU из выходных данных предыдущей `kubectl get nodes` команды. Таинт применяется в качестве *ключа: value* , а затем — параметра планирования. В следующем примере используется пара *SKU = GPU* и определяются модули Pod, в  противном случае — возможность непланирования:
+В этом примере примените таинт к узлу на основе GPU с помощью команды [kubectl таинт node][kubectl-taint] . Укажите имя узла на основе GPU из выходных данных предыдущей `kubectl get nodes` команды. Таинт применяется в качестве *ключа: value* , а затем — параметра планирования. В следующем примере используется пара *SKU = GPU* и определяются модули Pod, в противном случае — возможность непланирования:
 
 ```console
 kubectl taint node aks-gpunodepool-28993262-vmss000000 sku=gpu:NoSchedule

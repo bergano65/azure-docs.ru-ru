@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: bb0e146ef32ba24c3911bae86806c84768c005ef
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b62cbe6be7f48aa05bf3756580df0777aeee8cae
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60405959"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68726085"
 ---
 # <a name="copy-data-from-oracle-eloqua-using-azure-data-factory-preview"></a>Копирование данных из Oracle Eloqua с помощью фабрики данных Azure (предварительная версия)
 
@@ -42,10 +42,10 @@ ms.locfileid: "60405959"
 
 Для связанной службы Oracle Eloqua поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойству type необходимо задать следующее значение: **Eloqua** | Да |
-| endpoint | Конечная точка сервера Eloqua Eloqua поддерживает несколько центров обработки данных. Чтобы определить свою конечную точку, войдите в https://login.eloqua.com со своими учетными данными, а затем скопируйте фрагмент **базового URL-адреса** из URL-адреса перенаправления в следующем формате: `xxx.xxx.eloqua.com`. | Да |
+| конечная точка | Конечная точка сервера Eloqua Eloqua поддерживает несколько центров обработки данных. Чтобы определить свою конечную точку, войдите в https://login.eloqua.com со своими учетными данными, а затем скопируйте фрагмент **базового URL-адреса** из URL-адреса перенаправления в следующем формате: `xxx.xxx.eloqua.com`. | Да |
 | username | Имя сайта и имя пользователя учетной записи Eloqua в формате `SiteName\Username`, например `Eloqua\Alice`.  | Да |
 | password | Пароль, соответствующий имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет |
@@ -77,7 +77,7 @@ ms.locfileid: "60405959"
 
 Чтобы скопировать данные из Oracle Eloqua, задайте для свойства type набора данных значение **EloquaObject**. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Для свойства type набора данных необходимо задать следующее значение: **EloquaObject** | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
@@ -89,11 +89,12 @@ ms.locfileid: "60405959"
     "name": "EloquaDataset",
     "properties": {
         "type": "EloquaObject",
+        "typeProperties": {},
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<Eloqua linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {}
+        }
     }
 }
 ```
@@ -106,10 +107,10 @@ ms.locfileid: "60405959"
 
 Чтобы копировать данные из Oracle Eloqua, задайте для типа источника в действии копирования значение **EloquaSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойство type источника действия копирования должно иметь следующее значение: **EloquaSource** | Да |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Accounts"`. | Нет (если для набора данных задано свойство tableName) |
+| запрос | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Accounts"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 
@@ -143,5 +144,5 @@ ms.locfileid: "60405959"
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 См. список хранилищ данных, [поддерживаемых фабрикой данных Azure](copy-activity-overview.md#supported-data-stores-and-formats).

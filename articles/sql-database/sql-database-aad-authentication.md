@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, carlrab
-manager: craigg
 ms.date: 02/20/2019
-ms.openlocfilehash: 1318cd3d1c0c51889cc70b6836d06d6d6ee70c24
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: eb49649e9c92416fc674c032b9dc6a613a34dd77
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60387400"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68569661"
 ---
 # <a name="use-azure-active-directory-authentication-for-authentication-with-sql"></a>Использование аутентификации Azure Active Directory для аутентификации с помощью SQL
 
@@ -144,7 +143,7 @@ ms.locfileid: "60387400"
 - База данных SQL поддерживает проверку подлинности Azure AD на портале Azure. Для этого используются колонки **Импорт базы данных** и **Экспорт базы данных**. Импорт и экспорт с использованием проверки подлинности Azure AD также можно выполнить с помощью команды PowerShell.   
 - Аутентификация Azure AD для базы данных SQL, управляемого экземпляра и хранилища данных SQL поддерживается с помощью интерфейса командной строки. Сведения о настройке и управлении Azure AD см. в статьях [Настройка аутентификации Azure Active Directory и управление ею с использованием базы данных SQL или хранилища данных SQL](sql-database-aad-authentication-configure.md) и [SQL Server - az sql server](https://docs.microsoft.com/cli/azure/sql/server).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения о создании и заполнении каталога Azure AD, а также настройке Azure AD с помощью Базы данных SQL Azure, управляемого экземпляра или хранилища данных SQL см. в статье [Настройка аутентификации Azure Active Directory и управление ею с использованием Базы данных SQL или хранилища данных SQL](sql-database-aad-authentication-configure.md).
 - Дополнительные сведения об использовании субъектов сервера (имен для входа) Azure AD с Управляемыми экземплярами см. в статье [Руководство. Обеспечение безопасности управляемого экземпляра в Базе данных SQL Azure с помощью субъектов сервера (имен для входа) Azure AD](sql-database-managed-instance-aad-security-tutorial.md)

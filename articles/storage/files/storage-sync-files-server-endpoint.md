@@ -1,19 +1,18 @@
 ---
 title: Добавление и удаление конечных точек сервера службы "Синхронизация файлов Azure" | Документация Майкрософт
 description: Узнайте, что необходимо учесть при планировании развертывания службы "Файлы Azure".
-services: storage
 author: roygara
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/19/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 31bb71f016dd7f9dd37c766ece25caf8f300754b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3a4a77a9b4cdd30c04de4c4eb9d8731c1ea0616c
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64686955"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699247"
 ---
 # <a name="addremove-an-azure-file-sync-server-endpoint"></a>Добавление и удаление конечных точек сервера службы "Синхронизация файлов Azure"
 Служба "Синхронизация файлов Azure" позволяет централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования серверов Windows Server в быстрый кэш общей папки Azure. Для локального доступа к данным вы можете использовать любой протокол (в том числе SMB, NFS и FTPS), доступный в Windows Server. Кроме того, вы можете создать любое число кэшей в любом регионе.
@@ -22,7 +21,7 @@ ms.locfileid: "64686955"
 
 Сведения о комплексном процессе развертывания службы "Синхронизация файлов Azure" см. в [этой статье](storage-sync-files-deployment-guide.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 Чтобы создать конечную точку сервера, сначала убедитесь, что соблюдены следующие условия: 
 - На сервере установлен и зарегистрирован агент службы синхронизации файлов Azure. Инструкции по установке агента службы "Синхронизация файлов Azure" см. в статье [Управление зарегистрированными серверами в службе "Синхронизация файлов Azure" (предварительная версия)](storage-sync-files-server-registration.md). 
 - Убедитесь, что служба синхронизации хранилища развернута. Сведения о развертывании службы синхронизации хранилища см. в статье [Развертывание службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md). 
@@ -67,7 +66,7 @@ Invoke-StorageSyncFileRecall -Path <path-to-to-your-server-endpoint>
 
     ![Удаление конечной точки сервера из группы синхронизации](media/storage-sync-files-server-endpoint/remove-server-endpoint-1.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Управление зарегистрированными серверами в службе "Синхронизация файлов Azure" (предварительная версия)](storage-sync-files-server-registration.md)
 - [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md)
 - [Мониторинг Синхронизации файлов Azure](storage-sync-files-monitoring.md)

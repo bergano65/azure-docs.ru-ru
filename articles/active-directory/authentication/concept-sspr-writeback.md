@@ -1,5 +1,5 @@
 ---
-title: Локальная интеграция обратной записи паролей с Azure AD SSPR — Azure Active Directory
+title: Интеграция локальной обратной записи паролей с Azure AD SSPR — Azure Active Directory
 description: Обратная запись облачных паролей в локальную инфраструктуру AD.
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2dbf27301e738978e7f03d2423a4d23fd63c97b5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 07069d22d57540c6a16472bc7278821e14f1f18e
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67113492"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561286"
 ---
 # <a name="what-is-password-writeback"></a>Что такое компонент обратной записи паролей?
 
@@ -43,7 +43,7 @@ ms.locfileid: "67113492"
 * **Не требуется никаких правил брандмауэра для входящего трафика**. Компонент обратной записи паролей использует ретранслятор служебной шины Azure в качестве базового коммуникационного канала. Весь обмен данными является исходящим и осуществляется через порт 443.
 
 > [!NOTE]
-> Обратная запись паролей не поддерживается для учетных записей пользователей в защищенных группах в локальной службе Active Directory. Обратная запись паролей не поддерживается для учетных записей администраторов в защищенных группах в локальной службе Active Directory. Дополнительные сведения о защищенных группах см. в статье [Appendix C: Protected Accounts and Groups in Active Directory](https://technet.microsoft.com/library/dn535499.aspx) (Приложение В. Защищенные учетные записи и группы в Active Directory).
+> Обратная запись паролей не поддерживается для учетных записей администраторов в защищенных группах в локальной службе Active Directory. Администраторы могут изменять свой пароль в облаке, но не могут использовать сброс пароля для сброса забытого пароля. Дополнительные сведения о защищенных группах см. в статье [Appendix C: Protected Accounts and Groups in Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-c--protected-accounts-and-groups-in-active-directory) (Приложение В. Защищенные учетные записи и группы в Active Directory).
 
 ## <a name="licensing-requirements-for-password-writeback"></a>Требования к лицензированию для обратной записи паролей
 
@@ -51,7 +51,7 @@ ms.locfileid: "67113492"
 
 Чтобы использовать компонент обратной записи паролей, клиенту должна быть назначена одна из приведенных ниже лицензий:
 
-* Azure AD Premium P1
+* Azure AD Premium P1
 * Azure AD Premium P2
 * Enterprise Mobility + Security E3 или A3;
 * Enterprise Mobility + Security E5 или A5;
@@ -161,11 +161,11 @@ ms.locfileid: "67113492"
    * Все операции сброса пароля пользователя с помощью PowerShell версии 1, PowerShell версии 2 или API Graph Azure AD.
 * **Неподдерживаемые операции администрирования:**
    * все операции сброса пароля пользователя, инициируемые администратором с помощью PowerShell версии 1, PowerShell версии 2 или API Graph Azure AD.
-   * Все сброса пароля конечного пользователя, инициируемые администратором [Центр администрирования Microsoft 365](https://admin.microsoft.com)
+   * Любые сброс пароля конечного пользователя, инициированный администратором, из [центра администрирования Microsoft 365](https://admin.microsoft.com)
 
 > [!WARNING]
-> Использование флажка «Требовать смены пароля при следующем входе в систему» в средств администрирования Active Directory в локальной Active Directory — пользователи и компьютеры или Центр администрирования Active Directory не поддерживается. При изменении пароля в локальной, не устанавливайте этот параметр.
+> Используйте флажок "пользователь должен сменить пароль при следующем входе в систему" в локальных Active Directory средствах администрирования, таких как Active Directory пользователи и компьютеры, или центр администрирования Active Directory не поддерживается. При смене локального пароля этот параметр не устанавливается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Включите компонент обратной записи паролей с помощью статьи [Руководство. Включение компонента обратной записи паролей](tutorial-enable-writeback.md)

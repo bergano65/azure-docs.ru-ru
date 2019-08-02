@@ -11,42 +11,41 @@ author: GithubMirek
 ms.author: MirekS
 ms.reviewer: GeneMi
 ms.date: 03/12/2019
-manager: craigg
-ms.openlocfilehash: bc7274308b8a349d16866f107eac4a57e115be9e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4f36dcc9953134ac5dd24d3d762ac0dde9949ab7
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66160841"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561368"
 ---
-# <a name="connect-to-azure-sql-database-with-azure-multi-factor-authentication"></a>Подключение к базе данных Azure SQL с помощью многофакторная Идентификация Azure
+# <a name="connect-to-azure-sql-database-with-azure-multi-factor-authentication"></a>Подключение к базе данных SQL Azure с помощью многофакторной идентификации Azure
 
-Эта статья содержит C# программа, которая подключается к базе данных SQL Azure. Программа использует интерактивный режим проверки подлинности, который поддерживает [многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks).
+В этой статье представлена C# программа, которая подключается к базе данных SQL Azure. Программа использует интерактивный режим проверки подлинности, поддерживающий многофакторную [идентификацию Azure](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks).
 
-Дополнительные сведения о поддержке многофакторной проверки подлинности для средств SQL, см. в разделе [поддержка Azure Active Directory в SQL Server Data Tools (SSDT)](https://docs.microsoft.com/sql/ssdt/azure-active-directory).
+Дополнительные сведения о поддержке многофакторной идентификации для средств SQL см. [в разделе поддержка Azure Active Directory в SQL Server Data Tools (SSDT)](https://docs.microsoft.com/sql/ssdt/azure-active-directory).
 
-## <a name="multi-factor-authentication-for-azure-sql-database"></a>Многофакторная проверка подлинности для базы данных Azure SQL
+## <a name="multi-factor-authentication-for-azure-sql-database"></a>Многофакторная идентификация для базы данных SQL Azure
 
-Начиная с версии платформы .NET Framework 4.7.2, перечисление [ `SqlAuthenticationMethod` ](https://docs.microsoft.com/dotnet/api/system.data.sqlclient.sqlauthenticationmethod) содержит новое значение: `ActiveDirectoryInteractive`. В клиенте C# программы, значение перечисления направлена на использование интерактивного режима Azure Active Directory (Azure AD), который поддерживает многофакторную проверку подлинности для подключения к базе данных Azure SQL. Пользователь, который затем запускает программу, увидит следующие диалоговые окна:
+Начиная с версии .NET Framework 4.7.2, перечисление [`SqlAuthenticationMethod`](https://docs.microsoft.com/dotnet/api/system.data.sqlclient.sqlauthenticationmethod) имеет новое значение:. `ActiveDirectoryInteractive` В клиентской C# программе значение перечисления указывает системе использовать интерактивный режим Azure Active Directory (Azure AD), который поддерживает многофакторную проверку подлинности для подключения к базе данных SQL Azure. Пользователь, который затем запускает программу, увидит следующие диалоговые окна:
 
 * Диалоговое окно с отображением имени пользователя Azure AD, в котором запрашивается пароль пользователя.
 
-   Если пользователя домена в федерацию с Azure AD, это диалоговое окно не отображается, так как пароль не требуется.
+   Если домен пользователя является федеративным с Azure AD, это диалоговое окно не отображается, так как пароль не требуется.
 
-   Если политики Azure AD накладывает многофакторной проверки подлинности для пользователя, отображаются следующие два диалоговым окнам.
+   Если политика Azure AD накладывает многофакторную проверку подлинности для пользователя, отображаются два следующих диалоговых окна.
 
-* В первый раз пользователь не пройдет многофакторную проверку подлинности, система отображает диалоговое окно, которое запрашивает номер мобильного телефона для отправки текстовых сообщений. Каждое сообщение содержит *код проверки*, который пользователь должен ввести в следующем диалоговом окне.
+* В первый раз, когда пользователь проходит через многофакторную проверку подлинности, система отображает диалоговое окно с запросом номера мобильного телефона для отправки текстовых сообщений. Каждое сообщение содержит *код проверки*, который пользователь должен ввести в следующем диалоговом окне.
 
-* Диалоговое окно, которое запрашивает код проверки многофакторной проверки подлинности, система отправила на мобильный телефон.
+* Диалоговое окно, запрашивающее код проверки многофакторной проверки подлинности, который система отправила на мобильный телефон.
 
-Сведения о настройке Azure AD, чтобы требовать многофакторную проверку подлинности, см. в разделе [Приступая к работе с многофакторной идентификацией Azure в облаке](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-cloud).
+Сведения о настройке использования многофакторной идентификации в Azure AD см. в статье Приступая к [работе с многофакторной идентификацией Azure в облаке](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-cloud).
 
-Снимки экрана диалоговых окон, см. в разделе [Настройка многофакторной проверки подлинности для SQL Server Management Studio и Azure AD](sql-database-ssms-mfa-authentication-configure.md).
+Снимки экрана с этими диалоговыми окнами см. в статье [Настройка многофакторной проверки подлинности для SQL Server Management Studio и Azure AD](sql-database-ssms-mfa-authentication-configure.md).
 
 > [!TIP]
-> Можно выполнить поиск API платформы .NET Framework с [странице средства браузер API .NET](https://docs.microsoft.com/dotnet/api/).
+> Вы можете выполнять поиск .NET Framework API на [странице средства браузера .NET API](https://docs.microsoft.com/dotnet/api/).
 >
-> Также можно выполнять поиск непосредственно с [необязательно? термин =&lt;искомое значение&gt; параметр](https://docs.microsoft.com/dotnet/api/?term=SqlAuthenticationMethod).
+> Можно также выполнить поиск непосредственно с [необязательным параметром?&lt;Term =&gt; Поиск значения](https://docs.microsoft.com/dotnet/api/?term=SqlAuthenticationMethod).
 
 ## <a name="configure-your-c-application-in-the-azure-portal"></a>Настройка приложения C# на портале Azure
 
@@ -54,9 +53,9 @@ ms.locfileid: "66160841"
 
 ### <a name="register-your-app-and-set-permissions"></a>Регистрация приложения и установка разрешений
 
-Чтобы использовать проверку подлинности Azure AD, ваша программа C# должна быть зарегистрирована как приложение Azure AD. Чтобы зарегистрировать приложение, необходимо быть администратором Azure AD или пользователем с назначенной ролью *разработчика приложений* Azure AD. Дополнительные сведения о назначении ролей см. в разделе [назначить роли администратора и без прав администратора для пользователей с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal).
+Чтобы использовать проверку подлинности Azure AD, ваша программа C# должна быть зарегистрирована как приложение Azure AD. Чтобы зарегистрировать приложение, необходимо быть администратором Azure AD или пользователем с назначенной ролью *разработчика приложений* Azure AD. Дополнительные сведения о назначении ролей см. [в статье назначение ролей администратора и пользователей, не являющихся администраторами, с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal).
 
-Завершение работы регистрацию приложения создает и отображает **идентификатор приложения**. Для возможности подключения программа должна включать этот идентификатор.
+При выполнении регистрации приложения создается и отображается **идентификатор приложения**. Для возможности подключения программа должна включать этот идентификатор.
 
 Чтобы зарегистрировать приложение и задать для него необходимые разрешения:
 
@@ -64,29 +63,29 @@ ms.locfileid: "66160841"
 
     ![Регистрация приложения](media/active-directory-interactive-connect-azure-sql-db/image1.png)
 
-    После создания регистрации приложения **идентификатор приложения** создается и отображается значение.
+    После создания регистрации приложения создается и отображается значение **идентификатора приложения** .
 
     ![Отображение идентификатора приложения](media/active-directory-interactive-connect-azure-sql-db/image2.png)
 
-2. Выберите **зарегистрированное приложение** > **параметры** > **необходимые разрешения** > **добавить**.
+2. Выберите **зарегистрированные** > **Параметры** > приложения**необходимые разрешения** > **Добавить**.
 
     ![Параметры разрешений для зарегистрированного приложения](media/active-directory-interactive-connect-azure-sql-db/sshot-registered-app-settings-required-permissions-add-api-access-c32.png)
 
-3. Выберите **необходимые разрешения** > **добавить** > **Выбор API** > **базы данных SQL Azure**.
+3. Выберите **необходимые разрешения** > **Добавить** > **Выбор**APIбазы > **данных SQL Azure**.
 
     ![Добавление доступа через API для службы "База данных SQL Azure"](media/active-directory-interactive-connect-azure-sql-db/sshot-registered-app-settings-required-permissions-add-api-access-Azure-sql-db-d11.png)
 
-4. Выберите **доступ через API** > **Выбор разрешений** > **делегированные разрешения**.
+4. Выберите **доступ к** > API**Выбор разрешений** > **делегированные разрешения**.
 
     ![Делегирование разрешений API для службы "База данных SQL Azure"](media/active-directory-interactive-connect-azure-sql-db/sshot-add-api-access-azure-sql-db-delegated-permissions-checkbox-e14.png)
 
 ### <a name="set-an-azure-ad-admin-for-your-sql-database-server"></a>Определение администратора Azure AD для сервера Базы данных SQL Azure
 
-Для вашего C# программы для запуска, необходимые администратору сервера Azure SQL для назначения администратора Azure AD для сервера базы данных SQL. 
+Чтобы C# программа была запущена, администратору Azure SQL Server необходимо назначить администратора Azure AD для сервера базы данных SQL. 
 
-На **SQL Server** выберите **администратор Active Directory** > **задать администратора**.
+На странице **SQL Server** выберите **Active Directory администратор** > **задать администратора**.
 
-Дополнительные сведения о Azure AD Администраторы и пользователи базы данных SQL Azure, см. в разделе снимки экрана в [Настройка аутентификации Azure Active Directory с базой данных SQL и управление ею](sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server).
+Дополнительные сведения об администраторах и пользователях Azure AD для базы данных SQL Azure см. на снимках экрана в разделе [Настройка проверки подлинности Azure Active Directory и управление ею с помощью базы данных SQL](sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server).
 
 ### <a name="add-a-non-admin-user-to-a-specific-database-optional"></a>Добавление пользователя без прав администратора для конкретной базы данных (необязательно)
 
@@ -98,15 +97,15 @@ ms.locfileid: "66160841"
 
 ## <a name="new-authentication-enum-value"></a>Новое значение перечисления проверки подлинности
 
-В примере C# используется пространство имен [`System.Data.SqlClient`](https://docs.microsoft.com/dotnet/api/system.data.sqlclient). Особый интерес для многофакторной проверки подлинности является перечислением `SqlAuthenticationMethod`, который имеет следующие значения:
+В примере C# используется пространство имен [`System.Data.SqlClient`](https://docs.microsoft.com/dotnet/api/system.data.sqlclient). Особым интересом для многофакторной проверки подлинности является перечисление `SqlAuthenticationMethod`, которое имеет следующие значения:
 
 - `SqlAuthenticationMethod.ActiveDirectoryInteractive`
 
-   Используйте это значение с именем пользователя Azure AD для реализации многофакторной проверки подлинности. Значение подробно описано в этой статье. Он находит пошаговой процедуры, отображение диалоговых окон для пароля пользователя, а затем для многофакторную проверку подлинности, если многофакторная проверка подлинности, заданный для этого пользователя. Это значение доступно начиная с .NET Framework версии 4.7.2.
+   Используйте это значение с именем пользователя Azure AD для реализации многофакторной проверки подлинности. Значение подробно описано в этой статье. Он создает интерактивный интерфейс, отображая диалоговые окна для ввода пароля пользователя, а затем для проверки многофакторной проверки подлинности, если для этого пользователя установлено многофакторная идентификация. Это значение доступно начиная с .NET Framework версии 4.7.2.
 
 - `SqlAuthenticationMethod.ActiveDirectoryIntegrated`
 
-  Это значение следует использовать для *федеративной* учетной записи. При использовании федеративной учетной записи имя пользователя известно домену Windows. Этот метод проверки подлинности не поддерживают многофакторную проверку подлинности.
+  Это значение следует использовать для *федеративной* учетной записи. При использовании федеративной учетной записи имя пользователя известно домену Windows. Этот метод проверки подлинности не поддерживает многофакторную проверку подлинности.
 
 - `SqlAuthenticationMethod.ActiveDirectoryPassword`
 
@@ -114,33 +113,33 @@ ms.locfileid: "66160841"
 
 ## <a name="set-c-parameter-values-from-the-azure-portal"></a>Установка значений параметров C# с портала Azure
 
-Для успешного выполнения программы C# необходимо назначить соответствующие значения статическим полям. Здесь отображаются поля с примерами значений. Также показано — Azure портала расположения, где вы можете получить необходимые значения.
+Для успешного выполнения программы C# необходимо назначить соответствующие значения статическим полям. Здесь отображаются поля с примерами значений. Также показаны портал Azure расположения, в которых можно получить необходимые значения.
 
 | Имя статического поля | Пример значения | Расположение на портале Azure |
 | :---------------- | :------------ | :-------------------- |
 | Az_SQLDB_svrName | "my-sqldb-svr.database.windows.net" | **Серверы SQL Server** > **Фильтровать по имени** |
-| AzureAD_UserID | «auser\@abc.onmicrosoft.com» | **Azure Active Directory** > **Пользователь** > **Новый гостевой пользователь** |
+| AzureAD_UserID | "Аусер\@ABC.onmicrosoft.com" | **Azure Active Directory** > **Пользователь** > **Новый гостевой пользователь** |
 | Initial_DatabaseName | "myDatabase" | **Серверы SQL Server** > **Базы данных SQL** |
 | ClientApplicationID | "a94f9c62-97fe-4d19-b06d-111111111111" | **Azure Active Directory** > **Регистрация приложений** > **Поиск по имени** > **Идентификатор приложения** |
-| RedirectUri | new Uri("https://mywebserver.com/") | **Azure Active Directory** > **регистрация приложений** > **поиск по имени** >  *[Your-— Регистрация приложения]*  >  **Параметры** > **RedirectURIs**<br /><br />В этой статье любое допустимое значение подходит для URI перенаправления, так как она не используется, здесь. |
+| RedirectUri | new Uri("https://mywebserver.com/") | **Azure Active Directory** >  > регистрация приложений Поиск поимени > [ваша-App-Registration] Параметры редиректурис >  > <br /><br />В этой статье любое допустимое значение подходит для RedirectUri, так как оно не используется здесь. |
 | &nbsp; | &nbsp; | &nbsp; |
 
 ## <a name="verify-with-sql-server-management-studio"></a>Проверка с помощью SQL Server Management Studio
 
-Прежде чем выполнять C# программы, это хороший способ проверить, что программа установки и конфигурации верны в SQL Server Management Studio (SSMS). Любой сбой программы C# можно затем свести к исходному коду.
+Перед запуском C# программы рекомендуется проверить правильность установки и конфигурации в SQL Server Management Studio (SSMS). Любой сбой программы C# можно затем свести к исходному коду.
 
 ### <a name="verify-sql-database-firewall-ip-addresses"></a>Проверка IP-адресов брандмауэра службы "База данных SQL"
 
-Запустите SSMS с того же компьютера в том же здании, где вы планируете выполнять программу C#. Для этого теста любой **проверки подлинности** режим — ОК. Если что-либо указывает на то, что брандмауэр сервера баз данных не принимает ваш IP-адрес, ознакомьтесь с [правилами брандмауэра уровня базы данных и уровня сервера Базы данных SQL Azure](sql-database-firewall-configure.md), чтобы получить помощь.
+Запустите SSMS с того же компьютера в том же здании, где вы планируете выполнять программу C#. Для этого теста любой режим **проверки** подлинности — ОК. Если что-либо указывает на то, что брандмауэр сервера баз данных не принимает ваш IP-адрес, ознакомьтесь с [правилами брандмауэра уровня базы данных и уровня сервера Базы данных SQL Azure](sql-database-firewall-configure.md), чтобы получить помощь.
 
-### <a name="verify-azure-active-directory-multi-factor-authentication"></a>Проверка многофакторной идентификации Azure Active Directory
+### <a name="verify-azure-active-directory-multi-factor-authentication"></a>Проверка многофакторной проверки подлинности Azure Active Directory
 
 Снова запустите SSMS, на этот раз для **аутентификации** должно быть установлено значение **Active Directory - Universal with MFA support** (Active Directory — универсальная с поддержкой MFA). Этот параметр требует SSMS версии 17.5 или более поздней.
 
-Дополнительные сведения см. в разделе [Настройка многофакторной проверки подлинности для SSMS и Azure AD](sql-database-ssms-mfa-authentication-configure.md).
+Дополнительные сведения см. в статье [Настройка многофакторной идентификации для SSMS и Azure AD](sql-database-ssms-mfa-authentication-configure.md).
 
 > [!NOTE]
-> Если вы являетесь гостевого пользователя в базе данных, необходимо также указать доменное имя Azure AD для базы данных: Выберите **параметры** > **AD доменное имя или идентификатор клиента**. Чтобы найти имя домена на портале Azure, выберите **Azure Active Directory** > **Имена личных доменов**. В программе C# можно не предоставлять доменное имя.
+> Если вы являетесь гостевым пользователем в базе данных, необходимо также указать доменное имя Azure AD для базы данных: Выберите **Параметры** > **доменное имя AD или идентификатор клиента**. Чтобы найти имя домена на портале Azure, выберите **Azure Active Directory** > **Имена личных доменов**. В программе C# можно не предоставлять доменное имя.
 
 ## <a name="c-code-example"></a>Пример кода C#
 
@@ -148,7 +147,7 @@ ms.locfileid: "66160841"
 
 Чтобы установить этот пакет, в Visual Studio выберите **Проект** > **Управление пакетами NuGet**. Выполните поиск библиотеки **Microsoft.IdentityModel.Clients.ActiveDirectory** и установите ее.
 
-Это пример C# исходный код.
+Это пример C# исходного кода.
 
 ```csharp
 
@@ -318,7 +317,7 @@ namespace ADInteractive5
 
 &nbsp;
 
-Это пример C# проверить выходные данные.
+Это пример выходных данных C# теста.
 
 ```
 [C:\Test\VSProj\ADInteractive5\ADInteractive5\bin\Debug\]
@@ -332,10 +331,10 @@ In method 'AcquireTokenAsync', case_0 == '.ActiveDirectoryInteractive'.
 >>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
-- [Get-AzSqlServerActiveDirectoryAdministrator](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlserveractivedirectoryadministrator)
+- [Get-Азсклсерверактиведиректорядминистратор](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlserveractivedirectoryadministrator)

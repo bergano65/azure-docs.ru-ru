@@ -7,18 +7,18 @@ ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 02/26/2019
-ms.openlocfilehash: a86b755770dc59f196c57f1d86e7f29200ce25e3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5e0f2bb19e5c753c5b327781774d3fd96ec58592
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66171474"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68609844"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-vnet-service-endpoints-using-azure-cli"></a>Создание конечных точек службы виртуальной сети Базы данных Azure для MariaDB и управление ими с помощью Azure CLI
 
 Правила и конечные точки служб виртуальной сети позволяют расширить частное адресное пространство виртуальной сети, чтобы охватить сервер Базы данных Azure для MariaDB. С помощью удобных команд интерфейса командной строки Azure (CLI) можно создавать, обновлять, удалять, выводить списки и просматривать правила и конечные точки службы виртуальной сети для управления сервером. Общие сведения о конечных точках службы виртуальной сети Базы данных Azure для MariaDB, включая ограничения, см. в [этой статье](concepts-data-access-security-vnet.md). Конечные точки службы виртуальной сети доступны во всех поддерживаемых регионах Базы данных Azure для MariaDB.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - Установите [Azure CLI](/cli/azure/install-azure-cli) или используйте Azure Cloud Shell в браузере.
 - [Сервер Базы данных Azure для MariaDB и база данных](quickstart-create-mariadb-server-database-using-azure-cli.md).
@@ -50,10 +50,10 @@ az login
 
 Узнайте больше о [встроенных ролях](https://docs.microsoft.com/azure/active-directory/role-based-access-built-in-roles) и назначении разрешений, определенных для [настраиваемых ролей](https://docs.microsoft.com/azure/active-directory/role-based-access-control-custom-roles).
 
-Виртуальные сети и ресурсы служб Azure могут находиться в одной или разных подписках. Если виртуальные сети и ресурсы служб Azure находятся в разных подписках, ресурсы должны быть размещены в одном клиенте Active Directory (AD).
+Виртуальные сети и ресурсы служб Azure могут находиться в одной или разных подписках. Если виртуальные сети и ресурсы служб Azure находятся в разных подписках, ресурсы должны быть размещены в одном клиенте Active Directory (AD). Убедитесь, что у обеих подписок есть зарегистрированный поставщик ресурсов **Microsoft. SQL** . Дополнительные сведения см. в статье [Регистрация в диспетчере ресурсов][resource-manager-portal] .
 
 > [!IMPORTANT]
-> Прежде чем настраивать конечные точки службы, настоятельно рекомендуется прочитать эту статью о конфигурациях конечной точки службы и рекомендациях: **Конечная точка службы виртуальной сети.** [Конечная точка службы для виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md) — это подсеть, значения свойств которой включают в себя одно формальное имя типа службы Azure или несколько. Конечные точки службы виртуальной сети используют имя типа службы **Microsoft.Sql**, которое относится к службе Azure, которая называется "База данных SQL". Этот тег службы также применяется к Базе данных SQL Azure, Базе данных Azure для MariaDB, PostgreSQL и MySQL. Важно отметить, что при применении тега службы **Microsoft.Sql** к конечной точке службы виртуальной сети настраивается трафик конечной точки службы для всех служб баз данных Azure, в том числе для Базы данных SQL Azure, Базы данных Azure для MariaDB, Базы данных Azure для PostgreSQL и Базы данных Azure для MySQL в подсети.
+> Прежде чем настраивать конечные точки службы, настоятельно рекомендуется прочитать эту статью о конфигурациях конечной точки службы и рекомендациях: **Конечная точка службы для виртуальной сети.** [Конечная точка службы для виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md) — это подсеть, значения свойств которой включают в себя одно формальное имя типа службы Azure или несколько. Конечные точки службы виртуальной сети используют имя типа службы **Microsoft.Sql**, которое относится к службе Azure, которая называется "База данных SQL". Этот тег службы также применяется к Базе данных SQL Azure, Базе данных Azure для MariaDB, PostgreSQL и MySQL. Важно отметить, что при применении тега службы **Microsoft.Sql** к конечной точке службы виртуальной сети настраивается трафик конечной точки службы для всех служб баз данных Azure, в том числе для Базы данных SQL Azure, Базы данных Azure для MariaDB, Базы данных Azure для PostgreSQL и Базы данных Azure для MySQL в подсети.
 
 ### <a name="sample-script"></a>Пример скрипта
 
@@ -131,3 +131,6 @@ az group delete --name myresourcegroup
 <!--
 [!code-azurecli-interactive[main](../../cli_scripts/mysql/create-mysql-server-vnet/delete-mysql.sh "Delete the resource group.")]
 -->
+
+<!-- Link references, to text, Within this same GitHub repo. --> 
+[resource-manager-portal]: ../azure-resource-manager/resource-manager-supported-services.md

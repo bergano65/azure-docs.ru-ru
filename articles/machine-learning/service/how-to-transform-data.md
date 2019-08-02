@@ -12,12 +12,12 @@ manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 07/16/2019
 ms.custom: seodec18
-ms.openlocfilehash: 08cf646d63e1a295a1bc2ff28180983cc462f084
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: add5584ccf3d9d6837e328bbf70d71598e5c0839
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360933"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68694309"
 ---
 # <a name="transform-data-with-the-azure-machine-learning-data-prep-sdk"></a>Преобразование данных с помощью пакета SDK для подготовки данных машинного обучения Azure
 
@@ -102,7 +102,7 @@ dflow.head(3)
 
 В третьей записи отсутствуют значения широты и долготы. Чтобы аппроксимация отсутствующие значения, используйте [`ImputeMissingValuesBuilder`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.api.builders.imputemissingvaluesbuilder?view=azure-dataprep-py) для изучения фиксированного выражения. Можно добавить в столбцы следующие значения: рассчитанное `MIN`, `MAX`, `MEAN` или `CUSTOM`. Если указано `group_by_columns`, то отсутствующие значения будут добавляться группой вместе с вычисленными `MIN`, `MAX` и `MEAN` для каждой группы.
 
-Проверьте значение столбца широты [`summarize()`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#summarize-summary-columns--typing-union-typing-list-azureml-dataprep-api-dataflow-summarycolumnsvalue---nonetype----none--group-by-columns--typing-union-typing-list-str---nonetype----none--join-back--bool---false--join-back-columns-prefix--typing-union-str--nonetype----none-----azureml-dataprep-api-dataflow-dataflow) с помощью функции. `MEAN` Эта функция принимает массив столбцов в параметре `group_by_columns`, чтобы указать совокупный уровень. Параметр `summary_columns` принимает вызов `SummaryColumnsValue`. Вызов этой функции указывает текущее имя столбца, имя нового вычисляемого поля и `SummaryFunction` для выполнения.
+Проверьте значение столбца широты [`summarize()`](/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-ml-py#summarize-summary-columns--typing-union-typing-list-azureml-dataprep-api-dataflow--summarycolumnsvalue---nonetype----none--group-by-columns--typing-union-typing-list-str---nonetype----none--join-back--bool---false--join-back-columns-prefix--typing-union-str--nonetype----none-----azureml-dataprep-api-dataflow-dataflow) с помощью функции. `MEAN` Эта функция принимает массив столбцов в параметре `group_by_columns`, чтобы указать совокупный уровень. Параметр `summary_columns` принимает вызов `SummaryColumnsValue`. Вызов этой функции указывает текущее имя столбца, имя нового вычисляемого поля и `SummaryFunction` для выполнения.
 
 ```python
 dflow_mean = dflow.summarize(group_by_columns=['Arrest'],

@@ -13,21 +13,21 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 07/11/2019
 ms.author: magoedte
-ms.openlocfilehash: a55a4b2f3045aac8dfe9e46a50074585ab3ef491
-ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
+ms.openlocfilehash: 2acaba4e82f499ce1ca08a0ce17469ccb0a7e541
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67827791"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698446"
 ---
-# <a name="manage-log-analytics-workspace-using-azure-resource-manager-templates"></a>Управление рабочей областью Log Analytics, с помощью шаблонов Azure Resource Manager
+# <a name="manage-log-analytics-workspace-using-azure-resource-manager-templates"></a>Управление рабочей областью Log Analytics с помощью шаблонов Azure Resource Manager
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Можно использовать [шаблонов Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) для создания и настройки рабочих областей Log Analytics в Azure Monitor. Примеры задач, которые можно выполнять с помощью шаблонов.
+[Шаблоны Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) можно использовать для создания и настройки log Analytics рабочих областей в Azure Monitor. Примеры задач, которые можно выполнять с помощью шаблонов.
 
 * Создание рабочей области, включая настройку ценовой категории 
-* Добавление решения
+* Добавить решение
 * Создание сохраненных поисковых запросов
 * Создание группы компьютеров
 * Включение сбора журналов IIS с компьютеров, на которых установлен агент Windows
@@ -45,14 +45,14 @@ ms.locfileid: "67827791"
 
 | Resource | Тип ресурса | Версия API |
 |:---|:---|:---|
-| Рабочая область   | workspaces    | 2017-03-15-preview |
+| Рабочая область   | рабочие области    | 2017-03-15-preview |
 | Поиск      | savedSearches | 2015-03-20 |
 | Источник данных | datasources   | 2015-11-01-preview |
-| Решение    | solutions     | 2015-11-01-preview |
+| Решение    | решения     | 2015-11-01-preview |
 
 ## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
 
-В следующем примере создается рабочая область с использованием шаблона на локальном компьютере. Шаблон JSON настроен на требуется только имя и расположение новой рабочей области (с использованием значения по умолчанию для остальных параметров рабочей области, такие как Ценовая категория и хранения).  
+В следующем примере создается рабочая область с использованием шаблона на локальном компьютере. Шаблон JSON настроен так, что требуется только имя и расположение новой рабочей области (с использованием значений по умолчанию для других параметров рабочей области, таких как ценовая категория и период удержания).  
 
 ### <a name="create-and-deploy-template"></a>Создание и развертывание шаблона
 
@@ -120,7 +120,7 @@ ms.locfileid: "67827791"
 
 2. Отредактируйте шаблон с учетом ваших требований. Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/workspaces) с описанием поддерживаемых свойств и значений. 
 3. Сохраните этот файл как **deploylaworkspacetemplate.json** в локальной папке.
-4. Теперь вы можете развернуть этот шаблон. Используйте PowerShell или командной строки для создания рабочей области, указав имя рабочей области и расположение как часть команды.
+4. Теперь вы можете развернуть этот шаблон. Для создания рабочей области можно использовать PowerShell или командную строку, указав имя рабочей области и расположение в составе команды.
 
    * Для PowerShell используйте следующие команды из папки с шаблоном.
    
@@ -186,7 +186,6 @@ ms.locfileid: "67827791"
         "description": "Number of days of retention. Workspaces in the legacy Free pricing tier can only have 7 days."
       }
     },
-    {
     "immediatePurgeDataOn30Days": {
       "type": "bool",
       "metadata": {

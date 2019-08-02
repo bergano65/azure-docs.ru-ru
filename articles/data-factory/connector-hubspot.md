@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 86c38818ee1632bf2d2f3fb1e1240954f3267887
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ce9a1d0fb9a5e8b242db26c433a08c2426df39d9
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62123709"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68720749"
 ---
 # <a name="copy-data-from-hubspot-using-azure-data-factory-preview"></a>Копирование данных из HubSpot с помощью фабрики данных Azure (предварительная версия)
 
@@ -42,10 +42,10 @@ ms.locfileid: "62123709"
 
 Для связанной службы HubSpot поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **Hubspot**. | Да |
-| clientid | Идентификатор клиента, связанный с приложением Hubspot.  | Да |
+| clientId | Идентификатор клиента, связанный с приложением Hubspot.  | Да |
 | clientSecret | Секрет клиента, связанный с приложением Hubspot. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | accessToken | Маркер доступа, полученный на этапе первоначальной аутентификации при интеграции с OAuth. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | refreshtoken | Маркер обновления, полученный на этапе первоначальной аутентификации при интеграции с OAuth. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
@@ -85,7 +85,7 @@ ms.locfileid: "62123709"
 
 Чтобы скопировать данные из HubSpot, задайте для свойства type набора данных значение **HubspotObject**. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойство type для набора данных должно иметь значение **HubspotObject**. | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
@@ -97,11 +97,12 @@ ms.locfileid: "62123709"
     "name": "HubspotDataset",
     "properties": {
         "type": "HubspotObject",
+        "typeProperties": {},
+        "schema": [],        
         "linkedServiceName": {
             "referenceName": "<Hubspot linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {}
+        }
     }
 }
 ```
@@ -114,10 +115,10 @@ ms.locfileid: "62123709"
 
 Чтобы копировать данные из HubSpot, задайте для типа источника в действии копирования значение **HubspotSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойство type источника действия копирования должно иметь значение **HubspotSource**. | Да |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Companies where Company_Id = xxx"`. | Нет (если для набора данных задано свойство tableName) |
+| запрос | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Companies where Company_Id = xxx"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 
@@ -151,5 +152,5 @@ ms.locfileid: "62123709"
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

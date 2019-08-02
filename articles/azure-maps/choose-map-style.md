@@ -3,17 +3,17 @@ title: Функции стиля карт в службе Azure Maps | Доку�
 description: Сведения о функциях стиля в службе Azure Maps.
 author: walsehgal
 ms.author: v-musehg
-ms.date: 10/08/2018
+ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: ffed12b9184c7b6a690c30db9826f031fe6c9f9b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 52936b14264bd4fe1846ae365e1de447d594b612
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60795899"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639060"
 ---
 # <a name="choose-a-map-style-in-azure-maps"></a>Выбор стиля карты в службе Azure Maps
 
@@ -46,7 +46,7 @@ ms.locfileid: "60795899"
 
 Элемент выбора стиля позволяет выбрать стиль для карты. Третий блок кода добавляет элемент выбора стиля на карту с помощью метода карты [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest). Селектор стиля находится в пределах **прослушивателя событий** карты для того, чтобы обеспечить его загрузку после полной загрузки карты.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о классах и методах, используемых в этой статье.
 

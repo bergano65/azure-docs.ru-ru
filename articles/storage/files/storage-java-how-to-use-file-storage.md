@@ -1,20 +1,18 @@
 ---
 title: Разработка для файлов Azure с использованием языка Java | Документы Майкрософт
 description: Узнайте, как разрабатывать приложения и службы Java, использующие файлы Azure для хранения файлов данных.
-services: storage
 author: roygara
 ms.service: storage
-ms.devlang: Java
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/19/2017
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 238e5971e79b192e0ef422dcd452859ff7566580
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 00130114b793b5f4d4459eee3404fc4adaf6a8b4
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64721667"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699411"
 ---
 # <a name="develop-for-azure-files-with-java"></a>Разработка для файлов Azure с использованием языка Java
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
@@ -167,7 +165,7 @@ for ( ListFileItem fileItem : rootDir.listFilesAndDirectories() ) {
 }
 ```
 
-## <a name="upload-a-file"></a>Отправка файла
+## <a name="upload-a-file"></a>Отправить файл
 В этом разделе вы узнаете, как отправить файл из локального хранилища в корневой каталог общего ресурса.
 
 Первым шагом при отправке файла является получение ссылки на каталог, где файл будет находиться. Это делается путем вызова метода **getRootDirectoryReference** объекта общей папки.
@@ -187,7 +185,7 @@ CloudFileDirectory rootDir = share.getRootDirectoryReference();
         cloudFile.uploadFromFile(filePath);
 ```
 
-## <a name="download-a-file"></a>скачать файл;
+## <a name="download-a-file"></a>Скачать файл
 Одной из наиболее частых операций, которые выполняются с файлами Azure, является скачивание файлов. В следующем примере происходит скачивание файла SampleFile.txt с последующим отображением его содержимого.
 
 ```java
@@ -223,7 +221,7 @@ if ( file.deleteIfExists() ) {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Если вы хотите узнать больше о других API-интерфейсах Azure, пожалуйста перейдите по следующим ссылкам.
 
 * [Azure for Java developers](/java/azure) (Azure для разработчиков Java)

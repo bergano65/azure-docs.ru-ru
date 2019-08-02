@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 904893d4881de6be2c9055fefa9a8267cb045afd
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: b8b2cad95929d6132a4f0ae52597fb1633874ff1
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67849413"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68592114"
 ---
 # <a name="trustframeworkpolicy"></a>TrustFrameworkPolicy
 
@@ -38,7 +38,7 @@ ms.locfileid: "67849413"
 
 Элемент **TrustFrameworkPolicy** содержит следующие атрибуты:
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательное значение | Описание |
 |---------- | -------- | ----------- |
 | PolicySchemaVersion | Да | Версия схемы, которая будет использоваться для выполнения политики. Значение должно быть `0.3.0.0`. |
 | TenantObjectId | Нет | Уникальный идентификатор объекта арендатора Azure Active Directory (Azure AD) B2C. |
@@ -138,7 +138,7 @@ B2C_1A_TrustFrameWorkBase или B2C_1A_TrustFrameworkExtensionPolicy:
 
 Путь взаимодействия пользователя определяет бизнес-логику этапов, через которые проходит пользователь. Каждый путь взаимодействия пользователя — это набор шагов оркестрации, в рамках которого выполняется ряд последовательных действий с точки зрения проверки подлинности и сбора информации.
 
-Файл политики **SocialAndLocalAccounts** в [начальном пакете](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-get-started-custom#download-starter-pack-and-modify-policies) содержит пути взаимодействия пользователя SignUpOrSignIn, ProfileEdit и PasswordReset. Можно добавить дополнительные пути взаимодействия пользователя для других сценариев, таких как изменение адреса электронной почты или связывание и отмена связи с учетной записью социальных сетей.
+Файл политики **SocialAndLocalAccounts** в [начальном пакете](active-directory-b2c-get-started-custom.md#custom-policy-starter-pack) содержит пути взаимодействия пользователя SignUpOrSignIn, ProfileEdit и PasswordReset. Можно добавить дополнительные пути взаимодействия пользователя для других сценариев, таких как изменение адреса электронной почты или связывание и отмена связи с учетной записью социальных сетей.
 
 Шаги оркестрации могут вызывать [технический профиль](technicalprofiles.md). Технический профиль предоставляет платформу со встроенным механизмом для взаимодействия с различными типами сторон. Например, технический профиль, помимо прочего, может выполнять следующие действия:
 

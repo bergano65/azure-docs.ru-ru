@@ -1,24 +1,22 @@
 ---
-title: Выберите тип диска для виртуальных машин Windows IaaS Azure — управляемые диски
-description: Дополнительные сведения о типах доступных дисков Azure для виртуальных машин Windows, включая ultra SSDs, SSDs уровня "премиум", стандартная SSDs и стандартные жесткие диски.
-services: virtual-machines-windows,storage
+title: Выберите тип диска для виртуальных машин Azure IaaS под управлением Windows — управляемые диски
+description: Сведения о доступных типах дисков Azure для виртуальных машин Windows, включая Ultra SSDs, твердотельные накопители уровня "Премиум", стандартные твердотельные накопители и стандартные жесткие диски.
 author: roygara
 ms.author: rogarana
 ms.date: 05/10/2019
-ms.topic: article
+ms.topic: conceptual
 ms.service: virtual-machines-windows
-ms.tgt_pltfrm: windows
 ms.subservice: disks
-ms.openlocfilehash: 74dbe12a2df07218fbb369097b566a9dad4921c0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 99337c633f2bce9ed7b41b36cb54037d4c201a78
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65539512"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698719"
 ---
 [!INCLUDE [virtual-machines-disk-types](../../../includes/virtual-machines-managed-disks-types-overview.md)]
 
-Если вы хотите начать использовать ultra SSDs, см. в нашей статье по этой теме: [Включение Azure ultra SSDs](disks-enable-ultra-ssd.md).
+Если вы хотите начать работу с Ultra SSDs, см. нашу статью по теме: [Включение Azure Ultra SSDS](disks-enable-ultra-ssd.md).
 
 [!INCLUDE [virtual-machines-managed-disks-types-ga](../../../includes/virtual-machines-managed-disks-types-ga.md)]
 

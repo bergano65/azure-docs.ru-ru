@@ -10,19 +10,18 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 12/04/2018
-ms.openlocfilehash: c6ca7637c8e251fa29781503ffc18227c51bb4da
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1eafb123014effad9daca89dc1b852367d9cbbf1
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60335307"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568260"
 ---
 # <a name="using-elastic-database-client-library-with-dapper"></a>Использование клиентской библиотеки эластичной базы данных с Dapper
 Документ предназначен для разработчиков, которые используют Dapper для создания приложений, но также хотят применять [инструменты эластичной базы данных](sql-database-elastic-scale-introduction.md), чтобы создавать приложения, реализующие сегментирование для развертывания уровня данных.  В документе показаны изменения, которые следует внести в приложениях на базе Dapper, для интеграции со средствами эластичной базы данных. Внимание уделяется совмещению методов управления сегментами эластичной базы данных и маршрутизации, зависящей от данных, с помощью Dapper. 
 
-**Пример кода.** [Elastic DB Tools for Azure SQL - Dapper Integration](https://code.msdn.microsoft.com/Elastic-Scale-with-Azure-e19fc77f) (Средства эластичной базы данных для базы данных SQL Azure — интеграция с Dapper).
+**Пример кода.** [Elastic DB Tools for Azure SQL - Dapper Integration](https://code.msdn.microsoft.com/Elastic-Scale-with-Azure-e19fc77f) (Средства эластичной базы данных для Базы данных SQL Azure — интеграция с Dapper).
 
 Интеграция **Dapper** и **DapperExtensions** с клиентской библиотекой эластичной базы данных для Базы данных SQL Azure — это просто. Приложения могут использовать данные в зависимости от маршрутизации путем создания и открытия новых объектов [SqlConnection](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection.aspx), чтобы использовать вызов [OpenConnectionForKey](https://msdn.microsoft.com/library/azure/dn807226.aspx) из [клиентской библиотеки](https://msdn.microsoft.com/library/azure/dn765902.aspx). Это ограничивает внесение изменений в приложении местами создания и открытия новых подключений. 
 

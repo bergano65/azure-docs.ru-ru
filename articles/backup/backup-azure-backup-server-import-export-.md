@@ -1,18 +1,19 @@
 ---
 title: Azure Backup. Автономное резервное копирование для DPM и Azure Backup Server
 description: Узнайте, как служба архивации Azure позволяет отправлять данные с помощью службы импорта и экспорта Azure без использования сети. В этой статье описывается автономное заполнение начальных резервных копий данных с помощью службы импорта и экспорта Azure.
-author: saurabhsensharma
-manager: shivamg
+ms.reviewer: saurse
+author: dcurwin
+manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 5/8/2018
-ms.author: saurse
-ms.openlocfilehash: 8a8571230b24d76482c505ec22d6faaa0caec5e6
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.author: dacurwin
+ms.openlocfilehash: 4bc0421f16d56d34e3f3156700a7a141d38fd63d
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68466718"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68689380"
 ---
 # <a name="offline-backup-workflow-for-dpm-and-azure-backup-server"></a>Автономное резервное копирование для DPM и Azure Backup Server
 В службу архивации Azure встроено несколько эффективных методов, которые позволяют экономить затраты на сеть и хранилище во время передачи начальных полных резервных копий данных в Azure. Обычно при этом выполняется передача больших объемов данных. Следовательно, для первой архивации требуется более высокая пропускная способность по сравнению с последующими операциями архивации, в ходе которых передаются только изменения или добавочные резервные копии. Служба архивации Azure сжимает начальные резервные копии, а также предоставляет механизм передачи сжатых копий данных в Azure с помощью дисков за счет процесса автономного заполнения.
@@ -41,7 +42,7 @@ ms.locfileid: "68466718"
 > * Резервное копирование всех рабочих нагрузок и файлов с помощью System Center Data Protection Manager (SC DPM).
 > * Резервное копирование всех рабочих нагрузок и файлов с помощью Microsoft Azure Backup Server. <br/>
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 Перед запуском рабочего процесса автономного резервного копирования убедитесь, что выполнены следующие предварительные требования.
 * Создано [хранилище служб восстановления](backup-azure-recovery-services-vault-overview.md). Инструкции по его созданию приведены в [данной статье](tutorial-backup-windows-server-to-azure.md#create-a-recovery-services-vault).
 * На сервер Windows Server или клиент Windows установлен агент Azure Backup, Azure Backup Server или System Center Data Protection Manager (SC DPM), и этот компьютер зарегистрирован в хранилище служб восстановления. Убедитесь, что вы используете [самую последнюю версию агента Azure Backup](https://go.microsoft.com/fwlink/?linkid=229525).

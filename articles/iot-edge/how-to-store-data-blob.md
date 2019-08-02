@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: c5a27a8016202f7f8c9e256eaf6b3077fbef295b
-ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
+ms.openlocfilehash: 5932d51ecaca3c827ae6de268711c7f4d1b28d0a
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68414527"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640649"
 ---
 # <a name="store-data-at-the-edge-with-azure-blob-storage-on-iot-edge-preview"></a>Хранение данных на границе с помощью хранилища BLOB-объектов Azure в IoT Edge (предварительная версия)
 
@@ -87,7 +87,7 @@ ms.locfileid: "68414527"
 | ----- | ----- | ---- | ---- |
 | уплоадон | true, false | `false` По умолчанию задано значение. Если вы хотите включить эту функцию, присвойте этому полю `true`значение. | `deviceToCloudUploadProperties__uploadOn={false,true}` |
 | уплоадордер | Невестфирст, OldestFirst | Позволяет выбрать порядок, в котором данные копируются в Azure. `OldestFirst` По умолчанию задано значение. Порядок определяется временем последнего изменения BLOB-объекта. | `deviceToCloudUploadProperties__uploadOrder={NewestFirst,OldestFirst}` |
-| клаудсторажеконнектионстринг |  | `"DefaultEndpointsProtocol=https;AccountName=<your Azure Storage Account Name>;AccountKey=<your Azure Storage Account Key>;EndpointSuffix=<your end point suffix>"`— Это строка подключения, которая позволяет указать учетную запись хранения Azure, в которую будут передаваться ваши данные. Укажите `Azure Storage Account Name`, `Azure Storage Account Key`, .`End point suffix` Добавьте соответствующие EndpointSuffix в Azure, куда будут отправляться данные. это зависит от глобальных Azure, государственных учреждений Azure и Microsoft Azure Stack. | `deviceToCloudUploadProperties__cloudStorageConnectionString=<connection string>` |
+| клаудсторажеконнектионстринг |  | `"DefaultEndpointsProtocol=https;AccountName=<your Azure Storage Account Name>;AccountKey=<your Azure Storage Account Key>;EndpointSuffix=<your end point suffix>"`— Это строка подключения, которая позволяет указать учетную запись хранения, в которую будут передаваться данные. Укажите `Azure Storage Account Name`, `Azure Storage Account Key`, .`End point suffix` Добавьте соответствующие EndpointSuffix в Azure, куда будут отправляться данные. это зависит от глобальных Azure, государственных учреждений Azure и Microsoft Azure Stack. <br><br> Здесь можно указать строку подключения SAS службы хранилища Azure. Но это свойство необходимо обновлять по истечении срока его действия.  | `deviceToCloudUploadProperties__cloudStorageConnectionString=<connection string>` |
 | сторажеконтаинерсфоруплоад | `"<source container name1>": {"target": "<target container name>"}`,<br><br> `"<source container name1>": {"target": "%h-%d-%m-%c"}`, <br><br> `"<source container name1>": {"target": "%d-%c"}` | Позволяет указать имена контейнеров, которые нужно передать в Azure. Этот модуль позволяет указать имена исходного и целевого контейнеров. Если не указать имя целевого контейнера, оно будет автоматически назначено имени `<IoTHubName>-<IotEdgeDeviceID>-<ModuleName>-<SourceContainerName>`контейнера. Вы можете создать строки шаблона для имени целевого контейнера, извлеките столбец возможные значения. <br>*% h — > имя центра Интернета вещей (3-50 символов). <br>*% d — > IoT Edge идентификатор устройства (от 1 до 129 символов). <br>*% m — > имя модуля (от 1 до 64 символов). <br>*% c-> имя исходного контейнера (от 3 до 63 символов). <br><br>Максимальный размер имени контейнера составляет 63 символов, при этом автоматически назначается имя целевого контейнера, если размер контейнера превышает 63 символов. Каждый раздел будет обрезан (IoTHubName, Иотеджедевицеид, ModuleName, Саурцеконтаинернаме) до 15. буквы. | `deviceToCloudUploadProperties__storageContainersForUpload__<sourceName>__target: <targetName>` |
 | делетеафтеруплоад | true, false | `false` По умолчанию задано значение. Если задано значение `true`, то при завершении отправки в облачное хранилище данные будут автоматически удалены. | `deviceToCloudUploadProperties__deleteAfterUpload={false,true}` |
 
@@ -101,6 +101,23 @@ ms.locfileid: "68414527"
 | делетеон | true, false | `false` По умолчанию задано значение. Если вы хотите включить эту функцию, присвойте этому полю `true`значение. | `deviceAutoDeleteProperties__deleteOn={false,true}` |
 | делетеафтерминутес | `<minutes>` | Укажите время в минутах. Модуль автоматически удалит BLOB-объекты из локального хранилища, когда это значение истечет | `deviceAutoDeleteProperties__ deleteAfterMinutes=<minutes>` |
 | ретаинвхилеуплоадинг | true, false | По умолчанию он имеет значение `true`, и он будет хранить большой двоичный объект при отправке в облачное хранилище, если делетеафтерминутес истекает. Вы можете задать для `false` него значение, и данные будут удалены сразу после истечения срока действия делетеафтерминутес. Примечание. Чтобы это свойство работало Уплоадон, должно быть установлено значение true.| `deviceAutoDeleteProperties__retainWhileUploading={false,true}` |
+
+## <a name="using-smb-share-as-your-local-storage"></a>Использование общего ресурса SMB в качестве локального хранилища
+Вы можете указать общий ресурс SMB в качестве пути к локальному хранилищу при развертывании контейнера Windows для этого модуля на узле Windows.
+Вы можете выполнить `New-SmbGlobalMapping` команду PowerShell, чтобы локально подключить общую папку SMB на устройстве IOT под управлением Windows. Убедитесь, что устройство Интернета вещей может выполнять чтение и запись в удаленную общую папку SMB.
+
+Ниже приведены этапы настройки.
+```PowerShell
+$creds = Get-Credential
+New-SmbGlobalMapping -RemotePath <remote SMB path> -Credential $creds -LocalPath <Any available drive letter>
+```
+Пример <br>
+`$creds = Get-Credentials` <br>
+`New-SmbGlobalMapping -RemotePath \\contosofileserver\share1 -Credential $creds -LocalPath G: `
+
+Эта команда будет использовать учетные данные для проверки подлинности на удаленном SMB Server. Затем сопоставьте путь к удаленной общей папке с буквой G: диск (может быть любая другая доступная буква диска). Теперь устройство IoT имеет том данных, сопоставленный с путем на диске G:. 
+
+Для развертывания значением `<storage directory bind>` может быть **G:/контаинердата: C:/блобрут**.
 
 ## <a name="configure-log-files"></a>Настройка файлов журналов
 
@@ -221,4 +238,4 @@ ms.locfileid: "68414527"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о [развертывании хранилища BLOB-объектов Azure на IOT Edge](how-to-deploy-blob.md)
+Узнайте, как [развертывать хранилище BLOB-объектов Azure на IOT Edge](how-to-deploy-blob.md)

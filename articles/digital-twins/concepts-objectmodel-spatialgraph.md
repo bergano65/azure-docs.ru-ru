@@ -6,14 +6,14 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 12/14/2018
+ms.date: 07/29/2019
 ms.author: alinast
-ms.openlocfilehash: e7efe1a8632643e2a299b6c9a1b1407414deee4b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0bb7309ae452b2885be279d1ab38b8467397f2f8
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60925888"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638500"
 ---
 # <a name="understand-digital-twins-object-models-and-spatial-intelligence-graph"></a>Основные сведения об объектных моделях и пространственном интеллектуальном графе в Digital Twins
 
@@ -82,7 +82,7 @@ Azure Digital Twins — это служба Интернета вещей Azure,
 https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
 ```
 
-| Name | Заменить на |
+| Название | Заменить на |
 | --- | --- |
 | YOUR_INSTANCE_NAME | Имя экземпляра Digital Twins |
 | YOUR_LOCATION | Регион сервера, в котором размещен ваш экземпляр |
@@ -101,7 +101,7 @@ https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
 
 Все вызовы API должны пройти аутентификацию с помощью [OAuth](https://docs.microsoft.com/azure/active-directory/develop/v1-protocols-oauth-code). В API-интерфейсах выполняются [рекомендации по REST API от корпорации Майкрософт](https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md). Большинство API-интерфейсов, возвращающих коллекции, поддерживают параметры системного запроса [OData](https://www.odata.org/getting-started/basic-tutorial/#queryData).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о подключении к устройству и отправке сообщений телеметрии в Digital Twins см. в статье [Возможность подключения устройств и входящие данные телеметрии](concepts-device-ingress.md).
 

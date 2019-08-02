@@ -4,7 +4,7 @@ description: Сведения об использовании виртуальн
 keywords: deep learning, AI, data science tools, data science virtual machine, Geospatial analytics
 services: machine-learning
 documentationcenter: ''
-author: gopitk
+author: vijetajo
 manager: cgronlun
 ms.custom: seodec18
 ms.assetid: ''
@@ -15,13 +15,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/05/2018
-ms.author: gokuma
-ms.openlocfilehash: 6e6737e928ece820ea9119d8dfe1d7cf22477646
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: vijetaj
+ms.openlocfilehash: 9bca7089e6137b3780e3d22f50887e880be29d8e
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60406576"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565072"
 ---
 # <a name="using-the-geo-artificial-intelligence-data-science-virtual-machine"></a>Использование виртуальной машины для обработки и анализа геоданных средствами ИИ
 
@@ -50,7 +50,7 @@ R-мост к ArcGIS устанавливается в качестве библ
 3. [Pixel-level land use classification](https://github.com/Azure/pixel_level_land_classification) (Классификация использования земли на уровне пикселей): учебное руководство по созданию модели глубокой нейронной сети, которая принимает аэрофотоснимок и возвращает метку покрытия земли. Примеры меток покрытия земли — "лес" или "вода". Модель возвращает такую метку для каждого пикселя в изображении. Модель создана на основе платформы глубокого обучения Microsoft [Cognitive Toolkit (CNTK)](https://www.microsoft.com/en-us/cognitive-toolkit/) с открытым исходным кодом. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные примеры использования виртуальной машины для обработки и анализа данных см. здесь:
 

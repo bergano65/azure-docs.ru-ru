@@ -1,5 +1,5 @@
 ---
-title: Создание счетчиков производительности для отслеживания производительности диспетчера сопоставления сегментов
+title: Создание счетчиков производительности для наблюдения за производительностью диспетчера карт сегментов
 description: Класс ShardMapManager и счетчики производительности для маршрутизации, зависящей от данных
 services: sql-database
 ms.service: sql-database
@@ -10,25 +10,24 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: 5c6c923c86ea0c5968079188c87ec3988ec30142
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae7666113bd3a4bdb595a8312fdb25007d4ed2c3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61475700"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568676"
 ---
-# <a name="create-performance-counters-to-track-performance-of-shard-map-manager"></a>Создание счетчиков производительности для отслеживания производительности диспетчера сопоставления сегментов
+# <a name="create-performance-counters-to-track-performance-of-shard-map-manager"></a>Создание счетчиков производительности для наблюдения за производительностью диспетчера карт сегментов
 
-Счетчики производительности используются для отслеживания производительности [маршрутизация, зависящая от данных](sql-database-elastic-scale-data-dependent-routing.md) операций. Эти счетчики можно найти в системном мониторе в категории "Эластичная база данных: управление сегментами".
+Счетчики производительности используются для наблюдения за производительностью операций [маршрутизации, зависящих от данных](sql-database-elastic-scale-data-dependent-routing.md) . Эти счетчики можно найти в системном мониторе в категории "Эластичная база данных: управление сегментами".
 
 Вы можете сохранять данные о производительности [диспетчера карты сегментов](sql-database-elastic-scale-shard-map-management.md), особенно при использовании [маршрутизации, зависящей от данных](sql-database-elastic-scale-data-dependent-routing.md). Счетчики создаются с помощью методов класса Microsoft.Azure.SqlDatabase.ElasticScale.Client.  
 
 
 **Последняя версия** перейдите к [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/). См. также статью [Обновление приложения для использования новой версии клиентской библиотеки эластичной базы данных](sql-database-elastic-scale-upgrade-client-library.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Чтобы пользователь мог создавать категории производительности и счетчики, он должен быть членом локальной группы **Администраторы** на компьютере, где размещается приложение.  
 * Чтобы пользователь мог создавать экземпляры счетчика производительности и обновлять показания счетчиков, он должен быть членом группы **Администраторы** или **Пользователи системного монитора**.

@@ -10,22 +10,21 @@ ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
 ms.reviewer: billgib, sstein
-manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: bbe220780a3c21e7bfb15d0568904af4ed47f765
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7c1f93bb7cfe1e088aa88d9ff194c8fbce9ea3c6
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61487285"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570219"
 ---
 # <a name="video-indexed-and-annotated-for-multi-tenant-saas-app-using-azure-sql-database"></a>Видео индексировано и снабжено заметками для мультитенатного приложения SaaS, использующего базу данных SQL Azure
 
 Эта статья является индексом с заметками по точкам во времени в 81-минутном видеоролике о моделях или шаблонах клиента SaaS. Эта статья позволяет переходить по видео к той части, которая вас интересует. В видео описаны основные варианты создания мультитенатного приложения базы данных в Базе данных Azure SQL. Видео включает демонстрации, пошаговые руководства по коду управления и в некоторых случаях более подробно рассматриваются сведения, которые можно найти в письменной документации.
 
 В видео представлена расширенная информация из письменной документации: 
-- *Основные понятия*. [Мультитенантные шаблоны клиента в базе данных SaaS][saas-concept-design-patterns-563e]
-- *Руководства*. [SaaS-приложение Wingtip Tickets][saas-how-welcome-wingtip-app-679t].
+- *Основные понятия*. [Шаблоны аренды базы данных SaaS с несколькими клиентами][saas-concept-design-patterns-563e]
+- *Руководства*. [Приложение SaaS Wingtip Tickets][saas-how-welcome-wingtip-app-679t]
 
 В видео и статьях описано множество этапов создания мультитенантных приложений в Базе данных SQL Azure в облаке. Специальные возможности Базы данных SQL Azure упрощают процесс разработки и реализации мультенантных приложений, которые просты в управлении, надежны и высокопроизводительны.
 
@@ -292,24 +291,24 @@ ms.locfileid: "61487285"
 #### <a name="38-resources-for-more-information-12035"></a>38. Дополнительные сведения, 1:20:35
 [![Дополнительные сведения][image-wtip-min12042-resources-more-info]](https://www.youtube.com/watch?v=jjNmcKBVjrc&t=4835)
 
-- [Запись блога, 22 мая 2017 года][resource-blog-saas-patterns-app-dev-sql-db-768h]
+- [Запись блога, 22 мая, 2017][resource-blog-saas-patterns-app-dev-sql-db-768h]
 
-- *Основные понятия*. [Мультитенантные шаблоны клиента в базе данных SaaS][saas-concept-design-patterns-563e]
+- *Основные понятия*. [Шаблоны аренды базы данных SaaS с несколькими клиентами][saas-concept-design-patterns-563e]
 
-- *Руководства*. [SaaS-приложение Wingtip Tickets][saas-how-welcome-wingtip-app-679t].
+- *Руководства*. [Приложение SaaS Wingtip Tickets][saas-how-welcome-wingtip-app-679t]
 
 - Репозитории GitHub для разновидностей клиентских приложений SaaS Wingtip Tickets:
-    - [Репозиторий GitHub для изолированной модели приложения][github-wingtip-standaloneapp].
-    - [Репозиторий GitHub для модели базы данных клиента][github-wingtip-dbpertenant].
-    - [Репозиторий GitHub для модели мультитенантной базы данных][github-wingtip-multitenantdb].
+    - [Репозиторий GitHub для модели автономного приложения][github-wingtip-standaloneapp].
+    - [Репозиторий GitHub for-DB на клиентскую модель][github-wingtip-dbpertenant].
+    - [Репозиторий GitHub для модели базы данных с несколькими клиентами][github-wingtip-multitenantdb].
 
 
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- [Первая статья руководства][saas-how-welcome-wingtip-app-679t]
+- [Первая статья учебника][saas-how-welcome-wingtip-app-679t]
 
 
 

@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 01/09/2019
+ms.date: 07/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 701be795ca217c4a2dc5a7dbaa3a3717d16c85bc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a8fbbdbd647aa3d733a26ceaf72629058ae3a274
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61024630"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619270"
 ---
 # <a name="add-a-service-principal-to-the-server-administrator-role"></a>Добавление субъекта-службы к роли администратора сервера 
 
@@ -42,7 +42,7 @@ ms.locfileid: "61024630"
 
 
 > [!NOTE]
-> Для работы сервера с помощью командлетов Azure PowerShell, планировщик субъекта-работающей службы необходимо также принадлежать к **владельца** роли ресурса в [управления доступом на основе ролей (RBAC)](../role-based-access-control/overview.md). 
+> Для операций сервера, использующих командлеты Azure PowerShell, планировщик запуска субъекта-службы также должен принадлежать роли **владельца** для ресурса в [контроле доступа на основе РОЛЕЙ Azure (RBAC)](../role-based-access-control/overview.md). 
 
 ## <a name="related-information"></a>Связанные сведения
 

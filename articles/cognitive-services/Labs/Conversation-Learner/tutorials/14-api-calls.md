@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 1f7c7c72703d7c3134dd2acdcc466fc0182fa38a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 261536932cc82a28ad4ee3ffc3575ea41fe9ec5b
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66389943"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68703927"
 ---
 # <a name="how-to-add-api-calls-to-a-conversation-learner-model"></a>Добавление вызовов API в модель Conversation Learner
 
@@ -30,7 +31,7 @@ ms.locfileid: "66389943"
 
     npm run tutorial-api-calls
 
-## <a name="details"></a>Сведения
+## <a name="details"></a>Подробнее
 
 - Вызовы API позволяют считывать и изменять информацию в сущностях.
 - Вызовы API имеют доступ к объекту диспетчера памяти.
@@ -46,7 +47,7 @@ ms.locfileid: "66389943"
 
 ![](../media/tutorial12_entities.PNG)
 
-### <a name="api-calls"></a>Количество вызовов API
+### <a name="api-calls"></a>Вызовы API
 Код для вызовов API задан в этом файле: `C:\<installedpath>\src\demos\tutorialAPICalls.ts`.
 
 ![](../media/tutorial12_apicalls.PNG)
@@ -97,7 +98,7 @@ ms.locfileid: "66389943"
 
 Итак, вы узнали, как зарегистрировать обратные вызовы API, увидели типичные примеры их использования, научились определять аргументы и передавать в них значения и сущности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Карты. Часть 1](./15-cards.md)

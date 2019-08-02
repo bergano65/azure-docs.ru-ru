@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: b6b4cd38ce5f591d43f27f735a48993cc1a1ab63
-ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
+ms.openlocfilehash: 27f0ebab1fd87eb1870c5a8be21c4f80be4132f1
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68414452"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698584"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>Обновление управляющей программы безопасности и среды выполнения IoT Edge
 
@@ -24,14 +24,6 @@ ms.locfileid: "68414452"
 Если вы хотите перейти на новую версию, вам необходимо обновить два компонента устройства IoT Edge. Первый компонент — управляющая программа безопасности, которая выполняется на устройстве и запускает модули среды выполнения при запуске устройства. В настоящее время обновить управляющую программу безопасности можно только на самом устройстве. Второй компонент — это среда выполнения, состоящая из модулей центра и агента IoT Edge. В зависимости от структуры развертывания среду выполнения можно обновить как на устройстве, так и удаленно. 
 
 Последнюю версию Azure IoT Edge можно найти [на сайте GitHub](https://github.com/Azure/azure-iotedge/releases).
-
->[!IMPORTANT]
->Если вы используете Azure IoT Edge на устройстве Windows, не обновляйте его до версии 1.0.5, если к устройству применимо одно из следующих условий. 
->* Вы не обновили устройство до сборки Windows 17763. IoT Edge версии 1.0.5 не поддерживает сборки Windows ранее 17763.
->* Вы запускаете модули Java или Node.js на устройстве Windows. Пропустите версию 1.0.5, даже если вы обновили устройство Windows до последней сборки. 
->
->Дополнительные сведения об IoT Edge версии 1.0.5 см. в [заметках о выпуске 1.0.5](https://github.com/Azure/azure-iotedge/releases/tag/1.0.5). Дополнительные сведения о том, как предотвратить обновление средств разработки до последней версии, см. [в блоге разработчика IOT](https://devblogs.microsoft.com/iotdev/).
-
 
 ## <a name="update-the-security-daemon"></a>Обновление управляющей программы безопасности
 

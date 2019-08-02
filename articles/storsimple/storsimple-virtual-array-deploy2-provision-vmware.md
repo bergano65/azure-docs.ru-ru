@@ -12,20 +12,23 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 01/11/2019
+ms.date: 07/25/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3c9fe597957057dc61da5c2b1cf6f9216711764a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ab5ad8acc5d0769a19a4022c55e0461e7ce42762
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61419308"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68516820"
 ---
 # <a name="deploy-storsimple-virtual-array---provision-in-vmware"></a>Развертывание виртуального массива StorSimple — подготовка в VMware
 ![](./media/storsimple-virtual-array-deploy2-provision-vmware/vmware4.png)
 
 ## <a name="overview"></a>Обзор
+
+[!INCLUDE [storsimple-virtual-array-eol-banner](../../includes/storsimple-virtual-array-eol-banner.md)]
+
 В руководстве описана подготовка и подключение виртуального массива StorSimple в главной системе под управлением VMware ESXi 5.0, 5.5, 6.0 или 6.5. Сведения, приведенные в этой статье, относятся к развертыванию виртуальных массивов StorSimple на портале Azure, а также в облаке Microsoft Azure для государственных организаций.
 
 Чтобы подготовить виртуальное устройство и подключиться к нему, требуются права администратора. Подготовка и начальная настройка могут занять около 10 минут.
@@ -62,7 +65,7 @@ ms.locfileid: "61419308"
 2. Подготовьте виртуальное устройство в низкоуровневой оболочке.
 3. Запустите виртуальное устройство и получите IP-адрес.
 
-## <a name="step-1-ensure-host-system-meets-minimum-virtual-device-requirements"></a>Шаг 1. Обеспечение соответствия главной системы минимальным требованиям к виртуальному устройству
+## <a name="step-1-ensure-host-system-meets-minimum-virtual-device-requirements"></a>Шаг 1.: Обеспечение соответствия главной системы минимальным требованиям к виртуальному устройству
 Для создания виртуального устройства необходимы такие компоненты:
 
 * Доступ к главной системе под управлением VMware ESXi Server 5.0, 5.5, 6.0 или 6.5.
@@ -73,7 +76,7 @@ ms.locfileid: "61419308"
   * Один сетевой интерфейс, подключенный к сети с маршрутизацией трафика в Интернет. Для оптимальной работы устройства минимальная пропускная способность интернет-канала должна составлять 5 Мбит/с.
   * Виртуальный диск данных размером 500 ГБ.
 
-## <a name="step-2-provision-a-virtual-device-in-hypervisor"></a>Шаг 2. подготовка к работе виртуального устройства в гипервизоре;
+## <a name="step-2-provision-a-virtual-device-in-hypervisor"></a>Шаг 2.: подготовка к работе виртуального устройства в гипервизоре;
 Для подготовки виртуального устройства в низкоуровневой оболочке выполните указанные ниже действия.
 
 1. Скопируйте образ виртуального устройства в систему. Этот образ необходимо скачать с портала Azure.
@@ -99,7 +102,7 @@ ms.locfileid: "61419308"
 7. Отобразится окно **Datastore Browser** (Браузер хранилища данных).
 
    ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image6.png)
-8. На панели инструментов щелкните значок ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image7.png), чтобы создать папку. Укажите имя папки и запишите его. Это имя будет использоваться позднее при создании виртуальной машины (рекомендуется). Последовательно выберите **ОК**.
+8. На панели инструментов щелкните значок ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image7.png), чтобы создать папку. Укажите имя папки и запишите его. Это имя будет использоваться позднее при создании виртуальной машины (рекомендуется). Нажмите кнопку **ОК**.
 
    ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image8.png)
 9. На панели слева в окне **Datastore Browser** (Браузер хранилища данных) появится новая папка.
@@ -158,7 +161,7 @@ ms.locfileid: "61419308"
 27. На странице **Ready to Complete** (Все готово к выполнению) проверьте все параметры, связанные с новой виртуальной машиной. Установите флажок **Edit the virtual machine settings before completion**(Изменить параметры виртуальной машины перед выполнением). Нажмите кнопку **Продолжить**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image28.png)
-28. На странице **Virtual Machines Properties** (Свойства виртуальной машины) на вкладке **Hardware** (Оборудование) найдите оборудование устройства. Выберите пункт **New Hard Disk**(Новый жесткий диск). Щелкните **Добавить**.
+28. На странице **Virtual Machines Properties** (Свойства виртуальной машины) на вкладке **Hardware** (Оборудование) найдите оборудование устройства. Выберите пункт **New Hard Disk**(Новый жесткий диск). Нажмите кнопку **Добавить**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image29.png)
 29. Откроется окно **Add Hardware** (Установка оборудования). На странице **Device Type** (Тип устройства) в разделе **Choose the type of device you wish to add** (Выберите тип устройства, которое нужно добавить) выберите **Hard Disk** (Жесткий диск) и нажмите кнопку **Next** (Далее).
@@ -173,10 +176,10 @@ ms.locfileid: "61419308"
 32. На странице **Advanced Options** (Дополнительные параметры) примите параметры по умолчанию.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image33.png)
-33. На странице **Ready to Complete** (Все готово к выполнению) проверьте параметры диска. Нажмите кнопку **Готово**
+33. На странице **Ready to Complete** (Все готово к выполнению) проверьте параметры диска. Нажмите кнопку **Готово**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image34.png)
-34. Вернитесь на страницу свойств виртуальной машины. На виртуальную машину будет добавлен новый жесткий диск. Нажмите кнопку **Готово**
+34. Вернитесь на страницу свойств виртуальной машины. На виртуальную машину будет добавлен новый жесткий диск. Нажмите кнопку **Готово**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image35.png)
 35. Выбрав свою виртуальную машину на панели справа, перейдите на вкладку **Summary** (Сводка). Проверьте параметры виртуальной машины.
@@ -244,6 +247,6 @@ ms.locfileid: "61419308"
 * Выполните диагностические тесты для [устранения неполадок при настройке веб-интерфейса](storsimple-ova-web-ui-admin.md#troubleshoot-web-ui-setup-errors).
 * [Создайте пакет журнала и просмотрите файлы журнала](storsimple-ova-web-ui-admin.md#generate-a-log-package).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Deploy StorSimple Virtual Array - Set up as file server (Preview) (Развертывание виртуального массива StorSimple — настройка в качестве файлового сервера (предварительная версия))](storsimple-virtual-array-deploy3-fs-setup.md)
 * [Deploy StorSimple Virtual Array – Set up your virtual device as an iSCSI server (preview) (Развертывание виртуального массива StorSimple — настройка в качестве сервера iSCSI (предварительная версия))](storsimple-virtual-array-deploy3-iscsi-setup.md)

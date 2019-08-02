@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 02/10/2019
 ms.author: juliako
 ms.reviewer: anilmur
-ms.openlocfilehash: d4bbc83a101ba6b110ec97d5107ba3f79dd10843
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 195bbb70ac5062c6bbf6034e6a6e9abac018c62f
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67870938"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68677970"
 ---
 # <a name="standard-encoder-formats-and-codecs"></a>Стандартные форматы и кодеки кодировщика
 
@@ -27,7 +27,7 @@ ms.locfileid: "67870938"
 
 ## <a name="input-containerfile-formats"></a>Контейнер ввода и форматы файлов
 
-| Форматы файлов (расширения файлов) | Поддерживаются |
+| Форматы файлов (расширения файлов) | Поддерживается |
 | --- | --- |
 | FLV (с кодеками H.264 и AAC) (.flv) |Да |
 | MXF (.mxf) |Да |
@@ -41,10 +41,6 @@ ms.locfileid: "67870938"
 | WAVE/WAV (.wav) |Да |
 | QuickTime (.mov) |Да |
 
-> [!NOTE]
-> 
-> 
-
 ### <a name="audio-formats-in-input-containers"></a>Форматы аудио во входных контейнерах
 
 Стандартный кодировщик поддерживает следующие звуковые форматы во входных контейнерах:
@@ -56,7 +52,7 @@ ms.locfileid: "67870938"
 * файлы MXF, GXF и QuickTime, где звук переносится как отдельные дорожки PCM, но сопоставление каналов (стерео или 5.1) можно определить по метаданным файла.
 
 ## <a name="input-video-codecs"></a>Входные видеокодеки
-| Входные видеокодеки | Поддерживаются |
+| Входные видеокодеки | Поддерживается |
 | --- | --- |
 | AVC 8-разрядный/10-разрядный, до 4:2:2, включая AVCIntra |8 бит 4:2:0 и 4:2:2 |
 | Avid DNxHD (в MXF) |Да |
@@ -79,7 +75,7 @@ ms.locfileid: "67870938"
 | HEVC/H.265| Профиль Main|
 
 ## <a name="input-audio-codecs"></a>Входные аудиокодеки
-| Входные аудиокодеки | Поддерживаются |
+| Входные аудиокодеки | Поддерживается |
 | --- | --- |
 | AAC (AAC-LC, AAC-HE и AAC-HEv2; до 5.1) |Да |
 | MPEG Layer 2 |Да |

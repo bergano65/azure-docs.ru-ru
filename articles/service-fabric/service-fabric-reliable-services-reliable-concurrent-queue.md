@@ -3,7 +3,7 @@ title: Надежная параллельная очередь в Azure Service
 description: Надежная параллельная очередь — это очередь с высокой пропускной способностью, что позволяет параллельно ставить в очередь и выводить из нее.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: raja,tyadam,masnider,vturecek
 ms.assetid: 62857523-604b-434e-bd1c-2141ea4b00d1
@@ -13,18 +13,18 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 5/1/2017
-ms.author: aljo
-ms.openlocfilehash: dbdfa4686c047fa7cf5d74cd9aca768447f9db93
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: atsenthi
+ms.openlocfilehash: 8cb35d6265bafe2b259774a55119d33f8ae94fe9
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60774018"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599258"
 ---
 # <a name="introduction-to-reliableconcurrentqueue-in-azure-service-fabric"></a>Введение в надежные параллельные очереди в Azure Service Fabric
 Надежная параллельная очередь — это асинхронная, транзакционная и реплицируемая очередь, которая обладает высокой степенью параллелизма при операциях постановки в очередь и вывода из нее. Она предназначена для обеспечения высокой пропускной способности и низкой задержки. Она ослабляет строгое упорядочение FIFO, гарантируемое [надежной очередью](https://msdn.microsoft.com/library/azure/dn971527.aspx), и вместо этого обеспечивает упорядочение наилучшим возможным образом.
 
-## <a name="apis"></a>API
+## <a name="apis"></a>Интерфейсы API
 
 |Параллельная очередь                |Надежная параллельная очередь                                         |
 |--------------------------------|------------------------------------------------------------------|
@@ -338,7 +338,7 @@ using (var txn = this.StateManager.CreateTransaction())
 
 ## <a name="must-read"></a>Дополнительные сведения
 * [Приступая к работе с надежными службами](service-fabric-reliable-services-quick-start.md)
-* [Работа с Reliable Collections](service-fabric-work-with-reliable-collections.md)
+* [Работа с надежными коллекциями](service-fabric-work-with-reliable-collections.md)
 * [Уведомления Reliable Services](service-fabric-reliable-services-notifications.md)
 * [Резервное копирование и восстановление служб Reliable Services и субъектов Reliable Actors](service-fabric-reliable-services-backup-restore.md)
 * [Настройка надежных служб с отслеживанием состояния](service-fabric-reliable-services-configuration.md)

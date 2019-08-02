@@ -1,7 +1,7 @@
 ---
-title: Как использовать существующую модель
+title: Использование и развертывание существующих моделей
 titleSuffix: Azure Machine Learning service
-description: Узнайте, как можно использовать службы машинного обучения Azure с моделями, которые прошли обучение за пределами службы. Можно зарегистрировать моделей, созданных за пределами службы машинного обучения Azure и затем развернуть их как веб-службы или модуля Azure IoT Edge.
+description: Узнайте, как можно использовать службу Машинное обучение Azure с моделями, которые прошли обучение за пределами службы. Можно зарегистрировать модели, созданные вне Машинное обучение Azure службы, а затем развернуть их в виде веб-службы или Azure IoT Edge модуля.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,47 +10,47 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 06/19/2019
-ms.openlocfilehash: 332129c9847c317369d5631c3af584da9430e9dd
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 4534f7e5bba2e34316be3376e2627c15c20ba81f
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67453688"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68694373"
 ---
-# <a name="how-to-use-an-existing-model-with-azure-machine-learning-service"></a>Как использовать существующую модель со службой машинного обучения Azure
+# <a name="use-an-existing-model-with-azure-machine-learning-service"></a>Использование существующей модели со службой Машинное обучение Azure
 
-Узнайте, как использовать существующие модели машинного обучения в службе машинного обучения Azure.
+Узнайте, как использовать существующую модель машинного обучения со службой Машинное обучение Azure.
 
-Если у вас есть машинного обучения модели, которая была обучена за пределами службы машинного обучения Azure, можно по-прежнему использовать службу развертывание модели как веб-службу или на устройстве IoT Edge. 
+Если у вас есть модель машинного обучения, обученная за пределами службы Машинное обучение Azure, вы по-прежнему можете использовать эту службу для развертывания модели в качестве веб-службы или устройства IoT Edge. 
 
 > [!TIP]
-> В этой статье приведены базовые сведения о регистрации и развертывания существующей модели. После развертывания службы машинного обучения Azure обеспечивает мониторинг для модели. Он также позволяет сохранять входные данные, отправляемые развертывания, который может использоваться для данных о смещении анализа или обучение новых версий модели.
+> В этой статье приводятся основные сведения о регистрации и развертывании существующей модели. После развертывания Машинное обучение Azure служба обеспечивает мониторинг модели. Он также позволяет хранить входные данные, отправленные в развертывание, которые можно использовать для анализа смещения данных или обучения новых версий модели.
 >
-> Дополнительные сведения о концепции и термины, используемые здесь, см. в разделе [управление, развертывание и отслеживание моделей машинного обучения](concept-model-management-and-deployment.md).
+> Дополнительные сведения об основных понятиях и терминах, используемых здесь, см. в разделе [Управление моделями машинного обучения, их развертывание и мониторинг](concept-model-management-and-deployment.md).
 >
-> Общие сведения о процессе развертывания см. в разделе [развертывание моделей с помощью службы машинного обучения Azure](how-to-deploy-and-where.md).
+> Общие сведения о процессе развертывания см. в разделе [Развертывание моделей с помощью службы машинное обучение Azure](how-to-deploy-and-where.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
-* Рабочая область службы машинного обучения Azure. Дополнительные сведения см. в разделе [создать рабочую область](setup-create-workspace.md).
+* Рабочая область службы машинного обучения Azure. Дополнительные сведения см. [в разделе Создание рабочей области](setup-create-workspace.md).
 
     > [!TIP]
-    > Примеры Python в этой статье предполагается, что `ws` переменной присваивается рабочая область службы машинного обучения Azure.
+    > В примерах Python в этой статье предполагается `ws` , что для переменной задана рабочая область машинное обучение Azure службы.
     >
-    > В примерах интерфейса командной строки используется заполнитель из `myworkspace` и `myresourcegroup`. Замените их имя рабочей области и содержащую его группу ресурсов.
+    > В примерах интерфейса командной строки используется `myworkspace` заполнитель и `myresourcegroup`. Замените их именем рабочей области и группой ресурсов, содержащей ее.
 
-* Машинного обучения Azure SDK. Дополнительные сведения см. в разделе пакет SDK для Python [создать рабочую область](setup-create-workspace.md#sdk).
+* Пакет SDK для Машинное обучение Azure. Дополнительные сведения см. в разделе о пакете SDK для Python статьи [Создание рабочей области](setup-create-workspace.md#sdk).
 
-* [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) и [Machine Learning CLI расширение](reference-azure-machine-learning-cli.md).
+* [Расширение CLI](reference-azure-machine-learning-cli.md) [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) и машинное обучение.
 
-* Обученная модель. Модель необходимо сохранить один или несколько файлов в среде разработки.
+* Обученная модель. Модель должна быть сохранена в одном или нескольких файлах в среде разработки.
 
     > [!NOTE]
-    > Чтобы продемонстрировать, регистрации модели обучения за пределами службы машинного обучения Azure, фрагменты кода пример в этой статье используйте модели, созданные проектом анализ мнений пользователей Twitter Паоло Ripamonti: [ https://www.kaggle.com/paoloripamonti/twitter-sentiment-analysis ](https://www.kaggle.com/paoloripamonti/twitter-sentiment-analysis).
+    > Чтобы продемонстрировать регистрацию модели, обученной за пределами Машинное обучение Azure службы, в примерах фрагментов кода в этой статье используются модели, созданные проектом [https://www.kaggle.com/paoloripamonti/twitter-sentiment-analysis](https://www.kaggle.com/paoloripamonti/twitter-sentiment-analysis)Паулу Рипамонти в Twitter тональности Analysis.
 
-## <a name="register-the-models"></a>Регистрация в модели
+## <a name="register-the-models"></a>Регистрация моделей
 
-Регистрация модели позволяет сохранять, версии и отслеживать метаданные о модели в рабочей области. В следующих примерах Python и интерфейса командной строки `models` каталог содержит `model.h5`, `model.w2v`, `encoder.pkl`, и `tokenizer.pkl` файлы. В этом примере передает файлы, содержащиеся в `models` каталог как новая модель с именем `sentiment`:
+Регистрация модели позволяет хранить, отменять и записывать метаданные о моделях в рабочей области. В следующих `models` примерах Python и CLI каталог `model.w2v` `model.h5`содержит файлы, `encoder.pkl`, и `tokenizer.pkl` . В этом примере перегружаются файлы, содержащиеся `models` в каталоге, в качестве новой регистрации `sentiment`модели с именем:
 
 ```python
 from azureml.core.model import Model
@@ -62,27 +62,27 @@ model = Model.register(model_path = "./models",
                        workspace = ws)
 ```
 
-Дополнительные сведения см. в разделе [Model.register()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model(class)?view=azure-ml-py#register-workspace--model-path--model-name--tags-none--properties-none--description-none--datasets-none--model-framework-none--model-framework-version-none--child-paths-none-) ссылки.
+Дополнительные сведения см. в справочнике по [model. Register ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model(class)?view=azure-ml-py#register-workspace--model-path--model-name--tags-none--properties-none--description-none--datasets-none--model-framework-none--model-framework-version-none--child-paths-none-) .
 
 ```azurecli
 az ml model register -p ./models -n sentiment -w myworkspace -g myresourcegroup
 ```
 
-Дополнительные сведения см. в разделе [az ml модели register](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-register) ссылки.
+Дополнительные сведения см. в справочнике по [регистру AZ ML Model](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-register) .
 
 
-Дополнительные сведения о регистрации модели в целом, см. в разделе [управление, развертывание и отслеживание моделей машинного обучения](concept-model-management-and-deployment.md).
+Дополнительные сведения о регистрации модели в целом см. в разделе [Управление моделями машинного обучения, их развертывание и мониторинг](concept-model-management-and-deployment.md).
 
 
-## <a name="define-inference-configuration"></a>Определение конфигурации вывод
+## <a name="define-inference-configuration"></a>Определение конфигурации вывода
 
-Определение конфигурации определяет среду, используемую для запуска развернутой модели. Определение конфигурации ссылается на следующие файлы, которые используются для запуска модели, при развертывании:
+Конфигурация вывода определяет среду, используемую для запуска развернутой модели. Конфигурация вывода ссылается на следующие файлы, которые используются для запуска модели при ее развертывании:
 
-* Среда выполнения. В настоящее время единственным допустимым значением для среды выполнения является Python.
-* Сценарий входа. Этот файл (с именем `score.py`) загружает модель, при запуске развернутой службы. Он также отвечает за получение данных, передав его в модель и последующего возврата ответа.
-* Файл среды conda. Этот файл определяет пакеты Python, необходимые для запуска скрипта модели и запись. 
+* Среда выполнения. Единственным допустимым значением для выполнения в настоящее время является Python.
+* Скрипт записи. Этот файл (с `score.py`именем) загружает модель при запуске развернутой службы. Он также отвечает за получение данных, передачу их в модель и возврат ответа.
+* Файл среды conda. Этот файл определяет пакеты Python, необходимые для запуска скрипта модели и входа. 
 
-В следующем примере показано основные определения конфигурации, с помощью пакета SDK для Python:
+В следующем примере показана базовая конфигурация вывода с помощью пакета SDK для Python:
 
 ```python
 from azureml.core.model import InferenceConfig
@@ -92,9 +92,9 @@ inference_config = InferenceConfig(runtime= "python",
                                    conda_file="myenv.yml")
 ```
 
-Дополнительные сведения см. в разделе [InferenceConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py) ссылки.
+Дополнительные сведения см. в справочнике по [инференцеконфиг](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py) .
 
-Интерфейс командной строки загружает определение конфигурации из файла YAML:
+CLI загружает конфигурацию вывода из файла YAML:
 
 ```yaml
 {
@@ -104,16 +104,16 @@ inference_config = InferenceConfig(runtime= "python",
 }
 ```
 
-Дополнительные сведения о конфигурации вывод, см. в разделе [развертывание моделей с помощью службы машинного обучения Azure](how-to-deploy-and-where.md).
+Дополнительные сведения о конфигурации вывода см. в разделе [deploy Models with машинное обучение Azure Service](how-to-deploy-and-where.md).
 
-### <a name="entry-script"></a>Сценарий входа
+### <a name="entry-script"></a>Сценарий записи
 
-Сценарий входа имеет только два требуемые функции `init()` и `run(data)`. Эти функции используются для инициализации службы во время запуска и выполнения модели, используя данные запроса, передаваемые в клиент. Остальная часть сценария обрабатывает Загрузка и запуск в модели.
+Сценарий записи содержит только две обязательные функции `init()` и. `run(data)` Эти функции используются для инициализации службы при запуске и запуска модели с использованием данных запроса, передаваемых клиентом. Оставшаяся часть скрипта обрабатывает загрузку и запуск моделей.
 
 > [!IMPORTANT]
-> Не существует универсального входа сценарий, который работает для всех моделей. Всегда относится только к модели, которая используется. Необходимо понять, как загрузить модель, формат данных, чтобы модель ожидала поступления и как для оценки с помощью модели данных.
+> Нет универсального скрипта записи, который работает для всех моделей. Он всегда зависит от используемой модели. Он должен иметь представление о загрузке модели, формате данных, предполагаемом для модели, и способе оценки данных с помощью модели.
 
-В следующем коде Python представлен пример сценария входа (`score.py`):
+Следующий код Python — пример скрипта записи (`score.py`):
 
 ```python
 import pickle
@@ -189,11 +189,11 @@ def predict(text, include_neutral=True):
        "elapsed_time": time.time()-start_at}  
 ```
 
-Дополнительные сведения о сценарии входа, см. в разделе [развертывание моделей с помощью службы машинного обучения Azure](how-to-deploy-and-where.md).
+Дополнительные сведения о сценариях ввода см. в разделе [Развертывание моделей с помощью службы машинное обучение Azure](how-to-deploy-and-where.md).
 
 ### <a name="conda-environment"></a>Среда Conda
 
-Следующий yaml-ФАЙЛ описывает среду conda, необходимые для запуска скрипта модели и запись:
+В следующем YAML описывается среда conda, необходимая для запуска скрипта модели и записи.
 
 ```yaml
 name: inference_environment
@@ -207,16 +207,16 @@ dependencies:
     - keras
 ```
 
-Дополнительные сведения см. в разделе [развертывание моделей с помощью службы машинного обучения Azure](how-to-deploy-and-where.md).
+Дополнительные сведения см. в разделе [Развертывание моделей с помощью службы машинное обучение Azure](how-to-deploy-and-where.md).
 
 ## <a name="define-deployment"></a>Определение развертывания
 
-[Webservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice?view=azure-ml-py) пакет содержит классы, используемые для развертывания. Класс, который используется определяет, где развернута модель. Например, для развертывания веб-службы в службе Azure Kubernetes, используется [AksWebService.deploy_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py#deploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none--gpu-cores-none--period-seconds-none--initial-delay-seconds-none--timeout-seconds-none--success-threshold-none--failure-threshold-none--namespace-none-) для создания конфигурации развертывания.
+Пакет [WebService](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice?view=azure-ml-py) содержит классы, используемые для развертывания. Используемый класс определяет, где развертывается модель. Например, для развертывания в качестве веб-службы в службе Kubernetes Azure используйте [аксвебсервице. deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py#deploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none--gpu-cores-none--period-seconds-none--initial-delay-seconds-none--timeout-seconds-none--success-threshold-none--failure-threshold-none--namespace-none--token-auth-enabled-none-) , чтобы создать конфигурацию развертывания.
 
-В следующем коде Python определяется конфигурация развертывания для локального развертывания. Эта конфигурация развертывает модель как веб-службы на локальном компьютере.
+В следующем коде Python определяется конфигурация развертывания для локального развертывания. Эта конфигурация развертывает модель как веб-службу на локальном компьютере.
 
 > [!IMPORTANT]
-> Локальное развертывание требует рабочую установку [Docker](https://www.docker.com/) на локальном компьютере:
+> Для локального развертывания требуется Рабочая установка [DOCKER](https://www.docker.com/) на локальном компьютере:
 
 ```python
 from azureml.core.webservice import LocalWebservice
@@ -224,9 +224,9 @@ from azureml.core.webservice import LocalWebservice
 deployment_config = LocalWebservice.deploy_configuration()
 ```
 
-Дополнительные сведения см. в разделе [LocalWebservice.deploy_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.localwebservice?view=azure-ml-py#deploy-configuration-port-none-) ссылки.
+Дополнительные сведения см. в справочнике по [локалвебсервице. deploy_configuration ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.localwebservice?view=azure-ml-py#deploy-configuration-port-none-) .
 
-Интерфейс командной строки загружает конфигурацию развертывания из файла YAML:
+CLI загружает конфигурацию развертывания из файла YAML:
 
 ```YAML
 {
@@ -234,11 +234,11 @@ deployment_config = LocalWebservice.deploy_configuration()
 }
 ```
 
-Развертывание на разных объектах вычислений, например в службе Azure Kubernetes в облаке Azure, так же просто, как изменение конфигурации развертывания. Дополнительные сведения см. в разделе [способ и место развертывания моделей](how-to-deploy-and-where.md).
+Развертывание в другом целевом объекте вычислений, например в службе Azure Kubernetes в облаке Azure, так же просто, как и изменение конфигурации развертывания. Дополнительные сведения см. [в разделе как и где развертываются модели](how-to-deploy-and-where.md).
 
 ## <a name="deploy-the-model"></a>Развертывание модели
 
-В следующем примере загружаются сведения о зарегистрированных модели с именем `sentiment`, а затем развернет его как служба, имеющая `sentiment`. Во время развертывания определение конфигурации и конфигурация развертывания используются для создания и настройки среды службы:
+Следующий пример загружает сведения о зарегистрированной модели с `sentiment`именем, а затем развертывает ее как службу с именем `sentiment`. Во время развертывания для создания и настройки среды службы используются конфигурация определения и конфигурация развертывания.
 
 ```python
 from azureml.core.model import Model
@@ -251,21 +251,21 @@ print(service.state)
 print("scoring URI: " + service.scoring_uri)
 ```
 
-Дополнительные сведения см. в разделе [Model.deploy()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#deploy-workspace--name--models--inference-config--deployment-config-none--deployment-target-none-) ссылки.
+Дополнительные сведения см. в справочнике по [модели. deploy ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#deploy-workspace--name--models--inference-config--deployment-config-none--deployment-target-none-) .
 
-Развертывание модели с помощью CLI, используйте следующую команду. Эта команда выполняет развертывание первой версии зарегистрированной модели (`sentiment:1`) с помощью определения и развертывания конфигурации, хранимой в `inferenceConfig.json` и `deploymentConfig.json` файлы:
+Чтобы развернуть модель из интерфейса командной строки, используйте следующую команду. Эта команда развертывает версию 1 зарегистрированной модели (`sentiment:1`) с помощью вывода и конфигурации развертывания, хранящейся `inferenceConfig.json` в файлах и `deploymentConfig.json` .
 
 ```azurecli
 az ml model deploy -n myservice -m sentiment:1 --ic inferenceConfig.json --dc deploymentConfig.json
 ```
 
-Дополнительные сведения см. в разделе [развертывание модели машинного обучения az](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-deploy) ссылки.
+Дополнительные сведения см. в справочнике по [развертыванию модели языка AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-deploy) .
 
-Дополнительные сведения о развертывании см. в разделе [способ и место развертывания моделей](how-to-deploy-and-where.md).
+Дополнительные сведения о развертывании см. в статье [как и где развертывать модели](how-to-deploy-and-where.md).
 
-## <a name="request-response-consumption"></a>Запрос ответ потребления
+## <a name="request-response-consumption"></a>Использование запросов и ответов
 
-После развертывания отображается оценки URI. Этот URI может использоваться клиентами для отправки запросов к службе. Ниже приведен базовый клиент Python, который отправляет данные в службу и выводит ответ:
+После развертывания отображается URI оценки. Этот универсальный код ресурса (URI) может использоваться клиентами для отправки запросов в службу. Ниже приведен пример базового клиента Python, который отправляет данные в службу и отображает ответ:
 
 ```python
 import requests
@@ -282,11 +282,11 @@ print(response.elapsed)
 print(response.json())
 ```
 
-Дополнительные сведения о том, как использовать службу, развернутую см. в разделе [создать клиент](how-to-consume-web-service.md).
+Дополнительные сведения о том, как использовать развернутую службу, см. в разделе [Создание клиента](how-to-consume-web-service.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Мониторинг моделей машинного обучения в Azure с помощью Application Insights](how-to-enable-app-insights.md)
 * [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md)
-* [Как и способа развертывания модели](how-to-deploy-and-where.md)
-* [Как создать клиент для развернутой модели](how-to-consume-web-service.md)
+* [Как и где развертываются модели](how-to-deploy-and-where.md)
+* [Создание клиента для развернутой модели](how-to-consume-web-service.md)

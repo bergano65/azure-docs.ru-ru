@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: cbb18212f70343d8b9933bd2c787ce6aae8b145d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 61cdcb98fc5c0947a25954161676c55ebf902688
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61401003"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68720735"
 ---
 # <a name="copy-data-from-jira-using-azure-data-factory-preview"></a>Копирование данных из Jira с помощью фабрики данных Azure (предварительная версия)
 
@@ -42,7 +42,7 @@ ms.locfileid: "61401003"
 
 Для связанной службы Jira поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойству type необходимо задать значение **Jira**. | Да |
 | host | IP-адрес или имя узла службы Jira (например, jira.example.com).  | Да |
@@ -79,7 +79,7 @@ ms.locfileid: "61401003"
 
 Чтобы скопировать данные из Jira, укажите для свойства type набора данных значение **JiraObject**. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойство type набора данных необходимо задать значение **JiraObject**. | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
@@ -91,11 +91,12 @@ ms.locfileid: "61401003"
     "name": "JiraDataset",
     "properties": {
         "type": "JiraObject",
+        "typeProperties": {},
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<Jira linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {}
+        }
     }
 }
 ```
@@ -108,10 +109,10 @@ ms.locfileid: "61401003"
 
 Чтобы копировать данные из Jira, установите тип источника **JiraSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойству type источника действия копирования необходимо задать значение **JiraSource**. | Да |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
+| запрос | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 
@@ -145,5 +146,5 @@ ms.locfileid: "61401003"
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

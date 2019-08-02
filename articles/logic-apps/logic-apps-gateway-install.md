@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 10/01/2018
-ms.openlocfilehash: 10a6e5c33f6a3c23d98e6eb3380de0d6dc6ac216
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 61a9b319b9ea44f766bc6f014b76bc48d15efc57
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65544492"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68598459"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
@@ -32,12 +32,12 @@ ms.locfileid: "65544492"
 *   IBM Informix
 *   IBM MQ
 *   MySQL
-*   База данных Oracle
+*   Oracle Database
 *   PostgreSQL
 *   сервер приложений SAP; 
 *   сервер сообщений SAP;
 *   SharePoint Server
-*   SQL Server;
+*   SQL Server
 *   Teradata
 
 Сведения о том, как использовать шлюз с другими службами, см. в следующих статьях:
@@ -49,7 +49,7 @@ ms.locfileid: "65544492"
 
 <a name="requirements"></a>
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 * [Рабочая или учебная учетная запись](../active-directory/fundamentals/sign-up-organization.md), у которой есть [подписка Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/resource-consistency/azure-resource-access). 
 
@@ -238,7 +238,7 @@ TcpTestSucceeded       : True
 
 Шлюзом используются следующие полные доменные имена.
 
-| Имена доменов | Исходящие порты | Описание | 
+| Доменные имена | Исходящие порты | Описание | 
 | ------------ | -------------- | ----------- | 
 | *.analysis.windows.net | 443 | HTTPS | 
 | *.core.windows.net | 443 | HTTPS | 
@@ -296,7 +296,7 @@ TcpTestSucceeded       : True
 
 ## <a name="tenant-level-administration"></a>Администрирование на уровне клиента 
 
-Сейчас нет единого места, где администраторы клиентов могут управлять всеми шлюзами, которые установили и настроили другие пользователи. Если вы являетесь администратором клиента, то может потребоваться попросить пользователей в организации добавить вас в качестве администратора для каждого устанавливаемого шлюза. Таким образом, управление всеми шлюзами организации можно осуществлять на странице настроек шлюза или через [команды PowerShell](https://docs.microsoft.com/power-bi/service-gateway-high-availability-clusters#powershell-support-for-gateway-clusters). 
+Сейчас нет единого места, где администраторы клиентов могут управлять всеми шлюзами, которые установили и настроили другие пользователи. Если вы являетесь администратором клиента, то может потребоваться попросить пользователей в организации добавить вас в качестве администратора для каждого устанавливаемого шлюза. Таким образом, управление всеми шлюзами организации можно осуществлять на странице настроек шлюза или через [команды PowerShell](/data-integration/gateway/service-gateway-powershell-support). 
 
 <a name="gateway-cloud-service"></a>
 
@@ -326,7 +326,7 @@ TcpTestSucceeded       : True
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
-### <a name="general"></a>Общие сведения
+### <a name="general"></a>Общее
 
 **Вопрос**. Нужно ли устанавливать шлюз для источников данных в облаке, например для Базы данных SQL Azure? <br/>
 **Ответ**. Нет, шлюз подключается только к локальным источникам данных.
@@ -418,7 +418,7 @@ TcpTestSucceeded       : True
 
 Различные журналы можно найти в других расположениях, приведенных ниже.
 
-| Тип журнала | Расположение | 
+| Тип журнала | Местоположение | 
 |----------|----------| 
 | **Журналы установщика** | %localappdata%\Temp\On-premises_data_gateway_<*ггггммдд*>.<*номер*>.log | 
 | **Журналы конфигурации** | C:\Users\<*имя пользователя*>\AppData\Local\Microsoft\On-premises data gateway\GatewayConfigurator<*ггггммдд*>.<*номер*>.log | 
@@ -485,7 +485,7 @@ TcpTestSucceeded       : True
 
    2. Чтобы найти запрос, выполните поиск типа активности. Пример. 
 
-      | тип действия; | Описание | 
+      | Тип действия | Описание | 
       |---------------|-------------| 
       | MGEQ | Запросы, выполняемые через ADO.NET. | 
       | MGEO | Запросы, выполняемые через OLEDB. | 
@@ -508,7 +508,7 @@ TcpTestSucceeded       : True
 
 [Fiddler](https://www.telerik.com/fiddler) — это бесплатный инструмент от компании Telerik, который отслеживает трафик HTTP. Вы можете просмотреть трафик с помощью службы Power BI с клиентского компьютера. Эта служба позволит выявить ошибки и другие сопутствующие сведения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
     
 * [Подключение к локальным данным из приложений логики](../logic-apps/logic-apps-gateway-connection.md)
 * [Возможности интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md)

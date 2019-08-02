@@ -1,18 +1,18 @@
 ---
 title: Резервное копирование базы данных SAP HANA в Azure с помощью Azure Backup | Документация Майкрософт
 description: В этом учебнике объясняется, как выполнить резервное копирование базы данных SAP HANA в Azure с помощью службы Azure Backup.
-author: rayne-wiselman
+author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 05/06/2019
-ms.author: raynew
-ms.openlocfilehash: 6ac686484ddafc47410cddebea3f789332f9286a
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.author: dacurwin
+ms.openlocfilehash: f88555c6a8b3d4122a1a8ef82f58788a46dd5226
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68465457"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639844"
 ---
 # <a name="back-up-an-sap-hana-database"></a>Резервное копирование базы данных SAP HANA
 
@@ -174,12 +174,12 @@ ms.locfileid: "68465457"
 2. Отключите резервное копирование журналов и задайте в качестве каталога резервного копирования файловую систему для соответствующей базы данных.
 3. Для этого дважды щелкните**Конфигурация** >  **системдб** > ,**выберите фильтр базы данных** >  **(журнал)** .
 4. Задайте для **enable_auto_log_backup** значение **нет**.
-5. Задайте  для Log_backup_using_backint **значение false**.
+5. Задайте для Log_backup_using_backint **значение false**.
 6. Создайте прямое полное резервное копирование базы данных.
 7. Дождитесь завершения полного резервного копирования и резервного копирования каталога.
 8. Верните предыдущие параметры в Azure.
     - Задайте для параметра **enable_auto_log_backup** значение **Да**.
-    - Задайте  для Log_backup_using_backint **значение true**.
+    - Задайте для Log_backup_using_backint **значение true**.
 
 
 

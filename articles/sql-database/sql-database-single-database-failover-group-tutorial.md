@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: sstein, carlrab
-manager: jroth
 ms.date: 06/19/2019
-ms.openlocfilehash: 6125fd087d40f9ac6ae24d9200fc0cd1e7843f82
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: d11dd72c65ea32fb5a262f325bdcad0b5a8ab863
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68444985"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566650"
 ---
 # <a name="tutorial-add-an-azure-sql-database-single-database-to-a-failover-group"></a>Учебник. Добавление отдельной базы данных SQL Azure в группу отработки отказа
 
@@ -43,7 +42,7 @@ ms.locfileid: "68444985"
 - [Azure PowerShell](/powershell/azureps-cmdlets-docs)
 
 
-# <a name="az-clitabbash"></a>[AZ CLI](#tab/bash)
+# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
 Чтобы завершить работу с этим руководством, убедитесь, что у вас есть следующие элементы:
 
 - Подписка Azure. [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/) , если она еще не создана.
@@ -147,7 +146,7 @@ ms.locfileid: "68444985"
    Write-host "Successfully added the database to the failover group..." 
    ```
 
-# <a name="az-clitabbash"></a>[AZ CLI](#tab/bash)
+# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
 Создайте группу отработки отказа и добавьте в нее отдельную базу данных с помощью команды AZ CLI. 
 
    > [!NOTE]
@@ -200,13 +199,13 @@ ms.locfileid: "68444985"
    ![Выбор группы отработки отказа на портале](media/sql-database-single-database-create-failover-group-tutorial/select-failover-group.png)
 
 1. Проверьте, какой сервер является основным, а какой — сервером-получателем. 
-1. Выберите  отработка отказа в области задач для отработки отказа группы отработки отказа, содержащей пример отдельной базы данных 
+1. Выберите отработка отказа в области задач для отработки отказа группы отработки отказа, содержащей пример отдельной базы данных 
 1. Нажмите кнопку **Да** в предупреждении, уведомляющее о том, что сеансы TDS будут отключены. 
 
    ![Переключение группы отработки отказа, содержащей базу данных SQL](media/sql-database-single-database-create-failover-group-tutorial/failover-sql-db.png)
 
 1. Проверьте, какой сервер является основным и какой сервер является вторичным. Если отработка отказа завершилась успешно, два сервера должны иметь переключенные роли. 
-1. Снова  установите флажок отработка отказа, чтобы вернуть серверы к исходным ролям. 
+1. Снова установите флажок отработка отказа, чтобы вернуть серверы к исходным ролям. 
 
 # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
 Тестовая отработка отказа с помощью PowerShell. 
@@ -263,7 +262,7 @@ ms.locfileid: "68444985"
    Write-host "Failed failover group to successfully to back to" $serverName
    ```
 
-# <a name="az-clitabbash"></a>[AZ CLI](#tab/bash)
+# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
 Тестовая отработка отказа с помощью AZ CLI. 
 
 
@@ -342,7 +341,7 @@ ms.locfileid: "68444985"
    Write-host "Resource group removed =" $resourceGroupName
    ```
 
-# <a name="az-clitabbash"></a>[AZ CLI](#tab/bash)
+# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
 Удалите группу ресурсов с помощью команды AZ CLI. 
 
 
@@ -366,7 +365,7 @@ ms.locfileid: "68444985"
 
 [!code-powershell-interactive[main](../../powershell_scripts/sql-database/failover-groups/add-single-db-to-failover-group-az-ps.ps1 "Add single database to a failover group")]
 
-# <a name="az-clitabbash"></a>[AZ CLI](#tab/bash)
+# <a name="az-clitabbash"></a>[Azure CLI](#tab/bash)
 
 [!code-azurecli-interactive[main](../../cli_scripts/sql-database/failover-groups/add-single-db-to-failover-group-az-cli.sh "Create SQL Database")]
 

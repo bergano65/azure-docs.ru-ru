@@ -1,26 +1,25 @@
 ---
 title: Развертывание службы файлов Azure | Документы Майкрософт
 description: Сведения о развертывании службы файлов Azure от начала до конца.
-services: storage
 author: roygara
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/22/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 416040d91da2f6346027f738de507777f804fd1f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 802b4deb91f1df784ac0aed2952d3f915b54ce73
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66237734"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699718"
 ---
 # <a name="how-to-deploy-azure-files"></a>Как развернуть службу файлов Azure
 [Служба файлов Azure](storage-files-introduction.md) предлагает полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого протокола SMB. В этой статье демонстрируется практическое развертывание службы файлов Azure в вашей организации.
 
 Перед выполнением действий в этой статье настоятельно рекомендуется прочесть статью [Planning for an Azure Files deployment](storage-files-planning.md) (Планирование развертывания службы файлов Azure).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 В данной статье предполагается, что вы уже выполнили следующие действия:
 
 - Создали учетную запись хранения Azure с необходимыми параметрами устойчивости шифрования в нужном регионе. Пошаговые инструкции по созданию учетной записи хранения см. в разделе о [создании учетной записи хранения](../common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
@@ -29,7 +28,7 @@ ms.locfileid: "66237734"
 ## <a name="transfer-data-into-azure-files"></a>Передача данных в службу файлов Azure
 Вы можете перенести существующие общие файловые ресурсы, например хранящиеся локально, в новую общую папку Azure. В этом разделе будет показано, как переместить данные в общую папку Azure, используя распространенные способы, приведенные в [руководстве по планированию](storage-files-planning.md#data-transfer-method)
 
-### <a name="azure-file-sync"></a>Служба синхронизации файлов Azure
+### <a name="azure-file-sync"></a>Синхронизация файлов Azure
 Служба "Синхронизация файлов Azure" позволяет централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования серверов Windows Server в быстрый кэш общей папки Azure. Для локального доступа к данным вы можете использовать любой протокол (в том числе SMB, NFS и FTPS), доступный в Windows Server. Кроме того, вы можете создать любое число кэшей в любом регионе.
 
 Службу "Синхронизация файлов Azure" можно использовать для переноса данных в общую папку Azure, даже если для долгосрочного использования не требуется механизм синхронизации. Дополнительные сведения об использовании службы "Синхронизация файлов Azure" для передачи данных в общую папку Azure можно найти в статьях [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md) и [Развертывание службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-deployment-guide.md).
@@ -148,7 +147,7 @@ do
 done
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - [Планирование развертывания службы синхронизации файлов Azure](storage-sync-files-planning.md)
 - [Устранение неполадок хранилища файлов Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md)
 - [Устранение неполадок в работе хранилища файлов Azure в Linux](storage-troubleshoot-linux-file-connection-problems.md)

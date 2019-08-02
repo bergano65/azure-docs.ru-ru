@@ -8,13 +8,13 @@ author: ecfan
 ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
-ms.date: 07/19/2019
-ms.openlocfilehash: 3e14604955a64c7a146a947c5c320b42ea3ebcba
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.date: 07/26/2019
+ms.openlocfilehash: 831a1457d865429fd53af1887a14c363b806300c
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325413"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68516606"
 ---
 # <a name="access-to-azure-virtual-network-resources-from-azure-logic-apps-by-using-integration-service-environments-ises"></a>Доступ к ресурсам виртуальных сетей Azure из Azure Logic Apps с использованием сред службы интеграции (ISE)
 
@@ -80,7 +80,22 @@ ms.locfileid: "68325413"
 
   Предоставляет интегрированную среду сценариев, которую можно использовать для рабочей среды и включает поддержку соглашения об уровне обслуживания, встроенные триггеры и действия, стандартные соединители, соединители предприятия, единую учетную запись интеграции [уровня Standard](../logic-apps/logic-apps-limits-and-config.md#artifact-number-limits) , параметры масштабирования емкости и избыточность во время повторное использование для фиксированной месячной цены.
 
+> [!IMPORTANT]
+> Параметр SKU доступен только при создании ИНТЕГРИРОВАНной среды разработки и не может быть изменен позже.
+
 Цены см. на странице [цен на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps/). Чтобы узнать, как цены и данные о выставлении счетов для Исес, см. [Logic Apps модель ценообразования](../logic-apps/logic-apps-pricing.md#fixed-pricing).
+
+<a name="endpoint-access"></a>
+
+## <a name="ise-endpoint-access"></a>Доступ к конечной точке интегрированной среды сценариев
+
+При создании интегрированной среды сценариев можно выбрать использование внутренних или внешних конечных точек доступа. Эти конечные точки определяют, могут ли триггеры запроса или веб-перехватчика в интегрированной среде сценариев получать вызовы извне вашей виртуальной сети. Эти конечные точки также влияют на доступ к входным и выходным данным в журнале выполнения приложения логики.
+
+* **Внутренние**. Частные конечные точки, которые позволяют вызывать приложения логики в интегрированной среде сценариев, а также получать доступ к входным и выходным данным в журнале выполнения только *из виртуальной сети* .
+* **Внешние**. Общедоступные конечные точки, которые позволяют вызывать приложения логики в интегрированной среде сценариев, а также доступ к входным и выходным данным в журнале выполнения *извне виртуальной сети*
+
+> [!IMPORTANT]
+> Параметр доступа к конечной точке доступен только при создании ИНТЕГРИРОВАНной среды разработки и не может быть изменен позже.
 
 <a name="on-premises"></a>
 
@@ -106,6 +121,8 @@ ms.locfileid: "68325413"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* Узнайте, как [подключаться к виртуальным сетям Azure из изолированных приложений логики](../logic-apps/connect-virtual-network-vnet-isolated-environment.md).
+* [Подключение к виртуальным сетям Azure из изолированных приложений логики](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)
+* [Добавление артефактов в среды службы интеграции](../logic-apps/add-artifacts-integration-service-environment-ise.md)
+* [Управление средами службы интеграции](../logic-apps/ise-manage-integration-service-environment.md)
 * Узнайте больше о [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md).
 * Узнайте об [интеграции виртуальной сети для служб Azure](../virtual-network/virtual-network-for-azure-services.md).

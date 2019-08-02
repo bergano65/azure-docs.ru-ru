@@ -3,7 +3,7 @@ title: Сохранение выходных данных заданий и за
 description: Подробнее об использовании API пакетной службы для сохранения выходных данных заданий и задач в службе хранилища Azure.
 services: batch
 author: laurenhughes
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.service: batch
 ms.devlang: multiple
@@ -13,12 +13,12 @@ ms.workload: big-compute
 ms.date: 03/05/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: 982fe5cea633d9fd1bbbe7dc862b69d89f5f1c1c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c113521a1828a27ce9454ea142cb1708b7c5a1b6
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65595280"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68322842"
 ---
 # <a name="persist-task-data-to-azure-storage-with-the-batch-service-api"></a>Сохранение данных для задач в службе хранилища Azure с помощью API пакетной службы
 
@@ -178,7 +178,7 @@ string containerName = job.OutputStorageContainerName();
 
 ## <a name="code-sample"></a>Пример кода
 
-Пример проекта [PersistOutputs][github_persistoutputs] — это один из [примеров кода пакетной службы Azure][github_samples] на портале GitHub. Это решение Visual Studio демонстрирует использование клиентской библиотеки пакетной службы для сохранения выходных данных задачи в долговременном хранилище. Чтобы запустить пример приложения, выполните следующее.
+Пример проекта [PersistOutputs][github_persistoutputs] является одним из [примеров кода пакетной службы Azure][github_samples] на сайте GitHub. Это решение Visual Studio демонстрирует использование клиентской библиотеки пакетной службы для сохранения выходных данных задачи в долговременном хранилище. Чтобы запустить пример приложения, выполните следующее.
 
 1. Откройте проект в **Visual Studio 2019**.
 2. Добавьте свои **данные** учетной записи пакетной службы и учетной записи хранения в **AccountSettings.settings** в проекте Microsoft.Azure.Batch.Samples.Common.
@@ -188,7 +188,7 @@ string containerName = job.OutputStorageContainerName();
 6. Когда появится запрос на выбор технологии постоянного хранения для выполнения образца, введите **2** для запуска образца с помощью API пакетной службы для сохранения выходных данных задачи.
 7. При необходимости запустите пример снова путем ввода **3** для сохранения выходных данных с помощью API пакетной службы, а также именования пути к целевому контейнеру и большому двоичному объекту в соответствии со стандартом соглашений об именовании файлов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о сохранении выходных данных задачи с помощью библиотеки соглашений о файлах для .NET см. в разделе [Сохранение данных заданий и задач в службе хранилища Azure с помощью библиотеки соглашений о пакетных файлах для .NET](batch-task-output-file-conventions.md).
 - Дополнительные сведения о других способах сохранения выходных данных задачи в пакетной службе Azure см. в разделе [Сохранение выходных данных заданий и задач в службе хранилища Azure](batch-task-output.md).

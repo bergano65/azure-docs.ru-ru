@@ -7,15 +7,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: load-data
-ms.date: 07/17/2019
+ms.date: 07/26/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: cbf642b47e4233cec2e2d860288b3bb35b419cf2
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: 7bb775184a0d567fedf9da07cee60e5ba5a2097f
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68304163"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68562379"
 ---
 # <a name="load-data-from-azure-data-lake-storage-to-sql-data-warehouse"></a>Загрузка данных из Azure Data Lake Storage в хранилище данных SQL
 Используйте внешние таблицы Polybase для загрузки данных из Azure Data Lake Storage в хранилище данных SQL Azure. Несмотря на то, что вы можете выполнять нерегламентированные запросы к данным, хранящимся в Data Lake Storage, мы рекомендуем импортировать данные в хранилище данных SQL для лучшей производительности.
@@ -32,20 +32,16 @@ ms.locfileid: "68304163"
 
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
-* Azure Active Directory приложение, используемое для проверки подлинности между службами при загрузке из Gen1. Создать его помогут инструкции из [этой статьи](../data-lake-store/data-lake-store-authenticate-using-active-directory.md).
-
->[!NOTE] 
-> Если вы загружаете из Azure Data Lake размер хранилища Gen1, вам потребуется идентификатор клиента, ключ и Active Directory значение конечной точки маркера OAuth 2.0 для подключения к учетной записи хранения из хранилища данных SQL. Чтобы узнать, как получить эти значения, см. статью по приведенной выше ссылке. Для регистрации приложения Azure Active Directory используйте идентификатор приложения как идентификатор клиента.
-> 
+* Приложение Azure Active Directory для проверки подлинности между службами. Создать его помогут инструкции из [этой статьи](../data-lake-store/data-lake-store-authenticate-using-active-directory.md).
 
 * Хранилище данных SQL Azure Ознакомьтесь со статьей [Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md).
 
 * Учетная запись Data Lake Storage. См. статью [Приступая к работе с Azure Data Lake Storage](../data-lake-store/data-lake-store-get-started-portal.md). 
 
 ##  <a name="create-a-credential"></a>Создание учетных данных
-Чтобы получить доступ к учетной записи Data Lake Storage, необходимо создать главный ключ базы данных, чтобы зашифровать секрет учетных данных, используемый на следующем шаге. Затем создайте учетные данные для базы данных. Для Gen1 учетные данные для базы данных хранят учетные данные субъекта-службы, настроенные в AAD. Необходимо использовать ключ учетной записи хранения в учетных данных уровня базы данных для Gen2. 
+Чтобы получить доступ к учетной записи Data Lake Storage, необходимо создать главный ключ базы данных, чтобы зашифровать секрет учетных данных, используемый на следующем шаге. Затем создайте учетные данные для базы данных. При проверке подлинности с помощью субъектов-служб учетные данные для базы данных сохраняют учетные данные субъекта-службы, настроенные в AAD. Вы также можете использовать ключ учетной записи хранения в учетных данных для базы данных для Gen2. 
 
-Для подключения к Data Lake Storage 1-го поколения необходимо **сначала** создать приложение Azure Active Directory, затем создать ключ доступа и предоставить этому приложению доступ к ресурсу Data Lake Storage 1-го поколения. Инструкции см. в статье [Аутентификация между службами в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory](../data-lake-store/data-lake-store-authenticate-using-active-directory.md).
+Чтобы подключиться к Data Lake Storage с помощью субъектов-служб, необходимо **сначала** создать приложение Azure Active Directory, создать ключ доступа и предоставить приложению доступ к учетной записи Data Lake Storage. Инструкции см. [в разделе аутентификация в Azure Data Lake Storage с помощью Active Directory](../data-lake-store/data-lake-store-authenticate-using-active-directory.md).
 
 ```sql
 -- A: Create a Database Master Key.
@@ -56,7 +52,7 @@ ms.locfileid: "68304163"
 CREATE MASTER KEY;
 
 
--- B (for Gen1): Create a database scoped credential
+-- B (for service principal authentication): Create a database scoped credential
 -- IDENTITY: Pass the client id and OAuth 2.0 Token Endpoint taken from your Azure Active Directory Application
 -- SECRET: Provide your AAD Application Service Principal key.
 -- For more information on Create Database Scoped Credential: https://msdn.microsoft.com/library/mt270260.aspx
@@ -67,7 +63,7 @@ WITH
     SECRET = '<key>'
 ;
 
--- B (for Gen2): Create a database scoped credential
+-- B (for Gen2 storage key authentication): Create a database scoped credential
 -- IDENTITY: Provide any string, it is not used for authentication to Azure storage.
 -- SECRET: Provide your Azure storage account key.
 
@@ -77,7 +73,7 @@ WITH
     SECRET = '<azure_storage_account_key>'
 ;
 
--- It should look something like this for Gen1:
+-- It should look something like this when authenticating using service principals:
 CREATE DATABASE SCOPED CREDENTIAL ADLSCredential
 WITH
     IDENTITY = '536540b4-4239-45fe-b9a3-629f97591c0c@https://login.microsoftonline.com/42f988bf-85f1-41af-91ab-2d2cd011da47/oauth2/token',
@@ -109,7 +105,7 @@ WITH (
 CREATE EXTERNAL DATA SOURCE AzureDataLakeStorage
 WITH (
     TYPE = HADOOP,
-    LOCATION='abfss://<container>@<AzureDataLake account_name>.dfs.core.windows.net', -- Please note the abfs endpoint
+    LOCATION='abfs[s]://<container>@<AzureDataLake account_name>.dfs.core.windows.net', -- Please note the abfss endpoint for when your account has secure transfer enabled
     CREDENTIAL = ADLSCredential
 );
 ```
@@ -221,13 +217,9 @@ ALTER INDEX ALL ON [dbo].[DimProduct] REBUILD;
 > * Создали объекты базы данных, требуемые для загрузки данных из Data Lake Storage 1-го поколения.
 > * Подключились к Data Lake Storage 1-го поколения.
 > * Загрузка данных в хранилище данных SQL Azure.
-> 
+>
 
 Загрузка данных является первым шагом к разработке решения для хранения данных на основе хранилища данных SQL. Ознакомьтесь с нашими ресурсами разработки.
 
 > [!div class="nextstepaction"]
->[Общие сведения о проектировании таблиц в хранилище данных SQL Azure](sql-data-warehouse-tables-overview.md)
-
-
-
-
+> [Общие сведения о проектировании таблиц в хранилище данных SQL Azure](sql-data-warehouse-tables-overview.md)

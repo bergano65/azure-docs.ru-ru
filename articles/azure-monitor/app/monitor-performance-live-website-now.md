@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 05/24/2019
 ms.author: mbullwin
 ms.openlocfilehash: ea324d616928b0d517c00dc9cab3e282f1e3415e
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67876422"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Инструментирование веб-приложений во время выполнения с помощью Application Insights бескодового подключения
@@ -43,7 +43,7 @@ ms.locfileid: "67876422"
 
 Ниже представлено общее сравнение предлагаемых вариантов.
 
-|  | Во время сборки | Во время выполнения |
+|  | Во время сборки | Время выполнения |
 | --- | --- | --- |
 | Запросы и исключения |Да |Да |
 | [Более подробные исключения](../../azure-monitor/app/asp-net-exceptions.md) | |Да |
@@ -64,7 +64,7 @@ ms.locfileid: "67876422"
 2. Если монитор состояний Application Insights еще не установлен, [скачайте и запустите установщик](#download).
 3. В мониторе состояний выберите установленное веб-приложение или веб-сайт, который требуется отслеживать. Выполните вход с использованием учетных данных Azure.
 
-    Настройте ресурс, в котором должны отображаться результаты на портале Application Insights. (Как правило, проще всего создать ресурс. Выберите существующий ресурс, если у вас уже есть [веб-тесты][availability] or [client monitoring][client] для этого приложения.) 
+    Настройте ресурс, в котором должны отображаться результаты на портале Application Insights. (Как правило, проще всего создать ресурс. Выберите существующий ресурс, если у вас уже есть [веб-тесты][availability] или [наблюдение за клиентами][client] для этого приложения.) 
 
     ![Выберите приложение и ресурс.](./media/monitor-performance-live-website-now/appinsights-036-configAIC.png)
 
@@ -152,7 +152,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 
 * Так как монитор состояния является приложением .NET, можно также включить [трассировку .NET, добавив соответствующие средства диагностики в файл конфигурации](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/trace-debug/system-diagnostics-element). Например, в некоторых сценариях может быть полезно узнать, что происходит на уровне сети, [настроив трассировку сети](https://docs.microsoft.com/dotnet/framework/network-programming/how-to-configure-network-tracing) .
 
-### <a name="insufficient-permissions"></a>Недостаточные разрешения
+### <a name="insufficient-permissions"></a>Недостаточно разрешений
   
 * Если на сервере отображается сообщение "Недостаточно разрешений", выполните следующее:
   * В диспетчере IIS выберите свой пул приложений, откройте **Дополнительные параметры** и в разделе **Модель процесса** скопируйте значение параметра "Идентификация".

@@ -1,18 +1,19 @@
 ---
 title: Защита фермы SharePoint в Azure с помощью DPM или сервера службы архивации Azure
 description: В этой статье описывается защита фермы SharePoint в Azure с помощью DPM или сервера службы архивации Azure
-author: kasinh
-manager: vvithal
+ms.reviewer: kasinh
+author: dcurwin
+manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 07/09/2019
-ms.author: kasinh
-ms.openlocfilehash: 91b3105bc2aafba10f4bf105bee851743dcf5282
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.author: dacurwin
+ms.openlocfilehash: f17cc71e0666ccf08d90fcef8f18552c09761cbc
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68466665"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68689409"
 ---
 # <a name="back-up-a-sharepoint-farm-to-azure"></a>Архивация фермы SharePoint в Azure
 Архивация SharePoint в Microsoft Azure с помощью System Center Data Protection Manager (DPM) во многом напоминает архивацию других источников данных. Служба архивации Azure позволяет гибко планировать архивацию, задавая ежедневные, еженедельные, ежемесячные или ежегодные точки архивации, и предоставляет параметры политики хранения для любой из этих точек. DPM дает возможность сохранять копии локальных дисков для краткосрочных целей времени восстановления, а также сохранять копии в Azure для экономичного и длительного хранения.
@@ -27,7 +28,7 @@ ms.locfileid: "68466665"
 ## <a name="before-you-start"></a>Перед началом
 Перед архивацией фермы SharePoint в Azure необходимо выполнить некоторые действия.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>предварительные требования
 Прежде чем продолжить, выполните все [предварительные требования по использованию службы Microsoft Azure Backup](backup-azure-dpm-introduction.md#prerequisites-and-limitations) для защиты рабочих нагрузок. В частности, необходимо создать хранилище резервных копий, скачать учетные данные хранилища, установить агент службы Azure Backup и зарегистрировать DPM и Azure Backup Server в хранилище.
 
 ### <a name="dpm-agent"></a>Агент DPM

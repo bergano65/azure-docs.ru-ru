@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: c25232abf20bbe3d01672b7620e5d2f5e31d5c8a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b4bb56155e925f9e19570d89d091342afd594009
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60343517"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68725964"
 ---
 # <a name="copy-data-from-shopify-using-azure-data-factory-preview"></a>Копирование данных из Shopify с помощью фабрики данных Azure (предварительная версия)
 
@@ -42,7 +42,7 @@ ms.locfileid: "60343517"
 
 Для связанной службы Shopify поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **Shopify** | Да |
 | host | Конечная точка сервера Shopify (mystore.myshopify.com).  | Да |
@@ -75,7 +75,7 @@ ms.locfileid: "60343517"
 
 Чтобы скопировать данные из Shopify, задайте для свойства type набора данных значение **ShopifyObject**. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойство type для набора данных должно иметь значение **ShopifyObject** | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
@@ -87,11 +87,12 @@ ms.locfileid: "60343517"
     "name": "ShopifyDataset",
     "properties": {
         "type": "ShopifyObject",
+        "typeProperties": {},
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<Shopify linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {}
+        }
     }
 }
 ```
@@ -104,10 +105,10 @@ ms.locfileid: "60343517"
 
 Чтобы скопировать данные из Shopify, задайте для типа источника в действии копирования значение **ShopifySource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойство type источника действия копирования должно иметь значение **ShopifySource** | Да |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM "Products" WHERE Product_Id = '123'"`. | Нет (если для набора данных задано свойство tableName) |
+| запрос | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM "Products" WHERE Product_Id = '123'"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 
@@ -141,5 +142,5 @@ ms.locfileid: "60343517"
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

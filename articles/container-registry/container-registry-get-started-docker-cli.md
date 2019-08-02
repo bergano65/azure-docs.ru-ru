@@ -10,10 +10,10 @@ ms.date: 01/23/2019
 ms.author: danlep
 ms.custom: seodec18, H1Hack27Feb2017
 ms.openlocfilehash: 6944755619ea5e8e63af04b9b3bca6f7376e29a9
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68309444"
 ---
 # <a name="push-your-first-image-to-a-private-docker-container-registry-using-the-docker-cli"></a>Отправка первого образа в частный реестр контейнеров Docker с помощью интерфейса командной строки Docker
@@ -25,7 +25,7 @@ ms.locfileid: "68309444"
 ## <a name="prerequisites"></a>предварительные требования
 
 * **Реестр контейнеров Azure.** Создайте реестр контейнеров в своей подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
-* **Docker CLI**. Также необходим локально установленный модуль Docker. DOCKER предоставляет пакеты, которые легко настраивают DOCKER в любой [macOS][docker-mac], [Windows][docker-windows]или системе [Linux][DOCKER-Linux] .
+* **Docker CLI**. Также необходим локально установленный модуль Docker. DOCKER предоставляет пакеты, которые легко настраивают DOCKER в любой системе [macOS][docker-mac], [Windows][docker-windows]или [Linux][docker-linux] .
 
 ## <a name="log-in-to-a-registry"></a>Вход в раздел реестра
 

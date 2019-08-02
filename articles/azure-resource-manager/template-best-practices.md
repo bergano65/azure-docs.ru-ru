@@ -12,10 +12,10 @@ ms.workload: na
 ms.date: 07/12/2019
 ms.author: tomfitz
 ms.openlocfilehash: cdec216187050a449f23f72474e0265acce14c5f
-ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67867391"
 ---
 # <a name="azure-resource-manager-template-best-practices"></a>Рекомендации по работе с шаблонами Azure Resource Manager
@@ -40,7 +40,7 @@ ms.locfileid: "67867391"
 
 Некоторые ограничения можно превысить, используя вложенные шаблоны. Дополнительные сведения см. разделе [Использование связанных шаблонов в при развертывании ресурсов Azure](resource-group-linked-templates.md). Чтобы уменьшить число параметров, переменных или выходных данных, можно объединить несколько значений в объект. См. дополнительные сведения об [использовании объектов как параметров](resource-manager-objects-as-parameters.md).
 
-## <a name="resource-group"></a>Resource group
+## <a name="resource-group"></a>Группа ресурсов
 
 При развертывании ресурсов в группе ресурсов Группа ресурсов хранит метаданные о ресурсах. Метаданные хранятся в расположении группы ресурсов.
 
@@ -293,7 +293,7 @@ ms.locfileid: "67867391"
    > 
    > 
 
-## <a name="outputs"></a>outputs
+## <a name="outputs"></a>Выходные данные
 
 Если вы используете шаблон, чтобы создать общедоступные IP-адреса, добавьте раздел [outputs](resource-group-authoring-templates.md#outputs), который возвращает сведения об IP-адресе и полное доменное имя (FQDN). С помощью этих выходных данных можно легко получить сведения об общедоступных IP-адресах и полных доменных именах после развертывания.
 

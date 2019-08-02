@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/17/2018
 ms.author: sedusch
-ms.openlocfilehash: cd56df8e88a84f52933e5ee43fecd598252ba6c0
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: bffb92e37ccddd43c2a64466282084bb6226c338
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68479762"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570563"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 
@@ -39,8 +39,6 @@ ms.locfileid: "68479762"
 
 [virtual-machines-linux-maintenance]:../../linux/maintenance-and-updates.md#maintenance-that-doesnt-require-a-reboot
 
-> [!TIP]
-> Pacemaker в Red Hat Enterprise Linux использует агент Azure Fence для ограждения узла кластера, если это необходимо. Доступна новая версия агента ограждения Azure, и отработка отказа больше не занимает длительное время, если происходит сбой ресурса или узлы кластера не могут обмениваться данными друг с другом. Дополнительные сведения см. в статье [Ограждение виртуальной машины Azure, входящей в кластер высокой доступности RHEL, занимает много времени, завершается сбоем или таймаутом до завершения работы виртуальной машины](https://access.redhat.com/solutions/3408711).
 
 Прежде всего прочитайте следующие примечания и документы SAP:
 

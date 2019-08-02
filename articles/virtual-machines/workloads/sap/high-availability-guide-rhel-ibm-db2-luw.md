@@ -16,10 +16,10 @@ ms.workload: infrastructure
 ms.date: 07/10/2019
 ms.author: juergent
 ms.openlocfilehash: 232468d9b3466759d7af2b7be68a1f553ced6e6d
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68348643"
 ---
 [1928533]: https://launchpad.support.sap.com/#/notes/1928533
@@ -125,7 +125,7 @@ HADR — это только функция репликации. Он не им
   + Разверните виртуальные машины.
   + Обновление RHEL Linux и настройка файловых систем.
   + Установите и настройте Pacemaker.
-  + Настройка [кластера глустерфс][glusterfs] or [Azure NetApp Files][anf-rhel]
+  + Настройка [кластера глустерфс][glusterfs] или [Azure NetApp Files][anf-rhel]
   + Установите [ASCS/ERS в отдельном кластере][ascs-ha-rhel].
   + Установите базу данных IBM DB2 с параметром распределенной или высокой доступности (SWPM).
   + Установите и создайте узел базы данных-получателя и экземпляр, а затем настройте транспорт HADR.
@@ -442,7 +442,7 @@ Online: [AZ-idb01 AZ-idb02]
 
    2\. Введите имя нового пула IP-адресов внешнего интерфейса (например, **DB2-Connection**).
 
-   В. Установите статическое **назначение** и введите IP-адрес **Virtual-IP** , определенный в начале.
+   В. Установите статическое **назначение** ивведите IP-адрес **Virtual-IP** , определенный в начале.
 
    Г. Нажмите кнопку **ОК**.
 

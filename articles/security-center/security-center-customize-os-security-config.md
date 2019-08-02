@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 3/20/2019
 ms.author: rkarlin
-ms.openlocfilehash: 7095992253fbbe5aafce1eab889965250f5d59a8
-ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
+ms.openlocfilehash: 8216aee1c27fd5bcb722648aa6380044e1431452
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551366"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68662471"
 ---
-# <a name="customize-os-security-configurations-in-azure-security-center-preview"></a>Настройка конфигураций безопасности операционной системы в центре безопасности Azure (предварительная версия)
+# <a name="customize-os-security-configurations-in-azure-security-center-retired"></a>Настройка конфигураций безопасности ОС в центре безопасности Azure (прекращено)
 
-В этом пошаговом руководстве описано, как настроить внутренние оценки конфигурации безопасности операционной системы в центре безопасности Azure.
+В этом пошаговом руководстве показано, как настроить оценку конфигурации безопасности ОС (Предварительная версия) в центре безопасности Azure.
 
 > [!NOTE]
-> Возможность настройки конфигураций безопасности Операционной системы будет прекращена 31 июля 2019 г. Дополнительные сведения и альтернативные службы, см. в разделе [вывода из эксплуатации центра безопасности функций (июль 2019)](security-center-features-retirement-july2019.md#menu_securityconfigurations).
+> Возможность настройки конфигураций безопасности ОС (Предварительная версия) была прекращена 31 июля 2019. Дополнительные сведения и альтернативные службы см. в разделе [выбытие средств центра безопасности (июль 2019)](security-center-features-retirement-july2019.md#menu_securityconfigurations).
 
 ## <a name="what-are-os-security-configurations"></a>Конфигурации безопасности операционной системы
 
@@ -56,11 +56,11 @@ ms.locfileid: "67551366"
 
 1.  Откройте панель мониторинга **центра безопасности**.
 
-2.  В левой области выберите **цен & Параметры**.
+2.  На левой панели выберите **параметры ценообразования &** .
 
     ![Список политик безопасности](media/security-center-customize-os-security-config/manual-provision.png)
 
-4. Выберите применимые подписку и выберите **изменение конфигураций безопасности**.  
+4. Выберите подходящую подписку и щелкните **изменить конфигурации безопасности**.  
 
     ![Окно Edit security configurations (Изменение конфигураций безопасности)](media/security-center-customize-os-security-config/blade.png)
 
@@ -113,7 +113,7 @@ ms.locfileid: "67551366"
 
     - Список разрешенных групп пользователей, например: *Администраторы*, *Операторы архива*
 
--   **state**. Эта строка может содержать параметры *Disabled* или *Enabled*. В этом выпуске строка с учетом регистра.
+-   **state**. Эта строка может содержать параметры *Disabled* или *Enabled*. В этом выпуске в строке учитывается регистр.
 
 Изменить можно только значения этих полей. Если использовать неправильный формат или размер файла, вы не сможете сохранить изменения. Появится сообщение об ошибке, в котором указано, что необходимо передать допустимый файл конфигурации JSON.
 
@@ -282,7 +282,7 @@ ms.locfileid: "67551366"
 | BaselineRuleCceIdNotUniqueError          | Идентификатор CCE-ID *{0}* не уникален.                                                                                                                  |
 | BaselineRuleEmptyProperty                | Свойство *{0}* отсутствует или недопустимое.                                                                                                       |
 | BaselineRuleIdNotInDefault               | Правило имеет свойство источника *Microsoft*, но его не удалось найти в наборе правил Microsoft по умолчанию.                                                   |
-| BaselineRuleIdNotUniqueError             | Идентификатор правила не является уникальным.                                                                                                                       |
+| BaselineRuleIdNotUniqueError             | Идентификатор правила не уникален.                                                                                                                       |
 | BaselineRuleInvalidGuid                  | Свойство *{0}* недопустимое. Его значение не является допустимым идентификатором GUID.                                                                             |
 | BaselineRuleInvalidHive                  | Атрибут hive должен иметь значение LocalMachine.                                                                                                                   |
 | BaselineRuleNameNotUniqueError           | Имя правила не уникальное.                                                                                                                 |
@@ -293,8 +293,8 @@ ms.locfileid: "67551366"
 | BaselineRuleRegTypeInvalidError          | Ожидаемое значение *{0}* не совпадает с определенным типом значения реестра.                                                              |
 | BaselineRulesetAdded                     | Набор правил с идентификатором *{0}* не найден в конфигурации по умолчанию. Набор правил нельзя добавить.                                               |
 | BaselineRulesetIdMustBeUnique            | Указанный базовый набор правил *{0}* должен быть уникальным.                                                                                           |
-| BaselineRulesetNotFound                  | Набор правил с идентификатором *{0}* и имя *{1}* не найден в указанной конфигурации. Набор правил нельзя удалить.                                |
-| BaselineRuleSourceNotMatch               | Правило с идентификатором *{0}* уже определен.                                                                                                       |
+| BaselineRulesetNotFound                  | В данной конфигурации не *{0}* найден набор *{1}* правил с идентификатором и именем. Набор правил нельзя удалить.                                |
+| BaselineRuleSourceNotMatch               | Правило с идентификатором *{0}* уже определено.                                                                                                       |
 | BaselineRuleTypeDoesntMatch              | Тип правила по умолчанию — *{0}* .                                                                                                              |
 | BaselineRuleTypeDoesntMatchError         | Фактический тип правила — *{0}* , но свойство *ruleType* имеет тип *{1}* .                                                                          |
 | BaselineRuleUnpermittedChangesError      | Изменить можно только свойства *expectedValue* и *state*.                                                                       |
@@ -312,7 +312,7 @@ ms.locfileid: "67551366"
 
 ![Сообщение об ошибке "Cбой действия сохранения"](media/security-center-customize-os-security-config/general-failure-error.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В этой статье описано, как настроить внутренние оценки конфигурации безопасности операционной системы в центре безопасности. Дополнительные сведения о правилах конфигурации и ее исправлении см. на этой странице:
 
 - [Security Center common configuration identifiers and baseline rules](https://gallery.technet.microsoft.com/Azure-Security-Center-a789e335) (Базовые правила и идентификаторы общей конфигурации центра безопасности).

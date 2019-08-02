@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 12/19/2018
-ms.openlocfilehash: 371632a28d22583f8b206e4d8b9d2b6b4e510ab0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5bddcb89d26566bd2024cbde086b6e35ddaf94ef
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62103769"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567181"
 ---
 # <a name="monitoring-performance-azure-sql-database-using-dynamic-management-views"></a>Мониторинг производительности Базы данных SQL Azure с помощью динамических административных представлений
 

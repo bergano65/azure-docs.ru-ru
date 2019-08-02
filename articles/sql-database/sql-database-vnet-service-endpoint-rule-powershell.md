@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: oslake
 ms.author: moslake
 ms.reviewer: genemi, vanto
-manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: 6713182003a280c1d53e904209159b55b4ad01c6
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: fd8cabb14ad65b4da562c7d6048a52b574513b26
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60331151"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566182"
 ---
 # <a name="powershell--create-a-virtual-service-endpoint-and-vnet-rule-for-sql"></a>PowerShell:  создание конечной точки виртуальной службы и правила виртуальной сети для SQL
 
@@ -31,31 +30,31 @@ ms.locfileid: "60331151"
 1. Создает *конечную точку службы виртуальной сети* Microsoft Azure в подсети.
 2. Добавляет конечную точку в брандмауэр сервера Базы данных SQL Azure, чтобы создать *правило виртуальной сети*.
 
-Причины для создания правила приведены в статье [Использование конечных точек службы и правил виртуальной сети для SQL Azure][sql-db-vnet-service-endpoint-rule-overview-735r].
+Причины для создания правила приведены в статье [Конечные точки виртуальной службы для базы данных SQL Azure][sql-db-vnet-service-endpoint-rule-overview-735r].
 
 > [!TIP]
 > Если все, что вам требуется, это оценить или добавить *имя типа* конечной точки службы виртуальной сети для базы данных SQL в подсеть, то вы можете сразу перейти к более [прямолинейному сценарию PowerShell](#a-verify-subnet-is-endpoint-ps-100).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
 ## <a name="major-cmdlets"></a>Основные командлеты
 
-В этой статье особое внимание уделяется **New AzSqlServerVirtualNetworkRule** командлет, который добавляет конечную точку подсети в списке управления доступом (ACL) сервера базы данных SQL Azure, тем самым создавая правило.
+В этой статье рассматривается командлет **New-азсклсервервиртуалнетворкруле** , который добавляет конечную точку подсети в список управления доступом (ACL) сервера базы данных SQL Azure, тем самым создавая правило.
 
-В следующем списке приведены последовательность других *основных* командлетов, которые необходимо выполнить для подготовки к вызову **New AzSqlServerVirtualNetworkRule**. В этой статье эти вызовы выполняются в [сценарии 3 "Правило виртуальной сети"](#a-script-30):
+В следующем списке показана последовательность других *основных* командлетов, которые необходимо выполнить для подготовки к вызову командлета **New-азсклсервервиртуалнетворкруле**. В этой статье эти вызовы выполняются в [сценарии 3 "Правило виртуальной сети"](#a-script-30):
 
-1. [Новый AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig): создает объект подсети.
-2. [Новый AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork): создает виртуальную сеть, предоставляя ей подсеть.
-3. [SET-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/Set-azVirtualNetworkSubnetConfig): присваивает конечную точку виртуальной службы подсети.
-4. [SET-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/Set-azVirtualNetwork): сохраняет обновления, внесенные в виртуальную сеть.
-5. [Новый AzSqlServerVirtualNetworkRule](https://docs.microsoft.com/powershell/module/az.sql/new-azsqlservervirtualnetworkrule): после указания того, что подсеть является конечной точкой, этот командлет добавляет подсеть в виде правила виртуальной сети в список управления доступом сервера Базы данных SQL Azure.
+1. [New-азвиртуалнетворксубнетконфиг](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig): создает объект подсети.
+2. [New-азвиртуалнетворк](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork): создает виртуальную сеть, предоставляя ей подсеть.
+3. [Set-азвиртуалнетворксубнетконфиг](https://docs.microsoft.com/powershell/module/az.network/Set-azVirtualNetworkSubnetConfig): присваивает конечную точку виртуальной службы подсети.
+4. [Set-азвиртуалнетворк](https://docs.microsoft.com/powershell/module/az.network/Set-azVirtualNetwork): сохраняет обновления, внесенные в виртуальную сеть.
+5. [New-азсклсервервиртуалнетворкруле](https://docs.microsoft.com/powershell/module/az.sql/new-azsqlservervirtualnetworkrule): после указания того, что подсеть является конечной точкой, этот командлет добавляет подсеть в виде правила виртуальной сети в список управления доступом сервера Базы данных SQL Azure.
    - В версии 5.1.1 модуля Azure RM PowerShell и последующих версиях командлет предоставляет параметр **-IgnoreMissingVnetServiceEndpoint**.
 
 ## <a name="prerequisites-for-running-powershell"></a>Предварительные требования для запуска PowerShell
 
-- Вы уже можете войти в Azure, например, воспользовавшись [порталом Azure][http-azure-portal-link-ref-477t].
+- Вы уже можете войти в Azure, например с помощью [портал Azure][http-azure-portal-link-ref-477t].
 - Вы уже можете выполнять сценарии PowerShell.
 
 > [!NOTE]
@@ -116,7 +115,7 @@ Write-Host 'Completed script 1, the "Variables".';
 
 <a name="a-script-20" />
 
-### <a name="script-2-prerequisites"></a>Сценарий 2. Технические условия
+### <a name="script-2-prerequisites"></a>Сценарий 2. Предварительные требования
 
 Этот сценарий подготавливает среду к следующему сценарию, который выполняет действие с конечной точкой. Этот сценарий создает перечисленные ниже элементы, но только если они еще не существует. Сценарий 2 можно пропустить, если вы уверены, что эти элементы уже существуют:
 
@@ -470,7 +469,7 @@ Completed script 4, the "Clean-Up".
 
 ## <a name="verify-your-subnet-is-an-endpoint"></a>Проверка того, является ли подсеть конечной точкой
 
-Возможно, у вас есть подсеть, которой уже было назначено имя типа **Microsoft.Sql**, то есть она уже является конечной точкой службы виртуальной сети. Можно использовать [портал Azure][http-azure-portal-link-ref-477t], чтобы создать правило виртуальной сети для конечной точки.
+Возможно, у вас есть подсеть, которой уже было назначено имя типа **Microsoft.Sql**, то есть она уже является конечной точкой службы виртуальной сети. Для создания правила виртуальной сети из конечной точки можно использовать [портал Azure][http-azure-portal-link-ref-477t] .
 
 Возможно, вы не уверены, присвоено ли подсети имя типа **Microsoft.Sql**. Можно выполнить приведенный ниже сценарий PowerShell, чтобы выполнить следующие действия.
 

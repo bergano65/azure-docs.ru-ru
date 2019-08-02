@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: d6d6517a85997265021573b2f9d481c81283c216
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 37634a76b0c8e08d7a4688a7ba3fd913391cd408
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61400463"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68726132"
 ---
 # <a name="copy-data-from-marketo-using-azure-data-factory-preview"></a>Копирование данных из Marketo с помощью фабрики данных Azure (предварительная версия)
 
@@ -45,11 +45,11 @@ ms.locfileid: "61400463"
 
 Для связанной службы Marketo поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойству type необходимо задать следующее значение: **Marketo** | Да |
 | endpoint | Конечная точка сервера Marketo. (т. е. 123-ABC-321.mktorest.com)  | Да |
-| clientid | Идентификатор клиента службы Marketo.  | Да |
+| clientId | Идентификатор клиента службы Marketo.  | Да |
 | clientSecret | Секрет клиента службы Marketo. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет |
 | useHostVerification | Указывает, следует ли требовать, чтобы имя узла в сертификате сервера совпадало с именем узла сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет |
@@ -80,7 +80,7 @@ ms.locfileid: "61400463"
 
 Чтобы скопировать данные из Marketo, установите свойство типа набора данных **MarketoObject**. Поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Для свойства type набора данных необходимо задать следующее значение: **MarketoObject** | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
@@ -92,11 +92,12 @@ ms.locfileid: "61400463"
     "name": "MarketoDataset",
     "properties": {
         "type": "MarketoObject",
+        "typeProperties": {},
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<Marketo linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {}
+        }
     }
 }
 ```
@@ -109,10 +110,10 @@ ms.locfileid: "61400463"
 
 Чтобы копировать данные из Marketo, установите тип источника **MarketoSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | ОПИСАНИЕ | Обязательно для заполнения |
+| Свойство | Описание | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойство type источника действия копирования должно иметь следующее значение: **MarketoSource** | Да |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Activitiy_Types"`. | Нет (если для набора данных задано свойство tableName) |
+| запрос | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Activitiy_Types"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 
@@ -146,5 +147,5 @@ ms.locfileid: "61400463"
 ]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

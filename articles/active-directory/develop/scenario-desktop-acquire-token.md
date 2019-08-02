@@ -15,12 +15,12 @@ ms.date: 07/16/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 05596365dfa011675f38beda2435fdda1a53a5a3
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 6e952b011eb760ebc9dcf5fe7250cf56ec67465f
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68488862"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68562335"
 ---
 # <a name="desktop-app-that-calls-web-apis---acquire-a-token"></a>Классическое приложение, вызывающее веб-API — получение маркера
 
@@ -126,7 +126,7 @@ WithParentActivityOrWindow(object parent).
 
 #### <a name="withextrascopetoconsent"></a>висекстраскопетоконсент
 
-Этот модификатор используется в расширенном сценарии, где пользователь должен заранее согласиться с несколькими ресурсами (и вы не хотите использовать добавочное согласие, которое обычно используется с MSAL.NET/платформой Microsoft Identity Platform v 2.0). Дополнительные сведения см. в разделе [как получить согласие пользователя на получение нескольких ресурсов](scenario-desktop-production.md#how-to-have--the-user-consent-upfront-for-several-resources).
+Этот модификатор используется в расширенном сценарии, где пользователь должен заранее согласиться с несколькими ресурсами (и вы не хотите использовать добавочное согласие, которое обычно используется с MSAL.NET или платформой идентификации Майкрософт). Дополнительные сведения см. в разделе [как получить согласие пользователя на получение нескольких ресурсов](scenario-desktop-production.md#how-to-have--the-user-consent-upfront-for-several-resources).
 
 ```CSharp
 var result = await app.AcquireTokenInteractive(scopesForCustomerApi)
@@ -198,7 +198,7 @@ AcquireTokenByIntegratedWindowsAuth(IEnumerable<string> scopes)
 
 - Этот поток включен для приложений .NET для настольных систем, .NET Core и Windows Universal (UWP). В .NET Core доступно только перегрузка, принимающая имя пользователя, так как платформа .NET Core не может запросить имя пользователя для операционной системы.
   
-Дополнительные сведения о согласии см. в разделе [разрешения и согласие версии 2.0](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent) .
+Дополнительные сведения о согласии см. в разделе [разрешения и согласие платформы Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent) .
 
 ### <a name="how-to-use-it"></a>Использование
 

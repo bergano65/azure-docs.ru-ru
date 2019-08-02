@@ -1,19 +1,18 @@
 ---
 title: Руководство по устранению неполадок с производительностью файлов Azure
 description: Известные проблемы с производительностью файловых ресурсов Azure и связанные с ними обходные пути.
-services: storage
 author: gunjanj
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: 1a5e59bd0276477bad1eab9a544dc4070e662016
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 6b28d004ceacda3cec13e96ceae84d5d1ff1a2e5
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68249879"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699172"
 ---
 # <a name="troubleshoot-azure-files-performance-issues"></a>Устранение проблем с производительностью файлов Azure
 
@@ -66,7 +65,7 @@ ms.locfileid: "68249879"
 ### <a name="solution"></a>Решение
 
 - Увеличьте параллелизм приложений, увеличив число потоков.
-- Переключитесь на приложения, где возможно параллелизм. Например, для операций копирования клиенты могут использовать AzCopy или Robocopy из клиентов Windows или параллельную команду на  клиентах Linux.
+- Переключитесь на приложения, где возможно параллелизм. Например, для операций копирования клиенты могут использовать AzCopy или Robocopy из клиентов Windows или параллельную команду на клиентах Linux.
 
 ## <a name="very-high-latency-for-requests"></a>Очень высокая задержка для запросов
 
@@ -155,7 +154,7 @@ ms.locfileid: "68249879"
 
 ### <a name="workaround"></a>Возможное решение
 
-- Отсутствует.
+- Нет.
 
 ## <a name="slow-performance-from-windows-81-or-server-2012-r2"></a>Снижение производительности Windows 8.1 или сервера 2012 R2
 

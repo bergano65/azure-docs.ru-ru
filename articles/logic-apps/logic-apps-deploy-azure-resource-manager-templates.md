@@ -8,13 +8,13 @@ author: ecfan
 ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
-ms.date: 07/26/2019
-ms.openlocfilehash: dbc92502cdab6e76ba6b8730fca7e0aed3966a43
-ms.sourcegitcommit: 5604661655840c428045eb837fb8704dca811da0
+ms.date: 08/01/2019
+ms.openlocfilehash: 083c908609ebcf1bdc6dcad5e37ae03daa41758f
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68494941"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706501"
 ---
 # <a name="deploy-azure-resource-manager-templates-for-azure-logic-apps"></a>Развертывание шаблонов Azure Resource Manager для Azure Logic Apps
 
@@ -35,7 +35,7 @@ ms.locfileid: "68494941"
 
 [![Развертывание в Azure](./media/logic-apps-deploy-azure-resource-manager-templates/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-logic-app-create%2Fazuredeploy.json)
 
-Например, после входа в портал Azure вам будет предложено ввести эти сведения:
+Например, при входе в портал Azure вам будет предложено ввести следующие сведения:
 
 * имя подписки Azure;
 * группу ресурсов, которую следует использовать;
@@ -59,7 +59,7 @@ ms.locfileid: "68494941"
 
 ## <a name="deploy-with-azure-powershell"></a>Развертывание с помощью Azure PowerShell
 
-Чтобы выполнить развертывание в определенной группе ресурсов Azure, используйте следующую команду:
+Чтобы выполнить развертывание в определенной *группе ресурсов Azure*, используйте следующую команду:
 
 ```powershell
 New-AzResourceGroupDeployment -ResourceGroupName <Azure-resource-group-name> -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-logic-app-create/azuredeploy.json
@@ -91,12 +91,16 @@ az group deployment create -g <Azure-resource-group-name> --template-uri https:/
 
 Чтобы развернуть шаблоны приложений логики и управлять средами, группы обычно используют такие средства, как [Azure pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/what-is-azure-pipelines) в [Azure DevOps](https://docs.microsoft.com/azure/devops/user-guide/what-is-azure-devops-services). Azure Pipelines предоставляет [задачу развертывания группы ресурсов Azure](https://github.com/Microsoft/azure-pipelines-tasks/tree/master/Tasks/AzureResourceGroupDeploymentV2) , которую можно добавить в любой конвейер сборки или выпуска. Для разрешения на развертывание и создание конвейера выпуска также необходим [субъект-служба](../active-directory/develop/app-objects-and-service-principals.md)Azure Active Directory (AD). Дополнительные сведения об [использовании субъектов-служб с Azure pipelines](https://docs.microsoft.com/azure/devops/pipelines/library/connect-to-azure).
 
-Дополнительные сведения о непрерывной интеграции и непрерывном развертывании (CI/CD) для шаблонов Azure Resource Manager с Azure Pipelines см. в следующих разделах:
+Дополнительные сведения о непрерывной интеграции и непрерывном развертывании (CI/CD) для шаблонов Azure Resource Manager с Azure Pipelines см. в следующих разделах и образцах:
 
 * [Интеграция шаблонов диспетчер ресурсов с Azure Pipelines](../azure-resource-manager/vs-resource-groups-project-devops-pipelines.md)
 * [Учебник. Непрерывная интеграция для шаблонов Azure Resource Manager с Azure Pipelines](../azure-resource-manager/resource-manager-tutorial-use-azure-pipelines.md)
+* [Пример. Подключение к очередям служебной шины Azure из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-service-bus-queues-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
+* [Пример. Подключение к учетным записям хранения Azure из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-storage-accounts-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
+* [Пример. Настройка действия приложения-функции для Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/set-up-an-azure-function-app-action-for-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
+* [Пример. Подключение к учетной записи интеграции из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-an-integration-account-from-azure-logic-apps-and-deploy-by-using-azure-devops-pipelines/)
 
-Ниже приведены общие высокоуровневые действия по использованию Azure Pipelines.
+Ниже приведены общие высокоуровневые действия для использования Azure Pipelines.
 
 1. В Azure Pipelines создайте пустой конвейер.
 

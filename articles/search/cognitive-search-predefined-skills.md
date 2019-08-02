@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 3d0c7c10b03169e5d78b833df5a26d83b04b9240
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 9623c4782dec6c3df5b226a3321d3750909e8369
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68347841"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698914"
 ---
 # <a name="predefined-skills-for-content-enrichment-azure-search"></a>Предопределенные навыки для обогащения содержимого ("Поиск Azure")
 
@@ -39,7 +39,7 @@ ms.locfileid: "68347841"
 | [Microsoft.Skills.Text.EntityRecognitionSkill](cognitive-search-skill-entity-recognition.md) | Этот навык использует предварительно обученную модель, чтобы установить сущности для фиксированного набора категорий: пользователей, расположений, организаций, электронных адресов, URL-адресов, полей даты и времени. |
 | [Microsoft.Skills.Text.SentimentSkill](cognitive-search-skill-sentiment.md)  | Этот навык использует предварительно обученную модель, чтобы оценить положительную или отрицательную тональность отдельных записей. Оценка находится в пределах от 0 до 1. Нейтральные оценки применяются в неопределенных случаях, когда установить тональность не удается, а также для текста, считающегося нейтральным.  |
 | [Microsoft.Skills.Text.SplitSkill](cognitive-search-skill-textsplit.md) | Разбивает текст на страницы, чтобы можно было постепенно обогатить или дополнить содержимое. |
-| [Microsoft. Skills. Text. Транслатионскилл (Предварительная версия)](cognitive-search-skill-text-translation.md) | Этот навык использует предварительно обученную модель для перевода входного текста на различные языки для нормализации или использования при локализации. |
+| [Microsoft. Skills. Text. Транслатионскилл](cognitive-search-skill-text-translation.md) | Этот навык использует предварительно обученную модель для перевода входного текста на различные языки для нормализации или использования при локализации. |
 | [Microsoft.Skills.Vision.ImageAnalysisSkill](cognitive-search-skill-image-analysis.md) | Этот навык использует алгоритм обнаружения изображений, чтобы определить содержимое изображения и создать текстовое описание. |
 | [Microsoft.Skills.Vision.OcrSkill](cognitive-search-skill-ocr.md) | Оптическое распознавание символов. |
 | [Microsoft. Skills. util. Кондитионалскилл](cognitive-search-skill-conditional.md) | Позволяет фильтровать, назначать значения по умолчанию и объединять данные на основе условия.|

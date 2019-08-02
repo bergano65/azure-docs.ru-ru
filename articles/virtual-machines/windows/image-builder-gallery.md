@@ -1,33 +1,33 @@
 ---
-title: Использование коллекции образов Azure Image Builder для виртуальных машин Windows (Предварительная версия)
-description: Создание образов Windows с помощью Azure Image Builder и общие коллекции образов.
+title: Использование Azure Image Builder с коллекцией образов для виртуальных машин Windows (Предварительная версия)
+description: Создание образов Windows с помощью Azure Image Builder и коллекции общих образов.
 author: cynthn
 ms.author: cynthn
 ms.date: 05/02/2019
 ms.topic: article
 ms.service: virtual-machines-windows
 manager: gwallace
-ms.openlocfilehash: 164fc4d8ad567c75ed5029aaf26af260398f80ba
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 33f13c09a06885523298bd7c23744e79f68e5301
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722698"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698668"
 ---
-# <a name="preview-create-a-windows-image-and-distribute-it-to-a-shared-image-gallery"></a>Предварительный просмотр: Создание образа Windows и распространить его к коллекции образов Shared 
+# <a name="preview-create-a-windows-image-and-distribute-it-to-a-shared-image-gallery"></a>Предварительный просмотр: Создание образа Windows и его распространение в общую коллекцию образов 
 
-В этой статье — Показать, как можно использовать для создания версии образа в Azure Image Builder [коллекции образов Shared](shared-image-galleries.md), Глобальное распределение изображения.
+В этой статье показано, как с помощью построителя образов Azure создать версию образа в [общей коллекции образов](shared-image-galleries.md), а затем распространить образ глобально.
 
-Мы используем шаблоном .json для настройки образа. JSON-файл, мы используем находится здесь: [helloImageTemplateforWinSIG.json](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image/helloImageTemplateforWinSIG.json). 
+Для настройки образа мы будем использовать JSON-шаблон. JSON-файл, который мы используем: [хеллоимажетемплатефорвинсиг. JSON](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image/helloImageTemplateforWinSIG.json). 
 
-Чтобы распространить образ к коллекции образов Shared, в шаблоне используется [sharedImage](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#distribute-sharedimage) как значение для `distribute` раздел шаблона.
+Чтобы распространить образ в общую коллекцию образов, шаблон использует [шаредимаже](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#distribute-sharedimage) в качестве значения для `distribute` раздела шаблона.
 
 > [!IMPORTANT]
-> Azure Image Builder в настоящее время находится в общедоступной предварительной версии.
+> Azure Image Builder сейчас находится в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="register-the-features"></a>Регистрация функций
-Чтобы использовать Azure Image Builder на этапе предварительной версии, необходимо зарегистрировать новый компонент.
+## <a name="register-the-features"></a>Регистрация компонентов
+Чтобы использовать Azure Image Builder во время предварительной версии, необходимо зарегистрировать новую функцию.
 
 ```azurecli-interactive
 az feature register --namespace Microsoft.VirtualMachineImages --name VirtualMachineTemplatePreview
@@ -39,7 +39,7 @@ az feature register --namespace Microsoft.VirtualMachineImages --name VirtualMac
 az feature show --namespace Microsoft.VirtualMachineImages --name VirtualMachineTemplatePreview | grep state
 ```
 
-Проверки регистрации.
+Проверьте регистрацию.
 
 ```azurecli-interactive
 az provider show -n Microsoft.VirtualMachineImages | grep registrationState
@@ -47,7 +47,7 @@ az provider show -n Microsoft.Storage | grep registrationState
 az provider show -n Microsoft.Compute | grep registrationState
 ```
 
-Если не говорят зарегистрированных, используйте следующую команду:
+Если они не зарегистрированы, выполните следующую команду:
 
 ```azurecli-interactive
 az provider register -n Microsoft.VirtualMachineImages
@@ -55,9 +55,9 @@ az provider register -n Microsoft.Storage
 az provider register -n Microsoft.Compute
 ```
 
-## <a name="set-variables-and-permissions"></a>Настройка переменных и разрешения 
+## <a name="set-variables-and-permissions"></a>Задание переменных и разрешений 
 
-Мы будем использовать некоторые части информации, поэтому мы создадим некоторые переменные для хранения этих сведений. Замените значения для переменных, например `username` и `vmpassword`, собственными данными.
+Мы будем использовать несколько фрагментов информации повторно, поэтому мы создадим некоторые переменные для хранения этих данных. Замените значения переменных, например `username` и `vmpassword`, собственными сведениями.
 
 ```azurecli-interactive
 # Resource group name - we are using ibsigRG in this example
@@ -77,7 +77,7 @@ username="azureuser"
 vmpassword="passwordfortheVM"
 ```
 
-Создайте переменную для идентификатора вашей подписки. Можно получить при помощи этого `az account show | grep id`.
+Создайте переменную для идентификатора подписки. Это можно сделать с помощью `az account show | grep id`.
 
 ```azurecli-interactive
 subscriptionID="Subscription ID"
@@ -90,7 +90,7 @@ az group create -n $sigResourceGroup -l $location
 ```
 
 
-Предоставление разрешения Azure Image Builder для создания ресурсов в этой группе ресурсов. `--assignee` Значение — идентификатор регистрации приложения для службы Image Builder. 
+Предоставьте разрешение Azure Image Builder для создания ресурсов в этой группе ресурсов. `--assignee` Значение представляет собой идентификатор регистрации приложения для службы "Построитель образов". 
 
 ```azurecli-interactive
 az role assignment create \
@@ -100,12 +100,11 @@ az role assignment create \
 ```
 
 
-
-
-
 ## <a name="create-an-image-definition-and-gallery"></a>Создание определения образа и коллекции
 
-Создание галереи изображений. 
+Чтобы использовать построитель изображений с общей коллекцией изображений, необходимо иметь существующую коллекцию образов и определение образа. Построитель образов не будет создавать коллекцию изображений и определение изображения.
+
+Если у вас еще нет определения коллекции и образа, начните с их создания. Сначала создайте коллекцию образов.
 
 ```azurecli-interactive
 az sig create \
@@ -113,7 +112,7 @@ az sig create \
     --gallery-name $sigName
 ```
 
-Создает определение изображения.
+Затем создайте определение образа.
 
 ```azurecli-interactive
 az sig image-definition create \
@@ -127,9 +126,9 @@ az sig image-definition create \
 ```
 
 
-## <a name="download-and-configure-the-json"></a>Скачивание и настройка .json
+## <a name="download-and-configure-the-json"></a>Скачивание и настройка JSON
 
-Загрузите шаблон .json и настроить его, используя переменные.
+Скачайте шаблон JSON и настройте его с помощью переменных.
 
 ```azurecli-interactive
 curl https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image/helloImageTemplateforWinSIG.json -o helloImageTemplateforWinSIG.json
@@ -142,11 +141,11 @@ sed -i -e "s/<region2>/$additionalregion/g" helloImageTemplateforWinSIG.json
 sed -i -e "s/<runOutputName>/$runOutputName/g" helloImageTemplateforWinSIG.json
 ```
 
-## <a name="create-the-image-version"></a>Создайте версию образа
+## <a name="create-the-image-version"></a>Создание версии образа
 
-Эта часть Далее создаст версию образа в коллекции. 
+В следующей части будет создана версия образа в коллекции. 
 
-Отправьте конфигурацию образа в службе Azure Image Builder.
+Отправьте конфигурацию образа в службу Azure Image Builder.
 
 ```azurecli-interactive
 az resource create \
@@ -157,7 +156,7 @@ az resource create \
     -n helloImageTemplateforWinSIG01
 ```
 
-Начать сборку образа.
+Запустите сборку образа.
 
 ```azurecli-interactive
 az resource invoke-action \
@@ -167,12 +166,12 @@ az resource invoke-action \
      --action Run 
 ```
 
-Создание образа и репликацией его в обоих регионах может занять некоторое время. Дождитесь завершения этого этапа перед переходом к созданию виртуальной Машины.
+Создание образа и его репликация в оба региона могут занять некоторое время. Дождитесь завершения этой части, прежде чем переходить к созданию виртуальной машины.
 
 
 ## <a name="create-the-vm"></a>Создание виртуальной машины
 
-Создание виртуальной Машины из версию образа, который был создан построителем образа Azure.
+Создайте виртуальную машину на основе версии образа, созданной с помощью Azure Image Builder.
 
 ```azurecli-interactive
 az vm create \
@@ -185,25 +184,25 @@ az vm create \
 ```
 
 
-## <a name="verify-the-customization"></a>Проверьте настройки
-Создайте подключение удаленного рабочего стола к виртуальной Машине, используя имя пользователя и пароль, заданные при создании виртуальной Машины. На виртуальной Машине откройте окно командной строки и введите:
+## <a name="verify-the-customization"></a>Проверка настройки
+Создайте удаленный рабочий стол подключение к виртуальной машине, используя имя пользователя и пароль, заданные при создании виртуальной машины. В виртуальной машине откройте командную строку и введите следующую команду:
 
 ```console
 dir c:\
 ```
 
-Вы должны увидеть каталог с именем `buildActions` , созданного во время настройки изображения.
+Вы должны увидеть каталог с именем `buildActions` , созданный во время настройки образа.
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Если вы хотите теперь попробуйте повторно Настройка версию образа для создания новой версии одного образа: **пропустите этот шаг** и перейдите к пункту [использования Azure Image Builder для создания другой версии образа](image-builder-gallery-update-image-version.md).
+Если вы хотите выполнить повторную настройку версии образа, чтобы создать новую версию того же образа, **пропустите этот шаг** и перейдите к разделу [Использование Azure Image Builder для создания другой версии образа](image-builder-gallery-update-image-version.md).
 
 
-Это приведет к удалению образа, который был создан, а также все другие файлы ресурсов. Убедитесь, что вы закончили с этим развертыванием, прежде чем удалить ресурсы.
+Это приведет к удалению созданного образа вместе со всеми остальными файлами ресурсов. Убедитесь, что вы завершили работу с этим развертыванием, прежде чем удалять ресурсы.
 
-При удалении коллекции графических ресурсов, необходимо удалить все версии образов перед удалением в определении образа, которые использовались для их создания. Чтобы удалить коллекции, необходимо сначала удалили все определения образа в коллекции.
+При удалении ресурсов коллекции образов необходимо удалить все версии образа, прежде чем можно будет удалить определение образа, использованное для их создания. Чтобы удалить галерею, сначала необходимо удалить все определения образов в коллекции.
 
-Удалите шаблон построитель образа.
+Удалите шаблон построителя образов.
 
 ```azurecli-interactive
 az resource delete \
@@ -212,7 +211,7 @@ az resource delete \
     -n helloImageTemplateforWinSIG01
 ```
 
-Получить версию образа, созданный построителем образа, это всегда начинается с `0.`, а затем удалите версию образа
+Получить версию образа, созданную построителем образов, это всегда `0.`начинается с, а затем удаляет версию образа.
 
 ```azurecli-interactive
 sigDefImgVersion=$(az sig image-version list \
@@ -229,7 +228,7 @@ az sig image-version delete \
 ```   
 
 
-Удалите определение образа.
+Удаление определения образа.
 
 ```azurecli-interactive
 az sig image-definition delete \
@@ -239,7 +238,7 @@ az sig image-definition delete \
    --subscription $subscriptionID
 ```
 
-Удаление коллекции.
+Удалите коллекцию.
 
 ```azurecli-interactive
 az sig delete -r $sigName -g $sigResourceGroup
@@ -253,4 +252,4 @@ az group delete -n $sigResourceGroup -y
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Чтобы узнать, как обновить версию образа, который вы создали, см. в разделе [использования Azure Image Builder для создания другой версии образа](image-builder-gallery-update-image-version.md).
+Сведения о том, как обновить созданную версию образа, см. в статье [Использование Azure Image Builder для создания другой версии образа](image-builder-gallery-update-image-version.md).

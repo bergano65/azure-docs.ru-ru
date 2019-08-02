@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2019
 ms.author: spelluru
-ms.openlocfilehash: 9f38502cc543f19855dbca32c4724a5651b1a3f2
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: fb66fa2d4a6a03841fa057c4d1982b7bf4c6976d
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68318105"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565339"
 ---
 # <a name="azure-devtest-labs-faq"></a>Часто задаваемые вопросы об Azure DevTest Labs
 В этой статье содержатся ответы на некоторые самые распространенные вопросы об Azure DevTest Labs.
@@ -42,11 +42,11 @@ ms.locfileid: "68318105"
 ### <a name="twitter"></a>Twitter
 Наш маркер Twitter:[@azlabservices](https://twitter.com/azlabservices)
 
-## <a name="general"></a>Общие сведения
+## <a name="general"></a>Общее
 ### <a name="what-if-my-question-isnt-answered-here"></a>Мне не удалось найти ответ на свой вопрос. Что делать?
 Если ваш вопрос не указан здесь, сообщите нам о том, что мы можем помочь вам найти ответ.
 
-- Опубликуйте вопрос в конце этой статьи и обсудите эту статью с командой разработчиков кэша Azure и другими участниками сообщества.
+- Опубликуйте вопрос в конце этой статьи 
 - Чтобы охватить большую аудиторию, опубликуйте вопрос на [форуме MSDN по Azure DevTest Labs](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureDevTestLabs) и обсудите его с командой разработчиков Azure DevTest Labs и другими участниками сообщества.
 - Чтобы сделать запрос на функцию, разместите свои запросы и предложения на [форуме пользователей Azure DevTest Labs](https://feedback.azure.com/forums/320373-azure-devtest-labs).
 
@@ -186,7 +186,7 @@ $policyRoleDef = New-AzRoleDefinition -Role $policyRoleDef
 > [!NOTE]
 > Если пользователь лаборатории является внешним пользователем с учетная запись Майкрософт, но не является членом Active Directory экземпляра вашей организации, он может увидеть сообщение об ошибке при попытке доступа к общей ссылке. В этом случае предложите им выбрать свое имя в правом верхнем углу на портале Azure. Затем в разделе Каталог меню пользователь может выбрать каталог, в котором находится лаборатория.
 
-## <a name="virtual-machines"></a>Виртуальные машины
+## <a name="virtual-machines"></a>ВМ
 
 ### <a name="why-cant-i-see-vms-on-the-virtual-machines-page-that-i-see-in-devtest-labs"></a>Почему на странице "виртуальные машины" не отображаются виртуальные машины, которые я вижу в DevTest Labs?
 При создании виртуальной машины в DevTest Labs вы получили разрешение на доступ к этой виртуальной машине. Вы можете просмотреть виртуальную машину как на странице лабораторий, так и на странице **виртуальные машины** . Пользователи, которым назначена роль **владельца DevTest Labs** , могут просматривать все виртуальные машины, созданные в лаборатории, на странице **все виртуальные машины** лаборатории. Однако пользователям, имеющим роль **пользователя DevTest Labs** , не предоставляется автоматически доступ на чтение ресурсов виртуальной машины, созданных другими пользователями. Таким образом, эти виртуальные машины не отображаются на странице **виртуальные машины** .
@@ -252,7 +252,7 @@ foreach($labVM in $labVMs)
 }
 ```
 
-## <a name="environments"></a>средами; 
+## <a name="environments"></a>Окружения 
 
 ### <a name="how-can-i-use-resource-manager-templates-in-my-devtest-labs-environment"></a>Как применить шаблоны Resource Manager в моей среде DevTest Labs?
 Шаблоны диспетчер ресурсов развертываются в среде DevTest Labs с помощью действий, упомянутых в статье о [средах DevTest Labs](devtest-lab-test-env.md) . Вкратце, вам нужно разместить нужные шаблоны Resource Manager в репозиторий Git (Azure Repos или GitHub) и добавить в лабораторию [частный репозиторий для шаблонов](devtest-lab-test-env.md). Этот сценарий может оказаться нецелесообразным, если вы используете DevTest Labs для размещения машин разработки, но может быть полезным при создании промежуточной среды, которая представляет собой рабочую среду.
@@ -345,7 +345,7 @@ foreach($labVM in $labVMs)
 
 Для других цепочек инструментов непрерывной интеграции (CI) и непрерывной поставки (CD) можно реализовать такие же сценарии путем развертывания [шаблонов Azure Resource Manager](https://azure.microsoft.com/resources/templates/) с помощью командлетов [Azure PowerShell](../azure-resource-manager/resource-group-template-deploy.md) и [пакетов SDK для .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.DevTestLabs/). Для интеграции DevTest Labs с набором инструментов также можно использовать [REST API для DevTest Labs](https://aka.ms/dtlrestapis).
 
-## <a name="networking"></a>Сеть
+## <a name="networking"></a>Сети
 
 ### <a name="when-should-i-create-a-new-virtual-network-for-my-devtest-labs-environment-vs-using-an-existing-virtual-network"></a>Когда мне лучше создать новую виртуальную сеть для среды DevTest Labs, а когда — использовать существующую виртуальную сеть?
 Если виртуальным машинам необходимо взаимодействовать с существующей инфраструктурой, рассмотрите возможность использования существующей виртуальной сети в среде DevTest Labs. При использовании ExpressRoute может потребоваться максимально ограничить количество виртуальных сетей и подсетей, чтобы не фрагментировать пространство IP-адресов, назначенное для использования в подписках. 

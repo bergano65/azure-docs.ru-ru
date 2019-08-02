@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: MightyPen
-manager: craigg
 ms.date: 11/07/2018
-ms.openlocfilehash: 03e5540e34cd99d2b201bc763f13b42c7fa20bf7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e869b2bba3bd64b58d9063e9445889ef709efdc3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65785316"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567946"
 ---
 # <a name="use-in-memory-oltp-to-improve-your-application-performance-in-sql-database"></a>Повышение производительности приложений в базе данных SQL с помощью выполняющейся в памяти OLTP
 
@@ -29,7 +28,7 @@ ms.locfileid: "65785316"
 
 Выполните следующие действия, чтобы внедрить выполняющуюся в памяти OLTP в существующую базу данных.
 
-## <a name="step-1-ensure-you-are-using-a-premium-and-business-critical-tier-database"></a>Шаг 1. Проверка того, используется ли база данных нужного уровня ("Премиум" или "Критически важный для бизнеса")
+## <a name="step-1-ensure-you-are-using-a-premium-and-business-critical-tier-database"></a>Шаг 1.: Проверка того, используется ли база данных нужного уровня ("Премиум" или "Критически важный для бизнеса")
 
 Выполняющаяся в памяти OLTP поддерживается только в базах данных уровней "Премиум"и "Критически важный для бизнеса". In-Memory поддерживается, если полученное значение равно 1 (не 0):
 
@@ -41,7 +40,7 @@ SELECT DatabasePropertyEx(Db_Name(), 'IsXTPSupported');
 
 
 
-## <a name="step-2-identify-objects-to-migrate-to-in-memory-oltp"></a>Шаг 2. Определение объектов для переноса в In-Memory OLTP
+## <a name="step-2-identify-objects-to-migrate-to-in-memory-oltp"></a>Шаг 2.: Определение объектов для переноса в In-Memory OLTP
 Среда SSMS позволяет создать отчет **Обзор анализа производительности транзакций** , который затем можно запустить для базы данных с активной рабочей нагрузкой. В отчете определены таблицы и хранимые процедуры, которые подходят для миграции в компонент In-Memory OLTP.
 
 Для создания отчета в среде SSMS выполните следующие действия:

@@ -1,5 +1,5 @@
 ---
-title: Отправки и получения событий с помощью Node.js — концентраторы событий Azure | Документация Майкрософт
+title: Отправка и получение событий с помощью Node. js — концентраторов событий Azure | Документация Майкрософт
 description: В статье описано, как создать приложение Node.js, которое отправляет сообщения в Центры событий Azure.
 services: event-hubs
 author: spelluru
@@ -10,40 +10,40 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 04/15/2019
 ms.author: spelluru
-ms.openlocfilehash: e67be59e0ed78b2080986acb73a33fc87599c9d3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a3233a32bf8a0e602fbdb64778fad25f550294df
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65539346"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699046"
 ---
-# <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-nodejs"></a>Отправлять события или получения событий из концентраторов событий Azure с помощью Node.js
+# <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-nodejs"></a>Отправка событий или получение событий из концентраторов событий Azure с помощью Node. js
 
 Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
 
-Это руководство содержит инструкции для создания приложений Node.js для отправки событий или получать события из концентратора событий.
+В этом учебнике описывается создание приложений Node. js для отправки событий или получения событий из концентратора событий.
 
 > [!NOTE]
 > Вы можете скачать это краткое руководство в качестве примера с сайта [GitHub](https://github.com/Azure/azure-event-hubs-node/tree/master/client), заменить строки `EventHubConnectionString` и `EventHubName` значениями для своего концентратора событий и выполнить этот пример. Или следуйте инструкциям из этого руководства, чтобы создать собственное решение.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с данным руководством вам потребуется:
 
 - Активная учетная запись Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 - Node.js версии 8.x или более поздней. Скачайте последнюю версию LTS с сайта [https://nodejs.org](https://nodejs.org).
 - Visual Studio Code (рекомендуется) или любой другой интерфейс IDE.
-- **Создать пространство имен концентраторов событий и концентратора событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните процедуру, описанную в [этой статье](event-hubs-create.md), а затем перейдите к следующим шагам в этом руководстве. Затем получите строку подключения для пространства имен концентратора событий, следуя указаниям из статьи: [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже.
+- **Создайте пространство имен концентраторов событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните процедуру, описанную в [этой статье](event-hubs-create.md), а затем перейдите к следующим шагам в этом руководстве. Затем получите строку подключения для пространства имен концентратора событий, выполнив инструкции из статьи: [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже.
 
 
-### <a name="install-npm-package"></a>Установите пакет npm
-Чтобы установить [пакета npm для концентраторов событий](https://www.npmjs.com/package/@azure/event-hubs), откройте командную строку с `npm` в пути, перейдите в каталог на папку, где вы хотите иметь ваших примеров и затем выполните следующую команду
+### <a name="install-npm-package"></a>Установка пакета NPM
+Чтобы установить [пакет NPM для концентраторов событий](https://www.npmjs.com/package/@azure/event-hubs), откройте командную строку, которая `npm` находится по пути, измените каталог на папку, в которой вы хотите получить примеры, а затем выполните эту команду.
 
 ```shell
 npm install @azure/event-hubs
 ```
 
-Чтобы установить [пакета npm для узла обработчика событий](https://www.npmjs.com/package/@azure/event-processor-host), выполните указанную ниже команду, вместо этого
+Чтобы установить [пакет NPM для узла обработчика событий](https://www.npmjs.com/package/@azure/event-processor-host), выполните приведенную ниже команду.
 
 ```shell
 npm install @azure/event-processor-host
@@ -51,16 +51,20 @@ npm install @azure/event-processor-host
 
 ## <a name="send-events"></a>Отправка событий
 
-В этом разделе показано, как создать приложение Node.js, которое отправляет события в концентратор событий. 
+В этом разделе показано, как создать приложение Node. js, которое отправляет события в концентратор событий. 
 
-1. Откройте предпочитаемый редактор, такой как [Visual Studio Code](https://code.visualstudio.com). 
-2. Создайте файл с именем `send.js` и вставьте ниже кода в него.
+1. Откройте любой редактор, например [Visual Studio Code](https://code.visualstudio.com). 
+2. Создайте файл с именем `send.js` и вставьте в него приведенный ниже код. Получите строку подключения для пространства имен концентратора событий, следуя [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). 
+
     ```javascript
     const { EventHubClient } = require("@azure/event-hubs");
 
-    // Define connection string and the name of the Event Hub
-    const connectionString = "";
-    const eventHubsName = "";
+    // Connection string - primary key of the Event Hubs namespace. 
+    // For example: Endpoint=sb://myeventhubns.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    const connectionString = "Endpoint=sb://<EVENT HUBS NAMESPACE NAME>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<SHARED ACCESS KEY>";
+
+    // Name of the event hub. For example: myeventhub
+    const eventHubsName = "<EVENT HUB NAME>";
 
     async function main() {
       const client = EventHubClient.createFromConnectionString(connectionString, eventHubsName);
@@ -78,24 +82,27 @@ npm install @azure/event-processor-host
       console.log("Error occurred: ", err);
     });
     ```
-3. Введите строку подключения и имя концентратора событий в приведенном выше коде
-4. Затем выполните команду `node send.js` в командной строке, чтобы выполнить этот файл. Этот параметр отправит 100 событий в концентратор событий
+3. Введите строку подключения и имя концентратора событий в приведенном выше коде.
+4. Затем выполните команду `node send.js` в командной строке, чтобы выполнить этот файл. В концентратор событий будут отправлены события 100.
 
-Поздравляем! Теперь вы можете отправлять события в концентратор событий.
+Поздравляем! Теперь вы отправили события в концентратор событий.
 
 
 ## <a name="receive-events"></a>Получение событий
 
-В этом разделе показано, как создать приложение Node.js, которое получает события из одной секции группы потребителей по умолчанию в концентраторе событий. 
+В этом разделе показано, как создать приложение Node. js, которое получает события из одного раздела группы потребителей по умолчанию в концентраторе событий. 
 
-1. Откройте предпочитаемый редактор, такой как [Visual Studio Code](https://code.visualstudio.com). 
-2. Создайте файл с именем `receive.js` и вставьте ниже кода в него.
+1. Откройте любой редактор, например [Visual Studio Code](https://code.visualstudio.com). 
+2. Создайте файл с именем `receive.js` и вставьте в него приведенный ниже код.
     ```javascript
     const { EventHubClient, delay } = require("@azure/event-hubs");
 
-    // Define connection string and related Event Hubs entity name here
-    const connectionString = "";
-    const eventHubsName = "";
+    // Connection string - primary key of the Event Hubs namespace. 
+    // For example: Endpoint=sb://myeventhubns.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    const connectionString = "Endpoint=sb://<EVENT HUBS NAMESPACE NAME>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<SHARED ACCESS KEY>";
+
+    // Name of the event hub. For example: myeventhub
+    const eventHubsName = "<EVENT HUB NAME>";
 
     async function main() {
       const client = EventHubClient.createFromConnectionString(connectionString, eventHubsName);
@@ -120,23 +127,28 @@ npm install @azure/event-processor-host
     });
     ```
 3. Введите строку подключения и имя концентратора событий в приведенном выше коде.
-4. Затем выполните команду `node receive.js` в командной строке, чтобы выполнить этот файл. Это будет получать события из одного из разделов по умолчанию группы потребителей в концентраторе событий
+4. Затем выполните команду `node receive.js` в командной строке, чтобы выполнить этот файл. Это позволит получить события из одной из разделов группы потребителей по умолчанию в концентраторе событий.
 
-Поздравляем! Теперь вы можете получать события из концентратора событий.
+Поздравляем! Теперь вы получили события от концентратора событий.
 
 ## <a name="receive-events-using-event-processor-host"></a>Получение событий с помощью узла обработчика событий
 
-В этом разделе показано, как получать события из концентратора событий с помощью Azure [EventProcessorHost](event-hubs-event-processor-host.md) в приложении Node.js. Класс EventProcessorHost (EPH) помогает эффективно получать события от концентратора событий, создавая приемники для всех секций в группе потребителей концентратора событий. Он регулярно фиксирует метаданные для полученных сообщений в Azure Storage Blob. Благодаря такому подходу позже можно легко продолжить получать сообщения с того места, где вы остановились.
+В этом разделе показано, как получить события из концентратора событий с помощью Azure [EventProcessorHost](event-hubs-event-processor-host.md) в приложении Node. js. Класс EventProcessorHost (EPH) помогает эффективно получать события от концентратора событий, создавая приемники для всех секций в группе потребителей концентратора событий. Он регулярно фиксирует метаданные для полученных сообщений в Azure Storage Blob. Благодаря такому подходу позже можно легко продолжить получать сообщения с того места, где вы остановились.
 
-1. Откройте предпочитаемый редактор, такой как [Visual Studio Code](https://code.visualstudio.com). 
-2. Создайте файл с именем `receiveAll.js` и вставьте ниже кода в него.
+1. Откройте любой редактор, например [Visual Studio Code](https://code.visualstudio.com). 
+2. Создайте файл с именем `receiveAll.js` и вставьте в него приведенный ниже код.
     ```javascript
     const { EventProcessorHost, delay } = require("@azure/event-processor-host");
 
-    // Define connection string and related Event Hubs entity name here
-    const eventHubConnectionString = "";
-    const eventHubName = "";
-    const storageConnectionString = "";
+    // Connection string - primary key of the Event Hubs namespace. 
+    // For example: Endpoint=sb://myeventhubns.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    const connectionString = "Endpoint=sb://<EVENT HUBS NAMESPACE NAME>.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<SHARED ACCESS KEY>";
+
+    // Name of the event hub. For example: myeventhub
+    const eventHubsName = "<EVENT HUB NAME>";
+
+    // Azure Storage connection string
+    const storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=<STORAGE ACCOUNT NAME>;AccountKey=<STORAGE ACCOUNT KEY>;EndpointSuffix=core.windows.net";
 
     async function main() {
       const eph = EventProcessorHost.createFromConnectionString(
@@ -169,15 +181,15 @@ npm install @azure/event-processor-host
     });
 
     ```
-3. Введите строку подключения и имя концентратора событий в приведенном выше коде, а также строку подключения для службы хранилища BLOB-объектов Azure
+3. Введите строку подключения и имя концентратора событий в приведенном выше коде, а также строку подключения для хранилища BLOB-объектов Azure.
 4. Затем выполните команду `node receiveAll.js` в командной строке, чтобы выполнить этот файл.
 
-Поздравляем! Теперь вы можете получать события из концентратора событий с помощью узла обработчика событий. Это будет получать события из всех разделов по умолчанию группы потребителей в концентраторе событий
+Поздравляем! Теперь вы получили события от концентратора событий с помощью узла обработчика событий. Будут получены события из всех разделов группы потребителей по умолчанию в концентраторе событий.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь со следующими статьями:
 
 - [EventProcessorHost](event-hubs-event-processor-host.md)
-- [Возможностями и терминологией в концентраторах событий Azure](event-hubs-features.md)
+- [Функции и терминология в Центрах событий Azure](event-hubs-features.md)
 - [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
-- См. другие примеры Node.js для [концентраторов событий](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs/samples) и [Event Processor Host](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-processor-host/samples) на GitHub
+- Ознакомьтесь с другими примерами Node. js для [концентраторов событий](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs/samples) и [узла обработчика событий на сайте](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-processor-host/samples) GitHub.

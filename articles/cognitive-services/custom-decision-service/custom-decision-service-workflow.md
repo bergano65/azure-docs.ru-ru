@@ -1,5 +1,5 @@
 ---
-title: Рабочий процесс Пользовательской службы принятия решений
+title: Рабочий процесс службы Custom Decision
 titlesuffix: Azure Cognitive Services
 description: В этой статье описывается рекомендуемый рабочий процесс для пользовательской службы принятия решений Azure.
 services: cognitive-services
@@ -10,14 +10,15 @@ ms.subservice: custom-decision-service
 ms.topic: conceptual
 ms.date: 06/04/2018
 ms.author: nolachar
-ms.openlocfilehash: 086858f88a1b058e0e94fb356fbd06cf299b14f3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ROBOTS: NOINDEX
+ms.openlocfilehash: cce40c53fdfb052cc6c1f2941b2e3b4ae710ae21
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60580055"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68707202"
 ---
-# <a name="custom-decision-service-workflow"></a>Рабочий процесс Пользовательской службы принятия решений
+# <a name="custom-decision-service-workflow"></a>Рабочий процесс службы Custom Decision
 
 Рекомендуется следовать этому шаблону при создании приложений.
 
@@ -25,7 +26,7 @@ ms.locfileid: "60580055"
 
 Добавьте [строку подключения к службе хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-configure-connection-string).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Зарегистрируйте приложение](custom-decision-service-get-started-register.md) в Пользовательской службе принятия решений.
 * Приступите к оптимизации [веб-страницы](custom-decision-service-get-started-browser.md) или [приложения для смартфона](custom-decision-service-get-started-app.md).
