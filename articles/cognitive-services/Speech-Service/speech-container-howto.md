@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: 0778814d4a228afe3a986426684c7d1f2080b517
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 14a360e7dc672266e8445a5ae5eb2168ae766af8
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68553225"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68741862"
 ---
 # <a name="install-and-run-speech-service-containers"></a>Установка и запуск контейнеров речевых служб
 
@@ -169,7 +169,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-spe
 
 После размещения контейнера на [главном компьютере](#the-host-computer) воспользуйтесь следующей процедурой для работы с ним.
 
-1. [Запустите контейнер](#run-the-container-with-docker-run) с необходимыми, но не используемыми настройками выставления счетов. Доступны дополнительные [примеры](speech-container-configuration.md#example-docker-run-commands) команды `docker run`.
+1. [Запустите контейнер](#run-the-container-with-docker-run) с необходимыми настройками выставления счетов. Доступны дополнительные [примеры](speech-container-configuration.md#example-docker-run-commands) команды `docker run`.
 1. [Запрос конечной точки прогнозирования контейнера](#query-the-containers-prediction-endpoint).
 
 ## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью команды `docker run`
@@ -276,7 +276,7 @@ speech_config = speechsdk.SpeechConfig(
 
 ## <a name="billing"></a>Выставление счетов
 
-Контейнеры распознавания речи отправляют сведения о выставлении счетов  в Azure с помощью речевого ресурса в учетной записи Azure.
+Контейнеры распознавания речи отправляют сведения о выставлении счетов в Azure с помощью речевого ресурса в учетной записи Azure.
 
 [!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 

@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: d03abee7c7a4adb65e1d6146501ee5b7d9e1534c
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 3db63be8856b5bd57323ecd0be767d09032404e9
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68348663"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68741888"
 ---
 # <a name="install-and-run-form-recognizer-containers"></a>Установка и запуск контейнеров Распознавателя документов
 
@@ -32,7 +32,7 @@ ms.locfileid: "68348663"
 
 Прежде чем использовать контейнеры Распознавателя документов, необходимо выполнить следующие условия:
 
-|Обязательно для заполнения|Цель|
+|Обязательное значение|Цель|
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> В ОС Windows для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, таких как реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.|
@@ -56,7 +56,7 @@ ms.locfileid: "68348663"
 
 В приведенной ниже таблице указаны минимальное и рекомендуемое число ядер ЦП и памяти для каждого контейнера Распознавателя документов.
 
-| Контейнер | Минимальная | Рекомендуется |
+| Контейнер | Минимум | Рекомендуется |
 |-----------|---------|-------------|
 |cognitive-services-form-recognizer | 2 ядра, 4 ГБ памяти | 4 ядра, 8 ГБ памяти |
 
@@ -97,14 +97,14 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-form-recogn
 
 После размещения контейнера на [главном компьютере](#the-host-computer) выполните приведенные ниже инструкции для работы с ним.
 
-1. [Запустите контейнер](#run-the-container-by-using-the-docker-run-command) с необходимыми, но не используемыми настройками выставления счетов. Доступны дополнительные [примеры](form-recognizer-container-configuration.md#example-docker-run-commands) команды `docker run`.
+1. [Запустите контейнер](#run-the-container-by-using-the-docker-run-command) с необходимыми настройками выставления счетов. Доступны дополнительные [примеры](form-recognizer-container-configuration.md#example-docker-run-commands) команды `docker run`.
 1. [Запрос конечной точки прогнозирования контейнера](#query-the-containers-prediction-endpoint).
 
 ## <a name="run-the-container-by-using-the-docker-run-command"></a>Команда docker run, выполняющая запуск контейнера
 
 Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска любого из трех контейнеров. В команде используются следующие параметры:
 
-| Placeholder | Значение |
+| Местозаполнитель | Значение |
 |-------------|-------|
 |{FORM_RECOGNIZER_API_KEY} | Этот ключ используется для запуска контейнера. Ключ можно найти на странице **ключей Распознавателя документов** на портале Azure.  |
 |{FORM_RECOGNIZER_ENDPOINT_URI} | Значение URI конечной точки выставления счетов доступно на странице **общих сведений о Распознавателе документов** на портале Azure.|

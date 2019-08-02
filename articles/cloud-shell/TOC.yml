@@ -1,15 +1,13 @@
 - name: Обзор
   href: overview.md
-- name: Быстрый запуск
+- name: Краткое руководство
   items:
     - name: 'Bash: краткое руководство'
       href: quickstart.md
     - name: 'PowerShell: краткое руководство'
       href: quickstart-powershell.md
 - name: Функции и средства
-  items:
-    - name: Функции и средства
-      href: features.md
+  href: features.md
 - name: Учебники
   items:
     - name: Ansible
@@ -22,7 +20,7 @@
       items:
         - name: Создание плана выполнения
           href: example-terraform-bash.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Использование Cloud Shell для пользователей Windows
       href: cloud-shell-windows-users.md
@@ -40,7 +38,7 @@
   href: troubleshooting.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure
     - name: Azure PowerShell
       href: /powershell/azure
