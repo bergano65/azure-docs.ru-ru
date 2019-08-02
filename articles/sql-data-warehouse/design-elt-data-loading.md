@@ -7,15 +7,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: load-data
-ms.date: 05/10/2019
+ms.date: 07/28/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: fa688f40f8eb968f2c388601b387e4f584951a91
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: c90deefba75cd8bbeda126c9da8a05e1069831d4
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67595602"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68597468"
 ---
 # <a name="designing-a-polybase-data-loading-strategy-for-azure-sql-data-warehouse"></a>Проектирование стратегии загрузки данных PolyBase для Хранилища данных SQL Azure
 
@@ -49,9 +49,9 @@ ms.locfileid: "67595602"
 
 ### <a name="polybase-external-file-formats"></a>Форматы внешних файлов PolyBase
 
-PolyBase загружает данные из текстовых файлов с разделителями в кодировке UTF-8 и UTF-16. Кроме текстовых файлов с разделителями данные также загружаются из форматов файлов Hadoop: RC, ORC и PARQUET. PolyBase также может загрузить данные из сжатых файлов Gzip и Snappy. PolyBase в настоящее время не поддерживает расширенную кодировку ASCII, форматы с фиксированной шириной и вложенные форматы, такие как WinZip, JSON и XML. Если вы выполняете экспорт из SQL Server, можно воспользоваться [программой командной строки bcp](/sql/tools/bcp-utility) для экспорта данных в текстовые файлы с разделителями. Parquet с сопоставлением типов данных в хранилище данных SQL выглядит следующим образом:
+PolyBase загружает данные из текстовых файлов с разделителями в кодировке UTF-8 и UTF-16. Кроме текстовых файлов с разделителями данные также загружаются из форматов файлов Hadoop: RC, ORC и PARQUET. PolyBase также может загрузить данные из сжатых файлов Gzip и Snappy. PolyBase в настоящее время не поддерживает расширенную кодировку ASCII, форматы с фиксированной шириной и вложенные форматы, такие как WinZip, JSON и XML. Если вы выполняете экспорт из SQL Server, можно воспользоваться [программой командной строки bcp](/sql/tools/bcp-utility) для экспорта данных в текстовые файлы с разделителями. Сопоставление типов данных Parquet и SQL DW имеет следующий вид:
 
-| **Тип данных parquet** |                      **Тип данных SQL**                       |
+| **Тип данных Parquet** |                      **Тип данных SQL**                       |
 | :-------------------: | :----------------------------------------------------------: |
 |        tinyint        |                           tinyint                            |
 |       smallint        |                           smallint                           |
@@ -73,8 +73,8 @@ PolyBase загружает данные из текстовых файлов с
 |       timestamp       |                          datetime2                           |
 |       timestamp       |                           datetime                           |
 |       timestamp       |                             time                             |
-|       date        | (1) загрузки как int и привести к дате </br> (2) [использовать соединитель хранилища данных SQL Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/databricks-extract-load-sql-data-warehouse#load-data-into-azure-sql-data-warehouse) с </br> spark.conf.set( "spark.sql.parquet.writeLegacyFormat", "true" ) </br> (**обновления, ожидается в ближайшее время**) |
-|        decimal        | [Использование соединителя хранилища данных SQL Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/databricks-extract-load-sql-data-warehouse#load-data-into-azure-sql-data-warehouse) с </br> spark.conf.set( "spark.sql.parquet.writeLegacyFormat", "true" ) </br> (**обновления, ожидается в ближайшее время**) |
+|       date            |                             date                             |
+|        decimal        |                            decimal                           |
 
 ## <a name="2-land-the-data-into-azure-blob-storage-or-azure-data-lake-store"></a>2. Помещение данных в хранилище BLOB-объектов Azure или Azure Data Lake Storage
 
@@ -123,7 +123,7 @@ PolyBase загружает данные из текстовых файлов с
 - [PolyBase с использованием T-SQL](load-data-from-azure-blob-storage-using-polybase.md) хорошо работает, когда данные хранятся в хранилище BLOB-объектов Azure или Azure Data Lake Store. Этот вариант предоставляет наибольший контроль над процессом загрузки, но также требует определения объектов внешних данных. Другие методы определяют эти объекты в фоновом режиме, когда вы сопоставляете исходные таблицы с целевыми.  Для оркестрации загрузок T-SQL можно использовать фабрику данных Azure, службы SSIS или функции Azure. 
 - [PolyBase со службами SSIS](/sql/integration-services/load-data-to-sql-data-warehouse) является оптимальным выбором, когда исходные данные хранятся в SQL Server — локально или в облаке. Службы SSIS определяют сопоставления исходной и целевой таблиц, а также управляют загрузкой. При наличии пакетов служб SSIS можно изменить пакеты для работы с новым назначением хранилища данных. 
 - [PolyBase с фабрикой данных Azure (ADF)](sql-data-warehouse-load-with-data-factory.md) представляет собой другое средство оркестрации.  Оно определяет конвейер и планирует расписания заданий. 
-- [PolyBase с использованием Azure DataBricks](../azure-databricks/databricks-extract-load-sql-data-warehouse.md) передает данные из таблицы хранилища данных SQL в кадр данных Databricks и (или) записывает данные из кадра данных Databricks в таблицу хранилища данных SQL, с помощью PolyBase.
+- [Polybase с помощью Azure](../azure-databricks/databricks-extract-load-sql-data-warehouse.md) Data кирпичей передает данные из таблицы хранилища данных SQL в блок данных DataTable и (или) записывает данные из таблицы данных в таблицу с использованием polybase.
 
 ### <a name="non-polybase-loading-options"></a>Варианты загрузки, отличные от PolyBase
 

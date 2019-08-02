@@ -11,14 +11,13 @@ ms.topic: conceptual
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 03/26/2019
-ms.openlocfilehash: af6cec22ae455e6a6ead4c45fead2d7ff5b708d2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3a59e276c3ec9717634c8f0f3634b7337ebc47d8
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67070507"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567701"
 ---
 # <a name="controlling-and-granting-database-access-to-sql-database-and-sql-data-warehouse"></a>Контроль и предоставление доступа к базе данных SQL и хранилищу данных SQL
 
@@ -52,19 +51,19 @@ ms.locfileid: "67070507"
 - Эти учетные записи входят в пользовательские базы данных в качестве пользователя `dbo`. Они обладают всеми разрешениями в пользовательских базах данных. (Владелец пользовательской базы данных также входит в базу данных в качестве пользователя `dbo`.) 
 - Не входят в базу данных `master` в качестве пользователя `dbo`. Для них назначены ограниченные разрешения в базе данных master. 
 - **Не** являются членами предопределенной роли `sysadmin` стандартного сервера SQL Server, недоступной в базе данных SQL.  
-- Могут создавать, изменять и удалять базы данных, имена для входа, пользователей в базе данных master и правила брандмауэра протокола IP на уровне сервера.
+- Могут создавать, изменять и удалять базы данных, имена для входа, пользователей в базе данных master и правила брандмауэра для IP-адресов на уровне сервера.
 - Могут добавлять и удалять членов в ролях `dbmanager` и `loginmanager`.
 - Могут просматривать системную таблицу `sys.sql_logins`.
 
 ### <a name="configuring-the-firewall"></a>Настройка брандмауэра
 
-Если брандмауэр на уровне сервера настроен для отдельного IP-адреса или диапазона IP-адресов, то **администратор SQL Server** и **администратор Azure Active Directory** смогут подключаться к базе данных master и всем пользовательским базам данных. Первоначальный брандмауэр уровня сервера можно настроить на [портале Azure](sql-database-single-database-get-started.md), с помощью [PowerShell](sql-database-powershell-samples.md) или [REST API](https://msdn.microsoft.com/library/azure/dn505712.aspx). После подключения также можно настроить дополнительные правила брандмауэра протокола IP на уровне сервера с помощью инструкции [Transact-SQL](sql-database-configure-firewall-settings.md).
+Если брандмауэр на уровне сервера настроен для отдельного IP-адреса или диапазона IP-адресов, то **администратор SQL Server** и **администратор Azure Active Directory** смогут подключаться к базе данных master и всем пользовательским базам данных. Первоначальный брандмауэр уровня сервера можно настроить на [портале Azure](sql-database-single-database-get-started.md), с помощью [PowerShell](sql-database-powershell-samples.md) или [REST API](https://msdn.microsoft.com/library/azure/dn505712.aspx). После подключения также можно настроить дополнительные правила брандмауэра для IP-адресов на уровне сервера с помощью инструкции [Transact-SQL](sql-database-configure-firewall-settings.md).
 
 ### <a name="administrator-access-path"></a>Путь доступа администратора
 
 При правильной настройке брандмауэра на уровне сервера **администратор SQL Server** и **администратор Azure Active Directory** смогут подключаться с помощью таких клиентских средств, как SQL Server Management Studio или SQL Server Data Tools. Все функции и возможности доступны только в последних версиях средств. На схеме ниже показана типичная конфигурация для двух учетных записей администраторов.
 
-![Конфигурация из двух администрирования учетных записей](./media/sql-database-manage-logins/1sql-db-administrator-access.png)
+![Настройка двух учетных записей администрирования](./media/sql-database-manage-logins/1sql-db-administrator-access.png)
 
 При использовании открытого порта брандмауэра серверного уровня администраторы могут подключаться к любой базе данных SQL.
 
@@ -217,7 +216,7 @@ EXEC sp_addrolemember 'db_owner', 'Mary';
 - Если владелец роли базы данных пытается добавить или удалить другого пользователя базы данных в роль или из роли базы данных, может произойти следующая ошибка: **Пользователь или роль "Имя" отсутствует в этой базе данных**. Эта ошибка возникает, поскольку данный пользователь не является видимым для владельца. Чтобы устранить эту проблему, предоставьте владельцу роли разрешение `VIEW DEFINITION` по отношению к данному пользователю. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Общие сведения о правилах брандмауэра см. в статье [Обзор правил брандмауэра Базы данных SQL Azure](sql-database-firewall-configure.md).
 - Обзор всех функций защиты в базе данных SQL см. в [этой статье](sql-database-security-overview.md).

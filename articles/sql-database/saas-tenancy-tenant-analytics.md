@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: anjangsh,billgib,genemi
-manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: 6115d7f70c2c75898b18a27af298a44ca87ca1bd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2c24a87377eb4b893cbcae1b9a36522e586a6d56
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66240869"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570157"
 ---
 # <a name="cross-tenant-analytics-using-extracted-data---single-tenant-app"></a>Межклиентская аналитика на основе извлеченных с однотенантного приложения данных
  
@@ -63,9 +62,9 @@ ms.locfileid: "66240869"
 
 Сведения о том, как каждый клиент использует службу, позволяют изучить возможности монетизации и улучшения службы, чтобы повысить эффективность клиентов. В этом руководстве приведены базовые примеры типов важных сведений, которые можно получить из данных клиентов.
 
-## <a name="setup"></a>Настройка
+## <a name="setup"></a>Установка
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством выполните следующие предварительные требования:
 
@@ -91,9 +90,9 @@ ms.locfileid: "66240869"
 2. Задайте в сценарии для переменной $DemoScenario значение в зависимости от хранилища аналитики:
     - Чтобы использовать базу данных SQL без хранилища столбцов, задайте **$DemoScenario** = **2**.
     - Чтобы использовать базу данных SQL с хранилищем столбцов, задайте **$DemoScenario** = **3**.  
-3. Нажмите клавишу **F5** для запуска демонстрационного скрипта (который вызывает *Deploy-TenantAnalytics\<XX > .ps1* скрипта) создает хранилище аналитики клиента. 
+3. Нажмите клавишу **F5** , чтобы запустить демонстрационный сценарий (который вызывает скрипт *deploy-TenantAnalytics\<XX >. ps1* ), который создает хранилище аналитики клиента. 
 
-Теперь, развернутое приложение и заполнили его соответствующими данными клиента, используйте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) для подключения **tenants1-dpt -&lt;пользователя&gt;**  и **catalog-dpt -&lt;пользователя&gt;**  серверов с использованием имени входа = *разработчика*, пароль = *P\@ssword1*. Дополнительные рекомендации см. в этом [ознакомительном руководстве](saas-dbpertenant-wingtip-app-overview.md).
+Теперь, когда вы развернули приложение и заполнили его интересными данными клиента, используйте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) для подключения **tenants1-&lt;DPT&gt; -User** и **Catalog-&lt;DPT-пользователь.&gt;** серверы, использующие имя для входа: *Developer*, Password = *P\@ssword1*. Дополнительные рекомендации см. в этом [ознакомительном руководстве](saas-dbpertenant-wingtip-app-overview.md).
 
 ![Обзор архитектуры](media/saas-tenancy-tenant-analytics/ssmsSignIn.png)
 
@@ -175,7 +174,7 @@ ms.locfileid: "66240869"
 
     ![Вход в Power BI](./media/saas-tenancy-tenant-analytics/powerBISignIn.PNG)
 
-5. Выберите **базы данных** в области слева, затем введите имя пользователя = *разработчика*и введите пароль = *P\@ssword1*. Щелкните **Подключить**.  
+5. Выберите **база данных** на левой панели, введите имя пользователя = *Developer*и введите password = *\@P ssword1*. Щелкните **Подключить**.  
 
     ![Вход в базу данных](./media/saas-tenancy-tenant-analytics/databaseSignIn.PNG)
 
@@ -225,7 +224,7 @@ AverageTicketsSold = AVERAGEX( SUMMARIZE( TableName, TableName[Venue Name] ), CA
 
 Вы рассмотрели тенденции в данных клиентов из приложения WingTip. Вы можете ознакомиться с другими способами того, как приложение может помочь в принятии бизнес-решений поставщикам приложений SaaS. Поставщики могут улучшить удовлетворение потребностей клиентов. В этом руководстве вы узнали о средствах, необходимых для выполнения аналитики данных клиентов, чтобы помочь организации в принятии решений на основе данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы узнали, как:
 

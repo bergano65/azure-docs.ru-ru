@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: anumjs
 ms.author: anjangsh
 ms.reviewer: MightyPen, sstein
-manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: a658e2fe32ec95dfabad54684a0c9095af7a341d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b22a9cf8c79530fd931cbe944ef5bfc876a02243
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61485079"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570137"
 ---
 # <a name="explore-saas-analytics-with-azure-sql-database-sql-data-warehouse-data-factory-and-power-bi"></a>Изучение аналитики SaaS с помощью Базы данных SQL Azure, хранилища данных SQL, фабрики данных и Power BI
 
@@ -63,9 +62,9 @@ ms.locfileid: "61485079"
 
 В этом руководстве приведены базовые примеры важных сведений, которые можно получить из данных Wingtip Tickets. Понимание того, каким образом служба используется в каждом месте проведения, может натолкнуть поставщика Wingtip Tickets на мысль о других планах службы, ориентированных на более или менее активные места проведения. 
 
-## <a name="setup"></a>Настройка
+## <a name="setup"></a>Установка
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 
 > [!NOTE]
 > В этом руководстве используются функции фабрики данных Azure, находящиеся на этапе ограниченной предварительной версии (параметризация связанной службы). Если вы хотите изучить это руководство, укажите идентификатор своей подписки [здесь](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxrVywox1_tHk9wgd5P8SVJUNlFINjNEOElTVFdMUEREMjVVUlJCUDdIRyQlQCN0PWcu). Мы отправим подтверждающее сообщение сразу после активации вашей подписки.
@@ -94,7 +93,7 @@ ms.locfileid: "61485079"
 
 Теперь просмотрите развернутые ресурсы Azure.
 #### <a name="tenant-databases-and-analytics-store"></a>Базы данных клиентов и хранилище аналитики
-Подключитесь к серверам **tenants1-dpt-&lt;пользователь&gt;** и **catalog-dpt-&lt;пользователь&gt;** с помощью [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms). Замените &lt;user&gt; значением, используемым при развертывании приложения. Используйте имя входа = *разработчика* и пароль = *P\@ssword1*. Дополнительные рекомендации см. в этом [ознакомительном руководстве](saas-dbpertenant-wingtip-app-overview.md).
+Подключитесь к серверам **tenants1-dpt-&lt;пользователь&gt;** и **catalog-dpt-&lt;пользователь&gt;** с помощью [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms). Замените &lt;user&gt; значением, используемым при развертывании приложения. Используйте имя входа = *Developer* и password *=\@P ssword1*. Дополнительные рекомендации см. в этом [ознакомительном руководстве](saas-dbpertenant-wingtip-app-overview.md).
 
 ![Подключение к серверу Базы данных SQL из SSMS](media/saas-tenancy-tenant-analytics/ssmsSignIn.JPG)
 
@@ -110,7 +109,7 @@ ms.locfileid: "61485079"
 
 ![DWtables](media/saas-tenancy-tenant-analytics/DWtables.JPG)
 
-#### <a name="blob-storage"></a>Хранилище BLOB-объектов
+#### <a name="blob-storage"></a>Хранилище больших двоичных объектов
 1. На [портале Azure](https://ms.portal.azure.com) перейдите к группе ресурсов, используемой для развертывания приложения. Проверьте, добавлена ли учетная запись хранения с именем **wingtipstaging\<пользователь\>** .
 
    ![DWtables](media/saas-tenancy-tenant-analytics/adf-staging-storage.PNG)
@@ -195,7 +194,7 @@ ms.locfileid: "61485079"
 
     ![sign-in-to-power-bi](./media/saas-tenancy-tenant-analytics/powerBISignIn.PNG)
 
-5. Выберите **базы данных** в области слева, затем введите имя пользователя = *разработчика*и введите пароль = *P\@ssword1*. Щелкните **Подключить**.  
+5. Выберите **база данных** на левой панели, введите имя пользователя = *Developer*и введите password = *\@P ssword1*. Щелкните **Подключить**.  
 
     ![database-sign-in](./media/saas-tenancy-tenant-analytics/databaseSignIn.PNG)
 
@@ -247,7 +246,7 @@ AverageTicketsSold = DIVIDE(DIVIDE(COUNTROWS(fact_Tickets),DISTINCT(dim_Venues[V
 В примере Wingtip Tickets ранее была выявлена связь между продажами билетов и прогнозируемыми шаблонами. Это представление может использоваться для увеличения объемов продажи билетов в местах проведения с низкими показателями. Вероятно, здесь можно использовать методы машинного обучения для прогнозирования продаж билетов для мероприятий. Можно также смоделировать последствия изменения цен, чтобы можно было предсказать влияние предложения скидок. Power BI Embedded можно интегрировать в приложение управления событиями для визуализации прогнозируемых продаж, включая влияние скидок на общее количество проданных мест и выручки от событий с низким объемом продаж. С Power BI Embedded можно даже интегрировать фактическое применение скидки к ценам на билеты непосредственно в интерфейсе визуализации.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы узнали, как:
 

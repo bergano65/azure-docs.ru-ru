@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: anjangsh,billgib,genemi
-manager: craigg
 ms.date: 09/19/2018
-ms.openlocfilehash: 4bf97c0c447bfabc1454959d457bbd50f3490299
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b36911d274a3afb3582d60ea7e85b5afd5f52ece
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66242803"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570284"
 ---
 # <a name="cross-tenant-analytics-using-extracted-data---multi-tenant-app"></a>Получение межклиентской аналитики на основе извлеченных с мультитенантного приложения данных
  
@@ -64,9 +63,9 @@ ms.locfileid: "66242803"
 
 Понимание того, насколько согласованно каждый клиент использует службу, дает возможность создать планы обслуживания для удовлетворения соответствующих потребностей. В этом руководстве приведены базовые примеры подробных сведений, которые можно получить из данных клиента.
 
-## <a name="setup"></a>Настройка
+## <a name="setup"></a>Установка
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством выполните следующие предварительные требования:
 
@@ -92,9 +91,9 @@ ms.locfileid: "66242803"
 2. Задайте в сценарии для переменной $DemoScenario значение в зависимости от выбранного хранилища аналитики. В целях обучения рекомендуется использовать базу данных SQL без columnstore.
     - Чтобы использовать базу данных SQL без columnstore, задайте **$DemoScenario** = **2**.
     - Чтобы использовать базу данных SQL с columnstore, задайте **$DemoScenario** = **3**.  
-3. Нажмите клавишу **F5** для запуска демонстрационного скрипта (который вызывает *Deploy-TenantAnalytics\<XX > .ps1* скрипта) создает хранилище аналитики клиента. 
+3. Нажмите клавишу **F5** , чтобы запустить демонстрационный сценарий (который вызывает скрипт *deploy-TenantAnalytics\<XX >. ps1* ), который создает хранилище аналитики клиента. 
 
-Теперь, развернутое приложение и заполнили его соответствующими данными клиента, используйте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) для подключения **tenants1-mt -\<пользователя\>**  и **catalog-mt -\<пользователя\>**  серверов с использованием имени входа = *разработчика*, пароль = *P\@ssword1*.
+Теперь, когда вы развернули приложение и заполнили его интересными данными клиента, используйте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) для подключения к **tenants1\<-\> MT-User** и **Catalog\<-MT-пользователь\>.** серверы, использующие имя для входа: *Developer*, Password = *P\@ssword1*.
 
 ![Обзор архитектуры](media/saas-multitenantdb-tenant-analytics/ssmsSignIn.png)
 
@@ -176,7 +175,7 @@ ms.locfileid: "66242803"
 
     ![powerBISignIn](media/saas-multitenantdb-tenant-analytics/powerBISignIn.PNG)
 
-5. Выберите **базы данных** в области слева, затем введите имя пользователя = *разработчика*и введите пароль = *P\@ssword1*. Щелкните **Подключить**.  
+5. Выберите **база данных** на левой панели, введите имя пользователя = *Developer*и введите password = *\@P ssword1*. Щелкните **Подключить**.  
 
     ![DatabaseSignIn](media/saas-multitenantdb-tenant-analytics/databaseSignIn.PNG)
 
@@ -226,7 +225,7 @@ AverageTicketsSold = DIVIDE(DIVIDE(COUNTROWS(fact_Tickets),DISTINCT(dim_Venues[V
 
 Вы рассмотрели тенденции в данных клиентов из мультитенантного приложения SaaS Wingtip Tickets для базы данных. Вы можете ознакомиться с другими способами того, как приложение может помочь в принятии бизнес-решений поставщикам приложений SaaS. Поставщики могут улучшить удовлетворение потребностей клиентов. В этом руководстве вы узнали о средствах, необходимых для выполнения аналитики данных клиентов, чтобы помочь организации в принятии решений на основе данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы узнали, как:
 

@@ -1,18 +1,18 @@
 ---
 title: Матрица поддержки Azure Backup для резервного копирования виртуальных машин Azure
 description: В этой статье предлагается сводка параметров и ограничений поддержки при резервном копировании виртуальных машин Azure с помощью службы Azure Backup.
-author: rayne-wiselman
+author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 07/02/2019
-ms.author: raynew
-ms.openlocfilehash: 3b979b6bcf2078e83564a8f008d392fd8e0a7c78
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.author: dacurwin
+ms.openlocfilehash: 2556887008ecbe081168d3fc81fa07b45cda4bcb
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68464903"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639600"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Матрица поддержки для резервного копирования виртуальных машин Azure
 Вы можете использовать [службу Azure Backup](backup-overview.md) для резервного копирования локальных компьютеров и рабочих нагрузок, а также виртуальных машин Azure. В этой статье перечислены параметры поддержки и ограничения при резервном копировании виртуальных машин Azure с помощью Azure Backup.
