@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/03/2019
 ms.author: tamram
 ms.reviewer: cbrooks
-ms.openlocfilehash: 5d0b41344f4a77f3205799be7c30526e2a150523
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: bb2d5733704b0b31dc010cec2a90e99e1be07b56
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68479914"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68592028"
 ---
 # <a name="advanced-threat-protection-for-azure-storage"></a>Расширенная защита от угроз для службы хранилища Azure
 
@@ -46,14 +46,14 @@ ms.locfileid: "68479914"
 
 При оформлении подписки на уровень "Стандартный" в центре безопасности Azure автоматически настраивается для всех учетных записей хранения. Вы можете включить или отключить расширенную защиту от угроз для учетных записей хранения в определенной подписке следующим образом:
 
-1. Запустите **Центр безопасности Azure** на [портал Azure]([https://portal.azure.com).
+1. Запустите **Центр безопасности Azure** на [портал Azure](https://portal.azure.com).
 1. В главном меню щелкните **цены & параметры**.
 1. Щелкните подписку, для которой необходимо включить или отключить защиту от угроз для учетных записей хранения.
 
     ![Выбрать подписку](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-subscription.png)
 
 1. Щелкните **Ценовая категория**.
-1. В разделе **Выбор ценовой категории по типу ресурса** в строке учетные **записи хранения** щелкните **включено** или отключено .
+1. В разделе **Выбор ценовой категории по типу ресурса** в строке учетные **записи хранения** щелкните **включено** или отключено.
 
     ![Включение ATP в центре безопасности](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-pricing2.png)
 1. Нажмите кнопку **Сохранить**.

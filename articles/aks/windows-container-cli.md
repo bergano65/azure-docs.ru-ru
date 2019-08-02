@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 06/17/2019
 ms.author: mlearned
 ms.openlocfilehash: 305901007180cfb197cf5c0dfb338800449560a1
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68382032"
 ---
 # <a name="preview---create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Предварительный просмотр. Создание контейнера Windows Server в кластере Azure Kubernetes Service (AKS) с помощью Azure CLI
@@ -42,7 +42,7 @@ ms.locfileid: "68382032"
 
 ### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки aks-preview
 
-Для использования контейнеров Windows Server требуется расширение CLI *AKS-Preview* версии 0.4.1 или более поздней. Установите расширение Azure CLI *AKS-Preview* с помощью команды [AZ Extension Add][az-extension-add] command, then check for any available updates using the [az extension update][az-extension-update] ::
+Для использования контейнеров Windows Server требуется расширение CLI *AKS-Preview* версии 0.4.1 или более поздней. Установите расширение Azure CLI *AKS-Preview* с помощью команды [AZ Extension Add][az-extension-add] , а затем проверьте наличие доступных обновлений с помощью команды [AZ Extension Update][az-extension-update] :
 
 ```azurecli-interactive
 # Install the aks-preview extension
@@ -120,7 +120,7 @@ az group create --name myResourceGroup --location eastus
 
 ## <a name="create-an-aks-cluster"></a>Создание кластера AKS
 
-Чтобы запустить кластер AKS, который поддерживает пулы узлов для контейнеров Windows Server, кластер должен использовать сетевую политику, которая использует [Azure CNI][azure-cni-about] (advanced) network plugin. For more detailed information to help plan out the required subnet ranges and network considerations, see [configure Azure CNI networking][use-advanced-networking]. Используйте команду [AZ AKS Create][AZ-AKS-Create] , чтобы создать кластер AKS с именем *myAKSCluster*. Эта команда создает необходимые сетевые ресурсы, если они не существуют.
+Чтобы запустить кластер AKS, который поддерживает пулы узлов для контейнеров Windows Server, кластер должен использовать сетевую политику, которая использует подключаемый модуль сети [Azure CNI][azure-cni-about] (дополнительно). Дополнительные сведения о планировании требуемых диапазонов подсетей и сетевых факторов см. в статье [Настройка сетей Azure CNI][use-advanced-networking]. Используйте команду [AZ AKS Create][az-aks-create] , чтобы создать кластер AKS с именем *myAKSCluster*. Эта команда создает необходимые сетевые ресурсы, если они не существуют.
   * В кластере настроен один узел
   * Параметры *Windows-Admin-Password* и *Windows-Admin-username* устанавливают учетные данные администратора для всех контейнеров Windows Server, созданных в кластере.
 
@@ -194,7 +194,7 @@ aksnpwin987654                      Ready    agent   108s   v1.14.1
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
-Файл манифеста Kubernetes определяет требуемое состояние для кластера, включая образы контейнеров, которые нужно запустить. В этой статье манифест используется для создания всех объектов, необходимых для запуска примера приложения ASP.NET в контейнере Windows Server. Этот манифест включает [развертывание][kubernetes-deployment] for the ASP.NET sample application and an external [Kubernetes service][kubernetes-service] Kubernetes для доступа к приложению из Интернета.
+Файл манифеста Kubernetes определяет требуемое состояние для кластера, включая образы контейнеров, которые нужно запустить. В этой статье манифест используется для создания всех объектов, необходимых для запуска примера приложения ASP.NET в контейнере Windows Server. Этот манифест включает [развертывание Kubernetes][kubernetes-deployment] для примера приложения ASP.NET и внешней [службы Kubernetes][kubernetes-service] для доступа к приложению из Интернета.
 
 Пример приложения ASP.NET предоставляется как часть [примеров .NET Framework][dotnet-samples] и выполняется в контейнере Windows Server. AKS требует, чтобы контейнеры Windows Server были основаны на образах *Windows server 2019* или более поздней версии. Файл манифеста Kubernetes должен также определять [селектор узла][node-selector] , чтобы сообщить кластеру AKS о необходимости запуска модуля pod приложения ASP.NET на узле, который может запускать контейнеры Windows Server.
 
@@ -269,7 +269,7 @@ service/sample created
 kubectl get service sample --watch
 ```
 
-Изначально *внешний IP-адрес* для *примера* службы отображается как ожидающий .
+Изначально *внешний IP-адрес* для *примера* службы отображается как ожидающий.
 
 ```
 NAME               TYPE           CLUSTER-IP   EXTERNAL-IP   PORT(S)        AGE

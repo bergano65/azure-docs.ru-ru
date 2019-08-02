@@ -3,7 +3,7 @@ title: Общие сведения о коллекциях Reliable Collections 
 description: Службы с отслеживанием состояния Service Fabric предоставляют надежные коллекции, которые позволяют создавать высокодоступные и масштабируемые облачные приложения с низкой задержкой.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: masnider,rajak,zhol
 ms.assetid: 62857523-604b-434e-bd1c-2141ea4b00d1
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 1/3/2019
-ms.author: aljo
-ms.openlocfilehash: 4ed76b207db4712058b5524cd1b31fd65b0e19a4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: atsenthi
+ms.openlocfilehash: a7b30003fd02f8ab2e367311cdb3f56c80dbb4b2
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60773643"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599265"
 ---
 # <a name="introduction-to-reliable-collections-in-azure-service-fabric-stateful-services"></a>Введение в надежные коллекции в службах с отслеживанием состояния Azure Service Fabric
 
@@ -56,10 +56,10 @@ API надежных коллекций являются развитием API 
 * [надежная очередь](https://msdn.microsoft.com/library/azure/dn971527.aspx) (реплицируемая, транзакционная и асинхронная очередь, функционирующая строго по методу FIFO); как и в **ConcurrentQueue**, значение может быть любого типа).
 * [надежная параллельная очередь](service-fabric-reliable-services-reliable-concurrent-queue.md) (реплицируемая, транзакционная и асинхронная упорядочивающая очередь для обеспечения высокой пропускной способности). Как и в **ConcurrentQueue**, значение может быть любого типа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Reliable Collections: руководства и рекомендации](service-fabric-reliable-services-reliable-collections-guidelines.md)
-* [Работа с Reliable Collections](service-fabric-work-with-reliable-collections.md)
+* [Работа с надежными коллекциями](service-fabric-work-with-reliable-collections.md)
 * [Транзакции и блокировки](service-fabric-reliable-services-reliable-collections-transactions-locks.md)
 * Управление данными
   * [Резервное копирование и восстановление](service-fabric-reliable-services-backup-restore.md)
@@ -67,6 +67,6 @@ API надежных коллекций являются развитием API 
   * [Сериализация надежной коллекции](service-fabric-reliable-services-reliable-collections-serialization.md)
   * [Влияние сериализации данных на обновление приложений](service-fabric-application-upgrade-data-serialization.md)
   * [Конфигурация диспетчера надежных состояний](service-fabric-reliable-services-configuration.md)
-* Прочее
+* Другие
   * [Краткое руководство по надежным службам Reliable Services](service-fabric-reliable-services-quick-start.md)
   * [Справочник разработчика по надежным коллекциям](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: mbullwin
-ms.openlocfilehash: 2ec3b620138c4ae0487c29e38062c044a5210572
-ms.sourcegitcommit: da0a8676b3c5283fddcd94cdd9044c3b99815046
+ms.openlocfilehash: 9bedb74f4e882ac6e4206ee7fef676c94dc2422d
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314795"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68717453"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -30,7 +30,7 @@ ms.locfileid: "68314795"
 
 Этот основной API используется на всех платформах, за некоторыми исключениями, например `GetMetric` (только в .NET).
 
-| Метод | Область использования |
+| Метод | Назначение |
 | --- | --- |
 | [`TrackPageView`](#page-views) |Страницы, экраны, колонки или формы. |
 | [`TrackEvent`](#trackevent) |Действия пользователя и другие события. Используется для отслеживания поведения пользователя или мониторинга производительности. |
@@ -54,7 +54,7 @@ ms.locfileid: "68314795"
   * [проект Java;](../../azure-monitor/app/java-get-started.md)
   * [проект Node.js;](../../azure-monitor/app/nodejs.md)
   * [JavaScript на каждой веб-странице.](../../azure-monitor/app/javascript.md) 
-* В программный код устройства или веб-сервера необходимо добавить:
+* В коде устройства или веб-сервера включите:
 
     *C#:* `using Microsoft.ApplicationInsights;`
 
@@ -163,8 +163,6 @@ telemetry.trackEvent({name: "WinGame"});
 *C#*
 
 ```csharp
-#pragma warning disable CA1716  // Namespace naming
-
 namespace User.Namespace.Example01
 {
     using System;
@@ -741,7 +739,7 @@ telemetry.flush();
 
 Желательно использовать в действии завершения работы для приложения метод flush().
 
-## <a name="authenticated-users"></a>Прошедшие проверку пользователи
+## <a name="authenticated-users"></a>Пользователи, прошедшие проверку подлинности
 
 В веб-приложении пользователи по умолчанию идентифицируются файлами cookie. Пользователь может быть учтен более одного раза при доступе к приложению с другого компьютера или браузера либо при удалении файлов cookie.
 
@@ -1206,7 +1204,7 @@ telemetry.Context.Operation.Name = "MyOperationName";
 
 * *Какие исключения могут создаваться при вызовах Track_()?*
 
-    Отсутствует. Вам не нужно помещать их в предложения try-catch. Если пакет SDK сталкивается с проблемами, он добавляет в журнал сообщения, которые отображаются в консоли отладки и, если сообщения проходят, — в поиске по журналу диагностики.
+    Нет. Вам не нужно помещать их в предложения try-catch. Если пакет SDK сталкивается с проблемами, он добавляет в журнал сообщения, которые отображаются в консоли отладки и, если сообщения проходят, — в поиске по журналу диагностики.
 * *Существует ли REST API для получения данных из портала?*
 
     Да, [API доступа к данным](https://dev.applicationinsights.io/). К другим способам извлечения данных относятся [экспорт из Analytics в Power BI](../../azure-monitor/app/export-power-bi.md ) и [непрерывный экспорт](../../azure-monitor/app/export-telemetry.md).

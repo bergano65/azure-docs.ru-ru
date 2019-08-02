@@ -12,20 +12,23 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 03/15/2017
+ms.date: 07/25/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5104d630e2b4e97b80a6fedfb6d863061c2722fb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9d3f4f4ab6cc1c928761fce740d39f3f73426e62
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61416339"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68516793"
 ---
 # <a name="deploy-storsimple-virtual-array---provision-in-hyper-v"></a>Развертывание виртуального массива StorSimple — подготовка в Hyper-V
 ![](./media/storsimple-virtual-array-deploy2-provision-hyperv/hyperv4.png)
 
 ## <a name="overview"></a>Обзор
+
+[!INCLUDE [storsimple-virtual-array-eol-banner](../../includes/storsimple-virtual-array-eol-banner.md)]
+
 В этом руководстве описано, как подготовить виртуальный массив StorSimple в главной системе, в которой выполняется Hyper-V на платформе Windows Server 2012 R2, Windows Server 2012 или Windows Server 2008 R2. Сведения, приведенные в этой статье, относятся к развертыванию виртуальных массивов StorSimple на портале Azure, а также в облаке Microsoft Azure для государственных организаций.
 
 Чтобы подготовить и настроить виртуальный массив, требуются права администратора. Подготовка и начальная настройка могут занять около 10 минут.
@@ -67,7 +70,7 @@ ms.locfileid: "61416339"
 
 В следующих разделах отдельно рассматривается каждый шаг.
 
-## <a name="step-1-ensure-that-the-host-system-meets-minimum-virtual-array-requirements"></a>Шаг 1. Обеспечение соответствия главной системы минимальным требованиям к подготовке виртуального массива
+## <a name="step-1-ensure-that-the-host-system-meets-minimum-virtual-array-requirements"></a>Шаг 1.: Обеспечение соответствия главной системы минимальным требованиям к подготовке виртуального массива
 Для создания виртуального массива вам потребуются:
 
 * Роль Hyper-V, установленная в ОС Windows Server 2012 R2, Windows Server 2012 или Windows Server 2008 R2 с пакетом обновления 1 (SP1).
@@ -80,7 +83,7 @@ ms.locfileid: "61416339"
 * Один сетевой интерфейс.
 * Виртуальный диск размером 500 ГБ для системных данных.
 
-## <a name="step-2-provision-a-virtual-array-in-hypervisor"></a>Шаг 2. Подготовка виртуального массива в низкоуровневой оболочке
+## <a name="step-2-provision-a-virtual-array-in-hypervisor"></a>Шаг 2.: Подготовка виртуального массива в низкоуровневой оболочке
 Для подготовки устройства в низкоуровневой оболочке выполните указанные ниже действия.
 
 #### <a name="to-provision-a-virtual-array"></a>Подготовка виртуального массива
@@ -214,6 +217,6 @@ ms.locfileid: "61416339"
 * Выполните диагностические тесты для [устранения неполадок при настройке веб-интерфейса](storsimple-ova-web-ui-admin.md#troubleshoot-web-ui-setup-errors).
 * [Создайте пакет журнала и просмотрите файлы журнала](storsimple-ova-web-ui-admin.md#generate-a-log-package).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Deploy StorSimple Virtual Array - Set up as file server (Preview) (Развертывание виртуального массива StorSimple — настройка в качестве файлового сервера (предварительная версия))](storsimple-virtual-array-deploy3-fs-setup.md)
 * [Deploy StorSimple Virtual Array – Set up your virtual device as an iSCSI server (preview) (Развертывание виртуального массива StorSimple — настройка в качестве сервера iSCSI (предварительная версия))](storsimple-virtual-array-deploy3-iscsi-setup.md)

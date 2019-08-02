@@ -99,16 +99,20 @@
           href: howto-build-iotc-device-bridge.md
     - name: Администрирование
       items:
-        - name: Администрирование приложения
+        - name: Управление приложением
           href: howto-administer.md
+        - name: Управление пользователями и ролями
+          href: howto-manage-users-roles.md
+        - name: Просмотр счетов
+          href: howto-view-bill.md
+        - name: Настройка пользовательского интерфейса приложения
+          href: howto-customize-ui.md
         - name: Подготовка и передача изображения
           href: howto-prepare-images.md
         - name: Настройка панели мониторинга приложений
           href: howto-configure-homepage.md
         - name: Использование плиток панелей мониторинга
           href: howto-use-tiles.md
-        - name: Настройка пользовательского интерфейса приложения
-          href: howto-customize-ui.md
         - name: Использование шаблонов приложений
           href: howto-use-app-templates.md
         - name: Управление с помощью портала Azure

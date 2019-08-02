@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 12/08/2016
 ms.author: jucoriol
 ms.custom: mvc
-ms.openlocfilehash: f28ea3dd2837a241c538057bd118409d4f5b858a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8990f1f8e4cda5a6cc8b8d3197b843662b1397a5
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60643772"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68598538"
 ---
 # <a name="deprecated-full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-docker-swarm-using-azure-devops-services"></a>Полный конвейер средств непрерывной интеграции и доставки для развертывания многоконтейнерного приложения в Службе контейнеров Azure с Docker Swarm с использованием Azure DevOps Services (не рекомендуется)
 
@@ -41,7 +41,7 @@ ms.locfileid: "60643772"
 1. Docker Swarm в кластере извлекает последнюю версию образов. 
 1. Развертывается новая версия приложения с помощью Docker Compose. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется выполнить следующие задачи:
 
@@ -162,7 +162,7 @@ ms.locfileid: "60643772"
 
 1. Настроив действия сборки и принудительной отправки для каждого из пяти образов, добавьте еще два действия в рабочий процесс сборки.
 
-    a. Задача командной строки, которая использует bash-скрипт для замены вхождения *BuildNumber* в файле docker-compose.yml текущим идентификатором сборки. Подробнее показано на следующем снимке экрана.
+    1\. Задача командной строки, которая использует bash-скрипт для замены вхождения *BuildNumber* в файле docker-compose.yml текущим идентификатором сборки. Подробнее показано на следующем снимке экрана.
 
     ![Azure DevOps Services — обновление файла Compose](./media/container-service-docker-swarm-setup-ci-cd/vsts-build-replace-build-number.png)
 
@@ -225,4 +225,4 @@ Azure DevOps Services позволяет [управлять выпусками 
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* Дополнительные сведения о CI/CD в Azure DevOps Services см. на странице об [Azure Pipelines](https://www.visualstudio.com/docs/build/overview).
+* Дополнительные сведения о CI/CD с Azure DevOps Services см. в статье [Azure pipelines документация](/azure/devops/pipelines/?view=azure-devops) .

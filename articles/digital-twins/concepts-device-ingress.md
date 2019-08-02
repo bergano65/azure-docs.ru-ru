@@ -6,14 +6,14 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 12/14/2018
+ms.date: 07/29/2019
 ms.author: alinast
-ms.openlocfilehash: 35d12d0114f9677905c85a9df94ecd074e5f8f75
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a3a5555bf163aedd9b41a9c9aa363a883deb4cb8
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60926085"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638518"
 ---
 # <a name="device-connectivity-and-telemetry-ingress"></a>Возможность подключения устройств и входящие данные телеметрии
 
@@ -50,7 +50,7 @@ YOUR_MANAGEMENT_API_URL/devices/YOUR_DEVICE_GUID?includes=ConnectionString
 | *YOUR_DEVICE_GUID* | идентификатор устройства; |
 
 ```plaintext
-YOUR_MANAGEMENT_API_URL/devices?hardwareIds=YOUR_DEVICE_HARDWARE_ID&includes=ConnectionString
+YOUR_MANAGEMENT_API_URL/devices?HardwareIds=YOUR_DEVICE_HARDWARE_ID&includes=ConnectionString
 ```
 
 | Значение параметра | Заменить на |
@@ -61,13 +61,13 @@ YOUR_MANAGEMENT_API_URL/devices?hardwareIds=YOUR_DEVICE_HARDWARE_ID&includes=Con
 
 ## <a name="device-to-cloud-message"></a>Сообщение с устройства в облако
 
-Вы можете настроить формат сообщений и полезные данные устройства в соответствии с потребностями вашего решения. Используйте любой контракт данных, который можно сериализовать в массив или поток байтов, который поддерживается [классом сообщений клиента устройств Azure IoT, Message(byte[] byteArray)](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.message.-ctor?view=azure-dotnet#Microsoft_Azure_Devices_Client_Message__ctor_System_Byte___). Сообщение может содержать пользовательский двоичный формат по вашему выбору, пока вы декодируете контракт данных в соответствующей определяемой пользователем функции. К сообщениям, отправляемым с устройства в облако, применяется только одно требование. Необходимо поддерживать набор свойств, чтобы убедиться в том, что ваше сообщение будет соответствующим образом направлено механизму обработки.
+Вы можете настроить формат сообщений и полезные данные устройства в соответствии с потребностями вашего решения. Используйте любой контракт данных, который можно сериализовать в массив или поток байтов, который поддерживается [классом сообщений клиента устройств Azure IoT, Message(byte[] byteArray)](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.message.-ctor?view=azure-dotnet#Microsoft_Azure_Devices_Client_Message__ctor_System_Byte___). Сообщение может содержать пользовательский двоичный формат по вашему выбору, пока вы декодируете контракт данных в соответствующей определяемой пользователем функции. К сообщениям, отправляемым с устройства в облако, применяется только одно требование. Настройте набор свойств, чтобы обеспечить правильную маршрутизацию сообщения в механизм обработки.
 
 ### <a name="telemetry-properties"></a>Свойства телеметрии
 
  Содержимое полезных данных **сообщения** может быть произвольными данными размером до 256 КБ. Существует ряд требований, ожидаемый для свойств типа [`Message.Properties`](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.message.properties?view=azure-dotnet). В таблице показаны обязательные и необязательные свойства, поддерживаемые системой.
 
-| Имя свойства | Значение | Обязательно для заполнения | Описание |
+| Имя свойства | Значение | Обязательное значение | Описание |
 |---|---|---|---|
 | **DigitalTwins-Telemetry** | 1.0 | Да | Постоянное значение, которое идентифицирует сообщение в системе. |
 | **DigitalTwins-SensorHardwareId** | `string(72)` | Да | Уникальный идентификатор датчика, отправляющего **сообщение**. Это значение должно соответствовать свойству **HardwareId** объекта, чтобы система могла его обработать. Например, `00FF0643BE88-CO2`. |
@@ -78,6 +78,6 @@ YOUR_MANAGEMENT_API_URL/devices?hardwareIds=YOUR_DEVICE_HARDWARE_ID&includes=Con
 
 Используйте вызов [SendEventAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.sendeventasync?view=azure-dotnet) или [SendEventBatchAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.sendeventbatchasync?view=azure-dotnet) свойства DeviceClient для отправки сообщения в Digital Twins.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о возможностях обработки данных Azure Digital Twins и определяемых пользователем функциях см. в статье [Обработка данных и определяемые пользователем функции](concepts-user-defined-functions.md).

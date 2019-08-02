@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
 ms.reviewer: jrasnik
-manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: ce559e50d5a34ebad9113f0e21dcb732adc40dd2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f0994f92444da338b18447eb1b248c74df9aa2d2
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65233789"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566103"
 ---
 # <a name="event-file-target-code-for-extended-events-in-sql-database"></a>Код целевого файла событий для расширенных событий в Базе данных SQL
 
@@ -35,11 +34,11 @@ ms.locfileid: "65233789"
   * назначение контейнера хранилища Azure для целевого файла событий;
   * создание и запуск сеанса событий и т. д.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
 * Учетная запись и подписка Azure. Вы можете зарегистрироваться, чтобы получить [бесплатную пробную версию](https://azure.microsoft.com/pricing/free-trial/).
 * Любая база данных, позволяющая создать таблицу.
@@ -52,7 +51,7 @@ ms.locfileid: "65233789"
   * [Прямая ссылка на загрузку.](https://go.microsoft.com/fwlink/?linkid=616025)
 * Установленные [модули Azure PowerShell](https://go.microsoft.com/?linkid=9811175) .
   
-  * Модули предоставляют команды, такие как - **New AzStorageAccount**.
+  * Модули предоставляют команды, такие как- **New-азсторажеаккаунт**.
 
 ## <a name="phase-1-powershell-code-for-azure-storage-container"></a>Этап 1. Код PowerShell для контейнера службы хранилища Azure
 
@@ -72,7 +71,7 @@ ms.locfileid: "65233789"
 
 ### <a name="powershell-code"></a>Код PowerShell
 
-Этот сценарий PowerShell предполагается, что вы уже установили модуль Az. Сведения см. в разделе [установить модуль Azure PowerShell](/powershell/azure/install-Az-ps).
+В этом сценарии PowerShell предполагается, что вы уже установили модуль AZ. Дополнительные сведения см. [в разделе Установка модуля Azure PowerShell](/powershell/azure/install-Az-ps).
 
 ```powershell
 ## TODO: Before running, find all 'TODO' and make each edit!!
@@ -462,11 +461,11 @@ GO
 ```
 
 
-## <a name="output"></a>Выход
+## <a name="output"></a>Вывод
 
-После того как сценарий Transact-SQL будет выполнен, щелкните ячейку под заголовком столбца **event_data_XML**. Один  **\<событий >** отображается элемент, который содержит инструкцию UPDATE.
+После того как сценарий Transact-SQL будет выполнен, щелкните ячейку под заголовком столбца **event_data_XML**. Отображается один  **\<элемент события >** , в котором показана одна инструкция UPDATE.
 
-Ниже приведен один из  **\<событий >** элемент, который был создан во время тестирования:
+Ниже приведен один  **\<элемент > событий** , созданный во время тестирования:
 
 
 ```xml
@@ -528,7 +527,7 @@ SELECT 'AFTER__Updates', EmployeeKudosCount, * FROM gmTabEmployee;
   
   * Учетная запись хранения Azure при этом не нужна.
 
-## <a name="more-information"></a>Дополнительные сведения
+## <a name="more-information"></a>Дополнительная информация
 
 Дополнительные сведения об учетных записях и контейнерах в службе хранилища Azure см. в следующих статьях:
 

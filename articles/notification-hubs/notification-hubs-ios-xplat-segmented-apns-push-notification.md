@@ -12,16 +12,16 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-ios
 ms.devlang: objective-c
 ms.topic: article
-ms.date: 01/04/2019
+ms.date: 07/28/2019
 ms.author: jowargo
-ms.openlocfilehash: dd625dba0e125ccf993af524a0ab0c0cc66555fb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f83afa62859dee5963749daf2555af08cf6a0e0b
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60873170"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68663824"
 ---
-# <a name="tutorial-push-notifications-to-specific-ios-devices-using-azure-notification-hubs"></a>Руководство по Отправка push-уведомлений на определенные устройства iOS с помощью службы "Центры уведомлений Azure"
+# <a name="tutorial-push-notifications-to-specific-ios-devices-using-azure-notification-hubs"></a>Учебник. Отправка push-уведомлений на определенные устройства iOS с помощью службы "Центры уведомлений Azure"
 
 [!INCLUDE [notification-hubs-selector-breaking-news](../../includes/notification-hubs-selector-breaking-news.md)]
 
@@ -39,9 +39,9 @@ ms.locfileid: "60873170"
 > * отправка уведомлений с устройства;
 > * Запуск приложения и создание уведомлений
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>предварительные требования
 
-Материал данной статьи основан на приложении, созданном в статье [Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure][get-started] Перед началом работы с данным руководством необходимо изучить статью [Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure][get-started]
+Материал данной статьи основан на приложении, созданном в статье [Руководство Push-уведомления в приложения iOS с помощью концентраторов][get-started]уведомлений Azure. Перед началом работы с данным руководством необходимо изучить статью [Руководство Push-уведомления в приложения iOS с помощью концентраторов][get-started]уведомлений Azure.
 
 ## <a name="add-category-selection-to-the-app"></a>Добавление возможности выбора категорий в приложение
 
@@ -174,10 +174,10 @@ ms.locfileid: "60873170"
 
     На этом этапе в методе `didRegisterForRemoteNotificationsWithDeviceToken` не должно быть никакого другого кода.
 
-10. Изучив статью [Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure][get-started], в файле `AppDelegate.m` должны присутствовать указанные методы. В противном случае добавьте их.
+10. Следующие методы уже должны присутствовать в `AppDelegate.m` учебнике начало работы [с центрами уведомлений][get-started] . В противном случае добавьте их.
 
     ```objc
-    -(void)MessageBox:(NSString *)title message:(NSString *)messageText
+    - (void)MessageBox:(NSString *)title message:(NSString *)messageText
     {
 
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:messageText delegate:self
@@ -185,7 +185,7 @@ ms.locfileid: "60873170"
         [alert show];
     }
 
-    * (void)application:(UIApplication *)application didReceiveRemoteNotification:
+    - (void)application:(UIApplication *)application didReceiveRemoteNotification:
        (NSDictionary *)userInfo {
        NSLog(@"%@", userInfo);
        [self MessageBox:@"Notification" message:[[userInfo objectForKey:@"aps"] valueForKey:@"alert"]];
@@ -212,7 +212,9 @@ ms.locfileid: "60873170"
 
     [notifications storeCategoriesAndSubscribeWithCategories:categories completion: ^(NSError* error) {
         if (!error) {
-            [(AppDelegate*)[[UIApplication sharedApplication]delegate] MessageBox:@"Notification" message:@"Subscribed!"];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:"Notification" message:"Subscribed" delegate:self
+            cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
         } else {
             NSLog(@"Error subscribing: %@", error);
         }
@@ -248,7 +250,7 @@ ms.locfileid: "60873170"
 
 ## <a name="optional-send-notifications-from-the-device"></a>(Необязательно.) Отправка уведомлений с устройства
 
-Как правило, уведомления отправляются серверной службой, но вы можете отправлять уведомления об экстренных новостях непосредственно из приложения. Для этого обновите метод `SendNotificationRESTAPI`, определенный в руководстве [по началу работы со службой "Центры уведомлений"][get-started].
+Как правило, уведомления отправляются серверной службой, но вы можете отправлять уведомления об экстренных новостях непосредственно из приложения. Для этого необходимо обновить `SendNotificationRESTAPI` метод, определенный в учебнике Приступая к [работе с центрами уведомлений][get-started] .
 
 1. В файле `ViewController.m` обновите метод `SendNotificationRESTAPI`, как показано ниже, чтобы он принимал параметр для тега категории и отправлял правильное [шаблонное](notification-hubs-templates-cross-platform-push-messages.md) уведомление.
 
@@ -346,7 +348,7 @@ ms.locfileid: "60873170"
 
 3. Каждое устройство с подпиской на экстренные новости получает отправленные вами уведомления об экстренных новостях.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководстве вы отправили широковещательные уведомления на конкретные устройства iOS, зарегистрированные для получения уведомлений по категориям. Чтобы узнать, как отправлять локализованные push-уведомления, перейдите к следующему руководству.
 

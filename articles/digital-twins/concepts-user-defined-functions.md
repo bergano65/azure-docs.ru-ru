@@ -6,14 +6,14 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 01/02/2019
+ms.date: 07/29/2019
 ms.author: alinast
-ms.openlocfilehash: 4db515a931bc7f423eb11ae31b7304a602f0da46
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f4aa7e6660e3febdca6e0e5b1ad9f11bebaa48ea
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60925928"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638457"
 ---
 # <a name="data-processing-and-user-defined-functions"></a>Обработка данных и определяемые пользователем функции
 
@@ -112,13 +112,13 @@ Azure Digital Twins предлагает расширенные вычислит
 
 
 
-### <a name="role-assignment"></a>Назначение роли
+### <a name="role-assignment"></a>Назначение ролей
 
 Для защиты данных в службе действия определяемой пользователем функции попадают под [контроль управления доступом на основе ролей](./security-role-based-access-control.md) Azure Digital Twins. Назначения ролей определяют, какие определяемые пользователем функции имеют разрешения, необходимые для взаимодействия с пространственным графом и его сущностями. Например, определяемой пользователем функции может быть назначена возможность, а также разрешение на *СОЗДАНИЕ*, *ЧТЕНИЕ*, *ИЗМЕНЕНИЕ* или *УДАЛЕНИЕ* данных графа в данном пространстве. Уровень доступности определяемой пользователем функции проверяется, когда эта функция запрашивает данные графа или пытается выполнить действие. Дополнительные сведения об [управлении доступом на основе ролей](./security-create-manage-role-assignments.md).
 
 Сопоставитель может запускать UDF-функцию, которая не имеет назначений ролей. В этом случае определяемая пользователем функция не сможет считывать данные из графа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнать, как маршрутизировать события и сообщения телеметрии к другим службам Azure, в [этой статье](./concepts-events-routing.md).
 

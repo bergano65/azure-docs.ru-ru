@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: oslake
 ms.author: moslake
 ms.reviewer: genemi, ayolubek, jrasnick
-manager: craigg
 ms.date: 06/26/2019
-ms.openlocfilehash: bb38f73308fb1eb67be310120cb589cb9412e737
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: 3d0a4b5890ed5758f4045459815fb4ebbffe75c6
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67461828"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68550665"
 ---
 # <a name="dns-alias-for-azure-sql-database"></a>Псевдоним DNS для Базы данных SQL Azure
 
@@ -30,7 +29,7 @@ ms.locfileid: "67461828"
 - Создание легко запоминающегося имени для SQL Server Azure.
 - Во время начальной разработки ваш псевдоним может ссылаться на тестовый сервер базы данных SQL. После активации приложения вы можете изменить псевдоним, чтобы он ссылался на рабочий сервер. При переходе от тестовой среды к рабочей не нужно менять конфигурации клиентов, которые подключаются к серверу базы данных.
 - Предположим, что единственная база данных в вашем приложении перенесена на другой сервер базы данных SQL. Здесь вы можете изменить псевдоним без необходимости изменения конфигураций нескольких клиентов.
-- При региональном сбое используйте геовосстановление для восстановления базы данных в другом сервере и регионе. Вы можете изменить свой существующий псевдоним, чтобы они указывали на новый сервер, что существующее клиентское приложение может повторно подключаться к нему. 
+- Во время регионального сбоя вы используете геовосстановление для восстановления базы данных в другом сервере и регионе. Существующий псевдоним можно изменить, чтобы он указывал на новый сервер, чтобы существующее клиентское приложение могло повторно подключиться к нему. 
 
 ## <a name="domain-name-system-dns-of-the-internet"></a>Служба доменных имен (DNS) Интернета
 
@@ -50,7 +49,7 @@ ms.locfileid: "67461828"
 
 ### <a name="cross-region-support"></a>Поддержка перехода в другой регион
 
-Аварийное восстановление может привести к переходу вашего сервера Базы данных SQL в другой географический регион. Для системы, который использовал DNS-псевдоним можно избежать необходимости найти и обновить все строки подключения для всех клиентов. Вместо этого вы можете обновить псевдоним, чтобы он ссылался на новый сервер базы данных SQL, в котором теперь находится ваша база данных.
+Аварийное восстановление может привести к переходу вашего сервера Базы данных SQL в другой географический регион. Для системы, в которой использовался псевдоним DNS, можно избежать необходимости найти и обновить все строки подключения для всех клиентов. Вместо этого вы можете обновить псевдоним, чтобы он ссылался на новый сервер базы данных SQL, в котором теперь находится ваша база данных.
 
 ## <a name="properties-of-a-dns-alias"></a>Свойства псевдонима DNS
 
@@ -71,7 +70,7 @@ ms.locfileid: "67461828"
 
 Документация по REST API доступна в следующей статье:
 
-- [Azure SQL Database REST API](https://docs.microsoft.com/rest/api/sql/) (REST API Базы данных SQL)
+- [Azure SQL Database REST API](https://docs.microsoft.com/rest/api/sql/) (REST API Базы данных SQL Azure)
 
 Кроме того, ознакомиться с REST API можно на сайте GitHub:
 
@@ -83,7 +82,7 @@ ms.locfileid: "67461828"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
 Доступны командлеты PowerShell, которые вызывают REST API.
 
@@ -93,10 +92,10 @@ ms.locfileid: "67461828"
 
 В примере кода используются следующие командлеты:
 
-- [New-AzSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/az.Sql/New-azSqlServerDnsAlias): Создает псевдоним DNS в системе службы "База данных SQL Azure". Псевдоним ссылается на сервер 1 Базы данных SQL Azure.
-- [Get-AzSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/az.Sql/Get-azSqlServerDnsAlias): Получает и выводит все псевдонимы DNS, назначенные серверу 1 базы данных SQL.
-- [Set-AzSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/az.Sql/Set-azSqlServerDnsAlias): Изменяет имя сервера базы данных SQL, на который ссылается псевдоним, с "Сервер 1" на "Сервер 2".
-- [Remove-AzSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/az.Sql/Remove-azSqlServerDnsAlias): С помощью имени псевдонима удаляет псевдоним DNS с сервера 2 базы данных SQL.
+- [New-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/New-azSqlServerDnsAlias): Создает псевдоним DNS в системе службы "База данных SQL Azure". Псевдоним ссылается на сервер 1 Базы данных SQL Azure.
+- [Get-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/Get-azSqlServerDnsAlias): Получает и выводит все псевдонимы DNS, назначенные серверу 1 базы данных SQL.
+- [Set-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/Set-azSqlServerDnsAlias): Изменяет имя сервера базы данных SQL, на который ссылается псевдоним, с "Сервер 1" на "Сервер 2".
+- [Remove-азсклсерверднсалиас](https://docs.microsoft.com/powershell/module/az.Sql/Remove-azSqlServerDnsAlias): С помощью имени псевдонима удаляет псевдоним DNS с сервера 2 базы данных SQL.
 
 ## <a name="limitations-during-preview"></a>Ограничения для предварительной версии
 
@@ -111,8 +110,8 @@ ms.locfileid: "67461828"
 
 ## <a name="related-resources"></a>Связанные ресурсы
 
-- Сведения об аварийном восстановлении см. в статье [Overview of business continuity with Azure SQL Database](sql-database-business-continuity.md) (Общие сведения об обеспечении непрерывности бизнес-процессов с помощью Базы данных SQL Azure).
+- Сведения об аварийном восстановлении см. в статье [Обзор обеспечения непрерывности бизнес-процессов с помощью Базы данных SQL Azure](sql-database-business-continuity.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Управление псевдонимом DNS для Базы данных SQL Azure с помощью PowerShell](dns-alias-powershell.md)

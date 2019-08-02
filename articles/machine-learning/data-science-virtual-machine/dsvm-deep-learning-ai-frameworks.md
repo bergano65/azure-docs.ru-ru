@@ -4,7 +4,7 @@ description: Дополнительные сведения о платформа
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
 documentationcenter: ''
-author: gopitk
+author: vijetajo
 manager: cgronlun
 ms.custom: seodec18
 ms.assetid: ''
@@ -15,13 +15,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2017
-ms.author: gokuma
-ms.openlocfilehash: 59f88d54d3542738f1a500c8c476995eb1535ecf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: vijetaj
+ms.openlocfilehash: 08a740ec898f1ac46ff66de9002e4241d918adc0
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62130282"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68558173"
 ---
 # <a name="deep-learning-and-ai-frameworks"></a>Платформы глубокого обучения и искусственного интеллекта
 [Виртуальная машина для обработки и анализа данных](https://aka.ms/dsvm) (DSVM) и [виртуальная машина для глубокого обучения](https://aka.ms/dsvm/deeplearning) поддерживают несколько платформ глубокого обучения для создания приложений с использованием функций искусственного интеллекта (AI), прогнозной аналитики и когнитивных возможностей, включая распознавание изображений и языка.

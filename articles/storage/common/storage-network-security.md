@@ -9,12 +9,12 @@ ms.date: 03/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: cc0ba80f7aef53568e048b8285800982c818b004
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: 3a49681c5c5fa081157e1264f3e9f757c3ee0e6c
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68334595"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68516968"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -348,19 +348,20 @@ ms.locfileid: "68334595"
 
 При активном исключении **Разрешить доверенным службам Майкрософт...** доступ к учетной записи хранения предоставляется таким службам (при регистрации в вашей подписке):
 
-|Служба|Имя поставщика ресурсов|Цель|
-|:------|:---------------------|:------|
-|Azure Backup|Microsoft.RecoveryServices|Резервное копирование и восстановление неуправляемых дисков в виртуальных машинах IAAS. (Не требуется для управляемых дисков.) [Узнайте больше](/azure/backup/backup-introduction-to-azure-backup).|
-|Azure Data Box|Microsoft.DataBox|Позволяет импортировать данные в Azure с помощью Data Box. [Узнайте больше](/azure/databox/data-box-overview).|
-|Azure DevTest Labs|Microsoft.DevTestLab|Создание пользовательских образов и установка артефактов. [Узнайте больше](/azure/devtest-lab/devtest-lab-overview).|
-|Сетка событий Azure|Microsoft.EventGrid|Включение публикации событий в хранилище BLOB-объектов и предоставление службе "Сетка событий" разрешения на публикацию в хранилище очередей. См. дополнительные сведения о [событиях хранилища BLOB-объектов](/azure/event-grid/event-sources) и [публикации в хранилище очередей](/azure/event-grid/event-handlers).|
-|Центры событий Azure|Microsoft.EventHub|Архивация данных с помощью функции "Сбор" в Центрах событий. [Подробнее](/azure/event-hubs/event-hubs-capture-overview)|
-| Синхронизация файлов Azure| Microsoft.StorageSync| Позволяет преобразовать локальный файловый сервер в кэш для файловых ресурсов Azure. Обеспечивается многосайтовая синхронизация, быстрое аварийное восстановление и резервное копирование на стороне облака. [Подробнее](../files/storage-sync-files-planning.md)|
-|Azure HDInsight|Microsoft.HDInsight|Подготавливает начальное содержимое файловой системы по умолчанию для нового кластера HDInsight. [Узнайте больше](https://azure.microsoft.com/blog/enhance-hdinsight-security-with-service-endpoints/).|
-|Azure Monitor|Microsoft.Insights|Позволяет записывать данные мониторинга в защищенную учетную запись. [Дополнительные сведения](/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security).|
-|Сеть Azure|Microsoft.Network.|Хранение и анализ журналов сетевого трафика. [Узнайте больше](/azure/network-watcher/network-watcher-packet-capture-overview).|
-|Служба Azure Site Recovery|Microsoft.SiteRecovery |Настройка аварийного восстановления путем включения репликации для виртуальных машин Azure IaaS. Эта процедура необходима при использовании учетных записей хранения кэша, источника или целевой учетной записи хранения со включенным брандмауэром.  [Узнайте больше](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication).|
-|Хранилище данных SQL Azure|Microsoft.Sql|Разрешает сценарии импорта и экспорта из конкретных экземпляров баз данных SQL с помощью Polybase. [Узнайте больше](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview).|
+| Служба                  | Имя поставщика ресурсов     | Цель                                                                                                                                                                                                                                                                                                                      |
+|:-------------------------|:---------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Azure Backup             | Microsoft.RecoveryServices | Резервное копирование и восстановление неуправляемых дисков в виртуальных машинах IAAS. (Не требуется для управляемых дисков.) [Узнайте больше](/azure/backup/backup-introduction-to-azure-backup).                                                                                                                                                     |
+| Azure Data Box           | Microsoft.DataBox          | Позволяет импортировать данные в Azure с помощью Data Box. [Узнайте больше](/azure/databox/data-box-overview).                                                                                                                                                                                                                              |
+| Azure DevTest Labs       | Microsoft.DevTestLab       | Создание пользовательских образов и установка артефактов. [Узнайте больше](/azure/devtest-lab/devtest-lab-overview).                                                                                                                                                                                                                      |
+| Сетка событий Azure         | Microsoft.EventGrid        | Включение публикации событий в хранилище BLOB-объектов и предоставление службе "Сетка событий" разрешения на публикацию в хранилище очередей. См. дополнительные сведения о [событиях хранилища BLOB-объектов](/azure/event-grid/event-sources) и [публикации в хранилище очередей](/azure/event-grid/event-handlers).                                                                                                     |
+| Центры событий Azure         | Microsoft.EventHub         | Архивация данных с помощью функции "Сбор" в Центрах событий. [Подробнее](/azure/event-hubs/event-hubs-capture-overview)                                                                                                                                                                                                                           |
+| Синхронизация файлов Azure          | Microsoft.StorageSync      | Позволяет преобразовать локальный файловый сервер в кэш для файловых ресурсов Azure. Обеспечивается многосайтовая синхронизация, быстрое аварийное восстановление и резервное копирование на стороне облака. [Подробнее](../files/storage-sync-files-planning.md)                                                                                                       |
+| Azure HDInsight          | Microsoft.HDInsight        | Подготавливает начальное содержимое файловой системы по умолчанию для нового кластера HDInsight. [Узнайте больше](https://azure.microsoft.com/blog/enhance-hdinsight-security-with-service-endpoints/).                                                                                                                                    |
+| Azure Monitor            | Microsoft.Insights         | Позволяет записывать данные мониторинга в защищенную учетную запись. [Дополнительные сведения](/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security).                                                                                                                                                                        |
+| Сеть Azure         | Microsoft.Network.          | Хранение и анализ журналов сетевого трафика. [Узнайте больше](/azure/network-watcher/network-watcher-packet-capture-overview).                                                                                                                                                                                                        |
+| Служба Azure Site Recovery      | Microsoft.SiteRecovery     | Настройка аварийного восстановления путем включения репликации для виртуальных машин Azure IaaS. Эта процедура необходима при использовании учетных записей хранения кэша, источника или целевой учетной записи хранения со включенным брандмауэром.  [Узнайте больше](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication). |
+| Хранилище данных SQL Azure | Microsoft.Sql              | Разрешает сценарии импорта и экспорта из конкретных экземпляров баз данных SQL с помощью Polybase. [Узнайте больше](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview).                                                                                                                                                 |
+| Azure Stream Analytics   | Microsoft.StreamAnalytics  | Позволяет записывать данные из задания потоковой передачи в хранилище BLOB-объектов. Обратите внимание, что сейчас эта функция доступна в предварительной версии. [Узнайте больше](../../stream-analytics/blob-output-managed-identity.md).                                                                                                                                        |
 
 ### <a name="storage-analytics-data-access"></a>Доступ к данным аналитики хранилища
 

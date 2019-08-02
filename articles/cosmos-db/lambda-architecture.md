@@ -5,13 +5,13 @@ ms.service: cosmos-db
 author: tknandu
 ms.author: ramkris
 ms.topic: conceptual
-ms.date: 05/28/2019
-ms.openlocfilehash: a997f1d0fd304b43f56953c51e6a8944a4c93ce0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/01/2019
+ms.openlocfilehash: 70f3471b22027bbf5ece87897e678370767f6743
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66257177"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68717086"
 ---
 # <a name="azure-cosmos-db-implement-a-lambda-architecture-on-the-azure-platform"></a>Azure Cosmos DB — реализация лямбда-архитектуры на платформе Azure 
 
@@ -242,7 +242,7 @@ var streamingQuery = streamingQueryWriter.start()
 
 ## <a name="lambda-architecture-rearchitected"></a>Лямбда-архитектура. Перепроектирование
 Как указано в разделах выше, вы можете упростить исходную лямбда-архитектуру с помощью следующих компонентов:
-* Azure Cosmos DB
+* Azure Cosmos DB
 * библиотека канала изменений Azure Cosmos DB (позволяет избежать проблем с многократным приведением данных между пакетным уровнем и уровнем обслуживания);
 * Apache Spark в HDInsight;
 * соединитель Spark для Azure Cosmos DB.
@@ -267,7 +267,7 @@ var streamingQuery = streamingQueryWriter.start()
   * [Streaming Query from Cosmos DB Change Feed](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Streaming%20Query%20from%20Cosmos%20DB%20Change%20Feed.scala) (Потоковая передача запроса из канала изменений Cosmos DB) — сценарий Scala, предусматривающий выполнение запросов потоковой передачи из канала изменений Azure Cosmos DB, чтобы подсчитывать число интервалов в оболочке Spark.
   * [Streaming Tags Query from Cosmos DB Change Feed](https://github.com/Azure/azure-cosmosdb-spark/blob/master/samples/lambda/Streaming%20Tags%20Query%20from%20Cosmos%20DB%20Change%20Feed%20.scala) (Потоковая передача тегов из канала изменений Cosmos DB.scala) — сценарий Scala, предусматривающий выполнение запросов потоковой передачи из канала изменений Azure Cosmos DB, чтобы подсчитывать число тегов в оболочке Spark.
   
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Скачайте соединитель Azure Cosmos DB для Spark из репозитория [azure-cosmosdb-spark](https://github.com/Azure/azure-cosmosdb-spark) на сайте GitHub и изучите дополнительные ресурсы в этом репозитории:
 * [Лямбда-архитектура](https://github.com/Azure/azure-cosmosdb-spark/tree/master/samples/lambda)
 * [Примеры распределенных агрегирований](https://github.com/Azure/azure-documentdb-spark/wiki/Aggregations-Examples)

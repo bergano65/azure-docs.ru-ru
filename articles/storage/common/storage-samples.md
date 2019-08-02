@@ -1,20 +1,18 @@
 ---
 title: Примеры кода для службы хранилища Azure | Документация Майкрософт
 description: Просмотрите, загрузите и запустите образцы кода и приложений для хранилища Azure. Воспользуйтесь примерами для начала работы с BLOB-объектами, очередями, таблицами и файлами с помощью клиентских библиотек хранилища .NET, Java, Node.js и C++.
-services: storage
 author: mhopkins-msft
-ms.service: storage
-ms.topic: article
-ms.date: 06/03/2017
 ms.author: mhopkins
-ms.reviewer: seguler
+ms.date: 06/03/2017
+ms.service: storage
 ms.subservice: common
-ms.openlocfilehash: c3bf695527db19513125d9190796c9b5df312aaa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.topic: sample
+ms.openlocfilehash: ad2881221d1c748016ff4f026ac8ffb3ed683f43
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65153503"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68721770"
 ---
 # <a name="azure-storage-samples"></a>Примеры для службы хранилища Azure
 
@@ -67,7 +65,7 @@ Had to remove this article, it refers to the VS quickstarts, and they've stopped
 | Node.js | [Справочник по клиентской библиотеке Node.js](https://azure.github.io/azure-storage-node) | [Исходный код для клиентской библиотеки хранилища Node.js](https://github.com/Azure/azure-storage-node) |
 | C++ | [Справочник по клиентской библиотеке C++](https://azure.github.io/azure-storage-cpp/) | [Исходный код для клиентской библиотеки хранилища C++](https://github.com/Azure/azure-storage-cpp)|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Следующие статьи содержат указатель примеров, упорядоченный по службам (служба больших двоичных объектов, служба файлов, служба очередей, служба таблиц).
 

@@ -3,18 +3,18 @@ title: Создание карты с помощью службы "Карты Az
 description: Создание карты на JavaScript
 author: jingjing-z
 ms.author: jinzh
-ms.date: 10/30/2018
+ms.date: 07/26/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 222fc5e9083c03ff0d4e31927363c5f517cf32a9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8a4f67290e93d8b296added9023fe9b6947ba02c
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62108605"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638680"
 ---
 # <a name="create-a-map"></a>Создание карты
 
@@ -57,7 +57,7 @@ ms.locfileid: "62108605"
 
 <a id="relatedReference"></a>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

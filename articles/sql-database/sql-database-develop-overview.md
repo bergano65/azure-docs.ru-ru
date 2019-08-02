@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: genemi
-manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: efb6d932e616ada6b8dfff637af469c16fc2f293
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 42fc73b5557fba91cc132a0abe8561f0a72bbb64
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60723414"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568864"
 ---
 # <a name="sql-database-application-development-overview"></a>Обзор разработки приложений базы данных SQL
 
@@ -33,7 +32,7 @@ ms.locfileid: "60723414"
 
 Вы можете использовать инструменты с открытым кодом, такие как [cheetah](https://github.com/wunderlist/cheetah), [sql-cli](https://www.npmjs.com/package/sql-cli) и [VS Code](https://code.visualstudio.com/). Кроме того, база данных SQL Azure поддерживает инструменты Майкрософт, например [Visual Studio](https://www.visualstudio.com/downloads/) и [SQL Server Management Studio](https://msdn.microsoft.com/library/ms174173.aspx). Кроме того, портал Azure, PowerShell и интерфейсы REST API дополнительно упростят вам работу.
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Проверка подлинности
 
 Доступ к Базе данных SQL Azure защищен с помощью механизмов входа в систему и брандмауэров. База данных SQL Azure поддерживает пользователей и имена для входа при аутентификации с помощью SQL Server и [Azure Active Directory](sql-database-aad-authentication.md). Имена входа Azure Active Directory доступны только в Управляемом экземпляре. 
 
@@ -58,8 +57,8 @@ ms.locfileid: "60723414"
 - На компьютере с вашей клиентской программой убедитесь, что брандмауэр разрешает исходящие TCP-соединения через порт 1433.  Дополнительные сведения: [Правила брандмауэра службы "База данных SQL Azure" и "Хранилище данных SQL"](sql-database-configure-firewall-settings.md).
 - Если клиентская программа подключается к базе данных SQL, а клиент работает на виртуальной машине Azure, необходимо открыть на ней определенные диапазоны портов. Дополнительные сведения: [Порты для ADO.NET 4.5, отличные от порта 1433](sql-database-develop-direct-route-ports-adonet-v12.md).
 - Клиентские подключения к базе данных SQL Azure иногда обходят прокси-сервер и взаимодействуют непосредственно с базой данных. Порты, отличные от 1433, становятся важными. Дополнительные сведения см. в статьях [Архитектура подключений к базе данных SQL Azure](sql-database-connectivity-architecture.md) и [Порты для ADO.NET 4.5, отличные от порта 1433](sql-database-develop-direct-route-ports-adonet-v12.md).
-- Сетевую конфигурацию для управляемого экземпляра, см. в разделе [конфигурацию сети для управляемых экземпляров](sql-database-howto-managed-instance.md#network-configuration).
+- Сведения о конфигурации сети для управляемого экземпляра см. в разделе [Сетевая конфигурация для управляемых экземпляров](sql-database-howto-managed-instance.md#network-configuration).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы можете изучить все [возможности Базы данных SQL](sql-database-technical-overview.md).

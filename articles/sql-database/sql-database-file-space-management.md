@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: oslake
 ms.author: moslake
 ms.reviewer: jrasnick, carlrab
-manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: 96d55da713b8591b20f95ba36f332a340999181e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c92ffb6aa6db9c77a859661115d54ff63ea02401
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66242741"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568199"
 ---
 # <a name="manage-file-space-for-single-and-pooled-databases-in-azure-sql-database"></a>Управление файловым пространством отдельной базы данных или базы данных в пуле Базы данных SQL Azure
 
@@ -30,7 +29,7 @@ ms.locfileid: "66242741"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но все будущие разработки — для модуля Az.Sql. Для этих командлетов см. в разделе [AzureRM.Sql](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле Az и в модуле AzureRm практически идентичны.
+> Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Эти командлеты см. в разделе [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны.
 
 В отдельной базе данных или базе данных в пуле Базы данных SQL Azure существуют шаблоны рабочей нагрузки, в которых распределение базовых файлов для баз данных может превысить объем используемых страниц данных. Это может произойти, когда используемое пространство увеличивается, а данные затем удаляются. Это объясняется тем, что выделенное файловое пространство автоматически не освобождается.
 
@@ -250,12 +249,12 @@ ALTER DATABASE [db1] SET AUTO_SHRINK ON
 
 После сжатия файлов базы данных индексы могут стать фрагментированными, а эффективность оптимизации их производительности может ухудшиться. Если происходит замедление, попробуйте перестроить индексы базы данных. Дополнительные сведения о фрагментации и перестроении индексов см. в статье [Реорганизация и перестроение индексов](https://docs.microsoft.com/sql/relational-databases/indexes/reorganize-and-rebuild-indexes).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения о максимальных размерах базы данных см. в статьях:
   - [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md)
-  - [Ограничения ресурсов для одиночных баз данных в модели приобретения на основе DTU](sql-database-dtu-resource-limits-single-databases.md)
-  - [Ограничения для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-elastic-pools.md)
-  - [Ограничения ресурсов для эластичных пулов в модели приобретения на основе DTU](sql-database-dtu-resource-limits-elastic-pools.md)
+  - [Ограничения ресурсов для одиночных баз данных в модели приобретения на основе единиц DTU](sql-database-dtu-resource-limits-single-databases.md)
+  - [Ограничения для эластичных пулов в службе "База данных SQL Azure" в рамках модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-elastic-pools.md)
+  - [Ограничения ресурсов для эластичных пулов в модели приобретения на основе единиц DTU](sql-database-dtu-resource-limits-elastic-pools.md)
 - Дополнительные сведения о команде `SHRINKDATABASE` см. в статье [DBCC SHRINKDATABASE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql). 
 - Дополнительные сведения о фрагментации и перестроении индексов см. в статье [Реорганизация и перестроение индексов](https://docs.microsoft.com/sql/relational-databases/indexes/reorganize-and-rebuild-indexes).

@@ -6,14 +6,14 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 07/18/2019
+ms.date: 07/31/2019
 ms.author: normesta
-ms.openlocfilehash: fc2d7e4f611e1eee9c369ef26aa7bf66feb7c888
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 910e23814b627233395a2f7a646513d9cb6874d8
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68385681"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699041"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -100,7 +100,7 @@ API-интерфейсы RESTFUL для больших двоичных объе
 | **Blobfuse** |Еще не поддерживается|
 | **Личные домены** |Еще не поддерживается|
 | **Обозреватель файловой системы** | Ограниченная поддержка |
-| **Журнал ведения диагностики** |Поддерживается только в том случае, если вы зарегистрировались в режиме многопротокольного [доступа Data Lake Storage](data-lake-storage-multi-protocol-access.md) предварительной версии.|
+| **Журнал ведения диагностики** |Журналы диагностики поддерживаются только в том случае, если вы зарегистрировались в режиме многопротокольного [доступа Data Lake Storage](data-lake-storage-multi-protocol-access.md) предварительной версии. <br><br>Включение журналов в портал Azure в настоящее время не поддерживается. Ниже приведен пример того, как включить журналы с помощью PowerShell. <br><br>`$storageAccount = Get-AzStorageAccount -ResourceGroupName <resourceGroup> -Name <storageAccountName>`<br><br>`Set-AzureStorageServiceLoggingProperty -Context $storageAccount.Context -ServiceType Blob -LoggingOperations read,write,delete -RetentionDays <days>`. <br><br>Обязательно укажите `Blob` в качестве значения `-ServiceType` параметра, как показано в этом примере. 
 | **Неизменяемое хранилище** |Еще не поддерживается <br><br>Неизменяемое хранилище дает возможность хранить данные в черве [(запись один раз, чтение из множества)](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutable-storage) .|
 | **Уровни уровня объектов** |Уровни "крутой" и "архивный" поддерживаются только в том случае, если вы зарегистрировались в режиме многопротокольного [доступа Data Lake Storage](data-lake-storage-multi-protocol-access.md) предварительной версии. <br><br> Все остальные уровни доступа пока не поддерживаются.|
 | **Поддержка PowerShell и интерфейса командной строки** | Ограниченная функциональность <br><br>Поддерживаются такие операции управления, как создание учетной записи. Операции с плоскостью данных, такие как отправка и скачивание файлов, доступны в общедоступной предварительной версии в рамках многопротокольного [доступа к Data Lake Storage](data-lake-storage-multi-protocol-access.md). Работа с каталогами и Настройка списков управления доступом (ACL) пока не поддерживаются. |

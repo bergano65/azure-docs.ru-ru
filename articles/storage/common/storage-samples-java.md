@@ -1,20 +1,18 @@
 ---
 title: Примеры для службы хранилища Azure с использованием Java | Документация Майкрософт
 description: Просмотрите, загрузите и запустите образцы кода и приложений для хранилища Azure. Воспользуйтесь примерами для начала работы с большими двоичными объектами, очередями, таблицами и файлами с помощью клиентских библиотек хранилища Java.
-services: storage
 author: mhopkins-msft
-ms.service: storage
-ms.devlang: java
-ms.topic: article
-ms.date: 05/03/2019
 ms.author: mhopkins
+ms.date: 05/03/2019
+ms.service: storage
 ms.subservice: common
-ms.openlocfilehash: 3d241f1905244d3a8039372262f84ba0fd25220d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.topic: sample
+ms.openlocfilehash: 4348400e66e4b975d1eeb899cab8bb5024260149
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65209774"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68721832"
 ---
 # <a name="azure-storage-samples-using-java"></a>Примеры для службы хранилища Azure с использованием Java
 
@@ -206,7 +204,7 @@ ms.locfileid: "65209774"
 * [Getting Started with Azure Table Service in Java](../../cosmos-db/table-storage-how-to-use-java.md) (Приступая к работе со службой таблиц Azure на языке Java)
 * [Getting Started with Azure File Service in Java](../files/storage-java-how-to-use-file-storage.md) (Приступая к работе с файловой службой Azure на языке Java)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о примерах для других языков см. здесь:
 

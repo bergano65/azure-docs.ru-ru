@@ -1,6 +1,6 @@
 ---
 title: Поиск в центре безопасности Azure | Документация Майкрософт
-description: Узнайте, как центр безопасности Azure использует поиск в журналах Azure Monitor, получает и анализирует данные безопасности.
+description: Узнайте, как центр безопасности Azure использует Azure Monitor Поиск журналов для извлечения и анализа данных безопасности.
 services: security-center
 documentationcenter: na
 author: rkarlin
@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/11/2017
 ms.author: rkarlin
-ms.openlocfilehash: 90dbb33fa516d3a831d4e60969ac6b6c8312d539
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c88e2025444aa2fd83e05fdff97ea640ceefaa04
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64574146"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68662914"
 ---
-# <a name="azure-security-center-search"></a>Поиск в центре безопасности Azure
+# <a name="azure-security-center-search-retired"></a>Поиск в центре безопасности Azure (прекращено)
 
 > [!NOTE]
-> Панель мониторинга поиска центра безопасности будет прекращена 31 июля 2019 г. Дополнительные сведения и альтернативные службы, см. в разделе [вывода из эксплуатации центра безопасности функций (июль 2019)](security-center-features-retirement-july2019.md#menu_search).
+> Панель мониторинга поиска центра безопасности была прекращена 31 июля 2019. Дополнительные сведения и альтернативные службы см. в разделе [выбытие средств центра безопасности (июль 2019)](security-center-features-retirement-july2019.md#menu_search).
 
-Центр безопасности Azure использует [монитор Azure журналы поиска](../log-analytics/log-analytics-log-searches.md) получает и анализирует данные безопасности. Журналы Azure Monitor поддерживает язык запросов для быстрого получения и консолидации данных. В центре безопасности вы можете использовать поиск в журналах Azure Monitor для создания запросов и анализа собранных данных.
+Центр безопасности Azure использует [Azure Monitor Поиск журналов](../log-analytics/log-analytics-log-searches.md) для получения и анализа данных безопасности. Журналы Azure Monitor содержат язык запросов для быстрого получения и консолидации данных. В центре безопасности можно использовать Azure Monitor Поиск журналов для создания запросов и анализа собранных данных.
 
 Поиск доступен в ценовой категории "Бесплатный" и "Стандартный" центра безопасности.  Данные, доступные в поисковых запросах, зависят от категории рабочей области.  Дополнительные сведения см. на странице [цен на центр безопасности](../security-center/security-center-pricing.md).
 
@@ -49,19 +49,19 @@ ms.locfileid: "64574146"
 
    SecurityEvent | where EventID == 4625 | summarize count() by TargetAccount
 
-   Результат показывает все учетные записи, которые не удалось выполнить вход (событие 4625).
+   Результат показывает все учетные записи, для которых не удалось выполнить вход (событие 4625).
 
    ![Результаты поиска][3]
 
-См. в разделе [язык запросов Kusto](../log-analytics/log-analytics-search-reference.md) Дополнительные сведения о том, как для запроса данных в выбранной рабочей области.
+Дополнительные сведения о том, как запросить данные в выбранной рабочей области, см. в разделе [язык запросов Kusto](../log-analytics/log-analytics-search-reference.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
-В этой статье вы узнали, как получить доступ к поиску в центре безопасности. Центр безопасности использует поиск в журналах Azure Monitor. Дополнительные сведения о поиск в журналах Azure Monitor, см. в разделе:
+## <a name="next-steps"></a>Следующие шаги
+В этой статье вы узнали, как получить доступ к поиску в центре безопасности. Центр безопасности использует поиск по журналам Azure Monitor. Дополнительные сведения о поиске Azure Monitor журналов см. в следующих статьях:
 
-- [Что такое журналы Azure Monitor?](../log-analytics/log-analytics-overview.md) Общие сведения о журналах Azure Monitor
-- [Основные сведения о по журналам в Azure Monitor журналы](../log-analytics/log-analytics-log-search-new.md) — Описание использования поисков по журналам в журналах Azure Monitor и основные понятия, которые следует рассмотреть перед созданием поиск по журналам
-- [Поиск данных по журналам в Azure Monitor журналы](../log-analytics/log-analytics-log-searches.md) – руководство по использованию поиска по журналам
-- [Справочник по поиску Kusto](../log-analytics/log-analytics-search-reference.md) — описывается язык запросов, в журналах Azure Monitor
+- [Что такое Azure Monitor журналов?](../log-analytics/log-analytics-overview.md) — Общие сведения о журналах Azure Monitor
+- [Основные сведения о поиске по журналам в Azure Monitor журналах](../log-analytics/log-analytics-log-search-new.md) — описание использования поиска по журналам в журналах Azure Monitor и содержит основные понятия, которые следует знать перед созданием поиска по журналам.
+- [Поиск данных с помощью поиска по журналам в Azure Monitor журналов](../log-analytics/log-analytics-log-searches.md) — руководство по поиску по журналам
+- [Справочник по поиску Kusto](../log-analytics/log-analytics-search-reference.md) — описывает язык запросов в журналах Azure Monitor
 
 Дополнительные сведения о центре безопасности см. в следующих статьях:
 
