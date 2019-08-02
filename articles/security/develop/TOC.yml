@@ -18,3 +18,17 @@
           href: secure-develop.md
         - name: Развертывание безопасных приложений
           href: secure-deploy.md
+- name: Решения
+  expanded: true
+  items:
+    - name: Анализ кода безопасности Майкрософт
+      expanded: true
+      items:
+        - name: Обзор
+          href: security-code-analysis-overview.md
+        - name: Подключение и установка
+          href: security-code-analysis-onboard.md
+        - name: Конфигурация
+          href: security-code-analysis-customize.md
+        - name: Часто задаваемые вопросы
+          href: security-code-analysis-faq.md

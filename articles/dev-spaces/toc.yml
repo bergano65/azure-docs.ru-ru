@@ -9,18 +9,18 @@
       items:
         - name: Командная разработка
           href: quickstart-team-development.md
-        - name: Запуск приложения
+        - name: Отладка и итерация
+          items:
+            - name: Использование Visual Studio Code и Java
+              href: quickstart-java.md
+            - name: Использование Visual Studio Code и .NET
+              href: quickstart-netcore.md
+            - name: Использование Visual Studio Code и Node.js
+              href: quickstart-nodejs.md
+            - name: Использование Visual Studio и .NET Core
+              href: quickstart-netcore-visualstudio.md
+        - name: Разработка с помощью CLI
           href: quickstart-cli.md
-        - name: Запуск приложения с помощью файла Dockerfile
-          href: quickstart-cli-dockerfile.md
-        - name: Запуск и отладка кода Java в VS Code
-          href: quickstart-java.md
-        - name: Запуск и отладка кода .NET Core в VS Code
-          href: quickstart-netcore.md
-        - name: Запуск и отладка кода Node.js в VS Code
-          href: quickstart-nodejs.md
-        - name: Запуск и отладка кода .NET Core в Visual Studio
-          href: quickstart-netcore-visualstudio.md
     - name: Учебники
       items:
         - name: Java (VS Code и CLI)

@@ -48,4 +48,11 @@ sections:
         className: spaced noBullet
         items:
           - html: <a href="/azure/security/develop/secure-dev-overview">Рекомендации по безопасной разработке</a>
-          - html: <a href="/azure/security/azure-security-threat-modeling-tool">Моделирование угроз</a>
+  - title: Ресурсы
+    items:
+      - type: list
+        style: unordered
+        className: spaced noBullet
+        items:
+          - html: <a href="/azure/security/develop/security-code-analysis-overview">Анализ кода безопасности Майкрософт</a>
+          - html: <a href="/azure/security/develop/threat-modeling-tool">Средство моделирования угроз</a>

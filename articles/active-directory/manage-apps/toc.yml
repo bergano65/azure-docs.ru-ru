@@ -221,6 +221,8 @@
           items:
             - name: Подготовка пользователей для приложений из коллекции
               href: application-provisioning-config-how-to.md
+            - name: Включение автоматической подготовки пользователей к работе с мультитенантными приложениями
+              href: isv-automatic-provisioning-multi-tenant-apps.md
             - name: Настройка автоматической подготовки пользователей
               href: configure-automatic-user-provisioning-portal.md
             - name: Настройка атрибутов приложения

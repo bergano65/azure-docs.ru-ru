@@ -17,9 +17,9 @@
           href: time-series-insights-update-quickstart.md
 - name: Учебники
   items:
-    - name: Изучение клиентской библиотеки JavaScript для службы "Аналитика временных рядов Azure"
+    - name: Клиентская библиотека JavaScript Аналитики временных рядов
       href: tutorial-explore-js-client-lib.md
-    - name: Создание одностраничного веб-приложения службы "Аналитика временных рядов"
+    - name: Создание одностраничного веб-приложения
       href: tutorial-create-tsi-sample-spa.md
     - name: Аналитика временных рядов Azure (общедоступная версия)
       items:

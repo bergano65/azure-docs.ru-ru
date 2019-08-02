@@ -584,6 +584,12 @@
           href: ssis-integration-runtime-management-troubleshoot.md
         - name: "Устранение неполадок с выполнением пакетов в Azure-SSIS\_IR"
           href: ssis-integration-runtime-ssis-activity-faq.md
+- name: Сценарии
+  items:
+    - name: Перенос данных для озера данных и EDW
+      items:
+        - name: Преимущества Фабрики данных Azure
+          href: data-migration-guidance-overview.md
 - name: Справочные материалы
   items:
     - name: .NET

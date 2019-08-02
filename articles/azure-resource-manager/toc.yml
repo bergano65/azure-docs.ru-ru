@@ -13,6 +13,8 @@
       href: resource-manager-quickstart-create-templates-use-visual-studio-code.md
     - name: Создание шаблонов — Visual Studio
       href: vs-azure-tools-resource-groups-deployment-projects-create-deploy.md
+    - name: "Создание шаблонов\_— IntelliJ IDEA"
+      href: resource-manager-quickstart-create-templates-use-intellij.md
 - name: Учебники
   items:
     - name: Использование справочной документации по шаблонам

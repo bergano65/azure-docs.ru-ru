@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 49686e407b2d733c04bad31706c6c4f315bf28bf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2d6d5c51cb381c089633ba010a1d64c8486ddcd8
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61075205"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568734"
 ---
 # <a name="migrate-existing-databases-to-scale-out"></a>Перенос существующих баз данных для развертывания
 Вы можете легко управлять существующими масштабируемыми сегментированными базами данных с помощью средств Базы данных SQL Azure (таких как [клиентская библиотека для эластичных баз данных](sql-database-elastic-database-client-library.md)). Для использования [диспетчера сопоставления сегментов](sql-database-elastic-scale-shard-map-management.md) следует сначала преобразовать существующий набор баз данных. 
@@ -151,7 +150,7 @@ ms.locfileid: "61075205"
 ## <a name="summary"></a>Резюме
 После завершения настройки можно начать работу с клиентской библиотекой эластичной базы данных. Кроме того, можно воспользоваться [маршрутизацией, зависящей от данных](sql-database-elastic-scale-data-dependent-routing.md), и [формированием многосегментных запросов](sql-database-elastic-scale-multishard-querying.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Скачайте сценарии PowerShell со страницы [Azure SQL DB-Elastic Database tools scripts](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-DB-Elastic-731883db) (База данных SQL Azure — сценарии для инструментов эластичной базы данных).
 
 Средства также доступны на сайте GitHub: [Elastic database tools for Azure SQL Database](https://github.com/Azure/elastic-db-tools) (Средства эластичной базы данных для Базы данных SQL Azure).

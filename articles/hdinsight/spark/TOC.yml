@@ -60,6 +60,12 @@
               href: ./apache-spark-troubleshoot-outofmemory-heap-space.md
             - name: Сбой при запуске сервера Livy
               href: ./apache-spark-troubleshoot-outofmemory-native-thread.md
+        - name: "Не удается выполнить задание Apache Spark\_— NoClassDefFoundError"
+          href: ./apache-spark-troubleshoot-job-fails-noclassdeffounderror.md
+        - name: "Не удается выполнить задание Apache Spark\_— InvalidClassException"
+          href: ./apache-spark-troubleshoot-job-fails-invalidclassexception.md
+        - name: "Медленное выполнение заданий Apache Spark\_— listStatus"
+          href: ./apache-spark-troubleshoot-job-slowness-liststatus.md
         - name: "Медленное выполнение заданий Apache Spark\_— контейнер хранилища"
           href: ./apache-spark-troubleshoot-job-slowness-container.md
         - name: Исключение IllegalArgumentException
@@ -72,6 +78,8 @@
           href: ./apache-spark-troubleshoot-blocking-cross-origin.md
         - name: Сбой сериализации Kryo
           href: ./apache-spark-troubleshoot-sparkexception-kryo-serialization-failed.md
+        - name: "Журнал событий Apache Spark\_— RequestBodyTooLarge"
+          href: ./apache-spark-troubleshoot-event-log-requestbodytoolarge.md
 - name: Практическое руководство
   items:
     - name: Использование системы хранения данных кластера

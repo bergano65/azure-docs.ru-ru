@@ -12,45 +12,46 @@ metadata:
   ms.author: zarhoads
   manager: gwallace
 abstract:
-  description: 'Azure Dev Spaces позволяет тестировать и итеративно разрабатывать приложения микрослужб, запускаемые в Службе Azure Kubernetes (AKS), без необходимости реплицировать или имитировать зависимости. Azure Dev Spaces упрощает совместную работу с командой в общем кластере Службы Azure Kubernetes (AKS), а также запуск и отладку контейнеров непосредственно в AKS. Узнайте, как использовать Azure Dev Spaces из этих кратких руководств.'
+  description: 'Azure Dev Spaces позволяет тестировать и итеративно разрабатывать приложения микрослужб, запускаемые в Службе Azure Kubernetes (AKS), без необходимости реплицировать или имитировать зависимости. Azure Dev Spaces упрощает совместную работу с командой в общем кластере Службы Azure Kubernetes (AKS), а также запуск и отладку контейнеров непосредственно в AKS. Узнайте из этих кратких руководств, как использовать Azure Dev Spaces.'
 sections:
   - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
-        text: 'Сведения об использовании Azure Dev Spaces в AKS:'
+        text: 'Узнайте, как использовать Azure Dev Spaces для совместной работы над микрослужбами в AKS.'
       - type: list
         style: icon48
         items:
           - image:
-              src: 'https://docs.microsoft.com/media/common/i_cligeneric.svg'
-            text: Разработка в составе команды
+              src: 'https://docs.microsoft.com/media/common/i_configure-teams.svg'
+            text: Разработка микрослужб в составе команды
             href: quickstart-team-development.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_cligeneric.svg'
-            text: Запуск приложения
-            href: quickstart-cli.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_cligeneric.svg'
-            text: Запуск приложения с помощью файла Dockerfile
-            href: quickstart-cli-dockerfile.md
       - type: paragraph
-        text: 'Узнайте, как итеративно разрабатывать и отлаживать контейнеры непосредственно в AKS с помощью Azure Dev Spaces:'
+        text: 'Узнайте, как быстро выполнять итерации и отладку при разработке внутреннего цикла с помощью Azure Dev Spaces.'
       - type: list
         style: icon48
         items:
           - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_java.svg'
-            text: Разработка с использованием Java
+              src: 'https://docs.microsoft.com/media/logos/logo_vs-code.svg'
+            text: Использование Visual Studio Code и Java
             href: quickstart-java.md
           - image:
               src: 'https://docs.microsoft.com/media/logos/logo_vs-code.svg'
-            text: Разработка с использованием .NET и VS Code
+            text: Использование Visual Studio Code и .NET
             href: quickstart-netcore.md
           - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_visual-studio.svg'
-            text: Разработка с использованием .NET и Visual Studio
-            href: quickstart-netcore-visualstudio.md
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_nodejs.svg'
-            text: Разработка с использованием Node.js
+              src: 'https://docs.microsoft.com/media/logos/logo_vs-code.svg'
+            text: Использование Visual Studio Code и Node.js
             href: quickstart-nodejs.md
+          - image:
+              src: 'https://docs.microsoft.com/media/logos/logo_visual-studio.svg'
+            text: Использование Visual Studio и .NET Core
+            href: quickstart-netcore-visualstudio.md
+      - type: paragraph
+        text: 'Узнайте, как разрабатывать микрослужбы практически на любом языке с помощью Azure CLI и Azure Dev Spaces.'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: 'https://docs.microsoft.com/media/common/i_cligeneric.svg'
+            text: Разработка с помощью Azure CLI
+            href: quickstart-cli.md

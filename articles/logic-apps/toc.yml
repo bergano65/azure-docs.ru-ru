@@ -21,6 +21,12 @@
       href: tutorial-process-mailing-list-subscriptions-workflow.md
     - name: Обработка вложений электронной почты
       href: tutorial-process-email-attachments-workflow.md
+- name: Примеры
+  items:
+    - name: Примеры кода Azure
+      href: 'https://docs.microsoft.com/samples/browse/?products=azure-logic-apps'
+    - name: Шаблоны Resource Manager для быстрого начала работы
+      href: 'https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Logic'
 - name: Основные понятия
   items:
     - name: Соединители для Logic Apps
@@ -349,15 +355,15 @@
           href: /azure/architecture/reference-architectures/enterprise-integration/queues-events
     - name: 'Соединители: подробные сведения'
       href: 'https://docs.microsoft.com/connectors/'
-    - name: Ограничения и конфигурация
+    - name: Ограничения и настройка службы
       href: logic-apps-limits-and-config.md
-    - name: Измерение показателей использования
+    - name: Модель ценообразования и показатель использования
       href: logic-apps-pricing.md
     - name: Azure PowerShell
       href: /powershell/module/az.logicapp
     - name: REST API
       href: /rest/api/logic/
-    - name: Шаблон Resource Manager
+    - name: Справочник по шаблонам Resource Manager
       href: /azure/templates/microsoft.logic/allversions
     - name: Схема языка для определения рабочего процесса
       href: logic-apps-workflow-definition-language.md
@@ -378,23 +384,27 @@
           href: logic-apps-track-integration-account-custom-tracking-schema.md
 - name: Ресурсы
   items:
+    - name: Развитие навыков с помощью Microsoft Learn
+      href: 'https://docs.microsoft.com/learn/browse/?products=azure-logic-apps'
     - name: Стратегия развития Azure Logic Apps
       href: 'https://aka.ms/logicappsroadmap/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/logic-apps/'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Истории клиентов
+      href: 'https://customers.microsoft.com/en-us/search?sq=%22Azure%20Logic%20Apps%20%22&ff=story_product_categories%26%3EAzure&p=0&so=story_publish_date%20desc'
+    - name: Видео
+      href: 'https://azure.microsoft.com/resources/videos/index/?services=logic-apps&sort=newest'
     - name: Форум MSDN
       href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=azurelogicapps'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-logic-apps'
     - name: Twitter
       href: 'https://twitter.com/logicappsio'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/logic-apps/'
-    - name: Калькулятор цен
-      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Отзыв о продукте
+      href: 'https://feedback.azure.com/forums/287593-logic-apps'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=logic-apps'
-    - name: Истории клиентов
-      href: 'https://customers.microsoft.com/en-us/search?sq=%22Azure%20Logic%20Apps%20%22&ff=story_product_categories%26%3EAzure&p=0&so=story_publish_date%20desc'
-    - name: Видео
-      href: 'https://azure.microsoft.com/resources/videos/index/?services=logic-apps&sort=newest'

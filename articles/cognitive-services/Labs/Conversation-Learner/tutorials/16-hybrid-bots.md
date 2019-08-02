@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: nitinme
-ms.openlocfilehash: d6af927e395532e43c7cc51c39665e2e42ac6781
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: c964c62c34f952a547d077e93e7bb4d0eb7b192d
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66389980"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68703680"
 ---
 # <a name="how-to-use-conversation-learner-with-other-bot-building-technologies"></a>Использование Conversation Learner с другими технологиями построения ботов
 
@@ -32,7 +33,7 @@ ms.locfileid: "66389980"
 
     npm run tutorial-hybrid
 
-## <a name="details"></a>Сведения
+## <a name="details"></a>Подробнее
 
 Пока Conversation Learner находится под контролем, все состояние, относящееся к сеансу Conversation Learner, должно храниться в диспетчере памяти Conversation Learner. Это необходимо, так как машинное обучение использует состояние, чтобы определить, как вести разговор. Внешнее состояние может быть передано в Conversation Learner в параметр OnSessionStartCallback, который вызывается в начале сеанса. Внутреннее состояние может быть возвращено в параметре OnSessionEndCallback при завершении сеанса.
 
@@ -129,7 +130,7 @@ Conversation Learner можно считать вызовом функции, к
 
 С помощью вышеупомянутых инструкций можно объединить Conversation Learner с любой другой технологией построения ботов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Создание ветвей и откат](./17-branch-undo.md)

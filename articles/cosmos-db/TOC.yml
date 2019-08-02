@@ -579,6 +579,9 @@
         - name: Подготовка пропускной способности для базы данных
           displayName: 'request units, RUs, RU, shared throughput, database level'
           href: how-to-provision-database-throughput.md
+        - name: Оценка единиц запросов в секунду с помощью планировщика ресурсов Cosmos
+          displayName: 'request units, RUs, RU, capacity'
+          href: estimate-ru-with-capacity-planner.md
         - name: Поиск сведений о расходуемых единицах запросов
           displayName: 'request units, RUs, RU, charge, consumption'
           href: find-request-unit-charge.md

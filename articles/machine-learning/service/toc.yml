@@ -95,15 +95,14 @@
       displayName: 'deep learning vs machine learning, deep learning, vs, versus'
       href: concept-deep-learning-vs-machine-learning.md
     - name: Рабочая область
-      displayName: concept definitions architecture
       href: concept-workspace.md
     - name: Целевой объект вычисления
-      displayName: concept definitions architecture
+      displayName: 'compute, resource, target, dsvm, AKS, kubernetes, amlcompute, Data Science Virtual Machine, local, cluster, ACI, container instance, Databricks, data lake, lake, HDI, HDInsight'
       href: concept-compute-target.md
     - name: Графический интерфейс
-      displayName: concept
+      displayName: studio
       href: ui-concept-visual-interface.md
-    - name: Автоматическое Машинное обучение
+    - name: Автоматическое машинное обучение
       displayName: 'automl, auto ml'
       href: concept-automated-ml.md
     - name: Служба управления моделями (MLOps)
@@ -114,9 +113,10 @@
     - name: Интерпретируемость модели
       displayName: explainability
       href: machine-learning-interpretability-explainability.md
-    - name: Общие сведения о ППВМ
+    - name: 'Сравнение FPGA и ЦП, GPU, ASIC'
+      displayName: 'field, programmable, arrays'
       href: concept-accelerate-with-fpgas.md
-    - name: Open Neural Network Exchange и среда выполнения ONNX
+    - name: ONNX
       href: concept-onnx.md
     - name: Безопасность
       items:

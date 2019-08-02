@@ -1,20 +1,18 @@
 ---
 title: Как использовать хранилище BLOB-объектов из С++ в Azure | Документация Майкрософт
 description: Хранение неструктурированных данных в облаке в хранилище BLOB-объектов Azure.
-services: storage
 author: mhopkins-msft
-ms.service: storage
-ms.topic: conceptual
-ms.date: 03/21/2018
 ms.author: mhopkins
-ms.reviewer: seguler
+ms.date: 03/21/2018
+ms.service: storage
 ms.subservice: blobs
-ms.openlocfilehash: 32601fc15e6b6a25a1005b6d95499d4aae4fb0d2
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.topic: conceptual
+ms.openlocfilehash: f64856d5b0140d529e939d92d4be61b074928d6e
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67461181"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68726429"
 ---
 # <a name="how-to-use-blob-storage-from-c"></a>Использование хранилища BLOB-объектов из C++
 
@@ -83,7 +81,7 @@ azure::storage::cloud_storage_account storage_account = azure::storage::cloud_st
 azure::storage::cloud_blob_client blob_client = storage_account.create_cloud_blob_client();  
 ```
 
-## <a name="how-to-create-a-container"></a>Практическое руководство: Создание контейнера
+## <a name="how-to-create-a-container"></a>Практическое руководство. Создать контейнер
 [!INCLUDE [storage-container-naming-rules-include](../../../includes/storage-container-naming-rules-include.md)]
 
 В этом примере показано, как создать контейнер:  
@@ -120,7 +118,7 @@ container.upload_permissions(permissions);
 
 Любой пользователь в Интернете может видеть большие двоичные объекты в открытом контейнере, но изменить или удалить их можно только при наличии ключа доступа.  
 
-## <a name="how-to-upload-a-blob-into-a-container"></a>Практическое руководство: Отправка BLOB-объекта в контейнер
+## <a name="how-to-upload-a-blob-into-a-container"></a>Практическое руководство. Отправка BLOB-объекта в контейнер
 Хранилище больших двоичных объектов Azure поддерживает блочные и страничные большие двоичные объекты. В большинстве случаев рекомендуется использовать блочные BLOB-объекты.  
 
 Для передачи файла в блочный BLOB-объект получите ссылку на контейнер и используйте ее для получения ссылки на блочный BLOB-объект. Получив ссылку на BLOB-объект, можно отправить любой поток данных в этот объект с помощью метода **upload_from_stream**. Эта операция создает большой двоичный объект, если он не существует, или заменяет его, если он существует. В следующем примере показано, как отправить BLOB-объект в контейнер. Предполагается, что контейнер уже был создан.  
@@ -155,7 +153,7 @@ blob3.upload_text(U("other text"));
 
 Кроме того, можно использовать метод **upload_from_file** для отправки файла в блочный BLOB-объект.
 
-## <a name="how-to-list-the-blobs-in-a-container"></a>Практическое руководство: Перечисление BLOB-объектов в контейнере
+## <a name="how-to-list-the-blobs-in-a-container"></a>Практическое руководство. Перечисление BLOB-объектов в контейнере
 Для перечисления BLOB-объектов в контейнере сначала необходимо получить ссылку на контейнер. Затем вы можете использовать метод контейнера **list_blobs** для получения BLOB-объектов или их каталогов. Для доступа к широкому набору свойств и методов возвращаемого объекта **list_blob_item** необходимо вызвать метод **list_blob_item.as_blob**, чтобы получить объект **cloud_blob**, или метод **list_blob.as_directory**, чтобы получить объект cloud_blob_directory. В следующем коде показано, как получить и вывести URI каждого элемента в контейнере **my-sample-container** .
 
 ```cpp
@@ -185,7 +183,7 @@ for (auto it = container.list_blobs(); it != end_of_results; ++it)
 
 Дополнительные сведения об операциях перечисления см. в разделе [Перечисление ресурсов хранилища Azure в C++](../storage-c-plus-plus-enumeration.md).
 
-## <a name="how-to-download-blobs"></a>Практическое руководство: Скачивание больших двоичных объектов
+## <a name="how-to-download-blobs"></a>Практическое руководство. Скачивание больших двоичных объектов
 Для загрузки BLOB-объектов сначала нужно получить ссылку на BLOB-объект и затем вызвать метод **download_to_stream**. В следующем примере используется метод **download_to_stream** для переноса содержимого BLOB-объекта в объект потока, который затем можно сохранить в локальном файле.  
 
 ```cpp
@@ -233,7 +231,7 @@ azure::storage::cloud_block_blob text_blob = container.get_block_blob_reference(
 utility::string_t text = text_blob.download_text();
 ```
 
-## <a name="how-to-delete-blobs"></a>Практическое руководство: Удаление blob-объектов
+## <a name="how-to-delete-blobs"></a>Практическое руководство. Удаление blob-объектов
 Чтобы удалить BLOB-объект, сначала нужно получить ссылку на него, а затем вызвать для него метод **delete_blob**.  
 
 ```cpp
@@ -253,7 +251,7 @@ azure::storage::cloud_block_blob blockBlob = container.get_block_blob_reference(
 blockBlob.delete_blob();
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Теперь, когда вы ознакомились с основными сведениями о хранилище BLOB-объектов, используйте следующие ссылки для получения дополнительных сведений о хранилище Azure.  
 
 * [Использование хранилища очередей из C++](../storage-c-plus-plus-how-to-use-queues.md)

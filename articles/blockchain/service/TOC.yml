@@ -19,9 +19,9 @@
           href: connect-geth.md
         - name: Использование Truffle
           href: connect-truffle.md
-- name: Руководства
+- name: Учебники
   items:
-    - name: Отправка транзакций
+    - name: Использование смарт-контрактов
       href: send-transaction.md
 - name: Основные понятия
   items:
@@ -35,7 +35,7 @@
       href: limits.md
     - name: 'Исправление, обновление и управление версиями'
       href: ledger-versions.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: "Настройка доступа к Azure\_AD"
       href: configure-aad.md
@@ -47,7 +47,7 @@
       href: manage-consortium-powershell.md
 - name: Ресурсы
   items:
-    - name: REST API Блокчейн
+    - name: REST API службы "Блокчейн"
       href: 'https://docs.microsoft.com/rest/api/blockchain/'
     - name: Блог
       href: 'https://azure.microsoft.com/blog/topics/blockchain/'

@@ -44,7 +44,7 @@
       href: cdn-migrate.md
     - name: Защита от атак DDoS
       href: cdn-ddos.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Оптимизация содержимого
       href: cdn-optimization-overview.md
@@ -150,6 +150,8 @@
       items:
         - name: Заголовки X-EC-Debug
           href: cdn-http-debug-headers.md
+    - name: HTTP-заголовки для Майкрософт
+      href: cdn-msft-http-debug-headers.md
     - name: Azure PowerShell
       href: /powershell/module/az.cdn
     - name: .NET

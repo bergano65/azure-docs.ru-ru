@@ -179,7 +179,7 @@
           items:
             - name: Обновление Службы мобильности для виртуальных машин Azure
               href: azure-to-azure-autoupdate.md
-            - name: Обновления в Azure Site Recovery
+            - name: Управление обновлениями Site Recovery
               href: service-updates-how-to.md
             - name: Удаление серверов и отключение защиты
               href: site-recovery-manage-registration-and-protection.md
@@ -263,7 +263,7 @@
               href: vmware-azure-manage-process-server.md
             - name: Управление серверами vCenter
               href: vmware-azure-manage-vcenter.md
-            - name: Обновления в Azure Site Recovery
+            - name: Управление обновлениями Site Recovery
               href: service-updates-how-to.md
             - name: Удаление серверов и отключение защиты
               href: site-recovery-manage-registration-and-protection.md
@@ -281,6 +281,8 @@
               href: concepts-on-premises-to-azure-networking.md
         - name: Настройка аварийного восстановления
           items:
+            - name: Пошаговое руководство. Настройка аварийного восстановления
+              href: physical-azure-disaster-recovery.md
             - name: Настройка исходной среды
               href: physical-azure-set-up-source.md
             - name: Настройка целевой среды
@@ -293,8 +295,6 @@
                   href: vmware-azure-install-mobility-service.md
                 - name: Развертывание Службы мобильности с помощью System Center Configuration Manager
                   href: vmware-azure-mobility-install-configuration-mgr.md
-                - name: Пошаговое руководство. Настройка аварийного восстановления
-                  href: physical-azure-disaster-recovery.md
         - name: Отработка отказа и восстановления размещения
           href: physical-to-azure-failover-failback.md
         - name: Управление
@@ -307,7 +307,7 @@
               href: vmware-azure-manage-process-server.md
             - name: Удаление серверов и отключение защиты
               href: site-recovery-manage-registration-and-protection.md
-            - name: Обновления в Azure Site Recovery
+            - name: Управление обновлениями Site Recovery
               href: service-updates-how-to.md
             - name: Удаление хранилища
               href: delete-vault.md
@@ -361,10 +361,12 @@
               href: upgrade-2012R2-to-2016.md
             - name: Удаление серверов и отключение защиты
               href: site-recovery-manage-registration-and-protection.md
-            - name: Обновления в Azure Site Recovery
+            - name: Управление обновлениями Site Recovery
               href: service-updates-how-to.md
             - name: Удаление хранилища
               href: delete-vault.md
+            - name: Перемещение хранилища в другой регион
+              href: move-vaults-across-regions.md
     - name: Аварийное восстановление для приложений
       items:
         - name: Настройка аварийного восстановления в Azure для локальных приложений
@@ -423,39 +425,45 @@
       href: hyper-v-vmm-powershell-resource-manager.md
     - name: Добавление модулей runbook службы автоматизации Azure в планы восстановления для оркестрации отработки отказа
       href: site-recovery-runbook-automation.md
-- name: Мониторинг и устранение неполадок
+- name: Мониторинг
   items:
-    - name: Мониторинг Azure Site Recovery
+    - name: Часто задаваемые вопросы о мониторинге
+      href: monitoring-common-questions.md
+    - name: Мониторинг Site Recovery
       href: site-recovery-monitor-and-troubleshoot.md
-    - name: Виртуальные машины Azure
+    - name: Мониторинг Site Recovery с помощью журналов Azure Monitor
+      href: monitor-log-analytics.md
+    - name: Мониторинг серверов обработки
+      href: vmware-physical-azure-monitor-process-server.md
+- name: Устранение неполадок
+  items:
+    - name: Устранение неполадок с виртуальными машинами Azure
       items:
-        - name: Устранение ошибок репликации виртуальных машин Azure
+        - name: Устранение неполадок с репликацией виртуальных машин Azure
           href: azure-to-azure-troubleshoot-errors.md
-        - name: Устранение неполадок с текущей репликацией виртуальных машин Azure
+        - name: Устранение неполадок с текущей репликацией
           href: azure-to-azure-troubleshoot-replication.md
-        - name: Устранение неполадок с Mobility Service для виртуальных машин Azure
+        - name: Устранение проблем со Службой мобильности
           href: site-recovery-extension-troubleshoot.md
-    - name: VMware или физический сервер
+    - name: Устранение неполадок с виртуальными машинами VMware или физическими серверами
       items:
-        - name: Мониторинг серверов обработки
-          href: vmware-physical-azure-monitor-process-server.md
-        - name: Устранение неполадок с репликацией VMware — Azure
+        - name: Устранение неполадок с репликацией виртуальных машин VMware или физических серверов
           href: vmware-azure-troubleshoot-replication.md
-        - name: Устранение неполадок с сервером конфигурации
+        - name: Устранение неполадок с серверами конфигурации
           href: vmware-azure-troubleshoot-configuration-server.md
         - name: Устранение неполадок с серверами обработки
           href: vmware-physical-azure-troubleshoot-process-server.md
-        - name: Устранение неполадок с принудительной установкой Mobility Service для виртуальных машин VMware или физических серверов
+        - name: Устранение неполадок с принудительной установкой Службы мобильности
           href: vmware-azure-troubleshoot-push-install.md
         - name: Устранение неполадок с отработкой отказа в Azure
           href: site-recovery-failover-to-azure-troubleshoot.md
         - name: Устранение неполадок с повторным включением защиты и восстановлением размещения виртуальных машин VMware
           href: vmware-azure-troubleshoot-failback-reprotect.md
-        - name: Устранение неполадок с обновлением поставщика службы Microsoft Azure Site Recovery
+        - name: Устранение неполадок с обновлением поставщика
           href: vmware-azure-troubleshoot-upgrade-failures.md
         - name: Устранять неполадок обнаружения vCenter
           href: vmware-azure-troubleshoot-vcenter-discovery-failures.md
-    - name: Hyper-V
+    - name: Устранение неполадок с Hyper-V
       items:
         - name: Устранение неполадок с репликацией Hyper-V
           href: hyper-v-azure-troubleshoot.md

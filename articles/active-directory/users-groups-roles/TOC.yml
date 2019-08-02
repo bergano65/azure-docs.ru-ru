@@ -2,7 +2,7 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: 'Пользователи, группы, лицензирование и роли'
+    - name: "Пользователи, группы, лицензирование и роли Azure\_AD"
       href: directory-overview-user-model.md
 - name: Краткие руководства
   items:
@@ -10,6 +10,8 @@
       href: /azure/active-directory/fundamentals/add-users-azure-active-directory?context=azure/active-directory/users-groups-roles/context/ugr-context
     - name: Назначение лицензий пользователям
       href: /azure/active-directory/fundamentals/license-users-groups?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Назначение роли с областью действия ресурса
+      href: roles-quickstart-app-registration-limits.md
     - name: Настройка срока действия групп
       href: groups-quickstart-expiration.md
     - name: Настройка политики именования групп
@@ -126,10 +128,24 @@
           href: directory-assign-admin-roles.md
         - name: Просмотр и назначение ролей
           href: directory-manage-roles-portal.md
-        - name: Назначение ролей с помощью PowerShell
+        - name: Назначение настраиваемых ролей в API Graph
           href: roles-assign-powershell.md
-        - name: Делегирование ролей администратора приложений
-          href: roles-delegate-app-roles.md
+        - name: Предварительная версия настраиваемых ролей
+          items:
+            - name: Предварительная версия настраиваемых ролей
+              href: roles-custom-overview.md
+            - name: Создание настраиваемой роли
+              href: roles-create-custom.md
+            - name: Просмотр назначений пользовательских ролей
+              href: roles-view-assignments.md
+            - name: "Назначение ролей в центре администрирования Azure\_AD"
+              href: /azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
+            - name: Назначение настраиваемых ролей в API Graph
+              href: roles-assign-graph.md
+            - name: Разрешения на использование предварительной версии настраиваемой роли
+              href: roles-custom-available-permissions.md
+            - name: Делегирование разрешений администратора приложений
+              href: roles-delegate-app-roles.md
         - name: Минимальные привилегии ролей для выполнения заданий
           href: roles-delegate-by-task.md
         - name: "Роли Microsoft\_365"
